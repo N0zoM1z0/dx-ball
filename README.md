@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **168 maintained functions**, **82,709 target differential cases**, and
+> entity owners: **176 maintained functions**, **89,240 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -50,7 +50,10 @@ text placement, original line pixels and palette operations in 1,424 cases.
 The [menu and splash investigation](docs/INTRO_OWNER.md) reuses saved REA
 dossiers to connect the opening scroller, point animation, text and palettes
 to real mode dispatch, with 5,615 direct cases and 58 separate transition checks.
-Real Windows/driver integration, audio, editor and game-over modes remain in progress.
+The [game-over investigation](docs/GAMEOVER_OWNER.md) follows name input and
+persisted ranking insertion, checking original tie ordering, text placement,
+ranking line pixels and score-file failures in 6,531 direct cases and 76 separate transitions back to menu.
+Real Windows/driver integration, audio and editor mode remain in progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -169,6 +172,7 @@ scripts/repo-python tests/test_platform_differential.py
 scripts/repo-python tests/test_startup_differential.py
 scripts/repo-python tests/test_ui_differential.py
 scripts/repo-python tests/test_intro_differential.py
+scripts/repo-python tests/test_gameover_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -210,6 +214,7 @@ source, original behavior and acceptance limits.
 - [Windows startup and input](docs/PLATFORM_OWNER.md).
 - [Working-resource setup and shared UI](docs/STARTUP_UI_OWNER.md).
 - [Menu, splash, scroller and point animation](docs/INTRO_OWNER.md).
+- [Game-over, name entry and persisted high scores](docs/GAMEOVER_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
@@ -217,7 +222,7 @@ source, original behavior and acceptance limits.
   independent source, scoped semantic, and complete byte-exact facts.
 
 Upcoming work includes the Windows adapter and real device delivery, editor
-and game-over modes, sound and MIDI. Names and ownership
+mode, sound and MIDI. Names and ownership
 are promoted only with target-local evidence.
 
 ## License and attribution

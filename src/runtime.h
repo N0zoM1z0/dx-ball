@@ -32,8 +32,8 @@ typedef struct DxBallRuntimeOps {
     void (*finalize_game_resources)(void);
 } DxBallRuntimeOps;
 
-/* Modes 0 (menu), 1 (game) and 4 (splash) default to maintained source.
-   Pending valid modes require configured callbacks. The original switch does
+/* Modes 0 (menu), 1 (game), 3 (game-over) and 4 (splash) default to source.
+   Pending editor mode requires configured callbacks. The original switch does
    nothing for out-of-range integers. */
 typedef struct DxBallModeOps {
     void (*initialize[5])(void);

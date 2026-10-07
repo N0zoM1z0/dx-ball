@@ -14,14 +14,14 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-actual device/driver delivery, editor and game-over modes, audio and MIDI remain pending. Main ball motion,
+actual device/driver delivery, editor mode, audio and MIDI remain pending. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
 scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred sixty-eight source functions have scoped
-semantic evidence from 82,709 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred seventy-six source functions have scoped
+semantic evidence from 89,240 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -216,7 +216,7 @@ All prior suites, forty cold exact units, eight rejection checks, three toolchai
 Wine inspectors and saved REA verification pass as one batch. Reports/input
 identities are at `.analysis/checkpoints/startup-ui-148-40/`.
 
-The current menu/splash checkpoint adds twenty entries and 5,615 direct cases,
+The menu/splash checkpoint adds twenty entries and 5,615 direct cases,
 plus 58 separate mode/key transition checks. See `docs/INTRO_OWNER.md` for all
 Evidence IDs, owned/span extents, program data and acceptance domains. Reused
 complete 11-58 REA dossiers without opening another session. Mode/key tables
@@ -234,10 +234,30 @@ reports/input identities are at `.analysis/checkpoints/intro-168-40/`.
 Cleanup preview finds no additional disposable artifacts after earlier
 195.15 MiB recovery; immutable evidence, snapshots and checkpoints survive.
 
-Continue into mode-2 editor and mode-3 game-over controllers, then the actual
-Windows/audio/MIDI adapter and complete EXE integration. Prefer connected
-controller families over isolated leaves. Reuse retained dossiers before new
-REA queries. Full playable reconstruction remains the active objective.
+The game-over checkpoint adds eight entries and 6,531 direct cases, plus
+76 separate finish-game/mode/key/menu transition checks. See
+`docs/GAMEOVER_OWNER.md` for Evidence IDs, body ranges, state ownership,
+ranking/name behavior, file persistence and accepted domains. One REA
+interactive session obtained thirteen sequential results and explicitly closed
+with 211 cumulative Evidence records. Native/MinGW/VC4 now compile gameover.c;
+production mode/key tables default modes 0, 1, 3 and 4 to maintained source.
+Rank insertion re-reads scores, orders equal scores before existing equals,
+shifts names with strcpy preserving poison tails and attempts persistence only
+for access(path, 2) == 0. Shift must equal 1 for uppercase name entry. The
+non-editing key switch is a confirmed no-op. Default C-locale conversion bodies
+execute in the original oracle; FID library labels do not establish compiler
+version. Direct ranking requires a valid selected surface in the fixture.
+
+All earlier suites, forty cold exact units, eight rejection checks, three
+compiler products, Wine inspectors and saved REA verification pass at the
+family checkpoint. The fresh game-over report is reused with identical complete
+inputs and native-library identity, avoiding duplicate replay. Full reports,
+input identities and logs are at `.analysis/checkpoints/gameover-176-40/`.
+
+Continue into the mode-2 editor controllers, then the actual Windows/audio/MIDI
+adapter and complete EXE integration. Prefer connected controller families over
+isolated leaves. Reuse retained dossiers before new REA queries. Full playable
+reconstruction remains the active objective.
 Mode 4 initializes first and routes to mode 0. Keep explicit-count UI strings
 (including NUL/padding), 287 point records and the 360-pair wave table. REA's
 assembly supplies sine arguments and floating scale omitted from pseudocode

@@ -133,8 +133,9 @@ File parsing on this lifecycle edge, release of synthetic Python-owned bank
 records, audio/MIDI, COM rasterization and real Windows callback delivery remain
 explicit boundaries. Their independent resource/startup acceptance is not
 counted again here. Valid terminating storage and nonoverflowing arithmetic
-are required. Editor and game-over bodies and complete playable EXE integration
-remain pending. This batch makes no new byte-exact claim.
+are required. Editor and complete playable EXE integration remain pending. The subsequent
+[game-over checkpoint](GAMEOVER_OWNER.md) now maintains mode 3 with its own
+acceptance scope. This batch makes no new byte-exact claim.
 
 All earlier suites, forty cold exact units, eight oracle rejection checks,
 native/MinGW/VC4 products, Wine inspector comparison and saved REA verification

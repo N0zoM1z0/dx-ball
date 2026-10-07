@@ -8,7 +8,7 @@ without checking their individual evidence.
 | Area | Target evidence / current work |
 | --- | --- |
 | Platform startup | `src/platform.c`; WinMain, window/input routing, singleton and fullscreen/compatible DirectDraw creation; Windows adapter pending |
-| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; modes 0/1/4 maintained, editor/game-over pending |
+| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; modes 0/1/3/4 maintained, editor pending |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
@@ -25,6 +25,7 @@ without checking their individual evidence.
 | Device owner | `src/device.c`; palette fades/initialization, color fills, sprite/surface recovery and synchronization |
 | Startup/UI owners | `src/startup.c`, `src/ui.c`; working-resource setup, scores, text, line pixels and palette operations |
 | Menu/splash owner | `src/intro.c`; mode-0/4 controllers, point cloud, scroller/credit waves and palette pulses |
+| Game-over owner | `src/gameover.c`; mode-3 lifecycle/input, name buffer, rank insertion, score-file persistence and ranking pixels |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -93,8 +94,8 @@ constants. `src/round.h` exposes initialization/count operations, preserving
 terminal-level call order while leaving the original out-of-bank read unresolved.
 `src/core.c` connects main ball physics and the gameplay frame to these owners.
 `src/runtime.c` supplies real gameplay initialization and life-loss reset, plus
-clock, score and paddle routines. Its mode table defaults modes 0, 1 and 4 to
-maintained source; editor and game-over require configured implementations. All twelve frame
+clock, score and paddle routines. Its mode table defaults modes 0, 1, 3 and 4 to
+maintained source; editor requires configured implementations. All twelve frame
 phases now default to maintained owners. The display owner supplies lightning,
 dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
 COM drivers, Windows binding and audio remain pending. Glyph and shared UI
@@ -111,7 +112,7 @@ creation and game key dispatch. Startup-only COM signatures live in
 WinMain/WndProc use stdcall on Windows and the host ABI for native analysis.
 The new oracle compares Windows records with native pointer growth, explicit
 COM output objects, message ordering and non-returning process exits. Audio,
-editor/game-over modes and the actual Win32 adapter remain boundaries. Shared state
+editor mode and the actual Win32 adapter remain boundaries. Shared state
 includes the existing restart flag and bonus-9 flag; no duplicate pause/bonus
 fields are introduced. See [platform evidence](PLATFORM_OWNER.md).
 
@@ -126,3 +127,12 @@ stay in implementation files. See [startup/UI evidence](STARTUP_UI_OWNER.md)
 and [menu/splash evidence](INTRO_OWNER.md). The products remain analysis
 components and inspectors until the Windows/audio adapters and EXE entry
 integration are complete.
+
+`src/gameover.c` maintains mode 3 and connects it to the production mode/key
+tables. Score data reuses `src/startup.c`; current-game score and menu cursor
+state stay shared. Native and original tests execute actual name/ranking/UI
+bodies, controlling only file APIs, lifecycle resource operations and hardware
+boundaries. The name buffer is forty bytes with the original thirty-character
+input limit; record shifts retain strcpy semantics rather than copying entire
+records. See [game-over evidence](GAMEOVER_OWNER.md). Editor mode is the remaining
+mode controller, followed by actual platform/audio/MIDI adapter work.
