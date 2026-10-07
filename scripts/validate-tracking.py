@@ -3,6 +3,7 @@
 import argparse
 import csv
 import hashlib
+import json
 from pathlib import Path
 import re
 import sys
@@ -35,6 +36,8 @@ def validate(require_target=False):
     implementations = unique(rows("implemented.csv"), "address")
     semantics = unique(rows("semantic-acceptance.csv"), "address")
     matches = unique(rows("matches.csv"), "address")
+    owners = tomllib.loads((ROOT / "config/source-owners.toml").read_text())["owners"]
+    by_source = {owner["source"]: owner for owner in owners.values()}
     if functions.keys() != origins.keys():
         raise ValueError("function and origin ledgers disagree")
     for address, function in functions.items():
@@ -55,12 +58,17 @@ def validate(require_target=False):
             raise ValueError("semantic unit absent from source ledger")
         if accepted["target_sha256"] != target["target"]["sha256"] or int(accepted["cases"]) <= 0:
             raise ValueError("invalid semantic evidence identity/count")
+        owner = by_source[implementations[address]["source"]]
         for field, path in (("source_sha256", ROOT / implementations[address]["source"]),
-                            ("header_sha256", ROOT / "src/boards.h"),
-                            ("oracle_sha256", ROOT / "tests/test_boards_differential.py"),
-                            ("target_oracle_sha256", ROOT / "tests/target_oracle.py")):
+                            ("header_sha256", ROOT / owner["header"]),
+                            ("oracle_sha256", ROOT / owner["oracle"]),
+                            ("target_oracle_sha256", ROOT / owner["target_oracle"])):
             if accepted[field] != sha(path):
                 raise ValueError(f"accepted semantic input changed: {field}")
+        inputs = [owner[field] for field in ("source", "header", "oracle", "target_oracle")]
+        inputs += owner["additional_inputs"]
+        if json.loads(accepted["inputs_sha256"]) != {name: sha(ROOT / name) for name in inputs}:
+            raise ValueError("accepted semantic input set changed; replay required")
     manifest_path = ROOT / "config/match-units.toml"
     manifest = tomllib.loads(manifest_path.read_text()) if manifest_path.exists() else {"units": {}}
     for address, match in matches.items():
@@ -74,11 +82,17 @@ def validate(require_target=False):
         tools = tomllib.loads((ROOT / "config/tools.lock.toml").read_text())
         if match["compiler_sha256"] != tools["msvc40"]["compiler_sha256"]:
             raise ValueError("exact row uses another compiler")
+        build = manifest["builds"][unit["build"]]
+        owner = by_source[match["source"]]
+        if build["source"] != match["source"]:
+            raise ValueError("exact unit build owner disagrees with source ledger")
         for field, path in (("source_sha256", ROOT / match["source"]),
-                            ("header_sha256", ROOT / "src/boards.h"),
+                            ("header_sha256", ROOT / owner["header"]),
                             ("manifest_sha256", manifest_path)):
             if match[field] != sha(path):
                 raise ValueError(f"accepted exact input changed; replay and refresh evidence: {field}")
+        if json.loads(match["inputs_sha256"]) != {name: sha(ROOT / name) for name in build["inputs"]}:
+            raise ValueError("accepted exact build input set changed; replay required")
     if rows("claims.csv"):
         raise ValueError("one-session claims ledger must be header-only")
     if require_target:

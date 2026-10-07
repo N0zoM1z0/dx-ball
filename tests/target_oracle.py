@@ -161,7 +161,7 @@ class TargetOracle:
             self.uc.reg_write(register, value)
         self.uc.reg_write(UC_X86_REG_ESP, sp)
         self.uc.reg_write(UC_X86_REG_EFLAGS, 0x202)
-        self.uc.emu_start(entry, self.RETURN, count=1000000)
+        self.uc.emu_start(entry, self.RETURN, count=getattr(self, "instruction_limit", 1000000))
         assert self.uc.reg_read(UC_X86_REG_EIP) == self.RETURN, "instruction limit reached"
         assert self.uc.reg_read(UC_X86_REG_ESP) == sp + 4, "cdecl stack imbalance"
         for register, value in saved.items():

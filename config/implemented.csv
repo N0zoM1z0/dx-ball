@@ -1,5 +1,20 @@
 address,symbol,source,scope,semantic_unit
 0x00403E50,dxball_select_surface,src/boards.c,all 32-bit handles,board-render
+0x00403E70,dxball_select_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
+0x00403E90,dxball_select_font_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-font-bank
+0x00403F70,dxball_blt_keyed_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-keyed-sprite
+0x00404040,dxball_draw_keyed_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-keyed-sprite
+0x004040B0,dxball_blt_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-sprite
+0x00404180,dxball_draw_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-sprite
+0x004041F0,dxball_stretch_keyed_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-stretch-keyed-sprite
+0x004042B0,dxball_capture_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
+0x00404610,dxball_load_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
+0x00404BE0,dxball_release_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite
+0x00404CF0,dxball_draw_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
+0x00404E40,dxball_find_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
+0x00409790,dxball_load_live_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
+0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
+0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
 0x0040CC30,dxball_read_board_bank,src/boards.c,path/open/read boundaries,board-io
 0x0040CC90,dxball_write_board_bank,src/boards.c,path/open/write boundaries,board-io
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite

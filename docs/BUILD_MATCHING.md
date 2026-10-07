@@ -20,7 +20,7 @@ Canonical compile flags:
 /nologo /c /Od /Ob0 /Oi- /Oy- /Gd /MT /Gy
 ```
 
-These are reproducible per-unit evidence. Matching six functions does not prove
+These are reproducible per-unit evidence. Matching thirteen functions does not prove
 all original compilation flags, the complete compiler release, or original
 translation-unit boundaries. `/Gy` gives complete independent function COMDAT
 extents to the oracle; no comparison requests a truncated prefix.
@@ -66,3 +66,10 @@ addend, changed literal, and wrong target identity.
 The tile mapping and two drawing functions have scoped semantic acceptance;
 they have no exact claim. The unsupported mapping-helper return domain and
 unimplemented rendering backend remain explicit debt.
+
+The resource owner adds seven complete exact functions totaling **787 bytes**:
+two bank selectors, plain/keyed BltFast, plain/keyed Blt, and keyed stretch.
+Their complete extents and independently reviewed global destinations are in
+[resource evidence](RESOURCE_OWNER.md). All thirteen units cold-replay with
+zero differences, **1,157 bytes** in total. `match-units.toml` assigns each unit
+to its canonical source build; reports bind each object's full input set.

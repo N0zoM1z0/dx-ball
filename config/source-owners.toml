@@ -1,0 +1,15 @@
+# Explicit evidence inputs for each maintained owner. All inputs are hash-bound
+# in accepted rows; changing a shared header/oracle requires a fresh replay.
+[owners.boards]
+source = "src/boards.c"
+header = "src/boards.h"
+oracle = "tests/test_boards_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = []
+
+[owners.resources]
+source = "src/resources.c"
+header = "src/resources.h"
+oracle = "tests/test_resources_differential.py"
+target_oracle = "tests/resources_oracle.py"
+additional_inputs = ["src/boards.h", "tests/target_oracle.py"]

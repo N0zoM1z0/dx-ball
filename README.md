@@ -8,9 +8,9 @@ Source reconstruction of **DX-Ball v1.07**, the 1996 Windows breakout game by
 Michael P. Welch, with original 3D graphics by Seumas McNally.
 
 > [!IMPORTANT]
-> The first board-data and drawing-control family is reconstructed: **9 maintained
-> functions**, **9,502 target differential cases**, and **6 byte-exact functions
-> totaling 370 bytes**. The current builds provide a board-inspection utility and
+> Board data, sprite banks, fonts, PCX decoding and palettes now have **24 maintained
+> functions**, **11,371 target differential cases**, and **13 byte-exact functions
+> totaling 1,157 bytes**. The current builds provide a board-inspection utility and
 > analysis library. A playable whole-game reconstruction is still in progress.
 
 This project uses Ghidra 12.1.3 and a hash-pinned Visual C++ 4.0 compiler/linker
@@ -85,14 +85,15 @@ run boards 1, 25, and 50 under Wine and reproduce the same JSON output.
 scripts/repo-python scripts/replay-exact-units.py
 scripts/repo-python tests/test_exact_oracle.py
 scripts/repo-python tests/test_boards_differential.py
+scripts/repo-python tests/test_resources_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
 Exact replay compares complete function sections with every reviewed relocation
 applied and referenced strings verified. It never masks differing bytes. The
 semantic oracle executes the original x86 functions and compares maintained C
-state and ordered dependency calls. Drawing traces do not establish pixel or
-DirectDraw backend equivalence. Public GitHub Actions runs portable builds and
+state and ordered dependency calls. Resource tests also compare decoded pixel
+buffers; drawing traces do not establish DirectDraw backend equivalence. Public GitHub Actions runs portable builds and
 ledger validation; private-target oracles run locally.
 
 ## Reconstruction notes
@@ -101,12 +102,13 @@ ledger validation; private-target oracles run locally.
   [workflow](docs/RE_WORKFLOW.md), and [knowledge base](docs/KNOWLEDGE_BASE.md).
 - [Exact compiler evidence](docs/BUILD_MATCHING.md),
   [oracle matrix and limits](docs/ORACLES.md), and [progress](docs/PROGRESS.md).
+- [Resource ownership and file formats](docs/RESOURCE_OWNER.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:
   independent source, scoped semantic, and complete byte-exact facts.
 
-Upcoming owners include sprite-bank and PCX decoding, board-hit transitions,
+Upcoming owners include board-hit transitions,
 ball/paddle physics, bonuses, Win32/DirectDraw integration, menus, sound, and
 MIDI. Names and ownership are promoted only with target-local evidence.
 

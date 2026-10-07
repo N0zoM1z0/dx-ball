@@ -11,12 +11,13 @@ def main():
     lock = session_lock()
     toolchain = Toolchain()
     toolchain.verify(execute=True)
-    build = tomllib.loads((ROOT / "config/match-units.toml").read_text())["build"]
+    builds = tomllib.loads((ROOT / "config/match-units.toml").read_text())["builds"]
+    build = builds["boards"]
     directory = ROOT / "build/vc40"
     directory.mkdir(parents=True, exist_ok=True)
     objects = []
     log = []
-    for source in ("src/boards.c", "src/board_inspector.c"):
+    for source in ("src/boards.c", "src/resources.c", "src/board_inspector.c"):
         output = directory / (Path(source).stem + ".obj")
         log.append(toolchain.compile(ROOT / source, output, build["flags"]).stdout)
         objects.append(output)
@@ -31,7 +32,8 @@ def main():
     (directory / "build.log").write_text("\n".join(log))
     (directory / "build.json").write_text(json.dumps({
         "executable_sha256": sha256(executable),
-        "inputs": {name: sha256(ROOT / name) for name in build["inputs"] + ["src/board_inspector.c"]},
+        "inputs": {name: sha256(ROOT / name) for name in
+                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/board_inspector.c"]},
         "compiler_sha256": toolchain.lock["compiler_sha256"],
         "linker_sha256": toolchain.lock["linker_sha256"],
         "flags": build["flags"], "link_flags": arguments[:6],

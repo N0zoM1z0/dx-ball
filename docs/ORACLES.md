@@ -5,6 +5,7 @@
 | Target/file and Ghidra attestation | Same executable and sampled mapped bytes | Semantic correctness |
 | Original x86 vs compiled native C | State and ordered dependency effects for tested domains | Original code emission, Windows/pixel equivalence |
 | Pinned VC4.0 COFF replay | Complete function bytes after every explicitly reviewed relocation | Whole-EXE layout, untested function behavior |
+| Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -29,3 +30,15 @@ the object and target. Size differences and all bytes count as failures.
 Generated reports under `build/reports/` bind target, toolchain, source/header,
 manifest, object, and relevant code-span hashes. A passing source build alone is
 never recorded as an exact match. Changing shared input requires cold replay.
+
+The resource owner adds 1,869 cases across all seven supplied SBK files, five
+PCX files, all 256 character values in three fonts, retry/failure branches,
+edge slots, pitch padding, clipping and RLE packet boundaries. Its target
+oracle executes parsing and pixel writes rather than decoding at the boundary.
+Native source uses host libc against the same files. See
+[resource evidence](RESOURCE_OWNER.md) for exact acceptance domains.
+
+`config/source-owners.toml` lists each owner's evidence inputs. Semantic and
+exact rows bind complete input hash sets; shared headers and oracle helpers
+cannot change silently. Hardware DirectDraw effects and undefined/uninitialized
+state are excluded from semantic acceptance.

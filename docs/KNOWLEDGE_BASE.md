@@ -53,3 +53,12 @@ calls and validate their arguments/order, without claiming pixel equivalence.
 I/O interception exposes the requested transfer size; native tests use actual
 temporary files. Original compiler flags, translation-unit boundaries, the
 auxiliary grid's full semantics, and the complete runtime remain open.
+
+## Resource owner
+
+Sprite-bank, font, PCX and palette producers/consumers are maintained in
+`src/resources.c`. [Resource evidence](RESOURCE_OWNER.md) records layouts,
+file formats, DirectDraw slots, preserved original quirks and acceptance limits.
+The 15 functions have 1,869 target execution cases; seven full functions cold
+match exactly. The board test's sprite interception and the resource test's
+actual sprite dispatch are distinct evidence scopes.

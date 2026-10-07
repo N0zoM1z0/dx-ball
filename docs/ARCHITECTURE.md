@@ -10,8 +10,8 @@ without checking their individual evidence.
 | Platform startup | `0x0040D930`, Win32 imports, fullscreen DirectDraw messages |
 | Mode routing | `0x00403950`, mode global `0x00421074`, init/cleanup dispatch |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
-| Sprite bank | `0x00404610`, `.SBK` loading; pending |
-| Sprite draw | `0x00404180`; intercepted by board oracle; pending backend |
+| Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
+| Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
 | Tile hit logic | `0x00411F40`; bank consumers and gameplay transitions; pending |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
@@ -38,3 +38,9 @@ Project structure:
 Ignored local state: `original/`, `.tools/`, `.analysis/`, `build/`,
 `ghidra-project/`. Ghidra databases and generated decompiler text are never the
 durable authority for accepted source facts.
+
+`src/resources.h` supplies one shared sprite/bank declaration and the known
+DirectDraw interface slots. Only the platform ABI attribute varies: Windows
+uses stdcall for COM methods. Resource oracles execute real sprite routines and
+decoders against controlled file and surface storage; decoded pixel buffers
+are compared independently. Real display and hardware Blt behavior remain open.

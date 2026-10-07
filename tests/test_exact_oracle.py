@@ -23,7 +23,9 @@ class ExactOracleTests(unittest.TestCase):
     def setUpClass(cls):
         _, _, image = replay.verify_target.verify()
         cls.pe = replay.pefile.PE(data=image)
-        cls.units = tomllib.loads((ROOT / "config/match-units.toml").read_text())["units"]
+        manifest = tomllib.loads((ROOT / "config/match-units.toml").read_text())
+        cls.units = manifest["units"]
+        cls.builds = manifest["builds"]
         cls.object = ROOT / "build/exact/boards.obj"
         cls.data, cls.sections, cls.symbols = coff.parse(cls.object)
 
@@ -41,7 +43,8 @@ class ExactOracleTests(unittest.TestCase):
 
     def test_baseline_all_units(self):
         for unit in self.units.values():
-            self.assertTrue(replay.compare(self.object, unit, self.pe)["exact"])
+            object_path = ROOT / self.builds[unit["build"]]["object"]
+            self.assertTrue(replay.compare(object_path, unit, self.pe)["exact"])
 
     def test_instruction_corruption_is_not_exact(self):
         unit = self.units["select-surface"]

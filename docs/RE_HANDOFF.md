@@ -13,12 +13,21 @@ dependencies are intercepted; memcpy/memset execute the target's actual CRT.
 Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
-no reconstructed playable game yet. Windows integration, sprite/PCX decoding,
+no reconstructed playable game yet. Windows integration,
 ball physics, bonuses, UI, audio, and MIDI remain pending.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
-Six configured units cold-replay exactly, totaling 370 bytes; accepted records
-are in `config/matches.csv`. Nine source functions have scoped semantic evidence
-from 9,502 differential cases. Eight oracle rejection checks pass. Continue with the
-current board owner's producers/consumers, then sprite-bank ownership at
-`0x00404610`, sprite draw `0x00404180`, and board-hit logic `0x00411F40`.
+Thirteen configured units cold-replay exactly, totaling 1,157 bytes; accepted
+records are in `config/matches.csv`. Twenty-four source functions have scoped
+semantic evidence from 11,371 differential cases. Eight oracle rejection checks
+pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
+functions. Its 1,869 cases execute actual target parsing and compare decoded
+pixels, pitch padding, initialized records and DirectDraw call traces. See
+`docs/RESOURCE_OWNER.md` for ownership, original quirks and acceptance limits.
+
+Exact replay now compiles owner-specific build groups. `source-owners.toml`
+declares semantic inputs, and both acceptance ledgers bind complete input sets,
+including shared headers/oracle helpers. Board oracle hooks 0x404180; resource
+oracle removes that hook and executes the actual sprite function. DirectDraw
+hardware rasterization remains unresolved. Continue with board-hit logic
+`0x00411F40` and its gameplay producers/consumers.

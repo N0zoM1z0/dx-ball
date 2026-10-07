@@ -63,7 +63,7 @@ def main():
     args = parser.parse_args()
     config_path = ROOT / "config/match-units.toml"
     manifest = tomllib.loads(config_path.read_text())
-    build = manifest["build"]
+    builds = manifest["builds"]
     selected = {name: unit for name, unit in manifest["units"].items()
                 if not args.unit or name in args.unit}
     if not selected or (args.unit and set(args.unit) - selected.keys()):
@@ -72,17 +72,24 @@ def main():
     lock = session_lock()
     toolchain = Toolchain()
     tools = toolchain.verify(execute=True)
-    output = ROOT / build["object"]
-    compiled = toolchain.compile(ROOT / build["source"], output, build["flags"])
-    (ROOT / "build/exact/compiler.log").write_text(compiled.stdout)
     pe = pefile.PE(data=data)
     report = {"target_sha256": target_manifest["target"]["sha256"],
-              "compiler_sha256": tools["compiler_sha256"], "object_sha256": sha256(output),
+              "compiler_sha256": tools["compiler_sha256"],
               "manifest_sha256": sha256(config_path),
-              "inputs": {name: sha256(ROOT / name) for name in build["inputs"]},
-              "flags": build["flags"], "units": {}}
+              "builds": {}, "units": {}}
+    for build_name in dict.fromkeys(unit["build"] for unit in selected.values()):
+        build = builds[build_name]
+        output = ROOT / build["object"]
+        compiled = toolchain.compile(ROOT / build["source"], output, build["flags"])
+        output.with_suffix(".log").write_text(compiled.stdout)
+        report["builds"][build_name] = {
+            "object_sha256": sha256(output),
+            "inputs": {name: sha256(ROOT / name) for name in build["inputs"]},
+            "flags": build["flags"], "object": build["object"]}
     for name, unit in selected.items():
+        output = ROOT / builds[unit["build"]]["object"]
         result = compare(output, unit, pe)
+        result["build"] = unit["build"]
         report["units"][name] = result
         print(f"{'EXACT' if result['exact'] else 'DIFF'} {name}: "
               f"{result['difference_count']} differing bytes, "
