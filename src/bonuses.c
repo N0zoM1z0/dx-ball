@@ -27,7 +27,7 @@ static void apply_bonus_kind(void)
     switch (dxball_bonuses.current->kind) {
     case 0:
         ++dxball_lives;
-        dxball_life_score_limit = 999999999;
+        dxball_displayed_score = 999999999;
         play_bonus_sound(13);
         dxball_bonus_8_active = 0;
         dxball_bonus_9_active = 0;

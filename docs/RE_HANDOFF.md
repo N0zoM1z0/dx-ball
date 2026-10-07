@@ -14,12 +14,13 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-main ball motion, full frame routing, UI, audio, and MIDI remain pending.
+presentation, round reset, UI, audio, and MIDI remain pending. Main ball motion
+and full frame routing now have scoped maintained implementations.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. Seventy-six source functions have scoped
-semantic evidence from 61,314 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. Eighty-five source functions have scoped
+semantic evidence from 65,894 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -67,25 +68,33 @@ initialization at index 50 is controlled; original adjacent-memory behavior
 remains unresolved. Sixteen multi-frame bonus checks are included in this
 batch's direct total, not added as separate acceptance counts.
 
-Continue from the retained main ball updater at `0x410770`, Evidence
-`ev_c7fd5e1c178073afb10924d1dbfa6df93f8ba8566533fd41f8dcb8f48b3a92a1`,
-3,223 owned/span bytes, and paddle renderer `0x412EC0`, Evidence
-`ev_0b4d5d681d951be5b6a69ac1d9d09db3cc965811c767e0b2b4f7296609cc020a`.
-Reuse their complete dossiers before new queries. Main physics, projectile/power
-consumers, complete frame routing and sound backends remain pending. Feedback goes to the
-user-requested `/tmp/dxball_rea_feedback.md`; it distinguishes provider issues
-from project-client issues. REA sessions now archive each run and save successful
-Evidence prefixes even when a later query fails. Interactive sessions reuse one
-imported program; the SDK receive cap is 32 MiB, with response/transport logs.
-The large ball dossier exceeded the default 10 MiB client cap; recovery and
-explicit close succeeded. The snapshot contains 78 Evidence records; six inline
-records from the failed run remain independently archived. See `docs/REA.md`.
+The current core checkpoint adds nine functions and 4,580 direct cases, including
+200 continuous frames as a subset. Main ball updater 0x410770 (3,223 bytes) and
+full gameplay frame 0x40F8B0 (1,683 owned / 1,688 span) are maintained alongside
+point hits, retirement, drops, fire effects and shooting. See `docs/CORE_OWNER.md`
+for every Evidence ID, typed queue, original collision/input order and scope.
+The twelve frame callbacks remain explicit pending implementations; both main
+bodies execute in the oracle. Global 0x43A884 is now correctly named displayed_score.
+No new exact claims were made while prioritizing core behavior.
 
-This checkpoint ran one grouped cold replay, every earlier differential suite,
-the new connected suite, exact rejection tests, real REA smoke/close, three
-toolchain builds and Wine inspector comparisons. Reports and exact objects are
-retained under `.analysis/checkpoints/powerups-76-40/`. Reuse unchanged reports
-and reconstruct the next related family before validating again.
+Continue with the runtime spine: retained paddle renderer 0x412EC0,
+restart transition 0x415DF0 and round initialization 0x415C40, then frame caller
+0x403730 and game initialization 0x40E570 as required. Restore connected core
+behavior before independent leaf matching. Reuse complete dossiers under
+`.analysis/rea/runs/2026-10-07T08-21-37.400Z-interactive-2545594/`;
+main ball evidence remains in the earlier 07-42 interactive run. The successful
+session saved 113 Evidence records; six records from the previous failed
+transport run remain separately archived. Feedback goes to the requested
+`/tmp/dxball_rea_feedback.md`. See `docs/REA.md` for interactive reuse and the
+32-MiB client cap. New feedback covers large dossier projection and floating
+expressions omitted by pseudocode.
+
+This checkpoint performs one grouped cold replay of all 40 accepted units,
+all earlier differential suites plus the core oracle, exact rejection tests,
+REA verification, three toolchain builds and Wine inspector comparisons.
+Private reports and exact objects are retained under
+`.analysis/checkpoints/core-85-40/`. Reuse unchanged reports before the next
+connected batch; no per-function cold replay is needed.
 
 The user requires modest CPU/memory use. Project build and REA entry points
 inherit one allowed Linux CPU; CMake uses `--parallel 1`. Ghidra's heap is

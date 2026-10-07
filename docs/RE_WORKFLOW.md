@@ -10,6 +10,8 @@ packages and their native engines before selecting an interpreter.
    `docs/REA.md`; retain returned Evidence IDs and limitations.
 3. Select a related batch of entries from `config/functions.csv`. Reconcile control flow,
    embedded tables, epilogues, and padding; imported sizes are provisional.
+   Prioritize core gameplay and runtime functions, restoring only their necessary
+   small dependencies. Independent leaves and exact tuning can follow later.
 4. Inspect exact instructions, data references, producers, and independent
    consumers through REA. Keep complete evidence and reusable snapshots under
    ignored `.analysis/rea/`; promote reviewed observations into owner documents.

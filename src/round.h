@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-extern DxBallInt dxball_lives, dxball_life_score_limit;
+extern DxBallInt dxball_lives, dxball_displayed_score;
 extern DxBallInt dxball_restart_requested, dxball_level_changed;
 extern DxBallInt dxball_end_requested, dxball_return_to_menu;
 typedef struct DxBallRoundOps {

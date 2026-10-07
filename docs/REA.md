@@ -95,7 +95,9 @@ scripts/rea session --interactive
 
 Send a JSON request or request array per line, then `{"close":true}` to save and
 close. The DX-Ball power-up investigation exercised several batches in one
-session and saved 78 Evidence records. This avoids repeated Ghidra imports
+session and saved 78 Evidence records. The later core investigation reused
+its snapshot for 35 adaptive queries and saved 113 Evidence records on explicit
+close. This avoids repeated Ghidra imports
 while keeping requests sequential and recording every complete response.
 The client uses the SDK's supported 32 MiB receive buffer and logs response
 sizes, timings and transport errors. A ball-update dossier was 11,726,147 bytes,
@@ -180,7 +182,11 @@ functions and nine complete exact units result from that investigation. The
 board, round and ball dependencies, adding 21 verified functions and seven exact
 units. REA's assembly and CRT dispatch records recover the quantized sine/cosine
 ABI that pseudocode omits; original execution checks both computed tables and
-the rebound rounding. The full ball updater remains an inspected open scope.
+the rebound rounding. The [core investigation](CORE_OWNER.md) connects the
+3,223-byte ball updater and complete frame to shots, board damage and deferred
+powers. Its 4,580 original-x86 cases include 200 continuous frames; unresolved
+frame dependencies remain explicit. Instruction views also recovered x87
+expressions and unequal projectile offsets omitted from pseudocode.
 
 References: upstream [installation and release boundaries](https://github.com/morluto/rea/blob/main/docs/installation.md),
 [MCP lifecycle/deadlines](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md),

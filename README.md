@@ -15,8 +15,8 @@ Binary analysis uses [REA](https://github.com/morluto/rea) with its Ghidra
 provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
-> Boards, resources, brick hits, animations, particles, bonus application and
-> paddle/ball dependencies have **76 maintained functions**, **61,314 target differential cases**, and
+> Core ball physics and frame routing now join the board, resource and entity
+> owners: **85 maintained functions**, **65,894 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -29,6 +29,10 @@ and reproduces all 63 compiled bytes. See the
 The [power-up investigation](docs/POWERUPS_OWNER.md) follows the bonus updater
 through board effects and paddle rebounds, recovering the game's computed
 trigonometry tables and checking its rounding against original execution.
+The [core gameplay investigation](docs/CORE_OWNER.md) connects the main ball
+updater to the full frame, testing collisions, shot damage and deferred powers
+over 200 continuous frames. Timing, presentation and round reset remain explicit
+dependencies until their implementations are recovered.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -139,6 +143,7 @@ scripts/repo-python tests/test_gameplay_differential.py
 scripts/repo-python tests/test_effects_differential.py
 scripts/repo-python tests/test_entities_differential.py
 scripts/repo-python tests/test_powerups_differential.py
+scripts/repo-python tests/test_core_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 

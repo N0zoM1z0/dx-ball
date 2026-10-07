@@ -110,3 +110,10 @@ See [power-up evidence](POWERUPS_OWNER.md) for body extents and semantic-only
 neighbors. Current pan literal labels are `$T617` / `$T618`; both contents are
 attested. Natural source helpers shorten several recovered bodies, which remain
 semantic-only rather than receiving artificial code or padding to force a match.
+
+The core gameplay batch adds scoped ball/frame implementations and necessary
+physics/shot/fire dependencies without new exact units. All existing 40 units
+retain zero differences after one grouped cold replay. The corrected displayed-
+score global name changes reviewed source/input identities, not target behavior.
+See [core evidence](CORE_OWNER.md); independent leaf matching remains deferred
+while the remaining runtime spine is reconstructed.

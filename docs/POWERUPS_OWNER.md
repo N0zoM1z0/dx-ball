@@ -137,9 +137,10 @@ The retained main ball updater at `0x410770`, Evidence
 `ev_c7fd5e1c178073afb10924d1dbfa6df93f8ba8566533fd41f8dcb8f48b3a92a1`,
 and paddle renderer at `0x412EC0`, Evidence
 `ev_0b4d5d681d951be5b6a69ac1d9d09db3cc965811c767e0b2b4f7296609cc020a`,
-are inspected but unimplemented. Main ball physics, projectile/power consumers,
-frame orchestration and platform integration remain pending. This checkpoint
-is an analysis library, not yet a playable reconstruction.
+were retained for the next batch. Main ball physics, projectiles and frame
+orchestration are now maintained with scoped validation in
+[CORE_OWNER.md](CORE_OWNER.md). Paddle rendering and platform integration remain
+pending; the project is still an analysis library.
 
 ## Reproduce the batch
 

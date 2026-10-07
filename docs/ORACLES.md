@@ -10,6 +10,7 @@
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
 | Entity x86 vs compiled native C | Bonus RNG/production, particle lifecycle, typed queues and full pixel buffers | Bonus movement/application, hardware presentation, complete frame |
 | Power-up x86 vs compiled native C | Bonus collection/application, board powers, paddle cursor state, typed ball ownership, computed trig and rebounds | Main ball frame, terminal adjacent-memory reads, platform drivers |
+| Core x86 vs compiled native C | Full ball/frame bodies, connected collision, shot damage, fire animation, power/input order and 200 continuous frames | Traced time/render/score/last-brick/reset bodies, platform drivers, playable game |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -60,8 +61,9 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 61,314 direct-case total;
-the frame updater is not marked reconstructed. See [effects evidence](EFFECTS_OWNER.md).
+request state. Integration cases are excluded from the 65,894 direct-case total. This
+phase-only suite does not establish the whole frame; its later scoped acceptance
+comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
 The entity oracle adds 7,343 direct cases (5,204 particles and 2,139 bonuses),
 bringing that checkpoint's direct total to 45,380. Another 980 integration checks
@@ -73,8 +75,8 @@ Lock retries. Earlier owner tests continue to isolate their explicit
 dependencies. Integration counts remain separate from function acceptance.
 See [entity evidence](ENTITIES_OWNER.md) for precise domains and missing work.
 
-The connected power-up oracle adds 15,934 direct cases, bringing the current
-total to 61,314 across 76 maintained functions. It executes actual geometry,
+The connected power-up oracle adds 15,934 direct cases, bringing that checkpoint
+to 61,314 across 76 maintained functions. It executes actual geometry,
 bonus movement/application, board powers, round transitions, ball ownership and
 rebound math. Both entire computed trig tables, x87 returns, ordered callbacks,
 all relevant globals/grids and live/freed storage agree. Sixteen multi-frame
@@ -87,3 +89,14 @@ Owners can route individual semantic units to a connected oracle through
 Earlier isolated oracles remain part of the private suite. A stable family is
 cold-replayed together, and unchanged completed reports are reused at that
 checkpoint rather than replaying after each restored function.
+
+The core oracle adds 4,580 direct cases across nine functions, bringing the
+current total to 65,894 across 85 maintained functions. Both original bosses
+execute: the 3,223-byte main ball updater and complete gameplay frame. Point
+hits, projectiles, fire effects, board damage, powers, bonuses, particles and
+brick animation remain connected. Twelve explicit time/render/score/last-brick/
+reset dependencies are traced; their implementations remain pending. The 200
+continuous-frame cases are a subset of the direct count. Source uses actual
+payloads and natural typed list helpers, without separate leaf claims. See
+[core evidence](CORE_OWNER.md) for original quirks, complete input domains and
+the remaining runtime work. All earlier suites and 40 exact units pass together.

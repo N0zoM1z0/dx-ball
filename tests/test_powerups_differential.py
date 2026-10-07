@@ -23,7 +23,7 @@ BallNode, BallList = entity_type('BallNode', ('x', 'y', 'previous_x', 'previous_
 SHAPES.update(scratch=(0x43FAA8, Node, 12), balls=(0x43A8B8, BallNode, 52), clones=(0x43AAA8, BallNode, 52))
 GLOBALS = {0x43A878:'paddle_x', 0x43A87C:'paddle_y', 0x43FA94:'paddle_width', 0x43A880:'paddle_sprite',
  0x43A904:'paddle_previous_x', 0x43A908:'paddle_previous_y', 0x438B0C:'mouse_x', 0x438B14:'mouse_y',
- 0x422898:'cursor_warp_disabled', 0x43A888:'lives', 0x43A884:'life_score_limit',
+ 0x422898:'cursor_warp_disabled', 0x43A888:'lives', 0x43A884:'displayed_score',
  0x43A90C:'restart_requested', 0x422D1C:'level_changed', 0x425974:'end_requested', 0x425978:'return_to_menu',
  0x43A8D8:'bonus_3_active', 0x43A88C:'bonus_3_ticks', 0x43FAF4:'bonus_7_active',
  0x43A860:'bonus_8_active', 0x43A890:'bonus_9_active', 0x43A910:'bonus_12_active',
