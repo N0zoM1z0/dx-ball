@@ -1,0 +1,20 @@
+name: Public build and tracking
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  public-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install hash-pinned analysis packages
+        run: scripts/bootstrap-python.sh
+      - name: Build portable source and validate recorded evidence
+        run: scripts/repo-python scripts/ci.py --public
