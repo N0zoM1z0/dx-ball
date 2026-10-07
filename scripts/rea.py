@@ -63,14 +63,15 @@ def main(arguments):
             raise ValueError("REA query must use the configured original/DXBALL.EXE")
     if arguments[0] == "session":
         if len(arguments) != 2:
-            raise ValueError("usage: scripts/rea session REQUESTS.json")
+            raise ValueError("usage: scripts/rea session REQUESTS.json|--interactive")
         spec = importlib.util.spec_from_file_location("verify_target", ROOT / "scripts/verify-target.py")
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         module.verify()
         lock = session_lock()
+        request = arguments[1] if arguments[1] == "--interactive" else str(Path(arguments[1]).resolve())
         return subprocess.run([str(node), str(ROOT / "scripts/rea-session.mjs"),
-                               str(Path(arguments[1]).resolve())], env=env, cwd=ROOT).returncode
+                               request], env=env, cwd=ROOT).returncode
     lock = session_lock()
     return subprocess.run([str(node), str(runtime / "node_modules/rea-agents/scripts/rea.mjs"),
                            *arguments], env=env, cwd=ROOT).returncode

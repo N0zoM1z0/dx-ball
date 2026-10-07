@@ -87,6 +87,21 @@ import/auto-analysis; it is separate from MCP connection startup.
 The pinned split MCP SDK takes request options as the second `callTool` argument;
 the helper supplies its deadline there rather than relying on the 60-second default.
 
+For adaptive follow-ups, keep one imported program open:
+
+```bash
+scripts/rea session --interactive
+```
+
+Send a JSON request or request array per line, then `{"close":true}` to save and
+close. The DX-Ball power-up investigation exercised several batches in one
+session and saved 78 Evidence records. This avoids repeated Ghidra imports
+while keeping requests sequential and recording every complete response.
+The client uses the SDK's supported 32 MiB receive buffer and logs response
+sizes, timings and transport errors. A ball-update dossier was 11,726,147 bytes,
+above the SDK's default 10 MiB; increasing this client limit recovered the full
+response without changing REA, Ghidra or the pinned SDK.
+
 REA runs on one inherited allowed Linux CPU, with a 512 MiB maximum Ghidra heap
 set through the supported `GHIDRA_HEADLESS_MAXMEM` launcher variable. REA
 sanitizes external JVM option strings; inherited affinity constrains provider
@@ -99,8 +114,10 @@ CMake uses `--parallel 1`.
 Each session also retains an independent timestamped directory under
 `.analysis/rea/runs/`, including requests, tool catalog, complete results and
 errors. The root files remain latest-result aliases for the smoke verifier.
-A failed later query still closes with a snapshot, preserving the successful
+A failed later query attempts to close with a snapshot, preserving the successful
 prefix; cleanup errors are recorded separately without hiding the query error.
+If the transport has already closed, complete received Evidence files remain
+available even though that run cannot save its new records into the snapshot.
 This was exercised against REA's uppercase-address rejection in `xrefs`: the
 preceding RNG dossier remained in the saved snapshot after the nonzero exit.
 
