@@ -20,6 +20,7 @@
 | Menu/splash x86 vs compiled native C | Twenty controller/math entries, point pixels, scroller/credit waves, text and palette arrays; 5,615 direct cases plus 58 separate transitions | Resource parsing/release on this edge, audio/MIDI, real drivers, editor/game-over and playable EXE |
 | Game-over x86 vs compiled native C | Eight controller/ranking/name entries, score reload/insertion and file effects, text placement and line pixels; 6,531 direct cases plus 76 separate finish-game/menu transitions | Nondefault locale mapping, resource parsing/release on lifecycle edge, audio/MIDI, real drivers, editor and playable EXE |
 | Editor x86 vs compiled native C | Ten mode-2/hit-region entries, actual board load/store and independent file outputs; 2,921 direct cases plus 32 separate menu/editor/game transitions | Invalid/unbounded storage, resource lifecycle parsing/release, real Windows/COM/audio/MIDI delivery and playable EXE |
+| MDS/music x86 vs compiled native C | Thirteen parser/converter/stream/wrapper entries; 2,109 direct cases and 134 separate lifecycles, all six original songs, ordered cleanup and RET20 | Kernel32/WinMM implementations, asynchronous/hardware playback, overflow/unbounded backing, wrapper malloc failure and playable EXE |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -70,7 +71,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 92,161 direct-case total. This
+request state. Integration cases are excluded from the 94,270 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -198,7 +199,7 @@ and native-library identity; every earlier suite, forty cold exact units and
 three compiler products are revalidated as one group. See
 [game-over evidence](GAMEOVER_OWNER.md) for full domains and body ranges.
 
-The editor checkpoint adds ten entries and 2,921 direct cases, bringing current
+The editor checkpoint adds ten entries and 2,921 direct cases, bringing that checkpoint
 acceptance to 186 maintained entries and 92,161 distinct suite cases. Another
 32 checks connect actual Control-F1 entry, toolbar selection, held painting,
 board commands, Escape/menu return and game start. Native actual host stdio
@@ -207,3 +208,17 @@ working grids agree. Region-table poison/canaries, inclusive last-match hits,
 every key byte and all 400 paint/erase cells are checked. Every earlier suite,
 forty cold exact units, eight rejection checks, three builds, Wine inspectors
 and saved REA verification run together. See [editor evidence](EDITOR_OWNER.md).
+
+
+The MDS/music checkpoint adds thirteen entries and 2,109 direct cases; current
+acceptance is 199 maintained entries and 94,270 distinct direct suite cases.
+Another 134 lifecycle checks are counted separately. Only Kernel32/WinMM imports
+and x86 wrapper allocation calls are controlled: original RIFF/MIDS parsing,
+compact-event expansion, all stream state machines and callback instructions
+execute. Native allocations are independent; pointer roles and ABI-dependent
+allocation sizes are normalized, while the original 64-byte header request is
+checked strictly. Full logical records, reserved fields and payloads agree.
+Coverage includes all 256 mode bytes, malformed chunks, partial writes,
+allocation/mapping failures, each queue/control failure, high state bits and
+six complete original-song lifecycles. Real driver delivery remains pending.
+See [MDS/music evidence](MIDI_OWNER.md) for exact domains and import contracts.

@@ -237,3 +237,13 @@ the third bank's count and allocation mode. The source now shares that storage,
 and lifecycle tests compare all bank metadata. Six entries pass 1,115 direct
 cases plus 26 separate connected checks; the session saves 152 cumulative
 Evidence records. Actual drivers, device creation, UI and audio still need work.
+
+
+The [MDS/music investigation](MIDI_OWNER.md) reuses saved loader/parser
+Evidence, then follows stream ownership and callbacks through eleven more
+function dossiers. Instruction evidence corrects pseudocode return values 6/7
+and establishes five stdcall callback arguments with RET 20. The independent
+oracle checks all six original songs, bounded errors and connected playback
+control; real WinMM delivery remains pending. Explicit close saves 236
+cumulative Evidence records. Duplicate aliases are cleaned only after the
+complete immutable run is archived and SHA-256 comparisons agree.

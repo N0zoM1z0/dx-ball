@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **186 maintained functions**, **92,161 target differential cases**, and
+> entity owners: **199 maintained functions**, **94,270 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -57,8 +57,11 @@ The [editor investigation](docs/EDITOR_OWNER.md) connects toolbar selection,
 CTRL painting and board persistence to actual mode/key/window routing in 2,921
 direct cases and 32 separate transitions. REA confirms empty F-key branches
 and the original store-before-switch behavior. All five mode controllers now
-default to maintained source. Real Windows/driver integration, audio and MIDI
-remain in progress.
+default to maintained source. The [MDS music investigation](docs/MIDI_OWNER.md)
+follows the loader through compact-event expansion and stream callbacks. REA's
+instruction view corrects two return codes and an incomplete callback prototype;
+2,109 direct cases and 134 separate lifecycle checks cover all six original
+songs. Real Windows/driver integration and sound delivery remain in progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -179,6 +182,7 @@ scripts/repo-python tests/test_ui_differential.py
 scripts/repo-python tests/test_intro_differential.py
 scripts/repo-python tests/test_gameover_differential.py
 scripts/repo-python tests/test_editor_differential.py
+scripts/repo-python tests/test_midi_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -222,14 +226,15 @@ source, original behavior and acceptance limits.
 - [Menu, splash, scroller and point animation](docs/INTRO_OWNER.md).
 - [Game-over, name entry and persisted high scores](docs/GAMEOVER_OWNER.md).
 - [Editor controllers, toolbar hit regions and board persistence](docs/EDITOR_OWNER.md).
+- [MDS parsing, MIDI stream control and music lifecycle](docs/MIDI_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:
   independent source, scoped semantic, and complete byte-exact facts.
 
-Upcoming work includes the Windows adapter and real device delivery, sound
-and MIDI. Names and ownership
+Upcoming work includes the Windows adapter, DirectSound controller, real
+WinMM/DirectDraw delivery and complete EXE integration. Names and ownership
 are promoted only with target-local evidence.
 
 ## License and attribution

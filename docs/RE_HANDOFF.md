@@ -14,14 +14,16 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-actual device/driver delivery, audio and MIDI remain pending. Main ball motion,
+actual device/driver delivery and audio remain pending. MDS parsing and MIDI
+stream/music control now have scoped implementations; real WinMM binding is
+still pending. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
 scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred eighty-six source functions have scoped
-semantic evidence from 92,161 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred ninety-nine source functions have scoped
+semantic evidence from 94,270 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -276,10 +278,41 @@ and native-library identity. Checkpoint records are retained under
 12.28 MiB of duplicate closed-run catalogs/root aliases; original evidence,
 snapshot, tools and checkpoint records remain intact.
 
-Continue into actual Windows/audio/MIDI adapter and complete EXE integration.
+Continue into DirectSound controllers, actual Windows/WinMM adapters and
+complete EXE integration.
 Prefer connected controller families over independent leaves and reuse retained
 REA dossiers before new queries. Full playable reconstruction remains active.
 Mode 4 initializes first and routes to mode 0. Keep resource and clock behavior
 connected, explicit-count UI strings (including NUL/padding), the 287-record
 point table and the 360-pair wave table. All five controller families have scoped
 original-execution evidence; actual driver/backend delivery remains pending.
+
+
+The MDS/music checkpoint adds thirteen entries with 2,109 direct cases and
+134 separate connected lifecycle checks. Reused open/parser REA dossiers;
+one constrained session obtained eleven further dossiers and one data read,
+then explicitly closed with 236 cumulative Evidence records. See
+`docs/MIDI_OWNER.md` for every ID, body range, ownership and accepted domain.
+Original instructions return 6/7 on play state errors despite pseudocode zero;
+the callback has five stdcall parameters and RET 0x14 despite inferred four.
+Headers/context grow naturally to 120/48 bytes on the native host versus 64/36
+on i686. Import header-size requests stay 64; native fixtures check this boundary
+without pretending host records have the original raw layout.
+
+The independent oracle executes actual parser/converter/controller/callback
+bodies against all six private songs and bounded malformed/failure fixtures.
+Partial event writes, output preservation, lock-failure leak, dangling freed
+buffer pointer, pending count, loop/pause/stop flags and ignored cleanup errors
+are preserved. Platform load/resume/pause/close and final runtime music close
+default to maintained source. Kernel32/WinMM implementations and asynchronous
+hardware scheduling remain controlled; there is no playable EXE yet.
+
+All earlier suites, forty cold exact units, eight rejection checks, native,
+MinGW/VC4 builds, Wine inspectors and saved REA verification run as one group.
+Complete input/native-library identities and reports are retained at
+`.analysis/checkpoints/midi-199-40/`. No new exact claim is made. Cleanup freed
+10.18 MiB of duplicate archived aliases/catalogs during collection; final
+cleanup checks again for disposable artifacts while retaining evidence/tools.
+The previous public CI job could not acquire a runner after five attempts;
+rerun requests returned HTTP500. This is external infrastructure evidence,
+not a local verification pass or a code failure.

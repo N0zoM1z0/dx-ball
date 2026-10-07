@@ -27,7 +27,8 @@ without checking their individual evidence.
 | Menu/splash owner | `src/intro.c`; mode-0/4 controllers, point cloud, scroller/credit waves and palette pulses |
 | Game-over owner | `src/gameover.c`; mode-3 lifecycle/input, name buffer, rank insertion, score-file persistence and ranking pixels |
 | Editor owner | `src/editor.c`; mode-2 lifecycle/input, toolbar hit regions, board painting and persistence |
-| Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
+| MIDI/music owner | `src/midi.c`; RIFF/MIDS parsing, event expansion, WinMM stream state and music wrappers; real WinMM adapter pending |
+| Sound | DirectSound imports and WAV references; controller/backend pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
 `DxBallInt` and `DxBallUInt` are explicit 32-bit scalars; opaque surface handles
@@ -137,7 +138,7 @@ boundaries. The name buffer is forty bytes with the original thirty-character
 input limit; record shifts retain strcpy semantics rather than copying entire
 records. See [game-over evidence](GAMEOVER_OWNER.md). The subsequent
 [editor evidence](EDITOR_OWNER.md) completes the mode-controller family; actual
-platform/audio/MIDI adapter work remains.
+platform/audio/WinMM adapter work remains.
 
 `src/editor.c` shares existing board/input/cursor storage and maintains a
 100-record toolbar hit table plus a DWORD selected tile. It connects actual
@@ -145,3 +146,11 @@ board read/write/load/store and mode/key/window routing. Native host stdio
 and original controlled CRT have independent files; complete outcomes agree.
 Backspace clears only working tiles, while plus/minus store before switching
 or clamping. See [editor evidence](EDITOR_OWNER.md).
+
+
+`src/midi.c` owns the music pointer at `0x421060`, typed context/header arrays,
+compact-event expansion and stream callback. Headers and context retain i686
+layouts while growing with host pointers. The explicit stdcall import table
+preserves original request contracts. Platform and final runtime music
+operations now default to maintained wrappers; real Kernel32/WinMM binding
+and asynchronous device effects remain open. See [music evidence](MIDI_OWNER.md).
