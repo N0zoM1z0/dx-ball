@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Compare a connected bonus/paddle/board/ball family against original x86."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -46,7 +47,7 @@ class FamilyNative(EntitiesNative):
         super().__init__(library)
         self.owners.update(scratch=List.in_dll(self.lib,'dxball_explosive_sources'),
           balls=BallList.in_dll(self.lib,'dxball_balls'), clones=BallList.in_dll(self.lib,'dxball_duplicate_balls'))
-        self.extra = {a:C.c_int32.in_dll(self.lib,'dxball_'+n) for a,n in GLOBALS.items()}
+        self.extra = {a:source_global(C.c_int32, self.lib,'dxball_'+n) for a,n in GLOBALS.items()}
         self.banks = (Bank*3).in_dll(self.lib,'dxball_sprite_banks')
         self.sprites = [Sprite() for _ in range(255)]
         self.control_round, self.round_count = True, 123
@@ -208,7 +209,7 @@ def main():
         n.queue(owner);t.queue(owner)
     seed();call('initialize_trig')
     for name,address in [('sine',0x424650),('cosine',0x424BF8)]:
-        values=(C.c_int32*361).in_dll(n.lib,'dxball_'+name+'_table')
+        values=source_global(C.c_int32*361, n.lib,'dxball_'+name+'_table')
         assert bytes(values)==t.read(address,1444),(name,'computed tables')
         for angle in range(-1080,1081):call(name,angle)
     rng=random.Random(0xDBA107)

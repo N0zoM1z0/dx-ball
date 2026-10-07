@@ -52,7 +52,8 @@ boards, terminal board50 behavior, synchronized frames or physical audio.
 The separate [terminal diagnostic](TERMINAL_RUNTIME.md) now exercises 50
 editor-created single-brick boards and the unchecked index50 read. Its
 observations keep routing success separate from adjacent-storage fidelity;
-the latter remains unresolved in the reconstruction.
+the shared-storage reconstruction now passes both contracts in all three
+profiles. This fixture still does not establish the original campaign.
 
 ## Retained negative focus evidence
 

@@ -5,6 +5,7 @@
 | Target/file and Ghidra attestation | Same executable and sampled mapped bytes | Semantic correctness |
 | Original x86 vs compiled native C | State and ordered dependency effects for tested domains | Original code emission, Windows/pixel equivalence |
 | Pinned VC4.0 COFF replay | Complete function bytes after every explicitly reviewed relocation | Whole-EXE layout, untested function behavior |
+| Shared-storage x86 DLL vs original x86 | All 20,432 storage bytes, auxiliary grid and index after load/store/initialize; 459 cases including overlap at index50 and nonzero unknown bytes | Original source type, native-64 byte layout, arbitrary indices or whole-game fidelity |
 | Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
 | Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
@@ -30,6 +31,15 @@ sprite values, 256 tile bytes across representative modes, update flags and
 coordinates, all 50 complete boards in two modes, and missing/short/full/oversize
 bank files. The 9,502 cases compare execution of the hash-attested target x86,
 not another transcription of the intended algorithm.
+
+After the Windows build, `scripts/repo-python tests/test_windows_storage.py`
+executes the actual MinGW x86 DLL in a source-owned driver and compares it with
+the original copy and initializer instructions. Three deterministic complete
+storage patterns (zero, ramp and random) cover every index0..50 and both copy
+directions. All twelve unclassified bytes can be nonzero. Temporary binary
+fixtures are hashed and removed after success. These 459 integration cases
+remain separate from the 95,873 accepted owner cases. The terminal game control
+uses real input and read-only SDK observations; see [its scope](TERMINAL_RUNTIME.md).
 
 The target's unsupported sprite-helper inputs read an uninitialized local; the
 host helper aborts. No equality is claimed outside 0..22. Draw-cell behavior for

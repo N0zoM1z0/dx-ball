@@ -1,5 +1,33 @@
 # Compiler evidence and exact units
 
+The current shared-storage checkpoint has **35 exact functions / 3,478 bytes**.
+Cold replay of all forty previously accepted units found five changed emissions:
+
+| Retained candidate | Current / target bytes | Differing bytes |
+| --- | ---: | ---: |
+| load-editor-board | 58 / 52 | 23 |
+| store-editor-board | 58 / 52 | 42 |
+| blt-sprite | 199 / 195 | 173 |
+| queue-explosion-at | 100 / 99 | 51 |
+| update-paddle-position | 203 / 203 | 4 |
+
+These functions retain their scoped semantic validation. Their exact claims
+are removed; reviewed relocation mappings remain under `[candidates]` in
+`config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
+--include-candidates` to reproduce the complete comparison, including its
+nonzero exit status. The normal replay selects the 35 accepted units.
+
+REA's terminal-storage investigation establishes the recovered storage region
+and overlapping original CRT copy. The shared C representation changes object
+references and VC4 emission; it does not establish original declarations.
+Relocations to its actual root use reviewed field addends and target base
+`0x43AAB8`. Both copy calls map `memmove` to the observed overlap-aware entry
+`0x417CA0`. Private pan labels are now `$T1075` / `$T1076`, and rb/wb labels
+`$SG734` / `$SG738`; literal contents remain independently attested.
+
+The following records describe the earlier owner checkpoints and their
+original exact totals; the current accepted ledger takes precedence.
+
 The target reports PE linker 3.00 and contains Microsoft CRT strings, with no
 Rich header. The pinned candidate is
 [archaic-msvc/msvc400](https://github.com/archaic-msvc/msvc400/tree/97b4a530238f38b9320a21ca0cb98e4044df7916),
@@ -20,7 +48,7 @@ Canonical compile flags:
 /nologo /c /Od /Ob0 /Oi- /Oy- /Gd /MT /Gy
 ```
 
-These are reproducible per-unit evidence. Matching forty functions does not prove
+These are reproducible per-unit evidence. Matching individual functions does not prove
 all original compilation flags, the complete compiler release, or original
 translation-unit boundaries. `/Gy` gives complete independent function COMDAT
 extents to the oracle; no comparison requests a truncated prefix.
@@ -40,7 +68,7 @@ reconciled. Padding after the terminal return is outside each accepted extent.
 They total **370 bytes**, with zero differences after all configured relocations.
 
 Relocation evidence uses target instructions and independently reconstructed
-global ownership. memcpy is `0x00417CA0`, memset `0x00417C40`, fopen
+global ownership. The overlap-aware copy entry is `0x00417CA0`, memset `0x00417C40`, fopen
 `0x00417C20`, fread `0x00417AA0`, fwrite `0x00417E70`, and fclose `0x00417A30`.
 The board-bank owner documents the referenced globals. `rb\0` at `0x00422890`
 and `wb\0` at `0x00422894` are attested in both the COFF data symbols and target.
@@ -103,7 +131,7 @@ both object and target constant contents remain attested.
 
 The power-up batch adds seven complete exact functions / **675 bytes**:
 scratch-list clear, paddle position, ball append/begin/advance/clear and attached
-ball release. The current total is **40 functions, 4,079 bytes**. All prior units
+ball release. That checkpoint totaled **40 functions, 4,079 bytes**. All prior units
 and the expanded family passed one grouped cold replay after source stabilized.
 The paddle entry includes the SetCursorPos import-slot mapping at `0x00441350`.
 See [power-up evidence](POWERUPS_OWNER.md) for body extents and semantic-only

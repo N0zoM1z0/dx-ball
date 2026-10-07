@@ -93,7 +93,11 @@ collision and application through the new dependencies.
 `src/balls.h` defines the thirteen-field ball payload and separate active/clone
 containers. `src/trig.c` computes the game's 361-entry tables from the observed
 constants. `src/round.h` exposes initialization/count operations, preserving
-terminal-level call order while leaving the original out-of-bank read unresolved.
+terminal-level call order. `src/board_storage.h` represents the recovered bank,
+clock, request-list, count and tile region as one writable object; three unknown
+four-byte intervals remain opaque mutable bytes. Copying through the entire
+object preserves terminal overlap without an extra board or index-specific path.
+The observed x86 layout is checked independently of the native pointer ABI.
 `src/core.c` connects main ball physics and the gameplay frame to these owners.
 `src/runtime.c` supplies real gameplay initialization and life-loss reset, plus
 clock, score and paddle routines. Its mode table defaults all five modes to

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Execute original hit/scan/list/pan bodies; compare maintained C and boundaries."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import csv
@@ -57,12 +58,12 @@ class Ops(C.Structure):
 class GameNative(Native):
     def __init__(self, library):
         super().__init__(library)
-        self.state = {key: C.c_int32.in_dll(self.lib, name) for key, name in [
+        self.state = {key: source_global(C.c_int32, self.lib, name) for key, name in [
             (REMAINING, "dxball_remaining_bricks"), (HARD, "dxball_destroy_hard_tiles"),
             (REDUCED, "dxball_reduced_particles"), (PENDING, "dxball_explosion_pending"),
             (SCORE, "dxball_score")]}
         self.scale = C.c_double.in_dll(self.lib, "dxball_pan_scale")
-        self.list = List.in_dll(self.lib, "dxball_explosions")
+        self.list = source_global(List, self.lib, "dxball_explosions")
         self.buffers = []
         self.cursor = 0
         self.cell = 0

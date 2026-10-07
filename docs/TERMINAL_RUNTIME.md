@@ -1,10 +1,11 @@
 # Terminal round and adjacent storage
 
-The original returns to the menu with three lives and 500 points after clearing
-50 editor-created single-brick boards. VC4 and MinGW controls complete the
-same inputs and exit normally, but their terminal tile buffers contain different
-adjacent globals. This is an unresolved reconstruction gap, even when the
-visible return-to-menu path agrees.
+Original, VC4 and MinGW now return to the menu with three lives and 500 points
+after clearing 50 editor-created single-brick boards. Their terminal tiles
+agree on the reviewed adjacent-storage pattern. REA's loader and CRT evidence
+guided the shared storage reconstruction; an independent x86 copy driver also
+checks nonzero state and both overlap directions. This closes the collected
+storage fixture, not the original campaign or all possible terminal states.
 
 ## Reproduce the diagnostic
 
@@ -14,7 +15,7 @@ After importing the pinned original and building both Windows products:
 # Passing original control; about three minutes on one allowed CPU.
 scripts/repo-python scripts/capture-windows-probe.py --probe terminal --profile original
 
-# Compare all three products; storage mismatches deliberately return exit1.
+# Compare all three products; routing or storage mismatches return exit1.
 scripts/repo-python scripts/capture-windows-probe.py --probe terminal
 ```
 
@@ -33,21 +34,19 @@ this fixture compares their location and the surrounding empty-list/single-ball
 pattern, not equal clock values between independent processes. These 50 custom
 boards do not establish completion of the original campaign or pixel fidelity.
 
-The diagnostic remains outside the passing private CI suite while the source
-storage contract is unresolved. REA's successful recording operation can
+The control is included in the complete private CI suite. REA's recording can
 describe a failed child; the capture helper propagates the child's exit code.
 
 REA process Evidence
-`ev_be5556929420bba0c59c7c58c00fb28eb603e9033cc0fd2418ea28926d00ff58`
-records the completed public three-profile diagnostic and child exit1. Each
-game exits0 after 50 actual clears; the harness fails for the two source storage
-mismatches. This is distinct from a timeout or an incomplete shutdown.
+`ev_051b5f3b2d676747e832207339c1ac960ff0bfd20a1da73ad2a2e9dd72fe989f`
+records the completed three-profile control and child exit0. Each game exits0
+after 50 actual clears, and both routing and storage checks pass.
 
 | Product, this captured batch | Terminal mode / lives / score | Remaining count | Storage fixture |
 | --- | --- | ---: | --- |
 | Original | Menu0 / 3 / 500 | 4 | Pass |
-| VC4 | Menu0 / 3 / 500 | 8 | Mismatch |
-| MinGW i686 | Menu0 / 3 / 500 | 162 | Mismatch |
+| VC4 | Menu0 / 3 / 500 | 4 | Pass |
+| MinGW i686 | Menu0 / 3 / 500 | 3 | Pass |
 
 Each count agrees with the captured tile bytes using the reviewed exclusion of
 0 and 2. The original clock and source pointer bytes can change these counts
@@ -120,42 +119,68 @@ The third slot at `0x43F8EC` likewise has no exact references in
 and no defined type in
 `ev_73c5b60141171d900ae2dfcbd6ae023d48eb18734fad6325ca7929037fdf74fb`.
 
-## Reconstruction boundary
+## Shared storage reconstruction
 
-The maintained bank and tiles are separate C globals. The VC4 linker map puts
-the bank at `0x434FE0` and its end at `0x439E00`; that address holds the board
-index, followed by display mode, a surface pointer and CRT globals. Its observed
-terminal tile prefix starts with index50 and mode1. Both the target addresses
-and source symbols are resolved independently; no expected target address is
-used to read a source process.
+`src/board_storage.h` now represents the observed writable region as one C
+object: the 20,000-byte bank, palette clock, three-pointer request list, ball
+count and 400-byte tiles. The three unclassified four-byte intervals are
+ordinary mutable byte arrays. They are neither identified original padding
+nor fields with invented meanings; the terminal operation actually reads them.
+This is a recovered storage view, not a claim about original source declarations.
 
-The actual MinGW DLL symbols put its bank at `0x62C613A0` and its end at
-`0x62C661C0`, where `dxball_saved_palette` begins. The maintained resource
-owner fills that 256-entry palette from PCX data. This product therefore copies
-palette storage into the terminal tiles rather than the original clock/list/
-count region. These are linked-product observations; portable C does not
-guarantee either layout or define this out-of-array read.
+All owners reference the same fields. The load/store routines use `memmove`
+through the entire object's byte representation, preserving the reviewed
+original CRT overlap behavior. There is no index50 branch, guard, skipped
+initializer or extra board. Both x86 builds assert the reviewed offsets and
+20,432-byte extent. Native pointer widths remain natural for the analysis ABI;
+its byte layout is not claimed identical to x86.
 
-A small pinned-VC4 allocation experiment uses the actual maintained bank,
-clock, request-list, count and tile types with no padding or alignment
-attributes. Tentative C definitions remain linker common symbols. Explicit
-zero initialization produces section-relative offsets of 0/8/20/24 for the
-clock/list/count/tiles after the bank; the original has 0/8/24/32. Merely grouping
-these declarations and adding zero initializers therefore leaves the relevant
-storage difference. A C++ comparison also changes allocation order/linkage;
-it was not adopted as reconstruction source. These are compiler-object
-observations, not evidence of the original declarations or final link layout.
+The independent source-owned driver, `tests/test_windows_storage.py`, executes
+actual MinGW x86 DLL load/store/initialize functions and compares every storage
+byte, auxiliary byte and index against original x86 instructions. Its 459 cases
+cover indices0..50 with zero, ramp and random complete images, including all
+12 unknown bytes and arbitrary pointer representations (never dereferenced by
+these copy operations). Nine cases exercise terminal overlap in both directions
+and initialization. Fixtures/results are hashed then removed after success.
+This integration evidence is separate from the existing 214 maintained functions
+and 95,873 owner cases.
 
-The original-only exploratory run is REA process Evidence
-`ev_6d75d72c70ba7c52dff3798c425940fac2b3705ca639251adfe4a3291c268ea3`.
-It records 50 clears, menu0, lives3, score500 and application exit0. An earlier
-pilot incorrectly expected the ranking screen and timed out; that failed
-attempt remains archived separately. Exploratory routing success does not
-promote the source's different terminal storage to acceptance.
+Source observers resolve the compiler's actual `offsetof`/`sizeof` metadata.
+VC4 uses its attested EXE/map; the MinGW SDK reader reads the actual remote
+metadata. Expected original addresses are not substituted for source addresses,
+and observers remain read-only.
 
-No index guard, skipped initialization, invented extra board, target-memory
-override or source layout padding has been added to hide this gap. Recovery
-still needs a coherent source storage model preserving the now-reviewed
-overlapping-copy behavior. Existing board exact units remain explicitly scoped to indices0..49;
-the round oracle's terminal initialization remains a controlled dependency.
-Maintained/semantic/exact totals are unchanged.
+Cold replay of all 40 former exact units detects five changed emissions. The
+current ledger retains 35 exact functions / 3,478 bytes, while the five reviewed
+mappings remain explicit nonmatching candidates. See [compiler evidence](BUILD_MATCHING.md).
+The source storage model has not been adjusted with inert fields or instruction
+padding to recover those byte claims.
+
+## Earlier layout controls
+
+The earlier three-profile REA recording,
+`ev_be5556929420bba0c59c7c58c00fb28eb603e9033cc0fd2418ea28926d00ff58`,
+records child exit1 for the two source storage mismatches, despite each game's
+normal exit0. Its observed remaining counts were original4 / VC4 8 / MinGW162.
+That complete negative result remains archived separately from the passing run.
+
+Before this reconstruction, the maintained bank and tiles were separate C
+globals. VC4 placed the bank at `0x434FE0` and its end at `0x439E00`, followed by board
+index, display mode, a surface pointer and CRT globals. The old terminal prefix
+started with index50 and mode1. The old MinGW DLL instead placed the bank end
+at `0x62C661C0`, where `dxball_saved_palette` began. Those products copied different
+adjacent storage despite agreeing on return-to-menu routing.
+
+The pinned-VC4 allocation experiment used actual maintained types without
+padding or alignment attributes. Tentative C definitions remained linker common
+symbols. Explicit zero initialization produced tail offsets 0/8/20/24 for
+clock/list/count/tiles; the observed original requires 0/8/24/32. Grouping globals
+alone therefore did not establish the needed relationships. A C++ comparison
+changed allocation order/linkage and was not adopted. These are compiler-object
+observations, not evidence of original source types.
+
+Original-only exploratory REA process Evidence
+`ev_6d75d72c70ba7c52dff3798c425940fac2b3705ca639251adfe4a3291c268ea3`
+records 50 clears, menu0, lives3, score500 and application exit0. An earlier pilot
+incorrectly expected ranking and timed out; that failed attempt remains archived
+separately. Historical routing success alone did not establish storage fidelity.

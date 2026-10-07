@@ -17,7 +17,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **214 maintained functions**, **95,873 target differential cases**, and
-> **40 byte-exact functions totaling 4,079 bytes**. Windows builds now also produce
+> **35 byte-exact functions totaling 3,478 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown; complete gameplay and
@@ -243,11 +243,14 @@ editor paint/save/reload/return. Its observer reads process state without hooks
 or target writes; all three runs persist the same complete 20,000-byte board
 bank in resettable copies. The original 49 files retain their verified hashes.
 
-The optional [terminal diagnostic](docs/TERMINAL_RUNTIME.md) uses REA process
+The [terminal control](docs/TERMINAL_RUNTIME.md) uses REA process
 capture to follow 50 real clears of editor-created boards. Returning to the
-menu agrees in all three controls, but the unchecked terminal read
-exposes different adjacent global storage. This gap remains open; it is separate
-from completing the original campaign.
+menu and the scoped terminal storage pattern agree in all three builds. REA's
+loader and CRT evidence guided one shared storage object and overlap-safe copies;
+459 additional x86 integration cases check every stored byte, including nonzero
+unknown state. Five changed compiler emissions retain semantic validation and
+are [explicitly demoted from exactness](docs/BUILD_MATCHING.md). Completion of
+the original campaign remains unverified.
 
 `tests/test_windows_gameover.py` uses ordinary mouse input to miss balls until
 three lives are exhausted, then enters and edits a name through actual keys.

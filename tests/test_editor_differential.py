@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Original mode-2 controller, hit regions and independent board-file outcomes."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -120,7 +121,7 @@ def checks(library):
         assert table[op*5+2]==C.cast(getattr(fresh,'dxball_'+BODIES[group]),C.c_void_p).value
     assert (C.c_void_p*5).in_dll(fresh,'dxball_key_mode_ops')[2]==C.cast(fresh.dxball_editor_key,C.c_void_p).value
     for address,name in ((0x421064,'hit_region_count'),(0x438AF0,'editor_selected_tile')):
-        assert C.c_int32.in_dll(fresh,'dxball_'+name).value==original.read_u32(address)==0
+        assert source_global(C.c_int32, fresh,'dxball_'+name).value==original.read_u32(address)==0
     assert bytes((C.c_int32*500).in_dll(fresh,'dxball_hit_regions'))==original.read(REGIONS,2000)==bytes(2000)
     h=EditorHarness(library)
     for count in (-2,-1,0,1,23,50,98):

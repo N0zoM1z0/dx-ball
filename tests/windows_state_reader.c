@@ -58,6 +58,25 @@ static int print_bytes(HANDLE process, DWORD address, SIZE_T count)
     printf("\""); return 1;
 }
 
+static DWORD storage_field(HANDLE process, HMODULE local, DWORD base, const char *name)
+{
+    static const char *const names[5] = {"dxball_board_bank", "dxball_palette_tick",
+        "dxball_explosions", "dxball_ball_count", "dxball_board_tiles"};
+    FARPROC region, metadata;
+    DWORD offsets[6];
+    SIZE_T read;
+    int index;
+    for (index = 0; index < 5; ++index) if (strcmp(name, names[index]) == 0) break;
+    if (index == 5) return 0;
+    region = GetProcAddress(local, "dxball_board_storage");
+    metadata = GetProcAddress(local, "dxball_board_storage_offsets");
+    if (region == NULL || metadata == NULL) return 0;
+    if (!ReadProcessMemory(process, (LPCVOID)(base + (DWORD)metadata - (DWORD)local),
+                           offsets, sizeof(offsets), &read) || read != sizeof(offsets)) return 0;
+    if (offsets[0] != 0 || offsets[index] >= offsets[5]) return 0;
+    return base + (DWORD)region - (DWORD)local + offsets[index];
+}
+
 static LRESULT CALLBACK peer_proc(HWND window, UINT message, WPARAM wparam, LPARAM lparam)
 {
     if (message == WM_KEYDOWN && wparam == VK_RETURN) {
@@ -159,8 +178,8 @@ int main(int argc, char **argv)
         if (strspn(name, "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") != strlen(name)) goto failure;
         if (local != NULL) {
             FARPROC procedure = GetProcAddress(local, name);
-            if (procedure == NULL) goto failure;
-            address = base + (DWORD)procedure - (DWORD)local;
+            if (procedure == NULL) address = storage_field(process, local, base, name);
+            else address = base + (DWORD)procedure - (DWORD)local;
         }
         if (address == 0) goto failure;
         printf("%s\"%s\":", index == first ? "" : ",", name);

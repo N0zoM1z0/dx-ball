@@ -13,16 +13,6 @@
 extern "C" {
 #endif
 
-/* The target has three 32-bit payload fields, followed by two pointers. */
-typedef struct DxBallExplosionNode {
-    DxBallInt kind, x, y;
-    struct DxBallExplosionNode *next, *previous;
-} DxBallExplosionNode;
-
-typedef struct DxBallExplosionList {
-    DxBallExplosionNode *current, *first, *last;
-} DxBallExplosionList;
-
 /* Replaceable dependency calls. Brick effects and particles default to their
    maintained owners. Sound defaults to its controller; physical APIs and the
    CRT allocation implementation remain boundaries. */
@@ -42,7 +32,6 @@ extern DxBallInt dxball_reduced_particles;
 extern DxBallInt dxball_explosion_pending;
 extern DxBallInt dxball_score;
 extern double dxball_pan_scale;
-extern DxBallExplosionList dxball_explosions;
 extern DxBallExplosionList dxball_explosive_sources;
 extern DxBallGameplayOps dxball_gameplay_ops;
 

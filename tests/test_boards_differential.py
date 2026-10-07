@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Compare compiled maintained C against actual, hash-verified target x86."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -31,8 +32,8 @@ class RenderOps(C.Structure):
 class Native:
     def __init__(self, library):
         self.lib = C.CDLL(str(library.resolve()))
-        self.bank = (C.c_uint8 * 20000).in_dll(self.lib, "dxball_board_bank")
-        self.tiles = (C.c_uint8 * 400).in_dll(self.lib, "dxball_board_tiles")
+        self.bank = source_global(C.c_uint8 * 20000, self.lib, "dxball_board_bank")
+        self.tiles = source_global(C.c_uint8 * 400, self.lib, "dxball_board_tiles")
         self.aux = (C.c_uint8 * 400).in_dll(self.lib, "dxball_board_aux")
         self.index = C.c_int32.in_dll(self.lib, "dxball_board_index")
         self.mode = C.c_int32.in_dll(self.lib, "dxball_display_mode")

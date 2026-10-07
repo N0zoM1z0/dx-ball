@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Original window/startup/input bodies with declared Windows and COM boundaries."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import itertools
@@ -198,10 +199,10 @@ class PlatformNative(Boundaries,DeviceNative):
             f.argtypes={'win_main':[C.c_size_t]*3+[C.c_int32],'window_proc':[C.c_size_t,C.c_uint32,C.c_size_t,C.c_ssize_t],
                 'initialize_fullscreen':[C.c_size_t,C.c_int32],'initialize_compatible':[C.c_size_t,C.c_int32],
                 'dispatch_key':[C.c_int32],'game_key':[C.c_int32],'dispose_working_surface':[C.c_int32]}.get(name,[])
-    def scalar(self,a,n):return C.c_int32.in_dll(self.lib,'dxball_'+n).value
-    def set_scalar(self,a,n,v):C.c_int32.in_dll(self.lib,'dxball_'+n).value=signed(v)
-    def pointer(self,a,n):return C.c_void_p.in_dll(self.lib,'dxball_'+n).value or 0
-    def set_pointer(self,a,n,v):C.c_void_p.in_dll(self.lib,'dxball_'+n).value=v
+    def scalar(self,a,n):return source_global(C.c_int32, self.lib,'dxball_'+n).value
+    def set_scalar(self,a,n,v):source_global(C.c_int32, self.lib,'dxball_'+n).value=signed(v)
+    def pointer(self,a,n):return source_global(C.c_void_p, self.lib,'dxball_'+n).value or 0
+    def set_pointer(self,a,n,v):source_global(C.c_void_p, self.lib,'dxball_'+n).value=v
     def u32(self,p):return C.c_uint32.from_address(p).value
     def put_u32(self,p,v):C.c_uint32.from_address(p).value=v&0xffffffff
     def put_bytes(self,p,b):C.memmove(p,b,len(b))

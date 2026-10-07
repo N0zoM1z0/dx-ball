@@ -5,7 +5,6 @@
 #include <stdlib.h>
 
 DxBallBallList dxball_balls, dxball_duplicate_balls;
-DxBallInt dxball_ball_count;
 
 DxBallInt DXBALL_FASTCALL dxball_append_ball(DxBallBallList *list)
 {

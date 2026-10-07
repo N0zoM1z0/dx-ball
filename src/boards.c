@@ -4,8 +4,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-DxBallByte dxball_board_bank[DXBALL_BOARD_COUNT][DXBALL_BOARD_SIZE];
-DxBallByte dxball_board_tiles[DXBALL_BOARD_SIZE];
+DxBallBoardStorage dxball_board_storage;
+const DxBallUInt dxball_board_storage_offsets[6] = {
+    offsetof(DxBallBoardStorage, bank), offsetof(DxBallBoardStorage, palette_tick),
+    offsetof(DxBallBoardStorage, explosions), offsetof(DxBallBoardStorage, ball_count),
+    offsetof(DxBallBoardStorage, tiles), sizeof(DxBallBoardStorage)
+};
 DxBallByte dxball_board_aux[DXBALL_BOARD_SIZE];
 DxBallInt dxball_board_index;
 DxBallInt dxball_display_mode;
@@ -42,14 +46,16 @@ void dxball_write_board_bank(const char *path)
 /* FUNCTION: DXBALL 0x0040CEA0 */
 void dxball_load_editor_board(DxBallInt board)
 {
-    memcpy(dxball_board_tiles, dxball_board_bank[board], DXBALL_BOARD_SIZE);
+    memmove(dxball_board_tiles, (const DxBallByte *)&dxball_board_storage
+            + board * DXBALL_BOARD_SIZE, DXBALL_BOARD_SIZE);
     return;
 }
 
 /* FUNCTION: DXBALL 0x0040CEE0 */
 void dxball_store_editor_board(DxBallInt board)
 {
-    memcpy(dxball_board_bank[board], dxball_board_tiles, DXBALL_BOARD_SIZE);
+    memmove((DxBallByte *)&dxball_board_storage + board * DXBALL_BOARD_SIZE,
+            dxball_board_tiles, DXBALL_BOARD_SIZE);
     return;
 }
 

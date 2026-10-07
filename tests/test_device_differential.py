@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Original palette fade and lost-surface recovery, connected to game redraw."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -45,7 +46,7 @@ class DeviceNative(DisplayNative):
             ('dxball_runtime_ops',15,{1:'palette_transition',2:'clear_surface'}),
             ('dxball_display_ops',2,{1:'recover_surfaces'}),
             ('dxball_mode_ops',22,{21:'synchronize_surface'})]:
-            table=(C.c_void_p*length).in_dll(self.lib,symbol)
+            table=source_global(C.c_void_p*length, self.lib,symbol)
             for slot,name in functions.items():table[slot]=C.cast(getattr(self.lib,'dxball_'+name),C.c_void_p).value
         for name in ENTRIES:
             function=getattr(self.lib,'dxball_'+name);function.restype=None

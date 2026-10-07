@@ -1,8 +1,11 @@
 # Full one-function COMDAT extents; every relocation is applied, none masked.
+# [units] records current exact functions; [candidates] retains reviewed mappings
+# for emissions demoted by the shared storage change. --include-candidates
+# replays both sets and fails on their complete, unmasked code differences.
 [builds.boards]
 source = "src/boards.c"
 object = "build/exact/boards.obj"
-inputs = ["src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.c", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units]
@@ -10,7 +13,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.gameplay]
 source = "src/gameplay.c"
 object = "build/exact/gameplay.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-explosion]
@@ -31,8 +34,8 @@ target_address = 0x00406400
 size = 63
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x17, type = "DIR32", symbol = "$T1072", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
-  { offset = 0x20, type = "DIR32", symbol = "$T1073", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
+  { offset = 0x17, type = "DIR32", symbol = "$T1075", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
+  { offset = 0x20, type = "DIR32", symbol = "$T1076", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
   { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0, target = 0x004210A0 },
   { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
 ]
@@ -44,7 +47,7 @@ target_address = 0x004155A0
 size = 139
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x4B, type = "DIR32", symbol = "_dxball_board_tiles", addend = 0, target = 0x0043F8F8 },
+  { offset = 0x4B, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x0043AAB8 },
   { offset = 0x61, type = "REL32", symbol = "_dxball_hit_board_tile", addend = 0, target = 0x00411F40 },
   { offset = 0x72, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
 ]
@@ -59,28 +62,28 @@ relocations = [
   { offset = 0xA, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
 ]
 
-[units.load-editor-board]
+[candidates.load-editor-board]
 build = "boards"
 symbol = "_dxball_load_editor_board"
 target_address = 0x0040CEA0
 size = 52
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x18, type = "DIR32", symbol = "_dxball_board_bank", addend = 0, target = 0x0043AAB8 },
-  { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_tiles", addend = 0, target = 0x0043F8F8 },
-  { offset = 0x23, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x00417CA0 },
+  { offset = 0x18, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
+  { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
+  { offset = 0x29, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00417CA0 },
 ]
 
-[units.store-editor-board]
+[candidates.store-editor-board]
 build = "boards"
 symbol = "_dxball_store_editor_board"
 target_address = 0x0040CEE0
 size = 52
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0xC, type = "DIR32", symbol = "_dxball_board_tiles", addend = 0, target = 0x0043F8F8 },
-  { offset = 0x1D, type = "DIR32", symbol = "_dxball_board_bank", addend = 0, target = 0x0043AAB8 },
-  { offset = 0x23, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x00417CA0 },
+  { offset = 0xC, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
+  { offset = 0x23, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
+  { offset = 0x29, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00417CA0 },
 ]
 
 [units.initialize-board]
@@ -103,12 +106,12 @@ target_address = 0x0040CC30
 size = 96
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "$SG731", addend = 0, target = 0x00422890, data_hex = "726200" },
+  { offset = 0x7, type = "DIR32", symbol = "$SG734", addend = 0, target = 0x00422890, data_hex = "726200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x2F, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
-  { offset = 0x3C, type = "DIR32", symbol = "_dxball_board_bank", addend = 0, target = 0x0043AAB8 },
+  { offset = 0x3C, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
   { offset = 0x41, type = "REL32", symbol = "_fread", addend = 0, target = 0x00417AA0 },
   { offset = 0x49, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x4F, type = "REL32", symbol = "_fclose", addend = 0, target = 0x00417A30 },
@@ -121,12 +124,12 @@ target_address = 0x0040CC90
 size = 96
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "$SG735", addend = 0, target = 0x00422894, data_hex = "776200" },
+  { offset = 0x7, type = "DIR32", symbol = "$SG738", addend = 0, target = 0x00422894, data_hex = "776200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x2F, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
-  { offset = 0x3C, type = "DIR32", symbol = "_dxball_board_bank", addend = 0, target = 0x0043AAB8 },
+  { offset = 0x3C, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
   { offset = 0x41, type = "REL32", symbol = "_fwrite", addend = 0, target = 0x00417E70 },
   { offset = 0x49, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x4F, type = "REL32", symbol = "_fclose", addend = 0, target = 0x00417A30 },
@@ -135,7 +138,7 @@ relocations = [
 [builds.resources]
 source = "src/resources.c"
 object = "build/exact/resources.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.select-sprite-bank]
@@ -188,23 +191,23 @@ relocations = [
   { offset = 0x56, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
 ]
 
-[units.blt-sprite]
+[candidates.blt-sprite]
 build = "resources"
 symbol = "_dxball_blt_sprite"
 target_address = 0x004040B0
 size = 195
 boundary_evidence = "docs/RESOURCE_OWNER.md"
 relocations = [
-  { offset = 0x16, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 0x2D, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 0x3B, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 0x52, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 0x67, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 0x7E, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 0x87, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 0x9E, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 0xAA, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
-  { offset = 0xB0, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
+  { offset = 0x1A, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0x2E, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0x40, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0x54, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0x6D, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0x81, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0x8E, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0xA2, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0xAE, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
+  { offset = 0xB4, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
 ]
 
 [units.blt-keyed-sprite]
@@ -244,7 +247,7 @@ relocations = [
 [builds.effects]
 source = "src/effects.c"
 object = "build/exact/effects.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.c", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.c", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.begin-explosions]
@@ -265,20 +268,20 @@ boundary_evidence = "docs/EFFECTS_OWNER.md"
 relocations = [
 ]
 
-[units.queue-explosion-at]
+[candidates.queue-explosion-at]
 build = "gameplay"
 symbol = "_dxball_queue_explosion_at"
 target_address = 0x00412B30
 size = 99
 boundary_evidence = "docs/EFFECTS_OWNER.md"
 relocations = [
-  { offset = 0x16, type = "DIR32", symbol = "_dxball_board_tiles", addend = 0, target = 0x0043F8F8 },
+  { offset = 0x16, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x0043AAB8 },
   { offset = 0x24, type = "DIR32", symbol = "_dxball_explosion_pending", addend = 0, target = 0x00422D20 },
-  { offset = 0x2D, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
-  { offset = 0x32, type = "REL32", symbol = "@dxball_append_explosion@4", addend = 0, target = 0x00412470 },
-  { offset = 0x37, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
-  { offset = 0x46, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
-  { offset = 0x52, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
+  { offset = 0x2E, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x0043AAB8 },
+  { offset = 0x33, type = "REL32", symbol = "@dxball_append_explosion@4", addend = 0, target = 0x00412470 },
+  { offset = 0x38, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x0043AAB8 },
+  { offset = 0x47, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x0043AAB8 },
+  { offset = 0x53, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x0043AAB8 },
 ]
 
 [units.begin-brick-effects]
@@ -348,13 +351,13 @@ relocations = [
 [builds.particles]
 source = "src/particles.c"
 object = "build/exact/particles.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.c", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.c", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.bonuses]
 source = "src/bonuses.c"
 object = "build/exact/bonuses.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-particle]
@@ -486,31 +489,31 @@ relocations = [
 [builds.geometry]
 source = "src/geometry.c"
 object = "build/exact/geometry.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.paddle]
 source = "src/paddle.c"
 object = "build/exact/paddle.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.c", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.c", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.round]
 source = "src/round.c"
 object = "build/exact/round.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.trig]
 source = "src/trig.c"
 object = "build/exact/trig.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.c", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.c", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.balls]
 source = "src/balls.c"
 object = "build/exact/balls.obj"
-inputs = ["src/balls.c", "src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/sound.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.c", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.clear-explosion-list]
@@ -523,7 +526,7 @@ relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_explosion@4", addend = 0, target = 0x0040FF50 },
 ]
 
-[units.update-paddle-position]
+[candidates.update-paddle-position]
 build = "paddle"
 symbol = "_dxball_update_paddle_position"
 target_address = 0x00412DF0
@@ -542,8 +545,8 @@ relocations = [
   { offset = 0x6B, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0, target = 0x0043FA94 },
   { offset = 0x79, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
   { offset = 0x7F, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x00422898 },
-  { offset = 0x8B, type = "DIR32", symbol = "_dxball_mouse_x", addend = 0, target = 0x00438B0C },
-  { offset = 0x91, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
+  { offset = 0x8B, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
+  { offset = 0x91, type = "DIR32", symbol = "_dxball_mouse_x", addend = 0, target = 0x00438B0C },
   { offset = 0x9C, type = "DIR32", symbol = "_dxball_mouse_y", addend = 0, target = 0x00438B14 },
   { offset = 0xA2, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
   { offset = 0xA9, type = "DIR32", symbol = "_dxball_set_cursor_position", addend = 0, target = 0x00441350 },

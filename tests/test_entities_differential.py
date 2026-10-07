@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Compare original particle/bonus bodies, typed queues and 8-bit surface writes."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -71,7 +72,7 @@ class EntitiesNative(EffectsNative):
         EffectOps.in_dll(self.lib, "dxball_effect_ops").deallocate_node = self.entity_callbacks[1]
         for table, field, function in [(Ops, "particle", "dxball_spawn_particle"),
                                        (EffectOps, "bonus", "dxball_generate_bonus")]:
-            base = C.addressof(table.in_dll(self.lib, "dxball_gameplay_ops" if table is Ops else "dxball_effect_ops"))
+            base = C.addressof(source_global(table, self.lib, "dxball_gameplay_ops" if table is Ops else "dxball_effect_ops"))
             C.c_void_p.from_address(base + getattr(table, field).offset).value = C.cast(getattr(self.lib, function), C.c_void_p).value
         for name in ENTRIES:
             function = getattr(self.lib, "dxball_" + name)

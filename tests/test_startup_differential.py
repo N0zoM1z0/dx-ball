@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Working-resource startup, score/board I/O, RNG calls and bank ownership."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -188,11 +189,11 @@ def main():
             ('dxball_mode_ops',22,{20:'initialize_device_state'}),
             ('dxball_runtime_ops',15,{10:'draw_text',11:'draw_centered_text',13:'release_sprite_banks'}),
             ('dxball_gameplay_ops',6,{4:'random_range'})):
-        pointers=(C.c_void_p*length).in_dll(fresh,table)
+        pointers=source_global(C.c_void_p*length, fresh,table)
         for slot,name in bindings.items():assert pointers[slot]==C.cast(getattr(fresh,'dxball_'+name),C.c_void_p).value,(table,slot,'production default')
     for address,name in ((0x4228A0,'display_buffer_count'),(0x4228A8,'device_reset_requested'),
             (0x4228D0,'draw_to_primary'),(0x4228D4,'software_only'),(0x421084,'text_spacing')):
-        assert C.c_int32.in_dll(fresh,'dxball_'+name).value==original.read_u32(address)==1,(name,'fresh default')
+        assert source_global(C.c_int32, fresh,'dxball_'+name).value==original.read_u32(address)==1,(name,'fresh default')
     released=release_checks(a.library);h=StartupHarness(a.library);h.cases['release_sprite_banks']=released
     for access,opened,written in itertools.product((-1,0,1),(False,True),(0,15)):
         h.seed()

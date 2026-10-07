@@ -3,24 +3,11 @@
 
 #include <stddef.h>
 #include <stdio.h>
+#include "board_storage.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-typedef unsigned char DxBallByte;
-typedef signed int DxBallInt;
-typedef unsigned int DxBallUInt;
-typedef size_t DxBallSurface;
-typedef char DxBallIntMustBe32Bits[(sizeof(DxBallInt) == 4) ? 1 : -1];
-
-enum {
-    DXBALL_BOARD_COUNT = 50,
-    DXBALL_BOARD_WIDTH = 20,
-    DXBALL_BOARD_HEIGHT = 20,
-    DXBALL_BOARD_SIZE = 400,
-    DXBALL_BOARD_BANK_SIZE = 20000
-};
 
 typedef struct DxBallRect {
     DxBallInt left, top, right, bottom;
@@ -35,8 +22,6 @@ typedef struct DxBallRenderOps {
     void (*invalidate)(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom);
 } DxBallRenderOps;
 
-extern DxBallByte dxball_board_bank[DXBALL_BOARD_COUNT][DXBALL_BOARD_SIZE];
-extern DxBallByte dxball_board_tiles[DXBALL_BOARD_SIZE];
 /* Explosion-animation occupancy: set on spawn and cleared on final cleanup. */
 extern DxBallByte dxball_board_aux[DXBALL_BOARD_SIZE];
 extern DxBallInt dxball_board_index;

@@ -17,7 +17,6 @@ DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
 DxBallInt dxball_paused, dxball_mouse_action;
 DxBallInt dxball_draw_to_primary = 1;
 DxBallInt dxball_last_brick_deadline;
-DxBallUInt dxball_palette_tick;
 DxBallFrameOps dxball_frame_ops = {
     dxball_current_time, dxball_elapsed, dxball_animate_palette, dxball_refresh_score,
     dxball_wait_frames, dxball_restore_regions, dxball_draw_effect_sprite, dxball_draw_paddle,

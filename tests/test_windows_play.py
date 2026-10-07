@@ -8,6 +8,9 @@ import shutil
 import subprocess
 import sys
 import time
+import struct
+import pefile
+from source_state import STORAGE_FIELDS
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -51,11 +54,26 @@ class Observer:
                 assert metadata['game_map_sha256'] == digest(link_map)
                 text = link_map.read_text()
                 addresses = {}
-                for name in fields:
-                    values = re.findall(r'\s_dxball_' + name + r'\s+([0-9a-fA-F]{8})\s', text)
+                executable = ROOT / 'build/vc40/dxball.exe'
+                assert metadata['executables']['dxball'] == digest(executable)
+                image = pefile.PE(str(executable))
+                def mapped(name):
+                    values = re.findall(r'\s_' + name + r'\s+([0-9a-fA-F]{8})\s', text)
                     if len(values) != 1:
                         raise AssertionError('Missing/ambiguous VC4 map symbol: ' + name)
-                    addresses[name] = int(values[0], 16)
+                    return int(values[0], 16)
+                storage = mapped('dxball_board_storage')
+                layout = struct.unpack('<6I', image.get_data(
+                    mapped('dxball_board_storage_offsets') - image.OPTIONAL_HEADER.ImageBase, 24))
+                assert layout[0] == 0
+                for name in fields:
+                    symbol = 'dxball_' + name
+                    if symbol in STORAGE_FIELDS:
+                        offset = layout[STORAGE_FIELDS[symbol]]
+                        assert offset < layout[5]
+                        addresses[name] = storage + offset
+                    else:
+                        addresses[name] = mapped(symbol)
             self.arguments = prefix + ['addresses']
             self.arguments += [name + shapes.get(name, shape(name)) + '=' + hex(address)
                                for name, address in addresses.items()]
@@ -226,7 +244,7 @@ def observe(profile, env, reports):
 
 def input_identities():
     inputs = [str(path.relative_to(ROOT)) for path in sorted((ROOT / 'src').glob('*.[ch]'))]
-    inputs += ['tests/windows_state_reader.c', 'tests/test_windows_play.py',
+    inputs += ['tests/source_state.py', 'tests/windows_state_reader.c', 'tests/test_windows_play.py',
                'CMakeLists.txt', 'config/mingw-i686.cmake', 'scripts/build-windows.py',
                'tests/test_windows_runtime.py', 'tests/target_oracle.py',
                'tests/test_powerups_differential.py', 'tests/test_core_differential.py',

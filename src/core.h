@@ -42,7 +42,6 @@ extern DxBallInt dxball_projectile_count;
 extern DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
 extern DxBallInt dxball_paused, dxball_draw_to_primary, dxball_mouse_action;
 extern DxBallInt dxball_last_brick_deadline;
-extern DxBallUInt dxball_palette_tick;
 extern DxBallFrameOps dxball_frame_ops;
 
 /* Valid sprite metadata, finite non-overflowing integer state, and live list

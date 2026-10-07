@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Execute original lightning, dirty-region and presentation bodies together."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -76,7 +77,7 @@ class DisplayNative(RuntimeNative):
                 ('dxball_render_ops',3,{0:'draw_sprite',1:'restore_board_region',2:'invalidate_region'}),
                 ('dxball_effect_ops',5,{2:'draw_keyed_sprite',3:'draw_reduced_sprite',4:'restore_effect_region'})]
         for symbol,length,functions in tables:
-            table=(C.c_void_p*length).in_dll(self.lib,symbol)
+            table=source_global(C.c_void_p*length, self.lib,symbol)
             for i,name in functions.items():table[i]=C.cast(getattr(self.lib,'dxball_'+name),C.c_void_p).value
         C.c_void_p.in_dll(self.lib,'dxball_particle_region').value=C.cast(self.lib.dxball_queue_region,C.c_void_p).value
         counts={'queue_region':4,'invalidate_region':4,'restore_effect_region':4,

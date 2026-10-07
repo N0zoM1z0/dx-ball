@@ -5,6 +5,7 @@ Only imports, COM methods and CRT allocation/termination are controlled. Mock
 freed blocks remain mapped as tombstones; this observes dangling pointers without
 claiming subsequent dereferences are valid. No sound-controller model is used.
 """
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -331,7 +332,7 @@ class Harness:
             ('dxball_runtime_ops',15,{7:'load_sound',12:'release_sounds'}),
             ('dxball_gameplay_ops',6,{2:'stop_sound',3:'play_sound'}),
             ('dxball_display_ops',2,{0:'update_sound'})):
-            slots=(P*length).in_dll(lib,table)
+            slots=source_global(P*length, lib,table)
             for slot,name in bindings.items():assert slots[slot]==C.cast(getattr(lib,'dxball_'+name),P).value
         self.n=Native(library);self.t=Target();self.cases=dict.fromkeys(ENTRIES,0);self.connected_checks=0
     def reset(self,**kw):self.n.reset(**kw);self.t.reset(**kw)

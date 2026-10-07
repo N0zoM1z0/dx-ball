@@ -12,7 +12,6 @@ typedef struct DxBallBallList {
 } DxBallBallList;
 
 extern DxBallBallList dxball_balls, dxball_duplicate_balls;
-extern DxBallInt dxball_ball_count;
 DxBallInt DXBALL_FASTCALL dxball_append_ball(DxBallBallList *list);
 DxBallInt DXBALL_FASTCALL dxball_begin_balls(DxBallBallList *list);
 DxBallInt DXBALL_FASTCALL dxball_advance_ball(DxBallBallList *list);

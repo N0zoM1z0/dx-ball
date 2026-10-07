@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Original mode/lifecycle bodies, connected to maintained physics and rendering state."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -223,7 +224,7 @@ class RuntimeHarness(Harness):
         n.saved[:]=bytes((i*31+7)%256 for i in range(1024));t.write(SAVED_PALETTE,bytes(n.saved))
         n.live[:]=b'\x9a'*1024;t.write(LIVE_PALETTE,bytes(n.live))
         for name,value,address in [('primary_surface',C.addressof(n.primary),0x4228B4),('secondary_surface',C.addressof(n.secondary),0x4228B8)]:
-            C.c_size_t.in_dll(n.lib,'dxball_'+name).value=value;t.write_u32(address,t.PRIMARY if name=='primary_surface' else t.SECONDARY)
+            source_global(C.c_size_t, n.lib,'dxball_'+name).value=value;t.write_u32(address,t.PRIMARY if name=='primary_surface' else t.SECONDARY)
         for bank in range(3):
             n.banks[bank].count=0;n.banks[bank].mode=0
             t.write(BANKS+bank*1048+1020,bytes(8))

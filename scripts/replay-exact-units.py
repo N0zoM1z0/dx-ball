@@ -59,12 +59,17 @@ def compare(object_path, unit, pe):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--unit", action="append", help="replay only named units")
+    parser.add_argument("--include-candidates", action="store_true",
+                        help="also compare retained nonmatching candidates; differences fail")
     parser.add_argument("--report", type=Path, default=ROOT / "build/reports/exact-replay.json")
     args = parser.parse_args()
     config_path = ROOT / "config/match-units.toml"
     manifest = tomllib.loads(config_path.read_text())
     builds = manifest["builds"]
-    selected = {name: unit for name, unit in manifest["units"].items()
+    available = dict(manifest["units"])
+    if args.include_candidates:
+        available.update(manifest.get("candidates", {}))
+    selected = {name: unit for name, unit in available.items()
                 if not args.unit or name in args.unit}
     if not selected or (args.unit and set(args.unit) - selected.keys()):
         raise ValueError("no units or unknown requested unit")

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Original game-over controllers, name entry, rank insertion and score I/O."""
+from source_state import source_global
 import argparse
 import ctypes as C
 import hashlib
@@ -144,7 +145,7 @@ def main():
     assert (C.c_void_p*5).in_dll(lib,'dxball_key_mode_ops')[3]==C.cast(lib.dxball_game_over_key,C.c_void_p).value
     for address,name in GLOBALS.items():
         if name in ('score_name_length','score_blink_tick','selected_score_index','score_cursor_visible','show_high_scores','entering_score_name'):
-            assert C.c_int32.in_dll(lib,'dxball_'+name).value==raw.read_u32(address)==0
+            assert source_global(C.c_int32, lib,'dxball_'+name).value==raw.read_u32(address)==0
     assert raw.read_u32(0x423658)==0 # original default C-locale branch
     h=GameoverHarness(a.library)
     # Every placement boundary, equal-score precedence and UINT_MAX use actual

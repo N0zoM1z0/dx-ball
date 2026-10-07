@@ -13,7 +13,6 @@ DxBallInt dxball_reduced_particles;
 DxBallInt dxball_explosion_pending;
 DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
-DxBallExplosionList dxball_explosions;
 DxBallExplosionList dxball_explosive_sources;
 DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, dxball_stop_sound, dxball_play_sound, dxball_random_range, dxball_spawn_particle };
 

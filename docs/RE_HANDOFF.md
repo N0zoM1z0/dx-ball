@@ -1,5 +1,35 @@
 # Current handoff
 
+The shared-storage checkpoint represents the recovered bank/clock/request-list/
+count/tile region in one C object, retaining twelve unclassified mutable bytes.
+Load/store use the reviewed overlap-aware copy semantics through the whole
+object. REA process Evidence
+`ev_051b5f3b2d676747e832207339c1ac960ff0bfd20a1da73ad2a2e9dd72fe989f`
+records original/VC4/MinGW completing 50 custom-board clears, agreeing on the
+scoped terminal storage pattern, and exiting 0. See
+[terminal evidence](TERMINAL_RUNTIME.md) for static IDs and limits.
+
+All 18 owner suites are freshly replayed after the shared-header/state change.
+Counts remain 214 maintained / 95,873 direct cases; 459 complete-image x86 storage
+cases are separate integration evidence. All 40 former exact units were cold
+compared; five changed emissions are demoted and retained as explicit
+`[candidates]`. Current acceptance is 35 exact functions / 3,478 bytes. The eight
+rejection checks and Windows regression families pass. Previous sound-batch
+reports cannot be reused for these changed input sets. The new private archive
+is `.analysis/checkpoints/windows-storage-214-35/`.
+
+The source-owned copy driver hashes and removes its roughly 18 MiB of temporary
+streams after success. Continue journaled cleanup after archiving runtime
+reports; preserve originals, manual saves, unique REA records and pinned tools.
+Next: full original-board progression, physical Windows focus recovery, actual
+audio/asynchronous MIDI, embedded resources and unknown function origins.
+Final storage-batch cleanup recovered another 4.85 MiB from resettable
+runtime copies and disposable probe products (151 journaled operations).
+The roughly 18 MiB storage-driver streams were already removed after each
+successful test. Unique evidence and all original inputs remain retained.
+
+Historical owner checkpoint records follow.
+
 Earlier storage housekeeping recovered 548.11 MiB: 4.85 MiB of resettable
 runtime probe files and 543.26 MiB from the verified Ghidra download ZIP.
 The installed REA/Node/Ghidra/JDK inputs attest independently of that archive;
@@ -17,7 +47,7 @@ Its private project is `ghidra-project/DXBALL`.
 The first maintained family is board-bank I/O, editor load/store, per-board
 initialization, tile-to-sprite mapping, active-surface selection, and board
 drawing. Original x86 execution is the behavioral oracle. File I/O and rendering
-dependencies are intercepted; memcpy/memset execute the target's actual CRT.
+dependencies are intercepted; the copy/memset calls execute the target's actual CRT.
 Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. Windows
@@ -31,7 +61,7 @@ full frame routing/drawing, game initialization and life-loss reset now have
 scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
-Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
+Thirty-five configured units cold-replay exactly, totaling 3,478 bytes; accepted
 records are in `config/matches.csv`. Two hundred fourteen source functions have scoped
 semantic evidence from 95,873 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
@@ -69,7 +99,8 @@ default to maintained source. Particle writes agree across complete controlled
 8-bit buffers; the DirectDraw driver is still pending. See `docs/ENTITIES_OWNER.md`
 for all fourteen REA Evidence IDs, typed layouts, RNG order and exact boundaries.
 The entity checkpoint used pan literal names `$T637` / `$T638`, with both
-contents attested; the current sound checkpoint uses `$T1072` / `$T1073`.
+contents attested; the sound checkpoint used `$T1072` / `$T1073`. The current
+shared-storage replay attests `$T1075` / `$T1076`.
 
 The bonus updater at `0x413E20`, Evidence
 `ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
@@ -78,8 +109,8 @@ adds 21 functions and 15,934 cases across bonus application, board powers,
 geometry, paddle position, round transitions, ball ownership/release/cloning,
 computed trig and paddle rebounds. Seven new exact units add 675 bytes. See
 `docs/POWERUPS_OWNER.md` for complete Evidence IDs and scopes. Terminal level
-initialization at index 50 is controlled; original adjacent-memory behavior
-remains unresolved. Sixteen multi-frame bonus checks are included in this
+initialization at index 50 is controlled in that family; the separate x86
+storage and runtime controls now test the recovered adjacent region. Sixteen multi-frame bonus checks are included in this
 batch's direct total, not added as separate acceptance counts.
 
 The preceding core checkpoint added nine functions and 4,580 direct cases, including
@@ -355,7 +386,7 @@ and lost-buffer reload/retry. See docs/SOUND_OWNER.md for every REA Evidence ID,
 body ranges, COM slots, the 20-byte descriptor, allocation37 uncertainty and
 explicit dangling-record/handle-leak failure scope. Audio callbacks now default
 to maintained controllers; real DirectSound/WinMM/DirectDraw adapters and a
-playable EXE remain pending. Current screen-pan VC4 literals are $T1072/$T1073;
+playable EXE remain pending. That sound checkpoint's screen-pan VC4 literals are $T1072/$T1073;
 complete cold comparison still checks their original data and every byte.
 The native compiler is GCC13.3 Debug; single-job MinGW and pinned VC4 builds
 share the same C source. Periodic cleanup journals preserve originals, pinned
@@ -499,7 +530,7 @@ and the native library identity are freshly verified unchanged; the complete
 sound-214-40 differential/cold checkpoint is reused. Stable reports and capture
 Evidence are retained at .analysis/checkpoints/windows-round-214-40/;
 negative focus captures and bounded compressed traces have separate archives.
-Counters remain 214 maintained /95,873 direct /40 exact /4,079 bytes.
+Counters remain 214 maintained / 95,873 direct /40 exact /4,079 bytes.
 
 Next: physical/alternative-runtime focus recovery, terminal/all-original-board
 progression, embedded resources, actual audio/asynchronous MIDI and origin
@@ -548,7 +579,7 @@ related Windows controls were rerun once after the stable CMake/capture batch:
 public native/tracking, strict MinGW, baseline startup, play/editor, natural
 game-over, real round advance, final tracking and saved REA all pass. All 67
 semantic paths, eight exact input maps and native-library hash are unchanged;
-reuse the sound-214-40 cold/differential checkpoint. Counts stay 214 /95,873 /
+reuse the sound-214-40 cold/differential checkpoint. Counts stay 214 / 95,873 /
 40 /4,079 bytes. Retained records/products/source references and checks live
 at .analysis/checkpoints/windows-ddraw-status-214-40/. Successful game focus
 recovery on physical Windows, audio/MIDI, all-original-board behavior and
