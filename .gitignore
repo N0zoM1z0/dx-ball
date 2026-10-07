@@ -1,0 +1,14 @@
+original/
+.tools/
+.analysis/
+ghidra-project/
+build/
+.venv/
+__pycache__/
+*.py[cod]
+*.exe
+*.dll
+*.zip
+*.log
+*.gpr
+*.rep/

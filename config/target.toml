@@ -1,0 +1,74 @@
+[target]
+title = "DX-Ball"
+version = "1.07"
+region = "english"
+filename = "DXBALL.EXE"
+size = 158208
+sha256 = "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba"
+md5 = "befb302490540ad70aef67353c9e52c1"
+
+[provenance]
+archive = "DX_Ball_Win_Preinstalled_EN.zip"
+archive_sha256 = "e6c8a8d2b55e3d3bd5908b8febaab82493b2fb3e154877143f1266731a007cbb"
+evidence = "User-provided archive; README.TXT states v1.07 and October 31st 1996; EXE contains V 1.07."
+
+[pe]
+machine = "i386"
+image_base = "0x00400000"
+entry_point = "0x004187A0"
+timestamp_utc = "1996-10-31T12:33:17+00:00"
+linker_version = "3.00"
+size_of_image = 286720
+headers_raw_size = 1024
+text_start = "0x00401000"
+text_end = "0x0041FEEB"
+text_virtual_size = 126700
+text_raw_offset = "0x00000400"
+text_raw_size = 126976
+relocations_stripped = false
+
+[[pe.sections]]
+name = ".text"
+rva = "0x00001000"
+virtual_size = 126700
+raw_offset = "0x00000400"
+raw_size = 126976
+
+[[pe.sections]]
+name = ".rdata"
+rva = "0x00020000"
+virtual_size = 984
+raw_offset = "0x0001F400"
+raw_size = 1024
+
+[[pe.sections]]
+name = ".data"
+rva = "0x00021000"
+virtual_size = 130432
+raw_offset = "0x0001F800"
+raw_size = 14336
+
+[[pe.sections]]
+name = ".idata"
+rva = "0x00041000"
+virtual_size = 2720
+raw_offset = "0x00023000"
+raw_size = 3072
+
+[[pe.sections]]
+name = ".rsrc"
+rva = "0x00042000"
+virtual_size = 924
+raw_offset = "0x00023C00"
+raw_size = 1024
+
+[[pe.sections]]
+name = ".reloc"
+rva = "0x00043000"
+virtual_size = 10426
+raw_offset = "0x00024000"
+raw_size = 10752
+
+[toolchain]
+family = "unclassified"
+evidence = "PE linker 3.00 and Microsoft Visual C++ Runtime Library string observed; no Rich header. Exact compiler release and flags unknown."
