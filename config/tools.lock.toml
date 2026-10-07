@@ -10,3 +10,32 @@ asset = "OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz"
 sha256 = "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94"
 url = "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz"
 
+[msvc40]
+repository = "https://github.com/archaic-msvc/msvc400.git"
+commit = "97b4a530238f38b9320a21ca0cb98e4044df7916"
+selection = ".tools/msvc400"
+compiler_banner = "Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 10.00.5270 for 80x86"
+linker_banner = "Microsoft (R) 32-Bit Incremental Linker Version 3.00.5270"
+identity_state = "observed-candidate"
+compiler_sha256 = "f097e736bb04d38391c8b524945d58809ec4c42e97c056eca6f40bba2de910c3"
+c_frontend_sha256 = "7a7c14aff9631b9460a5666a8c344a5a177fce125ba3c4e9c2a4d57c7f402bb2"
+cpp_frontend_sha256 = "3376b1dfaff0bdb1018b13fbb22cf407858044f327d4bbc3e4d9335640aea7f0"
+optimizer_sha256 = "820ed4e4930db97bcba646afb88fdb7d1f329631ca8e5b84096c0d6daa82e9a9"
+linker_sha256 = "81109c8cb534debc0c5645db7c3a1b99dd646d982b0fd545070ceb1c77f9cb6c"
+pdb_backend_sha256 = "7c99519244e1dfe9f8cbc0b54842a757c22121c4269572c7c744d8bd7da0d419"
+include_tree_sha256 = "c18631c69f487b9f1218f90c5e74712ad15360c745e28ee0a1c406615d166ac9"
+lib_tree_sha256 = "137325d4ff292120fd770f4e6e1f2d3da2f71f61dc1b0dd1f632d9cd908b029c"
+
+[python.capstone]
+version = "5.0.6"
+wrapper_sha256 = "de6aa463d9008ce52827d5b6074780bc141f5422ccc07e4163851d0fee7c1719"
+native_sha256 = "fb3e851989440c51fa026fa5be0441a5d5f09d3c4018f6521138762bfbf473b8"
+
+[python.pefile]
+version = "2024.8.26"
+wrapper_sha256 = "0d0eb68f0f169182613dc64b3ab50b20855508c1c1d2faafe8fccf23edb6a345"
+
+[python.unicorn]
+version = "2.1.4"
+wrapper_sha256 = "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b"
+native_sha256 = "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c"

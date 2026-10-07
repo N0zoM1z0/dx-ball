@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Adapted from th10: choose and attest the interpreter before running repo tools.
+repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+candidates=()
+if [[ -n "${DXBALL_PYTHON:-}" ]]; then
+    candidates+=("$DXBALL_PYTHON")
+else
+    if command -v python3 >/dev/null 2>&1; then
+        candidates+=("$(command -v python3)")
+    fi
+    if [[ -n "${CONDA_PREFIX:-}" ]]; then
+        candidates+=("$CONDA_PREFIX/bin/python3")
+    fi
+    if [[ -n "${HOME:-}" ]]; then
+        candidates+=("$HOME/miniconda3/bin/python3")
+    fi
+fi
+
+for repo_python in "${candidates[@]}"; do
+    [[ -x "$repo_python" ]] || continue
+    for package_root in "$repo_root/.tools/python" ""; do
+        python_environment=()
+        if [[ -n "$package_root" ]]; then
+            python_environment+=("PYTHONPATH=$package_root${PYTHONPATH:+:$PYTHONPATH}")
+        fi
+        if env "${python_environment[@]}" "$repo_python" \
+            "$repo_root/scripts/verify-python.py" >/dev/null 2>&1; then
+            exec env "${python_environment[@]}" "$repo_python" "$@"
+        fi
+    done
+done
+
+printf '%s\n' \
+    'error: no interpreter can load the hash-pinned analysis packages' \
+    'Run scripts/bootstrap-python.sh or set DXBALL_PYTHON to a matching interpreter.' >&2
+exit 1

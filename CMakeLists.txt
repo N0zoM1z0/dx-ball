@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.20)
+project(dxball_reconstruction VERSION 0.1.0 LANGUAGES C)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+
+add_library(dxball_core SHARED src/boards.c)
+target_include_directories(dxball_core PUBLIC src)
+set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(dxball_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+
+add_executable(dxball_boards src/board_inspector.c)
+target_link_libraries(dxball_boards PRIVATE dxball_core)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(dxball_boards PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
