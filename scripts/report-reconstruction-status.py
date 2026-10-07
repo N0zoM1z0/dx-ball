@@ -45,4 +45,4 @@ if __name__ == "__main__":
         print(f"{result['target']}: {result['function_candidates']} provisional candidates")
         print(f"Source-present: {result['source_present']}; exact: {result['exact_functions']} ({result['exact_bytes']} bytes)")
         print(f"Authored confirmed: {result['authored_confirmed']}; origin unknown: {result['origin_unknown']}")
-        print("Whole-game fidelity: unverified; Windows EXEs pass bounded Wine ball/paddle/pause/editor/shutdown controls")
+        print(f"Windows runtime scope: {result['windows_runtime_scope']}")
