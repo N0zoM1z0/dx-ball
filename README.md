@@ -188,6 +188,7 @@ scripts/repo-python tests/test_gameover_differential.py
 scripts/repo-python tests/test_editor_differential.py
 scripts/repo-python tests/test_midi_differential.py
 scripts/repo-python tests/test_sound_differential.py
+scripts/repo-python tests/test_windows_abi.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -233,6 +234,7 @@ source, original behavior and acceptance limits.
 - [Editor controllers, toolbar hit regions and board persistence](docs/EDITOR_OWNER.md).
 - [MDS parsing, MIDI stream control and music lifecycle](docs/MIDI_OWNER.md).
 - [DirectSound lifecycle, WAV loading and lost-buffer recovery](docs/SOUND_OWNER.md).
+- [Windows adapter ABI checks and integration](docs/WINDOWS_ADAPTER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.

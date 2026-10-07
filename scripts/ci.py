@@ -60,6 +60,7 @@ def main():
          "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])
     run(["cmake", "--build", "build/windows-i686", "--parallel", str(BUILD_JOBS)])
     python("tests/test_inspector_builds.py")
+    python("tests/test_windows_abi.py")
     python("scripts/validate-tracking.py", "--require-target")
     python("scripts/report-reconstruction-status.py", "--summary")
     print("Complete private checks passed.")

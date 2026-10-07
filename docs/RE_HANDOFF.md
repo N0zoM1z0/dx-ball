@@ -351,3 +351,19 @@ complete cold comparison still checks their original data and every byte.
 The native compiler is GCC13.3 Debug; single-job MinGW and pinned VC4 builds
 share the same C source. Periodic cleanup journals preserve originals, pinned
 tools, immutable REA evidence and accepted checkpoints.
+
+Windows adapter preflight now has SDK-backed i686 ABI probes in
+tests/windows_core_abi.c and tests/windows_directx_abi.c, run by
+tests/test_windows_abi.py. Core Win32/WinMM layouts pass both VC4 and MinGW;
+the DirectX SDK corroborates the 20-byte original descriptor, 108-byte surface
+descriptor, 100-byte fill record and every called COM slot. Three console
+probes execute under Wine and preserve their outputs/identities. No source
+owner/header, acceptance count, native library or existing exact input changed;
+the complete sound checkpoint's oracles remain reusable. The private CI adds
+the ABI check. See docs/WINDOWS_ADAPTER.md for scope and remaining real binding.
+
+Sound checkpoint commit 36a097c passed all local checks. Remote run 37655488010
+failed before any step: GitHub reported five unsuccessful runner acquisitions,
+runner_id0 and no steps; the failed-job rerun API returned HTTP500. Original
+remote metadata/annotations are retained in the private sound checkpoint.
+This infrastructure result does not establish a public compiler failure.
