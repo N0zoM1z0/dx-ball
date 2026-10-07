@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import subprocess
 import tomllib
+from resource_limits import limit_cpu
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -28,6 +29,7 @@ def windows_path(path):
 
 class Toolchain:
     def __init__(self):
+        limit_cpu()
         self.lock = tomllib.loads((ROOT / "config/tools.lock.toml").read_text())["msvc40"]
         self.path = ROOT / self.lock["selection"]
         prefix = ROOT / ".tools/wineprefix-msvc400"

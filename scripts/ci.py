@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 import subprocess
 import sys
+from resource_limits import BUILD_JOBS, limit_cpu
 
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON = ROOT / "scripts/repo-python"
@@ -19,6 +20,7 @@ def python(script, *arguments):
 
 
 def main():
+    limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--public", action="store_true",
                         help="build and validate public metadata without private originals/tools")
@@ -26,7 +28,7 @@ def main():
     python("scripts/verify-python.py")
     python("scripts/validate-tracking.py", *([] if args.public else ["--require-target"]))
     run(["cmake", "-S", ".", "-B", "build/native", "-G", "Ninja", "-DCMAKE_BUILD_TYPE=Debug"])
-    run(["cmake", "--build", "build/native"])
+    run(["cmake", "--build", "build/native", "--parallel", str(BUILD_JOBS)])
     if args.public:
         print("Public checks passed. Target, exact, and runtime oracles require private originals.")
         return
@@ -42,7 +44,7 @@ def main():
     python("scripts/build-legacy.py")
     run(["cmake", "-S", ".", "-B", "build/windows-i686", "-G", "Ninja",
          "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])
-    run(["cmake", "--build", "build/windows-i686"])
+    run(["cmake", "--build", "build/windows-i686", "--parallel", str(BUILD_JOBS)])
     python("tests/test_inspector_builds.py")
     python("scripts/validate-tracking.py", "--require-target")
     python("scripts/report-reconstruction-status.py", "--summary")

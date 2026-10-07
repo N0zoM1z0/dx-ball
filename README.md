@@ -98,6 +98,9 @@ scripts/repo-python scripts/bootstrap-tools.py --reference-tools /path/to/th095/
 Version, archive, compiler-component, header/library, interpreter-package, and
 native-engine identities are recorded in [tools.lock.toml](config/tools.lock.toml).
 Compiler execution uses this repository's own ignored Wine prefix.
+Builds run one job at a time. On Linux, project build and REA entry points keep
+child processes on one allowed CPU; Ghidra's maximum Java heap is 512 MiB.
+These resource limits keep the workflow modest and can make analysis slower.
 
 REA and its npm dependencies are pinned in `config/rea/package-lock.json`;
 `config/rea.lock.json` binds the installed runtime and Ghidra provider. Use

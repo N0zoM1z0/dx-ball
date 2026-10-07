@@ -38,7 +38,8 @@ let opened = false;
 let completed = 0;
 let failure;
 async function call(name, args) {
-  const response = await client.callTool({name, arguments: args}, undefined,
+  // The pinned split client SDK accepts options as its second argument.
+  const response = await client.callTool({name, arguments: args},
     {timeout: 360000, maxTotalTimeout: 360000});
   const data = response.structuredContent ?? JSON.parse(response.content.find(c => c.type === 'text').text);
   if (response.isError) {

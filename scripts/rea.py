@@ -10,6 +10,7 @@ import sys
 import tomllib
 
 from legacy_toolchain import ROOT, sha256, tree_hash, session_lock
+from resource_limits import ghidra_environment, limit_cpu
 
 
 def environment():
@@ -35,10 +36,11 @@ def environment():
     env = os.environ.copy()
     env.update(GHIDRA_INSTALL_DIR=str(ghidra.resolve()), JAVA_HOME=str(java.resolve()),
                REA_ANALYSIS_PROVIDER="ghidra")
-    return node, runtime, env
+    return node, runtime, ghidra_environment(env)
 
 
 def main(arguments):
+    limit_cpu()
     node, runtime, env = environment()
     if not arguments:
         arguments = ["--help"]

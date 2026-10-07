@@ -84,6 +84,17 @@ Evidence record under `.analysis/rea/`, saves a provider-neutral snapshot, and
 closes the session. It uses the release's real MCP client library and advertised
 tool schemas. The 360-second per-call deadline covers Ghidra's lazy first-query
 import/auto-analysis; it is separate from MCP connection startup.
+The pinned split MCP SDK takes request options as the second `callTool` argument;
+the helper supplies its deadline there rather than relying on the 60-second default.
+
+REA runs on one inherited allowed Linux CPU, with a 512 MiB maximum Ghidra heap
+set through the supported `GHIDRA_HEADLESS_MAXMEM` launcher variable. REA
+sanitizes external JVM option strings; inherited affinity constrains provider
+and native decompiler threads without changing its pinned launcher.
+These limits are applied in `scripts/resource_limits.py`; pinned provider files
+are unchanged. The heap ceiling excludes native/JVM overhead and is not a total
+resident-memory limit. Build entry points use the same CPU restriction and
+CMake uses `--parallel 1`.
 
 Each session also retains an independent timestamped directory under
 `.analysis/rea/runs/`, including requests, tool catalog, complete results and

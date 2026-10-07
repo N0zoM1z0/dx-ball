@@ -31,8 +31,12 @@ products under `build/`, decompiler experiments under `.analysis/`, and private
 databases under `ghidra-project/`. Never publish those files. Store reviewable
 observations in `docs/` and accepted names/origins in `config/`.
 
-Use one writable analysis/compiler session at a time. Work in bounded families
-and commit stable checkpoints frequently. All commit subjects must be English
+Use one writable analysis/compiler session at a time
+and keep resource use modest: CMake builds use `--parallel 1`; project build and
+REA entry points limit Linux child processes to one allowed CPU. REA's Ghidra
+headless JVM uses a 512 MiB maximum heap. Use `scripts/resource_limits.py` rather
+than editing pinned compiler/provider binaries or launching competing sessions.
+Work in bounded families and commit stable checkpoints frequently. All commit subjects must be English
 and start with `gpt-6.1-sol: `. The user has authorized a public GitHub `dx-ball`
 repository and publishing these reconstruction sources.
 
