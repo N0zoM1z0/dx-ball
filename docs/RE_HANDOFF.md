@@ -1,5 +1,28 @@
 # Current handoff
 
+The embedded-resource checkpoint links the two REA-reviewed original leaves
+into private VC4/MinGW game EXEs. The public manifest contains hashes and
+identifiers; no original payload is published. The independent SDK data-file
+probe compares the entire inventory, payloads and 32×32 decoded color/mask
+against the original, plus a resource-free negative link. REA process Evidence
+`ev_2f8be9e3450e9a90aa426454e49f746651d08c2948b2974d69942956fd0726aa`
+records exit 0. Saved REA startup instructions confirm the original requests
+`0x7f00` even though its only group is 101; maintained C preserves that behavior.
+See [embedded resources](EMBEDDED_RESOURCES.md) for static IDs and scope.
+
+A sealed archive audit verifies 298 prior files, all 71 semantic/ledger inputs,
+eight exact build groups and the unchanged native library. The prior 214-function
+/ 95,873-case owner reports and 35-function / 3,478-byte cold report are reused.
+Changed Windows products and runtime input sets are checked separately; no
+function or exact promotion is added. Public CI explicitly uses
+`--without-game-resources`; default private builds require the original.
+
+Cleanup at batch entry recovered 6.39 MiB of resettable probes. Unique REA
+Evidence, originals, pinned tools and manual saves remain preserved.
+
+The shared-storage checkpoint below remains the authority for the unchanged
+owner/exact scopes. Its historical replay and cleanup descriptions follow.
+
 The shared-storage checkpoint represents the recovered bank/clock/request-list/
 count/tile region in one C object, retaining twelve unclassified mutable bytes.
 Load/store use the reviewed overlap-aware copy semantics through the whole
@@ -22,7 +45,7 @@ The source-owned copy driver hashes and removes its roughly 18 MiB of temporary
 streams after success. Continue journaled cleanup after archiving runtime
 reports; preserve originals, manual saves, unique REA records and pinned tools.
 Next: full original-board progression, physical Windows focus recovery, actual
-audio/asynchronous MIDI, embedded resources and unknown function origins.
+audio/asynchronous MIDI, live class/shell icons and unknown function origins.
 Final storage-batch cleanup recovered another 4.85 MiB from resettable
 runtime copies and disposable probe products (151 journaled operations).
 The roughly 18 MiB storage-driver streams were already removed after each

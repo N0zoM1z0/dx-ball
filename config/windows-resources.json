@@ -1,0 +1,38 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "section_address": "0x442000",
+  "section_read_size": 1024,
+  "directory_size": 924,
+  "rea_evidence_ids": [
+    "ev_976caff6e8b92ae322f3964b85a0e918c39ef19b7a30da45208cccbc8b819f8e",
+    "ev_89f8d211bb42186931d85b134afccaa07f27c8f681efd5bb4e8cb81b34a71827"
+  ],
+  "resources": [
+    {
+      "type": 3,
+      "name": 1,
+      "language": 1033,
+      "rva": 270496,
+      "size": 744,
+      "codepage": 0,
+      "sha256": "323a05f548cd71f1448b15aeb4b8348bf51e946ef158e01c25ff3b03dc3e870f"
+    },
+    {
+      "type": 14,
+      "name": 101,
+      "language": 1033,
+      "rva": 271240,
+      "size": 20,
+      "codepage": 0,
+      "sha256": "a0c9d012e2bf6b2fe05c2d97cb5594d97cf2f539e97935c12abd7a3562f4d9bf"
+    }
+  ],
+  "legacy_converter": {
+    "path": ".tools/msvc400/bin/cvtres.exe",
+    "sha256": "7d66e9e5437b8d983432d8addedd7ea342bb814a34b1ffdebbc30018485004e8",
+    "flags": [
+      "/NOLOGO",
+      "/MACHINE:IX86"
+    ]
+  }
+}

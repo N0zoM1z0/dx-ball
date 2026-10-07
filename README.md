@@ -79,6 +79,10 @@ REA process capture retains the run and its limits. The original focus control
 stalls under Wine/Xvfb; an independent SDK probe corroborates a lost-surface
 status-reporting gap, while successful game recovery remains open. Physical audio and
 complete-game fidelity remain unverified.
+The [embedded resource investigation](docs/EMBEDDED_RESOURCES.md) follows REA's
+resource bytes into private VC4/MinGW builds, then checks the complete inventory
+and decoded icon through an independent SDK probe. It preserves the original
+startup's mismatched icon identifier and compares a resource-free control.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -202,6 +206,7 @@ scripts/repo-python tests/test_editor_differential.py
 scripts/repo-python tests/test_midi_differential.py
 scripts/repo-python tests/test_sound_differential.py
 scripts/repo-python tests/test_windows_abi.py
+scripts/repo-python tests/test_windows_resources.py
 scripts/repo-python tests/test_windows_runtime.py
 scripts/repo-python tests/test_windows_play.py
 scripts/repo-python tests/test_windows_gameover.py
@@ -227,8 +232,12 @@ scripts/repo-python scripts/run-windows.py --profile vc40 --prepare-only
 scripts/repo-python scripts/run-windows.py --profile vc40
 ```
 
-The MinGW products can also be built without originals or the private legacy
-toolchain using `scripts/repo-python scripts/build-windows.py`.
+Default Windows builds extract the two embedded resources from the verified
+original and link them into the game EXE. Public source and SDK compilation can
+run without originals or the private legacy toolchain using
+`scripts/repo-python scripts/build-windows.py --without-game-resources`;
+that explicit mode omits original resources. See the
+[resource evidence and build notes](docs/EMBEDDED_RESOURCES.md).
 
 The helper verifies all original asset hashes and keeps score/editor writes in
 `build/runtime/vc40/`; later manual runs preserve those saves. The optional real

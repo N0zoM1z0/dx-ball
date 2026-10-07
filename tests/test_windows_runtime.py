@@ -154,6 +154,7 @@ def main():
     sources += ['CMakeLists.txt', 'config/assets.csv', 'config/tools.lock.toml',
                 'config/mingw-i686.cmake', 'scripts/build-legacy.py',
                 'scripts/build-windows.py',
+                'scripts/windows_resources.py', 'config/windows-resources.json',
                 'scripts/windows_runtime.py', 'scripts/legacy_toolchain.py',
                 'scripts/resource_limits.py', 'tests/test_windows_runtime.py']
     report = {'status': 'pass', 'kind': 'real-Wine-window-input-shutdown-probe',

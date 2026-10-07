@@ -85,8 +85,11 @@ this step did not require another Ghidra import.
 The VC4 linker produces `build/vc40/dxball.exe` using the same maintained C
 owners and user32/gdi32/winmm imports. CMake's i686 Windows build produces
 `build/windows-i686/dxball.exe` beside `libdxball_core.dll`. Native builds retain
-the analysis library/inspectors. Original embedded resource fidelity, including
-the icon, remains pending; a successful window does not prove those resources.
+the analysis library/inspectors. Private game builds now link the two verified
+original resources. An independent SDK probe checks the complete payloads and
+decoded icon while preserving the original startup identifier mismatch; see
+[embedded resource evidence](EMBEDDED_RESOURCES.md). Live class/shell icon
+delivery remains outside that probe.
 
 ```bash
 scripts/repo-python scripts/build-legacy.py
@@ -193,7 +196,7 @@ superseded case aliases. Reports resolve the actual saved filename. The
 immutable imported assets are not renamed or modified.
 
 These controls initially left real game-over/ranking input, focus/surface recovery,
-complete level progression, embedded resources and actual MIDI/audio delivery
+complete level progression, live class/shell icons and actual MIDI/audio delivery
 open. Function acceptance remains 214 maintained /95,873 direct cases /40
 exact functions, separate from these three actual Windows runs.
 
@@ -233,7 +236,7 @@ before a window without a diagnostic; subsequent complete original controls
 passed, and that incomplete launch remains retained rather than classified as
 a source failure or a proven environment defect.
 
-Focus/surface recovery, complete level progression, embedded resources and
+Focus/surface recovery, complete level progression, live class/shell icons and
 physical audio/asynchronous MIDI remain open. No original-function acceptance
 or exact-match count changes arise from this runtime observation work.
 

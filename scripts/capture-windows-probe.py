@@ -15,12 +15,13 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss', 'terminal'), default='round')
+    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss', 'terminal', 'resources'), default='round')
     parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
     args = parser.parse_args()
-    if args.probe == 'ddraw-loss' and args.profile:
-        parser.error('--profile selects a game build; ddraw-loss uses independent SDK surfaces')
+    if args.probe in ('ddraw-loss', 'resources') and args.profile:
+        parser.error('--profile selects a game build; this independent SDK probe takes no profile')
     script = ROOT / 'tests' / ('test_windows_ddraw_loss.py' if args.probe == 'ddraw-loss'
+                              else 'test_windows_resources.py' if args.probe == 'resources'
                               else 'test_windows_terminal.py' if args.probe == 'terminal'
                               else 'test_windows_round.py')
     arguments = [str(script)]
@@ -32,7 +33,8 @@ def main():
     directory = ROOT / 'build/reports/rea-process' / (stamp + '-' + args.probe)
     directory.mkdir(parents=True)
     name = {'focus': 'windows-focus', 'ddraw-loss': 'windows-ddraw-loss',
-            'terminal': 'windows-terminal', 'round': 'windows-round'}[args.probe]
+            'terminal': 'windows-terminal', 'round': 'windows-round',
+            'resources': 'windows-resources'}[args.probe]
     timeout = 1200000 if args.probe == 'terminal' else 300000
     scenario = {
         'executable': str(ROOT / 'scripts/repo-python'),
@@ -64,7 +66,7 @@ def main():
     exit_state = evidence['normalized_result']['exit']
     code = exit_state['code']
     summary = {'evidence_id': evidence['evidence_id'], 'probe': args.probe,
-               'profile': ('independent-sdk' if args.probe == 'ddraw-loss' else args.profile or 'all'),
+               'profile': ('independent-sdk' if args.probe in ('ddraw-loss', 'resources') else args.profile or 'all'),
                'exit': exit_state,
                'scenario_sha256': digest(request), 'evidence_sha256': digest(evidence_path),
                'inputs': {str(path.relative_to(ROOT)): digest(path) for path in

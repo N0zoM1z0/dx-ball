@@ -28,4 +28,4 @@ jobs:
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y gcc-mingw-w64-i686 ninja-build
       - name: Compile Windows adapter and game with strict warnings
-        run: scripts/repo-python scripts/build-windows.py
+        run: scripts/repo-python scripts/build-windows.py --without-game-resources

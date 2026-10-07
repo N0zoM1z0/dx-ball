@@ -158,3 +158,12 @@ layouts while growing with host pointers. The explicit stdcall import table
 preserves original request contracts. Platform and final runtime music
 operations now default to maintained wrappers; real Kernel32/WinMM binding
 and asynchronous device effects remain open. See [music evidence](MIDI_OWNER.md).
+
+Private Windows game links include the two REA-reviewed embedded resources.
+`scripts/windows_resources.py` binds extraction to the original hash and full
+resource manifest, emits a standard private resource object for each linker,
+and records converter/input/product identities. Maintained C and the analysis
+library stay shared. Public CI explicitly omits private resources while compiling
+the same sources and the independent SDK resource reader. See
+[embedded resource evidence](EMBEDDED_RESOURCES.md) for payload/bitmap controls
+and the original startup identifier mismatch.

@@ -251,7 +251,8 @@ def input_identities():
                'tests/test_runtime_differential.py', 'tests/test_platform_differential.py',
                'tests/test_editor_differential.py', 'scripts/windows_runtime.py',
                'scripts/legacy_toolchain.py', 'scripts/resource_limits.py',
-              'scripts/build-legacy.py', 'config/assets.csv', 'config/tools.lock.toml']
+              'scripts/build-legacy.py', 'scripts/windows_resources.py',
+              'config/windows-resources.json', 'config/assets.csv', 'config/tools.lock.toml']
     return {name: digest(ROOT / name) for name in inputs}
 
 

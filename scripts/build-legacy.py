@@ -11,6 +11,8 @@ def main():
     lock = session_lock()
     toolchain = Toolchain()
     toolchain.verify(execute=True)
+    from windows_resources import prepare_game_resources
+    resource_object, resource_metadata = prepare_game_resources('vc40', toolchain)
     builds = tomllib.loads((ROOT / "config/match-units.toml").read_text())["builds"]
     build = builds["boards"]
     directory = ROOT / "build/vc40"
@@ -49,7 +51,7 @@ def main():
     game_arguments = ["/NOLOGO", "/MACHINE:IX86", "/SUBSYSTEM:WINDOWS",
                       "/INCREMENTAL:NO", "/PDB:NONE", "/OUT:" + windows_path(executable),
                       "/MAP:" + windows_path(link_map),
-                      *map(windows_path, objects + game_objects),
+                      *map(windows_path, objects + game_objects + [resource_object]),
                       "user32.lib", "gdi32.lib", "winmm.lib"]
     log.append(toolchain.run("link.exe", game_arguments).stdout)
     if not executable.is_file():
@@ -62,12 +64,13 @@ def main():
     (directory / "build.json").write_text(json.dumps({
         "executables": products,
         "inputs": {name: sha256(ROOT / name) for name in
-                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h", "src/intro.c", "src/intro.h", "src/gameover.c", "src/gameover.h", "src/editor.c", "src/editor.h", "src/midi.c", "src/midi.h", "src/sound.c", "src/sound.h", "src/windows_adapter.h"] + entries + game_sources},
+                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h", "src/intro.c", "src/intro.h", "src/gameover.c", "src/gameover.h", "src/editor.c", "src/editor.h", "src/midi.c", "src/midi.h", "src/sound.c", "src/sound.h", "src/windows_adapter.h"] + entries + game_sources + ["scripts/build-legacy.py", "scripts/windows_resources.py", "scripts/verify-target.py", "config/windows-resources.json"]},
         "compiler_sha256": toolchain.lock["compiler_sha256"],
         "linker_sha256": toolchain.lock["linker_sha256"],
         "flags": build["flags"], "link_flags": arguments[:6],
         "game_link_flags": game_arguments[:7],
         "game_map_sha256": sha256(link_map),
+        "game_resources": resource_metadata,
         "product": "board/resource inspectors and game EXE; playability requires runtime checks",
     }, indent=2) + "\n")
 

@@ -59,6 +59,7 @@ def main():
     python("scripts/build-windows.py")
     python("tests/test_inspector_builds.py")
     python("tests/test_windows_abi.py")
+    python("tests/test_windows_resources.py")
     python("tests/test_windows_storage.py")
     python("tests/test_windows_runtime.py")
     python("tests/test_windows_play.py")
