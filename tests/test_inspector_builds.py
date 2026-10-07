@@ -2,6 +2,7 @@
 """Run native, MinGW i386, and pinned VC4.0 utilities against the real bank."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -35,7 +36,7 @@ def main():
         executable = ROOT / "build" / profile / "dxball_boards.exe"
         for board in (1, 25, 50):
             result = subprocess.run(
-                ["xvfb-run", "-a", "wine", str(executable), windows_path(original), str(board)],
+                ["wine", str(executable), windows_path(original), str(board)],
                 env=tools.env, cwd=ROOT, capture_output=True, text=True, timeout=60,
             )
             if result.returncode != 0:
@@ -52,4 +53,12 @@ def main():
 if __name__ == "__main__":
     if not __debug__:
         raise SystemExit("run without -O")
+    # Keep one display alive throughout the suite; per-executable xvfb-run
+    # teardown lets Wine clients append asynchronous X11 errors to captured JSON.
+    if os.environ.get("DXBALL_INSPECTOR_XVFB") != "1":
+        environment = os.environ.copy()
+        environment["DXBALL_INSPECTOR_XVFB"] = "1"
+        result = subprocess.run(["xvfb-run", "-a", str(ROOT / "scripts/repo-python"),
+                                 str(Path(__file__).resolve())], env=environment)
+        raise SystemExit(result.returncode)
     main()

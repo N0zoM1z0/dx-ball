@@ -54,7 +54,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00403C20,131,0x00403CA2,FUN_00403c20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00403CB0,125,0x00403D2C,FUN_00403cb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00403D30,282,0x00403E49,FUN_00403d30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00403E50,24,0x00403E67,FUN_00403e50,dxball_select_surface,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,all 32-bit handles
+0x00403E50,24,0x00403E67,FUN_00403e50,dxball_select_surface,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,all 32-bit handles; complete extent and relocations reviewed; canonical cold VC4.0 replay
 0x00403E70,24,0x00403E87,FUN_00403e70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00403E90,24,0x00403EA7,FUN_00403e90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00403EB0,178,0x00403F61,FUN_00403eb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -181,11 +181,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040C9C0,163,0x0040CA62,FUN_0040c9c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040CA70,431,0x0040CC1E,FUN_0040ca70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040CC20,16,0x0040CC2F,FUN_0040cc20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040CC30,96,0x0040CC8F,FUN_0040cc30,dxball_read_board_bank,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,path/open/read boundaries
-0x0040CC90,96,0x0040CCEF,FUN_0040cc90,dxball_write_board_bank,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,path/open/write boundaries
+0x0040CC30,96,0x0040CC8F,FUN_0040cc30,dxball_read_board_bank,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,path/open/read boundaries; complete extent and relocations reviewed; canonical cold VC4.0 replay
+0x0040CC90,96,0x0040CCEF,FUN_0040cc90,dxball_write_board_bank,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,path/open/write boundaries; complete extent and relocations reviewed; canonical cold VC4.0 replay
 0x0040CCF0,426,0x0040CE99,FUN_0040ccf0,dxball_board_tile_sprite,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,tile 0..22 only
-0x0040CEA0,52,0x0040CED3,FUN_0040cea0,dxball_load_editor_board,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board 0..49
-0x0040CEE0,52,0x0040CF13,FUN_0040cee0,dxball_store_editor_board,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board 0..49
+0x0040CEA0,52,0x0040CED3,FUN_0040cea0,dxball_load_editor_board,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board 0..49; complete extent and relocations reviewed; canonical cold VC4.0 replay
+0x0040CEE0,52,0x0040CF13,FUN_0040cee0,dxball_store_editor_board,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board 0..49; complete extent and relocations reviewed; canonical cold VC4.0 replay
 0x0040CF20,78,0x0040CF6D,FUN_0040cf20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040CF70,1343,0x0040D4AE,FUN_0040cf70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040D4B0,1147,0x0040D92A,FUN_0040d4b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -245,7 +245,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004116C0,337,0x00411810,FUN_004116c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00411820,45,0x0041184C,FUN_00411820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00411850,220,0x0041192B,FUN_00411850,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00411930,50,0x00411961,FUN_00411930,dxball_initialize_board,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board index 0..49
+0x00411930,50,0x00411961,FUN_00411930,dxball_initialize_board,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board index 0..49; complete extent and relocations reviewed; canonical cold VC4.0 replay
 0x00411970,113,0x004119E0,FUN_00411970,dxball_draw_board,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,valid grid; rendering call trace
 0x004119F0,1349,0x00411F34,FUN_004119f0,dxball_draw_board_tile,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,x/y 0..19; tile bytes 0..255; rendering call trace
 0x00411F40,1315,0x00412462,FUN_00411f40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

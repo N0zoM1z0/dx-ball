@@ -16,7 +16,9 @@ Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration, sprite/PCX decoding,
 ball physics, bonuses, UI, audio, and MIDI remain pending.
 
-VC4.0 is the first compiler candidate. Configure its exact-unit replay and
-record only cold-build successes in `config/matches.csv`. Continue with the
+VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
+Six configured units cold-replay exactly, totaling 370 bytes; accepted records
+are in `config/matches.csv`. Nine source functions have scoped semantic evidence
+from 9,502 differential cases. Eight oracle rejection checks pass. Continue with the
 current board owner's producers/consumers, then sprite-bank ownership at
 `0x00404610`, sprite draw `0x00404180`, and board-hit logic `0x00411F40`.

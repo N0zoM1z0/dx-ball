@@ -233,6 +233,11 @@ def inventory_args(pe: dict[str, object], directory: Path | None = None) -> list
 
 def run_headless(arguments: list[str], required_marker: str) -> None:
     ghidra_home, analyzer = find_analyzer()
+    native_env = environment(ghidra_home)
+    from analysis_tools import verify as verify_analysis_tools
+    if "JAVA_HOME" not in native_env:
+        raise ValueError("set JAVA_HOME to the pinned JDK or install .tools/jdk")
+    verify_analysis_tools(ghidra_home, native_env["JAVA_HOME"])
     command = [
         str(analyzer),
         str(PROJECT_DIR),
@@ -245,7 +250,7 @@ def run_headless(arguments: list[str], required_marker: str) -> None:
     completed = subprocess.run(
         command,
         cwd=ROOT,
-        env=environment(ghidra_home),
+        env=native_env,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
