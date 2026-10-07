@@ -166,7 +166,7 @@ class TargetOracle:
         self.uc.reg_write(UC_X86_REG_EFLAGS, 0x202)
         self.uc.emu_start(entry, self.RETURN, count=getattr(self, "instruction_limit", 1000000))
         assert self.uc.reg_read(UC_X86_REG_EIP) == self.RETURN, "instruction limit reached"
-        assert self.uc.reg_read(UC_X86_REG_ESP) == sp + 4, "cdecl stack imbalance"
+        assert self.uc.reg_read(UC_X86_REG_ESP) == sp + 4 + getattr(self, "callee_cleanup", 0), "stack imbalance"
         for register, value in saved.items():
             assert self.uc.reg_read(register) == value, "callee-saved register changed"
         return self.uc.reg_read(UC_X86_REG_EAX)

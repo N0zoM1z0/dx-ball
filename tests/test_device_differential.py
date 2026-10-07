@@ -120,8 +120,8 @@ class DeviceTarget(DisplayTarget):
 
 
 class DeviceHarness(DisplayHarness):
-    def __init__(self,library):
-        super().__init__(library,DeviceNative,DeviceTarget)
+    def __init__(self,library,native_type=DeviceNative,target_type=DeviceTarget):
+        super().__init__(library,native_type,target_type)
         self.cases=dict.fromkeys(ENTRIES,0);self.connected_checks=0
     def sprite(self,slot,width,height,bank=0):
         super().sprite(slot,width,height,bank)

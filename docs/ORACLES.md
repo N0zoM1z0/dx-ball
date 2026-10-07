@@ -14,6 +14,7 @@
 | Runtime x86 vs compiled native C | Initialization, life-loss reset, mode dispatch, clock, paddle and score bodies; 36 connected frames through game-over | Controlled resources, glyph/render/audio backends, device setup and non-game modes |
 | Display x86 vs compiled native C | Lightning, dirty arrays, sort/merge, palette, waits and flip dispatch; 192 continuous frames with twelve actual gameplay phases | Hardware Blt/Flip/palette pixels, recovery, audio, glyph/resource and non-game boundaries |
 | Device x86 vs compiled native C | Palette fades/creation, color fill requests, bank/surface recovery and synchronization; 26 connected checks | Driver rasterization, reload parsing on this edge, glyph/audio/platform and non-game bodies |
+| Platform x86 vs compiled native C | WinMain, window messages, fullscreen/compatible creation and input bodies; 4,742 cases including stdcall cleanup and process exit | Real Win32 callback delivery, driver behavior, audio/UI/non-game implementations, playable game |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -64,7 +65,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 70,928 direct-case total. This
+request state. Integration cases are excluded from the 75,670 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -139,3 +140,18 @@ platform/non-game boundaries remain controlled. See [device evidence](DEVICE_OWN
 for equality gates, terminal fade iteration, unspecified fill fields and input
 domains. All earlier suites, cold exact replay and three toolchain products
 are revalidated as one batch after these shared changes.
+
+Direct-case totals count each suite's cases once. Semantic ledger rows can
+attach a shared case set to several entries; summing those row counts would
+repeat the same evidence.
+
+The platform owner adds eleven entries and 4,742 direct cases, bringing the
+current checkpoint to 134 maintained entries and 75,670 direct cases. Main
+loops execute real mode dispatch; window input connects real game keys, palette
+fades, redraw and cleanup. Windows/COM/audio and non-game boundaries are
+explicit, including defined failure outputs and finite message scripts. Both
+stdcall entry points verify sixteen bytes of stack cleanup and preserved
+registers. Two singleton failure paths must exit in native child processes and
+stop original execution at the CRT exit boundary. Every previous oracle and
+40 cold exact units is replayed after shared-input changes. See
+[platform evidence](PLATFORM_OWNER.md) for limits.

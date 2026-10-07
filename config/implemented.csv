@@ -5,12 +5,16 @@ address,symbol,source,scope,semantic_unit
 0x00402490,dxball_cosine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-cosine
 0x00403450,dxball_current_time,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-current-time
 0x004034F0,dxball_elapsed,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-elapsed
+0x00403550,dxball_detect_clock,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-detect-clock
 0x004035B0,dxball_synchronize_surface,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-synchronize-surface
 0x00403640,dxball_recover_surfaces,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-recover-surfaces
 0x004036B0,dxball_redraw_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-mode
 0x00403730,dxball_dispatch_frame,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-dispatch-frame
+0x00403820,dxball_dispatch_key,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-dispatch-key
 0x004038D0,dxball_initialize_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-mode
 0x00403950,dxball_cleanup_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-cleanup-mode
+0x00403BD0,dxball_dispose_working_surface,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-dispose-working-surface
+0x00403C20,dxball_initialize_sprite_banks,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-initialize-sprite-banks
 0x00403D30,dxball_restore_sprite_banks,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-restore-sprite-banks
 0x00403E50,dxball_select_surface,src/boards.c,all 32-bit handles,board-render
 0x00403E70,dxball_select_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
@@ -51,6 +55,12 @@ address,symbol,source,scope,semantic_unit
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite
 0x0040CEA0,dxball_load_editor_board,src/boards.c,board 0..49,board-copy
 0x0040CEE0,dxball_store_editor_board,src/boards.c,board 0..49,board-copy
+0x0040CF70,dxball_initialize_fullscreen,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-initialize-fullscreen
+0x0040D4B0,dxball_initialize_compatible,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-initialize-compatible
+0x0040D930,dxball_win_main,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-win-main
+0x0040DA70,dxball_window_proc,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-window-proc
+0x0040DF10,dxball_claim_instance,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-claim-instance
+0x0040DF80,dxball_close_instance,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-close-instance
 0x0040F4C0,dxball_initialize_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-game
 0x0040F7A0,dxball_redraw_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-game
 0x0040F8B0,dxball_game_frame,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-game-frame
@@ -60,6 +70,7 @@ address,symbol,source,scope,semantic_unit
 0x004100F0,dxball_begin_balls,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-begin-balls
 0x00410170,dxball_advance_explosion,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-advance-explosion
 0x004101D0,dxball_advance_ball,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-advance-ball
+0x00410290,dxball_game_key,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-game-key
 0x004105D0,dxball_spawn_ball,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-spawn-ball
 0x004106D0,dxball_append_ball,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-append-ball
 0x00410770,dxball_update_balls,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-update-balls

@@ -20,8 +20,8 @@ scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred twenty-three source functions have scoped
-semantic evidence from 70,928 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred thirty-four source functions have scoped
+semantic evidence from 75,670 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -105,7 +105,7 @@ Last-brick expiry queues an explosion request at 0x412B30 before frame-end
 application; it does not create the animation immediately. Presentation retains
 original selection sorting, sequential merging and BUSY/SURFACELOST behavior.
 
-The current device checkpoint adds six entries and 1,115 direct cases. Palette
+The preceding device checkpoint adds six entries and 1,115 direct cases. Palette
 transition 0x40A340 (1,339 bytes), palette creation, color fills, sprite-bank
 restoration, surface recovery and synchronization now connect to actual waits,
 redraw and frame dispatch. Another 26 connected checks are separate integration
@@ -122,12 +122,13 @@ opaque trace-only handles when invoking maintained clears. Palette fades retain
 their final extra SetEntries/wait and distinct equality gates.
 
 REA establishes that 0x40E570 initializes the mode-0 intro point table;
-gameplay initialization is 0x40F4C0. Continue through actual WinMain 0x40D930,
-Win32/input/DirectDraw device creation, mode-3 game-over/UI and audio. Retained
+gameplay initialization is 0x40F4C0. WinMain 0x40D930, window/input routing and DirectDraw creation now have scoped
+platform implementations. Continue through actual Windows binding, working
+resource setup at 0x403A00, mode-0 intro, mode-3 game-over/UI and audio. Retained
 0x403A00 initializes working resources and vblank timing, not the WinMain entry;
 0x401000 /0x401210 handle MDS music loading, and 0x4026A0 rotates sprite pixels.
 Do not guess their roles from sizes or address ranges. Inspect connected bosses
-through REA before independent leaf matching. The latest 10-33 interactive
+through REA before independent leaf matching. The 10-33 interactive
 session saved 152 cumulative Evidence records. Feedback continues in
 `/tmp/dxball_rea_feedback.md`. These libraries are still not a playable game.
 
@@ -168,3 +169,38 @@ read does not prove the whole load image.
 Commit subjects retain `gpt-6.1-sol: `. Include detailed English bodies describing
 actual REA operations, evidence, implementation and validation where relevant;
 mention REA naturally rather than inserting it into unrelated changes.
+
+The current platform checkpoint adds eleven entries and 4,742 direct cases
+(**134 maintained / 75,670 direct / 40 exact / 4,079 bytes**). See
+`docs/PLATFORM_OWNER.md` for all REA Evidence IDs, owned/span extents and Windows
+API scope. The closed 11-04 session saved 163 cumulative Evidence records.
+WinMain and WndProc both retain stdcall cleanup of sixteen argument bytes.
+Newly identified startup-only COM signatures are typed in the platform header
+over the resource owner's opaque slots; extending the shared vtable types
+changed VC4 register allocation and failed strict replay, so that draft was
+not accepted. The natural owner boundary restores all earlier exact units
+without source profiles, padding, assembly or comparison exceptions.
+
+Input evidence identifies shared restart_requested at 0x43A90C as the
+pause-fade gate and bonus_9_active at 0x43A890 as F1/F2 state. Do not introduce
+independent pause flags or confuse it with bonus_12_active at 0x43A910.
+Compatible creation preserves reduced/low-memory state and stale secondary
+handles; fullscreen uses a strict 310000-byte free-video-memory threshold.
+Only DDSD-selected descriptor fields are meaningful; original unwritten stack
+bytes are excluded. Windows/audio/MIDI/non-game/resource/glyph APIs are
+controlled, with real message callback delivery and drivers still pending.
+Platform builds remain analysis products, not a playable executable.
+
+All earlier oracles, 40 cold exact units, eight rejection checks, native/MinGW/
+VC4 builds, Wine inspectors and saved REA verification pass at this grouped
+checkpoint. Full input identities/reports are private at
+`.analysis/checkpoints/platform-134-40/`. Startup's existing-instance message
+ends with a period, and the process-exit callback must never return.
+
+Local housekeeping recovered 164.64 MiB by deduplicating identical catalogs
+in closed REA archives, deleting root aliases only after verifying archived
+byte-identical results, and removing superseded probe objects/logs. Evidence
+paths, snapshots, tools and checkpoint reports survive. Use
+`scripts/repo-python scripts/clean-local.py` for a preview, add `--apply` for
+cleanup, and retain the private `.analysis/cleanup/` SHA-256 operation journal.
+The saved REA smoke verifier passes after cleanup.

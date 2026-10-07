@@ -7,7 +7,7 @@ without checking their individual evidence.
 
 | Area | Target evidence / current work |
 | --- | --- |
-| Platform startup | `0x0040D930`, Win32 imports, fullscreen DirectDraw messages |
+| Platform startup | `src/platform.c`; WinMain, window/input routing, singleton and fullscreen/compatible DirectDraw creation; Windows adapter pending |
 | Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; non-game modes pending |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
@@ -95,9 +95,19 @@ clock, score and paddle routines. Its mode table defaults mode 1 to maintained
 source; other valid modes require configured implementations. All twelve frame
 phases now default to maintained owners. The display owner supplies lightning,
 dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
-COM drivers, device creation, glyph UI and audio remain pending. Surface recovery,
+COM drivers, Windows binding, glyph UI and audio remain pending. Surface recovery,
 color fills and palette fades now default to `src/device.c`. The third sprite
 bank's count and allocation mode own addresses `0x4265AC` / `0x4265B0`; gameplay
 initialization writes those fields rather than duplicated globals. See
 [core evidence](CORE_OWNER.md), [runtime evidence](RUNTIME_OWNER.md) and
 [display evidence](DISPLAY_OWNER.md) and [device evidence](DEVICE_OWNER.md).
+
+`src/platform.c` recovers the Windows entry loop, message procedure, device
+creation and game key dispatch. Startup-only COM signatures live in
+`src/platform.h`, applied to opaque resource-interface slots with typed calls.
+WinMain/WndProc use stdcall on Windows and the host ABI for native analysis.
+The new oracle compares Windows records with native pointer growth, explicit
+COM output objects, message ordering and non-returning process exits. Audio,
+non-game modes and the actual Win32 adapter remain boundaries. Shared state
+includes the existing restart flag and bonus-9 flag; no duplicate pause/bonus
+fields are introduced. See [platform evidence](PLATFORM_OWNER.md).

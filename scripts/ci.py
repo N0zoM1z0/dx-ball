@@ -47,6 +47,7 @@ def main():
     python("tests/test_runtime_differential.py")
     python("tests/test_display_differential.py")
     python("tests/test_device_differential.py")
+    python("tests/test_platform_differential.py")
     python("scripts/build-legacy.py")
     run(["cmake", "-S", ".", "-B", "build/windows-i686", "-G", "Ninja",
          "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])
