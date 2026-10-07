@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **117 maintained functions**, **69,813 target differential cases**, and
+> entity owners: **123 maintained functions**, **70,928 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -38,6 +38,9 @@ caller evidence distinguished the actual gameplay initializer from an intro
 point-table routine. The [frame drawing investigation](docs/DISPLAY_OWNER.md)
 connects last-brick lightning, dirty-region restoration and rectangle merging;
 192 additional continuous frames execute all twelve maintained gameplay phases.
+The [device recovery investigation](docs/DEVICE_OWNER.md) connects palette fades
+and lost-surface recovery to real initialization, frame dispatch and redraw.
+Following the shared bank layout also corrected two duplicated state fields.
 Windows/device integration, audio, glyph UI and non-game modes remain in progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to

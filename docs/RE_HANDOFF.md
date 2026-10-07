@@ -20,8 +20,8 @@ scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred seventeen source functions have scoped
-semantic evidence from 69,813 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred twenty-three source functions have scoped
+semantic evidence from 70,928 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -75,7 +75,8 @@ full gameplay frame 0x40F8B0 (1,683 owned / 1,688 span) are maintained alongside
 point hits, retirement, drops, fire effects and shooting. See `docs/CORE_OWNER.md`
 for every Evidence ID, typed queue, original collision/input order and scope.
 All twelve frame callbacks now default to maintained runtime/display source;
-COM drivers, audio/recovery and UI/platform integration remain pending. Global 0x43A884 is now correctly named displayed_score.
+COM drivers, audio and UI/platform integration remain pending. Surface recovery
+is now maintained in the device owner. Global 0x43A884 is now correctly named displayed_score.
 No new exact claims were made while prioritizing core behavior.
 
 The preceding runtime checkpoint added sixteen functions and 1,510 direct cases,
@@ -88,7 +89,7 @@ Resource loading defaults to existing parsers but is controlled in this lifecycl
 oracle; glyph/render/audio/device setup and modes other than 1 remain pending.
 The unsigned score-refresh JBE branch is preserved.
 
-The current display checkpoint adds sixteen entries and 2,409 direct cases.
+The preceding display checkpoint adds sixteen entries and 2,409 direct cases.
 Another 192 continuous frames are separate integration evidence, not counted
 again as direct cases. Last-brick logic 0x415F40 (1,057 bytes), dirty restoration
 0x408CC0 (827 bytes) and sort/merge/presentation 0x409100 (984 bytes) connect to
@@ -104,24 +105,41 @@ Last-brick expiry queues an explosion request at 0x412B30 before frame-end
 application; it does not create the animation immediately. Presentation retains
 original selection sorting, sequential merging and BUSY/SURFACELOST behavior.
 
-REA also establishes that 0x40E570 initializes the mode-0 intro point table;
-gameplay initialization is 0x40F4C0. Continue through Win32/input/device/display
-startup and actual recovery, mode-3 game-over/UI and audio. Frame algorithms are
-maintained, but their configured COM/resource/glyph/audio/non-game boundaries
-still separate these libraries from a playable executable. Restore connected
-core behavior before independent leaf matching. Reuse retained REA dossiers:
-the latest 09-29 interactive session saved 137 Evidence records. Feedback
-continues in `/tmp/dxball_rea_feedback.md`.
+The current device checkpoint adds six entries and 1,115 direct cases. Palette
+transition 0x40A340 (1,339 bytes), palette creation, color fills, sprite-bank
+restoration, surface recovery and synchronization now connect to actual waits,
+redraw and frame dispatch. Another 26 connected checks are separate integration
+evidence, covering lost presentation, frame synchronization and init/cleanup
+fades. See docs/DEVICE_OWNER.md for all Evidence IDs and explicit COM/reload/
+glyph/audio/platform scope. Recovery restores primary 0x4228B4 then board
+working surface 0x4228BC; it does not restore presentation secondary 0x4228B8.
+Synchronization calls GetBltStatus at slot 13, not GetFlipStatus.
+
+Addresses 0x4265AC /0x4265B0 are bank 2 count/allocation_mode, not independent
+text settings. Source and lifecycle tests now share actual bank storage and
+compare all three banks' metadata. New native background COM objects replace
+opaque trace-only handles when invoking maintained clears. Palette fades retain
+their final extra SetEntries/wait and distinct equality gates.
+
+REA establishes that 0x40E570 initializes the mode-0 intro point table;
+gameplay initialization is 0x40F4C0. Continue through actual WinMain 0x40D930,
+Win32/input/DirectDraw device creation, mode-3 game-over/UI and audio. Retained
+0x403A00 initializes working resources and vblank timing, not the WinMain entry;
+0x401000 /0x401210 handle MDS music loading, and 0x4026A0 rotates sprite pixels.
+Do not guess their roles from sizes or address ranges. Inspect connected bosses
+through REA before independent leaf matching. The latest 10-33 interactive
+session saved 152 cumulative Evidence records. Feedback continues in
+`/tmp/dxball_rea_feedback.md`. These libraries are still not a playable game.
 
 This shared source/header change performs one grouped cold replay of all forty
 accepted exact units, every earlier differential suite, native/MinGW/VC4 builds,
 Wine inspector comparison, rejection tests and saved REA verification. The
-read/write bank literals were rebound to $SG733 /$SG737 only after verifying
+read/write bank literals were rebound to $SG731 /$SG735 only after verifying
 unchanged rb/wb bytes in both object and target; offsets/types/addends and full
 comparison remain strict. No new exact claim is made. Semantic input sets now
 include all maintained source/header closure, and exact build inputs include
 all shared headers. Private reports, literal binding review and current identities
-are retained under `.analysis/checkpoints/display-117-40/`. Batch replay remains
+are retained under `.analysis/checkpoints/device-123-40/`. Batch replay remains
 the policy; no per-function replay is required.
 
 The user requires modest CPU/memory use. Project build and REA entry points

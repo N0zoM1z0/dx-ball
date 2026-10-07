@@ -5,10 +5,13 @@ address,symbol,source,scope,semantic_unit
 0x00402490,dxball_cosine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-cosine
 0x00403450,dxball_current_time,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-current-time
 0x004034F0,dxball_elapsed,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-elapsed
+0x004035B0,dxball_synchronize_surface,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-synchronize-surface
+0x00403640,dxball_recover_surfaces,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-recover-surfaces
 0x004036B0,dxball_redraw_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-mode
 0x00403730,dxball_dispatch_frame,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-dispatch-frame
 0x004038D0,dxball_initialize_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-mode
 0x00403950,dxball_cleanup_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-cleanup-mode
+0x00403D30,dxball_restore_sprite_banks,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-restore-sprite-banks
 0x00403E50,dxball_select_surface,src/boards.c,all 32-bit handles,board-render
 0x00403E70,dxball_select_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
 0x00403E90,dxball_select_font_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-font-bank
@@ -36,9 +39,12 @@ address,symbol,source,scope,semantic_unit
 0x00409100,dxball_present_regions_now,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-present-regions-now
 0x004094E0,dxball_sort_present_regions,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-sort-present-regions
 0x00409610,dxball_wait_frames,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-wait-frames
+0x004096C0,dxball_initialize_palette,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-initialize-palette
 0x00409790,dxball_load_live_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
 0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
 0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
+0x00409F10,dxball_clear_surface,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-clear-surface
+0x0040A340,dxball_palette_transition,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-palette-transition
 0x0040A970,dxball_animate_palette,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-animate-palette
 0x0040CC30,dxball_read_board_bank,src/boards.c,path/open/read boundaries,board-io
 0x0040CC90,dxball_write_board_bank,src/boards.c,path/open/write boundaries,board-io

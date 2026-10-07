@@ -5,12 +5,13 @@
 #include "particles.h"
 #include "round.h"
 #include "display.h"
+#include "device.h"
 #include <stdio.h>
 #include <string.h>
 
 DxBallClockOps dxball_clock_ops;
 DxBallRuntimeOps dxball_runtime_ops = {
-    dxball_load_saved_palette, NULL, NULL, dxball_reset_regions,
+    dxball_load_saved_palette, dxball_palette_transition, dxball_clear_surface, dxball_reset_regions,
     dxball_load_pcx, dxball_load_sprite_bank, dxball_capture_sprite,
     NULL, dxball_bind_board_surface, dxball_bind_display_surface, NULL, NULL, NULL, NULL, NULL
 };
@@ -19,14 +20,13 @@ DxBallModeOps dxball_mode_ops = {
     {NULL, dxball_redraw_game, NULL, NULL, NULL},
     {NULL, dxball_game_frame, NULL, NULL, NULL},
     {NULL, dxball_dispose_game, NULL, NULL, NULL},
-    NULL, NULL
+    NULL, dxball_synchronize_surface
 };
 DxBallInt dxball_high_resolution_clock;
 DxBallUInt dxball_clock_divisor;
 DxBallInt dxball_paddle_frame, dxball_paddle_overlay_sprite, dxball_paddle_overlay_width;
 DxBallUInt dxball_paddle_tick, dxball_paddle_overlay_deadline;
 DxBallInt dxball_lightning_x, dxball_lightning_y, dxball_lightning_frames;
-DxBallInt dxball_text_setting_a, dxball_text_setting_b;
 DxBallInt dxball_device_reset_requested, dxball_surface_restore_requested;
 DxBallInt dxball_display_buffer_count;
 DxBallSurface dxball_primary_surface, dxball_secondary_surface;
@@ -245,7 +245,7 @@ void dxball_initialize_game(void)
     dxball_select_sprite_bank(0);
     dxball_runtime_ops.load_sprite_bank(1, 0, "thefont.sbk");
     dxball_select_font_bank(1);
-    dxball_text_setting_a = 1; dxball_text_setting_b = 0;
+    dxball_sprite_banks[2].count = 1; dxball_sprite_banks[2].allocation_mode = 0;
     dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
     dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_board_surface, "bigbolt.pcx", 0, 0, 0);
     dxball_select_sprite_bank(2);

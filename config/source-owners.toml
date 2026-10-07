@@ -5,42 +5,42 @@ source = "src/boards.c"
 header = "src/boards.h"
 oracle = "tests/test_boards_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/balls.c", "src/balls.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h"]
+additional_inputs = ["src/balls.c", "src/balls.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h"]
 
 [owners.resources]
 source = "src/resources.c"
 header = "src/resources.h"
 oracle = "tests/test_resources_differential.py"
 target_oracle = "tests/resources_oracle.py"
-additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/target_oracle.py"]
+additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/target_oracle.py"]
 
 [owners.gameplay]
 source = "src/gameplay.c"
 header = "src/gameplay.h"
 oracle = "tests/test_gameplay_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/test_boards_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/test_boards_differential.py", "tests/test_powerups_differential.py"]
 
 [owners.effects]
 source = "src/effects.c"
 header = "src/effects.h"
 oracle = "tests/test_effects_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
 
 [owners.particles]
 source = "src/particles.c"
 header = "src/particles.h"
 oracle = "tests/test_entities_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
 
 [owners.bonuses]
 source = "src/bonuses.c"
 header = "src/bonuses.h"
 oracle = "tests/test_entities_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
 
 [owners.gameplay.unit_oracles]
 powerups-clear-explosion-list = "tests/test_powerups_differential.py"
@@ -56,53 +56,60 @@ source = "src/geometry.c"
 header = "src/geometry.h"
 oracle = "tests/test_powerups_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
 
 [owners.paddle]
 source = "src/paddle.c"
 header = "src/paddle.h"
 oracle = "tests/test_powerups_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
 
 [owners.round]
 source = "src/round.c"
 header = "src/round.h"
 oracle = "tests/test_powerups_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
 
 [owners.trig]
 source = "src/trig.c"
 header = "src/trig.h"
 oracle = "tests/test_powerups_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
 
 [owners.balls]
 source = "src/balls.c"
 header = "src/balls.h"
 oracle = "tests/test_powerups_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
+additional_inputs = ["config/assets.csv", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py"]
 
 [owners.core]
 source = "src/core.c"
 header = "src/core.h"
 oracle = "tests/test_core_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
 
 [owners.runtime]
 source = "src/runtime.c"
 header = "src/runtime.h"
 oracle = "tests/test_runtime_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_core_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_core_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
 
 [owners.display]
 source = "src/display.c"
 header = "src/display.h"
 oracle = "tests/test_display_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_core_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py", "tests/test_resources_differential.py", "tests/test_runtime_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.c", "src/device.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_core_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py", "tests/test_resources_differential.py", "tests/test_runtime_differential.py"]
+
+[owners.device]
+source = "src/device.c"
+header = "src/device.h"
+oracle = "tests/test_device_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.c", "src/core.h", "src/display.c", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.c", "src/runtime.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_core_differential.py", "tests/test_display_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py", "tests/test_runtime_differential.py", "config/assets.csv"]

@@ -52,7 +52,6 @@ extern DxBallUInt dxball_clock_divisor;
 extern DxBallInt dxball_paddle_frame, dxball_paddle_overlay_sprite, dxball_paddle_overlay_width;
 extern DxBallUInt dxball_paddle_tick, dxball_paddle_overlay_deadline;
 extern DxBallInt dxball_lightning_x, dxball_lightning_y, dxball_lightning_frames;
-extern DxBallInt dxball_text_setting_a, dxball_text_setting_b;
 extern DxBallInt dxball_device_reset_requested, dxball_surface_restore_requested;
 extern DxBallInt dxball_display_buffer_count;
 extern DxBallSurface dxball_primary_surface, dxball_secondary_surface;

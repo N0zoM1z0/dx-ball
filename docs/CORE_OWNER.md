@@ -165,8 +165,9 @@ independent leaf matching is deferred while core gameplay remains the priority.
 ## Continue from here
 
 The runtime spine is now maintained; see [runtime evidence](RUNTIME_OWNER.md).
-All frame phases are now maintained; continue with platform startup, device
-recovery and non-game modes, as described in [display evidence](DISPLAY_OWNER.md). REA identifies gameplay initialization at 0x40F4C0;
+All frame phases are now maintained. Surface recovery and palette fades are
+connected in [device evidence](DEVICE_OWNER.md); continue with platform startup,
+device creation and non-game modes. REA identifies gameplay initialization at 0x40F4C0;
 0x40E570 is a mode-0 intro point-table initializer. Reuse retained dossiers and
 keep recording REA feedback in `/tmp/dxball_rea_feedback.md`.
 

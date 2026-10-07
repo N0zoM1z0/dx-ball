@@ -10,7 +10,7 @@ Sixteen maintained entries pass 2,409 direct original-x86 cases. Another 192
 continuous frames execute ALL twelve maintained gameplay phases across both
 presentation modes, clipping and vertical-blank choices. These integration
 frames are recorded SEPARATELY, not added to the direct-case count. Current
-acceptance is 117 functions and 69,813 direct cases; 40 exact functions /4,079
+acceptance at this checkpoint was 117 functions and 69,813 direct cases; 40 exact functions /4,079
 bytes remain unchanged. Windows/input/device, audio, glyph UI and non-game modes
 still need implementation before a playable reconstruction is established.
 
@@ -98,7 +98,8 @@ is finally reset. This is the original sequential merge, not an invented global
 union or replacement sort.
 
 Full graphics calls primary Flip. BUSY (0x8876021C) retries; SURFACELOST
-(0x887601C2) calls the still-pending recovery operation and exits the retry loop.
+(0x887601C2) calls recovery and exits the retry loop. That operation now defaults
+to maintained source in the subsequent [device owner](DEVICE_OWNER.md).
 Only success toggles the dirty page. Software wait is performed after successful
 flip only when vertical-blank mode is off. Nonzero graphics mode instead waits
 one frame and executes actual dirty-region presentation.
@@ -173,7 +174,8 @@ closure. Private checkpoint reports are retained under
 
 ## Next work
 
-Connect window/input/display startup and real device/surface recovery, then
+Surface recovery and palette fades are connected by the subsequent
+[device owner](DEVICE_OWNER.md). Connect window/input/display startup and device creation, then
 mode-3 game-over UI and audio. The frame algorithms are maintained, but the
 configured driver/resource/UI boundaries still separate these libraries from a
 playable whole-game executable. Independent leaf matching remains secondary.

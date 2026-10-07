@@ -152,7 +152,11 @@ identity records are retained under `.analysis/checkpoints/runtime-101-40/`.
 
 ## Next connected work
 
-The display owner now connects actual frame/render dependencies. Continue
+The display owner now connects actual frame/render dependencies. The subsequent
+[device owner](DEVICE_OWNER.md) connects fades, fills and recovery. It also
+corrects `0x4265AC` / `0x4265B0` to the third sprite bank's count/allocation mode,
+replacing the duplicated text-setting globals. The lifecycle oracle now compares
+all three banks' metadata without claiming additional entries or cases. Continue
 through mode-3 transition/UI and window/input/device/audio startup to a playable
 executable.
 Investigate mode-0 intro separately when needed; `0x0040E570` is no longer a

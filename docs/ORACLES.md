@@ -13,6 +13,7 @@
 | Core x86 vs compiled native C | Full ball/frame bodies, connected collision, shot damage, fire animation, power/input order and 200 continuous frames | Its isolated dependency bodies, platform drivers, playable game |
 | Runtime x86 vs compiled native C | Initialization, life-loss reset, mode dispatch, clock, paddle and score bodies; 36 connected frames through game-over | Controlled resources, glyph/render/audio backends, device setup and non-game modes |
 | Display x86 vs compiled native C | Lightning, dirty arrays, sort/merge, palette, waits and flip dispatch; 192 continuous frames with twelve actual gameplay phases | Hardware Blt/Flip/palette pixels, recovery, audio, glyph/resource and non-game boundaries |
+| Device x86 vs compiled native C | Palette fades/creation, color fill requests, bank/surface recovery and synchronization; 26 connected checks | Driver rasterization, reload parsing on this edge, glyph/audio/platform and non-game bodies |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -63,7 +64,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 69,813 direct-case total. This
+request state. Integration cases are excluded from the 70,928 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -116,7 +117,7 @@ so this checkpoint reuses their prior completed reports and reruns the changed
 core oracle, the new runtime oracle and all three toolchain products.
 
 The display owner adds 2,409 direct cases across sixteen functions, bringing
-current acceptance to 69,813 across 117 functions. Another 192 continuous frames
+that checkpoint to 69,813 across 117 functions. Another 192 continuous frames
 are SEPARATE integration evidence, not added to the direct-case total. All twelve
 real gameplay phases execute alongside actual sprite/dirty/palette/wait bodies.
 Full dirty/presentation/key arrays and ordered COM dispatch agree. Pixel storage
@@ -126,3 +127,15 @@ Shared source/header changes receive one grouped cold replay of all 40 exact
 units and all earlier differential suites. Complete input closure is refreshed
 only after the affected tests pass; internal literal names are rebound only
 with unchanged object/target contents, offsets, types and addends.
+
+The device owner adds 1,115 direct cases across six entries, bringing current
+acceptance to 70,928 across 123 functions. Its 1,339-byte palette transition
+controller and recovery chain execute alongside actual waits, game redraw and
+frame dispatch. Another 26 checks are separate integration evidence, covering
+lost Flip recovery, synchronization and initialization/cleanup fades. Lifecycle
+and recovery share the third bank's actual count/allocation fields; all three
+banks' metadata is compared. COM, reload parsing on this edge, glyph/audio and
+platform/non-game boundaries remain controlled. See [device evidence](DEVICE_OWNER.md)
+for equality gates, terminal fade iteration, unspecified fill fields and input
+domains. All earlier suites, cold exact replay and three toolchain products
+are revalidated as one batch after these shared changes.

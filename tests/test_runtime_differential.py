@@ -20,7 +20,7 @@ from test_core_differential import CoreNative, CoreTarget, Harness, GLOBALS, FRA
 GLOBALS.update({0x421068:'high_resolution_clock',0x425970:'clock_divisor',0x43FAD8:'paddle_frame',
     0x43FADC:'paddle_tick',0x43FABC:'paddle_overlay_deadline',0x43A8F0:'paddle_overlay_sprite',
     0x43A8B0:'paddle_overlay_width',0x43FA88:'lightning_x',0x43FA8C:'lightning_y',
-    0x43FAF0:'lightning_frames',0x4265AC:'text_setting_a',0x4265B0:'text_setting_b',
+    0x43FAF0:'lightning_frames',
     0x4228A8:'device_reset_requested',0x4228AC:'surface_restore_requested',
     0x4228A0:'display_buffer_count',FONT_BANK:'font_bank'})
 ENTRIES={'current_time':0x403450,'elapsed':0x4034F0,'redraw_mode':0x4036B0,
@@ -155,9 +155,11 @@ class RuntimeTarget(CoreTarget):
                     args=tuple(signed(a) for a in self._args(1)) if group=='cleanup' else ()
                     self.mode_boundary(group,mode,args);self._return()
                 self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+        self.mode_hooks={}
         for group,address in [('device',0x403A00),('synchronize',0x4035B0)]:
             def callback(*unused,group=group):self.mode_boundary(group,-1,());self._return()
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+            hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+            self._hooks.append(hook);self.mode_hooks[group]=hook
         self.clock_hooks={}
         for slot,address,name in [(0x4413A4,0x50E000,'time'),(0x4412A0,0x50E010,'frequency'),(0x44129C,0x50E020,'counter')]:
             self.write_u32(slot,address)
@@ -221,6 +223,8 @@ class RuntimeHarness(Harness):
         for name,value,address in [('primary_surface',C.addressof(n.primary),0x4228B4),('secondary_surface',C.addressof(n.secondary),0x4228B8)]:
             C.c_size_t.in_dll(n.lib,'dxball_'+name).value=value;t.write_u32(address,t.PRIMARY if name=='primary_surface' else t.SECONDARY)
         for bank in range(3):
+            n.banks[bank].count=0;n.banks[bank].mode=0
+            t.write(BANKS+bank*1048+1020,bytes(8))
             for slot in range(1,180):self.sprite(slot,60 if slot==68 else 10,18 if slot>=64 else 8,bank)
         n.bank[:]=self.boards;t.write(BANK,self.boards)
     def compare(self,context):
@@ -230,6 +234,8 @@ class RuntimeHarness(Harness):
         assert bytes(n.aux)==t.read(AUX,400),(context,'aux')
         assert bytes(n.saved)==t.read(SAVED_PALETTE,1024),(context,'saved palette')
         assert bytes(n.live)==t.read(LIVE_PALETTE,1024),(context,'live palette')
+        for bank in range(3):
+            assert (n.banks[bank].count,n.banks[bank].mode)==struct.unpack('<2i',t.read(BANKS+bank*1048+1020,8)),(context,'bank metadata',bank)
         assert n.observed()==t.observed(),(context,'globals',n.observed(),t.observed())
         for a,v in n.state.items():assert v.value==signed(t.read_u32(a)),(context,hex(a))
         assert n.mode.value==signed(t.read_u32(MODE)),(context,'mode')

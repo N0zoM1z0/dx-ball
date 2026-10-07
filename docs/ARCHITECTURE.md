@@ -22,6 +22,7 @@ without checking their individual evidence.
 | Core owner | `src/core.c`; main ball motion, gameplay frame, shots, fire and brick dropping |
 | Runtime owner | `src/runtime.c`; game initialization, life-loss reset, clocks, paddle animation and score drawing |
 | Display owner | `src/display.c`; lightning, dirty pages, sort/merge, palette, frame waits and presentation |
+| Device owner | `src/device.c`; palette fades/initialization, color fills, sprite/surface recovery and synchronization |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -94,6 +95,9 @@ clock, score and paddle routines. Its mode table defaults mode 1 to maintained
 source; other valid modes require configured implementations. All twelve frame
 phases now default to maintained owners. The display owner supplies lightning,
 dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
-COM drivers, surface recovery, glyph UI and audio remain pending. See
+COM drivers, device creation, glyph UI and audio remain pending. Surface recovery,
+color fills and palette fades now default to `src/device.c`. The third sprite
+bank's count and allocation mode own addresses `0x4265AC` / `0x4265B0`; gameplay
+initialization writes those fields rather than duplicated globals. See
 [core evidence](CORE_OWNER.md), [runtime evidence](RUNTIME_OWNER.md) and
-[display evidence](DISPLAY_OWNER.md).
+[display evidence](DISPLAY_OWNER.md) and [device evidence](DEVICE_OWNER.md).

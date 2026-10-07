@@ -146,8 +146,10 @@ class DisplayTarget(RuntimeTarget):
             assert address!=self.RETURN,'COM callback must not alias the oracle return sentinel'
             self.write_u32(table+slot*4,address)
             self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+        self.display_hooks={}
         for address,callback in [(0x403640,self.recover),(0x405D80,self.update_sound)]:
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+            hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+            self._hooks.append(hook);self.display_hooks[address]=hook
     def display_observed(self):
         return (struct.unpack('<2i',self.read(COUNTS,8)),signed(self.read_u32(0x4382EC)),signed(self.read_u32(0x4305D8)),
                 signed(self.read_u32(0x4228C8)),signed(self.read_u32(0x4228CC)),signed(self.read_u32(0x42289C)))
@@ -190,8 +192,8 @@ class DisplayTarget(RuntimeTarget):
 
 class DisplayHarness(RuntimeHarness):
     normalize_board_restores=False
-    def __init__(self,library):
-        super().__init__(library,DisplayNative,DisplayTarget)
+    def __init__(self,library,native_type=DisplayNative,target_type=DisplayTarget):
+        super().__init__(library,native_type,target_type)
         self.cases=dict.fromkeys(ENTRIES,0);self.connected_frames=0
         # Replace the controlled WinMM callback with the same advancing clock.
         self.t.uc.hook_del(self.t.clock_hooks['time'])

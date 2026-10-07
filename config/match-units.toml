@@ -2,7 +2,7 @@
 [builds.boards]
 source = "src/boards.c"
 object = "build/exact/boards.obj"
-inputs = ["src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units]
@@ -10,7 +10,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.gameplay]
 source = "src/gameplay.c"
 object = "build/exact/gameplay.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-explosion]
@@ -103,7 +103,7 @@ target_address = 0x0040CC30
 size = 96
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "$SG733", addend = 0, target = 0x00422890, data_hex = "726200" },
+  { offset = 0x7, type = "DIR32", symbol = "$SG731", addend = 0, target = 0x00422890, data_hex = "726200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
@@ -121,7 +121,7 @@ target_address = 0x0040CC90
 size = 96
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "$SG737", addend = 0, target = 0x00422894, data_hex = "776200" },
+  { offset = 0x7, type = "DIR32", symbol = "$SG735", addend = 0, target = 0x00422894, data_hex = "776200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
@@ -135,7 +135,7 @@ relocations = [
 [builds.resources]
 source = "src/resources.c"
 object = "build/exact/resources.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.select-sprite-bank]
@@ -244,7 +244,7 @@ relocations = [
 [builds.effects]
 source = "src/effects.c"
 object = "build/exact/effects.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.c", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.begin-explosions]
@@ -348,13 +348,13 @@ relocations = [
 [builds.particles]
 source = "src/particles.c"
 object = "build/exact/particles.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.bonuses]
 source = "src/bonuses.c"
 object = "build/exact/bonuses.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-particle]
@@ -486,31 +486,31 @@ relocations = [
 [builds.geometry]
 source = "src/geometry.c"
 object = "build/exact/geometry.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.paddle]
 source = "src/paddle.c"
 object = "build/exact/paddle.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.round]
 source = "src/round.c"
 object = "build/exact/round.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.c", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.trig]
 source = "src/trig.c"
 object = "build/exact/trig.obj"
-inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.c", "src/trig.h"]
+inputs = ["src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.c", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.balls]
 source = "src/balls.c"
 object = "build/exact/balls.obj"
-inputs = ["src/balls.c", "src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
+inputs = ["src/balls.c", "src/balls.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.clear-explosion-list]

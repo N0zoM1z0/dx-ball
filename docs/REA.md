@@ -222,3 +222,11 @@ label to a frame/vblank wait. Sixteen entries pass 2,409 direct cases; 192 separ
 continuous frames execute all twelve maintained gameplay phases. The session
 saved 137 Evidence records. Actual platform drivers, recovery, audio and glyph/UI
 work remain explicit rather than being inferred from those algorithm tests.
+
+The [device investigation](DEVICE_OWNER.md) follows those callers into the
+1,339-byte palette fade controller and lost-surface recovery. Assembly plus the
+bank stride establishes that two former text-setting labels actually describe
+the third bank's count and allocation mode. The source now shares that storage,
+and lifecycle tests compare all bank metadata. Six entries pass 1,115 direct
+cases plus 26 separate connected checks; the session saves 152 cumulative
+Evidence records. Actual drivers, device creation, UI and audio still need work.
