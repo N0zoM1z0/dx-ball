@@ -57,7 +57,7 @@ scripts/repo-python scripts/bootstrap-rea.py
 scripts/rea doctor --provider ghidra --json
 ```
 
-For an existing local tool root, reuse its pinned Ghidra/JDK installation:
+For an existing local tool root, reuse its pinned JDK installation:
 
 ```bash
 scripts/repo-python scripts/bootstrap-tools.py --reference-tools /path/to/th095/.tools

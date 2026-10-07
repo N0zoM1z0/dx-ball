@@ -32,6 +32,9 @@ broadened that check to 12.1.x; installing main's skill does not change the
 released package. We use the verified release boundary and install 12.1.4
 separately under `.tools/ghidra-rea`. The old 12.1.3 project is historical
 inventory/evidence and is retained without reclassifying its 528 candidates.
+Default `bootstrap-tools.py` now installs only the JDK/compiler prerequisites;
+`bootstrap-rea.py` supplies the active analysis engine. The historical Ghidra
+archive is available only through explicit `--historical-ghidra` setup.
 
 ## Codex MCP and skill
 

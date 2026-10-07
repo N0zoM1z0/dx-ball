@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install pinned tools, or reuse matching Ghidra/JDK from a local tool root."""
+"""Install pinned JDK/compiler prerequisites; REA owns new Ghidra setup."""
 import argparse
 import hashlib
 from pathlib import Path
@@ -27,12 +27,16 @@ def download(entry, path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reference-tools", type=Path,
-                        help="reuse matching ghidra and jdk directories by local symlinks")
+                        help="reuse a matching JDK directory by a local symlink")
+    parser.add_argument("--historical-ghidra", action="store_true",
+                        help="also install the old inventory's Ghidra 12.1.3; new analysis uses REA")
     args = parser.parse_args()
     tools = ROOT / ".tools"
     tools.mkdir(exist_ok=True)
     lock = tomllib.loads((ROOT / "config/tools.lock.toml").read_text())
     for name, table in (("ghidra", "ghidra"), ("jdk", "temurin_jdk")):
+        if name == "ghidra" and not args.historical_ghidra:
+            continue
         destination = tools / name
         if destination.exists():
             continue
@@ -58,7 +62,7 @@ def main():
             if not extracted.is_dir():
                 raise ValueError(f"archive lacks expected installation directory: {extracted}")
             destination.symlink_to(extracted.name, target_is_directory=True)
-    verify_analysis_tools(tools / "ghidra", tools / "jdk")
+    verify_analysis_tools(tools / "ghidra" if args.historical_ghidra else None, tools / "jdk")
     compiler = lock["msvc40"]
     checkout = ROOT / compiler["selection"]
     if not checkout.exists():
@@ -67,7 +71,7 @@ def main():
         subprocess.run(["git", "-C", str(checkout), "fetch", "--depth", "1", "origin", compiler["commit"]], check=True)
         subprocess.run(["git", "-C", str(checkout), "checkout", "--detach", "FETCH_HEAD"], check=True)
     Toolchain().verify()
-    print("pinned Ghidra, JDK and VC4.0 tools ready")
+    print("pinned JDK and VC4.0 tools ready; configure analysis with scripts/bootstrap-rea.py")
 
 
 if __name__ == "__main__":
