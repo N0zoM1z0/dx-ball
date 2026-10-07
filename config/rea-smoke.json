@@ -1,0 +1,7 @@
+[
+  {"name": "binary_overview", "arguments": {}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00404180"}},
+  {"name": "read_bytes", "arguments": {"address": "0x00404180", "length": 105}},
+  {"name": "inspect_native_load_image", "arguments": {}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00411F40"}}
+]

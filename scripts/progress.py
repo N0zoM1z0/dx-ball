@@ -24,7 +24,7 @@ def main():
            '<rect width="900" height="460" rx="20" fill="#101722"/>',
            '<g font-family="sans-serif">',
            '<text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  RECONSTRUCTION</text>',
-           '<text x="34" y="75" fill="#9baec8" font-size="14">English v1.07 · Windows 95 · Ghidra + VC4.0</text>',
+           '<text x="34" y="75" fill="#9baec8" font-size="14">REA showcase · English v1.07 · Windows 95 · Ghidra + VC4.0</text>',
            f'<text x="34" y="109" fill="#4ed8b7" font-size="16">{status["exact_functions"]} exact functions · {status["exact_bytes"]} bytes</text>',
            f'<text x="470" y="109" fill="#f5bd57" font-size="16">{status["source_present"]} source-present · {status["semantic_validated_with_scope"]} scoped semantic</text>']
     for i, function in enumerate(functions):

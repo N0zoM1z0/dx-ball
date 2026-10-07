@@ -4,7 +4,8 @@
   <img src="resources/progress.svg" alt="DX-Ball source reconstruction progress" width="900">
 </p>
 
-Source reconstruction of **DX-Ball v1.07**, the 1996 Windows breakout game by
+A [REA](https://github.com/morluto/rea) showcase: source reconstruction of
+**DX-Ball v1.07**, the 1996 Windows breakout game by
 Michael P. Welch, with original 3D graphics by Seumas McNally.
 
 > [!IMPORTANT]
@@ -13,11 +14,12 @@ Michael P. Welch, with original 3D graphics by Seumas McNally.
 > totaling 1,157 bytes**. The current builds provide a board-inspection utility and
 > analysis library. A playable whole-game reconstruction is still in progress.
 
-This project uses Ghidra 12.1.3 and a hash-pinned Visual C++ 4.0 compiler/linker
-candidate. It follows the evidence and replay discipline of
-[th095](https://github.com/N0zoM1z0/th095), with DX-Ball's own target, DirectX
-interfaces, C owners, board formats, and compiler evidence. This is a separate
-game-preservation project.
+This project demonstrates REA's path from native binary evidence to maintained
+source and reproducible validation. REA supplies the CLI/MCP analysis interface
+over Ghidra; target execution and a hash-pinned Visual C++ 4.0 compiler/linker
+provide independent semantic and exact oracles. We build on the evidence and
+replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
+DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
 
 ## Supported target
 
@@ -40,7 +42,8 @@ for this target.
 ## Local setup
 
 The analysis workflow currently targets Linux x86-64 with Python 3.11+, Git,
-Wine with win32 support, Xvfb, CMake, Ninja, GCC, and MinGW i686. Use
+Wine with win32 support, Xvfb, CMake, Ninja, GCC, MinGW i686, and
+Node.js 22.19 with npm for the pinned REA runtime. Use
 `scripts/repo-python` for all repository Python commands: it selects an
 interpreter only after checking actual package and native-library hashes.
 
@@ -50,7 +53,8 @@ scripts/repo-python scripts/bootstrap-tools.py
 scripts/repo-python scripts/import-target.py /path/to/DX_Ball_Win_Preinstalled_EN.zip
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/verify-toolchain.py --execute
-scripts/repo-python scripts/ghidra.py initialize
+scripts/repo-python scripts/bootstrap-rea.py
+scripts/rea doctor --provider ghidra --json
 ```
 
 For an existing local tool root, reuse its pinned Ghidra/JDK installation:
@@ -62,6 +66,11 @@ scripts/repo-python scripts/bootstrap-tools.py --reference-tools /path/to/th095/
 Version, archive, compiler-component, header/library, interpreter-package, and
 native-engine identities are recorded in [tools.lock.toml](config/tools.lock.toml).
 Compiler execution uses this repository's own ignored Wine prefix.
+
+REA and its npm dependencies are pinned in `config/rea/package-lock.json`;
+`config/rea.lock.json` binds the installed runtime and Ghidra provider. Use
+`scripts/rea` for project analysis. See [REA setup and showcase](docs/REA.md)
+for MCP registration, evidence snapshots and the verified DX-Ball example.
 
 ## Build and verify
 
@@ -80,6 +89,8 @@ build/native/dxball_boards original/DEFAULT.BDS 1
 The shared C owner builds natively, with MinGW i386, and with the pinned VC4.0
 compiler/linker. The native utility checks all 50 boards; both Windows utilities
 run boards 1, 25, and 50 under Wine and reproduce the same JSON output.
+The resource inspector decodes all seven supplied SBK banks and five PCX files;
+native, MinGW and VC4.0 products reproduce identical metadata and pixel hashes.
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py
@@ -103,6 +114,7 @@ ledger validation; private-target oracles run locally.
 - [Exact compiler evidence](docs/BUILD_MATCHING.md),
   [oracle matrix and limits](docs/ORACLES.md), and [progress](docs/PROGRESS.md).
 - [Resource ownership and file formats](docs/RESOURCE_OWNER.md).
+- [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:

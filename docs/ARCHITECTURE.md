@@ -44,3 +44,8 @@ DirectDraw interface slots. Only the platform ABI attribute varies: Windows
 uses stdcall for COM methods. Resource oracles execute real sprite routines and
 decoders against controlled file and surface storage; decoded pixel buffers
 are compared independently. Real display and hardware Blt behavior remain open.
+
+New inspection runs through REA's Ghidra 12.1.4 provider; the 12.1.3 inventory
+is historical. REA opens its own immutable target copy and ephemeral Program,
+then returns complete Evidence and function body ranges. See [REA workflow](REA.md)
+for the first verified target session and current boundary observations.

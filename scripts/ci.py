@@ -32,7 +32,7 @@ def main():
         return
     python("scripts/verify-target.py")
     python("scripts/verify-toolchain.py", "--execute")
-    python("scripts/ghidra.py", "check")
+    python("scripts/verify-rea.py")
     python("scripts/replay-exact-units.py")
     python("tests/test_exact_oracle.py")
     python("tests/test_boards_differential.py")

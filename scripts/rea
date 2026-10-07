@@ -1,0 +1,5 @@
+#!/bin/sh
+# Fixed project entry point for the pinned REA release and Ghidra provider.
+set -eu
+task_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+exec "$task_root/scripts/repo-python" "$task_root/scripts/rea.py" "$@"

@@ -31,3 +31,22 @@ including shared headers/oracle helpers. Board oracle hooks 0x404180; resource
 oracle removes that hook and executes the actual sprite function. DirectDraw
 hardware rasterization remains unresolved. Continue with board-hit logic
 `0x00411F40` and its gameplay producers/consumers.
+
+New binary analysis now uses REA 4.1.0 / Ghidra 12.1.4 through `scripts/rea`.
+Codex MCP registration and the package-matched skill are installed. Direct
+agent tools require restart/reconnect; CLI and the project MCP session helper
+have already completed real target queries. See `docs/REA.md` and
+`config/rea-verification.json`. The old 12.1.3 project is historical evidence.
+
+REA's tile-hit dossier, Evidence
+`ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb`,
+reports body ranges 0x411F40..0x4123EE and 0x412436..0x412462: 1,244 owned
+bytes, 1,315-byte span. Raw complete dossier and snapshot are under ignored
+`.analysis/rea/`. Its overview reports 624 procedures; retain the original
+528-candidate ledger until inventory/origin reconciliation. The independent
+PE load-image check is unsupported; our separately verified 105-byte sprite
+read does not prove the whole load image.
+
+Commit subjects retain `gpt-6.1-sol: `. Include detailed English bodies describing
+actual REA operations, evidence, implementation and validation where relevant;
+mention REA naturally rather than inserting it into unrelated changes.

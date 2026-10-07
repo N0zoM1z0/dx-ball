@@ -1,0 +1,53 @@
+{
+  "verified_on": "2026-10-07",
+  "rea_version": "4.1.0",
+  "ghidra_version": "12.1.4",
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "mcp_tool_count": 125,
+  "observed_procedure_count": 624,
+  "historical_ledger_candidates": 528,
+  "sprite_body_bytes": 105,
+  "sprite_loaded_bytes_equal_original_pe": true,
+  "tile_hit_owned_bytes": 1244,
+  "tile_hit_span_bytes": 1315,
+  "tile_hit_ranges": [
+    {
+      "start": "0x411f40",
+      "end": "0x4123ee"
+    },
+    {
+      "start": "0x412436",
+      "end": "0x412462"
+    }
+  ],
+  "pe_independent_load_attestation": "unsupported",
+  "snapshot_evidence_records": 5,
+  "primitive_cache_entries": 0,
+  "evidence": {
+    "00-binary_overview": {
+      "evidence_id": "ev_d08e26cf9e5bbc441d6a83b2ae26b12a7ea604ee41230ec1c2f46ac4f0ba4482",
+      "artifact_sha256": "926b76bccc22f3cf3db7ea1f72d3540cd2eaa068f190b9acc7a861179d4eb768",
+      "operation": "binary_overview"
+    },
+    "01-analyze_function": {
+      "evidence_id": "ev_de8ec52187b76e2e3feb604e984a63d93ba9b663346553563dd6428fb6c56ec4",
+      "artifact_sha256": "fcbc27df5bacf241e1de5183a0f76fe521afbaca2f179255206b56494e99f23c",
+      "operation": "analyze_function"
+    },
+    "02-read_bytes": {
+      "evidence_id": "ev_9e4c2610adc34954ed2bab2c9b8da11de8b557d7ef58c6a2e5323df5eca93f55",
+      "artifact_sha256": "f6e2fe5a31c07b80045c80c796510dcabcc038168cab87645367bcaa0d1f1e2d",
+      "operation": "read_bytes"
+    },
+    "03-inspect_native_load_image": {
+      "evidence_id": "ev_931fca212c691762ef435dc771a114b783f85ac830bdaccd39c700a02597d6fa",
+      "artifact_sha256": "b08d15fd491b014840247008d3f3f846837e269d87f5a184d1f4a91bd9a54802",
+      "operation": "inspect_native_load_image"
+    },
+    "04-analyze_function": {
+      "evidence_id": "ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb",
+      "artifact_sha256": "4e90c81a30677869b953cce97eeeb4e5e5a7b4b3b8bc2b69cf2dc0e7880e204c",
+      "operation": "analyze_function"
+    }
+  }
+}

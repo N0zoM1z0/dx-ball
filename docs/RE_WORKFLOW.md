@@ -5,11 +5,14 @@ Run repository Python with `scripts/repo-python`, which attests loaded analysis
 packages and their native engines before selecting an interpreter.
 
 1. Read the handoff and relevant owner evidence; inspect `git status`.
-2. Verify target, toolchain, and tracking. Attest Ghidra before semantic queries.
+2. Verify target, toolchain, and tracking. Use `scripts/rea` for new binary
+   analysis; it attests the pinned REA runtime and Ghidra/JDK inputs. Read
+   `docs/REA.md`; retain returned Evidence IDs and limitations.
 3. Select one entry from `config/functions.csv`. Reconcile control flow,
    embedded tables, epilogues, and padding; imported sizes are provisional.
 4. Inspect exact instructions, data references, producers, and independent
-   consumers. Keep decompiler hypotheses under ignored `.analysis/`.
+   consumers through REA. Keep complete evidence and reusable snapshots under
+   ignored `.analysis/rea/`; promote reviewed observations into owner documents.
 5. Reconstruct natural shared C source with explicit state ownership and ABI.
    A portable dependency bridge validates call effects, not its missing backend.
 6. Replay the appropriate target-machine differential oracle and legacy compiler
