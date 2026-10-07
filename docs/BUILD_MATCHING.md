@@ -20,7 +20,7 @@ Canonical compile flags:
 /nologo /c /Od /Ob0 /Oi- /Oy- /Gd /MT /Gy
 ```
 
-These are reproducible per-unit evidence. Matching sixteen functions does not prove
+These are reproducible per-unit evidence. Matching twenty-four functions does not prove
 all original compilation flags, the complete compiler release, or original
 translation-unit boundaries. `/Gy` gives complete independent function COMDAT
 extents to the oracle; no comparison requests a truncated prefix.
@@ -81,3 +81,12 @@ and the allocation/conversion dependencies were reviewed through REA; nine reloc
 explicit. The allocation bridge is not a reconstructed CRT implementation.
 See [gameplay evidence](GAMEPLAY_OWNER.md). The hit function has scoped semantic
 acceptance only.
+
+The request/animation investigation adds eight exact units totaling **806 bytes**,
+bringing the checkpoint to **24 exact functions, 2,311 bytes**. Both begin/advance
+pairs, request enqueue, animation append, explosion construction and dispatch
+cold-replay with zero differences. The dispatcher's complete 120-byte span
+includes its unreachable five-byte gap. REA instruction/body dossiers and
+explicit mappings are recorded in [animation evidence](EFFECTS_OWNER.md).
+Shared declarations renumbered the pan's private constants to `$T488` / `$T489`;
+the manifest still verifies both constant contents in object and original target.

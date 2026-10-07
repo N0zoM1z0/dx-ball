@@ -17,9 +17,9 @@ no reconstructed playable game yet. Windows integration,
 ball physics, bonuses, UI, audio, and MIDI remain pending.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
-Sixteen configured units cold-replay exactly, totaling 1,505 bytes; accepted
-records are in `config/matches.csv`. Twenty-eight source functions have scoped
-semantic evidence from 24,157 differential cases. Eight oracle rejection checks
+Twenty-four configured units cold-replay exactly, totaling 2,311 bytes; accepted
+records are in `config/matches.csv`. Forty-one source functions have scoped
+semantic evidence from 38,037 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -30,13 +30,25 @@ declares semantic inputs, and both acceptance ledgers bind complete input sets,
 including shared headers/oracle helpers. Board oracle hooks 0x404180; resource
 oracle removes that hook and executes the actual sprite function. DirectDraw
 hardware rasterization remains unresolved. The third owner, `src/gameplay.c`,
-adds tile hits, explosion queue append, explosive scan and sound pan, validated
-with 12,786 original-x86 cases. Append, pan and scan also match exactly; hit
+adds tile hits, explosion request-list helpers, explosive scan and sound pan, validated
+with 13,689 original-x86 cases. Append, pan, scan and three request helpers also match exactly; hit
 logic has semantic acceptance only. See `docs/GAMEPLAY_OWNER.md` for REA
 Evidence IDs, original quirks and controlled dependency boundaries.
 
-Continue with explosion processing (pending-flag consumer xref `0x412B52`),
-brick effect/bonus production `0x412BA0`, and particles `0x4148A0`. Ball/projectile
+The fourth owner, `src/effects.c`, recovers nine animation functions with 12,977
+direct cases, 864 bounded original-frame phase cases, and 1,536 hit-to-animation
+integration cases. Integration counts are separate from function acceptance.
+Five animation units match exactly; deletion and timer steps remain semantic-only.
+REA now
+confirms that `0x412B52` belongs to enqueue producer `0x412B30`, not a consumer.
+Explosion requests at `0x43F8E0` and brick animations at `0x43FA98` are distinct
+typed containers; the auxiliary grid guards duplicate animation creation.
+Delete-then-advance skips a successor and is preserved across frames. See
+`docs/EFFECTS_OWNER.md` for body ranges, Evidence IDs and acceptance boundaries.
+`dxball_apply_explosion_requests` extracts the request phase but does not claim
+the whole frame updater. Continue with bonus production at `0x4138D0`, particle
+production/updates at `0x4148A0` / `0x414A00`, and ball/paddle physics.
+Ball/projectile
 consumers are observed through REA but not implemented. The hard-tile flag's
 full bonus producer and sound backends remain pending. Feedback goes to the
 user-requested `/tmp/dxball_rea_feedback.md`; it distinguishes provider issues

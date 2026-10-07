@@ -21,9 +21,22 @@ address,symbol,source,scope,semantic_unit
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite
 0x0040CEA0,dxball_load_editor_board,src/boards.c,board 0..49,board-copy
 0x0040CEE0,dxball_store_editor_board,src/boards.c,board 0..49,board-copy
+0x0040FF50,dxball_remove_explosion,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-remove-explosion
+0x00410070,dxball_begin_explosions,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-begin-explosions
+0x004100B0,dxball_begin_brick_effects,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-begin-brick-effects
+0x00410170,dxball_advance_explosion,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-advance-explosion
 0x00411930,dxball_initialize_board,src/boards.c,board index 0..49,board-copy
 0x00411970,dxball_draw_board,src/boards.c,valid grid; rendering call trace,board-render
 0x004119F0,dxball_draw_board_tile,src/boards.c,x/y 0..19; tile bytes 0..255; rendering call trace,board-render
 0x00411F40,dxball_hit_board_tile,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-hit-board-tile
 0x00412470,dxball_append_explosion,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-append-explosion
+0x00412510,dxball_process_brick_effects,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-process-brick-effects
+0x00412590,dxball_advance_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-advance-brick-effect
+0x004125F0,dxball_spawn_explosion_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-spawn-explosion-effect
+0x00412690,dxball_append_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-append-brick-effect
+0x00412730,dxball_step_explosion_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-step-explosion-effect
+0x00412A50,dxball_remove_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-remove-brick-effect
+0x00412B30,dxball_queue_explosion_at,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-queue-explosion-at
+0x00412BA0,dxball_spawn_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-spawn-brick-effect
+0x00412CB0,dxball_step_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-step-brick-effect
 0x004155A0,dxball_scan_explosive_tiles,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-scan-explosive-tiles

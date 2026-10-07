@@ -18,7 +18,7 @@ one byte per tile. All supplied tile values are 0..22. Target-observed globals:
 | --- | --- | --- |
 | `0x0043AAB8` | `dxball_board_bank` | 20,000-byte bank |
 | `0x0043F8F8` | `dxball_board_tiles` | Current 400-byte grid |
-| `0x0043A918` | `dxball_board_aux` | 400 bytes zeroed at level load; later meaning unknown |
+| `0x0043A918` | `dxball_board_aux` | 400-byte explosion occupancy grid; cleared at level load |
 | `0x0043A8F8` | `dxball_board_index` | Signed editor/level index, valid 0..49 |
 | `0x004265C8` | `dxball_board_file` | Last fopen result; remains stale after fclose |
 | `0x004265CC` | `dxball_active_surface` | Active draw surface |
@@ -52,7 +52,7 @@ its entries for instructions. Drawing oracles intercept sprite/BltFast/update
 calls and validate their arguments/order, without claiming pixel equivalence.
 I/O interception exposes the requested transfer size; native tests use actual
 temporary files. Original compiler flags, translation-unit boundaries, the
-auxiliary grid's full semantics, and the complete runtime remain open.
+auxiliary grid's uses outside the recovered explosion lifecycle, and the complete runtime remain open.
 
 ## Resource owner
 
@@ -68,8 +68,17 @@ actual sprite dispatch are distinct evidence scopes.
 `src/gameplay.c` recovers hit transitions and their score-eligibility return,
 the explosion scan, queue append and sound pan. [Gameplay evidence](GAMEPLAY_OWNER.md)
 connects REA dossiers, callers, xrefs and constant reads to maintained state.
-The owner adds 12,786 target differential cases and three exact functions.
+The owner has 13,689 target differential cases and six exact functions.
 Tile 2 never decrements the destructible count; tile 21 decrements once while
 becoming tile 2. Explosive tile 8 remains present after queueing, so repeated
 scans append again. Particle RNG order is dy/dx/y/x. These are preserved
 observations, not design corrections. Missing backends remain explicit.
+
+## Explosion and animation owner
+
+[Animation evidence](EFFECTS_OWNER.md) records the separate request/animation
+containers, 32-byte animation payload, occupancy guard, center-clear timing and
+fixed neighbor propagation order. The owner has nine functions, 12,977 direct
+cases and five exact functions. Original-frame and hit-to-animation integration
+cases are reported separately. Both queues preserve delete-then-advance skipping;
+cleanup clears occupancy only when the explosion animation finishes.

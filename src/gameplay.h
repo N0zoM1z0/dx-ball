@@ -51,6 +51,10 @@ DxBallInt dxball_screen_pan(DxBallInt x);
 /* x/y precondition: 0..19. Full return is an int, not just AL. */
 DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y);
 void dxball_scan_explosive_tiles(void);
+DxBallInt DXBALL_FASTCALL dxball_begin_explosions(DxBallExplosionList *list);
+DxBallInt DXBALL_FASTCALL dxball_advance_explosion(DxBallExplosionList *list);
+DxBallInt DXBALL_FASTCALL dxball_remove_explosion(DxBallExplosionList *list);
+void dxball_queue_explosion_at(DxBallInt x, DxBallInt y);
 
 #ifdef __cplusplus
 }

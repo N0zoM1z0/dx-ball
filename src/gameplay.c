@@ -1,4 +1,5 @@
 #include "gameplay.h"
+#include "effects.h"
 
 #include <stdlib.h>
 
@@ -9,7 +10,7 @@ DxBallInt dxball_explosion_pending;
 DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
 DxBallExplosionList dxball_explosions;
-DxBallGameplayOps dxball_gameplay_ops = { malloc, NULL, NULL, NULL, NULL, NULL };
+DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, NULL, NULL, NULL, NULL };
 
 void *dxball_allocate_node(size_t size)
 {
@@ -142,6 +143,58 @@ void dxball_scan_explosive_tiles(void)
                 }
             }
         }
+    }
+    return;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_begin_explosions(DxBallExplosionList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_advance_explosion(DxBallExplosionList *list)
+{
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_remove_explosion(DxBallExplosionList *list)
+{
+    DxBallExplosionNode *node;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) node->previous->next = node->next;
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) list->first = node->next;
+        if (list->last == node) list->last = node->previous;
+        dxball_deallocate_node(node);
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void dxball_queue_explosion_at(DxBallInt x, DxBallInt y)
+{
+    if ((signed char)dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] != 0) {
+        dxball_explosion_pending = 1;
+        dxball_append_explosion(&dxball_explosions);
+        dxball_explosions.current->kind = 1;
+        dxball_explosions.current->x = x;
+        dxball_explosions.current->y = y;
     }
     return;
 }

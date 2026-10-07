@@ -3,9 +3,10 @@
 `src/gameplay.c` continues DX-Ball reconstruction from REA's tile-hit
 investigation. The same C source builds on the native host, MinGW i686 and the
 pinned VC4.0 toolchain. It owns tile transitions, hit eligibility for scoring,
-the explosion queue append, screen-to-pan conversion and the explosive-tile
-scan. It does not yet supply the ball/projectile updater, bonus generator,
-explosion processor, particle animator or DirectSound backend.
+the explosion request queue, screen-to-pan conversion and the explosive-tile
+scan. The animation owner now supplies explosion processing; see
+[explosion and animation evidence](EFFECTS_OWNER.md). Ball/projectile updates,
+bonus generation, particle animation and DirectSound remain pending.
 
 ## REA evidence
 
@@ -75,7 +76,8 @@ All hit branches finally select the board surface and draw/invalidate the cell.
 The scan visits x in the outer loop and y in the inner loop. It invokes the
 actual hit owner for tile 8 and adds four when the full integer return is
 nonzero. It neither clears these tiles nor consumes queued explosions.
-Repeated scans therefore queue them again; later phase processing is pending.
+Repeated scans therefore queue them again; the animation owner now validates
+their later consumption and occupancy guard.
 
 ## Linked-list layout and dependencies
 
@@ -97,14 +99,15 @@ bytes, not the runtime allocator or CRT new-handler behavior. The null-return
 test proves the owner's response after that dependency returns null.
 
 `dxball_gameplay_ops` supplies brick effects, sound stop/play, range RNG and
-particle creation. Their ordered calls and arguments are accepted; their
-implementations remain pending. The target oracle hooks those same entries,
+particle creation. Brick effects default to the maintained animation constructor;
+the hit oracle controls this boundary, while the effects oracle executes it.
+The other dependency implementations remain pending. The hit oracle hooks those same entries,
 executes the original append and pan bodies, and runs the already accepted
 board renderer with its established surface/sprite boundaries.
 
 ## Acceptance
 
-`tests/test_gameplay_differential.py` has 12,786 independent cases:
+`tests/test_gameplay_differential.py` has 13,689 independent cases:
 
 - 3,205 pan cases: every integer x from 0 through 640, scales 0, 0.5, 1, 20
   and -1; actual target x87 arithmetic and `_ftol` execute unhooked.
@@ -115,6 +118,8 @@ board renderer with its established surface/sprite boundaries.
   hits preserving damage stages, hard-brick behavior and queue growth.
 - 212 scan cases: all 50 hash-verified shipped boards plus empty/all-explosive/
   mixed-byte fixtures, both display modes, and repeated scans.
+- 903 request-helper cases: all 256 tile values at three positions and
+  begin/advance/delete at every current position in lists of length 0..8.
 
 Comparison includes the full board, all owned integer state, active surface,
 complete EAX returns, list payload/links, random consumption and ordered
@@ -124,10 +129,14 @@ valid 0..19 cells, counters/scores to the tested non-overflow domain. General
 floating-point overflow, NaN, driver output and missing backend behavior are
 outside semantic acceptance.
 
-Cold VC4.0 replay accepts three complete COMDAT units: append (146 bytes),
-pan (63 bytes) and scan (139 bytes). All nine relocations are explicit, and both double constants
+Cold VC4.0 replay retains the original three complete COMDAT units: append (146 bytes),
+pan (63 bytes) and scan (139 bytes). Their nine relocations are explicit, and both double constants
 are independently checked in object and target storage. No bytes are masked,
 padded or copied into source. The scan preserves the observed signed byte
 comparison and explicit terminal return, including its natural epilogue jump.
 Tile-hit has semantic acceptance only; its maintained control flow and
 dependency bridge need not emit the original instruction sequence.
+
+The request begin, advance and enqueue helpers now add three exact units,
+documented with their REA dossiers in [the animation owner](EFFECTS_OWNER.md).
+Request deletion has scoped semantic acceptance only.

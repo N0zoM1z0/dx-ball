@@ -12,7 +12,8 @@ without checking their individual evidence.
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
-| Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, linked-list append and sound pan |
+| Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, request-list helpers and sound pan |
+| Animation owner | `src/effects.c`; constructors, timer steps, dispatch, occupancy and propagation |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -33,7 +34,7 @@ Project structure:
 - `scripts/`: attestation, REA/Ghidra queries, pinned builds, exact replay, reporting.
 - `tests/`: target-machine differential and oracle rejection tests.
 - `docs/`: accepted evidence, workflow, architecture, and handoff.
-- `resources/`: generated public progress artwork; no original game artwork.
+- `resources/`: generated progress SVG and the user-supplied original title screenshot.
 
 Ignored local state: `original/`, `.tools/`, `.analysis/`, `build/`,
 `ghidra-project/`. Ghidra databases and generated decompiler text are never the
@@ -53,5 +54,12 @@ for the first verified target session and current boundary observations.
 `src/gameplay.h` declares the explosion list and gameplay dependency bridge.
 The original append ABI uses ECX; Windows builds retain fastcall, while native
 tests use the host ABI. Pointer fields grow with the host without changing the
-three 32-bit payload values. Brick effects, RNG, particles and DirectSound are
-explicit pending dependencies. See [gameplay evidence](GAMEPLAY_OWNER.md).
+three 32-bit payload values. Brick effects now call the maintained animation
+owner. RNG, bonus production, particles and DirectSound remain dependency
+boundaries. See [gameplay evidence](GAMEPLAY_OWNER.md).
+
+`src/effects.h` declares the separate animation node/list and deletion, bonus,
+sprite and region callbacks. `dxball_apply_explosion_requests` composes the
+recovered request phase, without claiming the entire original frame updater.
+The frame-phase oracle neutralizes unrelated work and checks only the declared
+phase's state and ordered calls. See [animation evidence](EFFECTS_OWNER.md).

@@ -4,7 +4,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
-add_library(dxball_core SHARED src/boards.c src/resources.c src/gameplay.c)
+add_library(dxball_core SHARED src/boards.c src/resources.c src/gameplay.c src/effects.c)
 target_include_directories(dxball_core PUBLIC src)
 set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")

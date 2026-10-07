@@ -72,6 +72,8 @@ class GameNative(Native):
         ops = Ops.in_dll(self.lib, "dxball_gameplay_ops")
         for (name, _), callback in zip(Ops._fields_, self.game_callbacks):
             setattr(ops, name, callback)
+        self.free_callback = C.CFUNCTYPE(None, C.c_void_p)(self.free)
+        C.c_void_p.in_dll(self.lib, "dxball_effect_ops").value = C.cast(self.free_callback, C.c_void_p).value
         for name, args, result in [
             ("dxball_screen_pan", [C.c_int32], C.c_int32),
             ("dxball_append_explosion", [C.POINTER(List)], C.c_int32),
@@ -79,6 +81,15 @@ class GameNative(Native):
             ("dxball_scan_explosive_tiles", [], None)]:
             function = getattr(self.lib, name)
             function.argtypes, function.restype = args, result
+        for name in ("begin_explosions", "advance_explosion", "remove_explosion"):
+            function = getattr(self.lib, "dxball_" + name)
+            function.argtypes, function.restype = [C.POINTER(List)], C.c_int32
+        self.lib.dxball_queue_explosion_at.argtypes = [C.c_int32, C.c_int32]
+        self.lib.dxball_queue_explosion_at.restype = None
+
+    def free(self, address):
+        node = C.cast(address, C.POINTER(Node)).contents
+        self.events.append(("free-node", node.kind, node.x, node.y))
 
     def observed(self):
         return (self.tiles[self.cell], self.state[REMAINING].value,
@@ -145,6 +156,11 @@ class GameTarget(TargetOracle):
                                   (0x4148A0, self.particle), (0x416770, self.allocate),
                                   (0x417910, self.exit)]:
             self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, callback, begin=address, end=address))
+        self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, self.free, begin=0x416760, end=0x416760))
+
+    def free(self, *unused):
+        self.events.append(("free-node", *struct.unpack("<3i", self.read(self._args(1)[0], 12))))
+        self._return()
 
     def observed(self):
         return (self.read(TILES + self.cell, 1)[0], signed(self.read_u32(REMAINING)),
@@ -222,7 +238,8 @@ def main():
     args = parser.parse_args()
     native, target = GameNative(args.library), GameTarget()
     cases = {"screen_pan": 0, "append_explosion": 0, "hit_board_tile": 0,
-             "scan_explosive_tiles": 0}
+             "scan_explosive_tiles": 0, "begin_explosions": 0,
+             "advance_explosion": 0, "remove_explosion": 0, "queue_explosion_at": 0}
     rng = random.Random(0x411F40)
 
     def seed(tiles, flags=0, reduced=0, mode=0, cell=0, preserve_list=False):
@@ -294,6 +311,34 @@ lib.dxball_append_explosion(C.byref(owner))
     assert result.returncode == target.exit_status == 1
     assert native.list_state() == target.list_state(), "failed append changed list"
     cases["append_explosion"] += 1
+
+    for tile in range(256):
+        for x, y in ((0, 0), (19, 19), (3, 17)):
+            board = bytearray(400)
+            board[x + y * 20] = tile
+            seed(board, cell=x + y * 20)
+            native.call("dxball_queue_explosion_at", x, y)
+            target.call(0x412B30, x, y)
+            compare(("queue", tile, x, y))
+            cases["queue_explosion_at"] += 1
+
+    for name, address in [("begin_explosions", 0x410070),
+                          ("advance_explosion", 0x410170), ("remove_explosion", 0x40FF50)]:
+        for length in range(9):
+            for current in [None, *range(length)]:
+                seed(bytes(400))
+                host_nodes, target_nodes = [], []
+                for index in range(length):
+                    target.append()
+                    native.call("dxball_append_explosion", C.byref(native.list))
+                    host_nodes.append(C.cast(C.cast(native.list.current, C.c_void_p).value, C.POINTER(Node)))
+                    target_nodes.append(target.read_u32(LIST))
+                native.list.current = host_nodes[current] if current is not None else C.POINTER(Node)()
+                target.write_u32(LIST, target_nodes[current] if current is not None else 0)
+                target.uc.reg_write(UC_X86_REG_ECX, LIST)
+                assert native.call("dxball_" + name, C.byref(native.list)) == target.call(address), (name, length, current)
+                compare((name, length, current))
+                cases[name] += 1
 
     for tile in range(256):
         for flags in (0, 1, -1):

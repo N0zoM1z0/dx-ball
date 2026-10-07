@@ -10,7 +10,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.gameplay]
 source = "src/gameplay.c"
 object = "build/exact/gameplay.obj"
-inputs = ["src/gameplay.c", "src/gameplay.h", "src/boards.h"]
+inputs = ["src/gameplay.c", "src/gameplay.h", "src/boards.h", "src/effects.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-explosion]
@@ -31,8 +31,8 @@ target_address = 0x00406400
 size = 63
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x17, type = "DIR32", symbol = "$T406", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
-  { offset = 0x20, type = "DIR32", symbol = "$T407", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
+  { offset = 0x17, type = "DIR32", symbol = "$T488", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
+  { offset = 0x20, type = "DIR32", symbol = "$T489", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
   { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0, target = 0x004210A0 },
   { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
 ]
@@ -239,4 +239,108 @@ relocations = [
   { offset = 0x66, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
   { offset = 0x72, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
   { offset = 0x78, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
+]
+
+[builds.effects]
+source = "src/effects.c"
+object = "build/exact/effects.obj"
+inputs = ["src/effects.c", "src/effects.h", "src/gameplay.h", "src/boards.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.begin-explosions]
+build = "gameplay"
+symbol = "@dxball_begin_explosions@4"
+target_address = 0x00410070
+size = 57
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+]
+
+[units.advance-explosion]
+build = "gameplay"
+symbol = "@dxball_advance_explosion@4"
+target_address = 0x00410170
+size = 89
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+]
+
+[units.queue-explosion-at]
+build = "gameplay"
+symbol = "_dxball_queue_explosion_at"
+target_address = 0x00412B30
+size = 99
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+  { offset = 0x16, type = "DIR32", symbol = "_dxball_board_tiles", addend = 0, target = 0x0043F8F8 },
+  { offset = 0x24, type = "DIR32", symbol = "_dxball_explosion_pending", addend = 0, target = 0x00422D20 },
+  { offset = 0x2D, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
+  { offset = 0x32, type = "REL32", symbol = "@dxball_append_explosion@4", addend = 0, target = 0x00412470 },
+  { offset = 0x37, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
+  { offset = 0x46, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
+  { offset = 0x52, type = "DIR32", symbol = "_dxball_explosions", addend = 0, target = 0x0043F8E0 },
+]
+
+[units.begin-brick-effects]
+build = "effects"
+symbol = "@dxball_begin_brick_effects@4"
+target_address = 0x004100B0
+size = 57
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+]
+
+[units.advance-brick-effect]
+build = "effects"
+symbol = "@dxball_advance_brick_effect@4"
+target_address = 0x00412590
+size = 89
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+]
+
+[units.append-brick-effect]
+build = "effects"
+symbol = "@dxball_append_brick_effect@4"
+target_address = 0x00412690
+size = 146
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
+]
+
+[units.spawn-explosion-effect]
+build = "effects"
+symbol = "_dxball_spawn_explosion_effect"
+target_address = 0x004125F0
+size = 149
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0xC, type = "REL32", symbol = "@dxball_append_brick_effect@4", addend = 0, target = 0x00412690 },
+  { offset = 0x11, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x1C, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x37, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x4C, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x54, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x60, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x6C, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x86, type = "DIR32", symbol = "_dxball_board_aux", addend = 0, target = 0x0043A918 },
+]
+
+[units.process-brick-effects]
+build = "effects"
+symbol = "_dxball_process_brick_effects"
+target_address = 0x00412510
+size = 120
+boundary_evidence = "docs/EFFECTS_OWNER.md"
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0xF, type = "REL32", symbol = "@dxball_begin_brick_effects@4", addend = 0, target = 0x004100B0 },
+  { offset = 0x1C, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x2B, type = "REL32", symbol = "_dxball_step_explosion_effect", addend = 0, target = 0x00412730 },
+  { offset = 0x35, type = "REL32", symbol = "_dxball_step_brick_effect", addend = 0, target = 0x00412CB0 },
+  { offset = 0x5D, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 0x62, type = "REL32", symbol = "@dxball_advance_brick_effect@4", addend = 0, target = 0x00412590 },
 ]

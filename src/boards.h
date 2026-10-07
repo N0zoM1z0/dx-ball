@@ -37,7 +37,7 @@ typedef struct DxBallRenderOps {
 
 extern DxBallByte dxball_board_bank[DXBALL_BOARD_COUNT][DXBALL_BOARD_SIZE];
 extern DxBallByte dxball_board_tiles[DXBALL_BOARD_SIZE];
-/* Meaning beyond per-level zeroing is unclassified; do not call this "damage" yet. */
+/* Explosion-animation occupancy: set on spawn and cleared on final cleanup. */
 extern DxBallByte dxball_board_aux[DXBALL_BOARD_SIZE];
 extern DxBallInt dxball_board_index;
 extern DxBallInt dxball_display_mode;

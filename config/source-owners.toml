@@ -19,4 +19,11 @@ source = "src/gameplay.c"
 header = "src/gameplay.h"
 oracle = "tests/test_gameplay_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/boards.c", "src/boards.h", "tests/test_boards_differential.py", "config/assets.csv"]
+additional_inputs = ["src/boards.c", "src/boards.h", "src/effects.c", "src/effects.h", "tests/test_boards_differential.py", "config/assets.csv"]
+
+[owners.effects]
+source = "src/effects.c"
+header = "src/effects.h"
+oracle = "tests/test_effects_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["src/boards.c", "src/boards.h", "src/gameplay.c", "src/gameplay.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py"]

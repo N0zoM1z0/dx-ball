@@ -15,9 +15,9 @@ Binary analysis uses [REA](https://github.com/morluto/rea) with its Ghidra
 provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
-> Boards, resources and brick-hit gameplay now have **28 maintained
-> functions**, **24,157 target differential cases**, and **16 byte-exact functions
-> totaling 1,505 bytes**. The current builds provide inspection utilities and an
+> Boards, resources, brick hits and animations now have **41 maintained
+> functions**, **38,037 target differential cases**, and **24 byte-exact functions
+> totaling 2,311 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
@@ -44,7 +44,8 @@ DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
 | Compiler candidate | VC4.0, compiler 10.00.5270 / linker 3.00.5270 |
 
 The original game, data, archives, toolchain binaries, and Ghidra database are
-private local inputs and are not included. Supply the exact archive identified
+private local inputs and are not included. The supplied title screenshot above
+illustrates the original game. Supply the exact archive identified
 in [target.toml](config/target.toml); another DX-Ball version cannot substitute
 for this target.
 
@@ -129,6 +130,7 @@ scripts/repo-python tests/test_exact_oracle.py
 scripts/repo-python tests/test_boards_differential.py
 scripts/repo-python tests/test_resources_differential.py
 scripts/repo-python tests/test_gameplay_differential.py
+scripts/repo-python tests/test_effects_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -160,19 +162,21 @@ source, original behavior and acceptance limits.
   [oracle matrix and limits](docs/ORACLES.md), and [progress](docs/PROGRESS.md).
 - [Resource ownership and file formats](docs/RESOURCE_OWNER.md).
 - [Brick-hit gameplay, explosions and sound pan](docs/GAMEPLAY_OWNER.md).
+- [Explosion queues and brick animations](docs/EFFECTS_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:
   independent source, scoped semantic, and complete byte-exact facts.
 
-Upcoming owners include explosion processing,
-ball/paddle physics, bonuses, Win32/DirectDraw integration, menus, sound, and
+Upcoming owners include
+ball/paddle physics, bonuses, particles, Win32/DirectDraw integration, menus, sound, and
 MIDI. Names and ownership are promoted only with target-local evidence.
 
 ## License and attribution
 
 The maintained reconstruction source and repository tooling are available under
 the [MIT license](LICENSE). Original DX-Ball code, game artwork, audio, data, and
-third-party toolchains retain their respective rights and are not included.
+third-party toolchains retain their respective rights. The title screenshot is
+included for illustration; original game binaries and asset files are not included.
 The progress illustration is generated from reconstruction ledgers.
