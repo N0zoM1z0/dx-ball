@@ -29,6 +29,15 @@ def main():
         result = subprocess.run([str(native), str(original), invalid], capture_output=True)
         assert result.returncode == 2 and not result.stdout
     print("PASS native inspector: 50 boards and 4 rejected inputs", flush=True)
+    resource_outputs = {}
+    resource_native = ROOT / "build/native/dxball_resources"
+    resource_directory = ROOT / "original"
+    for suffix, mode in (("SBK", "--sbk"), ("PCX", "--pcx")):
+        for path in sorted(resource_directory.glob("*." + suffix)):
+            result = subprocess.run([str(resource_native), mode, path.name],
+                                    cwd=resource_directory, capture_output=True, text=True, check=True)
+            resource_outputs[(mode, path.name)] = json.loads(result.stdout)
+    print("PASS native resource inspector: all 7 SBK and 5 PCX files", flush=True)
     lock = session_lock()
     tools = Toolchain()
     tools.verify()
@@ -43,10 +52,20 @@ def main():
                 raise RuntimeError(f"{profile} execution failed:\n{result.stderr}")
             assert json.loads(result.stdout) == expected_outputs[board]
         print(f"PASS {profile} inspector: boards 1, 25, 50 under Wine", flush=True)
+        resource_executable = ROOT / "build" / profile / "dxball_resources.exe"
+        for (mode, name), expected in resource_outputs.items():
+            result = subprocess.run(["wine", str(resource_executable), mode, name],
+                                    env=tools.env, cwd=resource_directory,
+                                    capture_output=True, text=True, timeout=60)
+            if result.returncode != 0:
+                raise RuntimeError(f"{profile} resource execution failed:\n{result.stderr}")
+            assert json.loads(result.stdout) == expected, (profile, name)
+        print(f"PASS {profile} resource inspector: all 12 files under Wine", flush=True)
     (ROOT / "build/reports/inspector-builds.json").write_text(json.dumps({
         "bank_sha256": hashlib.sha256(bank).hexdigest(), "native_boards": 50,
         "rejected_inputs": 4, "windows_boards": [1, 25, 50],
         "profiles": ["native", "windows-i686", "vc40"], "status": "passed",
+        "resources": [name for mode, name in resource_outputs],
     }, indent=2) + "\n")
 
 

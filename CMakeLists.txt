@@ -11,6 +11,12 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(dxball_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
 
+add_executable(dxball_resources src/resource_inspector.c)
+target_link_libraries(dxball_resources PRIVATE dxball_core)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(dxball_resources PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+
 add_executable(dxball_boards src/board_inspector.c)
 target_link_libraries(dxball_boards PRIVATE dxball_core)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
