@@ -1,5 +1,13 @@
 # Current handoff
 
+Latest storage housekeeping recovered 548.11 MiB: 4.85 MiB of resettable
+runtime probe files and 543.26 MiB from the verified Ghidra download ZIP.
+The installed REA/Node/Ghidra/JDK inputs attest independently of that archive;
+saved REA target-byte/snapshot verification passes after removal. Bootstrap
+now downloads the ZIP only for a missing installation. Cleanup preview is
+empty, and journals remain under `.analysis/cleanup/`. Installed tools,
+originals, manual saves and immutable evidence remain intact.
+
 The original target is DX-Ball v1.07, English, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
 The provided archive is private under the parent `game_exe/`; verified files

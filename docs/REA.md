@@ -124,6 +124,11 @@ inside closed archives share storage through hardlinks; their paths and hashes
 stay intact. Mutable root aliases are never hardlinked to evidence. Cleanup
 retains snapshots, archived results, checkpoint reports and pinned tools, and
 writes a private SHA-256 operation journal under `.analysis/cleanup/`.
+Once the installed REA, Node, Ghidra and JDK inputs all verify, cleanup also
+removes the hash-verified Ghidra download ZIP. The installed provider remains
+intact. Bootstrap reuses that installation without downloading the ZIP again;
+a fresh installation downloads the archive from its pinned URL and checks its
+SHA-256 before extraction.
 A failed later query attempts to close with a snapshot, preserving the successful
 prefix; cleanup errors are recorded separately without hiding the query error.
 If the transport has already closed, complete received Evidence files remain

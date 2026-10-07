@@ -22,6 +22,15 @@ def regular(path):
 def plan():
     runs = ROOT / '.analysis/rea/runs'
     actions, catalogs = [], {}
+    # The download is a cache, not an installed REA/Ghidra input. Require both
+    # its original archive identity and a fully attested installation first.
+    lock = json.loads((ROOT / 'config/rea.lock.json').read_text())
+    archive = ROOT / '.tools' / lock['ghidra']['asset']
+    if regular(archive) and digest(archive) == lock['ghidra']['archive_sha256']:
+        from rea import environment
+        environment()
+        actions.append(('remove_download_cache', archive, None,
+                        lock['ghidra']['archive_sha256']))
     for path in sorted(runs.glob('*/catalog.json')):
         if not regular(path) or not regular(path.parent / 'close.json'):
             continue

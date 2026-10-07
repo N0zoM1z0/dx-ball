@@ -20,15 +20,15 @@ def main():
                     "--no-audit", "--no-fund"], check=True)
     ghidra = lock["ghidra"]
     archive = ROOT / ".tools" / ghidra["asset"]
-    if not archive.exists() or sha256(archive) != ghidra["archive_sha256"]:
-        temporary = archive.with_suffix(".download")
-        print(f"Downloading {ghidra['url']}", flush=True)
-        urllib.request.urlretrieve(ghidra["url"], temporary)
-        if sha256(temporary) != ghidra["archive_sha256"]:
-            raise ValueError("official Ghidra archive hash mismatch")
-        temporary.replace(archive)
     installation = ROOT / ".tools" / ghidra["directory"]
     if not installation.exists():
+        if not archive.exists() or sha256(archive) != ghidra["archive_sha256"]:
+            temporary = archive.with_suffix(".download")
+            print(f"Downloading {ghidra['url']}", flush=True)
+            urllib.request.urlretrieve(ghidra["url"], temporary)
+            if sha256(temporary) != ghidra["archive_sha256"]:
+                raise ValueError("official Ghidra archive hash mismatch")
+            temporary.replace(archive)
         with zipfile.ZipFile(archive) as bundle:
             for member in bundle.infolist():
                 relative = Path(member.filename)
