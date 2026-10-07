@@ -4,7 +4,9 @@ The Windows adapter now binds the maintained mode/gameplay/audio controllers
 to real Win32, DirectDraw, DirectSound and WinMM calls. Both VC4 and MinGW build
 experimental game EXEs. A bounded Wine check runs the original and both source
 builds through the opening screen, menu, first board, return to menu and clean
-shutdown. Complete gameplay and physical device fidelity remain unverified.
+shutdown. Further state-observed controls now cover ball motion, paddle input,
+pause/resume and editor persistence/exit. Complete gameplay and physical device
+fidelity remain unverified.
 
 Before calling real DLLs, `tests/test_windows_abi.py` compiles the shared owner
 headers against the actual i686 SDKs and executes three console probes under
@@ -127,12 +129,70 @@ also appear in the original control. The test waits for nonblank presentation
 before forcing X focus: changing focus during initialization left the original
 control at a blank window. That is a harness limitation, not a source fix.
 The Wine logs also report an unavailable ALSA sequencer. Physical audio and
-asynchronous MIDI buffer delivery are therefore still unverified. Editor,
-focus/lost-surface recovery, full ball play and all-board behavior need further
-real-runtime checks.
+asynchronous MIDI buffer delivery are therefore still unverified. Focus/lost-
+surface recovery, extended gameplay and all-board behavior need further checks.
 
 `scripts/clean-local.py` journals removal of resettable `probe-*` working
 copies after their reports are retained. Manual run directories and their
 scores/editor saves are preserved. Owner sources, declared semantic/exact
 inputs and the native analysis-library hash did not change in this adapter
 batch; the complete accepted sound checkpoint's oracles remain reusable.
+
+## State-observed ball and editor controls
+
+```bash
+scripts/repo-python tests/test_windows_play.py
+```
+
+The second real-runtime harness runs the original, VC4 and MinGW versions
+through the same input script. It observes an initialized attached ball,
+mouse-positioned paddle at x480 and x200, release by left click, changing ball
+coordinates, frozen ball fields over a 0.5-second pause, and resumed motion.
+Actual Win32/DirectX calls and maintained frame bodies execute throughout.
+Random trajectories are not synchronized or claimed equal between runs.
+
+It then enters the editor with Control-F1, clears a working board, selects tile
+2 and holds Control while painting its first two cells. S writes the whole bank:
+the expected 20,000 bytes preserve the other 49 original boards. Next/previous
+board selection, Backspace, L and another S are checked. The second save must
+recreate a deliberately removed probe file, avoiding a stale-file success. All
+three saved banks have SHA-256
+`b88441eb5e06676a106501a60a450b8046fa7b880e8f53ffe5f556ae75a42cd2`.
+Both editor return to menu and the subsequent zero-code process exit are
+observed, with the visible game window gone. All 49 originals are reverified.
+
+The previous exploratory editor session ended without a verified exit. The
+original control now establishes that mode 0 can already be selected while
+`end_requested` remains 1 during its initializer/fade; it becomes 0 on completion.
+The new harness waits for that completed transition before its next input.
+Pause also sets its flag before the display fade completes, so screenshot
+capture waits for actual nonblank presentation. No owner body was altered to
+make either transition pass. Failed harness attempts remain retained privately.
+
+`tests/windows_state_reader.c` uses FindWindow/GetWindowThreadProcessId and
+ReadProcessMemory with query/read rights. It neither writes target memory nor
+hooks code or suspends threads. Original addresses reuse the reviewed globals
+in the existing board/platform/core/power-up/editor oracles. Source-built VC4
+addresses come from its generated linker map, whose hash is recorded; MinGW
+addresses resolve the actual DLL exports relative to its remote module base.
+Only the observer's own DLL mapping is loaded without initialization. Ball
+fields follow the already recovered i686 list/node layout. Reads are sequential
+and do not constitute an atomic frame snapshot.
+
+VC4 builds now retain `dxball.map`; this changes build metadata, with no source
+owner/exact-unit change. The modern SDK reader builds as strict C90 at O3 in
+the private harness and as a Windows CMake target checked by public CI. It is
+a testing utility, with no original-function acceptance claim. Complete states,
+screenshots, Wine logs, source/reader/product/map hashes and saved-bank hashes
+survive in `build/reports/windows-play*`. Private CI runs both runtime harnesses.
+
+Wine recreates a deleted uppercase `DEFAULT.BDS` as lowercase `default.bds`.
+Working-copy preparation now respects Windows filename equivalence: manual
+runs preserve an existing save regardless of case, while probe reset removes
+superseded case aliases. Reports resolve the actual saved filename. The
+immutable imported assets are not renamed or modified.
+
+These controls leave real game-over/ranking input, focus/surface recovery,
+complete level progression, embedded resources and actual MIDI/audio delivery
+open. Function acceptance remains 214 maintained /95,873 direct cases /40
+exact functions, separate from these three actual Windows runs.

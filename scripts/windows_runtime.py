@@ -49,7 +49,16 @@ def prepare(profile, probe=False):
             continue
         destination = directory / name
         # Manual runs preserve score/editor saves; probes reset only their own fixtures.
-        if probe or not destination.exists():
+        aliases = [path for path in directory.iterdir() if path.name.casefold() == name.casefold()]
+        if any(path.is_symlink() for path in aliases):
+            raise ValueError('Refusing a runtime asset symlink: ' + name)
+        if probe:
+            for path in aliases:
+                if path != destination:
+                    path.unlink()
+        elif len(aliases) > 1:
+            raise ValueError('Ambiguous Windows filename aliases: ' + name)
+        if probe or not aliases:
             copy_file(ROOT / 'original' / name, destination)
     source = ROOT / ('original/DXBALL.EXE' if profile == 'original'
                      else 'build/' + profile + '/dxball.exe')

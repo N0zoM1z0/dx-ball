@@ -28,8 +28,8 @@ def status():
             "semantic_validated_with_scope": len(semantics),
             "semantic_units": sorted({row["unit"] for row in semantics}),
             "playable": False,
-            "products": ["analysis library", "board/resource inspectors", "experimental i686 Windows game EXEs"],
-            "windows_runtime_scope": "Wine opening/menu/first-board input/shutdown; whole-game fidelity unverified",
+            "products": ["analysis library", "board/resource inspectors", "experimental i686 Windows game EXEs", "read-only Windows state reader"],
+            "windows_runtime_scope": "Wine opening/menu, ball/paddle/pause, editor bank persistence/shutdown; whole-game fidelity unverified",
             "denominator": "528 provisional Ghidra candidates, including unclassified CRT/library code"}
 
 
@@ -45,4 +45,4 @@ if __name__ == "__main__":
         print(f"{result['target']}: {result['function_candidates']} provisional candidates")
         print(f"Source-present: {result['source_present']}; exact: {result['exact_functions']} ({result['exact_bytes']} bytes)")
         print(f"Authored confirmed: {result['authored_confirmed']}; origin unknown: {result['origin_unknown']}")
-        print("Whole-game fidelity: unverified; experimental Windows game EXEs pass bounded Wine startup/input/shutdown checks")
+        print("Whole-game fidelity: unverified; Windows EXEs pass bounded Wine ball/paddle/pause/editor/shutdown controls")

@@ -152,3 +152,17 @@ Existing original-x86 status/editor and complete regression suites are replayed
 against the GCC 13 native library, plus MinGW/VC4 products and forty exact units.
 The failed remote run and final input identities are retained under
 `.analysis/checkpoints/editor-format-199-40/`.
+
+## Real Windows follow-up
+
+The later Windows adapter now exercises this controller with actual Win32,
+DirectDraw and stdio calls. `tests/test_windows_play.py` runs original/VC4/MinGW
+controls through Control-F1, selection, held-Control painting, full bank save,
+board switching, clear/reload, file recreation, menu return and zero-code exit.
+Each saved 20,000-byte bank agrees completely, preserving the other 49 boards;
+all immutable originals retain their hashes. A read-only observer waits for
+completed mode transitions instead of inferring completion from an early image.
+See [Windows runtime notes](WINDOWS_ADAPTER.md#state-observed-ball-and-editor-controls)
+for retained addresses, observer limits and remaining whole-game scope. These
+runtime runs are separate from the 2,921 direct cases/32 connected oracle checks
+and do not alter original-function or byte-exact acceptance.

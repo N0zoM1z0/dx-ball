@@ -15,7 +15,7 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 Portable builds are analysis libraries and a board-inspection utility. Windows
 builds now also produce experimental game EXEs with real Win32, DirectDraw,
 DirectSound and WinMM bindings. Original/VC4/MinGW Wine control runs cover
-opening, menu, first-board input and zero-code shutdown; complete gameplay,
+opening/menu, ball/paddle/pause, editor bank persistence and zero-code shutdown; complete gameplay,
 actual physical device delivery and asynchronous MIDI remain unverified.
 DirectSound/WAV and MDS/music controllers have scoped implementations. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
@@ -392,3 +392,33 @@ scripts/build-windows.py serializes/limits MinGW compilation. Public CI now
 also compiles the Windows adapter with strict warnings. Private CI includes the
 runtime probe after ABI checks. Periodic cleanup journals remove only resettable
 probe-* working copies; manual runtime directories and accepted evidence stay.
+
+The Windows gameplay checkpoint adds tests/windows_state_reader.c and
+tests/test_windows_play.py. The observer only reads process state using Win32
+query/read rights, with original addresses from retained REA-derived oracle
+contracts, VC4 linker-map symbols and MinGW remote DLL/export offsets. The
+original and both source builds pass real paddle x480/x200, ball release/motion,
+P pause/frozen-ball/resume, Control-F1 editor, held-Control paint, whole-bank S,
+next/previous board, Backspace/L and file-recreating S, editor return to completed
+menu mode and zero-code shutdown. The three 20,000-byte saved banks are identical
+SHA256 b88441eb5e06676a106501a60a450b8046fa7b880e8f53ffe5f556ae75a42cd2.
+
+The previous exploratory editor exit remains an incomplete attempt, not a
+source failure. Original live state establishes mode0/end_requested1 during
+initialization, then end_requested0 at completion; subsequent input now waits
+for that boundary. Pause flags similarly precede completed fades. Original
+file recreation uses lowercase default.bds after uppercase probe-file removal;
+the runtime preparer now preserves manual saves regardless of case and resets
+only probe aliases. No owner body/header or declared semantic/exact input was
+changed. VC4 now emits a map; strict C90/O3 observer compilation and public
+Windows compilation are separate build checks. Preserve complete new actual
+runtime reports and reuse unchanged core/exact acceptance with hash checks.
+Final original/VC4/MinGW runs contain 86/87/82 read-only state observations;
+reports, saved banks, initial attempts, SDK/compiler identities and the
+67-input/eight-build reuse audit are retained in
+`.analysis/checkpoints/windows-play-214-40/`. Journaled cleanup removed
+4.85 MiB of resettable probe files after retaining those artifacts.
+
+Next real-runtime families: natural life-loss/game-over/ranking persistence,
+focus/surface recovery, level progression, embedded resources and actual
+audio/asynchronous MIDI delivery. Full reconstruction remains unproven.

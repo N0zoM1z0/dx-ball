@@ -43,14 +43,19 @@ def main():
         log.append(toolchain.compile(ROOT / source, output, build["flags"]).stdout)
         game_objects.append(output)
     executable = directory / "dxball.exe"
+    link_map = directory / "dxball.map"
     executable.unlink(missing_ok=True)
+    link_map.unlink(missing_ok=True)
     game_arguments = ["/NOLOGO", "/MACHINE:IX86", "/SUBSYSTEM:WINDOWS",
                       "/INCREMENTAL:NO", "/PDB:NONE", "/OUT:" + windows_path(executable),
+                      "/MAP:" + windows_path(link_map),
                       *map(windows_path, objects + game_objects),
                       "user32.lib", "gdi32.lib", "winmm.lib"]
     log.append(toolchain.run("link.exe", game_arguments).stdout)
     if not executable.is_file():
         raise RuntimeError("legacy game linker produced no executable")
+    if not link_map.is_file():
+        raise RuntimeError("legacy game linker produced no symbol map")
     products["dxball"] = sha256(executable)
     print(f"legacy game build OK: {executable}", flush=True)
     (directory / "build.log").write_text("\n".join(log))
@@ -61,7 +66,8 @@ def main():
         "compiler_sha256": toolchain.lock["compiler_sha256"],
         "linker_sha256": toolchain.lock["linker_sha256"],
         "flags": build["flags"], "link_flags": arguments[:6],
-        "game_link_flags": game_arguments[:6],
+        "game_link_flags": game_arguments[:7],
+        "game_map_sha256": sha256(link_map),
         "product": "board/resource inspectors and game EXE; playability requires runtime checks",
     }, indent=2) + "\n")
 

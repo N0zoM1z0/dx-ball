@@ -18,8 +18,9 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **214 maintained functions**, **95,873 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. Windows builds now also produce
-> experimental game EXEs. Wine checks cover opening, menu, first-board input and
-> clean shutdown; complete gameplay and driver fidelity remain in progress.
+> experimental game EXEs. Wine controls cover ball motion, paddle input,
+> pause/resume, editor persistence and clean shutdown; complete gameplay and
+> driver fidelity remain in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
 and state, recover maintainable source, then replay independent oracles.
@@ -67,8 +68,10 @@ startup, WAV upload and focus recovery. REA exposes the reload-and-retry
 behavior after a lost buffer; 1,603 direct cases and 36 separate lifecycle
 checks cover all 26 sound assets. The [Windows adapter](docs/WINDOWS_ADAPTER.md)
 uses those recovered contracts to bind real Win32, DirectDraw, DirectSound and
-WinMM calls. Original/VC4/MinGW runs reach the first board and exit cleanly under
-Wine; physical audio and complete-game fidelity remain unverified.
+WinMM calls. Original/VC4/MinGW control runs exercise ball release/motion,
+pause/resume, mouse input and complete editor bank save/reload under Wine.
+Read-only state observations distinguish a completed transition from a screen
+that is still fading. Physical audio and complete-game fidelity remain unverified.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -193,6 +196,7 @@ scripts/repo-python tests/test_midi_differential.py
 scripts/repo-python tests/test_sound_differential.py
 scripts/repo-python tests/test_windows_abi.py
 scripts/repo-python tests/test_windows_runtime.py
+scripts/repo-python tests/test_windows_play.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -225,6 +229,11 @@ MinGW control copies sequentially on a 640×480 8-bit Xvfb display, records actu
 screenshots and checks zero-code shutdown. This environment shows palette
 artifacts in the original too; it does not establish physical display/audio
 quality. See the [adapter notes](docs/WINDOWS_ADAPTER.md) for observed coverage.
+
+`tests/test_windows_play.py` also checks real ball/paddle/pause controls and
+editor paint/save/reload/return. Its observer reads process state without hooks
+or target writes; all three runs persist the same complete 20,000-byte board
+bank in resettable copies. The original 49 files retain their verified hashes.
 
 To follow the sound-pan investigation with REA after setup:
 
