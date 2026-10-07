@@ -504,3 +504,11 @@ fixtures were removed or deduplicated only after archiving/hash checks.
 Build products are about 13 MiB and analysis 329 MiB; originals, pinned tools,
 immutable evidence and manual saves remain. The final public/native/tracking
 check passes after metadata updates. No writable REA/Wine session remains.
+
+
+Remote CI housekeeping: the superseded56a783f run remained in package
+installation for over an hour despite the192c9e3 successor having passed.
+Its partial state is retained before cancellation. Public CI now cancels
+superseded runs within the same workflow/ref group and bounds each job to
+15 minutes. This changes CI scheduling only; local one-CPU/one-job checks,
+REA evidence and accepted owner/exact inputs remain unchanged.
