@@ -92,9 +92,12 @@ def observe(profile, env, reports):
                     (output / 'tail-before-last-release.bin').write_bytes(
                         bytes.fromhex(initial['board_bank']))
                 release(observer, env, 185, 'round-release-' + str(index))
+                # A fast clear can finish before the next SDK sample: the next
+                # board already has one brick. Accept its advanced index plus
+                # earned score, then separately wait for stable reset state.
                 observer.wait('round-hit-' + str(index), lambda s: s['score'] > initial['score']
                               and (s['remaining_bricks'] == 0
-                                   or (index == 49 and s['board_index'] == 50)))
+                                   or s['board_index'] == index + 1))
                 if index < 49:
                     state = observer.wait('round-next-' + str(index),
                         lambda s: s['display_mode'] == 1 and s['board_index'] == index + 1

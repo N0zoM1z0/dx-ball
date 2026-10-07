@@ -52,6 +52,24 @@ Each count agrees with the captured tile bytes using the reviewed exclusion of
 0 and 2. The original clock and source pointer bytes can change these counts
 between runs; the table is an observation, not a fixed numerical contract.
 
+## Sampling a fast clear
+
+The embedded-resource regression preserved a useful failed observation in
+REA process Evidence
+`ev_481a0a3766e82f0d1be8d93cc9c9ba7009438b9bce5da5cf21bb97bd16e88712`.
+Original completed all 50 clears; the VC4 harness timed out waiting for clear 15.
+Its preceding release sample already recorded index 16, score 160 and zero
+remaining bricks. The following sample saw the next board's one brick; later
+samples show its ball attached. The wait had missed an already completed clear.
+
+The terminal harness now accepts an increased score with either the zero-brick
+state or the advanced board index, then retains its separate stable reset/next
+board checks. All initial board bytes, per-board score/life requirements, the
+terminal routing/storage pattern, saved bank and shutdown assertions remain.
+This changes the observer only. Maintained game C and shared release logic are
+unchanged. The private failure archive excludes stale summaries from previous
+attempts and retains the complete current samples and original input identities.
+
 ## Original read boundary
 
 The reviewed static queries are also available as a public REA session request:
