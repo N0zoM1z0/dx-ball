@@ -5,7 +5,8 @@ redraw into the per-frame controller, key routing, name editing and persisted
 ranking insertion. Eight maintained entries connect to existing mode dispatch,
 UI/glyph, pixel-line, dirty-region, palette and clock bodies. The controller
 family uses one shared C implementation for native, MinGW i686 and pinned VC4.
-Editor mode and the complete Windows/audio adapter and playable EXE remain pending.
+The subsequent [editor checkpoint](EDITOR_OWNER.md) maintains mode 2.
+The complete Windows/audio adapter and playable EXE remain pending.
 
 ## Entries and retained observations
 
@@ -122,7 +123,8 @@ mode 3, actual frame dispatch runs game cleanup/initialization, four game-over
 frames execute, actual key routing edits and submits a name, four ranking frames
 execute, then mouse/frame dispatch returns to actual menu mode 0. Production
 mode and key tables are checked before providers are installed. Modes 0, 1,
-3 and 4 now default to maintained source; mode 2 remains pending.
+3 and 4 default to maintained source at this checkpoint; the subsequent
+[editor checkpoint](EDITOR_OWNER.md) adds mode 2.
 
 Original CRT unsigned formatting, `strcpy`, strlen and default C-locale case
 conversion execute rather than being replaced with a reference algorithm.

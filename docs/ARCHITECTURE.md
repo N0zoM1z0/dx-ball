@@ -8,7 +8,7 @@ without checking their individual evidence.
 | Area | Target evidence / current work |
 | --- | --- |
 | Platform startup | `src/platform.c`; WinMain, window/input routing, singleton and fullscreen/compatible DirectDraw creation; Windows adapter pending |
-| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; modes 0/1/3/4 maintained, editor pending |
+| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; all five mode controllers maintained; Windows/audio adapter pending |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
@@ -26,6 +26,7 @@ without checking their individual evidence.
 | Startup/UI owners | `src/startup.c`, `src/ui.c`; working-resource setup, scores, text, line pixels and palette operations |
 | Menu/splash owner | `src/intro.c`; mode-0/4 controllers, point cloud, scroller/credit waves and palette pulses |
 | Game-over owner | `src/gameover.c`; mode-3 lifecycle/input, name buffer, rank insertion, score-file persistence and ranking pixels |
+| Editor owner | `src/editor.c`; mode-2 lifecycle/input, toolbar hit regions, board painting and persistence |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -94,8 +95,8 @@ constants. `src/round.h` exposes initialization/count operations, preserving
 terminal-level call order while leaving the original out-of-bank read unresolved.
 `src/core.c` connects main ball physics and the gameplay frame to these owners.
 `src/runtime.c` supplies real gameplay initialization and life-loss reset, plus
-clock, score and paddle routines. Its mode table defaults modes 0, 1, 3 and 4 to
-maintained source; editor requires configured implementations. All twelve frame
+clock, score and paddle routines. Its mode table defaults all five modes to
+maintained source. All twelve frame
 phases now default to maintained owners. The display owner supplies lightning,
 dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
 COM drivers, Windows binding and audio remain pending. Glyph and shared UI
@@ -111,8 +112,8 @@ creation and game key dispatch. Startup-only COM signatures live in
 `src/platform.h`, applied to opaque resource-interface slots with typed calls.
 WinMain/WndProc use stdcall on Windows and the host ABI for native analysis.
 The new oracle compares Windows records with native pointer growth, explicit
-COM output objects, message ordering and non-returning process exits. Audio,
-editor mode and the actual Win32 adapter remain boundaries. Shared state
+COM output objects, message ordering and non-returning process exits. Audio
+and the actual Win32 adapter remain boundaries on this platform test edge. Shared state
 includes the existing restart flag and bonus-9 flag; no duplicate pause/bonus
 fields are introduced. See [platform evidence](PLATFORM_OWNER.md).
 
@@ -134,5 +135,13 @@ state stay shared. Native and original tests execute actual name/ranking/UI
 bodies, controlling only file APIs, lifecycle resource operations and hardware
 boundaries. The name buffer is forty bytes with the original thirty-character
 input limit; record shifts retain strcpy semantics rather than copying entire
-records. See [game-over evidence](GAMEOVER_OWNER.md). Editor mode is the remaining
-mode controller, followed by actual platform/audio/MIDI adapter work.
+records. See [game-over evidence](GAMEOVER_OWNER.md). The subsequent
+[editor evidence](EDITOR_OWNER.md) completes the mode-controller family; actual
+platform/audio/MIDI adapter work remains.
+
+`src/editor.c` shares existing board/input/cursor storage and maintains a
+100-record toolbar hit table plus a DWORD selected tile. It connects actual
+board read/write/load/store and mode/key/window routing. Native host stdio
+and original controlled CRT have independent files; complete outcomes agree.
+Backspace clears only working tiles, while plus/minus store before switching
+or clamping. See [editor evidence](EDITOR_OWNER.md).

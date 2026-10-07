@@ -5,12 +5,13 @@
 #include "trig.h"
 #include "intro.h"
 #include "gameover.h"
+#include "editor.h"
 #include <stdlib.h>
 #include <string.h>
 
 DxBallWindowApi dxball_window_api;
 DxBallPlatformOps dxball_platform_ops;
-DxBallKeyModeOps dxball_key_mode_ops = { {dxball_intro_key, dxball_game_key, NULL, dxball_game_over_key}, dxball_splash_key };
+DxBallKeyModeOps dxball_key_mode_ops = { {dxball_intro_key, dxball_game_key, dxball_editor_key, dxball_game_over_key}, dxball_splash_key };
 DxBallHandle dxball_main_window, dxball_instance_semaphore;
 DxBallInt dxball_application_active, dxball_shift_pressed, dxball_control_pressed;
 DxBallInt dxball_sound_suspended, dxball_low_video_memory;

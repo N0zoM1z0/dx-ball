@@ -7,6 +7,8 @@ no new import or query was needed for this batch. Instructions, callers and
 program data resolve details that incomplete pseudocode alone does not supply.
 The maintained C connects these controllers to existing text, glyph, palette,
 point, line, dirty-region and timing bodies. A playable Windows EXE is pending.
+Subsequent [game-over](GAMEOVER_OWNER.md) and [editor](EDITOR_OWNER.md)
+checkpoints connect the remaining mode controllers.
 
 ## Entries and retained observations
 

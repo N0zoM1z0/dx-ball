@@ -1,4 +1,7 @@
 address,symbol,source,scope,semantic_unit
+0x00401E10,dxball_initialize_hit_regions,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-initialize-hit-regions
+0x00401EB0,dxball_set_hit_region,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-set-hit-region
+0x00401F90,dxball_find_hit_region,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-find-hit-region
 0x00402100,dxball_rectangles_overlap,src/geometry.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-rectangles-overlap
 0x00402250,dxball_initialize_trig,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-initialize-trig
 0x00402340,dxball_raw_sine,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-raw-sine
@@ -85,11 +88,18 @@ address,symbol,source,scope,semantic_unit
 0x0040A970,dxball_animate_palette,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-animate-palette
 0x0040AA60,dxball_rotate_rgb_colors,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-rotate-rgb-colors
 0x0040AB20,dxball_set_palette_rgb,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-set-palette-rgb
+0x0040C1A0,dxball_initialize_editor,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-initialize-editor
+0x0040C2B0,dxball_redraw_editor,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-redraw-editor
+0x0040C3B0,dxball_editor_frame,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-editor-frame
+0x0040C740,dxball_editor_key,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-editor-key
+0x0040C9C0,dxball_draw_editor_choices,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-draw-editor-choices
+0x0040CA70,dxball_draw_editor_status,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-draw-editor-status
 0x0040CC30,dxball_read_board_bank,src/boards.c,path/open/read boundaries,board-io
 0x0040CC90,dxball_write_board_bank,src/boards.c,path/open/write boundaries,board-io
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite
 0x0040CEA0,dxball_load_editor_board,src/boards.c,board 0..49,board-copy
 0x0040CEE0,dxball_store_editor_board,src/boards.c,board 0..49,board-copy
+0x0040CF20,dxball_dispose_editor,src/editor.c,"See docs/EDITOR_OWNER.md; bounded hit/board storage and arithmetic, mapped tiles, independent actual-host-stdio versus controlled-original-CRT files, ordered rendering, explicit resource/audio/Windows/driver boundaries",editor-dispose-editor
 0x0040CF70,dxball_initialize_fullscreen,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-initialize-fullscreen
 0x0040D4B0,dxball_initialize_compatible,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-initialize-compatible
 0x0040D930,dxball_win_main,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-win-main
