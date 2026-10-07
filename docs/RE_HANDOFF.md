@@ -17,8 +17,26 @@ Changed Windows products and runtime input sets are checked separately; no
 function or exact promotion is added. Public CI explicitly uses
 `--without-game-resources`; default private builds require the original.
 
-Cleanup at batch entry recovered 6.39 MiB of resettable probes. Unique REA
-Evidence, originals, pinned tools and manual saves remain preserved.
+All affected Windows controls now pass, including the rebuilt 50-custom-board
+terminal regression. A missed transient clear exposed an SDK observer race;
+REA retained the failure before the terminal wait was corrected. The revised
+three-product capture
+`ev_0eb0d9cda3740ea03750de89b9201a159e8cd198859a06481df42254f51ffe26`
+records child exit 0, 50 clears per product, the scoped storage pattern and
+clean shutdown. Maintained game C and shared release logic are unchanged.
+See [terminal sampling evidence](TERMINAL_RUNTIME.md#sampling-a-fast-clear).
+
+Current reports and complete input identities are collected in
+`.analysis/checkpoints/windows-resources-214-35/`; the current-attempt negative
+samples are sealed separately in `windows-resources-terminal-race-01/`.
+Saved REA verification, tracking and all eight exact rejection checks pass.
+Public CI passed for the resource implementation and observer correction.
+
+Journaled cleanup recovered 6.39 MiB at batch entry and another 4.86 MiB after
+archiving, across three and 151 operations respectively. Storage-driver streams
+remove themselves after successful comparison. Unique REA Evidence, originals,
+pinned tools and manual saves remain preserved. The final build directory is
+about 20 MiB; the analysis directory is about 377 MiB including new evidence.
 
 The shared-storage checkpoint below remains the authority for the unchanged
 owner/exact scopes. Its historical replay and cleanup descriptions follow.

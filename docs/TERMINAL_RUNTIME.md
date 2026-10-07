@@ -70,6 +70,13 @@ This changes the observer only. Maintained game C and shared release logic are
 unchanged. The private failure archive excludes stale summaries from previous
 attempts and retains the complete current samples and original input identities.
 
+REA process Evidence
+`ev_0eb0d9cda3740ea03750de89b9201a159e8cd198859a06481df42254f51ffe26`
+records the revised three-product run exiting 0. Each product completes 50
+clears, returns to menu with three lives and score 500, passes the scoped
+storage pattern and exits 0. Captured remaining counts are 3 / 4 / 3 for
+original / VC4 / MinGW; these depend on clock bytes and are not equality claims.
+
 ## Original read boundary
 
 The reviewed static queries are also available as a public REA session request:
