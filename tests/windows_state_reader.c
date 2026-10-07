@@ -1,4 +1,5 @@
-/* Read-only runtime observation. No target writes, hooks or thread suspension. */
+/* Read-only memory observer; optional ordinary SDK focus-peer window.
+ * No target memory writes, hooks or thread suspension. */
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <tlhelp32.h>
@@ -44,16 +45,61 @@ static int print_ball(HANDLE process, DWORD address)
     printf("}"); return 1;
 }
 
-static int print_scores(HANDLE process, DWORD address)
+static int print_bytes(HANDLE process, DWORD address, SIZE_T count)
 {
     unsigned char bytes[660];
     SIZE_T read;
     int index;
-    if (!ReadProcessMemory(process, (LPCVOID)address, bytes, sizeof(bytes), &read)
-            || read != sizeof(bytes)) return 0;
+    if (count > sizeof(bytes)) return 0;
+    if (!ReadProcessMemory(process, (LPCVOID)address, bytes, count, &read)
+            || read != count) return 0;
     printf("\"");
-    for (index = 0; index < (int)sizeof(bytes); ++index) printf("%02x", (unsigned int)bytes[index]);
+    for (index = 0; index < (int)count; ++index) printf("%02x", (unsigned int)bytes[index]);
     printf("\""); return 1;
+}
+
+static LRESULT CALLBACK peer_proc(HWND window, UINT message, WPARAM wparam, LPARAM lparam)
+{
+    if (message == WM_KEYDOWN && wparam == VK_RETURN) {
+        HWND game = FindWindowA("DX-Ball", "DX-Ball");
+        BOOL iconic, foreground;
+        if (game == NULL) return 0;
+        iconic = IsIconic(game);
+        fprintf(stderr, "peer Return begin: iconic=%d\n", (int)iconic); fflush(stderr);
+        ShowWindowAsync(game, SW_RESTORE);
+        foreground = SetForegroundWindow(game);
+        fprintf(stderr, "peer Return: iconic_before=%d foreground=%d iconic_after=%d\n",
+                (int)iconic, (int)foreground, (int)IsIconic(game));
+        fflush(stderr);
+        return 0;
+    }
+    if (message == WM_KEYDOWN && wparam == VK_ESCAPE) { DestroyWindow(window); return 0; }
+    if (message == WM_DESTROY) { PostQuitMessage(0); return 0; }
+    return DefWindowProcA(window, message, wparam, lparam);
+}
+
+static int focus_peer(void)
+{
+    WNDCLASSA record;
+    HWND window;
+    MSG message;
+    int result;
+    memset(&record, 0, sizeof(record));
+    record.lpfnWndProc = peer_proc;
+    record.hInstance = GetModuleHandleA(NULL);
+    record.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+    record.lpszClassName = "DXBallFocusProbe";
+    if (!RegisterClassA(&record)) return 4;
+    window = CreateWindowA(record.lpszClassName, "DX-Ball Focus Probe", WS_OVERLAPPEDWINDOW,
+                           420, 150, 180, 100, NULL, NULL, record.hInstance, NULL);
+    if (window == NULL) return 5;
+    CreateWindowA("STATIC", "Enter returns to DX-Ball. Escape closes this probe.", WS_CHILD | WS_VISIBLE,
+                  5, 5, 160, 45, window, NULL, record.hInstance, NULL);
+    ShowWindow(window, SW_SHOW); UpdateWindow(window);
+    while ((result = GetMessageA(&message, NULL, 0, 0)) > 0) {
+        TranslateMessage(&message); DispatchMessageA(&message);
+    }
+    return result < 0 ? 6 : (int)message.wParam;
 }
 
 int main(int argc, char **argv)
@@ -66,7 +112,9 @@ int main(int argc, char **argv)
     const char *name, *separator, *basename;
     char symbol[128], *end, *shape;
     int first, index, kind, code = 1;
-    if (sizeof(void *) != 4 || argc < 3) return 2;
+    if (sizeof(void *) != 4) return 2;
+    if (argc == 2 && strcmp(argv[1], "peer") == 0) return focus_peer();
+    if (argc < 3) return 2;
     window = FindWindowA("DX-Ball", "DX-Ball");
     if (window == NULL) { fprintf(stderr, "No DX-Ball window\n"); return 3; }
     GetWindowThreadProcessId(window, &pid);
@@ -101,6 +149,7 @@ int main(int argc, char **argv)
         if (shape != NULL) {
             if (strcmp(shape, ":ball") == 0) kind = 1;
             else if (strcmp(shape, ":scores") == 0) kind = 2;
+            else if (strcmp(shape, ":board") == 0) kind = 3;
             else goto failure;
             *shape = '\0';
         }
@@ -115,7 +164,9 @@ int main(int argc, char **argv)
         if (kind == 1) {
             if (!print_ball(process, address)) goto failure;
         } else if (kind == 2) {
-            if (!print_scores(process, address)) goto failure;
+            if (!print_bytes(process, address, 660)) goto failure;
+        } else if (kind == 3) {
+            if (!print_bytes(process, address, 400)) goto failure;
         } else {
             if (!ReadProcessMemory(process, (LPCVOID)address, &value, sizeof(value), &read)
                 || read != sizeof(value)) goto failure;

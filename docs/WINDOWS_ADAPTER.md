@@ -236,3 +236,22 @@ a source failure or a proven environment defect.
 Focus/surface recovery, complete level progression, embedded resources and
 physical audio/asynchronous MIDI remain open. No original-function acceptance
 or exact-match count changes arise from this runtime observation work.
+
+
+## Real round advance and retained focus failures
+
+`tests/test_windows_round.py` now connects real editor input to brick collision,
+round advance, complete board loading and zero-code menu/exit controls in the
+original, VC4 and MinGW builds. The SDK observer can read all 400 tile bytes;
+the expected 20,000-byte bank is checked before gameplay and after exit. Private
+CI includes this successful round family. See [round/focus evidence](ROUND_FOCUS_RUNTIME.md)
+for the exact input path, captured REA process Evidence and acceptance limits.
+
+The optional `--focus-recovery` diagnostic opens an ordinary SDK peer window;
+its Enter key restores/activates the game and Escape closes that peer. Memory
+observations still use query/read rights only. Original focus recovery stalls
+under this Wine9/Xvfb8-bit setup after temporary motion. Its retained API warnings
+show a lost-surface Lock retry, with a valid 108-byte descriptor. Successful
+focus recovery stays open; these negative controls are excluded from passing
+private CI. A successful REA recorder can describe a failed child, and the
+capture helper propagates that child exit.

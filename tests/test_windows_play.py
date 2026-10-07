@@ -35,13 +35,14 @@ def shape(name):
 
 
 class Observer:
-    def __init__(self, profile, env, output, fields=None):
+    def __init__(self, profile, env, output, fields=None, shapes=None):
         self.env, self.records, self.output = env, [], output
         fields = ORIGINAL if fields is None else fields
+        shapes = {} if shapes is None else shapes
         prefix = ['wine', str(READER)]
         if profile == 'windows-i686':
             self.arguments = prefix + ['dll', windows_path(ROOT / 'build/windows-i686/libdxball_core.dll')]
-            self.arguments += ['dxball_' + name + shape(name) for name in fields]
+            self.arguments += ['dxball_' + name + shapes.get(name, shape(name)) for name in fields]
         else:
             addresses = fields
             if profile == 'vc40':
@@ -56,7 +57,7 @@ class Observer:
                         raise AssertionError('Missing/ambiguous VC4 map symbol: ' + name)
                     addresses[name] = int(values[0], 16)
             self.arguments = prefix + ['addresses']
-            self.arguments += [name + shape(name) + '=' + hex(address)
+            self.arguments += [name + shapes.get(name, shape(name)) + '=' + hex(address)
                                for name, address in addresses.items()]
 
     def read(self, phase):

@@ -256,3 +256,23 @@ records after reloading them. The [sound owner](SOUND_OWNER.md) distinguishes
 these static observations from the original-x86 differential tests and pending
 physical driver integration. Closing the session allowed hash-checked alias
 cleanup to recover roughly 18 MiB without deleting immutable evidence.
+
+## Capturing actual Windows probes
+
+`scripts/repo-python scripts/capture-windows-probe.py --probe round` uses REA's
+process recorder to run the existing Wine harness, preserving a declared
+scenario, complete inline Evidence and the actual child exit. The original/VC4/
+MinGW round control is process Evidence
+`ev_8538d48e9383df10b6c761db2f40c701b75e713afdaf144caedaf983bb3d6a4e`.
+This extends the showcase from static dossiers to process observation while
+keeping the SDK memory reader and Wine API traces separately attributed.
+The harness verifies full bank/board bytes and records its own product hashes.
+See [round/focus evidence](ROUND_FOCUS_RUNTIME.md) for negative original focus
+controls, retained limits and a reproduced numeric-normalization issue.
+
+`scripts/rea capture-process SCENARIO.json --format json` still attests the
+pinned REA installation. Unlike static dispatch, the recorder does not hold the
+Ghidra/compiler lock: its repository child acquires that lock for actual work.
+All text normalization is explicitly disabled for numeric SDK output. Recorder
+success can contain a failed child; the public capture helper propagates that
+child exit rather than promoting it to a passing game check.

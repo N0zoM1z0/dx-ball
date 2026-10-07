@@ -453,3 +453,54 @@ resettable probe fixtures after retaining the evidence.
 
 Next: focus/surface recovery, complete level progression, embedded resources
 and physical audio/asynchronous MIDI. Full reconstruction remains active.
+
+
+The round checkpoint adds one actual editor-to-game clear/advance family.
+Original/VC4/MinGW create a single destructible brick through real editor input,
+save the full 20,000-byte bank, clear it through real ball collision, load all 400
+bytes of untouched original board1 (222 destructible bricks), return to menu
+and exit zero. No target writes/hooks/injected calls. REA process capture
+Evidence ev_8538d48e9383df10b6c761db2f40c701b75e713afdaf144caedaf983bb3d6a4e
+retains the complete three-profile successful run. Private CI includes the
+round control; it does not establish completion of all 50 original boards.
+
+Original focus recovery briefly resumes, then stalls with lost-surface Lock
+warnings under Wine9/Xvfb8-bit. Trace-derived descriptor observation shows
+size 108 and 640x480, ruling out the invalid-size hypothesis. VC4 and MinGW
+negative controls likewise resume briefly then freeze at x227 during the
+0.5-second sustained-motion check. REA process records their actual child
+exit1: ev_f547b440ad36fd349e8dbcf71c1fb604162f171b33d0a4b6109d89d759a1e1bb
+and ev_c3c754090233525c53353e4c6534aacacce239e92a09e39fb206a2a7d76ae431.
+These remain negative evidence, outside passing CI. Successful focus/device
+recovery on physical Windows remains open. Game bodies were not changed.
+
+The new capture-windows-probe.py publishes a reproducible REA process path and
+propagates the child result. REA process capture must not hold the shared
+compiler/Wine lock around its child; static Ghidra dispatch keeps the lock.
+A compact-JSON port-normalization issue is reproduced and recorded in the
+feedback file; explicit text-normalization false preserves SDK numeric output.
+The focused compatibility-state xref query yields nine direct CMP reads and
+no direct writer in that exact-reference set; indirect writes remain unknown.
+See docs/ROUND_FOCUS_RUNTIME.md for Evidence IDs, limits and reproduction.
+
+The serial batch passes public/native/tracking, strict MinGW, startup/runtime,
+play/editor, natural game-over and saved REA verification. Focus diagnostics
+produce expected failures with retained state/screenshots and actual child
+exit propagation. All67 semantic paths,40 exact rows/eight complete input sets
+and the native library identity are freshly verified unchanged; the complete
+sound-214-40 differential/cold checkpoint is reused. Stable reports and capture
+Evidence are retained at .analysis/checkpoints/windows-round-214-40/;
+negative focus captures and bounded compressed traces have separate archives.
+Counters remain 214 maintained /95,873 direct /40 exact /4,079 bytes.
+
+Next: physical/alternative-runtime focus recovery, terminal/all-original-board
+progression, embedded resources, actual audio/asynchronous MIDI and origin
+reconciliation. Whole reconstruction remains active. Continue journaled cleanup
+of resettable fixtures after archiving; preserve tools, originals and manual saves.
+
+Final journaled cleanup recovered 11.23 MiB, after an earlier 1.53 MiB cleanup
+in this batch. Closed-run duplicate catalogs/aliases and resettable runtime
+fixtures were removed or deduplicated only after archiving/hash checks.
+Build products are about 13 MiB and analysis 329 MiB; originals, pinned tools,
+immutable evidence and manual saves remain. The final public/native/tracking
+check passes after metadata updates. No writable REA/Wine session remains.

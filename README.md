@@ -19,7 +19,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > entity owners: **214 maintained functions**, **95,873 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
-> pause/resume, editor persistence, natural life loss, ranking persistence and
+> pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown; complete gameplay and
 > driver fidelity remain in progress.
 
@@ -73,7 +73,11 @@ WinMM calls. Original/VC4/MinGW control runs exercise ball release/motion,
 pause/resume, mouse input, complete editor bank save/reload and natural
 game-over/name/ranking persistence under Wine, including a fresh process readback.
 Read-only state observations distinguish a completed transition from a screen
-that is still fading. Physical audio and complete-game fidelity remain unverified.
+that is still fading. A [round control](docs/ROUND_FOCUS_RUNTIME.md) clears an
+editor-created board and verifies the next original board in all three builds;
+REA process capture retains the run and its limits. The original focus control
+stalls under Wine/Xvfb, so successful recovery remains open. Physical audio and
+complete-game fidelity remain unverified.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.

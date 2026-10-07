@@ -72,7 +72,10 @@ def main(arguments):
         request = arguments[1] if arguments[1] == "--interactive" else str(Path(arguments[1]).resolve())
         return subprocess.run([str(node), str(ROOT / "scripts/rea-session.mjs"),
                                request], env=env, cwd=ROOT).returncode
-    lock = session_lock()
+    # Runtime capture may launch a repository probe which acquires this same
+    # lock for its actual compiler/Wine work. Holding it in the parent would
+    # deadlock the child; process capture does not own a Ghidra analysis session.
+    lock = None if arguments[0] == "capture-process" else session_lock()
     return subprocess.run([str(node), str(runtime / "node_modules/rea-agents/scripts/rea.mjs"),
                            *arguments], env=env, cwd=ROOT).returncode
 
