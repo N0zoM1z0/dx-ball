@@ -6,7 +6,9 @@ ranking insertion. Eight maintained entries connect to existing mode dispatch,
 UI/glyph, pixel-line, dirty-region, palette and clock bodies. The controller
 family uses one shared C implementation for native, MinGW i686 and pinned VC4.
 The subsequent [editor checkpoint](EDITOR_OWNER.md) maintains mode 2.
-The complete Windows/audio adapter and playable EXE remain pending.
+The later [Windows adapter](WINDOWS_ADAPTER.md) binds real APIs and checks
+natural life loss, name entry and ranking persistence in experimental game
+EXEs; complete-game and physical audio fidelity remain pending.
 
 ## Entries and retained observations
 
@@ -149,3 +151,19 @@ after those checks. The passing new-family report is reused with identical
 complete inputs and native-library identity, avoiding a redundant replay.
 Private reports, input identities and logs are retained under
 `.analysis/checkpoints/gameover-176-40/`.
+
+## Later real Windows control runs
+
+`tests/test_windows_gameover.py` now follows ordinary mouse-driven ball losses
+through the maintained reset/finish/dispatch bodies into mode 3 on the original,
+VC4 and MinGW EXEs. Real key input tests lowercase letters, Backspace and Shift-A;
+Enter inserts the actually earned score. All 660 file bytes and the complete
+in-memory table are compared, preserving post-terminator name tails. A fresh
+process reads the same saved table, and both processes exit with code zero.
+
+This evidence reuses the retained REA state contracts through a read-only Win32
+observer; it neither hooks dependencies nor writes target state. Runtime reports
+are separate from the 6,531 direct/76 connected oracle checks above. Palette/text
+presentation in Wine/Xvfb, all levels and actual audio delivery remain limited;
+the two-color original high-score captures are retained without pixel-fidelity
+acceptance. See the adapter notes for observer/toolchain identities and scope.

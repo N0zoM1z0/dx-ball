@@ -33,14 +33,14 @@ def game_window(env):
     return None
 
 
-def screenshot(directory, scene, env):
+def screenshot(directory, scene, env, minimum_colors=4):
     path = directory / (scene + '.png')
     command(['import', '-window', 'root', str(path)], env)
     raw = command(['convert', str(path), '-depth', '8', 'rgb:-'], env)
     if len(raw) != 640 * 480 * 3:
         raise AssertionError('Unexpected display dimensions')
     # This detects blank captures; scene identification is reviewed separately.
-    if len({raw[offset:offset + 3] for offset in range(0, len(raw), 3)}) < 4:
+    if len({raw[offset:offset + 3] for offset in range(0, len(raw), 3)}) < minimum_colors:
         raise AssertionError('Blank or degenerate game screenshot: ' + scene)
     return {'path': str(path.relative_to(ROOT)), 'sha256': digest(path)}, raw
 

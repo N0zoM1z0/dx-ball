@@ -15,7 +15,8 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 Portable builds are analysis libraries and a board-inspection utility. Windows
 builds now also produce experimental game EXEs with real Win32, DirectDraw,
 DirectSound and WinMM bindings. Original/VC4/MinGW Wine control runs cover
-opening/menu, ball/paddle/pause, editor bank persistence and zero-code shutdown; complete gameplay,
+opening/menu, ball/paddle/pause, editor bank persistence, natural game-over/name/
+ranking persistence and zero-code shutdown; complete gameplay,
 actual physical device delivery and asynchronous MIDI remain unverified.
 DirectSound/WAV and MDS/music controllers have scoped implementations. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
@@ -422,3 +423,33 @@ reports, saved banks, initial attempts, SDK/compiler identities and the
 Next real-runtime families: natural life-loss/game-over/ranking persistence,
 focus/surface recovery, level progression, embedded resources and actual
 audio/asynchronous MIDI delivery. Full reconstruction remains unproven.
+
+The natural game-over checkpoint adds tests/test_windows_gameover.py and a
+bounded 660-byte score-table read to the SDK observer. Retained REA/oracle state
+contracts identify name-entry/ranking globals and the fifteen-record score table.
+Actual mouse input misses three released balls, observing lives 3/2/1/0 before
+completed mode3. Keys enter rex, Backspace, Shift-A and Return; complete file and
+in-memory bytes must match the earned-score insertion with preserved name tails.
+A fresh process reads the same persisted table and exits zero. Initial complete
+original/VC4/MinGW controls earned 222 points and selected row0; trajectories are
+not claimed synchronized, and expectations remain per-run.
+
+The original two-color high-score screen was incorrectly rejected by a generic
+four-color capture heuristic. Its retained screenshot has visible content;
+only those game-over captures now permit two colors. State/file checks remain
+independent and no pixel-fidelity claim is added. An earlier pre-window original
+launch exited without a diagnostic and remains an incomplete attempt. No owner
+source/header or semantic/exact input changed. Final checks rebuild the strict
+SDK observer and recheck all affected Windows harnesses as one serial batch.
+Reuse unchanged original-function/cold acceptance only after its identity audit.
+The final six serial checks pass: public native/tracking, strict MinGW build,
+baseline Windows controls, play/editor, natural game-over and target tracking.
+Original/VC4/MinGW final game-over runs retain 180/178/169 state observations;
+each earned 222 points and persisted the same complete table. Reports, complete
+score/bank files, initial attempts, SDK observer product and the 67-input/eight-
+build reuse audit are retained at
+`.analysis/checkpoints/windows-gameover-214-40/`. Cleanup again removes only
+resettable probe fixtures after retaining the evidence.
+
+Next: focus/surface recovery, complete level progression, embedded resources
+and physical audio/asynchronous MIDI. Full reconstruction remains active.

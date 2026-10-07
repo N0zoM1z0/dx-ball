@@ -30,28 +30,33 @@ FLAGS = ['-std=c90', '-O3', '-Wall', '-Wextra', '-Wpedantic', '-Werror']
 READER = ROOT / 'build/probes/windows-runtime/state-reader.exe'
 
 
+def shape(name):
+    return ':ball' if name == 'balls' else ':scores' if name == 'scores' else ''
+
+
 class Observer:
-    def __init__(self, profile, env, output):
+    def __init__(self, profile, env, output, fields=None):
         self.env, self.records, self.output = env, [], output
+        fields = ORIGINAL if fields is None else fields
         prefix = ['wine', str(READER)]
         if profile == 'windows-i686':
             self.arguments = prefix + ['dll', windows_path(ROOT / 'build/windows-i686/libdxball_core.dll')]
-            self.arguments += ['dxball_' + name + (':ball' if name == 'balls' else '') for name in ORIGINAL]
+            self.arguments += ['dxball_' + name + shape(name) for name in fields]
         else:
-            addresses = ORIGINAL
+            addresses = fields
             if profile == 'vc40':
                 metadata = json.loads((ROOT / 'build/vc40/build.json').read_text())
                 link_map = ROOT / 'build/vc40/dxball.map'
                 assert metadata['game_map_sha256'] == digest(link_map)
                 text = link_map.read_text()
                 addresses = {}
-                for name in ORIGINAL:
+                for name in fields:
                     values = re.findall(r'\s_dxball_' + name + r'\s+([0-9a-fA-F]{8})\s', text)
                     if len(values) != 1:
                         raise AssertionError('Missing/ambiguous VC4 map symbol: ' + name)
                     addresses[name] = int(values[0], 16)
             self.arguments = prefix + ['addresses']
-            self.arguments += [name + (':ball' if name == 'balls' else '') + '=' + hex(address)
+            self.arguments += [name + shape(name) + '=' + hex(address)
                                for name, address in addresses.items()]
 
     def read(self, phase):
@@ -83,11 +88,11 @@ def click(env, x, y):
     command(['xdotool', 'mouseup', '1'], env)
 
 
-def capture_ready(output, scene, env):
+def capture_ready(output, scene, env, minimum_colors=4):
     deadline = time.monotonic() + 20
     while True:
         try:
-            return screenshot(output, scene, env)
+            return screenshot(output, scene, env, minimum_colors)
         except AssertionError:
             if time.monotonic() >= deadline:
                 raise
@@ -210,11 +215,35 @@ def observe(profile, env, reports):
         finally:
             stop(process)
             assert verified_originals() == originals
+    (output / 'saved-bank.bds').write_bytes(board_file(runtime).read_bytes())
     return {'profile': profile, 'steps': steps, 'captures': captures,
             'state_reads': len(observer.records), 'exit_code': code,
             'executable_sha256': digest(runtime / 'dxball.exe'),
             'bank_input_sha256': digest(ROOT / 'original/DEFAULT.BDS'),
             'bank_saved_sha256': digest(board_file(runtime)), 'originals_unchanged': len(originals)}
+
+
+def input_identities():
+    inputs = [str(path.relative_to(ROOT)) for path in sorted((ROOT / 'src').glob('*.[ch]'))]
+    inputs += ['tests/windows_state_reader.c', 'tests/test_windows_play.py',
+               'CMakeLists.txt', 'config/mingw-i686.cmake', 'scripts/build-windows.py',
+               'tests/test_windows_runtime.py', 'tests/target_oracle.py',
+               'tests/test_powerups_differential.py', 'tests/test_core_differential.py',
+               'tests/test_runtime_differential.py', 'tests/test_platform_differential.py',
+               'tests/test_editor_differential.py', 'scripts/windows_runtime.py',
+               'scripts/legacy_toolchain.py', 'scripts/resource_limits.py',
+              'scripts/build-legacy.py', 'config/assets.csv', 'config/tools.lock.toml']
+    return {name: digest(ROOT / name) for name in inputs}
+
+
+def reader_identity():
+    compiler = Path(shutil.which('i686-w64-mingw32-gcc')).resolve()
+    sdk = Path('/usr/i686-w64-mingw32/include')
+    return {'reader_sha256': digest(READER), 'reader_flags': FLAGS,
+            'compiler': str(compiler), 'compiler_sha256': digest(compiler),
+            'compiler_version': command([str(compiler), '--version'], os.environ).decode().splitlines()[0],
+            'sdk_headers': {name: digest(sdk / name) for name in
+                            ('windows.h', 'tlhelp32.h', 'winbase.h', 'winuser.h', 'windef.h', 'basetsd.h')}}
 
 
 def main():
@@ -237,24 +266,8 @@ def main():
     for profile in ('original', 'vc40', 'windows-i686'):
         observations.append(observe(profile, environment(), reports))
         print(profile + ': real ball/pause/editor/zero-exit checks passed', flush=True)
-    inputs = [str(path.relative_to(ROOT)) for path in sorted((ROOT / 'src').glob('*.[ch]'))]
-    inputs += ['tests/windows_state_reader.c', 'tests/test_windows_play.py',
-               'CMakeLists.txt', 'config/mingw-i686.cmake', 'scripts/build-windows.py',
-               'tests/test_windows_runtime.py', 'tests/target_oracle.py',
-               'tests/test_powerups_differential.py', 'tests/test_core_differential.py',
-               'tests/test_runtime_differential.py', 'tests/test_platform_differential.py',
-               'tests/test_editor_differential.py', 'scripts/windows_runtime.py',
-               'scripts/legacy_toolchain.py', 'scripts/resource_limits.py',
-              'scripts/build-legacy.py', 'config/assets.csv', 'config/tools.lock.toml']
-    compiler = Path(shutil.which('i686-w64-mingw32-gcc')).resolve()
-    sdk = Path('/usr/i686-w64-mingw32/include')
     report = {'status': 'pass', 'kind': 'real-Wine-ball-pause-editor-control-runs',
-              'observations': observations, 'inputs': {name: digest(ROOT / name) for name in inputs},
-              'reader_sha256': digest(READER), 'reader_flags': FLAGS,
-              'compiler': str(compiler), 'compiler_sha256': digest(compiler),
-              'compiler_version': command([str(compiler), '--version'], os.environ).decode().splitlines()[0],
-              'sdk_headers': {name: digest(sdk / name) for name in
-                              ('windows.h', 'tlhelp32.h', 'winbase.h', 'winuser.h', 'windef.h', 'basetsd.h')},
+              'observations': observations, 'inputs': input_identities(), **reader_identity(),
               'vc40_map_sha256': digest(ROOT / 'build/vc40/dxball.map'),
               'mingw_dll_sha256': digest(ROOT / 'build/windows-i686/libdxball_core.dll'),
               'original_addresses': ORIGINAL, 'originals': verified_originals(),

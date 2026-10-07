@@ -29,7 +29,7 @@ def status():
             "semantic_units": sorted({row["unit"] for row in semantics}),
             "playable": False,
             "products": ["analysis library", "board/resource inspectors", "experimental i686 Windows game EXEs", "read-only Windows state reader"],
-            "windows_runtime_scope": "Wine opening/menu, ball/paddle/pause, editor bank persistence/shutdown; whole-game fidelity unverified",
+            "windows_runtime_scope": "Wine ball/paddle/pause, editor bank, natural life loss/name entry/ranking persistence/shutdown; whole-game fidelity unverified",
             "denominator": "528 provisional Ghidra candidates, including unclassified CRT/library code"}
 
 

@@ -44,6 +44,18 @@ static int print_ball(HANDLE process, DWORD address)
     printf("}"); return 1;
 }
 
+static int print_scores(HANDLE process, DWORD address)
+{
+    unsigned char bytes[660];
+    SIZE_T read;
+    int index;
+    if (!ReadProcessMemory(process, (LPCVOID)address, bytes, sizeof(bytes), &read)
+            || read != sizeof(bytes)) return 0;
+    printf("\"");
+    for (index = 0; index < (int)sizeof(bytes); ++index) printf("%02x", (unsigned int)bytes[index]);
+    printf("\""); return 1;
+}
+
 int main(int argc, char **argv)
 {
     HWND window;
@@ -53,7 +65,7 @@ int main(int argc, char **argv)
     SIZE_T read;
     const char *name, *separator, *basename;
     char symbol[128], *end, *shape;
-    int first, index, ball, code = 1;
+    int first, index, kind, code = 1;
     if (sizeof(void *) != 4 || argc < 3) return 2;
     window = FindWindowA("DX-Ball", "DX-Ball");
     if (window == NULL) { fprintf(stderr, "No DX-Ball window\n"); return 3; }
@@ -85,9 +97,11 @@ int main(int argc, char **argv)
             address = strtoul(separator + 1, &end, 0);
             if (*end != '\0') goto failure;
         }
-        name = symbol; shape = strchr(symbol, ':'); ball = shape != NULL;
-        if (ball) {
-            if (strcmp(shape, ":ball") != 0) goto failure;
+        name = symbol; shape = strchr(symbol, ':'); kind = 0;
+        if (shape != NULL) {
+            if (strcmp(shape, ":ball") == 0) kind = 1;
+            else if (strcmp(shape, ":scores") == 0) kind = 2;
+            else goto failure;
             *shape = '\0';
         }
         if (strspn(name, "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") != strlen(name)) goto failure;
@@ -98,8 +112,10 @@ int main(int argc, char **argv)
         }
         if (address == 0) goto failure;
         printf("%s\"%s\":", index == first ? "" : ",", name);
-        if (ball) {
+        if (kind == 1) {
             if (!print_ball(process, address)) goto failure;
+        } else if (kind == 2) {
+            if (!print_scores(process, address)) goto failure;
         } else {
             if (!ReadProcessMemory(process, (LPCVOID)address, &value, sizeof(value), &read)
                 || read != sizeof(value)) goto failure;

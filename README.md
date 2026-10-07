@@ -19,7 +19,8 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > entity owners: **214 maintained functions**, **95,873 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
-> pause/resume, editor persistence and clean shutdown; complete gameplay and
+> pause/resume, editor persistence, natural life loss, ranking persistence and
+> clean shutdown; complete gameplay and
 > driver fidelity remain in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
@@ -69,7 +70,8 @@ behavior after a lost buffer; 1,603 direct cases and 36 separate lifecycle
 checks cover all 26 sound assets. The [Windows adapter](docs/WINDOWS_ADAPTER.md)
 uses those recovered contracts to bind real Win32, DirectDraw, DirectSound and
 WinMM calls. Original/VC4/MinGW control runs exercise ball release/motion,
-pause/resume, mouse input and complete editor bank save/reload under Wine.
+pause/resume, mouse input, complete editor bank save/reload and natural
+game-over/name/ranking persistence under Wine, including a fresh process readback.
 Read-only state observations distinguish a completed transition from a screen
 that is still fading. Physical audio and complete-game fidelity remain unverified.
 We build on the evidence and
@@ -197,6 +199,7 @@ scripts/repo-python tests/test_sound_differential.py
 scripts/repo-python tests/test_windows_abi.py
 scripts/repo-python tests/test_windows_runtime.py
 scripts/repo-python tests/test_windows_play.py
+scripts/repo-python tests/test_windows_gameover.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -234,6 +237,12 @@ quality. See the [adapter notes](docs/WINDOWS_ADAPTER.md) for observed coverage.
 editor paint/save/reload/return. Its observer reads process state without hooks
 or target writes; all three runs persist the same complete 20,000-byte board
 bank in resettable copies. The original 49 files retain their verified hashes.
+
+`tests/test_windows_gameover.py` uses ordinary mouse input to miss balls until
+three lives are exhausted, then enters and edits a name through actual keys.
+It checks every byte of the 660-byte ranking file and the in-memory table,
+including readback after restarting the game. Each run derives its expected
+ranking from its own earned score; random trajectories need not coincide.
 
 To follow the sound-pan investigation with REA after setup:
 

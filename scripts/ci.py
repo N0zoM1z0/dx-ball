@@ -61,6 +61,7 @@ def main():
     python("tests/test_windows_abi.py")
     python("tests/test_windows_runtime.py")
     python("tests/test_windows_play.py")
+    python("tests/test_windows_gameover.py")
     python("scripts/validate-tracking.py", "--require-target")
     python("scripts/report-reconstruction-status.py", "--summary")
     print("Complete private checks passed.")

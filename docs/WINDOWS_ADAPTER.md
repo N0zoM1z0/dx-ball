@@ -192,7 +192,47 @@ runs preserve an existing save regardless of case, while probe reset removes
 superseded case aliases. Reports resolve the actual saved filename. The
 immutable imported assets are not renamed or modified.
 
-These controls leave real game-over/ranking input, focus/surface recovery,
+These controls initially left real game-over/ranking input, focus/surface recovery,
 complete level progression, embedded resources and actual MIDI/audio delivery
 open. Function acceptance remains 214 maintained /95,873 direct cases /40
 exact functions, separate from these three actual Windows runs.
+
+## Natural life loss and persisted rankings
+
+`tests/test_windows_gameover.py` reuses the reviewed game-over state addresses
+and fifteen-record layout from the REA-backed game-over dossier/oracle. Mouse
+input releases each fresh attached ball, then moves the paddle away from the
+ball. Actual collisions, score updates, retirement, life-loss resets and mode
+dispatch run until lives decrease from 3 to 2 to 1 to 0 and mode 3 completes.
+There are no target memory writes, injected calls or score/life fixtures.
+
+Real keys enter `rex`, remove the last character with Backspace, and append
+Shift-A to produce `reA`. Enter submits the earned score. The independent
+expectation inserts ahead of equal scores, shifts terminated names while
+preserving destination tails, and checks all 660 persisted bytes. The observer
+also reads the entire score table. After returning to menu and exiting with
+code zero, a fresh process opens the same working copy; its complete score
+table and unchanged file must equal the saved result, then it exits normally.
+Original/VC4/MinGW control runs pass these paths. Observed trajectories and
+scores may differ; each complete file is checked against its own earned score.
+
+The extended SDK reader supports a bounded 660-byte hexadecimal score-table
+read, alongside its existing scalar/ball observations. Shared input/SDK identity
+helpers let either harness run independently without requiring another test's
+report. Private CI checks startup, play/editor and natural game-over in sequence;
+public CI compiles the strict C90 reader and actual Windows game. Reports retain
+before/after score files, live states, screenshots and compiler/map identities
+under `build/reports/windows-gameover*`.
+
+The original name-entry scene has only two visible colors on this 8-bit
+Wine/Xvfb palette; the earlier four-color capture heuristic rejected its visible
+High Score title. That attempt is retained, and this scene now accepts two-color
+captures. This does not establish text/palette fidelity: actual state and file
+bytes provide the game-over acceptance. One earlier original launch exited
+before a window without a diagnostic; subsequent complete original controls
+passed, and that incomplete launch remains retained rather than classified as
+a source failure or a proven environment defect.
+
+Focus/surface recovery, complete level progression, embedded resources and
+physical audio/asynchronous MIDI remain open. No original-function acceptance
+or exact-match count changes arise from this runtime observation work.
