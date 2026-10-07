@@ -20,7 +20,7 @@ Canonical compile flags:
 /nologo /c /Od /Ob0 /Oi- /Oy- /Gd /MT /Gy
 ```
 
-These are reproducible per-unit evidence. Matching thirty-three functions does not prove
+These are reproducible per-unit evidence. Matching forty functions does not prove
 all original compilation flags, the complete compiler release, or original
 translation-unit boundaries. `/Gy` gives complete independent function COMDAT
 extents to the oracle; no comparison requests a truncated prefix.
@@ -92,11 +92,21 @@ At that checkpoint, shared declarations renumbered the pan's private constants t
 the manifest still verifies both constant contents in object and original target.
 
 The particle/bonus investigation adds nine complete exact units totaling
-**1,093 bytes**, bringing the current total to **33 functions, 3,404 bytes**.
+**1,093 bytes**, bringing that checkpoint to **33 functions, 3,404 bytes**.
 Both list append/begin/advance triples, particle creation/update and bonus
 retirement pass zero-difference cold replay. REA's body dossiers and typed
 state ownership establish their explicit relocation destinations; see
 [entity evidence](ENTITIES_OWNER.md). The compact bonus selector, deletion and
 controlled rendering retain semantic acceptance without an exact claim.
-Current shared declarations renumber the pan literals to `$T516` / `$T517`;
+At that checkpoint, shared declarations renumbered the pan literals to `$T516` / `$T517`;
 both object and target constant contents remain attested.
+
+The power-up batch adds seven complete exact functions / **675 bytes**:
+scratch-list clear, paddle position, ball append/begin/advance/clear and attached
+ball release. The current total is **40 functions, 4,079 bytes**. All prior units
+and the expanded family passed one grouped cold replay after source stabilized.
+The paddle entry includes the SetCursorPos import-slot mapping at `0x00441350`.
+See [power-up evidence](POWERUPS_OWNER.md) for body extents and semantic-only
+neighbors. Current pan literal labels are `$T617` / `$T618`; both contents are
+attested. Natural source helpers shorten several recovered bodies, which remain
+semantic-only rather than receiving artificial code or padding to force a match.

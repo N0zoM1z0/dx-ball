@@ -96,5 +96,26 @@ update, and fading advances color every fifth surviving update. Original
 Bonus production draws chance before checking the active count. Its screen x
 is 19+30*tile_x, and its burst consumes RNG in dy/dx/y/x order. Selector 0/1
 has an extra rare roll, selector 14 becomes kind 10, and count increments last.
-Retirement decrements count even without a current node. The original bonus
-movement/application body is observed through REA but remains unimplemented.
+Retirement decrements count even without a current node. Bonus movement and
+application now have separate connected evidence in the power-up batch.
+
+## Power-up dependencies through REA
+
+[Power-up evidence](POWERUPS_OWNER.md) connects 21 additional maintained
+functions and seven exact units. Bonus collision uses cached paddle coordinates;
+width changes release attached balls before reading the base sprite width.
+Explosive spread gathers its source tiles before editing neighbors, and uses a
+separate scratch root at `0x0043FAA8`. Active/temporary ball roots are
+`0x0043A8B8` / `0x0043AAA8`, with 60-byte original nodes.
+
+The 361-entry sine/cosine tables are computed from 3.14159 and scaled by 1024.
+Negative multiples of 360 preserve the separately initialized endpoint.
+Rebounds use an extended first threshold and stored-float later thresholds.
+REA instruction and CRT dispatch observations resolve missing pseudocode ABI.
+The connected oracle adds 15,934 cases; current totals are 76 maintained
+functions, 61,314 direct cases and 40 exact functions / 4,079 bytes.
+
+The original terminal level transition still calls initialization after index
+49 becomes 50. Adjacent-memory reads beyond the board bank remain unresolved;
+terminal tests intercept that dependency. Main ball motion, full frame routing
+and Windows backends are still open scopes.

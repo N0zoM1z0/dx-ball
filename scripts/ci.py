@@ -42,6 +42,7 @@ def main():
     python("tests/test_gameplay_differential.py")
     python("tests/test_effects_differential.py")
     python("tests/test_entities_differential.py")
+    python("tests/test_powerups_differential.py")
     python("scripts/build-legacy.py")
     run(["cmake", "-S", ".", "-B", "build/windows-i686", "-G", "Ninja",
          "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])

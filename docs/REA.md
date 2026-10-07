@@ -175,8 +175,12 @@ workflow from REA dossiers into two typed C owners. Body ranges separate the
 bonus selector's switch data from instructions, and callers connect brick hits
 to particle creation. Original-x86 tests then compare list lifetimes, RNG order
 and actual 2x2 pixel writes into controlled surfaces. Fourteen maintained
-functions and nine complete exact units result from that investigation; bonus
-movement and power-up application remain the next open scope.
+functions and nine complete exact units result from that investigation. The
+[power-up investigation](POWERUPS_OWNER.md) then follows the updater into paddle,
+board, round and ball dependencies, adding 21 verified functions and seven exact
+units. REA's assembly and CRT dispatch records recover the quantized sine/cosine
+ABI that pseudocode omits; original execution checks both computed tables and
+the rebound rounding. The full ball updater remains an inspected open scope.
 
 References: upstream [installation and release boundaries](https://github.com/morluto/rea/blob/main/docs/installation.md),
 [MCP lifecycle/deadlines](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md),

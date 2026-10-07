@@ -15,7 +15,10 @@ without checking their individual evidence.
 | Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, request-list helpers and sound pan |
 | Animation owner | `src/effects.c`; constructors, timer steps, dispatch, occupancy and propagation |
 | Particle owner | `src/particles.c`; clipped creation, movement/fading, typed list and 2x2 pixel writes |
-| Bonus owner | `src/bonuses.c`; RNG selection, particle burst, typed list, drawing and retirement |
+| Bonus owner | `src/bonuses.c`; RNG selection, particle burst, movement, collection and application |
+| Geometry/trig owners | `src/geometry.c`, `src/trig.c`; integer-center overlap and computed quantized trig |
+| Paddle/round owners | `src/paddle.c`, `src/round.c`; mouse clamping, cursor warp, lives and level transition |
+| Ball owner | `src/balls.c`; typed lists, creation, cloning, attachment release and paddle rebound; main motion pending |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -72,5 +75,12 @@ phase's state and ordered calls. See [animation evidence](EFFECTS_OWNER.md).
 preserving original 32-bit payloads and native pointer growth. Animation bonus
 production defaults to maintained source. Particle rendering uses the shared
 DirectDraw surface declaration and writes into controlled writable pixels in
-the differential oracle. Bonus movement, paddle collisions and power-up
-application remain pending. See [entity evidence](ENTITIES_OWNER.md).
+the differential oracle. See [entity evidence](ENTITIES_OWNER.md) for the
+production/lifecycle scope and [power-up evidence](POWERUPS_OWNER.md) for movement,
+collision and application through the new dependencies.
+
+`src/balls.h` defines the thirteen-field ball payload and separate active/clone
+containers. `src/trig.c` computes the game's 361-entry tables from the observed
+constants. `src/round.h` exposes initialization/count operations, preserving
+terminal-level call order while leaving the original out-of-bank read unresolved.
+The main ball frame, paddle rendering and platform integration are still pending.

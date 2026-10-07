@@ -42,6 +42,7 @@ extern DxBallInt dxball_explosion_pending;
 extern DxBallInt dxball_score;
 extern double dxball_pan_scale;
 extern DxBallExplosionList dxball_explosions;
+extern DxBallExplosionList dxball_explosive_sources;
 extern DxBallGameplayOps dxball_gameplay_ops;
 
 /* Host bridge for the target allocation entry at 0x416770. CRT new-handler
@@ -56,6 +57,10 @@ DxBallInt DXBALL_FASTCALL dxball_begin_explosions(DxBallExplosionList *list);
 DxBallInt DXBALL_FASTCALL dxball_advance_explosion(DxBallExplosionList *list);
 DxBallInt DXBALL_FASTCALL dxball_remove_explosion(DxBallExplosionList *list);
 void dxball_queue_explosion_at(DxBallInt x, DxBallInt y);
+DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list);
+void dxball_spread_explosive_bricks(void);
+void dxball_soften_special_bricks(void);
+DxBallInt dxball_count_destructible_bricks(void);
 
 #ifdef __cplusplus
 }

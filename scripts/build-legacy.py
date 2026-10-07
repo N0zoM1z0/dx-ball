@@ -17,7 +17,7 @@ def main():
     directory.mkdir(parents=True, exist_ok=True)
     objects = []
     log = []
-    for source in ("src/boards.c", "src/resources.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c"):
+    for source in ("src/boards.c", "src/resources.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.c"):
         output = directory / (Path(source).stem + ".obj")
         log.append(toolchain.compile(ROOT / source, output, build["flags"]).stdout)
         objects.append(output)

@@ -18,6 +18,11 @@ typedef struct DxBallBonusList {
 
 extern DxBallBonusList dxball_bonuses;
 extern DxBallInt dxball_bonus_count;
+/* Kind-number names remain explicit until their gameplay consumers are recovered. */
+extern DxBallInt dxball_bonus_3_active, dxball_bonus_3_ticks;
+extern DxBallInt dxball_bonus_7_active, dxball_bonus_8_active, dxball_bonus_9_active;
+extern DxBallInt dxball_bonus_12_active, dxball_bonus_14_active;
+extern DxBallInt dxball_bonus_17_active, dxball_bonus_18_active;
 
 DxBallInt DXBALL_FASTCALL dxball_append_bonus(DxBallBonusList *list);
 DxBallInt DXBALL_FASTCALL dxball_begin_bonuses(DxBallBonusList *list);
@@ -28,6 +33,7 @@ void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
 /* Original decrements count even if the current node is absent. */
 void dxball_retire_bonus(void);
 void dxball_draw_bonuses(void);
+void dxball_update_bonuses(void);
 
 #ifdef __cplusplus
 }

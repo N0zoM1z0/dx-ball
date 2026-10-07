@@ -137,7 +137,10 @@ The allocation/deletion bridges do not claim the original CRT implementations.
 Deletion, compact bonus selection and dependency-based drawing have semantic
 acceptance only; source is shared across native, MinGW and VC4.0 builds.
 
-The pending bonus updater dossier is
+The bonus updater dossier retained from this investigation is
 `ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
-2,087 owned bytes in a 2,168-byte span. Continue from this retained evidence
-into bonus/paddle collision and the power-up dependencies before claiming it.
+2,087 owned bytes in a 2,168-byte span. The subsequent
+[power-up batch](POWERUPS_OWNER.md) reuses it to recover movement, collision and
+application through paddle, board, ball and round dependencies. Those claims
+have a separate connected original-x86 oracle; the production cases above keep
+their original scope.

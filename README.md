@@ -15,9 +15,9 @@ Binary analysis uses [REA](https://github.com/morluto/rea) with its Ghidra
 provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
-> Boards, resources, brick hits, animations, particles and bonus production have
-> **55 maintained functions**, **45,380 target differential cases**, and
-> **33 byte-exact functions totaling 3,404 bytes**. The current builds provide inspection utilities and an
+> Boards, resources, brick hits, animations, particles, bonus application and
+> paddle/ball dependencies have **76 maintained functions**, **61,314 target differential cases**, and
+> **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
@@ -26,6 +26,9 @@ For example, REA's instruction view recovered a missing sound-pan argument
 from incomplete pseudocode; the resulting C passes 3,205 original-x86 cases
 and reproduces all 63 compiled bytes. See the
 [gameplay investigation](docs/GAMEPLAY_OWNER.md) for Evidence IDs and limits.
+The [power-up investigation](docs/POWERUPS_OWNER.md) follows the bonus updater
+through board effects and paddle rebounds, recovering the game's computed
+trigonometry tables and checking its rounding against original execution.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -135,6 +138,7 @@ scripts/repo-python tests/test_resources_differential.py
 scripts/repo-python tests/test_gameplay_differential.py
 scripts/repo-python tests/test_effects_differential.py
 scripts/repo-python tests/test_entities_differential.py
+scripts/repo-python tests/test_powerups_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 

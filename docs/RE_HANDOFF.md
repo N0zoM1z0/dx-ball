@@ -14,12 +14,12 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-ball/paddle physics, bonus movement/application, UI, audio, and MIDI remain pending.
+main ball motion, full frame routing, UI, audio, and MIDI remain pending.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
-Thirty-three configured units cold-replay exactly, totaling 3,404 bytes; accepted
-records are in `config/matches.csv`. Fifty-five source functions have scoped
-semantic evidence from 45,380 differential cases. Eight oracle rejection checks
+Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
+records are in `config/matches.csv`. Seventy-six source functions have scoped
+semantic evidence from 61,314 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -54,18 +54,38 @@ complete exact units. Gameplay particles and animation bonus production now
 default to maintained source. Particle writes agree across complete controlled
 8-bit buffers; the DirectDraw driver is still pending. See `docs/ENTITIES_OWNER.md`
 for all fourteen REA Evidence IDs, typed layouts, RNG order and exact boundaries.
-Current pan literal names are `$T516` / `$T517`, with both contents attested.
+Current pan literal names are `$T617` / `$T618`, with both contents attested.
 
-Continue with the already retained bonus updater at `0x413E20`, Evidence
+The bonus updater at `0x413E20`, Evidence
 `ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
-2,087 owned bytes in a 2,168-byte span. This still-unimplemented body moves and
-bounces bonuses, checks paddle collision, and applies kinds through paddle,
-ball, life and level dependencies. Reuse its dossier before issuing new REA
-queries. Ball/projectile consumers are observed but not implemented. Their
-physics and power-up application, plus sound backends, remain pending. Feedback goes to the
+2,087 owned bytes in a 2,168-byte span, is now maintained. The connected batch
+adds 21 functions and 15,934 cases across bonus application, board powers,
+geometry, paddle position, round transitions, ball ownership/release/cloning,
+computed trig and paddle rebounds. Seven new exact units add 675 bytes. See
+`docs/POWERUPS_OWNER.md` for complete Evidence IDs and scopes. Terminal level
+initialization at index 50 is controlled; original adjacent-memory behavior
+remains unresolved. Sixteen multi-frame bonus checks are included in this
+batch's direct total, not added as separate acceptance counts.
+
+Continue from the retained main ball updater at `0x410770`, Evidence
+`ev_c7fd5e1c178073afb10924d1dbfa6df93f8ba8566533fd41f8dcb8f48b3a92a1`,
+3,223 owned/span bytes, and paddle renderer `0x412EC0`, Evidence
+`ev_0b4d5d681d951be5b6a69ac1d9d09db3cc965811c767e0b2b4f7296609cc020a`.
+Reuse their complete dossiers before new queries. Main physics, projectile/power
+consumers, complete frame routing and sound backends remain pending. Feedback goes to the
 user-requested `/tmp/dxball_rea_feedback.md`; it distinguishes provider issues
 from project-client issues. REA sessions now archive each run and save successful
-Evidence prefixes even when a later query fails.
+Evidence prefixes even when a later query fails. Interactive sessions reuse one
+imported program; the SDK receive cap is 32 MiB, with response/transport logs.
+The large ball dossier exceeded the default 10 MiB client cap; recovery and
+explicit close succeeded. The snapshot contains 78 Evidence records; six inline
+records from the failed run remain independently archived. See `docs/REA.md`.
+
+This checkpoint ran one grouped cold replay, every earlier differential suite,
+the new connected suite, exact rejection tests, real REA smoke/close, three
+toolchain builds and Wine inspector comparisons. Reports and exact objects are
+retained under `.analysis/checkpoints/powerups-76-40/`. Reuse unchanged reports
+and reconstruct the next related family before validating again.
 
 The user requires modest CPU/memory use. Project build and REA entry points
 inherit one allowed Linux CPU; CMake uses `--parallel 1`. Ghidra's heap is

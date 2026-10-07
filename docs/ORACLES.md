@@ -9,6 +9,7 @@
 | Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
 | Entity x86 vs compiled native C | Bonus RNG/production, particle lifecycle, typed queues and full pixel buffers | Bonus movement/application, hardware presentation, complete frame |
+| Power-up x86 vs compiled native C | Bonus collection/application, board powers, paddle cursor state, typed ball ownership, computed trig and rebounds | Main ball frame, terminal adjacent-memory reads, platform drivers |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -59,11 +60,11 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 45,380 direct-case total;
+request state. Integration cases are excluded from the 61,314 direct-case total;
 the frame updater is not marked reconstructed. See [effects evidence](EFFECTS_OWNER.md).
 
 The entity oracle adds 7,343 direct cases (5,204 particles and 2,139 bonuses),
-bringing the accepted direct total to 45,380. Another 980 integration checks
+bringing that checkpoint's direct total to 45,380. Another 980 integration checks
 connect real hit, animation, bonus production and particle bodies. The test
 compares typed payloads, allocation ownership, poisoned deletion, RNG/audio
 traces and complete 8-bit buffers including pitch padding and guards. Actual
@@ -71,3 +72,18 @@ target memset executes; controlled DirectDraw callbacks supply storage and
 Lock retries. Earlier owner tests continue to isolate their explicit
 dependencies. Integration counts remain separate from function acceptance.
 See [entity evidence](ENTITIES_OWNER.md) for precise domains and missing work.
+
+The connected power-up oracle adds 15,934 direct cases, bringing the current
+total to 61,314 across 76 maintained functions. It executes actual geometry,
+bonus movement/application, board powers, round transitions, ball ownership and
+rebound math. Both entire computed trig tables, x87 returns, ordered callbacks,
+all relevant globals/grids and live/freed storage agree. Sixteen multi-frame
+bonus checks are a subset of this direct count. Terminal board initialization
+is controlled for index 50; connected valid initialization covers indices 1..49.
+See [power-up evidence](POWERUPS_OWNER.md) for arithmetic and platform limits.
+
+Owners can route individual semantic units to a connected oracle through
+`unit_oracles`; its selected file and complete helper/input set are hash-bound.
+Earlier isolated oracles remain part of the private suite. A stable family is
+cold-replayed together, and unchanged completed reports are reused at that
+checkpoint rather than replaying after each restored function.

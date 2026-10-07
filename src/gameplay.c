@@ -1,6 +1,7 @@
 #include "gameplay.h"
 #include "effects.h"
 #include "particles.h"
+#include "bonuses.h"
 
 #include <stdlib.h>
 
@@ -11,7 +12,94 @@ DxBallInt dxball_explosion_pending;
 DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
 DxBallExplosionList dxball_explosions;
+DxBallExplosionList dxball_explosive_sources;
 DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, NULL, NULL, NULL, dxball_spawn_particle };
+
+DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list)
+{
+    while (dxball_remove_explosion(list)) {
+    }
+    return 1;
+}
+
+/* Shared source helper, not a separate target function claim. */
+static void convert_to_explosive(DxBallInt x, DxBallInt y)
+{
+    DxBallByte *tile;
+    tile = &dxball_board_tiles[x + y * 20];
+    if (*tile != 8) {
+        if (*tile == 0 || *tile == 2) ++dxball_remaining_bricks;
+        *tile = 8;
+        dxball_draw_board_tile(x, y, 0);
+    }
+}
+
+void dxball_spread_explosive_bricks(void)
+{
+    DxBallInt x, y;
+    for (x = 0; x < 20; ++x) {
+        for (y = 0; y < 20; ++y) {
+            if (dxball_board_tiles[x + y * 20] == 8) {
+                dxball_append_explosion(&dxball_explosive_sources);
+                dxball_explosive_sources.current->x = x;
+                dxball_explosive_sources.current->y = y;
+            }
+        }
+    }
+    dxball_select_surface(dxball_board_surface);
+    if (dxball_begin_explosions(&dxball_explosive_sources)) {
+        do {
+            x = dxball_explosive_sources.current->x;
+            y = dxball_explosive_sources.current->y;
+            if (x > 0) convert_to_explosive(x - 1, y);
+            if (x < 19) convert_to_explosive(x + 1, y);
+            if (y > 0) convert_to_explosive(x, y - 1);
+            if (y < 19) convert_to_explosive(x, y + 1);
+        } while (dxball_advance_explosion(&dxball_explosive_sources));
+    }
+    dxball_clear_explosion_list(&dxball_explosive_sources);
+    return;
+}
+
+void dxball_soften_special_bricks(void)
+{
+    DxBallInt x, y;
+    DxBallByte *tile;
+    dxball_bonus_17_active = 0;
+    dxball_select_surface(dxball_board_surface);
+    for (x = 0; x < 20; ++x) {
+        for (y = 0; y < 20; ++y) {
+            tile = &dxball_board_tiles[x + y * 20];
+            if (*tile == 2 || *tile == 21) {
+                if (*tile == 2) ++dxball_remaining_bricks;
+                *tile = 20;
+                dxball_draw_board_tile(x, y, 0);
+            }
+            if (*tile == 7) {
+                *tile = 6;
+                dxball_draw_board_tile(x, y, 0);
+            }
+            if (*tile == 3 || *tile == 4) {
+                *tile = 5;
+                dxball_draw_board_tile(x, y, 0);
+            }
+        }
+    }
+    return;
+}
+
+DxBallInt dxball_count_destructible_bricks(void)
+{
+    DxBallInt x, y, count;
+    count = 0;
+    for (x = 0; x < 20; ++x) {
+        for (y = 0; y < 20; ++y) {
+            if (dxball_board_tiles[x + y * 20] != 0 &&
+                    dxball_board_tiles[x + y * 20] != 2) ++count;
+        }
+    }
+    return count;
+}
 
 void *dxball_allocate_node(size_t size)
 {

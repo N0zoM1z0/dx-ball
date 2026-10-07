@@ -59,13 +59,15 @@ def validate(require_target=False):
         if accepted["target_sha256"] != target["target"]["sha256"] or int(accepted["cases"]) <= 0:
             raise ValueError("invalid semantic evidence identity/count")
         owner = by_source[implementations[address]["source"]]
+        oracle = owner.get("unit_oracles", {}).get(accepted["unit"], owner["oracle"])
         for field, path in (("source_sha256", ROOT / implementations[address]["source"]),
                             ("header_sha256", ROOT / owner["header"]),
-                            ("oracle_sha256", ROOT / owner["oracle"]),
+                            ("oracle_sha256", ROOT / oracle),
                             ("target_oracle_sha256", ROOT / owner["target_oracle"])):
             if accepted[field] != sha(path):
                 raise ValueError(f"accepted semantic input changed: {field}")
-        inputs = [owner[field] for field in ("source", "header", "oracle", "target_oracle")]
+        inputs = [owner[field] for field in ("source", "header", "target_oracle")]
+        inputs.append(oracle)
         inputs += owner["additional_inputs"]
         if json.loads(accepted["inputs_sha256"]) != {name: sha(ROOT / name) for name in inputs}:
             raise ValueError("accepted semantic input set changed; replay required")
