@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **148 maintained functions**, **77,094 target differential cases**, and
+> entity owners: **168 maintained functions**, **82,709 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -47,7 +47,10 @@ and the window procedure through device creation and game input, checking
 The [working-resource and UI investigation](docs/STARTUP_UI_OWNER.md) continues
 into startup configuration, score files and vertical-blank timing, then recovers
 text placement, original line pixels and palette operations in 1,424 cases.
-Real Windows/driver integration, audio and non-game modes remain in progress.
+The [menu and splash investigation](docs/INTRO_OWNER.md) reuses saved REA
+dossiers to connect the opening scroller, point animation, text and palettes
+to real mode dispatch, with 5,615 direct cases and 58 separate transition checks.
+Real Windows/driver integration, audio, editor and game-over modes remain in progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -161,6 +164,11 @@ scripts/repo-python tests/test_powerups_differential.py
 scripts/repo-python tests/test_core_differential.py
 scripts/repo-python tests/test_runtime_differential.py
 scripts/repo-python tests/test_display_differential.py
+scripts/repo-python tests/test_device_differential.py
+scripts/repo-python tests/test_platform_differential.py
+scripts/repo-python tests/test_startup_differential.py
+scripts/repo-python tests/test_ui_differential.py
+scripts/repo-python tests/test_intro_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -198,14 +206,18 @@ source, original behavior and acceptance limits.
 - [Core ball physics and gameplay frame](docs/CORE_OWNER.md).
 - [Game initialization, life-loss reset and mode routing](docs/RUNTIME_OWNER.md).
 - [Lightning, dirty-region merging and frame presentation](docs/DISPLAY_OWNER.md).
+- [Device recovery and palette fades](docs/DEVICE_OWNER.md).
+- [Windows startup and input](docs/PLATFORM_OWNER.md).
+- [Working-resource setup and shared UI](docs/STARTUP_UI_OWNER.md).
+- [Menu, splash, scroller and point animation](docs/INTRO_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:
   independent source, scoped semantic, and complete byte-exact facts.
 
-Upcoming work includes Win32/input/device integration, surface recovery,
-game-over and menu modes, sound and MIDI. Names and ownership
+Upcoming work includes the Windows adapter and real device delivery, editor
+and game-over modes, sound and MIDI. Names and ownership
 are promoted only with target-local evidence.
 
 ## License and attribution

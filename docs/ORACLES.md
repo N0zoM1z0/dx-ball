@@ -17,6 +17,7 @@
 | Platform x86 vs compiled native C | WinMain, window messages, fullscreen/compatible creation and input bodies; 4,742 cases including stdcall cleanup and process exit | Real Win32 callback delivery, driver behavior, audio/UI/non-game implementations, playable game |
 | Startup x86 vs compiled native C | Working-surface setup, score I/O, board-loader dispatch, timing, RNG calls and actual bank release; 158 cases and one connected dispatch check | Board-parser execution on this edge, CRT random-generator identity, drivers, mode-0/4 bodies, playable game |
 | UI x86 vs compiled native C | Text/glyph placement, line pixel buffers, fill requests, full palette flags and RGB-int pools; 1,266 cases | Driver rasterization, actual window presentation, invalid storage/arithmetic |
+| Menu/splash x86 vs compiled native C | Twenty controller/math entries, point pixels, scroller/credit waves, text and palette arrays; 5,615 direct cases plus 58 separate transitions | Resource parsing/release on this edge, audio/MIDI, real drivers, editor/game-over and playable EXE |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -67,7 +68,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 77,094 direct-case total. This
+request state. Integration cases are excluded from the 82,709 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -159,7 +160,7 @@ stop original execution at the CRT exit boundary. Every previous oracle and
 [platform evidence](PLATFORM_OWNER.md) for limits.
 
 The startup/UI checkpoint adds fourteen entries and 1,424 direct cases, bringing
-current acceptance to 148 maintained entries and 77,094 distinct suite cases.
+that checkpoint to 148 maintained entries and 77,094 distinct suite cases.
 A connected frame dispatcher check is counted separately. Working-resource
 setup executes actual clock/palette calls; real sprite release frees owned
 records across three banks. UI tests execute actual glyph bodies and line writes
@@ -168,3 +169,15 @@ All earlier suites, 40 cold exact units and eight rejection checks replay as
 one batch, followed by three compiler products, Wine inspection and saved REA
 verification. See [startup/UI evidence](STARTUP_UI_OWNER.md) for all Evidence IDs,
 fresh-image defaults, original quirks and complete acceptance domains.
+
+The menu/splash checkpoint adds twenty entries and 5,615 direct cases, bringing
+current acceptance to 168 maintained entries and 82,709 distinct suite cases.
+Another 58 checks are separate connected mode/key evidence. Actual menu and
+splash bodies execute through mode dispatch alongside existing glyph, UI,
+point/line, palette, dirty-region and timing code. Controlled COM callbacks
+supply storage and observe meaningful requests; resource parsing/release on this
+edge, audio/MIDI, real driver effects and pending editor/game-over bodies remain
+explicit boundaries. Every earlier suite, forty cold exact units, eight rejection
+checks, three compiler products, Wine inspectors and saved REA verification
+pass together. See [menu/splash evidence](INTRO_OWNER.md) for Evidence IDs,
+original data, shared-score ownership and full acceptance domains.

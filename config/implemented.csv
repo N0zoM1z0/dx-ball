@@ -1,8 +1,12 @@
 address,symbol,source,scope,semantic_unit
 0x00402100,dxball_rectangles_overlap,src/geometry.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-rectangles-overlap
 0x00402250,dxball_initialize_trig,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-initialize-trig
+0x00402340,dxball_raw_sine,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-raw-sine
+0x004023A0,dxball_raw_cosine,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-raw-cosine
 0x00402400,dxball_sine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-sine
 0x00402490,dxball_cosine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-cosine
+0x00402520,dxball_wave_x,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-wave-x
+0x00402560,dxball_wave_y,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-wave-y
 0x00403070,dxball_draw_line,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-line
 0x00403230,dxball_fill_rect,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-fill-rect
 0x00403450,dxball_current_time,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-current-time
@@ -41,6 +45,15 @@ address,symbol,source,scope,semantic_unit
 0x00406400,dxball_screen_pan,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-screen-pan
 0x00406CC0,dxball_read_scores,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-read-scores
 0x00406EE0,dxball_initialize_scores,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-initialize-scores
+0x00407420,dxball_initialize_splash,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-initialize-splash
+0x004075D0,dxball_redraw_splash,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-redraw-splash
+0x00407990,dxball_splash_frame,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-splash-frame
+0x00407AB0,dxball_splash_key,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-splash-key
+0x00407AE0,dxball_dispose_splash,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-dispose-splash
+0x00407BA0,dxball_draw_scroller_wave,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-draw-scroller-wave
+0x00407C90,dxball_update_scroller,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-update-scroller
+0x00407D80,dxball_draw_waving_credits,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-draw-waving-credits
+0x00407EF0,dxball_pulse_splash_palette,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-pulse-splash-palette
 0x00408070,dxball_reset_regions,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-reset-regions
 0x004082F0,dxball_draw_effect_sprite,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-effect-sprite
 0x004085D0,dxball_draw_reduced_sprite,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-reduced-sprite
@@ -75,6 +88,13 @@ address,symbol,source,scope,semantic_unit
 0x0040DA70,dxball_window_proc,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-window-proc
 0x0040DF10,dxball_claim_instance,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-claim-instance
 0x0040DF80,dxball_close_instance,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-close-instance
+0x0040DFC0,dxball_initialize_intro,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-initialize-intro
+0x0040E0E0,dxball_redraw_intro,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-redraw-intro
+0x0040E330,dxball_intro_frame,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-intro-frame
+0x0040E430,dxball_intro_key,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-intro-key
+0x0040E570,dxball_initialize_intro_points,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-initialize-intro-points
+0x0040ED40,dxball_update_intro_points,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-update-intro-points
+0x0040F010,dxball_dispose_intro,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-dispose-intro
 0x0040F4C0,dxball_initialize_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-game
 0x0040F7A0,dxball_redraw_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-game
 0x0040F8B0,dxball_game_frame,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-game-frame

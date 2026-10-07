@@ -32,9 +32,9 @@ typedef struct DxBallRuntimeOps {
     void (*finalize_game_resources)(void);
 } DxBallRuntimeOps;
 
-/* Only mode 1 has a maintained gameplay implementation in this batch. The
-   original switch does nothing for other integers; pending valid modes need
-   configured callbacks. These arrays do not fabricate their implementations. */
+/* Modes 0 (menu), 1 (game) and 4 (splash) default to maintained source.
+   Pending valid modes require configured callbacks. The original switch does
+   nothing for out-of-range integers. */
 typedef struct DxBallModeOps {
     void (*initialize[5])(void);
     void (*redraw[5])(void);

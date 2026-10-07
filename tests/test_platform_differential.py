@@ -234,7 +234,9 @@ class PlatformTarget(Boundaries,DeviceTarget):
             def callback(*unused):
                 args=tuple(signed(v) if k in ('i','r') else v for k,v in zip(kinds,self._args(len(kinds))))
                 result=function(args);self._return(0 if result is None else result,pop=len(kinds)*4 if stdcall else 0)
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+            hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+            self._hooks.append(hook)
+            return hook
         for slot,(name,imported,_,kinds) in enumerate(APIS):
             address=0x509000+slot*16;self.write_u32(imports[imported],address)
             bind(address,kinds,lambda a,name=name:self.boundary(name,a))
@@ -245,7 +247,7 @@ class PlatformTarget(Boundaries,DeviceTarget):
         for i,(name,table,slot,kinds) in enumerate(COM):
             address=0x509300+i*16;self.write_u32(tables[table]+slot*4,address)
             bind(address,kinds,lambda a,name=name:self.com(name,a))
-        for mode in (0,2,3,4):bind(KEYS[mode],'' if mode==4 else 'i',lambda a,mode=mode:self.key(mode,tuple(v&255 for v in a)),False)
+        self.key_hooks={mode:bind(KEYS[mode],'' if mode==4 else 'i',lambda a,mode=mode:self.key(mode,tuple(v&255 for v in a)),False) for mode in (0,2,3,4)}
     def exit(self,*unused):
         self.exit_status=self._args(1)[0];self.log('exit_process',self.exit_status);self.uc.emu_stop()
     def call(self,entry,*args):

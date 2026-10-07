@@ -8,7 +8,7 @@ without checking their individual evidence.
 | Area | Target evidence / current work |
 | --- | --- |
 | Platform startup | `src/platform.c`; WinMain, window/input routing, singleton and fullscreen/compatible DirectDraw creation; Windows adapter pending |
-| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; non-game modes pending |
+| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; modes 0/1/4 maintained, editor/game-over pending |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
@@ -23,6 +23,8 @@ without checking their individual evidence.
 | Runtime owner | `src/runtime.c`; game initialization, life-loss reset, clocks, paddle animation and score drawing |
 | Display owner | `src/display.c`; lightning, dirty pages, sort/merge, palette, frame waits and presentation |
 | Device owner | `src/device.c`; palette fades/initialization, color fills, sprite/surface recovery and synchronization |
+| Startup/UI owners | `src/startup.c`, `src/ui.c`; working-resource setup, scores, text, line pixels and palette operations |
+| Menu/splash owner | `src/intro.c`; mode-0/4 controllers, point cloud, scroller/credit waves and palette pulses |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -91,11 +93,12 @@ constants. `src/round.h` exposes initialization/count operations, preserving
 terminal-level call order while leaving the original out-of-bank read unresolved.
 `src/core.c` connects main ball physics and the gameplay frame to these owners.
 `src/runtime.c` supplies real gameplay initialization and life-loss reset, plus
-clock, score and paddle routines. Its mode table defaults mode 1 to maintained
-source; other valid modes require configured implementations. All twelve frame
+clock, score and paddle routines. Its mode table defaults modes 0, 1 and 4 to
+maintained source; editor and game-over require configured implementations. All twelve frame
 phases now default to maintained owners. The display owner supplies lightning,
 dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
-COM drivers, Windows binding, glyph UI and audio remain pending. Surface recovery,
+COM drivers, Windows binding and audio remain pending. Glyph and shared UI
+bodies default to maintained source. Surface recovery,
 color fills and palette fades now default to `src/device.c`. The third sprite
 bank's count and allocation mode own addresses `0x4265AC` / `0x4265B0`; gameplay
 initialization writes those fields rather than duplicated globals. See
@@ -108,6 +111,18 @@ creation and game key dispatch. Startup-only COM signatures live in
 WinMain/WndProc use stdcall on Windows and the host ABI for native analysis.
 The new oracle compares Windows records with native pointer growth, explicit
 COM output objects, message ordering and non-returning process exits. Audio,
-non-game modes and the actual Win32 adapter remain boundaries. Shared state
+editor/game-over modes and the actual Win32 adapter remain boundaries. Shared state
 includes the existing restart flag and bonus-9 flag; no duplicate pause/bonus
 fields are introduced. See [platform evidence](PLATFORM_OWNER.md).
+
+`src/startup.c` supplies working-resource initialization, score-file handling,
+CRT RNG calls and sprite-bank cleanup. `src/ui.c` supplies text/centering,
+line pixels, fill requests and palette operations using the shared interfaces.
+`src/intro.c` connects actual menu and splash lifecycle controllers to these
+owners, with typed point/offset arrays, program welcome text and the RGB-int
+pool. Menu Last Score reuses the existing gameplay score. Public startup/UI/
+intro headers depend only on board scalar types; platform/device dependencies
+stay in implementation files. See [startup/UI evidence](STARTUP_UI_OWNER.md)
+and [menu/splash evidence](INTRO_OWNER.md). The products remain analysis
+components and inspectors until the Windows/audio adapters and EXE entry
+integration are complete.

@@ -14,14 +14,14 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-actual device/driver delivery, non-game modes, audio, and MIDI remain pending. Main ball motion,
+actual device/driver delivery, editor and game-over modes, audio and MIDI remain pending. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
 scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred forty-eight source functions have scoped
-semantic evidence from 77,094 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred sixty-eight source functions have scoped
+semantic evidence from 82,709 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -169,7 +169,7 @@ Commit subjects retain `gpt-6.1-sol: `. Include detailed English bodies describi
 actual REA operations, evidence, implementation and validation where relevant;
 mention REA naturally rather than inserting it into unrelated changes.
 
-The current platform checkpoint adds eleven entries and 4,742 direct cases
+The platform checkpoint adds eleven entries and 4,742 direct cases
 (**134 maintained / 75,670 direct / 40 exact / 4,079 bytes**). See
 `docs/PLATFORM_OWNER.md` for all REA Evidence IDs, owned/span extents and Windows
 API scope. The closed 11-04 session saved 163 cumulative Evidence records.
@@ -204,7 +204,7 @@ paths, snapshots, tools and checkpoint reports survive. Use
 cleanup, and retain the private `.analysis/cleanup/` SHA-256 operation journal.
 The saved REA smoke verifier passes after cleanup.
 
-The current startup/UI checkpoint adds six working-resource functions and
+The startup/UI checkpoint adds six working-resource functions and
 eight shared UI functions. REA 11-58 dossiers retain 198 cumulative Evidence
 records; 0x403A00 uses its previously saved dossier. See
 `docs/STARTUP_UI_OWNER.md`. Native/MinGW/VC4 now compile `startup.c` and `ui.c`.
@@ -216,8 +216,28 @@ All prior suites, forty cold exact units, eight rejection checks, three toolchai
 Wine inspectors and saved REA verification pass as one batch. Reports/input
 identities are at `.analysis/checkpoints/startup-ui-148-40/`.
 
-Continue into the actual mode-4 splash and mode-0 intro bosses before independent
-leaves. Their complete dossiers are already in the 11-58 archive; reuse them.
+The current menu/splash checkpoint adds twenty entries and 5,615 direct cases,
+plus 58 separate mode/key transition checks. See `docs/INTRO_OWNER.md` for all
+Evidence IDs, owned/span extents, program data and acceptance domains. Reused
+complete 11-58 REA dossiers without opening another session. Mode/key tables
+now default modes 0, 1 and 4 to maintained source. Last Score shares existing
+0x422D18, not an independent global. Point animation uses keyed sprite 0x404040.
+Wave arguments/scales come from retained instructions/data. Credits-wave
+invocation remains redraw-only; SetEntries retains the original span+48 count.
+The native descriptor bridge strictly checks request size 108/flags 14 and
+returns pixels through host pointers; it does not assert raw host/x86 layout.
+
+All earlier suites, 40 cold exact units, eight rejection checks, native/MinGW/
+VC4 products, Wine inspectors and saved REA verification pass as one grouped
+checkpoint. Current pan literal bindings remain $T637/$T638, unchanged. Complete
+reports/input identities are at `.analysis/checkpoints/intro-168-40/`.
+Cleanup preview finds no additional disposable artifacts after earlier
+195.15 MiB recovery; immutable evidence, snapshots and checkpoints survive.
+
+Continue into mode-2 editor and mode-3 game-over controllers, then the actual
+Windows/audio/MIDI adapter and complete EXE integration. Prefer connected
+controller families over isolated leaves. Reuse retained dossiers before new
+REA queries. Full playable reconstruction remains the active objective.
 Mode 4 initializes first and routes to mode 0. Keep explicit-count UI strings
 (including NUL/padding), 287 point records and the 360-pair wave table. REA's
 assembly supplies sine arguments and floating scale omitted from pseudocode

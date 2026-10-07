@@ -8,6 +8,7 @@
 #include "device.h"
 #include "startup.h"
 #include "ui.h"
+#include "intro.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -18,10 +19,10 @@ DxBallRuntimeOps dxball_runtime_ops = {
     NULL, dxball_bind_board_surface, dxball_bind_display_surface, dxball_draw_text, dxball_draw_centered_text, NULL, dxball_release_sprite_banks, NULL
 };
 DxBallModeOps dxball_mode_ops = {
-    {NULL, dxball_initialize_game, NULL, NULL, NULL},
-    {NULL, dxball_redraw_game, NULL, NULL, NULL},
-    {NULL, dxball_game_frame, NULL, NULL, NULL},
-    {NULL, dxball_dispose_game, NULL, NULL, NULL},
+    {dxball_initialize_intro, dxball_initialize_game, NULL, NULL, dxball_initialize_splash},
+    {dxball_redraw_intro, dxball_redraw_game, NULL, NULL, dxball_redraw_splash},
+    {dxball_intro_frame, dxball_game_frame, NULL, NULL, dxball_splash_frame},
+    {dxball_dispose_intro, dxball_dispose_game, NULL, NULL, dxball_dispose_splash},
     dxball_initialize_device_state, dxball_synchronize_surface
 };
 DxBallInt dxball_high_resolution_clock;

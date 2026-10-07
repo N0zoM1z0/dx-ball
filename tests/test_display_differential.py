@@ -10,6 +10,7 @@ from pathlib import Path
 import random
 import struct
 import sys
+import traceback
 
 from unicorn import UC_HOOK_CODE
 from target_oracle import ROOT, TILES, MODE
@@ -50,6 +51,7 @@ class DisplayNative(RuntimeNative):
             def callback(*args):
                 try:return function(*args)
                 except Exception as error:
+                    traceback.print_exc()
                     # A failing HRESULT callback would make native retry loops
                     # run forever. Fail the oracle instead of retaining errors.
                     print('Native display boundary failed:',repr(error),flush=True)

@@ -148,13 +148,15 @@ class RuntimeTarget(CoreTarget):
                 self._return()
             hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
             self._hooks.append(hook);self.runtime_hooks[name]=hook
+        self.mode_body_hooks={}
         for group,entries in MODE_ENTRIES.items():
             for mode,address in enumerate(entries):
                 if mode==1:continue
                 def callback(*unused,group=group,mode=mode):
                     args=tuple(signed(a) for a in self._args(1)) if group=='cleanup' else ()
                     self.mode_boundary(group,mode,args);self._return()
-                self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+                hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+                self._hooks.append(hook);self.mode_body_hooks[group,mode]=hook
         self.mode_hooks={}
         for group,address in [('device',0x403A00),('synchronize',0x4035B0)]:
             def callback(*unused,group=group):self.mode_boundary(group,-1,());self._return()

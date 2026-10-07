@@ -35,8 +35,9 @@ Evidence IDs identify static observations, not execution proof.
 The earlier working-resource dossier is retained in the 11-04 interactive
 archive; it was reused rather than queried again. The remaining dossiers are
 in the closed 11-58 archive, which retains 198 cumulative Evidence records,
-including mode-0 and mode-4 callers for the next batch. Those callers are
-investigation evidence and have no source/semantic claims in this checkpoint.
+including mode-0 and mode-4 callers for the next batch. That subsequent
+[menu/splash checkpoint](INTRO_OWNER.md) now maintains those callers; their
+source and semantic claims are separate from this startup/UI acceptance.
 Unresolved indirect flows and provider-derived prototypes remain limitations;
 source ownership, widths and call sites were reviewed independently.
 
