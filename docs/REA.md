@@ -85,14 +85,23 @@ closes the session. It uses the release's real MCP client library and advertised
 tool schemas. The 360-second per-call deadline covers Ghidra's lazy first-query
 import/auto-analysis; it is separate from MCP connection startup.
 
+Each session also retains an independent timestamped directory under
+`.analysis/rea/runs/`, including requests, tool catalog, complete results and
+errors. The root files remain latest-result aliases for the smoke verifier.
+A failed later query still closes with a snapshot, preserving the successful
+prefix; cleanup errors are recorded separately without hiding the query error.
+This was exercised against REA's uppercase-address rejection in `xrefs`: the
+preceding RNG dossier remained in the saved snapshot after the nonzero exit.
+
 Snapshots are private reusable evidence tied by REA to the exact target,
 provider and analysis profile. CLI requests can reuse matching snapshots
 without a new provider process. Preserve Evidence IDs and limitations when
 promoting observations into owner documentation. Static pseudocode is never
 reported as original source or runtime execution.
 
-The verified MCP snapshot contains five Evidence records and zero primitive
-cache entries. Those are separate collections: the CLI function query reused
+The initial verified MCP snapshot contained five Evidence records and zero
+primitive cache entries; later investigations add Evidence. Those are separate
+collections: the CLI function query reused
 its matching saved function Evidence. Do not interpret a cache entry count as
 an Evidence count or assume every MCP operation avoids provider startup.
 
