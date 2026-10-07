@@ -36,7 +36,11 @@ and keep resource use modest: CMake builds use `--parallel 1`; project build and
 REA entry points limit Linux child processes to one allowed CPU. REA's Ghidra
 headless JVM uses a 512 MiB maximum heap. Use `scripts/resource_limits.py` rather
 than editing pinned compiler/provider binaries or launching competing sessions.
-Work in bounded families and commit stable checkpoints frequently. All commit subjects must be English
+Work in bounded families: collect evidence and reconstruct a related batch,
+then run its differential tests and cold replay at the stable checkpoint.
+Do not cold-replay after each individual function. Reuse completed reports
+when their complete inputs have not changed; replay affected units after a
+subsequent shared-input change. Commit stable checkpoints frequently. All commit subjects must be English
 and start with `gpt-6.1-sol: `. The user has authorized a public GitHub `dx-ball`
 repository and publishing these reconstruction sources.
 

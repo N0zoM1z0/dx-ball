@@ -8,15 +8,19 @@ packages and their native engines before selecting an interpreter.
 2. Verify target, toolchain, and tracking. Use `scripts/rea` for new binary
    analysis; it attests the pinned REA runtime and Ghidra/JDK inputs. Read
    `docs/REA.md`; retain returned Evidence IDs and limitations.
-3. Select one entry from `config/functions.csv`. Reconcile control flow,
+3. Select a related batch of entries from `config/functions.csv`. Reconcile control flow,
    embedded tables, epilogues, and padding; imported sizes are provisional.
 4. Inspect exact instructions, data references, producers, and independent
    consumers through REA. Keep complete evidence and reusable snapshots under
    ignored `.analysis/rea/`; promote reviewed observations into owner documents.
 5. Reconstruct natural shared C source with explicit state ownership and ABI.
    A portable dependency bridge validates call effects, not its missing backend.
-6. Replay the appropriate target-machine differential oracle and legacy compiler
-   unit. Exact comparison applies every reviewed COFF relocation and compares
+6. Once the batch's source is stable, replay its target-machine differential
+   oracles and cold-build its configured legacy compiler units together.
+   Do not cold-replay each individual function during reconstruction. Reuse
+   completed reports while their complete inputs remain unchanged, and rerun
+   affected units after subsequent shared-input changes.
+   Exact comparison applies every reviewed COFF relocation and compares
    all bytes; nothing is masked or ignored.
 7. Promote exactness only after a cold, configured zero-difference replay.
    Source presence, semantic acceptance, and exactness are independent ledgers.
