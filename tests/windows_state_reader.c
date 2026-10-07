@@ -150,6 +150,9 @@ int main(int argc, char **argv)
             if (strcmp(shape, ":ball") == 0) kind = 1;
             else if (strcmp(shape, ":scores") == 0) kind = 2;
             else if (strcmp(shape, ":board") == 0) kind = 3;
+            /* Observe the actual mapped bytes just beyond the fixed bank;
+             * this is diagnostic memory, not a 51st board in the input file. */
+            else if (strcmp(shape, ":bank_tail") == 0) kind = 4;
             else goto failure;
             *shape = '\0';
         }
@@ -167,6 +170,8 @@ int main(int argc, char **argv)
             if (!print_bytes(process, address, 660)) goto failure;
         } else if (kind == 3) {
             if (!print_bytes(process, address, 400)) goto failure;
+        } else if (kind == 4) {
+            if (!print_bytes(process, address + 20000, 400)) goto failure;
         } else {
             if (!ReadProcessMemory(process, (LPCVOID)address, &value, sizeof(value), &read)
                 || read != sizeof(value)) goto failure;

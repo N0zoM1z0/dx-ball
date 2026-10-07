@@ -15,12 +15,13 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss'), default='round')
+    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss', 'terminal'), default='round')
     parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
     args = parser.parse_args()
     if args.probe == 'ddraw-loss' and args.profile:
         parser.error('--profile selects a game build; ddraw-loss uses independent SDK surfaces')
     script = ROOT / 'tests' / ('test_windows_ddraw_loss.py' if args.probe == 'ddraw-loss'
+                              else 'test_windows_terminal.py' if args.probe == 'terminal'
                               else 'test_windows_round.py')
     arguments = [str(script)]
     if args.probe == 'focus':
@@ -30,16 +31,18 @@ def main():
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     directory = ROOT / 'build/reports/rea-process' / (stamp + '-' + args.probe)
     directory.mkdir(parents=True)
-    name = 'windows-focus' if args.probe == 'focus' else ('windows-ddraw-loss' if args.probe == 'ddraw-loss'
-                                                       else 'windows-round')
+    name = {'focus': 'windows-focus', 'ddraw-loss': 'windows-ddraw-loss',
+            'terminal': 'windows-terminal', 'round': 'windows-round'}[args.probe]
+    timeout = 1200000 if args.probe == 'terminal' else 300000
     scenario = {
         'executable': str(ROOT / 'scripts/repo-python'),
         'arguments': arguments, 'working_directory': str(ROOT),
-        'timeout_ms': 300000, 'idle_timeout_ms': 300000,
+        'timeout_ms': timeout, 'idle_timeout_ms': timeout,
         # Compact SDK JSON numbers are data. REA's generic port/PID rules can
         # replace unrelated numeric values, so declare all text rules explicitly.
         'normalization': {'paths': False, 'pids': False, 'ports': False},
-        'limits': {'output_bytes': 16000, 'files': 4, 'file_bytes': 32000,
+        'limits': {'output_bytes': 16000, 'files': 4,
+                   'file_bytes': 128000 if args.probe == 'terminal' else 32000,
                    'filesystem_depth': 1, 'processes': 64},
         'filesystem_observation_paths': [
             str(ROOT / 'build/reports' / (name + '.json')),

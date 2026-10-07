@@ -243,6 +243,12 @@ editor paint/save/reload/return. Its observer reads process state without hooks
 or target writes; all three runs persist the same complete 20,000-byte board
 bank in resettable copies. The original 49 files retain their verified hashes.
 
+The optional [terminal diagnostic](docs/TERMINAL_RUNTIME.md) uses REA process
+capture to follow 50 real clears of editor-created boards. Returning to the
+menu agrees in all three controls, but the unchecked terminal read
+exposes different adjacent global storage. This gap remains open; it is separate
+from completing the original campaign.
+
 `tests/test_windows_gameover.py` uses ordinary mouse input to miss balls until
 three lives are exhausted, then enters and edits a name through actual keys.
 It checks every byte of the 660-byte ranking file and the in-memory table,

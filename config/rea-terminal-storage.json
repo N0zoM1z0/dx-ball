@@ -1,0 +1,14 @@
+[
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040CEA0"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00411930"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00417CA0"}},
+  {"name": "xrefs", "arguments": {"address": "0x43f8d8"}},
+  {"name": "xrefs", "arguments": {"address": "0x43f8dc"}},
+  {"name": "xrefs", "arguments": {"address": "0x43f8ec"}},
+  {"name": "xrefs", "arguments": {"address": "0x43f8f0"}},
+  {"name": "xrefs", "arguments": {"address": "0x43f8f4"}},
+  {"name": "inspect_native_data_type", "arguments": {"address": "0x43f8d8"}},
+  {"name": "inspect_native_data_type", "arguments": {"address": "0x43f8dc"}},
+  {"name": "inspect_native_data_type", "arguments": {"address": "0x43f8ec"}},
+  {"name": "inspect_native_data_type", "arguments": {"address": "0x43f8f4"}}
+]

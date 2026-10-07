@@ -1,6 +1,6 @@
 # Current handoff
 
-Latest storage housekeeping recovered 548.11 MiB: 4.85 MiB of resettable
+Earlier storage housekeeping recovered 548.11 MiB: 4.85 MiB of resettable
 runtime probe files and 543.26 MiB from the verified Ghidra download ZIP.
 The installed REA/Node/Ghidra/JDK inputs attest independently of that archive;
 saved REA target-byte/snapshot verification passes after removal. Bootstrap
@@ -552,5 +552,43 @@ reuse the sound-214-40 cold/differential checkpoint. Counts stay 214 /95,873 /
 40 /4,079 bytes. Retained records/products/source references and checks live
 at .analysis/checkpoints/windows-ddraw-status-214-40/. Successful game focus
 recovery on physical Windows, audio/MIDI, all-original-board behavior and
-origin reconciliation remain open. An original-only real 50-custom-board pilot
-is currently separate exploratory evidence; do not promote it before completion.
+origin reconciliation remain open. The original-only 50-custom-board pilot
+has completed with menu0, lives3, score500 and application exit0. A VC4
+exploratory run agrees on routing/shutdown but reads different adjacent storage;
+its earlier routing-only report is not terminal storage acceptance. The new
+public diagnostic separates both results; see docs/TERMINAL_RUNTIME.md.
+
+The stable public terminal diagnostic completed all three profiles. REA
+process Evidence ev_be5556929420bba0c59c7c58c00fb28eb603e9033cc0fd2418ea28926d00ff58
+records child exit1 for storage mismatches, while each game exits0 after 50
+custom-board clears with menu0/lives3/score500. Original storage passes the
+scoped clock/empty-request/single-ball pattern; VC4 reads index/mode/surface/CRT
+neighbors and MinGW reads saved-palette storage. Current counts4/8/162 are
+observations, not stable expected counters. No owner or exact scope is promoted.
+
+Fresh REA loader/init/CRT dossiers establish the unchecked index50 footprint
+and original backwards overlapping copy. Current/first/last are the three
+reviewed list pointers (12 bytes); four-byte slots at 0x43F8DC,0x43F8EC,0x43F8F4
+remain unclassified despite empty exact xref/type results. Do not infer padding
+or add a fake extra board. The public config/rea-terminal-storage.json contains
+the twelve completed static queries. Compiler allocation controls show that
+grouping ordinary zero-initialized C globals yields a different count/tile
+offset, and tentative globals remain common symbols. The C++ comparison is
+only an experiment. Actual source storage ownership/allocation remains open.
+
+The stable reader/capture batch passes ten checks: public native/tracking,
+strict MinGW, ABI, startup, play/editor, game-over/ranking, normal round advance,
+independent SDK DirectDraw loss, saved REA and final target tracking. All67
+semantic paths,40 exact rows/eight complete input maps and the native-library
+identity are unchanged; reuse accepted sound-214-40 scoped cold/differential
+reports. Terminal observations/capture/positive reports are retained at
+.analysis/checkpoints/windows-terminal-214-40/; compiler allocation controls
+are separate at windows-terminal-layout-probe-01/. Continue with coherent
+global-storage recovery, full original-board behavior, audio/MIDI and origins.
+
+Final terminal-batch cleanup recovered another25.39 MiB from duplicate closed
+REA catalogs/aliases and resettable runtime fixtures. All references and
+runtime input identities verify after cleanup; saved REA target-byte/snapshot
+verification still passes. Current build/analysis/tools sizes are approximately
+19/348 MiB and1.9 GiB respectively; the cleanup preview is empty. Immutable
+checkpoints, originals, installed tools and manual saves remain intact.

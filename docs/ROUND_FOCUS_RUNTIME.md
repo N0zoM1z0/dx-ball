@@ -49,6 +49,11 @@ only the transition before subsequent checks; the aggregate report requires
 normal shutdown too. This control does not prove completion of all 50 original
 boards, terminal board50 behavior, synchronized frames or physical audio.
 
+The separate [terminal diagnostic](TERMINAL_RUNTIME.md) now exercises 50
+editor-created single-brick boards and the unchecked index50 read. Its
+observations keep routing success separate from adjacent-storage fidelity;
+the latter remains unresolved in the reconstruction.
+
 ## Retained negative focus evidence
 
 ```bash
