@@ -1,6 +1,10 @@
 # DX-Ball
 
 <p align="center">
+  <img src="resources/dxball-title.png" alt="DX-Ball title screen" width="900">
+</p>
+
+<p align="center">
   <img src="resources/progress.svg" alt="DX-Ball source reconstruction progress" width="900">
 </p>
 
