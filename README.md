@@ -15,8 +15,8 @@ Binary analysis uses [REA](https://github.com/morluto/rea) with its Ghidra
 provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
-> Core gameplay, initialization and life-loss reset now join the board, resource
-> and entity owners: **101 maintained functions**, **67,404 target differential cases**, and
+> Core gameplay, lifecycle and frame drawing now join the board, resource and
+> entity owners: **117 maintained functions**, **69,813 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -35,7 +35,10 @@ over 200 continuous frames. The [runtime investigation](docs/RUNTIME_OWNER.md)
 follows the frame caller into initialization, paddle animation and life-loss
 reset, checking 36 further connected frames through game-over dispatch. REA's
 caller evidence distinguished the actual gameplay initializer from an intro
-point-table routine. Display, audio and non-game modes remain in progress.
+point-table routine. The [frame drawing investigation](docs/DISPLAY_OWNER.md)
+connects last-brick lightning, dirty-region restoration and rectangle merging;
+192 additional continuous frames execute all twelve maintained gameplay phases.
+Windows/device integration, audio, glyph UI and non-game modes remain in progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -148,6 +151,7 @@ scripts/repo-python tests/test_entities_differential.py
 scripts/repo-python tests/test_powerups_differential.py
 scripts/repo-python tests/test_core_differential.py
 scripts/repo-python tests/test_runtime_differential.py
+scripts/repo-python tests/test_display_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -184,14 +188,15 @@ source, original behavior and acceptance limits.
 - [Particle updates, pixel writes and bonus production](docs/ENTITIES_OWNER.md).
 - [Core ball physics and gameplay frame](docs/CORE_OWNER.md).
 - [Game initialization, life-loss reset and mode routing](docs/RUNTIME_OWNER.md).
+- [Lightning, dirty-region merging and frame presentation](docs/DISPLAY_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:
   independent source, scoped semantic, and complete byte-exact facts.
 
-Upcoming work includes the remaining frame/render dependencies, game-over and
-menu modes, Win32/DirectDraw integration, sound and MIDI. Names and ownership
+Upcoming work includes Win32/input/device integration, surface recovery,
+game-over and menu modes, sound and MIDI. Names and ownership
 are promoted only with target-local evidence.
 
 ## License and attribution

@@ -23,14 +23,14 @@ ProjectileNode, ProjectileList = entity_type('ProjectileNode', ('x', 'y', 'previ
 FireNode, FireList = entity_type('FireNode', ('x', 'y', 'ticks'))
 SHAPES.update(projectiles=(0x43A898, ProjectileNode, 16), fire=(0x43A8E0, FireNode, 12))
 GLOBALS.update({0x43A900:'projectile_count', 0x43FAB8:'launch_requested', 0x43A8FC:'attached_ball_cue',
-                0x43FAE4:'paused', 0x4228D0:'restore_before_frame', 0x438B10:'mouse_action',
+                0x43FAE4:'paused', 0x4228D0:'draw_to_primary', 0x438B10:'mouse_action',
                 0x43FAEC:'last_brick_deadline', 0x43F8D8:'palette_tick'})
 ENTRIES = {'update_balls':0x410770, 'game_frame':0x40F8B0, 'hit_screen_point':0x4116C0,
            'retire_ball':0x411820, 'drop_bricks':0x415670, 'spawn_fire_effect':0x4135B0,
            'process_fire_effects':0x413710, 'update_projectiles':0x413170, 'fire_projectiles':0x4132C0}
 FRAME_BOUNDARIES = [('current_time', 0x403450, 0), ('elapsed', 0x4034F0, 2),
     ('animate_palette', 0x40A970, 3), ('update_score', 0x415880, 0),
-    ('restore_surfaces', 0x409610, 1), ('restore_regions', 0x408CC0, 0),
+    ('wait_frames', 0x409610, 1), ('restore_regions', 0x408CC0, 0),
     ('draw_effect_sprite', 0x4082F0, 3), ('draw_paddle', 0x412EC0, 0),
     ('last_brick', 0x415F40, 0), ('draw_last_brick', 0x416370, 0),
     ('present', 0x409040, 0), ('restart_round', 0x415DF0, 0)]
@@ -352,7 +352,7 @@ def main():
     for restore,remaining,deadline,action,count in itertools.product((0,1),(-1,0,1,2),
             (0,789),(0,1,2,3),(0,5,6)):
         h.seed();h.ball(attached=1)
-        h.setv('restore_before_frame',restore);h.state(REMAINING,remaining)
+        h.setv('draw_to_primary',restore);h.state(REMAINING,remaining)
         h.setv('last_brick_deadline',deadline);h.setv('mouse_action',action)
         h.setv('bonus_8_active',1);h.setv('projectile_count',count)
         h.n.control_round=h.t.control_round=True;h.call('game_frame')

@@ -21,6 +21,7 @@ without checking their individual evidence.
 | Ball owner | `src/balls.c`; typed lists, creation, cloning, attachment release and paddle rebound |
 | Core owner | `src/core.c`; main ball motion, gameplay frame, shots, fire and brick dropping |
 | Runtime owner | `src/runtime.c`; game initialization, life-loss reset, clocks, paddle animation and score drawing |
+| Display owner | `src/display.c`; lightning, dirty pages, sort/merge, palette, frame waits and presentation |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -28,11 +29,13 @@ without checking their individual evidence.
 use pointer-sized `size_t` for host compatibility. Legacy x86 builds use 32-bit
 handles. No source selection macro changes any type or function body.
 
-The rendering bridge injects only the unresolved sprite, background restoration,
-and invalidation dependencies. Active-surface selection remains maintained code.
-The target oracle uses original code for board routines and CRT memcpy/memset;
-it intercepts file functions and the three rendering boundaries. This validates
-state and effect traces while leaving Windows and pixel behavior unclaimed.
+Rendering operations default to maintained sprite, background-restoration and
+invalidation code. Individual board oracles replace those operations to retain
+their isolated scope; the display oracle executes their actual bodies. Active
+surface selection remains maintained code. The original board oracle executes
+board routines and CRT memcpy/memset, intercepting file and rendering boundaries.
+These separate scopes validate state and effect traces while leaving hardware
+Windows display and pixel behavior unclaimed.
 
 Project structure:
 
@@ -88,6 +91,9 @@ terminal-level call order while leaving the original out-of-bank read unresolved
 `src/core.c` connects main ball physics and the gameplay frame to these owners.
 `src/runtime.c` supplies real gameplay initialization and life-loss reset, plus
 clock, score and paddle routines. Its mode table defaults mode 1 to maintained
-source; other valid modes require configured implementations. Seven frame
-callbacks and platform/UI/audio integration remain pending. See
-[core evidence](CORE_OWNER.md) and [runtime evidence](RUNTIME_OWNER.md).
+source; other valid modes require configured implementations. All twelve frame
+phases now default to maintained owners. The display owner supplies lightning,
+dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
+COM drivers, surface recovery, glyph UI and audio remain pending. See
+[core evidence](CORE_OWNER.md), [runtime evidence](RUNTIME_OWNER.md) and
+[display evidence](DISPLAY_OWNER.md).

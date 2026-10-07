@@ -201,7 +201,8 @@ class EntitiesTarget(EffectsTarget):
         def region(*unused):
             self.events.append(("particle-region", *(signed(a) for a in self._args(4))))
             self._return()
-        self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, region, begin=address, end=address))
+        self.region_hook = self.uc.hook_add(UC_HOOK_CODE, region, begin=address, end=address)
+        self._hooks.append(self.region_hook)
 
     def particle(self, *unused):
         pass  # Execute original particle construction, including its clipping.

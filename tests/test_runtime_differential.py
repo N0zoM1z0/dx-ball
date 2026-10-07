@@ -139,13 +139,15 @@ class RuntimeTarget(CoreTarget):
         for name in RESTORED_FRAME:self.uc.hook_del(self.frame_hooks[name])
         self.surface_names={self.SURFACE:'board',self.PRIMARY:'primary',self.SECONDARY:'secondary',self.BACKGROUND:'background'}
         for surface in (self.PRIMARY,self.SECONDARY):self.write_u32(surface,self.VTABLE)
+        self.runtime_hooks={}
         for name,address,kinds in RUNTIME_BOUNDARIES:
             def callback(*unused,name=name,kinds=kinds):
                 args=tuple(self.normalize(a) if k=='p' else self._cstring(a).decode() if k=='s' else signed(a)
                            for k,a in zip(kinds,self._args(len(kinds))))
                 self.events.append(('runtime',name,*args,self.observed(),self.read(SAVED_PALETTE,1024).hex()))
                 self._return()
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+            hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+            self._hooks.append(hook);self.runtime_hooks[name]=hook
         for group,entries in MODE_ENTRIES.items():
             for mode,address in enumerate(entries):
                 if mode==1:continue
@@ -156,6 +158,7 @@ class RuntimeTarget(CoreTarget):
         for group,address in [('device',0x403A00),('synchronize',0x4035B0)]:
             def callback(*unused,group=group):self.mode_boundary(group,-1,());self._return()
             self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+        self.clock_hooks={}
         for slot,address,name in [(0x4413A4,0x50E000,'time'),(0x4412A0,0x50E010,'frequency'),(0x44129C,0x50E020,'counter')]:
             self.write_u32(slot,address)
             def callback(*unused,name=name):
@@ -166,7 +169,8 @@ class RuntimeTarget(CoreTarget):
                     low,high,result=self.frequency_value if name=='frequency' else self.counter_value
                     self.write(self._args(1)[0],struct.pack('<Ii',low,high))
                     self.events.append(('clock',name,low,high,result,self.observed()));self._return(result,pop=4)
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+            hook=self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+            self._hooks.append(hook);self.clock_hooks[name]=hook
     def normalize(self,surface):return self.surface_names.get(surface,surface)
     def mode_boundary(self,group,mode,args):
         self.events.append(('mode',group,mode,*args,self.observed()))
@@ -189,9 +193,11 @@ class RuntimeTarget(CoreTarget):
 
 
 class RuntimeHarness(Harness):
-    def __init__(self,library):
+    normalize_board_restores=True
+
+    def __init__(self,library,native_type=RuntimeNative,target_type=RuntimeTarget):
         self.boards=(ROOT/'original/DEFAULT.BDS').read_bytes()
-        super().__init__(library,RuntimeNative,RuntimeTarget)
+        super().__init__(library,native_type,target_type)
         self.cases=dict.fromkeys(ENTRIES,0);self.connected_frames=0
         self.n.bank[:]=self.boards;self.t.write(BANK,self.boards)
     def sprite(self,slot,width,height,bank=0):
@@ -234,7 +240,7 @@ class RuntimeHarness(Harness):
         # target. Normalize this declared dependency, retaining every argument.
         target_events=[]
         for event in t.events:
-            if event[0]=='blt-fast' and event[6]==0x10 and event[5][2]-event[5][0]==30 and event[5][3]-event[5][1]==15:
+            if self.normalize_board_restores and event[0]=='blt-fast' and event[6]==0x10 and event[5][2]-event[5][0]==30 and event[5][3]-event[5][1]==15:
                 target_events.append(('restore',*event[1:7]))
             else:target_events.append(event)
         if n.events!=target_events:
@@ -301,7 +307,7 @@ def main():
         h.seed();h.state(SCORE,score);h.setv('lives',lives);h.call('draw_score')
         h.setv('displayed_score',score if lives%2 else score-1);h.call('refresh_score')
     for paused,buffers,restore in itertools.product((0,1,2),(-1,0,1,2),(0,1)):
-        h.seed();h.setv('paused',paused);h.setv('display_buffer_count',buffers);h.setv('restore_before_frame',restore)
+        h.seed();h.setv('paused',paused);h.setv('display_buffer_count',buffers);h.setv('draw_to_primary',restore)
         h.call('redraw_game')
     # Every owner and cursor; counters are NOT reset by queue cleanup.
     for length in range(4):
@@ -321,7 +327,7 @@ def main():
         h.seed();h.populate();h.setv('restart_requested',restart);h.call('dispose_game',fade)
     h.seed();h.call('finish_game')
     for restore,width,mouse in itertools.product((0,1),(30,60,120),(20,320,618)):
-        h.seed();h.setv('restore_before_frame',restore);h.setv('paddle_width',width);h.setv('mouse_x',mouse)
+        h.seed();h.setv('draw_to_primary',restore);h.setv('paddle_width',width);h.setv('mouse_x',mouse)
         h.call('initialize_game')
     for mode in (-3,0,1,2,3,4,5):
         for name in ('initialize_mode','redraw_mode','cleanup_mode'):

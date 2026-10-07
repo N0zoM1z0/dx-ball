@@ -12,8 +12,9 @@ Nine additional functions have 4,580 original-x86 differential cases, including
 200 connected frames as a subset. That checkpoint had 85 maintained functions,
 65,894 direct cases, and the existing 40 exact functions / 4,079 bytes. This
 batch establishes scoped semantics; it adds no byte-exact claims. The subsequent [runtime batch](RUNTIME_OWNER.md) restores score, clock, paddle
-and reset implementations. Platform presentation and last-brick behavior remain
-pending, so the products are still analysis utilities and a library.
+and reset implementations. The [display batch](DISPLAY_OWNER.md) now supplies every frame phase, including
+last-brick logic and presentation dispatch. Platform drivers remain pending,
+so the products are still analysis utilities and a library.
 
 ## Entry evidence
 
@@ -129,17 +130,16 @@ allocation shape, callee-saved registers/stack, and poisoned freed storage.
 New allocations are classified through reachable typed roots, not ambiguous
 host allocation sizes. Fatal fire/shot allocation exits are also compared.
 
-The original core checkpoint traced twelve configured frame dependencies. The
-subsequent runtime owner supplies five maintained defaults: current time,
-elapsed test, score refresh, paddle drawing and round restart. The remaining
-seven are palette animation, surface restoration, region restoration,
-effect-sprite drawing, last-brick processing, last-brick overlay drawing and
-presentation. Their entry-state ordering is checked; traces do not validate
-their bodies. The original dependencies are intercepted at ENTRY without
-patching instructions. Callers must configure remaining operations; no dummy
-playable backend or silent no-op is supplied. The core oracle retains its
-isolated twelve-boundary scope; the runtime oracle removes the five interceptions
-and tests actual implementations connected to the same frame.
+The original core checkpoint traced twelve configured frame dependencies.
+The runtime batch supplies current time, elapsed, score, paddle and restart;
+the display batch supplies palette, frame waits, region restoration, effect
+sprites, last-brick logic/overlay and presentation. Every phase now defaults to
+maintained source. The old restore_surfaces label is corrected to wait_frames;
+global 0x4228D0 is draw_to_primary, matching initialization and frame consumers.
+The core oracle retains its isolated twelve-boundary scope; runtime removes
+five interceptions, and display removes the other seven plus render/region
+hooks. No original instructions are patched. Configured COM drivers, recovery,
+audio, glyph/resource and non-game-mode boundaries keep their documented scopes.
 
 Allocator/deallocator, RNG, audio, cursor and rendering boundaries retain their
 earlier scopes. Arithmetic must be finite and non-overflowing, list cursors
@@ -148,7 +148,7 @@ positive, and projectile hit columns within 0..19. Controlled callbacks preserve
 the current ball and metadata. Kind-3 movement ticks are sampled, but their
 external timer producer is still pending. Terminal level initialization keeps
 the prior explicitly controlled index-50 scope. Hardware DirectDraw,
-DirectSound, input message routing, glyph rendering and last-brick execution
+DirectSound, input message routing, glyph rendering and actual platform drivers
 must still be reconstructed for a playable whole game. Round reset and gameplay
 initialization now have scoped runtime acceptance.
 
@@ -165,8 +165,8 @@ independent leaf matching is deferred while core gameplay remains the priority.
 ## Continue from here
 
 The runtime spine is now maintained; see [runtime evidence](RUNTIME_OWNER.md).
-Continue with the remaining frame/render dependencies and non-game modes,
-then platform startup. REA identifies gameplay initialization at 0x40F4C0;
+All frame phases are now maintained; continue with platform startup, device
+recovery and non-game modes, as described in [display evidence](DISPLAY_OWNER.md). REA identifies gameplay initialization at 0x40F4C0;
 0x40E570 is a mode-0 intro point-table initializer. Reuse retained dossiers and
 keep recording REA feedback in `/tmp/dxball_rea_feedback.md`.
 

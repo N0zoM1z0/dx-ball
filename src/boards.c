@@ -1,4 +1,5 @@
 #include "boards.h"
+#include "display.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -12,7 +13,7 @@ FILE *dxball_board_file;
 DxBallSurface dxball_active_surface;
 DxBallSurface dxball_board_surface;
 DxBallSurface dxball_background_surface;
-DxBallRenderOps dxball_render_ops;
+DxBallRenderOps dxball_render_ops = { dxball_draw_sprite, dxball_restore_board_region, dxball_invalidate_region };
 
 /* FUNCTION: DXBALL 0x0040CC30
    Failed opens preserve the bank. Short reads replace only the prefix. The

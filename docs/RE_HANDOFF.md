@@ -14,14 +14,14 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-presentation, glyph UI, audio, and MIDI remain pending. Main ball motion,
-full frame routing, game initialization and life-loss reset now have scoped
-maintained implementations.
+device/driver integration, glyph UI, audio, and MIDI remain pending. Main ball motion,
+full frame routing/drawing, game initialization and life-loss reset now have
+scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred one source functions have scoped
-semantic evidence from 67,404 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred seventeen source functions have scoped
+semantic evidence from 69,813 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -74,11 +74,11 @@ The preceding core checkpoint added nine functions and 4,580 direct cases, inclu
 full gameplay frame 0x40F8B0 (1,683 owned / 1,688 span) are maintained alongside
 point hits, retirement, drops, fire effects and shooting. See `docs/CORE_OWNER.md`
 for every Evidence ID, typed queue, original collision/input order and scope.
-Five of its twelve frame callbacks now default to maintained runtime source;
-seven render/palette/last-brick/presentation operations remain pending. Global 0x43A884 is now correctly named displayed_score.
+All twelve frame callbacks now default to maintained runtime/display source;
+COM drivers, audio/recovery and UI/platform integration remain pending. Global 0x43A884 is now correctly named displayed_score.
 No new exact claims were made while prioritizing core behavior.
 
-The current runtime checkpoint adds sixteen functions and 1,510 direct cases,
+The preceding runtime checkpoint added sixteen functions and 1,510 direct cases,
 including 36 continuous frames as a subset. Actual game initialization 0x40F4C0,
 mode dispatch 0x403730, life-loss reset 0x415DF0 / 0x415C40, paddle animation,
 clock, score, redraw and disposal now execute alongside real gameplay bodies.
@@ -88,23 +88,41 @@ Resource loading defaults to existing parsers but is controlled in this lifecycl
 oracle; glyph/render/audio/device setup and modes other than 1 remain pending.
 The unsigned score-refresh JBE branch is preserved.
 
-REA establishes that 0x40E570 initializes the mode-0 intro point table, correcting
-the previous gameplay-initialization suggestion. Continue through remaining
-frame/render dependencies and mode-3 game-over/UI, then window/input/display/audio
-startup. Restore connected core behavior before independent leaf matching.
-Reuse complete dossiers under `.analysis/rea/runs/`; the latest successful
-08-54 interactive session saved 124 Evidence records. No redundant REA setup
-or identical function query is needed. Feedback continues in the requested
-`/tmp/dxball_rea_feedback.md`.
+The current display checkpoint adds sixteen entries and 2,409 direct cases.
+Another 192 continuous frames are separate integration evidence, not counted
+again as direct cases. Last-brick logic 0x415F40 (1,057 bytes), dirty restoration
+0x408CC0 (827 bytes) and sort/merge/presentation 0x409100 (984 bytes) connect to
+palette, sprite, wait/flip and region helpers. All twelve original frame phases
+execute in the new oracle. See `docs/DISPLAY_OWNER.md` for Evidence IDs, arrays,
+quirks, corrected names and precise backend scope. Source now defaults board,
+effect, particle and runtime reset/bind operations to these maintained owners.
 
-This checkpoint reruns the changed 4,580-case core oracle, adds the runtime
-oracle, builds native/MinGW/VC4 products and compares Windows inspectors under
-Wine. Earlier 76 semantic entries and all 40 exact units have unchanged complete
-inputs, verified against prior accepted hashes. Their successful reports are
-reused from `core-85-40`; no new exact unit is claimed. Private current reports,
-evidence indexes and reuse verification are retained under
-`.analysis/checkpoints/runtime-101-40/`. The full private CI command still performs
-a complete cold replay; routine unchanged checkpoints can reuse verified reports.
+The former restore_surfaces label at 0x409610 is corrected to wait_frames:
+it uses software clock polling or DirectDraw WaitForVerticalBlank. Global
+0x4228D0 is draw_to_primary, matching initialization and frame consumers.
+Last-brick expiry queues an explosion request at 0x412B30 before frame-end
+application; it does not create the animation immediately. Presentation retains
+original selection sorting, sequential merging and BUSY/SURFACELOST behavior.
+
+REA also establishes that 0x40E570 initializes the mode-0 intro point table;
+gameplay initialization is 0x40F4C0. Continue through Win32/input/device/display
+startup and actual recovery, mode-3 game-over/UI and audio. Frame algorithms are
+maintained, but their configured COM/resource/glyph/audio/non-game boundaries
+still separate these libraries from a playable executable. Restore connected
+core behavior before independent leaf matching. Reuse retained REA dossiers:
+the latest 09-29 interactive session saved 137 Evidence records. Feedback
+continues in `/tmp/dxball_rea_feedback.md`.
+
+This shared source/header change performs one grouped cold replay of all forty
+accepted exact units, every earlier differential suite, native/MinGW/VC4 builds,
+Wine inspector comparison, rejection tests and saved REA verification. The
+read/write bank literals were rebound to $SG733 /$SG737 only after verifying
+unchanged rb/wb bytes in both object and target; offsets/types/addends and full
+comparison remain strict. No new exact claim is made. Semantic input sets now
+include all maintained source/header closure, and exact build inputs include
+all shared headers. Private reports, literal binding review and current identities
+are retained under `.analysis/checkpoints/display-117-40/`. Batch replay remains
+the policy; no per-function replay is required.
 
 The user requires modest CPU/memory use. Project build and REA entry points
 inherit one allowed Linux CPU; CMake uses `--parallel 1`. Ghidra's heap is

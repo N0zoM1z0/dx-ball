@@ -115,7 +115,8 @@ CMake uses `--parallel 1`.
 
 Each session also retains an independent timestamped directory under
 `.analysis/rea/runs/`, including requests, tool catalog, complete results and
-errors. The root files remain latest-result aliases for the smoke verifier.
+errors. The root files remain latest-result convenience aliases; saved smoke
+verification uses a complete archived smoke run.
 A failed later query attempts to close with a snapshot, preserving the successful
 prefix; cleanup errors are recorded separately without hiding the query error.
 If the transport has already closed, complete received Evidence files remain
@@ -210,3 +211,14 @@ root convenience aliases, so those numbered aliases must not be mixed with an
 earlier run. Verification checks the function address, target/snapshot binding,
 loaded bytes, Evidence membership and completed close/save response. The shared
 snapshot remains cumulative; stable run references preserve each query record.
+
+## Connecting frame drawing
+
+The [display investigation](DISPLAY_OWNER.md) follows the 1,057-byte last-brick
+boss into deferred explosion requests, lightning and particle production, then
+connects dirty-region restoration and the 984-byte rectangle merge/presentation
+routine. REA's instruction/API evidence corrects the former surface-restoration
+label to a frame/vblank wait. Sixteen entries pass 2,409 direct cases; 192 separate
+continuous frames execute all twelve maintained gameplay phases. The session
+saved 137 Evidence records. Actual platform drivers, recovery, audio and glyph/UI
+work remain explicit rather than being inferred from those algorithm tests.

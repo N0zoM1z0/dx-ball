@@ -23,9 +23,23 @@ address,symbol,source,scope,semantic_unit
 0x00404CF0,dxball_draw_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
 0x00404E40,dxball_find_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
 0x00406400,dxball_screen_pan,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-screen-pan
+0x00408070,dxball_reset_regions,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-reset-regions
+0x004082F0,dxball_draw_effect_sprite,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-effect-sprite
+0x004085D0,dxball_draw_reduced_sprite,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-reduced-sprite
+0x00408990,dxball_queue_region,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-queue-region
+0x00408A50,dxball_restore_effect_region,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-restore-effect-region
+0x00408B70,dxball_invalidate_region,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-invalidate-region
+0x00408CC0,dxball_restore_regions,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-restore-regions
+0x00409000,dxball_bind_board_surface,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-bind-board-surface
+0x00409020,dxball_bind_display_surface,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-bind-display-surface
+0x00409040,dxball_present,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-present
+0x00409100,dxball_present_regions_now,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-present-regions-now
+0x004094E0,dxball_sort_present_regions,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-sort-present-regions
+0x00409610,dxball_wait_frames,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-wait-frames
 0x00409790,dxball_load_live_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
 0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
 0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
+0x0040A970,dxball_animate_palette,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-animate-palette
 0x0040CC30,dxball_read_board_bank,src/boards.c,path/open/read boundaries,board-io
 0x0040CC90,dxball_write_board_bank,src/boards.c,path/open/write boundaries,board-io
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite
@@ -98,5 +112,7 @@ address,symbol,source,scope,semantic_unit
 0x00415C10,dxball_finish_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-finish-game
 0x00415C40,dxball_reset_round,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-reset-round
 0x00415DF0,dxball_restart_round,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-restart-round
+0x00415F40,dxball_last_brick,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-last-brick
+0x00416370,dxball_draw_last_brick,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-last-brick
 0x00416430,dxball_dispose_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-dispose-game
 0x004164A0,dxball_clear_all_entities,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-clear-all-entities

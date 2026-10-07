@@ -6,6 +6,7 @@
 #include "particles.h"
 #include "round.h"
 #include "runtime.h"
+#include "display.h"
 #include "trig.h"
 #include <stdlib.h>
 
@@ -13,12 +14,13 @@ DxBallProjectileList dxball_projectiles;
 DxBallFireEffectList dxball_fire_effects;
 DxBallInt dxball_projectile_count;
 DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
-DxBallInt dxball_paused, dxball_restore_before_frame, dxball_mouse_action;
+DxBallInt dxball_paused, dxball_draw_to_primary, dxball_mouse_action;
 DxBallInt dxball_last_brick_deadline;
 DxBallUInt dxball_palette_tick;
 DxBallFrameOps dxball_frame_ops = {
-    dxball_current_time, dxball_elapsed, NULL, dxball_refresh_score,
-    NULL, NULL, NULL, dxball_draw_paddle, NULL, NULL, NULL, dxball_restart_round
+    dxball_current_time, dxball_elapsed, dxball_animate_palette, dxball_refresh_score,
+    dxball_wait_frames, dxball_restore_regions, dxball_draw_effect_sprite, dxball_draw_paddle,
+    dxball_last_brick, dxball_draw_last_brick, dxball_present, dxball_restart_round
 };
 
 /* Typed helpers preserve the target's cursor movement, including remove then
@@ -380,7 +382,7 @@ void dxball_game_frame(void)
     dxball_update_projectiles();
     dxball_update_bonuses();
     dxball_update_particles();
-    if (dxball_restore_before_frame != 0) dxball_frame_ops.restore_surfaces(1);
+    if (dxball_draw_to_primary != 0) dxball_frame_ops.wait_frames(1);
     dxball_frame_ops.restore_regions();
     dxball_paddle_previous_x = dxball_paddle_x;
     dxball_paddle_previous_y = dxball_paddle_y;
@@ -405,7 +407,7 @@ void dxball_game_frame(void)
         dxball_gameplay_ops.stop_sound(21);
     }
     dxball_frame_ops.draw_last_brick();
-    if (dxball_restore_before_frame == 0) dxball_frame_ops.present();
+    if (dxball_draw_to_primary == 0) dxball_frame_ops.present();
     if (dxball_frame_ops.elapsed(dxball_palette_tick, 20)) {
         dxball_frame_ops.animate_palette(224, 231, 1);
         dxball_palette_tick = dxball_frame_ops.current_time();

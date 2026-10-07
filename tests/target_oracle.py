@@ -62,6 +62,7 @@ class TargetOracle:
         self.open_succeeds = True
         self.io_events = []
         self._hooks = []
+        self.board_hooks = {}
         for address, callback in {
             0x00404180: self._sprite,
             0x00408B70: self._invalidate,
@@ -71,8 +72,10 @@ class TargetOracle:
             0x00417E70: self._write,
             0x00417A30: self._close,
         }.items():
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, callback,
-                                                begin=address, end=address))
+            hook = self.uc.hook_add(UC_HOOK_CODE, callback, begin=address, end=address)
+            self._hooks.append(hook)
+            if address in (0x404180, 0x408B70):
+                self.board_hooks[address] = hook
 
     def read(self, address, size):
         return bytes(self.uc.mem_read(address, size))

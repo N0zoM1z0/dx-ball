@@ -42,7 +42,9 @@ typedef struct DxBallDDSurfaceVTable {
     DxBallUnknownDDMethod blt_batch;
     DxBallInt (DXBALL_DDCALL *blt_fast)(DxBallDDSurface *, DxBallUInt, DxBallUInt,
                                       DxBallDDSurface *, const DxBallRect *, DxBallUInt);
-    DxBallUnknownDDMethod slots_8_to_21[14];
+    DxBallUnknownDDMethod slots_8_to_10[3];
+    DxBallInt (DXBALL_DDCALL *flip)(DxBallDDSurface *, DxBallDDSurface *, DxBallUInt);
+    DxBallUnknownDDMethod slots_12_to_21[10];
     DxBallInt (DXBALL_DDCALL *get_desc)(DxBallDDSurface *, DxBallSurfaceDesc *);
     DxBallUnknownDDMethod initialize, is_lost;
     DxBallInt (DXBALL_DDCALL *lock)(DxBallDDSurface *, const DxBallRect *,
@@ -60,6 +62,8 @@ typedef struct DxBallDDrawVTable {
     DxBallUnknownDDMethod slots_0_to_5[6];
     DxBallInt (DXBALL_DDCALL *create_surface)(DxBallDDraw *, DxBallSurfaceDesc *,
                                              DxBallDDSurface **, void *);
+    DxBallUnknownDDMethod slots_7_to_21[15];
+    DxBallInt (DXBALL_DDCALL *wait_vertical_blank)(DxBallDDraw *, DxBallUInt, void *);
 } DxBallDDrawVTable;
 struct DxBallDDraw { const DxBallDDrawVTable *vtable; };
 

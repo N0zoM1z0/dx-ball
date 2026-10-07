@@ -4,14 +4,15 @@
 #include "paddle.h"
 #include "particles.h"
 #include "round.h"
+#include "display.h"
 #include <stdio.h>
 #include <string.h>
 
 DxBallClockOps dxball_clock_ops;
 DxBallRuntimeOps dxball_runtime_ops = {
-    dxball_load_saved_palette, NULL, NULL, NULL,
+    dxball_load_saved_palette, NULL, NULL, dxball_reset_regions,
     dxball_load_pcx, dxball_load_sprite_bank, dxball_capture_sprite,
-    NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+    NULL, dxball_bind_board_surface, dxball_bind_display_surface, NULL, NULL, NULL, NULL, NULL
 };
 DxBallModeOps dxball_mode_ops = {
     {NULL, dxball_initialize_game, NULL, NULL, NULL},
@@ -147,7 +148,7 @@ void dxball_clear_all_entities(void)
 
 void dxball_finish_game(void)
 {
-    dxball_frame_ops.restore_surfaces(30);
+    dxball_frame_ops.wait_frames(30);
     dxball_end_requested = 1;
     dxball_return_to_menu = 3;
 }
@@ -221,7 +222,7 @@ void dxball_redraw_game(void)
     dxball_draw_board(0);
     if (dxball_paused == 1) dxball_runtime_ops.draw_centered_text(320, 240, 6, "PAUSED");
     primary->vtable->blt(primary, &rect, board, &rect, 0x01000000, NULL);
-    if (dxball_display_buffer_count > 0 && dxball_restore_before_frame == 0) {
+    if (dxball_display_buffer_count > 0 && dxball_draw_to_primary == 0) {
         secondary->vtable->blt(secondary, &rect, board, &rect, 0x01000000, NULL);
     }
 }
@@ -261,7 +262,7 @@ void dxball_initialize_game(void)
     dxball_reset_round();
     dxball_runtime_ops.reset_regions();
     dxball_runtime_ops.bind_board_surface(dxball_board_surface);
-    dxball_runtime_ops.bind_display_surface(dxball_restore_before_frame == 0 ? dxball_secondary_surface : dxball_primary_surface);
+    dxball_runtime_ops.bind_display_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
 }
 
 void dxball_dispose_game(DxBallInt fade)

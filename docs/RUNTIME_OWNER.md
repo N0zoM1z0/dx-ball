@@ -10,7 +10,7 @@ prevented an unrelated large function from being promoted as game initialization
 Sixteen functions have 1,510 original-x86 differential cases. A continuous
 36-frame scenario runs actual initialization, launch, three bottom deaths,
 resets, cleanup and dispatch to mode 3. These frames are INCLUDED in the direct
-count. This checkpoint has 101 maintained functions and 67,404 direct cases;
+count. That checkpoint had 101 maintained functions and 67,404 direct cases;
 the existing 40 exact functions / 4,079 bytes are unchanged. No new exact claims
 are made while prioritizing connected core behavior. The products remain
 analysis libraries and inspectors; platform integration is still required.
@@ -72,8 +72,8 @@ first converts saved RGB values to an integer-average gray while preserving
 palette flags, then requests two transitions. A changed level skips the gray
 step and first transition. Board/primary surfaces and the auxiliary grid are
 cleared, all nine typed queues are cleared from their CURRENT cursors, and
-regions reset. Positive lives enter real round reset; exhausted lives request
-surface restoration and mode 3. Queue cleanup does not reset counters and does
+regions reset. Positive lives enter real round reset; exhausted lives wait
+thirty frames and request mode 3. Queue cleanup does not reset counters and does
 nothing to a queue whose current cursor is null, even if its head is non-null.
 Two necessary core cleanup helpers are not independent target-entry claims.
 
@@ -117,9 +117,11 @@ resource-release call order before clearing entities.
 
 Five previously pending frame dependencies now default to maintained code:
 current time, elapsed test, score refresh, paddle drawing and round restart.
-The seven remaining frame operations are palette animation, surface restoration,
-region restoration, effect-sprite drawing, last-brick processing, last-brick
-overlay drawing and presentation. Win32 input/window setup, audio, device
+The subsequent [display owner](DISPLAY_OWNER.md) now implements the other
+seven frame operations: palette animation, frame waits, region restoration,
+effect sprites, last-brick processing/overlay and presentation. The original
+restore_surfaces label was corrected to wait_frames; 0x4228D0 is draw_to_primary.
+Win32 input/window setup, audio, device
 reinitialization, synchronization and non-game modes remain pending. No silent
 no-op backend is supplied.
 
@@ -150,8 +152,9 @@ identity records are retained under `.analysis/checkpoints/runtime-101-40/`.
 
 ## Next connected work
 
-Continue through actual frame/render dependencies and mode-3 transition/UI,
-then connect window/input/display/audio startup to a playable executable.
+The display owner now connects actual frame/render dependencies. Continue
+through mode-3 transition/UI and window/input/device/audio startup to a playable
+executable.
 Investigate mode-0 intro separately when needed; `0x0040E570` is no longer a
 candidate gameplay initializer. Independent leaves and byte tuning remain
 secondary to the runtime path.

@@ -19,14 +19,14 @@ typedef struct DxBallFireEffectList {
     DxBallFireEffectNode *current, *first, *last;
 } DxBallFireEffectList;
 
-/* Clock, score, paddle and restart operations default to their maintained
-   runtime owners. Configure the remaining reachable platform operations. */
+/* Every frame phase defaults to maintained owners. Their platform/COM, clock,
+   sound and resource dependencies still require a configured backend. */
 typedef struct DxBallFrameOps {
     DxBallUInt (*current_time)(void);
     DxBallInt (*elapsed)(DxBallUInt start, DxBallUInt interval);
     void (*animate_palette)(DxBallInt first, DxBallInt last, DxBallInt step);
     void (*update_score)(void);
-    void (*restore_surfaces)(DxBallInt mode);
+    void (*wait_frames)(DxBallInt mode);
     void (*restore_regions)(void);
     void (*draw_effect_sprite)(DxBallInt sprite, DxBallInt x, DxBallInt y);
     void (*draw_paddle)(void);
@@ -40,7 +40,7 @@ extern DxBallProjectileList dxball_projectiles;
 extern DxBallFireEffectList dxball_fire_effects;
 extern DxBallInt dxball_projectile_count;
 extern DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
-extern DxBallInt dxball_paused, dxball_restore_before_frame, dxball_mouse_action;
+extern DxBallInt dxball_paused, dxball_draw_to_primary, dxball_mouse_action;
 extern DxBallInt dxball_last_brick_deadline;
 extern DxBallUInt dxball_palette_tick;
 extern DxBallFrameOps dxball_frame_ops;

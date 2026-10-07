@@ -12,6 +12,7 @@
 | Power-up x86 vs compiled native C | Bonus collection/application, board powers, paddle cursor state, typed ball ownership, computed trig and rebounds | Main ball frame, terminal adjacent-memory reads, platform drivers |
 | Core x86 vs compiled native C | Full ball/frame bodies, connected collision, shot damage, fire animation, power/input order and 200 continuous frames | Its isolated dependency bodies, platform drivers, playable game |
 | Runtime x86 vs compiled native C | Initialization, life-loss reset, mode dispatch, clock, paddle and score bodies; 36 connected frames through game-over | Controlled resources, glyph/render/audio backends, device setup and non-game modes |
+| Display x86 vs compiled native C | Lightning, dirty arrays, sort/merge, palette, waits and flip dispatch; 192 continuous frames with twelve actual gameplay phases | Hardware Blt/Flip/palette pixels, recovery, audio, glyph/resource and non-game boundaries |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -62,7 +63,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 67,404 direct-case total. This
+request state. Integration cases are excluded from the 69,813 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -103,7 +104,7 @@ payloads and natural typed list helpers, without separate leaf claims. See
 the remaining runtime work. All earlier suites and 40 exact units pass together.
 
 The runtime owner adds 1,510 direct cases across sixteen functions, bringing
-current acceptance to 67,404 across 101 maintained functions. The oracle
+that checkpoint to 67,404 across 101 maintained functions. The oracle
 executes actual mode dispatch, initialization, reset, cleanup, clock, paddle
 animation and score entry bodies, connected to the maintained gameplay frame.
 Its 36-frame new-game/three-life-loss/game-over scenario is a subset of the
@@ -113,3 +114,15 @@ See [runtime evidence](RUNTIME_OWNER.md) for input domains and exact boundaries.
 Earlier 76 semantic entries and 40 exact units have unchanged complete inputs,
 so this checkpoint reuses their prior completed reports and reruns the changed
 core oracle, the new runtime oracle and all three toolchain products.
+
+The display owner adds 2,409 direct cases across sixteen functions, bringing
+current acceptance to 69,813 across 117 functions. Another 192 continuous frames
+are SEPARATE integration evidence, not added to the direct-case total. All twelve
+real gameplay phases execute alongside actual sprite/dirty/palette/wait bodies.
+Full dirty/presentation/key arrays and ordered COM dispatch agree. Pixel storage
+is controlled for particles; driver rasterization, recovery/audio, glyph/resource
+loads and non-game modes remain boundaries. See [display evidence](DISPLAY_OWNER.md).
+Shared source/header changes receive one grouped cold replay of all 40 exact
+units and all earlier differential suites. Complete input closure is refreshed
+only after the affected tests pass; internal literal names are rebound only
+with unchanged object/target contents, offsets, types and addends.
