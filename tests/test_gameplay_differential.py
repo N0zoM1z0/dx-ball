@@ -151,11 +151,14 @@ class GameTarget(TargetOracle):
         self.cell = 0
         self.fail_allocation = False
         self.exit_status = None
+        self.game_hooks = {}
         for address, callback in [(0x412BA0, self.effect), (0x405EF0, self.stop),
                                   (0x405C50, self.play), (0x403B70, self.random),
                                   (0x4148A0, self.particle), (0x416770, self.allocate),
                                   (0x417910, self.exit)]:
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, callback, begin=address, end=address))
+            hook = self.uc.hook_add(UC_HOOK_CODE, callback, begin=address, end=address)
+            self._hooks.append(hook)
+            self.game_hooks[address] = hook
         self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, self.free, begin=0x416760, end=0x416760))
 
     def free(self, *unused):

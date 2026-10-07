@@ -2,6 +2,7 @@
 #include "effects.h"
 #include "particles.h"
 #include "bonuses.h"
+#include "startup.h"
 
 #include <stdlib.h>
 
@@ -13,7 +14,7 @@ DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
 DxBallExplosionList dxball_explosions;
 DxBallExplosionList dxball_explosive_sources;
-DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, NULL, NULL, NULL, dxball_spawn_particle };
+DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, NULL, NULL, dxball_random_range, dxball_spawn_particle };
 
 DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list)
 {

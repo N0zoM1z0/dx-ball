@@ -15,6 +15,8 @@
 | Display x86 vs compiled native C | Lightning, dirty arrays, sort/merge, palette, waits and flip dispatch; 192 continuous frames with twelve actual gameplay phases | Hardware Blt/Flip/palette pixels, recovery, audio, glyph/resource and non-game boundaries |
 | Device x86 vs compiled native C | Palette fades/creation, color fill requests, bank/surface recovery and synchronization; 26 connected checks | Driver rasterization, reload parsing on this edge, glyph/audio/platform and non-game bodies |
 | Platform x86 vs compiled native C | WinMain, window messages, fullscreen/compatible creation and input bodies; 4,742 cases including stdcall cleanup and process exit | Real Win32 callback delivery, driver behavior, audio/UI/non-game implementations, playable game |
+| Startup x86 vs compiled native C | Working-surface setup, score I/O, board-loader dispatch, timing, RNG calls and actual bank release; 158 cases and one connected dispatch check | Board-parser execution on this edge, CRT random-generator identity, drivers, mode-0/4 bodies, playable game |
+| UI x86 vs compiled native C | Text/glyph placement, line pixel buffers, fill requests, full palette flags and RGB-int pools; 1,266 cases | Driver rasterization, actual window presentation, invalid storage/arithmetic |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -65,7 +67,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 75,670 direct-case total. This
+request state. Integration cases are excluded from the 77,094 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -145,8 +147,8 @@ Direct-case totals count each suite's cases once. Semantic ledger rows can
 attach a shared case set to several entries; summing those row counts would
 repeat the same evidence.
 
-The platform owner adds eleven entries and 4,742 direct cases, bringing the
-current checkpoint to 134 maintained entries and 75,670 direct cases. Main
+The platform owner adds eleven entries and 4,742 direct cases, bringing that
+checkpoint to 134 maintained entries and 75,670 direct cases. Main
 loops execute real mode dispatch; window input connects real game keys, palette
 fades, redraw and cleanup. Windows/COM/audio and non-game boundaries are
 explicit, including defined failure outputs and finite message scripts. Both
@@ -155,3 +157,14 @@ registers. Two singleton failure paths must exit in native child processes and
 stop original execution at the CRT exit boundary. Every previous oracle and
 40 cold exact units is replayed after shared-input changes. See
 [platform evidence](PLATFORM_OWNER.md) for limits.
+
+The startup/UI checkpoint adds fourteen entries and 1,424 direct cases, bringing
+current acceptance to 148 maintained entries and 77,094 distinct suite cases.
+A connected frame dispatcher check is counted separately. Working-resource
+setup executes actual clock/palette calls; real sprite release frees owned
+records across three banks. UI tests execute actual glyph bodies and line writes
+with row padding. CRT file/RNG and COM outputs remain explicit boundaries.
+All earlier suites, 40 cold exact units and eight rejection checks replay as
+one batch, followed by three compiler products, Wine inspection and saved REA
+verification. See [startup/UI evidence](STARTUP_UI_OWNER.md) for all Evidence IDs,
+fresh-image defaults, original quirks and complete acceptance domains.

@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **134 maintained functions**, **75,670 target differential cases**, and
+> entity owners: **148 maintained functions**, **77,094 target differential cases**, and
 > **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
@@ -44,7 +44,10 @@ Following the shared bank layout also corrected two duplicated state fields.
 The [Windows startup investigation](docs/PLATFORM_OWNER.md) follows WinMain
 and the window procedure through device creation and game input, checking
 4,742 original-x86 cases including startup failures and stdcall cleanup.
-Real Windows/driver integration, audio, glyph UI and non-game modes remain in progress.
+The [working-resource and UI investigation](docs/STARTUP_UI_OWNER.md) continues
+into startup configuration, score files and vertical-blank timing, then recovers
+text placement, original line pixels and palette operations in 1,424 cases.
+Real Windows/driver integration, audio and non-game modes remain in progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.

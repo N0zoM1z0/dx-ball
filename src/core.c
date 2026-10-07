@@ -14,7 +14,8 @@ DxBallProjectileList dxball_projectiles;
 DxBallFireEffectList dxball_fire_effects;
 DxBallInt dxball_projectile_count;
 DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
-DxBallInt dxball_paused, dxball_draw_to_primary, dxball_mouse_action;
+DxBallInt dxball_paused, dxball_mouse_action;
+DxBallInt dxball_draw_to_primary = 1;
 DxBallInt dxball_last_brick_deadline;
 DxBallUInt dxball_palette_tick;
 DxBallFrameOps dxball_frame_ops = {

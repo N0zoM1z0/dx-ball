@@ -14,14 +14,14 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-device/driver integration, glyph UI, audio, and MIDI remain pending. Main ball motion,
+actual device/driver delivery, non-game modes, audio, and MIDI remain pending. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
 scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred thirty-four source functions have scoped
-semantic evidence from 75,670 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. One hundred forty-eight source functions have scoped
+semantic evidence from 77,094 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -56,7 +56,7 @@ complete exact units. Gameplay particles and animation bonus production now
 default to maintained source. Particle writes agree across complete controlled
 8-bit buffers; the DirectDraw driver is still pending. See `docs/ENTITIES_OWNER.md`
 for all fourteen REA Evidence IDs, typed layouts, RNG order and exact boundaries.
-Current pan literal names are `$T617` / `$T618`, with both contents attested.
+Current pan literal names are `$T637` / `$T638`, with both contents attested.
 
 The bonus updater at `0x413E20`, Evidence
 `ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
@@ -123,8 +123,7 @@ their final extra SetEntries/wait and distinct equality gates.
 
 REA establishes that 0x40E570 initializes the mode-0 intro point table;
 gameplay initialization is 0x40F4C0. WinMain 0x40D930, window/input routing and DirectDraw creation now have scoped
-platform implementations. Continue through actual Windows binding, working
-resource setup at 0x403A00, mode-0 intro, mode-3 game-over/UI and audio. Retained
+platform implementations. Continue through actual Windows binding, mode-0 intro, mode-3 game-over/UI and audio. Retained
 0x403A00 initializes working resources and vblank timing, not the WinMain entry;
 0x401000 /0x401210 handle MDS music loading, and 0x4026A0 rotates sprite pixels.
 Do not guess their roles from sizes or address ranges. Inspect connected bosses
@@ -204,3 +203,26 @@ paths, snapshots, tools and checkpoint reports survive. Use
 `scripts/repo-python scripts/clean-local.py` for a preview, add `--apply` for
 cleanup, and retain the private `.analysis/cleanup/` SHA-256 operation journal.
 The saved REA smoke verifier passes after cleanup.
+
+The current startup/UI checkpoint adds six working-resource functions and
+eight shared UI functions. REA 11-58 dossiers retain 198 cumulative Evidence
+records; 0x403A00 uses its previously saved dossier. See
+`docs/STARTUP_UI_OWNER.md`. Native/MinGW/VC4 now compile `startup.c` and `ui.c`.
+Startup, text, centered text, range RNG and bank release default to maintained
+source in production dependency tables. Fresh buffer/reset/primary/software
+state and text spacing match original initial values of 1. Fourteen new entries
+have 1,424 direct cases, with one separate connected startup-dispatch check.
+All prior suites, forty cold exact units, eight rejection checks, three toolchains,
+Wine inspectors and saved REA verification pass as one batch. Reports/input
+identities are at `.analysis/checkpoints/startup-ui-148-40/`.
+
+Continue into the actual mode-4 splash and mode-0 intro bosses before independent
+leaves. Their complete dossiers are already in the 11-58 archive; reuse them.
+Mode 4 initializes first and routes to mode 0. Keep explicit-count UI strings
+(including NUL/padding), 287 point records and the 360-pair wave table. REA's
+assembly supplies sine arguments and floating scale omitted from pseudocode
+in 0x407BA0 /0x407D80. The palette pool at 0x4224B8 contains 66 DWORDs, not
+66 RGB bytes; span/phase initialize to 120/1. Do not claim these modes as
+maintained until their connected controllers and pixels have independent tests.
+Windows API binding, DirectSound/MDS, editor/game-over modes and playable
+EXE integration remain outstanding. Keep resource and clock behavior connected.

@@ -11,7 +11,8 @@ DxBallPlatformOps dxball_platform_ops;
 DxBallKeyModeOps dxball_key_mode_ops = { {NULL, dxball_game_key, NULL, NULL}, NULL };
 DxBallHandle dxball_main_window, dxball_instance_semaphore;
 DxBallInt dxball_application_active, dxball_shift_pressed, dxball_control_pressed;
-DxBallInt dxball_sound_suspended, dxball_software_only, dxball_low_video_memory;
+DxBallInt dxball_sound_suspended, dxball_low_video_memory;
+DxBallInt dxball_software_only = 1;
 DxBallPoint dxball_cursor_point;
 DxBallDDClipper *dxball_direct_clipper;
 

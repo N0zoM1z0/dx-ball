@@ -17,7 +17,7 @@ def main():
     directory.mkdir(parents=True, exist_ok=True)
     objects = []
     log = []
-    for source in ("src/boards.c", "src/resources.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.c", "src/core.c", "src/runtime.c", "src/display.c", "src/device.c", "src/platform.c"):
+    for source in ("src/boards.c", "src/resources.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.c", "src/core.c", "src/runtime.c", "src/display.c", "src/device.c", "src/platform.c", "src/startup.c", "src/ui.c"):
         output = directory / (Path(source).stem + ".obj")
         log.append(toolchain.compile(ROOT / source, output, build["flags"]).stdout)
         objects.append(output)
@@ -40,7 +40,7 @@ def main():
     (directory / "build.json").write_text(json.dumps({
         "executables": products,
         "inputs": {name: sha256(ROOT / name) for name in
-                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform.h"] + entries},
+                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h"] + entries},
         "compiler_sha256": toolchain.lock["compiler_sha256"],
         "linker_sha256": toolchain.lock["linker_sha256"],
         "flags": build["flags"], "link_flags": arguments[:6],

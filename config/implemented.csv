@@ -3,6 +3,8 @@ address,symbol,source,scope,semantic_unit
 0x00402250,dxball_initialize_trig,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-initialize-trig
 0x00402400,dxball_sine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-sine
 0x00402490,dxball_cosine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-cosine
+0x00403070,dxball_draw_line,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-line
+0x00403230,dxball_fill_rect,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-fill-rect
 0x00403450,dxball_current_time,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-current-time
 0x004034F0,dxball_elapsed,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-elapsed
 0x00403550,dxball_detect_clock,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-detect-clock
@@ -13,8 +15,12 @@ address,symbol,source,scope,semantic_unit
 0x00403820,dxball_dispatch_key,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-dispatch-key
 0x004038D0,dxball_initialize_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-mode
 0x00403950,dxball_cleanup_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-cleanup-mode
+0x00403A00,dxball_initialize_device_state,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-initialize-device-state
+0x00403B70,dxball_random_range,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-random-range
+0x00403B90,dxball_seed_random,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-seed-random
 0x00403BD0,dxball_dispose_working_surface,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-dispose-working-surface
 0x00403C20,dxball_initialize_sprite_banks,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-initialize-sprite-banks
+0x00403CB0,dxball_release_sprite_banks,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-release-sprite-banks
 0x00403D30,dxball_restore_sprite_banks,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-restore-sprite-banks
 0x00403E50,dxball_select_surface,src/boards.c,all 32-bit handles,board-render
 0x00403E70,dxball_select_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
@@ -29,7 +35,12 @@ address,symbol,source,scope,semantic_unit
 0x00404BE0,dxball_release_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite
 0x00404CF0,dxball_draw_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
 0x00404E40,dxball_find_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
+0x00404EE0,dxball_draw_text,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-text
+0x00404F80,dxball_draw_centered_text,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-centered-text
+0x00404FD0,dxball_measure_text,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-measure-text
 0x00406400,dxball_screen_pan,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-screen-pan
+0x00406CC0,dxball_read_scores,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-read-scores
+0x00406EE0,dxball_initialize_scores,src/startup.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-initialize-scores
 0x00408070,dxball_reset_regions,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-reset-regions
 0x004082F0,dxball_draw_effect_sprite,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-effect-sprite
 0x004085D0,dxball_draw_reduced_sprite,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-reduced-sprite
@@ -49,7 +60,10 @@ address,symbol,source,scope,semantic_unit
 0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
 0x00409F10,dxball_clear_surface,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-clear-surface
 0x0040A340,dxball_palette_transition,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-palette-transition
+0x0040A880,dxball_rotate_palette_right,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-rotate-palette-right
 0x0040A970,dxball_animate_palette,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-animate-palette
+0x0040AA60,dxball_rotate_rgb_colors,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-rotate-rgb-colors
+0x0040AB20,dxball_set_palette_rgb,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-set-palette-rgb
 0x0040CC30,dxball_read_board_bank,src/boards.c,path/open/read boundaries,board-io
 0x0040CC90,dxball_write_board_bank,src/boards.c,path/open/write boundaries,board-io
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite
