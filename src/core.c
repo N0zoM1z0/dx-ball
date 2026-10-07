@@ -5,6 +5,7 @@
 #include "paddle.h"
 #include "particles.h"
 #include "round.h"
+#include "runtime.h"
 #include "trig.h"
 #include <stdlib.h>
 
@@ -15,7 +16,10 @@ DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
 DxBallInt dxball_paused, dxball_restore_before_frame, dxball_mouse_action;
 DxBallInt dxball_last_brick_deadline;
 DxBallUInt dxball_palette_tick;
-DxBallFrameOps dxball_frame_ops;
+DxBallFrameOps dxball_frame_ops = {
+    dxball_current_time, dxball_elapsed, NULL, dxball_refresh_score,
+    NULL, NULL, NULL, dxball_draw_paddle, NULL, NULL, NULL, dxball_restart_round
+};
 
 /* Typed helpers preserve the target's cursor movement, including remove then
    advance skipping a successor. They have no independent target-entry claims. */
@@ -61,6 +65,17 @@ static void prefix##_remove(List *list) \
 
 DEFINE_QUEUE_HELPERS(projectile, DxBallProjectileList, DxBallProjectileNode)
 DEFINE_QUEUE_HELPERS(fire, DxBallFireEffectList, DxBallFireEffectNode)
+
+/* Lifecycle helpers, without separate target-entry claims. */
+void dxball_clear_projectiles(void)
+{
+    while (dxball_projectiles.current != NULL) projectile_remove(&dxball_projectiles);
+}
+
+void dxball_clear_fire_effects(void)
+{
+    while (dxball_fire_effects.current != NULL) fire_remove(&dxball_fire_effects);
+}
 
 void dxball_spawn_fire_effect(DxBallInt x, DxBallInt y)
 {

@@ -103,13 +103,16 @@ class CoreTarget(FamilyTarget):
     def __init__(self):
         super().__init__()
         self.now, self.timer_result = 1000, 0
+        self.frame_hooks = {}
         for name, address, count in FRAME_BOUNDARIES:
             def callback(*unused, name=name, count=count):
                 args = self._args(count)
                 if name != 'elapsed': args = tuple(signed(a) for a in args)
                 self.events.append(('frame',name,*args,self.observed()))
                 self._return(self.now if name == 'current_time' else self.timer_result if name == 'elapsed' else 0)
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address))
+            hook = self.uc.hook_add(UC_HOOK_CODE,callback,begin=address,end=address)
+            self.frame_hooks[name] = hook
+            self._hooks.append(hook)
         self.write_u32(self.VTABLE+5*4,0x50D000)
         self._hooks.append(self.uc.hook_add(UC_HOOK_CODE,self.board_blt,begin=0x50D000,end=0x50D000))
 
@@ -126,8 +129,8 @@ class CoreTarget(FamilyTarget):
 
 
 class Harness:
-    def __init__(self,library):
-        self.n,self.t = CoreNative(library),CoreTarget()
+    def __init__(self,library,native_type=CoreNative,target_type=CoreTarget):
+        self.n,self.t = native_type(library),target_type()
         self.cases = dict.fromkeys(ENTRIES,0)
         self.connected_frames = 0
         self.seed()

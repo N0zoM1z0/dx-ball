@@ -9,11 +9,11 @@ Independent list leaves are kept as private typed helpers, without separate
 function or exact-match claims.
 
 Nine additional functions have 4,580 original-x86 differential cases, including
-200 connected frames as a subset. The checkpoint has 85 maintained functions,
+200 connected frames as a subset. That checkpoint had 85 maintained functions,
 65,894 direct cases, and the existing 40 exact functions / 4,079 bytes. This
-batch establishes scoped semantics; it adds no byte-exact claims. Platform
-presentation, score drawing, last-brick behavior and round reset remain pending,
-so the current products are still analysis utilities and a library.
+batch establishes scoped semantics; it adds no byte-exact claims. The subsequent [runtime batch](RUNTIME_OWNER.md) restores score, clock, paddle
+and reset implementations. Platform presentation and last-brick behavior remain
+pending, so the products are still analysis utilities and a library.
 
 ## Entry evidence
 
@@ -108,9 +108,8 @@ entries as restored. Their transitive behavior is tested through the bosses.
 
 The score-refresh dossier at 0x415880 establishes that global 0x43A884 caches
 the displayed score. The former provisional life_score_limit label is corrected
-to displayed_score in the existing round/bonus owners. Its score clamp and
-actual UI redraw remain part of the pending dependency, rather than an invented
-life-award mechanic.
+to displayed_score in the existing round/bonus owners. Its unsigned score clamp and score/life drawing entry are now maintained by
+the [runtime owner](RUNTIME_OWNER.md); glyph rendering remains a boundary.
 
 Supporting REA constants: physics fractions/divisor
 `ev_413a8c78f7d3453f7a7de18683c0bcd87647ae1056a0dbd7fe5e1ddd171218a1`;
@@ -130,15 +129,17 @@ allocation shape, callee-saved registers/stack, and poisoned freed storage.
 New allocations are classified through reachable typed roots, not ambiguous
 host allocation sizes. Fatal fire/shot allocation exits are also compared.
 
-The frame's explicit callback table configures twelve unresolved dependencies:
-current time, elapsed test, palette animation, score refresh, surface restore,
-region restore, effect-sprite drawing, paddle drawing, last-brick processing,
-last-brick overlay drawing, presentation and round reset. Their calls and
-entry-state ordering are checked. Their bodies are not validated by a trace.
-The original dependencies are intercepted at their ENTRY, without patching
-instructions or changing the target file. `dxball_frame_ops` is deliberately
-unconfigured until a caller supplies these operations; no dummy playable
-backend or silent no-op implementation is introduced.
+The original core checkpoint traced twelve configured frame dependencies. The
+subsequent runtime owner supplies five maintained defaults: current time,
+elapsed test, score refresh, paddle drawing and round restart. The remaining
+seven are palette animation, surface restoration, region restoration,
+effect-sprite drawing, last-brick processing, last-brick overlay drawing and
+presentation. Their entry-state ordering is checked; traces do not validate
+their bodies. The original dependencies are intercepted at ENTRY without
+patching instructions. Callers must configure remaining operations; no dummy
+playable backend or silent no-op is supplied. The core oracle retains its
+isolated twelve-boundary scope; the runtime oracle removes the five interceptions
+and tests actual implementations connected to the same frame.
 
 Allocator/deallocator, RNG, audio, cursor and rendering boundaries retain their
 earlier scopes. Arithmetic must be finite and non-overflowing, list cursors
@@ -147,9 +148,9 @@ positive, and projectile hit columns within 0..19. Controlled callbacks preserve
 the current ball and metadata. Kind-3 movement ticks are sampled, but their
 external timer producer is still pending. Terminal level initialization keeps
 the prior explicitly controlled index-50 scope. Hardware DirectDraw,
-DirectSound, input message routing, score rendering, last-brick execution and
-round reset/game initialization must still be reconstructed for a playable
-whole game.
+DirectSound, input message routing, glyph rendering and last-brick execution
+must still be reconstructed for a playable whole game. Round reset and gameplay
+initialization now have scoped runtime acceptance.
 
 Cases cover all 50 boards; point-hit boundaries and tile kinds; wall/death,
 sticky/speed thresholds; attached/release paths; real board interactions;
@@ -163,13 +164,11 @@ independent leaf matching is deferred while core gameplay remains the priority.
 
 ## Continue from here
 
-Recover the runtime spine through the retained paddle renderer (0x412EC0),
-restart transition (0x415DF0), round initialization (0x415C40) and caller
-0x403730; investigate main game initialization 0x40E570 when required. Reuse
-the completed REA dossiers before querying again. Rendering, score and
-last-brick dependencies are concrete remaining work, not completed backend
-claims. Keep working in connected batches and record REA feedback in the
-requested `/tmp/dxball_rea_feedback.md`.
+The runtime spine is now maintained; see [runtime evidence](RUNTIME_OWNER.md).
+Continue with the remaining frame/render dependencies and non-game modes,
+then platform startup. REA identifies gameplay initialization at 0x40F4C0;
+0x40E570 is a mode-0 intro point-table initializer. Reuse retained dossiers and
+keep recording REA feedback in `/tmp/dxball_rea_feedback.md`.
 
 ```bash
 scripts/repo-python tests/test_core_differential.py

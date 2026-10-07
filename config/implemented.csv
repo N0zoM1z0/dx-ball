@@ -3,6 +3,12 @@ address,symbol,source,scope,semantic_unit
 0x00402250,dxball_initialize_trig,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-initialize-trig
 0x00402400,dxball_sine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-sine
 0x00402490,dxball_cosine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-cosine
+0x00403450,dxball_current_time,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-current-time
+0x004034F0,dxball_elapsed,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-elapsed
+0x004036B0,dxball_redraw_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-mode
+0x00403730,dxball_dispatch_frame,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-dispatch-frame
+0x004038D0,dxball_initialize_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-mode
+0x00403950,dxball_cleanup_mode,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-cleanup-mode
 0x00403E50,dxball_select_surface,src/boards.c,all 32-bit handles,board-render
 0x00403E70,dxball_select_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
 0x00403E90,dxball_select_font_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-font-bank
@@ -25,6 +31,8 @@ address,symbol,source,scope,semantic_unit
 0x0040CCF0,dxball_board_tile_sprite,src/boards.c,tile 0..22 only,tile-sprite
 0x0040CEA0,dxball_load_editor_board,src/boards.c,board 0..49,board-copy
 0x0040CEE0,dxball_store_editor_board,src/boards.c,board 0..49,board-copy
+0x0040F4C0,dxball_initialize_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-initialize-game
+0x0040F7A0,dxball_redraw_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-game
 0x0040F8B0,dxball_game_frame,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-game-frame
 0x0040FF50,dxball_remove_explosion,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-remove-explosion
 0x00410070,dxball_begin_explosions,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-begin-explosions
@@ -54,6 +62,7 @@ address,symbol,source,scope,semantic_unit
 0x00412BA0,dxball_spawn_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-spawn-brick-effect
 0x00412CB0,dxball_step_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-step-brick-effect
 0x00412DF0,dxball_update_paddle_position,src/paddle.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-update-paddle-position
+0x00412EC0,dxball_draw_paddle,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-draw-paddle
 0x00413170,dxball_update_projectiles,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-update-projectiles
 0x004132C0,dxball_fire_projectiles,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-fire-projectiles
 0x004135B0,dxball_spawn_fire_effect,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-spawn-fire-effect
@@ -81,6 +90,13 @@ address,symbol,source,scope,semantic_unit
 0x004155A0,dxball_scan_explosive_tiles,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-scan-explosive-tiles
 0x00415670,dxball_drop_bricks,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-drop-bricks
 0x00415820,dxball_release_attached_balls,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-release-attached-balls
+0x00415880,dxball_refresh_score,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-refresh-score
+0x004158D0,dxball_draw_score,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-draw-score
 0x00415A90,dxball_count_destructible_bricks,src/gameplay.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-count-destructible-bricks
 0x00415B30,dxball_advance_level,src/round.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-advance-level
 0x00415BB0,dxball_lose_life,src/round.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-lose-life
+0x00415C10,dxball_finish_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-finish-game
+0x00415C40,dxball_reset_round,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-reset-round
+0x00415DF0,dxball_restart_round,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-restart-round
+0x00416430,dxball_dispose_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-dispose-game
+0x004164A0,dxball_clear_all_entities,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-clear-all-entities

@@ -19,8 +19,8 @@ typedef struct DxBallFireEffectList {
     DxBallFireEffectNode *current, *first, *last;
 } DxBallFireEffectList;
 
-/* These calls are still outside the maintained frame implementation. A caller
-   must configure every callback it can reach; there is no dummy game backend. */
+/* Clock, score, paddle and restart operations default to their maintained
+   runtime owners. Configure the remaining reachable platform operations. */
 typedef struct DxBallFrameOps {
     DxBallUInt (*current_time)(void);
     DxBallInt (*elapsed)(DxBallUInt start, DxBallUInt interval);
@@ -56,5 +56,8 @@ void dxball_update_projectiles(void);
 void dxball_fire_projectiles(void);
 void dxball_update_balls(void);
 void dxball_game_frame(void);
+/* Typed lifecycle helpers; no independent target-entry acceptance claims. */
+void dxball_clear_projectiles(void);
+void dxball_clear_fire_effects(void);
 
 #endif

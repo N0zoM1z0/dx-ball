@@ -8,7 +8,7 @@ without checking their individual evidence.
 | Area | Target evidence / current work |
 | --- | --- |
 | Platform startup | `0x0040D930`, Win32 imports, fullscreen DirectDraw messages |
-| Mode routing | `0x00403950`, mode global `0x00421074`, init/cleanup dispatch |
+| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; non-game modes pending |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
@@ -18,7 +18,9 @@ without checking their individual evidence.
 | Bonus owner | `src/bonuses.c`; RNG selection, particle burst, movement, collection and application |
 | Geometry/trig owners | `src/geometry.c`, `src/trig.c`; integer-center overlap and computed quantized trig |
 | Paddle/round owners | `src/paddle.c`, `src/round.c`; mouse clamping, cursor warp, lives and level transition |
-| Ball owner | `src/balls.c`; typed lists, creation, cloning, attachment release and paddle rebound; main motion pending |
+| Ball owner | `src/balls.c`; typed lists, creation, cloning, attachment release and paddle rebound |
+| Core owner | `src/core.c`; main ball motion, gameplay frame, shots, fire and brick dropping |
+| Runtime owner | `src/runtime.c`; game initialization, life-loss reset, clocks, paddle animation and score drawing |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -83,4 +85,9 @@ collision and application through the new dependencies.
 containers. `src/trig.c` computes the game's 361-entry tables from the observed
 constants. `src/round.h` exposes initialization/count operations, preserving
 terminal-level call order while leaving the original out-of-bank read unresolved.
-The main ball frame, paddle rendering and platform integration are still pending.
+`src/core.c` connects main ball physics and the gameplay frame to these owners.
+`src/runtime.c` supplies real gameplay initialization and life-loss reset, plus
+clock, score and paddle routines. Its mode table defaults mode 1 to maintained
+source; other valid modes require configured implementations. Seven frame
+callbacks and platform/UI/audio integration remain pending. See
+[core evidence](CORE_OWNER.md) and [runtime evidence](RUNTIME_OWNER.md).

@@ -191,3 +191,22 @@ expressions and unequal projectile offsets omitted from pseudocode.
 References: upstream [installation and release boundaries](https://github.com/morluto/rea/blob/main/docs/installation.md),
 [MCP lifecycle/deadlines](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md),
 and [native investigation skill](https://github.com/morluto/rea/blob/main/skills/reverse-engineer-anything/references/native-and-artifacts.md).
+
+## Following the runtime caller
+
+The [runtime investigation](RUNTIME_OWNER.md) follows the main frame into mode
+dispatch and gameplay initialization. REA's caller/switch evidence identified
+`0x40F4C0` as the real initializer; a large earlier candidate, `0x40E570`, belongs
+to the intro point table. Instruction evidence also distinguishes the unsigned
+score-clamp branch from a signed reading of its pseudocode. Sixteen maintained
+functions are checked by 1,510 original-x86 cases, including 36 connected frames
+through life loss and game-over dispatch. Retained paddle/clock/reset dossiers
+were reused, and the completed session saved 124 Evidence records. Platform
+callbacks and non-game mode bodies remain explicitly unresolved.
+
+Saved smoke verification (`scripts/repo-python scripts/verify-rea.py --saved`)
+selects the latest completed archived smoke run. Interactive queries update
+root convenience aliases, so those numbered aliases must not be mixed with an
+earlier run. Verification checks the function address, target/snapshot binding,
+loaded bytes, Evidence membership and completed close/save response. The shared
+snapshot remains cumulative; stable run references preserve each query record.

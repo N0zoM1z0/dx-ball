@@ -10,7 +10,8 @@
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
 | Entity x86 vs compiled native C | Bonus RNG/production, particle lifecycle, typed queues and full pixel buffers | Bonus movement/application, hardware presentation, complete frame |
 | Power-up x86 vs compiled native C | Bonus collection/application, board powers, paddle cursor state, typed ball ownership, computed trig and rebounds | Main ball frame, terminal adjacent-memory reads, platform drivers |
-| Core x86 vs compiled native C | Full ball/frame bodies, connected collision, shot damage, fire animation, power/input order and 200 continuous frames | Traced time/render/score/last-brick/reset bodies, platform drivers, playable game |
+| Core x86 vs compiled native C | Full ball/frame bodies, connected collision, shot damage, fire animation, power/input order and 200 continuous frames | Its isolated dependency bodies, platform drivers, playable game |
+| Runtime x86 vs compiled native C | Initialization, life-loss reset, mode dispatch, clock, paddle and score bodies; 36 connected frames through game-over | Controlled resources, glyph/render/audio backends, device setup and non-game modes |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -61,7 +62,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 65,894 direct-case total. This
+request state. Integration cases are excluded from the 67,404 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -91,12 +92,24 @@ cold-replayed together, and unchanged completed reports are reused at that
 checkpoint rather than replaying after each restored function.
 
 The core oracle adds 4,580 direct cases across nine functions, bringing the
-current total to 65,894 across 85 maintained functions. Both original bosses
+that checkpoint total to 65,894 across 85 maintained functions. Both original bosses
 execute: the 3,223-byte main ball updater and complete gameplay frame. Point
 hits, projectiles, fire effects, board damage, powers, bonuses, particles and
-brick animation remain connected. Twelve explicit time/render/score/last-brick/
-reset dependencies are traced; their implementations remain pending. The 200
+brick animation remain connected. That isolated core suite traces twelve explicit time/render/score/last-brick/
+reset dependencies; the subsequent runtime suite executes five of those bodies. The 200
 continuous-frame cases are a subset of the direct count. Source uses actual
 payloads and natural typed list helpers, without separate leaf claims. See
 [core evidence](CORE_OWNER.md) for original quirks, complete input domains and
 the remaining runtime work. All earlier suites and 40 exact units pass together.
+
+The runtime owner adds 1,510 direct cases across sixteen functions, bringing
+current acceptance to 67,404 across 101 maintained functions. The oracle
+executes actual mode dispatch, initialization, reset, cleanup, clock, paddle
+animation and score entry bodies, connected to the maintained gameplay frame.
+Its 36-frame new-game/three-life-loss/game-over scenario is a subset of the
+count. Seven remaining frame dependencies, resource loading in lifecycle cases,
+glyph rendering, device setup, audio and non-game modes are explicitly controlled.
+See [runtime evidence](RUNTIME_OWNER.md) for input domains and exact boundaries.
+Earlier 76 semantic entries and 40 exact units have unchanged complete inputs,
+so this checkpoint reuses their prior completed reports and reruns the changed
+core oracle, the new runtime oracle and all three toolchain products.

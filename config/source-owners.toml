@@ -91,4 +91,11 @@ source = "src/core.c"
 header = "src/core.h"
 oracle = "tests/test_core_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py"]
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py", "src/runtime.c", "src/runtime.h"]
+
+[owners.runtime]
+source = "src/runtime.c"
+header = "src/runtime.h"
+oracle = "tests/test_runtime_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["config/assets.csv", "src/balls.c", "src/balls.h", "src/boards.c", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/effects.c", "src/effects.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.c", "src/geometry.h", "src/paddle.c", "src/paddle.h", "src/particles.c", "src/particles.h", "src/resources.c", "src/resources.h", "src/round.c", "src/round.h", "src/trig.c", "src/trig.h", "tests/resources_oracle.py", "tests/test_boards_differential.py", "tests/test_effects_differential.py", "tests/test_entities_differential.py", "tests/test_gameplay_differential.py", "tests/test_powerups_differential.py", "src/core.c", "src/core.h", "tests/test_core_differential.py"]
