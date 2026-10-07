@@ -4,6 +4,7 @@
 #include "geometry.h"
 #include "paddle.h"
 #include "particles.h"
+#include "sound.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -16,7 +17,7 @@ DxBallInt dxball_clip_regions, dxball_wait_vertical_blank;
 DxBallUInt dxball_frame_wait_tick;
 DxBallSurface dxball_restore_surface;
 DxBallRect dxball_lightning_rect;
-DxBallDisplayOps dxball_display_ops = { NULL, dxball_recover_surfaces };
+DxBallDisplayOps dxball_display_ops = { dxball_update_sound, dxball_recover_surfaces };
 
 static void queue_dirty(DxBallInt page, const DxBallRect *rect)
 {

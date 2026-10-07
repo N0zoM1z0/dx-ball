@@ -91,8 +91,8 @@ typedef struct DxBallWindowApi {
     DxBallInt (DXBALL_DDCALL *get_version_ex)(DxBallVersionInfo *);
 } DxBallWindowApi;
 
-/* Audio/MIDI and process termination are separate pending backends, not
-   implementations inferred from a Windows message trace. */
+/* Audio/MIDI controllers default to maintained owners, while their device APIs
+   remain boundaries. Process termination binds the host CRT's exit. */
 typedef struct DxBallPlatformOps {
     void (*prepare_sound)(DxBallHandle);
     void (*initialize_sound)(DxBallHandle);

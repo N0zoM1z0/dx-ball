@@ -28,7 +28,7 @@ without checking their individual evidence.
 | Game-over owner | `src/gameover.c`; mode-3 lifecycle/input, name buffer, rank insertion, score-file persistence and ranking pixels |
 | Editor owner | `src/editor.c`; mode-2 lifecycle/input, toolbar hit regions, board painting and persistence |
 | MIDI/music owner | `src/midi.c`; RIFF/MIDS parsing, event expansion, WinMM stream state and music wrappers; real WinMM adapter pending |
-| Sound | DirectSound imports and WAV references; controller/backend pending |
+| Sound owner | `src/sound.c`; DirectSound startup, WAV/RIFF/file loading, buffer upload, play/stop, focus and lost-buffer recovery; physical device adapter pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
 `DxBallInt` and `DxBallUInt` are explicit 32-bit scalars; opaque surface handles

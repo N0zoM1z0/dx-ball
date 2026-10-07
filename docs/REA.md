@@ -247,3 +247,12 @@ oracle checks all six original songs, bounded errors and connected playback
 control; real WinMM delivery remains pending. Explicit close saves 236
 cumulative Evidence records. Duplicate aliases are cleaned only after the
 complete immutable run is archived and SHA-256 comparisons agree.
+
+The DirectSound investigation collected 21 new queries in one interactive
+session after checking saved dossiers, extending the snapshot from 236 to 257
+Evidence records. Its initializer has fourteen inclusive body ranges; caller
+instructions resolve an inferred-void allocator return, and recovery re-reads
+records after reloading them. The [sound owner](SOUND_OWNER.md) distinguishes
+these static observations from the original-x86 differential tests and pending
+physical driver integration. Closing the session allowed hash-checked alias
+cleanup to recover roughly 18 MiB without deleting immutable evidence.

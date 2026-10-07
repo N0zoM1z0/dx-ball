@@ -7,6 +7,7 @@
 #include "gameover.h"
 #include "editor.h"
 #include "midi.h"
+#include "sound.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -14,8 +15,9 @@ DxBallWindowApi dxball_window_api;
 static void load_platform_music(const char *path, DxBallInt play)
 { (void)dxball_load_music(path, play); }
 DxBallPlatformOps dxball_platform_ops = {
-    NULL, NULL, NULL, dxball_resume_music, dxball_pause_music, dxball_close_music,
-    NULL, load_platform_music, NULL
+    dxball_prepare_sound, dxball_initialize_sound, dxball_pause_sound,
+    dxball_resume_music, dxball_pause_music, dxball_close_music,
+    dxball_release_audio, load_platform_music, exit
 };
 DxBallKeyModeOps dxball_key_mode_ops = { {dxball_intro_key, dxball_game_key, dxball_editor_key, dxball_game_over_key}, dxball_splash_key };
 DxBallHandle dxball_main_window, dxball_instance_semaphore;

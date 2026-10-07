@@ -12,6 +12,7 @@
 #include "gameover.h"
 #include "editor.h"
 #include "midi.h"
+#include "sound.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -19,7 +20,7 @@ DxBallClockOps dxball_clock_ops;
 DxBallRuntimeOps dxball_runtime_ops = {
     dxball_load_saved_palette, dxball_palette_transition, dxball_clear_surface, dxball_reset_regions,
     dxball_load_pcx, dxball_load_sprite_bank, dxball_capture_sprite,
-    NULL, dxball_bind_board_surface, dxball_bind_display_surface, dxball_draw_text, dxball_draw_centered_text, NULL, dxball_release_sprite_banks, dxball_close_music
+    dxball_load_sound, dxball_bind_board_surface, dxball_bind_display_surface, dxball_draw_text, dxball_draw_centered_text, dxball_release_sounds, dxball_release_sprite_banks, dxball_close_music
 };
 DxBallModeOps dxball_mode_ops = {
     {dxball_initialize_intro, dxball_initialize_game, dxball_initialize_editor, dxball_initialize_game_over, dxball_initialize_splash},

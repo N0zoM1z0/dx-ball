@@ -14,7 +14,8 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-actual device/driver delivery and audio remain pending. MDS parsing and MIDI
+actual device/driver delivery and physical audio delivery remain pending. DirectSound/WAV controllers are
+maintained; their real Windows bindings remain pending. MDS parsing and MIDI
 stream/music control now have scoped implementations; real WinMM binding is
 still pending. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
@@ -22,8 +23,8 @@ scoped maintained implementations. All twelve frame phases default to source.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
 Forty configured units cold-replay exactly, totaling 4,079 bytes; accepted
-records are in `config/matches.csv`. One hundred ninety-nine source functions have scoped
-semantic evidence from 94,270 differential cases. Eight oracle rejection checks
+records are in `config/matches.csv`. Two hundred fourteen source functions have scoped
+semantic evidence from 95,873 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -58,7 +59,8 @@ complete exact units. Gameplay particles and animation bonus production now
 default to maintained source. Particle writes agree across complete controlled
 8-bit buffers; the DirectDraw driver is still pending. See `docs/ENTITIES_OWNER.md`
 for all fourteen REA Evidence IDs, typed layouts, RNG order and exact boundaries.
-Current pan literal names are `$T637` / `$T638`, with both contents attested.
+The entity checkpoint used pan literal names `$T637` / `$T638`, with both
+contents attested; the current sound checkpoint uses `$T1072` / `$T1073`.
 
 The bonus updater at `0x413E20`, Evidence
 `ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
@@ -278,7 +280,7 @@ and native-library identity. Checkpoint records are retained under
 12.28 MiB of duplicate closed-run catalogs/root aliases; original evidence,
 snapshot, tools and checkpoint records remain intact.
 
-Continue into DirectSound controllers, actual Windows/WinMM adapters and
+Continue into real DirectSound/Windows/WinMM adapters and
 complete EXE integration.
 Prefer connected controller families over independent leaves and reuse retained
 REA dossiers before new queries. Full playable reconstruction remains active.
@@ -336,3 +338,16 @@ its `0x4050F0` preparation wrapper, `0x4057D0` pause controller and connected WA
 buffer lifecycle. Existing platform harness boundaries establish their caller
 addresses, not their recovered bodies. Reuse archived REA Evidence before a
 new constrained query session; do not classify unreviewed leaves by proximity.
+
+The DirectSound checkpoint adds fifteen connected entries in src/sound.c with
+1,603 direct cases and 36 separate lifecycle checks, covering all 26 original
+WAV assets, split buffer locks, startup dialogs/terminal exits, pause/reinitialize
+and lost-buffer reload/retry. See docs/SOUND_OWNER.md for every REA Evidence ID,
+body ranges, COM slots, the 20-byte descriptor, allocation37 uncertainty and
+explicit dangling-record/handle-leak failure scope. Audio callbacks now default
+to maintained controllers; real DirectSound/WinMM/DirectDraw adapters and a
+playable EXE remain pending. Current screen-pan VC4 literals are $T1072/$T1073;
+complete cold comparison still checks their original data and every byte.
+The native compiler is GCC13.3 Debug; single-job MinGW and pinned VC4 builds
+share the same C source. Periodic cleanup journals preserve originals, pinned
+tools, immutable REA evidence and accepted checkpoints.

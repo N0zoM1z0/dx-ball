@@ -21,6 +21,7 @@
 | Game-over x86 vs compiled native C | Eight controller/ranking/name entries, score reload/insertion and file effects, text placement and line pixels; 6,531 direct cases plus 76 separate finish-game/menu transitions | Nondefault locale mapping, resource parsing/release on lifecycle edge, audio/MIDI, real drivers, editor and playable EXE |
 | Editor x86 vs compiled native C | Ten mode-2/hit-region entries, actual board load/store and independent file outputs; 2,921 direct cases plus 32 separate menu/editor/game transitions | Invalid/unbounded storage, resource lifecycle parsing/release, real Windows/COM/audio/MIDI delivery and playable EXE |
 | MDS/music x86 vs compiled native C | Thirteen parser/converter/stream/wrapper entries; 2,109 direct cases and 134 separate lifecycles, all six original songs, ordered cleanup and RET20 | Kernel32/WinMM implementations, asynchronous/hardware playback, overflow/unbounded backing, wrapper malloc failure and playable EXE |
+| DirectSound/WAV x86 vs compiled native C | Fifteen controller/file/parser entries, 1,603 direct cases and 36 separate focus/recovery checks; all 26 original WAVs, split PCM uploads, dialogs, terminal exits and failure ownership | Physical DirectSound output, heap internals, unsafe dangling-pointer reuse, unbounded backing and playable EXE |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -71,7 +72,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 94,270 direct-case total. This
+request state. Integration cases are excluded from the 95,873 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -222,3 +223,10 @@ Coverage includes all 256 mode bytes, malformed chunks, partial writes,
 allocation/mapping failures, each queue/control failure, high state bits and
 six complete original-song lifecycles. Real driver delivery remains pending.
 See [MDS/music evidence](MIDI_OWNER.md) for exact domains and import contracts.
+
+The sound owner executes original controller/file/parser bodies and target CRT
+copy/string instructions. COM methods, file imports, allocation and termination
+are controlled, with freed blocks retained as observation-only tombstones.
+Native terminal cases use actual forked processes and compare exit status and
+pre-exit effects with the original nonreturning boundary. See
+[SOUND_OWNER.md](SOUND_OWNER.md) for the documented safe caller domains.

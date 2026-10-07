@@ -54,6 +54,7 @@ def main():
     python("tests/test_gameover_differential.py")
     python("tests/test_editor_differential.py")
     python("tests/test_midi_differential.py")
+    python("tests/test_sound_differential.py")
     python("scripts/build-legacy.py")
     run(["cmake", "-S", ".", "-B", "build/windows-i686", "-G", "Ninja",
          "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])

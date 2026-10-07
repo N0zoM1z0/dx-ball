@@ -119,3 +119,16 @@ The original terminal level transition still calls initialization after index
 49 becomes 50. Adjacent-memory reads beyond the board bank remain unresolved;
 terminal tests intercept that dependency. Main ball motion, full frame routing
 and Windows backends are still open scopes.
+
+## Sound controller and file owner
+
+[SOUND_OWNER.md](SOUND_OWNER.md) records fifteen REA-backed entries, the
+fifty-slot state at 0x4265D0, DirectSound device/primary at 0x421098/0x42109C,
+and original twenty-byte COM descriptor. Initial startup uses the existing
+DirectDraw pointer to gate error dialogs. Pause preserves filenames for reload;
+lost-buffer retry re-reads a replaced record and does not reapply overrides.
+The manual RIFF parser supports padded chunks and preserves missing outputs.
+File/parse/create/lock failures preserve observed dangling-record and leak
+quirks within a bounded observation domain. All 26 supplied WAVs have their
+own sample rate. Controllers are maintained; real Windows sound/driver output
+and whole-game linking are still unresolved.

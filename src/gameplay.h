@@ -24,12 +24,13 @@ typedef struct DxBallExplosionList {
 } DxBallExplosionList;
 
 /* Replaceable dependency calls. Brick effects and particles default to their
-   maintained owners; allocation, RNG and audio backends remain boundaries. */
+   maintained owners. Sound defaults to its controller; physical APIs and the
+   CRT allocation implementation remain boundaries. */
 typedef struct DxBallGameplayOps {
     void *(*allocate_node)(size_t size);
     void (*brick_effect)(DxBallInt x, DxBallInt y, DxBallByte tile, DxBallInt mode);
     void (*stop_sound)(DxBallInt sound);
-    void (*play_sound)(DxBallInt sound, DxBallInt repeat, DxBallInt pan, DxBallInt volume);
+    void (*play_sound)(DxBallInt sound, DxBallInt frequency, DxBallInt pan, DxBallInt volume);
     DxBallInt (*random_range)(DxBallInt limit);
     void (*particle)(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy,
                      DxBallInt color, DxBallInt gravity);
