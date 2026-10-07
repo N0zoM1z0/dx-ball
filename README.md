@@ -76,7 +76,8 @@ Read-only state observations distinguish a completed transition from a screen
 that is still fading. A [round control](docs/ROUND_FOCUS_RUNTIME.md) clears an
 editor-created board and verifies the next original board in all three builds;
 REA process capture retains the run and its limits. The original focus control
-stalls under Wine/Xvfb, so successful recovery remains open. Physical audio and
+stalls under Wine/Xvfb; an independent SDK probe corroborates a lost-surface
+status-reporting gap, while successful game recovery remains open. Physical audio and
 complete-game fidelity remain unverified.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to

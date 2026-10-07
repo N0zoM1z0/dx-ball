@@ -84,9 +84,9 @@ lock when the surface is lost. That is consistent with the observed repeated
 wrapper calls and warnings. The installed Ubuntu Wine may include distribution
 patches; tag source is corroboration, not an attestation of its compiled binary.
 The same control logs report unavailable OpenGL context/pixel-format creation.
-The driver failure's complete cause, a successful recovery path and equivalent
-behavior on physical Windows remain unresolved. Accepted game bodies were not
-changed to make this control pass.
+The independent SDK follow-up below identifies a lost-status reporting gap.
+Successful game recovery and equivalent behavior on physical Windows remain
+unverified. Accepted game bodies were not changed to make this control pass.
 
 A focused REA xref query for compatibility state `0x422898`, Evidence
 `ev_87c213a753df45ee0ad7d13d56878ad28429a5776c4261e87e169621f9919faf`,
@@ -124,3 +124,53 @@ and `ev_c3c754090233525c53353e4c6534aacacce239e92a09e39fb206a2a7d76ae431`.
 This corroborates the failure symptom across builds; no API trace was collected
 for those two runs, so their precise HRESULT sequence remains unobserved.
 The recorder helper correctly returns the failed child's code.
+
+## Independent DirectDraw status check
+
+```bash
+scripts/repo-python tests/test_windows_ddraw_loss.py
+scripts/repo-python scripts/capture-windows-probe.py --probe ddraw-loss
+```
+
+REA process Evidence
+`ev_3993cb614eee7cab1d3a21ae86270186a750182b3332057bc6b6661f5eed592b`
+records the completed two-renderer SDK scenario with child exit0. It creates
+its own DirectDraw1 primary/flip/back surfaces and an OFFSCREENPLAIN working
+surface at 640x480x8. Its own SDK window follows the original's minimize-on-
+deactivation behavior; the existing peer returns focus through normal APIs.
+No game executes in this scenario, and no call enters a game address space.
+
+| Phase, both default and GDI | Primary GetBltStatus | Primary IsLost | Back/working Lock |
+| --- | --- | --- | --- |
+| Before focus change | DD_OK | DD_OK | DD_OK |
+| After focus returns | **DD_OK** | **DDERR_SURFACELOST** | **DDERR_SURFACELOST** |
+| After explicit probe-owned Restore calls | DD_OK | DD_OK | DD_OK |
+
+GetBltStatus is queried before and after IsLost, so the gap persists even after
+the loss has been exposed. Explicitly restoring the probe's primary and working
+surface returns success and makes all three surfaces usable again, including
+the implicit back buffer. Locks are attempted once; there is no infinite SDK
+retry loop. Complete HRESULT rows, DLL-file/SDK/compiler hashes and renderer
+choices are retained. The harness records a provider fix that returns loss
+rather than requiring the current incorrect success result.
+
+The [Wine9.0 GetBltStatus implementation](https://github.com/wine-mirror/wine/blob/wine-9.0/dlls/ddraw/surface.c)
+returns success for the two valid flags without checking surface loss. Microsoft's
+[GetBltStatus contract](https://learn.microsoft.com/en-us/windows/win32/api/ddraw/nf-ddraw-idirectdrawsurface7-getbltstatus)
+includes SURFACELOST among possible failures. The actual DirectDraw1 SDK result
+corroborates the source observation; physical Windows behavior was not measured.
+
+REA's retained synchronization dossier
+`ev_7528b8fd339fe77e2bd500279969b4c0f36946e98a3556d3f30044c87289bb30`
+establishes the original gate: when compatibility state is zero, only a
+GetBltStatus SURFACELOST result calls recovery; a pending request is cleared
+regardless. This provides a specific explanation for the original and source
+controls clearing the flag then locking a lost surface. That connection remains
+an inference from the original's static body, live SDK results and its Lock
+warnings; the original GetBltStatus HRESULT was not intercepted or injected.
+
+Choosing GDI explicitly still fails the actual original focus control in process
+Evidence `ev_4b6babe90d02817e0465a796ffcdb2b9c919e1ff02761cdd7c96514bb78c40bb`.
+Consequently the earlier OpenGL setup failures do not suffice to explain or fix
+this recovery symptom. Renderer selection uses Wine's supported environment
+configuration and makes no persistent registry or game-code change.

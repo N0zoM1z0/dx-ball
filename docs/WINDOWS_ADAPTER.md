@@ -255,3 +255,13 @@ show a lost-surface Lock retry, with a valid 108-byte descriptor. Successful
 focus recovery stays open; these negative controls are excluded from passing
 private CI. A successful REA recorder can describe a failed child, and the
 capture helper propagates that child exit.
+
+
+The [independent DirectDraw SDK follow-up](ROUND_FOCUS_RUNTIME.md#independent-directdraw-status-check)
+now distinguishes lost-status reporting from actual restoration capability.
+Both default/GDI runs report loss through IsLost/Lock while GetBltStatus returns
+success. Restoring the probe-owned primary and working surfaces makes them
+usable again. This explains the original gate's missed recovery as a supported
+inference; no target API return was intercepted and no game body was changed.
+Private CI includes the standalone observation and public CI compiles its C90
+SDK target. The same stable batch reruns all five real Windows game harnesses.

@@ -276,3 +276,14 @@ Ghidra/compiler lock: its repository child acquires that lock for actual work.
 All text normalization is explicitly disabled for numeric SDK output. Recorder
 success can contain a failed child; the public capture helper propagates that
 child exit rather than promoting it to a passing game check.
+
+`--probe ddraw-loss` captures an independent SDK scenario, not the game. Reusing
+the synchronization dossier identified the exact GetBltStatus gate to test.
+Default/GDI surface observations show that IsLost/Lock report SURFACELOST while
+GetBltStatus returns success; restoring only the probe-owned surfaces makes
+them usable again. Process Evidence
+`ev_3993cb614eee7cab1d3a21ae86270186a750182b3332057bc6b6661f5eed592b`
+retains both complete controls. This supplies platform evidence for the focus
+failure without replacing recovered game logic or relabeling it as a passing
+recovery run. SDK/compiler/DLL-file identities remain separate from REA's
+sampled process and filesystem observations.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Retain REA process Evidence for a real Wine round or focus diagnostic."""
+"""Retain REA process Evidence for a Wine game or independent SDK diagnostic."""
 import argparse
 from datetime import datetime, timezone
 import json
@@ -15,10 +15,13 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--probe', choices=('round', 'focus'), default='round')
+    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss'), default='round')
     parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
     args = parser.parse_args()
-    script = ROOT / 'tests/test_windows_round.py'
+    if args.probe == 'ddraw-loss' and args.profile:
+        parser.error('--profile selects a game build; ddraw-loss uses independent SDK surfaces')
+    script = ROOT / 'tests' / ('test_windows_ddraw_loss.py' if args.probe == 'ddraw-loss'
+                              else 'test_windows_round.py')
     arguments = [str(script)]
     if args.probe == 'focus':
         arguments.append('--focus-recovery')
@@ -27,7 +30,8 @@ def main():
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     directory = ROOT / 'build/reports/rea-process' / (stamp + '-' + args.probe)
     directory.mkdir(parents=True)
-    name = 'windows-focus' if args.probe == 'focus' else 'windows-round'
+    name = 'windows-focus' if args.probe == 'focus' else ('windows-ddraw-loss' if args.probe == 'ddraw-loss'
+                                                       else 'windows-round')
     scenario = {
         'executable': str(ROOT / 'scripts/repo-python'),
         'arguments': arguments, 'working_directory': str(ROOT),
@@ -57,7 +61,8 @@ def main():
     exit_state = evidence['normalized_result']['exit']
     code = exit_state['code']
     summary = {'evidence_id': evidence['evidence_id'], 'probe': args.probe,
-               'profile': args.profile or 'all', 'exit': exit_state,
+               'profile': ('independent-sdk' if args.probe == 'ddraw-loss' else args.profile or 'all'),
+               'exit': exit_state,
                'scenario_sha256': digest(request), 'evidence_sha256': digest(evidence_path),
                'inputs': {str(path.relative_to(ROOT)): digest(path) for path in
                           (Path(__file__), script, ROOT / 'scripts/rea.py')},

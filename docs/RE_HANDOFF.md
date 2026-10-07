@@ -486,7 +486,7 @@ See docs/ROUND_FOCUS_RUNTIME.md for Evidence IDs, limits and reproduction.
 The serial batch passes public/native/tracking, strict MinGW, startup/runtime,
 play/editor, natural game-over and saved REA verification. Focus diagnostics
 produce expected failures with retained state/screenshots and actual child
-exit propagation. All67 semantic paths,40 exact rows/eight complete input sets
+exit propagation. All 67 semantic paths,40 exact rows/eight complete input sets
 and the native library identity are freshly verified unchanged; the complete
 sound-214-40 differential/cold checkpoint is reused. Stable reports and capture
 Evidence are retained at .analysis/checkpoints/windows-round-214-40/;
@@ -512,3 +512,37 @@ Its partial state is retained before cancellation. Public CI now cancels
 superseded runs within the same workflow/ref group and bounds each job to
 15 minutes. This changes CI scheduling only; local one-CPU/one-job checks,
 REA evidence and accepted owner/exact inputs remain unchanged.
+
+
+The independent DirectDraw loss checkpoint explains the common focus symptom.
+REA process Evidence ev_3993cb614eee7cab1d3a21ae86270186a750182b3332057bc6b6661f5eed592b
+records actual SDK-owned DirectDraw1 surfaces under default and explicit GDI
+renderers. After a normal peer focus cycle, IsLost and secondary/working Lock
+return SURFACELOST, while primary GetBltStatus returns DD_OK before and after
+IsLost. Explicitly restoring the probe's primary and working surfaces returns
+success and all three surfaces become usable again. No game executes in this
+SDK scenario and no call or memory write enters a game process.
+
+Retained synchronization dossier ev_7528b8fd339fe77e2bd500279969b4c0f36946e98a3556d3f30044c87289bb30
+shows the original's exact GetBltStatus gate and unconditional clearing of a
+pending request when compatibility state is 0. Wine9 tag source lacks a loss
+check for valid GetBltStatus flags; the actual SDK result corroborates it.
+An explicit GDI original-game focus control still fails as process Evidence
+ev_4b6babe90d02817e0465a796ffcdb2b9c919e1ff02761cdd7c96514bb78c40bb.
+OpenGL context failures alone therefore do not explain this symptom. The causal
+connection to the original's stall is an inference from its static gate, live
+SDK results and its Lock warnings; original API return interception was not
+performed. Game recovery code remains faithful and unchanged.
+
+The public capture helper now supports --probe ddraw-loss and private CI runs
+the SDK observation. CMake/public CI compiles its strict C90 SDK target. All
+related Windows controls were rerun once after the stable CMake/capture batch:
+public native/tracking, strict MinGW, baseline startup, play/editor, natural
+game-over, real round advance, final tracking and saved REA all pass. All 67
+semantic paths, eight exact input maps and native-library hash are unchanged;
+reuse the sound-214-40 cold/differential checkpoint. Counts stay 214 /95,873 /
+40 /4,079 bytes. Retained records/products/source references and checks live
+at .analysis/checkpoints/windows-ddraw-status-214-40/. Successful game focus
+recovery on physical Windows, audio/MIDI, all-original-board behavior and
+origin reconciliation remain open. An original-only real 50-custom-board pilot
+is currently separate exploratory evidence; do not promote it before completion.

@@ -63,6 +63,15 @@ cleared afterward. For any other cursor flag, a request exactly 1 triggers
 recovery and is then cleared. Other request values remain unchanged. The typed
 COM slots are corroborated by the local MinGW `ddraw.h` declarations.
 
+The later [actual round/focus investigation](ROUND_FOCUS_RUNTIME.md) reuses this
+dossier to explain an external runtime difference. Independent DirectDraw1 SDK
+surfaces under Wine9/Xvfb report SURFACELOST through IsLost and Lock after focus
+returns, but success through GetBltStatus. Both default and GDI runs restore
+successfully when the probe explicitly restores its own primary and working
+surfaces. The original and source game controls still stall; their recovery
+gate is preserved. This SDK observation changes no original-function or exact
+acceptance, and is distinct from physical Windows driver verification.
+
 The connected investigation also corrects two duplicated state declarations.
 Addresses `0x4265AC` and `0x4265B0` are the third sprite bank's `count` and
 `allocation_mode`: base `0x425980`, stride `0x418`, offsets `0x3FC` / `0x400`.
