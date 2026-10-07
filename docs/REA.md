@@ -117,6 +117,13 @@ Each session also retains an independent timestamped directory under
 `.analysis/rea/runs/`, including requests, tool catalog, complete results and
 errors. The root files remain latest-result convenience aliases; saved smoke
 verification uses a complete archived smoke run.
+Run `scripts/repo-python scripts/clean-local.py` to preview local housekeeping,
+then add `--apply` to remove superseded compiler probes and root query aliases
+whose complete bytes survive in a closed archived session. Identical catalogs
+inside closed archives share storage through hardlinks; their paths and hashes
+stay intact. Mutable root aliases are never hardlinked to evidence. Cleanup
+retains snapshots, archived results, checkpoint reports and pinned tools, and
+writes a private SHA-256 operation journal under `.analysis/cleanup/`.
 A failed later query attempts to close with a snapshot, preserving the successful
 prefix; cleanup errors are recorded separately without hiding the query error.
 If the transport has already closed, complete received Evidence files remain
