@@ -89,7 +89,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00406270,26,0x00406289,FUN_00406270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00406290,269,0x0040639C,FUN_00406290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004063A0,89,0x004063F8,FUN_004063a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00406400,63,0x0040643E,FUN_00406400,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00406400,63,0x0040643E,FUN_00406400,dxball_screen_pan,gameplay,exact,100.00,__cdecl,DxBallInt dxball_screen_pan(DxBallInt x),false,src/gameplay.c,docs/GAMEPLAY_OWNER.md; REA ev_ddca58134d89a2eb0aba5bf5694bb06ce7b5cb28aac0eb847891506244e70490,gameplay,Complete COMDAT cold VC4.0 replay; scoped semantic target execution
 0x00406440,321,0x00406580,FUN_00406440,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00406590,414,0x0040672D,FUN_00406590,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00406730,696,0x004069E7,FUN_00406730,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -248,8 +248,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00411930,50,0x00411961,FUN_00411930,dxball_initialize_board,boards,exact,100.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,board index 0..49; complete extent and relocations reviewed; canonical cold VC4.0 replay
 0x00411970,113,0x004119E0,FUN_00411970,dxball_draw_board,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,valid grid; rendering call trace
 0x004119F0,1349,0x00411F34,FUN_004119f0,dxball_draw_board_tile,boards,source-present,0.00,__cdecl,,false,src/boards.c,docs/KNOWLEDGE_BASE.md; target x86 differential oracle,boards,x/y 0..19; tile bytes 0..255; rendering call trace
-0x00411F40,1315,0x00412462,FUN_00411f40,,,unclassified,0.00,,,false,,docs/REA.md; REA ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb,,REA/Ghidra reports noncontiguous body: 1244 owned bytes in 1315-byte span; ranges 0x411F40..0x4123EE and 0x412436..0x412462; no source or exact claim
-0x00412470,146,0x00412501,FUN_00412470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00411F40,1315,0x00412462,FUN_00411f40,dxball_hit_board_tile,gameplay,semantic,0.00,__cdecl,"DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)",false,src/gameplay.c,docs/GAMEPLAY_OWNER.md; REA ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb,gameplay,REA/Ghidra reports noncontiguous body: 1244 owned bytes in 1315-byte span; ranges 0x411F40..0x4123EE and 0x412436..0x412462; source has semantic acceptance only
+0x00412470,146,0x00412501,FUN_00412470,dxball_append_explosion,gameplay,exact,100.00,__fastcall,DxBallInt __fastcall dxball_append_explosion(DxBallExplosionList *list),false,src/gameplay.c,docs/GAMEPLAY_OWNER.md; REA ev_4e8d52c7cb6398fdd93ddd2d9018f42208554126966f47176e512a58d444929f,gameplay,Complete COMDAT cold VC4.0 replay; scoped semantic target execution
 0x00412510,120,0x00412587,FUN_00412510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00412590,89,0x004125E8,FUN_00412590,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004125F0,149,0x00412684,FUN_004125f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -291,7 +291,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004150A0,824,0x004153D7,FUN_004150a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004153E0,48,0x0041540F,FUN_004153e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415410,397,0x0041559C,FUN_00415410,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004155A0,139,0x0041562A,FUN_004155a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004155A0,139,0x0041562A,FUN_004155a0,dxball_scan_explosive_tiles,gameplay,exact,100.00,__cdecl,void dxball_scan_explosive_tiles(void),false,src/gameplay.c,docs/GAMEPLAY_OWNER.md; REA ev_0b89bb714a56483d674b64accbc32f8de26c976f450c9680e3078d60293643a4,gameplay,REA complete 139-byte body; signed byte compare and terminal epilogue jump; cold full-COMDAT VC4.0 exact replay
 0x00415630,64,0x0041566F,FUN_00415630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415670,426,0x00415819,FUN_00415670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415820,84,0x00415873,FUN_00415820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

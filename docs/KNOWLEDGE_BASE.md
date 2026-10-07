@@ -62,3 +62,14 @@ file formats, DirectDraw slots, preserved original quirks and acceptance limits.
 The 15 functions have 1,869 target execution cases; seven full functions cold
 match exactly. The board test's sprite interception and the resource test's
 actual sprite dispatch are distinct evidence scopes.
+
+## Gameplay owner through REA
+
+`src/gameplay.c` recovers hit transitions and their score-eligibility return,
+the explosion scan, queue append and sound pan. [Gameplay evidence](GAMEPLAY_OWNER.md)
+connects REA dossiers, callers, xrefs and constant reads to maintained state.
+The owner adds 12,786 target differential cases and three exact functions.
+Tile 2 never decrements the destructible count; tile 21 decrements once while
+becoming tile 2. Explosive tile 8 remains present after queueing, so repeated
+scans append again. Particle RNG order is dy/dx/y/x. These are preserved
+observations, not design corrections. Missing backends remain explicit.

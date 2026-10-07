@@ -37,6 +37,7 @@ def main():
     python("tests/test_exact_oracle.py")
     python("tests/test_boards_differential.py")
     python("tests/test_resources_differential.py")
+    python("tests/test_gameplay_differential.py")
     python("scripts/build-legacy.py")
     run(["cmake", "-S", ".", "-B", "build/windows-i686", "-G", "Ninja",
          "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])

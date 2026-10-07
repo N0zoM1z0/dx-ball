@@ -7,6 +7,48 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units]
 
+[builds.gameplay]
+source = "src/gameplay.c"
+object = "build/exact/gameplay.obj"
+inputs = ["src/gameplay.c", "src/gameplay.h", "src/boards.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.append-explosion]
+build = "gameplay"
+symbol = "@dxball_append_explosion@4"
+target_address = 0x00412470
+size = 146
+boundary_evidence = "docs/GAMEPLAY_OWNER.md"
+relocations = [
+  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
+]
+
+[units.screen-pan]
+build = "gameplay"
+symbol = "_dxball_screen_pan"
+target_address = 0x00406400
+size = 63
+boundary_evidence = "docs/GAMEPLAY_OWNER.md"
+relocations = [
+  { offset = 0x17, type = "DIR32", symbol = "$T406", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
+  { offset = 0x20, type = "DIR32", symbol = "$T407", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
+  { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0, target = 0x004210A0 },
+  { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
+]
+
+[units.scan-explosive-tiles]
+build = "gameplay"
+symbol = "_dxball_scan_explosive_tiles"
+target_address = 0x004155A0
+size = 139
+boundary_evidence = "docs/GAMEPLAY_OWNER.md"
+relocations = [
+  { offset = 0x4B, type = "DIR32", symbol = "_dxball_board_tiles", addend = 0, target = 0x0043F8F8 },
+  { offset = 0x61, type = "REL32", symbol = "_dxball_hit_board_tile", addend = 0, target = 0x00411F40 },
+  { offset = 0x72, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
+]
+
 [units.select-surface]
 build = "boards"
 symbol = "_dxball_select_surface"

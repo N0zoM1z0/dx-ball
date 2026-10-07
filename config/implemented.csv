@@ -12,6 +12,7 @@ address,symbol,source,scope,semantic_unit
 0x00404BE0,dxball_release_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite
 0x00404CF0,dxball_draw_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
 0x00404E40,dxball_find_glyph,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
+0x00406400,dxball_screen_pan,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-screen-pan
 0x00409790,dxball_load_live_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
 0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
 0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
@@ -23,3 +24,6 @@ address,symbol,source,scope,semantic_unit
 0x00411930,dxball_initialize_board,src/boards.c,board index 0..49,board-copy
 0x00411970,dxball_draw_board,src/boards.c,valid grid; rendering call trace,board-render
 0x004119F0,dxball_draw_board_tile,src/boards.c,x/y 0..19; tile bytes 0..255; rendering call trace,board-render
+0x00411F40,dxball_hit_board_tile,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-hit-board-tile
+0x00412470,dxball_append_explosion,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-append-explosion
+0x004155A0,dxball_scan_explosive_tiles,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-scan-explosive-tiles

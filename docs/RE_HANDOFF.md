@@ -17,9 +17,9 @@ no reconstructed playable game yet. Windows integration,
 ball physics, bonuses, UI, audio, and MIDI remain pending.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
-Thirteen configured units cold-replay exactly, totaling 1,157 bytes; accepted
-records are in `config/matches.csv`. Twenty-four source functions have scoped
-semantic evidence from 11,371 differential cases. Eight oracle rejection checks
+Sixteen configured units cold-replay exactly, totaling 1,505 bytes; accepted
+records are in `config/matches.csv`. Twenty-eight source functions have scoped
+semantic evidence from 24,157 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -29,8 +29,19 @@ Exact replay now compiles owner-specific build groups. `source-owners.toml`
 declares semantic inputs, and both acceptance ledgers bind complete input sets,
 including shared headers/oracle helpers. Board oracle hooks 0x404180; resource
 oracle removes that hook and executes the actual sprite function. DirectDraw
-hardware rasterization remains unresolved. Continue with board-hit logic
-`0x00411F40` and its gameplay producers/consumers.
+hardware rasterization remains unresolved. The third owner, `src/gameplay.c`,
+adds tile hits, explosion queue append, explosive scan and sound pan, validated
+with 12,786 original-x86 cases. Append, pan and scan also match exactly; hit
+logic has semantic acceptance only. See `docs/GAMEPLAY_OWNER.md` for REA
+Evidence IDs, original quirks and controlled dependency boundaries.
+
+Continue with explosion processing (pending-flag consumer xref `0x412B52`),
+brick effect/bonus production `0x412BA0`, and particles `0x4148A0`. Ball/projectile
+consumers are observed through REA but not implemented. The hard-tile flag's
+full bonus producer and sound backends remain pending. Feedback goes to the
+user-requested `/tmp/dxball_rea_feedback.md`; it distinguishes provider issues
+from project-client issues. REA sessions now archive each run and save successful
+Evidence prefixes even when a later query fails.
 
 New binary analysis now uses REA 4.1.0 / Ghidra 12.1.4 through `scripts/rea`.
 Codex MCP registration and the package-matched skill are installed. Direct

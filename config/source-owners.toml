@@ -13,3 +13,10 @@ header = "src/resources.h"
 oracle = "tests/test_resources_differential.py"
 target_oracle = "tests/resources_oracle.py"
 additional_inputs = ["src/boards.h", "tests/target_oracle.py"]
+
+[owners.gameplay]
+source = "src/gameplay.c"
+header = "src/gameplay.h"
+oracle = "tests/test_gameplay_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["src/boards.c", "src/boards.h", "tests/test_boards_differential.py", "config/assets.csv"]

@@ -6,6 +6,7 @@
 | Original x86 vs compiled native C | State and ordered dependency effects for tested domains | Original code emission, Windows/pixel equivalence |
 | Pinned VC4.0 COFF replay | Complete function bytes after every explicitly reviewed relocation | Whole-EXE layout, untested function behavior |
 | Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
+| Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -42,3 +43,11 @@ Native source uses host libc against the same files. See
 exact rows bind complete input hash sets; shared headers and oracle helpers
 cannot change silently. Hardware DirectDraw effects and undefined/uninitialized
 state are excluded from semantic acceptance.
+
+The gameplay owner adds 12,786 cases. It executes original hit, scan, list
+append, pan and board-render bodies. Pan tests also execute the original x87
+conversion helper; allocation, brick-effect, audio, range RNG and particle
+dependencies are controlled. Traces observe intermediate state as well as
+arguments, checking mutation and RNG order. All byte values, repeated damage,
+repeated scans, list payload poison and null-return exit are included.
+See [gameplay evidence](GAMEPLAY_OWNER.md) for the accepted domains.

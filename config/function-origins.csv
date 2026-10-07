@@ -89,7 +89,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00406270,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00406290,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004063A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00406400,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00406400,authored,gameplay,reconstruct,high,ev_ddca58134d89a2eb0aba5bf5694bb06ce7b5cb28aac0eb847891506244e70490
 0x00406440,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00406590,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00406730,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -248,8 +248,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00411930,authored,boards,reconstruct,high,board-owner-producers-consumers
 0x00411970,authored,boards,reconstruct,high,board-owner-producers-consumers
 0x004119F0,authored,boards,reconstruct,high,board-owner-producers-consumers
-0x00411F40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00412470,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00411F40,authored,gameplay,reconstruct,high,ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb
+0x00412470,authored,gameplay,reconstruct,high,ev_4e8d52c7cb6398fdd93ddd2d9018f42208554126966f47176e512a58d444929f
 0x00412510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00412590,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004125F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -291,7 +291,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004150A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004153E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415410,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004155A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004155A0,authored,gameplay,reconstruct,high,ev_0b89bb714a56483d674b64accbc32f8de26c976f450c9680e3078d60293643a4
 0x00415630,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415670,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415820,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

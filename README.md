@@ -4,20 +4,25 @@
   <img src="resources/progress.svg" alt="DX-Ball source reconstruction progress" width="900">
 </p>
 
-A [REA](https://github.com/morluto/rea) showcase: source reconstruction of
+Source reconstruction of
 **DX-Ball v1.07**, the 1996 Windows breakout game by
 Michael P. Welch, with original 3D graphics by Seumas McNally.
+Binary analysis uses [REA](https://github.com/morluto/rea) with its Ghidra
+provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
-> Board data, sprite banks, fonts, PCX decoding and palettes now have **24 maintained
-> functions**, **11,371 target differential cases**, and **13 byte-exact functions
-> totaling 1,157 bytes**. The current builds provide a board-inspection utility and
+> Boards, resources and brick-hit gameplay now have **28 maintained
+> functions**, **24,157 target differential cases**, and **16 byte-exact functions
+> totaling 1,505 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
-This project demonstrates REA's path from native binary evidence to maintained
-source and reproducible validation. REA supplies the CLI/MCP analysis interface
-over Ghidra; target execution and a hash-pinned Visual C++ 4.0 compiler/linker
-provide independent semantic and exact oracles. We build on the evidence and
+DX-Ball serves as a working REA showcase: inspect a function, follow its callers
+and state, recover maintainable source, then replay independent oracles.
+For example, REA's instruction view recovered a missing sound-pan argument
+from incomplete pseudocode; the resulting C passes 3,205 original-x86 cases
+and reproduces all 63 compiled bytes. See the
+[gameplay investigation](docs/GAMEPLAY_OWNER.md) for Evidence IDs and limits.
+We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
 
@@ -39,6 +44,26 @@ private local inputs and are not included. Supply the exact archive identified
 in [target.toml](config/target.toml); another DX-Ball version cannot substitute
 for this target.
 
+## Get the original game
+
+Download **`DX_Ball_Win_Preinstalled_EN.zip`** from the
+[DX-Ball download page on Old Games Download](https://oldgamesdownload.com/game/dx-ball-m3r/).
+The [English game README](https://oldgamesdownload.com/readme/dx-ball-windows-readme-english/)
+identifies v1.07 and documents the original game. The README page contains the
+manual; use the game page for the ZIP.
+
+Keep the downloaded archive unchanged. Its expected SHA-256 is:
+
+```text
+e6c8a8d2b55e3d3bd5908b8febaab82493b2fb3e154877143f1266731a007cbb
+```
+
+The import command below verifies the archive, extracts local inputs into
+ignored `original/`, and verifies the executable and asset manifest. A matching
+archive plus the pinned tools lets readers replay every currently accepted
+reconstruction checkpoint from this public repository. The complete playable
+game remains work in progress.
+
 ## Local setup
 
 The analysis workflow currently targets Linux x86-64 with Python 3.11+, Git,
@@ -48,6 +73,8 @@ Node.js 22.19 with npm for the pinned REA runtime. Use
 interpreter only after checking actual package and native-library hashes.
 
 ```bash
+git clone https://github.com/N0zoM1z0/dx-ball.git
+cd dx-ball
 scripts/bootstrap-python.sh
 scripts/repo-python scripts/bootstrap-tools.py
 scripts/repo-python scripts/import-target.py /path/to/DX_Ball_Win_Preinstalled_EN.zip
@@ -97,6 +124,7 @@ scripts/repo-python scripts/replay-exact-units.py
 scripts/repo-python tests/test_exact_oracle.py
 scripts/repo-python tests/test_boards_differential.py
 scripts/repo-python tests/test_resources_differential.py
+scripts/repo-python tests/test_gameplay_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -107,6 +135,19 @@ state and ordered dependency calls. Resource tests also compare decoded pixel
 buffers; drawing traces do not establish DirectDraw backend equivalence. Public GitHub Actions runs portable builds and
 ledger validation; private-target oracles run locally.
 
+To follow the sound-pan investigation with REA after setup:
+
+```bash
+scripts/rea function original/DXBALL.EXE 0x00406400 --provider ghidra \
+  --snapshot .analysis/rea/dxball.snapshot.json --json
+scripts/repo-python scripts/replay-exact-units.py --unit screen-pan
+scripts/repo-python tests/test_gameplay_differential.py
+```
+
+The [REA workflow](docs/REA.md) explains retained Evidence and snapshots; the
+[gameplay owner](docs/GAMEPLAY_OWNER.md) connects the returned instructions to
+source, original behavior and acceptance limits.
+
 ## Reconstruction notes
 
 - [Current handoff](docs/RE_HANDOFF.md), [architecture](docs/ARCHITECTURE.md),
@@ -114,13 +155,14 @@ ledger validation; private-target oracles run locally.
 - [Exact compiler evidence](docs/BUILD_MATCHING.md),
   [oracle matrix and limits](docs/ORACLES.md), and [progress](docs/PROGRESS.md).
 - [Resource ownership and file formats](docs/RESOURCE_OWNER.md).
+- [Brick-hit gameplay, explosions and sound pan](docs/GAMEPLAY_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
 - `config/implemented.csv`, `semantic-acceptance.csv`, and `matches.csv`:
   independent source, scoped semantic, and complete byte-exact facts.
 
-Upcoming owners include board-hit transitions,
+Upcoming owners include explosion processing,
 ball/paddle physics, bonuses, Win32/DirectDraw integration, menus, sound, and
 MIDI. Names and ownership are promoted only with target-local evidence.
 

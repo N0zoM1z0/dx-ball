@@ -12,7 +12,7 @@ without checking their individual evidence.
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
-| Tile hit logic | `0x00411F40`; bank consumers and gameplay transitions; pending |
+| Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, linked-list append and sound pan |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -30,7 +30,7 @@ Project structure:
 
 - `config/`: pinned identities, function/origin inventories, source/exact ledgers.
 - `src/`: maintained C owners and the separate host board-inspection entry point.
-- `scripts/`: attestation, Ghidra queries, pinned builds, exact replay, reporting.
+- `scripts/`: attestation, REA/Ghidra queries, pinned builds, exact replay, reporting.
 - `tests/`: target-machine differential and oracle rejection tests.
 - `docs/`: accepted evidence, workflow, architecture, and handoff.
 - `resources/`: generated public progress artwork; no original game artwork.
@@ -49,3 +49,9 @@ New inspection runs through REA's Ghidra 12.1.4 provider; the 12.1.3 inventory
 is historical. REA opens its own immutable target copy and ephemeral Program,
 then returns complete Evidence and function body ranges. See [REA workflow](REA.md)
 for the first verified target session and current boundary observations.
+
+`src/gameplay.h` declares the explosion list and gameplay dependency bridge.
+The original append ABI uses ECX; Windows builds retain fastcall, while native
+tests use the host ABI. Pointer fields grow with the host without changing the
+three 32-bit payload values. Brick effects, RNG, particles and DirectSound are
+explicit pending dependencies. See [gameplay evidence](GAMEPLAY_OWNER.md).
