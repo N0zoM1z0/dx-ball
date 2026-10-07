@@ -138,3 +138,17 @@ Every earlier suite, native/MinGW/VC4 product, Wine inspector and saved REA
 verification runs at the same grouped checkpoint. The new-family report is
 reused only with identical complete inputs and native library; private reports,
 input identities and logs are retained in `.analysis/checkpoints/editor-186-40/`.
+
+
+## Compiler portability follow-up
+
+Public CI with GCC 13.3 rejects an eight-byte decimal scratch buffer under
+`-Werror=format-overflow`: the compiler cannot infer the accepted 0..49 board
+index domain from the external global. The shared owner now reserves 12 bytes
+for a signed 32-bit decimal value, sign and NUL. It retains the original
+index-plus-one formatting and draw calls; no clamp or profile-selected body
+is introduced. This affects a temporary buffer, with no new exactness claim.
+Existing original-x86 status/editor and complete regression suites are replayed
+against the GCC 13 native library, plus MinGW/VC4 products and forty exact units.
+The failed remote run and final input identities are retained under
+`.analysis/checkpoints/editor-format-199-40/`.

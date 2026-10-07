@@ -55,7 +55,7 @@ void dxball_draw_editor_status(void)
     DxBallInt sprite = dxball_board_tile_sprite(dxball_editor_selected_tile);
     DxBallDDSurface *surface = (DxBallDDSurface *)dxball_active_surface;
     DxBallRect preview = {25, 5, 55, 20}, label = {65, 5, 639, 20};
-    char number[8];
+    char number[12]; /* Signed 32-bit decimal, sign and terminating NUL. */
     if (sprite == 0)
         surface->vtable->blt_fast(surface, 25, 5, (DxBallDDSurface *)dxball_background_surface, &preview, 0x10);
     else dxball_draw_sprite(sprite, 25, 5);

@@ -316,3 +316,23 @@ cleanup checks again for disposable artifacts while retaining evidence/tools.
 The previous public CI job could not acquire a runner after five attempts;
 rerun requests returned HTTP500. This is external infrastructure evidence,
 not a local verification pass or a code failure.
+
+
+The MDS checkpoint's remote run 37647258018 obtained a runner and exposed a
+GCC 13.3 format-overflow error in the editor decimal scratch buffer. It is a
+code portability failure, distinct from the preceding runner-acquisition
+failure. Shared scratch capacity is now 12 bytes for signed 32-bit formatting;
+the accepted board domain and display calls remain unchanged. Native builds
+now use locally available GCC 13.3, matching the remote warning behavior.
+After switching compilers, explicitly reconfigure Debug: CMake can reset the
+build-type cache during a compiler change. An interrupted initial replay is
+retained as incomplete, and only the final complete replay refreshes evidence.
+Current source/input/native-library hashes, full grouped regression and public
+CI records are retained at `.analysis/checkpoints/editor-format-199-40/`.
+
+
+Next core family: the provisional 1,705-byte DirectSound initializer at `0x405120`,
+its `0x4050F0` preparation wrapper, `0x4057D0` pause controller and connected WAV/
+buffer lifecycle. Existing platform harness boundaries establish their caller
+addresses, not their recovered bodies. Reuse archived REA Evidence before a
+new constrained query session; do not classify unreviewed leaves by proximity.
