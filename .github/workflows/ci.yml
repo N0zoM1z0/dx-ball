@@ -18,3 +18,9 @@ jobs:
         run: scripts/bootstrap-python.sh
       - name: Build portable source and validate recorded evidence
         run: scripts/repo-python scripts/ci.py --public
+      - name: Install i686 Windows compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y gcc-mingw-w64-i686 ninja-build
+      - name: Compile Windows adapter and game with strict warnings
+        run: scripts/repo-python scripts/build-windows.py

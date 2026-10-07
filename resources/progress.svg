@@ -536,5 +536,5 @@
 <rect x="809" y="342" width="22" height="10" rx="2" fill="#29384c"/>
 <rect x="834" y="342" width="22" height="10" rx="2" fill="#29384c"/>
 <text x="34" y="388" fill="#9baec8" font-size="13">Each brick is one provisional function candidate, including unclassified CRT/library code.</text>
-<text x="34" y="412" fill="#9baec8" font-size="13">The authored-function denominator is still under review. Playable reconstruction: pending.</text>
+<text x="34" y="412" fill="#9baec8" font-size="13">The authored-function denominator is still under review. Whole-game fidelity: unverified.</text>
 </g></svg>

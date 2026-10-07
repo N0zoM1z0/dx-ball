@@ -12,12 +12,12 @@ drawing. Original x86 execution is the behavioral oracle. File I/O and rendering
 dependencies are intercepted; memcpy/memset execute the target's actual CRT.
 Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
-Portable builds are analysis libraries and a board-inspection utility. There is
-no reconstructed playable game yet. Windows integration,
-actual device/driver delivery and physical audio delivery remain pending. DirectSound/WAV controllers are
-maintained; their real Windows bindings remain pending. MDS parsing and MIDI
-stream/music control now have scoped implementations; real WinMM binding is
-still pending. Main ball motion,
+Portable builds are analysis libraries and a board-inspection utility. Windows
+builds now also produce experimental game EXEs with real Win32, DirectDraw,
+DirectSound and WinMM bindings. Original/VC4/MinGW Wine control runs cover
+opening, menu, first-board input and zero-code shutdown; complete gameplay,
+actual physical device delivery and asynchronous MIDI remain unverified.
+DirectSound/WAV and MDS/music controllers have scoped implementations. Main ball motion,
 full frame routing/drawing, game initialization and life-loss reset now have
 scoped maintained implementations. All twelve frame phases default to source.
 
@@ -367,3 +367,28 @@ failed before any step: GitHub reported five unsuccessful runner acquisitions,
 runner_id0 and no steps; the failed-job rerun API returned HTTP500. Original
 remote metadata/annotations are retained in the private sound checkpoint.
 This infrastructure result does not establish a public compiler failure.
+
+The Windows adapter checkpoint reuses the saved platform/resource/MIDI/sound
+REA contracts and binds actual SDK APIs through src/windows_adapter.c, with an
+SDK WinMain entry in src/windows_entry.c. VC4 and MinGW build game EXEs; no
+owner body/header, function acceptance count or native analysis-library hash
+changed. Declared semantic inputs and all forty exact build input sets remain
+unchanged, so the complete sound checkpoint's original-execution/cold replay
+reports remain reusable. Changed build orchestration is checked separately.
+
+tests/test_windows_runtime.py runs the original and both builds sequentially
+on Xvfb640x480x8 through opening/key-to-menu/held-click-to-first-board/Escape-to-
+menu/Escape-to-zero-exit. Captures/logs/identities survive under build/reports;
+the reviewed first-board tile region has zero differing pixels in both source
+builds, while whole-screen unsynchronized differences remain reported. Early
+X focus intervention left the original at a blank window; the final harness
+waits for actual nonblank presentation before focus. The same palette artifacts
+appear in the original control, and ALSA MIDI delivery is unavailable. Real
+ball play, editor, focus recovery, all boards, embedded resources and physical
+audio remain open; do not mark the reconstruction complete.
+
+scripts/run-windows.py prepares a verified data copy and preserves manual saves;
+scripts/build-windows.py serializes/limits MinGW compilation. Public CI now
+also compiles the Windows adapter with strict warnings. Private CI includes the
+runtime probe after ABI checks. Periodic cleanup journals remove only resettable
+probe-* working copies; manual runtime directories and accepted evidence stay.

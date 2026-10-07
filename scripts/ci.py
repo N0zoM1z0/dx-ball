@@ -56,11 +56,10 @@ def main():
     python("tests/test_midi_differential.py")
     python("tests/test_sound_differential.py")
     python("scripts/build-legacy.py")
-    run(["cmake", "-S", ".", "-B", "build/windows-i686", "-G", "Ninja",
-         "-DCMAKE_TOOLCHAIN_FILE=config/mingw-i686.cmake", "-DCMAKE_BUILD_TYPE=Release"])
-    run(["cmake", "--build", "build/windows-i686", "--parallel", str(BUILD_JOBS)])
+    python("scripts/build-windows.py")
     python("tests/test_inspector_builds.py")
     python("tests/test_windows_abi.py")
+    python("tests/test_windows_runtime.py")
     python("scripts/validate-tracking.py", "--require-target")
     python("scripts/report-reconstruction-status.py", "--summary")
     print("Complete private checks passed.")

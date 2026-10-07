@@ -36,15 +36,33 @@ def main():
             raise RuntimeError("legacy linker produced no executable")
         products[name] = sha256(executable)
         print(f"legacy build OK: {executable}", flush=True)
+    game_sources = ["src/windows_adapter.c", "src/windows_entry.c"]
+    game_objects = []
+    for source in game_sources:
+        output = directory / (Path(source).stem + ".obj")
+        log.append(toolchain.compile(ROOT / source, output, build["flags"]).stdout)
+        game_objects.append(output)
+    executable = directory / "dxball.exe"
+    executable.unlink(missing_ok=True)
+    game_arguments = ["/NOLOGO", "/MACHINE:IX86", "/SUBSYSTEM:WINDOWS",
+                      "/INCREMENTAL:NO", "/PDB:NONE", "/OUT:" + windows_path(executable),
+                      *map(windows_path, objects + game_objects),
+                      "user32.lib", "gdi32.lib", "winmm.lib"]
+    log.append(toolchain.run("link.exe", game_arguments).stdout)
+    if not executable.is_file():
+        raise RuntimeError("legacy game linker produced no executable")
+    products["dxball"] = sha256(executable)
+    print(f"legacy game build OK: {executable}", flush=True)
     (directory / "build.log").write_text("\n".join(log))
     (directory / "build.json").write_text(json.dumps({
         "executables": products,
         "inputs": {name: sha256(ROOT / name) for name in
-                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h", "src/intro.c", "src/intro.h", "src/gameover.c", "src/gameover.h", "src/editor.c", "src/editor.h", "src/midi.c", "src/midi.h", "src/sound.c", "src/sound.h"] + entries},
+                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h", "src/intro.c", "src/intro.h", "src/gameover.c", "src/gameover.h", "src/editor.c", "src/editor.h", "src/midi.c", "src/midi.h", "src/sound.c", "src/sound.h", "src/windows_adapter.h"] + entries + game_sources},
         "compiler_sha256": toolchain.lock["compiler_sha256"],
         "linker_sha256": toolchain.lock["linker_sha256"],
         "flags": build["flags"], "link_flags": arguments[:6],
-        "product": "board/resource inspectors; not the game executable",
+        "game_link_flags": game_arguments[:6],
+        "product": "board/resource inspectors and game EXE; playability requires runtime checks",
     }, indent=2) + "\n")
 
 

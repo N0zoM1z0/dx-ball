@@ -32,7 +32,7 @@ def main():
         x, y = 34 + (i % 33) * 25, 132 + (i // 33) * 14
         svg.append(f'<rect x="{x}" y="{y}" width="22" height="10" rx="2" fill="{color}"/>')
     svg += ['<text x="34" y="388" fill="#9baec8" font-size="13">Each brick is one provisional function candidate, including unclassified CRT/library code.</text>',
-            '<text x="34" y="412" fill="#9baec8" font-size="13">The authored-function denominator is still under review. Playable reconstruction: pending.</text>',
+            '<text x="34" y="412" fill="#9baec8" font-size="13">The authored-function denominator is still under review. Whole-game fidelity: unverified.</text>',
             '</g></svg>']
     (ROOT / "resources").mkdir(exist_ok=True)
     (ROOT / "resources/progress.svg").write_text("\n".join(svg) + "\n")
@@ -46,7 +46,8 @@ def main():
         f"| Complete exact code bytes | {status['exact_bytes']} |\n"
         f"| Origin still unclassified | {status['origin_unknown']} |\n\n"
         "The candidate count includes runtime/library code and is not the authored-function\n"
-        "denominator. A playable whole-game build is still pending. See\n"
+        "denominator. Experimental Windows EXEs pass bounded Wine startup/input/shutdown\n"
+        "checks; whole-game fidelity remains unverified. See [adapter notes](WINDOWS_ADAPTER.md),\n"
         "[build evidence](BUILD_MATCHING.md) and [oracle limits](ORACLES.md).\n")
     print("generated resources/progress.svg and docs/PROGRESS.md")
 

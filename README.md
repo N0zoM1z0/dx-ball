@@ -17,8 +17,9 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **214 maintained functions**, **95,873 target differential cases**, and
-> **40 byte-exact functions totaling 4,079 bytes**. The current builds provide inspection utilities and an
-> analysis library. A playable whole-game reconstruction is still in progress.
+> **40 byte-exact functions totaling 4,079 bytes**. Windows builds now also produce
+> experimental game EXEs. Wine checks cover opening, menu, first-board input and
+> clean shutdown; complete gameplay and driver fidelity remain in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
 and state, recover maintainable source, then replay independent oracles.
@@ -64,8 +65,10 @@ instruction view corrects two return codes and an incomplete callback prototype;
 songs. The [sound investigation](docs/SOUND_OWNER.md) connects DirectSound
 startup, WAV upload and focus recovery. REA exposes the reload-and-retry
 behavior after a lost buffer; 1,603 direct cases and 36 separate lifecycle
-checks cover all 26 sound assets. Real Windows/driver integration and sound
-delivery remain in progress.
+checks cover all 26 sound assets. The [Windows adapter](docs/WINDOWS_ADAPTER.md)
+uses those recovered contracts to bind real Win32, DirectDraw, DirectSound and
+WinMM calls. Original/VC4/MinGW runs reach the first board and exit cleanly under
+Wine; physical audio and complete-game fidelity remain unverified.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.
@@ -154,7 +157,7 @@ for MCP registration, evidence snapshots and the verified DX-Ball example.
 scripts/repo-python scripts/ci.py --public
 
 # Complete private suite: target/Ghidra attestation, cold exact replay,
-# rejection tests, original-x86 differential tests, and Windows utility runs.
+# rejection tests, original-x86 differential tests, and real Windows runs.
 scripts/repo-python scripts/ci.py
 
 # Inspect one original board (1..50) as JSON.
@@ -189,6 +192,7 @@ scripts/repo-python tests/test_editor_differential.py
 scripts/repo-python tests/test_midi_differential.py
 scripts/repo-python tests/test_sound_differential.py
 scripts/repo-python tests/test_windows_abi.py
+scripts/repo-python tests/test_windows_runtime.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -197,8 +201,30 @@ applied and referenced strings verified. It never masks differing bytes. The
 semantic oracle executes the original x86 functions and compares maintained C
 state and ordered dependency calls. Resource tests also compare decoded pixel
 buffers; particle tests compare actual 2x2 writes to controlled 8-bit surfaces.
-Drawing traces do not establish DirectDraw backend equivalence. Public GitHub Actions runs portable builds and
-ledger validation; private-target oracles run locally.
+Drawing traces do not establish DirectDraw backend equivalence. Public GitHub
+Actions runs portable builds, strict i686 Windows compilation and ledger
+validation; private-target oracles run locally.
+
+Windows game builds are `build/vc40/dxball.exe` and
+`build/windows-i686/dxball.exe` (the latter needs its neighboring
+`libdxball_core.dll`). After the private build, prepare a working data copy with:
+
+```bash
+scripts/repo-python scripts/run-windows.py --profile vc40 --prepare-only
+# Or launch that copy through Wine on a suitable display:
+scripts/repo-python scripts/run-windows.py --profile vc40
+```
+
+The MinGW products can also be built without originals or the private legacy
+toolchain using `scripts/repo-python scripts/build-windows.py`.
+
+The helper verifies all original asset hashes and keeps score/editor writes in
+`build/runtime/vc40/`; later manual runs preserve those saves. The optional real
+runtime probe also needs `xdotool` and ImageMagick. It runs original, VC4 and
+MinGW control copies sequentially on a 640×480 8-bit Xvfb display, records actual
+screenshots and checks zero-code shutdown. This environment shows palette
+artifacts in the original too; it does not establish physical display/audio
+quality. See the [adapter notes](docs/WINDOWS_ADAPTER.md) for observed coverage.
 
 To follow the sound-pan investigation with REA after setup:
 
