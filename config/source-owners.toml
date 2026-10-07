@@ -19,11 +19,25 @@ source = "src/gameplay.c"
 header = "src/gameplay.h"
 oracle = "tests/test_gameplay_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/boards.c", "src/boards.h", "src/effects.c", "src/effects.h", "tests/test_boards_differential.py", "config/assets.csv"]
+additional_inputs = ["src/boards.c", "src/boards.h", "src/effects.c", "src/effects.h", "src/particles.c", "src/particles.h", "src/bonuses.c", "src/bonuses.h", "src/resources.h", "tests/test_boards_differential.py", "config/assets.csv"]
 
 [owners.effects]
 source = "src/effects.c"
 header = "src/effects.h"
 oracle = "tests/test_effects_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/boards.c", "src/boards.h", "src/gameplay.c", "src/gameplay.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py"]
+additional_inputs = ["src/boards.c", "src/boards.h", "src/gameplay.c", "src/gameplay.h", "src/particles.c", "src/particles.h", "src/bonuses.c", "src/bonuses.h", "src/resources.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py"]
+
+[owners.particles]
+source = "src/particles.c"
+header = "src/particles.h"
+oracle = "tests/test_entities_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["src/boards.c", "src/boards.h", "src/gameplay.c", "src/gameplay.h", "src/effects.c", "src/effects.h", "src/bonuses.c", "src/bonuses.h", "src/resources.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py", "tests/test_effects_differential.py", "tests/resources_oracle.py"]
+
+[owners.bonuses]
+source = "src/bonuses.c"
+header = "src/bonuses.h"
+oracle = "tests/test_entities_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["src/boards.c", "src/boards.h", "src/gameplay.c", "src/gameplay.h", "src/effects.c", "src/effects.h", "src/particles.c", "src/particles.h", "src/resources.h", "tests/test_boards_differential.py", "tests/test_gameplay_differential.py", "tests/test_effects_differential.py", "tests/resources_oracle.py"]

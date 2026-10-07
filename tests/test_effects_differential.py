@@ -115,13 +115,16 @@ class EffectsTarget(GameTarget):
     def __init__(self):
         super().__init__()
         self.allocations = {}
+        self.boundary_hooks = {}
         self.write_u32(FX_SURFACE, 0x334455)
         for address, name, count in [(0x4138D0, "bonus", 4), (0x404040, "keyed-sprite", 3),
                                      (0x4085D0, "reduced-sprite", 3), (0x408A50, "region", 4)]:
             def callback(*unused, name=name, count=count):
                 self.events.append((name, *(signed(x) for x in self._args(count))))
                 self._return()
-            self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, callback, begin=address, end=address))
+            hook = self.uc.hook_add(UC_HOOK_CODE, callback, begin=address, end=address)
+            self.boundary_hooks[name] = hook
+            self._hooks.append(hook)
 
     def effect(self, *unused):
         pass  # Keep the original 0x412BA0 body executing.

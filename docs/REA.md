@@ -153,6 +153,14 @@ and still supplies measurements. That limitation is retained; the separate
 Public checkpoint identities are in `config/rea-verification.json`; complete
 Evidence records remain private.
 
+The [particle and bonus investigation](ENTITIES_OWNER.md) follows the same
+workflow from REA dossiers into two typed C owners. Body ranges separate the
+bonus selector's switch data from instructions, and callers connect brick hits
+to particle creation. Original-x86 tests then compare list lifetimes, RNG order
+and actual 2x2 pixel writes into controlled surfaces. Fourteen maintained
+functions and nine complete exact units result from that investigation; bonus
+movement and power-up application remain the next open scope.
+
 References: upstream [installation and release boundaries](https://github.com/morluto/rea/blob/main/docs/installation.md),
 [MCP lifecycle/deadlines](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md),
 and [native investigation skill](https://github.com/morluto/rea/blob/main/skills/reverse-engineer-anything/references/native-and-artifacts.md).

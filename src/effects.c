@@ -1,11 +1,12 @@
 #include "effects.h"
+#include "bonuses.h"
 
 #include <stdlib.h>
 
 DxBallBrickEffectList dxball_brick_effects;
 DxBallInt dxball_hit_dx, dxball_hit_dy;
 DxBallSurface dxball_effect_surface;
-DxBallEffectOps dxball_effect_ops = { free, NULL, NULL, NULL, NULL };
+DxBallEffectOps dxball_effect_ops = { free, dxball_generate_bonus, NULL, NULL, NULL };
 
 void dxball_deallocate_node(void *node)
 {

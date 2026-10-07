@@ -39,4 +39,18 @@ address,symbol,source,scope,semantic_unit
 0x00412B30,dxball_queue_explosion_at,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-queue-explosion-at
 0x00412BA0,dxball_spawn_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-spawn-brick-effect
 0x00412CB0,dxball_step_brick_effect,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-step-brick-effect
+0x004138D0,dxball_generate_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-generate-bonus
+0x00413D80,dxball_append_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-append-bonus
+0x004146A0,dxball_begin_bonuses,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-begin-bonuses
+0x004146E0,dxball_advance_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-advance-bonus
+0x00414740,dxball_draw_bonuses,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-draw-bonuses
+0x004147A0,dxball_retire_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-retire-bonus
+0x004147C0,dxball_remove_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-remove-bonus
+0x004148A0,dxball_spawn_particle,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-spawn-particle
+0x00414960,dxball_append_particle,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-append-particle
+0x00414A00,dxball_update_particles,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-update-particles
+0x00414B30,dxball_remove_particle,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-remove-particle
+0x00414C10,dxball_begin_particles,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-begin-particles
+0x00414C50,dxball_advance_particle,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-advance-particle
+0x00414CB0,dxball_draw_particles,src/particles.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-draw-particles
 0x004155A0,dxball_scan_explosive_tiles,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-scan-explosive-tiles

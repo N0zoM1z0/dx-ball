@@ -1,5 +1,6 @@
 #include "gameplay.h"
 #include "effects.h"
+#include "particles.h"
 
 #include <stdlib.h>
 
@@ -10,7 +11,7 @@ DxBallInt dxball_explosion_pending;
 DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
 DxBallExplosionList dxball_explosions;
-DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, NULL, NULL, NULL, NULL };
+DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, NULL, NULL, NULL, dxball_spawn_particle };
 
 void *dxball_allocate_node(size_t size)
 {

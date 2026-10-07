@@ -10,7 +10,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.gameplay]
 source = "src/gameplay.c"
 object = "build/exact/gameplay.obj"
-inputs = ["src/gameplay.c", "src/gameplay.h", "src/boards.h", "src/effects.h"]
+inputs = ["src/gameplay.c", "src/gameplay.h", "src/boards.h", "src/effects.h", "src/particles.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-explosion]
@@ -31,8 +31,8 @@ target_address = 0x00406400
 size = 63
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x17, type = "DIR32", symbol = "$T488", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
-  { offset = 0x20, type = "DIR32", symbol = "$T489", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
+  { offset = 0x17, type = "DIR32", symbol = "$T516", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
+  { offset = 0x20, type = "DIR32", symbol = "$T517", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
   { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0, target = 0x004210A0 },
   { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
 ]
@@ -244,7 +244,7 @@ relocations = [
 [builds.effects]
 source = "src/effects.c"
 object = "build/exact/effects.obj"
-inputs = ["src/effects.c", "src/effects.h", "src/gameplay.h", "src/boards.h"]
+inputs = ["src/effects.c", "src/effects.h", "src/gameplay.h", "src/boards.h", "src/bonuses.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.begin-explosions]
@@ -343,4 +343,142 @@ relocations = [
   { offset = 0x35, type = "REL32", symbol = "_dxball_step_brick_effect", addend = 0, target = 0x00412CB0 },
   { offset = 0x5D, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
   { offset = 0x62, type = "REL32", symbol = "@dxball_advance_brick_effect@4", addend = 0, target = 0x00412590 },
+]
+
+[builds.particles]
+source = "src/particles.c"
+object = "build/exact/particles.obj"
+inputs = ["src/particles.c", "src/particles.h", "src/gameplay.h", "src/boards.h", "src/effects.h", "src/resources.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[builds.bonuses]
+source = "src/bonuses.c"
+object = "build/exact/bonuses.obj"
+inputs = ["src/bonuses.c", "src/bonuses.h", "src/gameplay.h", "src/boards.h", "src/effects.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.append-particle]
+build = "particles"
+symbol = "@dxball_append_particle@4"
+target_address = 0x00414960
+size = 146
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
+]
+
+[units.begin-particles]
+build = "particles"
+symbol = "@dxball_begin_particles@4"
+target_address = 0x00414C10
+size = 57
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+]
+
+[units.advance-particle]
+build = "particles"
+symbol = "@dxball_advance_particle@4"
+target_address = 0x00414C50
+size = 89
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+]
+
+[units.spawn-particle]
+build = "particles"
+symbol = "_dxball_spawn_particle"
+target_address = 0x004148A0
+size = 179
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+  { offset = 0x35, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x3A, type = "REL32", symbol = "@dxball_append_particle@4", addend = 0, target = 0x00414960 },
+  { offset = 0x43, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x4E, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x5A, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x66, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x72, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x7A, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x86, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x96, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x9E, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+]
+
+[units.update-particles]
+build = "particles"
+symbol = "_dxball_update_particles"
+target_address = 0x00414A00
+size = 298
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xC, type = "REL32", symbol = "@dxball_begin_particles@4", addend = 0, target = 0x00414C10 },
+  { offset = 0x19, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x22, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x29, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x32, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x3A, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x49, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x51, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x60, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x68, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x74, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x82, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x93, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xA2, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xB4, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xB9, type = "REL32", symbol = "@dxball_remove_particle@4", addend = 0, target = 0x00414B30 },
+  { offset = 0xC3, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xCB, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xDA, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xE6, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xEE, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0xF6, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x105, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x10A, type = "REL32", symbol = "@dxball_remove_particle@4", addend = 0, target = 0x00414B30 },
+  { offset = 0x10F, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 0x114, type = "REL32", symbol = "@dxball_advance_particle@4", addend = 0, target = 0x00414C50 },
+]
+
+[units.append-bonus]
+build = "bonuses"
+symbol = "@dxball_append_bonus@4"
+target_address = 0x00413D80
+size = 146
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
+]
+
+[units.begin-bonuses]
+build = "bonuses"
+symbol = "@dxball_begin_bonuses@4"
+target_address = 0x004146A0
+size = 57
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+]
+
+[units.advance-bonus]
+build = "bonuses"
+symbol = "@dxball_advance_bonus@4"
+target_address = 0x004146E0
+size = 89
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+]
+
+[units.retire-bonus]
+build = "bonuses"
+symbol = "_dxball_retire_bonus"
+target_address = 0x004147A0
+size = 32
+boundary_evidence = "docs/ENTITIES_OWNER.md"
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x0043FAC8 },
+  { offset = 0xC, type = "REL32", symbol = "@dxball_remove_bonus@4", addend = 0, target = 0x004147C0 },
+  { offset = 0x12, type = "DIR32", symbol = "_dxball_bonus_count", addend = 0, target = 0x0043FA90 },
 ]

@@ -15,9 +15,9 @@ Binary analysis uses [REA](https://github.com/morluto/rea) with its Ghidra
 provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
-> Boards, resources, brick hits and animations now have **41 maintained
-> functions**, **38,037 target differential cases**, and **24 byte-exact functions
-> totaling 2,311 bytes**. The current builds provide inspection utilities and an
+> Boards, resources, brick hits, animations, particles and bonus production have
+> **55 maintained functions**, **45,380 target differential cases**, and
+> **33 byte-exact functions totaling 3,404 bytes**. The current builds provide inspection utilities and an
 > analysis library. A playable whole-game reconstruction is still in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
@@ -134,6 +134,7 @@ scripts/repo-python tests/test_boards_differential.py
 scripts/repo-python tests/test_resources_differential.py
 scripts/repo-python tests/test_gameplay_differential.py
 scripts/repo-python tests/test_effects_differential.py
+scripts/repo-python tests/test_entities_differential.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
@@ -141,7 +142,8 @@ Exact replay compares complete function sections with every reviewed relocation
 applied and referenced strings verified. It never masks differing bytes. The
 semantic oracle executes the original x86 functions and compares maintained C
 state and ordered dependency calls. Resource tests also compare decoded pixel
-buffers; drawing traces do not establish DirectDraw backend equivalence. Public GitHub Actions runs portable builds and
+buffers; particle tests compare actual 2x2 writes to controlled 8-bit surfaces.
+Drawing traces do not establish DirectDraw backend equivalence. Public GitHub Actions runs portable builds and
 ledger validation; private-target oracles run locally.
 
 To follow the sound-pan investigation with REA after setup:
@@ -166,6 +168,7 @@ source, original behavior and acceptance limits.
 - [Resource ownership and file formats](docs/RESOURCE_OWNER.md).
 - [Brick-hit gameplay, explosions and sound pan](docs/GAMEPLAY_OWNER.md).
 - [Explosion queues and brick animations](docs/EFFECTS_OWNER.md).
+- [Particle updates, pixel writes and bonus production](docs/ENTITIES_OWNER.md).
 - [REA analysis workflow and showcase](docs/REA.md).
 - `config/functions.csv`: 528 provisional candidates; boundaries and runtime
   origins still require review.
@@ -173,7 +176,7 @@ source, original behavior and acceptance limits.
   independent source, scoped semantic, and complete byte-exact facts.
 
 Upcoming owners include
-ball/paddle physics, bonuses, particles, Win32/DirectDraw integration, menus, sound, and
+ball/paddle physics, bonus movement and power-up application, Win32/DirectDraw integration, menus, sound, and
 MIDI. Names and ownership are promoted only with target-local evidence.
 
 ## License and attribution

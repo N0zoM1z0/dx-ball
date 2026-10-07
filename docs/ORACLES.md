@@ -8,6 +8,7 @@
 | Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
 | Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
+| Entity x86 vs compiled native C | Bonus RNG/production, particle lifecycle, typed queues and full pixel buffers | Bonus movement/application, hardware presentation, complete frame |
 | Native/Windows board inspector | Shared source builds and decodes actual boards | Playable reconstruction |
 
 Run `scripts/repo-python tests/test_boards_differential.py` after building the
@@ -58,5 +59,15 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 38,037 direct-case total;
+request state. Integration cases are excluded from the 45,380 direct-case total;
 the frame updater is not marked reconstructed. See [effects evidence](EFFECTS_OWNER.md).
+
+The entity oracle adds 7,343 direct cases (5,204 particles and 2,139 bonuses),
+bringing the accepted direct total to 45,380. Another 980 integration checks
+connect real hit, animation, bonus production and particle bodies. The test
+compares typed payloads, allocation ownership, poisoned deletion, RNG/audio
+traces and complete 8-bit buffers including pitch padding and guards. Actual
+target memset executes; controlled DirectDraw callbacks supply storage and
+Lock retries. Earlier owner tests continue to isolate their explicit
+dependencies. Integration counts remain separate from function acceptance.
+See [entity evidence](ENTITIES_OWNER.md) for precise domains and missing work.

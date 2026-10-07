@@ -20,7 +20,7 @@ Canonical compile flags:
 /nologo /c /Od /Ob0 /Oi- /Oy- /Gd /MT /Gy
 ```
 
-These are reproducible per-unit evidence. Matching twenty-four functions does not prove
+These are reproducible per-unit evidence. Matching thirty-three functions does not prove
 all original compilation flags, the complete compiler release, or original
 translation-unit boundaries. `/Gy` gives complete independent function COMDAT
 extents to the oracle; no comparison requests a truncated prefix.
@@ -88,5 +88,15 @@ pairs, request enqueue, animation append, explosion construction and dispatch
 cold-replay with zero differences. The dispatcher's complete 120-byte span
 includes its unreachable five-byte gap. REA instruction/body dossiers and
 explicit mappings are recorded in [animation evidence](EFFECTS_OWNER.md).
-Shared declarations renumbered the pan's private constants to `$T488` / `$T489`;
+At that checkpoint, shared declarations renumbered the pan's private constants to `$T488` / `$T489`;
 the manifest still verifies both constant contents in object and original target.
+
+The particle/bonus investigation adds nine complete exact units totaling
+**1,093 bytes**, bringing the current total to **33 functions, 3,404 bytes**.
+Both list append/begin/advance triples, particle creation/update and bonus
+retirement pass zero-difference cold replay. REA's body dossiers and typed
+state ownership establish their explicit relocation destinations; see
+[entity evidence](ENTITIES_OWNER.md). The compact bonus selector, deletion and
+controlled rendering retain semantic acceptance without an exact claim.
+Current shared declarations renumber the pan literals to `$T516` / `$T517`;
+both object and target constant contents remain attested.

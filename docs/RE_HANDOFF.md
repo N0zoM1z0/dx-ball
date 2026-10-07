@@ -14,12 +14,12 @@ Drawing validation checks ordered call arguments, not pixels or DirectDraw.
 
 Portable builds are analysis libraries and a board-inspection utility. There is
 no reconstructed playable game yet. Windows integration,
-ball physics, bonuses, UI, audio, and MIDI remain pending.
+ball/paddle physics, bonus movement/application, UI, audio, and MIDI remain pending.
 
 VC4.0 compiler 10.00.5270 and linker 3.00.5270 are pinned and executable.
-Twenty-four configured units cold-replay exactly, totaling 2,311 bytes; accepted
-records are in `config/matches.csv`. Forty-one source functions have scoped
-semantic evidence from 38,037 differential cases. Eight oracle rejection checks
+Thirty-three configured units cold-replay exactly, totaling 3,404 bytes; accepted
+records are in `config/matches.csv`. Fifty-five source functions have scoped
+semantic evidence from 45,380 differential cases. Eight oracle rejection checks
 pass. The second owner, `src/resources.c`, covers 15 sprite/font/PCX/palette
 functions. Its 1,869 cases execute actual target parsing and compare decoded
 pixels, pitch padding, initialized records and DirectDraw call traces. See
@@ -46,14 +46,34 @@ typed containers; the auxiliary grid guards duplicate animation creation.
 Delete-then-advance skips a successor and is preserved across frames. See
 `docs/EFFECTS_OWNER.md` for body ranges, Evidence IDs and acceptance boundaries.
 `dxball_apply_explosion_requests` extracts the request phase but does not claim
-the whole frame updater. Continue with bonus production at `0x4138D0`, particle
-production/updates at `0x4148A0` / `0x414A00`, and ball/paddle physics.
-Ball/projectile
-consumers are observed through REA but not implemented. The hard-tile flag's
-full bonus producer and sound backends remain pending. Feedback goes to the
+the whole frame updater.
+
+The fifth and sixth owners recover seven particle and seven bonus functions.
+They add 7,343 direct cases and 980 connected-body integration checks, plus nine
+complete exact units. Gameplay particles and animation bonus production now
+default to maintained source. Particle writes agree across complete controlled
+8-bit buffers; the DirectDraw driver is still pending. See `docs/ENTITIES_OWNER.md`
+for all fourteen REA Evidence IDs, typed layouts, RNG order and exact boundaries.
+Current pan literal names are `$T516` / `$T517`, with both contents attested.
+
+Continue with the already retained bonus updater at `0x413E20`, Evidence
+`ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
+2,087 owned bytes in a 2,168-byte span. This still-unimplemented body moves and
+bounces bonuses, checks paddle collision, and applies kinds through paddle,
+ball, life and level dependencies. Reuse its dossier before issuing new REA
+queries. Ball/projectile consumers are observed but not implemented. Their
+physics and power-up application, plus sound backends, remain pending. Feedback goes to the
 user-requested `/tmp/dxball_rea_feedback.md`; it distinguishes provider issues
 from project-client issues. REA sessions now archive each run and save successful
 Evidence prefixes even when a later query fails.
+
+The user requires modest CPU/memory use. Project build and REA entry points
+inherit one allowed Linux CPU; CMake uses `--parallel 1`. Ghidra's heap is
+limited to 512 MiB. Measured complete REA process-tree RSS exceeds that heap
+because JVM native overhead, Node and Ghidra subprocesses are separate; do not
+describe the heap as a process-tree memory bound. A clean native build peaked
+at about 57 MiB RSS. The project MCP client uses the pinned split SDK's
+`callTool(params, options)` signature so the 360-second deadline actually applies.
 
 New binary analysis now uses REA 4.1.0 / Ghidra 12.1.4 through `scripts/rea`.
 Codex MCP registration and the package-matched skill are installed. Direct

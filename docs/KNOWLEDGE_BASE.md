@@ -82,3 +82,19 @@ fixed neighbor propagation order. The owner has nine functions, 12,977 direct
 cases and five exact functions. Original-frame and hit-to-animation integration
 cases are reported separately. Both queues preserve delete-then-advance skipping;
 cleanup clears occupancy only when the explosion animation finishes.
+
+## Particle and bonus owners
+
+[Entity evidence](ENTITIES_OWNER.md) records separate particle and bonus lists
+at `0x0043A868` and `0x0043FAC8`, with 44-byte and 36-byte original nodes.
+The fourteen functions add 7,343 direct cases and nine exact functions.
+Creating particles uses strict bounds, while surviving movement includes the
+left/top boundary. Gravity applies only for flag 1, increments dy every sixth
+update, and fading advances color every fifth surviving update. Original
+2x2 writes agree with maintained C across complete controlled surface buffers.
+
+Bonus production draws chance before checking the active count. Its screen x
+is 19+30*tile_x, and its burst consumes RNG in dy/dx/y/x order. Selector 0/1
+has an extra rare roll, selector 14 becomes kind 10, and count increments last.
+Retirement decrements count even without a current node. The original bonus
+movement/application body is observed through REA but remains unimplemented.

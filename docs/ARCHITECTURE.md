@@ -14,6 +14,8 @@ without checking their individual evidence.
 | Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
 | Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, request-list helpers and sound pan |
 | Animation owner | `src/effects.c`; constructors, timer steps, dispatch, occupancy and propagation |
+| Particle owner | `src/particles.c`; clipped creation, movement/fading, typed list and 2x2 pixel writes |
+| Bonus owner | `src/bonuses.c`; RNG selection, particle burst, typed list, drawing and retirement |
 | Audio/MIDI | DirectSound and WinMM imports, WAV/MDS references; pending |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
@@ -55,11 +57,20 @@ for the first verified target session and current boundary observations.
 The original append ABI uses ECX; Windows builds retain fastcall, while native
 tests use the host ABI. Pointer fields grow with the host without changing the
 three 32-bit payload values. Brick effects now call the maintained animation
-owner. RNG, bonus production, particles and DirectSound remain dependency
-boundaries. See [gameplay evidence](GAMEPLAY_OWNER.md).
+owner, and particles call the maintained particle owner. Allocation, RNG and
+DirectSound remain dependency boundaries. Individual owner tests can replace
+the maintained calls to isolate their scope; the entity oracle connects their
+real bodies. See [gameplay evidence](GAMEPLAY_OWNER.md).
 
 `src/effects.h` declares the separate animation node/list and deletion, bonus,
 sprite and region callbacks. `dxball_apply_explosion_requests` composes the
 recovered request phase, without claiming the entire original frame updater.
 The frame-phase oracle neutralizes unrelated work and checks only the declared
 phase's state and ordered calls. See [animation evidence](EFFECTS_OWNER.md).
+
+`src/particles.h` and `src/bonuses.h` declare two additional typed containers,
+preserving original 32-bit payloads and native pointer growth. Animation bonus
+production defaults to maintained source. Particle rendering uses the shared
+DirectDraw surface declaration and writes into controlled writable pixels in
+the differential oracle. Bonus movement, paddle collisions and power-up
+application remain pending. See [entity evidence](ENTITIES_OWNER.md).
