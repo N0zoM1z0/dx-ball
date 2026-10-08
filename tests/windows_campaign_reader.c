@@ -48,7 +48,8 @@ static int print_nodes(HANDLE process, DWORD address, int bonus,
                "\"width\":%ld,\"height\":%ld", first ? "" : ",",
                (long)data[bonus ? 2 : 0], (long)data[bonus ? 3 : 1],
                (long)data[4], (long)data[5], (long)width, (long)height);
-        if (bonus) printf(",\"kind\":%ld", (long)data[0]);
+        if (bonus) printf(",\"kind\":%ld,\"gravity_ticks\":%ld",
+                          (long)data[0], (long)data[6]);
         else printf(",\"attached\":%ld", (long)data[10]);
         printf("}"); first = 0; pointer = next;
     }

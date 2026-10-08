@@ -9,7 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
-from campaign_controller import choose_mouse
+from campaign_controller import choose_greatest_y as choose_mouse
 from campaign_contact_candidate import choose_earliest_contact
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
@@ -100,7 +100,7 @@ def main():
         # Fixed sampling/input delays are controlled frame units, not measured Wine latency.
         policy_results = []
         for width,height,interval,delay in itertools.product((36,73,146,219),(5,9),(1,2,3),(0,1,2)):
-            for label,policy in (('frozen-greatest-y',choose_mouse),('earliest-contact-candidate',choose_earliest_contact)):
+            for label,policy in (('frozen-greatest-y',choose_mouse),('contact-policy',choose_earliest_contact)):
                 seed(h,width,height)
                 h.ball(x=95,y=430,dx=0,dy=1,speed=9,angle=90)
                 h.ball(x=495,y=410,dx=0,dy=9,speed=9,angle=90)
@@ -127,7 +127,7 @@ def main():
                 policy_results.append({k:v for k,v in outcome.items() if k!='trace'})
         # A passed ball can hold greatest-Y priority while another is still catchable.
         for width,height in itertools.product((36,73,146,219),(5,9)):
-            for label,policy in (('frozen-greatest-y',choose_mouse),('earliest-contact-candidate',choose_earliest_contact)):
+            for label,policy in (('frozen-greatest-y',choose_mouse),('contact-policy',choose_earliest_contact)):
                 seed(h,width,height)
                 h.ball(x=95,y=423,dx=0,dy=9,speed=9,angle=90)
                 tracked=h.n.owners['balls'].first
@@ -146,7 +146,7 @@ def main():
                 cases.append(outcome);policy_results.append({k:v for k,v in outcome.items() if k!='trace'})
         # Compare the candidate's wall projection through actual full-frame input.
         for width,height,side in itertools.product((36,73,146,219),(5,9),('left','right')):
-            for label,policy in (('frozen-greatest-y',choose_mouse),('earliest-contact-candidate',choose_earliest_contact)):
+            for label,policy in (('frozen-greatest-y',choose_mouse),('contact-policy',choose_earliest_contact)):
                 seed(h,width,height)
                 x,dx=(20,-5) if side=='left' else (619-height,5)
                 h.ball(x=x,y=410,dx=dx,dy=7,speed=9,angle=90)
@@ -166,7 +166,7 @@ def main():
                 cases.append(outcome);policy_results.append({k:v for k,v in outcome.items() if k!='trace'})
         assert len(cases) == 320 and sum(h.cases.values()) == 2560
         for outcome in policy_results:
-            if outcome['policy'] == 'earliest-contact-candidate':
+            if outcome['policy'] == 'contact-policy':
                 if outcome['family'] == 'multi-ball-delivery': assert outcome['fast_ball_caught']
                 if outcome['family'] == 'passed-ball-priority': assert outcome['viable_ball_caught']
         assert h.t.read(0x401000,0x1f000) == original_code
@@ -177,7 +177,7 @@ def main():
                       inputs=inputs,originals=originals,cases=len(cases),compared_frames=sum(h.cases.values()),
                       immutable_code_sha256=hashlib.sha256(original_code).hexdigest(),vectors=cases,policy_results=policy_results,
                       scope='Original/core controlled collision and ordinary-input counterfactual integration; no new direct owner or exact promotion.',
-                      limitations=['Candidate is test-only; its complete campaign, bonuses and special movement remain unvalidated.',
+                      limitations=['The live contact policy is exercised here; bonus and special-movement coverage has separate bounded fixtures.',
                                    'Synthetic empty-board surface/dependency fixtures and known valid list/sprite metadata.',
                                    'Whole native/original state, list roots/cursors, ordered effects, pixels and free poisoning compared by reused Core Harness.',
                                    'No physical Windows input delivery, atomic SDK samples or full campaign acceptance.',

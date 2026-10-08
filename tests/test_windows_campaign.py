@@ -28,7 +28,9 @@ from test_windows_runtime import command
 
 # Contracts retained by the resource, entity and power-up REA owner suites.
 FIELDS = dict(FIELDS, sprite_banks=0x425980, sprite_bank=0x421088,
-              bonuses=0x43FAC8, paddle_width=0x43FA94)
+              bonuses=0x43FAC8, paddle_width=0x43FA94,
+              paddle_previous_x=0x43A904, paddle_previous_y=0x43A908,
+              bonus_3_ticks=0x43A88C)
 SHAPES = {'balls': ':ball_list', 'bonuses': ':bonus_list', 'board_tiles': ':board'}
 READER = ROOT / 'build/probes/windows-runtime/campaign-reader.exe'
 
@@ -290,6 +292,8 @@ def observe(profile, args, reports):
 
 
 def main():
+    if not __debug__:
+        raise RuntimeError("Campaign observations require assertions; do not use -O.")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--profiles', nargs='+', choices=('original', 'vc40', 'windows-i686'),
                         default=['original', 'vc40', 'windows-i686'])

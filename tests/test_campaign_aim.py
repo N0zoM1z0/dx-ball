@@ -8,7 +8,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
-from campaign_controller import CONTACT_BIASES, DECISIONS_PER_CONTACT_BIAS, choose_mouse
+from campaign_controller import CONTACT_BIASES, DECISIONS_PER_CONTACT_BIAS, choose_greatest_y as choose_mouse
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
 from rotation_oracle import RotationTarget
@@ -20,7 +20,8 @@ def digest(path):
 
 
 def main():
-    assert __debug__
+    if not __debug__:
+        raise RuntimeError("Campaign aim comparisons require assertions; do not use -O.")
     limit_cpu()
     with session_lock():
         target = RotationTarget()

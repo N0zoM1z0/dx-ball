@@ -3,6 +3,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import subprocess
 
@@ -10,6 +11,21 @@ from resource_limits import limit_cpu
 from windows_runtime import digest
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def silent_audio_environment():
+    """Keep Wine audio APIs active while routing probe playback to a null sink."""
+    name = 'dxball_reconstruction_silent'
+    sinks = json.loads(subprocess.check_output(
+        ['pactl', '--format=json', 'list', 'sinks'], text=True))
+    if not any(sink['name'] == name for sink in sinks):
+        subprocess.run(['pactl', 'load-module', 'module-null-sink',
+                        'sink_name=' + name,
+                        'sink_properties=device.description=DX-Ball-Reconstruction-Silent'],
+                       check=True, stdout=subprocess.DEVNULL)
+    environment = os.environ.copy()
+    environment['PULSE_SINK'] = name
+    return environment
 
 
 def main():
@@ -67,12 +83,14 @@ def main():
     request = directory / 'scenario.json'
     request.write_text(json.dumps(scenario, indent=2) + '\n')
     evidence_path = directory / 'evidence.json'
+    audio_environment = (os.environ.copy() if args.probe in ('ddraw-loss', 'resources')
+                         else silent_audio_environment())
     # The child harness takes the compiler/Wine session lock. REA's process
     # recorder owns no Ghidra session; a parent lock would deadlock that child.
     with evidence_path.open('w') as output, (directory / 'rea.log').open('w') as log:
         captured = subprocess.run([str(ROOT / 'scripts/rea'), 'capture-process',
-                                   str(request), '--format', 'json'],
-                                  cwd=ROOT, stdout=output, stderr=log)
+                                  str(request), '--format', 'json'],
+                                  cwd=ROOT, env=audio_environment, stdout=output, stderr=log)
     if captured.returncode:
         print('REA capture failed; see', directory.relative_to(ROOT))
         return captured.returncode
@@ -85,6 +103,9 @@ def main():
                'scenario_sha256': digest(request), 'evidence_sha256': digest(evidence_path),
                'inputs': {str(path.relative_to(ROOT)): digest(path) for path in
                           (Path(__file__), script, ROOT / 'scripts/rea.py')},
+               'audio': {'playback': ('not-applicable' if args.probe in ('ddraw-loss', 'resources') else 'silent'),
+                         'pulse_sink': audio_environment.get('PULSE_SINK'),
+                         'scope': 'Host playback routing; game audio APIs remain active.'},
                'limitations': evidence['limitations']}
     (directory / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
     print('REA', evidence['evidence_id'], 'observed', exit_state)

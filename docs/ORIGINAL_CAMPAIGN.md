@@ -197,12 +197,12 @@ These integration fixtures add no direct owner cases or exact units.
 
 The tests cover cached paddle position, wall clamping, mixed-speed balls,
 already-passed balls, and ordinary mouse requests with declared sampling and
-delivery delays. The current live controller is the baseline. A
-[test-only candidate](../tests/campaign_contact_candidate.py) chooses the
+delivery delays. The original comparison used greatest-Y priority as its
+live baseline. The [contact policy](CONTACT_POLICY.md) chooses the
 earliest falling-ball contact and projects horizontal movement by the original
 discrete wall clamp/reflection rule. It retains the six contact offsets.
 
-| Controlled family | Current controller | Test-only candidate |
+| Controlled family | Greatest-Y baseline | Contact policy |
 | --- | ---: | ---: |
 | Mixed-speed fast-ball catches | 16/72 | 72/72 |
 | Viable-ball catches beside a passed ball | 0/8 | 8/8 |
@@ -216,15 +216,24 @@ ball can contact first. The declared delays are frame controls, not measured
 Wine/Windows latency. Fixtures use synthetic empty boards, controlled
 non-game dependencies and known valid sprites/list metadata. They do not
 cover active kind-3 movement, bonuses, atomic SDK sampling or a full campaign.
-The candidate remains confined to tests pending those wider observations.
-Its shared `lookahead=0` also changes bonus projection, which these empty-bonus
-fixtures do not validate. Mixed-speed counts track the fast ball's catch;
-their fourteen-frame trace does not establish survival of every ball or round.
+The initial candidate was confined to tests pending those wider observations.
+Its shared `lookahead=0` changed bonus projection; the current policy keeps
+bonus lookahead independent. These 320 fixtures still contain no bonuses.
+Mixed-speed counts track the fast ball's catch; their fourteen-frame trace does
+not establish survival of every ball or round. The subsequent
+[expanded suite](CONTACT_POLICY.md) compares 1,464 fixtures / 21,168 complete
+frames, including moving bonuses, all six phases, gravity/wall boundaries and
+nonzero kind-3 storage. Its 40-frame two-ball traces track both initially
+falling balls: the contact policy catches and retains both in 72/72 fixtures,
+versus 16/72 for greatest-Y priority. No live kind-3 producer or full campaign
+is established. The live controller now uses the same contact policy.
 
 The contact suite now rejects optimized Python explicitly before constructing
-the harness or writing a report. A fresh replay against the accepted sound-control
-native product passes the same 320 fixtures / 2,560 compared calls; it adds
-no acceptance cases. The original entries and current live policy are unchanged.
+the harness or writing a report. A fresh replay against the accepted core-queue native
+product passes the same 320 fixtures / 2,560 compared calls; it adds no owner
+acceptance cases. Greatest-Y remains an explicit historical comparison policy.
+The aim, expanded policy, connected-episode and live-observation entry points
+also reject optimized Python before executing their checks.
 
 ```bash
 scripts/repo-python tests/test_campaign_contact.py
@@ -254,7 +263,9 @@ COM, audio, glyph, resource dispatch and non-game boundaries remain controlled.
 Fixture mouse requests bypass the Windows message loop. Native host pointer
 width changes the raw terminal shared-storage layout; this test stops before
 that boundary and does not substitute for the actual x86 Windows campaign.
-Its connected frames are separate from the 95,873 direct owner cases.
+Its connected frames are separate from direct owner cases (95,873 at that
+first checkpoint). The current contact-policy replay compares 16,756 frames
+and five advances; it retains three lives at every transition.
 
 ## Storage and evidence
 

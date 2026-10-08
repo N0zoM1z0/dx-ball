@@ -44,6 +44,11 @@ subsequent shared-input change. Commit stable checkpoints frequently. All commit
 and start with `gpt-6.1-sol: `. The user has authorized a public GitHub `dx-ball`
 repository and publishing these reconstruction sources.
 
+Run game/audio probes silently. REA's `capture-windows-probe.py` routes their
+PulseAudio playback to `dxball_reconstruction_silent`; use that capture entry
+point or the same `PULSE_SINK` for direct Wine probes. Keep game audio APIs active
+and leave default host output and unrelated applications unchanged.
+
 Write detailed English commit bodies for subsequent work: describe the actual
 REA operations/evidence used, resulting implementation, and validation. Mention
 REA naturally when relevant; keep the required subject prefix.

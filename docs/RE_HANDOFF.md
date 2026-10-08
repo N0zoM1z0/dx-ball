@@ -1,5 +1,37 @@
 # Current handoff
 
+The [campaign contact policy](CONTACT_POLICY.md) now uses earliest reachable
+falling-ball contact, discrete wall clamping and independent bonus lookahead.
+The expanded oracle passes **1,464 fixtures / 21,168 complete original/native
+frames** across all six phases, moving rewards/hazards, gravity boundaries,
+odd/even geometry and controlled nonzero kind-3 storage. All 72 continued
+two-ball fixtures catch and retain both tracked balls, versus 16 for the
+greatest-Y baseline. Paired fixtures show no additional life-loss regressions,
+but harmful-bonus loss remains and avoidance is best effort. Catch metrics
+require a positive-to-negative transition; an initially rising ball is not
+counted as a new catch. The pre-correction diagnostic stays archived.
+
+The 320-contact / 2,560-call suite and 216 historical rebound fixtures pass.
+After correcting contact-policy naming/scope, contact and the expanded suite
+are freshly replayed; completed aim and five-board episode reports are reused
+only after full declared-input/report checks. The live-policy episode compares
+**16,756 frames and five advances**, retaining three lives at every transition.
+The SDK reader emits previous paddle X/Y, kind-3 ticks and bonus gravity.
+Five optimized-Python invocations reject before report, compiler or runtime
+work. Game C, the accepted native product, all owner inputs/reports and exact
+objects remain unchanged; acceptance stays **235 / 109,805 / 36 / 3,518**.
+
+REA capture `ev_fe68d60b541b3d4c36af3de49724b3b6d15a51d2f8b969d8d3b72ddccb2e0ee7`
+records complete initial boards 0/1 in original, VC4 and MinGW, in about 39/37/27
+seconds. Its exact producer/input closure is sealed before the audio change.
+At the user's request, game captures now route playback to a dedicated
+PulseAudio null sink; game audio APIs and unrelated host playback remain active.
+Actual DX-Ball stream routing is observed. Silent original-only capture
+`ev_a5eaf855aaac8738e31c74803c466a27df0ab8b5259d48a4e54c44d6278e5552`
+exits zero after 211 seconds, verifies initial indices 0–3 and retains three
+lives. The separate 25-second silent episode is also retained. These bounded
+controls do not prove all 50 boards, terminal routing or physical audio.
+
 Source commit `dc0d8e3` passes public CI **37769863091**. Its SHA-sealed
 `core-queues-235-36` checkpoint retains 488 files, 83 external references and
 four lossless gzip artifacts. Cleanup journal `20261008T112505843605Z` processes

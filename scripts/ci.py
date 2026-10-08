@@ -47,6 +47,7 @@ def main():
     python("tests/test_rotation_coff.py")
     python("tests/test_campaign_aim.py")
     python("tests/test_campaign_contact.py")
+    python("tests/test_campaign_policy_differential.py")
     python("tests/test_raster_differential.py")
     python("scripts/compile-semantic-build.py", "--build", "raster")
     python("tests/test_raster_coff.py")

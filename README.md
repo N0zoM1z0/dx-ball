@@ -104,8 +104,10 @@ startup's mismatched icon identifier and compares a resource-free control.
 The [original-board integration](docs/ORIGINAL_CAMPAIGN.md) adds a persistent
 read-only SDK observer and ordinary mouse controls, with bounded state reports
 and REA process Evidence. A later original-only control verifies initial boards 0–3 with ordinary mouse
-input. The revised contact controller is checked against the actual original
-rebound and 17,688 connected original/native frames. These bounded runs remain
+input. The [contact policy](docs/CONTACT_POLICY.md) follows the recovered discrete
+wall/collision contracts, with 1,464 controlled fixtures and 21,168 compared
+frames. Its five-board episode compares another 16,756 original/native frames.
+These bounded runs remain
 separate from full campaign acceptance.
 
 The [runtime-library investigation](docs/CRT_PROVENANCE.md) pairs REA instruction

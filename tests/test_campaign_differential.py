@@ -127,6 +127,8 @@ def observed(harness):
 
 
 def main():
+    if not __debug__:
+        raise RuntimeError("Campaign comparisons require assertions; do not use -O.")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--frames', type=int, default=40000)
     parser.add_argument('--boards', type=int, choices=range(1, 50), default=5,
