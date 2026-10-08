@@ -38,6 +38,34 @@ Full VC4 and MinGW campaigns, physical audio/Windows behavior and synchronized
 trajectory or pixel equivalence remain unverified. Maintained source and exact
 acceptance are unchanged. The earlier timeout below remains negative evidence.
 
+## Maintained allocation integration control
+
+After [shared allocation integration](ALLOCATOR_OWNER.md), both rebuilt products
+pass a fresh bounded transition with the unchanged campaign bank. REA process
+Evidence `ev_7bb287fac944b6b78929cba21f4bc7b24f904f6a08104f8fcc30cd304b834e44`
+records child exit zero and the complete final-report digest. VC4 verifies
+initial slots 0 and 1 in 27.655 seconds; MinGW does so in 34.124 seconds. Both
+retain three lives. Independent clock/RNG/input trajectories produce scores
+844 and 1202; equal scores or synchronized frames were not a predicate.
+
+These runs use current maintained source defaults, including the recovered
+allocation chain and real Windows adapter. They add integration evidence,
+not direct owner cases or full-campaign acceptance. No target bytes, campaign
+boards or game memory are changed. The SDK stream is consumed into a digest;
+only bounded transitions are retained. Playback stays on the dedicated silent
+sink, and the processes use one allowed CPU.
+
+A full VC4 run with the same verified products is now in progress. Its predicate
+still requires all 50 complete initial board slots and the cleared menu state
+at index 50. Completion remains unaccepted while it runs; MinGW's full campaign
+also remains open. The live process identity and periodic report are retained
+privately, separately from the immutable original-only full control.
+
+```bash
+scripts/repo-python scripts/capture-windows-probe.py --probe campaign \
+  --profile vc40 --campaign-seconds 7200
+```
+
 ## Windows observation
 
 `tests/windows_campaign_reader.c` is a persistent i686 SDK observer. It requests

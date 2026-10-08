@@ -11,6 +11,24 @@ game runs silently on one allowed CPU. Source totals stay
 **243 source-present (235 game + 8 runtime) / 111,242 direct cases /
 35 exact units / 3,379 bytes**.
 
+The current VC4/MinGW original-board pilot passes with the maintained allocation
+defaults: complete initial slots 0 and 1, three lives, in 27.655 / 34.124 seconds.
+REA `ev_7bb287fac944b6b78929cba21f4bc7b24f904f6a08104f8fcc30cd304b834e44`
+binds the bounded progression report. The full VC4 50-board capture is now live
+on one allowed CPU with silent playback; its result is pending. Inspect
+`.analysis/allocator-vc40-full-phase.json` and revalidate its capture PID/start
+ticks plus the recorded exec session before polling. Do not restart from a
+stale phase or observation timeout. It holds the runtime/compiler session;
+new source/compiler replays should wait for its terminal result. The original
+full-control archive and source/exact acceptance remain unchanged.
+
+The independent frame-connection design review identifies a concrete synthetic
+heap/COM callback address collision in the old private helper. A new connected
+frame oracle must choose disjoint callbacks, restore maintained native allocation
+defaults after harness setup, remove only the two original new/delete replacement
+hooks, and preserve dynamic node ownership/terminal failure boundaries. This
+review is a plan, not executed frame-allocation acceptance.
+
 The [maintained allocation owner](ALLOCATOR_OWNER.md) now supplies new/delete
 and malloc/release defaults for nodes, music, resources and sound. All 23 fresh
 owner oracles pass with the shared native library. Its 1,433 fixtures / 1,437
@@ -31,9 +49,9 @@ The original pre-integration gold and private MIDI/resource/sound connections
 retain SHA-sealed historical snapshots. They are supporting evidence, not new
 executions of current production defaults. Full connected owner failure paths,
 handler registration, complete CRT startup/teardown and reconstructed full
-campaigns remain open. Next work should exercise the maintained allocation
-chain through complete frames and then bounded original-board controls before
-long VC4/MinGW campaign runs.
+campaigns remain open. The bounded original-board pilot is now complete and full VC4 observation
+is live as described above. Connected frame failure controls and the subsequent
+MinGW full run remain next steps.
 
 Verified retention removes superseded failed working products, deduplicates
 immutable evidence and checks all 49 original files. The measured cleanup
