@@ -204,3 +204,11 @@ frames and five advances separately from direct-case counts. A read-only audit
 finds no concrete ABI, stack-alignment or fixture-lifetime defect. Four uniform
 seeds establish selected storage fixtures for the frozen compiler build; they
 do not establish arbitrary uninitialized storage or every compiler layout.
+
+The accepted source checkpoint seals 436 files and 67 external references.
+Its complete 2,231,951-byte primary report retains every buffer in a 73,970-byte
+lossless gzip artifact, verified by expanded SHA. Post-retention cleanup removes
+only verified historical/cache copies and disposable probes; all 4,069 frozen
+paths and current acceptance inputs/products verify afterward. Unique REA
+records, originals and installed tools are retained. See the
+[current handoff](RE_HANDOFF.md) for the cleanup journal and storage scope.

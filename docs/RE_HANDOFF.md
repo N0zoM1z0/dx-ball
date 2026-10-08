@@ -26,6 +26,25 @@ ABI/stack/lifetime audit finds no concrete defect; physical APIs, arbitrary
 unwritten storage/layouts, invalid backing and overflowing paths remain open.
 See [bitmap investigation](BITMAP_INVESTIGATION.md).
 
+Source commit `edf7fd6` passes public CI run **37738119917**, including the
+portable build, ledger checks and strict i686 Windows compilation. The SHA-sealed
+`.analysis/checkpoints/bitmap-222-36/` retains 436 files and 67 external
+references, including actual products, complete report/source closures,
+Windows captures and the corrected private promotion-count diagnostic. The
+2,231,951-byte bitmap report is retained in 73,970 gzip bytes; the original
+bytes verify after expansion. The obsolete tool-catalog inspection cache is
+also retained losslessly before its raw copy is removed.
+
+Cleanup journal `20261008T063204396473Z` performs 1,563 operations, about
+12.62 MiB of logical duplicate/probe bytes. Verified historical draft/cache
+removal processes another 6.41 MiB, for **19.04 MiB combined**. This is a logical
+byte count, not measured filesystem block savings. All **4,069 captured
+immutable paths / 67 external references / eight expanded gzip artifacts**
+verify, together with current acceptance products and inputs. The immediate
+next preview is empty. Analysis is about 388 MiB and build 33 MiB; installed
+pinned tools remain intact at about 1.9 GiB. Originals, unique REA records,
+manual saves and the mutable provider snapshot are preserved.
+
 The preceding checkpoints below retain their historical totals and boundaries.
 
 The raster owner is accepted: triangle, polygon, clipped polygon and horizontal
