@@ -34,8 +34,8 @@ target_address = 0x00406400
 size = 63
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x17, type = "DIR32", symbol = "$T1084", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
-  { offset = 0x20, type = "DIR32", symbol = "$T1085", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
+  { offset = 0x17, type = "DIR32", symbol = "$T1102", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
+  { offset = 0x20, type = "DIR32", symbol = "$T1103", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
   { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0, target = 0x004210A0 },
   { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
 ]
@@ -106,7 +106,7 @@ target_address = 0x0040CC30
 size = 96
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "$SG734", addend = 0, target = 0x00422890, data_hex = "726200" },
+  { offset = 0x7, type = "DIR32", symbol = "$SG752", addend = 0, target = 0x00422890, data_hex = "726200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
@@ -124,7 +124,7 @@ target_address = 0x0040CC90
 size = 96
 boundary_evidence = "docs/BUILD_MATCHING.md"
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "$SG738", addend = 0, target = 0x00422894, data_hex = "776200" },
+  { offset = 0x7, type = "DIR32", symbol = "$SG756", addend = 0, target = 0x00422894, data_hex = "776200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },

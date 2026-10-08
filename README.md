@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **225 maintained functions**, **109,215 target differential cases**, and
+> entity owners: **235 maintained functions**, **109,805 target differential cases**, and
 > **36 byte-exact functions totaling 3,518 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
@@ -48,7 +48,10 @@ through board effects and paddle rebounds, recovering the game's computed
 trigonometry tables and checking its rounding against original execution.
 The [core gameplay investigation](docs/CORE_OWNER.md) connects the main ball
 updater to the full frame, testing collisions, shot damage and deferred powers
-over 200 continuous frames. The [runtime investigation](docs/RUNTIME_OWNER.md)
+over 200 continuous frames. The [queue investigation](docs/CORE_QUEUES.md) uses
+REA instructions to recover the full integer returns and cursor effects of
+projectile/fire-effect helpers, checked in 590 direct cases and 64 separate
+connected calls. The [runtime investigation](docs/RUNTIME_OWNER.md)
 follows the frame caller into initialization, paddle animation and life-loss
 reset, checking 36 further connected frames through game-over dispatch. REA's
 caller evidence distinguished the actual gameplay initializer from an intro

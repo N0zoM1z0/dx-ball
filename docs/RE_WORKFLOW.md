@@ -28,6 +28,13 @@ packages and their native engines before selecting an interpreter.
    Source presence, semantic acceptance, and exactness are independent ledgers.
 8. Update the knowledge base and handoff, validate ledgers, regenerate progress,
    and commit the bounded result with an English `gpt-6.1-sol: ...` subject.
+9. Periodically seal accepted inputs, products and diagnostics, then run
+   `scripts/repo-python scripts/clean-local.py` to preview cleanup. Apply it
+   with `--apply` after checking the retained hashes. Share identical immutable
+   evidence, compress large historical reports losslessly, and remove disposable
+   probes; preserve originals, pinned tools, unique evidence and manual saves.
+   Verify the retained files and current acceptance after cleanup, and record
+   actual disk usage separately from logical duplicate bytes.
 
 The observed PE linker is 3.00. VC4.0 compiler 10.00.5270 / linker 3.00.5270 is
 the first hash-pinned candidate. Per-unit matching establishes emission

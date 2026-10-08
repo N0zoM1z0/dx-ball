@@ -23,65 +23,112 @@ DxBallFrameOps dxball_frame_ops = {
     dxball_last_brick, dxball_draw_last_brick, dxball_present, dxball_restart_round
 };
 
-/* Typed helpers preserve the target's cursor movement, including remove then
-   advance skipping a successor. They have no independent target-entry claims. */
-#define DEFINE_QUEUE_HELPERS(prefix, List, Node) \
-static void prefix##_append(List *list) \
-{ \
-    Node *node; \
-    node = (Node *)dxball_allocate_node(sizeof(Node)); \
-    if (node == NULL) exit(1); \
-    node->previous = list->last; \
-    node->next = NULL; \
-    if (list->last != NULL) list->last->next = node; \
-    else list->first = node; \
-    list->last = list->current = node; \
-} \
-static DxBallInt prefix##_begin(List *list) \
-{ \
-    list->current = list->first; \
-    return list->current != NULL; \
-} \
-static DxBallInt prefix##_advance(List *list) \
-{ \
-    if (list->current == NULL) return 0; \
-    list->current = list->current->next; \
-    if (list->current != NULL) return 1; \
-    list->current = list->first; \
-    return 0; \
-} \
-static void prefix##_remove(List *list) \
-{ \
-    Node *node; \
-    node = list->current; \
-    if (node == NULL) return; \
-    if (node->previous != NULL) node->previous->next = node->next; \
-    if (node->next != NULL) { \
-        node->next->previous = node->previous; \
-        list->current = node->next; \
-    } else list->current = node->previous; \
-    if (list->first == node) list->first = node->next; \
-    if (list->last == node) list->last = node->previous; \
-    dxball_deallocate_node(node); \
+/* Both typed owners use ECX and preserve remove/advance successor skipping. */
+DxBallInt DXBALL_FASTCALL dxball_append_projectile(DxBallProjectileList *list)
+{
+    DxBallProjectileNode *node;
+    node = (DxBallProjectileNode *)dxball_allocate_node(sizeof(DxBallProjectileNode));
+    if (node == NULL) exit(1);
+    node->previous = list->last;
+    node->next = NULL;
+    if (list->last != NULL) list->last->next = node;
+    else list->first = node;
+    list->last = list->current = node;
+    return 1;
+}
+DxBallInt DXBALL_FASTCALL dxball_begin_projectiles(DxBallProjectileList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+DxBallInt DXBALL_FASTCALL dxball_advance_projectile(DxBallProjectileList *list)
+{
+    if (list->current == NULL) return 0;
+    list->current = list->current->next;
+    if (list->current != NULL) return 1;
+    list->current = list->first;
+    return 0;
+}
+DxBallInt DXBALL_FASTCALL dxball_remove_projectile(DxBallProjectileList *list)
+{
+    DxBallProjectileNode *node;
+    node = list->current;
+    if (node == NULL) return 0;
+    if (node->previous != NULL) node->previous->next = node->next;
+    if (node->next != NULL) {
+        node->next->previous = node->previous;
+        list->current = node->next;
+    } else list->current = node->previous;
+    if (list->first == node) list->first = node->next;
+    if (list->last == node) list->last = node->previous;
+    dxball_deallocate_node(node);
+    return 1;
 }
 
-DEFINE_QUEUE_HELPERS(projectile, DxBallProjectileList, DxBallProjectileNode)
-DEFINE_QUEUE_HELPERS(fire, DxBallFireEffectList, DxBallFireEffectNode)
+
+DxBallInt DXBALL_FASTCALL dxball_append_fire_effect(DxBallFireEffectList *list)
+{
+    DxBallFireEffectNode *node;
+    node = (DxBallFireEffectNode *)dxball_allocate_node(sizeof(DxBallFireEffectNode));
+    if (node == NULL) exit(1);
+    node->previous = list->last;
+    node->next = NULL;
+    if (list->last != NULL) list->last->next = node;
+    else list->first = node;
+    list->last = list->current = node;
+    return 1;
+}
+DxBallInt DXBALL_FASTCALL dxball_begin_fire_effects(DxBallFireEffectList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+DxBallInt DXBALL_FASTCALL dxball_advance_fire_effect(DxBallFireEffectList *list)
+{
+    if (list->current == NULL) return 0;
+    list->current = list->current->next;
+    if (list->current != NULL) return 1;
+    list->current = list->first;
+    return 0;
+}
+DxBallInt DXBALL_FASTCALL dxball_remove_fire_effect(DxBallFireEffectList *list)
+{
+    DxBallFireEffectNode *node;
+    node = list->current;
+    if (node == NULL) return 0;
+    if (node->previous != NULL) node->previous->next = node->next;
+    if (node->next != NULL) {
+        node->next->previous = node->previous;
+        list->current = node->next;
+    } else list->current = node->previous;
+    if (list->first == node) list->first = node->next;
+    if (list->last == node) list->last = node->previous;
+    dxball_deallocate_node(node);
+    return 1;
+}
+
+DxBallInt dxball_retire_projectile(void)
+{
+    DxBallInt removed;
+    removed = dxball_remove_projectile(&dxball_projectiles);
+    --dxball_projectile_count;
+    return removed;
+}
 
 /* Lifecycle helpers, without separate target-entry claims. */
 void dxball_clear_projectiles(void)
 {
-    while (dxball_projectiles.current != NULL) projectile_remove(&dxball_projectiles);
+    while (dxball_projectiles.current != NULL) dxball_remove_projectile(&dxball_projectiles);
 }
 
 void dxball_clear_fire_effects(void)
 {
-    while (dxball_fire_effects.current != NULL) fire_remove(&dxball_fire_effects);
+    while (dxball_fire_effects.current != NULL) dxball_remove_fire_effect(&dxball_fire_effects);
 }
 
 void dxball_spawn_fire_effect(DxBallInt x, DxBallInt y)
 {
-    fire_append(&dxball_fire_effects);
+    dxball_append_fire_effect(&dxball_fire_effects);
     dxball_fire_effects.current->x = x - 24;
     dxball_fire_effects.current->y = y - 23;
     dxball_fire_effects.current->ticks = 0;
@@ -93,13 +140,13 @@ void dxball_spawn_fire_effect(DxBallInt x, DxBallInt y)
 
 void dxball_process_fire_effects(void)
 {
-    if (fire_begin(&dxball_fire_effects)) {
+    if (dxball_begin_fire_effects(&dxball_fire_effects)) {
         do {
             dxball_frame_ops.draw_effect_sprite(dxball_fire_effects.current->ticks + 145,
                 dxball_fire_effects.current->x, dxball_fire_effects.current->y);
             ++dxball_fire_effects.current->ticks;
-            if (dxball_fire_effects.current->ticks > 21) fire_remove(&dxball_fire_effects);
-        } while (fire_advance(&dxball_fire_effects));
+            if (dxball_fire_effects.current->ticks > 21) dxball_remove_fire_effect(&dxball_fire_effects);
+        } while (dxball_advance_fire_effect(&dxball_fire_effects));
     }
 }
 
@@ -300,7 +347,7 @@ void dxball_update_projectiles(void)
 {
     DxBallInt column, row;
     DxBallProjectileNode *node;
-    if (projectile_begin(&dxball_projectiles)) {
+    if (dxball_begin_projectiles(&dxball_projectiles)) {
         do {
             node = dxball_projectiles.current;
             node->previous_x = node->x; node->previous_y = node->y;
@@ -310,14 +357,14 @@ void dxball_update_projectiles(void)
             column = (node->x - 20 + dxball_sprite_banks[dxball_sprite_bank].sprites[32]->width / 2) / 30;
             row = (node->y - 50) / 15;
             if (node->y < 0) {
-                projectile_remove(&dxball_projectiles); --dxball_projectile_count;
+                dxball_retire_projectile();
             } else if (row >= 0 && row < 20 && dxball_board_tiles[column + row * 20] != 0) {
                 if (dxball_destroy_hard_tiles == 0) {
-                    projectile_remove(&dxball_projectiles); --dxball_projectile_count;
+                    dxball_retire_projectile();
                 }
                 if (dxball_hit_board_tile(column, row)) dxball_score += 4;
             }
-        } while (projectile_advance(&dxball_projectiles));
+        } while (dxball_advance_projectile(&dxball_projectiles));
     }
 }
 
@@ -325,10 +372,10 @@ void dxball_fire_projectiles(void)
 {
     DxBallSprite *sprite;
     sprite = dxball_sprite_banks[dxball_sprite_bank].sprites[32];
-    projectile_append(&dxball_projectiles);
+    dxball_append_projectile(&dxball_projectiles);
     dxball_projectiles.current->x = dxball_paddle_x - (DxBallInt)((long double)dxball_paddle_width * 0.425) - sprite->width / 2;
     dxball_projectiles.current->y = dxball_paddle_y - sprite->height / 2;
-    projectile_append(&dxball_projectiles);
+    dxball_append_projectile(&dxball_projectiles);
     dxball_projectiles.current->x = dxball_paddle_x + (DxBallInt)((long double)dxball_paddle_width * 0.43) - sprite->width / 2;
     dxball_projectiles.current->y = dxball_paddle_y - sprite->height / 2;
     dxball_projectile_count += 2;
@@ -366,6 +413,11 @@ static void apply_ball_sprite(DxBallInt sprite)
     }
 }
 
+void dxball_ignite_balls(void)
+{
+    apply_ball_sprite(61);
+}
+
 void dxball_game_frame(void)
 {
     if (dxball_paused == 1) {
@@ -387,10 +439,10 @@ void dxball_game_frame(void)
     dxball_paddle_previous_x = dxball_paddle_x;
     dxball_paddle_previous_y = dxball_paddle_y;
     dxball_process_brick_effects();
-    if (projectile_begin(&dxball_projectiles)) {
+    if (dxball_begin_projectiles(&dxball_projectiles)) {
         do {
             dxball_frame_ops.draw_effect_sprite(32, dxball_projectiles.current->x, dxball_projectiles.current->y);
-        } while (projectile_advance(&dxball_projectiles));
+        } while (dxball_advance_projectile(&dxball_projectiles));
     }
     dxball_process_fire_effects();
     dxball_frame_ops.draw_paddle();
@@ -426,10 +478,10 @@ void dxball_game_frame(void)
         dxball_clone_balls(); dxball_bonus_12_active = 0;
     }
     if (dxball_bonus_7_active == 1) {
-        apply_ball_sprite(61); dxball_bonus_7_active = 0;
+        dxball_ignite_balls(); dxball_bonus_7_active = 0;
     }
     if (dxball_remaining_bricks < 1 && !dxball_begin_brick_effects(&dxball_brick_effects)
-        && !fire_begin(&dxball_fire_effects)) dxball_advance_level();
+        && !dxball_begin_fire_effects(&dxball_fire_effects)) dxball_advance_level();
     dxball_frame_ops.restart_round();
     if (dxball_mouse_action == 1) {
         dxball_launch_requested = 1;

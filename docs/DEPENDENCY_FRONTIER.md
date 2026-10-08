@@ -6,9 +6,9 @@ closed, target-matching Ghidra records; no new binary query or provider import
 was needed. This is a static dependency inventory, not additional function
 acceptance or observed runtime coverage.
 
-The review retains 182 Evidence records covering **177 of 225 maintained
-entries**. Their callee lists reach **41 unmaintained imported entries**:
-31 still have unknown origins, and ten now have runtime classifications.
+The review retains 193 Evidence records covering **187 of 235 maintained
+entries**. Their callee lists reach **33 unmaintained imported entries**:
+23 still have unknown origins, and ten now have runtime classifications.
 Those are copied ledger labels, not classifications inferred by this review.
 Thirty dossiers exceed its 2 MiB per-record read boundary, and four are in runs
 without a close record; all are excluded. Thus the other 48 maintained entries
@@ -20,13 +20,13 @@ The most frequently referenced targets in this bounded set are:
 
 | Target | Saved candidate name | Distinct maintained callers | Provisional bytes |
 | --- | --- | ---: | ---: |
+| `0x00417910` | `FUN_00417910` | 9 | 18 |
+| `0x00416760` | `FUN_00416760` | 9 | 14 |
 | `0x0041678C` | `__ftol` | 8 | 39 |
-| `0x00417910` | `FUN_00417910` | 7 | 18 |
-| `0x00416760` | `FUN_00416760` | 7 | 14 |
+| `0x00416770` | `FUN_00416770` | 7 | 16 |
 | `0x00417DF0` | `FUN_00417df0` | 6 | 119 |
 | `0x00417C40` | `_memset` | 6 | 88 |
 | `0x004177F0` | `FUN_004177f0` | 6 | 7 |
-| `0x00416770` | `FUN_00416770` | 5 | 16 |
 | `0x0041F570` | `__ultoa` | 4 | 30 |
 
 Names and sizes come from the existing imported inventory. A familiar library
@@ -58,8 +58,8 @@ The private inventory `.analysis/maintained-call-frontier.json` binds the
 current function/origin ledgers, its producer and each retained Evidence file
 by SHA-256. It preserves the excluded-record list and per-target caller
 references, so a later pass can expand the boundary without repeating the
-existing queries. The accepted totals remain **225 maintained / 109,215 direct
-cases / 36 exact units / 3,518 bytes**, with 289 unknown origins and 14 identified
+existing queries. The accepted totals remain **235 maintained / 109,805 direct
+cases / 36 exact units / 3,518 bytes**, with 279 unknown origins and 14 identified
 runtime entries.
 
 ## Focused REA instruction review
@@ -107,5 +107,7 @@ entries. Its three new dossiers also resolve the HeapAlloc/new-handler and
 `0x00417950` termination contracts. The latter is `doexit`; the `0x00417910`
 wrapper is C `exit`. The inventory is refreshed against those origin labels and the three
 subsequently maintained [sound controls](SOUND_CONTROLS.md). Their closed
-dossiers add three covered entries; the original forty-one-target frontier
-and its exclusions remain the same. Exact counts are unchanged.
+dossiers added three covered entries. The later [core queue batch](CORE_QUEUES.md)
+adds ten covered entries from eleven distinct matching dossiers; eight former
+frontier targets now have independent semantic acceptance, leaving 33 targets.
+The original excluded-record boundary remains the same. Exact counts are unchanged.

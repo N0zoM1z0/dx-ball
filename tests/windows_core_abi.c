@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "../src/sound.h"
 #include "../src/midi.h"
+#include "../src/core.h"
 
 #define CHECK(expression, name) typedef char name[(expression) ? 1 : -1]
 #define FIELD(ours, own_field, sdk, sdk_field, name) \
@@ -51,17 +52,31 @@ CHECK(offsetof(DxBallSound, pan) == 28, sound_record_pan);
 CHECK(offsetof(DxBallSound, volume) == 32, sound_record_volume);
 CHECK(sizeof(DxBallSoundBufferDesc) == 20, sound_desc_size);
 CHECK(offsetof(DxBallSoundBufferDesc, format) == 16, sound_desc_format);
+CHECK(sizeof(DxBallProjectileNode) == 24, projectile_node_size);
+CHECK(offsetof(DxBallProjectileNode, next) == 16, projectile_next);
+CHECK(offsetof(DxBallProjectileNode, previous) == 20, projectile_previous);
+CHECK(sizeof(DxBallProjectileList) == 12, projectile_list_size);
+CHECK(offsetof(DxBallProjectileList, current) == 0, projectile_current);
+CHECK(offsetof(DxBallProjectileList, first) == 4, projectile_first);
+CHECK(offsetof(DxBallProjectileList, last) == 8, projectile_last);
+CHECK(sizeof(DxBallFireEffectNode) == 20, fire_node_size);
+CHECK(offsetof(DxBallFireEffectNode, next) == 12, fire_next);
+CHECK(offsetof(DxBallFireEffectNode, previous) == 16, fire_previous);
+CHECK(sizeof(DxBallFireEffectList) == 12, fire_list_size);
 
 int main(void)
 {
     printf("{\"pointer\":%u,\"message\":%u,\"window_class\":%u,"
            "\"security\":%u,\"version\":%u,\"counter\":%u,"
            "\"midi_header\":%u,\"midi_property\":%u,"
-           "\"sound_record\":%u,\"sound_desc\":%u}\n",
+           "\"sound_record\":%u,\"sound_desc\":%u,\"projectile_node\":%u,"
+           "\"projectile_list\":%u,\"fire_node\":%u,\"fire_list\":%u}\n",
            (unsigned)sizeof(void *), (unsigned)sizeof(MSG),
            (unsigned)sizeof(WNDCLASSA), (unsigned)sizeof(SECURITY_ATTRIBUTES),
            (unsigned)sizeof(OSVERSIONINFOA), (unsigned)sizeof(LARGE_INTEGER),
            (unsigned)sizeof(MIDIHDR), (unsigned)sizeof(MIDIPROPTIMEDIV),
-           (unsigned)sizeof(DxBallSound), (unsigned)sizeof(DxBallSoundBufferDesc));
+           (unsigned)sizeof(DxBallSound), (unsigned)sizeof(DxBallSoundBufferDesc),
+           (unsigned)sizeof(DxBallProjectileNode), (unsigned)sizeof(DxBallProjectileList),
+           (unsigned)sizeof(DxBallFireEffectNode), (unsigned)sizeof(DxBallFireEffectList));
     return 0;
 }

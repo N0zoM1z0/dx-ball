@@ -1,5 +1,37 @@
 # Current handoff
 
+The [core queue contracts](CORE_QUEUES.md) add ten independently verified entries
+used by the maintained frame: projectile/fire lists, projectile retirement and
+ball ignition. Two new REA instruction dossiers and eight matching closed
+dossiers preserve full integer returns, untouched payload, removal cursor
+effects and unconditional count decrement. The two removal bodies own 215
+bytes across 220-byte spans; their gaps are not accepted code.
+
+Current totals are **235 maintained / 109,805 direct cases / 36 exact units /
+3,518 bytes**, with 14 runtime entries and 279 unknown origins. The new queue
+oracle passes 590 complete original/native cases and 64 separate connected
+calls. Core fixtures now allocate through maintained append entries, and both
+core scripts explicitly reject optimized Python before reports are created.
+All 22 owner scripts pass the changed native library; after expanding the
+queue harness declaration, core and queue are freshly replayed and twenty
+unaffected executions reused only after complete input/product/log checks.
+
+The final 18-check batch passes cold exact replay, actual raster/rotation/bitmap
+compiler execution, oracle rejection controls, VC4/MinGW builds, inspectors,
+i686 ABI, resources, storage, runtime and play controls, the bitmap probe and
+320 contact fixtures / 2,560 separate calls. The bounded campaign comparison
+passes 17,688 frames and five advances, counted separately. Both stopped cold
+attempts are sealed; four compiler-private labels are reconciled against full
+literal bytes from the actual archived objects, preserving every explicit
+relocation position, type, addend and target. The ten new entries claim semantic
+acceptance only. Full campaigns, physical APIs and allocator implementations
+remain open.
+
+The refreshed saved-evidence frontier covers 187 of 235 maintained entries
+from 193 distinct matching dossiers, leaving 33 unmaintained static targets
+(23 unknown origins and ten runtime labels). This bounded inventory neither
+accepts those dependencies nor establishes a complete call graph.
+
 The [kind-3 movement reference review](CORE_OWNER.md#kind-3-movement-reference-review)
 uses one new REA `xrefs` request and three matching saved instruction dossiers.
 It finds one conditional read and two zero writes at `0x43A88C`; an external

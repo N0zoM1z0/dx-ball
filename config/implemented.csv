@@ -156,11 +156,14 @@ address,symbol,source,scope,semantic_unit
 0x0040F7A0,dxball_redraw_game,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-redraw-game
 0x0040F8B0,dxball_game_frame,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-game-frame
 0x0040FF50,dxball_remove_explosion,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-remove-explosion
+0x00410030,dxball_begin_fire_effects,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-begin-fire-effects
 0x00410070,dxball_begin_explosions,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-begin-explosions
 0x004100B0,dxball_begin_brick_effects,src/effects.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-begin-brick-effects
 0x004100F0,dxball_begin_balls,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-begin-balls
+0x00410130,dxball_begin_projectiles,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-begin-projectiles
 0x00410170,dxball_advance_explosion,src/gameplay.c,"See docs/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",gameplay-advance-explosion
 0x004101D0,dxball_advance_ball,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-advance-ball
+0x00410230,dxball_advance_projectile,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-advance-projectile
 0x00410290,dxball_game_key,src/platform.c,"See docs/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-game-key
 0x004105D0,dxball_spawn_ball,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-spawn-ball
 0x004106D0,dxball_append_ball,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-append-ball
@@ -187,8 +190,14 @@ address,symbol,source,scope,semantic_unit
 0x00412EC0,dxball_draw_paddle,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-draw-paddle
 0x00413170,dxball_update_projectiles,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-update-projectiles
 0x004132C0,dxball_fire_projectiles,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-fire-projectiles
+0x00413410,dxball_append_projectile,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-append-projectile
+0x004134B0,dxball_retire_projectile,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-retire-projectile
+0x004134D0,dxball_remove_projectile,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-remove-projectile
 0x004135B0,dxball_spawn_fire_effect,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-spawn-fire-effect
+0x00413670,dxball_append_fire_effect,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-append-fire-effect
 0x00413710,dxball_process_fire_effects,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-process-fire-effects
+0x00413790,dxball_remove_fire_effect,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-remove-fire-effect
+0x00413870,dxball_advance_fire_effect,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-advance-fire-effect
 0x004138D0,dxball_generate_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-generate-bonus
 0x00413D80,dxball_append_bonus,src/bonuses.c,"See docs/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",bonuses-append-bonus
 0x00413E20,dxball_update_bonuses,src/bonuses.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-update-bonuses
@@ -210,6 +219,7 @@ address,symbol,source,scope,semantic_unit
 0x004153E0,dxball_clear_explosion_list,src/gameplay.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-clear-explosion-list
 0x00415410,dxball_soften_special_bricks,src/gameplay.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-soften-special-bricks
 0x004155A0,dxball_scan_explosive_tiles,src/gameplay.c,See docs/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-scan-explosive-tiles
+0x00415630,dxball_ignite_balls,src/core.c,"See docs/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-ignite-balls
 0x00415670,dxball_drop_bricks,src/core.c,See docs/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-drop-bricks
 0x00415820,dxball_release_attached_balls,src/balls.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-release-attached-balls
 0x00415880,dxball_refresh_score,src/runtime.c,See docs/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-refresh-score

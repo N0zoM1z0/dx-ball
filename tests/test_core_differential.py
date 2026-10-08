@@ -41,6 +41,12 @@ class CoreNative(FamilyNative):
         super().__init__(library)
         self.owners.update(projectiles=ProjectileList.in_dll(self.lib, 'dxball_projectiles'),
                            fire=FireList.in_dll(self.lib, 'dxball_fire_effects'))
+        for owner, singular, plural in ((ProjectileList, 'projectile', 'projectiles'),
+                                       (FireList, 'fire_effect', 'fire_effects')):
+            for name in ('append_' + singular, 'begin_' + plural,
+                         'advance_' + singular, 'remove_' + singular):
+                function = getattr(self.lib, 'dxball_' + name)
+                function.argtypes, function.restype = [C.POINTER(owner)], C.c_int32
         self.now, self.timer_result = 1000, 0
         def checked(function, fallback=None):
             def callback(*args):
@@ -187,14 +193,8 @@ class Harness:
         n,t = self.n,self.t
         n.events=[];t.events=[]
         if owner in ('fire','projectiles'):
-            # No public list-leaf claim: construct a typed host fixture, then use
-            # the original append body for its matching target fixture.
-            node=SHAPES[owner][1]; address=n.allocate(C.sizeof(node))
-            p=C.cast(address,C.POINTER(node)); root=n.owners[owner]
-            p.contents.previous=root.last; p.contents.next=C.POINTER(node)()
-            if root.last:root.last.contents.next=p
-            else:root.first=p
-            root.last=root.current=p
+            function = 'append_fire_effect' if owner == 'fire' else 'append_projectile'
+            getattr(n.lib, 'dxball_' + function)(C.byref(n.owners[owner]))
             entry=0x413670 if owner=='fire' else 0x413410
         else:
             function='append_ball' if owner in ('balls','clones') else 'append_bonus' if owner=='bonuses' else 'append_explosion' if owner in ('explosions','scratch') else 'append_brick_effect'
@@ -242,7 +242,8 @@ class Harness:
 
 
 def main():
-    assert __debug__,'oracle assertions must stay enabled'
+    if not __debug__:
+        raise RuntimeError('Core comparisons require Python assertions; do not use -O.')
     sys.path.insert(0,str(ROOT/'scripts'))
     from resource_limits import limit_cpu
     limit_cpu()

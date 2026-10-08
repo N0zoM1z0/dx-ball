@@ -58,6 +58,7 @@ def main():
     python("tests/test_entities_differential.py")
     python("tests/test_powerups_differential.py")
     python("tests/test_core_differential.py")
+    python("tests/test_core_queues_differential.py")
     python("tests/test_runtime_differential.py")
     python("tests/test_display_differential.py")
     python("tests/test_device_differential.py")

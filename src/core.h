@@ -44,6 +44,22 @@ extern DxBallInt dxball_paused, dxball_draw_to_primary, dxball_mouse_action;
 extern DxBallInt dxball_last_brick_deadline;
 extern DxBallFrameOps dxball_frame_ops;
 
+/* ECX owner, full integer result; append preserves uninitialized payload.
+   Removing selects next, or previous at the tail; advancing past the tail
+   rewinds to first while returning zero. Allocation failure exits with 1. */
+DxBallInt DXBALL_FASTCALL dxball_append_projectile(DxBallProjectileList *list);
+DxBallInt DXBALL_FASTCALL dxball_begin_projectiles(DxBallProjectileList *list);
+DxBallInt DXBALL_FASTCALL dxball_advance_projectile(DxBallProjectileList *list);
+DxBallInt DXBALL_FASTCALL dxball_remove_projectile(DxBallProjectileList *list);
+DxBallInt DXBALL_FASTCALL dxball_append_fire_effect(DxBallFireEffectList *list);
+DxBallInt DXBALL_FASTCALL dxball_begin_fire_effects(DxBallFireEffectList *list);
+DxBallInt DXBALL_FASTCALL dxball_advance_fire_effect(DxBallFireEffectList *list);
+DxBallInt DXBALL_FASTCALL dxball_remove_fire_effect(DxBallFireEffectList *list);
+/* Retirement decrements count even when current is null and forwards the
+   removal result. Ignition sets sprite 61 and retains traversal side effects. */
+DxBallInt dxball_retire_projectile(void);
+void dxball_ignite_balls(void);
+
 /* Valid sprite metadata, finite non-overflowing integer state, and live list
    cursors are required. Point hits clamp X; their Y window is strictly 49..350. */
 DxBallInt dxball_hit_screen_point(DxBallInt x, DxBallInt y);

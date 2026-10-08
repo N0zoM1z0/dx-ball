@@ -5,8 +5,9 @@ ball updater and the 1,688-byte enclosing gameplay frame. The maintained C
 connects them to board hits, paddle rebounds, bonus application, particles,
 brick animations and round advancement. Required dependencies add screen-point
 hits, ball retirement, brick dropping, fire effects and paired projectiles.
-Independent list leaves are kept as private typed helpers, without separate
-function or exact-match claims.
+The [projectile/fire-effect queue entries](CORE_QUEUES.md) now have independent
+original/native checks, including retirement and ball ignition. Remaining
+lifecycle helpers have no separate target-entry claims.
 
 Nine additional functions have 4,580 original-x86 differential cases, including
 200 connected frames as a subset. That checkpoint had 85 maintained functions,
