@@ -1,5 +1,15 @@
 # Current handoff
 
+Source commit `dc0d8e3` passes public CI **37769863091**. Its SHA-sealed
+`core-queues-235-36` checkpoint retains 488 files, 83 external references and
+four lossless gzip artifacts. Cleanup journal `20261008T112505843605Z` processes
+581 duplicate/probe operations: 23.11 MiB of logical bytes and **21.34 MiB
+of measured net disk savings** across analysis/build. All **6,149 immutable
+paths / 336 external references / 25 expanded artifacts / 49 original files**
+verify, together with current semantic, REA, exact-object and native identities.
+The next preview is empty. Analysis is about 425 MiB, build 38 MiB and pinned
+tools 1.9 GiB; originals, unique evidence and manual saves are preserved.
+
 The [core queue contracts](CORE_QUEUES.md) add ten independently verified entries
 used by the maintained frame: projectile/fire lists, projectile retirement and
 ball ignition. Two new REA instruction dossiers and eight matching closed
