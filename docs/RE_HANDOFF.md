@@ -32,6 +32,16 @@ exits zero after 211 seconds, verifies initial indices 0–3 and retains three
 lives. The separate 25-second silent episode is also retained. These bounded
 controls do not prove all 50 boards, terminal routing or physical audio.
 
+Source commit `e59964f` passes public CI **37775966467**. The sealed
+`contact-policy-235-36` checkpoint retains 285 files and 62 external references.
+Cleanup journal `20261008T122332799570Z` processes 621 duplicate/probe operations:
+17.43 MiB of logical bytes and **13.07 MiB of measured net disk savings** across
+analysis/build. All **6,694 immutable paths / 399 external references / 28
+expanded artifacts / 49 original files** verify, as do current game owner,
+exact-object, native, controller-report and silent-capture identities. The next
+preview is empty. Analysis is about 440 MiB, build 39 MiB and pinned tools
+1.9 GiB. Originals, unique REA evidence and manual saves remain retained.
+
 Source commit `dc0d8e3` passes public CI **37769863091**. Its SHA-sealed
 `core-queues-235-36` checkpoint retains 488 files, 83 external references and
 four lossless gzip artifacts. Cleanup journal `20261008T112505843605Z` processes
