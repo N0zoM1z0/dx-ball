@@ -56,7 +56,8 @@ def main():
         # replace unrelated numeric values, so declare all text rules explicitly.
         'normalization': {'paths': False, 'pids': False, 'ports': False},
         'limits': {'output_bytes': 16000, 'files': 4,
-                   'file_bytes': 128000 if args.probe in ('terminal', 'campaign') else 32000,
+                   'file_bytes': (4 * 1024 * 1024 if args.probe == 'campaign'
+                                  else 128000 if args.probe == 'terminal' else 32000),
                    'filesystem_depth': 1, 'processes': 64},
         'filesystem_observation_paths': ([str(ROOT / 'build/reports/windows-campaign/summary.json')]
             if args.probe == 'campaign' else [

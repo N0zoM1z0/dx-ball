@@ -1,6 +1,10 @@
 """Mouse choices from observed gameplay state; no game-memory writes."""
 
 
+CONTACT_BIASES = (0.08, -0.18, 0.30, -0.34, 0.16, -0.05)
+DECISIONS_PER_CONTACT_BIAS = 100
+
+
 def choose_mouse(state, step, lookahead=2):
     balls = state.get('balls') or []
     width = state['paddle_width']
@@ -10,7 +14,9 @@ def choose_mouse(state, step, lookahead=2):
     urgent = ball is not None and ball['dy'] > 0 and ball['y'] > 390
     if ball is not None:
         center = ball['x'] + ball['width'] / 2 + ball['dx'] * lookahead
-    bias = width * 0.2 * (-1 if (step // 100) % 2 else 1)
+    # Vary contact offsets across the original rebound's quantized angle bins.
+    # step counts caller decisions; it is not a wall-clock or frame promise.
+    bias = width * CONTACT_BIASES[(step // DECISIONS_PER_CONTACT_BIAS) % len(CONTACT_BIASES)]
     desired = center + bias
     lower, upper = width / 2 + 21, 618 - width / 2
     hazards = []

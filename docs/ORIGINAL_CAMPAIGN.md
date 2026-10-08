@@ -109,6 +109,55 @@ the partial record into a terminal runtime observation. After verifying the
 archive, journaled cleanup removes the 49 disposable runtime copies and
 recovers 1,599,429 bytes (1.53 MiB). A subsequent preview has no pending actions.
 
+## Diverse contact offsets
+
+A review of the sealed original control finds a sampled plateau on board 36:
+168 final gameplay snapshots retain the same grid, score 86,734, six remaining
+bricks and six lives over 1,671.159 seconds. The application remains active and
+unpaused at those samples, with velocities `(±5, ±7)`. This establishes stalled
+progress under that controller; it does not establish a frozen process, closed
+orbit or reconstruction defect. The final `running` save remains historical
+partial evidence, rather than the termination instant.
+
+The earlier sealed counterfactual executed original rebound `0x00411410` for
+12 centered, width-219 fixtures: the alternating 20% offsets produced two
+velocity pairs, while six different contact offsets produced six. The current
+[campaign controller](../scripts/campaign_controller.py) adopts those six
+offsets while retaining the existing bounds and best-effort catch/bonus rules.
+Its fallback does not guarantee avoidance when no safe candidate is available.
+[test_campaign_aim.py](../tests/test_campaign_aim.py) executes 216 original
+rebound fixtures across two paddle widths, three positions, three incoming
+horizontal velocities, two lookaheads and six phases. Complete original code
+bytes remain unchanged. These contact counterfactuals have no bonuses and do
+not establish live prediction or add direct owner cases.
+
+The revised original/native episode compares **17,688 frames**, advances from
+index 0 to 5 and retains three lives. All 103 report inputs and the unchanged
+native product are bound. This is another controlled connected episode, not
+whole-campaign or physical input acceptance.
+
+REA process Evidence
+`ev_a6bd19829343823e686056aebc4ddb1d94a99b43f2ad71518fa4b0c6b74ddc84`
+records the revised original-only runtime control exiting zero. It verifies
+complete initial bank bytes for indices **0–3** and finishes in about 188 seconds
+with two lives. All six phases have ordinary XTest mouse requests. The sealed
+`original-campaign-diverse-pilot-01` retains 98 files and the actual SDK reader;
+REA binds the complete final report digest. Reconstructed Windows products and
+full 50-board completion remain separate and unaccepted by this pilot.
+
+A phase spans 100 processed latest SDK records, rather than 100 game frames or
+fixed wall time. Reports retain phase request counts and the last ordinary
+mouse request beside bounded state events. Sequential live reads can mix
+frames; discarded malformed lines do not make valid JSON atomic. The counter
+is now named `discarded_malformed_samples` to describe its actual scope.
+
+Campaign captures allow a 4 MiB whole-file hash budget, replacing the earlier
+128,000-byte limit that omitted the long interrupted report digest. A report
+larger than that budget can still have a null REA digest; the sealer separately
+retains its complete bytes without inventing a REA observation. Initial input
+snapshots use a distinct `input-snapshot.sha256.json`; only the final sealer
+creates `sha256.json`, preserving its existing overwrite rejection.
+
 ## Original-x86 connected episodes
 
 `tests/test_campaign_differential.py` extends the existing display oracle with

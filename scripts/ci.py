@@ -43,6 +43,7 @@ def main():
     python("tests/test_resources_differential.py")
     python("tests/test_rotation_differential.py")
     python("tests/test_rotation_coff.py")
+    python("tests/test_campaign_aim.py")
     python("tests/test_raster_differential.py")
     python("scripts/compile-semantic-build.py", "--build", "raster")
     python("tests/test_raster_coff.py")

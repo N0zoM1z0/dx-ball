@@ -45,6 +45,24 @@ next preview is empty. Analysis is about 388 MiB and build 33 MiB; installed
 pinned tools remain intact at about 1.9 GiB. Originals, unique REA records,
 manual saves and the mutable provider snapshot are preserved.
 
+The revised campaign controller now varies six contact offsets. Its216 bounded
+original rebound fixtures and fresh 17,688-frame/five-advance original/native
+episode pass. REA process Evidence
+`ev_a6bd19829343823e686056aebc4ddb1d94a99b43f2ad71518fa4b0c6b74ddc84`
+passes the original-only runtime pilot: initial boards 0–3 verified in 187.928s,
+with actual requests in all six phases. The pilot seals 98 files and binds the
+full report digest; the 41 archival rejection checks and strict SDK compilation
+pass. These integration cases do not change 222/105,036/36/3,518 acceptance.
+All accepted owner/exact input, report and product hashes still verify, so those
+unaffected executions are reused. Full original/reconstructed campaigns remain
+open. See [campaign scope](ORIGINAL_CAMPAIGN.md#diverse-contact-offsets).
+
+Metadata-only CI run 37738442026 reached its 15-minute timeout while downloading
+both MinGW compiler variants; the portable/retention gates passed, and Windows
+compilation was not reached. Source CI 37738119917 remains successful. The CI
+package selection now installs only the POSIX variant used by local Windows
+probes, avoiding the unused win32 variant and its runtime download.
+
 The preceding checkpoints below retain their historical totals and boundaries.
 
 The raster owner is accepted: triangle, polygon, clipped polygon and horizontal

@@ -18,7 +18,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from campaign_controller import choose_mouse
+from campaign_controller import CONTACT_BIASES, DECISIONS_PER_CONTACT_BIAS, choose_mouse
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
 from windows_runtime import digest, environment, launch, prepare, stop, verified_originals
@@ -144,7 +144,10 @@ def observe(profile, args, reports):
     summary = {'profile': profile, 'status': 'running', 'events': events,
                'initialized_board_indices': [], 'executable_sha256': digest(runtime / 'dxball.exe'),
                'bank_input_sha256': digest(runtime / 'DEFAULT.BDS'),
-               'reader_arguments': observer.arguments}
+               'reader_arguments': observer.arguments,
+               'controller': dict(contact_biases=CONTACT_BIASES, decisions_per_bias=DECISIONS_PER_CONTACT_BIAS,
+                                  basis='processed latest SDK samples; cadence depends on scheduling'),
+               'controller_phase_requests': [0] * len(CONTACT_BIASES)}
     if profile == 'windows-i686':
         summary['dll_sha256'] = digest(runtime / 'libdxball_core.dll')
     if profile == 'vc40':
@@ -158,6 +161,7 @@ def observe(profile, args, reports):
     last_click = last_record = 0
     candidate = None
     stable = 0
+    last_mouse_request = None
     with (output / 'wine.log').open('w') as wine_log, (output / 'reader.log').open('w') as reader_log:
         try:
             process = launch(runtime, env, wine_log)
@@ -180,7 +184,8 @@ def observe(profile, args, reports):
                     if len(events) >= 10000:
                         raise RuntimeError('Bounded event log limit reached')
                     events.append({'seconds': round(now - began, 3), 'values': state,
-                                   'origin': record['origin']})
+                                   'origin': record['origin'],
+                                   'last_mouse_request': last_mouse_request})
                     previous, last_record = key, now
                     # Persist transitions periodically so a failed run remains reviewable.
                     summary['last_state'] = state
@@ -229,7 +234,13 @@ def observe(profile, args, reports):
                             continue
                     if ready and index < 50:
                         seen_game = True
-                        mouse.move(record['origin'], choose_mouse(state, sample_steps))
+                        requested_x = choose_mouse(state, sample_steps)
+                        mouse.move(record['origin'], requested_x)
+                        phase = (sample_steps // DECISIONS_PER_CONTACT_BIAS) % len(CONTACT_BIASES)
+                        summary['controller_phase_requests'][phase] += 1
+                        last_mouse_request = dict(seconds=round(now - began, 3),
+                                                  processed_sample=sample_steps, phase=phase, x=requested_x)
+                        summary['last_mouse_request'] = last_mouse_request
                         if not mouse.down and now - last_click >= 0.03:
                             mouse.button(True)
                             clicks += 1
@@ -263,7 +274,7 @@ def observe(profile, args, reports):
         finally:
             if stream is not None:
                 stream.close()
-                summary.update(valid_sdk_samples=stream.valid, discarded_nonatomic_samples=stream.broken,
+                summary.update(valid_sdk_samples=stream.valid, discarded_malformed_samples=stream.broken,
                                sample_stream_bytes=stream.bytes, sample_stream_sha256=stream.hasher.hexdigest(),
                                processed_samples=sample_steps, mouse_clicks=clicks)
             if mouse is not None:
@@ -319,7 +330,9 @@ def main():
                   'original_addresses': FIELDS, 'reader_sha256': digest(READER), 'reader_flags': FLAGS,
                   'goal_board_count': args.boards, 'episode_seconds': args.episode_seconds,
                   'observations': [], 'limitations': [
-                      'ReadProcessMemory samples are sequential and may cross frame/list changes.',
+                      'ReadProcessMemory samples are sequential and may cross frame/list changes; valid JSON is not an atomic snapshot.',
+                      'Malformed lines are discarded; controller phases count processed latest samples, not game frames.',
+                      'Retained mouse requests describe XTest inputs, not guaranteed game consumption or safe catches.',
                       'Ordinary XTest input; no target writes, hooks, suspension or altered boards.',
                       'Stream hash covers consumed pipe bytes; only bounded transition samples are retained.',
                       'Runs have independent clock/RNG trajectories; no synchronized pixel/audio claim.',
