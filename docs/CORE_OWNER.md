@@ -145,8 +145,10 @@ Allocator/deallocator, RNG, audio, cursor and rendering boundaries retain their
 earlier scopes. Arithmetic must be finite and non-overflowing, list cursors
 live, sprite banks/slots valid, rebound paddle width positive, fire RNG limits
 positive, and projectile hit columns within 0..19. Controlled callbacks preserve
-the current ball and metadata. Kind-3 movement ticks are sampled, but their
-external timer producer is still pending. Terminal level initialization keeps
+the current ball and metadata. Nonzero kind-3 movement state is sampled in
+controlled fixtures; its producer is unresolved. REA's direct-reference review
+below finds clearing writes, with no evidence of an external timer producer.
+Terminal level initialization keeps
 the prior explicitly controlled index-50 scope. Hardware DirectDraw,
 DirectSound, input message routing, glyph rendering and actual platform drivers
 must still be reconstructed for a playable whole game. Round reset and gameplay
@@ -161,6 +163,28 @@ The connected cases are INCLUDED in the direct total. Earlier owners keep their
 separate integration totals. Source is shared by native, MinGW and pinned VC4
 builds. This bounded family receives one grouped cold replay after stabilization;
 independent leaf matching is deferred while core gameplay remains the priority.
+
+## Kind-3 movement reference review
+
+REA `xrefs` at `0x0043A88C` returns three direct references under Ghidra
+12.1.4, Evidence
+`ev_f0162d8e4cbcc3b0d01bace604f6a2bac329b815efed584c74c1b420f325b35c`.
+Matching saved instruction dossiers distinguish their effects:
+
+| Original address | Owner | Observed instruction effect |
+| --- | --- | --- |
+| `0x4107DC` | Ball updater | Compare with zero; add one to ball Y when nonzero |
+| `0x4141E2` | Bonus updater, kind 3 | Write zero after setting the separate active flag |
+| `0x415CC7` | Round reset | Write zero |
+
+The reused dossiers are `ev_c7fd5e1c178073afb10924d1dbfa6df93f8ba8566533fd41f8dcb8f48b3a92a1`,
+`ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf` and
+`ev_b1e60404eed3263e429779d493ed38ef1ee1290f2a0e3d31ac348647d03e946f`.
+Maintained C already preserves all three effects. The direct-reference list
+does not expose reference kinds; the instruction dossiers supply this table.
+This bounded static review identifies no nonzero write and establishes no
+timer producer or live activation. Indirect/aliased writes remain unresolved.
+Controlled nonzero fixtures establish the consumer's behavior separately.
 
 ## Continue from here
 

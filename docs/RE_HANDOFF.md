@@ -1,5 +1,25 @@
 # Current handoff
 
+The [kind-3 movement reference review](CORE_OWNER.md#kind-3-movement-reference-review)
+uses one new REA `xrefs` request and three matching saved instruction dossiers.
+It finds one conditional read and two zero writes at `0x43A88C`; an external
+timer producer is unestablished. Maintained C already preserves these effects.
+The campaign document now states the actual paddle/cache order and the test-only
+candidate's bonus-projection and all-ball-survival gaps. The guarded contact
+suite passes **320 fixtures / 2,560 original/native calls** against the current
+accepted native library. Optimized Python is rejected before harness/report
+creation; the prior report remains byte-identical. Acceptance totals are unchanged.
+
+Cleanup journal `20261008T103939470770Z` shares closed-run duplicates and removes
+one redundant query alias: **seven operations / 12.75 MiB of logical bytes**.
+All **5,427 immutable paths / 302 external references / 18 expanded gzip
+artifacts / 49 original files** verify before and after, together with current
+owner, REA, exact-object and native identities. The next cleanup preview is
+empty. Analysis is about 412 MiB, build 37 MiB and installed tools 1.9 GiB;
+originals, unique evidence and manual saves are preserved. Full campaigns and
+physical APIs remain open. The initial EOF-closed interactive attempt and
+successful explicitly closed query session both remain archived.
+
 The [persistent sound controls](SOUND_CONTROLS.md) are now accepted in shared C:
 frequency, pan and volume setters at `0x405FA0` / `0x406040` / `0x4060E0`.
 Current scope is **225 maintained / 109,215 direct cases / 36 exact units /

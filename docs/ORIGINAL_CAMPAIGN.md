@@ -208,14 +208,23 @@ discrete wall clamp/reflection rule. It retains the six contact offsets.
 | Viable-ball catches beside a passed ball | 0/8 | 8/8 |
 | Wall-projection contacts with sampling/delivery delay | 16/16 | 16/16 |
 
-The original full frame uses the previous paddle cache for ball collision,
-then updates the paddle from the current mouse request. The mixed-speed
+The original full frame updates the current paddle from the mouse request
+before processing balls. Ball collision uses the previous paddle cache,
+which is refreshed after the entity updates. The mixed-speed
 fixtures demonstrate why greatest-Y priority can react too late: a faster
 ball can contact first. The declared delays are frame controls, not measured
 Wine/Windows latency. Fixtures use synthetic empty boards, controlled
 non-game dependencies and known valid sprites/list metadata. They do not
 cover active kind-3 movement, bonuses, atomic SDK sampling or a full campaign.
 The candidate remains confined to tests pending those wider observations.
+Its shared `lookahead=0` also changes bonus projection, which these empty-bonus
+fixtures do not validate. Mixed-speed counts track the fast ball's catch;
+their fourteen-frame trace does not establish survival of every ball or round.
+
+The contact suite now rejects optimized Python explicitly before constructing
+the harness or writing a report. A fresh replay against the accepted sound-control
+native product passes the same 320 fixtures / 2,560 compared calls; it adds
+no acceptance cases. The original entries and current live policy are unchanged.
 
 ```bash
 scripts/repo-python tests/test_campaign_contact.py

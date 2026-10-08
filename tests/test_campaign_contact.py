@@ -53,7 +53,8 @@ def advance(h, entry):
 
 
 def main():
-    assert __debug__
+    if not __debug__:
+        raise RuntimeError('Contact comparisons require Python assertions; do not use -O.')
     limit_cpu()
     # Serialize complete original/native executions with other project writers.
     with session_lock():
