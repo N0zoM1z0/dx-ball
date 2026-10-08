@@ -15,9 +15,10 @@ path passed to `CreateFileA`. The inferred `uint *` path type is not a recovered
 source declaration. File opens request access `0x80000000`, share 1, disposition
 3, attributes `0x80`, and null security/template handles. If the primary open
 returns `-1`, the routine copies a prefix from `0x422798`, concatenates the path,
-and retries. That prefix's initial bytes and producers remain unresolved. The
-already maintained sound loader uses another address, `0x42106C`; its prefix
-must not be substituted here without evidence.
+and retries. The new focused REA byte read confirms `2e 2e 5c 00`, or `..\`.
+The maintained sound loader uses a separate address, `0x42106C`; this equality
+is established by reading the bitmap prefix itself, rather than substituting
+the sound-loader address.
 
 The sequential reads request 14 header bytes, 40 information-header bytes,
 1,024 palette bytes, and the low 32 bits of width times height for pixel data.
@@ -95,16 +96,33 @@ evidence: no maintained C comparison, real file/DirectDraw behavior, short-read
 acceptance, function-origin promotion or new semantic case count is claimed.
 It generates no EXE, compiler object or raw stream archive.
 
-The missing prefix bytes/producers and incoming references are prepared as
-three requests in `config/rea-bitmap.json`, checked against REA's retained
-catalog. They remain unexecuted while the full campaign owns the shared
-compiler/Ghidra/Wine session:
+## Focused prefix and reference review
+
+REA `read_bytes` Evidence
+`ev_0bf8c40924cea03a09e6b27ffa6d9e1c3531fdcb50b6aa934e790f870cdda023`
+returns all 64 requested initialized bytes from `0x422798`. The first four
+bytes are `2e2e5c00`, confirming the fallback prefix `..\`. The adjacent
+filenames are separate storage and do not extend that null-terminated prefix.
+
+Focused `xrefs` Evidence
+`ev_2821d190f775c7a3bba95f0f535a7ac92279cee17c31b0cfc6b008a91cc15137`
+returns only `0x409FAB`, the prefix source used by the retained loader
+instructions. No additional direct producer reference is found. Loader Evidence
+`ev_aa47eec0b59cc79cccfc1c8ed83f14762b962929ff1677d4c604608aa8687573`
+returns no direct incoming address references. These results describe Ghidra's
+reference-manager coverage; indirect accesses and actual runtime use remain
+unestablished.
+
+The three focused operations completed in the same graphics batch as the
+[rotation data review](ROTATION_INVESTIGATION.md#focused-rea-data-and-reference-review).
+Complete Evidence and successful session close are retained privately.
+The public request set uses REA's documented lowercase addresses:
 
 ```bash
 scripts/rea session config/rea-bitmap.json
 ```
 
-Retain their Evidence IDs and coverage limitations. Empty historical incoming
-reference lists do not prove this routine is unused. Resolve the prefix and
-palette-flags contract before selecting natural shared C, then compare that
-implementation against original execution in a related batch.
+The prefix is resolved. Palette fourth-byte semantics and successful short-read
+behavior still need explicit domain review before maintained source acceptance.
+Compare natural shared C against original execution in a related batch; the
+23 original-only cases remain reference data rather than semantic promotion.

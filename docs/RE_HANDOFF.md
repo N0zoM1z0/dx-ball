@@ -13,6 +13,24 @@ is empty. See [full-control timeout](ORIGINAL_CAMPAIGN.md#full-control-timeout).
 The saved six-angle controller candidate is only an original-x86 counterfactual;
 it has not been applied or accepted as a successful campaign controller.
 
+The eight missing graphics queries are now complete and saved in closed REA
+runs. The byte reads confirm rotation divisors 2.0 / 2.046 / 1.3, lower bound
+0.0, rounding bias 0.5, and the bitmap fallback prefix `..\`. Wrapper instructions
+confirm four arguments and their forwarding order. Current direct xrefs find
+only that wrapper call into the renderer, no incoming wrapper/offset/bitmap
+reference, and only the known bitmap prefix source. This is bounded reference
+coverage, not proof of unused code. The first run preserved its three-operation
+prefix after an uppercase-address rejection; the resume queried only five
+outstanding operations. Public request files now use lowercase addresses.
+After preserving complete evidence, another 12 cleanup operations recover
+12.83 MiB. REA target/snapshot/close verification also passes. Final cleanup shares
+complete identical smoke records and removes redundant aliases, recovering
+another 19.32 MiB. All 481 closed JSON and 91 interrupted-archive file
+hashes remain unchanged. This turn recovers 33.67 MiB in total. See
+[rotation data](ROTATION_INVESTIGATION.md#focused-rea-data-and-reference-review)
+and [bitmap prefix](BITMAP_INVESTIGATION.md#focused-prefix-and-reference-review).
+No maintained-C acceptance or exact promotion is added.
+
 The original rotation probe now executes all 344 shared fixtures, including
 the original trig initializer and actual lookup/x87/conversion helpers. Full
 guarded destination buffers, immutable source/record/banks/tables, padding,
@@ -20,37 +38,38 @@ finite per-surface lock scripts and ordered calls are checked. Identical output
 buffers are retained once after full-byte comparison: 146 baseline buffers and
 five further callback buffers. Five API-boundary mutation scenarios confirm
 captured dimensions and later surface/bank reloads, including final unlocks.
-The guarded private C draft is corrected accordingly but remains uncompiled.
+The private C draft is corrected accordingly, including the now-confirmed
+0.5 bias, but remains uncompiled.
 These scenarios still need maintained-C comparison before promotion. The
 same report retains 329 original comparisons for the related width-only offset
 candidate at `0x402CD0`, including the extended 13/1.3 truncation boundary. Total
 report size is about 626 KiB. See [rotation reference data](ROTATION_INVESTIGATION.md#original-machine-reference-data).
 These are original-only references, not maintained-C acceptance; source/owner/
-exact counts remain 214 / 95,873 / 35. Constants/wrapper queries can now use the released
-shared session. The bitmap batch's public CI passed `c33f343`.
+exact counts remain 214 / 95,873 / 35. Constants/wrapper queries are completed
+as recorded above. The bitmap batch's public CI passed `c33f343`.
 
 The saved 976-byte bitmap-loader REA dossier now has a reproducible original-x86
 investigation probe with 23 passing fixtures. It confirms clamped source-row
 steps, failure cleanup and caller-stack-dependent palette flags. No maintained
 C comparison or semantic promotion is claimed. See
-[bitmap investigation](BITMAP_INVESTIGATION.md). Three prefix/reference queries
-are prepared in `config/rea-bitmap.json`; they were prepared while the
-campaign held the shared session. All 80 frozen campaign inputs remain
-unchanged; the interrupted archive and subsequent cleanup are recorded above. The unique probe
+[bitmap investigation](BITMAP_INVESTIGATION.md). The prefix/reference queries
+in `config/rea-bitmap.json` are completed as recorded above. All 80 frozen
+campaign inputs remain unchanged; the interrupted archive and subsequent
+cleanup are recorded above. The unique probe
 report is about 18 KiB and creates no executable or compiler objects.
 
 The original-only campaign sealer now validates frozen inputs/SDK product,
 kernel process identity, REA scenario/child result and complete terminal report
-before retaining the attempt. Twenty-four synthetic/Linux retention checks
-pass; the live attempt was correctly refused without mutation. REA 4.1.0
+before retaining the attempt. The initial twenty-four synthetic/Linux
+retention checks passed; the live attempt was correctly refused without mutation. REA 4.1.0
 omits whole-file digests above its configured file_bytes hash budget, so the
 sealer explicitly distinguishes its complete private report hash from REA's
 filesystem digest. See [campaign retention](ORIGINAL_CAMPAIGN.md#storage-and-evidence).
 The actual timeout now uses the explicit interrupted path described above.
 
-The five missing rotation constant/wrapper/reference requests are prepared in
-`config/rea-rotation.json` and validated against the retained tool catalog; they
-remain unexecuted. Saved instructions establish two intermediate double stores
+The five rotation constant/wrapper/reference requests in
+`config/rea-rotation.json` are completed as recorded above. Saved instructions
+establish two intermediate double stores
 per coordinate and width in both X terms. The private 344-fixture rotation
 draft remains unaccepted. No shared reconstruction or existing runtime input
 changes in this tooling/documentation batch.
