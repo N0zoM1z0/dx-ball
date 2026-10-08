@@ -111,3 +111,54 @@ dossiers added three covered entries. The later [core queue batch](CORE_QUEUES.m
 adds ten covered entries from eleven distinct matching dossiers; eight former
 frontier targets now have independent semantic acceptance, leaving 33 targets.
 The original excluded-record boundary remains the same. Exact counts are unchanged.
+
+## Next connected allocation batch
+
+The next implementation priority is the original new/delete, heap allocation,
+handler and release chain. Current [allocation](../src/gameplay.c) and
+[release](../src/effects.c) defaults forward to host `malloc/free`. Seven
+maintained allocation callers and nine release callers reach these entries in
+the bounded saved frontier, including ball, projectile, fire, particle, bonus
+and MIDI owners. Their accepted consumer behavior leaves the original
+allocator's failure and retry rules outside the implementation boundary.
+
+Six closed REA dossiers already cover the proposed batch: `0x00416760`
+(delete), `0x00416770` (new), `0x00417750` (free), `0x00417790`
+(handler-controlled allocation), `0x004177D0` (HeapAlloc forwarding), and
+`0x00419EA0` (handler invocation), totaling 172 reviewed instruction bytes.
+The records cited above and in [runtime provenance](CRT_PROVENANCE.md) can be
+reused without another function query. These are observed contracts;
+implementation, independent semantic execution and configured exact matching
+remain unaccepted for this batch.
+
+| Required proof | Original behavior to preserve |
+| --- | --- |
+| Size boundaries | Zero becomes one; unsigned requests above `0xFFFFFFE0` return null without allocating or invoking a handler. |
+| Failure and retries | Retry only when enabled and the handler returns nonzero; normalize positive and negative nonzero handler results to one. Fixtures must terminate without imposing a production retry limit. |
+| Callback mutation | Reload the handler on invocation and the heap on allocation; callbacks can replace/remove the handler or change the heap between retries. |
+| Release and ABI | Null skips HeapFree; nonnull forwards the current heap, zero flags and pointer. New/handler calls use cdecl; HeapAlloc/HeapFree use stdcall on i686. Free/delete have a void return contract. |
+| Connected ownership | Execute append/remove/retirement through the complete original chain; compare typed roots, cursor effects, untouched payload, ordered calls and poisoned freed storage. |
+
+The oracle must execute the six original bodies with only physical heap APIs
+and controlled handler callbacks as declared boundaries. Heap initialization,
+teardown and handler registration need a separate producer review of
+`0x00440D70` and `0x0043FB10`, including indirect or aliased writes. Shared
+defaults must preserve allocation/release ownership across every affected
+family; host allocations cannot be released through a different private heap.
+The malloc/newmode wrapper at `0x00417770` is outside this six-entry proposal.
+
+A separate saved-record search inspected 268 dossiers for eight remaining
+application candidates. It recovered the palette-load variant at `0x00409A30`
+but found no represented caller edge to those eight candidates. Thirty-one
+large records were searched in full, correcting an earlier smaller boundary
+that missed its 829,684-byte dossier. Missing dossiers, indirect calls and
+provisional extents still prevent describing these candidates as unused.
+This review prioritizes a represented core dependency, without assigning
+runtime origin from image location or changing the acceptance ledgers.
+
+The private `allocator-next-batch-review-235-36` checkpoint retains the audit,
+reviewed source/documents and 271 external evidence identities. Verification
+checks target identity, all six instruction lists and extents,
+the saved caller edges, current owner/exact products and unchanged frozen
+campaign inputs. No new binary query, build, differential case or exact unit
+is claimed by this review.

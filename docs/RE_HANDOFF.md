@@ -1,5 +1,18 @@
 # Current handoff
 
+The [next connected allocation batch](DEPENDENCY_FRONTIER.md#next-connected-allocation-batch)
+targets the six-entry new/delete, heap allocation, new-handler and release chain
+behind the current host allocation bridges. Saved REA dossiers cover 172
+reviewed bytes; the bounded frontier reaches seven allocation and nine release
+callers. The independent priority review is SHA-sealed in
+`allocator-next-batch-review-235-36`, with 22 retained files and 271 external
+evidence identities. Verification checks complete instruction lists,
+target identity, caller edges and unchanged game owner/exact products. Heap
+initialization, handler registration and ownership binding remain separate
+obligations. Runtime provenance is explicitly a historical checkpoint;
+maintained/semantic/exact totals remain unchanged. The original full-campaign
+control is still running with frozen inputs; no terminal result is inferred.
+
 The [campaign contact policy](CONTACT_POLICY.md) now uses earliest reachable
 falling-ball contact, discrete wall clamping and independent bonus lookahead.
 The expanded oracle passes **1,464 fixtures / 21,168 complete original/native

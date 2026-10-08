@@ -6,10 +6,11 @@ covers **496 bytes** and checks four library variants independently: **44
 function/library comparisons**. It supplies runtime-origin evidence, separate
 from maintained C, differential cases and the 36 configured exact units.
 
-This resolves eight previously unknown entries. Current totals are **14
-identified runtime dependencies / 292 unknown origins**, while maintained
-source remains **222 functions / 105,036 direct cases / 36 exact units /
-3,518 bytes**. The three previously identified heap entries gain object-level
+This batch resolved eight previously unknown entries. At its checkpoint, totals
+were **14 identified runtime dependencies / 292 unknown origins**, with
+maintained source at **222 functions / 105,036 direct cases / 36 exact units /
+3,518 bytes**. See the [current handoff](RE_HANDOFF.md) for subsequent game-owner
+acceptance. The three previously identified heap entries gain object-level
 corroboration without another origin promotion.
 
 | Original entry | Defined COFF symbol | Whole body bytes |
