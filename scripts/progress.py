@@ -44,11 +44,12 @@ def main():
         f"| Functions with scoped semantic acceptance | {status['semantic_validated_with_scope']} |\n"
         f"| Byte-exact functions | {status['exact_functions']} |\n"
         f"| Complete exact code bytes | {status['exact_bytes']} |\n"
+        f"| Entries identified as runtime dependencies | {status['runtime_identified']} |\n"
         f"| Origin still unclassified | {status['origin_unknown']} |\n\n"
         "The candidate count includes runtime/library code and is not the authored-function\n"
         "denominator. Experimental Windows EXEs pass bounded Wine startup/input/shutdown\n"
         "checks; whole-game fidelity remains unverified. See [adapter notes](WINDOWS_ADAPTER.md),\n"
-        "[build evidence](BUILD_MATCHING.md) and [oracle limits](ORACLES.md).\n")
+        "[build evidence](BUILD_MATCHING.md), [origin review](ORIGIN_REVIEW.md) and [oracle limits](ORACLES.md).\n")
     print("generated resources/progress.svg and docs/PROGRESS.md")
 
 

@@ -1,5 +1,18 @@
 # Current handoff
 
+Six retained REA dossiers and the pinned VC4 CRT source structures now identify
+heap allocation/free, overlapping memory copy and locale case helpers as
+runtime dependencies. Unknown origins are 308; authored, source, semantic and
+exact counts are unchanged. See [origin review](ORIGIN_REVIEW.md). All 71 prior
+semantic inputs and 34 exact build inputs remain unchanged, and tracking
+passes. These origin classifications do not replace dependency bridges with
+accepted CRT implementations or settle conflicting library names.
+The private `crt-origins-214-35` checkpoint seals 14 files and references six
+complete REA records. Its audit verifies all 139 files in the preceding campaign
+checkpoint, eighteen owner reports, eight exact objects and the native library.
+No shared reconstruction input or product changed; reuse the accepted scoped
+owner/exact reports. The origin ledger itself changes exactly six reviewed rows.
+
 The next source investigation reuses the saved REA dossier for the 1,572-byte
 software sprite renderer at `0x004026A0`. Instructions expose a fourth angle
 argument and a +270-degree row step omitted by inferred pseudocode; constants,

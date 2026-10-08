@@ -24,6 +24,7 @@ def status():
             "source_present": len(implementations), "exact_functions": len(matches),
             "exact_bytes": sum(units[row["unit"]]["size"] for row in matches),
             "authored_confirmed": sum(row["origin"] == "authored" for row in origins),
+            "runtime_identified": sum(row["origin"] == "runtime" for row in origins),
             "origin_unknown": sum(row["origin"] == "unknown" for row in origins),
             "semantic_validated_with_scope": len(semantics),
             "semantic_units": sorted({row["unit"] for row in semantics}),
@@ -44,5 +45,5 @@ if __name__ == "__main__":
     else:
         print(f"{result['target']}: {result['function_candidates']} provisional candidates")
         print(f"Source-present: {result['source_present']}; exact: {result['exact_functions']} ({result['exact_bytes']} bytes)")
-        print(f"Authored confirmed: {result['authored_confirmed']}; origin unknown: {result['origin_unknown']}")
+        print(f"Authored confirmed: {result['authored_confirmed']}; runtime identified: {result['runtime_identified']}; origin unknown: {result['origin_unknown']}")
         print(f"Windows runtime scope: {result['windows_runtime_scope']}")
