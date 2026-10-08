@@ -20,6 +20,16 @@ originals, unique evidence and manual saves are preserved. Full campaigns and
 physical APIs remain open. The initial EOF-closed interactive attempt and
 successful explicitly closed query session both remain archived.
 
+Source commit `42847bb` passes public CI **37765233683**. Its sealed
+`movement-state-storage-225-36` checkpoint retains 128 files, 25 external
+references and two lossless gzip artifacts. Post-seal sharing processes 149
+additional operations / 2.11 MiB, bringing this batch to **14.86 MiB of logical
+duplicate bytes**. All **5,556 immutable paths / 321 external references /
+20 expanded gzip artifacts / 49 original files** and accepted products verify;
+the next preview is empty. Analysis is now about 413 MiB. Saved REA smoke
+verification also passes; no duplicate target query or unaffected cold replay
+is needed.
+
 The [persistent sound controls](SOUND_CONTROLS.md) are now accepted in shared C:
 frequency, pan and volume setters at `0x405FA0` / `0x406040` / `0x4060E0`.
 Current scope is **225 maintained / 109,215 direct cases / 36 exact units /
