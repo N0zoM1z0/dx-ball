@@ -1,0 +1,5 @@
+[
+  {"name": "read_bytes", "arguments": {"address": "0x00422798", "length": 64}},
+  {"name": "xrefs", "arguments": {"address": "0x00422798"}},
+  {"name": "xrefs", "arguments": {"address": "0x00409F70"}}
+]

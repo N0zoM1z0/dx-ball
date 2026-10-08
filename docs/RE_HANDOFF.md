@@ -1,5 +1,16 @@
 # Current handoff
 
+The saved 976-byte bitmap-loader REA dossier now has a reproducible original-x86
+investigation probe with 23 passing fixtures. It confirms clamped source-row
+steps, failure cleanup and caller-stack-dependent palette flags. No maintained
+C comparison or semantic promotion is claimed. See
+[bitmap investigation](BITMAP_INVESTIGATION.md). Three prefix/reference queries
+are prepared in `config/rea-bitmap.json`; they remain unexecuted until the live
+campaign releases the shared session. All 80 frozen campaign inputs remain
+unchanged. Storage preview still contains only the 49 live original assets
+(1,599,429 bytes), deferred until terminal evidence is sealed. The unique probe
+report is about 18 KiB and creates no executable or compiler objects.
+
 The original-only campaign sealer now validates frozen inputs/SDK product,
 kernel process identity, REA scenario/child result and complete terminal report
 before retaining the attempt. Twenty-four synthetic/Linux retention checks
