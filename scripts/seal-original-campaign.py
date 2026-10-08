@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Seal a finished original-only campaign capture before cleaning its fixtures."""
 import argparse
+import csv
+from datetime import datetime
 import fcntl
 import hashlib
 import json
@@ -38,7 +40,7 @@ def live(identity, boot_id):
     return fields[0] != 'Z' and int(fields[19]) == identity['start_ticks']
 
 
-def validate(root, attempt, capture, is_live=live):
+def context(root, attempt, capture, is_live=live):
     frozen = load(attempt / 'attempt.json')
     if frozen['profiles'] != ['original']:
         raise ValueError('This sealer requires an original-only attempt')
@@ -53,19 +55,6 @@ def validate(root, attempt, capture, is_live=live):
             raise ValueError('Frozen input path must be repository-relative')
         checked(attempt / path, expected)
     checked(attempt / 'campaign-reader.exe', frozen['reader_sha256'])
-    report_path = root / 'build/reports/windows-campaign/summary.json'
-    report = load(report_path)
-    if report['status'] not in ('campaign-pass', 'bounded-progression', 'bounded-episode', 'fail'):
-        raise ValueError('Campaign report is not terminal')
-    if report['reader_sha256'] != frozen['reader_sha256']:
-        raise ValueError('Report names another SDK reader product')
-    checked(root / 'build/probes/windows-runtime/campaign-reader.exe', frozen['reader_sha256'])
-    expected_inputs = {name: sha for name, sha in frozen['inputs'].items()
-                       if name != 'scripts/capture-windows-probe.py'}
-    if report['inputs'] != expected_inputs:
-        raise ValueError('Report input set differs from the frozen attempt')
-    if report['goal_board_count'] != frozen['boards'] or report['episode_seconds'] != 0:
-        raise ValueError('Report requested another campaign scope')
     scenario = load(capture / 'scenario.json')
     expected_arguments = [str(root / 'tests/test_windows_campaign.py'), '--profiles', 'original',
                           '--seconds', str(frozen['seconds']), '--boards', str(frozen['boards']),
@@ -82,17 +71,36 @@ def validate(root, attempt, capture, is_live=live):
     for name in ('executable', 'arguments', 'working_directory'):
         if observed_scenario[name] != scenario[name]:
             raise ValueError('REA evidence describes another scenario')
+    capture_summary = load(capture / 'summary.json')
+    if (capture_summary['evidence_id'] != evidence['evidence_id']
+            or capture_summary['exit'] != result['exit']):
+        raise ValueError('REA capture summary identity/result differs')
+    checked(capture / 'evidence.json', capture_summary['evidence_sha256'])
+    checked(capture / 'scenario.json', capture_summary['scenario_sha256'])
+    return frozen, evidence, result, capture_summary
+
+
+def validate(root, attempt, capture, is_live=live):
+    frozen, evidence, result, capture_summary = context(root, attempt, capture, is_live)
+    report_path = root / 'build/reports/windows-campaign/summary.json'
+    report = load(report_path)
+    if report['status'] not in ('campaign-pass', 'bounded-progression', 'bounded-episode', 'fail'):
+        raise ValueError('Campaign report is not terminal')
+    if report['reader_sha256'] != frozen['reader_sha256']:
+        raise ValueError('Report names another SDK reader product')
+    checked(root / 'build/probes/windows-runtime/campaign-reader.exe', frozen['reader_sha256'])
+    expected_inputs = {name: sha for name, sha in frozen['inputs'].items()
+                       if name != 'scripts/capture-windows-probe.py'}
+    if report['inputs'] != expected_inputs:
+        raise ValueError('Report input set differs from the frozen attempt')
+    if report['goal_board_count'] != frozen['boards'] or report['episode_seconds'] != 0:
+        raise ValueError('Report requested another campaign scope')
     exit_state = result['exit']
     if exit_state['reason'] != 'exited' or exit_state['code'] is None:
         raise ValueError('REA did not observe a completed diagnostic process')
     if (exit_state['code'] == 0) != (report['status'] != 'fail'):
         raise ValueError('REA child result contradicts the diagnostic report')
-    capture_summary = load(capture / 'summary.json')
-    if (capture_summary['evidence_id'] != evidence['evidence_id']
-            or capture_summary['exit'] != exit_state):
-        raise ValueError('REA capture summary identity/result differs')
-    checked(capture / 'evidence.json', capture_summary['evidence_sha256'])
-    checked(capture / 'scenario.json', capture_summary['scenario_sha256'])
+    observed_scenario = result['manifest']['scenario']
     observations = report['observations']
     if any(row['profile'] != 'original' for row in observations):
         raise ValueError('Report contains another product')
@@ -153,23 +161,96 @@ def validate(root, attempt, capture, is_live=live):
     return files, metadata
 
 
+def validate_interrupted(root, attempt, capture, is_live=live):
+    """Retain a timed-out capture without manufacturing a terminal diagnostic."""
+    frozen, evidence, result, capture_summary = context(root, attempt, capture, is_live)
+    exit_state = result['exit']
+    if (exit_state['reason'] != 'timeout' or exit_state['code'] is not None
+            or not isinstance(exit_state.get('signal'), int) or exit_state['signal'] <= 0):
+        raise ValueError('Interrupted retention requires a REA-observed timeout signal')
+    report_path = root / 'build/reports/windows-campaign/summary.json'
+    if report_path.exists() or report_path.is_symlink():
+        raise ValueError('A diagnostic summary exists; use normal terminal validation')
+    if (result['manifest']['scenario']['filesystem_observation_paths'] != [str(report_path)]
+            or result['files_after']):
+        raise ValueError('REA did not record the expected missing final summary')
+    # With no final report, audit current fixtures independently. This establishes
+    # retained file identity, not an atomic runtime snapshot or a terminal result.
+    for name, expected in frozen['inputs'].items():
+        checked(root / name, expected)
+    checked(root / 'build/probes/windows-runtime/campaign-reader.exe', frozen['reader_sha256'])
+    assets_path = root / 'config/assets.csv'
+    checked(assets_path, frozen['inputs']['config/assets.csv'])
+    with assets_path.open() as stream:
+        assets = list(csv.DictReader(stream))
+    originals = {}
+    for entry in assets:
+        name = entry['filename']
+        if Path(name).name != name or name in originals:
+            raise ValueError('Asset names must be unique basenames')
+        original = checked(root / 'original' / name, entry['sha256'])
+        if original.stat().st_size != int(entry['size']):
+            raise ValueError('Original asset size differs: ' + name)
+        working_name = 'dxball.exe' if name == 'DXBALL.EXE' else name
+        checked(root / 'build/runtime/probe-original' / working_name, entry['sha256'])
+        originals[name] = entry['sha256']
+    observation_path = root / 'build/reports/windows-campaign/original/observation.json'
+    observation = load(observation_path)
+    stamp = observation_path.stat().st_mtime
+    manifest = result['manifest']
+    if not (datetime.fromisoformat(manifest['started_at'].replace('Z', '+00:00')).timestamp()
+            <= stamp <= datetime.fromisoformat(manifest['completed_at'].replace('Z', '+00:00')).timestamp()):
+        raise ValueError('Interrupted observation was not saved during this capture')
+    if (observation['profile'] != 'original' or observation['status'] != 'running'
+            or observation['executable_sha256'] != originals['DXBALL.EXE']
+            or observation['bank_input_sha256'] != originals['DEFAULT.BDS']):
+        raise ValueError('Interrupted observation is not the frozen original run')
+    files = [(observation_path, 'runtime/original/observation.json')]
+    for name in ('scenario.json', 'evidence.json', 'summary.json', 'rea.log'):
+        source = capture / name
+        if source.is_file():
+            files.append((source, 'rea/' + name))
+    for name in ('wine.log', 'reader.log'):
+        source = observation_path.parent / name
+        if source.is_file():
+            files.append((source, 'runtime/original/' + name))
+    metadata = dict(status='sealed', diagnostic_status='interrupted',
+                    observation_status=observation['status'],
+                    observation_mtime_ns=observation_path.stat().st_mtime_ns, full_campaign_accepted=False,
+                    evidence_id=evidence['evidence_id'], rea_exit=exit_state,
+                    reader_sha256=frozen['reader_sha256'], originals=originals,
+                    final_summary_present=False, rea_binds_full_report_digest=False,
+                    limitations=['REA timed out before a terminal diagnostic summary was written.',
+                                 'The unchanged running observation is the last periodic save, not a terminal state.',
+                                 'Current fixture hashes are a local audit, not REA filesystem observation.',
+                                 'Original-only control; reconstructed products and whole-game fidelity remain separate.'])
+    metadata['archive_inputs'] = {name: digest(source) for source, name in files}
+    if (metadata['archive_inputs']['rea/evidence.json'] != capture_summary['evidence_sha256']
+            or metadata['archive_inputs']['rea/scenario.json'] != capture_summary['scenario_sha256']):
+        raise ValueError('Validated capture changed while preparing the interrupted archive')
+    return files, metadata
+
+
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--attempt', type=Path, required=True)
     parser.add_argument('--capture', type=Path, required=True)
+    parser.add_argument('--interrupted', action='store_true',
+                        help='retain a REA timeout with no final diagnostic summary')
     args = parser.parse_args()
+    validator = validate_interrupted if args.interrupted else validate
     attempt, capture = args.attempt.resolve(), args.capture.resolve()
     attempt.relative_to(ROOT / '.analysis/checkpoints')
     capture.relative_to(ROOT / 'build/reports/rea-process')
     # Fail immediately for a live attempt, before acquiring the shared writer lock.
-    validate(ROOT, attempt, capture)
+    validator(ROOT, attempt, capture)
     with (ROOT / '.tools/compiler-session.lock').open('a') as lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError as error:
             raise ValueError('Another compiler/analysis session is active; sealing must wait') from error
-        files, metadata = validate(ROOT, attempt, capture)
+        files, metadata = validator(ROOT, attempt, capture)
         destination = attempt / 'sealed'
         if destination.exists() or (attempt / 'sha256.json').exists():
             raise ValueError('Attempt is already sealed; do not overwrite retained evidence')

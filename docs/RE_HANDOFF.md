@@ -1,5 +1,18 @@
 # Current handoff
 
+The original-only full control is now sealed as interrupted. REA reports
+`timeout` / signal 9, without a final diagnostic summary. Slots 0..36 were
+initialized; the last saved observation is still `running`, index 36, six
+remaining bricks, six lives, score 86,734. It supplies no full-campaign acceptance.
+All recorded processes are gone and all 80 frozen/current inputs, SDK product
+and 49 original/runtime file identities verify. The explicit interrupted sealer
+preserves the partial bytes and historical statuses; 41 retention checks pass.
+`original-campaign-control-01` now has 91 SHA-sealed files. Journaled cleanup
+removes its 49 resettable runtime copies, recovering 1.53 MiB; the next preview
+is empty. See [full-control timeout](ORIGINAL_CAMPAIGN.md#full-control-timeout).
+The saved six-angle controller candidate is only an original-x86 counterfactual;
+it has not been applied or accepted as a successful campaign controller.
+
 The original rotation probe now executes all 344 shared fixtures, including
 the original trig initializer and actual lookup/x87/conversion helpers. Full
 guarded destination buffers, immutable source/record/banks/tables, padding,
@@ -13,28 +26,27 @@ same report retains 329 original comparisons for the related width-only offset
 candidate at `0x402CD0`, including the extended 13/1.3 truncation boundary. Total
 report size is about 626 KiB. See [rotation reference data](ROTATION_INVESTIGATION.md#original-machine-reference-data).
 These are original-only references, not maintained-C acceptance; source/owner/
-exact counts remain 214 / 95,873 / 35. Constants/wrapper queries still await the
-live campaign's shared session. The bitmap batch's public CI passed `c33f343`.
+exact counts remain 214 / 95,873 / 35. Constants/wrapper queries can now use the released
+shared session. The bitmap batch's public CI passed `c33f343`.
 
 The saved 976-byte bitmap-loader REA dossier now has a reproducible original-x86
 investigation probe with 23 passing fixtures. It confirms clamped source-row
 steps, failure cleanup and caller-stack-dependent palette flags. No maintained
 C comparison or semantic promotion is claimed. See
 [bitmap investigation](BITMAP_INVESTIGATION.md). Three prefix/reference queries
-are prepared in `config/rea-bitmap.json`; they remain unexecuted until the live
-campaign releases the shared session. All 80 frozen campaign inputs remain
-unchanged. Storage preview still contains only the 49 live original assets
-(1,599,429 bytes), deferred until terminal evidence is sealed. The unique probe
+are prepared in `config/rea-bitmap.json`; they were prepared while the
+campaign held the shared session. All 80 frozen campaign inputs remain
+unchanged; the interrupted archive and subsequent cleanup are recorded above. The unique probe
 report is about 18 KiB and creates no executable or compiler objects.
 
 The original-only campaign sealer now validates frozen inputs/SDK product,
 kernel process identity, REA scenario/child result and complete terminal report
 before retaining the attempt. Twenty-four synthetic/Linux retention checks
-pass; the actual live attempt is correctly refused without mutation. REA 4.1.0
+pass; the live attempt was correctly refused without mutation. REA 4.1.0
 omits whole-file digests above its configured file_bytes hash budget, so the
 sealer explicitly distinguishes its complete private report hash from REA's
 filesystem digest. See [campaign retention](ORIGINAL_CAMPAIGN.md#storage-and-evidence).
-Use it after the current attempt ends, then run journaled cleanup.
+The actual timeout now uses the explicit interrupted path described above.
 
 The five missing rotation constant/wrapper/reference requests are prepared in
 `config/rea-rotation.json` and validated against the retained tool catalog; they
@@ -64,14 +76,11 @@ the wrapper and differential validation remain open. See
 exact unit is promoted. The architecture overview now distinguishes existing
 Windows SDK bindings from still-unverified physical device effects.
 
-A full original-board control was initiated with the unchanged campaign
-harness and a 7,200-second budget. Its private attempt directory is
-`.analysis/checkpoints/original-campaign-control-01/`, retaining input copies
-and the actual SDK reader product. Until its terminal report is archived and
-verified, it supplies no full-campaign acceptance. Do not overwrite those
-inputs or run cleanup against active runtime assets. The latest read-only
-cleanup preview contains only the 49 files used by that original-game process;
-remove them only after the attempt finishes and its evidence is retained.
+The full original-board control used the unchanged campaign harness and a
+7,200-second budget. Its frozen input copies and SDK reader remain under
+`.analysis/checkpoints/original-campaign-control-01/`; the timeout is retained
+there as described above. Keep this negative/incomplete control when evaluating
+a subsequent controller or reconstruction change.
 
 Original-board integration now compares 20,654 continuous original-x86 frames,
 including five advances, actual MBALL2/THEFONT geometry and checked node reuse.

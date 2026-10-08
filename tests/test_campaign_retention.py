@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Check campaign archival identity gates with synthetic files, without Wine."""
 import contextlib
+import csv
+from datetime import datetime, timedelta, timezone
 import copy
 import fcntl
 import hashlib
@@ -8,6 +10,7 @@ import importlib.util
 import io
 import json
 import os
+import shutil
 from pathlib import Path
 import sys
 import tempfile
@@ -94,6 +97,126 @@ def reject(root, attempt, capture, label, is_live=lambda *_: False):
         raise AssertionError('Accepted invalid retention: ' + label)
     after = sorted(str(p.relative_to(attempt)) for p in attempt.rglob('*') if p.is_file())
     assert before == after, 'Rejected validation mutated the frozen attempt'
+
+
+def interrupted_fixture(root):
+    attempt, capture, report, observation, scenario, evidence = fixture(root)
+    assets_path = root / 'config/assets.csv'
+    assets_path.parent.mkdir(parents=True)
+    with assets_path.open('w') as stream:
+        writer = csv.DictWriter(stream, fieldnames=['filename', 'size', 'sha256'])
+        writer.writeheader()
+        for name, sha in report['originals'].items():
+            writer.writerow(dict(filename=name, sha256=sha, size=(root / 'original' / name).stat().st_size))
+    frozen = sealer.load(attempt / 'attempt.json')
+    name = 'tests/test_windows_campaign.py'
+    (root / name).parent.mkdir(parents=True)
+    shutil.copyfile(attempt / name, root / name)
+    frozen['inputs']['config/assets.csv'] = sealer.digest(assets_path)
+    (attempt / 'config').mkdir()
+    shutil.copyfile(assets_path, attempt / 'config/assets.csv')
+    write(attempt / 'attempt.json', frozen)
+    observation = dict(observation, status='running', initialized_board_indices=list(range(37)),
+                       last_state=dict(board_index=36, display_mode=1, remaining_bricks=6))
+    sync(root, capture, report, observation, scenario, evidence)
+    (root / 'build/reports/windows-campaign/summary.json').unlink()
+    result = evidence['normalized_result']
+    result['exit'] = dict(reason='timeout', code=None, signal=9)
+    result['files_after'] = []
+    now = datetime.now(timezone.utc)
+    result['manifest'].update(started_at=(now - timedelta(minutes=1)).isoformat(),
+                              completed_at=(now + timedelta(minutes=1)).isoformat())
+    write(capture / 'evidence.json', evidence)
+    write(capture / 'summary.json', dict(evidence_id=evidence['evidence_id'], exit=result['exit'],
+          evidence_sha256=sealer.digest(capture / 'evidence.json'),
+          scenario_sha256=sealer.digest(capture / 'scenario.json')))
+    return attempt, capture, evidence
+
+
+def interrupted_checks():
+    cases = 0
+    with tempfile.TemporaryDirectory() as temporary:
+        root = Path(temporary)
+        attempt, capture, evidence = interrupted_fixture(root)
+        run = lambda: sealer.validate_interrupted(root, attempt, capture, lambda *_: False)
+        files, metadata = run()
+        assert metadata['diagnostic_status'] == 'interrupted' and not metadata['full_campaign_accepted']
+        assert metadata['observation_status'] == 'running' and not metadata['final_summary_present']
+        assert not any(name == 'runtime/summary.json' for _, name in files)
+        cases += 1
+        def refused(label, action=run):
+            before = {str(p.relative_to(attempt)): sealer.digest(p)
+                      for p in attempt.rglob('*') if p.is_file()}
+            try:
+                action()
+            except (ValueError, FileNotFoundError):
+                pass
+            else:
+                raise AssertionError('Accepted invalid interrupted retention: ' + label)
+            assert before == {str(p.relative_to(attempt)): sealer.digest(p)
+                              for p in attempt.rglob('*') if p.is_file()}
+        refused('still live', lambda: sealer.validate_interrupted(root, attempt, capture, lambda *_: True))
+        refused('normal acceptance', lambda: sealer.validate(root, attempt, capture, lambda *_: False))
+        cases += 2
+        summary = root / 'build/reports/windows-campaign/summary.json'
+        write(summary, dict(status='campaign-pass'))
+        refused('stale or terminal summary')
+        summary.unlink()
+        cases += 1
+        for path in (root / 'tests/test_windows_campaign.py', root / 'original/DEFAULT.BDS',
+                     root / 'build/runtime/probe-original/DEFAULT.BDS',
+                     root / 'build/probes/windows-runtime/campaign-reader.exe'):
+            saved = path.read_bytes()
+            path.write_bytes(b'changed input')
+            refused(str(path))
+            path.write_bytes(saved)
+            cases += 1
+        observation_path = root / 'build/reports/windows-campaign/original/observation.json'
+        saved = observation_path.read_bytes()
+        for field, value in (('profile', 'vc40'), ('status', 'campaign-pass'), ('bank_input_sha256', '0' * 64)):
+            bad = sealer.load(observation_path)
+            bad[field] = value
+            write(observation_path, bad)
+            refused(field)
+            observation_path.write_bytes(saved)
+            cases += 1
+        saved_stat = observation_path.stat()
+        os.utime(observation_path, (1, 1))
+        refused('observation from before capture')
+        os.utime(observation_path, ns=(saved_stat.st_atime_ns, saved_stat.st_mtime_ns))
+        cases += 1
+        saved_evidence = (capture / 'evidence.json').read_bytes()
+        saved_summary = (capture / 'summary.json').read_bytes()
+        for exit_state, entries in ((dict(reason='exited', code=0), []),
+                                    (dict(reason='timeout', code=0, signal=9), []),
+                                    (dict(reason='timeout', code=None, signal=0), []),
+                                    (dict(reason='timeout', code=None, signal=9),
+                                     [dict(path='root_0:.', type='file')])):
+            bad = copy.deepcopy(evidence)
+            bad['normalized_result'].update(exit=exit_state, files_after=entries)
+            write(capture / 'evidence.json', bad)
+            summary_data = json.loads(saved_summary)
+            summary_data.update(exit=exit_state, evidence_sha256=sealer.digest(capture / 'evidence.json'))
+            write(capture / 'summary.json', summary_data)
+            refused('incompatible process/filesystem result')
+            (capture / 'evidence.json').write_bytes(saved_evidence)
+            (capture / 'summary.json').write_bytes(saved_summary)
+            cases += 1
+        (root / '.tools').mkdir()
+        actual = sealer.validate_interrupted
+        with patch.object(sealer, 'ROOT', root), \
+                patch.object(sealer, 'validate_interrupted', side_effect=lambda r, a, c: actual(r, a, c, lambda *_: False)), \
+                patch.object(sys, 'argv', ['seal', '--attempt', str(attempt), '--capture', str(capture), '--interrupted']), \
+                contextlib.redirect_stdout(io.StringIO()):
+            sealer.main()
+        hashes = sealer.load(attempt / 'sha256.json')
+        for name, expected in hashes.items():
+            assert sealer.digest(attempt / name) == expected
+        assert (attempt / 'sealed/runtime/original/observation.json').read_bytes() == saved
+        assert sealer.load(attempt / 'attempt.json')['inputs']['config/assets.csv'] == sealer.digest(root / 'config/assets.csv')
+        assert not (attempt / 'sealed/runtime/summary.json').exists()
+        cases += 1
+    return cases
 
 
 def main():
@@ -223,6 +346,7 @@ def main():
     assert not sealer.live(dict(pid=os.getpid(), start_ticks=start + 1), boot)
     assert not sealer.live(dict(pid=os.getpid(), start_ticks=start), 'another boot')
     cases += 3
+    cases += interrupted_checks()
     print('PASS campaign retention:', cases, 'checks; synthetic files and Linux process identity only')
 
 

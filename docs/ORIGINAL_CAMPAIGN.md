@@ -83,6 +83,32 @@ A bonus can advance a level without destroying every brick; a progression
 report must not be described as 50 brick clears. Physical Windows behavior,
 audio, synchronized pixels and full original-campaign acceptance remain open.
 
+## Full-control timeout
+
+The 7,200-second original-only control did not finish the requested campaign.
+REA Evidence
+`ev_567ab025c40f68e7056eb5f905564b5b0c86581f13cc630efdaa914d68615c2f`
+records a timeout and signal 9, with no child exit code or final diagnostic
+summary. Its output records initialization of slots 0..36. The last periodically
+saved observation remains `running`, at board index 36 with six remaining
+bricks, six lives and score 86,734. Its last retained event is at 6,527.416
+harness seconds; it is not an observation of the termination instant.
+
+This is an incomplete original control, not a reconstructed-game failure or
+full-campaign acceptance. All recorded game/reader process identities are
+confirmed inactive before archival. The private
+`original-campaign-control-01` archive seals 91 files: the unchanged frozen
+inputs and actual SDK reader, the complete REA capture, the unchanged partial
+observation and stderr logs. Its separate checkpoint records `interrupted`,
+missing final summary and `full_campaign_accepted: false`; initial `attempt.json`
+and the partial observation keep their historical statuses.
+
+A local audit verifies all 80 current/frozen inputs, the actual SDK product,
+49 original files and their runtime copies. These file identities do not turn
+the partial record into a terminal runtime observation. After verifying the
+archive, journaled cleanup removes the 49 disposable runtime copies and
+recovers 1,599,429 bytes (1.53 MiB). A subsequent preview has no pending actions.
+
 ## Original-x86 connected episodes
 
 `tests/test_campaign_differential.py` extends the existing display oracle with
@@ -131,8 +157,12 @@ copies and `campaign-reader.exe`. The manifest binds input SHA-256 values,
 the retained reader hash, profiles, board/time scope and the two observed
 kernel process identities. Keep this snapshot while the actual processes are
 live; later validation requires the report's complete input set to agree.
-Sealing retains failures as failures and excludes stale directories for other
-products. It does not promote owner functions or exact units.
+Normal sealing retains failures as failures and excludes stale directories for
+other products. Explicit `--interrupted` sealing accepts only a REA timeout
+with a signal, no final summary and an unchanged original-only `running`
+observation saved during that capture. It audits current/frozen inputs and
+original/runtime files before retaining the partial bytes without editing them.
+This path has no campaign-pass outcome. It does not promote owner functions or exact units.
 
 REA 4.1.0's `file_bytes` budget bounds whole-file SHA-256 work. A larger file
 is recorded with size and a null digest, and the filesystem snapshot is marked
@@ -151,14 +181,20 @@ existing snapshot and corresponding timestamped capture directory:
 scripts/repo-python scripts/seal-original-campaign.py \
   --attempt .analysis/checkpoints/ATTEMPT \
   --capture build/reports/rea-process/CAPTURE
+# Only when REA timed out and no final diagnostic summary exists:
+scripts/repo-python scripts/seal-original-campaign.py \
+  --attempt .analysis/checkpoints/ATTEMPT \
+  --capture build/reports/rea-process/CAPTURE --interrupted
 scripts/repo-python scripts/clean-local.py --apply
 ```
 
 `tests/test_campaign_retention.py` checks these identity and rejection gates
-using synthetic files and actual Linux process identity. Its 24 checks include
+using synthetic files and actual Linux process identity. Its 41 checks include
 changed products/input sets, incomplete terminal predicates, contradictory
 child results, oversized reports, live/competing sessions, changes during
-archiving and archive overwrite.
+archiving and archive overwrite. The interrupted cases also reject stale
+observations, changed runtime inputs, conflicting final summaries and incompatible
+REA exits/filesystem results, and verify byte-preserving partial archival.
 Public CI runs it without private game assets, Wine or a compiler session.
 
 Keep unique Evidence, originals, pinned tools and manual saves. Unchanged
