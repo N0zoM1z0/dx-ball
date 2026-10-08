@@ -1,5 +1,26 @@
 # Current handoff
 
+Original-board integration now compares 20,654 continuous original-x86 frames,
+including five advances, actual MBALL2/THEFONT geometry and checked node reuse.
+All twelve gameplay phases execute; 97 report inputs and the native library
+are bound. Controlled dependencies and the host-pointer terminal boundary
+remain explicit. These frames are separate from the 95,873 direct owner cases.
+
+A persistent read-only SDK observer supplies complete boards and ball/bonus
+lists to ordinary XTest input. REA process capture records three-product bounded
+episodes and the first original-board transition. Evidence
+`ev_79991d871a117a9ce71859f372b6f9272a0b8e9fb1547c64b6151fe043e6dc98`
+retains exit 0: original/VC4/MinGW each verify untouched slots 0 and 1 and retain
+three lives. A prior VC4 attachment-sampling gap is preserved separately; the
+predicate now uses two complete bank matches. See
+[original campaign scope and commands](ORIGINAL_CAMPAIGN.md).
+
+The accepted 214-function / 95,873-case and 35-unit / 3,478-byte scopes remain
+unchanged. The campaign audit rechecks all 415 resource-checkpoint files, every
+owner/exact/ledger input and current native/exact products before reuse.
+Full original-campaign acceptance is still open; the default campaign command
+requires all original slots and the terminal menu transition.
+
 The embedded-resource checkpoint links the two REA-reviewed original leaves
 into private VC4/MinGW game EXEs. The public manifest contains hashes and
 identifiers; no original payload is published. The independent SDK data-file

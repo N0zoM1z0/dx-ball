@@ -15,27 +15,39 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss', 'terminal', 'resources'), default='round')
+    parser.add_argument('--probe', choices=('round', 'focus', 'ddraw-loss', 'terminal', 'resources', 'campaign'), default='round')
     parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
+    parser.add_argument('--campaign-seconds', type=int, default=3600)
+    parser.add_argument('--campaign-boards', type=int, choices=range(1, 51), default=50)
+    parser.add_argument('--episode-seconds', type=int, default=0)
     args = parser.parse_args()
     if args.probe in ('ddraw-loss', 'resources') and args.profile:
         parser.error('--profile selects a game build; this independent SDK probe takes no profile')
     script = ROOT / 'tests' / ('test_windows_ddraw_loss.py' if args.probe == 'ddraw-loss'
                               else 'test_windows_resources.py' if args.probe == 'resources'
                               else 'test_windows_terminal.py' if args.probe == 'terminal'
+                              else 'test_windows_campaign.py' if args.probe == 'campaign'
                               else 'test_windows_round.py')
     arguments = [str(script)]
     if args.probe == 'focus':
         arguments.append('--focus-recovery')
     if args.profile:
-        arguments.extend(['--profile', args.profile])
+        arguments.extend(['--profiles' if args.probe == 'campaign' else '--profile', args.profile])
+    if args.probe == 'campaign':
+        if args.campaign_seconds < 1 or not 0 <= args.episode_seconds <= args.campaign_seconds:
+            parser.error('Invalid campaign observation deadline')
+        arguments.extend(['--seconds', str(args.campaign_seconds),
+                          '--boards', str(args.campaign_boards),
+                          '--episode-seconds', str(args.episode_seconds)])
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     directory = ROOT / 'build/reports/rea-process' / (stamp + '-' + args.probe)
     directory.mkdir(parents=True)
     name = {'focus': 'windows-focus', 'ddraw-loss': 'windows-ddraw-loss',
             'terminal': 'windows-terminal', 'round': 'windows-round',
-            'resources': 'windows-resources'}[args.probe]
+            'resources': 'windows-resources', 'campaign': 'windows-campaign'}[args.probe]
     timeout = 1200000 if args.probe == 'terminal' else 300000
+    if args.probe == 'campaign':
+        timeout = (args.campaign_seconds + 60) * (1 if args.profile else 3) * 1000
     scenario = {
         'executable': str(ROOT / 'scripts/repo-python'),
         'arguments': arguments, 'working_directory': str(ROOT),
@@ -44,11 +56,12 @@ def main():
         # replace unrelated numeric values, so declare all text rules explicitly.
         'normalization': {'paths': False, 'pids': False, 'ports': False},
         'limits': {'output_bytes': 16000, 'files': 4,
-                   'file_bytes': 128000 if args.probe == 'terminal' else 32000,
+                   'file_bytes': 128000 if args.probe in ('terminal', 'campaign') else 32000,
                    'filesystem_depth': 1, 'processes': 64},
-        'filesystem_observation_paths': [
-            str(ROOT / 'build/reports' / (name + '.json')),
-            str(ROOT / 'build/reports' / name / 'failure.json')],
+        'filesystem_observation_paths': ([str(ROOT / 'build/reports/windows-campaign/summary.json')]
+            if args.probe == 'campaign' else [
+                str(ROOT / 'build/reports' / (name + '.json')),
+                str(ROOT / 'build/reports' / name / 'failure.json')]),
     }
     request = directory / 'scenario.json'
     request.write_text(json.dumps(scenario, indent=2) + '\n')

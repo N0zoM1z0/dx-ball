@@ -83,6 +83,10 @@ The [embedded resource investigation](docs/EMBEDDED_RESOURCES.md) follows REA's
 resource bytes into private VC4/MinGW builds, then checks the complete inventory
 and decoded icon through an independent SDK probe. It preserves the original
 startup's mismatched icon identifier and compares a resource-free control.
+The [original-board integration](docs/ORIGINAL_CAMPAIGN.md) adds a persistent
+read-only SDK observer and ordinary mouse controls, with bounded state reports
+and REA process Evidence. Short episodes and original-board progression remain
+separate from full campaign acceptance.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.

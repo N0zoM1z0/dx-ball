@@ -29,3 +29,5 @@ jobs:
           sudo apt-get install --no-install-recommends -y gcc-mingw-w64-i686 ninja-build
       - name: Compile Windows adapter and game with strict warnings
         run: scripts/repo-python scripts/build-windows.py --without-game-resources
+      - name: Compile persistent campaign observer with strict C90 warnings
+        run: scripts/repo-python tests/test_windows_campaign.py --compile-only
