@@ -79,6 +79,13 @@ preview is empty. Analysis is about 390 MiB, build 31 MiB, and pinned tools
 cleanup bytes do not measure filesystem block savings. Full-campaign runtime
 outputs will be retained and reviewed separately before another cleanup.
 
+The [bounded dependency review](DEPENDENCY_FRONTIER.md) reuses 179 saved REA
+records covering 174 maintained entries. Their static callee lists reach 41
+unmaintained imported targets, including the allocation/release and numeric
+support used by connected owners. Thirty large dossiers and four unclosed-run
+records are outside its boundary. This prioritizes further contract review;
+it does not classify those targets or change source/case/exact acceptance.
+
 The preceding checkpoints below retain their historical totals and boundaries.
 
 The raster owner is accepted: triangle, polygon, clipped polygon and horizontal
