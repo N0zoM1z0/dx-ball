@@ -36,6 +36,14 @@ handler calls. It preserves Local/Global ownership and all six song lifecycles;
 REA runtime capture records exit zero. This private native result leaves
 production binding, resource/frame connections and i686 MIDI execution open.
 
+The [connected resource draft](RESOURCE_OWNER.md#connected-malloc-ownership-draft)
+also passes 234 fixtures / 5,738 resource calls across all seven SBK files,
+reloading, malloc-mode retries and preserved CreateSurface partial ownership.
+The original allocator replacements are removed; 364 inputs and current
+products verify under a successful REA process capture. Native MIDI/resource
+connections now have private execution evidence. Sound/frame ownership,
+production binding, connected i686 execution and grouped promotion remain open.
+
 The [isolated allocator draft](DEPENDENCY_FRONTIER.md#executed-allocator-draft)
 now passes 624 original-entry fixtures, 210 connected node fixtures and 45
 ball retirements, plus two separate native pointer controls. Its 154-file

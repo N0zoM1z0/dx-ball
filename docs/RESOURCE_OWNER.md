@@ -130,3 +130,55 @@ different object lengths are not masked or reported as exact.
 The related software renderer, offset helper and wrapper now live in the
 [rotation owner](ROTATION_INVESTIGATION.md), with 1,024 separately counted direct
 cases and an exact 40-byte wrapper. The resource translation unit is unchanged.
+
+## Connected malloc ownership draft
+
+A private natural shared-C copy connects capture/release and SBK loading to
+the reviewed malloc-mode and heap-release entries. The original side removes
+its malloc/free replacements and executes their complete internal chain.
+**234 fixtures / 5,738 resource calls** pass: 161 captures, 143 bank loads and
+5,434 releases, with 440 separately checked seed calls. All seven original SBK
+files load and reload; slots 0/254 survive reloading and slots 1..253 retire
+through the same allocation family.
+
+Original entry observation records 21,127 malloc calls, 21,434 HeapAlloc
+attempts, 307 handler calls and 21,124 heap releases. The three outstanding
+allocations are deliberately retained pixel scratch after CreateSurface failure.
+Controlled API traces, initialized records, full pixel data, bank state,
+request sizes and ownership agree. Original record requests are 45 bytes;
+native typed requests are independently checked at 49. Negative handler
+results, one/three failed attempts, mode mutation during a request and mode
+reload by later requests execute with their original bodies. One empty-owner
+capture switches heap before allocating, without inventing a guarantee for
+freeing old blocks on another heap.
+
+The three synthetic partial-owner fixtures keep the selected bank, open file,
+record and scratch on failed creation. Their live pixel bytes are compared
+before record retirement; the file closes only through explicit fixture
+cleanup afterward. Null-surface pitch is outside initialized-state acceptance.
+Per-release effects, cleared slots and poison checks run immediately, with
+complete bank/payload/ownership comparisons after each retirement batch.
+
+REA `capture-process` Evidence
+`ev_9973d4d648f070cacbddb52400b483c73df2f858af435235c94f813efc219ce5`
+binds the successful child exit zero and complete report. Its 364 inputs
+include the exact seven SBK files, pre-execution loaded engines, actual compiler
+components and prebound link objects/libraries. Explicit typed fixture storage
+provides the two board-owned globals; board-renderer functions are outside this
+standalone comparison. A strict link rejects unresolved dependencies. Host
+GCC's unused-result diagnostics remain visible through a narrowly declared
+exception for deliberately ignored fread results; other warning errors remain.
+The earlier compiler/load rejections and sources survive as separate controls.
+
+The 69,700,317-byte comparison sequence streams into a digest, avoiding a large
+redundant temporary snapshot. This is private native ownership evidence with
+controlled file, DirectDraw and heap APIs. Production binding, connected i686
+execution, malloc-NULL/open termination and actual startup/teardown remain open.
+It adds no maintained, direct-case or exact ledger acceptance.
+
+The corrected 57-file checkpoint retains inputs, products, source review and
+REA capture, with 327 external references. Retention then removes 23 failed
+working files after matching their sealed controls, shares 47 immutable
+duplicates and recovers 828 KiB of measured disk usage. All 6,981 immutable
+paths, 2,015 references and 49 original files verify; the next preview is empty.
+Current successful products, original assets and pinned tools stay retained.
