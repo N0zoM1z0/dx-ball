@@ -20,8 +20,17 @@ and the accepted native library verify, allowing the prior replay to be reused.
 
 Cleanup journal `20261008T042807287873Z` processes 20 redundant-alias/archive
 operations, recovering 26.46 MiB of logical duplicate bytes. All 3,122 captured
-immutable paths verify; the immediate next preview is empty. New unique
-reports/products still need final retention and housekeeping below.
+immutable paths verify; the immediate next preview is empty. The final
+33-operation cleanup journal `20261008T044059482162Z` removes/shares another
+25.75 MiB. The sealed `raster-investigation-217-36` checkpoint retains 50 files
+and 39 external Evidence references; all 3,189 final immutable paths verify.
+Large frozen snapshot/report bytes are losslessly compressed from 72.97 MiB
+to 4.20 MiB, with both compressed and expanded hashes verified. After verified
+retention, 4.95 MiB of historical experiment copies are removed. Total cleanup
+is 57.16 MiB of logical duplicate bytes; this is not a measurement of physical
+filesystem blocks. The final preview is empty. Analysis is about 373 MiB and
+build about 29 MiB; installed pinned tools remain intact. Public source commit
+`cd927f1` passes CI run 37728318698.
 
 
 The rotation batch is accepted: three shared C entries, 1,024 new direct

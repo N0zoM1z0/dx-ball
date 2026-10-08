@@ -123,7 +123,13 @@ whose complete bytes survive in a closed archived session. Identical catalogs
 inside closed archives share storage through hardlinks; their paths and hashes
 stay intact. The same cleanup verifies every file declared by checkpoint
 `sha256.json` manifests before sharing identical immutable archive copies.
-Current build products and unsealed experiments remain separate. Mutable root aliases are never hardlinked to evidence. Cleanup
+Current build products and unsealed experiments remain separate. Large frozen
+checkpoint snapshots/reports can also be retained as lossless gzip artifacts,
+with the private manifest binding both compressed and expanded SHA-256 values.
+The raster investigation verified 72.97 MiB of expanded bytes in 4.20 MiB of
+archive storage before deleting superseded experiment copies. This is a
+retention step; `clean-local.py` checks sealed hashes and shares duplicate
+files, while the current mutable REA snapshot stays directly usable. Mutable root aliases are never hardlinked to evidence. Cleanup
 retains snapshots, archived results, checkpoint reports and pinned tools, and
 writes a private SHA-256 operation journal under `.analysis/cleanup/`.
 Once the installed REA, Node, Ghidra and JDK inputs all verify, cleanup also
