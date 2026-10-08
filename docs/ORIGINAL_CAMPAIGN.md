@@ -12,6 +12,32 @@ Static contracts reuse the saved REA evidence in the
 The new runtime observations test those recovered contracts together; they
 do not introduce a second transcription of the game.
 
+## Completed original control
+
+The original-only control now passes the full predicate with the unchanged
+campaign bank. REA `capture-process` Evidence
+`ev_e7f2df5e40a1a0ba723c0156934c2684a7f136e0ebee954177b00cac5e746c8f`
+records normal child exit zero and binds the complete final report digest.
+The harness verifies initial board bytes for all indices 0–49, then observes
+index 50 in the menu with end, reset and return-to-menu flags cleared.
+It finishes in **5,465.402 seconds**, retaining eight lives and score 149,624.
+Bonus advancement is permitted; this is campaign completion, not a claim
+that every brick was destroyed.
+
+The read-only SDK observer consumes 428,040 valid samples with no malformed
+samples. Its pipe-byte digest and bounded transition observations are retained;
+the full streamed data is not stored. Game audio is routed to the dedicated
+null sink while the host default stays unchanged. All original files and the
+bank remain identical. Both game/reader identities are inactive before the
+98-file `original-campaign-contact-control-01` archive is sealed and verified.
+The final report SHA-256 is
+`8815d628797edf34ce45d70ed0300d35bec47090d0beee9461c73583f61dfc6f`.
+
+This establishes the original control under the recorded Wine/Xvfb environment.
+Full VC4 and MinGW campaigns, physical audio/Windows behavior and synchronized
+trajectory or pixel equivalence remain unverified. Maintained source and exact
+acceptance are unchanged. The earlier timeout below remains negative evidence.
+
 ## Windows observation
 
 `tests/windows_campaign_reader.c` is a persistent i686 SDK observer. It requests
@@ -57,8 +83,9 @@ also exits zero. The final harness waits for cleared end/reset/menu flags at
 index 50, consistent with the saved custom-board terminal observations. Its
 original-only episode replay
 `ev_fae013a8191a1f90e0f07475096da93b2ec3a3c2176a44b6e5ed76ee2af0241f`
-exits zero. The terminal predicate remains unaccepted for the full original
-campaign until that complete run succeeds.
+exits zero. At that checkpoint the terminal predicate was still unaccepted
+for the full original campaign; the completed original control above supplies
+the subsequent full-run evidence.
 
 ```bash
 # Public compilation needs neither original assets nor a Wine run.
@@ -74,14 +101,14 @@ scripts/repo-python scripts/capture-windows-probe.py --probe campaign \
 
 # Full campaign goal, one product at a time. Timeouts/game-over are failures.
 scripts/repo-python scripts/capture-windows-probe.py --probe campaign \
-  --profile original --campaign-seconds 3600
+  --profile original --campaign-seconds 7200
 ```
 
 Full acceptance requires all indices 0..49 to be observed with their original
 initial board bytes, followed by index 50 and a completed menu transition.
 A bonus can advance a level without destroying every brick; a progression
 report must not be described as 50 brick clears. Physical Windows behavior,
-audio, synchronized pixels and full original-campaign acceptance remain open.
+audio, synchronized pixels and full reconstructed campaigns remain open.
 
 ## Full-control timeout
 

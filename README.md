@@ -103,12 +103,13 @@ and decoded icon through an independent SDK probe. It preserves the original
 startup's mismatched icon identifier and compares a resource-free control.
 The [original-board integration](docs/ORIGINAL_CAMPAIGN.md) adds a persistent
 read-only SDK observer and ordinary mouse controls, with bounded state reports
-and REA process Evidence. A later original-only control verifies initial boards 0–3 with ordinary mouse
-input. The [contact policy](docs/CONTACT_POLICY.md) follows the recovered discrete
+and REA process Evidence. The full original-only control now verifies all 50
+unchanged initial boards and the completed return to menu in about 91 minutes.
+Full campaigns in the reconstructed builds remain unverified.
+The [contact policy](docs/CONTACT_POLICY.md) follows the recovered discrete
 wall/collision contracts, with 1,464 controlled fixtures and 21,168 compared
 frames. Its five-board episode compares another 16,756 original/native frames.
-These bounded runs remain
-separate from full campaign acceptance.
+These differential episodes remain separate from full reconstructed campaigns.
 
 The [runtime-library investigation](docs/CRT_PROVENANCE.md) pairs REA instruction
 and byte observations with whole pinned CRT objects, identifying eight further
@@ -292,7 +293,8 @@ loader and CRT evidence guided one shared storage object and overlap-safe copies
 459 additional x86 integration cases check every stored byte, including nonzero
 unknown state. Five changed compiler emissions retain semantic validation and
 are [explicitly demoted from exactness](docs/BUILD_MATCHING.md). Completion of
-the original campaign remains unverified.
+the original campaign is now verified by the separate original-only control;
+full reconstructed campaigns remain unverified.
 
 `tests/test_windows_gameover.py` uses ordinary mouse input to miss balls until
 three lives are exhausted, then enters and edits a name through actual keys.

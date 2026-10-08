@@ -1,5 +1,15 @@
 # Current handoff
 
+The [full original control](ORIGINAL_CAMPAIGN.md#completed-original-control)
+passes: all 50 unchanged initial boards, terminal index 50 and the cleared menu
+state, in 5,465.402 seconds with eight lives. REA process Evidence
+`ev_e7f2df5e40a1a0ba723c0156934c2684a7f136e0ebee954177b00cac5e746c8f`
+records exit zero and the full final-report digest. All 98 archive files verify
+after the game/reader processes stop. This is original-only acceptance;
+VC4/MinGW full campaigns and whole-game fidelity remain open. The captured
+game runs silently on one allowed CPU. Source totals stay
+**235 maintained / 109,805 direct cases / 36 exact units / 3,518 bytes**.
+
 The [next connected allocation batch](DEPENDENCY_FRONTIER.md#next-connected-allocation-batch)
 targets the six-entry new/delete, heap allocation, new-handler and release chain
 behind the current host allocation bridges. Saved REA dossiers cover 172
@@ -10,8 +20,8 @@ evidence identities. Verification checks complete instruction lists,
 target identity, caller edges and unchanged game owner/exact products. Heap
 initialization, handler registration and ownership binding remain separate
 obligations. Runtime provenance is explicitly a historical checkpoint;
-maintained/semantic/exact totals remain unchanged. The original full-campaign
-control is still running with frozen inputs; no terminal result is inferred.
+maintained/semantic/exact totals remain unchanged. The frozen original
+full-campaign result is now sealed as described above.
 
 The [campaign contact policy](CONTACT_POLICY.md) now uses earliest reachable
 falling-ball contact, discrete wall clamping and independent bonus lookahead.
