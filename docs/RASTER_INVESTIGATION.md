@@ -198,3 +198,10 @@ raster and rotation reports, which bind CMake configuration, are freshly
 replayed along with their VC4 comparisons. The unchanged exact replay's inputs
 and products verify before reuse. Zero-edge polygons, arithmetic overflow,
 missing backing and physical/runtime game use remain outside these tests.
+
+The accepted source/product closure is sealed privately under
+`.analysis/checkpoints/raster-221-36/`: 376 files and 41 external REA references.
+The complete native report is retained as gzip with both compressed and expanded
+hashes verified. Cleanup removes only verified duplicates and disposable test
+fixtures; all 3,567 captured immutable paths and current acceptance inputs and
+products verify afterward.

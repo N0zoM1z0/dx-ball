@@ -27,12 +27,21 @@ and loader evidence are retained. The actual native library is unchanged, so
 identities; CMake-bound raster and rotation reports were freshly replayed along
 with their VC4 tests. The unchanged exact inputs/products verify before reuse.
 
-Cleanup already removes 5.32 MiB of historical raster draft duplicates after
-verifying the sealed copies and expanded gzip hashes. Seal this source batch in
-`.analysis/checkpoints/raster-221-36/` before the final probe/duplicate cleanup.
-Current products, original inputs, pinned tools and complete REA records remain
-required. The entries below retain the preceding investigations and checkpoints
-with their original acceptance boundaries.
+Source commit `af8efb1` passes public CI run 37733297850. The SHA-sealed
+`.analysis/checkpoints/raster-221-36/` retains 376 files and 41 external Evidence
+references, including actual products, source/report closures and failed MinGW
+diagnostics. The 6,486,127-byte raster report is losslessly retained in 431,687
+gzip bytes; expanded SHA verification passes.
+
+Cleanup removes 5.32 MiB of historical draft copies after verifying their sealed
+copies. Journal `20261008T053752389054Z` handles another 423 duplicate/probe
+operations, about 7.03 MiB. Combined cleanup is 12.36 MiB of logical duplicate
+or fixture bytes, not measured filesystem block savings. All 3,567 captured
+immutable paths, 41 external references and current acceptance inputs/products
+verify. The next cleanup preview is empty. Analysis is about 383 MiB and build
+30 MiB; installed pinned tools remain intact at about 1.9 GiB. Current products,
+original inputs and complete REA records remain available. The entries below
+retain the preceding investigations and their original acceptance boundaries.
 
 The next large graphics family is now investigated through REA: the triangle
 and two polygon controllers. A private natural C draft passes 6,084 original
