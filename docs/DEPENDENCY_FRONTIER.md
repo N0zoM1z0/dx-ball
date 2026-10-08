@@ -147,6 +147,16 @@ defaults must preserve allocation/release ownership across every affected
 family; host allocations cannot be released through a different private heap.
 The malloc/newmode wrapper at `0x00417770` is outside this six-entry proposal.
 
+A bounded search of the same 268 saved REA dossiers finds the three direct
+heap/handler readers above, but establishes no initialization or registration
+producer. It also finds non-primary Ghidra WRITE references from editor entry
+`0x0040C3B0` to `0x0043FB13`, labelled `DAT_0043fb10+3`. Saved Evidence
+`ev_12f27f7831f215d80c2a1a27d88e1638ffa9ab2fd568793f66258b328927431e`
+shows indexed board-byte writes at `0x0040C577` and `0x0040C6F3`, based at
+`0x0043F8F8`. Those inferred reference labels alone cannot establish a handler
+mutation. Producer selection must inspect the original operand and reference
+provenance; this saved subset does not prove an exhaustive absence of writers.
+
 A separate saved-record search inspected 268 dossiers for eight remaining
 application candidates. It recovered the palette-load variant at `0x00409A30`
 but found no represented caller edge to those eight candidates. Thirty-one
