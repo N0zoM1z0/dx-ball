@@ -182,3 +182,48 @@ They are not promoted as authored sound functions.
 Gameplay, display, runtime and platform audio callbacks now default to these
 maintained controllers. Physical DirectSound output, real WinMM delivery,
 Win32/DirectDraw adapters and playable whole-EXE integration remain pending.
+
+## Connected malloc ownership draft
+
+The next bounded connection uses the actual maintained sound library through
+its explicit allocate/deallocate API. A typed C boundary connects that API to
+the eight-entry allocator draft; it does not rebuild sound.c. The original
+malloc/free replacement hooks are removed, so original sound and allocator
+bodies execute together. Only Kernel32, DirectSound COM, physical heap and
+new-handler outcomes are controlled. No game audio is emitted.
+
+REA process Evidence
+`ev_f5afb693f6a73efe341e3428df1fa1f52f72ce591d17bde8eecbf63bf996852f`
+records exit zero and the complete final-report SHA
+`ddabac832fab02ac50f3453e5f168445dfaefa41a55a2de38791c58af1b1fd54`.
+The corrected run passes **91 fixtures / 303 normal sound calls**, plus
+three separately compared terminal exits, one paired seed and four paired
+fixture releases. All 26 original WAVs run through load/pause/initialize/play/
+release sequences with contiguous and split locks. Original entry observers
+record 272 malloc requests, 354 heap allocation attempts, 84 handler calls
+and 268 heap releases, including the separate terminal/fixture activity.
+
+Record requests normalize original 37 bytes against the natural native 41
+bytes by typed field offsets; checked file payloads are at least 64 bytes.
+Per-call comparisons include ordered effects, complete logical slots, PCM
+payloads, retained blocks, free poison and allocation guards. Failures retain
+the original dangling slot and leaked file handle. Mode capture, later mode
+mutation, negative handler returns and heap replacement before the first owned
+block are checked without assuming cross-heap release success. The three
+terminal controls compare a forked native child's state and real exit code
+against original stop-at-exit, without claiming the native parent executed
+those calls.
+
+Before replay, independent source review fixes two evidence gaps: bind the
+actual gold-selection JSON before use, and check callback errors/guards before
+terminal exit serialization. The first successful run remains a superseded
+control, separate from this corrected capture. Source review certifies its
+reviewed scope rather than runtime execution. Full comparison observations
+stream 15,794,008 bytes into a digest; the final report remains retained, without
+storing duplicate PCM snapshots. Seed/free assertions have separate counts
+and are outside that streamed digest.
+
+This is private connection evidence for the maintained owner, not production
+default allocation or exact acceptance. Physical audio, startup/teardown
+binding, connected i686 execution and complete reconstructed campaigns remain
+open. Maintained/direct/exact totals stay **235 / 109,805 / 36 / 3,518**.

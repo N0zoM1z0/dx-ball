@@ -18,8 +18,8 @@ heap probes under Wine each pass 41 cases and confirm all 34 expected frees.
 REA runtime Evidence
 `ev_e9bf2b7c6884c0c0eea9bc549517e6fe6cc1d5f8db464804faa1d4faa857cdb5`
 binds the full final report and exit zero. Inputs/products and failed controls
-are retained separately. Shared production binding, MIDI/resource/frame
-connection and configured exact acceptance remain pending; the ledgers above
+are retained separately. Shared production binding, frame connection and configured exact acceptance
+remain pending; private MIDI/resource/sound connections are described below; the ledgers above
 are unchanged. The next source batch should finish those owner connections
 before promoting this private implementation into the game.
 
@@ -41,8 +41,26 @@ also passes 234 fixtures / 5,738 resource calls across all seven SBK files,
 reloading, malloc-mode retries and preserved CreateSurface partial ownership.
 The original allocator replacements are removed; 364 inputs and current
 products verify under a successful REA process capture. Native MIDI/resource
-connections now have private execution evidence. Sound/frame ownership,
-production binding, connected i686 execution and grouped promotion remain open.
+connections now have private execution evidence. Frame ownership, production binding, connected i686 execution and grouped
+promotion remain open.
+
+The [connected sound allocator draft](SOUND_OWNER.md#connected-malloc-ownership-draft)
+uses the actual maintained sound library through its explicit API and passes
+91 fixtures / 303 normal sound calls across all 26 WAVs, plus three terminal
+exits and separate seed/free checks. REA captures the corrected run after
+source-review fixes to gold-input binding and terminal callback guards.
+Original sound and allocator bodies execute unchanged; physical APIs remain
+controlled. MIDI, resource and sound connections now have private native
+evidence; shared production defaults, frame connection and grouped promotion
+remain open. The source/exact ledgers above are unchanged.
+
+Sound retention removes the superseded first-run working directory only after
+its SHA-sealed control archive verifies, then deduplicates 44 immutable paths.
+Measured net storage falls by **1,056,768 bytes (1.01 MiB)**. All 7,066 immutable
+paths, 2,044 external references and 49 originals verify before/after cleanup;
+current private products and maintained gold remain unchanged. The next cleanup
+preview is empty. Previous resource documentation commit `70161ae` passes
+public CI **37809617907** and its documentation/storage receipt is sealed.
 
 The [isolated allocator draft](DEPENDENCY_FRONTIER.md#executed-allocator-draft)
 now passes 624 original-entry fixtures, 210 connected node fixtures and 45
