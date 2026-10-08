@@ -6,7 +6,7 @@ closed, target-matching Ghidra records; no new binary query or provider import
 was needed. This is a static dependency inventory, not additional function
 acceptance or observed runtime coverage.
 
-The review retains 179 Evidence records covering **174 of 222 maintained
+The review retains 182 Evidence records covering **177 of 225 maintained
 entries**. Their callee lists reach **41 unmaintained imported entries**:
 31 still have unknown origins, and ten now have runtime classifications.
 Those are copied ledger labels, not classifications inferred by this review.
@@ -58,8 +58,8 @@ The private inventory `.analysis/maintained-call-frontier.json` binds the
 current function/origin ledgers, its producer and each retained Evidence file
 by SHA-256. It preserves the excluded-record list and per-target caller
 references, so a later pass can expand the boundary without repeating the
-existing queries. The accepted totals remain **222 maintained / 105,036 direct
-cases / 36 exact units / 3,518 bytes**, with 292 unknown origins and 14 identified
+existing queries. The accepted totals remain **225 maintained / 109,215 direct
+cases / 36 exact units / 3,518 bytes**, with 289 unknown origins and 14 identified
 runtime entries.
 
 ## Focused REA instruction review
@@ -105,5 +105,7 @@ VC4 library object. The subsequent [whole-object comparison](CRT_PROVENANCE.md)
 provides that additional corroboration and identifies eight further runtime
 entries. Its three new dossiers also resolve the HeapAlloc/new-handler and
 `0x00417950` termination contracts. The latter is `doexit`; the `0x00417910`
-wrapper is C `exit`. The inventory is refreshed against those origin labels;
-maintained-source, direct-case and exact counts remain unchanged.
+wrapper is C `exit`. The inventory is refreshed against those origin labels and the three
+subsequently maintained [sound controls](SOUND_CONTROLS.md). Their closed
+dossiers add three covered entries; the original forty-one-target frontier
+and its exclusions remain the same. Exact counts are unchanged.

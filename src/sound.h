@@ -86,6 +86,9 @@ void dxball_load_sound(DxBallInt slot, const char *path);
 void dxball_play_sound(DxBallInt slot, DxBallInt frequency, DxBallInt pan, DxBallInt volume);
 void dxball_update_sound(DxBallInt slot, DxBallInt frequency, DxBallInt pan, DxBallInt volume);
 void dxball_stop_sound(DxBallInt slot);
+void dxball_set_sound_frequency(DxBallInt slot, DxBallUInt frequency);
+void dxball_set_sound_pan(DxBallInt slot, DxBallInt pan);
+void dxball_set_sound_volume(DxBallInt slot, DxBallInt volume);
 void dxball_restore_sounds(void);
 DxBallInt dxball_parse_wave(const void *file, const void **format,
     const void **data, DxBallUInt *bytes);

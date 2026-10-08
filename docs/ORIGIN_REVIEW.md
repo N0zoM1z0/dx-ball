@@ -1,10 +1,13 @@
 # Reviewing runtime origins
 
-The current [whole-object CRT review](CRT_PROVENANCE.md) identifies eight more
-runtime entries: **14 runtime dependencies / 292 unknown origins**. Its eleven
+The current ledger has **14 runtime dependencies / 289 unknown origins**.
+The subsequent [sound controls](SOUND_CONTROLS.md) identify three application
+entries through their REA instruction contracts and original/native execution.
+The preceding [whole-object CRT review](CRT_PROVENANCE.md) identified eight more
+runtime entries, leaving 292 unknown origins at that checkpoint. Its eleven
 complete bodies agree with the pinned `libc.lib` after explicit relocations,
 with threaded/debug controls retained. Maintained source and exact acceptance
-remain unchanged. The first review below retains its historical scope and counts.
+were unchanged by that origin review. The first review below retains its historical scope and counts.
 
 Origin identification is independent of maintained source, semantic acceptance
 and byte-exact matching. The first reviewed runtime batch identifies six

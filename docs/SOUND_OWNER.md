@@ -1,12 +1,18 @@
 # DirectSound controller and WAV loading
 
-`src/sound.c` maintains fifteen connected entries: startup, file loading, RIFF
+The initial `src/sound.c` batch maintains fifteen connected entries: startup, file loading, RIFF
 parsing, buffer upload, playback, lost-buffer restoration and focus cleanup.
 Binary observations came from one REA 4.1.0 / Ghidra 12.1.4 interactive session
 against the hash-pinned DX-Ball v1.07. Saved archives were checked first; these
 entries had no matching prior dossiers. Twenty-one focused queries extended
 the saved snapshot from 236 to 257 Evidence records. The session was explicitly
 closed before compiler work or cleanup.
+
+The subsequent [persistent sound controls](SOUND_CONTROLS.md) add frequency,
+pan and volume setters with their own three REA dossiers. The current sound
+suite has eighteen maintained entries, 5,782 direct cases and 48 separate
+connected checks. The fifteen-entry table and counts below describe the initial
+checkpoint; physical audio delivery and sound byte-exact matching remain open.
 
 The static dossier establishes instructions, references and inclusive body
 ranges; execution claims come separately from `tests/test_sound_differential.py`.

@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **222 maintained functions**, **105,036 target differential cases**, and
+> entity owners: **225 maintained functions**, **109,215 target differential cases**, and
 > **36 byte-exact functions totaling 3,518 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
@@ -79,9 +79,10 @@ follows the loader through compact-event expansion and stream callbacks. REA's
 instruction view corrects two return codes and an incomplete callback prototype;
 2,109 direct cases and 134 separate lifecycle checks cover all six original
 songs. The [sound investigation](docs/SOUND_OWNER.md) connects DirectSound
-startup, WAV upload and focus recovery. REA exposes the reload-and-retry
-behavior after a lost buffer; 1,603 direct cases and 36 separate lifecycle
-checks cover all 26 sound assets. The [Windows adapter](docs/WINDOWS_ADAPTER.md)
+startup, WAV upload, focus recovery and [persistent sound parameters](docs/SOUND_CONTROLS.md).
+REA exposes the reload-and-retry behavior after a lost buffer and the cached
+parameter writes even when a setter fails. The sound suite has 5,782 direct
+cases and 48 separate lifecycle checks across all 26 sound assets. The [Windows adapter](docs/WINDOWS_ADAPTER.md)
 uses those recovered contracts to bind real Win32, DirectDraw, DirectSound and
 WinMM calls. Original/VC4/MinGW control runs exercise ball release/motion,
 pause/resume, mouse input, complete editor bank save/reload and natural

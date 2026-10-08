@@ -1,6 +1,6 @@
 # Compiler evidence and exact units
 
-The current bitmap checkpoint retains **36 exact functions / 3,518 bytes**.
+The current shared-source checkpoint retains **36 exact functions / 3,518 bytes**.
 The complete 40-byte wrapper at `0x00404280` matches with one explicit REL32
 renderer binding; all 35 prior units pass the same cold replay. Renderer and
 offset bodies retain scoped behavior acceptance without exact claims. See
@@ -47,8 +47,16 @@ and overlapping original CRT copy. The shared C representation changes object
 references and VC4 emission; it does not establish original declarations.
 Relocations to its actual root use reviewed field addends and target base
 `0x43AAB8`. Both copy calls map `memmove` to the observed overlap-aware entry
-`0x417CA0`. Private pan labels are now `$T1075` / `$T1076`, and rb/wb labels
+`0x417CA0`. The shared-storage checkpoint used pan labels `$T1075` / `$T1076`, and rb/wb labels
 `$SG734` / `$SG738`; literal contents remain independently attested.
+
+Adding the three [sound-control](SOUND_CONTROLS.md) declarations changes VC4's
+internal pan names to `$T1084` / `$T1085`. Complete emitted data still agrees
+with the previously accepted doubles at `0x420068` / `0x420070`. Only the
+explicit relocation names change; targets, addends and expected literal bytes
+remain fixed. The stopped cold replay and its objects are preserved before
+updating the manifest. Original code, comparison rules and maintained pan
+source are unchanged.
 
 The following records describe the earlier owner checkpoints and their
 original exact totals; the current accepted ledger takes precedence.

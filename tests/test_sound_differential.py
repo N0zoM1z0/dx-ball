@@ -28,7 +28,8 @@ ENTRIES={'initialize_sound':0x405120,'prepare_sound':0x4050f0,'pause_sound':0x40
     'release_audio':0x406270,'release_sounds':0x4058b0,'stop_all_sounds':0x405eb0,
     'load_sound':0x405990,'update_sound':0x405d80,'release_sound':0x4058f0,
     'play_sound':0x405c50,'stop_sound':0x405ef0,'restore_sounds':0x406180,
-    'parse_wave':0x406290,'create_sound_buffer':0x4063a0,'load_binary_file':0x403320}
+    'parse_wave':0x406290,'create_sound_buffer':0x4063a0,'load_binary_file':0x403320,
+    'set_sound_frequency':0x405fa0,'set_sound_pan':0x406040,'set_sound_volume':0x4060e0}
 APIS=[('create_device','DirectSoundCreate',I,[P,P,P]),
     ('create_file','CreateFileA',Z,[P,U,U,P,U,U,Z]),('file_size','GetFileSize',U,[Z,P]),
     ('read_file','ReadFile',I,[Z,P,U,P,P]),('close_handle','CloseHandle',I,[Z]),
@@ -60,6 +61,7 @@ class Backend:
         self.events=[];self.errors=[];self.counts={};self.buffers={};self.sequence=0
         self.fail=fail or {};self.split=split;self.responses=list(responses)
         self.status=status;self.partial_buffer=partial_buffer;self.terminal=None
+        self.rebind_on_set=None
         self.file=data if data is not None else wave()
         self.file=self.file if len(self.file)>=64 else self.file+bytes(64-len(self.file))
         self.put_device(0);self.put_primary(0);self.put_draw(0xabc if draw else 0)
@@ -213,6 +215,11 @@ class Backend:
             elif name.startswith('set_'):
                 field=name[4:];event+=[args[1]&0xffffffff]
                 if not error:v[field]=args[1]
+                if self.rebind_on_set is not None:
+                    slot,replacement=self.rebind_on_set
+                    self.put_slot(slot,replacement)
+                    event+=['rebind',slot,self.role(replacement)]
+                    self.rebind_on_set=None
             else:raise AssertionError(name)
         self.events.append(tuple(event));return result or 0
     def guards(self):
@@ -241,7 +248,8 @@ class Native(Backend):
         types={'initialize_sound':[Z],'prepare_sound':[Z],'load_sound':[I,P],
             'update_sound':[I,I,I,I],'play_sound':[I,I,I,I],'release_sound':[I],
             'stop_sound':[I],'parse_wave':[P,P,P,P],'create_sound_buffer':[P,P,P,U],
-            'load_binary_file':[P,P,I]}
+            'load_binary_file':[P,P,I], 'set_sound_frequency':[I,U],
+            'set_sound_pan':[I,I],'set_sound_volume':[I,I]}
         for name in ENTRIES:
             fn=getattr(self.lib,'dxball_'+name);fn.argtypes=types.get(name,[])
             fn.restype=I if name in ('parse_wave','create_sound_buffer') else P if name=='load_binary_file' else None
@@ -367,6 +375,8 @@ class Harness:
         assert self.n.read(self.n.source,len(self.n.file))==self.t.read(self.t.source,len(self.t.file))
 
 def checks(library):
+    if not __debug__:
+        raise RuntimeError('Oracle assertions must stay enabled')
     h=Harness(library)
     assert h.n.record_size==40 and C.sizeof(Descriptor)==24
     assets=sorted((ROOT/'original').rglob('*.WAV'));assert len(assets)==26
@@ -427,6 +437,55 @@ def checks(library):
         if record:h.records(buffer=device or name=='release_audio')
         h.call(name)
     print('Playback, lost-buffer reload, stop and release lifecycles passed.',flush=True)
+    controls=('set_sound_frequency','set_sound_pan','set_sound_volume')
+    values=(-2147483648,-10000,-1,0,1,11025,2147483647,4294967295)
+    # API-defined outputs are supplied even on failed GetStatus. Errors never
+    # suppress the original's setter or its subsequent cached-parameter write.
+    for name,slot,device,record,value in itertools.product(
+            controls,(0,17,49),(False,True),(False,True),values):
+        if device and record:continue
+        h.reset(device=device)
+        if record:h.records((slot,),buffer=False)
+        h.call(name,(slot,value))
+        assert not h.n.events and not h.t.events
+    for name,slot,value,status,get_error,set_error in itertools.product(
+            controls,(0,17,49),values,(0,2,4,6,0x100,0x102),
+            (0,1,0x88780096),(0,1,0x88780096)):
+        method=name.removeprefix('set_sound_')
+        h.reset(status=status,fail={'get_status':get_error,'set_'+method:set_error})
+        h.records()
+        h.call(name,(slot,value))
+        for b in (h.n,h.t):
+            p=b.get_slot(slot)
+            assert b.read_u32(p+b.field(method))==value&0xffffffff
+        assert h.n.events[-1][0]=='set_'+method
+        assert bool(any(e[0]=='restore' for e in h.n.events))==bool(status&2)
+    # A rejected Restore leaves the old lost buffer in place. Each control
+    # still attempts its setter and updates the cached request even on error.
+    for name,slot,get_error,set_error,restore_error in itertools.product(
+            controls,(0,17,49),(0,1),(0,0x88780096),(1,0x88780096)):
+        field=name.removeprefix('set_sound_')
+        h.reset(status=2,fail={'get_status':get_error,'set_'+field:set_error,
+                              'restore':restore_error})
+        h.records()
+        old_records=(h.n.get_slot(slot),h.t.get_slot(slot))
+        h.call(name,(slot,0))
+        assert old_records==(h.n.get_slot(slot),h.t.get_slot(slot))
+        for b in (h.n,h.t):
+            assert b.read_u32(b.get_slot(slot)+b.field(field))==0
+        assert not any(e[0]=='create_file' for e in h.n.events)
+        assert h.n.events[-1][0]=='set_'+field
+    # A synchronous setter callback can replace the record. The original loads
+    # the current slot again for its final write, after using the old buffer.
+    for name in controls:
+        h.reset();h.records((17,49))
+        for b in (h.n,h.t):b.rebind_on_set=(17,b.get_slot(49))
+        h.call(name,(17,0))
+        field=name.removeprefix('set_sound_')
+        for b in (h.n,h.t):
+            assert b.get_slot(17)==b.get_slot(49)
+            assert b.read_u32(b.get_slot(49)+b.field(field))==0
+    print('Persistent sound controls, ignored errors, recovery and callback rebinding passed.',flush=True)
     for name,device,draw,record in itertools.product(('initialize_sound','prepare_sound'),(False,True),(False,True),(False,True)):
         h.reset(device=device,draw=draw)
         if record:h.records(buffer=device)
@@ -448,6 +507,8 @@ def checks(library):
         h.reset(device=False,split=split)
         h.call('initialize_sound',(0x777,),connected=True)
         for slot in (0,17,49):h.load(slot,connected=True)
+        for name,value in zip(controls,(0,-500,-1000)):
+            h.call(name,(17,value),connected=True)
         h.call('update_sound',(17,22050,-500,-1000),connected=True)
         h.call('pause_sound',connected=True)
         h.call('initialize_sound',(0x777,),connected=True)

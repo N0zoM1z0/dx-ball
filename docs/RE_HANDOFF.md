@@ -1,5 +1,25 @@
 # Current handoff
 
+The [persistent sound controls](SOUND_CONTROLS.md) are now accepted in shared C:
+frequency, pan and volume setters at `0x405FA0` / `0x406040` / `0x4060E0`.
+Current scope is **225 maintained / 109,215 direct cases / 36 exact units /
+3,518 bytes**, with 14 identified runtime entries and 289 unknown origins.
+REA's three complete instruction dossiers preserve ignored HRESULTs, whole-bank
+lost-buffer restoration and current-record cache writes after callbacks.
+Each control has 1,393 original/native cases; the full sound suite has 5,782
+and 48 separate connected checks. Explicit optimized-Python rejection and
+rejected Restore paths pass. All 21 owner scripts pass the changed native
+library; only sound is rerun after its oracle-only guard/coverage correction,
+with twenty completed executions reused after full declared-input checks.
+The final versioned batch passes cold replay, actual raster/rotation/bitmap
+compiler execution, oracle rejection controls, VC4/MinGW builds, inspectors
+and Windows ABI/resource/storage/runtime/play controls. Its original/native
+campaign comparison has 17,688 frames and five advances, counted separately.
+Physical audio and full campaigns remain unverified. The old stopped cold
+replay is sealed; two generated pan labels are reconciled by complete literal
+data before a successful fresh replay. The static dependency review now covers
+177 of 225 maintained entries from 182 matching closed dossiers.
+
 The CRT provenance source and retention commits (`06039a9` and `91b0ed3`)
 pass public CI runs 37755949692 and 37757599984. Before the next source batch,
 all 4,866 retained immutable paths and 293 external references verify, together
@@ -8,7 +28,7 @@ under `.analysis/checkpoints/crt-retention-ci-222-36/`.
 
 The bitmap loader at `0x00409F70` is accepted in shared C. Saved REA loader,
 prefix and reference dossiers supply the instruction facts; no new original
-query or duplicate provider import was needed. Current scope is **222 maintained /
+query or duplicate provider import was needed. That acceptance checkpoint recorded **222 maintained /
 105,036 direct cases / 36 exact units / 3,518 bytes**, with 292 unknown origins
 and 14 identified runtime entries. Application graphics provenance remains a
 medium-confidence inference; active bitmap gameplay use is unestablished.
