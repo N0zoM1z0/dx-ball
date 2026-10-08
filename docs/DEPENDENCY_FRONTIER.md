@@ -186,10 +186,10 @@ payloads, ordered callbacks, heap pairing and poisoned released storage.
 The draft's compiled source, product, 410 execution-input identities and
 independent reviews are retained in `allocator-first-execution-235-36`.
 
-These are private draft results. Physical heap APIs, native i686 ABI, shared
-production defaults, MIDI/resource ownership, terminal exits and complete frame
-paths remain pending. They add no maintained function, accepted direct case or
-exact unit to the published ledgers.
+These are private draft results. Shared production defaults, MIDI/resource
+ownership, terminal exits and complete frame paths remain pending. Subsequent
+isolated initializer/malloc, i686 and SDK checks are recorded below. They add
+no maintained function, accepted direct case or exact unit to published ledgers.
 
 ## Heap initialization and malloc mode
 
@@ -217,3 +217,42 @@ REA `read_bytes` observes four initial zero bytes at heap, handler and mode
 storage. These are static loaded-image observations, not proof of permanent
 runtime values or absence of indirect registration. Handler/mode producers
 and teardown remain unresolved beyond this bounded direct-reference search.
+
+## Eight-entry and i686 execution
+
+The private source now includes the initializer and malloc wrapper. It passes
+**1,433 original/native fixtures**, comprising the earlier 624 and 809 new
+controls, with **1,437 top-level original calls** across multi-call sequences.
+Coverage includes null/nonzero heap replacement, five malloc modes, unsigned
+size boundaries, callback mutation during retries, mode reload between calls,
+and new's independence from malloc mode. The 210 node connections and 45 ball
+retirements pass again; three native-only pointer checks remain separate.
+
+The same C compiles under pinned VC4 and MinGW. Each generated i686 object
+passes all 1,433 fixtures / 1,437 calls against the saved original observations,
+including cdecl stack and callee-saved state. Whole-object relocation uses the
+compiler's actual BSS/common storage and applies DIR32, DIR32NB and REL32
+records. It never replaces original code or claims a byte match.
+
+An actual Win32 heap probe under Wine passes **41 cases per compiler**, including
+bounded fixed-heap allocation failure, handler stop, retry after switching heap,
+mode mutation, native pointer forwarding and null release. Each run records 38
+HeapAlloc calls, 34 successful HeapFree calls and four handler callbacks.
+Its SDK wrappers preserve stdcall; each expected release checks HeapFree's BOOL
+while the reconstructed release retains its void ABI. The instrumented original
+initializer performs one HeapCreate; a second direct SDK call creates the fixed
+test heap. HeapDestroy is fixture cleanup, not a recovered teardown claim.
+
+REA `capture-process` Evidence
+`ev_e9bf2b7c6884c0c0eea9bc549517e6fe6cc1d5f8db464804faa1d4faa857cdb5`
+records child exit zero and binds the complete final report. The harness freezes
+1,632 input identities, including parsed reference bytes, compiler engines,
+matching preprocessing inputs and linker libraries, and checks products before
+use and afterward. Earlier failed log/loader controls remain retained. The
+link-map parser recognizes only GNU ld's exact synthetic `dll stuff` marker;
+all real LOAD files must be prebound ([binutils source](https://gnu.googlesource.com/binutils-gdb/+/aa1ee363bce1eac43bf9824069e231d7113f7453/ld/pe-dll.c)).
+
+This establishes the isolated shared-C contracts and the recorded Wine SDK
+boundary. Production startup/teardown, MIDI/resource connection, full frame
+paths and reconstructed campaigns remain open. No maintained, direct-case or
+exact ledger promotion follows from this private experiment.

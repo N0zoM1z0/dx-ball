@@ -10,6 +10,25 @@ VC4/MinGW full campaigns and whole-game fidelity remain open. The captured
 game runs silently on one allowed CPU. Source totals stay
 **235 maintained / 109,805 direct cases / 36 exact units / 3,518 bytes**.
 
+The [eight-entry allocator draft](DEPENDENCY_FRONTIER.md#eight-entry-and-i686-execution)
+now passes 1,433 original/native fixtures / 1,437 original calls, plus the
+210 node connections, 45 ball retirements and three native-only pointer controls.
+VC4 and MinGW generated objects each replay all 1,437 calls; their real Win32
+heap probes under Wine each pass 41 cases and confirm all 34 expected frees.
+REA runtime Evidence
+`ev_e9bf2b7c6884c0c0eea9bc549517e6fe6cc1d5f8db464804faa1d4faa857cdb5`
+binds the full final report and exit zero. Inputs/products and failed controls
+are retained separately. Shared production binding, MIDI/resource/frame
+connection and configured exact acceptance remain pending; the ledgers above
+are unchanged. The next source batch should connect those owners before
+promoting this private implementation into the game.
+
+After sealing this batch, retention removes 37 redundant failed-attempt files
+and deduplicates 1,824 immutable paths. Measured net storage falls by 3.047 MiB;
+6,791 immutable paths, 1,960 external references and 49 original files still
+verify. Current successful products remain available, and the next cleanup
+preview has no operations.
+
 The [isolated allocator draft](DEPENDENCY_FRONTIER.md#executed-allocator-draft)
 now passes 624 original-entry fixtures, 210 connected node fixtures and 45
 ball retirements, plus two separate native pointer controls. Its 154-file
