@@ -1,5 +1,12 @@
 # DirectSound controller and WAV loading
 
+## Current allocation defaults
+
+Sound records and WAV backing now default to maintained malloc-mode allocation
+and heap release. Current owner replay and a separate physical SDK/default
+probe pass. The connected private draft below retains its original scope and
+input identities; see [allocation ownership](ALLOCATOR_OWNER.md).
+
 The initial `src/sound.c` batch maintains fifteen connected entries: startup, file loading, RIFF
 parsing, buffer upload, playback, lost-buffer restoration and focus cleanup.
 Binary observations came from one REA 4.1.0 / Ghidra 12.1.4 interactive session
@@ -226,4 +233,5 @@ and are outside that streamed digest.
 This is private connection evidence for the maintained owner, not production
 default allocation or exact acceptance. Physical audio, startup/teardown
 binding, connected i686 execution and complete reconstructed campaigns remain
-open. Maintained/direct/exact totals stay **235 / 109,805 / 36 / 3,518**.
+open. At that private draft checkpoint, maintained/direct/exact totals stayed
+**235 / 109,805 / 36 / 3,518**.

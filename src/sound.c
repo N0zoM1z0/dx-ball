@@ -1,8 +1,9 @@
+#include "allocator.h"
 #include "sound.h"
 #include <stdlib.h>
 #include <string.h>
 
-DxBallSoundApi dxball_sound_api = { NULL, NULL, NULL, NULL, NULL, malloc, free };
+DxBallSoundApi dxball_sound_api = { NULL, NULL, NULL, NULL, NULL, dxball_malloc_bytes, dxball_heap_release };
 DxBallSoundDevice *dxball_sound_device;
 DxBallSoundBuffer *dxball_primary_sound;
 DxBallSound *dxball_sounds[DXBALL_SOUND_COUNT];

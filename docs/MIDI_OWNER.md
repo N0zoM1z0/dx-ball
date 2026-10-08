@@ -1,5 +1,12 @@
 # MDS music owner
 
+## Current allocation defaults
+
+Music wrapper allocation/deletion now defaults to maintained new/delete.
+Local/Global ownership remains separate. The connected private draft below is
+historical evidence; current owner replay and allocator/SDK tests establish
+the scopes listed in [allocation ownership](ALLOCATOR_OWNER.md).
+
 `src/midi.c` maintains the original RIFF/MIDS reader, compact MIDI event
 expansion, stream controller, completion callback and five music wrappers.
 The portable library, MinGW i686 and pinned VC4 builds share this C owner.

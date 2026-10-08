@@ -1,3 +1,4 @@
+#include "allocator.h"
 #include "gameplay.h"
 #include "effects.h"
 #include "particles.h"
@@ -14,7 +15,7 @@ DxBallInt dxball_explosion_pending;
 DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
 DxBallExplosionList dxball_explosive_sources;
-DxBallGameplayOps dxball_gameplay_ops = { malloc, dxball_spawn_brick_effect, dxball_stop_sound, dxball_play_sound, dxball_random_range, dxball_spawn_particle };
+DxBallGameplayOps dxball_gameplay_ops = { dxball_new_bytes, dxball_spawn_brick_effect, dxball_stop_sound, dxball_play_sound, dxball_random_range, dxball_spawn_particle };
 
 DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list)
 {

@@ -1,6 +1,12 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **36 exact functions / 3,518 bytes**.
+The current shared-source checkpoint retains **35 exact functions / 3,379 bytes**.
+The [allocator integration](ALLOCATOR_OWNER.md) cold replay found two changed
+operand bytes in the 139-byte `stretch-keyed-sprite` body. Its behavior still
+passes, but its exact claim is now a candidate. The pan literal names changed
+to `$T1142` / `$T1143`; contents and complete relocations were checked.
+
+The preceding rotation checkpoint retained 36 units / 3,518 bytes.
 The complete 40-byte wrapper at `0x00404280` matches with one explicit REL32
 renderer binding; all 35 prior units pass the same cold replay. Renderer and
 offset bodies retain scoped behavior acceptance without exact claims. See
@@ -40,7 +46,7 @@ These functions retain their scoped semantic validation. Their exact claims
 are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
-nonzero exit status. The normal replay selects the 36 currently accepted units.
+nonzero exit status. The normal replay selects the 35 currently accepted units.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

@@ -8,59 +8,42 @@ records exit zero and the full final-report digest. All 98 archive files verify
 after the game/reader processes stop. This is original-only acceptance;
 VC4/MinGW full campaigns and whole-game fidelity remain open. The captured
 game runs silently on one allowed CPU. Source totals stay
-**235 maintained / 109,805 direct cases / 36 exact units / 3,518 bytes**.
+**243 source-present (235 game + 8 runtime) / 111,242 direct cases /
+35 exact units / 3,379 bytes**.
 
-The [eight-entry allocator draft](DEPENDENCY_FRONTIER.md#eight-entry-and-i686-execution)
-now passes 1,433 original/native fixtures / 1,437 original calls, plus the
-210 node connections, 45 ball retirements and three native-only pointer controls.
-VC4 and MinGW generated objects each replay all 1,437 calls; their real Win32
-heap probes under Wine each pass 41 cases and confirm all 34 expected frees.
-REA runtime Evidence
-`ev_e9bf2b7c6884c0c0eea9bc549517e6fe6cc1d5f8db464804faa1d4faa857cdb5`
-binds the full final report and exit zero. Inputs/products and failed controls
-are retained separately. Shared production binding, frame connection and configured exact acceptance
-remain pending; private MIDI/resource/sound connections are described below; the ledgers above
-are unchanged. The next source batch should finish those owner connections
-before promoting this private implementation into the game.
+The [maintained allocation owner](ALLOCATOR_OWNER.md) now supplies new/delete
+and malloc/release defaults for nodes, music, resources and sound. All 23 fresh
+owner oracles pass with the shared native library. Its 1,433 fixtures / 1,437
+original calls also pass in both actual VC4/MinGW objects. Physical SDK probes
+confirm one heap creation and four allocation/release pairs per profile under
+Wine; full Windows resources, ABI, storage, startup/input/editor checks pass.
+REA captures `ev_911a399dfcce71ec469c266581cd1f8f470c0be788a25166db9ac8f7dc8b2377`
+and `ev_17b58ccfd32822dd33322cae85442db7d55fbc760907abfc9318a8f7e6e20fe9`
+bind the complete owner and compiler/integration reports. Saved static dossiers
+remain closed; no duplicate Ghidra import was required.
 
-After sealing this batch, retention removes 37 redundant failed-attempt files
-and deduplicates 1,824 immutable paths. Measured net storage falls by 3.047 MiB;
-6,791 immutable paths, 1,960 external references and 49 original files still
-verify. Current successful products remain available, and the next cleanup
-preview has no operations.
+Cold replay withdrew the exact claim for `stretch-keyed-sprite`: two operand
+bytes differ in its current 139-byte emission. The remaining 35 units pass
+with zero differences. Pan literal names were reconciled only after content
+and relocation checks. No source tuning or byte masking was introduced.
 
-The [connected MIDI draft](MIDI_OWNER.md#connected-allocator-ownership-draft)
-also passes 186 fixtures / 528 MIDI calls with the original allocator chain
-unhooked: 210 wrapper allocations/deletes, 458 allocation attempts and 248
-handler calls. It preserves Local/Global ownership and all six song lifecycles;
-REA runtime capture records exit zero. This private native result leaves
-production binding, resource/frame connections and i686 MIDI execution open.
+The original pre-integration gold and private MIDI/resource/sound connections
+retain SHA-sealed historical snapshots. They are supporting evidence, not new
+executions of current production defaults. Full connected owner failure paths,
+handler registration, complete CRT startup/teardown and reconstructed full
+campaigns remain open. Next work should exercise the maintained allocation
+chain through complete frames and then bounded original-board controls before
+long VC4/MinGW campaign runs.
 
-The [connected resource draft](RESOURCE_OWNER.md#connected-malloc-ownership-draft)
-also passes 234 fixtures / 5,738 resource calls across all seven SBK files,
-reloading, malloc-mode retries and preserved CreateSurface partial ownership.
-The original allocator replacements are removed; 364 inputs and current
-products verify under a successful REA process capture. Native MIDI/resource
-connections now have private execution evidence. Frame ownership, production binding, connected i686 execution and grouped
-promotion remain open.
+Verified retention removes superseded failed working products, deduplicates
+immutable evidence and checks all 49 original files. The measured cleanup
+recovers **2,719,744 bytes (2.59 MiB)** after an earlier 530-copy deduplication.
+`clean-local.py --evidence-only` preserves current probe inputs while evidence
+is being sealed. Historical input resolution uses explicit pre-integration
+snapshots; it never rewrites old report hashes to current source.
 
-The [connected sound allocator draft](SOUND_OWNER.md#connected-malloc-ownership-draft)
-uses the actual maintained sound library through its explicit API and passes
-91 fixtures / 303 normal sound calls across all 26 WAVs, plus three terminal
-exits and separate seed/free checks. REA captures the corrected run after
-source-review fixes to gold-input binding and terminal callback guards.
-Original sound and allocator bodies execute unchanged; physical APIs remain
-controlled. MIDI, resource and sound connections now have private native
-evidence; shared production defaults, frame connection and grouped promotion
-remain open. The source/exact ledgers above are unchanged.
-
-Sound retention removes the superseded first-run working directory only after
-its SHA-sealed control archive verifies, then deduplicates 44 immutable paths.
-Measured net storage falls by **1,056,768 bytes (1.01 MiB)**. All 7,066 immutable
-paths, 2,044 external references and 49 originals verify before/after cleanup;
-current private products and maintained gold remain unchanged. The next cleanup
-preview is empty. Previous resource documentation commit `70161ae` passes
-public CI **37809617907** and its documentation/storage receipt is sealed.
+The remaining allocator draft sections below are historical stages and retain
+their checkpoint scopes.
 
 The [isolated allocator draft](DEPENDENCY_FRONTIER.md#executed-allocator-draft)
 now passes 624 original-entry fixtures, 210 connected node fixtures and 45

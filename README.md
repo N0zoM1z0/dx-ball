@@ -16,8 +16,9 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **235 maintained functions**, **109,805 target differential cases**, and
-> **36 byte-exact functions totaling 3,518 bytes**. Windows builds now also produce
+> entity owners: **243 source-present functions** (235 game entries and 8 runtime dependencies),
+> **111,242 target differential cases**, and
+> **35 byte-exact functions totaling 3,379 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown; complete gameplay and
@@ -110,6 +111,13 @@ The [contact policy](docs/CONTACT_POLICY.md) follows the recovered discrete
 wall/collision contracts, with 1,464 controlled fixtures and 21,168 compared
 frames. Its five-board episode compares another 16,756 original/native frames.
 These differential episodes remain separate from full reconstructed campaigns.
+
+The [allocation investigation](docs/ALLOCATOR_OWNER.md) follows REA instructions
+through new/delete, malloc mode, handler retries and heap initialization. Its
+shared C now supplies the game owners' allocation defaults. Native C and actual
+VC4/MinGW objects agree over 1,437 original calls; separate SDK probes confirm
+physical heap ownership through the Windows adapter under Wine. Byte exactness
+and complete CRT startup remain separate obligations.
 
 The [runtime-library investigation](docs/CRT_PROVENANCE.md) pairs REA instruction
 and byte observations with whole pinned CRT objects, identifying eight further

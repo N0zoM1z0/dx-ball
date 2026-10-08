@@ -98,9 +98,14 @@ def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='apply the reviewed cleanup')
+    parser.add_argument('--evidence-only', action='store_true',
+                        help='deduplicate sealed evidence without removing probe products')
     args = parser.parse_args()
     lock = session_lock()
     actions = plan()
+    if args.evidence_only:
+        actions = [item for item in actions
+                   if item[0] in ('hardlink', 'remove_alias', 'remove_download_cache')]
     entries = []
     for operation, path, keeper, hashed in actions:
         entries.append(dict(operation=operation, path=str(path.relative_to(ROOT)),

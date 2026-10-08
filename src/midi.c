@@ -1,3 +1,4 @@
+#include "allocator.h"
 #include "midi.h"
 #include <stdlib.h>
 #include <string.h>
@@ -221,15 +222,15 @@ void DXBALL_DDCALL dxball_midi_callback(DxBallMidiHandle stream, DxBallUInt mess
 DxBallInt dxball_load_music(const char *path, DxBallInt play)
 {
     if (dxball_music != NULL) dxball_close_music();
-    dxball_music = (DxBallMusic *)malloc(sizeof(*dxball_music));
+    dxball_music = (DxBallMusic *)dxball_new_bytes(sizeof(*dxball_music));
     if (dxball_open_mds(&dxball_music->context,path,0,1) != 0) {
-        free(dxball_music); dxball_music = NULL; return 0;
+        dxball_runtime_delete(dxball_music); dxball_music = NULL; return 0;
     }
     dxball_music->playing = 0;
     if (play != 0) {
         if (dxball_play_mds(dxball_music->context,1) != 0) {
             dxball_release_mds(dxball_music->context);
-            free(dxball_music); dxball_music = NULL; return 0;
+            dxball_runtime_delete(dxball_music); dxball_music = NULL; return 0;
         }
         dxball_music->playing = 1;
     }
@@ -248,6 +249,6 @@ void dxball_close_music(void)
 {
     if (dxball_music != NULL) {
         dxball_stop_mds(dxball_music->context); dxball_release_mds(dxball_music->context);
-        free(dxball_music); dxball_music = NULL;
+        dxball_runtime_delete(dxball_music); dxball_music = NULL;
     }
 }

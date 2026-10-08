@@ -7,7 +7,6 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
-import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -43,9 +42,11 @@ def main():
     subprocess.run([str(compiler), *flags, str(ROOT / 'tests/windows_resource_reader.c'),
                     '-o', str(reader), '-luser32', '-lgdi32'], check=True, timeout=60)
     negative = directory / 'without-resources.exe'
-    owners = tomllib.loads((ROOT / 'config/source-owners.toml').read_text())['owners']
-    objects = [ROOT / 'build/vc40' / (Path(o['source']).stem + '.obj') for o in owners.values()]
-    objects += [ROOT / 'build/vc40' / (name + '.obj') for name in ('windows_entry', 'windows_adapter')]
+    # Link the same game objects, including explicit dependency backends.
+    # Owner metadata enumerates recovered entries, not the entire link graph.
+    objects = [ROOT / 'build/vc40' / (path.stem + '.obj')
+               for path in sorted((ROOT / 'src').glob('*.c'))
+               if path.stem not in ('board_inspector', 'resource_inspector')]
     tools.run('link.exe', ['/NOLOGO', '/MACHINE:IX86', '/SUBSYSTEM:WINDOWS',
         '/INCREMENTAL:NO', '/PDB:NONE', '/OUT:' + windows_path(negative),
         *map(windows_path, objects), 'user32.lib', 'gdi32.lib', 'winmm.lib'])

@@ -1,3 +1,4 @@
+#include "allocator.h"
 #include "effects.h"
 #include "bonuses.h"
 #include "display.h"
@@ -8,7 +9,7 @@ DxBallBrickEffectList dxball_brick_effects;
 DxBallInt dxball_hit_dx, dxball_hit_dy;
 DxBallSurface dxball_effect_surface;
 DxBallEffectOps dxball_effect_ops = {
-    free, dxball_generate_bonus, dxball_draw_keyed_sprite, dxball_draw_reduced_sprite, dxball_restore_effect_region
+    dxball_runtime_delete, dxball_generate_bonus, dxball_draw_keyed_sprite, dxball_draw_reduced_sprite, dxball_restore_effect_region
 };
 
 void dxball_deallocate_node(void *node)

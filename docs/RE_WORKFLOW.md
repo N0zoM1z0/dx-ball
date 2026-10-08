@@ -35,6 +35,8 @@ packages and their native engines before selecting an interpreter.
    probes; preserve originals, pinned tools, unique evidence and manual saves.
    Verify the retained files and current acceptance after cleanup, and record
    actual disk usage separately from logical duplicate bytes.
+   Use `--evidence-only` while current probe products are still bound by an
+   acceptance report; it leaves those mutable products available.
 
 The observed PE linker is 3.00. VC4.0 compiler 10.00.5270 / linker 3.00.5270 is
 the first hash-pinned candidate. Per-unit matching establishes emission

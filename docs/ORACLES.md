@@ -4,6 +4,9 @@
 | --- | --- | --- |
 | Target/file and Ghidra attestation | Same executable and sampled mapped bytes | Semantic correctness |
 | Original x86 vs compiled native C | State and ordered dependency effects for tested domains | Original code emission, Windows/pixel equivalence |
+| Allocator original x86 vs maintained native C | Eight runtime entries, 1,433 fixtures / 1,437 calls; complete logical results, ordered heap/handler effects and state | Physical imports, arbitrary infinite retries, registration or full CRT startup |
+| Allocator generated VC4/MinGW objects | Same 1,437 calls with complete relocations and configured object/compiler identities | Byte exactness or additional direct cases |
+| Maintained Windows allocator/SDK probe | Typed physical HeapCreate/Alloc/Free callbacks; four default paths and successful releases per profile under Wine | Full owner failure matrices, game heap teardown, native Windows or full campaigns |
 | Pinned VC4.0 COFF replay | Complete function bytes after every explicitly reviewed relocation | Whole-EXE layout, untested function behavior |
 | Shared-storage x86 DLL vs original x86 | All 20,432 storage bytes, auxiliary grid and index after load/store/initialize; 459 cases including overlap at index50 and nonzero unknown bytes | Original source type, native-64 byte layout, arbitrary indices or whole-game fidelity |
 | Rotation x86 vs compiled native C | Three entries / 1,024 cases; complete guarded pixels, ordered locks/unlocks, immutable banks/tables and callback reloads | Unbounded/invalid backing, physical driver, alternative division branch or active gameplay use |
@@ -46,7 +49,7 @@ the original copy and initializer instructions. Three deterministic complete
 storage patterns (zero, ramp and random) cover every index0..50 and both copy
 directions. All twelve unclassified bytes can be nonzero. Temporary binary
 fixtures are hashed and removed after success. These 459 integration cases
-remain separate from the 96,897 accepted owner cases. The terminal game control
+remain separate from the 111,242 accepted direct cases. The terminal game control
 uses real input and read-only SDK observations; see [its scope](TERMINAL_RUNTIME.md).
 
 The target's unsupported sprite-helper inputs read an uninitialized local; the

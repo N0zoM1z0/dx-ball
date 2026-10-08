@@ -76,9 +76,10 @@ def main():
         raise RuntimeError('Core queue comparisons require Python assertions; do not use -O.')
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--library', type=Path, default=ROOT/'build/native/libdxball_core.so')
     parser.add_argument('--fail-allocator', choices=('projectiles','fire'))
     args = parser.parse_args()
-    library = ROOT / 'build/native/libdxball_core.so'
+    library = args.library.resolve()
     if args.fail_allocator:
         n = CoreNative(library)
         failure = Allocate(lambda size: None)
@@ -118,7 +119,7 @@ def main():
             # Actual target exit, plus native subprocess: no allocator body is replaced by source claims.
             seed(h,owner,0,None,7)
             child=subprocess.run([ROOT/'scripts/repo-python',Path(__file__).resolve(),
-                                  '--fail-allocator',owner],capture_output=True)
+                                  '--library',str(library),'--fail-allocator',owner],capture_output=True)
             assert child.returncode==1 and not child.stdout and not child.stderr,(owner,child)
             h.t.fail_allocation=True;h.t.exit_status=None
             h.t.uc.reg_write(UC_X86_REG_ECX,SHAPES[owner][0])

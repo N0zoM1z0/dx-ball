@@ -13,7 +13,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.gameplay]
 source = "src/gameplay.c"
 object = "build/exact/gameplay.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-explosion]
@@ -34,8 +34,8 @@ target_address = 0x00406400
 size = 63
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x17, type = "DIR32", symbol = "$T1102", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
-  { offset = 0x20, type = "DIR32", symbol = "$T1103", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
+  { offset = 0x17, type = "DIR32", symbol = "$T1142", addend = 0, target = 0x00420068, data_hex = "000000000000f93f" },
+  { offset = 0x20, type = "DIR32", symbol = "$T1143", addend = 0, target = 0x00420070, data_hex = "0000000000407f40" },
   { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0, target = 0x004210A0 },
   { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
 ]
@@ -138,7 +138,7 @@ relocations = [
 [builds.resources]
 source = "src/resources.c"
 object = "build/exact/resources.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.select-sprite-bank]
@@ -229,7 +229,7 @@ relocations = [
   { offset = 0xB0, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
 ]
 
-[units.stretch-keyed-sprite]
+[candidates.stretch-keyed-sprite]
 build = "resources"
 symbol = "_dxball_stretch_keyed_sprite"
 target_address = 0x004041F0
@@ -247,7 +247,7 @@ relocations = [
 [builds.effects]
 source = "src/effects.c"
 object = "build/exact/effects.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.c", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.c", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.begin-explosions]
@@ -638,4 +638,11 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 source = "src/bitmap.c"
 object = "build/exact/bitmap.obj"
 inputs = ["src/bitmap.c", "src/bitmap.h", "src/resources.h", "src/boards.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+# Generated-code semantic execution only; no exact allocator units claimed.
+[builds.allocator]
+source = "src/allocator.c"
+object = "build/exact/allocator.obj"
+inputs = ["src/allocator.c", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]

@@ -1,3 +1,4 @@
+#include "allocator.h"
 #include "resources.h"
 
 #include <stdlib.h>
@@ -98,7 +99,7 @@ void dxball_release_sprite(DxBallInt sprite)
                 dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface);
             dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface = NULL;
         }
-        free(dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]);
+        dxball_heap_release(dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]);
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = NULL;
     }
     return;
@@ -116,7 +117,7 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     dxball_release_sprite(sprite);
     /* The target requests 45 bytes for the 44-byte x86 record. The last byte's
        purpose is unclassified; pointer-sized host storage grows naturally. */
-    record = (DxBallSprite *)malloc(sizeof(DxBallSprite) + 1);
+    record = (DxBallSprite *)dxball_malloc_bytes(sizeof(DxBallSprite) + 1);
     if (record == NULL)
         exit(1);
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
@@ -180,10 +181,10 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         fread(&code, 1, 1, dxball_board_file);
         fread(&baseline, 4, 1, dxball_board_file);
         pixel_count = width * height;
-        pixels = (DxBallByte *)malloc(pixel_count + 3);
+        pixels = (DxBallByte *)dxball_malloc_bytes(pixel_count + 3);
         if (pixels == NULL)
             exit(1);
-        record = (DxBallSprite *)malloc(sizeof(DxBallSprite) + 1);
+        record = (DxBallSprite *)dxball_malloc_bytes(sizeof(DxBallSprite) + 1);
         if (record == NULL)
             exit(1);
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
@@ -230,7 +231,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
             }
         }
         record->surface->vtable->unlock(record->surface, NULL);
-        free(pixels);
+        dxball_heap_release(pixels);
     }
     fclose(dxball_board_file);
     dxball_select_sprite_bank(saved_bank);

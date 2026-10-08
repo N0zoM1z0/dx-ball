@@ -1,5 +1,12 @@
 # Sprite, font, PCX and palette owner
 
+## Current allocation defaults
+
+SBK/font storage now defaults to maintained malloc-mode allocation and heap
+release. Current owner replay passes with the shared allocator present. The
+connected private draft below remains historical failure-path evidence; see
+[allocation ownership](ALLOCATOR_OWNER.md) for current acceptance and limits.
+
 Evidence is the hash-pinned DX-Ball v1.07 target in `config/target.toml`.
 Attested Ghidra queries cover the entries below; original x86 execution supplies
 the behavioral evidence. The maintained implementation is `src/resources.c`.

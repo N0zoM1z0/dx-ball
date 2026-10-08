@@ -24,6 +24,9 @@ ordered boundary calls. Deletion poisons released storage and checks for double
 release. Allocation/deletion remain explicit CRT boundaries; bonus creation,
 keyed/reduced rendering and region updates remain controlled callbacks.
 No implementation of those dependencies is inferred from matching their calls.
+The shared allocation/release defaults now use the separately accepted
+[runtime allocation chain](ALLOCATOR_OWNER.md); these owner oracles retain
+their controlled allocation boundary.
 
 ## Observed behavior
 

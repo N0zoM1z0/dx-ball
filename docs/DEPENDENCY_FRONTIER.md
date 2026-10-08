@@ -1,5 +1,14 @@
 # Dependencies reached from maintained functions
 
+The [eight-entry runtime allocator](ALLOCATOR_OWNER.md) is now maintained and
+connected to the shared defaults. Current totals are **243 source-present
+entries / 111,242 direct cases / 35 exact units / 3,379 bytes**, with 15 runtime
+origins identified and 278 unknown. The inventory and private draft stages
+below describe their earlier checkpoints; they retain their original hashes,
+coverage and limits. Full frame failure ownership and remaining CRT helpers
+are still open.
+
+
 A bounded review of saved REA `analyze_function` records identifies the next
 supporting contracts to inspect after the connected gameplay owners. It reuses
 closed, target-matching Ghidra records; no new binary query or provider import
@@ -58,7 +67,7 @@ The private inventory `.analysis/maintained-call-frontier.json` binds the
 current function/origin ledgers, its producer and each retained Evidence file
 by SHA-256. It preserves the excluded-record list and per-target caller
 references, so a later pass can expand the boundary without repeating the
-existing queries. The accepted totals remain **235 maintained / 109,805 direct
+existing queries. At that inventory checkpoint, the accepted totals were **235 maintained / 109,805 direct
 cases / 36 exact units / 3,518 bytes**, with 279 unknown origins and 14 identified
 runtime entries.
 

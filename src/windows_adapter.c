@@ -8,6 +8,7 @@
 #include "paddle.h"
 #include "raster.h"
 #include "bitmap.h"
+#include "allocator.h"
 
 typedef char WindowsAdapterRequiresI686[(sizeof(void *) == 4) ? 1 : -1];
 typedef char WindowsMessageLayout[(sizeof(MSG) == sizeof(DxBallMessage)) ? 1 : -1];
@@ -221,9 +222,19 @@ static DxBallInt raster_muldiv(DxBallInt number, DxBallInt numerator,
                               DxBallInt denominator)
 { return MulDiv(number, numerator, denominator); }
 
+static void *DXBALL_HEAP_CALL heap_create(DxBallUInt flags, size_t initial, size_t maximum)
+{ return (void *)HeapCreate((DWORD)flags, (DWORD)initial, (DWORD)maximum); }
+static void *DXBALL_HEAP_CALL heap_allocate(void *heap, DxBallUInt flags, size_t bytes)
+{ return HeapAlloc((HANDLE)heap, (DWORD)flags, (DWORD)bytes); }
+static DxBallInt DXBALL_HEAP_CALL heap_release(void *heap, DxBallUInt flags, void *memory)
+{ return (DxBallInt)HeapFree((HANDLE)heap, (DWORD)flags, memory); }
+
 void dxball_bind_windows(void)
 {
     FARPROC procedure;
+    DxBallHeapApi heap_api;
+    heap_api.create = heap_create; heap_api.allocate = heap_allocate; heap_api.release = heap_release;
+    dxball_bind_heap_api(&heap_api);
     /* DLLs stay loaded for the process lifetime, including asynchronous callbacks. */
     draw_module = LoadLibraryA("ddraw.dll"); sound_module = LoadLibraryA("dsound.dll");
     procedure = draw_module != NULL ? GetProcAddress(draw_module, "DirectDrawCreate") : NULL;

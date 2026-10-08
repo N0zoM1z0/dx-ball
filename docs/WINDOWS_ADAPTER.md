@@ -65,7 +65,10 @@ fails the check.
 ## Real bindings and products
 
 `src/windows_entry.c` supplies the SDK WinMain entry and calls the maintained
-WinMain controller after `dxball_bind_windows()`. `src/windows_adapter.c`
+WinMain controller after `dxball_bind_windows()` and one call to the
+[recovered heap initializer](ALLOCATOR_OWNER.md). Binding installs typed heap
+imports but does not initialize or reset the heap; the Windows entry ignores
+the initializer return, matching the observed original startup edge. `src/windows_adapter.c`
 translates the existing dependency tables into actual SDK calls: the 27 window
 operations, timers/cursor positioning, file/mapping/allocation APIs, DirectX
 factories and MIDI streaming. Typed Win32 and five-parameter WinMM callback

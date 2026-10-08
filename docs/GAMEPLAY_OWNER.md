@@ -92,11 +92,12 @@ is 32 bytes. Tests compare payload and logical pointer links, verify each
 ABI's requested allocation size, and check untouched payload poison. They
 do not assert raw host addresses equal original x86 addresses.
 
-`dxball_allocate_node` is a host bridge to the target entry `0x416770`, with
-`malloc` as the default host allocator. Its body is not an accepted target
-function. Mapping its call relocation proves the append function's call-site
-bytes, not the runtime allocator or CRT new-handler behavior. The null-return
-test proves the owner's response after that dependency returns null.
+`dxball_allocate_node` remains a typed dependency boundary, now defaulting to
+the [maintained new chain](ALLOCATOR_OWNER.md) recovered from `0x416770`.
+Release defaults to maintained runtime delete. The gameplay oracle still
+controls allocation failures and checks the owner's null-return exit; the
+allocator oracle separately executes the internal retry and handler bodies.
+Mapping an append call relocation alone does not accept those dependencies.
 
 `dxball_gameplay_ops` supplies brick effects, sound stop/play, range RNG and
 particle creation. Brick effects default to the maintained animation constructor;
