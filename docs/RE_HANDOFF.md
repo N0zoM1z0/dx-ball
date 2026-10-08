@@ -35,13 +35,25 @@ eight original allocator entries and binds disjoint external heap callbacks.
 Its ledger retains raw request sizes and allocation identities, derives node
 roles from queue roots, and permits arena reuse only after state, payload,
 pixel and free-poison comparison. Fixture resets reject live ownership;
-callback exceptions use a distinct diagnostic exit. Syntax and static callback
-address checks pass, but no connected frame has executed. The draft is
-`.analysis/allocator-frame-connected-draft.py`; its source-only receipt is
-`.analysis/allocator-frame-connected-source-check.json`. Detached clone scratch
-currently requires an explicit `clone_balls` phase. Mixed-frame fixtures,
-terminal allocation controls and a frozen cold replay remain required after
-the live campaign releases the session.
+callback exceptions use a distinct diagnostic exit. The initial draft and its
+source-only receipt remain sealed in `allocator-frame-connector-source-243-35`.
+The current private draft is `.analysis/allocator-frame-connected-draft.py`;
+`.analysis/run-allocator-frame-connected.py` prepares 21 fixtures / 564 complete
+frames across startup/launch, mixed original grids, explosive-source scratch
+and death/restart, with zero, one and three failed HeapAlloc attempts. The
+positive batch also creates particles, effects, explosions, clones and weapon
+nodes before comparing complete frames and natural cleanup. Its normalized
+replay projection is separate from raw host pointers and requests.
+
+Syntax, configured-entry and static callback-address checks pass. A negative
+control confirms execution refuses a pending campaign before oracle imports,
+session acquisition or output creation. The source-only batch receipt is
+`.analysis/allocator-frame-connected-batch-source-check.json`; no connected
+frame has executed and acceptance counts are unchanged. Unpublished scratch
+requires an explicitly reviewed exclusive producer (`clone_balls` or
+`spread_explosive_bricks`), rather than a host-size guess. Batch execution,
+terminal allocation controls and frozen cold replay remain required after the
+live campaign releases the session.
 
 The [maintained allocation owner](ALLOCATOR_OWNER.md) now supplies new/delete
 and malloc/release defaults for nodes, music, resources and sound. All 23 fresh
