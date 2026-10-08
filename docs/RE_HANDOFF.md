@@ -110,6 +110,23 @@ HEAD/sealed evidence before a validated atomic update. All 528 rows reconcile.
 Broader runtime behavior and whole-campaign fidelity remain open. Accepted owner
 and exact inputs/products are unchanged and verify before replay reuse.
 
+CRT source commit `06039a9` passes public CI **37755949692**, including the
+12 parser/integrity controls, archival rejection gates and strict i686 Windows
+compilation. The `crt-provenance-222-36` checkpoint seals 178 source/Evidence/
+object files and 185 external references; the full normalized report has a
+separate sealed archive linked to that complete input closure. Temporary member
+objects remain available in the archive after removal from disposable paths.
+
+Cleanup journal `20261008T092250459977Z` handles 178 operations / **10.19 MiB
+of logical duplicate/probe bytes**. Another 40 obsolete private inventory copies
+are removed only after individual archive/hash checks, processing 163,574 bytes.
+Combined cleanup is **10.35 MiB of logical bytes**, not filesystem block savings.
+All **4,848 immutable paths / 291 external references / 15 expanded gzip
+artifacts** verify afterward, as do the accepted owner/exact products and the
+archived provenance input closure. The next preview is empty. Analysis is about
+400 MiB, build 37 MiB and installed tools 1.9 GiB, including new unique evidence.
+Originals, unique REA records and manual saves are preserved.
+
 The diverse-controller original-only full control is now terminated and sealed,
 rather than live. REA Evidence
 `ev_d4faf61d0314b010e141adf163e70a01f7561131e676432d331a97a694efe43d`
