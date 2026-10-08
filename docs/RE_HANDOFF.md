@@ -10,6 +10,22 @@ VC4/MinGW full campaigns and whole-game fidelity remain open. The captured
 game runs silently on one allowed CPU. Source totals stay
 **235 maintained / 109,805 direct cases / 36 exact units / 3,518 bytes**.
 
+The [isolated allocator draft](DEPENDENCY_FRONTIER.md#executed-allocator-draft)
+now passes 624 original-entry fixtures, 210 connected node fixtures and 45
+ball retirements, plus two separate native pointer controls. Its 154-file
+`allocator-first-execution-235-36` checkpoint retains source/product identities
+and independent reviews. This controlled-API result does not promote the
+draft into maintained or exact acceptance. Focused REA producer analysis finds
+the private `HeapCreate(1, 0x1000, 0)` initializer and the malloc/newmode wrapper;
+shared physical binding, handler registration, i686 ABI and omitted owner/frame
+paths remain pending.
+
+After the full control and REA sessions close, verified retention recovers
+**19.55 MiB of actual disk space**. It checks 6,495 immutable paths, 751
+external references, 31 losslessly retained artifacts and 49 original files
+before and after cleanup. The next cleanup preview has zero operations;
+accepted native, owner-report and exact-object identities remain unchanged.
+
 The [next connected allocation batch](DEPENDENCY_FRONTIER.md#next-connected-allocation-batch)
 targets the six-entry new/delete, heap allocation, new-handler and release chain
 behind the current host allocation bridges. Saved REA dossiers cover 172
@@ -18,8 +34,9 @@ callers. The independent priority review is SHA-sealed in
 `allocator-next-batch-review-235-36`, with 22 retained files and 271 external
 evidence identities. Verification checks complete instruction lists,
 target identity, caller edges and unchanged game owner/exact products. Heap
-initialization, handler registration and ownership binding remain separate
-obligations. Runtime provenance is explicitly a historical checkpoint;
+initialization is now statically identified; its execution, handler registration
+and production ownership binding remain separate obligations.
+Runtime provenance is explicitly a historical checkpoint;
 maintained/semantic/exact totals remain unchanged. The frozen original
 full-campaign result is now sealed as described above.
 

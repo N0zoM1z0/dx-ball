@@ -128,8 +128,8 @@ Six closed REA dossiers already cover the proposed batch: `0x00416760`
 `0x00419EA0` (handler invocation), totaling 172 reviewed instruction bytes.
 The records cited above and in [runtime provenance](CRT_PROVENANCE.md) can be
 reused without another function query. These are observed contracts;
-implementation, independent semantic execution and configured exact matching
-remain unaccepted for this batch.
+maintained implementation and configured semantic/exact acceptance remain
+pending. The private controlled-API comparison below has now executed.
 
 | Required proof | Original behavior to preserve |
 | --- | --- |
@@ -140,9 +140,9 @@ remain unaccepted for this batch.
 | Connected ownership | Execute append/remove/retirement through the complete original chain; compare typed roots, cursor effects, untouched payload, ordered calls and poisoned freed storage. |
 
 The oracle must execute the six original bodies with only physical heap APIs
-and controlled handler callbacks as declared boundaries. Heap initialization,
-teardown and handler registration need a separate producer review of
-`0x00440D70` and `0x0043FB10`, including indirect or aliased writes. Shared
+and controlled handler callbacks as declared boundaries. The focused producer
+review below identifies heap initialization; teardown, handler registration
+and indirect or aliased writes remain separate obligations. Shared
 defaults must preserve allocation/release ownership across every affected
 family; host allocations cannot be released through a different private heap.
 The malloc/newmode wrapper at `0x00417770` is outside this six-entry proposal.
@@ -171,4 +171,49 @@ reviewed source/documents and 271 external evidence identities. Verification
 checks target identity, all six instruction lists and extents,
 the saved caller edges, current owner/exact products and unchanged frozen
 campaign inputs. No new binary query, build, differential case or exact unit
-is claimed by this review.
+is claimed by this historical review.
+
+## Executed allocator draft
+
+After the original campaign stops and its capture is sealed, an isolated C
+draft passes **624 original-entry fixtures**, **210 connected node fixtures**,
+**45 ball-retirement fixtures**, and two separate native pointer controls.
+The seven node families cover ball, bonus, effect, explosion, particle,
+projectile and fire ownership. The original allocator bodies and their internal
+calls execute unchanged; only HeapAlloc/HeapFree and controlled handler
+callbacks form the external boundary. Comparisons check queue roots/cursors,
+payloads, ordered callbacks, heap pairing and poisoned released storage.
+The draft's compiled source, product, 410 execution-input identities and
+independent reviews are retained in `allocator-first-execution-235-36`.
+
+These are private draft results. Physical heap APIs, native i686 ABI, shared
+production defaults, MIDI/resource ownership, terminal exits and complete frame
+paths remain pending. They add no maintained function, accepted direct case or
+exact unit to the published ledgers.
+
+## Heap initialization and malloc mode
+
+Focused REA `xrefs`, `inspect_native_instruction` and `analyze_function` calls
+identify the actual heap producer at `0x00419E80`, a 21-byte initializer.
+Evidence `ev_10ce1eaed90f0753871a24f6fad805895e13fb1cbf155903597f6e751ae3cd91`
+shows `HeapCreate(1, 0x1000, 0)` followed by an unconditional store of its
+handle, including null on failure, into `0x00440D70`. Startup calls it at
+`0x00418801` and does not inspect that call's EAX before subsequent calls
+(`ev_d4cdbb3cea74cf5ff8ce35743dcfa01fdcd54a492152e16462402ddb2f6429c8`).
+This establishes a private-heap initializer; its physical lifecycle still needs
+implementation and connected execution.
+
+The 20-byte malloc wrapper at `0x00417770` reads `0x004234D4` and forwards
+that current mode and the requested size to `0x00417790`, retaining its pointer
+in EAX. Evidence
+`ev_bab5314682949a397f2c04f0c60c4d9c0e5c760c6d5adaf4a98355d823f22354`
+preserves the instructions; its inferred void pseudocode is not the return
+contract. This path is distinct from new's always-enabled handler argument.
+
+Instruction inspection classifies the remaining listed heap references as
+reads; `0x0041D81F` compares an immediate address and never accesses heap
+storage. The two additional listed mode references are reads as well.
+REA `read_bytes` observes four initial zero bytes at heap, handler and mode
+storage. These are static loaded-image observations, not proof of permanent
+runtime values or absence of indirect registration. Handler/mode producers
+and teardown remain unresolved beyond this bounded direct-reference search.
