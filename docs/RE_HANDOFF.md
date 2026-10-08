@@ -125,6 +125,25 @@ allocation size/handler retry rules without duplicate queries. Implementation
 acceptance, lower allocation/handler paths and compiler/library attribution
 remain open. See [instruction contracts](DEPENDENCY_FRONTIER.md#focused-rea-instruction-review).
 
+Source commit `dcafaef` passes public CI **37751595386**, including portable
+checks, archival rejection controls and strict i686 Windows compilation. The
+public contact fixture independently passes all 320 cases/2,560 comparisons
+after relocation; its complete input hashes bind the public files. The private
+draft's report and producer remain sealed separately. The
+`contact-dependencies-222-36` checkpoint seals 117 files and 31 external
+references, including five new REA dossiers and two reused backend records.
+Both the 5.15 MB contact report and 6.68 MB tool catalog are retained losslessly
+with expanded SHA verification.
+
+Journal `20261008T084230451023Z` handles another 189 operations / **9.57 MiB
+of logical duplicate bytes**, sharing the identical closed-session catalog
+and checkpoint copies without deleting their paths. All **4,642 immutable
+paths / 283 external references / 14 expanded gzip artifacts** verify afterward;
+the next preview is empty. Analysis is about 397 MiB, build 37 MiB and pinned
+tools 1.9 GiB, including the new contact report and preserved evidence. Current
+accepted owner/exact inputs and products remain unchanged. Originals, unique
+observations and manual saves are preserved.
+
 The raster owner is accepted: triangle, polygon, clipped polygon and horizontal
 span share public C with explicit ABI and recovered scratch lifecycle. Saved
 REA controller/helper/import/shared-tail dossiers supply the instruction facts;
