@@ -20,14 +20,21 @@ REA runtime Evidence
 binds the full final report and exit zero. Inputs/products and failed controls
 are retained separately. Shared production binding, MIDI/resource/frame
 connection and configured exact acceptance remain pending; the ledgers above
-are unchanged. The next source batch should connect those owners before
-promoting this private implementation into the game.
+are unchanged. The next source batch should finish those owner connections
+before promoting this private implementation into the game.
 
 After sealing this batch, retention removes 37 redundant failed-attempt files
 and deduplicates 1,824 immutable paths. Measured net storage falls by 3.047 MiB;
 6,791 immutable paths, 1,960 external references and 49 original files still
 verify. Current successful products remain available, and the next cleanup
 preview has no operations.
+
+The [connected MIDI draft](MIDI_OWNER.md#connected-allocator-ownership-draft)
+also passes 186 fixtures / 528 MIDI calls with the original allocator chain
+unhooked: 210 wrapper allocations/deletes, 458 allocation attempts and 248
+handler calls. It preserves Local/Global ownership and all six song lifecycles;
+REA runtime capture records exit zero. This private native result leaves
+production binding, resource/frame connections and i686 MIDI execution open.
 
 The [isolated allocator draft](DEPENDENCY_FRONTIER.md#executed-allocator-draft)
 now passes 624 original-entry fixtures, 210 connected node fixtures and 45

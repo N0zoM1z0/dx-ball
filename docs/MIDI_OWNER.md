@@ -154,3 +154,48 @@ eight rejection checks, native/MinGW/VC4 builds, Wine inspectors and saved REA
 verification. Reports/configuration and complete input identities are retained
 under `.analysis/checkpoints/midi-199-40/`. Journaled cleanup retains immutable
 evidence and removes only verified duplicates and obsolete compiler probes.
+
+## Connected allocator ownership draft
+
+A private shared-C copy now connects the music wrapper to the reviewed new/delete
+chain. The original side removes its two wrapper allocator replacements and
+executes the original internal bodies. **186 fixtures / 528 MIDI entry calls**
+compare complete logical state, payloads and ordered effects. Original entry
+observation records 210 new calls, 210 deletes, 458 HeapAlloc attempts
+and 248 handler invocations. These counts are separate from maintained direct
+cases.
+
+The matrix covers immediate success, one or three failures before successful
+retry, a negative handler result and heap replacement, with malloc mode zero.
+It includes opening/playing failures, malformed data, wrapper replacement and
+all six original songs through callback, pause, resume, restart and close.
+Wrapper requests independently check the original eight-byte and native typed
+16-byte sizes. LocalAlloc contexts and GlobalAlloc banks keep their own APIs;
+wrapper deletion snapshots semantic fields before poisoning retained storage,
+and later checks detect writes to that freed mock block. Lock-failure leaks and
+release after reset failure remain visible rather than receiving invented
+cleanup.
+
+REA `capture-process` Evidence
+`ev_b087b62a57af4b1dce3ac5dc92df7052238ad0295108ba62b65f15f501d472cc`
+records the corrected run's child exit zero and complete report SHA. Its 360
+input identities include pre-execution loaded engines, actual GCC components
+and prebound link objects/libraries. An independent source review prompted
+those checks and the poison check; the earlier result/source remain sealed as
+a superseded control. A process alarm bounds broken callback diagnostics without
+changing the reconstructed allocation retry loop. Full comparisons stream into
+a digest (94,623,490 serialized bytes), avoiding a redundant large snapshot file.
+
+This remains an isolated native ownership draft. The heap is fixture-seeded;
+production startup/teardown, resource/frame connection, i686 connected MIDI
+execution, real WinMM delivery and asynchronous callback lifetimes remain open.
+Null new-result faults are a separate unexecuted diagnostic. Retained mock
+context/buffer storage is not physical lifetime proof. Maintained source and
+its existing semantic/exact ledgers remain unchanged.
+
+The corrected 60-file checkpoint retains sources, report, products, source review
+and REA capture, with 319 external references. Subsequent retention removes
+13 superseded working files after matching their sealed copies, shares 43
+immutable duplicates and recovers another 592 KiB of measured disk usage.
+All 6,881 immutable paths, 2,004 references and 49 originals verify; the next
+cleanup preview is empty. The current successful inputs/products stay retained.
