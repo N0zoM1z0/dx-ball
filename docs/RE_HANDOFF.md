@@ -1,5 +1,22 @@
 # Current handoff
 
+The next source investigation reuses the saved REA dossier for the 1,572-byte
+software sprite renderer at `0x004026A0`. Instructions expose a fourth angle
+argument and a +270-degree row step omitted by inferred pseudocode; constants,
+the wrapper and differential validation remain open. See
+[rotation investigation](ROTATION_INVESTIGATION.md). No function, origin or
+exact unit is promoted. The architecture overview now distinguishes existing
+Windows SDK bindings from still-unverified physical device effects.
+
+A full original-board control was initiated with the unchanged campaign
+harness and a 7,200-second budget. Its private attempt directory is
+`.analysis/checkpoints/original-campaign-control-01/`, retaining input copies
+and the actual SDK reader product. Until its terminal report is archived and
+verified, it supplies no full-campaign acceptance. Do not overwrite those
+inputs or run cleanup against active runtime assets. The latest read-only
+cleanup preview contains only the 49 files used by that original-game process;
+remove them only after the attempt finishes and its evidence is retained.
+
 Original-board integration now compares 20,654 continuous original-x86 frames,
 including five advances, actual MBALL2/THEFONT geometry and checked node reuse.
 All twelve gameplay phases execute; 97 report inputs and the native library

@@ -7,11 +7,12 @@ without checking their individual evidence.
 
 | Area | Target evidence / current work |
 | --- | --- |
-| Platform startup | `src/platform.c`; WinMain, window/input routing, singleton and fullscreen/compatible DirectDraw creation; Windows adapter pending |
-| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; all five mode controllers maintained; Windows/audio adapter pending |
+| Platform startup | `src/platform.c`; WinMain, window/input routing, singleton and fullscreen/compatible DirectDraw creation; `src/windows_adapter.c` binds actual SDK calls |
+| Mode routing | `src/runtime.c`, mode global `0x00421074`, init/redraw/frame/cleanup dispatch; all five mode controllers maintained and exercised by bounded Windows controls |
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
-| Sprite draw | `0x00404180`; exact API dispatch; hardware backend pending |
+| Sprite draw | `0x00404180`; maintained API dispatch with real DirectDraw bindings; physical driver fidelity remains open |
+| Software rotation | `0x004026A0`; saved REA instructions establish a four-argument pixel renderer; [investigation](ROTATION_INVESTIGATION.md) remains outside accepted source/semantic/exact counts |
 | Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, request-list helpers and sound pan |
 | Animation owner | `src/effects.c`; constructors, timer steps, dispatch, occupancy and propagation |
 | Particle owner | `src/particles.c`; clipped creation, movement/fading, typed list and 2x2 pixel writes |
@@ -27,8 +28,8 @@ without checking their individual evidence.
 | Menu/splash owner | `src/intro.c`; mode-0/4 controllers, point cloud, scroller/credit waves and palette pulses |
 | Game-over owner | `src/gameover.c`; mode-3 lifecycle/input, name buffer, rank insertion, score-file persistence and ranking pixels |
 | Editor owner | `src/editor.c`; mode-2 lifecycle/input, toolbar hit regions, board painting and persistence |
-| MIDI/music owner | `src/midi.c`; RIFF/MIDS parsing, event expansion, WinMM stream state and music wrappers; real WinMM adapter pending |
-| Sound owner | `src/sound.c`; DirectSound startup, WAV/RIFF/file loading, buffer upload, play/stop, focus and lost-buffer recovery; physical device adapter pending |
+| MIDI/music owner | `src/midi.c`; RIFF/MIDS parsing, event expansion, WinMM stream state and music wrappers; real WinMM bindings exist, asynchronous playback verification remains open |
+| Sound owner | `src/sound.c`; DirectSound startup, WAV/RIFF/file loading, buffer upload, play/stop, focus and lost-buffer recovery; real bindings exist, physical audio remains unverified |
 
 `src/boards.h` defines one owner declaration shared by native and VC4.0 builds.
 `DxBallInt` and `DxBallUInt` are explicit 32-bit scalars; opaque surface handles
@@ -103,8 +104,9 @@ The observed x86 layout is checked independently of the native pointer ABI.
 clock, score and paddle routines. Its mode table defaults all five modes to
 maintained source. All twelve frame
 phases now default to maintained owners. The display owner supplies lightning,
-dirty pages, sort/merge, palette animation and flip/wait dispatch; platform,
-COM drivers, Windows binding and audio remain pending. Glyph and shared UI
+dirty pages, sort/merge, palette animation and flip/wait dispatch. The Windows
+adapter binds platform, COM factories and audio APIs; physical driver/audio
+fidelity remains open. Glyph and shared UI
 bodies default to maintained source. Surface recovery,
 color fills and palette fades now default to `src/device.c`. The third sprite
 bank's count and allocation mode own addresses `0x4265AC` / `0x4265B0`; gameplay
@@ -130,9 +132,10 @@ owners, with typed point/offset arrays, program welcome text and the RGB-int
 pool. Menu Last Score reuses the existing gameplay score. Public startup/UI/
 intro headers depend only on board scalar types; platform/device dependencies
 stay in implementation files. See [startup/UI evidence](STARTUP_UI_OWNER.md)
-and [menu/splash evidence](INTRO_OWNER.md). The products remain analysis
-components and inspectors until the Windows/audio adapters and EXE entry
-integration are complete.
+and [menu/splash evidence](INTRO_OWNER.md). Native products are analysis
+components and inspectors. VC4 and MinGW also build experimental Windows game
+EXEs with SDK entry integration and bounded Wine controls; see
+[Windows adapter evidence](WINDOWS_ADAPTER.md).
 
 `src/gameover.c` maintains mode 3 and connects it to the production mode/key
 tables. Score data reuses `src/startup.c`; current-game score and menu cursor
@@ -141,8 +144,9 @@ bodies, controlling only file APIs, lifecycle resource operations and hardware
 boundaries. The name buffer is forty bytes with the original thirty-character
 input limit; record shifts retain strcpy semantics rather than copying entire
 records. See [game-over evidence](GAMEOVER_OWNER.md). The subsequent
-[editor evidence](EDITOR_OWNER.md) completes the mode-controller family; actual
-platform/audio/WinMM adapter work remains.
+[editor evidence](EDITOR_OWNER.md) completes the mode-controller family.
+Bounded Windows controls exercise these modes; physical audio and asynchronous
+WinMM playback remain unverified.
 
 `src/editor.c` shares existing board/input/cursor storage and maintains a
 100-record toolbar hit table plus a DWORD selected tile. It connects actual
@@ -156,8 +160,9 @@ or clamping. See [editor evidence](EDITOR_OWNER.md).
 compact-event expansion and stream callback. Headers and context retain i686
 layouts while growing with host pointers. The explicit stdcall import table
 preserves original request contracts. Platform and final runtime music
-operations now default to maintained wrappers; real Kernel32/WinMM binding
-and asynchronous device effects remain open. See [music evidence](MIDI_OWNER.md).
+operations now default to maintained wrappers. The Windows adapter supplies
+real Kernel32/WinMM calls; asynchronous device effects remain open. See
+[music evidence](MIDI_OWNER.md).
 
 Private Windows game links include the two REA-reviewed embedded resources.
 `scripts/windows_resources.py` binds extraction to the original hash and full
