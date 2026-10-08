@@ -1,5 +1,11 @@
 # Current handoff
 
+The CRT provenance source and retention commits (`06039a9` and `91b0ed3`)
+pass public CI runs 37755949692 and 37757599984. Before the next source batch,
+all 4,866 retained immutable paths and 293 external references verify, together
+with the unchanged bitmap acceptance products. Metadata CI is sealed separately
+under `.analysis/checkpoints/crt-retention-ci-222-36/`.
+
 The bitmap loader at `0x00409F70` is accepted in shared C. Saved REA loader,
 prefix and reference dossiers supply the instruction facts; no new original
 query or duplicate provider import was needed. Current scope is **222 maintained /
