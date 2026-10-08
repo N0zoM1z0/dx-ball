@@ -34,11 +34,15 @@ def main():
         return
     python("scripts/verify-target.py")
     python("scripts/verify-toolchain.py", "--execute")
-    python("scripts/verify-rea.py")
+    rea_runs = ROOT / ".analysis/rea/runs"
+    saved_smoke = any((run / "close.json").is_file() for run in rea_runs.glob("*-rea-smoke-*"))
+    python("scripts/verify-rea.py", *(["--saved"] if saved_smoke else []))
     python("scripts/replay-exact-units.py")
     python("tests/test_exact_oracle.py")
     python("tests/test_boards_differential.py")
     python("tests/test_resources_differential.py")
+    python("tests/test_rotation_differential.py")
+    python("tests/test_rotation_coff.py")
     python("tests/test_gameplay_differential.py")
     python("tests/test_effects_differential.py")
     python("tests/test_entities_differential.py")

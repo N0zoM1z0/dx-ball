@@ -23,6 +23,8 @@ address,symbol,source,scope,semantic_unit
 0x00402490,dxball_cosine,src/trig.c,See docs/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-cosine
 0x00402520,dxball_wave_x,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-wave-x
 0x00402560,dxball_wave_y,src/intro.c,"See docs/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-wave-y
+0x004026A0,dxball_render_rotated_sprite,src/rotation.c,See docs/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-render-sprite
+0x00402CD0,dxball_rotated_sprite_offset,src/rotation.c,See docs/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-offset
 0x00403070,dxball_draw_line,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-line
 0x00403230,dxball_fill_rect,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-fill-rect
 0x00403320,dxball_load_binary_file,src/sound.c,"See docs/SOUND_OWNER.md; slots0..49, names<=19 chars, bounded mapped RIFF/no pointer or size overflow, usable fmt-before-data for loading, API-defined outputs; imports/COM/CRT allocation/exit boundaries, tombstone-only failure observation, real physical audio pending",sound-load-binary-file
@@ -51,6 +53,7 @@ address,symbol,source,scope,semantic_unit
 0x004040B0,dxball_blt_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-sprite
 0x00404180,dxball_draw_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-sprite
 0x004041F0,dxball_stretch_keyed_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-stretch-keyed-sprite
+0x00404280,dxball_draw_rotated_sprite,src/rotation.c,See docs/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-draw-sprite
 0x004042B0,dxball_capture_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
 0x00404610,dxball_load_sprite_bank,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
 0x00404BE0,dxball_release_sprite,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite

@@ -121,7 +121,9 @@ Run `scripts/repo-python scripts/clean-local.py` to preview local housekeeping,
 then add `--apply` to remove superseded compiler probes and root query aliases
 whose complete bytes survive in a closed archived session. Identical catalogs
 inside closed archives share storage through hardlinks; their paths and hashes
-stay intact. Mutable root aliases are never hardlinked to evidence. Cleanup
+stay intact. The same cleanup verifies every file declared by checkpoint
+`sha256.json` manifests before sharing identical immutable archive copies.
+Current build products and unsealed experiments remain separate. Mutable root aliases are never hardlinked to evidence. Cleanup
 retains snapshots, archived results, checkpoint reports and pinned tools, and
 writes a private SHA-256 operation journal under `.analysis/cleanup/`.
 Once the installed REA, Node, Ghidra and JDK inputs all verify, cleanup also

@@ -609,3 +609,19 @@ relocations = [
   { offset = 0x39, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
   { offset = 0x3E, type = "REL32", symbol = "@dxball_advance_ball@4", addend = 0, target = 0x004101D0 },
 ]
+
+[builds.rotation]
+source = "src/rotation.c"
+object = "build/exact/rotation.obj"
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/rotation.c", "src/rotation.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.draw-rotated-sprite]
+build = "rotation"
+symbol = "_dxball_draw_rotated_sprite"
+target_address = 0x00404280
+size = 40
+boundary_evidence = "docs/ROTATION_INVESTIGATION.md; ev_dde2cbb37732ea0f72b15ecd2949441abe7c8b5a5a28b2762bdf8dd403d7ebe6"
+relocations = [
+  { offset = 0x17, type = "REL32", symbol = "_dxball_render_rotated_sprite", addend = 0, target = 0x004026A0 },
+]

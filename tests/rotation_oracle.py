@@ -1,8 +1,10 @@
 """Original-machine rotation fixtures; no maintained implementation is assumed."""
+import ctypes as C
 import itertools
 import random
 
-from resources_oracle import ResourceTarget
+from resources_oracle import ResourceTarget, ResourceNative, Desc
+from target_oracle import ACTIVE_SURFACE
 from unicorn.x86_const import UC_X86_REG_FPCW, UC_X86_REG_FPTAG, UC_X86_REG_FPSW
 
 
@@ -15,6 +17,7 @@ class RotationTarget(ResourceTarget):
         self.after_desc, self.after_lock, self.after_unlock = {}, {}, {}
         self.surfaces[self.SURFACE] = dict(width=32, height=24, pitch=35,
             pixels=self.allocate(35 * 24 + 64) + 32, identity='active')
+        self.write_u32(ACTIVE_SURFACE, self.SURFACE)
 
     def _desc(self, *unused):
         surface, desc = self._args(2)
@@ -36,9 +39,9 @@ class RotationTarget(ResourceTarget):
         self.events.append(('lock', identity, result))
         if result == 0:
             self._fill_desc(surface, desc)
-            callback = self.after_lock.get(identity)
-            if callback:
-                callback(self)
+        callback = self.after_lock.get(identity)
+        if callback:
+            callback(self)
         self._return(result & 0xFFFFFFFF, pop=20)
 
     def _unlock(self, *unused):
@@ -93,3 +96,82 @@ def source_pixels(width, height, pitch, pattern):
                                   (pattern == 'sparse' and (x + 2*y) % 3 == 0)
                                   else 1 + (x * 23 + y * 41) % 254)
     return bytes(data)
+
+
+def width_offset_fixtures():
+    cases = [(0, 1, width, angle)
+             for width in (-127, -13, -1, 0, 1, 2, 3, 7, 13, 26, 31, 64, 127, 640)
+             for angle in (-720, -405, -360, -135, -90, -45, -1, 0, 1, 45, 90, 135, 359, 360)]
+    cases += [(0, 1, 13, angle) for angle in range(-720, 721, 15)]
+    cases += [(bank, slot, 26, angle) for bank in range(3) for slot in (1, 127, 254)
+              for angle in (-405, -45, 0, 135)]
+    return cases
+
+
+def callback_fixtures():
+    return (
+        ('destination changes after descriptor', 0, 'replacement-active', 'replacement-active', 0),
+        ('bank changes after destination descriptor', 1, 'active', 'active', 1),
+        ('bank changes between source descriptor and lock', 2, 'active', 'active', 2),
+        ('bank changes during destination unlock', 0, 'active', 'active', 2),
+        ('destination changes again during source lock', 0, 'replacement-active', 'active', 0),
+    )
+
+
+class RotationNative(ResourceNative):
+    """Native DirectDraw fixture with the same controlled calls as the target."""
+    def __init__(self, library):
+        super().__init__(library)
+        self.lib.dxball_render_rotated_sprite.argtypes = [C.c_uint32, C.c_uint32, C.c_int32, C.c_int32]
+        self.lib.dxball_render_rotated_sprite.restype = None
+        self.lib.dxball_draw_rotated_sprite.argtypes = [C.c_int32, C.c_uint32, C.c_uint32, C.c_int32]
+        self.lib.dxball_draw_rotated_sprite.restype = None
+        self.lib.dxball_rotated_sprite_offset.argtypes = [C.c_int32, C.c_int32]
+        self.lib.dxball_rotated_sprite_offset.restype = C.c_int32
+        self.active_binding = C.c_size_t.in_dll(self.lib, 'dxball_active_surface')
+
+    def reset(self):
+        super().reset()
+        self.lock_scripts = {'active': [], 'source': []}
+        self.after_desc, self.after_lock, self.after_unlock = {}, {}, {}
+        self.guard_surface(self.active)
+
+    def guard_surface(self, surface):
+        model = self.surfaces[surface]
+        model.update(width=32, height=24, pitch=35)
+        storage = (C.c_ubyte * (35 * 24 + 64))(*([0xA5] * (35 * 24 + 64)))
+        model['guarded_storage'] = storage
+        model['pixels'] = (C.c_ubyte * (35 * 24)).from_buffer(storage, 32)
+
+    def _desc(self, surface, pointer):
+        desc = C.cast(pointer, C.POINTER(Desc)).contents
+        assert (desc.size, desc.flags) == (108, 14)
+        identity = self._identity(surface)
+        self.events.append(('desc', identity, 108, 14))
+        self._fill_desc(surface, pointer)
+        callback = self.after_desc.get(identity)
+        if callback:
+            callback(self)
+        return 0
+
+    def _lock(self, surface, rect, pointer, flags, event):
+        assert not rect and flags == 0 and not event
+        identity = self._identity(surface)
+        script = self.lock_scripts[identity]
+        result = script.pop(0) if script else 0
+        self.events.append(('lock', identity, result))
+        if result == 0:
+            self._fill_desc(surface, pointer)
+        callback = self.after_lock.get(identity)
+        if callback:
+            callback(self)
+        return result
+
+    def _unlock(self, surface, pointer):
+        assert not pointer
+        identity = self._identity(surface)
+        self.events.append(('unlock', identity))
+        callback = self.after_unlock.get(identity)
+        if callback:
+            callback(self)
+        return 0

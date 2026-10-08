@@ -11,7 +11,7 @@ import struct
 import sys
 
 from resources_oracle import BANKS, SPRITE_BANK
-from rotation_oracle import RotationTarget, fixtures, source_pixels
+from rotation_oracle import RotationTarget, fixtures, source_pixels, width_offset_fixtures, callback_fixtures
 from target_oracle import ACTIVE_SURFACE
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,7 +25,7 @@ def sha256(path):
 
 
 def probe_width_offset(target, cosine_table):
-    """Check the instruction-derived candidate; backing divisor still needs REA."""
+    """Check the instruction-derived candidate; backing divisor is independently confirmed through REA."""
     cosine = struct.unpack('<361i', cosine_table)
     divisor = Fraction.from_float(1.3)
 
@@ -33,12 +33,7 @@ def probe_width_offset(target, cosine_table):
         index = 360 - ((-angle) % 360) if angle < 0 else angle % 360
         return abs(int(Fraction(width * cosine[index], 1024) / divisor))
 
-    cases = [(0, 1, width, angle)
-             for width in (-127, -13, -1, 0, 1, 2, 3, 7, 13, 26, 31, 64, 127, 640)
-             for angle in (-720, -405, -360, -135, -90, -45, -1, 0, 1, 45, 90, 135, 359, 360)]
-    cases += [(0, 1, 13, angle) for angle in range(-720, 721, 15)]
-    cases += [(bank, slot, 26, angle) for bank in range(3) for slot in (1, 127, 254)
-              for angle in (-405, -45, 0, 135)]
+    cases = width_offset_fixtures()
     results = []
     for bank, slot, width, angle in cases:
         target.reset()
@@ -95,13 +90,7 @@ def probe_callback_changes(target, destinations):
         return records, alternate
 
     rows = []
-    for name, sampled_source, drawn_destination, unlocked_destination, unlocked_source in (
-        ('destination changes after descriptor', 0, 'replacement-active', 'replacement-active', 0),
-        ('bank changes after destination descriptor', 1, 'active', 'active', 1),
-        ('bank changes between source descriptor and lock', 2, 'active', 'active', 2),
-        ('bank changes during destination unlock', 0, 'active', 'active', 2),
-        ('destination changes again during source lock', 0, 'replacement-active', 'active', 0),
-    ):
+    for name, sampled_source, drawn_destination, unlocked_destination, unlocked_source in callback_fixtures():
         records, alternate = setup(target)
         control_records, control_alternate = setup(control)
         source_before = {bank: target.read(target.surfaces[target.read_u32(record)]['pixels'],

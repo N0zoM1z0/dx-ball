@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -42,6 +43,30 @@ def plan():
         keeper = closed_records.setdefault(key, path)
         if path != keeper and not os.path.samefile(path, keeper):
             actions.append(('hardlink', path, keeper, key[1]))
+    # SHA-sealed checkpoint copies are immutable, like closed REA records.
+    # Validate every declared file before sharing identical archived bytes.
+    # Current build products and unsealed experiment directories stay separate.
+    sealed_paths = set()
+    for seal in sorted((ROOT / '.analysis/checkpoints').rglob('sha256.json')):
+        if not regular(seal):
+            continue
+        declared = json.loads(seal.read_text())
+        if not isinstance(declared, dict) or not all(
+                isinstance(value, str) and re.fullmatch('[0-9a-f]{64}', value)
+                for value in declared.values()):
+            continue
+        for name, hashed in sorted(declared.items()):
+            path = seal.parent / name
+            path.resolve().relative_to(seal.parent.resolve())
+            if not regular(path) or path.resolve() != path or digest(path) != hashed:
+                raise RuntimeError('Sealed checkpoint input changed: ' + str(path))
+            if path in sealed_paths:
+                continue
+            sealed_paths.add(path)
+            key = (path.stat().st_size, hashed)
+            keeper = closed_records.setdefault(key, path)
+            if path != keeper and not os.path.samefile(path, keeper):
+                actions.append(('hardlink', path, keeper, hashed))
     # Root aliases are mutable: never hardlink them to an immutable archive.
     for path in sorted((ROOT / '.analysis/rea').glob('[0-9][0-9]-*.json')):
         if not regular(path):

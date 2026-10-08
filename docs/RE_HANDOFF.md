@@ -1,5 +1,37 @@
 # Current handoff
 
+The rotation batch is accepted: three shared C entries, 1,024 new direct
+cases, and the full 40-byte wrapper exact. Current scope is **217 maintained /
+96,897 direct cases / 36 exact units / 3,518 bytes**; unknown origins are 305,
+with six identified runtime entries. Saved REA renderer/offset/wrapper dossiers
+and constant bytes supply the instruction contracts; no new Ghidra import was
+needed. See [rotation evidence](ROTATION_INVESTIGATION.md).
+
+All eighteen prior owner scripts complete against the new native library. The
+final nineteen-script batch binds 77 frozen inputs; its completed rotation
+report is reused only after complete input/library verification. Native and
+actual generated VC4 bodies pass the same full vectors, including seven API
+mutation scenarios and 151 complete guarded buffers. Those compiler cases are
+additional evidence, counted once. Cold replay passes all 36 configured units;
+existing resource source/header and relocation maps remain unchanged. The
+combined-module emission diagnostic and operator-stopped first replay are
+retained separately. Offset extent reconciliation and active gameplay use remain
+open; no renderer/offset exactness is claimed.
+
+VC4 and MinGW builds, inspectors, ABI, embedded resources, shared storage,
+startup/shutdown and ball/paddle/pause/editor controls pass. A fresh bounded
+original-board/native campaign episode is currently running; its result is not
+yet accepted. Earlier terminal/game-over/round/focus observations below remain
+historical evidence with their own product identities.
+
+SHA-sealed checkpoint sharing recovers about 6.70 MiB in 1,227 operations. All
+2,283 declared archived file paths retain their hashes. Cleanup keeps current
+products and unsealed experiments separate; use `scripts/clean-local.py` after
+archiving this batch's fresh products/reports. Current analysis is about 341 MiB
+and build about 27 MiB before final retention/cleanup.
+
+The entries below preserve the preceding checkpoints and their original scope.
+
 The original-only full control is now sealed as interrupted. REA reports
 `timeout` / signal 9, without a final diagnostic summary. Slots 0..36 were
 initialized; the last saved observation is still `running`, index 36, six

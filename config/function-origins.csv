@@ -28,8 +28,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00402560,authored,intro,maintain,high,ev_1b08c598ad977d80959318e20842816faa305f5345f823cf80b5cba35d227c00
 0x004025A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00402610,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004026A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00402CD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004026A0,authored,rotation,reconstruct,high,ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26
+0x00402CD0,authored,rotation,reconstruct,high,ev_274065db33e0f5af45f91e84ec3c68bf86d6b31f20e54434e568a1cca50290f5
 0x00402DE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00402EA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00402FB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -63,7 +63,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004040B0,authored,resources,reconstruct,high,resource-owner-producers-consumers
 0x00404180,authored,resources,reconstruct,high,resource-owner-producers-consumers
 0x004041F0,authored,resources,reconstruct,high,resource-owner-producers-consumers
-0x00404280,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00404280,authored,rotation,reconstruct,high,ev_dde2cbb37732ea0f72b15ecd2949441abe7c8b5a5a28b2762bdf8dd403d7ebe6
 0x004042B0,authored,resources,reconstruct,high,resource-owner-producers-consumers
 0x00404610,authored,resources,reconstruct,high,resource-owner-producers-consumers
 0x00404BE0,authored,resources,reconstruct,high,resource-owner-producers-consumers

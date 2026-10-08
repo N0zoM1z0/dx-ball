@@ -126,3 +126,7 @@ reviewed DIR32 relocation is applied: 787 bytes, zero differences. Extents agree
 with the function ledger and terminate at actual epilogues; alignment gaps are
 excluded. Eight larger functions currently have semantic evidence only. Their
 different object lengths are not masked or reported as exact.
+
+The related software renderer, offset helper and wrapper now live in the
+[rotation owner](ROTATION_INVESTIGATION.md), with 1,024 separately counted direct
+cases and an exact 40-byte wrapper. The resource translation unit is unchanged.

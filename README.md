@@ -16,8 +16,8 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **214 maintained functions**, **95,873 target differential cases**, and
-> **35 byte-exact functions totaling 3,478 bytes**. Windows builds now also produce
+> entity owners: **217 maintained functions**, **96,897 target differential cases**, and
+> **36 byte-exact functions totaling 3,518 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown; complete gameplay and
@@ -25,10 +25,13 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
 and state, recover maintainable source, then replay independent oracles.
-For example, REA's instruction view recovered a missing sound-pan argument
-from incomplete pseudocode; the resulting C passes 3,205 original-x86 cases
-and reproduces all 63 compiled bytes. See the
-[gameplay investigation](docs/GAMEPLAY_OWNER.md) for Evidence IDs and limits.
+For example, the [software rotation investigation](docs/ROTATION_INVESTIGATION.md)
+uses saved REA instructions to recover an omitted angle argument, an asymmetric
+pixel write and precise floating-point stores. The shared C passes 1,024
+original-x86 cases; executing its actual VC4 output verifies the same complete
+buffers and calls, and the 40-byte wrapper matches exactly. These results cover
+controlled surfaces; direct gameplay use remains unestablished. See the
+[gameplay investigation](docs/GAMEPLAY_OWNER.md) for the connected sound-pan example.
 The [power-up investigation](docs/POWERUPS_OWNER.md) follows the bonus updater
 through board effects and paddle rebounds, recovering the game's computed
 trigonometry tables and checking its rounding against original execution.
@@ -193,6 +196,8 @@ scripts/repo-python scripts/replay-exact-units.py
 scripts/repo-python tests/test_exact_oracle.py
 scripts/repo-python tests/test_boards_differential.py
 scripts/repo-python tests/test_resources_differential.py
+scripts/repo-python tests/test_rotation_differential.py
+scripts/repo-python tests/test_rotation_coff.py
 scripts/repo-python tests/test_gameplay_differential.py
 scripts/repo-python tests/test_effects_differential.py
 scripts/repo-python tests/test_entities_differential.py
@@ -291,6 +296,7 @@ source, original behavior and acceptance limits.
 - [Exact compiler evidence](docs/BUILD_MATCHING.md),
   [oracle matrix and limits](docs/ORACLES.md), and [progress](docs/PROGRESS.md).
 - [Resource ownership and file formats](docs/RESOURCE_OWNER.md).
+- [Software sprite rotation and compiled floating-point behavior](docs/ROTATION_INVESTIGATION.md).
 - [Brick-hit gameplay, explosions and sound pan](docs/GAMEPLAY_OWNER.md).
 - [Explosion queues and brick animations](docs/EFFECTS_OWNER.md).
 - [Particle updates, pixel writes and bonus production](docs/ENTITIES_OWNER.md).
