@@ -1,7 +1,13 @@
 # Compiler evidence and exact units
 
-The current shared-storage checkpoint has **35 exact functions / 3,478 bytes**.
-Cold replay of all forty previously accepted units found five changed emissions:
+The current rotation checkpoint has **36 exact functions / 3,518 bytes**.
+The complete 40-byte wrapper at `0x00404280` matches with one explicit REL32
+renderer binding; all 35 prior units pass the same cold replay. Renderer and
+offset bodies retain scoped behavior acceptance without exact claims. See
+[rotation compiler evidence](ROTATION_INVESTIGATION.md#maintained-and-compiled-behavior).
+
+The preceding shared-storage replay of all forty previously accepted units
+found five changed emissions:
 
 | Retained candidate | Current / target bytes | Differing bytes |
 | --- | ---: | ---: |
@@ -15,7 +21,7 @@ These functions retain their scoped semantic validation. Their exact claims
 are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
-nonzero exit status. The normal replay selects the 35 accepted units.
+nonzero exit status. The normal replay selects the 36 currently accepted units.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

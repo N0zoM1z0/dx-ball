@@ -19,10 +19,17 @@ retained separately. Offset extent reconciliation and active gameplay use remain
 open; no renderer/offset exactness is claimed.
 
 VC4 and MinGW builds, inspectors, ABI, embedded resources, shared storage,
-startup/shutdown and ball/paddle/pause/editor controls pass. A fresh bounded
-original-board/native campaign episode is currently running; its result is not
-yet accepted. Earlier terminal/game-over/round/focus observations below remain
-historical evidence with their own product identities.
+startup/shutdown and ball/paddle/pause/editor controls pass. The fresh bounded
+original-board/native episode passes 20,654 compared frames and five advances
+with three lives. Its 99 complete input identities and current library verify.
+These frames are separate from direct owner cases; full original-campaign
+acceptance remains open. The updated original-only rotation probe also passes
+344 fixtures, five callbacks and 329 offset references. Public CI passes
+`9c4f49e` (run 37724381450). The private archive for this accepted family is
+`.analysis/checkpoints/rotation-217-36/`; it retains the actual products, fresh
+reports, frozen batch, negative combined context and external REA references.
+Earlier terminal/game-over/round/focus observations below remain historical
+evidence with their own product identities.
 
 SHA-sealed checkpoint sharing recovers about 6.70 MiB in 1,227 operations. All
 2,283 declared archived file paths retain their hashes. Cleanup keeps current

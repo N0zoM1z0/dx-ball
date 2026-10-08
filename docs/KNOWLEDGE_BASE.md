@@ -132,3 +132,15 @@ File/parse/create/lock failures preserve observed dangling-record and leak
 quirks within a bounded observation domain. All 26 supplied WAVs have their
 own sample rate. Controllers are maintained; real Windows sound/driver output
 and whole-game linking are still unresolved.
+
+## Software sprite rotation
+
+The [rotation owner](ROTATION_INVESTIGATION.md) restores the renderer at
+`0x004026A0`, width-only offset at `0x00402CD0` and four-argument wrapper at
+`0x00404280`. REA instructions establish the asymmetric Y divisor, separate
+double stores, +270 row direction, advance-before-write order and biased-X
+second write. Dimensions are captured before callbacks; descriptor, retry and
+unlock edges reload surface/bank globals. Original/native and actual VC4 bodies
+agree on 1,024 full cases, including seven mutation scenarios and extended
+13/1.3 truncation. Only the complete 40-byte wrapper is exact; the offset's
+five-byte ownership gap and active gameplay use remain unresolved.

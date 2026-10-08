@@ -6,6 +6,8 @@
 | Original x86 vs compiled native C | State and ordered dependency effects for tested domains | Original code emission, Windows/pixel equivalence |
 | Pinned VC4.0 COFF replay | Complete function bytes after every explicitly reviewed relocation | Whole-EXE layout, untested function behavior |
 | Shared-storage x86 DLL vs original x86 | All 20,432 storage bytes, auxiliary grid and index after load/store/initialize; 459 cases including overlap at index50 and nonzero unknown bytes | Original source type, native-64 byte layout, arbitrary indices or whole-game fidelity |
+| Rotation x86 vs compiled native C | Three entries / 1,024 cases; complete guarded pixels, ordered locks/unlocks, immutable banks/tables and callback reloads | Unbounded/invalid backing, physical driver, alternative division branch or active gameplay use |
+| Generated VC4 rotation bodies vs original/native vectors | All COFF relocations and explicit dependency bindings; same complete 1,024 fixtures in separate executable memory | Renderer/offset byte exactness, whole linked CRT or an additional direct-case count |
 | Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
 | Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
@@ -40,7 +42,7 @@ the original copy and initializer instructions. Three deterministic complete
 storage patterns (zero, ramp and random) cover every index0..50 and both copy
 directions. All twelve unclassified bytes can be nonzero. Temporary binary
 fixtures are hashed and removed after success. These 459 integration cases
-remain separate from the 95,873 accepted owner cases. The terminal game control
+remain separate from the 96,897 accepted owner cases. The terminal game control
 uses real input and read-only SDK observations; see [its scope](TERMINAL_RUNTIME.md).
 
 The target's unsupported sprite-helper inputs read an uninitialized local; the
@@ -84,7 +86,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 95,873 direct-case total. This
+request state. Integration cases are excluded from the 96,897 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -242,3 +244,14 @@ are controlled, with freed blocks retained as observation-only tombstones.
 Native terminal cases use actual forked processes and compare exit status and
 pre-exit effects with the original nonreturning boundary. See
 [SOUND_OWNER.md](SOUND_OWNER.md) for the documented safe caller domains.
+
+The rotation checkpoint adds three maintained entries and 1,024 direct cases,
+bringing current acceptance to 217 functions / 96,897 direct cases. It executes
+the original renderer, wrapper and offset with original trig initialization,
+x87 lookup/division/conversion and controlled DirectDraw storage. All eighteen
+older owner scripts pass against the changed linked source set. The primary
+rotation report is reused only after complete input/library verification.
+Executing the actual cold-built VC4 bodies supplies additional compiler behavior
+evidence for the same vectors; these cases are counted once. See
+[rotation scope](ROTATION_INVESTIGATION.md) for floating-point stores, callback
+reloads, complete buffers, the exact wrapper and remaining extent/use questions.
