@@ -1,5 +1,21 @@
 # Current handoff
 
+The original rotation probe now executes all 344 shared fixtures, including
+the original trig initializer and actual lookup/x87/conversion helpers. Full
+guarded destination buffers, immutable source/record/banks/tables, padding,
+finite per-surface lock scripts and ordered calls are checked. Identical output
+buffers are retained once after full-byte comparison: 146 baseline buffers and
+five further callback buffers. Five API-boundary mutation scenarios confirm
+captured dimensions and later surface/bank reloads, including final unlocks.
+The guarded private C draft is corrected accordingly but remains uncompiled.
+These scenarios still need maintained-C comparison before promotion. The
+same report retains 329 original comparisons for the related width-only offset
+candidate at `0x402CD0`, including the extended 13/1.3 truncation boundary. Total
+report size is about 626 KiB. See [rotation reference data](ROTATION_INVESTIGATION.md#original-machine-reference-data).
+These are original-only references, not maintained-C acceptance; source/owner/
+exact counts remain 214 / 95,873 / 35. Constants/wrapper queries still await the
+live campaign's shared session. The bitmap batch's public CI passed `c33f343`.
+
 The saved 976-byte bitmap-loader REA dossier now has a reproducible original-x86
 investigation probe with 23 passing fixtures. It confirms clamped source-row
 steps, failure cleanup and caller-stack-dependent palette flags. No maintained
@@ -20,7 +36,7 @@ sealer explicitly distinguishes its complete private report hash from REA's
 filesystem digest. See [campaign retention](ORIGINAL_CAMPAIGN.md#storage-and-evidence).
 Use it after the current attempt ends, then run journaled cleanup.
 
-The four missing rotation constant/wrapper/reference requests are prepared in
+The five missing rotation constant/wrapper/reference requests are prepared in
 `config/rea-rotation.json` and validated against the retained tool catalog; they
 remain unexecuted. Saved instructions establish two intermediate double stores
 per coordinate and width in both X terms. The private 344-fixture rotation
