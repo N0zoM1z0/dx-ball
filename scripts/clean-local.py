@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from legacy_toolchain import ROOT, session_lock
+from resource_limits import limit_cpu
 
 
 def digest(path):
@@ -21,7 +22,7 @@ def regular(path):
 
 def plan():
     runs = ROOT / '.analysis/rea/runs'
-    actions, catalogs = [], {}
+    actions, closed_records = [], {}
     # The download is a cache, not an installed REA/Ghidra input. Require both
     # its original archive identity and a fully attested installation first.
     lock = json.loads((ROOT / 'config/rea.lock.json').read_text())
@@ -31,11 +32,14 @@ def plan():
         environment()
         actions.append(('remove_download_cache', archive, None,
                         lock['ghidra']['archive_sha256']))
-    for path in sorted(runs.glob('*/catalog.json')):
+    # Closed runs retain immutable records. Share complete byte-identical JSON
+    # without removing a path, Evidence ID, or unique observation. Mutable root
+    # aliases and snapshots are deliberately outside this loop.
+    for path in sorted(runs.glob('*/*.json')):
         if not regular(path) or not regular(path.parent / 'close.json'):
             continue
         key = (path.stat().st_size, digest(path))
-        keeper = catalogs.setdefault(key, path)
+        keeper = closed_records.setdefault(key, path)
         if path != keeper and not os.path.samefile(path, keeper):
             actions.append(('hardlink', path, keeper, key[1]))
     # Root aliases are mutable: never hardlink them to an immutable archive.
@@ -66,6 +70,7 @@ def plan():
 
 
 def main():
+    limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='apply the reviewed cleanup')
     args = parser.parse_args()

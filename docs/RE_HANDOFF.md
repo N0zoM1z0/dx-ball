@@ -21,6 +21,19 @@ owner/exact/ledger input and current native/exact products before reuse.
 Full original-campaign acceptance is still open; the default campaign command
 requires all original slots and the terminal menu transition.
 
+The private archive `original-campaign-214-35` seals 139 files and 114 external
+evidence references, including the final SDK product; earlier attempts retain
+their own source versions and explicit limits. Public CI passed commits
+`300a885` and `ac1e33c`, including the new standalone strict-C90 SDK compilation.
+REA target/snapshot/close verification, the eight exact rejection checks and
+public single-job builds pass. Journaled cleanup recovered 17.70 MiB across
+154 operations, then 43.53 MiB through 80 hardlinks of complete identical JSON
+in closed REA runs. All 451 closed JSON records and 114 checkpoint references
+remain byte-identical; the follow-up preview is empty. Total recovery is
+61.23 MiB. `build` is about 20 MiB and `.analysis` about 343 MiB, including new
+unique positive/negative Evidence.
+Raw campaign sample streams are not written to disk.
+
 The embedded-resource checkpoint links the two REA-reviewed original leaves
 into private VC4/MinGW game EXEs. The public manifest contains hashes and
 identifiers; no original payload is published. The independent SDK data-file

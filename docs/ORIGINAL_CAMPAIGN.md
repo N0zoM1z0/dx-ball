@@ -127,3 +127,17 @@ scripts/repo-python scripts/clean-local.py --apply
 Keep unique Evidence, originals, pinned tools and manual saves. Unchanged
 owner/exact evidence is reused only after a complete input and product audit;
 this integration work adds no function or exact promotion.
+
+The first archive seals 133 files and 114 external evidence references. After
+archiving, cleanup recovers 17.70 MiB across 154 operations, including redundant
+REA aliases/catalog storage and resettable runtime copies. The final preview
+has no pending operations and `build` is about 20 MiB. Public CI passes the
+native integration helper and the persistent observer commits, including its
+strict standalone SDK compilation without original assets.
+
+The cleanup tool subsequently extends identical-record sharing to all complete
+JSON in closed REA runs. Another 80 hardlinks recover 43.53 MiB while retaining
+every path and Evidence ID. All 451 closed JSON identities and 114 checkpoint
+references remain unchanged. Total recovery is 61.23 MiB and `.analysis` is
+about 343 MiB. Mutable root aliases/snapshots, unique observations, originals,
+installed tools and manual saves are excluded from this sharing rule.
