@@ -45,7 +45,7 @@ next preview is empty. Analysis is about 388 MiB and build 33 MiB; installed
 pinned tools remain intact at about 1.9 GiB. Originals, unique REA records,
 manual saves and the mutable provider snapshot are preserved.
 
-The revised campaign controller now varies six contact offsets. Its216 bounded
+The revised campaign controller now varies six contact offsets. Its 216 bounded
 original rebound fixtures and fresh 17,688-frame/five-advance original/native
 episode pass. REA process Evidence
 `ev_a6bd19829343823e686056aebc4ddb1d94a99b43f2ad71518fa4b0c6b74ddc84`
@@ -62,6 +62,22 @@ both MinGW compiler variants; the portable/retention gates passed, and Windows
 compilation was not reached. Source CI 37738119917 remains successful. The CI
 package selection now installs only the POSIX variant used by local Windows
 probes, avoiding the unused win32 variant and its runtime download.
+
+Controller source commit `ae18312` passes public CI **37742583270**, including
+the strict Windows compilation with the POSIX-only package selection. The new
+`.analysis/checkpoints/campaign-diversity-222-36/` seals 112 files, retaining the
+216-case integration report and the 17,688-frame comparison with their input
+closures; unchanged accepted products remain referenced by sealed hashes.
+The original-only pilot has its separate 98-file sealed attempt.
+
+Cleanup journal `20261008T071934674537Z` performs 139 operations, processing
+**2.06 MiB of logical duplicate/probe bytes**. All **4,297 immutable paths /
+73 external references / 11 expanded gzip artifacts** verify afterward,
+together with the unchanged accepted products and inputs; the next cleanup
+preview is empty. Analysis is about 390 MiB, build 31 MiB, and pinned tools
+1.9 GiB. These sizes include the newly preserved campaign evidence; logical
+cleanup bytes do not measure filesystem block savings. Full-campaign runtime
+outputs will be retained and reviewed separately before another cleanup.
 
 The preceding checkpoints below retain their historical totals and boundaries.
 
