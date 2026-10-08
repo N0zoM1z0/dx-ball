@@ -1,5 +1,21 @@
 # Current handoff
 
+The original-only campaign sealer now validates frozen inputs/SDK product,
+kernel process identity, REA scenario/child result and complete terminal report
+before retaining the attempt. Twenty-four synthetic/Linux retention checks
+pass; the actual live attempt is correctly refused without mutation. REA 4.1.0
+omits whole-file digests above its configured file_bytes hash budget, so the
+sealer explicitly distinguishes its complete private report hash from REA's
+filesystem digest. See [campaign retention](ORIGINAL_CAMPAIGN.md#storage-and-evidence).
+Use it after the current attempt ends, then run journaled cleanup.
+
+The four missing rotation constant/wrapper/reference requests are prepared in
+`config/rea-rotation.json` and validated against the retained tool catalog; they
+remain unexecuted. Saved instructions establish two intermediate double stores
+per coordinate and width in both X terms. The private 344-fixture rotation
+draft remains unaccepted. No shared reconstruction or existing runtime input
+changes in this tooling/documentation batch.
+
 Six retained REA dossiers and the pinned VC4 CRT source structures now identify
 heap allocation/free, overlapping memory copy and locale case helpers as
 runtime dependencies. Unknown origins are 308; authored, source, semantic and

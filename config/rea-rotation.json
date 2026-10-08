@@ -1,0 +1,6 @@
+[
+  {"name": "read_bytes", "arguments": {"address": "0x00420038", "length": 32}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00404280"}},
+  {"name": "xrefs", "arguments": {"address": "0x00404280"}},
+  {"name": "xrefs", "arguments": {"address": "0x004026A0"}}
+]

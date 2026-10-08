@@ -118,11 +118,48 @@ unbounded frame stream. A stream hash is an identity of consumed bytes; it
 cannot reconstruct discarded samples. Reports bind the reader, SDK/compiler,
 input libraries, original files, source inputs and actual game products.
 
-Archive the current attempt and its REA record before journaled cleanup:
+For an original-only attempt with frozen inputs and a retained SDK product,
+`scripts/seal-original-campaign.py` validates the finished report against that
+snapshot and the REA scenario/child result, then retains complete reports and
+small stderr logs under the attempt directory. It checks actual Linux process
+identities (PID, kernel start ticks and boot ID), so a still-live game/reader
+blocks sealing. An active writer lock also causes an immediate refusal. An
+existing sealed archive is preserved.
+
+The input snapshot consists of `attempt.json`, repository-relative input
+copies and `campaign-reader.exe`. The manifest binds input SHA-256 values,
+the retained reader hash, profiles, board/time scope and the two observed
+kernel process identities. Keep this snapshot while the actual processes are
+live; later validation requires the report's complete input set to agree.
+Sealing retains failures as failures and excludes stale directories for other
+products. It does not promote owner functions or exact units.
+
+REA 4.1.0's `file_bytes` budget bounds whole-file SHA-256 work. A larger file
+is recorded with size and a null digest, and the filesystem snapshot is marked
+truncated. The existing campaign scenario uses 128,000 bytes, so a long run's
+complete report can exceed that budget. The sealer independently hashes and
+retains the complete report and records `rea_binds_full_report_digest: false`
+when REA supplied no matching digest. That distinction remains explicit in the
+archive; a local hash does not retroactively become a REA observation. Future
+long captures need a larger configured hash budget. This requires no original
+game or provider patch.
+
+After the attempt terminates, seal it before journaled cleanup. Supply its
+existing snapshot and corresponding timestamped capture directory:
 
 ```bash
+scripts/repo-python scripts/seal-original-campaign.py \
+  --attempt .analysis/checkpoints/ATTEMPT \
+  --capture build/reports/rea-process/CAPTURE
 scripts/repo-python scripts/clean-local.py --apply
 ```
+
+`tests/test_campaign_retention.py` checks these identity and rejection gates
+using synthetic files and actual Linux process identity. Its 24 checks include
+changed products/input sets, incomplete terminal predicates, contradictory
+child results, oversized reports, live/competing sessions, changes during
+archiving and archive overwrite.
+Public CI runs it without private game assets, Wine or a compiler session.
 
 Keep unique Evidence, originals, pinned tools and manual saves. Unchanged
 owner/exact evidence is reused only after a complete input and product audit;

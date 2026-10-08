@@ -23,6 +23,8 @@ jobs:
         run: scripts/bootstrap-python.sh
       - name: Build portable source and validate recorded evidence
         run: scripts/repo-python scripts/ci.py --public
+      - name: Check campaign archival identities without private assets
+        run: scripts/repo-python tests/test_campaign_retention.py
       - name: Install i686 Windows compiler
         run: |
           sudo apt-get update
