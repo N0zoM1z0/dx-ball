@@ -10,6 +10,8 @@
 | Generated VC4 rotation bodies vs original/native vectors | All COFF relocations and explicit dependency bindings; same complete 1,024 fixtures in separate executable memory | Renderer/offset byte exactness, whole linked CRT or an additional direct-case count |
 | Raster x86 vs compiled native C | Four entries / 7,164 cases; complete guarded pixels, scalar scratch bytes, normalized pointer arrays, ordered allocation/free/math and failure masks | Invalid/zero-edge polygons, unrepresentable arithmetic, physical display or active gameplay use |
 | Generated VC4 raster bodies vs original/native vectors | Four public and four static complete COMDATs; explicit relocations and dependencies, same 7,164 complete vectors | Raster byte exactness, whole linked CRT or an additional direct-case count |
+| Bitmap x86 vs compiled native C | One entry / 975 cases; complete destinations, palette flags, short-read buffers, ordered API effects and four pre-entry stack seeds | Arbitrary unwritten storage/layout, negative or unbacked traversal, overflowing paths, physical API or active gameplay use |
+| Generated VC4 bitmap bodies vs original/native vectors | Complete 949-byte public and 64-byte static COMDATs; explicit relocations and original CRT dependencies; same full 975 fixtures | Bitmap exactness, whole linked CRT or additional direct-case count |
 | Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
 | Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
@@ -259,10 +261,21 @@ evidence for the same vectors; these cases are counted once. See
 reloads, complete buffers, the exact wrapper and remaining extent/use questions.
 
 The raster checkpoint adds four maintained entries and 7,164 direct cases,
-bringing current acceptance to 221 functions / 104,061 direct cases. The same
+bringing that checkpoint to 221 functions / 104,061 direct cases. The same
 shared C passes native and actual VC4 tests; compiler fixtures count once.
 All 20 owner scripts pass at the shared-source checkpoint, and the 36-unit
 cold replay retains 3,518 exact bytes. The MinGW-only static-runtime link fix
 leaves the native binary unchanged; unaffected execution reports are reused
 with their frozen source/driver/product identities, while the CMake-bound
 raster and rotation reports are replayed. See [raster scope](RASTER_INVESTIGATION.md).
+
+The bitmap checkpoint adds one maintained entry and 975 direct cases, bringing
+current acceptance to **222 functions / 105,036 direct cases**. The full
+21-owner batch passes against the new native library; the completed bitmap
+report is reused after complete input/product checks. Actual bitmap, raster
+and rotation VC4 comparisons pass, and cold replay retains **36 exact units /
+3,518 bytes**. Four uniform pre-entry seeds compare actual unwritten flags and
+short-read suffixes in the frozen build, rather than masking them. The native
+stack driver is a test-only caller, excluded from production. Original code
+and the five bitmap IAT slots remain unchanged. See
+[bitmap acceptance and limits](BITMAP_INVESTIGATION.md).

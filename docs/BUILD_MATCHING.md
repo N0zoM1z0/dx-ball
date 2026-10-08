@@ -1,6 +1,6 @@
 # Compiler evidence and exact units
 
-The current raster checkpoint retains **36 exact functions / 3,518 bytes**.
+The current bitmap checkpoint retains **36 exact functions / 3,518 bytes**.
 The complete 40-byte wrapper at `0x00404280` matches with one explicit REL32
 renderer binding; all 35 prior units pass the same cold replay. Renderer and
 offset bodies retain scoped behavior acceptance without exact claims. See
@@ -14,6 +14,16 @@ The horizontal span emits 62 bytes versus the original 144, so behavior agreemen
 does not establish an instruction match. Static function COMDATs use the same
 whole-section rules as external functions, including rejection of an additional
 function alias. See [raster compiler evidence](RASTER_INVESTIGATION.md).
+
+The bitmap owner also has a configured semantic compiler product:
+`compile-semantic-build.py --build bitmap` builds the same C source, and
+`test_bitmap_coff.py` executes its complete public/static COMDATs with every
+relocation explicitly bound. The 949-byte public body differs in extent from
+the original 976 bytes; its 64-byte static reader is a compiler product, not a
+new original function. The same 975 full native/original vectors pass, counted
+once. The native stack-seeding assembly belongs only to the test caller and is
+excluded from production. No bitmap exact unit is configured. See
+[bitmap compiler evidence](BITMAP_INVESTIGATION.md#shared-source-and-compiler-execution).
 
 The preceding shared-storage replay of all forty previously accepted units
 found five changed emissions:

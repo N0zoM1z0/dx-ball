@@ -114,6 +114,7 @@ address,symbol,source,scope,semantic_unit
 0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
 0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
 0x00409F10,dxball_clear_surface,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-clear-surface
+0x00409F70,dxball_load_bitmap,src/bitmap.c,"See docs/BITMAP_INVESTIGATION.md: bounded nonnegative geometry/backing, four pre-entry stack seeds, controlled API effects and fallback paths; physical driver and active gameplay use unproven",bitmap-load
 0x0040A340,dxball_palette_transition,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-palette-transition
 0x0040A880,dxball_rotate_palette_right,src/ui.c,"See docs/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-rotate-palette-right
 0x0040A970,dxball_animate_palette,src/display.c,See docs/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-animate-palette

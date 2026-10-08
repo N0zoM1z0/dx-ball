@@ -132,7 +132,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00409A30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00409BB0,authored,resources,reconstruct,high,resource-owner-producers-consumers
 0x00409F10,authored,device,maintain,high,ev_017375bcddb7d6708aadc8ec0d071b77e9d37c7f877f9da584462f4e561360db
-0x00409F70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00409F70,authored,bitmap,reconstruct,medium,ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad
 0x0040A340,authored,device,maintain,high,ev_eaf357e839ddf4487c962040bded218134cadfcccd5854a83a07cee7f285a71a
 0x0040A880,authored,ui,maintain,high,ev_35f62db7fc86382109be50f01f5d0ead909598ff5cb4328d8d76157b157b21d0
 0x0040A970,authored,display,maintain,high,ev_a5263d59f79fee20c3d1c580888f256c258a6bb80332e83da49071d7e3048e9a

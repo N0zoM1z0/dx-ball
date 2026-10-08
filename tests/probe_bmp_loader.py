@@ -36,9 +36,21 @@ class BitmapProbe(ResourceTarget):
             (self.VTABLE + 25 * 4, self.lock_surface),
             (self.VTABLE + 32 * 4, self.unlock_surface),
         ]
+        self.import_slots = {}
+        import_pages = set()
         for index, (slot, callback) in enumerate(callbacks):
-            address = 0x50C000 + index * 16
-            self.write_u32(slot, address)
+            if index < 5:
+                # An unbound PE import contains its import-name RVA. Supply
+                # that declared API boundary without rewriting original IAT.
+                address = self.read_u32(slot)
+                self.import_slots[slot] = address
+                page = address & ~0xfff
+                if page not in import_pages:
+                    self.uc.mem_map(page, 0x1000)
+                    import_pages.add(page)
+            else:
+                address = 0x50C000 + index * 16
+                self.write_u32(slot, address)  # Synthetic COM fixture vtable.
             self._hooks.append(self.uc.hook_add(UC_HOOK_CODE, callback,
                                                begin=address, end=address))
 
@@ -147,7 +159,7 @@ class BitmapProbe(ResourceTarget):
         self.events.append(('set_palette',))
         self._return(1, pop=8)  # A nonzero HRESULT does not change return 1.
 
-    def invoke(self, stack_seed):
+    def invoke(self, stack_seed, entry=0x409F70):
         self.events = []
         self.write(self.STACK, bytes([stack_seed]) * self.STACK_SIZE)
         sp = self.STACK + self.STACK_SIZE - 0x100
@@ -158,7 +170,7 @@ class BitmapProbe(ResourceTarget):
             self.uc.reg_write(register, value)
         self.uc.reg_write(UC_X86_REG_ESP, sp)
         self.uc.reg_write(UC_X86_REG_EFLAGS, 0x202)
-        self.uc.emu_start(0x409F70, self.RETURN, count=1000000)
+        self.uc.emu_start(entry, self.RETURN, count=1000000)
         assert self.uc.reg_read(UC_X86_REG_EIP) == self.RETURN
         assert self.uc.reg_read(UC_X86_REG_ESP) == sp + 4
         assert all(self.uc.reg_read(r) == v for r, v in saved.items())
@@ -274,6 +286,7 @@ def run():
                         bytes_after=v['after'].hex()) for k, v in target.read_buffers.items()}))
     assert target.read(0x422798, 4) == b'..\\\0'
     assert target.read(0x401000, len(code)) == code
+    assert all(target.read_u32(slot) == value for slot, value in target.import_slots.items())
     buffers = {}
     for row in rows:
         for read in row.get('reads', {}).values():
@@ -295,6 +308,8 @@ def run():
                      'Bounded 3x2 geometry and pitches 2/3/5; partial headers accepted only with sampled fields established'],
         fixtures=rows, complete_read_buffers=buffers,
         immutable_code_sha256=hashlib.sha256(code).hexdigest(), fallback_prefix_hex='2e2e5c00')
+    report['immutable_import_slots'] = {hex(slot): hex(value)
+                                       for slot, value in target.import_slots.items()}
     for name, expected in frozen.items():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
     directory = ROOT / 'build/reports/bmp-investigation'

@@ -7,6 +7,7 @@
 #include "midi.h"
 #include "paddle.h"
 #include "raster.h"
+#include "bitmap.h"
 
 typedef char WindowsAdapterRequiresI686[(sizeof(void *) == 4) ? 1 : -1];
 typedef char WindowsMessageLayout[(sizeof(MSG) == sizeof(DxBallMessage)) ? 1 : -1];
@@ -246,6 +247,9 @@ void dxball_bind_windows(void)
     dxball_clock_ops.time_ms = time_ms; dxball_clock_ops.frequency = clock_frequency;
     dxball_clock_ops.counter = clock_counter; dxball_set_cursor_position = set_cursor_position;
     dxball_raster_ops.muldiv = raster_muldiv;
+    dxball_bitmap_api.create_file = create_file; dxball_bitmap_api.read_file = read_file;
+    dxball_bitmap_api.local_alloc = local_alloc; dxball_bitmap_api.local_free = local_free;
+    dxball_bitmap_api.close_file = close_handle;
     dxball_sound_api.create_device = create_sound; dxball_sound_api.create_file = create_file;
     dxball_sound_api.file_size = file_size; dxball_sound_api.read_file = read_file;
     dxball_sound_api.close_handle = close_handle;

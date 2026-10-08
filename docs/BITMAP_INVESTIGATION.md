@@ -1,12 +1,13 @@
-# Bitmap loader: investigation in progress
+# Bitmap loader and unwritten stack storage
 
 The saved REA function dossier for `0x00409F70` retains a contiguous 976-byte
 body through `0x0040A33F`, under Evidence ID
 `ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad`.
 Its complete private record is in the closed 10-33 interactive run, SHA-256
 `a638c4ad17795b11803e0b0337f1d0221e88c417d8ef662a9190f8ec7da9d803`.
-This investigation reuses that record without another Ghidra import. Origin,
-maintained source, semantic acceptance and exact matching remain open.
+This investigation reuses that record without another Ghidra import. Shared C
+now passes full native and actual VC4 comparisons and is accepted after the
+21-owner batch and 36-unit cold replay. No bitmap exactness is claimed.
 
 ## File and surface boundaries
 
@@ -26,8 +27,7 @@ The information-header bit count must equal eight. The body tests `ReadFile`'s
 Boolean return without checking the transferred count. It does not validate
 the file signature, compression or pixel offset, seek to the declared offset,
 or account for BMP row padding. Successful short reads preserve the untouched stack suffix and advance the
-controlled file cursor by the actual transferred count. Invalid geometry
-still needs domain review before source acceptance.
+controlled file cursor by the actual transferred count. Negative or unbacked geometry remains outside the accepted domain.
 
 Pixels use `LocalAlloc(0x40, width*height)`. A zeroed 108-byte surface descriptor
 has size set to 108, then `Lock(NULL, descriptor, 0, NULL)` executes once. No
@@ -74,7 +74,7 @@ cannot be promoted to a deterministic C constant or silently zeroed. The
 fallback buffer and output palette begin `0x140` (320 decimal) bytes apart;
 the bounded path fixtures stay below that separation.
 
-## Original-machine probe and next steps
+## Original-machine reference probe
 
 ```bash
 scripts/repo-python tests/probe_bmp_loader.py
@@ -107,9 +107,9 @@ retain the caller seed, while unread pixel bytes retain `LocalAlloc` zeroes.
 Successful sampled geometry remains 3-by-2 with bit count eight; sampled
 unsupported bit counts reject before allocation and leave pixels unchanged.
 Arbitrary partial-header geometry and unbounded paths remain outside this
-probe. It is original-only investigation evidence: no maintained C comparison,
-real file/DirectDraw behavior, function-origin promotion or new semantic case
-count is claimed.
+probe. This original-only probe remains reference evidence; it does not separately
+increase semantic counts. The shared-source comparison below supplies the
+accepted cases. Real file/DirectDraw behavior remains unestablished.
 It generates no EXE, compiler object or raw stream archive.
 
 ## Focused prefix and reference review
@@ -138,8 +138,69 @@ The public request set uses REA's documented lowercase addresses:
 scripts/rea session config/rea-bitmap.json
 ```
 
-The prefix and sampled short-read behavior are resolved. Palette fourth-byte
-semantics, arbitrary geometry and the source contract still need explicit
-domain review before maintained source acceptance. Compare natural shared C
-against original execution in a related batch; these 455 original-only cases
-remain reference data rather than semantic promotion.
+## Shared source and compiler execution
+
+The [shared C owner](../src/bitmap.c) and [API declarations](../src/bitmap.h)
+preserve the sequential reads, signed pitch comparison, row retreat by copy
+length, failure leaks, cleanup ordering and ignored HRESULT/close results.
+The 260-byte fallback buffer follows the recovered 65-word storage and its
+string use. Header, information, input-palette suffixes and output flags remain
+unwritten locals; no constant or allocator callback supplies their values.
+The Windows adapter binds the real file, LocalAlloc/LocalFree and COM APIs.
+
+The test-only [AMD64 caller](../tests/seed_stack_x86_64.S) seeds 64 KiB of unused
+stack before entering the actual native C function. This models the original
+machine fixture's pre-entry stack, preserving four distinct seeds through
+untouched storage. It does not replace production code or inject local values
+after entry. SysV register preservation and call alignment belong to this test
+driver; reconstruction source remains C. Native tests require Linux x86-64.
+
+The original probe now supplies its five Win32 API boundaries at the unbound
+PE import-name RVAs, mapped separately. Original IAT values remain unchanged:
+`CreateFileA` `0x41534`, `ReadFile` `0x4159A`, `LocalAlloc` `0x41542`, `LocalFree`
+`0x414F4` and `CloseHandle` `0x414D4`. Synthetic COM tables remain fixture
+storage. Earlier reports that redirected IAT slots remain historical controls.
+The full original code and these import slots verify before/after execution.
+
+**975 original/native cases** include all 455 earlier fixtures plus 520
+geometry/pitch cases: widths `0,1,2,3,4,7,13`, heights `0,1,2,3,5`, zero/narrow/
+equal/wide pitches and four stack seeds. Zero-size allocation success is an
+explicit controlled API result; actual OS zero-size behavior is unverified.
+All destination/guard bytes, every palette byte including flags, successful
+read buffers and their untouched suffixes, allocated pixels and ordered calls
+compare directly. The report interns 376 complete buffers after full equality
+and collision checks. Descriptor pointer growth and its size field follow the
+existing shared DirectDraw declaration on the native host.
+
+The actual VC4 output passes the same complete vectors. Its 949-byte public
+body and 64-byte static little-endian reader occupy full dedicated COMDAT
+sections in separate executable memory. Every relocation has an explicit
+binding; original memcpy/memset/strcpy/strcat bodies execute. The object's
+`$SG412` literal is independently checked against `2e2e5c00`. Generated API
+slots point to the same controlled boundaries without altering original IAT.
+The original body has 976 bytes: these behavior comparisons add no exact unit
+or extra direct-case count.
+
+```bash
+scripts/repo-python tests/test_bitmap_differential.py
+scripts/repo-python scripts/compile-semantic-build.py --build bitmap
+scripts/repo-python tests/test_bitmap_coff.py
+```
+
+The private feasibility source, stack caller, drivers and actual native/VC4
+products are sealed under `bitmap-stack-contract-221-36` before public source
+integration. Arbitrary short-header geometry, negative or unbacked traversal,
+arithmetic limits, overflowing fallback paths, physical DirectDraw behavior and
+active gameplay use remain open. The 455 original-only cases are reference
+data; the completed shared-source batch promotes the 975 direct cases once.
+
+The current checkpoint accepts **222 maintained functions / 105,036 direct
+cases / 36 exact units / 3,518 bytes**. All 21 owners pass against the new native
+library, with the completed bitmap report reused only after its full input
+and product identities verify. Actual bitmap/raster/rotation compiler outputs,
+all ten exact-oracle checks, VC4/MinGW builds, inspectors, ABI, resources,
+storage, runtime and play controls pass. The campaign replay compares 20,654
+frames and five advances separately from direct-case counts. A read-only audit
+finds no concrete ABI, stack-alignment or fixture-lifetime defect. Four uniform
+seeds establish selected storage fixtures for the frozen compiler build; they
+do not establish arbitrary uninitialized storage or every compiler layout.

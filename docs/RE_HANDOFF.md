@@ -1,5 +1,33 @@
 # Current handoff
 
+The bitmap loader at `0x00409F70` is accepted in shared C. Saved REA loader,
+prefix and reference dossiers supply the instruction facts; no new original
+query or duplicate provider import was needed. Current scope is **222 maintained /
+105,036 direct cases / 36 exact units / 3,518 bytes**, with 300 unknown origins
+and six identified runtime entries. Application graphics provenance remains a
+medium-confidence inference; active bitmap gameplay use is unestablished.
+
+The loader preserves sequential reads, short-read suffixes, retreat by copied
+row length, failure leaks and unwritten palette flags. A separately compiled
+test-only AMD64 caller seeds stack storage before actual native C entry. All
+975 complete original/native fixtures pass, including four seeds and bounded
+zero/narrow/wide geometry; 376 full buffers are retained. Actual VC4 output
+passes those same vectors: public 949/static 64 bytes versus original 976, with
+explicit relocations and original CRT helpers. No exact claim or extra case
+count is added. Original code and all five bitmap IAT slots remain unchanged.
+
+All 21 owners pass against the new native library; the completed bitmap report
+is reused only after complete frozen inputs and product checks. Cold replay
+passes 36 units/3,518 bytes, and actual bitmap/raster/rotation compiler comparisons
+and ten oracle rejection checks pass. VC4/MinGW builds, both inspectors, ABI,
+resources, storage, runtime and play controls pass. The campaign comparison
+covers 20,654 frames/five advances separately from direct cases. A read-only
+ABI/stack/lifetime audit finds no concrete defect; physical APIs, arbitrary
+unwritten storage/layouts, invalid backing and overflowing paths remain open.
+See [bitmap investigation](BITMAP_INVESTIGATION.md).
+
+The preceding checkpoints below retain their historical totals and boundaries.
+
 The raster owner is accepted: triangle, polygon, clipped polygon and horizontal
 span share public C with explicit ABI and recovered scratch lifecycle. Saved
 REA controller/helper/import/shared-tail dossiers supply the instruction facts;

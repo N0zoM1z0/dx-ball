@@ -632,3 +632,10 @@ source = "src/raster.c"
 object = "build/exact/raster.obj"
 inputs = ["src/raster.c", "src/raster.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+# Shared bitmap source is executed as generated code; no exact unit is claimed.
+[builds.bitmap]
+source = "src/bitmap.c"
+object = "build/exact/bitmap.obj"
+inputs = ["src/bitmap.c", "src/bitmap.h", "src/resources.h", "src/boards.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]

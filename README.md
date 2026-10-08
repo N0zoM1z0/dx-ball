@@ -16,7 +16,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **221 maintained functions**, **104,061 target differential cases**, and
+> entity owners: **222 maintained functions**, **105,036 target differential cases**, and
 > **36 byte-exact functions totaling 3,518 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
@@ -38,6 +38,11 @@ stdcall signature, and follows fixed-point division into Win32 `MulDiv`.
 The shared triangle, polygon and span owner passes 7,164 original/native cases;
 its actual VC4 output passes the same full pixel and scratch vectors. Compiler
 corroboration is counted once, and raster byte-exactness remains open.
+The [bitmap-loader investigation](docs/BITMAP_INVESTIGATION.md) follows saved
+REA instructions through short reads, row traversal and palette creation. Its
+shared C preserves unwritten palette flags under controlled caller-stack
+fixtures; native and actual VC4 execution agree on 975 complete cases. Real
+DirectDraw delivery and active gameplay use remain open.
 The [power-up investigation](docs/POWERUPS_OWNER.md) follows the bonus updater
 through board effects and paddle rebounds, recovering the game's computed
 trigonometry tables and checking its rounding against original execution.
