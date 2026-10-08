@@ -103,6 +103,11 @@ and REA process Evidence. A later original-only control verifies initial boards 
 input. The revised contact controller is checked against the actual original
 rebound and 17,688 connected original/native frames. These bounded runs remain
 separate from full campaign acceptance.
+
+The [runtime-library investigation](docs/CRT_PROVENANCE.md) pairs REA instruction
+and byte observations with whole pinned CRT objects, identifying eight further
+runtime dependencies. Library provenance stays separate from maintained source
+and exact reconstruction progress.
 We build on the evidence and
 replay discipline of [th095](https://github.com/N0zoM1z0/th095), adapted to
 DX-Ball's DirectX interfaces, C owners, board formats and compiler evidence.

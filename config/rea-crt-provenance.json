@@ -1,0 +1,145 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x0041678C"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00416760"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00416770"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417910"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417DF0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417750"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417770"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417790"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x004177D0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00419EA0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417950"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x0041678C",
+      "length": 39
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00416760",
+      "length": 14
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00416770",
+      "length": 16
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417910",
+      "length": 18
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417DF0",
+      "length": 119
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417750",
+      "length": 24
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417770",
+      "length": 20
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417790",
+      "length": 64
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x004177D0",
+      "length": 21
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00419EA0",
+      "length": 33
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417950",
+      "length": 128
+    }
+  }
+]

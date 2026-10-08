@@ -1,5 +1,11 @@
 # Reviewing runtime origins
 
+The current [whole-object CRT review](CRT_PROVENANCE.md) identifies eight more
+runtime entries: **14 runtime dependencies / 292 unknown origins**. Its eleven
+complete bodies agree with the pinned `libc.lib` after explicit relocations,
+with threaded/debug controls retained. Maintained source and exact acceptance
+remain unchanged. The first review below retains its historical scope and counts.
+
 Origin identification is independent of maintained source, semantic acceptance
 and byte-exact matching. The first reviewed runtime batch identifies six
 entries without changing the 528 provisional extents, 214 maintained functions,

@@ -3,8 +3,8 @@
 The bitmap loader at `0x00409F70` is accepted in shared C. Saved REA loader,
 prefix and reference dossiers supply the instruction facts; no new original
 query or duplicate provider import was needed. Current scope is **222 maintained /
-105,036 direct cases / 36 exact units / 3,518 bytes**, with 300 unknown origins
-and six identified runtime entries. Application graphics provenance remains a
+105,036 direct cases / 36 exact units / 3,518 bytes**, with 292 unknown origins
+and 14 identified runtime entries. Application graphics provenance remains a
 medium-confidence inference; active bitmap gameplay use is unestablished.
 
 The loader preserves sequential reads, short-read suffixes, retreat by copied
@@ -87,6 +87,28 @@ records are outside its boundary. This prioritizes further contract review;
 it does not classify those targets or change source/case/exact acceptance.
 
 The preceding checkpoints below retain their historical totals and boundaries.
+
+The [whole-object CRT review](CRT_PROVENANCE.md) now compares eleven complete
+original bodies / 496 bytes against four pinned library variants, with 44
+function/library comparisons. `libc.lib` agrees on all eleven; `libcmt.lib`
+agrees on eight and both debug variants on two. Three new REA dossiers recover
+HeapAlloc, normalized new-handler results and termination cleanup; matching
+saved dossiers are reused for the other eight entries. Every relocation is
+applied explicitly and ordinary assembly sections remain separate from the
+unchanged exact COMDAT oracle. Eight unknown origins are classified as runtime
+dependencies, leaving 14 identified / 292 unknown; no maintained C or exact
+unit is promoted. The 174-entry static dependency inventory is refreshed to
+31 unknown and ten identified runtime targets among its 41 unmaintained callees.
+
+Public controls cover malformed objects, whole-section tails, wrong/missing
+relocations and evidence replacement; record hashes bind the same parsed bytes.
+A read-only audit finds no byte/extent discrepancy and corroborates all mapped
+operands. Its input-snapshot recommendation is implemented before the final
+comparison. The local archive-inventory high-byte-name failure and CSV field-name
+promotion failure are preserved; the origin table is restored from matching
+HEAD/sealed evidence before a validated atomic update. All 528 rows reconcile.
+Broader runtime behavior and whole-campaign fidelity remain open. Accepted owner
+and exact inputs/products are unchanged and verify before replay reuse.
 
 The diverse-controller original-only full control is now terminated and sealed,
 rather than live. REA Evidence

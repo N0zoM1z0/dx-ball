@@ -1,0 +1,104 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "libraries": [
+    "libc.lib",
+    "libcmt.lib",
+    "libcd.lib",
+    "libcmtd.lib"
+  ],
+  "entries": [
+    {
+      "address": "0x0041678C",
+      "size": 39,
+      "symbol": "__ftol",
+      "family": "crt_numeric"
+    },
+    {
+      "address": "0x00416760",
+      "size": 14,
+      "symbol": "??3@YAXPAX@Z",
+      "family": "crt_cpp"
+    },
+    {
+      "address": "0x00416770",
+      "size": 16,
+      "symbol": "??2@YAPAXI@Z",
+      "family": "crt_cpp"
+    },
+    {
+      "address": "0x00417910",
+      "size": 18,
+      "symbol": "_exit",
+      "family": "crt_termination"
+    },
+    {
+      "address": "0x00417DF0",
+      "size": 119,
+      "symbol": "_strlen",
+      "family": "crt_string"
+    },
+    {
+      "address": "0x00417750",
+      "size": 24,
+      "symbol": "_free",
+      "family": "crt_heap"
+    },
+    {
+      "address": "0x00417770",
+      "size": 20,
+      "symbol": "_malloc",
+      "family": "crt_heap"
+    },
+    {
+      "address": "0x00417790",
+      "size": 64,
+      "symbol": "__nh_malloc",
+      "family": "crt_heap"
+    },
+    {
+      "address": "0x004177D0",
+      "size": 21,
+      "symbol": "__heap_alloc",
+      "family": "crt_heap"
+    },
+    {
+      "address": "0x00419EA0",
+      "size": 33,
+      "symbol": "__callnewh",
+      "family": "crt_heap"
+    },
+    {
+      "address": "0x00417950",
+      "size": 128,
+      "symbol": "_doexit",
+      "family": "crt_termination"
+    }
+  ],
+  "relocations": {
+    "_free": "0x00417750",
+    "__nh_malloc": "0x00417790",
+    "__heap_alloc": "0x004177D0",
+    "__callnewh": "0x00419EA0",
+    "_doexit": "0x00417950",
+    "__crtheap": "0x00440D70",
+    "__newmode": "0x004234D4",
+    "?_pnhHeap@@3P6AHI@ZA": "0x0043FB10",
+    "__imp__HeapFree@12": "0x00441314",
+    "__imp__HeapAlloc@12": "0x00441318",
+    "__C_Termination_Done": "0x004230F0",
+    "__exitflag": "0x004230EC",
+    "___onexitbegin": "0x00440D7C",
+    "___onexitend": "0x00440D78",
+    "___xp_z": "0x00421048",
+    "___xp_a": "0x00421040",
+    "___xt_z": "0x00421050",
+    "___xt_a": "0x0042104C",
+    "__initterm": "0x004179D0",
+    "__imp__ExitProcess@4": "0x0044131C"
+  }
+}

@@ -27,6 +27,7 @@ def main():
     args = parser.parse_args()
     python("scripts/verify-python.py")
     python("scripts/validate-tracking.py", *([] if args.public else ["--require-target"]))
+    python("tests/test_crt_library.py")
     run(["cmake", "-S", ".", "-B", "build/native", "-G", "Ninja", "-DCMAKE_BUILD_TYPE=Debug"])
     run(["cmake", "--build", "build/native", "--parallel", str(BUILD_JOBS)])
     if args.public:
@@ -37,6 +38,7 @@ def main():
     rea_runs = ROOT / ".analysis/rea/runs"
     saved_smoke = any((run / "close.json").is_file() for run in rea_runs.glob("*-rea-smoke-*"))
     python("scripts/verify-rea.py", *(["--saved"] if saved_smoke else []))
+    python("scripts/verify-crt-provenance.py")
     python("scripts/replay-exact-units.py")
     python("tests/test_exact_oracle.py")
     python("tests/test_boards_differential.py")

@@ -8,7 +8,7 @@ acceptance or observed runtime coverage.
 
 The review retains 179 Evidence records covering **174 of 222 maintained
 entries**. Their callee lists reach **41 unmaintained imported entries**:
-36 still have unknown origins, and five already have runtime classifications.
+31 still have unknown origins, and ten now have runtime classifications.
 Those are copied ledger labels, not classifications inferred by this review.
 Thirty dossiers exceed its 2 MiB per-record read boundary, and four are in runs
 without a close record; all are excluded. Thus the other 48 maintained entries
@@ -59,7 +59,7 @@ current function/origin ledgers, its producer and each retained Evidence file
 by SHA-256. It preserves the excluded-record list and per-target caller
 references, so a later pass can expand the boundary without repeating the
 existing queries. The accepted totals remain **222 maintained / 105,036 direct
-cases / 36 exact units / 3,518 bytes**, with 300 unknown origins and six identified
+cases / 36 exact units / 3,518 bytes**, with 292 unknown origins and 14 identified
 runtime entries.
 
 ## Focused REA instruction review
@@ -101,4 +101,9 @@ review or matching saved evidence before any implementation acceptance.
 Host allocation, release or string services remain dependency bridges until
 the original implementations are separately recovered and validated. Names,
 Ghidra's library match and these wrapper shapes do not establish a particular
-VC4 library object. Function/origin/direct-case/exact ledgers remain unchanged.
+VC4 library object. The subsequent [whole-object comparison](CRT_PROVENANCE.md)
+provides that additional corroboration and identifies eight further runtime
+entries. Its three new dossiers also resolve the HeapAlloc/new-handler and
+`0x00417950` termination contracts. The latter is `doexit`; the `0x00417910`
+wrapper is C `exit`. The inventory is refreshed against those origin labels;
+maintained-source, direct-case and exact counts remain unchanged.
