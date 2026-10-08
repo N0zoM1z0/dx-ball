@@ -29,6 +29,20 @@ defaults after harness setup, remove only the two original new/delete replacemen
 hooks, and preserve dynamic node ownership/terminal failure boundaries. This
 review is a plan, not executed frame-allocation acceptance.
 
+A private frame connector is now prepared from that review and the maintained
+REA allocation dossiers. It restores native new/delete entries, observes all
+eight original allocator entries and binds disjoint external heap callbacks.
+Its ledger retains raw request sizes and allocation identities, derives node
+roles from queue roots, and permits arena reuse only after state, payload,
+pixel and free-poison comparison. Fixture resets reject live ownership;
+callback exceptions use a distinct diagnostic exit. Syntax and static callback
+address checks pass, but no connected frame has executed. The draft is
+`.analysis/allocator-frame-connected-draft.py`; its source-only receipt is
+`.analysis/allocator-frame-connected-source-check.json`. Detached clone scratch
+currently requires an explicit `clone_balls` phase. Mixed-frame fixtures,
+terminal allocation controls and a frozen cold replay remain required after
+the live campaign releases the session.
+
 The [maintained allocation owner](ALLOCATOR_OWNER.md) now supplies new/delete
 and malloc/release defaults for nodes, music, resources and sound. All 23 fresh
 owner oracles pass with the shared native library. Its 1,433 fixtures / 1,437
@@ -67,8 +81,17 @@ sealed paths, 7,704 external references and 49 originals verify; current source,
 owner report, library and exact-object hashes remain unchanged. The 1,778-copy
 checkpoint deduplication separately shares 66.13 MiB of logical duplicate data;
 that figure is not an actual disk-recovery measurement. Source commit
-`f894f72` passes public CI **37822675045**. The next evidence-only cleanup has
-zero operations.
+`f894f72` passes public CI **37822675045**. The evidence-only cleanup preview
+at that checkpoint had zero operations.
+
+While the maintained VC4 campaign runs, closed-pilot retention removes old
+report backups and shares immutable pilot receipts with verified checkpoint
+copies. The two receipts record **3,076,096 bytes (2.93 MiB)** and another
+**1,695,744 allocated bytes (1.62 MiB)** released. All 468 frozen capture inputs
+and 49 originals verify before and after the latter operation; mutable reports,
+current products and the live capture stay separate. The receipt is sealed in
+`allocator-campaign-live-retention-243-35`. This storage checkpoint makes no
+full-campaign or connected-frame acceptance claim.
 
 The remaining allocator draft sections below are historical stages and retain
 their checkpoint scopes.
