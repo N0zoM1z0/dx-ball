@@ -42,6 +42,16 @@ recovers **2,719,744 bytes (2.59 MiB)** after an earlier 530-copy deduplication.
 is being sealed. Historical input resolution uses explicit pre-integration
 snapshots; it never rewrites old report hashes to current source.
 
+Post-seal retention shares 64 complete, terminal capture files with their
+verified immutable checkpoint copies, leaving mutable report aliases separate.
+It recovers another **10,543,104 actual disk bytes (10.05 MiB)**. All 8,520
+sealed paths, 7,704 external references and 49 originals verify; current source,
+owner report, library and exact-object hashes remain unchanged. The 1,778-copy
+checkpoint deduplication separately shares 66.13 MiB of logical duplicate data;
+that figure is not an actual disk-recovery measurement. Source commit
+`f894f72` passes public CI **37822675045**. The next evidence-only cleanup has
+zero operations.
+
 The remaining allocator draft sections below are historical stages and retain
 their checkpoint scopes.
 

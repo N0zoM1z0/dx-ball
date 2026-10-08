@@ -142,3 +142,9 @@ SHA-sealed pre-integration snapshots preserve the old source/library/reports;
 cleanup can deduplicate immutable copies without linking them to mutable build
 paths. Use `scripts/repo-python scripts/clean-local.py --evidence-only --apply`
 while current probe products are still inputs to accepted reports.
+
+The maintained source commit `f894f72` passes public CI **37822675045**.
+Post-seal retention verifies 8,520 sealed paths, 7,704 external references and
+all 49 originals, then shares 64 completed capture files with their archived
+copies. Actual disk use falls by another 10,543,104 bytes; logical duplicate
+sharing is reported separately. Current acceptance identities remain unchanged.
