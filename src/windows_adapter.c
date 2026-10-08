@@ -6,6 +6,7 @@
 #include "sound.h"
 #include "midi.h"
 #include "paddle.h"
+#include "raster.h"
 
 typedef char WindowsAdapterRequiresI686[(sizeof(void *) == 4) ? 1 : -1];
 typedef char WindowsMessageLayout[(sizeof(MSG) == sizeof(DxBallMessage)) ? 1 : -1];
@@ -215,6 +216,10 @@ static DxBallUInt DXBALL_DDCALL unprepare_header(DxBallMidiHandle stream, DxBall
 static DxBallUInt DXBALL_DDCALL stream_close(DxBallMidiHandle stream)
 { return midiStreamClose((HMIDISTRM)stream); }
 
+static DxBallInt raster_muldiv(DxBallInt number, DxBallInt numerator,
+                              DxBallInt denominator)
+{ return MulDiv(number, numerator, denominator); }
+
 void dxball_bind_windows(void)
 {
     FARPROC procedure;
@@ -240,6 +245,7 @@ void dxball_bind_windows(void)
     dxball_window_api.get_version_ex = version_info;
     dxball_clock_ops.time_ms = time_ms; dxball_clock_ops.frequency = clock_frequency;
     dxball_clock_ops.counter = clock_counter; dxball_set_cursor_position = set_cursor_position;
+    dxball_raster_ops.muldiv = raster_muldiv;
     dxball_sound_api.create_device = create_sound; dxball_sound_api.create_file = create_file;
     dxball_sound_api.file_size = file_size; dxball_sound_api.read_file = read_file;
     dxball_sound_api.close_handle = close_handle;

@@ -1,10 +1,19 @@
 # Compiler evidence and exact units
 
-The current rotation checkpoint has **36 exact functions / 3,518 bytes**.
+The current raster checkpoint retains **36 exact functions / 3,518 bytes**.
 The complete 40-byte wrapper at `0x00404280` matches with one explicit REL32
 renderer binding; all 35 prior units pass the same cold replay. Renderer and
 offset bodies retain scoped behavior acceptance without exact claims. See
 [rotation compiler evidence](ROTATION_INVESTIGATION.md#maintained-and-compiled-behavior).
+
+The raster owner has a separate configured compiler product, with no new exact
+unit. `compile-semantic-build.py --build raster` cold-builds the shared source
+and records its complete inputs, flags and product identity; `test_raster_coff.py`
+executes that actual output against 7,164 complete original/native vectors.
+The horizontal span emits 62 bytes versus the original 144, so behavior agreement
+does not establish an instruction match. Static function COMDATs use the same
+whole-section rules as external functions, including rejection of an additional
+function alias. See [raster compiler evidence](RASTER_INVESTIGATION.md).
 
 The preceding shared-storage replay of all forty previously accepted units
 found five changed emissions:
@@ -93,9 +102,10 @@ Reports under ignored `build/reports/` bind the target, source/header, compiler,
 object, manifest, and relocated span hashes. `config/matches.csv` records the
 accepted checkpoint's object hash; a later cold build can have a different COFF
 timestamp while reproducing identical complete code. Input hashes and every
-machine byte must still pass. The oracle's eight rejection tests cover baseline,
+machine byte must still pass. The oracle's ten tests cover baseline,
 instruction corruption, extra emitted code, wrong/missing relocation, changed
-addend, changed literal, and wrong target identity.
+addend, changed literal, wrong target identity, static whole-section extent and
+an additional static function alias.
 
 The tile mapping and two drawing functions have scoped semantic acceptance;
 they have no exact claim. The unsupported mapping-helper return domain and

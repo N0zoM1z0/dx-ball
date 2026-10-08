@@ -1,5 +1,39 @@
 # Current handoff
 
+The raster owner is accepted: triangle, polygon, clipped polygon and horizontal
+span share public C with explicit ABI and recovered scratch lifecycle. Saved
+REA controller/helper/import/shared-tail dossiers supply the instruction facts;
+no new original query was needed. Current scope is **221 maintained / 104,061
+direct cases / 36 exact units / 3,518 bytes**, with 301 unknown origins and six
+identified runtime entries. Raster origin is a medium-confidence application
+graphics inference; active game use remains unestablished.
+
+Native and actual VC4 comparisons pass the same 7,164 complete vectors, counted
+once. The report retains 514 full guarded pixel buffers with lossless gzip/base64
+interning. All 20 owner scripts pass at the shared-source checkpoint; the cold
+replay retains all 36 exact units. Raster has no configured exact unit. Static
+COMDAT support preserves whole-section rejection rules; all ten oracle tests
+pass. The public private-suite runner includes the new semantic compiler build
+and its generated-code comparison.
+
+VC4/MinGW builds, both inspectors, SDK ABI, resources, storage, startup/shutdown
+and ball/paddle/pause/editor controls pass. The fresh original/native campaign
+episode compares 20,654 frames and five advances with three lives, binding 101
+inputs; these integration frames remain separate from direct cases. The first
+MinGW load failed because 64-bit division introduced an undeployed libgcc DLL.
+The MinGW-only `-static-libgcc` fix removes that dependency; the negative product
+and loader evidence are retained. The actual native library is unchanged, so
+18 frozen owner executions can be reused with complete runtime/source/driver
+identities; CMake-bound raster and rotation reports were freshly replayed along
+with their VC4 tests. The unchanged exact inputs/products verify before reuse.
+
+Cleanup already removes 5.32 MiB of historical raster draft duplicates after
+verifying the sealed copies and expanded gzip hashes. Seal this source batch in
+`.analysis/checkpoints/raster-221-36/` before the final probe/duplicate cleanup.
+Current products, original inputs, pinned tools and complete REA records remain
+required. The entries below retain the preceding investigations and checkpoints
+with their original acceptance boundaries.
+
 The next large graphics family is now investigated through REA: the triangle
 and two polygon controllers. A private natural C draft passes 6,084 original
 comparisons (5,400 polygons / 684 triangles), including scratch/pool lifecycle,

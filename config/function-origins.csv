@@ -138,7 +138,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A970,authored,display,maintain,high,ev_a5263d59f79fee20c3d1c580888f256c258a6bb80332e83da49071d7e3048e9a
 0x0040AA60,authored,ui,maintain,high,ev_d69a03478a3300403b907eadb1d092d72ea91325ee9a2d51042a1105207b5bb3
 0x0040AB20,authored,ui,maintain,high,ev_677c089ab1d99c09f648bf51f8d486dc81df271573b32af3ba3f53fdb5c50e68
-0x0040AB90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040AB90,authored,raster,reconstruct,medium,ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a
 0x0040B196,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040B19F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040B1A8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -171,9 +171,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040B450,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040B49A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040B4AD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040B4C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040B550,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040BB60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040B4C0,authored,raster,reconstruct,medium,ev_e55d01a59c45980c265834061218ad417ec912723618f19099f1de192067f5cf
+0x0040B550,authored,raster,reconstruct,medium,ev_493013a754a8856f617731fcd1fddd0b00f6bd3d39f2de9d39f29742e542e205
+0x0040BB60,authored,raster,reconstruct,medium,ev_4ae581c6e8ad135b183d562df04de63db4419e39e3f9b46891bdec2634ee5358
 0x0040C1A0,authored,editor,maintain,high,ev_9811081f6d6d1f2204b198cd34ee1b421fe72b0d249a4372fa80a6a93ca3e8e1
 0x0040C2B0,authored,editor,maintain,high,ev_1976120e8d242c0582fd80747e4b120df885c94be7db9f231b5b9dd98d593009
 0x0040C3B0,authored,editor,maintain,high,ev_12f27f7831f215d80c2a1a27d88e1638ffa9ab2fd568793f66258b328927431e

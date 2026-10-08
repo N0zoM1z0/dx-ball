@@ -625,3 +625,10 @@ boundary_evidence = "docs/ROTATION_INVESTIGATION.md; ev_dde2cbb37732ea0f72b15ecd
 relocations = [
   { offset = 0x17, type = "REL32", symbol = "_dxball_render_rotated_sprite", addend = 0, target = 0x004026A0 },
 ]
+
+# Raster emission is compiled for semantic COFF execution, not an exact claim.
+[builds.raster]
+source = "src/raster.c"
+object = "build/exact/raster.obj"
+inputs = ["src/raster.c", "src/raster.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]

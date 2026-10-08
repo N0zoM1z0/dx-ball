@@ -13,6 +13,7 @@ without checking their individual evidence.
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; maintained API dispatch with real DirectDraw bindings; physical driver fidelity remains open |
 | Software rotation | `src/rotation.c`; three maintained entries, 1,024 direct cases and the full 40-byte wrapper exact; [evidence and remaining limits](ROTATION_INVESTIGATION.md) |
+| Software raster | `src/raster.c`; triangle, polygon, clipped polygon and span; 7,164 direct cases with actual VC4 corroboration; [ABI, scratch lifecycle and limits](RASTER_INVESTIGATION.md) |
 | Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, request-list helpers and sound pan |
 | Animation owner | `src/effects.c`; constructors, timer steps, dispatch, occupancy and propagation |
 | Particle owner | `src/particles.c`; clipped creation, movement/fading, typed list and 2x2 pixel writes |
@@ -43,6 +44,14 @@ surface selection remains maintained code. The original board oracle executes
 board routines and CRT memcpy/memset, intercepting file and rendering boundaries.
 These separate scopes validate state and effect traces while leaving hardware
 Windows display and pixel behavior unclaimed.
+
+`src/raster.h` declares signed 32-bit points and allocator/free/math operations.
+Native pointer arrays grow with the host; the recovered scalar edge record stays
+28 bytes, including its unwritten interval. The Windows adapter binds `MulDiv`
+through the cdecl callback and real SDK call. MinGW links integer helpers with
+`-static-libgcc`, keeping the DLL deployable after adding 64-bit math. Raster
+entry use during gameplay remains unverified; see the raster investigation for
+the bounded source and generated-code comparisons.
 
 Project structure:
 

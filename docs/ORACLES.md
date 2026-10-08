@@ -8,6 +8,8 @@
 | Shared-storage x86 DLL vs original x86 | All 20,432 storage bytes, auxiliary grid and index after load/store/initialize; 459 cases including overlap at index50 and nonzero unknown bytes | Original source type, native-64 byte layout, arbitrary indices or whole-game fidelity |
 | Rotation x86 vs compiled native C | Three entries / 1,024 cases; complete guarded pixels, ordered locks/unlocks, immutable banks/tables and callback reloads | Unbounded/invalid backing, physical driver, alternative division branch or active gameplay use |
 | Generated VC4 rotation bodies vs original/native vectors | All COFF relocations and explicit dependency bindings; same complete 1,024 fixtures in separate executable memory | Renderer/offset byte exactness, whole linked CRT or an additional direct-case count |
+| Raster x86 vs compiled native C | Four entries / 7,164 cases; complete guarded pixels, scalar scratch bytes, normalized pointer arrays, ordered allocation/free/math and failure masks | Invalid/zero-edge polygons, unrepresentable arithmetic, physical display or active gameplay use |
+| Generated VC4 raster bodies vs original/native vectors | Four public and four static complete COMDATs; explicit relocations and dependencies, same 7,164 complete vectors | Raster byte exactness, whole linked CRT or an additional direct-case count |
 | Resource x86 vs compiled native C | SBK/PCX decoded pixels, initialized sprite state, fonts and palettes | Actual DirectDraw rasterization/display |
 | Gameplay x86 vs compiled native C | Tile/count/score changes, full integer returns, list links, pan and ordered boundary calls | Ball physics, bonus/particle/audio backends |
 | Animation x86 vs compiled native C | Timers, propagation order, occupancy lifecycle, payload bytes and deletion traversal | Bonus creation, rendering drivers, full frame behavior |
@@ -86,7 +88,7 @@ hit-to-animation integration cases. Actual animation constructors, timer steps a
 execute; allocation/deletion, bonus and rendering dependencies are controlled.
 Released node storage is poisoned. The integration suite executes the original
 frame updater with unrelated phases neutralized and compares only animation and
-request state. Integration cases are excluded from the 96,897 direct-case total. This
+request state. Integration cases are excluded from the 104,061 direct-case total. This
 phase-only suite does not establish the whole frame; its later scoped acceptance
 comes from the core oracle. See [effects evidence](EFFECTS_OWNER.md).
 
@@ -246,7 +248,7 @@ pre-exit effects with the original nonreturning boundary. See
 [SOUND_OWNER.md](SOUND_OWNER.md) for the documented safe caller domains.
 
 The rotation checkpoint adds three maintained entries and 1,024 direct cases,
-bringing current acceptance to 217 functions / 96,897 direct cases. It executes
+bringing that checkpoint to 217 functions / 96,897 direct cases. It executes
 the original renderer, wrapper and offset with original trig initialization,
 x87 lookup/division/conversion and controlled DirectDraw storage. All eighteen
 older owner scripts pass against the changed linked source set. The primary
@@ -255,3 +257,12 @@ Executing the actual cold-built VC4 bodies supplies additional compiler behavior
 evidence for the same vectors; these cases are counted once. See
 [rotation scope](ROTATION_INVESTIGATION.md) for floating-point stores, callback
 reloads, complete buffers, the exact wrapper and remaining extent/use questions.
+
+The raster checkpoint adds four maintained entries and 7,164 direct cases,
+bringing current acceptance to 221 functions / 104,061 direct cases. The same
+shared C passes native and actual VC4 tests; compiler fixtures count once.
+All 20 owner scripts pass at the shared-source checkpoint, and the 36-unit
+cold replay retains 3,518 exact bytes. The MinGW-only static-runtime link fix
+leaves the native binary unchanged; unaffected execution reports are reused
+with their frozen source/driver/product identities, while the CMake-bound
+raster and rotation reports are replayed. See [raster scope](RASTER_INVESTIGATION.md).

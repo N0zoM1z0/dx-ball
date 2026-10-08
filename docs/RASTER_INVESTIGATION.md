@@ -1,10 +1,11 @@
-# Software raster controllers: investigation in progress
+# Software raster controllers
 
 REA identifies three remaining large graphics routines as triangle and polygon
 fillers. The two polygon bodies own 1,543 and 1,592 contiguous bytes; the
 triangle owns 1,542 bytes but reaches shared exception-cleanup code outside
-that recorded extent. These are investigation candidates, with no origin,
-maintained-source, semantic-count or exact promotion yet.
+that recorded extent. Shared C now implements the three controllers and their
+horizontal-span helper. Original/native and actual VC4 comparisons pass;
+acceptance replay is recorded below. No raster exactness is claimed.
 
 ## Controller evidence
 
@@ -23,8 +24,11 @@ Focused direct `xrefs` return no incoming references for these three entries:
 `ev_68078d60f8181998d46168217f5550783a739ced22332448afde1bd6459c9705`,
 `ev_54789e1eaedec8ac98ebf8aaef1ee4473beb4820f15ee015fe36fd84a3880e7e`,
 and `ev_5d2153a0da17fcd67b13003b7b2304070d289ffa21673c825bef2d980bab84a8`.
-This bounds Ghidra's direct-reference result; indirect references, actual game
-use and source authorship remain unresolved.
+This bounds Ghidra's direct-reference result; indirect references and actual
+game use remain unresolved. The application-graphics origin is an inference
+from indexed software spans, custom edge pools and fixed game-sized clipping,
+with medium confidence. It does not identify an original source author or
+establish that the helpers were called in gameplay.
 
 ## Polygon edge lifecycle
 
@@ -126,25 +130,71 @@ scripts/rea session config/rea-fixed-point.json
 scripts/rea session config/rea-raster-abi.json
 ```
 
-The current private native draft passes **6,084 original-machine comparisons**:
-2,448 ordinary polygons, 2,952 clipped polygons and 684 triangle permutations.
+The shared [owner](../src/raster.c) and [declarations](../src/raster.h) pass
+**7,164 original/native comparisons**: 2,448 ordinary polygons, 2,952 clipped
+polygons, 684 triangle permutations and 1,080 independent horizontal spans.
 The polygon cases vary contour order, color, pitch and all eight allocation
-failure masks; triangle cases include horizontal, degenerate and off-screen
-vertices. Comparisons cover complete guarded pixel storage and row padding,
-immutable point inputs, pool guards, complete scalar scratch bytes, normalized
-pointer entries, ordered allocation/free calls and `MulDiv` arguments. Original
-code bytes remain identical, and the triangle restores its synthetic SEH head.
-`MulDiv` is a controlled API contract, not a tested Win32 implementation.
+failure masks. Triangles include horizontal, degenerate and off-screen
+vertices; span cases vary row/endpoint alignment, positive/zero/reverse lengths
+and color. Complete point storage and its guards remain unchanged.
 
-The fresh report binds the candidate source, actual native product, compiler
-identity, driver and dependency inputs before and after execution. An earlier
-5,400-case report whose original source/product were overwritten is explicitly
-historical; it is not reused as current acceptance. The inferred-stdcall failure
-also retains its actual source/product and original stack diagnostic.
+Comparisons cover complete guarded pixel storage and row padding, pool guards,
+all scalar scratch bytes, normalized pointer entries and ordered allocation,
+free and math arguments. The original code and IAT remain byte-identical; the
+triangle restores its synthetic SEH head. All 1,836 sampled math calls also
+check the maintained portable default using 64-bit intermediate arithmetic.
+The Windows adapter binds the same callback declaration to the real Win32
+`MulDiv`. Controlled dependency results do not prove its OS implementation.
+The legacy compiler's `__int64` and the native compiler's `long long` are
+alternative spellings of the same checked 64-bit arithmetic type, with one
+function body and unchanged 32-bit owner scalar declarations.
 
-Complete requests, results, Evidence IDs, snapshots and session closes are
-retained privately. A natural typed C candidate and its native product remain
-private experiments. Promotion needs a public shared owner, native/original
-and actual VC4 comparisons, affected owner replay, and the configured cold
-replay batch. Current accepted progress remains 217 maintained functions,
-96,897 direct owner cases and 36 exact units covering 3,518 bytes.
+The report stores 514 complete pixel buffers as lossless gzip/base64 values,
+interned after full-byte comparison and collision checks. This keeps the report
+about 6.19 MiB rather than hundreds of MiB of raw pixel hex. Each fixture links
+to its complete buffer identity. Source, driver, dependencies and the actual
+native library are bound before and after execution.
+
+The actual pinned VC4 output passes the same 7,164 full vectors. Four public
+and four static helper COMDAT sections are relocated into fresh memory with
+explicit function/global/overlap-copy bindings and controlled API slots.
+Every emitted byte belongs to a complete dedicated section; no original
+instructions or IAT are replaced. Public polygon symbols carry `@20` and the
+triangle remains cdecl. The COFF reader now recognizes static function symbols
+while rejecting an additional static alias in the same section. These compiler
+cases are corroboration and are counted once, not added to owner totals.
+
+```bash
+scripts/repo-python tests/test_raster_differential.py
+scripts/repo-python scripts/compile-semantic-build.py --build raster
+scripts/repo-python tests/test_raster_coff.py
+```
+
+The COFF command requires the configured `builds.raster` product and its
+`build/reports/raster-compile.json` identity record. The raster build is a
+semantic compiler product, with no configured exact raster unit. The emitted
+span is 62 bytes versus the original 144; factoring polygon lifecycle into
+shared helpers likewise does not produce the original controller emission.
+The triangle's shared SEH continuation is still separate from its owned
+1,542-byte body for exact extent purposes.
+
+The preceding 6,084-case private draft and its actual product remain in the
+SHA-sealed investigation checkpoint. An older 5,400-case report without its
+original product is explicitly historical and supplies no current acceptance.
+The import/ABI diagnostics and complete REA records also survive retention.
+The shared-source batch passes all 20 owner scripts and a cold replay of all
+36 configured exact units, totaling 3,518 bytes with zero differences. The four
+raster entries add 7,164 direct cases: current acceptance is 221 maintained
+functions and 104,061 direct cases. The existing rotation generated-code test
+also passes its full 1,024 vectors against the new shared library.
+
+The first MinGW inspector run exposed a newly required `libgcc_s_dw2-1.dll`
+for 64-bit division. That failed product and its import/loader observations are
+retained. The MinGW link now uses `-static-libgcc`; its core DLL imports only
+Kernel32 and msvcrt, and both Windows compiler profiles pass the inspectors.
+This MinGW-only link change leaves the actual native library byte-identical.
+Eighteen completed owner executions retain their full frozen execution inputs;
+raster and rotation reports, which bind CMake configuration, are freshly
+replayed along with their VC4 comparisons. The unchanged exact replay's inputs
+and products verify before reuse. Zero-edge polygons, arithmetic overflow,
+missing backing and physical/runtime game use remain outside these tests.

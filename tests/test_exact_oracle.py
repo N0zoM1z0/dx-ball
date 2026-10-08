@@ -53,6 +53,29 @@ class ExactOracleTests(unittest.TestCase):
         self.assertFalse(result["exact"])
         self.assertGreater(result["difference_count"], 0)
 
+    def test_static_function_keeps_complete_comdat_extent(self):
+        unit = self.units["select-surface"]
+        index = next(i for i, s in self.symbols.items() if s["name"] == unit["symbol"])
+        symbol_offset = struct.unpack_from("<I", self.data, 8)[0]
+        result = self.mutate(unit, lambda data: data.__setitem__(symbol_offset + index * 18 + 16, 3))
+        self.assertTrue(result["exact"])
+        self.assertEqual(result["object_size"], unit["size"])
+
+    def test_static_alias_cannot_hide_another_function_in_section(self):
+        unit = self.units["select-surface"]
+        selected, _ = self.section(unit["symbol"])
+        index = next(i for i, s in self.symbols.items()
+                     if s["type"] == 0x20 and s["section"] > 0 and s["name"] != unit["symbol"])
+        symbol_offset = struct.unpack_from("<I", self.data, 8)[0]
+
+        def mutation(data):
+            position = symbol_offset + index * 18
+            struct.pack_into("<Ih", data, position + 8, 0, selected["section"])
+            data[position + 16] = 3
+
+        with self.assertRaises(ValueError):
+            self.mutate(unit, mutation)
+
     def test_matching_prefix_with_extra_code_is_not_exact(self):
         unit = self.units["select-surface"]
         symbol, section = self.section(unit["symbol"])

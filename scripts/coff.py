@@ -68,9 +68,9 @@ def function(path, wanted):
     symbol = matches[0]
     section = sections[symbol["section"] - 1]
     functions = [s for s in symbols.values() if s["section"] == symbol["section"]
-                 and s["type"] == 0x20 and s["storage"] == 2]
+                 and s["type"] == 0x20 and s["storage"] in (2, 3)]
     if (symbol["value"] != 0 or symbol["type"] != 0x20 or len(functions) != 1
-            or section["flags"] & 0x1020 != 0x1020):
+            or symbol["storage"] not in (2, 3) or section["flags"] & 0x1020 != 0x1020):
         raise ValueError("function extent needs a dedicated code COMDAT section")
     code = bytearray(region(data, section["data"], section["size"]))
     relocations = []
