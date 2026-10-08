@@ -20,6 +20,17 @@ replay is sealed; two generated pan labels are reconciled by complete literal
 data before a successful fresh replay. The static dependency review now covers
 177 of 225 maintained entries from 182 matching closed dossiers.
 
+Source commit `b6efdbc` passes public CI **37762304887**, including the public
+controls, portable build, archival gates and strict Windows compilation. The
+`.analysis/checkpoints/sound-controls-225-36/` archive seals 458 files and 73
+external references, with three lossless compressed artifacts. Cleanup journal
+`20261008T101546120310Z` processes 485 duplicate/probe operations and **19.06 MiB
+of logical bytes**. All **5,365 immutable paths / 296 external references /
+18 expanded gzip artifacts** and current owner/REA/exact acceptance identities
+verify afterward; the next preview is empty. Analysis is about 411 MiB, build
+37 MiB, and pinned tools 1.9 GiB. Originals, unique records and manual saves are
+preserved. Logical processed bytes do not measure filesystem block savings.
+
 The CRT provenance source and retention commits (`06039a9` and `91b0ed3`)
 pass public CI runs 37755949692 and 37757599984. Before the next source batch,
 all 4,866 retained immutable paths and 293 external references verify, together
