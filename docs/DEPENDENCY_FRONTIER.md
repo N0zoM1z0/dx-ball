@@ -61,3 +61,44 @@ references, so a later pass can expand the boundary without repeating the
 existing queries. The accepted totals remain **222 maintained / 105,036 direct
 cases / 36 exact units / 3,518 bytes**, with 300 unknown origins and six identified
 runtime entries.
+
+## Focused REA instruction review
+
+A subsequent sequential REA `analyze_function` batch inspects five selected
+entries with the pinned Ghidra provider. The complete dossiers and closed
+session are retained. This supplies instruction contracts, not semantic
+acceptance or a compiler/library attribution.
+
+| Entry | Observed contract | REA Evidence |
+| --- | --- | --- |
+| `0x0041678C` | Convert x87 ST0 to signed 64-bit integer, temporarily selecting truncation toward zero; restore control word and return EDX:EAX | `ev_3a0b896bedfb7224268a3a8d3bfcb8d1acc636a35884319167561b64e8056aea` |
+| `0x00416760` | Forward one stack argument to `0x00417750`; caller cleanup | `ev_dd4c8eb171fe4da4755816c3387814ad47a13e806c38958c44aa8cbc190e44ac` |
+| `0x00416770` | Forward size and constant `1` to `0x00417790`; preserve returned EAX | `ev_2f47da62f234bfb025db282149258ce5cb1b53a74591f045695579a7d8887f91` |
+| `0x00417910` | Forward argument and two zero constants to `0x00417950`; preserve returned EAX | `ev_df594328fa0899467c7969112f2ca49e255c91e1d3fb81b92b74f5e60db13234` |
+| `0x00417DF0` | Return byte distance to the first zero byte; scan prefix to four-byte alignment, then aligned words | `ev_2771927e99efdb9e148301e8bf8aac67206ddd30c00c25219f34783b1586cd01` |
+
+All five observed bodies are contiguous and match their imported sizes:
+39/14/16/18/119 bytes. This reconciliation alone does not create an exact unit.
+
+The floating conversion illustrates why the instruction evidence matters:
+Ghidra's pseudocode says `ROUND`, but `OR AH, 0xc` selects x87 truncation
+before `FISTP`. Likewise, the allocation wrapper's inferred `void` result
+omits EAX forwarding, and the string scanner's inferred pointer result is an
+integer byte distance. Neither inferred signature should be copied into C.
+The scanner can read beyond a terminator within its aligned word; inaccessible
+backing and exceptional floating conversions need explicit boundaries.
+
+Existing closed REA dossiers supply two downstream contracts without another
+query. Release at `0x00417750`, Evidence
+`ev_71abe55c26ab63d390b070c27874d920fa335c74cc9b406dcdab748a7f3bdd33`,
+skips a null pointer and otherwise calls `HeapFree` with heap `0x00440D70` and
+zero flags. Allocation at `0x00417790`, Evidence
+`ev_5b84dc43a44b86e3cd73f1ebfddc73bdb1f4ef29d11181f1d56181f54cc327b4`,
+rejects unsigned sizes above `0xFFFFFFE0`, changes zero to one, and retries
+allocation only when its handler flag and the handler result permit it.
+The `0x00417950` backend and the allocation/handler dependencies need focused
+review or matching saved evidence before any implementation acceptance.
+Host allocation, release or string services remain dependency bridges until
+the original implementations are separately recovered and validated. Names,
+Ghidra's library match and these wrapper shapes do not establish a particular
+VC4 library object. Function/origin/direct-case/exact ledgers remain unchanged.

@@ -158,6 +158,69 @@ retains its complete bytes without inventing a REA observation. Initial input
 snapshots use a distinct `input-snapshot.sha256.json`; only the final sealer
 creates `sha256.json`, preserving its existing overwrite rejection.
 
+### Diverse-controller full-control timeout
+
+The 3,600-second original-only control also ends before full acceptance. REA
+process Evidence
+`ev_d4faf61d0314b010e141adf163e70a01f7561131e676432d331a97a694efe43d`
+records timeout/signal 9, no child exit code and no final diagnostic summary.
+The unchanged periodic observation verifies initialization of slots **0..26**.
+Its last retained event is at **3,284.230 harness seconds**, at index 26 with
+seven lives, 45 remaining bricks and score 73,018. All six controller phases
+have ordinary mouse requests. These are partial observations, not the state
+at termination or evidence that all requested boards completed.
+
+`original-campaign-diverse-control-01` seals 97 files after both observed
+game/reader kernel identities become inactive. It retains all 86 frozen source
+inputs, the actual SDK reader and complete REA capture. The checkpoint records
+`interrupted`, missing final summary and `full_campaign_accepted: false`;
+the original attempt and partial observation keep their historical statuses.
+There is no full-report digest for REA to bind. This remains an incomplete
+original control; reconstructed campaign acceptance is separate.
+
+The sequential queue then stopped because its local driver expected the
+normal sealer's `pass` status; interrupted sealing correctly returned `sealed`.
+The archive had already succeeded. The failed producer and phase log are
+preserved before correcting that assumption; this attempt is never resealed.
+The independent contact fixtures below execute after verifying the archive,
+inactive processes and unchanged accepted native product.
+
+### Controlled contact timing
+
+[test_campaign_contact.py](../tests/test_campaign_contact.py) executes **320
+fixtures / 2,560 compared calls** through the original ball updater or full
+gameplay frame and maintained native C. Those original entries are not hooked.
+The reused Core Harness compares complete globals, tiles, auxiliary state,
+typed list roots/cursors, allocations, free poisoning, ordered effects and
+controlled pixels after every call. Original code bytes remain unchanged.
+These integration fixtures add no direct owner cases or exact units.
+
+The tests cover cached paddle position, wall clamping, mixed-speed balls,
+already-passed balls, and ordinary mouse requests with declared sampling and
+delivery delays. The current live controller is the baseline. A
+[test-only candidate](../tests/campaign_contact_candidate.py) chooses the
+earliest falling-ball contact and projects horizontal movement by the original
+discrete wall clamp/reflection rule. It retains the six contact offsets.
+
+| Controlled family | Current controller | Test-only candidate |
+| --- | ---: | ---: |
+| Mixed-speed fast-ball catches | 16/72 | 72/72 |
+| Viable-ball catches beside a passed ball | 0/8 | 8/8 |
+| Wall-projection contacts with sampling/delivery delay | 16/16 | 16/16 |
+
+The original full frame uses the previous paddle cache for ball collision,
+then updates the paddle from the current mouse request. The mixed-speed
+fixtures demonstrate why greatest-Y priority can react too late: a faster
+ball can contact first. The declared delays are frame controls, not measured
+Wine/Windows latency. Fixtures use synthetic empty boards, controlled
+non-game dependencies and known valid sprites/list metadata. They do not
+cover active kind-3 movement, bonuses, atomic SDK sampling or a full campaign.
+The candidate remains confined to tests pending those wider observations.
+
+```bash
+scripts/repo-python tests/test_campaign_contact.py
+```
+
 ## Original-x86 connected episodes
 
 `tests/test_campaign_differential.py` extends the existing display oracle with

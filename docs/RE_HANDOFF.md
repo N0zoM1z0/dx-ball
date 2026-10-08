@@ -88,6 +88,43 @@ it does not classify those targets or change source/case/exact acceptance.
 
 The preceding checkpoints below retain their historical totals and boundaries.
 
+The diverse-controller original-only full control is now terminated and sealed,
+rather than live. REA Evidence
+`ev_d4faf61d0314b010e141adf163e70a01f7561131e676432d331a97a694efe43d`
+records timeout/signal 9 with no final diagnostic summary. The last unchanged
+periodic event at 3,284.230 harness seconds is at index 26/seven lives/45 bricks;
+initial slots 0..26 verify. The 97-file archive preserves frozen inputs and the
+actual SDK reader. Both kernel identities are inactive. Full campaign acceptance
+remains false. The local queue's incorrect status assumption failed after
+successful interrupted sealing; its negative record is retained and the archive
+is not resealed. See [campaign details](ORIGINAL_CAMPAIGN.md#diverse-controller-full-control-timeout).
+
+The new controlled contact test covers 320 fixtures / 2,560 original/native
+calls with complete Core Harness comparisons. A test-only earliest-contact
+policy catches 72/72 mixed-speed fast balls versus 16/72 for the current live
+controller, and 8/8 viable balls beside passed balls versus 0/8. Wall-projection
+contacts pass 16/16 for each policy. Declared input delays and synthetic boards
+do not establish live latency, bonus behavior or whole-campaign completion.
+The live controller and maintained game C remain unchanged; accepted owner and
+exact products/inputs verify before reusing their completed replay.
+
+Cleanup journal `20261008T083204502841Z` performs 59 operations, processing
+**1.74 MiB of logical duplicate/probe bytes** after interrupted-control archival.
+All **4,436 immutable paths / 274 external references / 11 expanded gzip
+artifacts** verify, with unchanged accepted products and an empty next preview.
+Analysis is about 393 MiB, build 32 MiB and installed tools 1.9 GiB. These sizes
+precede the subsequent contact/dependency evidence. Originals, unique REA
+records, tools and manual saves are retained; logical bytes are not measured
+filesystem block savings.
+
+The focused REA dependency batch now retains five new instruction dossiers,
+reconciling the 39/14/16/18/119-byte bodies without changing acceptance. It
+corrects inferred floating conversion and allocation/string return types;
+two matching saved downstream dossiers supply HeapFree/null handling and
+allocation size/handler retry rules without duplicate queries. Implementation
+acceptance, lower allocation/handler paths and compiler/library attribution
+remain open. See [instruction contracts](DEPENDENCY_FRONTIER.md#focused-rea-instruction-review).
+
 The raster owner is accepted: triangle, polygon, clipped polygon and horizontal
 span share public C with explicit ABI and recovered scratch lifecycle. Saved
 REA controller/helper/import/shared-tail dossiers supply the instruction facts;
