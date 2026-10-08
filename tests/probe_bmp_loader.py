@@ -43,16 +43,18 @@ class BitmapProbe(ResourceTarget):
                                                begin=address, end=address))
 
     def fixture(self, width=3, height=2, pitch=5, fail='', fallback=False,
-                path=b'fixture.bmp', prefix=b'controlled/', bits=8):
+                path=b'fixture.bmp', bits=8, short_read=None):
         self.reset()
         self.fail = fail
         self.fallback = fallback
         self.opens = self.reads = self.position = 0
         self.palette_bytes = None
+        self.short_read = short_read
+        self.read_buffers = {}
         self.pixel_allocation = None
         self.write(self.PATH, path + b'\0')
-        # This unresolved data dependency is a fixture, not a recovered prefix.
-        self.write(0x422798, prefix + b'\0')
+        # REA independently confirms these immutable original bytes.
+        assert self.read(0x422798, 4) == b'..\\\0'
         header = bytearray(40)
         struct.pack_into('<IiiHH', header, 0, 40, width, height, 1, bits)
         self.input_palette = bytes((i * 17 + 9) & 255 for i in range(1024))
@@ -81,11 +83,19 @@ class BitmapProbe(ResourceTarget):
         failed = self.fail == 'read' + str(self.reads)
         self.events.append(('read', count, int(failed)))
         if not failed:
-            data = self.data[self.position:self.position + count]
-            assert len(data) == count
-            self.write(output, data)
-            self.write_u32(transferred, count)
-            self.position += count
+            returned = count
+            if self.short_read and self.reads == self.short_read[0]:
+                returned = self.short_read[1]
+                assert 0 <= returned <= count
+            data = self.data[self.position:self.position + returned]
+            assert len(data) == returned
+            before = self.read(output, count)
+            if data:
+                self.write(output, data)
+            self.write_u32(transferred, returned)
+            self.position += returned
+            self.read_buffers[self.reads] = dict(requested=count, returned=returned,
+                before=before, after=self.read(output, count), file_position=self.position)
         self._return(int(not failed), pop=20)
 
     def local_alloc(self, uc, address, size, userdata):
@@ -159,7 +169,14 @@ class BitmapProbe(ResourceTarget):
 
 def run():
     limit_cpu()
+    assert __debug__, 'Probe assertions must stay enabled'
+    inputs = ('tests/probe_bmp_loader.py', 'tests/resources_oracle.py',
+              'tests/target_oracle.py', 'scripts/verify-target.py',
+              'scripts/resource_limits.py', 'config/target.toml',
+              'scripts/repo-python', 'scripts/verify-python.py', 'config/tools.lock.toml')
+    frozen = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in inputs}
     target = BitmapProbe()
+    code = target.read(0x401000, 0x1F000)
     rows = []
     for seed in (0, 0x5A, 0xA5, 0xFF):
         for pitch, expected in ((2, b'\x04\x05\x02\x03'),
@@ -204,7 +221,7 @@ def run():
         target.fixture(fallback=True, path=path)
         assert target.invoke(0x5A) == 1
         assert target.events[:2] == [('open', path.decode(), 1),
-                                    ('open', 'controlled/' + path.decode(), 0)]
+                                    ('open', '..\\' + path.decode(), 0)]
         # The buffers begin 0x140 (320 decimal) bytes apart. These bounded
         # paths remain below that boundary; they leave palette flags alone.
         expected_flags = bytes([0x5A]) * 256
@@ -212,21 +229,74 @@ def run():
         rows.append(dict(fallback_path_bytes=len(path), status='observed',
                          events=target.events,
                          palette_flags_sha256=hashlib.sha256(expected_flags).hexdigest()))
-    inputs = ('tests/probe_bmp_loader.py', 'tests/resources_oracle.py',
-              'tests/target_oracle.py', 'scripts/verify-target.py',
-              'scripts/resource_limits.py', 'config/target.toml',
-              'scripts/repo-python', 'scripts/verify-python.py', 'config/tools.lock.toml')
+    # Successful ReadFile calls may return fewer bytes. Preserve the true
+    # cursor advance, caller-stack suffixes and zeroed pixel-allocation tails.
+    shorts = ([(1, n) for n in range(14)] + [(2, n) for n in (0, 13, 14, 15, 16, 17, 23, 39)] +
+              [(3, n) for n in (0, 1, 3, 4, 255, 256, 1023)] + [(4, n) for n in range(7)])
+    for stage, returned in shorts:
+        for seed in (0, 0x5A, 0xA5, 0xFF):
+            for pitch in (2, 3, 5):
+                target.fixture(pitch=pitch, short_read=(stage, returned))
+                result = target.invoke(seed)
+                read = target.read_buffers[stage]
+                assert read['returned'] == returned
+                assert read['after'][returned:] == read['before'][returned:]
+                info = target.read_buffers.get(2)
+                accepted_bits = info and struct.unpack_from('<H', info['after'], 14)[0] == 8
+                assert result == int(bool(accepted_bits)), (stage, returned, seed, result)
+                if result:
+                    assert struct.unpack_from('<ii', info['after'], 4) == (3, 2)
+                    palette = target.read_buffers[3]['after']
+                    assert all(target.palette_bytes[i:i + 3] == palette[i:i + 3][::-1]
+                               for i in range(0, 1024, 4))
+                    assert target.palette_bytes[3::4] == bytes([seed]) * 256
+                    pixels = target.read(target.pixel_allocation, 6)
+                    assert pixels == target.read_buffers[4]['after']
+                    if stage == 4:
+                        assert pixels[returned:] == bytes(6 - returned)
+                    copied = bytearray(b'\xA5' * (pitch * 2))
+                    count = min(3, pitch)
+                    start = 3
+                    for row in range(2):
+                        copied[row * pitch:row * pitch + count] = pixels[start:start + count]
+                        start -= count
+                    assert target.read(target.guard, target.total) == b'\xA5' * 32 + copied + b'\xA5' * 32
+                    assert [event[0] for event in target.events] == [
+                        'open', 'read', 'read', 'read', 'allocate', 'read', 'lock',
+                        'unlock', 'free', 'close', 'create_palette', 'set_palette']
+                else:
+                    assert target.read(target.guard, target.total) == b'\xA5' * target.total
+                    assert [event[0] for event in target.events] == ['open', 'read', 'read']
+                rows.append(dict(short_read_stage=stage, returned=returned, stack_seed=seed,
+                    pitch=pitch, result=result, status='observed', events=target.events,
+                    reads={str(k): dict(requested=v['requested'], returned=v['returned'],
+                        file_position=v['file_position'], bytes_before=v['before'].hex(),
+                        bytes_after=v['after'].hex()) for k, v in target.read_buffers.items()}))
+    assert target.read(0x422798, 4) == b'..\\\0'
+    assert target.read(0x401000, len(code)) == code
+    buffers = {}
+    for row in rows:
+        for read in row.get('reads', {}).values():
+            for field in ('bytes_before', 'bytes_after'):
+                value = read.pop(field)
+                key = hashlib.sha256(bytes.fromhex(value)).hexdigest()
+                assert key not in buffers or buffers[key] == value
+                buffers[key] = value
+                read[field + '_sha256'] = key
     dossier = '.analysis/rea/runs/2026-10-07T10-33-32.118Z-interactive-2912559/07-analyze_function.json'
     report = dict(scope='Original x86 investigation only; no C differential acceptance',
         target_sha256=target.target_sha256,
         rea_evidence_id='ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad',
         retained_dossier=dict(path=dossier, sha256=hashlib.sha256((ROOT / dossier).read_bytes()).hexdigest()),
-        inputs={name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in inputs},
+        inputs=frozen,
         limitations=['Controlled file/allocator/COM dependencies; no physical DirectDraw execution',
-                     'Fallback prefix is an unresolved controlled data dependency',
+                     'Original fallback prefix bytes are preserved; caller stack remains a fixture',
                      'Palette flags depend on caller stack storage; no deterministic C claim',
-                     'Full reads, positive small dimensions/pitches and bounded paths only'],
-        fixtures=rows)
+                     'Bounded 3x2 geometry and pitches 2/3/5; partial headers accepted only with sampled fields established'],
+        fixtures=rows, complete_read_buffers=buffers,
+        immutable_code_sha256=hashlib.sha256(code).hexdigest(), fallback_prefix_hex='2e2e5c00')
+    for name, expected in frozen.items():
+        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
     directory = ROOT / 'build/reports/bmp-investigation'
     directory.mkdir(parents=True, exist_ok=True)
     (directory / 'original.json').write_text(json.dumps(report, indent=2) + '\n')

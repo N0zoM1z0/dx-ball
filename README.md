@@ -32,6 +32,11 @@ original-x86 cases; executing its actual VC4 output verifies the same complete
 buffers and calls, and the 40-byte wrapper matches exactly. These results cover
 controlled surfaces; direct gameplay use remains unestablished. See the
 [gameplay investigation](docs/GAMEPLAY_OWNER.md) for the connected sound-pan example.
+The [raster-controller investigation](docs/RASTER_INVESTIGATION.md) uses REA's
+exact instruction view to distinguish a shared cdecl return from an inferred
+stdcall signature, and follows fixed-point division into Win32 `MulDiv`.
+These larger graphics candidates remain outside accepted progress pending
+shared-source integration and compiler replay.
 The [power-up investigation](docs/POWERUPS_OWNER.md) follows the bonus updater
 through board effects and paddle rebounds, recovering the game's computed
 trigonometry tables and checking its rounding against original execution.

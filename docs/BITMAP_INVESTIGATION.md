@@ -25,8 +25,9 @@ The sequential reads request 14 header bytes, 40 information-header bytes,
 The information-header bit count must equal eight. The body tests `ReadFile`'s
 Boolean return without checking the transferred count. It does not validate
 the file signature, compression or pixel offset, seek to the declared offset,
-or account for BMP row padding. Successful short reads and invalid geometry
-need separate domain review before source acceptance.
+or account for BMP row padding. Successful short reads preserve the untouched stack suffix and advance the
+controlled file cursor by the actual transferred count. Invalid geometry
+still needs domain review before source acceptance.
 
 Pixels use `LocalAlloc(0x40, width*height)`. A zeroed 108-byte surface descriptor
 has size set to 108, then `Lock(NULL, descriptor, 0, NULL)` executes once. No
@@ -81,19 +82,34 @@ scripts/repo-python tests/probe_bmp_loader.py
 
 The probe executes the hash-verified, unmodified original x86 body and its
 actual string/memory helpers. It controls only file, allocation and COM
-dependencies, plus input data and caller stack storage. Twenty-three fixtures
+dependencies, plus input data and caller stack storage. The original 23 fixtures
 check three positive pitches with four stack seeds, nine failure gates, and
-two fallback paths. Comparisons cover complete destination storage and guards,
+two fallback paths. Another 432 fixtures exercise successful short reads at
+all four read stages, using four stack seeds and pitches two, three and five.
+The fallback fixtures verify the immutable original `..\\` prefix bytes;
+they do not replace the target string with a controlled prefix. Comparisons cover complete destination storage and guards,
 unchanged source pixels, converted RGB bytes, all 256 fourth bytes, ordered
 calls, return values and cdecl register/stack preservation. A deliberately
 non-BM header still reaches the successful path. Nonzero unlock/set-palette
 results and a false close result still return one.
 
 The complete private report is `build/reports/bmp-investigation/original.json`.
-It records the original/dossier identities, nine input hashes, every fixture
-and the controlled-boundary limitations. It is original-only investigation
-evidence: no maintained C comparison, real file/DirectDraw behavior, short-read
-acceptance, function-origin promotion or new semantic case count is claimed.
+It records the original/dossier identities, nine input hashes, all 455 fixtures
+and the controlled-boundary limitations. The entire loaded original code
+region is compared before and after execution. Complete read-buffer bytes
+are interned only after full-byte comparison and collision checks: 149 unique
+buffers keep the report below 800 KiB. Each read retains its requested and
+returned lengths, actual cursor position, and complete before/after identities.
+
+Partial information-header or palette reads shift the start of the next read;
+they are not independent zero-filled inputs. Header and palette stack suffixes
+retain the caller seed, while unread pixel bytes retain `LocalAlloc` zeroes.
+Successful sampled geometry remains 3-by-2 with bit count eight; sampled
+unsupported bit counts reject before allocation and leave pixels unchanged.
+Arbitrary partial-header geometry and unbounded paths remain outside this
+probe. It is original-only investigation evidence: no maintained C comparison,
+real file/DirectDraw behavior, function-origin promotion or new semantic case
+count is claimed.
 It generates no EXE, compiler object or raw stream archive.
 
 ## Focused prefix and reference review
@@ -122,7 +138,8 @@ The public request set uses REA's documented lowercase addresses:
 scripts/rea session config/rea-bitmap.json
 ```
 
-The prefix is resolved. Palette fourth-byte semantics and successful short-read
-behavior still need explicit domain review before maintained source acceptance.
-Compare natural shared C against original execution in a related batch; the
-23 original-only cases remain reference data rather than semantic promotion.
+The prefix and sampled short-read behavior are resolved. Palette fourth-byte
+semantics, arbitrary geometry and the source contract still need explicit
+domain review before maintained source acceptance. Compare natural shared C
+against original execution in a related batch; these 455 original-only cases
+remain reference data rather than semantic promotion.

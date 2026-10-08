@@ -1,0 +1,14 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x0040b390"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x0040b3a3"
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040ab90"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b550"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040bb60"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00409a30"}},
+  {"name": "xrefs", "arguments": {"address": "0x0040ab90"}},
+  {"name": "xrefs", "arguments": {"address": "0x0040b550"}},
+  {"name": "xrefs", "arguments": {"address": "0x0040bb60"}}
+]

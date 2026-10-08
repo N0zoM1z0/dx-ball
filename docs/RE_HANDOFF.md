@@ -1,5 +1,29 @@
 # Current handoff
 
+The next large graphics family is now investigated through REA: the triangle
+and two polygon controllers. A private natural C draft passes 6,084 original
+comparisons (5,400 polygons / 684 triangles), including scratch/pool lifecycle,
+full guarded pixels, pitch padding and controlled Win32 math arguments. A
+focused shared-epilogue byte/instruction review corrects the triangle's inferred
+stdcall signature to cdecl; the polygon pair retains stdcall. The initial
+unmapped fetch was our missing `MulDiv` dependency, not a game defect. Shared
+public source, actual VC4 comparison and the next acceptance replay batch
+remain to be done. See [raster investigation](RASTER_INVESTIGATION.md).
+
+The public bitmap probe now passes 455 original-only fixtures, including 432
+successful-short-read cases. It preserves the original fallback string and
+actual file-cursor advances, stack suffixes and zeroed pixel tails. Complete
+read buffers are interned after full comparisons; the report stays below
+800 KiB. These reference cases and the private raster draft do not change
+accepted counts. All 75 saved semantic inputs, 22 reports, eight exact products
+and the accepted native library verify, allowing the prior replay to be reused.
+
+Cleanup journal `20261008T042807287873Z` processes 20 redundant-alias/archive
+operations, recovering 26.46 MiB of logical duplicate bytes. All 3,122 captured
+immutable paths verify; the immediate next preview is empty. New unique
+reports/products still need final retention and housekeeping below.
+
+
 The rotation batch is accepted: three shared C entries, 1,024 new direct
 cases, and the full 40-byte wrapper exact. Current scope is **217 maintained /
 96,897 direct cases / 36 exact units / 3,518 bytes**; unknown origins are 305,

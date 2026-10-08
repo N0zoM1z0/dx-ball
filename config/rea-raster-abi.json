@@ -1,0 +1,15 @@
+[
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x0040b230",
+      "length": 16
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x0040b23d"
+    }
+  }
+]

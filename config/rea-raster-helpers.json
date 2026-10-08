@@ -1,0 +1,9 @@
+[
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b4c0"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b280"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b2b0"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b2d0"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b3c0"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b450"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x0040b240"}}
+]

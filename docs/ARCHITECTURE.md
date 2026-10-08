@@ -12,7 +12,7 @@ without checking their individual evidence.
 | Board owner | `src/boards.c`, bank I/O, editor copy, initialization, render traversal |
 | Resource owner | `src/resources.c`, SBK ownership, PCX pixels, palettes and fonts |
 | Sprite draw | `0x00404180`; maintained API dispatch with real DirectDraw bindings; physical driver fidelity remains open |
-| Software rotation | `0x004026A0`; saved REA instructions establish a four-argument pixel renderer; [investigation](ROTATION_INVESTIGATION.md) remains outside accepted source/semantic/exact counts |
+| Software rotation | `src/rotation.c`; three maintained entries, 1,024 direct cases and the full 40-byte wrapper exact; [evidence and remaining limits](ROTATION_INVESTIGATION.md) |
 | Gameplay owner | `src/gameplay.c`; tile hits, explosive scan, request-list helpers and sound pan |
 | Animation owner | `src/effects.c`; constructors, timer steps, dispatch, occupancy and propagation |
 | Particle owner | `src/particles.c`; clipped creation, movement/fading, typed list and 2x2 pixel writes |
