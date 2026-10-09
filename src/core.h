@@ -10,6 +10,11 @@ typedef struct DxBallProjectileNode {
 } DxBallProjectileNode;
 typedef struct DxBallProjectileList {
     DxBallProjectileNode *current, *first, *last;
+    /* Original +0xC word: constructor clears it; role/type unresolved. */
+    DxBallUInt unclassified_0c;
+#ifdef __cplusplus
+    DxBallProjectileList();
+#endif
 } DxBallProjectileList;
 typedef struct DxBallFireEffectNode {
     DxBallInt x, y, ticks;
@@ -17,6 +22,11 @@ typedef struct DxBallFireEffectNode {
 } DxBallFireEffectNode;
 typedef struct DxBallFireEffectList {
     DxBallFireEffectNode *current, *first, *last;
+    /* Original +0xC word: constructor clears it; role/type unresolved. */
+    DxBallUInt unclassified_0c;
+#ifdef __cplusplus
+    DxBallFireEffectList();
+#endif
 } DxBallFireEffectList;
 
 /* Every frame phase defaults to maintained owners. Their platform/COM, clock,
@@ -35,6 +45,10 @@ typedef struct DxBallFrameOps {
     void (*present)(void);
     void (*restart_round)(void);
 } DxBallFrameOps;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 extern DxBallProjectileList dxball_projectiles;
 extern DxBallFireEffectList dxball_fire_effects;
@@ -77,5 +91,9 @@ void dxball_game_frame(void);
 /* Typed lifecycle helpers; no independent target-entry acceptance claims. */
 void dxball_clear_projectiles(void);
 void dxball_clear_fire_effects(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -69,8 +69,8 @@ def main():
         print(name, lines[0], flush=True)
     expected_core = dict(pointer=4, message=28, window_class=40, security=12,
         version=148, counter=8, midi_header=64, midi_property=8,
-        sound_record=36, sound_desc=20, projectile_node=24, projectile_list=12,
-        fire_node=20, fire_list=12)
+        sound_record=36, sound_desc=20, projectile_node=24, projectile_list=16,
+        fire_node=20, fire_list=16)
     assert results['windows_core_abi-mingw'] == results['windows_core_abi-vc4'] == expected_core
     assert results['windows_directx_abi-mingw'] == dict(surface_desc=108,
         color_fill=100, sound_desc_v1=20, sound_desc_modern=36,

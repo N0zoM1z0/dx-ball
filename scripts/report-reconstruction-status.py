@@ -25,13 +25,14 @@ def status():
             "exact_bytes": sum(units[row["unit"]]["size"] for row in matches),
             "authored_confirmed": sum(row["origin"] == "authored" for row in origins),
             "runtime_identified": sum(row["origin"] == "runtime" for row in origins),
+            "compiler_generated_identified": sum(row["origin"] == "compiler_generated" for row in origins),
             "origin_unknown": sum(row["origin"] == "unknown" for row in origins),
             "semantic_validated_with_scope": len(semantics),
             "semantic_units": sorted({row["unit"] for row in semantics}),
             "playable": False,
             "products": ["analysis library", "board/resource inspectors", "experimental i686 Windows game EXEs", "read-only Windows state reader"],
             "windows_runtime_scope": "Wine ball/paddle/pause, editor bank, custom-brick clear/next-original-board, 50 custom-board clears with scoped terminal storage, natural life loss/name entry/ranking persistence/shutdown; successful focus recovery and whole-game fidelity unverified",
-            "denominator": "528 provisional Ghidra candidates, including unclassified CRT/library code"}
+            "denominator": "528 provisional Ghidra candidates, including compiler-generated initialization and unclassified CRT/library code"}
 
 
 if __name__ == "__main__":
@@ -45,5 +46,5 @@ if __name__ == "__main__":
     else:
         print(f"{result['target']}: {result['function_candidates']} provisional candidates")
         print(f"Source-present: {result['source_present']}; exact: {result['exact_functions']} ({result['exact_bytes']} bytes)")
-        print(f"Authored confirmed: {result['authored_confirmed']}; runtime identified: {result['runtime_identified']}; origin unknown: {result['origin_unknown']}")
+        print(f"Authored confirmed: {result['authored_confirmed']}; runtime identified: {result['runtime_identified']}; compiler-generated identified: {result['compiler_generated_identified']}; origin unknown: {result['origin_unknown']}")
         print(f"Windows runtime scope: {result['windows_runtime_scope']}")

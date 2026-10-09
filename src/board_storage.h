@@ -4,15 +4,15 @@
 #include "explosion_types.h"
 
 /* Recovered writable region 0x43AAB8..0x43FA87, not an original source type.
- * The terminal copy reads the peer globals and all twelve unclassified bytes.
- * Preserve those bytes as mutable state; no writer/type or padding authority
- * has been established. Native pointer widths retain the host analysis ABI. */
+ * The terminal copy reads the peer globals and all twelve unclassified bytes,
+ * including the explosion owner's constructor-cleared +0xC word.
+ * Preserve those bytes as mutable state; the remaining clock/count tails have no
+ * established writer/type or padding authority. Native pointer widths retain the host analysis ABI. */
 typedef struct DxBallBoardStorage {
     DxBallByte bank[DXBALL_BOARD_COUNT][DXBALL_BOARD_SIZE];
     DxBallUInt palette_tick;
     DxBallByte unclassified_clock_tail[4];
     DxBallExplosionList explosions;
-    DxBallByte unclassified_request_tail[4];
     DxBallInt ball_count;
     DxBallByte unclassified_count_tail[4];
     DxBallByte tiles[DXBALL_BOARD_SIZE];

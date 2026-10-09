@@ -72,6 +72,7 @@ def main():
               'tests/target_oracle.py', 'scripts/legacy_toolchain.py',
               'scripts/resource_limits.py', 'CMakeLists.txt', 'config/mingw-i686.cmake']
     inputs += [str(p.relative_to(ROOT)) for p in sorted((ROOT / 'src').glob('*.[ch]'))]
+    inputs += [str(p.relative_to(ROOT)) for p in sorted((ROOT / 'src').glob('*.cpp'))]
     report = dict(status='pass', target_sha256=target.target_sha256, cases=cases,
         terminal_cases=sum(board == 50 for _, board, *_ in rows), seed=SEED,
         offsets=list(offsets), compared_region_bytes=SIZE, source_dll_sha256=digest(library),

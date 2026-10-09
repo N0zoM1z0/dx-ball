@@ -11,6 +11,11 @@ typedef struct DxBallExplosionNode {
 
 typedef struct DxBallExplosionList {
     DxBallExplosionNode *current, *first, *last;
+    /* Original +0xC word: constructor clears it; role/type unresolved. */
+    DxBallUInt unclassified_0c;
+#ifdef __cplusplus
+    DxBallExplosionList();
+#endif
 } DxBallExplosionList;
 
 #endif

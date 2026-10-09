@@ -1,0 +1,254 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f1e0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f240"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f2a0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f2c0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f320"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f380"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f3a0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f400"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f460"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f260"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f0c0"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a898"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a8a4"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a8b8"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a8c4"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43aaa8"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43aab4"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43fa98"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43faa4"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43f8e0"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43f8ec"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43faa8"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43fab4"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43fac8"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43fad4"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a868"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a874"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a8e0"
+    }
+  },
+  {
+    "name": "xrefs",
+    "arguments": {
+      "address": "0x43a8ec"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f2e0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f340"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f3c0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f420"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f480"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f0e0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f100"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f120"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f140"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f160"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f180"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f1a0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f1c0"
+    }
+  }
+]

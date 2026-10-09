@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-DxBallParticleList dxball_particles;
 void (*dxball_particle_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = dxball_queue_region;
 
 DxBallInt DXBALL_FASTCALL dxball_append_particle(DxBallParticleList *list)

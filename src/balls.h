@@ -9,7 +9,16 @@ typedef struct DxBallBallNode {
 } DxBallBallNode;
 typedef struct DxBallBallList {
     DxBallBallNode *current, *first, *last;
+    /* Original +0xC word: constructor clears it; role/type unresolved. */
+    DxBallUInt unclassified_0c;
+#ifdef __cplusplus
+    DxBallBallList();
+#endif
 } DxBallBallList;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 extern DxBallBallList dxball_balls, dxball_duplicate_balls;
 DxBallInt DXBALL_FASTCALL dxball_append_ball(DxBallBallList *list);
@@ -21,4 +30,8 @@ void dxball_spawn_ball(void);
 void dxball_clone_balls(void);
 void dxball_bounce_ball_from_paddle(void);
 void dxball_release_attached_balls(void);
+#ifdef __cplusplus
+}
+#endif
+
 #endif

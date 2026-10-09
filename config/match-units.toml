@@ -1414,3 +1414,65 @@ data_comdats = [
   { offset = 0x9c, type = "DIR32", symbol = "$L1141", addend = 0x0, target = 0x40b196 }
 ] }
 ]
+
+[builds.list_initializers]
+source = "src/list_initializers.cpp"
+object = "build/exact/list_initializers.obj"
+inputs = ["src/list_initializers.cpp", "src/allocator.h", "src/balls.h", "src/bitmap.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/list_initializers.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/raster.h", "src/resources.h", "src/rotation.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/termination.h", "src/trig.h", "src/ui.h", "src/windows_adapter.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.initialize-projectile-list]
+build = "list_initializers"
+symbol = "??0DxBallProjectileList@@QAE@XZ"
+target_address = 0x0040F200
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []
+
+[units.initialize-ball-list]
+build = "list_initializers"
+symbol = "??0DxBallBallList@@QAE@XZ"
+target_address = 0x0040F260
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []
+
+[units.initialize-brick-effect-list]
+build = "list_initializers"
+symbol = "??0DxBallBrickEffectList@@QAE@XZ"
+target_address = 0x0040F2E0
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []
+
+[units.initialize-explosion-list]
+build = "list_initializers"
+symbol = "??0DxBallExplosionList@@QAE@XZ"
+target_address = 0x0040F340
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []
+
+[units.initialize-bonus-list]
+build = "list_initializers"
+symbol = "??0DxBallBonusList@@QAE@XZ"
+target_address = 0x0040F3C0
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []
+
+[units.initialize-particle-list]
+build = "list_initializers"
+symbol = "??0DxBallParticleList@@QAE@XZ"
+target_address = 0x0040F420
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []
+
+[units.initialize-fire-effect-list]
+build = "list_initializers"
+symbol = "??0DxBallFireEffectList@@QAE@XZ"
+target_address = 0x0040F480
+size = 64
+boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+relocations = []

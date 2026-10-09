@@ -7,7 +7,6 @@
 
 #include <stdlib.h>
 
-DxBallBonusList dxball_bonuses;
 DxBallInt dxball_bonus_count;
 DxBallInt dxball_bonus_3_active, dxball_bonus_3_ticks;
 DxBallInt dxball_bonus_7_active, dxball_bonus_8_active, dxball_bonus_9_active;

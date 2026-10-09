@@ -19,7 +19,7 @@ def main():
     directory.mkdir(parents=True, exist_ok=True)
     objects = []
     log = []
-    for source in ("src/allocator.c", "src/allocator_host.c", "src/boards.c", "src/resources.c", "src/rotation.c", "src/raster.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.c", "src/core.c", "src/runtime.c", "src/display.c", "src/device.c", "src/platform.c", "src/startup.c", "src/ui.c", "src/intro.c", "src/gameover.c", "src/editor.c", "src/midi.c", "src/sound.c"):
+    for source in ("src/allocator.c", "src/allocator_host.c", "src/boards.c", "src/resources.c", "src/rotation.c", "src/raster.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.c", "src/core.c", "src/runtime.c", "src/display.c", "src/device.c", "src/platform.c", "src/startup.c", "src/ui.c", "src/intro.c", "src/gameover.c", "src/editor.c", "src/midi.c", "src/sound.c"):
         output = directory / (Path(source).stem + ".obj")
         flags = builds["raster"]["flags"] if source == "src/raster.cpp" else build["flags"]
         log.append(toolchain.compile(ROOT / source, output, flags).stdout)

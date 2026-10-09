@@ -14,6 +14,11 @@ typedef struct DxBallBonusNode {
 
 typedef struct DxBallBonusList {
     DxBallBonusNode *current, *first, *last;
+    /* Original +0xC word: constructor clears it; role/type unresolved. */
+    DxBallUInt unclassified_0c;
+#ifdef __cplusplus
+    DxBallBonusList();
+#endif
 } DxBallBonusList;
 
 extern DxBallBonusList dxball_bonuses;

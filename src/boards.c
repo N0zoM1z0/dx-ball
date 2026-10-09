@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-DxBallBoardStorage dxball_board_storage;
 const DxBallUInt dxball_board_storage_offsets[6] = {
     offsetof(DxBallBoardStorage, bank), offsetof(DxBallBoardStorage, palette_tick),
     offsetof(DxBallBoardStorage, explosions), offsetof(DxBallBoardStorage, ball_count),

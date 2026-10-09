@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(dxball_core SHARED src/allocator.c src/allocator_host.c src/boards.c src/resources.c src/rotation.c src/raster.cpp src/bitmap.c src/gameplay.c src/effects.c src/particles.c src/bonuses.c src/geometry.c src/paddle.c src/round.c src/trig.c src/balls.c src/core.c src/runtime.c src/display.c src/device.c src/platform.c src/startup.c src/ui.c src/intro.c src/gameover.c src/editor.c src/midi.c src/sound.c)
+add_library(dxball_core SHARED src/allocator.c src/allocator_host.c src/boards.c src/resources.c src/rotation.c src/raster.cpp src/list_initializers.cpp src/bitmap.c src/gameplay.c src/effects.c src/particles.c src/bonuses.c src/geometry.c src/paddle.c src/round.c src/trig.c src/balls.c src/core.c src/runtime.c src/display.c src/device.c src/platform.c src/startup.c src/ui.c src/intro.c src/gameover.c src/editor.c src/midi.c src/sound.c)
 if(UNIX)
     target_link_libraries(dxball_core PRIVATE m)
 endif()

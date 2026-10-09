@@ -10,8 +10,6 @@
 #include "trig.h"
 #include <stdlib.h>
 
-DxBallProjectileList dxball_projectiles;
-DxBallFireEffectList dxball_fire_effects;
 DxBallInt dxball_projectile_count;
 DxBallInt dxball_launch_requested, dxball_attached_ball_cue;
 DxBallInt dxball_paused, dxball_mouse_action;

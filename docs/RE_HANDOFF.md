@@ -1,4 +1,55 @@
-# Current handoff — fixed-point C++ checkpoint
+# Current handoff — typed list initialization checkpoint
+
+The [typed list constructor batch](EXACT_LIST_INITIALIZERS.md) advances the
+checkpoint to **272 source-present (260 game/application + 12 runtime) /
+247 directly validated entries / 112,273 distinct direct cases /
+70 exact units / 9,250 code bytes**. Seven complete C++ default constructors
+add 448 exact code bytes. Existing exception-metadata acceptance remains
+136 separate bytes, excluded from the code total.
+
+The seven maintained list types now own the observed fourth 32-bit slot,
+`unclassified_0c`, whose purpose is unresolved. Real default constructors in
+`src/list_initializers.cpp` initialize all nine canonical global instances.
+The embedded explosion list absorbs its existing adjacent word; i686 board
+storage remains 20,432 bytes at unchanged field offsets. Native accessors use
+compiler-emitted offsets `[0,20000,20008,20040,20048,20448]`. No selected body,
+fake ABI argument, copied code, assembly or layout padding was introduced.
+
+All 22 existing game-owner scripts pass once with 265 frozen inputs. All 70
+units pass complete grouped cold code/metadata replay; all 14 existing exact
+oracle checks pass. Strict native Debug, MinGW and full legacy builds pass.
+Existing Windows ABI probes agree on 16-byte list size, and the existing i686
+storage comparison passes 459 complete cases, including nine board-50 cases.
+The 235 affected application semantic rows were refreshed; their scopes and
+counts are unchanged. No direct cases, semantic rows or matrices were added.
+A separate private probe verifies seven guarded original/VC4/native constructor
+cases and nine startup states; native three-pointer queue fixtures do not
+independently establish the fourth slot's meaning.
+
+REA supplied 42 bounded requests (40 distinct new Evidence records), with the
+closed run and 427-record snapshot retained. Eighteen static initializer
+stages are now classified as compiler-generated, separate from authored source
+counts. Sixteen complete generated stages match 376 bytes in a private
+comparison, outside the exact ledger. The embedded BoardStorage initialization
+uses a reconstructed aggregate constructor with no attested original address;
+its two stages and the complete startup graph have no exact acceptance.
+
+Current native alias is copied from `build/native-list-layout`, SHA-256
+`4a2c2ed0a7d42359ff6fea0d36da0db61f52f7c1a0a7d6a50f10fbdba6d605d4`.
+Historical fixed-point, display, palette, list, core and allocator products
+remain separate. `.analysis/checkpoints/exact-list-init-272-70` retains frozen
+source inputs, closed REA evidence, failed/final private proposals, generated
+comparisons, bounded probe, accepted compiler products and reports before cleanup.
+
+Next exact work: review unmaintained early helper candidates at `0x401F20`,
+`0x402040`, `0x4020E0` and related editor/geometry/UI ranges, using saved matching
+evidence first; or recover triangle declaration/expression scheduling from
+credible owner context. Do not force triangle locals or count split cleanup
+fragments as authored functions. Origins now include 260 authored, 17 runtime,
+18 compiler-generated and 233 unknown entries. The complete authored denominator
+is unproven and the >=95% objective remains active.
+
+# Previous fixed-point C++ checkpoint
 
 The [fixed-point class and lifetime batch](EXACT_FIXED_POINT.md) advances the
 checkpoint to **265 source-present (253 game/application + 12 runtime) /

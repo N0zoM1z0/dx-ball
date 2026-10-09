@@ -5,7 +5,6 @@
 
 #include <stdlib.h>
 
-DxBallBrickEffectList dxball_brick_effects;
 DxBallInt dxball_hit_dx, dxball_hit_dy;
 DxBallSurface dxball_effect_surface;
 DxBallEffectOps dxball_effect_ops = {

@@ -55,14 +55,14 @@ CHECK(offsetof(DxBallSoundBufferDesc, format) == 16, sound_desc_format);
 CHECK(sizeof(DxBallProjectileNode) == 24, projectile_node_size);
 CHECK(offsetof(DxBallProjectileNode, next) == 16, projectile_next);
 CHECK(offsetof(DxBallProjectileNode, previous) == 20, projectile_previous);
-CHECK(sizeof(DxBallProjectileList) == 12, projectile_list_size);
+CHECK(sizeof(DxBallProjectileList) == 16, projectile_list_size);
 CHECK(offsetof(DxBallProjectileList, current) == 0, projectile_current);
 CHECK(offsetof(DxBallProjectileList, first) == 4, projectile_first);
 CHECK(offsetof(DxBallProjectileList, last) == 8, projectile_last);
 CHECK(sizeof(DxBallFireEffectNode) == 20, fire_node_size);
 CHECK(offsetof(DxBallFireEffectNode, next) == 12, fire_next);
 CHECK(offsetof(DxBallFireEffectNode, previous) == 16, fire_previous);
-CHECK(sizeof(DxBallFireEffectList) == 12, fire_list_size);
+CHECK(sizeof(DxBallFireEffectList) == 16, fire_list_size);
 
 int main(void)
 {

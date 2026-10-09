@@ -1,6 +1,15 @@
 # Reviewing runtime origins
 
-The current [fixed-point C++ checkpoint](EXACT_FIXED_POINT.md) identifies eight
+The current [typed-list initialization checkpoint](EXACT_LIST_INITIALIZERS.md)
+identifies seven authored constructors and 18 compiler-generated static
+initializer stages. Origins now comprise 260 authored, 17 runtime, 18
+compiler-generated and 233 unknown entries. Source presence is 272; the generated
+stages are not separate source implementations or exact units. Recovered
+constructor bodies, canonical roots and ordinary VC4 global-initialization
+emissions support that origin inference. The full authored denominator remains
+unresolved.
+
+The preceding [fixed-point C++ checkpoint](EXACT_FIXED_POINT.md) identifies eight
 more application utility entries, bringing source presence to 265 and unknown
 origins to 258. Runtime dependencies remain 17 identified / 12 maintained.
 The reconciled class and triangle extents contain compiler cleanup/handler
