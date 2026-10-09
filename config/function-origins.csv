@@ -511,8 +511,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041F450,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F490,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041F4D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041F510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041F570,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041F510,runtime,crt_numeric,dependency,high,ev_ae3a244793f13621a162cda74914dec8c6030edc2382ca7fa8cf1c7e5fc2decb
+0x0041F570,runtime,crt_numeric,dependency,high,ev_16217354766a89a301447e87d1396fc7f6bd91da34cd7b14476c9618f48377f6
 0x0041F590,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041F5F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F670,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

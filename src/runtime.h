@@ -55,6 +55,12 @@ extern DxBallInt dxball_device_reset_requested, dxball_surface_restore_requested
 extern DxBallInt dxball_display_buffer_count;
 extern DxBallSurface dxball_primary_surface, dxball_secondary_surface;
 
+/* The Windows CRT supplies this cdecl import. The portable host bridge is
+   limited to the recovered unsigned32 decimal score domain. */
+#if !defined(_WIN32)
+char *_ultoa(unsigned long value, char *buffer, int radix);
+#endif
+
 DxBallUInt dxball_current_time(void);
 DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval);
 void dxball_draw_paddle(void);

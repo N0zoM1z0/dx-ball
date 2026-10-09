@@ -13,7 +13,7 @@
 #include "editor.h"
 #include "midi.h"
 #include "sound.h"
-#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 DxBallClockOps dxball_clock_ops;
@@ -112,27 +112,32 @@ void dxball_draw_score(void)
     char text[11];
     DxBallInt count, lives, x, y, i;
     DxBallRect rect;
-    DxBallDDSurface *surface;
-    sprintf(text, "%u", (DxBallUInt)dxball_score);
+    _ultoa((unsigned long)(DxBallUInt)dxball_score, text, 10);
     count = (DxBallInt)strlen(text);
     rect.left = 20; rect.top = 0; rect.right = count * 35 + 20; rect.bottom = 32;
-    surface = (DxBallDDSurface *)dxball_board_surface;
-    surface->vtable->blt_fast(surface, 20, 0, (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
+        (DxBallDDSurface *)dxball_board_surface, 20, 0,
+        (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
     dxball_select_surface(dxball_board_surface);
-    dxball_runtime_ops.draw_text(30, 31, count, text);
-    dxball_render_ops.invalidate(rect);
+    dxball_draw_text(30, 31, count, text);
+    dxball_invalidate_region(rect);
     lives = dxball_lives;
     if (lives > 10) lives = 10;
-    rect.left = 620 - (lives + 1) * 22; rect.top = 0; rect.right = 620; rect.bottom = 16;
-    surface->vtable->blt_fast(surface, rect.left, 0, (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+    ++lives;
+    lives *= 22;
+    rect.left = 620 - lives; rect.top = 0; rect.right = 620; rect.bottom = 16;
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
+        (DxBallDDSurface *)dxball_board_surface, rect.left, 0,
+        (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
     x = 598; y = 2;
     if (dxball_lives > 20) dxball_lives = 20;
     for (i = 1; i <= dxball_lives - 1; ++i) {
-        dxball_effect_ops.keyed_sprite(31, x, y);
+        dxball_draw_keyed_sprite(31, x, y);
         x -= 22;
         if (i == 10) { x = 598; y += 8; }
     }
-    dxball_render_ops.invalidate(rect);
+    dxball_invalidate_region(rect);
+    return;
 }
 
 void dxball_refresh_score(void)
@@ -226,59 +231,79 @@ void dxball_restart_round(void)
 void dxball_redraw_game(void)
 {
     DxBallRect rect;
-    DxBallDDSurface *board, *primary, *secondary;
     rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
-    board = (DxBallDDSurface *)dxball_board_surface;
-    primary = (DxBallDDSurface *)dxball_primary_surface;
-    secondary = (DxBallDDSurface *)dxball_secondary_surface;
-    dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-    dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-    board->vtable->blt(board, &rect, (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
+    dxball_clear_surface(dxball_primary_surface, 0);
+    dxball_clear_surface(dxball_board_surface, 0);
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_board_surface, &rect,
+        (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
     dxball_draw_score();
     dxball_draw_board(0);
-    if (dxball_paused == 1) dxball_runtime_ops.draw_centered_text(320, 240, 6, "PAUSED");
-    primary->vtable->blt(primary, &rect, board, &rect, 0x01000000, NULL);
+    if (dxball_paused == 1) dxball_draw_centered_text(320, 240, 6, "PAUSED");
+    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_primary_surface, &rect,
+        (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
     if (dxball_display_buffer_count > 0 && dxball_draw_to_primary == 0) {
-        secondary->vtable->blt(secondary, &rect, board, &rect, 0x01000000, NULL);
+        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_secondary_surface, &rect,
+            (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
     }
+    return;
 }
 
 void dxball_initialize_game(void)
 {
-    DxBallInt i;
-    static const struct { DxBallInt slot; const char *path; } sounds[] = {
-        {0, "boing.wav"}, {1, "effect.wav"}, {2, "bang.wav"}, {3, "ao-laser.wav"},
-        {4, "bassdrum.wav"}, {5, "byeball.wav"}, {7, "wowpulse.wav"}, {8, "saucer.wav"},
-        {9, "orchestr.wav"}, {10, "effect2.wav"}, {11, "sweepdow.wav"}, {12, "peow!.wav"},
-        {13, "fanfare.wav"}, {14, "padexplo.wav"}, {15, "ricochet.wav"}, {16, "swordswi.wav"},
-        {17, "gunfire.wav"}, {18, "humm.wav"}, {19, "glass.wav"}, {20, "orchblas.wav"},
-        {21, "voltage.wav"}, {22, "thudclap.wav"}, {30, "tank.wav"}, {31, "xplosht1.wav"},
-        {32, "xploshor.wav"}
-    };
-    dxball_runtime_ops.clear_surface(dxball_background_surface, 0);
-    dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "mbbkgrnd.pcx", 2, 0, 0);
-    dxball_runtime_ops.load_sprite_bank(0, 1, "mball2.sbk");
+    dxball_clear_surface(dxball_background_surface, 0);
+    dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "mbbkgrnd.pcx", 2, 0, 0);
+    dxball_load_sprite_bank(0, 1, "mball2.sbk");
     dxball_select_sprite_bank(0);
-    dxball_runtime_ops.load_sprite_bank(1, 0, "thefont.sbk");
+    dxball_load_sprite_bank(1, 0, "thefont.sbk");
     dxball_select_font_bank(1);
     dxball_sprite_banks[2].count = 1; dxball_sprite_banks[2].allocation_mode = 0;
-    dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-    dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_board_surface, "bigbolt.pcx", 0, 0, 0);
+    dxball_clear_surface(dxball_board_surface, 0);
+    dxball_load_pcx((DxBallDDSurface *)dxball_board_surface, "bigbolt.pcx", 0, 0, 0);
     dxball_select_sprite_bank(2);
-    dxball_runtime_ops.capture_sprite(1, 0, 0, 159, 479);
+    dxball_capture_sprite(1, 0, 0, 159, 479);
     dxball_select_sprite_bank(0);
-    for (i = 0; i < (DxBallInt)(sizeof(sounds) / sizeof(sounds[0])); ++i) {
-        dxball_runtime_ops.load_sound(sounds[i].slot, sounds[i].path);
-    }
+    dxball_load_sound(0, "boing.wav");
+    dxball_load_sound(1, "effect.wav");
+    dxball_load_sound(2, "bang.wav");
+    dxball_load_sound(3, "ao-laser.wav");
+    dxball_load_sound(4, "bassdrum.wav");
+    dxball_load_sound(5, "byeball.wav");
+    dxball_load_sound(7, "wowpulse.wav");
+    dxball_load_sound(8, "saucer.wav");
+    dxball_load_sound(9, "orchestr.wav");
+    dxball_load_sound(10, "effect2.wav");
+    dxball_load_sound(11, "sweepdow.wav");
+    dxball_load_sound(12, "peow!.wav");
+    dxball_load_sound(13, "fanfare.wav");
+    dxball_load_sound(14, "padexplo.wav");
+    dxball_load_sound(15, "ricochet.wav");
+    dxball_load_sound(16, "swordswi.wav");
+    dxball_load_sound(17, "gunfire.wav");
+    dxball_load_sound(18, "humm.wav");
+    dxball_load_sound(19, "glass.wav");
+    dxball_load_sound(20, "orchblas.wav");
+    dxball_load_sound(21, "voltage.wav");
+    dxball_load_sound(22, "thudclap.wav");
+    dxball_load_sound(30, "tank.wav");
+    dxball_load_sound(31, "xplosht1.wav");
+    dxball_load_sound(32, "xploshor.wav");
     dxball_paused = 0; dxball_displayed_score = 999999999;
     dxball_score = 0; dxball_lives = 3;
     dxball_paddle_frame = 0; dxball_paddle_tick = 0;
     dxball_board_index = 0;
     dxball_initialize_board();
     dxball_reset_round();
-    dxball_runtime_ops.reset_regions();
-    dxball_runtime_ops.bind_board_surface(dxball_board_surface);
-    dxball_runtime_ops.bind_display_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
+    dxball_reset_regions();
+    dxball_bind_board_surface(dxball_board_surface);
+    if (dxball_draw_to_primary != 0) {
+        dxball_bind_display_surface(dxball_primary_surface);
+    } else {
+        dxball_bind_display_surface(dxball_secondary_surface);
+    }
+    return;
 }
 
 void dxball_dispose_game(DxBallInt fade)

@@ -1,29 +1,29 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **102 exact functions / 11,959
+The current shared-source checkpoint retains **104 exact functions / 12,964
 code bytes**, plus 136 separate exception metadata bytes. The
-[round lifecycle batch](EXACT_LIFECYCLE.md) restores four complete bodies /911
-original bytes and accepts finish (46), restart (327) and dispose (112). Reset has
-426-byte original/emitted extents with 20 bank-address scheduling differences.
-All 99 preceding complete code/metadata identities survive unchanged. The same
-source, ABI and ownership serve every compiler profile; no name/order trials,
-fake frame slots or padding force these results.
+[game setup/redraw/score batch](EXACT_RUNTIME_SETUP.md) restores 1,438 complete
+original bytes. Initialize (736) and redraw (269) match all 1,005 bytes; score
+retains 76 complete differences in equal 433-byte extents. All 102 preceding
+complete code/metadata identities survive unchanged. No source-name/order trials,
+profile-selected bodies/layouts, fake locals or padding force acceptance.
 
-One grouped cold epoch supplies all 22 actual compiler objects. All 22 owner
-scripts, 14 rejection controls, rerun 7,164 raster and 1,024 rotation COFF vectors,
-strict MinGW and full VC4 builds pass. The actual cold raster object is adopted
-for the unchanged complete semantic recipe without another compiler invocation;
-the provenance explicitly distinguishes the executed cold driver from the
-unchanged semantic driver's identity. Source presence and case counts stay fixed.
+One configured cold epoch supplies 22 actual objects. All 22 owner scripts,
+14 existing rejection controls, rerun 7,164 raster / 1,024 rotation COFF vectors,
+strict MinGW and full VC4 builds pass. The actual cold raster product is adopted
+for the identical complete semantic recipe without recompilation; provenance
+separates the executed cold driver from the semantic driver's identity.
+All 127 new relocations and 30 literal operands receive full attestation.
+Two additional runtime identities cover the complete _ultoa/xtoa dependency
+sections, independently of authored source or configured exact units.
 
-The preceding [connected-effects batch](EXACT_CONNECTED_EFFECTS.md) accepted
-three new bodies /645 bytes and naturally recovered keyed stretch139 and rotated
-height191, while seven prior units /2,049 bytes lost exact status. Those current
-nonexact candidates retain their full recorded differences and historical zeros.
-Current palette/COM differences are 8/7/10/10/18; the earlier human handoff's
-right-rotation count 8 was stale, while the parent's actual cold result was10.
-Ball/projectile updates retain23/8 differences; triangle99, elapsed3 and distance52.
-Every relocation and literal is explicit, with full byte comparison and no masking.
+The preceding [round lifecycle batch](EXACT_LIFECYCLE.md) restored 911 complete
+bytes and accepted three bodies / 485 bytes. Reset remains 20 differences in
+its full 426-byte body; its generated path symbol is rebound by complete literal
+identity after this source change. Current palette/COM differences stay
+8/7/10/10/18; balls/projectiles23/8, triangle99, distance52, elapsed3 and
+clear-all-entities59 remain full nonexact comparisons. Historical accepted
+products cannot replace a changed current emission.
 
 The historical display checkpoint retained 55 exact functions / 8,231 bytes.
 Its [display batch](EXACT_DISPLAY.md) adds four missing Blt/rectangle-queue
@@ -99,7 +99,7 @@ are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
 nonzero exit status. At that historical checkpoint, normal replay selected 35 accepted units.
-The current normal replay selects the complete configured 102-unit set.
+The current normal replay selects the complete configured 104-unit set.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

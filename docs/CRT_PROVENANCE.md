@@ -124,3 +124,16 @@ The libraries, selected vendor objects and original byte observations stay
 private. Maintained game source receives no copied vendor bodies. Host services
 remain integration bridges until their broader behavior is independently
 established; origin identification does not claim full game reconstruction.
+
+## Unsigned score conversion dependency
+
+The [game setup/score batch](EXACT_RUNTIME_SETUP.md) independently identifies
+_ultoa at 0x41F570 (30 bytes) and static xtoa at 0x41F510 (96 bytes). Modern REA
+owns both complete contiguous bodies and observes the explicit helper call,
+zero sign flag, returned buffer and unsigned DIV. Complete dedicated sections
+in pinned libc.lib agree with all 126 bytes, including the wrapper's single
+REL32 operand bound to the separately observed helper. This establishes two
+runtime origins (50 runtime / 166 unknown), independently of source presence,
+maintained vendor bodies and configured exact compiler units. The checked Linux
+score bridge supports unsigned32 decimal only; Windows supplies its real CRT.
+Original compiler release and broader vendor runtime behavior remain unproved.

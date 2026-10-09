@@ -1,5 +1,14 @@
 # Game lifecycle and mode dispatch
 
+The [game setup/redraw/score restoration](EXACT_RUNTIME_SETUP.md) recovers three
+complete controllers / 1,438 original bytes. Initialize (736) and redraw (269)
+match all 1,005 bytes; score (433) retains 76 full differences. The 25 separate
+sound-load sites, both display binds, live surface rereads, genuine unsigned
+converter and consumed lives/restore-span value follow complete instruction
+and dependency evidence. Existing 105 selected cases and all 1,510 runtime
+owner cases pass without matrix changes. The portable CRT bridge is bounded
+to the observed unsigned32 decimal caller; Windows uses its real CRT.
+
 The [round lifecycle restoration](EXACT_LIFECYCLE.md) recovers complete finish,
 reset, restart and dispose bodies /911 original bytes. Finish (46), restart (327) and
 dispose (112) match all 485 bytes. Reset's full 426-byte emission retains 20 bank-address

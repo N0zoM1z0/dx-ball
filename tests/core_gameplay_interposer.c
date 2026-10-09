@@ -1,22 +1,28 @@
 /* Native-test boundaries for real production sound/RNG/render/lifecycle references. */
 #include "gameplay.h"
 #include "core.h"
+#include "effects.h"
 #include "display.h"
 #include "device.h"
 #include "midi.h"
 #include "sound.h"
 #include "startup.h"
+#include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 static DxBallGameplayOps *bound_ops;
 static DxBallRenderOps *bound_render;
 static DxBallFrameOps *bound_frame;
+static DxBallEffectOps *bound_effect;
 static DxBallRuntimeOps *bound_runtime;
 static unsigned stop_active, play_active, random_active;
 static unsigned invalidate_active, effect_active;
 static unsigned palette_load_active, palette_active, clear_active, reset_active;
 static unsigned sounds_release_active, banks_release_active, music_close_active, wait_active;
+static unsigned pcx_load_active, bank_load_active, capture_active, sound_load_active;
+static unsigned board_bind_active, display_bind_active, centered_text_active;
+static unsigned text_active, keyed_active;
 
 static void binding_failure(const char *message)
 {
@@ -36,16 +42,19 @@ int dxball_test_bind_gameplay_ops(DxBallGameplayOps *ops)
     return 0;
 }
 
-int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame)
+int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame,
+                                     DxBallEffectOps *effect)
 {
-    if (render == NULL || frame == NULL) return -1;
+    if (render == NULL || frame == NULL || effect == NULL) return -1;
     if (render->invalidate == NULL || frame->draw_effect_sprite == NULL ||
-        frame->wait_frames == NULL) return -2;
+        frame->wait_frames == NULL || effect->keyed_sprite == NULL) return -2;
     if (render->invalidate == dxball_invalidate_region ||
         frame->draw_effect_sprite == dxball_draw_effect_sprite ||
-        frame->wait_frames == dxball_wait_frames) return -3;
+        frame->wait_frames == dxball_wait_frames ||
+        effect->keyed_sprite == dxball_draw_keyed_sprite) return -3;
     bound_render = render;
     bound_frame = frame;
+    bound_effect = effect;
     return 0;
 }
 
@@ -54,16 +63,127 @@ int dxball_test_bind_runtime_ops(DxBallRuntimeOps *ops)
     if (ops == NULL) return -1;
     if (ops->load_saved_palette == NULL || ops->palette_transition == NULL ||
         ops->clear_surface == NULL || ops->reset_regions == NULL ||
+        ops->load_pcx == NULL || ops->load_sprite_bank == NULL || ops->capture_sprite == NULL ||
+        ops->load_sound == NULL || ops->bind_board_surface == NULL ||
+        ops->bind_display_surface == NULL || ops->draw_text == NULL ||
+        ops->draw_centered_text == NULL ||
         ops->release_sounds == NULL || ops->release_sprite_banks == NULL ||
         ops->finalize_game_resources == NULL) return -2;
     if (ops->load_saved_palette == dxball_load_saved_palette ||
         ops->palette_transition == dxball_palette_transition ||
         ops->clear_surface == dxball_clear_surface || ops->reset_regions == dxball_reset_regions ||
+        ops->load_pcx == dxball_load_pcx || ops->load_sprite_bank == dxball_load_sprite_bank ||
+        ops->capture_sprite == dxball_capture_sprite || ops->load_sound == dxball_load_sound ||
+        ops->bind_board_surface == dxball_bind_board_surface ||
+        ops->bind_display_surface == dxball_bind_display_surface ||
+        ops->draw_text == dxball_draw_text ||
+        ops->draw_centered_text == dxball_draw_centered_text ||
         ops->release_sounds == dxball_release_sounds ||
         ops->release_sprite_banks == dxball_release_sprite_banks ||
         ops->finalize_game_resources == dxball_close_music) return -3;
     bound_runtime = ops;
     return 0;
+}
+
+void dxball_draw_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text)
+{
+    if (bound_runtime == NULL || bound_runtime->draw_text == NULL)
+        binding_failure("CoreNative draw_text: fixture table is unbound or callback is null");
+    if (text_active || bound_runtime->draw_text == dxball_draw_text)
+        binding_failure("CoreNative draw_text: recursive interposer callback");
+    text_active = 1;
+    bound_runtime->draw_text(x, baseline, count, text);
+    text_active = 0;
+}
+
+void dxball_draw_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
+{
+    if (bound_effect == NULL || bound_effect->keyed_sprite == NULL)
+        binding_failure("CoreNative draw_keyed_sprite: fixture table is unbound or callback is null");
+    if (keyed_active || bound_effect->keyed_sprite == dxball_draw_keyed_sprite)
+        binding_failure("CoreNative draw_keyed_sprite: recursive interposer callback");
+    keyed_active = 1;
+    bound_effect->keyed_sprite(sprite, x, y);
+    keyed_active = 0;
+}
+
+void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
+                     DxBallInt palette_mode, DxBallInt x, DxBallInt y)
+{
+    if (bound_runtime == NULL || bound_runtime->load_pcx == NULL)
+        binding_failure("CoreNative load_pcx: fixture table is unbound or callback is null");
+    if (pcx_load_active || bound_runtime->load_pcx == dxball_load_pcx)
+        binding_failure("CoreNative load_pcx: recursive interposer callback");
+    pcx_load_active = 1;
+    bound_runtime->load_pcx(surface, path, palette_mode, x, y);
+    pcx_load_active = 0;
+}
+
+void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const char *path)
+{
+    if (bound_runtime == NULL || bound_runtime->load_sprite_bank == NULL)
+        binding_failure("CoreNative load_sprite_bank: fixture table is unbound or callback is null");
+    if (bank_load_active || bound_runtime->load_sprite_bank == dxball_load_sprite_bank)
+        binding_failure("CoreNative load_sprite_bank: recursive interposer callback");
+    bank_load_active = 1;
+    bound_runtime->load_sprite_bank(bank, allocation_mode, path);
+    bank_load_active = 0;
+}
+
+void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
+                           DxBallInt width, DxBallInt height)
+{
+    if (bound_runtime == NULL || bound_runtime->capture_sprite == NULL)
+        binding_failure("CoreNative capture_sprite: fixture table is unbound or callback is null");
+    if (capture_active || bound_runtime->capture_sprite == dxball_capture_sprite)
+        binding_failure("CoreNative capture_sprite: recursive interposer callback");
+    capture_active = 1;
+    bound_runtime->capture_sprite(sprite, x, y, width, height);
+    capture_active = 0;
+}
+
+void dxball_load_sound(DxBallInt slot, const char *path)
+{
+    if (bound_runtime == NULL || bound_runtime->load_sound == NULL)
+        binding_failure("CoreNative load_sound: fixture table is unbound or callback is null");
+    if (sound_load_active || bound_runtime->load_sound == dxball_load_sound)
+        binding_failure("CoreNative load_sound: recursive interposer callback");
+    sound_load_active = 1;
+    bound_runtime->load_sound(slot, path);
+    sound_load_active = 0;
+}
+
+void dxball_bind_board_surface(DxBallSurface surface)
+{
+    if (bound_runtime == NULL || bound_runtime->bind_board_surface == NULL)
+        binding_failure("CoreNative bind_board_surface: fixture table is unbound or callback is null");
+    if (board_bind_active || bound_runtime->bind_board_surface == dxball_bind_board_surface)
+        binding_failure("CoreNative bind_board_surface: recursive interposer callback");
+    board_bind_active = 1;
+    bound_runtime->bind_board_surface(surface);
+    board_bind_active = 0;
+}
+
+void dxball_bind_display_surface(DxBallSurface surface)
+{
+    if (bound_runtime == NULL || bound_runtime->bind_display_surface == NULL)
+        binding_failure("CoreNative bind_display_surface: fixture table is unbound or callback is null");
+    if (display_bind_active || bound_runtime->bind_display_surface == dxball_bind_display_surface)
+        binding_failure("CoreNative bind_display_surface: recursive interposer callback");
+    display_bind_active = 1;
+    bound_runtime->bind_display_surface(surface);
+    display_bind_active = 0;
+}
+
+void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text)
+{
+    if (bound_runtime == NULL || bound_runtime->draw_centered_text == NULL)
+        binding_failure("CoreNative draw_centered_text: fixture table is unbound or callback is null");
+    if (centered_text_active || bound_runtime->draw_centered_text == dxball_draw_centered_text)
+        binding_failure("CoreNative draw_centered_text: recursive interposer callback");
+    centered_text_active = 1;
+    bound_runtime->draw_centered_text(x, baseline, count, text);
+    centered_text_active = 0;
 }
 
 void dxball_load_saved_palette(const char *path)

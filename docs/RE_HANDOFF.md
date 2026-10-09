@@ -1,4 +1,46 @@
-# Current handoff — complete round lifecycle controllers
+# Current handoff — complete game setup, redraw and score controllers
+
+Priority: **exact restoration, moderate tests and grouped replay**. The
+[setup/redraw/score batch](EXACT_RUNTIME_SETUP.md) restores three complete bodies /
+1,438 original bytes: initialize736 and redraw269 match all 1,005 bytes; score433
+retains 76 whole differences. All 102 prior complete code/metadata identities
+survive unchanged. No name/order trials, fake storage, padding or source profiles.
+
+Acceptance: **283 source-present / 247 scoped rows / 112,273 unit-distinct cases /
+104 exact functions / 12,964 code bytes + 136 separate metadata bytes**.
+Origins270 authored / 50 runtime / 42 generated / 166 unknown. New _ultoa30 and
+xtoa96 identities use complete pinned library sections and modern REA ABI/body
+proof; they add no authored source or exact compiler unit. Snapshot468 records.
+
+All 22 owner scripts pass in 560.878s against 286 physically frozen inputs
+and one Debug native product. One configured cold epoch supplies 22 actual
+objects. Fourteen rejection controls, fresh 7,164 raster / 1,024 rotation COFF
+vectors and both Windows builds pass. Existing case matrices/oracles stay fixed.
+The current shim forwards 22 genuine symbols through actual copied-image tables,
+checks 23 default slots, and retains 45 actual MD dependencies. EffectOps binding
+extends the private C setter and ctypes protocol to three pointers; no constructor
+or fixture changes. Host _ultoa bridge is platform-only and unsigned32/decimal10.
+
+Native canonical/family SHA256
+f7da49eb000aed5ebd96f38ff6c265e175d7336321e3ddf3b003f200a7124c39;
+shim bf756f93984558565cf059a9000ac4a2ec2f5c25dc15a432ddbdb81ca917b6ea.
+Checkpoint .analysis/checkpoints/exact-runtime-setup-283-104, parent lifecycle102.
+Full primary dossiers, actual diagnostic/cold products and frozen before-recipes
+are retained. The runtime declared closure adds only the already-tested host
+bridge after verification, with explicit one-change provenance and no replay
+rehashing. All current mutable products remain unshared after verified cleanup.
+
+Next connected intro scope: initialize277, redraw587, point-init1996 and dispose175
+=3,035 complete original bytes. Saved primary evidence establishes the genuine
+consumed 287-byte binary point mask, 68 ones, explicit calls and unsigned converter.
+Point update711 has an unconsumed effect-request local-state question; preserve
+that gap rather than invent inert storage. Larger gameplay frame1683/span1688
+still has unresolved gap40FB21..25. All new analysis only pinned scripts/rea,
+JVM512MiB, one writable compiler/provider session, one CPU, serial native builds,
+silent Pulse sink. English gpt-6.1-sol: commits/public push remain authorized.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete round lifecycle checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [round lifecycle batch](EXACT_LIFECYCLE.md) restores four complete bodies /

@@ -161,10 +161,19 @@ class _Image:
                       ('dxball_runtime_ops', 15, 1, 'dxball_palette_transition'),
                       ('dxball_runtime_ops', 15, 2, 'dxball_clear_surface'),
                       ('dxball_runtime_ops', 15, 3, 'dxball_reset_regions'),
+                      ('dxball_runtime_ops', 15, 4, 'dxball_load_pcx'),
+                      ('dxball_runtime_ops', 15, 5, 'dxball_load_sprite_bank'),
+                      ('dxball_runtime_ops', 15, 6, 'dxball_capture_sprite'),
+                      ('dxball_runtime_ops', 15, 7, 'dxball_load_sound'),
+                      ('dxball_runtime_ops', 15, 8, 'dxball_bind_board_surface'),
+                      ('dxball_runtime_ops', 15, 9, 'dxball_bind_display_surface'),
+                      ('dxball_runtime_ops', 15, 10, 'dxball_draw_text'),
+                      ('dxball_runtime_ops', 15, 11, 'dxball_draw_centered_text'),
                       ('dxball_runtime_ops', 15, 12, 'dxball_release_sounds'),
                       ('dxball_runtime_ops', 15, 13, 'dxball_release_sprite_banks'),
                       ('dxball_runtime_ops', 15, 14, 'dxball_close_music'),
-                      ('dxball_platform_ops', 9, 5, 'dxball_close_music')]
+                      ('dxball_platform_ops', 9, 5, 'dxball_close_music'),
+                      ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
         for table, length, slot, symbol in boundaries:
             defaults = (C.c_void_p * length).in_dll(self.lib, table)
             real = C.cast(getattr(self.lib, symbol), C.c_void_p).value
@@ -190,7 +199,7 @@ def fixture_image(library):
         _shim_sha256 = shim_sha256
         _shim.dxball_test_bind_gameplay_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_gameplay_ops.restype = C.c_int
-        _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p]
+        _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
         _shim.dxball_test_bind_runtime_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_runtime_ops.restype = C.c_int
@@ -221,9 +230,11 @@ def bind_gameplay(image, library, table):
 
 
 def bind_render_frame(image, library, render, frame):
-    """Bind current owner tables after the frame fixture callbacks are installed."""
+    """Bind current render/frame/effect tables after inherited and frame callbacks."""
     addresses = []
-    for symbol, table in (('dxball_render_ops', render), ('dxball_frame_ops', frame)):
+    effect = (C.c_void_p * 5).in_dll(library, 'dxball_effect_ops')
+    for symbol, table in (('dxball_render_ops', render), ('dxball_frame_ops', frame),
+                          ('dxball_effect_ops', effect)):
         actual = C.addressof(C.c_void_p.in_dll(library, symbol))
         if actual != C.addressof(table):
             raise RuntimeError('CoreNative callback table does not belong to its native handle: ' + symbol)
@@ -232,9 +243,10 @@ def bind_render_frame(image, library, render, frame):
         addresses.append(actual)
     result = _shim.dxball_test_bind_render_frame_ops(*addresses)
     if result != 0:
-        reason = {-1: 'null render/frame table', -2: 'null invalidate/effect/wait callback',
-                  -3: 'invalidate/effect/wait slot resolves recursively to the interposer'}
+        reason = {-1: 'null render/frame/effect table', -2: 'null invalidate/effect/wait/keyed callback',
+                  -3: 'invalidate/effect/wait/keyed slot resolves recursively to the interposer'}
         raise RuntimeError('CoreNative render/frame binding rejected: ' + reason.get(result, str(result)))
+    image.effect_table = effect
 
 
 def bind_runtime(image, library, table):
