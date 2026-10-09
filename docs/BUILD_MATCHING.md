@@ -1,10 +1,16 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **45 exact functions / 4,992 bytes**.
-The [cloning and cleanup batch](EXACT_LISTS.md) adds the complete 637-byte
-ball clone and five 48-byte cleanup entries, with five new source mappings.
-Its total-cleanup caller remains a 107/106-byte candidate. All 45 units pass
-grouped cold replay after literal bindings are refreshed and content-attested.
+The current shared-source checkpoint retains **48 exact functions / 6,012 bytes**.
+The [palette batch](EXACT_PALETTES.md) adds three complete RGB-tail loaders,
+including the missing surface palette creation/attachment entry, and 1,020
+exact bytes. All 48 units pass grouped cold replay. The resource build uses
+`/ML` to reproduce the original inline getc expression from pinned stdio.h;
+other exact builds retain `/MT`. The same source and layouts serve all profiles.
+
+The preceding [cloning and cleanup batch](EXACT_LISTS.md) adds the complete
+637-byte ball clone and five 48-byte cleanup entries, with five new source
+mappings. Its total-cleanup caller remains a 107/106-byte candidate. Its 45
+units passed grouped cold replay after content-attested literal rebinding.
 
 The [core source batch](EXACT_CORE.md) adds the complete 232-byte trig initializer,
 both 130-byte lookups and the 244-byte ball constructor. Its 39 configured units
@@ -58,7 +64,8 @@ These functions retain their scoped semantic validation. Their exact claims
 are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
-nonzero exit status. The normal replay selects the 35 currently accepted units.
+nonzero exit status. At that historical checkpoint, normal replay selected 35 accepted units.
+The current normal replay selects the complete configured 48-unit set.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object
@@ -93,11 +100,13 @@ no compiler-selected layouts. Explicit terminal `return;` statements are normal
 source control flow: a controlled VC4.0 `/Od` probe showed they emit the target's
 five-byte jump to its epilogue. No copied instructions or padding are used.
 
-Canonical compile flags:
+Default exact compile flags:
 
 ```text
 /nologo /c /Od /Ob0 /Oi- /Oy- /Gd /MT /Gy
 ```
+
+The resource exact build replaces `/MT` with `/ML`; see [palette evidence](EXACT_PALETTES.md).
 
 These are reproducible per-unit evidence. Matching individual functions does not prove
 all original compilation flags, the complete compiler release, or original

@@ -189,3 +189,13 @@ working files after matching their sealed controls, shares 47 immutable
 duplicates and recovers 828 KiB of measured disk usage. All 6,981 immutable
 paths, 2,015 references and 49 original files verify; the next preview is empty.
 Current successful products, original assets and pinned tools stay retained.
+
+
+## Subsequent exact palette restoration
+
+[EXACT_PALETTES.md](EXACT_PALETTES.md) restores the complete 337-byte live loader,
+307-byte saved loader and missing 376-byte surface palette constructor. The
+resource exact build selects `/ML` for the original inline stdio reads. The
+new constructor has complete-byte acceptance and three private bounded COM
+checks; it adds no tracked direct cases or semantic row. Its active use and
+physical DirectDraw behavior remain unresolved.

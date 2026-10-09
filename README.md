@@ -16,9 +16,9 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **252 source-present functions** (240 game entries and 12 runtime dependencies),
+> entity owners: **253 source-present functions** (241 game entries and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **45 byte-exact functions totaling 4,992 bytes**. Windows builds now also produce
+> **48 byte-exact functions totaling 6,012 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
@@ -34,6 +34,10 @@ more complete functions match the pinned original after every relocation, adding
 The [cloning and cleanup batch](docs/EXACT_LISTS.md) restores the complete
 637-byte ball clone and five missing typed cleanup entries, adding another
 877 exact bytes and five source mappings. Direct-case counts stay unchanged.
+The [palette exact batch](docs/EXACT_PALETTES.md) restores two inline RGB-tail
+loaders and the missing palette creation/attachment entry. Three complete
+emissions add 1,020 bytes and one source mapping using the evidenced VC4
+single-threaded stdio model. The surface constructor's active use remains open.
 For example, the [software rotation investigation](docs/ROTATION_INVESTIGATION.md)
 uses saved REA instructions to recover an omitted angle argument, an asymmetric
 pixel write and precise floating-point stores. The shared C passes 1,024

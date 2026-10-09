@@ -121,6 +121,8 @@ DxBallInt dxball_find_glyph(char code);
 DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline);
 void dxball_load_live_palette(const char *path);
 void dxball_load_saved_palette(const char *path);
+/* Read the live RGB tail, create a palette and attach it after successful creation. */
+void dxball_load_surface_palette(DxBallDDSurface *, const char *);
 void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                      DxBallInt palette_mode, DxBallInt x, DxBallInt y);
 

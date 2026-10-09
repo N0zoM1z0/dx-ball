@@ -1,5 +1,37 @@
 # Current handoff
 
+The [palette exact batch](EXACT_PALETTES.md) advances the current checkpoint to
+**253 source-present (241 game + 12 runtime) / 247 directly validated entries /
+112,273 distinct direct cases / 48 exact units / 6,012 bytes**. Three complete
+emissions add 1,020 bytes, including the previously missing `0x409A30` surface
+palette constructor. All 22 existing game owner scripts pass once against
+frozen inputs. Grouped cold replay accepts all 48 complete units, and the
+existing rejection controls and MinGW compile pass. No tracked tests, fixtures,
+direct cases, semantic rows or campaign observations are added.
+
+The resource exact compiler model now uses `/ML`, supported by original inline
+getc paths, pinned VC4 stdio.h and prior single-threaded CRT provenance.
+An unnamed ordinary forward declaration preserves all previous emissions;
+there are no profile-selected C bodies or layouts. Each equal rb literal has
+its independently attested original address. The constructor creates a palette
+and attaches only after successful creation; a private three-case COM-boundary
+check agrees on state and calls. Its active use remains unresolved.
+
+Current native alias is copied from `build/native-exact-palettes`, SHA-256
+`b6741530b88a022417af49beaaaa62f487edd8012bfed17146c0377d1f8e2eae`. Prior exact-list, exact-core and allocator/campaign products
+remain separate with their historical identities. The private archive is
+`.analysis/checkpoints/exact-palettes-253-48`; frozen replay inputs and complete
+closed REA records are retained before cleanup. Mutable products and snapshots
+are never hardlinked into archives.
+
+Next exact candidate: the current ordinary sprite blit emits a complete
+195-byte body with zero differences under a reviewed private relocation
+refresh. It is recorded in `.analysis/exact-palettes/next-scope.json` and remains
+a candidate in this batch; review/promote it without changing source or
+inventing new semantic cases. Broader owner/class helpers and unknown entries
+still require analysis. The >=95% complete-source objective remains open;
+270 origins remain unknown, and the full authored denominator is unproven.
+
 The [cloning and cleanup batch](EXACT_LISTS.md) advances the current checkpoint
 to **252 source-present / 247 directly validated entries / 112,273 direct
 cases / 45 exact units / 4,992 bytes**. Six complete functions add 877 exact
@@ -17,10 +49,7 @@ The prior exact-core and allocator/campaign native products remain separate
 and sealed. A scheduling lock error blocked the rotation script before oracle
 execution; the build lock is now released before child scripts. The completed
 first owner was reused only after checking identical frozen inputs and product.
-Next resource priority is the missing surface-palette creation/attachment entry
-`0x409A30` and the existing live/saved palette loaders. Pinned `stdio.h` and
-single-threaded CRT evidence support testing `/ML` for the observed inline
-`getc` paths; this is a compiler hypothesis, not an accepted match.
+Those three palette entries are restored by the subsequent palette batch above.
 The full >=95% source objective remains open; 271 origins are still unknown.
 
 The prior [core exact batch](EXACT_CORE.md) advanced its checkpoint to

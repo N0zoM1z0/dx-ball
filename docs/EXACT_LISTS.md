@@ -2,7 +2,7 @@
 
 This batch restores the complete ball-cloning source emission and five missing
 typed cleanup entries, then connects them to the maintained total-cleanup
-routine. The accepted checkpoint has **252 source-present entries / 247 directly
+routine. Its historical accepted checkpoint has **252 source-present entries / 247 directly
 validated entries / 112,273 distinct direct cases / 45 exact units / 4,992 bytes**.
 The frozen owner batch and grouped cold replay pass. The six new exact units
 add 877 bytes; five also add independent source mappings.
@@ -92,3 +92,5 @@ still has 271 unknown origins and five identified runtime dependencies without
 maintained source; those counts are not a proven full authored denominator.
 This batch establishes six specific emissions and five additional source
 mappings, not a whole-game or complete dependency fidelity claim.
+
+The current palette checkpoint is documented in [EXACT_PALETTES.md](EXACT_PALETTES.md).

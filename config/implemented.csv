@@ -115,6 +115,7 @@ address,symbol,source,scope,semantic_unit
 0x004096C0,dxball_initialize_palette,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-initialize-palette
 0x00409790,dxball_load_live_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
 0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
+0x00409A30,dxball_load_surface_palette,src/resources.c,See docs/EXACT_PALETTES.md; valid file and initialized typed DirectDraw owner; complete-byte acceptance; active use unresolved; no separate direct cases,
 0x00409BB0,dxball_load_pcx,src/resources.c,See docs/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
 0x00409F10,dxball_clear_surface,src/device.c,"See docs/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-clear-surface
 0x00409F70,dxball_load_bitmap,src/bitmap.c,"See docs/BITMAP_INVESTIGATION.md: bounded nonnegative geometry/backing, four pre-entry stack seeds, controlled API effects and fallback paths; physical driver and active gameplay use unproven",bitmap-load
