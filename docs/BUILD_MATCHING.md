@@ -1,10 +1,15 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **48 exact functions / 6,012 bytes**.
-The [palette batch](EXACT_PALETTES.md) adds three complete RGB-tail loaders,
-including the missing surface palette creation/attachment entry, and 1,020
-exact bytes. All 48 units pass grouped cold replay. The resource build uses
-`/ML` to reproduce the original inline getc expression from pinned stdio.h;
+The current shared-source checkpoint retains **55 exact functions / 8,231 bytes**.
+The [display batch](EXACT_DISPLAY.md) adds four missing Blt/rectangle-queue
+entries, restores both full BltFast bodies and recovers the ordinary resource
+blit. Seven complete emissions add 2,219 bytes. All preceding 48 units and
+these seven pass grouped cold replay with every relocation applied.
+
+The preceding [palette batch](EXACT_PALETTES.md) adds three complete RGB-tail
+loaders, including the missing surface palette creation/attachment entry, and
+1,020 exact bytes. Its 48 units passed grouped cold replay. The resource build
+uses `/ML` to reproduce the original inline getc expression from pinned stdio.h;
 other exact builds retain `/MT`. The same source and layouts serve all profiles.
 
 The preceding [cloning and cleanup batch](EXACT_LISTS.md) adds the complete
@@ -56,7 +61,7 @@ found five changed emissions:
 | --- | ---: | ---: |
 | load-editor-board | 58 / 52 | 23 |
 | store-editor-board | 58 / 52 | 42 |
-| blt-sprite | 199 / 195 | 173 |
+| blt-sprite (historical; now recovered) | 199 / 195 | 173 |
 | queue-explosion-at | 100 / 99 | 51 |
 | update-paddle-position | 203 / 203 | 4 |
 
@@ -65,7 +70,7 @@ are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
 nonzero exit status. At that historical checkpoint, normal replay selected 35 accepted units.
-The current normal replay selects the complete configured 48-unit set.
+The current normal replay selects the complete configured 55-unit set.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

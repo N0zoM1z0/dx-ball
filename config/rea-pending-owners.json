@@ -1,0 +1,38 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x4040b0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x408180"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x408460"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x408740"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x408880"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40f200"
+    }
+  }
+]

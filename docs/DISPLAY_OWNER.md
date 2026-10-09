@@ -1,5 +1,14 @@
 # Lightning and frame drawing
 
+The subsequent [exact display batch](EXACT_DISPLAY.md) restores four missing
+sprite Blt/queue entries and the complete bodies of both existing BltFast
+entries. This owner now has 20 source mappings and six complete exact functions
+totaling 2,024 bytes. The original sixteen direct-case rows below remain counted
+once; the four new mappings have no separate direct-case rows. Controlled COM
+boundaries and their active-use limits remain explicit.
+
+The following describes the original connected owner checkpoint.
+
 This batch follows three connected bosses through REA: last-brick logic
 `0x415F40` (1,057 bytes), dirty-region restoration `0x408CC0` (827 bytes), and
 sort/merge/presentation `0x409100` (984 bytes). Required enqueue, sprite, palette,

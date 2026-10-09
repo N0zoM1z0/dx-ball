@@ -16,9 +16,9 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **253 source-present functions** (241 game entries and 12 runtime dependencies),
+> entity owners: **257 source-present functions** (245 game entries and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **48 byte-exact functions totaling 6,012 bytes**. Windows builds now also produce
+> **55 byte-exact functions totaling 8,231 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
@@ -38,6 +38,9 @@ The [palette exact batch](docs/EXACT_PALETTES.md) restores two inline RGB-tail
 loaders and the missing palette creation/attachment entry. Three complete
 emissions add 1,020 bytes and one source mapping using the evidenced VC4
 single-threaded stdio model. The surface constructor's active use remains open.
+The [display exact batch](docs/EXACT_DISPLAY.md) restores four missing sprite
+blit/rectangle-queue entries and the complete BltFast bodies, plus the ordinary
+resource blit. Seven emissions add 2,219 exact bytes without new tracked cases.
 For example, the [software rotation investigation](docs/ROTATION_INVESTIGATION.md)
 uses saved REA instructions to recover an omitted angle argument, an asymmetric
 pixel write and precise floating-point stores. The shared C passes 1,024

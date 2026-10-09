@@ -1,7 +1,7 @@
 # Palette tail loaders and surface binding
 
 This batch restores three complete palette emissions, adding 1,020 exact bytes
-and one source mapping. The checkpoint has **253 source-present entries / 247
+and one source mapping. Its accepted checkpoint has **253 source-present entries / 247
 directly validated entries / 112,273 distinct direct cases / 48 exact units /
 6,012 bytes**. The frozen existing owner batch and grouped cold replay pass. The private
 mapping preparation is diagnostic evidence; acceptance uses the cold outputs.
@@ -71,3 +71,5 @@ by the existing rejection controls and a MinGW build.
 The >=95% complete-source objective remains open. The provisional inventory
 contains 270 unknown origins and five identified runtime dependencies without
 maintained source; its full authored denominator remains unproven.
+
+The subsequent [display checkpoint](EXACT_DISPLAY.md) retains these palette matches.

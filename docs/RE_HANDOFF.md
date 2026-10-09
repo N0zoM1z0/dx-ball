@@ -1,6 +1,35 @@
 # Current handoff
 
-The [palette exact batch](EXACT_PALETTES.md) advances the current checkpoint to
+The [exact display batch](EXACT_DISPLAY.md) advances the current checkpoint to
+**257 source-present (245 game + 12 runtime) / 247 directly validated entries /
+112,273 distinct direct cases / 55 exact units / 8,231 bytes**. Four missing
+sprite Blt/queue entries add source mappings, both existing BltFast bodies are
+restored, and the ordinary resource blit returns to the accepted exact set.
+Seven complete emissions add 2,219 bytes. All 22 existing game owner scripts
+pass once against frozen inputs; all 55 complete units pass grouped cold replay.
+Existing rejection controls, a MinGW compile and a small private display probe
+pass. No tracked tests, fixtures, semantic rows, direct cases or campaigns are added.
+
+Current native alias is copied from `build/native-exact-display`, SHA-256
+`7523c361a4ebd1fe414b8fc08166e074787af2209d639bcdda82e9d79d8d8005`.
+The prior palette, list, core and allocator/campaign products retain their
+historical identities. `.analysis/checkpoints/exact-display-257-55` seals this
+batch's sources, complete closed REA evidence, private compiler diagnostics,
+frozen inputs, outputs and snapshot before cleanup. Shared C has no profile-
+selected bodies, forced assembly, fake locals or padding. The new entries'
+physical COM pixels and active use remain unproven.
+
+Next larger scope: original fixed-point class and triangle expression/lifetime
+restoration. Saved dossiers show ECX thiscall, by-value operands, hidden result
+storage and FS exception cleanup. Review B260 and the cleanup/continuation gaps
+through REA before a shared C++ owner; do not implement a fake EDX parameter or
+count adjacent nine-byte fragments as independent authored functions. The
+separate `0x40F200` list constructor zeros four dwords while maintained list
+owners expose three links; recover its fourth field through consumers before
+assigning meaning or changing layout. The >=95% complete-source objective
+remains open; 266 origins are unknown and the authored denominator is unproven.
+
+The preceding [palette exact batch](EXACT_PALETTES.md) advanced its checkpoint to
 **253 source-present (241 game + 12 runtime) / 247 directly validated entries /
 112,273 distinct direct cases / 48 exact units / 6,012 bytes**. Three complete
 emissions add 1,020 bytes, including the previously missing `0x409A30` surface
@@ -17,22 +46,19 @@ its independently attested original address. The constructor creates a palette
 and attaches only after successful creation; a private three-case COM-boundary
 check agrees on state and calls. Its active use remains unresolved.
 
-Current native alias is copied from `build/native-exact-palettes`, SHA-256
+That checkpoint's native alias was copied from `build/native-exact-palettes`, SHA-256
 `b6741530b88a022417af49beaaaa62f487edd8012bfed17146c0377d1f8e2eae`. Prior exact-list, exact-core and allocator/campaign products
 remain separate with their historical identities. The private archive is
 `.analysis/checkpoints/exact-palettes-253-48`; frozen replay inputs and complete
 closed REA records are retained before cleanup. Mutable products and snapshots
 are never hardlinked into archives.
 
-Next exact candidate: the current ordinary sprite blit emits a complete
-195-byte body with zero differences under a reviewed private relocation
-refresh. It is recorded in `.analysis/exact-palettes/next-scope.json` and remains
-a candidate in this batch; review/promote it without changing source or
-inventing new semantic cases. Broader owner/class helpers and unknown entries
-still require analysis. The >=95% complete-source objective remains open;
-270 origins remain unknown, and the full authored denominator is unproven.
+The ordinary sprite blit candidate from that checkpoint is recovered by the
+subsequent display batch above. Its private diagnostic remains historical. Broader owner/class helpers and unknown entries
+still require analysis. At that checkpoint 270 origins remained unknown;
+the full authored denominator was unproven.
 
-The [cloning and cleanup batch](EXACT_LISTS.md) advances the current checkpoint
+The preceding [cloning and cleanup batch](EXACT_LISTS.md) advanced its checkpoint
 to **252 source-present / 247 directly validated entries / 112,273 direct
 cases / 45 exact units / 4,992 bytes**. Six complete functions add 877 exact
 bytes, including five previously unmaintained typed cleanup entries. All 22
@@ -43,7 +69,7 @@ owners; its current 107-byte emission remains a candidate because shared
 board-storage member addressing adds one byte. The five new leaves have
 full-byte acceptance and transitive coverage, without invented direct counts.
 
-The current native alias is copied from `build/native-exact-lists`, SHA-256
+That checkpoint's native alias was copied from `build/native-exact-lists`, SHA-256
 `fba824c7743bf0b4e1d451d9bf49970442da87685d6accce59d5b95eab4b00ec`.
 The prior exact-core and allocator/campaign native products remain separate
 and sealed. A scheduling lock error blocked the rotation script before oracle

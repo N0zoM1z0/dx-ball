@@ -19,14 +19,15 @@ the behavioral evidence. The maintained implementation is `src/resources.c`.
 | `0x00404040` | draw_keyed_sprite | 105 | full exact |
 | `0x004040B0` | blt_sprite | 195 | full exact |
 | `0x00404180` | draw_sprite | 105 | full exact |
-| `0x004041F0` | stretch_keyed_sprite | 139 | full exact |
+| `0x004041F0` | stretch_keyed_sprite | 139 | scoped semantic; exact candidate |
 | `0x004042B0` | capture_sprite | 852 | scoped semantic |
 | `0x00404610` | load_sprite_bank | 1475 | scoped semantic |
 | `0x00404BE0` | release_sprite | 262 | scoped semantic |
 | `0x00404CF0` | draw_glyph | 328 | scoped semantic |
 | `0x00404E40` | find_glyph | 145 | scoped semantic |
-| `0x00409790` | load_live_palette | 337 | scoped semantic |
-| `0x004098F0` | load_saved_palette | 307 | scoped semantic |
+| `0x00409790` | load_live_palette | 337 | full exact |
+| `0x004098F0` | load_saved_palette | 307 | full exact |
+| `0x00409A30` | load_surface_palette | 376 | full exact; active use unresolved |
 | `0x00409BB0` | load_pcx | 862 | scoped semantic |
 
 ## Storage and interface
@@ -128,11 +129,12 @@ DirectDraw operations are controlled boundary callbacks; COM driver behavior,
 real Blt pixels, actual display, and backend error codes beyond modeled retries
 are not proven by this test. Shared-source changes require fresh replay.
 
-Seven resource functions match their complete /Gy COMDAT extents after every
-reviewed DIR32 relocation is applied: 787 bytes, zero differences. Extents agree
-with the function ledger and terminate at actual epilogues; alignment gaps are
-excluded. Eight larger functions currently have semantic evidence only. Their
-different object lengths are not masked or reported as exact.
+The current palette/display checkpoint accepts nine complete resource COMDATs,
+1,668 bytes with every relocation applied and zero differences. The ordinary
+195-byte blit is recovered by [EXACT_DISPLAY.md](EXACT_DISPLAY.md); its previous
+199-byte mapping is historical. Stretch remains a 139/139-byte candidate with
+four unmasked differences. Seven entries retain scoped semantic evidence
+without exact claims. No different object length is masked or reported as exact.
 
 The related software renderer, offset helper and wrapper now live in the
 [rotation owner](ROTATION_INVESTIGATION.md), with 1,024 separately counted direct
