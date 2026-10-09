@@ -5,7 +5,7 @@ passes: all 50 unchanged initial boards, terminal index 50 and the cleared menu
 state, in 5,465.402 seconds with eight lives. REA process Evidence
 `ev_e7f2df5e40a1a0ba723c0156934c2684a7f136e0ebee954177b00cac5e746c8f`
 records exit zero and the full final-report digest. All 98 archive files verify
-after the game/reader processes stop. This is original-only acceptance;
+after the game/reader processes stop. This is original-only acceptance.
 The maintained VC4 full campaign also passes below; MinGW's full campaign
 and whole-game fidelity remain open. The captured
 game runs silently on one allowed CPU. Source totals stay
@@ -25,44 +25,37 @@ stale outer phase without restarting the completed capture. The 220-file
 originals. Rendered terminal snapshots hit their cumulative budget; the raw
 board messages and final report digest remain complete. Keep those limits
 distinct from the full board/menu predicate. The session is released; MinGW's
-full campaign and connected allocation failure/replay controls remain next.
+full campaign remains next; the published allocation replay is complete below.
 
-The independent frame-connection design review identifies a concrete synthetic
-heap/COM callback address collision in the old private helper. A new connected
-frame oracle must choose disjoint callbacks, restore maintained native allocation
-defaults after harness setup, remove only the two original new/delete replacement
-hooks, and preserve dynamic node ownership/terminal failure boundaries. This
-review is a plan, not executed frame-allocation acceptance.
+The connected allocation batches now pass with the unchanged maintained
+native product. REA captures
+`ev_5ae3fe497fd73ec40462962e33be70c833f7d29c65358d9a49b300123c31fab2`
+and `ev_fcc83a3ede1073d5bf663683299d0612438bcbc4e9df74503ca0a64f8b5bb084`
+verify 21 fixtures / 564 complete frames and the fresh-process frozen replay.
+All declared inputs and normalized phase/ownership/display/entry projections
+match. The ledger observes original allocator entries without changing text,
+uses disjoint callbacks and compares logical queues, payloads and free poisoning
+before arena reuse. Native new/delete defaults remain connected after setup.
 
-A private frame connector is now prepared from that review and the maintained
-REA allocation dossiers. It restores native new/delete entries, observes all
-eight original allocator entries and binds disjoint external heap callbacks.
-Its ledger retains raw request sizes and allocation identities, derives node
-roles from queue roots, and permits arena reuse only after state, payload,
-pixel and free-poison comparison. Fixture resets reject live ownership;
-callback exceptions use a distinct diagnostic exit. The initial draft and its
-source-only receipt remain sealed in `allocator-frame-connector-source-243-35`.
-The current private draft is `.analysis/allocator-frame-connected-draft.py`;
-`.analysis/run-allocator-frame-connected.py` prepares 21 fixtures / 564 complete
-frames across startup/launch, mixed original grids, explosive-source scratch
-and death/restart, with zero, one and three failed HeapAlloc attempts. The
-positive batch also creates particles, effects, explosions, clones and weapon
-nodes before comparing complete frames and natural cleanup. Its normalized
-replay projection is separate from raw host pointers and requests.
+The separate 12 missing/zero-handler controls and their frozen replay pass under
+REA `ev_c9e8543bd4a97a19e8fca63b779d743f52f8c0cffa9af147aee5e7704530ec06`
+and `ev_4ddd2fcdcf66ff36332169f22a3938c4b3856e79c05cd6a8b73e4b834c5214ec`.
+Native children execute real C exit1; original children stop at controlled CRT
+entry `0x417910`. Each child's Python/imported source/cache/Unicorn/pefile/mapped
+libc identities and exact terminal allocator deltas verify. Original CRT cleanup
+and physical heap exhaustion remain unproved. These are separate integration
+observations, not additional direct owner cases or exact units.
 
-Syntax, configured-entry and static callback-address checks pass. A negative
-control confirms execution refuses a pending campaign before oracle imports,
-session acquisition or output creation. The source-only batch receipt is
-`.analysis/allocator-frame-connected-batch-source-check.json`; no connected
-frame has executed and acceptance counts are unchanged. Unpublished scratch
-requires an explicitly reviewed exclusive producer (`clone_balls` or
-`spread_explosive_bricks`), rather than a host-size guess. Batch execution,
-terminal allocation controls and frozen cold replay remain required. Review
-found two death-fixture preparation defects: clear `attached` before dropping
-the ball, compare the retirement frame before arming failures, and inject the
-replacement allocation failure in the following frame. Terminal controls also
-need per-child execution identities and exact allocator-entry deltas. These
-unexecuted private drafts do not change maintained acceptance.
+Five rejected private capture attempts remain sealed. They expose invalid grid
+coordinates, asymmetric root observation timing and two lazy import identities;
+no comparison was masked. The two-frame death fixture compares retirement before
+arming the next frame's replacement failure. The initial source-only checkpoints
+retain their original scope. Verified controls are published as
+`tests/allocator_frame_oracle.py`, `tests/test_allocator_frames.py` and
+`tests/test_allocator_terminal.py`, with default fresh report directories and
+an optional private gold manifest. Both published runners pass fresh-process
+frozen replay without that private prerequisite. Optimized Python is rejected
+before fixture imports; direct/source/exact counts remain unchanged.
 
 The [maintained allocation owner](ALLOCATOR_OWNER.md) now supplies new/delete
 and malloc/release defaults for nodes, music, resources and sound. All 23 fresh
@@ -82,11 +75,11 @@ and relocation checks. No source tuning or byte masking was introduced.
 
 The original pre-integration gold and private MIDI/resource/sound connections
 retain SHA-sealed historical snapshots. They are supporting evidence, not new
-executions of current production defaults. Full connected owner failure paths,
+executions of current production defaults. Exhaustive connected owner failure paths,
 handler registration, complete CRT startup/teardown and reconstructed full
-campaign fidelity remains open. The bounded original-board pilot and full VC4
-board/menu observation pass as described above. Connected frame failure controls and the subsequent
-MinGW full run remain next steps.
+campaign fidelity remain open. The bounded original-board pilot and full VC4
+board/menu observation and published-source replay pass as described above.
+The MinGW full run remains next.
 
 Verified retention removes superseded failed working products, deduplicates
 immutable evidence and checks all 49 original files. The measured cleanup
@@ -113,6 +106,14 @@ and 49 originals verify before and after the latter operation; mutable reports,
 current products and the live capture stay separate. The receipt is sealed in
 `allocator-campaign-live-retention-243-35`. This storage checkpoint makes no
 full-campaign or connected-frame acceptance claim.
+
+The completed VC4 control also preserves its actual SDK reader in a separate
+`allocator-vc40-full-reader-243-35` supplement, verified against the REA-bound
+report before the next compiler run can replace the reader alias. Later retention
+shares 272 terminal capture files and recovers 163,643,392 net allocated bytes;
+the public-test checkpoint cleanup shares another 257 files and recovers
+44,691,456 bytes. All sealed paths, 468 fixed inputs and 49 originals verify.
+Mutable source/report/product paths remain separate from immutable copies.
 
 The remaining allocator draft sections below are historical stages and retain
 their checkpoint scopes.

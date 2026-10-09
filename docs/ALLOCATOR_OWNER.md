@@ -89,9 +89,9 @@ checks whose full relevant identities remain unchanged. Resource-free negative
 control linking now includes the host backend as part of the game object graph.
 The previously sealed private MIDI/resource/sound failure connections remain
 historical supporting evidence; their old products and input hashes were not
-silently relabelled as execution of the new maintained defaults. Complete
-connected frame failures, i686 owner failure matrices and reconstructed full
-campaigns remain open.
+silently relabelled as execution of the new maintained defaults. The connected frame/terminal batches below and the maintained VC4 full
+board/menu control now pass. Exhaustive i686 owner failure matrices and the
+MinGW full campaign remain open.
 
 The source ledger now has **243 entries: 235 game functions and 8 runtime
 functions**, with **111,242 direct cases**. Cold replay retains **35 exact units /
@@ -100,6 +100,57 @@ functions**, with **111,242 direct cases**. Cold replay retains **35 exact units
 The two sound-pan compiler literal names changed to `$T1142` / `$T1143`; both
 contents and complete relocation mappings were checked before reconciliation.
 No emission tuning, masking or copied machine bytes were introduced.
+
+## Connected frames and terminal allocation
+
+The maintained new/delete defaults now remain connected throughout a controlled
+full-frame oracle. It observes all eight original allocator entries, keeps target
+text unchanged, uses disjoint external Heap API callbacks and compares logical
+ownership, queues, payloads, display/pixel state and free poisoning before reuse.
+Actual sprite geometry comes from a separate original resource-loader fixture;
+COM, resources, audio and other external APIs retain controlled boundaries.
+
+| Fixture family | Fixtures | Complete frames |
+| --- | ---: | ---: |
+| Initialization and launch | 3 | 48 |
+| Mixed original grids 0, 9, 24, 49 | 12 | 480 |
+| Explosive-source scratch | 3 | 24 |
+| Last-ball retirement and next-frame restart | 3 | 12 |
+| Total | 21 | 564 |
+
+Each family uses zero, one and three failed HeapAlloc attempts. A retained
+negative handler result requests retry. Nine node roles are observed, with
+105 auxiliary calls and 21 separate heap initializations. Request sizes and
+physical pointers remain raw evidence; deterministic replay compares logical
+state and ordered effects. The fresh-process replay matches all declared inputs
+and the complete normalized observation projection. These frames are separate
+integration evidence and do not increase direct owner totals.
+
+Twelve further controls cover missing and zero-return handlers during game
+initialization, full-frame shooting, death/restart, fire/particle construction
+and cloning. Native children must execute actual C `exit(1)` and its registered
+glibc exit observer. Original children stop at controlled CRT entry `0x417910`
+with argument 1; no fake successful return is supplied. Each child verifies
+frozen dependencies before fixture imports and checks actual imported/cache and
+mapped-library identities at terminal observation. Exact entry deltas require
+one new/allocation/HeapAlloc/handler visit, with no extra terminal deletion or
+malloc. The earlier death-retirement release stays in its compared prefix.
+
+Published-source REA process captures
+`ev_5ae3fe497fd73ec40462962e33be70c833f7d29c65358d9a49b300123c31fab2` /
+`ev_fcc83a3ede1073d5bf663683299d0612438bcbc4e9df74503ca0a64f8b5bb084`
+bind the first positive batch and its frozen replay. Terminal captures
+`ev_c9e8543bd4a97a19e8fca63b779d743f52f8c0cffa9af147aee5e7704530ec06` /
+`ev_4ddd2fcdcf66ff36332169f22a3938c4b3856e79c05cd6a8b73e4b834c5214ec`
+bind the 12 controls and replay. All four record exit zero and complete final
+report digests. The public commands below run without private gold files.
+
+The independent terminal replay matches fatal-stage state, effects and entry
+deltas for all 12 controls. Original CRT exit cleanup, exhaustive failure paths,
+physical exhaustion and arbitrary nonterminating handlers remain open. Failed
+fixture/identity captures remain archived; their guards were corrected without
+masking comparisons or tuning game source. The maintained native product and
+source/direct/exact counters are unchanged.
 
 ## REA evidence and reproduction
 
@@ -131,11 +182,21 @@ and building the native and Windows profiles, run:
 
 ```bash
 scripts/repo-python tests/test_allocator_differential.py
+scripts/repo-python tests/test_allocator_frames.py
+scripts/repo-python tests/test_allocator_terminal.py
 scripts/repo-python scripts/compile-semantic-build.py --build allocator
 scripts/repo-python tests/test_allocator_coff.py
 scripts/repo-python tests/test_windows_allocator.py
 scripts/repo-python scripts/replay-exact-units.py
 ```
+
+The frame and terminal tests use a fresh report directory by default and need
+no private acceptance manifest. `--library` selects another compiled native
+product; `--gold` optionally checks a locally sealed acceptance manifest.
+Terminal exit observation uses Linux/glibc. Both runners reject optimized Python
+before fixture imports. Repeat a stable batch in fresh processes, then compare
+its declared input closure and normalized observations; raw allocation pointers
+and final report hashes can differ.
 
 The tests retain bounded observation digests instead of expanded retry logs.
 SHA-sealed pre-integration snapshots preserve the old source/library/reports;

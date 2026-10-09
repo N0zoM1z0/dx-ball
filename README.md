@@ -118,8 +118,11 @@ The [allocation investigation](docs/ALLOCATOR_OWNER.md) follows REA instructions
 through new/delete, malloc mode, handler retries and heap initialization. Its
 shared C now supplies the game owners' allocation defaults. Native C and actual
 VC4/MinGW objects agree over 1,437 original calls; separate SDK probes confirm
-physical heap ownership through the Windows adapter under Wine. Byte exactness
-and complete CRT startup remain separate obligations.
+physical heap ownership through the Windows adapter under Wine. Public connected
+frame and terminal controls exercise 564 complete frames and 12 allocation
+failure exits, with fresh-process replay; see the investigation for commands
+and controlled API limits. Byte exactness and complete CRT startup remain
+separate obligations.
 
 The [runtime-library investigation](docs/CRT_PROVENANCE.md) pairs REA instruction
 and byte observations with whole pinned CRT objects, identifying eight further

@@ -34,8 +34,9 @@ The final report SHA-256 is
 `8815d628797edf34ce45d70ed0300d35bec47090d0beee9461c73583f61dfc6f`.
 
 This establishes the original control under the recorded Wine/Xvfb environment.
-Full VC4 and MinGW campaigns, physical audio/Windows behavior and synchronized
-trajectory or pixel equivalence remain unverified. Maintained source and exact
+The maintained VC4 board/menu control also passes below; MinGW's full campaign,
+physical audio/Windows behavior and synchronized trajectory or pixel equivalence
+remain unverified. Maintained source and exact
 acceptance are unchanged. The earlier timeout below remains negative evidence.
 
 ## Maintained allocation integration control
@@ -70,7 +71,8 @@ the input closure and recovery receipt. All 468 frozen inputs and 49 original
 files verify. The process capture completed while the executor's permissions
 changed; recovery finalized the stale outer phase without rerunning the game.
 Only the VC4 report subtree belongs to this run; older profile aliases were
-excluded from its archive.
+excluded from its archive. The actual SDK reader is retained in a separate
+SHA-verified supplement before subsequent capture compilation can replace it.
 
 REA's global `truncated` flag is true: accumulated rendered terminal snapshots
 exceeded their output budget. The raw messages retain all 50 initial-board
