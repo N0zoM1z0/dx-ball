@@ -1,4 +1,43 @@
-# Current handoff — exact integer trig and hit-region stores
+# Current handoff — complete exits, text centering and palette guard
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [complete exits batch](EXACT_EXITS.md) promotes eleven complete functions /
+641 code bytes: four sound helpers, two surface bindings, splash input,
+ball retirement, text drawing/centering and palette RGB setting. Ordinary exit
+branches, the real consumed width local and the palette guard's early exit
+restore observed source control flow. Original source spelling remains unproven.
+
+Acceptance is **283 source-present / 247 scoped entries / 112,273 distinct
+cases / 97 exact units / 11,765 code bytes + 136 separate metadata bytes**.
+All 86 prior complete units preserve their code and metadata identities.
+Source presence stays at 270 authored bodies, one unknown no-effect body and
+12 runtime bodies; origins **270 authored / 48 runtime / 42 generated /
+168 unknown**. Existing application semantic closures refresh without new
+rows, cases, tests, fixtures or campaigns.
+
+All 22 existing owner scripts pass against a frozen native Debug product.
+Grouped cold replay, existing fourteen rejection controls, strict MinGW and
+full VC4 builds pass. Unchanged raster/rotation compiler closures reuse the
+preceding 7,164/1,024 COFF vectors. Saved matching REA evidence is reused;
+no new original-analysis session and the 465-record snapshot stays unchanged.
+
+Current native alias: `build/native/libdxball_core.so`, from
+`build/native-exact-exits/libdxball_core.so`, SHA-256
+`5bfe8a24b89171fb43a520d77cb9469ab10542209a965d168b9d6ead8948daaa`.
+Private checkpoint: `.analysis/checkpoints/exact-exits-283-97`, parent
+`.analysis/checkpoints/exact-integer-trig-283-86`. Actual nineteen cold COFF
+objects, five preliminary objects/listings, full frozen inputs, saved dossiers
+and independent reviews are sealed before verified duplicate cleanup.
+
+Triangle retains 99 frame-displacement differences; elapsed 3, rotated height
+158, and point distance 52. No prior rejected local/order/name/pointer or
+floating-point variant should be repeated. Next: inspect related gameplay
+and resource source families with complete saved evidence, including remaining
+same-size bodies, then batch their compiler replay. No fake locals, padding,
+profiles, assembly, copied code, volatile barriers or spelling/order searches.
+The authored denominator and **>=95% complete-source goal remain open**.
+
+# Previous integer trig and hit-region checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [integer trig/hit-region batch](EXACT_INTEGER_TRIG.md) promotes five

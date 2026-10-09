@@ -27,12 +27,15 @@ void dxball_draw_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const ch
         if (advance == 0) advance = dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2;
         else advance += dxball_text_spacing;
     }
+    return;
 }
 
 void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text)
 {
-    x -= dxball_measure_text(count, text) / 2;
-    dxball_draw_text(x, baseline, count, text);
+    DxBallInt width;
+    width = dxball_measure_text(count, text);
+    dxball_draw_text(x - width / 2, baseline, count, text);
+    return;
 }
 
 void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
@@ -82,12 +85,12 @@ void dxball_fill_rect(DxBallSurface handle, DxBallInt left, DxBallInt top,
 
 void dxball_set_palette_rgb(DxBallInt entry, DxBallByte red, DxBallByte green, DxBallByte blue)
 {
-    if (dxball_cursor_warp_disabled != 1) {
-        dxball_live_palette[entry].red = red;
-        dxball_live_palette[entry].green = green;
-        dxball_live_palette[entry].blue = blue;
-        dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, entry, 1, dxball_live_palette + entry);
-    }
+    if (dxball_cursor_warp_disabled == 1) return;
+    dxball_live_palette[entry].red = red;
+    dxball_live_palette[entry].green = green;
+    dxball_live_palette[entry].blue = blue;
+    dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, entry, 1, dxball_live_palette + entry);
+    return;
 }
 
 void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap)

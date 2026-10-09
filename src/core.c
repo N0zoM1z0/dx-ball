@@ -193,6 +193,7 @@ void dxball_retire_ball(void)
         dxball_remove_ball(&dxball_balls);
         --dxball_ball_count;
     }
+    return;
 }
 
 void dxball_drop_bricks(void)

@@ -248,9 +248,9 @@ void dxball_restore_regions(void)
     dxball_dirty_counts[dxball_dirty_page] = 0;
 }
 
-void dxball_bind_board_surface(DxBallSurface surface) { dxball_restore_surface = surface; }
+void dxball_bind_board_surface(DxBallSurface surface) { dxball_restore_surface = surface; return; }
 
-void dxball_bind_display_surface(DxBallSurface surface) { dxball_effect_surface = surface; }
+void dxball_bind_display_surface(DxBallSurface surface) { dxball_effect_surface = surface; return; }
 
 void dxball_present(void)
 {

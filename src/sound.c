@@ -101,12 +101,14 @@ void dxball_prepare_sound(DxBallHandle window)
 {
     dxball_release_sounds();
     dxball_initialize_sound(window);
+    return;
 }
 
 void dxball_release_audio(void)
 {
     dxball_release_sounds();
     dxball_pause_sound();
+    return;
 }
 
 void dxball_pause_sound(void)
@@ -133,12 +135,14 @@ void dxball_release_sounds(void)
 {
     DxBallInt slot;
     for (slot = 0; slot < DXBALL_SOUND_COUNT; ++slot) dxball_release_sound(slot);
+    return;
 }
 
 void dxball_stop_all_sounds(void)
 {
     DxBallInt slot;
     for (slot = 0; slot < DXBALL_SOUND_COUNT; ++slot) dxball_stop_sound(slot);
+    return;
 }
 
 void dxball_release_sound(DxBallInt slot)

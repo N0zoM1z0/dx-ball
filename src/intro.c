@@ -337,7 +337,7 @@ void dxball_splash_frame(void)
     if (dxball_mouse_action == 1) { dxball_end_requested = 1; dxball_return_to_menu = 0; dxball_mouse_action = 0; }
     if (dxball_mouse_action == 2) dxball_mouse_action = 0;
 }
-void dxball_splash_key(void) { dxball_end_requested = 1; dxball_return_to_menu = 0; }
+void dxball_splash_key(void) { dxball_end_requested = 1; dxball_return_to_menu = 0; return; }
 void dxball_dispose_splash(DxBallInt fade) { dxball_gameplay_ops.stop_sound(0); dispose_scene(fade); }
 
 /* Retained program text and 22 RGB triples; no external game assets. */

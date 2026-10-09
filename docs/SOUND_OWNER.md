@@ -1,5 +1,14 @@
 # DirectSound controller and WAV loading
 
+## Current complete helper matching
+
+The [complete exits batch](EXACT_EXITS.md) accepts four complete sound helpers:
+prepare, release-all, stop-all and release-audio, totaling 181 code bytes.
+Their ordinary exit branches and all direct game-call relocations pass grouped
+cold replay. Sound initialization, loading, individual buffer control and
+physical/asynchronous audio fidelity retain their existing limits. Historical
+semantic-only statements below describe the initial sound checkpoint.
+
 ## Current allocation defaults
 
 Sound records and WAV backing now default to maintained malloc-mode allocation
@@ -19,7 +28,7 @@ The subsequent [persistent sound controls](SOUND_CONTROLS.md) add frequency,
 pan and volume setters with their own three REA dossiers. The current sound
 suite has eighteen maintained entries, 5,782 direct cases and 48 separate
 connected checks. The fifteen-entry table and counts below describe the initial
-checkpoint; physical audio delivery and sound byte-exact matching remain open.
+checkpoint; physical audio delivery and complete sound byte-exact reconstruction remain open.
 
 The static dossier establishes instructions, references and inclusive body
 ranges; execution claims come separately from `tests/test_sound_differential.py`.
@@ -49,9 +58,9 @@ not counted as maintained instructions or claimed exact.
 | `0x00406290` | `dxball_parse_wave` | 264 / 269 | `ev_8c97f00d8301c9fad99e761f8bbe2ea90f8dc14d6e8db6709a75e15c49c6c1a3` |
 | `0x004063A0` | `dxball_create_sound_buffer` | 89 / 89 | `ev_d0e9ffafba6bc56b0694c2b6b8f17f504beebd0138ce8f0f103be5de5c90b275` |
 
-All fifteen entries have semantic acceptance only. No sound entry has a new
-exact claim. Existing forty configured exact units are replayed as one batch
-when shared input changes. Current VC4 screen-pan constants are `$T1072` and
+At that initial checkpoint, all fifteen entries had semantic acceptance only,
+with no sound exact claim. Its forty configured exact units were replayed as one batch
+when shared inputs changed. That VC4 epoch used screen-pan constants `$T1072` and
 `$T1073`; their data still resolves to the separately attested original double
 literals at 0x420068 and 0x420070.
 

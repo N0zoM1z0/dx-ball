@@ -1752,3 +1752,135 @@ relocations = [
   { offset = 0x42, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0xc, target = 0x4251a0 },
   { offset = 0x4f, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x10, target = 0x4251a0 }
 ]
+
+[builds.sound]
+source = "src/sound.c"
+object = "build/exact/sound.obj"
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameplay.h", "src/platform.h", "src/resources.h", "src/runtime.h", "src/sound.c", "src/sound.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.prepare-sound]
+symbol = "_dxball_prepare_sound"
+build = "sound"
+size = 33
+target_address = 0x4050f0
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x7, type = "REL32", symbol = "_dxball_release_sounds", addend = 0x0, target = 0x4058b0 },
+  { offset = 0x10, type = "REL32", symbol = "_dxball_initialize_sound", addend = 0x0, target = 0x405120 }
+]
+
+[units.release-sounds]
+symbol = "_dxball_release_sounds"
+build = "sound"
+size = 61
+target_address = 0x4058b0
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x27, type = "REL32", symbol = "_dxball_release_sound", addend = 0x0, target = 0x4058f0 }
+]
+
+[units.stop-all-sounds]
+symbol = "_dxball_stop_all_sounds"
+build = "sound"
+size = 61
+target_address = 0x405eb0
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x27, type = "REL32", symbol = "_dxball_stop_sound", addend = 0x0, target = 0x405ef0 }
+]
+
+[units.release-audio]
+symbol = "_dxball_release_audio"
+build = "sound"
+size = 26
+target_address = 0x406270
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x7, type = "REL32", symbol = "_dxball_release_sounds", addend = 0x0, target = 0x4058b0 },
+  { offset = 0xc, type = "REL32", symbol = "_dxball_pause_sound", addend = 0x0, target = 0x4057d0 }
+]
+
+[units.bind-board-surface]
+symbol = "_dxball_bind_board_surface"
+build = "display"
+size = 24
+target_address = 0x409000
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0xa, type = "DIR32", symbol = "_dxball_restore_surface", addend = 0x0, target = 0x4382e8 }
+]
+
+[units.bind-display-surface]
+symbol = "_dxball_bind_display_surface"
+build = "display"
+size = 24
+target_address = 0x409020
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0xa, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0x0, target = 0x42e690 }
+]
+
+[units.splash-key]
+symbol = "_dxball_splash_key"
+build = "intro"
+size = 36
+target_address = 0x407ab0
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "_dxball_end_requested", addend = 0x0, target = 0x425974 },
+  { offset = 0x12, type = "DIR32", symbol = "_dxball_return_to_menu", addend = 0x0, target = 0x425978 }
+]
+
+[units.retire-ball]
+symbol = "_dxball_retire_ball"
+build = "core"
+size = 45
+target_address = 0x411820
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "_dxball_board_storage", addend = 0x4e38, target = 0x43aab8 },
+  { offset = 0x14, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
+  { offset = 0x19, type = "REL32", symbol = "@dxball_remove_ball@4", addend = 0x0, target = 0x411850 },
+  { offset = 0x1f, type = "DIR32", symbol = "_dxball_board_storage", addend = 0x4e38, target = 0x43aab8 }
+]
+
+[units.draw-text]
+symbol = "_dxball_draw_text"
+build = "ui"
+size = 150
+target_address = 0x404ee0
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x44, type = "REL32", symbol = "_dxball_draw_glyph", addend = 0x0, target = 0x404cf0 },
+  { offset = 0x59, type = "DIR32", symbol = "_dxball_font_bank", addend = 0x0, target = 0x42108c },
+  { offset = 0x6a, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x4, target = 0x425980 },
+  { offset = 0x80, type = "DIR32", symbol = "_dxball_text_spacing", addend = 0x0, target = 0x421084 }
+]
+
+[units.draw-centered-text]
+symbol = "_dxball_draw_centered_text"
+build = "ui"
+size = 73
+target_address = 0x404f80
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x12, type = "REL32", symbol = "_dxball_measure_text", addend = 0x0, target = 0x404fd0 },
+  { offset = 0x38, type = "REL32", symbol = "_dxball_draw_text", addend = 0x0, target = 0x404ee0 }
+]
+
+[units.set-palette-rgb]
+symbol = "_dxball_set_palette_rgb"
+build = "ui"
+size = 108
+target_address = 0x40ab20
+boundary_evidence = "docs/EXACT_EXITS.md"
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0x0, target = 0x422898 },
+  { offset = 0x21, type = "DIR32", symbol = "_dxball_live_palette", addend = 0x0, target = 0x4386f0 },
+  { offset = 0x2e, type = "DIR32", symbol = "_dxball_live_palette", addend = 0x1, target = 0x4386f0 },
+  { offset = 0x3b, type = "DIR32", symbol = "_dxball_live_palette", addend = 0x2, target = 0x4386f0 },
+  { offset = 0x45, type = "DIR32", symbol = "_dxball_live_palette", addend = 0x0, target = 0x4386f0 },
+  { offset = 0x53, type = "DIR32", symbol = "_dxball_direct_palette", addend = 0x0, target = 0x4228c0 },
+  { offset = 0x59, type = "DIR32", symbol = "_dxball_direct_palette", addend = 0x0, target = 0x4228c0 }
+]
