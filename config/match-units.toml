@@ -2549,3 +2549,117 @@ relocations = [
   { offset = 0x126, type = "DIR32", symbol = "_dxball_present_regions", addend = 0x0, target = 0x426990 },
   { offset = 0x142, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
 ]
+
+[units.finish-game]
+build = "runtime"
+symbol = "_dxball_finish_game"
+target_address = 0x415c10
+size = 46
+boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+relocations = [
+  { offset = 9, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 18, type = "DIR32", symbol = "_dxball_end_requested", addend = 0, target = 0x425974 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_return_to_menu", addend = 0, target = 0x425978 },
+]
+
+[candidates.reset-round]
+build = "runtime"
+symbol = "_dxball_reset_round"
+target_address = 0x415c40
+size = 426
+boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_dxball_count_destructible_bricks", addend = 0, target = 0x415a90 },
+  { offset = 12, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 17, type = "REL32", symbol = "_dxball_redraw_mode", addend = 0, target = 0x4036b0 },
+  { offset = 22, type = "DIR32", symbol = "$SG1213", addend = 0, target = 0x422f14, data_hex = "6d62626b67726e642e70637800" },
+  { offset = 27, type = "REL32", symbol = "_dxball_load_saved_palette", addend = 0, target = 0x4098f0 },
+  { offset = 48, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+  { offset = 57, type = "DIR32", symbol = "_dxball_bonus_9_active", addend = 0, target = 0x43a890 },
+  { offset = 67, type = "DIR32", symbol = "_dxball_bonus_8_active", addend = 0, target = 0x43a860 },
+  { offset = 77, type = "DIR32", symbol = "_dxball_bonus_3_active", addend = 0, target = 0x43a8d8 },
+  { offset = 87, type = "DIR32", symbol = "_dxball_bonus_14_active", addend = 0, target = 0x43a864 },
+  { offset = 97, type = "DIR32", symbol = "_dxball_bonus_18_active", addend = 0, target = 0x43fae8 },
+  { offset = 107, type = "DIR32", symbol = "_dxball_bonus_12_active", addend = 0, target = 0x43a910 },
+  { offset = 117, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 127, type = "DIR32", symbol = "_dxball_bonus_7_active", addend = 0, target = 0x43faf4 },
+  { offset = 137, type = "DIR32", symbol = "_dxball_bonus_3_ticks", addend = 0, target = 0x43a88c },
+  { offset = 147, type = "DIR32", symbol = "_dxball_bonus_17_active", addend = 0, target = 0x43fae0 },
+  { offset = 157, type = "DIR32", symbol = "_dxball_last_brick_deadline", addend = 0, target = 0x43faec },
+  { offset = 168, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 177, type = "DIR32", symbol = "_dxball_lightning_y", addend = 0, target = 0x43fa8c },
+  { offset = 187, type = "DIR32", symbol = "_dxball_lightning_frames", addend = 0, target = 0x43faf0 },
+  { offset = 197, type = "DIR32", symbol = "_dxball_paddle_overlay_deadline", addend = 0, target = 0x43fabc },
+  { offset = 207, type = "DIR32", symbol = "_dxball_paddle_overlay_sprite", addend = 0, target = 0x43a8f0 },
+  { offset = 217, type = "DIR32", symbol = "_dxball_paddle_overlay_width", addend = 0, target = 0x43a8b0 },
+  { offset = 227, type = "DIR32", symbol = "_dxball_mouse_x", addend = 0, target = 0x438b0c },
+  { offset = 232, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0, target = 0x43fa94 },
+  { offset = 246, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x43a878 },
+  { offset = 252, type = "DIR32", symbol = "_dxball_paddle_y", addend = 0, target = 0x43a87c },
+  { offset = 262, type = "DIR32", symbol = "_dxball_paddle_previous_x", addend = 0, target = 0x43a904 },
+  { offset = 272, type = "DIR32", symbol = "_dxball_paddle_previous_y", addend = 0, target = 0x43a908 },
+  { offset = 282, type = "DIR32", symbol = "_dxball_paddle_sprite", addend = 0, target = 0x43a880 },
+  { offset = 291, type = "DIR32", symbol = "_dxball_paddle_sprite", addend = 0, target = 0x43a880 },
+  { offset = 297, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088 },
+  { offset = 317, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+  { offset = 325, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0, target = 0x43fa94 },
+  { offset = 331, type = "DIR32", symbol = "_dxball_board_storage", addend = 20024, target = 0x43aab8 },
+  { offset = 341, type = "DIR32", symbol = "_dxball_bonus_count", addend = 0, target = 0x43fa90 },
+  { offset = 351, type = "DIR32", symbol = "_dxball_board_storage", addend = 20000, target = 0x43aab8 },
+  { offset = 361, type = "DIR32", symbol = "_dxball_launch_requested", addend = 0, target = 0x43fab8 },
+  { offset = 371, type = "DIR32", symbol = "_dxball_projectile_count", addend = 0, target = 0x43a900 },
+  { offset = 380, type = "REL32", symbol = "_dxball_spawn_ball", addend = 0, target = 0x4105d0 },
+  { offset = 385, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
+  { offset = 398, type = "DIR32", symbol = "_dxball_level_changed", addend = 0, target = 0x422d1c },
+  { offset = 408, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x43a90c },
+]
+
+[units.restart-round]
+build = "runtime"
+symbol = "_dxball_restart_round"
+target_address = 0x415df0
+size = 327
+boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x43a90c },
+  { offset = 24, type = "DIR32", symbol = "_dxball_level_changed", addend = 0, target = 0x422d1c },
+  { offset = 71, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
+  { offset = 83, type = "DIR32", symbol = "_dxball_saved_palette", addend = 0, target = 0x4382f0 },
+  { offset = 97, type = "DIR32", symbol = "_dxball_saved_palette", addend = 1, target = 0x4382f0 },
+  { offset = 124, type = "DIR32", symbol = "_dxball_saved_palette", addend = 0, target = 0x4382f0 },
+  { offset = 137, type = "DIR32", symbol = "_dxball_saved_palette", addend = 1, target = 0x4382f0 },
+  { offset = 150, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
+  { offset = 173, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+  { offset = 194, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+  { offset = 220, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+  { offset = 230, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 236, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 246, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 252, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 267, type = "DIR32", symbol = "_dxball_board_aux", addend = 0, target = 0x43a918 },
+  { offset = 272, type = "REL32", symbol = "_memset", addend = 0, target = 0x417c40 },
+  { offset = 280, type = "REL32", symbol = "_dxball_clear_all_entities", addend = 0, target = 0x4164a0 },
+  { offset = 285, type = "REL32", symbol = "_dxball_reset_regions", addend = 0, target = 0x408070 },
+  { offset = 291, type = "DIR32", symbol = "_dxball_lives", addend = 0, target = 0x43a888 },
+  { offset = 303, type = "REL32", symbol = "_dxball_finish_game", addend = 0, target = 0x415c10 },
+  { offset = 313, type = "REL32", symbol = "_dxball_reset_round", addend = 0, target = 0x415c40 },
+]
+
+[units.dispose-game]
+build = "runtime"
+symbol = "_dxball_dispose_game"
+target_address = 0x416430
+size = 112
+boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+relocations = [
+  { offset = 18, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x43a90c },
+  { offset = 43, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+  { offset = 53, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 59, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 69, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 75, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 83, type = "REL32", symbol = "_dxball_release_sounds", addend = 0, target = 0x4058b0 },
+  { offset = 88, type = "REL32", symbol = "_dxball_release_sprite_banks", addend = 0, target = 0x403cb0 },
+  { offset = 93, type = "REL32", symbol = "_dxball_close_music", addend = 0, target = 0x401da0 },
+  { offset = 98, type = "REL32", symbol = "_dxball_clear_all_entities", addend = 0, target = 0x4164a0 },
+]

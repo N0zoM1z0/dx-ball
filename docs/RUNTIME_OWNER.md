@@ -1,5 +1,15 @@
 # Game lifecycle and mode dispatch
 
+The [round lifecycle restoration](EXACT_LIFECYCLE.md) recovers complete finish,
+reset, restart and dispose bodies /911 original bytes. Finish (46), restart (327) and
+dispose (112) match all 485 bytes. Reset's full 426-byte emission retains 20 bank-address
+scheduling differences. The live paddle selector, consumed signed DWORD average,
+real owner calls and ordinary returns follow saved complete REA instructions.
+Existing346 lifecycle cases retain their counts; all 1,510 owner cases pass.
+Native fixtures forward restored real calls through current copied-image tables,
+while dependency implementations and physical hardware remain independently scoped.
+The narrative below records the original runtime-owner checkpoint.
+
 The runtime owner follows the gameplay frame outward to its caller and inward
 to real initialization, life-loss reset, score drawing, paddle animation and
 clock arithmetic. REA's caller/switch evidence identifies `0x0040F4C0` as the

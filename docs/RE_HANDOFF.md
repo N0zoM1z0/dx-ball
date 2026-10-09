@@ -1,4 +1,48 @@
-# Current handoff — rectangle and fire-effect controllers
+# Current handoff — complete round lifecycle controllers
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [round lifecycle batch](EXACT_LIFECYCLE.md) restores four complete bodies /
+911 original bytes. Finish (46), restart (327) and dispose (112) add 485 exact code bytes;
+reset (426) retains 20 bank-address scheduling differences. The genuine signed DWORD
+average, live paddle selector, direct owner calls and ordinary returns follow
+complete retained REA instruction evidence. No source/name/order/profile trials.
+
+Acceptance: **283 source-present /247 scoped entries /112,273 distinct cases /
+102 exact functions /11,959 code bytes +136 separate metadata bytes**. All 99 prior
+complete code/metadata identities survive unchanged; origins 270/48/42/168 stay fixed.
+No new matrices, target cases or campaigns. Current right-palette rotation has 10
+whole differences, as the parent's actual cold report already did; earlier human
+handoff count 8 was stale. Other current candidates are retained in full.
+
+All 22 owner scripts pass in 428.330s against 284 frozen inputs and one Debug library.
+One cold compiler epoch supplies 22 actual objects. Fourteen rejection controls,
+rerun 7,164 raster /1,024 rotation COFF vectors and both Windows builds pass.
+The actual cold raster object is adopted for the same complete semantic recipe,
+with explicit provenance: no extra compiler invocation; semantic-driver hash
+attests compatibility, not execution. Native fixtures now forward 13 actual
+symbols through current copied-image tables, checking 14 default slots (including
+the duplicate PlatformOps close_music default). Physical hardware is outside this
+host proof. All 235 application semantic closures refresh, keeping cases unchanged.
+
+Canonical native: build/native/libdxball_core.so from build/native-exact-lifecycle,
+SHA256 cb881c2425669db0017ddc76f7291740df028b97539e69c4205d37274610a812.
+Shim SHA256 659133ba4df93d52dd619a6033aa63b3c1b30c120df64aec94e4cac89f22b7ad.
+Checkpoint: .analysis/checkpoints/exact-lifecycle-283-102, parent connected-effects99.
+Full primary records, frozen input epochs, actual cold objects and reviews retained;
+verified duplicate cleanup uses checkpoint mirrors and keeps mutable products unshared.
+
+Next substantive family: initialize_game (736) + redraw_game (269) =1,005 original bytes.
+Saved full dossiers support 25 separate sound-load sites, genuine direct resource
+calls, two bind-display branches and live surface rereads after callbacks. Score (433)
+is a connected companion but its4158E5→41F570 unsigned converter requires explicit
+callee/ABI/origin evidence before direct binding. Do not infer signed itoa from
+current sprintf spelling. Larger frame 1683/1688 gap40FB21..25 remains unresolved.
+New original analysis only pinned scripts/rea; one writable compiler/provider
+session, one CPU, CMake --parallel1, Ghidra512MiB, silent Pulse sink. English
+`gpt-6.1-sol:` commits and public push remain authorized. **>=95% complete-source
+goal remains active and unachieved.**
+
+# Previous rectangle and fire-effect checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [connected-effects batch](EXACT_CONNECTED_EFFECTS.md) restores four complete

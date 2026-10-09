@@ -59,6 +59,7 @@ def checked(oracle,function,fallback=None):
 
 class RuntimeNative(CoreNative):
     def __init__(self,library):
+        from core_native_loader import bind_runtime
         super().__init__(library)
         self.runtime_sprites=[[Sprite() for _ in range(255)] for _ in range(3)]
         self.primary,self.secondary=Surface(self.vtable),Surface(self.vtable)
@@ -72,6 +73,8 @@ class RuntimeNative(CoreNative):
             signature=C.CFUNCTYPE(None,*[C.c_char_p if k=='s' else C.c_size_t if k=='p' else C.c_int32 for k in kinds])
             callback=signature(checked(self,lambda *a,name=name,kinds=kinds:self.runtime_boundary(name,kinds,a)))
             self.runtime_callbacks.append(callback);table[i]=C.cast(callback,C.c_void_p).value
+        self.core_runtime_table=table
+        bind_runtime(self.core_native_image,self.lib,self.core_runtime_table)
         mode_table=(C.c_void_p*22).in_dll(self.lib,'dxball_mode_ops')
         for op,group in enumerate(MODE_ENTRIES):
             for mode in range(5):

@@ -161,24 +161,25 @@ void dxball_clear_all_entities(void)
 
 void dxball_finish_game(void)
 {
-    dxball_frame_ops.wait_frames(30);
+    dxball_wait_frames(30);
     dxball_end_requested = 1;
     dxball_return_to_menu = 3;
+    return;
 }
 
 void dxball_reset_round(void)
 {
     dxball_remaining_bricks = dxball_count_destructible_bricks();
     dxball_redraw_mode();
-    dxball_runtime_ops.load_saved_palette("mbbkgrnd.pcx");
-    dxball_runtime_ops.palette_transition(1, 6, 0, 255, 1);
+    dxball_load_saved_palette("mbbkgrnd.pcx");
+    dxball_palette_transition(1, 6, 0, 255, 1);
     dxball_bonus_9_active = 0; dxball_bonus_8_active = 0;
     dxball_bonus_3_active = 0; dxball_bonus_14_active = 0;
     dxball_bonus_18_active = 0; dxball_bonus_12_active = 0;
     dxball_destroy_hard_tiles = 0; dxball_bonus_7_active = 0;
     dxball_bonus_3_ticks = 0; dxball_bonus_17_active = 0;
     dxball_last_brick_deadline = 0;
-    dxball_gameplay_ops.stop_sound(21);
+    dxball_stop_sound(21);
     dxball_lightning_y = 2; dxball_lightning_frames = 0;
     dxball_paddle_overlay_deadline = 0;
     dxball_paddle_overlay_sprite = 0; dxball_paddle_overlay_width = 0;
@@ -186,38 +187,40 @@ void dxball_reset_round(void)
     dxball_paddle_y = 450;
     dxball_paddle_previous_x = 0; dxball_paddle_previous_y = 0;
     dxball_paddle_sprite = 68;
-    dxball_paddle_width = dxball_sprite_banks[dxball_sprite_bank].sprites[68]->width;
+    dxball_paddle_width = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_sprite]->width;
     dxball_ball_count = 0; dxball_bonus_count = 0; dxball_palette_tick = 0;
     dxball_launch_requested = 0; dxball_projectile_count = 0;
     dxball_spawn_ball();
     dxball_balls.current->attached = 1;
     dxball_level_changed = 0; dxball_restart_requested = 0;
+    return;
 }
 
 void dxball_restart_round(void)
 {
     DxBallInt i;
-    DxBallByte gray;
+    DxBallInt gray;
     if (dxball_restart_requested == 1) {
         if (dxball_level_changed == 0) {
-            for (i = 0; i < 256; ++i) {
-                gray = (DxBallByte)(((DxBallUInt)dxball_saved_palette[i].red +
-                    dxball_saved_palette[i].green + dxball_saved_palette[i].blue) / 3);
-                dxball_saved_palette[i].red = gray;
-                dxball_saved_palette[i].green = gray;
-                dxball_saved_palette[i].blue = gray;
+            for (i = 0; i <= 255; ++i) {
+                gray = (dxball_saved_palette[i].red +
+                    dxball_saved_palette[i].green + dxball_saved_palette[i].blue) / 3;
+                dxball_saved_palette[i].red = (DxBallByte)gray;
+                dxball_saved_palette[i].green = (DxBallByte)gray;
+                dxball_saved_palette[i].blue = (DxBallByte)gray;
             }
-            dxball_runtime_ops.palette_transition(1, 3, 0, 255, 1);
-            dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        } else dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-        dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
+            dxball_palette_transition(1, 3, 0, 255, 1);
+            dxball_palette_transition(1, 6, 0, 255, 0);
+        } else dxball_palette_transition(1, 6, 0, 255, 0);
+        dxball_clear_surface(dxball_board_surface, 0);
+        dxball_clear_surface(dxball_primary_surface, 0);
         memset(dxball_board_aux, 0, DXBALL_BOARD_SIZE);
         dxball_clear_all_entities();
-        dxball_runtime_ops.reset_regions();
+        dxball_reset_regions();
         if (dxball_lives < 1) dxball_finish_game();
         else dxball_reset_round();
     }
+    return;
 }
 
 void dxball_redraw_game(void)
@@ -281,14 +284,15 @@ void dxball_initialize_game(void)
 void dxball_dispose_game(DxBallInt fade)
 {
     if (fade != 0) {
-        if (dxball_restart_requested == 0) dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-        dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-        dxball_runtime_ops.release_sounds();
-        dxball_runtime_ops.release_sprite_banks();
-        dxball_runtime_ops.finalize_game_resources();
+        if (dxball_restart_requested == 0) dxball_palette_transition(1, 6, 0, 255, 0);
+        dxball_clear_surface(dxball_board_surface, 0);
+        dxball_clear_surface(dxball_primary_surface, 0);
+        dxball_release_sounds();
+        dxball_release_sprite_banks();
+        dxball_close_music();
     }
     dxball_clear_all_entities();
+    return;
 }
 
 void dxball_initialize_mode(void)
