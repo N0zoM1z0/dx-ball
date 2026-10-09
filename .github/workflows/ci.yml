@@ -25,12 +25,12 @@ jobs:
         run: scripts/repo-python scripts/ci.py --public
       - name: Check campaign archival identities without private assets
         run: scripts/repo-python tests/test_campaign_retention.py
-      - name: Install i686 Windows compiler
+      - name: Install i686 Windows C and C++ compilers
         run: |
           sudo apt-get update
           # Match the POSIX compiler used by local Windows probes and avoid
           # downloading the additional win32 compiler/runtime variant.
-          sudo apt-get install --no-install-recommends -y gcc-mingw-w64-i686-posix ninja-build
+          sudo apt-get install --no-install-recommends -y gcc-mingw-w64-i686-posix g++-mingw-w64-i686-posix ninja-build
       - name: Compile Windows adapter and game with strict warnings
         run: scripts/repo-python scripts/build-windows.py --without-game-resources
       - name: Compile persistent campaign observer with strict C90 warnings
