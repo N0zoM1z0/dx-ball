@@ -9,8 +9,33 @@ after the game/reader processes stop. This is original-only acceptance.
 Both maintained VC4 and MinGW full board/menu campaigns pass below;
 whole-game fidelity remains open. The captured
 game runs silently on one allowed CPU. Source totals stay
-**243 source-present (235 game + 8 runtime) / 111,242 direct cases /
+**247 source-present (235 game + 12 runtime) / 112,273 direct cases /
 35 exact units / 3,379 bytes**.
+
+The [standalone termination owner](TERMINATION_OWNER.md) adds four maintained
+runtime entries reached from allocation failure. Its 1,026 fixtures / 1,031
+direct calls pass native, actual VC4 and MinGW object execution and cold build
+replay. REA process captures
+`ev_74256059139d916bbf4972ea63b84ea5859e9e8f4fc50e1b19749a5afb3ad718`
+and `ev_197bf19144c2012b2034c42a376a108f49d2a9285024d8c5282e421314d2ea06`
+retain complete untruncated report digests. Saved normal-exit/controller
+dossiers and two new REA dossiers establish reverse traversal with a reloaded
+begin, fixed local end, forward callback stages and byte/full-argument behavior.
+The expanded CRT library comparison passes 13 complete functions / 546 bytes
+across 52 comparisons, identifying two additional runtime origins (17 / 276
+unknown). Those comparisons do not add configured exact units.
+
+The owner compiles independently and is not wired into game/allocator fatal
+paths. Controlled ExitProcess returns solely to observe this finite owner;
+physical exit, registration, full CRT startup and teardown remain open. Existing
+game sources, products and exact inputs are unchanged; their completed reports
+retain their historical scopes. First/cold checkpoints preserve actual objects
+and resolve mutable input identities to historical copies. Public CI compiles
+this standalone owner; private CI runs both new differential suites.
+
+MinGW post-seal retention recovers another 26,132,480 allocated bytes (24.92 MiB),
+sharing nine completed capture files. All 468 prior frozen inputs, 49 originals
+and checkpoint hashes verify before/after. Mutable source/products stay separate.
 
 The current VC4/MinGW original-board pilot passes with the maintained allocation
 defaults: complete initial slots 0 and 1, three lives, in 27.655 / 34.124 seconds.

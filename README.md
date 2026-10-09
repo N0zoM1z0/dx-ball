@@ -16,8 +16,8 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **243 source-present functions** (235 game entries and 8 runtime dependencies),
-> **111,242 target differential cases**, and
+> entity owners: **247 source-present functions** (235 game entries and 12 runtime dependencies),
+> **112,273 target differential cases**, and
 > **35 byte-exact functions totaling 3,379 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
@@ -125,6 +125,11 @@ failure exits, with fresh-process replay; see the investigation for commands
 and controlled API limits. Byte exactness and complete CRT startup remain
 separate obligations.
 
+The [termination investigation](docs/TERMINATION_OWNER.md) follows allocation
+failure into the original CRT callback dispatcher. Four standalone runtime
+functions pass 1,031 original/native cases and actual VC4/MinGW object replay,
+including callback mutations and full-width exit arguments. The experimental
+game still uses its host CRT; physical termination and registration remain open.
 The [runtime-library investigation](docs/CRT_PROVENANCE.md) pairs REA instruction
 and byte observations with whole pinned CRT objects, identifying eight further
 runtime dependencies. Library provenance stays separate from maintained source

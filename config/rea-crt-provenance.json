@@ -141,5 +141,31 @@
       "address": "0x00417950",
       "length": 128
     }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x00417930"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x004179D0"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x00417930",
+      "length": 18
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x004179D0",
+      "length": 32
+    }
   }
 ]

@@ -77,6 +77,18 @@
       "size": 128,
       "symbol": "_doexit",
       "family": "crt_termination"
+    },
+    {
+      "address": "0x00417930",
+      "size": 18,
+      "symbol": "__exit",
+      "family": "crt_termination"
+    },
+    {
+      "address": "0x004179D0",
+      "size": 32,
+      "symbol": "__initterm",
+      "family": "crt_termination"
     }
   ],
   "relocations": {

@@ -28,6 +28,8 @@ def main():
     python("scripts/verify-python.py")
     python("scripts/validate-tracking.py", *([] if args.public else ["--require-target"]))
     python("tests/test_crt_library.py")
+    python("tests/test_termination_differential.py", "--source-check")
+    python("tests/test_termination_differential.py", "--compile-only")
     run(["cmake", "-S", ".", "-B", "build/native", "-G", "Ninja", "-DCMAKE_BUILD_TYPE=Debug"])
     run(["cmake", "--build", "build/native", "--parallel", str(BUILD_JOBS)])
     if args.public:
@@ -44,6 +46,8 @@ def main():
     python("tests/test_allocator_differential.py")
     python("scripts/compile-semantic-build.py", "--build", "allocator")
     python("tests/test_allocator_coff.py")
+    python("tests/test_termination_differential.py")
+    python("tests/test_termination_coff.py")
     python("tests/test_boards_differential.py")
     python("tests/test_resources_differential.py")
     python("tests/test_rotation_differential.py")

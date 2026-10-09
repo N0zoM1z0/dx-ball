@@ -342,9 +342,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004177F8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004178E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00417910,runtime,crt_termination,dependency,high,ev_df594328fa0899467c7969112f2ca49e255c91e1d3fb81b92b74f5e60db13234
-0x00417930,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00417930,runtime,crt_termination,dependency,high,ev_a342568802ab9da4d777a0d9d9e9337d13dbadc5981b0e6b8fc92fda720d75d0
 0x00417950,runtime,crt_termination,dependency,high,ev_708cef33a373375bddd52f451b3dcb5c0c69e2fefd4e9cb94a8f8876f53e098b
-0x004179D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004179D0,runtime,crt_termination,dependency,high,ev_db9b75cfc245d4d07c1f7ac4e273aced3e99823502913955529db3cc962382e2
 0x004179F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00417A00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00417A30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

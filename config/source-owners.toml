@@ -209,3 +209,10 @@ header = "src/allocator.h"
 oracle = "tests/test_allocator_differential.py"
 target_oracle = "tests/target_oracle.py"
 additional_inputs = ["src/allocator_host.c", "src/state_types.h"]
+
+[owners.termination]
+source = "src/termination.c"
+header = "src/termination.h"
+oracle = "tests/test_termination_differential.py"
+target_oracle = "tests/target_oracle.py"
+additional_inputs = ["tests/termination_oracle.py", "tests/test_termination_coff.py", "scripts/coff.py", "scripts/legacy_toolchain.py", "scripts/resource_limits.py", "scripts/repo-python", "config/target.toml", "config/tools.lock.toml"]

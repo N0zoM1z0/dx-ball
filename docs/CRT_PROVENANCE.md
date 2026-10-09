@@ -1,10 +1,10 @@
 # Runtime-library dependencies
 
-Eleven complete original function bodies agree with corresponding objects in
+Thirteen complete original function bodies agree with corresponding objects in
 the hash-pinned VC4 **`libc.lib`** after applying every relocation. The comparison
-covers **496 bytes** and checks four library variants independently: **44
+covers **546 bytes** and checks four library variants independently: **52
 function/library comparisons**. It supplies runtime-origin evidence, separate
-from maintained C, differential cases and the 36 configured exact units.
+from maintained C, differential cases and the configured exact units.
 
 This batch resolved eight previously unknown entries. At its checkpoint, totals
 were **14 identified runtime dependencies / 292 unknown origins**, with
@@ -12,6 +12,12 @@ maintained source at **222 functions / 105,036 direct cases / 36 exact units /
 3,518 bytes**. See the [current handoff](RE_HANDOFF.md) for subsequent game-owner
 acceptance. The three previously identified heap entries gain object-level
 corroboration without another origin promotion.
+
+The later [termination batch](TERMINATION_OWNER.md) adds complete quick-exit
+and initializer-walker observations and whole-section comparisons, identifying
+two further runtime entries. Current origin totals are **17 runtime / 276
+unknown**. Its four maintained standalone functions and 1,031 direct calls are
+separate semantic acceptance; game/host CRT integration remains open.
 
 | Original entry | Defined COFF symbol | Whole body bytes |
 | --- | --- | ---: |
@@ -26,6 +32,8 @@ corroboration without another origin promotion.
 | `0x004177D0` | `__heap_alloc` | 21 |
 | `0x00419EA0` | `__callnewh` | 33 |
 | `0x00417950` | `_doexit` | 128 |
+| `0x00417930` | `__exit` — C `_exit` | 18 |
+| `0x004179D0` | `__initterm` | 32 |
 
 The leading underscore in `_exit` is COFF C-name decoration; this row refers
 to `exit`, rather than the C `_exit` function. The latter has the distinct COFF
@@ -67,7 +75,7 @@ controlled dependency boundaries.
 
 ## Complete object comparisons
 
-[crt-provenance.json](../config/crt-provenance.json) fixes the eleven reviewed
+[crt-provenance.json](../config/crt-provenance.json) fixes the thirteen reviewed
 addresses/extents, library candidates and explicit relocation map. The map
 uses REA-observed call/data references: heap and handler state, Win32 IAT slots,
 termination flags, callback-table bounds and the initializer-table helper.
@@ -83,10 +91,10 @@ COMDAT sections. No exact-oracle rule or accepted replay input is changed.
 
 | Pinned library candidate | Whole functions agreeing | Contradicting entries |
 | --- | ---: | --- |
-| `libc.lib` | 11/11 | None in this batch |
-| `libcmt.lib` | 8/11 | `_nh_malloc`, `_callnewh`, `doexit` |
-| `libcd.lib` | 2/11 | All except `_ftol` and `strlen` |
-| `libcmtd.lib` | 2/11 | All except `_ftol` and `strlen` |
+| `libc.lib` | 13/13 | None in this batch |
+| `libcmt.lib` | 9/13 | `_nh_malloc`, `_callnewh`, `doexit`, `_initterm` |
+| `libcd.lib` | 2/13 | All except `_ftol` and `strlen` |
+| `libcmtd.lib` | 2/13 | All except `_ftol` and `strlen` |
 
 The threaded `_nh_malloc` has the same section length but different compared
 bytes; this cannot be dismissed as an extent difference. The results establish
