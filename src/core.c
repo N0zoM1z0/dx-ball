@@ -8,6 +8,8 @@
 #include "runtime.h"
 #include "display.h"
 #include "trig.h"
+#include "sound.h"
+#include "startup.h"
 #include <stdlib.h>
 
 DxBallInt dxball_projectile_count;
@@ -231,171 +233,223 @@ void dxball_drop_bricks(void)
 /* Main physics: the cached paddle position belongs to the previous frame. */
 void dxball_update_balls(void)
 {
-    DxBallBallNode *ball;
-    DxBallSprite *sprite;
-    DxBallInt x, y, sign, limit, i, dx, dy, hit;
-    if (!dxball_begin_balls(&dxball_balls)) {
-        dxball_lose_life();
-        return;
-    }
-    do {
-        ball = dxball_balls.current;
-        sprite = dxball_sprite_banks[dxball_sprite_bank].sprites[ball->sprite];
-        if (ball->attached != 0) {
-            if (dxball_launch_requested == 1) {
-                ball->attached = 0;
-                dxball_bounce_ball_from_paddle();
-            }
-            dxball_attached_ball_cue = 1;
-            ball->previous_x = ball->x;
-            ball->previous_y = ball->y;
-            ball->x = ball->attach_offset + dxball_paddle_x;
-            ball->y = dxball_paddle_y - sprite->height;
-        } else {
-            ball->previous_x = ball->x;
-            ball->previous_y = ball->y;
-            ball->x += ball->dx;
-            ball->y += ball->dy;
-            if (dxball_bonus_3_ticks != 0) ++ball->y;
-            if (ball->sprite == 61) {
-                limit = (dxball_reduced_particles == 0 ? 11 : 14) - ball->speed;
-                if (dxball_gameplay_ops.random_range(limit) == 0) {
-                    dy = ball->dy / 2; dx = ball->dx / 2;
-                    y = ball->y + dxball_gameplay_ops.random_range(sprite->height);
-                    x = ball->x + dxball_gameplay_ops.random_range(sprite->width);
-                    dxball_gameplay_ops.particle(x, y, dx, dy, 95, 0);
-                }
-            }
-            if (ball->y > 479 - sprite->height) {
-                dxball_gameplay_ops.stop_sound(5);
-                dxball_gameplay_ops.play_sound(5, 0, dxball_screen_pan(ball->x), 0);
-                dxball_retire_ball();
-            } else {
-                if (ball->x < 20) {
-                    ball->x = 20; ball->dx = abs(ball->dx);
-                    dxball_gameplay_ops.stop_sound(4);
-                    dxball_gameplay_ops.play_sound(4, 0, dxball_screen_pan(ball->x), 0);
-                    ++ball->bounce_count; ++ball->wall_bounces;
-                }
-                if (ball->x > 619 - sprite->width) {
-                    ball->x = 619 - sprite->width; ball->dx = -abs(ball->dx);
-                    dxball_gameplay_ops.stop_sound(4);
-                    dxball_gameplay_ops.play_sound(4, 0, dxball_screen_pan(ball->x), 0);
-                    ++ball->bounce_count; ++ball->wall_bounces;
-                }
-                if (ball->y < 0) {
-                    ball->y = 0; ball->dy = abs(ball->dy);
-                    dxball_gameplay_ops.stop_sound(4);
-                    dxball_gameplay_ops.play_sound(4, 0, dxball_screen_pan(ball->x), 0);
-                    ++ball->bounce_count; ++ball->wall_bounces;
-                }
-                if (dxball_rectangles_overlap(dxball_paddle_previous_x - dxball_paddle_width / 2,
-                    dxball_paddle_previous_y, dxball_paddle_previous_x + dxball_paddle_width / 2,
-                    dxball_paddle_previous_y + 7, ball->x, ball->y,
-                    ball->x + sprite->width, ball->y + sprite->height) && ball->dy > 0) {
-                    ball->wall_bounces = 0;
-                    if (ball->bounce_count > 40) {
-                        ++ball->speed;
-                        if (ball->speed > 9) ball->speed = 9;
-                        ball->bounce_count = 0;
+    DxBallInt chance, x, y, sign, i, j;
+    if (dxball_begin_balls(&dxball_balls)) {
+        do {
+            if (dxball_balls.current->attached == 0) {
+                dxball_balls.current->previous_x = dxball_balls.current->x;
+                dxball_balls.current->previous_y = dxball_balls.current->y;
+                dxball_balls.current->x += dxball_balls.current->dx;
+                dxball_balls.current->y += dxball_balls.current->dy;
+                if (dxball_bonus_3_ticks != 0) ++dxball_balls.current->y;
+                if (dxball_balls.current->sprite == 61) {
+                    if (dxball_reduced_particles != 0)
+                        chance = dxball_random_range(14 - dxball_balls.current->speed);
+                    else chance = dxball_random_range(11 - dxball_balls.current->speed);
+                    if (chance == 0) {
+                        dxball_spawn_particle(dxball_balls.current->x + dxball_random_range(
+                            dxball_sprite_banks[dxball_sprite_bank].sprites[61]->width),
+                            dxball_balls.current->y + dxball_random_range(
+                            dxball_sprite_banks[dxball_sprite_bank].sprites[61]->height),
+                            dxball_balls.current->dx / 2, dxball_balls.current->dy / 2, 95, 0);
                     }
-                    if (dxball_bonus_17_active == 1) dxball_drop_bricks();
-                    if (dxball_bonus_9_active == 1) {
-                        dxball_gameplay_ops.stop_sound(18);
-                        dxball_gameplay_ops.play_sound(18, 0, dxball_screen_pan(ball->x), 0);
-                        ball->attached = 1;
-                        ball->attach_offset = ball->x - dxball_paddle_x;
-                        sign = ball->attach_offset < 1 ? -1 : 1;
-                        limit = (DxBallInt)((long double)dxball_paddle_width / 2.0 * 0.8);
-                        if (abs(ball->attach_offset) > limit) {
-                            ball->attach_offset = limit * sign;
-                            ball->attach_offset -= sprite->width / 2;
+                }
+                if (dxball_balls.current->y > 479 - dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height) {
+                    dxball_stop_sound(5);
+                    dxball_play_sound(5, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                    dxball_retire_ball();
+                } else {
+                    if (dxball_balls.current->x < 20) {
+                        dxball_balls.current->x = 20;
+                        dxball_balls.current->dx = abs(dxball_balls.current->dx);
+                        dxball_stop_sound(4);
+                        dxball_play_sound(4, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                        ++dxball_balls.current->bounce_count;
+                        ++dxball_balls.current->wall_bounces;
+                    }
+                    if (dxball_balls.current->x > 619 - dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width) {
+                        dxball_balls.current->x = 619 - dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width;
+                        dxball_balls.current->dx = -abs(dxball_balls.current->dx);
+                        dxball_stop_sound(4);
+                        dxball_play_sound(4, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                        ++dxball_balls.current->bounce_count;
+                        ++dxball_balls.current->wall_bounces;
+                    }
+                    if (dxball_balls.current->y < 0) {
+                        dxball_balls.current->y = 0;
+                        dxball_balls.current->dy = abs(dxball_balls.current->dy);
+                        dxball_stop_sound(4);
+                        dxball_play_sound(4, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                        ++dxball_balls.current->bounce_count;
+                        ++dxball_balls.current->wall_bounces;
+                    }
+                    if (dxball_rectangles_overlap(dxball_paddle_previous_x - dxball_paddle_width / 2,
+                        dxball_paddle_previous_y, dxball_paddle_previous_x + dxball_paddle_width / 2,
+                        dxball_paddle_previous_y + 7, dxball_balls.current->x, dxball_balls.current->y,
+                        dxball_balls.current->x + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width, dxball_balls.current->y + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height) && dxball_balls.current->dy > 0) {
+                        dxball_balls.current->wall_bounces = 0;
+                        if (dxball_balls.current->bounce_count > 40) {
+                            ++dxball_balls.current->speed;
+                            if (dxball_balls.current->speed > 9) dxball_balls.current->speed = 9;
+                            dxball_balls.current->bounce_count = 0;
                         }
-                    } else {
-                        dxball_gameplay_ops.stop_sound(0);
-                        dxball_gameplay_ops.play_sound(0, 0, dxball_screen_pan(ball->x), 0);
-                        dxball_bounce_ball_from_paddle();
-                        if (ball->speed > 7) {
-                            dxball_gameplay_ops.play_sound(15, 0, dxball_screen_pan(ball->x), 0);
-                            limit = dxball_reduced_particles == 0 ? 10 : 6;
-                            for (i = 0; i < limit; ++i) {
-                                dy = -1 - dxball_gameplay_ops.random_range(3);
-                                dx = 3 - dxball_gameplay_ops.random_range(7);
-                                dxball_gameplay_ops.particle(ball->x, ball->y, dx, dy, 176, 1);
+                        if (dxball_bonus_17_active == 1) dxball_drop_bricks();
+                        if (dxball_bonus_9_active == 1) {
+                            dxball_stop_sound(18);
+                            dxball_play_sound(18, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                            dxball_balls.current->attached = 1;
+                            dxball_balls.current->attach_offset = dxball_balls.current->x - dxball_paddle_x;
+                            if (dxball_balls.current->attach_offset > 0) sign = 1;
+                            else sign = -1;
+                            if (abs(dxball_balls.current->attach_offset) >
+                                (DxBallInt)((long double)dxball_paddle_width / 2.0 * 0.8)) {
+                                dxball_balls.current->attach_offset =
+                                    (DxBallInt)((long double)dxball_paddle_width / 2.0 * 0.8) * sign;
+                                dxball_balls.current->attach_offset -= dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width / 2;
+                            }
+                        } else {
+                            dxball_stop_sound(0);
+                            dxball_play_sound(0, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                            dxball_bounce_ball_from_paddle();
+                            if (dxball_balls.current->speed > 7) {
+                                dxball_play_sound(15, 0, dxball_screen_pan(dxball_balls.current->x), 0);
+                                if (dxball_reduced_particles != 0) {
+                                    for (i = 0; i < 6; ++i) {
+                                        dxball_spawn_particle(dxball_balls.current->x, dxball_balls.current->y,
+                                            3 - dxball_random_range(7),
+                                            -1 - dxball_random_range(3), 176, 1);
+                                    }
+                                } else {
+                                    for (j = 0; j < 10; ++j) {
+                                        dxball_spawn_particle(dxball_balls.current->x, dxball_balls.current->y,
+                                            3 - dxball_random_range(7),
+                                            -1 - dxball_random_range(3), 176, 1);
+                                    }
+                                }
                             }
                         }
                     }
-                }
-                dxball_hit_dx = ball->dx; dxball_hit_dy = ball->dy / 2;
-                sign = ball->dy < 0 ? 1 : -1;
-                y = ball->dy < 0 ? ball->y : ball->y + sprite->height;
-                if (dxball_hit_screen_point(ball->x + sprite->width / 2, y)) {
-                    if (dxball_destroy_hard_tiles == 0) {
-                        ball->dy = abs(ball->dy) * sign;
-                        if (sign == 1) ball->y += 15 - (y - 50) % 15;
-                        else ball->y -= (y - 50) % 15;
+                    dxball_hit_dx = dxball_balls.current->dx;
+                    dxball_hit_dy = dxball_balls.current->dy / 2;
+                    if (dxball_balls.current->dy < 0) {
+                        x = dxball_balls.current->x + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width / 2;
+                        y = dxball_balls.current->y;
+                        if (dxball_hit_screen_point(x, y)) {
+                            if (dxball_destroy_hard_tiles == 0) {
+                                dxball_balls.current->dy = abs(dxball_balls.current->dy);
+                                dxball_balls.current->y += 15 - (y - 50) % 15;
+                            }
+                            ++dxball_balls.current->bounce_count;
+                            ++dxball_balls.current->wall_bounces;
+                        }
+                    } else {
+                        x = dxball_balls.current->x + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width / 2;
+                        y = dxball_balls.current->y + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height;
+                        if (dxball_hit_screen_point(x, y)) {
+                            if (dxball_destroy_hard_tiles == 0) {
+                                dxball_balls.current->dy = -abs(dxball_balls.current->dy);
+                                dxball_balls.current->y -= (y - 50) % 15;
+                            }
+                            ++dxball_balls.current->bounce_count;
+                            ++dxball_balls.current->wall_bounces;
+                        }
                     }
-                    ++ball->bounce_count; ++ball->wall_bounces;
+                    if (dxball_balls.current->dx < 0) {
+                        x = dxball_balls.current->x - 2;
+                        y = dxball_balls.current->y + (DxBallInt)((long double)dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height * 0.15);
+                        if (dxball_hit_screen_point(x, y)) {
+                            if (dxball_destroy_hard_tiles == 0) dxball_balls.current->dx = abs(dxball_balls.current->dx);
+                            ++dxball_balls.current->bounce_count;
+                            ++dxball_balls.current->wall_bounces;
+                        } else {
+                            x = dxball_balls.current->x - 2;
+                            y = dxball_balls.current->y + (DxBallInt)((long double)dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height * 0.85);
+                            if (dxball_hit_screen_point(x, y)) {
+                                if (dxball_destroy_hard_tiles == 0) dxball_balls.current->dx = abs(dxball_balls.current->dx);
+                                ++dxball_balls.current->bounce_count;
+                                ++dxball_balls.current->wall_bounces;
+                            }
+                        }
+                    } else {
+                        x = dxball_balls.current->x + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width + 2;
+                        y = dxball_balls.current->y + (DxBallInt)((long double)dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height * 0.15);
+                        if (dxball_hit_screen_point(x, y)) {
+                            if (dxball_destroy_hard_tiles == 0) dxball_balls.current->dx = -abs(dxball_balls.current->dx);
+                            ++dxball_balls.current->bounce_count;
+                            ++dxball_balls.current->wall_bounces;
+                        } else {
+                            x = dxball_balls.current->x + dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width + 2;
+                            y = dxball_balls.current->y + (DxBallInt)((long double)dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height * 0.85);
+                            if (dxball_hit_screen_point(x, y)) {
+                                if (dxball_destroy_hard_tiles == 0) dxball_balls.current->dx = -abs(dxball_balls.current->dx);
+                                ++dxball_balls.current->bounce_count;
+                                ++dxball_balls.current->wall_bounces;
+                            }
+                        }
+                    }
+                    if (dxball_balls.current->wall_bounces > 300) {
+                        dxball_soften_special_bricks();
+                        dxball_balls.current->wall_bounces = 0;
+                    }
                 }
-                sign = ball->dx < 0 ? 1 : -1;
-                x = ball->dx < 0 ? ball->x - 2 : ball->x + sprite->width + 2;
-                y = ball->y + (DxBallInt)((long double)sprite->height * 0.15);
-                hit = dxball_hit_screen_point(x, y);
-                if (!hit) {
-                    y = ball->y + (DxBallInt)((long double)sprite->height * 0.85);
-                    hit = dxball_hit_screen_point(x, y);
+            } else {
+                if (dxball_launch_requested == 1) {
+                    dxball_balls.current->attached = 0;
+                    dxball_bounce_ball_from_paddle();
                 }
-                if (hit) {
-                    if (dxball_destroy_hard_tiles == 0) ball->dx = abs(ball->dx) * sign;
-                    ++ball->bounce_count; ++ball->wall_bounces;
-                }
-                if (ball->wall_bounces > 300) {
-                    dxball_soften_special_bricks();
-                    ball->wall_bounces = 0;
-                }
+                dxball_attached_ball_cue = 1;
+                dxball_balls.current->previous_x = dxball_balls.current->x;
+                dxball_balls.current->previous_y = dxball_balls.current->y;
+                dxball_balls.current->x = dxball_balls.current->attach_offset + dxball_paddle_x;
+                dxball_balls.current->y = dxball_paddle_y - dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height;
             }
-        }
-    } while (dxball_advance_ball(&dxball_balls));
+        } while (dxball_advance_ball(&dxball_balls));
+    } else dxball_lose_life();
+    return;
 }
 
 void dxball_update_projectiles(void)
 {
     DxBallInt column, row;
-    DxBallProjectileNode *node;
     if (dxball_begin_projectiles(&dxball_projectiles)) {
         do {
-            node = dxball_projectiles.current;
-            node->previous_x = node->x; node->previous_y = node->y;
-            node->y -= 8;
-            dxball_hit_dx = 1 - dxball_gameplay_ops.random_range(3);
+            dxball_projectiles.current->previous_x = dxball_projectiles.current->x;
+            dxball_projectiles.current->previous_y = dxball_projectiles.current->y;
+            dxball_projectiles.current->y -= 8;
+            dxball_hit_dx = 1 - dxball_random_range(3);
             dxball_hit_dy = -2;
-            column = (node->x - 20 + dxball_sprite_banks[dxball_sprite_bank].sprites[32]->width / 2) / 30;
-            row = (node->y - 50) / 15;
-            if (node->y < 0) {
+            column = (dxball_projectiles.current->x +
+                dxball_sprite_banks[dxball_sprite_bank].sprites[32]->width / 2 - 20) / 30;
+            row = (dxball_projectiles.current->y - 50) / 15;
+            if (dxball_projectiles.current->y < 0) {
                 dxball_retire_projectile();
-            } else if (row >= 0 && row < 20 && dxball_board_tiles[column + row * 20] != 0) {
-                if (dxball_destroy_hard_tiles == 0) {
-                    dxball_retire_projectile();
-                }
+            } else if (row >= 0 && row < 20 && (signed char)dxball_board_tiles[column + row * 20] != 0) {
+                if (dxball_destroy_hard_tiles == 0) dxball_retire_projectile();
                 if (dxball_hit_board_tile(column, row)) dxball_score += 4;
             }
         } while (dxball_advance_projectile(&dxball_projectiles));
     }
+    return;
 }
 
 void dxball_fire_projectiles(void)
 {
-    DxBallSprite *sprite;
-    sprite = dxball_sprite_banks[dxball_sprite_bank].sprites[32];
     dxball_append_projectile(&dxball_projectiles);
-    dxball_projectiles.current->x = dxball_paddle_x - (DxBallInt)((long double)dxball_paddle_width * 0.425) - sprite->width / 2;
-    dxball_projectiles.current->y = dxball_paddle_y - sprite->height / 2;
+    dxball_projectiles.current->x = dxball_paddle_x -
+        (DxBallInt)((long double)dxball_paddle_width * 0.425) -
+        dxball_sprite_banks[dxball_sprite_bank].sprites[32]->width / 2;
+    dxball_projectiles.current->y = dxball_paddle_y -
+        dxball_sprite_banks[dxball_sprite_bank].sprites[32]->height / 2;
     dxball_append_projectile(&dxball_projectiles);
-    dxball_projectiles.current->x = dxball_paddle_x + (DxBallInt)((long double)dxball_paddle_width * 0.43) - sprite->width / 2;
-    dxball_projectiles.current->y = dxball_paddle_y - sprite->height / 2;
+    dxball_projectiles.current->x = dxball_paddle_x +
+        (DxBallInt)((long double)dxball_paddle_width * 0.43) -
+        dxball_sprite_banks[dxball_sprite_bank].sprites[32]->width / 2;
+    dxball_projectiles.current->y = dxball_paddle_y -
+        dxball_sprite_banks[dxball_sprite_bank].sprites[32]->height / 2;
     dxball_projectile_count += 2;
-    dxball_gameplay_ops.stop_sound(17);
-    dxball_gameplay_ops.play_sound(17, 0, dxball_screen_pan(dxball_projectiles.current->x), 0);
+    dxball_stop_sound(17);
+    dxball_play_sound(17, 0, dxball_screen_pan(dxball_projectiles.current->x), 0);
+    return;
 }
 
 /* Recompute velocity without discarding the direction already chosen by a hit.

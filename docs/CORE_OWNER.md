@@ -1,5 +1,14 @@
 # Main ball physics and gameplay frame
 
+The subsequent [ball and projectile source restoration](EXACT_CORE_CONTROLLERS.md)
+restores separate real particle/RNG/collision sites, uncached owner accesses
+and complete exits in 3,872 original bytes. Fire-projectiles matches all 321
+bytes; ball/projectile updates retain 23/8 source-local displacement differences.
+The existing 2,506 cases for these three functions and connected frame cases
+pass. Native test-only interposition supplies the existing sound/RNG boundaries
+while maintained controllers call real game symbols. No new oracle cases or
+physical driver claims follow from this restoration.
+
 The later [typed cleanup batch](EXACT_LISTS.md) independently maps the fire
 and projectile cleanup leaves and connects the full cleanup caller. Its leaf
 acceptance compares complete bytes; existing connected cases retain their

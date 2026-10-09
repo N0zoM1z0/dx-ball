@@ -35,6 +35,7 @@ def main():
     if args.public:
         print("Public checks passed. Target, exact, and runtime oracles require private originals.")
         return
+    python("tests/core_native_loader.py", "--prepare-only")
     python("scripts/verify-target.py")
     python("scripts/verify-toolchain.py", "--execute")
     rea_runs = ROOT / ".analysis/rea/runs"

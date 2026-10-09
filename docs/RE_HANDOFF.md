@@ -1,4 +1,68 @@
-# Current handoff — bank loops and palette state
+# Current handoff — ball and projectile controllers
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [ball/projectile controller batch](EXACT_CORE_CONTROLLERS.md) restores three
+complete bodies / 3,872 bytes. Fire-projectiles at 0x4132c0 adds 321 exact bytes;
+update-balls (3,223 bytes) and update-projectiles (328) retain 23/8 actual local-frame
+operand differences. Six consumed ball locals and two projectile coordinates
+are genuine; floating conversion slots remain compiler spills. Do not pursue
+name/declaration-order trials. Saved primary assembly supports moving-first
+branches, separate six/ten particle loops, repeated collision/paddle reads,
+positive-offset sticky sign, signed tile load and allocation-before-dimensions.
+Real sound/RNG/particle calls now live in shared maintained source.
+
+Acceptance: **283 source-present / 247 scoped entries / 112,273 distinct cases /
+101 exact units / 12,548 code bytes + 136 accepted separate metadata bytes**.
+All 100 prior complete code/metadata identities preserve 12,227+136 bytes.
+Origins remain 270 authored / 48 runtime / 42 generated / 168 unknown. No new cases,
+oracle bodies, fixtures, source rows or campaigns. Existing application
+semantic input closures refresh after maintained source/harness changes.
+
+All 22 owner scripts pass against 282 frozen inputs and a single native Debug
+product. Cold replay of 101 units across 22 actual retained objects, 14 existing rejection controls,
+strict MinGW and full VC4 builds pass. Raster 7,164 / rotation 1,024 COFF vectors
+reuse verified complete inputs/recipes/test scripts/actual logs. Fourteen
+floating operand data_hex attestations (six literals) were added after owner
+replay and before the sole cold compile; original owner manifest/batch and
+parsed-equality/reuse proof are retained separately. Every relocation and
+literal is compared; no masking or conditional exact claim.
+
+Native alias: `build/native/libdxball_core.so`, from
+`build/native-exact-core-controllers/libdxball_core.so`, SHA256
+`28ecba51925c879a55e52f2fab54c5acc30d692f80d1f027d1f21ed2e75a0d0e`.
+Checkpoint: `.analysis/checkpoints/exact-core-controllers-283-101`, parent
+`.analysis/checkpoints/exact-bank-loops-283-100`. Full frozen inputs, saved REA
+dossiers, actual 22 cold products, selected and initial diagnostic epochs,
+private shim probes and independent reviews are sealed before verified cleanup.
+The 465-record snapshot is unchanged; no new original-analysis session.
+
+CoreNative now uses tests/core_native_loader.py and core_gameplay_interposer.c.
+Prepare with `scripts/repo-python tests/core_native_loader.py --prepare-only`
+before an owner holds the compiler-session lock; private CI prepares it
+automatically. Compiler-generated-MD input
+closure and compiler/flags/loader/helper identity verify cache hits. It loads
+GLOBAL three-symbol shim then a byte-identical separate-inode library copy,
+checks real symbol ownership/default interposition and binds actual current
+GameplayOps after inherited callbacks initialize. Fresh canonical LOCAL audits
+and standalone sound remain unchanged. Private baseline four-scenario probe
+passes canonical-first/copy-only and expected abort controls; all 22 current
+owners exercise the maintained bridge. This does not prove driver fidelity.
+
+Prior triangle/elapsed/height/distance candidates remain 99/3/158/52 differences;
+five palette/COM candidates remain 8/7/8/8/18. Triangle's 160 matching metadata bytes
+remain unaccepted. Original spelling/compiler local assignment remains open.
+No fake locals, copied code, padding, profiles, assembly or volatile barriers.
+
+Next connected family: brick drop (426 bytes) and its genuine invalidate at 0x408b70,
+then complete fire-effect/retirement and enclosing frame control flow. Reuse
+saved full dossiers and existing 56 drop / 50 spawn / 96 process cases; do not broaden
+test matrices or map render_ops onto unrelated storage. New original analysis
+only pinned scripts/rea; one writable compiler/provider session, one CPU,
+CMake --parallel 1, Ghidra 512 MiB, silent Pulse sink. Detailed English commit prefix
+and public push authorization persist. **>=95% complete-source goal is active
+and unachieved**; authored denominator and whole-game fidelity remain open.
+
+# Previous bank loops and palette state checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [bank loops and palette state batch](EXACT_BANK_LOOPS.md) promotes three

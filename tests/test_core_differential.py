@@ -38,7 +38,11 @@ FRAME_BOUNDARIES = [('current_time', 0x403450, 0), ('elapsed', 0x4034F0, 2),
 
 class CoreNative(FamilyNative):
     def __init__(self, library):
-        super().__init__(library)
+        from core_native_loader import fixture_image, bind_gameplay
+        self.core_native_image = fixture_image(library)
+        super().__init__(self.core_native_image.path)
+        self.core_gameplay_table = Ops.in_dll(self.lib, 'dxball_gameplay_ops')
+        bind_gameplay(self.core_native_image, self.lib, self.core_gameplay_table)
         self.owners.update(projectiles=ProjectileList.in_dll(self.lib, 'dxball_projectiles'),
                            fire=FireList.in_dll(self.lib, 'dxball_fire_effects'))
         for owner, singular, plural in ((ProjectileList, 'projectile', 'projectiles'),
