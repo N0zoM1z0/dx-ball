@@ -6,7 +6,8 @@ state, in 5,465.402 seconds with eight lives. REA process Evidence
 `ev_e7f2df5e40a1a0ba723c0156934c2684a7f136e0ebee954177b00cac5e746c8f`
 records exit zero and the full final-report digest. All 98 archive files verify
 after the game/reader processes stop. This is original-only acceptance;
-VC4/MinGW full campaigns and whole-game fidelity remain open. The captured
+The maintained VC4 full campaign also passes below; MinGW's full campaign
+and whole-game fidelity remain open. The captured
 game runs silently on one allowed CPU. Source totals stay
 **243 source-present (235 game + 8 runtime) / 111,242 direct cases /
 35 exact units / 3,379 bytes**.
@@ -14,13 +15,17 @@ game runs silently on one allowed CPU. Source totals stay
 The current VC4/MinGW original-board pilot passes with the maintained allocation
 defaults: complete initial slots 0 and 1, three lives, in 27.655 / 34.124 seconds.
 REA `ev_7bb287fac944b6b78929cba21f4bc7b24f904f6a08104f8fcc30cd304b834e44`
-binds the bounded progression report. The full VC4 50-board capture is now live
-on one allowed CPU with silent playback; its result is pending. Inspect
-`.analysis/allocator-vc40-full-phase.json` and revalidate its capture PID/start
-ticks plus the recorded exec session before polling. Do not restart from a
-stale phase or observation timeout. It holds the runtime/compiler session;
-new source/compiler replays should wait for its terminal result. The original
-full-control archive and source/exact acceptance remain unchanged.
+binds the bounded progression report. The maintained VC4 full campaign now
+verifies all 50 initial boards and terminal index 50/menu mode 0 in 5,081.596
+seconds, with 10 lives and score 148,628. REA
+`ev_e10e14cb27e397943eabc8cc454c4ae7bd1f213ac1de79d3680f443032880c7b`
+binds the complete final report; child exit is zero. Recovery finalized the
+stale outer phase without restarting the completed capture. The 220-file
+`allocator-vc40-full-243-35` checkpoint verifies all 468 frozen inputs and 49
+originals. Rendered terminal snapshots hit their cumulative budget; the raw
+board messages and final report digest remain complete. Keep those limits
+distinct from the full board/menu predicate. The session is released; MinGW's
+full campaign and connected allocation failure/replay controls remain next.
 
 The independent frame-connection design review identifies a concrete synthetic
 heap/COM callback address collision in the old private helper. A new connected
@@ -52,8 +57,12 @@ session acquisition or output creation. The source-only batch receipt is
 frame has executed and acceptance counts are unchanged. Unpublished scratch
 requires an explicitly reviewed exclusive producer (`clone_balls` or
 `spread_explosive_bricks`), rather than a host-size guess. Batch execution,
-terminal allocation controls and frozen cold replay remain required after the
-live campaign releases the session.
+terminal allocation controls and frozen cold replay remain required. Review
+found two death-fixture preparation defects: clear `attached` before dropping
+the ball, compare the retirement frame before arming failures, and inject the
+replacement allocation failure in the following frame. Terminal controls also
+need per-child execution identities and exact allocator-entry deltas. These
+unexecuted private drafts do not change maintained acceptance.
 
 The [maintained allocation owner](ALLOCATOR_OWNER.md) now supplies new/delete
 and malloc/release defaults for nodes, music, resources and sound. All 23 fresh
@@ -75,8 +84,8 @@ The original pre-integration gold and private MIDI/resource/sound connections
 retain SHA-sealed historical snapshots. They are supporting evidence, not new
 executions of current production defaults. Full connected owner failure paths,
 handler registration, complete CRT startup/teardown and reconstructed full
-campaigns remain open. The bounded original-board pilot is now complete and full VC4 observation
-is live as described above. Connected frame failure controls and the subsequent
+campaign fidelity remains open. The bounded original-board pilot and full VC4
+board/menu observation pass as described above. Connected frame failure controls and the subsequent
 MinGW full run remain next steps.
 
 Verified retention removes superseded failed working products, deduplicates

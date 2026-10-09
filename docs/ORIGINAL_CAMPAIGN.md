@@ -55,11 +55,31 @@ boards or game memory are changed. The SDK stream is consumed into a digest;
 only bounded transitions are retained. Playback stays on the dedicated silent
 sink, and the processes use one allowed CPU.
 
-A full VC4 run with the same verified products is now in progress. Its predicate
-still requires all 50 complete initial board slots and the cleared menu state
-at index 50. Completion remains unaccepted while it runs; MinGW's full campaign
-also remains open. The live process identity and periodic report are retained
-privately, separately from the immutable original-only full control.
+A full VC4 run with the same verified products now passes: **all 50 unchanged
+initial board slots**, terminal index **50**, display mode **0**, and cleared
+end/reset/menu requests. It completes in **5,081.596 seconds (84.69 minutes)**,
+retaining **10 lives** and score **148,628**. REA process Evidence
+`ev_e10e14cb27e397943eabc8cc454c4ae7bd1f213ac1de79d3680f443032880c7b`
+records exit zero and final-report SHA-256
+`4fd1d507444783711eacc6522b391938e34444908dde53264db975a289fda367`.
+The observer consumes 408,990 valid SDK samples with no malformed lines;
+620,223,362 stream bytes are retained as a digest rather than a large trace.
+
+The private `allocator-vc40-full-243-35` checkpoint seals 220 supporting files,
+the input closure and recovery receipt. All 468 frozen inputs and 49 original
+files verify. The process capture completed while the executor's permissions
+changed; recovery finalized the stale outer phase without rerunning the game.
+Only the VC4 report subtree belongs to this run; older profile aliases were
+excluded from its archive.
+
+REA's global `truncated` flag is true: accumulated rendered terminal snapshots
+exceeded their output budget. The raw messages retain all 50 initial-board
+observations and completion, and the filesystem observation binds the complete
+final report. Sampled process trees and before/after file observations retain
+their normal limits. Bonus level advances are legal, so completion does not
+mean every brick was destroyed. MinGW's full campaign, synchronized trajectories,
+pixel equivalence and complete CRT cleanup remain open. Source/direct/exact
+counts are unchanged, and the original-only full control remains separate.
 
 ```bash
 scripts/repo-python scripts/capture-windows-probe.py --probe campaign \

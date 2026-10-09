@@ -106,7 +106,9 @@ The [original-board integration](docs/ORIGINAL_CAMPAIGN.md) adds a persistent
 read-only SDK observer and ordinary mouse controls, with bounded state reports
 and REA process Evidence. The full original-only control now verifies all 50
 unchanged initial boards and the completed return to menu in about 91 minutes.
-Full campaigns in the reconstructed builds remain unverified.
+The maintained VC4 build also passes all 50 initial boards and returns to menu
+in about 85 minutes. Its REA capture binds the final SDK report; the MinGW full
+campaign and synchronized trajectory/pixel fidelity remain unverified.
 The [contact policy](docs/CONTACT_POLICY.md) follows the recovered discrete
 wall/collision contracts, with 1,464 controlled fixtures and 21,168 compared
 frames. Its five-board episode compares another 16,756 original/native frames.
