@@ -120,19 +120,21 @@ void dxball_rotate_rgb_colors(DxBallInt entry, DxBallInt count, DxBallInt *color
 const char *dxball_copy_text_word(DxBallInt skip, const char *source,
                                 char *destination)
 {
-    DxBallInt spaces, offset;
-    const char *text;
-    offset = 0;
-    spaces = 0;
-    text = source;
-    while (spaces < skip) {
-        if (text[offset] == ' ') ++spaces;
-        ++offset;
+    struct {
+        const char *text;
+        DxBallInt offset, spaces;
+    } cursor;
+    cursor.offset = 0;
+    cursor.spaces = 0;
+    cursor.text = source;
+    while (cursor.spaces < skip) {
+        if (cursor.text[cursor.offset] == ' ') ++cursor.spaces;
+        ++cursor.offset;
     }
-    while (text[offset] != ' ') {
-        destination[offset] = text[offset];
-        ++offset;
+    while (cursor.text[cursor.offset] != ' ') {
+        destination[cursor.offset] = cursor.text[cursor.offset];
+        ++cursor.offset;
     }
-    destination[offset] = 0;
-    return text + (offset + 1);
+    destination[cursor.offset] = 0;
+    return cursor.text + (cursor.offset + 1);
 }

@@ -1,4 +1,47 @@
-# Current handoff — bounded origin audit
+# Current handoff — exact projection and text helpers
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [projection/text batch](EXACT_PROJECTIONS_TEXT.md) promotes four complete
+functions: horizontal offset (259 bytes), vertical offset (191), width (259)
+and text copy (143), adding **852 code bytes**. Two real projection values use
+an array; the existing text pointer/offset/space count use a cursor struct.
+Original declaration spelling is unknown. Horizontal offset's literal binds
+to `0x420058`; width binds to the separate equal literal at `0x420060`.
+
+Acceptance is **283 source-present / 247 scoped entries / 112,273 distinct
+cases / 80 exact units / 10,685 code bytes + 136 separate metadata bytes**.
+All 76 previous units remain exact. Source presence and origins are unchanged:
+270 authored source bodies, one unknown-origin no-effect body, 12 runtime
+bodies; origins **270 authored / 48 runtime / 42 generated / 168 unknown**.
+235 application semantic input closures are refreshed without adding rows,
+cases, tracked tests, fixture matrices or campaign observations.
+
+The stable 272-input native batch passes all 22 existing owner scripts once.
+Grouped cold replay, existing 14 exact rejection checks, MinGW and full VC4
+builds, 1,024 existing rotation COFF vectors and the private existing
+59-observation helper probe pass. No new original-analysis session is opened;
+the 459-record REA snapshot stays unchanged. Only saved matching evidence is
+reused; complete functions, every relocation and literal are compared unmasked.
+
+Current native alias: `build/native/libdxball_core.so`, from
+`build/native-exact-projections/libdxball_core.so`, SHA-256
+`74ec70790cdb7cccadbd0abb6a1cc6e9a2059d629ab265434722b61c9debb8c7`.
+Historical native products remain separate. Private checkpoint:
+`.analysis/checkpoints/exact-projections-283-80`, parent
+`.analysis/checkpoints/origin-283-76-168`; it seals stable/frozen inputs,
+complete failed/final proposals, compiler products, reports, independent
+reviews and the unchanged compressed snapshot before verified cleanup.
+
+Height remains 193/191 bytes with 158 differences. Distance remains unchanged
+at 127/130 bytes with 52 differences; one scoped-phase trial gives 49 differences
+and is not selected. A height pointer-arithmetic trial gives no improvement
+and is not selected. No fake locals, padding, profile-selected layout, volatile
+barrier, copied instructions, assembly or identifier brute force is introduced.
+Next work should resolve genuine address-evaluation/math-store models or other
+whole candidate functions before another bounded replay batch. The complete
+authored denominator and **>=95% complete-source objective remain open**.
+
+# Previous bounded origin audit
 
 The [origin audit](ORIGIN_AUDIT.md) resolves 27 CRT entries through **26 complete
 pinned-library sections / 2,137 bytes**, and 24 raster fragments through parent

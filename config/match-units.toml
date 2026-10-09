@@ -721,20 +721,20 @@ relocations = [
   { offset = 0xE6, type = "REL32", symbol = "_dxball_bounce_ball_from_paddle", addend = 0, target = 0x00411410 },
 ]
 
-[candidates.rotated-sprite-offset]
+[units.rotated-sprite-offset]
 build = "rotation"
 symbol = "_dxball_rotated_sprite_offset"
 target_address = 0x402cd0
 size = 0x103
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
   { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x30, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
   { offset = 0x3f, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 0x48, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0x50, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0x56, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x48, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0x50, type = "DIR32", symbol = "$T527", addend = 0x4, target = 0x420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0x56, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420058, data_hex = "cdccccccccccf43f" },
   { offset = 0x5b, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
   { offset = 0x60, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x66, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
@@ -742,13 +742,14 @@ relocations = [
   { offset = 0x82, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x99, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
   { offset = 0xa8, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 0xb1, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0xb9, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0xbf, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xb1, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0xb9, type = "DIR32", symbol = "$T527", addend = 0x4, target = 0x420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0xbf, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420058, data_hex = "cdccccccccccf43f" },
   { offset = 0xc4, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
   { offset = 0xc9, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0xcf, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
 ]
+
 
 [builds.core]
 source = "src/core.c"
@@ -1559,12 +1560,12 @@ relocations = [
   { offset = 0x71, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
 ]
 
-[candidates.rotated-sprite-y-offset]
+[units.rotated-sprite-y-offset]
 build = "rotation"
 symbol = "_dxball_rotated_sprite_y_offset"
 target_address = 0x402de0
 size = 0xbf
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
   { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -1578,20 +1579,21 @@ relocations = [
   { offset = 0x8b, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
 ]
 
-[candidates.rotated-sprite-width]
+
+[units.rotated-sprite-width]
 build = "rotation"
 symbol = "_dxball_rotated_sprite_width"
 target_address = 0x402ea0
 size = 0x103
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
   { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x30, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
   { offset = 0x3f, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 0x48, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0x50, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0x56, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x48, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x50, type = "DIR32", symbol = "$T527", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x56, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
   { offset = 0x5b, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
   { offset = 0x60, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x66, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
@@ -1599,20 +1601,21 @@ relocations = [
   { offset = 0x82, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x99, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
   { offset = 0xa8, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 0xb1, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0xb9, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
-  { offset = 0xbf, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xb1, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xb9, type = "DIR32", symbol = "$T527", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xbf, type = "DIR32", symbol = "$T527", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
   { offset = 0xc4, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
   { offset = 0xc9, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0xcf, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
 ]
+
 
 [candidates.rotated-sprite-height]
 build = "rotation"
 symbol = "_dxball_rotated_sprite_height"
 target_address = 0x402fb0
 size = 0xbf
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
   { offset = 0x1d, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -1626,14 +1629,16 @@ relocations = [
   { offset = 0x8d, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
 ]
 
-[candidates.copy-text-word]
+
+[units.copy-text-word]
 build = "ui"
 symbol = "_dxball_copy_text_word"
 target_address = 0x403290
 size = 0x8f
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
 relocations = [
 ]
+
 
 [units.release-sprite-bank]
 build = "resources"

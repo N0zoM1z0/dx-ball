@@ -1,5 +1,10 @@
 # Early region, geometry, rotation and text helpers
 
+This document records the historical 76-unit checkpoint. The subsequent
+[projection and text batch](EXACT_PROJECTIONS_TEXT.md) accepts four of its
+candidates, corrects the horizontal literal binding, and advances to 80 units.
+Proposal differences and identities below describe that earlier checkpoint.
+
 Eleven previously unmaintained entries now have shared source bodies. Ten have
 application contracts; the no-effect entry at `0x40CC20` remains of unknown
 origin. Existing horizontal rotation offset source is also reconciled with the

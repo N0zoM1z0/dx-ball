@@ -59,8 +59,12 @@ sealed input identities; this source batch makes no fresh full-campaign claim.
 
 ## Rotation candidate and extent
 
-The offset helper now preserves the original two separate negative returns.
-Its current complete VC4 section is 261 bytes versus the original 259-byte
+The later [projection and text batch](EXACT_PROJECTIONS_TEXT.md) restores this
+complete 259-byte offset emission; the following trial and boundary findings
+record the earlier checkpoint.
+
+At this historical checkpoint the offset helper preserves the original two separate negative returns.
+Its complete VC4 section is 261 bytes versus the original 259-byte
 span, with 223 unmasked differing bytes; bank/slot address evaluation and
 meaningful local allocation still differ. It remains a semantic candidate.
 Typed pointer spelling and local-name
