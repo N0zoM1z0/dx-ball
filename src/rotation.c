@@ -86,13 +86,15 @@ DxBallInt dxball_rotated_sprite_offset(DxBallInt slot, DxBallInt angle)
 {
     DxBallInt first, second;
     /* Keep division extended until conversion; 13/1.3 truncates to nine. */
-    first = abs((DxBallInt)((long double)
-        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width *
-        dxball_cosine(angle + 45) / 1.3));
-    second = abs((DxBallInt)((long double)
-        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width *
-        dxball_cosine(angle + 135) / 1.3));
-    return -(first > second ? first : second);
+    first = abs((DxBallInt)(dxball_cosine(angle + 45) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width / 1.3));
+    second = abs((DxBallInt)(dxball_cosine(angle + 135) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width / 1.3));
+    if (first > second) {
+        return -first;
+    } else {
+        return -second;
+    }
 }
 
 /* FUNCTION: DXBALL 0x00404280 */

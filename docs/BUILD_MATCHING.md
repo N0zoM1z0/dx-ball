@@ -1,6 +1,13 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **35 exact functions / 3,379 bytes**.
+The current shared-source checkpoint retains **39 exact functions / 4,115 bytes**.
+The [core source batch](EXACT_CORE.md) adds the complete 232-byte trig initializer,
+both 130-byte lookups and the 244-byte ball constructor. All 39 configured units
+pass one grouped cold replay with every relocation applied. The rotation offset
+has a reconciled 259-byte span but a nonmatching 261-byte emission; its complete
+mapping remains under candidates. Existing semantic cases are replayed and
+counted once; this batch adds no fixtures or campaign observations.
+
 The [allocator integration](ALLOCATOR_OWNER.md) cold replay found two changed
 operand bytes in the 139-byte `stretch-keyed-sprite` body. Its behavior still
 passes, but its exact claim is now a candidate. The pan literal names changed

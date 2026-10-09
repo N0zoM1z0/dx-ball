@@ -1,5 +1,11 @@
 # Software sprite rotation
 
+The [core exact source batch](EXACT_CORE.md) restores the offset helper's
+separate negative returns and reconciles its complete 259-byte span. Current
+VC4 emission is 261 bytes with 223 unmasked differing bytes; the helper remains
+a candidate. The existing 1,024 original/native and actual-COFF cases pass the
+new source. The four new trig/spawn exact units belong to that separate batch.
+
 The rotation owner restores three related entries in `src/rotation.c`, shared
 by native, MinGW and VC4 builds. The saved REA renderer dossier provides a contiguous 1,572-byte body ending at `0x00402CC3`, with
 Evidence ID
@@ -14,7 +20,7 @@ no active gameplay use is claimed.
 | Entry | Maintained function | Direct cases | Exact scope |
 | --- | --- | --- | --- |
 | `0x004026A0` | `dxball_render_rotated_sprite` | 351 | None |
-| `0x00402CD0` | `dxball_rotated_sprite_offset` | 329 | None; extent gap remains |
+| `0x00402CD0` | `dxball_rotated_sprite_offset` | 329 | None; emission differs |
 | `0x00404280` | `dxball_draw_rotated_sprite` | 344 | Complete 40-byte body |
 
 ## Observed instructions
@@ -165,9 +171,11 @@ These original-only model comparisons supply the shared offset fixtures; the
 maintained differential below separately executes original and C bodies.
 
 The dossier reports 254 owned bytes across two ranges spanning 259 bytes.
-The five-byte gap at `0x402DBF..0x402DC3` needs extent reconciliation before
-configuring an exact unit. The maintained source name and authored inference above do not reconcile that
-gap or establish an exact match.
+The [later complete-byte review](EXACT_CORE.md#rotation-candidate-and-extent)
+reconciles the five-byte gap at `0x402DBF..0x402DC3` as an unreachable jump to
+the shared epilogue, derived from REA bytes and corroborated by compiler
+control flow. The reviewed candidate compares that complete 259-byte span;
+its current source emission still differs.
 
 ## Focused REA data and reference review
 
@@ -270,6 +278,6 @@ conversions must stay in the representable tested domain. The offset fixtures
 exclude INT_MIN/absolute-value overflow. The normal CRT division branch and
 x87 control word `0x037F` are explicit.
 
-The offset helper's five-byte body gap still needs reconciliation before an
-exact unit. Direct reference coverage remains separate from active gameplay
+The offset helper's complete current emission still differs from the reviewed
+span. Direct reference coverage remains separate from active gameplay
 use; physical driver behavior and full campaign acceptance remain open.

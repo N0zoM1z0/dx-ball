@@ -104,7 +104,7 @@ void dxball_spawn_ball(void)
     dxball_append_ball(&dxball_balls);
     dxball_balls.current->sprite = 1;
     dxball_balls.current->x = dxball_paddle_x + 1;
-    dxball_balls.current->y = dxball_paddle_y - dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height;
+    dxball_balls.current->y = dxball_paddle_y - dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->height;
     dxball_balls.current->previous_x = dxball_balls.current->x;
     dxball_balls.current->previous_y = dxball_balls.current->y;
     dxball_balls.current->dx = 0;

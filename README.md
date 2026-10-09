@@ -18,7 +18,7 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **247 source-present functions** (235 game entries and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **35 byte-exact functions totaling 3,379 bytes**. Windows builds now also produce
+> **39 byte-exact functions totaling 4,115 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
@@ -27,6 +27,10 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers
 and state, recover maintainable source, then replay independent oracles.
+The [core exact batch](docs/EXACT_CORE.md) restores the original trig-table
+computation, lookup storage and current-sprite read in ball construction. Four
+more complete functions match the pinned original after every relocation, adding
+736 exact bytes without new fixtures or another campaign.
 For example, the [software rotation investigation](docs/ROTATION_INVESTIGATION.md)
 uses saved REA instructions to recover an omitted angle argument, an asymmetric
 pixel write and precise floating-point stores. The shared C passes 1,024

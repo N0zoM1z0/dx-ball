@@ -1,0 +1,5 @@
+[
+  {"name": "read_bytes", "arguments": {"address": "0x00402cd0", "length": 259}},
+  {"name": "inspect_native_instruction", "arguments": {"address": "0x00402dbf"}},
+  {"name": "xrefs", "arguments": {"address": "0x00402dbf"}}
+]

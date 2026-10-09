@@ -1,6 +1,6 @@
 # Full one-function COMDAT extents; every relocation is applied, none masked.
 # [units] records current exact functions; [candidates] retains reviewed mappings
-# for emissions demoted by the shared storage change. --include-candidates
+# for reviewed nonmatching emissions. --include-candidates
 # replays both sets and fails on their complete, unmasked code differences.
 [builds.boards]
 source = "src/boards.c"
@@ -646,3 +646,124 @@ source = "src/allocator.c"
 object = "build/exact/allocator.obj"
 inputs = ["src/allocator.c", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.initialize-trig]
+build = "trig"
+symbol = "_dxball_initialize_trig"
+target_address = 0x00402250
+size = 232
+boundary_evidence = "docs/EXACT_CORE.md"
+relocations = [
+  { offset = 0x30, type = "DIR32", symbol = "$T287", addend = 0, target = 0x00420000, data_hex = "6e861bf0f9210940" },
+  { offset = 0x36, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 0x3F, type = "DIR32", symbol = "$T288", addend = 0, target = 0x00420008, data_hex = "0000000000806640" },
+  { offset = 0x47, type = "DIR32", symbol = "$T288", addend = 4, target = 0x00420008, data_hex = "0000000000806640" },
+  { offset = 0x4D, type = "DIR32", symbol = "$T288", addend = 0, target = 0x00420008, data_hex = "0000000000806640" },
+  { offset = 0x52, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
+  { offset = 0x5D, type = "REL32", symbol = "_cos", addend = 0, target = 0x004167CA },
+  { offset = 0x72, type = "DIR32", symbol = "$T287", addend = 0, target = 0x00420000, data_hex = "6e861bf0f9210940" },
+  { offset = 0x78, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 0x81, type = "DIR32", symbol = "$T288", addend = 0, target = 0x00420008, data_hex = "0000000000806640" },
+  { offset = 0x89, type = "DIR32", symbol = "$T288", addend = 4, target = 0x00420008, data_hex = "0000000000806640" },
+  { offset = 0x8F, type = "DIR32", symbol = "$T288", addend = 0, target = 0x00420008, data_hex = "0000000000806640" },
+  { offset = 0x94, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
+  { offset = 0x9F, type = "REL32", symbol = "_sin", addend = 0, target = 0x004167C0 },
+  { offset = 0xAE, type = "DIR32", symbol = "$T289", addend = 0, target = 0x00420010, data_hex = "0000000000009040" },
+  { offset = 0xB3, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
+  { offset = 0xBD, type = "DIR32", symbol = "_dxball_cosine_table", addend = 0, target = 0x00424BF8 },
+  { offset = 0xC6, type = "DIR32", symbol = "$T289", addend = 0, target = 0x00420010, data_hex = "0000000000009040" },
+  { offset = 0xCB, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
+  { offset = 0xD5, type = "DIR32", symbol = "_dxball_sine_table", addend = 0, target = 0x00424650 },
+]
+
+[units.sine]
+build = "trig"
+symbol = "_dxball_sine"
+target_address = 0x00402400
+size = 130
+boundary_evidence = "docs/EXACT_CORE.md"
+relocations = [
+  { offset = 0x43, type = "DIR32", symbol = "_dxball_sine_table", addend = 0, target = 0x00424650 },
+  { offset = 0x55, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 0x5E, type = "DIR32", symbol = "$T289", addend = 0, target = 0x00420018, data_hex = "0000000000009040" },
+  { offset = 0x66, type = "DIR32", symbol = "$T289", addend = 4, target = 0x00420018, data_hex = "0000000000009040" },
+  { offset = 0x6C, type = "DIR32", symbol = "$T289", addend = 0, target = 0x00420018, data_hex = "0000000000009040" },
+  { offset = 0x71, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
+]
+
+[units.cosine]
+build = "trig"
+symbol = "_dxball_cosine"
+target_address = 0x00402490
+size = 130
+boundary_evidence = "docs/EXACT_CORE.md"
+relocations = [
+  { offset = 0x43, type = "DIR32", symbol = "_dxball_cosine_table", addend = 0, target = 0x00424BF8 },
+  { offset = 0x55, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 0x5E, type = "DIR32", symbol = "$T289", addend = 0, target = 0x00420020, data_hex = "0000000000009040" },
+  { offset = 0x66, type = "DIR32", symbol = "$T289", addend = 4, target = 0x00420020, data_hex = "0000000000009040" },
+  { offset = 0x6C, type = "DIR32", symbol = "$T289", addend = 0, target = 0x00420020, data_hex = "0000000000009040" },
+  { offset = 0x71, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
+]
+
+[units.spawn-ball]
+build = "balls"
+symbol = "_dxball_spawn_ball"
+target_address = 0x004105D0
+size = 244
+boundary_evidence = "docs/EXACT_CORE.md"
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "_dxball_board_storage", addend = 20024, target = 0x0043AAB8 },
+  { offset = 0xD, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x12, type = "REL32", symbol = "@dxball_append_ball@4", addend = 0, target = 0x004106D0 },
+  { offset = 0x17, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x23, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
+  { offset = 0x2A, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x31, type = "DIR32", symbol = "_dxball_paddle_y", addend = 0, target = 0x0043A87C },
+  { offset = 0x37, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x40, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0x54, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0x5D, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x65, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x6D, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x75, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x7E, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x86, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x92, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0x9E, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0xAA, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0xB6, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0xC2, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0xCE, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0xDA, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 0xE6, type = "REL32", symbol = "_dxball_bounce_ball_from_paddle", addend = 0, target = 0x00411410 },
+]
+
+[candidates.rotated-sprite-offset]
+build = "rotation"
+symbol = "_dxball_rotated_sprite_offset"
+target_address = 0x00402CD0
+size = 259
+boundary_evidence = "docs/EXACT_CORE.md"
+relocations = [
+  { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0, target = 0x00402490 },
+  { offset = 0x1D, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0x31, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0x40, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 0x49, type = "DIR32", symbol = "$T497", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0x51, type = "DIR32", symbol = "$T497", addend = 4, target = 0x00420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0x57, type = "DIR32", symbol = "$T497", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0x5C, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
+  { offset = 0x61, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
+  { offset = 0x67, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
+  { offset = 0x7B, type = "REL32", symbol = "_dxball_cosine", addend = 0, target = 0x00402490 },
+  { offset = 0x87, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 0x9B, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 0xAA, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 0xB3, type = "DIR32", symbol = "$T497", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0xBB, type = "DIR32", symbol = "$T497", addend = 4, target = 0x00420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0xC1, type = "DIR32", symbol = "$T497", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
+  { offset = 0xC6, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
+  { offset = 0xCB, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
+  { offset = 0xD1, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
+]

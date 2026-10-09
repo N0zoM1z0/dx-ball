@@ -1,5 +1,29 @@
 # Current handoff
 
+The [core exact batch](EXACT_CORE.md) advances the current checkpoint to
+**247 source-present / 112,273 direct cases / 39 exact units / 4,115 bytes**.
+Four restored shared C bodies add 736 exact bytes: independent cos/sin
+arguments and real double temporaries in table initialization, lookup parameter
+assignment and float storage, and the constructor's reread of current sprite.
+All 22 existing game owner scripts pass once against the separate
+`build/native-exact-core` product; no new fixtures or campaign runs are added.
+The grouped cold replay retains all 35 prior units and accepts all four new
+ones. The rotation offset's separate returns and five-byte extent gap are
+recovered, but its 261-byte emission versus 259 remains a configured candidate.
+New REA byte/instruction/reference evidence and an explicitly closed snapshot
+retain the Listing limitation; undefined instruction decoding is not claimed.
+
+The current native alias is copied from the verified batch product, SHA-256
+`909636b7b47fe4873a85761efcabf71c224cfdd3cbc14dfad8ae8d2a4e7c3b3c`.
+The prior accepted allocator/campaign library remains in `build/allocator-native`
+and sealed historical archives. Earlier campaign and acceptance observations
+below retain their historical source/product identities.
+Next core priority is `dxball_clone_balls`: saved REA evidence establishes a
+637-byte body without locals or copy-helper calls; current C emits 233 bytes
+because two payload-copy blocks are factored into a helper. Restore the observed
+sprite-first thirteen-field copy order and inspect dx reflection before the
+next bounded replay. The full 95% source objective remains open.
+
 The [full original control](ORIGINAL_CAMPAIGN.md#completed-original-control)
 passes: all 50 unchanged initial boards, terminal index 50 and the cleared menu
 state, in 5,465.402 seconds with eight lives. REA process Evidence
