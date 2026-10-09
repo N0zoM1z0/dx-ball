@@ -16,6 +16,7 @@ from unicorn.x86_const import UC_X86_REG_ECX
 from target_oracle import ROOT, TILES, AUX, INDEX, MODE, ACTIVE_SURFACE, BANK
 from resources_oracle import BANKS, SPRITE_BANK
 from test_gameplay_differential import Allocate, Ops, signed, REMAINING, HARD, REDUCED, PENDING, SCORE, PAN_SCALE
+from test_boards_differential import RenderOps
 from test_entities_differential import SHAPES, entity_type
 from test_powerups_differential import FamilyNative, FamilyTarget, GLOBALS, BallNode
 
@@ -38,7 +39,7 @@ FRAME_BOUNDARIES = [('current_time', 0x403450, 0), ('elapsed', 0x4034F0, 2),
 
 class CoreNative(FamilyNative):
     def __init__(self, library):
-        from core_native_loader import fixture_image, bind_gameplay
+        from core_native_loader import fixture_image, bind_gameplay, bind_render_frame
         self.core_native_image = fixture_image(library)
         super().__init__(self.core_native_image.path)
         self.core_gameplay_table = Ops.in_dll(self.lib, 'dxball_gameplay_ops')
@@ -68,6 +69,10 @@ class CoreNative(FamilyNative):
         self.core_callbacks = callbacks
         table = (C.c_void_p * len(callbacks)).in_dll(self.lib, 'dxball_frame_ops')
         for i, callback in enumerate(callbacks): table[i] = C.cast(callback, C.c_void_p).value
+        self.core_frame_table = table
+        self.core_render_table = RenderOps.in_dll(self.lib, 'dxball_render_ops')
+        bind_render_frame(self.core_native_image, self.lib,
+                          self.core_render_table, self.core_frame_table)
         blt = C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_void_p, C.c_void_p, C.c_void_p, C.c_uint32, C.c_void_p)
         self.blt_callback = blt(checked(self.board_blt, -1))
         self.vtable[5] = C.cast(self.blt_callback, C.c_void_p).value

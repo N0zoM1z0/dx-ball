@@ -22,7 +22,7 @@ class Rect(C.Structure):
 Sprite = C.CFUNCTYPE(None, C.c_int32, C.c_int32, C.c_int32)
 Restore = C.CFUNCTYPE(None, C.c_size_t, C.c_int32, C.c_int32, C.c_size_t,
                      C.POINTER(Rect), C.c_uint32)
-Invalidate = C.CFUNCTYPE(None, C.c_int32, C.c_int32, C.c_int32, C.c_int32)
+Invalidate = C.CFUNCTYPE(None, Rect)
 
 
 class RenderOps(C.Structure):
@@ -45,7 +45,8 @@ class Native:
         self.callbacks = (
             Sprite(lambda sprite, x, y: self.events.append(("sprite", sprite, x, y))),
             Restore(self.restore),
-            Invalidate(lambda *rect: self.events.append(("invalidate", *rect))),
+            Invalidate(lambda rect: self.events.append(("invalidate", rect.left,
+                                                        rect.top, rect.right, rect.bottom))),
         )
         ops = RenderOps.in_dll(self.lib, "dxball_render_ops")
         ops.sprite, ops.restore, ops.invalidate = self.callbacks

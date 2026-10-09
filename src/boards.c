@@ -127,7 +127,7 @@ void dxball_draw_board_tile(DxBallInt x, DxBallInt y, DxBallInt defer_update)
         dxball_render_ops.sprite(dxball_board_tile_sprite(tile), rect.left, rect.top);
     }
     if (defer_update == 0) {
-        dxball_render_ops.invalidate(rect.left, rect.top, rect.right, rect.bottom);
+        dxball_render_ops.invalidate(rect);
     }
     return;
 }

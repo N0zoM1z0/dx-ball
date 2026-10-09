@@ -143,7 +143,7 @@ void dxball_update_intro_points(void)
                 dxball_draw_keyed_sprite(1, point->x + offset.x, point->y + offset.y);
             }
         }
-        dxball_invalidate_region(rect.left, rect.top, rect.right, rect.bottom);
+    dxball_invalidate_region(rect);
         dxball_animate_palette(200, 207, 1);
         dxball_intro_tick = dxball_current_time();
     }

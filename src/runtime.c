@@ -120,7 +120,7 @@ void dxball_draw_score(void)
     surface->vtable->blt_fast(surface, 20, 0, (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
     dxball_select_surface(dxball_board_surface);
     dxball_runtime_ops.draw_text(30, 31, count, text);
-    dxball_render_ops.invalidate(rect.left, rect.top, rect.right, rect.bottom);
+    dxball_render_ops.invalidate(rect);
     lives = dxball_lives;
     if (lives > 10) lives = 10;
     rect.left = 620 - (lives + 1) * 22; rect.top = 0; rect.right = 620; rect.bottom = 16;
@@ -132,7 +132,7 @@ void dxball_draw_score(void)
         x -= 22;
         if (i == 10) { x = 598; y += 8; }
     }
-    dxball_render_ops.invalidate(rect.left, rect.top, rect.right, rect.bottom);
+    dxball_render_ops.invalidate(rect);
 }
 
 void dxball_refresh_score(void)

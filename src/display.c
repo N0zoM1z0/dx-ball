@@ -219,13 +219,23 @@ void dxball_restore_effect_region(DxBallInt left, DxBallInt top, DxBallInt right
     queue_present(&rect);
 }
 
-void dxball_invalidate_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+void dxball_invalidate_region(DxBallRect rect)
 {
-    DxBallRect rect;
-    rect.left = left; rect.top = top; rect.right = right; rect.bottom = bottom;
-    queue_dirty(dxball_dirty_page, &rect);
-    queue_other_page(&rect);
-    queue_present(&rect);
+    if (dxball_dirty_counts[dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
+        dxball_dirty_regions[dxball_dirty_counts[dxball_dirty_page]][dxball_dirty_page] = rect;
+        ++dxball_dirty_counts[dxball_dirty_page];
+    }
+    if (dxball_draw_to_primary == 0 && dxball_display_buffer_count > 0 &&
+        dxball_reduced_particles == 0 &&
+        dxball_dirty_counts[1 - dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
+        dxball_dirty_regions[dxball_dirty_counts[1 - dxball_dirty_page]][1 - dxball_dirty_page] = rect;
+        ++dxball_dirty_counts[1 - dxball_dirty_page];
+    }
+    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+        dxball_present_regions[dxball_present_count] = rect;
+        ++dxball_present_count;
+    }
+    return;
 }
 
 void dxball_restore_regions(void)

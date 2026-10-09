@@ -1,4 +1,4 @@
-"""Load one verified native image with test-only sound/RNG symbol boundaries.
+"""Load one verified native image with test-only sound/RNG/render boundaries.
 
 Fresh default audits keep loading the canonical LOCAL image. CoreNative uses a
 byte-identical image with its own inode after this shim enters the GLOBAL scope.
@@ -151,9 +151,13 @@ class _Image:
             raise RuntimeError('CoreNative library copy must have a separate inode')
         self.lib = C.CDLL(str(self.path.resolve()))
         self.function_addresses = {}
-        defaults = (C.c_void_p * 6).in_dll(self.lib, 'dxball_gameplay_ops')
-        for slot, symbol in ((2, 'dxball_stop_sound'), (3, 'dxball_play_sound'),
-                             (4, 'dxball_random_range')):
+        boundaries = [('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
+                      ('dxball_gameplay_ops', 6, 3, 'dxball_play_sound'),
+                      ('dxball_gameplay_ops', 6, 4, 'dxball_random_range'),
+                      ('dxball_render_ops', 3, 2, 'dxball_invalidate_region'),
+                      ('dxball_frame_ops', 12, 6, 'dxball_draw_effect_sprite')]
+        for table, length, slot, symbol in boundaries:
+            defaults = (C.c_void_p * length).in_dll(self.lib, table)
             real = C.cast(getattr(self.lib, symbol), C.c_void_p).value
             intercepted = C.cast(getattr(_shim, symbol), C.c_void_p).value
             if real == intercepted:
@@ -177,6 +181,8 @@ def fixture_image(library):
         _shim_sha256 = shim_sha256
         _shim.dxball_test_bind_gameplay_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_gameplay_ops.restype = C.c_int
+        _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p]
+        _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
         raise RuntimeError('CoreNative cannot replace an already loaded GLOBAL interposer')
     key = (str(canonical), canonical_sha256, shim_sha256,
@@ -201,6 +207,23 @@ def bind_gameplay(image, library, table):
         reason = {-1: 'null table', -2: 'null sound/RNG callback',
                   -3: 'sound/RNG slot resolves recursively to the interposer'}
         raise RuntimeError('CoreNative callback binding rejected: ' + reason.get(result, str(result)))
+
+
+def bind_render_frame(image, library, render, frame):
+    """Bind current owner tables after the frame fixture callbacks are installed."""
+    addresses = []
+    for symbol, table in (('dxball_render_ops', render), ('dxball_frame_ops', frame)):
+        actual = C.addressof(C.c_void_p.in_dll(library, symbol))
+        if actual != C.addressof(table):
+            raise RuntimeError('CoreNative callback table does not belong to its native handle: ' + symbol)
+        if actual != C.addressof(C.c_void_p.in_dll(image.lib, symbol)):
+            raise RuntimeError('CoreNative fixture did not load its verified copied image: ' + symbol)
+        addresses.append(actual)
+    result = _shim.dxball_test_bind_render_frame_ops(*addresses)
+    if result != 0:
+        reason = {-1: 'null render/frame table', -2: 'null invalidate/effect callback',
+                  -3: 'invalidate/effect slot resolves recursively to the interposer'}
+        raise RuntimeError('CoreNative render/frame binding rejected: ' + reason.get(result, str(result)))
 
 
 if __name__ == '__main__':

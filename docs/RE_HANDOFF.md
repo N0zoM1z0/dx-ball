@@ -1,4 +1,50 @@
-# Current handoff — ball and projectile controllers
+# Current handoff — rectangle and fire-effect controllers
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [connected-effects batch](EXACT_CONNECTED_EFFECTS.md) restores four complete
+bodies / 1,071 original bytes. Spawn, process and by-value rectangle invalidation
+match 645 bytes. Brick drop remains 436/426 bytes with 317 whole-byte differences;
+its consumed locals and BoardStorage member ownership must not be replaced by
+fake frame slots, alternate layouts or name/declaration-order trials.
+
+Acceptance: **283 source-present / 247 scoped entries / 112,273 distinct cases /
+99 exact units / 11,474 code bytes + 136 separate metadata bytes**. Origins stay
+270 authored / 48 runtime / 42 generated / 168 unknown. Seven prior emissions
+lose exact status / 2,049 bytes; three new plus two naturally recovered zeros
+add 975 bytes. All 94 surviving complete code/metadata identities are preserved.
+Do not hide the net decrease or reuse historical zeros for changed inputs.
+
+All 22 owner scripts pass against 283 frozen inputs and one Debug library.
+One cold compiler epoch supplies 22 retained objects. Fourteen rejection
+controls, rerun 1,024 affected rotation COFF vectors and both Windows builds
+pass; unchanged raster 7,164 vectors reuse full attested products/inputs.
+Cold diagnostic99, amended97 and final99 manifests/reports remain distinct.
+No new cases, oracle matrices, source rows or campaigns. Native test-only
+interposition now uses five real symbols and currently bound copied-image
+RenderOps/FrameOps callbacks; physical hardware remains outside this proof.
+The game-over region call is corrected to the actual queue_region target.
+
+Canonical native SHA256:
+`9764c54f2df2a4c5b0ab8680e1bc722549870ca186a0ff6d7a4a93f0ef3f27ed`, from
+`build/native-exact-connected-effects/libdxball_core.so`.
+Checkpoint: `.analysis/checkpoints/exact-connected-effects-283-99`, parent
+`.analysis/checkpoints/exact-core-controllers-283-101`. Full primary REA records,
+height's explicitly attested five-byte branch gap, frozen inputs, actual cold
+products, independent reviews and distinct compiler epochs are retained.
+The first diagnostic core object was accidentally overwritten; its missing
+product is recorded explicitly, without an archival claim. Verified duplicate
+cleanup preserves the authoritative checkpoint copies and mutable products.
+
+Next connected family: reset_round426 / restart_round327 / dispose_game112 /
+finish_game46 = 911 original bytes. Saved primary dossiers and existing 346
+cases support consumed signed average, live paddle width and real calls.
+The enclosing game-frame's five-byte gap remains unresolved for exact claims.
+New original analysis only pinned scripts/rea; one writable compiler/provider
+session, one CPU, CMake --parallel 1, Ghidra512MiB and silent Pulse sink.
+English `gpt-6.1-sol:` commits and public push remain authorized.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous ball and projectile controller checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [ball/projectile controller batch](EXACT_CORE_CONTROLLERS.md) restores three

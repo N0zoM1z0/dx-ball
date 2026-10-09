@@ -123,7 +123,7 @@ void dxball_game_over_frame(void)
             dxball_score_cursor_visible = 1 - dxball_score_cursor_visible;
             dxball_score_blink_tick = dxball_current_time();
         }
-        dxball_invalidate_region(0, 210, 639, 234);
+        dxball_queue_region(0, 210, 639, 234);
     }
     if (dxball_draw_to_primary == 0) dxball_present();
     if (dxball_show_high_scores == 1 && dxball_entering_score_name == 0) {

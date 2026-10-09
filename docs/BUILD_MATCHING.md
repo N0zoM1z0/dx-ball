@@ -1,14 +1,22 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **101 exact functions / 12,548
+The current shared-source checkpoint retains **99 exact functions / 11,474
 code bytes**, plus 136 separate exception metadata bytes. The
-[ball and projectile controller batch](EXACT_CORE_CONTROLLERS.md) restores
-3,872 complete original bytes and adds the 321-byte fire function. All 100
-preceding units preserve their complete code and metadata identities.
-Ball/projectile candidates retain 23/8 real local-frame displacements after
-276/23 explicit relocations. The preceding five palette/COM candidates retain
-8/7/8/8/18 differences; triangle remains a complete 1,710-byte candidate with
-99 differences. Source presence and distinct cases remain unchanged.
+[rectangle and fire-effect batch](EXACT_CONNECTED_EFFECTS.md) restores 1,071
+complete original bytes: three new exact bodies / 645 bytes and brick-drop's
+436/426-byte nonexact emission. The same cold products naturally recover
+keyed stretch (139) and rotated height (191). Seven prior units / 2,049 bytes
+lose exact acceptance; 94 complete code/metadata identities survive unchanged.
+No source trials force those incidental zeros. All relocations and literal
+contents remain explicitly attested. Existing cases and source presence are
+unchanged; 22 owner scripts, 14 rejection controls, 1,024 affected rotation COFF
+vectors and both Windows builds pass. Unchanged 7,164 raster vectors reuse
+verified products and complete input identities.
+
+Current candidates include ball/projectile updates (23/8 differences), triangle
+(99), and five palette/COM bodies (8/7/8/10/18). Candidate byte counts are whole
+emission comparisons, without masking. Historical accepted products cannot
+substitute for a changed current emission.
 
 The historical display checkpoint retained 55 exact functions / 8,231 bytes.
 Its [display batch](EXACT_DISPLAY.md) adds four missing Blt/rectangle-queue
@@ -36,9 +44,8 @@ its complete exact emission. Existing semantic cases are replayed and
 counted once; this batch adds no fixtures or campaign observations.
 
 The [allocator integration](ALLOCATOR_OWNER.md) cold replay found two changed
-operand bytes in the 139-byte `stretch-keyed-sprite` body. The current complete
-comparison has four differences. Its behavior still
-passes, but its exact claim is now a candidate. The pan literal names changed
+operand bytes in the 139-byte `stretch-keyed-sprite` body. That historical comparison had four differences. The current connected-effects
+cold compilation naturally recovers all 139 bytes, now accepted as full exact. The pan literal names changed
 to `$T1142` / `$T1143`; contents and complete relocations were checked.
 
 The preceding rotation checkpoint retained 36 units / 3,518 bytes.
@@ -85,7 +92,7 @@ are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
 nonzero exit status. At that historical checkpoint, normal replay selected 35 accepted units.
-The current normal replay selects the complete configured 101-unit set.
+The current normal replay selects the complete configured 99-unit set.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

@@ -19,7 +19,7 @@ typedef struct DxBallRenderOps {
     void (*sprite)(DxBallInt sprite, DxBallInt x, DxBallInt y);
     void (*restore)(DxBallSurface destination, DxBallInt x, DxBallInt y,
                     DxBallSurface source, const DxBallRect *rect, DxBallUInt flags);
-    void (*invalidate)(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom);
+    void (*invalidate)(DxBallRect rect);
 } DxBallRenderOps;
 
 /* Explosion-animation occupancy: set on spawn and cleared on final cleanup. */

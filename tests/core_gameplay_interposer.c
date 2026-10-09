@@ -1,12 +1,17 @@
-/* Native-test boundaries for real production sound/RNG symbol references. */
+/* Native-test boundaries for real production sound/RNG/render references. */
 #include "gameplay.h"
+#include "core.h"
+#include "display.h"
 #include "sound.h"
 #include "startup.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 static DxBallGameplayOps *bound_ops;
+static DxBallRenderOps *bound_render;
+static DxBallFrameOps *bound_frame;
 static unsigned stop_active, play_active, random_active;
+static unsigned invalidate_active, effect_active;
 
 static void binding_failure(const char *message)
 {
@@ -24,6 +29,39 @@ int dxball_test_bind_gameplay_ops(DxBallGameplayOps *ops)
         ops->random_range == dxball_random_range) return -3;
     bound_ops = ops;
     return 0;
+}
+
+int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame)
+{
+    if (render == NULL || frame == NULL) return -1;
+    if (render->invalidate == NULL || frame->draw_effect_sprite == NULL) return -2;
+    if (render->invalidate == dxball_invalidate_region ||
+        frame->draw_effect_sprite == dxball_draw_effect_sprite) return -3;
+    bound_render = render;
+    bound_frame = frame;
+    return 0;
+}
+
+void dxball_invalidate_region(DxBallRect rect)
+{
+    if (bound_render == NULL || bound_render->invalidate == NULL)
+        binding_failure("CoreNative invalidate_region: fixture table is unbound or callback is null");
+    if (invalidate_active || bound_render->invalidate == dxball_invalidate_region)
+        binding_failure("CoreNative invalidate_region: recursive interposer callback");
+    invalidate_active = 1;
+    bound_render->invalidate(rect);
+    invalidate_active = 0;
+}
+
+void dxball_draw_effect_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
+{
+    if (bound_frame == NULL || bound_frame->draw_effect_sprite == NULL)
+        binding_failure("CoreNative draw_effect_sprite: fixture table is unbound or callback is null");
+    if (effect_active || bound_frame->draw_effect_sprite == dxball_draw_effect_sprite)
+        binding_failure("CoreNative draw_effect_sprite: recursive interposer callback");
+    effect_active = 1;
+    bound_frame->draw_effect_sprite(sprite, x, y);
+    effect_active = 0;
 }
 
 void dxball_stop_sound(DxBallInt sound)

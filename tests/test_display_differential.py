@@ -17,6 +17,7 @@ from unicorn import UC_HOOK_CODE
 from target_oracle import ROOT, TILES, MODE
 from resources_oracle import Surface, BANKS, LIVE_PALETTE
 from test_gameplay_differential import REMAINING, REDUCED, signed
+from test_boards_differential import Rect
 from test_core_differential import GLOBALS, FRAME_BOUNDARIES
 from test_runtime_differential import RuntimeNative, RuntimeTarget, RuntimeHarness, FRAME_FUNCTIONS
 
@@ -80,12 +81,12 @@ class DisplayNative(RuntimeNative):
             table=source_global(C.c_void_p*length, self.lib,symbol)
             for i,name in functions.items():table[i]=C.cast(getattr(self.lib,'dxball_'+name),C.c_void_p).value
         C.c_void_p.in_dll(self.lib,'dxball_particle_region').value=C.cast(self.lib.dxball_queue_region,C.c_void_p).value
-        counts={'queue_region':4,'invalidate_region':4,'restore_effect_region':4,
+        counts={'queue_region':4,'restore_effect_region':4,
                 'draw_effect_sprite':3,'draw_reduced_sprite':3,'sort_present_regions':2,
                 'wait_frames':1,'animate_palette':3,'bind_board_surface':1,'bind_display_surface':1}
         for name in ENTRIES:
             f=getattr(self.lib,'dxball_'+name);f.restype=None
-            f.argtypes=[C.c_size_t] if name.startswith('bind_') else [C.c_int32]*counts.get(name,0)
+            f.argtypes=[Rect] if name=='invalidate_region' else [C.c_size_t] if name.startswith('bind_') else [C.c_int32]*counts.get(name,0)
 
     def display_observed(self):
         return (tuple(self.counts),self.extra[0x4382EC].value,self.extra[0x4305D8].value,
@@ -225,7 +226,8 @@ class DisplayHarness(RuntimeHarness):
         assert n.now==t.now,(context,'clock advancement',n.now,t.now)
         assert n.flip_script==t.flip_script,(context,'flip results')
     def call(self,name,*args):
-        nr=self.n.call('dxball_'+name,*args);tr=self.t.call(ENTRIES[name],*args)
+        native_args=(Rect(*args),) if name=='invalidate_region' else args
+        nr=self.n.call('dxball_'+name,*native_args);tr=self.t.call(ENTRIES[name],*args)
         self.compare((name,args,self.cases[name]));self.cases[name]+=1
     def phase(self,name,address):
         self.n.call('dxball_'+name);self.t.call(address);self.compare((name,'connected'))

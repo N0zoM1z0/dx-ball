@@ -18,14 +18,22 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **283 source-present functions** (270 authored bodies, one unknown-origin body and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **101 byte-exact functions totaling 12,548 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
+> **99 byte-exact functions totaling 11,474 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
 > VC4 and MinGW builds; complete gameplay and
 > driver fidelity remain in progress.
 
-The [ball and projectile controller batch](docs/EXACT_CORE_CONTROLLERS.md)
+The [rectangle and fire-effect batch](docs/EXACT_CONNECTED_EFFECTS.md) restores
+four complete bodies / 1,071 original bytes. Three match all 645 bytes; the
+same cold compilation naturally recovers two existing candidates / 330 bytes.
+Seven prior exact emissions lose acceptance / 2,049 bytes after shared source
+changes; all 94 surviving code and metadata identities remain unchanged.
+Existing owner cases and Windows builds pass. The >=95% complete-source goal
+remains open.
+
+At the previous checkpoint, The [ball and projectile controller batch](docs/EXACT_CORE_CONTROLLERS.md)
 restores three complete bodies / 3,872 original bytes and accepts the full
 321-byte projectile fire function. Ball/projectile updates retain 23/8
 frame-displacement differences with all real calls and relocations restored.

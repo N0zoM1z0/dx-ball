@@ -126,6 +126,7 @@ static void paint_board(DxBallByte tile)
 }
 void dxball_editor_frame(void)
 {
+    DxBallRect status_rect;
     if (dxball_draw_to_primary != 0) dxball_wait_frames(1);
     dxball_restore_regions();
     dxball_intro_cursor_x = dxball_mouse_x; dxball_intro_cursor_y = dxball_mouse_y;
@@ -141,7 +142,10 @@ void dxball_editor_frame(void)
         if (inside_board(dxball_intro_cursor_x, dxball_intro_cursor_y)) paint_board((DxBallByte)dxball_editor_selected_tile);
         else if (dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y) != 0) {
             dxball_editor_selected_tile = dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y);
-            dxball_draw_editor_status(); dxball_invalidate_region(0, 0, 639, 49);
+            dxball_draw_editor_status();
+            status_rect.left = 0; status_rect.top = 0;
+            status_rect.right = 639; status_rect.bottom = 49;
+            dxball_invalidate_region(status_rect);
         }
         if (dxball_control_pressed == 0) dxball_mouse_action = 0;
     }

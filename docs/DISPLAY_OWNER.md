@@ -1,8 +1,15 @@
 # Lightning and frame drawing
 
+The [connected-effects batch](EXACT_CONNECTED_EFFECTS.md) accepts all 336 bytes
+of the by-value rectangle invalidator, including its three inline queue paths.
+Its existing 216 cases remain unchanged. Five display emissions lose historical
+exact acceptance after shared API/body changes; all complete current differences
+are recorded, with the historical products retained. Aggregate spelling is an
+evidence-supported interface; original names remain unproven.
+
 The subsequent [exact display batch](EXACT_DISPLAY.md) restores four missing
 sprite Blt/queue entries and the complete bodies of both existing BltFast
-entries. This owner now has 20 source mappings and six complete exact functions
+entries. At that checkpoint this owner had 20 source mappings and six complete exact functions
 totaling 2,024 bytes. The original sixteen direct-case rows below remain counted
 once; the four new mappings have no separate direct-case rows. Controlled COM
 boundaries and their active-use limits remain explicit.

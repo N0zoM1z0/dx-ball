@@ -1,5 +1,10 @@
 # Sprite, font, PCX and palette owner
 
+Current [connected-effects cold replay](EXACT_CONNECTED_EFFECTS.md) naturally
+recovers the full keyed-stretch body while ordinary blt_sprite loses historical
+exact acceptance. Current shared source and all relocations determine the claims;
+historical objects remain available separately.
+
 ## Current allocation defaults
 
 SBK/font storage now defaults to maintained malloc-mode allocation and heap
@@ -17,9 +22,9 @@ the behavioral evidence. The maintained implementation is `src/resources.c`.
 | `0x00403E90` | select_font_bank | 24 | full exact |
 | `0x00403F70` | blt_keyed_sprite | 195 | full exact |
 | `0x00404040` | draw_keyed_sprite | 105 | full exact |
-| `0x004040B0` | blt_sprite | 195 | full exact |
+| `0x004040B0` | blt_sprite | 195 | scoped semantic; exact candidate |
 | `0x00404180` | draw_sprite | 105 | full exact |
-| `0x004041F0` | stretch_keyed_sprite | 139 | scoped semantic; exact candidate |
+| `0x004041F0` | stretch_keyed_sprite | 139 | full exact |
 | `0x004042B0` | capture_sprite | 852 | scoped semantic |
 | `0x00404610` | load_sprite_bank | 1475 | scoped semantic |
 | `0x00404BE0` | release_sprite | 262 | scoped semantic |

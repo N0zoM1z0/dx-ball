@@ -152,18 +152,20 @@ void dxball_spawn_fire_effect(DxBallInt x, DxBallInt y)
     if (dxball_fire_effects.current->x + 44 > 639) dxball_fire_effects.current->x = 595;
     if (dxball_fire_effects.current->y < 0) dxball_fire_effects.current->y = 0;
     if (dxball_fire_effects.current->y + 43 > 479) dxball_fire_effects.current->y = 436;
+    return;
 }
 
 void dxball_process_fire_effects(void)
 {
     if (dxball_begin_fire_effects(&dxball_fire_effects)) {
         do {
-            dxball_frame_ops.draw_effect_sprite(dxball_fire_effects.current->ticks + 145,
+            dxball_draw_effect_sprite(dxball_fire_effects.current->ticks + 145,
                 dxball_fire_effects.current->x, dxball_fire_effects.current->y);
             ++dxball_fire_effects.current->ticks;
-            if (dxball_fire_effects.current->ticks > 21) dxball_remove_fire_effect(&dxball_fire_effects);
+            if (dxball_fire_effects.current->ticks >= 22) dxball_remove_fire_effect(&dxball_fire_effects);
         } while (dxball_advance_fire_effect(&dxball_fire_effects));
     }
+    return;
 }
 
 DxBallInt dxball_hit_screen_point(DxBallInt x, DxBallInt y)
@@ -200,34 +202,40 @@ void dxball_retire_ball(void)
 
 void dxball_drop_bricks(void)
 {
-    DxBallInt column, row, moved;
+    DxBallInt column, moved;
+    signed char *tile, *below;
+    DxBallInt row;
     DxBallRect rect;
-    DxBallDDSurface *surface;
+    DxBallInt redraw_column, redraw_row;
     moved = 0;
-    dxball_gameplay_ops.stop_sound(20);
-    dxball_gameplay_ops.play_sound(20, 0, 0, 0);
+    dxball_stop_sound(20);
+    dxball_play_sound(20, 0, 0, 0);
     for (column = 0; column < 20; ++column) {
         for (row = 18; row >= 0; --row) {
-            if (dxball_board_tiles[column + row * 20] != 0 && dxball_board_tiles[column + (row + 1) * 20] == 0) {
-                dxball_board_tiles[column + (row + 1) * 20] = dxball_board_tiles[column + row * 20];
-                dxball_board_tiles[column + row * 20] = 0;
+            tile = (signed char *)&dxball_board_tiles[row * 20 + column];
+            below = (signed char *)&dxball_board_tiles[(row + 1) * 20 + column];
+            if (*tile != 0 && *below == 0) {
+                *below = *tile;
+                *tile = 0;
                 moved = 1;
             }
         }
     }
     if (moved == 1) {
         rect.left = 20; rect.top = 50; rect.right = 620; rect.bottom = 350;
-        surface = (DxBallDDSurface *)dxball_board_surface;
-        surface->vtable->blt(surface, &rect, (DxBallDDSurface *)dxball_background_surface,
+        ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_board_surface, &rect, (DxBallDDSurface *)dxball_background_surface,
             &rect, 0x01000000, NULL);
         dxball_select_surface(dxball_board_surface);
-        for (column = 0; column < 20; ++column) {
-            for (row = 0; row < 20; ++row) {
-                if (dxball_board_tiles[column + row * 20] != 0) dxball_draw_board_tile(column, row, 1);
+        for (redraw_column = 0; redraw_column < 20; ++redraw_column) {
+            for (redraw_row = 0; redraw_row < 20; ++redraw_row) {
+                if ((signed char)dxball_board_tiles[redraw_column + redraw_row * 20] != 0)
+                    dxball_draw_board_tile(redraw_column, redraw_row, 1);
             }
         }
-        dxball_render_ops.invalidate(rect.left, rect.top, rect.right, rect.bottom);
+        dxball_invalidate_region(rect);
     }
+    return;
 }
 
 /* Main physics: the cached paddle position belongs to the previous frame. */

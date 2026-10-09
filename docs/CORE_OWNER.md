@@ -1,5 +1,11 @@
 # Main ball physics and gameplay frame
 
+The [connected-effects restoration](EXACT_CONNECTED_EFFECTS.md) restores full
+brick-drop and fire-effect bodies and their by-value rectangle interface.
+Spawn/process match all 185/124 bytes; brick drop remains a complete nonexact
+candidate. Existing 56/50/96 cases retain their counts. The native test bridge
+forwards real invalidation/effect-draw calls through current copied-image tables.
+
 The subsequent [ball and projectile source restoration](EXACT_CORE_CONTROLLERS.md)
 restores separate real particle/RNG/collision sites, uncached owner accesses
 and complete exits in 3,872 original bytes. Fire-projectiles matches all 321
