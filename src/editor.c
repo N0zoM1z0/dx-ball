@@ -23,9 +23,12 @@ void dxball_initialize_hit_regions(DxBallInt count)
 void dxball_set_hit_region(DxBallInt index, DxBallInt left, DxBallInt top,
                           DxBallInt right, DxBallInt bottom)
 {
-    DxBallHitRegion *region = dxball_hit_regions + index;
-    region->left = left; region->top = top; region->right = right; region->bottom = bottom;
-    region->active = 1;
+    dxball_hit_regions[index].left = left;
+    dxball_hit_regions[index].top = top;
+    dxball_hit_regions[index].right = right;
+    dxball_hit_regions[index].bottom = bottom;
+    dxball_hit_regions[index].active = 1;
+    return;
 }
 /* FUNCTION: DXBALL 0x00401F20 */
 

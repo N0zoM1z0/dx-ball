@@ -1,4 +1,47 @@
-# Current handoff — exact score and raster control flow
+# Current handoff — exact integer trig and hit-region stores
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [integer trig/hit-region batch](EXACT_INTEGER_TRIG.md) promotes five
+complete functions / 365 code bytes: raw sine/cosine (84 each), wave x/y
+(50 each), and region setting (97). Observed parameter writes/reloads and
+repeated indexed aggregate accesses replace the shared normalization helper
+and cached region pointer. Original identifiers and source spelling remain
+unproven; INT_MIN, signed overflow and invalid indices retain their limits.
+
+Acceptance is **283 source-present / 247 scoped entries / 112,273 distinct
+cases / 86 exact units / 11,124 code bytes + 136 separate metadata bytes**.
+All 81 prior complete units remain exact. Source presence and origins remain
+270 authored bodies, one unknown no-effect body and 12 runtime bodies;
+origins **270 authored / 48 runtime / 42 generated / 168 unknown**.
+Existing application semantic input closures are refreshed without new rows,
+cases, tracked tests, fixtures or campaigns.
+
+All 22 existing native owner scripts pass with frozen inputs. A continuation
+interrupted the process after 11 completed checks; verified same-input,
+same-library results were reused and only the unfinished check restarted.
+Complete grouped cold replay, existing 14 rejection controls, MinGW and full
+VC4 builds pass. Unchanged raster/rotation compiler closures reuse preceding
+7,164/1,024 COFF vectors. Saved matching REA evidence is reused; no new provider
+session is opened and the 465-record snapshot stays unchanged.
+
+Current native alias: `build/native/libdxball_core.so`, from
+`build/native-exact-expression-model/libdxball_core.so`, SHA-256
+`975c67da48df6a3db381c0a357baed1e094500dcfb53c26c57f4a488b9231d24`.
+Private checkpoint: `.analysis/checkpoints/exact-integer-trig-283-86`, parent
+`.analysis/checkpoints/exact-control-flow-283-81`. Full frozen inputs, failed
+models, actual compiler products, interrupted logs and independent reviews
+are sealed before verified duplicate cleanup. Historical products stay separate.
+
+Signed sampled time retains elapsed's three differences. Commuted height
+indexing retains 158; triangle conditional assignment worsens 99 to 267.
+None is adopted. Triangle, elapsed, height, distance and aggregate-address
+candidates remain open. Next: inspect ordinary explicit exits in surface
+binding/splash helpers against saved RET-inclusive evidence, and recover
+further complete source/control-flow families. No fake locals, padding,
+profiles, assembly, copied code, volatile barriers or spelling/order search.
+The authored denominator and **>=95% complete-source goal remain open**.
+
+# Previous score and raster control-flow checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [control-flow batch](EXACT_CONTROL_FLOW.md) promotes the complete 74-byte

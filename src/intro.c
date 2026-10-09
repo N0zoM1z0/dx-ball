@@ -28,19 +28,39 @@ static const char point_mask[7][42] = {
     "........................................."
 };
 
-static DxBallInt angle_index(DxBallInt angle)
+/* FUNCTION: DXBALL 0x00402340 */
+DxBallInt dxball_raw_sine(DxBallInt angle)
 {
-    return angle < 0 ? 360 - (-angle) % 360 : angle % 360;
+    if (angle < 0) {
+        angle = 360 - (-angle) % 360;
+    } else {
+        angle %= 360;
+    }
+    angle = dxball_sine_table[angle];
+    return angle;
 }
-DxBallInt dxball_raw_sine(DxBallInt angle) { return dxball_sine_table[angle_index(angle)]; }
-DxBallInt dxball_raw_cosine(DxBallInt angle) { return dxball_cosine_table[angle_index(angle)]; }
+/* FUNCTION: DXBALL 0x004023A0 */
+DxBallInt dxball_raw_cosine(DxBallInt angle)
+{
+    if (angle < 0) {
+        angle = 360 - (-angle) % 360;
+    } else {
+        angle %= 360;
+    }
+    angle = dxball_cosine_table[angle];
+    return angle;
+}
+/* FUNCTION: DXBALL 0x00402520 */
 DxBallInt dxball_wave_x(DxBallInt origin, DxBallInt angle, DxBallInt amplitude)
 {
-    return origin + dxball_raw_cosine(angle) * amplitude / 1024;
+    origin += dxball_raw_cosine(angle) * amplitude / 1024;
+    return origin;
 }
+/* FUNCTION: DXBALL 0x00402560 */
 DxBallInt dxball_wave_y(DxBallInt origin, DxBallInt angle, DxBallInt amplitude)
 {
-    return origin + dxball_raw_sine(angle) * amplitude / 1024;
+    origin += dxball_raw_sine(angle) * amplitude / 1024;
+    return origin;
 }
 
 static void scene_blt(DxBallSurface destination, DxBallSurface source, const DxBallRect *rect)

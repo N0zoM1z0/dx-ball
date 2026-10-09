@@ -1693,3 +1693,62 @@ boundary_evidence = "docs/EXACT_CONTROL_FLOW.md"
 relocations = [
   { offset = 0xA, type = "REL32", symbol = "_dxball_current_time", addend = 0, target = 0x403450 },
 ]
+[builds.intro]
+source = "src/intro.c"
+object = "build/exact/intro.obj"
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/intro.c", "src/intro.h", "src/paddle.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.raw-sine]
+symbol = "_dxball_raw_sine"
+build = "intro"
+size = 84
+target_address = 0x402340
+boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+relocations = [
+  { offset = 0x40, type = "DIR32", symbol = "_dxball_sine_table", addend = 0x0, target = 0x424650 }
+]
+
+[units.raw-cosine]
+symbol = "_dxball_raw_cosine"
+build = "intro"
+size = 84
+target_address = 0x4023a0
+boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+relocations = [
+  { offset = 0x40, type = "DIR32", symbol = "_dxball_cosine_table", addend = 0x0, target = 0x424bf8 }
+]
+
+[units.wave-x]
+symbol = "_dxball_wave_x"
+build = "intro"
+size = 50
+target_address = 0x402520
+boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+relocations = [
+  { offset = 0xb, type = "REL32", symbol = "_dxball_raw_cosine", addend = 0x0, target = 0x4023a0 }
+]
+
+[units.wave-y]
+symbol = "_dxball_wave_y"
+build = "intro"
+size = 50
+target_address = 0x402560
+boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+relocations = [
+  { offset = 0xb, type = "REL32", symbol = "_dxball_raw_sine", addend = 0x0, target = 0x402340 }
+]
+
+[units.set-hit-region]
+symbol = "_dxball_set_hit_region"
+build = "editor"
+size = 97
+target_address = 0x401eb0
+boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+relocations = [
+  { offset = 0x12, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x0, target = 0x4251a0 },
+  { offset = 0x22, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x4, target = 0x4251a0 },
+  { offset = 0x32, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x8, target = 0x4251a0 },
+  { offset = 0x42, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0xc, target = 0x4251a0 },
+  { offset = 0x4f, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x10, target = 0x4251a0 }
+]
