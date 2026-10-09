@@ -30,13 +30,13 @@ def main():
             assert expected is None or expected==value,name
             assert name not in inputs or inputs[name]==value,('Changed bound input',name)
             inputs[name]=value
-        for path in sorted((ROOT/'src').glob('*.[ch]')):bind(path)
+        for path in sorted(p for p in (ROOT/'src').glob('*') if p.suffix in ('.c','.cpp','.h')):bind(path)
         for p in (Path(__file__),probe,ROOT/'CMakeLists.txt',ROOT/'config/match-units.toml',ROOT/'config/tools.lock.toml',ROOT/'scripts/legacy_toolchain.py',ROOT/'scripts/resource_limits.py'):
             bind(p)
         meta=ROOT/'build/vc40/build.json';raw=meta.read_bytes();bind(meta,hashlib.sha256(raw).hexdigest());build=json.loads(raw)
         for n,h in build['inputs'].items():bind(ROOT/n,h)
         assert build['compiler_sha256']==tool.lock['compiler_sha256']
-        vc_objects=[ROOT/'build/vc40'/(p.stem+'.obj') for p in sorted((ROOT/'src').glob('*.c')) if p.stem not in ('board_inspector','resource_inspector','windows_entry')]
+        vc_objects=[ROOT/'build/vc40'/(p.stem+'.obj') for p in sorted(p for p in (ROOT/'src').glob('*') if p.suffix in ('.c','.cpp')) if p.stem not in ('board_inspector','resource_inspector','windows_entry')]
         for p in vc_objects:bind(p)
         mingw=Path(shutil.which('i686-w64-mingw32-gcc')).resolve();bind(mingw)
         directory=ROOT/'build/windows-i686'

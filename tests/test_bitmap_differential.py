@@ -115,7 +115,7 @@ def main():
     args = parser.parse_args()
     with session_lock():
         names = {str(p.relative_to(ROOT)) for p in (ROOT / 'src').glob('*')
-                 if p.suffix in ('.c', '.h')}
+                 if p.suffix in ('.c', '.cpp', '.h')}
         names.update({'CMakeLists.txt', 'config/target.toml', 'config/tools.lock.toml',
                       'tests/test_bitmap_differential.py', 'tests/bitmap_oracle.py',
                       'tests/seed_stack_x86_64.S', 'tests/probe_bmp_loader.py',

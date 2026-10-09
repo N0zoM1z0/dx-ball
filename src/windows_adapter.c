@@ -218,7 +218,7 @@ static DxBallUInt DXBALL_DDCALL unprepare_header(DxBallMidiHandle stream, DxBall
 static DxBallUInt DXBALL_DDCALL stream_close(DxBallMidiHandle stream)
 { return midiStreamClose((HMIDISTRM)stream); }
 
-static DxBallInt raster_muldiv(DxBallInt number, DxBallInt numerator,
+static DxBallInt DXBALL_RASTER_CALL raster_muldiv(DxBallInt number, DxBallInt numerator,
                               DxBallInt denominator)
 { return MulDiv(number, numerator, denominator); }
 

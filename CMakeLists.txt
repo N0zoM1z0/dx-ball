@@ -1,17 +1,20 @@
 cmake_minimum_required(VERSION 3.20)
-project(dxball_reconstruction VERSION 0.1.0 LANGUAGES C)
+project(dxball_reconstruction VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(dxball_core SHARED src/allocator.c src/allocator_host.c src/boards.c src/resources.c src/rotation.c src/raster.c src/bitmap.c src/gameplay.c src/effects.c src/particles.c src/bonuses.c src/geometry.c src/paddle.c src/round.c src/trig.c src/balls.c src/core.c src/runtime.c src/display.c src/device.c src/platform.c src/startup.c src/ui.c src/intro.c src/gameover.c src/editor.c src/midi.c src/sound.c)
+add_library(dxball_core SHARED src/allocator.c src/allocator_host.c src/boards.c src/resources.c src/rotation.c src/raster.cpp src/bitmap.c src/gameplay.c src/effects.c src/particles.c src/bonuses.c src/geometry.c src/paddle.c src/round.c src/trig.c src/balls.c src/core.c src/runtime.c src/display.c src/device.c src/platform.c src/startup.c src/ui.c src/intro.c src/gameover.c src/editor.c src/midi.c src/sound.c)
 if(UNIX)
     target_link_libraries(dxball_core PRIVATE m)
 endif()
 if(MINGW)
     # Keep integer-runtime helpers in the DLL so the game and inspectors do
     # not need a separately deployed compiler runtime DLL for 64-bit division.
-    target_link_options(dxball_core PRIVATE -static-libgcc)
+    target_link_options(dxball_core PRIVATE -static-libgcc -static-libstdc++)
 endif()
 target_include_directories(dxball_core PUBLIC src)
 set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)

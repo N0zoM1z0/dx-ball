@@ -1,5 +1,13 @@
 # Reviewing runtime origins
 
+The current [fixed-point C++ checkpoint](EXACT_FIXED_POINT.md) identifies eight
+more application utility entries, bringing source presence to 265 and unknown
+origins to 258. Runtime dependencies remain 17 identified / 12 maintained.
+The reconciled class and triangle extents contain compiler cleanup/handler
+fragments; their imported split rows remain provisional and are not additional
+authored implementations. The complete authored denominator remains unresolved.
+The older review counts below describe their respective historical scope.
+
 The current ledger has **14 runtime dependencies / 289 unknown origins**.
 The subsequent [sound controls](SOUND_CONTROLS.md) identify three application
 entries through their REA instruction contracts and original/native execution.

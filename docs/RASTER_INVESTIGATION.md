@@ -130,7 +130,7 @@ scripts/rea session config/rea-fixed-point.json
 scripts/rea session config/rea-raster-abi.json
 ```
 
-The shared [owner](../src/raster.c) and [declarations](../src/raster.h) pass
+The shared [owner](../src/raster.cpp) and [declarations](../src/raster.h) pass
 **7,164 original/native comparisons**: 2,448 ordinary polygons, 2,952 clipped
 polygons, 684 triangle permutations and 1,080 independent horizontal spans.
 The polygon cases vary contour order, color, pitch and all eight allocation
@@ -205,3 +205,8 @@ The complete native report is retained as gzip with both compressed and expanded
 hashes verified. Cleanup removes only verified duplicates and disposable test
 fixtures; all 3,567 captured immutable paths and current acceptance inputs and
 products verify afterward.
+
+The later [fixed-point recovery](EXACT_FIXED_POINT.md) replaces the behavior-only
+triangle helper with shared C++ expressions/lifetime and reconciles the complete
+1,710-byte owner extent. The controller remains nonmatching; eight class/helper
+entries and their full attached metadata are accepted separately.

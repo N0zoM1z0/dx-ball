@@ -158,7 +158,7 @@ def main():
     args = parser.parse_args()
     with session_lock():
         inputs = sorted({str(p.relative_to(ROOT)) for p in (ROOT / 'src').glob('*')
-                         if p.suffix in ('.c', '.h')} |
+                         if p.suffix in ('.c', '.cpp', '.h')} |
                         {'CMakeLists.txt', 'config/target.toml', 'tests/test_raster_differential.py',
                          'tests/raster_oracle.py', 'tests/resources_oracle.py', 'tests/target_oracle.py',
                          'scripts/verify-target.py', 'scripts/resource_limits.py'})

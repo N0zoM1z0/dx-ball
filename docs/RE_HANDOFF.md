@@ -1,4 +1,50 @@
-# Current handoff
+# Current handoff — fixed-point C++ checkpoint
+
+The [fixed-point class and lifetime batch](EXACT_FIXED_POINT.md) advances the
+checkpoint to **265 source-present (253 game/application + 12 runtime) /
+247 directly validated entries / 112,273 distinct direct cases /
+63 exact units / 8,802 code bytes**. Eight previously missing class/helper
+entries add 571 complete code bytes; their three attached exception-metadata
+COMDATs add 136 independently compared data bytes outside that total.
+
+The shared raster owner is now `src/raster.cpp`. Genuine ECX thiscall,
+by-value arguments, hidden result storage, real object lifetime and the stdcall
+math boundary replace the earlier behavior-only triangle helper. The complete
+triangle extent is 1,710 bytes, including its sixteen cleanup funclets, handler
+and plain-RET continuation. Its 160-byte metadata matches, but the full code
+still differs in 235 bytes and remains a configured candidate. Split provisional
+fragment rows are not counted as new authored entries or independent exact units.
+
+All 22 existing game-owner scripts pass once with 261 frozen inputs. The
+actual VC4 C++ raster emissions pass the existing 7,164 vectors; the semantic
+object epoch is retained separately before the cold compiler replaces the
+mutable object. All 63 units pass full code/metadata cold comparison, all 14
+oracle checks pass, and strict native Debug, MinGW and full legacy builds pass.
+The four existing termination semantic input closures were also replayed
+with their existing 1,031 native/VC4/MinGW cases after the COFF reader edit;
+239 existing semantic rows were refreshed with unchanged scopes/counts.
+Four metadata rejection controls were added; no semantic rows, direct cases,
+fixture matrices or campaign observations were added. Exceptional unwinding
+and physical game use remain outside the covered scope.
+
+The current native alias is copied from `build/native-fixed-lifetime`, SHA-256
+`461ac9a33c34689697156c179bba1081dd1cc6c574a3f0667f72eca72bc0819d`.
+Historical display, palette, list, core and allocator products remain intact.
+`.analysis/checkpoints/exact-fixed-265-63` retains frozen source inputs,
+closed REA records, compiler diagnostics, separate semantic/cold products,
+reports and the compressed 387-evidence snapshot before cleanup. The initial
+class-only probe's raw source was not frozen before editing; its listing and
+object survive, and acceptance relies on the fully frozen canonical cold build.
+
+Next exact work: resolve triangle local allocation/expression scheduling from
+credible declaration/owner context, without identifier brute force, fake locals
+or padding. Alternatively review the original `0x40F200` list constructor's
+fourth dword through its consumers before changing the maintained three-link
+layout. No new provider/runtime session is needed for already saved matching
+evidence. The >=95% objective remains active; 258 origins remain unknown and
+the complete authored denominator is unproven.
+
+## Previous display checkpoint
 
 The [exact display batch](EXACT_DISPLAY.md) advances the current checkpoint to
 **257 source-present (245 game + 12 runtime) / 247 directly validated entries /

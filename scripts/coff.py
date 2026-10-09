@@ -1,7 +1,8 @@
-"""Strict i386 COFF reader for dedicated /Gy function sections.
+"""Strict i386 COFF reader for dedicated code and initialized data COMDATs.
 
-Extent authority is the complete one-function COMDAT section, not a requested
-prefix. Aux-less old VC4 symbols cannot hide additional emitted instructions.
+Extent authority is the complete dedicated COMDAT section, not a requested
+prefix. Aux-less old VC4 symbols cannot hide additional emitted instructions
+or exception metadata.
 """
 from pathlib import Path
 import struct
@@ -22,7 +23,8 @@ def parse(path):
     sections = []
     for index in range(count):
         fields = struct.unpack("<8sIIIIIIHHI", region(data, 20 + index * 40, 40))
-        sections.append({"size": fields[3], "data": fields[4],
+        sections.append({"name": fields[0].split(b"\0", 1)[0].decode("ascii"),
+                         "size": fields[3], "data": fields[4],
                          "relocations": fields[5], "relocation_count": fields[7],
                          "flags": fields[9]})
     string_offset = symbol_offset + symbol_count * 18
@@ -40,7 +42,7 @@ def parse(path):
             raw = strings[offset:]
         name = raw.split(b"\0", 1)[0].decode("ascii")
         symbols[index] = {"name": name, "value": value, "section": section,
-                          "type": kind, "storage": storage}
+                          "type": kind, "storage": storage, "aux_count": aux}
         region(data, symbol_offset + index * 18, (1 + aux) * 18)
         index += 1 + aux
     if index != symbol_count:
@@ -60,6 +62,25 @@ def symbol_data(path, name, size):
     return region(data, section["data"] + symbol["value"], size)
 
 
+def _relocations(data, section, symbols, contents):
+    relocations = []
+    occupied = set()
+    if section["relocation_count"] and not section["relocations"]:
+        raise ValueError("relocation table has no file-backed offset")
+    for index in range(section["relocation_count"]):
+        offset, symbol_index, kind = struct.unpack(
+            "<IIH", region(data, section["relocations"] + index * 10, 10))
+        if kind not in (6, 20) or symbol_index not in symbols:
+            raise ValueError("unsupported relocation or auxiliary target")
+        if offset + 4 > len(contents) or any(i in occupied for i in range(offset, offset + 4)):
+            raise ValueError("relocation extends outside section or overlaps")
+        occupied.update(range(offset, offset + 4))
+        relocations.append({"offset": offset, "type": "DIR32" if kind == 6 else "REL32",
+                            "symbol": symbols[symbol_index]["name"],
+                            "addend": struct.unpack_from("<I", contents, offset)[0]})
+    return relocations
+
+
 def function(path, wanted):
     data, sections, symbols = parse(path)
     matches = [s for s in symbols.values() if s["name"] == wanted and s["section"] > 0]
@@ -73,17 +94,28 @@ def function(path, wanted):
             or symbol["storage"] not in (2, 3) or section["flags"] & 0x1020 != 0x1020):
         raise ValueError("function extent needs a dedicated code COMDAT section")
     code = bytearray(region(data, section["data"], section["size"]))
-    relocations = []
-    occupied = set()
-    for index in range(section["relocation_count"]):
-        offset, symbol_index, kind = struct.unpack(
-            "<IIH", region(data, section["relocations"] + index * 10, 10))
-        if kind not in (6, 20) or symbol_index not in symbols:
-            raise ValueError("unsupported relocation or auxiliary target")
-        if offset + 4 > len(code) or any(i in occupied for i in range(offset, offset + 4)):
-            raise ValueError("relocation extends outside code or overlaps")
-        occupied.update(range(offset, offset + 4))
-        relocations.append({"offset": offset, "type": "DIR32" if kind == 6 else "REL32",
-                            "symbol": symbols[symbol_index]["name"],
-                            "addend": struct.unpack_from("<I", code, offset)[0]})
-    return code, relocations
+    return code, _relocations(data, section, symbols, code)
+
+
+def data_comdat(path, wanted):
+    data, sections, symbols = parse(path)
+    matches = [s for s in symbols.values() if s["name"] == wanted]
+    if len(matches) != 1 or not 0 < matches[0]["section"] <= len(sections):
+        raise ValueError(f"expected one defined data COMDAT anchor: {wanted}")
+    symbol = matches[0]
+    section = sections[symbol["section"] - 1]
+    members = [s for s in symbols.values() if s["section"] == symbol["section"]]
+    # Section-definition symbols describe the section rather than a second
+    # object. Interior labels are allowed, but cannot attest a matching prefix.
+    anchors = [s for s in members if s["value"] == 0 and not (
+        s["name"] == section["name"] and s["type"] == 0 and
+        s["storage"] == 3 and s["aux_count"] > 0)]
+    if (symbol["value"] != 0 or symbol["type"] != 0 or symbol["storage"] != 3
+            or symbol["aux_count"] != 0 or len(anchors) != 1
+            or any(s["type"] == 0x20 for s in members)
+            or section["size"] <= 0 or not section["data"]
+            or section["flags"] & 0x1040 != 0x1040
+            or section["flags"] & 0x200000A0):
+        raise ValueError("data extent needs a dedicated initialized data COMDAT section")
+    contents = bytearray(region(data, section["data"], section["size"]))
+    return contents, _relocations(data, section, symbols, contents)

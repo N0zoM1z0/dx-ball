@@ -16,7 +16,7 @@ typedef long long RasterWideInt;
 #endif
 typedef char RasterWideMustBe64Bits[(sizeof(RasterWideInt) == 8) ? 1 : -1];
 
-static DxBallInt portable_muldiv(DxBallInt number, DxBallInt numerator,
+static DxBallInt DXBALL_RASTER_CALL portable_muldiv(DxBallInt number, DxBallInt numerator,
                                 DxBallInt denominator)
 {
     RasterWideInt product, divisor, magnitude, result;
@@ -168,66 +168,105 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
     fill_polygon(pixels, pitch, points, count, color, 1);
 }
 
-static DxBallInt fixed_floor(DxBallInt value)
-{
-    DxBallInt integer = value / 65536;
-    if (value < 0 && value % 65536 != 0) --integer;
-    return integer;
-}
-
-static void triangle_rows(DxBallByte *pixels, DxBallInt pitch,
-                          DxBallInt *y, DxBallInt end,
-                          DxBallInt *long_x, DxBallInt long_step,
-                          DxBallInt *short_x, DxBallInt short_step,
-                          DxBallInt long_left, DxBallByte color)
-{
-    DxBallInt left, right;
-    while (*y < end) {
-        if (*y >= 0 && *y < 480) {
-            left = fixed_floor(long_left ? *long_x : *short_x);
-            right = fixed_floor(long_left ? *short_x : *long_x);
-            if (left < 0) left = 0;
-            if (right >= 640) right = 639;
-            dxball_fill_horizontal_span(pixels + *y * pitch, left, right, color);
-        }
-        ++*y;
-        *long_x += long_step;
-        *short_x += short_step;
-    }
-}
-
 /* FUNCTION: DXBALL 0x0040AB90 */
 void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
     DxBallInt x1, DxBallInt y1, DxBallInt x2, DxBallInt y2,
     DxBallInt x3, DxBallInt y3, DxBallByte color)
 {
-    DxBallRasterPoint first, middle, last, swap;
-    DxBallInt long_x, long_step, short_x, short_step, y;
-    first.x = x1; first.y = y1;
-    middle.x = x2; middle.y = y2;
-    last.x = x3; last.y = y3;
-    if (middle.y < first.y) { swap = first; first = middle; middle = swap; }
-    if (last.y < middle.y) { swap = middle; middle = last; last = swap; }
-    if (middle.y < first.y) { swap = first; first = middle; middle = swap; }
-    if (first.y == last.y) return;
-    /* The original stores signed 16.16 values; the tested coordinate/slope
-       domain keeps these products, divisions and additions representable. */
-    long_step = dxball_raster_ops.muldiv((last.x - first.x) * 65536,
-                                      65536, (last.y - first.y) * 65536);
-    long_x = first.x * 65536;
-    y = first.y;
-    if (first.y < middle.y) {
-        short_step = dxball_raster_ops.muldiv((middle.x - first.x) * 65536,
-                                           65536, (middle.y - first.y) * 65536);
-        short_x = first.x * 65536;
-        triangle_rows(pixels, pitch, &y, middle.y, &long_x, long_step,
-                      &short_x, short_step, long_step < short_step, color);
+    DxBallFixedPoint long_step, short_step, long_x, short_x;
+    DxBallInt vertical_scale, y;
+    if (y2 < y1) {
+        y1 ^= y2; y2 ^= y1; y1 ^= y2;
+        x1 ^= x2; x2 ^= x1; x1 ^= x2;
     }
-    if (middle.y != last.y) {
-        short_step = dxball_raster_ops.muldiv((last.x - middle.x) * 65536,
-                                           65536, (last.y - middle.y) * 65536);
-        short_x = middle.x * 65536;
-        triangle_rows(pixels, pitch, &y, last.y, &long_x, long_step,
-                      &short_x, short_step, long_x < short_x, color);
+    if (y3 < y2) {
+        y2 ^= y3; y3 ^= y2; y2 ^= y3;
+        x2 ^= x3; x3 ^= x2; x2 ^= x3;
+    }
+    if (y2 < y1) {
+        y1 ^= y2; y2 ^= y1; y1 ^= y2;
+        x1 ^= x2; x2 ^= x1; x1 ^= x2;
+    }
+    if (y3 - y1 == 0) return;
+    /* Original instructions store this ratio but never read it. Its role
+       is unresolved; retain the observed calculation, not a gradient claim. */
+    vertical_scale = 0xf0000 / (y3 - y1);
+    (void)vertical_scale;
+    long_step = DxBallFixedPoint(x3 - x1) / DxBallFixedPoint(y3 - y1);
+    long_x = DxBallFixedPoint(x1);
+    y = y1;
+    pixels += y1 * pitch;
+    if (y2 > y1) {
+        short_step = DxBallFixedPoint(x2 - x1) / DxBallFixedPoint(y2 - y1);
+        short_x = DxBallFixedPoint(x1);
+        if (long_step < short_step) {
+            while (y2 > y) {
+                if (y >= 0 && y < 480)
+                    dxball_fill_horizontal_span(pixels,
+                        (DxBallInt)long_x >= 0 ? (DxBallInt)long_x : 0,
+                        (DxBallInt)short_x <= 639 ? (DxBallInt)short_x : 639, color);
+                ++y; pixels += pitch; long_x += long_step; short_x += short_step;
+            }
+        } else {
+            while (y2 > y) {
+                if (y >= 0 && y < 480)
+                    dxball_fill_horizontal_span(pixels,
+                        (DxBallInt)short_x >= 0 ? (DxBallInt)short_x : 0,
+                        (DxBallInt)long_x <= 639 ? (DxBallInt)long_x : 639, color);
+                ++y; pixels += pitch; long_x += long_step; short_x += short_step;
+            }
+        }
+    }
+    if (y3 - y2 == 0) return;
+    short_step = DxBallFixedPoint(x3 - x2) / DxBallFixedPoint(y3 - y2);
+    short_x = DxBallFixedPoint(x2);
+    if (long_x < short_x) {
+        while (y3 > y) {
+            if (y >= 0 && y < 480)
+                dxball_fill_horizontal_span(pixels,
+                    (DxBallInt)long_x >= 0 ? (DxBallInt)long_x : 0,
+                    (DxBallInt)short_x <= 639 ? (DxBallInt)short_x : 639, color);
+            ++y; pixels += pitch; long_x += long_step; short_x += short_step;
+        }
+    } else {
+        while (y3 > y) {
+            if (y >= 0 && y < 480)
+                dxball_fill_horizontal_span(pixels,
+                    (DxBallInt)short_x >= 0 ? (DxBallInt)short_x : 0,
+                    (DxBallInt)long_x <= 639 ? (DxBallInt)long_x : 639, color);
+            ++y; pixels += pitch; long_x += long_step; short_x += short_step;
+        }
     }
 }
+
+/* FUNCTION: DXBALL 0x0040B240 */
+DxBallFixedPoint::DxBallFixedPoint() { return; }
+/* FUNCTION: DXBALL 0x0040B260 */
+DxBallFixedPoint::~DxBallFixedPoint() { return; }
+/* FUNCTION: DXBALL 0x0040B280 */
+DxBallFixedPoint::DxBallFixedPoint(DxBallInt integer) {
+    value = (DxBallInt)((DxBallUInt)integer << 16);
+    return;
+}
+/* FUNCTION: DXBALL 0x0040B2B0 */
+DxBallFixedPoint::operator DxBallInt() { return value >> 16; }
+/* FUNCTION: DXBALL 0x0040B2D0 */
+DxBallFixedPoint DxBallFixedPoint::operator/(DxBallFixedPoint denominator) {
+    DxBallFixedPoint result;
+    result.value = dxball_fixed_divide(value, denominator.value);
+    return result;
+}
+/* FUNCTION: DXBALL 0x0040B390 */
+DxBallInt dxball_fixed_divide(DxBallInt number, DxBallInt denominator) {
+    return dxball_raster_ops.muldiv(number, 65536, denominator);
+}
+/* FUNCTION: DXBALL 0x0040B3C0 */
+DxBallInt DxBallFixedPoint::operator<(DxBallFixedPoint other) {
+    return value < other.value;
+}
+/* FUNCTION: DXBALL 0x0040B450 */
+DxBallFixedPoint &DxBallFixedPoint::operator+=(DxBallFixedPoint increment) {
+    value += increment.value;
+    return *this;
+}
+

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b260"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b375"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b430"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b4ad"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b359"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b362"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b41d"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b49a"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b346"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b36b"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b426"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b4a3"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x40b346",
+      "length": 80
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b370"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b42b"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b4a8"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b226"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b196"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40b202"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x40b196",
+      "length": 168
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x40b41d",
+      "length": 36
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x40b49a",
+      "length": 36
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x4202a0",
+      "length": 288
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x4203c0",
+      "length": 24
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40b22b"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x418570"
+    }
+  }
+]

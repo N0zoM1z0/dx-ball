@@ -231,7 +231,7 @@ def main():
         native.reset()
         cases = dict(render_rotated_sprite=351, draw_rotated_sprite=344, rotated_sprite_offset=329)
         assert len(baseline_results) == 688 and len(callback_results) == 7 and len(offset_results) == 329
-        inputs = sorted({str(p.relative_to(ROOT)) for p in (ROOT / 'src').glob('*') if p.suffix in ('.c', '.h')} |
+        inputs = sorted({str(p.relative_to(ROOT)) for p in (ROOT / 'src').glob('*') if p.suffix in ('.c', '.cpp', '.h')} |
                         {'CMakeLists.txt', 'config/target.toml', 'tests/test_rotation_differential.py',
                          'tests/rotation_oracle.py', 'tests/resources_oracle.py', 'tests/target_oracle.py'})
         report = dict(status='pass', target_sha256=target.target_sha256, cases=cases, total=sum(cases.values()),

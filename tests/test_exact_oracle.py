@@ -29,8 +29,8 @@ class ExactOracleTests(unittest.TestCase):
         cls.object = ROOT / "build/exact/boards.obj"
         cls.data, cls.sections, cls.symbols = coff.parse(cls.object)
 
-    def mutate(self, unit, mutator):
-        data = bytearray(self.data)
+    def mutate(self, unit, mutator, object_path=None):
+        data = bytearray(self.data if object_path is None else object_path.read_bytes())
         mutator(data)
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "mutant.obj"
@@ -40,6 +40,15 @@ class ExactOracleTests(unittest.TestCase):
     def section(self, symbol):
         entry = next(s for s in self.symbols.values() if s["name"] == symbol and s["section"] > 0)
         return entry, self.sections[entry["section"] - 1]
+
+    def fixed_metadata(self):
+        unit = self.units["fixed-point-divide"]
+        object_path = ROOT / self.builds[unit["build"]]["object"]
+        _, sections, symbols = coff.parse(object_path)
+        metadata = unit["data_comdats"][0]
+        symbol = next(s for s in symbols.values()
+                      if s["name"] == metadata["symbol"] and s["section"] > 0)
+        return unit, object_path, symbol, sections[symbol["section"] - 1]
 
     def test_baseline_all_units(self):
         for unit in self.units.values():
@@ -107,6 +116,41 @@ class ExactOracleTests(unittest.TestCase):
         symbol, section = self.section(row["symbol"])
         with self.assertRaises(ValueError):
             self.mutate(unit, lambda data: data.__setitem__(section["data"] + symbol["value"], ord("w")))
+
+    def test_metadata_corruption_is_not_exact(self):
+        unit, object_path, _, section = self.fixed_metadata()
+        result = self.mutate(unit, lambda data: data.__setitem__(
+            section["data"], data[section["data"]] ^ 1), object_path)
+        self.assertFalse(result["exact"])
+        self.assertEqual(result["code_difference_count"], 0)
+        self.assertGreater(result["data_comdats"][0]["difference_count"], 0)
+        self.assertEqual(result["target_size"], unit["size"])
+
+    def test_missing_metadata_attestation_is_rejected(self):
+        unit, object_path, _, _ = self.fixed_metadata()
+        unit = copy.deepcopy(unit)
+        del unit["data_comdats"]
+        with self.assertRaises(ValueError):
+            replay.compare(object_path, unit, self.pe)
+
+    def test_missing_metadata_relocation_is_rejected(self):
+        unit, object_path, _, _ = self.fixed_metadata()
+        unit = copy.deepcopy(unit)
+        unit["data_comdats"][0]["relocations"].pop()
+        with self.assertRaises(ValueError):
+            replay.compare(object_path, unit, self.pe)
+
+    def test_matching_metadata_prefix_with_extra_bytes_is_not_exact(self):
+        unit, object_path, symbol, section = self.fixed_metadata()
+        header_offset = 20 + (symbol["section"] - 1) * 40 + 16
+        result = self.mutate(unit, lambda data: struct.pack_into(
+            "<I", data, header_offset, section["size"] + 1), object_path)
+        self.assertFalse(result["exact"])
+        self.assertEqual(result["code_difference_count"], 0)
+        self.assertEqual(result["data_comdats"][0]["object_size"],
+                         unit["data_comdats"][0]["size"] + 1)
+        self.assertEqual(result["difference_count"], 1)
+        self.assertEqual(result["target_size"], unit["size"])
 
     def test_wrong_target_hash_is_rejected(self):
         image = bytearray((ROOT / "original/DXBALL.EXE").read_bytes())

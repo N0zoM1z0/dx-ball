@@ -10,7 +10,7 @@ import sys
 import tomllib
 
 import pefile
-from coff import function, symbol_data
+from coff import data_comdat, function, parse, symbol_data
 from legacy_toolchain import ROOT, Toolchain, session_lock, sha256
 
 spec = importlib.util.spec_from_file_location("verify_target", ROOT / "scripts/verify-target.py")
@@ -18,8 +18,7 @@ verify_target = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(verify_target)
 
 
-def compare(object_path, unit, pe):
-    code, actual_relocations = function(object_path, unit["symbol"])
+def _compare_section(object_path, unit, pe, contents, actual_relocations):
     expected = unit["relocations"]
     actual_keys = [(r["offset"], r["type"], r["symbol"]) for r in actual_relocations]
     expected_keys = [(r["offset"], r["type"], r["symbol"]) for r in expected]
@@ -42,18 +41,57 @@ def compare(object_path, unit, pe):
         resolved = row["target"] + actual["addend"]
         if row["type"] == "REL32":
             resolved -= address + row["offset"] + 4
-        struct.pack_into("<I", code, row["offset"], resolved & 0xFFFFFFFF)
+        struct.pack_into("<I", contents, row["offset"], resolved & 0xFFFFFFFF)
+    if unit["size"] <= 0:
+        raise ValueError("target extent must have positive size")
     target = pe.get_data(address - pe.OPTIONAL_HEADER.ImageBase, unit["size"])
     if len(target) != unit["size"]:
         raise ValueError("target extent is not fully file-backed")
-    differences = [i for i in range(max(len(code), len(target)))
-                   if i >= len(code) or i >= len(target) or code[i] != target[i]]
+    differences = [i for i in range(max(len(contents), len(target)))
+                   if i >= len(contents) or i >= len(target) or contents[i] != target[i]]
     return {"symbol": unit["symbol"], "address": f"0x{address:08X}",
-            "object_size": len(code), "target_size": len(target),
+            "object_size": len(contents), "target_size": len(target),
             "relocations": actual_relocations, "difference_count": len(differences),
             "first_differences": differences[:24], "exact": not differences,
-            "relocated_sha256": hashlib.sha256(code).hexdigest(),
+            "relocated_sha256": hashlib.sha256(contents).hexdigest(),
             "target_span_sha256": hashlib.sha256(target).hexdigest()}
+
+
+def compare(object_path, unit, pe):
+    """Attest code and attached data; ledger sizes remain the code extent."""
+    code, actual_relocations = function(object_path, unit["symbol"])
+    result = _compare_section(object_path, unit, pe, code, actual_relocations)
+    metadata = unit.get("data_comdats", [])
+    declarations = {}
+    for entry in metadata:
+        name = entry["symbol"]
+        if name in declarations:
+            raise ValueError(f"duplicate data COMDAT attestation: {name}")
+        declarations[name] = entry
+        bindings = [r for r in unit["relocations"]
+                    if r["type"] == "DIR32" and r["symbol"] == name]
+        if not bindings or any(r["target"] != entry["target_address"] or
+                               r["addend"] != 0 for r in bindings):
+            raise ValueError(f"data COMDAT attestation disagrees with code binding: {name}")
+    generated_bindings = [r for r in actual_relocations
+                          if r["type"] == "DIR32" and r["symbol"].startswith("$T")]
+    if generated_bindings:
+        _, sections, symbols = parse(object_path)
+        initialized_comdats = {s["name"] for s in symbols.values()
+                               if 0 < s["section"] <= len(sections) and
+                               sections[s["section"] - 1]["flags"] & 0x1040 == 0x1040}
+        for row in generated_bindings:
+            if row["symbol"] in initialized_comdats and row["symbol"] not in declarations:
+                raise ValueError(f"generated data COMDAT lacks complete attestation: {row['symbol']}")
+    details = []
+    for entry in metadata:
+        contents, relocations = data_comdat(object_path, entry["symbol"])
+        details.append(_compare_section(object_path, entry, pe, contents, relocations))
+    result["code_difference_count"] = result["difference_count"]
+    result["data_comdats"] = details
+    result["difference_count"] += sum(row["difference_count"] for row in details)
+    result["exact"] = result["difference_count"] == 0
+    return result
 
 
 def main():

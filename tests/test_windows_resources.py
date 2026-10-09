@@ -45,7 +45,7 @@ def main():
     # Link the same game objects, including explicit dependency backends.
     # Owner metadata enumerates recovered entries, not the entire link graph.
     objects = [ROOT / 'build/vc40' / (path.stem + '.obj')
-               for path in sorted((ROOT / 'src').glob('*.c'))
+               for path in sorted(p for p in (ROOT / 'src').glob('*') if p.suffix in ('.c', '.cpp'))
                if path.stem not in ('board_inspector', 'resource_inspector')]
     tools.run('link.exe', ['/NOLOGO', '/MACHINE:IX86', '/SUBSYSTEM:WINDOWS',
         '/INCREMENTAL:NO', '/PDB:NONE', '/OUT:' + windows_path(negative),
@@ -84,7 +84,7 @@ def main():
               'scripts/legacy_toolchain.py', 'scripts/resource_limits.py', 'config/tools.lock.toml',
               'scripts/verify-target.py', 'config/target.toml', 'config/assets.csv',
               'config/source-owners.toml', 'config/mingw-i686.cmake']
-    inputs += [str(path.relative_to(ROOT)) for path in sorted((ROOT / 'src').glob('*.[ch]'))]
+    inputs += [str(path.relative_to(ROOT)) for path in sorted(p for p in (ROOT / 'src').glob('*') if p.suffix in ('.c', '.cpp', '.h'))]
     builds = {}
     for profile in ('vc40', 'windows-i686'):
         path = ROOT / 'build' / profile

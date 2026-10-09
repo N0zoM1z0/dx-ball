@@ -608,12 +608,12 @@ relocations = [
   { offset = 0x17, type = "REL32", symbol = "_dxball_render_rotated_sprite", addend = 0, target = 0x004026A0 },
 ]
 
-# Raster emission is compiled for semantic COFF execution, not an exact claim.
+# Shared raster C++ emission preserves class lifetime and exception cleanup.
 [builds.raster]
-source = "src/raster.c"
+source = "src/raster.cpp"
 object = "build/exact/raster.obj"
-inputs = ["src/raster.c", "src/raster.h", "src/state_types.h"]
-flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+inputs = ["src/raster.cpp", "src/raster.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy", "/GX"]
 
 # Shared bitmap source is executed as generated code; no exact unit is claimed.
 [builds.bitmap]
@@ -1200,4 +1200,217 @@ relocations = [
   { offset = 0x9E, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
   { offset = 0xAA, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
   { offset = 0xB0, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
+]
+
+# Complete fixed-point code and attached VC4 exception metadata; no prefix matching.
+
+[units.fixed-point-default]
+symbol = "??0DxBallFixedPoint@@QAE@XZ"
+target_address = 0x40b240
+size = 0x19
+relocations = [
+
+]
+build = "raster"
+
+[units.fixed-point-destroy]
+symbol = "??1DxBallFixedPoint@@QAE@XZ"
+target_address = 0x40b260
+size = 0x16
+relocations = [
+
+]
+build = "raster"
+
+[units.fixed-point-integer]
+symbol = "??0DxBallFixedPoint@@QAE@H@Z"
+target_address = 0x40b280
+size = 0x26
+relocations = [
+
+]
+build = "raster"
+
+[units.fixed-point-convert]
+symbol = "??BDxBallFixedPoint@@QAEHXZ"
+target_address = 0x40b2b0
+size = 0x1e
+relocations = [
+
+]
+build = "raster"
+
+[units.fixed-point-divide]
+symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z"
+target_address = 0x40b2d0
+size = 0xb6
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "$L1157", addend = 0x0, target = 0x40b36b },
+  { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x33, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
+  { offset = 0x46, type = "REL32", symbol = "_dxball_fixed_divide", addend = 0x0, target = 0x40b390 },
+  { offset = 0x84, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x8d, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x96, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x9c, type = "DIR32", symbol = "$T1164", addend = 0x0, target = 0x420350 },
+  { offset = 0xa1, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
+  { offset = 0xab, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
+]
+build = "raster"
+data_comdats = [
+  { symbol = "$T1164", target_address = 0x420350, size = 0x38, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1165", addend = 0x0, target = 0x420370 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1162", addend = 0x0, target = 0x40b346 },
+  { offset = 0x2c, type = "DIR32", symbol = "$L1158", addend = 0x0, target = 0x40b362 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1159", addend = 0x0, target = 0x40b359 }
+] }
+]
+
+[units.fixed-point-ratio]
+symbol = "_dxball_fixed_divide"
+target_address = 0x40b390
+size = 0x23
+relocations = [
+  { offset = 0x15, type = "DIR32", symbol = "_dxball_raster_ops", addend = 0x8, target = 0x4412a0 }
+]
+build = "raster"
+
+[units.fixed-point-less]
+symbol = "??MDxBallFixedPoint@@QAEHV0@@Z"
+target_address = 0x40b3c0
+size = 0x81
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "$L1168", addend = 0x0, target = 0x40b426 },
+  { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x61, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x67, type = "DIR32", symbol = "$T1173", addend = 0x0, target = 0x420388 },
+  { offset = 0x6c, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
+  { offset = 0x76, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
+]
+build = "raster"
+data_comdats = [
+  { symbol = "$T1173", target_address = 0x420388, size = 0x28, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1174", addend = 0x0, target = 0x4203a8 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1169", addend = 0x0, target = 0x40b41d }
+] }
+]
+
+[units.fixed-point-add]
+symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z"
+target_address = 0x40b450
+size = 0x6e
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "$L1177", addend = 0x0, target = 0x40b4a3 },
+  { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x4e, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x54, type = "DIR32", symbol = "$T1180", addend = 0x0, target = 0x4203b0 },
+  { offset = 0x59, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
+  { offset = 0x63, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
+]
+build = "raster"
+data_comdats = [
+  { symbol = "$T1180", target_address = 0x4203b0, size = 0x28, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1181", addend = 0x0, target = 0x4203d0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1178", addend = 0x0, target = 0x40b49a }
+] }
+]
+
+[candidates.fill-triangle]
+symbol = "_dxball_fill_triangle"
+target_address = 0x40ab90
+size = 0x6ae
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "$L1117", addend = 0x0, target = 0x40b226 },
+  { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
+  { offset = 0x22, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
+  { offset = 0x31, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
+  { offset = 0x3d, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
+  { offset = 0x49, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
+  { offset = 0x135, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x14f, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x15a, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0x0, target = 0x40b2d0 },
+  { offset = 0x18a, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x1c7, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x1e1, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x1ec, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0x0, target = 0x40b2d0 },
+  { offset = 0x21c, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x23a, type = "REL32", symbol = "??MDxBallFixedPoint@@QAEHV0@@Z", addend = 0x0, target = 0x40b3c0 },
+  { offset = 0x26d, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x28c, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x297, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x2a7, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x2cb, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0x0, target = 0x40b4c0 },
+  { offset = 0x2e3, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x2ef, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x324, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x343, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x34e, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x35e, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x382, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0x0, target = 0x40b4c0 },
+  { offset = 0x39a, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x3a6, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x3f2, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x40c, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x417, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0x0, target = 0x40b2d0 },
+  { offset = 0x447, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0x0, target = 0x40b280 },
+  { offset = 0x465, type = "REL32", symbol = "??MDxBallFixedPoint@@QAEHV0@@Z", addend = 0x0, target = 0x40b3c0 },
+  { offset = 0x498, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x4b7, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x4c2, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x4d2, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x4f6, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0x0, target = 0x40b4c0 },
+  { offset = 0x50e, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x51a, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x54f, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x56e, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x579, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x589, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0x0, target = 0x40b2b0 },
+  { offset = 0x5ad, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0x0, target = 0x40b4c0 },
+  { offset = 0x5c5, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x5d1, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0x0, target = 0x40b450 },
+  { offset = 0x60a, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x613, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x61c, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x625, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x62e, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x637, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x640, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x649, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x652, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x65b, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x664, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x66d, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x676, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x67f, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x688, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x691, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
+  { offset = 0x697, type = "DIR32", symbol = "$T1153", addend = 0x0, target = 0x4202b0 },
+  { offset = 0x69c, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
+  { offset = 0x6a5, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
+]
+build = "raster"
+data_comdats = [
+  { symbol = "$T1153", target_address = 0x4202b0, size = 0xa0, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1155", addend = 0x0, target = 0x4202d0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1118", addend = 0x0, target = 0x40b21d },
+  { offset = 0x2c, type = "DIR32", symbol = "$L1119", addend = 0x0, target = 0x40b214 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1120", addend = 0x0, target = 0x40b20b },
+  { offset = 0x3c, type = "DIR32", symbol = "$L1121", addend = 0x0, target = 0x40b202 },
+  { offset = 0x44, type = "DIR32", symbol = "$L1123", addend = 0x0, target = 0x40b1f0 },
+  { offset = 0x4c, type = "DIR32", symbol = "$L1122", addend = 0x0, target = 0x40b1f9 },
+  { offset = 0x54, type = "DIR32", symbol = "$L1124", addend = 0x0, target = 0x40b1e7 },
+  { offset = 0x5c, type = "DIR32", symbol = "$L1125", addend = 0x0, target = 0x40b1de },
+  { offset = 0x64, type = "DIR32", symbol = "$L1127", addend = 0x0, target = 0x40b1cc },
+  { offset = 0x6c, type = "DIR32", symbol = "$L1126", addend = 0x0, target = 0x40b1d5 },
+  { offset = 0x74, type = "DIR32", symbol = "$L1128", addend = 0x0, target = 0x40b1c3 },
+  { offset = 0x7c, type = "DIR32", symbol = "$L1129", addend = 0x0, target = 0x40b1ba },
+  { offset = 0x84, type = "DIR32", symbol = "$L1139", addend = 0x0, target = 0x40b1a8 },
+  { offset = 0x8c, type = "DIR32", symbol = "$L1138", addend = 0x0, target = 0x40b1b1 },
+  { offset = 0x94, type = "DIR32", symbol = "$L1140", addend = 0x0, target = 0x40b19f },
+  { offset = 0x9c, type = "DIR32", symbol = "$L1141", addend = 0x0, target = 0x40b196 }
+] }
 ]
