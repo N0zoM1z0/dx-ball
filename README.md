@@ -21,7 +21,8 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > **35 byte-exact functions totaling 3,379 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
-> clean shutdown; complete gameplay and
+> clean shutdown and complete original-board/menu campaigns in both maintained
+> VC4 and MinGW builds; complete gameplay and
 > driver fidelity remain in progress.
 
 DX-Ball serves as a working REA showcase: inspect a function, follow its callers

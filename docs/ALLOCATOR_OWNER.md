@@ -91,7 +91,8 @@ The previously sealed private MIDI/resource/sound failure connections remain
 historical supporting evidence; their old products and input hashes were not
 silently relabelled as execution of the new maintained defaults. The connected frame/terminal batches below and the maintained VC4 full
 board/menu control now pass. Exhaustive i686 owner failure matrices and the
-MinGW full campaign remain open.
+whole-game fidelity remain open. Both maintained full board/menu campaigns pass
+in [original-board integration](ORIGINAL_CAMPAIGN.md).
 
 The source ledger now has **243 entries: 235 game functions and 8 runtime
 functions**, with **111,242 direct cases**. Cold replay retains **35 exact units /

@@ -6,8 +6,8 @@ state, in 5,465.402 seconds with eight lives. REA process Evidence
 `ev_e7f2df5e40a1a0ba723c0156934c2684a7f136e0ebee954177b00cac5e746c8f`
 records exit zero and the full final-report digest. All 98 archive files verify
 after the game/reader processes stop. This is original-only acceptance.
-The maintained VC4 full campaign also passes below; MinGW's full campaign
-and whole-game fidelity remain open. The captured
+Both maintained VC4 and MinGW full board/menu campaigns pass below;
+whole-game fidelity remains open. The captured
 game runs silently on one allowed CPU. Source totals stay
 **243 source-present (235 game + 8 runtime) / 111,242 direct cases /
 35 exact units / 3,379 bytes**.
@@ -24,12 +24,17 @@ stale outer phase without restarting the completed capture. The 220-file
 `allocator-vc40-full-243-35` checkpoint verifies all 468 frozen inputs and 49
 originals. Rendered terminal snapshots hit their cumulative budget; the raw
 board messages and final report digest remain complete. Keep those limits
-distinct from the full board/menu predicate. The session is released; MinGW's
-full campaign is now running on one allowed CPU with silent playback; the
-published allocation replay is complete below. Its predicate stays pending.
-Inspect `.analysis/allocator-mingw-full-phase.json`, revalidate the capture
-PID/start ticks and recorded exec handle before polling, and do not restart
-from a stale phase or observation timeout. It holds the runtime/compiler session.
+distinct from the full board/menu predicate. The maintained MinGW full campaign also passes all 50 initial boards and the
+same terminal predicate in 5,631.519 seconds, with four lives and score 131,576.
+REA `ev_1ee2cbd8a145ce95dd95b57f7c8f4f56ac96e02382c703dfe95f95b57fc124b5`
+binds final-report SHA-256
+`f7a6b3deb7725a7ceca4af0a5d008954ec6ecc3c6079f41ef6e57c6e15532ce4`.
+The recorder is untruncated and exits zero; its process group is cleaned and
+settlement quiescent. One malformed SDK sample is discarded among 422,167
+valid samples. The 220-file `allocator-mingw-full-243-35` archive seals the
+actual reader and all 471 frozen inputs, with 49 originals unchanged. Both
+captures are complete; the runtime/compiler session is released. Whole-game
+fidelity and complete CRT startup/teardown remain separate obligations.
 
 The connected allocation batches now pass with the unchanged maintained
 native product. REA captures
@@ -81,9 +86,8 @@ The original pre-integration gold and private MIDI/resource/sound connections
 retain SHA-sealed historical snapshots. They are supporting evidence, not new
 executions of current production defaults. Exhaustive connected owner failure paths,
 handler registration, complete CRT startup/teardown and reconstructed full
-campaign fidelity remain open. The bounded original-board pilot and full VC4
-board/menu observation and published-source replay pass as described above.
-The MinGW full run is live as described above; exhaustive i686 owner failures,
+campaign fidelity remain open. The bounded original-board pilot, both full maintained board/menu observations
+and published-source replay pass as described above. Exhaustive i686 owner failures,
 handler registration and complete CRT startup/teardown remain open.
 
 Verified retention removes superseded failed working products, deduplicates

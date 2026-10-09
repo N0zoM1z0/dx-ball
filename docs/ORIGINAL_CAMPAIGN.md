@@ -34,8 +34,8 @@ The final report SHA-256 is
 `8815d628797edf34ce45d70ed0300d35bec47090d0beee9461c73583f61dfc6f`.
 
 This establishes the original control under the recorded Wine/Xvfb environment.
-The maintained VC4 board/menu control also passes below; MinGW's full campaign,
-physical audio/Windows behavior and synchronized trajectory or pixel equivalence
+Both maintained VC4 and MinGW board/menu controls also pass below.
+Physical audio/Windows behavior and synchronized trajectory or pixel equivalence
 remain unverified. Maintained source and exact
 acceptance are unchanged. The earlier timeout below remains negative evidence.
 
@@ -79,13 +79,29 @@ exceeded their output budget. The raw messages retain all 50 initial-board
 observations and completion, and the filesystem observation binds the complete
 final report. Sampled process trees and before/after file observations retain
 their normal limits. Bonus level advances are legal, so completion does not
-mean every brick was destroyed. MinGW's full campaign, synchronized trajectories,
-pixel equivalence and complete CRT cleanup remain open. Source/direct/exact
-counts are unchanged, and the original-only full control remains separate. A
-separate maintained MinGW full50 capture is now running with the same products
-as its bounded pilot, one allowed CPU and silent playback. Its board/menu
-predicate is pending; preserve the recorded process identity and poll that
-capture rather than starting a second game.
+mean every brick was destroyed. Synchronized trajectories, pixel equivalence
+and complete CRT cleanup remain open. Source/direct/exact counts are unchanged,
+and the original-only full control remains separate.
+
+The maintained **MinGW full campaign also passes**: all 50 original initial
+boards and the same terminal index/menu/cleared-request predicate, in
+**5,631.519 seconds (93.86 minutes)**, with **4 lives** and score **131,576**.
+REA process Evidence
+`ev_1ee2cbd8a145ce95dd95b57f7c8f4f56ac96e02382c703dfe95f95b57fc124b5`
+records exit zero and binds final-report SHA-256
+`f7a6b3deb7725a7ceca4af0a5d008954ec6ecc3c6079f41ef6e57c6e15532ce4`.
+The recorder reports no truncation. Its process group cleanup is verified;
+settlement is quiescent and needs no additional cleanup. These are recorder
+lifecycle observations, not proof of original CRT teardown.
+
+The SDK observer consumes 422,167 valid samples and discards one malformed
+line; 731,131,818 stream bytes are retained as a digest. Nonatomic sampling and
+that discarded line remain explicit limits. The 220-file private
+`allocator-mingw-full-243-35` checkpoint retains the actual reader EXE, the
+MinGW-only report subtree and historical copies of mutable inputs. All 471
+frozen inputs and 49 originals verify. The game runs silently on one allowed
+CPU; the host default output remains unchanged. Independent clock/RNG/input
+trajectories explain why this predicate does not compare scores between builds.
 
 ```bash
 scripts/repo-python scripts/capture-windows-probe.py --probe campaign \
