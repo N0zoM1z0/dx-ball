@@ -18,7 +18,7 @@ The allocation bodies have no byte-exact acceptance.
 | `0x417790` | `dxball_allocate_with_handler` | 64 | Reject requests above `0xffffffe0`; normalize zero to one; retry after any nonzero handler result |
 | `0x4177d0` | `dxball_heap_allocate` | 21 | Reload the heap handle and call HeapAlloc with zero flags |
 | `0x419e80` | `dxball_initialize_runtime_heap` | 21 | HeapCreate(1, 0x1000, 0); store the full returned handle, including NULL |
-| `0x419ea0` | `dxball_call_new_handler` | 33 | Reload the callback; return zero when absent, otherwise its complete signed result |
+| `0x419ea0` | `dxball_call_new_handler` | 33 | Reload the callback; return 1 for any nonzero callback result, otherwise 0 |
 
 The original heap, handler and malloc mode are at `0x440d70`, `0x43fb10` and
 `0x4234d4`. Request sizes retain their unsigned 32-bit domain. Opaque heap

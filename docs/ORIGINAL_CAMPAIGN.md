@@ -81,7 +81,11 @@ final report. Sampled process trees and before/after file observations retain
 their normal limits. Bonus level advances are legal, so completion does not
 mean every brick was destroyed. MinGW's full campaign, synchronized trajectories,
 pixel equivalence and complete CRT cleanup remain open. Source/direct/exact
-counts are unchanged, and the original-only full control remains separate.
+counts are unchanged, and the original-only full control remains separate. A
+separate maintained MinGW full50 capture is now running with the same products
+as its bounded pilot, one allowed CPU and silent playback. Its board/menu
+predicate is pending; preserve the recorded process identity and poll that
+capture rather than starting a second game.
 
 ```bash
 scripts/repo-python scripts/capture-windows-probe.py --probe campaign \

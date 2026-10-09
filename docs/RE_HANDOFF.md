@@ -25,7 +25,11 @@ stale outer phase without restarting the completed capture. The 220-file
 originals. Rendered terminal snapshots hit their cumulative budget; the raw
 board messages and final report digest remain complete. Keep those limits
 distinct from the full board/menu predicate. The session is released; MinGW's
-full campaign remains next; the published allocation replay is complete below.
+full campaign is now running on one allowed CPU with silent playback; the
+published allocation replay is complete below. Its predicate stays pending.
+Inspect `.analysis/allocator-mingw-full-phase.json`, revalidate the capture
+PID/start ticks and recorded exec handle before polling, and do not restart
+from a stale phase or observation timeout. It holds the runtime/compiler session.
 
 The connected allocation batches now pass with the unchanged maintained
 native product. REA captures
@@ -79,7 +83,8 @@ executions of current production defaults. Exhaustive connected owner failure pa
 handler registration, complete CRT startup/teardown and reconstructed full
 campaign fidelity remain open. The bounded original-board pilot and full VC4
 board/menu observation and published-source replay pass as described above.
-The MinGW full run remains next.
+The MinGW full run is live as described above; exhaustive i686 owner failures,
+handler registration and complete CRT startup/teardown remain open.
 
 Verified retention removes superseded failed working products, deduplicates
 immutable evidence and checks all 49 original files. The measured cleanup
@@ -1396,3 +1401,8 @@ runtime input identities verify after cleanup; saved REA target-byte/snapshot
 verification still passes. Current build/analysis/tools sizes are approximately
 19/348 MiB and1.9 GiB respectively; the cleanup preview is empty. Immutable
 checkpoints, originals, installed tools and manual saves remain intact.
+
+The public allocation controls at `642a331` pass CI **37868953427**. The new
+MinGW full observer uses the same products as the completed pilot, a larger
+rendered-terminal budget, digest-only SDK streaming and its own running phase.
+This is a live-process checkpoint, not full MinGW acceptance.
