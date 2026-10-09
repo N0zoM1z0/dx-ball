@@ -73,14 +73,14 @@ void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
 void dxball_fill_rect(DxBallSurface handle, DxBallInt left, DxBallInt top,
     DxBallInt right, DxBallInt bottom, DxBallUInt color)
 {
-    DxBallDDSurface *surface = (DxBallDDSurface *)handle;
     DxBallRect rect;
-    DxBallUInt fx[25];
-    memset(fx, 0, sizeof(fx));
-    fx[0] = 100;
-    fx[20] = color;
-    rect.left = left; rect.top = top; rect.right = right; rect.bottom = bottom;
-    surface->vtable->blt(surface, &rect, NULL, NULL, 0x400, fx);
+    DxBallColorFillFx fx;
+    fx.size = 100;
+    fx.fill_color = color;
+    rect.top = top; rect.bottom = bottom; rect.left = left; rect.right = right;
+    ((DxBallDDSurface *)handle)->vtable->blt((DxBallDDSurface *)handle,
+        &rect, NULL, NULL, 0x400, &fx);
+    return;
 }
 
 void dxball_set_palette_rgb(DxBallInt entry, DxBallByte red, DxBallByte green, DxBallByte blue)
@@ -95,18 +95,23 @@ void dxball_set_palette_rgb(DxBallInt entry, DxBallByte red, DxBallByte green, D
 
 void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap)
 {
-    DxBallPaletteEntry color;
+    DxBallByte red, green, blue;
     DxBallInt i;
     if (dxball_cursor_warp_disabled == 1) return;
-    color.red = wrap == 1 ? dxball_live_palette[last].red : 0;
-    color.green = wrap == 1 ? dxball_live_palette[last].green : 0;
-    color.blue = wrap == 1 ? dxball_live_palette[last].blue : 0;
+    if (wrap == 1) {
+        red = dxball_live_palette[last].red;
+        green = dxball_live_palette[last].green;
+        blue = dxball_live_palette[last].blue;
+    } else {
+        red = 0; green = 0; blue = 0;
+    }
     for (i = last; i > first; --i) dxball_live_palette[i] = dxball_live_palette[i - 1];
-    dxball_live_palette[first].red = color.red;
-    dxball_live_palette[first].green = color.green;
-    dxball_live_palette[first].blue = color.blue;
+    dxball_live_palette[first].red = red;
+    dxball_live_palette[first].green = green;
+    dxball_live_palette[first].blue = blue;
     dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, first,
         last - first + 1, dxball_live_palette + first);
+    return;
 }
 
 void dxball_rotate_rgb_colors(DxBallInt entry, DxBallInt count, DxBallInt *colors)
@@ -117,6 +122,7 @@ void dxball_rotate_rgb_colors(DxBallInt entry, DxBallInt count, DxBallInt *color
     for (i = 0; i <= count - 4; ++i) colors[i] = colors[i + 3];
     colors[count - 3] = red; colors[count - 2] = green; colors[count - 1] = blue;
     dxball_set_palette_rgb(entry, (DxBallByte)colors[0], (DxBallByte)colors[1], (DxBallByte)colors[2]);
+    return;
 }
 
 /* FUNCTION: DXBALL 0x00403290 */

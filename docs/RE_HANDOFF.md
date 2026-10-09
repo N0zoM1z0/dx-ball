@@ -1,4 +1,59 @@
-# Current handoff — complete exits, text centering and palette guard
+# Current handoff — bank loops and palette state
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [bank loops and palette state batch](EXACT_BANK_LOOPS.md) promotes three
+complete functions / 462 bytes: bank initialization, bank release and palette
+initialization. Observed inner while loops, consumed HRESULT, six independent
+RGB stores and ordinary returns restore complete source control flow.
+
+The same batch restores five complete candidates / 2,080 bytes: rectangle
+fill, RGB rotation, right/left palette rotation and the 1,339-byte fade.
+Remaining differences are respectively **8 / 7 / 8 / 8 / 18**. Fade restores
+both direction-specific loops, six real abs calls and two real frame waits;
+its remaining comparison differences include genuine relocation operands.
+Candidates are not exact acceptance. Rejected commuted/cast comparisons emit
+the same differences and must not be retried. Original spelling is unproven.
+
+Acceptance is **283 source-present / 247 scoped entries / 112,273 distinct
+cases / 100 exact units / 12,227 code bytes + 136 separate metadata bytes**.
+All 97 prior complete units preserve their code and metadata identities.
+Source presence stays at 270 authored bodies, one unknown no-effect body and
+12 runtime bodies; origins **270 authored / 48 runtime / 42 generated /
+168 unknown**. Existing semantic closures refresh without new rows, cases,
+tests, fixtures or campaigns.
+
+All 22 existing owner scripts pass against 279 frozen inputs and one native
+Debug product. Grouped cold replay, existing fourteen rejection controls,
+strict MinGW and full VC4 builds pass. Unchanged raster/rotation compiler
+closures reuse the preceding 7,164/1,024 COFF vectors. Saved matching REA
+evidence is reused; no new original-analysis session and the 465-record
+snapshot stays unchanged.
+
+Current native alias: `build/native/libdxball_core.so`, from
+`build/native-exact-bank-loops/libdxball_core.so`, SHA-256
+`c24e9f75ea1cec5a1165d95996e67879db45a2119a1c7a282b42397ef81efdff`.
+Private checkpoint: `.analysis/checkpoints/exact-bank-loops-283-100`, parent
+`.analysis/checkpoints/exact-exits-283-97`. Actual twenty-two cold COFF objects,
+all diagnostic source/compiler epochs, full frozen inputs, saved dossiers and
+independent reviews are sealed before verified duplicate cleanup.
+
+The existing triangle / elapsed / rotated-height / point-distance candidates
+retain **99 / 3 / 158 / 52** differences. Triangle's matching 160 metadata
+bytes remain unaccepted. No frame/name/declaration-order search, fake locals,
+padding, profiles, assembly, copied code or volatile barriers.
+
+Next larger family: ball update (3,223), projectile update (328) and projectile
+fire (321), **3,872 complete original bytes**. Saved independent review
+`.analysis/exact-bank-loops/direct-call-frontier.json` identifies genuine
+cdecl sound/RNG edges currently represented by callback-table calls and
+merged ball particle branches. Native test instrumentation must stay in the
+test harness; real game calls belong in shared maintained source. Runtime
+interposition feasibility is reviewed but unprobed. Adding brick drop (426)
+also requires its genuine invalidate edge. Preserve fresh-default audits and
+standalone sound behavior when investigating this family.
+The authored denominator and **>=95% complete-source goal remain open**.
+
+# Previous complete exits, text centering and palette guard checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [complete exits batch](EXACT_EXITS.md) promotes eleven complete functions /

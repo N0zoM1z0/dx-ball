@@ -1,10 +1,11 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **97 exact functions / 11,765 code
-bytes**, plus 136 separate exception metadata bytes. The
-[complete exits and text/palette batch](EXACT_EXITS.md) adds eleven complete
-functions / 641 bytes and preserves all 86 preceding units. Source presence
-and distinct cases remain unchanged. Triangle remains a complete 1,710-byte
+The current shared-source checkpoint retains **100 exact functions / 12,227
+code bytes**, plus 136 separate exception metadata bytes. The
+[bank loops and palette state batch](EXACT_BANK_LOOPS.md) adds three complete
+functions / 462 bytes and preserves all 97 preceding units. Five complete
+palette/COM candidates / 2,080 bytes remain nonexact. Source presence and
+distinct cases remain unchanged. Triangle remains a complete 1,710-byte
 candidate with 99 frame-displacement differences.
 
 The historical display checkpoint retained 55 exact functions / 8,231 bytes.
@@ -82,7 +83,7 @@ are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
 nonzero exit status. At that historical checkpoint, normal replay selected 35 accepted units.
-The current normal replay selects the complete configured 97-unit set.
+The current normal replay selects the complete configured 100-unit set.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

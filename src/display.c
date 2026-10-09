@@ -347,11 +347,12 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
     DxBallByte red, green, blue;
     DxBallInt i;
     if (dxball_cursor_warp_disabled == 1) return;
-    red = green = blue = 0;
     if (rotate == 1) {
         red = dxball_live_palette[first].red;
         green = dxball_live_palette[first].green;
         blue = dxball_live_palette[first].blue;
+    } else {
+        red = 0; green = 0; blue = 0;
     }
     for (i = first; i < last; ++i) dxball_live_palette[i] = dxball_live_palette[i + 1];
     dxball_live_palette[last].red = red;
@@ -359,6 +360,7 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
     dxball_live_palette[last].blue = blue;
     dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, first,
         last - first + 1, &dxball_live_palette[first]);
+    return;
 }
 
 void dxball_last_brick(void)

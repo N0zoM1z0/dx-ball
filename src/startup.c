@@ -73,9 +73,14 @@ void dxball_release_sprite_banks(void)
     DxBallInt bank, slot;
     for (bank = 0; bank < 3; ++bank) {
         dxball_sprite_banks[bank].count = 0;
+        slot = 0;
         dxball_select_sprite_bank(bank);
-        for (slot = 0; slot < 255; ++slot) dxball_release_sprite(slot);
+        while (slot <= 254) {
+            dxball_release_sprite(slot);
+            ++slot;
+        }
     }
+    return;
 }
 
 void dxball_initialize_device_state(void)

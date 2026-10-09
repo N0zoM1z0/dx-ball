@@ -222,8 +222,13 @@ void dxball_initialize_sprite_banks(void)
     DxBallInt bank, slot;
     for (bank = 0; bank < 3; ++bank) {
         dxball_sprite_banks[bank].count = 0;
-        for (slot = 0; slot < 255; ++slot) dxball_sprite_banks[bank].sprites[slot] = NULL;
+        slot = 0;
+        while (slot <= 254) {
+            dxball_sprite_banks[bank].sprites[slot] = NULL;
+            ++slot;
+        }
     }
+    return;
 }
 
 void dxball_dispose_working_surface(DxBallInt fade)

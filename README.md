@@ -18,12 +18,19 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **283 source-present functions** (270 authored bodies, one unknown-origin body and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **97 byte-exact functions totaling 11,765 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
+> **100 byte-exact functions totaling 12,227 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
 > VC4 and MinGW builds; complete gameplay and
 > driver fidelity remain in progress.
+
+The [bank loops and palette state batch](docs/EXACT_BANK_LOOPS.md) accepts
+three complete functions, adding 462 exact code bytes. It also restores five
+complete palette/COM candidates totaling 2,080 bytes with their remaining
+differences recorded. All 97 preceding exact units survive grouped cold replay;
+existing validation passes without new cases. The >=95% complete-source goal
+remains open.
 
 The [complete exits and text/palette batch](docs/EXACT_EXITS.md) restores
 eleven complete functions, adding 641 exact code bytes. It recovers ordinary
