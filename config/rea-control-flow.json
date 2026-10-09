@@ -1,0 +1,28 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x4041f0"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x4041f0",
+      "length": 139
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40cee0"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x40cee0",
+      "length": 52
+    }
+  }
+]

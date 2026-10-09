@@ -1,7 +1,13 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **55 exact functions / 8,231 bytes**.
-The [display batch](EXACT_DISPLAY.md) adds four missing Blt/rectangle-queue
+The current shared-source checkpoint retains **81 exact functions / 10,759 code
+bytes**, plus 136 separate exception metadata bytes. The
+[score/raster batch](EXACT_CONTROL_FLOW.md) adds the complete 74-byte score
+update and preserves all 80 preceding units. Triangle remains a complete
+1,710-byte candidate with 99 frame-displacement differences.
+
+The historical display checkpoint retained 55 exact functions / 8,231 bytes.
+Its [display batch](EXACT_DISPLAY.md) adds four missing Blt/rectangle-queue
 entries, restores both full BltFast bodies and recovers the ordinary resource
 blit. Seven complete emissions add 2,219 bytes. All preceding 48 units and
 these seven pass grouped cold replay with every relocation applied.
@@ -19,13 +25,15 @@ units passed grouped cold replay after content-attested literal rebinding.
 
 The [core source batch](EXACT_CORE.md) adds the complete 232-byte trig initializer,
 both 130-byte lookups and the 244-byte ball constructor. Its 39 configured units
-pass one grouped cold replay with every relocation applied. The rotation offset
-has a reconciled 259-byte span but a nonmatching 261-byte emission; its complete
-mapping remains under candidates. Existing semantic cases are replayed and
+pass one grouped cold replay with every relocation applied. At that checkpoint,
+the rotation offset had a reconciled 259-byte span and a nonmatching 261-byte
+emission; the subsequent [projection batch](EXACT_PROJECTIONS_TEXT.md) restores
+its complete exact emission. Existing semantic cases are replayed and
 counted once; this batch adds no fixtures or campaign observations.
 
 The [allocator integration](ALLOCATOR_OWNER.md) cold replay found two changed
-operand bytes in the 139-byte `stretch-keyed-sprite` body. Its behavior still
+operand bytes in the 139-byte `stretch-keyed-sprite` body. The current complete
+comparison has four differences. Its behavior still
 passes, but its exact claim is now a candidate. The pan literal names changed
 to `$T1142` / `$T1143`; contents and complete relocations were checked.
 
@@ -35,8 +43,11 @@ renderer binding; all 35 prior units pass the same cold replay. Renderer and
 offset bodies retain scoped behavior acceptance without exact claims. See
 [rotation compiler evidence](ROTATION_INVESTIGATION.md#maintained-and-compiled-behavior).
 
-The raster owner has a separate configured compiler product, with no new exact
-unit. `compile-semantic-build.py --build raster` cold-builds the shared source
+The raster drawing controller has a separate configured semantic compiler
+product. The subsequent [fixed-point batch](EXACT_FIXED_POINT.md) accepts eight
+class/helper units, 571 complete code bytes and 136 separate metadata bytes;
+the full triangle remains nonexact. `compile-semantic-build.py --build raster`
+cold-builds the shared source
 and records its complete inputs, flags and product identity; `test_raster_coff.py`
 executes that actual output against 7,164 complete original/native vectors.
 The horizontal span emits 62 bytes versus the original 144, so behavior agreement
@@ -70,7 +81,7 @@ are removed; reviewed relocation mappings remain under `[candidates]` in
 `config/match-units.toml`. Run `scripts/repo-python scripts/replay-exact-units.py
 --include-candidates` to reproduce the complete comparison, including its
 nonzero exit status. At that historical checkpoint, normal replay selected 35 accepted units.
-The current normal replay selects the complete configured 55-unit set.
+The current normal replay selects the complete configured 81-unit set.
 
 REA's terminal-storage investigation establishes the recovered storage region
 and overlapping original CRT copy. The shared C representation changes object

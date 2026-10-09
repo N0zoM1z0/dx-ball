@@ -1,4 +1,52 @@
-# Current handoff — exact projection and text helpers
+# Current handoff — exact score and raster control flow
+
+Priority remains **exact restoration, moderate tests and grouped replay**.
+The [control-flow batch](EXACT_CONTROL_FLOW.md) promotes the complete 74-byte
+score update at `0x415880`, with all seven relocations. Explicit right/left
+clamp coordinates reduce full 1,710-byte triangle differences from 235 to 99;
+independent review identifies every remaining byte as a frame displacement:
+51 persistent-local, 24 class-temporary and 24 consumed-coordinate bytes.
+The 160-byte triangle EH table matches but is not separately accepted.
+Elapsed now emits the complete 81-byte branch shape with three comparison-order
+differences and remains a candidate. Its unowned five-byte gap `e90a000000`
+is fully read; REA instruction inspection remains undecodable/unowned.
+
+Acceptance is **283 source-present / 247 scoped entries / 112,273 distinct
+cases / 81 exact units / 10,759 code bytes + 136 separate metadata bytes**.
+All 80 previous units remain exact. Source presence and origins stay unchanged:
+270 authored source bodies, one unknown-origin no-effect body, 12 runtime
+bodies; origins **270 authored / 48 runtime / 42 generated / 168 unknown**.
+235 application semantic closures are refreshed without new cases or rows.
+
+The stable 276-input native batch passes all 22 existing owner scripts once.
+The existing 7,164 raster COFF vectors, grouped cold replay, 14 rejection
+controls, MinGW and full VC4 builds, and 1,024 rotation COFF vectors pass.
+Actual generated class-helper labels are mapped from defined COFF offsets;
+all code and accepted metadata remain compared in full. No tracked test,
+fixture matrix or campaign observation is added. Two closed REA runs add six
+Evidence records; the cumulative snapshot now holds 465.
+
+Current native alias: `build/native/libdxball_core.so`, from
+`build/native-exact-control-flow/libdxball_core.so`, SHA-256
+`fe95a66d170a52ba767636fb1bed1d26283083feb116621d460b0ac9ce9513ac`.
+Historical native products stay separate. Private checkpoint:
+`.analysis/checkpoints/exact-control-flow-283-81`, parent
+`.analysis/checkpoints/exact-projections-283-80`; it seals the full frozen batch,
+failed/final models, products, closed REA records, compressed snapshot and
+reviews before verified cleanup.
+
+Operand reversal leaves sprite/paddle at four differences. Later triangle
+scalar phases worsen full differences to 239; C++ with C linkage worsens
+stretch to 141/139 bytes and 90 differences; unwrapped C++ changes the API.
+None is selected. A const sampled timestamp leaves the same three differences.
+Board/queue aggregate addressing and genuine frame allocation remain open.
+Next: use this full displacement review to constrain triangle source-layout
+hypotheses, or resolve other complete candidates and unknown CRT origins.
+No dummy locals, padding, source profiles, copied code, assembly, volatile
+barrier or spelling/order enumeration is allowed. The complete authored
+denominator and **>=95% complete-source objective remain open**.
+
+# Previous projection and text helper checkpoint
 
 Priority remains **exact restoration, moderate tests and grouped replay**.
 The [projection/text batch](EXACT_PROJECTIONS_TEXT.md) promotes four complete

@@ -55,9 +55,12 @@ DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval)
 {
     DxBallUInt now;
     now = dxball_current_time();
-    if (now < start) return 1;
-    if (now < start + interval) return 0;
-    return 1;
+    if (start > now) return 1;
+    if (interval + start > now) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
 void dxball_draw_paddle(void)
@@ -134,11 +137,12 @@ void dxball_draw_score(void)
 
 void dxball_refresh_score(void)
 {
-    if (dxball_displayed_score != dxball_score) {
+    if (dxball_score != dxball_displayed_score) {
         if ((DxBallUInt)dxball_score > 999999999U) dxball_score = 0;
         dxball_draw_score();
         dxball_displayed_score = dxball_score;
     }
+    return;
 }
 
 void dxball_clear_all_entities(void)

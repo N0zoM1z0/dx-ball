@@ -201,18 +201,26 @@ void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
         short_x = DxBallFixedPoint(x1);
         if (long_step < short_step) {
             while (y2 > y) {
-                if (y >= 0 && y < 480)
-                    dxball_fill_horizontal_span(pixels,
-                        (DxBallInt)long_x >= 0 ? (DxBallInt)long_x : 0,
-                        (DxBallInt)short_x <= 639 ? (DxBallInt)short_x : 639, color);
+                if (y >= 0 && y < 480) {
+                    DxBallInt right, left;
+                    if ((DxBallInt)short_x <= 639) right = (DxBallInt)short_x;
+                    else right = 639;
+                    if ((DxBallInt)long_x < 0) left = 0;
+                    else left = (DxBallInt)long_x;
+                    dxball_fill_horizontal_span(pixels, left, right, color);
+                }
                 ++y; pixels += pitch; long_x += long_step; short_x += short_step;
             }
         } else {
             while (y2 > y) {
-                if (y >= 0 && y < 480)
-                    dxball_fill_horizontal_span(pixels,
-                        (DxBallInt)short_x >= 0 ? (DxBallInt)short_x : 0,
-                        (DxBallInt)long_x <= 639 ? (DxBallInt)long_x : 639, color);
+                if (y >= 0 && y < 480) {
+                    DxBallInt right, left;
+                    if ((DxBallInt)long_x <= 639) right = (DxBallInt)long_x;
+                    else right = 639;
+                    if ((DxBallInt)short_x < 0) left = 0;
+                    else left = (DxBallInt)short_x;
+                    dxball_fill_horizontal_span(pixels, left, right, color);
+                }
                 ++y; pixels += pitch; long_x += long_step; short_x += short_step;
             }
         }
@@ -222,18 +230,26 @@ void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
     short_x = DxBallFixedPoint(x2);
     if (long_x < short_x) {
         while (y3 > y) {
-            if (y >= 0 && y < 480)
-                dxball_fill_horizontal_span(pixels,
-                    (DxBallInt)long_x >= 0 ? (DxBallInt)long_x : 0,
-                    (DxBallInt)short_x <= 639 ? (DxBallInt)short_x : 639, color);
+            if (y >= 0 && y < 480) {
+                DxBallInt right, left;
+                if ((DxBallInt)short_x <= 639) right = (DxBallInt)short_x;
+                else right = 639;
+                if ((DxBallInt)long_x < 0) left = 0;
+                else left = (DxBallInt)long_x;
+                dxball_fill_horizontal_span(pixels, left, right, color);
+            }
             ++y; pixels += pitch; long_x += long_step; short_x += short_step;
         }
     } else {
         while (y3 > y) {
-            if (y >= 0 && y < 480)
-                dxball_fill_horizontal_span(pixels,
-                    (DxBallInt)short_x >= 0 ? (DxBallInt)short_x : 0,
-                    (DxBallInt)long_x <= 639 ? (DxBallInt)long_x : 639, color);
+            if (y >= 0 && y < 480) {
+                DxBallInt right, left;
+                if ((DxBallInt)long_x <= 639) right = (DxBallInt)long_x;
+                else right = 639;
+                if ((DxBallInt)short_x < 0) left = 0;
+                else left = (DxBallInt)short_x;
+                dxball_fill_horizontal_span(pixels, left, right, color);
+            }
             ++y; pixels += pitch; long_x += long_step; short_x += short_step;
         }
     }
