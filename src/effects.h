@@ -37,6 +37,7 @@ DxBallInt DXBALL_FASTCALL dxball_begin_brick_effects(DxBallBrickEffectList *list
 DxBallInt DXBALL_FASTCALL dxball_advance_brick_effect(DxBallBrickEffectList *list);
 DxBallInt DXBALL_FASTCALL dxball_append_brick_effect(DxBallBrickEffectList *list);
 DxBallInt DXBALL_FASTCALL dxball_remove_brick_effect(DxBallBrickEffectList *list);
+DxBallInt DXBALL_FASTCALL dxball_clear_brick_effect_list(DxBallBrickEffectList *list);
 /* Coordinates are tile coordinates (0..19). Kind 1 stores screen coordinates;
    kind 2 stores tile coordinates in the same x/y fields. */
 void dxball_spawn_explosion_effect(DxBallInt x, DxBallInt y);

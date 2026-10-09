@@ -1,5 +1,10 @@
 # Bonus application, paddle and ball dependencies
 
+The later [core exact batch](EXACT_CORE.md) restores the trig and ball
+constructor emissions; [cloning and cleanup](EXACT_LISTS.md) restores the
+637-byte clone. The entry table and counts below describe this owner's
+historical acceptance checkpoint.
+
 REA's retained bonus-updater dossier led this batch through collision geometry,
 paddle position, board powers, life/level transitions, ball ownership and the
 quantized trigonometry used for paddle rebounds. The connected original-x86

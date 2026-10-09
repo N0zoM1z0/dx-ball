@@ -28,6 +28,7 @@ DxBallInt DXBALL_FASTCALL dxball_append_bonus(DxBallBonusList *list);
 DxBallInt DXBALL_FASTCALL dxball_begin_bonuses(DxBallBonusList *list);
 DxBallInt DXBALL_FASTCALL dxball_advance_bonus(DxBallBonusList *list);
 DxBallInt DXBALL_FASTCALL dxball_remove_bonus(DxBallBonusList *list);
+DxBallInt DXBALL_FASTCALL dxball_clear_bonus_list(DxBallBonusList *list);
 /* Tile x/y in 0..19; controlled RNG returns values in 0..limit-1. */
 void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy);
 /* Original decrements count even if the current node is absent. */

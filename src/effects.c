@@ -83,6 +83,14 @@ DxBallInt DXBALL_FASTCALL dxball_remove_brick_effect(DxBallBrickEffectList *list
     }
 }
 
+/* FUNCTION: DXBALL 0x004165A0 */
+DxBallInt DXBALL_FASTCALL dxball_clear_brick_effect_list(DxBallBrickEffectList *list)
+{
+    while (dxball_remove_brick_effect(list)) {
+    }
+    return 1;
+}
+
 void dxball_spawn_explosion_effect(DxBallInt x, DxBallInt y)
 {
     dxball_append_brick_effect(&dxball_brick_effects);

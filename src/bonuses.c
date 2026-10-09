@@ -227,6 +227,14 @@ DxBallInt DXBALL_FASTCALL dxball_remove_bonus(DxBallBonusList *list)
     }
 }
 
+/* FUNCTION: DXBALL 0x00416570 */
+DxBallInt DXBALL_FASTCALL dxball_clear_bonus_list(DxBallBonusList *list)
+{
+    while (dxball_remove_bonus(list)) {
+    }
+    return 1;
+}
+
 void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
 {
     DxBallInt chance, screen_x, screen_y, count, i, px, py, vx, vy, kind;

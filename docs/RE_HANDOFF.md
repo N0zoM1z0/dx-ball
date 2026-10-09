@@ -1,6 +1,29 @@
 # Current handoff
 
-The [core exact batch](EXACT_CORE.md) advances the current checkpoint to
+The [cloning and cleanup batch](EXACT_LISTS.md) advances the current checkpoint
+to **252 source-present / 247 directly validated entries / 112,273 direct
+cases / 45 exact units / 4,992 bytes**. Six complete functions add 877 exact
+bytes, including five previously unmaintained typed cleanup entries. All 22
+existing game-owner scripts pass with frozen inputs, and all 45 units pass
+grouped cold replay. No tests, fixtures, direct cases or campaigns are added.
+The complete 106-byte total-cleanup caller is now connected to its typed
+owners; its current 107-byte emission remains a candidate because shared
+board-storage member addressing adds one byte. The five new leaves have
+full-byte acceptance and transitive coverage, without invented direct counts.
+
+The current native alias is copied from `build/native-exact-lists`, SHA-256
+`fba824c7743bf0b4e1d451d9bf49970442da87685d6accce59d5b95eab4b00ec`.
+The prior exact-core and allocator/campaign native products remain separate
+and sealed. A scheduling lock error blocked the rotation script before oracle
+execution; the build lock is now released before child scripts. The completed
+first owner was reused only after checking identical frozen inputs and product.
+Next resource priority is the missing surface-palette creation/attachment entry
+`0x409A30` and the existing live/saved palette loaders. Pinned `stdio.h` and
+single-threaded CRT evidence support testing `/ML` for the observed inline
+`getc` paths; this is a compiler hypothesis, not an accepted match.
+The full >=95% source objective remains open; 271 origins are still unknown.
+
+The prior [core exact batch](EXACT_CORE.md) advanced its checkpoint to
 **247 source-present / 112,273 direct cases / 39 exact units / 4,115 bytes**.
 Four restored shared C bodies add 736 exact bytes: independent cos/sin
 arguments and real double temporaries in table initialization, lookup parameter
@@ -13,16 +36,14 @@ recovered, but its 261-byte emission versus 259 remains a configured candidate.
 New REA byte/instruction/reference evidence and an explicitly closed snapshot
 retain the Listing limitation; undefined instruction decoding is not claimed.
 
-The current native alias is copied from the verified batch product, SHA-256
+That batch's native product remains in `build/native-exact-core`, SHA-256
 `909636b7b47fe4873a85761efcabf71c224cfdd3cbc14dfad8ae8d2a4e7c3b3c`.
 The prior accepted allocator/campaign library remains in `build/allocator-native`
 and sealed historical archives. Earlier campaign and acceptance observations
 below retain their historical source/product identities.
-Next core priority is `dxball_clone_balls`: saved REA evidence establishes a
-637-byte body without locals or copy-helper calls; current C emits 233 bytes
-because two payload-copy blocks are factored into a helper. Restore the observed
-sprite-first thirteen-field copy order and inspect dx reflection before the
-next bounded replay. The full 95% source objective remains open.
+Its then-pending `dxball_clone_balls` body is now restored by the subsequent
+cloning and cleanup batch above. Earlier observations below retain their
+historical source and product identities.
 
 The [full original control](ORIGINAL_CAMPAIGN.md#completed-original-control)
 passes: all 50 unchanged initial boards, terminal index 50 and the cleared menu

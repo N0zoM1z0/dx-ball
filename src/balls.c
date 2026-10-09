@@ -132,42 +132,49 @@ void dxball_release_attached_balls(void)
     return;
 }
 
-/* Copy state without copying links; this helper has no target entry claim. */
-static void copy_ball(DxBallBallNode *destination, const DxBallBallNode *source)
-{
-    destination->sprite = source->sprite;
-    destination->x = source->x;
-    destination->y = source->y;
-    destination->previous_x = source->previous_x;
-    destination->previous_y = source->previous_y;
-    destination->dx = source->dx;
-    destination->dy = source->dy;
-    destination->angle = source->angle;
-    destination->speed = source->speed;
-    destination->bounce_count = source->bounce_count;
-    destination->attached = source->attached;
-    destination->attach_offset = source->attach_offset;
-    destination->wall_bounces = source->wall_bounces;
-}
-
 void dxball_clone_balls(void)
 {
     if (dxball_begin_balls(&dxball_balls)) {
         do {
             dxball_append_ball(&dxball_duplicate_balls);
-            copy_ball(dxball_duplicate_balls.current, dxball_balls.current);
+            /* Copy payload in sprite-first order; retain the new node's links. */
+            dxball_duplicate_balls.current->sprite = dxball_balls.current->sprite;
+            dxball_duplicate_balls.current->x = dxball_balls.current->x;
+            dxball_duplicate_balls.current->y = dxball_balls.current->y;
+            dxball_duplicate_balls.current->previous_x = dxball_balls.current->previous_x;
+            dxball_duplicate_balls.current->previous_y = dxball_balls.current->previous_y;
+            dxball_duplicate_balls.current->dx = dxball_balls.current->dx;
+            dxball_duplicate_balls.current->dy = dxball_balls.current->dy;
+            dxball_duplicate_balls.current->angle = dxball_balls.current->angle;
+            dxball_duplicate_balls.current->speed = dxball_balls.current->speed;
+            dxball_duplicate_balls.current->bounce_count = dxball_balls.current->bounce_count;
+            dxball_duplicate_balls.current->attached = dxball_balls.current->attached;
+            dxball_duplicate_balls.current->attach_offset = dxball_balls.current->attach_offset;
+            dxball_duplicate_balls.current->wall_bounces = dxball_balls.current->wall_bounces;
             if (dxball_duplicate_balls.current->attached == 1) {
                 --dxball_duplicate_balls.current->speed;
                 if (dxball_duplicate_balls.current->speed < 4) dxball_duplicate_balls.current->speed = 4;
             }
-            dxball_duplicate_balls.current->dx = -dxball_duplicate_balls.current->dx;
+            dxball_duplicate_balls.current->dx = dxball_duplicate_balls.current->dx * -1;
         } while (dxball_advance_ball(&dxball_balls));
     }
     if (dxball_begin_balls(&dxball_duplicate_balls)) {
         do {
             ++dxball_ball_count;
             dxball_append_ball(&dxball_balls);
-            copy_ball(dxball_balls.current, dxball_duplicate_balls.current);
+            dxball_balls.current->sprite = dxball_duplicate_balls.current->sprite;
+            dxball_balls.current->x = dxball_duplicate_balls.current->x;
+            dxball_balls.current->y = dxball_duplicate_balls.current->y;
+            dxball_balls.current->previous_x = dxball_duplicate_balls.current->previous_x;
+            dxball_balls.current->previous_y = dxball_duplicate_balls.current->previous_y;
+            dxball_balls.current->dx = dxball_duplicate_balls.current->dx;
+            dxball_balls.current->dy = dxball_duplicate_balls.current->dy;
+            dxball_balls.current->angle = dxball_duplicate_balls.current->angle;
+            dxball_balls.current->speed = dxball_duplicate_balls.current->speed;
+            dxball_balls.current->bounce_count = dxball_duplicate_balls.current->bounce_count;
+            dxball_balls.current->attached = dxball_duplicate_balls.current->attached;
+            dxball_balls.current->attach_offset = dxball_duplicate_balls.current->attach_offset;
+            dxball_balls.current->wall_bounces = dxball_duplicate_balls.current->wall_bounces;
         } while (dxball_advance_ball(&dxball_duplicate_balls));
     }
     dxball_clear_ball_list(&dxball_duplicate_balls);

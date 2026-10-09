@@ -1,8 +1,13 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **39 exact functions / 4,115 bytes**.
+The current shared-source checkpoint retains **45 exact functions / 4,992 bytes**.
+The [cloning and cleanup batch](EXACT_LISTS.md) adds the complete 637-byte
+ball clone and five 48-byte cleanup entries, with five new source mappings.
+Its total-cleanup caller remains a 107/106-byte candidate. All 45 units pass
+grouped cold replay after literal bindings are refreshed and content-attested.
+
 The [core source batch](EXACT_CORE.md) adds the complete 232-byte trig initializer,
-both 130-byte lookups and the 244-byte ball constructor. All 39 configured units
+both 130-byte lookups and the 244-byte ball constructor. Its 39 configured units
 pass one grouped cold replay with every relocation applied. The rotation offset
 has a reconciled 259-byte span but a nonmatching 261-byte emission; its complete
 mapping remains under candidates. Existing semantic cases are replayed and

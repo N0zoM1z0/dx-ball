@@ -1,0 +1,7 @@
+[
+  {"name": "analyze_function", "arguments": {"procedure": "0x00416510"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00416540"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x00416570"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x004165A0"}},
+  {"name": "analyze_function", "arguments": {"procedure": "0x004165D0"}}
+]

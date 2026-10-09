@@ -25,6 +25,7 @@ DxBallInt DXBALL_FASTCALL dxball_append_particle(DxBallParticleList *list);
 DxBallInt DXBALL_FASTCALL dxball_begin_particles(DxBallParticleList *list);
 DxBallInt DXBALL_FASTCALL dxball_advance_particle(DxBallParticleList *list);
 DxBallInt DXBALL_FASTCALL dxball_remove_particle(DxBallParticleList *list);
+DxBallInt DXBALL_FASTCALL dxball_clear_particle_list(DxBallParticleList *list);
 void dxball_spawn_particle(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy,
                            DxBallInt color, DxBallInt gravity);
 void dxball_update_particles(void);

@@ -307,11 +307,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00416370,authored,display,maintain,high,ev_63003d5621ef73504e785882f80a70043ccee9a339118544b722116d679ac13d
 0x00416430,authored,runtime,maintain,high,ev_6cd0575b1e5a42d65bb1061f6443204f9f12afdbd651badd502fd0edc5d502b3
 0x004164A0,authored,runtime,maintain,high,ev_ec6f209a3116f545cd612d3e34e16b25c30d54c60708744e4d82883fb47b2eaa
-0x00416510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00416540,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00416570,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004165A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004165D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00416510,authored,core,maintain,high,ev_9079032d5d51ed50f8093cb9c0029da2fc1ccfafa4a94690b926f6cc5097cf94
+0x00416540,authored,particles,maintain,high,ev_0de8921eaa08a2e03e602ed2479edd222e956f905fd63160b548ae3b6d2bd6bc
+0x00416570,authored,bonuses,maintain,high,ev_046d2688735634355139cd40311164ecef5678d0c72c5d709a650561ada2fa7d
+0x004165A0,authored,effects,maintain,high,ev_77d66ee7458edb5c8504d596db1bf86909164dcf8d8feb0ab85101e184748750
+0x004165D0,authored,core,maintain,high,ev_d03e455e9b512ca03c865a482daeddf5b5f12289f947ee04e038553a8e3c9765
 0x00416600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00416606,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00416610,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

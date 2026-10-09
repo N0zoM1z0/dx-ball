@@ -143,15 +143,16 @@ void dxball_refresh_score(void)
 
 void dxball_clear_all_entities(void)
 {
-    dxball_clear_projectiles();
+    dxball_clear_projectile_list(&dxball_projectiles);
     dxball_clear_ball_list(&dxball_balls);
-    while (dxball_remove_brick_effect(&dxball_brick_effects)) {}
+    dxball_clear_brick_effect_list(&dxball_brick_effects);
     dxball_clear_explosion_list(&dxball_explosions);
-    while (dxball_remove_bonus(&dxball_bonuses)) {}
-    while (dxball_remove_particle(&dxball_particles)) {}
+    dxball_clear_bonus_list(&dxball_bonuses);
+    dxball_clear_particle_list(&dxball_particles);
     dxball_clear_ball_list(&dxball_duplicate_balls);
     dxball_clear_explosion_list(&dxball_explosive_sources);
-    dxball_clear_fire_effects();
+    dxball_clear_fire_effect_list(&dxball_fire_effects);
+    return;
 }
 
 void dxball_finish_game(void)

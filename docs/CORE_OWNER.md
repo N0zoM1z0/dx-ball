@@ -1,5 +1,10 @@
 # Main ball physics and gameplay frame
 
+The later [typed cleanup batch](EXACT_LISTS.md) independently maps the fire
+and projectile cleanup leaves and connects the full cleanup caller. Its leaf
+acceptance compares complete bytes; existing connected cases retain their
+counts. The narrative below describes the original core-owner checkpoint.
+
 This batch follows the two central gameplay entries through REA: the 3,223-byte
 ball updater and the 1,688-byte enclosing gameplay frame. The maintained C
 connects them to board hits, paddle rebounds, bonus application, particles,

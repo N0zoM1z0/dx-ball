@@ -115,15 +115,31 @@ DxBallInt dxball_retire_projectile(void)
     return removed;
 }
 
-/* Lifecycle helpers, without separate target-entry claims. */
+/* FUNCTION: DXBALL 0x004165D0 */
+DxBallInt DXBALL_FASTCALL dxball_clear_projectile_list(DxBallProjectileList *list)
+{
+    while (dxball_remove_projectile(list)) {
+    }
+    return 1;
+}
+
+/* FUNCTION: DXBALL 0x00416510 */
+DxBallInt DXBALL_FASTCALL dxball_clear_fire_effect_list(DxBallFireEffectList *list)
+{
+    while (dxball_remove_fire_effect(list)) {
+    }
+    return 1;
+}
+
+/* Convenience wrappers without separate target-entry claims. */
 void dxball_clear_projectiles(void)
 {
-    while (dxball_projectiles.current != NULL) dxball_remove_projectile(&dxball_projectiles);
+    dxball_clear_projectile_list(&dxball_projectiles);
 }
 
 void dxball_clear_fire_effects(void)
 {
-    while (dxball_fire_effects.current != NULL) dxball_remove_fire_effect(&dxball_fire_effects);
+    dxball_clear_fire_effect_list(&dxball_fire_effects);
 }
 
 void dxball_spawn_fire_effect(DxBallInt x, DxBallInt y)

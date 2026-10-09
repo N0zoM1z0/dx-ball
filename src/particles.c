@@ -66,6 +66,14 @@ DxBallInt DXBALL_FASTCALL dxball_remove_particle(DxBallParticleList *list)
     }
 }
 
+/* FUNCTION: DXBALL 0x00416540 */
+DxBallInt DXBALL_FASTCALL dxball_clear_particle_list(DxBallParticleList *list)
+{
+    while (dxball_remove_particle(list)) {
+    }
+    return 1;
+}
+
 void dxball_spawn_particle(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy,
                            DxBallInt color, DxBallInt gravity)
 {

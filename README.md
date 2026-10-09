@@ -16,9 +16,9 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 
 > [!IMPORTANT]
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
-> entity owners: **247 source-present functions** (235 game entries and 12 runtime dependencies),
+> entity owners: **252 source-present functions** (240 game entries and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **39 byte-exact functions totaling 4,115 bytes**. Windows builds now also produce
+> **45 byte-exact functions totaling 4,992 bytes**. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
@@ -31,6 +31,9 @@ The [core exact batch](docs/EXACT_CORE.md) restores the original trig-table
 computation, lookup storage and current-sprite read in ball construction. Four
 more complete functions match the pinned original after every relocation, adding
 736 exact bytes without new fixtures or another campaign.
+The [cloning and cleanup batch](docs/EXACT_LISTS.md) restores the complete
+637-byte ball clone and five missing typed cleanup entries, adding another
+877 exact bytes and five source mappings. Direct-case counts stay unchanged.
 For example, the [software rotation investigation](docs/ROTATION_INVESTIGATION.md)
 uses saved REA instructions to recover an omitted angle argument, an asymmetric
 pixel write and precise floating-point stores. The shared C passes 1,024

@@ -55,6 +55,9 @@ DxBallInt DXBALL_FASTCALL dxball_append_fire_effect(DxBallFireEffectList *list);
 DxBallInt DXBALL_FASTCALL dxball_begin_fire_effects(DxBallFireEffectList *list);
 DxBallInt DXBALL_FASTCALL dxball_advance_fire_effect(DxBallFireEffectList *list);
 DxBallInt DXBALL_FASTCALL dxball_remove_fire_effect(DxBallFireEffectList *list);
+/* Clear from the current cursor by repeated removal; return one when empty. */
+DxBallInt DXBALL_FASTCALL dxball_clear_projectile_list(DxBallProjectileList *list);
+DxBallInt DXBALL_FASTCALL dxball_clear_fire_effect_list(DxBallFireEffectList *list);
 /* Retirement decrements count even when current is null and forwards the
    removal result. Ignition sets sprite 61 and retains traversal side effects. */
 DxBallInt dxball_retire_projectile(void);
