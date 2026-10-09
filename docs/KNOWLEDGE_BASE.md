@@ -144,3 +144,25 @@ unlock edges reload surface/bank globals. Original/native and actual VC4 bodies
 agree on 1,024 full cases, including seven mutation scenarios and extended
 13/1.3 truncation. Only the complete 40-byte wrapper is exact; the offset's
 five-byte ownership gap and active gameplay use remain unresolved.
+
+## Exact early helper checkpoint
+
+[Early helper evidence](EXACT_EARLY_HELPERS.md) restores eleven complete bodies
+and adds six whole-function exact units / 583 code bytes. Acceptance now records
+283 source-present entries, 247 direct entries, 112,273 distinct cases and
+76 exact units / 9,833 code bytes, with 136 separate metadata bytes. The no-effect
+entry at `0x40CC20` remains of unknown origin; it does not increase authored
+counts. Region containment includes active nonzero and inclusive boundaries;
+reset clears only the count. Word copying preserves skipped destination prefixes,
+and bank cleanup includes slot zero and restores the selected bank.
+
+REA's 30 closed requests reconcile all five listing gaps and independently
+attest constants, the space literal and two CRT operation-table headers. Named
+pinned library evidence identifies four runtime origins without claiming their
+implementation source. All prior exact units survive grouped cold replay;
+22 existing owner scripts, 14 existing rejection checks, strict builds and
+1,024 existing rotation COFF vectors pass. A private 59-observation comparison
+adds no direct cases or matrices. Five new entries and the horizontal offset
+remain candidates; compiler scheduling/local allocation and general native
+floating-point fidelity remain limited. Origins total 270 authored, 21 runtime,
+18 generated and 219 unknown; the >=95% authored denominator remains unproven.

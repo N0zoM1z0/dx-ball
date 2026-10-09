@@ -11,4 +11,7 @@ void dxball_draw_rotated_sprite(DxBallInt slot, DxBallUInt center_x,
                                 DxBallUInt center_y, DxBallInt angle);
 DxBallInt dxball_rotated_sprite_offset(DxBallInt slot, DxBallInt angle);
 
+DxBallInt dxball_rotated_sprite_y_offset(DxBallInt slot, DxBallInt angle);
+DxBallInt dxball_rotated_sprite_width(DxBallInt slot, DxBallInt angle);
+DxBallInt dxball_rotated_sprite_height(DxBallInt slot, DxBallInt angle);
 #endif

@@ -27,6 +27,13 @@ void dxball_set_hit_region(DxBallInt index, DxBallInt left, DxBallInt top,
     region->left = left; region->top = top; region->right = right; region->bottom = bottom;
     region->active = 1;
 }
+/* FUNCTION: DXBALL 0x00401F20 */
+
+
+
+
+
+
 DxBallInt dxball_find_hit_region(DxBallInt x, DxBallInt y)
 {
     DxBallInt i, hit = 0;
@@ -169,4 +176,45 @@ void dxball_dispose_editor(DxBallInt fade)
         dxball_runtime_ops.release_sprite_banks(); dxball_runtime_ops.release_sounds();
         dxball_platform_ops.close_music();
     }
+}
+
+void dxball_clear_hit_region(DxBallInt index)
+{
+    dxball_hit_regions[index].left = 0;
+    dxball_hit_regions[index].top = 0;
+    dxball_hit_regions[index].right = 0;
+    dxball_hit_regions[index].bottom = 0;
+    dxball_hit_regions[index].active = 0;
+    return;
+}
+
+/* FUNCTION: DXBALL 0x00402040 */
+DxBallInt dxball_hit_region_contains(DxBallInt index, DxBallInt x, DxBallInt y)
+{
+    if (dxball_hit_regions[index].active != 0) {
+        if (dxball_hit_regions[index].left <= x &&
+            dxball_hit_regions[index].right >= x &&
+            dxball_hit_regions[index].top <= y &&
+            dxball_hit_regions[index].bottom >= y) {
+            return 1;
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
+}
+
+/* FUNCTION: DXBALL 0x004020E0 */
+void dxball_reset_hit_region_count(void)
+{
+    dxball_hit_region_count = 0;
+    return;
+}
+
+/* FUNCTION: DXBALL 0x0040CC20 */
+/* Observed empty body; original name, prototype and source ownership unknown. */
+void dxball_unclassified_noop_40cc20(void)
+{
+    return;
 }

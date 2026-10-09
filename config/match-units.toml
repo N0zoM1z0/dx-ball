@@ -138,7 +138,7 @@ relocations = [
 [builds.resources]
 source = "src/resources.c"
 object = "build/exact/resources.obj"
-inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.c", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h", "src/resources_bank.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/ML", "/Gy"]
 
 [units.select-sprite-bank]
@@ -724,30 +724,30 @@ relocations = [
 [candidates.rotated-sprite-offset]
 build = "rotation"
 symbol = "_dxball_rotated_sprite_offset"
-target_address = 0x00402CD0
-size = 259
-boundary_evidence = "docs/EXACT_CORE.md"
+target_address = 0x402cd0
+size = 0x103
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
 relocations = [
-  { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0, target = 0x00402490 },
-  { offset = 0x1D, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 0x31, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 0x40, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
-  { offset = 0x49, type = "DIR32", symbol = "$T498", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
-  { offset = 0x51, type = "DIR32", symbol = "$T498", addend = 4, target = 0x00420058, data_hex = "cdccccccccccf43f" },
-  { offset = 0x57, type = "DIR32", symbol = "$T498", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
-  { offset = 0x5C, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
-  { offset = 0x61, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
-  { offset = 0x67, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
-  { offset = 0x7B, type = "REL32", symbol = "_dxball_cosine", addend = 0, target = 0x00402490 },
-  { offset = 0x87, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 0x9B, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 0xAA, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
-  { offset = 0xB3, type = "DIR32", symbol = "$T498", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
-  { offset = 0xBB, type = "DIR32", symbol = "$T498", addend = 4, target = 0x00420058, data_hex = "cdccccccccccf43f" },
-  { offset = 0xC1, type = "DIR32", symbol = "$T498", addend = 0, target = 0x00420058, data_hex = "cdccccccccccf43f" },
-  { offset = 0xC6, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x00416E18 },
-  { offset = 0xCB, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
-  { offset = 0xD1, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
+  { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
+  { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x30, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x3f, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
+  { offset = 0x48, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x50, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x56, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x5b, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
+  { offset = 0x60, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0x66, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+  { offset = 0x7a, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
+  { offset = 0x82, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x99, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0xa8, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
+  { offset = 0xb1, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xb9, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xbf, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xc4, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
+  { offset = 0xc9, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0xcf, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
 ]
 
 [builds.core]
@@ -1476,3 +1476,185 @@ target_address = 0x0040F480
 size = 64
 boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
 relocations = []
+
+[builds.editor]
+source = "src/editor.c"
+object = "build/exact/editor.obj"
+inputs = ["src/editor.c", "src/allocator.h", "src/balls.h", "src/bitmap.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/list_initializers.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/raster.h", "src/resources.h", "src/rotation.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/termination.h", "src/trig.h", "src/ui.h", "src/windows_adapter.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[units.clear-hit-region]
+build = "editor"
+symbol = "_dxball_clear_hit_region"
+target_address = 0x401f20
+size = 0x65
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0xf, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x0, target = 0x4251a0 },
+  { offset = 0x20, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x4, target = 0x4251a0 },
+  { offset = 0x31, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x8, target = 0x4251a0 },
+  { offset = 0x42, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0xc, target = 0x4251a0 },
+  { offset = 0x53, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x10, target = 0x4251a0 },
+]
+
+[units.hit-region-contains]
+build = "editor"
+symbol = "_dxball_hit_region_contains"
+target_address = 0x402040
+size = 0x99
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0xf, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x10, target = 0x4251a0 },
+  { offset = 0x26, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x0, target = 0x4251a0 },
+  { offset = 0x3c, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x8, target = 0x4251a0 },
+  { offset = 0x52, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x4, target = 0x4251a0 },
+  { offset = 0x68, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0xc, target = 0x4251a0 },
+]
+
+[units.reset-hit-region-count]
+build = "editor"
+symbol = "_dxball_reset_hit_region_count"
+target_address = 0x4020e0
+size = 0x1a
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "_dxball_hit_region_count", addend = 0x0, target = 0x421064 },
+]
+
+[units.unclassified-noop-40cc20]
+build = "editor"
+symbol = "_dxball_unclassified_noop_40cc20"
+target_address = 0x40cc20
+size = 0x10
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+]
+
+[units.point-angle]
+build = "geometry"
+symbol = "_dxball_point_angle"
+target_address = 0x4025a0
+size = 0x6d
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0x2e, type = "REL32", symbol = "_atan2", addend = 0x0, target = 0x417608 },
+  { offset = 0x3a, type = "DIR32", symbol = "$T413", addend = 0x0, target = 0x420028, data_hex = "0000000000806640" },
+  { offset = 0x40, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
+  { offset = 0x49, type = "DIR32", symbol = "$T414", addend = 0x0, target = 0x420030, data_hex = "97d17e5afb210940" },
+  { offset = 0x51, type = "DIR32", symbol = "$T414", addend = 0x4, target = 0x420030, data_hex = "97d17e5afb210940" },
+  { offset = 0x57, type = "DIR32", symbol = "$T414", addend = 0x0, target = 0x420030, data_hex = "97d17e5afb210940" },
+  { offset = 0x5c, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
+]
+
+[candidates.point-distance]
+build = "geometry"
+symbol = "_dxball_point_distance"
+target_address = 0x402610
+size = 0x82
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0x22, type = "REL32", symbol = "_fabs", addend = 0x0, target = 0x417660 },
+  { offset = 0x45, type = "REL32", symbol = "_fabs", addend = 0x0, target = 0x417660 },
+  { offset = 0x66, type = "REL32", symbol = "_sqrt", addend = 0x0, target = 0x417640 },
+  { offset = 0x71, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+]
+
+[candidates.rotated-sprite-y-offset]
+build = "rotation"
+symbol = "_dxball_rotated_sprite_y_offset"
+target_address = 0x402de0
+size = 0xbf
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0x11, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
+  { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x30, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x3e, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0x44, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+  { offset = 0x58, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
+  { offset = 0x60, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x77, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x85, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0x8b, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+]
+
+[candidates.rotated-sprite-width]
+build = "rotation"
+symbol = "_dxball_rotated_sprite_width"
+target_address = 0x402ea0
+size = 0x103
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
+  { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x30, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x3f, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
+  { offset = 0x48, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x50, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x56, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0x5b, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
+  { offset = 0x60, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0x66, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+  { offset = 0x7a, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
+  { offset = 0x82, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x99, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0xa8, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
+  { offset = 0xb1, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xb9, type = "DIR32", symbol = "$T531", addend = 0x4, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xbf, type = "DIR32", symbol = "$T531", addend = 0x0, target = 0x420060, data_hex = "cdccccccccccf43f" },
+  { offset = 0xc4, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
+  { offset = 0xc9, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0xcf, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+]
+
+[candidates.rotated-sprite-height]
+build = "rotation"
+symbol = "_dxball_rotated_sprite_height"
+target_address = 0x402fb0
+size = 0xbf
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0x11, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
+  { offset = 0x1d, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x31, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x3f, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0x45, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+  { offset = 0x59, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
+  { offset = 0x65, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x79, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x87, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
+  { offset = 0x8d, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
+]
+
+[candidates.copy-text-word]
+build = "ui"
+symbol = "_dxball_copy_text_word"
+target_address = 0x403290
+size = 0x8f
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+]
+
+[units.release-sprite-bank]
+build = "resources"
+symbol = "_dxball_release_sprite_bank"
+target_address = 0x403eb0
+size = 0xb2
+boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+relocations = [
+  { offset = 0xa, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 0x16, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0x0, target = 0x403e70 },
+  { offset = 0x36, type = "REL32", symbol = "_dxball_release_sprite", addend = 0x0, target = 0x404be0 },
+  { offset = 0x55, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x3fc, target = 0x425980 },
+  { offset = 0x6d, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x400, target = 0x425980 },
+  { offset = 0x76, type = "DIR32", symbol = "$SG705", addend = 0x0, target = 0x421090, data_hex = "2000" },
+  { offset = 0x8a, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 0x95, type = "REL32", symbol = "_strcpy", addend = 0x0, target = 0x4177f0 },
+  { offset = 0xa1, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0x0, target = 0x403e70 },
+]
+
+[builds.ui]
+source = "src/ui.c"
+object = "build/exact/ui.obj"
+inputs = ["src/ui.c", "src/allocator.h", "src/balls.h", "src/bitmap.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/list_initializers.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/raster.h", "src/resources.h", "src/resources_bank.h", "src/rotation.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/termination.h", "src/trig.h", "src/ui.h", "src/windows_adapter.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]

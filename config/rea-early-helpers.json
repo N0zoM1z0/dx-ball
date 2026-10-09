@@ -1,0 +1,192 @@
+[
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x401f20"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x402040"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x4020e0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x4025a0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x402610"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x402de0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x402ea0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x402fb0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x403290"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x403eb0"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x40cc20"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x417608"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x417640"
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x417660"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x4020bc"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x4020c8"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x402e8b"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x402f8f"
+    }
+  },
+  {
+    "name": "inspect_native_instruction",
+    "arguments": {
+      "address": "0x40305b"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x420028",
+      "length": 16
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x420060",
+      "length": 8
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x421090",
+      "length": 24
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x4020bc",
+      "length": 5
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x4020c8",
+      "length": 5
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x402e8b",
+      "length": 5
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x402f8f",
+      "length": 5
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x40305b",
+      "length": 5
+    }
+  },
+  {
+    "name": "analyze_function",
+    "arguments": {
+      "procedure": "0x416780"
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x423290",
+      "length": 16
+    }
+  },
+  {
+    "name": "read_bytes",
+    "arguments": {
+      "address": "0x4232e0",
+      "length": 16
+    }
+  }
+]

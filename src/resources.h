@@ -104,7 +104,8 @@ extern DxBallDDraw *dxball_direct_draw;
 extern DxBallDDPalette *dxball_direct_palette;
 extern DxBallPaletteEntry dxball_live_palette[256], dxball_saved_palette[256];
 
-/* Valid bank indices are 0..2; sprite indices are caller-owned 1..254. */
+/* Valid bank indices are 0..2; drawing/capture slots are caller-owned 1..254.
+   Single-sprite release also accepts slot zero, as required by bank release. */
 void dxball_select_sprite_bank(DxBallInt bank);
 void dxball_select_font_bank(DxBallInt bank);
 void dxball_draw_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y);

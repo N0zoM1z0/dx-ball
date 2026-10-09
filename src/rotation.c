@@ -90,12 +90,18 @@ DxBallInt dxball_rotated_sprite_offset(DxBallInt slot, DxBallInt angle)
         dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width / 1.3));
     second = abs((DxBallInt)(dxball_cosine(angle + 135) * (long double)
         dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width / 1.3));
-    if (first > second) {
+    if (second < first) {
         return -first;
     } else {
         return -second;
     }
 }
+
+
+
+
+
+
 
 /* FUNCTION: DXBALL 0x00404280 */
 void dxball_draw_rotated_sprite(DxBallInt slot, DxBallUInt center_x,
@@ -103,4 +109,49 @@ void dxball_draw_rotated_sprite(DxBallInt slot, DxBallUInt center_x,
 {
     dxball_render_rotated_sprite(center_x, center_y, slot, angle);
     return;
+}
+
+/* FUNCTION: DXBALL 0x00402DE0 */
+DxBallInt dxball_rotated_sprite_y_offset(DxBallInt slot, DxBallInt angle)
+{
+    DxBallInt first, second;
+    first = abs((DxBallInt)(dxball_sine(angle + 45) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->height));
+    second = abs((DxBallInt)(dxball_sine(angle + 135) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->height));
+    if (second < first) {
+        return -first;
+    } else {
+        return -second;
+    }
+}
+
+/* FUNCTION: DXBALL 0x00402EA0 */
+DxBallInt dxball_rotated_sprite_width(DxBallInt slot, DxBallInt angle)
+{
+    DxBallInt first, second;
+    first = abs((DxBallInt)(dxball_cosine(angle + 45) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width / 1.3));
+    second = abs((DxBallInt)(dxball_cosine(angle + 135) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width / 1.3));
+    if (second < first) {
+        return first * 2;
+    } else {
+        return second * 2;
+    }
+}
+
+/* FUNCTION: DXBALL 0x00402FB0 */
+DxBallInt dxball_rotated_sprite_height(DxBallInt slot, DxBallInt angle)
+{
+    DxBallInt first, second;
+    first = abs((DxBallInt)(dxball_sine(angle + 45) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->height));
+    second = abs((DxBallInt)(dxball_sine(angle + 135) * (long double)
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->height));
+    if (second < first) {
+        return first * 2;
+    } else {
+        return second * 2;
+    }
 }

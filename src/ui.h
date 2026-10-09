@@ -3,6 +3,10 @@
 #include "boards.h"
 
 extern DxBallInt dxball_text_spacing;
+/* Space-delimited backing must cover the requested word. Copies retain the
+   source offset in destination; skipped prefix bytes remain unchanged. */
+const char *dxball_copy_text_word(DxBallInt skip, const char *source,
+                                char *destination);
 void dxball_draw_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text);
 void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text);
 DxBallInt dxball_measure_text(DxBallInt count, const char *text);

@@ -1,4 +1,58 @@
-# Current handoff — typed list initialization checkpoint
+# Current handoff — early helper checkpoint
+
+The [early helper batch](EXACT_EARLY_HELPERS.md) advances acceptance to
+**283 source-present / 247 directly validated entries / 112,273 distinct cases /
+76 exact units / 9,833 code bytes**, plus 136 separate accepted metadata bytes.
+Eleven complete source bodies are added; six add 583 exact code bytes. Source
+presence comprises 270 authored bodies, the unknown-origin no-effect body at
+`0x40CC20`, and 12 runtime bodies. The five other new entries and the existing
+horizontal rotation offset remain complete configured candidates.
+
+The shared source restores region clear/containment/count reset, point angle
+and distance, three rotation projections, literal-space word copying, bank
+release over all 255 slots and the observed no-effect entry. Text copying uses
+the source offset in the destination and stops at spaces, not NUL. Bank release
+restores the previous bank and writes a single-space filename. The whole-bank
+API lives in `src/resources_bank.h`, included beside its definition; this keeps
+existing resource emissions intact. No source profiles, fake locals, placeholder
+declarations, padding, assembly or copied code are used. The empty entry's
+original prototype, ownership and authorship remain unknown.
+
+All 22 existing owner scripts pass once with 268 frozen inputs. All 76 complete
+units and 136 metadata bytes pass grouped cold replay; all 14 existing exact
+controls pass. Strict native Debug, MinGW and full legacy builds pass. The
+existing 1,024 rotation COFF vectors pass. The 235 affected application semantic
+closures are refreshed with unchanged scopes and counts; no tracked tests,
+direct rows, fixture matrices or campaigns are added. A private 59-observation
+original/native/full-VC4 probe passes. Its eight bounded angle outputs agree
+after float transport; broader native floating-point fidelity is unclaimed.
+
+REA supplies 30 bounded requests in two closed runs, retained with the
+457-record snapshot. Separate reads reconcile five otherwise undefined listing
+gaps and attest constants/literals. Four CRT entries are identified as abs,
+atan2, sqrt and fabs through pinned library members and original table headers;
+this adds origin evidence, not CRT implementation source or exact units.
+C++ and `/Op` diagnostic epochs remain nonselected. Distance scheduling, rotation
+local/index allocation and text local allocation are unresolved.
+
+Current native alias is copied from `build/native-early-helpers`, SHA-256
+`bacf8063f6dc64e062063cdb52623318a1283869cab83c15efbcf5a0b3565479`.
+The prior list-initialization product remains separately retained at SHA-256
+`4a2c2ed0a7d42359ff6fea0d36da0db61f52f7c1a0a7d6a50f10fbdba6d605d4`.
+`.analysis/checkpoints/exact-early-283-76` seals the complete batch before cleanup.
+
+Next scope: audit unknown origins against pinned CRT members and saved REA
+ownership evidence before asserting an authored denominator. A bounded private
+inventory finds 28 unknown entries below `0x416780`: 24 lie within maintained
+C++ fixed-point/triangle extents, two have external-thunk metadata, one has
+conflicting copy-family labels, and the no-effect entry already has source.
+Containment and labels alone do not promote origins. Another 191 unknown
+entries lie above that cutoff, outside the bounded review. Origins now comprise
+270 authored, 21 runtime, 18 generated and 219 unknown. The >=95% objective
+remains active; no full-source percentage is asserted.
+
+# Previous typed list initialization checkpoint
+
 
 The [typed list constructor batch](EXACT_LIST_INITIALIZERS.md) advances the
 checkpoint to **272 source-present (260 game/application + 12 runtime) /

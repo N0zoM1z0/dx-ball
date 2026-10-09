@@ -16,6 +16,8 @@ DxBallInt dxball_measure_text(DxBallInt count, const char *text)
     return width;
 }
 
+
+
 void dxball_draw_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text)
 {
     DxBallInt i, advance = 0;
@@ -112,4 +114,25 @@ void dxball_rotate_rgb_colors(DxBallInt entry, DxBallInt count, DxBallInt *color
     for (i = 0; i <= count - 4; ++i) colors[i] = colors[i + 3];
     colors[count - 3] = red; colors[count - 2] = green; colors[count - 1] = blue;
     dxball_set_palette_rgb(entry, (DxBallByte)colors[0], (DxBallByte)colors[1], (DxBallByte)colors[2]);
+}
+
+/* FUNCTION: DXBALL 0x00403290 */
+const char *dxball_copy_text_word(DxBallInt skip, const char *source,
+                                char *destination)
+{
+    DxBallInt spaces, offset;
+    const char *text;
+    offset = 0;
+    spaces = 0;
+    text = source;
+    while (spaces < skip) {
+        if (text[offset] == ' ') ++spaces;
+        ++offset;
+    }
+    while (text[offset] != ' ') {
+        destination[offset] = text[offset];
+        ++offset;
+    }
+    destination[offset] = 0;
+    return text + (offset + 1);
 }
