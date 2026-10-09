@@ -1,0 +1,612 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "library": ".tools/msvc400/lib/libc.lib",
+  "library_sha256": "e5f0d0e6dd2e01dbb0005e9dd4764507b852ede9a824798f0970bc570966a7e3",
+  "byte_observation": {
+    "address": "0x00416610",
+    "size": 39136,
+    "evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12"
+  },
+  "prior_binding_manifest": "config/crt-provenance.json",
+  "sections": [
+    {
+      "address": "0x416610",
+      "size": 334,
+      "member": "build\\intel\\st_obj\\memcpy.obj",
+      "member_header_offset": 859246,
+      "member_sha256": "00e7b42675e8828401ff6dfb4e47a74568a54d03ca8104a16a553f85d4bc4590",
+      "section_index": 1,
+      "entries": [
+        "0x00416610"
+      ],
+      "library_symbols": [
+        "_memcpy"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 859246,
+          "symbols": [
+            "_memcpy"
+          ]
+        },
+        {
+          "member_header_offset": 862174,
+          "symbols": [
+            "_memmove"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x4177f0",
+      "size": 232,
+      "member": "build\\intel\\st_obj\\mbscat.obj",
+      "member_header_offset": 549852,
+      "member_sha256": "51a67682875e8ff729a9a4c07eafa49b736553bd936a3a31d4796865a313c6cf",
+      "section_index": 1,
+      "entries": [
+        "0x004177F0",
+        "0x004177F8"
+      ],
+      "library_symbols": [
+        "__mbscpy",
+        "__mbscat"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 549852,
+          "symbols": [
+            "__mbscpy",
+            "__mbscat"
+          ]
+        },
+        {
+          "member_header_offset": 863678,
+          "symbols": [
+            "_strcpy",
+            "_strcat"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x417c40",
+      "size": 88,
+      "member": "build\\intel\\st_obj\\memset.obj",
+      "member_header_offset": 863198,
+      "member_sha256": "c030e747e4c5bbaab813a9961a3f35d17c01864d451b606eb992804e5bdfd805",
+      "section_index": 1,
+      "entries": [
+        "0x00417C40"
+      ],
+      "library_symbols": [
+        "_memset"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 863198,
+          "symbols": [
+            "_memset"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x4184a0",
+      "size": 53,
+      "member": "build\\intel\\st_obj\\trnsctrl.obj",
+      "member_header_offset": 187692,
+      "member_sha256": "206b02d6136285da3400a3bd57538a7ca3bee816d979cdd51753322d6ed350ce",
+      "section_index": 1,
+      "entries": [
+        "0x004184A0"
+      ],
+      "library_symbols": [
+        "?_JumpToContinuation@@YGXPAXPAUEHRegistrationNode@@@Z"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 187692,
+          "symbols": [
+            "?_JumpToContinuation@@YGXPAXPAUEHRegistrationNode@@@Z"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x418c00",
+      "size": 79,
+      "member": "..\\build\\intel\\st_obj\\testfdiv.obj",
+      "member_header_offset": 997722,
+      "member_sha256": "ba7e32f4909af498435d8d48bb567aab92221d3a55f0ce2d4b7ecf4cf3eb7e7b",
+      "section_index": 1,
+      "entries": [
+        "0x00418C00"
+      ],
+      "library_symbols": [
+        "__ms_p5_test_fdiv"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 997722,
+          "symbols": [
+            "__ms_p5_test_fdiv"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419370",
+      "size": 17,
+      "member": "..\\build\\intel\\st_obj\\fpctrl.obj",
+      "member_header_offset": 987486,
+      "member_sha256": "2827238e074fd523c92059bbedfd244a840fd755fbfe9f832ce956e56cf4247c",
+      "section_index": 2,
+      "entries": [
+        "0x00419370"
+      ],
+      "library_symbols": [
+        "__statfp"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 987486,
+          "symbols": [
+            "__statfp"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419390",
+      "size": 18,
+      "member": "..\\build\\intel\\st_obj\\fpctrl.obj",
+      "member_header_offset": 987486,
+      "member_sha256": "2827238e074fd523c92059bbedfd244a840fd755fbfe9f832ce956e56cf4247c",
+      "section_index": 4,
+      "entries": [
+        "0x00419390"
+      ],
+      "library_symbols": [
+        "__clrfp"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 987486,
+          "symbols": [
+            "__clrfp"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x4193b0",
+      "size": 52,
+      "member": "..\\build\\intel\\st_obj\\fpctrl.obj",
+      "member_header_offset": 987486,
+      "member_sha256": "2827238e074fd523c92059bbedfd244a840fd755fbfe9f832ce956e56cf4247c",
+      "section_index": 6,
+      "entries": [
+        "0x004193B0"
+      ],
+      "library_symbols": [
+        "__ctrlfp"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 987486,
+          "symbols": [
+            "__ctrlfp"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419ca0",
+      "size": 50,
+      "member": "..\\build\\intel\\st_obj\\fpexcept.obj",
+      "member_header_offset": 1007150,
+      "member_sha256": "d11f8eb2b9227f854719fb09d9e92ff6cf81dade95d87e0e6f3dc131c27e9b40",
+      "section_index": 48,
+      "entries": [
+        "0x00419CA0"
+      ],
+      "library_symbols": [
+        "__errcode"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1007150,
+          "symbols": [
+            "__errcode"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419ce0",
+      "size": 57,
+      "member": "..\\build\\intel\\st_obj\\util.obj",
+      "member_header_offset": 1023362,
+      "member_sha256": "320f5fbd59aa7891fe1cfd13723bb021cd88c87b8bcfb680c46e9f22bf2964cf",
+      "section_index": 2,
+      "entries": [
+        "0x00419CE0"
+      ],
+      "library_symbols": [
+        "__set_exp"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1023362,
+          "symbols": [
+            "__set_exp"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419d20",
+      "size": 99,
+      "member": "..\\build\\intel\\st_obj\\util.obj",
+      "member_header_offset": 1023362,
+      "member_sha256": "320f5fbd59aa7891fe1cfd13723bb021cd88c87b8bcfb680c46e9f22bf2964cf",
+      "section_index": 10,
+      "entries": [
+        "0x00419D20"
+      ],
+      "library_symbols": [
+        "__sptype"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1023362,
+          "symbols": [
+            "__sptype"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419fa0",
+      "size": 57,
+      "member": "build\\intel\\st_obj\\_freebuf.obj",
+      "member_header_offset": 770212,
+      "member_sha256": "25d526086f6f4fe0960d32ef80d2de0e7abe22677651332811cbbf373246732b",
+      "section_index": 1,
+      "entries": [
+        "0x00419FA0"
+      ],
+      "library_symbols": [
+        "__freebuf"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 770212,
+          "symbols": [
+            "__freebuf"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d0e0",
+      "size": 100,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 2,
+      "entries": [
+        "0x0041D0E0"
+      ],
+      "library_symbols": [
+        "__ZeroTail"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__ZeroTail"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d270",
+      "size": 29,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 8,
+      "entries": [
+        "0x0041D270"
+      ],
+      "library_symbols": [
+        "__CopyMan"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__CopyMan"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d290",
+      "size": 15,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 10,
+      "entries": [
+        "0x0041D290"
+      ],
+      "library_symbols": [
+        "__FillZeroMan"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__FillZeroMan"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d2a0",
+      "size": 29,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 12,
+      "entries": [
+        "0x0041D2A0"
+      ],
+      "library_symbols": [
+        "__IsZeroMan"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__IsZeroMan"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d2c0",
+      "size": 173,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 14,
+      "entries": [
+        "0x0041D2C0"
+      ],
+      "library_symbols": [
+        "__ShrMan"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__ShrMan"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d600",
+      "size": 129,
+      "member": "build\\intel\\st_obj\\_fptostr.obj",
+      "member_header_offset": 124578,
+      "member_sha256": "517a63a3ecf5fc8673f3bd6fd227416a976fba2c07ae10d7b64e2089d4fc38ad",
+      "section_index": 1,
+      "entries": [
+        "0x0041D600"
+      ],
+      "library_symbols": [
+        "__fptostr"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 124578,
+          "symbols": [
+            "__fptostr"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d700",
+      "size": 187,
+      "member": "..\\build\\intel\\st_obj\\cfout.obj",
+      "member_header_offset": 929454,
+      "member_sha256": "048b479126518097c1a30b61a49796f6eb1da0853466de2f0f929b5cf5dd130e",
+      "section_index": 4,
+      "entries": [
+        "0x0041D700"
+      ],
+      "library_symbols": [
+        "___dtold"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 929454,
+          "symbols": [
+            "___dtold"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41dfd0",
+      "size": 36,
+      "member": "build\\intel\\st_obj\\strncpy.obj",
+      "member_header_offset": 867770,
+      "member_sha256": "dd327bbed43fa8903837d6d3efdc5ff8728ef7fe60c866be888a883bca4809c2",
+      "section_index": 1,
+      "entries": [
+        "0x0041DFD0"
+      ],
+      "library_symbols": [
+        "_strncpy"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 867770,
+          "symbols": [
+            "_strncpy"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e5c0",
+      "size": 35,
+      "member": "..\\build\\intel\\st_obj\\mantold.obj",
+      "member_header_offset": 943068,
+      "member_sha256": "3dade4ce96c8230eb6ab6a79ae61147e4ec598eb0edf68023fc93905d52d52b5",
+      "section_index": 1,
+      "entries": [
+        "0x0041E5C0"
+      ],
+      "library_symbols": [
+        "___addl"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 943068,
+          "symbols": [
+            "___addl"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e660",
+      "size": 62,
+      "member": "..\\build\\intel\\st_obj\\mantold.obj",
+      "member_header_offset": 943068,
+      "member_sha256": "3dade4ce96c8230eb6ab6a79ae61147e4ec598eb0edf68023fc93905d52d52b5",
+      "section_index": 5,
+      "entries": [
+        "0x0041E660"
+      ],
+      "library_symbols": [
+        "___shl_12"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 943068,
+          "symbols": [
+            "___shl_12"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e6a0",
+      "size": 54,
+      "member": "..\\build\\intel\\st_obj\\mantold.obj",
+      "member_header_offset": 943068,
+      "member_sha256": "3dade4ce96c8230eb6ab6a79ae61147e4ec598eb0edf68023fc93905d52d52b5",
+      "section_index": 7,
+      "entries": [
+        "0x0041E6A0"
+      ],
+      "library_symbols": [
+        "___shr_12"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 943068,
+          "symbols": [
+            "___shr_12"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41f490",
+      "size": 49,
+      "member": "build\\intel\\st_obj\\strncat.obj",
+      "member_header_offset": 867084,
+      "member_sha256": "db08b9363f6f680f9b0b2cd9ecf35a77604a93870521b28f07499ff9db067585",
+      "section_index": 1,
+      "entries": [
+        "0x0041F490"
+      ],
+      "library_symbols": [
+        "_strncat"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 867084,
+          "symbols": [
+            "_strncat"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41f590",
+      "size": 82,
+      "member": "build\\intel\\st_obj\\calloc.obj",
+      "member_header_offset": 351592,
+      "member_sha256": "adfc0dfe1175e2803d005168bb717db580516dafc0af6237f6f8f000a3607a16",
+      "section_index": 1,
+      "entries": [
+        "0x0041F590"
+      ],
+      "library_symbols": [
+        "_calloc"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 351592,
+          "symbols": [
+            "_calloc"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41f8c0",
+      "size": 21,
+      "member": "..\\build\\intel\\st_obj\\frnd.obj",
+      "member_header_offset": 988774,
+      "member_sha256": "106120b0627c164d872c58652e56693606a637ef0e3b300af7ad17345f5c0e83",
+      "section_index": 1,
+      "entries": [
+        "0x0041F8C0"
+      ],
+      "library_symbols": [
+        "__frnd"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 988774,
+          "symbols": [
+            "__frnd"
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Whole code sections prove bounded library provenance; they do not promote maintained source, exact units or semantic cases.",
+    "Imported function sizes and code/data boundaries are not overwritten by section sizes.",
+    "Byte-identical memcpy/memmove and narrow/multibyte string aliases retain name ambiguity.",
+    "Every applied binding comes from the reviewed prior CRT map or this section\u2019s defined symbols; diagnostic inferred bindings are not accepted."
+  ]
+}

@@ -1,4 +1,33 @@
-# Current handoff — early helper checkpoint
+# Current handoff — bounded origin audit
+
+The [origin audit](ORIGIN_AUDIT.md) resolves 27 CRT entries through **26 complete
+pinned-library sections / 2,137 bytes**, and 24 raster fragments through parent
+references and generated C++ EH ownership. Origins now comprise **270 authored /
+48 runtime / 42 compiler-generated / 168 unknown**. Source and acceptance remain
+**283 source-present / 247 scoped entries / 112,273 distinct cases / 76 exact
+units / 9,833 code bytes + 136 separate metadata bytes**. No maintained game
+source, ABI, exact recipe, semantic closure or case count changes in this audit.
+
+`config/runtime-origin-sections.json` and
+`scripts/verify-runtime-origin-sections.py` reproduce complete section comparisons
+using only the preceding reviewed CRT map and same-section defined symbols.
+All 26 pass; all 12 existing CRT controls pass. Inferred diagnostic relocation
+bindings and ambiguous library aliases are excluded from stronger claims.
+`config/generated-raster-origins.json` records 20 destructor cleanups and four
+frame epilogues. Complete 296-byte metadata corroboration does not promote the
+triangle or add accepted metadata; its three tail displacement gaps remain.
+Existing frozen owner tests, builds and complete cold replay are reused because
+their inputs are unchanged. One new two-request REA run closes normally and
+saves the 459-record snapshot; the independent raster review reuses 30 complete
+saved records from the immutable preceding checkpoint.
+
+Next: resolve the remaining 168 unknown origins, including two external thunks
+and the already implemented no-effect body, then continue natural exact tuning
+of complete candidates. All confirmed authored entries have source, but the full
+authored denominator, types and whole-game fidelity remain unproven. Do not
+mark the >=95% objective complete from conditional source presence.
+
+# Previous early helper checkpoint
 
 The [early helper batch](EXACT_EARLY_HELPERS.md) advances acceptance to
 **283 source-present / 247 directly validated entries / 112,273 distinct cases /

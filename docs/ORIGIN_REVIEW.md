@@ -1,6 +1,13 @@
 # Reviewing runtime origins
 
-The current [typed-list initialization checkpoint](EXACT_LIST_INITIALIZERS.md)
+The latest [bounded origin audit](ORIGIN_AUDIT.md) resolves 27 runtime entries and
+24 generated raster fragments. Current origins are **270 authored / 48 runtime /
+42 compiler-generated / 168 unknown**. Source, semantic and exact acceptance
+remain unchanged. Whole-section relocation-grounded comparisons and parent/EH
+ownership support these dispositions; ambiguous aliases remain unresolved.
+The historical batch counts below retain their original scopes.
+
+The earlier [typed-list initialization checkpoint](EXACT_LIST_INITIALIZERS.md)
 identifies seven authored constructors and 18 compiler-generated static
 initializer stages. Origins now comprise 260 authored, 17 runtime, 18
 compiler-generated and 233 unknown entries. Source presence is 272; the generated
@@ -17,7 +24,7 @@ fragments; their imported split rows remain provisional and are not additional
 authored implementations. The complete authored denominator remains unresolved.
 The older review counts below describe their respective historical scope.
 
-The current ledger has **14 runtime dependencies / 289 unknown origins**.
+An earlier ledger recorded **14 runtime dependencies / 289 unknown origins**.
 The subsequent [sound controls](SOUND_CONTROLS.md) identify three application
 entries through their REA instruction contracts and original/native execution.
 The preceding [whole-object CRT review](CRT_PROVENANCE.md) identified eight more

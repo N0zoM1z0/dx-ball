@@ -1,0 +1,593 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "source": "src/raster.cpp",
+  "observations": "docs/ORIGIN_AUDIT.md",
+  "entries": [
+    {
+      "address": "0x0040B196",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40afe8"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 15,
+        "to_state": 3,
+        "action_address": "0x0040B196",
+        "original_pointer_address": "0x0042034C",
+        "compiler_label": "$L1141",
+        "compiler_code_offset": 1542
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B19F",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40afb8"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 14,
+        "to_state": 13,
+        "action_address": "0x0040B19F",
+        "original_pointer_address": "0x00420344",
+        "compiler_label": "$L1140",
+        "compiler_code_offset": 1551
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1A8",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40afca"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 12,
+        "to_state": 3,
+        "action_address": "0x0040B1A8",
+        "original_pointer_address": "0x00420334",
+        "compiler_label": "$L1139",
+        "compiler_code_offset": 1560
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1B1",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40afc1"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 13,
+        "to_state": 12,
+        "action_address": "0x0040B1B1",
+        "original_pointer_address": "0x0042033C",
+        "compiler_label": "$L1138",
+        "compiler_code_offset": 1569
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1BA",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40adbd"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 11,
+        "to_state": 3,
+        "action_address": "0x0040B1BA",
+        "original_pointer_address": "0x0042032C",
+        "compiler_label": "$L1129",
+        "compiler_code_offset": 1578
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1C3",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ad8d"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 10,
+        "to_state": 9,
+        "action_address": "0x0040B1C3",
+        "original_pointer_address": "0x00420324",
+        "compiler_label": "$L1128",
+        "compiler_code_offset": 1587
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1CC",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ad9f"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 8,
+        "to_state": 3,
+        "action_address": "0x0040B1CC",
+        "original_pointer_address": "0x00420314",
+        "compiler_label": "$L1127",
+        "compiler_code_offset": 1596
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1D5",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ad96"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 9,
+        "to_state": 8,
+        "action_address": "0x0040B1D5",
+        "original_pointer_address": "0x0042031C",
+        "compiler_label": "$L1126",
+        "compiler_code_offset": 1605
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1DE",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ad2b"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 7,
+        "to_state": 3,
+        "action_address": "0x0040B1DE",
+        "original_pointer_address": "0x0042030C",
+        "compiler_label": "$L1125",
+        "compiler_code_offset": 1614
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1E7",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40acfb"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 6,
+        "to_state": 5,
+        "action_address": "0x0040B1E7",
+        "original_pointer_address": "0x00420304",
+        "compiler_label": "$L1124",
+        "compiler_code_offset": 1623
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1F0",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ad0d"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 4,
+        "to_state": 3,
+        "action_address": "0x0040B1F0",
+        "original_pointer_address": "0x004202F4",
+        "compiler_label": "$L1123",
+        "compiler_code_offset": 1632
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B1F9",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ad04"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 5,
+        "to_state": 4,
+        "action_address": "0x0040B1F9",
+        "original_pointer_address": "0x004202FC",
+        "compiler_label": "$L1122",
+        "compiler_code_offset": 1641
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B202",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ac81",
+        "0x40af4f",
+        "0x40b16e"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 3,
+        "to_state": 2,
+        "action_address": "0x0040B202",
+        "original_pointer_address": "0x004202EC",
+        "compiler_label": "$L1121",
+        "compiler_code_offset": 1650
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B20B",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ac8a",
+        "0x40af58",
+        "0x40b177"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 2,
+        "to_state": 1,
+        "action_address": "0x0040B20B",
+        "original_pointer_address": "0x004202E4",
+        "compiler_label": "$L1120",
+        "compiler_code_offset": 1659
+      },
+      "code_differences": 1
+    },
+    {
+      "address": "0x0040B214",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ac93",
+        "0x40af61",
+        "0x40b180"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 1,
+        "to_state": 0,
+        "action_address": "0x0040B214",
+        "original_pointer_address": "0x004202DC",
+        "compiler_label": "$L1119",
+        "compiler_code_offset": 1668
+      },
+      "code_differences": 1
+    },
+    {
+      "address": "0x0040B21D",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40ac9f",
+        "0x40af6d",
+        "0x40b18c"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 0,
+        "to_state": -1,
+        "action_address": "0x0040B21D",
+        "original_pointer_address": "0x004202D4",
+        "compiler_label": "$L1118",
+        "compiler_code_offset": 1677
+      },
+      "code_differences": 1
+    },
+    {
+      "address": "0x0040B230",
+      "origin": "compiler_generated",
+      "kind": "frame_epilogue",
+      "parent_entry": "0x0040AB90",
+      "parent_evidence_id": "ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a",
+      "actual_parent_sites": [
+        "0x40aca4",
+        "0x40af72",
+        "0x40b191"
+      ],
+      "byte_evidence_ids": [
+        "ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0",
+        "ev_d64bd45eddb6639bae4fff303b983603d672b1995ecd881e2b97ecccb71be2d9"
+      ],
+      "metadata_evidence_ids": [],
+      "unwind_action": null,
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B359",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040B2D0",
+      "parent_evidence_id": "ev_e5d49202070846424624fca41693b5530301fc0b2ef6fe3fe5c66e6cd015bb0f",
+      "actual_parent_sites": [
+        "0x40b330"
+      ],
+      "byte_evidence_ids": [
+        "ev_aa5c0b2bf58c7d4c4bd771c848694a8b3a5bc2657fcf190914cbc0c4bcb13d2a"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 2,
+        "to_state": 1,
+        "action_address": "0x0040B359",
+        "original_pointer_address": "0x00420384",
+        "compiler_label": "$L1159",
+        "compiler_code_offset": 137
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B362",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040B2D0",
+      "parent_evidence_id": "ev_e5d49202070846424624fca41693b5530301fc0b2ef6fe3fe5c66e6cd015bb0f",
+      "actual_parent_sites": [
+        "0x40b339"
+      ],
+      "byte_evidence_ids": [
+        "ev_aa5c0b2bf58c7d4c4bd771c848694a8b3a5bc2657fcf190914cbc0c4bcb13d2a"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 1,
+        "to_state": 0,
+        "action_address": "0x0040B362",
+        "original_pointer_address": "0x0042037C",
+        "compiler_label": "$L1158",
+        "compiler_code_offset": 146
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B375",
+      "origin": "compiler_generated",
+      "kind": "frame_epilogue",
+      "parent_entry": "0x0040B2D0",
+      "parent_evidence_id": "ev_e5d49202070846424624fca41693b5530301fc0b2ef6fe3fe5c66e6cd015bb0f",
+      "actual_parent_sites": [
+        "0x40b341"
+      ],
+      "byte_evidence_ids": [
+        "ev_aa5c0b2bf58c7d4c4bd771c848694a8b3a5bc2657fcf190914cbc0c4bcb13d2a"
+      ],
+      "metadata_evidence_ids": [],
+      "unwind_action": null,
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B41D",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040B3C0",
+      "parent_evidence_id": "ev_be6e9a7d382f289a211cef852ca5eea60578a845fbded075f21af4729e0a2285",
+      "actual_parent_sites": [
+        "0x40b410"
+      ],
+      "byte_evidence_ids": [
+        "ev_2c2b4ae82da6458b42ca232f5750aa842da94b1958294cb0caa9c4b802277ee8"
+      ],
+      "metadata_evidence_ids": [
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 0,
+        "to_state": -1,
+        "action_address": "0x0040B41D",
+        "original_pointer_address": "0x004203AC",
+        "compiler_label": "$L1169",
+        "compiler_code_offset": 93
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B430",
+      "origin": "compiler_generated",
+      "kind": "frame_epilogue",
+      "parent_entry": "0x0040B3C0",
+      "parent_evidence_id": "ev_be6e9a7d382f289a211cef852ca5eea60578a845fbded075f21af4729e0a2285",
+      "actual_parent_sites": [
+        "0x40b418"
+      ],
+      "byte_evidence_ids": [
+        "ev_2c2b4ae82da6458b42ca232f5750aa842da94b1958294cb0caa9c4b802277ee8"
+      ],
+      "metadata_evidence_ids": [],
+      "unwind_action": null,
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B49A",
+      "origin": "compiler_generated",
+      "kind": "destructor_cleanup",
+      "parent_entry": "0x0040B450",
+      "parent_evidence_id": "ev_ed78e725b8cef9d78e85b20c21d0baf75cd409cfde7b80fbf1dd582871c87d68",
+      "actual_parent_sites": [
+        "0x40b48d"
+      ],
+      "byte_evidence_ids": [
+        "ev_795fdc5edce200712d9b7ac9b38a3f49df961ce65494e746c8e0b352966e3859"
+      ],
+      "metadata_evidence_ids": [
+        "ev_55c6b7f79dcba22c22909b5c165f81e8dd5c5b08bac5cf264531d618fe1092d8",
+        "ev_6c6c33dc195917063f7db16dfa2c0358a9df49960944255f739688593df6d089"
+      ],
+      "unwind_action": {
+        "state": 0,
+        "to_state": -1,
+        "action_address": "0x0040B49A",
+        "original_pointer_address": "0x004203D4",
+        "compiler_label": "$L1178",
+        "compiler_code_offset": 74
+      },
+      "code_differences": 0
+    },
+    {
+      "address": "0x0040B4AD",
+      "origin": "compiler_generated",
+      "kind": "frame_epilogue",
+      "parent_entry": "0x0040B450",
+      "parent_evidence_id": "ev_ed78e725b8cef9d78e85b20c21d0baf75cd409cfde7b80fbf1dd582871c87d68",
+      "actual_parent_sites": [
+        "0x40b495"
+      ],
+      "byte_evidence_ids": [
+        "ev_795fdc5edce200712d9b7ac9b38a3f49df961ce65494e746c8e0b352966e3859"
+      ],
+      "metadata_evidence_ids": [],
+      "unwind_action": null,
+      "code_differences": 0
+    }
+  ],
+  "limitations": [
+    "This origin batch accepts the listed 24 generated entries. The 528 imported extents remain provisional; the full authored denominator and >=95% overall source coverage remain unproven.",
+    "Fourteen triangle cleanups and its epilogue have no individual function dossier. Ownership is corroborated through actual parent references, matching generated action labels, original data pointers and saved byte comparison, without new original instruction descriptions.",
+    "Complete triangle code remains a candidate. Three cleanup-local displacement bytes differ at 0x0040B20D, 0x0040B216 and 0x0040B21F; matching metadata does not make complete code exact.",
+    "Ghidra marks several epilogue JMP references UNCONDITIONAL_CALL. The report retains that field and uses saved rendered JMP instructions instead of treating these as independent ordinary calls.",
+    "Source object/temporary names and precise historical C++ spelling are not recovered by generated ownership evidence. Reconstructed names are maintained choices.",
+    "Existing normal vectors do not validate exceptional unwinding. Static metadata/code establish generated ownership, not runtime observation.",
+    "No pinned internal FuncInfo struct definition was found in the bounded compiler-header/source search. Format interpretation is corroborated by complete generated COFF metadata, labels/relocations and parent lifetime-state stores.",
+    "The mutable snapshot reached 459 records during the audit. All reviewed evidence is independently bound to the identical complete records in the immutable 457-record checkpoint snapshot; no new runtime evidence is used."
+  ]
+}

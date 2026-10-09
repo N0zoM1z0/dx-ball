@@ -45,9 +45,9 @@ def main():
         f"| Byte-exact functions | {status['exact_functions']} |\n"
         f"| Complete exact code bytes | {status['exact_bytes']} |\n"
         f"| Entries identified as runtime dependencies | {status['runtime_identified']} |\n"
-        f"| Entries identified as compiler-generated initialization | {status['compiler_generated_identified']} |\n"
+        f"| Entries identified as compiler-generated code | {status['compiler_generated_identified']} |\n"
         f"| Origin still unclassified | {status['origin_unknown']} |\n\n"
-        "The candidate count includes runtime/library code and compiler-generated initialization and is not the authored-function\n"
+        "The candidate count includes runtime/library code and compiler-generated code and is not the authored-function\n"
         "denominator. Experimental Windows EXEs pass bounded Wine startup/input/shutdown\n"
         "checks; whole-game fidelity remains unverified. See [adapter notes](WINDOWS_ADAPTER.md),\n"
         "[build evidence](BUILD_MATCHING.md), [origin review](ORIGIN_REVIEW.md) and [oracle limits](ORACLES.md).\n")

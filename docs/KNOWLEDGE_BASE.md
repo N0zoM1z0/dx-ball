@@ -166,3 +166,17 @@ adds no direct cases or matrices. Five new entries and the horizontal offset
 remain candidates; compiler scheduling/local allocation and general native
 floating-point fidelity remain limited. Origins total 270 authored, 21 runtime,
 18 generated and 219 unknown; the >=95% authored denominator remains unproven.
+
+
+## Bounded CRT and generated-raster origin audit
+
+Twenty-seven unknown entries agree with 26 complete pinned CRT code sections
+(2,137 bytes), including internal relocations/tables and a two-entry string
+section. Same-section definitions and the prior reviewed CRT map ground every
+relocation; broader inferred-binding candidates remain diagnostic. Library
+aliases for copy and narrow/multibyte strings remain ambiguous. Twenty-four
+raster pieces are generated cleanups/epilogues tied to actual parent references
+and original unwind metadata, rather than additional authored bodies. See
+[the audit](ORIGIN_AUDIT.md). Origins are 270 authored, 48 runtime, 42 generated
+and 168 unknown. No source, semantic or exact acceptance is added; 95% complete
+source recovery and whole-game fidelity remain unproven.
