@@ -7,7 +7,7 @@ the complete initialization, WAV parsing and binary-file loading bodies.
 | --- | ---: | ---: | --- |
 | Initialize sound, `0x405120` | 1,705 | 1,741 | Candidate; local storage differs |
 | Parse WAV, `0x406290` | 269 | 269 | Candidate; 30 local-displacement bytes differ |
-| Load binary file, `0x403320` | 304 | 307 | Import-storage mapping remains open |
+| Load binary file, `0x403320` | 304 | 307 | Shared imports recovered; local storage differs |
 
 ## Source recovery
 
@@ -29,8 +29,8 @@ accesses, including unaligned chunks.
 
 File loading calls the recovered malloc/free bodies directly. It retains the
 fallback path, successful short-read behavior, and original handle ownership
-on allocation/read failure. Its four file services still use the shared callback
-table, whose layout differs from the executable's separate IAT slots.
+on allocation/read failure. The subsequent [file-service recovery](EXACT_FILE_SERVICES.md) moves this
+body to `file.c` and binds its four independently owned IAT cells.
 
 ## Complete boundaries and compiler feedback
 

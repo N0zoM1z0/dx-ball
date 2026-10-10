@@ -1,19 +1,16 @@
 #include "allocator.h"
 #include "midi.h"
+#include "file.h"
 #include <stdlib.h>
 #include <string.h>
 
 void *(DXBALL_DDCALL *dxball_midi_local_alloc)(DxBallUInt, size_t);
 void *(DXBALL_DDCALL *dxball_midi_local_free)(void *);
-DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_file)(const char *, DxBallUInt,
-        DxBallUInt, void *, DxBallUInt, DxBallUInt, DxBallMidiHandle);
-DxBallUInt (DXBALL_DDCALL *dxball_midi_file_size)(DxBallMidiHandle, DxBallUInt *);
 DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_mapping)(DxBallMidiHandle,
         void *, DxBallUInt, DxBallUInt, DxBallUInt, const char *);
 void *(DXBALL_DDCALL *dxball_midi_map_view)(DxBallMidiHandle, DxBallUInt,
         DxBallUInt, DxBallUInt, size_t);
 DxBallInt (DXBALL_DDCALL *dxball_midi_unmap_view)(const void *);
-DxBallInt (DXBALL_DDCALL *dxball_midi_close_handle)(DxBallMidiHandle);
 DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_alloc)(DxBallUInt, size_t);
 void *(DXBALL_DDCALL *dxball_midi_global_lock)(DxBallMidiHandle);
 DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_handle)(const void *);
@@ -63,14 +60,14 @@ DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
         context->pending_buffers = 0;
         if ((mode & 2) == 0) {
             mapped = 1;
-            file = dxball_midi_create_file((const char *)input, 0x80000000UL,
+            file = dxball_file_create((const char *)input, 0x80000000UL,
                                           1, NULL, 3, 0x80, 0);
             input = NULL;
             if (file == (DxBallMidiHandle)-1) {
                 result = 2;
                 break;
             }
-            length = dxball_midi_file_size(file, NULL);
+            length = dxball_file_size(file, NULL);
             mapping = dxball_midi_create_mapping(file, NULL, 2, 0, 0, NULL);
             if (mapping == 0) {
                 result = 2;
@@ -92,8 +89,8 @@ DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
     }
     if (mapped) {
         if (input != NULL) dxball_midi_unmap_view(input);
-        if (mapping != 0) dxball_midi_close_handle(mapping);
-        if (file != (DxBallMidiHandle)-1) dxball_midi_close_handle(file);
+        if (mapping != 0) dxball_file_close(mapping);
+        if (file != (DxBallMidiHandle)-1) dxball_file_close(file);
     }
     return result;
 }

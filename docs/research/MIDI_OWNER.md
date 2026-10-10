@@ -20,7 +20,7 @@ succeed. Earlier investigations below retain their original evidence epochs.
 `src/midi.c` maintains the original RIFF/MIDS reader, compact event expansion,
 stream controller and completion callback. `src/music.cpp` owns five music
 controls. Portable, MinGW i686 and VC4 builds share these implementations.
-The Windows adapter supplies the 22 independently typed Kernel32/WinMM cells.
+The Windows adapter supplies the typed Kernel32/WinMM cells; three file services now share the [file owner](exact/EXACT_FILE_SERVICES.md) with sound loading.
 Stop and callback still differ in local storage; play retains a control-flow
 gap in its compiler emission.
 

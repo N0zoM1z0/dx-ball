@@ -6,7 +6,7 @@ The [initialization and WAV batch](exact/EXACT_SOUND_DEPENDENCIES.md) restores
 the complete retry/dialog flow, chunk parser and direct file-allocation calls.
 Initialization and parsing now follow the original instruction flow, with
 local storage differences still preventing exact acceptance. File-service
-import storage remains open. One existing sound Oracle passes, and both
+imports now share the recovered [file-service owner](exact/EXACT_FILE_SERVICES.md). One existing sound Oracle passes, and both
 Windows games link with these bodies.
 
 The [buffer batch](exact/EXACT_SOUND_BUFFERS.md) recovers pause, individual

@@ -1,13 +1,13 @@
 #include "allocator.h"
 #include "sound.h"
+#include "file.h"
 #include <stdlib.h>
 #include <string.h>
 
-DxBallSoundApi dxball_sound_api = { NULL, NULL, NULL, NULL, NULL, dxball_malloc_bytes, dxball_heap_release };
+DxBallSoundApi dxball_sound_api = { NULL, dxball_malloc_bytes, dxball_heap_release };
 DxBallSoundDevice *dxball_sound_device;
 DxBallSoundBuffer *dxball_primary_sound;
 DxBallSound *dxball_sounds[DXBALL_SOUND_COUNT];
-const char dxball_file_fallback_prefix[] = "..\\";
 
 static const char occupied_message[] =
     "Another Windows application has control of the sound system. \n"
@@ -524,30 +524,4 @@ DxBallInt dxball_create_sound_buffer(DxBallSoundDevice *device,
     descriptor.format = format;
     result = device->vtable->create_buffer(device, &descriptor, buffer, NULL);
     return result;
-}
-
-/* FUNCTION: DXBALL 0x00403320 */
-void *dxball_load_binary_file(const char *path, void *destination, DxBallInt allocate)
-{
-    DxBallHandle handle;
-    DxBallUInt bytes, read;
-    char fallback[260];
-    handle = dxball_sound_api.create_file(path, 0x80000000UL, 1, NULL, 3, 0x80, 0);
-    if (handle == (DxBallHandle)-1) {
-        strcpy(fallback, dxball_file_fallback_prefix);
-        strcat(fallback, path);
-        handle = dxball_sound_api.create_file(fallback, 0x80000000UL, 1, NULL, 3, 0x80, 0);
-        if (handle == (DxBallHandle)-1) return NULL;
-    }
-    bytes = dxball_sound_api.file_size(handle, NULL);
-    if (allocate != 0) {
-        destination = dxball_runtime_malloc(bytes);
-        if (destination == NULL) return NULL;
-    }
-    if (!dxball_sound_api.read_file(handle, destination, bytes, &read, NULL)) {
-        dxball_heap_release(destination);
-        return NULL;
-    }
-    dxball_sound_api.close_handle(handle);
-    return destination;
 }

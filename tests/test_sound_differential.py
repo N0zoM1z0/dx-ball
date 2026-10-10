@@ -234,10 +234,14 @@ class Native(Backend):
         self.primary_slot=P.in_dll(self.lib,'dxball_primary_sound')
         self.slots=(P*50).in_dll(self.lib,'dxball_sounds')
         self.draw_slot=P.in_dll(self.lib,'dxball_direct_draw')
-        table=(P*7).in_dll(self.lib,'dxball_sound_api')
-        for index,(name,_,result,args) in enumerate(APIS):
+        table=(P*3).in_dll(self.lib,'dxball_sound_api')
+        sound_slots={'create_device':0,'allocate':1,'deallocate':2}
+        file_cells={'create_file':'dxball_file_create','file_size':'dxball_file_size',
+                    'read_file':'dxball_file_read','close_handle':'dxball_file_close'}
+        for name,_,result,args in APIS:
             fn=self.callback(name,result,args)
-            if index<7:table[index]=C.cast(fn,P).value
+            if name in sound_slots:table[sound_slots[name]]=C.cast(fn,P).value
+            elif name in file_cells:P.in_dll(self.lib,file_cells[name]).value=C.cast(fn,P).value
             elif name=='message_box':(P*27).in_dll(self.lib,'dxball_window_api')[9]=C.cast(fn,P).value
             else:(P*9).in_dll(self.lib,'dxball_platform_ops')[8]=C.cast(fn,P).value
         self.heap_slot=P.in_dll(self.lib,'dxball_runtime_heap')

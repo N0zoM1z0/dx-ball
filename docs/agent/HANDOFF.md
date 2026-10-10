@@ -1,60 +1,59 @@
 # Current reconstruction handoff
 
-Continue toward nearly complete original source and a rebuildable, playable
-game. Prioritize coherent source recovery and affected exact comparisons.
+Continue toward nearly complete original game source and a rebuildable,
+playable game. Recover coherent flows with REA; compile stable families and
+run only affected exact comparisons and useful existing Oracles.
 
 ## Current checkpoint
 
-- 283 source-present functions; 135 exact functions / 21,248 code bytes.
-- [MDS loading and conversion](../research/exact/EXACT_MDS_PARSER.md) restores
-  the complete open/parse/convert family with a 12-byte format, eight-byte block
-  and genuine 64-byte input MIDIHDR. Parameter cursor updates, partial event
-  writes and live bank cleanup follow the original instructions.
-- Open/parse remain 480/522 and 788/868-byte candidates. Conversion is 343/343;
-  all 38 differences are EBP local-displacement bytes across 107 otherwise
-  matching instructions. The whole comparison retains those differences.
-- Twenty affected recipes compiled together, plus one MIDI-only refinement
-  of the DWORD flag expression. Complete comparison covers 102 functions /
-  1,069 relocations. All 99 previously accepted affected units remain exact.
-- One existing MIDI Oracle passes 2,109 direct cases / 134 connected checks.
-  Only descriptor backing grows to the complete header; logical cases are
-  unchanged. Native, VC4 and MinGW builds succeed. VC4 reuses 24 current objects
-  and compiles eight remaining inputs. No other owner Oracle ran.
+The [shared file-service batch](../research/exact/EXACT_FILE_SERVICES.md) moves
+the complete binary loader to `src/file.c/file.h`. Sound and MDS now use four
+independently typed Kernel32 cells; three are shared by the MDS opener.
+Windows binds each once. The former sound table retains its device and actual
+allocator callbacks. Source owner/build integration follows the moved entry.
 
-The [previous MIDI ownership recovery](../research/exact/EXACT_MIDI_IMPORTS.md)
-retains all five exact C++ music controls and 22 independently typed imports.
-Stop/callback still have 14/10 local-storage differences; play remains 471/513.
-Keep these candidates without variable-spelling or layout trials.
+- 283 source-present functions; 134 exact functions / 20,887 code bytes.
+- One compile per 24 affected recipes. Complete comparison covers 127 units
+  and 1,312 actual relocations; 124 of 125 affected accepted units remain exact.
+- `draw-effect-sprite` is now candidate: its unchanged body emits a different
+  global/parameter indexing expression, 365 bytes against 361. The previous
+  exact product is retained; do not disguise the current difference.
+- File loading remains 307/304; a longer ReadFile count-output address accounts
+  for three extra bytes. MDS opening remains 480/522. Preserve natural locals.
+- Existing MIDI and sound Oracles pass 2,109/134 and 5,782/48 direct/connected
+  checks. Only native cell bindings change; cases are unchanged. Native, VC4
+  and MinGW builds succeed. VC4 reuses 25 objects and compiles eight others.
 
-## Next family
+The [MDS records batch](../research/exact/EXACT_MDS_PARSER.md) preserves the
+12-byte format, eight-byte block and 64-byte input MIDIHDR. Parser/converter
+parameter cursors, partial event writes and bank cleanup follow the original.
+Conversion remains 343/343 with 38 local-displacement differences; parse is
+788/868. The [music controls](../research/exact/EXACT_MIDI_IMPORTS.md) retain
+five exact C++ bodies. No spelling/layout/compiler-profile trials are useful.
 
-Recover the file-service bindings of `dxball_load_binary_file` at `0x403320`
-and its sound-loading callers. The complete 304-byte dossier is already saved;
-[sound dependency recovery](../research/exact/EXACT_SOUND_DEPENDENCIES.md) records
-its 307-byte emission and the four services still routed through an aggregate
-whose layout differs from the original IAT. Follow actual cells and SDK/default
-bindings, including imports shared with MDS, before adding a complete comparison.
-Reuse existing source/byte evidence and the sound Oracle. Avoid another invented
-aggregate binding or a series of local-storage trials.
+## Next work
 
-The MDS type names are inferred; producer/consumer instructions establish their
-physical records. The remaining open/parse cleanup jumps do not prove SEH syntax.
-Original word/record reads use the supported x86 builds; do not broaden this
-into an arbitrary host-alignment claim.
+Follow remaining file-service consumers in Bitmap and Window code using the
+saved dossiers. Establish actual cells and SDK bindings before replacing their
+callback-table members. Keep the owner's existing Oracle selection bounded.
+Inspect uncovered game entries and complete frame/lifecycle candidates when
+choosing the next family; an exact-function count is not source completeness.
 
-## Private evidence
+## Evidence and tools
 
-The current source epoch is `.analysis/checkpoints/exact-mds-parser-283-135/`,
-parent `exact-midi-imports-283-135`. It retains full inputs, initial and refined
-emissions, prior accepted products, one Oracle and two independent reviews.
-Working receipts live in `.analysis/exact-mds-parser/`.
+Current epoch: `.analysis/checkpoints/exact-file-services-283-134/`, parent
+`exact-mds-parser-283-135`. Full source inputs, previous/current objects,
+comparisons and two reviews are retained there. Working drivers and receipts
+are under `.analysis/exact-file-services/`.
 
-Two REA raw-span queries verified the complete 522/868 bytes, including 25/40
-bytes of internal cleanup jumps excluded from Ghidra's address sets. Full
-responses live in run `2026-10-10T07-53-15.117Z-requests-4133453`. Close saved
-483 cumulative records; all previous 481 were verified retained. Before/after
-compressed full snapshots and expanded identities remain in the source epoch.
+Existing REA dossiers establish all nine file-service callsites and four
+physical IAT cells. This batch opens no provider session and leaves the saved
+snapshot at 483 records. The complete loader dossier is
+`ev_a52bb0030eab7563b8a83f854ffdd76af7e5b0382cd75bda896a04c3efed70a0`;
+the complete MDS opener span is
+`ev_a7b7f4ce05473f020601101338f2392f0e732597eaed9078a2bd13128a77a584`.
 
-REA checkout: `/home/pentester/Project/rea/`; this project uses its pinned
-REA 4.1.0 / Ghidra 12.1.4 through `scripts/rea`. Follow [WORKFLOW.md](WORKFLOW.md)
-for source changes. Keep the public README focused on the REA workflow.
+REA checkout: `/home/pentester/Project/rea/`. Use project `scripts/rea`, pinned
+to REA 4.1.0 / Ghidra 12.1.4; Python uses `scripts/repo-python`. One compiler
+or provider session, one CPU, CMake `--parallel 1`, silent automated audio.
+Keep README concise and put implementation evidence in the owner notes.

@@ -35,3 +35,6 @@ recovered implementation and complete compiler comparison.
 - [Exact projection and text traversal restoration](EXACT_PROJECTIONS_TEXT.md)
 - [Complete game setup, redraw and score controllers](EXACT_RUNTIME_SETUP.md)
 - [Complete splash source restoration](EXACT_SPLASH.md)
+
+[Shared file services](EXACT_FILE_SERVICES.md) connects sound loading and MDS
+to the same four original imports.

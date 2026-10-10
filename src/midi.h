@@ -43,15 +43,11 @@ typedef void (DXBALL_DDCALL *DxBallMidiCallback)(DxBallMidiHandle, DxBallUInt,
    pointers; the real Windows adapter must use the i686 SDK layouts. */
 extern void *(DXBALL_DDCALL *dxball_midi_local_alloc)(DxBallUInt, size_t);
 extern void *(DXBALL_DDCALL *dxball_midi_local_free)(void *);
-extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_file)(const char *, DxBallUInt,
-        DxBallUInt, void *, DxBallUInt, DxBallUInt, DxBallMidiHandle);
-extern DxBallUInt (DXBALL_DDCALL *dxball_midi_file_size)(DxBallMidiHandle, DxBallUInt *);
 extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_mapping)(DxBallMidiHandle,
         void *, DxBallUInt, DxBallUInt, DxBallUInt, const char *);
 extern void *(DXBALL_DDCALL *dxball_midi_map_view)(DxBallMidiHandle, DxBallUInt,
         DxBallUInt, DxBallUInt, size_t);
 extern DxBallInt (DXBALL_DDCALL *dxball_midi_unmap_view)(const void *);
-extern DxBallInt (DXBALL_DDCALL *dxball_midi_close_handle)(DxBallMidiHandle);
 extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_alloc)(DxBallUInt, size_t);
 extern void *(DXBALL_DDCALL *dxball_midi_global_lock)(DxBallMidiHandle);
 extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_handle)(const void *);

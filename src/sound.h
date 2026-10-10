@@ -60,11 +60,6 @@ typedef struct DxBallSound {
    reconstruct the original heap/new-handler implementation. */
 typedef struct DxBallSoundApi {
     DxBallInt (DXBALL_DDCALL *create_device)(void *, DxBallSoundDevice **, void *);
-    DxBallHandle (DXBALL_DDCALL *create_file)(const char *, DxBallUInt, DxBallUInt,
-        void *, DxBallUInt, DxBallUInt, DxBallHandle);
-    DxBallUInt (DXBALL_DDCALL *file_size)(DxBallHandle, DxBallUInt *);
-    DxBallInt (DXBALL_DDCALL *read_file)(DxBallHandle, void *, DxBallUInt, DxBallUInt *, void *);
-    DxBallInt (DXBALL_DDCALL *close_handle)(DxBallHandle);
     void *(*allocate)(size_t);
     void (*deallocate)(void *);
 } DxBallSoundApi;
@@ -73,7 +68,6 @@ extern DxBallSoundApi dxball_sound_api;
 extern DxBallSoundDevice *dxball_sound_device;
 extern DxBallSoundBuffer *dxball_primary_sound;
 extern DxBallSound *dxball_sounds[DXBALL_SOUND_COUNT];
-extern const char dxball_file_fallback_prefix[];
 
 void dxball_prepare_sound(DxBallHandle window);
 void dxball_initialize_sound(DxBallHandle window);
@@ -94,6 +88,5 @@ DxBallInt dxball_parse_wave(const void *file, const void **format,
     const void **data, DxBallUInt *bytes);
 DxBallInt dxball_create_sound_buffer(DxBallSoundDevice *device,
     DxBallSoundBuffer **buffer, const void *format, DxBallUInt bytes);
-void *dxball_load_binary_file(const char *path, void *destination, DxBallInt allocate);
 
 #endif

@@ -75,7 +75,8 @@ regions, restores backgrounds, and presents by flipping or copying regions.
 DirectSound, and WinMM services. [sound.c](../src/sound.c) manages sound buffers;
 [midi.c](../src/midi.c) parses and streams music;
 [music.cpp](../src/music.cpp) owns song loading and playback controls.
-Typed service pointers and the `*Ops`/`*Api` tables let host tools supply
+[file.c](../src/file.c) owns the shared file services and binary loader used
+by sound and MDS. Typed service pointers and the `*Ops`/`*Api` tables let host tools supply
 controlled dependencies.
 
 [CMakeLists.txt](../CMakeLists.txt) builds the shared `dxball_core` library,

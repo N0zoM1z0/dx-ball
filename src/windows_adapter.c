@@ -4,6 +4,7 @@
 #include <string.h>
 #include "windows_adapter.h"
 #include "sound.h"
+#include "file.h"
 #include "midi.h"
 #include "paddle.h"
 #include "raster.h"
@@ -261,13 +262,12 @@ void dxball_bind_windows(void)
     dxball_bitmap_api.create_file = create_file; dxball_bitmap_api.read_file = read_file;
     dxball_bitmap_api.local_alloc = local_alloc; dxball_bitmap_api.local_free = local_free;
     dxball_bitmap_api.close_file = close_handle;
-    dxball_sound_api.create_device = create_sound; dxball_sound_api.create_file = create_file;
-    dxball_sound_api.file_size = file_size; dxball_sound_api.read_file = read_file;
-    dxball_sound_api.close_handle = close_handle;
+    dxball_sound_api.create_device = create_sound;
+    dxball_file_create = create_file; dxball_file_size = file_size;
+    dxball_file_read = read_file; dxball_file_close = close_handle;
     dxball_midi_local_alloc = local_alloc; dxball_midi_local_free = local_free;
-    dxball_midi_create_file = create_file; dxball_midi_file_size = file_size;
     dxball_midi_create_mapping = create_mapping; dxball_midi_map_view = map_view;
-    dxball_midi_unmap_view = unmap_view; dxball_midi_close_handle = close_handle;
+    dxball_midi_unmap_view = unmap_view;
     dxball_midi_global_alloc = global_alloc; dxball_midi_global_lock = global_lock;
     dxball_midi_global_handle = global_handle; dxball_midi_global_unlock = global_unlock;
     dxball_midi_global_free = global_free; dxball_midi_stream_open = stream_open;

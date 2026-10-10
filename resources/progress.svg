@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
 <title id="title">DX-Ball reconstruction progress</title>
-<desc id="desc">283 source-present functions, 135 exact functions, out of 528 provisional candidates.</desc>
+<desc id="desc">283 source-present functions, 134 exact functions, out of 528 provisional candidates.</desc>
 <rect width="900" height="460" rx="20" fill="#101722"/>
 <g font-family="sans-serif">
 <text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  RECONSTRUCTION</text>
 <text x="34" y="75" fill="#9baec8" font-size="14">REA showcase · English v1.07 · Windows 95 · Ghidra + VC4.0</text>
-<text x="34" y="109" fill="#4ed8b7" font-size="16">135 exact functions · 21248 bytes</text>
+<text x="34" y="109" fill="#4ed8b7" font-size="16">134 exact functions · 20887 bytes</text>
 <text x="470" y="109" fill="#f5bd57" font-size="16">283 source-present · 247 scoped semantic</text>
 <rect x="34" y="132" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="59" y="132" width="22" height="10" rx="2" fill="#f5bd57"/>
@@ -119,7 +119,7 @@
 <rect x="284" y="174" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="309" y="174" width="22" height="10" rx="2" fill="#4ed8b7"/>
 <rect x="334" y="174" width="22" height="10" rx="2" fill="#f5bd57"/>
-<rect x="359" y="174" width="22" height="10" rx="2" fill="#4ed8b7"/>
+<rect x="359" y="174" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="384" y="174" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="409" y="174" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="434" y="174" width="22" height="10" rx="2" fill="#f5bd57"/>
