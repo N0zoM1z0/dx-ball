@@ -1,9 +1,12 @@
+#include <stdlib.h>
+#include <string.h>
+
+extern "C" {
 #include "allocator.h"
 #include "midi.h"
 #include "file.h"
 #include "memory.h"
-#include <stdlib.h>
-#include <string.h>
+}
 
 DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_mapping)(DxBallMidiHandle,
         void *, DxBallUInt, DxBallUInt, DxBallUInt, const char *);
@@ -287,7 +290,10 @@ DxBallInt dxball_play_mds(DxBallMdsContext *context, DxBallByte flags)
     current->state &= ~2UL;
     if ((flags & 1) != 0) current->state |= 2;
     current->state &= ~4UL;
-    if (dxball_midi_stream_restart(current->stream) != 0) result = 5;
+    if (dxball_midi_stream_restart(current->stream) != 0) {
+        result = 5;
+        goto done;
+    }
 done:
     if (result != 0 && created != 0 && current->stream != 0)
         dxball_stop_mds(context);

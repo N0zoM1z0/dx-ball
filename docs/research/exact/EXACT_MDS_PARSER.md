@@ -3,7 +3,7 @@
 The file loader, RIFF/MIDS parser and compact-event converter now follow their
 complete original instruction flows. The parser uses a real format record,
 block record and input MIDIHDR. Four authored word/buffer helpers have been
-removed from [`midi.c`](../../../src/midi.c).
+removed from [`midi.cpp`](../../../src/midi.cpp).
 
 | Function | Original address | Emitted / original bytes | Comparison |
 | --- | --- | ---: | --- |

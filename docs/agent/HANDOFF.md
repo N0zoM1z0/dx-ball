@@ -685,6 +685,30 @@ usability suggestions, without measured token/latency claims.
 
 ## Working limits and completeness
 
+Latest source recovery: one shared `src/midi.cpp` replaces the C owner, with
+C linkage and unchanged headers/widths/layouts. Restart error now has the observed
+cleanup goto. One private C++ diagnostic and one production matching compile
+establish automatic generation of all four tail stubs/error exits/skipped jumps.
+The actual/declared project closure is17/17. Release149/pause133 remain exact;
+play516/513 diff169, stop225 diff14, callback127 diff10, parser838/868 diff347,
+converter343 diff38, opener480/522 diff406 remain candidates. Extra play bytes
+include byte-flag promotion; do not change inferred widths/layouts for matching.
+Original language/prototype/source names remain unproven.
+Unchanged Native/original and actual MIDI/music COFF each pass2,109 direct cases
+and134 separate connected checks, all six songs. Thirteen emitted bodies and
+their internal direct calls execute; original code is immutable. Controlled SDK
+callback pointer retains original identity; emitted callback is invoked explicitly.
+No asynchronous delivery/physical audio/live-game claim. Native/MinGW rebuild
+MIDI; VC4 links one matching+34verified unchanged objects/resources/imports.
+All171 exact identities remain verified; no full historical replay. Current
+build/owner paths migrate; old sealed checkpoints preserve their C source epochs.
+See [MIDI lowering](../research/exact/EXACT_MIDI_PLAY_LOWERING.md).
+Private `.analysis/exact-midi-play/`; seal
+`.analysis/checkpoints/midi-play-283-171/sha256.json`.
+REA remains6.3.0, unopened; snapshot20. Entry29 in the same feedback document
+records retained byte/facet sizes, source-language/control-flow and incorrect
+pseudocode-return usability findings, with no new latency/token measurements.
+
 Latest source batch: `src/geometry.c` restores the rectangle fallback's repeated
 `abs` calls, original comparison order and independent nested returns. One VC4
 compile yields 329/329 bytes with 22 local EBP displacement differences; candidate

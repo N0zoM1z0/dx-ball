@@ -1,6 +1,6 @@
 # MIDI streams and music controls
 
-Ten complete routines in [`src/midi.c`](../../../src/midi.c) now follow the
+Ten complete routines in [`src/midi.cpp`](../../../src/midi.cpp) now follow the
 original stream and music-object lifetime. Music resume, pause and restart
 compile exactly with VC4: three functions, 258 code bytes. The total is
 131 exact functions / 20,612 code bytes.

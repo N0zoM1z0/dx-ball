@@ -1,5 +1,13 @@
 # MDS music owner
 
+The [current MIDI lowering recovery](exact/EXACT_MIDI_PLAY_LOWERING.md) uses one
+shared C++ owner with C linkage and restores the final restart error goto.
+The compiler naturally generates the four observed cleanup tail stubs and
+skipped jumps. Play remains516/513bytes with169 full-span differences; release
+and pause remain exact. Current Native/original and actual emitted MIDI/music
+objects pass the same2,109 maintained cases plus134 connected checks. Historical
+epochs below retain their prior source paths, products and scopes.
+
 ## Current allocation defaults
 
 The [MDS loader and converter recovery](exact/EXACT_MDS_PARSER.md) restores
@@ -17,7 +25,7 @@ One existing Oracle
 passes 2,109 direct cases and 134 connected checks. Native, MinGW and VC4 builds
 succeed. Earlier investigations below retain their original evidence epochs.
 
-`src/midi.c` maintains the original RIFF/MIDS reader, compact event expansion,
+`src/midi.cpp` maintains the original RIFF/MIDS reader, compact event expansion,
 stream controller and completion callback. `src/music.cpp` owns five music
 controls. Portable, MinGW i686 and VC4 builds share these implementations.
 The Windows adapter supplies the typed Kernel32/WinMM cells; three file services now share the [file owner](exact/EXACT_FILE_SERVICES.md) with sound loading.

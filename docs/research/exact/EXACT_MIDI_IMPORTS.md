@@ -25,7 +25,7 @@ the former portable MIDI API aggregate.
 
 Each recovered service now has its own pointer definition and unchanged
 stdcall signature in [`midi.h`](../../../src/midi.h) and
-[`midi.c`](../../../src/midi.c). A relocation binds that pointer to one original
+[`midi.cpp`](../../../src/midi.cpp). A relocation binds that pointer to one original
 import cell, with zero addend. The 22 names and targets are consistent across
 all callers. SDK wrappers and their argument conversions remain unchanged.
 
