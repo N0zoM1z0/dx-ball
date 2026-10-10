@@ -2,6 +2,7 @@
 #include "gameplay.h"
 #include "core.h"
 #include "effects.h"
+#include "bonuses.h"
 #include "display.h"
 #include "device.h"
 #include "midi.h"
@@ -30,6 +31,7 @@ static unsigned sounds_release_active, banks_release_active, music_close_active,
 static unsigned pcx_load_active, bank_load_active, capture_active, sound_load_active;
 static unsigned board_bind_active, display_bind_active, centered_text_active;
 static unsigned text_active, keyed_active;
+static unsigned current_time_active, elapsed_active, animate_palette_active, update_score_active, restore_regions_active, draw_paddle_active, last_brick_active, draw_last_brick_active, present_active, restart_round_active, bonus_active;
 
 static void binding_failure(const char *message)
 {
@@ -59,6 +61,28 @@ int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *f
         frame->draw_effect_sprite == dxball_draw_effect_sprite ||
         frame->wait_frames == dxball_wait_frames ||
         effect->keyed_sprite == dxball_draw_keyed_sprite) return -3;
+    if (frame->current_time == NULL ||
+        frame->elapsed == NULL ||
+        frame->animate_palette == NULL ||
+        frame->update_score == NULL ||
+        frame->restore_regions == NULL ||
+        frame->draw_paddle == NULL ||
+        frame->last_brick == NULL ||
+        frame->draw_last_brick == NULL ||
+        frame->present == NULL ||
+        frame->restart_round == NULL ||
+        effect->bonus == NULL) return -2;
+    if (frame->current_time == dxball_current_time ||
+        frame->elapsed == dxball_elapsed ||
+        frame->animate_palette == dxball_animate_palette ||
+        frame->update_score == dxball_refresh_score ||
+        frame->restore_regions == dxball_restore_regions ||
+        frame->draw_paddle == dxball_draw_paddle ||
+        frame->last_brick == dxball_last_brick ||
+        frame->draw_last_brick == dxball_draw_last_brick ||
+        frame->present == dxball_present ||
+        frame->restart_round == dxball_restart_round ||
+        effect->bonus == dxball_generate_bonus) return -3;
     bound_render = render;
     bound_frame = frame;
     bound_effect = effect;
@@ -389,4 +413,129 @@ DxBallInt dxball_random_range(DxBallInt limit)
     result = bound_ops->random_range(limit);
     random_active = 0;
     return result;
+}
+
+DxBallUInt dxball_current_time(void)
+{
+    DxBallUInt result;
+    if (bound_frame == NULL || bound_frame->current_time == NULL)
+        binding_failure("CoreNative current_time: frame table is unbound or callback is null");
+    if (current_time_active || bound_frame->current_time == dxball_current_time)
+        binding_failure("CoreNative current_time: recursive interposer callback");
+    current_time_active = 1;
+    result = bound_frame->current_time();
+    current_time_active = 0;
+    return result;
+}
+
+DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval)
+{
+    DxBallInt result;
+    if (bound_frame == NULL || bound_frame->elapsed == NULL)
+        binding_failure("CoreNative elapsed: frame table is unbound or callback is null");
+    if (elapsed_active || bound_frame->elapsed == dxball_elapsed)
+        binding_failure("CoreNative elapsed: recursive interposer callback");
+    elapsed_active = 1;
+    result = bound_frame->elapsed(start, interval);
+    elapsed_active = 0;
+    return result;
+}
+
+void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt step)
+{
+    if (bound_frame == NULL || bound_frame->animate_palette == NULL)
+        binding_failure("CoreNative animate_palette: frame table is unbound or callback is null");
+    if (animate_palette_active || bound_frame->animate_palette == dxball_animate_palette)
+        binding_failure("CoreNative animate_palette: recursive interposer callback");
+    animate_palette_active = 1;
+    bound_frame->animate_palette(first, last, step);
+    animate_palette_active = 0;
+}
+
+void dxball_refresh_score(void)
+{
+    if (bound_frame == NULL || bound_frame->update_score == NULL)
+        binding_failure("CoreNative refresh_score: frame table is unbound or callback is null");
+    if (update_score_active || bound_frame->update_score == dxball_refresh_score)
+        binding_failure("CoreNative refresh_score: recursive interposer callback");
+    update_score_active = 1;
+    bound_frame->update_score();
+    update_score_active = 0;
+}
+
+void dxball_restore_regions(void)
+{
+    if (bound_frame == NULL || bound_frame->restore_regions == NULL)
+        binding_failure("CoreNative restore_regions: frame table is unbound or callback is null");
+    if (restore_regions_active || bound_frame->restore_regions == dxball_restore_regions)
+        binding_failure("CoreNative restore_regions: recursive interposer callback");
+    restore_regions_active = 1;
+    bound_frame->restore_regions();
+    restore_regions_active = 0;
+}
+
+void dxball_draw_paddle(void)
+{
+    if (bound_frame == NULL || bound_frame->draw_paddle == NULL)
+        binding_failure("CoreNative draw_paddle: frame table is unbound or callback is null");
+    if (draw_paddle_active || bound_frame->draw_paddle == dxball_draw_paddle)
+        binding_failure("CoreNative draw_paddle: recursive interposer callback");
+    draw_paddle_active = 1;
+    bound_frame->draw_paddle();
+    draw_paddle_active = 0;
+}
+
+void dxball_last_brick(void)
+{
+    if (bound_frame == NULL || bound_frame->last_brick == NULL)
+        binding_failure("CoreNative last_brick: frame table is unbound or callback is null");
+    if (last_brick_active || bound_frame->last_brick == dxball_last_brick)
+        binding_failure("CoreNative last_brick: recursive interposer callback");
+    last_brick_active = 1;
+    bound_frame->last_brick();
+    last_brick_active = 0;
+}
+
+void dxball_draw_last_brick(void)
+{
+    if (bound_frame == NULL || bound_frame->draw_last_brick == NULL)
+        binding_failure("CoreNative draw_last_brick: frame table is unbound or callback is null");
+    if (draw_last_brick_active || bound_frame->draw_last_brick == dxball_draw_last_brick)
+        binding_failure("CoreNative draw_last_brick: recursive interposer callback");
+    draw_last_brick_active = 1;
+    bound_frame->draw_last_brick();
+    draw_last_brick_active = 0;
+}
+
+void dxball_present(void)
+{
+    if (bound_frame == NULL || bound_frame->present == NULL)
+        binding_failure("CoreNative present: frame table is unbound or callback is null");
+    if (present_active || bound_frame->present == dxball_present)
+        binding_failure("CoreNative present: recursive interposer callback");
+    present_active = 1;
+    bound_frame->present();
+    present_active = 0;
+}
+
+void dxball_restart_round(void)
+{
+    if (bound_frame == NULL || bound_frame->restart_round == NULL)
+        binding_failure("CoreNative restart_round: frame table is unbound or callback is null");
+    if (restart_round_active || bound_frame->restart_round == dxball_restart_round)
+        binding_failure("CoreNative restart_round: recursive interposer callback");
+    restart_round_active = 1;
+    bound_frame->restart_round();
+    restart_round_active = 0;
+}
+
+void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
+{
+    if (bound_effect == NULL || bound_effect->bonus == NULL)
+        binding_failure("CoreNative generate_bonus: effect table is unbound or callback is null");
+    if (bonus_active || bound_effect->bonus == dxball_generate_bonus)
+        binding_failure("CoreNative generate_bonus: recursive interposer callback");
+    bonus_active = 1;
+    bound_effect->bonus(x, y, dx, dy);
+    bonus_active = 0;
 }

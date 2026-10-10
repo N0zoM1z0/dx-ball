@@ -158,6 +158,17 @@ class _Image:
                       ('dxball_render_ops', 3, 2, 'dxball_invalidate_region'),
                       ('dxball_frame_ops', 12, 6, 'dxball_draw_effect_sprite'),
                       ('dxball_frame_ops', 12, 4, 'dxball_wait_frames'),
+                      ('dxball_frame_ops', 12, 0, 'dxball_current_time'),
+                      ('dxball_frame_ops', 12, 1, 'dxball_elapsed'),
+                      ('dxball_frame_ops', 12, 2, 'dxball_animate_palette'),
+                      ('dxball_frame_ops', 12, 3, 'dxball_refresh_score'),
+                      ('dxball_frame_ops', 12, 5, 'dxball_restore_regions'),
+                      ('dxball_frame_ops', 12, 7, 'dxball_draw_paddle'),
+                      ('dxball_frame_ops', 12, 8, 'dxball_last_brick'),
+                      ('dxball_frame_ops', 12, 9, 'dxball_draw_last_brick'),
+                      ('dxball_frame_ops', 12, 10, 'dxball_present'),
+                      ('dxball_frame_ops', 12, 11, 'dxball_restart_round'),
+                      ('dxball_effect_ops', 5, 1, 'dxball_generate_bonus'),
                       ('dxball_runtime_ops', 15, 0, 'dxball_load_saved_palette'),
                       ('dxball_runtime_ops', 15, 1, 'dxball_palette_transition'),
                       ('dxball_runtime_ops', 15, 2, 'dxball_clear_surface'),
@@ -278,8 +289,8 @@ def bind_render_frame(image, library, render, frame):
         addresses.append(actual)
     result = _shim.dxball_test_bind_render_frame_ops(*addresses)
     if result != 0:
-        reason = {-1: 'null render/frame/effect table', -2: 'null invalidate/effect/wait/keyed callback',
-                  -3: 'invalidate/effect/wait/keyed slot resolves recursively to the interposer'}
+        reason = {-1: 'null render/frame/effect table', -2: 'null render/frame/effect callback',
+                  -3: 'render/frame/effect slot resolves recursively to the interposer'}
         raise RuntimeError('CoreNative render/frame binding rejected: ' + reason.get(result, str(result)))
     image.effect_table = effect
 

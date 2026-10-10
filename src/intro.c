@@ -55,15 +55,6 @@ DxBallInt dxball_wave_y(DxBallInt origin, DxBallInt angle, DxBallInt amplitude)
     return origin;
 }
 
-static void update_intro_cursor(void)
-{
-    dxball_intro_cursor_x = dxball_mouse_x;
-    dxball_intro_cursor_y = dxball_mouse_y;
-    if (dxball_intro_cursor_x > 599) dxball_intro_cursor_x = 599;
-    if (dxball_intro_cursor_x < 8) dxball_intro_cursor_x = 8;
-    if (dxball_intro_cursor_y > 447) dxball_intro_cursor_y = 447;
-}
-
 void dxball_initialize_intro_points(void)
 {
     DxBallInt x, y, i, angle;
@@ -210,11 +201,18 @@ void dxball_redraw_intro(void)
 void dxball_intro_frame(void)
 {
     if (dxball_draw_to_primary != 0) dxball_wait_frames(1);
-    dxball_restore_regions(); update_intro_cursor(); dxball_update_intro_points();
+    dxball_restore_regions();
+    dxball_intro_cursor_x = dxball_mouse_x;
+    dxball_intro_cursor_y = dxball_mouse_y;
+    if (dxball_intro_cursor_x > 599) dxball_intro_cursor_x = 599;
+    if (dxball_intro_cursor_x < 8) dxball_intro_cursor_x = 8;
+    if (dxball_intro_cursor_y > 447) dxball_intro_cursor_y = 447;
+    dxball_update_intro_points();
     if (dxball_draw_to_primary == 0) dxball_present();
     dxball_rotate_palette_right(48, 63, 1);
     if (dxball_mouse_action == 1) { dxball_end_requested = 1; dxball_return_to_menu = 1; dxball_mouse_action = 0; }
     if (dxball_mouse_action == 2) dxball_mouse_action = 0;
+    return;
 }
 void dxball_intro_key(char key)
 {

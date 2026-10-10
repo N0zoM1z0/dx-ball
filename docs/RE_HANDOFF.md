@@ -1,4 +1,41 @@
-# Current handoff — complete splash controllers
+# Current handoff — complete menu and gameplay frames
+
+Priority: **exact restoration, moderate existing tests and grouped replay**.
+The [mode-frame batch](EXACT_MODE_FRAMES.md) restores 242 menu bytes and the
+1,688-byte enclosing game frame. Menu adds 242 whole exact bytes; gameplay
+1692/1688 retains 1,155 differences. All 110 preceding complete identities survive.
+Palette pulse's unchanged C body emits 368/370 with 127 differences; other old
+candidate counts survive. Actual relocations/literals are refreshed before
+native replay is frozen, with no post-replay amendment.
+
+Acceptance: **283 source-present /247 scoped rows /112,273 unit-distinct cases /
+111 exact functions /14,900 code bytes +136 separate metadata bytes**.
+Origins 270 authored /50 runtime /42 generated /166 unknown remain unchanged.
+One 69-input diagnostic batch/two objects, one 22-object cold epoch, one limited
+strict native build; all 22 owner scripts pass in 424.391s with 289
+frozen inputs, plus seven checks. Existing cases/campaigns stay fixed.
+Eleven new typed boundaries bring the shim to 35 real symbols /36 default slots
+and 47 actual dependencies. Prior production wrappers and constructors stay fixed.
+
+Three focused pinned REA queries bind complete gap bytes e90f000000; inspection
+returns undecodable and xrefs empty. Interpreted JMP to the switch exit is
+analyst inference; owned range stays 1683 and all five gap bytes are compared.
+Explicit close/save extends snapshot 468→471 records /0 primitives.
+No body/name/order/layout/capacity trials, inert locals or copied machine code.
+
+Native family/canonical SHA256 59923c0f3fa9159d4595dd744fe7c4f0c4d919e996879a769b6a0925df34b518;
+shim 8f971067c1eb00a3632a011992e0203ea0b49d7668c0d269396aabe66b372769.
+Checkpoint .analysis/checkpoints/exact-mode-frames-283-111, parent splash110.
+One writable compiler/provider, one allowed CPU, JVM512MiB, serial CMake and
+silent Pulse sink. Detailed English gpt-6.1-sol: commits/public push authorized.
+
+Next: inspect remaining coherent gameplay/control source, including genuine ball
+ignition and larger unresolved mode/startup bodies. Point updater711 retains an
+unconsumed request-state question; avoid inert storage. Shared storage views and
+original declaration spelling remain unresolved, without layout trials.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete splash controllers
 
 Priority: **exact restoration, moderate existing tests and grouped replay**.
 The [complete splash batch](EXACT_SPLASH.md) restores eight bodies /3,029 original

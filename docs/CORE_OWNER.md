@@ -1,5 +1,13 @@
 # Main ball physics and gameplay frame
 
+The [complete mode-frame restoration](EXACT_MODE_FRAMES.md) inlines the original
+explosion switch and pending sound phase, two independent speed traversals and
+enlargement into the full game frame. Every real phase call uses its actual typed
+API. Existing 708 frame cases and connected runtime/display cases pass. The full
+1,688-byte enclosing comparison includes the five unowned bytes; the current
+1,692-byte emission retains 1,155 differences and remains nonexact. The provider
+body stays 1,683 bytes; focused gap evidence does not silently expand ownership.
+
 The [connected-effects restoration](EXACT_CONNECTED_EFFECTS.md) restores full
 brick-drop and fire-effect bodies and their by-value rectangle interface.
 Spawn/process match all 185/124 bytes; brick drop remains a complete nonexact

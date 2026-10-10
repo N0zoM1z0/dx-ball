@@ -1,6 +1,25 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **110 exact functions / 14,658
+The current shared-source checkpoint retains **111 exact functions / 14,900
+code bytes**, plus 136 separate exception metadata bytes. The
+[complete mode frames](EXACT_MODE_FRAMES.md) add the whole 242-byte menu frame.
+The restored gameplay frame compares all 1,688 enclosing bytes, including its
+five unowned bytes, against a 1,692-byte emission with 1,155 differences. It is
+not exact. Three genuine shared-storage owner addresses use LEA; unsigned byte
+promotion differs from the original signed load. Pause-return placement and
+equivalent completion comparisons also remain distinct; no layouts or alternate
+body trials force these into agreement. All 110 prior code/metadata identities
+survive one configured 22-object cold epoch.
+
+All existing candidate counts survive except unchanged palette pulse, whose
+current emission is 368/370 with 127 full differences after generated symbol
+identities change. Its actual relocation offsets and all changed-owner literals
+are reconciled before freezing native replay. No source changes follow the sole
+69-input diagnostic batch (two objects). One strict serial native build, all
+22 owner scripts and seven checks pass; eleven correctly typed real boundaries
+extend only the existing harness. Original cases and campaign matrices stay fixed.
+
+The preceding shared-source checkpoint retained **110 exact functions / 14,658
 code bytes**, plus 136 separate exception metadata bytes. The
 [complete splash batch](EXACT_SPLASH.md) restores 3,029 complete original bytes,
 accepting initialization (430 bytes), frame (274), disposal (185) and credits (353).

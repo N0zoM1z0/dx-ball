@@ -1,5 +1,11 @@
 # Menu and splash evidence
 
+The [mode-frame restoration](EXACT_MODE_FRAMES.md) accepts the complete menu
+frame: all 242 bytes, including cursor stores, signed clamps and ordinary exit.
+Existing 32 direct menu-frame cases and connected mode checks pass. The previous
+palette-pulse candidate now emits 368/370 with 127 differences; its C body is
+unchanged, and no source-name or layout trials are performed.
+
 The [complete splash source batch](EXACT_SPLASH.md) restores eight connected
 contiguous bodies / 3,029 bytes. Initialization (430), frame (274), disposal (185) and credits (353)
 match 1,242 bytes. The four remaining candidates retain 23/19/3/17 full differences.

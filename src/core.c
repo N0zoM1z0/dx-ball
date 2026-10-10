@@ -460,29 +460,6 @@ void dxball_fire_projectiles(void)
     return;
 }
 
-/* Recompute velocity without discarding the direction already chosen by a hit.
-   Zero components take the original negative sign; X has the 1.2 scale. */
-static void apply_ball_speed(DxBallInt slow)
-{
-    DxBallBallNode *ball;
-    DxBallInt sign_x, sign_y;
-    if (dxball_begin_balls(&dxball_balls)) {
-        do {
-            ball = dxball_balls.current;
-            sign_x = ball->dx > 0 ? 1 : -1;
-            sign_y = ball->dy > 0 ? 1 : -1;
-            if (slow) ball->speed = 4;
-            else {
-                ball->speed += 2;
-                if (ball->speed > 9) ball->speed = 9;
-            }
-            ball->dx = abs((DxBallInt)((long double)dxball_cosine(ball->angle) * ball->speed * 1.2)) * sign_x;
-            ball->dy = abs((DxBallInt)(-(long double)dxball_sine(ball->angle) * ball->speed)) * sign_y;
-            if (slow && ball->sprite != 61) ball->sprite = 1;
-        } while (dxball_advance_ball(&dxball_balls));
-    }
-}
-
 static void apply_ball_sprite(DxBallInt sprite)
 {
     if (dxball_begin_balls(&dxball_balls)) {
@@ -497,73 +474,134 @@ void dxball_ignite_balls(void)
 
 void dxball_game_frame(void)
 {
+    DxBallInt sound_offset, slow_sign_x, slow_sign_y, fast_sign_x, fast_sign_y;
     if (dxball_paused == 1) {
-        if (dxball_frame_ops.elapsed(dxball_palette_tick, 32)) {
-            dxball_frame_ops.animate_palette(224, 231, 1);
-            dxball_palette_tick = dxball_frame_ops.current_time();
+        if (dxball_elapsed(dxball_palette_tick, 32)) {
+            dxball_animate_palette(224, 231, 1);
+            dxball_palette_tick = dxball_current_time();
         }
-        return;
+    } else {
+        dxball_attached_ball_cue = 0;
+        dxball_refresh_score();
+        dxball_update_paddle_position();
+        dxball_update_balls();
+        dxball_update_projectiles();
+        dxball_update_bonuses();
+        dxball_update_particles();
+        if (dxball_draw_to_primary != 0) dxball_wait_frames(1);
+        dxball_restore_regions();
+        dxball_paddle_previous_x = dxball_paddle_x;
+        dxball_paddle_previous_y = dxball_paddle_y;
+        dxball_process_brick_effects();
+        if (dxball_begin_projectiles(&dxball_projectiles)) {
+            do {
+                dxball_draw_effect_sprite(32, dxball_projectiles.current->x, dxball_projectiles.current->y);
+            } while (dxball_advance_projectile(&dxball_projectiles));
+        }
+        dxball_process_fire_effects();
+        dxball_draw_paddle();
+        if (dxball_begin_balls(&dxball_balls)) {
+            do {
+                dxball_draw_effect_sprite(dxball_balls.current->sprite, dxball_balls.current->x, dxball_balls.current->y);
+            } while (dxball_advance_ball(&dxball_balls));
+        }
+        dxball_draw_bonuses();
+        dxball_draw_particles();
+        if (dxball_remaining_bricks == 1) dxball_last_brick();
+        else if (dxball_remaining_bricks > 1 && dxball_last_brick_deadline != 0) {
+            dxball_last_brick_deadline = 0;
+            dxball_stop_sound(21);
+        }
+        dxball_draw_last_brick();
+        if (dxball_draw_to_primary == 0) dxball_present();
+        if (dxball_elapsed(dxball_palette_tick, 20)) {
+            dxball_animate_palette(224, 231, 1);
+            dxball_palette_tick = dxball_current_time();
+        }
+        if (dxball_begin_explosions(&dxball_explosions)) {
+            do {
+                switch (dxball_explosions.current->kind) {
+                    case 1:
+                        if (dxball_board_aux[dxball_explosions.current->x +
+                                dxball_explosions.current->y * DXBALL_BOARD_WIDTH] == 0) {
+                            dxball_spawn_explosion_effect(dxball_explosions.current->x,
+                                dxball_explosions.current->y);
+                            dxball_score += 4;
+                            dxball_generate_bonus(dxball_explosions.current->x,
+                                dxball_explosions.current->y, dxball_random_range(5) - 2, -2);
+                        }
+                        break;
+                }
+                dxball_remove_explosion(&dxball_explosions);
+            } while (dxball_advance_explosion(&dxball_explosions));
+        }
+        if (dxball_explosion_pending == 1) {
+            sound_offset = dxball_random_range(3);
+            dxball_stop_sound(sound_offset + 30);
+            dxball_play_sound(sound_offset + 30, 0, 0, 0);
+            dxball_explosion_pending = 0;
+        }
+        if (dxball_bonus_3_active == 1) {
+            if (dxball_begin_balls(&dxball_balls)) {
+                do {
+                    if (dxball_balls.current->dx > 0) slow_sign_x = 1;
+                    else slow_sign_x = -1;
+                    if (dxball_balls.current->dy > 0) slow_sign_y = 1;
+                    else slow_sign_y = -1;
+                    dxball_balls.current->speed = 4;
+                    dxball_balls.current->dx = (DxBallInt)((long double)dxball_cosine(
+                        dxball_balls.current->angle) * dxball_balls.current->speed * 1.2);
+                    dxball_balls.current->dy = (DxBallInt)(-((long double)dxball_sine(
+                        dxball_balls.current->angle) * dxball_balls.current->speed));
+                    dxball_balls.current->dx = abs(dxball_balls.current->dx) * slow_sign_x;
+                    dxball_balls.current->dy = abs(dxball_balls.current->dy) * slow_sign_y;
+                    if (dxball_balls.current->sprite != 61) dxball_balls.current->sprite = 1;
+                } while (dxball_advance_ball(&dxball_balls));
+            }
+            dxball_bonus_3_active = 0;
+        }
+        if (dxball_bonus_14_active == 1) {
+            if (dxball_begin_balls(&dxball_balls)) {
+                do {
+                    if (dxball_balls.current->dx > 0) fast_sign_x = 1;
+                    else fast_sign_x = -1;
+                    if (dxball_balls.current->dy > 0) fast_sign_y = 1;
+                    else fast_sign_y = -1;
+                    dxball_balls.current->speed += 2;
+                    if (dxball_balls.current->speed > 9) dxball_balls.current->speed = 9;
+                    dxball_balls.current->dx = (DxBallInt)((long double)dxball_cosine(
+                        dxball_balls.current->angle) * dxball_balls.current->speed * 1.2);
+                    dxball_balls.current->dy = (DxBallInt)(-((long double)dxball_sine(
+                        dxball_balls.current->angle) * dxball_balls.current->speed));
+                    dxball_balls.current->dx = abs(dxball_balls.current->dx) * fast_sign_x;
+                    dxball_balls.current->dy = abs(dxball_balls.current->dy) * fast_sign_y;
+                } while (dxball_advance_ball(&dxball_balls));
+            }
+            dxball_bonus_14_active = 0;
+        }
+        if (dxball_bonus_18_active == 1) {
+            if (dxball_begin_balls(&dxball_balls)) {
+                do {
+                    dxball_balls.current->sprite = 55;
+                } while (dxball_advance_ball(&dxball_balls));
+            }
+            dxball_bonus_18_active = 0;
+        }
+        if (dxball_bonus_12_active == 1) {
+            dxball_clone_balls(); dxball_bonus_12_active = 0;
+        }
+        if (dxball_bonus_7_active == 1) {
+            dxball_ignite_balls(); dxball_bonus_7_active = 0;
+        }
+        if (dxball_remaining_bricks < 1 && !dxball_begin_brick_effects(&dxball_brick_effects)
+            && !dxball_begin_fire_effects(&dxball_fire_effects)) dxball_advance_level();
+        dxball_restart_round();
+        if (dxball_mouse_action == 1) {
+            dxball_launch_requested = 1;
+            if (dxball_bonus_8_active == 1 && dxball_projectile_count < 6) dxball_fire_projectiles();
+            dxball_mouse_action = 0;
+        } else dxball_launch_requested = 0;
+        if (dxball_mouse_action == 2) dxball_mouse_action = 0;
     }
-    dxball_attached_ball_cue = 0;
-    dxball_frame_ops.update_score();
-    dxball_update_paddle_position();
-    dxball_update_balls();
-    dxball_update_projectiles();
-    dxball_update_bonuses();
-    dxball_update_particles();
-    if (dxball_draw_to_primary != 0) dxball_frame_ops.wait_frames(1);
-    dxball_frame_ops.restore_regions();
-    dxball_paddle_previous_x = dxball_paddle_x;
-    dxball_paddle_previous_y = dxball_paddle_y;
-    dxball_process_brick_effects();
-    if (dxball_begin_projectiles(&dxball_projectiles)) {
-        do {
-            dxball_frame_ops.draw_effect_sprite(32, dxball_projectiles.current->x, dxball_projectiles.current->y);
-        } while (dxball_advance_projectile(&dxball_projectiles));
-    }
-    dxball_process_fire_effects();
-    dxball_frame_ops.draw_paddle();
-    if (dxball_begin_balls(&dxball_balls)) {
-        do {
-            dxball_frame_ops.draw_effect_sprite(dxball_balls.current->sprite, dxball_balls.current->x, dxball_balls.current->y);
-        } while (dxball_advance_ball(&dxball_balls));
-    }
-    dxball_draw_bonuses();
-    dxball_draw_particles();
-    if (dxball_remaining_bricks == 1) dxball_frame_ops.last_brick();
-    else if (dxball_remaining_bricks > 1 && dxball_last_brick_deadline != 0) {
-        dxball_last_brick_deadline = 0;
-        dxball_gameplay_ops.stop_sound(21);
-    }
-    dxball_frame_ops.draw_last_brick();
-    if (dxball_draw_to_primary == 0) dxball_frame_ops.present();
-    if (dxball_frame_ops.elapsed(dxball_palette_tick, 20)) {
-        dxball_frame_ops.animate_palette(224, 231, 1);
-        dxball_palette_tick = dxball_frame_ops.current_time();
-    }
-    dxball_apply_explosion_requests();
-    if (dxball_bonus_3_active == 1) {
-        apply_ball_speed(1); dxball_bonus_3_active = 0;
-    }
-    if (dxball_bonus_14_active == 1) {
-        apply_ball_speed(0); dxball_bonus_14_active = 0;
-    }
-    if (dxball_bonus_18_active == 1) {
-        apply_ball_sprite(55); dxball_bonus_18_active = 0;
-    }
-    if (dxball_bonus_12_active == 1) {
-        dxball_clone_balls(); dxball_bonus_12_active = 0;
-    }
-    if (dxball_bonus_7_active == 1) {
-        dxball_ignite_balls(); dxball_bonus_7_active = 0;
-    }
-    if (dxball_remaining_bricks < 1 && !dxball_begin_brick_effects(&dxball_brick_effects)
-        && !dxball_begin_fire_effects(&dxball_fire_effects)) dxball_advance_level();
-    dxball_frame_ops.restart_round();
-    if (dxball_mouse_action == 1) {
-        dxball_launch_requested = 1;
-        if (dxball_bonus_8_active == 1 && dxball_projectile_count < 6) dxball_fire_projectiles();
-        dxball_mouse_action = 0;
-    } else dxball_launch_requested = 0;
-    if (dxball_mouse_action == 2) dxball_mouse_action = 0;
+    return;
 }
