@@ -1,6 +1,7 @@
 #include "startup.h"
 #include "platform.h"
 #include "round.h"
+#include "clock_api.h"
 #include <stdlib.h>
 #include <string.h>
 #if defined(_WIN32)
@@ -82,12 +83,16 @@ void dxball_read_scores(void)
 
 void dxball_seed_random(void)
 {
-    dxball_random_ops.seed(dxball_clock_ops.time_ms() % 300);
+    DxBallUInt seed;
+    seed = dxball_time_get_time() % 300;
+    srand(seed);
+    return;
 }
 
 DxBallInt dxball_random_range(DxBallInt limit)
 {
-    return dxball_random_ops.next() % limit;
+    limit = rand() % limit;
+    return limit;
 }
 
 void dxball_release_sprite_banks(void)

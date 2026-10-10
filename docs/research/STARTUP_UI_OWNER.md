@@ -15,6 +15,21 @@ Public headers depend only on the shared board types; platform and device
 interfaces remain implementation dependencies. The Windows game is integrated;
 recorded play runs are in [the original-board campaign](ORIGINAL_CAMPAIGN.md).
 
+## Exact RNG helpers
+
+The [RNG checkpoint](exact/EXACT_STARTUP_RNG.md) restores genuine direct
+`rand/srand` calls and the independent `timeGetTime` import. Range and seed now
+match all31/49 bytes and all three actual relocations. The original signed
+range remainder, unsigned modulo300 seed and actual storage consumers are
+preserved. One startup compile verifies all five affected exact units and
+sixteen recursive inputs; device initialization retains ten differences.
+The unchanged158 startup cases plus one connected dispatch check pass against
+the current Native library. The copied-image fixture binds actual CRT import
+slots without process-wide interposition. Native/MinGW builds and the35-object
+VC4 relink pass; no further legacy source compilation or live game replay.
+Exact totals are173 functions /30,824 code bytes plus136 metadata bytes.
+Earlier checkpoints below retain their own scopes, products and counts.
+
 ## Current text and line source recovery
 
 Measurement at `0x404FD0` now restores the local glyph-search loop present in
@@ -140,7 +155,8 @@ source ownership, widths and call sites were reviewed independently.
 ## Startup behavior
 
 `src/startup.c` owns fifteen 44-byte score records (40-byte name plus unsigned
-32-bit score), the default board filename and replaceable CRT file/RNG calls.
+32-bit score), the default board filename and direct CRT file/RNG calls. Controlled native
+fixtures bind those actual imports only inside their copied library image.
 Initialization clears each leading name byte, appends its message and assigns scores 150
 through 10. Bytes after the terminating name remain untouched. Only
 `access("score.dat", 0) == -1` attempts to create the default file; other results

@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 171 exact functions / 30,744 full-span bytes and
+- 283 source-present entries; 173 exact functions / 30,824 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -796,6 +796,26 @@ canonical legacy/new Evidence shapes and compact storage/anchor-view suggestions
 Private .analysis/crt-data-frontier/; seal
 .analysis/checkpoints/crt-data-definitions-283-171/sha256.json. See
 [complete CRT storage](../research/CRT_DATA_DEFINITIONS.md).
+
+Latest game-source checkpoint: startup RNG helpers now restore direct CRT
+rand/srand calls, signed range remainder and the independent unsigned timeGetTime
+seed modulo300. Both complete31/49-byte spans and three relocations match.
+One startup compile preserves all three prior startup exacts, including all
+literals after emitted-label refresh;16 actual recursive inputs equal the recipe.
+The initial stale-label comparison failure is retained, then corrected against
+actual emitted literal contents without recompilation. Device initialization
+remains359 bytes/10 differences. Exact totals173 /30,824 code bytes /136 metadata;
+source283 and scoped semantic247 unchanged. Current Native/original158 existing
+startup cases plus one connected dispatch check pass with actual copied-image
+RNG import bindings. Native/MinGW builds pass; VC4 reuses one matching object
+plus34 unchanged objects/resources/imports, no extra source compile. All173
+current receipts have valid object/input identities. Other semantic scopes/counts
+remain historical after input refresh; no new live game or full replay.
+Private .analysis/startup-rng-recovery/; seal
+.analysis/checkpoints/startup-rng-283-173/sha256.json. See
+[exact startup RNG](../research/exact/EXACT_STARTUP_RNG.md).
+REA remains6.3.0; retained dossiers reused, no new provider session. Feedback33
+is appended only to the same existing /tmp document.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider

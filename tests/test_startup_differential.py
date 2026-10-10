@@ -79,6 +79,8 @@ class StartupNative(FileBoundaries,DeviceNative):
         table=(C.c_void_p*2).in_dll(self.lib,'dxball_random_ops')
         bind(table,0,None,[C.c_uint32],self.random_seed)
         bind(table,1,C.c_int32,[],self.random_next)
+        self.random_imports = bind_imports(self.core_native_image, self.lib.dxball_seed_random,
+            {'srand':table[0], 'rand':table[1]})
         bind((C.c_void_p*1).in_dll(self.lib,'dxball_startup_load_boards'),0,None,[C.c_void_p],self.load_boards)
         bind(self.ddraw_table,6,C.c_int32,[C.c_void_p]*4,self.create_background)
         bind((C.c_void_p*1).in_dll(self.lib,'dxball_process_exit_backend'),0,None,[C.c_int32],self.terminate)
