@@ -3,6 +3,8 @@
 The [device-frame restoration](exact/DEVICE_FRAME.md) now makes synchronization
 and recovery exact, preserving live surface reads and the original HRESULT
 writes. That note records the current affected checks and compiler receipts.
+The [dependency restoration](exact/DEVICE_DEPENDENCIES.md) also makes the
+89-byte fill exact and restores the bank scan's live reads and direct reload.
 
 REA's gameplay initialization and presentation callers lead to the palette
 transition controller at `0x40A340` and recovery at `0x403640`. The maintained
@@ -47,8 +49,8 @@ palette to the primary surface; the attachment result is ignored.
 
 Color fill requests a 640 by 480 rectangle and Blt flag `0x400`, passing a
 100-byte DDBLTFX with the requested color at offset 80. The original specifies
-only the size and color fields. Source zeroes the remaining unspecified fields;
-acceptance compares the declared fields rather than original stack garbage.
+only the size and color fields. Source now writes those two fields in the
+original order; acceptance compares the defined fields.
 The Blt result is ignored. No independent pixel fill or driver claim is made.
 
 Recovery restores primary surface `0x4228B4` first and game working surface

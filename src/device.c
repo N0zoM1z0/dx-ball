@@ -104,28 +104,33 @@ void dxball_initialize_palette(void)
 void dxball_clear_surface(DxBallSurface surface, DxBallInt color)
 {
     DxBallColorFillFx fill;
-    DxBallRect rect = {0, 0, 640, 480};
-    DxBallDDSurface *destination = (DxBallDDSurface *)surface;
-    memset(&fill, 0, sizeof(fill));
+    DxBallRect rect;
     fill.size = 100;
     fill.fill_color = (DxBallUInt)color;
-    destination->vtable->blt(destination, &rect, NULL, NULL, 0x400, &fill);
+    rect.top = 0;
+    rect.bottom = 480;
+    rect.left = 0;
+    rect.right = 640;
+    ((DxBallDDSurface *)surface)->vtable->blt((DxBallDDSurface *)surface,
+        &rect, NULL, NULL, 0x400, &fill);
+    return;
 }
 
 void dxball_restore_sprite_banks(void)
 {
     DxBallInt bank, slot;
-    DxBallSprite *sprite;
     for (bank = 0; bank < 3; ++bank) {
         if (dxball_sprite_banks[bank].allocation_mode == 1) {
             for (slot = 0; slot < 255; ++slot) {
-                sprite = dxball_sprite_banks[bank].sprites[slot];
-                if (sprite != NULL && sprite->surface != NULL)
-                    sprite->surface->vtable->restore(sprite->surface);
+                if (dxball_sprite_banks[bank].sprites[slot] != NULL &&
+                    dxball_sprite_banks[bank].sprites[slot]->surface != NULL)
+                    dxball_sprite_banks[bank].sprites[slot]->surface->vtable->restore(
+                        dxball_sprite_banks[bank].sprites[slot]->surface);
             }
-            dxball_runtime_ops.load_sprite_bank(bank, 1, dxball_sprite_banks[bank].filename);
+            dxball_load_sprite_bank(bank, 1, dxball_sprite_banks[bank].filename);
         }
     }
+    return;
 }
 
 void dxball_recover_surfaces(void)

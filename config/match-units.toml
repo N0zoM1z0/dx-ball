@@ -5942,3 +5942,28 @@ relocations = [
   { offset = 51, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
   { offset = 62, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
 ]
+
+[units.clear-surface]
+build = "device"
+symbol = "_dxball_clear_surface"
+target_address = 0x409f10
+size = 89
+boundary_evidence = "docs/research/exact/DEVICE_DEPENDENCIES.md"
+relocations = [
+]
+
+[candidates.restore-sprite-banks]
+build = "device"
+symbol = "_dxball_restore_sprite_banks"
+target_address = 0x403d30
+size = 282
+boundary_evidence = "docs/research/exact/DEVICE_DEPENDENCIES.md"
+relocations = [
+  { offset = 50, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1024, target = 0x425980 },
+  { offset = 111, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+  { offset = 144, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+  { offset = 179, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+  { offset = 208, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+  { offset = 240, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+  { offset = 257, type = "REL32", symbol = "_dxball_load_sprite_bank", addend = 0, target = 0x404610 },
+]

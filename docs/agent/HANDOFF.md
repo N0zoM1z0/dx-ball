@@ -7,51 +7,54 @@ short, with its title PNG and progress SVG.
 
 ## Current checkpoint
 
-The [device-frame restoration](../research/exact/DEVICE_FRAME.md) connects the
-exact dispatcher to original device/reset behavior. Surface synchronization
-`0x4035B0` (134 bytes), recovery `0x403640` (97) and background cleanup
-`0x403BD0` (80) are exact on their first stable compilation. Initialization
-`0x403A00` now restores all original calls and descriptor stores; its complete
-359/359-byte candidate has ten remaining differences: nine descriptor/index
-stack displacements and one failure-branch epilogue target.
+The [device dependencies](../research/exact/DEVICE_DEPENDENCIES.md) now follow the
+restored initialization/recovery path into its original surface-fill and bank
+reload calls. Fill `0x409F10` is exact across all 89 bytes on the first stable
+compilation. Bank recovery `0x403D30` rereads live sprite/surface owners and calls
+`load_sprite_bank` directly; its whole 279/282-byte candidate has 80 counted
+byte differences. Original unused Restore-result storage remains unresolved;
+no inert local was added to force it.
 
-- 283 source-present functions; 146 exact / 23,401 code bytes and 136 metadata
+- 283 source-present functions; 147 exact / 23,490 code bytes and 136 metadata
   bytes. Whole-source >=95% completion remains unproven.
-- The genuine background owner is now a COM pointer. Seven explicit casts
-  bridge existing integer-handle APIs. All 27 affected recipes compiled once;
-  all 135 affected prior exact units survived. The full batch compares 141
-  units with 1,642 actual relocations, including the four new complete units
-  and two current platform candidates.
-- One typed native board-loader forward uses the existing actual callback
-  slot and copied-image real default. Startup's termination callback binds
-  the existing process-exit backend. Case bodies remain unchanged.
-- Only the affected existing loops ran: 392 direct cases and 21 connected
-  checks, each selected owner once. Other owner rows retain historical scope
-  after input-hash refresh.
-- Native, VC4 and MinGW builds pass. VC4 reuses 26 valid objects and compiles
-  nine remaining game sources. Saved REA dossiers cover all 670 bytes,
-  170 instructions, 15 direct calls and six COM sites; snapshot495 unchanged.
-  No provider session or new binary query was needed.
+- Only the device recipe compiled, once. All three prior exact device bodies
+  and their relocations are unchanged: palette206, synchronization134 and
+  recovery97. Five full comparisons account for 35 actual relocations.
+- No header, fixture or case-body changes. Existing typed RuntimeOps slot5
+  forwarding covers the restored direct bank-loader call.
+- Four existing device loops ran once: 145 direct cases and eight connected
+  lost-surface presentations. Other owner rows retain historical scope after
+  input-hash refresh. The selector initially stopped before fixture creation
+  because the fill loop uses its full symbol name; both driver versions remain.
+- Native4, MinGW5 build steps pass. VC4 reuses35 valid game objects and compiles
+  no remaining sources. Saved REA dossiers cover577 contiguous bytes and170
+  instructions, including the unchanged palette. Snapshot495 remains unchanged;
+  no provider session or new query was needed.
 
-Full drivers/receipts: `.analysis/exact-device-frame/`; saved proposal:
-`.analysis/device-frame-next-review/`. Checkpoint:
-`.analysis/checkpoints/exact-device-frame-283-146/`, parent `exact-main-mode-283-143`.
-Bounded independent audit: `.analysis/device-frame-flow-review/`.
-Main frame228, mode controllers416, editor-frame908, clock83 and key dispatch162
-remain exact. Game-key836/831 and WindowProc1166/1171 remain complete candidates.
+Full drivers/receipts: `.analysis/exact-device-dependencies/`; proposal:
+`.analysis/device-dependencies-next-review/`. Checkpoint:
+`.analysis/checkpoints/exact-device-dependencies-283-147/`, parent `exact-device-frame-283-146`.
+Independent audit: `.analysis/device-dependencies-flow-review/final-review.json`.
+Main frame228, mode controllers416, editor-frame908, clock83, key dispatch162
+and background cleanup80 remain exact. Device initialization359/359diff10,
+game-key836/831diff522 and WindowProc1166/1171diff1006 remain complete candidates.
 
 ## Next work
 
-Follow the palette and sprite dependencies called by the restored device path.
-Preserve the already exact initialize_palette206 body. Investigate clear_surface
-`0x409F10` (89) and restore_sprite_banks `0x403D30` (282) from their saved complete
-REA dossiers; a bounded proposal is under `.analysis/device-dependencies-next-review/`.
-Clear-surface still adds a memset and caches its COM destination. Sprite
-recovery still caches a sprite and reloads via authored RuntimeOps instead of
-the original direct load_sprite_bank API. The observed unconsumed Restore
-result store is unresolved source-local versus compiler-spill evidence; avoid
-adding a fake local. Do not run declaration/name/layout or compiler-profile
-trials to force initialization's ten residual bytes.
+Follow initialization into `initialize_scores` at `0x406EE0` (723 bytes).
+Its saved complete REA dossier shows fifteen explicit name-clear/strcat/score
+phases and original direct CRT file calls; current source factors the names
+through a strcpy loop and callback operations. A bounded inventory/proposal is
+under `.analysis/remaining-game-source-next-review/`. Establish full string
+identity and authentic CRT/fixture boundaries before one stable compilation.
+Avoid global libc interposition and guessed helper relocation targets.
+
+The source-origin inventory is useful triage, not a completion denominator.
+It identifies maintained source for270 confirmed authored entries; the remaining
+origin-unknown entries still need evidence rather than an automatic CRT label.
+Function totals alone do not establish95% original readable source restoration.
+Do not run declaration/name/layout or compiler-profile trials for existing
+candidates; proceed through substantive complete game flows.
 
 REA checkout: `/home/pentester/Project/rea/`. New binary questions use
 `scripts/rea`, pinned to REA4.1.0/Ghidra12.1.4; retain full responses/Evidence IDs
