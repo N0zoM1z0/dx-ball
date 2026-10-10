@@ -7,6 +7,7 @@
 #include "ui.h"
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #if defined(_WIN32)
 #include <io.h>
@@ -61,20 +62,25 @@ DxBallInt dxball_insert_high_score(const char *name, DxBallUInt score)
 
 void dxball_draw_high_scores(void)
 {
-    DxBallInt i, y = 170, count;
+    DxBallInt y, i, x = 10;
     char value[20];
-    for (i = 0; i < 15; ++i, y += 20) {
-        if (dxball_selected_score_index == i) {
+    DxBallInt count;
+    y = 170;
+    for (i = 0; i <= 14; ++i) {
+        if (i == dxball_selected_score_index) {
             dxball_draw_line(dxball_active_surface, 5, y - 14, 635, y - 14, 200);
             dxball_draw_line(dxball_active_surface, 5, y + 5, 635, y + 5, 200);
             dxball_draw_line(dxball_active_surface, 5, y - 14, 5, y + 4, 200);
             dxball_draw_line(dxball_active_surface, 635, y - 14, 635, y + 4, 200);
         }
-        dxball_draw_text(10, y, (DxBallInt)strlen(dxball_scores[i].name), dxball_scores[i].name);
-        sprintf(value, "%u", dxball_scores[i].score);
+        count = (DxBallInt)strlen(dxball_scores[i].name);
+        dxball_draw_text(x, y, count, dxball_scores[i].name);
+        _ultoa((unsigned long)dxball_scores[i].score, value, 10);
         count = (DxBallInt)strlen(value);
         dxball_draw_text(630 - dxball_measure_text(count, value), y, count, value);
+        y += 20;
     }
+    return;
 }
 
 void dxball_initialize_game_over(void)
@@ -170,24 +176,36 @@ void dxball_edit_score_name(char key)
     if (key == '\r') {
         dxball_selected_score_index = dxball_insert_high_score(dxball_score_name, (DxBallUInt)dxball_score);
         dxball_entering_score_name = 0;
-        dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
+        dxball_palette_transition(1, 6, 0, 255, 0);
         dxball_show_high_scores = 1;
-        dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "highscor.pcx", 2, 0, 0);
-        dxball_redraw_mode(); dxball_runtime_ops.palette_transition(1, 6, 0, 255, 1);
+        dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "highscor.pcx", 2, 0, 0);
+        dxball_redraw_mode(); dxball_palette_transition(1, 6, 0, 255, 1);
     }
-    if (key == '\b' && dxball_score_name_length > 0)
-        dxball_score_name[--dxball_score_name_length] = 0;
-    if (key == ' ' || (key >= '0' && key <= '9') || (key >= 'A' && key <= 'Z')) {
-        if (key >= 'A' && key <= 'Z') {
-            key = (char)tolower(key);
-            if (dxball_shift_pressed == 1) key = (char)toupper(key);
-        }
-        if (dxball_score_name_length < 30) {
+    if (key == '\b' && dxball_score_name_length > 0) {
+        --dxball_score_name_length;
+        dxball_score_name[dxball_score_name_length] = 0;
+    }
+    if (key == ' ' || (key >= '0' && key <= '9')) {
+        if (dxball_score_name_length >= 30) {
+            dxball_wait_frames(1);
+        } else {
             dxball_score_name[dxball_score_name_length] = key;
             dxball_score_name[dxball_score_name_length + 1] = 0;
             ++dxball_score_name_length;
-        } else dxball_wait_frames(1);
+        }
     }
+    if (key >= 'A' && key <= 'Z') {
+        key = (char)tolower(key);
+        if (dxball_shift_pressed == 1) key = (char)toupper(key);
+        if (dxball_score_name_length >= 30) {
+            dxball_wait_frames(1);
+        } else {
+            dxball_score_name[dxball_score_name_length] = key;
+            dxball_score_name[dxball_score_name_length + 1] = 0;
+            ++dxball_score_name_length;
+        }
+    }
+    return;
 }
 void dxball_game_over_key(char key)
 {

@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 149 exact functions / 24,307 code bytes and
+- 283 source-present entries; 150 exact functions / 24,728 code bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -25,9 +25,10 @@ are declared in `config/match-units.toml`.
 - Initialization used one startup recipe compilation. The following persistence
   batch used one startup compilation and four game-over compilations to recover
   loop structure and bound the remaining comparison-emission difference.
-- Final current-library checks: 158 existing startup cases + one connected
-  dispatch check; 6,531 game-over cases +76 connected checks. No cases were added.
-  Intermediate-source checks are retained separately, not counted as new cases.
+- Persistence-batch checks: 158 existing startup cases + one connected
+  dispatch check; 6,531 game-over cases +76 connected checks. The subsequent
+  interface batch checks only the affected game-over owner against its final
+  library. No cases were added; earlier checks retain their own product hashes.
 - The native fixture binds only copied-image ELF import slots to the existing
   typed stdio callbacks. No process-wide libc symbols are interposed.
 - Actual canonical libc creation, existing-file gating, accepted/rejected
@@ -38,8 +39,9 @@ are declared in `config/match-units.toml`.
   identity refresh; these are not newly rerun suites.
 
 Private receipts: `.analysis/exact-score-initialization/` and
-`.analysis/exact-score-reading/`. The first batch is committed as `177de9d`;
-the following local checkpoint contains score reading and insertion recovery.
+`.analysis/exact-score-reading/`, plus `.analysis/exact-ranking-interface/`.
+Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
+checkpoint adds exact name editing and restores ranking formatting.
 See [startup evidence](../research/STARTUP_UI_OWNER.md).
 
 ## REA upgrade
@@ -83,12 +85,25 @@ keeps `while (i >= rank)`. Do not perform declaration/name/layout or padding
 trials to force this comparison. Candidate receipts retain the actual objects,
 inputs, full differences and intermediate checks.
 
-Follow the score lifetime into name editing (`0x4071C0`, 421 bytes) and ranking
-drawing (`0x406B20`, 404 bytes), reusing their complete 2026-10-07 13-44 dossiers.
-Inspect actual control flow, state writes and real shared API boundaries before
-compiling a coherent family. The current `gameover` recipe and typed image-local
-stdio fixture are available. Keep the three-byte insertion gap explicit until
-independent evidence resolves its original compiler expression.
+Name editing at `0x4071C0` is now exact across 421 bytes and 33 relocations,
+using its original independent character branches and genuine shared palette/PCX
+calls. Two game-over compilations were used for this interface batch; the second
+adds the standard MinGW `_ultoa` declaration and the observed equality operand
+order. No additional REA query was needed.
+
+Ranking drawing at `0x406B20` restores `_ultoa`, stored lengths, meaningful X
+coordinate and row updates, but remains a 403/404-byte candidate. Different
+local storage and a one-byte-shorter comparison produce 335 differences in the
+unaligned full-span comparison. No declaration/layout/name/padding trials were
+used. Do not describe this as exact or tune those layouts to force a match.
+
+Continue the coherent game-over initialization, redraw, frame and resource
+lifetime family at `0x406440`, `0x406590`, `0x406730` and `0x407370`, reusing their
+closed 2026-10-07 13-44 dossiers. These bodies still contain callback/factored
+boundaries whose actual direct calls and complete branches need recovery.
+Use the current game-over recipe and existing typed fixtures. Keep both the
+insertion and ranking-drawing gaps explicit until independent evidence resolves
+original source expressions/storage.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
@@ -102,7 +117,9 @@ English document `/tmp/dxball_rea_feedback_20261010.md`. Do not create another
 feedback document. Current observations include approximately 54-55 second
 cold byte reads, a 150,222-byte MCP response for a 77-byte function, a
 4,795,431-byte catalog for 139 tools, generic legacy-snapshot rejection, and
-response-field/lifecycle migration issues. Measurements and suggestions are
+response-field/lifecycle migration issues. Entry 8 records how projecting old
+function dossiers to pseudocode/assembly avoided new provider calls and reduced
+the required view from 0.6/0.98 MB to approximately 5/4.6 KB. Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Nothing has been sent externally.
 

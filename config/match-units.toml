@@ -6792,7 +6792,7 @@ target = 0x004266A8
 [[candidates.insert-high-score.relocations]]
 offset = 332
 type = "DIR32"
-symbol = "$SG1065"
+symbol = "$SG1163"
 addend = 0
 target = 0x0042149C
 data_hex = "73636f72652e64617400"
@@ -6807,7 +6807,7 @@ target = 0x00417FF0
 [[candidates.insert-high-score.relocations]]
 offset = 353
 type = "DIR32"
-symbol = "$SG1066"
+symbol = "$SG1164"
 addend = 0
 target = 0x004214A8
 data_hex = "776200"
@@ -6815,7 +6815,7 @@ data_hex = "776200"
 [[candidates.insert-high-score.relocations]]
 offset = 358
 type = "DIR32"
-symbol = "$SG1067"
+symbol = "$SG1165"
 addend = 0
 target = 0x004214AC
 data_hex = "73636f72652e64617400"
@@ -6875,3 +6875,373 @@ type = "REL32"
 symbol = "_fclose"
 addend = 0
 target = 0x00417A30
+
+[candidates.draw-high-scores]
+build = "gameover"
+symbol = "_dxball_draw_high_scores"
+target_address = 0x00406B20
+size = 404
+
+[[candidates.draw-high-scores.relocations]]
+offset = 49
+type = "DIR32"
+symbol = "_dxball_selected_score_index"
+addend = 0
+target = 0x004266A0
+
+[[candidates.draw-high-scores.relocations]]
+offset = 89
+type = "DIR32"
+symbol = "_dxball_active_surface"
+addend = 0
+target = 0x004265CC
+
+[[candidates.draw-high-scores.relocations]]
+offset = 95
+type = "REL32"
+symbol = "_dxball_draw_line"
+addend = 0
+target = 0x00403070
+
+[[candidates.draw-high-scores.relocations]]
+offset = 129
+type = "DIR32"
+symbol = "_dxball_active_surface"
+addend = 0
+target = 0x004265CC
+
+[[candidates.draw-high-scores.relocations]]
+offset = 135
+type = "REL32"
+symbol = "_dxball_draw_line"
+addend = 0
+target = 0x00403070
+
+[[candidates.draw-high-scores.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "_dxball_active_surface"
+addend = 0
+target = 0x004265CC
+
+[[candidates.draw-high-scores.relocations]]
+offset = 172
+type = "REL32"
+symbol = "_dxball_draw_line"
+addend = 0
+target = 0x00403070
+
+[[candidates.draw-high-scores.relocations]]
+offset = 209
+type = "DIR32"
+symbol = "_dxball_active_surface"
+addend = 0
+target = 0x004265CC
+
+[[candidates.draw-high-scores.relocations]]
+offset = 215
+type = "REL32"
+symbol = "_dxball_draw_line"
+addend = 0
+target = 0x00403070
+
+[[candidates.draw-high-scores.relocations]]
+offset = 236
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[candidates.draw-high-scores.relocations]]
+offset = 242
+type = "REL32"
+symbol = "_strlen"
+addend = 0
+target = 0x00417DF0
+
+[[candidates.draw-high-scores.relocations]]
+offset = 266
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[candidates.draw-high-scores.relocations]]
+offset = 284
+type = "REL32"
+symbol = "_dxball_draw_text"
+addend = 0
+target = 0x00404EE0
+
+[[candidates.draw-high-scores.relocations]]
+offset = 312
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 40
+target = 0x004266A8
+
+[[candidates.draw-high-scores.relocations]]
+offset = 318
+type = "REL32"
+symbol = "__ultoa"
+addend = 0
+target = 0x0041F570
+
+[[candidates.draw-high-scores.relocations]]
+offset = 330
+type = "REL32"
+symbol = "_strlen"
+addend = 0
+target = 0x00417DF0
+
+[[candidates.draw-high-scores.relocations]]
+offset = 366
+type = "REL32"
+symbol = "_dxball_measure_text"
+addend = 0
+target = 0x00404FD0
+
+[[candidates.draw-high-scores.relocations]]
+offset = 377
+type = "REL32"
+symbol = "_dxball_draw_text"
+addend = 0
+target = 0x00404EE0
+
+[units.edit-score-name]
+build = "gameover"
+symbol = "_dxball_edit_score_name"
+target_address = 0x004071C0
+size = 421
+
+[[units.edit-score-name.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "_dxball_score"
+addend = 0
+target = 0x00422D18
+
+[[units.edit-score-name.relocations]]
+offset = 26
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.edit-score-name.relocations]]
+offset = 31
+type = "REL32"
+symbol = "_dxball_insert_high_score"
+addend = 0
+target = 0x00406D20
+
+[[units.edit-score-name.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "_dxball_selected_score_index"
+addend = 0
+target = 0x004266A0
+
+[[units.edit-score-name.relocations]]
+offset = 45
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.edit-score-name.relocations]]
+offset = 67
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[[units.edit-score-name.relocations]]
+offset = 76
+type = "DIR32"
+symbol = "_dxball_show_high_scores"
+addend = 0
+target = 0x0042693C
+
+[[units.edit-score-name.relocations]]
+offset = 91
+type = "DIR32"
+symbol = "$SG1218"
+addend = 0
+target = 0x00421708
+data_hex = "6869676873636f722e70637800"
+
+[[units.edit-score-name.relocations]]
+offset = 96
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.edit-score-name.relocations]]
+offset = 102
+type = "REL32"
+symbol = "_dxball_load_pcx"
+addend = 0
+target = 0x00409BB0
+
+[[units.edit-score-name.relocations]]
+offset = 110
+type = "REL32"
+symbol = "_dxball_redraw_mode"
+addend = 0
+target = 0x004036B0
+
+[[units.edit-score-name.relocations]]
+offset = 128
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[[units.edit-score-name.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 168
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 174
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.edit-score-name.relocations]]
+offset = 220
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 234
+type = "REL32"
+symbol = "_dxball_wait_frames"
+addend = 0
+target = 0x00409610
+
+[[units.edit-score-name.relocations]]
+offset = 251
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 257
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.edit-score-name.relocations]]
+offset = 262
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 268
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 1
+target = 0x00426948
+
+[[units.edit-score-name.relocations]]
+offset = 275
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 311
+type = "REL32"
+symbol = "_tolower"
+addend = 0
+target = 0x00418130
+
+[[units.edit-score-name.relocations]]
+offset = 323
+type = "DIR32"
+symbol = "_dxball_shift_pressed"
+addend = 0
+target = 0x00438B00
+
+[[units.edit-score-name.relocations]]
+offset = 340
+type = "REL32"
+symbol = "_toupper"
+addend = 0
+target = 0x00418040
+
+[[units.edit-score-name.relocations]]
+offset = 352
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 366
+type = "REL32"
+symbol = "_dxball_wait_frames"
+addend = 0
+target = 0x00409610
+
+[[units.edit-score-name.relocations]]
+offset = 383
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 389
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.edit-score-name.relocations]]
+offset = 394
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.edit-score-name.relocations]]
+offset = 400
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 1
+target = 0x00426948
+
+[[units.edit-score-name.relocations]]
+offset = 407
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698

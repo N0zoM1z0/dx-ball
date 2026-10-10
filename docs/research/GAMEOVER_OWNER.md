@@ -44,6 +44,39 @@ comparisons are private in `.analysis/exact-score-reading/`.
 
 ## Entries and retained observations
 
+### Exact name editing and restored ranking formatting
+
+Name editing at `0x4071C0` now matches its complete 421-byte body after all
+33 relocations. The source restores independent space/digit and letter branches,
+separate backspace decrement and terminator store, and the original full-buffer
+wait branches. Submission calls the actual shared palette-transition and PCX
+loading bodies directly. Shift must equal one for uppercase conversion; both
+case conversions use their genuine CRT APIs. The explicit trailing return
+matches the observed exit. This does not promote the CRT origin ledger.
+
+The reused dossier is `07-analyze_function.json` in the closed 2026-10-07 13-44
+run, Evidence `ev_8211b56370f2de5643ba3e9d8f5a733fac0c5018dfcbf8bfbf8b84fae4daefb9`.
+Its referenced string identifies `highscor.pcx` at `0x421708`; the manifest
+checks all thirteen bytes including NUL against the pinned original image.
+No additional function or literal query was needed for this family.
+
+Ranking drawing restores the observed `_ultoa(..., 10)` call, stored name
+length, meaningful X coordinate, row advancement and exit. Its full candidate
+is 403 bytes against the original 404, with eighteen relocations. The original
+uses different local storage and loads the row index before comparing the
+selected global; the emitted comparison occupies one byte less. The direct
+unaligned span comparison therefore reports 335 differing bytes. This is not
+an exact claim or 335 independent behavioral discrepancies. No local-layout,
+declaration-order, name or padding trials were used to tune it.
+
+This family used two VC4 compilations: the second includes the standard
+`stdlib.h` declaration required by MinGW for `_ultoa` and the observed equality
+operand order. Both name-editor bodies match; the final drawing comparison
+retains the storage/emission gap. Score insertion remains 446 bytes with the
+same three differences after refreshing its generated literal symbol names.
+Private inputs, objects, comparisons and validation are retained under
+`.analysis/exact-ranking-interface/`.
+
 | Address | Maintained entry | Owned/span bytes | Direct cases | REA Evidence ID |
 | --- | --- | ---: | ---: | --- |
 | `0x00406440` | `initialize_game_over` | 321/321 | 24 | `ev_e451d766f08e8c36f876fdfe8bef512825c87dfeb0863a987a730e60bbf46eac` |
