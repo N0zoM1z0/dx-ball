@@ -158,6 +158,15 @@ observed double thresholds. The first 0.07 comparison uses extended precision;
 remaining comparisons use the stored float ratio. Horizontal velocity also
 uses the observed 1.2 multiplier. These rounding stages are retained explicitly.
 
+The current [ball ownership/rebound checkpoint](exact/EXACT_BALL_REBOUND.md)
+restores genuine operator-new/delete calls and direct sound calls. After audio,
+rebound independently rereads the live angle and current bank/sprite height.
+Selected maintained ball cases pass on native and actual relocated VC4 products;
+four separate callback-state controls also match original x86, while the retained
+old native product fails in the expected height field. The complete removal and
+rebound spans remain nonexact candidates. Historical full-owner scopes below
+retain their previous product identities; this checkpoint does not replay them.
+
 REA pseudocode omits the lookup argument and floating-point return. Assembly,
 the initializer, its callers, and CRT dispatch records recover those details.
 The dispatch records contain sin/cos names, independently confirming which

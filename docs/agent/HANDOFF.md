@@ -637,6 +637,31 @@ REA was not opened. Feedback entry24 in the same `/tmp` document records
 5,983,244 retained bytes /55,397 local selected bytes and loop-state/allocator
 identity usability suggestions, without claiming measured tokens or latency.
 
+## Current ball ownership and rebound checkpoint
+
+`src/balls.c` restores genuine operator-new/delete and direct audio edges,
+including the independent live-angle/current bank/height reads after callbacks.
+All seven accepted ball exacts remain exact on one VC4 compile; complete removal
+208/220 diff 52 and rebound 687/681 diff 550 remain candidates. Eighteen actual
+recursive project files are covered by 28 declared inputs, including allocator.h.
+
+Final native and actual relocated VC4 checks each pass 1,085 selected maintained
+ball/trig cases with unchanged assertions, plus four separate audio-state
+controls. Original code is immutable. The retained old native product fails all
+four controls at the expected y field. No physical/asynchronous audio, full owner
+queue or new Wine play claim; older campaign records remain historical.
+Native/MinGW builds and the VC4 link pass, reusing the matching balls object and 34
+verified unchanged objects, resources and SDK libraries; zero extra production
+source compiles. Counts remain 171 exact / 30,744 code bytes / 136 metadata bytes,
+283 source-present and 247 scoped semantic rows.
+
+Receipts: `.analysis/exact-ball-rebound/`; seal:
+`.analysis/checkpoints/ball-rebound-283-171/sha256.json`.
+See [ball recovery](../research/exact/EXACT_BALL_REBOUND.md).
+REA remains 6.3.0 and was not reopened. Entry 25 in the same existing `/tmp`
+feedback document records 2,067,168 archive / 16,492 selected local bytes and
+live-state/precision/projection usability findings. No token/latency claim.
+
 ## Working limits and completeness
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
