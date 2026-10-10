@@ -7,6 +7,7 @@
 #include "midi.h"
 #include "sound.h"
 #include "startup.h"
+#include "runtime_text_host.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -16,12 +17,15 @@ DxBallInt dxball_hit_region_count, dxball_editor_selected_tile;
 void dxball_initialize_hit_regions(DxBallInt count)
 {
     DxBallInt i;
-    DxBallHitRegion *region;
     dxball_hit_region_count = count + 1;
     for (i = 0; i <= dxball_hit_region_count; ++i) {
-        region = dxball_hit_regions + i;
-        region->left = region->top = region->right = region->bottom = region->active = 0;
+        dxball_hit_regions[i].left = 0;
+        dxball_hit_regions[i].top = 0;
+        dxball_hit_regions[i].right = 0;
+        dxball_hit_regions[i].bottom = 0;
+        dxball_hit_regions[i].active = 0;
     }
+    return;
 }
 void dxball_set_hit_region(DxBallInt index, DxBallInt left, DxBallInt top,
                           DxBallInt right, DxBallInt bottom)
@@ -43,11 +47,12 @@ void dxball_set_hit_region(DxBallInt index, DxBallInt left, DxBallInt top,
 DxBallInt dxball_find_hit_region(DxBallInt x, DxBallInt y)
 {
     DxBallInt i, hit = 0;
-    DxBallHitRegion *region;
-    for (i = 1; i < dxball_hit_region_count; ++i) {
-        region = dxball_hit_regions + i;
-        if (region->active != 0 && region->left <= x && x <= region->right &&
-            region->top <= y && y <= region->bottom) hit = i;
+    i = 1;
+    while (dxball_hit_region_count > i) {
+        if (dxball_hit_regions[i].active != 0 &&
+            dxball_hit_regions[i].left <= x && dxball_hit_regions[i].right >= x &&
+            dxball_hit_regions[i].top <= y && dxball_hit_regions[i].bottom >= y) hit = i;
+        ++i;
     }
     return hit;
 }
@@ -55,32 +60,47 @@ DxBallInt dxball_find_hit_region(DxBallInt x, DxBallInt y)
 void dxball_draw_editor_choices(void)
 {
     DxBallInt tile, x = 20, y = 385;
+    tile = 1;
     dxball_select_surface((DxBallSurface)dxball_board_surface);
-    for (tile = 1; tile < 23; ++tile) {
+    while (tile <= 22) {
         dxball_draw_sprite(dxball_board_tile_sprite(tile), x, y);
         dxball_set_hit_region(tile, x, y, x + 30, y + 15);
         x += 32;
         if (x > 280) { x = 20; y += 17; }
+        ++tile;
     }
+    return;
 }
 void dxball_draw_editor_status(void)
 {
-    DxBallInt sprite = dxball_board_tile_sprite(dxball_editor_selected_tile);
-    DxBallDDSurface *surface = (DxBallDDSurface *)dxball_active_surface;
-    DxBallRect preview = {25, 5, 55, 20}, label = {65, 5, 639, 20};
-    char number[12]; /* Signed 32-bit decimal, sign and terminating NUL. */
-    if (sprite == 0)
-        surface->vtable->blt_fast(surface, 25, 5, (DxBallDDSurface *)dxball_background_surface, &preview, 0x10);
-    else dxball_draw_sprite(sprite, 25, 5);
-    surface->vtable->blt_fast(surface, 65, 5, (DxBallDDSurface *)dxball_background_surface, &label, 0x10);
-    sprintf(number, "%d", dxball_board_index + 1);
-    dxball_draw_text(75, 17, (DxBallInt)strlen(number), number);
+    DxBallInt sprite, x = 25, y = 5;
+    DxBallRect preview;
+    char number[8];
+    DxBallRect label;
+    sprite = dxball_board_tile_sprite(dxball_editor_selected_tile);
+    if (sprite != 0) {
+        dxball_draw_sprite(sprite, x, y);
+    } else {
+        preview.left = x; preview.top = y;
+        preview.right = x + 30; preview.bottom = y + 15;
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_active_surface, x, y,
+            (DxBallDDSurface *)dxball_background_surface, &preview, 0x10);
+    }
+    label.left = x + 40; label.top = y;
+    label.right = 639; label.bottom = y + 15;
+    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+        (DxBallDDSurface *)dxball_active_surface, x + 40, y,
+        (DxBallDDSurface *)dxball_background_surface, &label, 0x10);
+    _itoa(dxball_board_index + 1, number, 10);
+    dxball_draw_text(x + 50, y + 12, (DxBallInt)strlen(number), number);
     dxball_draw_text(360, 380, 25, "+           -- Next Board");
     dxball_draw_text(360, 390, 29, "-           -- Previous Board");
     dxball_draw_text(360, 400, 20, "BKSP  -- Clear Board");
     dxball_draw_text(360, 410, 26, "L           -- Load Boards");
     dxball_draw_text(360, 420, 26, "S           -- Save Boards");
     dxball_draw_text(360, 430, 21, "CTRL  -- Hold to Draw");
+    return;
 }
 
 void dxball_initialize_editor(void)
@@ -201,24 +221,36 @@ void dxball_editor_frame(void)
 }
 void dxball_editor_key(char key)
 {
-    switch ((DxBallByte)key) {
-    case 8: memset(dxball_board_tiles, 0, DXBALL_BOARD_SIZE); dxball_redraw_mode(); break;
-    case 'L':
-        dxball_read_board_bank("default.bds"); dxball_board_index = 0;
-        dxball_load_editor_board(0); dxball_redraw_mode(); break;
-    case 'S': dxball_store_editor_board(dxball_board_index); dxball_write_board_bank("default.bds"); break;
-    case 0xBB:
+    switch (key) {
+    case ' ': break;
+    case 'p': break;
+    case 'q': break;
+    case 'r': break;
+    case 't': break;
+    case 'u': break;
+    case 'v': break;
+    case 'w': break;
+    case 'x': break;
+    case 'y': break;
+    case 'z': break;
+    case '{': break;
+    case (char)0xBB:
         dxball_store_editor_board(dxball_board_index);
         ++dxball_board_index;
         if (dxball_board_index > 49) dxball_board_index = 49;
         dxball_load_editor_board(dxball_board_index); dxball_redraw_mode(); break;
-    case 0xBD:
+    case (char)0xBD:
         dxball_store_editor_board(dxball_board_index);
         --dxball_board_index;
         if (dxball_board_index < 0) dxball_board_index = 0;
         dxball_load_editor_board(dxball_board_index); dxball_redraw_mode(); break;
-    default: break;
+    case 8: memset(&dxball_board_tiles[0], 0, DXBALL_BOARD_SIZE); dxball_redraw_mode(); break;
+    case 'L':
+        dxball_read_board_bank("default.bds"); dxball_board_index = 0;
+        dxball_load_editor_board(dxball_board_index); dxball_redraw_mode(); break;
+    case 'S': dxball_store_editor_board(dxball_board_index); dxball_write_board_bank("default.bds"); break;
     }
+    return;
 }
 void dxball_dispose_editor(DxBallInt fade)
 {

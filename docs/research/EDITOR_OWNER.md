@@ -88,6 +88,43 @@ unchanged. No full owner suite or historical replay was run; prior full-suite
 and frame receipts keep their own product hashes. Focused inputs, reports and
 the retained failed probe are private in `.analysis/exact-editor-lifecycle/`.
 
+The following command/region batch recovers choices (`0x40C9C0`, 163 bytes),
+region initialization (`0x401E10`, 147 bytes) and lookup (`0x401F90`, 173 bytes)
+exactly, with five, seven and six relocations. The first two match the initial
+compile; the original global-count-first lookup comparison matches the second.
+All twelve accepted editor units match together. The 35-file declared recipe
+contains the complete 22-file recursively consumed project closure.
+
+Status restores the actual CRT `_itoa` at `0x41F4D0`, its eight-byte decimal
+buffer within the original 52-byte frame, two separate rectangles and genuine
+COM/global loads. Its complete 431-byte candidate has 25 relocations and 28
+local-storage operand differences. The board-index claim remains 0..49. The
+Linux `_itoa` decimal implementation belongs to the existing host text bridge;
+Windows uses the real CRT. Six independent signed-value bridge checks include
+both 32-bit extremes. No wider radix support is claimed.
+
+The key candidate restores signed-char dispatch, original empty cases, actual
+current-index loads and full switch mappings/literal NULs. The 632-byte original
+span includes an excluded five-byte JMP at `0x40C87D`, 367 instruction bytes
+in total and 265 switch bytes (eighteen DWORDs and 193 selectors). The current
+shared structured storage yields a MOV-base/ADD-field/PUSH sequence for the
+working tiles instead of the original immediate address. Its extra six bytes
+produce a 638/632-byte candidate and 260 unaligned full-span differences;
+these are not 260 independent behavior faults. An explicit first-byte address
+emits the same code. No alias, declaration, name, layout or padding trials were
+used to force either candidate. Both keep full relocation mappings.
+
+The intermediate library passes all 2,921 existing direct cases and 32 connected
+checks. The final library passes the selected 1,439 lookup/key/file-outcome cases
+and all 32 connected checks after the last expression recovery; the previous
+full suite retains its intermediate hash. A private wrapper's count assertion
+initially omitted the owner's zero-valued counters; correcting that assertion
+required one selection rerun. Maintained cases and assertions were unchanged.
+Native/MinGW builds and the 35-object VC4 relink pass. Receipts, original complete
+dossiers, products and full candidate comparisons are retained privately in
+`.analysis/exact-editor-commands/`; no new REA session or historical replay was
+needed. Other semantic scopes retain historical cases after identity refresh.
+
 The complete [editor-frame restoration](exact/EXACT_EDITOR_FRAME.md) now
 reproduces all 908 bytes, including the two cursor draw calls and both inline
 paint/erase value phases. The five existing exact editor units are preserved.

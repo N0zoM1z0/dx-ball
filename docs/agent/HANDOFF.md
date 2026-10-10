@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 158 exact functions / 27,229 full-span bytes and
+- 283 source-present entries; 161 exact functions / 27,712 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -42,7 +42,7 @@ are declared in `config/match-units.toml`.
 Private receipts: `.analysis/exact-score-initialization/` and
 `.analysis/exact-score-reading/`, `.analysis/exact-ranking-interface/`, and
 `.analysis/exact-gameover-lifecycle/`, `.analysis/exact-gameover-keys/`, and
-`.analysis/exact-editor-lifecycle/`.
+`.analysis/exact-editor-lifecycle/` and `.analysis/exact-editor-commands/`.
 Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
 interface checkpoint is `4499a3d`. The current lifecycle checkpoint restores
 initialization, redraw, frame and cleanup exactly; no push was made.
@@ -143,13 +143,46 @@ skips score bindings, preserving its independent actual-host stdio behavior.
 Default game-over binding and assertions remain intact. The failed probe and
 passing current-library reports are retained; no full owner suite was rerun.
 
-Next recover editor key commands (`0x40C740`, 632-byte span), choices
-(`0x40C9C0`, 163 bytes) and status (`0x40CA70`, 431 bytes), then inspect region
-initialization/lookup. Reuse the 14-34 dossiers and complete instructions,
-including key switch data/gap jumps. Identify the actual integer conversion
-API and local buffer consumers before changing the current portable formatter;
-retain the stated board-index domain and genuine API adaptation. Do not perform
-layout/name/padding trials on the game-over candidate gaps.
+Editor choices (`0x40C9C0`, 163 bytes / five relocations), region initialization
+(`0x401E10`, 147 / seven) and lookup (`0x401F90`, 173 / six) are now exact.
+Choices retain tile initialization before surface selection and the original
+loop/wrap order. Region initialization restores five independent field stores;
+lookup restores the global-count-first comparison and last-hit precedence.
+All twelve accepted editor units match together after two family compilations.
+The 35-file recipe contains the complete 22-file project header/source closure.
+
+Status (`0x40CA70`) restores genuine CRT `_itoa(..., 10)`, the eight-byte number
+buffer, two meaningful rectangles, coordinate state and direct typed COM calls.
+The original frame is 52 bytes. It remains a complete 431-byte candidate with
+25 relocations and 28 differing local-storage operands. No declaration/name/
+layout trials were used. The Linux-only decimal service is a host bridge, not
+recovered vendor runtime source; Windows uses its actual CRT implementation.
+
+Key dispatch restores signed-char switch input, all twelve original empty cases,
+actual board-index reloads and complete table bindings. The original 632-byte
+span contains 367 instruction bytes (362 owned plus an excluded five-byte JMP
+at `0x40C87D`) and 265 inline table bytes. It remains a 638/632-byte candidate:
+VC4 emits MOV-base/ADD-field/PUSH for the genuine structured board tile address,
+where the original uses an immediate address. This six-byte difference shifts
+later code/tables and produces 260 full-span differences. An explicit first-byte
+address emits the same code. Keep the natural shared storage owner; do not add
+alias/padding/layout trials merely to force this match.
+
+The intermediate library passed all 2,921 existing editor cases and 32 connected
+checks. After the final expression recovery, the final library passes 1,439
+existing lookup/key/file-outcome cases, the same 32 connected checks and six
+signed decimal bridge boundary values. The private selection wrapper initially
+compared its counters to a dictionary without the owner's zero-valued entries;
+its count assertion was corrected and the selection rerun. Maintained oracle
+cases/assertions are unchanged. Reports retain distinct library hashes; other
+owner scopes stay historical. Native/MinGW builds and the 35-object VC4 relink
+pass. No full historical queue was replayed.
+
+Next recover the board tile-to-sprite mapper (`0x40CCF0`, 426 bytes), which
+connects the editor toolbar, status and gameplay board drawing. Reuse its
+existing board dossier, inspect switch ranges and attached data, and preserve
+accepted board units in the same compiler recipe. Keep the editor candidates
+explicit; do not attempt declaration/name/layout/padding permutations.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
@@ -171,6 +204,8 @@ source restoration. Entry 10 records installed-skill drift and existing bounded
 view capabilities: the installed skill now matches the 6.3 package at version
 34 / 139 tools. Backups and hashes are private in the upgrade receipts. Entry
 11 records the excluded native key-span instruction and a proposed coverage map.
+Entry 12 records bounded editor facet sizes and confirms the span gap in a second
+controller, with a proposed evidence-linked native reconstruction view.
 Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Nothing has been sent externally.
