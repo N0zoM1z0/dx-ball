@@ -51,6 +51,20 @@ Keep reusing historical dossiers directly; their Evidence IDs and original
 bytes remain available. Upgrade receipts and both scoped doctor reports are
 in `.analysis/rea-upgrade-6.3.0/`.
 
+The installed REA skill is also synchronized with this package: skill version
+34 and 139 tools. Its prior version-26 files and replacement hashes are retained
+in `skill-before/` and `skill-sync.json` under the same private upgrade directory.
+No MCP registration or provider installation was changed by this instruction
+update. Keep tool discovery bounded: retain the complete catalog outside the
+agent context and inspect only the selected operation's schema.
+
+The release advertises `inspect_analysis_view` for completed binary-layout and
+JavaScript application Evidence, using same-session retained IDs or inline
+Evidence. Native function-dossier views and old-record compatibility are not
+established by that description. Continue projecting the needed facets from
+retained native dossiers locally. `export_evidence_bundle` can retain a complete
+session bundle when needed; avoid duplicating already archived evidence.
+
 Retain the responses used for source recovery and link them from the relevant
 research note. Follow the [reconstruction workflow](WORKFLOW.md) when changing
 source or publishing a new exact claim.

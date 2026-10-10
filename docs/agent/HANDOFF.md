@@ -141,7 +141,10 @@ response-field/lifecycle migration issues. Entry 8 records how projecting old
 function dossiers to pseudocode/assembly avoided new provider calls and reduced
 the required view from 0.6/0.98 MB to approximately 5/4.6 KB. Entry 9 records
 how normalized pseudocode hides original eligibility branches relevant to exact
-source restoration. Measurements and suggestions are
+source restoration. Entry 10 records installed-skill drift and existing bounded
+view capabilities: the installed skill now matches the 6.3 package at version
+34 / 139 tools. Backups and hashes are private in the upgrade receipts.
+Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Nothing has been sent externally.
 
