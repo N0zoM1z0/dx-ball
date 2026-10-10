@@ -16,13 +16,6 @@ DxBallInt dxball_score;
 double dxball_pan_scale = 1.0;
 DxBallGameplayOps dxball_gameplay_ops = { dxball_new_bytes, dxball_spawn_brick_effect, dxball_stop_sound, dxball_play_sound, dxball_random_range, dxball_spawn_particle };
 
-DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list)
-{
-    while (dxball_remove_explosion(list)) {
-    }
-    return 1;
-}
-
 void dxball_spread_explosive_bricks(void)
 {
     DxBallInt x, y, scan_x, scan_y;
@@ -115,26 +108,6 @@ DxBallInt dxball_count_destructible_bricks(void)
 void *dxball_allocate_node(size_t size)
 {
     return dxball_gameplay_ops.allocate_node(size);
-}
-
-DxBallInt DXBALL_FASTCALL dxball_append_explosion(DxBallExplosionList *list)
-{
-    DxBallExplosionNode *node;
-    node = (DxBallExplosionNode *)dxball_runtime_new(sizeof(DxBallExplosionNode));
-    if (node != NULL) {
-        node->previous = list->last;
-        node->next = NULL;
-        if (list->last != NULL) {
-            list->last->next = node;
-        } else {
-            list->first = node;
-        }
-        list->last = node;
-        list->current = list->last;
-    } else {
-        exit(1);
-    }
-    return 1;
 }
 
 DxBallInt dxball_screen_pan(DxBallInt x)
@@ -257,46 +230,6 @@ void dxball_scan_explosive_tiles(void)
         }
     }
     return;
-}
-
-DxBallInt DXBALL_FASTCALL dxball_begin_explosions(DxBallExplosionList *list)
-{
-    list->current = list->first;
-    return list->current != NULL;
-}
-
-DxBallInt DXBALL_FASTCALL dxball_advance_explosion(DxBallExplosionList *list)
-{
-    if (list->current != NULL) {
-        list->current = list->current->next;
-        if (list->current == NULL) {
-            list->current = list->first;
-            return 0;
-        }
-        return 1;
-    }
-    return 0;
-}
-
-DxBallInt DXBALL_FASTCALL dxball_remove_explosion(DxBallExplosionList *list)
-{
-    DxBallExplosionNode *node;
-    if (list->current != NULL) {
-        node = list->current;
-        if (node->previous != NULL) node->previous->next = node->next;
-        if (node->next != NULL) {
-            node->next->previous = node->previous;
-            list->current = node->next;
-        } else {
-            list->current = node->previous;
-        }
-        if (list->first == node) list->first = node->next;
-        if (list->last == node) list->last = node->previous;
-        dxball_runtime_delete(node);
-        return 1;
-    } else {
-        return 0;
-    }
 }
 
 void dxball_queue_explosion_at(DxBallInt x, DxBallInt y)

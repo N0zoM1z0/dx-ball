@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 175 exact functions / 31,264 full-span bytes and
+- 283 source-present entries; 180 exact functions / 32,364 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -840,6 +840,31 @@ and origins unchanged. Private .analysis/list-delete-recovery/ and
 [exact list delete](../research/exact/EXACT_LIST_DELETE.md).
 REA6.3.0 uses retained closed records; snapshot22 unchanged. Feedback34 goes
 only into the same existing /tmp document.
+
+Latest entity-list lifetime checkpoint: the remaining explosion, brick-effect,
+particle, bonus and ball deletions now use ordinary typed C++ delete. Five
+complete220-byte spans match, including every actual relocation and excluded
+five-byte jump. Twenty-five list helpers move into the same C++ constructor
+owner, preserving existing C/ECX ABI, nullable POD new, untouched payloads,
+roots/cursors and ownership. All seven maintained list families now share this
+natural allocation/deletion source; game controllers remain in their owners.
+Six stable matching compiles preserve48 prior affected exacts and add five,
+for53 full comparisons. All18 initializer functions and the ordered36-byte,
+nine-relocation constructor table remain unchanged. Current Native/original
+passes832 selected maintained list cases, including three terminal allocation
+failures. No new vectors/assertions or broad owner replay. Native/MinGW pass;
+VC4 reuses six matching objects plus30 verified unchanged objects with no extra
+source compilation. Earlier Wine play retains its earlier executable identity;
+no new live-game result is claimed. Totals180 /32,364 code bytes /136 metadata;
+source283/scoped semantics247/origins unchanged.235 historical semantic input
+rows refresh hashes while retaining cases, scopes and original oracle bindings.
+Private .analysis/entity-list-delete/; seal
+.analysis/checkpoints/entity-list-delete-283-180/sha256.json. See
+[complete entity-list deletion](../research/exact/EXACT_ENTITY_LIST_DELETE.md).
+REA6.3.0 matches current official npm latest. Five closed dossiers are reused;
+one new19,644-byte read attests all five spans, with42,332ms client latency and
+162,654 serialized MCP response bytes; full carriers stay outside context.
+The provider closed. Feedback35 is appended in the same existing /tmp document.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider

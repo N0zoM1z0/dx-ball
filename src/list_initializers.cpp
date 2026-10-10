@@ -86,7 +86,7 @@ DxBallFireEffectList::DxBallFireEffectList()
 
 
 
-/* Typed projectile/fire lifetimes retain ECX owners and ordinary C++ allocation. */
+/* Typed list lifetimes retain ECX owners and ordinary C++ allocation. */
 DxBallInt DXBALL_FASTCALL dxball_append_projectile(DxBallProjectileList *list)
 {
     DxBallProjectileNode *node;
@@ -243,6 +243,341 @@ DxBallInt DXBALL_FASTCALL dxball_clear_projectile_list(DxBallProjectileList *lis
 DxBallInt DXBALL_FASTCALL dxball_clear_fire_effect_list(DxBallFireEffectList *list)
 {
     while (dxball_remove_fire_effect(list)) {
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_append_explosion(DxBallExplosionList *list)
+{
+    DxBallExplosionNode *node;
+    node = new DxBallExplosionNode;
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) {
+            list->last->next = node;
+        } else {
+            list->first = node;
+        }
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_begin_explosions(DxBallExplosionList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_advance_explosion(DxBallExplosionList *list)
+{
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_remove_explosion(DxBallExplosionList *list)
+{
+    DxBallExplosionNode *node;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) node->previous->next = node->next;
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) list->first = node->next;
+        if (list->last == node) list->last = node->previous;
+        delete node;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list)
+{
+    while (dxball_remove_explosion(list)) {
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_append_ball(DxBallBallList *list)
+{
+    DxBallBallNode *node;
+    node = new DxBallBallNode;
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) list->last->next = node;
+        else list->first = node;
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_begin_balls(DxBallBallList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_advance_ball(DxBallBallList *list)
+{
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_remove_ball(DxBallBallList *list)
+{
+    DxBallBallNode *node;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) node->previous->next = node->next;
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) list->first = node->next;
+        if (list->last == node) list->last = node->previous;
+        delete node;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+DxBallInt DXBALL_FASTCALL dxball_clear_ball_list(DxBallBallList *list)
+{
+    while (dxball_remove_ball(list)) {
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_append_brick_effect(DxBallBrickEffectList *list)
+{
+    DxBallBrickEffectNode *node;
+    node = new DxBallBrickEffectNode;
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) {
+            list->last->next = node;
+        } else {
+            list->first = node;
+        }
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_begin_brick_effects(DxBallBrickEffectList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_advance_brick_effect(DxBallBrickEffectList *list)
+{
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_remove_brick_effect(DxBallBrickEffectList *list)
+{
+    DxBallBrickEffectNode *node;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) {
+            node->previous->next = node->next;
+        }
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) {
+            list->first = node->next;
+        }
+        if (list->last == node) {
+            list->last = node->previous;
+        }
+        delete node;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+/* FUNCTION: DXBALL 0x004165A0 */
+DxBallInt DXBALL_FASTCALL dxball_clear_brick_effect_list(DxBallBrickEffectList *list)
+{
+    while (dxball_remove_brick_effect(list)) {
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_append_bonus(DxBallBonusList *list)
+{
+    DxBallBonusNode *node;
+    node = new DxBallBonusNode;
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) list->last->next = node;
+        else list->first = node;
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_begin_bonuses(DxBallBonusList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_advance_bonus(DxBallBonusList *list)
+{
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_remove_bonus(DxBallBonusList *list)
+{
+    DxBallBonusNode *node;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) node->previous->next = node->next;
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) list->first = node->next;
+        if (list->last == node) list->last = node->previous;
+        delete node;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+/* FUNCTION: DXBALL 0x00416570 */
+DxBallInt DXBALL_FASTCALL dxball_clear_bonus_list(DxBallBonusList *list)
+{
+    while (dxball_remove_bonus(list)) {
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_append_particle(DxBallParticleList *list)
+{
+    DxBallParticleNode *node;
+    node = new DxBallParticleNode;
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) list->last->next = node;
+        else list->first = node;
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
+    return 1;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_begin_particles(DxBallParticleList *list)
+{
+    list->current = list->first;
+    return list->current != NULL;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_advance_particle(DxBallParticleList *list)
+{
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+DxBallInt DXBALL_FASTCALL dxball_remove_particle(DxBallParticleList *list)
+{
+    DxBallParticleNode *node;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) node->previous->next = node->next;
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) list->first = node->next;
+        if (list->last == node) list->last = node->previous;
+        delete node;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+/* FUNCTION: DXBALL 0x00416540 */
+DxBallInt DXBALL_FASTCALL dxball_clear_particle_list(DxBallParticleList *list)
+{
+    while (dxball_remove_particle(list)) {
     }
     return 1;
 }
