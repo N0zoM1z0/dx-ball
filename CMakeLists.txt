@@ -63,6 +63,9 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     # The original lightning controller requires an eligible tile in its scan.
     set_source_files_properties(src/display.c PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
+    # The WAV parser can return data before fmt; loading requires fmt first.
+    set_source_files_properties(src/sound.c PROPERTIES
+        COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
 endif()
 
 add_executable(dxball_resources src/resource_inspector.c)

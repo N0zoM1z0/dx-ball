@@ -2,6 +2,13 @@
 
 ## Current complete helper matching
 
+The [initialization and WAV batch](exact/EXACT_SOUND_DEPENDENCIES.md) restores
+the complete retry/dialog flow, chunk parser and direct file-allocation calls.
+Initialization and parsing now follow the original instruction flow, with
+local storage differences still preventing exact acceptance. File-service
+import storage remains open. One existing sound Oracle passes, and both
+Windows games link with these bodies.
+
 The [buffer batch](exact/EXACT_SOUND_BUFFERS.md) recovers pause, individual
 release, upload and buffer creation. Pause and release match all 214/149 bytes;
 the complete loader and create helper retain 31/8 local-displacement differences.

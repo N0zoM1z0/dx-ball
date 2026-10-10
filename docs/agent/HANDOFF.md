@@ -1,43 +1,47 @@
 # Current reconstruction handoff
 
-Continue toward nearly complete source restoration and a rebuildable, playable
-game. The README explains the public workflow; operational instructions are in
-[AGENTS.md](../../AGENTS.md) and [WORKFLOW.md](WORKFLOW.md).
+Continue toward nearly complete original source and a rebuildable, playable
+game. Prioritize coherent source recovery and affected exact comparisons.
 
-## Current source checkpoint
+## Current checkpoint
 
-- 283 source-present functions; 128 complete exact functions / 20,354 code bytes.
-- Latest family: [sound buffers](../research/exact/EXACT_SOUND_BUFFERS.md).
-  Pause and release are exact at 214/149 bytes. The complete loader and create
-  helper retain 31/8 differing EBP-displacement bytes. All six prior sound
-  exact functions remain matched.
-- The current VC4 and MinGW Windows games are linked. Earlier builds have
-  recorded playable campaigns; this family ran one existing sound Oracle.
-  Follow [the architecture](../ARCHITECTURE.md) for connected game flows.
+- 283 source-present functions; 128 exact functions / 20,354 code bytes.
+- [Sound dependencies](../research/exact/EXACT_SOUND_DEPENDENCIES.md) now recover
+  initialization, WAV parsing and direct binary-file allocation. Their complete
+  original spans are 1,705/269/304 bytes. Initializer and parser instruction
+  flows agree; local storage remains nonexact. File-import storage is unresolved.
+- All eight accepted sound units remain exact. The final sound object supports
+  17 complete comparisons / 235 relocations / 12 literals. The first emission
+  exposed duplicate last-case breaks; one source correction preceded the final
+  comparison. No variable spelling, layout or compiler-profile trials.
+- One unchanged sound Oracle passes 5,782 direct cases / 48 connected checks.
+  Native bytes remain identical after the diagnostic-option change. VC4 and
+  MinGW games link; the original fmt-before-data precondition stays visible as
+  a source-specific GNU diagnostic in `CMakeLists.txt`.
 
-## Next source family
+## Next family
 
-Continue sound initialization (0x405120), WAV parsing (0x406290), and binary
-file loading (0x403320). Reuse the saved REA dossiers and
-[sound note](../research/SOUND_OWNER.md). Reconcile the initializer's fourteen
-owned ranges and the parser's gaps against original instructions before choosing
-complete compiler spans. Restore dialog, import, allocation and file-handle
-flow with the same shared source and minimal affected comparisons.
+Recover the MIDI stream lifecycle and music controls in `src/midi.c`, starting
+with release/play/pause/stop/callback at `0x4016E0`–`0x401B10` and music controls
+at `0x401B90`–`0x401DA0`. Reuse `.analysis/midi-evidence.json` and
+[the MIDI owner note](../research/MIDI_OWNER.md). Follow buffer ownership,
+callback requeueing and physical WinMM call signatures. Keep whole bodies;
+expand to parsing dependencies when their flow requires it.
 
-Use only affected exact comparisons and a focused existing Oracle when it
-answers a concrete question. Seven redundant test/check scripts and the broad
-default CI queue have been removed; keep iteration focused on source recovery.
+Do not spend iterations rearranging sound local names or inventing aggregate
+IAT aliases. Run only affected comparisons and an existing focused Oracle
+when it answers a concrete question. [WORKFLOW.md](WORKFLOW.md) records the
+contributor procedure; the public README stays short.
 
-## Local evidence
+## Private evidence
 
-The completed source acceptance epoch is sealed in
-`.analysis/checkpoints/exact-sound-buffers-283-128/`. It retains full inputs,
-compiler products, the affected Oracle result and the independent reviews.
-Its parent is `exact-sound-voices-283-126`; publication receipts are separate.
-The cumulative REA snapshot contains 478 Evidence records.
+The source acceptance epoch is
+`.analysis/checkpoints/exact-sound-dependencies-283-128/`, parent
+`exact-sound-buffers-283-128`. It retains full source/compiler inputs, both
+emission epochs, the Oracle, original bytes and independent reviews.
+Working receipts live in `.analysis/exact-sound-dependencies/`.
+The cumulative REA snapshot contains 480 Evidence records; the new complete
+byte-span responses are in the October 10 archived run.
 
-The canonical native library SHA-256 is
-`5624d36dffba8902e65131fa2ecd193112759cce6183f1d103d4cd30b19d696c`.
-Raw investigation files remain under `.analysis/exact-sound-buffers/`.
-The user's REA development checkout is `/home/pentester/Project/rea/`;
-this game continues to use its pinned analysis toolchain.
+REA development checkout: `/home/pentester/Project/rea/`. This project uses
+its pinned REA 4.1.0 / Ghidra 12.1.4 toolchain through `scripts/rea`.
