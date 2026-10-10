@@ -8,6 +8,7 @@ recovered implementation and complete compiler comparison.
 - [Window instance-lock lifetime](EXACT_WINDOW_INSTANCE.md)
 - [Complete window initialization and import ownership](EXACT_WINDOW_INITIALIZATION.md)
 - [Exact WinMain entry and message loop](EXACT_WIN_MAIN.md)
+- [Complete window messages, focus and shutdown](EXACT_WINDOW_PROC.md)
 - [MIDI imports and C++ music ownership](EXACT_MIDI_IMPORTS.md)
 - [MIDI stream and music controls](EXACT_MIDI_LIFECYCLE.md)
 - [Sound initialization and WAV loading](EXACT_SOUND_DEPENDENCIES.md)

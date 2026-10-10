@@ -190,6 +190,11 @@ class _Image:
                       ('dxball_runtime_ops', 15, 13, 'dxball_release_sprite_banks'),
                       ('dxball_runtime_ops', 15, 14, 'dxball_close_music'),
                       ('dxball_platform_ops', 9, 0, 'dxball_prepare_sound'),
+                      ('dxball_platform_ops', 9, 1, 'dxball_initialize_sound'),
+                      ('dxball_platform_ops', 9, 2, 'dxball_pause_sound'),
+                      ('dxball_platform_ops', 9, 3, 'dxball_resume_music'),
+                      ('dxball_platform_ops', 9, 4, 'dxball_pause_music'),
+                      ('dxball_platform_ops', 9, 6, 'dxball_release_audio'),
                       ('dxball_platform_ops', 9, 5, 'dxball_close_music'),
                       ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
         boundaries.append(('dxball_display_ops', 2, 1, 'dxball_recover_surfaces'))

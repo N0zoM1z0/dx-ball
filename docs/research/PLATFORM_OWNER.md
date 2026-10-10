@@ -161,3 +161,14 @@ branch, Control-before-Shift writes and message-loop exits follow the saved
 REA instructions. All 121 affected accepted functions remain exact; current
 totals are 136 exact / 21,293 code bytes. This batch runs only the unchanged
 56 WinMain cases. Other Platform case results above retain their earlier scope.
+
+## Complete WindowProc recovery
+
+[WindowProc](exact/EXACT_WINDOW_PROC.md) restores the complete input, focus/audio
+and teardown flow with seven direct typed owner calls and live canonical COM
+pointers. REA now covers its full 1,171-byte span, including three jump gaps
+and the five-entry mouse-message table. VC4 emits 1,166 bytes; the whole unit
+remains candidate. Four accepted functions sharing this source remain exact.
+Only the existing 2,138 WindowProc cases were replayed, with five typed native
+forwarders connecting the existing callback slots. Native, VC4 and MinGW builds
+pass; exact totals remain 136 functions / 21,293 code bytes.

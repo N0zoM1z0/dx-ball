@@ -48,6 +48,8 @@ static unsigned recover_surfaces_active;
 static unsigned sound_update_active;
 static void (*platform_music_default)(const char *, DxBallInt);
 static unsigned music_load_active, prepare_sound_active;
+static unsigned initialize_sound_active, pause_sound_active;
+static unsigned resume_music_active, pause_music_active, release_audio_active;
 static unsigned stop_active, play_active, random_active;
 static unsigned invalidate_active, effect_active;
 static unsigned palette_load_active, palette_active, clear_active, reset_active;
@@ -385,6 +387,61 @@ void dxball_prepare_sound(DxBallHandle window)
     prepare_sound_active = 1;
     bound_platform->prepare_sound(window);
     prepare_sound_active = 0;
+}
+
+void dxball_initialize_sound(DxBallHandle window)
+{
+    if (bound_platform == NULL || bound_platform->initialize_sound == NULL)
+        binding_failure("CoreNative initialize_sound: fixture table is unbound or callback is null");
+    if (initialize_sound_active || bound_platform->initialize_sound == dxball_initialize_sound)
+        binding_failure("CoreNative initialize_sound: recursive or unreplaced platform callback");
+    initialize_sound_active = 1;
+    bound_platform->initialize_sound(window);
+    initialize_sound_active = 0;
+}
+
+void dxball_pause_sound(void)
+{
+    if (bound_platform == NULL || bound_platform->pause_sound == NULL)
+        binding_failure("CoreNative pause_sound: fixture table is unbound or callback is null");
+    if (pause_sound_active || bound_platform->pause_sound == dxball_pause_sound)
+        binding_failure("CoreNative pause_sound: recursive or unreplaced platform callback");
+    pause_sound_active = 1;
+    bound_platform->pause_sound();
+    pause_sound_active = 0;
+}
+
+void dxball_resume_music(void)
+{
+    if (bound_platform == NULL || bound_platform->resume_music == NULL)
+        binding_failure("CoreNative resume_music: fixture table is unbound or callback is null");
+    if (resume_music_active || bound_platform->resume_music == dxball_resume_music)
+        binding_failure("CoreNative resume_music: recursive or unreplaced platform callback");
+    resume_music_active = 1;
+    bound_platform->resume_music();
+    resume_music_active = 0;
+}
+
+void dxball_pause_music(void)
+{
+    if (bound_platform == NULL || bound_platform->pause_music == NULL)
+        binding_failure("CoreNative pause_music: fixture table is unbound or callback is null");
+    if (pause_music_active || bound_platform->pause_music == dxball_pause_music)
+        binding_failure("CoreNative pause_music: recursive or unreplaced platform callback");
+    pause_music_active = 1;
+    bound_platform->pause_music();
+    pause_music_active = 0;
+}
+
+void dxball_release_audio(void)
+{
+    if (bound_platform == NULL || bound_platform->release_audio == NULL)
+        binding_failure("CoreNative release_audio: fixture table is unbound or callback is null");
+    if (release_audio_active || bound_platform->release_audio == dxball_release_audio)
+        binding_failure("CoreNative release_audio: recursive or unreplaced platform callback");
+    release_audio_active = 1;
+    bound_platform->release_audio();
+    release_audio_active = 0;
 }
 
 DxBallInt dxball_load_music(const char *path, DxBallInt play)

@@ -9,6 +9,7 @@
 #include "editor.h"
 #include "midi.h"
 #include "sound.h"
+#include "startup.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -490,51 +491,31 @@ void dxball_game_key(char key)
     }
 }
 
+/* FUNCTION: DXBALL 0x0040DA70 */
 DxBallWindowResult DXBALL_DDCALL dxball_window_proc(DxBallHandle window,
     DxBallUInt message, DxBallHandle wparam, DxBallWindowResult lparam)
 {
-    DxBallDDSurface *surface;
     switch (message) {
-    case 1: case 0x14: break;
-    case 2:
-        dxball_dispose_working_surface(0);
-        dxball_platform_ops.release_audio(); dxball_platform_ops.close_music();
-        if (dxball_direct_draw != NULL) {
-            dxball_runtime_ops.release_sprite_banks();
-            surface = (DxBallDDSurface *)dxball_board_surface;
-            if (surface != NULL) { surface->vtable->release(surface); dxball_board_surface = 0; }
-            surface = (DxBallDDSurface *)dxball_primary_surface;
-            if (surface != NULL) {
-                surface->vtable->release(surface); dxball_primary_surface = 0; dxball_secondary_surface = 0;
-            }
-            if (dxball_direct_palette != NULL) {
-                ((DxBallReleasePalette)dxball_direct_palette->vtable->slots_0_to_5[2])(dxball_direct_palette); dxball_direct_palette = NULL;
-            }
-            dxball_direct_draw = NULL;
-        }
-        dxball_close_instance(); dxball_window_post_quit_message((DxBallInt)wparam);
-        break;
-    case 7:
-        dxball_sound_suspended = 0;
-        if (dxball_direct_draw != NULL) dxball_platform_ops.initialize_sound(window);
-        dxball_platform_ops.resume_music(); break;
-    case 8:
-        if (dxball_sound_suspended == 0) dxball_platform_ops.pause_sound();
-        dxball_platform_ops.pause_music(); dxball_surface_restore_requested = 1; break;
     case 0x1c:
         dxball_application_active = (DxBallInt)wparam;
-        dxball_control_pressed = dxball_shift_pressed = 0; break;
-    case 0x20: dxball_window_set_cursor(0); return 1;
-    case 0x48:
-        if (wparam == 1) dxball_sound_suspended = 1;
-        if (wparam == 3 || wparam == 2) dxball_sound_suspended = 0;
+        dxball_control_pressed = 0;
+        dxball_shift_pressed = 0;
         break;
+    case 0x20:
+        dxball_window_set_cursor(0);
+        return 1;
     case 0x100:
         if (wparam == 0x1b) {
             if (dxball_display_mode == 0) {
-                dxball_cleanup_mode(1); dxball_window_post_message(window, 0x10, 0, 0);
-            } else { dxball_end_requested = 1; dxball_return_to_menu = 0; }
-        } else dxball_dispatch_key((char)wparam);
+                dxball_cleanup_mode(1);
+                dxball_window_post_message(window, 0x10, 0, 0);
+            } else {
+                dxball_end_requested = 1;
+                dxball_return_to_menu = 0;
+            }
+        } else {
+            dxball_dispatch_key((char)wparam);
+        }
         if (wparam == 0x11) dxball_control_pressed = 1;
         if (wparam == 0x10) dxball_shift_pressed = 1;
         break;
@@ -542,22 +523,84 @@ DxBallWindowResult DXBALL_DDCALL dxball_window_proc(DxBallHandle window,
         if (wparam == 0x11) dxball_control_pressed = 0;
         if (wparam == 0x10) dxball_shift_pressed = 0;
         break;
-    case 0x200:
-        dxball_window_get_cursor_pos(&dxball_cursor_point);
-        dxball_mouse_x = dxball_cursor_point.x; dxball_mouse_y = dxball_cursor_point.y;
-        return dxball_window_default_window_proc(window, message, wparam, lparam);
-    case 0x201: dxball_window_set_capture(window); dxball_mouse_action = 1; break;
-    case 0x202: case 0x205: dxball_window_release_capture(); dxball_mouse_action = 0; break;
-    case 0x204: dxball_window_set_capture(window); dxball_mouse_action = 2; break;
+    case 2:
+        dxball_dispose_working_surface(0);
+        dxball_release_audio();
+        dxball_close_music();
+        if (dxball_direct_draw != NULL) {
+            dxball_release_sprite_banks();
+            if (dxball_board_surface != NULL) {
+                dxball_board_surface->vtable->release(dxball_board_surface);
+                dxball_board_surface = NULL;
+            }
+            if (dxball_primary_surface != NULL) {
+                dxball_primary_surface->vtable->release(dxball_primary_surface);
+                dxball_primary_surface = NULL;
+                dxball_secondary_surface = NULL;
+            }
+            if (dxball_direct_palette != NULL) {
+                ((DxBallReleasePalette)dxball_direct_palette->vtable->slots_0_to_5[2])(
+                    dxball_direct_palette);
+                dxball_direct_palette = NULL;
+            }
+            dxball_direct_draw = NULL;
+        }
+        dxball_close_instance();
+        dxball_window_post_quit_message((DxBallInt)wparam);
+        break;
+    case 0x48:
+        if (wparam == 1) dxball_sound_suspended = 1;
+        if (wparam == 3 || wparam == 2) dxball_sound_suspended = 0;
+        break;
     case 0x218:
         if (wparam == 0 || wparam == 4) dxball_sound_suspended = 1;
-        if (wparam == 2 || wparam == 6 || wparam == 7) dxball_sound_suspended = 0;
+        if (wparam == 2 || wparam == 6 || wparam == 7)
+            dxball_sound_suspended = 0;
+        break;
+    case 7:
+        dxball_sound_suspended = 0;
+        if (dxball_direct_draw != NULL)
+            dxball_initialize_sound(window);
+        dxball_resume_music();
+        break;
+    case 8:
+        if (dxball_sound_suspended == 0) dxball_pause_sound();
+        dxball_pause_music();
+        dxball_surface_restore_requested = 1;
+        break;
+    case 0x201:
+        dxball_window_set_capture(window);
+        dxball_mouse_action = 1;
+        break;
+    case 0x204:
+        dxball_window_set_capture(window);
+        dxball_mouse_action = 2;
+        break;
+    case 0x202:
+        dxball_window_release_capture();
+        dxball_mouse_action = 0;
+        break;
+    case 0x205:
+        dxball_window_release_capture();
+        dxball_mouse_action = 0;
         break;
     case 0x311:
-        if (dxball_direct_draw != NULL && dxball_primary_surface != 0 && dxball_device_reset_requested == 0)
-            dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, 0, 256, dxball_live_palette);
+        if (dxball_direct_draw != NULL && dxball_primary_surface != NULL &&
+            dxball_device_reset_requested == 0) {
+            dxball_direct_palette->vtable->set_entries(dxball_direct_palette,
+                0, 0, 256, dxball_live_palette);
+        }
         break;
-    default: return dxball_window_default_window_proc(window, message, wparam, lparam);
+    case 0x200:
+        dxball_window_get_cursor_pos(&dxball_cursor_point);
+        dxball_mouse_x = dxball_cursor_point.x;
+        dxball_mouse_y = dxball_cursor_point.y;
+        /* fall through */
+    default:
+        return dxball_window_default_window_proc(window, message, wparam, lparam);
+    case 1:
+    case 0x14:
+        break;
     }
     return 0;
 }
