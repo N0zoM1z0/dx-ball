@@ -7,6 +7,8 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import shutil
+from types import SimpleNamespace
 import sys
 import tempfile
 
@@ -29,9 +31,37 @@ class RenderOps(C.Structure):
     _fields_ = [("sprite", Sprite), ("restore", Restore), ("invalidate", Invalidate)]
 
 
+class Surface(C.Structure):
+    _fields_ = [("vtable", C.POINTER(C.c_void_p))]
+
+
+class SurfaceHandle:
+    """Keep oracle handle identities while backing COM destinations with storage."""
+    def __init__(self, slot, handle, pointer):
+        self.slot, self.handle, self.pointer = slot, handle, pointer
+
+    @property
+    def value(self):
+        value = self.slot.value
+        return self.handle if value == self.pointer else value
+
+    @value.setter
+    def value(self, value):
+        self.slot.value = self.pointer if value == self.handle else value
+
+
 class Native:
     def __init__(self, library):
-        self.lib = C.CDLL(str(library.resolve()))
+        # Core fixtures already own an isolated, verified image and API transport.
+        isolated = not hasattr(self, 'core_native_image')
+        if isolated:
+            self.image_directory = tempfile.TemporaryDirectory(prefix='dxball-board-image-')
+            path = Path(self.image_directory.name) / library.name
+            shutil.copy2(library.resolve(), path)
+            self.board_native_image = SimpleNamespace(path=path)
+        else:
+            path = library.resolve()
+        self.lib = C.CDLL(str(path))
         self.bank = source_global(C.c_uint8 * 20000, self.lib, "dxball_board_bank")
         self.tiles = source_global(C.c_uint8 * 400, self.lib, "dxball_board_tiles")
         self.aux = (C.c_uint8 * 400).in_dll(self.lib, "dxball_board_aux")
@@ -50,6 +80,27 @@ class Native:
         )
         ops = RenderOps.in_dll(self.lib, "dxball_render_ops")
         ops.sprite, ops.restore, ops.invalidate = self.callbacks
+        if isolated:
+            from native_imports import bind_imports
+            self.api_callbacks = (
+                Sprite(lambda sprite, x, y: ops.sprite(sprite, x, y)),
+                Invalidate(lambda rect: ops.invalidate(rect)),
+            )
+            self.api_slots = bind_imports(self.board_native_image, self.lib.dxball_draw_board_tile,
+                {name:C.cast(callback, C.c_void_p).value for name,callback in
+                 zip(('dxball_draw_sprite','dxball_invalidate_region'),self.api_callbacks)})
+            def blt(destination, x, y, source, rect, flags):
+                assert destination == C.addressof(self.board_destination)
+                self.restore(TargetOracle.SURFACE, x, y, source, rect, flags)
+                return 0
+            self.blt_callback = C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_int32, C.c_int32,
+                C.c_size_t, C.POINTER(Rect), C.c_uint32)(blt)
+            self.board_vtable = (C.c_void_p*8)()
+            self.board_vtable[7] = C.cast(self.blt_callback,C.c_void_p).value
+            self.board_destination = Surface(self.board_vtable)
+            pointer = C.addressof(self.board_destination)
+            self.active = SurfaceHandle(self.active, TargetOracle.SURFACE, pointer)
+            C.c_size_t.in_dll(self.lib,'dxball_board_surface').value = pointer
         for name, types, result in [
             ("dxball_read_board_bank", [C.c_char_p], None),
             ("dxball_write_board_bank", [C.c_char_p], None),

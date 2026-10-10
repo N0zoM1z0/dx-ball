@@ -1,5 +1,6 @@
 #include "boards.h"
 #include "display.h"
+#include "resources.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -109,26 +110,53 @@ void dxball_select_surface(DxBallSurface surface)
 }
 
 /* FUNCTION: DXBALL 0x004119F0
-   Dependency calls cross the host bridge; DirectDraw and sprite drawing are
-   still pending. Unsupported tile bytes perform no drawing but may invalidate. */
+   Unsupported signed tile bytes skip drawing but retain invalidation. */
 void dxball_draw_board_tile(DxBallInt x, DxBallInt y, DxBallInt defer_update)
 {
     DxBallRect rect;
-    DxBallByte tile = dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH];
+    DxBallInt tile = (char)dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH];
     rect.left = x * 30 + 20;
     rect.top = y * 15 + 50;
-    rect.right = rect.left + 30;
-    rect.bottom = rect.top + 15;
-
-    if (tile == 0 || (tile == 7 && dxball_display_mode == 1)) {
-        dxball_render_ops.restore(dxball_active_surface, rect.left, rect.top,
-                                  (DxBallSurface)dxball_background_surface, &rect, 0x10);
-    } else if (tile <= 22) {
-        dxball_render_ops.sprite(dxball_board_tile_sprite(tile), rect.left, rect.top);
+    rect.right = x * 30 + 50;
+    rect.bottom = y * 15 + 65;
+    switch (tile) {
+    case 0:
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_active_surface, x * 30 + 20, y * 15 + 50,
+            (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+        break;
+    case 1: dxball_draw_sprite(3, x * 30 + 20, y * 15 + 50); break;
+    case 2: dxball_draw_sprite(4, x * 30 + 20, y * 15 + 50); break;
+    case 3: dxball_draw_sprite(5, x * 30 + 20, y * 15 + 50); break;
+    case 4: dxball_draw_sprite(6, x * 30 + 20, y * 15 + 50); break;
+    case 5: dxball_draw_sprite(7, x * 30 + 20, y * 15 + 50); break;
+    case 6: dxball_draw_sprite(8, x * 30 + 20, y * 15 + 50); break;
+    case 7:
+        if (dxball_display_mode == 1) {
+            ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_active_surface, x * 30 + 20, y * 15 + 50,
+            (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+        } else {
+            dxball_draw_sprite(19, x * 30 + 20, y * 15 + 50);
+        }
+        break;
+    case 8: dxball_draw_sprite(9, x * 30 + 20, y * 15 + 50); break;
+    case 9: dxball_draw_sprite(10, x * 30 + 20, y * 15 + 50); break;
+    case 10: dxball_draw_sprite(11, x * 30 + 20, y * 15 + 50); break;
+    case 11: dxball_draw_sprite(12, x * 30 + 20, y * 15 + 50); break;
+    case 12: dxball_draw_sprite(13, x * 30 + 20, y * 15 + 50); break;
+    case 13: dxball_draw_sprite(14, x * 30 + 20, y * 15 + 50); break;
+    case 14: dxball_draw_sprite(15, x * 30 + 20, y * 15 + 50); break;
+    case 15: dxball_draw_sprite(16, x * 30 + 20, y * 15 + 50); break;
+    case 16: dxball_draw_sprite(17, x * 30 + 20, y * 15 + 50); break;
+    case 17: dxball_draw_sprite(18, x * 30 + 20, y * 15 + 50); break;
+    case 18: dxball_draw_sprite(56, x * 30 + 20, y * 15 + 50); break;
+    case 19: dxball_draw_sprite(57, x * 30 + 20, y * 15 + 50); break;
+    case 20: dxball_draw_sprite(58, x * 30 + 20, y * 15 + 50); break;
+    case 21: dxball_draw_sprite(59, x * 30 + 20, y * 15 + 50); break;
+    case 22: dxball_draw_sprite(60, x * 30 + 20, y * 15 + 50); break;
     }
-    if (defer_update == 0) {
-        dxball_render_ops.invalidate(rect);
-    }
+    if (defer_update == 0) dxball_invalidate_region(rect);
     return;
 }
 

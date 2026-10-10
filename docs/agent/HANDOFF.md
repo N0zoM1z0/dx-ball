@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 161 exact functions / 27,712 full-span bytes and
+- 283 source-present entries; 163 exact functions / 29,174 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -42,7 +42,7 @@ are declared in `config/match-units.toml`.
 Private receipts: `.analysis/exact-score-initialization/` and
 `.analysis/exact-score-reading/`, `.analysis/exact-ranking-interface/`, and
 `.analysis/exact-gameover-lifecycle/`, `.analysis/exact-gameover-keys/`, and
-`.analysis/exact-editor-lifecycle/` and `.analysis/exact-editor-commands/`.
+`.analysis/exact-editor-lifecycle/` and `.analysis/exact-editor-commands/` and `.analysis/exact-board-rendering/`.
 Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
 interface checkpoint is `4499a3d`. The current lifecycle checkpoint restores
 initialization, redraw, frame and cleanup exactly; no push was made.
@@ -68,7 +68,7 @@ REA 6.3 rejects the old snapshot during integrity validation; the exact cause
 is unisolated. The old snapshot is
 retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
 Evidence IDs and dossiers remain available for direct reuse. The current
-snapshot contains four new records, including the reading/insertion literals. New analysis responses expose
+snapshot contains seven cumulative new records, including the reading/insertion literals. New analysis responses expose
 `raw_result` and `normalized_result`, while older responses use `result`.
 See [REA commands](REA.md). No registration rewrite or provider installation
 was necessary; the configured MCP path now points at the upgraded package.
@@ -178,11 +178,38 @@ cases/assertions are unchanged. Reports retain distinct library hashes; other
 owner scopes stay historical. Native/MinGW builds and the 35-object VC4 relink
 pass. No full historical queue was replayed.
 
-Next recover the board tile-to-sprite mapper (`0x40CCF0`, 426 bytes), which
-connects the editor toolbar, status and gameplay board drawing. Reuse its
-existing board dossier, inspect switch ranges and attached data, and preserve
-accepted board units in the same compiler recipe. Keep the editor candidates
-explicit; do not attempt declaration/name/layout/padding permutations.
+Board traversal (`0x411970`, 113 bytes / three relocations) and cell drawing
+(`0x4119F0`, 1,349 / 55) are now exact. The source restores each original signed
+switch case, the actual promoted DWORD tile local, independent rectangle field
+calculations and genuine sprite/COM/invalidation calls. Two family compilations
+were used; all six accepted board units stay exact together. The 27-file recipe
+contains the complete eleven-file consumed project closure. The 1,349-byte
+span includes the excluded five-byte JMP at `0x411E94` and 92 table bytes.
+
+The new REA session is closed and saved with seven cumulative Evidence records.
+Dossier IDs and exact scope are in [board evidence](../research/KNOWLEDGE_BASE.md).
+The mapper (`0x40CCF0`, 426 bytes) confirms the original uninitialized-local
+return outside 0..22. Preserve the host abort policy and bounded acceptance;
+it is deliberately not promoted. Editor board-copy candidates stay 52-byte
+full-span comparisons with their existing structured-storage emission gap.
+
+Final drawing validation: 9,319 selected existing rendering/traversal cases and
+32 existing connected editor checks; the intermediate library passed all 9,502
+board-owner cases and the same connected checks. Reports retain distinct hashes.
+The fixture now binds actual sprite/invalidation API slots in a copied ELF image
+and supplies a typed COM destination while preserving handle identities and
+all maintained assertions. Core fixtures keep their established transport.
+Native/MinGW builds and the 35-object VC4 relink pass. Historical semantic rows
+keep their old scopes after identity refresh; no historical queue was replayed.
+
+Next recover intro/menu key dispatch (`0x40E430`, 305-byte span), then inspect
+point-update/drawing control flow where existing evidence exposes a real gap.
+Reuse the intro dossiers and preserve its already-exact initialization, frame,
+cleanup and trig units. Splash redraw, intro redraw and point initialization
+already have retained candidates; inspect their documented differences before
+changing source. Leave the mapper's undefined domain and declared editor/game-
+over candidate gaps explicit; do not perform declaration/name/layout/padding
+permutations to force them.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
@@ -208,6 +235,7 @@ Entry 12 records bounded editor facet sizes and confirms the span gap in a secon
 controller, with a proposed evidence-linked native reconstruction view.
 Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
+Entry 13 adds current cold/warm function latency and response-size measurements.
 Nothing has been sent externally.
 
 ## Working limits and completeness

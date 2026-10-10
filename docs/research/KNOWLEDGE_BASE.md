@@ -44,6 +44,42 @@ drawing. Invalidation occurs iff the third argument is zero, even for unknown
 bytes. `0x00411970` selects the board surface, then traverses x first, y second.
 The independently observed `0x00403E50` only assigns the active surface.
 
+Board traversal (`0x411970`, 113 bytes / three relocations) and cell drawing
+(`0x4119F0`, 1,349 bytes / 55 relocations) now match complete VC4 spans. The
+cell body restores a signed byte promoted into a meaningful 32-bit tile local,
+independent original rectangle calculations, every switch branch and direct
+sprite/COM/invalidation calls. It retains all unknown-byte no-draw behavior and
+tile-7 mode handling. The span includes 1,257 instruction bytes and 92 inline
+switch bytes: the function-owned view excludes the five-byte JMP at `0x411E94`.
+All 23 table targets and other relocations are explicit; no bytes are masked.
+
+New REA 6.3/Ghidra dossiers are retained in the closed private run
+`2026-10-10T16-04-08.246Z-requests-701391`. Evidence IDs:
+mapper `ev_d7a2961bada2ef2ea2d66ea668a92a1a7994a8ca73733679b79e1eaaa0cc0f90`,
+traversal `ev_f53253c73641216725dd6f0dcf08cb633735d7914a5d277b4ad3ee1514825025`,
+cell drawing `ev_3fee51ff34d257d7415734913e2adb8aa8f630f30a940c11839cc0a40e042e29`.
+The mapper's unsupported-input read remains undefined in the original; its
+host abort policy and 0..22 acceptance are unchanged. It is not exact.
+
+This family used two VC4 compilations: the second corrects the tile local's
+actual DWORD storage, established by MOVSX and its store/load consumers.
+All six accepted board units stay exact together; the two 52-byte copy
+candidates retain their existing structured-storage emission differences.
+The 27-file recipe includes the complete eleven-file project closure.
+Native/MinGW builds and a 35-object VC4 relink pass.
+
+The intermediate library passes all 9,502 existing board cases and 32 connected
+editor scenarios. The final library passes 9,319 selected existing all-byte/
+mode/defer/edge and fifty-board ordered drawing cases plus those 32 connected
+editor scenarios. Other direct loops retain their intermediate product hash;
+no full historical queue was replayed. The board fixture copies its ELF image,
+binds only the two genuine sprite/invalidation API import slots to the current
+existing callback table, and backs the destination with a typed COM vtable.
+Handle normalization preserves original identities; cases and assertions are
+unchanged. Core fixtures keep their existing isolated API transport. Actual
+hardware pixels and a playable whole EXE remain separate claims. Receipts and
+full comparisons are private in `.analysis/exact-board-rendering/`.
+
 ## Evidence limits
 
 The function ledger is an auto-analysis inventory, not an authored-function

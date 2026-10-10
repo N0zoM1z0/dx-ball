@@ -1,4 +1,4 @@
-"""Bind external calls in one copied ELF image, without exporting libc symbols."""
+"""Bind external calls in one copied ELF image, without exporting process-wide symbols."""
 import ctypes as C
 import os
 from pathlib import Path
@@ -50,7 +50,12 @@ def bind_imports(image, entry, callbacks):
         raise RuntimeError('Native fixture must have one import slot per selected API')
     page_size = os.sysconf('SC_PAGE_SIZE')
     mappings = [line.split()[:2] for line in Path('/proc/self/maps').read_text().splitlines()]
-    host_defaults = {name: C.cast(getattr(host, name), C.c_void_p).value for name in callbacks}
+    host_defaults = {}
+    for name in callbacks:
+        try:
+            host_defaults[name] = C.cast(getattr(host, name), C.c_void_p).value
+        except AttributeError:
+            pass  # A private project API has no process-wide host symbol.
     for name, addresses in slots.items():
         address = addresses[0]
         mapping = next((permissions for bounds, permissions in mappings
