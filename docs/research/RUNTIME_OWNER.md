@@ -1,5 +1,47 @@
 # Game lifecycle and mode dispatch
 
+The current clock batch restores `dxball_current_time` at `0x403450`: its complete
+148-byte span matches with nine explicit relocations. It uses three independent
+typed stdcall API slots for timeGetTime, QueryPerformanceFrequency and
+QueryPerformanceCounter, rather than mapping a portable callback table onto
+noncontiguous original imports. Host defaults forward the live callbacks;
+Windows binds the existing SDK adapters. The consumed frequency BOOL and
+eight-byte counter account for the original twelve-byte frame. LowPart-only
+division, cached divisor, failed-frequency fallback and ignored counter result
+remain unchanged. Counter failure without a written value and a zero divisor
+after a sub-1000 frequency remain outside the bounded semantic scope.
+
+The retained REA Evidence
+`ev_d16dbb80ace85b76e9671a6ab40608772eacc9c59210806b5387e23802de2114`
+owns 128 bytes. Independent pinned-image decoding recovers the omitted store
+to `0x425970` and jump at `0x403495..0x4034A3`, plus the jump at
+`0x4034CF..0x4034D3`. The divisor-zero statement after the early return is
+unreachable but present in the complete original emission. No artificial
+storage, padding or declaration/layout trials were used.
+
+One runtime compilation covers all 26 consumed project inputs. Nine previous
+runtime exacts remain exact; current-time brings the family back to ten.
+The unchanged elapsed body now emits three comparison-operand differences at
+offsets 19, 22 and 24 and is recorded as an 81-byte candidate. Its previous exact
+object remains retained. The compiler's cause for the changed operand ordering
+has not been isolated. Paddle is now a 678/677-byte candidate with 494 unaligned
+differences; its 52 bindings and complete floating literals remain checked.
+The other four runtime candidates retain their preceding differences. Current
+totals are 167 exact functions, 29,831 complete code bytes and 136 metadata bytes.
+
+Native and MinGW builds pass. VC4 compiles the three affected source objects
+and links them with 32 independently verified reused objects. All 837 selected
+existing clock/elapsed/paddle and initialization/death/reset/dispatch calls pass,
+including 36 connected frames; the matrix and fixture are unchanged. The new
+VC4 product also passes the existing real-Wine ball/pause/editor/exit flow with
+81 read-only state observations, the expected saved-bank hash, normal exit and
+all 49 originals unchanged. Private receipts are in `.analysis/exact-clock-api/`
+and `.analysis/windows-play-clock-api/`. Previous mutation probes, original/MinGW
+play controls and other owner suites were not rerun. These checks do not
+establish synchronized pixels, physical audio/MIDI or full-game fidelity.
+
+The following paddle/elapsed results describe the preceding checkpoint.
+
 The paddle-rendering batch restores the complete `0x412EC0` controller's direct
 elapsed/time/RNG/effect-sprite/region calls, independent floating margin branches,
 live sprite/surface loads and both meaningful rectangles. In particular, the

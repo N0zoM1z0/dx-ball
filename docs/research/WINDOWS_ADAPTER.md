@@ -300,3 +300,14 @@ usable again. This explains the original gate's missed recovery as a supported
 inference; no target API return was intercepted and no game body was changed.
 Private CI includes the standalone observation and public CI compiles its C90
 SDK target. The same stable batch reruns all five real Windows game harnesses.
+
+
+The clock API follow-up passes the unchanged existing VC4 ball/pause/editor/
+exit observation with 81 read-only states and five captures. The new product
+uses independent WinMM/kernel clock bindings; ball release/movement, paddle
+input, pause/resume, editor painting/save/reload, the established whole-bank
+hash and normal exit pass. All 49 originals remain unchanged. Receipts are
+in `.analysis/windows-play-clock-api/`; source/input identities identify the
+working-tree product based on `8a2f125`. Original/MinGW prior play controls
+were not rerun. This is a sequential read-only Wine/Xvfb observation, with no
+synchronized frame, physical audio/MIDI or full-game fidelity claim.

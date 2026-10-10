@@ -1,9 +1,29 @@
-/* Shared transport for the DirectDrawCreate SDK boundary. Windows binds its
-   loader adapter; native callers can bind a factory with the same contract. */
+/* Shared SDK transports. Windows binds its adapters; native callers retain
+   live callbacks with the same argument/result contracts. */
 #include "platform.h"
+#include "clock_api.h"
 #include <stdlib.h>
 
 DxBallDrawFactory dxball_draw_factory_backend;
+
+static DxBallUInt DXBALL_DDCALL clock_time(void)
+{
+    return dxball_clock_ops.time_ms();
+}
+
+static DxBallInt DXBALL_DDCALL clock_frequency(DxBallCounter *value)
+{
+    return dxball_clock_ops.frequency(value);
+}
+
+static DxBallInt DXBALL_DDCALL clock_counter(DxBallCounter *value)
+{
+    return dxball_clock_ops.counter(value);
+}
+
+DxBallUInt (DXBALL_DDCALL *dxball_time_get_time)(void) = clock_time;
+DxBallInt (DXBALL_DDCALL *dxball_query_performance_frequency)(DxBallCounter *) = clock_frequency;
+DxBallInt (DXBALL_DDCALL *dxball_query_performance_counter)(DxBallCounter *) = clock_counter;
 
 DxBallInt DXBALL_DDCALL dxball_direct_draw_create(void *guid,
     DxBallDDraw **device, void *outer)

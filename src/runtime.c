@@ -13,6 +13,7 @@
 #include "editor.h"
 #include "midi.h"
 #include "sound.h"
+#include "clock_api.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -41,14 +42,24 @@ DxBallDDSurface *dxball_primary_surface, *dxball_secondary_surface;
 
 DxBallUInt dxball_current_time(void)
 {
+    DxBallInt result;
     DxBallCounter value;
-    if (dxball_high_resolution_clock == 0) return dxball_clock_ops.time_ms();
-    if (dxball_clock_divisor == 0) {
-        if (dxball_clock_ops.frequency(&value) == 0) return dxball_clock_ops.time_ms();
-        dxball_clock_divisor = value.low / 1000;
+    if (dxball_high_resolution_clock != 0) {
+        if (dxball_clock_divisor == 0) {
+            result = dxball_query_performance_frequency(&value);
+            if (result == 0) {
+                return dxball_time_get_time();
+                /* The original full span retains this unreachable store. */
+                dxball_clock_divisor = 0;
+            } else {
+                dxball_clock_divisor = value.low / 1000;
+            }
+        }
+        dxball_query_performance_counter(&value);
+        return value.low / dxball_clock_divisor;
+    } else {
+        return dxball_time_get_time();
     }
-    dxball_clock_ops.counter(&value);
-    return value.low / dxball_clock_divisor;
 }
 
 DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval)
@@ -85,10 +96,10 @@ void dxball_draw_paddle(void)
         sprite += 64; offset_y = 0;
     }
     if (dxball_attached_ball_cue == 1) {
-        if (dxball_paddle_overlay_deadline < dxball_clock_ops.time_ms() ||
+        if (dxball_paddle_overlay_deadline < dxball_time_get_time() ||
             dxball_paddle_overlay_width != dxball_paddle_width) {
             dxball_paddle_overlay_sprite = dxball_random_range(4) + factor * 4 + 124;
-            dxball_paddle_overlay_deadline = dxball_clock_ops.time_ms() + 33;
+            dxball_paddle_overlay_deadline = dxball_time_get_time() + 33;
             dxball_paddle_overlay_width = dxball_paddle_width;
         }
         if (dxball_bonus_8_active == 1)

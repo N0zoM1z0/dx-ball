@@ -11,6 +11,7 @@
 #include "raster.h"
 #include "bitmap.h"
 #include "allocator.h"
+#include "clock_api.h"
 
 typedef char WindowsAdapterRequiresI686[(sizeof(void *) == 4) ? 1 : -1];
 typedef char WindowsMessageLayout[(sizeof(MSG) == sizeof(DxBallMessage)) ? 1 : -1];
@@ -260,6 +261,9 @@ void dxball_bind_windows(void)
     dxball_window_get_version_ex = version_info;
     dxball_clock_ops.time_ms = time_ms; dxball_clock_ops.frequency = clock_frequency;
     dxball_clock_ops.counter = clock_counter; dxball_set_cursor_position = set_cursor_position;
+    dxball_time_get_time = time_ms;
+    dxball_query_performance_frequency = clock_frequency;
+    dxball_query_performance_counter = clock_counter;
     dxball_raster_ops.muldiv = raster_muldiv;
     dxball_sound_api.create_device = create_sound;
     dxball_file_create = create_file; dxball_file_size = file_size;

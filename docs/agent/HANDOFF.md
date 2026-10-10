@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 167 exact functions / 29,764 full-span bytes and
+- 283 source-present entries; 167 exact functions / 29,831 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -322,7 +322,40 @@ Entry 13 adds current cold/warm function latency and response-size measurements.
 Entry 14 records bounded key/point archive views and the unresolved storage
 consumer boundary. Entry 15 records inferred call prototypes hiding actual
 arguments. Entry 16 records pre-COM rectangle consumers and x87 precision/literal
-context. Nothing has been sent externally.
+context. Entry 17 records an excluded unreachable clock-divisor store and its
+relocation, with a proposed classified enclosing-span view. Nothing has been
+sent externally.
+
+## Current clock boundary checkpoint
+
+The complete current-time controller at `0x403450` matches all 148 bytes with
+nine relocations. Three independent typed SDK clock slots replace the
+contiguous callback-table assumption; host defaults still forward live native
+callbacks. Frequency BOOL storage and the retained unreachable divisor-zero
+store follow the complete original instructions. Both previously excluded
+intervals are covered. REA Evidence was reused without a new provider call.
+
+One runtime compile verifies its 26-file consumed closure and all affected
+units. Nine previous runtime exacts stay exact. The unchanged elapsed body
+now has three compare-operand differences and is explicitly a candidate;
+retain its earlier exact object and do not force declaration/name/layout
+changes. Paddle is now 678/677 bytes with 494 unaligned differences and 52
+bindings; its meaningful rectangles and floating literal consumers remain.
+Current totals stay 167 exact functions, now 29,831 bytes plus 136 metadata.
+
+Native/MinGW builds and a VC4 relink pass: three affected source objects
+compiled, 32 independently verified objects reused. The unchanged 837 selected
+existing checks pass, including 36 connected frames. The new VC4 product
+passes real ball/pause/editor/exit with 81 read-only states, the expected saved
+bank, exit zero and all 49 original assets unchanged. Receipts are in
+`.analysis/exact-clock-api/` and `.analysis/windows-play-clock-api/`.
+No full owner replay or prior mutation/original/MinGW play controls were rerun;
+complete-game, synchronized rendering and physical audio/MIDI stay unproven.
+
+Continue with remaining genuine storage/call gaps in the score/reset/paddle
+controllers; use retained Evidence and complete comparisons. Do not revisit
+elapsed by trying variable/declaration permutations. REA feedback still uses
+only `/tmp/dxball_rea_feedback_20261010.md`, now seventeen numbered entries.
 
 ## Working limits and completeness
 
