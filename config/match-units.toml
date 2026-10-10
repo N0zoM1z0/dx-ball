@@ -35,7 +35,7 @@ target_address = 0x00412470
 size = 146
 boundary_evidence = "docs/research/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0xF, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
@@ -303,7 +303,7 @@ target_address = 0x00412690
 size = 146
 boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
-  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0xF, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
@@ -345,13 +345,13 @@ relocations = [
 [builds.particles]
 source = "src/particles.c"
 object = "build/exact/particles.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.c", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.c", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.bonuses]
 source = "src/bonuses.c"
 object = "build/exact/bonuses.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.c", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.append-particle]
@@ -361,7 +361,7 @@ target_address = 0x00414960
 size = 146
 boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
-  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0xF, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
@@ -446,7 +446,7 @@ target_address = 0x00413D80
 size = 146
 boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
-  { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
+  { offset = 0xF, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
@@ -3557,26 +3557,26 @@ relocations = [
   { offset = 1036, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x43fac8 },
   { offset = 1053, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x43fac8 },
   { offset = 1064, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x43fac8 },
-  { offset = 1101, type = "DIR32", symbol = "$L1168", addend = 0, target = 0x413d21 },
-  { offset = 1105, type = "DIR32", symbol = "$L1118", addend = 0, target = 0x413a8e },
-  { offset = 1109, type = "DIR32", symbol = "$L1121", addend = 0, target = 0x413add },
-  { offset = 1113, type = "DIR32", symbol = "$L1124", addend = 0, target = 0x413b2c },
-  { offset = 1117, type = "DIR32", symbol = "$L1125", addend = 0, target = 0x413b48 },
-  { offset = 1121, type = "DIR32", symbol = "$L1126", addend = 0, target = 0x413b64 },
-  { offset = 1125, type = "DIR32", symbol = "$L1127", addend = 0, target = 0x413b80 },
-  { offset = 1129, type = "DIR32", symbol = "$L1128", addend = 0, target = 0x413b9c },
-  { offset = 1133, type = "DIR32", symbol = "$L1129", addend = 0, target = 0x413bb8 },
-  { offset = 1137, type = "DIR32", symbol = "$L1130", addend = 0, target = 0x413bd4 },
-  { offset = 1141, type = "DIR32", symbol = "$L1131", addend = 0, target = 0x413bf0 },
-  { offset = 1145, type = "DIR32", symbol = "$L1132", addend = 0, target = 0x413c0c },
-  { offset = 1149, type = "DIR32", symbol = "$L1133", addend = 0, target = 0x413c28 },
-  { offset = 1153, type = "DIR32", symbol = "$L1134", addend = 0, target = 0x413c44 },
-  { offset = 1157, type = "DIR32", symbol = "$L1135", addend = 0, target = 0x413c60 },
-  { offset = 1161, type = "DIR32", symbol = "$L1136", addend = 0, target = 0x413c7c },
-  { offset = 1165, type = "DIR32", symbol = "$L1137", addend = 0, target = 0x413c98 },
-  { offset = 1169, type = "DIR32", symbol = "$L1138", addend = 0, target = 0x413cb4 },
-  { offset = 1173, type = "DIR32", symbol = "$L1139", addend = 0, target = 0x413cd0 },
-  { offset = 1177, type = "DIR32", symbol = "$L1140", addend = 0, target = 0x413cec },
+  { offset = 1101, type = "DIR32", symbol = "$L1208", addend = 0, target = 0x413d21 },
+  { offset = 1105, type = "DIR32", symbol = "$L1158", addend = 0, target = 0x413a8e },
+  { offset = 1109, type = "DIR32", symbol = "$L1161", addend = 0, target = 0x413add },
+  { offset = 1113, type = "DIR32", symbol = "$L1164", addend = 0, target = 0x413b2c },
+  { offset = 1117, type = "DIR32", symbol = "$L1165", addend = 0, target = 0x413b48 },
+  { offset = 1121, type = "DIR32", symbol = "$L1166", addend = 0, target = 0x413b64 },
+  { offset = 1125, type = "DIR32", symbol = "$L1167", addend = 0, target = 0x413b80 },
+  { offset = 1129, type = "DIR32", symbol = "$L1168", addend = 0, target = 0x413b9c },
+  { offset = 1133, type = "DIR32", symbol = "$L1169", addend = 0, target = 0x413bb8 },
+  { offset = 1137, type = "DIR32", symbol = "$L1170", addend = 0, target = 0x413bd4 },
+  { offset = 1141, type = "DIR32", symbol = "$L1171", addend = 0, target = 0x413bf0 },
+  { offset = 1145, type = "DIR32", symbol = "$L1172", addend = 0, target = 0x413c0c },
+  { offset = 1149, type = "DIR32", symbol = "$L1173", addend = 0, target = 0x413c28 },
+  { offset = 1153, type = "DIR32", symbol = "$L1174", addend = 0, target = 0x413c44 },
+  { offset = 1157, type = "DIR32", symbol = "$L1175", addend = 0, target = 0x413c60 },
+  { offset = 1161, type = "DIR32", symbol = "$L1176", addend = 0, target = 0x413c7c },
+  { offset = 1165, type = "DIR32", symbol = "$L1177", addend = 0, target = 0x413c98 },
+  { offset = 1169, type = "DIR32", symbol = "$L1178", addend = 0, target = 0x413cb4 },
+  { offset = 1173, type = "DIR32", symbol = "$L1179", addend = 0, target = 0x413cd0 },
+  { offset = 1177, type = "DIR32", symbol = "$L1180", addend = 0, target = 0x413cec },
   { offset = 1183, type = "DIR32", symbol = "_dxball_bonus_count", addend = 0, target = 0x43fa90 },
 ]
 
@@ -3736,9 +3736,9 @@ relocations = [
   { offset = 1617, type = "DIR32", symbol = "_dxball_paddle_sprite", addend = 0, target = 0x43a880 },
   { offset = 1627, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
   { offset = 1642, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x42309c },
-  { offset = 1651, type = "DIR32", symbol = "$T1158", addend = 0, target = 0x420118, data_hex = "0000000000000040" },
-  { offset = 1659, type = "DIR32", symbol = "$T1158", addend = 4, target = 0x420118, data_hex = "0000000000000040" },
-  { offset = 1665, type = "DIR32", symbol = "$T1158", addend = 0, target = 0x420118, data_hex = "0000000000000040" },
+  { offset = 1651, type = "DIR32", symbol = "$T1198", addend = 0, target = 0x420118, data_hex = "0000000000000040" },
+  { offset = 1659, type = "DIR32", symbol = "$T1198", addend = 4, target = 0x420118, data_hex = "0000000000000040" },
+  { offset = 1665, type = "DIR32", symbol = "$T1198", addend = 0, target = 0x420118, data_hex = "0000000000000040" },
   { offset = 1670, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0, target = 0x416e18 },
   { offset = 1675, type = "REL32", symbol = "__ftol", addend = 0, target = 0x41678c },
   { offset = 1680, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0, target = 0x43fa94 },
@@ -3773,26 +3773,26 @@ relocations = [
   { offset = 1999, type = "REL32", symbol = "_dxball_screen_pan", addend = 0, target = 0x406400 },
   { offset = 2012, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
   { offset = 2021, type = "DIR32", symbol = "_dxball_bonus_18_active", addend = 0, target = 0x43fae8 },
-  { offset = 2055, type = "DIR32", symbol = "$L1160", addend = 0, target = 0x41462b },
-  { offset = 2059, type = "DIR32", symbol = "$L1041", addend = 0, target = 0x414111 },
-  { offset = 2063, type = "DIR32", symbol = "$L1042", addend = 0, target = 0x414164 },
-  { offset = 2067, type = "DIR32", symbol = "$L1043", addend = 0, target = 0x41418e },
-  { offset = 2071, type = "DIR32", symbol = "$L1044", addend = 0, target = 0x4141b8 },
-  { offset = 2075, type = "DIR32", symbol = "$L1045", addend = 0, target = 0x4141f1 },
-  { offset = 2079, type = "DIR32", symbol = "$L1046", addend = 0, target = 0x41421b },
-  { offset = 2083, type = "DIR32", symbol = "$L1047", addend = 0, target = 0x41424a },
-  { offset = 2087, type = "DIR32", symbol = "$L1048", addend = 0, target = 0x414274 },
-  { offset = 2091, type = "DIR32", symbol = "$L1049", addend = 0, target = 0x4142a3 },
-  { offset = 2095, type = "DIR32", symbol = "$L1050", addend = 0, target = 0x4142d2 },
-  { offset = 2099, type = "DIR32", symbol = "$L1051", addend = 0, target = 0x414301 },
-  { offset = 2103, type = "DIR32", symbol = "$L1055", addend = 0, target = 0x41440d },
-  { offset = 2107, type = "DIR32", symbol = "$L1058", addend = 0, target = 0x4144f0 },
-  { offset = 2111, type = "DIR32", symbol = "$L1059", addend = 0, target = 0x41451f },
-  { offset = 2115, type = "DIR32", symbol = "$L1060", addend = 0, target = 0x414529 },
-  { offset = 2119, type = "DIR32", symbol = "$L1060", addend = 0, target = 0x414529 },
-  { offset = 2123, type = "DIR32", symbol = "$L1061", addend = 0, target = 0x414558 },
-  { offset = 2127, type = "DIR32", symbol = "$L1062", addend = 0, target = 0x4145b4 },
-  { offset = 2131, type = "DIR32", symbol = "$L1063", addend = 0, target = 0x4145e3 },
+  { offset = 2055, type = "DIR32", symbol = "$L1200", addend = 0, target = 0x41462b },
+  { offset = 2059, type = "DIR32", symbol = "$L1081", addend = 0, target = 0x414111 },
+  { offset = 2063, type = "DIR32", symbol = "$L1082", addend = 0, target = 0x414164 },
+  { offset = 2067, type = "DIR32", symbol = "$L1083", addend = 0, target = 0x41418e },
+  { offset = 2071, type = "DIR32", symbol = "$L1084", addend = 0, target = 0x4141b8 },
+  { offset = 2075, type = "DIR32", symbol = "$L1085", addend = 0, target = 0x4141f1 },
+  { offset = 2079, type = "DIR32", symbol = "$L1086", addend = 0, target = 0x41421b },
+  { offset = 2083, type = "DIR32", symbol = "$L1087", addend = 0, target = 0x41424a },
+  { offset = 2087, type = "DIR32", symbol = "$L1088", addend = 0, target = 0x414274 },
+  { offset = 2091, type = "DIR32", symbol = "$L1089", addend = 0, target = 0x4142a3 },
+  { offset = 2095, type = "DIR32", symbol = "$L1090", addend = 0, target = 0x4142d2 },
+  { offset = 2099, type = "DIR32", symbol = "$L1091", addend = 0, target = 0x414301 },
+  { offset = 2103, type = "DIR32", symbol = "$L1095", addend = 0, target = 0x41440d },
+  { offset = 2107, type = "DIR32", symbol = "$L1098", addend = 0, target = 0x4144f0 },
+  { offset = 2111, type = "DIR32", symbol = "$L1099", addend = 0, target = 0x41451f },
+  { offset = 2115, type = "DIR32", symbol = "$L1100", addend = 0, target = 0x414529 },
+  { offset = 2119, type = "DIR32", symbol = "$L1100", addend = 0, target = 0x414529 },
+  { offset = 2123, type = "DIR32", symbol = "$L1101", addend = 0, target = 0x414558 },
+  { offset = 2127, type = "DIR32", symbol = "$L1102", addend = 0, target = 0x4145b4 },
+  { offset = 2131, type = "DIR32", symbol = "$L1103", addend = 0, target = 0x4145e3 },
   { offset = 2136, type = "REL32", symbol = "_dxball_retire_bonus", addend = 0, target = 0x4147a0 },
   { offset = 2141, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x43fac8 },
   { offset = 2146, type = "REL32", symbol = "@dxball_advance_bonus@4", addend = 0, target = 0x4146e0 },
@@ -9553,4 +9553,34 @@ relocations = [
   { offset = 648, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
   { offset = 664, type = "REL32", symbol = "__ftol", addend = 0, target = 0x0041678C },
   { offset = 670, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+]
+
+[candidates.remove-explosion]
+build = "gameplay"
+symbol = "@dxball_remove_explosion@4"
+target_address = 0x0040FF50
+size = 220
+boundary_evidence = "docs/research/exact/EXACT_ENTITY_ALLOCATION.md"
+relocations = [
+  { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x00416760 },
+]
+
+[candidates.remove-particle]
+build = "particles"
+symbol = "@dxball_remove_particle@4"
+target_address = 0x00414B30
+size = 220
+boundary_evidence = "docs/research/exact/EXACT_ENTITY_ALLOCATION.md"
+relocations = [
+  { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x00416760 },
+]
+
+[candidates.remove-bonus]
+build = "bonuses"
+symbol = "@dxball_remove_bonus@4"
+target_address = 0x004147C0
+size = 220
+boundary_evidence = "docs/research/exact/EXACT_ENTITY_ALLOCATION.md"
+relocations = [
+  { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x00416760 },
 ]

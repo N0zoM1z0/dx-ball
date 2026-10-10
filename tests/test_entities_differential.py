@@ -418,13 +418,18 @@ def main():
             assert str(error) == "instruction limit reached" and target.exit_status == 1
         target.fail_allocation = False
         child = '''import ctypes as C, sys
-lib = C.CDLL(sys.argv[1])
+from pathlib import Path
+sys.path.insert(0, sys.argv[3])
+from test_entities_differential import EntitiesNative
+native = EntitiesNative(Path(sys.argv[1]))
+lib = native.lib
 callback = C.CFUNCTYPE(C.c_void_p, C.c_size_t)(lambda size: None)
 C.c_void_p.in_dll(lib, "dxball_gameplay_ops").value = C.cast(callback, C.c_void_p).value
-owner = (C.c_void_p * 3)()
+owner = native.owners["particles" if "particle" in sys.argv[2] else "bonuses"]
 getattr(lib, sys.argv[2])(C.byref(owner))
 '''
-        result = subprocess.run([ROOT / "scripts/repo-python", "-c", child, args.library.resolve(), "dxball_" + append])
+        result = subprocess.run([ROOT / "scripts/repo-python", "-c", child,
+                                 args.library.resolve(), "dxball_" + append, ROOT / "tests"])
         assert result.returncode == 1
         assert native.queue(owner) == target.queue(owner)
         cases[append] += 1

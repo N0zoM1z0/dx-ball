@@ -295,13 +295,18 @@ def main():
     except AssertionError as error:
         assert str(error) == "instruction limit reached" and target.exit_status == 1
     child = '''import ctypes as C, sys
-lib = C.CDLL(sys.argv[1])
+from pathlib import Path
+sys.path.insert(0, sys.argv[2])
+from test_effects_differential import EffectsNative
+native = EffectsNative(Path(sys.argv[1]))
+lib = native.lib
 callback = C.CFUNCTYPE(C.c_void_p, C.c_size_t)(lambda size: None)
 C.c_void_p.in_dll(lib, "dxball_gameplay_ops").value = C.cast(callback, C.c_void_p).value
-owner = (C.c_void_p * 3)()
+owner = native.fx
 lib.dxball_append_brick_effect(C.byref(owner))
 '''
-    assert subprocess.run([ROOT / "scripts/repo-python", "-c", child, args.library.resolve()]).returncode == 1
+    assert subprocess.run([ROOT / "scripts/repo-python", "-c", child,
+                           args.library.resolve(), ROOT / "tests"]).returncode == 1
     target.fail_allocation = False
     cases["append_brick_effect"] += 1
 

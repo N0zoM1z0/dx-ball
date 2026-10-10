@@ -662,6 +662,27 @@ REA remains 6.3.0 and was not reopened. Entry 25 in the same existing `/tmp`
 feedback document records 2,067,168 archive / 16,492 selected local bytes and
 live-state/precision/projection usability findings. No token/latency claim.
 
+## Current entity allocation checkpoint
+
+Latest entity allocation checkpoint: `src/gameplay.c`, `effects.c`, `particles.c`
+and `bonuses.c` restore actual new/delete edges; the extracted explosion phase
+uses direct RNG/bonus/audio calls. Four matching VC4 compiles preserve 28 exact
+units / 5,400 code bytes. Three complete deletion candidates are 208/220 diff 52.
+Actual recursive closures 19/18/14/22 are covered by 28 declared inputs each.
+Native and actual relocated VC4 pass 1,085 selected entity calls, 264 effect-list
+calls and 288 separate existing phase frames, with identical per-case traces.
+Fatal subprocesses use existing typed owned loaders; assertions/cases remain.
+No full-owner queue, new Wine play or physical driver/audio claim. Native/MinGW
+and VC4 game link pass; four matching +31 unchanged objects/resources/SDK imports
+are verified/reused. Global counts stay 171 exact / 30,744 code / 136 metadata,
+283 source-present and 247 scoped semantic rows.
+Receipts `.analysis/exact-entity-allocation/`; seal
+`.analysis/checkpoints/entity-allocation-283-171/sha256.json`.
+See [entity recovery](../research/exact/EXACT_ENTITY_ALLOCATION.md).
+REA stays 6.3.0, unopened; feedback entry 26 in the same existing `/tmp` document
+records 11,479,750 archive / 41,676 selected local bytes and callee/ownership
+usability suggestions, without measured token/latency claims.
+
 ## Working limits and completeness
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.

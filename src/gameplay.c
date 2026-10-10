@@ -120,7 +120,7 @@ void *dxball_allocate_node(size_t size)
 DxBallInt DXBALL_FASTCALL dxball_append_explosion(DxBallExplosionList *list)
 {
     DxBallExplosionNode *node;
-    node = (DxBallExplosionNode *)dxball_allocate_node(sizeof(DxBallExplosionNode));
+    node = (DxBallExplosionNode *)dxball_runtime_new(sizeof(DxBallExplosionNode));
     if (node != NULL) {
         node->previous = list->last;
         node->next = NULL;
@@ -292,7 +292,7 @@ DxBallInt DXBALL_FASTCALL dxball_remove_explosion(DxBallExplosionList *list)
         }
         if (list->first == node) list->first = node->next;
         if (list->last == node) list->last = node->previous;
-        dxball_deallocate_node(node);
+        dxball_runtime_delete(node);
         return 1;
     } else {
         return 0;

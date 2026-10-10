@@ -1,5 +1,11 @@
 # Particles and bonus production through REA
 
+The [current allocation checkpoint](exact/EXACT_ENTITY_ALLOCATION.md) restores
+genuine operator-new/delete calls across particles, bonuses, explosion requests
+and brick animations. All 28 affected exact units retain their complete 5,400
+bytes. Selected native and actual VC4 entity/effect cases and separate phase
+frames pass; historical full-owner counts below retain their earlier scopes.
+
 The [complete bonus restoration](exact/EXACT_BONUSES.md) replaces generation helpers
 with direct actual RNG, sound and six-integer particle calls, two separately
 consumed particle counters and nineteen distinct cases. Whole generation

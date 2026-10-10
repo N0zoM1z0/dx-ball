@@ -1,5 +1,12 @@
 # Explosion requests and brick animations
 
+The [current entity allocation checkpoint](exact/EXACT_ENTITY_ALLOCATION.md)
+restores actual operator-new/delete edges and direct RNG/bonus/audio calls in
+the extracted request phase. Native checks use the original full-frame phase
+with its existing neutralized unrelated dependencies; actual VC4 phase bodies
+retain matching per-case traces. Existing fixture failure cases now use their
+owned native loaders. No new authored helper or full-frame exact claim is added.
+
 The [complete effect lifecycle restoration](exact/EXACT_EFFECTS.md) restores the
 constructor, deletion boundary and both full steppers from complete instruction
 evidence. Its four spans total 1,589 bytes and add 259 complete exact bytes.

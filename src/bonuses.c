@@ -1,4 +1,5 @@
 #include "bonuses.h"
+#include "allocator.h"
 #include "effects.h"
 #include "geometry.h"
 #include "paddle.h"
@@ -159,7 +160,7 @@ void dxball_update_bonuses(void)
 DxBallInt DXBALL_FASTCALL dxball_append_bonus(DxBallBonusList *list)
 {
     DxBallBonusNode *node;
-    node = (DxBallBonusNode *)dxball_allocate_node(sizeof(DxBallBonusNode));
+    node = (DxBallBonusNode *)dxball_runtime_new(sizeof(DxBallBonusNode));
     if (node != NULL) {
         node->previous = list->last;
         node->next = NULL;
@@ -206,7 +207,7 @@ DxBallInt DXBALL_FASTCALL dxball_remove_bonus(DxBallBonusList *list)
         }
         if (list->first == node) list->first = node->next;
         if (list->last == node) list->last = node->previous;
-        dxball_deallocate_node(node);
+        dxball_runtime_delete(node);
         return 1;
     } else {
         return 0;

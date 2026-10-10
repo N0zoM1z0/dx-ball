@@ -2,6 +2,8 @@
 #include "effects.h"
 #include "bonuses.h"
 #include "display.h"
+#include "sound.h"
+#include "startup.h"
 
 #include <stdlib.h>
 
@@ -50,7 +52,7 @@ DxBallInt DXBALL_FASTCALL dxball_advance_brick_effect(DxBallBrickEffectList *lis
 DxBallInt DXBALL_FASTCALL dxball_append_brick_effect(DxBallBrickEffectList *list)
 {
     DxBallBrickEffectNode *node;
-    node = (DxBallBrickEffectNode *)dxball_allocate_node(sizeof(DxBallBrickEffectNode));
+    node = (DxBallBrickEffectNode *)dxball_runtime_new(sizeof(DxBallBrickEffectNode));
     if (node != NULL) {
         node->previous = list->last;
         node->next = NULL;
@@ -258,17 +260,17 @@ void dxball_apply_explosion_requests(void)
             dxball_spawn_explosion_effect(dxball_explosions.current->x,
                                            dxball_explosions.current->y);
             dxball_score += 4;
-            dx = dxball_gameplay_ops.random_range(5) - 2;
-            dxball_effect_ops.bonus(dxball_explosions.current->x,
-                                    dxball_explosions.current->y, dx, -2);
+            dx = dxball_random_range(5) - 2;
+            dxball_generate_bonus(dxball_explosions.current->x,
+                                  dxball_explosions.current->y, dx, -2);
         }
         dxball_remove_explosion(&dxball_explosions);
         present = dxball_advance_explosion(&dxball_explosions);
     }
     if (dxball_explosion_pending == 1) {
-        sound = dxball_gameplay_ops.random_range(3) + 30;
-        dxball_gameplay_ops.stop_sound(sound);
-        dxball_gameplay_ops.play_sound(sound, 0, 0, 0);
+        sound = dxball_random_range(3) + 30;
+        dxball_stop_sound(sound);
+        dxball_play_sound(sound, 0, 0, 0);
         dxball_explosion_pending = 0;
     }
 }

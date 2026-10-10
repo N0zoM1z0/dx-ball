@@ -1,4 +1,5 @@
 #include "particles.h"
+#include "allocator.h"
 #include "effects.h"
 #include "resources.h"
 #include "display.h"
@@ -21,7 +22,7 @@ void (*dxball_particle_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = que
 DxBallInt DXBALL_FASTCALL dxball_append_particle(DxBallParticleList *list)
 {
     DxBallParticleNode *node;
-    node = (DxBallParticleNode *)dxball_allocate_node(sizeof(DxBallParticleNode));
+    node = (DxBallParticleNode *)dxball_runtime_new(sizeof(DxBallParticleNode));
     if (node != NULL) {
         node->previous = list->last;
         node->next = NULL;
@@ -68,7 +69,7 @@ DxBallInt DXBALL_FASTCALL dxball_remove_particle(DxBallParticleList *list)
         }
         if (list->first == node) list->first = node->next;
         if (list->last == node) list->last = node->previous;
-        dxball_deallocate_node(node);
+        dxball_runtime_delete(node);
         return 1;
     } else {
         return 0;
