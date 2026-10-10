@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 163 exact functions / 29,174 full-span bytes and
+- 283 source-present entries; 164 exact functions / 29,479 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -42,7 +42,7 @@ are declared in `config/match-units.toml`.
 Private receipts: `.analysis/exact-score-initialization/` and
 `.analysis/exact-score-reading/`, `.analysis/exact-ranking-interface/`, and
 `.analysis/exact-gameover-lifecycle/`, `.analysis/exact-gameover-keys/`, and
-`.analysis/exact-editor-lifecycle/` and `.analysis/exact-editor-commands/` and `.analysis/exact-board-rendering/`.
+`.analysis/exact-editor-lifecycle/` and `.analysis/exact-editor-commands/` and `.analysis/exact-board-rendering/` and `.analysis/exact-intro-key-points/`.
 Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
 interface checkpoint is `4499a3d`. The current lifecycle checkpoint restores
 initialization, redraw, frame and cleanup exactly; no push was made.
@@ -202,14 +202,37 @@ all maintained assertions. Core fixtures keep their established transport.
 Native/MinGW builds and the 35-object VC4 relink pass. Historical semantic rows
 keep their old scopes after identity refresh; no historical queue was replayed.
 
-Next recover intro/menu key dispatch (`0x40E430`, 305-byte span), then inspect
-point-update/drawing control flow where existing evidence exposes a real gap.
-Reuse the intro dossiers and preserve its already-exact initialization, frame,
-cleanup and trig units. Splash redraw, intro redraw and point initialization
-already have retained candidates; inspect their documented differences before
-changing source. Leave the mapper's undefined domain and declared editor/game-
-over candidate gaps explicit; do not perform declaration/name/layout/padding
-permutations to force them.
+Menu key dispatch (`0x40E430`) now matches its complete 305-byte span on one
+compilation, with eighteen relocations. The original signed-char switch,
+eleven empty cases and Control-F1 stores are retained. Its full span contains
+161 instruction bytes (156 owned plus a five-byte JMP at `0x40E4A2`) and 144
+embedded table bytes. All thirteen accepted intro units match together; the
+22-file recipe includes the complete consumed project closure.
+
+The point updater (`0x40ED40`) restores live global surface loads at each COM
+call, its actual lock-result loop, indexed point/offset consumers, descriptor
+size/flags and original rectangle-store order. It removes auxiliary pointer/
+offset copies and the unobserved whole-descriptor zeroing. The original still
+has two writes into an unpassed 100-byte request-shaped area; their source
+origin is unexplained. No unused local is added to mimic it. Its complete
+666/711-byte comparison has forty relocations and 637 unaligned differences;
+it remains a candidate, with no full-original storage claim.
+
+The final library passes 1,060 selected existing key/point cases and all 58
+connected splash/menu/editor-request scenarios. Native/MinGW builds and the
+35-object VC4 relink pass. No fixture or maintained cases/assertions changed;
+other intro loops remain historical. All six prior candidates were compared
+alongside the new candidate. The prior pulse manifest had an outdated relocation
+offset; bindings now reflect the actual current object, whose existing 368/370
+and 127-difference result is preserved. All candidate differences remain explicit.
+No full owner suite or historical queue was replayed.
+
+Next verify these controller changes against the real Windows game using a
+bounded existing play selection, then continue source restoration in another
+connected game phase. Preserve the original/asset identities and disposable
+probe working copies. Existing intro/splash candidate gaps are documented in
+the owner notes; do not perform declaration/name/layout/padding permutations
+or add unconsumed request storage simply to force exactness.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
@@ -236,7 +259,8 @@ controller, with a proposed evidence-linked native reconstruction view.
 Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Entry 13 adds current cold/warm function latency and response-size measurements.
-Nothing has been sent externally.
+Entry 14 records bounded key/point archive views and the unresolved storage
+consumer boundary. Nothing has been sent externally.
 
 ## Working limits and completeness
 

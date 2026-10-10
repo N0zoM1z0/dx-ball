@@ -23,6 +23,35 @@ calls and live COM handles follow the original. Original buffer capacities and
 source spelling remain unproven. Existing 5,615 direct intro cases and 58 separate
 integration checks pass, with no fixture, case or campaign additions.
 
+The menu key/point batch now accepts all 305 bytes of key dispatch (`0x40E430`)
+on one stable compile with eighteen relocations. The signed-char switch retains
+its original empty cases, Control-F1 test and actual mode-request stores. Its
+span contains 161 instruction bytes and 144 switch bytes; the owned view excludes
+another five-byte JMP at `0x40E4A2`. All thirteen accepted intro units match
+together; the complete 22-file project closure is declared.
+
+Point update (`0x40ED40`) now follows fresh global surface loads at every COM
+call, actual HRESULT retry storage, direct indexed point/offset accesses,
+rectangle-store order and descriptor size/flags. The dossier has no whole-record
+zeroing; that extra memset is removed. Returned pitch and pixel fields are
+consumed only after the descriptor/lock APIs. The original also writes size 100
+and zero at +80 into a separate unpassed request-shaped area. Its type/source
+origin remains inferred/unexplained; no unused local is added to force a match.
+The complete 666/711-byte candidate has forty relocations and 637 unaligned
+full-span differences, including missing storage and differing local addressing.
+This is a control-flow/API recovery, not an exact or complete-storage claim.
+
+The closed 11-58 dossiers `03` and `19` were reused without a new provider call;
+their Evidence IDs are listed below. The final library passes 1,024 existing
+key/control cases, 36 existing point timing/wrap/retry cases and all 58 connected
+splash/menu/editor-request checks. Cases, assertions and fixtures are unchanged.
+Native/MinGW builds and the 35-object VC4 relink pass. All prior candidate bodies
+were compared together; an outdated pulse relocation offset was refreshed from
+the current emission, retaining its 368/370 bytes and 127 differences. Other
+owner loops remain historical after identity refresh. No full owner suite or
+historical replay was run. Products and receipts are retained privately in
+`.analysis/exact-intro-key-points/`.
+
 REA 4.1.0 with Ghidra 12.1.4 follows the actual mode-0 menu and mode-4
 splash controllers through initialization, redraw, frame, input and cleanup.
 This owner reuses all twenty complete dossiers from the closed 11-58 archive;

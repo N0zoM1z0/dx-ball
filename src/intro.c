@@ -95,42 +95,53 @@ void dxball_initialize_intro_points(void)
 
 void dxball_update_intro_points(void)
 {
-    DxBallRect rect = {112, 37, 530, 115};
+    DxBallRect rect;
     DxBallSurfaceDesc desc;
-    DxBallDDSurface *surface;
-    DxBallIntroPoint *point;
-    DxBallIntroOffset offset;
-    DxBallInt i;
+    DxBallInt i, result;
     if (dxball_elapsed(dxball_intro_tick, 50)) {
         dxball_select_surface((DxBallSurface)dxball_board_surface);
-        surface = (DxBallDDSurface *)dxball_active_surface;
-        surface->vtable->blt_fast(surface, 112, 37, (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
-        memset(&desc, 0, sizeof(desc)); desc.size = 108; desc.flags = 14;
-        surface->vtable->get_desc(surface, &desc);
-        while (surface->vtable->lock(surface, NULL, &desc, 0, NULL) != 0) {}
+        rect.top = 37; rect.bottom = 115;
+        rect.left = 112; rect.right = 530;
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_active_surface, rect.left, rect.top,
+            (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+        desc.size = 108; desc.flags = 14;
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->get_desc(
+            (DxBallDDSurface *)dxball_active_surface, &desc);
+        do {
+            result = ((DxBallDDSurface *)dxball_active_surface)->vtable->lock(
+                (DxBallDDSurface *)dxball_active_surface, NULL, &desc, 0, NULL);
+        } while (result != 0);
         for (i = 0; i < 287; ++i) {
-            point = dxball_intro_points + i;
-            if (point->kind == 0) {
-                point->angle += 30;
-                if (point->angle > 359) point->angle %= 360;
-                offset = dxball_intro_offsets[point->angle];
-                desc.pixels[(point->y + offset.y) * desc.pitch + point->x + offset.x] = 200;
+            if (dxball_intro_points[i].kind == 0) {
+                dxball_intro_points[i].angle += 30;
+                if (dxball_intro_points[i].angle > 359)
+                    dxball_intro_points[i].angle %= 360;
+                desc.pixels[(dxball_intro_points[i].y +
+                    dxball_intro_offsets[dxball_intro_points[i].angle].y) * desc.pitch +
+                    dxball_intro_points[i].x +
+                    dxball_intro_offsets[dxball_intro_points[i].angle].x] = 200;
             }
         }
-        surface->vtable->unlock(surface, NULL);
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->unlock(
+            (DxBallDDSurface *)dxball_active_surface, NULL);
         for (i = 0; i < 287; ++i) {
-            point = dxball_intro_points + i;
-            if (point->kind == 1) {
-                point->angle += 30;
-                if (point->angle > 359) point->angle %= 360;
-                offset = dxball_intro_offsets[point->angle];
-                dxball_draw_keyed_sprite(1, point->x + offset.x, point->y + offset.y);
+            if (dxball_intro_points[i].kind == 1) {
+                dxball_intro_points[i].angle += 30;
+                if (dxball_intro_points[i].angle > 359)
+                    dxball_intro_points[i].angle %= 360;
+                dxball_draw_keyed_sprite(1,
+                    dxball_intro_points[i].x +
+                    dxball_intro_offsets[dxball_intro_points[i].angle].x,
+                    dxball_intro_points[i].y +
+                    dxball_intro_offsets[dxball_intro_points[i].angle].y);
             }
         }
-    dxball_invalidate_region(rect);
+        dxball_invalidate_region(rect);
         dxball_animate_palette(200, 207, 1);
         dxball_intro_tick = dxball_current_time();
     }
+    return;
 }
 
 void dxball_initialize_intro(void)
@@ -216,7 +227,26 @@ void dxball_intro_frame(void)
 }
 void dxball_intro_key(char key)
 {
-    if (key == 0x70 && dxball_control_pressed != 0) { dxball_end_requested = 1; dxball_return_to_menu = 2; }
+    switch (key) {
+    case ' ': break;
+    case 'p':
+        if (dxball_control_pressed != 0) {
+            dxball_end_requested = 1;
+            dxball_return_to_menu = 2;
+        }
+        break;
+    case 'q': break;
+    case 'r': break;
+    case 't': break;
+    case 'u': break;
+    case 'v': break;
+    case 'w': break;
+    case 'x': break;
+    case 'y': break;
+    case 'z': break;
+    case '{': break;
+    }
+    return;
 }
 void dxball_dispose_intro(DxBallInt fade)
 {
