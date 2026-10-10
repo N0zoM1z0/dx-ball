@@ -265,6 +265,16 @@ or exact-match count changes arise from this runtime observation work.
 
 ## Real round advance and retained focus failures
 
+After the exact round-transition recovery in `9ec72c3`, the unchanged
+`observe('vc40', ...)` selection passes again with 71 read-only state reads.
+The editor-created single brick clears naturally, score becomes ten, and
+original board1 loads with all 400 expected bytes, 222 destructible bricks,
+three lives and an attached ball. The complete edited bank and zero-code
+shutdown pass; all 49 originals remain unchanged. Private artifacts are in
+`.analysis/windows-round-9ec72c3/`. The previous original/MinGW controls were
+not rerun, and focus recovery was not requested. Sequential reads, terminal
+board50, audio/MIDI and full-game/image fidelity retain their existing limits.
+
 `tests/test_windows_round.py` now connects real editor input to brick collision,
 round advance, complete board loading and zero-code menu/exit controls in the
 original, VC4 and MinGW builds. The SDK observer can read all 400 tile bytes;

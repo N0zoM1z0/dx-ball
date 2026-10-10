@@ -34,6 +34,18 @@ board initialization stays a controlled oracle boundary. These results do not
 establish physical sound, synchronized Windows trajectories or complete-game
 fidelity.
 
+The linked `9ec72c3` VC4 product subsequently passes the unchanged real-Wine
+round-transition flow. Actual editor input creates a one-brick board; the ball
+naturally clears it, awards ten points and loads original board1 with 222
+destructible bricks, three lives and a newly attached ball. All 400 loaded bytes
+match that original board. The complete edited bank preserves the other 49
+boards; normal exit and all 49 immutable asset identities pass. There are 71
+read-only observations. Receipts, bank/board bytes, captures and Wine output are
+retained in `.analysis/windows-round-9ec72c3/`. Original/MinGW prior controls
+were not rerun. Focus recovery, terminal board50 and physical audio/MIDI remain
+outside this selection; a single edited-board transition is not full-game
+fidelity evidence.
+
 The [complete brick-power restoration](exact/EXACT_BRICK_POWERS.md) restores the
 whole source for spread, softening and counting. The full 397-byte softener and
 149-byte counter are exact; spread compares 844/824 with 753 differences.

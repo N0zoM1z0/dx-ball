@@ -253,6 +253,15 @@ attempts are in `.analysis/exact-round-transitions/`. Terminal board initializat
 remains controlled; other owner cases stay historical after identity refresh.
 No full owner suite or historical queue was replayed.
 
+The current `9ec72c3` VC4 EXE then passes the unchanged real-Wine round flow:
+editor-created single brick, natural clear, ten points, original board1 loaded
+with all 400 matching bytes / 222 destructible bricks, three lives, attached
+ball and zero-code exit. It records 71 read-only states and preserves all 49
+original assets. Bank/board bytes, captures and receipts are in
+`.analysis/windows-round-9ec72c3/`. Prior original/MinGW controls were not rerun;
+focus recovery, physical audio/MIDI, terminal board50 and full-game fidelity
+remain outside this selection.
+
 Continue source restoration in another connected game phase. Preserve the
 original/asset identities and disposable probe working copies. Existing
 intro/splash candidate gaps are documented in
