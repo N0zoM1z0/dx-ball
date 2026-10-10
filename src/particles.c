@@ -6,7 +6,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-void (*dxball_particle_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = dxball_queue_region;
+static void queue_particle_bounds(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+{
+    DxBallRect rect;
+    rect.left = left;
+    rect.top = top;
+    rect.right = right;
+    rect.bottom = bottom;
+    dxball_queue_region(rect);
+}
+
+void (*dxball_particle_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = queue_particle_bounds;
 
 DxBallInt DXBALL_FASTCALL dxball_append_particle(DxBallParticleList *list)
 {
@@ -149,7 +159,7 @@ void dxball_draw_particles(void)
             rect.bottom = dxball_particles.current->y + 2;
             rect.left = dxball_particles.current->x;
             rect.right = dxball_particles.current->x + 2;
-            dxball_queue_region(rect.left, rect.top, rect.right, rect.bottom);
+            dxball_queue_region(rect);
         } while (dxball_advance_particle(&dxball_particles));
         ((DxBallDDSurface *)dxball_effect_surface)->vtable->unlock(
             (DxBallDDSurface *)dxball_effect_surface, NULL);

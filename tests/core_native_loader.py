@@ -211,10 +211,12 @@ class _Image:
             raise RuntimeError('CoreNative region body or bounds adapter has a different owner')
         self.function_addresses['dxball_restore_effect_region'] = real
         self.particle_region_slot = C.c_void_p.in_dll(self.lib, 'dxball_particle_region')
+        self.particle_region_default = self.particle_region_slot.value
         real = C.cast(self.lib.dxball_queue_region, C.c_void_p).value
         intercepted = C.cast(_shim.dxball_queue_region, C.c_void_p).value
         if (real == intercepted or _function_owner(real) != self.path.resolve() or
-                self.particle_region_slot.value != intercepted):
+                not self.particle_region_default or self.particle_region_default in (real, intercepted) or
+                _function_owner(self.particle_region_default) != self.path.resolve()):
             raise RuntimeError('CoreNative queue body or particle-region default has a different owner')
         self.function_addresses['dxball_queue_region'] = real
         # PlatformOps uses a genuine void adapter for this integer-returning
@@ -269,7 +271,7 @@ def fixture_image(library):
         _shim.dxball_test_bind_new_ops.restype = C.c_int
         _shim.dxball_test_bind_effect_render_ops.argtypes = [C.c_void_p] * 7
         _shim.dxball_test_bind_effect_render_ops.restype = C.c_int
-        _shim.dxball_test_bind_particle_region.argtypes = [C.c_void_p] * 2
+        _shim.dxball_test_bind_particle_region.argtypes = [C.c_void_p] * 3
         _shim.dxball_test_bind_particle_region.restype = C.c_int
         _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
@@ -367,7 +369,9 @@ def fixture_image(library):
             real == C.cast(_shim.dxball_queue_region, C.c_void_p).value or
             _function_owner(real) != image.path.resolve()):
         raise RuntimeError('CoreNative particle-region slot or queue body changed owner')
-    result = _shim.dxball_test_bind_particle_region(C.addressof(slot), real)
+    if _function_owner(image.particle_region_default) != image.path.resolve():
+        raise RuntimeError('CoreNative particle bounds adapter changed owner')
+    result = _shim.dxball_test_bind_particle_region(C.addressof(slot), real, image.particle_region_default)
     if result != 0:
         raise RuntimeError('CoreNative particle-region binding rejected')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_gameplay_ops'))

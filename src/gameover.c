@@ -107,6 +107,7 @@ void dxball_redraw_game_over(void)
 void dxball_game_over_frame(void)
 {
     DxBallInt count;
+    DxBallRect name_region;
     if (dxball_draw_to_primary != 0) dxball_wait_frames(1);
     dxball_restore_regions();
     dxball_intro_cursor_x = dxball_mouse_x; dxball_intro_cursor_y = dxball_mouse_y;
@@ -114,6 +115,10 @@ void dxball_game_over_frame(void)
     if (dxball_intro_cursor_x < 8) dxball_intro_cursor_x = 8;
     if (dxball_intro_cursor_y > 447) dxball_intro_cursor_y = 447;
     if (dxball_entering_score_name == 1) {
+        name_region.left = 0;
+        name_region.top = 210;
+        name_region.right = 639;
+        name_region.bottom = 234;
         dxball_select_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
         count = (DxBallInt)strlen(dxball_score_name);
         dxball_draw_text(70, 230, count, dxball_score_name);
@@ -123,7 +128,7 @@ void dxball_game_over_frame(void)
             dxball_score_cursor_visible = 1 - dxball_score_cursor_visible;
             dxball_score_blink_tick = dxball_current_time();
         }
-        dxball_queue_region(0, 210, 639, 234);
+        dxball_queue_region(name_region);
     }
     if (dxball_draw_to_primary == 0) dxball_present();
     if (dxball_show_high_scores == 1 && dxball_entering_score_name == 0) {

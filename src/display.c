@@ -19,31 +19,6 @@ DxBallSurface dxball_restore_surface;
 DxBallRect dxball_lightning_rect;
 DxBallDisplayOps dxball_display_ops = { dxball_update_sound, dxball_recover_surfaces };
 
-static void queue_dirty(DxBallInt page, const DxBallRect *rect)
-{
-    if (dxball_dirty_counts[page] < DXBALL_DIRTY_CAPACITY) {
-        dxball_dirty_regions[dxball_dirty_counts[page]][page] = *rect;
-        ++dxball_dirty_counts[page];
-    }
-}
-
-static void queue_present(const DxBallRect *rect)
-{
-    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
-        dxball_present_regions[dxball_present_count++] = *rect;
-    }
-}
-
-static DxBallInt clip_rect(DxBallRect *rect)
-{
-    if (rect->top >= 481 || rect->bottom < 0 || rect->left >= 641 || rect->right < 0) return 0;
-    if (rect->top < 0) rect->top = 0;
-    if (rect->bottom > 480) rect->bottom = 480;
-    if (rect->left < 0) rect->left = 0;
-    if (rect->right > 640) rect->right = 640;
-    return 1;
-}
-
 void dxball_reset_regions(void)
 {
     memset(dxball_dirty_regions, 0, sizeof(dxball_dirty_regions));
@@ -193,15 +168,20 @@ void dxball_draw_reduced_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     return;
 }
 
-void dxball_queue_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+/* FUNCTION: DXBALL 0x00408990 */
+void dxball_queue_region(DxBallRect rect)
 {
-    DxBallRect rect;
-    rect.left = left; rect.top = top; rect.right = right; rect.bottom = bottom;
-    queue_dirty(dxball_dirty_page, &rect);
-    queue_present(&rect);
+    if (dxball_dirty_counts[dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
+        dxball_dirty_regions[dxball_dirty_counts[dxball_dirty_page]][dxball_dirty_page] = rect;
+        ++dxball_dirty_counts[dxball_dirty_page];
+    }
+    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+        dxball_present_regions[dxball_present_count] = rect;
+        ++dxball_present_count;
+    }
+    return;
 }
 
-/* FUNCTION: DXBALL 0x00408A50 */
 void dxball_restore_effect_region(DxBallRect rect)
 {
     ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt(
@@ -313,47 +293,81 @@ void dxball_present(void)
 void dxball_present_regions_now(void)
 {
     DxBallInt i, current;
-    DxBallRect *a, *b;
-    DxBallDDSurface *surface;
-    for (i = 0; i < dxball_present_count; ++i) {
-        dxball_present_keys[i] = dxball_present_regions[i].left + dxball_present_regions[i].top;
+    for (i = 0; i <= dxball_present_count - 1; ++i) {
+        dxball_present_keys[i] = dxball_present_regions[i].top + dxball_present_regions[i].left;
     }
     if (dxball_present_count > 0) {
         dxball_sort_present_regions(0, dxball_present_count - 1);
         current = 0;
-        for (i = 1; i < dxball_present_count; ++i) {
-            a = &dxball_present_regions[current]; b = &dxball_present_regions[i];
-            if (!dxball_rectangles_overlap(a->left, a->top, a->right + 1, a->bottom + 1,
-                    b->left, b->top, b->right, b->bottom)) current = i;
-            else {
-                if (b->left < a->left) a->left = b->left;
-                if (b->top < a->top) a->top = b->top;
-                if (b->right > a->right) a->right = b->right;
-                if (b->bottom > a->bottom) a->bottom = b->bottom;
-                b->top = 9999;
+        for (i = 1; i <= dxball_present_count - 1; ++i) {
+            if (dxball_rectangles_overlap(
+                    dxball_present_regions[current].left,
+                    dxball_present_regions[current].top,
+                    dxball_present_regions[current].right + 1,
+                    dxball_present_regions[current].bottom + 1,
+                    dxball_present_regions[i].left,
+                    dxball_present_regions[i].top,
+                    dxball_present_regions[i].right,
+                    dxball_present_regions[i].bottom)) {
+                dxball_present_regions[current].left =
+                    dxball_present_regions[current].left < dxball_present_regions[i].left ?
+                    dxball_present_regions[current].left : dxball_present_regions[i].left;
+                dxball_present_regions[current].top =
+                    dxball_present_regions[i].top < dxball_present_regions[current].top ?
+                    dxball_present_regions[i].top : dxball_present_regions[current].top;
+                dxball_present_regions[current].right =
+                    dxball_present_regions[current].right > dxball_present_regions[i].right ?
+                    dxball_present_regions[current].right : dxball_present_regions[i].right;
+                dxball_present_regions[current].bottom =
+                    dxball_present_regions[current].bottom > dxball_present_regions[i].bottom ?
+                    dxball_present_regions[current].bottom : dxball_present_regions[i].bottom;
+                dxball_present_regions[i].top = 9999;
+            } else {
+                current = i;
             }
         }
     }
-    surface = (DxBallDDSurface *)dxball_primary_surface;
-    for (i = 0; i < dxball_present_count; ++i) {
-        a = &dxball_present_regions[i];
-        if (a->top == 9999) continue;
-        if (dxball_clip_regions == 1 && !clip_rect(a)) continue;
-        surface->vtable->blt(surface, a, (DxBallDDSurface *)dxball_secondary_surface, a, 0x01000000, NULL);
+    if (dxball_clip_regions == 1) {
+        for (i = 0; i <= dxball_present_count - 1; ++i) {
+            if (dxball_present_regions[i].top == 9999) continue;
+            if (dxball_present_regions[i].top > 480 ||
+                    dxball_present_regions[i].bottom < 0 ||
+                    dxball_present_regions[i].left > 640 ||
+                    dxball_present_regions[i].right < 0) continue;
+            if (dxball_present_regions[i].top < 0) dxball_present_regions[i].top = 0;
+            if (dxball_present_regions[i].bottom > 480) dxball_present_regions[i].bottom = 480;
+            if (dxball_present_regions[i].left < 0) dxball_present_regions[i].left = 0;
+            if (dxball_present_regions[i].right > 640) dxball_present_regions[i].right = 640;
+            ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+                (DxBallDDSurface *)dxball_primary_surface, &dxball_present_regions[i],
+                (DxBallDDSurface *)dxball_secondary_surface, &dxball_present_regions[i],
+                0x01000000, NULL);
+        }
+    } else {
+        for (i = 0; i <= dxball_present_count - 1; ++i) {
+            if (dxball_present_regions[i].top == 9999) continue;
+            ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+                (DxBallDDSurface *)dxball_primary_surface, &dxball_present_regions[i],
+                (DxBallDDSurface *)dxball_secondary_surface, &dxball_present_regions[i],
+                0x01000000, NULL);
+        }
     }
     dxball_present_count = 0;
+    return;
 }
 
+/* FUNCTION: DXBALL 0x004094E0 */
 void dxball_sort_present_regions(DxBallInt first, DxBallInt last)
 {
-    DxBallInt i, j, selected, key;
+    DxBallInt selected, key;
     DxBallRect rect;
-    for (i = first; i < last; ++i) {
+    DxBallInt i, j;
+    for (i = first; i <= last - 1; ++i) {
         selected = i;
         for (j = i; j <= last; ++j) {
-            if (dxball_present_keys[j] < dxball_present_keys[selected]) selected = j;
+            if (dxball_present_keys[selected] > dxball_present_keys[j]) selected = j;
         }
-        if (i < selected) {
+        if (selected > i) {
             key = dxball_present_keys[i];
             dxball_present_keys[i] = dxball_present_keys[selected];
             dxball_present_keys[selected] = key;
@@ -362,6 +376,7 @@ void dxball_sort_present_regions(DxBallInt first, DxBallInt last)
             dxball_present_regions[selected] = rect;
         }
     }
+    return;
 }
 
 void dxball_wait_frames(DxBallInt frames)
@@ -453,17 +468,21 @@ void dxball_last_brick(void)
 
 void dxball_draw_last_brick(void)
 {
-    DxBallDDSurface *surface;
+    DxBallRect rect;
     if (dxball_lightning_frames > 0) {
         dxball_select_sprite_bank(2);
-        surface = (DxBallDDSurface *)dxball_effect_surface;
-        surface->vtable->blt_fast(surface, dxball_lightning_x, dxball_lightning_y,
+        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_effect_surface, dxball_lightning_x, dxball_lightning_y,
             dxball_sprite_banks[dxball_sprite_bank].sprites[1]->surface, &dxball_lightning_rect, 0x11);
-        dxball_queue_region(dxball_lightning_x, dxball_lightning_y,
-            dxball_lightning_x + dxball_lightning_rect.right, dxball_lightning_y + dxball_lightning_rect.bottom);
+        rect.left = dxball_lightning_x;
+        rect.top = dxball_lightning_y;
+        rect.right = dxball_lightning_rect.right + dxball_lightning_x;
+        rect.bottom = dxball_lightning_rect.bottom + dxball_lightning_y;
+        dxball_queue_region(rect);
         dxball_select_sprite_bank(0);
         --dxball_lightning_frames;
     }
+    return;
 }
 
 void dxball_restore_board_region(DxBallSurface destination, DxBallInt x, DxBallInt y,
