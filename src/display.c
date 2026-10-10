@@ -1,4 +1,5 @@
 #include "display.h"
+#include "clock_api.h"
 #include "device.h"
 #include "effects.h"
 #include "geometry.h"
@@ -446,10 +447,11 @@ void dxball_last_brick(void)
     DxBallRect rect;
     DxBallInt x, y, center_x, center_y, column, row, tile;
     if (dxball_last_brick_deadline == 0) {
-        dxball_last_brick_deadline = (DxBallInt)(dxball_clock_ops.time_ms() +
+        DxBallUInt started = dxball_time_get_time();
+        dxball_last_brick_deadline = (DxBallInt)(started +
             dxball_random_range(20000) + 40000);
     }
-    remaining = (DxBallInt)((DxBallUInt)dxball_last_brick_deadline - dxball_clock_ops.time_ms());
+    remaining = (DxBallInt)((DxBallUInt)dxball_last_brick_deadline - dxball_time_get_time());
     if (remaining < 1) {
         dxball_stop_sound(21);
         dxball_play_sound(22, 0, 0, 0);

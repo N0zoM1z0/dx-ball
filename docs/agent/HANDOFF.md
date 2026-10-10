@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 169 exact functions / 30,238 full-span bytes and
+- 283 source-present entries; 170 exact functions / 30,600 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -513,6 +513,44 @@ provider session was opened. Snapshot stays at nineteen records /seven primitive
 entries. Feedback remains only `/tmp/dxball_rea_feedback_20261010.md`, now
 twenty-one entries. Continue genuine rendering/resource/call recovery from
 retained evidence; the full reconstruction goal stays active.
+
+## Current lightning clock checkpoint
+
+Countdown at `0x415F40` now uses the independent typed WinMM import. It captures
+the real start timestamp before RNG, preserving the order at `0x415F56` and
+`0x415F63`, then samples again at `0x415F7F`. The initial replacement expression
+compiled RNG before time under VC4; its actual object is retained and rejected
+by one existing zero-deadline case. Explicit sequencing restores that behavior
+across builds, with meaningful consumed timestamp storage. The final complete
+candidate is 1,067/1,057 bytes /992 unaligned differences /51 bindings, with
+68/64-byte frames. Original source spelling/register scheduling remains
+unproven; avoid layout/name/declaration trials.
+
+All eight prior display exacts stay exact. The unchanged effect-sprite Blt
+matches its complete 362-byte contiguous body and 23 bindings with the current
+twenty-file recursive recipe. It returns to exact acceptance without a new
+direct-case or active-use claim; earlier nonexact receipts remain historical.
+Totals are 170 exact functions /30,600 complete code bytes /136 metadata bytes,
+283 source-present and 247 scoped semantic acceptances.
+
+Two matching `/MT` compiles were used, including the ordering correction. Both
+matching objects were reused for game links, each with 34 verified unchanged
+objects; there was no extra production source compile. Native/MinGW builds
+pass. Final native and relocated actual VC4 countdown checks each pass the
+same 443 selected unchanged direct cases and 48 existing connected frames;
+these separate product checks do not double historical case totals. A full
+owner suite, historical queue and new Wine play run were not performed.
+Previous real-game controls keep their own product identities.
+
+Receipts: `.analysis/exact-lightning-clock/`. Six old 09-29 display dossiers
+and the 13-18 effect-sprite dossier were reused; no provider was opened. The
+current snapshot remains nineteen records /seven primitive entries. REA
+feedback uses only `/tmp/dxball_rea_feedback_20261010.md`, now twenty-two
+entries. Entry 22 records 7,989,125 retained bytes versus 51,934 bytes of local
+selected projections and suggests explicit call-order/import views and indexed
+retained-evidence lookup. These are not measured model-token/cache/latency
+savings. Near-complete source and full-game fidelity remain unproven; continue
+genuine rendering/resource/call recovery.
 
 ## Working limits and completeness
 

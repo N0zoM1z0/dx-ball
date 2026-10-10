@@ -1,5 +1,37 @@
 # Lightning and frame drawing
 
+The current countdown uses the independent typed WinMM import in
+`clock_api.h`. Instructions at `0x415F56` and `0x415F63` establish time before
+RNG; `0x415F7F` samples time again. VC4 evaluates the initial combined
+time-plus-RNG expression in the opposite order after the import replacement.
+The shared source now explicitly captures the start time before RNG. This is
+meaningful consumed timestamp storage, not a byte-matching local. The initial
+object and one rejected zero-deadline case remain private. Both the native
+source and the relocated final VC4 body pass 443 unchanged selected wait,
+present, countdown and lightning calls, plus the first six existing gameplay
+frames in each of eight presentation/clipping/vblank combinations (48 frames).
+These two product checks do not double the historical case count.
+
+The complete countdown remains a 1,067/1,057-byte candidate with 992 unaligned
+differences; its frame is 68 bytes versus the original 64. Original expression
+spelling and register/local scheduling remain unproven. No layout, name or
+declaration trials were used. Other existing rendering bodies were inspected
+and retain their candidate gaps. The unchanged effect-sprite Blt now matches
+its full 362-byte span and 23 bindings with the current recipe; all eight prior
+display exacts stay exact. Its earlier nonexact receipts remain historical;
+this adds no separate direct cases or active-use claim. Global totals are
+170 exact functions /30,600 complete code bytes /136 metadata bytes.
+
+Two matching `/MT` compilations include the ordering correction. Each matching
+object was reused for its game link with 34 independently verified unchanged
+objects and no additional production source compile. The recursive display
+closure contains twenty project files, including the clock interface. Native
+and MinGW builds pass. No new Wine play run or full historical replay was made;
+the preceding real-game controls retain their earlier product identities.
+Receipts are `.analysis/exact-lightning-clock/`. Six original display dossiers
+and the effect-sprite dossier were reused without opening a provider. REA
+feedback remains in `/tmp/dxball_rea_feedback_20261010.md`, entry 22.
+
 The [connected-effects batch](exact/EXACT_CONNECTED_EFFECTS.md) accepts all 336 bytes
 of the by-value rectangle invalidator, including its three inline queue paths.
 Its existing 216 cases remain unchanged. Five display emissions lose historical
@@ -66,8 +98,8 @@ as signed. Positive time updates sound 21 with negative volume derived from
 half the remaining milliseconds, a minimum of three, then division by three.
 Expiry stops sound 21 and plays sound 22 before scanning the board column-first.
 The LAST tile whose value is neither zero nor two wins if several are present.
-Defined scope requires an eligible tile; the original otherwise uses
-uninitialized coordinates, and maintained source rejects that invalid state.
+Validated scope requires an eligible tile; both original and maintained source
+otherwise use uninitialized coordinates. The oracle excludes that invalid state.
 
 Expiry calls the existing request producer `dxball_queue_explosion_at`, not the
 animation constructor. This preserves deferred application at the END of the
