@@ -1,12 +1,13 @@
 # Reviewing runtime origins
 
-The latest [bounded origin audit](ORIGIN_AUDIT.md#named-imports-and-complete-forwarding-code)
-resolves five further CRT entries and three import forwarders. Named PE imports,
-complete code and retained REA spans/body metadata corroborate their identities.
-Current origins are **270 authored /66 runtime /42 compiler-generated /150 unknown**.
-Source, semantic and function exact acceptance remain unchanged. Candidate-derived
-addresses and conflicting aliases remain excluded; IAT cells and forwarding code
-have separate binding roles. Earlier batches below retain their original scopes.
+The latest [storage checkpoint](CRT_DATA_DEFINITIONS.md) resolves two further
+CRT entries through complete prior code definitions and independently placed
+initialized storage. All 594 data bytes, two actual relocations and thirteen
+prior definitions pass before new external bindings become available. Current
+origins are **270 authored /68 runtime /42 compiler-generated /148 unknown**.
+Source, semantic and function exact acceptance remain unchanged. Unsupported
+zero anchors, partial spans and candidate-derived addresses are excluded.
+Earlier batches below retain their original scopes.
 
 The earlier [typed-list initialization checkpoint](exact/EXACT_LIST_INITIALIZERS.md)
 identifies seven authored constructors and 18 compiler-generated static

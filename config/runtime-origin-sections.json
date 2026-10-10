@@ -887,6 +887,50 @@
           ]
         }
       ]
+    },
+    {
+      "address": "0x41fd70",
+      "size": 111,
+      "member": "build\\intel\\st_obj\\realloc.obj",
+      "member_header_offset": 360302,
+      "member_sha256": "a501cb34e0c00b20c5bf69128ba4bf24b1928b0c3eff89a551fa5f4739743db3",
+      "section_index": 1,
+      "entries": [
+        "0x0041FD70"
+      ],
+      "library_symbols": [
+        "_realloc"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 360302,
+          "symbols": [
+            "_realloc"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419c40",
+      "size": 42,
+      "member": "..\\build\\intel\\st_obj\\fpexcept.obj",
+      "member_header_offset": 1007150,
+      "member_sha256": "d11f8eb2b9227f854719fb09d9e92ff6cf81dade95d87e0e6f3dc131c27e9b40",
+      "section_index": 44,
+      "entries": [
+        "0x00419C40"
+      ],
+      "library_symbols": [
+        "__set_errno"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1007150,
+          "symbols": [
+            "__set_errno"
+          ]
+        }
+      ]
     }
   ],
   "limitations": [
@@ -897,7 +941,9 @@
     "Cross-section bindings use only external symbol definitions from earlier fully verified sections. Later sections and candidate-derived relocation addresses are not binding authorities.",
     "Additional sections are ordered by dependency. Complete equality corroborates pinned-library origin, not unique original library flags, alias spelling, source recovery or new configured exact functions.",
     "Named PE import bindings are verified against the actual DLL/name/IAT cell. Forwarding thunks require their complete FF25 operand and retained REA byte or callee-body evidence; no SDK implementation or execution is claimed.",
-    "COFF stdcall spellings identify library references, not unique original source aliases or hardware/API success behavior."
+    "COFF stdcall spellings identify library references, not unique original source aliases or hardware/API success behavior.",
+    "Complete data definitions require either multiple independently established same-section symbols or a unique full initialized symbol as a discovery seed, followed by all bytes and relocations. Zero-only searches and inferred candidate addresses never establish placement.",
+    "Prior CRT entry exports become available only after their whole single-function sections pass against retained original bytes with the original reviewed relocation map."
   ],
   "import_bindings": [
     {
@@ -939,6 +985,14 @@
       "cell": "0x4412c4",
       "kind": "jump_thunk",
       "address": "0x41fee6"
+    },
+    {
+      "symbol": "__imp__HeapReAlloc@16",
+      "dll": "KERNEL32.dll",
+      "name": "HeapReAlloc",
+      "cell": "0x441278",
+      "kind": "iat",
+      "address": "0x441278"
     }
   ],
   "import_thunks": [
@@ -971,6 +1025,41 @@
       "evidence_path": ".analysis/rea/runs/2026-10-09T17-33-35.918Z-rea-runtime-requests-1477421/00-read_bytes.json",
       "evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12",
       "evidence_facet": "bytes"
+    }
+  ],
+  "verify_prior_definitions": true,
+  "data_sections": [
+    {
+      "address": "0x4230ac",
+      "size": 72,
+      "member": "build\\intel\\st_obj\\crt0dat.obj",
+      "member_header_offset": 720672,
+      "member_sha256": "39f0367c946b5ee25bc877c0115457d8ac0b91d0b509873bff1f3d1beb09294b",
+      "section_index": 1,
+      "basis": {
+        "kind": "established_symbols",
+        "symbols": [
+          "__exitflag",
+          "__C_Termination_Done"
+        ]
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-10T21-18-21.181Z-requests-1227282/00-read_bytes.json",
+      "evidence_id": "ev_1bd03ba587bf4cb8cb739d2e1ec4fd40ea4aabd9238dbe9fc0f4136976870bc0"
+    },
+    {
+      "address": "0x423670",
+      "size": 522,
+      "member": "build\\intel\\st_obj\\ctype.obj",
+      "member_header_offset": 623368,
+      "member_sha256": "442972f351472321229086dd80e7b4173dd309911ec369d61a116a363e0efbc1",
+      "section_index": 1,
+      "basis": {
+        "kind": "unique_initialized_symbol",
+        "symbol": "__ctype",
+        "size": 514
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-10T21-20-56.653Z-ctype-requests-1233305/00-read_bytes.json",
+      "evidence_id": "ev_84b9961d1896477a16328bb23a2f1fe39d45cf14bdf71e35bafc0536fae3fe6b"
     }
   ]
 }

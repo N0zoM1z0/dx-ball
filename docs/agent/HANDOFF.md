@@ -778,6 +778,25 @@ Feedback entry30 in the same existing document records retained range indexing,
 definition provenance and compact dependency-view suggestions, without new
 latency, cache-hit or token measurements.
 
+Latest origin checkpoint: complete initialized CRT storage and prior definitions.
+Thirteen complete code definitions /546 bytes pass; eleven actual external
+COFF names supply bindings, while `_doexit` and `__initterm` remain static.
+Two independently placed data sections /594 bytes and both pointer relocations
+match fresh REA reads and the original PE. Reviewed anchors place zero storage;
+a unique complete ctype array is followed by a full relocated comparison.
+`_realloc` and `__set_errno` now have complete runtime provenance: 270 authored
+/68 runtime /42 generated /148 unknown. The current verifier checks54 code
+sections /6,026 bytes /55 code rows plus3 jumps /18 bytes:58 distinct origins.
+Data provenance is separate from accepted exact metadata. Five actual-verifier
+negative controls pass. Source/exact/semantic/product counts remain unchanged;
+no production compilation or gameplay replay. Both new provider sessions closed;
+the cumulative snapshot has22 records/seven primitives. Feedback entry32 in
+`/tmp/dxball_rea_feedback_20261010.md` records51–62second cold data reads,
+canonical legacy/new Evidence shapes and compact storage/anchor-view suggestions.
+Private .analysis/crt-data-frontier/; seal
+.analysis/checkpoints/crt-data-definitions-283-171/sha256.json. See
+[complete CRT storage](../research/CRT_DATA_DEFINITIONS.md).
+
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
 session, the 512 MiB Ghidra heap, and CMake `--parallel 1`. Compiler/provider

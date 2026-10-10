@@ -12,6 +12,7 @@ import pefile
 
 from coff import parse, region, _relocations
 from crt_library import members, relocate
+from crt_data import verify_definitions, verify_data_sections
 from legacy_toolchain import Toolchain, session_lock
 from resource_limits import limit_cpu
 
@@ -157,17 +158,28 @@ def main():
         if any(n in fixed and fixed[n] != a for n, a in imported.items()):
             raise ValueError('named import contradicts the reviewed prior CRT map')
         fixed.update(imported)
+        definitions, definition_rows, definition_inputs = ({}, [], {})
+        if manifest.get('verify_prior_definitions'):
+            definitions, definition_rows, definition_inputs = verify_definitions(
+                ROOT, library, prior['entries'],
+                {n: int(a, 0) for n, a in prior['relocations'].items()}, base, loaded)
+        fixed.update(definitions)
+        data_exports, data_rows, data_inputs = verify_data_sections(ROOT, manifest, fixed, original)
+        fixed.update(data_exports)
         selected = {s['member_header_offset'] for s in manifest['sections']}
         raw_members = {offset: (name, raw) for offset, name, raw in members(library) if offset in selected}
         inputs = {str(p.relative_to(ROOT)): digest(p) for p in (
             manifest_path, prior_path, original, library, ROOT / 'scripts/verify-runtime-origin-sections.py',
             ROOT / 'scripts/verify-crt-provenance.py', ROOT / 'scripts/crt_library.py', ROOT / 'scripts/coff.py',
+            ROOT / 'scripts/crt_data.py',
             ROOT / 'scripts/legacy_toolchain.py', ROOT / 'scripts/resource_limits.py',
             ROOT / 'scripts/repo-python', ROOT / 'scripts/verify-python.py',
             ROOT / 'config/tools.lock.toml', ROOT / 'requirements-analysis.txt',
             evidence_path.parent / 'close.json')}
         inputs[str(evidence_path.relative_to(ROOT))] = evidence_hash
         inputs.update(import_inputs)
+        inputs.update(definition_inputs)
+        inputs.update(data_inputs)
         results = []
         verified_exports = {}
         export_origins = {}
@@ -211,6 +223,8 @@ def main():
                     basis=('section-defined symbol' if r['symbol'] in local else
                            import_records[r['symbol']]['basis'] if r['symbol'] in imported else
                            'reviewed prior CRT map' if r['symbol'] in prior_symbols else
+                           'fully verified prior definition section' if r['symbol'] in definitions else
+                           'fully verified independently placed data section' if r['symbol'] in data_exports else
                            'earlier fully verified section export'),
                     **({'section_address': export_origins[r['symbol']]}
                        if r['symbol'] not in local and r['symbol'] not in fixed else {}))
@@ -226,10 +240,14 @@ def main():
                 raise ValueError('origin input changed during verification: ' + path)
         report = dict(status='pass', target_sha256=manifest['target_sha256'],
             original_byte_evidence_id=observed['evidence_id'], inputs=inputs,
-            complete_sections=len(results), complete_section_bytes=sum(r['size'] for r in results),
+            complete_sections=len(results) + len(definition_rows),
+            complete_section_bytes=sum(r['size'] for r in results + definition_rows),
             origin_entries=len({int(a, 0) for r in results for a in r['entries']} |
-                               {int(r['address'], 0) for r in import_thunks}),
-            section_origin_entries=len({a for r in results for a in r['entries']}),
+                               {int(r['address'], 0) for r in import_thunks + definition_rows}),
+            section_origin_entries=len({int(a, 0) for r in results for a in r['entries']} |
+                                       {int(r['address'], 0) for r in definition_rows}),
+            verified_definitions=definition_rows, data_sections=data_rows,
+            complete_data_bytes=sum(r['size'] for r in data_rows),
             import_thunk_entries=len(import_thunks), import_thunk_bytes=sum(r['size'] for r in import_thunks),
             import_bindings=import_records, import_thunks=import_thunks,
             results=results, limitations=manifest['limitations'])

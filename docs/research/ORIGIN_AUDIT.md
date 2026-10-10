@@ -1,8 +1,8 @@
 # Bounded origin audit
 
-The origin ledger now records **270 authored / 66 runtime / 42 compiler-generated /
-150 unknown entries**. The latest batch resolves five further CRT entries and three
-import forwarders through named PE imports and complete code comparisons. Source presence remains **283** (270 authored,
+The origin ledger now records **270 authored / 68 runtime / 42 compiler-generated /
+148 unknown entries**. The latest batch resolves two further CRT entries through complete prior
+code definitions and independently placed initialized data sections. Source presence remains **283** (270 authored,
 one unknown-origin no-effect body and 12 runtime bodies); scoped semantic
 acceptance remains **247 entries**, and exact acceptance remains **171 complete
 functions /30,744 code bytes plus 136 separate metadata bytes**. Earlier batches
@@ -10,8 +10,23 @@ below retain their own scopes and counts.
 
 All 270 currently confirmed authored entries have maintained source. That
 conditional result does not establish the full authored denominator or >=95%
-complete source recovery. The remaining 150 unknown origins, provisional
+complete source recovery. The remaining 148 unknown origins, provisional
 boundaries, original type uncertainty and whole-game fidelity remain open.
+
+## Complete CRT storage and prior definitions
+
+The [storage checkpoint](CRT_DATA_DEFINITIONS.md) validates all 594 initialized
+data bytes, both actual relocations and thirteen prior code definitions. Only
+actual external COFF definitions supply new bindings. Independently established
+anchors place zero storage; a unique complete array places the ctype section
+before its full relocated bytes pass. Two new consumers match all 153 bytes.
+
+The current verifier checks 54 code sections /6,026 bytes /55 code-origin rows,
+two data sections /594 bytes, and three import jumps /18 bytes: 58 distinct
+origin rows. Five actual-verifier negative controls pass. Game source, function
+exactness, semantic scopes and production products are unchanged. Both new
+provider sessions closed. Private proof `.analysis/crt-data-frontier/`; seal
+`.analysis/checkpoints/crt-data-definitions-283-171/sha256.json`.
 
 ## Named imports and complete forwarding code
 
@@ -52,7 +67,7 @@ External namespaces remain separate from numeric PE addresses. The first reader
 attempted to convert an unrelated `EXTERNAL:0x4d`; it stopped before acceptance
 and is retained, then corrected to select only numeric PE callees.
 
-The manifest now verifies 39 CRT code sections /5,327 bytes /40 section entry
+That checkpoint verified 39 CRT code sections /5,327 bytes /40 section entry
 rows, plus three forwarding entries /18 bytes: 43 distinct origin rows. Four
 actual-verifier controls reject a wrong named cell, wrong DLL, Read/Write
 substitution and a shifted SDK jump. All external COFF function-name sets are
