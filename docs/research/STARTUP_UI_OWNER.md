@@ -12,7 +12,24 @@ state and measures vertical-blank timing before entering mode 4. Its shared
 text, drawing and palette dependencies are maintained in a separate UI owner.
 The same C source builds under the native compiler, MinGW i686 and pinned VC4.
 Public headers depend only on the shared board types; platform and device
-interfaces remain implementation dependencies. These are scoped reconstruction components; a playable executable is pending.
+interfaces remain implementation dependencies. The Windows game is integrated;
+recorded play runs are in [the original-board campaign](ORIGINAL_CAMPAIGN.md).
+
+## Next source recovery: score initialization
+
+The current initializer at `0x406EE0` uses a loop and file callbacks. Its complete
+723-byte dossier instead shows fifteen explicit name-clear, `strcat`, and score
+store phases, followed by direct CRT file calls. A source proposal and the
+corrected dependency review are retained in
+`.analysis/remaining-game-source-next-review/`.
+
+Accepted board-bank callers establish `fopen` at `0x417C20`, `fwrite` at
+`0x417E70`, and `fclose` at `0x417A30`. Reuse these caller/API bindings while the
+runtime origins are investigated. Before
+compiling the score proposal, attest `access` at `0x417FF0`, verify every
+consumed string including its NUL, and establish image-local native `FILE *`
+transport for the existing fixture. The fixture currently loads its shim with
+`RTLD_GLOBAL`; a process-wide libc interposer would affect unrelated owners.
 
 ## Entries and retained observations
 
@@ -109,7 +126,7 @@ Setting RGB preserves flags and submits one entry. RGB-pool rotation shifts
 SetEntries. Its count is an integer count, not a byte count: mode 4 passes 66.
 This checkpoint accepts valid palette bounds and pools of at least three ints.
 
-## Independent validation and limits
+## Recorded startup/UI checks
 
 `tests/test_startup_differential.py` executes six unmodified original entries
 for 158 direct cases, plus one separately counted connected frame-dispatch
@@ -128,15 +145,15 @@ zero-length lines and Lock retries. Palette tests compare all bytes/flags,
 submitted ranges and RGB-pool canaries. DirectDraw callbacks supply storage and
 record calls; they do not implement the source algorithm or its x86 counterpart.
 
-The production mode table now defaults device initialization to this owner;
+The production mode table defaults device initialization to this owner;
 runtime text/center/release-bank and gameplay range calls also default to the
-maintained implementations. Audio, actual Windows/driver delivery, non-game
-mode bodies and complete EXE integration remain pending. Earlier lifecycle
-oracles retain their declared dependency boundaries.
+maintained implementations. Subsequent screen and audio work is recorded in
+[the runtime](RUNTIME_OWNER.md), [sound](SOUND_OWNER.md), and
+[Windows integration](WINDOWS_ADAPTER.md) notes.
 
-One grouped checkpoint reruns every earlier suite, all 40 cold exact units,
+The historical startup/UI checkpoint reran every earlier suite, all 40 cold exact units,
 eight rejection checks, native/MinGW/VC4 products, Wine inspector comparison
-and saved REA verification. No new exact claim is made. Adding natural headers
+and saved REA verification. It made no new exact claim. Adding natural headers
 changes screen-pan's compiler literal names from `$T617`/`$T618` to
 `$T637`/`$T638`; both 8-byte constants and the complete offset/type/addend set
 were checked against object and target before rebinding. Full comparisons

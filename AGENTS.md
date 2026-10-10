@@ -2,8 +2,10 @@
 
 The goal is nearly 100% restoration of English DX-Ball v1.07 source and a
 rebuildable, playable game. Prioritize complete game flows and exact restoration.
-Keep the README short: explain the reconstruction approach and REA's role.
+Keep the README focused on the reconstruction approach and REA's role,
+with sections that help readers follow the workflow.
 Put operational detail in these instructions or `docs/agent/`.
+Keep the centered title PNG and progress SVG in the README, both at 900px.
 
 Read [the current handoff](docs/agent/HANDOFF.md),
 [workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing
@@ -31,5 +33,6 @@ against instructions, exits and embedded data.
   Publish recovered source, useful research notes and claim ledgers.
 - Update the affected ledgers and progress when claims change. Preserve unique
   evidence before cleaning disposable products.
-- Public commits and pushes are authorized. Subjects are English and begin
+- Commit locally; pushes are deferred until the user asks to resume publishing.
+  Subjects are English and begin
   `gpt-6.1-sol: `. Describe the source recovery, REA findings and actual validation.

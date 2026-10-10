@@ -39,6 +39,13 @@ scripts/repo-python scripts/run-windows.py --profile vc40
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
 
+The MinGW build leaves the three Windows diagnostic tools out of the default
+build. Request one when needed, for example:
+
+```bash
+cmake --build build/windows-i686 --target dxball_state_reader --parallel 1
+```
+
 ## Compile the portable library and tools
 
 ```bash
