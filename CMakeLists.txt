@@ -59,6 +59,11 @@ set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(dxball_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
+if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    # The original lightning controller requires an eligible tile in its scan.
+    set_source_files_properties(src/display.c PROPERTIES
+        COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
+endif()
 
 add_executable(dxball_resources src/resource_inspector.c)
 target_link_libraries(dxball_resources PRIVATE dxball_core)

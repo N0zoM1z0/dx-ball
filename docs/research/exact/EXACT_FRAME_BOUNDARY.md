@@ -31,6 +31,9 @@ the affected Oracle checks their resulting order. The clock relocation binds
 only `DxBallClockOps.time_ms`, at offset zero, to the original `timeGetTime`
 IAT slot `0x4413A4`.
 
+GCC builds keep the resulting `maybe-uninitialized` warning for `display.c`
+without treating it as an error. MinGW Release builds and links the game.
+
 ## Compiler and behavior results
 
 Only the display recipe was rebuilt; all 20 affected units were compared in
