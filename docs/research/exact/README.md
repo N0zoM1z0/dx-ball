@@ -3,6 +3,9 @@
 Each note follows a related source family through its original instructions,
 recovered implementation and complete compiler comparison.
 
+- [MDS loading and event conversion](EXACT_MDS_PARSER.md)
+- [MIDI imports and C++ music ownership](EXACT_MIDI_IMPORTS.md)
+- [MIDI stream and music controls](EXACT_MIDI_LIFECYCLE.md)
 - [Sound initialization and WAV loading](EXACT_SOUND_DEPENDENCIES.md)
 - [Sound upload and release](EXACT_SOUND_BUFFERS.md)
 - [Sound playback and buffer recovery](EXACT_SOUND_VOICES.md)

@@ -6,49 +6,55 @@ game. Prioritize coherent source recovery and affected exact comparisons.
 ## Current checkpoint
 
 - 283 source-present functions; 135 exact functions / 21,248 code bytes.
-- [MIDI imports and ownership](../research/exact/EXACT_MIDI_IMPORTS.md) recover
-  22 independent typed service cells and C++ music object lifetime. Release,
-  stream pause, music load and close add four exact units / 636 bytes. All five
-  music controls are exact. Their class-specific allocator members preserve
-  the real defaults; no global allocation operators are replaced.
-- The shared header triggered one compile for each of 20 recipes. Complete
-  comparison covers 102 units / 1,061 relocations; all 95 previously accepted
-  affected units remain exact. No local-name, layout or compiler-profile trials.
+- [MDS loading and conversion](../research/exact/EXACT_MDS_PARSER.md) restores
+  the complete open/parse/convert family with a 12-byte format, eight-byte block
+  and genuine 64-byte input MIDIHDR. Parameter cursor updates, partial event
+  writes and live bank cleanup follow the original instructions.
+- Open/parse remain 480/522 and 788/868-byte candidates. Conversion is 343/343;
+  all 38 differences are EBP local-displacement bytes across 107 otherwise
+  matching instructions. The whole comparison retains those differences.
+- Twenty affected recipes compiled together, plus one MIDI-only refinement
+  of the DWORD flag expression. Complete comparison covers 102 functions /
+  1,069 relocations. All 99 previously accepted affected units remain exact.
 - One existing MIDI Oracle passes 2,109 direct cases / 134 connected checks.
-  Only Native's service-cell binding changed; no cases were added. Native,
-  VC4 and MinGW builds succeed. VC4 reuses 24 current objects and compiles eight
-  remaining inputs. No other owner Oracle ran.
+  Only descriptor backing grows to the complete header; logical cases are
+  unchanged. Native, VC4 and MinGW builds succeed. VC4 reuses 24 current objects
+  and compiles eight remaining inputs. No other owner Oracle ran.
+
+The [previous MIDI ownership recovery](../research/exact/EXACT_MIDI_IMPORTS.md)
+retains all five exact C++ music controls and 22 independently typed imports.
+Stop/callback still have 14/10 local-storage differences; play remains 471/513.
+Keep these candidates without variable-spelling or layout trials.
 
 ## Next family
 
-Recover the MDS loading/parsing/event-expansion dependency family at
-`0x401000` / `0x401210` / `0x401580`. Reuse `.analysis/midi-evidence.json` and
-[the MIDI owner note](../research/MIDI_OWNER.md). Open/parse have 25/40 unowned
-bytes inside complete 522/868-byte spans; query only those missing full spans
-before source recovery. Expand is a contiguous 343-byte body. Follow chunk
-traversal, bank ownership and physical cleanup, then compare one stable family
-including the accepted release/pause bodies in the same MIDI object.
+Recover the file-service bindings of `dxball_load_binary_file` at `0x403320`
+and its sound-loading callers. The complete 304-byte dossier is already saved;
+[sound dependency recovery](../research/exact/EXACT_SOUND_DEPENDENCIES.md) records
+its 307-byte emission and the four services still routed through an aggregate
+whose layout differs from the original IAT. Follow actual cells and SDK/default
+bindings, including imports shared with MDS, before adding a complete comparison.
+Reuse existing source/byte evidence and the sound Oracle. Avoid another invented
+aggregate binding or a series of local-storage trials.
 
-Stop/callback have 14/10 local-storage differences with otherwise identical
-relocated instruction boundaries and operands. Play remains 471/513 bytes;
-its four error trampolines do not establish SEH syntax. Keep these candidates
-without variable-spelling or layout trials. Original C++ class/member names
-remain inferred, while the five caller bodies have complete exact comparisons.
-
-Do not spend iterations rearranging sound local names or inventing aggregate
-IAT aliases. Run only affected comparisons and an existing focused Oracle
-when it answers a concrete question. [WORKFLOW.md](WORKFLOW.md) records the
-contributor procedure; the public README stays short.
+The MDS type names are inferred; producer/consumer instructions establish their
+physical records. The remaining open/parse cleanup jumps do not prove SEH syntax.
+Original word/record reads use the supported x86 builds; do not broaden this
+into an arbitrary host-alignment claim.
 
 ## Private evidence
 
-The source acceptance epoch is
-`.analysis/checkpoints/exact-midi-imports-283-135/`, parent
-`exact-midi-lifecycle-283-131`. It retains full source/compiler inputs, prior
-objects, the Oracle, original bytes and two independent reviews.
-Working receipts live in `.analysis/exact-midi-imports/`.
-The cumulative REA snapshot still contains 481 records; no provider queries
-were needed in this batch. The full play span remains retained in the parent.
+The current source epoch is `.analysis/checkpoints/exact-mds-parser-283-135/`,
+parent `exact-midi-imports-283-135`. It retains full inputs, initial and refined
+emissions, prior accepted products, one Oracle and two independent reviews.
+Working receipts live in `.analysis/exact-mds-parser/`.
 
-REA development checkout: `/home/pentester/Project/rea/`. This project uses
-its pinned REA 4.1.0 / Ghidra 12.1.4 toolchain through `scripts/rea`.
+Two REA raw-span queries verified the complete 522/868 bytes, including 25/40
+bytes of internal cleanup jumps excluded from Ghidra's address sets. Full
+responses live in run `2026-10-10T07-53-15.117Z-requests-4133453`. Close saved
+483 cumulative records; all previous 481 were verified retained. Before/after
+compressed full snapshots and expanded identities remain in the source epoch.
+
+REA checkout: `/home/pentester/Project/rea/`; this project uses its pinned
+REA 4.1.0 / Ghidra 12.1.4 through `scripts/rea`. Follow [WORKFLOW.md](WORKFLOW.md)
+for source changes. Keep the public README focused on the REA workflow.

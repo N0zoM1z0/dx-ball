@@ -24,7 +24,8 @@ class Header(C.Structure):
 class Context(C.Structure):
     _fields_=[('magic',U),('division',U),('capacity',U),('format',U),
         ('buffers',P),('stream',Z),('state',U),('count',I),('pending',I)]
-class Input(C.Structure):_fields_=[('data',P),('length',U),('remaining',U)]
+class Input(C.Structure):
+    _fields_=[('data',P),('length',U),('remaining',U)]+Header._fields_[3:]
 class Music(C.Structure):_fields_=[('context',P),('playing',I)]
 ENTRIES={'open_mds':0x401000,'parse_mds':0x401210,'expand_mds_events':0x401580,
     'release_mds':0x4016e0,'play_mds':0x401780,'pause_mds':0x401990,
@@ -312,7 +313,7 @@ def checks(library):
                 destination=b.alloc('destination',128,0x91)
                 header=b.alloc('converter_header',b.header_size)
                 b.put_struct(header,'header',{'data':destination,'capacity':capacity,'recorded':0x9876})
-                desc=b.alloc('descriptor',C.sizeof(Input) if b.native else 12)
+                desc=b.alloc('descriptor',C.sizeof(Input) if b.native else 64)
                 b.put_struct(desc,'input',{'data':source,'length':0x12345678,'remaining':remaining})
                 arguments.append((desc,header,destination,source))
             h.call('expand_mds_events',arguments[0][:2],arguments[1][:2])

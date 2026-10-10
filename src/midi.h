@@ -16,17 +16,17 @@ struct DxBallMidiHeader {
     DxBallUInt offset;
     size_t reserved_array[8];
 };
+typedef struct DxBallMdsFormat {
+    DxBallUInt time_division, buffer_capacity, flags;
+} DxBallMdsFormat;
 struct DxBallMdsContext {
-    DxBallUInt magic, time_division, buffer_capacity, format_flags;
+    DxBallUInt magic;
+    DxBallMdsFormat format;
     DxBallMidiHeader *buffers;
     DxBallMidiHandle stream;
     DxBallUInt state;
     DxBallInt buffer_count, pending_buffers;
 };
-typedef struct DxBallMdsInput {
-    const DxBallByte *data;
-    DxBallUInt length, remaining;
-} DxBallMdsInput;
 typedef struct DxBallMusic {
     DxBallMdsContext *context;
     DxBallInt playing;
@@ -75,7 +75,7 @@ extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_close)(DxBallMidiHandle);
 extern DxBallMusic *dxball_music;
 DxBallInt dxball_open_mds(DxBallMdsContext **, const void *, DxBallUInt, DxBallByte);
 DxBallInt dxball_parse_mds(DxBallMdsContext *, const void *, DxBallUInt);
-DxBallInt dxball_expand_mds_events(const DxBallMdsInput *, DxBallMidiHeader *);
+DxBallInt dxball_expand_mds_events(const DxBallMidiHeader *, DxBallMidiHeader *);
 DxBallInt dxball_release_mds(DxBallMdsContext *);
 DxBallInt dxball_play_mds(DxBallMdsContext *, DxBallByte);
 DxBallInt dxball_pause_mds(DxBallMdsContext *);

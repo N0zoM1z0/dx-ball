@@ -35,139 +35,199 @@ DxBallUInt (DXBALL_DDCALL *dxball_midi_unprepare_header)(DxBallMidiHandle,
 DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_close)(DxBallMidiHandle);
 enum { MDS_MAGIC = 0x4953444d, MDS_FREED = 0x61746164, MIDI_HEADER_BYTES = 64 };
 
-static DxBallUInt read_word(const DxBallByte *data)
-{
-    DxBallUInt value;
-    memcpy(&value, data, sizeof(value));
-    return value;
-}
-static void write_word(DxBallByte *data, DxBallUInt value)
-{ memcpy(data, &value, sizeof(value)); }
-static DxBallMidiHeader *next_buffer(DxBallMidiHeader *header)
-{ return (DxBallMidiHeader *)((DxBallByte *)header + sizeof(*header) + header->buffer_length); }
-static void free_buffers(DxBallMdsContext *context)
-{
-    DxBallMidiHandle handle;
-    handle = dxball_midi_global_handle(context->buffers);
-    dxball_midi_global_unlock(handle);
-    handle = dxball_midi_global_handle(context->buffers);
-    dxball_midi_global_free(handle);
-}
+typedef struct DxBallMdsBlock {
+    DxBallUInt start_tick, bytes;
+} DxBallMdsBlock;
 
-DxBallInt dxball_expand_mds_events(const DxBallMdsInput *input, DxBallMidiHeader *header)
-{
-    const DxBallByte *source = input->data;
-    DxBallByte *destination = header->data;
-    DxBallUInt remaining = input->remaining, capacity = header->buffer_length;
-    DxBallUInt event, payload;
-    if ((remaining & 3) != 0) return 0;
-    while (remaining != 0) {
-        if (capacity < 12) return 0;
-        write_word(destination, read_word(source));
-        if (remaining == 4) return 0;
-        write_word(destination + 4, 0);
-        event = read_word(source + 4);
-        payload = (event & 0x80000000UL) ? event & 0xffffff : 0;
-        payload = (payload + 3) & 0xfffffffcUL;
-        write_word(destination + 8, event);
-        if (payload != 0) {
-            if (remaining - 8 < payload || capacity - 12 < payload) return 0;
-            memcpy(destination + 12, source + 8, payload);
-        }
-        destination += 12 + payload; source += 8 + payload;
-        capacity -= 12 + payload; remaining -= 8 + payload;
-    }
-    header->bytes_recorded = (DxBallUInt)(destination - header->data);
-    return 1;
-}
-
-DxBallInt dxball_parse_mds(DxBallMdsContext *context, const void *memory, DxBallUInt length)
-{
-    const DxBallByte *data = (const DxBallByte *)memory;
-    DxBallUInt chunk, bytes;
-    DxBallInt remaining, result = 0;
-    DxBallMidiHandle handle;
-    DxBallMidiHeader *header;
-    DxBallMdsInput input;
-    context->buffers = NULL;
-    if (length < 12 || read_word(data) != 0x46464952UL || read_word(data + 8) != 0x5344494dUL)
-        return 3;
-    chunk = read_word(data + 4); data += 12; length -= 12;
-    if (length + 4 < chunk) return 3;
-    if (length < 8 || read_word(data) != 0x20746d66UL) return 3;
-    chunk = read_word(data + 4);
-    if (length < chunk || chunk < 12) return 3;
-    data += 8; length -= 8;
-    context->time_division = read_word(data);
-    context->buffer_capacity = read_word(data + 4);
-    context->format_flags = read_word(data + 8);
-    data += chunk; length -= chunk;
-    if (length < 8 || read_word(data) != 0x61746164UL) return 3;
-    chunk = read_word(data + 4);
-    if (length < chunk || chunk < 4) return 3;
-    context->buffer_count = (DxBallInt)read_word(data + 8);
-    data += 12; length -= 12;
-    handle = dxball_midi_global_alloc(0x2002,
-        (sizeof(DxBallMidiHeader) + context->buffer_capacity) * (size_t)context->buffer_count);
-    context->buffers = (DxBallMidiHeader *)dxball_midi_global_lock(handle);
-    if (context->buffers == NULL) return 1;
-    header = context->buffers;
-    for (remaining = context->buffer_count; remaining != 0; --remaining) {
-        header->data = (DxBallByte *)header + sizeof(*header);
-        header->buffer_length = context->buffer_capacity;
-        header->flags = 0; header->user = (size_t)context; header->next = NULL;
-        if (length < 8) { result = 3; break; }
-        bytes = read_word(data + 4); data += 8;
-        if (context->buffer_capacity < bytes || length - 8 < bytes) { result = 3; break; }
-        if ((context->format_flags & 1) == 0) {
-            header->bytes_recorded = bytes; memcpy(header->data, data, bytes);
-        } else {
-            input.data = data; input.length = input.remaining = bytes;
-            if (!dxball_expand_mds_events(&input, header)) { result = 3; break; }
-        }
-        length -= 8 + bytes; data += bytes; header = next_buffer(header);
-    }
-    if (result != 0 && context->buffers != NULL) free_buffers(context);
-    return result;
-}
-
+/* FUNCTION: DXBALL 0x00401000 */
 DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
                          DxBallUInt length, DxBallByte mode)
 {
+    DxBallInt result = 0;
     DxBallMdsContext *context = NULL;
+    DxBallInt mapped = 0;
     DxBallMidiHandle file = (DxBallMidiHandle)-1, mapping = 0;
-    const void *view = input;
-    DxBallInt result, mapped = 0;
-    if ((mode & 3) == 0 || (mode & 3) == 3) result = 4;
-    else {
-        context = (DxBallMdsContext *)dxball_midi_local_alloc(0x40, sizeof(*context));
-        if (context == NULL) result = 1;
-        else {
-            context->magic = MDS_MAGIC; context->stream = 0; context->pending_buffers = 0;
-            result = 2;
-            if ((mode & 2) == 0) {
-                mapped = 1;
-                file = dxball_midi_create_file((const char *)input,0x80000000UL,1,NULL,3,0x80,0);
-                view = NULL;
-                if (file == (DxBallMidiHandle)-1) goto done;
-                length = dxball_midi_file_size(file, NULL);
-                mapping = dxball_midi_create_mapping(file,NULL,2,0,0,NULL);
-                if (mapping == 0) goto done;
-                view = dxball_midi_map_view(mapping,4,0,0,0);
-                if (view == NULL) goto done;
-            }
-            result = dxball_parse_mds(context, view, length);
+
+    do {
+        if ((mode & 3) == 0 || (mode & 3) == 3) {
+            result = 4;
+            break;
         }
+        context = (DxBallMdsContext *)dxball_midi_local_alloc(0x40, sizeof(*context));
+        if (context == NULL) {
+            result = 1;
+            break;
+        }
+        context->magic = 0x4953444dUL;
+        context->stream = 0;
+        context->pending_buffers = 0;
+        if ((mode & 2) == 0) {
+            mapped = 1;
+            file = dxball_midi_create_file((const char *)input, 0x80000000UL,
+                                          1, NULL, 3, 0x80, 0);
+            input = NULL;
+            if (file == (DxBallMidiHandle)-1) {
+                result = 2;
+                break;
+            }
+            length = dxball_midi_file_size(file, NULL);
+            mapping = dxball_midi_create_mapping(file, NULL, 2, 0, 0, NULL);
+            if (mapping == 0) {
+                result = 2;
+                break;
+            }
+            input = dxball_midi_map_view(mapping, 4, 0, 0, 0);
+            if (input == NULL) {
+                result = 2;
+                break;
+            }
+        }
+        result = dxball_parse_mds(context, input, length);
+    } while (0);
+
+    if (result != 0) {
+        if (context != NULL) dxball_midi_local_free(context);
+    } else {
+        *output = context;
     }
-done:
-    if (result == 0) *output = context;
-    else if (context != NULL) dxball_midi_local_free(context);
     if (mapped) {
-        if (view != NULL) dxball_midi_unmap_view(view);
+        if (input != NULL) dxball_midi_unmap_view(input);
         if (mapping != 0) dxball_midi_close_handle(mapping);
         if (file != (DxBallMidiHandle)-1) dxball_midi_close_handle(file);
     }
     return result;
+}
+
+/* FUNCTION: DXBALL 0x00401210 */
+DxBallInt dxball_parse_mds(DxBallMdsContext *context, const void *memory,
+                         DxBallUInt length)
+{
+    DxBallMdsBlock block;
+    DxBallMidiHeader input;
+    DxBallUInt chunk;
+    DxBallInt remaining, result;
+    DxBallMidiHeader *header;
+
+    result = 0;
+    context->buffers = NULL;
+    if (length < 12 || *(const DxBallUInt *)memory != 0x46464952UL ||
+        ((const DxBallUInt *)memory)[2] != 0x5344494dUL) {
+        result = 3;
+        goto done;
+    }
+    chunk = ((const DxBallUInt *)memory)[1];
+    memory = (const DxBallUInt *)memory + 2;
+    length -= 8;
+    if (chunk > length) {
+        result = 3;
+        goto done;
+    }
+    memory = (const DxBallUInt *)memory + 1;
+    length -= 4;
+    if (length < 8 || *(const DxBallUInt *)memory != 0x20746d66UL ||
+        (chunk = ((const DxBallUInt *)memory)[1]) > length || chunk < 12) {
+        result = 3;
+        goto done;
+    }
+    memory = (const DxBallUInt *)memory + 2;
+    length -= 8;
+    context->format = *(const DxBallMdsFormat *)memory;
+    memory = (const DxBallByte *)memory + chunk;
+    length -= chunk;
+    if (length < 8 || *(const DxBallUInt *)memory != 0x61746164UL ||
+        (chunk = ((const DxBallUInt *)memory)[1]) > length || chunk < 4) {
+        result = 3;
+        goto done;
+    }
+    context->buffer_count = (DxBallInt)((const DxBallUInt *)memory)[2];
+    memory = (const DxBallUInt *)memory + 3;
+    length -= 12;
+    chunk = (DxBallUInt)((context->format.buffer_capacity + sizeof(*header)) *
+        context->buffer_count);
+    context->buffers = (DxBallMidiHeader *)dxball_midi_global_lock(
+        dxball_midi_global_alloc(0x2002, chunk));
+    if (context->buffers == NULL) {
+        result = 1;
+        goto done;
+    }
+    header = context->buffers;
+    for (remaining = context->buffer_count; remaining != 0; --remaining) {
+        header->data = (DxBallByte *)(header + 1);
+        header->buffer_length = context->format.buffer_capacity;
+        header->flags = 0;
+        header->user = (size_t)context;
+        header->next = NULL;
+        if (length < 8) {
+            result = 3;
+            break;
+        }
+        block = *(const DxBallMdsBlock *)memory;
+        length -= sizeof(block);
+        memory = (const DxBallByte *)memory + sizeof(block);
+        if (context->format.buffer_capacity < block.bytes || block.bytes > length) {
+            result = 3;
+            break;
+        }
+        if ((context->format.flags & 1) == 0) {
+            header->bytes_recorded = block.bytes;
+            memcpy(header->data, memory, block.bytes);
+        } else {
+            input.data = (DxBallByte *)memory;
+            input.buffer_length = input.bytes_recorded = block.bytes;
+            if (!dxball_expand_mds_events(&input, header)) {
+                result = 3;
+                break;
+            }
+        }
+        length -= block.bytes;
+        memory = (const DxBallByte *)memory + block.bytes;
+        header = (DxBallMidiHeader *)((DxBallByte *)header +
+            (context->format.buffer_capacity + sizeof(*header)));
+    }
+done:
+    if (result != 0 && context->buffers != NULL) {
+        dxball_midi_global_unlock(dxball_midi_global_handle(context->buffers));
+        dxball_midi_global_free(dxball_midi_global_handle(context->buffers));
+    }
+    return result;
+}
+
+/* FUNCTION: DXBALL 0x00401580 */
+DxBallInt dxball_expand_mds_events(const DxBallMidiHeader *input,
+                                  DxBallMidiHeader *header)
+{
+    DxBallUInt payload;
+    const DxBallUInt *source = (const DxBallUInt *)input->data;
+    DxBallUInt *destination = (DxBallUInt *)header->data;
+    DxBallUInt remaining = input->bytes_recorded;
+    DxBallUInt capacity = header->buffer_length;
+
+    if ((remaining & 3) != 0) return 0;
+    while (remaining != 0) {
+        if (capacity < 12) return 0;
+        *destination++ = *source++;
+        remaining -= 4;
+        if (remaining == 0) return 0;
+        *destination++ = 0;
+        capacity -= 8;
+        payload = 0;
+        if ((*source & 0x80000000UL) != 0)
+            payload = *source & 0xffffffUL;
+        payload = (payload + 3) & 0xfffffffcUL;
+        *destination++ = *source++;
+        remaining -= 4;
+        capacity -= 4;
+        if (payload != 0) {
+            if (remaining < payload || capacity < payload) return 0;
+            memcpy(destination, source, payload);
+        }
+        destination += payload / sizeof(*destination);
+        source += payload / sizeof(*source);
+        remaining -= payload;
+        capacity -= payload;
+    }
+    header->bytes_recorded = (DxBallUInt)((DxBallByte *)destination - header->data);
+    return 1;
 }
 
 /* FUNCTION: DXBALL 0x004016E0 */
@@ -210,7 +270,7 @@ DxBallInt dxball_play_mds(DxBallMdsContext *context, DxBallByte flags)
             goto done;
         }
         property.size = 8;
-        property.value = current->time_division;
+        property.value = current->format.time_division;
         if (dxball_midi_stream_property(current->stream, &property,
                 0x80000001UL) != 0) {
             result = 5;
@@ -296,4 +356,3 @@ void DXBALL_DDCALL dxball_midi_callback(DxBallMidiHandle stream, DxBallUInt mess
     --context->pending_buffers;
     return;
 }
-

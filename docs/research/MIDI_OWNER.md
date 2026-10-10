@@ -2,6 +2,13 @@
 
 ## Current allocation defaults
 
+The [MDS loader and converter recovery](exact/EXACT_MDS_PARSER.md) restores
+the 12-byte format record, eight-byte block record and full input MIDIHDR.
+Open, parse and event expansion preserve the original cursor and cleanup
+order. The converter is now 343/343 bytes with 38 local-storage differences;
+all three remain candidates. The existing MIDI Oracle passes 2,109 direct
+cases / 134 connected checks, and all 99 affected accepted units remain exact.
+
 Music wrapper allocation/deletion uses C++ object lifetime with maintained
 runtime defaults. Local/Global ownership remains separate. The latest
 [import and ownership recovery](exact/EXACT_MIDI_IMPORTS.md) adds exact release,
@@ -51,8 +58,9 @@ Noncontiguous bodies:
 - `play_mds`: `0x401780..0x401827`, `0x40182d..0x401866`, `0x40186c..0x4018d1`, `0x4018d7..0x40192d`, `0x401933..0x401980`.
 
 Ranges in the table use inclusive ends. Open, parse and play have separated
-instruction ranges; gaps in their spans are not claimed as owned instructions.
-The original inventory's larger spans remain provisional extents.
+instruction ranges. Subsequent full-span reads establish the open/parse gaps
+as internal cleanup jumps and retain all 522/868 bytes for comparison. The
+original Ghidra address-set ownership counts remain unchanged.
 
 REA's instruction view resolves two consequential pseudocode limitations.
 `play_mds` loads return codes **6** and **7** for an invalid cookie and an
