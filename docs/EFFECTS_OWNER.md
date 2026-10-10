@@ -1,5 +1,13 @@
 # Explosion requests and brick animations
 
+The [complete brick-power restoration](EXACT_BRICK_POWERS.md) calls the real
+brick-effect entry directly. GameNative now selects the verified owned copied
+image and binds its existing callbacks; one typed byte-preserving wrapper reads
+the live callback slot and falls back to that image's actual source body.
+EffectsNative may subsequently install its actual body. This bridge does not
+prove effects implementation or hardware behavior. The effects input closure
+now includes the four actually consumed loader/shim/resource-control inputs.
+
 REA/Ghidra tracing distinguishes the request queue at `0x43F8E0` from the
 animation queue at `0x43FA98`. `src/gameplay.c` owns request traversal, deletion
 and enqueueing; `src/effects.c` owns the animation lifecycle. Both retain natural

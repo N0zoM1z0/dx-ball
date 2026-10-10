@@ -1,5 +1,13 @@
 # Bonus application, paddle and ball dependencies
 
+The [complete brick-power restoration](EXACT_BRICK_POWERS.md) restores the
+whole source for spread, softening and counting. The full 397-byte softener and
+149-byte counter are exact; spread compares 844/824 with 753 differences.
+Four independent neighbor blocks preserve collection-before-mutation, live
+signed-byte reads and immediate drawing. Original source spelling and storage
+homes are not proved; the single-case scan switch is an inference. All existing
+direct and application cases remain unchanged.
+
 The [complete bonus restoration](EXACT_BONUSES.md) restores all nineteen
 inline application cases with live sprite/bank reads, original sound/callee
 order, floating half for kind 11 and signed integer half for 16. The whole

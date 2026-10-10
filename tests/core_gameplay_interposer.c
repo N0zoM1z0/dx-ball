@@ -19,6 +19,9 @@ static DxBallGameplayOps *bound_ops;
 static DxBallGameplayOps *bound_particle_ops;
 static void (*real_particle)(DxBallInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt);
 static unsigned particle_active;
+static DxBallGameplayOps *bound_brick_effect_ops;
+static void (*real_brick_effect)(DxBallInt, DxBallInt, DxBallByte, DxBallInt);
+static unsigned brick_effect_active;
 static DxBallRenderOps *bound_render;
 static DxBallFrameOps *bound_frame;
 static DxBallEffectOps *bound_effect;
@@ -81,6 +84,32 @@ void dxball_spawn_particle(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy,
     particle_active = 1;
     callback(x, y, dx, dy, color, gravity);
     particle_active = 0;
+}
+
+/* The loader stages the genuine copied-image body before fixture callbacks. */
+int dxball_test_bind_brick_effect_ops(DxBallGameplayOps *ops,
+                                      void (*real)(DxBallInt, DxBallInt,
+                                                   DxBallByte, DxBallInt))
+{
+    if (real == NULL) return -1;
+    if (real == dxball_spawn_brick_effect) return -2;
+    bound_brick_effect_ops = ops;
+    real_brick_effect = real;
+    return 0;
+}
+
+void dxball_spawn_brick_effect(DxBallInt x, DxBallInt y, DxBallByte tile, DxBallInt mode)
+{
+    void (*callback)(DxBallInt, DxBallInt, DxBallByte, DxBallInt);
+    callback = real_brick_effect;
+    if (bound_brick_effect_ops != NULL && bound_brick_effect_ops->brick_effect != NULL &&
+        bound_brick_effect_ops->brick_effect != dxball_spawn_brick_effect)
+        callback = bound_brick_effect_ops->brick_effect;
+    if (callback == NULL || callback == dxball_spawn_brick_effect || brick_effect_active)
+        binding_failure("CoreNative spawn_brick_effect: missing real owner or recursive callback");
+    brick_effect_active = 1;
+    callback(x, y, tile, mode);
+    brick_effect_active = 0;
 }
 
 int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame,

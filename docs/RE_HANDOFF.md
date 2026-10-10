@@ -1,4 +1,39 @@
-# Current handoff — complete bonus generation and application
+# Current handoff — complete brick hits and board powers
+
+Priority: **exact restoration, moderate existing tests and grouped replay**.
+The [complete brick-power batch](EXACT_BRICK_POWERS.md) restores four whole bodies:
+hit1315 enclosing/1244 owned, spread824, soften397 and count149, totaling 2,685
+comparison span bytes. Soften/count add 546 whole exact bytes. Hit1316/1315 keeps
+418 differences; spread 844/824 keeps753. All113 previous complete code/metadata
+identities survive; no declaration/order/name/body/layout/capacity trials.
+
+Acceptance: **283 source-present /247 scoped rows /112273 unit-distinct cases /
+115 exact functions / 17,678 code bytes +136 separate metadata bytes**.
+Origins270 authored / 50 runtime / 42 generated / 166 unknown remain fixed.
+One69-input gameplay diagnostic object; one 22-object configured cold epoch;
+strict Native succeeds first attempt;22 owner scripts pass in 741.136 seconds
+against 291 frozen inputs, plus 7 checks. No cases, campaigns or target oracles added.
+One typed brick-effect wrapper and GameNative copied-image hookup retain all43
+previous C function bodies. Shim 37 real symbols / 38 default slots / 48 actual MD.
+Effects owner records its four actual shared harness dependencies.
+
+One actual pinned REA read returns complete71 gap bytes:12 jump addresses and23
+selectors. Primary's11-entry count was incomplete; every enclosing byte is
+compared and instruction ownership remains1244. Successful close/save extends
+snapshot 473→474 /0 primitives. Initial candidate-offset mapping assertion is
+retained; current actual table/selector mapping is reconciled before replay.
+
+Native family/canonical 7edcc33d4c2a090731ba17a5654e1b22c6b26b9e13d7badd27acfe96faff380f; shim 0b1a5d56662168602b5d154a06b1b5002fcf9d9ce5f8030e97d7a1fe3f5211dc.
+Checkpoint .analysis/checkpoints/exact-brick-powers-283-115, parent bonus-phase 113.
+One writable compiler/provider, one allowed CPU, JVM512MiB, serial CMake and
+silent Pulse sink. Detailed English gpt-6.1-sol: commits/public push authorized.
+
+Next: restore complete effect creation/removal/stepping as a coherent family
+from existing full original evidence, then grouped replay. Nonexact hit/spread
+storage homes and source spelling remain unresolved; avoid forced layout trials.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete bonus generation and application
 
 Priority: **exact restoration, moderate existing tests and grouped replay**.
 The [complete bonus batch](EXACT_BONUSES.md) restores whole generation 1,197,

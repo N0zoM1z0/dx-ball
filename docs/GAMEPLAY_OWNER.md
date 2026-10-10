@@ -1,5 +1,13 @@
 # Board-hit gameplay owner
 
+The [complete brick-power restoration](EXACT_BRICK_POWERS.md) restores the
+whole hit body with live board-byte reads, direct brick-effect/audio/RNG/particle
+calls, separate strength transitions and two particle loops. Its complete
+1,316/1,315 comparison retains 418 differences. A full pinned REA 71-byte read
+reconciles all 12 jump addresses and 23 selectors; the original recovered table
+count of 11 is incomplete. The 1,244 owned instruction bytes remain separate
+from the 1,315-byte enclosing comparison span. Existing hit cases remain fixed.
+
 `src/gameplay.c` continues DX-Ball reconstruction from REA's tile-hit
 investigation. The same C source builds on the native host, MinGW i686 and the
 pinned VC4.0 toolchain. It owns tile transitions, hit eligibility for scoring,

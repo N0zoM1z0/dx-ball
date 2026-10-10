@@ -57,7 +57,9 @@ class Ops(C.Structure):
 
 class GameNative(Native):
     def __init__(self, library):
-        super().__init__(library)
+        from core_native_loader import fixture_image, bind_gameplay
+        self.game_native_image = fixture_image(library)
+        super().__init__(self.game_native_image.path)
         self.state = {key: source_global(C.c_int32, self.lib, name) for key, name in [
             (REMAINING, "dxball_remaining_bricks"), (HARD, "dxball_destroy_hard_tiles"),
             (REDUCED, "dxball_reduced_particles"), (PENDING, "dxball_explosion_pending"),
@@ -73,6 +75,7 @@ class GameNative(Native):
         ops = Ops.in_dll(self.lib, "dxball_gameplay_ops")
         for (name, _), callback in zip(Ops._fields_, self.game_callbacks):
             setattr(ops, name, callback)
+        bind_gameplay(self.game_native_image, self.lib, ops)
         self.free_callback = C.CFUNCTYPE(None, C.c_void_p)(self.free)
         C.c_void_p.in_dll(self.lib, "dxball_effect_ops").value = C.cast(self.free_callback, C.c_void_p).value
         for name, args, result in [

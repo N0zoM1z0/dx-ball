@@ -152,6 +152,7 @@ class _Image:
         self.lib = C.CDLL(str(self.path.resolve()))
         self.function_addresses = {}
         boundaries = [('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
+                      ('dxball_gameplay_ops', 6, 1, 'dxball_spawn_brick_effect'),
                       ('dxball_gameplay_ops', 6, 3, 'dxball_play_sound'),
                       ('dxball_gameplay_ops', 6, 4, 'dxball_random_range'),
                       ('dxball_gameplay_ops', 6, 5, 'dxball_spawn_particle'),
@@ -229,6 +230,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_gameplay_ops.restype = C.c_int
         _shim.dxball_test_bind_particle_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_particle_ops.restype = C.c_int
+        _shim.dxball_test_bind_brick_effect_ops.argtypes = [C.c_void_p, C.c_void_p]
+        _shim.dxball_test_bind_brick_effect_ops.restype = C.c_int
         _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
         _shim.dxball_test_bind_runtime_ops.argtypes = [C.c_void_p]
@@ -286,6 +289,16 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_particle_ops(actual, real)
     if result != 0:
         raise RuntimeError('CoreNative particle binding rejected: null or recursive real body')
+    real = C.cast(image.lib.dxball_spawn_brick_effect, C.c_void_p).value
+    if (real != image.function_addresses['dxball_spawn_brick_effect'] or
+            real == C.cast(_shim.dxball_spawn_brick_effect, C.c_void_p).value or
+            _function_owner(real) != image.path.resolve()):
+        raise RuntimeError('CoreNative brick-effect body does not belong to its copied image')
+    # GameNative first supplies its controlled callback; EffectsNative later
+    # replaces slot 1 with the actual body. The wrapper reads that current slot.
+    result = _shim.dxball_test_bind_brick_effect_ops(actual, real)
+    if result != 0:
+        raise RuntimeError('CoreNative brick-effect binding rejected: null or recursive real body')
     return image
 
 

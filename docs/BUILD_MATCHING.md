@@ -1,6 +1,20 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint accepts **113 exact functions / 17,132
+The current shared-source checkpoint accepts **115 exact functions / 17,678
+code bytes**, plus 136 separate exception metadata bytes. The
+[complete brick-power restoration](EXACT_BRICK_POWERS.md) adds the full 397-byte
+special-brick softener and 149-byte destructible counter. Hit compares
+1,316/1,315 bytes with 418 differences; explosive spread compares 844/824 with
+753 differences. All embedded hit table bytes and all actual relocations remain
+in comparison. Nonexact source spelling and local homes remain unresolved.
+
+One diagnostic gameplay object freezes all 69 source/header inputs; one
+configured 22-object cold epoch preserves all 113 preceding complete identities.
+Strict Native, all 22 existing owner scripts, and seven existing checks pass.
+No cases or target oracle bodies are added or changed. There are no source-body,
+name/order/layout/capacity trials after the single diagnostic representation.
+
+The preceding shared-source checkpoint accepted **113 exact functions / 17,132
 code bytes**, plus 136 separate exception metadata bytes. The
 [complete bonus restoration](EXACT_BONUSES.md) adds all 2,168 enclosing bytes
 of bonus application and 64 bytes of ball ignition. Both complete switch tables

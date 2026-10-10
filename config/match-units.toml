@@ -34,8 +34,8 @@ target_address = 0x00406400
 size = 63
 boundary_evidence = "docs/GAMEPLAY_OWNER.md"
 relocations = [
-  { offset = 0x17, type = "DIR32", symbol = "$T1151", addend = 0x0, target = 0x420068, data_hex = "000000000000f93f" },
-  { offset = 0x20, type = "DIR32", symbol = "$T1152", addend = 0x0, target = 0x420070, data_hex = "0000000000407f40" },
+  { offset = 23, type = "DIR32", symbol = "$T1155", addend = 0, target = 0x420068, data_hex = "000000000000f93f" },
+  { offset = 32, type = "DIR32", symbol = "$T1156", addend = 0, target = 0x420070, data_hex = "0000000000407f40" },
   { offset = 0x29, type = "DIR32", symbol = "_dxball_pan_scale", addend = 0x0, target = 0x4210a0 },
   { offset = 0x31, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
 ]
@@ -3811,4 +3811,178 @@ relocations = [
   { offset = 10, type = "DIR32", symbol = "_dxball_projectiles", addend = 0, target = 0x43a898 },
   { offset = 15, type = "REL32", symbol = "@dxball_remove_projectile@4", addend = 0, target = 0x4134d0 },
   { offset = 24, type = "DIR32", symbol = "_dxball_projectile_count", addend = 0, target = 0x43a900 },
+]
+
+[candidates.hit-board-tile]
+build = "gameplay"
+symbol = "_dxball_hit_board_tile"
+target_address = 0x411f40
+size = 1315
+boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+relocations = [
+  { offset = 32, type = "REL32", symbol = "_dxball_screen_pan", addend = 0, target = 0x406400 },
+  { offset = 58, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 92, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 106, type = "REL32", symbol = "_dxball_spawn_brick_effect", addend = 0, target = 0x412ba0 },
+  { offset = 115, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 141, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 161, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 179, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
+  { offset = 208, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 222, type = "REL32", symbol = "_dxball_spawn_brick_effect", addend = 0, target = 0x412ba0 },
+  { offset = 244, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 251, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 277, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 284, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 291, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 309, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
+  { offset = 338, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 352, type = "REL32", symbol = "_dxball_spawn_brick_effect", addend = 0, target = 0x412ba0 },
+  { offset = 374, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 381, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 407, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 414, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 421, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 439, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
+  { offset = 468, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 482, type = "REL32", symbol = "_dxball_spawn_brick_effect", addend = 0, target = 0x412ba0 },
+  { offset = 504, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 511, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 537, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 544, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 551, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 569, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
+  { offset = 578, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8 },
+  { offset = 626, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 644, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 657, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 682, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 707, type = "REL32", symbol = "_dxball_spawn_particle", addend = 0, target = 0x4148a0 },
+  { offset = 761, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 779, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 792, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 817, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
+  { offset = 842, type = "REL32", symbol = "_dxball_spawn_particle", addend = 0, target = 0x4148a0 },
+  { offset = 861, type = "DIR32", symbol = "_dxball_explosion_pending", addend = 0, target = 0x422d20 },
+  { offset = 871, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x43aab8 },
+  { offset = 876, type = "REL32", symbol = "@dxball_append_explosion@4", addend = 0, target = 0x412470 },
+  { offset = 881, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x43aab8 },
+  { offset = 896, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x43aab8 },
+  { offset = 908, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x43aab8 },
+  { offset = 937, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 951, type = "REL32", symbol = "_dxball_spawn_brick_effect", addend = 0, target = 0x412ba0 },
+  { offset = 973, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 981, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 999, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
+  { offset = 1008, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 1034, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 1048, type = "REL32", symbol = "_dxball_spawn_brick_effect", addend = 0, target = 0x412ba0 },
+  { offset = 1070, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 1077, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 1103, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 1111, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
+  { offset = 1129, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x405c50 },
+  { offset = 1138, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 1162, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 1189, type = "DIR32", symbol = "$L1159", addend = 0, target = 0x41241f },
+  { offset = 1196, type = "DIR32", symbol = "$L1160", addend = 0, target = 0x4123ef },
+  { offset = 1200, type = "DIR32", symbol = "$L1086", addend = 0, target = 0x411f86 },
+  { offset = 1204, type = "DIR32", symbol = "$L1105", addend = 0, target = 0x4122d7 },
+  { offset = 1208, type = "DIR32", symbol = "$L1087", addend = 0, target = 0x411f8b },
+  { offset = 1212, type = "DIR32", symbol = "$L1090", addend = 0, target = 0x411fff },
+  { offset = 1216, type = "DIR32", symbol = "$L1092", addend = 0, target = 0x412081 },
+  { offset = 1220, type = "DIR32", symbol = "$L1105", addend = 0, target = 0x4122d7 },
+  { offset = 1224, type = "DIR32", symbol = "$L1094", addend = 0, target = 0x412103 },
+  { offset = 1228, type = "DIR32", symbol = "$L1104", addend = 0, target = 0x41229b },
+  { offset = 1232, type = "DIR32", symbol = "$L1105", addend = 0, target = 0x4122d7 },
+  { offset = 1236, type = "DIR32", symbol = "$L1106", addend = 0, target = 0x412338 },
+  { offset = 1240, type = "DIR32", symbol = "$L1105", addend = 0, target = 0x4122d7 },
+  { offset = 1244, type = "DIR32", symbol = "$L1108", addend = 0, target = 0x4123ba },
+  { offset = 1272, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 1278, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 1296, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+]
+
+[candidates.spread-explosive-bricks]
+build = "gameplay"
+symbol = "_dxball_spread_explosive_bricks"
+target_address = 0x4150a0
+size = 824
+boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+relocations = [
+  { offset = 75, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 88, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 93, type = "REL32", symbol = "@dxball_append_explosion@4", addend = 0, target = 0x412470 },
+  { offset = 102, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 114, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 157, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 163, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 171, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 176, type = "REL32", symbol = "@dxball_begin_explosions@4", addend = 0, target = 0x410070 },
+  { offset = 189, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 200, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 236, type = "DIR32", symbol = "_dxball_board_storage", addend = 20031, target = 0x43aab8 },
+  { offset = 265, type = "DIR32", symbol = "_dxball_board_storage", addend = 20031, target = 0x43aab8 },
+  { offset = 293, type = "DIR32", symbol = "_dxball_board_storage", addend = 20031, target = 0x43aab8 },
+  { offset = 308, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 327, type = "DIR32", symbol = "_dxball_board_storage", addend = 20031, target = 0x43aab8 },
+  { offset = 344, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 377, type = "DIR32", symbol = "_dxball_board_storage", addend = 20033, target = 0x43aab8 },
+  { offset = 406, type = "DIR32", symbol = "_dxball_board_storage", addend = 20033, target = 0x43aab8 },
+  { offset = 434, type = "DIR32", symbol = "_dxball_board_storage", addend = 20033, target = 0x43aab8 },
+  { offset = 449, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 468, type = "DIR32", symbol = "_dxball_board_storage", addend = 20033, target = 0x43aab8 },
+  { offset = 485, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 522, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 555, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 587, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 602, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 625, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 642, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 679, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 712, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 744, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 759, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 782, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 799, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 807, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 812, type = "REL32", symbol = "@dxball_advance_explosion@4", addend = 0, target = 0x410170 },
+  { offset = 825, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
+  { offset = 830, type = "REL32", symbol = "@dxball_clear_explosion_list@4", addend = 0, target = 0x4153e0 },
+]
+
+[units.soften-special-bricks]
+build = "gameplay"
+symbol = "_dxball_soften_special_bricks"
+target_address = 0x415410
+size = 397
+boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_bonus_17_active", addend = 0, target = 0x43fae0 },
+  { offset = 20, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 26, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 99, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 128, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 157, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 172, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 191, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 207, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 230, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 258, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 274, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 297, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 326, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 354, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 370, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+]
+
+[units.count-destructible-bricks]
+build = "gameplay"
+symbol = "_dxball_count_destructible_bricks"
+target_address = 0x415a90
+size = 149
+boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+relocations = [
+  { offset = 82, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 110, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
 ]

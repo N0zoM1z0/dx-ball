@@ -23,27 +23,17 @@ DxBallInt DXBALL_FASTCALL dxball_clear_explosion_list(DxBallExplosionList *list)
     return 1;
 }
 
-/* Shared source helper, not a separate target function claim. */
-static void convert_to_explosive(DxBallInt x, DxBallInt y)
-{
-    DxBallByte *tile;
-    tile = &dxball_board_tiles[x + y * 20];
-    if (*tile != 8) {
-        if (*tile == 0 || *tile == 2) ++dxball_remaining_bricks;
-        *tile = 8;
-        dxball_draw_board_tile(x, y, 0);
-    }
-}
-
 void dxball_spread_explosive_bricks(void)
 {
-    DxBallInt x, y;
-    for (x = 0; x < 20; ++x) {
-        for (y = 0; y < 20; ++y) {
-            if (dxball_board_tiles[x + y * 20] == 8) {
+    DxBallInt x, y, scan_x, scan_y;
+    for (scan_x = 0; scan_x < 20; ++scan_x) {
+        for (scan_y = 0; scan_y < 20; ++scan_y) {
+            switch ((signed char)dxball_board_tiles[scan_x + scan_y * 20]) {
+            case 8:
                 dxball_append_explosion(&dxball_explosive_sources);
-                dxball_explosive_sources.current->x = x;
-                dxball_explosive_sources.current->y = y;
+                dxball_explosive_sources.current->x = scan_x;
+                dxball_explosive_sources.current->y = scan_y;
+                break;
             }
         }
     }
@@ -52,10 +42,30 @@ void dxball_spread_explosive_bricks(void)
         do {
             x = dxball_explosive_sources.current->x;
             y = dxball_explosive_sources.current->y;
-            if (x > 0) convert_to_explosive(x - 1, y);
-            if (x < 19) convert_to_explosive(x + 1, y);
-            if (y > 0) convert_to_explosive(x, y - 1);
-            if (y < 19) convert_to_explosive(x, y + 1);
+            if (x > 0 && (signed char)dxball_board_tiles[x - 1 + y * 20] != 8) {
+                if ((signed char)dxball_board_tiles[x - 1 + y * 20] == 0 ||
+                        (signed char)dxball_board_tiles[x - 1 + y * 20] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[x - 1 + y * 20] = 8;
+                dxball_draw_board_tile(x - 1, y, 0);
+            }
+            if (x < 19 && (signed char)dxball_board_tiles[x + 1 + y * 20] != 8) {
+                if ((signed char)dxball_board_tiles[x + 1 + y * 20] == 0 ||
+                        (signed char)dxball_board_tiles[x + 1 + y * 20] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[x + 1 + y * 20] = 8;
+                dxball_draw_board_tile(x + 1, y, 0);
+            }
+            if (y > 0 && (signed char)dxball_board_tiles[x + (y - 1) * 20] != 8) {
+                if ((signed char)dxball_board_tiles[x + (y - 1) * 20] == 0 ||
+                        (signed char)dxball_board_tiles[x + (y - 1) * 20] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[x + (y - 1) * 20] = 8;
+                dxball_draw_board_tile(x, y - 1, 0);
+            }
+            if (y < 19 && (signed char)dxball_board_tiles[x + (y + 1) * 20] != 8) {
+                if ((signed char)dxball_board_tiles[x + (y + 1) * 20] == 0 ||
+                        (signed char)dxball_board_tiles[x + (y + 1) * 20] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[x + (y + 1) * 20] = 8;
+                dxball_draw_board_tile(x, y + 1, 0);
+            }
         } while (dxball_advance_explosion(&dxball_explosive_sources));
     }
     dxball_clear_explosion_list(&dxball_explosive_sources);
@@ -65,23 +75,23 @@ void dxball_spread_explosive_bricks(void)
 void dxball_soften_special_bricks(void)
 {
     DxBallInt x, y;
-    DxBallByte *tile;
     dxball_bonus_17_active = 0;
     dxball_select_surface(dxball_board_surface);
     for (x = 0; x < 20; ++x) {
         for (y = 0; y < 20; ++y) {
-            tile = &dxball_board_tiles[x + y * 20];
-            if (*tile == 2 || *tile == 21) {
-                if (*tile == 2) ++dxball_remaining_bricks;
-                *tile = 20;
+            if ((signed char)dxball_board_tiles[x + y * 20] == 2 ||
+                    (signed char)dxball_board_tiles[x + y * 20] == 21) {
+                if ((signed char)dxball_board_tiles[x + y * 20] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[x + y * 20] = 20;
                 dxball_draw_board_tile(x, y, 0);
             }
-            if (*tile == 7) {
-                *tile = 6;
+            if ((signed char)dxball_board_tiles[x + y * 20] == 7) {
+                dxball_board_tiles[x + y * 20] = 6;
                 dxball_draw_board_tile(x, y, 0);
             }
-            if (*tile == 3 || *tile == 4) {
-                *tile = 5;
+            if ((signed char)dxball_board_tiles[x + y * 20] == 3 ||
+                    (signed char)dxball_board_tiles[x + y * 20] == 4) {
+                dxball_board_tiles[x + y * 20] = 5;
                 dxball_draw_board_tile(x, y, 0);
             }
         }
@@ -91,12 +101,12 @@ void dxball_soften_special_bricks(void)
 
 DxBallInt dxball_count_destructible_bricks(void)
 {
-    DxBallInt x, y, count;
+    DxBallInt count, x, y;
     count = 0;
     for (x = 0; x < 20; ++x) {
         for (y = 0; y < 20; ++y) {
-            if (dxball_board_tiles[x + y * 20] != 0 &&
-                    dxball_board_tiles[x + y * 20] != 2) ++count;
+            if ((signed char)dxball_board_tiles[x + y * 20] != 0 &&
+                    (signed char)dxball_board_tiles[x + y * 20] != 2) ++count;
         }
     }
     return count;
@@ -139,61 +149,64 @@ DxBallInt dxball_screen_pan(DxBallInt x)
 
 DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)
 {
-    DxBallInt score_hit, pan, cell, i, count, px, py, dx, dy;
-    DxBallByte tile;
+    DxBallInt i, score_hit, pan;
     score_hit = 1;
     pan = dxball_screen_pan(x * 30 + 20);
-    cell = x + y * DXBALL_BOARD_WIDTH;
-    tile = dxball_board_tiles[cell];
-    switch (tile) {
+    switch ((signed char)dxball_board_tiles[x + y * 20]) {
     case 0:
         break;
-    case 1: case 5: case 6: case 9: case 10: case 11: case 12:
-    case 13: case 14: case 15: case 16: case 17: case 18: case 19:
-    case 20: case 22:
-        dxball_gameplay_ops.brick_effect(x, y, tile, 0);
-        dxball_board_tiles[cell] = 0;
-        dxball_gameplay_ops.stop_sound(7);
-        dxball_gameplay_ops.play_sound(7, 0, pan, 0);
-        --dxball_remaining_bricks;
-        break;
     case 2:
-        dxball_gameplay_ops.brick_effect(x, y, tile, 1);
+        dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 1);
         if (dxball_destroy_hard_tiles != 0) {
-            dxball_board_tiles[cell] = 0;
+            dxball_board_tiles[x + y * 20] = 0;
         } else {
             score_hit = 0;
         }
-        dxball_gameplay_ops.stop_sound(3);
-        dxball_gameplay_ops.play_sound(3, 0, pan, 0);
+        dxball_stop_sound(3);
+        dxball_play_sound(3, 0, pan, 0);
         break;
-    case 3: case 4:
-        dxball_gameplay_ops.brick_effect(x, y, tile, 1);
-        dxball_board_tiles[cell] = (DxBallByte)(tile + 1);
+    case 3:
+        dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 1);
+        dxball_board_tiles[x + y * 20] = 4;
         if (dxball_destroy_hard_tiles != 0) {
-            dxball_board_tiles[cell] = 0;
+            dxball_board_tiles[x + y * 20] = 0;
             --dxball_remaining_bricks;
         }
-        dxball_gameplay_ops.stop_sound(1);
-        dxball_gameplay_ops.play_sound(1, 0, pan, 0);
+        dxball_stop_sound(1);
+        dxball_play_sound(1, 0, pan, 0);
+        break;
+    case 4:
+        dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 1);
+        dxball_board_tiles[x + y * 20] = 5;
+        if (dxball_destroy_hard_tiles != 0) {
+            dxball_board_tiles[x + y * 20] = 0;
+            --dxball_remaining_bricks;
+        }
+        dxball_stop_sound(1);
+        dxball_play_sound(1, 0, pan, 0);
         break;
     case 7:
-        dxball_gameplay_ops.brick_effect(x, y, tile, 1);
-        dxball_board_tiles[cell] = 6;
+        dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 1);
+        dxball_board_tiles[x + y * 20] = 6;
         if (dxball_destroy_hard_tiles != 0) {
-            dxball_board_tiles[cell] = 0;
+            dxball_board_tiles[x + y * 20] = 0;
             --dxball_remaining_bricks;
         }
-        dxball_gameplay_ops.stop_sound(19);
-        dxball_gameplay_ops.play_sound(19, 0, pan, 0);
-        count = dxball_reduced_particles == 0 ? 8 : 4;
-        for (i = 0; i < count; ++i) {
-            /* Target evaluation order is dy, dx, y, x. Keep RNG consumption. */
-            dy = 2 - dxball_gameplay_ops.random_range(5);
-            dx = 2 - dxball_gameplay_ops.random_range(5);
-            py = 50 + y * 15 + dxball_gameplay_ops.random_range(15);
-            px = 20 + x * 30 + dxball_gameplay_ops.random_range(30);
-            dxball_gameplay_ops.particle(px, py, dx, dy, 119, 1);
+        dxball_stop_sound(19);
+        dxball_play_sound(19, 0, pan, 0);
+        /* The original has two loops and evaluates arguments from right to left. */
+        if (dxball_reduced_particles != 0) {
+            for (i = 0; i < 4; ++i) {
+                dxball_spawn_particle(dxball_random_range(30) + x * 30 + 20,
+                        dxball_random_range(15) + y * 15 + 50,
+                        2 - dxball_random_range(5), 2 - dxball_random_range(5), 119, 1);
+            }
+        } else {
+            for (i = 0; i < 8; ++i) {
+                dxball_spawn_particle(dxball_random_range(30) + x * 30 + 20,
+                        dxball_random_range(15) + y * 15 + 50,
+                        2 - dxball_random_range(5), 2 - dxball_random_range(5), 119, 1);
+            }
         }
         break;
     case 8:
@@ -203,18 +216,27 @@ DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)
         dxball_explosions.current->x = x;
         dxball_explosions.current->y = y;
         break;
+    case 1: case 5: case 6: case 9: case 10: case 11: case 12:
+    case 13: case 14: case 15: case 16: case 17: case 18: case 19:
+    case 20: case 22:
+        dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 0);
+        dxball_board_tiles[x + y * 20] = 0;
+        dxball_stop_sound(7);
+        dxball_play_sound(7, 0, pan, 0);
+        --dxball_remaining_bricks;
+        break;
     case 21:
-        dxball_gameplay_ops.brick_effect(x, y, tile, 1);
-        dxball_board_tiles[cell] = 2;
+        dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 1);
+        dxball_board_tiles[x + y * 20] = 2;
         if (dxball_destroy_hard_tiles != 0) {
-            dxball_board_tiles[cell] = 0;
+            dxball_board_tiles[x + y * 20] = 0;
         }
-        dxball_gameplay_ops.stop_sound(1);
-        dxball_gameplay_ops.play_sound(1, 0, pan, 0);
+        dxball_stop_sound(1);
+        dxball_play_sound(1, 0, pan, 0);
         --dxball_remaining_bricks;
         break;
     default:
-        dxball_board_tiles[cell] = 0;
+        dxball_board_tiles[x + y * 20] = 0;
     }
     dxball_select_surface(dxball_board_surface);
     dxball_draw_board_tile(x, y, 0);
