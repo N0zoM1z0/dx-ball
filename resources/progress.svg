@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
 <title id="title">DX-Ball reconstruction progress</title>
-<desc id="desc">283 source-present functions, 104 exact functions, out of 528 provisional candidates.</desc>
+<desc id="desc">283 source-present functions, 106 exact functions, out of 528 provisional candidates.</desc>
 <rect width="900" height="460" rx="20" fill="#101722"/>
 <g font-family="sans-serif">
 <text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  RECONSTRUCTION</text>
 <text x="34" y="75" fill="#9baec8" font-size="14">REA showcase · English v1.07 · Windows 95 · Ghidra + VC4.0</text>
-<text x="34" y="109" fill="#4ed8b7" font-size="16">104 exact functions · 12964 bytes</text>
+<text x="34" y="109" fill="#4ed8b7" font-size="16">106 exact functions · 13416 bytes</text>
 <text x="470" y="109" fill="#f5bd57" font-size="16">283 source-present · 247 scoped semantic</text>
 <rect x="34" y="132" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="59" y="132" width="22" height="10" rx="2" fill="#f5bd57"/>
@@ -201,13 +201,13 @@
 <rect x="684" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="709" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="734" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
-<rect x="759" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
+<rect x="759" y="202" width="22" height="10" rx="2" fill="#4ed8b7"/>
 <rect x="784" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="809" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="834" y="202" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="34" y="216" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="59" y="216" width="22" height="10" rx="2" fill="#f5bd57"/>
-<rect x="84" y="216" width="22" height="10" rx="2" fill="#f5bd57"/>
+<rect x="84" y="216" width="22" height="10" rx="2" fill="#4ed8b7"/>
 <rect x="109" y="216" width="22" height="10" rx="2" fill="#29384c"/>
 <rect x="134" y="216" width="22" height="10" rx="2" fill="#29384c"/>
 <rect x="159" y="216" width="22" height="10" rx="2" fill="#29384c"/>

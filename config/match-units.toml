@@ -1690,7 +1690,7 @@ relocations = [
 [builds.intro]
 source = "src/intro.c"
 object = "build/exact/intro.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/intro.c", "src/intro.h", "src/paddle.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/intro.c", "src/intro.h", "src/midi.h", "src/paddle.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.raw-sine]
@@ -2816,4 +2816,141 @@ relocations = [
   { offset = 337, type = "DIR32", symbol = "_dxball_lives", addend = 0, target = 0x43a888 },
   { offset = 362, type = "REL32", symbol = "_dxball_draw_keyed_sprite", addend = 0, target = 0x404040 },
   { offset = 416, type = "REL32", symbol = "_dxball_invalidate_region", addend = 0, target = 0x408b70 },
+]
+
+[units.initialize-intro]
+build = "intro"
+symbol = "_dxball_initialize_intro"
+target_address = 0x40dfc0
+size = 277
+boundary_evidence = "docs/EXACT_INTRO.md"
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_dxball_reset_regions", addend = 0, target = 0x408070 },
+  { offset = 14, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
+  { offset = 20, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 34, type = "DIR32", symbol = "$SG1215", addend = 0, target = 0x422bcc, data_hex = "6d61696e6d656e752e70637800" },
+  { offset = 39, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
+  { offset = 45, type = "REL32", symbol = "_dxball_load_pcx", addend = 0, target = 0x409bb0 },
+  { offset = 53, type = "DIR32", symbol = "$SG1216", addend = 0, target = 0x422bdc, data_hex = "6d61696e6d656e752e73626b00" },
+  { offset = 62, type = "REL32", symbol = "_dxball_load_sprite_bank", addend = 0, target = 0x404610 },
+  { offset = 70, type = "DIR32", symbol = "$SG1217", addend = 0, target = 0x422bec, data_hex = "746865666f6e742e73626b00" },
+  { offset = 79, type = "REL32", symbol = "_dxball_load_sprite_bank", addend = 0, target = 0x404610 },
+  { offset = 87, type = "DIR32", symbol = "$SG1218", addend = 0, target = 0x422bf8, data_hex = "73666f6e742e73626b00" },
+  { offset = 96, type = "REL32", symbol = "_dxball_load_sprite_bank", addend = 0, target = 0x404610 },
+  { offset = 106, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x403e70 },
+  { offset = 116, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x403e90 },
+  { offset = 126, type = "DIR32", symbol = "$SG1219", addend = 0, target = 0x422c04, data_hex = "6574686e6f5f70612e6d647300" },
+  { offset = 131, type = "REL32", symbol = "_dxball_load_music", addend = 0, target = 0x401b90 },
+  { offset = 139, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 145, type = "REL32", symbol = "_dxball_bind_board_surface", addend = 0, target = 0x409000 },
+  { offset = 154, type = "DIR32", symbol = "_dxball_intro_tick", addend = 0, target = 0x438b20 },
+  { offset = 164, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
+  { offset = 176, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x4228b8 },
+  { offset = 182, type = "REL32", symbol = "_dxball_bind_display_surface", addend = 0, target = 0x409020 },
+  { offset = 195, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 201, type = "REL32", symbol = "_dxball_bind_display_surface", addend = 0, target = 0x409020 },
+  { offset = 209, type = "REL32", symbol = "_dxball_redraw_mode", addend = 0, target = 0x4036b0 },
+  { offset = 214, type = "REL32", symbol = "_dxball_initialize_intro_points", addend = 0, target = 0x40e570 },
+  { offset = 219, type = "REL32", symbol = "_dxball_update_intro_points", addend = 0, target = 0x40ed40 },
+  { offset = 224, type = "REL32", symbol = "_dxball_restore_regions", addend = 0, target = 0x408cc0 },
+  { offset = 230, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
+  { offset = 242, type = "REL32", symbol = "_dxball_present", addend = 0, target = 0x409040 },
+  { offset = 260, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+]
+
+[candidates.redraw-intro]
+build = "intro"
+symbol = "_dxball_redraw_intro"
+target_address = 0x40e0e0
+size = 587
+boundary_evidence = "docs/EXACT_INTRO.md"
+relocations = [
+  { offset = 40, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 46, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 55, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
+  { offset = 69, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x4228b8 },
+  { offset = 75, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 85, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 91, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 110, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
+  { offset = 120, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 126, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 136, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 142, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 152, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x403e90 },
+  { offset = 162, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 171, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x422d18 },
+  { offset = 183, type = "DIR32", symbol = "$SG1230", addend = 0, target = 0x422c14, data_hex = "4c6173742053636f7265202d2000" },
+  { offset = 192, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x4177f0 },
+  { offset = 206, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x422d18 },
+  { offset = 212, type = "REL32", symbol = "__ultoa", addend = 0, target = 0x41f570 },
+  { offset = 228, type = "REL32", symbol = "_strcat", addend = 0, target = 0x4177f8 },
+  { offset = 240, type = "REL32", symbol = "_strlen", addend = 0, target = 0x417df0 },
+  { offset = 263, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x404ee0 },
+  { offset = 273, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 281, type = "DIR32", symbol = "$SG1231", addend = 0, target = 0x422c24, data_hex = "5620312e303700" },
+  { offset = 295, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x404ee0 },
+  { offset = 305, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 313, type = "DIR32", symbol = "$SG1232", addend = 0, target = 0x422c2c, data_hex = "4279204d69636861656c20502e2057656c636800" },
+  { offset = 330, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x404ee0 },
+  { offset = 340, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 348, type = "DIR32", symbol = "$SG1233", addend = 0, target = 0x422c40, data_hex = "436f7079726967687420203139393620206279204d69636861656c20502e2057656c63682c2020416c6c205269676874732052657365727665642e00" },
+  { offset = 362, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x404ee0 },
+  { offset = 372, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 380, type = "DIR32", symbol = "$SG1234", addend = 0, target = 0x422c7c, data_hex = "596f75206d617920667265656c79206469737472696275746520746869732067616d6520736f206c6f6e672061732069742773206e6f7420736f6c6420666f722070726f66697420776974686f75742074686520617574686f722773207772697474656e20636f6e73656e742e00" },
+  { offset = 394, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x404ee0 },
+  { offset = 404, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x403e90 },
+  { offset = 414, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 422, type = "DIR32", symbol = "$SG1235", addend = 0, target = 0x422cec, data_hex = "4241534544204f4e202060604d45474142414c4c606000" },
+  { offset = 439, type = "REL32", symbol = "_dxball_draw_centered_text", addend = 0, target = 0x404f80 },
+  { offset = 449, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
+  { offset = 457, type = "DIR32", symbol = "$SG1236", addend = 0, target = 0x422d04, data_hex = "425920454420414e4420414c204d41434b455900" },
+  { offset = 474, type = "REL32", symbol = "_dxball_draw_centered_text", addend = 0, target = 0x404f80 },
+  { offset = 493, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 503, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 509, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 520, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
+  { offset = 543, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 553, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x4228b8 },
+  { offset = 559, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x4228b8 },
+]
+
+[candidates.initialize-intro-points]
+build = "intro"
+symbol = "_dxball_initialize_intro_points"
+target_address = 0x40e570
+size = 1996
+boundary_evidence = "docs/EXACT_INTRO.md"
+relocations = [
+  { offset = 1733, type = "DIR32", symbol = "_dxball_intro_points", addend = 0, target = 0x438b30 },
+  { offset = 1754, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x438b30 },
+  { offset = 1772, type = "DIR32", symbol = "_dxball_intro_points", addend = 8, target = 0x438b30 },
+  { offset = 1801, type = "DIR32", symbol = "_dxball_intro_points", addend = 12, target = 0x438b30 },
+  { offset = 1839, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x438b30 },
+  { offset = 1855, type = "DIR32", symbol = "_dxball_intro_points", addend = 8, target = 0x438b30 },
+  { offset = 1974, type = "REL32", symbol = "_dxball_wave_x", addend = 0, target = 0x402520 },
+  { offset = 1990, type = "DIR32", symbol = "_dxball_intro_offsets", addend = 0, target = 0x439d20 },
+  { offset = 2006, type = "REL32", symbol = "_dxball_wave_y", addend = 0, target = 0x402560 },
+  { offset = 2022, type = "DIR32", symbol = "_dxball_intro_offsets", addend = 4, target = 0x439d20 },
+]
+
+[units.dispose-intro]
+build = "intro"
+symbol = "_dxball_dispose_intro"
+target_address = 0x40f010
+size = 175
+boundary_evidence = "docs/EXACT_INTRO.md"
+relocations = [
+  { offset = 61, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
+  { offset = 71, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 77, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 87, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
+  { offset = 93, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
+  { offset = 102, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
+  { offset = 125, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 135, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x4228b8 },
+  { offset = 141, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x4228b8 },
+  { offset = 151, type = "REL32", symbol = "_dxball_release_sprite_banks", addend = 0, target = 0x403cb0 },
+  { offset = 156, type = "REL32", symbol = "_dxball_release_sounds", addend = 0, target = 0x4058b0 },
+  { offset = 161, type = "REL32", symbol = "_dxball_close_music", addend = 0, target = 0x401da0 },
 ]

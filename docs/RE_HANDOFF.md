@@ -1,4 +1,45 @@
-# Current handoff — complete game setup, redraw and score controllers
+# Current handoff — complete intro controllers
+
+Priority: **exact restoration, moderate tests and grouped replay**. The
+[complete intro batch](EXACT_INTRO.md) restores four complete bodies / 3,035
+original bytes. Initialize (277) and dispose (175) match 452 bytes; redraw 578/587 retains 560
+full differences, point-init 2,041/1,996 retains 750. All 104 prior complete
+code/metadata identities survive. No layout/capacity/name/order/body trials.
+
+Acceptance: **283 source-present / 247 scoped rows / 112,273 unit-distinct cases /
+106 exact functions / 13,416 code bytes + 136 separate metadata bytes**.
+Origins remain 270 authored / 50 runtime / 42 generated / 166 unknown.
+No new REA requests or origin promotions; current snapshot 468 unchanged.
+
+All 22 owner scripts pass in 418.395s against 287 physically frozen inputs.
+One configured cold epoch supplies 22 actual objects. Existing 14 rejection
+controls, fresh 7,164 raster /1,024 rotation vectors and both Windows builds pass.
+Typed music forwarding adds one genuine int-returning symbol through the current
+void PlatformOps callback and guards its actual production adapter; ignored
+result 0 is scoped to this intro caller. The shim has 46 actual compiler inputs.
+All prior constructors, fixtures, cases/oracles and campaign matrices remain fixed.
+
+The four actual diagnostic phases only correct genuine CRT/direct-owner includes;
+all function-body text is identical. A mistaken single-bank header and initial
+strict native failure remain fully disclosed and retained. The 0.391s resumed
+serial native build omitted the CPU affinity wrapper; subsequent commands use
+resource_limits. No unrecorded successful build or source trial is claimed.
+
+Native canonical/family SHA256 ce73d656dd94e0f41d1fe019b5a2572bb82b80d1b4788be96cb39533daa04393;
+shim b02b4b7d29284a30bb81cb2e7c9b196777eba684bc960be16c860b51d0d462be.
+Checkpoint .analysis/checkpoints/exact-intro-283-106, parent runtime-setup104.
+Full baseline, all four frozen diagnostic phases, final owner inputs and actual
+cold objects retained; all mutable products unshared after verified cleanup.
+
+Next focus is the complete 711-byte point updater's unresolved unconsumed request
+storage and the remaining contiguous menu/splash controller source contrasts.
+Do not invent inert locals or infer redraw 100/20/point-mask capacity from frame
+homes. Larger game-frame 1683/span 1688 retains gap 40FB21..25; focused pinned REA
+needed. One compiler/provider, one CPU, serial CMake and silent Pulse sink.
+English gpt-6.1-sol: commits/public push remain authorized.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete game setup, redraw and score controllers
 
 Priority: **exact restoration, moderate tests and grouped replay**. The
 [setup/redraw/score batch](EXACT_RUNTIME_SETUP.md) restores three complete bodies /

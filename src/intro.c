@@ -5,7 +5,10 @@
 #include "effects.h"
 #include "trig.h"
 #include "ui.h"
-#include <stdio.h>
+#include "midi.h"
+#include "startup.h"
+#include "sound.h"
+#include <stdlib.h>
 #include <string.h>
 
 DxBallIntroPoint dxball_intro_points[287];
@@ -16,17 +19,6 @@ DxBallInt dxball_scroller_length, dxball_scroller_shift, dxball_scroller_index;
 DxBallInt dxball_scroller_reserved, dxball_scroller_advance;
 DxBallInt dxball_credit_angle, dxball_credit_first_y, dxball_credit_second_y;
 DxBallInt dxball_splash_span = 120, dxball_splash_phase = 1, dxball_splash_offset;
-
-/* The point cloud spells DX-BALL on a 41-column, seven-row grid. */
-static const char point_mask[7][42] = {
-    ".........................................",
-    ".###...#...#.....####....#...#.....#.....",
-    ".#..#...#.#......#...#..#.#..#.....#.....",
-    ".#...#...#...###.#..#..#...#.#.....#.....",
-    ".#..#...#.#......#...#.#####.#.....#.....",
-    ".###...#...#.....####..#...#.#####.#####.",
-    "........................................."
-};
 
 /* FUNCTION: DXBALL 0x00402340 */
 DxBallInt dxball_raw_sine(DxBallInt angle)
@@ -92,21 +84,40 @@ static void dispose_scene(DxBallInt fade)
 
 void dxball_initialize_intro_points(void)
 {
-    DxBallInt i, x = 116, y = 41, angle = 0;
-    DxBallIntroPoint *point;
+    DxBallInt x, y, i, angle;
+    /* Consumed local binary mask: 41 columns by seven rows. */
+    char mask[287] = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    };
+    x = 116; y = 41; angle = 0;
     for (i = 0; i < 287; ++i) {
-        point = dxball_intro_points + i;
-        point->x = x; point->y = y; point->angle = angle;
-        point->kind = point_mask[i / 41][i % 41] == '#';
-        if (point->kind == 1) { point->y -= 5; point->angle += 30; }
+        dxball_intro_points[i].x = x;
+        dxball_intro_points[i].y = y;
+        dxball_intro_points[i].angle = angle;
+        dxball_intro_points[i].kind = mask[i];
+        if (mask[i] == 1) {
+            dxball_intro_points[i].y -= 5;
+            dxball_intro_points[i].angle += 30;
+        }
+        x += 10;
         angle += 20;
-        if (x - 106 > 400) { x = 116; angle = y - 31; y += 10; }
-        else x += 10;
+        if (x - 116 > 400) {
+            x = 116;
+            y += 10;
+            angle = y - 41;
+        }
     }
     for (i = 0; i < 360; ++i) {
         dxball_intro_offsets[i].x = dxball_wave_x(0, i, 4);
         dxball_intro_offsets[i].y = dxball_wave_y(0, i, 3);
     }
+    return;
 }
 
 void dxball_update_intro_points(void)
@@ -151,45 +162,67 @@ void dxball_update_intro_points(void)
 
 void dxball_initialize_intro(void)
 {
-    dxball_runtime_ops.reset_regions();
-    dxball_runtime_ops.clear_surface(dxball_background_surface, 0);
-    dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "mainmenu.pcx", 2, 0, 0);
-    dxball_runtime_ops.load_sprite_bank(0, 1, "mainmenu.sbk");
-    dxball_runtime_ops.load_sprite_bank(1, 0, "thefont.sbk");
-    dxball_runtime_ops.load_sprite_bank(2, 0, "sfont.sbk");
+    dxball_reset_regions();
+    dxball_clear_surface(dxball_background_surface, 0);
+    dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "mainmenu.pcx", 2, 0, 0);
+    dxball_load_sprite_bank(0, 1, "mainmenu.sbk");
+    dxball_load_sprite_bank(1, 0, "thefont.sbk");
+    dxball_load_sprite_bank(2, 0, "sfont.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
-    dxball_platform_ops.load_music("ethno_pa.mds", 1);
-    dxball_runtime_ops.bind_board_surface(dxball_board_surface); dxball_intro_tick = 0;
-    dxball_runtime_ops.bind_display_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
-    dxball_redraw_mode(); dxball_initialize_intro_points(); dxball_update_intro_points();
+    dxball_load_music("ethno_pa.mds", 1);
+    dxball_bind_board_surface(dxball_board_surface);
+    dxball_intro_tick = 0;
+    if (dxball_draw_to_primary == 0) {
+        dxball_bind_display_surface(dxball_secondary_surface);
+    } else {
+        dxball_bind_display_surface(dxball_primary_surface);
+    }
+    dxball_redraw_mode();
+    dxball_initialize_intro_points();
+    dxball_update_intro_points();
     dxball_restore_regions();
     if (dxball_draw_to_primary == 0) dxball_present();
-    dxball_runtime_ops.palette_transition(1, 6, 0, 255, 1);
+    dxball_palette_transition(1, 6, 0, 255, 1);
+    return;
 }
 
 void dxball_redraw_intro(void)
 {
-    DxBallRect rect = {0, 0, 640, 480};
-    char text[32];
-    dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-    if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface(dxball_secondary_surface, 0);
-    dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-    scene_blt(dxball_board_surface, dxball_background_surface, &rect);
+    DxBallRect rect;
+    char text[32], number[11];
+    DxBallInt count;
+    rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
+    dxball_clear_surface(dxball_primary_surface, 0);
+    if (dxball_draw_to_primary == 0) dxball_clear_surface(dxball_secondary_surface, 0);
+    dxball_clear_surface(dxball_board_surface, 0);
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_board_surface, &rect,
+        (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
     dxball_select_surface(dxball_board_surface); dxball_select_font_bank(2);
     dxball_wait_frames(1);
-    if (dxball_score != 0) {
-        sprintf(text, "Last Score - %u", (DxBallUInt)dxball_score);
-        dxball_runtime_ops.draw_text(3, 10, (DxBallInt)strlen(text), text);
+    if ((DxBallUInt)dxball_score > 0) {
+        strcpy(text, "Last Score - ");
+        _ultoa((unsigned long)(DxBallUInt)dxball_score, number, 10);
+        strcat(text, number);
+        count = (DxBallInt)strlen(text);
+        dxball_draw_text(3, 10, count, text);
     }
-    dxball_wait_frames(1); dxball_runtime_ops.draw_text(615, 10, 6, "V 1.07");
-    dxball_wait_frames(1); dxball_runtime_ops.draw_text(485, 130, 19, "By Michael P. Welch");
-    dxball_wait_frames(1); dxball_runtime_ops.draw_text(3, 465, 59, "Copyright  1996  by Michael P. Welch,  All Rights Reserved.");
-    dxball_wait_frames(1); dxball_runtime_ops.draw_text(3, 475, 109, "You may freely distribute this game so long as it's not sold for profit without the author's written consent.");
+    dxball_wait_frames(1); dxball_draw_text(615, 10, 6, "V 1.07");
+    dxball_wait_frames(1); dxball_draw_text(485, 130, 19, "By Michael P. Welch");
+    dxball_wait_frames(1); dxball_draw_text(3, 465, 59, "Copyright  1996  by Michael P. Welch,  All Rights Reserved.");
+    dxball_wait_frames(1); dxball_draw_text(3, 475, 109, "You may freely distribute this game so long as it's not sold for profit without the author's written consent.");
     dxball_select_font_bank(1);
-    dxball_wait_frames(1); dxball_runtime_ops.draw_centered_text(317, 210, 22, "BASED ON  ``MEGABALL``");
-    dxball_wait_frames(1); dxball_runtime_ops.draw_centered_text(317, 250, 19, "BY ED AND AL MACKEY");
-    scene_blt(dxball_primary_surface, dxball_board_surface, &rect);
-    if (dxball_draw_to_primary == 0) scene_blt(dxball_secondary_surface, dxball_board_surface, &rect);
+    dxball_wait_frames(1); dxball_draw_centered_text(317, 210, 22, "BASED ON  ``MEGABALL``");
+    dxball_wait_frames(1); dxball_draw_centered_text(317, 250, 19, "BY ED AND AL MACKEY");
+    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_primary_surface, &rect,
+        (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
+    if (dxball_draw_to_primary == 0) {
+        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_secondary_surface, &rect,
+            (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
+    }
+    return;
 }
 
 void dxball_intro_frame(void)
@@ -205,7 +238,25 @@ void dxball_intro_key(char key)
 {
     if (key == 0x70 && dxball_control_pressed != 0) { dxball_end_requested = 1; dxball_return_to_menu = 2; }
 }
-void dxball_dispose_intro(DxBallInt fade) { dispose_scene(fade); }
+void dxball_dispose_intro(DxBallInt fade)
+{
+    DxBallRect rect;
+    rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
+    if (fade != 0) {
+        dxball_palette_transition(1, 6, 0, 255, 0);
+        dxball_clear_surface(dxball_board_surface, 0);
+        dxball_clear_surface(dxball_primary_surface, 0);
+        if (dxball_draw_to_primary == 0) {
+            ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
+                (DxBallDDSurface *)dxball_secondary_surface, &rect,
+                (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
+        }
+        dxball_release_sprite_banks();
+        dxball_release_sounds();
+        dxball_close_music();
+    }
+    return;
+}
 
 void dxball_initialize_splash(void)
 {

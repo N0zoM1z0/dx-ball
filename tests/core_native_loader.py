@@ -185,6 +185,19 @@ class _Image:
             if defaults[slot] != intercepted:
                 raise RuntimeError('CoreNative copy did not bind the intended test interposer: ' + symbol)
             self.function_addresses[symbol] = real
+        # PlatformOps uses a genuine void adapter for this integer-returning
+        # API. Keep its identity for a guard until PlatformNative replaces it.
+        self.platform_table = (C.c_void_p * 9).in_dll(self.lib, 'dxball_platform_ops')
+        self.platform_music_default = self.platform_table[7]
+        real = C.cast(self.lib.dxball_load_music, C.c_void_p).value
+        intercepted = C.cast(_shim.dxball_load_music, C.c_void_p).value
+        if real == intercepted or _function_owner(real) != self.path.resolve():
+            raise RuntimeError('CoreNative music function does not belong to its copied image')
+        if (not self.platform_music_default or
+                self.platform_music_default in (real, intercepted) or
+                _function_owner(self.platform_music_default) != self.path.resolve()):
+            raise RuntimeError('CoreNative music default is not its genuine void adapter')
+        self.function_addresses['dxball_load_music'] = real
 
 
 def fixture_image(library):
@@ -203,6 +216,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
         _shim.dxball_test_bind_runtime_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_runtime_ops.restype = C.c_int
+        _shim.dxball_test_bind_platform_ops.argtypes = [C.c_void_p, C.c_void_p]
+        _shim.dxball_test_bind_platform_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
         raise RuntimeError('CoreNative cannot replace an already loaded GLOBAL interposer')
     key = (str(canonical), canonical_sha256, shim_sha256,
@@ -212,6 +227,14 @@ def fixture_image(library):
     image = _copies[key]
     if _sha(image.path) != canonical_sha256 or _sha(canonical) != canonical_sha256:
         raise RuntimeError('CoreNative copied or selected library identity changed')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_platform_ops'))
+    if actual != C.addressof(image.platform_table):
+        raise RuntimeError('CoreNative platform table does not belong to its copied image')
+    # No native work occurs here: later unchanged PlatformNative construction
+    # installs its void callback. The C wrapper checks the live slot on each call.
+    result = _shim.dxball_test_bind_platform_ops(actual, image.platform_music_default)
+    if result != 0:
+        raise RuntimeError('CoreNative platform binding rejected: null table or default adapter')
     return image
 
 

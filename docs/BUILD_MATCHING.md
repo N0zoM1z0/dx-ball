@@ -1,6 +1,23 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **104 exact functions / 12,964
+The current shared-source checkpoint retains **106 exact functions / 13,416
+code bytes**, plus 136 separate exception metadata bytes. The
+[complete intro batch](EXACT_INTRO.md) restores 3,035 complete original bytes.
+Initialization (277) and disposal (175) add 452 exact bytes; redraw retains
+578/587 bytes with 560 complete differences, point setup 2,041/1,996 with 750.
+All 104 preceding complete code and metadata identities survive unchanged.
+All 101 actual new relocations and 12 full NUL literal operands are explicit.
+No source/body, name/order, capacity or layout trials force the candidates.
+
+All 22 owner scripts, 14 rejection controls, 7,164 fresh raster and 1,024 fresh
+rotation vectors, strict MinGW and full VC4 builds pass. One configured cold
+compiler epoch supplies 22 actual objects. Four diagnostic prototype epochs and
+the initial strict native failure are retained; all noninclude body text remains
+identical. Actual typed music forwarding preserves the existing void fixture
+callback and scopes the ignored integer result. CRT linked spelling remains
+ambiguous; no new runtime-origin or source-presence entries are promoted.
+
+The preceding shared-source checkpoint retained **104 exact functions / 12,964
 code bytes**, plus 136 separate exception metadata bytes. The
 [game setup/redraw/score batch](EXACT_RUNTIME_SETUP.md) restores 1,438 complete
 original bytes. Initialize (736) and redraw (269) match all 1,005 bytes; score

@@ -8,14 +8,19 @@
 #include "sound.h"
 #include "startup.h"
 #include "ui.h"
+#include "platform.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 static DxBallGameplayOps *bound_ops;
 static DxBallRenderOps *bound_render;
 static DxBallFrameOps *bound_frame;
 static DxBallEffectOps *bound_effect;
 static DxBallRuntimeOps *bound_runtime;
+static DxBallPlatformOps *bound_platform;
+static void (*platform_music_default)(const char *, DxBallInt);
+static unsigned music_load_active;
 static unsigned stop_active, play_active, random_active;
 static unsigned invalidate_active, effect_active;
 static unsigned palette_load_active, palette_active, clear_active, reset_active;
@@ -82,6 +87,37 @@ int dxball_test_bind_runtime_ops(DxBallRuntimeOps *ops)
         ops->release_sprite_banks == dxball_release_sprite_banks ||
         ops->finalize_game_resources == dxball_close_music) return -3;
     bound_runtime = ops;
+    return 0;
+}
+
+/* PlatformNative replaces this void callback after inherited fixture binders.
+   Stage the actual table now; reject its untouched adapter before invocation. */
+int dxball_test_bind_platform_ops(DxBallPlatformOps *ops,
+                                 void (*default_music)(const char *, DxBallInt))
+{
+    if (ops == NULL || default_music == NULL) return -1;
+    bound_platform = ops;
+    platform_music_default = default_music;
+    return 0;
+}
+
+DxBallInt dxball_load_music(const char *path, DxBallInt play)
+{
+    DxBallInt (*self)(const char *, DxBallInt) = dxball_load_music;
+    _Static_assert(sizeof self == sizeof bound_platform->load_music,
+                   "ELF host music callback address sizes must agree");
+    if (bound_platform == NULL || bound_platform->load_music == NULL)
+        binding_failure("CoreNative load_music: fixture table is unbound or callback is null");
+    /* Compare address representations, never invoke an incompatible callback.
+       The copied production default is a void adapter back into this symbol. */
+    if (music_load_active || bound_platform->load_music == platform_music_default ||
+        memcmp(&bound_platform->load_music, &self, sizeof self) == 0)
+        binding_failure("CoreNative load_music: recursive or unreplaced platform callback");
+    music_load_active = 1;
+    bound_platform->load_music(path, play);
+    music_load_active = 0;
+    /* The reviewed intro caller discards the integer result; its existing
+       fixture boundary is void, so no music-result semantics are claimed. */
     return 0;
 }
 

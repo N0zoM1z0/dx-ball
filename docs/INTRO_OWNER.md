@@ -1,5 +1,15 @@
 # Menu and splash evidence
 
+The subsequent [complete intro source batch](EXACT_INTRO.md) restores initialization,
+redraw, point setup and disposal from their complete contiguous bodies / 3,035
+original bytes. Grouped cold replay accepts initialization (277 bytes) and disposal (175 bytes) /
+452 bytes, preserving all 104 prior exact identities. Redraw 578/587 retains 560
+full differences; point setup 2,041/1,996 retains 750. The consumed local binary
+mask replaces synthetic ASCII division/comparison; direct resource/music/text
+calls and live COM handles follow the original. Original buffer capacities and
+source spelling remain unproven. Existing 5,615 direct intro cases and 58 separate
+integration checks pass, with no fixture, case or campaign additions.
+
 REA 4.1.0 with Ghidra 12.1.4 follows the actual mode-0 menu and mode-4
 splash controllers through initialization, redraw, frame, input and cleanup.
 This owner reuses all twenty complete dossiers from the closed 11-58 archive;
