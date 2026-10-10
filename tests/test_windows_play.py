@@ -51,11 +51,31 @@ class Observer:
             if profile == 'vc40':
                 metadata = json.loads((ROOT / 'build/vc40/build.json').read_text())
                 link_map = ROOT / 'build/vc40/dxball.map'
-                assert metadata['game_map_sha256'] == digest(link_map)
+                executable = ROOT / 'build/vc40/dxball.exe'
+                if (metadata['game_map_sha256'] != digest(link_map)
+                        or metadata['executables']['dxball'] != digest(executable)):
+                    # Focused rebuilds retain a receipt for every reused object.
+                    # Bind the reader to that receipt without recompiling other owners.
+                    metadata = json.loads((ROOT / 'build/vc40/game-build.json').read_text())
+                    assert metadata['status'] == 'linked'
+                    assert metadata['map_sha256'] == digest(link_map)
+                    assert metadata['executable_sha256'] == digest(executable)
+                    assert metadata['objects']
+                    for row in metadata['objects'].values():
+                        assert row['sha256'] == digest(ROOT / row['object'])
+                        assert row['inputs']
+                        for name, expected in row['inputs'].items():
+                            assert expected == digest(ROOT / name), name
+                    resources = metadata['resources']
+                    assert resources['object_sha256'] == digest(
+                        ROOT / 'build/vc40/game-resources.obj')
+                    for name, expected in resources['inputs'].items():
+                        assert expected == digest(ROOT / name), name
+                else:
+                    assert metadata['game_map_sha256'] == digest(link_map)
+                    assert metadata['executables']['dxball'] == digest(executable)
                 text = link_map.read_text()
                 addresses = {}
-                executable = ROOT / 'build/vc40/dxball.exe'
-                assert metadata['executables']['dxball'] == digest(executable)
                 image = pefile.PE(str(executable))
                 def mapped(name):
                     values = re.findall(r'\s_' + name + r'\s+([0-9a-fA-F]{8})\s', text)

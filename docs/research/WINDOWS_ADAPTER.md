@@ -167,6 +167,25 @@ three saved banks have SHA-256
 Both editor return to menu and the subsequent zero-code process exit are
 observed, with the visible game window gone. All 49 originals are reverified.
 
+After the score, game-over, editor, board and menu recovery through `732731b`,
+the unchanged `observe('vc40', ...)` flow passes again on the current VC4 EXE.
+It records 77 read-only state observations, all five existing captures, the
+same saved-bank hash and exit code zero; all 49 original assets remain unchanged.
+The first attempt stopped before observation because the full-build receipt
+still described an older map. The reader now accepts the focused link receipt
+only after verifying the actual EXE/map, all 35 objects and their consumed
+inputs, and the resource object/inputs. Five simulated stale source, object,
+resource, map and EXE identities are rejected without changing those inputs.
+The previous full-build identity checks remain supported. No gameplay input or
+assertion was changed. Receipts, states, captures and the failed attempt are
+retained in `.analysis/windows-play-menu-732731b/`.
+
+This selection does not rerun the previous original or MinGW controls, compare
+synchronized frames/trajectories, or establish audio/MIDI or all-board fidelity.
+It verifies this source product's ball/pause/editor/exit path independently of
+the native fixture. Function acceptance stays at 164 exact functions; runtime
+observations do not promote candidates.
+
 The previous exploratory editor session ended without a verified exit. The
 original control now establishes that mode 0 can already be selected while
 `end_requested` remains 1 during its initializer/fade; it becomes 0 on completion.

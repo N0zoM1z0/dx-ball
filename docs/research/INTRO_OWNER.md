@@ -52,13 +52,22 @@ owner loops remain historical after identity refresh. No full owner suite or
 historical replay was run. Products and receipts are retained privately in
 `.analysis/exact-intro-key-points/`.
 
+The subsequent focused real-Wine check runs the unchanged VC4 ball/pause/editor/
+exit flow on the linked `732731b` source product. Menu entry and return, moving
+and paused balls, editor save/reload, the expected whole-bank hash and normal
+exit pass with 77 read-only observations. Original/MinGW controls remain
+historical; there is no synchronized image, audio or full-game fidelity claim.
+See [Windows runtime scope](WINDOWS_ADAPTER.md). Private receipts are in
+`.analysis/windows-play-menu-732731b/`.
+
 REA 4.1.0 with Ghidra 12.1.4 follows the actual mode-0 menu and mode-4
 splash controllers through initialization, redraw, frame, input and cleanup.
 This owner reuses all twenty complete dossiers from the closed 11-58 archive;
 no new import or query was needed for this batch. Instructions, callers and
 program data resolve details that incomplete pseudocode alone does not supply.
 The maintained C connects these controllers to existing text, glyph, palette,
-point, line, dirty-region and timing bodies. A playable Windows EXE is pending.
+point, line, dirty-region and timing bodies. Subsequent real Windows checks
+establish bounded gameplay/editor paths; complete game fidelity remains pending.
 Subsequent [game-over](GAMEOVER_OWNER.md) and [editor](EDITOR_OWNER.md)
 checkpoints connect the remaining mode controllers.
 

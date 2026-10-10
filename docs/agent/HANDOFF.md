@@ -227,10 +227,19 @@ offset; bindings now reflect the actual current object, whose existing 368/370
 and 127-difference result is preserved. All candidate differences remain explicit.
 No full owner suite or historical queue was replayed.
 
-Next verify these controller changes against the real Windows game using a
-bounded existing play selection, then continue source restoration in another
-connected game phase. Preserve the original/asset identities and disposable
-probe working copies. Existing intro/splash candidate gaps are documented in
+The subsequent unchanged real-Wine VC4 play selection passes with 77 read-only
+state observations: ball motion, pause/resume, editor painting/save/reload,
+the expected complete bank hash and exit code zero. All 49 originals remain
+unchanged. Receipts and the retained pre-observation stale-map failure are in
+`.analysis/windows-play-menu-732731b/`. The state reader supports verified
+focused link receipts, checking EXE/map, all objects/inputs and resource inputs;
+five simulated stale identities are rejected. Existing runtime inputs and
+assertions are unchanged. Original/MinGW controls remain historical, with no
+synchronized frame, audio/MIDI or complete-game fidelity claim.
+
+Continue source restoration in another connected game phase. Preserve the
+original/asset identities and disposable probe working copies. Existing
+intro/splash candidate gaps are documented in
 the owner notes; do not perform declaration/name/layout/padding permutations
 or add unconsumed request storage simply to force exactness.
 
