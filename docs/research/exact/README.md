@@ -1,0 +1,28 @@
+# Exact reconstruction notes
+
+Each note follows a related source family through its original instructions,
+recovered implementation and complete compiler comparison.
+
+- [Bank loops and palette state restoration](EXACT_BANK_LOOPS.md)
+- [Complete bonus generation and application](EXACT_BONUSES.md)
+- [Complete brick hit and board power restoration](EXACT_BRICK_POWERS.md)
+- [Connected brick-drop and fire-effect source restoration](EXACT_CONNECTED_EFFECTS.md)
+- [Exact score update and raster control flow](EXACT_CONTROL_FLOW.md)
+- [Core source emission restoration](EXACT_CORE.md)
+- [Ball and projectile controller restoration](EXACT_CORE_CONTROLLERS.md)
+- [Display-surface sprite drawing and rectangle queues](EXACT_DISPLAY.md)
+- [Early region, geometry, rotation and text helpers](EXACT_EARLY_HELPERS.md)
+- [Complete brick animation lifecycle](EXACT_EFFECTS.md)
+- [Complete exits, text centering and palette guard](EXACT_EXITS.md)
+- [Fixed-point class and triangle lifetime recovery](EXACT_FIXED_POINT.md)
+- [Exact integer trigonometry and hit-region stores](EXACT_INTEGER_TRIG.md)
+- [Complete intro initialization, redraw, points and disposal](EXACT_INTRO.md)
+- [Complete round lifecycle source restoration](EXACT_LIFECYCLE.md)
+- [Ball cloning and typed list cleanup](EXACT_LISTS.md)
+- [Exact typed list initialization](EXACT_LIST_INITIALIZERS.md)
+- [Complete menu and gameplay frames](EXACT_MODE_FRAMES.md)
+- [Palette tail loaders and surface binding](EXACT_PALETTES.md)
+- [Complete projectile and fire-effect list lifecycle](EXACT_PROJECTILE_LISTS.md)
+- [Exact projection and text traversal restoration](EXACT_PROJECTIONS_TEXT.md)
+- [Complete game setup, redraw and score controllers](EXACT_RUNTIME_SETUP.md)
+- [Complete splash source restoration](EXACT_SPLASH.md)

@@ -21,7 +21,7 @@ build = "gameplay"
 symbol = "@dxball_append_explosion@4"
 target_address = 0x00412470
 size = 146
-boundary_evidence = "docs/GAMEPLAY_OWNER.md"
+boundary_evidence = "docs/research/GAMEPLAY_OWNER.md"
 relocations = [
   { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
@@ -32,7 +32,7 @@ build = "gameplay"
 symbol = "_dxball_screen_pan"
 target_address = 0x00406400
 size = 63
-boundary_evidence = "docs/GAMEPLAY_OWNER.md"
+boundary_evidence = "docs/research/GAMEPLAY_OWNER.md"
 relocations = [
   { offset = 23, type = "DIR32", symbol = "$T1155", addend = 0, target = 0x420068, data_hex = "000000000000f93f" },
   { offset = 32, type = "DIR32", symbol = "$T1156", addend = 0, target = 0x420070, data_hex = "0000000000407f40" },
@@ -45,7 +45,7 @@ build = "gameplay"
 symbol = "_dxball_scan_explosive_tiles"
 target_address = 0x004155A0
 size = 139
-boundary_evidence = "docs/GAMEPLAY_OWNER.md"
+boundary_evidence = "docs/research/GAMEPLAY_OWNER.md"
 relocations = [
   { offset = 0x4B, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x0043AAB8 },
   { offset = 0x61, type = "REL32", symbol = "_dxball_hit_board_tile", addend = 0, target = 0x00411F40 },
@@ -57,7 +57,7 @@ build = "boards"
 symbol = "_dxball_select_surface"
 target_address = 0x00403E50
 size = 24
-boundary_evidence = "docs/BUILD_MATCHING.md"
+boundary_evidence = "docs/research/BUILD_MATCHING.md"
 relocations = [
   { offset = 0xA, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
 ]
@@ -67,7 +67,7 @@ build = "boards"
 symbol = "_dxball_load_editor_board"
 target_address = 0x0040CEA0
 size = 52
-boundary_evidence = "docs/BUILD_MATCHING.md"
+boundary_evidence = "docs/research/BUILD_MATCHING.md"
 relocations = [
   { offset = 0x18, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
   { offset = 0x1E, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
@@ -79,7 +79,7 @@ build = "boards"
 symbol = "_dxball_store_editor_board"
 target_address = 0x0040CEE0
 size = 52
-boundary_evidence = "docs/BUILD_MATCHING.md"
+boundary_evidence = "docs/research/BUILD_MATCHING.md"
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
   { offset = 0x23, type = "DIR32", symbol = "_dxball_board_storage", addend = 0, target = 0x0043AAB8 },
@@ -91,7 +91,7 @@ build = "boards"
 symbol = "_dxball_initialize_board"
 target_address = 0x00411930
 size = 50
-boundary_evidence = "docs/BUILD_MATCHING.md"
+boundary_evidence = "docs/research/BUILD_MATCHING.md"
 relocations = [
   { offset = 0xE, type = "DIR32", symbol = "_dxball_board_aux", addend = 0, target = 0x0043A918 },
   { offset = 0x13, type = "REL32", symbol = "_memset", addend = 0, target = 0x00417C40 },
@@ -104,7 +104,7 @@ build = "boards"
 symbol = "_dxball_read_board_bank"
 target_address = 0x0040CC30
 size = 96
-boundary_evidence = "docs/BUILD_MATCHING.md"
+boundary_evidence = "docs/research/BUILD_MATCHING.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "$SG755", addend = 0x0, target = 0x422890, data_hex = "726200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0x0, target = 0x417c20 },
@@ -122,7 +122,7 @@ build = "boards"
 symbol = "_dxball_write_board_bank"
 target_address = 0x0040CC90
 size = 96
-boundary_evidence = "docs/BUILD_MATCHING.md"
+boundary_evidence = "docs/research/BUILD_MATCHING.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "$SG759", addend = 0x0, target = 0x422894, data_hex = "776200" },
   { offset = 0x10, type = "REL32", symbol = "_fopen", addend = 0x0, target = 0x417c20 },
@@ -146,7 +146,7 @@ build = "resources"
 symbol = "_dxball_select_sprite_bank"
 target_address = 0x00403E70
 size = 24
-boundary_evidence = "docs/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 0xA, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
 ]
@@ -156,7 +156,7 @@ build = "resources"
 symbol = "_dxball_select_font_bank"
 target_address = 0x00403E90
 size = 24
-boundary_evidence = "docs/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 0xA, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
 ]
@@ -166,7 +166,7 @@ build = "resources"
 symbol = "_dxball_draw_sprite"
 target_address = 0x00404180
 size = 105
-boundary_evidence = "docs/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 0x9, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
   { offset = 0x20, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
@@ -181,7 +181,7 @@ build = "resources"
 symbol = "_dxball_draw_keyed_sprite"
 target_address = 0x00404040
 size = 105
-boundary_evidence = "docs/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 0x9, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
   { offset = 0x20, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
@@ -197,7 +197,7 @@ build = "resources"
 symbol = "_dxball_blt_keyed_sprite"
 target_address = 0x00403F70
 size = 195
-boundary_evidence = "docs/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 0x16, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
   { offset = 0x2D, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
@@ -216,7 +216,7 @@ build = "resources"
 symbol = "_dxball_stretch_keyed_sprite"
 target_address = 0x004041F0
 size = 139
-boundary_evidence = "docs/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 0x2F, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
   { offset = 0x46, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
@@ -237,7 +237,7 @@ build = "gameplay"
 symbol = "@dxball_begin_explosions@4"
 target_address = 0x00410070
 size = 57
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
 ]
 
@@ -246,7 +246,7 @@ build = "gameplay"
 symbol = "@dxball_advance_explosion@4"
 target_address = 0x00410170
 size = 89
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
 ]
 
@@ -255,7 +255,7 @@ build = "gameplay"
 symbol = "_dxball_queue_explosion_at"
 target_address = 0x00412B30
 size = 99
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
   { offset = 0x16, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x0043AAB8 },
   { offset = 0x24, type = "DIR32", symbol = "_dxball_explosion_pending", addend = 0, target = 0x00422D20 },
@@ -271,7 +271,7 @@ build = "effects"
 symbol = "@dxball_begin_brick_effects@4"
 target_address = 0x004100B0
 size = 57
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
 ]
 
@@ -280,7 +280,7 @@ build = "effects"
 symbol = "@dxball_advance_brick_effect@4"
 target_address = 0x00412590
 size = 89
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
 ]
 
@@ -289,7 +289,7 @@ build = "effects"
 symbol = "@dxball_append_brick_effect@4"
 target_address = 0x00412690
 size = 146
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
   { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
@@ -300,7 +300,7 @@ build = "effects"
 symbol = "_dxball_spawn_explosion_effect"
 target_address = 0x004125F0
 size = 149
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
   { offset = 0xC, type = "REL32", symbol = "@dxball_append_brick_effect@4", addend = 0, target = 0x00412690 },
@@ -319,7 +319,7 @@ build = "effects"
 symbol = "_dxball_process_brick_effects"
 target_address = 0x00412510
 size = 120
-boundary_evidence = "docs/EFFECTS_OWNER.md"
+boundary_evidence = "docs/research/EFFECTS_OWNER.md"
 relocations = [
   { offset = 0xA, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
   { offset = 0xF, type = "REL32", symbol = "@dxball_begin_brick_effects@4", addend = 0, target = 0x004100B0 },
@@ -347,7 +347,7 @@ build = "particles"
 symbol = "@dxball_append_particle@4"
 target_address = 0x00414960
 size = 146
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
   { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
@@ -358,7 +358,7 @@ build = "particles"
 symbol = "@dxball_begin_particles@4"
 target_address = 0x00414C10
 size = 57
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
 ]
 
@@ -367,7 +367,7 @@ build = "particles"
 symbol = "@dxball_advance_particle@4"
 target_address = 0x00414C50
 size = 89
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
 ]
 
@@ -376,7 +376,7 @@ build = "particles"
 symbol = "_dxball_spawn_particle"
 target_address = 0x004148A0
 size = 179
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
   { offset = 0x35, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
   { offset = 0x3A, type = "REL32", symbol = "@dxball_append_particle@4", addend = 0, target = 0x00414960 },
@@ -396,7 +396,7 @@ build = "particles"
 symbol = "_dxball_update_particles"
 target_address = 0x00414A00
 size = 298
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
   { offset = 0xC, type = "REL32", symbol = "@dxball_begin_particles@4", addend = 0, target = 0x00414C10 },
@@ -432,7 +432,7 @@ build = "bonuses"
 symbol = "@dxball_append_bonus@4"
 target_address = 0x00413D80
 size = 146
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
   { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
@@ -443,7 +443,7 @@ build = "bonuses"
 symbol = "@dxball_begin_bonuses@4"
 target_address = 0x004146A0
 size = 57
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
 ]
 
@@ -452,7 +452,7 @@ build = "bonuses"
 symbol = "@dxball_advance_bonus@4"
 target_address = 0x004146E0
 size = 89
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
 ]
 
@@ -461,7 +461,7 @@ build = "bonuses"
 symbol = "_dxball_retire_bonus"
 target_address = 0x004147A0
 size = 32
-boundary_evidence = "docs/ENTITIES_OWNER.md"
+boundary_evidence = "docs/research/ENTITIES_OWNER.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x0043FAC8 },
   { offset = 0xC, type = "REL32", symbol = "@dxball_remove_bonus@4", addend = 0, target = 0x004147C0 },
@@ -503,7 +503,7 @@ build = "gameplay"
 symbol = "@dxball_clear_explosion_list@4"
 target_address = 0x004153E0
 size = 48
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_explosion@4", addend = 0, target = 0x0040FF50 },
 ]
@@ -513,7 +513,7 @@ build = "paddle"
 symbol = "_dxball_update_paddle_position"
 target_address = 0x00412DF0
 size = 203
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_mouse_x", addend = 0, target = 0x00438B0C },
   { offset = 0xC, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
@@ -542,7 +542,7 @@ build = "balls"
 symbol = "@dxball_append_ball@4"
 target_address = 0x004106D0
 size = 146
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
   { offset = 0xF, type = "REL32", symbol = "_dxball_allocate_node", addend = 0, target = 0x00416770 },
   { offset = 0x7C, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
@@ -553,7 +553,7 @@ build = "balls"
 symbol = "@dxball_begin_balls@4"
 target_address = 0x004100F0
 size = 57
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
 ]
 
@@ -562,7 +562,7 @@ build = "balls"
 symbol = "@dxball_advance_ball@4"
 target_address = 0x004101D0
 size = 89
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
 ]
 
@@ -571,7 +571,7 @@ build = "balls"
 symbol = "@dxball_clear_ball_list@4"
 target_address = 0x00415070
 size = 48
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_ball@4", addend = 0, target = 0x00411850 },
 ]
@@ -581,7 +581,7 @@ build = "balls"
 symbol = "_dxball_release_attached_balls"
 target_address = 0x00415820
 size = 84
-boundary_evidence = "docs/POWERUPS_OWNER.md"
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
   { offset = 0xC, type = "REL32", symbol = "@dxball_begin_balls@4", addend = 0, target = 0x004100F0 },
@@ -603,7 +603,7 @@ build = "rotation"
 symbol = "_dxball_draw_rotated_sprite"
 target_address = 0x00404280
 size = 40
-boundary_evidence = "docs/ROTATION_INVESTIGATION.md; ev_dde2cbb37732ea0f72b15ecd2949441abe7c8b5a5a28b2762bdf8dd403d7ebe6"
+boundary_evidence = "docs/research/ROTATION_INVESTIGATION.md; ev_dde2cbb37732ea0f72b15ecd2949441abe7c8b5a5a28b2762bdf8dd403d7ebe6"
 relocations = [
   { offset = 0x17, type = "REL32", symbol = "_dxball_render_rotated_sprite", addend = 0, target = 0x004026A0 },
 ]
@@ -634,7 +634,7 @@ build = "trig"
 symbol = "_dxball_initialize_trig"
 target_address = 0x00402250
 size = 232
-boundary_evidence = "docs/EXACT_CORE.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE.md"
 relocations = [
   { offset = 0x30, type = "DIR32", symbol = "$T284", addend = 0x0, target = 0x420000, data_hex = "6e861bf0f9210940" },
   { offset = 0x36, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
@@ -663,7 +663,7 @@ build = "trig"
 symbol = "_dxball_sine"
 target_address = 0x00402400
 size = 130
-boundary_evidence = "docs/EXACT_CORE.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE.md"
 relocations = [
   { offset = 0x43, type = "DIR32", symbol = "_dxball_sine_table", addend = 0x0, target = 0x424650 },
   { offset = 0x55, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
@@ -678,7 +678,7 @@ build = "trig"
 symbol = "_dxball_cosine"
 target_address = 0x00402490
 size = 130
-boundary_evidence = "docs/EXACT_CORE.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE.md"
 relocations = [
   { offset = 0x43, type = "DIR32", symbol = "_dxball_cosine_table", addend = 0x0, target = 0x424bf8 },
   { offset = 0x55, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
@@ -693,7 +693,7 @@ build = "balls"
 symbol = "_dxball_spawn_ball"
 target_address = 0x004105D0
 size = 244
-boundary_evidence = "docs/EXACT_CORE.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE.md"
 relocations = [
   { offset = 0x8, type = "DIR32", symbol = "_dxball_board_storage", addend = 20024, target = 0x0043AAB8 },
   { offset = 0xD, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
@@ -726,7 +726,7 @@ build = "rotation"
 symbol = "_dxball_rotated_sprite_offset"
 target_address = 0x00402CD0
 size = 259
-boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_PROJECTIONS_TEXT.md; docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
   { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -753,7 +753,7 @@ relocations = [
 [builds.core]
 source = "src/core.c"
 object = "build/exact/core.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h"]
+inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.c", "src/core.h", "src/device.h", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [builds.runtime]
@@ -767,7 +767,7 @@ build = "balls"
 symbol = "_dxball_clone_balls"
 target_address = 0x00414DF0
 size = 637
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
   { offset = 0xC, type = "REL32", symbol = "@dxball_begin_balls@4", addend = 0, target = 0x004100F0 },
@@ -849,7 +849,7 @@ build = "core"
 symbol = "@dxball_clear_fire_effect_list@4"
 target_address = 0x00416510
 size = 48
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_fire_effect@4", addend = 0x0, target = 0x413790 },
 ]
@@ -859,7 +859,7 @@ build = "particles"
 symbol = "@dxball_clear_particle_list@4"
 target_address = 0x00416540
 size = 48
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_particle@4", addend = 0, target = 0x00414B30 },
 ]
@@ -869,7 +869,7 @@ build = "bonuses"
 symbol = "@dxball_clear_bonus_list@4"
 target_address = 0x00416570
 size = 48
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_bonus@4", addend = 0, target = 0x004147C0 },
 ]
@@ -879,7 +879,7 @@ build = "effects"
 symbol = "@dxball_clear_brick_effect_list@4"
 target_address = 0x004165A0
 size = 48
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_brick_effect@4", addend = 0, target = 0x00412A50 },
 ]
@@ -889,7 +889,7 @@ build = "core"
 symbol = "@dxball_clear_projectile_list@4"
 target_address = 0x004165D0
 size = 48
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "@dxball_remove_projectile@4", addend = 0x0, target = 0x4134d0 },
 ]
@@ -899,7 +899,7 @@ build = "runtime"
 symbol = "_dxball_clear_all_entities"
 target_address = 0x004164A0
 size = 106
-boundary_evidence = "docs/EXACT_LISTS.md"
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_projectiles", addend = 0x0, target = 0x43a898 },
   { offset = 0xc, type = "REL32", symbol = "@dxball_clear_projectile_list@4", addend = 0x0, target = 0x4165d0 },
@@ -926,7 +926,7 @@ build = "resources"
 symbol = "_dxball_load_live_palette"
 target_address = 0x00409790
 size = 337
-boundary_evidence = "docs/EXACT_PALETTES.md"
+boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "$SG628", addend = 0x0, target = 0x422788, data_hex = "726200" },
   { offset = 0x13, type = "REL32", symbol = "_fopen", addend = 0x0, target = 0x417c20 },
@@ -951,7 +951,7 @@ build = "resources"
 symbol = "_dxball_load_saved_palette"
 target_address = 0x004098F0
 size = 307
-boundary_evidence = "docs/EXACT_PALETTES.md"
+boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "$SG636", addend = 0x0, target = 0x42278c, data_hex = "726200" },
   { offset = 0x13, type = "REL32", symbol = "_fopen", addend = 0x0, target = 0x417c20 },
@@ -973,7 +973,7 @@ build = "resources"
 symbol = "_dxball_load_surface_palette"
 target_address = 0x00409A30
 size = 376
-boundary_evidence = "docs/EXACT_PALETTES.md"
+boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "$SG646", addend = 0x0, target = 0x422790, data_hex = "726200" },
   { offset = 0x13, type = "REL32", symbol = "_fopen", addend = 0x0, target = 0x417c20 },
@@ -1006,7 +1006,7 @@ build = "display"
 symbol = "_dxball_blt_effect_sprite"
 target_address = 0x00408180
 size = 362
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x1a, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x2e, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1038,7 +1038,7 @@ build = "display"
 symbol = "_dxball_blt_reduced_sprite"
 target_address = 0x00408460
 size = 362
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x1a, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x2e, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1070,7 +1070,7 @@ build = "display"
 symbol = "_dxball_stretch_effect_sprite"
 target_address = 0x00408740
 size = 306
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x33, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x47, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1098,7 +1098,7 @@ build = "display"
 symbol = "_dxball_queue_sprite_region"
 target_address = 0x00408880
 size = 272
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x1a, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x2e, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1124,7 +1124,7 @@ build = "display"
 symbol = "_dxball_draw_effect_sprite"
 target_address = 0x004082F0
 size = 361
-boundary_evidence = "docs/EXACT_DISPLAY.md"
+boundary_evidence = "docs/research/exact/EXACT_DISPLAY.md"
 relocations = [
   { offset = 0x16, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x2d, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1156,7 +1156,7 @@ build = "display"
 symbol = "_dxball_draw_reduced_sprite"
 target_address = 0x004085D0
 size = 361
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x1a, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x2e, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1188,7 +1188,7 @@ build = "resources"
 symbol = "_dxball_blt_sprite"
 target_address = 0x004040B0
 size = 195
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x1a, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x2e, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
@@ -1427,7 +1427,7 @@ build = "list_initializers"
 symbol = "??0DxBallProjectileList@@QAE@XZ"
 target_address = 0x0040F200
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [units.initialize-ball-list]
@@ -1435,7 +1435,7 @@ build = "list_initializers"
 symbol = "??0DxBallBallList@@QAE@XZ"
 target_address = 0x0040F260
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [units.initialize-brick-effect-list]
@@ -1443,7 +1443,7 @@ build = "list_initializers"
 symbol = "??0DxBallBrickEffectList@@QAE@XZ"
 target_address = 0x0040F2E0
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [units.initialize-explosion-list]
@@ -1451,7 +1451,7 @@ build = "list_initializers"
 symbol = "??0DxBallExplosionList@@QAE@XZ"
 target_address = 0x0040F340
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [units.initialize-bonus-list]
@@ -1459,7 +1459,7 @@ build = "list_initializers"
 symbol = "??0DxBallBonusList@@QAE@XZ"
 target_address = 0x0040F3C0
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [units.initialize-particle-list]
@@ -1467,7 +1467,7 @@ build = "list_initializers"
 symbol = "??0DxBallParticleList@@QAE@XZ"
 target_address = 0x0040F420
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [units.initialize-fire-effect-list]
@@ -1475,7 +1475,7 @@ build = "list_initializers"
 symbol = "??0DxBallFireEffectList@@QAE@XZ"
 target_address = 0x0040F480
 size = 64
-boundary_evidence = "docs/EXACT_LIST_INITIALIZERS.md"
+boundary_evidence = "docs/research/exact/EXACT_LIST_INITIALIZERS.md"
 relocations = []
 
 [builds.editor]
@@ -1489,7 +1489,7 @@ build = "editor"
 symbol = "_dxball_clear_hit_region"
 target_address = 0x401f20
 size = 0x65
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0xf, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x0, target = 0x4251a0 },
   { offset = 0x20, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x4, target = 0x4251a0 },
@@ -1503,7 +1503,7 @@ build = "editor"
 symbol = "_dxball_hit_region_contains"
 target_address = 0x402040
 size = 0x99
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0xf, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x10, target = 0x4251a0 },
   { offset = 0x26, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x0, target = 0x4251a0 },
@@ -1517,7 +1517,7 @@ build = "editor"
 symbol = "_dxball_reset_hit_region_count"
 target_address = 0x4020e0
 size = 0x1a
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x8, type = "DIR32", symbol = "_dxball_hit_region_count", addend = 0x0, target = 0x421064 },
 ]
@@ -1527,7 +1527,7 @@ build = "editor"
 symbol = "_dxball_unclassified_noop_40cc20"
 target_address = 0x40cc20
 size = 0x10
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
 ]
 
@@ -1536,7 +1536,7 @@ build = "geometry"
 symbol = "_dxball_point_angle"
 target_address = 0x004025A0
 size = 109
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x2e, type = "REL32", symbol = "_atan2", addend = 0x0, target = 0x417608 },
   { offset = 0x3a, type = "DIR32", symbol = "$T410", addend = 0x0, target = 0x420028, data_hex = "0000000000806640" },
@@ -1552,7 +1552,7 @@ build = "geometry"
 symbol = "_dxball_point_distance"
 target_address = 0x402610
 size = 0x82
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x22, type = "REL32", symbol = "_fabs", addend = 0x0, target = 0x417660 },
   { offset = 0x45, type = "REL32", symbol = "_fabs", addend = 0x0, target = 0x417660 },
@@ -1565,7 +1565,7 @@ build = "rotation"
 symbol = "_dxball_rotated_sprite_y_offset"
 target_address = 0x00402DE0
 size = 191
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
   { offset = 0x1d, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -1584,7 +1584,7 @@ build = "rotation"
 symbol = "_dxball_rotated_sprite_width"
 target_address = 0x00402EA0
 size = 259
-boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_PROJECTIONS_TEXT.md; docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_cosine", addend = 0x0, target = 0x402490 },
   { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -1613,7 +1613,7 @@ build = "rotation"
 symbol = "_dxball_rotated_sprite_height"
 target_address = 0x00402FB0
 size = 191
-boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_PROJECTIONS_TEXT.md; docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "_dxball_sine", addend = 0x0, target = 0x402400 },
   { offset = 0x19, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -1632,7 +1632,7 @@ build = "ui"
 symbol = "_dxball_copy_text_word"
 target_address = 0x403290
 size = 0x8f
-boundary_evidence = "docs/EXACT_PROJECTIONS_TEXT.md; docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_PROJECTIONS_TEXT.md; docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
 ]
 
@@ -1642,7 +1642,7 @@ build = "resources"
 symbol = "_dxball_release_sprite_bank"
 target_address = 0x00403EB0
 size = 178
-boundary_evidence = "docs/EXACT_EARLY_HELPERS.md"
+boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x16, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0x0, target = 0x403e70 },
@@ -1666,7 +1666,7 @@ build = "runtime"
 symbol = "_dxball_refresh_score"
 target_address = 0x00415880
 size = 74
-boundary_evidence = "docs/EXACT_CONTROL_FLOW.md"
+boundary_evidence = "docs/research/exact/EXACT_CONTROL_FLOW.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_score", addend = 0x0, target = 0x422d18 },
   { offset = 0xd, type = "DIR32", symbol = "_dxball_displayed_score", addend = 0x0, target = 0x43a884 },
@@ -1682,7 +1682,7 @@ build = "runtime"
 symbol = "_dxball_elapsed"
 target_address = 0x004034F0
 size = 81
-boundary_evidence = "docs/EXACT_CONTROL_FLOW.md"
+boundary_evidence = "docs/research/exact/EXACT_CONTROL_FLOW.md"
 relocations = [
   { offset = 0xa, type = "REL32", symbol = "_dxball_current_time", addend = 0x0, target = 0x403450 },
 ]
@@ -1698,7 +1698,7 @@ symbol = "_dxball_raw_sine"
 build = "intro"
 size = 84
 target_address = 0x402340
-boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+boundary_evidence = "docs/research/exact/EXACT_INTEGER_TRIG.md"
 relocations = [
   { offset = 0x40, type = "DIR32", symbol = "_dxball_sine_table", addend = 0x0, target = 0x424650 }
 ]
@@ -1708,7 +1708,7 @@ symbol = "_dxball_raw_cosine"
 build = "intro"
 size = 84
 target_address = 0x4023a0
-boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+boundary_evidence = "docs/research/exact/EXACT_INTEGER_TRIG.md"
 relocations = [
   { offset = 0x40, type = "DIR32", symbol = "_dxball_cosine_table", addend = 0x0, target = 0x424bf8 }
 ]
@@ -1718,7 +1718,7 @@ symbol = "_dxball_wave_x"
 build = "intro"
 size = 50
 target_address = 0x402520
-boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+boundary_evidence = "docs/research/exact/EXACT_INTEGER_TRIG.md"
 relocations = [
   { offset = 0xb, type = "REL32", symbol = "_dxball_raw_cosine", addend = 0x0, target = 0x4023a0 }
 ]
@@ -1728,7 +1728,7 @@ symbol = "_dxball_wave_y"
 build = "intro"
 size = 50
 target_address = 0x402560
-boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+boundary_evidence = "docs/research/exact/EXACT_INTEGER_TRIG.md"
 relocations = [
   { offset = 0xb, type = "REL32", symbol = "_dxball_raw_sine", addend = 0x0, target = 0x402340 }
 ]
@@ -1738,7 +1738,7 @@ symbol = "_dxball_set_hit_region"
 build = "editor"
 size = 97
 target_address = 0x401eb0
-boundary_evidence = "docs/EXACT_INTEGER_TRIG.md"
+boundary_evidence = "docs/research/exact/EXACT_INTEGER_TRIG.md"
 relocations = [
   { offset = 0x12, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x0, target = 0x4251a0 },
   { offset = 0x22, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0x4, target = 0x4251a0 },
@@ -1758,7 +1758,7 @@ symbol = "_dxball_prepare_sound"
 build = "sound"
 size = 33
 target_address = 0x4050f0
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x7, type = "REL32", symbol = "_dxball_release_sounds", addend = 0x0, target = 0x4058b0 },
   { offset = 0x10, type = "REL32", symbol = "_dxball_initialize_sound", addend = 0x0, target = 0x405120 }
@@ -1769,7 +1769,7 @@ symbol = "_dxball_release_sounds"
 build = "sound"
 size = 61
 target_address = 0x4058b0
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x27, type = "REL32", symbol = "_dxball_release_sound", addend = 0x0, target = 0x4058f0 }
 ]
@@ -1779,7 +1779,7 @@ symbol = "_dxball_stop_all_sounds"
 build = "sound"
 size = 61
 target_address = 0x405eb0
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x27, type = "REL32", symbol = "_dxball_stop_sound", addend = 0x0, target = 0x405ef0 }
 ]
@@ -1789,7 +1789,7 @@ symbol = "_dxball_release_audio"
 build = "sound"
 size = 26
 target_address = 0x406270
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x7, type = "REL32", symbol = "_dxball_release_sounds", addend = 0x0, target = 0x4058b0 },
   { offset = 0xc, type = "REL32", symbol = "_dxball_pause_sound", addend = 0x0, target = 0x4057d0 }
@@ -1800,7 +1800,7 @@ build = "display"
 symbol = "_dxball_bind_board_surface"
 target_address = 0x00409000
 size = 24
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "_dxball_restore_surface", addend = 0x0, target = 0x4382e8 },
 ]
@@ -1810,7 +1810,7 @@ build = "display"
 symbol = "_dxball_bind_display_surface"
 target_address = 0x00409020
 size = 24
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0x0, target = 0x42e690 },
 ]
@@ -1820,7 +1820,7 @@ symbol = "_dxball_splash_key"
 build = "intro"
 size = 36
 target_address = 0x407ab0
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x8, type = "DIR32", symbol = "_dxball_end_requested", addend = 0x0, target = 0x425974 },
   { offset = 0x12, type = "DIR32", symbol = "_dxball_return_to_menu", addend = 0x0, target = 0x425978 }
@@ -1831,7 +1831,7 @@ build = "core"
 symbol = "_dxball_retire_ball"
 target_address = 0x00411820
 size = 45
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x8, type = "DIR32", symbol = "_dxball_board_storage", addend = 0x4e38, target = 0x43aab8 },
   { offset = 0x14, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
@@ -1844,7 +1844,7 @@ symbol = "_dxball_draw_text"
 build = "ui"
 size = 150
 target_address = 0x404ee0
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x44, type = "REL32", symbol = "_dxball_draw_glyph", addend = 0x0, target = 0x404cf0 },
   { offset = 0x59, type = "DIR32", symbol = "_dxball_font_bank", addend = 0x0, target = 0x42108c },
@@ -1857,7 +1857,7 @@ symbol = "_dxball_draw_centered_text"
 build = "ui"
 size = 73
 target_address = 0x404f80
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x12, type = "REL32", symbol = "_dxball_measure_text", addend = 0x0, target = 0x404fd0 },
   { offset = 0x38, type = "REL32", symbol = "_dxball_draw_text", addend = 0x0, target = 0x404ee0 }
@@ -1868,7 +1868,7 @@ symbol = "_dxball_set_palette_rgb"
 build = "ui"
 size = 108
 target_address = 0x40ab20
-boundary_evidence = "docs/EXACT_EXITS.md"
+boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 0x8, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0x0, target = 0x422898 },
   { offset = 0x21, type = "DIR32", symbol = "_dxball_live_palette", addend = 0x0, target = 0x4386f0 },
@@ -1896,7 +1896,7 @@ build = "platform"
 symbol = "_dxball_initialize_sprite_banks"
 target_address = 0x403c20
 size = 131
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 50, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x425980 },
   { offset = 100, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 }
@@ -1907,7 +1907,7 @@ build = "startup"
 symbol = "_dxball_release_sprite_banks"
 target_address = 0x403cb0
 size = 125
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 50, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x425980 },
   { offset = 70, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x403e70 },
@@ -1925,7 +1925,7 @@ build = "ui"
 symbol = "_dxball_fill_rect"
 target_address = 0x403230
 size = 85
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
 
 ]
@@ -1935,7 +1935,7 @@ build = "ui"
 symbol = "_dxball_rotate_rgb_colors"
 target_address = 0x40aa60
 size = 188
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x422898 },
   { offset = 171, type = "REL32", symbol = "_dxball_set_palette_rgb", addend = 0, target = 0x40ab20 }
@@ -1946,7 +1946,7 @@ build = "ui"
 symbol = "_dxball_rotate_palette_right"
 target_address = 0x40a880
 size = 234
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x422898 },
   { offset = 43, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x4386f0 },
@@ -1967,7 +1967,7 @@ build = "display"
 symbol = "_dxball_animate_palette"
 target_address = 0x0040A970
 size = 234
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 0xb, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0x0, target = 0x422898 },
   { offset = 0x2b, type = "DIR32", symbol = "_dxball_live_palette", addend = 0x0, target = 0x4386f0 },
@@ -1988,7 +1988,7 @@ build = "device"
 symbol = "_dxball_initialize_palette"
 target_address = 0x4096c0
 size = 206
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 43, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x4386f0 },
   { offset = 54, type = "DIR32", symbol = "_dxball_live_palette", addend = 1, target = 0x4386f0 },
@@ -2010,7 +2010,7 @@ build = "device"
 symbol = "_dxball_palette_transition"
 target_address = 0x40a340
 size = 1339
-boundary_evidence = "docs/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x422898 },
   { offset = 78, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x4386f0 },
@@ -2097,7 +2097,7 @@ build = "core"
 symbol = "_dxball_update_balls"
 target_address = 0x00410770
 size = 3223
-boundary_evidence = "docs/EXACT_CORE_CONTROLLERS.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE_CONTROLLERS.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0xf, type = "REL32", symbol = "@dxball_begin_balls@4", addend = 0x0, target = 0x4100f0 },
@@ -2217,19 +2217,19 @@ relocations = [
   { offset = 0x511, type = "REL32", symbol = "_abs", addend = 0x0, target = 0x416780 },
   { offset = 0x51b, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0x0, target = 0x43fa94 },
   { offset = 0x527, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 1328, type = "DIR32", symbol = "$T1300", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
-  { offset = 1336, type = "DIR32", symbol = "$T1300", addend = 4, target = 0x420098, data_hex = "0000000000000040" },
-  { offset = 1342, type = "DIR32", symbol = "$T1300", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
+  { offset = 1328, type = "DIR32", symbol = "$T1348", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
+  { offset = 1336, type = "DIR32", symbol = "$T1348", addend = 4, target = 0x420098, data_hex = "0000000000000040" },
+  { offset = 1342, type = "DIR32", symbol = "$T1348", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
   { offset = 0x543, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
-  { offset = 1353, type = "DIR32", symbol = "$T1301", addend = 0, target = 0x4200a0, data_hex = "9a9999999999e93f" },
+  { offset = 1353, type = "DIR32", symbol = "$T1349", addend = 0, target = 0x4200a0, data_hex = "9a9999999999e93f" },
   { offset = 0x54e, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x55b, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0x0, target = 0x43fa94 },
   { offset = 0x567, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 1392, type = "DIR32", symbol = "$T1300", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
-  { offset = 1400, type = "DIR32", symbol = "$T1300", addend = 4, target = 0x420098, data_hex = "0000000000000040" },
-  { offset = 1406, type = "DIR32", symbol = "$T1300", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
+  { offset = 1392, type = "DIR32", symbol = "$T1348", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
+  { offset = 1400, type = "DIR32", symbol = "$T1348", addend = 4, target = 0x420098, data_hex = "0000000000000040" },
+  { offset = 1406, type = "DIR32", symbol = "$T1348", addend = 0, target = 0x420098, data_hex = "0000000000000040" },
   { offset = 0x583, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
-  { offset = 1417, type = "DIR32", symbol = "$T1301", addend = 0, target = 0x4200a0, data_hex = "9a9999999999e93f" },
+  { offset = 1417, type = "DIR32", symbol = "$T1349", addend = 0, target = 0x4200a0, data_hex = "9a9999999999e93f" },
   { offset = 0x58e, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x598, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0x5a2, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
@@ -2295,7 +2295,7 @@ relocations = [
   { offset = 0x8e5, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0x8ee, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x902, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 2321, type = "DIR32", symbol = "$T1303", addend = 0, target = 0x4200a8, data_hex = "333333333333c33f" },
+  { offset = 2321, type = "DIR32", symbol = "$T1351", addend = 0, target = 0x4200a8, data_hex = "333333333333c33f" },
   { offset = 0x916, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x91c, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0x931, type = "REL32", symbol = "_dxball_hit_screen_point", addend = 0x0, target = 0x4116c0 },
@@ -2309,7 +2309,7 @@ relocations = [
   { offset = 0x98a, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0x993, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x9a7, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 2486, type = "DIR32", symbol = "$T1304", addend = 0, target = 0x4200b0, data_hex = "333333333333eb3f" },
+  { offset = 2486, type = "DIR32", symbol = "$T1352", addend = 0, target = 0x4200b0, data_hex = "333333333333eb3f" },
   { offset = 0x9bb, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x9c1, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0x9d6, type = "REL32", symbol = "_dxball_hit_screen_point", addend = 0x0, target = 0x4116c0 },
@@ -2326,7 +2326,7 @@ relocations = [
   { offset = 0xa55, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0xa5e, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0xa72, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 2689, type = "DIR32", symbol = "$T1303", addend = 0, target = 0x4200a8, data_hex = "333333333333c33f" },
+  { offset = 2689, type = "DIR32", symbol = "$T1351", addend = 0, target = 0x4200a8, data_hex = "333333333333c33f" },
   { offset = 0xa86, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0xa8c, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0xaa1, type = "REL32", symbol = "_dxball_hit_screen_point", addend = 0x0, target = 0x4116c0 },
@@ -2343,7 +2343,7 @@ relocations = [
   { offset = 0xb22, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0xb2b, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0xb3f, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 2894, type = "DIR32", symbol = "$T1304", addend = 0, target = 0x4200b0, data_hex = "333333333333eb3f" },
+  { offset = 2894, type = "DIR32", symbol = "$T1352", addend = 0, target = 0x4200b0, data_hex = "333333333333eb3f" },
   { offset = 0xb53, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0xb59, type = "DIR32", symbol = "_dxball_balls", addend = 0x0, target = 0x43a8b8 },
   { offset = 0xb6e, type = "REL32", symbol = "_dxball_hit_screen_point", addend = 0x0, target = 0x4116c0 },
@@ -2382,7 +2382,7 @@ build = "core"
 symbol = "_dxball_update_projectiles"
 target_address = 0x00413170
 size = 328
-boundary_evidence = "docs/EXACT_CORE_CONTROLLERS.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE_CONTROLLERS.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "_dxball_projectiles", addend = 0x0, target = 0x43a898 },
   { offset = 0xf, type = "REL32", symbol = "@dxball_begin_projectiles@4", addend = 0x0, target = 0x410130 },
@@ -2414,13 +2414,13 @@ build = "core"
 symbol = "_dxball_fire_projectiles"
 target_address = 0x004132C0
 size = 321
-boundary_evidence = "docs/EXACT_CORE_CONTROLLERS.md"
+boundary_evidence = "docs/research/exact/EXACT_CORE_CONTROLLERS.md"
 relocations = [
   { offset = 0xa, type = "DIR32", symbol = "_dxball_projectiles", addend = 0x0, target = 0x43a898 },
   { offset = 0xf, type = "REL32", symbol = "@dxball_append_projectile@4", addend = 0x0, target = 0x413410 },
   { offset = 0x15, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0x0, target = 0x43a878 },
   { offset = 0x1a, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0x0, target = 0x43fa94 },
-  { offset = 38, type = "DIR32", symbol = "$T1312", addend = 0, target = 0x420108, data_hex = "333333333333db3f" },
+  { offset = 38, type = "DIR32", symbol = "$T1360", addend = 0, target = 0x420108, data_hex = "333333333333db3f" },
   { offset = 0x2b, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0x32, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
   { offset = 0x43, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x80, target = 0x425980 },
@@ -2432,7 +2432,7 @@ relocations = [
   { offset = 0x89, type = "DIR32", symbol = "_dxball_projectiles", addend = 0x0, target = 0x43a898 },
   { offset = 0x8e, type = "REL32", symbol = "@dxball_append_projectile@4", addend = 0x0, target = 0x413410 },
   { offset = 0x93, type = "DIR32", symbol = "_dxball_paddle_width", addend = 0x0, target = 0x43fa94 },
-  { offset = 159, type = "DIR32", symbol = "$T1313", addend = 0, target = 0x420110, data_hex = "85eb51b81e85db3f" },
+  { offset = 159, type = "DIR32", symbol = "$T1361", addend = 0, target = 0x420110, data_hex = "85eb51b81e85db3f" },
   { offset = 0xa4, type = "REL32", symbol = "__ftol", addend = 0x0, target = 0x41678c },
   { offset = 0xaa, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0x0, target = 0x43a878 },
   { offset = 0xb1, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
@@ -2455,7 +2455,7 @@ build = "core"
 symbol = "_dxball_drop_bricks"
 target_address = 0x00415670
 size = 426
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x13, type = "REL32", symbol = "_dxball_stop_sound", addend = 0x0, target = 0x405ef0 },
   { offset = 0x23, type = "REL32", symbol = "_dxball_play_sound", addend = 0x0, target = 0x405c50 },
@@ -2477,7 +2477,7 @@ build = "core"
 symbol = "_dxball_spawn_fire_effect"
 target_address = 0x004135B0
 size = 185
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_fire_effects", addend = 0x0, target = 0x43a8e0 },
   { offset = 0xc, type = "REL32", symbol = "@dxball_append_fire_effect@4", addend = 0x0, target = 0x413670 },
@@ -2500,7 +2500,7 @@ build = "core"
 symbol = "_dxball_process_fire_effects"
 target_address = 0x00413710
 size = 124
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_fire_effects", addend = 0x0, target = 0x43a8e0 },
   { offset = 0xc, type = "REL32", symbol = "@dxball_begin_fire_effects@4", addend = 0x0, target = 0x410030 },
@@ -2522,7 +2522,7 @@ build = "display"
 symbol = "_dxball_invalidate_region"
 target_address = 0x00408B70
 size = 336
-boundary_evidence = "docs/EXACT_CONNECTED_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
   { offset = 0x7, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
   { offset = 0xe, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
@@ -2555,7 +2555,7 @@ build = "runtime"
 symbol = "_dxball_finish_game"
 target_address = 0x415c10
 size = 46
-boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 relocations = [
   { offset = 9, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
   { offset = 18, type = "DIR32", symbol = "_dxball_end_requested", addend = 0, target = 0x425974 },
@@ -2567,7 +2567,7 @@ build = "runtime"
 symbol = "_dxball_reset_round"
 target_address = 0x415c40
 size = 426
-boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 relocations = [
   { offset = 7, type = "REL32", symbol = "_dxball_count_destructible_bricks", addend = 0, target = 0x415a90 },
   { offset = 12, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
@@ -2619,7 +2619,7 @@ build = "runtime"
 symbol = "_dxball_restart_round"
 target_address = 0x415df0
 size = 327
-boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x43a90c },
   { offset = 24, type = "DIR32", symbol = "_dxball_level_changed", addend = 0, target = 0x422d1c },
@@ -2650,7 +2650,7 @@ build = "runtime"
 symbol = "_dxball_dispose_game"
 target_address = 0x416430
 size = 112
-boundary_evidence = "docs/EXACT_LIFECYCLE.md"
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 relocations = [
   { offset = 18, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x43a90c },
   { offset = 43, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
@@ -2669,7 +2669,7 @@ build = "runtime"
 symbol = "_dxball_initialize_game"
 target_address = 0x40f4c0
 size = 736
-boundary_evidence = "docs/EXACT_RUNTIME_SETUP.md"
+boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
 relocations = [
   { offset = 9, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
   { offset = 15, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
@@ -2766,7 +2766,7 @@ build = "runtime"
 symbol = "_dxball_redraw_game"
 target_address = 0x40f7a0
 size = 269
-boundary_evidence = "docs/EXACT_RUNTIME_SETUP.md"
+boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
 relocations = [
   { offset = 40, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
   { offset = 46, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
@@ -2795,7 +2795,7 @@ build = "runtime"
 symbol = "_dxball_draw_score"
 target_address = 0x4158d0
 size = 433
-boundary_evidence = "docs/EXACT_RUNTIME_SETUP.md"
+boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
 relocations = [
   { offset = 16, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x422d18 },
   { offset = 22, type = "REL32", symbol = "__ultoa", addend = 0, target = 0x41f570 },
@@ -2823,7 +2823,7 @@ build = "intro"
 symbol = "_dxball_initialize_intro"
 target_address = 0x40dfc0
 size = 277
-boundary_evidence = "docs/EXACT_INTRO.md"
+boundary_evidence = "docs/research/exact/EXACT_INTRO.md"
 relocations = [
   { offset = 7, type = "REL32", symbol = "_dxball_reset_regions", addend = 0, target = 0x408070 },
   { offset = 14, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
@@ -2863,7 +2863,7 @@ build = "intro"
 symbol = "_dxball_redraw_intro"
 target_address = 0x40e0e0
 size = 587
-boundary_evidence = "docs/EXACT_INTRO.md"
+boundary_evidence = "docs/research/exact/EXACT_INTRO.md"
 relocations = [
   { offset = 40, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
   { offset = 46, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
@@ -2920,7 +2920,7 @@ build = "intro"
 symbol = "_dxball_initialize_intro_points"
 target_address = 0x40e570
 size = 1996
-boundary_evidence = "docs/EXACT_INTRO.md"
+boundary_evidence = "docs/research/exact/EXACT_INTRO.md"
 relocations = [
   { offset = 1733, type = "DIR32", symbol = "_dxball_intro_points", addend = 0, target = 0x438b30 },
   { offset = 1754, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x438b30 },
@@ -2939,7 +2939,7 @@ build = "intro"
 symbol = "_dxball_dispose_intro"
 target_address = 0x40f010
 size = 175
-boundary_evidence = "docs/EXACT_INTRO.md"
+boundary_evidence = "docs/research/exact/EXACT_INTRO.md"
 relocations = [
   { offset = 61, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
   { offset = 71, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
@@ -2960,7 +2960,7 @@ build = "intro"
 symbol = "_dxball_initialize_splash"
 target_address = 0x407420
 size = 430
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 10, type = "REL32", symbol = "_dxball_reset_regions", addend = 0, target = 0x408070 },
   { offset = 17, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
@@ -3009,7 +3009,7 @@ build = "intro"
 symbol = "_dxball_redraw_splash"
 target_address = 0x4075d0
 size = 949
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 40, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x4228b4 },
   { offset = 46, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x409f10 },
@@ -3086,7 +3086,7 @@ build = "intro"
 symbol = "_dxball_splash_frame"
 target_address = 0x407990
 size = 274
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 15, type = "REL32", symbol = "_dxball_update_sound", addend = 0, target = 0x405d80 },
   { offset = 24, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
@@ -3122,7 +3122,7 @@ build = "intro"
 symbol = "_dxball_dispose_splash"
 target_address = 0x407ae0
 size = 185
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 40, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x405ef0 },
   { offset = 71, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x40a340 },
@@ -3144,7 +3144,7 @@ build = "intro"
 symbol = "_dxball_draw_scroller_wave"
 target_address = 0x407ba0
 size = 235
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 82, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8 },
   { offset = 100, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
@@ -3166,7 +3166,7 @@ build = "intro"
 symbol = "_dxball_update_scroller"
 target_address = 0x407c90
 size = 233
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 12, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x403e90 },
   { offset = 21, type = "DIR32", symbol = "_dxball_scroller_shift", addend = 0, target = 0x42697c },
@@ -3195,7 +3195,7 @@ build = "intro"
 symbol = "_dxball_draw_waving_credits"
 target_address = 0x407d80
 size = 353
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 67, type = "DIR32", symbol = "_dxball_credit_angle", addend = 0, target = 0x426988 },
   { offset = 74, type = "DIR32", symbol = "_dxball_credit_angle", addend = 0, target = 0x426988 },
@@ -3235,7 +3235,7 @@ build = "intro"
 symbol = "_dxball_pulse_splash_palette"
 target_address = 0x407ef0
 size = 370
-boundary_evidence = "docs/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x422898 },
   { offset = 43, type = "DIR32", symbol = "_dxball_splash_span", addend = 0, target = 0x4225c0 },
@@ -3273,7 +3273,7 @@ build = "intro"
 symbol = "_dxball_intro_frame"
 target_address = 0x40e330
 size = 242
-boundary_evidence = "docs/EXACT_MODE_FRAMES.md"
+boundary_evidence = "docs/research/exact/EXACT_MODE_FRAMES.md"
 relocations = [
   { offset = 8, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x4228d0 },
   { offset = 22, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 },
@@ -3305,7 +3305,7 @@ build = "core"
 symbol = "_dxball_game_frame"
 target_address = 0x40f8b0
 size = 1688
-boundary_evidence = "docs/EXACT_MODE_FRAMES.md"
+boundary_evidence = "docs/research/exact/EXACT_MODE_FRAMES.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_paused", addend = 0, target = 0x43fae4 },
   { offset = 25, type = "DIR32", symbol = "_dxball_board_storage", addend = 20000, target = 0x43aab8 },
@@ -3393,7 +3393,7 @@ relocations = [
   { offset = 861, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
   { offset = 870, type = "REL32", symbol = "_dxball_cosine", addend = 0, target = 0x402490 },
   { offset = 878, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
-  { offset = 893, type = "DIR32", symbol = "$T1314", addend = 0, target = 0x420088, data_hex = "333333333333f33f" },
+  { offset = 893, type = "DIR32", symbol = "$T1362", addend = 0, target = 0x420088, data_hex = "333333333333f33f" },
   { offset = 898, type = "REL32", symbol = "__ftol", addend = 0, target = 0x41678c },
   { offset = 904, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
   { offset = 912, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
@@ -3423,7 +3423,7 @@ relocations = [
   { offset = 1209, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
   { offset = 1218, type = "REL32", symbol = "_dxball_cosine", addend = 0, target = 0x402490 },
   { offset = 1226, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
-  { offset = 1241, type = "DIR32", symbol = "$T1314", addend = 0, target = 0x420088, data_hex = "333333333333f33f" },
+  { offset = 1241, type = "DIR32", symbol = "$T1362", addend = 0, target = 0x420088, data_hex = "333333333333f33f" },
   { offset = 1246, type = "REL32", symbol = "__ftol", addend = 0, target = 0x41678c },
   { offset = 1252, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
   { offset = 1260, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
@@ -3476,7 +3476,7 @@ build = "bonuses"
 symbol = "_dxball_generate_bonus"
 target_address = 0x4138d0
 size = 1197
-boundary_evidence = "docs/EXACT_BONUSES.md"
+boundary_evidence = "docs/research/exact/EXACT_BONUSES.md"
 relocations = [
   { offset = 12, type = "REL32", symbol = "_dxball_random_range", addend = 0, target = 0x403b70 },
   { offset = 24, type = "DIR32", symbol = "_dxball_bonus_count", addend = 0, target = 0x43fa90 },
@@ -3574,7 +3574,7 @@ build = "bonuses"
 symbol = "_dxball_update_bonuses"
 target_address = 0x413e20
 size = 2168
-boundary_evidence = "docs/EXACT_BONUSES.md"
+boundary_evidence = "docs/research/exact/EXACT_BONUSES.md"
 relocations = [
   { offset = 10, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x43fac8 },
   { offset = 15, type = "REL32", symbol = "@dxball_begin_bonuses@4", addend = 0, target = 0x4146a0 },
@@ -3792,7 +3792,7 @@ build = "core"
 symbol = "_dxball_ignite_balls"
 target_address = 0x415630
 size = 64
-boundary_evidence = "docs/EXACT_BONUSES.md"
+boundary_evidence = "docs/research/exact/EXACT_BONUSES.md"
 relocations = [
   { offset = 7, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
   { offset = 12, type = "REL32", symbol = "@dxball_begin_balls@4", addend = 0, target = 0x4100f0 },
@@ -3806,7 +3806,7 @@ build = "core"
 symbol = "_dxball_retire_projectile"
 target_address = 0x4134b0
 size = 32
-boundary_evidence = "docs/EXACT_BONUSES.md"
+boundary_evidence = "docs/research/exact/EXACT_BONUSES.md"
 relocations = [
   { offset = 10, type = "DIR32", symbol = "_dxball_projectiles", addend = 0, target = 0x43a898 },
   { offset = 15, type = "REL32", symbol = "@dxball_remove_projectile@4", addend = 0, target = 0x4134d0 },
@@ -3818,7 +3818,7 @@ build = "gameplay"
 symbol = "_dxball_hit_board_tile"
 target_address = 0x411f40
 size = 1315
-boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+boundary_evidence = "docs/research/exact/EXACT_BRICK_POWERS.md"
 relocations = [
   { offset = 32, type = "REL32", symbol = "_dxball_screen_pan", addend = 0, target = 0x406400 },
   { offset = 58, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
@@ -3908,7 +3908,7 @@ build = "gameplay"
 symbol = "_dxball_spread_explosive_bricks"
 target_address = 0x4150a0
 size = 824
-boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+boundary_evidence = "docs/research/exact/EXACT_BRICK_POWERS.md"
 relocations = [
   { offset = 75, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
   { offset = 88, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x43faa8 },
@@ -3956,7 +3956,7 @@ build = "gameplay"
 symbol = "_dxball_soften_special_bricks"
 target_address = 0x415410
 size = 397
-boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+boundary_evidence = "docs/research/exact/EXACT_BRICK_POWERS.md"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_bonus_17_active", addend = 0, target = 0x43fae0 },
   { offset = 20, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
@@ -3981,7 +3981,7 @@ build = "gameplay"
 symbol = "_dxball_count_destructible_bricks"
 target_address = 0x415a90
 size = 149
-boundary_evidence = "docs/EXACT_BRICK_POWERS.md"
+boundary_evidence = "docs/research/exact/EXACT_BRICK_POWERS.md"
 relocations = [
   { offset = 82, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
   { offset = 110, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
@@ -3992,7 +3992,7 @@ build = "effects"
 symbol = "_dxball_step_explosion_effect"
 target_address = 0x412730
 size = 797
-boundary_evidence = "docs/EXACT_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_EFFECTS.md"
 relocations = [
   { offset = 10, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
   { offset = 18, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
@@ -4050,7 +4050,7 @@ build = "effects"
 symbol = "@dxball_remove_brick_effect@4"
 target_address = 0x412a50
 size = 220
-boundary_evidence = "docs/EXACT_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_EFFECTS.md"
 relocations = [
   { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
 ]
@@ -4060,7 +4060,7 @@ build = "effects"
 symbol = "_dxball_spawn_brick_effect"
 target_address = 0x412ba0
 size = 259
-boundary_evidence = "docs/EXACT_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_EFFECTS.md"
 relocations = [
   { offset = 7, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
   { offset = 12, type = "REL32", symbol = "@dxball_append_brick_effect@4", addend = 0, target = 0x412690 },
@@ -4090,7 +4090,7 @@ build = "effects"
 symbol = "_dxball_step_brick_effect"
 target_address = 0x412cb0
 size = 313
-boundary_evidence = "docs/EXACT_EFFECTS.md"
+boundary_evidence = "docs/research/exact/EXACT_EFFECTS.md"
 relocations = [
   { offset = 10, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
   { offset = 32, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
@@ -4116,4 +4116,82 @@ relocations = [
   { offset = 260, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
   { offset = 268, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
   { offset = 296, type = "REL32", symbol = "_dxball_restore_effect_region", addend = 0, target = 0x408a50 },
+]
+
+[candidates.begin-fire-effects]
+build = "core"
+symbol = "@dxball_begin_fire_effects@4"
+target_address = 0x410030
+size = 57
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+]
+
+[candidates.begin-projectiles]
+build = "core"
+symbol = "@dxball_begin_projectiles@4"
+target_address = 0x410130
+size = 57
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+]
+
+[candidates.advance-projectile]
+build = "core"
+symbol = "@dxball_advance_projectile@4"
+target_address = 0x410230
+size = 89
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+]
+
+[units.append-projectile]
+build = "core"
+symbol = "@dxball_append_projectile@4"
+target_address = 0x413410
+size = 146
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+  { offset = 15, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x416770 },
+  { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x417910 },
+]
+
+[candidates.remove-projectile]
+build = "core"
+symbol = "@dxball_remove_projectile@4"
+target_address = 0x4134d0
+size = 220
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+  { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
+]
+
+[units.append-fire-effect]
+build = "core"
+symbol = "@dxball_append_fire_effect@4"
+target_address = 0x413670
+size = 146
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+  { offset = 15, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x416770 },
+  { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x417910 },
+]
+
+[candidates.remove-fire-effect]
+build = "core"
+symbol = "@dxball_remove_fire_effect@4"
+target_address = 0x413790
+size = 220
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
+  { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
+]
+
+[candidates.advance-fire-effect]
+build = "core"
+symbol = "@dxball_advance_fire_effect@4"
+target_address = 0x413870
+size = 89
+boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
+relocations = [
 ]

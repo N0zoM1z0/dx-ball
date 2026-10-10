@@ -23,6 +23,10 @@ static unsigned particle_active;
 static DxBallGameplayOps *bound_brick_effect_ops;
 static void (*real_brick_effect)(DxBallInt, DxBallInt, DxBallByte, DxBallInt);
 static unsigned brick_effect_active;
+static DxBallGameplayOps *bound_new_ops;
+static void *(DXBALL_NEW_CALL *real_new)(DxBallUInt);
+static void *(*new_default)(size_t);
+static unsigned new_active;
 static DxBallRenderOps *bound_render;
 static DxBallFrameOps *bound_frame;
 static DxBallEffectOps *bound_effect;
@@ -116,6 +120,37 @@ void dxball_spawn_brick_effect(DxBallInt x, DxBallInt y, DxBallByte tile, DxBall
     brick_effect_active = 1;
     callback(x, y, tile, mode);
     brick_effect_active = 0;
+}
+
+/* The size_t table has its own genuine host adapter for the uint32_t API. */
+int dxball_test_bind_new_ops(DxBallGameplayOps *ops,
+                            void *(DXBALL_NEW_CALL *real)(DxBallUInt),
+                            void *(*default_allocate)(size_t))
+{
+    if (ops == NULL || real == NULL || default_allocate == NULL) return -1;
+    if (real == dxball_runtime_new ||
+        (void (*)(void))default_allocate == (void (*)(void))dxball_runtime_new) return -2;
+    bound_new_ops = ops;
+    real_new = real;
+    new_default = default_allocate;
+    return 0;
+}
+
+void *DXBALL_NEW_CALL dxball_runtime_new(DxBallUInt bytes)
+{
+    void *(*callback)(size_t) = NULL;
+    void *result;
+    if (real_new == NULL || real_new == dxball_runtime_new || new_active)
+        binding_failure("CoreNative runtime_new: missing real owner or recursive callback");
+    if (bound_new_ops != NULL) callback = bound_new_ops->allocate_node;
+    new_active = 1;
+    if (callback != NULL && callback != new_default &&
+        (void (*)(void))callback != (void (*)(void))dxball_runtime_new)
+        result = callback((size_t)bytes);
+    else
+        result = real_new(bytes);
+    new_active = 0;
+    return result;
 }
 
 /* Stage genuine current tables before inherited fixtures install callbacks. */

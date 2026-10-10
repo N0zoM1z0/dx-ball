@@ -1,0 +1,43 @@
+# Research notes
+
+These notes record the evidence and recovered behavior behind the source.
+Start with a subsystem you are following through [the game](../ARCHITECTURE.md).
+
+- [Runtime heap and allocation ownership](ALLOCATOR_OWNER.md)
+- [Bitmap loader and unwritten stack storage](BITMAP_INVESTIGATION.md)
+- [Compiler evidence and exact units](BUILD_MATCHING.md)
+- [Original-backed campaign input policy](CONTACT_POLICY.md)
+- [Main ball physics and gameplay frame](CORE_OWNER.md)
+- [Projectile and fire-effect queue entries](CORE_QUEUES.md)
+- [Runtime-library dependencies](CRT_PROVENANCE.md)
+- [Dependencies reached from maintained functions](DEPENDENCY_FRONTIER.md)
+- [Palette transitions and surface recovery](DEVICE_OWNER.md)
+- [Lightning and frame drawing](DISPLAY_OWNER.md)
+- [Editor controller evidence](EDITOR_OWNER.md)
+- [Explosion requests and brick animations](EFFECTS_OWNER.md)
+- [Embedded Windows resources](EMBEDDED_RESOURCES.md)
+- [Particles and bonus production through REA](ENTITIES_OWNER.md)
+- [Game-over and high-score evidence](GAMEOVER_OWNER.md)
+- [Board-hit gameplay owner](GAMEPLAY_OWNER.md)
+- [Menu and splash evidence](INTRO_OWNER.md)
+- [Target observations and reconstruction evidence](KNOWLEDGE_BASE.md)
+- [MDS music owner](MIDI_OWNER.md)
+- [Oracle matrix](ORACLES.md)
+- [Original-board integration](ORIGINAL_CAMPAIGN.md)
+- [Bounded origin audit](ORIGIN_AUDIT.md)
+- [Reviewing runtime origins](ORIGIN_REVIEW.md)
+- [Windows startup and input routing](PLATFORM_OWNER.md)
+- [Bonus application, paddle and ball dependencies](POWERUPS_OWNER.md)
+- [Software raster controllers](RASTER_INVESTIGATION.md)
+- [Sprite, font, PCX and palette owner](RESOURCE_OWNER.md)
+- [Software sprite rotation](ROTATION_INVESTIGATION.md)
+- [Actual round transition and focus diagnostics](ROUND_FOCUS_RUNTIME.md)
+- [Game lifecycle and mode dispatch](RUNTIME_OWNER.md)
+- [Persistent sound parameters](SOUND_CONTROLS.md)
+- [DirectSound controller and WAV loading](SOUND_OWNER.md)
+- [Startup and UI evidence](STARTUP_UI_OWNER.md)
+- [Terminal round and adjacent storage](TERMINAL_RUNTIME.md)
+- [CRT termination owner](TERMINATION_OWNER.md)
+- [Windows adapter integration](WINDOWS_ADAPTER.md)
+
+See [exact compiler comparisons](exact/README.md) for the restored function families.

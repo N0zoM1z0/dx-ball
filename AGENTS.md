@@ -1,54 +1,35 @@
-# DX-Ball reconstruction rules
+# Working on the reconstruction
 
-Reconstruct the hash-pinned English DX-Ball v1.07 executable in
-`config/target.toml`. Use REA through `scripts/rea` and its Ghidra provider for
-all new binary analysis. REA 4.1.0 and Ghidra 12.1.4 are pinned separately in
-`config/rea.lock.json`. Read `docs/REA.md` and the installed REA skill. Preserve
-REA Evidence IDs, limitations and snapshots under ignored `.analysis/rea/`.
-Never patch target bytes. The old Ghidra 12.1.3 database and wrapper are historical
-evidence retained for the existing inventory; do not use them for new queries.
+The goal is nearly 100% restoration of English DX-Ball v1.07 source and a
+rebuildable, playable game. Prioritize complete game flows and exact restoration.
+Keep the README short: explain the reconstruction approach and REA's role.
+Put operational detail in these instructions or `docs/agent/`.
 
-Use `scripts/repo-python` for repository Python commands. Read
-`docs/RE_HANDOFF.md`, `docs/RE_WORKFLOW.md`, and relevant owner evidence before
-changing reconstruction state. Run target, toolchain, and tracking checks first.
-Treat the 528 imported function extents as provisional, including embedded
-switch tables and fall-through. Check an entry against `config/functions.csv`.
+Read [the current handoff](docs/agent/HANDOFF.md),
+[workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing
+source. Use `config/functions.csv` to locate entries; reconcile imported extents
+against instructions, exits and embedded data.
 
-Keep mapping, source presence, semantic validation, and exact matching separate.
-Do not mechanically paste decompiler output into source. Preserve explicit ABI,
-data widths, ownership, and uncertainty. One maintained source is shared by the
-portable and legacy compiler builds. Do not add profile-selected layouts or
-function bodies, copied machine bytes, fake locals, padding, or assembly to force
-a match. A host dependency bridge does not prove the dependency implementation.
-
-Every exact claim needs a configured unit, a verified compiler, reconciled
-extent, explicit relocation mapping, and reproducible zero differences against
-the verified target. Never ignore or mask relocations or promote a percentage
-comparison to exactness. Rerun accepted units after shared-source changes.
-
-Keep private originals under `original/`, toolchains under `.tools/`, generated
-products under `build/`, decompiler experiments under `.analysis/`, and private
-databases under `ghidra-project/`. Never publish those files. Store reviewable
-observations in `docs/` and accepted names/origins in `config/`.
-
-Use one writable analysis/compiler session at a time
-and keep resource use modest: CMake builds use `--parallel 1`; project build and
-REA entry points limit Linux child processes to one allowed CPU. REA's Ghidra
-headless JVM uses a 512 MiB maximum heap. Use `scripts/resource_limits.py` rather
-than editing pinned compiler/provider binaries or launching competing sessions.
-Work in bounded families: collect evidence and reconstruct a related batch,
-then run its differential tests and cold replay at the stable checkpoint.
-Do not cold-replay after each individual function. Reuse completed reports
-when their complete inputs have not changed; replay affected units after a
-subsequent shared-input change. Commit stable checkpoints frequently. All commit subjects must be English
-and start with `gpt-6.1-sol: `. The user has authorized a public GitHub `dx-ball`
-repository and publishing these reconstruction sources.
-
-Run game/audio probes silently. REA's `capture-windows-probe.py` routes their
-PulseAudio playback to `dxball_reconstruction_silent`; use that capture entry
-point or the same `PULSE_SINK` for direct Wine probes. Keep game audio APIs active
-and leave default host output and unrelated applications unchanged.
-
-Write detailed English commit bodies for subsequent work: describe the actual
-REA operations/evidence used, resulting implementation, and validation. Mention
-REA naturally when relevant; keep the required subject prefix.
+- Run Python through `scripts/repo-python`.
+- Use `scripts/rea` and the installed REA skill for new binary analysis.
+  The project pins REA 4.1.0/Ghidra 12.1.4 in `config/rea.lock.json`.
+  Retain full responses, Evidence IDs and snapshots under `.analysis/rea/`.
+- Write natural typed source shared by portable and legacy builds. Preserve
+  ABI, widths, ownership and actual state writes. Do not force matches with
+  copied machine code, assembly, padding, fake locals or alternate profile bodies.
+- New exact claims require complete units, compiler inputs and explicit
+  relocation mappings. Compile once per stable family and compare the affected
+  units, including accepted units sharing those inputs.
+- Run only the minimum useful existing Oracle/replay or play check. Tests are
+  optional; do not run the full historical queue by default or repeat unchanged
+  checks. Remove redundant scripts and their obsolete references when appropriate.
+- Use one writable compiler/provider session, one allowed CPU, CMake
+  `--parallel 1`, and the 512 MiB Ghidra heap through the project entry points.
+  Route automated game/audio probes to `PULSE_SINK=dxball_reconstruction_silent`.
+- Keep originals in `original/`, tools in `.tools/`, products in `build/`,
+  raw evidence in `.analysis/`, and databases in `ghidra-project/`; these are private.
+  Publish recovered source, useful research notes and claim ledgers.
+- Update the affected ledgers and progress when claims change. Preserve unique
+  evidence before cleaning disposable products.
+- Public commits and pushes are authorized. Subjects are English and begin
+  `gpt-6.1-sol: `. Describe the source recovery, REA findings and actual validation.

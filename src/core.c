@@ -1,4 +1,5 @@
 #include "core.h"
+#include "allocator.h"
 #include "bonuses.h"
 #include "effects.h"
 #include "geometry.h"
@@ -27,84 +28,140 @@ DxBallFrameOps dxball_frame_ops = {
 DxBallInt DXBALL_FASTCALL dxball_append_projectile(DxBallProjectileList *list)
 {
     DxBallProjectileNode *node;
-    node = (DxBallProjectileNode *)dxball_allocate_node(sizeof(DxBallProjectileNode));
-    if (node == NULL) exit(1);
-    node->previous = list->last;
-    node->next = NULL;
-    if (list->last != NULL) list->last->next = node;
-    else list->first = node;
-    list->last = list->current = node;
+    node = (DxBallProjectileNode *)dxball_runtime_new(sizeof(DxBallProjectileNode));
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) {
+            list->last->next = node;
+        } else {
+            list->first = node;
+        }
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
     return 1;
 }
 DxBallInt DXBALL_FASTCALL dxball_begin_projectiles(DxBallProjectileList *list)
 {
     list->current = list->first;
-    return list->current != NULL;
+    if (list->current != NULL) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 DxBallInt DXBALL_FASTCALL dxball_advance_projectile(DxBallProjectileList *list)
 {
-    if (list->current == NULL) return 0;
-    list->current = list->current->next;
-    if (list->current != NULL) return 1;
-    list->current = list->first;
-    return 0;
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        } else {
+            return 1;
+        }
+    } else {
+        return 0;
+    }
 }
 DxBallInt DXBALL_FASTCALL dxball_remove_projectile(DxBallProjectileList *list)
 {
     DxBallProjectileNode *node;
-    node = list->current;
-    if (node == NULL) return 0;
-    if (node->previous != NULL) node->previous->next = node->next;
-    if (node->next != NULL) {
-        node->next->previous = node->previous;
-        list->current = node->next;
-    } else list->current = node->previous;
-    if (list->first == node) list->first = node->next;
-    if (list->last == node) list->last = node->previous;
-    dxball_deallocate_node(node);
-    return 1;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) {
+            node->previous->next = node->next;
+        }
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) {
+            list->first = node->next;
+        }
+        if (list->last == node) {
+            list->last = node->previous;
+        }
+        dxball_runtime_delete(node);
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 
 DxBallInt DXBALL_FASTCALL dxball_append_fire_effect(DxBallFireEffectList *list)
 {
     DxBallFireEffectNode *node;
-    node = (DxBallFireEffectNode *)dxball_allocate_node(sizeof(DxBallFireEffectNode));
-    if (node == NULL) exit(1);
-    node->previous = list->last;
-    node->next = NULL;
-    if (list->last != NULL) list->last->next = node;
-    else list->first = node;
-    list->last = list->current = node;
+    node = (DxBallFireEffectNode *)dxball_runtime_new(sizeof(DxBallFireEffectNode));
+    if (node != NULL) {
+        node->previous = list->last;
+        node->next = NULL;
+        if (list->last != NULL) {
+            list->last->next = node;
+        } else {
+            list->first = node;
+        }
+        list->last = node;
+        list->current = list->last;
+    } else {
+        exit(1);
+    }
     return 1;
 }
 DxBallInt DXBALL_FASTCALL dxball_begin_fire_effects(DxBallFireEffectList *list)
 {
     list->current = list->first;
-    return list->current != NULL;
+    if (list->current != NULL) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 DxBallInt DXBALL_FASTCALL dxball_advance_fire_effect(DxBallFireEffectList *list)
 {
-    if (list->current == NULL) return 0;
-    list->current = list->current->next;
-    if (list->current != NULL) return 1;
-    list->current = list->first;
-    return 0;
+    if (list->current != NULL) {
+        list->current = list->current->next;
+        if (list->current == NULL) {
+            list->current = list->first;
+            return 0;
+        } else {
+            return 1;
+        }
+    } else {
+        return 0;
+    }
 }
 DxBallInt DXBALL_FASTCALL dxball_remove_fire_effect(DxBallFireEffectList *list)
 {
     DxBallFireEffectNode *node;
-    node = list->current;
-    if (node == NULL) return 0;
-    if (node->previous != NULL) node->previous->next = node->next;
-    if (node->next != NULL) {
-        node->next->previous = node->previous;
-        list->current = node->next;
-    } else list->current = node->previous;
-    if (list->first == node) list->first = node->next;
-    if (list->last == node) list->last = node->previous;
-    dxball_deallocate_node(node);
-    return 1;
+    if (list->current != NULL) {
+        node = list->current;
+        if (node->previous != NULL) {
+            node->previous->next = node->next;
+        }
+        if (node->next != NULL) {
+            node->next->previous = node->previous;
+            list->current = node->next;
+        } else {
+            list->current = node->previous;
+        }
+        if (list->first == node) {
+            list->first = node->next;
+        }
+        if (list->last == node) {
+            list->last = node->previous;
+        }
+        dxball_runtime_delete(node);
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 DxBallInt dxball_retire_projectile(void)

@@ -220,6 +220,19 @@ class _Image:
         self.particle_table = (C.c_void_p * 6).in_dll(self.lib, 'dxball_gameplay_ops')
         self.effect_table = (C.c_void_p * 5).in_dll(self.lib, 'dxball_effect_ops')
         self.render_table = (C.c_void_p * 3).in_dll(self.lib, 'dxball_render_ops')
+        # Allocation has an actual size_t adapter in slot 0; its recovered
+        # uint32_t entry is interposed only at genuine production references.
+        self.new_default = self.particle_table[0]
+        adapter = C.cast(self.lib.dxball_new_bytes, C.c_void_p).value
+        real = C.cast(self.lib.dxball_runtime_new, C.c_void_p).value
+        intercepted = C.cast(_shim.dxball_runtime_new, C.c_void_p).value
+        if (self.new_default != adapter or not adapter or
+                adapter in (real, intercepted) or
+                _function_owner(adapter) != self.path.resolve()):
+            raise RuntimeError('CoreNative allocation default is not its genuine size_t adapter')
+        if real == intercepted or _function_owner(real) != self.path.resolve():
+            raise RuntimeError('CoreNative new body does not belong to its copied image')
+        self.function_addresses['dxball_runtime_new'] = real
 
 
 def fixture_image(library):
@@ -238,6 +251,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_particle_ops.restype = C.c_int
         _shim.dxball_test_bind_brick_effect_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_brick_effect_ops.restype = C.c_int
+        _shim.dxball_test_bind_new_ops.argtypes = [C.c_void_p] * 3
+        _shim.dxball_test_bind_new_ops.restype = C.c_int
         _shim.dxball_test_bind_effect_render_ops.argtypes = [C.c_void_p] * 6
         _shim.dxball_test_bind_effect_render_ops.restype = C.c_int
         _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
@@ -325,6 +340,20 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_effect_render_ops(*addresses)
     if result != 0:
         raise RuntimeError('CoreNative effect/render binding rejected: null or recursive real owner')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_gameplay_ops'))
+    if actual != C.addressof(image.particle_table):
+        raise RuntimeError('CoreNative allocation table does not belong to its copied image')
+    real = C.cast(image.lib.dxball_runtime_new, C.c_void_p).value
+    adapter = C.cast(image.lib.dxball_new_bytes, C.c_void_p).value
+    if (real != image.function_addresses['dxball_runtime_new'] or
+            real == C.cast(_shim.dxball_runtime_new, C.c_void_p).value or
+            _function_owner(real) != image.path.resolve() or
+            adapter != image.new_default or
+            _function_owner(adapter) != image.path.resolve()):
+        raise RuntimeError('CoreNative allocation body or adapter changed owner')
+    result = _shim.dxball_test_bind_new_ops(actual, real, adapter)
+    if result != 0:
+        raise RuntimeError('CoreNative allocation binding rejected: null or recursive real owner')
     return image
 
 

@@ -1,7 +1,7 @@
 {
   "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
   "source": "src/raster.cpp",
-  "observations": "docs/ORIGIN_AUDIT.md",
+  "observations": "docs/research/ORIGIN_AUDIT.md",
   "entries": [
     {
       "address": "0x0040B196",

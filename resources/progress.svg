@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
 <title id="title">DX-Ball reconstruction progress</title>
-<desc id="desc">283 source-present functions, 116 exact functions, out of 528 provisional candidates.</desc>
+<desc id="desc">283 source-present functions, 118 exact functions, out of 528 provisional candidates.</desc>
 <rect width="900" height="460" rx="20" fill="#101722"/>
 <g font-family="sans-serif">
 <text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  RECONSTRUCTION</text>
 <text x="34" y="75" fill="#9baec8" font-size="14">REA showcase · English v1.07 · Windows 95 · Ghidra + VC4.0</text>
-<text x="34" y="109" fill="#4ed8b7" font-size="16">116 exact functions · 17937 bytes</text>
+<text x="34" y="109" fill="#4ed8b7" font-size="16">118 exact functions · 18229 bytes</text>
 <text x="470" y="109" fill="#f5bd57" font-size="16">283 source-present · 247 scoped semantic</text>
 <rect x="34" y="132" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="59" y="132" width="22" height="10" rx="2" fill="#f5bd57"/>
@@ -271,11 +271,11 @@
 <rect x="784" y="230" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="809" y="230" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="834" y="230" width="22" height="10" rx="2" fill="#4ed8b7"/>
-<rect x="34" y="244" width="22" height="10" rx="2" fill="#f5bd57"/>
+<rect x="34" y="244" width="22" height="10" rx="2" fill="#4ed8b7"/>
 <rect x="59" y="244" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="84" y="244" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="109" y="244" width="22" height="10" rx="2" fill="#4ed8b7"/>
-<rect x="134" y="244" width="22" height="10" rx="2" fill="#f5bd57"/>
+<rect x="134" y="244" width="22" height="10" rx="2" fill="#4ed8b7"/>
 <rect x="159" y="244" width="22" height="10" rx="2" fill="#4ed8b7"/>
 <rect x="184" y="244" width="22" height="10" rx="2" fill="#f5bd57"/>
 <rect x="209" y="244" width="22" height="10" rx="2" fill="#f5bd57"/>
@@ -535,6 +535,6 @@
 <rect x="784" y="342" width="22" height="10" rx="2" fill="#29384c"/>
 <rect x="809" y="342" width="22" height="10" rx="2" fill="#29384c"/>
 <rect x="834" y="342" width="22" height="10" rx="2" fill="#29384c"/>
-<text x="34" y="388" fill="#9baec8" font-size="13">Each brick is one provisional function candidate, including unclassified CRT/library code.</text>
-<text x="34" y="412" fill="#9baec8" font-size="13">The authored-function denominator is still under review. Whole-game fidelity: unverified.</text>
+<text x="34" y="388" fill="#9baec8" font-size="13">Green: exact compiler match · Amber: reconstructed source · Dark: remaining candidates</text>
+<text x="34" y="412" fill="#9baec8" font-size="13">Goal: recover the game source, rebuild it, and play.</text>
 </g></svg>
