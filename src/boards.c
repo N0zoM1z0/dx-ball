@@ -14,7 +14,7 @@ DxBallInt dxball_board_index;
 DxBallInt dxball_display_mode;
 FILE *dxball_board_file;
 DxBallSurface dxball_active_surface;
-DxBallSurface dxball_board_surface;
+struct DxBallDDSurface *dxball_board_surface;
 DxBallSurface dxball_background_surface;
 DxBallRenderOps dxball_render_ops = { dxball_draw_sprite, dxball_restore_board_region, dxball_invalidate_region };
 
@@ -137,7 +137,7 @@ void dxball_draw_board_tile(DxBallInt x, DxBallInt y, DxBallInt defer_update)
 void dxball_draw_board(DxBallInt defer_update)
 {
     DxBallInt x, y;
-    dxball_select_surface(dxball_board_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     for (x = 0; x < DXBALL_BOARD_WIDTH; ++x) {
         for (y = 0; y < DXBALL_BOARD_HEIGHT; ++y) {
             dxball_draw_board_tile(x, y, defer_update);

@@ -219,11 +219,11 @@ void dxball_step_brick_effect(void)
     if (dxball_brick_effects.current->period <= dxball_brick_effects.current->ticks) {
         --dxball_brick_effects.current->frames;
         if (dxball_brick_effects.current->frames < 1) {
-            dxball_select_surface(dxball_board_surface);
+            dxball_select_surface((DxBallSurface)dxball_board_surface);
             dxball_draw_board_tile(dxball_brick_effects.current->x, dxball_brick_effects.current->y, 0);
             dxball_remove_brick_effect(&dxball_brick_effects);
         } else {
-            dxball_select_surface(dxball_board_surface);
+            dxball_select_surface((DxBallSurface)dxball_board_surface);
             dxball_draw_board_tile(dxball_brick_effects.current->x, dxball_brick_effects.current->y, 0);
             dxball_draw_keyed_sprite(dxball_brick_effects.current->sprite, x, y);
             ++dxball_brick_effects.current->sprite;

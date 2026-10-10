@@ -37,6 +37,7 @@ add_library(dxball_core SHARED
 
     # Platform, screens, and audio
     src/platform.c
+    src/platform_host.c
     src/startup.c
     src/ui.c
     src/intro.c

@@ -28,7 +28,8 @@ extern DxBallInt dxball_board_index;
 extern DxBallInt dxball_display_mode;
 extern FILE *dxball_board_file;
 extern DxBallSurface dxball_active_surface;
-extern DxBallSurface dxball_board_surface;
+struct DxBallDDSurface;
+extern struct DxBallDDSurface *dxball_board_surface;
 extern DxBallSurface dxball_background_surface;
 extern DxBallRenderOps dxball_render_ops;
 

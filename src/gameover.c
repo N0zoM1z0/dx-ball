@@ -72,8 +72,8 @@ void dxball_initialize_game_over(void)
     dxball_runtime_ops.load_sprite_bank(1, 0, "sysfont.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
     dxball_platform_ops.load_music("acker-gs.mds", 1);
-    dxball_runtime_ops.bind_board_surface(dxball_board_surface);
-    dxball_runtime_ops.bind_display_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
+    dxball_runtime_ops.bind_board_surface((DxBallSurface)dxball_board_surface);
+    dxball_runtime_ops.bind_display_surface((DxBallSurface)(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface));
     dxball_read_scores();
     dxball_score_name[0] = 0;
     dxball_score_name_length = 0; dxball_score_blink_tick = 0;
@@ -86,11 +86,11 @@ void dxball_initialize_game_over(void)
 void dxball_redraw_game_over(void)
 {
     char value[100];
-    dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-    if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface(dxball_secondary_surface, 0);
-    dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-    copy_scene(dxball_board_surface, dxball_background_surface);
-    dxball_select_surface(dxball_board_surface);
+    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
+    if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface((DxBallSurface)dxball_secondary_surface, 0);
+    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_board_surface, 0);
+    copy_scene((DxBallSurface)dxball_board_surface, dxball_background_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     if (dxball_show_high_scores == 1) dxball_draw_high_scores();
     else if (dxball_entering_score_name == 1) {
         dxball_draw_centered_text(320, 170, 22, "You have a high score!");
@@ -100,8 +100,8 @@ void dxball_redraw_game_over(void)
         sprintf(value, "%u", (DxBallUInt)dxball_score);
         dxball_draw_centered_text(320, 200, (DxBallInt)strlen(value), value);
     }
-    copy_scene(dxball_primary_surface, dxball_board_surface);
-    if (dxball_draw_to_primary == 0) copy_scene(dxball_secondary_surface, dxball_board_surface);
+    copy_scene((DxBallSurface)dxball_primary_surface, (DxBallSurface)dxball_board_surface);
+    if (dxball_draw_to_primary == 0) copy_scene((DxBallSurface)dxball_secondary_surface, (DxBallSurface)dxball_board_surface);
 }
 
 void dxball_game_over_frame(void)
@@ -119,7 +119,7 @@ void dxball_game_over_frame(void)
         name_region.top = 210;
         name_region.right = 639;
         name_region.bottom = 234;
-        dxball_select_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
+        dxball_select_surface((DxBallSurface)(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface));
         count = (DxBallInt)strlen(dxball_score_name);
         dxball_draw_text(70, 230, count, dxball_score_name);
         if (dxball_score_cursor_visible == 1)
@@ -184,9 +184,9 @@ void dxball_dispose_game_over(DxBallInt fade)
 {
     if (fade != 0) {
         dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-        dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-        if (dxball_draw_to_primary == 0) copy_scene(dxball_secondary_surface, dxball_board_surface);
+        dxball_runtime_ops.clear_surface((DxBallSurface)dxball_board_surface, 0);
+        dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
+        if (dxball_draw_to_primary == 0) copy_scene((DxBallSurface)dxball_secondary_surface, (DxBallSurface)dxball_board_surface);
         dxball_runtime_ops.release_sprite_banks(); dxball_runtime_ops.release_sounds();
         dxball_platform_ops.close_music();
     }

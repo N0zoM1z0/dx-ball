@@ -184,11 +184,31 @@ class PlatformNative(Boundaries,DeviceNative):
             self.platform_callbacks.append(cb);table[slot]=C.cast(cb,C.c_void_p).value
         shared_cells={'open_semaphore':'dxball_window_open_semaphore',
             'create_semaphore':'dxball_window_create_semaphore',
-            'close_handle':'dxball_file_close'}
-        remaining=[api for api in APIS if api[0] not in shared_cells]
-        table=(C.c_void_p*len(remaining)).in_dll(self.lib,'dxball_window_api')
-        for slot,(name,_,result,kinds) in enumerate(remaining):
-            bind(table,slot,result,kinds,lambda *a,name=name:self.boundary(name,a))
+            'close_handle':'dxball_file_close',
+            'load_icon':'dxball_window_load_icon',
+            'load_cursor':'dxball_window_load_cursor',
+            'stock_object':'dxball_window_stock_object',
+            'register_class':'dxball_window_register_class',
+            'create_window_ex':'dxball_window_create_window_ex',
+            'show_window':'dxball_window_show_window',
+            'update_window':'dxball_window_update_window',
+            'set_focus':'dxball_window_set_focus',
+            'destroy_window':'dxball_window_destroy_window',
+            'message_box':'dxball_window_message_box',
+            'direct_draw_create':'dxball_draw_factory_backend',
+            'get_cursor_pos':'dxball_window_get_cursor_pos',
+            'peek_message':'dxball_window_peek_message',
+            'wait_message':'dxball_window_wait_message',
+            'get_message':'dxball_window_get_message',
+            'translate_message':'dxball_window_translate_message',
+            'dispatch_message':'dxball_window_dispatch_message',
+            'default_window_proc':'dxball_window_default_window_proc',
+            'post_message':'dxball_window_post_message',
+            'post_quit_message':'dxball_window_post_quit_message',
+            'set_cursor':'dxball_window_set_cursor',
+            'set_capture':'dxball_window_set_capture',
+            'release_capture':'dxball_window_release_capture',
+            'get_version_ex':'dxball_window_get_version_ex'}
         for name,_,result,kinds in APIS:
             if name in shared_cells:
                 cell=(C.c_void_p*1).in_dll(self.lib,shared_cells[name])

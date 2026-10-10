@@ -59,34 +59,36 @@ typedef struct DxBallDrawCaps {
 
 /* Import boundary. A Windows adapter must bind these APIs before WinMain.
    Native oracles supply the same API contracts with controlled results. */
-typedef struct DxBallWindowApi {
-    DxBallHandle (DXBALL_DDCALL *load_icon)(DxBallHandle, DxBallHandle);
-    DxBallHandle (DXBALL_DDCALL *load_cursor)(DxBallHandle, DxBallHandle);
-    DxBallHandle (DXBALL_DDCALL *stock_object)(DxBallInt);
-    DxBallUInt (DXBALL_DDCALL *register_class)(const DxBallWindowClass *);
-    DxBallHandle (DXBALL_DDCALL *create_window_ex)(DxBallUInt, const char *, const char *,
+extern DxBallInt (DXBALL_DDCALL *dxball_window_get_cursor_pos)(DxBallPoint *);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_peek_message)(DxBallMessage *, DxBallHandle, DxBallUInt, DxBallUInt, DxBallUInt);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_wait_message)(void);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_get_message)(DxBallMessage *, DxBallHandle, DxBallUInt, DxBallUInt);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_translate_message)(const DxBallMessage *);
+extern DxBallWindowResult (DXBALL_DDCALL *dxball_window_dispatch_message)(const DxBallMessage *);
+extern DxBallWindowResult (DXBALL_DDCALL *dxball_window_default_window_proc)(DxBallHandle, DxBallUInt, DxBallHandle, DxBallWindowResult);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_post_message)(DxBallHandle, DxBallUInt, DxBallHandle, DxBallWindowResult);
+extern void (DXBALL_DDCALL *dxball_window_post_quit_message)(DxBallInt);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_set_cursor)(DxBallHandle);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_set_capture)(DxBallHandle);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_release_capture)(void);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_get_version_ex)(DxBallVersionInfo *);
+
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_load_icon)(DxBallHandle, DxBallHandle);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_load_cursor)(DxBallHandle, DxBallHandle);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_stock_object)(DxBallInt);
+extern DxBallUInt (DXBALL_DDCALL *dxball_window_register_class)(const DxBallWindowClass *);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_create_window_ex)(DxBallUInt, const char *, const char *,
         DxBallUInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt,
         DxBallHandle, DxBallHandle, DxBallHandle, void *);
-    DxBallInt (DXBALL_DDCALL *show_window)(DxBallHandle, DxBallInt);
-    DxBallInt (DXBALL_DDCALL *update_window)(DxBallHandle);
-    DxBallHandle (DXBALL_DDCALL *set_focus)(DxBallHandle);
-    DxBallInt (DXBALL_DDCALL *destroy_window)(DxBallHandle);
-    DxBallInt (DXBALL_DDCALL *message_box)(DxBallHandle, const char *, const char *, DxBallUInt);
-    DxBallInt (DXBALL_DDCALL *direct_draw_create)(void *, DxBallDDraw **, void *);
-    DxBallInt (DXBALL_DDCALL *get_cursor_pos)(DxBallPoint *);
-    DxBallInt (DXBALL_DDCALL *peek_message)(DxBallMessage *, DxBallHandle, DxBallUInt, DxBallUInt, DxBallUInt);
-    DxBallInt (DXBALL_DDCALL *wait_message)(void);
-    DxBallInt (DXBALL_DDCALL *get_message)(DxBallMessage *, DxBallHandle, DxBallUInt, DxBallUInt);
-    DxBallInt (DXBALL_DDCALL *translate_message)(const DxBallMessage *);
-    DxBallWindowResult (DXBALL_DDCALL *dispatch_message)(const DxBallMessage *);
-    DxBallWindowResult (DXBALL_DDCALL *default_window_proc)(DxBallHandle, DxBallUInt, DxBallHandle, DxBallWindowResult);
-    DxBallInt (DXBALL_DDCALL *post_message)(DxBallHandle, DxBallUInt, DxBallHandle, DxBallWindowResult);
-    void (DXBALL_DDCALL *post_quit_message)(DxBallInt);
-    DxBallHandle (DXBALL_DDCALL *set_cursor)(DxBallHandle);
-    DxBallHandle (DXBALL_DDCALL *set_capture)(DxBallHandle);
-    DxBallInt (DXBALL_DDCALL *release_capture)(void);
-    DxBallInt (DXBALL_DDCALL *get_version_ex)(DxBallVersionInfo *);
-} DxBallWindowApi;
+extern DxBallInt (DXBALL_DDCALL *dxball_window_show_window)(DxBallHandle, DxBallInt);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_update_window)(DxBallHandle);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_set_focus)(DxBallHandle);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_destroy_window)(DxBallHandle);
+extern DxBallInt (DXBALL_DDCALL *dxball_window_message_box)(DxBallHandle, const char *, const char *, DxBallUInt);
+
+typedef DxBallInt (DXBALL_DDCALL *DxBallDrawFactory)(void *, DxBallDDraw **, void *);
+extern DxBallDrawFactory dxball_draw_factory_backend;
+DxBallInt DXBALL_DDCALL dxball_direct_draw_create(void *, DxBallDDraw **, void *);
 
 extern DxBallHandle (DXBALL_DDCALL *dxball_window_open_semaphore)(DxBallUInt,
     DxBallInt, const char *);
@@ -112,7 +114,6 @@ typedef struct DxBallKeyModeOps {
     void (*mode4)(void);
 } DxBallKeyModeOps;
 
-extern DxBallWindowApi dxball_window_api;
 extern DxBallPlatformOps dxball_platform_ops;
 extern DxBallKeyModeOps dxball_key_mode_ops;
 extern DxBallHandle dxball_main_window, dxball_instance_semaphore;

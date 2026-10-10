@@ -47,7 +47,7 @@ static void (*real_recover_surfaces)(void);
 static unsigned recover_surfaces_active;
 static unsigned sound_update_active;
 static void (*platform_music_default)(const char *, DxBallInt);
-static unsigned music_load_active;
+static unsigned music_load_active, prepare_sound_active;
 static unsigned stop_active, play_active, random_active;
 static unsigned invalidate_active, effect_active;
 static unsigned palette_load_active, palette_active, clear_active, reset_active;
@@ -372,6 +372,19 @@ int dxball_test_bind_platform_ops(DxBallPlatformOps *ops,
     bound_platform = ops;
     platform_music_default = default_music;
     return 0;
+}
+
+/* The startup caller uses this real sound entry; PlatformNative supplies its
+   existing controlled audio boundary through the current PlatformOps slot. */
+void dxball_prepare_sound(DxBallHandle window)
+{
+    if (bound_platform == NULL || bound_platform->prepare_sound == NULL)
+        binding_failure("CoreNative prepare_sound: fixture table is unbound or callback is null");
+    if (prepare_sound_active || bound_platform->prepare_sound == dxball_prepare_sound)
+        binding_failure("CoreNative prepare_sound: recursive or unreplaced platform callback");
+    prepare_sound_active = 1;
+    bound_platform->prepare_sound(window);
+    prepare_sound_active = 0;
 }
 
 DxBallInt dxball_load_music(const char *path, DxBallInt play)

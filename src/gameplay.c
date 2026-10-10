@@ -37,7 +37,7 @@ void dxball_spread_explosive_bricks(void)
             }
         }
     }
-    dxball_select_surface(dxball_board_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     if (dxball_begin_explosions(&dxball_explosive_sources)) {
         do {
             x = dxball_explosive_sources.current->x;
@@ -76,7 +76,7 @@ void dxball_soften_special_bricks(void)
 {
     DxBallInt x, y;
     dxball_bonus_17_active = 0;
-    dxball_select_surface(dxball_board_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     for (x = 0; x < 20; ++x) {
         for (y = 0; y < 20; ++y) {
             if ((signed char)dxball_board_tiles[x + y * 20] == 2 ||
@@ -238,7 +238,7 @@ DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)
     default:
         dxball_board_tiles[x + y * 20] = 0;
     }
-    dxball_select_surface(dxball_board_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     dxball_draw_board_tile(x, y, 0);
     return score_hit;
 }

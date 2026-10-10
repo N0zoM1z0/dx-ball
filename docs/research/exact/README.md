@@ -6,6 +6,7 @@ recovered implementation and complete compiler comparison.
 - [MDS loading and event conversion](EXACT_MDS_PARSER.md)
 - [Bitmap records and shared local-memory imports](EXACT_BITMAP_LOADER.md)
 - [Window instance-lock lifetime](EXACT_WINDOW_INSTANCE.md)
+- [Complete window initialization and import ownership](EXACT_WINDOW_INITIALIZATION.md)
 - [MIDI imports and C++ music ownership](EXACT_MIDI_IMPORTS.md)
 - [MIDI stream and music controls](EXACT_MIDI_LIFECYCLE.md)
 - [Sound initialization and WAV loading](EXACT_SOUND_DEPENDENCIES.md)

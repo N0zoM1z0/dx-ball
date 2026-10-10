@@ -59,7 +59,7 @@ void dxball_initialize_sound(DxBallHandle window)
                 retry = 0;
                 break;
             case (DxBallInt)0x8878000aUL:
-                response = dxball_window_api.message_box(window,
+                response = dxball_window_message_box(window,
                     occupied_message, "DX-Ball", 0x42);
                 switch (response) {
                 case 3:
@@ -74,7 +74,7 @@ void dxball_initialize_sound(DxBallHandle window)
                 }
                 break;
             case (DxBallInt)0x88780078UL:
-                response = dxball_window_api.message_box(window,
+                response = dxball_window_message_box(window,
                     no_card_message, "DX-Ball", 0x24);
                 switch (response) {
                 case 6:
@@ -90,7 +90,7 @@ void dxball_initialize_sound(DxBallHandle window)
                 }
                 break;
             default:
-                response = dxball_window_api.message_box(window,
+                response = dxball_window_message_box(window,
                     create_message, "DX-Ball", 0x24);
                 switch (response) {
                 case 6:
@@ -119,7 +119,7 @@ void dxball_initialize_sound(DxBallHandle window)
         if (result != 0) {
             switch (result) {
             default:
-                response = dxball_window_api.message_box(window,
+                response = dxball_window_message_box(window,
                     cooperate_message, "DX-Ball", 0x24);
                 switch (response) {
                 case 6:
@@ -155,7 +155,7 @@ void dxball_initialize_sound(DxBallHandle window)
         }
     } else {
         if (result != 0) {
-            response = dxball_window_api.message_box(window,
+            response = dxball_window_message_box(window,
                 primary_create_message, "DX-Ball", 0x24);
             switch (response) {
             case 6:
@@ -192,7 +192,7 @@ void dxball_initialize_sound(DxBallHandle window)
         }
     } else {
         if (result != 0) {
-            response = dxball_window_api.message_box(window,
+            response = dxball_window_message_box(window,
                 primary_play_message, "DX-Ball", 0x24);
             switch (response) {
             case 6:

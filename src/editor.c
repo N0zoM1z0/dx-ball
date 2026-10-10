@@ -52,7 +52,7 @@ DxBallInt dxball_find_hit_region(DxBallInt x, DxBallInt y)
 void dxball_draw_editor_choices(void)
 {
     DxBallInt tile, x = 20, y = 385;
-    dxball_select_surface(dxball_board_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     for (tile = 1; tile < 23; ++tile) {
         dxball_draw_sprite(dxball_board_tile_sprite(tile), x, y);
         dxball_set_hit_region(tile, x, y, x + 30, y + 15);
@@ -89,8 +89,8 @@ void dxball_initialize_editor(void)
     dxball_runtime_ops.load_sprite_bank(1, 1, "sfont.sbk");
     dxball_runtime_ops.load_sprite_bank(2, 1, "mainmenu.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
-    dxball_runtime_ops.bind_board_surface(dxball_board_surface);
-    dxball_runtime_ops.bind_display_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
+    dxball_runtime_ops.bind_board_surface((DxBallSurface)dxball_board_surface);
+    dxball_runtime_ops.bind_display_surface((DxBallSurface)(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface));
     dxball_editor_selected_tile = 1; dxball_initialize_hit_regions(23);
     dxball_board_index = 0; dxball_load_editor_board(0);
     dxball_redraw_mode(); dxball_runtime_ops.palette_transition(1, 6, 0, 255, 1);
@@ -101,9 +101,9 @@ void dxball_redraw_editor(void)
     DxBallDDSurface *board = (DxBallDDSurface *)dxball_board_surface;
     DxBallDDSurface *primary = (DxBallDDSurface *)dxball_primary_surface;
     DxBallDDSurface *secondary = (DxBallDDSurface *)dxball_secondary_surface;
-    dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-    if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface(dxball_secondary_surface, 0);
-    dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
+    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
+    if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface((DxBallSurface)dxball_secondary_surface, 0);
+    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_board_surface, 0);
     board->vtable->blt(board, &rect, (DxBallDDSurface *)dxball_background_surface, &rect, 0x1000000, NULL);
     dxball_draw_board(0); dxball_draw_editor_choices(); dxball_draw_editor_status();
     primary->vtable->blt(primary, &rect, board, &rect, 0x1000000, NULL);
@@ -179,7 +179,7 @@ void dxball_dispose_editor(DxBallInt fade)
 {
     if (fade != 0) {
         dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
+        dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
         dxball_runtime_ops.release_sprite_banks(); dxball_runtime_ops.release_sounds();
         dxball_platform_ops.close_music();
     }

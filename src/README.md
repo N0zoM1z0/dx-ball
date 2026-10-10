@@ -7,7 +7,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | Start here | Responsibility |
 | --- | --- |
 | [windows_entry.c](windows_entry.c), [windows_adapter.c](windows_adapter.c) | Windows entry and bindings to OS, graphics, and audio services |
-| [platform.c](platform.c) | Instance lock, window creation, message loop, input, focus, and display setup |
+| [platform.c](platform.c), [platform_host.c](platform_host.c) | Instance lock, window creation, message loop, input, display setup, and DirectDraw factory transport |
 | [startup.c](startup.c) | Working resources, score files, RNG, and sprite-bank cleanup |
 | [runtime.c](runtime.c) | Five-mode dispatch, game lifecycle, clock, paddle drawing, and score |
 | [core.c](core.c) | Gameplay frame, ball/projectile movement, firing, and entity queues |
@@ -39,6 +39,6 @@ the host, while game integers stay 32-bit. C++ is used for the fixed-point
 class and global list construction; the game-facing interfaces retain C linkage.
 
 To trace a feature, follow its frame call into the owning module, then inspect
-that module's header and dependencies. `*Ops` and `*Api` tables provide service
+that module's header and dependencies. Independent import cells and `*Ops`/`*Api` tables provide service
 bindings for the Windows adapter and host tools. Definitions such as
 `/* FUNCTION: DXBALL 0x... */` connect reconstructed routines to original addresses.

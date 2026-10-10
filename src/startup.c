@@ -100,7 +100,7 @@ void dxball_initialize_device_state(void)
     dxball_end_requested = 0; dxball_display_mode = 4; dxball_return_to_menu = 4;
     dxball_initialize_scores(); dxball_read_scores();
     dxball_startup_load_boards(dxball_board_filename); dxball_seed_random();
-    dxball_clear_surface(dxball_primary_surface, 0); dxball_initialize_palette();
+    dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0); dxball_initialize_palette();
     start = dxball_current_time();
     for (i = 0; i < 32; ++i)
         dxball_direct_draw->vtable->wait_vertical_blank(dxball_direct_draw, 1, NULL);

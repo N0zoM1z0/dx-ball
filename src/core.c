@@ -283,7 +283,7 @@ void dxball_drop_bricks(void)
         ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
             (DxBallDDSurface *)dxball_board_surface, &rect, (DxBallDDSurface *)dxball_background_surface,
             &rect, 0x01000000, NULL);
-        dxball_select_surface(dxball_board_surface);
+        dxball_select_surface((DxBallSurface)dxball_board_surface);
         for (redraw_column = 0; redraw_column < 20; ++redraw_column) {
             for (redraw_row = 0; redraw_row < 20; ++redraw_row) {
                 if ((signed char)dxball_board_tiles[redraw_column + redraw_row * 20] != 0)

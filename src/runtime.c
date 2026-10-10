@@ -37,7 +37,7 @@ DxBallInt dxball_lightning_x, dxball_lightning_y, dxball_lightning_frames;
 DxBallInt dxball_device_reset_requested = 1;
 DxBallInt dxball_surface_restore_requested;
 DxBallInt dxball_display_buffer_count = 1;
-DxBallSurface dxball_primary_surface, dxball_secondary_surface;
+DxBallDDSurface *dxball_primary_surface, *dxball_secondary_surface;
 
 DxBallUInt dxball_current_time(void)
 {
@@ -118,7 +118,7 @@ void dxball_draw_score(void)
     ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
         (DxBallDDSurface *)dxball_board_surface, 20, 0,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
-    dxball_select_surface(dxball_board_surface);
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
     dxball_draw_text(30, 31, count, text);
     dxball_invalidate_region(rect);
     lives = dxball_lives;
@@ -217,8 +217,8 @@ void dxball_restart_round(void)
             dxball_palette_transition(1, 3, 0, 255, 1);
             dxball_palette_transition(1, 6, 0, 255, 0);
         } else dxball_palette_transition(1, 6, 0, 255, 0);
-        dxball_clear_surface(dxball_board_surface, 0);
-        dxball_clear_surface(dxball_primary_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
         memset(dxball_board_aux, 0, DXBALL_BOARD_SIZE);
         dxball_clear_all_entities();
         dxball_reset_regions();
@@ -232,8 +232,8 @@ void dxball_redraw_game(void)
 {
     DxBallRect rect;
     rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
-    dxball_clear_surface(dxball_primary_surface, 0);
-    dxball_clear_surface(dxball_board_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
     ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
         (DxBallDDSurface *)dxball_board_surface, &rect,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
@@ -260,7 +260,7 @@ void dxball_initialize_game(void)
     dxball_load_sprite_bank(1, 0, "thefont.sbk");
     dxball_select_font_bank(1);
     dxball_sprite_banks[2].count = 1; dxball_sprite_banks[2].allocation_mode = 0;
-    dxball_clear_surface(dxball_board_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
     dxball_load_pcx((DxBallDDSurface *)dxball_board_surface, "bigbolt.pcx", 0, 0, 0);
     dxball_select_sprite_bank(2);
     dxball_capture_sprite(1, 0, 0, 159, 479);
@@ -297,11 +297,11 @@ void dxball_initialize_game(void)
     dxball_initialize_board();
     dxball_reset_round();
     dxball_reset_regions();
-    dxball_bind_board_surface(dxball_board_surface);
+    dxball_bind_board_surface((DxBallSurface)dxball_board_surface);
     if (dxball_draw_to_primary != 0) {
-        dxball_bind_display_surface(dxball_primary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_primary_surface);
     } else {
-        dxball_bind_display_surface(dxball_secondary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
     }
     return;
 }
@@ -310,8 +310,8 @@ void dxball_dispose_game(DxBallInt fade)
 {
     if (fade != 0) {
         if (dxball_restart_requested == 0) dxball_palette_transition(1, 6, 0, 255, 0);
-        dxball_clear_surface(dxball_board_surface, 0);
-        dxball_clear_surface(dxball_primary_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
         dxball_release_sounds();
         dxball_release_sprite_banks();
         dxball_close_music();

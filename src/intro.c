@@ -102,7 +102,7 @@ void dxball_update_intro_points(void)
     DxBallIntroOffset offset;
     DxBallInt i;
     if (dxball_elapsed(dxball_intro_tick, 50)) {
-        dxball_select_surface(dxball_board_surface);
+        dxball_select_surface((DxBallSurface)dxball_board_surface);
         surface = (DxBallDDSurface *)dxball_active_surface;
         surface->vtable->blt_fast(surface, 112, 37, (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
         memset(&desc, 0, sizeof(desc)); desc.size = 108; desc.flags = 14;
@@ -143,12 +143,12 @@ void dxball_initialize_intro(void)
     dxball_load_sprite_bank(2, 0, "sfont.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
     dxball_load_music("ethno_pa.mds", 1);
-    dxball_bind_board_surface(dxball_board_surface);
+    dxball_bind_board_surface((DxBallSurface)dxball_board_surface);
     dxball_intro_tick = 0;
     if (dxball_draw_to_primary == 0) {
-        dxball_bind_display_surface(dxball_secondary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
     } else {
-        dxball_bind_display_surface(dxball_primary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_primary_surface);
     }
     dxball_redraw_mode();
     dxball_initialize_intro_points();
@@ -165,13 +165,13 @@ void dxball_redraw_intro(void)
     char text[32], number[11];
     DxBallInt count;
     rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
-    dxball_clear_surface(dxball_primary_surface, 0);
-    if (dxball_draw_to_primary == 0) dxball_clear_surface(dxball_secondary_surface, 0);
-    dxball_clear_surface(dxball_board_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
+    if (dxball_draw_to_primary == 0) dxball_clear_surface((DxBallSurface)dxball_secondary_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
     ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
         (DxBallDDSurface *)dxball_board_surface, &rect,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
-    dxball_select_surface(dxball_board_surface); dxball_select_font_bank(2);
+    dxball_select_surface((DxBallSurface)dxball_board_surface); dxball_select_font_bank(2);
     dxball_wait_frames(1);
     if ((DxBallUInt)dxball_score > 0) {
         strcpy(text, "Last Score - ");
@@ -224,8 +224,8 @@ void dxball_dispose_intro(DxBallInt fade)
     rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
     if (fade != 0) {
         dxball_palette_transition(1, 6, 0, 255, 0);
-        dxball_clear_surface(dxball_board_surface, 0);
-        dxball_clear_surface(dxball_primary_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
         if (dxball_draw_to_primary == 0) {
             ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
                 (DxBallDDSurface *)dxball_secondary_surface, &rect,
@@ -248,11 +248,11 @@ void dxball_initialize_splash(void)
     dxball_load_sprite_bank(1, 0, "chisel2.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
     dxball_load_sound(0, "whine.wav");
-    dxball_bind_board_surface(dxball_board_surface);
+    dxball_bind_board_surface((DxBallSurface)dxball_board_surface);
     if (dxball_draw_to_primary == 0) {
-        dxball_bind_display_surface(dxball_secondary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
     } else {
-        dxball_bind_display_surface(dxball_primary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_primary_surface);
     }
     dxball_scroller_reserved = 0; dxball_scroller_length = (DxBallInt)strlen(dxball_welcome_text);
     dxball_scroller_index = 0; dxball_scroller_shift = 0; dxball_scroller_advance = 0;
@@ -275,9 +275,9 @@ void dxball_redraw_splash(void)
     DxBallRect full, logo;
     DxBallInt y;
     full.left = 0; full.top = 0; full.right = 640; full.bottom = 480;
-    dxball_clear_surface(dxball_primary_surface, 0);
-    if (dxball_draw_to_primary == 0) dxball_fill_rect(dxball_secondary_surface, 0, 0, 639, 479, 0);
-    dxball_clear_surface(dxball_board_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
+    if (dxball_draw_to_primary == 0) dxball_fill_rect((DxBallSurface)dxball_secondary_surface, 0, 0, 639, 479, 0);
+    dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
     ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
         (DxBallDDSurface *)dxball_board_surface, &full,
         (DxBallDDSurface *)dxball_background_surface, &full, 0x01000000, NULL);
@@ -286,14 +286,14 @@ void dxball_redraw_splash(void)
         (DxBallDDSurface *)dxball_primary_surface, &logo,
         (DxBallDDSurface *)dxball_board_surface, &logo, 0x01000000, NULL);
     if (dxball_draw_to_primary == 0) {
-        dxball_bind_display_surface(dxball_primary_surface); dxball_draw_waving_credits();
-        dxball_bind_display_surface(dxball_secondary_surface);
+        dxball_bind_display_surface((DxBallSurface)dxball_primary_surface); dxball_draw_waving_credits();
+        dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
     }
     for (y = 155; y <= dxball_splash_span * 2 + 155; y += 2) {
-        dxball_draw_line(dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
-        dxball_draw_line(dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
+        dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
+        dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
     }
-    dxball_select_surface(dxball_primary_surface); dxball_select_font_bank(0);
+    dxball_select_surface((DxBallSurface)dxball_primary_surface); dxball_select_font_bank(0);
     dxball_draw_text(20, 190, 11, "VIDEO CARD:");
     if (dxball_software_only != 0) {
         dxball_draw_text(180, 190, 24, "NO HARDWARE ACCELERATION");
@@ -331,7 +331,7 @@ void dxball_update_scroller(void)
     if (dxball_scroller_advance < dxball_scroller_shift) {
         ++dxball_scroller_index;
         if (dxball_scroller_index > dxball_scroller_length - 1) dxball_scroller_index = 0;
-        dxball_select_surface(dxball_board_surface);
+        dxball_select_surface((DxBallSurface)dxball_board_surface);
         dxball_scroller_advance = dxball_draw_glyph(dxball_welcome_text[dxball_scroller_index], 600, 470) + 1;
         if (dxball_scroller_advance == 1) dxball_scroller_advance = 15;
         dxball_scroller_shift = 0;
@@ -435,8 +435,8 @@ void dxball_dispose_splash(DxBallInt fade)
     dxball_stop_sound(0);
     if (fade != 0) {
         dxball_palette_transition(1, 6, 0, 255, 0);
-        dxball_clear_surface(dxball_board_surface, 0);
-        dxball_clear_surface(dxball_primary_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
+        dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
         if (dxball_draw_to_primary == 0) {
             ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
                 (DxBallDDSurface *)dxball_secondary_surface, &rect,

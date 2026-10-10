@@ -136,3 +136,19 @@ every earlier differential suite, native/MinGW/VC4 builds, Wine inspectors and
 saved REA verification. No platform byte-exact claim is made. Private identities,
 reports, logs and literal binding review are retained under
 `.analysis/checkpoints/platform-134-40/`.
+
+## Complete initialization recovery
+
+[The initialization batch](exact/EXACT_WINDOW_INITIALIZATION.md) restores the
+inline window, DirectDraw, audio and failure flow in both complete functions.
+All 23 Window services now have independent typed import cells; the instance
+cells and shared File close service retain their existing owners. The authored
+WindowApi table is removed. DirectDrawCreate uses its named SDK boundary through
+`platform_host.c`, and all three canonical surface outputs have pointer storage.
+Existing drawing interfaces receive explicit value conversions.
+
+One compile per 27 affected recipes compares 130 complete units and 1,519
+relocations. The initializers remain candidates at 1,406/1,343 and 1,180/1,147.
+127 of 128 affected accepted units retain exactness; refresh-score is candidate
+after its operands change emission order. Existing Platform 4,742 passes;
+native, VC4 and MinGW builds pass. No new cases or other owner Oracle runs.
