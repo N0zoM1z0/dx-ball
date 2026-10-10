@@ -110,49 +110,80 @@ void dxball_redraw_editor(void)
     if (dxball_draw_to_primary == 0) secondary->vtable->blt(secondary, &rect, board, &rect, 0x1000000, NULL);
 }
 
-static DxBallInt inside_board(DxBallInt x, DxBallInt y)
-{
-    return x > 20 && x < 620 && y > 50 && y < 350;
-}
-static void paint_board(DxBallByte tile)
-{
-    DxBallInt x = (dxball_intro_cursor_x - 20) / 30, y = (dxball_intro_cursor_y - 50) / 15;
-    if (x < 0) x = 0;
-    if (x > 19) x = 19;
-    if (y < 0) y = 0;
-    if (y > 19) y = 19;
-    dxball_board_tiles[x + y * 20] = tile;
-    dxball_draw_board_tile(x, y, 0); dxball_store_editor_board(dxball_board_index);
-}
+/* FUNCTION: 0x0040C3B0 */
 void dxball_editor_frame(void)
 {
+    DxBallInt x, y;
     DxBallRect status_rect;
-    if (dxball_draw_to_primary != 0) dxball_wait_frames(1);
+    if (dxball_draw_to_primary != 0)
+        dxball_wait_frames(1);
     dxball_restore_regions();
-    dxball_intro_cursor_x = dxball_mouse_x; dxball_intro_cursor_y = dxball_mouse_y;
-    if (dxball_intro_cursor_x > 599) dxball_intro_cursor_x = 599;
-    if (dxball_intro_cursor_x < 8) dxball_intro_cursor_x = 8;
-    if (dxball_intro_cursor_y > 447) dxball_intro_cursor_y = 447;
+    dxball_intro_cursor_x = dxball_mouse_x;
+    dxball_intro_cursor_y = dxball_mouse_y;
+    if (dxball_intro_cursor_x > 599)
+        dxball_intro_cursor_x = 599;
+    if (dxball_intro_cursor_x < 8)
+        dxball_intro_cursor_x = 8;
+    if (dxball_intro_cursor_y > 447)
+        dxball_intro_cursor_y = 447;
     dxball_select_sprite_bank(2);
-    dxball_draw_effect_sprite(dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y) == 0 ? 4 : 6,
-                              dxball_intro_cursor_x, dxball_intro_cursor_y);
+    if (dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y) != 0)
+        dxball_draw_effect_sprite(6, dxball_intro_cursor_x, dxball_intro_cursor_y);
+    else
+        dxball_draw_effect_sprite(4, dxball_intro_cursor_x, dxball_intro_cursor_y);
     dxball_select_sprite_bank(0);
-    if (dxball_draw_to_primary == 0) dxball_present();
+    if (dxball_draw_to_primary == 0)
+        dxball_present();
     if (dxball_mouse_action == 1) {
-        if (inside_board(dxball_intro_cursor_x, dxball_intro_cursor_y)) paint_board((DxBallByte)dxball_editor_selected_tile);
-        else if (dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y) != 0) {
-            dxball_editor_selected_tile = dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y);
+        if (dxball_intro_cursor_x > 20 && dxball_intro_cursor_x < 620 &&
+            dxball_intro_cursor_y > 50 && dxball_intro_cursor_y < 350) {
+            x = dxball_intro_cursor_x;
+            y = dxball_intro_cursor_y;
+            x -= 20;
+            y -= 50;
+            x /= 30;
+            y /= 15;
+            if (x < 0) x = 0;
+            if (x > 19) x = 19;
+            if (y < 0) y = 0;
+            if (y > 19) y = 19;
+            dxball_board_tiles[x + y * 20] = (DxBallByte)dxball_editor_selected_tile;
+            dxball_draw_board_tile(x, y, 0);
+            dxball_store_editor_board(dxball_board_index);
+        } else if (dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y) != 0) {
+            dxball_editor_selected_tile =
+                dxball_find_hit_region(dxball_intro_cursor_x, dxball_intro_cursor_y);
             dxball_draw_editor_status();
-            status_rect.left = 0; status_rect.top = 0;
-            status_rect.right = 639; status_rect.bottom = 49;
+            status_rect.left = 0;
+            status_rect.top = 0;
+            status_rect.right = 639;
+            status_rect.bottom = 49;
             dxball_invalidate_region(status_rect);
         }
-        if (dxball_control_pressed == 0) dxball_mouse_action = 0;
+        if (dxball_control_pressed == 0)
+            dxball_mouse_action = 0;
     }
     if (dxball_mouse_action == 2) {
-        if (inside_board(dxball_intro_cursor_x, dxball_intro_cursor_y)) paint_board(0);
-        if (dxball_control_pressed == 0) dxball_mouse_action = 0;
+        if (dxball_intro_cursor_x > 20 && dxball_intro_cursor_x < 620 &&
+            dxball_intro_cursor_y > 50 && dxball_intro_cursor_y < 350) {
+            x = dxball_intro_cursor_x;
+            y = dxball_intro_cursor_y;
+            x -= 20;
+            y -= 50;
+            x /= 30;
+            y /= 15;
+            if (x < 0) x = 0;
+            if (x > 19) x = 19;
+            if (y < 0) y = 0;
+            if (y > 19) y = 19;
+            dxball_board_tiles[x + y * 20] = 0;
+            dxball_draw_board_tile(x, y, 0);
+            dxball_store_editor_board(dxball_board_index);
+        }
+        if (dxball_control_pressed == 0)
+            dxball_mouse_action = 0;
     }
+    return;
 }
 void dxball_editor_key(char key)
 {

@@ -3,9 +3,8 @@
 REA 4.1.0 with Ghidra 12.1.4 follows mode 2 through initialization, redraw,
 mouse painting, key commands and cleanup, then into its toolbar hit regions.
 Ten maintained entries reuse the existing board-bank, tile mapping, rendering,
-UI, dirty-region, palette and clock owners. All five mode controllers now have
-source defaults. Actual Windows/audio/MIDI delivery and a playable EXE remain
-pending.
+UI, dirty-region, palette and clock owners. All five mode controllers have
+source defaults; later Windows runtime results are recorded below.
 
 ## Entries and retained observations
 
@@ -60,6 +59,13 @@ mouse/control input and menu cursor coordinates reuse existing owners. Existing
 board read/write/load/store bodies are dependencies, not new function claims.
 
 ## Lifecycle, toolbar and mouse
+
+The complete [editor-frame restoration](exact/EXACT_EDITOR_FRAME.md) now
+reproduces all 908 bytes, including the two cursor draw calls and both inline
+paint/erase value phases. The five existing exact editor units are preserved.
+This batch runs only the 1,272 existing frame cases; broader receipts below
+retain their original scope.
+
 
 Initialization resets regions, clears and loads `mbbkgrnd.pcx`, then loads
 `mball2.sbk`, `sfont.sbk`, and `mainmenu.sbk` into banks 0/1/2. It selects
@@ -132,12 +138,10 @@ harness bindings.
 Valid finite scripts, initialized surfaces, bounded storage/arithmetic, mapped
 tiles 0..22 and board indices 0..49 are required. Resource lifecycle reload/
 release, audio/MIDI and actual Windows/DirectDraw delivery remain controlled
-boundaries. This family makes no new exact or playable-EXE claim. The existing
-forty configured exact units are replayed together at the stable checkpoint.
-Every earlier suite, native/MinGW/VC4 product, Wine inspector and saved REA
-verification runs at the same grouped checkpoint. The new-family report is
-reused only with identical complete inputs and native library; private reports,
-input identities and logs are retained in `.analysis/checkpoints/editor-186-40/`.
+boundaries. The initial editor checkpoint replayed forty configured exact units and the
+broader checks described here. Those historical reports, compiler products and
+input identities remain in `.analysis/checkpoints/editor-186-40/`. The current
+frame restoration uses the focused batch described above.
 
 
 ## Compiler portability follow-up

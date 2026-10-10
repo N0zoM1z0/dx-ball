@@ -1,52 +1,50 @@
 # Current reconstruction handoff
 
 Continue toward nearly complete original game source that rebuilds and plays.
-Prioritize complete flows and exact restoration; use one CPU and one writable
-compiler/provider session. Run only affected existing checks. Keep the README
-short, with the title PNG and progress SVG.
+Prioritize complete flows and exact restoration. Use one CPU, one writable
+compiler/provider session and only affected existing checks. Keep the README
+short, with its title PNG and progress SVG.
 
 ## Current checkpoint
 
-[Clock and key routing](../research/exact/EXACT_WINDOW_KEYS.md) restores the
-connected controllers at `0x403550`, `0x403820` and `0x410290`. Clock and the
-five direct key-owner dispatcher are exact at 83 and 162 bytes. The shared
-splash(char) caller/callee API preserves its existing 36-byte exact body.
-Game input now has both pause paths, original bonus/paddle writes and six
-direct music loads; VC4 emits 836/831 bytes with 522 differing positions.
-WindowProc remains a complete 1,166/1,171-byte candidate.
+[Editor-frame](../research/exact/EXACT_EDITOR_FRAME.md) at `0x40C3B0` is exact:
+908 bytes, all 209 saved instructions and 16 original direct calls. The source
+keeps separate cursor draw branches and both complete paint/erase coordinate
+phases, including live post-call state reads. Two authored frame-only helpers
+are removed. No shared-header, API, fixture or case changes.
 
-- 283 source-present functions; 138 exact / 21,538 code bytes and 136 metadata
+- 283 source-present functions; 139 exact / 22,446 code bytes and 136 metadata
   bytes. Whole-source >=95% completion remains unproven.
-- 25 affected recipes compiled once each. All 122 affected accepted functions
-  preserved; 126 full comparisons / 1,418 actual relocations. Anonymous symbols
-  refreshed only after literal contents or local-label identity were proved.
-- Existing clock10/dispatch1792/game-key420 checks pass; no new cases or other
-  owner runs. Two invocations include a corrected private post-run counter
-  assertion. Four typed fixture forwarders use current real owner slots.
-- Native, VC4 and MinGW builds pass. VC4 reuses 26 valid objects and compiles
-  nine remaining sources. Stable sources were not recompiled for comparison.
-- REA snapshot491 and saved full evidence reused; no new provider queries.
+- One editor recipe compiled once. Five affected prior exact units preserved;
+  six whole comparisons / 78 actual relocations. First stable frame emission
+  is exact at 908/908, without compiler-driven source alternatives.
+- Only the three existing editor-frame loops ran, passing 1,272 cases once.
+  Other entry/owner and connected checks retain historical scope.
+- Native, VC4 and MinGW builds pass. VC4 reuses 35 valid objects and compiles
+  no remaining sources. Saved REA snapshot491 reused; no new queries.
 
-Full drivers and receipts: `.analysis/exact-window-key/`. Checkpoint:
-`.analysis/checkpoints/exact-window-key-283-138/`, parent `exact-window-proc-283-136`.
-Independent bounded audit: `.analysis/window-key-flow-review/final-review.json`.
+Full drivers/receipts: `.analysis/exact-editor-frame/`. Checkpoint:
+`.analysis/checkpoints/exact-editor-frame-283-139/`, parent `exact-window-key-283-138`.
+Independent bounded audit: `.analysis/editor-frame-flow-review/final-review.json`.
+Clock83 and direct key dispatch162 stay exact. Game-key836/831 and
+WindowProc1166/1171 remain complete candidates.
 
 ## Next work
 
-Next restore editor-frame at `0x40C3B0` from the complete 908-byte saved
-dossier (`ev_12f27f7831f215d80c2a1a27d88e1638ffa9ab2fd568793f66258b328927431e`).
-The whole-body proposal and 21 full inputs are in
-`.analysis/editor-frame-next-review/`: 209 instructions and 16 direct calls,
-with separate cursor draws and both inline paint/erase value phases. Existing
-helper factoring preserves most logical effects; recover the original call and
-value timing. No gaps, tables, new ABI or provider query are needed. Do not iterate compiler profiles,
-local layouts or source-expression variants to force the game-key candidate.
-The provisional 528 functions are not a whole-source completion denominator;
-remaining runtime-origin classification and complete game flows still matter.
+Continue the main frame controller at `0x403730`: restore its original direct
+owner calls, reset-clear order and post-frame mode transition. The saved
+dossier owns 203 bytes in a 228-byte span; reconcile its five-byte gap and
+20-byte switch table before an exact claim. The whole-source proposal and
+23 full inputs are in `.analysis/main-frame-next-review/`; its 46 saved
+instructions and ten direct calls are reviewed. One focused full read of
+`0x403730/228` resolves the remaining byte coverage. Use saved evidence first. Avoid
+compiler profiles, local-layout/name or source-expression trials. Provisional
+function counts are not the whole-source completion denominator; complete
+flows and remaining runtime-origin classification still matter.
 
 REA checkout: `/home/pentester/Project/rea/`. New binary questions use
-`scripts/rea` pinned to REA4.1.0/Ghidra12.1.4. Retain full responses, Evidence IDs
+`scripts/rea`, pinned to REA4.1.0/Ghidra12.1.4; retain full responses/Evidence IDs
 and snapshots, then close the provider. Run Python through `scripts/repo-python`,
 CMake with `--parallel 1`, and automated audio with
 `PULSE_SINK=dxball_reconstruction_silent`. Preserve unique evidence before
-cleaning duplicate build products. Commit subjects begin `gpt-6.1-sol: `.
+cleaning duplicate products. Commit subjects begin `gpt-6.1-sol: `.

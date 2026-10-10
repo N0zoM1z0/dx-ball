@@ -10,6 +10,7 @@ recovered implementation and complete compiler comparison.
 - [Exact WinMain entry and message loop](EXACT_WIN_MAIN.md)
 - [Complete window messages, focus and shutdown](EXACT_WINDOW_PROC.md)
 - [Clock detection and direct key routing](EXACT_WINDOW_KEYS.md)
+- [Exact editor mouse-frame controller](EXACT_EDITOR_FRAME.md)
 - [MIDI imports and C++ music ownership](EXACT_MIDI_IMPORTS.md)
 - [MIDI stream and music controls](EXACT_MIDI_LIFECYCLE.md)
 - [Sound initialization and WAV loading](EXACT_SOUND_DEPENDENCIES.md)
