@@ -1,4 +1,38 @@
-# Current handoff — complete intro controllers
+# Current handoff — complete splash controllers
+
+Priority: **exact restoration, moderate existing tests and grouped replay**.
+The [complete splash batch](EXACT_SPLASH.md) restores eight bodies /3,029 original
+bytes. Four whole zeros add 1,242 bytes; four candidates retain 23/19/3/17 complete
+differences. All 106 preceding complete code/metadata identities survive.
+
+Acceptance: **283 source-present /247 scoped rows /112,273 unit-distinct cases /
+110 exact functions /14,658 code bytes +136 separate metadata bytes**.
+Origins 270 authored /50 runtime /42 generated /166 unknown unchanged.
+One 69-input diagnostic and one 22-object cold epoch; all 22 existing owner scripts
+pass in 546.074s with 288 frozen inputs. Seven checks pass, existing matrices fixed.
+Typed update_sound forwarding adds one genuine 24th symbol through the actual
+copied DisplayOps table; 25 default-slot checks and 46 compiler dependencies.
+
+Only generated literal names in two unchanged prior intro bodies refresh after
+native replay, under full before/after literal/operand proof. The original frozen
+manifest/result remains unchanged; no functional source/header/harness/build
+recipe changes occur after replay. No source-name/order/layout/capacity/body
+trials, inert locals or padding. Snapshot 468 unchanged; no new REA request.
+
+Native canonical/family SHA256 b53eed692c71cb40fb62a8e98a0d611a40356d9e0b2b61cc3ea06f45ea76449e;
+shim 2004740f65c9e3938f43c9c7c20c5a749eb91f7bb9fe272fa6bef2dafdd1ba97.
+Checkpoint .analysis/checkpoints/exact-splash-283-110, parent intro 106.
+Full source/harness before epochs, diagnostic and sole cold products retained.
+One writable compiler/provider, one allowed CPU, JVM 512MiB, serial CMake,
+silent Pulse sink. English gpt-6.1-sol: commits/public push remain authorized.
+
+Next: restore the remaining complete menu frame (242 bytes) using saved dossier 02;
+point updater (711) retains an unconsumed request-state question; avoid inert storage.
+Game frame owns 1,683 bytes in a 1,688-byte span and retains gap 40FB21..25,
+requiring focused pinned REA.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete intro controllers
 
 Priority: **exact restoration, moderate tests and grouped replay**. The
 [complete intro batch](EXACT_INTRO.md) restores four complete bodies / 3,035

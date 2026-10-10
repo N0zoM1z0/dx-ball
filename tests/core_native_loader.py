@@ -154,6 +154,7 @@ class _Image:
         boundaries = [('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
                       ('dxball_gameplay_ops', 6, 3, 'dxball_play_sound'),
                       ('dxball_gameplay_ops', 6, 4, 'dxball_random_range'),
+                      ('dxball_display_ops', 2, 0, 'dxball_update_sound'),
                       ('dxball_render_ops', 3, 2, 'dxball_invalidate_region'),
                       ('dxball_frame_ops', 12, 6, 'dxball_draw_effect_sprite'),
                       ('dxball_frame_ops', 12, 4, 'dxball_wait_frames'),
@@ -198,6 +199,7 @@ class _Image:
                 _function_owner(self.platform_music_default) != self.path.resolve()):
             raise RuntimeError('CoreNative music default is not its genuine void adapter')
         self.function_addresses['dxball_load_music'] = real
+        self.display_table = (C.c_void_p * 2).in_dll(self.lib, 'dxball_display_ops')
 
 
 def fixture_image(library):
@@ -218,6 +220,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_runtime_ops.restype = C.c_int
         _shim.dxball_test_bind_platform_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_platform_ops.restype = C.c_int
+        _shim.dxball_test_bind_display_ops.argtypes = [C.c_void_p]
+        _shim.dxball_test_bind_display_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
         raise RuntimeError('CoreNative cannot replace an already loaded GLOBAL interposer')
     key = (str(canonical), canonical_sha256, shim_sha256,
@@ -235,6 +239,14 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_platform_ops(actual, image.platform_music_default)
     if result != 0:
         raise RuntimeError('CoreNative platform binding rejected: null table or default adapter')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_display_ops'))
+    if actual != C.addressof(image.display_table):
+        raise RuntimeError('CoreNative display table does not belong to its copied image')
+    # DisplayNative supplies the actual callback after inherited construction.
+    # Staging touches no callback slot; the wrapper rejects an untouched default.
+    result = _shim.dxball_test_bind_display_ops(actual)
+    if result != 0:
+        raise RuntimeError('CoreNative display binding rejected: null table')
     return image
 
 

@@ -1,5 +1,12 @@
 # Menu and splash evidence
 
+The [complete splash source batch](EXACT_SPLASH.md) restores eight connected
+contiguous bodies / 3,029 bytes. Initialization (430), frame (274), disposal (185) and credits (353)
+match 1,242 bytes. The four remaining candidates retain 23/19/3/17 full differences.
+All 106 preceding exact identities survive. Existing 5,615 direct intro cases
+and 58 separate integration checks pass through genuine typed sound-update
+forwarding; constructors, fixtures, oracles and case matrices stay fixed.
+
 The subsequent [complete intro source batch](EXACT_INTRO.md) restores initialization,
 redraw, point setup and disposal from their complete contiguous bodies / 3,035
 original bytes. Grouped cold replay accepts initialization (277 bytes) and disposal (175 bytes) /

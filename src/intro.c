@@ -55,11 +55,6 @@ DxBallInt dxball_wave_y(DxBallInt origin, DxBallInt angle, DxBallInt amplitude)
     return origin;
 }
 
-static void scene_blt(DxBallSurface destination, DxBallSurface source, const DxBallRect *rect)
-{
-    DxBallDDSurface *surface = (DxBallDDSurface *)destination;
-    surface->vtable->blt(surface, rect, (DxBallDDSurface *)source, rect, 0x1000000, NULL);
-}
 static void update_intro_cursor(void)
 {
     dxball_intro_cursor_x = dxball_mouse_x;
@@ -67,19 +62,6 @@ static void update_intro_cursor(void)
     if (dxball_intro_cursor_x > 599) dxball_intro_cursor_x = 599;
     if (dxball_intro_cursor_x < 8) dxball_intro_cursor_x = 8;
     if (dxball_intro_cursor_y > 447) dxball_intro_cursor_y = 447;
-}
-static void dispose_scene(DxBallInt fade)
-{
-    DxBallRect rect = {0, 0, 640, 480};
-    if (fade != 0) {
-        dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-        dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
-        if (dxball_draw_to_primary == 0) scene_blt(dxball_secondary_surface, dxball_board_surface, &rect);
-        dxball_runtime_ops.release_sprite_banks();
-        dxball_runtime_ops.release_sounds();
-        dxball_platform_ops.close_music();
-    }
 }
 
 void dxball_initialize_intro_points(void)
@@ -260,74 +242,93 @@ void dxball_dispose_intro(DxBallInt fade)
 
 void dxball_initialize_splash(void)
 {
-    DxBallColorKey key = {0, 0};
-    DxBallDDSurface *surface;
+    DxBallColorKey key;
     DxBallInt i;
-    dxball_runtime_ops.reset_regions(); dxball_runtime_ops.clear_surface(dxball_background_surface, 0);
-    dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "intro.pcx", 2, 0, 0);
-    dxball_runtime_ops.load_sprite_bank(0, 0, "candy.sbk");
-    dxball_runtime_ops.load_sprite_bank(1, 0, "chisel2.sbk");
+    dxball_reset_regions(); dxball_clear_surface(dxball_background_surface, 0);
+    dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "intro.pcx", 2, 0, 0);
+    dxball_load_sprite_bank(0, 0, "candy.sbk");
+    dxball_load_sprite_bank(1, 0, "chisel2.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
-    dxball_runtime_ops.load_sound(0, "whine.wav");
-    dxball_runtime_ops.bind_board_surface(dxball_board_surface);
-    dxball_runtime_ops.bind_display_surface(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface);
+    dxball_load_sound(0, "whine.wav");
+    dxball_bind_board_surface(dxball_board_surface);
+    if (dxball_draw_to_primary == 0) {
+        dxball_bind_display_surface(dxball_secondary_surface);
+    } else {
+        dxball_bind_display_surface(dxball_primary_surface);
+    }
     dxball_scroller_reserved = 0; dxball_scroller_length = (DxBallInt)strlen(dxball_welcome_text);
-    dxball_scroller_index = dxball_scroller_shift = dxball_scroller_advance = 0;
-    dxball_credit_first_y = dxball_credit_second_y = dxball_credit_angle = 0;
-    surface = (DxBallDDSurface *)dxball_board_surface; surface->vtable->set_color_key(surface, 8, &key);
-    dxball_redraw_mode(); dxball_display_ops.update_sound(0, 0, 0, 0);
-    for (i = 48; i <= dxball_splash_span + 48; ++i)
-        dxball_saved_palette[i].red = dxball_saved_palette[i].green = dxball_saved_palette[i].blue = 0;
-    dxball_runtime_ops.palette_transition(1, 6, 0, 255, 1);
+    dxball_scroller_index = 0; dxball_scroller_shift = 0; dxball_scroller_advance = 0;
+    dxball_credit_first_y = 0; dxball_credit_second_y = 0; dxball_credit_angle = 0;
+    key.low = 0; key.high = 0;
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->set_color_key(
+        (DxBallDDSurface *)dxball_board_surface, 8, &key);
+    dxball_redraw_mode(); dxball_update_sound(0, 0, 0, 0);
+    for (i = 48; i <= dxball_splash_span + 48; ++i) {
+        dxball_saved_palette[i].red = 0;
+        dxball_saved_palette[i].green = 0;
+        dxball_saved_palette[i].blue = 0;
+    }
+    dxball_palette_transition(1, 6, 0, 255, 1);
+    return;
 }
 
 void dxball_redraw_splash(void)
 {
-    DxBallRect full = {0, 0, 640, 480}, logo = {0, 19, 639, 169};
+    DxBallRect full, logo;
     DxBallInt y;
-    dxball_runtime_ops.clear_surface(dxball_primary_surface, 0);
+    full.left = 0; full.top = 0; full.right = 640; full.bottom = 480;
+    dxball_clear_surface(dxball_primary_surface, 0);
     if (dxball_draw_to_primary == 0) dxball_fill_rect(dxball_secondary_surface, 0, 0, 639, 479, 0);
-    dxball_runtime_ops.clear_surface(dxball_board_surface, 0);
-    scene_blt(dxball_board_surface, dxball_background_surface, &full);
-    scene_blt(dxball_primary_surface, dxball_board_surface, &logo);
+    dxball_clear_surface(dxball_board_surface, 0);
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_board_surface, &full,
+        (DxBallDDSurface *)dxball_background_surface, &full, 0x01000000, NULL);
+    logo.left = 0; logo.top = 19; logo.right = 639; logo.bottom = 169;
+    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_primary_surface, &logo,
+        (DxBallDDSurface *)dxball_board_surface, &logo, 0x01000000, NULL);
     if (dxball_draw_to_primary == 0) {
-        dxball_runtime_ops.bind_display_surface(dxball_primary_surface); dxball_draw_waving_credits();
-        dxball_runtime_ops.bind_display_surface(dxball_secondary_surface);
+        dxball_bind_display_surface(dxball_primary_surface); dxball_draw_waving_credits();
+        dxball_bind_display_surface(dxball_secondary_surface);
     }
     for (y = 155; y <= dxball_splash_span * 2 + 155; y += 2) {
         dxball_draw_line(dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
         dxball_draw_line(dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
     }
     dxball_select_surface(dxball_primary_surface); dxball_select_font_bank(0);
-    dxball_runtime_ops.draw_text(20, 190, 11, "VIDEO CARD:");
+    dxball_draw_text(20, 190, 11, "VIDEO CARD:");
     if (dxball_software_only != 0) {
-        dxball_runtime_ops.draw_text(180, 190, 24, "NO HARDWARE ACCELERATION");
-        dxball_runtime_ops.draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
+        dxball_draw_text(180, 190, 24, "NO HARDWARE ACCELERATION");
+        dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
     } else if (dxball_low_video_memory != 0) {
-        dxball_runtime_ops.draw_text(180, 190, 16, "LOW VIDEO MEMORY");
-        dxball_runtime_ops.draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
+        dxball_draw_text(180, 190, 16, "LOW VIDEO MEMORY");
+        dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
     } else if (dxball_wait_vertical_blank == 0) {
-        dxball_runtime_ops.draw_text(180, 190, 25, "REFRESH RATE ABOVE 60 MHZ");
-        dxball_runtime_ops.draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
+        dxball_draw_text(180, 190, 25, "REFRESH RATE ABOVE 60 MHZ");
+        dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
     } else {
-        dxball_runtime_ops.draw_text(180, 190, 27, "HARDWARE ACCELERATION FOUND");
-        dxball_runtime_ops.draw_text(210, 210, 13, "AND SUPPORTED");
+        dxball_draw_text(180, 190, 27, "HARDWARE ACCELERATION FOUND");
+        dxball_draw_text(210, 210, 13, "AND SUPPORTED");
     }
-    dxball_runtime_ops.draw_text(20, 245, 7, "AUTHOR:");
-    dxball_runtime_ops.draw_text(180, 245, 16, "MICHAEL P. WELCH");
-    dxball_runtime_ops.draw_text(20, 265, 7, "3D GFX:");
-    dxball_runtime_ops.draw_text(180, 265, 14, "SEUMAS McNALLY");
-    dxball_runtime_ops.draw_text(20, 300, 7, "E-MAIL:");
-    dxball_runtime_ops.draw_text(180, 300, 18, "MWELCH@NETWAVE.NET");
-    dxball_runtime_ops.draw_centered_text(320, 330, 41, "SEND COMMENTS, BUGS, AND GREETINGS TO GET");
-    dxball_runtime_ops.draw_centered_text(320, 350, 37, "HINT FOR LEVEL EDITOR AND OTHER TIPS.");
-    if (dxball_draw_to_primary == 0) scene_blt(dxball_secondary_surface, dxball_primary_surface, &full);
+    dxball_draw_text(20, 245, 7, "AUTHOR:");
+    dxball_draw_text(180, 245, 16, "MICHAEL P. WELCH");
+    dxball_draw_text(20, 265, 7, "3D GFX:");
+    dxball_draw_text(180, 265, 14, "SEUMAS McNALLY");
+    dxball_draw_text(20, 300, 7, "E-MAIL:");
+    dxball_draw_text(180, 300, 18, "MWELCH@NETWAVE.NET");
+    dxball_draw_centered_text(320, 330, 41, "SEND COMMENTS, BUGS, AND GREETINGS TO GET");
+    dxball_draw_centered_text(320, 350, 37, "HINT FOR LEVEL EDITOR AND OTHER TIPS.");
+    if (dxball_draw_to_primary == 0) {
+        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_secondary_surface, &full,
+            (DxBallDDSurface *)dxball_primary_surface, &full, 0x01000000, NULL);
+    }
+    return;
 }
 
 void dxball_update_scroller(void)
 {
-    DxBallRect rect = {40, 440, 639, 475};
-    DxBallDDSurface *surface = (DxBallDDSurface *)dxball_board_surface;
+    DxBallRect rect;
     dxball_select_font_bank(1); dxball_scroller_shift += 4;
     if (dxball_scroller_advance < dxball_scroller_shift) {
         ++dxball_scroller_index;
@@ -337,39 +338,71 @@ void dxball_update_scroller(void)
         if (dxball_scroller_advance == 1) dxball_scroller_advance = 15;
         dxball_scroller_shift = 0;
     }
-    surface->vtable->blt_fast(surface, 36, 440, surface, &rect, 0x10);
+    rect.left = 40; rect.top = 440; rect.right = 639; rect.bottom = 475;
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
+        (DxBallDDSurface *)dxball_board_surface, 36, 440,
+        (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
+    return;
 }
 void dxball_draw_scroller_wave(void)
 {
-    DxBallRect rect = {0, 440, 0, 475};
-    DxBallDDSurface *surface = (DxBallDDSurface *)(dxball_reduced_particles == 0 ? dxball_effect_surface : dxball_primary_surface);
-    DxBallInt x, y;
-    for (x = 40; x <= 595; x += 5) {
-        rect.left = x; rect.right = x + 5; y = 420 + (DxBallInt)(dxball_sine(x) * 20.0);
-        surface->vtable->blt_fast(surface, x, y, (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
+    DxBallRect rect;
+    DxBallInt x, step;
+    rect.top = 440; rect.bottom = 475;
+    step = 5;
+    for (x = 40; x <= 600 - step; x += step) {
+        rect.left = x; rect.right = step + x;
+        if (dxball_reduced_particles != 0) {
+            ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
+                (DxBallDDSurface *)dxball_primary_surface, x,
+                (DxBallInt)(dxball_sine(x) * 20.0) + 420,
+                (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
+        } else {
+            ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
+                (DxBallDDSurface *)dxball_effect_surface, x,
+                (DxBallInt)(dxball_sine(x) * 20.0) + 420,
+                (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
+        }
     }
+    return;
 }
 void dxball_draw_waving_credits(void)
 {
-    DxBallRect first = {0, 335, 639, 353}, second = {0, 362, 639, 380};
-    DxBallDDSurface *surface = (DxBallDDSurface *)(dxball_reduced_particles == 0 ? dxball_effect_surface : dxball_primary_surface);
+    DxBallRect first, second;
+    first.left = 0; first.top = 335; first.right = 639; first.bottom = 353;
+    second.left = 0; second.top = 362; second.right = 639; second.bottom = 380;
     dxball_credit_angle += 20;
     if (dxball_credit_angle > 359) dxball_credit_angle %= 360;
     dxball_credit_first_y = (DxBallInt)(dxball_sine(dxball_credit_angle) * 3.0);
     dxball_credit_second_y = (DxBallInt)(dxball_sine(-dxball_credit_angle) * 3.0);
-    surface->vtable->blt_fast(surface, 0, dxball_credit_first_y + 3, (DxBallDDSurface *)dxball_board_surface, &first, 0x10);
-    surface->vtable->blt_fast(surface, 0, dxball_credit_second_y + 127, (DxBallDDSurface *)dxball_board_surface, &second, 0x10);
+    if (dxball_reduced_particles != 0) {
+        ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_primary_surface, 0, dxball_credit_first_y + 3,
+            (DxBallDDSurface *)dxball_board_surface, &first, 0x10);
+        ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_primary_surface, 0, dxball_credit_second_y + 127,
+            (DxBallDDSurface *)dxball_board_surface, &second, 0x10);
+    } else {
+        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_effect_surface, 0, dxball_credit_first_y + 3,
+            (DxBallDDSurface *)dxball_board_surface, &first, 0x10);
+        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_effect_surface, 0, dxball_credit_second_y + 127,
+            (DxBallDDSurface *)dxball_board_surface, &second, 0x10);
+    }
+    return;
 }
 void dxball_pulse_splash_palette(void)
 {
-    DxBallInt i, middle;
+    DxBallInt i, middle, half;
     if (dxball_cursor_warp_disabled != 0) return;
     for (i = 48; i <= dxball_splash_span + 48; ++i) {
-        if (dxball_live_palette[i].red != 0) dxball_live_palette[i].red -= 4;
-        if (dxball_live_palette[i].blue != 0) dxball_live_palette[i].blue -= 2;
+        if (dxball_live_palette[i].red > 0) dxball_live_palette[i].red -= 4;
+        if (dxball_live_palette[i].blue > 0) dxball_live_palette[i].blue -= 2;
     }
-    middle = dxball_splash_span / 2 + 48;
-    dxball_splash_offset = (DxBallInt)(dxball_sine(dxball_splash_phase) * (dxball_splash_span / 2 - 1));
+    half = dxball_splash_span / 2;
+    middle = half + 48;
+    dxball_splash_offset = (DxBallInt)(dxball_sine(dxball_splash_phase) * (half - 1));
     ++dxball_splash_phase;
     if (dxball_splash_phase > 359) dxball_splash_phase %= 360;
     dxball_live_palette[middle + dxball_splash_offset].red = 160;
@@ -377,19 +410,46 @@ void dxball_pulse_splash_palette(void)
     dxball_live_palette[middle - dxball_splash_offset].blue = 160;
     dxball_live_palette[middle - dxball_splash_offset + 1].blue = 160;
     dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, 48, dxball_splash_span + 48, dxball_live_palette + 48);
+    return;
 }
 void dxball_splash_frame(void)
 {
-    dxball_display_ops.update_sound(0, 0, 0, 0);
+    dxball_update_sound(0, 0, 0, 0);
     if (dxball_draw_to_primary != 0) dxball_wait_frames(1);
-    dxball_restore_regions(); update_intro_cursor(); dxball_update_scroller(); dxball_draw_scroller_wave();
+    dxball_restore_regions();
+    dxball_intro_cursor_x = dxball_mouse_x;
+    dxball_intro_cursor_y = dxball_mouse_y;
+    if (dxball_intro_cursor_x > 599) dxball_intro_cursor_x = 599;
+    if (dxball_intro_cursor_x < 8) dxball_intro_cursor_x = 8;
+    if (dxball_intro_cursor_y > 447) dxball_intro_cursor_y = 447;
+    dxball_update_scroller(); dxball_draw_scroller_wave();
     if (dxball_draw_to_primary == 0) dxball_present();
     dxball_rotate_rgb_colors(189, 66, dxball_splash_colors); dxball_pulse_splash_palette();
     if (dxball_mouse_action == 1) { dxball_end_requested = 1; dxball_return_to_menu = 0; dxball_mouse_action = 0; }
     if (dxball_mouse_action == 2) dxball_mouse_action = 0;
+    return;
 }
 void dxball_splash_key(void) { dxball_end_requested = 1; dxball_return_to_menu = 0; return; }
-void dxball_dispose_splash(DxBallInt fade) { dxball_gameplay_ops.stop_sound(0); dispose_scene(fade); }
+void dxball_dispose_splash(DxBallInt fade)
+{
+    DxBallRect rect;
+    rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
+    dxball_stop_sound(0);
+    if (fade != 0) {
+        dxball_palette_transition(1, 6, 0, 255, 0);
+        dxball_clear_surface(dxball_board_surface, 0);
+        dxball_clear_surface(dxball_primary_surface, 0);
+        if (dxball_draw_to_primary == 0) {
+            ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
+                (DxBallDDSurface *)dxball_secondary_surface, &rect,
+                (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
+        }
+        dxball_release_sprite_banks();
+        dxball_release_sounds();
+        dxball_close_music();
+    }
+    return;
+}
 
 /* Retained program text and 22 RGB triples; no external game assets. */
 const char dxball_welcome_text[] =

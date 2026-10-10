@@ -18,14 +18,21 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **283 source-present functions** (270 authored bodies, one unknown-origin body and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **106 byte-exact functions totaling 13,416 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
+> **110 byte-exact functions totaling 14,658 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
 > VC4 and MinGW builds; complete gameplay and
 > driver fidelity remain in progress.
 
-The [complete intro batch](docs/EXACT_INTRO.md) restores four controllers / 3,035
+The [complete splash batch](docs/EXACT_SPLASH.md) restores eight connected bodies /
+3,029 original bytes. Initialization, frame, disposal and credits match all
+1,242 bytes. Redraw, scroller wave, scroller update and palette pulse retain
+23, 19, 3 and 17 complete differences. All 106 preceding code/metadata identities
+survive one grouped cold epoch. Existing cases and source presence remain fixed;
+the >=95% complete-source goal remains open.
+
+The preceding [complete intro batch](docs/EXACT_INTRO.md) restores four controllers / 3,035
 original bytes. Initialization and disposal match all 452 bytes; redraw and
 point setup retain 560 and 750 complete differences. All 104 prior exact
 code/metadata identities survive grouped cold replay. Existing cases remain

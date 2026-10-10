@@ -1,6 +1,24 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **106 exact functions / 13,416
+The current shared-source checkpoint retains **110 exact functions / 14,658
+code bytes**, plus 136 separate exception metadata bytes. The
+[complete splash batch](EXACT_SPLASH.md) restores 3,029 complete original bytes,
+accepting initialization (430 bytes), frame (274), disposal (185) and credits (353).
+Four full candidates retain 23 redraw, 19 scroller-wave, 3 scroller-update and
+17 pulse differences. All 106 preceding complete code and metadata identities survive.
+All 241 new relocations, 21 full NUL string operands and four complete eight-byte
+double operands are explicit. No name/order, layout or alternate-body trials.
+
+One 69-input diagnostic and one configured 22-object cold epoch execute;
+all 22 existing owner scripts and seven validation checks pass, without new
+cases or campaigns. The native interposer adds one correctly typed update_sound
+boundary through the actual copied DisplayOps table. Removal of unused scene
+helpers shifts generated literal names in unchanged prior intro bodies; their
+complete data and relocation identities are refreshed under an explicit
+post-native-replay manifest amendment. Original frozen inputs/results remain
+unchanged; no source, header, harness or build recipe changes after native replay.
+
+The preceding shared-source checkpoint retained **106 exact functions / 13,416
 code bytes**, plus 136 separate exception metadata bytes. The
 [complete intro batch](EXACT_INTRO.md) restores 3,035 complete original bytes.
 Initialization (277) and disposal (175) add 452 exact bytes; redraw retains

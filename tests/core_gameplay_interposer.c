@@ -19,6 +19,8 @@ static DxBallFrameOps *bound_frame;
 static DxBallEffectOps *bound_effect;
 static DxBallRuntimeOps *bound_runtime;
 static DxBallPlatformOps *bound_platform;
+static DxBallDisplayOps *bound_display;
+static unsigned sound_update_active;
 static void (*platform_music_default)(const char *, DxBallInt);
 static unsigned music_load_active;
 static unsigned stop_active, play_active, random_active;
@@ -88,6 +90,27 @@ int dxball_test_bind_runtime_ops(DxBallRuntimeOps *ops)
         ops->finalize_game_resources == dxball_close_music) return -3;
     bound_runtime = ops;
     return 0;
+}
+
+/* DisplayNative installs its callback after inherited CoreNative construction.
+   Bind the actual copied table now; validate the live slot on every call. */
+int dxball_test_bind_display_ops(DxBallDisplayOps *ops)
+{
+    if (ops == NULL) return -1;
+    bound_display = ops;
+    return 0;
+}
+
+void dxball_update_sound(DxBallInt slot, DxBallInt frequency,
+                         DxBallInt pan, DxBallInt volume)
+{
+    if (bound_display == NULL || bound_display->update_sound == NULL)
+        binding_failure("CoreNative update_sound: fixture table is unbound or callback is null");
+    if (sound_update_active || bound_display->update_sound == dxball_update_sound)
+        binding_failure("CoreNative update_sound: recursive or unreplaced display callback");
+    sound_update_active = 1;
+    bound_display->update_sound(slot, frequency, pan, volume);
+    sound_update_active = 0;
 }
 
 /* PlatformNative replaces this void callback after inherited fixture binders.
