@@ -111,6 +111,7 @@ void dxball_release_audio(void)
     return;
 }
 
+/* FUNCTION: DXBALL 0x004057D0 */
 void dxball_pause_sound(void)
 {
     DxBallInt slot;
@@ -129,6 +130,7 @@ void dxball_pause_sound(void)
         dxball_sound_device->vtable->release(dxball_sound_device);
         dxball_sound_device = NULL;
     }
+    return;
 }
 
 void dxball_release_sounds(void)
@@ -145,62 +147,76 @@ void dxball_stop_all_sounds(void)
     return;
 }
 
+/* FUNCTION: DXBALL 0x004058F0 */
 void dxball_release_sound(DxBallInt slot)
 {
-    if (dxball_sounds[slot] != NULL) {
-        if (dxball_sound_device != NULL && dxball_sounds[slot]->buffer != NULL) {
-            dxball_sounds[slot]->buffer->vtable->release(dxball_sounds[slot]->buffer);
-            dxball_sounds[slot]->buffer = NULL;
-        }
-        dxball_sound_api.deallocate(dxball_sounds[slot]);
-        dxball_sounds[slot] = NULL;
+    if (dxball_sounds[slot] == NULL) return;
+    if (dxball_sound_device != NULL && dxball_sounds[slot]->buffer != NULL) {
+        dxball_sounds[slot]->buffer->vtable->release(dxball_sounds[slot]->buffer);
+        dxball_sounds[slot]->buffer = NULL;
     }
+    dxball_heap_release(dxball_sounds[slot]);
+    dxball_sounds[slot] = NULL;
+    return;
 }
 
+/* FUNCTION: DXBALL 0x00405990 */
 void dxball_load_sound(DxBallInt slot, const char *path)
 {
     void *file, *first, *second;
     const void *format, *data;
     DxBallUInt bytes, first_bytes, second_bytes;
     DxBallSound *sound;
+    DxBallInt result;
+
+    file = NULL;
     dxball_release_sound(slot);
-    /* Preserve the original request's one extra byte without inventing a field. */
-    sound = (DxBallSound *)dxball_sound_api.allocate(sizeof(*sound) + 1);
-    if (sound == NULL) dxball_platform_ops.exit_process(1);
+    sound = (DxBallSound *)dxball_runtime_malloc(sizeof(*sound) + 1);
+    if (sound == NULL) exit(1);
     dxball_sounds[slot] = sound;
-    file = dxball_load_binary_file(path, NULL, 1);
+    file = dxball_load_binary_file(path, file, 1);
     if (file == NULL) {
-        dxball_sound_api.deallocate(sound);
+        dxball_heap_release(dxball_sounds[slot]);
         return;
     }
     if (!dxball_parse_wave(file, &format, &data, &bytes)) {
-        dxball_sound_api.deallocate(file);
-        dxball_sound_api.deallocate(sound);
+        dxball_heap_release(file);
+        dxball_heap_release(dxball_sounds[slot]);
         return;
     }
-    if (dxball_sound_device == NULL) sound->buffer = NULL;
-    else {
-        if (dxball_create_sound_buffer(dxball_sound_device, &sound->buffer, format, bytes) != 0) {
-            dxball_sound_api.deallocate(file);
-            dxball_sound_api.deallocate(sound);
+    if (dxball_sound_device != NULL) {
+        result = dxball_create_sound_buffer(dxball_sound_device,
+            &dxball_sounds[slot]->buffer, format, bytes);
+        if (result != 0) {
+            dxball_heap_release(file);
+            dxball_heap_release(dxball_sounds[slot]);
             return;
         }
-        if (sound->buffer->vtable->lock(sound->buffer, 0, bytes,
-            &first, &first_bytes, &second, &second_bytes, 0) != 0) {
-            dxball_sound_api.deallocate(file);
-            dxball_sound_api.deallocate(sound);
+        result = dxball_sounds[slot]->buffer->vtable->lock(
+            dxball_sounds[slot]->buffer, 0, bytes,
+            &first, &first_bytes, &second, &second_bytes, 0);
+        if (result != 0) {
+            dxball_heap_release(file);
+            dxball_heap_release(dxball_sounds[slot]);
             return;
         }
         memcpy(first, data, first_bytes);
         if (second_bytes != 0)
             memcpy(second, (const DxBallByte *)data + first_bytes, second_bytes);
-        sound->buffer->vtable->unlock(sound->buffer, first, first_bytes, second, second_bytes);
-        sound->buffer->vtable->get_frequency(sound->buffer, &sound->frequency);
-        sound->buffer->vtable->get_pan(sound->buffer, &sound->pan);
-        sound->buffer->vtable->get_volume(sound->buffer, &sound->volume);
+        dxball_sounds[slot]->buffer->vtable->unlock(
+            dxball_sounds[slot]->buffer, first, first_bytes, second, second_bytes);
+        dxball_sounds[slot]->buffer->vtable->get_frequency(
+            dxball_sounds[slot]->buffer, &dxball_sounds[slot]->frequency);
+        dxball_sounds[slot]->buffer->vtable->get_pan(
+            dxball_sounds[slot]->buffer, &dxball_sounds[slot]->pan);
+        dxball_sounds[slot]->buffer->vtable->get_volume(
+            dxball_sounds[slot]->buffer, &dxball_sounds[slot]->volume);
+    } else {
+        dxball_sounds[slot]->buffer = NULL;
     }
-    dxball_sound_api.deallocate(file);
-    strcpy(sound->filename, path);
+    dxball_heap_release(file);
+    strcpy(dxball_sounds[slot]->filename, path);
+    return;
 }
 
 /* FUNCTION: DXBALL 0x00405C50 */
@@ -362,16 +378,19 @@ DxBallInt dxball_parse_wave(const void *file, const void **format,
     return 0;
 }
 
+/* FUNCTION: DXBALL 0x004063A0 */
 DxBallInt dxball_create_sound_buffer(DxBallSoundDevice *device,
     DxBallSoundBuffer **buffer, const void *format, DxBallUInt bytes)
 {
+    DxBallInt result;
     DxBallSoundBufferDesc descriptor;
     memset(&descriptor, 0, sizeof(descriptor));
     descriptor.size = 20;
     descriptor.flags = 0xe2;
     descriptor.bytes = bytes;
     descriptor.format = format;
-    return device->vtable->create_buffer(device, &descriptor, buffer, NULL);
+    result = device->vtable->create_buffer(device, &descriptor, buffer, NULL);
+    return result;
 }
 
 void *dxball_load_binary_file(const char *path, void *destination, DxBallInt allocate)

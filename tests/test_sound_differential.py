@@ -240,6 +240,21 @@ class Native(Backend):
             if index<7:table[index]=C.cast(fn,P).value
             elif name=='message_box':(P*27).in_dll(self.lib,'dxball_window_api')[9]=C.cast(fn,P).value
             else:(P*9).in_dll(self.lib,'dxball_platform_ops')[8]=C.cast(fn,P).value
+        self.heap_slot=P.in_dll(self.lib,'dxball_runtime_heap')
+        P.in_dll(self.lib,'dxball_new_handler').value=None
+        I.in_dll(self.lib,'dxball_malloc_mode').value=0
+        heap=(P*3).in_dll(self.lib,'dxball_heap_api')
+        for slot,name,result,arg in ((1,'allocate',P,Z),(2,'deallocate',I,P)):
+            def bind(name,result,arg):
+                def cb(heap,flags,value):
+                    try:
+                        assert (heap or 0)==(self.heap_slot.value or 0) and flags==0
+                        response=self.api(name,(value,))
+                        return 1 if name=='deallocate' else response
+                    except BaseException as exc:
+                        self.errors.append(exc);return 0
+                fn=C.CFUNCTYPE(result,P,U,arg)(cb);self.callbacks.append(fn);return fn
+            heap[slot]=C.cast(bind(name,result,arg),P).value
         self.tables=[]
         for methods,length in ((DEVICE,7),(BUFFER,21)):
             table=(P*length)();self.tables.append(table)
@@ -277,6 +292,9 @@ class Native(Backend):
         reader,writer=os.pipe();pid=os.fork()
         if pid==0:
             os.close(reader);self.exit_pipe=writer
+            exit_callback=self.callback('exit',None,[I,P])
+            libc=C.CDLL(None);libc.on_exit.argtypes=[type(exit_callback),P];libc.on_exit.restype=I
+            assert libc.on_exit(exit_callback,None)==0
             self.call(name,args);os._exit(255)
         os.close(writer);data=bytearray()
         while True:

@@ -2,6 +2,13 @@
 
 ## Current complete helper matching
 
+The [buffer batch](exact/EXACT_SOUND_BUFFERS.md) recovers pause, individual
+release, upload and buffer creation. Pause and release match all 214/149 bytes;
+the complete loader and create helper retain 31/8 local-displacement differences.
+Loading now uses the genuine malloc/free/exit calls and live record reads.
+One existing sound Oracle passes with its heap and termination boundaries
+adapted to those calls. Both Windows game profiles are linked.
+
 The [voice-control batch](exact/EXACT_SOUND_VOICES.md) recovers playback,
 looping, stop/rewind, persistent parameters and lost-buffer recovery. Play and
 update now match all 289 bytes each. The other five complete bodies retain
