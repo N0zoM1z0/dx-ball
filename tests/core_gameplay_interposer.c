@@ -53,6 +53,9 @@ static unsigned mode_active[7];
 static void (*real_mode_lifecycle[8])(void);
 static void (*real_mode_cleanup[4])(DxBallInt);
 static unsigned mode_lifecycle_active[12];
+static void (**bound_startup_boards)(const char *);
+static void (*real_startup_boards)(const char *);
+static unsigned startup_boards_active;
 static unsigned intro_key_active, editor_key_active, game_over_key_active, splash_key_active;
 static DxBallDisplayOps *bound_display;
 static void (*real_recover_surfaces)(void);
@@ -393,6 +396,30 @@ int dxball_test_bind_key_mode_ops(DxBallKeyModeOps *ops)
     if (ops == NULL) return -1;
     bound_keys = ops;
     return 0;
+}
+
+int dxball_test_bind_startup_boards(void (**callback)(const char *),
+                                  void (*real)(const char *))
+{
+    if (callback == NULL || real == NULL) return -1;
+    if (real == dxball_read_board_bank) return -2;
+    bound_startup_boards = callback;
+    real_startup_boards = real;
+    return 0;
+}
+
+void dxball_read_board_bank(const char *path)
+{
+    void (*callback)(const char *);
+    if (bound_startup_boards == NULL)
+        binding_failure("CoreNative board loader: unbound callback");
+    callback = *bound_startup_boards;
+    if (callback == dxball_read_board_bank) callback = real_startup_boards;
+    if (callback == NULL || callback == dxball_read_board_bank || startup_boards_active)
+        binding_failure("CoreNative board loader: null or recursive callback");
+    startup_boards_active = 1;
+    callback(path);
+    startup_boards_active = 0;
 }
 
 int dxball_test_bind_mode_ops(DxBallModeOps *ops,

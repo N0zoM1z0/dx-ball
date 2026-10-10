@@ -130,23 +130,33 @@ void dxball_restore_sprite_banks(void)
 
 void dxball_recover_surfaces(void)
 {
-    DxBallDDSurface *primary = (DxBallDDSurface *)dxball_primary_surface;
-    DxBallDDSurface *board = (DxBallDDSurface *)dxball_board_surface;
-    if (primary->vtable->restore(primary) == 0 && board->vtable->restore(board) == 0) {
-        dxball_restore_sprite_banks();
-        dxball_redraw_mode();
-    }
+    DxBallInt result;
+    result = dxball_primary_surface->vtable->restore(dxball_primary_surface);
+    if (result != 0)
+        return;
+    result = dxball_board_surface->vtable->restore(dxball_board_surface);
+    if (result != 0)
+        return;
+    dxball_restore_sprite_banks();
+    dxball_redraw_mode();
+    return;
 }
 
 void dxball_synchronize_surface(void)
 {
-    DxBallDDSurface *primary = (DxBallDDSurface *)dxball_primary_surface;
-    if (dxball_cursor_warp_disabled == 0) {
-        if ((DxBallUInt)primary->vtable->get_blt_status(primary, 1) == 0x887601c2UL)
+    DxBallInt result;
+    if (dxball_cursor_warp_disabled != 0) {
+        if (dxball_surface_restore_requested == 1) {
             dxball_recover_surfaces();
-        if (dxball_surface_restore_requested == 1) dxball_surface_restore_requested = 0;
-    } else if (dxball_surface_restore_requested == 1) {
-        dxball_recover_surfaces();
-        dxball_surface_restore_requested = 0;
+            dxball_surface_restore_requested = 0;
+        }
+    } else {
+        result = 0;
+        result = dxball_primary_surface->vtable->get_blt_status(dxball_primary_surface, 1);
+        if (result == (DxBallInt)0x887601c2UL)
+            dxball_recover_surfaces();
+        if (dxball_surface_restore_requested == 1)
+            dxball_surface_restore_requested = 0;
     }
+    return;
 }

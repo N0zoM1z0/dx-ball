@@ -30,7 +30,7 @@ extern FILE *dxball_board_file;
 extern DxBallSurface dxball_active_surface;
 struct DxBallDDSurface;
 extern struct DxBallDDSurface *dxball_board_surface;
-extern DxBallSurface dxball_background_surface;
+extern struct DxBallDDSurface *dxball_background_surface;
 extern DxBallRenderOps dxball_render_ops;
 
 /* Board index precondition: 0 <= board < 50. The original has no bounds checks. */

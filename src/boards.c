@@ -15,7 +15,7 @@ DxBallInt dxball_display_mode;
 FILE *dxball_board_file;
 DxBallSurface dxball_active_surface;
 struct DxBallDDSurface *dxball_board_surface;
-DxBallSurface dxball_background_surface;
+struct DxBallDDSurface *dxball_background_surface;
 DxBallRenderOps dxball_render_ops = { dxball_draw_sprite, dxball_restore_board_region, dxball_invalidate_region };
 
 /* FUNCTION: DXBALL 0x0040CC30
@@ -122,7 +122,7 @@ void dxball_draw_board_tile(DxBallInt x, DxBallInt y, DxBallInt defer_update)
 
     if (tile == 0 || (tile == 7 && dxball_display_mode == 1)) {
         dxball_render_ops.restore(dxball_active_surface, rect.left, rect.top,
-                                  dxball_background_surface, &rect, 0x10);
+                                  (DxBallSurface)dxball_background_surface, &rect, 0x10);
     } else if (tile <= 22) {
         dxball_render_ops.sprite(dxball_board_tile_sprite(tile), rect.left, rect.top);
     }

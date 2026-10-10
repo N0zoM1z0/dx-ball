@@ -78,7 +78,7 @@ class StartupNative(FileBoundaries,DeviceNative):
         bind(table,1,C.c_int32,[],self.random_next)
         bind((C.c_void_p*1).in_dll(self.lib,'dxball_startup_load_boards'),0,None,[C.c_void_p],self.load_boards)
         bind(self.ddraw_table,6,C.c_int32,[C.c_void_p]*4,self.create_background)
-        bind((C.c_void_p*9).in_dll(self.lib,'dxball_platform_ops'),8,None,[C.c_int32],self.terminate)
+        bind((C.c_void_p*1).in_dll(self.lib,'dxball_process_exit_backend'),0,None,[C.c_int32],self.terminate)
         (C.c_void_p*22).in_dll(self.lib,'dxball_mode_ops')[20]=C.cast(self.lib.dxball_initialize_device_state,C.c_void_p).value
         for name in ENTRIES:
             f=getattr(self.lib,'dxball_'+name);f.restype=C.c_int32 if name=='random_range' else None

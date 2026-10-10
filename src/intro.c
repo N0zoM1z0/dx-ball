@@ -136,7 +136,7 @@ void dxball_update_intro_points(void)
 void dxball_initialize_intro(void)
 {
     dxball_reset_regions();
-    dxball_clear_surface(dxball_background_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_background_surface, 0);
     dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "mainmenu.pcx", 2, 0, 0);
     dxball_load_sprite_bank(0, 1, "mainmenu.sbk");
     dxball_load_sprite_bank(1, 0, "thefont.sbk");
@@ -242,7 +242,7 @@ void dxball_initialize_splash(void)
 {
     DxBallColorKey key;
     DxBallInt i;
-    dxball_reset_regions(); dxball_clear_surface(dxball_background_surface, 0);
+    dxball_reset_regions(); dxball_clear_surface((DxBallSurface)dxball_background_surface, 0);
     dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "intro.pcx", 2, 0, 0);
     dxball_load_sprite_bank(0, 0, "candy.sbk");
     dxball_load_sprite_bank(1, 0, "chisel2.sbk");

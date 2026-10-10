@@ -66,7 +66,7 @@ void dxball_draw_high_scores(void)
 void dxball_initialize_game_over(void)
 {
     dxball_runtime_ops.reset_regions();
-    dxball_runtime_ops.clear_surface(dxball_background_surface, 0);
+    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_background_surface, 0);
     dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "highscor.pcx", 2, 0, 0);
     dxball_runtime_ops.load_sprite_bank(0, 1, "mainmenu.sbk");
     dxball_runtime_ops.load_sprite_bank(1, 0, "sysfont.sbk");
@@ -89,7 +89,7 @@ void dxball_redraw_game_over(void)
     dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
     if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface((DxBallSurface)dxball_secondary_surface, 0);
     dxball_runtime_ops.clear_surface((DxBallSurface)dxball_board_surface, 0);
-    copy_scene((DxBallSurface)dxball_board_surface, dxball_background_surface);
+    copy_scene((DxBallSurface)dxball_board_surface, (DxBallSurface)dxball_background_surface);
     dxball_select_surface((DxBallSurface)dxball_board_surface);
     if (dxball_show_high_scores == 1) dxball_draw_high_scores();
     else if (dxball_entering_score_name == 1) {

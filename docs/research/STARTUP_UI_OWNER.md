@@ -1,5 +1,10 @@
 # Startup and UI evidence
 
+The [device-frame restoration](exact/DEVICE_FRAME.md) restores initialization's
+direct board-loader and process-exit calls and the global COM output owner.
+The complete 359-byte candidate currently differs in ten bytes; the linked
+surface synchronization, recovery and cleanup bodies are exact.
+
 REA 4.1.0 with Ghidra 12.1.4 follows `WinMain` and the real frame
 caller into working-resource initialization at `0x403A00`. That function
 creates the background surface, restores scores and boards, seeds random

@@ -7,45 +7,51 @@ short, with its title PNG and progress SVG.
 
 ## Current checkpoint
 
-The [mode lifecycle](../research/exact/MAIN_MODE_LIFECYCLE.md) now calls the
-original owners directly. Redraw `0x4036B0` (127 bytes), initialization
-`0x4038D0` (127) and cleanup `0x403950` (162) are exact on the first stable
-compilation. Cleanup passes the full DWORD argument. All five modes connect
-to their original initialize/redraw/dispose entries.
+The [device-frame restoration](../research/exact/DEVICE_FRAME.md) connects the
+exact dispatcher to original device/reset behavior. Surface synchronization
+`0x4035B0` (134 bytes), recovery `0x403640` (97) and background cleanup
+`0x403BD0` (80) are exact on their first stable compilation. Initialization
+`0x403A00` now restores all original calls and descriptor stores; its complete
+359/359-byte candidate has ten remaining differences: nine descriptor/index
+stack displacements and one failure-branch epilogue target.
 
-- 283 source-present functions; 143 exact / 23,090 code bytes and 136 metadata
+- 283 source-present functions; 146 exact / 23,401 code bytes and 136 metadata
   bytes. Whole-source >=95% completion remains unproven.
-- One runtime recipe compiled once. Six affected prior exact units preserved;
-  nine whole comparisons / 203 actual relocations. The dispatcher body and
-  same-section label offsets are unchanged; its six local symbol IDs refreshed
-  against the actual object.
-- Twelve typed non-game lifecycle fixture forwards use actual live ModeOps
-  slots and copied-image real defaults. The three mode1 bodies, shared game
-  APIs and case bodies are unchanged.
-- Only three existing mode/dispatch loops ran: 149 cases, once. Other owner
-  and connected checks retain historical scope after input-hash refresh.
-- Native, VC4 and MinGW builds pass. VC4 reuses 35 valid objects and compiles
-  no remaining sources. One REA session read the three full spans, verified all
-  416 bytes / 102 instructions / 15 calls and closed with snapshot495.
+- The genuine background owner is now a COM pointer. Seven explicit casts
+  bridge existing integer-handle APIs. All 27 affected recipes compiled once;
+  all 135 affected prior exact units survived. The full batch compares 141
+  units with 1,642 actual relocations, including the four new complete units
+  and two current platform candidates.
+- One typed native board-loader forward uses the existing actual callback
+  slot and copied-image real default. Startup's termination callback binds
+  the existing process-exit backend. Case bodies remain unchanged.
+- Only the affected existing loops ran: 392 direct cases and 21 connected
+  checks, each selected owner once. Other owner rows retain historical scope
+  after input-hash refresh.
+- Native, VC4 and MinGW builds pass. VC4 reuses 26 valid objects and compiles
+  nine remaining game sources. Saved REA dossiers cover all 670 bytes,
+  170 instructions, 15 direct calls and six COM sites; snapshot495 unchanged.
+  No provider session or new binary query was needed.
 
-Full drivers/receipts: `.analysis/exact-main-mode/`; byte evidence:
-`.analysis/main-mode-byte-review/`. Checkpoint:
-`.analysis/checkpoints/exact-main-mode-283-143/`, parent `exact-main-frame-283-140`.
-Bounded audit: `.analysis/main-mode-flow-review/final-review.json`.
-Main dispatcher228, editor-frame908, clock83 and direct key dispatch162 stay
-exact; game-key836/831 and WindowProc1166/1171 remain complete candidates.
+Full drivers/receipts: `.analysis/exact-device-frame/`; saved proposal:
+`.analysis/device-frame-next-review/`. Checkpoint:
+`.analysis/checkpoints/exact-device-frame-283-146/`, parent `exact-main-mode-283-143`.
+Bounded independent audit: `.analysis/device-frame-flow-review/`.
+Main frame228, mode controllers416, editor-frame908, clock83 and key dispatch162
+remain exact. Game-key836/831 and WindowProc1166/1171 remain complete candidates.
 
 ## Next work
 
-Follow the now-direct device/reset boundary: initialize_device_state at
-`0x403A00` and synchronize_surface at `0x4035B0`, with surface recovery and
-working-surface lifetime where needed to complete that path. Inspect current
-startup/device source and reuse saved REA/caller evidence first. A bounded
-proposal is under `.analysis/device-frame-next-review/`. Resolve any actual
-missing byte/COM/ownership evidence before an exact claim; avoid compiler
-profiles or source-expression, name and layout trials. Function counts are not
-the whole-source completion denominator; complete flows and runtime-origin
-classification still matter.
+Follow the palette and sprite dependencies called by the restored device path.
+Preserve the already exact initialize_palette206 body. Investigate clear_surface
+`0x409F10` (89) and restore_sprite_banks `0x403D30` (282) from their saved complete
+REA dossiers; a bounded proposal is under `.analysis/device-dependencies-next-review/`.
+Clear-surface still adds a memset and caches its COM destination. Sprite
+recovery still caches a sprite and reloads via authored RuntimeOps instead of
+the original direct load_sprite_bank API. The observed unconsumed Restore
+result store is unresolved source-local versus compiler-spill evidence; avoid
+adding a fake local. Do not run declaration/name/layout or compiler-profile
+trials to force initialization's ten residual bytes.
 
 REA checkout: `/home/pentester/Project/rea/`. New binary questions use
 `scripts/rea`, pinned to REA4.1.0/Ghidra12.1.4; retain full responses/Evidence IDs

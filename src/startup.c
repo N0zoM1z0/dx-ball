@@ -85,28 +85,43 @@ void dxball_release_sprite_banks(void)
 
 void dxball_initialize_device_state(void)
 {
+    DxBallUInt start;
+    DxBallInt result;
     DxBallSurfaceDesc desc;
-    DxBallDDSurface *background = (DxBallDDSurface *)dxball_background_surface;
-    DxBallUInt start, elapsed;
-    DxBallInt i, result;
-    memset(&desc, 0, sizeof(desc)); desc.size = 108; desc.flags = 7;
-    desc.width = 640; desc.height = 480; desc.caps = 0x840;
-    result = dxball_direct_draw->vtable->create_surface(dxball_direct_draw, &desc, &background, NULL);
-    dxball_background_surface = (DxBallSurface)background;
+    DxBallInt i;
+
+    desc.size = 108;
+    desc.flags = 7;
+    desc.caps = 0x840;
+    desc.height = 480;
+    desc.width = 640;
+    result = dxball_direct_draw->vtable->create_surface(dxball_direct_draw,
+        &desc, &dxball_background_surface, NULL);
     if (result != 0) {
-        dxball_platform_ops.exit_process(1);
-        abort();
+        dxball_process_exit(1);
+    } else {
+        dxball_end_requested = 0;
+        dxball_display_mode = 4;
+        dxball_return_to_menu = 4;
+        dxball_initialize_scores();
+        dxball_read_scores();
+        dxball_read_board_bank(dxball_board_filename);
+        dxball_seed_random();
+        dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
+        dxball_initialize_palette();
+        start = dxball_current_time();
+        for (i = 0; i <= 31; ++i)
+            dxball_direct_draw->vtable->wait_vertical_blank(dxball_direct_draw, 1, NULL);
+        if (dxball_current_time() - start > 400) {
+            dxball_wait_vertical_blank = 1;
+        } else {
+            dxball_wait_vertical_blank = 0;
+        }
+        if (dxball_reduced_particles == 1)
+            dxball_wait_vertical_blank = 0;
+        if (dxball_software_only == 0 && dxball_wait_vertical_blank == 0)
+            dxball_reduced_particles = 1;
+        dxball_frame_wait_tick = dxball_current_time();
     }
-    dxball_end_requested = 0; dxball_display_mode = 4; dxball_return_to_menu = 4;
-    dxball_initialize_scores(); dxball_read_scores();
-    dxball_startup_load_boards(dxball_board_filename); dxball_seed_random();
-    dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0); dxball_initialize_palette();
-    start = dxball_current_time();
-    for (i = 0; i < 32; ++i)
-        dxball_direct_draw->vtable->wait_vertical_blank(dxball_direct_draw, 1, NULL);
-    elapsed = dxball_current_time() - start;
-    dxball_wait_vertical_blank = elapsed > 400;
-    if (dxball_reduced_particles == 1) dxball_wait_vertical_blank = 0;
-    if (dxball_software_only == 0 && dxball_wait_vertical_blank == 0) dxball_reduced_particles = 1;
-    dxball_frame_wait_tick = dxball_current_time();
+    return;
 }

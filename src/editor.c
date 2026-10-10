@@ -83,7 +83,7 @@ void dxball_draw_editor_status(void)
 void dxball_initialize_editor(void)
 {
     dxball_runtime_ops.reset_regions();
-    dxball_runtime_ops.clear_surface(dxball_background_surface, 0);
+    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_background_surface, 0);
     dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "mbbkgrnd.pcx", 2, 0, 0);
     dxball_runtime_ops.load_sprite_bank(0, 1, "mball2.sbk");
     dxball_runtime_ops.load_sprite_bank(1, 1, "sfont.sbk");

@@ -1,5 +1,9 @@
 # Palette transitions and surface recovery
 
+The [device-frame restoration](exact/DEVICE_FRAME.md) now makes synchronization
+and recovery exact, preserving live surface reads and the original HRESULT
+writes. That note records the current affected checks and compiler receipts.
+
 REA's gameplay initialization and presentation callers lead to the palette
 transition controller at `0x40A340` and recovery at `0x403640`. The maintained
 owner is [device.c](../../src/device.c), with shared declarations in

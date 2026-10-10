@@ -437,13 +437,13 @@ void dxball_initialize_sprite_banks(void)
 
 void dxball_dispose_working_surface(DxBallInt fade)
 {
-    DxBallDDSurface *background;
-    if (dxball_device_reset_requested != 0) dxball_cleanup_mode(fade);
-    background = (DxBallDDSurface *)dxball_background_surface;
-    if (background != NULL) {
-        background->vtable->release(background);
-        dxball_background_surface = 0;
+    if (dxball_device_reset_requested != 0)
+        dxball_cleanup_mode(fade);
+    if (dxball_background_surface != NULL) {
+        dxball_background_surface->vtable->release(dxball_background_surface);
+        dxball_background_surface = NULL;
     }
+    return;
 }
 
 /* FUNCTION: DXBALL 0x00403820 */

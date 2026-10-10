@@ -221,6 +221,7 @@ class _Image:
                       ('dxball_mode_ops', 22, 19, 'dxball_dispose_splash'),
                       ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
         boundaries.append(('dxball_display_ops', 2, 1, 'dxball_recover_surfaces'))
+        boundaries.append(('dxball_startup_load_boards', 1, 0, 'dxball_read_board_bank'))
         for table, length, slot, symbol in boundaries:
             defaults = (C.c_void_p * length).in_dll(self.lib, table)
             real = C.cast(getattr(self.lib, symbol), C.c_void_p).value
@@ -254,6 +255,7 @@ class _Image:
         self.platform_table = (C.c_void_p * 9).in_dll(self.lib, 'dxball_platform_ops')
         self.key_table = (C.c_void_p * 5).in_dll(self.lib, 'dxball_key_mode_ops')
         self.mode_table = (C.c_void_p * 22).in_dll(self.lib, 'dxball_mode_ops')
+        self.startup_boards_slot = C.c_void_p.in_dll(self.lib, 'dxball_startup_load_boards')
         self.platform_music_default = self.platform_table[7]
         real = C.cast(self.lib.dxball_load_music, C.c_void_p).value
         intercepted = C.cast(_shim.dxball_load_music, C.c_void_p).value
@@ -313,6 +315,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_platform_ops.restype = C.c_int
         _shim.dxball_test_bind_key_mode_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_key_mode_ops.restype = C.c_int
+        _shim.dxball_test_bind_startup_boards.argtypes = [C.c_void_p, C.c_void_p]
+        _shim.dxball_test_bind_startup_boards.restype = C.c_int
         _shim.dxball_test_bind_mode_ops.argtypes = [C.c_void_p] * 8
         _shim.dxball_test_bind_mode_ops.restype = C.c_int
         _shim.dxball_test_bind_mode_lifecycle_ops.argtypes = [C.c_void_p] * 13
@@ -339,6 +343,15 @@ def fixture_image(library):
     image = _copies[key]
     if _sha(image.path) != canonical_sha256 or _sha(canonical) != canonical_sha256:
         raise RuntimeError('CoreNative copied or selected library identity changed')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_startup_load_boards'))
+    real = C.cast(image.lib.dxball_read_board_bank, C.c_void_p).value
+    if (actual != C.addressof(image.startup_boards_slot) or
+            real != image.function_addresses['dxball_read_board_bank'] or
+            real == C.cast(_shim.dxball_read_board_bank, C.c_void_p).value or
+            _function_owner(real) != image.path.resolve()):
+        raise RuntimeError('CoreNative board loader has a different owner')
+    if _shim.dxball_test_bind_startup_boards(actual, real) != 0:
+        raise RuntimeError('CoreNative board-loader binding rejected')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_platform_ops'))
     if actual != C.addressof(image.platform_table):
         raise RuntimeError('CoreNative platform table does not belong to its copied image')

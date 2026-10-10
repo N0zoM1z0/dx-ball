@@ -253,7 +253,7 @@ void dxball_redraw_game(void)
 
 void dxball_initialize_game(void)
 {
-    dxball_clear_surface(dxball_background_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_background_surface, 0);
     dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "mbbkgrnd.pcx", 2, 0, 0);
     dxball_load_sprite_bank(0, 1, "mball2.sbk");
     dxball_select_sprite_bank(0);
