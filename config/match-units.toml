@@ -4095,7 +4095,7 @@ relocations = [
   { offset = 238, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
 ]
 
-[candidates.step-brick-effect]
+[units.step-brick-effect]
 build = "effects"
 symbol = "_dxball_step_brick_effect"
 target_address = 0x412cb0

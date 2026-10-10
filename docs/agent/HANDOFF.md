@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 185 exact functions / 32,688 full-span bytes and
+- 283 source-present entries; 186 exact functions / 33,001 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -965,6 +965,31 @@ external definition grounds onexit and then atexit. Each whole section passes
 before export. Same-member static definitions in other sections need explicit
 namespace-aware provenance before reuse. Investigate unresolved storage/
 call provenance or another live consumer; do not force local homes/dead tails.
+
+Latest animation checkpoint restores signed `frames <= 0` in both steppers.
+The full brick step at `0x412CB0` matches all 313 bytes and 24 actual relocations;
+explosion remains a full 797-byte candidate with 47 unmasked differences.
+Current exact acceptance is 186 functions /33,001 code bytes plus 136 metadata
+bytes; all preceding 185 identities remain valid. Source presence 283,
+semantic acceptance 247 and origins 270/76/42/140 stay unchanged.
+Two actual effects compilations retain both predicates and three prior exact
+bodies. Four diagnostic comparison-operand reversals compile to identical code
+and relocations; their source and objects are restored without another compile.
+Do not try identifiers/declaration order to force those canonical operand choices.
+Native/MinGW each compile effects once; VC4 links one matching and 35 verified
+unchanged objects, without further legacy source compilation. The final library
+passes 540 existing animation cases and 128 mixed-queue calls; selected case
+bodies stay unchanged. Historical semantic closures refresh without rerunning
+their suites. No new live-game or broad replay claim. See
+[frame exhaustion](../research/exact/EXACT_EFFECT_FRAME_EXHAUSTION.md).
+Private `.analysis/predicate-operands/`; seal
+`.analysis/checkpoints/effect-zero-predicates-283-186/sha256.json`.
+REA 6.3.0 reuses six closed dossiers; feedback 40 appends only to the existing
+`/tmp/dxball_rea_feedback_20261010.md`. Complete source fidelity remains open.
+The bounded candidate frontier also rejects fill-triangle's inconsistent data
+COMDAT binding (`$T1161`); no comparator exception is suppressed for acceptance.
+Investigate that metadata against actual definitions and original storage, or
+resolve another source control/data-flow difference. No name/layout trials.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider

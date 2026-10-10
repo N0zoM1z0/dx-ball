@@ -6,8 +6,8 @@ resolves eight further CRT entries through complete sections, independently
 named imports and ordered verified definitions. The preceding storage batch resolved two through complete prior
 code definitions and independently placed initialized data sections. Source presence remains **283** (270 authored,
 one unknown-origin no-effect body and 12 runtime bodies); scoped semantic
-acceptance remains **247 entries**, and exact acceptance is **185 complete
-functions /32,688 code bytes plus 136 separate metadata bytes**. Earlier batches
+acceptance remains **247 entries**, and exact acceptance is **186 complete
+functions /33,001 code bytes plus 136 separate metadata bytes**. Earlier batches
 below retain their own scopes and counts.
 
 All 270 currently confirmed authored entries have maintained source. That

@@ -1,5 +1,9 @@
 # Complete brick animation lifecycle
 
+The later [zero-frame checkpoint](EXACT_EFFECT_FRAME_EXHAUSTION.md) makes
+the complete 313-byte brick step exact and restores the explosion step's zero
+comparison. The historical scope and counts below remain tied to this batch.
+
 This batch restores the complete explosion step (`0x412730`, 797 bytes),
 animation removal (`0x412A50`, 215 owned bytes in a 220-byte enclosing span),
 brick animation constructor (`0x412BA0`, 259 bytes) and brick animation step

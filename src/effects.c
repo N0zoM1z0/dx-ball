@@ -101,7 +101,7 @@ void dxball_step_explosion_effect(void)
             }
             dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] = 0;
         }
-        if (dxball_brick_effects.current->frames < 1) {
+        if (dxball_brick_effects.current->frames <= 0) {
             rect.left = dxball_brick_effects.current->x;
             rect.top = dxball_brick_effects.current->y;
             rect.right = dxball_brick_effects.current->x + 30;
@@ -146,7 +146,7 @@ void dxball_step_brick_effect(void)
     rect.bottom = y + 15;
     if (dxball_brick_effects.current->period <= dxball_brick_effects.current->ticks) {
         --dxball_brick_effects.current->frames;
-        if (dxball_brick_effects.current->frames < 1) {
+        if (dxball_brick_effects.current->frames <= 0) {
             dxball_select_surface((DxBallSurface)dxball_board_surface);
             dxball_draw_board_tile(dxball_brick_effects.current->x, dxball_brick_effects.current->y, 0);
             dxball_remove_brick_effect(&dxball_brick_effects);
