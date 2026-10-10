@@ -68,8 +68,9 @@ REA 6.3 rejects the old snapshot during integrity validation; the exact cause
 is unisolated. The old snapshot is
 retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
 Evidence IDs and dossiers remain available for direct reuse. The current
-snapshot contains sixteen cumulative new records, including the reading/insertion
-literals, three sprite-lifetime dossiers and six font facets. Its latest close reports seven
+snapshot contains nineteen cumulative new records, including the reading/insertion
+literals, three sprite-lifetime dossiers, six font facets and three PCX facets.
+Its latest close reports seven
 primitive entries and no workflow entries. New analysis responses expose
 `raw_result` and `normalized_result`, while older responses use `result`.
 See [REA commands](REA.md). No registration rewrite or provider installation
@@ -334,6 +335,10 @@ Entry 19 records the useful existing native info/pseudocode/assembly interfaces:
 six font responses total 61,666 bytes; later facets take 23–45 ms, but the
 first info query still takes about 62 seconds. It documents the drawing span
 gap, remaining cold-start visibility and compact discovery suggestions.
+Entry 20 records three PCX facets totaling 75,138 serialized MCP bytes,
+a 58.7-second cold info query and 136/32 ms warm pseudo/assembly calls.
+It describes header/descriptor producer-consumer views and the original
+duplicated literal/run paths, redundant checks and unconsumed row updates.
 
 ## Clock boundary checkpoint before sprite recovery
 
@@ -432,6 +437,41 @@ sixteen Evidence records /seven primitive entries. Feedback uses only
 
 Continue resolving genuine rendering/resource/call gaps with retained evidence.
 Near-complete source fidelity remains unproven; the reconstruction goal is active.
+
+## Current PCX source checkpoint
+
+The decoder restores independent RLE/literal paths, the complete typed 128-byte
+header and byte-pointer producer, signed 16-bit maxima, distinct header/run
+indices and actual row-counter initialization/increments. The counter has no
+later original consumer; it is supported by direct instructions. Both clipping
+paths use the consumed pixel pointer. Original redundant byte-range checks,
+inclusive limit, zero runs, overshoot and pre-Lock dimensions/pitch remain.
+Scoped GCC diagnostic annotations preserve the observed check and counter
+without changing the shared executable logic.
+
+The complete original span is contiguous at 862 bytes. Current comparison is
+984/862 bytes /869 unaligned differences /eight bindings, with current/original
+308/312-byte frames. Local homes, address scheduling and four unexplained frame
+bytes remain; do not add storage or perform declaration/name/layout trials to
+force agreement. Full `rb` storage, including NUL, is bound to `0x422794`.
+All twelve resource exacts and five candidates compare together. Totals remain
+169 exact functions /30,238 complete code bytes /136 metadata bytes.
+
+Two matching `/ML` compiles and one established `/MT` production compile were
+used; 34 verified game objects were reused. Native/MinGW builds pass. The final
+library passes 99 unchanged selected PCX calls across five original images,
+all palette modes and existing edge cases. Real VC4 ball/pause/editor/save/
+reload/exit passes with 84 read-only states, five captures, expected saved bank,
+exit zero and all 49 originals unchanged. Other semantic scopes and prior
+controls remain historical after input refresh; no full owner or historical
+validation queue was replayed. Source/frame/full-game fidelity stays unproven.
+
+Receipts: `.analysis/exact-pcx-decoding/` and
+`.analysis/windows-play-pcx-decoding/`. The closed REA run is
+`2026-10-10T17-54-16.976Z-requests-866362`; current snapshot contains nineteen
+Evidence records and seven primitive entries. Feedback still uses only
+`/tmp/dxball_rea_feedback_20261010.md`, now twenty numbered entries.
+Continue restoring genuine rendering/resource/call gaps from retained evidence.
 
 ## Working limits and completeness
 

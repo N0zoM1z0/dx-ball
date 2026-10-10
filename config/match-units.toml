@@ -1661,7 +1661,7 @@ relocations = [
   { offset = 54, type = "REL32", symbol = "_dxball_release_sprite", addend = 0, target = 0x00404BE0 },
   { offset = 85, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x00425980 },
   { offset = 109, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1024, target = 0x00425980 },
-  { offset = 118, type = "DIR32", symbol = "$SG707", addend = 0, target = 0x00421090, data_hex = "2000" },
+  { offset = 118, type = "DIR32", symbol = "$SG716", addend = 0, target = 0x00421090, data_hex = "2000" },
   { offset = 138, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
   { offset = 149, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x004177F0 },
   { offset = 161, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x00403E70 },
@@ -9390,4 +9390,21 @@ relocations = [
   { offset = 269, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
   { offset = 283, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
   { offset = 303, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+]
+
+[candidates.load-pcx]
+build = "resources"
+symbol = "_dxball_load_pcx"
+target_address = 0x00409BB0
+size = 862
+boundary_evidence = "docs/research/RESOURCE_OWNER.md"
+relocations = [
+  { offset = 105, type = "DIR32", symbol = "$SG685", addend = 0, target = 0x00422794, data_hex = "726200" },
+  { offset = 114, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
+  { offset = 217, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
+  { offset = 396, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
+  { offset = 525, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
+  { offset = 923, type = "REL32", symbol = "_fclose", addend = 0, target = 0x00417A30 },
+  { offset = 945, type = "REL32", symbol = "_dxball_load_live_palette", addend = 0, target = 0x00409790 },
+  { offset = 967, type = "REL32", symbol = "_dxball_load_saved_palette", addend = 0, target = 0x004098F0 },
 ]

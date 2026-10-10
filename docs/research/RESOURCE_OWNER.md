@@ -1,5 +1,44 @@
 # Sprite, font, PCX and palette owner
 
+The PCX decoder now follows the original independent RLE and literal-pixel
+paths. Both paths retain their own wrap, clip and consumed pixel-pointer
+updates. A byte pointer fills the complete 128-byte disk header; typed signed
+16-bit maxima occupy offsets eight and ten. Other header bytes remain opaque
+encoded input, rather than invented fields. Dimensions and pitch remain saved
+from GetSurfaceDesc before Lock. Separate header/run indices, the observed
+source-row initialization and increments, inclusive decoded limit, zero-count
+packets and packet overshoot are preserved. The row count has no later consumer
+in the original; it is retained from its actual stores and increments, not
+introduced to change the frame. Scoped GCC diagnostics preserve both this
+update and the original redundant 192..255 byte test in shared source.
+
+The complete 862-byte original body is contiguous. Its current `/ML` comparison
+is 984/862 bytes with eight explicit relocations and 869 unaligned differences;
+it remains a candidate. Current/original frames are 308/312 bytes. Local homes,
+address scheduling and the remaining frame bytes are unresolved; no additional
+local, padding, declaration or name trials were used to force agreement. The
+complete three-byte `rb` literal is bound to `0x422794`. All twelve accepted
+resource units and five candidates were compared together; exact totals stay
+169 functions /30,238 complete code bytes /136 metadata bytes.
+
+REA information, pseudocode and assembly are retained in closed run
+`2026-10-10T17-54-16.976Z-requests-866362`, with Evidence identities
+`ev_c50e6d43ad08314dafcb3121bfd836d0e3a93d04d480533b5ab9b77043f8b6a2`,
+`ev_13ac465a95860ab7b511475a2174d532caacd558004ca45bb872179fb03aa192`
+and `ev_93b5290136b33bfcc5cee2cc186d2f6440c5a8c1595647d46ec6172e7d5c8566`.
+Two matching compilations retain the intermediate and final objects/inputs.
+The final native library passes 99 unchanged selected PCX cases: all five
+supplied images, all palette modes, retry, clipping, signed maxima, zero runs
+and overshoot. Native/MinGW builds pass. One established `/MT` production
+compile and 34 verified object reuses relink the VC4 game. Real-Wine ball/pause/
+editor/save/reload/exit passes with 84 read-only states, five captures, the
+expected saved-bank hash, exit zero and all 49 originals unchanged. The play
+selection and its limitations are recorded in
+`.analysis/windows-play-pcx-decoding/`; compiler and selected-oracle receipts
+are in `.analysis/exact-pcx-decoding/`. Other semantic scopes and prior controls
+remain historical after input-identity refresh; no full owner or historical
+validation queue was replayed.
+
 Glyph lookup at `0x404E40` now matches its complete 145 bytes and six
 relocations. The source restores the count-first short-circuit loop, preserving
 the excluded final slot, zero for a missing character and one for an empty
@@ -128,7 +167,7 @@ the behavioral evidence. The maintained implementation is `src/resources.c`.
 | `0x00409790` | load_live_palette | 337 | full exact |
 | `0x004098F0` | load_saved_palette | 307 | full exact |
 | `0x00409A30` | load_surface_palette | 376 | full exact; active use unresolved |
-| `0x00409BB0` | load_pcx | 862 | scoped semantic |
+| `0x00409BB0` | load_pcx | 862 | scoped semantic; exact candidate |
 
 ## Storage and interface
 
