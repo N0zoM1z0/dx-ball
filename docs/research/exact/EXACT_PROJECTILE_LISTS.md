@@ -1,5 +1,10 @@
 # Complete projectile and fire-effect list lifecycle
 
+The current [cursor-return checkpoint](EXACT_LIST_CURSOR_RETURNS.md) makes all
+four begin/advance routines exact. The [typed-delete checkpoint](EXACT_LIST_DELETE.md)
+makes both deletions exact. The following original checkpoint retains its
+historical products, counts and candidate results.
+
 This batch restores eight whole list helpers and independently reviews the
 already restored 328-byte projectile controller. The nine enclosing spans total
 1,352 bytes. Each deletion has 215 owned instruction bytes in a 220-byte span;

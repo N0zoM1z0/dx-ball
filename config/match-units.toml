@@ -4129,29 +4129,32 @@ relocations = [
   { offset = 296, type = "REL32", symbol = "_dxball_restore_effect_region", addend = 0, target = 0x408a50 },
 ]
 
-[candidates.begin-fire-effects]
+[units.begin-fire-effects]
 build = "list_initializers"
 symbol = "@dxball_begin_fire_effects@4"
-target_address = 0x410030
+target_address = 0x00410030
 size = 57
 boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
-relocations = []
+relocations = [
+]
 
-[candidates.begin-projectiles]
+[units.begin-projectiles]
 build = "list_initializers"
 symbol = "@dxball_begin_projectiles@4"
-target_address = 0x410130
+target_address = 0x00410130
 size = 57
 boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
-relocations = []
+relocations = [
+]
 
-[candidates.advance-projectile]
+[units.advance-projectile]
 build = "list_initializers"
 symbol = "@dxball_advance_projectile@4"
-target_address = 0x410230
+target_address = 0x00410230
 size = 89
 boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
-relocations = []
+relocations = [
+]
 
 [units.append-projectile]
 build = "list_initializers"
@@ -4195,13 +4198,14 @@ relocations = [
   {offset = 186, type = "REL32", symbol = "??3@YAXPAX@Z", addend = 0, target = 0x00416760},
 ]
 
-[candidates.advance-fire-effect]
+[units.advance-fire-effect]
 build = "list_initializers"
 symbol = "@dxball_advance_fire_effect@4"
-target_address = 0x413870
+target_address = 0x00413870
 size = 89
 boundary_evidence = "docs/research/exact/EXACT_PROJECTILE_LISTS.md"
-relocations = []
+relocations = [
+]
 
 [units.restore-effect-region]
 build = "display"

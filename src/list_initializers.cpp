@@ -110,11 +110,7 @@ DxBallInt DXBALL_FASTCALL dxball_append_projectile(DxBallProjectileList *list)
 DxBallInt DXBALL_FASTCALL dxball_begin_projectiles(DxBallProjectileList *list)
 {
     list->current = list->first;
-    if (list->current != NULL) {
-        return 1;
-    } else {
-        return 0;
-    }
+    return list->current != NULL;
 }
 
 DxBallInt DXBALL_FASTCALL dxball_advance_projectile(DxBallProjectileList *list)
@@ -124,12 +120,10 @@ DxBallInt DXBALL_FASTCALL dxball_advance_projectile(DxBallProjectileList *list)
         if (list->current == NULL) {
             list->current = list->first;
             return 0;
-        } else {
-            return 1;
         }
-    } else {
-        return 0;
+        return 1;
     }
+    return 0;
 }
 
 DxBallInt DXBALL_FASTCALL dxball_remove_projectile(DxBallProjectileList *list)
@@ -182,11 +176,7 @@ DxBallInt DXBALL_FASTCALL dxball_append_fire_effect(DxBallFireEffectList *list)
 DxBallInt DXBALL_FASTCALL dxball_begin_fire_effects(DxBallFireEffectList *list)
 {
     list->current = list->first;
-    if (list->current != NULL) {
-        return 1;
-    } else {
-        return 0;
-    }
+    return list->current != NULL;
 }
 
 DxBallInt DXBALL_FASTCALL dxball_advance_fire_effect(DxBallFireEffectList *list)
@@ -196,12 +186,10 @@ DxBallInt DXBALL_FASTCALL dxball_advance_fire_effect(DxBallFireEffectList *list)
         if (list->current == NULL) {
             list->current = list->first;
             return 0;
-        } else {
-            return 1;
         }
-    } else {
-        return 0;
+        return 1;
     }
+    return 0;
 }
 
 DxBallInt DXBALL_FASTCALL dxball_remove_fire_effect(DxBallFireEffectList *list)

@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 180 exact functions / 32,364 full-span bytes and
+- 283 source-present entries; 184 exact functions / 32,656 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -865,6 +865,28 @@ REA6.3.0 matches current official npm latest. Five closed dossiers are reused;
 one new19,644-byte read attests all five spans, with42,332ms client latency and
 162,654 serialized MCP response bytes; full carriers stay outside context.
 The provider closed. Feedback35 is appended in the same existing /tmp document.
+
+Latest cursor-return checkpoint: the four projectile/fire begin and advance
+bodies now match all57/89 bytes. Natural predicate/fallthrough source preserves
+integer ABI, current-before-result writes, exhaustion rewind and original
+branch/epilogue topology. One stable list-owner compile retains13 actual inputs.
+All42 maintained list functions are exact: seven constructors and five helpers
+per seven families.38 prior exacts survive;18 generated initializer functions
+and the ordered36-byte/nine-relocation constructor table are unchanged.
+Native/original590 direct queue cases plus64 separate connected calls pass,
+including two fatal allocations. The raw receipt has separate supplemental
+C++/build-input identities; existing cases/assertions/oracles are unchanged.
+Native/MinGW rebuild one owner. VC4 reuses one matching+35 unchanged objects,
+with zero extra source compiles. No new live-game or broad replay claim.
+Totals184 /32,656 code bytes /136 metadata; source283/scoped semantics247/
+origins unchanged.235 historical input rows refresh while preserving scope,
+cases and original oracle identities. Private .analysis/list-cursor-returns/;
+seal .analysis/checkpoints/list-cursor-returns-283-184/sha256.json. See
+[exact cursor returns](../research/exact/EXACT_LIST_CURSOR_RETURNS.md).
+REA6.3.0 reuses four closed dossiers; snapshot23/seven primitives unchanged.
+Feedback36 goes only into the same existing /tmp document. Other owners,
+controller storage choices, retirement, unknown origins and full-game fidelity
+remain open; do not force layouts or declarations to close those gaps.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
