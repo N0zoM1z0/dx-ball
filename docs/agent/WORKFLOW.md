@@ -22,7 +22,7 @@ scripts/repo-python scripts/verify-toolchain.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 ```
 
-[`REA.md`](../REA.md) shows the pinned 4.1 CLI and session protocol. New binary
+[`REA commands`](REA.md) shows the pinned 4.1 CLI and session protocol. New binary
 queries use its Ghidra provider. Ask focused questions about complete control
 flow, actual call targets, argument widths and data consumers. Retain full
 responses, Evidence IDs and limitations in `.analysis/rea/`, then close/save
