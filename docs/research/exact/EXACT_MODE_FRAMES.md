@@ -1,5 +1,11 @@
 # Complete menu and gameplay frames
 
+The subsequent [frame control-flow checkpoint](../FRAME_CONTROL_FLOW.md)
+restores the direct pause return, signed auxiliary-byte consumer and zero
+completion comparison. Its complete candidate is1,691/1,688 bytes with1,156
+unmasked differences. Remaining aggregate-address forms and local homes stay
+explicit; no new exact claim. The evidence below retains its historical scope.
+
 The menu frame at `0x0040E330` has one contiguous 242-byte body ending at
 `0x0040E421`, retained in REA Evidence
 `ev_6209121031ff06b1a5ae1e284316241f2d319a9129ad4c33ccab80d4381195b1`.

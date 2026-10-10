@@ -1,5 +1,15 @@
 # Main ball physics and gameplay frame
 
+The [frame control-flow checkpoint](FRAME_CONTROL_FLOW.md) restores the direct
+paused return, signed auxiliary-byte load and zero completion comparison.
+The complete candidate is now1,691/1,688 bytes with1,156 unmasked differences.
+Full instruction correspondence identifies three recovered aggregate-address
+forms and remaining local homes; no exact claim follows. Six preceding core
+exacts survive both actual compile phases.708 existing frame cases, including
+200 connected frames, pass the first product;24 existing pause cases pass the
+final product. Runtime identities remain distinct. Earlier batch counts below
+retain their historical scope.
+
 The [complete projectile/fire-list restoration](exact/EXACT_PROJECTILE_LISTS.md)
 restores eight whole append/begin/advance/removal bodies, preserving separate
 live owner writes, original branches, typed natural node sizes and genuine
@@ -50,8 +60,9 @@ Nine additional functions have 4,580 original-x86 differential cases, including
 65,894 direct cases, and the existing 40 exact functions / 4,079 bytes. This
 batch establishes scoped semantics; it adds no byte-exact claims. The subsequent [runtime batch](RUNTIME_OWNER.md) restores score, clock, paddle
 and reset implementations. The [display batch](DISPLAY_OWNER.md) now supplies every frame phase, including
-last-brick logic and presentation dispatch. Platform drivers remain pending,
-so the products are still analysis utilities and a library.
+last-brick logic and presentation dispatch. At that checkpoint platform drivers remained pending,
+and the products were analysis utilities and a library. Later linked-game
+observations retain their own product identities in the current handoff.
 
 ## Entry evidence
 

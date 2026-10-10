@@ -915,6 +915,29 @@ provider request is made. Feedback37 is appended only to the existing
 /tmp/dxball_rea_feedback_20261010.md. Remaining controller storage choices,
 unknown origins and whole-game fidelity stay open; preserve natural source.
 
+Latest full-frame source checkpoint restores the direct paused return, signed
+auxiliary-byte consumer and zero completion predicate. The full candidate is
+1691/1688 bytes, with1156 unmasked differences; no new exact claim.379 original
+and379 current instructions correspond, with every internal branch preserving
+its destination. Remaining differences are three explosion-owner MOV/LEA
+address forms caused by recovered contiguous board storage, local stack homes
+and shifted branch distances. Do not invent aliases or alter live peer storage
+to force agreement. Two actual core compile phases preserve six existing
+exacts and all three unchanged core candidates. First-phase runtime passes708
+existing frame cases including200 connected frames; after direct pause return
+restoration the final product passes24 existing pause/input/timer cases. Those
+runtime/source identities remain distinct; active-phase text is unchanged after
+unwrapping the outer else. Native/MinGW pass; final VC4 links one matching core
+object plus35 unchanged verified objects without extra source compilation.
+All185 exact receipts remain current; source283, semantic247 and origins/cases/
+scopes unchanged. Private .analysis/frame-signed-consumers/; seal
+.analysis/checkpoints/frame-control-flow-283-185/sha256.json. See
+[full frame control flow](../research/FRAME_CONTROL_FLOW.md). Two closed
+controller/frame dossiers and prior gap evidence are reused; no new REA call.
+Feedback38 is appended to the same existing /tmp document. Core storage and
+original declaration provenance, unknown origins and whole-game fidelity remain
+open. This is progress toward source fidelity, not full-game completion.
+
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
 session, the 512 MiB Ghidra heap, and CMake `--parallel 1`. Compiler/provider
