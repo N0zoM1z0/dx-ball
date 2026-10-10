@@ -1,5 +1,11 @@
 # Game lifecycle and mode dispatch
 
+The [mode lifecycle controllers](exact/MAIN_MODE_LIFECYCLE.md) now use fifteen
+original direct calls across initialization, redraw and cleanup. All three
+complete spans match: 127, 127 and 162 bytes. Cleanup forwards the full DWORD
+argument; mode1 retains its real game bodies. The six previous exact runtime
+units remain exact, and 149 existing mode/dispatch cases pass once.
+
 The [main frame dispatcher](exact/MAIN_FRAME.md) is exact at 228 bytes.
 It uses ten original direct calls and preserves the complete reset, mode frame
 and end-request phases. Five prior exact runtime functions remain exact; only

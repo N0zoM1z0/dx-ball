@@ -207,6 +207,18 @@ class _Image:
                       ('dxball_mode_ops', 22, 14, 'dxball_splash_frame'),
                       ('dxball_mode_ops', 22, 20, 'dxball_initialize_device_state'),
                       ('dxball_mode_ops', 22, 21, 'dxball_synchronize_surface'),
+                      ('dxball_mode_ops', 22, 0, 'dxball_initialize_intro'),
+                      ('dxball_mode_ops', 22, 2, 'dxball_initialize_editor'),
+                      ('dxball_mode_ops', 22, 3, 'dxball_initialize_game_over'),
+                      ('dxball_mode_ops', 22, 4, 'dxball_initialize_splash'),
+                      ('dxball_mode_ops', 22, 5, 'dxball_redraw_intro'),
+                      ('dxball_mode_ops', 22, 7, 'dxball_redraw_editor'),
+                      ('dxball_mode_ops', 22, 8, 'dxball_redraw_game_over'),
+                      ('dxball_mode_ops', 22, 9, 'dxball_redraw_splash'),
+                      ('dxball_mode_ops', 22, 15, 'dxball_dispose_intro'),
+                      ('dxball_mode_ops', 22, 17, 'dxball_dispose_editor'),
+                      ('dxball_mode_ops', 22, 18, 'dxball_dispose_game_over'),
+                      ('dxball_mode_ops', 22, 19, 'dxball_dispose_splash'),
                       ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
         boundaries.append(('dxball_display_ops', 2, 1, 'dxball_recover_surfaces'))
         for table, length, slot, symbol in boundaries:
@@ -303,6 +315,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_key_mode_ops.restype = C.c_int
         _shim.dxball_test_bind_mode_ops.argtypes = [C.c_void_p] * 8
         _shim.dxball_test_bind_mode_ops.restype = C.c_int
+        _shim.dxball_test_bind_mode_lifecycle_ops.argtypes = [C.c_void_p] * 13
+        _shim.dxball_test_bind_mode_lifecycle_ops.restype = C.c_int
         _shim.dxball_test_bind_display_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_display_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
@@ -355,6 +369,22 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_mode_ops(actual, *owners)
     if result != 0:
         raise RuntimeError('CoreNative mode binding rejected: null table or recursive real body')
+    owners = []
+    for symbol in ('dxball_initialize_intro', 'dxball_initialize_editor',
+                   'dxball_initialize_game_over', 'dxball_initialize_splash',
+                   'dxball_redraw_intro', 'dxball_redraw_editor',
+                   'dxball_redraw_game_over', 'dxball_redraw_splash',
+                   'dxball_dispose_intro', 'dxball_dispose_editor',
+                   'dxball_dispose_game_over', 'dxball_dispose_splash'):
+        real = C.cast(getattr(image.lib, symbol), C.c_void_p).value
+        if (real != image.function_addresses[symbol] or
+                real == C.cast(getattr(_shim, symbol), C.c_void_p).value or
+                _function_owner(real) != image.path.resolve()):
+            raise RuntimeError('CoreNative lifecycle body has a different owner: ' + symbol)
+        owners.append(real)
+    result = _shim.dxball_test_bind_mode_lifecycle_ops(actual, *owners)
+    if result != 0:
+        raise RuntimeError('CoreNative lifecycle binding rejected: wrong table or recursive real body')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_display_ops'))
     if actual != C.addressof(image.display_table):
         raise RuntimeError('CoreNative display table does not belong to its copied image')

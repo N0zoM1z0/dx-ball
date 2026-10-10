@@ -7,42 +7,45 @@ short, with its title PNG and progress SVG.
 
 ## Current checkpoint
 
-The [main frame dispatcher](../research/exact/MAIN_FRAME.md) at `0x403730` is
-exact across its complete 228-byte span. It calls the original five frame
-owners directly, preserves reset-clear order and copies the live return-mode
-DWORD after cleanup. The ordinary switch emits both the original five-byte
-jump gap and the complete five-DWORD table.
+The [mode lifecycle](../research/exact/MAIN_MODE_LIFECYCLE.md) now calls the
+original owners directly. Redraw `0x4036B0` (127 bytes), initialization
+`0x4038D0` (127) and cleanup `0x403950` (162) are exact on the first stable
+compilation. Cleanup passes the full DWORD argument. All five modes connect
+to their original initialize/redraw/dispose entries.
 
-- 283 source-present functions; 140 exact / 22,674 code bytes and 136 metadata
+- 283 source-present functions; 143 exact / 23,090 code bytes and 136 metadata
   bytes. Whole-source >=95% completion remains unproven.
-- One runtime recipe compiled once. Five affected prior exact units preserved;
-  six whole comparisons / 167 actual relocations. First stable dispatch emission
-  is exact at 228/228, without compiler-driven source alternatives.
-- Seven typed native fixture boundaries follow the actual live ModeOps slots.
-  Real defaults and the mode1 game-frame body belong to the copied library.
-  Shared game APIs and case bodies are unchanged.
-- Only the two existing dispatch loops ran: 128 cases. A private report-count
-  error after all comparisons completed caused a second invocation; both logs
-  are retained. Other entry/owner and connected checks keep historical scope.
+- One runtime recipe compiled once. Six affected prior exact units preserved;
+  nine whole comparisons / 203 actual relocations. The dispatcher body and
+  same-section label offsets are unchanged; its six local symbol IDs refreshed
+  against the actual object.
+- Twelve typed non-game lifecycle fixture forwards use actual live ModeOps
+  slots and copied-image real defaults. The three mode1 bodies, shared game
+  APIs and case bodies are unchanged.
+- Only three existing mode/dispatch loops ran: 149 cases, once. Other owner
+  and connected checks retain historical scope after input-hash refresh.
 - Native, VC4 and MinGW builds pass. VC4 reuses 35 valid objects and compiles
-  no remaining sources. Saved REA snapshot492 reused; no new queries this batch.
+  no remaining sources. One REA session read the three full spans, verified all
+  416 bytes / 102 instructions / 15 calls and closed with snapshot495.
 
-Full drivers/receipts: `.analysis/exact-main-frame/`. Checkpoint:
-`.analysis/checkpoints/exact-main-frame-283-140/`, parent `exact-editor-frame-283-139`.
-Bounded audit: `.analysis/main-frame-flow-review/final-review.json`.
-The editor frame stays exact at 908 bytes. Clock83 and direct key dispatch162
-stay exact; game-key836/831 and WindowProc1166/1171 remain complete candidates.
+Full drivers/receipts: `.analysis/exact-main-mode/`; byte evidence:
+`.analysis/main-mode-byte-review/`. Checkpoint:
+`.analysis/checkpoints/exact-main-mode-283-143/`, parent `exact-main-frame-283-140`.
+Bounded audit: `.analysis/main-mode-flow-review/final-review.json`.
+Main dispatcher228, editor-frame908, clock83 and direct key dispatch162 stay
+exact; game-key836/831 and WindowProc1166/1171 remain complete candidates.
 
 ## Next work
 
-Continue the main mode lifecycle: initialization at `0x4038D0`, redraw at
-`0x4036B0` and cleanup at `0x403950`. These runtime bodies still use authored
-callback routing. Recover genuine owner calls and complete switch/argument
-phases using existing evidence first. A bounded next-family review is under
-`.analysis/main-mode-next-review/`; reconcile extents, gaps and internal tables
-before a whole-unit claim. No compiler profiles or source-expression, name or
-layout trials. Provisional function counts are not the whole-source completion
-denominator; complete flows and runtime-origin classification still matter.
+Follow the now-direct device/reset boundary: initialize_device_state at
+`0x403A00` and synchronize_surface at `0x4035B0`, with surface recovery and
+working-surface lifetime where needed to complete that path. Inspect current
+startup/device source and reuse saved REA/caller evidence first. A bounded
+proposal is under `.analysis/device-frame-next-review/`. Resolve any actual
+missing byte/COM/ownership evidence before an exact claim; avoid compiler
+profiles or source-expression, name and layout trials. Function counts are not
+the whole-source completion denominator; complete flows and runtime-origin
+classification still matter.
 
 REA checkout: `/home/pentester/Project/rea/`. New binary questions use
 `scripts/rea`, pinned to REA4.1.0/Ghidra12.1.4; retain full responses/Evidence IDs

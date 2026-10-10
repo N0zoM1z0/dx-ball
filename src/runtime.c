@@ -320,19 +320,73 @@ void dxball_dispose_game(DxBallInt fade)
     return;
 }
 
+/* FUNCTION: 0x4038D0 */
 void dxball_initialize_mode(void)
 {
-    if (dxball_display_mode >= 0 && dxball_display_mode <= 4) dxball_mode_ops.initialize[dxball_display_mode]();
+    switch (dxball_display_mode) {
+    case 0:
+        dxball_initialize_intro();
+        break;
+    case 1:
+        dxball_initialize_game();
+        break;
+    case 2:
+        dxball_initialize_editor();
+        break;
+    case 3:
+        dxball_initialize_game_over();
+        break;
+    case 4:
+        dxball_initialize_splash();
+        break;
+    }
+    return;
 }
 
+/* FUNCTION: 0x4036B0 */
 void dxball_redraw_mode(void)
 {
-    if (dxball_display_mode >= 0 && dxball_display_mode <= 4) dxball_mode_ops.redraw[dxball_display_mode]();
+    switch (dxball_display_mode) {
+    case 0:
+        dxball_redraw_intro();
+        break;
+    case 1:
+        dxball_redraw_game();
+        break;
+    case 2:
+        dxball_redraw_editor();
+        break;
+    case 3:
+        dxball_redraw_game_over();
+        break;
+    case 4:
+        dxball_redraw_splash();
+        break;
+    }
+    return;
 }
 
+/* FUNCTION: 0x403950 */
 void dxball_cleanup_mode(DxBallInt fade)
 {
-    if (dxball_display_mode >= 0 && dxball_display_mode <= 4) dxball_mode_ops.cleanup[dxball_display_mode](fade);
+    switch (dxball_display_mode) {
+    case 0:
+        dxball_dispose_intro(fade);
+        break;
+    case 1:
+        dxball_dispose_game(fade);
+        break;
+    case 2:
+        dxball_dispose_editor(fade);
+        break;
+    case 3:
+        dxball_dispose_game_over(fade);
+        break;
+    case 4:
+        dxball_dispose_splash(fade);
+        break;
+    }
+    return;
 }
 
 /* FUNCTION: 0x403730 */

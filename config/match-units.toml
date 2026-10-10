@@ -5781,16 +5781,79 @@ relocations = [
   { offset = 91, type = "REL32", symbol = "_dxball_editor_frame", addend = 0, target = 0x40c3b0 },
   { offset = 101, type = "REL32", symbol = "_dxball_game_over_frame", addend = 0, target = 0x406730 },
   { offset = 111, type = "REL32", symbol = "_dxball_splash_frame", addend = 0, target = 0x407990 },
-  { offset = 141, type = "DIR32", symbol = "$L1444", addend = 0, target = 0x4037c1 },
-  { offset = 145, type = "DIR32", symbol = "$L1411", addend = 0, target = 0x403776 },
-  { offset = 149, type = "DIR32", symbol = "$L1412", addend = 0, target = 0x403780 },
-  { offset = 153, type = "DIR32", symbol = "$L1413", addend = 0, target = 0x40378a },
-  { offset = 157, type = "DIR32", symbol = "$L1414", addend = 0, target = 0x403794 },
-  { offset = 161, type = "DIR32", symbol = "$L1415", addend = 0, target = 0x40379e },
+  { offset = 141, type = "DIR32", symbol = "$L1471", addend = 0, target = 0x4037c1 },
+  { offset = 145, type = "DIR32", symbol = "$L1435", addend = 0, target = 0x403776 },
+  { offset = 149, type = "DIR32", symbol = "$L1436", addend = 0, target = 0x403780 },
+  { offset = 153, type = "DIR32", symbol = "$L1437", addend = 0, target = 0x40378a },
+  { offset = 157, type = "DIR32", symbol = "$L1438", addend = 0, target = 0x403794 },
+  { offset = 161, type = "DIR32", symbol = "$L1439", addend = 0, target = 0x40379e },
   { offset = 167, type = "DIR32", symbol = "_dxball_end_requested", addend = 0, target = 0x425974 },
   { offset = 181, type = "REL32", symbol = "_dxball_cleanup_mode", addend = 0, target = 0x403950 },
   { offset = 189, type = "DIR32", symbol = "_dxball_return_to_menu", addend = 0, target = 0x425978 },
   { offset = 194, type = "DIR32", symbol = "_dxball_display_mode", addend = 0, target = 0x421074 },
   { offset = 199, type = "REL32", symbol = "_dxball_initialize_mode", addend = 0, target = 0x4038d0 },
   { offset = 205, type = "DIR32", symbol = "_dxball_end_requested", addend = 0, target = 0x425974 },
+]
+
+[units.redraw-mode]
+build = "runtime"
+symbol = "_dxball_redraw_mode"
+target_address = 0x4036b0
+size = 127
+boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_8771ae59b5d8c734a29634ce18f163f6247a0da754feadafe4cd8c76c008538d; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "_dxball_display_mode", addend = 0, target = 0x421074 },
+  { offset = 23, type = "REL32", symbol = "_dxball_redraw_intro", addend = 0, target = 0x40e0e0 },
+  { offset = 33, type = "REL32", symbol = "_dxball_redraw_game", addend = 0, target = 0x40f7a0 },
+  { offset = 43, type = "REL32", symbol = "_dxball_redraw_editor", addend = 0, target = 0x40c2b0 },
+  { offset = 53, type = "REL32", symbol = "_dxball_redraw_game_over", addend = 0, target = 0x406590 },
+  { offset = 63, type = "REL32", symbol = "_dxball_redraw_splash", addend = 0, target = 0x4075d0 },
+  { offset = 93, type = "DIR32", symbol = "$L1469", addend = 0, target = 0x403711 },
+  { offset = 97, type = "DIR32", symbol = "$L1413", addend = 0, target = 0x4036c6 },
+  { offset = 101, type = "DIR32", symbol = "$L1414", addend = 0, target = 0x4036d0 },
+  { offset = 105, type = "DIR32", symbol = "$L1415", addend = 0, target = 0x4036da },
+  { offset = 109, type = "DIR32", symbol = "$L1416", addend = 0, target = 0x4036e4 },
+  { offset = 113, type = "DIR32", symbol = "$L1417", addend = 0, target = 0x4036ee },
+]
+
+[units.initialize-mode]
+build = "runtime"
+symbol = "_dxball_initialize_mode"
+target_address = 0x4038d0
+size = 127
+boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_ddf811bf45fa69ec6ed95204fd1225d97a5588d2ee943b2763d9afbbb4106742; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "_dxball_display_mode", addend = 0, target = 0x421074 },
+  { offset = 23, type = "REL32", symbol = "_dxball_initialize_intro", addend = 0, target = 0x40dfc0 },
+  { offset = 33, type = "REL32", symbol = "_dxball_initialize_game", addend = 0, target = 0x40f4c0 },
+  { offset = 43, type = "REL32", symbol = "_dxball_initialize_editor", addend = 0, target = 0x40c1a0 },
+  { offset = 53, type = "REL32", symbol = "_dxball_initialize_game_over", addend = 0, target = 0x406440 },
+  { offset = 63, type = "REL32", symbol = "_dxball_initialize_splash", addend = 0, target = 0x407420 },
+  { offset = 93, type = "DIR32", symbol = "$L1468", addend = 0, target = 0x403931 },
+  { offset = 97, type = "DIR32", symbol = "$L1403", addend = 0, target = 0x4038e6 },
+  { offset = 101, type = "DIR32", symbol = "$L1404", addend = 0, target = 0x4038f0 },
+  { offset = 105, type = "DIR32", symbol = "$L1405", addend = 0, target = 0x4038fa },
+  { offset = 109, type = "DIR32", symbol = "$L1406", addend = 0, target = 0x403904 },
+  { offset = 113, type = "DIR32", symbol = "$L1407", addend = 0, target = 0x40390e },
+]
+
+[units.cleanup-mode]
+build = "runtime"
+symbol = "_dxball_cleanup_mode"
+target_address = 0x403950
+size = 162
+boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_edf31fdc7ce974415c981438767f173e4b3666134e6650ef7e7b08a5e8c2cb91; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "_dxball_display_mode", addend = 0, target = 0x421074 },
+  { offset = 27, type = "REL32", symbol = "_dxball_dispose_intro", addend = 0, target = 0x40f010 },
+  { offset = 44, type = "REL32", symbol = "_dxball_dispose_game", addend = 0, target = 0x416430 },
+  { offset = 61, type = "REL32", symbol = "_dxball_dispose_editor", addend = 0, target = 0x40cf20 },
+  { offset = 78, type = "REL32", symbol = "_dxball_dispose_game_over", addend = 0, target = 0x407370 },
+  { offset = 95, type = "REL32", symbol = "_dxball_dispose_splash", addend = 0, target = 0x407ae0 },
+  { offset = 128, type = "DIR32", symbol = "$L1470", addend = 0, target = 0x4039d4 },
+  { offset = 132, type = "DIR32", symbol = "$L1424", addend = 0, target = 0x403966 },
+  { offset = 136, type = "DIR32", symbol = "$L1425", addend = 0, target = 0x403977 },
+  { offset = 140, type = "DIR32", symbol = "$L1426", addend = 0, target = 0x403988 },
+  { offset = 144, type = "DIR32", symbol = "$L1427", addend = 0, target = 0x403999 },
+  { offset = 148, type = "DIR32", symbol = "$L1428", addend = 0, target = 0x4039aa },
 ]

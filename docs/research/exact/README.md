@@ -12,6 +12,7 @@ recovered implementation and complete compiler comparison.
 - [Clock detection and direct key routing](EXACT_WINDOW_KEYS.md)
 - [Exact editor mouse-frame controller](EXACT_EDITOR_FRAME.md)
 - [Exact main frame dispatcher](MAIN_FRAME.md)
+- [Exact mode initialization, redraw and cleanup](MAIN_MODE_LIFECYCLE.md)
 - [MIDI imports and C++ music ownership](EXACT_MIDI_IMPORTS.md)
 - [MIDI stream and music controls](EXACT_MIDI_LIFECYCLE.md)
 - [Sound initialization and WAV loading](EXACT_SOUND_DEPENDENCIES.md)

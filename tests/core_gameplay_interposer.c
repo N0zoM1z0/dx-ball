@@ -50,6 +50,9 @@ static DxBallKeyModeOps *bound_keys;
 static DxBallModeOps *bound_modes;
 static void (*real_modes[7])(void);
 static unsigned mode_active[7];
+static void (*real_mode_lifecycle[8])(void);
+static void (*real_mode_cleanup[4])(DxBallInt);
+static unsigned mode_lifecycle_active[12];
 static unsigned intro_key_active, editor_key_active, game_over_key_active, splash_key_active;
 static DxBallDisplayOps *bound_display;
 static void (*real_recover_surfaces)(void);
@@ -433,6 +436,77 @@ MODE_FORWARD(dxball_splash_frame, 4, frame[4])
 MODE_FORWARD(dxball_initialize_device_state, 5, reinitialize_device)
 MODE_FORWARD(dxball_synchronize_surface, 6, synchronize_surface)
 #undef MODE_FORWARD
+
+int dxball_test_bind_mode_lifecycle_ops(DxBallModeOps *ops,
+    void (*initialize_intro)(void), void (*initialize_editor)(void),
+    void (*initialize_game_over)(void), void (*initialize_splash)(void),
+    void (*redraw_intro)(void), void (*redraw_editor)(void),
+    void (*redraw_game_over)(void), void (*redraw_splash)(void),
+    void (*dispose_intro)(DxBallInt), void (*dispose_editor)(DxBallInt),
+    void (*dispose_game_over)(DxBallInt), void (*dispose_splash)(DxBallInt))
+{
+    void (*owners[8])(void) = {initialize_intro, initialize_editor,
+        initialize_game_over, initialize_splash, redraw_intro, redraw_editor,
+        redraw_game_over, redraw_splash};
+    void (*wrappers[8])(void) = {dxball_initialize_intro, dxball_initialize_editor,
+        dxball_initialize_game_over, dxball_initialize_splash, dxball_redraw_intro,
+        dxball_redraw_editor, dxball_redraw_game_over, dxball_redraw_splash};
+    void (*cleanup[4])(DxBallInt) = {dispose_intro, dispose_editor,
+        dispose_game_over, dispose_splash};
+    void (*cleanup_wrappers[4])(DxBallInt) = {dxball_dispose_intro,
+        dxball_dispose_editor, dxball_dispose_game_over, dxball_dispose_splash};
+    unsigned i;
+    if (ops == NULL || ops != bound_modes) return -1;
+    for (i = 0; i < 8; ++i)
+        if (owners[i] == NULL || owners[i] == wrappers[i]) return -2;
+    for (i = 0; i < 4; ++i)
+        if (cleanup[i] == NULL || cleanup[i] == cleanup_wrappers[i]) return -2;
+    for (i = 0; i < 8; ++i) real_mode_lifecycle[i] = owners[i];
+    for (i = 0; i < 4; ++i) real_mode_cleanup[i] = cleanup[i];
+    return 0;
+}
+
+#define MODE_LIFECYCLE_FORWARD(name, index, member) \
+void name(void) \
+{ \
+    void (*callback)(void); \
+    if (bound_modes == NULL) binding_failure("CoreNative " #name ": unbound modes"); \
+    callback = bound_modes->member; \
+    if (callback == name) callback = real_mode_lifecycle[index]; \
+    if (callback == NULL || callback == name || mode_lifecycle_active[index]) \
+        binding_failure("CoreNative " #name ": null or recursive callback"); \
+    mode_lifecycle_active[index] = 1; \
+    callback(); \
+    mode_lifecycle_active[index] = 0; \
+}
+MODE_LIFECYCLE_FORWARD(dxball_initialize_intro, 0, initialize[0])
+MODE_LIFECYCLE_FORWARD(dxball_initialize_editor, 1, initialize[2])
+MODE_LIFECYCLE_FORWARD(dxball_initialize_game_over, 2, initialize[3])
+MODE_LIFECYCLE_FORWARD(dxball_initialize_splash, 3, initialize[4])
+MODE_LIFECYCLE_FORWARD(dxball_redraw_intro, 4, redraw[0])
+MODE_LIFECYCLE_FORWARD(dxball_redraw_editor, 5, redraw[2])
+MODE_LIFECYCLE_FORWARD(dxball_redraw_game_over, 6, redraw[3])
+MODE_LIFECYCLE_FORWARD(dxball_redraw_splash, 7, redraw[4])
+#undef MODE_LIFECYCLE_FORWARD
+
+#define MODE_CLEANUP_FORWARD(name, index, slot) \
+void name(DxBallInt fade) \
+{ \
+    void (*callback)(DxBallInt); \
+    if (bound_modes == NULL) binding_failure("CoreNative " #name ": unbound modes"); \
+    callback = bound_modes->cleanup[slot]; \
+    if (callback == name) callback = real_mode_cleanup[index]; \
+    if (callback == NULL || callback == name || mode_lifecycle_active[8 + index]) \
+        binding_failure("CoreNative " #name ": null or recursive callback"); \
+    mode_lifecycle_active[8 + index] = 1; \
+    callback(fade); \
+    mode_lifecycle_active[8 + index] = 0; \
+}
+MODE_CLEANUP_FORWARD(dxball_dispose_intro, 0, 0)
+MODE_CLEANUP_FORWARD(dxball_dispose_editor, 1, 2)
+MODE_CLEANUP_FORWARD(dxball_dispose_game_over, 2, 3)
+MODE_CLEANUP_FORWARD(dxball_dispose_splash, 3, 4)
+#undef MODE_CLEANUP_FORWARD
 
 void dxball_intro_key(char key)
 {
