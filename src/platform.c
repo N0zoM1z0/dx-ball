@@ -370,35 +370,49 @@ void dxball_detect_clock(void)
     dxball_high_resolution_clock = version.platform != 1;
 }
 
+const char dxball_instance_running_title[] = "DX-Ball";
+const char dxball_instance_running_message[] = "DX-Ball is already running.";
+
+/* FUNCTION: DXBALL 0x0040D930 */
 DxBallHandle DXBALL_DDCALL dxball_win_main(DxBallHandle instance,
     DxBallHandle previous, DxBallHandle command_line, DxBallInt show)
 {
     DxBallMessage message;
     DxBallInt initialized;
-    (void)previous; (void)command_line;
+    (void)previous;
+    (void)command_line;
     if (dxball_claim_instance() == 0) {
-        dxball_window_message_box(0, "DX-Ball is already running.", "DX-Ball", 0);
-        dxball_platform_ops.exit_process(0);
-        abort(); /* The original process-exit boundary cannot return. */
+        dxball_window_message_box(0, dxball_instance_running_message,
+            dxball_instance_running_title, 0);
+        dxball_process_exit(0);
     }
-    initialized = dxball_cursor_warp_disabled == 0 ? dxball_initialize_fullscreen(instance, show)
-        : dxball_initialize_compatible(instance, show);
+    if (dxball_cursor_warp_disabled != 0) {
+        initialized = dxball_initialize_compatible(instance, show);
+    } else {
+        initialized = dxball_initialize_fullscreen(instance, show);
+    }
     if (initialized == 0) return 0;
-    dxball_detect_clock(); dxball_initialize_trig();
-    dxball_control_pressed = dxball_shift_pressed = 0;
+    dxball_detect_clock();
+    dxball_initialize_trig();
+    dxball_control_pressed = 0;
+    dxball_shift_pressed = 0;
     dxball_window_get_cursor_pos(&dxball_cursor_point);
-    dxball_mouse_x = dxball_cursor_point.x; dxball_mouse_y = dxball_cursor_point.y;
+    dxball_mouse_x = dxball_cursor_point.x;
+    dxball_mouse_y = dxball_cursor_point.y;
     dxball_mouse_action = 0;
     for (;;) {
-        while (dxball_window_peek_message(&message, 0, 0, 0, 0) == 0) {
-            if (dxball_application_active == 0) dxball_window_wait_message();
-            else dxball_dispatch_frame();
+        if (dxball_window_peek_message(&message, 0, 0, 0, 0) != 0) {
+            if (dxball_window_get_message(&message, 0, 0, 0) == 0)
+                return message.wparam;
+            dxball_window_translate_message(&message);
+            dxball_window_dispatch_message(&message);
+        } else {
+            if (dxball_application_active != 0)
+                dxball_dispatch_frame();
+            else
+                dxball_window_wait_message();
         }
-        if (dxball_window_get_message(&message, 0, 0, 0) == 0) break;
-        dxball_window_translate_message(&message);
-        dxball_window_dispatch_message(&message);
     }
-    return message.wparam;
 }
 
 void dxball_initialize_sprite_banks(void)

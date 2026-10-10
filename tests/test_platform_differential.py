@@ -215,6 +215,7 @@ class PlatformNative(Boundaries,DeviceNative):
                 bind(cell,0,result,kinds,lambda *a,name=name:self.boundary(name,a))
         table=(C.c_void_p*len(OPS)).in_dll(self.lib,'dxball_platform_ops')
         for slot,(name,_,kinds) in enumerate(OPS):bind(table,slot,'v',kinds,lambda *a,name=name:self.platform(name,a))
+        C.c_void_p.in_dll(self.lib,'dxball_process_exit_backend').value=table[8]
         (C.c_void_p*15).in_dll(self.lib,'dxball_runtime_ops')[14]=table[5]
         tables={'surface':self.vtable,'ddraw':self.ddraw_table,'palette':self.palette_table,'clipper':self.clipper_table}
         for name,table,slot,kinds in COM:bind(tables[table],slot,'i',kinds,lambda *a,name=name:self.com(name,a))

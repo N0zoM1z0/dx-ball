@@ -89,6 +89,8 @@ extern DxBallInt (DXBALL_DDCALL *dxball_window_message_box)(DxBallHandle, const 
 typedef DxBallInt (DXBALL_DDCALL *DxBallDrawFactory)(void *, DxBallDDraw **, void *);
 extern DxBallDrawFactory dxball_draw_factory_backend;
 DxBallInt DXBALL_DDCALL dxball_direct_draw_create(void *, DxBallDDraw **, void *);
+extern void (*dxball_process_exit_backend)(DxBallInt);
+void dxball_process_exit(DxBallInt);
 
 extern DxBallHandle (DXBALL_DDCALL *dxball_window_open_semaphore)(DxBallUInt,
     DxBallInt, const char *);

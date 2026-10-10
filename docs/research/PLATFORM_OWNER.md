@@ -152,3 +152,12 @@ relocations. The initializers remain candidates at 1,406/1,343 and 1,180/1,147.
 127 of 128 affected accepted units retain exactness; refresh-score is candidate
 after its operands change emission order. Existing Platform 4,742 passes;
 native, VC4 and MinGW builds pass. No new cases or other owner Oracle runs.
+
+## Exact WinMain recovery
+
+[WinMain](exact/EXACT_WIN_MAIN.md) now matches its complete 320-byte body on
+the first stable compile. The direct process-exit transport, compatible-first
+branch, Control-before-Shift writes and message-loop exits follow the saved
+REA instructions. All 121 affected accepted functions remain exact; current
+totals are 136 exact / 21,293 code bytes. This batch runs only the unchanged
+56 WinMain cases. Other Platform case results above retain their earlier scope.
