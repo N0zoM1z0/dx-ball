@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 184 exact functions / 32,656 full-span bytes and
+- 283 source-present entries; 185 exact functions / 32,688 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -887,6 +887,33 @@ REA6.3.0 reuses four closed dossiers; snapshot23/seven primitives unchanged.
 Feedback36 goes only into the same existing /tmp document. Other owners,
 controller storage choices, retirement, unknown origins and full-game fidelity
 remain open; do not force layouts or declarations to close those gaps.
+
+Latest retirement checkpoint: natural void source at0x4134B0 matches all32
+bytes and three actual relocations. Reused complete callee/controller evidence
+shows no local frame or authored result producer and two direct callers that
+discard/overwrite EAX. Bounded executable E8/E9 and whole-file literal-address
+searches do not exclude indirect/computed callers or establish unique source
+spelling. The former inferred integer result contract is explicitly superseded;
+the fixture records original EAX separately as diagnostic data. All state,
+ownership and integer-list assertions remain. Native/original590 direct cases
+plus64 connected calls pass, including210 void retirement vectors and two fatal
+allocations.22 stable matching compiles preserve150 prior affected exacts;
+18 initializer functions and the ordered36-byte/nine-relocation table stay
+unchanged. Three additional genuine game header consumers compiled in the
+initial adoption attempt and are reused. Eleven unchanged game objects and
+four unchanged matching recipes have original-compiler preprocessing proof of
+their actual consumed inputs; overdeclared inventories are narrowed without
+body recompilation. Final VC4 links all36 verified objects; Native/MinGW pass.
+Totals185 /32,688 code bytes /136 metadata; source283/scoped semantics247 and
+origin ledger unchanged. Only retirement scope changes; other cases/scopes
+retain their historical boundary after input refresh. No new live-game or broad
+replay claim. Private .analysis/projectile-retirement-contract/; immutable seal
+.analysis/checkpoints/projectile-retirement-283-185/sha256.json. See
+[void retirement](../research/exact/EXACT_PROJECTILE_RETIREMENT.md).
+REA6.3.0 matches official npm latest; two closed dossiers are reused and no new
+provider request is made. Feedback37 is appended only to the existing
+/tmp/dxball_rea_feedback_20261010.md. Remaining controller storage choices,
+unknown origins and whole-game fidelity stay open; preserve natural source.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider

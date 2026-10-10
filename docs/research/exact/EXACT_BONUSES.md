@@ -31,11 +31,14 @@ all nineteen effects, shared 14/15 case, score and audio/callee order, floating
 half for kind 11 versus signed integer half for 16, and retirement/advance skipping.
 Ball ignition `0x00415630` restores its direct 64-byte traversal, Evidence
 `ev_16a999378ab495ab51c5c38e4a2073ec85e85de4231d049842a3e6aa2f30c30e`.
-Projectile retirement `0x004134B0` retains its maintained int-returning result
-local and decrement-after-removal order, Evidence
+Projectile retirement `0x004134B0` originally retained an inferred int-returning
+result local in this batch, Evidence
 `ev_965bc693de951987a3f1c057f3bf26a09b554d0bfb113c1e04805448966f6c2c`.
-Its entire 32-byte original extent is compared. The original C return declaration
-remains unproved; the maintained boundary and consumed result are preserved.
+Its entire32-byte original extent was compared. The subsequent
+[void retirement checkpoint](EXACT_PROJECTILE_RETIREMENT.md) explicitly
+supersedes that inferred result: both recorded direct callers discard or
+overwrite EAX. Natural void source preserves decrement-after-removal and now
+matches the complete32-byte entry. Unique original declaration remains unproved.
 
 Compiler diagnostics, grouped original replay and configured cold acceptance
 establish the separate scopes below.

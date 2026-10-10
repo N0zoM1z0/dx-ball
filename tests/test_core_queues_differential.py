@@ -63,12 +63,18 @@ def execute(h, name, owner=None):
     else:
         result = function()
     target_result = h.t.call(ENTRIES[name])
-    if name != 'ignite_balls':
+    if name in ('retire_projectile', 'ignite_balls'):
+        assert result is None, (name, result)
+    else:
         assert result == target_result, (name, result, target_result)
     h.compare(('core-queues', name))
-    return dict(entry=name, result=result, queue=h.n.queue(owner or ('balls' if name=='ignite_balls' else 'projectiles')),
-                events_sha256=hashlib.sha256(json.dumps(h.n.events,separators=(',',':')).encode()).hexdigest(),
-                globals_sha256=hashlib.sha256(json.dumps(h.n.observed(),separators=(',',':')).encode()).hexdigest())
+    row = dict(entry=name, result=result, queue=h.n.queue(owner or ('balls' if name=='ignite_balls' else 'projectiles')),
+               events_sha256=hashlib.sha256(json.dumps(h.n.events,separators=(',',':')).encode()).hexdigest(),
+               globals_sha256=hashlib.sha256(json.dumps(h.n.observed(),separators=(',',':')).encode()).hexdigest())
+    if name == 'retire_projectile':
+        # Original EAX survives deletion, but its callers discard it.
+        row['incidental_target_eax'] = target_result
+    return row
 
 
 def main():
@@ -103,7 +109,7 @@ def main():
         h = Harness(library)
         for name in ('retire_projectile','ignite_balls'):
             function=getattr(h.n.lib,'dxball_'+name)
-            function.argtypes=[];function.restype=None if name=='ignite_balls' else C.c_int32
+            function.argtypes=[];function.restype=None
         code=h.t.read(0x401000,0x1f000)
         counts=dict.fromkeys(ENTRIES,0);vectors=[];connected=[]
         for owner,(singular,plural,_) in OWNERS.items():
@@ -163,7 +169,7 @@ def main():
                     inputs=inputs,originals=originals,cases=counts,total=sum(counts.values()),
                     connected_calls=64,connected_calls_are_separate=True,vectors=vectors,connected=connected,
                     immutable_code_sha256=hashlib.sha256(code).hexdigest(),
-                    scope='Complete unmodified original entries versus maintained native C; valid typed roots, untouched payload, lifetime, cursor, globals and full integer returns.',
+                    scope='Complete unmodified original entries versus maintained native source; valid typed roots, untouched payload, lifetime, cursor and globals; full integer results for list helpers, void retirement/ignition with incidental retirement EAX recorded separately.',
                     limitations=['Host allocation/release callbacks are dependency bridges; original CRT bodies are outside these helper claims.',
                                  'Finite count decrement excludes signed overflow; malformed lists and invalid backing are outside scope.',
                                  'Connected transition calls are separate from direct acceptance; no full campaign or physical API claim.'])

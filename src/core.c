@@ -25,12 +25,11 @@ DxBallFrameOps dxball_frame_ops = {
 };
 
 
-DxBallInt dxball_retire_projectile(void)
+void dxball_retire_projectile(void)
 {
-    DxBallInt removed;
-    removed = dxball_remove_projectile(&dxball_projectiles);
+    dxball_remove_projectile(&dxball_projectiles);
     --dxball_projectile_count;
-    return removed;
+    return;
 }
 
 

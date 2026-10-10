@@ -1,5 +1,13 @@
 # Projectile and fire-effect queue entries
 
+The [void retirement checkpoint](exact/EXACT_PROJECTILE_RETIREMENT.md) restores
+the complete32-byte retirement body and explicitly corrects the earlier inferred
+return contract below. The maintained queue check passes590 direct cases and64
+separate connected calls, with210 void retirement results and original EAX
+residue recorded separately. Current totals:185 exact functions /32,688 code
+bytes /136 metadata; source283 and scoped semantic247. Earlier batch counts
+below retain their historical scope.
+
 The [typed deletion checkpoint](exact/EXACT_LIST_DELETE.md) restores ordinary
 C++ new/delete in the existing list owner. Both complete220-byte deletion spans
 are exact, including the retained five-byte intervals and actual operator-delete
@@ -19,9 +27,9 @@ comparison remains explicit. Existing queue/controller cases retain their
 counts, and the complete typed owner still preserves its unresolved +0xC word.
 
 The [complete bonus restoration](exact/EXACT_BONUSES.md) restores direct ball-list
-ignition, accepting the whole 64-byte original entry. Projectile retirement
-keeps its consumed int-returning result and count decrement after removal;
-the whole 41/32-byte comparison retains 35 differences. It is not exact.
+ignition, accepting the whole 64-byte original entry. Its historical retirement
+comparison retained35 differences over41/32 bytes. The current void retirement
+checkpoint supersedes that inferred return boundary and matches all32 bytes.
 
 The core frame now calls independently reconstructed projectile/fire-effect
 queue entries, projectile retirement and ball ignition in shared C.
@@ -33,7 +41,8 @@ projectile update and fire animation owners.
 ## State, ABI and cursor effects
 
 Original owners at `0x43A898` (projectiles) and `0x43A8E0` (fire effects) contain
-current/first/last pointers. Their i686 size is 12 bytes. Projectile nodes have
+current/first/last pointers in a12-byte access prefix. Complete i686 owners are
+16 bytes, preserving their unresolved word at+0xC. Projectile nodes have
 four signed 32-bit payload fields and next/previous pointers at offsets 16/20,
 for 24 bytes. Fire nodes have three fields and links at offsets 12/16, for 20
 bytes. Host pointers grow naturally; no profile-dependent records are used.
@@ -47,9 +56,10 @@ both links and first/last, then frees the old node. Its result is one for a
 removed node and zero for null current. Removing then advancing consequently
 skips a successor, as the original callers do.
 
-Projectile retirement at `0x4134B0` forwards the removal result and decrements
-the count even when current is null. Ghidra's inferred void signature does not
-capture that EAX forwarding. Ball ignition at `0x415630` changes sprite to 61
+Projectile retirement at `0x4134B0` has a void boundary and decrements
+the count even when current is null. Deletion leaves incidental EAX residue;
+both recorded direct callers discard or overwrite it. This is not exposed as
+a source result. Ball ignition at `0x415630` changes sprite to 61
 for every ball, preserving other payload and begin/advance cursor effects.
 The frame now calls that maintained entry for the deferred kind-7 power.
 
