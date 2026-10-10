@@ -1,5 +1,56 @@
 # Sprite, font, PCX and palette owner
 
+The current sprite-lifetime batch restores capture and SBK loading's live
+bank/record reads across CreateSurface, SetColorKey, GetSurfaceDesc, Lock and
+Unlock. Their allocation locals publish a record; they do not cache the record
+for later COM calls. Both controllers now call the actual maintained malloc
+entry. SBK caps read the current bank's allocation mode, and uploads use the
+pitch saved from GetSurfaceDesc before Lock. A genuinely consumed destination
+pixel pointer and the original bottom-up row/column predicates are retained.
+Partial creation failures still preserve their original owner and leak effects.
+
+The complete release controller at `0x404BE0` matches all 262 bytes with fifteen
+relocations after restoring its NULL early return. All ten previous resource
+exacts remain exact. Capture and load remain complete candidates: 876/852 bytes
+with 803 unaligned differences and 42 bindings; 1,655/1,475 bytes with 1,577
+unaligned differences and 77 bindings. Their frames have the observed 140/180
+bytes, but local homes and bank-address scheduling still differ. No declaration,
+name, layout or padding trials were used. The loader's full `rb` literal,
+including its terminator, is bound to `0x421094`.
+
+Three REA 6.3/Ghidra dossiers were required for these concrete storage questions.
+The closed run is `2026-10-10T17-22-54.305Z-requests-825249`; complete bodies are
+contiguous at 852, 1,475 and 262 bytes. Evidence identities are capture
+`ev_d7dd48a6f210a1a2cffea6be8318655763959610c9d94f8f8ff5621dad169b76`,
+load `ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`
+and release `ev_fdfd328a6cc5c4a7bf1b5af0691079718afc8aa479782f79257bd54947a07159`.
+Raw/normalized responses and limitations remain private with those identities.
+
+One `/ML` matching compilation verifies all affected bodies. A recursive
+include audit narrows its declared project closure from 29 files to the eight
+actually consumed, without changing compiler flags or recompiling source.
+The game retains its established `/MT` production recipe: substituting the
+matching object initially caused a LIBC/LIBCMT startup conflict. One separate
+production compilation then links successfully with 34 verified reused objects.
+Native/MinGW builds pass. Current totals are 168 exact functions, 30,093 complete
+code bytes and 136 metadata bytes.
+
+The unchanged release/capture/SBK Oracle loops pass all 31 cases, including
+seven supplied streams. Six separate private original/native COM probes change
+the selected bank during capture/load or change a record's pitch during Lock.
+The restored library passes all six; the preceding sealed library fails each.
+They compare ordered events and defined bank/record/pixel fields; unwritten
+partial-record pitch is excluded. These probes extend evidence without altering
+the maintained matrix or claiming physical driver behavior.
+
+The new VC4 product also passes the existing real-Wine ball/pause/editor/exit
+flow with 83 read-only states, five captures, the expected saved-bank hash,
+normal exit and all 49 originals unchanged. Receipts are in
+`.analysis/exact-sprite-lifetime/` and `.analysis/windows-play-sprite-lifetime/`.
+Other owner suites and prior original/MinGW play controls were not rerun;
+their input identities are refreshed with their historical scopes preserved.
+Synchronized pixels, physical audio/MIDI and full-game fidelity remain unproven.
+
 Current [connected-effects cold replay](exact/EXACT_CONNECTED_EFFECTS.md) naturally
 recovers the full keyed-stretch body while ordinary blt_sprite loses historical
 exact acceptance. Current shared source and all relocations determine the claims;
@@ -25,9 +76,9 @@ the behavioral evidence. The maintained implementation is `src/resources.c`.
 | `0x004040B0` | blt_sprite | 195 | scoped semantic; exact candidate |
 | `0x00404180` | draw_sprite | 105 | full exact |
 | `0x004041F0` | stretch_keyed_sprite | 139 | full exact |
-| `0x004042B0` | capture_sprite | 852 | scoped semantic |
-| `0x00404610` | load_sprite_bank | 1475 | scoped semantic |
-| `0x00404BE0` | release_sprite | 262 | scoped semantic |
+| `0x004042B0` | capture_sprite | 852 | scoped semantic; exact candidate |
+| `0x00404610` | load_sprite_bank | 1475 | scoped semantic; exact candidate |
+| `0x00404BE0` | release_sprite | 262 | full exact |
 | `0x00404CF0` | draw_glyph | 328 | scoped semantic |
 | `0x00404E40` | find_glyph | 145 | scoped semantic |
 | `0x00409790` | load_live_palette | 337 | full exact |

@@ -311,3 +311,14 @@ in `.analysis/windows-play-clock-api/`; source/input identities identify the
 working-tree product based on `8a2f125`. Original/MinGW prior play controls
 were not rerun. This is a sequential read-only Wine/Xvfb observation, with no
 synchronized frame, physical audio/MIDI or full-game fidelity claim.
+
+
+The sprite-lifetime follow-up passes the unchanged VC4 ball/pause/editor/exit
+observation with 83 read-only states and five captures. The new product uses
+live sprite records at COM boundaries and preserves the pre-Lock upload stride;
+startup, ball and paddle input, pause/resume, editor save/reload, the established
+whole-bank hash and zero-code exit pass. All 49 originals remain unchanged.
+Receipts are in `.analysis/windows-play-sprite-lifetime/`; source/input identities
+identify the working-tree product based on `6f058b2`. Prior original/MinGW play
+controls were not rerun. Sequential Wine/Xvfb reads do not establish synchronized
+pixels, physical audio/MIDI or full-game fidelity.

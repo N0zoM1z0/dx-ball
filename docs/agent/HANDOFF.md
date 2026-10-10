@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 167 exact functions / 29,831 full-span bytes and
+- 283 source-present entries; 168 exact functions / 30,093 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -68,7 +68,9 @@ REA 6.3 rejects the old snapshot during integrity validation; the exact cause
 is unisolated. The old snapshot is
 retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
 Evidence IDs and dossiers remain available for direct reuse. The current
-snapshot contains seven cumulative new records, including the reading/insertion literals. New analysis responses expose
+snapshot contains ten cumulative new records, including the reading/insertion
+literals and three sprite-lifetime dossiers. Its latest close reports seven
+primitive entries and no workflow entries. New analysis responses expose
 `raw_result` and `normalized_result`, while older responses use `result`.
 See [REA commands](REA.md). No registration rewrite or provider installation
 was necessary; the configured MCP path now points at the upgraded package.
@@ -326,7 +328,10 @@ context. Entry 17 records an excluded unreachable clock-divisor store and its
 relocation, with a proposed classified enclosing-span view. Nothing has been
 sent externally.
 
-## Current clock boundary checkpoint
+Entry 18 adds measured sprite-lifetime cold/warm provider latency, the 3.38 MB
+warm loader response and bounded descriptor/stride consumer suggestions.
+
+## Clock boundary checkpoint before sprite recovery
 
 The complete current-time controller at `0x403450` matches all 148 bytes with
 nine relocations. Three independent typed SDK clock slots replace the
@@ -341,7 +346,7 @@ now has three compare-operand differences and is explicitly a candidate;
 retain its earlier exact object and do not force declaration/name/layout
 changes. Paddle is now 678/677 bytes with 494 unaligned differences and 52
 bindings; its meaningful rectangles and floating literal consumers remain.
-Current totals stay 167 exact functions, now 29,831 bytes plus 136 metadata.
+That checkpoint retained 167 exact functions, 29,831 bytes plus 136 metadata.
 
 Native/MinGW builds and a VC4 relink pass: three affected source objects
 compiled, 32 independently verified objects reused. The unchanged 837 selected
@@ -352,10 +357,43 @@ bank, exit zero and all 49 original assets unchanged. Receipts are in
 No full owner replay or prior mutation/original/MinGW play controls were rerun;
 complete-game, synchronized rendering and physical audio/MIDI stay unproven.
 
-Continue with remaining genuine storage/call gaps in the score/reset/paddle
-controllers; use retained Evidence and complete comparisons. Do not revisit
+Continue with remaining genuine storage/call gaps in the controllers; use
+retained Evidence and complete comparisons. Do not revisit
 elapsed by trying variable/declaration permutations. REA feedback still uses
-only `/tmp/dxball_rea_feedback_20261010.md`, now seventeen numbered entries.
+only `/tmp/dxball_rea_feedback_20261010.md`; append to that existing document.
+
+## Current sprite-lifetime checkpoint
+
+Capture and SBK loading now follow the original live bank/record reads and
+actual allocator entry. SBK uploads retain GetSurfaceDesc's pitch before Lock
+and the consumed destination pixel pointer. The release controller matches its
+complete 262 bytes with fifteen relocations; all ten previous resource exacts
+remain exact. Capture/load remain 876/852 and 1,655/1,475-byte candidates with
+803 and 1,577 unaligned differences. Correct 140/180-byte frames do not prove
+local-home or address-scheduling exactness; avoid declaration/layout trials.
+
+The resources matching recipe now declares exactly its eight recursively
+consumed project files, narrowed from 29 after one /ML compile. Production
+keeps the established /MT recipe; an initial attempt to link the /ML matching
+object was rejected for mixed CRT startup definitions. One /MT resource-source
+compile and 34 verified object reuses produce the current game. Current totals
+are 168 exact functions, 30,093 full-span bytes and 136 metadata bytes.
+
+Native/MinGW builds pass. All 31 unchanged selected release/capture/SBK cases
+pass, including the seven original streams. Six separate original/native COM
+mutation probes pass and the preceding sealed library fails all six. The new
+VC4 real ball/pause/editor/exit flow passes with 83 read-only states, five
+captures, expected saved-bank hash, zero exit and all 49 originals unchanged.
+Other suites and original/MinGW prior play controls remain historical after
+input-identity refresh. Full-game/image/physical audio fidelity stays unproven.
+
+Private receipts: `.analysis/exact-sprite-lifetime/` and
+`.analysis/windows-play-sprite-lifetime/`. Three new contiguous REA dossiers
+are retained in closed run `2026-10-10T17-22-54.305Z-requests-825249`.
+REA performance/usability feedback remains only in
+`/tmp/dxball_rea_feedback_20261010.md`, now eighteen numbered entries.
+Continue with unresolved rendering/font/resource storage and real call shapes,
+using these closed records. Do not repeat the full historical validation queue.
 
 ## Working limits and completeness
 

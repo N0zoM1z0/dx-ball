@@ -26,8 +26,9 @@ offsets 19, 22 and 24 and is recorded as an 81-byte candidate. Its previous exac
 object remains retained. The compiler's cause for the changed operand ordering
 has not been isolated. Paddle is now a 678/677-byte candidate with 494 unaligned
 differences; its 52 bindings and complete floating literals remain checked.
-The other four runtime candidates retain their preceding differences. Current
-totals are 167 exact functions, 29,831 complete code bytes and 136 metadata bytes.
+The other four runtime candidates retain their preceding differences. The clock
+batch retained 167 exact functions, 29,831 complete code bytes
+and 136 metadata bytes; later owner recoveries update the shared progress ledger.
 
 Native and MinGW builds pass. VC4 compiles the three affected source objects
 and links them with 32 independently verified reused objects. All 837 selected
