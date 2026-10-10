@@ -3,6 +3,7 @@
 Each note follows a related source family through its original instructions,
 recovered implementation and complete compiler comparison.
 
+- [Sound playback and buffer recovery](EXACT_SOUND_VOICES.md)
 - [Frame boundary and lightning control](EXACT_FRAME_BOUNDARY.md)
 - [Dirty-region presentation](EXACT_PRESENTATION.md)
 - [Region restoration and entity drawing](EXACT_RENDER_RESTORATION.md)

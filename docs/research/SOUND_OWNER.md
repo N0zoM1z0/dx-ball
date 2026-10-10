@@ -2,11 +2,17 @@
 
 ## Current complete helper matching
 
+The [voice-control batch](exact/EXACT_SOUND_VOICES.md) recovers playback,
+looping, stop/rewind, persistent parameters and lost-buffer recovery. Play and
+update now match all 289 bytes each. The other five complete bodies retain
+4–13 differing local-displacement bytes. One existing sound Oracle passes;
+the VC4 and MinGW games are linked with the recovered source.
+
 The [complete exits batch](exact/EXACT_EXITS.md) accepts four complete sound helpers:
 prepare, release-all, stop-all and release-audio, totaling 181 code bytes.
 Their ordinary exit branches and all direct game-call relocations pass grouped
-cold replay. Sound initialization, loading, individual buffer control and
-physical/asynchronous audio fidelity retain their existing limits. Historical
+cold replay. Sound initialization, loading and physical/asynchronous audio
+fidelity retain their existing limits. Historical
 semantic-only statements below describe the initial sound checkpoint.
 
 ## Current allocation defaults

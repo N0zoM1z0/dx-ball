@@ -203,104 +203,132 @@ void dxball_load_sound(DxBallInt slot, const char *path)
     strcpy(sound->filename, path);
 }
 
-static void play_sound(DxBallInt slot, DxBallInt frequency, DxBallInt pan,
-                       DxBallInt volume, DxBallUInt flags)
+/* FUNCTION: DXBALL 0x00405C50 */
+void dxball_play_sound(DxBallInt slot, DxBallInt frequency, DxBallInt pan, DxBallInt volume)
 {
-    DxBallSoundBuffer *buffer;
     DxBallInt result;
-    if (dxball_sound_device != NULL && dxball_sounds[slot] != NULL) {
-        buffer = dxball_sounds[slot]->buffer;
-        if (frequency != 0) buffer->vtable->set_frequency(buffer, (DxBallUInt)frequency);
-        if (pan != 0) buffer->vtable->set_pan(buffer, pan);
-        if (volume != 0) buffer->vtable->set_volume(buffer, volume);
-        result = buffer->vtable->play(buffer, 0, 0, flags);
-        if (result == 2 || (DxBallUInt)result == 0x88780096UL) {
-            dxball_restore_sounds();
-            buffer = dxball_sounds[slot]->buffer;
-            buffer->vtable->play(buffer, 0, 0, flags);
-        }
+    if (dxball_sound_device == NULL || dxball_sounds[slot] == NULL) return;
+    if (frequency != 0)
+        dxball_sounds[slot]->buffer->vtable->set_frequency(
+            dxball_sounds[slot]->buffer, (DxBallUInt)frequency);
+    if (pan != 0)
+        dxball_sounds[slot]->buffer->vtable->set_pan(dxball_sounds[slot]->buffer, pan);
+    if (volume != 0)
+        dxball_sounds[slot]->buffer->vtable->set_volume(dxball_sounds[slot]->buffer, volume);
+    result = dxball_sounds[slot]->buffer->vtable->play(dxball_sounds[slot]->buffer, 0, 0, 0);
+    if (result == 2 || (DxBallUInt)result == 0x88780096UL) {
+        dxball_restore_sounds();
+        dxball_sounds[slot]->buffer->vtable->play(dxball_sounds[slot]->buffer, 0, 0, 0);
     }
+    return;
 }
 
-void dxball_play_sound(DxBallInt slot, DxBallInt frequency, DxBallInt pan, DxBallInt volume)
-{ play_sound(slot, frequency, pan, volume, 0); }
-
+/* FUNCTION: DXBALL 0x00405D80 */
 void dxball_update_sound(DxBallInt slot, DxBallInt frequency, DxBallInt pan, DxBallInt volume)
-{ play_sound(slot, frequency, pan, volume, 1); }
+{
+    DxBallInt result;
+    if (dxball_sound_device == NULL || dxball_sounds[slot] == NULL) return;
+    if (frequency != 0)
+        dxball_sounds[slot]->buffer->vtable->set_frequency(
+            dxball_sounds[slot]->buffer, (DxBallUInt)frequency);
+    if (pan != 0)
+        dxball_sounds[slot]->buffer->vtable->set_pan(dxball_sounds[slot]->buffer, pan);
+    if (volume != 0)
+        dxball_sounds[slot]->buffer->vtable->set_volume(dxball_sounds[slot]->buffer, volume);
+    result = dxball_sounds[slot]->buffer->vtable->play(dxball_sounds[slot]->buffer, 0, 0, 1);
+    if (result == 2 || (DxBallUInt)result == 0x88780096UL) {
+        dxball_restore_sounds();
+        dxball_sounds[slot]->buffer->vtable->play(dxball_sounds[slot]->buffer, 0, 0, 1);
+    }
+    return;
+}
 
+/* FUNCTION: DXBALL 0x00405EF0 */
 void dxball_stop_sound(DxBallInt slot)
 {
     DxBallUInt status;
-    DxBallSoundBuffer *buffer;
-    if (dxball_sound_device != NULL && dxball_sounds[slot] != NULL) {
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->get_status(buffer, &status);
-        if (status & 2) dxball_restore_sounds();
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->stop(buffer);
-        buffer->vtable->set_current_position(buffer, 0);
-    }
+    DxBallInt result;
+    if (dxball_sound_device == NULL || dxball_sounds[slot] == NULL) return;
+    result = dxball_sounds[slot]->buffer->vtable->get_status(
+        dxball_sounds[slot]->buffer, &status);
+    if (status & 2) dxball_restore_sounds();
+    result = dxball_sounds[slot]->buffer->vtable->stop(dxball_sounds[slot]->buffer);
+    result = dxball_sounds[slot]->buffer->vtable->set_current_position(
+        dxball_sounds[slot]->buffer, 0);
+    (void)result;
+    return;
 }
 
+/* FUNCTION: DXBALL 0x00405FA0 */
 void dxball_set_sound_frequency(DxBallInt slot, DxBallUInt frequency)
 {
     DxBallUInt status;
-    DxBallSoundBuffer *buffer;
-    if (dxball_sound_device != NULL && dxball_sounds[slot] != NULL) {
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->get_status(buffer, &status);
-        if (status & 2) dxball_restore_sounds();
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->set_frequency(buffer, frequency);
-        dxball_sounds[slot]->frequency = frequency;
-    }
+    DxBallInt result;
+    if (dxball_sound_device == NULL || dxball_sounds[slot] == NULL) return;
+    result = dxball_sounds[slot]->buffer->vtable->get_status(
+        dxball_sounds[slot]->buffer, &status);
+    if (status & 2) dxball_restore_sounds();
+    result = dxball_sounds[slot]->buffer->vtable->set_frequency(
+        dxball_sounds[slot]->buffer, frequency);
+    dxball_sounds[slot]->frequency = frequency;
+    (void)result;
+    return;
 }
 
+/* FUNCTION: DXBALL 0x00406040 */
 void dxball_set_sound_pan(DxBallInt slot, DxBallInt pan)
 {
     DxBallUInt status;
-    DxBallSoundBuffer *buffer;
-    if (dxball_sound_device != NULL && dxball_sounds[slot] != NULL) {
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->get_status(buffer, &status);
-        if (status & 2) dxball_restore_sounds();
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->set_pan(buffer, pan);
-        dxball_sounds[slot]->pan = pan;
-    }
+    DxBallInt result;
+    if (dxball_sound_device == NULL || dxball_sounds[slot] == NULL) return;
+    result = dxball_sounds[slot]->buffer->vtable->get_status(
+        dxball_sounds[slot]->buffer, &status);
+    if (status & 2) dxball_restore_sounds();
+    result = dxball_sounds[slot]->buffer->vtable->set_pan(
+        dxball_sounds[slot]->buffer, pan);
+    dxball_sounds[slot]->pan = pan;
+    (void)result;
+    return;
 }
 
+/* FUNCTION: DXBALL 0x004060E0 */
 void dxball_set_sound_volume(DxBallInt slot, DxBallInt volume)
 {
     DxBallUInt status;
-    DxBallSoundBuffer *buffer;
-    if (dxball_sound_device != NULL && dxball_sounds[slot] != NULL) {
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->get_status(buffer, &status);
-        if (status & 2) dxball_restore_sounds();
-        buffer = dxball_sounds[slot]->buffer;
-        buffer->vtable->set_volume(buffer, volume);
-        dxball_sounds[slot]->volume = volume;
-    }
+    DxBallInt result;
+    if (dxball_sound_device == NULL || dxball_sounds[slot] == NULL) return;
+    result = dxball_sounds[slot]->buffer->vtable->get_status(
+        dxball_sounds[slot]->buffer, &status);
+    if (status & 2) dxball_restore_sounds();
+    result = dxball_sounds[slot]->buffer->vtable->set_volume(
+        dxball_sounds[slot]->buffer, volume);
+    dxball_sounds[slot]->volume = volume;
+    (void)result;
+    return;
 }
 
+/* FUNCTION: DXBALL 0x00406180 */
 void dxball_restore_sounds(void)
 {
-    DxBallInt slot;
+    DxBallInt result, slot;
     DxBallUInt status;
-    DxBallSoundBuffer *buffer;
     char filename[256];
     if (dxball_sound_device == NULL) return;
     for (slot = 0; slot < DXBALL_SOUND_COUNT; ++slot) {
         if (dxball_sounds[slot] != NULL) {
-            buffer = dxball_sounds[slot]->buffer;
-            buffer->vtable->get_status(buffer, &status);
-            if ((status & 2) && buffer->vtable->restore(buffer) == 0) {
-                strcpy(filename, dxball_sounds[slot]->filename);
-                dxball_load_sound(slot, filename);
+            result = dxball_sounds[slot]->buffer->vtable->get_status(
+                dxball_sounds[slot]->buffer, &status);
+            if (status & 2) {
+                result = dxball_sounds[slot]->buffer->vtable->restore(
+                    dxball_sounds[slot]->buffer);
+                if (result == 0) {
+                    strcpy(filename, dxball_sounds[slot]->filename);
+                    dxball_load_sound(slot, filename);
+                }
             }
         }
     }
+    return;
 }
 
 static DxBallUInt wave_word(const DxBallByte *data)

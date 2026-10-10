@@ -4587,3 +4587,134 @@ relocations = [
   { offset = 993, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x403e70 },
   { offset = 1046, type = "REL32", symbol = "_dxball_update_sound", addend = 0, target = 0x405d80 },
 ]
+
+[units.play-sound]
+build = "sound"
+symbol = "_dxball_play_sound"
+target_address = 0x405c50
+size = 289
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 64, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 77, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 108, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 121, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 152, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 165, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 188, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 201, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 239, type = "REL32", symbol = "_dxball_restore_sounds", addend = 0, target = 0x406180 },
+  { offset = 255, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 268, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+]
+
+[units.update-sound]
+build = "sound"
+symbol = "_dxball_update_sound"
+target_address = 0x405d80
+size = 289
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 64, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 77, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 108, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 121, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 152, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 165, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 188, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 201, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 239, type = "REL32", symbol = "_dxball_restore_sounds", addend = 0, target = 0x406180 },
+  { offset = 255, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 268, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+]
+
+[candidates.stop-sound]
+build = "sound"
+symbol = "_dxball_stop_sound"
+target_address = 0x405ef0
+size = 174
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 67, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 92, type = "REL32", symbol = "_dxball_restore_sounds", addend = 0, target = 0x406180 },
+  { offset = 102, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 115, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 137, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 150, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+]
+
+[candidates.set-sound-frequency]
+build = "sound"
+symbol = "_dxball_set_sound_frequency"
+target_address = 0x405fa0
+size = 159
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 67, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 92, type = "REL32", symbol = "_dxball_restore_sounds", addend = 0, target = 0x406180 },
+  { offset = 106, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 119, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 142, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+]
+
+[candidates.set-sound-pan]
+build = "sound"
+symbol = "_dxball_set_sound_pan"
+target_address = 0x406040
+size = 159
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 67, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 92, type = "REL32", symbol = "_dxball_restore_sounds", addend = 0, target = 0x406180 },
+  { offset = 106, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 119, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 142, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+]
+
+[candidates.set-sound-volume]
+build = "sound"
+symbol = "_dxball_set_sound_volume"
+target_address = 0x4060e0
+size = 159
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 67, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 92, type = "REL32", symbol = "_dxball_restore_sounds", addend = 0, target = 0x406180 },
+  { offset = 106, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 119, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 142, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+]
+
+[candidates.restore-sounds]
+build = "sound"
+symbol = "_dxball_restore_sounds"
+target_address = 0x406180
+size = 225
+boundary_evidence = "docs/research/exact/EXACT_SOUND_VOICES.md; full RET-inclusive REA evidence and genuine original call/data targets"
+relocations = [
+  { offset = 14, type = "DIR32", symbol = "_dxball_sound_device", addend = 0, target = 0x421098 },
+  { offset = 61, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 82, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 95, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 125, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 138, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 168, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
+  { offset = 184, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x4177f0 },
+  { offset = 203, type = "REL32", symbol = "_dxball_load_sound", addend = 0, target = 0x405990 },
+]
