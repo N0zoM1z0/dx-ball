@@ -28,7 +28,7 @@ scripts/rea session --interactive
 ```
 
 The session helper opens the configured executable. Enter requests using the
-pinned server's advertised schemas; these are supported 4.1 request shapes:
+pinned server's advertised schemas; these request shapes were verified with 6.3:
 
 ```json
 {"name":"analyze_function","arguments":{"procedure":"0x00413410"}}
@@ -45,8 +45,8 @@ can also be passed as `scripts/rea session path/to/requests.json`. Inspect the
 saved tool catalog before composing requests for another operation.
 
 The upgrade from 4.1.0 to 6.3.0 retained the old snapshot at
-`.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`. The new release rejected its
-integrity format, so the current snapshot starts with the new focused queries.
+`.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`. The new release failed its
+integrity validation (root cause unisolated), so the current snapshot starts with the new focused queries.
 Keep reusing historical dossiers directly; their Evidence IDs and original
 bytes remain available. Upgrade receipts and both scoped doctor reports are
 in `.analysis/rea-upgrade-6.3.0/`.

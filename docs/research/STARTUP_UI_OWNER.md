@@ -15,7 +15,7 @@ Public headers depend only on the shared board types; platform and device
 interfaces remain implementation dependencies. The Windows game is integrated;
 recorded play runs are in [the original-board campaign](ORIGINAL_CAMPAIGN.md).
 
-## Exact score initialization
+## Exact score initialization and reading
 
 The initializer at `0x406EE0` now restores all fifteen explicit name-clear,
 `strcat`, and score-store phases, followed by direct CRT file calls. Its first
@@ -48,6 +48,18 @@ the actual maintained inputs. No libc symbol is exported by the global shim.
 The 158 existing startup cases and one connected dispatch check passed once,
 including poisoned name tails, access/open branches, ignored results and exact
 660-byte writes. This transport is fixture infrastructure, not original code.
+
+The following persistence recovery also restores `read_scores` at `0x406CC0`
+as genuine `fopen` / `fread` / `fclose` calls with an early NULL return and no
+local storage. Its first compilation matches the complete 94-byte body and
+all ten relocations. The initializer and bank release retain their full exact
+matches. The original `rb` and `score.dat` storage at `0x42148C` and `0x421490`
+is attested by REA Evidence
+`ev_50dc90850c2746cf0f049db856c7e3f770b112e29d726f2aabb23149ebf2b3e7`,
+archived in the 2026-10-10 14-38 literal-request run. The copied-image fixture
+now binds its existing typed `fread` callback too. Fresh checks are recorded
+in `.analysis/exact-score-reading/`, with the complete score-insertion recovery
+described in [game-over evidence](GAMEOVER_OWNER.md).
 
 ## Entries and retained observations
 

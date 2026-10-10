@@ -16,21 +16,30 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 148 exact functions / 24,213 code bytes and
+- 283 source-present entries; 149 exact functions / 24,307 code bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
-- The affected 125-byte bank-release unit stays exact. Device initialization
+- Score reading at `0x406CC0` is also exact across its complete 94 bytes after
+  ten explicit relocations. The 723-byte initializer and 125-byte bank release
+  stay exact. Device initialization
   stays a complete 359-byte candidate with ten differing bytes.
-- One stable startup recipe compilation, three complete comparisons, and
-  the 158 existing startup cases plus one connected dispatch check, once.
+- Initialization used one startup recipe compilation. The following persistence
+  batch used one startup compilation and four game-over compilations to recover
+  loop structure and bound the remaining comparison-emission difference.
+- Final current-library checks: 158 existing startup cases + one connected
+  dispatch check; 6,531 game-over cases +76 connected checks. No cases were added.
+  Intermediate-source checks are retained separately, not counted as new cases.
 - The native fixture binds only copied-image ELF import slots to the existing
   typed stdio callbacks. No process-wide libc symbols are interposed.
-- Actual canonical libc creation and existing-file gating passed independently.
+- Actual canonical libc creation, existing-file gating, accepted/rejected
+  insertion, persisted bytes and partial reads passed independently.
 - Native and MinGW builds passed. VC4 relinked using all 35 verified objects;
   there was no further legacy source compilation.
 - Other semantic rows retain their historical cases and scope after input
   identity refresh; these are not newly rerun suites.
 
-Private receipts: `.analysis/exact-score-initialization/`.
+Private receipts: `.analysis/exact-score-initialization/` and
+`.analysis/exact-score-reading/`. The first batch is committed as `177de9d`;
+the following local checkpoint contains score reading and insertion recovery.
 See [startup evidence](../research/STARTUP_UI_OWNER.md).
 
 ## REA upgrade
@@ -49,32 +58,53 @@ promote the origin ledger or prove unique original alias spelling.
 The adjacent `01-read_bytes.json` attests all 592 literal bytes with Evidence
 `ev_8e62c86b8565325f7f6450aed6e6a8b3c37df251bb87cee577dfaf1a8d0776cb`.
 
-REA 6.3 rejects the old snapshot's integrity format. The old snapshot is
+REA 6.3 rejects the old snapshot during integrity validation; the exact cause
+is unisolated. The old snapshot is
 retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
 Evidence IDs and dossiers remain available for direct reuse. The current
-snapshot contains the two new records. New analysis responses expose
+snapshot contains four new records, including the reading/insertion literals. New analysis responses expose
 `raw_result` and `normalized_result`, while older responses use `result`.
 See [REA commands](REA.md). No registration rewrite or provider installation
 was necessary; the configured MCP path now points at the upgraded package.
 
 ## Next batch
 
-Continue the score persistence flow with `dxball_read_scores` at `0x406CC0`,
-94 bytes, in `src/startup.c`. It still uses the startup file callback table.
-Reuse its complete saved dossier in the closed 2026-10-07 11-58 REA archive,
-Evidence `ev_60906ff615d2fceb6d7e4cb83c367f0f2612498b4c30cf1d1b20cd4d1c80f2ea`.
-Recover actual direct file calls and original local storage from instructions;
-do not insert an inert local to force a match. The new fixture transport can
-bind the real `fread` import using its existing typed read callback.
+The complete score initialization/read/insertion flow now uses genuine direct
+CRT file APIs. `read_scores` has no local storage and preserves the NULL-open
+return, ignored read/close results and closed shared pointer. Its complete
+94-byte dossier was reused, without another function query.
 
-Then inspect score submission at `0x406D20` through its complete 446-byte flow.
-The now-established access/stdio boundaries can be reused. Keep unknown origins
-unknown and prefer recovery that closes the complete score lifetime.
+Insertion at `0x406D20` restores the distinct last-rank branch and backwards
+scan/shift loops. It is a complete 446-byte candidate with 26 explicit
+relocations and three differences at offsets 172, 175 and 177: the shift-loop
+comparison loads the opposite local first and uses the equivalent signed exit
+condition. Equivalent relational spellings produced identical code; the source
+keeps `while (i >= rank)`. Do not perform declaration/name/layout or padding
+trials to force this comparison. Candidate receipts retain the actual objects,
+inputs, full differences and intermediate checks.
+
+Follow the score lifetime into name editing (`0x4071C0`, 421 bytes) and ranking
+drawing (`0x406B20`, 404 bytes), reusing their complete 2026-10-07 13-44 dossiers.
+Inspect actual control flow, state writes and real shared API boundaries before
+compiling a coherent family. The current `gameover` recipe and typed image-local
+stdio fixture are available. Keep the three-byte insertion gap explicit until
+independent evidence resolves its original compiler expression.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
 differences). The latter's original unused HRESULT storage is unresolved.
 Do not add fake locals or profile-specific bodies.
+
+## Ongoing REA feedback
+
+Append performance, response-size, context and usability findings to the single
+English document `/tmp/dxball_rea_feedback_20261010.md`. Do not create another
+feedback document. Current observations include approximately 54-55 second
+cold byte reads, a 150,222-byte MCP response for a 77-byte function, a
+4,795,431-byte catalog for 139 tools, generic legacy-snapshot rejection, and
+response-field/lifecycle migration issues. Measurements and suggestions are
+separate; exact model-token counts and snapshot failure root cause are unknown.
+Nothing has been sent externally.
 
 ## Working limits and completeness
 

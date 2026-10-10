@@ -75,7 +75,7 @@ class StartupNative(FileBoundaries,DeviceNative):
             bind(table,slot,result,kinds,lambda *a,name=name:self.file_api(name,a))
         from native_imports import bind_imports
         self.file_imports = bind_imports(self.core_native_image, self.lib.dxball_initialize_scores,
-            {api:table[slot] for slot,api in ((0,'fopen'),(2,'fwrite'),(3,'fclose'),(4,'access'))})
+            {api:table[slot] for slot,api in ((0,'fopen'),(1,'fread'),(2,'fwrite'),(3,'fclose'),(4,'access'))})
         table=(C.c_void_p*2).in_dll(self.lib,'dxball_random_ops')
         bind(table,0,None,[C.c_uint32],self.random_seed)
         bind(table,1,C.c_int32,[],self.random_next)

@@ -10,6 +10,38 @@ The later [Windows adapter](WINDOWS_ADAPTER.md) binds real APIs and checks
 natural life loss, name entry and ranking persistence in experimental game
 EXEs; complete-game and physical audio fidelity remain pending.
 
+## Direct score persistence recovery
+
+The score initializer and reader now match their complete 723-byte and 94-byte
+bodies; see [startup evidence](STARTUP_UI_OWNER.md). Insertion at `0x406D20`
+restores the distinct last-rank branch, backwards scan and shift loops, and
+genuine direct `access`, `fopen`, `fwrite` and `fclose` calls. NULL-open returns
+the accepted rank. Short/failed writes and close results remain ignored, and
+the shared closed file pointer remains stored.
+
+The complete insertion candidate has the original 446-byte extent with 26
+explicit relocations and three unmasked differences. Those differences are
+the shift-loop comparison's two local operands and signed exit condition at
+offsets 172, 175 and 177. Several equivalent relational expressions compile to
+the same differing comparison; no declaration/layout or padding trials were
+used. The maintained source keeps the natural `while (i >= rank)` condition.
+This is source/control-flow recovery, not a new exact insertion claim.
+
+The original dossier is reused from the 2026-10-07 13-44 archive. A new 28-byte
+read at `0x42149C` attests both `score.dat` operands and `wb`, including NULs,
+with Evidence
+`ev_294c496e579aa5d2a514735f4d8f7d876c81d786c38d76ba0f8d07eab470d992`,
+in the 2026-10-10 14-42 more-literals run. Existing accepted callers establish
+`strcpy` and the direct stdio API identities; access uses the new whole CRT
+member corroboration. No runtime-origin row is promoted by this recovery.
+
+The existing game-over fixture now binds only its copied image's five stdio
+import slots to its existing typed callbacks, using `tests/native_imports.py`.
+Cases and assertions remain unchanged. Canonical native libc checks additionally
+cover a 660-byte creation, accepted/rejected insertion, persisted output and a
+43-byte partial read preserving 617 poisoned bytes. Receipts and complete
+comparisons are private in `.analysis/exact-score-reading/`.
+
 ## Entries and retained observations
 
 | Address | Maintained entry | Owned/span bytes | Direct cases | REA Evidence ID |

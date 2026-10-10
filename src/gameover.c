@@ -8,6 +8,11 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#if defined(_WIN32)
+#include <io.h>
+#else
+#include <unistd.h>
+#endif
 
 char dxball_score_name[40];
 DxBallInt dxball_score_name_length, dxball_selected_score_index;
@@ -27,20 +32,29 @@ DxBallInt dxball_insert_high_score(const char *name, DxBallUInt score)
     DxBallInt rank, i;
     dxball_read_scores();
     if (score < dxball_scores[14].score) return -1;
-    for (rank = 14; rank >= 0 && dxball_scores[rank].score <= score; --rank) {}
-    ++rank;
-    for (i = 13; i >= rank; --i) {
-        strcpy(dxball_scores[i + 1].name, dxball_scores[i].name);
-        dxball_scores[i + 1].score = dxball_scores[i].score;
+    rank = 14;
+    while (rank >= 0 && dxball_scores[rank].score <= score) {
+        --rank;
     }
-    strcpy(dxball_scores[rank].name, name);
-    dxball_scores[rank].score = score;
-    if (dxball_startup_file_ops.access("score.dat", 2) == 0) {
-        dxball_board_file = dxball_startup_file_ops.open("score.dat", "wb");
-        if (dxball_board_file != NULL) {
-            dxball_startup_file_ops.write(dxball_scores, 44, 15, dxball_board_file);
-            dxball_startup_file_ops.close(dxball_board_file);
+    ++rank;
+    if (rank == 14) {
+        strcpy(dxball_scores[rank].name, name);
+        dxball_scores[rank].score = score;
+    } else {
+        i = 13;
+        while (i >= rank) {
+            strcpy(dxball_scores[i + 1].name, dxball_scores[i].name);
+            dxball_scores[i + 1].score = dxball_scores[i].score;
+            --i;
         }
+        strcpy(dxball_scores[rank].name, name);
+        dxball_scores[rank].score = score;
+    }
+    if (access("score.dat", 2) == 0) {
+        dxball_board_file = fopen("score.dat", "wb");
+        if (dxball_board_file == NULL) return rank;
+        fwrite(dxball_scores, sizeof(dxball_scores[0]), 15, dxball_board_file);
+        fclose(dxball_board_file);
     }
     return rank;
 }

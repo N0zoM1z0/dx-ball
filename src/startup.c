@@ -73,11 +73,11 @@ void dxball_initialize_scores(void)
 
 void dxball_read_scores(void)
 {
-    dxball_board_file = dxball_startup_file_ops.open("score.dat", "rb");
-    if (dxball_board_file != NULL) {
-        dxball_startup_file_ops.read(dxball_scores, 44, 15, dxball_board_file);
-        dxball_startup_file_ops.close(dxball_board_file);
-    }
+    dxball_board_file = fopen("score.dat", "rb");
+    if (dxball_board_file == NULL) return;
+    fread(dxball_scores, sizeof(dxball_scores[0]), 15, dxball_board_file);
+    fclose(dxball_board_file);
+    return;
 }
 
 void dxball_seed_random(void)

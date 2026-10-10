@@ -61,6 +61,9 @@ class GameoverNative(ScoreFiles,IntroNative):
                 except Exception as error:print('Score boundary failed:',repr(error),flush=True);os._exit(1)
             callback=C.CFUNCTYPE(result,*kinds)(checked);self.score_callbacks.append(callback)
             table[slot]=C.cast(callback,C.c_void_p).value
+        from native_imports import bind_imports
+        self.file_imports = bind_imports(self.core_native_image, self.lib.dxball_insert_high_score,
+            {api:table[slot] for slot,api in ((0,'fopen'),(1,'fread'),(2,'fwrite'),(3,'fclose'),(4,'access'))})
         for op,group in enumerate(MODE_ENTRIES):
             self.mode_callbacks[op*5+3]=C.cast(getattr(self.lib,'dxball_'+BODIES[group]),C.c_void_p).value
         (C.c_void_p*5).in_dll(self.lib,'dxball_key_mode_ops')[3]=C.cast(self.lib.dxball_game_over_key,C.c_void_p).value
