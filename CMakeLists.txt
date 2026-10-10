@@ -11,6 +11,7 @@ add_library(dxball_core SHARED
     # Storage, loading, and low-level drawing
     src/allocator.c
     src/allocator_host.c
+    src/cpp_allocator.cpp
     src/boards.c
     src/resources.c
     src/rotation.c
@@ -52,6 +53,11 @@ add_library(dxball_core SHARED
 if(UNIX)
     target_sources(dxball_core PRIVATE src/runtime_text_host.c src/directx_factory_host.c)
     target_link_libraries(dxball_core PRIVATE m)
+    # Keep recovered C++ allocation inside this image's existing heap boundary.
+    target_link_options(dxball_core PRIVATE
+        "LINKER:--version-script=${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map")
+    set_property(TARGET dxball_core APPEND PROPERTY LINK_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map")
 endif()
 if(WIN32)
     target_link_libraries(dxball_core PRIVATE dsound ddraw)
@@ -65,6 +71,9 @@ target_include_directories(dxball_core PUBLIC src)
 set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(dxball_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    # VC4 new can return NULL; retain the observed terminal allocation branch.
+    set_source_files_properties(src/list_initializers.cpp PROPERTIES
+        COMPILE_OPTIONS -fcheck-new)
 endif()
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     # The original lightning controller requires an eligible tile in its scan.

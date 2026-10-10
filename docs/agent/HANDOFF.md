@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 173 exact functions / 30,824 full-span bytes and
+- 283 source-present entries; 175 exact functions / 31,264 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -816,6 +816,30 @@ Private .analysis/startup-rng-recovery/; seal
 [exact startup RNG](../research/exact/EXACT_STARTUP_RNG.md).
 REA remains6.3.0; retained dossiers reused, no new provider session. Feedback33
 is appended only to the same existing /tmp document.
+
+Latest list lifetime checkpoint: ordinary C++ delete naturally reproduces both
+pointer-copy homes in projectile/fire removal. Both complete220-byte spans are
+exact, with the retained five-byte intervals and actual operator-delete binding.
+Ten list helpers move to the existing C++ constructor owner, retaining C/ECX
+ABI, payload, cursor and nullable-allocation behavior. Paired C++ adapters use
+the existing C allocator; ELF symbols are local, leaving other host images'
+C++ APIs intact. Initial visibility-attribute and duplicate inline-relocation
+failures are retained, corrected before acceptance without body/layout trials.
+Two stable matching compiles use actual closures23/13; all18 affected units pass,
+including16 preceding exacts. All18 initialization functions retain raw bytes
+and relocations. One new adapter compile plus two matching and33 unchanged
+objects yields36 verified game objects. Native/MinGW pass; current Native/original
+590 direct queue cases plus64 separate connected calls pass. Current VC4 real-Wine
+ball/pause/editor/save-reload/exit passes84 reads/five captures/exit0 and49
+original identities, with the expected whole saved bank. Other scopes remain
+historical; no full replay or synchronized hardware/full-game claim.
+Exact totals175 /31,264 code bytes /136 metadata; source283/scoped semantic247
+and origins unchanged. Private .analysis/list-delete-recovery/ and
+.analysis/core-language-lifetime/; seal
+.analysis/checkpoints/list-delete-283-175/sha256.json. See
+[exact list delete](../research/exact/EXACT_LIST_DELETE.md).
+REA6.3.0 uses retained closed records; snapshot22 unchanged. Feedback34 goes
+only into the same existing /tmp document.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider

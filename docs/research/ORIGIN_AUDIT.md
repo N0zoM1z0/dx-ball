@@ -4,8 +4,8 @@ The origin ledger now records **270 authored / 68 runtime / 42 compiler-generate
 148 unknown entries**. The latest batch resolves two further CRT entries through complete prior
 code definitions and independently placed initialized data sections. Source presence remains **283** (270 authored,
 one unknown-origin no-effect body and 12 runtime bodies); scoped semantic
-acceptance remains **247 entries**, and exact acceptance remains **173 complete
-functions /30,824 code bytes plus 136 separate metadata bytes**. Earlier batches
+acceptance remains **247 entries**, and exact acceptance remains **175 complete
+functions /31,264 code bytes plus 136 separate metadata bytes**. Earlier batches
 below retain their own scopes and counts.
 
 All 270 currently confirmed authored entries have maintained source. That

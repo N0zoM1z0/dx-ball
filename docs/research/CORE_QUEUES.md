@@ -1,5 +1,15 @@
 # Projectile and fire-effect queue entries
 
+The [typed deletion checkpoint](exact/EXACT_LIST_DELETE.md) restores ordinary
+C++ new/delete in the existing list owner. Both complete220-byte deletion spans
+are exact, including the retained five-byte intervals and actual operator-delete
+relocations. C consumers retain their ECX/integer ABI and cursor behavior.
+All16 preceding affected exacts and18 initialization functions stay unchanged.
+Native/original590 direct cases plus64 connected calls pass; current VC4 real
+ball/pause/editor/save-reload/exit passes84 reads with49 originals unchanged.
+Exact totals175 functions /31,264 code bytes /136 metadata; source283 and scoped
+semantic247 unchanged. Earlier batches below retain their historical scopes.
+
 The [complete projectile/fire-list restoration](exact/EXACT_PROJECTILE_LISTS.md)
 restores eight whole append/begin/advance/removal bodies, preserving separate
 live owner writes, original branches, typed natural node sizes and genuine
