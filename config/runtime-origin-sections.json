@@ -931,6 +931,139 @@
           ]
         }
       ]
+    },
+    {
+      "address": "0x0041BBE0",
+      "size": 33,
+      "member": "build\\intel\\st_obj\\frame.obj",
+      "member_header_offset": 192092,
+      "member_sha256": "ca4c0732d0860a9f0dbc519f91888999cccb47dc96c99b35572057193dfd462b",
+      "section_index": 28,
+      "entries": [
+        "0x0041BBE0"
+      ],
+      "library_symbols": [
+        "?AdjustPointer@@YAPAXPAXABUPMD@@@Z"
+      ],
+      "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041C680",
+      "size": 95,
+      "member": "build\\intel\\st_obj\\mbctype.obj",
+      "member_header_offset": 564852,
+      "member_sha256": "5e627ed9d7606a78aacc8d2495782bd45bcf9d107b60d18ee177ce8115d4493a",
+      "section_index": 6,
+      "entries": [
+        "0x0041C680"
+      ],
+      "library_symbols": [
+        "_CPtoLCID"
+      ],
+      "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041AC40",
+      "size": 44,
+      "member": "build\\intel\\st_obj\\aw_cmp.obj",
+      "member_header_offset": 605934,
+      "member_sha256": "80376eac5845443b3f025b7d38e98e0e604a744b5aee294dcd94fdb5f0d53fc4",
+      "section_index": 10,
+      "entries": [
+        "0x0041AC40"
+      ],
+      "library_symbols": [
+        "_strncnt"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 605934,
+          "symbols": [
+            "_strncnt"
+          ]
+        },
+        {
+          "member_header_offset": 614898,
+          "symbols": [
+            "_strncnt"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x0041CF90",
+      "size": 161,
+      "member": "..\\build\\intel\\st_obj\\ieee87.obj",
+      "member_header_offset": 992334,
+      "member_sha256": "de4e1b27708b9bde2a085781ab36aeb387997893bca55a34dd5ce809cf083b1e",
+      "section_index": 11,
+      "entries": [
+        "0x0041CF90"
+      ],
+      "library_symbols": [
+        "__abstract_cw"
+      ],
+      "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041D040",
+      "size": 141,
+      "member": "..\\build\\intel\\st_obj\\ieee87.obj",
+      "member_header_offset": 992334,
+      "member_sha256": "de4e1b27708b9bde2a085781ab36aeb387997893bca55a34dd5ce809cf083b1e",
+      "section_index": 13,
+      "entries": [
+        "0x0041D040"
+      ],
+      "library_symbols": [
+        "__hw_cw"
+      ],
+      "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041FDE0",
+      "size": 21,
+      "member": "build\\intel\\st_obj\\msize.obj",
+      "member_header_offset": 359880,
+      "member_sha256": "cfdfb2fb96b726251697cfda6c0bc49f2a2a74ded76ed420d8a00761358d06b3",
+      "section_index": 1,
+      "entries": [
+        "0x0041FDE0"
+      ],
+      "library_symbols": [
+        "__msize"
+      ],
+      "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041F7E0",
+      "size": 121,
+      "member": "build\\intel\\st_obj\\onexit.obj",
+      "member_header_offset": 672316,
+      "member_sha256": "430d5eb08eb800cca90935afdae880f18572cb22c2e1f80f4635bca482ed49c1",
+      "section_index": 2,
+      "entries": [
+        "0x0041F7E0"
+      ],
+      "library_symbols": [
+        "__onexit"
+      ],
+      "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041F860",
+      "size": 19,
+      "member": "build\\intel\\st_obj\\onexit.obj",
+      "member_header_offset": 672316,
+      "member_sha256": "430d5eb08eb800cca90935afdae880f18572cb22c2e1f80f4635bca482ed49c1",
+      "section_index": 4,
+      "entries": [
+        "0x0041F860"
+      ],
+      "library_symbols": [
+        "_atexit"
+      ],
+      "byte_identical_alternatives": []
     }
   ],
   "limitations": [
@@ -993,6 +1126,302 @@
       "cell": "0x441278",
       "kind": "iat",
       "address": "0x441278"
+    },
+    {
+      "symbol": "__imp__MultiByteToWideChar@24",
+      "dll": "KERNEL32.dll",
+      "name": "MultiByteToWideChar",
+      "cell": "0x44130c",
+      "address": "0x44130c",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetLastError@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetLastError",
+      "cell": "0x441320",
+      "address": "0x441320",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__WideCharToMultiByte@32",
+      "dll": "KERNEL32.dll",
+      "name": "WideCharToMultiByte",
+      "cell": "0x441304",
+      "address": "0x441304",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetFileAttributesA@4",
+      "dll": "KERNEL32.dll",
+      "name": "GetFileAttributesA",
+      "cell": "0x4412c0",
+      "address": "0x4412c0",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__SetUnhandledExceptionFilter@4",
+      "dll": "KERNEL32.dll",
+      "name": "SetUnhandledExceptionFilter",
+      "cell": "0x441254",
+      "address": "0x441254",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__CloseHandle@4",
+      "dll": "KERNEL32.dll",
+      "name": "CloseHandle",
+      "cell": "0x441264",
+      "address": "0x441264",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetProcAddress@8",
+      "dll": "KERNEL32.dll",
+      "name": "GetProcAddress",
+      "cell": "0x441338",
+      "address": "0x441338",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__LoadLibraryA@4",
+      "dll": "KERNEL32.dll",
+      "name": "LoadLibraryA",
+      "cell": "0x441330",
+      "address": "0x441330",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__HeapCreate@12",
+      "dll": "KERNEL32.dll",
+      "name": "HeapCreate",
+      "cell": "0x441328",
+      "address": "0x441328",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__HeapSize@12",
+      "dll": "KERNEL32.dll",
+      "name": "HeapSize",
+      "cell": "0x441274",
+      "address": "0x441274",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__SetEndOfFile@4",
+      "dll": "KERNEL32.dll",
+      "name": "SetEndOfFile",
+      "cell": "0x441250",
+      "address": "0x441250",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__FlushFileBuffers@4",
+      "dll": "KERNEL32.dll",
+      "name": "FlushFileBuffers",
+      "cell": "0x441260",
+      "address": "0x441260",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetFileType@4",
+      "dll": "KERNEL32.dll",
+      "name": "GetFileType",
+      "cell": "0x4412f8",
+      "address": "0x4412f8",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__CreateFileA@28",
+      "dll": "KERNEL32.dll",
+      "name": "CreateFileA",
+      "cell": "0x44127c",
+      "address": "0x44127c",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetStartupInfoA@4",
+      "dll": "KERNEL32.dll",
+      "name": "GetStartupInfoA",
+      "cell": "0x44132c",
+      "address": "0x44132c",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetStdHandle@4",
+      "dll": "KERNEL32.dll",
+      "name": "GetStdHandle",
+      "cell": "0x4412f4",
+      "address": "0x4412f4",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__SetHandleCount@4",
+      "dll": "KERNEL32.dll",
+      "name": "SetHandleCount",
+      "cell": "0x4412fc",
+      "address": "0x4412fc",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__SetFilePointer@16",
+      "dll": "KERNEL32.dll",
+      "name": "SetFilePointer",
+      "cell": "0x4412f0",
+      "address": "0x4412f0",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__SetStdHandle@8",
+      "dll": "KERNEL32.dll",
+      "name": "SetStdHandle",
+      "cell": "0x4412e0",
+      "address": "0x4412e0",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__ReadFile@20",
+      "dll": "KERNEL32.dll",
+      "name": "ReadFile",
+      "cell": "0x441298",
+      "address": "0x441298",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__WriteFile@20",
+      "dll": "KERNEL32.dll",
+      "name": "WriteFile",
+      "cell": "0x441310",
+      "address": "0x441310",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetCPInfo@8",
+      "dll": "KERNEL32.dll",
+      "name": "GetCPInfo",
+      "cell": "0x4412d0",
+      "address": "0x4412d0",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetACP@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetACP",
+      "cell": "0x4412dc",
+      "address": "0x4412dc",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetOEMCP@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetOEMCP",
+      "cell": "0x4412bc",
+      "address": "0x4412bc",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetModuleFileNameA@12",
+      "dll": "KERNEL32.dll",
+      "name": "GetModuleFileNameA",
+      "cell": "0x4412d8",
+      "address": "0x4412d8",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetCommandLineA@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetCommandLineA",
+      "cell": "0x441324",
+      "address": "0x441324",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__FreeEnvironmentStringsA@4",
+      "dll": "KERNEL32.dll",
+      "name": "FreeEnvironmentStringsA",
+      "cell": "0x4412d4",
+      "address": "0x4412d4",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__FreeEnvironmentStringsW@4",
+      "dll": "KERNEL32.dll",
+      "name": "FreeEnvironmentStringsW",
+      "cell": "0x4412cc",
+      "address": "0x4412cc",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetEnvironmentStrings@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetEnvironmentStrings",
+      "cell": "0x4412e8",
+      "address": "0x4412e8",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetEnvironmentStringsW@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetEnvironmentStringsW",
+      "cell": "0x4412c8",
+      "address": "0x4412c8",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__LCMapStringA@24",
+      "dll": "KERNEL32.dll",
+      "name": "LCMapStringA",
+      "cell": "0x441308",
+      "address": "0x441308",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__LCMapStringW@24",
+      "dll": "KERNEL32.dll",
+      "name": "LCMapStringW",
+      "cell": "0x441300",
+      "address": "0x441300",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetStringTypeA@20",
+      "dll": "KERNEL32.dll",
+      "name": "GetStringTypeA",
+      "cell": "0x44125c",
+      "address": "0x44125c",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetStringTypeW@16",
+      "dll": "KERNEL32.dll",
+      "name": "GetStringTypeW",
+      "cell": "0x441258",
+      "address": "0x441258",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__UnhandledExceptionFilter@4",
+      "dll": "KERNEL32.dll",
+      "name": "UnhandledExceptionFilter",
+      "cell": "0x4412ec",
+      "address": "0x4412ec",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetVersion@0",
+      "dll": "KERNEL32.dll",
+      "name": "GetVersion",
+      "cell": "0x441334",
+      "address": "0x441334",
+      "kind": "iat"
+    },
+    {
+      "symbol": "__imp__GetModuleHandleA@4",
+      "dll": "KERNEL32.dll",
+      "name": "GetModuleHandleA",
+      "cell": "0x4412e4",
+      "address": "0x4412e4",
+      "kind": "iat"
     }
   ],
   "import_thunks": [

@@ -938,6 +938,34 @@ Feedback38 is appended to the same existing /tmp document. Core storage and
 original declaration provenance, unknown origins and whole-game fidelity remain
 open. This is progress toward source fidelity, not full-game completion.
 
+Latest window/runtime checkpoint independently corresponds227 live WindowProc
+instructions/operands and all control-flow edges, with the20-byte message table
+kept as data and all five destinations attested. The original has three dead
+five-byte switch tails; current compiled code has two. Whole1171/1166-byte
+comparison remains nonexact; do not add dead source statements to force it.
+No window source, fixture, compiler or provider change is needed. A subsequent
+known-binding library scan discovers eight full CRT sections /635 bytes. The
+maintained verifier accepts all62 complete sections /6661 section bytes /
+63 code-origin rows, two data sections /594 bytes and three forwarding entries:
+66 distinct origin rows. Five names are static/object-local and publish no new
+external bindings; the two identical strncnt members retain selection ambiguity.
+CPtoLCID's imported56-byte boundary remains distinct from its full95-byte section.
+Origins now270 authored/76 runtime/42 generated/140 unknown; source283/semantic247/
+exact185 and current products unchanged.31 disposable extracted objects were
+regenerated from identical pinned archive members and checked before discovery.
+No game recompile/runtime or broad historical replay. Private
+.analysis/window-message-topology/; seal
+.analysis/checkpoints/window-runtime-origins-283-185/sha256.json. See
+[runtime binding frontier](../research/RUNTIME_BINDING_FRONTIER.md).
+REA6.3.0 reuses closed original evidence; feedback39 appends only to the existing
+/tmp/dxball_rea_feedback_20261010.md. The full authored denominator and whole-game
+fidelity remain open. The final bounded scan finds no further whole sections using134 grounded
+bindings.37 additional uniquely named PE imports ground msize, whose verified
+external definition grounds onexit and then atexit. Each whole section passes
+before export. Same-member static definitions in other sections need explicit
+namespace-aware provenance before reuse. Investigate unresolved storage/
+call provenance or another live consumer; do not force local homes/dead tails.
+
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
 session, the 512 MiB Ghidra heap, and CMake `--parallel 1`. Compiler/provider

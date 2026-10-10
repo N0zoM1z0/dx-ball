@@ -423,7 +423,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041A770,555,0x0041A99A,FUN_0041a770,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041A9A0,102,0x0041AA05,FUN_0041a9a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041AA10,555,0x0041AC3A,___crtLCMapStringA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041AC40,44,0x0041AC6B,_strncnt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041AC40,44,0x0041AC6B,_strncnt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete pinned libc section: 44 bytes and every actual relocation; COFF symbols _strncnt; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance; imported function boundary remains separate
 0x0041AC70,145,0x0041AD00,__isctype,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041AD10,467,0x0041AEE2,FUN_0041ad10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041AEF0,75,0x0041AF3A,__getbuf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -438,7 +438,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041B820,213,0x0041B8F4,FUN_0041b820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041B960,510,0x0041BB5D,BuildCatchObject,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041BB60,113,0x0041BBD0,DestructExceptionObject,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041BBE0,33,0x0041BC00,AdjustPointer,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041BBE0,33,0x0041BC00,AdjustPointer,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete pinned libc section: 33 bytes and every actual relocation; COFF symbols ?AdjustPointer@@YAPAXPAXABUPMD@@@Z; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance; imported function boundary remains separate
 0x0041BC10,72,0x0041BC57,__CallSettingFrame@12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041BC60,114,0x0041BCD1,FUN_0041bc60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041BCE0,114,0x0041BD51,FUN_0041bce0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -450,7 +450,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041C2B0,411,0x0041C44A,FUN_0041c2b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041C450,475,0x0041C62A,FUN_0041c450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041C630,77,0x0041C67C,getSystemCP,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041C680,56,0x0041C6B7,_CPtoLCID,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041C680,56,0x0041C6B7,_CPtoLCID,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete pinned libc section: 95 bytes and every actual relocation; COFF symbols _CPtoLCID; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance; imported function boundary remains separate
 0x0041C6E0,44,0x0041C70B,setSBCS,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041C710,11,0x0041C71A,FUN_0041c710,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041C7E1,27,0x0041C7FB,FUN_0041c7e1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -465,8 +465,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041CE10,255,0x0041CF0E,__87except,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041CF30,63,0x0041CF6E,__control87,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041CF70,24,0x0041CF87,__controlfp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041CF90,161,0x0041D030,__abstract_cw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041D040,141,0x0041D0CC,__hw_cw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041CF90,161,0x0041D030,__abstract_cw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete pinned libc section: 161 bytes and every actual relocation; COFF symbols __abstract_cw; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance; imported function boundary remains separate
+0x0041D040,141,0x0041D0CC,__hw_cw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete pinned libc section: 141 bytes and every actual relocation; COFF symbols __hw_cw; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance; imported function boundary remains separate
 0x0041D0E0,100,0x0041D143,__ZeroTail,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041D150,99,0x0041D1B2,__IncMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041D1C0,172,0x0041D26B,__RoundMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -516,8 +516,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041F590,82,0x0041F5E1,FUN_0041f590,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F5F0,115,0x0041F662,FUN_0041f5f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F670,359,0x0041F7D6,__chsize,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041F7E0,121,0x0041F858,FUN_0041f7e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041F860,19,0x0041F872,FUN_0041f860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041F7E0,121,0x0041F858,FUN_0041f7e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete121-byte pinned libc section and every actual relocation; COFF symbols __onexit; earlier verified external definitions used only after full acceptance; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance
+0x0041F860,19,0x0041F872,FUN_0041f860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete19-byte pinned libc section and every actual relocation; COFF symbols _atexit; earlier verified external definitions used only after full acceptance; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance
 0x0041F8C0,21,0x0041F8D4,FUN_0041f8c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F8E0,162,0x0041F981,FUN_0041f8e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F990,678,0x0041FC35,FUN_0041f990,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -525,5 +525,5 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041FCC0,128,0x0041FD3F,FUN_0041fcc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FD40,47,0x0041FD6E,FUN_0041fd40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FD70,111,0x0041FDDE,FUN_0041fd70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FDE0,21,0x0041FDF4,FUN_0041fde0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041FDE0,21,0x0041FDF4,FUN_0041fde0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed; ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12; docs/research/RUNTIME_BINDING_FRONTIER.md,,Runtime provenance from complete21-byte pinned libc __msize section and every actual relocation; named original HeapSize IAT binding; docs/research/RUNTIME_BINDING_FRONTIER.md; not a game-source or exact-function acceptance
 0x0041FEE6,6,0x0041FEEB,KERNEL32.DLL::RtlUnwind,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

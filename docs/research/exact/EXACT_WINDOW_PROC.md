@@ -1,5 +1,18 @@
 # Window messages, focus and shutdown
 
+The later bounded control-flow audit checks all227 reachable instructions,
+operands and edges against the current object. The20-byte table is treated as
+data with all five ordered message destinations. Original code has three
+unreachable five-byte switch-tail jumps; the current object has two. These
+tails explain the1,171/1,166-byte extent difference. Whole-span comparison stays
+nonexact: the correspondence does not mask dead bytes, establish unique switch
+syntax, observe execution or prove physical Windows behavior. The current
+object, original full-span Evidence and typed owner inputs are retained in
+`.analysis/window-message-topology/live-instruction-correspondence.json`.
+No source/fixture edit, provider request or compilation is needed for this audit.
+The origin frontier from this audit is documented in
+[runtime bindings](../RUNTIME_BINDING_FRONTIER.md).
+
 The window procedure at `0x40DA70` connects input, audio focus and resource
 shutdown. [platform.c](../../../src/platform.c) now follows its complete
 original flow, including the order of state writes and calls into other owners.

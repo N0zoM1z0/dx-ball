@@ -1,7 +1,9 @@
 # Bounded origin audit
 
-The origin ledger now records **270 authored / 68 runtime / 42 compiler-generated /
-148 unknown entries**. The latest origin batch resolves two further CRT entries through complete prior
+The origin ledger now records **270 authored / 76 runtime / 42 compiler-generated /
+140 unknown entries**. The [latest binding frontier](RUNTIME_BINDING_FRONTIER.md)
+resolves eight further CRT entries through complete sections, independently
+named imports and ordered verified definitions. The preceding storage batch resolved two through complete prior
 code definitions and independently placed initialized data sections. Source presence remains **283** (270 authored,
 one unknown-origin no-effect body and 12 runtime bodies); scoped semantic
 acceptance remains **247 entries**, and exact acceptance is **185 complete
@@ -10,7 +12,7 @@ below retain their own scopes and counts.
 
 All 270 currently confirmed authored entries have maintained source. That
 conditional result does not establish the full authored denominator or >=95%
-complete source recovery. The remaining 148 unknown origins, provisional
+complete source recovery. The remaining 140 unknown origins, provisional
 boundaries, original type uncertainty and whole-game fidelity remain open.
 
 ## Complete CRT storage and prior definitions
