@@ -2,17 +2,19 @@
 
 ## Current allocation defaults
 
-Music wrapper allocation/deletion now defaults to maintained new/delete.
-Local/Global ownership remains separate. The connected private draft below is
-historical evidence; current owner replay and allocator/SDK tests establish
-the scopes listed in [allocation ownership](ALLOCATOR_OWNER.md).
+Music wrapper allocation/deletion uses maintained runtime new/delete.
+Local/Global ownership remains separate. The latest
+[stream and music recovery](exact/EXACT_MIDI_LIFECYCLE.md) restores ten complete
+bodies and adds exact resume, pause and restart controls. One existing Oracle
+passes 2,109 direct cases and 134 connected checks. Native, MinGW and VC4 builds
+succeed. Earlier investigations below retain their original evidence epochs.
 
 `src/midi.c` maintains the original RIFF/MIDS reader, compact MIDI event
 expansion, stream controller, completion callback and five music wrappers.
 The portable library, MinGW i686 and pinned VC4 builds share this C owner.
-Kernel32/WinMM imports are explicit dependencies; actual Windows audio delivery
-and a playable reconstructed EXE remain pending. These functions have scoped
-semantic acceptance, with no new byte-exact claim.
+The Windows adapter supplies the Kernel32/WinMM services. Stream exactness
+still requires recovering the original import storage; the portable callback
+table has a different layout.
 
 ## REA evidence
 

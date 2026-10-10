@@ -16,6 +16,12 @@ object = "build/exact/gameplay.obj"
 inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/device.h", "src/display.h", "src/editor.h", "src/effects.h", "src/explosion_types.h", "src/gameover.h", "src/gameplay.c", "src/gameplay.h", "src/geometry.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/trig.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
+[builds.midi]
+source = "src/midi.c"
+object = "build/exact/midi.obj"
+inputs = ["src/allocator.h", "src/board_storage.h", "src/boards.h", "src/explosion_types.h", "src/midi.c", "src/midi.h", "src/resources.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
 [units.append-explosion]
 build = "gameplay"
 symbol = "@dxball_append_explosion@4"
@@ -4932,4 +4938,89 @@ target_address = 0x406290
 size = 269
 boundary_evidence = "docs/research/exact/EXACT_SOUND_DEPENDENCIES.md; full RET-inclusive REA evidence and genuine original call/data targets"
 relocations = [
+]
+
+[candidates.load-music]
+build = "midi"
+symbol = "_dxball_load_music"
+target_address = 0x401b90
+size = 249
+boundary_evidence = "docs/research/exact/EXACT_MIDI_LIFECYCLE.md; complete RET-inclusive REA instruction dossier and real call/global targets"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 20, type = "REL32", symbol = "_dxball_close_music", addend = 0, target = 0x401da0 },
+  { offset = 27, type = "REL32", symbol = "_dxball_runtime_new", addend = 0, target = 0x416770 },
+  { offset = 35, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 48, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 54, type = "REL32", symbol = "_dxball_open_mds", addend = 0, target = 0x401000 },
+  { offset = 70, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 76, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
+  { offset = 85, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 101, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 125, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 133, type = "REL32", symbol = "_dxball_play_mds", addend = 0, target = 0x401780 },
+  { offset = 149, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 157, type = "REL32", symbol = "_dxball_release_mds", addend = 0, target = 0x4016e0 },
+  { offset = 165, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 171, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
+  { offset = 180, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 196, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+]
+
+[units.resume-music]
+build = "midi"
+symbol = "_dxball_resume_music"
+target_address = 0x401c90
+size = 77
+boundary_evidence = "docs/research/exact/EXACT_MIDI_LIFECYCLE.md; complete RET-inclusive REA instruction dossier and real call/global targets"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 27, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 35, type = "REL32", symbol = "_dxball_play_mds", addend = 0, target = 0x401780 },
+  { offset = 56, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+]
+
+[units.pause-music]
+build = "midi"
+symbol = "_dxball_pause_music"
+target_address = 0x401ce0
+size = 75
+boundary_evidence = "docs/research/exact/EXACT_MIDI_LIFECYCLE.md; complete RET-inclusive REA instruction dossier and real call/global targets"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 25, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 33, type = "REL32", symbol = "_dxball_pause_mds", addend = 0, target = 0x401990 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+]
+
+[units.restart-music]
+build = "midi"
+symbol = "_dxball_restart_music"
+target_address = 0x401d30
+size = 106
+boundary_evidence = "docs/research/exact/EXACT_MIDI_LIFECYCLE.md; complete RET-inclusive REA instruction dossier and real call/global targets"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 25, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 33, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x401a20 },
+  { offset = 56, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 64, type = "REL32", symbol = "_dxball_play_mds", addend = 0, target = 0x401780 },
+  { offset = 85, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+]
+
+[candidates.close-music]
+build = "midi"
+symbol = "_dxball_close_music"
+target_address = 0x401da0
+size = 105
+boundary_evidence = "docs/research/exact/EXACT_MIDI_LIFECYCLE.md; complete RET-inclusive REA instruction dossier and real call/global targets"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 25, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 33, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x401a20 },
+  { offset = 41, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 49, type = "REL32", symbol = "_dxball_release_mds", addend = 0, target = 0x4016e0 },
+  { offset = 57, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
+  { offset = 63, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
+  { offset = 72, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
 ]

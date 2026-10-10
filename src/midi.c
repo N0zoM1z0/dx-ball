@@ -142,113 +142,191 @@ done:
     return result;
 }
 
+/* FUNCTION: DXBALL 0x004016E0 */
+DxBallInt dxball_release_mds(DxBallMdsContext *context)
+{
+    DxBallMdsContext *current;
+    if (context->magic != MDS_MAGIC) return 6;
+    current = context;
+    if (current->stream != 0) dxball_stop_mds(context);
+    if (current->buffers != NULL) {
+        dxball_midi_api.global_unlock(dxball_midi_api.global_handle(current->buffers));
+        dxball_midi_api.global_free(dxball_midi_api.global_handle(current->buffers));
+    }
+    current->magic = MDS_FREED;
+    dxball_midi_api.local_free(current);
+    return 0;
+}
+
+/* FUNCTION: DXBALL 0x00401780 */
+DxBallInt dxball_play_mds(DxBallMdsContext *context, DxBallByte flags)
+{
+    DxBallUInt device;
+    DxBallMidiProperty property;
+    DxBallInt created, remaining;
+    DxBallMdsContext *current;
+    DxBallInt result;
+    DxBallMidiHeader *header;
+
+    result = 0;
+    created = 0;
+    if (context->magic != MDS_MAGIC) return 6;
+    current = context;
+    if (current->stream != 0 && (current->state & 4) == 0) return 7;
+    if (current->stream == 0) {
+        created = 1;
+        device = 0xffffffffUL;
+        if (dxball_midi_api.stream_open(&current->stream, &device, 1,
+                dxball_midi_callback, 0, 0x30000) != 0) {
+            result = 5;
+            goto done;
+        }
+        property.size = 8;
+        property.value = current->time_division;
+        if (dxball_midi_api.stream_property(current->stream, &property,
+                0x80000001UL) != 0) {
+            result = 5;
+            goto done;
+        }
+        header = current->buffers;
+        for (remaining = current->buffer_count; remaining != 0; --remaining) {
+            if (dxball_midi_api.prepare_header(current->stream, header, MIDI_HEADER_BYTES) != 0 ||
+                dxball_midi_api.stream_out(current->stream, header, MIDI_HEADER_BYTES) != 0) {
+                result = 5;
+                goto done;
+            }
+            ++current->pending_buffers;
+            header = (DxBallMidiHeader *)((DxBallByte *)header +
+                (sizeof(*header) + header->buffer_length));
+        }
+    }
+    current->state &= ~2UL;
+    if ((flags & 1) != 0) current->state |= 2;
+    current->state &= ~4UL;
+    if (dxball_midi_api.stream_restart(current->stream) != 0) result = 5;
+done:
+    if (result != 0 && created != 0 && current->stream != 0)
+        dxball_stop_mds(context);
+    return result;
+}
+
+/* FUNCTION: DXBALL 0x00401990 */
+DxBallInt dxball_pause_mds(DxBallMdsContext *context)
+{
+    DxBallMdsContext *current;
+    if (context->magic != MDS_MAGIC) return 6;
+    current = context;
+    if (current->stream == 0) return 7;
+    if ((current->state & 4) != 0) return 0;
+    if (dxball_midi_api.stream_pause(current->stream) != 0) return 5;
+    current->state |= 4;
+    return 0;
+}
+
+/* FUNCTION: DXBALL 0x00401A20 */
 DxBallInt dxball_stop_mds(DxBallMdsContext *context)
 {
     DxBallInt remaining;
+    DxBallMdsContext *current;
     DxBallMidiHeader *header;
     if (context->magic != MDS_MAGIC) return 6;
-    if (context->stream == 0) return 7;
-    context->state |= 1;
-    if (dxball_midi_api.out_reset(context->stream) != 0) { context->state &= ~1UL; return 5; }
-    header = context->buffers;
-    for (remaining = context->buffer_count; remaining != 0; --remaining) {
-        dxball_midi_api.unprepare_header(context->stream, header, MIDI_HEADER_BYTES);
-        header = next_buffer(header);
+    current = context;
+    if (current->stream == 0) return 7;
+    current->state |= 1;
+    if (dxball_midi_api.out_reset(current->stream) != 0) {
+        current->state &= ~1UL;
+        return 5;
     }
-    dxball_midi_api.stream_close(context->stream);
-    context->stream = 0; context->state = 0;
-    return 0;
-}
-DxBallInt dxball_release_mds(DxBallMdsContext *context)
-{
-    if (context->magic != MDS_MAGIC) return 6;
-    if (context->stream != 0) dxball_stop_mds(context);
-    if (context->buffers != NULL) free_buffers(context);
-    context->magic = MDS_FREED;
-    dxball_midi_api.local_free(context);
-    return 0;
-}
-DxBallInt dxball_play_mds(DxBallMdsContext *context, DxBallByte flags)
-{
-    DxBallInt created = 0, result = 0, remaining;
-    DxBallMidiHeader *header;
-    DxBallUInt device = 0xffffffffUL;
-    DxBallMidiProperty property;
-    if (context->magic != MDS_MAGIC) return 6;
-    if (context->stream != 0 && (context->state & 4) == 0) return 7;
-    if (context->stream == 0) {
-        created = 1;
-        if (dxball_midi_api.stream_open(&context->stream,&device,1,dxball_midi_callback,0,0x30000) != 0)
-            { result = 5; goto done; }
-        property.size = 8; property.value = context->time_division;
-        if (dxball_midi_api.stream_property(context->stream,&property,0x80000001UL) != 0)
-            { result = 5; goto done; }
-        header = context->buffers;
-        for (remaining = context->buffer_count; remaining != 0; --remaining) {
-            if (dxball_midi_api.prepare_header(context->stream,header,MIDI_HEADER_BYTES) != 0 ||
-                dxball_midi_api.stream_out(context->stream,header,MIDI_HEADER_BYTES) != 0)
-                { result = 5; goto done; }
-            ++context->pending_buffers; header = next_buffer(header);
-        }
+    header = current->buffers;
+    for (remaining = current->buffer_count; remaining != 0; --remaining) {
+        dxball_midi_api.unprepare_header(current->stream, header, MIDI_HEADER_BYTES);
+        header = (DxBallMidiHeader *)((DxBallByte *)header +
+            (sizeof(*header) + header->buffer_length));
     }
-    context->state &= ~2UL;
-    if ((flags & 1) != 0) context->state |= 2;
-    context->state &= ~4UL;
-    if (dxball_midi_api.stream_restart(context->stream) != 0) result = 5;
-done:
-    if (result != 0 && created && context->stream != 0) dxball_stop_mds(context);
-    return result;
-}
-DxBallInt dxball_pause_mds(DxBallMdsContext *context)
-{
-    if (context->magic != MDS_MAGIC) return 6;
-    if (context->stream == 0) return 7;
-    if ((context->state & 4) != 0) return 0;
-    if (dxball_midi_api.stream_pause(context->stream) != 0) return 5;
-    context->state |= 4;
+    dxball_midi_api.stream_close(current->stream);
+    current->stream = 0;
+    current->state = 0;
     return 0;
 }
+
+/* FUNCTION: DXBALL 0x00401B10 */
 void DXBALL_DDCALL dxball_midi_callback(DxBallMidiHandle stream, DxBallUInt message,
     size_t instance, DxBallMidiHeader *header, size_t unused)
 {
     DxBallMdsContext *context;
+    DxBallMidiHeader *current_header;
     (void)stream; (void)instance; (void)unused;
+    current_header = header;
     if (message != 0x3c9) return;
-    context = (DxBallMdsContext *)header->user;
-    if ((context->state & 2) == 0 || (context->state & 1) != 0 ||
-        dxball_midi_api.stream_out(context->stream,header,MIDI_HEADER_BYTES) != 0)
-        --context->pending_buffers;
+    context = (DxBallMdsContext *)current_header->user;
+    /* Two consecutive reads/stores are present in the original instruction
+       dossier. Their original source spelling remains unresolved. */
+    context = (DxBallMdsContext *)current_header->user;
+    if ((context->state & 2) != 0 && (context->state & 1) == 0 &&
+        dxball_midi_api.stream_out(context->stream, current_header, MIDI_HEADER_BYTES) == 0)
+        return;
+    --context->pending_buffers;
+    return;
 }
+
+/* FUNCTION: DXBALL 0x00401B90 */
 DxBallInt dxball_load_music(const char *path, DxBallInt play)
 {
     if (dxball_music != NULL) dxball_close_music();
-    dxball_music = (DxBallMusic *)dxball_new_bytes(sizeof(*dxball_music));
-    if (dxball_open_mds(&dxball_music->context,path,0,1) != 0) {
-        dxball_runtime_delete(dxball_music); dxball_music = NULL; return 0;
+    dxball_music = (DxBallMusic *)dxball_runtime_new(sizeof(*dxball_music));
+    if (dxball_open_mds(&dxball_music->context, path, 0, 1) != 0) {
+        dxball_runtime_delete(dxball_music);
+        dxball_music = NULL;
+        return 0;
     }
     dxball_music->playing = 0;
     if (play != 0) {
-        if (dxball_play_mds(dxball_music->context,1) != 0) {
+        if (dxball_play_mds(dxball_music->context, 1) != 0) {
             dxball_release_mds(dxball_music->context);
-            dxball_runtime_delete(dxball_music); dxball_music = NULL; return 0;
+            dxball_runtime_delete(dxball_music);
+            dxball_music = NULL;
+            return 0;
         }
         dxball_music->playing = 1;
     }
     return 1;
 }
+
+/* FUNCTION: DXBALL 0x00401C90 */
 void dxball_resume_music(void)
-{ if (dxball_music != NULL && dxball_play_mds(dxball_music->context,1) == 0) dxball_music->playing = 1; }
+{
+    if (dxball_music == NULL) return;
+    if (dxball_play_mds(dxball_music->context, 1) != 0) return;
+    dxball_music->playing = 1;
+    return;
+}
+
+/* FUNCTION: DXBALL 0x00401CE0 */
 void dxball_pause_music(void)
-{ if (dxball_music != NULL && dxball_pause_mds(dxball_music->context) == 0) dxball_music->playing = 0; }
+{
+    if (dxball_music == NULL) return;
+    if (dxball_pause_mds(dxball_music->context) != 0) return;
+    dxball_music->playing = 0;
+    return;
+}
+
+/* FUNCTION: DXBALL 0x00401D30 */
 void dxball_restart_music(void)
 {
-    if (dxball_music != NULL && dxball_stop_mds(dxball_music->context) == 0 &&
-        dxball_play_mds(dxball_music->context,1) == 0) dxball_music->playing = 1;
+    if (dxball_music == NULL) return;
+    if (dxball_stop_mds(dxball_music->context) != 0) return;
+    if (dxball_play_mds(dxball_music->context, 1) != 0) return;
+    dxball_music->playing = 1;
+    return;
 }
+
+/* FUNCTION: DXBALL 0x00401DA0 */
 void dxball_close_music(void)
 {
-    if (dxball_music != NULL) {
-        dxball_stop_mds(dxball_music->context); dxball_release_mds(dxball_music->context);
-        dxball_runtime_delete(dxball_music); dxball_music = NULL;
-    }
+    if (dxball_music == NULL) return;
+    dxball_stop_mds(dxball_music->context);
+    dxball_release_mds(dxball_music->context);
+    dxball_runtime_delete(dxball_music);
+    dxball_music = NULL;
+    return;
 }
