@@ -118,19 +118,46 @@ same three differences after refreshing its generated literal symbol names.
 Private inputs, objects, comparisons and validation are retained under
 `.analysis/exact-ranking-interface/`.
 
+### Exact complete key dispatch span
+
+The key controller at `0x4069F0` now matches its complete 302-byte span on its
+first compilation, with seventeen relocations. The actual name-entry gate is
+followed by twelve separate empty switch cases: space, p/q/r and t through `{`.
+The omitted `s` belongs to the default path. The source retains those real
+branches rather than factoring the entire switch away. All byte keys and four
+entry-state values remain covered by the existing oracle.
+
+The original dossier lists 153 owned instruction bytes in three ranges. Direct
+image inspection also establishes the five-byte internal JMP at `0x406A5F` to
+`0x406B14`, excluded by that view. The whole matching span contains 158
+instruction bytes and 144 embedded switch bytes: thirteen DWORD targets plus
+92 selectors. Local `$L` relocations bind to the original function-relative
+targets. No padding, copied instructions or alternate source body is used.
+The project's full-span metric includes this internal switch data, as it does
+for the already accepted Windows key controllers; it is not a 302-instruction-
+byte claim or a separate attached-COMDAT claim.
+
+All six accepted game-over bodies remain exact together. Native and MinGW
+builds pass; VC4 reuses 35 verified objects to link. The final library passes
+1,024 existing key-routing cases plus all 76 connected checks. No other direct
+owner loops or full historical replay were run. Complete receipts are private
+in `.analysis/exact-gameover-keys/`; no new provider query was necessary.
+
 | Address | Maintained entry | Owned/span bytes | Direct cases | REA Evidence ID |
 | --- | --- | ---: | ---: | --- |
 | `0x00406440` | `initialize_game_over` | 321/321 | 24 | `ev_e451d766f08e8c36f876fdfe8bef512825c87dfeb0863a987a730e60bbf46eac` |
 | `0x00406590` | `redraw_game_over` | 414/414 | 36 | `ev_4b2af1f701976b189e8daa926e6081b26294ae671955a84d7652b6cec1785467` |
 | `0x00406730` | `game_over_frame` | 696/696 | 192 | `ev_54d614d0b6c8bc8c57c1d6d1c398571395adc17f9cf4bab066210d8833dab437` |
 | `0x00407370` | `dispose_game_over` | 175/175 | 16 | `ev_459723b74e3925d93b9442ca92f71a9d5f2285a7801f3ece0d689c970074aab0` |
-| `0x004069F0` | `game_over_key` | 153/302 | 1,024 | `ev_d2e980af80173ecba1f8fda0f2ff3584911f60bd2228fcc9b408d17c9049f32b` |
+| `0x004069F0` | `game_over_key` | 158/302 | 1,024 | `ev_d2e980af80173ecba1f8fda0f2ff3584911f60bd2228fcc9b408d17c9049f32b` |
 | `0x00406B20` | `draw_high_scores` | 404/404 | 17 | `ev_a42b5c952ba3c544d58bf1b3c0c2456c9e13f6149d7090c32e2952888fd6ff3e` |
 | `0x00406D20` | `insert_high_score` | 446/446 | 102 | `ev_b8a8525ffa6ad9d00db1a74e35f1aabae8aa6ff5e8823367769dd78876448eb6` |
 | `0x004071C0` | `edit_score_name` | 421/421 | 5,120 | `ev_8211b56370f2de5643ba3e9d8f5a733fac0c5018dfcbf8bfbf8b84fae4daefb9` |
 
-The key controller owns 153 bytes in three inclusive ranges inside a 302-byte
-span; intervening switch data is excluded from owned instructions. All other
+The key dossier owns 153 bytes in three inclusive ranges inside a 302-byte
+span; complete source-span recovery adds the omitted internal five-byte JMP,
+giving 158 instruction bytes. Intervening switch data is excluded from those
+instruction counts. All other
 entries are contiguous. Imported candidate spans were reconciled with REA body
 ranges. Evidence IDs are static observations, not execution proof; unresolved
 indirect flows and prototype inference retain their limitations.

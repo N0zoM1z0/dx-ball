@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 154 exact functions / 26,334 code bytes and
+- 283 source-present entries; 155 exact functions / 26,636 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -41,7 +41,7 @@ are declared in `config/match-units.toml`.
 
 Private receipts: `.analysis/exact-score-initialization/` and
 `.analysis/exact-score-reading/`, `.analysis/exact-ranking-interface/`, and
-`.analysis/exact-gameover-lifecycle/`.
+`.analysis/exact-gameover-lifecycle/` and `.analysis/exact-gameover-keys/`.
 Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
 interface checkpoint is `4499a3d`. The current lifecycle checkpoint restores
 initialization, redraw, frame and cleanup exactly; no push was made.
@@ -117,13 +117,21 @@ relinks 35 verified objects without further source compilation. All five
 accepted game-over bodies are compared together; both existing candidate gaps
 remain explicit. No full historical queue was replayed.
 
-Next inspect the actual game-over key controller at `0x4069F0` using its retained
-`04-analyze_function.json` dossier. It owns 153 instruction bytes in three ranges
-within a 302-byte span containing switch data; reconcile all branches and data
-before choosing natural source. The current simplified key gate is semantic,
-not an exact claim. Then follow the actual mode-2 editor initialization/redraw/
-frame/resource lifetime family with its saved dossiers and owner notes. Do not
-perform layout/name/padding trials on the insertion or ranking-drawing gaps.
+Key dispatch (`0x4069F0`) now matches its full 302-byte span on the first
+compile, with seventeen relocations. Twelve original empty cases, switch data
+and the missing internal five-byte JMP are retained. There are 158 instruction
+bytes and 144 embedded table bytes; the old REA view listed only 153 owned
+instruction bytes. The full-span metric includes the switch data as with the
+existing Windows key controllers. All six accepted game-over bodies match
+together; candidate gaps remain unchanged. The final library passes 1,024
+existing key-routing cases and all 76 connected checks; other direct owner
+loops remain historical. Native/MinGW builds and the 35-object VC4 relink pass.
+
+Next follow the actual mode-2 editor initialization/redraw/frame/resource
+lifetime family using `docs/research/EDITOR_OWNER.md` and its saved dossiers.
+Inspect direct call boundaries and complete original branches before compiling
+one coherent family. Do not perform layout/name/padding trials on the insertion
+or ranking-drawing gaps.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
@@ -143,7 +151,8 @@ the required view from 0.6/0.98 MB to approximately 5/4.6 KB. Entry 9 records
 how normalized pseudocode hides original eligibility branches relevant to exact
 source restoration. Entry 10 records installed-skill drift and existing bounded
 view capabilities: the installed skill now matches the 6.3 package at version
-34 / 139 tools. Backups and hashes are private in the upgrade receipts.
+34 / 139 tools. Backups and hashes are private in the upgrade receipts. Entry
+11 records the excluded native key-span instruction and a proposed coverage map.
 Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Nothing has been sent externally.

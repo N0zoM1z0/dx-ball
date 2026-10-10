@@ -228,7 +228,25 @@ void dxball_edit_score_name(char key)
 }
 void dxball_game_over_key(char key)
 {
-    if (dxball_entering_score_name == 1) dxball_edit_score_name(key);
+    if (dxball_entering_score_name == 1) {
+        dxball_edit_score_name(key);
+    } else {
+        switch (key) {
+        case ' ': break;
+        case 'p': break;
+        case 'q': break;
+        case 'r': break;
+        case 't': break;
+        case 'u': break;
+        case 'v': break;
+        case 'w': break;
+        case 'x': break;
+        case 'y': break;
+        case 'z': break;
+        case '{': break;
+        }
+    }
+    return;
 }
 
 void dxball_dispose_game_over(DxBallInt fade)

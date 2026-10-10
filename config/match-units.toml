@@ -8258,3 +8258,129 @@ type = "DIR32"
 symbol = "_dxball_mouse_action"
 addend = 0
 target = 0x00438B10
+
+[units.game-over-key]
+build = "gameover"
+symbol = "_dxball_game_over_key"
+target_address = 0x004069F0
+size = 302
+boundary_evidence = "docs/research/GAMEOVER_OWNER.md; complete 302-byte key span, all 153 REA-owned instruction bytes, omitted internal five-byte jump and embedded thirteen DWORD targets plus 92 selectors; ev_d2e980af80173ecba1f8fda0f2ff3584911f60bd2228fcc9b408d17c9049f32b"
+
+[[units.game-over-key.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.game-over-key.relocations]]
+offset = 27
+type = "REL32"
+symbol = "_dxball_edit_score_name"
+addend = 0
+target = 0x004071C0
+
+[[units.game-over-key.relocations]]
+offset = 137
+type = "DIR32"
+symbol = "$L1376"
+addend = 0
+target = 0x00406AB8
+
+[[units.game-over-key.relocations]]
+offset = 144
+type = "DIR32"
+symbol = "$L1377"
+addend = 0
+target = 0x00406A84
+
+[[units.game-over-key.relocations]]
+offset = 148
+type = "DIR32"
+symbol = "$L1344"
+addend = 0
+target = 0x00406A23
+
+[[units.game-over-key.relocations]]
+offset = 152
+type = "DIR32"
+symbol = "$L1345"
+addend = 0
+target = 0x00406A28
+
+[[units.game-over-key.relocations]]
+offset = 156
+type = "DIR32"
+symbol = "$L1346"
+addend = 0
+target = 0x00406A2D
+
+[[units.game-over-key.relocations]]
+offset = 160
+type = "DIR32"
+symbol = "$L1347"
+addend = 0
+target = 0x00406A32
+
+[[units.game-over-key.relocations]]
+offset = 164
+type = "DIR32"
+symbol = "$L1348"
+addend = 0
+target = 0x00406A37
+
+[[units.game-over-key.relocations]]
+offset = 168
+type = "DIR32"
+symbol = "$L1349"
+addend = 0
+target = 0x00406A3C
+
+[[units.game-over-key.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "$L1350"
+addend = 0
+target = 0x00406A41
+
+[[units.game-over-key.relocations]]
+offset = 176
+type = "DIR32"
+symbol = "$L1351"
+addend = 0
+target = 0x00406A46
+
+[[units.game-over-key.relocations]]
+offset = 180
+type = "DIR32"
+symbol = "$L1352"
+addend = 0
+target = 0x00406A4B
+
+[[units.game-over-key.relocations]]
+offset = 184
+type = "DIR32"
+symbol = "$L1353"
+addend = 0
+target = 0x00406A50
+
+[[units.game-over-key.relocations]]
+offset = 188
+type = "DIR32"
+symbol = "$L1354"
+addend = 0
+target = 0x00406A55
+
+[[units.game-over-key.relocations]]
+offset = 192
+type = "DIR32"
+symbol = "$L1355"
+addend = 0
+target = 0x00406A5A
+
+[[units.game-over-key.relocations]]
+offset = 196
+type = "DIR32"
+symbol = "$L1341"
+addend = 0
+target = 0x00406B14
