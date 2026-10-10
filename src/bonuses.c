@@ -7,6 +7,7 @@
 #include "sound.h"
 #include "particles.h"
 #include "startup.h"
+#include "display.h"
 
 #include <stdlib.h>
 
@@ -357,9 +358,9 @@ void dxball_draw_bonuses(void)
 {
     if (dxball_begin_bonuses(&dxball_bonuses)) {
         do {
-            dxball_effect_ops.reduced_sprite(dxball_bonuses.current->sprite,
-                                             dxball_bonuses.current->x,
-                                             dxball_bonuses.current->y);
+            dxball_draw_reduced_sprite(dxball_bonuses.current->sprite,
+                                      dxball_bonuses.current->x,
+                                      dxball_bonuses.current->y);
         } while (dxball_advance_bonus(&dxball_bonuses));
     }
     return;

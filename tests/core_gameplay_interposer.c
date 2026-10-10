@@ -33,7 +33,11 @@ static DxBallEffectOps *bound_effect;
 static void (DXBALL_NEW_CALL *real_delete)(void *);
 static void (*real_sprite)(DxBallInt, DxBallInt, DxBallInt);
 static void (*real_reduced)(DxBallInt, DxBallInt, DxBallInt);
-static void (*real_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+static void (*real_region)(DxBallRect);
+static void (*region_default)(DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+static void (**bound_particle_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+static void (*real_queue_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+static unsigned queue_region_active;
 static unsigned delete_active, sprite_active, reduced_active, region_active;
 static DxBallRuntimeOps *bound_runtime;
 static DxBallPlatformOps *bound_platform;
@@ -158,10 +162,11 @@ int dxball_test_bind_effect_render_ops(DxBallEffectOps *effect, DxBallRenderOps 
     void (DXBALL_NEW_CALL *deallocate)(void *),
     void (*sprite)(DxBallInt, DxBallInt, DxBallInt),
     void (*reduced)(DxBallInt, DxBallInt, DxBallInt),
-    void (*region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt))
+    void (*region)(DxBallRect),
+    void (*region_adapter)(DxBallInt, DxBallInt, DxBallInt, DxBallInt))
 {
     if (effect == NULL || render == NULL || deallocate == NULL || sprite == NULL ||
-        reduced == NULL || region == NULL) return -1;
+        reduced == NULL || region == NULL || region_adapter == NULL) return -1;
     if (deallocate == dxball_runtime_delete || sprite == dxball_draw_sprite ||
         reduced == dxball_draw_reduced_sprite || region == dxball_restore_effect_region) return -2;
     bound_effect = effect;
@@ -170,6 +175,7 @@ int dxball_test_bind_effect_render_ops(DxBallEffectOps *effect, DxBallRenderOps 
     real_sprite = sprite;
     real_reduced = reduced;
     real_region = region;
+    region_default = region_adapter;
     return 0;
 }
 
@@ -210,16 +216,41 @@ void dxball_draw_reduced_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     reduced_active = 0;
 }
 
-void dxball_restore_effect_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+void dxball_restore_effect_region(DxBallRect rect)
 {
-    void (*callback)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = real_region;
-    if (bound_effect != NULL && bound_effect->region != NULL &&
-        bound_effect->region != dxball_restore_effect_region) callback = bound_effect->region;
-    if (callback == NULL || callback == dxball_restore_effect_region || region_active)
+    void (*callback)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = NULL;
+    if (bound_effect != NULL && bound_effect->region != region_default)
+        callback = bound_effect->region;
+    if (real_region == NULL || real_region == dxball_restore_effect_region || region_active)
         binding_failure("CoreNative restore_effect_region: missing real owner or recursive callback");
     region_active = 1;
-    callback(left, top, right, bottom);
+    if (callback != NULL)
+        callback(rect.left, rect.top, rect.right, rect.bottom);
+    else
+        real_region(rect);
     region_active = 0;
+}
+
+int dxball_test_bind_particle_region(
+    void (**slot)(DxBallInt, DxBallInt, DxBallInt, DxBallInt),
+    void (*real)(DxBallInt, DxBallInt, DxBallInt, DxBallInt))
+{
+    if (slot == NULL || real == NULL || real == dxball_queue_region) return -1;
+    bound_particle_region = slot;
+    real_queue_region = real;
+    return 0;
+}
+
+void dxball_queue_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+{
+    void (*callback)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = real_queue_region;
+    if (bound_particle_region != NULL && *bound_particle_region != NULL &&
+        *bound_particle_region != dxball_queue_region) callback = *bound_particle_region;
+    if (callback == NULL || callback == dxball_queue_region || queue_region_active)
+        binding_failure("CoreNative queue_region: missing real owner or recursive callback");
+    queue_region_active = 1;
+    callback(left, top, right, bottom);
+    queue_region_active = 0;
 }
 
 int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame,

@@ -154,7 +154,6 @@ class _Image:
         boundaries = [('dxball_effect_ops', 5, 0, 'dxball_runtime_delete'),
                       ('dxball_render_ops', 3, 0, 'dxball_draw_sprite'),
                       ('dxball_effect_ops', 5, 3, 'dxball_draw_reduced_sprite'),
-                      ('dxball_effect_ops', 5, 4, 'dxball_restore_effect_region'),
                       ('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
                       ('dxball_gameplay_ops', 6, 1, 'dxball_spawn_brick_effect'),
                       ('dxball_gameplay_ops', 6, 3, 'dxball_play_sound'),
@@ -203,6 +202,21 @@ class _Image:
             if defaults[slot] != intercepted:
                 raise RuntimeError('CoreNative copy did not bind the intended test interposer: ' + symbol)
             self.function_addresses[symbol] = real
+        self.effect_region_default = (C.c_void_p * 5).in_dll(self.lib, 'dxball_effect_ops')[4]
+        real = C.cast(self.lib.dxball_restore_effect_region, C.c_void_p).value
+        intercepted = C.cast(_shim.dxball_restore_effect_region, C.c_void_p).value
+        if (real == intercepted or _function_owner(real) != self.path.resolve() or
+                not self.effect_region_default or self.effect_region_default in (real, intercepted) or
+                _function_owner(self.effect_region_default) != self.path.resolve()):
+            raise RuntimeError('CoreNative region body or bounds adapter has a different owner')
+        self.function_addresses['dxball_restore_effect_region'] = real
+        self.particle_region_slot = C.c_void_p.in_dll(self.lib, 'dxball_particle_region')
+        real = C.cast(self.lib.dxball_queue_region, C.c_void_p).value
+        intercepted = C.cast(_shim.dxball_queue_region, C.c_void_p).value
+        if (real == intercepted or _function_owner(real) != self.path.resolve() or
+                self.particle_region_slot.value != intercepted):
+            raise RuntimeError('CoreNative queue body or particle-region default has a different owner')
+        self.function_addresses['dxball_queue_region'] = real
         # PlatformOps uses a genuine void adapter for this integer-returning
         # API. Keep its identity for a guard until PlatformNative replaces it.
         self.platform_table = (C.c_void_p * 9).in_dll(self.lib, 'dxball_platform_ops')
@@ -253,8 +267,10 @@ def fixture_image(library):
         _shim.dxball_test_bind_brick_effect_ops.restype = C.c_int
         _shim.dxball_test_bind_new_ops.argtypes = [C.c_void_p] * 3
         _shim.dxball_test_bind_new_ops.restype = C.c_int
-        _shim.dxball_test_bind_effect_render_ops.argtypes = [C.c_void_p] * 6
+        _shim.dxball_test_bind_effect_render_ops.argtypes = [C.c_void_p] * 7
         _shim.dxball_test_bind_effect_render_ops.restype = C.c_int
+        _shim.dxball_test_bind_particle_region.argtypes = [C.c_void_p] * 2
+        _shim.dxball_test_bind_particle_region.restype = C.c_int
         _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
         _shim.dxball_test_bind_runtime_ops.argtypes = [C.c_void_p]
@@ -337,9 +353,23 @@ def fixture_image(library):
                 _function_owner(real) != image.path.resolve()):
             raise RuntimeError('CoreNative effect/render body does not belong to its copied image: ' + symbol)
         addresses.append(real)
-    result = _shim.dxball_test_bind_effect_render_ops(*addresses)
+    if (_function_owner(image.effect_region_default) != image.path.resolve() or
+            image.effect_region_default in (image.function_addresses['dxball_restore_effect_region'],
+                C.cast(_shim.dxball_restore_effect_region, C.c_void_p).value)):
+        raise RuntimeError('CoreNative region bounds adapter changed owner')
+    result = _shim.dxball_test_bind_effect_render_ops(*addresses, image.effect_region_default)
     if result != 0:
         raise RuntimeError('CoreNative effect/render binding rejected: null or recursive real owner')
+    slot = C.c_void_p.in_dll(image.lib, 'dxball_particle_region')
+    real = C.cast(image.lib.dxball_queue_region, C.c_void_p).value
+    if (C.addressof(slot) != C.addressof(image.particle_region_slot) or
+            real != image.function_addresses['dxball_queue_region'] or
+            real == C.cast(_shim.dxball_queue_region, C.c_void_p).value or
+            _function_owner(real) != image.path.resolve()):
+        raise RuntimeError('CoreNative particle-region slot or queue body changed owner')
+    result = _shim.dxball_test_bind_particle_region(C.addressof(slot), real)
+    if result != 0:
+        raise RuntimeError('CoreNative particle-region binding rejected')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_gameplay_ops'))
     if actual != C.addressof(image.particle_table):
         raise RuntimeError('CoreNative allocation table does not belong to its copied image')

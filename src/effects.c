@@ -7,8 +7,20 @@
 
 DxBallInt dxball_hit_dx, dxball_hit_dy;
 DxBallSurface dxball_effect_surface;
+
+static void restore_effect_bounds(DxBallInt left, DxBallInt top,
+                                  DxBallInt right, DxBallInt bottom)
+{
+    DxBallRect rect;
+    rect.left = left;
+    rect.top = top;
+    rect.right = right;
+    rect.bottom = bottom;
+    dxball_restore_effect_region(rect);
+}
+
 DxBallEffectOps dxball_effect_ops = {
-    dxball_runtime_delete, dxball_generate_bonus, dxball_draw_keyed_sprite, dxball_draw_reduced_sprite, dxball_restore_effect_region
+    dxball_runtime_delete, dxball_generate_bonus, dxball_draw_keyed_sprite, dxball_draw_reduced_sprite, restore_effect_bounds
 };
 
 void dxball_deallocate_node(void *node)
@@ -170,7 +182,7 @@ void dxball_step_explosion_effect(void)
                 (DxBallDDSurface *)dxball_board_surface,
                 dxball_brick_effects.current->x, dxball_brick_effects.current->y,
                 (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
-            dxball_restore_effect_region(rect.left, rect.top, rect.right, rect.bottom);
+            dxball_restore_effect_region(rect);
             cleanup_x = (dxball_brick_effects.current->x - 20) / 30;
             cleanup_y = (dxball_brick_effects.current->y - 50) / 15;
             dxball_board_aux[cleanup_x + cleanup_y * DXBALL_BOARD_WIDTH] = 0;
@@ -217,7 +229,7 @@ void dxball_step_brick_effect(void)
             ++dxball_brick_effects.current->sprite;
             dxball_brick_effects.current->ticks = 0;
         }
-        dxball_restore_effect_region(rect.left, rect.top, rect.right, rect.bottom);
+        dxball_restore_effect_region(rect);
     }
     return;
 }

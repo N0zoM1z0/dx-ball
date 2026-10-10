@@ -25,7 +25,7 @@ extern DxBallDisplayOps dxball_display_ops;
 void dxball_reset_regions(void);
 void dxball_queue_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom);
 void dxball_invalidate_region(DxBallRect rect);
-void dxball_restore_effect_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom);
+void dxball_restore_effect_region(DxBallRect rect);
 void dxball_bind_board_surface(DxBallSurface surface);
 void dxball_bind_display_surface(DxBallSurface surface);
 void dxball_draw_effect_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y);

@@ -34,13 +34,6 @@ static void queue_present(const DxBallRect *rect)
     }
 }
 
-static void queue_other_page(const DxBallRect *rect)
-{
-    if (dxball_draw_to_primary == 0 && dxball_display_buffer_count > 0 && dxball_reduced_particles == 0) {
-        queue_dirty(1 - dxball_dirty_page, rect);
-    }
-}
-
 static DxBallInt clip_rect(DxBallRect *rect)
 {
     if (rect->top >= 481 || rect->bottom < 0 || rect->left >= 641 || rect->right < 0) return 0;
@@ -208,15 +201,23 @@ void dxball_queue_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallI
     queue_present(&rect);
 }
 
-void dxball_restore_effect_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+/* FUNCTION: DXBALL 0x00408A50 */
+void dxball_restore_effect_region(DxBallRect rect)
 {
-    DxBallRect rect;
-    DxBallDDSurface *surface;
-    rect.left = left; rect.top = top; rect.right = right; rect.bottom = bottom;
-    surface = (DxBallDDSurface *)dxball_effect_surface;
-    surface->vtable->blt(surface, &rect, (DxBallDDSurface *)dxball_restore_surface, &rect, 0x01000000, NULL);
-    queue_other_page(&rect);
-    queue_present(&rect);
+    ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_effect_surface, &rect,
+        (DxBallDDSurface *)dxball_restore_surface, &rect, 0x01000000, NULL);
+    if (dxball_draw_to_primary == 0 && dxball_display_buffer_count > 0 &&
+        dxball_reduced_particles == 0 &&
+        dxball_dirty_counts[1 - dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
+        dxball_dirty_regions[dxball_dirty_counts[1 - dxball_dirty_page]][1 - dxball_dirty_page] = rect;
+        ++dxball_dirty_counts[1 - dxball_dirty_page];
+    }
+    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+        dxball_present_regions[dxball_present_count] = rect;
+        ++dxball_present_count;
+    }
+    return;
 }
 
 void dxball_invalidate_region(DxBallRect rect)
@@ -238,24 +239,50 @@ void dxball_invalidate_region(DxBallRect rect)
     return;
 }
 
+/* FUNCTION: DXBALL 0x00408CC0 */
 void dxball_restore_regions(void)
 {
     DxBallInt i;
-    DxBallRect *rect;
-    DxBallDDSurface *surface;
-    surface = (DxBallDDSurface *)dxball_effect_surface;
-    for (i = 0; i < dxball_dirty_counts[dxball_dirty_page]; ++i) {
-        rect = &dxball_dirty_regions[i][dxball_dirty_page];
-        if (dxball_clip_regions == 1) {
-            if (!clip_rect(rect)) continue;
-            surface->vtable->blt(surface, rect, (DxBallDDSurface *)dxball_restore_surface, rect, 0x01000000, NULL);
-        } else {
-            surface->vtable->blt_fast(surface, rect->left, rect->top,
-                (DxBallDDSurface *)dxball_restore_surface, rect, 0x10);
+    if (dxball_clip_regions == 1) {
+        for (i = 0; i <= dxball_dirty_counts[dxball_dirty_page] - 1; ++i) {
+            if (dxball_dirty_regions[i][dxball_dirty_page].top > 480 ||
+                dxball_dirty_regions[i][dxball_dirty_page].bottom < 0 ||
+                dxball_dirty_regions[i][dxball_dirty_page].left > 640 ||
+                dxball_dirty_regions[i][dxball_dirty_page].right < 0) continue;
+            if (dxball_dirty_regions[i][dxball_dirty_page].top < 0)
+                dxball_dirty_regions[i][dxball_dirty_page].top = 0;
+            if (dxball_dirty_regions[i][dxball_dirty_page].bottom > 480)
+                dxball_dirty_regions[i][dxball_dirty_page].bottom = 480;
+            if (dxball_dirty_regions[i][dxball_dirty_page].left < 0)
+                dxball_dirty_regions[i][dxball_dirty_page].left = 0;
+            if (dxball_dirty_regions[i][dxball_dirty_page].right > 640)
+                dxball_dirty_regions[i][dxball_dirty_page].right = 640;
+            ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt(
+                (DxBallDDSurface *)dxball_effect_surface,
+                &dxball_dirty_regions[i][dxball_dirty_page],
+                (DxBallDDSurface *)dxball_restore_surface,
+                &dxball_dirty_regions[i][dxball_dirty_page], 0x01000000, NULL);
+            if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+                dxball_present_regions[dxball_present_count] = dxball_dirty_regions[i][dxball_dirty_page];
+                ++dxball_present_count;
+            }
         }
-        queue_present(rect);
+    } else {
+        for (i = 0; i <= dxball_dirty_counts[dxball_dirty_page] - 1; ++i) {
+            ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
+                (DxBallDDSurface *)dxball_effect_surface,
+                dxball_dirty_regions[i][dxball_dirty_page].left,
+                dxball_dirty_regions[i][dxball_dirty_page].top,
+                (DxBallDDSurface *)dxball_restore_surface,
+                &dxball_dirty_regions[i][dxball_dirty_page], 0x10);
+            if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+                dxball_present_regions[dxball_present_count] = dxball_dirty_regions[i][dxball_dirty_page];
+                ++dxball_present_count;
+            }
+        }
     }
     dxball_dirty_counts[dxball_dirty_page] = 0;
+    return;
 }
 
 void dxball_bind_board_surface(DxBallSurface surface) { dxball_restore_surface = surface; return; }

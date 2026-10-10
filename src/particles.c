@@ -125,27 +125,34 @@ void dxball_update_particles(void)
 
 void dxball_draw_particles(void)
 {
+    DxBallRect rect;
     DxBallSurfaceDesc description;
-    DxBallDDSurface *surface;
-    DxBallByte *pixels;
     DxBallInt result;
+    DxBallByte *pixels;
     if (dxball_begin_particles(&dxball_particles)) {
-        surface = (DxBallDDSurface *)dxball_effect_surface;
         description.size = sizeof(description);
         description.flags = 0xE;
-        surface->vtable->get_desc(surface, &description);
+        ((DxBallDDSurface *)dxball_effect_surface)->vtable->get_desc(
+            (DxBallDDSurface *)dxball_effect_surface, &description);
         do {
-            result = surface->vtable->lock(surface, NULL, &description, 0, NULL);
+            result = ((DxBallDDSurface *)dxball_effect_surface)->vtable->lock(
+                (DxBallDDSurface *)dxball_effect_surface, NULL, &description, 0, NULL);
         } while (result != 0);
         do {
-            pixels = description.pixels + dxball_particles.current->y * description.pitch +
-                     dxball_particles.current->x;
+            pixels = description.pixels;
+            pixels += dxball_particles.current->y * description.pitch +
+                      dxball_particles.current->x;
             memset(pixels, dxball_particles.current->color, 2);
-            memset(pixels + description.pitch, dxball_particles.current->color, 2);
-            dxball_particle_region(dxball_particles.current->x, dxball_particles.current->y,
-                                    dxball_particles.current->x + 2, dxball_particles.current->y + 2);
+            pixels += description.pitch;
+            memset(pixels, dxball_particles.current->color, 2);
+            rect.top = dxball_particles.current->y;
+            rect.bottom = dxball_particles.current->y + 2;
+            rect.left = dxball_particles.current->x;
+            rect.right = dxball_particles.current->x + 2;
+            dxball_queue_region(rect.left, rect.top, rect.right, rect.bottom);
         } while (dxball_advance_particle(&dxball_particles));
-        surface->vtable->unlock(surface, NULL);
+        ((DxBallDDSurface *)dxball_effect_surface)->vtable->unlock(
+            (DxBallDDSurface *)dxball_effect_surface, NULL);
     }
     return;
 }

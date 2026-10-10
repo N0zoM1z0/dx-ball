@@ -3,6 +3,7 @@
 Each note follows a related source family through its original instructions,
 recovered implementation and complete compiler comparison.
 
+- [Region restoration and entity drawing](EXACT_RENDER_RESTORATION.md)
 - [Bank loops and palette state restoration](EXACT_BANK_LOOPS.md)
 - [Complete bonus generation and application](EXACT_BONUSES.md)
 - [Complete brick hit and board power restoration](EXACT_BRICK_POWERS.md)

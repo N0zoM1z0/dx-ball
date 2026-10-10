@@ -76,17 +76,18 @@ class DisplayNative(RuntimeNative):
         tables=[('dxball_frame_ops',12,{i:FRAME_FUNCTIONS.get(name,name) for i,(name,_,_) in enumerate(FRAME_BOUNDARIES)}),
                 ('dxball_runtime_ops',15,{3:'reset_regions',8:'bind_board_surface',9:'bind_display_surface'}),
                 ('dxball_render_ops',3,{0:'draw_sprite',1:'restore_board_region',2:'invalidate_region'}),
-                ('dxball_effect_ops',5,{2:'draw_keyed_sprite',3:'draw_reduced_sprite',4:'restore_effect_region'})]
+                ('dxball_effect_ops',5,{2:'draw_keyed_sprite',3:'draw_reduced_sprite'})]
         for symbol,length,functions in tables:
             table=source_global(C.c_void_p*length, self.lib,symbol)
             for i,name in functions.items():table[i]=C.cast(getattr(self.lib,'dxball_'+name),C.c_void_p).value
+        source_global(C.c_void_p*5, self.lib, 'dxball_effect_ops')[4] = self.entities_native_image.effect_region_default
         C.c_void_p.in_dll(self.lib,'dxball_particle_region').value=C.cast(self.lib.dxball_queue_region,C.c_void_p).value
         counts={'queue_region':4,'restore_effect_region':4,
                 'draw_effect_sprite':3,'draw_reduced_sprite':3,'sort_present_regions':2,
                 'wait_frames':1,'animate_palette':3,'bind_board_surface':1,'bind_display_surface':1}
         for name in ENTRIES:
             f=getattr(self.lib,'dxball_'+name);f.restype=None
-            f.argtypes=[Rect] if name=='invalidate_region' else [C.c_size_t] if name.startswith('bind_') else [C.c_int32]*counts.get(name,0)
+            f.argtypes=[Rect] if name in ('invalidate_region','restore_effect_region') else [C.c_size_t] if name.startswith('bind_') else [C.c_int32]*counts.get(name,0)
 
     def display_observed(self):
         return (tuple(self.counts),self.extra[0x4382EC].value,self.extra[0x4305D8].value,
@@ -226,7 +227,7 @@ class DisplayHarness(RuntimeHarness):
         assert n.now==t.now,(context,'clock advancement',n.now,t.now)
         assert n.flip_script==t.flip_script,(context,'flip results')
     def call(self,name,*args):
-        native_args=(Rect(*args),) if name=='invalidate_region' else args
+        native_args=(Rect(*args),) if name in ('invalidate_region','restore_effect_region') else args
         nr=self.n.call('dxball_'+name,*native_args);tr=self.t.call(ENTRIES[name],*args)
         self.compare((name,args,self.cases[name]));self.cases[name]+=1
     def phase(self,name,address):
