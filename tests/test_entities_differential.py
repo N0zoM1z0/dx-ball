@@ -50,7 +50,9 @@ ENTRIES = {
 
 class EntitiesNative(EffectsNative):
     def __init__(self, library):
-        super().__init__(library)
+        from core_native_loader import fixture_image, bind_gameplay
+        self.entities_native_image = fixture_image(library)
+        super().__init__(self.entities_native_image.path)
         self.owners = {"explosions": self.list, "effects": self.fx,
                        "particles": ParticleList.in_dll(self.lib, "dxball_particles"),
                        "bonuses": BonusList.in_dll(self.lib, "dxball_bonuses")}
@@ -97,6 +99,7 @@ class EntitiesNative(EffectsNative):
         self.entity_callbacks.append(Region(lambda *a: self.events.append(("particle-region", *a))))
         C.c_void_p.in_dll(self.lib, "dxball_particle_region").value = C.cast(self.entity_callbacks[-1], C.c_void_p).value
         C.c_size_t.in_dll(self.lib, "dxball_effect_surface").value = self.surface_pointer
+        bind_gameplay(self.entities_native_image, self.lib, ops)
 
     def observed(self):
         return super().observed() + (self.count.value,)

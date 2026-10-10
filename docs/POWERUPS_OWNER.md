@@ -1,5 +1,11 @@
 # Bonus application, paddle and ball dependencies
 
+The [complete bonus restoration](EXACT_BONUSES.md) restores all nineteen
+inline application cases with live sprite/bank reads, original sound/callee
+order, floating half for kind 11 and signed integer half for 16. The whole
+2,168-byte enclosing span is exact, including the jump gap and switch table.
+Existing original/native application checks retain their cases and oracles.
+
 The later [core exact batch](EXACT_CORE.md) restores the trig and ball
 constructor emissions; [cloning and cleanup](EXACT_LISTS.md) restores the
 637-byte clone. The entry table and counts below describe this owner's

@@ -1,5 +1,12 @@
 # Particles and bonus production through REA
 
+The [complete bonus restoration](EXACT_BONUSES.md) replaces generation helpers
+with direct actual RNG, sound and six-integer particle calls, two separately
+consumed particle counters and nineteen distinct cases. Whole generation
+remains 1,197/1,197 with 16 differences in consumed local allocation. C argument
+evaluation order is compiler-dependent; the supported Native and VC4 products
+are checked against the existing original oracles and complete comparison.
+
 `src/particles.c` and `src/bonuses.c` recover fourteen functions from the pinned
 DX-Ball v1.07 target. REA's `analyze_function` dossiers supply pseudocode,
 instructions, callers and body ranges. Independent original-x86 execution

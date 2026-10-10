@@ -1,4 +1,45 @@
-# Current handoff — complete menu and gameplay frames
+# Current handoff — complete bonus generation and application
+
+Priority: **exact restoration, moderate existing tests and grouped replay**.
+The [complete bonus batch](EXACT_BONUSES.md) restores whole generation 1,197,
+application 2,168 and direct ignition 64: 3,429 enclosing source bytes. Retirement 32
+is compared unchanged, making 3,461 compared bytes. Application/ignition add 2,232
+whole exact bytes; generation 1,197/1197 retains 16 differences in consumed local
+allocation; retirement41/32 retains 35. All 111 previous complete identities survive.
+
+Acceptance: **283 source-present /247 scoped rows /112273 unit-distinct cases /
+113 exact functions /17132 code bytes +136 separate metadata bytes**.
+Origins 270 authored / 50 runtime / 42 generated / 166 unknown remain fixed.
+Two diagnostic phases / 3 actual objects, one 22-object cold epoch, strict Native
+initial declaration failure and same-build header-only successful resume.
+The first owner replay exposes missing EntitiesNative loader activation;
+its full290-input failure epoch is retained. Corrected final 22 scripts pass
+in 432.246s with 290 frozen inputs, plus 7 checks. No cases are added.
+One typed particle boundary gives 36 real symbols / 37 default slots /48
+actual compiler dependencies. Original cases, target oracles/campaigns stay fixed.
+
+Two actual pinned REA reads return complete 101-byte jump/dispatch/table spans.
+Both gaps e960000000 infer JMP to 413D6D/414677; ownership is unchanged and every
+span byte is compared. Explicit close/save extends snapshot 471→473 / 0 primitives.
+306 actual relocations, 40 internal bindings and 3 full eight-byte 2.0 operands
+are reconciled before final frozen replay, along with 16 prior literal identities.
+No source/name/order/layout/capacity trials, inert locals or copied machine code.
+
+Native family/canonical ca31cfb6e2b2fde82f6f7aee20031a8033b07e4ee430a789f618876ce02af755; shim 09d8f5c7690c410da79cc98b066cdaa94c05f72e4b7ad20c3886a63d0ccd4ba0.
+Checkpoint .analysis/checkpoints/exact-bonus-phase-283-113, parent mode-frames 111.
+One writable compiler/provider, one allowed CPU, JVM 512 MiB, serial CMake and
+silent Pulse sink. Detailed English gpt-6.1-sol: commits/public push authorized.
+
+Next selected family: whole brick hit 411F40/1315, explosive spreading
+4150A0/824, special-brick softening 415410/397 and destructible count415A90/149.
+Their 2,685-byte inventory sum is provisional pending full evidence reconciliation.
+Selection receipt .analysis/exact-bonus-phase/next-source-frontier.json executes
+no provider/compiler/test. Generation stack homes and the genuine maintained
+retirement result remain unresolved, without name/order/layout/body trials.
+Point updater 711 retains unconsumed request-state writes; avoid inert storage.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete menu and gameplay frames
 
 Priority: **exact restoration, moderate existing tests and grouped replay**.
 The [mode-frame batch](EXACT_MODE_FRAMES.md) restores 242 menu bytes and the

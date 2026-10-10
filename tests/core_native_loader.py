@@ -154,6 +154,7 @@ class _Image:
         boundaries = [('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
                       ('dxball_gameplay_ops', 6, 3, 'dxball_play_sound'),
                       ('dxball_gameplay_ops', 6, 4, 'dxball_random_range'),
+                      ('dxball_gameplay_ops', 6, 5, 'dxball_spawn_particle'),
                       ('dxball_display_ops', 2, 0, 'dxball_update_sound'),
                       ('dxball_render_ops', 3, 2, 'dxball_invalidate_region'),
                       ('dxball_frame_ops', 12, 6, 'dxball_draw_effect_sprite'),
@@ -211,6 +212,7 @@ class _Image:
             raise RuntimeError('CoreNative music default is not its genuine void adapter')
         self.function_addresses['dxball_load_music'] = real
         self.display_table = (C.c_void_p * 2).in_dll(self.lib, 'dxball_display_ops')
+        self.particle_table = (C.c_void_p * 6).in_dll(self.lib, 'dxball_gameplay_ops')
 
 
 def fixture_image(library):
@@ -225,6 +227,8 @@ def fixture_image(library):
         _shim_sha256 = shim_sha256
         _shim.dxball_test_bind_gameplay_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_gameplay_ops.restype = C.c_int
+        _shim.dxball_test_bind_particle_ops.argtypes = [C.c_void_p, C.c_void_p]
+        _shim.dxball_test_bind_particle_ops.restype = C.c_int
         _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
         _shim.dxball_test_bind_runtime_ops.argtypes = [C.c_void_p]
@@ -235,8 +239,19 @@ def fixture_image(library):
         _shim.dxball_test_bind_display_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
         raise RuntimeError('CoreNative cannot replace an already loaded GLOBAL interposer')
+    # CoreNative passes this same copied path to inherited EntitiesNative.
+    # Recognize only an image already pinned by this loader, not a lookalike DSO.
+    selected_copy = next((image for image in _copies.values()
+                          if image.path.resolve() == canonical), None)
+    if selected_copy is not None:
+        if (selected_copy.shim_identity != identity or
+                selected_copy.canonical_sha256 != canonical_sha256):
+            raise RuntimeError('CoreNative selected copied image identity changed')
+        canonical = selected_copy.canonical
     key = (str(canonical), canonical_sha256, shim_sha256,
            hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest())
+    if selected_copy is not None and _copies.get(key) is not selected_copy:
+        raise RuntimeError('CoreNative selected copy does not match its canonical cache entry')
     if key not in _copies:
         _copies[key] = _Image(canonical, canonical_sha256, identity)
     image = _copies[key]
@@ -258,6 +273,19 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_display_ops(actual)
     if result != 0:
         raise RuntimeError('CoreNative display binding rejected: null table')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_gameplay_ops'))
+    if actual != C.addressof(image.particle_table):
+        raise RuntimeError('CoreNative particle table does not belong to its copied image')
+    real = C.cast(image.lib.dxball_spawn_particle, C.c_void_p).value
+    if (real != image.function_addresses['dxball_spawn_particle'] or
+            real == C.cast(_shim.dxball_spawn_particle, C.c_void_p).value or
+            _function_owner(real) != image.path.resolve()):
+        raise RuntimeError('CoreNative particle body does not belong to its copied image')
+    # Pin the real owner before unchanged constructors replace slot 5. Each call
+    # reads that live slot; an untouched default or null slot uses this body.
+    result = _shim.dxball_test_bind_particle_ops(actual, real)
+    if result != 0:
+        raise RuntimeError('CoreNative particle binding rejected: null or recursive real body')
     return image
 
 

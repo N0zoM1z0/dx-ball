@@ -3,6 +3,7 @@
 #include "core.h"
 #include "effects.h"
 #include "bonuses.h"
+#include "particles.h"
 #include "display.h"
 #include "device.h"
 #include "midi.h"
@@ -15,6 +16,9 @@
 #include <string.h>
 
 static DxBallGameplayOps *bound_ops;
+static DxBallGameplayOps *bound_particle_ops;
+static void (*real_particle)(DxBallInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+static unsigned particle_active;
 static DxBallRenderOps *bound_render;
 static DxBallFrameOps *bound_frame;
 static DxBallEffectOps *bound_effect;
@@ -49,6 +53,34 @@ int dxball_test_bind_gameplay_ops(DxBallGameplayOps *ops)
         ops->random_range == dxball_random_range) return -3;
     bound_ops = ops;
     return 0;
+}
+
+/* The loader verifies this real body's copied-image ownership. Stage it before
+   unchanged inherited constructors replace the current GameplayOps slots. */
+int dxball_test_bind_particle_ops(DxBallGameplayOps *ops,
+                                  void (*real)(DxBallInt, DxBallInt, DxBallInt,
+                                               DxBallInt, DxBallInt, DxBallInt))
+{
+    if (real == NULL) return -1;
+    if (real == dxball_spawn_particle) return -2;
+    bound_particle_ops = ops;
+    real_particle = real;
+    return 0;
+}
+
+void dxball_spawn_particle(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy,
+                           DxBallInt color, DxBallInt gravity)
+{
+    void (*callback)(DxBallInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+    callback = real_particle;
+    if (bound_particle_ops != NULL && bound_particle_ops->particle != NULL &&
+        bound_particle_ops->particle != dxball_spawn_particle)
+        callback = bound_particle_ops->particle;
+    if (callback == NULL || callback == dxball_spawn_particle || particle_active)
+        binding_failure("CoreNative spawn_particle: missing real owner or recursive callback");
+    particle_active = 1;
+    callback(x, y, dx, dy, color, gravity);
+    particle_active = 0;
 }
 
 int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame,

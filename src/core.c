@@ -460,16 +460,14 @@ void dxball_fire_projectiles(void)
     return;
 }
 
-static void apply_ball_sprite(DxBallInt sprite)
-{
-    if (dxball_begin_balls(&dxball_balls)) {
-        do { dxball_balls.current->sprite = sprite; } while (dxball_advance_ball(&dxball_balls));
-    }
-}
-
 void dxball_ignite_balls(void)
 {
-    apply_ball_sprite(61);
+    if (dxball_begin_balls(&dxball_balls)) {
+        do {
+            dxball_balls.current->sprite = 61;
+        } while (dxball_advance_ball(&dxball_balls));
+    }
+    return;
 }
 
 void dxball_game_frame(void)

@@ -18,14 +18,21 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **283 source-present functions** (270 authored bodies, one unknown-origin body and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **111 byte-exact functions totaling 14,900 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
+> **113 byte-exact functions totaling 17,132 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
 > VC4 and MinGW builds; complete gameplay and
 > driver fidelity remain in progress.
 
-The [complete mode-frame batch](docs/EXACT_MODE_FRAMES.md) restores the 242-byte
+The [complete bonus batch](docs/EXACT_BONUSES.md) restores the whole generation
+and application switches and direct ball ignition. The 2,168-byte bonus updater
+and 64-byte ignition match completely, adding 2,232 exact bytes. Generation
+remains a full 1,197-byte candidate with 16 differences; projectile retirement
+remains nonexact. All 111 preceding code and metadata identities survive.
+Existing cases and source-presence counts stay fixed; the >=95% goal remains open.
+
+The preceding [complete mode-frame batch](docs/EXACT_MODE_FRAMES.md) restores the 242-byte
 menu frame and the full 1,688-byte enclosing gameplay frame. Menu matches all
 242 bytes; gameplay remains a complete nonexact candidate. Original inline
 explosion handling, two speed traversals, enlargement and genuine phase calls

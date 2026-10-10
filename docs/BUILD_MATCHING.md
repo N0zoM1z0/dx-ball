@@ -1,6 +1,25 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint retains **111 exact functions / 14,900
+The current shared-source checkpoint accepts **113 exact functions / 17,132
+code bytes**, plus 136 separate exception metadata bytes. The
+[complete bonus restoration](EXACT_BONUSES.md) adds all 2,168 enclosing bytes
+of bonus application and 64 bytes of ball ignition. Both complete switch tables
+and each five-byte unowned jump remain inside comparison. Generation compares
+1,197/1,197 bytes with 16 differences in consumed local allocation; no declaration
+name/order trials are used. Projectile retirement retains its genuine int return
+and removal-before-count-decrement, emitting 41/32 with 35 differences.
+
+One configured 22-object cold epoch preserves all 111 previous code/metadata
+identities. Three actual diagnostic objects span two phases: initial bonus/core,
+then bonus alone after adding its missing genuine startup.h declaration. Strict
+Native first failed on that missing declaration and resumed successfully after
+the header-only correction; no source bodies changed between those phases.
+Generated literal identities are reconciled before frozen replay. The first
+powerups replay exposed a loader omission; corrected EntitiesNative activates
+existing sound/RNG callbacks and reuses verified copied images. Final 22 owner
+scripts and seven checks pass with unchanged cases and target oracles.
+
+The preceding shared-source checkpoint retained **111 exact functions / 14,900
 code bytes**, plus 136 separate exception metadata bytes. The
 [complete mode frames](EXACT_MODE_FRAMES.md) add the whole 242-byte menu frame.
 The restored gameplay frame compares all 1,688 enclosing bytes, including its

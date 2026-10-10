@@ -1,5 +1,10 @@
 # Projectile and fire-effect queue entries
 
+The [complete bonus restoration](EXACT_BONUSES.md) restores direct ball-list
+ignition, accepting the whole 64-byte original entry. Projectile retirement
+keeps its consumed int-returning result and count decrement after removal;
+the whole 41/32-byte comparison retains 35 differences. It is not exact.
+
 The core frame now calls independently reconstructed projectile/fire-effect
 queue entries, projectile retirement and ball ignition in shared C.
 REA's two new instruction dossiers fill the missing begin/removal entries;
