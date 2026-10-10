@@ -182,9 +182,17 @@ class PlatformNative(Boundaries,DeviceNative):
                 except Exception as error:print('Native platform boundary failed:',repr(error),flush=True);os._exit(1)
             cb=C.CFUNCTYPE(KINDS[result],*[KINDS[k] for k in kinds])(checked)
             self.platform_callbacks.append(cb);table[slot]=C.cast(cb,C.c_void_p).value
-        table=(C.c_void_p*len(APIS)).in_dll(self.lib,'dxball_window_api')
-        for slot,(name,_,result,kinds) in enumerate(APIS):
+        shared_cells={'open_semaphore':'dxball_window_open_semaphore',
+            'create_semaphore':'dxball_window_create_semaphore',
+            'close_handle':'dxball_file_close'}
+        remaining=[api for api in APIS if api[0] not in shared_cells]
+        table=(C.c_void_p*len(remaining)).in_dll(self.lib,'dxball_window_api')
+        for slot,(name,_,result,kinds) in enumerate(remaining):
             bind(table,slot,result,kinds,lambda *a,name=name:self.boundary(name,a))
+        for name,_,result,kinds in APIS:
+            if name in shared_cells:
+                cell=(C.c_void_p*1).in_dll(self.lib,shared_cells[name])
+                bind(cell,0,result,kinds,lambda *a,name=name:self.boundary(name,a))
         table=(C.c_void_p*len(OPS)).in_dll(self.lib,'dxball_platform_ops')
         for slot,(name,_,kinds) in enumerate(OPS):bind(table,slot,'v',kinds,lambda *a,name=name:self.platform(name,a))
         (C.c_void_p*15).in_dll(self.lib,'dxball_runtime_ops')[14]=table[5]

@@ -3,9 +3,10 @@
 REA follows the frame dispatcher back to WinMain and the window procedure, then
 through fullscreen/compatible DirectDraw creation and game key handling. The
 shared owner is [platform.c](../../src/platform.c), declared in
-[platform.h](../../src/platform.h). It recovers the caller algorithms and their
-Windows/COM contracts; the actual Windows adapter and audio/UI implementations
-remain pending, so these builds are still analysis libraries and inspectors.
+[platform.h](../../src/platform.h). The Windows adapter binds its OS and COM
+services in the rebuilt game. The [instance-lock recovery](exact/EXACT_WINDOW_INSTANCE.md)
+restores both complete semaphore routines as 109/51-byte exact functions.
+The earlier integration counts and compiler batches below are historical.
 Startup-only COM signatures are declared in the platform header and applied
 to the resource interface's existing opaque slots before invocation. This keeps
 the resource owner's declaration boundary stable; expanding its vtable types

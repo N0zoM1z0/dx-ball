@@ -85,11 +85,14 @@ typedef struct DxBallWindowApi {
     DxBallHandle (DXBALL_DDCALL *set_cursor)(DxBallHandle);
     DxBallHandle (DXBALL_DDCALL *set_capture)(DxBallHandle);
     DxBallInt (DXBALL_DDCALL *release_capture)(void);
-    DxBallHandle (DXBALL_DDCALL *open_semaphore)(DxBallUInt, DxBallInt, const char *);
-    DxBallHandle (DXBALL_DDCALL *create_semaphore)(const DxBallSecurityAttributes *, DxBallInt, DxBallInt, const char *);
-    DxBallInt (DXBALL_DDCALL *close_handle)(DxBallHandle);
     DxBallInt (DXBALL_DDCALL *get_version_ex)(DxBallVersionInfo *);
 } DxBallWindowApi;
+
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_open_semaphore)(DxBallUInt,
+    DxBallInt, const char *);
+extern DxBallHandle (DXBALL_DDCALL *dxball_window_create_semaphore)(
+    const DxBallSecurityAttributes *, DxBallInt, DxBallInt, const char *);
+extern const char dxball_semaphore_open_name[], dxball_semaphore_create_name[];
 
 /* Audio/MIDI controllers default to maintained owners, while their device APIs
    remain boundaries. Process termination binds the host CRT's exit. */

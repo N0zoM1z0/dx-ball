@@ -242,7 +242,7 @@ class Native(Backend):
             fn=self.callback(name,result,args)
             if name in sound_slots:table[sound_slots[name]]=C.cast(fn,P).value
             elif name in file_cells:P.in_dll(self.lib,file_cells[name]).value=C.cast(fn,P).value
-            elif name=='message_box':(P*27).in_dll(self.lib,'dxball_window_api')[9]=C.cast(fn,P).value
+            elif name=='message_box':(P*24).in_dll(self.lib,'dxball_window_api')[9]=C.cast(fn,P).value
             else:(P*9).in_dll(self.lib,'dxball_platform_ops')[8]=C.cast(fn,P).value
         self.heap_slot=P.in_dll(self.lib,'dxball_runtime_heap')
         P.in_dll(self.lib,'dxball_new_handler').value=None

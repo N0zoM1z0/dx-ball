@@ -254,8 +254,9 @@ void dxball_bind_windows(void)
     dxball_window_api.dispatch_message = dispatch_message; dxball_window_api.default_window_proc = default_proc;
     dxball_window_api.post_message = post_message; dxball_window_api.post_quit_message = post_quit;
     dxball_window_api.set_cursor = set_cursor; dxball_window_api.set_capture = set_capture;
-    dxball_window_api.release_capture = release_capture; dxball_window_api.open_semaphore = open_semaphore;
-    dxball_window_api.create_semaphore = create_semaphore; dxball_window_api.close_handle = close_handle;
+    dxball_window_api.release_capture = release_capture;
+    dxball_window_open_semaphore = open_semaphore;
+    dxball_window_create_semaphore = create_semaphore;
     dxball_window_api.get_version_ex = version_info;
     dxball_clock_ops.time_ms = time_ms; dxball_clock_ops.frequency = clock_frequency;
     dxball_clock_ops.counter = clock_counter; dxball_set_cursor_position = set_cursor_position;

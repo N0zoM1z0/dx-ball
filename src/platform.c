@@ -1,4 +1,5 @@
 #include "platform.h"
+#include "file.h"
 #include "paddle.h"
 #include "bonuses.h"
 #include "round.h"
@@ -12,6 +13,12 @@
 #include <string.h>
 
 DxBallWindowApi dxball_window_api;
+DxBallHandle (DXBALL_DDCALL *dxball_window_open_semaphore)(DxBallUInt,
+    DxBallInt, const char *);
+DxBallHandle (DXBALL_DDCALL *dxball_window_create_semaphore)(
+    const DxBallSecurityAttributes *, DxBallInt, DxBallInt, const char *);
+const char dxball_semaphore_open_name[] = "DX-Ball";
+const char dxball_semaphore_create_name[] = "DX-Ball";
 static void load_platform_music(const char *path, DxBallInt play)
 { (void)dxball_load_music(path, play); }
 DxBallPlatformOps dxball_platform_ops = {
@@ -161,21 +168,30 @@ DxBallInt dxball_initialize_compatible(DxBallHandle instance, DxBallInt show)
     return 1;
 }
 
+/* FUNCTION: DXBALL 0x0040DF10 */
 DxBallHandle dxball_claim_instance(void)
 {
     DxBallSecurityAttributes attributes;
+    DxBallHandle opened;
     attributes.length = 12; attributes.descriptor = NULL; attributes.inherit = 1;
-    if (dxball_window_api.open_semaphore(2, 0, "DX-Ball") != 0) return 0;
-    dxball_instance_semaphore = dxball_window_api.create_semaphore(&attributes, 0, 1, "DX-Ball");
-    return dxball_instance_semaphore;
+    opened = dxball_window_open_semaphore(2, 0, dxball_semaphore_open_name);
+    if (opened == 0) {
+        dxball_instance_semaphore = dxball_window_create_semaphore(
+            &attributes, 0, 1, dxball_semaphore_create_name);
+        return dxball_instance_semaphore;
+    } else {
+        return 0;
+    }
 }
 
+/* FUNCTION: DXBALL 0x0040DF80 */
 void dxball_close_instance(void)
 {
     if (dxball_instance_semaphore != 0) {
-        dxball_window_api.close_handle(dxball_instance_semaphore);
+        dxball_file_close(dxball_instance_semaphore);
         dxball_instance_semaphore = 0;
     }
+    return;
 }
 
 void dxball_detect_clock(void)

@@ -7,7 +7,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | Start here | Responsibility |
 | --- | --- |
 | [windows_entry.c](windows_entry.c), [windows_adapter.c](windows_adapter.c) | Windows entry and bindings to OS, graphics, and audio services |
-| [platform.c](platform.c) | Window creation, message loop, input, focus, and display setup |
+| [platform.c](platform.c) | Instance lock, window creation, message loop, input, focus, and display setup |
 | [startup.c](startup.c) | Working resources, score files, RNG, and sprite-bank cleanup |
 | [runtime.c](runtime.c) | Five-mode dispatch, game lifecycle, clock, paddle drawing, and score |
 | [core.c](core.c) | Gameplay frame, ball/projectile movement, firing, and entity queues |
