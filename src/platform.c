@@ -1,4 +1,5 @@
 #include "platform.h"
+#include "directx_factory.h"
 #include "file.h"
 #include "paddle.h"
 #include "bonuses.h"
@@ -112,7 +113,7 @@ DxBallInt dxball_initialize_fullscreen(DxBallHandle instance, DxBallInt show)
     dxball_window_show_window(dxball_main_window, 0);
     dxball_prepare_sound(dxball_main_window);
     dxball_window_show_window(dxball_main_window, 5);
-    result = dxball_direct_draw_create(NULL, &dxball_direct_draw, NULL);
+    result = DirectDrawCreate(NULL, &dxball_direct_draw, NULL);
     if (result != 0) {
         dxball_window_show_window(dxball_main_window, 0);
         dxball_window_message_box(dxball_main_window, dxball_fullscreen_factory_message,
@@ -251,7 +252,7 @@ DxBallInt dxball_initialize_compatible(DxBallHandle instance, DxBallInt show)
     dxball_window_show_window(dxball_main_window, 0);
     dxball_prepare_sound(dxball_main_window);
     dxball_window_show_window(dxball_main_window, 5);
-    result = dxball_direct_draw_create(NULL, &dxball_direct_draw, NULL);
+    result = DirectDrawCreate(NULL, &dxball_direct_draw, NULL);
     if (result != 0) {
         dxball_window_show_window(dxball_main_window, 0);
         dxball_window_message_box(dxball_main_window, dxball_compatible_factory_message,

@@ -1,5 +1,6 @@
 #include "allocator.h"
 #include "sound.h"
+#include "directx_factory.h"
 #include "file.h"
 #include <stdlib.h>
 #include <string.h>
@@ -27,13 +28,6 @@ static const char primary_play_message[] =
     "Direct X sound system failed to initialize. \n (lpPrimaryBuffer playLooping) \n"
     "Do you wish to continue this program without sound?";
 
-/* Shared boundary for the DirectSound factory import. */
-static DxBallInt DXBALL_DDCALL create_sound_device(void *guid,
-    DxBallSoundDevice **device, void *outer)
-{
-    return dxball_sound_api.create_device(guid, device, outer);
-}
-
 /* FUNCTION: DXBALL 0x00405120 */
 void dxball_initialize_sound(DxBallHandle window)
 {
@@ -45,7 +39,7 @@ void dxball_initialize_sound(DxBallHandle window)
     if (dxball_sound_device != NULL) return;
     retry = 1;
     while (retry != 0) {
-        result = create_sound_device(NULL, &dxball_sound_device, NULL);
+        result = DirectSoundCreate(NULL, &dxball_sound_device, NULL);
         if (dxball_direct_draw != NULL) {
             if (result != 0) {
                 dxball_sound_device = NULL;

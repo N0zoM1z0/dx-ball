@@ -16,11 +16,6 @@
 typedef char WindowsAdapterRequiresI686[(sizeof(void *) == 4) ? 1 : -1];
 typedef char WindowsMessageLayout[(sizeof(MSG) == sizeof(DxBallMessage)) ? 1 : -1];
 typedef char WindowsMidiLayout[(sizeof(MIDIHDR) == sizeof(DxBallMidiHeader)) ? 1 : -1];
-typedef DxBallInt (DXBALL_DDCALL *DrawFactory)(void *, DxBallDDraw **, void *);
-typedef DxBallInt (DXBALL_DDCALL *SoundFactory)(void *, DxBallSoundDevice **, void *);
-static DrawFactory draw_factory;
-static SoundFactory sound_factory;
-static HMODULE draw_module, sound_module;
 static DxBallWindowProc registered_procedure;
 static DxBallMidiCallback stream_callback;
 
@@ -72,16 +67,6 @@ static DxBallInt DXBALL_DDCALL destroy_window(DxBallHandle window)
 static DxBallInt DXBALL_DDCALL message_box(DxBallHandle window, const char *message,
                                         const char *title, DxBallUInt flags)
 { return MessageBoxA((HWND)window, message, title, flags); }
-static DxBallInt DXBALL_DDCALL create_draw(void *guid, DxBallDDraw **device, void *outer)
-{
-    if (draw_factory == NULL) return (DxBallInt)0x80004005UL;
-    return draw_factory(guid, device, outer);
-}
-static DxBallInt DXBALL_DDCALL create_sound(void *guid, DxBallSoundDevice **device, void *outer)
-{
-    if (sound_factory == NULL) return (DxBallInt)0x88780078UL;
-    return sound_factory(guid, device, outer);
-}
 static DxBallInt DXBALL_DDCALL cursor_position(DxBallPoint *point)
 {
     POINT sdk; BOOL result;
@@ -234,22 +219,15 @@ static DxBallInt DXBALL_HEAP_CALL heap_release(void *heap, DxBallUInt flags, voi
 
 void dxball_bind_windows(void)
 {
-    FARPROC procedure;
     DxBallHeapApi heap_api;
     heap_api.create = heap_create; heap_api.allocate = heap_allocate; heap_api.release = heap_release;
     dxball_bind_heap_api(&heap_api);
-    /* DLLs stay loaded for the process lifetime, including asynchronous callbacks. */
-    draw_module = LoadLibraryA("ddraw.dll"); sound_module = LoadLibraryA("dsound.dll");
-    procedure = draw_module != NULL ? GetProcAddress(draw_module, "DirectDrawCreate") : NULL;
-    memcpy(&draw_factory, &procedure, sizeof(draw_factory));
-    procedure = sound_module != NULL ? GetProcAddress(sound_module, "DirectSoundCreate") : NULL;
-    memcpy(&sound_factory, &procedure, sizeof(sound_factory));
     dxball_window_load_icon = load_icon; dxball_window_load_cursor = load_cursor;
     dxball_window_stock_object = stock_object; dxball_window_register_class = register_class;
     dxball_window_create_window_ex = create_window; dxball_window_show_window = show_window;
     dxball_window_update_window = update_window; dxball_window_set_focus = set_focus;
     dxball_window_destroy_window = destroy_window; dxball_window_message_box = message_box;
-    dxball_draw_factory_backend = create_draw; dxball_window_get_cursor_pos = cursor_position;
+    dxball_window_get_cursor_pos = cursor_position;
     dxball_window_peek_message = peek_message; dxball_window_wait_message = wait_message;
     dxball_window_get_message = get_message; dxball_window_translate_message = translate_message;
     dxball_window_dispatch_message = dispatch_message; dxball_window_default_window_proc = default_proc;
@@ -265,7 +243,6 @@ void dxball_bind_windows(void)
     dxball_query_performance_frequency = clock_frequency;
     dxball_query_performance_counter = clock_counter;
     dxball_raster_ops.muldiv = raster_muldiv;
-    dxball_sound_api.create_device = create_sound;
     dxball_file_create = create_file; dxball_file_size = file_size;
     dxball_file_read = read_file; dxball_file_close = close_handle;
     dxball_local_alloc = local_alloc; dxball_local_free = local_free;

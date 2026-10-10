@@ -1,5 +1,16 @@
 # Windows startup and input routing
 
+Fullscreen and compatible startup now call the genuine `DirectDrawCreate`
+stdcall SDK export. The [DirectX factory recovery](SOUND_OWNER.md#current-sdk-factory-calls)
+also restores `DirectSoundCreate` and removes their dynamic-lookup frontends.
+Separate native transport preserves the current test callbacks; Windows imports
+the actual exports. All seven platform exacts and eight sound exacts remain
+exact together. The platform recipe has a complete twenty-five-file project
+closure; fullscreen and compatible remain 1,406/1,343 and 1,180/1,147-byte
+candidates. Final native checks select 304 unchanged creation/WinMain cases;
+real VC4 startup/ball/pause/editor/save/reload/exit also passes. Historical
+counts and driver limits below retain their earlier evidence epochs.
+
 REA follows the frame dispatcher back to WinMain and the window procedure, then
 through fullscreen/compatible DirectDraw creation and game key handling. The
 shared owner is [platform.c](../../src/platform.c), declared in

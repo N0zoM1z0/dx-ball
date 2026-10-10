@@ -17,9 +17,10 @@ order; primary creation checks a partial output, while primary playback releases
 the established buffer directly. Exit codes 10–13 precede cleanup. The final
 loop copies each retained filename before reloading its slot.
 
-A typed stdcall adapter connects the original DirectSound factory call to the
-existing native/Windows backend. It represents the import boundary; the
-initializer comparison covers the game body at `0x405120`.
+At this checkpoint a typed stdcall adapter connected the original factory to
+the native/Windows backend. The later [DirectX factory recovery](../SOUND_OWNER.md#current-sdk-factory-calls)
+replaces it with the genuine external SDK call and a separate native transport.
+The initializer comparison covers the game body at `0x405120`.
 
 WAV parsing now reads the three header words in order, advances a byte cursor,
 and dispatches fmt/data chunks through a switch. A data chunk returns immediately;

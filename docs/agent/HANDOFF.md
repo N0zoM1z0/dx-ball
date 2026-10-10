@@ -552,6 +552,60 @@ retained-evidence lookup. These are not measured model-token/cache/latency
 savings. Near-complete source and full-game fidelity remain unproven; continue
 genuine rendering/resource/call recovery.
 
+## Current DirectX factory checkpoint
+
+Sound initialization calls the genuine external `DirectSoundCreate` stdcall
+export; fullscreen/compatible creation call `DirectDrawCreate`. Original REA
+callee classification resolves the thunks at `0x416606` /`0x416600` to DSOUND/
+DDRAW. The sound wrapper, draw backend facade and dynamic factory lookup are
+removed from the active Windows paths. Separate `directx_factory_host.c`
+preserves live native callbacks; `directx_factory.h` declares the actual
+three-argument ABI with the observed NULL GUID/aggregation inputs.
+
+Both Windows artifacts have clean import tables containing the expected
+undecorated SDK exports. The old compiler has no DirectX SDK libraries;
+`scripts/directx_imports.py` uses its librarian to generate them, then updates
+only the name-hint data to the observed DLL spelling while retaining stdcall
+symbols and untouched generated thunk code. No original instructions are copied
+or counted as reconstructed game code. A GNU import library that the old linker
+accepted produced a damaged descriptor and was rejected; its product remains
+private. The normal legacy build now includes both SDK libraries for inspectors
+and the game.
+
+All eight sound and seven platform exacts remain exact together. Three matching
+source compilations (two sound, one platform) and two changed adapter compiles
+were used. The final game reuses both matching objects and 32 independently
+verified unchanged objects. Sound/platform recursive project closures contain
+17/25 files. Sound initialization remains 1,741/1,705 bytes /1,447 unaligned
+differences; fullscreen and compatible remain 1,406/1,343 and 1,180/1,147-byte
+candidates. No source-layout/name/declaration trials. Totals stay 170 exact
+functions /30,600 complete code bytes /136 metadata bytes, 283 source-present
+and 247 scoped semantic acceptances.
+
+Final native checks pass 124 unchanged sound initialization/prepare cases and
+48 existing connected focus/reload/recovery checks, plus 304 unchanged creation/
+WinMain cases. Native/MinGW builds pass. Final real VC4 startup/ball/pause/editor/
+save/reload/exit passes with 77 read-only states, five captures, expected saved
+bank, zero exit and all 49 originals unchanged. Other profiles/campaigns remain
+historical. No full owner suite/historical queue. Physical/asynchronous audio,
+near-complete original source and full-game fidelity remain unproven.
+
+Receipts: `.analysis/exact-sound-factory/` and
+`.analysis/windows-play-directx-factories/`; the earlier sound-only SDK play
+has its own intermediate product and report. The old sound/fullscreen dossiers
+were reused, without opening a provider. Snapshot stays nineteen records /
+seven primitive entries. Feedback remains only
+`/tmp/dxball_rea_feedback_20261010.md`, now twenty-three numbered entries.
+Entry 23 records 10,033,784 retained bytes versus 39,067 bytes of local selected
+views and suggests resolved call-site → thunk → DLL/export views. These are
+local archive sizes, not measured model-token/cache/latency savings.
+Continue genuine rendering/resource/platform/call recovery.
+
+The sealed current checkpoint is
+`.analysis/checkpoints/directx-factories-283-170/sha256.json`. It preserves the
+current products, recursive inputs, vendor import receipts, reused REA Evidence
+and both the rejected import-table control and valid actual play records.
+
 ## Working limits and completeness
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.

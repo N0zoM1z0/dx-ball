@@ -50,8 +50,11 @@ add_library(dxball_core SHARED
     src/sound.c
 )
 if(UNIX)
-    target_sources(dxball_core PRIVATE src/runtime_text_host.c)
+    target_sources(dxball_core PRIVATE src/runtime_text_host.c src/directx_factory_host.c)
     target_link_libraries(dxball_core PRIVATE m)
+endif()
+if(WIN32)
+    target_link_libraries(dxball_core PRIVATE dsound ddraw)
 endif()
 if(MINGW)
     # Keep integer-runtime helpers in the DLL so the game and inspectors do

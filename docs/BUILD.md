@@ -39,6 +39,13 @@ scripts/repo-python scripts/run-windows.py --profile vc40
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
 
+Windows builds import `DirectDrawCreate` and `DirectSoundCreate` from the SDK
+libraries. MinGW supplies `ddraw` and `dsound`. The pinned legacy build uses
+`scripts/directx_imports.py` and its own librarian to generate the two small
+import libraries under `build/directx-imports/`, with decorated stdcall link
+symbols and the original undecorated DLL exports. Generation receipts record
+the librarian, definitions and library hashes; original game code is not copied.
+
 The MinGW build leaves the three Windows diagnostic tools out of the default
 build. Request one when needed, for example:
 

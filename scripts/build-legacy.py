@@ -12,7 +12,9 @@ def main():
     toolchain = Toolchain()
     toolchain.verify(execute=True)
     from windows_resources import prepare_game_resources
+    from directx_imports import prepare_directx_imports
     resource_object, resource_metadata = prepare_game_resources('vc40', toolchain)
+    directx_imports, directx_import_metadata = prepare_directx_imports(toolchain)
     builds = tomllib.loads((ROOT / "config/match-units.toml").read_text())["builds"]
     build = builds["boards"]
     directory = ROOT / "build/vc40"
@@ -33,7 +35,7 @@ def main():
         executable.unlink(missing_ok=True)
         arguments = ["/NOLOGO", "/MACHINE:IX86", "/SUBSYSTEM:CONSOLE",
                      "/INCREMENTAL:NO", "/PDB:NONE", "/OUT:" + windows_path(executable),
-                     *map(windows_path, objects + [entry])]
+                     *map(windows_path, objects + [entry] + directx_imports)]
         log.append(toolchain.run("link.exe", arguments).stdout)
         if not executable.is_file():
             raise RuntimeError("legacy linker produced no executable")
@@ -54,7 +56,7 @@ def main():
                       "/INCREMENTAL:NO", "/PDB:NONE", "/OUT:" + windows_path(executable),
                       "/MAP:" + windows_path(link_map),
                       *map(windows_path, objects + game_objects + [resource_object]),
-                      "user32.lib", "gdi32.lib", "winmm.lib"]
+                      "user32.lib", "gdi32.lib", "winmm.lib", *map(windows_path, directx_imports)]
     log.append(toolchain.run("link.exe", game_arguments).stdout)
     if not executable.is_file():
         raise RuntimeError("legacy game linker produced no executable")
@@ -66,13 +68,14 @@ def main():
     (directory / "build.json").write_text(json.dumps({
         "executables": products,
         "inputs": {name: sha256(ROOT / name) for name in
-                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/allocator.c", "src/allocator.h", "src/allocator_host.c", "src/music.cpp", "src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/clock_api.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform_host.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h", "src/intro.c", "src/intro.h", "src/gameover.c", "src/gameover.h", "src/editor.c", "src/editor.h", "src/midi.c", "src/midi.h", "src/file.c", "src/file.h", "src/memory.c", "src/memory.h", "src/sound.c", "src/sound.h", "src/windows_adapter.h"] + entries + game_sources + ["scripts/build-legacy.py", "scripts/windows_resources.py", "scripts/verify-target.py", "config/windows-resources.json"]},
+                   sorted(set(name for row in builds.values() for name in row["inputs"])) + ["src/allocator.c", "src/allocator.h", "src/allocator_host.c", "src/music.cpp", "src/core.c", "src/core.h", "src/runtime.c", "src/runtime.h", "src/clock_api.h", "src/display.c", "src/display.h", "src/device.c", "src/device.h", "src/platform.c", "src/platform_host.c", "src/platform.h", "src/startup.c", "src/startup.h", "src/ui.c", "src/ui.h", "src/intro.c", "src/intro.h", "src/gameover.c", "src/gameover.h", "src/editor.c", "src/editor.h", "src/midi.c", "src/midi.h", "src/file.c", "src/file.h", "src/memory.c", "src/memory.h", "src/sound.c", "src/sound.h", "src/windows_adapter.h"] + entries + game_sources + ["scripts/build-legacy.py", "scripts/directx_imports.py", "scripts/crt_library.py", "scripts/coff.py", "scripts/windows_resources.py", "scripts/verify-target.py", "config/windows-resources.json"]},
         "compiler_sha256": toolchain.lock["compiler_sha256"],
         "linker_sha256": toolchain.lock["linker_sha256"],
         "flags": build["flags"], "link_flags": arguments[:6],
         "game_link_flags": game_arguments[:7],
         "game_map_sha256": sha256(link_map),
         "game_resources": resource_metadata,
+        "directx_imports": directx_import_metadata,
         "product": "board/resource inspectors and game EXE; playability requires runtime checks",
     }, indent=2) + "\n")
 

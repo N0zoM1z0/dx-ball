@@ -1,5 +1,51 @@
 # DirectSound controller and WAV loading
 
+## Current SDK factory calls
+
+Initialization now calls the genuine external `DirectSoundCreate` stdcall API.
+REA resolves its call at `0x405158` through `0x416606` to the DSOUND export;
+the earlier local wrapper only represented that boundary. Fullscreen and
+compatible initialization similarly call genuine `DirectDrawCreate`, replacing
+the draw backend facade. Native analysis uses `directx_factory_host.c` with the
+existing live callbacks; Windows resolves both APIs through SDK import libraries.
+The factory declarations preserve the original three-argument ABI and observed
+NULL GUID/aggregation arguments. The Windows adapter no longer loads/looks up
+either factory or fabricates a missing-factory HRESULT.
+
+The pinned compiler has no DirectX SDK libraries. `scripts/directx_imports.py`
+uses its librarian to generate them, preserving decorated stdcall link symbols
+and setting only the DLL name-hint strings to the observed undecorated exports.
+Generated thunk code stays untouched; no original code is copied or counted as
+reconstructed game code. A GNU-generated library was accepted by the old linker
+but produced a damaged import descriptor and was rejected. Its product is
+retained privately. Final VC4 and MinGW import tables contain exactly the two
+expected factories and have no parser warnings. The ordinary legacy build also
+uses these imports for both inspectors and the game.
+
+All eight sound and seven platform exacts remain exact in grouped comparisons.
+The sound recipe contains seventeen recursively consumed project files;
+platform contains twenty-five. Initialization remains a complete
+1,741/1,705-byte candidate with 1,447 unaligned differences; local storage and
+instruction placement remain unexplained. No layout/name/declaration trials
+were made. Global totals remain 170 exact functions /30,600 complete code bytes
+/136 metadata bytes.
+
+The final native library passes 124 unchanged selected sound initialization/
+prepare calls and all 48 existing connected focus/reload/lost-buffer checks,
+plus 304 selected fullscreen/compatible/WinMain cases. Native/MinGW builds pass.
+Three matching source compiles (two sound, one platform) and two changed Windows
+adapter compiles were used during the staged recovery. The final game reuses
+both matching objects and 32 verified unchanged objects. Real VC4 play passes
+with 77 read-only states, five captures, the expected saved bank, zero exit and
+all 49 originals unchanged. Earlier control profiles/campaigns stay historical;
+no full owner/historical queue was replayed. Physical/asynchronous audio and
+full-game fidelity remain unproven.
+
+Receipts: `.analysis/exact-sound-factory/` and
+`.analysis/windows-play-directx-factories/`. Existing sound and fullscreen REA
+dossiers were reused; no provider was opened. Feedback stays only in
+`/tmp/dxball_rea_feedback_20261010.md`, now entry 23.
+
 ## Current complete helper matching
 
 The [initialization and WAV batch](exact/EXACT_SOUND_DEPENDENCIES.md) restores
