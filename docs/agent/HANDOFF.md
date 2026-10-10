@@ -1,106 +1,91 @@
 # Reconstruction handoff
 
-Continue toward nearly complete original DX-Ball v1.07 source that rebuilds and
-plays. Prioritize whole game flows and exact recovery. Use only the minimum
-useful existing replay/Oracle; do not expand the historical test queue.
+Continue toward nearly complete original English DX-Ball v1.07 source that
+rebuilds and plays. Prioritize complete game flows and exact recovery. Commit
+locally with `gpt-6.1-sol: ` subjects; pushes remain deferred. Use targeted
+comparisons and existing affected checks, without expanding the historical queue.
 
-## Local state
+## Current source recovery
 
-- Source checkpoint: `522fc28`, following published `5f17d1a`.
-- Pushes are deferred at the user's request. The source checkpoint is local;
-  its exact-head CI has not run. Commit subsequent work locally too.
-- 283 source-present functions; 147 exact functions / 23,490 code bytes and
+Score initialization at `0x406EE0` is exact across its complete 723 bytes on
+its first stable VC4 compilation. `src/startup.c` restores fifteen explicit
+name-clear / `strcat` / score-store phases, then genuine direct `access`,
+`fopen`, `fwrite` and `fclose` calls. Preserve the 44-byte records, untouched
+name tails, scores 150..10, access==-1 gate, NULL-open return, ignored results,
+and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
+literal storage operands, including NULs and independent repeated literals,
+are declared in `config/match-units.toml`.
+
+- 283 source-present entries; 148 exact functions / 24,213 code bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
-- README explains the REA workflow and retains the centered 900px title PNG
-  and progress SVG. Agent instructions belong here and in `AGENTS.md`.
-- No score-initialization edits or compilation have started. Its proposal is
-  saved for the next batch. No compiler or REA provider is left running.
+- The affected 125-byte bank-release unit stays exact. Device initialization
+  stays a complete 359-byte candidate with ten differing bytes.
+- One stable startup recipe compilation, three complete comparisons, and
+  the 158 existing startup cases plus one connected dispatch check, once.
+- The native fixture binds only copied-image ELF import slots to the existing
+  typed stdio callbacks. No process-wide libc symbols are interposed.
+- Actual canonical libc creation and existing-file gating passed independently.
+- Native and MinGW builds passed. VC4 relinked using all 35 verified objects;
+  there was no further legacy source compilation.
+- Other semantic rows retain their historical cases and scope after input
+  identity refresh; these are not newly rerun suites.
 
-## Latest source recovery
+Private receipts: `.analysis/exact-score-initialization/`.
+See [startup evidence](../research/STARTUP_UI_OWNER.md).
 
-Surface fill at `0x409F10` is exact across all 89 bytes on its first stable
-compile. Sprite-bank recovery at `0x403D30` now reads live owners and calls
-`load_sprite_bank` directly. Its complete candidate is 279/282 bytes with
-80 unmasked differences; original unused HRESULT storage remains unresolved.
+## REA upgrade
 
-One device recipe compiled once. All three affected prior exact units retained
-identical code and relocations: palette (206 bytes), synchronization (134),
-recovery (97). Five whole comparisons account for 35 relocations. Only 145 existing direct
-cases and eight connected lost-surface checks ran, once. Native, VC4 and MinGW
-builds passed; VC4 reused all 35 objects. Snapshot 495 was reused with no query.
-See [device dependencies](../research/exact/DEVICE_DEPENDENCIES.md).
+The user's requested local upgrade is installed and pinned to REA 6.3.0,
+verified against the official npm registry. Ghidra remains 12.1.4. The scoped
+Ghidra and Codex registration doctor checks pass. The upgraded project wrapper
+successfully queried two missing boundaries and closed its provider.
 
-Private receipts: `.analysis/exact-device-dependencies/`.
-Sealed checkpoint: `.analysis/checkpoints/exact-device-dependencies-283-147/`.
-The local-commit receipt and full supplemental journals record failed publication
-attempts. Do not restart those attempts while pushes remain deferred.
+New access dossier:
+`.analysis/rea/runs/2026-10-10T14-29-24.089Z-score-boundaries-590652/00-analyze_function.json`,
+Evidence `ev_3c45a24fc90e2bb90489bc9c3533d438174388a59cbd469eb9c5b5f992897241`.
+The full 77-byte body matches the pinned CRT `access.obj` member after five
+explicit relocation bindings. This corroborates the direct API; it does not
+promote the origin ledger or prove unique original alias spelling.
+The adjacent `01-read_bytes.json` attests all 592 literal bytes with Evidence
+`ev_8e62c86b8565325f7f6450aed6e6a8b3c37df251bb87cee577dfaf1a8d0776cb`.
 
-## Next batch: complete score initialization
+REA 6.3 rejects the old snapshot's integrity format. The old snapshot is
+retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
+Evidence IDs and dossiers remain available for direct reuse. The current
+snapshot contains the two new records. New analysis responses expose
+`raw_result` and `normalized_result`, while older responses use `result`.
+See [REA commands](REA.md). No registration rewrite or provider installation
+was necessary; the configured MCP path now points at the upgraded package.
 
-Recover `dxball_initialize_scores` at `0x406EE0`, 723 bytes, in `src/startup.c`.
-Current source factors the names through a `strcpy` loop and file callbacks.
-The original performs 15 explicit name-clear / `strcat` / score-store phases,
-then calls CRT file APIs directly. Preserve the 44-byte records, untouched name
-tails, scores 150..10, the access==-1 gate, NULL-open return, ignored write/close
-results, and the shared closed `FILE *` slot.
+## Next batch
 
-Start with `.analysis/remaining-game-source-next-review/`:
+Continue the score persistence flow with `dxball_read_scores` at `0x406CC0`,
+94 bytes, in `src/startup.c`. It still uses the startup file callback table.
+Reuse its complete saved dossier in the closed 2026-10-07 11-58 REA archive,
+Evidence `ev_60906ff615d2fceb6d7e4cb83c367f0f2612498b4c30cf1d1b20cd4d1c80f2ea`.
+Recover actual direct file calls and original local storage from instructions;
+do not insert an inert local to force a match. The new fixture transport can
+bind the real `fread` import using its existing typed read callback.
 
-- `initialize-scores-proposal.c.txt`: complete source proposal, SHA256
-  `5d1bc731f404d28a35bd6c0d3b30c44cb25dd0e94c0b7b5f88efe9376e927154`.
-- `findings.json`: whole-flow coverage and remaining-source inventory.
-- `stdio-transport-review.json`: corrected dependency review with 22 retained
-  input hashes. The initial review is kept separately as historical evidence.
+Then inspect score submission at `0x406D20` through its complete 446-byte flow.
+The now-established access/stdio boundaries can be reused. Keep unknown origins
+unknown and prefer recovery that closes the complete score lifetime.
 
-Accepted board-bank callers already establish `fopen`→`0x417C20`,
-`fwrite`→`0x417E70`, and `fclose`→`0x417A30`. Their unknown runtime-origin rows
-are a separate question. Resolve three concrete gaps before compiling:
+Earlier unresolved candidates remain: device initialization (359 bytes / ten
+differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
+differences). The latter's original unused HRESULT storage is unresolved.
+Do not add fake locals or profile-specific bodies.
 
-1. Attest the `access` binding at `0x417FF0`; the caller establishes its cdecl
-   two-argument contract and -1 result gate.
-2. Verify the complete consumed literal bytes, including NULs, `wb`, and the
-   three distinct original addresses holding the separator text.
-3. Establish image-local native stdio transport for the existing startup
-   fixture. Its shim uses `RTLD_GLOBAL`; avoid process-wide libc interposition.
-
-Saved complete dossier:
-`.analysis/rea/runs/2026-10-07T11-58-17.972Z-interactive-3053414/08-analyze_function.json`,
-Evidence ID `ev_8dac6e01bb85d2646a688aaa07a710a92aa40634ba392304d3263f05ee92cbd6`.
-The 723-byte instruction flow is contiguous. Reuse it; query only missing data
-or a specific unresolved target. Compile once when the shared source and real
-API boundaries are stable, then compare all accepted units affected by those
-inputs and run the affected existing check.
-
-## Limits and working environment
-
-The origin inventory identifies 270 authored entries, all source-present, plus
-runtime/compiler-generated and unknown entries. Presence is not a measure of
-original source fidelity; >=95% complete restoration remains unproven.
-Keep unresolved origins unknown rather than assigning them to CRT by location.
+## Working limits and completeness
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
-REA checkout: `/home/pentester/Project/rea/`. New binary questions use
-`scripts/rea`, pinned to REA 4.1.0/Ghidra 12.1.4, with full responses/Evidence IDs
-and snapshots retained under `.analysis/rea/`. Close the provider afterwards.
-Use `scripts/repo-python`, CPU 0, one writable compiler/provider session, the
-512 MiB Ghidra heap, and CMake `--parallel 1`. Compilers use
-`legacy_toolchain.session_lock()`. Automated audio uses
+Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
+session, the 512 MiB Ghidra heap, and CMake `--parallel 1`. Compiler/provider
+work uses `legacy_toolchain.session_lock()`. Automated audio uses
 `PULSE_SINK=dxball_reconstruction_silent`.
 
-Keep current builds, original assets, toolchains and unique evidence. Clean
-superseded products and hash-verified duplicates. Commit subjects begin
-`gpt-6.1-sol: `; keep commits local until the user resumes publishing.
-
-## Handoff cleanup
-
-Windows diagnostic tools are explicit CMake targets, excluded from the default
-MinGW build. Configuration and the build graph were checked; no compilation
-or Oracle rerun was needed. Only five historical semantic rows needed their
-CMake input identity refreshed; their cases and scope remain historical.
-
-The cleanup shared 23,579 byte-identical archived files through hardlinks.
-`.analysis` fell from about 3.5 GiB to 2.1 GiB. Thirteen duplicate publication
-inputs/drivers were removed after verifying their full checkpoint copies,
-freeing another 6,463,488 allocated bytes. Current builds and unique evidence
-remain. Receipts: `.analysis/handoff-2026-10-10/` and
-`.analysis/cleanup/20261010T135954340137Z.json`.
+The inventory identifies 270 authored entries, all source-present, plus runtime,
+compiler-generated and unknown entries. Source presence does not establish
+original fidelity; >=95% complete restoration remains unproven.
+Keep current builds, originals, toolchains and unique evidence. Clean superseded
+products and verified duplicates. README retains its 900px PNG and progress SVG.

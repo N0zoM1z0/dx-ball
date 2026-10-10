@@ -1,9 +1,9 @@
 {
-  "version": "4.1.0",
+  "version": "6.3.0",
   "package": "rea-agents",
-  "npm_integrity": "sha512-BOig7QyPtOJLZtCa7MIVyecGdsI5C8kX0HHjp9Fo5LkotSqD3cRV91KCp0pakLqLuyF1BFl4RSyV/9F/Wk6OBQ==",
-  "package_lock_sha256": "13ca884b6db5b3ed009df8f0d34ab8cc060a89b69431b4043b3a213b295e0ca4",
-  "node_modules_sha256": "ac807501b996ccdbfd0d4afb5d6f13b9fe156d3d5ce5d1169e01185a0923b643",
+  "npm_integrity": "sha512-1l3L22PYqlzW70I2Z8fVjWufdBp8lN5dwXSiBERLKPP7pybiFSHeCD8LnXfAoilYkmSQe1NfRgOrbIr9ujkOfQ==",
+  "package_lock_sha256": "403836ea0eb08c8c9f63e0b3e3b718455f12a9e830f4a588666d0cd6a0a1d5fa",
+  "node_modules_sha256": "9764e9cc7b59b9ca56b225c95ec861da0388704d6f727054bf2147db13eb7737",
   "node": {
     "version": "22.19.0",
     "sha256": "596b5144ff242737f1c1be6a5f0ccb3907dbba2482344143cb1a6898633402a9"
@@ -224,5 +224,5 @@
     }
   },
   "historical_ghidra_version": "12.1.3",
-  "source_reference_commit": "676959ecb55b606a567af3d2eb3d3edc96f0aa2f"
+  "source_reference_commit": "74cf9e1401fcd89482fe39c27cc898f5858e9b72"
 }

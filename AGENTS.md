@@ -14,7 +14,7 @@ against instructions, exits and embedded data.
 
 - Run Python through `scripts/repo-python`.
 - Use `scripts/rea` and the installed REA skill for new binary analysis.
-  The project pins REA 4.1.0/Ghidra 12.1.4 in `config/rea.lock.json`.
+  The project pins REA 6.3.0/Ghidra 12.1.4 in `config/rea.lock.json`.
   Retain full responses, Evidence IDs and snapshots under `.analysis/rea/`.
 - Write natural typed source shared by portable and legacy builds. Preserve
   ABI, widths, ownership and actual state writes. Do not force matches with

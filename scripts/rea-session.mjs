@@ -109,7 +109,7 @@ try {
       opened = false;
       save('close.json', closed);
       const saved = JSON.parse(readFileSync(snapshot, 'utf8'));
-      console.log(`REA snapshot saved: ${saved.evidence_bundle.records.length} Evidence records, ${closed.result.entries} primitive cache entries; session closed`);
+      console.log(`REA snapshot saved: ${saved.evidence_bundle.records.length} Evidence records, ${closed.result.primitive_entries} primitive cache entries; session closed`);
     }
   } catch (error) {
     save('close-failure.json', {message: String(error)});

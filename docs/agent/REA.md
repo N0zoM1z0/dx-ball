@@ -2,7 +2,7 @@
 
 Use `scripts/rea` from the repository root. It selects Ghidra and applies the
 project's target checks and process limits. Versions are pinned in
-[`config/rea.lock.json`](../../config/rea.lock.json): REA 4.1.0 and Ghidra 12.1.4.
+[`config/rea.lock.json`](../../config/rea.lock.json): REA 6.3.0 and Ghidra 12.1.4.
 
 Supply the matching executable and assets under `original/`; see
 [`config/target.toml`](../../config/target.toml) and [build setup](../BUILD.md).
@@ -37,10 +37,19 @@ pinned server's advertised schemas; these are supported 4.1 request shapes:
 ```
 
 The helper records complete responses and Evidence IDs under
-`.analysis/rea/runs/` and saves the cumulative snapshot on close. Cite the
+`.analysis/rea/runs/` and saves the cumulative snapshot on close. REA 6.3
+analysis records expose `raw_result` and `normalized_result`; older retained
+responses use `result`. Cite the
 archived run; root-level result files are latest-query aliases. A request array
 can also be passed as `scripts/rea session path/to/requests.json`. Inspect the
 saved tool catalog before composing requests for another operation.
+
+The upgrade from 4.1.0 to 6.3.0 retained the old snapshot at
+`.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`. The new release rejected its
+integrity format, so the current snapshot starts with the new focused queries.
+Keep reusing historical dossiers directly; their Evidence IDs and original
+bytes remain available. Upgrade receipts and both scoped doctor reports are
+in `.analysis/rea-upgrade-6.3.0/`.
 
 Retain the responses used for source recovery and link them from the relevant
 research note. Follow the [reconstruction workflow](WORKFLOW.md) when changing

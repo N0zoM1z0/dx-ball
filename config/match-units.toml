@@ -5967,3 +5967,636 @@ relocations = [
   { offset = 240, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
   { offset = 257, type = "REL32", symbol = "_dxball_load_sprite_bank", addend = 0, target = 0x404610 },
 ]
+
+[units.initialize-scores]
+build = "startup"
+symbol = "_dxball_initialize_scores"
+target_address = 0x00406EE0
+size = 723
+
+[[units.initialize-scores.relocations]]
+offset = 8
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "$SG969"
+addend = 0
+target = 0x004214B8
+data_hex = "202a2a2a2a2044582d42414c4c206279204d69636861656c20502e2057656c6368202a2a2a2a00"
+
+[[units.initialize-scores.relocations]]
+offset = 19
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 24
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 33
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 40
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 43
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 44
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 49
+type = "DIR32"
+symbol = "$SG970"
+addend = 0
+target = 0x004214E0
+data_hex = "2044656469636174656420746f2074686f73652077686f206c6f76652074686520416d69676100"
+
+[[units.initialize-scores.relocations]]
+offset = 54
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 63
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 72
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 84
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 88
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 88
+type = "DIR32"
+symbol = "$SG971"
+addend = 0
+target = 0x00421508
+data_hex = "20616e6420697473206d6f737420706f70756c61722073686172657761726500"
+
+[[units.initialize-scores.relocations]]
+offset = 93
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 102
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 128
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 121
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 132
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 127
+type = "DIR32"
+symbol = "$SG972"
+addend = 0
+target = 0x00421528
+data_hex = "2067616d652e2e2e204d65676142616c6c2e20546865204d61636b65792062726f746865727300"
+
+[[units.initialize-scores.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 143
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 152
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 172
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 176
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 168
+type = "DIR32"
+symbol = "$SG973"
+addend = 0
+target = 0x00421550
+data_hex = "206469642061206772656174207468696e6720776974682074686520627265616b6f757400"
+
+[[units.initialize-scores.relocations]]
+offset = 173
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 184
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 193
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 216
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 203
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 220
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 209
+type = "DIR32"
+symbol = "$SG974"
+addend = 0
+target = 0x00421578
+data_hex = "20636f6e636570742e20536f20776f6e64657266756c20696e20666163742c207468617400"
+
+[[units.initialize-scores.relocations]]
+offset = 214
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 225
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 234
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 260
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 244
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 264
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 250
+type = "DIR32"
+symbol = "$SG975"
+addend = 0
+target = 0x004215A0
+data_hex = "206d79207769666520656e6a6f796564204d65676142616c6c203320776179206d6f726500"
+
+[[units.initialize-scores.relocations]]
+offset = 255
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 266
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 275
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 304
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 285
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 308
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 291
+type = "DIR32"
+symbol = "$SG976"
+addend = 0
+target = 0x004215C8
+data_hex = "207468616e206d792067616d65206053636f72636865642054616e6b732e2700"
+
+[[units.initialize-scores.relocations]]
+offset = 296
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 307
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 316
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 348
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 326
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 352
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 332
+type = "DIR32"
+symbol = "$SG977"
+addend = 0
+target = 0x004215E8
+data_hex = "20492776652066696e616c6c79207772697474656e20612067616d65207468617400"
+
+[[units.initialize-scores.relocations]]
+offset = 337
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 348
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 357
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 392
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 367
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 396
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 373
+type = "DIR32"
+symbol = "$SG978"
+addend = 0
+target = 0x0042160C
+data_hex = "20686f6c64732068657220696e7465726573742e20203a2900"
+
+[[units.initialize-scores.relocations]]
+offset = 378
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 389
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 398
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 436
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 408
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 440
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 414
+type = "DIR32"
+symbol = "$SG979"
+addend = 0
+target = 0x00421628
+data_hex = "202a2a2a2a2a2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2a2a2a2a2a00"
+
+[[units.initialize-scores.relocations]]
+offset = 419
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 430
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 439
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 480
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 449
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 484
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 455
+type = "DIR32"
+symbol = "$SG980"
+addend = 0
+target = 0x00421650
+data_hex = "205c5c5c54686973206973206120313030252044697265637420582067616d652e2f2f2f00"
+
+[[units.initialize-scores.relocations]]
+offset = 460
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 471
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 480
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 524
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 490
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 528
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 496
+type = "DIR32"
+symbol = "$SG981"
+addend = 0
+target = 0x00421678
+data_hex = "20202020202020202020202f2f2f486f706520796f75206c696b65206974215c5c5c00"
+
+[[units.initialize-scores.relocations]]
+offset = 501
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 512
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 521
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 568
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 531
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 572
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 537
+type = "DIR32"
+symbol = "$SG982"
+addend = 0
+target = 0x0042169C
+data_hex = "202a2a2a2a2a2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2a2a2a2a2a00"
+
+[[units.initialize-scores.relocations]]
+offset = 542
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 553
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 562
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 612
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 572
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 616
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 578
+type = "DIR32"
+symbol = "$SG983"
+addend = 0
+target = 0x004216C4
+data_hex = "202a2a2a2a2a2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2a2a2a2a2a00"
+
+[[units.initialize-scores.relocations]]
+offset = 583
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 594
+type = "REL32"
+symbol = "_strcat"
+addend = 0
+target = 0x004177F8
+
+[[units.initialize-scores.relocations]]
+offset = 603
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 656
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 614
+type = "DIR32"
+symbol = "$SG985"
+addend = 0
+target = 0x004216EC
+data_hex = "73636f72652e64617400"
+
+[[units.initialize-scores.relocations]]
+offset = 619
+type = "REL32"
+symbol = "_access"
+addend = 0
+target = 0x00417FF0
+
+[[units.initialize-scores.relocations]]
+offset = 636
+type = "DIR32"
+symbol = "$SG986"
+addend = 0
+target = 0x004216F8
+data_hex = "776200"
+
+[[units.initialize-scores.relocations]]
+offset = 641
+type = "DIR32"
+symbol = "$SG987"
+addend = 0
+target = 0x004216FC
+data_hex = "73636f72652e64617400"
+
+[[units.initialize-scores.relocations]]
+offset = 646
+type = "REL32"
+symbol = "_fopen"
+addend = 0
+target = 0x00417C20
+
+[[units.initialize-scores.relocations]]
+offset = 654
+type = "DIR32"
+symbol = "_dxball_board_file"
+addend = 0
+target = 0x004265C8
+
+[[units.initialize-scores.relocations]]
+offset = 660
+type = "DIR32"
+symbol = "_dxball_board_file"
+addend = 0
+target = 0x004265C8
+
+[[units.initialize-scores.relocations]]
+offset = 677
+type = "DIR32"
+symbol = "_dxball_board_file"
+addend = 0
+target = 0x004265C8
+
+[[units.initialize-scores.relocations]]
+offset = 687
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 0
+target = 0x004266A8
+
+[[units.initialize-scores.relocations]]
+offset = 692
+type = "REL32"
+symbol = "_fwrite"
+addend = 0
+target = 0x00417E70
+
+[[units.initialize-scores.relocations]]
+offset = 700
+type = "DIR32"
+symbol = "_dxball_board_file"
+addend = 0
+target = 0x004265C8
+
+[[units.initialize-scores.relocations]]
+offset = 706
+type = "REL32"
+symbol = "_fclose"
+addend = 0
+target = 0x00417A30

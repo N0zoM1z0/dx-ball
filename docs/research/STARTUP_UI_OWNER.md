@@ -15,21 +15,39 @@ Public headers depend only on the shared board types; platform and device
 interfaces remain implementation dependencies. The Windows game is integrated;
 recorded play runs are in [the original-board campaign](ORIGINAL_CAMPAIGN.md).
 
-## Next source recovery: score initialization
+## Exact score initialization
 
-The current initializer at `0x406EE0` uses a loop and file callbacks. Its complete
-723-byte dossier instead shows fifteen explicit name-clear, `strcat`, and score
-store phases, followed by direct CRT file calls. A source proposal and the
-corrected dependency review are retained in
-`.analysis/remaining-game-source-next-review/`.
+The initializer at `0x406EE0` now restores all fifteen explicit name-clear,
+`strcat`, and score-store phases, followed by direct CRT file calls. Its first
+stable VC4 compilation matches the complete 723-byte body, with all 87 actual
+relocations resolved and all eighteen consumed string operands attested,
+including their terminating NULs and three independent separator literals.
+The existing 125-byte bank-release unit remains exact; device initialization
+remains a 359-byte candidate with ten differing bytes. No source spelling or
+storage experiments were needed. Receipts are in
+`.analysis/exact-score-initialization/`.
 
 Accepted board-bank callers establish `fopen` at `0x417C20`, `fwrite` at
 `0x417E70`, and `fclose` at `0x417A30`. Reuse these caller/API bindings while the
-runtime origins are investigated. Before
-compiling the score proposal, attest `access` at `0x417FF0`, verify every
-consumed string including its NUL, and establish image-local native `FILE *`
-transport for the existing fixture. The fixture currently loads its shim with
-`RTLD_GLOBAL`; a process-wide libc interposer would affect unrelated owners.
+runtime origins are investigated. New REA 6.3.0 evidence establishes the
+77-byte `access` implementation at `0x417FF0`, corroborated against the complete
+fixed CRT `access.obj` member and its five relocations. This establishes the
+API binding; its runtime origin row and unique original alias spelling remain
+separate questions. Literal bytes are supported by one complete 592-byte read.
+
+- Access dossier: `ev_3c45a24fc90e2bb90489bc9c3533d438174388a59cbd469eb9c5b5f992897241`.
+- Literal read: `ev_8e62c86b8565325f7f6450aed6e6a8b3c37df251bb87cee577dfaf1a8d0776cb`.
+- Archived run: `.analysis/rea/runs/2026-10-10T14-29-24.089Z-score-boundaries-590652/`.
+
+The existing startup fixture uses `tests/native_imports.py` to bind only the
+copied image's resolved ELF import slots to its existing typed stdio callbacks.
+It preserves data-page permissions, checks the image owner and selected slots,
+and verifies unchanged process-wide libc resolution. The canonical library,
+shared recovered source, real default libc calls and existing cases remain
+the actual maintained inputs. No libc symbol is exported by the global shim.
+The 158 existing startup cases and one connected dispatch check passed once,
+including poisoned name tails, access/open branches, ignored results and exact
+660-byte writes. This transport is fixture infrastructure, not original code.
 
 ## Entries and retained observations
 
@@ -67,7 +85,7 @@ source ownership, widths and call sites were reviewed independently.
 
 `src/startup.c` owns fifteen 44-byte score records (40-byte name plus unsigned
 32-bit score), the default board filename and replaceable CRT file/RNG calls.
-Initialization copies the original fifteen messages and assigns scores 150
+Initialization clears each leading name byte, appends its message and assigns scores 150
 through 10. Bytes after the terminating name remain untouched. Only
 `access("score.dat", 0) == -1` attempts to create the default file; other results
 retain the existing shared FILE slot. Read and write operations preserve the
