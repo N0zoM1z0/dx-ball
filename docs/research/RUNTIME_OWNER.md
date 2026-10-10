@@ -1,5 +1,10 @@
 # Game lifecycle and mode dispatch
 
+The [main frame dispatcher](exact/MAIN_FRAME.md) is exact at 228 bytes.
+It uses ten original direct calls and preserves the complete reset, mode frame
+and end-request phases. Five prior exact runtime functions remain exact; only
+the two existing dispatch loops were rerun for this source change.
+
 The [game setup/redraw/score restoration](exact/EXACT_RUNTIME_SETUP.md) recovers three
 complete controllers / 1,438 original bytes. Initialize (736) and redraw (269)
 match all 1,005 bytes; score (433) retains 76 full differences. The 25 separate

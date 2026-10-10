@@ -335,16 +335,33 @@ void dxball_cleanup_mode(DxBallInt fade)
     if (dxball_display_mode >= 0 && dxball_display_mode <= 4) dxball_mode_ops.cleanup[dxball_display_mode](fade);
 }
 
+/* FUNCTION: 0x403730 */
 DxBallInt dxball_dispatch_frame(void)
 {
     if (dxball_device_reset_requested != 0) {
-        dxball_mode_ops.reinitialize_device();
+        dxball_initialize_device_state();
         dxball_initialize_mode();
         dxball_device_reset_requested = 0;
         dxball_surface_restore_requested = 0;
     }
-    dxball_mode_ops.synchronize_surface();
-    if (dxball_display_mode >= 0 && dxball_display_mode <= 4) dxball_mode_ops.frame[dxball_display_mode]();
+    dxball_synchronize_surface();
+    switch (dxball_display_mode) {
+    case 0:
+        dxball_intro_frame();
+        break;
+    case 1:
+        dxball_game_frame();
+        break;
+    case 2:
+        dxball_editor_frame();
+        break;
+    case 3:
+        dxball_game_over_frame();
+        break;
+    case 4:
+        dxball_splash_frame();
+        break;
+    }
     if (dxball_end_requested != 0) {
         dxball_cleanup_mode(1);
         dxball_display_mode = dxball_return_to_menu;

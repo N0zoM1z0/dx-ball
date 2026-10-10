@@ -200,6 +200,13 @@ class _Image:
                       ('dxball_key_mode_ops', 5, 2, 'dxball_editor_key'),
                       ('dxball_key_mode_ops', 5, 3, 'dxball_game_over_key'),
                       ('dxball_key_mode_ops', 5, 4, 'dxball_splash_key'),
+                      ('dxball_mode_ops', 22, 10, 'dxball_intro_frame'),
+                      ('dxball_mode_ops', 22, 11, 'dxball_game_frame'),
+                      ('dxball_mode_ops', 22, 12, 'dxball_editor_frame'),
+                      ('dxball_mode_ops', 22, 13, 'dxball_game_over_frame'),
+                      ('dxball_mode_ops', 22, 14, 'dxball_splash_frame'),
+                      ('dxball_mode_ops', 22, 20, 'dxball_initialize_device_state'),
+                      ('dxball_mode_ops', 22, 21, 'dxball_synchronize_surface'),
                       ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
         boundaries.append(('dxball_display_ops', 2, 1, 'dxball_recover_surfaces'))
         for table, length, slot, symbol in boundaries:
@@ -234,6 +241,7 @@ class _Image:
         # API. Keep its identity for a guard until PlatformNative replaces it.
         self.platform_table = (C.c_void_p * 9).in_dll(self.lib, 'dxball_platform_ops')
         self.key_table = (C.c_void_p * 5).in_dll(self.lib, 'dxball_key_mode_ops')
+        self.mode_table = (C.c_void_p * 22).in_dll(self.lib, 'dxball_mode_ops')
         self.platform_music_default = self.platform_table[7]
         real = C.cast(self.lib.dxball_load_music, C.c_void_p).value
         intercepted = C.cast(_shim.dxball_load_music, C.c_void_p).value
@@ -293,6 +301,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_platform_ops.restype = C.c_int
         _shim.dxball_test_bind_key_mode_ops.argtypes = [C.c_void_p]
         _shim.dxball_test_bind_key_mode_ops.restype = C.c_int
+        _shim.dxball_test_bind_mode_ops.argtypes = [C.c_void_p] * 8
+        _shim.dxball_test_bind_mode_ops.restype = C.c_int
         _shim.dxball_test_bind_display_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_display_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
@@ -329,6 +339,22 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_key_mode_ops(actual)
     if result != 0:
         raise RuntimeError('CoreNative key binding rejected: null table')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_mode_ops'))
+    if actual != C.addressof(image.mode_table):
+        raise RuntimeError('CoreNative mode table does not belong to its copied image')
+    owners = []
+    for symbol in ('dxball_intro_frame', 'dxball_game_frame', 'dxball_editor_frame',
+                   'dxball_game_over_frame', 'dxball_splash_frame',
+                   'dxball_initialize_device_state', 'dxball_synchronize_surface'):
+        real = C.cast(getattr(image.lib, symbol), C.c_void_p).value
+        if (real != image.function_addresses[symbol] or
+                real == C.cast(getattr(_shim, symbol), C.c_void_p).value or
+                _function_owner(real) != image.path.resolve()):
+            raise RuntimeError('CoreNative mode body has a different owner: ' + symbol)
+        owners.append(real)
+    result = _shim.dxball_test_bind_mode_ops(actual, *owners)
+    if result != 0:
+        raise RuntimeError('CoreNative mode binding rejected: null table or recursive real body')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_display_ops'))
     if actual != C.addressof(image.display_table):
         raise RuntimeError('CoreNative display table does not belong to its copied image')

@@ -7,40 +7,42 @@ short, with its title PNG and progress SVG.
 
 ## Current checkpoint
 
-[Editor-frame](../research/exact/EXACT_EDITOR_FRAME.md) at `0x40C3B0` is exact:
-908 bytes, all 209 saved instructions and 16 original direct calls. The source
-keeps separate cursor draw branches and both complete paint/erase coordinate
-phases, including live post-call state reads. Two authored frame-only helpers
-are removed. No shared-header, API, fixture or case changes.
+The [main frame dispatcher](../research/exact/MAIN_FRAME.md) at `0x403730` is
+exact across its complete 228-byte span. It calls the original five frame
+owners directly, preserves reset-clear order and copies the live return-mode
+DWORD after cleanup. The ordinary switch emits both the original five-byte
+jump gap and the complete five-DWORD table.
 
-- 283 source-present functions; 139 exact / 22,446 code bytes and 136 metadata
+- 283 source-present functions; 140 exact / 22,674 code bytes and 136 metadata
   bytes. Whole-source >=95% completion remains unproven.
-- One editor recipe compiled once. Five affected prior exact units preserved;
-  six whole comparisons / 78 actual relocations. First stable frame emission
-  is exact at 908/908, without compiler-driven source alternatives.
-- Only the three existing editor-frame loops ran, passing 1,272 cases once.
-  Other entry/owner and connected checks retain historical scope.
+- One runtime recipe compiled once. Five affected prior exact units preserved;
+  six whole comparisons / 167 actual relocations. First stable dispatch emission
+  is exact at 228/228, without compiler-driven source alternatives.
+- Seven typed native fixture boundaries follow the actual live ModeOps slots.
+  Real defaults and the mode1 game-frame body belong to the copied library.
+  Shared game APIs and case bodies are unchanged.
+- Only the two existing dispatch loops ran: 128 cases. A private report-count
+  error after all comparisons completed caused a second invocation; both logs
+  are retained. Other entry/owner and connected checks keep historical scope.
 - Native, VC4 and MinGW builds pass. VC4 reuses 35 valid objects and compiles
-  no remaining sources. Saved REA snapshot491 reused; no new queries.
+  no remaining sources. Saved REA snapshot492 reused; no new queries this batch.
 
-Full drivers/receipts: `.analysis/exact-editor-frame/`. Checkpoint:
-`.analysis/checkpoints/exact-editor-frame-283-139/`, parent `exact-window-key-283-138`.
-Independent bounded audit: `.analysis/editor-frame-flow-review/final-review.json`.
-Clock83 and direct key dispatch162 stay exact. Game-key836/831 and
-WindowProc1166/1171 remain complete candidates.
+Full drivers/receipts: `.analysis/exact-main-frame/`. Checkpoint:
+`.analysis/checkpoints/exact-main-frame-283-140/`, parent `exact-editor-frame-283-139`.
+Bounded audit: `.analysis/main-frame-flow-review/final-review.json`.
+The editor frame stays exact at 908 bytes. Clock83 and direct key dispatch162
+stay exact; game-key836/831 and WindowProc1166/1171 remain complete candidates.
 
 ## Next work
 
-Continue the main frame controller at `0x403730`: restore its original direct
-owner calls, reset-clear order and post-frame mode transition. The saved
-dossier owns 203 bytes in a 228-byte span; reconcile its five-byte gap and
-20-byte switch table before an exact claim. The whole-source proposal and
-23 full inputs are in `.analysis/main-frame-next-review/`; its 46 saved
-instructions and ten direct calls are reviewed. One focused full read of
-`0x403730/228` resolves the remaining byte coverage. Use saved evidence first. Avoid
-compiler profiles, local-layout/name or source-expression trials. Provisional
-function counts are not the whole-source completion denominator; complete
-flows and remaining runtime-origin classification still matter.
+Continue the main mode lifecycle: initialization at `0x4038D0`, redraw at
+`0x4036B0` and cleanup at `0x403950`. These runtime bodies still use authored
+callback routing. Recover genuine owner calls and complete switch/argument
+phases using existing evidence first. A bounded next-family review is under
+`.analysis/main-mode-next-review/`; reconcile extents, gaps and internal tables
+before a whole-unit claim. No compiler profiles or source-expression, name or
+layout trials. Provisional function counts are not the whole-source completion
+denominator; complete flows and runtime-origin classification still matter.
 
 REA checkout: `/home/pentester/Project/rea/`. New binary questions use
 `scripts/rea`, pinned to REA4.1.0/Ghidra12.1.4; retain full responses/Evidence IDs

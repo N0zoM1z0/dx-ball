@@ -15,6 +15,7 @@
 #include "intro.h"
 #include "editor.h"
 #include "gameover.h"
+#include "runtime.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -46,6 +47,9 @@ static unsigned delete_active, sprite_active, reduced_active, region_active;
 static DxBallRuntimeOps *bound_runtime;
 static DxBallPlatformOps *bound_platform;
 static DxBallKeyModeOps *bound_keys;
+static DxBallModeOps *bound_modes;
+static void (*real_modes[7])(void);
+static unsigned mode_active[7];
 static unsigned intro_key_active, editor_key_active, game_over_key_active, splash_key_active;
 static DxBallDisplayOps *bound_display;
 static void (*real_recover_surfaces)(void);
@@ -387,6 +391,48 @@ int dxball_test_bind_key_mode_ops(DxBallKeyModeOps *ops)
     bound_keys = ops;
     return 0;
 }
+
+int dxball_test_bind_mode_ops(DxBallModeOps *ops,
+                             void (*intro)(void), void (*game)(void),
+                             void (*editor)(void), void (*game_over)(void),
+                             void (*splash)(void), void (*device)(void),
+                             void (*synchronize)(void))
+{
+    void (*owners[7])(void) = {intro, game, editor, game_over, splash, device, synchronize};
+    void (*wrappers[7])(void) = {dxball_intro_frame, dxball_game_frame,
+        dxball_editor_frame, dxball_game_over_frame, dxball_splash_frame,
+        dxball_initialize_device_state, dxball_synchronize_surface};
+    unsigned i;
+    if (ops == NULL) return -1;
+    for (i = 0; i < 7; ++i)
+        if (owners[i] == NULL || owners[i] == wrappers[i]) return -2;
+    bound_modes = ops;
+    for (i = 0; i < 7; ++i) real_modes[i] = owners[i];
+    return 0;
+}
+
+/* Read the live fixture slot; untouched defaults use the copied real owner. */
+#define MODE_FORWARD(name, index, member) \
+void name(void) \
+{ \
+    void (*callback)(void); \
+    if (bound_modes == NULL) binding_failure("CoreNative " #name ": unbound modes"); \
+    callback = bound_modes->member; \
+    if (callback == name) callback = real_modes[index]; \
+    if (callback == NULL || callback == name || mode_active[index]) \
+        binding_failure("CoreNative " #name ": null or recursive callback"); \
+    mode_active[index] = 1; \
+    callback(); \
+    mode_active[index] = 0; \
+}
+MODE_FORWARD(dxball_intro_frame, 0, frame[0])
+MODE_FORWARD(dxball_game_frame, 1, frame[1])
+MODE_FORWARD(dxball_editor_frame, 2, frame[2])
+MODE_FORWARD(dxball_game_over_frame, 3, frame[3])
+MODE_FORWARD(dxball_splash_frame, 4, frame[4])
+MODE_FORWARD(dxball_initialize_device_state, 5, reinitialize_device)
+MODE_FORWARD(dxball_synchronize_surface, 6, synchronize_surface)
+#undef MODE_FORWARD
 
 void dxball_intro_key(char key)
 {
