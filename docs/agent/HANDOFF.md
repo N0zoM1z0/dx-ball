@@ -68,9 +68,9 @@ REA 6.3 rejects the old snapshot during integrity validation; the exact cause
 is unisolated. The old snapshot is
 retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
 Evidence IDs and dossiers remain available for direct reuse. The current
-snapshot contains nineteen cumulative new records, including the reading/insertion
-literals, three sprite-lifetime dossiers, six font facets and three PCX facets.
-Its latest close reports seven
+snapshot contains twenty cumulative records, including the reading/insertion
+literals, three sprite-lifetime dossiers, six font facets, three PCX facets and
+the complete rectangle-span read. Its latest close reports seven
 primitive entries and no workflow entries. New analysis responses expose
 `raw_result` and `normalized_result`, while older responses use `result`.
 See [REA commands](REA.md). No registration rewrite or provider installation
@@ -684,6 +684,25 @@ records 11,479,750 archive / 41,676 selected local bytes and callee/ownership
 usability suggestions, without measured token/latency claims.
 
 ## Working limits and completeness
+
+Latest source batch: `src/geometry.c` restores the rectangle fallback's repeated
+`abs` calls, original comparison order and independent nested returns. One VC4
+compile yields 329/329 bytes with 22 local EBP displacement differences; candidate
+only. Four abs relocations and both otherwise unowned five-byte jumps are
+included. Point-angle 109 remains exact; point-distance 130 retains 52 differences.
+The six-file actual project closure is covered by 27 declared inputs. Native and
+actual relocated VC4 each pass 8,000 unchanged maintained rectangle cases and
+full assertions. Native/MinGW rebuild geometry; VC4 links one matching +34
+verified unchanged objects/resources/SDK imports, zero extra source compiles.
+Historical semantic input rows 235 refresh without changing scopes/counts.
+All 171 accepted exact product/input receipts remain verified; no full replay.
+See [rectangle recovery](../research/exact/EXACT_RECTANGLE_COLLISION.md).
+Private proof `.analysis/exact-rectangle-collision/`; seal
+`.analysis/checkpoints/rectangle-collision-283-171/sha256.json`.
+The entity-play record below retains the older d544ecf executable identity.
+REA 6.3 performed one full 329-byte read, then closed: 20 Evidence/7 primitives.
+Entry 28 in the same existing feedback document records actual cold-read timings,
+byte sizes and full-span/retained-facet usability suggestions; no token claim.
 
 Latest runtime evidence: the VC4 product from `d544ecf` has a 45.019-second
 bounded original-board episode, 3,940 processed SDK records /3,480 game samples,

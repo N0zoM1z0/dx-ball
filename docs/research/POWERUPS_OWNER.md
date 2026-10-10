@@ -1,5 +1,13 @@
 # Bonus application, paddle and ball dependencies
 
+The [complete rectangle fallback recovery](exact/EXACT_RECTANGLE_COLLISION.md)
+restores repeated `abs` center calculations and the original nested return
+branches. One VC4 compile emits the complete 329-byte span; four call bindings
+and both five-byte gaps are checked. Its 22 remaining local displacement bytes
+keep it a candidate. Current Native/original x86 and actual VC4 selections each
+pass the same 8,000 maintained rectangle vectors; historical owner totals below
+retain their own epochs and scopes.
+
 The round-transition batch accepts the complete level advance (`0x415B30`,
 123 bytes / eleven relocations) and life loss (`0x415BB0`, 81 / seven).
 The source now calls the actual board initializer/counter and sound stop/play

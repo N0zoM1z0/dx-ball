@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+/* FUNCTION: DXBALL 0x00402100 */
 DxBallInt dxball_rectangles_overlap(DxBallInt left_a, DxBallInt top_a,
     DxBallInt right_a, DxBallInt bottom_a, DxBallInt left_b, DxBallInt top_b,
     DxBallInt right_b, DxBallInt bottom_b)
@@ -14,11 +15,17 @@ DxBallInt dxball_rectangles_overlap(DxBallInt left_a, DxBallInt top_a,
     height_b = bottom_b - top_b;
     distance_x = abs(left_a + width_a / 2 - (left_b + width_b / 2));
     distance_y = abs(top_a + height_a / 2 - (top_b + height_b / 2));
-    if (distance_x <= (width_a + width_b) / 2 &&
-            distance_y <= (height_a + height_b) / 2) {
+    if ((width_a + width_b) / 2 >= distance_x &&
+            (height_a + height_b) / 2 >= distance_y) {
         return 1;
+    } else {
+        if (abs(left_a + width_a / 2 - (left_b + width_b / 2)) < width_a / 2 &&
+                abs(top_a + height_a / 2 - (top_b + height_b / 2)) < height_a / 2) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
-    return distance_x < width_a / 2 && distance_y < height_a / 2;
 }
 
 /* FUNCTION: DXBALL 0x004025A0 */

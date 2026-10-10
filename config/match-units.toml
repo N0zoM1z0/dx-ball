@@ -1551,11 +1551,11 @@ size = 109
 boundary_evidence = "docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
   { offset = 0x2e, type = "REL32", symbol = "_atan2", addend = 0x0, target = 0x417608 },
-  { offset = 0x3a, type = "DIR32", symbol = "$T411", addend = 0x0, target = 0x420028, data_hex = "0000000000806640" },
+  { offset = 0x3a, type = "DIR32", symbol = "$T412", addend = 0x0, target = 0x420028, data_hex = "0000000000806640" },
   { offset = 0x40, type = "DIR32", symbol = "__adjust_fdiv", addend = 0x0, target = 0x42309c },
-  { offset = 0x49, type = "DIR32", symbol = "$T412", addend = 0x0, target = 0x420030, data_hex = "97d17e5afb210940" },
-  { offset = 0x51, type = "DIR32", symbol = "$T412", addend = 0x4, target = 0x420030, data_hex = "97d17e5afb210940" },
-  { offset = 0x57, type = "DIR32", symbol = "$T412", addend = 0x0, target = 0x420030, data_hex = "97d17e5afb210940" },
+  { offset = 0x49, type = "DIR32", symbol = "$T413", addend = 0x0, target = 0x420030, data_hex = "97d17e5afb210940" },
+  { offset = 0x51, type = "DIR32", symbol = "$T413", addend = 0x4, target = 0x420030, data_hex = "97d17e5afb210940" },
+  { offset = 0x57, type = "DIR32", symbol = "$T413", addend = 0x0, target = 0x420030, data_hex = "97d17e5afb210940" },
   { offset = 0x5c, type = "REL32", symbol = "__adj_fdiv_m64", addend = 0x0, target = 0x416e18 },
 ]
 
@@ -9583,4 +9583,17 @@ size = 220
 boundary_evidence = "docs/research/exact/EXACT_ENTITY_ALLOCATION.md"
 relocations = [
   { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x00416760 },
+]
+
+[candidates.rectangles-overlap]
+build = "geometry"
+symbol = "_dxball_rectangles_overlap"
+target_address = 0x00402100
+size = 329
+boundary_evidence = "docs/research/exact/EXACT_RECTANGLE_COLLISION.md"
+relocations = [
+  { offset = 77, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
+  { offset = 119, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
+  { offset = 218, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
+  { offset = 276, type = "REL32", symbol = "_abs", addend = 0, target = 0x00416780 },
 ]
