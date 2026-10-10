@@ -40,6 +40,14 @@ input identity refresh; no full owner or historical replay was run. Physical
 hardware, synchronized Windows rendering and complete game fidelity remain
 outside these checks.
 
+The linked `a53c18a` VC4 EXE subsequently passes the unchanged real-Wine
+ball/pause/editor/exit flow with 83 read-only state observations. Paddle motion,
+ball release/movement, pause freeze and resume, editor painting/save/reload,
+the established whole-bank hash and zero-code exit pass; all 49 original assets
+remain unchanged. Artifacts are in `.analysis/windows-play-paddle-a53c18a/`.
+The earlier original/MinGW controls were not rerun, and these observations do
+not compare synchronized pixels, physical audio/MIDI or complete-game fidelity.
+
 The [mode lifecycle controllers](exact/MAIN_MODE_LIFECYCLE.md) now use fifteen
 original direct calls across initialization, redraw and cleanup. All three
 complete spans match: 127, 127 and 162 bytes. Cleanup forwards the full DWORD

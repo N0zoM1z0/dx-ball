@@ -287,6 +287,13 @@ maintained cases/assertions are unchanged. Native/MinGW builds and 35-object
 VC4 relink pass. Private evidence is in `.analysis/exact-paddle-rendering/`.
 Other owner scopes remain historical; no full owner or historical replay was run.
 
+The current `a53c18a` VC4 product then passes the unchanged real-Wine
+ball/pause/editor/exit flow with 83 read-only observations, the established
+complete saved-bank hash and all 49 original identities unchanged. Receipts
+are in `.analysis/windows-play-paddle-a53c18a/`. Original/MinGW prior controls
+were not rerun; synchronized pixels, audio/MIDI and complete-game fidelity
+remain outside this selection.
+
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
 differences). The latter's original unused HRESULT storage is unresolved.
