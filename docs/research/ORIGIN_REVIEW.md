@@ -1,12 +1,12 @@
 # Reviewing runtime origins
 
-The latest [bounded origin audit](ORIGIN_AUDIT.md#verified-cross-section-crt-definitions)
-resolves eight further runtime entries through earlier verified section exports.
-Current origins are **270 authored / 58 runtime /42 compiler-generated /158 unknown**.
-Source, semantic and function exact acceptance remain unchanged. Complete section
-comparisons ground every relocation; candidate-inferred bindings and conflicting
-aliases remain excluded. The earlier 27-runtime/24-generated batch and other
-historical counts below retain their original scopes.
+The latest [bounded origin audit](ORIGIN_AUDIT.md#named-imports-and-complete-forwarding-code)
+resolves five further CRT entries and three import forwarders. Named PE imports,
+complete code and retained REA spans/body metadata corroborate their identities.
+Current origins are **270 authored /66 runtime /42 compiler-generated /150 unknown**.
+Source, semantic and function exact acceptance remain unchanged. Candidate-derived
+addresses and conflicting aliases remain excluded; IAT cells and forwarding code
+have separate binding roles. Earlier batches below retain their original scopes.
 
 The earlier [typed-list initialization checkpoint](exact/EXACT_LIST_INITIALIZERS.md)
 identifies seven authored constructors and 18 compiler-generated static

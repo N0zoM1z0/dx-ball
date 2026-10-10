@@ -777,6 +777,116 @@
           ]
         }
       ]
+    },
+    {
+      "address": "0x418510",
+      "size": 81,
+      "member": "build\\intel\\st_obj\\trnsctrl.obj",
+      "member_header_offset": 187692,
+      "member_sha256": "206b02d6136285da3400a3bd57538a7ca3bee816d979cdd51753322d6ed350ce",
+      "section_index": 8,
+      "entries": [
+        "0x00418510"
+      ],
+      "library_symbols": [
+        "?_UnwindNestedFrames@@YGXPAUEHRegistrationNode@@PAUEHExceptionRecord@@@Z"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 187692,
+          "symbols": [
+            "?_UnwindNestedFrames@@YGXPAUEHRegistrationNode@@PAUEHExceptionRecord@@@Z"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e1d0",
+      "size": 32,
+      "member": "build\\intel\\st_obj\\validate.obj",
+      "member_header_offset": 207158,
+      "member_sha256": "ad74830e9ec8afbc6c1a6afa0905536d3480e648dd1b7c8bf9a4b2b76d4400ff",
+      "section_index": 1,
+      "entries": [
+        "0x0041E1D0"
+      ],
+      "library_symbols": [
+        "?_ValidateRead@@YAHPBXI@Z"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 207158,
+          "symbols": [
+            "?_ValidateRead@@YAHPBXI@Z"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e1f0",
+      "size": 32,
+      "member": "build\\intel\\st_obj\\validate.obj",
+      "member_header_offset": 207158,
+      "member_sha256": "ad74830e9ec8afbc6c1a6afa0905536d3480e648dd1b7c8bf9a4b2b76d4400ff",
+      "section_index": 3,
+      "entries": [
+        "0x0041E1F0"
+      ],
+      "library_symbols": [
+        "?_ValidateWrite@@YAHPAXI@Z"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 207158,
+          "symbols": [
+            "?_ValidateWrite@@YAHPAXI@Z"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e210",
+      "size": 27,
+      "member": "build\\intel\\st_obj\\validate.obj",
+      "member_header_offset": 207158,
+      "member_sha256": "ad74830e9ec8afbc6c1a6afa0905536d3480e648dd1b7c8bf9a4b2b76d4400ff",
+      "section_index": 5,
+      "entries": [
+        "0x0041E210"
+      ],
+      "library_symbols": [
+        "?_ValidateExecute@@YAHP6GHXZ@Z"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 207158,
+          "symbols": [
+            "?_ValidateExecute@@YAHP6GHXZ@Z"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419560",
+      "size": 876,
+      "member": "..\\build\\intel\\st_obj\\fpexcept.obj",
+      "member_header_offset": 1007150,
+      "member_sha256": "d11f8eb2b9227f854719fb09d9e92ff6cf81dade95d87e0e6f3dc131c27e9b40",
+      "section_index": 38,
+      "entries": [
+        "0x00419560"
+      ],
+      "library_symbols": [
+        "__raise_exc"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1007150,
+          "symbols": [
+            "__raise_exc"
+          ]
+        }
+      ]
     }
   ],
   "limitations": [
@@ -785,6 +895,82 @@
     "Byte-identical memcpy/memmove and narrow/multibyte string aliases retain name ambiguity.",
     "Every applied binding comes from the reviewed prior CRT map or this section\u2019s defined symbols; diagnostic inferred bindings are not accepted.",
     "Cross-section bindings use only external symbol definitions from earlier fully verified sections. Later sections and candidate-derived relocation addresses are not binding authorities.",
-    "Additional sections are ordered by dependency. Complete equality corroborates pinned-library origin, not unique original library flags, alias spelling, source recovery or new configured exact functions."
+    "Additional sections are ordered by dependency. Complete equality corroborates pinned-library origin, not unique original library flags, alias spelling, source recovery or new configured exact functions.",
+    "Named PE import bindings are verified against the actual DLL/name/IAT cell. Forwarding thunks require their complete FF25 operand and retained REA byte or callee-body evidence; no SDK implementation or execution is claimed.",
+    "COFF stdcall spellings identify library references, not unique original source aliases or hardware/API success behavior."
+  ],
+  "import_bindings": [
+    {
+      "symbol": "__imp__IsBadCodePtr@4",
+      "dll": "KERNEL32.dll",
+      "name": "IsBadCodePtr",
+      "cell": "0x441244",
+      "kind": "iat",
+      "address": "0x441244"
+    },
+    {
+      "symbol": "__imp__IsBadReadPtr@8",
+      "dll": "KERNEL32.dll",
+      "name": "IsBadReadPtr",
+      "cell": "0x44124c",
+      "kind": "iat",
+      "address": "0x44124c"
+    },
+    {
+      "symbol": "__imp__IsBadWritePtr@8",
+      "dll": "KERNEL32.dll",
+      "name": "IsBadWritePtr",
+      "cell": "0x441248",
+      "kind": "iat",
+      "address": "0x441248"
+    },
+    {
+      "symbol": "__imp__RaiseException@16",
+      "dll": "KERNEL32.dll",
+      "name": "RaiseException",
+      "cell": "0x44133c",
+      "kind": "iat",
+      "address": "0x44133c"
+    },
+    {
+      "symbol": "_RtlUnwind@16",
+      "dll": "KERNEL32.dll",
+      "name": "RtlUnwind",
+      "cell": "0x4412c4",
+      "kind": "jump_thunk",
+      "address": "0x41fee6"
+    }
+  ],
+  "import_thunks": [
+    {
+      "address": "0x416600",
+      "size": 6,
+      "dll": "DDRAW.dll",
+      "name": "DirectDrawCreate",
+      "cell": "0x44122c",
+      "evidence_path": ".analysis/rea/runs/2026-10-10T09-54-48.050Z-requests-141774/00-read_bytes.json",
+      "evidence_id": "ev_3597b5834cfe1492671d77296cc122baf817aaa5d4b565180b3d4735a12ee517",
+      "evidence_facet": "bytes"
+    },
+    {
+      "address": "0x416606",
+      "size": 6,
+      "dll": "DSOUND.dll",
+      "name": "DirectSoundCreate",
+      "cell": "0x441234",
+      "evidence_path": ".analysis/rea/runs/2026-10-07T16-15-32.551Z-interactive-3807439/00-analyze_function.json",
+      "evidence_id": "ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f",
+      "evidence_facet": "callee"
+    },
+    {
+      "address": "0x41fee6",
+      "size": 6,
+      "dll": "KERNEL32.dll",
+      "name": "RtlUnwind",
+      "cell": "0x4412c4",
+      "evidence_path": ".analysis/rea/runs/2026-10-09T17-33-35.918Z-rea-runtime-requests-1477421/00-read_bytes.json",
+      "evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12",
+      "evidence_facet": "bytes"
+    }
   ]
 }

@@ -3,8 +3,12 @@
 import argparse
 import hashlib
 import json
+import re
+import struct
 from importlib.util import spec_from_file_location, module_from_spec
 from pathlib import Path
+
+import pefile
 
 from coff import parse, region, _relocations
 from crt_library import members, relocate
@@ -16,6 +20,107 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify_imports(original, manifest, base, loaded):
+    image = pefile.PE(str(original))
+    mapped = image.get_memory_mapped_image()
+    offset = base - image.OPTIONAL_HEADER.ImageBase
+    if offset < 0 or mapped[offset:offset + len(loaded)] != loaded:
+        raise ValueError('retained original bytes differ from the pinned PE')
+    named = {}
+    for descriptor in image.DIRECTORY_ENTRY_IMPORT:
+        for entry in descriptor.imports:
+            if entry.name:
+                key = (descriptor.dll.decode().casefold(), entry.name.decode())
+                if key in named:
+                    raise ValueError('ambiguous named PE import')
+                named[key] = entry.address
+
+    def cell(entry):
+        address = named.get((entry['dll'].casefold(), entry['name']))
+        if address is None or address != int(entry['cell'], 0):
+            raise ValueError('named PE import cell mismatch')
+        return address
+
+    def thunk(address, import_cell):
+        rva = address - image.OPTIONAL_HEADER.ImageBase
+        section = image.get_section_by_rva(rva)
+        code = image.get_data(rva, 6)
+        if (section is None or not section.Characteristics & 0x20000000 or
+                code != b'\xff\x25' + struct.pack('<I', import_cell)):
+            raise ValueError('complete import thunk differs')
+        return code
+
+    bindings, records, inputs = {}, {}, {}
+    for entry in manifest.get('import_bindings', []):
+        import_cell = cell(entry)
+        spelling = re.fullmatch(r'(__imp__|_)(.+)@\d+', entry['symbol'])
+        if not spelling or spelling[2] != entry['name']:
+            raise ValueError('COFF import spelling mismatch')
+        address = int(entry['address'], 0)
+        if entry['kind'] == 'iat' and spelling[1] == '__imp__':
+            if address != import_cell:
+                raise ValueError('IAT symbol does not bind its named cell')
+            basis = 'named PE IAT cell'
+        elif entry['kind'] == 'jump_thunk' and spelling[1] == '_':
+            code = thunk(address, import_cell)
+            if not base <= address <= base + len(loaded) - 6:
+                raise ValueError('import thunk exceeds retained byte observation')
+            if loaded[address - base:address - base + 6] != code:
+                raise ValueError('retained import thunk bytes differ')
+            basis = 'complete PE and retained-byte import thunk'
+        else:
+            raise ValueError('unsupported import binding kind')
+        if entry['symbol'] in bindings:
+            raise ValueError('duplicate import symbol binding')
+        bindings[entry['symbol']] = address
+        records[entry['symbol']] = dict(entry, basis=basis)
+
+    thunks, observations = [], {}
+    for entry in manifest.get('import_thunks', []):
+        if entry['size'] != 6:
+            raise ValueError('import thunk extent must be six bytes')
+        address = int(entry['address'], 0)
+        code = thunk(address, cell(entry))
+        path = ROOT / entry['evidence_path']
+        if path not in observations:
+            observations[path] = json.loads(path.read_text())
+            inputs[str(path.relative_to(ROOT))] = digest(path)
+            inputs[str((path.parent / 'close.json').relative_to(ROOT))] = digest(path.parent / 'close.json')
+        observation = observations[path]
+        evidence = observation['evidence']
+        if (observation['evidence_id'] != entry['evidence_id'] or
+                evidence['subject']['digest']['sha256'] != manifest['target_sha256'] or
+                evidence['provider'] != manifest['provider']):
+            raise ValueError('import Evidence target/provider identity mismatch')
+        result = observation['result']
+        if entry['evidence_facet'] == 'bytes':
+            first = int(result['address'], 0)
+            observed = bytes.fromhex(result['bytes_hex'])
+            if (not result['complete'] or not first <= address <= first + len(observed) - 6 or
+                    observed[address - first:address - first + 6] != code):
+                raise ValueError('retained complete thunk byte evidence differs')
+        elif entry['evidence_facet'] == 'callee':
+            matches = [p for p in result['callees']
+                       if re.fullmatch(r'0x[0-9a-fA-F]+', p.get('address', ''))
+                       and int(p['address'], 0) == address]
+            if len(matches) != 1:
+                raise ValueError('missing unique retained import callee')
+            candidate = matches[0]
+            body = candidate['body']
+            dll, name = candidate['name'].split('::', 1)
+            if (dll.casefold() != entry['dll'].casefold() or name != entry['name'] or
+                    not candidate['classification']['thunk'] or not body['available'] or
+                    body['total_bytes'] != 6 or body['span_bytes'] != 6 or
+                    body['non_contiguous'] or not body['contains_entry'] or
+                    body['ranges'] != [{'start': hex(address), 'end': hex(address + 5)}]):
+                raise ValueError('retained import callee identity/extent mismatch')
+        else:
+            raise ValueError('unsupported retained import facet')
+        thunks.append(dict(entry, status='same', bytes_hex=code.hex(),
+                           code_sha256=hashlib.sha256(code).hexdigest()))
+    return bindings, records, thunks, inputs
 
 
 def main():
@@ -47,6 +152,11 @@ def main():
         if prior['target_sha256'] != manifest['target_sha256'] or prior['provider'] != manifest['provider']:
             raise ValueError('prior relocation map belongs to another target/provider')
         fixed = {name: int(value, 0) for name, value in prior['relocations'].items()}
+        prior_symbols = set(fixed)
+        imported, import_records, import_thunks, import_inputs = verify_imports(original, manifest, base, loaded)
+        if any(n in fixed and fixed[n] != a for n, a in imported.items()):
+            raise ValueError('named import contradicts the reviewed prior CRT map')
+        fixed.update(imported)
         selected = {s['member_header_offset'] for s in manifest['sections']}
         raw_members = {offset: (name, raw) for offset, name, raw in members(library) if offset in selected}
         inputs = {str(p.relative_to(ROOT)): digest(p) for p in (
@@ -57,6 +167,7 @@ def main():
             ROOT / 'config/tools.lock.toml', ROOT / 'requirements-analysis.txt',
             evidence_path.parent / 'close.json')}
         inputs[str(evidence_path.relative_to(ROOT))] = evidence_hash
+        inputs.update(import_inputs)
         results = []
         verified_exports = {}
         export_origins = {}
@@ -98,7 +209,8 @@ def main():
                 code_sha256=hashlib.sha256(linked).hexdigest(), relocations=rels,
                 applied_bindings={r['symbol']: dict(address=hex(mapping[r['symbol']]),
                     basis=('section-defined symbol' if r['symbol'] in local else
-                           'reviewed prior CRT map' if r['symbol'] in fixed else
+                           import_records[r['symbol']]['basis'] if r['symbol'] in imported else
+                           'reviewed prior CRT map' if r['symbol'] in prior_symbols else
                            'earlier fully verified section export'),
                     **({'section_address': export_origins[r['symbol']]}
                        if r['symbol'] not in local and r['symbol'] not in fixed else {}))
@@ -115,7 +227,11 @@ def main():
         report = dict(status='pass', target_sha256=manifest['target_sha256'],
             original_byte_evidence_id=observed['evidence_id'], inputs=inputs,
             complete_sections=len(results), complete_section_bytes=sum(r['size'] for r in results),
-            origin_entries=len({a for r in results for a in r['entries']}),
+            origin_entries=len({int(a, 0) for r in results for a in r['entries']} |
+                               {int(r['address'], 0) for r in import_thunks}),
+            section_origin_entries=len({a for r in results for a in r['entries']}),
+            import_thunk_entries=len(import_thunks), import_thunk_bytes=sum(r['size'] for r in import_thunks),
+            import_bindings=import_records, import_thunks=import_thunks,
             results=results, limitations=manifest['limitations'])
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, indent=2) + '\n')

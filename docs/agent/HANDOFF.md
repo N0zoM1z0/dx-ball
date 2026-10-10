@@ -746,12 +746,27 @@ Entry 27 in the **same existing** `/tmp/dxball_rea_feedback_20261010.md` records
 pointer/list labeling and compact original-to-rebuilt state provenance usability
 suggestions. No new REA response, token or latency measurements.
 
-Latest origin batch: eight further CRT entries are grounded by complete
+Latest origin batch: named PE DLL/name/IAT tuples ground five further CRT
+sections and three complete import jumps. All1,048 new section bytes/13
+relocations match; each jump's full6bytes match. Current manifest39 sections
+/5,327 bytes /40 section origin rows, plus3 jumps /18bytes:43 distinct rows.
+Read/Write candidates differ in actual IAT operands; numeric PE addresses stay
+separate from EXTERNAL addresses. Four actual-verifier controls reject wrong
+cells/DLLs, Read/Write substitution and shifted jumps. Origins now270 authored
+/66 runtime /42 generated /150 unknown. Source/exact/semantic/product identities
+are unchanged; no provider/compiler/SDK runtime/gameplay process was started.
+Private .analysis/import-origin-closure/; seal
+.analysis/checkpoints/import-origin-closure-283-171/sha256.json. See
+[import origin audit](../research/ORIGIN_AUDIT.md#named-imports-and-complete-forwarding-code).
+Feedback entry31 stays in the same existing /tmp document: namespace-aware
+addresses, compact import-cell/forwarder/caller views and retained facets.
+
+Previous origin batch: eight further CRT entries are grounded by complete
 code sections and definitions from earlier fully verified sections. All
 2,142 added bytes and 32 actual relocation operands match. The current manifest
 checks 34 complete sections /4,279 bytes /35 origin entries. Future unverified
 exports, shifted spans and conflicting established addresses fail three
-independent controls. Current origins: 270 authored /58 runtime /42 generated
+independent controls. At that preceding checkpoint: 270 authored /58 runtime /42 generated
 /158 unknown. Source, function exactness and semantic acceptance are unchanged;
 no production build or runtime check was repeated. Original source denominator
 and full-game fidelity remain unresolved.

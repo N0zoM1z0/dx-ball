@@ -1,8 +1,8 @@
 # Bounded origin audit
 
-The origin ledger now records **270 authored / 58 runtime / 42 compiler-generated /
-158 unknown entries**. The latest batch resolves eight further CRT entries through
-complete relocated code sections. Source presence remains **283** (270 authored,
+The origin ledger now records **270 authored / 66 runtime / 42 compiler-generated /
+150 unknown entries**. The latest batch resolves five further CRT entries and three
+import forwarders through named PE imports and complete code comparisons. Source presence remains **283** (270 authored,
 one unknown-origin no-effect body and 12 runtime bodies); scoped semantic
 acceptance remains **247 entries**, and exact acceptance remains **171 complete
 functions /30,744 code bytes plus 136 separate metadata bytes**. Earlier batches
@@ -10,8 +10,60 @@ below retain their own scopes and counts.
 
 All 270 currently confirmed authored entries have maintained source. That
 conditional result does not establish the full authored denominator or >=95%
-complete source recovery. The remaining 158 unknown origins, provisional
+complete source recovery. The remaining 150 unknown origins, provisional
 boundaries, original type uncertainty and whole-game fidelity remain open.
+
+## Named imports and complete forwarding code
+
+The verifier now binds selected COFF import references from the verified
+original PE's DLL/name/IAT tuple. An IAT symbol binds the named cell itself;
+a function symbol binds a complete six-byte indirect jump through that cell.
+Neither address is copied from a candidate's inferred relocation. The entire
+retained 39,136-byte observation is also compared with the pinned PE.
+
+Five additional `libc.lib` code sections match all 1,048 bytes and thirteen
+relocations. Independent imports resolve the otherwise identical Read/Write
+candidates; their actual IAT operands differ.
+
+| Original section | Complete bytes | Pinned COFF symbol | Named import dependency |
+| --- | ---: | --- | --- |
+| `0x418510` | 81 | `?_UnwindNestedFrames@@YGXPAUEHRegistrationNode@@PAUEHExceptionRecord@@@Z` | `RtlUnwind` forwarding code |
+| `0x41E1D0` | 32 | `?_ValidateRead@@YAHPBXI@Z` | `IsBadReadPtr` IAT |
+| `0x41E1F0` | 32 | `?_ValidateWrite@@YAHPAXI@Z` | `IsBadWritePtr` IAT |
+| `0x41E210` | 27 | `?_ValidateExecute@@YAHP6GHXZ@Z` | `IsBadCodePtr` IAT |
+| `0x419560` | 876 | `__raise_exc` | `RaiseException` IAT plus earlier verified floating-status helpers |
+
+Three complete forwarding entries are separately classified as runtime imports:
+
+| Entry | Bytes | Named PE import / IAT cell | Retained REA corroboration |
+| --- | ---: | --- | --- |
+| `0x416600` | 6 | `DDRAW.dll!DirectDrawCreate` /`0x44122C` | Complete six-byte read |
+| `0x416606` | 6 | `DSOUND.dll!DirectSoundCreate` /`0x441230` | Sound dossier's unique callee/body, contiguous six-byte extent |
+| `0x41FEE6` | 6 | `KERNEL32.dll!RtlUnwind` /`0x4412C4` | Complete CRT byte observation |
+
+Each executable PE span must contain exactly `FF 25` and the named cell operand.
+The DirectSound archive supplies identity and extent; the PE supplies its actual
+six bytes. This differs from byte-read corroboration and remains explicit in the
+report. Evidence IDs: DirectDraw
+`ev_3597b5834cfe1492671d77296cc122baf817aaa5d4b565180b3d4735a12ee517`,
+sound/callee `ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f`,
+and CRT `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
+External namespaces remain separate from numeric PE addresses. The first reader
+attempted to convert an unrelated `EXTERNAL:0x4d`; it stopped before acceptance
+and is retained, then corrected to select only numeric PE callees.
+
+The manifest now verifies 39 CRT code sections /5,327 bytes /40 section entry
+rows, plus three forwarding entries /18 bytes: 43 distinct origin rows. Four
+actual-verifier controls reject a wrong named cell, wrong DLL, Read/Write
+substitution and a shifted SDK jump. All external COFF function-name sets are
+checked independently against the selected member sections.
+
+Only eight origin rows change; game source, 171 function exact acceptances,
+247 semantic scopes and current products are unchanged. No compiler, provider,
+SDK runtime or gameplay process was started. DLL implementation, asynchronous
+fault/unwind behavior and unique original source/link selection are unproven.
+Private proof `.analysis/import-origin-closure/`; immutable seal
+`.analysis/checkpoints/import-origin-closure-283-171/sha256.json`.
 
 ## Verified cross-section CRT definitions
 
@@ -38,7 +90,7 @@ The observation also agrees with the verified original PE. Their complete
 | `0x41E6E0` | 232 | `___mtold12` | `___shl_12`, `___add_12` |
 | `0x41D370` | 459 | `__ld12cvt` | `__IsZeroMan`, `__FillZeroMan`, `__CopyMan`, `__RoundMan`, `__ShrMan` |
 
-The current manifest verifies 34 complete sections /4,279 bytes /35 imported
+The preceding manifest verified 34 complete sections /4,279 bytes /35 imported
 entry rows. The eight new rows move from unknown origin to runtime dependency;
 this does not recover additional game source or create function exactness.
 Independent negative controls reject a consumer placed before its unverified

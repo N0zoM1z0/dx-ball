@@ -312,8 +312,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00416570,authored,bonuses,maintain,high,ev_046d2688735634355139cd40311164ecef5678d0c72c5d709a650561ada2fa7d
 0x004165A0,authored,effects,maintain,high,ev_77d66ee7458edb5c8504d596db1bf86909164dcf8d8feb0ab85101e184748750
 0x004165D0,authored,core,maintain,high,ev_d03e455e9b512ca03c865a482daeddf5b5f12289f947ee04e038553a8e3c9765
-0x00416600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00416606,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00416600,runtime,windows_import,dependency,high,ev_3597b5834cfe1492671d77296cc122baf817aaa5d4b565180b3d4735a12ee517
+0x00416606,runtime,windows_import,dependency,high,ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f
 0x00416610,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00416760,runtime,allocator,dependency,high,ev_dd4c8eb171fe4da4755816c3387814ad47a13e806c38958c44aa8cbc190e44ac
 0x00416770,runtime,allocator,dependency,high,ev_2f47da62f234bfb025db282149258ce5cb1b53a74591f045695579a7d8887f91
@@ -369,7 +369,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004184E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004184F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00418500,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00418510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00418510,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00418570,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004185B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00418650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -400,7 +400,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004193F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00419450,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004194A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00419560,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00419560,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x004198D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00419B90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00419C40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -493,9 +493,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041DFD0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041E000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E160,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041E1D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041E1F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041E210,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041E1D0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
+0x0041E1F0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
+0x0041E210,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041E230,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E250,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E2F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -526,4 +526,4 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041FD40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041FD70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041FDE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041FEE6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041FEE6,runtime,windows_import,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
