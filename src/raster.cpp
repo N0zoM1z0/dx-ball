@@ -1,4 +1,7 @@
 #include "raster.h"
+extern "C" {
+#include "allocator.h"
+}
 #include <stdlib.h>
 #include <string.h>
 
@@ -37,48 +40,33 @@ DxBallRasterOps dxball_raster_ops = { malloc, free, portable_muldiv };
 void dxball_fill_horizontal_span(DxBallByte *row, DxBallInt left,
                                 DxBallInt right, DxBallByte color)
 {
-    DxBallInt length = right - left + 1;
-    DxBallByte *pixel = row + left;
-    while (length > 0) {
-        *pixel++ = color;
-        --length;
-    }
-}
-
-static void sort_edges(RasterEdge **edges, DxBallInt count, DxBallInt by_x)
-{
-    DxBallInt gap, i, j, earlier, later;
-    RasterEdge *saved;
-    for (gap = 1; gap < count; gap = gap * 3 + 1) { }
-    while ((gap /= 3) > 0) {
-        for (i = gap; i < count; ++i) {
-            for (j = i - gap; j >= 0; j -= gap) {
-                earlier = by_x ? edges[j]->x : edges[j]->top;
-                later = by_x ? edges[j + gap]->x : edges[j + gap]->top;
-                if (later >= earlier)
-                    break;
-                saved = edges[j];
-                edges[j] = edges[j + gap];
-                edges[j + gap] = saved;
-            }
+    DxBallInt length, alignment = 0;
+    length = right - left + 1;
+    row += left;
+    if (length > 4 && (alignment = (DxBallInt)((size_t)row & 3)) != 0) {
+        while (alignment++ < 4) {
+            *row++ = color;
+            --length;
         }
     }
+    while (length-- > 0) *row++ = color;
+    return;
 }
 
-static void fill_polygon(DxBallByte *pixels, DxBallInt pitch,
-                         const DxBallRasterPoint *points, DxBallInt count,
-                         DxBallByte color, DxBallInt clip)
+/* FUNCTION: DXBALL 0x0040B550 */
+void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
+    const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
 {
-    RasterEdge *storage, **pending, **active, *edge;
+    RasterEdge *storage, **pending, **active, *edge, *saved;
     DxBallRasterPoint first, second, swap;
-    DxBallInt used, live, next, i, y, left, right;
-    storage = (RasterEdge *)dxball_raster_ops.allocate(count * sizeof(*storage));
-    pending = (RasterEdge **)dxball_raster_ops.allocate(count * sizeof(*pending));
-    active = (RasterEdge **)dxball_raster_ops.allocate(count * sizeof(*active));
+    DxBallInt used, live, next, gap, i, j, y, left, right;
+    storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*storage)));
+    pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*pending)));
+    active = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*active)));
     if (storage == NULL || pending == NULL || active == NULL) {
-        if (storage != NULL) dxball_raster_ops.deallocate(storage);
-        if (pending != NULL) dxball_raster_ops.deallocate(pending);
-        if (active != NULL) dxball_raster_ops.deallocate(active);
+        if (storage != NULL) dxball_heap_release(storage);
+        if (pending != NULL) dxball_heap_release(pending);
+        if (active != NULL) dxball_heap_release(active);
         return;
     }
     used = 0;
@@ -101,7 +89,16 @@ static void fill_polygon(DxBallByte *pixels, DxBallInt pitch,
         edge->error = 0;
         pending[used++] = edge;
     }
-    sort_edges(pending, used, 0);
+    for (gap = 1; gap < used; gap = gap * 3 + 1) { }
+    while ((gap /= 3) > 0) {
+        for (i = gap; i < used; ++i) {
+            for (j = i - gap; j >= 0 && pending[j + gap]->top < pending[j]->top; j -= gap) {
+                saved = pending[j];
+                pending[j] = pending[j + gap];
+                pending[j + gap] = saved;
+            }
+        }
+    }
     next = live = 0;
     /* A nonhorizontal closed contour and representable arithmetic are the
        original routine's required domain; its zero-edge read is unresolved. */
@@ -118,17 +115,127 @@ static void fill_polygon(DxBallByte *pixels, DxBallInt pitch,
                 ++i;
             }
         }
-        sort_edges(active, live, 1);
+        for (gap = 1; gap < live; gap = gap * 3 + 1) { }
+        while ((gap /= 3) > 0) {
+            for (i = gap; i < live; ++i) {
+                for (j = i - gap; j >= 0 && active[j + gap]->x < active[j]->x; j -= gap) {
+                    saved = active[j];
+                    active[j] = active[j + gap];
+                    active[j + gap] = saved;
+                }
+            }
+        }
         for (i = 0; i < live; i += 2) {
             left = active[i]->x;
             right = active[i + 1]->x;
             if (active[i]->error > 0) ++left;
             if (active[i + 1]->error <= 0) --right;
-            if (left <= right && (!clip || (y >= 0 && y < 480))) {
-                if (clip) {
-                    if (right > 638) right = 639;
-                    if (left < 1) left = 0;
+            if (left <= right)
+                dxball_fill_horizontal_span(pixels + y * pitch, left, right, color);
+        }
+        for (i = 0; i < live; ++i) {
+            edge = active[i];
+            edge->error += edge->dx;
+            if (edge->dx < 0) {
+                while (edge->dy <= -edge->error) {
+                    edge->error += edge->dy;
+                    --edge->x;
                 }
+            } else {
+                while (edge->dy <= edge->error) {
+                    edge->error -= edge->dy;
+                    ++edge->x;
+                }
+            }
+        }
+        ++y;
+    }
+    dxball_heap_release(storage);
+    dxball_heap_release(pending);
+    dxball_heap_release(active);
+    return;
+}
+
+/* FUNCTION: DXBALL 0x0040BB60 */
+void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallInt pitch,
+    const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
+{
+    RasterEdge *storage, **pending, **active, *edge, *saved;
+    DxBallRasterPoint first, second, swap;
+    DxBallInt used, live, next, gap, i, j, y, left, right;
+    storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*storage)));
+    pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*pending)));
+    active = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*active)));
+    if (storage == NULL || pending == NULL || active == NULL) {
+        if (storage != NULL) dxball_heap_release(storage);
+        if (pending != NULL) dxball_heap_release(pending);
+        if (active != NULL) dxball_heap_release(active);
+        return;
+    }
+    used = 0;
+    for (i = 0; i < count; ++i) {
+        first = points[i];
+        second = points[(i + 1) % count];
+        if (first.y == second.y)
+            continue;
+        if (second.y < first.y) {
+            swap = first;
+            first = second;
+            second = swap;
+        }
+        edge = &storage[used];
+        edge->top = first.y;
+        edge->bottom = second.y;
+        edge->x = first.x;
+        edge->dx = second.x - first.x;
+        edge->dy = second.y - first.y;
+        edge->error = 0;
+        pending[used++] = edge;
+    }
+    for (gap = 1; gap < used; gap = gap * 3 + 1) { }
+    while ((gap /= 3) > 0) {
+        for (i = gap; i < used; ++i) {
+            for (j = i - gap; j >= 0 && pending[j + gap]->top < pending[j]->top; j -= gap) {
+                saved = pending[j];
+                pending[j] = pending[j + gap];
+                pending[j + gap] = saved;
+            }
+        }
+    }
+    next = live = 0;
+    /* A nonhorizontal closed contour and representable arithmetic are the
+       original routine's required domain; its zero-edge read is unresolved. */
+    y = pending[0]->top;
+    while (next < used || live != 0) {
+        while (next < used && pending[next]->top == y)
+            active[live++] = pending[next++];
+        i = 0;
+        while (i < live) {
+            if (active[i]->bottom == y) {
+                --live;
+                memmove(&active[i], &active[i + 1], (live - i) * sizeof(*active));
+            } else {
+                ++i;
+            }
+        }
+        for (gap = 1; gap < live; gap = gap * 3 + 1) { }
+        while ((gap /= 3) > 0) {
+            for (i = gap; i < live; ++i) {
+                for (j = i - gap; j >= 0 && active[j + gap]->x < active[j]->x; j -= gap) {
+                    saved = active[j];
+                    active[j] = active[j + gap];
+                    active[j + gap] = saved;
+                }
+            }
+        }
+        for (i = 0; i < live; i += 2) {
+            left = active[i]->x;
+            right = active[i + 1]->x;
+            if (active[i]->error > 0) ++left;
+            if (active[i + 1]->error <= 0) --right;
+            if (left <= right && y >= 0 && y < 480) {
+                if (right > 638) right = 639;
+                if (left < 1) left = 0;
                 dxball_fill_horizontal_span(pixels + y * pitch, left, right, color);
             }
         }
@@ -149,23 +256,10 @@ static void fill_polygon(DxBallByte *pixels, DxBallInt pitch,
         }
         ++y;
     }
-    dxball_raster_ops.deallocate(storage);
-    dxball_raster_ops.deallocate(pending);
-    dxball_raster_ops.deallocate(active);
-}
-
-/* FUNCTION: DXBALL 0x0040B550 */
-void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
-                        const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
-{
-    fill_polygon(pixels, pitch, points, count, color, 0);
-}
-
-/* FUNCTION: DXBALL 0x0040BB60 */
-void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallInt pitch,
-                                const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
-{
-    fill_polygon(pixels, pitch, points, count, color, 1);
+    dxball_heap_release(storage);
+    dxball_heap_release(pending);
+    dxball_heap_release(active);
+    return;
 }
 
 /* FUNCTION: DXBALL 0x0040AB90 */

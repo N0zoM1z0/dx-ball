@@ -102,6 +102,12 @@ class Point(C.Structure):
 Alloc = C.CFUNCTYPE(C.c_void_p, C.c_size_t)
 Free = C.CFUNCTYPE(None, C.c_void_p)
 MulDiv = C.CFUNCTYPE(C.c_int32, C.c_int32, C.c_int32, C.c_int32)
+HeapAllocate = C.CFUNCTYPE(C.c_void_p, C.c_void_p, C.c_uint32, C.c_size_t)
+HeapRelease = C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_uint32, C.c_void_p)
+
+
+class HeapApi(C.Structure):
+    _fields_ = [('create', C.c_void_p), ('allocate', HeapAllocate), ('release', HeapRelease)]
 
 
 class Ops(C.Structure):
@@ -121,6 +127,20 @@ class RasterNative:
         self.ops.allocate = self.alloc_callback
         self.ops.deallocate = self.free_callback
         self.ops.muldiv = self.muldiv_callback
+        # Exercise the genuine runtime malloc/free bodies through their actual
+        # physical heap slots. Keep the existing allocation failure vectors.
+        self.heap_api = HeapApi.in_dll(self.lib, 'dxball_heap_api')
+        self.saved_heap_api = bytes(self.heap_api)
+        self.heap = C.c_void_p.in_dll(self.lib, 'dxball_runtime_heap')
+        self.saved_heap = self.heap.value
+        self.malloc_mode = C.c_int32.in_dll(self.lib, 'dxball_malloc_mode')
+        self.saved_malloc_mode = self.malloc_mode.value
+        self.heap.value = 0x52535452
+        self.malloc_mode.value = 0
+        self.heap_allocate_callback = HeapAllocate(self.heap_allocate)
+        self.heap_release_callback = HeapRelease(self.heap_release)
+        self.heap_api.allocate = self.heap_allocate_callback
+        self.heap_api.release = self.heap_release_callback
         for name in ('dxball_fill_polygon', 'dxball_fill_polygon_clipped'):
             function = getattr(self.lib, name)
             function.argtypes = [C.c_void_p, C.c_int32, C.POINTER(Point), C.c_int32, C.c_uint8]
@@ -132,6 +152,22 @@ class RasterNative:
 
     def restore(self):
         C.memmove(C.addressof(self.ops), self.saved_ops, len(self.saved_ops))
+        C.memmove(C.addressof(self.heap_api), self.saved_heap_api, len(self.saved_heap_api))
+        self.heap.value = self.saved_heap
+        self.malloc_mode.value = self.saved_malloc_mode
+
+    def heap_allocate(self, heap, flags, size):
+        if heap != self.heap.value or flags != 0:
+            self.errors.append('Unexpected physical heap allocation arguments')
+            return None
+        return self.allocate(size)
+
+    def heap_release(self, heap, flags, pointer):
+        if heap != self.heap.value or flags != 0:
+            self.errors.append('Unexpected physical heap release arguments')
+            return 0
+        self.free(pointer)
+        return 1
 
     def fixture(self, points, pitch, mask):
         self.mask, self.count = mask, len(points)

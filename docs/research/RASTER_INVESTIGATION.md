@@ -1,5 +1,11 @@
 # Software raster controllers
 
+The current [controller restoration](exact/EXACT_RASTER_CONTROLLERS.md) recovers
+independent polygon bodies and genuine runtime heap calls. Horizontal fill is
+exact across all 144 bytes; the eight fixed-point exact code/metadata units stay
+exact. Selected native and actual VC4 checks pass. The initial factored-source
+implementation and full historical campaigns below retain their own scope.
+
 Historical compiler-product checks below are archived in checkpoint
 `exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.

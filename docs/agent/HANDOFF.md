@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 170 exact functions / 30,600 full-span bytes and
+- 283 source-present entries; 171 exact functions / 30,744 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -605,6 +605,37 @@ The sealed current checkpoint is
 `.analysis/checkpoints/directx-factories-283-170/sha256.json`. It preserves the
 current products, recursive inputs, vendor import receipts, reused REA Evidence
 and both the rejected import-table control and valid actual play records.
+
+## Current raster controller checkpoint
+
+`src/raster.cpp` restores independent polygon scan controllers, their genuine
+runtime malloc/release calls and the horizontal fill's alignment/postfix loops.
+The fill at `0x40B4C0` is exact across all144 bytes on one stable VC4 compile.
+Eight fixed-point units retain all571 code /136 metadata bytes. Complete triangle
+and both polygon bodies remain candidates; no layout/name/declaration trials.
+Actual recursive project closure is four files, including `allocator.h`.
+
+Final native and actual relocated VC4 checks each pass the same2,232 selected
+existing cases:1,080 polygon,72 triangle,1,080 span. Full guarded pixels, scratch,
+normalized pointers and ordered allocation/free/MulDiv calls agree. Native now
+exercises genuine allocator bodies through controlled physical heap slots;
+original/COFF allocator boundaries remain controlled. Existing failure masks and
+assertions are unchanged. No full owner/historical queue or new Wine play run.
+Actual raster game use, exceptional unwind and physical driver fidelity remain
+unproven. Earlier play controls retain their historical executable hashes.
+
+Native/MinGW builds pass. The VC4 game link reuses the actual matching object
+and34 verified unchanged objects, with zero extra production source compiles;
+existing resources and SDK import libraries are verified/reused. Global counts
+are171 exact /30,744 complete code bytes /136 metadata bytes,283 source-present
+and247 scoped semantic rows. Source presence is not full-source/frame fidelity.
+
+Receipts: `.analysis/exact-raster-controllers/`; seal:
+`.analysis/checkpoints/raster-controllers-283-171/sha256.json`.
+See [current raster recovery](../research/exact/EXACT_RASTER_CONTROLLERS.md).
+REA was not opened. Feedback entry24 in the same `/tmp` document records
+5,983,244 retained bytes /55,397 local selected bytes and loop-state/allocator
+identity usability suggestions, without claiming measured tokens or latency.
 
 ## Working limits and completeness
 
