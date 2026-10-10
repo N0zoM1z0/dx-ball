@@ -1,5 +1,45 @@
 # Game lifecycle and mode dispatch
 
+The paddle-rendering batch restores the complete `0x412EC0` controller's direct
+elapsed/time/RNG/effect-sprite/region calls, independent floating margin branches,
+live sprite/surface loads and both meaningful rectangles. In particular, the
+dirty rectangle is saved before BltFast and passed unchanged afterward. A
+private original/native boundary probe changes width and overlay height during
+BltFast: the previous sealed library invalidates the wrong rectangle, while the
+restored library agrees with the original in all six cases. The full-width dirty
+span and cropped source span remain distinct. Extended x87 multiplication of
+the original binary64 literals is preserved; at width 120 the laser margin is
+eight, not the nine obtained by first rounding the product to binary64.
+
+The complete paddle comparison remains a 679/677-byte candidate with 52 explicit
+relocations and 496 unaligned differences, including bank operand scheduling
+and differing local homes. Both eight-byte floating literals match the pinned
+image. No declaration/name/layout permutations or padding are used. The raw
+WinMM clock mapping covers the consumed first callback entry; it does not claim
+that the portable three-entry clock table is the original import layout.
+
+This stable runtime compile also proves the complete elapsed function at
+`0x4034F0`: all 81 bytes, one relocation, including the formerly excluded five-byte
+internal jump. Its body is unchanged in this batch. The retained pre-batch object
+is identical and matches too; the old three-difference candidate description
+was stale after the control-flow edit in `8bf2931`. All ten accepted runtime
+functions match together, and the five other candidates remain explicit.
+
+One successful VC4 compilation follows an initial API-type diagnostic: region
+queuing takes the actual RECT by value. The 25-file recipe covers the full
+consumed project closure. Native/MinGW builds pass; VC4 relinks 35 verified
+objects without further source compilation. The final library passes 837
+selected existing clock/elapsed/paddle and initializer/death/reset/dispatch
+calls, including 36 connected frames. The six private mutation probes are
+separate evidence, not additions to the maintained matrix. The runtime fixture
+now retains complete COM events on both sides instead of applying its obsolete
+board-callback normalization; cases and assertions are unchanged. All failed
+private attempts and original response identities remain retained in
+`.analysis/exact-paddle-rendering/`. Other owner loops remain historical after
+input identity refresh; no full owner or historical replay was run. Physical
+hardware, synchronized Windows rendering and complete game fidelity remain
+outside these checks.
+
 The [mode lifecycle controllers](exact/MAIN_MODE_LIFECYCLE.md) now use fifteen
 original direct calls across initialization, redraw and cleanup. All three
 complete spans match: 127, 127 and 162 bytes. Cleanup forwards the full DWORD

@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 166 exact functions / 29,683 full-span bytes and
+- 283 source-present entries; 167 exact functions / 29,764 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -268,6 +268,25 @@ intro/splash candidate gaps are documented in
 the owner notes; do not perform declaration/name/layout/padding permutations
 or add unconsumed request storage simply to force exactness.
 
+The subsequent paddle batch restores original direct calls, independent x87
+margin branches, fresh surface/sprite reads and the pre-COM dirty rectangle.
+Six private original/native COM-mutation cases accept the final library and
+reject the preceding sealed library. The complete 679/677-byte paddle candidate
+has 52 bindings /496 unaligned differences and both verified eight-byte literals.
+Do not use local/operand-layout permutations to force a match.
+
+Elapsed (`0x4034F0`) now has a complete 81-byte exact claim with one relocation,
+including its internal five-byte jump. Its current body is unchanged: the
+pre-batch object is identical and also matches, superseding the stale historical
+three-difference description after `8bf2931`. All ten accepted runtime bodies
+match together. One stable runtime compile follows an API-type diagnostic;
+all 25 project inputs are declared. The final library passes 837 selected
+existing clock/elapsed/paddle and initializer/death/reset/dispatch calls, including
+36 connected frames. The fixture keeps complete COM events on both sides;
+maintained cases/assertions are unchanged. Native/MinGW builds and 35-object
+VC4 relink pass. Private evidence is in `.analysis/exact-paddle-rendering/`.
+Other owner scopes remain historical; no full owner or historical replay was run.
+
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
 differences). The latter's original unused HRESULT storage is unresolved.
@@ -294,7 +313,9 @@ Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Entry 13 adds current cold/warm function latency and response-size measurements.
 Entry 14 records bounded key/point archive views and the unresolved storage
-consumer boundary. Nothing has been sent externally.
+consumer boundary. Entry 15 records inferred call prototypes hiding actual
+arguments. Entry 16 records pre-COM rectangle consumers and x87 precision/literal
+context. Nothing has been sent externally.
 
 ## Working limits and completeness
 

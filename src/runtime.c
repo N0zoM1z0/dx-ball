@@ -66,17 +66,15 @@ DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval)
 void dxball_draw_paddle(void)
 {
     DxBallInt base_width, factor, sprite, offset_y, margin, x, y;
-    DxBallUInt now;
-    DxBallSprite *overlay;
-    DxBallDDSurface *surface;
-    DxBallRect rect;
+    DxBallRect rect, dirty;
     base_width = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_sprite]->width;
     factor = dxball_paddle_width / base_width;
+    offset_y = 0;
     sprite = factor * 4 + dxball_paddle_frame;
-    if (dxball_frame_ops.elapsed(dxball_paddle_tick, 64)) {
+    if (dxball_elapsed(dxball_paddle_tick, 64)) {
         ++dxball_paddle_frame;
         if (dxball_paddle_frame > 3) dxball_paddle_frame = 0;
-        dxball_paddle_tick = dxball_frame_ops.current_time();
+        dxball_paddle_tick = dxball_current_time();
     }
     if (dxball_bonus_8_active == 1) {
         sprite += 104; offset_y = 15;
@@ -87,24 +85,32 @@ void dxball_draw_paddle(void)
         sprite += 64; offset_y = 0;
     }
     if (dxball_attached_ball_cue == 1) {
-        now = dxball_clock_ops.time_ms();
-        if (dxball_paddle_overlay_deadline < now || dxball_paddle_overlay_width != dxball_paddle_width) {
-            dxball_paddle_overlay_sprite = dxball_gameplay_ops.random_range(4) + factor * 4 + 124;
+        if (dxball_paddle_overlay_deadline < dxball_clock_ops.time_ms() ||
+            dxball_paddle_overlay_width != dxball_paddle_width) {
+            dxball_paddle_overlay_sprite = dxball_random_range(4) + factor * 4 + 124;
             dxball_paddle_overlay_deadline = dxball_clock_ops.time_ms() + 33;
             dxball_paddle_overlay_width = dxball_paddle_width;
         }
-        margin = (DxBallInt)((long double)dxball_paddle_width * (dxball_bonus_8_active == 1 ? 0.075 : 0.03));
+        if (dxball_bonus_8_active == 1)
+            margin = (DxBallInt)((long double)dxball_paddle_width * 0.075);
+        else
+            margin = (DxBallInt)((long double)dxball_paddle_width * 0.03);
         x = dxball_paddle_x - dxball_paddle_width / 2 + margin;
         y = dxball_paddle_y - 14;
-        overlay = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite];
         rect.left = margin; rect.top = 0;
-        rect.right = dxball_paddle_width - margin; rect.bottom = overlay->height;
-        surface = (DxBallDDSurface *)dxball_effect_surface;
-        surface->vtable->blt_fast(surface, x, y, overlay->surface, &rect, 0x11);
-        dxball_particle_region(x, y, x + dxball_paddle_width, y + overlay->height);
+        rect.right = dxball_paddle_width - margin;
+        rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite]->height;
+        dirty.left = x; dirty.top = rect.top + y;
+        dirty.right = dxball_paddle_width + x; dirty.bottom = rect.bottom + y;
+        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_effect_surface, x, y,
+            dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite]->surface,
+            &rect, 0x11);
+        dxball_queue_region(dirty);
     }
-    dxball_frame_ops.draw_effect_sprite(sprite, dxball_paddle_x - dxball_paddle_width / 2,
+    dxball_draw_effect_sprite(sprite, dxball_paddle_x - dxball_paddle_width / 2,
         dxball_paddle_y - offset_y);
+    return;
 }
 
 void dxball_draw_score(void)

@@ -201,7 +201,8 @@ class RuntimeTarget(CoreTarget):
 
 
 class RuntimeHarness(Harness):
-    normalize_board_restores=True
+    # Both cell owners now call the actual COM slot; keep its complete event.
+    normalize_board_restores=False
 
     def __init__(self,library,native_type=RuntimeNative,target_type=RuntimeTarget):
         self.boards=(ROOT/'original/DEFAULT.BDS').read_bytes()
