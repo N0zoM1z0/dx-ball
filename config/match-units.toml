@@ -8384,3 +8384,403 @@ type = "DIR32"
 symbol = "$L1341"
 addend = 0
 target = 0x00406B14
+
+[units.initialize-editor]
+build = "editor"
+symbol = "_dxball_initialize_editor"
+target_address = 0x0040C1A0
+size = 263
+
+[[units.initialize-editor.relocations]]
+offset = 7
+type = "REL32"
+symbol = "_dxball_reset_regions"
+addend = 0
+target = 0x00408070
+
+[[units.initialize-editor.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.initialize-editor.relocations]]
+offset = 20
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.initialize-editor.relocations]]
+offset = 34
+type = "DIR32"
+symbol = "$SG1102"
+addend = 0
+target = 0x0042279C
+data_hex = "6d62626b67726e642e70637800"
+
+[[units.initialize-editor.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.initialize-editor.relocations]]
+offset = 45
+type = "REL32"
+symbol = "_dxball_load_pcx"
+addend = 0
+target = 0x00409BB0
+
+[[units.initialize-editor.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "$SG1103"
+addend = 0
+target = 0x004227AC
+data_hex = "6d62616c6c322e73626b00"
+
+[[units.initialize-editor.relocations]]
+offset = 62
+type = "REL32"
+symbol = "_dxball_load_sprite_bank"
+addend = 0
+target = 0x00404610
+
+[[units.initialize-editor.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "$SG1104"
+addend = 0
+target = 0x004227B8
+data_hex = "73666f6e742e73626b00"
+
+[[units.initialize-editor.relocations]]
+offset = 79
+type = "REL32"
+symbol = "_dxball_load_sprite_bank"
+addend = 0
+target = 0x00404610
+
+[[units.initialize-editor.relocations]]
+offset = 87
+type = "DIR32"
+symbol = "$SG1105"
+addend = 0
+target = 0x004227C4
+data_hex = "6d61696e6d656e752e73626b00"
+
+[[units.initialize-editor.relocations]]
+offset = 96
+type = "REL32"
+symbol = "_dxball_load_sprite_bank"
+addend = 0
+target = 0x00404610
+
+[[units.initialize-editor.relocations]]
+offset = 106
+type = "REL32"
+symbol = "_dxball_select_sprite_bank"
+addend = 0
+target = 0x00403E70
+
+[[units.initialize-editor.relocations]]
+offset = 116
+type = "REL32"
+symbol = "_dxball_select_font_bank"
+addend = 0
+target = 0x00403E90
+
+[[units.initialize-editor.relocations]]
+offset = 124
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.initialize-editor.relocations]]
+offset = 130
+type = "REL32"
+symbol = "_dxball_bind_board_surface"
+addend = 0
+target = 0x00409000
+
+[[units.initialize-editor.relocations]]
+offset = 139
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.initialize-editor.relocations]]
+offset = 151
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.initialize-editor.relocations]]
+offset = 157
+type = "REL32"
+symbol = "_dxball_bind_display_surface"
+addend = 0
+target = 0x00409020
+
+[[units.initialize-editor.relocations]]
+offset = 170
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.initialize-editor.relocations]]
+offset = 176
+type = "REL32"
+symbol = "_dxball_bind_display_surface"
+addend = 0
+target = 0x00409020
+
+[[units.initialize-editor.relocations]]
+offset = 185
+type = "DIR32"
+symbol = "_dxball_editor_selected_tile"
+addend = 0
+target = 0x00438AF0
+
+[[units.initialize-editor.relocations]]
+offset = 196
+type = "REL32"
+symbol = "_dxball_initialize_hit_regions"
+addend = 0
+target = 0x00401E10
+
+[[units.initialize-editor.relocations]]
+offset = 205
+type = "DIR32"
+symbol = "_dxball_board_index"
+addend = 0
+target = 0x0043A8F8
+
+[[units.initialize-editor.relocations]]
+offset = 214
+type = "DIR32"
+symbol = "_dxball_board_index"
+addend = 0
+target = 0x0043A8F8
+
+[[units.initialize-editor.relocations]]
+offset = 220
+type = "REL32"
+symbol = "_dxball_load_editor_board"
+addend = 0
+target = 0x0040CEA0
+
+[[units.initialize-editor.relocations]]
+offset = 228
+type = "REL32"
+symbol = "_dxball_redraw_mode"
+addend = 0
+target = 0x004036B0
+
+[[units.initialize-editor.relocations]]
+offset = 246
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[units.redraw-editor]
+build = "editor"
+symbol = "_dxball_redraw_editor"
+target_address = 0x0040C2B0
+size = 252
+
+[[units.redraw-editor.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.redraw-editor.relocations]]
+offset = 46
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.redraw-editor.relocations]]
+offset = 55
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.redraw-editor.relocations]]
+offset = 69
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.redraw-editor.relocations]]
+offset = 75
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.redraw-editor.relocations]]
+offset = 85
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-editor.relocations]]
+offset = 91
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.redraw-editor.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.redraw-editor.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-editor.relocations]]
+offset = 126
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-editor.relocations]]
+offset = 138
+type = "REL32"
+symbol = "_dxball_draw_board"
+addend = 0
+target = 0x00411970
+
+[[units.redraw-editor.relocations]]
+offset = 146
+type = "REL32"
+symbol = "_dxball_draw_editor_choices"
+addend = 0
+target = 0x0040C9C0
+
+[[units.redraw-editor.relocations]]
+offset = 151
+type = "REL32"
+symbol = "_dxball_draw_editor_status"
+addend = 0
+target = 0x0040CA70
+
+[[units.redraw-editor.relocations]]
+offset = 167
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-editor.relocations]]
+offset = 177
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.redraw-editor.relocations]]
+offset = 183
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.redraw-editor.relocations]]
+offset = 194
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.redraw-editor.relocations]]
+offset = 217
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-editor.relocations]]
+offset = 227
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.redraw-editor.relocations]]
+offset = 233
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[units.dispose-editor]
+build = "editor"
+symbol = "_dxball_dispose_editor"
+target_address = 0x0040CF20
+size = 78
+
+[[units.dispose-editor.relocations]]
+offset = 30
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[[units.dispose-editor.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.dispose-editor.relocations]]
+offset = 46
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.dispose-editor.relocations]]
+offset = 54
+type = "REL32"
+symbol = "_dxball_release_sprite_banks"
+addend = 0
+target = 0x00403CB0
+
+[[units.dispose-editor.relocations]]
+offset = 59
+type = "REL32"
+symbol = "_dxball_release_sounds"
+addend = 0
+target = 0x004058B0
+
+[[units.dispose-editor.relocations]]
+offset = 64
+type = "REL32"
+symbol = "_dxball_close_music"
+addend = 0
+target = 0x00401DA0

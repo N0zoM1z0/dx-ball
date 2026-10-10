@@ -31,7 +31,7 @@ FILE_DATA=bytes((i//400+i%400+7)%23 for i in range(20000))
 
 class EditorNative(GameoverNative):
     def __init__(self,library):
-        super().__init__(library)
+        super().__init__(library,score_imports=False)
         self.regions=(C.c_int32*500).in_dll(self.lib,'dxball_hit_regions')
         for op,group in enumerate(MODE_ENTRIES):
             self.mode_callbacks[op*5+2]=C.cast(getattr(self.lib,'dxball_'+BODIES[group]),C.c_void_p).value

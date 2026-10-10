@@ -60,6 +60,34 @@ board read/write/load/store bodies are dependencies, not new function claims.
 
 ## Lifecycle, toolbar and mouse
 
+Initialization (`0x40C1A0`, 263 bytes), redraw (`0x40C2B0`, 252 bytes) and cleanup
+(`0x40CF20`, 78 bytes) now match their complete bodies on the first stable VC4
+compilation, with 28, twenty and six relocations. Genuine shared resource APIs
+replace the factored callback calls; display binding retains separate branches,
+board zero is loaded through the shared current-index slot, and redraw performs
+three actual typed COM blits with fresh global surface loads. The original
+meaningful rectangle and exits are preserved. All four filename operands include
+complete NUL-terminated storage comparisons against the pinned original.
+
+The original `00`, `01` and `04-analyze_function.json` dossiers in the closed
+2026-10-07 14-34 run were reused; their Evidence IDs are listed above. No new
+provider request or source-layout trial was needed. All nine configured editor
+exact units, including the existing 908-byte frame, remain exact together.
+The recipe retains its full 34-file declared input set, containing the complete
+21-file recursively consumed project closure. Native and MinGW builds pass;
+VC4 relinks 35 verified objects without another source compilation.
+
+The final native library passes 54 existing initialization/redraw/cleanup cases
+and all 32 connected editor checks. Fifteen existing board-file failure/partial-
+read cases and one existing score-insertion case verify fixture ownership.
+The inherited score-import binding initially intercepted `default.bds` in the
+connected save step; the editor fixture now explicitly skips that binding and
+retains its original independent real-host stdio behavior. Game-over fixtures
+still install the same score callbacks by default. Cases and assertions are
+unchanged. No full owner suite or historical replay was run; prior full-suite
+and frame receipts keep their own product hashes. Focused inputs, reports and
+the retained failed probe are private in `.analysis/exact-editor-lifecycle/`.
+
 The complete [editor-frame restoration](exact/EXACT_EDITOR_FRAME.md) now
 reproduces all 908 bytes, including the two cursor draw calls and both inline
 paint/erase value phases. The five existing exact editor units are preserved.

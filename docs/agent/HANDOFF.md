@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 155 exact functions / 26,636 full-span bytes and
+- 283 source-present entries; 158 exact functions / 27,229 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -41,7 +41,8 @@ are declared in `config/match-units.toml`.
 
 Private receipts: `.analysis/exact-score-initialization/` and
 `.analysis/exact-score-reading/`, `.analysis/exact-ranking-interface/`, and
-`.analysis/exact-gameover-lifecycle/` and `.analysis/exact-gameover-keys/`.
+`.analysis/exact-gameover-lifecycle/`, `.analysis/exact-gameover-keys/`, and
+`.analysis/exact-editor-lifecycle/`.
 Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
 interface checkpoint is `4499a3d`. The current lifecycle checkpoint restores
 initialization, redraw, frame and cleanup exactly; no push was made.
@@ -127,11 +128,28 @@ together; candidate gaps remain unchanged. The final library passes 1,024
 existing key-routing cases and all 76 connected checks; other direct owner
 loops remain historical. Native/MinGW builds and the 35-object VC4 relink pass.
 
-Next follow the actual mode-2 editor initialization/redraw/frame/resource
-lifetime family using `docs/research/EDITOR_OWNER.md` and its saved dossiers.
-Inspect direct call boundaries and complete original branches before compiling
-one coherent family. Do not perform layout/name/padding trials on the insertion
-or ranking-drawing gaps.
+Editor initialization (`0x40C1A0`, 263 bytes / 28 relocations), redraw
+(`0x40C2B0`, 252 / 20) and cleanup (`0x40CF20`, 78 / 6) are now exact on one
+stable compilation, using their retained 14-34 dossiers. All nine editor units,
+including the existing 908-byte frame, match together. The complete 21-file
+project input closure is included in the retained 34-file recipe. Native and
+MinGW builds and the 35-object VC4 relink pass.
+
+Final editor checks select 54 existing lifecycle/redraw cases, all 32 connected
+checks and fifteen existing file-outcome cases. One existing score-insertion
+case checks the default score import transport. The inherited game-over stdio
+binding initially intercepted editor board saves; `EditorNative` now explicitly
+skips score bindings, preserving its independent actual-host stdio behavior.
+Default game-over binding and assertions remain intact. The failed probe and
+passing current-library reports are retained; no full owner suite was rerun.
+
+Next recover editor key commands (`0x40C740`, 632-byte span), choices
+(`0x40C9C0`, 163 bytes) and status (`0x40CA70`, 431 bytes), then inspect region
+initialization/lookup. Reuse the 14-34 dossiers and complete instructions,
+including key switch data/gap jumps. Identify the actual integer conversion
+API and local buffer consumers before changing the current portable formatter;
+retain the stated board-index domain and genuine API adaptation. Do not perform
+layout/name/padding trials on the game-over candidate gaps.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80

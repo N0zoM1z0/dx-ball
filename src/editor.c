@@ -4,6 +4,9 @@
 #include "paddle.h"
 #include "round.h"
 #include "ui.h"
+#include "midi.h"
+#include "sound.h"
+#include "startup.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -82,32 +85,43 @@ void dxball_draw_editor_status(void)
 
 void dxball_initialize_editor(void)
 {
-    dxball_runtime_ops.reset_regions();
-    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_background_surface, 0);
-    dxball_runtime_ops.load_pcx((DxBallDDSurface *)dxball_background_surface, "mbbkgrnd.pcx", 2, 0, 0);
-    dxball_runtime_ops.load_sprite_bank(0, 1, "mball2.sbk");
-    dxball_runtime_ops.load_sprite_bank(1, 1, "sfont.sbk");
-    dxball_runtime_ops.load_sprite_bank(2, 1, "mainmenu.sbk");
+    dxball_reset_regions();
+    dxball_clear_surface((DxBallSurface)dxball_background_surface, 0);
+    dxball_load_pcx((DxBallDDSurface *)dxball_background_surface, "mbbkgrnd.pcx", 2, 0, 0);
+    dxball_load_sprite_bank(0, 1, "mball2.sbk");
+    dxball_load_sprite_bank(1, 1, "sfont.sbk");
+    dxball_load_sprite_bank(2, 1, "mainmenu.sbk");
     dxball_select_sprite_bank(0); dxball_select_font_bank(1);
-    dxball_runtime_ops.bind_board_surface((DxBallSurface)dxball_board_surface);
-    dxball_runtime_ops.bind_display_surface((DxBallSurface)(dxball_draw_to_primary == 0 ? dxball_secondary_surface : dxball_primary_surface));
+    dxball_bind_board_surface((DxBallSurface)dxball_board_surface);
+    if (dxball_draw_to_primary == 0) {
+        dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
+    } else {
+        dxball_bind_display_surface((DxBallSurface)dxball_primary_surface);
+    }
     dxball_editor_selected_tile = 1; dxball_initialize_hit_regions(23);
-    dxball_board_index = 0; dxball_load_editor_board(0);
-    dxball_redraw_mode(); dxball_runtime_ops.palette_transition(1, 6, 0, 255, 1);
+    dxball_board_index = 0; dxball_load_editor_board(dxball_board_index);
+    dxball_redraw_mode(); dxball_palette_transition(1, 6, 0, 255, 1);
+    return;
 }
 void dxball_redraw_editor(void)
 {
     DxBallRect rect = {0, 0, 640, 480};
-    DxBallDDSurface *board = (DxBallDDSurface *)dxball_board_surface;
-    DxBallDDSurface *primary = (DxBallDDSurface *)dxball_primary_surface;
-    DxBallDDSurface *secondary = (DxBallDDSurface *)dxball_secondary_surface;
-    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
-    if (dxball_draw_to_primary == 0) dxball_runtime_ops.clear_surface((DxBallSurface)dxball_secondary_surface, 0);
-    dxball_runtime_ops.clear_surface((DxBallSurface)dxball_board_surface, 0);
-    board->vtable->blt(board, &rect, (DxBallDDSurface *)dxball_background_surface, &rect, 0x1000000, NULL);
+    dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
+    if (dxball_draw_to_primary == 0) dxball_clear_surface((DxBallSurface)dxball_secondary_surface, 0);
+    dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
+    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_board_surface, &rect,
+        (DxBallDDSurface *)dxball_background_surface, &rect, 0x1000000, NULL);
     dxball_draw_board(0); dxball_draw_editor_choices(); dxball_draw_editor_status();
-    primary->vtable->blt(primary, &rect, board, &rect, 0x1000000, NULL);
-    if (dxball_draw_to_primary == 0) secondary->vtable->blt(secondary, &rect, board, &rect, 0x1000000, NULL);
+    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+        (DxBallDDSurface *)dxball_primary_surface, &rect,
+        (DxBallDDSurface *)dxball_board_surface, &rect, 0x1000000, NULL);
+    if (dxball_draw_to_primary == 0) {
+        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_secondary_surface, &rect,
+            (DxBallDDSurface *)dxball_board_surface, &rect, 0x1000000, NULL);
+    }
+    return;
 }
 
 /* FUNCTION: 0x0040C3B0 */
@@ -209,11 +223,12 @@ void dxball_editor_key(char key)
 void dxball_dispose_editor(DxBallInt fade)
 {
     if (fade != 0) {
-        dxball_runtime_ops.palette_transition(1, 6, 0, 255, 0);
-        dxball_runtime_ops.clear_surface((DxBallSurface)dxball_primary_surface, 0);
-        dxball_runtime_ops.release_sprite_banks(); dxball_runtime_ops.release_sounds();
-        dxball_platform_ops.close_music();
+        dxball_palette_transition(1, 6, 0, 255, 0);
+        dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
+        dxball_release_sprite_banks(); dxball_release_sounds();
+        dxball_close_music();
     }
+    return;
 }
 
 void dxball_clear_hit_region(DxBallInt index)
