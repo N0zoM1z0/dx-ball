@@ -43,6 +43,7 @@ add_library(dxball_core SHARED
     src/gameover.c
     src/editor.c
     src/midi.c
+    src/music.cpp
     src/sound.c
 )
 if(UNIX)

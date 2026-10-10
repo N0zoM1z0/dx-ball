@@ -2,19 +2,20 @@
 
 ## Current allocation defaults
 
-Music wrapper allocation/deletion uses maintained runtime new/delete.
-Local/Global ownership remains separate. The latest
-[stream and music recovery](exact/EXACT_MIDI_LIFECYCLE.md) restores ten complete
-bodies and adds exact resume, pause and restart controls. One existing Oracle
+Music wrapper allocation/deletion uses C++ object lifetime with maintained
+runtime defaults. Local/Global ownership remains separate. The latest
+[import and ownership recovery](exact/EXACT_MIDI_IMPORTS.md) adds exact release,
+stream pause, music loading and closing. All five music controls are exact.
+One existing Oracle
 passes 2,109 direct cases and 134 connected checks. Native, MinGW and VC4 builds
 succeed. Earlier investigations below retain their original evidence epochs.
 
-`src/midi.c` maintains the original RIFF/MIDS reader, compact MIDI event
-expansion, stream controller, completion callback and five music wrappers.
-The portable library, MinGW i686 and pinned VC4 builds share this C owner.
-The Windows adapter supplies the Kernel32/WinMM services. Stream exactness
-still requires recovering the original import storage; the portable callback
-table has a different layout.
+`src/midi.c` maintains the original RIFF/MIDS reader, compact event expansion,
+stream controller and completion callback. `src/music.cpp` owns five music
+controls. Portable, MinGW i686 and VC4 builds share these implementations.
+The Windows adapter supplies the 22 independently typed Kernel32/WinMM cells.
+Stop and callback still differ in local storage; play retains a control-flow
+gap in its compiler emission.
 
 ## REA evidence
 

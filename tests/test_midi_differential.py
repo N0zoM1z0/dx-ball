@@ -207,12 +207,11 @@ class Native(Backend):
         self.lib=C.CDLL(str(library));self.callbacks=[]
         self.slot=P.in_dll(self.lib,'dxball_music')
         self.callback_address=C.cast(self.lib.dxball_midi_callback,P).value
-        table=(P*len(APIS)).in_dll(self.lib,'dxball_midi_api')
-        for index,(name,_,result,args) in enumerate(APIS):
+        for name,_,result,args in APIS:
             def callback(*values,name=name):
                 try:return self.api(name,values)
                 except BaseException as exc:self.errors.append(exc);return 0
-            fn=C.CFUNCTYPE(result,*args)(callback);self.callbacks.append(fn);table[index]=C.cast(fn,P).value
+            fn=C.CFUNCTYPE(result,*args)(callback);self.callbacks.append(fn);P.in_dll(self.lib,'dxball_midi_'+name).value=C.cast(fn,P).value
         argtypes={'open_mds':[P,P,U,C.c_ubyte],'parse_mds':[P,P,U],'expand_mds_events':[P,P],
             'play_mds':[P,C.c_ubyte],'midi_callback':[Z,U,Z,P,Z],'load_music':[P,I]}
         for name in ENTRIES:

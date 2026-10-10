@@ -24,7 +24,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [ui.c](ui.c) | Text layout, lines, fill requests, and palette operations |
 | [rotation.c](rotation.c), [raster.cpp](raster.cpp), [bitmap.c](bitmap.c) | Software rotation, fixed-point rasterization, and bitmap reading |
 | [geometry.c](geometry.c), [trig.c](trig.c) | Overlap/distance helpers and quantized trigonometry |
-| [sound.c](sound.c), [midi.c](midi.c) | DirectSound buffers and WinMM music streams |
+| [sound.c](sound.c), [midi.c](midi.c), [music.cpp](music.cpp) | DirectSound buffers, WinMM streams, and music object lifetime |
 | [allocator.c](allocator.c), [allocator_host.c](allocator_host.c) | Recovered allocation policy and portable heap callbacks |
 | [list_initializers.cpp](list_initializers.cpp) | Global list owners and their C++ constructors |
 | [runtime_text_host.c](runtime_text_host.c) | Unix implementation of the score caller's decimal conversion boundary |

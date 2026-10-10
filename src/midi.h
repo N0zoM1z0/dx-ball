@@ -30,6 +30,10 @@ typedef struct DxBallMdsInput {
 typedef struct DxBallMusic {
     DxBallMdsContext *context;
     DxBallInt playing;
+#ifdef __cplusplus
+    static void *operator new(size_t bytes);
+    static void operator delete(void *memory);
+#endif
 } DxBallMusic;
 typedef struct DxBallMidiProperty { DxBallUInt size, value; } DxBallMidiProperty;
 typedef void (DXBALL_DDCALL *DxBallMidiCallback)(DxBallMidiHandle, DxBallUInt,
@@ -37,40 +41,37 @@ typedef void (DXBALL_DDCALL *DxBallMidiCallback)(DxBallMidiHandle, DxBallUInt,
 
 /* Kernel32/WinMM boundaries retain x86 stdcall. Typed host records grow with
    pointers; the real Windows adapter must use the i686 SDK layouts. */
-typedef struct DxBallMidiApi {
-    void *(DXBALL_DDCALL *local_alloc)(DxBallUInt, size_t);
-    void *(DXBALL_DDCALL *local_free)(void *);
-    DxBallMidiHandle (DXBALL_DDCALL *create_file)(const char *, DxBallUInt,
+extern void *(DXBALL_DDCALL *dxball_midi_local_alloc)(DxBallUInt, size_t);
+extern void *(DXBALL_DDCALL *dxball_midi_local_free)(void *);
+extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_file)(const char *, DxBallUInt,
         DxBallUInt, void *, DxBallUInt, DxBallUInt, DxBallMidiHandle);
-    DxBallUInt (DXBALL_DDCALL *file_size)(DxBallMidiHandle, DxBallUInt *);
-    DxBallMidiHandle (DXBALL_DDCALL *create_mapping)(DxBallMidiHandle,
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_file_size)(DxBallMidiHandle, DxBallUInt *);
+extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_mapping)(DxBallMidiHandle,
         void *, DxBallUInt, DxBallUInt, DxBallUInt, const char *);
-    void *(DXBALL_DDCALL *map_view)(DxBallMidiHandle, DxBallUInt,
+extern void *(DXBALL_DDCALL *dxball_midi_map_view)(DxBallMidiHandle, DxBallUInt,
         DxBallUInt, DxBallUInt, size_t);
-    DxBallInt (DXBALL_DDCALL *unmap_view)(const void *);
-    DxBallInt (DXBALL_DDCALL *close_handle)(DxBallMidiHandle);
-    DxBallMidiHandle (DXBALL_DDCALL *global_alloc)(DxBallUInt, size_t);
-    void *(DXBALL_DDCALL *global_lock)(DxBallMidiHandle);
-    DxBallMidiHandle (DXBALL_DDCALL *global_handle)(const void *);
-    DxBallInt (DXBALL_DDCALL *global_unlock)(DxBallMidiHandle);
-    DxBallMidiHandle (DXBALL_DDCALL *global_free)(DxBallMidiHandle);
-    DxBallUInt (DXBALL_DDCALL *stream_open)(DxBallMidiHandle *, DxBallUInt *,
+extern DxBallInt (DXBALL_DDCALL *dxball_midi_unmap_view)(const void *);
+extern DxBallInt (DXBALL_DDCALL *dxball_midi_close_handle)(DxBallMidiHandle);
+extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_alloc)(DxBallUInt, size_t);
+extern void *(DXBALL_DDCALL *dxball_midi_global_lock)(DxBallMidiHandle);
+extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_handle)(const void *);
+extern DxBallInt (DXBALL_DDCALL *dxball_midi_global_unlock)(DxBallMidiHandle);
+extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_global_free)(DxBallMidiHandle);
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_open)(DxBallMidiHandle *, DxBallUInt *,
         DxBallUInt, DxBallMidiCallback, size_t, DxBallUInt);
-    DxBallUInt (DXBALL_DDCALL *stream_property)(DxBallMidiHandle,
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_property)(DxBallMidiHandle,
         DxBallMidiProperty *, DxBallUInt);
-    DxBallUInt (DXBALL_DDCALL *prepare_header)(DxBallMidiHandle,
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_prepare_header)(DxBallMidiHandle,
         DxBallMidiHeader *, DxBallUInt);
-    DxBallUInt (DXBALL_DDCALL *stream_out)(DxBallMidiHandle,
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_out)(DxBallMidiHandle,
         DxBallMidiHeader *, DxBallUInt);
-    DxBallUInt (DXBALL_DDCALL *stream_restart)(DxBallMidiHandle);
-    DxBallUInt (DXBALL_DDCALL *stream_pause)(DxBallMidiHandle);
-    DxBallUInt (DXBALL_DDCALL *out_reset)(DxBallMidiHandle);
-    DxBallUInt (DXBALL_DDCALL *unprepare_header)(DxBallMidiHandle,
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_restart)(DxBallMidiHandle);
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_pause)(DxBallMidiHandle);
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_out_reset)(DxBallMidiHandle);
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_unprepare_header)(DxBallMidiHandle,
         DxBallMidiHeader *, DxBallUInt);
-    DxBallUInt (DXBALL_DDCALL *stream_close)(DxBallMidiHandle);
-} DxBallMidiApi;
+extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_close)(DxBallMidiHandle);
 
-extern DxBallMidiApi dxball_midi_api;
 extern DxBallMusic *dxball_music;
 DxBallInt dxball_open_mds(DxBallMdsContext **, const void *, DxBallUInt, DxBallByte);
 DxBallInt dxball_parse_mds(DxBallMdsContext *, const void *, DxBallUInt);

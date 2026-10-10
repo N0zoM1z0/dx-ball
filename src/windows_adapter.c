@@ -264,15 +264,15 @@ void dxball_bind_windows(void)
     dxball_sound_api.create_device = create_sound; dxball_sound_api.create_file = create_file;
     dxball_sound_api.file_size = file_size; dxball_sound_api.read_file = read_file;
     dxball_sound_api.close_handle = close_handle;
-    dxball_midi_api.local_alloc = local_alloc; dxball_midi_api.local_free = local_free;
-    dxball_midi_api.create_file = create_file; dxball_midi_api.file_size = file_size;
-    dxball_midi_api.create_mapping = create_mapping; dxball_midi_api.map_view = map_view;
-    dxball_midi_api.unmap_view = unmap_view; dxball_midi_api.close_handle = close_handle;
-    dxball_midi_api.global_alloc = global_alloc; dxball_midi_api.global_lock = global_lock;
-    dxball_midi_api.global_handle = global_handle; dxball_midi_api.global_unlock = global_unlock;
-    dxball_midi_api.global_free = global_free; dxball_midi_api.stream_open = stream_open;
-    dxball_midi_api.stream_property = stream_property; dxball_midi_api.prepare_header = prepare_header;
-    dxball_midi_api.stream_out = stream_out; dxball_midi_api.stream_restart = stream_restart;
-    dxball_midi_api.stream_pause = stream_pause; dxball_midi_api.out_reset = out_reset;
-    dxball_midi_api.unprepare_header = unprepare_header; dxball_midi_api.stream_close = stream_close;
+    dxball_midi_local_alloc = local_alloc; dxball_midi_local_free = local_free;
+    dxball_midi_create_file = create_file; dxball_midi_file_size = file_size;
+    dxball_midi_create_mapping = create_mapping; dxball_midi_map_view = map_view;
+    dxball_midi_unmap_view = unmap_view; dxball_midi_close_handle = close_handle;
+    dxball_midi_global_alloc = global_alloc; dxball_midi_global_lock = global_lock;
+    dxball_midi_global_handle = global_handle; dxball_midi_global_unlock = global_unlock;
+    dxball_midi_global_free = global_free; dxball_midi_stream_open = stream_open;
+    dxball_midi_stream_property = stream_property; dxball_midi_prepare_header = prepare_header;
+    dxball_midi_stream_out = stream_out; dxball_midi_stream_restart = stream_restart;
+    dxball_midi_stream_pause = stream_pause; dxball_midi_out_reset = out_reset;
+    dxball_midi_unprepare_header = unprepare_header; dxball_midi_stream_close = stream_close;
 }
