@@ -363,12 +363,17 @@ void dxball_close_instance(void)
     return;
 }
 
+/* FUNCTION: DXBALL 0x00403550 */
 void dxball_detect_clock(void)
 {
     DxBallVersionInfo version;
-    memset(&version, 0, sizeof(version)); version.size = 148;
+    version.size = sizeof(version);
     dxball_window_get_version_ex(&version);
-    dxball_high_resolution_clock = version.platform != 1;
+    if (version.platform == 1)
+        dxball_high_resolution_clock = 0;
+    else
+        dxball_high_resolution_clock = 1;
+    return;
 }
 
 const char dxball_instance_running_title[] = "DX-Ball";
@@ -441,54 +446,116 @@ void dxball_dispose_working_surface(DxBallInt fade)
     }
 }
 
+/* FUNCTION: DXBALL 0x00403820 */
 void dxball_dispatch_key(char key)
 {
-    if (dxball_display_mode >= 0 && dxball_display_mode < 4)
-        dxball_key_mode_ops.mode[dxball_display_mode](key);
-    else if (dxball_display_mode == 4) dxball_key_mode_ops.mode4();
+    switch (dxball_display_mode) {
+    case 0:
+        dxball_intro_key(key);
+        break;
+    case 1:
+        dxball_game_key(key);
+        break;
+    case 2:
+        dxball_editor_key(key);
+        break;
+    case 3:
+        dxball_game_over_key(key);
+        break;
+    case 4:
+        dxball_splash_key(key);
+        break;
+    }
+    return;
 }
 
+/* FUNCTION: DXBALL 0x00410290 */
 void dxball_game_key(char key)
 {
-    static const char *const music[6] = {
-        "12flight.mds", "acker-gs.mds", "brain.mds", "ethno_pa.mds", "freebee.mds", "gmfigaro.mds"
-    };
     DxBallInt choice;
     if (dxball_paused == 1) {
         dxball_paused = 0;
-        if (dxball_restart_requested == 0) dxball_palette_transition(1, 10, 0, 255, 0);
-        dxball_redraw_mode(); dxball_palette_transition(1, 10, 0, 255, 1);
+        if (dxball_restart_requested == 0)
+            dxball_palette_transition(1, 10, 0, 255, 0);
+        dxball_redraw_mode();
+        dxball_palette_transition(1, 10, 0, 255, 1);
     } else {
         switch (key) {
         case 'P':
             if (dxball_paused == 0) {
                 dxball_paused = 1;
-                if (dxball_restart_requested == 0) dxball_palette_transition(1, 10, 0, 255, 0);
-                dxball_redraw_mode(); dxball_palette_transition(1, 10, 0, 255, 1);
+                if (dxball_restart_requested == 0)
+                    dxball_palette_transition(1, 10, 0, 255, 0);
+                dxball_redraw_mode();
+                dxball_palette_transition(1, 10, 0, 255, 1);
             }
+            break;
+        case ' ':
             break;
         case 0x70:
             if (dxball_control_pressed != 0) {
-                dxball_bonus_9_active = 0; dxball_bonus_8_active = 0;
-                dxball_paddle_width = dxball_sprite_banks[dxball_sprite_bank].sprites[68]->width;
+                dxball_bonus_9_active = 0;
+                dxball_bonus_8_active = 0;
+                dxball_paddle_width =
+                    dxball_sprite_banks[dxball_sprite_bank].sprites[68]->width;
             }
             break;
-        case 0x71: if (dxball_control_pressed != 0) dxball_bonus_9_active = 1; break;
-        case 0x72: if (dxball_control_pressed != 0) dxball_bonus_8_active = 1; break;
+        case 0x71:
+            if (dxball_control_pressed != 0)
+                dxball_bonus_9_active = 1;
+            break;
+        case 0x72:
+            if (dxball_control_pressed != 0)
+                dxball_bonus_8_active = 1;
+            break;
         case 0x73:
             if (dxball_control_pressed != 0)
-                dxball_paddle_width = dxball_sprite_banks[dxball_sprite_bank].sprites[68]->width * 2;
+                dxball_paddle_width =
+                    dxball_sprite_banks[dxball_sprite_bank].sprites[68]->width * 2;
             break;
         case 0x74:
-            choice = dxball_gameplay_ops.random_range(6);
-            dxball_platform_ops.close_music();
-            if (choice >= 0 && choice < 6) dxball_platform_ops.load_music(music[choice], 1);
+            choice = dxball_random_range(6);
+            dxball_close_music();
+            switch (choice) {
+            case 0:
+                dxball_load_music("12flight.mds", 1);
+                break;
+            case 1:
+                dxball_load_music("acker-gs.mds", 1);
+                break;
+            case 2:
+                dxball_load_music("brain.mds", 1);
+                break;
+            case 3:
+                dxball_load_music("ethno_pa.mds", 1);
+                break;
+            case 4:
+                dxball_load_music("freebee.mds", 1);
+                break;
+            case 5:
+                dxball_load_music("gmfigaro.mds", 1);
+                break;
+            }
             break;
-        case 0x75: dxball_platform_ops.close_music(); break;
-        case 0x7b: dxball_pan_scale = dxball_pan_scale * -1.0; break;
-        default: break;
+        case 0x75:
+            dxball_close_music();
+            break;
+        case 0x76:
+            break;
+        case 0x77:
+            break;
+        case 0x78:
+            break;
+        case 0x79:
+            break;
+        case 0x7a:
+            break;
+        case 0x7b:
+            dxball_pan_scale = dxball_pan_scale * -1.0;
+            break;
         }
     }
+    return;
 }
 
 /* FUNCTION: DXBALL 0x0040DA70 */

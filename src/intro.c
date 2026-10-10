@@ -427,7 +427,13 @@ void dxball_splash_frame(void)
     if (dxball_mouse_action == 2) dxball_mouse_action = 0;
     return;
 }
-void dxball_splash_key(void) { dxball_end_requested = 1; dxball_return_to_menu = 0; return; }
+void dxball_splash_key(char key)
+{
+    (void)key;
+    dxball_end_requested = 1;
+    dxball_return_to_menu = 0;
+    return;
+}
 void dxball_dispose_splash(DxBallInt fade)
 {
     DxBallRect rect;

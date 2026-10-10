@@ -12,6 +12,9 @@
 #include "startup.h"
 #include "ui.h"
 #include "platform.h"
+#include "intro.h"
+#include "editor.h"
+#include "gameover.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -42,6 +45,8 @@ static unsigned queue_region_active;
 static unsigned delete_active, sprite_active, reduced_active, region_active;
 static DxBallRuntimeOps *bound_runtime;
 static DxBallPlatformOps *bound_platform;
+static DxBallKeyModeOps *bound_keys;
+static unsigned intro_key_active, editor_key_active, game_over_key_active, splash_key_active;
 static DxBallDisplayOps *bound_display;
 static void (*real_recover_surfaces)(void);
 static unsigned recover_surfaces_active;
@@ -374,6 +379,57 @@ int dxball_test_bind_platform_ops(DxBallPlatformOps *ops,
     bound_platform = ops;
     platform_music_default = default_music;
     return 0;
+}
+
+int dxball_test_bind_key_mode_ops(DxBallKeyModeOps *ops)
+{
+    if (ops == NULL) return -1;
+    bound_keys = ops;
+    return 0;
+}
+
+void dxball_intro_key(char key)
+{
+    if (bound_keys == NULL || bound_keys->mode[0] == NULL)
+        binding_failure("CoreNative intro_key: fixture table is unbound or callback is null");
+    if (intro_key_active || bound_keys->mode[0] == dxball_intro_key)
+        binding_failure("CoreNative intro_key: recursive or unreplaced callback");
+    intro_key_active = 1;
+    bound_keys->mode[0](key);
+    intro_key_active = 0;
+}
+
+void dxball_editor_key(char key)
+{
+    if (bound_keys == NULL || bound_keys->mode[2] == NULL)
+        binding_failure("CoreNative editor_key: fixture table is unbound or callback is null");
+    if (editor_key_active || bound_keys->mode[2] == dxball_editor_key)
+        binding_failure("CoreNative editor_key: recursive or unreplaced callback");
+    editor_key_active = 1;
+    bound_keys->mode[2](key);
+    editor_key_active = 0;
+}
+
+void dxball_game_over_key(char key)
+{
+    if (bound_keys == NULL || bound_keys->mode[3] == NULL)
+        binding_failure("CoreNative game_over_key: fixture table is unbound or callback is null");
+    if (game_over_key_active || bound_keys->mode[3] == dxball_game_over_key)
+        binding_failure("CoreNative game_over_key: recursive or unreplaced callback");
+    game_over_key_active = 1;
+    bound_keys->mode[3](key);
+    game_over_key_active = 0;
+}
+
+void dxball_splash_key(char key)
+{
+    if (bound_keys == NULL || bound_keys->mode4 == NULL)
+        binding_failure("CoreNative splash_key: fixture table is unbound or callback is null");
+    if (splash_key_active || bound_keys->mode4 == dxball_splash_key)
+        binding_failure("CoreNative splash_key: recursive or unreplaced callback");
+    splash_key_active = 1;
+    bound_keys->mode4(key);
+    splash_key_active = 0;
 }
 
 /* The startup caller uses this real sound entry; PlatformNative supplies its

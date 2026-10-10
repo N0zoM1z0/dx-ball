@@ -134,8 +134,10 @@ and submits **span+48 entries**, although mutation visits span+1 entries. That
 unusual count is retained. Tests use valid palette/storage bounds, including
 span 160 and gate values 0, 1, 2 and -1. Each splash frame updates sound, handles
 wait/restore/scroller/presentation, rotates the 66-int pool, pulses the palette
-and handles mouse actions. Any splash key requests menu mode 0. Splash cleanup
-stops sound 0 even when fade is zero, unlike menu cleanup.
+and handles mouse actions. Any splash key requests menu mode 0. The shared
+splash key API now receives the ignored key argument seen in the original
+caller; its 36-byte body stays exact. See [key routing](exact/EXACT_WINDOW_KEYS.md).
+Splash cleanup stops sound 0 even when fade is zero, unlike menu cleanup.
 
 ## Independent validation and limits
 

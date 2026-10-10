@@ -196,6 +196,10 @@ class _Image:
                       ('dxball_platform_ops', 9, 4, 'dxball_pause_music'),
                       ('dxball_platform_ops', 9, 6, 'dxball_release_audio'),
                       ('dxball_platform_ops', 9, 5, 'dxball_close_music'),
+                      ('dxball_key_mode_ops', 5, 0, 'dxball_intro_key'),
+                      ('dxball_key_mode_ops', 5, 2, 'dxball_editor_key'),
+                      ('dxball_key_mode_ops', 5, 3, 'dxball_game_over_key'),
+                      ('dxball_key_mode_ops', 5, 4, 'dxball_splash_key'),
                       ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
         boundaries.append(('dxball_display_ops', 2, 1, 'dxball_recover_surfaces'))
         for table, length, slot, symbol in boundaries:
@@ -229,6 +233,7 @@ class _Image:
         # PlatformOps uses a genuine void adapter for this integer-returning
         # API. Keep its identity for a guard until PlatformNative replaces it.
         self.platform_table = (C.c_void_p * 9).in_dll(self.lib, 'dxball_platform_ops')
+        self.key_table = (C.c_void_p * 5).in_dll(self.lib, 'dxball_key_mode_ops')
         self.platform_music_default = self.platform_table[7]
         real = C.cast(self.lib.dxball_load_music, C.c_void_p).value
         intercepted = C.cast(_shim.dxball_load_music, C.c_void_p).value
@@ -286,6 +291,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_runtime_ops.restype = C.c_int
         _shim.dxball_test_bind_platform_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_platform_ops.restype = C.c_int
+        _shim.dxball_test_bind_key_mode_ops.argtypes = [C.c_void_p]
+        _shim.dxball_test_bind_key_mode_ops.restype = C.c_int
         _shim.dxball_test_bind_display_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_display_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
@@ -316,6 +323,12 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_platform_ops(actual, image.platform_music_default)
     if result != 0:
         raise RuntimeError('CoreNative platform binding rejected: null table or default adapter')
+    actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_key_mode_ops'))
+    if actual != C.addressof(image.key_table):
+        raise RuntimeError('CoreNative key table does not belong to its copied image')
+    result = _shim.dxball_test_bind_key_mode_ops(actual)
+    if result != 0:
+        raise RuntimeError('CoreNative key binding rejected: null table')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_display_ops'))
     if actual != C.addressof(image.display_table):
         raise RuntimeError('CoreNative display table does not belong to its copied image')

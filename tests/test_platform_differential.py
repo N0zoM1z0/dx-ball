@@ -221,7 +221,7 @@ class PlatformNative(Boundaries,DeviceNative):
         for name,table,slot,kinds in COM:bind(tables[table],slot,'i',kinds,lambda *a,name=name:self.com(name,a))
         table=(C.c_void_p*5).in_dll(self.lib,'dxball_key_mode_ops')
         for mode in (0,2,3,4):
-            bind(table,mode,'v','' if mode==4 else 'c',lambda *a,mode=mode:self.key(mode,tuple(v&255 for v in a)))
+            bind(table,mode,'v','c',lambda *a,mode=mode:self.key(mode,() if mode==4 else tuple(v&255 for v in a)))
         for name in ENTRIES:
             f=getattr(self.lib,'dxball_'+name)
             f.restype=C.c_size_t if name in ('win_main','claim_instance') else C.c_ssize_t if name=='window_proc' else C.c_int32 if name.startswith('initialize_') and name!='initialize_sprite_banks' else None

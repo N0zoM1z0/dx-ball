@@ -113,7 +113,7 @@ typedef struct DxBallPlatformOps {
 } DxBallPlatformOps;
 typedef struct DxBallKeyModeOps {
     void (*mode[4])(char);
-    void (*mode4)(void);
+    void (*mode4)(char);
 } DxBallKeyModeOps;
 
 extern DxBallPlatformOps dxball_platform_ops;

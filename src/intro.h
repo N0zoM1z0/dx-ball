@@ -28,7 +28,7 @@ void dxball_dispose_intro(DxBallInt fade);
 void dxball_initialize_splash(void);
 void dxball_redraw_splash(void);
 void dxball_splash_frame(void);
-void dxball_splash_key(void);
+void dxball_splash_key(char key);
 void dxball_dispose_splash(DxBallInt fade);
 void dxball_draw_scroller_wave(void);
 void dxball_update_scroller(void);

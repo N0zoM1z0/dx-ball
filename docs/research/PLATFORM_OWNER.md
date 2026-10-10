@@ -90,8 +90,13 @@ second independent pause flag. F1/F2 access bonus_9_active at 0x43A890, and F1/F
 also access bonus_8_active at 0x43A860. They do not access bonus_12_active at
 0x43A910. Control gates F1 through F4; F5 draws a music choice then closes and
 loads its selected MDS, F6 closes music, and F12 negates the existing pan double.
-Dispatch narrows the key to its byte and routes modes 0 through 4, including
-mode 4's no-argument handler. Other modes do nothing.
+Dispatch now calls the five actual owners directly. Mode 4 passes a key
+argument that the splash callee ignores; their shared API takes `char`. Other
+modes do nothing. [Clock and key restoration](exact/EXACT_WINDOW_KEYS.md)
+records the complete spans: clock and dispatch are exact at 83 and 162 bytes;
+game input remains a complete candidate at 836/831 bytes. This batch ran only
+the existing 2,222 clock/dispatch/game-key cases. Other validation below retains
+its earlier scope.
 
 ## Validation boundaries
 
