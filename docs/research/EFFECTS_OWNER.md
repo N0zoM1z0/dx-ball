@@ -7,6 +7,11 @@ with its existing neutralized unrelated dependencies; actual VC4 phase bodies
 retain matching per-case traces. Existing fixture failure cases now use their
 owned native loaders. No new authored helper or full-frame exact claim is added.
 
+The [current rebuilt game observation](CURRENT_ENTITY_PLAY.md) records 256
+nonzero animation current pointers and 151 nonzero explosion current pointers
+in one bounded episode. Current-pointer presence does not establish complete
+queue state or individual allocation/deletion events.
+
 The [complete effect lifecycle restoration](exact/EXACT_EFFECTS.md) restores the
 constructor, deletion boundary and both full steppers from complete instruction
 evidence. Its four spans total 1,589 bytes and add 259 complete exact bytes.

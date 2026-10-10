@@ -6,6 +6,11 @@ and brick animations. All 28 affected exact units retain their complete 5,400
 bytes. Selected native and actual VC4 entity/effect cases and separate phase
 frames pass; historical full-owner counts below retain their earlier scopes.
 
+The [current VC4 game observation](CURRENT_ENTITY_PLAY.md) adds one bounded
+original-board episode for that rebuilt product: particles have 252 nonzero
+current-pointer samples and bonuses have 1,088 nonempty-list samples. Sequential
+live reads do not replace the controlled ownership assertions below.
+
 The [complete bonus restoration](exact/EXACT_BONUSES.md) replaces generation helpers
 with direct actual RNG, sound and six-integer particle calls, two separately
 consumed particle counters and nineteen distinct cases. Whole generation

@@ -12,6 +12,11 @@ Static contracts reuse the saved REA evidence in the
 The new runtime observations test those recovered contracts together; they
 do not introduce a second transcription of the game.
 
+The [current entity-use episode](CURRENT_ENTITY_PLAY.md) observes the VC4
+product from source commit `d544ecf` for 45.019 seconds on original board 0.
+It supplies bounded game-use evidence after the latest allocation changes;
+full campaigns below retain their earlier executable identities.
+
 ## Completed original control
 
 The original-only control now passes the full predicate with the unchanged

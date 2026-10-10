@@ -685,6 +685,24 @@ usability suggestions, without measured token/latency claims.
 
 ## Working limits and completeness
 
+Latest runtime evidence: the VC4 product from `d544ecf` has a 45.019-second
+bounded original-board episode, 3,940 processed SDK records /3,480 game samples,
+score 824, board 0, one ball and seven remaining bricks. Particles/animations/
+explosions have 252/256/151 nonzero **current** reads; bonuses have 1,088 nonempty
+list reads. Zero current is not proof of empty first/last. Sequential samples
+and presence changes do not prove individual lifecycle or ownership events.
+The observer stops the still-running game; no graceful-exit claim. No new
+original/MinGW trajectory, screenshots, full campaign or physical/audio claim.
+All 35 game objects/inputs/resources/imports and 49 original assets are verified;
+only one SDK reader compilation, zero production compilations. Ledger totals
+are unchanged. See [current entity play](../research/CURRENT_ENTITY_PLAY.md).
+Private proof `.analysis/windows-entity-use-current/`; seal
+`.analysis/checkpoints/entity-play-283-171/sha256.json`.
+REA remains 6.3.0; retained contracts suffice without a new provider query.
+Entry 27 in the **same existing** `/tmp/dxball_rea_feedback_20261010.md` records
+pointer/list labeling and compact original-to-rebuilt state provenance usability
+suggestions. No new REA response, token or latency measurements.
+
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
 session, the 512 MiB Ghidra heap, and CMake `--parallel 1`. Compiler/provider
