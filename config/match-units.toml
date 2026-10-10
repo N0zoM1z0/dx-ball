@@ -9074,3 +9074,39 @@ relocations = [
   { offset = 647, type = "REL32", symbol = "_dxball_current_time", addend = 0, target = 0x00403450 },
   { offset = 652, type = "DIR32", symbol = "_dxball_intro_tick", addend = 0, target = 0x00438B20 },
 ]
+
+[units.advance-level]
+build = "round"
+symbol = "_dxball_advance_level"
+target_address = 0x00415B30
+size = 123
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x0043A90C },
+  { offset = 18, type = "DIR32", symbol = "_dxball_level_changed", addend = 0, target = 0x00422D1C },
+  { offset = 28, type = "DIR32", symbol = "_dxball_board_index", addend = 0, target = 0x0043A8F8 },
+  { offset = 34, type = "DIR32", symbol = "_dxball_board_index", addend = 0, target = 0x0043A8F8 },
+  { offset = 47, type = "DIR32", symbol = "_dxball_end_requested", addend = 0, target = 0x00425974 },
+  { offset = 57, type = "DIR32", symbol = "_dxball_return_to_menu", addend = 0, target = 0x00425978 },
+  { offset = 66, type = "REL32", symbol = "_dxball_initialize_board", addend = 0, target = 0x00411930 },
+  { offset = 71, type = "REL32", symbol = "_dxball_count_destructible_bricks", addend = 0, target = 0x00415A90 },
+  { offset = 85, type = "DIR32", symbol = "_dxball_lives", addend = 0, target = 0x0043A888 },
+  { offset = 95, type = "DIR32", symbol = "_dxball_end_requested", addend = 0, target = 0x00425974 },
+  { offset = 105, type = "DIR32", symbol = "_dxball_return_to_menu", addend = 0, target = 0x00425978 },
+]
+
+[units.lose-life]
+build = "round"
+symbol = "_dxball_lose_life"
+target_address = 0x00415BB0
+size = 81
+boundary_evidence = "docs/research/POWERUPS_OWNER.md"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_lives", addend = 0, target = 0x0043A888 },
+  { offset = 14, type = "DIR32", symbol = "_dxball_displayed_score", addend = 0, target = 0x0043A884 },
+  { offset = 25, type = "REL32", symbol = "_dxball_stop_sound", addend = 0, target = 0x00405EF0 },
+  { offset = 35, type = "DIR32", symbol = "_dxball_paddle_x", addend = 0, target = 0x0043A878 },
+  { offset = 41, type = "REL32", symbol = "_dxball_screen_pan", addend = 0, target = 0x00406400 },
+  { offset = 54, type = "REL32", symbol = "_dxball_play_sound", addend = 0, target = 0x00405C50 },
+  { offset = 63, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x0043A90C },
+]

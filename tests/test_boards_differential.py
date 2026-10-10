@@ -52,8 +52,9 @@ class SurfaceHandle:
 
 class Native:
     def __init__(self, library):
-        # Core fixtures already own an isolated, verified image and API transport.
-        isolated = not hasattr(self, 'core_native_image')
+        # Inherited gameplay/core fixtures already own a verified image/transport.
+        owner = getattr(self, 'core_native_image', None) or getattr(self, 'game_native_image', None)
+        isolated = owner is None
         if isolated:
             self.image_directory = tempfile.TemporaryDirectory(prefix='dxball-board-image-')
             path = Path(self.image_directory.name) / library.name
@@ -61,6 +62,7 @@ class Native:
             self.board_native_image = SimpleNamespace(path=path)
         else:
             path = library.resolve()
+            assert path == owner.path.resolve(), 'inherited native image owner changed'
         self.lib = C.CDLL(str(path))
         self.bank = source_global(C.c_uint8 * 20000, self.lib, "dxball_board_bank")
         self.tiles = source_global(C.c_uint8 * 400, self.lib, "dxball_board_tiles")

@@ -1,5 +1,39 @@
 # Bonus application, paddle and ball dependencies
 
+The round-transition batch accepts the complete level advance (`0x415B30`,
+123 bytes / eleven relocations) and life loss (`0x415BB0`, 81 / seven).
+The source now calls the actual board initializer/counter and sound stop/play
+APIs directly, retaining global store order and the live paddle X pan argument.
+The level branch tests the signed returned count against zero, matching the
+original TEST/JG rather than a comparison with one. Life loss matched on the
+first compile; level advance matched on the second after that predicate recovery.
+Both bodies match together, including their ordinary exit jumps. The 27-file
+recipe covers all sixteen consumed project source/header inputs. No literal
+storage, source profiles, layout/name trials or padding were introduced.
+
+The final library passes 80 unchanged round cases, all 912 existing bonus
+update/application cases and one trig setup. Sixteen connected bonus frames are
+included in those 912 cases. Another 420 unchanged core-frame cases pass,
+including 200 connected gameplay frames; these subset counts are not added
+again. Original x86 bodies and maintained assertions/case matrices remain fixed.
+The native fixture forwards direct board APIs through the existing live round
+table in its copied image, with uncontrolled calls entering the genuine
+initializer/counter. Its board base now recognizes inherited gameplay images
+as well as core images, preventing a second copy from changing fixture ownership.
+Sound uses the established typed transport. No instruction or process-wide libc
+patching is added. The retained failed attempts cover the prior ownership guard
+and a private selection-script syntax error, both before oracle cases ran.
+
+Native and MinGW builds pass, and VC4 relinks all 35 verified objects without
+further source compilation. Both complete old REA dossiers are reused from the
+closed 07-26 bonus-dependency run without new provider calls. Products, full
+comparisons, closure identities and selected reports are retained in
+`.analysis/exact-round-transitions/`. Other owner loops remain historical after
+input identity refresh; no full owner or historical queue was replayed. Terminal
+board initialization stays a controlled oracle boundary. These results do not
+establish physical sound, synchronized Windows trajectories or complete-game
+fidelity.
+
 The [complete brick-power restoration](exact/EXACT_BRICK_POWERS.md) restores the
 whole source for spread, softening and counting. The full 397-byte softener and
 149-byte counter are exact; spread compares 844/824 with 753 differences.

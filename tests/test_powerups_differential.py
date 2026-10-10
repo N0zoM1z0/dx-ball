@@ -54,6 +54,17 @@ class FamilyNative(EntitiesNative):
         self.round_callbacks = [Void(self.initialize), Count(self.count_bricks), Cursor(self.cursor_position)]
         ops = RoundOps.in_dll(self.lib,'dxball_round_ops')
         ops.initialize_board, ops.count_bricks = self.round_callbacks[:2]
+        # Forward the original direct APIs through the existing live fixture table.
+        # Calling self.lib's real entry in the uncontrolled path bypasses these
+        # import slots and retains the maintained initializer/counter bodies.
+        from native_imports import bind_imports
+        self.round_import_callbacks = [Void(lambda: ops.initialize_board()),
+                                       Count(lambda: ops.count_bricks())]
+        self.round_import_slots = bind_imports(
+            self.game_native_image, self.lib.dxball_advance_level,
+            {name: C.cast(callback, C.c_void_p).value for name, callback in zip(
+                ('dxball_initialize_board', 'dxball_count_destructible_bricks'),
+                self.round_import_callbacks)})
         C.c_void_p.in_dll(self.lib,'dxball_set_cursor_position').value = C.cast(self.round_callbacks[2],C.c_void_p).value
         for name in ENTRIES:
             f=getattr(self.lib,'dxball_'+name)

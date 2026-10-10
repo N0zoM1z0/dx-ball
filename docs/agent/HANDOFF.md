@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 164 exact functions / 29,479 full-span bytes and
+- 283 source-present entries; 166 exact functions / 29,683 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -236,6 +236,22 @@ focused link receipts, checking EXE/map, all objects/inputs and resource inputs;
 five simulated stale identities are rejected. Existing runtime inputs and
 assertions are unchanged. Original/MinGW controls remain historical, with no
 synchronized frame, audio/MIDI or complete-game fidelity claim.
+
+Round transitions now match together: level advance (`0x415B30`, 123 bytes /
+eleven relocations) and life loss (`0x415BB0`, 81 / seven). Direct board/count
+and sound calls, live pan input and the signed zero-count branch follow the
+original. Two round compilations were used; all sixteen consumed project inputs
+are covered by the existing 27-file recipe. The old 07-26 dossiers were reused.
+The final library passes 80 existing round cases, all 912 existing bonus cases
+and one trig setup. Sixteen connected bonus frames are included. Another 420
+core-frame cases include 200 connected frames. No cases/assertions changed.
+The fixture keeps the inherited verified gameplay/core image and binds only
+its actual board API slots to the existing live round table. Uncontrolled calls
+enter the genuine initializer/counter; sound uses its established transport.
+Native/MinGW builds and the 35-object VC4 relink pass. Receipts and failed private
+attempts are in `.analysis/exact-round-transitions/`. Terminal board initialization
+remains controlled; other owner cases stay historical after identity refresh.
+No full owner suite or historical queue was replayed.
 
 Continue source restoration in another connected game phase. Preserve the
 original/asset identities and disposable probe working copies. Existing

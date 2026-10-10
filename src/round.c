@@ -1,5 +1,6 @@
 #include "round.h"
 #include "paddle.h"
+#include "sound.h"
 
 DxBallInt dxball_lives, dxball_displayed_score;
 DxBallInt dxball_restart_requested, dxball_level_changed;
@@ -15,8 +16,8 @@ void dxball_advance_level(void)
         dxball_end_requested = 1;
         dxball_return_to_menu = 0;
     }
-    dxball_round_ops.initialize_board();
-    if (dxball_round_ops.count_bricks() < 1) {
+    dxball_initialize_board();
+    if (dxball_count_destructible_bricks() <= 0) {
         dxball_lives = 0;
         dxball_end_requested = 1;
         dxball_return_to_menu = 0;
@@ -28,8 +29,8 @@ void dxball_lose_life(void)
 {
     --dxball_lives;
     dxball_displayed_score = 999999999;
-    dxball_gameplay_ops.stop_sound(14);
-    dxball_gameplay_ops.play_sound(14, 0, dxball_screen_pan(dxball_paddle_x), 0);
+    dxball_stop_sound(14);
+    dxball_play_sound(14, 0, dxball_screen_pan(dxball_paddle_x), 0);
     dxball_restart_requested = 1;
     return;
 }
