@@ -1,5 +1,10 @@
 # Bitmap loader and unwritten stack storage
 
+The [current source recovery](exact/EXACT_BITMAP_LOADER.md) replaces the callback
+table with shared file and local-memory imports and restores typed input records.
+Its complete VC4 candidate is 928/976 bytes; the existing native Oracle passes
+975 cases. Earlier compiler products and batch results below are historical.
+
 Historical compiler-product checks below are archived in checkpoint
 `exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
@@ -144,7 +149,7 @@ scripts/rea session config/rea-bitmap.json
 
 ## Shared source and compiler execution
 
-The [shared C owner](../../src/bitmap.c) and [API declarations](../../src/bitmap.h)
+The [shared C owner](../../src/bitmap.c) and [record declarations](../../src/bitmap.h)
 preserve the sequential reads, signed pitch comparison, row retreat by copy
 length, failure leaks, cleanup ordering and ignored HRESULT/close results.
 The 260-byte fallback buffer follows the recovered 65-word storage and its

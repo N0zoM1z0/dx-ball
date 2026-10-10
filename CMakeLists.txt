@@ -45,6 +45,7 @@ add_library(dxball_core SHARED
     src/midi.c
     src/music.cpp
     src/file.c
+    src/memory.c
     src/sound.c
 )
 if(UNIX)

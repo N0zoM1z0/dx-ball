@@ -19,12 +19,16 @@ class NativeBitmap:
    (self.table,31,C.c_int32,[p,p],self.set_palette),
    (self.draw_table,5,C.c_int32,[p,u,p,p,p],self.create_palette)]
   for table,slot,ret,args,func in signatures:table[slot]=C.cast(self.wrap(ret,args,func),p).value
-  self.ops=(p*5).in_dll(self.lib,'dxball_bitmap_api')
-  self.saved_ops=tuple(self.ops)
-  for i,(ret,args,func) in enumerate([(C.c_size_t,[p,u,u,p,u,u,C.c_size_t],self.open),
-    (C.c_int32,[C.c_size_t,p,u,p,p],self.read),(p,[u,C.c_size_t],self.allocate),
-    (p,[p],self.free),(C.c_int32,[C.c_size_t],self.close)]):
-   self.ops[i]=C.cast(self.wrap(ret,args,func),p).value
+  self.ops={};self.saved_ops={}
+  for name,ret,args,func in [
+    ('dxball_file_create',C.c_size_t,[p,u,u,p,u,u,C.c_size_t],self.open),
+    ('dxball_file_read',C.c_int32,[C.c_size_t,p,u,p,p],self.read),
+    ('dxball_local_alloc',p,[u,C.c_size_t],self.allocate),
+    ('dxball_local_free',p,[p],self.free),
+    ('dxball_file_close',C.c_int32,[C.c_size_t],self.close)]:
+   self.ops[name]=p.in_dll(self.lib,name)
+   self.saved_ops[name]=self.ops[name].value
+   self.ops[name].value=C.cast(self.wrap(ret,args,func),p).value
   self.invoke=self.stack_driver.dxball_test_invoke_seeded;self.invoke.argtypes=[p,p,p,u];self.invoke.restype=C.c_int32
   self.function=C.cast(self.lib.dxball_load_bitmap,p).value
  def wrap(self,ret,args,func):
@@ -91,5 +95,5 @@ class NativeBitmap:
   return result
 
  def restore(self):
-  for i,value in enumerate(self.saved_ops):self.ops[i]=value
+  for name,value in self.saved_ops.items():self.ops[name].value=value
   C.c_void_p.in_dll(self.core,'dxball_direct_draw').value=self.saved_draw

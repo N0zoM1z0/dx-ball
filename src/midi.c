@@ -1,11 +1,10 @@
 #include "allocator.h"
 #include "midi.h"
 #include "file.h"
+#include "memory.h"
 #include <stdlib.h>
 #include <string.h>
 
-void *(DXBALL_DDCALL *dxball_midi_local_alloc)(DxBallUInt, size_t);
-void *(DXBALL_DDCALL *dxball_midi_local_free)(void *);
 DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_mapping)(DxBallMidiHandle,
         void *, DxBallUInt, DxBallUInt, DxBallUInt, const char *);
 void *(DXBALL_DDCALL *dxball_midi_map_view)(DxBallMidiHandle, DxBallUInt,
@@ -50,7 +49,7 @@ DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
             result = 4;
             break;
         }
-        context = (DxBallMdsContext *)dxball_midi_local_alloc(0x40, sizeof(*context));
+        context = (DxBallMdsContext *)dxball_local_alloc(0x40, sizeof(*context));
         if (context == NULL) {
             result = 1;
             break;
@@ -83,7 +82,7 @@ DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
     } while (0);
 
     if (result != 0) {
-        if (context != NULL) dxball_midi_local_free(context);
+        if (context != NULL) dxball_local_free(context);
     } else {
         *output = context;
     }
@@ -239,7 +238,7 @@ DxBallInt dxball_release_mds(DxBallMdsContext *context)
         dxball_midi_global_free(dxball_midi_global_handle(current->buffers));
     }
     current->magic = MDS_FREED;
-    dxball_midi_local_free(current);
+    dxball_local_free(current);
     return 0;
 }
 

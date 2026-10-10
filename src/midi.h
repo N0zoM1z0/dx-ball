@@ -41,8 +41,6 @@ typedef void (DXBALL_DDCALL *DxBallMidiCallback)(DxBallMidiHandle, DxBallUInt,
 
 /* Kernel32/WinMM boundaries retain x86 stdcall. Typed host records grow with
    pointers; the real Windows adapter must use the i686 SDK layouts. */
-extern void *(DXBALL_DDCALL *dxball_midi_local_alloc)(DxBallUInt, size_t);
-extern void *(DXBALL_DDCALL *dxball_midi_local_free)(void *);
 extern DxBallMidiHandle (DXBALL_DDCALL *dxball_midi_create_mapping)(DxBallMidiHandle,
         void *, DxBallUInt, DxBallUInt, DxBallUInt, const char *);
 extern void *(DXBALL_DDCALL *dxball_midi_map_view)(DxBallMidiHandle, DxBallUInt,

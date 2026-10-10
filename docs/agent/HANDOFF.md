@@ -6,54 +6,59 @@ run only affected exact comparisons and useful existing Oracles.
 
 ## Current checkpoint
 
-The [shared file-service batch](../research/exact/EXACT_FILE_SERVICES.md) moves
-the complete binary loader to `src/file.c/file.h`. Sound and MDS now use four
-independently typed Kernel32 cells; three are shared by the MDS opener.
-Windows binds each once. The former sound table retains its device and actual
-allocator callbacks. Source owner/build integration follows the moved entry.
+The [Bitmap batch](../research/exact/EXACT_BITMAP_LOADER.md) restores direct
+40-byte information-header fields, four-byte input colors, recomputed pixel
+counts, consumed HRESULTs and the shared row/palette counter. Bitmap now uses
+the genuine File3 imports and shares LocalAlloc/LocalFree with MDS through
+`src/memory.c/memory.h`. Windows binds each once; the native Bitmap fixture
+saves and restores all five actual cells. Existing cases remain unchanged.
 
 - 283 source-present functions; 134 exact functions / 20,887 code bytes.
-- One compile per 24 affected recipes. Complete comparison covers 127 units
-  and 1,312 actual relocations; 124 of 125 affected accepted units remain exact.
-- `draw-effect-sprite` is now candidate: its unchanged body emits a different
-  global/parameter indexing expression, 365 bytes against 361. The previous
-  exact product is retained; do not disguise the current difference.
-- File loading remains 307/304; a longer ReadFile count-output address accounts
-  for three extra bytes. MDS opening remains 480/522. Preserve natural locals.
-- Existing MIDI and sound Oracles pass 2,109/134 and 5,782/48 direct/connected
-  checks. Only native cell bindings change; cases are unchanged. Native, VC4
-  and MinGW builds succeed. VC4 reuses 25 objects and compiles eight others.
+- One compile per 21 affected recipes; 101 complete comparisons and 1,078
+  actual relocations. All 99 affected accepted functions remain exact.
+- Bitmap is candidate at 928/976 bytes, 614 differing byte positions.
+  MDS opening remains 480/522. No local-layout, name or compiler-profile trials.
+- Existing Bitmap 975 and MIDI 2,109 direct / 134 connected checks pass.
+  Native, VC4 and MinGW builds pass. VC4 reuses 26 objects and compiles eight;
+  the game now links 34 source objects including the shared memory owner.
+- Bitmap retains its separate prefix at `0x422798`, memcpy `0x417CA0`,
+  Boolean-only short reads, unwritten palette flags, failure leaks and row
+  retreat by copy length. Active gameplay use remains unestablished.
 
-The [MDS records batch](../research/exact/EXACT_MDS_PARSER.md) preserves the
-12-byte format, eight-byte block and 64-byte input MIDIHDR. Parser/converter
-parameter cursors, partial event writes and bank cleanup follow the original.
-Conversion remains 343/343 with 38 local-displacement differences; parse is
-788/868. The [music controls](../research/exact/EXACT_MIDI_IMPORTS.md) retain
-five exact C++ bodies. No spelling/layout/compiler-profile trials are useful.
+The [File batch](../research/exact/EXACT_FILE_SERVICES.md) supplies the four
+shared file cells. Its loader remains 307/304. `draw-effect-sprite` remains
+candidate at 365/361 after shared declarations changed its indexing emission;
+the prior exact object is retained. MDS parser/converter source follows the
+[physical record recovery](../research/exact/EXACT_MDS_PARSER.md); no exact
+claim replaces their remaining compiler differences.
 
 ## Next work
 
-Follow remaining file-service consumers in Bitmap and Window code using the
-saved dossiers. Establish actual cells and SDK bindings before replacing their
-callback-table members. Keep the owner's existing Oracle selection bounded.
-Inspect uncovered game entries and complete frame/lifecycle candidates when
-choosing the next family; an exact-function count is not source completeness.
+The complete saved `close_instance` dossier at `0x40DF80..0x40DFB2` establishes
+one further shared CloseHandle consumer. Migrate that real call and remove its
+Window table member, updating the actual 27-to-26 fixture layout and version
+slot shift. Keep the affected existing Oracle selection bounded.
+
+Continue into complete frame/lifecycle candidates and uncovered game entries.
+The saved bounded inventory finds 43 unclassified entries below `0x416606`,
+42 already annotated compiler/static-init fragments and one DirectDrawCreate
+thunk. Resolve their origin from evidence; that inventory alone does not prove
+the whole source denominator or 95% completion.
 
 ## Evidence and tools
 
-Current epoch: `.analysis/checkpoints/exact-file-services-283-134/`, parent
-`exact-mds-parser-283-135`. Full source inputs, previous/current objects,
-comparisons and two reviews are retained there. Working drivers and receipts
-are under `.analysis/exact-file-services/`.
+Current epoch: `.analysis/checkpoints/exact-bitmap-loader-283-134/`, parent
+`exact-file-services-283-134`. Full source inputs, prior/current objects,
+comparisons and two bounded reviews are retained there. Working drivers and
+receipts are under `.analysis/exact-bitmap-loader/`.
 
-Existing REA dossiers establish all nine file-service callsites and four
-physical IAT cells. This batch opens no provider session and leaves the saved
-snapshot at 483 records. The complete loader dossier is
-`ev_a52bb0030eab7563b8a83f854ffdd76af7e5b0382cd75bda896a04c3efed70a0`;
-the complete MDS opener span is
-`ev_a7b7f4ce05473f020601101338f2392f0e732597eaed9078a2bd13128a77a584`.
+Bitmap's complete dossier is
+`ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad`;
+the Window closer is
+`ev_1c8812cfc0cee3f5a725c911a8611a98678bac2db8eb4363445fadfda4b10263`.
+This batch opens no provider session; the snapshot stays at 483 records.
 
 REA checkout: `/home/pentester/Project/rea/`. Use project `scripts/rea`, pinned
 to REA 4.1.0 / Ghidra 12.1.4; Python uses `scripts/repo-python`. One compiler
 or provider session, one CPU, CMake `--parallel 1`, silent automated audio.
-Keep README concise and put implementation evidence in the owner notes.
+Keep README concise and implementation evidence in the owner notes.
