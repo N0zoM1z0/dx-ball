@@ -15,6 +15,50 @@ Public headers depend only on the shared board types; platform and device
 interfaces remain implementation dependencies. The Windows game is integrated;
 recorded play runs are in [the original-board campaign](ORIGINAL_CAMPAIGN.md).
 
+## Current text and line source recovery
+
+Measurement at `0x404FD0` now restores the local glyph-search loop present in
+the original instructions. Its former helper call had equivalent results but
+was absent from this body. The count-first search excludes the final slot;
+separate accumulation branches preserve signed half-width fallback and spacing.
+Compiler inlining versus explicitly duplicated original source is unproven.
+The complete comparison is 279/279 bytes with eleven relocations and three
+differences at offsets 33, 36 and 38: MOV/CMP operand orientation and the signed
+exit branch. Its twelve-byte frame agrees. It remains a candidate; no names,
+declarations or layouts were varied to force those operands.
+
+Line drawing at `0x403070` now sets only descriptor size/flags, uses the incoming
+surface at each typed COM call, stores and tests the actual Lock result, and
+retains the post-Lock pixel/pitch consumers and explicit sign branches. Its
+140-byte frame agrees with the original, but the complete 409/445-byte candidate
+has 379 unaligned differences and no COFF relocations. Local homes/address
+scheduling differ, and the original subtract/negate error-correction sequence
+has no established source expression. The equivalent natural subtraction is
+retained; no redundant arithmetic was invented to force code generation.
+
+Both complete contiguous dossiers were reused from the closed 11-58 archive,
+with Evidence `ev_6a25f94931f763de87b46ce0de325939c392113a9c31de1568162431ea46a545`
+and `ev_25f8571b40b1ee8c589f398fa1211552c03d241352d0737d904789e2664b8af2`.
+No new provider call was needed. One `/MT` matching compilation compares all
+four accepted UI units and five candidates together. Its declared inputs now
+match the fourteen recursively consumed project files, narrowed from 35.
+The game reuses that matching object after verifying identical production
+flags and 34 other object/input identities; no further source compile is needed.
+Exact totals remain 169 functions, 30,238 complete code bytes and 136 metadata
+bytes. All four prior UI exacts remain exact.
+
+Native/MinGW builds pass. The final library passes 1,134 unchanged selected
+UI cases: 216 each measurement/drawing/centering and 486 line cases. Actual
+glyph bodies, signed bytes, NUL, duplicate/excluded codes, endpoint order,
+octants, retries and whole padded buffers are compared. The fresh VC4 real-Wine
+ball/pause/editor/save/reload/exit flow passes with 77 read-only states, five
+captures, expected saved-bank hash, exit zero and all 49 originals unchanged.
+Receipts are in `.analysis/exact-ui-text-line/` and
+`.analysis/windows-play-ui-text-line/`. Other semantic scopes and prior play
+controls remain historical after input refresh; no full owner or historical
+validation queue was replayed. Driver rasterization, synchronized pixels,
+physical audio/MIDI and nearly complete source fidelity remain unproven.
+
 ## Exact score initialization and reading
 
 The initializer at `0x406EE0` now restores all fifteen explicit name-clear,
@@ -131,7 +175,8 @@ selection survive; selected sprite bank ends at 2.
 
 ## UI behavior
 
-`src/ui.c` executes maintained glyph search/draw bodies. Text length is explicit:
+`src/ui.c` measures with its observed local search and draws through the
+maintained glyph body. Text length is explicit:
 embedded NUL and high bytes participate in search. Failed lookup advances by
 half the width of slot 1, without spacing; successful glyphs add spacing.
 Measurement includes the last glyph's spacing. Centering subtracts signed

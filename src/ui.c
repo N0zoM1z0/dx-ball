@@ -1,17 +1,26 @@
 #include "ui.h"
 #include "device.h"
 #include "paddle.h"
-#include <string.h>
 
 DxBallInt dxball_text_spacing = 1;
 
+/* FUNCTION: DXBALL 0x00404FD0 */
 DxBallInt dxball_measure_text(DxBallInt count, const char *text)
 {
     DxBallInt i, sprite, width = 0;
-    for (i = 0; i < count; ++i) {
-        sprite = dxball_find_glyph(text[i]);
-        width += sprite == 0 ? dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2
-            : dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + dxball_text_spacing;
+    for (i = 0; count > i; ++i) {
+        sprite = 0;
+        do {
+            sprite = sprite + 1;
+        } while (dxball_sprite_banks[dxball_font_bank].count > sprite &&
+                 dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != text[i]);
+        if (dxball_sprite_banks[dxball_font_bank].count == sprite)
+            sprite = 0;
+        if (sprite == 0)
+            width += dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2;
+        else
+            width += dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width
+                   + dxball_text_spacing;
     }
     return width;
 }
@@ -38,22 +47,35 @@ void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count,
     return;
 }
 
+/* FUNCTION: DXBALL 0x00403070 */
 void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
     DxBallInt x2, DxBallInt y2, DxBallByte color)
 {
-    DxBallDDSurface *surface = (DxBallDDSurface *)handle;
     DxBallSurfaceDesc desc;
     DxBallByte *pixel;
-    DxBallInt dx, dy, step_x, step_y, error = 0, i;
-    memset(&desc, 0, sizeof(desc)); desc.size = 108; desc.flags = 14;
-    surface->vtable->get_desc(surface, &desc);
-    while (surface->vtable->lock(surface, NULL, &desc, 0, NULL) != 0) {}
-    pixel = desc.pixels + desc.pitch * y1 + x1;
+    DxBallInt dx, dy, step_x, step_y, error = 0, i, result;
+    desc.size = sizeof(desc);
+    desc.flags = 14;
+    ((DxBallDDSurface *)handle)->vtable->get_desc((DxBallDDSurface *)handle, &desc);
+    do {
+        result = ((DxBallDDSurface *)handle)->vtable->lock(
+            (DxBallDDSurface *)handle, NULL, &desc, 0, NULL);
+    } while (result != 0);
+    pixel = desc.pixels;
+    pixel += desc.pitch * y1 + x1;
     dx = x2 - x1; dy = y2 - y1;
-    step_x = dx < 0 ? -1 : 1;
-    step_y = dy < 0 ? -desc.pitch : desc.pitch;
-    if (dx < 0) dx = -dx;
-    if (dy < 0) dy = -dy;
+    if (dx >= 0) {
+        step_x = 1;
+    } else {
+        step_x = -1;
+        dx = -dx;
+    }
+    if (dy >= 0) {
+        step_y = desc.pitch;
+    } else {
+        step_y = -desc.pitch;
+        dy = -dy;
+    }
     if (dy < dx) {
         for (i = 0; i <= dx; ++i) {
             *pixel = color; error += dy;
@@ -67,7 +89,8 @@ void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
             pixel += step_y;
         }
     }
-    surface->vtable->unlock(surface, NULL);
+    ((DxBallDDSurface *)handle)->vtable->unlock((DxBallDDSurface *)handle, NULL);
+    return;
 }
 
 void dxball_fill_rect(DxBallSurface handle, DxBallInt left, DxBallInt top,

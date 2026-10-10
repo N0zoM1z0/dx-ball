@@ -339,6 +339,9 @@ Entry 20 records three PCX facets totaling 75,138 serialized MCP bytes,
 a 58.7-second cold info query and 136/32 ms warm pseudo/assembly calls.
 It describes header/descriptor producer-consumer views and the original
 duplicated literal/run paths, redundant checks and unconsumed row updates.
+Entry 21 reuses text/line dossiers without a provider call: 443,325/821,198-byte
+archives project to 5,019/8,996 bytes including procedure/pseudo/assembly. It
+documents local search versus a helper call and descriptor/operand views.
 
 ## Clock boundary checkpoint before sprite recovery
 
@@ -472,6 +475,44 @@ Receipts: `.analysis/exact-pcx-decoding/` and
 Evidence records and seven primitive entries. Feedback still uses only
 `/tmp/dxball_rea_feedback_20261010.md`, now twenty numbered entries.
 Continue restoring genuine rendering/resource/call gaps from retained evidence.
+
+## Current UI text/line checkpoint
+
+Measurement at `0x404FD0` restores the original local glyph-search loop and
+separate width accumulation. Its complete 279/279-byte comparison has eleven
+bindings and three differences at 33/36/38: compare operand orientation and
+the signed exit branch. The twelve-byte frame agrees. Do not try names,
+declarations or layouts to force this comparison. Original compiler inlining
+versus duplicated source spelling is unproven.
+
+Line drawing restores partial descriptor setup, fresh incoming-surface COM
+reads, consumed Lock result, post-Lock pitch/pixel consumers and sign branches.
+It remains a complete 409/445-byte candidate /379 unaligned differences /zero
+relocations. The 140-byte frame agrees, but local homes/address scheduling and
+the original subtract/negate correction's source expression remain unexplained.
+Keep the natural equivalent subtraction and avoid redundant emission trials.
+
+One `/MT` matching compile compares all four prior UI exacts and five candidates
+together; no exact was lost or gained. Current totals remain 169 exact functions,
+30,238 complete code bytes and 136 metadata bytes. UI inputs narrow from 35
+to the actual fourteen-file recursive project closure. Matching/production
+flags agree, so the game reuses that object and 34 independently verified
+unchanged objects without another source compile. Native/MinGW builds pass.
+
+The final library passes 1,134 unchanged selected UI cases: 216 each text
+measurement/drawing/centering and 486 line cases. Actual glyphs, whole padded
+buffers, octants, endpoint order and retries are compared. Real VC4 ball/pause/
+editor/save/reload/exit passes with 77 read-only states, five captures, expected
+saved bank, exit zero and all 49 originals unchanged. Other scopes and prior
+controls stay historical after identity refresh; no full owner or historical
+queue was replayed. Source/frame/full-game fidelity stays unproven.
+
+Receipts: `.analysis/exact-ui-text-line/` and
+`.analysis/windows-play-ui-text-line/`. Old 11-58 REA dossiers were reused; no
+provider session was opened. Snapshot stays at nineteen records /seven primitive
+entries. Feedback remains only `/tmp/dxball_rea_feedback_20261010.md`, now
+twenty-one entries. Continue genuine rendering/resource/call recovery from
+retained evidence; the full reconstruction goal stays active.
 
 ## Working limits and completeness
 
