@@ -191,6 +191,7 @@ class _Image:
                       ('dxball_runtime_ops', 15, 14, 'dxball_close_music'),
                       ('dxball_platform_ops', 9, 5, 'dxball_close_music'),
                       ('dxball_effect_ops', 5, 2, 'dxball_draw_keyed_sprite')]
+        boundaries.append(('dxball_display_ops', 2, 1, 'dxball_recover_surfaces'))
         for table, length, slot, symbol in boundaries:
             defaults = (C.c_void_p * length).in_dll(self.lib, table)
             real = C.cast(getattr(self.lib, symbol), C.c_void_p).value
@@ -279,7 +280,7 @@ def fixture_image(library):
         _shim.dxball_test_bind_runtime_ops.restype = C.c_int
         _shim.dxball_test_bind_platform_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_platform_ops.restype = C.c_int
-        _shim.dxball_test_bind_display_ops.argtypes = [C.c_void_p]
+        _shim.dxball_test_bind_display_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_display_ops.restype = C.c_int
     elif _shim_sha256 != shim_sha256:
         raise RuntimeError('CoreNative cannot replace an already loaded GLOBAL interposer')
@@ -313,10 +314,15 @@ def fixture_image(library):
     if actual != C.addressof(image.display_table):
         raise RuntimeError('CoreNative display table does not belong to its copied image')
     # DisplayNative supplies the actual callback after inherited construction.
-    # Staging touches no callback slot; the wrapper rejects an untouched default.
-    result = _shim.dxball_test_bind_display_ops(actual)
+    # The default calls the real body belonging to this same copied image.
+    real = C.cast(image.lib.dxball_recover_surfaces, C.c_void_p).value
+    if (real != image.function_addresses['dxball_recover_surfaces'] or
+            real == C.cast(_shim.dxball_recover_surfaces, C.c_void_p).value or
+            _function_owner(real) != image.path.resolve()):
+        raise RuntimeError('CoreNative surface recovery body has a different owner')
+    result = _shim.dxball_test_bind_display_ops(actual, real)
     if result != 0:
-        raise RuntimeError('CoreNative display binding rejected: null table')
+        raise RuntimeError('CoreNative display binding rejected: null table or recursive real body')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_gameplay_ops'))
     if actual != C.addressof(image.particle_table):
         raise RuntimeError('CoreNative particle table does not belong to its copied image')

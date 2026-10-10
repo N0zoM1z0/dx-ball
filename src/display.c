@@ -5,6 +5,7 @@
 #include "paddle.h"
 #include "particles.h"
 #include "sound.h"
+#include "startup.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -19,13 +20,27 @@ DxBallSurface dxball_restore_surface;
 DxBallRect dxball_lightning_rect;
 DxBallDisplayOps dxball_display_ops = { dxball_update_sound, dxball_recover_surfaces };
 
+/* FUNCTION: DXBALL 0x00408070 */
 void dxball_reset_regions(void)
 {
-    memset(dxball_dirty_regions, 0, sizeof(dxball_dirty_regions));
-    dxball_dirty_counts[0] = dxball_dirty_counts[1] = 0;
+    DxBallRect rect;
+    DxBallInt i;
+    rect.left = 0;
+    rect.top = 0;
+    rect.right = 0;
+    rect.bottom = 0;
+    for (i = 0; i < DXBALL_DIRTY_CAPACITY; ++i) {
+        dxball_dirty_regions[i][0] = rect;
+        dxball_dirty_regions[i][1] = rect;
+    }
+    dxball_dirty_counts[0] = 0;
+    dxball_dirty_counts[1] = 0;
     dxball_dirty_page = 0;
-    memset(dxball_present_regions, 0, sizeof(dxball_present_regions));
+    for (i = 0; i < DXBALL_PRESENT_CAPACITY; ++i) {
+        dxball_present_regions[i] = rect;
+    }
     dxball_present_count = 0;
+    return;
 }
 
 /* FUNCTION: DXBALL 0x00408180 */
@@ -269,17 +284,18 @@ void dxball_bind_board_surface(DxBallSurface surface) { dxball_restore_surface =
 
 void dxball_bind_display_surface(DxBallSurface surface) { dxball_effect_surface = surface; return; }
 
+/* FUNCTION: DXBALL 0x00409040 */
 void dxball_present(void)
 {
     DxBallInt result;
-    DxBallDDSurface *surface;
     if (dxball_reduced_particles == 0) {
-        surface = (DxBallDDSurface *)dxball_primary_surface;
-        do {
-            result = surface->vtable->flip(surface, NULL, 0);
+        for (;;) {
+            result = ((DxBallDDSurface *)dxball_primary_surface)->vtable->flip(
+                (DxBallDDSurface *)dxball_primary_surface, NULL, 0);
             if (result == 0) break;
-            if (result == (DxBallInt)0x887601c2U) dxball_display_ops.recover_surfaces();
-        } while (result == (DxBallInt)0x8876021cU);
+            if (result == (DxBallInt)0x887601c2U) dxball_recover_surfaces();
+            if (result != (DxBallInt)0x8876021cU) break;
+        }
         if (result == 0) {
             dxball_dirty_page = 1 - dxball_dirty_page;
             if (dxball_wait_vertical_blank == 0) dxball_wait_frames(1);
@@ -288,6 +304,7 @@ void dxball_present(void)
         dxball_wait_frames(1);
         dxball_present_regions_now();
     }
+    return;
 }
 
 void dxball_present_regions_now(void)
@@ -379,19 +396,26 @@ void dxball_sort_present_regions(DxBallInt first, DxBallInt last)
     return;
 }
 
+/* FUNCTION: DXBALL 0x00409610 */
 void dxball_wait_frames(DxBallInt frames)
 {
     DxBallInt i;
     DxBallUInt now;
-    for (i = 0; i < frames; ++i) {
-        if (dxball_wait_vertical_blank != 0) {
+    i = 0;
+    if (dxball_wait_vertical_blank != 0) {
+        while (i++ < frames) {
             dxball_direct_draw->vtable->wait_vertical_blank(dxball_direct_draw, 1, NULL);
-        } else {
-            do { now = dxball_current_time(); }
-            while (now >= dxball_frame_wait_tick && now < dxball_frame_wait_tick + 17);
+        }
+    } else {
+        while (i++ < frames) {
+            do {
+                now = dxball_current_time();
+                if (now < dxball_frame_wait_tick) break;
+            } while (now < dxball_frame_wait_tick + 17);
             dxball_frame_wait_tick = dxball_current_time();
         }
     }
+    return;
 }
 
 void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
@@ -415,55 +439,74 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
     return;
 }
 
+/* FUNCTION: DXBALL 0x00415F40 */
 void dxball_last_brick(void)
 {
-    DxBallInt remaining, x, y, tile_x, tile_y, center_x, center_y, i, dx, dy, px, py;
-    DxBallUInt now;
-    DxBallSprite *sprite;
+    DxBallInt remaining, tile_x, tile_y;
+    DxBallRect rect;
+    DxBallInt x, y, center_x, center_y, column, row, tile;
     if (dxball_last_brick_deadline == 0) {
-        now = dxball_clock_ops.time_ms();
-        dxball_last_brick_deadline = (DxBallInt)(now + dxball_gameplay_ops.random_range(20000) + 40000);
+        dxball_last_brick_deadline = (DxBallInt)(dxball_clock_ops.time_ms() +
+            dxball_random_range(20000) + 40000);
     }
     remaining = (DxBallInt)((DxBallUInt)dxball_last_brick_deadline - dxball_clock_ops.time_ms());
-    if (remaining > 0) {
-        remaining /= 2;
-        if (remaining < 4) remaining = 3;
-        dxball_display_ops.update_sound(21, 0, 0, -(remaining / 3));
-        return;
-    }
-    dxball_gameplay_ops.stop_sound(21);
-    dxball_gameplay_ops.play_sound(22, 0, 0, 0);
-    tile_x = tile_y = -1;
-    for (x = 0; x < DXBALL_BOARD_WIDTH; ++x) {
-        for (y = 0; y < DXBALL_BOARD_HEIGHT; ++y) {
-            if (dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] != 0 &&
-                dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] != 2) { tile_x = x; tile_y = y; }
+    if (remaining < 1) {
+        dxball_stop_sound(21);
+        dxball_play_sound(22, 0, 0, 0);
+        for (column = 0; column < DXBALL_BOARD_WIDTH; ++column) {
+            for (row = 0; row < DXBALL_BOARD_HEIGHT; ++row) {
+                tile = (signed char)dxball_board_tiles[column + row * DXBALL_BOARD_WIDTH];
+                if (tile != 0 && tile != 2) {
+                    tile_x = column;
+                    tile_y = row;
+                    center_x = tile_x * 30 + 35;
+                    center_y = tile_y * 15 + 57;
+                }
+            }
         }
+        dxball_queue_explosion_at(tile_x, tile_y);
+        dxball_spawn_fire_effect(center_x, center_y);
+        if (dxball_reduced_particles != 0) {
+            DxBallInt i;
+            for (i = 0; i < 15; ++i) {
+                dxball_spawn_particle(center_x - 15 + dxball_random_range(30),
+                    center_y - 7 + dxball_random_range(15),
+                    6 - dxball_random_range(14), 4 - dxball_random_range(11), 16, 1);
+            }
+        } else {
+            DxBallInt i;
+            for (i = 0; i < 30; ++i) {
+                dxball_spawn_particle(center_x - 15 + dxball_random_range(30),
+                    center_y - 7 + dxball_random_range(15),
+                    6 - dxball_random_range(14), 4 - dxball_random_range(11), 16, 1);
+            }
+        }
+        dxball_select_sprite_bank(2);
+        x = center_x - dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width / 2;
+        y = center_y - dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height;
+        rect.left = 0;
+        rect.top = 0;
+        rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width;
+        rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height;
+        if (x < 0) { rect.left = abs(x); x = 0; }
+        if (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x > 639)
+            rect.right -= -(639 - (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x));
+        if (y < 0) { rect.top = abs(y); y = 0; }
+        if (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y > 479)
+            rect.bottom -= -(479 - (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y));
+        dxball_lightning_x = x;
+        dxball_lightning_y = y;
+        dxball_lightning_rect.top = rect.top;
+        dxball_lightning_rect.bottom = rect.bottom;
+        dxball_lightning_rect.left = rect.left;
+        dxball_lightning_rect.right = rect.right;
+        dxball_lightning_frames = 4;
+        dxball_last_brick_deadline = 0;
+        dxball_select_sprite_bank(0);
+    } else {
+        dxball_update_sound(21, 0, 0, -((remaining / 2 > 3 ? remaining / 2 : 3) / 3));
     }
-    /* The original uses uninitialized coordinates if no eligible tile exists. */
-    if (tile_x < 0) abort();
-    center_x = tile_x * 30 + 35; center_y = tile_y * 15 + 57;
-    dxball_queue_explosion_at(tile_x, tile_y);
-    dxball_spawn_fire_effect(center_x, center_y);
-    for (i = 0; i < (dxball_reduced_particles == 0 ? 30 : 15); ++i) {
-        dy = 4 - dxball_gameplay_ops.random_range(11);
-        dx = 6 - dxball_gameplay_ops.random_range(14);
-        py = center_y - 7 + dxball_gameplay_ops.random_range(15);
-        px = center_x - 15 + dxball_gameplay_ops.random_range(30);
-        dxball_spawn_particle(px, py, dx, dy, 16, 1);
-    }
-    dxball_select_sprite_bank(2);
-    sprite = dxball_sprite_banks[dxball_sprite_bank].sprites[1];
-    x = center_x - sprite->width / 2; y = center_y - sprite->height;
-    dxball_lightning_rect.left = dxball_lightning_rect.top = 0;
-    dxball_lightning_rect.right = sprite->width; dxball_lightning_rect.bottom = sprite->height;
-    if (x < 0) { dxball_lightning_rect.left = -x; x = 0; }
-    if (sprite->width + x > 639) dxball_lightning_rect.right -= sprite->width + x - 639;
-    if (y < 0) { dxball_lightning_rect.top = -y; y = 0; }
-    if (sprite->height + y > 479) dxball_lightning_rect.bottom -= sprite->height + y - 479;
-    dxball_lightning_x = x; dxball_lightning_y = y;
-    dxball_lightning_frames = 4; dxball_last_brick_deadline = 0;
-    dxball_select_sprite_bank(0);
+    return;
 }
 
 void dxball_draw_last_brick(void)

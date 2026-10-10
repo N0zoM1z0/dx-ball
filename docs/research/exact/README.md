@@ -3,6 +3,7 @@
 Each note follows a related source family through its original instructions,
 recovered implementation and complete compiler comparison.
 
+- [Frame boundary and lightning control](EXACT_FRAME_BOUNDARY.md)
 - [Dirty-region presentation](EXACT_PRESENTATION.md)
 - [Region restoration and entity drawing](EXACT_RENDER_RESTORATION.md)
 - [Bank loops and palette state restoration](EXACT_BANK_LOOPS.md)

@@ -43,6 +43,8 @@ static unsigned delete_active, sprite_active, reduced_active, region_active;
 static DxBallRuntimeOps *bound_runtime;
 static DxBallPlatformOps *bound_platform;
 static DxBallDisplayOps *bound_display;
+static void (*real_recover_surfaces)(void);
+static unsigned recover_surfaces_active;
 static unsigned sound_update_active;
 static void (*platform_music_default)(const char *, DxBallInt);
 static unsigned music_load_active;
@@ -326,11 +328,27 @@ int dxball_test_bind_runtime_ops(DxBallRuntimeOps *ops)
 
 /* DisplayNative installs its callback after inherited CoreNative construction.
    Bind the actual copied table now; validate the live slot on every call. */
-int dxball_test_bind_display_ops(DxBallDisplayOps *ops)
+int dxball_test_bind_display_ops(DxBallDisplayOps *ops, void (*recover)(void))
 {
-    if (ops == NULL) return -1;
+    if (ops == NULL || recover == NULL) return -1;
+    if (recover == dxball_recover_surfaces) return -2;
     bound_display = ops;
+    real_recover_surfaces = recover;
     return 0;
+}
+
+void dxball_recover_surfaces(void)
+{
+    void (*callback)(void);
+    callback = real_recover_surfaces;
+    if (bound_display != NULL && bound_display->recover_surfaces != NULL &&
+        bound_display->recover_surfaces != dxball_recover_surfaces)
+        callback = bound_display->recover_surfaces;
+    if (callback == NULL || callback == dxball_recover_surfaces || recover_surfaces_active)
+        binding_failure("CoreNative recover_surfaces: missing real owner or recursive callback");
+    recover_surfaces_active = 1;
+    callback();
+    recover_surfaces_active = 0;
 }
 
 void dxball_update_sound(DxBallInt slot, DxBallInt frequency,
