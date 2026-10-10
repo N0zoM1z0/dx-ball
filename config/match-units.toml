@@ -6604,7 +6604,7 @@ target = 0x00417A30
 [builds.gameover]
 source = "src/gameover.c"
 object = "build/exact/gameover.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameover.c", "src/gameover.h", "src/gameplay.h", "src/intro.h", "src/paddle.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.h", "src/state_types.h", "src/ui.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameover.c", "src/gameover.h", "src/gameplay.h", "src/intro.h", "src/midi.h", "src/paddle.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h", "src/ui.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.read-scores]
@@ -6792,7 +6792,7 @@ target = 0x004266A8
 [[candidates.insert-high-score.relocations]]
 offset = 332
 type = "DIR32"
-symbol = "$SG1163"
+symbol = "$SG1266"
 addend = 0
 target = 0x0042149C
 data_hex = "73636f72652e64617400"
@@ -6807,7 +6807,7 @@ target = 0x00417FF0
 [[candidates.insert-high-score.relocations]]
 offset = 353
 type = "DIR32"
-symbol = "$SG1164"
+symbol = "$SG1267"
 addend = 0
 target = 0x004214A8
 data_hex = "776200"
@@ -6815,7 +6815,7 @@ data_hex = "776200"
 [[candidates.insert-high-score.relocations]]
 offset = 358
 type = "DIR32"
-symbol = "$SG1165"
+symbol = "$SG1268"
 addend = 0
 target = 0x004214AC
 data_hex = "73636f72652e64617400"
@@ -7066,7 +7066,7 @@ target = 0x0042693C
 [[units.edit-score-name.relocations]]
 offset = 91
 type = "DIR32"
-symbol = "$SG1218"
+symbol = "$SG1326"
 addend = 0
 target = 0x00421708
 data_hex = "6869676873636f722e70637800"
@@ -7245,3 +7245,1016 @@ type = "DIR32"
 symbol = "_dxball_score_name_length"
 addend = 0
 target = 0x00426698
+
+[units.initialize-game-over]
+build = "gameover"
+symbol = "_dxball_initialize_game_over"
+target_address = 0x00406440
+size = 321
+
+[[units.initialize-game-over.relocations]]
+offset = 7
+type = "REL32"
+symbol = "_dxball_reset_regions"
+addend = 0
+target = 0x00408070
+
+[[units.initialize-game-over.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.initialize-game-over.relocations]]
+offset = 20
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.initialize-game-over.relocations]]
+offset = 34
+type = "DIR32"
+symbol = "$SG1281"
+addend = 0
+target = 0x00421404
+data_hex = "6869676873636f722e70637800"
+
+[[units.initialize-game-over.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.initialize-game-over.relocations]]
+offset = 45
+type = "REL32"
+symbol = "_dxball_load_pcx"
+addend = 0
+target = 0x00409BB0
+
+[[units.initialize-game-over.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "$SG1282"
+addend = 0
+target = 0x00421414
+data_hex = "6d61696e6d656e752e73626b00"
+
+[[units.initialize-game-over.relocations]]
+offset = 62
+type = "REL32"
+symbol = "_dxball_load_sprite_bank"
+addend = 0
+target = 0x00404610
+
+[[units.initialize-game-over.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "$SG1283"
+addend = 0
+target = 0x00421424
+data_hex = "737973666f6e742e73626b00"
+
+[[units.initialize-game-over.relocations]]
+offset = 79
+type = "REL32"
+symbol = "_dxball_load_sprite_bank"
+addend = 0
+target = 0x00404610
+
+[[units.initialize-game-over.relocations]]
+offset = 89
+type = "REL32"
+symbol = "_dxball_select_sprite_bank"
+addend = 0
+target = 0x00403E70
+
+[[units.initialize-game-over.relocations]]
+offset = 99
+type = "REL32"
+symbol = "_dxball_select_font_bank"
+addend = 0
+target = 0x00403E90
+
+[[units.initialize-game-over.relocations]]
+offset = 109
+type = "DIR32"
+symbol = "$SG1284"
+addend = 0
+target = 0x00421430
+data_hex = "61636b65722d67732e6d647300"
+
+[[units.initialize-game-over.relocations]]
+offset = 114
+type = "REL32"
+symbol = "_dxball_load_music"
+addend = 0
+target = 0x00401B90
+
+[[units.initialize-game-over.relocations]]
+offset = 122
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.initialize-game-over.relocations]]
+offset = 128
+type = "REL32"
+symbol = "_dxball_bind_board_surface"
+addend = 0
+target = 0x00409000
+
+[[units.initialize-game-over.relocations]]
+offset = 137
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.initialize-game-over.relocations]]
+offset = 149
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.initialize-game-over.relocations]]
+offset = 155
+type = "REL32"
+symbol = "_dxball_bind_display_surface"
+addend = 0
+target = 0x00409020
+
+[[units.initialize-game-over.relocations]]
+offset = 168
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.initialize-game-over.relocations]]
+offset = 174
+type = "REL32"
+symbol = "_dxball_bind_display_surface"
+addend = 0
+target = 0x00409020
+
+[[units.initialize-game-over.relocations]]
+offset = 182
+type = "REL32"
+symbol = "_dxball_read_scores"
+addend = 0
+target = 0x00406CC0
+
+[[units.initialize-game-over.relocations]]
+offset = 188
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.initialize-game-over.relocations]]
+offset = 195
+type = "DIR32"
+symbol = "_dxball_score_name_length"
+addend = 0
+target = 0x00426698
+
+[[units.initialize-game-over.relocations]]
+offset = 205
+type = "DIR32"
+symbol = "_dxball_score_blink_tick"
+addend = 0
+target = 0x0042669C
+
+[[units.initialize-game-over.relocations]]
+offset = 215
+type = "DIR32"
+symbol = "_dxball_score_cursor_visible"
+addend = 0
+target = 0x004266A4
+
+[[units.initialize-game-over.relocations]]
+offset = 225
+type = "DIR32"
+symbol = "_dxball_selected_score_index"
+addend = 0
+target = 0x004266A0
+
+[[units.initialize-game-over.relocations]]
+offset = 234
+type = "DIR32"
+symbol = "_dxball_score"
+addend = 0
+target = 0x00422D18
+
+[[units.initialize-game-over.relocations]]
+offset = 240
+type = "DIR32"
+symbol = "_dxball_scores"
+addend = 656
+target = 0x004266A8
+
+[[units.initialize-game-over.relocations]]
+offset = 252
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.initialize-game-over.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.initialize-game-over.relocations]]
+offset = 277
+type = "DIR32"
+symbol = "_dxball_show_high_scores"
+addend = 0
+target = 0x0042693C
+
+[[units.initialize-game-over.relocations]]
+offset = 286
+type = "REL32"
+symbol = "_dxball_redraw_mode"
+addend = 0
+target = 0x004036B0
+
+[[units.initialize-game-over.relocations]]
+offset = 304
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[units.dispose-game-over]
+build = "gameover"
+symbol = "_dxball_dispose_game_over"
+target_address = 0x00407370
+size = 175
+
+[[units.dispose-game-over.relocations]]
+offset = 61
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[[units.dispose-game-over.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.dispose-game-over.relocations]]
+offset = 77
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.dispose-game-over.relocations]]
+offset = 87
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.dispose-game-over.relocations]]
+offset = 93
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.dispose-game-over.relocations]]
+offset = 102
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.dispose-game-over.relocations]]
+offset = 125
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.dispose-game-over.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.dispose-game-over.relocations]]
+offset = 141
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.dispose-game-over.relocations]]
+offset = 151
+type = "REL32"
+symbol = "_dxball_release_sprite_banks"
+addend = 0
+target = 0x00403CB0
+
+[[units.dispose-game-over.relocations]]
+offset = 156
+type = "REL32"
+symbol = "_dxball_release_sounds"
+addend = 0
+target = 0x004058B0
+
+[[units.dispose-game-over.relocations]]
+offset = 161
+type = "REL32"
+symbol = "_dxball_close_music"
+addend = 0
+target = 0x00401DA0
+
+[units.redraw-game-over]
+build = "gameover"
+symbol = "_dxball_redraw_game_over"
+target_address = 0x00406590
+size = 414
+
+[[units.redraw-game-over.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.redraw-game-over.relocations]]
+offset = 46
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.redraw-game-over.relocations]]
+offset = 55
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.redraw-game-over.relocations]]
+offset = 69
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.redraw-game-over.relocations]]
+offset = 75
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.redraw-game-over.relocations]]
+offset = 85
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-game-over.relocations]]
+offset = 91
+type = "REL32"
+symbol = "_dxball_clear_surface"
+addend = 0
+target = 0x00409F10
+
+[[units.redraw-game-over.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.redraw-game-over.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-game-over.relocations]]
+offset = 126
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-game-over.relocations]]
+offset = 136
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-game-over.relocations]]
+offset = 142
+type = "REL32"
+symbol = "_dxball_select_surface"
+addend = 0
+target = 0x00403E50
+
+[[units.redraw-game-over.relocations]]
+offset = 151
+type = "DIR32"
+symbol = "_dxball_show_high_scores"
+addend = 0
+target = 0x0042693C
+
+[[units.redraw-game-over.relocations]]
+offset = 163
+type = "REL32"
+symbol = "_dxball_draw_high_scores"
+addend = 0
+target = 0x00406B20
+
+[[units.redraw-game-over.relocations]]
+offset = 174
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.redraw-game-over.relocations]]
+offset = 186
+type = "DIR32"
+symbol = "$SG1296"
+addend = 0
+target = 0x00421440
+data_hex = "596f752068617665206120686967682073636f72652100"
+
+[[units.redraw-game-over.relocations]]
+offset = 203
+type = "REL32"
+symbol = "_dxball_draw_centered_text"
+addend = 0
+target = 0x00404F80
+
+[[units.redraw-game-over.relocations]]
+offset = 211
+type = "DIR32"
+symbol = "$SG1297"
+addend = 0
+target = 0x00421458
+data_hex = "456e74657220796f7572206e616d653a00"
+
+[[units.redraw-game-over.relocations]]
+offset = 225
+type = "REL32"
+symbol = "_dxball_draw_text"
+addend = 0
+target = 0x00404EE0
+
+[[units.redraw-game-over.relocations]]
+offset = 238
+type = "DIR32"
+symbol = "$SG1299"
+addend = 0
+target = 0x0042146C
+data_hex = "596f75722073636f72653a00"
+
+[[units.redraw-game-over.relocations]]
+offset = 255
+type = "REL32"
+symbol = "_dxball_draw_centered_text"
+addend = 0
+target = 0x00404F80
+
+[[units.redraw-game-over.relocations]]
+offset = 269
+type = "DIR32"
+symbol = "_dxball_score"
+addend = 0
+target = 0x00422D18
+
+[[units.redraw-game-over.relocations]]
+offset = 275
+type = "REL32"
+symbol = "__ultoa"
+addend = 0
+target = 0x0041F570
+
+[[units.redraw-game-over.relocations]]
+offset = 291
+type = "REL32"
+symbol = "_strlen"
+addend = 0
+target = 0x00417DF0
+
+[[units.redraw-game-over.relocations]]
+offset = 310
+type = "REL32"
+symbol = "_dxball_draw_centered_text"
+addend = 0
+target = 0x00404F80
+
+[[units.redraw-game-over.relocations]]
+offset = 329
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-game-over.relocations]]
+offset = 339
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.redraw-game-over.relocations]]
+offset = 345
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.redraw-game-over.relocations]]
+offset = 356
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.redraw-game-over.relocations]]
+offset = 379
+type = "DIR32"
+symbol = "_dxball_board_surface"
+addend = 0
+target = 0x004228BC
+
+[[units.redraw-game-over.relocations]]
+offset = 389
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.redraw-game-over.relocations]]
+offset = 395
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[units.game-over-frame]
+build = "gameover"
+symbol = "_dxball_game_over_frame"
+target_address = 0x00406730
+size = 696
+
+[[units.game-over-frame.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.game-over-frame.relocations]]
+offset = 25
+type = "REL32"
+symbol = "_dxball_wait_frames"
+addend = 0
+target = 0x00409610
+
+[[units.game-over-frame.relocations]]
+offset = 33
+type = "REL32"
+symbol = "_dxball_restore_regions"
+addend = 0
+target = 0x00408CC0
+
+[[units.game-over-frame.relocations]]
+offset = 38
+type = "DIR32"
+symbol = "_dxball_mouse_x"
+addend = 0
+target = 0x00438B0C
+
+[[units.game-over-frame.relocations]]
+offset = 43
+type = "DIR32"
+symbol = "_dxball_intro_cursor_x"
+addend = 0
+target = 0x00438B24
+
+[[units.game-over-frame.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "_dxball_mouse_y"
+addend = 0
+target = 0x00438B14
+
+[[units.game-over-frame.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "_dxball_intro_cursor_y"
+addend = 0
+target = 0x00438B28
+
+[[units.game-over-frame.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "_dxball_intro_cursor_x"
+addend = 0
+target = 0x00438B24
+
+[[units.game-over-frame.relocations]]
+offset = 75
+type = "DIR32"
+symbol = "_dxball_intro_cursor_x"
+addend = 0
+target = 0x00438B24
+
+[[units.game-over-frame.relocations]]
+offset = 85
+type = "DIR32"
+symbol = "_dxball_intro_cursor_x"
+addend = 0
+target = 0x00438B24
+
+[[units.game-over-frame.relocations]]
+offset = 98
+type = "DIR32"
+symbol = "_dxball_intro_cursor_x"
+addend = 0
+target = 0x00438B24
+
+[[units.game-over-frame.relocations]]
+offset = 108
+type = "DIR32"
+symbol = "_dxball_intro_cursor_y"
+addend = 0
+target = 0x00438B28
+
+[[units.game-over-frame.relocations]]
+offset = 124
+type = "DIR32"
+symbol = "_dxball_intro_cursor_y"
+addend = 0
+target = 0x00438B28
+
+[[units.game-over-frame.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.game-over-frame.relocations]]
+offset = 175
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.game-over-frame.relocations]]
+offset = 187
+type = "DIR32"
+symbol = "_dxball_secondary_surface"
+addend = 0
+target = 0x004228B8
+
+[[units.game-over-frame.relocations]]
+offset = 193
+type = "REL32"
+symbol = "_dxball_select_surface"
+addend = 0
+target = 0x00403E50
+
+[[units.game-over-frame.relocations]]
+offset = 206
+type = "DIR32"
+symbol = "_dxball_primary_surface"
+addend = 0
+target = 0x004228B4
+
+[[units.game-over-frame.relocations]]
+offset = 212
+type = "REL32"
+symbol = "_dxball_select_surface"
+addend = 0
+target = 0x00403E50
+
+[[units.game-over-frame.relocations]]
+offset = 220
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.game-over-frame.relocations]]
+offset = 225
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.game-over-frame.relocations]]
+offset = 230
+type = "REL32"
+symbol = "_strlen"
+addend = 0
+target = 0x00417DF0
+
+[[units.game-over-frame.relocations]]
+offset = 246
+type = "REL32"
+symbol = "_dxball_draw_text"
+addend = 0
+target = 0x00404EE0
+
+[[units.game-over-frame.relocations]]
+offset = 255
+type = "DIR32"
+symbol = "_dxball_score_cursor_visible"
+addend = 0
+target = 0x004266A4
+
+[[units.game-over-frame.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "$SG1311"
+addend = 0
+target = 0x00421478
+data_hex = "5f00"
+
+[[units.game-over-frame.relocations]]
+offset = 279
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.game-over-frame.relocations]]
+offset = 284
+type = "DIR32"
+symbol = "_dxball_score_name"
+addend = 0
+target = 0x00426948
+
+[[units.game-over-frame.relocations]]
+offset = 289
+type = "REL32"
+symbol = "_strlen"
+addend = 0
+target = 0x00417DF0
+
+[[units.game-over-frame.relocations]]
+offset = 298
+type = "REL32"
+symbol = "_dxball_measure_text"
+addend = 0
+target = 0x00404FD0
+
+[[units.game-over-frame.relocations]]
+offset = 310
+type = "REL32"
+symbol = "_dxball_draw_text"
+addend = 0
+target = 0x00404EE0
+
+[[units.game-over-frame.relocations]]
+offset = 323
+type = "DIR32"
+symbol = "_dxball_score_blink_tick"
+addend = 0
+target = 0x0042669C
+
+[[units.game-over-frame.relocations]]
+offset = 329
+type = "REL32"
+symbol = "_dxball_elapsed"
+addend = 0
+target = 0x004034F0
+
+[[units.game-over-frame.relocations]]
+offset = 351
+type = "DIR32"
+symbol = "_dxball_score_cursor_visible"
+addend = 0
+target = 0x004266A4
+
+[[units.game-over-frame.relocations]]
+offset = 356
+type = "DIR32"
+symbol = "_dxball_score_cursor_visible"
+addend = 0
+target = 0x004266A4
+
+[[units.game-over-frame.relocations]]
+offset = 361
+type = "REL32"
+symbol = "_dxball_current_time"
+addend = 0
+target = 0x00403450
+
+[[units.game-over-frame.relocations]]
+offset = 366
+type = "DIR32"
+symbol = "_dxball_score_blink_tick"
+addend = 0
+target = 0x0042669C
+
+[[units.game-over-frame.relocations]]
+offset = 387
+type = "REL32"
+symbol = "_dxball_queue_region"
+addend = 0
+target = 0x00408990
+
+[[units.game-over-frame.relocations]]
+offset = 396
+type = "DIR32"
+symbol = "_dxball_draw_to_primary"
+addend = 0
+target = 0x004228D0
+
+[[units.game-over-frame.relocations]]
+offset = 408
+type = "REL32"
+symbol = "_dxball_present"
+addend = 0
+target = 0x00409040
+
+[[units.game-over-frame.relocations]]
+offset = 414
+type = "DIR32"
+symbol = "_dxball_show_high_scores"
+addend = 0
+target = 0x0042693C
+
+[[units.game-over-frame.relocations]]
+offset = 427
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.game-over-frame.relocations]]
+offset = 441
+type = "DIR32"
+symbol = "_dxball_score_blink_tick"
+addend = 0
+target = 0x0042669C
+
+[[units.game-over-frame.relocations]]
+offset = 447
+type = "REL32"
+symbol = "_dxball_elapsed"
+addend = 0
+target = 0x004034F0
+
+[[units.game-over-frame.relocations]]
+offset = 463
+type = "REL32"
+symbol = "_dxball_current_time"
+addend = 0
+target = 0x00403450
+
+[[units.game-over-frame.relocations]]
+offset = 468
+type = "DIR32"
+symbol = "_dxball_score_blink_tick"
+addend = 0
+target = 0x0042669C
+
+[[units.game-over-frame.relocations]]
+offset = 485
+type = "REL32"
+symbol = "_dxball_animate_palette"
+addend = 0
+target = 0x0040A970
+
+[[units.game-over-frame.relocations]]
+offset = 494
+type = "DIR32"
+symbol = "_dxball_mouse_action"
+addend = 0
+target = 0x00438B10
+
+[[units.game-over-frame.relocations]]
+offset = 507
+type = "DIR32"
+symbol = "_dxball_entering_score_name"
+addend = 0
+target = 0x00426940
+
+[[units.game-over-frame.relocations]]
+offset = 521
+type = "REL32"
+symbol = "_dxball_wait_frames"
+addend = 0
+target = 0x00409610
+
+[[units.game-over-frame.relocations]]
+offset = 535
+type = "DIR32"
+symbol = "_dxball_show_high_scores"
+addend = 0
+target = 0x0042693C
+
+[[units.game-over-frame.relocations]]
+offset = 560
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[[units.game-over-frame.relocations]]
+offset = 569
+type = "DIR32"
+symbol = "_dxball_show_high_scores"
+addend = 0
+target = 0x0042693C
+
+[[units.game-over-frame.relocations]]
+offset = 584
+type = "DIR32"
+symbol = "$SG1320"
+addend = 0
+target = 0x0042147C
+data_hex = "6869676873636f722e70637800"
+
+[[units.game-over-frame.relocations]]
+offset = 589
+type = "DIR32"
+symbol = "_dxball_background_surface"
+addend = 0
+target = 0x00421070
+
+[[units.game-over-frame.relocations]]
+offset = 595
+type = "REL32"
+symbol = "_dxball_load_pcx"
+addend = 0
+target = 0x00409BB0
+
+[[units.game-over-frame.relocations]]
+offset = 603
+type = "REL32"
+symbol = "_dxball_redraw_mode"
+addend = 0
+target = 0x004036B0
+
+[[units.game-over-frame.relocations]]
+offset = 621
+type = "REL32"
+symbol = "_dxball_palette_transition"
+addend = 0
+target = 0x0040A340
+
+[[units.game-over-frame.relocations]]
+offset = 635
+type = "DIR32"
+symbol = "_dxball_end_requested"
+addend = 0
+target = 0x00425974
+
+[[units.game-over-frame.relocations]]
+offset = 645
+type = "DIR32"
+symbol = "_dxball_return_to_menu"
+addend = 0
+target = 0x00425978
+
+[[units.game-over-frame.relocations]]
+offset = 655
+type = "DIR32"
+symbol = "_dxball_mouse_action"
+addend = 0
+target = 0x00438B10
+
+[[units.game-over-frame.relocations]]
+offset = 665
+type = "DIR32"
+symbol = "_dxball_mouse_action"
+addend = 0
+target = 0x00438B10
+
+[[units.game-over-frame.relocations]]
+offset = 678
+type = "DIR32"
+symbol = "_dxball_mouse_action"
+addend = 0
+target = 0x00438B10

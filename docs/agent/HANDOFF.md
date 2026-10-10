@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 150 exact functions / 24,728 code bytes and
+- 283 source-present entries; 154 exact functions / 26,334 code bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -27,8 +27,9 @@ are declared in `config/match-units.toml`.
   loop structure and bound the remaining comparison-emission difference.
 - Persistence-batch checks: 158 existing startup cases + one connected
   dispatch check; 6,531 game-over cases +76 connected checks. The subsequent
-  interface batch checks only the affected game-over owner against its final
-  library. No cases were added; earlier checks retain their own product hashes.
+  interface batch checks the affected game-over owner against its library. The
+  final lifecycle/drawing batch selects 285 existing cases and 76 connected
+  checks. No cases were added; earlier checks retain their own product hashes.
 - The native fixture binds only copied-image ELF import slots to the existing
   typed stdio callbacks. No process-wide libc symbols are interposed.
 - Actual canonical libc creation, existing-file gating, accepted/rejected
@@ -39,9 +40,11 @@ are declared in `config/match-units.toml`.
   identity refresh; these are not newly rerun suites.
 
 Private receipts: `.analysis/exact-score-initialization/` and
-`.analysis/exact-score-reading/`, plus `.analysis/exact-ranking-interface/`.
+`.analysis/exact-score-reading/`, `.analysis/exact-ranking-interface/`, and
+`.analysis/exact-gameover-lifecycle/`.
 Initialization is committed as `177de9d`; persistence as `5d3db52`. The current
-checkpoint adds exact name editing and restores ranking formatting.
+interface checkpoint is `4499a3d`. The current lifecycle checkpoint restores
+initialization, redraw, frame and cleanup exactly; no push was made.
 See [startup evidence](../research/STARTUP_UI_OWNER.md).
 
 ## REA upgrade
@@ -97,13 +100,30 @@ local storage and a one-byte-shorter comparison produce 335 differences in the
 unaligned full-span comparison. No declaration/layout/name/padding trials were
 used. Do not describe this as exact or tune those layouts to force a match.
 
-Continue the coherent game-over initialization, redraw, frame and resource
-lifetime family at `0x406440`, `0x406590`, `0x406730` and `0x407370`, reusing their
-closed 2026-10-07 13-44 dossiers. These bodies still contain callback/factored
-boundaries whose actual direct calls and complete branches need recovery.
-Use the current game-over recipe and existing typed fixtures. Keep both the
-insertion and ranking-drawing gaps explicit until independent evidence resolves
-original source expressions/storage.
+Initialization (`0x406440`, 321 bytes / 34 relocations), redraw (`0x406590`,
+414 / 32), frame (`0x406730`, 696 / 62) and cleanup (`0x407370`, 175 / 12)
+are now exact. Their complete old dossiers and referenced strings were reused.
+The source restores genuine shared APIs and typed COM blits, original branches,
+clock/cursor/dirty-region order and meaningful storage. No new REA call was
+needed. This batch used three VC4 compilations, including typed music/sound
+header completion; all project header inputs are tracked in a 21-file closure.
+
+The final native library passes 285 selected existing initialization/ranking/
+redraw/frame/cleanup cases and all 76 connected mode/name/persistence checks.
+The private selector executes unmodified maintained oracle loops. The earlier
+40-case lifetime selection and previous 6,531-case full owner check retain their
+own intermediate/earlier library hashes. Native and MinGW builds pass; VC4
+relinks 35 verified objects without further source compilation. All five
+accepted game-over bodies are compared together; both existing candidate gaps
+remain explicit. No full historical queue was replayed.
+
+Next inspect the actual game-over key controller at `0x4069F0` using its retained
+`04-analyze_function.json` dossier. It owns 153 instruction bytes in three ranges
+within a 302-byte span containing switch data; reconcile all branches and data
+before choosing natural source. The current simplified key gate is semantic,
+not an exact claim. Then follow the actual mode-2 editor initialization/redraw/
+frame/resource lifetime family with its saved dossiers and owner notes. Do not
+perform layout/name/padding trials on the insertion or ranking-drawing gaps.
 
 Earlier unresolved candidates remain: device initialization (359 bytes / ten
 differences), and live sprite-bank recovery at `0x403D30` (279/282 bytes / 80
@@ -119,7 +139,9 @@ cold byte reads, a 150,222-byte MCP response for a 77-byte function, a
 4,795,431-byte catalog for 139 tools, generic legacy-snapshot rejection, and
 response-field/lifecycle migration issues. Entry 8 records how projecting old
 function dossiers to pseudocode/assembly avoided new provider calls and reduced
-the required view from 0.6/0.98 MB to approximately 5/4.6 KB. Measurements and suggestions are
+the required view from 0.6/0.98 MB to approximately 5/4.6 KB. Entry 9 records
+how normalized pseudocode hides original eligibility branches relevant to exact
+source restoration. Measurements and suggestions are
 separate; exact model-token counts and snapshot failure root cause are unknown.
 Nothing has been sent externally.
 

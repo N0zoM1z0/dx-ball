@@ -44,6 +44,47 @@ comparisons are private in `.analysis/exact-score-reading/`.
 
 ## Entries and retained observations
 
+### Exact initialization, drawing, frame and resource cleanup
+
+Initialization at `0x406440` and cleanup at `0x407370` now match their complete
+321-byte and 175-byte bodies, with 34 and twelve relocations respectively.
+Initialization restores genuine region, surface, PCX, bank and music calls,
+separate primary/secondary binding branches, the original unsigned eligibility
+branches and explicit exit. Only the first name byte is cleared. All four
+consumed filename operands include complete NUL-terminated storage checks.
+
+Cleanup retains the meaningful 640x480 rectangle before the fade gate, performs
+the actual secondary-surface COM blit through its typed vtable when required,
+and calls the genuine bank, sound and music cleanup bodies in their original
+order. Fade zero still causes no external operation. No return-result locals,
+padding or profile-specific bodies were introduced.
+
+Redraw at `0x406590` is exact across 414 bytes and 32 relocations. It restores
+three genuine typed COM blits, direct clearing calls, the original `_ultoa`
+conversion and exit, retaining the meaningful rectangle and 100-byte buffer.
+Frame processing at `0x406730` is exact across 696 bytes and 62 relocations.
+It restores separate surface-selection branches, both original name-length
+calls, cursor-width arithmetic, direct palette/PCX calls and click branch order.
+The meaningful rectangle remains; the factored length local is removed.
+
+The complete original dossiers and referenced strings were reused from
+`00` through `03-analyze_function.json` in the closed 13-44 run, with the
+Evidence IDs in the table below. No new provider request was needed. Three
+VC4 compilations were used: initial lifetime recovery, complete typed music/sound
+declarations with the 21-file project input closure, then drawing/frame recovery.
+Name editing remains exact; the ranking-drawing/insertion gaps are unchanged.
+
+Native and MinGW builds pass, and VC4 links all 35 verified current objects.
+The final library passes 285 existing initialization, ranking, redraw, frame
+and cleanup cases plus all 76 connected checks. The private selector executes those
+unmodified loops from the maintained oracle; it adds no cases and does not
+rerun its complete eight-entry suite. The previous complete 6,531-case report
+retains its own earlier library hash. Resource/driver effects still use the
+existing typed boundaries. Inputs, products, comparisons and this focused
+receipt are in `.analysis/exact-gameover-lifecycle/`. The earlier focused
+40-case lifetime run remains an intermediate-source receipt, not an additional
+case inventory or final-library full-suite claim.
+
 ### Exact name editing and restored ranking formatting
 
 Name editing at `0x4071C0` now matches its complete 421-byte body after all
