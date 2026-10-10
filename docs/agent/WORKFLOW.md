@@ -54,7 +54,7 @@ the fixture preserve the real ABI? Resolve the answer before broadening work.
 ## Build and check the affected behavior
 
 Once the family is stable, compile the affected maintained target. Use the
-build instructions in the repository README; CMake builds run with
+build instructions in [`BUILD.md`](../BUILD.md); CMake builds run with
 `--parallel 1`. Prefer a small startup/play check or one affected existing
 Oracle when it resolves a concrete issue. Tests are optional evidence. Do not
 default to the complete owner suite or historical validation batches, and do

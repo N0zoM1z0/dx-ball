@@ -1,19 +1,19 @@
 # DX-Ball reconstruction
 
-Reconstructing DX-Ball v1.07 from its Windows executable into readable,
-rebuildable source, using [REA](https://github.com/morluto/rea).
+Reconstructing DX-Ball v1.07 from its Windows executable into readable source
+that can be rebuilt and played, using [REA](https://github.com/morluto/rea).
 
 ## How it works
 
-We work through the game one behavior at a time: launching a ball, hitting a
-brick, drawing a frame. REA connects the agent to Ghidra so it can trace those
-behaviors through the original program and recover the code behind them.
+We start with a game behavior, such as a ball hitting a brick. Through REA,
+the agent asks Ghidra for the original functions, instructions, callers and
+data, then follows how that behavior works across the game.
 
-1. Use REA to inspect decompiled code, instructions, callers and shared data.
-2. Turn that evidence into C/C++ routines, structures and connected game logic.
-3. Compile with the original-era toolchain and compare against the executable.
-   Follow differences back through REA to refine the reconstruction.
-4. Rebuild and play the game, then continue with the next behavior.
+1. Trace the behavior with REA to recover control flow and shared structures.
+2. Write the corresponding C/C++ and connect it to the rest of the game.
+3. Compile with the original-era toolchain; use differences from the executable
+   to guide the next REA query and refine the source.
+4. Rebuild, play, and repeat until the whole game is restored.
 
 [REA in practice](docs/REA.md) · [Source map](src/README.md) ·
 [Build and play](docs/BUILD.md)
