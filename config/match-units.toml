@@ -3986,3 +3986,134 @@ relocations = [
   { offset = 82, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
   { offset = 110, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
 ]
+
+[candidates.step-explosion-effect]
+build = "effects"
+symbol = "_dxball_step_explosion_effect"
+target_address = 0x412730
+size = 797
+boundary_evidence = "docs/EXACT_EFFECTS.md"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 18, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 24, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 41, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 49, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 64, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 86, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 123, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 156, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 184, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 215, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 245, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 273, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 304, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 331, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 361, type = "REL32", symbol = "_dxball_queue_explosion_at", addend = 0, target = 0x412b30 },
+  { offset = 384, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 412, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 427, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 446, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 452, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 467, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 478, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 489, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 503, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 523, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x421070 },
+  { offset = 529, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 538, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 547, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 553, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 579, type = "REL32", symbol = "_dxball_restore_effect_region", addend = 0, target = 0x408a50 },
+  { offset = 587, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 609, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 645, type = "DIR32", symbol = "_dxball_board_aux", addend = 0, target = 0x43a918 },
+  { offset = 651, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 656, type = "REL32", symbol = "@dxball_remove_brick_effect@4", addend = 0, target = 0x412a50 },
+  { offset = 666, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
+  { offset = 672, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 681, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8 },
+  { offset = 693, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 702, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 711, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 720, type = "REL32", symbol = "_dxball_draw_reduced_sprite", addend = 0, target = 0x4085d0 },
+  { offset = 733, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 742, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 751, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 760, type = "REL32", symbol = "_dxball_draw_sprite", addend = 0, target = 0x404180 },
+  { offset = 768, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 776, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+]
+
+[candidates.remove-brick-effect]
+build = "effects"
+symbol = "@dxball_remove_brick_effect@4"
+target_address = 0x412a50
+size = 220
+boundary_evidence = "docs/EXACT_EFFECTS.md"
+relocations = [
+  { offset = 174, type = "REL32", symbol = "_dxball_runtime_delete", addend = 0, target = 0x416760 },
+]
+
+[units.spawn-brick-effect]
+build = "effects"
+symbol = "_dxball_spawn_brick_effect"
+target_address = 0x412ba0
+size = 259
+boundary_evidence = "docs/EXACT_EFFECTS.md"
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 12, type = "REL32", symbol = "@dxball_append_brick_effect@4", addend = 0, target = 0x412690 },
+  { offset = 27, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 42, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 66, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 74, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 86, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 98, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 110, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 122, type = "DIR32", symbol = "_dxball_hit_dy", addend = 0, target = 0x43a8ac },
+  { offset = 128, type = "DIR32", symbol = "_dxball_hit_dx", addend = 0, target = 0x43a8a8 },
+  { offset = 142, type = "REL32", symbol = "_dxball_generate_bonus", addend = 0, target = 0x4138d0 },
+  { offset = 155, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 170, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 182, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 194, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 202, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 214, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 226, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 238, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+]
+
+[candidates.step-brick-effect]
+build = "effects"
+symbol = "_dxball_step_brick_effect"
+target_address = 0x412cb0
+size = 313
+boundary_evidence = "docs/EXACT_EFFECTS.md"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 32, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 52, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 90, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 96, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 113, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 121, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 136, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 142, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 152, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 161, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 170, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 178, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 183, type = "REL32", symbol = "@dxball_remove_brick_effect@4", addend = 0, target = 0x412a50 },
+  { offset = 193, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x4228bc },
+  { offset = 199, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x403e50 },
+  { offset = 209, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 218, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 227, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x4119f0 },
+  { offset = 243, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 252, type = "REL32", symbol = "_dxball_draw_keyed_sprite", addend = 0, target = 0x404040 },
+  { offset = 260, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 268, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x43fa98 },
+  { offset = 296, type = "REL32", symbol = "_dxball_restore_effect_region", addend = 0, target = 0x408a50 },
+]

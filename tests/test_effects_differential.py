@@ -46,6 +46,48 @@ class EffectOps(C.Structure):
 class EffectsNative(GameNative):
     def __init__(self, library):
         super().__init__(library)
+        from resources_oracle import Surface
+        from test_boards_differential import Rect, RenderOps, Restore
+        # The original cleanup calls the actual surface's BltFast slot directly.
+        # Keep the old oracle's logical surface IDs at the Python boundary.
+        self.effect_board_vtable = (C.c_void_p * 33)()
+        self.effect_board_surface = Surface(self.effect_board_vtable)
+        board_address = C.addressof(self.effect_board_surface)
+        C.c_size_t.in_dll(self.lib, "dxball_board_surface").value = board_address
+        native_active = self.active
+        class ActiveSurface:
+            @property
+            def value(self):
+                value = native_active.value
+                return GameTarget.SURFACE if value == board_address else value
+            @value.setter
+            def value(self, value):
+                native_active.value = board_address if value == GameTarget.SURFACE else value
+        self.active = ActiveSurface()
+        self.effect_render_ops = RenderOps.in_dll(self.lib, "dxball_render_ops")
+        self.effect_restore_callback = Restore(
+            lambda destination, x, y, source, rect, flags: self.restore(
+                GameTarget.SURFACE if destination == board_address else destination,
+                x, y, source, rect, flags))
+        self.effect_render_ops.restore = self.effect_restore_callback
+        self.effect_blt_active = False
+        def blt_fast(destination, x, y, source, rect, flags):
+            try:
+                assert destination == board_address, "effect cleanup surface owner changed"
+                assert not self.effect_blt_active, "recursive effect BltFast callback"
+                assert C.cast(self.effect_render_ops.restore, C.c_void_p).value, "null live restore callback"
+                self.effect_blt_active = True
+                self.effect_render_ops.restore(destination, x, y, source, rect, flags)
+                return 0
+            except Exception as error:
+                self.events.append(("effect-com-error", repr(error)))
+                return -1
+            finally:
+                self.effect_blt_active = False
+        signature = C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_uint32, C.c_uint32,
+                               C.c_void_p, C.POINTER(Rect), C.c_uint32)
+        self.effect_blt_callback = signature(blt_fast)
+        self.effect_board_vtable[7] = C.cast(self.effect_blt_callback, C.c_void_p).value
         self.fx = EffectList.in_dll(self.lib, "dxball_brick_effects")
         self.hit_dx = C.c_int32.in_dll(self.lib, "dxball_hit_dx")
         self.hit_dy = C.c_int32.in_dll(self.lib, "dxball_hit_dy")

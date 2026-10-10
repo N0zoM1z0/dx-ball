@@ -1,5 +1,14 @@
 # Explosion requests and brick animations
 
+The [complete effect lifecycle restoration](EXACT_EFFECTS.md) restores the
+constructor, deletion boundary and both full steppers from complete instruction
+evidence. Its four spans total 1,589 bytes and add 259 complete exact bytes.
+Source now preserves mode-local writes, duplicated draw branches, genuine
+consumed rectangles and COM BltFast with live current-node reads. The native
+fixture uses a typed COM surface and four real dependency exports. All existing
+cases and original oracle bodies stay fixed; source spelling and deletion
+temporaries remain unresolved where the whole emission differs.
+
 The [complete brick-power restoration](EXACT_BRICK_POWERS.md) calls the real
 brick-effect entry directly. GameNative now selects the verified owned copied
 image and binds its existing callbacks; one typed byte-preserving wrapper reads

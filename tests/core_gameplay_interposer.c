@@ -2,6 +2,7 @@
 #include "gameplay.h"
 #include "core.h"
 #include "effects.h"
+#include "allocator.h"
 #include "bonuses.h"
 #include "particles.h"
 #include "display.h"
@@ -25,6 +26,11 @@ static unsigned brick_effect_active;
 static DxBallRenderOps *bound_render;
 static DxBallFrameOps *bound_frame;
 static DxBallEffectOps *bound_effect;
+static void (DXBALL_NEW_CALL *real_delete)(void *);
+static void (*real_sprite)(DxBallInt, DxBallInt, DxBallInt);
+static void (*real_reduced)(DxBallInt, DxBallInt, DxBallInt);
+static void (*real_region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt);
+static unsigned delete_active, sprite_active, reduced_active, region_active;
 static DxBallRuntimeOps *bound_runtime;
 static DxBallPlatformOps *bound_platform;
 static DxBallDisplayOps *bound_display;
@@ -110,6 +116,75 @@ void dxball_spawn_brick_effect(DxBallInt x, DxBallInt y, DxBallByte tile, DxBall
     brick_effect_active = 1;
     callback(x, y, tile, mode);
     brick_effect_active = 0;
+}
+
+/* Stage genuine current tables before inherited fixtures install callbacks. */
+int dxball_test_bind_effect_render_ops(DxBallEffectOps *effect, DxBallRenderOps *render,
+    void (DXBALL_NEW_CALL *deallocate)(void *),
+    void (*sprite)(DxBallInt, DxBallInt, DxBallInt),
+    void (*reduced)(DxBallInt, DxBallInt, DxBallInt),
+    void (*region)(DxBallInt, DxBallInt, DxBallInt, DxBallInt))
+{
+    if (effect == NULL || render == NULL || deallocate == NULL || sprite == NULL ||
+        reduced == NULL || region == NULL) return -1;
+    if (deallocate == dxball_runtime_delete || sprite == dxball_draw_sprite ||
+        reduced == dxball_draw_reduced_sprite || region == dxball_restore_effect_region) return -2;
+    bound_effect = effect;
+    bound_render = render;
+    real_delete = deallocate;
+    real_sprite = sprite;
+    real_reduced = reduced;
+    real_region = region;
+    return 0;
+}
+
+void DXBALL_NEW_CALL dxball_runtime_delete(void *node)
+{
+    void (DXBALL_NEW_CALL *callback)(void *) = real_delete;
+    if (bound_effect != NULL && bound_effect->deallocate_node != NULL &&
+        bound_effect->deallocate_node != dxball_runtime_delete)
+        callback = bound_effect->deallocate_node;
+    if (callback == NULL || callback == dxball_runtime_delete || delete_active)
+        binding_failure("CoreNative runtime_delete: missing real owner or recursive callback");
+    delete_active = 1;
+    callback(node);
+    delete_active = 0;
+}
+
+void dxball_draw_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
+{
+    void (*callback)(DxBallInt, DxBallInt, DxBallInt) = real_sprite;
+    if (bound_render != NULL && bound_render->sprite != NULL &&
+        bound_render->sprite != dxball_draw_sprite) callback = bound_render->sprite;
+    if (callback == NULL || callback == dxball_draw_sprite || sprite_active)
+        binding_failure("CoreNative draw_sprite: missing real owner or recursive callback");
+    sprite_active = 1;
+    callback(sprite, x, y);
+    sprite_active = 0;
+}
+
+void dxball_draw_reduced_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
+{
+    void (*callback)(DxBallInt, DxBallInt, DxBallInt) = real_reduced;
+    if (bound_effect != NULL && bound_effect->reduced_sprite != NULL &&
+        bound_effect->reduced_sprite != dxball_draw_reduced_sprite) callback = bound_effect->reduced_sprite;
+    if (callback == NULL || callback == dxball_draw_reduced_sprite || reduced_active)
+        binding_failure("CoreNative draw_reduced_sprite: missing real owner or recursive callback");
+    reduced_active = 1;
+    callback(sprite, x, y);
+    reduced_active = 0;
+}
+
+void dxball_restore_effect_region(DxBallInt left, DxBallInt top, DxBallInt right, DxBallInt bottom)
+{
+    void (*callback)(DxBallInt, DxBallInt, DxBallInt, DxBallInt) = real_region;
+    if (bound_effect != NULL && bound_effect->region != NULL &&
+        bound_effect->region != dxball_restore_effect_region) callback = bound_effect->region;
+    if (callback == NULL || callback == dxball_restore_effect_region || region_active)
+        binding_failure("CoreNative restore_effect_region: missing real owner or recursive callback");
+    region_active = 1;
+    callback(left, top, right, bottom);
+    region_active = 0;
 }
 
 int dxball_test_bind_render_frame_ops(DxBallRenderOps *render, DxBallFrameOps *frame,

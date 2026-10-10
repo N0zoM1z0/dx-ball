@@ -18,14 +18,20 @@ provider; original x86 execution and a pinned compiler check the recovered C.
 > Core gameplay, lifecycle and frame drawing now join the board, resource and
 > entity owners: **283 source-present functions** (270 authored bodies, one unknown-origin body and 12 runtime dependencies),
 > **112,273 target differential cases**, and
-> **115 byte-exact functions totaling 17,678 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
+> **116 byte-exact functions totaling 17,937 code bytes**, plus 136 separate metadata bytes. Windows builds now also produce
 > experimental game EXEs. Wine controls cover ball motion, paddle input,
 > pause/resume, editor persistence, a real round transition, natural life loss, ranking persistence and
 > clean shutdown and complete original-board/menu campaigns in both maintained
 > VC4 and MinGW builds; complete gameplay and
 > driver fidelity remain in progress.
 
-The [complete brick-power batch](docs/EXACT_BRICK_POWERS.md) restores whole brick
+The [complete effect lifecycle batch](docs/EXACT_EFFECTS.md) restores four whole
+animation creation, removal and stepping bodies, totaling 1,589 comparison
+span bytes. It adds 1 complete exact functions and 259 code bytes;
+all 115 previous complete identities survive. Existing cases and source-presence
+counts stay fixed; the >=95% complete-source goal remains open.
+
+The preceding [complete brick-power batch](docs/EXACT_BRICK_POWERS.md) restores whole brick
 hits, explosive-neighbor conversion, special-brick softening and destructible
 counting. Softening and counting add 546 complete exact bytes; hit and spread
 remain full nonexact candidates. All 113 previous code and metadata identities

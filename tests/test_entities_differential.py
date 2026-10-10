@@ -89,6 +89,27 @@ class EntitiesNative(EffectsNative):
         self.vtable = (C.c_void_p * 33)()
         self.surface = Surface(self.vtable)
         self.surface_pointer = C.addressof(self.surface)
+        from test_boards_differential import Rect, RenderOps
+        render = RenderOps.in_dll(self.lib, "dxball_render_ops")
+        assert C.addressof(render) == C.addressof(self.effect_render_ops), "inherited render table owner changed"
+        self.entity_restore_active = False
+        def blt_fast(destination, x, y, source, rect, flags):
+            assert destination == self.surface_pointer, "inherited cleanup surface owner changed"
+            assert not self.entity_restore_active, "recursive inherited BltFast callback"
+            callback = render.restore
+            address = C.cast(callback, C.c_void_p).value
+            assert address and address != C.cast(self.entity_blt_callback, C.c_void_p).value, "null or recursive live restore callback"
+            self.entity_restore_active = True
+            try:
+                callback(destination, x, y, source, rect, flags)
+                return 0
+            finally:
+                self.entity_restore_active = False
+        signature = C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_uint32, C.c_uint32,
+                               C.c_void_p, C.POINTER(Rect), C.c_uint32)
+        self.entity_blt_callback = signature(checked(blt_fast, -1))
+        self.entity_callbacks.append(self.entity_blt_callback)
+        self.vtable[7] = C.cast(self.entity_blt_callback, C.c_void_p).value
         signatures = [C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_void_p),
                       C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_void_p, C.c_void_p, C.c_uint32, C.c_void_p),
                       C.CFUNCTYPE(C.c_int32, C.c_void_p, C.c_void_p)]

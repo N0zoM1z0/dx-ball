@@ -151,7 +151,11 @@ class _Image:
             raise RuntimeError('CoreNative library copy must have a separate inode')
         self.lib = C.CDLL(str(self.path.resolve()))
         self.function_addresses = {}
-        boundaries = [('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
+        boundaries = [('dxball_effect_ops', 5, 0, 'dxball_runtime_delete'),
+                      ('dxball_render_ops', 3, 0, 'dxball_draw_sprite'),
+                      ('dxball_effect_ops', 5, 3, 'dxball_draw_reduced_sprite'),
+                      ('dxball_effect_ops', 5, 4, 'dxball_restore_effect_region'),
+                      ('dxball_gameplay_ops', 6, 2, 'dxball_stop_sound'),
                       ('dxball_gameplay_ops', 6, 1, 'dxball_spawn_brick_effect'),
                       ('dxball_gameplay_ops', 6, 3, 'dxball_play_sound'),
                       ('dxball_gameplay_ops', 6, 4, 'dxball_random_range'),
@@ -214,6 +218,8 @@ class _Image:
         self.function_addresses['dxball_load_music'] = real
         self.display_table = (C.c_void_p * 2).in_dll(self.lib, 'dxball_display_ops')
         self.particle_table = (C.c_void_p * 6).in_dll(self.lib, 'dxball_gameplay_ops')
+        self.effect_table = (C.c_void_p * 5).in_dll(self.lib, 'dxball_effect_ops')
+        self.render_table = (C.c_void_p * 3).in_dll(self.lib, 'dxball_render_ops')
 
 
 def fixture_image(library):
@@ -232,6 +238,8 @@ def fixture_image(library):
         _shim.dxball_test_bind_particle_ops.restype = C.c_int
         _shim.dxball_test_bind_brick_effect_ops.argtypes = [C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_brick_effect_ops.restype = C.c_int
+        _shim.dxball_test_bind_effect_render_ops.argtypes = [C.c_void_p] * 6
+        _shim.dxball_test_bind_effect_render_ops.restype = C.c_int
         _shim.dxball_test_bind_render_frame_ops.argtypes = [C.c_void_p, C.c_void_p, C.c_void_p]
         _shim.dxball_test_bind_render_frame_ops.restype = C.c_int
         _shim.dxball_test_bind_runtime_ops.argtypes = [C.c_void_p]
@@ -299,6 +307,24 @@ def fixture_image(library):
     result = _shim.dxball_test_bind_brick_effect_ops(actual, real)
     if result != 0:
         raise RuntimeError('CoreNative brick-effect binding rejected: null or recursive real body')
+    addresses = []
+    for symbol, table in (('dxball_effect_ops', image.effect_table),
+                          ('dxball_render_ops', image.render_table)):
+        actual = C.addressof(C.c_void_p.in_dll(image.lib, symbol))
+        if actual != C.addressof(table):
+            raise RuntimeError('CoreNative effect/render table does not belong to its copied image: ' + symbol)
+        addresses.append(actual)
+    for symbol in ('dxball_runtime_delete', 'dxball_draw_sprite',
+                   'dxball_draw_reduced_sprite', 'dxball_restore_effect_region'):
+        real = C.cast(getattr(image.lib, symbol), C.c_void_p).value
+        if (real != image.function_addresses[symbol] or
+                real == C.cast(getattr(_shim, symbol), C.c_void_p).value or
+                _function_owner(real) != image.path.resolve()):
+            raise RuntimeError('CoreNative effect/render body does not belong to its copied image: ' + symbol)
+        addresses.append(real)
+    result = _shim.dxball_test_bind_effect_render_ops(*addresses)
+    if result != 0:
+        raise RuntimeError('CoreNative effect/render binding rejected: null or recursive real owner')
     return image
 
 

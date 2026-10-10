@@ -1,4 +1,37 @@
-# Current handoff — complete brick hits and board powers
+# Current handoff — complete effect lifecycle
+
+Priority: **exact restoration, moderate existing tests and grouped replay**.
+The [complete effect lifecycle batch](EXACT_EFFECTS.md) restores four whole
+creation/removal/stepping bodies, totaling 1,589 enclosing comparison bytes.
+It adds 1 whole exact units / 259 code bytes; all 115 preceding
+complete code/metadata identities survive. Nonexact whole differences are
+recorded separately. No body/name/order/layout/capacity trials or fake locals.
+
+Acceptance: **283 source-present / 247 scoped rows / 112,273 distinct cases /
+116 exact functions / 17,937 code bytes + 136 separate metadata bytes**.
+Origins 270 authored / 50 runtime / 42 generated / 166 unknown remain fixed.
+One 69-input effects diagnostic object; one 22-object configured cold epoch;
+22 owner scripts pass in 638.667 seconds with 292 frozen inputs,
+plus seven checks. Existing cases, campaigns and target oracles stay fixed.
+Four typed dependency exports and an actual COM fixture support direct calls;
+shim has 49 actual MD dependencies. Forwarding does not prove hardware.
+
+One pinned REA session obtains a complete constructor dossier and all five
+deletion gap bytes. Successful close/save extends snapshot 474 to 476 records,
+zero primitive entries. JMP interpretation is inference, ownership stays 215
+bytes and the entire 220-byte deletion span is compared.
+
+Native family/canonical fb2708ddb099dccdaf282a9958492dbc9574cbd0861253602cb9e6c445d2a495; shim daed844174dcaf013fc324652ec63435a093baf03a8e10b2e8ede6ba080ede64.
+Checkpoint .analysis/checkpoints/exact-effects-phase-283-116, parent brick-powers 115.
+One writable compiler/provider, one allowed CPU, JVM 512 MiB, serial CMake and
+silent Pulse sink. Detailed English gpt-6.1-sol: commits/public push authorized.
+
+Next: complete projectile and fire-effect list lifecycles as a coherent family;
+reuse full evidence and existing cases, then grouped replay. Nonexact storage
+homes and original declaration spelling remain unresolved.
+**>=95% complete-source goal remains active and unachieved.**
+
+# Previous complete brick hits and board powers
 
 Priority: **exact restoration, moderate existing tests and grouped replay**.
 The [complete brick-power batch](EXACT_BRICK_POWERS.md) restores four whole bodies:

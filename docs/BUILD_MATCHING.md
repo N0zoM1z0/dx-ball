@@ -1,6 +1,18 @@
 # Compiler evidence and exact units
 
-The current shared-source checkpoint accepts **115 exact functions / 17,678
+The current shared-source checkpoint accepts **116 exact functions / 17,937
+code bytes**, plus 136 separate exception metadata bytes. The
+[complete effect lifecycle restoration](EXACT_EFFECTS.md) compares four whole
+bodies and adds 259 exact bytes. Every actual relocation and enclosing
+byte remains compared. Nonexact bodies retain explicit full difference counts.
+
+One maintained effects diagnostic object freezes all 69 source/header inputs.
+One configured 22-object cold epoch preserves all 115 preceding code/metadata
+identities. Strict Native, all 22 existing owner scripts, and seven existing
+checks pass. Existing cases and target oracle bodies stay fixed. Source spelling
+and nonexact storage homes remain unknown, without name/order/layout/body trials.
+
+The preceding shared-source checkpoint accepted **115 exact functions / 17,678
 code bytes**, plus 136 separate exception metadata bytes. The
 [complete brick-power restoration](EXACT_BRICK_POWERS.md) adds the full 397-byte
 special-brick softener and 149-byte destructible counter. Hit compares
