@@ -21,11 +21,12 @@ def digest(path):
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--manifest', type=Path, default=ROOT / 'config/runtime-origin-sections.json')
     parser.add_argument('--output', type=Path, default=ROOT / 'build/reports/runtime-origin-sections.json')
     args = parser.parse_args()
     with session_lock():
         Toolchain().verify()
-        manifest_path = ROOT / 'config/runtime-origin-sections.json'
+        manifest_path = args.manifest.resolve()
         manifest = json.loads(manifest_path.read_text())
         original = ROOT / 'original/DXBALL.EXE'
         library = ROOT / manifest['library']
@@ -57,6 +58,8 @@ def main():
             evidence_path.parent / 'close.json')}
         inputs[str(evidence_path.relative_to(ROOT))] = evidence_hash
         results = []
+        verified_exports = {}
+        export_origins = {}
         for entry in manifest['sections']:
             address = int(entry['address'], 0)
             name, raw = raw_members[entry['member_header_offset']]
@@ -77,9 +80,10 @@ def main():
             local = {s['name']: address + s['value'] for s in symbols.values() if s['section'] == index}
             if any(s['value'] > len(code) for s in symbols.values() if s['section'] == index):
                 raise ValueError('defined symbol exceeds the selected code section')
-            if any(n in fixed and fixed[n] != a for n, a in local.items()):
+            established = {**fixed, **verified_exports}
+            if any(n in established and established[n] != a for n, a in local.items()):
                 raise ValueError('local definition contradicts the prior relocation map')
-            mapping = {**fixed, **local}
+            mapping = {**established, **local}
             linked = relocate(code, rels, address, mapping)
             if not base <= address <= base + len(loaded) - len(linked):
                 raise ValueError('whole section exceeds the complete REA read')
@@ -93,7 +97,18 @@ def main():
             results.append(dict(**entry, status='same', difference_count=0,
                 code_sha256=hashlib.sha256(linked).hexdigest(), relocations=rels,
                 applied_bindings={r['symbol']: dict(address=hex(mapping[r['symbol']]),
-                    basis='section-defined symbol' if r['symbol'] in local else 'reviewed prior CRT map') for r in rels}))
+                    basis=('section-defined symbol' if r['symbol'] in local else
+                           'reviewed prior CRT map' if r['symbol'] in fixed else
+                           'earlier fully verified section export'),
+                    **({'section_address': export_origins[r['symbol']]}
+                       if r['symbol'] not in local and r['symbol'] not in fixed else {}))
+                    for r in rels}))
+            # Publish only external definitions after every byte and relocation
+            # in this section has passed. Static names are local to their object.
+            for symbol in symbols.values():
+                if symbol['section'] == index and symbol['storage'] == 2:
+                    verified_exports[symbol['name']] = address + symbol['value']
+                    export_origins[symbol['name']] = entry['address']
         for path, hashed in inputs.items():
             if digest(ROOT / path) != hashed:
                 raise ValueError('origin input changed during verification: ' + path)

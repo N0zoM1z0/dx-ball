@@ -1,11 +1,12 @@
 # Reviewing runtime origins
 
-The latest [bounded origin audit](ORIGIN_AUDIT.md) resolves 27 runtime entries and
-24 generated raster fragments. Current origins are **270 authored / 48 runtime /
-42 compiler-generated / 168 unknown**. Source, semantic and exact acceptance
-remain unchanged. Whole-section relocation-grounded comparisons and parent/EH
-ownership support these dispositions; ambiguous aliases remain unresolved.
-The historical batch counts below retain their original scopes.
+The latest [bounded origin audit](ORIGIN_AUDIT.md#verified-cross-section-crt-definitions)
+resolves eight further runtime entries through earlier verified section exports.
+Current origins are **270 authored / 58 runtime /42 compiler-generated /158 unknown**.
+Source, semantic and function exact acceptance remain unchanged. Complete section
+comparisons ground every relocation; candidate-inferred bindings and conflicting
+aliases remain excluded. The earlier 27-runtime/24-generated batch and other
+historical counts below retain their original scopes.
 
 The earlier [typed-list initialization checkpoint](exact/EXACT_LIST_INITIALIZERS.md)
 identifies seven authored constructors and 18 compiler-generated static

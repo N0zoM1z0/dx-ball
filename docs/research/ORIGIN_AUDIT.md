@@ -1,20 +1,63 @@
 # Bounded origin audit
 
-The origin ledger now records **270 authored / 48 runtime / 42 compiler-generated /
-168 unknown entries**. This batch resolves 27 CRT entries and 24 generated raster
-fragments. Source presence remains **283** (270 authored, one unknown-origin
-no-effect body and 12 runtime bodies); semantic acceptance remains **247 entries /
-112,273 distinct cases**, and exact acceptance remains **76 complete units /
-9,833 code bytes plus 136 separate metadata bytes**.
+The origin ledger now records **270 authored / 58 runtime / 42 compiler-generated /
+158 unknown entries**. The latest batch resolves eight further CRT entries through
+complete relocated code sections. Source presence remains **283** (270 authored,
+one unknown-origin no-effect body and 12 runtime bodies); scoped semantic
+acceptance remains **247 entries**, and exact acceptance remains **171 complete
+functions /30,744 code bytes plus 136 separate metadata bytes**. Earlier batches
+below retain their own scopes and counts.
 
 All 270 currently confirmed authored entries have maintained source. That
 conditional result does not establish the full authored denominator or >=95%
-complete source recovery. The remaining 168 unknown origins, provisional
+complete source recovery. The remaining 158 unknown origins, provisional
 boundaries, original type uncertainty and whole-game fidelity remain open.
 
-## Complete CRT sections
+## Verified cross-section CRT definitions
 
-[The section manifest](../../config/runtime-origin-sections.json) selects 26 complete
+The verifier now makes an external symbol available to later sections only after
+its defining section passes a complete byte comparison with every relocation.
+Static symbols remain local to their COFF object. Conflicting established
+addresses fail; later candidates and byte-derived diagnostic addresses never
+supply bindings. The manifest orders dependencies before consumers.
+
+Eight additional code sections match the same pinned `libc.lib` and retained
+39,136-byte REA observation, Evidence
+`ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
+The observation also agrees with the verified original PE. Their complete
+2,142 bytes and all 32 relocation operands are checked without masks.
+
+| Section start | Complete bytes | COFF external symbol | Earlier verified dependencies |
+| --- | ---: | --- | --- |
+| `0x41D150` | 99 | `__IncMan` | `___addl` |
+| `0x41E5F0` | 102 | `___add_12` | `___addl` |
+| `0x41F990` | 678 | `___ld12mul` | `___addl`, `___shl_12`, `___shr_12` |
+| `0x41F8E0` | 162 | `__fpclass` | `__sptype` |
+| `0x419D90` | 238 | `__decomp` | `__set_exp` |
+| `0x41D1C0` | 172 | `__RoundMan` | `__ZeroTail`, `__IncMan` |
+| `0x41E6E0` | 232 | `___mtold12` | `___shl_12`, `___add_12` |
+| `0x41D370` | 459 | `__ld12cvt` | `__IsZeroMan`, `__FillZeroMan`, `__CopyMan`, `__RoundMan`, `__ShrMan` |
+
+The current manifest verifies 34 complete sections /4,279 bytes /35 imported
+entry rows. The eight new rows move from unknown origin to runtime dependency;
+this does not recover additional game source or create function exactness.
+Independent negative controls reject a consumer placed before its unverified
+export, a section shifted one byte and a forged conflicting export address.
+No compiler, provider or gameplay process was started; production products,
+semantic scopes and function acceptance receipts are unchanged.
+
+Private receipts, controls and the dependency projection are retained in
+`.analysis/origin-closure/`; the immutable seal is
+`.analysis/checkpoints/origin-closure-283-171/sha256.json`.
+Repeat the bounded origin check with
+`scripts/repo-python scripts/verify-runtime-origin-sections.py`.
+Candidate discovery remains diagnostic; aliases with conflicting placements
+are not added to the binding map. Original library selection, source spelling,
+unknown-entry ownership and whole-game fidelity remain unresolved.
+
+## Earlier complete CRT sections
+
+[The section manifest](../../config/runtime-origin-sections.json) originally selected 26 complete
 code sections from the pinned VC4 `libc.lib`, covering 2,137 bytes and 27 previously
 unknown entry rows. REA Evidence
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`

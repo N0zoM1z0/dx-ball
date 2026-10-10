@@ -746,6 +746,23 @@ Entry 27 in the **same existing** `/tmp/dxball_rea_feedback_20261010.md` records
 pointer/list labeling and compact original-to-rebuilt state provenance usability
 suggestions. No new REA response, token or latency measurements.
 
+Latest origin batch: eight further CRT entries are grounded by complete
+code sections and definitions from earlier fully verified sections. All
+2,142 added bytes and 32 actual relocation operands match. The current manifest
+checks 34 complete sections /4,279 bytes /35 origin entries. Future unverified
+exports, shifted spans and conflicting established addresses fail three
+independent controls. Current origins: 270 authored /58 runtime /42 generated
+/158 unknown. Source, function exactness and semantic acceptance are unchanged;
+no production build or runtime check was repeated. Original source denominator
+and full-game fidelity remain unresolved.
+Private proof `.analysis/origin-closure/`; immutable seal
+`.analysis/checkpoints/origin-closure-283-171/sha256.json`. See
+[origin audit](../research/ORIGIN_AUDIT.md#verified-cross-section-crt-definitions).
+REA remains6.3.0, unopened; the complete retained39,136-byte read is PE-verified.
+Feedback entry30 in the same existing document records retained range indexing,
+definition provenance and compact dependency-view suggestions, without new
+latency, cache-hit or token measurements.
+
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
 session, the 512 MiB Ghidra heap, and CMake `--parallel 1`. Compiler/provider

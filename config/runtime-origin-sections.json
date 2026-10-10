@@ -601,12 +601,190 @@
           ]
         }
       ]
+    },
+    {
+      "address": "0x41d150",
+      "size": 99,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 4,
+      "entries": [
+        "0x0041D150"
+      ],
+      "library_symbols": [
+        "__IncMan"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__IncMan"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e5f0",
+      "size": 102,
+      "member": "..\\build\\intel\\st_obj\\mantold.obj",
+      "member_header_offset": 943068,
+      "member_sha256": "3dade4ce96c8230eb6ab6a79ae61147e4ec598eb0edf68023fc93905d52d52b5",
+      "section_index": 3,
+      "entries": [
+        "0x0041E5F0"
+      ],
+      "library_symbols": [
+        "___add_12"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 943068,
+          "symbols": [
+            "___add_12"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41f990",
+      "size": 678,
+      "member": "..\\build\\intel\\st_obj\\tenpow.obj",
+      "member_header_offset": 948550,
+      "member_sha256": "3860fc23f4df67082209d5b6026c4654ce7f7de5601946beb4764de3f8704bf1",
+      "section_index": 1,
+      "entries": [
+        "0x0041F990"
+      ],
+      "library_symbols": [
+        "___ld12mul"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 948550,
+          "symbols": [
+            "___ld12mul"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41f8e0",
+      "size": 162,
+      "member": "..\\build\\intel\\st_obj\\ieeemisc.obj",
+      "member_header_offset": 1017722,
+      "member_sha256": "ff180c56e6a226abd30924be33a439aeb3d66b5cc23b63945aed4340cc9ba7a2",
+      "section_index": 16,
+      "entries": [
+        "0x0041F8E0"
+      ],
+      "library_symbols": [
+        "__fpclass"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1017722,
+          "symbols": [
+            "__fpclass"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x419d90",
+      "size": 238,
+      "member": "..\\build\\intel\\st_obj\\util.obj",
+      "member_header_offset": 1023362,
+      "member_sha256": "320f5fbd59aa7891fe1cfd13723bb021cd88c87b8bcfb680c46e9f22bf2964cf",
+      "section_index": 12,
+      "entries": [
+        "0x00419D90"
+      ],
+      "library_symbols": [
+        "__decomp"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 1023362,
+          "symbols": [
+            "__decomp"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d1c0",
+      "size": 172,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 6,
+      "entries": [
+        "0x0041D1C0"
+      ],
+      "library_symbols": [
+        "__RoundMan"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__RoundMan"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41e6e0",
+      "size": 232,
+      "member": "..\\build\\intel\\st_obj\\mantold.obj",
+      "member_header_offset": 943068,
+      "member_sha256": "3dade4ce96c8230eb6ab6a79ae61147e4ec598eb0edf68023fc93905d52d52b5",
+      "section_index": 9,
+      "entries": [
+        "0x0041E6E0"
+      ],
+      "library_symbols": [
+        "___mtold12"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 943068,
+          "symbols": [
+            "___mtold12"
+          ]
+        }
+      ]
+    },
+    {
+      "address": "0x41d370",
+      "size": 459,
+      "member": "..\\build\\intel\\st_obj\\intrncvt.obj",
+      "member_header_offset": 938166,
+      "member_sha256": "c58c0d35eee20e79bc475e893d8e90da202b2a9e2b0d9e3a54697f705f0fac3e",
+      "section_index": 16,
+      "entries": [
+        "0x0041D370"
+      ],
+      "library_symbols": [
+        "__ld12cvt"
+      ],
+      "byte_identical_alternatives": [
+        {
+          "member_header_offset": 938166,
+          "symbols": [
+            "__ld12cvt"
+          ]
+        }
+      ]
     }
   ],
   "limitations": [
     "Whole code sections prove bounded library provenance; they do not promote maintained source, exact units or semantic cases.",
     "Imported function sizes and code/data boundaries are not overwritten by section sizes.",
     "Byte-identical memcpy/memmove and narrow/multibyte string aliases retain name ambiguity.",
-    "Every applied binding comes from the reviewed prior CRT map or this section\u2019s defined symbols; diagnostic inferred bindings are not accepted."
+    "Every applied binding comes from the reviewed prior CRT map or this section\u2019s defined symbols; diagnostic inferred bindings are not accepted.",
+    "Cross-section bindings use only external symbol definitions from earlier fully verified sections. Later sections and candidate-derived relocation addresses are not binding authorities.",
+    "Additional sections are ordered by dependency. Complete equality corroborates pinned-library origin, not unique original library flags, alias spelling, source recovery or new configured exact functions."
   ]
 }
