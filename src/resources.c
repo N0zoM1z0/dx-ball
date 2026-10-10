@@ -262,9 +262,8 @@ DxBallInt dxball_find_glyph(char code)
     DxBallInt sprite = 0;
     do {
         sprite = sprite + 1;
-        if (dxball_sprite_banks[dxball_font_bank].count <= sprite)
-            break;
-    } while (dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != code);
+    } while (dxball_sprite_banks[dxball_font_bank].count > sprite &&
+             dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != code);
     if (dxball_sprite_banks[dxball_font_bank].count == sprite)
         sprite = 0;
     return sprite;
@@ -276,18 +275,20 @@ DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline)
     DxBallInt sprite;
     DxBallRect destination;
     sprite = dxball_find_glyph(code);
-    if (sprite == 0)
+    if (sprite != 0) {
+        destination.left = x;
+        destination.top = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
+                         - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
+        destination.right = dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + x;
+        destination.bottom = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_active_surface, &destination,
+            dxball_sprite_banks[dxball_font_bank].sprites[sprite]->surface,
+            &dxball_sprite_banks[dxball_font_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
+        return dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width;
+    } else {
         return 0;
-    destination.left = x;
-    destination.top = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
-                     - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
-    destination.right = x + dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width;
-    destination.bottom = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_active_surface, &destination,
-        dxball_sprite_banks[dxball_font_bank].sprites[sprite]->surface,
-        &dxball_sprite_banks[dxball_font_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
-    return dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width;
+    }
 }
 
 /* FUNCTION: DXBALL 0x00409790 */

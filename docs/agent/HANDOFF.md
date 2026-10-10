@@ -16,7 +16,7 @@ and shared closed `FILE *` slot. All 87 relocations and eighteen consumed
 literal storage operands, including NULs and independent repeated literals,
 are declared in `config/match-units.toml`.
 
-- 283 source-present entries; 168 exact functions / 30,093 full-span bytes and
+- 283 source-present entries; 169 exact functions / 30,238 full-span bytes and
   136 metadata bytes; 247 scoped semantic acceptances.
 - Score reading at `0x406CC0` is also exact across its complete 94 bytes after
   ten explicit relocations. The 723-byte initializer and 125-byte bank release
@@ -68,8 +68,8 @@ REA 6.3 rejects the old snapshot during integrity validation; the exact cause
 is unisolated. The old snapshot is
 retained at `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`; historical runs,
 Evidence IDs and dossiers remain available for direct reuse. The current
-snapshot contains ten cumulative new records, including the reading/insertion
-literals and three sprite-lifetime dossiers. Its latest close reports seven
+snapshot contains sixteen cumulative new records, including the reading/insertion
+literals, three sprite-lifetime dossiers and six font facets. Its latest close reports seven
 primitive entries and no workflow entries. New analysis responses expose
 `raw_result` and `normalized_result`, while older responses use `result`.
 See [REA commands](REA.md). No registration rewrite or provider installation
@@ -330,6 +330,10 @@ sent externally.
 
 Entry 18 adds measured sprite-lifetime cold/warm provider latency, the 3.38 MB
 warm loader response and bounded descriptor/stride consumer suggestions.
+Entry 19 records the useful existing native info/pseudocode/assembly interfaces:
+six font responses total 61,666 bytes; later facets take 23–45 ms, but the
+first info query still takes about 62 seconds. It documents the drawing span
+gap, remaining cold-start visibility and compact discovery suggestions.
 
 ## Clock boundary checkpoint before sprite recovery
 
@@ -394,6 +398,40 @@ REA performance/usability feedback remains only in
 `/tmp/dxball_rea_feedback_20261010.md`, now eighteen numbered entries.
 Continue with unresolved rendering/font/resource storage and real call shapes,
 using these closed records. Do not repeat the full historical validation queue.
+
+## Current font checkpoint and recipe correction
+
+Glyph lookup at `0x404E40` matches all 145 bytes /six relocations after restoring
+the original count-first short-circuit loop. Glyph drawing retains the found
+branch fallthrough and separate missing-glyph return, but is a complete
+332/328-byte candidate /258 unaligned differences /seventeen bindings. The
+observed twenty-byte frame agrees; bank-address scheduling remains unresolved.
+The omitted five-byte JMP at `0x404E27` is independently decoded and included.
+Do not force source-layout or naming trials to resolve the remaining gap.
+
+The previous comparison helper incorrectly appended release/capture/load under
+the runtime recipe despite comparing the resources object. The manifest and
+release match row now record resources ownership and its actual eight-file
+closure. Archived wrong receipts remain intact; tracking rejects that old
+manifest and checks both exact and candidate source owners. All twelve resource
+exacts and four candidates compare together. Current totals: 169 exact functions,
+30,238 complete code bytes and 136 metadata bytes; no prior exact was lost.
+
+Native/MinGW builds pass. The final native library passes the unchanged 1,537
+font calls: all byte codes across three supplied fonts and empty-bank lookup.
+One matching `/ML` compile and one established `/MT` production compile were
+used; 34 verified game objects were reused. Real VC4 ball/pause/editor/save/
+reload/exit passes with 78 read-only states, five captures, expected saved bank,
+zero exit and all 49 originals unchanged. Other owner scopes and prior controls
+remain historical; no full owner or historical validation queue was replayed.
+Receipts: `.analysis/exact-font-rendering/` and
+`.analysis/windows-play-font-rendering/`. Six new bounded REA facets are retained
+in closed run `2026-10-10T17-38-24.772Z-requests-846003`; current snapshot has
+sixteen Evidence records /seven primitive entries. Feedback uses only
+`/tmp/dxball_rea_feedback_20261010.md`, now nineteen entries.
+
+Continue resolving genuine rendering/resource/call gaps with retained evidence.
+Near-complete source fidelity remains unproven; the reconstruction goal is active.
 
 ## Working limits and completeness
 

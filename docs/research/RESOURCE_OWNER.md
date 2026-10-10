@@ -1,6 +1,49 @@
 # Sprite, font, PCX and palette owner
 
-The current sprite-lifetime batch restores capture and SBK loading's live
+Glyph lookup at `0x404E40` now matches its complete 145 bytes and six
+relocations. The source restores the count-first short-circuit loop, preserving
+the excluded final slot, zero for a missing character and one for an empty
+bank. Glyph drawing restores the original found-glyph fallthrough, rectangle
+operand order and separate zero-return branch. Its complete 332/328-byte
+comparison remains a candidate with seventeen bindings and 258 unaligned
+differences. Its twenty-byte frame agrees, but bank-address scheduling differs;
+no declaration, name, layout or padding trials were used.
+
+The closed REA run `2026-10-10T17-38-24.772Z-requests-846003` retains separate
+information, pseudocode and assembly facets for both functions. Lookup assembly
+Evidence is `ev_9eb642c30e5cca30a9729baaf268061b881e8ea769519a14219e1f7a6e130834`;
+drawing assembly is
+`ev_21080b939b28e2885082bf86ee64b5815bdfeaea9276e5163a6318197d18b244`.
+The drawing view owns 323 instruction bytes in the complete 328-byte span.
+Independent pinned-image decoding covers its omitted five-byte JMP at
+`0x404E27..0x404E2B`: `e907000000`, destination `0x404E33`.
+The comparison includes every byte, including that unreachable jump.
+
+This batch also corrects an error in the preceding private comparison helper:
+release, capture and SBK load were registered under the runtime recipe although
+their actual comparisons used the resources object. Their byte comparisons
+remain independently reproducible; the release match row now records the
+correct resources source, object, flags and eight consumed inputs. The original
+bad manifest and receipts remain preserved. Tracking now checks every exact
+and candidate recipe against the implementation's source owner and rejects
+the archived wrong manifest. All twelve resource exacts and four candidates
+were compared together on one `/ML` compilation; none of the existing exacts
+was lost. Current totals are 169 exact functions, 30,238 complete code bytes
+and 136 metadata bytes.
+
+Native/MinGW builds pass. The final native library passes 1,537 unchanged
+selected font cases: 769 lookups and 768 drawings across all byte codes in
+the three supplied fonts, including the empty-bank lookup. One separate `/MT`
+production compile and 34 verified object reuses relink the VC4 game. Its real
+ball/pause/editor/save/reload/exit flow passes with 78 read-only states, five
+captures, the expected saved-bank hash, exit zero and all 49 originals unchanged.
+Receipts are in `.analysis/exact-font-rendering/` and
+`.analysis/windows-play-font-rendering/`. Other semantic scopes and prior play
+controls remain historical after input-identity refresh; no full owner or
+historical queue was replayed. Full-game, synchronized pixels and physical
+audio/MIDI fidelity remain unproven.
+
+The preceding sprite-lifetime batch restores capture and SBK loading's live
 bank/record reads across CreateSurface, SetColorKey, GetSurfaceDesc, Lock and
 Unlock. Their allocation locals publish a record; they do not cache the record
 for later COM calls. Both controllers now call the actual maintained malloc
@@ -32,8 +75,9 @@ actually consumed, without changing compiler flags or recompiling source.
 The game retains its established `/MT` production recipe: substituting the
 matching object initially caused a LIBC/LIBCMT startup conflict. One separate
 production compilation then links successfully with 34 verified reused objects.
-Native/MinGW builds pass. Current totals are 168 exact functions, 30,093 complete
-code bytes and 136 metadata bytes.
+Native/MinGW builds pass. That checkpoint recorded 168 exact functions, 30,093
+complete code bytes and 136 metadata bytes; its recipe associations are
+corrected above.
 
 The unchanged release/capture/SBK Oracle loops pass all 31 cases, including
 seven supplied streams. Six separate private original/native COM probes change
@@ -79,8 +123,8 @@ the behavioral evidence. The maintained implementation is `src/resources.c`.
 | `0x004042B0` | capture_sprite | 852 | scoped semantic; exact candidate |
 | `0x00404610` | load_sprite_bank | 1475 | scoped semantic; exact candidate |
 | `0x00404BE0` | release_sprite | 262 | full exact |
-| `0x00404CF0` | draw_glyph | 328 | scoped semantic |
-| `0x00404E40` | find_glyph | 145 | scoped semantic |
+| `0x00404CF0` | draw_glyph | 328 | scoped semantic; exact candidate |
+| `0x00404E40` | find_glyph | 145 | full exact |
 | `0x00409790` | load_live_palette | 337 | full exact |
 | `0x004098F0` | load_saved_palette | 307 | full exact |
 | `0x00409A30` | load_surface_palette | 376 | full exact; active use unresolved |

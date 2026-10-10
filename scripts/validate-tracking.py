@@ -28,6 +28,16 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def validate_build_owners(manifest, implementations):
+    by_address = {int(address, 0): row for address, row in implementations.items()}
+    for group in ("units", "candidates"):
+        for name, unit in manifest.get(group, {}).items():
+            implementation = by_address.get(unit["target_address"])
+            build = manifest["builds"][unit["build"]]
+            if implementation is None or build["source"] != implementation["source"]:
+                raise ValueError(f"{group} build owner disagrees with source ledger: {name}")
+
+
 def validate(require_target=False):
     target = tomllib.loads((ROOT / "config/target.toml").read_text())
     pe = target["pe"]
@@ -73,6 +83,7 @@ def validate(require_target=False):
             raise ValueError("accepted semantic input set changed; replay required")
     manifest_path = ROOT / "config/match-units.toml"
     manifest = tomllib.loads(manifest_path.read_text()) if manifest_path.exists() else {"units": {}}
+    validate_build_owners(manifest, implementations)
     for address, match in matches.items():
         if address not in implementations or int(match["difference_count"]) != 0:
             raise ValueError(f"invalid exact claim: {address}")
@@ -86,7 +97,8 @@ def validate(require_target=False):
             raise ValueError("exact row uses another compiler")
         build = manifest["builds"][unit["build"]]
         owner = by_source[match["source"]]
-        if build["source"] != match["source"]:
+        if (build["source"] != match["source"] or
+                match["source"] != implementations[address]["source"]):
             raise ValueError("exact unit build owner disagrees with source ledger")
         for field, path in (("source_sha256", ROOT / match["source"]),
                             ("header_sha256", ROOT / owner["header"]),
