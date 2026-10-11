@@ -100,10 +100,11 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
             }
         }
     }
-    next = live = 0;
+    live = 0;
+    next = 0;
     /* A nonhorizontal closed contour and representable arithmetic are the
        original routine's required domain; its zero-edge read is unresolved. */
-    y = pending[0]->top;
+    y = pending[next]->top;
     while (next < used || live != 0) {
         while (next < used && pending[next]->top == y)
             active[live++] = pending[next++];
@@ -133,8 +134,10 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
             right = active[i + 1]->x;
             if (active[i]->error > 0) ++left;
             if (active[i + 1]->error <= 0) --right;
-            if (left <= right)
-                dxball_fill_horizontal_span(pixels + y * pitch, left, right, color);
+            if (left <= right) {
+                DxBallByte *row = pixels + y * pitch;
+                dxball_fill_horizontal_span(row, left, right, color);
+            }
         }
         for (i = 0; i < live; ++i) {
             edge = active[i];
@@ -206,10 +209,11 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
             }
         }
     }
-    next = live = 0;
+    live = 0;
+    next = 0;
     /* A nonhorizontal closed contour and representable arithmetic are the
        original routine's required domain; its zero-edge read is unresolved. */
-    y = pending[0]->top;
+    y = pending[next]->top;
     while (next < used || live != 0) {
         while (next < used && pending[next]->top == y)
             active[live++] = pending[next++];
@@ -240,9 +244,9 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
             if (active[i]->error > 0) ++left;
             if (active[i + 1]->error <= 0) --right;
             if (left <= right && y >= 0 && y < 480) {
-                if (right > 638) right = 639;
-                if (left < 1) left = 0;
-                dxball_fill_horizontal_span(pixels + y * pitch, left, right, color);
+                DxBallByte *row = pixels + y * pitch;
+                dxball_fill_horizontal_span(row, left > 0 ? left : 0,
+                    right < 639 ? right : 639, color);
             }
         }
         for (i = 0; i < live; ++i) {

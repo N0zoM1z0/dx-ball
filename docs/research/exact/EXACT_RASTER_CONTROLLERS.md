@@ -1,11 +1,14 @@
 # Independent raster controllers and horizontal fill
 
-The latest [sort lifecycle restoration](EXACT_POLYGON_SORT_LIFECYCLE.md)
-recovers all four complete sorts:280 instructions/968 bytes with mapped direct
-successors and early key exits. Current candidates are1532/1543 with886
-differences and1592/1592 with721; triangle1710/1710 with99 differences and
-160-byte candidate metadata exact. The following notes retain their earlier
-products and scopes.
+The latest [scan setup/span restoration](EXACT_POLYGON_SCAN_SPAN.md) restores
+independent initialization, indexed initial-y and consumed row/bounds arguments.
+Both complete bodies retain original instruction boundaries:926 instructions/
+3135 bytes,138 direct branches and22 calls with scoped producer correspondence.
+Current ordinary1543/1543 has223 differences; clipped1592/1592 has220;
+triangle1710/1710 retains99 and complete160-byte candidate metadata exact.
+Each profile passes1080 existing polygon cases. Unchanged complete triangle/span
+and fixed-point emissions are verified without repeating their historical cases.
+The following notes retain their earlier products and scopes.
 
 The preceding [endpoint/storage restoration](EXACT_POLYGON_ENDPOINT_STORAGE.md)
 restores both point rereads and repeated indexed stores, with89-instruction

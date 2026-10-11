@@ -16,28 +16,33 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest source batch restores the independent Shell gap lifecycle and early
-key exits in all four polygon sorts. Each complete sort has70 instructions/
-14 direct branches with mapped successors; total280 instructions/968 bytes.
-Six scoped homes per sort and explicit commutative/reversed-comparison producer
-groups explain remaining differences, without a whole-function raw-state claim.
-Final ordinary1532/1543 with886 differences; clipped1592/1592 with721; triangle
-1710/1710 with99 and complete160-byte candidate metadata exact. Nine affected
-accepted units remain exact. Each final original/Native and actual VC4 COFF/Native
-profile passes1080 existing polygon and72 existing triangle cases. The initial
-conditional-swap/else-break diagnostic is rejected after full branch review;
-two actual matching compiles and two affected Native/MinGW/VC4 build/link stages
-are retained, with no runtime cases on the diagnostic. Final VC4 links the
-matching object plus35 verified unchanged objects.235 historical semantic inputs
-refresh without changing their scopes. Current products are in
-`.analysis/polygon-sort-lifecycle/product-verification.json`. See
-[sort lifecycle](../research/exact/EXACT_POLYGON_SORT_LIFECYCLE.md), private
-`.analysis/polygon-sort-lifecycle/`, and immutable seal
-`.analysis/checkpoints/polygon-sort-lifecycle-283-186/sha256.json`.
-Next concrete source gaps: independent live/next zero assignments and
-`pending[next]` initial-y load, the consumed row address before fill, and clipped
-argument selection without rewriting left/right. Read their complete stored
-neighborhoods before editing. Do not trial comparison spelling, names or layout.
+The latest source batch restores scan initialization, pending[next] initial-y,
+and consumed row/bounds arguments in both polygon controllers. Complete bodies
+have926 instructions/3135 bytes with138 direct branch successors/22 call targets
+and identical instruction boundaries. Scoped producer/frame correspondence
+explains89 unequal normalized instructions;837 agree. Original20/current19 local
+words include one current saved pointer with two disjoint original homes.
+Raw internal frame addresses/flags/scratch/void-exit residue and original
+local declaration spelling remain outside this claim. Final ordinary1543/1543
+with223 differences; clipped1592/1592 with220; triangle1710/1710 with99 and
+complete160-byte candidate metadata exact. Nine affected accepted units remain
+exact. Each original/Native and VC4 COFF/Native profile passes1080 existing
+polygon cases. Complete triangle/span COFF and Native emissions, eight Native
+fixed-point functions and PLT targets/bindings are unchanged; their historical
+cases are not rerun. One actual matching compilation, one affected Native/MinGW
+build and one VC4 link reuse35 unchanged objects; no rejected diagnostic or
+additional game source compilation.235 historical semantic input closures
+refresh without changing their scopes. Current products:
+`.analysis/polygon-scan-span/product-verification.json`. See
+[scan setup/span](../research/exact/EXACT_POLYGON_SCAN_SPAN.md), private
+`.analysis/polygon-scan-span/`, and immutable seal
+`.analysis/checkpoints/polygon-scan-span-283-186/sha256.json`.
+The preceding [sort lifecycle](../research/exact/EXACT_POLYGON_SORT_LIFECYCLE.md)
+retains its rejected-stage and final profile evidence. The concrete scan-source
+gaps it identified are now closed. Further recovery requires actual missing
+producer/game-flow evidence; do not trial names, local layout, equivalent
+comparison spelling or fake locals to force a frame match. Full original
+source declaration spelling and complete-game fidelity remain open.
 
 The preceding source batch restores polygon endpoint rereads and repeated indexed
 edge-field stores in both `src/raster.cpp` controllers. Complete candidates are
@@ -284,7 +289,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is51; use52 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is52; use53 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -323,3 +328,20 @@ build/link. Only final source runs selected1080/72 cases per profile. Four full
 sort intervals are70 instructions each; inherited closed REA carriers remain
 2786590/2858306 bytes, not current transport/token measurements. Feedback
 continues only in the existing /tmp document; next new entry52.
+
+The scan setup/span batch adds complete926-instruction correspondence and
+1080 unchanged polygon cases per profile. Complete unchanged emission checks
+avoid triangle/span/fixed-point case replay. Products/receipts and cleanup are
+in `.analysis/polygon-scan-span/`; its seal preserves unique before/current
+evidence. User explicitly requests small storage: inspect actual usage and
+clean completed disposable installation caches or verified duplicate payloads,
+retaining current tools/products and unique evidence. Feedback remains only in
+the existing /tmp document; next new entry53. Goal remains active.
+
+Scan batch cleanup:79 sealed files/173 explicit immutable dependencies verify
+after36 scoped hardlinks replace4,227,072 single-link allocated bytes. Three
+completed wheel-download caches remove17,997,824 single-link allocated bytes;
+installed package versions/module locations and four products remain unchanged.
+No measured device-free-space claim. Supplemental post-cleanup review and
+identities bind cleanup scripts/journals and current documentation. Do not
+recreate installation caches merely to rerun a completed installation.
