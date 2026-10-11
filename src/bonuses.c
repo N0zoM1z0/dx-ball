@@ -159,22 +159,24 @@ void dxball_update_bonuses(void)
 
 void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
 {
-    DxBallInt screen_x, chance, screen_y, kind;
-    DxBallInt reduced_particle, full_particle, life_chance, level_chance;
+    DxBallInt screen_x, chance;
     chance = dxball_random_range(10);
     if (dxball_bonus_count < 1 && chance <= 1) {
+        DxBallInt screen_y, kind;
         screen_x = x * 30 + 19;
         screen_y = y * 15 + 50;
         dxball_stop_sound(2);
         dxball_play_sound(2, 0, dxball_screen_pan(screen_x), 0);
         /* The supported compilers evaluate these RNG arguments dy/dx/y/x. */
         if (dxball_reduced_particles != 0) {
+            DxBallInt reduced_particle;
             for (reduced_particle = 0; reduced_particle < 8; ++reduced_particle) {
                 dxball_spawn_particle(screen_x + dxball_random_range(30),
                     screen_y + dxball_random_range(15), 4 - dxball_random_range(9),
                     2 - dxball_random_range(7), 16, 1);
             }
         } else {
+            DxBallInt full_particle;
             for (full_particle = 0; full_particle < 15; ++full_particle) {
                 dxball_spawn_particle(screen_x + dxball_random_range(30),
                     screen_y + dxball_random_range(15), 4 - dxball_random_range(9),
@@ -189,7 +191,8 @@ void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
         dxball_bonuses.current->gravity_ticks = 0;
         kind = dxball_random_range(19);
         switch (kind) {
-        case 0:
+        case 0: {
+            DxBallInt life_chance;
             life_chance = dxball_random_range(5);
             if (life_chance == 1) {
                 dxball_bonuses.current->kind = 0;
@@ -199,7 +202,9 @@ void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
                 dxball_bonuses.current->sprite = 48;
             }
             break;
-        case 1:
+        }
+        case 1: {
+            DxBallInt level_chance;
             level_chance = dxball_random_range(5);
             if (level_chance == 1) {
                 dxball_bonuses.current->kind = 1;
@@ -209,6 +214,7 @@ void dxball_generate_bonus(DxBallInt x, DxBallInt y, DxBallInt dx, DxBallInt dy)
                 dxball_bonuses.current->sprite = 48;
             }
             break;
+        }
         case 2:
             dxball_bonuses.current->kind = 2;
             dxball_bonuses.current->sprite = 37;

@@ -8,7 +8,21 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores device initialization at0x403A00 exactly:
+The latest source checkpoint restores bonus generation at0x4138D0 exactly:
+all1197bytes/89relocations, including76table bytes and a five-byte unowned exit.
+Restore particle/case and creation-success scopes in src/bonuses.c without
+changed names/types/operations/padding. Correct the old candidate table binding
+from case13 to independently observed0x413D21. Two bounded compiles preserve
+three exact companions2287bytes; only final object links with35 unchanged ones.
+1750unchanged generation cases pass with ordered RNG/audio/particle events and
+complete queues. All190 exact closures/247 unchanged semantic scopes/36 objects
+verify. Current products: `.analysis/bonus-generation-scope/product-verification.json`;
+seal: `.analysis/checkpoints/bonus-generation-scope-283-190/sha256.json`.
+See [exact bonus scopes](../research/exact/EXACT_BONUS_GENERATION_SCOPE.md).
+Continue with complete original moving-ball bounds/attachment/particle scope
+evidence or another remaining game owner; do not repeat closed source models.
+
+The preceding source checkpoint restores device initialization at0x403A00 exactly:
 all359 bytes/28actual relocations, including direct failure return and the
 nested vertical-blank counter scope in src/startup.c. Five startup companions
 remain exact across1022bytes. One canonical MTmatching compile is reused by
@@ -16,7 +30,7 @@ the VC4 link with35 unchanged objects; Native/MinGW rebuild the affected owner.
 The unchanged startup suite passes158 cases plus one connected dispatch check.
 All189 exact input/object identities and247 unchanged historical semantic
 scopes verify;235 input closures refresh. No provider startup/gameplay replay.
-Current products are in `.analysis/startup-calibration-scope/product-verification.json`,
+Its products are in `.analysis/startup-calibration-scope/product-verification.json`,
 with independent product seal
 `.analysis/checkpoints/startup-calibration-scope-283-189/sha256.json`.
 The earlier menu/flight/reflection
@@ -136,14 +150,14 @@ hashes the full report, with partial process sampling at64. Private
 carriers and prior closures; runtime copies are hash-verified and removed.
 No game/helper compilation or source/exact/origin change.
 Entry70 is the source checkpoint at the top: device initialization now matches
-all359bytes. Next feedback entry:71. Prioritize remaining game source/CFG
+all359bytes. Entry71 closes bonus generation1197bytes. Next feedback entry:72. Prioritize remaining game source/CFG
 recovery; REA feedback is optional and must not become the primary task.
 Do not repeat successful menu, pause, first miss, paddle415, paddle435 or
 second-brick/left-wall captures unchanged. Synchronized clocks, full-frame
 physics/audio and whole-campaign fidelity remain open; the goal stays active.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
-- 189 exact functions / 35,362 complete code bytes / 136 accepted metadata bytes.
+- 190 exact functions / 36,559 complete code bytes / 136 accepted metadata bytes.
 - Origins: 270 authored, 115 runtime, 42 compiler-generated, 101 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.

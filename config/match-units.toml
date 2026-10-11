@@ -3481,7 +3481,7 @@ relocations = [
   { offset = 1673, type = "DIR32", symbol = "_dxball_mouse_action", addend = 0, target = 0x00438B10 },
 ]
 
-[candidates.generate-bonus]
+[units.generate-bonus]
 build = "bonuses"
 symbol = "_dxball_generate_bonus"
 target_address = 0x004138D0
@@ -3556,9 +3556,9 @@ relocations = [
   { offset = 1036, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x0043FAC8 },
   { offset = 1053, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x0043FAC8 },
   { offset = 1064, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x0043FAC8 },
-  { offset = 1101, type = "DIR32", symbol = "$L1173", addend = 0, target = 0x00413C28 },
-  { offset = 1105, type = "DIR32", symbol = "$L1130", addend = 0, target = 0x00413A8E },
-  { offset = 1109, type = "DIR32", symbol = "$L1133", addend = 0, target = 0x00413ADD },
+  { offset = 1101, type = "DIR32", symbol = "$L1173", addend = 0, target = 0x00413D21 },
+  { offset = 1105, type = "DIR32", symbol = "$L1128", addend = 0, target = 0x00413A8E },
+  { offset = 1109, type = "DIR32", symbol = "$L1132", addend = 0, target = 0x00413ADD },
   { offset = 1113, type = "DIR32", symbol = "$L1136", addend = 0, target = 0x00413B2C },
   { offset = 1117, type = "DIR32", symbol = "$L1137", addend = 0, target = 0x00413B48 },
   { offset = 1121, type = "DIR32", symbol = "$L1138", addend = 0, target = 0x00413B64 },
