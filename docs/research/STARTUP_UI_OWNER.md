@@ -182,8 +182,10 @@ draw-to-primary and software-only defaults to 1 at `0x4228A0`, `0x4228A8`,
 was reconciled with the loaded original and an untouched native library.
 
 Random-range behavior is the CRT result modulo a nonzero signed divisor. The
-oracle supplies the same CRT result on both sides; it does not claim that the
-portable host's libc random generator equals the original Windows CRT.
+historical owner oracle supplies the same CRT result on both sides. The
+[random runtime follow-up](RANDOM_RUNTIME.md) now recovers the actual global
+generator and connects real production defaults across all builds; its separate
+focused fixture compares the unmodified original sequence and full state.
 Sprite-bank cleanup clears each count, selects the bank and visits all 255
 slots. Actual maintained sprite release frees malloc-owned records, including
 records whose COM surface is NULL. Allocation mode, filename and font-bank

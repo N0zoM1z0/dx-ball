@@ -8,6 +8,47 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+Current source fixes a real portable-default RNG divergence: seed1 gives original
+41/18467/6334/26500/19169 versus old native17767/9158/6249/18547/23633.
+New src/random.c/h recover original unsigned32 state initialized1 at0x4230F4,
+recurrence214013U*state+2531011U and mask7FFF0000/shift16. Startup seed/range
+and exported default ops use the shared implementation in every build.
+Clock seed unsigned modulo300 and signed range remainder remain unchanged.
+Original seed0x4179F0 complete10 and next0x417A00 complete42 match pinned
+libc.lib member677870 with all3 actual DIR32 fields to static symbol index4.
+The observed producer/consumer cell and full initializer1 are grounded, but
+independently unique CRT data placement/original link/spelling are unproved.
+DO NOT extend maintained89-code/20-data/7-object authority or publish scoped
+CRT exports from this compatibility proof. See RANDOM_RUNTIME.md for Evidence IDs.
+Two source entries become runtime dependencies and scoped semantic accepts:
+source285/authored270/semantic249; origins117runtime/42generated/99unknown.
+All206 exact bodies44406code/136metadata remain. Six startup units1381bytes
+pass complete comparison after22 actual literal/API alias updates; final review
+repairs13 cascaded text aliases by unit/offset without repeating producers; unrelated
+recipes/units/candidates preserved. New runtime candidates seed19/10 with19diff,
+next65/42 with62diff; no vendor schedule forcing or source spelling claim.
+Fresh real-default original/native fixture passes169seeds/2728directnextcalls,
+full32bitstate and adjacent guards,90actualrange calls and8clockseed cases.
+Existing startup fixture unchanged158cases+1connectedcheck passes after actual
+ELF import-name adaptation. Both run once; no full queue/provider repeat.
+Native/MinGW rebuild once; VC4 links2 matching startup/random objects plus35
+unchanged objects, zero additional legacy source compiles. Historical247 scopes
+retain cases/contracts; input inventories refresh without case replays.
+Current product receipt `.analysis/crt-random-origin/product-verification.json`;
+seal `.analysis/checkpoints/crt-random-origin-285-206/sha256.json`.
+See [original random runtime](../research/RANDOM_RUNTIME.md).
+REA6.4.0/Ghidra12.1.4 new bounded session11-40 closed; five full saved carriers
+(two reused, three new) and pinned CRT member retained. Do not restart producers
+for truncated output or failed metadata consumers; inspect saved receipts.
+Goal stays active: full authored denominator/source identity, physical graphics/
+audio/full campaign remain unproved. Continue concrete source recovery and
+commit AND push. Feedback stays optional in one existing /tmp document.
+Cleanup only immutable hash-equal before/new seal copies against immediately
+preceding rotation-pixel-traversal seal; current/public inodes independent.
+Earlier physical play receipts are historical for their recorded executable hashes.
+
+The preceding checkpoint follows.
+
 Current source recovers software rotation's per-pixel unsigned source cursor/pitch
 rollover, origin dimension snapshots, stored destination-pixel addresses, live API
 operands, ignored Unlock result writes and observed float expression order.

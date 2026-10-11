@@ -10,6 +10,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(dxball_core SHARED
     # Storage, loading, and low-level drawing
     src/allocator.c
+    src/random.c
     src/allocator_host.c
     src/cpp_allocator.cpp
     src/boards.c

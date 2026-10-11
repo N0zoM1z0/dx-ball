@@ -1894,7 +1894,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.startup]
 source = "src/startup.c"
 object = "build/exact/startup.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/clock_api.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameplay.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.c", "src/startup.h", "src/state_types.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/clock_api.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameplay.h", "src/platform.h", "src/resources.h", "src/round.h", "src/runtime.h", "src/startup.c", "src/random.h", "src/startup.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.initialize-sprite-banks]
@@ -5976,7 +5976,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 14
 type = "DIR32"
-symbol = "$SG974"
+symbol = "$SG979"
 addend = 0
 target = 0x004214B8
 data_hex = "202a2a2a2a2044582d42414c4c206279204d69636861656c20502e2057656c6368202a2a2a2a00"
@@ -6012,7 +6012,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 49
 type = "DIR32"
-symbol = "$SG975"
+symbol = "$SG980"
 addend = 0
 target = 0x004214E0
 data_hex = "2044656469636174656420746f2074686f73652077686f206c6f76652074686520416d69676100"
@@ -6048,7 +6048,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 88
 type = "DIR32"
-symbol = "$SG976"
+symbol = "$SG981"
 addend = 0
 target = 0x00421508
 data_hex = "20616e6420697473206d6f737420706f70756c61722073686172657761726500"
@@ -6084,7 +6084,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 127
 type = "DIR32"
-symbol = "$SG977"
+symbol = "$SG982"
 addend = 0
 target = 0x00421528
 data_hex = "2067616d652e2e2e204d65676142616c6c2e20546865204d61636b65792062726f746865727300"
@@ -6120,7 +6120,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 168
 type = "DIR32"
-symbol = "$SG978"
+symbol = "$SG983"
 addend = 0
 target = 0x00421550
 data_hex = "206469642061206772656174207468696e6720776974682074686520627265616b6f757400"
@@ -6156,7 +6156,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 209
 type = "DIR32"
-symbol = "$SG979"
+symbol = "$SG984"
 addend = 0
 target = 0x00421578
 data_hex = "20636f6e636570742e20536f20776f6e64657266756c20696e20666163742c207468617400"
@@ -6192,7 +6192,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 250
 type = "DIR32"
-symbol = "$SG980"
+symbol = "$SG985"
 addend = 0
 target = 0x004215A0
 data_hex = "206d79207769666520656e6a6f796564204d65676142616c6c203320776179206d6f726500"
@@ -6228,7 +6228,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 291
 type = "DIR32"
-symbol = "$SG981"
+symbol = "$SG986"
 addend = 0
 target = 0x004215C8
 data_hex = "207468616e206d792067616d65206053636f72636865642054616e6b732e2700"
@@ -6264,7 +6264,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 332
 type = "DIR32"
-symbol = "$SG982"
+symbol = "$SG987"
 addend = 0
 target = 0x004215E8
 data_hex = "20492776652066696e616c6c79207772697474656e20612067616d65207468617400"
@@ -6300,7 +6300,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 373
 type = "DIR32"
-symbol = "$SG983"
+symbol = "$SG988"
 addend = 0
 target = 0x0042160C
 data_hex = "20686f6c64732068657220696e7465726573742e20203a2900"
@@ -6336,7 +6336,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 414
 type = "DIR32"
-symbol = "$SG984"
+symbol = "$SG989"
 addend = 0
 target = 0x00421628
 data_hex = "202a2a2a2a2a2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2a2a2a2a2a00"
@@ -6372,7 +6372,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 455
 type = "DIR32"
-symbol = "$SG985"
+symbol = "$SG990"
 addend = 0
 target = 0x00421650
 data_hex = "205c5c5c54686973206973206120313030252044697265637420582067616d652e2f2f2f00"
@@ -6408,7 +6408,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 496
 type = "DIR32"
-symbol = "$SG986"
+symbol = "$SG991"
 addend = 0
 target = 0x00421678
 data_hex = "20202020202020202020202f2f2f486f706520796f75206c696b65206974215c5c5c00"
@@ -6444,7 +6444,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 537
 type = "DIR32"
-symbol = "$SG987"
+symbol = "$SG992"
 addend = 0
 target = 0x0042169C
 data_hex = "202a2a2a2a2a2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2a2a2a2a2a00"
@@ -6480,7 +6480,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 578
 type = "DIR32"
-symbol = "$SG988"
+symbol = "$SG993"
 addend = 0
 target = 0x004216C4
 data_hex = "202a2a2a2a2a2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2a2a2a2a2a00"
@@ -6509,7 +6509,7 @@ target = 0x004266A8
 [[units.initialize-scores.relocations]]
 offset = 614
 type = "DIR32"
-symbol = "$SG990"
+symbol = "$SG995"
 addend = 0
 target = 0x004216EC
 data_hex = "73636f72652e64617400"
@@ -6524,7 +6524,7 @@ target = 0x00417FF0
 [[units.initialize-scores.relocations]]
 offset = 636
 type = "DIR32"
-symbol = "$SG991"
+symbol = "$SG996"
 addend = 0
 target = 0x004216F8
 data_hex = "776200"
@@ -6532,7 +6532,7 @@ data_hex = "776200"
 [[units.initialize-scores.relocations]]
 offset = 641
 type = "DIR32"
-symbol = "$SG992"
+symbol = "$SG997"
 addend = 0
 target = 0x004216FC
 data_hex = "73636f72652e64617400"
@@ -6608,7 +6608,7 @@ size = 94
 [[units.read-scores.relocations]]
 offset = 7
 type = "DIR32"
-symbol = "$SG995"
+symbol = "$SG1000"
 addend = 0
 target = 0x0042148C
 data_hex = "726200"
@@ -6616,7 +6616,7 @@ data_hex = "726200"
 [[units.read-scores.relocations]]
 offset = 12
 type = "DIR32"
-symbol = "$SG996"
+symbol = "$SG1001"
 addend = 0
 target = 0x00421490
 data_hex = "73636f72652e64617400"
@@ -9430,7 +9430,7 @@ size = 31
 [[units.random-range.relocations]]
 offset = 7
 type = "REL32"
-symbol = "_rand"
+symbol = "_dxball_crt_rand"
 addend = 0
 target = 0x00417A00
 
@@ -9450,7 +9450,7 @@ target = 0x004413A4
 [[units.seed-random.relocations]]
 offset = 32
 type = "REL32"
-symbol = "_srand"
+symbol = "_dxball_crt_srand"
 addend = 0
 target = 0x004179F0
 
@@ -9538,4 +9538,32 @@ relocations = [
   { offset = 1389, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
   { offset = 1397, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088 },
   { offset = 1420, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980 },
+]
+
+[builds.random]
+source = "src/random.c"
+object = "build/exact/random.obj"
+inputs = ["src/random.c", "src/random.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[candidates.crt-srand]
+build = "random"
+symbol = "_dxball_crt_srand"
+target_address = 0x4179f0
+size = 10
+boundary_evidence = "docs/research/RANDOM_RUNTIME.md; observed52-byte CRT code and state writes"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
+]
+
+[candidates.crt-rand]
+build = "random"
+symbol = "_dxball_crt_rand"
+target_address = 0x417a00
+size = 42
+boundary_evidence = "docs/research/RANDOM_RUNTIME.md; observed52-byte CRT code and state writes"
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
+  { offset = 38, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
+  { offset = 43, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
 ]

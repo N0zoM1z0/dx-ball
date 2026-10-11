@@ -2,6 +2,7 @@
 #include "platform.h"
 #include "round.h"
 #include "clock_api.h"
+#include "random.h"
 #include <stdlib.h>
 #include <string.h>
 #if defined(_WIN32)
@@ -13,7 +14,7 @@
 DxBallScoreRecord dxball_scores[15];
 char dxball_board_filename[12] = "default.bds";
 DxBallStartupFileOps dxball_startup_file_ops = {fopen, fread, fwrite, fclose, access};
-DxBallRandomOps dxball_random_ops = {srand, rand};
+DxBallRandomOps dxball_random_ops = {dxball_crt_srand, dxball_crt_rand};
 void (*dxball_startup_load_boards)(const char *path) = dxball_read_board_bank;
 
 void dxball_initialize_scores(void)
@@ -85,13 +86,13 @@ void dxball_seed_random(void)
 {
     DxBallUInt seed;
     seed = dxball_time_get_time() % 300;
-    srand(seed);
+    dxball_crt_srand(seed);
     return;
 }
 
 DxBallInt dxball_random_range(DxBallInt limit)
 {
-    limit = rand() % limit;
+    limit = dxball_crt_rand() % limit;
     return limit;
 }
 

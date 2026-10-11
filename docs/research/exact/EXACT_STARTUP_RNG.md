@@ -1,5 +1,12 @@
 # Exact startup RNG calls
 
+Current follow-up: [original random runtime](../RANDOM_RUNTIME.md) replaces
+host-dependent defaults with the recovered 32-bit generator in every build.
+The complete 31/49-byte startup helpers remain exact, along with all four other
+startup units (1,381 bytes total). The current fixture binds the actual
+`dxball_crt_srand/dxball_crt_rand` imports. The counts and libc-default discussion
+below describe this note's historical checkpoint.
+
 The two startup RNG helpers now match their complete original spans: range
 selection at `0x403B70` is 31 bytes, and seeding at `0x403B90` is 49 bytes.
 Exact acceptance rises to 173 functions /30,824 code bytes plus 136 separate
