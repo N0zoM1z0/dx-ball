@@ -1378,6 +1378,18 @@
         "__positive"
       ],
       "entries": []
+    },
+    {
+      "size": 89,
+      "member": "..\\build\\intel\\st_obj\\cvt.obj",
+      "member_header_offset": 931484,
+      "member_sha256": "b43882613f7cbc6e99f313333a80ceaa20a5df788a20fdc76f8b22c0c1ed1aa9",
+      "section_index": 4,
+      "library_symbols": [
+        "__cropzeros"
+      ],
+      "address": "0x00418DE0",
+      "entries": []
     }
   ],
   "limitations": [
@@ -2110,6 +2122,108 @@
         "evidence_path": ".analysis/rea/runs/2026-10-11T04-40-02.986Z-requests-1720639/01-read_bytes.json",
         "evidence_id": "ev_5176e8ed2bd57ff9721f2a44761480e9f6538457d72aea989f5bed9b49324d70"
       }
+    },
+    {
+      "member": "..\\build\\intel\\st_obj\\87tran.obj",
+      "member_header_offset": 962694,
+      "member_sha256": "587a044c014158e0f0d2890b6480326ec8353526bb3e017373c6299f355f8301",
+      "code": {
+        "address": "0x41cc00",
+        "size": 519,
+        "section_index": 1,
+        "entries": [
+          "0x0041CDA1"
+        ],
+        "library_symbols": [
+          "__rtinfnpop",
+          "__rtinfnpopse",
+          "__fFLN",
+          "__rtinfpop",
+          "__ffexpm1",
+          "__rtinfpopse",
+          "__fFEXP"
+        ],
+        "basis": {
+          "kind": "unique_nonrelocated_code",
+          "offset": 360,
+          "size": 73
+        }
+      },
+      "data": {
+        "address": "0x423ef0",
+        "size": 244,
+        "section_index": 2,
+        "basis": {
+          "kind": "unique_initialized_symbol",
+          "symbol": "_log2max",
+          "size": 20
+        },
+        "evidence_path": ".analysis/rea/runs/2026-10-11T05-42-20.681Z-coupled-requests-1791122/00-read_bytes.json",
+        "evidence_id": "ev_86e6cb7d19a108f9784a3a93e2ab193547dfcfc6258578eb1c0e07e753b3a3ce"
+      }
+    }
+  ],
+  "initialized_object_groups": [
+    {
+      "member": "..\\build\\intel\\st_obj\\fpinit.obj",
+      "member_header_offset": 936384,
+      "member_sha256": "08c95a176a368af279c043ccd0114da46b980db126db6ef365e1ae7f5ba91625",
+      "section_index": 1,
+      "offset": 0,
+      "size": 16,
+      "address": "0x423090",
+      "objects": [
+        {
+          "symbol_index": 10,
+          "symbol": "__fltused",
+          "size": 4
+        },
+        {
+          "symbol_index": 9,
+          "symbol": "__ldused",
+          "size": 4
+        },
+        {
+          "symbol_index": 8,
+          "symbol": "___fastflag",
+          "size": 4
+        },
+        {
+          "symbol_index": 7,
+          "symbol": "__adjust_fdiv",
+          "size": 4
+        }
+      ],
+      "evidence_path": ".analysis/rea/runs/2026-10-11T05-19-29.800Z-requests-1762049/05-read_bytes.json",
+      "evidence_id": "ev_a2f5d1c3fc5ef8319359d0881d566dc636ada695329883450840841b59790899"
+    },
+    {
+      "member": "build\\intel\\st_obj\\nlsdata1.obj",
+      "member_header_offset": 673712,
+      "member_sha256": "544b726b7b5fa34ef803e33a9156b15dffa2a4b9720e2c8a05617443925cc229",
+      "section_index": 1,
+      "offset": 0,
+      "size": 12,
+      "address": "0x42387c",
+      "objects": [
+        {
+          "symbol_index": 6,
+          "symbol": "___mb_cur_max",
+          "size": 4
+        },
+        {
+          "symbol_index": 5,
+          "symbol": "___decimal_point",
+          "size": 4
+        },
+        {
+          "symbol_index": 4,
+          "symbol": "___decimal_point_length",
+          "size": 4
+        }
+      ],
+      "evidence_path": ".analysis/rea/runs/2026-10-11T05-36-42.465Z-requests-1784528/00-read_bytes.json",
+      "evidence_id": "ev_b5bf61f78c4eecb0f1c01d471e91e46c88a67cfa311621b1d2b0a62f8e8c4119"
     }
   ]
 }

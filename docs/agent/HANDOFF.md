@@ -10,13 +10,43 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 114 runtime, 42 compiler-generated, 102 unknown.
+- Origins: 270 authored, 115 runtime, 42 compiler-generated, 101 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest origin audit proves the complete multiprocessing FDIV test at
+The latest origin audit verifies seven complete initialized objects, separately
+from enclosing section authority. Four FPinit objects cover16 bytes at423090;
+three locale objects cover12 bytes at42387c. Actual COFF indices and next-symbol
+boundaries cover each complete4-byte allocation extent; no unselected pointer
+or static section definition becomes authority. The new crt_objects.py helper
+publishes only these objects after unique initialized bytes/complete Evidence/
+PE comparison. Original C types or declaration spelling are not inferred.
+
+Object-scoped __adjust_fdiv unlocks whole87tran code519/data244, independently
+placed at41cc00/423ef0 from73-byte code and20-byte data anchors. All19 code/
+28 data relocations match and publish atomically. One unknown entry41cda1
+becomes runtime. Complete cropzeros89 at418de0 binds both locale references;
+its entry is absent from imported inventory, withno invented row. Current
+maintained89 code sections/14669 disjoint bytes/105 origin entries,20 whole
+data sections/3330 bytes,plus seven complete objects/28 bytes;425 whole-section
+definitions/235 static andseven separately scoped object definitions. All prior
+87 code/19 data/394 definitions survive. One positive/six rejected object-scope
+controls; candidate/public recipe alias and actual executed receipt are explicit.
+Four game products remain PCX-checkpoint products; no source/compiler/build/
+gameplay replay. Reuse original FPinit28;two new closed REA6.3 sessions observe
+locale12 andtable244 bytes,49169.66/47805.31ms,7137 retainedcarrier bytes. See
+[complete initialized CRT objects](../research/CRT_INITIALIZED_OBJECTS.md),
+private `.analysis/crt-locale-frontier/`,seal
+`.analysis/checkpoints/crt-initialized-objects-283-188/sha256.json`.
+The three FPinit callback pointers remain unverified;conversion-table/locale/BSS
+andfull original-source/authored denominator/synchronized fidelity remain open.
+Continue independently scoped complete initialization or remaining origin
+boundaries; do not derive globals from observed fields to fit relocations.
+Feedback remains only in `/tmp/dxball_rea_feedback_20261010.md`; next entry62.
+
+The preceding origin audit proves the complete multiprocessing FDIV test at
 0x418C50: 278 bytes and twelve actual relocations through five independently
 unique complete strings / 89 bytes, a previously verified test body and named
 PE imports. One unknown entry becomes runtime. A separate 23-byte __positive
@@ -42,7 +72,7 @@ reads117 raw bytes: first53374.63ms, five later1.03–7.21ms, 18787 retained car
 bytes. See [FDIV initialization frontier](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md),
 private `.analysis/crt-fdiv-control/`, seal
 `.analysis/checkpoints/crt-fdiv-control-283-188/sha256.json`.
-Feedback remains only in `/tmp/dxball_rea_feedback_20261010.md`; next entry61.
+That checkpoint uses feedback entry60; the current entry is61.
 
 The latest source batch restores PCX's original body-tail packet increment and
 direct backedge to its guard. Matching979/862 bytes,227 paired instructions,
@@ -580,3 +610,9 @@ bytes, about 1.4 MiB; no device-free-space delta is claimed. Mutable current and
 public paths remain on independent inodes. Unique Evidence, before inputs,
 current products and probe objects stay. Cleanup is confined to the new seal.
 No additional game/compiler/provider/case queue runs.
+
+Checkpoint preservation: 79 owned files and 291 explicit immutable dependencies
+verify after fifteen scoped archive links replace 1,486,848 previously single-link
+allocated bytes, about 1.4 MiB. No device-free-space delta is claimed. Current and
+public paths retain independent archive inodes; unique Evidence, before inputs,
+current products and probe objects remain. Cleanup is confined to this new seal.

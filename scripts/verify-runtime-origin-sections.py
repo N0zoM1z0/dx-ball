@@ -15,6 +15,7 @@ from crt_library import members
 from crt_data import verify_absolute_definitions, verify_definitions, verify_data_sections
 from crt_scope import publish_section, relocate_section
 from crt_coupled import verify_code_data_groups
+from crt_objects import verify_initialized_objects
 from legacy_toolchain import Toolchain, session_lock
 from resource_limits import limit_cpu
 
@@ -170,13 +171,17 @@ def main():
         fixed.update(definitions)
         data_exports, data_rows, data_inputs = verify_data_sections(ROOT, manifest, fixed, original)
         fixed.update(data_exports)
+        object_exports, object_rows, object_inputs = verify_initialized_objects(ROOT, manifest, original)
+        if any(n in fixed and fixed[n] != a for n, a in object_exports.items()):
+            raise ValueError('complete initialized object contradicts established binding')
+        fixed.update(object_exports)
         selected = {s['member_header_offset'] for s in manifest['sections']}
         raw_members = {offset: (name, raw) for offset, name, raw in members(library) if offset in selected}
         inputs = {str(p.relative_to(ROOT)): digest(p) for p in (
             manifest_path, prior_path, original, library, ROOT / 'scripts/verify-runtime-origin-sections.py',
             ROOT / 'scripts/verify-crt-provenance.py', ROOT / 'scripts/crt_library.py', ROOT / 'scripts/coff.py',
             ROOT / 'scripts/crt_data.py', ROOT / 'scripts/crt_scope.py',
-            ROOT / 'scripts/crt_coupled.py',
+            ROOT / 'scripts/crt_coupled.py', ROOT / 'scripts/crt_objects.py',
             ROOT / 'scripts/legacy_toolchain.py', ROOT / 'scripts/resource_limits.py',
             ROOT / 'scripts/repo-python', ROOT / 'scripts/verify-python.py',
             ROOT / 'config/tools.lock.toml', ROOT / 'requirements-analysis.txt',
@@ -186,6 +191,7 @@ def main():
         inputs.update(absolute_inputs)
         inputs.update(definition_inputs)
         inputs.update(data_inputs)
+        inputs.update(object_inputs)
         scoped = {}
         for row in definition_rows:
             obj = ROOT / row['object']
@@ -263,6 +269,7 @@ def main():
                          'reviewed prior CRT map' if symbol in prior_symbols else
                          'fully verified prior definition section' if symbol in definitions else
                          'fully verified independently placed data section' if symbol in data_exports else
+                         'complete independently placed initialized object' if symbol in object_exports else
                          'earlier fully verified section export')
                 row = dict(address=hex(binding['address']), basis=basis)
                 if not same_section and symbol not in fixed:
@@ -303,6 +310,8 @@ def main():
                                        {int(r['address'], 0) for r in definition_rows}),
             verified_definitions=definition_rows, absolute_definitions=absolute_rows,
             data_sections=data_rows,
+            initialized_object_groups=object_rows,
+            complete_initialized_object_bytes=sum(r['size'] for r in object_rows),
             member_scoped_definitions=[dict(member_header_offset=member[0], member_sha256=member[1], **row)
                                        for member, rows in scoped.items() for row in rows.values()],
             complete_data_bytes=sum(r['size'] for r in data_rows),
