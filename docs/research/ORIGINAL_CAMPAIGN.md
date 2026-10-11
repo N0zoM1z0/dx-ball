@@ -1,5 +1,23 @@
 # Original-board integration
 
+The campaign harness now defaults to640x480x24 Xvfb, consistent with the
+[original display-depth correction](WINDOWS_DISPLAY_DEPTH.md). Its new
+`--display-depth {8,24}` option is forwarded to the child and recorded in the
+report; use8 to reproduce the historical full controls below. This changes the
+host screen, not the game's original eight-bit DirectDraw request.
+
+A fresh current-product VC4 full-bank run is in progress. Its unchanged game
+SHA-256 is `7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551`.
+At this checkpoint the SDK has verified complete initial slots0 and1 in the
+unaltered20,000-byte original bank. The goal remains all50 initial slots followed
+by terminal index50, mode0 and cleared end/reset/menu flags. No full pass or
+normal game exit is claimed from this prefix. The existing persistent reader
+and ordinary XTest controller are reused; no game compilation or target write.
+Private `.analysis/current-vc40-campaign/` retains108 frozen inputs, the actual
+SDK compile receipt, products, scenario and live kernel process identities.
+The final REA Evidence/report must be consumed after the existing producer
+terminates; do not start another campaign merely because a client wait expires.
+
 The earlier terminal control completes 50 editor-created single-brick boards.
 It establishes the terminal storage and routing behavior described in
 [terminal evidence](TERMINAL_RUNTIME.md), but does not exercise the original
@@ -183,7 +201,9 @@ Full acceptance requires all indices 0..49 to be observed with their original
 initial board bytes, followed by index 50 and a completed menu transition.
 A bonus can advance a level without destroying every brick; a progression
 report must not be described as 50 brick clears. Physical Windows behavior,
-audio, synchronized pixels and full reconstructed campaigns remain open.
+audio, synchronized pixels and full campaigns of the latest products remain
+open. The older reconstructed full controls above retain their own product
+identities and are not attributed to the latest products.
 
 ## Full-control timeout
 

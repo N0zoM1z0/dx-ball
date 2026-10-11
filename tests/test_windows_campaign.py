@@ -303,6 +303,8 @@ def main():
                         help='Explicit bounded episode; never reported as a campaign pass')
     parser.add_argument('--compile-only', action='store_true',
                         help='Public strict SDK compilation; no original files or Wine run')
+    parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
+                        help='Xvfb depth; 24 renders the original palette correctly here')
     args = parser.parse_args()
     if args.seconds < 1 or args.episode_seconds < 0 or args.episode_seconds > args.seconds:
         parser.error('Invalid observation deadline')
@@ -317,7 +319,7 @@ def main():
             return
         env = os.environ.copy()
         env['DXBALL_CAMPAIGN_DISPLAY'] = '1'
-        child = subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x8',
+        child = subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
                                 str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()),
                                 *sys.argv[1:]], env=env, timeout=(args.seconds + 60) * len(args.profiles))
         raise SystemExit(child.returncode)
@@ -331,6 +333,7 @@ def main():
                        ('tests/test_windows_campaign.py', 'tests/windows_campaign_reader.c',
                         'scripts/campaign_controller.py', 'tests/test_windows_round.py')})
         report = {'status': 'running', 'inputs': inputs, 'originals': verified_originals(),
+                  'display': 'Xvfb 640x480x' + str(args.display_depth),
                   'original_addresses': FIELDS, 'reader_sha256': digest(READER), 'reader_flags': FLAGS,
                   'goal_board_count': args.boards, 'episode_seconds': args.episode_seconds,
                   'observations': [], 'limitations': [

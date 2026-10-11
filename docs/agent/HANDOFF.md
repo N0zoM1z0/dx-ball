@@ -8,10 +8,31 @@ Commit verified checkpoints with English `gpt-6.1-sol: ` subjects and push to
 
 This file is authoritative. The old `/tmp/dxball_reconstruction_handoff.md` is
 stale. Optional REA feedback goes only into the existing
-`/tmp/dxball_rea_feedback_20261010.md`; latest entry is 75. Append, never create
+`/tmp/dxball_rea_feedback_20261010.md`; latest entry is 76. Append, never create
 another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
+
+ACTIVE: current VC4 full original-bank campaign, executor session7397. Do not
+restart it while alive. `.analysis/current-vc40-campaign/live-processes.json`
+records boot ID/PIDs/start ticks; check actual `/proc` identities and poll that
+confirmed handle. First original initial slots0/1 are verified; final status is
+still pending. Full goal50 initial slots then terminal50/mode0/clearedrequests.
+The game SHA remains7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551.
+Existing campaign reader/controller are reused on640x480x24; the new campaign
+CLI depth defaults24/forwards/reports. Actual SDK reader compiled once with
+strictC90/both source-file identities and six selected SDK hashes.
+No game compile/link.108run inputs are frozen; consumed stream bytes are hashed,
+only bounded transition samples retained. Final captureEvidence/summary and
+live probe directory must stay until producer termination and verification.
+See [original campaign](../research/ORIGINAL_CAMPAIGN.md); historical full
+original/VC4/MinGW runs are proved only for their older recorded products.
+
+An unnecessary duplicate watch-mode SDK extension was compiled once, then
+rejected on finding the existing persistent campaign observer. Its source and
+binary are restored by hashes without a second compile; rejected stage/receipt
+remain private in the same folder. DO NOT recreate this duplicate functionality.
+No target writes, hooks or altered boards; full campaign still unproved here.
 
 Current-product natural game-over at640x480x24 passes original219/VC4234/
 MinGW213 read-only states: nine actual life losses, `rex`/Backspace/Shift-A to
@@ -54,8 +75,8 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | Exact code / separate metadata bytes | 44,406 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product receipt: `.analysis/gameover-display-depth/product-verification.json`.
-Seal: `.analysis/checkpoints/gameover-display-depth-285-206/sha256.json`.
+Current completed product receipt: `.analysis/gameover-display-depth/product-verification.json`.
+Completed seal: `.analysis/checkpoints/gameover-display-depth-285-206/sha256.json`.
 Rejected stage: `.analysis/paddle-cursor-load-order/rejected-order-stage/`.
 Cleanup only recorded probe copies after unique files are retained, then immutable
 hash-equal before/new-seal copies versus immediately preceding display-depth seal.
