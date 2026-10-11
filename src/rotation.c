@@ -7,77 +7,88 @@
 void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
                                   DxBallInt slot, DxBallInt angle)
 {
-    DxBallSprite *sprite = dxball_sprite_banks[dxball_sprite_bank].sprites[slot];
-    DxBallDDSurface *destination = (DxBallDDSurface *)dxball_active_surface;
-    DxBallDDSurface *source;
+    DxBallUInt source_column = 0;
+    DxBallUInt width = (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width;
+    DxBallUInt height = (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->height;
     DxBallSurfaceDesc destination_desc, source_desc;
-    DxBallUInt width = (DxBallUInt)sprite->width;
-    DxBallUInt height = (DxBallUInt)sprite->height;
+    DxBallUInt origin_width, origin_height;
     DxBallByte *pixel;
     DxBallInt column, row, rounded_x, rounded_y, truncated_x, truncated_y, result;
     double row_x, row_y, x, y, column_dx, column_dy, row_dx, row_dy;
     double first_x_term, first_y_term;
-    const double rounding_bias = 0.5;
 
     /* Dimensions are sampled before API calls; surface globals are read again
        at each API boundary, including lock retries and final unlocks. */
     destination_desc.size = 108;
     destination_desc.flags = 14;
-    destination->vtable->get_desc(destination, &destination_desc);
+    ((DxBallDDSurface *)dxball_active_surface)->vtable->get_desc(
+        (DxBallDDSurface *)dxball_active_surface, &destination_desc);
     do {
-        destination = (DxBallDDSurface *)dxball_active_surface;
-        result = destination->vtable->lock(destination, NULL, &destination_desc, 0, NULL);
+        result = ((DxBallDDSurface *)dxball_active_surface)->vtable->lock(
+            (DxBallDDSurface *)dxball_active_surface, NULL, &destination_desc, 0, NULL);
     } while (result != 0);
     source_desc.size = 108;
     source_desc.flags = 14;
-    source = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface;
-    source->vtable->get_desc(source, &source_desc);
+    dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->vtable->get_desc(
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface, &source_desc);
     do {
-        source = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface;
-        result = source->vtable->lock(source, NULL, &source_desc, 0, NULL);
+        result = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->vtable->lock(
+            dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface,
+            NULL, &source_desc, 0, NULL);
     } while (result != 0);
     pixel = source_desc.pixels;
+    origin_width = width;
+    origin_height = height;
 
-    first_x_term = (double)((long double)center_x -
-        (long double)width * dxball_cosine(angle) / 2.0);
+    first_x_term = (double)(-((long double)origin_width * dxball_cosine(angle) / 2.0f) +
+        (long double)center_x);
     row_x = (double)((long double)first_x_term -
-        (long double)width * dxball_sine(angle) / 2.0);
+        (long double)origin_width * dxball_sine(angle) / 2.0f);
     first_y_term = (double)((long double)center_y +
-        (long double)height * dxball_sine(angle) / 2.0);
+        (long double)origin_height * dxball_sine(angle) / 2.0f);
     row_y = (double)((long double)first_y_term -
-        (long double)height * dxball_cosine(angle) / 2.046);
+        (long double)origin_height * dxball_cosine(angle) / 2.046);
     column_dx = dxball_cosine(angle);
     column_dy = -dxball_sine(angle);
     row_dx = dxball_cosine(angle + 270);
     row_dy = -dxball_sine(angle + 270);
 
-    for (row = 0; row < (DxBallInt)height; ++row) {
+    for (row = 0; (DxBallInt)height > row; ++row) {
         x = row_x;
         y = row_y;
-        for (column = 0; column < (DxBallInt)width; ++column) {
-            x += column_dx;
-            y += column_dy;
+        for (column = 0; (DxBallInt)width > column; ++column) {
+            x = column_dx + x;
+            y = column_dy + y;
             if (*pixel != 0 && y > 0.0 && y < (double)(destination_desc.height - 1)
                 && x > 0.0 && x < (double)(destination_desc.width - 1)) {
-                rounded_x = (DxBallInt)((long double)x + rounding_bias);
-                rounded_y = (DxBallInt)((long double)y + rounding_bias);
+                DxBallByte *destination_pixel;
+                rounded_x = (DxBallInt)((long double)x + 0.5);
+                rounded_y = (DxBallInt)((long double)y + 0.5);
                 truncated_x = (DxBallInt)x;
                 truncated_y = (DxBallInt)y;
-                destination_desc.pixels[rounded_y * destination_desc.pitch + rounded_x] = *pixel;
-                if (rounded_x != truncated_x || rounded_y != truncated_y)
-                    destination_desc.pixels[truncated_y * destination_desc.pitch + rounded_x] = *pixel;
+                destination_pixel = destination_desc.pixels + rounded_y * destination_desc.pitch + rounded_x;
+                *destination_pixel = *pixel;
+                if (rounded_x != truncated_x || rounded_y != truncated_y) {
+                    destination_pixel = destination_desc.pixels + truncated_y * destination_desc.pitch + rounded_x;
+                    *destination_pixel = *pixel;
+                }
             }
-            ++pixel;
+            ++source_column;
+            if (source_column >= width) {
+                source_column = 0;
+                pixel += source_desc.pitch - width + 1;
+            } else {
+                ++pixel;
+            }
         }
-        /* The original uses the executed column count for zero-width rows. */
-        pixel += source_desc.pitch - column;
-        row_x += row_dx;
-        row_y += row_dy;
+        row_x = row_dx + row_x;
+        row_y = row_dy + row_y;
     }
-    destination = (DxBallDDSurface *)dxball_active_surface;
-    destination->vtable->unlock(destination, NULL);
-    source = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface;
-    source->vtable->unlock(source, NULL);
+    result = ((DxBallDDSurface *)dxball_active_surface)->vtable->unlock(
+        (DxBallDDSurface *)dxball_active_surface, NULL);
+    result = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->vtable->unlock(
+        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface, NULL);
+    (void)result;
     return;
 }
 

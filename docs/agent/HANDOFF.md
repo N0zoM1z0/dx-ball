@@ -8,6 +8,54 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+Current source recovers software rotation's per-pixel unsigned source cursor/pitch
+rollover, origin dimension snapshots, stored destination-pixel addresses, live API
+operands, ignored Unlock result writes and observed float expression order.
+Source src/rotation.c; renderer0x4026A0 current1447/original1572bytes with1491 strict
+differences (before1335/1490). This is actual operation recovery, not byte-difference
+improvement or whole-frame operand equivalence. New complete renderer candidate
+has58 explicit fields/literal attestations; double2.0 uses independently verified
+0x420098 ball constant, not original renderer float2.0 authority0x420038.
+Original365/current366instructions:363 paired normalized opcodes excluding2
+unclassified original zero stores and3 extra current m64 argument pushes;
+3conditional encodings also differ. Operand/register/frame/width equality unproved.
+DO NOT add fake locals for the two zeros or repeat float storage/name trials.
+Two MT source compiles: accepted traversal1447; rejected typed stored4-byte divisor
+1437 recovers m32 but loses3 prior exact projections. Preserve both stages;
+accepted source/object restored by hashes without recompilation.
+Accepted natural change swaps current exact membership: y-offset0x402DE0 now
+complete191bytes/10bindings exact, including original unowned5-byte epilogue jump;
+height0x402FB0 now193/191 with158 differences, prior exact claim withdrawn.
+Three unchanged exact companions wrapper40/horizontal259/width259 remain byte-equal.
+Both affected projection source bodies are unchanged; no helper forcing trial.
+Total206/44406/136 remains, source283/authored270/semantic247;origins115/42/101.
+Fresh unchanged pixel fixtures pass351 renderer+344wrapper=695cases once,
+including7live surface/bank/retry scenarios and complete guarded buffers/owners.
+Normal CRT division only; no new cases/full replay/provider/Wine run.
+Native/MinGW rebuild once; VC4 accepted rotation+35 unchanged objects link once,
+zero extra legacy source compiles. Verify206 exact closures/247 historical scopes/
+36objects; refresh235 inventories without historical replays. Consumer repairs
+address12 complete literal aliases, observed membership swap and a table-replacement
+range that included an interleaved build declaration. Corrected manifest proves
+all builds/unrelated units/candidates identical to before. Consume completed
+products; never repeat compiler or fixture because a bounded consumer failed.
+Current product receipt: `.analysis/rotation-pixel-traversal/product-verification.json`;
+seal `.analysis/checkpoints/rotation-pixel-traversal-283-206/sha256.json`.
+See [rotation pixel traversal](../research/exact/ROTATION_PIXEL_TRAVERSAL.md).
+Reuse renderer10-33 run03 ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26;
+constant40-byte ev_3981d4fe3871c6d5f4976aaec23007d066c24f80aedca23dd51270d63c19de71;
+y-offset ev_0bb8d29f0bbb9230ce62dfeaaa226c4099138a7443f31974dbb2b206ef459987 and
+5-byte gap ev_ef7ec380e69c68892ba8533b87c32732187310fd913801791fd55af7d41f3d99.
+Goal remains active: source denominator/spelling, physical rendering/audio/full
+campaign unproved. Continue evidenced source recovery and commit AND push.
+Earlier Wine probes below describe their original executable hashes, not this link.
+Optional feedback stays in one /tmp doc. Cleanup is confined to new immutable
+hash-equal copies versus immediately previous screen-point seal; preserve both
+compiler stages and current/public inode independence.
+
+The preceding checkpoint follows.
+
+
 Current source checkpoint restores screen-point collision's initial X/Y copies,
 inclusive copied-Y guards50..349, separate in-place subtraction/division writes
 and two signed-byte tile loads in src/core.c. Original337 bytes/90instructions,

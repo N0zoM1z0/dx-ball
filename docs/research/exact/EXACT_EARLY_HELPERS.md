@@ -1,5 +1,12 @@
 # Early region, geometry, rotation and text helpers
 
+Current membership after [rotation traversal](ROTATION_PIXEL_TRAVERSAL.md):
+Y-offset at0x402DE0 is complete191-byte exact again; height at0x402FB0 is a
+193/191-byte candidate with158 differences. Both source bodies are unchanged.
+Prior exact/candidate and compiler-result statements below retain their
+historical scopes; aggregate current206 exact functions is unchanged.
+
+
 This document records the historical 76-unit checkpoint. The subsequent
 [projection and text batch](EXACT_PROJECTIONS_TEXT.md) accepts four of its
 candidates, corrects the horizontal literal binding, and advances to 80 units.

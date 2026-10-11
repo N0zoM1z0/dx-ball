@@ -1,5 +1,12 @@
 # Exact projection and text traversal restoration
 
+Current membership after [rotation traversal](ROTATION_PIXEL_TRAVERSAL.md):
+Y-offset at0x402DE0 is complete191-byte exact again; height at0x402FB0 is a
+193/191-byte candidate with158 differences. Both source bodies are unchanged.
+Prior exact/candidate and compiler-result statements below retain their
+historical scopes; aggregate current206 exact functions is unchanged.
+
+
 Four existing source bodies now emit complete original functions under the
 pinned VC4 recipe. Both projection results are stored in a real two-element
 array, and text traversal groups its existing pointer, offset and space count

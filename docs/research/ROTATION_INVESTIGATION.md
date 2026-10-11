@@ -1,5 +1,17 @@
 # Software sprite rotation
 
+The [current pixel-traversal recovery](exact/ROTATION_PIXEL_TRAVERSAL.md) restores
+the actual unsigned per-pixel rollover, origin copies, destination pointer stores,
+live API operands and ignored Unlock-result writes. Fresh existing pixel checks
+pass351 renderer plus344 wrapper cases once. Current renderer1447/1572bytes with1491
+strict differences remains a candidate; original two unused zero stores and m32
+operand lowering stay open. Y-offset191 is exact; unchanged height193/191 with158
+differences becomes a candidate. Wrapper/horizontal offset/width remain exact;
+aggregate206/44406/136 is unchanged. Current product receipt and seal are in
+`.analysis/rotation-pixel-traversal/`. The following compiler and case claims
+retain their historical checkpoint scopes.
+
+
 Historical compiler-product checks below are archived in checkpoint
 `exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
@@ -79,9 +91,10 @@ recorded in the focused data review below.
 
 Column steps are `C(angle)` and `-S(angle)`; row steps are `C(angle+270)` and
 `-S(angle+270)`. Each pixel advances X/Y before transparency and bounds checks.
-Each coordinate update and row-origin update stores a double. Source traversal
-uses one byte per executed column and a pitch-minus-executed-column adjustment
-at the row boundary, including zero-width rows.
+Each coordinate update and row-origin update stores a double. Source traversal increments an unsigned source-column counter after each
+executed pixel. Reaching width resets it and advances the pointer by
+pitch-minus-width-plus-one; other pixels advance by one. Zero-width rows
+execute no pixel and do not advance that pointer.
 The signed row/column loop tests and unsigned conversions require an explicit
 bounded dimension/arithmetic domain in the oracle.
 
