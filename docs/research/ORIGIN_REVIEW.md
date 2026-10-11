@@ -1,10 +1,18 @@
 # Reviewing runtime origins
 
-The latest [storage checkpoint](CRT_DATA_DEFINITIONS.md) resolves two further
+The latest [initialized-storage closure](CRT_INITIALIZED_STORAGE_CLOSURE.md)
+identifies 22 further runtime entries through nine independently placed complete
+data sections and 14 complete code sections. Origins are **270 authored / 105
+runtime / 42 compiler-generated / 111 unknown**. Source 283, scoped semantic 247
+and exact 188 / 35,003 code bytes / 136 metadata bytes remain unchanged. All
+relocations retain actual member-index or independently verified external
+authority. The complete authored denominator remains unresolved.
+
+The earlier [storage checkpoint](CRT_DATA_DEFINITIONS.md) resolves two further
 CRT entries through complete prior code definitions and independently placed
 initialized storage. All 594 data bytes, two actual relocations and thirteen
-prior definitions pass before new external bindings become available. Current
-origins are **270 authored /68 runtime /42 compiler-generated /148 unknown**.
+prior definitions pass before new external bindings become available. Its
+historical origins are **270 authored /68 runtime /42 compiler-generated /148 unknown**.
 Source, semantic and function exact acceptance remain unchanged. Unsupported
 zero anchors, partial spans and candidate-derived addresses are excluded.
 Earlier batches below retain their original scopes.

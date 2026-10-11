@@ -10,13 +10,33 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 83 runtime, 42 compiler-generated, 133 unknown.
+- Origins: 270 authored, 105 runtime, 42 compiler-generated, 111 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest read-only audit closes both display initialization bodies as missing
+The latest origin audit independently places nine nonzero initialized CRT data
+sections/1401 bytes,then proves14 complete code sections/2897 bytes/81 actual
+relocations,covering22 formerly unknown entries. No code relocation guesses a
+data address;static names retain actual member/index authority. The unchanged
+maintained verifier passes83 complete sections/10250 bytes/95 origin entries,
+12 data sections/2531 bytes/272 scoped definitions. Two controls reject shifted
+or partial new data;no acceptance report. Candidate/published recipes are
+byte-identical;the actual candidate-path receipt is retained without rebasing.
+One closed REA6.3/Ghidra12.1.4 session reads nine exact extents;first59037.66ms,
+eight later1.57–18.82ms. No source/compiler/build/gameplay replay or new exact/
+semantic acceptance. Current four products remain the window-switch products.
+See [complete initialized CRT storage](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md),
+private `.analysis/crt-initialized-storage-next/`,seal
+`.analysis/checkpoints/crt-initialized-storage-283-188/sha256.json`.
+Unknown111 and the full authored denominator remain unresolved. Nine first-round
+and five second-round code matches exhaust these data seeds;do not repeat that
+unchanged scan. Next origin work requires independently grounded BSS/pointer
+storage or code authority. Three unparsed members/debug relocation sections and
+unused/partial data placements remain diagnostic,not excluded from the goal.
+
+The preceding read-only audit closes both display initialization bodies as missing
 source hypotheses within their defined typed API scope. Fullscreen1343/1406 has
 325 paired instructions,32 direct branches/42 calls/114 actual relocations;
 compatible1147/1180 has288,20/42/110. Complete472/468-byte typed frame bijections
