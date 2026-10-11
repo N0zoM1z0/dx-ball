@@ -16,7 +16,30 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest source batch restores polygon endpoint rereads and repeated indexed
+The latest source batch restores the independent Shell gap lifecycle and early
+key exits in all four polygon sorts. Each complete sort has70 instructions/
+14 direct branches with mapped successors; total280 instructions/968 bytes.
+Six scoped homes per sort and explicit commutative/reversed-comparison producer
+groups explain remaining differences, without a whole-function raw-state claim.
+Final ordinary1532/1543 with886 differences; clipped1592/1592 with721; triangle
+1710/1710 with99 and complete160-byte candidate metadata exact. Nine affected
+accepted units remain exact. Each final original/Native and actual VC4 COFF/Native
+profile passes1080 existing polygon and72 existing triangle cases. The initial
+conditional-swap/else-break diagnostic is rejected after full branch review;
+two actual matching compiles and two affected Native/MinGW/VC4 build/link stages
+are retained, with no runtime cases on the diagnostic. Final VC4 links the
+matching object plus35 verified unchanged objects.235 historical semantic inputs
+refresh without changing their scopes. Current products are in
+`.analysis/polygon-sort-lifecycle/product-verification.json`. See
+[sort lifecycle](../research/exact/EXACT_POLYGON_SORT_LIFECYCLE.md), private
+`.analysis/polygon-sort-lifecycle/`, and immutable seal
+`.analysis/checkpoints/polygon-sort-lifecycle-283-186/sha256.json`.
+Next concrete source gaps: independent live/next zero assignments and
+`pending[next]` initial-y load, the consumed row address before fill, and clipped
+argument selection without rewriting left/right. Read their complete stored
+neighborhoods before editing. Do not trial comparison spelling, names or layout.
+
+The preceding source batch restores polygon endpoint rereads and repeated indexed
 edge-field stores in both `src/raster.cpp` controllers. Complete candidates are
 1484/1543 with1025 differences and1544/1592 with1048. Each construction interval
 has89 instructions at original offsets; eight frame homes and two equivalent
@@ -261,7 +284,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is50; use51 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is51; use52 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -293,3 +316,10 @@ artifact sizes, not current REA transport/tokens. One matching compilation,
 cases in each profile; no fresh provider/full replay. Recover truncated
 output from narrow saved receipts. Feedback remains in the single existing
 /tmp document, next new entry51.
+
+Latest sort work retains one rejected conditional-swap diagnostic and one final
+early-exit source stage; each has its actual matching compile and affected
+build/link. Only final source runs selected1080/72 cases per profile. Four full
+sort intervals are70 instructions each; inherited closed REA carriers remain
+2786590/2858306 bytes, not current transport/token measurements. Feedback
+continues only in the existing /tmp document; next new entry52.

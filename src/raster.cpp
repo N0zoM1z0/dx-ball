@@ -89,9 +89,11 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
         ++used;
     }
     for (gap = 1; gap < used; gap = gap * 3 + 1) { }
-    while ((gap /= 3) > 0) {
+    for (gap /= 3; gap > 0; gap /= 3) {
         for (i = gap; i < used; ++i) {
-            for (j = i - gap; j >= 0 && pending[j + gap]->top < pending[j]->top; j -= gap) {
+            for (j = i - gap; j >= 0; j -= gap) {
+                if (pending[j + gap]->top >= pending[j]->top)
+                    break;
                 saved = pending[j];
                 pending[j] = pending[j + gap];
                 pending[j + gap] = saved;
@@ -115,9 +117,11 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
             }
         }
         for (gap = 1; gap < live; gap = gap * 3 + 1) { }
-        while ((gap /= 3) > 0) {
+        for (gap /= 3; gap > 0; gap /= 3) {
             for (i = gap; i < live; ++i) {
-                for (j = i - gap; j >= 0 && active[j + gap]->x < active[j]->x; j -= gap) {
+                for (j = i - gap; j >= 0; j -= gap) {
+                    if (active[j + gap]->x >= active[j]->x)
+                        break;
                     saved = active[j];
                     active[j] = active[j + gap];
                     active[j + gap] = saved;
@@ -191,9 +195,11 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
         ++used;
     }
     for (gap = 1; gap < used; gap = gap * 3 + 1) { }
-    while ((gap /= 3) > 0) {
+    for (gap /= 3; gap > 0; gap /= 3) {
         for (i = gap; i < used; ++i) {
-            for (j = i - gap; j >= 0 && pending[j + gap]->top < pending[j]->top; j -= gap) {
+            for (j = i - gap; j >= 0; j -= gap) {
+                if (pending[j + gap]->top >= pending[j]->top)
+                    break;
                 saved = pending[j];
                 pending[j] = pending[j + gap];
                 pending[j + gap] = saved;
@@ -217,9 +223,11 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
             }
         }
         for (gap = 1; gap < live; gap = gap * 3 + 1) { }
-        while ((gap /= 3) > 0) {
+        for (gap /= 3; gap > 0; gap /= 3) {
             for (i = gap; i < live; ++i) {
-                for (j = i - gap; j >= 0 && active[j + gap]->x < active[j]->x; j -= gap) {
+                for (j = i - gap; j >= 0; j -= gap) {
+                    if (active[j + gap]->x >= active[j]->x)
+                        break;
                     saved = active[j];
                     active[j] = active[j + gap];
                     active[j + gap] = saved;

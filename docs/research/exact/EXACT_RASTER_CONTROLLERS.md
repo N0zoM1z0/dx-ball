@@ -1,6 +1,13 @@
 # Independent raster controllers and horizontal fill
 
-The latest [endpoint/storage restoration](EXACT_POLYGON_ENDPOINT_STORAGE.md)
+The latest [sort lifecycle restoration](EXACT_POLYGON_SORT_LIFECYCLE.md)
+recovers all four complete sorts:280 instructions/968 bytes with mapped direct
+successors and early key exits. Current candidates are1532/1543 with886
+differences and1592/1592 with721; triangle1710/1710 with99 differences and
+160-byte candidate metadata exact. The following notes retain their earlier
+products and scopes.
+
+The preceding [endpoint/storage restoration](EXACT_POLYGON_ENDPOINT_STORAGE.md)
 restores both point rereads and repeated indexed stores, with89-instruction
 construction correspondence in each controller. Current candidates are
 1484/1543 with1025 differences and1544/1592 with1048. Triangle remains
