@@ -98,49 +98,52 @@ void dxball_update_intro_points(void)
     DxBallRect rect;
     DxBallSurfaceDesc desc;
     DxBallInt i, result;
-    if (dxball_elapsed(dxball_intro_tick, 50)) {
-        dxball_select_surface((DxBallSurface)dxball_board_surface);
-        rect.top = 37; rect.bottom = 115;
-        rect.left = 112; rect.right = 530;
-        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_active_surface, rect.left, rect.top,
-            (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
-        desc.size = 108; desc.flags = 14;
-        ((DxBallDDSurface *)dxball_active_surface)->vtable->get_desc(
-            (DxBallDDSurface *)dxball_active_surface, &desc);
-        do {
-            result = ((DxBallDDSurface *)dxball_active_surface)->vtable->lock(
-                (DxBallDDSurface *)dxball_active_surface, NULL, &desc, 0, NULL);
-        } while (result != 0);
-        for (i = 0; i < 287; ++i) {
-            if (dxball_intro_points[i].kind == 0) {
-                dxball_intro_points[i].angle += 30;
-                if (dxball_intro_points[i].angle > 359)
-                    dxball_intro_points[i].angle %= 360;
-                desc.pixels[(dxball_intro_points[i].y +
-                    dxball_intro_offsets[dxball_intro_points[i].angle].y) * desc.pitch +
-                    dxball_intro_points[i].x +
-                    dxball_intro_offsets[dxball_intro_points[i].angle].x] = 200;
-            }
+    DxBallByte *pixel;
+    if (dxball_elapsed(dxball_intro_tick, 50) == 0)
+        return;
+    dxball_select_surface((DxBallSurface)dxball_board_surface);
+    rect.top = 37; rect.bottom = 115;
+    rect.left = 112; rect.right = 530;
+    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+        (DxBallDDSurface *)dxball_active_surface, rect.left, rect.top,
+        (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+    desc.size = 108; desc.flags = 14;
+    ((DxBallDDSurface *)dxball_active_surface)->vtable->get_desc(
+        (DxBallDDSurface *)dxball_active_surface, &desc);
+    do {
+        result = ((DxBallDDSurface *)dxball_active_surface)->vtable->lock(
+            (DxBallDDSurface *)dxball_active_surface, NULL, &desc, 0, NULL);
+    } while (result != 0);
+    for (i = 0; i < 287; ++i) {
+        if (dxball_intro_points[i].kind == 0) {
+            dxball_intro_points[i].angle += 30;
+            if (dxball_intro_points[i].angle > 359)
+                dxball_intro_points[i].angle %= 360;
+            pixel = desc.pixels;
+            pixel += (dxball_intro_points[i].y +
+                dxball_intro_offsets[dxball_intro_points[i].angle].y) * desc.pitch +
+                dxball_intro_points[i].x +
+                dxball_intro_offsets[dxball_intro_points[i].angle].x;
+            *pixel = 200;
         }
-        ((DxBallDDSurface *)dxball_active_surface)->vtable->unlock(
-            (DxBallDDSurface *)dxball_active_surface, NULL);
-        for (i = 0; i < 287; ++i) {
-            if (dxball_intro_points[i].kind == 1) {
-                dxball_intro_points[i].angle += 30;
-                if (dxball_intro_points[i].angle > 359)
-                    dxball_intro_points[i].angle %= 360;
-                dxball_draw_keyed_sprite(1,
-                    dxball_intro_points[i].x +
-                    dxball_intro_offsets[dxball_intro_points[i].angle].x,
-                    dxball_intro_points[i].y +
-                    dxball_intro_offsets[dxball_intro_points[i].angle].y);
-            }
-        }
-        dxball_invalidate_region(rect);
-        dxball_animate_palette(200, 207, 1);
-        dxball_intro_tick = dxball_current_time();
     }
+    ((DxBallDDSurface *)dxball_active_surface)->vtable->unlock(
+        (DxBallDDSurface *)dxball_active_surface, NULL);
+    for (i = 0; i < 287; ++i) {
+        if (dxball_intro_points[i].kind == 1) {
+            dxball_intro_points[i].angle += 30;
+            if (dxball_intro_points[i].angle > 359)
+                dxball_intro_points[i].angle %= 360;
+            dxball_draw_keyed_sprite(1,
+                dxball_intro_points[i].x +
+                dxball_intro_offsets[dxball_intro_points[i].angle].x,
+                dxball_intro_points[i].y +
+                dxball_intro_offsets[dxball_intro_points[i].angle].y);
+        }
+    }
+    dxball_invalidate_region(rect);
+    dxball_animate_palette(200, 207, 1);
+    dxball_intro_tick = dxball_current_time();
     return;
 }
 

@@ -37,7 +37,7 @@ zeroing; that extra memset is removed. Returned pitch and pixel fields are
 consumed only after the descriptor/lock APIs. The original also writes size 100
 and zero at +80 into a separate unpassed request-shaped area. Its type/source
 origin remains inferred/unexplained; no unused local is added to force a match.
-The complete 666/711-byte candidate has forty relocations and 637 unaligned
+That checkpoint's complete 666/711-byte candidate has forty relocations and 637 unaligned
 full-span differences, including missing storage and differing local addressing.
 This is a control-flow/API recovery, not an exact or complete-storage claim.
 
@@ -51,6 +51,16 @@ the current emission, retaining its 368/370 bytes and 127 differences. Other
 owner loops remain historical after identity refresh. No full owner suite or
 historical replay was run. Products and receipts are retained privately in
 `.analysis/exact-intro-key-points/`.
+
+The [pixel-storage follow-up](INTRO_POINT_STORAGE.md) restores the consumed
+pixel pointer and timer early return. Its complete 682/711-byte candidate has
+604 unmasked differences; all 178 retained instructions, fourteen direct branch
+targets and eleven mapped frame references correspond. The original unpassed
+100-byte region has only two stores and no address formation; its source type
+remains unproved. One stable compile preserves all thirteen owner exact units.
+All 36 existing point cases and 58 connected checks pass against the final
+library, with the native descriptor bridge corrected for actual fixed-108 and
+host-size glyph callers. Original Oracle descriptor checks remain strict.
 
 The subsequent focused real-Wine check runs the unchanged VC4 ball/pause/editor/
 exit flow on the linked `732731b` source product. Menu entry and return, moving

@@ -70,9 +70,11 @@ class IntroNative(PlatformNative):
             flags,self.observed(),self.display_observed()))
         return -1
     def fill_desc(self,pointer):
-        # These newly observed callers specify the fixed DirectDraw record size
-        # 108. The native bridge uses a typed host view to return its pixel pointer.
-        desc=Desc.from_address(pointer);assert (desc.size,desc.flags)==(108,14)
+        # Intro points specify the original fixed size 108. Connected text also
+        # reaches the shared glyph renderer, whose native descriptor uses the
+        # actual host sizeof. Both return pixels through the same typed bridge.
+        desc=Desc.from_address(pointer)
+        assert desc.size in (108,C.sizeof(Desc)) and desc.flags==14
         desc.width,desc.height,desc.pitch=640,480,self.pitch
         desc.pixels=C.addressof(self.pixels)
 

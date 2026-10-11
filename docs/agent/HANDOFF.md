@@ -1022,3 +1022,35 @@ compiler-generated and unknown entries. Source presence does not establish
 original fidelity; >=95% complete restoration remains unproven.
 Keep current builds, originals, toolchains and unique evidence. Clean superseded
 products and verified duplicates. README retains its 900px PNG and progress SVG.
+
+
+## Intro-point consumed pointer checkpoint
+
+See `docs/research/INTRO_POINT_STORAGE.md` and private
+`.analysis/intro-storage-dataflow/`. Point update now uses the original consumed
+pixel pointer and observed timer early return. One stable intro compile retains
+all13 affected exact units. Complete682/711 bytes has604 unmasked differences,
+down from637; it remains nonexact. All178 retained instructions/14 direct branch
+targets correspond through11 mapped frame references. The original100-byte
+unpassed region has only two stores and no address formation; its source type
+and original declarations remain unproved. Do not add fake locals or run layout
+trials to reproduce those stores.
+
+The final native library passes36 existing point cases and58 separate connected
+splash/menu/editor-request checks. The first connected run exposes the native
+fixture's stale fixed108-only descriptor check: shared glyph rendering now
+reaches its actual120-byte host descriptor. The bridge accepts these two known
+sizes with flags14; original Oracle still requires108/14. Case bodies/matrices,
+ordered effects and full storage/list comparisons remain unchanged. Native and
+MinGW rebuild only intro; VC4 links one matching owner and35 verified unchanged
+objects, with no additional compilation.235 historical semantic input inventories
+are refreshed, not rerun. Counts remain283 source-present /247 semantic scopes /
+186 exact /33,001 code bytes /136 accepted metadata; origins270/76/42/140 stay
+unchanged. No fresh provider, full historical replay, physical gameplay or
+near-complete original-source claim.
+
+Feedback42 is appended only to existing
+`/tmp/dxball_rea_feedback_20261010.md`; local REA is official npm latest6.3.0.
+The scoped immutable seal is
+`.analysis/checkpoints/intro-point-storage-283-186/sha256.json`. Continue genuine
+game-source recovery and preserve strict full-span acceptance.
