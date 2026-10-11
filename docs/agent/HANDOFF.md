@@ -8,6 +8,24 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+The local REA runtime is now 6.4.0, with the matching version-37 skill and
+170 advertised MCP tools. A fresh `npm ci` reproduces the entire installed
+dependency tree. Node 22.19.0, Ghidra 12.1.4 and the JDK remain pinned.
+The intact 43-record 6.3 snapshot is retained under
+`.analysis/rea-upgrade-6.4.0/before/`; 6.4 rejected its analysis profile.
+A fresh 6.4 native session read only the 12-byte locale record, agreed with
+the archived bytes, saved one Evidence record and closed successfully.
+The first read cost 49.37 seconds; no game build or replay was needed.
+The new portable bundle-summary CLI can discover a selected historical
+6.3 record without opening Ghidra. See [REA commands](REA.md) for the
+upgrade and retained-evidence workflow. Verified cleanup removed 250.7 MiB
+of obsolete runtime, validation tree, npm cache and temporary bundle allocation;
+one pair of identical new immutable catalogs was also deduplicated. The small
+upgrade seal is `.analysis/checkpoints/rea-upgrade-6.4.0/sha256.json`, with
+59 owned files and 18 explicit dependencies. Current game products and
+source/origin proof inputs are unchanged. Feedback remains in the same
+`/tmp/dxball_rea_feedback_20261010.md`; next new entry is 63.
+
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
 - Origins: 270 authored, 115 runtime, 42 compiler-generated, 101 unknown.
@@ -44,7 +62,7 @@ The three FPinit callback pointers remain unverified;conversion-table/locale/BSS
 andfull original-source/authored denominator/synchronized fidelity remain open.
 Continue independently scoped complete initialization or remaining origin
 boundaries; do not derive globals from observed fields to fit relocations.
-Feedback remains only in `/tmp/dxball_rea_feedback_20261010.md`; next entry62.
+That source checkpoint uses feedback entry 61; the REA upgrade uses entry 62.
 
 The preceding origin audit proves the complete multiprocessing FDIV test at
 0x418C50: 278 bytes and twelve actual relocations through five independently
@@ -448,8 +466,8 @@ recover lost output or run a broad historical matrix.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md) and the affected owner note before edits.
 Use `scripts/repo-python`; originals, toolchains, products and raw evidence stay
-private. Pin REA6.3.0/Ghidra12.1.4 through `scripts/rea`. Official npm latest was
-verified as6.3.0 on2026-10-11; no repeated doctor/setup is needed. Reuse closed
+private. Pin REA6.4.0/Ghidra12.1.4 through `scripts/rea`. Official npm latest was
+verified as6.4.0 on2026-10-11; no repeated doctor/setup is needed. Reuse closed
 Evidence/ranges with their target/file hashes; request only a concrete missing
 range or consumer. Retain full carriers locally and return focused projections.
 

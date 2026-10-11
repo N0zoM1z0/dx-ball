@@ -45,7 +45,7 @@ memory access gives the next REA query a concrete target. Revisit that evidence,
 refine the implementation, and rebuild the game. A small play check or an
 existing Oracle helps check the behavior being restored.
 
-This repository uses REA 4.1.0 with Ghidra 12.1.4 through `scripts/rea`.
+This repository uses REA 6.4.0 with Ghidra 12.1.4 through `scripts/rea`.
 See [REA commands](agent/REA.md) for setup and queries,
 [matching](MATCHING.md) for compiler comparisons, and
 [build and play](BUILD.md) for running the reconstruction.

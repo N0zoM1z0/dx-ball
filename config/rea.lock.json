@@ -1,9 +1,9 @@
 {
-  "version": "6.3.0",
+  "version": "6.4.0",
   "package": "rea-agents",
-  "npm_integrity": "sha512-1l3L22PYqlzW70I2Z8fVjWufdBp8lN5dwXSiBERLKPP7pybiFSHeCD8LnXfAoilYkmSQe1NfRgOrbIr9ujkOfQ==",
-  "package_lock_sha256": "403836ea0eb08c8c9f63e0b3e3b718455f12a9e830f4a588666d0cd6a0a1d5fa",
-  "node_modules_sha256": "9764e9cc7b59b9ca56b225c95ec861da0388704d6f727054bf2147db13eb7737",
+  "npm_integrity": "sha512-Vj1zWfSlna5bphGoaoI/TcVBuYvze9u+OyPC3Shz8YkBqaCTqB4COnnRoX7XDwMpwI24ZlFEel2yEj0k8LTWEQ==",
+  "package_lock_sha256": "6ce51fa3cc2f92353f797bc62db444e476dbdf514ede90db026e82223dbd4402",
+  "node_modules_sha256": "e5c552c74f134b2210a29edf82882054fb1e686d30bc95c1e248f0c8494ff3fd",
   "node": {
     "version": "22.19.0",
     "sha256": "596b5144ff242737f1c1be6a5f0ccb3907dbba2482344143cb1a6898633402a9"
@@ -224,5 +224,6 @@
     }
   },
   "historical_ghidra_version": "12.1.3",
-  "source_reference_commit": "74cf9e1401fcd89482fe39c27cc898f5858e9b72"
+  "historical_source_reference_commit": "74cf9e1401fcd89482fe39c27cc898f5858e9b72",
+  "npm_release_reference": "https://www.npmjs.com/package/rea-agents/v/6.4.0"
 }
