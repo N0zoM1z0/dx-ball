@@ -1932,7 +1932,7 @@ object = "build/exact/device.obj"
 inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.c", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameplay.h", "src/paddle.h", "src/resources.h", "src/runtime.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
-[candidates.fill-rect]
+[units.fill-rect]
 build = "ui"
 symbol = "_dxball_fill_rect"
 target_address = 0x403230

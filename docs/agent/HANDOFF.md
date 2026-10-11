@@ -1,14 +1,36 @@
 # Reconstruction handoff
 
 Continue toward nearly complete original English DX-Ball v1.07 source that
-rebuilds and plays. Commit locally with `gpt-6.1-sol: ` subjects; pushes remain
-deferred. This repository handoff is authoritative. The older
+rebuilds and plays. Commit with `gpt-6.1-sol: ` subjects and push verified
+checkpoints to `origin/main`; the user resumed publishing. This handoff is authoritative. The older
 `/tmp/dxball_reconstruction_handoff.md` is stale and is not updated: the user
 requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores six sound operations exactly across
+The latest source checkpoint restores rectangle fill at 0x403230 exactly:
+85 complete bytes/zero relocations; outer rect EBP-16 and operation-local 100-byte
+fx EBP-116. Three rotation counters now occupy original EBP-16 loop homes;
+remaining 4/6/6 red/green-home differences stay nonexact. One neutral fade
+comparison orientation compile emitted the same 18 differences and zero changed
+bindings; its source/object/receipt are retained, and original device source/
+verified before object restored without recompilation. Do not repeat that model.
+Four legacy compiles (device 1/display 1/UI 2), 178 unchanged fill/rotation/setup
+calls, 13 affected exact companions across 2317 bytes and 4 restored device companions across 526 bytes.
+Native/MinGW update; two final matching objects link with 34 unchanged objects.
+All 199 exact closures/247 unchanged semantic scopes/36 production objects verify.
+Counts: 199 exact / 41160 code / 136 metadata; 283 source-present; 270 known authored.
+Current products: `.analysis/palette-operation-scopes/product-verification.json`;
+seal: `.analysis/checkpoints/palette-operation-scopes-283-199/sha256.json`.
+See [fill/palette loop scopes](../research/exact/EXACT_FILL_PALETTE_LOOP_SCOPES.md).
+The user explicitly resumed pushes. The previously accepted backlog is confirmed
+at origin/main b48660d; commit and push subsequent verified source checkpoints.
+Continue another evidence-supported source family; do not split coextensive
+color snapshots or vary names merely to force storage. Full authored denominator,
+original spelling, driver display/audio and campaign fidelity remain unproved;
+the reconstruction goal remains active. REA feedback is optional, one /tmp doc.
+
+The preceding source checkpoint restores six sound operations exactly across
 965 bytes/43 relocations: stop/rewind, frequency/pan/volume setters, whole-bank
 restoration and buffer creation. Restore post-guard results, scan/status/reload
 filename and descriptor lifetimes in src/sound.c; names/types/operations stay

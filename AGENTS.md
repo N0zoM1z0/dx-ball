@@ -33,6 +33,7 @@ against instructions, exits and embedded data.
   Publish recovered source, useful research notes and claim ledgers.
 - Update the affected ledgers and progress when claims change. Preserve unique
   evidence before cleaning disposable products.
-- Commit locally; pushes are deferred until the user asks to resume publishing.
+- Commit and push verified checkpoints to the configured `origin/main`.
+  The user resumed publishing; keep private originals/tools/evidence untracked.
   Subjects are English and begin
   `gpt-6.1-sol: `. Describe the source recovery, REA findings and actual validation.

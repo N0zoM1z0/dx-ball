@@ -93,8 +93,8 @@ and `matches.csv` for configured exact units. Check tracking and refresh
 progress when those ledgers change. Preserve input and product identities
 needed to reproduce a new acceptance claim.
 
-Commit a stable, readable checkpoint with the required English subject prefix
-`gpt-6.1-sol: `. Explain the REA findings, source change and actual checks in
+Commit and push a stable, verified checkpoint to `origin/main` with the required
+English subject prefix `gpt-6.1-sol: `. Explain the REA findings, source change and actual checks in
 the commit body. Keep originals, assets, toolchains and raw analysis private.
 Clean disposable probes after unique evidence and accepted products are
 retained; `scripts/repo-python scripts/clean-local.py` previews cleanup.

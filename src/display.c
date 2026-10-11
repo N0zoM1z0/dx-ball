@@ -422,7 +422,6 @@ void dxball_wait_frames(DxBallInt frames)
 void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
 {
     DxBallByte red, green, blue;
-    DxBallInt i;
     if (dxball_cursor_warp_disabled == 1) return;
     if (rotate == 1) {
         red = dxball_live_palette[first].red;
@@ -431,7 +430,10 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
     } else {
         red = 0; green = 0; blue = 0;
     }
-    for (i = first; i < last; ++i) dxball_live_palette[i] = dxball_live_palette[i + 1];
+    {
+        DxBallInt i;
+        for (i = first; i < last; ++i) dxball_live_palette[i] = dxball_live_palette[i + 1];
+    }
     dxball_live_palette[last].red = red;
     dxball_live_palette[last].green = green;
     dxball_live_palette[last].blue = blue;

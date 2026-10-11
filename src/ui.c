@@ -97,12 +97,14 @@ void dxball_fill_rect(DxBallSurface handle, DxBallInt left, DxBallInt top,
     DxBallInt right, DxBallInt bottom, DxBallUInt color)
 {
     DxBallRect rect;
-    DxBallColorFillFx fx;
-    fx.size = 100;
-    fx.fill_color = color;
-    rect.top = top; rect.bottom = bottom; rect.left = left; rect.right = right;
-    ((DxBallDDSurface *)handle)->vtable->blt((DxBallDDSurface *)handle,
-        &rect, NULL, NULL, 0x400, &fx);
+    {
+        DxBallColorFillFx fx;
+        fx.size = 100;
+        fx.fill_color = color;
+        rect.top = top; rect.bottom = bottom; rect.left = left; rect.right = right;
+        ((DxBallDDSurface *)handle)->vtable->blt((DxBallDDSurface *)handle,
+            &rect, NULL, NULL, 0x400, &fx);
+    }
     return;
 }
 
@@ -119,7 +121,6 @@ void dxball_set_palette_rgb(DxBallInt entry, DxBallByte red, DxBallByte green, D
 void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap)
 {
     DxBallByte red, green, blue;
-    DxBallInt i;
     if (dxball_cursor_warp_disabled == 1) return;
     if (wrap == 1) {
         red = dxball_live_palette[last].red;
@@ -128,7 +129,10 @@ void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap
     } else {
         red = 0; green = 0; blue = 0;
     }
-    for (i = last; i > first; --i) dxball_live_palette[i] = dxball_live_palette[i - 1];
+    {
+        DxBallInt i;
+        for (i = last; i > first; --i) dxball_live_palette[i] = dxball_live_palette[i - 1];
+    }
     dxball_live_palette[first].red = red;
     dxball_live_palette[first].green = green;
     dxball_live_palette[first].blue = blue;
@@ -139,10 +143,13 @@ void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap
 
 void dxball_rotate_rgb_colors(DxBallInt entry, DxBallInt count, DxBallInt *colors)
 {
-    DxBallInt red, green, blue, i;
+    DxBallInt red, green, blue;
     if (dxball_cursor_warp_disabled == 1) return;
     red = colors[0]; green = colors[1]; blue = colors[2];
-    for (i = 0; i <= count - 4; ++i) colors[i] = colors[i + 3];
+    {
+        DxBallInt i;
+        for (i = 0; i <= count - 4; ++i) colors[i] = colors[i + 3];
+    }
     colors[count - 3] = red; colors[count - 2] = green; colors[count - 1] = blue;
     dxball_set_palette_rgb(entry, (DxBallByte)colors[0], (DxBallByte)colors[1], (DxBallByte)colors[2]);
     return;
