@@ -133,9 +133,18 @@ def verify_data_sections(root, manifest, mapping, original):
             if located != address:
                 raise ValueError('unique initialized symbol does not locate the declared section')
             placement = dict(symbol=basis['symbol'], complete_symbol_bytes=len(needle), file_offset=first)
-        elif basis['kind'] == 'unique_initialized_section':
-            if relocations or len(content) < 16 or not any(content):
+        elif basis['kind'] in ('unique_initialized_section', 'unique_initialized_string'):
+            if relocations or not any(content):
                 raise ValueError('whole-section discovery requires nonzero relocation-free initialized data')
+            if basis['kind'] == 'unique_initialized_string':
+                literal = defined.get(basis['symbol'])
+                if (literal is None or literal['value'] != 0 or
+                        literal['storage'] != 2 or not literal['name'].startswith('??_C@') or
+                        len(content) < 9 or content[-1:] != b'\0' or
+                        any(c < 32 or c > 126 for c in content[:-1])):
+                    raise ValueError('discovery requires a complete initialized ASCII string literal')
+            elif len(content) < 16:
+                raise ValueError('whole-section discovery requires at least sixteen initialized bytes')
             first = carrier.find(content)
             if first < 0 or carrier.find(content, first + 1) >= 0:
                 raise ValueError('initialized discovery section is not unique')

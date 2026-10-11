@@ -10,11 +10,39 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 113 runtime, 42 compiler-generated, 103 unknown.
+- Origins: 270 authored, 114 runtime, 42 compiler-generated, 102 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
+
+The latest origin audit proves the complete multiprocessing FDIV test at
+0x418C50: 278 bytes and twelve actual relocations through five independently
+unique complete strings / 89 bytes, a previously verified test body and named
+PE imports. One unknown entry becomes runtime. A separate 23-byte __positive
+body at0x418E40 is absent from the imported inventory; retain its complete
+library provenance without inventing a row. Current maintained scope:
+87 code sections / 14061 disjoint bytes / 104 origin entries, 19 data sections /
+3086 bytes, 394 actual definitions / 219 static. All prior85 code / 14 data
+result rows survive. Whole small ASCII string validation permits the nine-byte
+KERNEL32 literal with its actual MSVC symbol, unique carrier placement and full
+Evidence/PE agreement; untyped constants still require16 bytes. Four controls
+reject partial or shifted strings, an untyped short constant and a wrong
+literal symbol. Actual candidate-path receipt and byte-identical published
+recipe alias are explicit. No game source/compiler/build/gameplay replay.
+Four current products remain those ofpcx-packet-loop/product-verification.json.
+
+The actual fpinit.obj data is initialized28 bytes; a unique16-byte prefix places
+423090 independently. Candidate __adjust_fdiv is42309c; the three original
+function pointers and complete28 bytes are observed but code/table dependencies
+remain unclosed. No partial section authority is published. Continue independent
+conversion-table/locale/BSS or whole initialization-group evidence; do not derive
+bindings from observed fields to fit a relocation. One closed REA6.3 session
+reads117 raw bytes: first53374.63ms, five later1.03–7.21ms, 18787 retained carrier
+bytes. See [FDIV initialization frontier](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md),
+private `.analysis/crt-fdiv-control/`, seal
+`.analysis/checkpoints/crt-fdiv-control-283-188/sha256.json`.
+Feedback remains only in `/tmp/dxball_rea_feedback_20261010.md`; next entry61.
 
 The latest source batch restores PCX's original body-tail packet increment and
 direct backedge to its guard. Matching979/862 bytes,227 paired instructions,
@@ -36,10 +64,10 @@ verification. Current four products:
 `.analysis/checkpoints/pcx-packet-loop-283-188/sha256.json`.
 Next evidence must distinguish unresolved origin/storage or synchronized runtime
 fidelity;closed PCX/capture/display/key/window layouts are not source gaps.
-Feedback continues only in `/tmp/dxball_rea_feedback_20261010.md`;next entry60.
+That source checkpoint uses feedback entry59; the current entry is60.
 Keep public/current paths independent from immutable archive inodes.
 
-The latest origin audit closes two pointer-bearing code/data groups atomically:
+The preceding origin audit closes two pointer-bearing code/data groups atomically:
 87trig43/114 bytes and adj_fdiv3467/352. Both code/data bases independently follow
 unique nonrelocated anchors;all22 code/76 data actual-index relocations pass
 before group authority is published. Eight FDIV rows become runtime. The43-byte
@@ -56,7 +84,7 @@ REA6.3/Ghidra12.1.4 session reads two data extents466 bytes;66497.05ms then1.64m
 See [complete code/data groups](../research/CRT_CODE_DATA_GROUPS.md),private
 `.analysis/crt-pointer-storage/`,seal
 `.analysis/checkpoints/crt-pointer-storage-283-188/sha256.json`.
-Remaining103 unknown origins,assert/transcendental partial data and ungrounded
+Its remaining103 unknown origins,assert/transcendental partial data and ungrounded
 BSS require new independent authority;full authored denominator/fidelity remain
 open. Keep current and public paths independent from immutable archive inodes.
 
@@ -545,3 +573,10 @@ not a measured device-free-space delta. Current/public files retain independent
 inodes; unique Evidence, current products and complete before inputs remain.
 Cleanup is confined to this new seal. No broad archive scan or additional
 provider, compiler or case replay is performed.
+
+This checkpoint preserves 62 owned files and 277 explicit immutable dependencies.
+Eleven scoped archive links replace 1,433,600 previously single-link allocated
+bytes, about 1.4 MiB; no device-free-space delta is claimed. Mutable current and
+public paths remain on independent inodes. Unique Evidence, before inputs,
+current products and probe objects stay. Cleanup is confined to the new seal.
+No additional game/compiler/provider/case queue runs.
