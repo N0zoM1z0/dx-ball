@@ -5856,7 +5856,7 @@ relocations = [
   { offset = 148, type = "DIR32", symbol = "$L1436", addend = 0, target = 0x004039AA },
 ]
 
-[candidates.initialize-device-state]
+[units.initialize-device-state]
 build = "startup"
 symbol = "_dxball_initialize_device_state"
 target_address = 0x403a00

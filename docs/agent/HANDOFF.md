@@ -8,6 +8,26 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+The latest source checkpoint restores device initialization at0x403A00 exactly:
+all359 bytes/28actual relocations, including direct failure return and the
+nested vertical-blank counter scope in src/startup.c. Five startup companions
+remain exact across1022bytes. One canonical MTmatching compile is reused by
+the VC4 link with35 unchanged objects; Native/MinGW rebuild the affected owner.
+The unchanged startup suite passes158 cases plus one connected dispatch check.
+All189 exact input/object identities and247 unchanged historical semantic
+scopes verify;235 input closures refresh. No provider startup/gameplay replay.
+Current products are in `.analysis/startup-calibration-scope/product-verification.json`,
+with independent product seal
+`.analysis/checkpoints/startup-calibration-scope-283-189/sha256.json`.
+The earlier menu/flight/reflection
+captures below describe their retained PCX-checkpoint executable, not a fresh
+rendering claim for these new products. See
+[exact calibration scope](../research/exact/EXACT_DEVICE_CALIBRATION_SCOPE.md).
+Reconstruction is primary; REA feedback is optional and briefly appended to
+the same existing /tmp document. Continue with evidence-supported source/CFG
+recovery of a remaining nonexact game owner; do not substitute repeated small
+gameplay observations or CRT counting for source progress.
+
 The local REA runtime is now 6.4.0, with the matching version-37 skill and
 170 advertised MCP tools. A fresh `npm ci` reproduces the entire installed
 dependency tree. Node 22.19.0, Ghidra 12.1.4 and the JDK remain pinned.
@@ -115,14 +135,15 @@ hashes the full report, with partial process sampling at64. Private
 `.analysis/post-reflection-wall/` and its small seal reference unique raw
 carriers and prior closures; runtime copies are hash-verified and removed.
 No game/helper compilation or source/exact/origin change.
-Next feedback entry:70. Pursue independently grounded remaining CRT conversion
-dependencies or a demonstrated new game effect/speed/campaign question.
+Entry70 is the source checkpoint at the top: device initialization now matches
+all359bytes. Next feedback entry:71. Prioritize remaining game source/CFG
+recovery; REA feedback is optional and must not become the primary task.
 Do not repeat successful menu, pause, first miss, paddle415, paddle435 or
 second-brick/left-wall captures unchanged. Synchronized clocks, full-frame
 physics/audio and whole-campaign fidelity remain open; the goal stays active.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
-- 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
+- 189 exact functions / 35,362 complete code bytes / 136 accepted metadata bytes.
 - Origins: 270 authored, 115 runtime, 42 compiler-generated, 101 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
