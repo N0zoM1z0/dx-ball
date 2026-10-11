@@ -8,7 +8,44 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The current source checkpoint scopes the dirty-region presenter's current
+The current source checkpoint scopes initialize_sound's existing 256-byte
+filename copy to its final nonnull retained-sound reload branch in src/sound.c.
+Names/types/capacities/executable tokens are unchanged. One sound MT compile
+restores original response -36 and filename base -292. Twelve response accesses
+shrink by three bytes each: complete emission improves 1741/1705 bytes with
+1447 differences to 1705/1705 with 27. Both frames 324; remaining original/current
+homes result4/32, retry8/28, slot12/24, descriptor base32/20 and flags28/16. All
+377 original boundaries/widths, 99 branches/34 calls and 97 ordered bindings
+verify through the explicit frame roles. Preserve all 27 strict differences;
+no exact promotion or original source declaration/layout claim.
+Reuse closed function Evidence ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f
+and complete 1705-byte read ev_ea17c0f8232c3bed494b5f8e97ff67790e1d38eb410d071395c0337072d22447.
+The original owned 1635 excludes 70 bytes: 14 actual five-byte JMP rel32s are
+verified from saved bytes/targets and merged with provider assembly. No original
+general decoder/new provider session. Preserve complete boundary receipt as a
+seal dependency, not just the Ghidra-owned assembly.
+89 relocation offsets contract; six generated title-string aliases shift by
+one after the declaration move. All complete 8-byte old/new/original NUL strings
+and twelve prior literal attestations verify. Initial consumer rejects stale
+offsets; first serializer also drops data_hex attestations. Both are recovered
+from the completed producer with zero repeated compilations. Never rerun the
+producer or successful offset-reconciliation script just for consumer repair.
+14 exact companions across 2,087 bytes and load-sound/parse-wave candidate records stay
+identical. Four unchanged loops pass 124 initialization/prepare cases and 48
+connected focus/reload/lost-buffer checks. Native/MinGW update once; final
+matching sound object links with 35 unchanged VC4 objects and no extra legacy
+source compile. All 206 exact closures / 247 unchanged historical scopes / 36 objects
+verify; 235 inventories refresh. Counts stay 206 exact / 44,406 code / 136 metadata;
+283 source-present / 270 authored. Current products:
+`.analysis/sound-init-filename-scope/product-verification.json`; seal:
+`.analysis/checkpoints/sound-init-filename-scope-283-206/sha256.json`.
+See [sound initialization filename lifetime](../research/exact/SOUND_INIT_FILENAME_SCOPE.md).
+Do not vary local names/layouts or add padding to force remaining homes.
+Continue another evidenced source family; full denominator, original spelling,
+physical rendering/audio and complete campaign remain unproved, goal active.
+Commit and push verified checkpoints; REA feedback remains optional in one /tmp doc.
+
+The preceding source checkpoint scopes the dirty-region presenter's current
 rectangle index to its positive-count sorting/merge branch in src/display.c.
 The shared loop index stays outside because key generation and both Blt loops
 consume it. Names/types/executable tokens remain unchanged. One display MT

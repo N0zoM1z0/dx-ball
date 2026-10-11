@@ -34,7 +34,6 @@ void dxball_initialize_sound(DxBallHandle window)
     DxBallInt result, retry, slot;
     DxBallSoundBufferDesc descriptor;
     DxBallInt response;
-    char filename[256];
 
     if (dxball_sound_device != NULL) return;
     retry = 1;
@@ -210,6 +209,7 @@ void dxball_initialize_sound(DxBallHandle window)
     }
     for (slot = 0; slot < DXBALL_SOUND_COUNT; ++slot) {
         if (dxball_sounds[slot] != NULL) {
+            char filename[256];
             strcpy(filename, dxball_sounds[slot]->filename);
             dxball_load_sound(slot, filename);
         }

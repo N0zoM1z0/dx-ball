@@ -1,5 +1,16 @@
 # DirectSound controller and WAV loading
 
+The [initialization filename recovery](exact/SOUND_INIT_FILENAME_SCOPE.md)
+limits the existing filename workspace to the nonnull retained-sound reload
+branch. One MT compile restores the original response/filename homes and
+1,705-byte instruction widths, improving 1,447 differences to 27 remaining
+frame displacements. All 377 complete boundaries, including fourteen excluded
+jumps, 97 bindings and twelve full literals verify. Fourteen exact companions
+across 2,087 bytes and both other candidate records stay unchanged. Existing
+124 initialization/prepare cases and 48 connected checks pass; Native/MinGW
+update and VC4 links with 35 unchanged objects. Totals remain 206 exact /
+44,406 code / 136 metadata. Older sections retain their own products and scopes.
+
 ## Current operation scopes
 
 The [operation scope recovery](exact/EXACT_SOUND_OPERATION_SCOPES.md) makes
