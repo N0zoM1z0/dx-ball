@@ -8,6 +8,45 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+Current source checkpoint restores screen-point collision's initial X/Y copies,
+inclusive copied-Y guards50..349, separate in-place subtraction/division writes
+and two signed-byte tile loads in src/core.c. Original337 bytes/90instructions,
+13branches/2calls/10bindings all correspond. Candidate325/337 with302 strict
+differences improves337/337 with26, entirely column/row scalar homes: current
+EBP-8/-4 versus original-4/-8. Mapping only those26 displacement bytes makes
+all337 bytes identical. No exact promotion or spelling/layout/capacity trials;
+retire this body as a missing-operation hypothesis. Complete candidate is now
+explicit in config/match-units.toml. Existing8 exact core bodies4322bytes and
+frame/drop-bricks candidate results remain unchanged.
+Two MT core compiles: coordinate-only339/189 intermediate is preserved; final
+signed loads337/26. No compiler repeat for a preparation missing-callee binding
+or a wrong assembly-index receipt assertion. Consume completed products and
+correct bounded metadata. The unchanged coordinate loop passes1152 original/native
+cases once. Native/MinGW rebuild and oneVC4 link with matching core plus35
+verified reused objects; zero extra legacy source compiles. All206 exact closures,
+247 historical scopes and36 objects verify;235 historical input inventories refresh
+without case replays. Counts remain206/44406/136,283 source-present/270authored;
+115runtime/42generated/101unknown. No new provider or full gameplay run.
+REA reuse ev_a3dbe09d41da07ce2638ea83d054f31af646f507b1cedf2495bd03630db46f7b,
+closed08-21 run00. Current products: `.analysis/screen-point-stages/product-verification.json`;
+seal `.analysis/checkpoints/screen-point-stages-283-206/sha256.json`.
+See [screen-point stages](../research/exact/SCREEN_POINT_STAGES.md).
+The following Wine receipt is historical for the preceding b92e6ab products;
+do not describe it as a run of this new executable. Goal stays active: complete
+source denominator/spelling, physical rendering/audio/full campaign remain open.
+Continue concrete source recovery and commit AND push verified checkpoints.
+One remaining graphics frontier is the software rotation renderer0x4026A0:
+its complete1572-byte retained dossier exists, while current ownCOFF has1335bytes
+and45relocations. Its source has no complete configured candidate yet. Initial
+zero writes and actual dimension/storage operations deserve bounded inspection;
+no arbitrary local type or capacity is established by that observation.
+Optional REA feedback stays in the one /tmp doc. Cleanup is confined to immutable
+hash-equal copies against immediately previous intro-request-play seal; preserve
+unique intermediate evidence and mutable/public inode independence.
+
+The preceding checkpoint follows.
+
+
 Current-product real-Wine follow-up: source checkpoint b92e6ab VC4 executable
 passes the unchanged ball/pause/editor/save-load/zero-exit observe path. A fresh
 original control passes the same path and Wine/Xvfb 640x480x8 settings. There

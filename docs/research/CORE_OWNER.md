@@ -1,5 +1,15 @@
 # Main ball physics and gameplay frame
 
+The [screen-point coordinate recovery](exact/SCREEN_POINT_STAGES.md) restores
+original X/Y copies, inclusive row guards, separate subtraction/division writes
+and two signed-byte tile reads. Its complete337-byte/90-instruction candidate
+has26 scalar-home differences, versus325/337 bytes with302 before. All13branches,
+2calls and10bindings agree. Eight exact core companions4322bytes remain unchanged;
+1152 unchanged original/native coordinate/fire/hard-tile cases pass once.
+Current products and evidence are in `.analysis/screen-point-stages/`.
+This is source recovery, not a new exact or whole-game fidelity claim.
+
+
 The [frame control-flow checkpoint](FRAME_CONTROL_FLOW.md) restores the direct
 paused return, signed auxiliary-byte load and zero completion comparison.
 The complete candidate is now1,691/1,688 bytes with1,156 unmasked differences.

@@ -72,17 +72,20 @@ void dxball_process_fire_effects(void)
 
 DxBallInt dxball_hit_screen_point(DxBallInt x, DxBallInt y)
 {
-    DxBallInt column, row;
-    if (y > 49 && y < 350) {
-        column = (x - 20) / 30;
-        row = (y - 50) / 15;
+    DxBallInt column = x;
+    DxBallInt row = y;
+    if (row >= 50 && row <= 349) {
+        column -= 20;
+        row -= 50;
+        column /= 30;
+        row /= 15;
         if (column < 0) column = 0;
         if (column > 19) column = 19;
         if (row < 0) row = 0;
         if (row > 19) row = 19;
-        if (dxball_board_tiles[column + row * 20] != 0) {
+        if ((signed char)dxball_board_tiles[column + row * 20] != 0) {
             if (dxball_balls.current->sprite == 61) {
-                if (dxball_board_tiles[column + row * 20] == 2) ++dxball_remaining_bricks;
+                if ((signed char)dxball_board_tiles[column + row * 20] == 2) ++dxball_remaining_bricks;
                 dxball_board_tiles[column + row * 20] = 8;
                 if (dxball_destroy_hard_tiles == 0) dxball_spawn_fire_effect(x, y);
             }

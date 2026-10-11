@@ -9459,3 +9459,22 @@ type = "REL32"
 symbol = "_srand"
 addend = 0
 target = 0x004179F0
+
+[candidates.hit-screen-point]
+build = "core"
+symbol = "_dxball_hit_screen_point"
+target_address = 0x004116C0
+size = 337
+boundary_evidence = "docs/research/exact/SCREEN_POINT_STAGES.md; ev_a3dbe09d41da07ce2638ea83d054f31af646f507b1cedf2495bd03630db46f7b"
+relocations = [
+  { offset = 164, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 177, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
+  { offset = 207, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 222, type = "DIR32", symbol = "_dxball_remaining_bricks", addend = 0, target = 0x43a8f4 },
+  { offset = 241, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
+  { offset = 248, type = "DIR32", symbol = "_dxball_destroy_hard_tiles", addend = 0, target = 0x43fac0 },
+  { offset = 268, type = "REL32", symbol = "_dxball_spawn_fire_effect", addend = 0, target = 0x4135b0 },
+  { offset = 284, type = "REL32", symbol = "_dxball_hit_board_tile", addend = 0, target = 0x411f40 },
+  { offset = 300, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },
+  { offset = 311, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x422d18 },
+]
