@@ -8,7 +8,37 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores editor status at 0x40CA70 exactly:
+The current source checkpoint restores the observed discarded sprite Restore
+HRESULT store at 0x403E0B in src/device.c's actual nonnull call branch. Keep the
+existing bank/slot declarations; no new HRESULT check is introduced. Complete
+sprite recovery is now 282/282 bytes with 18 strict EBP displacement differences,
+down from 279/282 with 80. Original frame 12,85 boundaries,ten branches/two calls
+and seven unchanged ordered relocation targets verify. Original/current homes:
+bank4/8, result8/12, slot12/4. Original authored-local versus compiler-temporary
+provenance and source spelling remain unknown; no exact promotion occurs.
+Four device exact companions526bytes and the full palette candidate record stay
+identical. Only two relocation offsets move by three after the restored store,
+independently grounded in original instructions. Recover the completed producer
+after a stale-offset consumer rejection; never compile again just for that.
+Three unchanged loops pass 64 bank cases / 63 recovery cases/eight connected lost
+presentations. Native/MinGW update once; final matching device object links
+with 35 unchanged VC4 objects and no extra legacy source compilation. All 206
+exact closures / 247 historical scopes / 36 objects verify; 235 inventories refresh.
+Counts stay 206 exact / 44,406 code / 136 metadata;283 source-present / 270 authored.
+Current products: `.analysis/sprite-restore-result-only/product-verification.json`;
+seal: `.analysis/checkpoints/sprite-restore-result-283-206/sha256.json`.
+See [sprite Restore result](../research/exact/SPRITE_RESTORE_RESULT.md).
+Three actual device compilations occurred: rejected scan-only scope 279/128,
+result+scan scope 282/67, and final branch-local result capture 282/18. Retain all
+stages in `.analysis/sprite-bank-scan-scope/`, `.analysis/sprite-restore-result/`
+and `.analysis/sprite-restore-result-only/`; do not repeat the closed scan scopes
+or vary names/layouts to force remaining homes. Restore-only result capture is
+maintained because the original actually stores the return; its location is
+still unproved. Continue another evidenced source family; full denominator,
+physical rendering/audio and complete campaign remain unproved, goal active.
+Commit and push verified checkpoints; REA feedback remains optional in one /tmp doc.
+
+The preceding exact source checkpoint restores editor status at 0x40CA70 exactly:
 all 431 bytes, 25 unchanged relocation bindings and six complete NUL strings.
 Scope the blank-preview rectangle to the sprite-zero branch and the existing
 8-byte number/label rectangle workspace to board-number drawing in src/editor.c.

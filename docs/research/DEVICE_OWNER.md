@@ -1,5 +1,14 @@
 # Palette transitions and surface recovery
 
+The [Restore result recovery](exact/SPRITE_RESTORE_RESULT.md) restores the
+original discarded HRESULT write in the sprite call branch. The complete body
+is now 282/282 bytes with 18 strict frame-home differences, down from 279/282
+with 80; all 85 original boundaries agree. Four exact companions across 526 bytes
+and the palette candidate stay unchanged. The existing 64 bank/63 recovery
+cases and eight connected lost presentations pass. Native/MinGW update and
+VC4 links the matching object with 35 unchanged ones. Totals stay 206 exact,
+44406 code and 136 metadata bytes. Earlier notes retain their own scopes.
+
 The [device-frame restoration](exact/DEVICE_FRAME.md) now makes synchronization
 and recovery exact, preserving live surface reads and the original HRESULT
 writes. That note records the current affected checks and compiler receipts.

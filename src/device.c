@@ -123,9 +123,12 @@ void dxball_restore_sprite_banks(void)
         if (dxball_sprite_banks[bank].allocation_mode == 1) {
             for (slot = 0; slot < 255; ++slot) {
                 if (dxball_sprite_banks[bank].sprites[slot] != NULL &&
-                    dxball_sprite_banks[bank].sprites[slot]->surface != NULL)
-                    dxball_sprite_banks[bank].sprites[slot]->surface->vtable->restore(
+                    dxball_sprite_banks[bank].sprites[slot]->surface != NULL) {
+                    DxBallInt result;
+                    result = dxball_sprite_banks[bank].sprites[slot]->surface->vtable->restore(
                         dxball_sprite_banks[bank].sprites[slot]->surface);
+                    (void)result;
+                }
             }
             dxball_load_sprite_bank(bank, 1, dxball_sprite_banks[bank].filename);
         }

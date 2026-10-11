@@ -1,5 +1,11 @@
 # Surface fill and sprite-bank recovery
 
+The subsequent [Restore-result checkpoint](SPRITE_RESTORE_RESULT.md) now
+captures the observed unused HRESULT write. The full candidate is282/282 bytes
+with 18 strict frame-home differences; all 85 original boundaries agree. The
+historical omission and80-difference comparison below describe this earlier
+checkpoint, not the current source.
+
 The restored device initializer clears the primary surface before creating its
 palette. Surface recovery later scans sprite banks and reloads those stored in
 video memory. This batch follows those two direct dependencies from the saved
