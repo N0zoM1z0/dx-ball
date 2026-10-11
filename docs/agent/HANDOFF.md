@@ -8,7 +8,40 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The current source checkpoint scopes initialize_sound's existing 256-byte
+The current checkpoint scopes initialize_intro_points' existing 287-byte binary
+mask to grid seeding before the separate 360-entry offset-table loop in src/intro.c.
+Names/types/capacity/initializer/executable tokens remain unchanged. One accepted
+intro MT compile improves 2041/1996 bytes with 750 differences to 1996/1996 with 13.
+All 368 complete REA boundaries/widths, 9 branches/2 calls/10 bindings verify. Both
+frames 304; mask base 304 and shared index 12 match original; original/current
+X 4/8, Y 8/16, angle 16/4 explain every strict difference. Preserve 13 candidate
+differences; no exact promotion or declaration spelling claim. Reuse closed
+Evidence ev_001f48ac971f132ed4b29b98cf1549ec4136da2eab0a9448b6ed27d7f5e41fb8.
+Nine relocation offsets move; raw original operands/boundaries ground each,
+all old row metadata stays intact. Consume completed producer after stale-offset
+rejection, never recompile solely for a consumer failure. 15 exact companions
+3864 bytes and every other intro candidate record remain unchanged. Unchanged
+focused oracle passes 37 direct point cases, 36 compared preparations and 58 separate
+connected splash/menu/key checks. Driver selection initially includes an unrelated
+seed statement; corrected before body execution, final oracle runs once.
+Native/MinGW rebuild once; matching intro object links with 35 unchanged VC4 objects,
+0 extra legacy source compiles. Verify 206 exact closures/247 historical scopes/36 objects;
+counts 206/44406/136, 283 source-present/270 authored. Current product receipt:
+`.analysis/intro-mask-lifetime/product-verification.json`; current seal:
+`.analysis/checkpoints/intro-mask-lifetime-283-206/sha256.json`.
+This turn also used one rejected runtime overlay/coordinate-scope compile:
+679/677 bytes 494 dif versus 678/677 with 494 differences before. Prior runtime source/object restored
+by hashes without recompilation; preserve `.analysis/paddle-overlay-lifetimes/`.
+Do not repeat that closed scope or force scalar homes with declaration/name trials.
+See [intro mask lifetime](../research/exact/INTRO_MASK_LIFETIME.md).
+Goal remains active: complete authored denominator/source spelling/physical
+rendering/audio/full campaign unproved. Focus on another evidenced source flow.
+Commit AND push verified checkpoints. Optional REA feedback stays in the single
+existing /tmp document; keep unique evidence and clean immutable duplicate copies.
+
+The preceding checkpoint follows.
+
+The preceding source checkpoint scopes initialize_sound's existing 256-byte
 filename copy to its final nonnull retained-sound reload branch in src/sound.c.
 Names/types/capacities/executable tokens are unchanged. One sound MT compile
 restores original response -36 and filename base -292. Twelve response accesses

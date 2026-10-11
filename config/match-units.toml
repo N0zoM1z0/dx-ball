@@ -2932,16 +2932,16 @@ target_address = 0x40e570
 size = 1996
 boundary_evidence = "docs/research/exact/EXACT_INTRO.md"
 relocations = [
-  { offset = 1733, type = "DIR32", symbol = "_dxball_intro_points", addend = 0, target = 0x00438B30 },
-  { offset = 1754, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x00438B30 },
-  { offset = 1772, type = "DIR32", symbol = "_dxball_intro_points", addend = 8, target = 0x00438B30 },
+  { offset = 1748, type = "DIR32", symbol = "_dxball_intro_points", addend = 0, target = 0x00438B30 },
+  { offset = 1763, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x00438B30 },
+  { offset = 1778, type = "DIR32", symbol = "_dxball_intro_points", addend = 8, target = 0x00438B30 },
   { offset = 1801, type = "DIR32", symbol = "_dxball_intro_points", addend = 12, target = 0x00438B30 },
-  { offset = 1839, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x00438B30 },
-  { offset = 1855, type = "DIR32", symbol = "_dxball_intro_points", addend = 8, target = 0x00438B30 },
-  { offset = 1974, type = "REL32", symbol = "_dxball_wave_x", addend = 0, target = 0x00402520 },
-  { offset = 1990, type = "DIR32", symbol = "_dxball_intro_offsets", addend = 0, target = 0x00439D20 },
-  { offset = 2006, type = "REL32", symbol = "_dxball_wave_y", addend = 0, target = 0x00402560 },
-  { offset = 2022, type = "DIR32", symbol = "_dxball_intro_offsets", addend = 4, target = 0x00439D20 },
+  { offset = 1833, type = "DIR32", symbol = "_dxball_intro_points", addend = 4, target = 0x00438B30 },
+  { offset = 1846, type = "DIR32", symbol = "_dxball_intro_points", addend = 8, target = 0x00438B30 },
+  { offset = 1938, type = "REL32", symbol = "_dxball_wave_x", addend = 0, target = 0x00402520 },
+  { offset = 1951, type = "DIR32", symbol = "_dxball_intro_offsets", addend = 0, target = 0x00439D20 },
+  { offset = 1964, type = "REL32", symbol = "_dxball_wave_y", addend = 0, target = 0x00402560 },
+  { offset = 1977, type = "DIR32", symbol = "_dxball_intro_offsets", addend = 4, target = 0x00439D20 },
 ]
 
 [units.dispose-intro]

@@ -1,5 +1,16 @@
 # Menu and splash evidence
 
+The [point-seeding mask lifetime](exact/INTRO_MASK_LIFETIME.md) scopes the
+existing 287-byte local mask to grid initialization before the wave-offset loop.
+One intro MT compile restores the complete 1,996-byte length and mask base -304,
+reducing 750 differences to 13 actual scalar-home displacements. All 368 boundaries,
+nine branches/two calls/ten bindings verify; fifteen exact companions 3,864 bytes
+and every other candidate remain unchanged. Existing 37 direct point cases plus
+36 compared preparations and 58 separate connected splash/menu checks pass.
+Native/MinGW rebuild; the matching intro object links with 35 unchanged VC4
+objects. Counts stay 206 exact/44,406 code/136 metadata. No exact promotion or
+original declaration spelling claim; historical epochs below retain their scope.
+
 The [exact splash pulse scopes](exact/EXACT_SPLASH_PULSE_SCOPES.md) restore the
 fade-counter and pulse-color-center lifetimes. One MT compile matches all
 370 bytes and 29 bindings, preserving 14 exact companions across 3494 bytes.
