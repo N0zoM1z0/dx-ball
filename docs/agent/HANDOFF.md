@@ -16,7 +16,25 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest countdown audit rejects direct crop subtraction as unsupported
+The latest source batch restores polygon endpoint rereads and repeated indexed
+edge-field stores in both `src/raster.cpp` controllers. Complete candidates are
+1484/1543 with1025 differences and1544/1592 with1048. Each construction interval
+has89 instructions at original offsets; eight frame homes and two equivalent
+ordinary comparisons explain scoped correspondence. Nine affected accepted
+units remain exact. Triangle1710/1710 retains109 differences and exact160-byte
+candidate metadata; its unchanged source emits one operand-reversed MOV/IMUL
+producer. Each original/Native and actual VC4 COFF/Native profile passes1080
+existing polygon and72 existing triangle cases. Only raster recompiles for
+Native/MinGW; VC4 links the matching object plus35 verified unchanged objects.
+235 historical semantic input closures refresh without changing their scopes.
+Current four product identities are in `.analysis/polygon-endpoint-storage/
+product-verification.json`. See [polygon storage](../research/exact/EXACT_POLYGON_ENDPOINT_STORAGE.md),
+private `.analysis/polygon-endpoint-storage/`, and immutable seal
+`.analysis/checkpoints/polygon-endpoint-storage-283-186/sha256.json`.
+Remaining complete-controller storage/sort/loop differences need actual enclosing
+original evidence; do not trial equivalent expressions or local-name/layout changes.
+
+The preceding countdown audit rejects direct crop subtraction as unsupported
 source simplification: the original also has shared inverse/negation steps
 absent from unequal-group summaries. Current source/object are restored by
 their exact before identities after one diagnostic `/MT` compilation; no
@@ -79,8 +97,8 @@ existing spread cases pass. Native/MinGW each rebuild only gameplay; VC4 links
 one matching object and35 verified unchanged objects. Headers/tests stay fixed.
 No new exact count or physical game observation. See
 [explosive source collection](../research/exact/EXACT_EXPLOSIVE_SOURCE_CONDITIONAL.md)
-and private `.analysis/explosive-source-conditional/`. Current four product
-identities are in its `product-verification.json`; immutable seal
+and private `.analysis/explosive-source-conditional/`. That batch
+product identities are in its `product-verification.json`; immutable seal
 `.analysis/checkpoints/explosive-source-conditional-283-186/sha256.json`.
 
 The preceding connected MDS cleanup batch changes only `src/midi.cpp`: five loader
@@ -243,7 +261,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is49; use50 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is50; use51 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -267,3 +285,11 @@ source/object without repeating it, and reuses closed2316097-byte REA Evidence
 with a9495-byte full assembly projection.197/162 selected current cases take
 3.393s; these are local artifact/runtime measurements, not current REA tokens,
 provider latency, RSS or full-game fidelity.
+
+Latest polygon source work reuses two closed original carriers2786590/2858306
+bytes and complete compact assembly17025/17327 bytes. These are retained
+artifact sizes, not current REA transport/tokens. One matching compilation,
+9 accepted comparisons,3 complete candidates and separately scoped1080/72
+cases in each profile; no fresh provider/full replay. Recover truncated
+output from narrow saved receipts. Feedback remains in the single existing
+/tmp document, next new entry51.

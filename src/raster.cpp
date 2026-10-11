@@ -58,7 +58,7 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
     const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
 {
     RasterEdge *storage, **pending, **active, *edge, *saved;
-    DxBallRasterPoint first, second, swap;
+    DxBallRasterPoint first, second;
     DxBallInt used, live, next, gap, i, j, y, left, right;
     storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*storage)));
     pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*pending)));
@@ -75,19 +75,18 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
         second = points[(i + 1) % count];
         if (first.y == second.y)
             continue;
-        if (second.y < first.y) {
-            swap = first;
+        if (first.y > second.y) {
             first = second;
-            second = swap;
+            second = points[i];
         }
-        edge = &storage[used];
-        edge->top = first.y;
-        edge->bottom = second.y;
-        edge->x = first.x;
-        edge->dx = second.x - first.x;
-        edge->dy = second.y - first.y;
-        edge->error = 0;
-        pending[used++] = edge;
+        storage[used].top = first.y;
+        storage[used].bottom = second.y;
+        storage[used].x = first.x;
+        storage[used].dx = second.x - first.x;
+        storage[used].dy = second.y - first.y;
+        storage[used].error = 0;
+        pending[used] = &storage[used];
+        ++used;
     }
     for (gap = 1; gap < used; gap = gap * 3 + 1) { }
     while ((gap /= 3) > 0) {
@@ -161,7 +160,7 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
     const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
 {
     RasterEdge *storage, **pending, **active, *edge, *saved;
-    DxBallRasterPoint first, second, swap;
+    DxBallRasterPoint first, second;
     DxBallInt used, live, next, gap, i, j, y, left, right;
     storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*storage)));
     pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*pending)));
@@ -178,19 +177,18 @@ void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallIn
         second = points[(i + 1) % count];
         if (first.y == second.y)
             continue;
-        if (second.y < first.y) {
-            swap = first;
+        if (first.y > second.y) {
             first = second;
-            second = swap;
+            second = points[i];
         }
-        edge = &storage[used];
-        edge->top = first.y;
-        edge->bottom = second.y;
-        edge->x = first.x;
-        edge->dx = second.x - first.x;
-        edge->dy = second.y - first.y;
-        edge->error = 0;
-        pending[used++] = edge;
+        storage[used].top = first.y;
+        storage[used].bottom = second.y;
+        storage[used].x = first.x;
+        storage[used].dx = second.x - first.x;
+        storage[used].dy = second.y - first.y;
+        storage[used].error = 0;
+        pending[used] = &storage[used];
+        ++used;
     }
     for (gap = 1; gap < used; gap = gap * 3 + 1) { }
     while ((gap /= 3) > 0) {

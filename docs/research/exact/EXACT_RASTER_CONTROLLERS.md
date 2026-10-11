@@ -1,5 +1,12 @@
 # Independent raster controllers and horizontal fill
 
+The latest [endpoint/storage restoration](EXACT_POLYGON_ENDPOINT_STORAGE.md)
+restores both point rereads and repeated indexed stores, with89-instruction
+construction correspondence in each controller. Current candidates are
+1484/1543 with1025 differences and1544/1592 with1048. Triangle remains
+1710/1710 with109 differences and complete160-byte candidate metadata exact;
+the following earlier counts/checks retain their historical product and scope.
+
 The later [metadata and correspondence audit](../RASTER_METADATA_CORRESPONDENCE.md)
 reconciles stale generated metadata names and explains all 482 current triangle
 instructions. Full code remains 107/nonexact; the historical checks below
