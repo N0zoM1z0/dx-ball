@@ -16,6 +16,29 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
+The latest source batch restores PCX's original body-tail packet increment and
+direct backedge to its guard. Matching979/862 bytes,227 paired instructions,
+851 strict differences(previous984/862,869);no new exact function. All12
+accepted resource units/2197 target bytes survive;five candidates compared.
+Complete typed proof:205 normalized instructions,22 in six commuted signed
+comparison groups/two low32 products;30 branch ordinals/10 call operands agree.
+305 typed+3 compiler-padding frame bytes map;four original unaddressed bytes
+remain unexplained. Do not add padding or retry equivalent operand/local
+spelling. One stable MLmatching compile,one necessary MTproduction compile;
+production847 bytes uses three getc calls andis not the matching body. VC4
+reuses35 unchanged objects;Native/MinGW resource-dependent builds pass.99
+unchanged original/Native PCX cases pass once;235 historical input closures
+refresh with247 scopes unchanged. No new REA session/full replay/Wine/audio
+verification. Current four products:
+`.analysis/pcx-packet-loop/product-verification.json`. See
+[original PCX packet loop](../research/exact/EXACT_PCX_PACKET_LOOP.md),private
+`.analysis/pcx-packet-loop/`,seal
+`.analysis/checkpoints/pcx-packet-loop-283-188/sha256.json`.
+Next evidence must distinguish unresolved origin/storage or synchronized runtime
+fidelity;closed PCX/capture/display/key/window layouts are not source gaps.
+Feedback continues only in `/tmp/dxball_rea_feedback_20261010.md`;next entry60.
+Keep public/current paths independent from immutable archive inodes.
+
 The latest origin audit closes two pointer-bearing code/data groups atomically:
 87trig43/114 bytes and adj_fdiv3467/352. Both code/data bases independently follow
 unique nonrelocated anchors;all22 code/76 data actual-index relocations pass
@@ -47,7 +70,7 @@ or partial new data;no acceptance report. Candidate/published recipes are
 byte-identical;the actual candidate-path receipt is retained without rebasing.
 One closed REA6.3/Ghidra12.1.4 session reads nine exact extents;first59037.66ms,
 eight later1.57–18.82ms. No source/compiler/build/gameplay replay or new exact/
-semantic acceptance. Current four products remain the window-switch products.
+semantic acceptance. Their historical four products remain the window-switch products.
 See [complete initialized CRT storage](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md),
 private `.analysis/crt-initialized-storage-next/`,seal
 `.analysis/checkpoints/crt-initialized-storage-283-188/sha256.json`.
@@ -80,7 +103,7 @@ Deletion inventory/restore archive identity are in the private audit folder.
 No device-free-space delta is claimed. All REA feedback still appends only to
 `/tmp/dxball_rea_feedback_20261010.md`.
 
-The latest source batch makes WindowProc at0x40DA70 exact across all1171 bytes/
+The preceding exact source batch makes WindowProc at0x40DA70 exact across all1171 bytes/
 74 actual relocations. Restore its cursor-case switch exit and empty create/
 erase-message exit after right-button release. Full230 instructions/1151 bytes
 include227 reachable instructions and three dead five-byte switch tails; the
@@ -90,7 +113,7 @@ one Native/MinGW build stage and one VC4 link reuse35 unchanged objects;no
 additional game source compile.2138 unchanged WindowProc cases pass once after
 a private missing-messages-assignment failure before cases. No key/clock/
 dispatch/full historical replay.235 historical semantic closures refresh with
-247 scopes unchanged. Current products:
+247 scopes unchanged. Its historical products:
 `.analysis/window-switch-exits/product-verification.json`. See
 [exact window switch exits](../research/exact/EXACT_WINDOW_SWITCH_EXITS.md),
 private `.analysis/window-switch-exits/`,seal
@@ -314,8 +337,8 @@ discovery: it is not a semantic proof, metadata acceptance or switch-table
 boundary audit. MIDI rows describe the pre-batch objects; final comparisons are
 in `comparison.json`. Do not rescan or compile merely because a summary is old.
 
-PCX source recovery is already complete; its862/984 extent and312/308-byte
-frames leave compiler storage/control residuals. Do not retry local spelling or
+PCX packet control is now paired completely;its862/979 matching extent and
+312/308-byte frames retain compiler storage/operand residuals. Do not retry local spelling or
 layout. Point-distance x87 scheduling retains exactly representable coordinate
 differences; no missing arithmetic was inferred. CRT ABS-only discovery adds no
 code match; the later MBCS data unlocks the three accepted complete sections.
@@ -335,12 +358,11 @@ not a complete authored denominator. Reuse existing owner evidence rather than
 rerunning a check merely to fill a ledger count.
 
 Capture's complete address/frame/CFG proof retires its abstract groups as a
-source-gap hypothesis. Next inspect game-key at 0x410290:645 Ghidra-owned bytes
-in831 enclosing bytes. Bound actual dispatch tables, every code successor and
-all remaining bytes before changing source or comparing compiler output; register scheduling or an
-inline table can explain a group without a source gap. Prefer a complete coherent
-flow over a tiny passing helper. Do not perform source-name, declaration-order,
-layout, padding or equivalent-relational-spelling trials to force stack homes.
+source-gap hypothesis. Game-key831 andWindowProc1171 are already exact;all
+actual dispatch tables,successors andenclosing jumps are bound. PCX's227 paired
+instructions close packet topology withonly explicit storage/commuted producers.
+Do not reopen these based on old owned-byte inventories orperform source-name,
+declaration-order,layout,padding or equivalent-relational-spelling trials.
 A compiler API/declaration hypothesis needs evidence that distinguishes it.
 Last-brick's two crop producer groups also contain no missing arithmetic: read
 their complete shared XOR/SUB/NEG neighborhood. Do not retry a direct-expression
@@ -515,3 +537,11 @@ No diagnostic/mutable product or unique evidence is deleted;no measured device
 free-space delta. Supplemental post-cleanup identities bind current docs and
 receipts. A fresh official npm registry read still reports6.3.0,matching the
 installed REA package;no install/setup/provider session is repeated.
+
+Checkpoint preservation: 116 owned files and 133 explicit immutable dependencies
+verify after 26 scoped hash-verified archive links replace 4,800,512 previously
+single-link allocated bytes. This accounts for about 4.6 MiB of duplicate storage,
+not a measured device-free-space delta. Current/public files retain independent
+inodes; unique Evidence, current products and complete before inputs remain.
+Cleanup is confined to this new seal. No broad archive scan or additional
+provider, compiler or case replay is performed.

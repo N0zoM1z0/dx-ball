@@ -10,6 +10,22 @@ no compiler/provider/runtime replay or new acceptance. This retires capture's
 abstract groups as a missing-producer hypothesis. The earlier owner checks
 below retain their own historical products and scopes.
 
+The latest [PCX packet-loop proof](exact/EXACT_PCX_PACKET_LOOP.md) restores the
+original body-tail RLE increment and direct guard backedge. One stable matching
+compile yields979/862 bytes,227 paired instructions and851 strict differences;
+all12 accepted resource units/2197 bytes remain exact.205 instructions normalize
+through the typed frame/CFG map;22 form six commuted signed comparison groups
+andtwo low32 products.305 typed plus3 compiler-padding frame bytes map;four
+original unaddressed bytes remain unexplained.30 successors/10 calls agree.
+99 unchanged PCX cases pass on the final Native library. One separate /MT
+production compile yields847 bytes withthree getc calls instead ofinline FILE/
+_filbuf;production andmatching machine bodies are explicitly distinct. VC4
+reuses35 other objects;Native/MinGW selected builds pass. No fresh REA orWine
+run/full replay/new exact acceptance. Current188 exact/35003 code/136 metadata;
+current products `.analysis/pcx-packet-loop/product-verification.json`.
+
+## Historical PCX recovery and play verification
+
 The PCX decoder now follows the original independent RLE and literal-pixel
 paths. Both paths retain their own wrap, clip and consumed pixel-pointer
 updates. A byte pointer fills the complete 128-byte disk header; typed signed

@@ -404,32 +404,34 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
             run = value - 192;
             decoded = decoded + run;
             value = (DxBallByte)getc(file);
-            for (run_index = 0; run > run_index; run_index = run_index + 1) {
-                if (xmax < column) {
+            run_index = 0;
+            while (run_index < run) {
+                if (column > xmax) {
                     column = 0;
                     destination_x = x;
                     destination_y = destination_y + 1;
                     row = row + 1;
                 }
-                if (width > destination_x && height > destination_y &&
+                if (destination_x < width && destination_y < height &&
                     destination_x >= 0 && destination_y >= 0) {
-                    pixel = description.pixels + pitch * destination_y + destination_x;
+                    pixel = description.pixels + destination_y * pitch + destination_x;
                     *pixel = value;
                 }
                 destination_x = destination_x + 1;
                 column = column + 1;
+                run_index = run_index + 1;
             }
         } else {
             decoded = decoded + 1;
-            if (xmax < column) {
+            if (column > xmax) {
                 column = 0;
                 destination_x = x;
                 destination_y = destination_y + 1;
                 row = row + 1;
             }
-            if (width > destination_x && height > destination_y &&
+            if (destination_x < width && destination_y < height &&
                 destination_x >= 0 && destination_y >= 0) {
-                pixel = description.pixels + pitch * destination_y + destination_x;
+                pixel = description.pixels + destination_y * pitch + destination_x;
                 *pixel = value;
             }
             destination_x = destination_x + 1;

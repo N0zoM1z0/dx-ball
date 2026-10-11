@@ -9232,9 +9232,9 @@ relocations = [
   { offset = 217, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
   { offset = 396, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
   { offset = 525, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
-  { offset = 923, type = "REL32", symbol = "_fclose", addend = 0, target = 0x00417A30 },
-  { offset = 945, type = "REL32", symbol = "_dxball_load_live_palette", addend = 0, target = 0x00409790 },
-  { offset = 967, type = "REL32", symbol = "_dxball_load_saved_palette", addend = 0, target = 0x004098F0 },
+  { offset = 918, type = "REL32", symbol = "_fclose", addend = 0, target = 0x00417A30 },
+  { offset = 940, type = "REL32", symbol = "_dxball_load_live_palette", addend = 0, target = 0x00409790 },
+  { offset = 962, type = "REL32", symbol = "_dxball_load_saved_palette", addend = 0, target = 0x004098F0 },
 ]
 
 [candidates.measure-text]
