@@ -324,6 +324,18 @@ progress are in `.analysis/pause-palette-phase/`. No compiler, game build or
 full historical replay is needed. Existing exact/source/origin counts remain
 unchanged; no new function acceptance follows from these sampled frames.
 
+## Current first released ball
+
+The current VC4 first-flight follow-up matches 89 complete sampled ball vectors
+in order against the original. Both clear tile 291 from 11 to 0, gain ten points
+and lose the first ball after mouse input moves the paddle away. Complete board
+effects, new attached-ball reset, menu and zero exits agree. The two unpaired
+samples remain explicit; asynchronous sampling does not prove every frame or
+clock parity. The persistent read-only reader now emits all thirteen already-read
+ball fields. See [first ball flight](FIRST_BALL_FLIGHT.md) for complete raw stream
+identities, actual recursive SDK dependencies, the trajectory and REA process
+Evidence. No game rebuild or function-count promotion is needed.
+
 ## Natural life loss and persisted rankings
 
 `tests/test_windows_gameover.py` reuses the reviewed game-over state addresses

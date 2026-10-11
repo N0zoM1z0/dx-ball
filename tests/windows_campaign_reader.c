@@ -50,7 +50,12 @@ static int print_nodes(HANDLE process, DWORD address, int bonus,
                (long)data[4], (long)data[5], (long)width, (long)height);
         if (bonus) printf(",\"kind\":%ld,\"gravity_ticks\":%ld",
                           (long)data[0], (long)data[6]);
-        else printf(",\"attached\":%ld", (long)data[10]);
+        else printf(",\"previous_x\":%ld,\"previous_y\":%ld,\"sprite\":%ld,"
+                    "\"angle\":%ld,\"speed\":%ld,\"bounce_count\":%ld,"
+                    "\"attached\":%ld,\"attach_offset\":%ld,\"wall_bounces\":%ld",
+                    (long)data[2], (long)data[3], (long)data[6],
+                    (long)data[7], (long)data[8], (long)data[9],
+                    (long)data[10], (long)data[11], (long)data[12]);
         printf("}"); first = 0; pointer = next;
     }
     if (pointer) return 0;

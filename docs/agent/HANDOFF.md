@@ -58,8 +58,24 @@ Private `.analysis/pause-palette-phase/` retains all unique frames and inputs;
 temporary working copies are removed after hash verification. No new build or
 source/exact/origin promotion. Sampled scene equivalence leaves moving-ball
 trajectories, synchronized clocks, full campaign and physical audio unproved.
-Next feedback entry: 66. Choose a new trajectory/campaign evidence gap;
-do not repeat successful menu or pause capture intervals.
+Entry 66 uses actual release input and a persistent read-only reader for the
+first ball's flight. The reader now emits all thirteen already-read ball fields;
+one strict C90 helper compile binds 108 actual recursive include dependencies.
+Complete streams retain 669 original and 659 VC4 records, with zero malformed
+records. Ninety distinct moving vectors per target share 89 full vectors in
+order; one released-before-motion sample and one unsampled x387/y375 vector
+remain explicit. Both clear tile 291 from 11 to 0, gain ten points, lose one life
+after the paddle moves away, initialize a fresh attached ball and exit zero.
+Complete board states/effects agree. No game build or function-count change.
+See [first ball flight](../research/FIRST_BALL_FLIGHT.md), private
+`.analysis/first-ball-flight/`, REA controlled-replay Evidence
+`ev_004437a523c46dcf6514bb61fe88d62e789f3b0ff8502264e4b493dbb4027735`.
+The recorder hashes the complete report; process sampling remains explicitly
+partial. Raw streams are complete within their declared intervals, without an
+atomic-frame or synchronized-clock claim. Temporary working copies are removed
+after hash checks; unique streams/reader/proof remain. Next feedback entry: 67.
+Use a new paddle-reflection or campaign question; do not repeat successful
+menu, pause or first-miss capture intervals unchanged.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
