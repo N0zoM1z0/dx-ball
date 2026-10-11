@@ -222,6 +222,51 @@ complete level progression, live class/shell icons and actual MIDI/audio deliver
 open. Function acceptance remains 214 maintained /95,873 direct cases /40
 exact functions, separate from these three actual Windows runs.
 
+## Current VC4 play and complete captured frames
+
+After source checkpoint `4c24034`, the unchanged existing
+`observe('original', ...)` and `observe('vc40', ...)` flows pass on the original
+and current VC4 EXEs. The current VC4 SHA-256 is
+`637790d2a5d8badb386363d87dc839b1c111a058a886588730d700366819583e`;
+full receipts, 87 read-only observations per process, ten captures, saved banks
+and logs are retained in `.analysis/windows-play-current-render/`. The actual
+workflow durations are 20.39 seconds original and 19.79 seconds VC4. These are
+runtime workflow measurements, not REA latency, CPU usage or token benchmarks.
+Only the read-only observer is compiled once; no game source or provider runs.
+
+Both runs exercise mouse movement, ball release/motion, pause stability and
+resume, editor clearing/tile selection/Control painting, full-bank save,
+board selection, reload/recreation and clean menu/process exit. Both persisted
+banks retain the previously established `b88441eb...` full-bank hash. All 49
+original assets remain unchanged. The input receipt includes the actual inputs
+of all 36 game objects, including C++ owners omitted by the harness's older
+`*.[ch]` discovery. MinGW is not executed in this selection.
+
+The ten unaltered captures are compared over every decoded 640 by 480 RGB
+pixel. Opening, editor and editor-reload each have zero differences and equal
+PNG hashes. Pause has 7,472 differences; return-menu has 3,445. Every pause
+difference maps through the original default board's tile8 cells to original
+MBALL2 sprite9 color indices224..231, including the loader's vertical row
+reversal. Every menu difference maps to MAINMENU.PCX indices48..63. No other
+full-frame pixel differs in either scene.
+
+The menu's complete 14,289 asset pixels in48..63 match right rotations11 and9
+of the original resource palette for original and VC4 respectively, with zero
+mismatches. Its checkerball image uses palette animation. The paused frame also
+continues palette animation224..231 every elapsed32ms while ball state stays
+frozen. This establishes the menu palette-phase explanation and supports the
+same explanation for pause; live pause palettes and matching phases are not
+observed. Sequential state reads and captures are not atomic or synchronized.
+Identical paused ball fields do not by themselves establish identical RGB
+frames. No screenshots are cropped, recolored or normalized for equality.
+
+This is bounded current-product evidence for the played/editor flow and three
+complete captured frames. It adds no function acceptance or claim about an
+entire campaign, equal animation timing, physical Windows display, hardware
+sound or asynchronous MIDI delivery. Both controls share Wine/Xvfb's 8-bit
+palette environment. Preserve the differing images and the indexed-resource
+localization when following up on render fidelity.
+
 ## Natural life loss and persisted rankings
 
 `tests/test_windows_gameover.py` reuses the reviewed game-over state addresses

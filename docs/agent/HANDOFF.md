@@ -86,13 +86,21 @@ flow over a tiny passing helper. Do not perform source-name, declaration-order,
 layout, padding or equivalent-relational-spelling trials to force stack homes.
 A compiler API/declaration hypothesis needs evidence that distinguishes it.
 
-Current physical Windows fidelity is still pending. Reuse
-`tests/test_windows_play.py`, `scripts/windows_runtime.py` and
-[Windows runtime scopes](../research/WINDOWS_ADAPTER.md) when a bounded original/
-current-product observation resolves a concrete game gap. Earlier Wine/menu
-checks have their own product hashes; they do not prove the latest game,
-synchronized pixels, hardware audio or an entire campaign. Do not add a broad
-runtime matrix or run every historical suite by default.
+Current original/VC4 Wine ball/pause/editor/save/reload/exit flows pass on the
+unchanged `4c24034` source products:87 observations each and all49 originals
+unchanged. Opening/editor/editor-reload complete640x480 RGB/PNG captures match.
+Menu's3445 differences are entirely palette indices48..63; all14289 relevant
+asset pixels match original/current right rotations11/9. Pause's7472 differences
+are entirely original tile8/sprite9 indices224..231, which continue animating
+while paused; live palette/phase equality remains unobserved. Full receipts,
+unaltered images and index localization are in
+`.analysis/windows-play-current-render/`; immutable seal
+`.analysis/checkpoints/windows-play-current-render-283-186/sha256.json`.
+See [current runtime scope](../research/WINDOWS_ADAPTER.md). Only the observer
+compiled once; no game/provider runs. Source, counts and products stay unchanged.
+Hardware display/audio, synchronized timing and whole-campaign fidelity remain
+unproved. Reuse existing probes for a concrete gap; do not repeat this flow to
+recover lost output or run a broad historical matrix.
 
 ## Work and verification rules
 
@@ -142,8 +150,8 @@ records explicit prior dependency links and is checked after scoped cleanup.
 ## REA feedback
 
 Append English performance, output/token/context, usability and optimization
-feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; next completed
-entry is43; use44 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
+entry is44; use45 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
-archive bytes are not MCP/model tokens or current-version latency. This batch
-reuses closed carriers and makes no fresh REA provider/runtime observation.
+archive bytes are not MCP/model tokens or current-version latency. This runtime batch makes no fresh REA provider request; its Wine observations
+and palette-phase limits are separate from historical static Evidence.
