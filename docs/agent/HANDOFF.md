@@ -13,6 +13,24 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
+ACTIVE: new current VC4 full-bank attempt under an independent supervisor.
+`.analysis/current-vc40-campaign-independent/launcher.json`, `launch.json` and
+`live-processes.json` record boot/PIDs/start ticks. Supervisor2534702 is verified
+live with parentPID1; controller/game/reader identities are also recorded/live.
+This has no unified-executor session handle: inspect actual `/proc` identities
+and saved receipts rather than starting another producer. Complete initial
+slots0/1 are verified in `prefix-verification.json`. Full goal remains all50
+initial slots, terminal50/mode0/clearedrequests; final status is pending.
+108inputs reuse the preceding hash-verified immutable carrier, all four products
+and the existing campaign SDK reader are unchanged. No compile, modified bank,
+game write/hook or controller policy change. Existing harness owns the one
+writable session lock; do not start another compiler/provider/Wine session.
+The detached supervisor preserves eventual `child-exit.json` independently of
+an executor wait. No continuous REA process sampler runs in this attempt; this
+removes that producer's resource use, not proof of higher game speed or immunity
+to external termination. `verify-finished.py` is prepared for the saved result
+after the recorded identities terminate. Do not invoke it while live.
+
 INTERRUPTED: current VC4 full original-bank campaign, executor session7397
 returned143. All recorded boot/PID/start-tick identities are inactive. Complete
 initial events0–12 are verified; last periodic event3626.414seconds, board12,
