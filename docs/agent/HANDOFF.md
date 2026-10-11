@@ -9,14 +9,37 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 ## Current state
 
 - 283 source-present entries and 247 scoped semantic acceptances.
-- 186 exact functions / 33,001 complete code bytes / 136 accepted metadata bytes.
+- 187 exact functions / 33,832 complete code bytes / 136 accepted metadata bytes.
 - Origins: 270 authored, 83 runtime, 42 compiler-generated, 133 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest read-only source audit closes capture-sprite's abstract groups as a
+The latest source batch makes game-key at0x410290 exact across all831 bytes and
+68 actual relocations. Original pause/space share one break, and unpause returns
+directly before a standalone switch. Full partition:153 instructions/655 bytes,
+176 inline table/selector bytes,35 direct branches/two indirect dispatches/
+15 calls, all6 music/15 key destinations and92 selectors. Both unowned switch
+end jumps are included. Seven affected accepted units/936 bytes remain exact.
+Three actual matching compiles: partial shared break831/1, rejected early return
+plus else836/615, final831/0. Only final source gets one Native/MinGW build and
+one VC4 link (same matching object+35 unchanged objects); no intermediate
+product build/case or additional game source compile.420 unchanged existing key
+cases pass once after a private missing-dependency-path failure before cases.
+No clock/dispatch/full historical replay.235 historical semantic input closures
+refresh with their247 scopes unchanged. Current four products:
+`.analysis/game-key-shared-exit/product-verification.json`. See
+[exact key exits](../research/exact/EXACT_GAME_KEY_SHARED_EXIT.md), private
+`.analysis/game-key-shared-exit/`, seal
+`.analysis/checkpoints/game-key-shared-exit-283-187/sha256.json`.
+Game-key's complete source/CFG frontier is closed. Inspect actual remaining
+WindowProc flow if prior complete evidence distinguishes its1166/1171 span;
+never add fake locals/padding/operations or retry closed key switch spelling.
+Original declaration spelling/full authored denominator/game fidelity remain
+unproved. Current counts187/33832/136 supersede historical checkpoint counts.
+
+The preceding read-only source audit closes capture-sprite's abstract groups as a
 missing-producer hypothesis. Both complete852/876-byte bodies have248 decoded
 instructions.18 actual eight-instruction groups symbolically form the same
 1048*bank+4*sprite address through separately live selector/slot reads; all104
@@ -32,7 +55,7 @@ See [complete capture flow](../research/exact/EXACT_CAPTURE_ADDRESS_FLOW.md),
 private `.analysis/capture-producer-flow/` and immutable seal
 `.analysis/checkpoints/capture-address-flow-283-186/sha256.json`.
 
-The latest source batch restores scan initialization, pending[next] initial-y,
+The preceding source batch restores scan initialization, pending[next] initial-y,
 and consumed row/bounds arguments in both polygon controllers. Complete bodies
 have926 instructions/3135 bytes with138 direct branch successors/22 call targets
 and identical instruction boundaries. Scoped producer/frame correspondence
@@ -306,7 +329,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is53; use54 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is54; use55 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -378,3 +401,20 @@ already-observed bytes. Capture seal25 owned/24 dependencies and four products
 verify after five scoped hardlinks replace1,191,936 single-link allocated bytes.
 No unique evidence/product is removed; post-cleanup identities bind current
 receipts/documentation. No device-free-space or fresh runtime claim.
+
+Game-key's original full-read and complete current code/table CFG frontier is
+now closed with831 exact bytes. Do not reopen it based on the old645 owned-byte
+inventory or the previous fully_decoded=false linear scan. Inline176 bytes are
+data. Current products/187 exact receipts are in game-key-shared-exit; older
+capture/scan checkpoints retain their own186-count products. Feedback remains
+only in the same /tmp document; next new entry55. Goal remains active.
+
+Key-exit cleanup:207 owned files/145 explicit immutable dependencies and four
+products verify after97 scoped hardlinks replace4,501,504 single-link allocated
+bytes.62 fully archived stage copies are removed (1,487,650 logical bytes),
+including31 partial and31 rejected-stage inputs/objects/reports. Stage identity
+inventories remain; every consumer in the final reviewer resolves archived
+payloads, including direct report reads. Post-cleanup identities bind current
+receipts/docs without changing the immutable seal. No measured device-free-
+space delta. Do not rerun closed pre-promotion comparison scripts against the
+promoted live manifest; their exact input manifest/stages remain archived.

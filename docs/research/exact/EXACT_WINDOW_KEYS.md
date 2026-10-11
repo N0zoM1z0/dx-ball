@@ -1,5 +1,12 @@
 # Clock detection and key routing
 
+The latest [shared-exit restoration](EXACT_GAME_KEY_SHARED_EXIT.md) makes the
+complete game-key controller exact: 831 bytes, all 68 actual relocations,
+153 instructions/655 bytes and 176 inline table/selector bytes. Pause/space
+share their original exit, and unpause returns directly before the standalone
+switch. Seven existing platform units remain exact. Only 420 existing key cases
+run on final products; the following earlier checks keep their historical scope.
+
 The clock and input controllers in [platform.c](../../../src/platform.c) now
 follow the original calls and branches. The clock detector sets the version
 record size to 148, calls GetVersionExA, then writes zero for platform 1 and

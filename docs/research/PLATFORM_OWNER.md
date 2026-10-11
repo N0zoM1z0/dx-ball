@@ -1,5 +1,12 @@
 # Windows startup and input routing
 
+The latest [exact key exits](exact/EXACT_GAME_KEY_SHARED_EXIT.md) restores the
+shared pause/space break and direct unpause return. The complete 831-byte
+controller, including 176 inline table/selector bytes and all 68 relocations,
+now matches; seven affected existing exact units remain intact. Current products
+pass 420 unchanged game-key cases. No full platform/runtime queue is rerun.
+Earlier owner notes below retain their historical products and scopes.
+
 Fullscreen and compatible startup now call the genuine `DirectDrawCreate`
 stdcall SDK export. The [DirectX factory recovery](SOUND_OWNER.md#current-sdk-factory-calls)
 also restores `DirectSoundCreate` and removes their dynamic-lookup frontends.

@@ -1,5 +1,10 @@
 # Exact reconstruction notes
 
+The latest [game-key exit restoration](EXACT_GAME_KEY_SHARED_EXIT.md) adds one
+complete 831-byte exact controller. Totals are 187 exact functions / 33,832
+complete span bytes / 136 accepted metadata bytes. Its 655 instruction bytes
+and 176 inline bytes are wholly attested, with 420 selected existing key cases.
+
 Each note follows a related source family through its original instructions,
 recovered implementation and complete compiler comparison.
 
