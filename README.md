@@ -9,9 +9,8 @@ compiled into a working game. Codex uses [REA](https://github.com/morluto/rea)
 to inspect the original executable through Ghidra, recover its functions, and
 refine the source by comparing compiled code with the original.
 
-The tutorial below takes you from downloading DX-Ball to continuing this
-reconstruction with Codex. It includes the tool setup and an English `/goal`
-prompt you can paste into your session.
+To continue the reconstruction, follow the setup below and paste the English
+`/goal` prompt into Codex.
 
 ## Reconstruction with REA
 
@@ -31,9 +30,7 @@ A byte-exact match means the machine code agrees after mapping addresses for
 calls and data. These comparisons help resolve argument widths, branch
 conditions, and the order of state changes that pseudocode alone can miss.
 
-Function recovery comes first. We use focused checks to resolve questions
-about the code being restored, then test complete game flows once that work
-is ready. Saved REA responses link source decisions to the executable. The
+Saved REA responses link source decisions to the executable. The
 [worked example](docs/REA.md) follows a projectile-list routine from analysis
 to source and a complete compiler match.
 
@@ -43,15 +40,30 @@ The commands below use Linux x86-64 and continue from this repository's
 current source and research. Before you start, install:
 
 - Git and Python 3.11+ with pip.
-- Node.js 22.19.0 with npm, from the official
-  [Linux x64 release](https://nodejs.org/download/release/v22.19.0/).
-  Put its `bin/` directory on your `PATH`; the project verifies the Node
-  executable's hash as well as its version.
+- Node.js 22.19.0 with npm. Use the official Linux x64 binary; the project
+  checks the Node executable's hash as well as its version.
 - Wine with 32-bit support, Xvfb with `xvfb-run`, `unzip`, and `tar`.
   Wine runs the original-era Windows compiler on Linux.
 
 The setup scripts download the remaining tools. You can also follow
 [Build and play](docs/BUILD.md) to compile and run the recovered game yourself.
+
+If you need the matching Node version, download
+[`node-v22.19.0-linux-x64.tar.gz`](https://nodejs.org/download/release/v22.19.0/node-v22.19.0-linux-x64.tar.gz)
+and extract it into a directory you own. For example, with the archive in
+your Downloads directory:
+
+```bash
+mkdir -p "$HOME/.local/opt"
+tar -xzf "$HOME/Downloads/node-v22.19.0-linux-x64.tar.gz" -C "$HOME/.local/opt"
+export PATH="$HOME/.local/opt/node-v22.19.0-linux-x64/bin:$PATH"
+node --version
+npm --version
+```
+
+`node --version` should print `v22.19.0`. Keep using this terminal for the
+remaining steps. Add the `export PATH` line to your shell configuration if
+you want it available in future terminals.
 
 ### 1. Get the game and prepare the workspace
 
@@ -62,9 +74,9 @@ The [original English readme](https://oldgamesdownload.com/readme/dx-ball-window
 identifies version 1.07 and describes the game and its controls. Keep the ZIP
 intact; the importer extracts the executable and assets together.
 
-Fork this repository on GitHub if you want Codex to publish checkpoints to
-your own copy. Clone your fork using its URL in place of the one below, then
-import the download:
+Fork this repository on GitHub to publish checkpoints to your own copy.
+Use your fork's URL in the clone command below and make sure your Git
+credentials allow you to push to it. Then import the download:
 
 ```bash
 git clone https://github.com/N0zoM1z0/dx-ball.git
@@ -147,31 +159,30 @@ check compiler matches, and publish verified checkpoints to your fork:
 
 ```text
 /goal Reconstruct English DX-Ball v1.07 from original/DXBALL.EXE into readable,
-rebuildable C/C++ that reproduces the game. Work through the entire authored
-function inventory, making as many complete functions byte-exact as possible
-with the project's Visual C++ 4.0 toolchain. Prioritize function recovery
-before broader game validation.
+rebuildable C/C++ that reproduces the game. Recover every authored function
+and make as many complete functions byte-exact as possible with the project's
+Visual C++ 4.0 toolchain. Finish function recovery before broader game validation.
 
 Read AGENTS.md, docs/agent/HANDOFF.md, and docs/agent/WORKFLOW.md. Use REA to
 inspect instructions, calls, data layouts, and function boundaries. Start
 from the current handoff, reuse saved evidence, and work through unresolved
 functions in related groups.
 
-Write natural source shared by the portable and legacy builds. Preserve the
-original calling conventions, integer widths, ownership, and state changes.
-Compile each stable batch once and compare complete functions with explicit
-relocation mappings. Refine the source from those differences, and recheck
-existing exact functions affected by the changes. Use focused checks to
-resolve questions about each batch.
+Write typed source shared by the portable and legacy builds. Preserve calling
+conventions, integer widths, ownership, and state changes. Compile each stable
+batch once and compare complete functions with explicit relocation mappings.
+Use the differences to guide source corrections and recheck existing exact
+functions affected by the changes. Use focused checks when they help resolve
+a recovery question.
 
 Record verified results in the match ledgers, progress, and handoff. Keep code
 and documentation in English. Use one CPU and one compiler or analysis session
 at a time. Preserve unique evidence and clean disposable build products.
 Commit verified checkpoints with the prefix "gpt-6.1-sol: " and push to origin.
 
-Pursue source corrections for every remaining mismatch, then verify the
-rebuilt game's behavior. Keep the handoff current for unresolved functions.
-If missing tools or inputs block progress, explain what is needed to continue.
+After recovering the functions, verify the rebuilt game's behavior. Report
+remaining mismatches with their addresses, comparison results, and next steps.
+If tools or inputs block progress, explain what is needed to continue.
 ```
 
 You can steer the work with ordinary follow-up messages in the same thread.
