@@ -10,13 +10,25 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 186 exact functions / 33,001 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 79 runtime, 42 compiler-generated, 137 unknown.
+- Origins: 270 authored, 83 runtime, 42 compiler-generated, 133 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest render audit explains the complete dirty-restoration candidate:
+The latest origin batch binds actual COFF symbol indices by hash-identified
+archive member. Static names cannot use the shared external map. Four whole
+sections (__ismbblead18, __control8763, __controlfp24, __setdefaultprecision19)
+match all124 bytes/five relocations; runtime becomes83, unknown133. Final CRT
+receipt covers69 complete sections/7353 bytes/73 distinct origin rows, with
+three data sections/1130 bytes and two separate ABS constants unchanged.
+Six actual-member helper controls and five complete-verifier rejections pass.
+No game source/exact/semantic change, compiler/provider or runtime replay.
+See [member-scoped CRT bindings](../research/CRT_MEMBER_SCOPED_BINDINGS.md),
+private `.analysis/crt-member-scope/`, and immutable seal
+`.analysis/checkpoints/crt-member-scope-283-186/sha256.json`.
+
+The preceding render audit explains the complete dirty-restoration candidate:
 827/846 bytes,198 instructions,22 branches,2 COM calls,61 actual relocations.
 All19 page/index producers form equal addresses through every CFG successor;
 partial EFLAGS writes and actual scratch/void-exit ABI limits are explicit.
@@ -122,9 +134,10 @@ frames leave compiler storage/control residuals. Do not retry local spelling or
 layout. Point-distance x87 scheduling retains exactly representable coordinate
 differences; no missing arithmetic was inferred. CRT ABS-only discovery adds no
 code match; the later MBCS data unlocks the three accepted complete sections.
-Same-member static-callee bindings may extend that proof, but object-local
-names must remain scoped to the hash-identified member; unresolved BSS and
-nonunique zero storage are not guessed. The remaining exact16-byte no-op at
+The later actual-index member closure proves four additional complete CRT
+sections and reaches no further unique match in its fourth discovery round.
+Object-local names remain scoped to the hash-identified member; unresolved BSS
+and nonunique zero storage are not guessed. The remaining exact16-byte no-op at
 0x40CC20 still lacks authored-origin/active-use proof. Address range alone is
 not an authored denominator.
 
@@ -210,7 +223,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is47; use48 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is48; use49 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -223,3 +236,9 @@ assembly projection is6682 bytes. These are retained bytes, not current REA
 transport/tokens. Final36 private mutation checks take0.337s locally; initial
 54 unchanged checks have a separate saved terminal-stage receipt. No new
 provider/compiler or measured RSS/token consumption occurs in that audit.
+Latest CRT member discovery reuses closed Evidence and all69 baseline input
+identities; deliberately removed probes resolve to archived copies. No provider
+call or token/latency measurement occurs. Two unchanged maintained runs and one
+final four-candidate run are retained separately; the extra unchanged run follows
+a consumer guard comparing equivalent hexadecimal address spellings. A missing
+old process handle is recovered from its saved completed receipt, not restarted.

@@ -11,8 +11,9 @@ from pathlib import Path
 import pefile
 
 from coff import parse, region, _relocations
-from crt_library import members, relocate
+from crt_library import members
 from crt_data import verify_absolute_definitions, verify_definitions, verify_data_sections
+from crt_scope import publish_section, relocate_section
 from legacy_toolchain import Toolchain, session_lock
 from resource_limits import limit_cpu
 
@@ -173,7 +174,7 @@ def main():
         inputs = {str(p.relative_to(ROOT)): digest(p) for p in (
             manifest_path, prior_path, original, library, ROOT / 'scripts/verify-runtime-origin-sections.py',
             ROOT / 'scripts/verify-crt-provenance.py', ROOT / 'scripts/crt_library.py', ROOT / 'scripts/coff.py',
-            ROOT / 'scripts/crt_data.py',
+            ROOT / 'scripts/crt_data.py', ROOT / 'scripts/crt_scope.py',
             ROOT / 'scripts/legacy_toolchain.py', ROOT / 'scripts/resource_limits.py',
             ROOT / 'scripts/repo-python', ROOT / 'scripts/verify-python.py',
             ROOT / 'config/tools.lock.toml', ROOT / 'requirements-analysis.txt',
@@ -183,6 +184,26 @@ def main():
         inputs.update(absolute_inputs)
         inputs.update(definition_inputs)
         inputs.update(data_inputs)
+        scoped = {}
+        for row in definition_rows:
+            obj = ROOT / row['object']
+            _, sections, symbols = parse(obj)
+            defined = [s for s in symbols.values()
+                       if s['name'] == row['symbol'] and s['section'] > 0]
+            if len(defined) != 1 or defined[0]['value'] != 0:
+                raise ValueError('verified prior definition section is ambiguous')
+            index = defined[0]['section']
+            if sections[index - 1]['size'] != row['size']:
+                raise ValueError('verified prior definition extent differs')
+            publish_section(scoped, (row['header_offset'], digest(obj)), symbols,
+                            index, int(row['address'], 0), row['size'])
+        for row in data_rows:
+            obj = ROOT / 'build/probes/crt-data' / f"{row['member_header_offset']:08x}.obj"
+            if digest(obj) != row['member_sha256']:
+                raise ValueError('verified data member identity differs')
+            _, _, symbols = parse(obj)
+            publish_section(scoped, (row['member_header_offset'], row['member_sha256']),
+                            symbols, row['section_index'], int(row['address'], 0), row['size'])
         results = []
         verified_exports = {}
         export_origins = {}
@@ -207,10 +228,13 @@ def main():
             if any(s['value'] > len(code) for s in symbols.values() if s['section'] == index):
                 raise ValueError('defined symbol exceeds the selected code section')
             established = {**fixed, **verified_exports}
-            if any(n in established and established[n] != a for n, a in local.items()):
-                raise ValueError('local definition contradicts the prior relocation map')
-            mapping = {**established, **local}
-            linked = relocate(code, rels, address, mapping)
+            if any(s['storage'] == 2 and s['section'] == index and
+                   s['name'] in established and established[s['name']] != address + s['value']
+                   for s in symbols.values()):
+                raise ValueError('external local definition contradicts the prior relocation map')
+            member_id = (entry['member_header_offset'], entry['member_sha256'])
+            linked, rels, bindings = relocate_section(data, section, symbols, code,
+                address, index, member_id, scoped, established)
             if not base <= address <= base + len(loaded) - len(linked):
                 raise ValueError('whole section exceeds the complete REA read')
             target = loaded[address-base:address-base+len(linked)]
@@ -220,19 +244,39 @@ def main():
                 if not address <= int(candidate, 0) < address + len(linked):
                     raise ValueError('claimed origin entry lies outside the matched section')
             inputs[str(obj.relative_to(ROOT))] = digest(obj)
+            applied, scoped_bindings = {}, []
+            for binding in bindings:
+                symbol = binding['symbol']
+                same_section = binding['section'] == index
+                same_member = binding['basis'] == 'earlier complete verified section in the same archive member'
+                if same_member:
+                    authority = scoped[member_id][binding['symbol_index']]
+                    scoped_bindings.append(dict(binding, address=hex(binding['address']),
+                        member_header_offset=member_id[0], member_sha256=member_id[1],
+                        source_section_address=hex(authority['section_address'])))
+                basis = ('section-defined symbol' if same_section else
+                         'earlier fully verified section in the same member' if binding['storage'] == 3 else
+                         import_records[symbol]['basis'] if symbol in imported else
+                         'verified COFF absolute definition' if symbol in absolute else
+                         'reviewed prior CRT map' if symbol in prior_symbols else
+                         'fully verified prior definition section' if symbol in definitions else
+                         'fully verified independently placed data section' if symbol in data_exports else
+                         'earlier fully verified section export')
+                row = dict(address=hex(binding['address']), basis=basis)
+                if not same_section and symbol not in fixed:
+                    row['section_address'] = (hex(scoped[member_id][binding['symbol_index']]['section_address'])
+                                              if same_member else export_origins[symbol])
+                if symbol in applied and applied[symbol] != row:
+                    raise ValueError('name-only report would hide distinct COFF-index bindings')
+                applied[symbol] = row
             results.append(dict(**entry, status='same', difference_count=0,
                 code_sha256=hashlib.sha256(linked).hexdigest(), relocations=rels,
-                applied_bindings={r['symbol']: dict(address=hex(mapping[r['symbol']]),
-                    basis=('section-defined symbol' if r['symbol'] in local else
-                           import_records[r['symbol']]['basis'] if r['symbol'] in imported else
-                           'verified COFF absolute definition' if r['symbol'] in absolute else
-                           'reviewed prior CRT map' if r['symbol'] in prior_symbols else
-                           'fully verified prior definition section' if r['symbol'] in definitions else
-                           'fully verified independently placed data section' if r['symbol'] in data_exports else
-                           'earlier fully verified section export'),
-                    **({'section_address': export_origins[r['symbol']]}
-                       if r['symbol'] not in local and r['symbol'] not in fixed else {}))
-                    for r in rels}))
+                applied_bindings=applied,
+                actual_COFF_symbol_indices=[b['symbol_index'] for b in bindings],
+                same_member_bindings=scoped_bindings))
+            # Publish object-local definitions only after the complete section
+            # and every relocation pass. The key is member identity + COFF index.
+            publish_section(scoped, member_id, symbols, index, address, len(code))
             # Publish only external definitions after every byte and relocation
             # in this section has passed. Static names are local to their object.
             for symbol in symbols.values():
@@ -252,6 +296,8 @@ def main():
                                        {int(r['address'], 0) for r in definition_rows}),
             verified_definitions=definition_rows, absolute_definitions=absolute_rows,
             data_sections=data_rows,
+            member_scoped_definitions=[dict(member_header_offset=member[0], member_sha256=member[1], **row)
+                                       for member, rows in scoped.items() for row in rows.values()],
             complete_data_bytes=sum(r['size'] for r in data_rows),
             import_thunk_entries=len(import_thunks), import_thunk_bytes=sum(r['size'] for r in import_thunks),
             import_bindings=import_records, import_thunks=import_thunks,

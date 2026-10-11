@@ -1097,6 +1097,50 @@
       "entries": [
         "0x0041C0D0"
       ]
+    },
+    {
+      "address": "0x0041BEF0",
+      "size": 18,
+      "member": "build\\intel\\st_obj\\ismbbyte.obj",
+      "member_header_offset": 552266,
+      "member_sha256": "2dce078339041d203628e259967565e3211d666d5b492b75f116dda494886644",
+      "section_index": 17,
+      "entries": [
+        "0x0041BEF0"
+      ]
+    },
+    {
+      "address": "0x0041CF30",
+      "size": 63,
+      "member": "..\\build\\intel\\st_obj\\ieee87.obj",
+      "member_header_offset": 992334,
+      "member_sha256": "de4e1b27708b9bde2a085781ab36aeb387997893bca55a34dd5ce809cf083b1e",
+      "section_index": 5,
+      "entries": [
+        "0x0041CF30"
+      ]
+    },
+    {
+      "address": "0x0041CF70",
+      "size": 24,
+      "member": "..\\build\\intel\\st_obj\\ieee87.obj",
+      "member_header_offset": 992334,
+      "member_sha256": "de4e1b27708b9bde2a085781ab36aeb387997893bca55a34dd5ce809cf083b1e",
+      "section_index": 7,
+      "entries": [
+        "0x0041CF70"
+      ]
+    },
+    {
+      "address": "0x00418BE0",
+      "size": 19,
+      "member": "build\\intel\\st_obj\\fp8.obj",
+      "member_header_offset": 755740,
+      "member_sha256": "7dd11508ac3eb0a2df0bb0bb5b9c5bbed10cd0c1a0ed832ac395a9e6e215329a",
+      "section_index": 1,
+      "entries": [
+        "0x00418BE0"
+      ]
     }
   ],
   "limitations": [
