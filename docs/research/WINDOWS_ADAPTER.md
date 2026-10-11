@@ -336,6 +336,13 @@ ball fields. See [first ball flight](FIRST_BALL_FLIGHT.md) for complete raw stre
 identities, actual recursive SDK dependencies, the trajectory and REA process
 Evidence. No game rebuild or function-count promotion is needed.
 
+The next actual-input case moves the paddle to x415 and catches the returning
+ball. All 108 complete sampled vectors agree in order, including 24 reflected
+vectors at angle105/speed5, dx-1/dy-4. Score10/lives3 and complete board effects
+agree. Both games and reused readers exit zero; no compilation is needed.
+See [first paddle reflection](FIRST_PADDLE_REFLECTION.md) for retained streams,
+reflection parameters, sampling limits and controlled-replay Evidence.
+
 ## Natural life loss and persisted rankings
 
 `tests/test_windows_gameover.py` reuses the reviewed game-over state addresses

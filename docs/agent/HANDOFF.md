@@ -73,9 +73,25 @@ See [first ball flight](../research/FIRST_BALL_FLIGHT.md), private
 The recorder hashes the complete report; process sampling remains explicitly
 partial. Raw streams are complete within their declared intervals, without an
 atomic-frame or synchronized-clock claim. Temporary working copies are removed
-after hash checks; unique streams/reader/proof remain. Next feedback entry: 67.
-Use a new paddle-reflection or campaign question; do not repeat successful
-menu, pause or first-miss capture intervals unchanged.
+after hash checks; unique streams/reader/proof remain.
+Entry 67 moves the paddle to x415 through actual mouse input and observes its
+first reflection. All 108 complete sampled vectors agree in order, including
+24 reflected vectors at angle105/speed5, dx-1/dy-4. First reflected position is
+x404/y441 with previous403/439, bounce count1 and wall bounces0; both rise to
+x381/y349 with score10/lives3 and equal complete400-byte board effects.
+The existing verified persistent reader is reused without a helper/game build.
+Complete streams retain540/523 records with zero malformed records. REA6.4
+controlled-replay Evidence
+`ev_bb68bea389757a7cf605b424b195a0f0651f3f0330aeefd9b97ad41edc46a0e3`
+hashes the complete report; child, games and readers exit zero. Process sampling
+is explicitly partial at64, distinct from retained SDK stream coverage.
+Temporary runtime copies are hash-verified and removed; unique streams remain
+in `.analysis/first-paddle-reflection/`, referenced without extra raw copies by
+its small seal. See [first paddle reflection](../research/FIRST_PADDLE_REFLECTION.md).
+Next feedback entry:68. Investigate a different reflection angle, speed or
+campaign question; do not repeat successful menu, pause, first miss or paddle415
+capture intervals unchanged. Synchronized clocks/full-frame physics/audio
+and whole-campaign fidelity remain open; the reconstruction goal stays active.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
