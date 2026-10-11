@@ -16,7 +16,20 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest connected MDS cleanup batch changes only `src/midi.cpp`: five loader
+The latest source batch restores the consumed signed tile integer and direct
+explosive-source condition in `src/gameplay.c`, replacing the single-case switch.
+Complete824/824 retains58 strict differences, down from844/824 with751. All208
+instructions/operands/offsets,26 branches and9 calls agree through five
+nonescaping local homes. Four gameplay exact functions survive;706 unchanged
+existing spread cases pass. Native/MinGW each rebuild only gameplay; VC4 links
+one matching object and35 verified unchanged objects. Headers/tests stay fixed.
+No new exact count or physical game observation. See
+[explosive source collection](../research/exact/EXACT_EXPLOSIVE_SOURCE_CONDITIONAL.md)
+and private `.analysis/explosive-source-conditional/`. Current four product
+identities are in its `product-verification.json`; immutable seal
+`.analysis/checkpoints/explosive-source-conditional-283-186/sha256.json`.
+
+The preceding connected MDS cleanup batch changes only `src/midi.cpp`: five loader
 errors and three parser block-header/capacity/conversion errors use the observed
 common-cleanup gotos. The compiler generates all26 common-cleanup jumps /130
 original bytes, including65 bytes outside Ghidra's imported ownership. See
@@ -46,8 +59,8 @@ original bytes, including65 bytes outside Ghidra's imported ownership. See
   owner and35 verified unchanged objects, without additional source compilation.
 - 235 historical semantic input inventories refresh; counts/scopes stay fixed.
 
-Current product identities are in
-`.analysis/source-dataflow-frontier/product-verification.json`; actual final
+The preceding MDS product identities are in
+`.analysis/source-dataflow-frontier/product-verification.json`; its actual final
 source/object verification is in `final-review.json`. Do not reuse historical
 product hashes from an earlier checkpoint or call a loader-only test a final
 parser result. The immutable seal is
@@ -86,7 +99,7 @@ flow over a tiny passing helper. Do not perform source-name, declaration-order,
 layout, padding or equivalent-relational-spelling trials to force stack homes.
 A compiler API/declaration hypothesis needs evidence that distinguishes it.
 
-Current original/VC4 Wine ball/pause/editor/save/reload/exit flows pass on the
+The preceding original/VC4 Wine ball/pause/editor/save/reload/exit flows pass on the
 unchanged `4c24034` source products:87 observations each and all49 originals
 unchanged. Opening/editor/editor-reload complete640x480 RGB/PNG captures match.
 Menu's3445 differences are entirely palette indices48..63; all14289 relevant
@@ -97,7 +110,8 @@ unaltered images and index localization are in
 `.analysis/windows-play-current-render/`; immutable seal
 `.analysis/checkpoints/windows-play-current-render-283-186/sha256.json`.
 See [current runtime scope](../research/WINDOWS_ADAPTER.md). Only the observer
-compiled once; no game/provider runs. Source, counts and products stay unchanged.
+compiled once in that runtime batch; no game compilation or provider request.
+Those captures do not observe the newer explosive-source products.
 Hardware display/audio, synchronized timing and whole-campaign fidelity remain
 unproved. Reuse existing probes for a concrete gap; do not repeat this flow to
 recover lost output or run a broad historical matrix.
@@ -151,7 +165,8 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is44; use45 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is45; use46 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
-archive bytes are not MCP/model tokens or current-version latency. This runtime batch makes no fresh REA provider request; its Wine observations
-and palette-phase limits are separate from historical static Evidence.
+archive bytes are not MCP/model tokens or current-version latency. The latest
+source batch reuses closed Evidence; its706 selected cases are separate from
+the preceding product-specific Wine observations and palette-phase limits.
