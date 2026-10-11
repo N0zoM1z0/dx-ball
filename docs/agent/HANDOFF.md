@@ -13,18 +13,25 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-ACTIVE: current VC4 full original-bank campaign, executor session7397. Do not
-restart it while alive. `.analysis/current-vc40-campaign/live-processes.json`
-records boot ID/PIDs/start ticks; check actual `/proc` identities and poll that
-confirmed handle. Original initial slots0–11 are verified; final status is
-still pending. Full goal50 initial slots then terminal50/mode0/clearedrequests.
+INTERRUPTED: current VC4 full original-bank campaign, executor session7397
+returned143. All recorded boot/PID/start-tick identities are inactive. Complete
+initial events0–12 are verified; last periodic event3626.414seconds, board12,
+157bricks, score29708/lives3. Cause unknown; no game-source failure is established.
+No final child/recorder/capture-summary receipt, final harness summary or REA
+Evidence exists. Do not invoke the prepared completed-run consumer or restart
+this producer for visibility. Full goal50 then terminal50/mode0/clearedrequests
+is unproved for this current product.
 The game SHA remains7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551.
 Existing campaign reader/controller are reused on640x480x24; the new campaign
 CLI depth defaults24/forwards/reports. Actual SDK reader compiled once with
 strictC90/both source-file identities and six selected SDK hashes.
-No game compile/link.108run inputs are frozen; consumed stream bytes are hashed,
-only bounded transition samples retained. Final captureEvidence/summary and
-live probe directory must stay until producer termination and verification.
+No game compile/link.108run inputs are frozen; only bounded transition samples
+remain available. No final SDK stream counters/digest may be inferred.
+`.analysis/current-vc40-campaign/interruption-verification.json` verifies all
+inputs/products/originals and complete prefix; `interruption-sha256.json`
+seals182files. Complete partial observer/Wine/reader/REA logs are verified gzip
+carriers in `interrupted/`.49 hash-equal disposable probe files are removed,
+1590725bytes released; raw5069846-byte REA log removed after gzip verification.
 See [original campaign](../research/ORIGINAL_CAMPAIGN.md); historical full
 original/VC4/MinGW runs are proved only for their older recorded products.
 
@@ -47,7 +54,7 @@ Completed observation snapshots are byte-exact verified gzip carriers; raw
 copies removed, approximately2.5MiB released. See `compression.json`; no live
 campaign file is modified. The supplement retains its original digest manifest.
 The capture is complete; consume saved report/images instead of restarting it
-after the prior client-output truncation. Full campaign7397 remains separate.
+after the prior client-output truncation. Interrupted campaign7397 is separate.
 
 Current VC4 digital-audio delivery is now observed independently during the
 same live campaign: one per-input Pulse monitor records5.948458seconds,
@@ -58,9 +65,9 @@ excluded by `--monitor-stream`. No target/routing changes or extra game run.
 The2,098,616PCMbytes are preserved byte-exactly in199,929bytegzip; rawcopyremoved.
 See [digital-audio evidence](../research/CURRENT_DIGITAL_AUDIO.md).
 No physical playback, waveform/mixing/pan/frequency or asynchronousMIDI claim.
-The guarded `.analysis/current-vc40-campaign/verify-finished.py` is prepared
-to consume final capture/full50initial-boardevents/report hashes after all
-recorded processes terminate. Do not invoke another producer for visibility.
+The guarded `.analysis/current-vc40-campaign/verify-finished.py` applies only
+to a completed capture with terminal receipts. This interrupted attempt cannot
+satisfy it; its partial consumer is `verify-interrupted.py`, already completed.
 
 Current-product natural game-over at640x480x24 passes original219/VC4234/
 MinGW213 read-only states: nine actual life losses, `rex`/Backspace/Shift-A to

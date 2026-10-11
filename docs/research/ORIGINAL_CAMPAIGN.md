@@ -6,17 +6,26 @@ The campaign harness now defaults to640x480x24 Xvfb, consistent with the
 report; use8 to reproduce the historical full controls below. This changes the
 host screen, not the game's original eight-bit DirectDraw request.
 
-A fresh current-product VC4 full-bank run is in progress. Its unchanged game
+A fresh current-product VC4 full-bank run was interrupted. Its unchanged game
 SHA-256 is `7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551`.
-At this checkpoint the SDK has verified complete initial slots0–11 in the
+The retained SDK events verify complete initial slots0–12 in the
 unaltered20,000-byte original bank. The goal remains all50 initial slots followed
-by terminal index50, mode0 and cleared end/reset/menu flags. No full pass or
-normal game exit is claimed from this prefix. The existing persistent reader
+by terminal index50, mode0 and cleared end/reset/menu flags. The outer executor
+returned143; all recorded process identities are inactive. The last periodic
+event at3,626.414seconds records index12,157remaining bricks, score29,708 and
+three lives. The cause is unknown. No full pass, game-source failure or normal
+game exit is established. The existing persistent reader
 and ordinary XTest controller are reused; no game compilation or target write.
 Private `.analysis/current-vc40-campaign/` retains108 frozen inputs, the actual
-SDK compile receipt, products, scenario and live kernel process identities.
-The final REA Evidence/report must be consumed after the existing producer
-terminates; do not start another campaign merely because a client wait expires.
+SDK compile receipt, products, scenario and recorded kernel process identities.
+`interruption-verification.json` verifies the prefix, unchanged inputs/products
+and originals; `interruption-sha256.json` seals182 private files. Final child,
+recorder and capture-summary receipts are absent, the final REA carrier is empty,
+and the harness did not write its final summary. These missing terminal outputs
+remain missing; no receipt is synthesized and the producer is not rerun.
+Complete partial observations/logs are preserved as byte-exact verified gzip
+carriers. After identity checks,49 disposable probe files are removed, releasing
+1,590,725bytes; the completed5,069,846-byte raw REA progress log is compressed.
 
 A completed passive visual supplement retains three unaltered640x480 frames
 from this existing game's display, with147/148/147 colors. The frames show the
@@ -32,7 +41,8 @@ all108 frozen inputs and four unchanged products, the capture driver and three
 image digests/dimensions, and retains complete initial-board event witnesses for
 slots0–11. Its small supplementary manifest refers to the preceding completed
 digital-audio seal. This is a verified campaign prefix and visual observation;
-the full50-board predicate and final REA process Evidence remain pending.
+the interrupted attempt supplies neither the full50-board predicate nor final
+REA process Evidence.
 
 The earlier terminal control completes 50 editor-created single-brick boards.
 It establishes the terminal storage and routing behavior described in
