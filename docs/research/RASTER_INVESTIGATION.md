@@ -1,5 +1,10 @@
 # Software raster controllers
 
+The current [metadata correspondence](RASTER_METADATA_CORRESPONDENCE.md) restores
+complete triangle metadata comparison and explains the remaining 107 code
+differences through frame references and four equivalent signed predicates.
+No triangle exactness or new runtime result is claimed.
+
 The current [controller restoration](exact/EXACT_RASTER_CONTROLLERS.md) recovers
 independent polygon bodies and genuine runtime heap calls. Horizontal fill is
 exact across all 144 bytes; the eight fixed-point exact code/metadata units stay

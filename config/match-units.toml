@@ -1405,27 +1405,27 @@ relocations = [
 build = "raster"
 
 [[candidates.fill-triangle.data_comdats]]
-symbol = "$T1161"
+symbol = "$T1291"
 target_address = 0x4202B0
 size = 160
 relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1163", addend = 0, target = 0x4202D0 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1142", addend = 0, target = 0x40B21D },
-  { offset = 0x2C, type = "DIR32", symbol = "$L1143", addend = 0, target = 0x40B214 },
-  { offset = 0x34, type = "DIR32", symbol = "$L1144", addend = 0, target = 0x40B20B },
-  { offset = 0x3C, type = "DIR32", symbol = "$L1145", addend = 0, target = 0x40B202 },
-  { offset = 0x44, type = "DIR32", symbol = "$L1147", addend = 0, target = 0x40B1F0 },
-  { offset = 0x4C, type = "DIR32", symbol = "$L1146", addend = 0, target = 0x40B1F9 },
-  { offset = 0x54, type = "DIR32", symbol = "$L1148", addend = 0, target = 0x40B1E7 },
-  { offset = 0x5C, type = "DIR32", symbol = "$L1149", addend = 0, target = 0x40B1DE },
-  { offset = 0x64, type = "DIR32", symbol = "$L1151", addend = 0, target = 0x40B1CC },
-  { offset = 0x6C, type = "DIR32", symbol = "$L1150", addend = 0, target = 0x40B1D5 },
-  { offset = 0x74, type = "DIR32", symbol = "$L1152", addend = 0, target = 0x40B1C3 },
-  { offset = 0x7C, type = "DIR32", symbol = "$L1153", addend = 0, target = 0x40B1BA },
-  { offset = 0x84, type = "DIR32", symbol = "$L1155", addend = 0, target = 0x40B1A8 },
-  { offset = 0x8C, type = "DIR32", symbol = "$L1154", addend = 0, target = 0x40B1B1 },
-  { offset = 0x94, type = "DIR32", symbol = "$L1156", addend = 0, target = 0x40B19F },
-  { offset = 0x9C, type = "DIR32", symbol = "$L1157", addend = 0, target = 0x40B196 },
+  { offset = 0x8, type = "DIR32", symbol = "$T1293", addend = 0, target = 0x4202D0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1272", addend = 0, target = 0x40B21D },
+  { offset = 0x2C, type = "DIR32", symbol = "$L1273", addend = 0, target = 0x40B214 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1274", addend = 0, target = 0x40B20B },
+  { offset = 0x3C, type = "DIR32", symbol = "$L1275", addend = 0, target = 0x40B202 },
+  { offset = 0x44, type = "DIR32", symbol = "$L1277", addend = 0, target = 0x40B1F0 },
+  { offset = 0x4C, type = "DIR32", symbol = "$L1276", addend = 0, target = 0x40B1F9 },
+  { offset = 0x54, type = "DIR32", symbol = "$L1278", addend = 0, target = 0x40B1E7 },
+  { offset = 0x5C, type = "DIR32", symbol = "$L1279", addend = 0, target = 0x40B1DE },
+  { offset = 0x64, type = "DIR32", symbol = "$L1281", addend = 0, target = 0x40B1CC },
+  { offset = 0x6C, type = "DIR32", symbol = "$L1280", addend = 0, target = 0x40B1D5 },
+  { offset = 0x74, type = "DIR32", symbol = "$L1282", addend = 0, target = 0x40B1C3 },
+  { offset = 0x7C, type = "DIR32", symbol = "$L1283", addend = 0, target = 0x40B1BA },
+  { offset = 0x84, type = "DIR32", symbol = "$L1285", addend = 0, target = 0x40B1A8 },
+  { offset = 0x8C, type = "DIR32", symbol = "$L1284", addend = 0, target = 0x40B1B1 },
+  { offset = 0x94, type = "DIR32", symbol = "$L1286", addend = 0, target = 0x40B19F },
+  { offset = 0x9C, type = "DIR32", symbol = "$L1287", addend = 0, target = 0x40B196 },
 ]
 
 [builds.list_initializers]

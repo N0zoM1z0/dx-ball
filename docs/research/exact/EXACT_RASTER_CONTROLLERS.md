@@ -1,5 +1,10 @@
 # Independent raster controllers and horizontal fill
 
+The later [metadata and correspondence audit](../RASTER_METADATA_CORRESPONDENCE.md)
+reconciles stale generated metadata names and explains all 482 current triangle
+instructions. Full code remains 107/nonexact; the historical checks below
+retain their original product and scope.
+
 The shared C++ raster owner now restores the original horizontal fill at
 `0x40B4C0` and two independent polygon controllers at `0x40B550` / `0x40BB60`.
 Their previous implementation factored sorting and scan conversion into generic

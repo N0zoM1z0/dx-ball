@@ -986,10 +986,30 @@ Private `.analysis/predicate-operands/`; seal
 `.analysis/checkpoints/effect-zero-predicates-283-186/sha256.json`.
 REA 6.3.0 reuses six closed dossiers; feedback 40 appends only to the existing
 `/tmp/dxball_rea_feedback_20261010.md`. Complete source fidelity remains open.
-The bounded candidate frontier also rejects fill-triangle's inconsistent data
-COMDAT binding (`$T1161`); no comparator exception is suppressed for acceptance.
-Investigate that metadata against actual definitions and original storage, or
-resolve another source control/data-flow difference. No name/layout trials.
+The triangle metadata conflict reported by that frontier is reconciled below.
+
+Latest triangle audit reconciles eighteen stale metadata names through actual
+owning sections and original targets, restoring the full 160-byte comparison.
+All seventeen metadata relocations and all nine accepted raster units pass.
+Full triangle code stays 1,710/1,710 with 107 unmasked differences. Its 482
+instructions/CFG edges correspond under a bijective mapping of 37 frame
+references and four signed operand-reversed loop comparisons. Nine arguments
+and three frame-control slots stay fixed. EAX/flag liveness is checked through
+the actual exact conversion, all sixteen cleanup funclets and exact destructor;
+opaque call clobber is not assumed. No original names/layout or whole byte-exact
+triangle claim. Owned 1,542 and shared 168 continuation bytes remain distinct.
+All 186 exact identities, products, source and 247 semantic scopes are unchanged;
+only the candidate metadata descriptor, manifest identities and documentation
+change. No provider, compilation or runtime rerun. See
+[triangle correspondence](../research/RASTER_METADATA_CORRESPONDENCE.md).
+Private `.analysis/raster-metadata-reconciliation/`; seal
+`.analysis/checkpoints/raster-metadata-283-186/sha256.json`.
+REA 6.3.0 again matches official npm latest; feedback 41 appends only to the
+existing `/tmp/dxball_rea_feedback_20261010.md`. Full source fidelity remains open.
+The bounded small/equal-size candidate scan finds no new comparison-immediate
+or signed-load discrepancy. Investigate another source/call/storage consumer
+or namespace-aware same-member CRT provenance; do not repeat equivalent
+operand spellings or try source names/declaration order to force local homes.
 
 Read `AGENTS.md`, [workflow](WORKFLOW.md), and the relevant owner note.
 Use `scripts/repo-python`, `scripts/rea`, CPU 0, one writable compiler/provider
