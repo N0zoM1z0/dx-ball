@@ -1,5 +1,15 @@
 # Sprite, font, PCX and palette owner
 
+The latest [complete capture flow](exact/EXACT_CAPTURE_ADDRESS_FLOW.md) explains
+all248 original/current instructions without a new source change.18 actual
+bank-address groups prove the same1048*bank+4*sprite slot address;104 other
+instructions agree through a complete140-byte typed frame map and five direct
+successors/seven calls. Already-linked production and matching capture code/
+42 relocations are identical. The876/852-byte candidate retains803 differences;
+no compiler/provider/runtime replay or new acceptance. This retires capture's
+abstract groups as a missing-producer hypothesis. The earlier owner checks
+below retain their own historical products and scopes.
+
 The PCX decoder now follows the original independent RLE and literal-pixel
 paths. Both paths retain their own wrap, clip and consumed pixel-pointer
 updates. A byte pointer fills the complete 128-byte disk header; typed signed

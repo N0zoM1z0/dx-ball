@@ -16,6 +16,22 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
+The latest read-only source audit closes capture-sprite's abstract groups as a
+missing-producer hypothesis. Both complete852/876-byte bodies have248 decoded
+instructions.18 actual eight-instruction groups symbolically form the same
+1048*bank+4*sprite address through separately live selector/slot reads; all104
+other instructions agree through a complete140-byte typed frame map, five
+direct branch successors and seven call targets. Matching and already-linked
+production capture code/all42 actual relocations are identical.803 strict
+differences remain; raw frame pointer addresses, arbitrary driver/COM aliasing
+or retained stack addresses, uninitialized fields, scratch/flags/void-exit
+residue and original spelling are excluded. No source, compiler/provider/build
+or runtime replay change. Existing resource cases keep their historical scope.
+Current four products remain those of the scan-source checkpoint below.
+See [complete capture flow](../research/exact/EXACT_CAPTURE_ADDRESS_FLOW.md),
+private `.analysis/capture-producer-flow/` and immutable seal
+`.analysis/checkpoints/capture-address-flow-283-186/sha256.json`.
+
 The latest source batch restores scan initialization, pending[next] initial-y,
 and consumed row/bounds arguments in both polygon controllers. Complete bodies
 have926 instructions/3135 bytes with138 direct branch successors/22 call targets
@@ -211,9 +227,10 @@ ledger row, but many already have exact or connected private evidence. This is
 not a complete authored denominator. Reuse existing owner evidence rather than
 rerunning a check merely to fill a ledger count.
 
-Investigate genuine consumers/control flow in `capture-sprite`
-or the larger ball/render owners. Their larger abstract change groups need
-actual instruction/caller/typed-storage inspection; register scheduling or an
+Capture's complete address/frame/CFG proof retires its abstract groups as a
+source-gap hypothesis. Next inspect game-key at 0x410290:645 Ghidra-owned bytes
+in831 enclosing bytes. Bound actual dispatch tables, every code successor and
+all remaining bytes before changing source or comparing compiler output; register scheduling or an
 inline table can explain a group without a source gap. Prefer a complete coherent
 flow over a tiny passing helper. Do not perform source-name, declaration-order,
 layout, padding or equivalent-relational-spelling trials to force stack homes.
@@ -289,7 +306,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is52; use53 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is53; use54 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -345,3 +362,19 @@ installed package versions/module locations and four products remain unchanged.
 No measured device-free-space claim. Supplemental post-cleanup review and
 identities bind cleanup scripts/journals and current documentation. Do not
 recreate installation caches merely to rerun a completed installation.
+
+Capture-address audit: no new compilation/provider/build/runtime job. Complete
+852/876-byte proof explains all248 instructions with18 symbolic address groups,
+140-byte typed frame mapping and all branch/call successors. Source/exact/
+semantic/origin counts and four current products stay unchanged. Retire capture
+as a missing producer; next current-proof frontier is game-key's enclosing dispatch layout.
+All feedback remains only in the existing /tmp document; next new entry54.
+
+Game-key's original full reads/tables are already retained in
+`EXACT_WINDOW_KEYS.md`:six music targets, fifteen key targets and92 selectors,
+including all enclosing jumps. Reuse that evidence; inspect current complete
+code/table CFG correspondence rather than opening another provider to recover
+already-observed bytes. Capture seal25 owned/24 dependencies and four products
+verify after five scoped hardlinks replace1,191,936 single-link allocated bytes.
+No unique evidence/product is removed; post-cleanup identities bind current
+receipts/documentation. No device-free-space or fresh runtime claim.
