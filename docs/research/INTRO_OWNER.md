@@ -1,5 +1,15 @@
 # Menu and splash evidence
 
+The [exact splash pulse scopes](exact/EXACT_SPLASH_PULSE_SCOPES.md) restore the
+fade-counter and pulse-color-center lifetimes. One MT compile matches all
+370 bytes and 29 bindings, preserving 14 exact companions across 3494 bytes.
+Original half/counter/center homes and local-first red-index additions match;
+12 offsets reconcile against original instructions without recompiling.
+Existing 120 pulse cases and 58 connected mode/key checks pass, with production
+readonly/default verification. Native/MinGW rebuild once; matching intro object
+links with 35 unchanged ones. Current totals are 205 exact / 43,975 code bytes /
+136 metadata bytes. Historical checkpoints below retain their own scopes.
+
 The [exact splash foreground phase](exact/EXACT_SPLASH_FOREGROUND_SCOPE.md)
 restores all 949 redraw bytes and 68 unchanged bindings, including 17 complete
 strings. Full-screen rectangle persists across background setup and final copy;
@@ -7,7 +17,7 @@ logo/line/text operations share their foreground scope. Two bounded compiles
 preserve 13 exact companions across 2545 bytes and every other intro comparison.
 Existing 16 redraw cases plus 58 connected mode/key checks pass; default tables
 and readonly data verify separately. Native/MinGW rebuild once, and the matching
-intro object links with 35 unchanged ones. Current totals are 204 exact /
+intro object links with 35 unchanged ones. That checkpoint retained 204 exact /
 43,605 code bytes / 136 metadata bytes. Historical epochs below retain their
 own scopes and products.
 

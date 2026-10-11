@@ -3240,7 +3240,7 @@ relocations = [
   { offset = 334, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
 ]
 
-[candidates.pulse-splash-palette]
+[units.pulse-splash-palette]
 build = "intro"
 symbol = "_dxball_pulse_splash_palette"
 target_address = 0x407ef0
@@ -3264,18 +3264,18 @@ relocations = [
   { offset = 219, type = "DIR32", symbol = "_dxball_splash_phase", addend = 0, target = 0x004225C8 },
   { offset = 239, type = "DIR32", symbol = "_dxball_splash_phase", addend = 0, target = 0x004225C8 },
   { offset = 248, type = "DIR32", symbol = "_dxball_splash_phase", addend = 0, target = 0x004225C8 },
-  { offset = 253, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
-  { offset = 263, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
-  { offset = 269, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
-  { offset = 279, type = "DIR32", symbol = "_dxball_live_palette", addend = 4, target = 0x004386F0 },
-  { offset = 289, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
-  { offset = 296, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x004386F0 },
-  { offset = 306, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
-  { offset = 313, type = "DIR32", symbol = "_dxball_live_palette", addend = 6, target = 0x004386F0 },
-  { offset = 319, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
-  { offset = 330, type = "DIR32", symbol = "_dxball_splash_span", addend = 0, target = 0x004225C0 },
-  { offset = 343, type = "DIR32", symbol = "_dxball_direct_palette", addend = 0, target = 0x004228C0 },
-  { offset = 349, type = "DIR32", symbol = "_dxball_direct_palette", addend = 0, target = 0x004228C0 },
+  { offset = 257, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
+  { offset = 264, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
+  { offset = 274, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
+  { offset = 281, type = "DIR32", symbol = "_dxball_live_palette", addend = 4, target = 0x004386F0 },
+  { offset = 291, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
+  { offset = 298, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x004386F0 },
+  { offset = 308, type = "DIR32", symbol = "_dxball_splash_offset", addend = 0, target = 0x004225C4 },
+  { offset = 315, type = "DIR32", symbol = "_dxball_live_palette", addend = 6, target = 0x004386F0 },
+  { offset = 321, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
+  { offset = 332, type = "DIR32", symbol = "_dxball_splash_span", addend = 0, target = 0x004225C0 },
+  { offset = 345, type = "DIR32", symbol = "_dxball_direct_palette", addend = 0, target = 0x004228C0 },
+  { offset = 351, type = "DIR32", symbol = "_dxball_direct_palette", addend = 0, target = 0x004228C0 },
 ]
 
 [units.intro-frame]

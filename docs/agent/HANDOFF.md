@@ -8,7 +8,36 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores splash redraw at 0x4075D0 exactly:
+The latest source checkpoint restores splash palette pulsing at 0x407EF0
+exactly: all 370 bytes and 29 relocation bindings. Scope the fade counter and
+pulse-color center to their separate phases in src/intro.c, retaining the shared
+half-span factor. Names/types/executable tokens stay unchanged. One canonical MT
+compile restores the original 16-byte frame: half -4, fade counter -8, center -12,
+real integer-multiply temporary -16. The two red-index additions now retain the
+original local-first register order; no comparison rewrite occurs. All 96 REA
+instruction boundaries, nine branches and three calls verify. The before body
+is 368/370 with 127 differences. Twelve actual relocation offsets move; each
+is grounded in the original instruction/target+addend, with unchanged ordered
+symbols/types/addends/targets. Initial comparison rejects old offsets; reuse the
+completed object without another compile. Fourteen exact companions across
+3494 bytes and all other candidate records remain identical. Two unchanged
+Oracle loops pass 120 pulse cases and 58 connected splash/intro/editor mode/key
+checks; their unchanged default/readonly prelude verifies production tables.
+Native/MinGW update once; matching intro object links with 35 unchanged objects
+and no extra legacy source compiles. All 205 exact closures, 247 historical
+scopes and 36 objects verify; 235 inventories refresh without broad replays.
+Counts: 205 exact / 43975 code / 136 metadata; 283 source-present / 270 authored.
+Current products: `.analysis/pulse-color-phase/product-verification.json`;
+seal: `.analysis/checkpoints/pulse-color-phase-283-205/sha256.json`.
+See [exact splash pulse scopes](../research/exact/EXACT_SPLASH_PULSE_SCOPES.md).
+Continue another evidenced source family. Scroller wave remains 235 bytes with
+19 local-home differences; its rectangle initialization precedes the loop, so
+per-iteration initialization is not original. No scroller trial was compiled.
+Unknown source spelling, full authored denominator, physical render/audio and
+campaign remain unproved; the goal stays active. Commit and push verified
+checkpoints. REA feedback stays optional in the same /tmp document.
+
+The preceding source checkpoint restores splash redraw at 0x4075D0 exactly:
 all 949 bytes, 68 unchanged relocation bindings and 17 complete NUL strings.
 Keep the full-screen rectangle across background setup and final surface copy;
 put logo, line counter and foreground logo/band/text operations in their shared

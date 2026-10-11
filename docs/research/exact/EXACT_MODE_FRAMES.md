@@ -1,5 +1,9 @@
 # Complete menu and gameplay frames
 
+The later [splash pulse scopes](EXACT_SPLASH_PULSE_SCOPES.md) make the complete
+370-byte pulse exact. Its earlier 368-byte emission below remains historical;
+no gameplay-frame claim changes in that checkpoint.
+
 The subsequent [frame control-flow checkpoint](../FRAME_CONTROL_FLOW.md)
 restores the direct pause return, signed auxiliary-byte consumer and zero
 completion comparison. Its complete candidate is1,691/1,688 bytes with1,156

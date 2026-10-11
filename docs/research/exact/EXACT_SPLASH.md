@@ -1,5 +1,9 @@
 # Complete splash source restoration
 
+The later [pulse scopes](EXACT_SPLASH_PULSE_SCOPES.md) make the complete
+370-byte palette pulse exact. Current scroller candidates remain explicit;
+the historical comparisons below retain their original epoch.
+
 The later [foreground phase checkpoint](EXACT_SPLASH_FOREGROUND_SCOPE.md)
 makes the complete 949-byte redraw exact. The historical comparisons below
 remain tied to their original epoch; other current candidates stay explicit.

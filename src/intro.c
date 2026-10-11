@@ -428,22 +428,28 @@ void dxball_draw_waving_credits(void)
 }
 void dxball_pulse_splash_palette(void)
 {
-    DxBallInt i, middle, half;
+    DxBallInt half;
     if (dxball_cursor_warp_disabled != 0) return;
-    for (i = 48; i <= dxball_splash_span + 48; ++i) {
-        if (dxball_live_palette[i].red > 0) dxball_live_palette[i].red -= 4;
-        if (dxball_live_palette[i].blue > 0) dxball_live_palette[i].blue -= 2;
+    {
+        DxBallInt i;
+        for (i = 48; i <= dxball_splash_span + 48; ++i) {
+            if (dxball_live_palette[i].red > 0) dxball_live_palette[i].red -= 4;
+            if (dxball_live_palette[i].blue > 0) dxball_live_palette[i].blue -= 2;
+        }
     }
     half = dxball_splash_span / 2;
-    middle = half + 48;
-    dxball_splash_offset = (DxBallInt)(dxball_sine(dxball_splash_phase) * (half - 1));
-    ++dxball_splash_phase;
-    if (dxball_splash_phase > 359) dxball_splash_phase %= 360;
-    dxball_live_palette[middle + dxball_splash_offset].red = 160;
-    dxball_live_palette[middle + dxball_splash_offset + 1].red = 160;
-    dxball_live_palette[middle - dxball_splash_offset].blue = 160;
-    dxball_live_palette[middle - dxball_splash_offset + 1].blue = 160;
-    dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, 48, dxball_splash_span + 48, dxball_live_palette + 48);
+    {
+        DxBallInt middle;
+        middle = half + 48;
+        dxball_splash_offset = (DxBallInt)(dxball_sine(dxball_splash_phase) * (half - 1));
+        ++dxball_splash_phase;
+        if (dxball_splash_phase > 359) dxball_splash_phase %= 360;
+        dxball_live_palette[middle + dxball_splash_offset].red = 160;
+        dxball_live_palette[middle + dxball_splash_offset + 1].red = 160;
+        dxball_live_palette[middle - dxball_splash_offset].blue = 160;
+        dxball_live_palette[middle - dxball_splash_offset + 1].blue = 160;
+        dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, 48, dxball_splash_span + 48, dxball_live_palette + 48);
+    }
     return;
 }
 void dxball_splash_frame(void)
