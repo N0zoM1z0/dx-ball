@@ -10,11 +10,24 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 186 exact functions / 33,001 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 76 runtime, 42 compiler-generated, 140 unknown.
+- Origins: 270 authored, 79 runtime, 42 compiler-generated, 137 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
+
+The latest origin batch independently verifies two external COFF ABS constants
+and the complete relocation-free536-byte MBCS initialized section. Its four
+actual external definitions unlock three complete object-local CRT sections:
+58/44/466 bytes,11 relocations, all zero differences. Runtime total becomes79;
+game source/exact/semantic counts and four products remain unchanged. Final CRT
+receipt covers65 complete code sections/7229 bytes/69 distinct origin rows,
+three complete initialized sections/1130 bytes and two separate ABS constants.
+Seven real-member rejection controls pass. One fresh REA536-byte read is closed;
+its39544.76ms first-read latency is observed without an isolated cause. See
+[independent CRT bindings](../research/CRT_ABSOLUTE_AND_MBCS.md), private
+`.analysis/crt-absolute-frontier/`, and immutable seal
+`.analysis/checkpoints/crt-absolute-mbcs-283-186/sha256.json`.
 
 The latest source batch restores the consumed signed tile integer and direct
 explosive-source condition in `src/gameplay.c`, replacing the single-case switch.
@@ -91,6 +104,17 @@ discovery: it is not a semantic proof, metadata acceptance or switch-table
 boundary audit. MIDI rows describe the pre-batch objects; final comparisons are
 in `comparison.json`. Do not rescan or compile merely because a summary is old.
 
+PCX source recovery is already complete; its862/984 extent and312/308-byte
+frames leave compiler storage/control residuals. Do not retry local spelling or
+layout. Point-distance x87 scheduling retains exactly representable coordinate
+differences; no missing arithmetic was inferred. CRT ABS-only discovery adds no
+code match; the later MBCS data unlocks the three accepted complete sections.
+Same-member static-callee bindings may extend that proof, but object-local
+names must remain scoped to the hash-identified member; unresolved BSS and
+nonunique zero storage are not guessed. The remaining exact16-byte no-op at
+0x40CC20 still lacks authored-origin/active-use proof. Address range alone is
+not an authored denominator.
+
 Investigate genuine consumers/control flow in `capture-sprite`, `restore-regions`
 or the larger ball/render owners. Their larger abstract change groups need
 actual instruction/caller/typed-storage inspection; register scheduling or an
@@ -165,8 +189,11 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is45; use46 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is46; use47 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
-the preceding product-specific Wine observations and palette-phase limits.
+the preceding product-specific Wine observations and palette-phase limits. The
+latest origin batch adds one complete536-byte REA read (5205-byte carrier); raw
+and normalized results are identical1168-byte compact projections. One provider
+RSS sample540172KiB/CPU0 is not a peak or verified runtime heap-cap measurement.

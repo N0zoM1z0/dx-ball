@@ -13,6 +13,42 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def verify_absolute_definitions(root, manifest, mapping):
+    """Verify external COFF ABS values without placing target storage."""
+    entries = manifest.get('absolute_definitions', [])
+    selected = {entry['member_header_offset'] for entry in entries}
+    library = root / manifest['library']
+    raw_members = {offset: (name, raw) for offset, name, raw in members(library)
+                   if offset in selected}
+    exports, rows, inputs = {}, [], {}
+    for entry in entries:
+        if entry['symbol'] in exports:
+            raise ValueError('duplicate absolute definition')
+        name, raw = raw_members[entry['member_header_offset']]
+        if name != entry['member'] or hashlib.sha256(raw).hexdigest() != entry['member_sha256']:
+            raise ValueError('absolute member identity mismatch')
+        obj = root / 'build/probes/crt-absolute' / f"{entry['member_header_offset']:08x}.obj"
+        obj.parent.mkdir(parents=True, exist_ok=True)
+        obj.write_bytes(raw)
+        _, _, symbols = parse(obj)
+        defined = [s for s in symbols.values() if s['name'] == entry['symbol']]
+        if (len(defined) != 1 or defined[0]['section'] != -1 or
+                defined[0]['storage'] != 2):
+            raise ValueError('absolute binding requires one external COFF ABS definition')
+        value = defined[0]['value']
+        if value != entry['value']:
+            raise ValueError('absolute definition value differs')
+        established = {**mapping, **exports}
+        if entry['symbol'] in established and established[entry['symbol']] != value:
+            raise ValueError('absolute definition contradicts established binding')
+        exports[entry['symbol']] = value
+        inputs[str(obj.relative_to(root))] = digest(obj)
+        rows.append(dict(**entry, status='same', section=-1, storage=2,
+                         object=str(obj.relative_to(root)),
+                         basis='external absolute definition in hash-verified COFF member'))
+    return exports, rows, inputs
+
+
 def verify_definitions(root, library, entries, mapping, base, loaded):
     exports, rows, inputs = {}, [], {}
     for entry in entries:
@@ -97,6 +133,16 @@ def verify_data_sections(root, manifest, mapping, original):
             if located != address:
                 raise ValueError('unique initialized symbol does not locate the declared section')
             placement = dict(symbol=basis['symbol'], complete_symbol_bytes=len(needle), file_offset=first)
+        elif basis['kind'] == 'unique_initialized_section':
+            if relocations or len(content) < 16 or not any(content):
+                raise ValueError('whole-section discovery requires nonzero relocation-free initialized data')
+            first = carrier.find(content)
+            if first < 0 or carrier.find(content, first + 1) >= 0:
+                raise ValueError('initialized discovery section is not unique')
+            located = image.OPTIONAL_HEADER.ImageBase + image.get_rva_from_offset(first)
+            if located != address:
+                raise ValueError('unique initialized section does not locate the declared section')
+            placement = dict(complete_section_bytes=len(content), file_offset=first)
         else:
             raise ValueError('unsupported independent data placement basis')
         local = {n: address + s['value'] for n, s in defined.items()}

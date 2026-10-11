@@ -1064,6 +1064,39 @@
         "_atexit"
       ],
       "byte_identical_alternatives": []
+    },
+    {
+      "address": "0x0041BF10",
+      "size": 58,
+      "member": "build\\intel\\st_obj\\ismbbyte.obj",
+      "member_header_offset": 552266,
+      "member_sha256": "2dce078339041d203628e259967565e3211d666d5b492b75f116dda494886644",
+      "section_index": 23,
+      "entries": [
+        "0x0041BF10"
+      ]
+    },
+    {
+      "address": "0x0041C6E0",
+      "size": 44,
+      "member": "build\\intel\\st_obj\\mbctype.obj",
+      "member_header_offset": 564852,
+      "member_sha256": "5e627ed9d7606a78aacc8d2495782bd45bcf9d107b60d18ee177ce8115d4493a",
+      "section_index": 8,
+      "entries": [
+        "0x0041C6E0"
+      ]
+    },
+    {
+      "address": "0x0041C0D0",
+      "size": 466,
+      "member": "build\\intel\\st_obj\\stdargv.obj",
+      "member_header_offset": 734972,
+      "member_sha256": "6b77bed943b6489d787d43a36cd2ca47ba8a88c362fbe117cdecf9c05281dd99",
+      "section_index": 4,
+      "entries": [
+        "0x0041C0D0"
+      ]
     }
   ],
   "limitations": [
@@ -1489,6 +1522,35 @@
       },
       "evidence_path": ".analysis/rea/runs/2026-10-10T21-20-56.653Z-ctype-requests-1233305/00-read_bytes.json",
       "evidence_id": "ev_84b9961d1896477a16328bb23a2f1fe39d45cf14bdf71e35bafc0536fae3fe6b"
+    },
+    {
+      "address": "0x423948",
+      "size": 536,
+      "member": "build\\intel\\st_obj\\mbctype.obj",
+      "member_header_offset": 564852,
+      "member_sha256": "5e627ed9d7606a78aacc8d2495782bd45bcf9d107b60d18ee177ce8115d4493a",
+      "section_index": 1,
+      "basis": {
+        "kind": "unique_initialized_section"
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-11T01-44-56.302Z-mbctype-requests-1546819/00-read_bytes.json",
+      "evidence_id": "ev_104ef247786de4c59b88d8fe5100bd85eda25345a62adc1dd1d224263a7e1ada"
+    }
+  ],
+  "absolute_definitions": [
+    {
+      "symbol": "__except_list",
+      "value": 0,
+      "member": "build\\intel\\st_obj\\exsup.obj",
+      "member_header_offset": 595672,
+      "member_sha256": "1b5106b67ce8c9b7e9668d096890209d45c5ddbc0e492c229f606ef89392bce4"
+    },
+    {
+      "symbol": "__tls_array",
+      "value": 44,
+      "member": "build\\intel\\st_obj\\atlssup.obj",
+      "member_header_offset": 755438,
+      "member_sha256": "2abfe22e0b1e3559556d53f8a818e11ea6bec466988eb3c0dae1f3cb4a74321e"
     }
   ]
 }

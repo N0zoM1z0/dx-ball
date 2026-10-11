@@ -12,7 +12,7 @@ import pefile
 
 from coff import parse, region, _relocations
 from crt_library import members, relocate
-from crt_data import verify_definitions, verify_data_sections
+from crt_data import verify_absolute_definitions, verify_definitions, verify_data_sections
 from legacy_toolchain import Toolchain, session_lock
 from resource_limits import limit_cpu
 
@@ -158,6 +158,8 @@ def main():
         if any(n in fixed and fixed[n] != a for n, a in imported.items()):
             raise ValueError('named import contradicts the reviewed prior CRT map')
         fixed.update(imported)
+        absolute, absolute_rows, absolute_inputs = verify_absolute_definitions(ROOT, manifest, fixed)
+        fixed.update(absolute)
         definitions, definition_rows, definition_inputs = ({}, [], {})
         if manifest.get('verify_prior_definitions'):
             definitions, definition_rows, definition_inputs = verify_definitions(
@@ -178,6 +180,7 @@ def main():
             evidence_path.parent / 'close.json')}
         inputs[str(evidence_path.relative_to(ROOT))] = evidence_hash
         inputs.update(import_inputs)
+        inputs.update(absolute_inputs)
         inputs.update(definition_inputs)
         inputs.update(data_inputs)
         results = []
@@ -222,6 +225,7 @@ def main():
                 applied_bindings={r['symbol']: dict(address=hex(mapping[r['symbol']]),
                     basis=('section-defined symbol' if r['symbol'] in local else
                            import_records[r['symbol']]['basis'] if r['symbol'] in imported else
+                           'verified COFF absolute definition' if r['symbol'] in absolute else
                            'reviewed prior CRT map' if r['symbol'] in prior_symbols else
                            'fully verified prior definition section' if r['symbol'] in definitions else
                            'fully verified independently placed data section' if r['symbol'] in data_exports else
@@ -246,7 +250,8 @@ def main():
                                {int(r['address'], 0) for r in import_thunks + definition_rows}),
             section_origin_entries=len({int(a, 0) for r in results for a in r['entries']} |
                                        {int(r['address'], 0) for r in definition_rows}),
-            verified_definitions=definition_rows, data_sections=data_rows,
+            verified_definitions=definition_rows, absolute_definitions=absolute_rows,
+            data_sections=data_rows,
             complete_data_bytes=sum(r['size'] for r in data_rows),
             import_thunk_entries=len(import_thunks), import_thunk_bytes=sum(r['size'] for r in import_thunks),
             import_bindings=import_records, import_thunks=import_thunks,
