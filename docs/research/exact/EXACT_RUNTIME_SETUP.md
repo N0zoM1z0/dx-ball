@@ -1,5 +1,11 @@
 # Complete game setup, redraw and score controllers
 
+The later [score-strip source recovery](SCORE_STRIP_SOURCE.md) closes the
+expression/store/argument differences below. Its complete 433-byte comparison
+now has 21 frame differences, with eight original reserved bytes unresolved.
+All 135 retained REA instruction boundaries and actual branch/call targets
+correspond; buffer capacity remains 11 and no new exact score claim is made.
+
 This batch restores initialize-game (736 bytes), redraw-game (269) and draw-score
 (433) from complete contiguous REA instruction dossiers: 1,438 original bytes.
 Original names, declaration order and score-buffer capacity remain unproven.

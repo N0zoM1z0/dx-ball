@@ -127,7 +127,7 @@ void dxball_draw_paddle(void)
 void dxball_draw_score(void)
 {
     char text[11];
-    DxBallInt count, lives, x, y, i;
+    DxBallInt count, x, y, i;
     DxBallRect rect;
     _ultoa((unsigned long)(DxBallUInt)dxball_score, text, 10);
     count = (DxBallInt)strlen(text);
@@ -138,14 +138,17 @@ void dxball_draw_score(void)
     dxball_select_surface((DxBallSurface)dxball_board_surface);
     dxball_draw_text(30, 31, count, text);
     dxball_invalidate_region(rect);
-    lives = dxball_lives;
-    if (lives > 10) lives = 10;
-    ++lives;
-    lives *= 22;
-    rect.left = 620 - lives; rect.top = 0; rect.right = 620; rect.bottom = 16;
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_board_surface, rect.left, 0,
-        (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+    {
+        DxBallInt lives;
+        lives = dxball_lives;
+        if (lives > 10) lives = 10;
+        lives = (lives + 1) * 22;
+        rect.top = 0; rect.bottom = 16;
+        rect.left = 620 - lives; rect.right = 620;
+        ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_board_surface, rect.left, rect.top,
+            (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+    }
     x = 598; y = 2;
     if (dxball_lives > 20) dxball_lives = 20;
     for (i = 1; i <= dxball_lives - 1; ++i) {

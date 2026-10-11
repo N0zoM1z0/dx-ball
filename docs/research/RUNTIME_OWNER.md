@@ -1,5 +1,17 @@
 # Game lifecycle and mode dispatch
 
+The [score-strip source recovery](exact/SCORE_STRIP_SOURCE.md) restores compound
+life-span calculation, original rectangle store order/Y argument and the
+strip-only temporary lifetime. The whole 433-byte body improves from 76 to
+21 differences; 135 retained REA instruction boundaries, seven branches and
+nine calls correspond. Remaining differences are frame displacements and
+eight reserved bytes; the 11-byte buffer stays unchanged and the body stays
+nonexact. One MT compile preserves ten exact companions across 2,282 bytes;
+126 unchanged score/refresh calls pass. Native/MinGW update; VC4 reuses the
+runtime object with 35 unchanged objects. Current totals stay 203 exact /
+42,656 code bytes / 136 metadata bytes. Historical epochs below retain their
+own scopes and products.
+
 The current clock batch restores `dxball_current_time` at `0x403450`: its complete
 148-byte span matches with nine explicit relocations. It uses three independent
 typed stdcall API slots for timeGetTime, QueryPerformanceFrequency and

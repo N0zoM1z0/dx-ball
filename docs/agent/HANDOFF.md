@@ -8,7 +8,36 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores particle drawing at 0x414CB0 exactly:
+The latest source checkpoint restores the complete score-strip operation at
+0x4158D0: compound (lives+1)*22, observed top/bottom/left/right stores, rect.top
+as second BltFast Y, and strip-only life-span temporary in src/runtime.c.
+One canonical MT compile improves the complete 433-byte comparison from 76 to
+21 differences. All 135 retained REA instruction boundaries/widths, seven
+branches and nine calls correspond through recorded typed frame roles; only
+21 frame allocation/displacement bytes remain. Original frame 56/current 48;
+text original -40/current -32 and four following locals differ by eight.
+Keep the 11-byte decimal buffer:
+its original capacity is unproved; no padding/capacity trial is justified.
+One actual relocation offset moves two bytes, reconciled against the original
+operand; the same completed object compares without another compile. Ten
+runtime exacts across 2,282 bytes and all other candidate comparisons stay
+identical. All 126 existing score/refresh calls pass. Native/MinGW update;
+the current runtime object links with 35 unchanged objects. All 203 exact
+closures, 247 unchanged historical scopes and 36 objects verify; 235 input
+inventories refresh without unrelated suite replays. Counts stay 203 exact /
+42656 code / 136 metadata; 283 source-present; 270 authored.
+Current products: `.analysis/score-strip-source/product-verification.json`;
+seal: `.analysis/checkpoints/score-strip-source-283-203/sha256.json`.
+See [score-strip source](../research/exact/SCORE_STRIP_SOURCE.md).
+Continue another evidenced source family; do not enlarge the array simply to
+close the eight-byte footprint. Sound upload remains 695 bytes with 31
+differences; file loader 307/304 with 89. Their original lifetime homes need
+stronger source evidence.
+Full authored denominator, original spelling, physical render/audio and campaign
+remain unproved; the goal stays active. Push verified checkpoints; optional REA
+feedback stays in the same /tmp document.
+
+The preceding source checkpoint restores particle drawing at 0x414CB0 exactly:
 all 320 bytes/21 relocations. Nonempty description and per-particle pointer
 scopes in src/particles.c restore the 132-byte frame: rectangle -16, result -20,
 description108 at -128 and pixels -132. Names/types/executable tokens unchanged.
