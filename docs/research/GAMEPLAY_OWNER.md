@@ -1,5 +1,11 @@
 # Board-hit gameplay owner
 
+The [explosive collection scope recovery](exact/EXACT_EXPLOSIVE_COLLECTION_SCOPES.md)
+establishes the complete 824-byte neighbor-conversion body with 39 relocations.
+Collection phase and per-column scan scopes restore original homes; four exact
+companions and both nonexact hit/enqueue comparisons stay identical. All 706
+existing spread cases pass, including the full original 50-board bank.
+
 The [complete brick-power restoration](exact/EXACT_BRICK_POWERS.md) restores the
 whole hit body with live board-byte reads, direct brick-effect/audio/RNG/particle
 calls, separate strength transitions and two particle loops. Its complete
@@ -13,8 +19,9 @@ investigation. The same C source builds on the native host, MinGW i686 and the
 pinned VC4.0 toolchain. It owns tile transitions, hit eligibility for scoring,
 the explosion request queue, screen-to-pan conversion and the explosive-tile
 scan. The animation owner now supplies explosion processing; see
-[explosion and animation evidence](EFFECTS_OWNER.md). Ball/projectile updates,
-bonus generation, particle animation and DirectSound remain pending.
+[explosion and animation evidence](EFFECTS_OWNER.md). Later owner checkpoints
+recover ball/projectile updates, bonus generation and sound operations; physical
+rendering, audio and full-game fidelity retain their separate validation gaps.
 
 ## REA evidence
 

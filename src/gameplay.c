@@ -18,14 +18,18 @@ DxBallGameplayOps dxball_gameplay_ops = { dxball_new_bytes, dxball_spawn_brick_e
 
 void dxball_spread_explosive_bricks(void)
 {
-    DxBallInt x, y, scan_x, scan_y, tile;
-    for (scan_x = 0; scan_x < 20; ++scan_x) {
-        for (scan_y = 0; scan_y < 20; ++scan_y) {
-            tile = (signed char)dxball_board_tiles[scan_x + scan_y * 20];
-            if (tile == 8) {
-                dxball_append_explosion(&dxball_explosive_sources);
-                dxball_explosive_sources.current->x = scan_x;
-                dxball_explosive_sources.current->y = scan_y;
+    DxBallInt x, y;
+    {
+        DxBallInt scan_x, tile;
+        for (scan_x = 0; scan_x < 20; ++scan_x) {
+            DxBallInt scan_y;
+            for (scan_y = 0; scan_y < 20; ++scan_y) {
+                tile = (signed char)dxball_board_tiles[scan_x + scan_y * 20];
+                if (tile == 8) {
+                    dxball_append_explosion(&dxball_explosive_sources);
+                    dxball_explosive_sources.current->x = scan_x;
+                    dxball_explosive_sources.current->y = scan_y;
+                }
             }
         }
     }

@@ -3913,7 +3913,7 @@ relocations = [
   { offset = 1296, type = "REL32", symbol = "_dxball_draw_board_tile", addend = 0, target = 0x004119F0 },
 ]
 
-[candidates.spread-explosive-bricks]
+[units.spread-explosive-bricks]
 build = "gameplay"
 symbol = "_dxball_spread_explosive_bricks"
 target_address = 0x4150a0

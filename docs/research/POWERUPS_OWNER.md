@@ -1,5 +1,15 @@
 # Bonus application, paddle and ball dependencies
 
+The [explosive collection scope recovery](exact/EXACT_EXPLOSIVE_COLLECTION_SCOPES.md)
+now makes the full neighbor-conversion function exact: 824 bytes and 39 actual
+relocations. Its separate collection phase and per-column scan restore the
+original 20-byte frame without changed names, types or executable tokens.
+One owner compile preserves four exact companions; 706 unchanged spread cases
+pass, including all 50 original boards. Native/MinGW update and VC4 reuses the
+matching gameplay object with 35 unchanged objects. Current totals are 202 exact
+functions / 42,336 code bytes / 136 metadata bytes. Historical epochs below retain
+their own source and validation scopes.
+
 The [complete rectangle fallback recovery](exact/EXACT_RECTANGLE_COLLISION.md)
 restores repeated `abs` center calculations and the original nested return
 branches. One VC4 compile emits the complete 329-byte span; four call bindings

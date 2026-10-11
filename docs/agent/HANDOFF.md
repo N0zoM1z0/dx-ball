@@ -8,7 +8,32 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores MIDI stop at 0x401A20 and completion
+The latest source checkpoint restores explosive-neighbor conversion at
+0x4150A0 exactly: all 824 bytes, 39 relocations, 208 instructions, 26 branches
+and nine calls. Restore collection-phase and per-column inner scan scopes in
+src/gameplay.c; original 20-byte frame is x/y -4/-8, scan_x -12, signed tile
+-16 and scan_y -20. Names/types/executable tokens and collection-before-mutation
+order stay unchanged. One canonical MT compile preserves four exact companions
+across 748 bytes; hit/enqueue full comparisons stay identical and nonexact.
+706 unchanged spread cases pass, including all 50 original boards and 400
+boundary/interior source grids. Native/MinGW update; the final matching gameplay
+object links with 35 verified unchanged objects. All 202 exact closures,
+247 unchanged historical semantic scopes and 36 production objects verify;
+235 input inventories refresh without unrelated suite replays.
+Counts: 202 exact / 42336 code / 136 metadata; 283 source-present; 270 authored.
+Current products: `.analysis/explosive-collection-scopes/product-verification.json`;
+seal: `.analysis/checkpoints/explosive-collection-scopes-283-202/sha256.json`.
+See [exact explosive scopes](../research/exact/EXACT_EXPLOSIVE_COLLECTION_SCOPES.md).
+Continue another evidenced game family. Explosion animation remains 797 bytes
+with 47 local-home differences; its cleanup row/rectangle/column homes are not
+explained by simply grouping all expiration locals. No effects source trial
+was compiled here. Hit remains 1316/1315 with 418 differences; avoid arbitrary
+coextensive-variable scope splits or name permutations. Full authored denominator,
+original spelling, physical render/audio and campaign remain unproved. The goal
+stays active. Commit and push verified checkpoints; REA feedback is optional
+and stays in the same /tmp document.
+
+The preceding source checkpoint restores MIDI stop at 0x401A20 and completion
 callback at 0x401B10 exactly: 225/127 complete bytes and 3/1 relocations.
 Restore validated-operation pointer and callback header scopes in src/midi.cpp;
 header scope ends before context pending decrement/final function return.

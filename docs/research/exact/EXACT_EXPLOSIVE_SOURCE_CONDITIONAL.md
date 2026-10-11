@@ -1,5 +1,9 @@
 # Explosive source collection and neighbor conversion
 
+This note retains the source-conditional checkpoint below. The later
+[collection scope recovery](EXACT_EXPLOSIVE_COLLECTION_SCOPES.md) closes its
+58 remaining storage differences and makes the entire 824-byte body exact.
+
 The complete explosive-neighbor owner at `0x4150A0..0x4153D7` now preserves
 the original consumed signed tile value and direct source-collection condition.
 Previously, a single-case switch added dispatch jumps before the source append.
