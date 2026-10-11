@@ -305,8 +305,7 @@ void dxball_initialize_splash(void)
 
 void dxball_redraw_splash(void)
 {
-    DxBallRect full, logo;
-    DxBallInt y;
+    DxBallRect full;
     full.left = 0; full.top = 0; full.right = 640; full.bottom = 480;
     dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
     if (dxball_draw_to_primary == 0) dxball_fill_rect((DxBallSurface)dxball_secondary_surface, 0, 0, 639, 479, 0);
@@ -314,41 +313,45 @@ void dxball_redraw_splash(void)
     ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
         (DxBallDDSurface *)dxball_board_surface, &full,
         (DxBallDDSurface *)dxball_background_surface, &full, 0x01000000, NULL);
-    logo.left = 0; logo.top = 19; logo.right = 639; logo.bottom = 169;
-    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_primary_surface, &logo,
-        (DxBallDDSurface *)dxball_board_surface, &logo, 0x01000000, NULL);
-    if (dxball_draw_to_primary == 0) {
-        dxball_bind_display_surface((DxBallSurface)dxball_primary_surface); dxball_draw_waving_credits();
-        dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
+    {
+        DxBallRect logo;
+        DxBallInt y;
+        logo.left = 0; logo.top = 19; logo.right = 639; logo.bottom = 169;
+        ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
+            (DxBallDDSurface *)dxball_primary_surface, &logo,
+            (DxBallDDSurface *)dxball_board_surface, &logo, 0x01000000, NULL);
+        if (dxball_draw_to_primary == 0) {
+            dxball_bind_display_surface((DxBallSurface)dxball_primary_surface); dxball_draw_waving_credits();
+            dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
+        }
+        for (y = 155; y <= dxball_splash_span * 2 + 155; y += 2) {
+            dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
+            dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
+        }
+        dxball_select_surface((DxBallSurface)dxball_primary_surface); dxball_select_font_bank(0);
+        dxball_draw_text(20, 190, 11, "VIDEO CARD:");
+        if (dxball_software_only != 0) {
+            dxball_draw_text(180, 190, 24, "NO HARDWARE ACCELERATION");
+            dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
+        } else if (dxball_low_video_memory != 0) {
+            dxball_draw_text(180, 190, 16, "LOW VIDEO MEMORY");
+            dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
+        } else if (dxball_wait_vertical_blank == 0) {
+            dxball_draw_text(180, 190, 25, "REFRESH RATE ABOVE 60 MHZ");
+            dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
+        } else {
+            dxball_draw_text(180, 190, 27, "HARDWARE ACCELERATION FOUND");
+            dxball_draw_text(210, 210, 13, "AND SUPPORTED");
+        }
+        dxball_draw_text(20, 245, 7, "AUTHOR:");
+        dxball_draw_text(180, 245, 16, "MICHAEL P. WELCH");
+        dxball_draw_text(20, 265, 7, "3D GFX:");
+        dxball_draw_text(180, 265, 14, "SEUMAS McNALLY");
+        dxball_draw_text(20, 300, 7, "E-MAIL:");
+        dxball_draw_text(180, 300, 18, "MWELCH@NETWAVE.NET");
+        dxball_draw_centered_text(320, 330, 41, "SEND COMMENTS, BUGS, AND GREETINGS TO GET");
+        dxball_draw_centered_text(320, 350, 37, "HINT FOR LEVEL EDITOR AND OTHER TIPS.");
     }
-    for (y = 155; y <= dxball_splash_span * 2 + 155; y += 2) {
-        dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
-        dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
-    }
-    dxball_select_surface((DxBallSurface)dxball_primary_surface); dxball_select_font_bank(0);
-    dxball_draw_text(20, 190, 11, "VIDEO CARD:");
-    if (dxball_software_only != 0) {
-        dxball_draw_text(180, 190, 24, "NO HARDWARE ACCELERATION");
-        dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
-    } else if (dxball_low_video_memory != 0) {
-        dxball_draw_text(180, 190, 16, "LOW VIDEO MEMORY");
-        dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
-    } else if (dxball_wait_vertical_blank == 0) {
-        dxball_draw_text(180, 190, 25, "REFRESH RATE ABOVE 60 MHZ");
-        dxball_draw_text(210, 210, 28, "DEFAULT TO >COMPATIBLE< MODE");
-    } else {
-        dxball_draw_text(180, 190, 27, "HARDWARE ACCELERATION FOUND");
-        dxball_draw_text(210, 210, 13, "AND SUPPORTED");
-    }
-    dxball_draw_text(20, 245, 7, "AUTHOR:");
-    dxball_draw_text(180, 245, 16, "MICHAEL P. WELCH");
-    dxball_draw_text(20, 265, 7, "3D GFX:");
-    dxball_draw_text(180, 265, 14, "SEUMAS McNALLY");
-    dxball_draw_text(20, 300, 7, "E-MAIL:");
-    dxball_draw_text(180, 300, 18, "MWELCH@NETWAVE.NET");
-    dxball_draw_centered_text(320, 330, 41, "SEND COMMENTS, BUGS, AND GREETINGS TO GET");
-    dxball_draw_centered_text(320, 350, 37, "HINT FOR LEVEL EDITOR AND OTHER TIPS.");
     if (dxball_draw_to_primary == 0) {
         ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
             (DxBallDDSurface *)dxball_secondary_surface, &full,

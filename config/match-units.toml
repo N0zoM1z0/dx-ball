@@ -3014,7 +3014,7 @@ relocations = [
   { offset = 413, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x0040A340 },
 ]
 
-[candidates.redraw-splash]
+[units.redraw-splash]
 build = "intro"
 symbol = "_dxball_redraw_splash"
 target_address = 0x4075d0

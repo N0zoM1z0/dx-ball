@@ -1,5 +1,9 @@
 # Complete splash source restoration
 
+The later [foreground phase checkpoint](EXACT_SPLASH_FOREGROUND_SCOPE.md)
+makes the complete 949-byte redraw exact. The historical comparisons below
+remain tied to their original epoch; other current candidates stay explicit.
+
 This connected family restores eight complete bodies from retained REA 4.1.0 /
 Ghidra 12.1.4 instruction dossiers, totaling 3,029 original bytes. Static evidence
 does not establish execution or exactness; the following grouped compiler and

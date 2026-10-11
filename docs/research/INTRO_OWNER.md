@@ -1,5 +1,16 @@
 # Menu and splash evidence
 
+The [exact splash foreground phase](exact/EXACT_SPLASH_FOREGROUND_SCOPE.md)
+restores all 949 redraw bytes and 68 unchanged bindings, including 17 complete
+strings. Full-screen rectangle persists across background setup and final copy;
+logo/line/text operations share their foreground scope. Two bounded compiles
+preserve 13 exact companions across 2545 bytes and every other intro comparison.
+Existing 16 redraw cases plus 58 connected mode/key checks pass; default tables
+and readonly data verify separately. Native/MinGW rebuild once, and the matching
+intro object links with 35 unchanged ones. Current totals are 204 exact /
+43,605 code bytes / 136 metadata bytes. Historical epochs below retain their
+own scopes and products.
+
 The [mode-frame restoration](exact/EXACT_MODE_FRAMES.md) accepts the complete menu
 frame: all 242 bytes, including cursor stores, signed clamps and ordinary exit.
 Existing 32 direct menu-frame cases and connected mode checks pass. The previous

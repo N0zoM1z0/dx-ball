@@ -8,7 +8,37 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores explosion animation phase lifetimes at
+The latest source checkpoint restores splash redraw at 0x4075D0 exactly:
+all 949 bytes, 68 unchanged relocation bindings and 17 complete NUL strings.
+Keep the full-screen rectangle across background setup and final surface copy;
+put logo, line counter and foreground logo/band/text operations in their shared
+phase in src/intro.c. Original 36-byte frame: full rectangle -16, line counter
+-20, logo rectangle -36. Names/types/executable tokens stay unchanged. All 256
+retained REA instruction boundaries, 13 branches and 30 calls verify.
+Two bounded canonical MT compiles preserve 13 exact companions across 2545 bytes
+and every other intro candidate comparison. The first logo-only stage remains
+nonexact (17 differences, before 23); the final foreground phase is exact.
+No comparison/name/layout/ABI/capacity trial. Two unchanged Oracle loops pass
+16 redraw cases and 58 connected splash/intro/editor mode/key checks. Separate
+unchanged readonly/default prelude verifies production tables and welcome/colors.
+Native/MinGW update once; matching intro object links with 35 unchanged objects,
+no extra legacy source compiles. All 204 exact closures, 247 historical scopes
+and 36 production objects verify; 235 inventories refresh without broad replays.
+Counts: 204 exact / 43605 code / 136 metadata; 283 source-present / 270 authored.
+Current products: `.analysis/splash-logo-scope/product-verification.json`;
+seal: `.analysis/checkpoints/splash-logo-scope-283-204/sha256.json`.
+See [exact splash foreground phase](../research/exact/EXACT_SPLASH_FOREGROUND_SCOPE.md).
+Continue another evidenced source family. Scroller wave remains 235 bytes with
+19 differences; pulse remains 368/370 with 127. Avoid arbitrary coextensive
+scope/name splits. Runtime cleanup remains 107/106 solely because the shared
+board/explosion backing member address emits six-byte LEA rather than five-byte
+MOV; preserve the overlapping storage, do not force a separate original global.
+Reset-round's bank-address operand scheduling remains nonexact; neither runtime
+body was changed/compiled this turn. Full authored denominator, original spelling,
+physical render/audio and campaign remain unproved; the goal stays active.
+Push verified checkpoints. REA feedback stays optional in the same /tmp document.
+
+The preceding source checkpoint restores explosion animation phase lifetimes at
 0x412730 in src/effects.c. Board x/y belong to the frame-five branch; rectangle
 and cleanup x/y belong to expiration. Names/types/executable tokens and calls
 stay unchanged. One canonical MT compile improves the complete 797-byte
