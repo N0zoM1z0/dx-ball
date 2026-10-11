@@ -1924,5 +1924,100 @@
       "member_header_offset": 755438,
       "member_sha256": "2abfe22e0b1e3559556d53f8a818e11ea6bec466988eb3c0dae1f3cb4a74321e"
     }
+  ],
+  "code_data_groups": [
+    {
+      "member": "..\\build\\intel\\st_obj\\87trig.obj",
+      "member_header_offset": 965394,
+      "member_sha256": "ca4830058eabbcc1a798f27a1ae4cf09975e3500b1c5a64b16275fa1a38f6ab1",
+      "code": {
+        "address": "0x418960",
+        "size": 43,
+        "section_index": 1,
+        "entries": [],
+        "library_symbols": [
+          "__fFCOS",
+          "__fFSIN"
+        ],
+        "basis": {
+          "kind": "unique_nonrelocated_code",
+          "offset": 0,
+          "size": 39
+        }
+      },
+      "data": {
+        "address": "0x423120",
+        "size": 114,
+        "section_index": 2,
+        "basis": {
+          "kind": "unique_initialized_symbol",
+          "symbol": ".data",
+          "size": 18
+        },
+        "evidence_path": ".analysis/rea/runs/2026-10-11T04-40-02.986Z-requests-1720639/00-read_bytes.json",
+        "evidence_id": "ev_f585a80429f6f35d273f39b3a7cd2b5c0ab75c5c2a4f84a4037271fa1621974b"
+      }
+    },
+    {
+      "member": "..\\build\\intel\\st_obj\\adj_fdiv.obj",
+      "member_header_offset": 969588,
+      "member_sha256": "1d15c93898522da7d9731fd955ca3a7dba073eefacca6334c185902239509573",
+      "code": {
+        "address": "0x4167f0",
+        "size": 3467,
+        "section_index": 1,
+        "entries": [
+          "0x004167F0",
+          "0x00416DA6",
+          "0x00416DB9",
+          "0x00416DCC",
+          "0x00416E18",
+          "0x00416E98",
+          "0x00416ECC",
+          "0x00416F18"
+        ],
+        "library_symbols": [
+          "_fdiv_main_routine",
+          "__adj_fdiv_r",
+          "__fdivp_sti_st",
+          "__fdivrp_sti_st",
+          "__adj_fdiv_m32",
+          "__adj_fdiv_m64",
+          "__adj_fdiv_m16i",
+          "__adj_fdiv_m32i",
+          "__adj_fdivr_m32",
+          "__adj_fdivr_m64",
+          "__adj_fdivr_m16i",
+          "__adj_fdivr_m32i",
+          "__safe_fdiv",
+          "__safe_fdivr",
+          "__fprem_common",
+          "__adj_fprem",
+          "__fprem1_common",
+          "__adj_fprem1",
+          "__safe_fprem",
+          "__safe_fprem1",
+          "__adj_fpatan",
+          "__adj_fptan"
+        ],
+        "basis": {
+          "kind": "unique_nonrelocated_code",
+          "offset": 292,
+          "size": 1793
+        }
+      },
+      "data": {
+        "address": "0x422f30",
+        "size": 352,
+        "section_index": 2,
+        "basis": {
+          "kind": "unique_initialized_symbol",
+          "symbol": "fprem_risc_table",
+          "size": 24
+        },
+        "evidence_path": ".analysis/rea/runs/2026-10-11T04-40-02.986Z-requests-1720639/01-read_bytes.json",
+        "evidence_id": "ev_5176e8ed2bd57ff9721f2a44761480e9f6538457d72aea989f5bed9b49324d70"
+      }
+    }
   ]
 }

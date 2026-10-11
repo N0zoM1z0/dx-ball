@@ -1,8 +1,16 @@
 # Reviewing runtime origins
 
-The latest [initialized-storage closure](CRT_INITIALIZED_STORAGE_CLOSURE.md)
+The latest [code/data groups](CRT_CODE_DATA_GROUPS.md) prove eight further FDIV
+entries and a complete trigonometric assembly body omitted by the imported
+inventory. Independently unique anchors locate both section bases; entire code
+and pointer-bearing data must pass together before definitions are published.
+Origins are **270 authored / 113 runtime / 42 compiler-generated / 103 unknown**.
+Source 283, scoped semantic 247 and game exact 188 / 35,003 code bytes / 136
+metadata bytes remain unchanged. Full authored denominator remains open.
+
+The preceding [initialized-storage closure](CRT_INITIALIZED_STORAGE_CLOSURE.md)
 identifies 22 further runtime entries through nine independently placed complete
-data sections and 14 complete code sections. Origins are **270 authored / 105
+data sections and 14 complete code sections. Its origins were **270 authored / 105
 runtime / 42 compiler-generated / 111 unknown**. Source 283, scoped semantic 247
 and exact 188 / 35,003 code bytes / 136 metadata bytes remain unchanged. All
 relocations retain actual member-index or independently verified external

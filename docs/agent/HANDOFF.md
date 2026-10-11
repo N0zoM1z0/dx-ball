@@ -10,13 +10,34 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 105 runtime, 42 compiler-generated, 111 unknown.
+- Origins: 270 authored, 113 runtime, 42 compiler-generated, 103 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest origin audit independently places nine nonzero initialized CRT data
+The latest origin audit closes two pointer-bearing code/data groups atomically:
+87trig43/114 bytes and adj_fdiv3467/352. Both code/data bases independently follow
+unique nonrelocated anchors;all22 code/76 data actual-index relocations pass
+before group authority is published. Eight FDIV rows become runtime. The43-byte
+trig assembly body is missing from the imported function inventory;it is proved
+without inventing a new row. New `scripts/crt_coupled.py` integrates the bounded
+group check after preceding independently verified sections. One positive run
+preserves all prior83 code/12 data result rows;three controls reject shifted
+data,partial code and altered dispatch pointer with no authority publication.
+Current maintained85 sections/13760 code/103 origin entries,14 data/2997 bytes,
+380 definitions/212 static. No game source/compiler/build/gameplay replay or
+exact/semantic promotion;four products unchanged. Candidate/public recipe is a
+byte-identical alias;actual executed receipt remains unchanged. One closed
+REA6.3/Ghidra12.1.4 session reads two data extents466 bytes;66497.05ms then1.64ms.
+See [complete code/data groups](../research/CRT_CODE_DATA_GROUPS.md),private
+`.analysis/crt-pointer-storage/`,seal
+`.analysis/checkpoints/crt-pointer-storage-283-188/sha256.json`.
+Remaining103 unknown origins,assert/transcendental partial data and ungrounded
+BSS require new independent authority;full authored denominator/fidelity remain
+open. Keep current and public paths independent from immutable archive inodes.
+
+The preceding origin audit independently places nine nonzero initialized CRT data
 sections/1401 bytes,then proves14 complete code sections/2897 bytes/81 actual
 relocations,covering22 formerly unknown entries. No code relocation guesses a
 data address;static names retain actual member/index authority. The unchanged

@@ -14,6 +14,7 @@ from coff import parse, region, _relocations
 from crt_library import members
 from crt_data import verify_absolute_definitions, verify_definitions, verify_data_sections
 from crt_scope import publish_section, relocate_section
+from crt_coupled import verify_code_data_groups
 from legacy_toolchain import Toolchain, session_lock
 from resource_limits import limit_cpu
 
@@ -175,6 +176,7 @@ def main():
             manifest_path, prior_path, original, library, ROOT / 'scripts/verify-runtime-origin-sections.py',
             ROOT / 'scripts/verify-crt-provenance.py', ROOT / 'scripts/crt_library.py', ROOT / 'scripts/coff.py',
             ROOT / 'scripts/crt_data.py', ROOT / 'scripts/crt_scope.py',
+            ROOT / 'scripts/crt_coupled.py',
             ROOT / 'scripts/legacy_toolchain.py', ROOT / 'scripts/resource_limits.py',
             ROOT / 'scripts/repo-python', ROOT / 'scripts/verify-python.py',
             ROOT / 'config/tools.lock.toml', ROOT / 'requirements-analysis.txt',
@@ -283,6 +285,11 @@ def main():
                 if symbol['section'] == index and symbol['storage'] == 2:
                     verified_exports[symbol['name']] = address + symbol['value']
                     export_origins[symbol['name']] = entry['address']
+        grouped_code, grouped_data, _, grouped_inputs = verify_code_data_groups(
+            ROOT, manifest, {**fixed, **verified_exports}, scoped, base, loaded, original)
+        results.extend(grouped_code)
+        data_rows.extend(grouped_data)
+        inputs.update(grouped_inputs)
         for path, hashed in inputs.items():
             if digest(ROOT / path) != hashed:
                 raise ValueError('origin input changed during verification: ' + path)
