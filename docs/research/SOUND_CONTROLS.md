@@ -60,5 +60,8 @@ supply defined output even on error, and a successful restoration reload must
 leave a usable record. Unwritten outputs, invalid backing, reload failures
 leading to dangling records, concurrent mutation and physical DirectSound
 delivery remain outside this acceptance. Passing arbitrary DWORD requests to
-a controlled API does not show that a real audio device accepts them. These
-entries have no configured byte-exact unit.
+a controlled API does not show that a real audio device accepts them. The
+subsequent [operation scope recovery](exact/EXACT_SOUND_OPERATION_SCOPES.md)
+configures complete 159-byte exact units for all three entries; it preserves
+these contracts and validates the unchanged control loops again alongside
+the connected restoration/reload calls.

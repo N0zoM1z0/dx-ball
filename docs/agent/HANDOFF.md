@@ -8,7 +8,26 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores moving balls at 0x410770 and projectile
+The latest source checkpoint restores six sound operations exactly across
+965 bytes/43 relocations: stop/rewind, frequency/pan/volume setters, whole-bank
+restoration and buffer creation. Restore post-guard results, scan/status/reload
+filename and descriptor lifetimes in src/sound.c; names/types/operations stay
+unchanged. One canonical MT owner compile preserves eight companions across 1122 bytes.
+Seven unchanged Oracle loops pass 4317 direct calls and 48 connected focus/reload/
+recovery checks. Native/MinGW update; matching sound object links with 35 unchanged
+objects. All 198 exact closures/247 unchanged semantic scopes/36 objects verify.
+Counts: 198 exact / 41075 code / 136 metadata; 283 source-present; 270 known authored.
+Current products: `.analysis/sound-operation-scopes/product-verification.json`;
+seal: `.analysis/checkpoints/sound-operation-scopes-283-198/sha256.json`.
+See [exact sound scopes](../research/exact/EXACT_SOUND_OPERATION_SCOPES.md).
+Sound initialization, WAV parser and upload loader remain nonexact; do not try
+blind storage/name/declaration permutations. Continue another evidenced source
+family or inspect meaningful original declaration lifetimes in those bodies.
+Physical/asynchronous audio, original declaration spelling, authored denominator,
+full render and campaign remain unproved; the goal remains active and incomplete.
+Reconstruction remains primary; no new REA provider or capture was needed.
+
+The preceding source checkpoint restores moving balls at 0x410770 and projectile
 updates at 0x413170 exactly: 3223/276 and 328/23 complete bytes/relocations.
 Restore live-ball y/sign and reduced/full particle scopes, then projectile
 iteration row in src/core.c; names/types/operations/RNG order stay unchanged.
@@ -31,7 +50,7 @@ all1197bytes/89relocations, including76table bytes and a five-byte unowned exit.
 Restore particle/case and creation-success scopes in src/bonuses.c without
 changed names/types/operations/padding. Correct the old candidate table binding
 from case13 to independently observed0x413D21. Two bounded compiles preserve
-three exact companions2287bytes; only final object links with35 unchanged ones.
+three exact companions2287bytes; only final object links with 35 unchanged ones.
 1750unchanged generation cases pass with ordered RNG/audio/particle events and
 complete queues. All190 exact closures/247 unchanged semantic scopes/36 objects
 verify. Current products: `.analysis/bonus-generation-scope/product-verification.json`;
@@ -44,7 +63,7 @@ The preceding source checkpoint restores device initialization at0x403A00 exactl
 all359 bytes/28actual relocations, including direct failure return and the
 nested vertical-blank counter scope in src/startup.c. Five startup companions
 remain exact across1022bytes. One canonical MTmatching compile is reused by
-the VC4 link with35 unchanged objects; Native/MinGW rebuild the affected owner.
+the VC4 link with 35 unchanged objects; Native/MinGW rebuild the affected owner.
 The unchanged startup suite passes158 cases plus one connected dispatch check.
 All189 exact input/object identities and247 unchanged historical semantic
 scopes verify;235 input closures refresh. No provider startup/gameplay replay.

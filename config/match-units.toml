@@ -4642,7 +4642,7 @@ relocations = [
   { offset = 268, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
 ]
 
-[candidates.stop-sound]
+[units.stop-sound]
 build = "sound"
 symbol = "_dxball_stop_sound"
 target_address = 0x405ef0
@@ -4660,7 +4660,7 @@ relocations = [
   { offset = 150, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
 ]
 
-[candidates.set-sound-frequency]
+[units.set-sound-frequency]
 build = "sound"
 symbol = "_dxball_set_sound_frequency"
 target_address = 0x405fa0
@@ -4677,7 +4677,7 @@ relocations = [
   { offset = 142, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
 ]
 
-[candidates.set-sound-pan]
+[units.set-sound-pan]
 build = "sound"
 symbol = "_dxball_set_sound_pan"
 target_address = 0x406040
@@ -4694,7 +4694,7 @@ relocations = [
   { offset = 142, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
 ]
 
-[candidates.set-sound-volume]
+[units.set-sound-volume]
 build = "sound"
 symbol = "_dxball_set_sound_volume"
 target_address = 0x4060e0
@@ -4711,7 +4711,7 @@ relocations = [
   { offset = 142, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
 ]
 
-[candidates.restore-sounds]
+[units.restore-sounds]
 build = "sound"
 symbol = "_dxball_restore_sounds"
 target_address = 0x406180
@@ -4819,7 +4819,7 @@ relocations = [
   { offset = 678, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x4177f0 },
 ]
 
-[candidates.create-sound-buffer]
+[units.create-sound-buffer]
 build = "sound"
 symbol = "_dxball_create_sound_buffer"
 target_address = 0x4063a0

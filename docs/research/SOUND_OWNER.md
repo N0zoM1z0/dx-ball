@@ -1,5 +1,19 @@
 # DirectSound controller and WAV loading
 
+## Current operation scopes
+
+The [operation scope recovery](exact/EXACT_SOUND_OPERATION_SCOPES.md) makes
+stop/rewind, all three persistent parameter setters, whole-bank restoration
+and buffer creation exact across 965 bytes/43 relocations. One MT owner compile
+preserves eight existing sound exacts across 1122 bytes. The recovered source
+scopes preserve live record reloads, ignored HRESULTs, filename ownership and
+all original operations. Seven unchanged Oracle loops pass 4317 direct calls
+and48 connected focus/reload/recovery checks. Native/MinGW products rebuild;
+the final matching sound object links with 35 verified unchanged objects.
+The project now has 198 exact functions / 41075 code bytes / 136 metadata bytes.
+Initialization, parsing, upload and physical/asynchronous audio remain open.
+The older batches below describe their own source checkpoints and counts.
+
 ## Current SDK factory calls
 
 Initialization now calls the genuine external `DirectSoundCreate` stdcall API.
