@@ -1,5 +1,15 @@
 # MDS music owner
 
+The [stop/callback scope recovery](exact/EXACT_MIDI_OPERATION_SCOPES.md) restores
+both complete bodies exactly: 225/127 bytes and three/one actual relocations.
+Validated stop-operation pointers and the callback header lifetime now occupy
+original homes; the header scope ends before the context-only pending fallback.
+Two owner compiles preserve exact release/pause. Four unchanged Oracle loops
+pass 828 direct cases and 54 connected checks across all six original songs.
+Native/MinGW rebuild, and VC4 reuses the final MIDI object with 35 unchanged
+objects. All 201 exact input closures verify. Play, parse, expansion and open
+remain candidates; original spelling and physical WinMM delivery remain unknown.
+
 The [complete loader/parser cleanup recovery](exact/EXACT_MDS_OPEN_CLEANUP.md)
 restores eight actual error gotos and all 130 bytes of common-cleanup compiler
 continuations, including 65 provider-unowned bytes. Parse now emits 868/868
@@ -39,8 +49,8 @@ succeed. Earlier investigations below retain their original evidence epochs.
 stream controller and completion callback. `src/music.cpp` owns five music
 controls. Portable, MinGW i686 and VC4 builds share these implementations.
 The Windows adapter supplies the typed Kernel32/WinMM cells; three file services now share the [file owner](exact/EXACT_FILE_SERVICES.md) with sound loading.
-Stop and callback still differ in local storage; play retains a control-flow
-gap in its compiler emission.
+Stop and callback now match completely. Play retains compiler-emission
+differences; the parser, converter and loader retain their documented gaps.
 
 ## REA evidence
 

@@ -8,7 +8,30 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores rectangle fill at 0x403230 exactly:
+The latest source checkpoint restores MIDI stop at 0x401A20 and completion
+callback at 0x401B10 exactly: 225/127 complete bytes and 3/1 relocations.
+Restore validated-operation pointer and callback header scopes in src/midi.cpp;
+header scope ends before context pending decrement/final function return.
+Names/types/executable tokens and five-argument stdcall ABI stay unchanged.
+Two canonical MT compiles preserve release/pause across 282 bytes. The first
+callback block-final return emitted an extra five-byte continuation; the retained
+stage has 132/127 bytes and 15 differences. Do not repeat that model. Four
+unchanged Oracle loops pass 828 direct MIDI cases plus 54 connected checks for
+six songs. Native/MinGW update; the final matching MIDI object links with 35
+unchanged objects. All 201 exact closures, 247 unchanged historical semantic
+scopes and 36 objects verify. Counts: 201 exact / 41512 code / 136 metadata;
+283 source-present; 270 known authored.
+Current products: `.analysis/midi-operation-scopes/product-verification.json`;
+seal: `.analysis/checkpoints/midi-operation-scopes-283-201/sha256.json`.
+See [exact MIDI scopes](../research/exact/EXACT_MIDI_OPERATION_SCOPES.md).
+Play 516/513 bytes with 169 differences, parse 868/868 with 40, expansion
+343/343 with 41 and open 530/522 with 443 remain candidates. Continue another
+meaningful source family; no artificial
+storage/name/order trials. Full campaign/render/audio and original spelling
+remain unproved; the reconstruction goal stays active. Push verified checkpoints
+to origin/main. REA feedback is optional and stays in the same /tmp document.
+
+The preceding source checkpoint restores rectangle fill at 0x403230 exactly:
 85 complete bytes/zero relocations; outer rect EBP-16 and operation-local 100-byte
 fx EBP-116. Three rotation counters now occupy original EBP-16 loop homes;
 remaining 4/6/6 red/green-home differences stay nonexact. One neutral fade

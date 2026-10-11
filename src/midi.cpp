@@ -316,25 +316,27 @@ DxBallInt dxball_pause_mds(DxBallMdsContext *context)
 DxBallInt dxball_stop_mds(DxBallMdsContext *context)
 {
     DxBallInt remaining;
-    DxBallMdsContext *current;
-    DxBallMidiHeader *header;
     if (context->magic != MDS_MAGIC) return 6;
-    current = context;
-    if (current->stream == 0) return 7;
-    current->state |= 1;
-    if (dxball_midi_out_reset(current->stream) != 0) {
-        current->state &= ~1UL;
-        return 5;
+    {
+        DxBallMdsContext *current;
+        DxBallMidiHeader *header;
+        current = context;
+        if (current->stream == 0) return 7;
+        current->state |= 1;
+        if (dxball_midi_out_reset(current->stream) != 0) {
+            current->state &= ~1UL;
+            return 5;
+        }
+        header = current->buffers;
+        for (remaining = current->buffer_count; remaining != 0; --remaining) {
+            dxball_midi_unprepare_header(current->stream, header, MIDI_HEADER_BYTES);
+            header = (DxBallMidiHeader *)((DxBallByte *)header +
+                (sizeof(*header) + header->buffer_length));
+        }
+        dxball_midi_stream_close(current->stream);
+        current->stream = 0;
+        current->state = 0;
     }
-    header = current->buffers;
-    for (remaining = current->buffer_count; remaining != 0; --remaining) {
-        dxball_midi_unprepare_header(current->stream, header, MIDI_HEADER_BYTES);
-        header = (DxBallMidiHeader *)((DxBallByte *)header +
-            (sizeof(*header) + header->buffer_length));
-    }
-    dxball_midi_stream_close(current->stream);
-    current->stream = 0;
-    current->state = 0;
     return 0;
 }
 
@@ -343,17 +345,19 @@ void DXBALL_DDCALL dxball_midi_callback(DxBallMidiHandle stream, DxBallUInt mess
     size_t instance, DxBallMidiHeader *header, size_t unused)
 {
     DxBallMdsContext *context;
-    DxBallMidiHeader *current_header;
     (void)stream; (void)instance; (void)unused;
-    current_header = header;
-    if (message != 0x3c9) return;
-    context = (DxBallMdsContext *)current_header->user;
-    /* Two consecutive reads/stores are present in the original instruction
-       dossier. Their original source spelling remains unresolved. */
-    context = (DxBallMdsContext *)current_header->user;
-    if ((context->state & 2) != 0 && (context->state & 1) == 0 &&
-        dxball_midi_stream_out(context->stream, current_header, MIDI_HEADER_BYTES) == 0)
-        return;
+    {
+        DxBallMidiHeader *current_header;
+        current_header = header;
+        if (message != 0x3c9) return;
+        context = (DxBallMdsContext *)current_header->user;
+        /* Two consecutive reads/stores are present in the original instruction
+           dossier. Their original source spelling remains unresolved. */
+        context = (DxBallMdsContext *)current_header->user;
+        if ((context->state & 2) != 0 && (context->state & 1) == 0 &&
+            dxball_midi_stream_out(context->stream, current_header, MIDI_HEADER_BYTES) == 0)
+            return;
+    }
     --context->pending_buffers;
     return;
 }

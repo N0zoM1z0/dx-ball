@@ -4985,7 +4985,7 @@ relocations = [
   { offset = 92, type = "DIR32", symbol = "_dxball_midi_stream_pause", addend = 0, target = 0x004413A0 },
 ]
 
-[candidates.stop-mds]
+[units.stop-mds]
 build = "midi"
 symbol = "_dxball_stop_mds"
 target_address = 0x401a20
@@ -4997,7 +4997,7 @@ relocations = [
   { offset = 189, type = "DIR32", symbol = "_dxball_midi_stream_close", addend = 0, target = 0x004413B0 },
 ]
 
-[candidates.midi-callback]
+[units.midi-callback]
 build = "midi"
 symbol = "_dxball_midi_callback@20"
 target_address = 0x401b10

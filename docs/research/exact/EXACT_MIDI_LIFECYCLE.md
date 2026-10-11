@@ -1,5 +1,11 @@
 # MIDI streams and music controls
 
+This note describes the original lifecycle checkpoint below. Subsequent import
+recovery makes release/pause and all five music controls exact; the latest
+[stop/callback scope recovery](EXACT_MIDI_OPERATION_SCOPES.md) also establishes
+their complete 225/127-byte bodies and five-argument callback ABI. Current
+nonexact gaps and product identities are recorded in that note and the handoff.
+
 Ten complete routines in [`src/midi.cpp`](../../../src/midi.cpp) now follow the
 original stream and music-object lifetime. Music resume, pause and restart
 compile exactly with VC4: three functions, 258 code bytes. The total is
