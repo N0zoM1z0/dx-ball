@@ -112,6 +112,16 @@ compile or owner-oracle replay. All four products remain byte-identical.
 
 Current completed product receipt: `.analysis/current-vc40-campaign/audio-verification.json`.
 Completed seal: `.analysis/checkpoints/current-digital-audio-285-206/sha256.json`.
+Additional current live MIDI unavailable-device receipt:
+`.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;
+four ordinary F5 requests each trace stream-open and MIDIERR_INVALIDSETUP,
+physical MIDI output devices0/mapper1, absent `/dev/snd/seq`. Music wrapper
+returns null, attached-ball game remains responsive, F6/menu/two natural0exits.
+105inputs/existingreader/four products/originals verify. No builds/newcases.
+First premature-focus startup failure retained; changed input order waitsmode4
+beforefocus/Space and succeeds. Original final log includes verified65byte
+X teardown tail beyond its reported prefix digest; do not rebase that receipt.
+Successful async MIDI/physical audio/fullcampaign remain unproved. See MIDI_OWNER.
 Rejected stage: `.analysis/paddle-cursor-load-order/rejected-order-stage/`.
 Cleanup only recorded probe copies after unique files are retained, then immutable
 hash-equal before/new-seal copies versus immediately preceding display-depth seal.

@@ -52,6 +52,41 @@ The Windows adapter supplies the typed Kernel32/WinMM cells; three file services
 Stop and callback now match completely. Play retains compiler-emission
 differences; the parser, converter and loader retain their documented gaps.
 
+## Current live unavailable-device control
+
+The original and current VC4 game now observe the same unavailable-MIDI path
+under640x480x24 Wine/Xvfb. Four ordinary F5 requests, two per game, each produce
+one passive WinMM `midiStreamOpen` trace and `MIDIERR_INVALIDSETUP`. Wine reports
+zero physical output devices for `winepulse.drv:MidiOut`; its mapper advertises
+one device but rejects opening it. The retained ALSA diagnostic identifies the
+absent `/dev/snd/seq`. This corroborates a host backend limitation rather than
+evidence of a missing source music operation.
+
+After each request the read-only SDK observes a null music wrapper pointer,
+mode1, active application, three lives, score0 and the still-attached ball.
+Ordinary F6 remains usable, Escape returns to the menu, and both game processes
+exit normally with code0. There are115 SDK reads:58 original and57 VC4. Each
+complete log contains four stream-open failures, including requests outside the
+two explicitly bounded F5 intervals. No stream-out/restart call occurs within
+those intervals. The selected random filenames and all-six-song coverage are
+not established by these traces.
+
+Private `.analysis/midi-device-fallback/verification.json` binds the existing
+reader,105 input identities, unchanged products, original assets, actual F5 log
+intervals and complete state records. The original's log has a byte-exact
+verified65-byte X teardown tail appended after its observation receipt; both
+the original receipt and final log digest are retained. No game/reader compile,
+new provider request, direct-case count or semantic/exact promotion is needed.
+The retained MIDI dossiers below still supply the static source contracts.
+
+The first probe prematurely set focus before initialization completed and
+timed out with no music action or WinMM call. That negative attempt is preserved.
+The completed control uses the existing successful initialization order,
+waiting for mode4 before focusing/sending Space. This resolves that probe's
+startup problem, without proving its exact host event cause or general focus
+recovery. Real asynchronous callback delivery, successful stream playback,
+waveforms and complete allocation-leak freedom remain unproved.
+
 ## REA evidence
 
 The two loader/parser dossiers were reused from the completed interactive run
