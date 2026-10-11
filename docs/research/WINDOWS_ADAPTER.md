@@ -347,6 +347,11 @@ reflected states at angle135/speed5, dx-4/dy-3. The observer stops at its declar
 completed interval; independent actual-input game shutdown still exits zero.
 This reduces retained raw records without claiming synchronized clocks or
 natural observer exit. Both cases reuse the same verified reader and products.
+Continuing paddle435 through the next brick and left wall gives181 complete
+ordered matches and one explicit VC4-only sample. Both clear tile285, gain
+another ten points, clamp/reverse at x20 and retain score20/lives3 with equal
+complete boards. The linked reflection dossier preserves the exact clamp states,
+asynchronous sampling difference and new controlled-replay Evidence.
 
 ## Natural life loss and persisted rankings
 

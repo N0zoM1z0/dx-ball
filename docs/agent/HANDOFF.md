@@ -100,11 +100,26 @@ hashes the full report; process sampling is partial at64. Private
 `.analysis/paddle-offset-reflection/` and its small seal reference unique raw
 streams and prior helper/product closures. Runtime copies are hash-verified
 and removed. No helper/game compile or source/exact/origin change.
-Next feedback entry:69. Investigate later wall/brick interactions, other speeds
-or another campaign question. Do not repeat successful menu, pause, first miss,
-paddle415 or paddle435 capture intervals unchanged. Synchronized clocks,
-full-frame physics/audio and whole-campaign fidelity remain open; the
-reconstruction goal stays active.
+Entry69 continues paddle435 through a second brick and left wall. Original181/
+VC4 182distinct full vectors share181in order; the VC4-only x336/y390 sample
+remains explicit, with original successor predecessor coordinates only.
+Both clear tile28511->0 after291, reach score20/lives3 and equal400-byte boards.
+Full pre-wall x20/y395 dx-4/dy3 counters2/1 and post-wall x20/y398 dx4/dy3
+counters3/2 agree; wall_bounces counts brick collisions as well as walls.
+Complete256/257-record streams total639,532bytes withzero malformed; derived
+comparison is compact61,061-byte JSON with unique complete vectors and index
+references. Intentional observer SIGTERM/-15 and independent gamezeroexit
+remain distinct. REA6.4 controlled-replay Evidence
+`ev_b4e031e71bf056d40b665e1449d1ec847a780ebf963933cb49bc752117a39a6a`
+hashes the full report, with partial process sampling at64. Private
+`.analysis/post-reflection-wall/` and its small seal reference unique raw
+carriers and prior closures; runtime copies are hash-verified and removed.
+No game/helper compilation or source/exact/origin change.
+Next feedback entry:70. Pursue independently grounded remaining CRT conversion
+dependencies or a demonstrated new game effect/speed/campaign question.
+Do not repeat successful menu, pause, first miss, paddle415, paddle435 or
+second-brick/left-wall captures unchanged. Synchronized clocks, full-frame
+physics/audio and whole-campaign fidelity remain open; the goal stays active.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.

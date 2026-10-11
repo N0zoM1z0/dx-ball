@@ -109,3 +109,48 @@ Hash-verified runtime copies again release 3,424,256 allocated bytes after
 shutdown. Existing source/exact/origin counts and all four products remain
 unchanged. Other angles, speeds, later walls/boards, synchronized clocks and
 physical rendering/audio remain open.
+
+## Second brick and left wall
+
+The next case continues the paddle435 trajectory through a second brick and
+the left wall. Both games clear tile285 from11 to0, after the earlier tile291
+change, and reach score20/lives3 with equal complete400-byte boards. At the
+second collision the complete ball is x180/y275, previous184/276, angle135,
+speed5, dx-4/dy3, bounce count2 and wall bounces1.
+
+Both then sample the complete pre-wall ball at x20/y395, dx-4/dy3, counters2/1,
+and the post-wall ball at x20/y398, previous20/395, dx4/dy3, counters3/2.
+This matches the recovered [physics routine](../../src/core.c): x20 is still
+in bounds; the next leftward movement crosses below20 and clamps back to20,
+reversing dx and incrementing both counters. The wall claim uses complete
+coordinates, direction and counters; `wall_bounces` also counts brick collisions.
+
+The original samples181 distinct complete vectors and VC4 samples182. All181
+common vectors agree in order. Only VC4 observes the complete x336/y390 vector;
+the original successor x332/y387 names336/390 as its predecessor coordinates.
+Those coordinates do not replace the missing complete vector. Both raw
+intervals and this unpaired observation are retained. This is sampled agreement,
+with no assertion of every simulation frame, atomic fields or clock parity.
+
+The complete interval streams contain256/257 records, zero malformed, totaling
+639,532raw bytes. The derived comparison stores each complete vector once,
+with profile and paired record indexes referencing it; its61,061-byte compact
+JSON preserves every observation and distinction without repeated payloads.
+Host receipt intervals span about9.91–18.32ms and6.43–21.12ms respectively;
+these do not measure target simulation ticks.
+
+REA6.4 controlled-replay Evidence:
+`ev_b4e031e71bf056d40b665e1449d1ec847a780ebf963933cb49bc752117a39a6a`.
+The34.730-second capture ends with child exit zero, hashes the complete
+10,728-byte report without filesystem omissions, and retains122raw terminal
+bytes in two frames. Process sampling remains explicitly partial at64 withzero
+failures and the recorder's executable-binding limits. Both games exit zero
+after independently observed menu/actual Escape input; observers are intentionally
+stopped with SIGTERM/-15 at the completed trajectory interval.
+
+Private `.analysis/post-reflection-wall/` retains the streams, exact byte indexes,
+scenario, report, Evidence and offline derivation. The small seal references raw
+carriers and prior helper/product closures without copying them. Hash-verified
+runtime copies release another3,424,256allocated bytes after shutdown. No game
+or helper compile, source edit or acceptance-count change. Later paddle
+interactions, speeds, boards/campaigns and physical audio remain unproved.
