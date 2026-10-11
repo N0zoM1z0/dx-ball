@@ -8,6 +8,34 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+Current-product real-Wine follow-up: source checkpoint b92e6ab VC4 executable
+passes the unchanged ball/pause/editor/save-load/zero-exit observe path. A fresh
+original control passes the same path and Wine/Xvfb 640x480x8 settings. There
+are 77 source and 79 original read-only SDK observations, five PNGs per profile,
+and identical full saved-bank hash b88441eb5e06676a106501a60a450b8046fa7b880e8f53ffe5f556ae75a42cd2.
+All 49 original assets remain unchanged. Source executable SHA-256 is
+4070daf5398f67a95975cca45ef98c2c8fdffeb4effe45acad2bc8d711bdd5be.
+Opening/editor/editor-reload full RGB buffers are equal. Both profiles show
+missing filled glyph pixels; cause unlocated. Pause/menu frames are unsynchronized
+(8125/11101 differing pixels), so do not infer source divergence or full graphics
+fidelity. Physical graphics/audio and full campaign remain unproved.
+Retain `.analysis/windows-play-intro-request-writes/` and seal
+`.analysis/checkpoints/intro-request-play-283-206/sha256.json`.
+Reader reuse first rejects an older receipt before launch; current retained
+reader matches `.analysis/windows-play-current-render/reader-compile.json`.
+No reader/game/source compile, owner Oracle replay or new REA session occurs.
+No source, exact or semantic counts change: 206/44,406/136, 283 present / 270 authored.
+Source-frontier inspection finds no new operation gap in the main frame,
+resource loader or rectangle overlap; do not trial declarations/capacities
+solely to force remaining storage choices. Current source checkpoint remains
+the request-write recovery below; current products remain its verified files.
+See [current real-play follow-up](../research/INTRO_REQUEST_PLAY.md).
+Temporary probe runtime copies are cleaned after unique exit files are sealed;
+only hash-equal immutable copies link to the immediately previous source seal.
+Continue concrete source reconstruction; commit AND push verified checkpoints.
+Optional REA feedback stays in the one existing /tmp doc. Goal remains active.
+
+
 The current checkpoint restores point animation's two observed unpassed request
 writes before redraw: size 100 at original EBP-116, zero at -36 (+80), using the
 existing 100-byte DxBallColorFillFx ABI. Independent clear-surface at 0x409F10 has

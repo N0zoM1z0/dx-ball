@@ -1,5 +1,13 @@
 # Intro-point pixel storage and timer exit
 
+This note describes the earlier pixel-pointer checkpoint. The
+[later request-write recovery](exact/INTRO_UNUSED_FILL_WRITES.md) restores the
+two actual stores previously omitted below, using the independently supported
+color-fill ABI while leaving original type/spelling inferred. The
+[current real-play follow-up](INTRO_REQUEST_PLAY.md) binds the new source
+product and an original control to live Wine input, editor persistence and
+exit checks. Historical counts and storage gaps below retain their epoch.
+
 The point controller at `0x40ED40` now retains the original consumed pixel
 pointer. It loads the descriptor's pixel base into that pointer, adds the
 combined row/pitch/point/offset displacement, then writes palette index 200.

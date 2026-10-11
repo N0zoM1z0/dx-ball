@@ -1,5 +1,14 @@
 # Windows adapter integration
 
+The [current intro-recovery play check](INTRO_REQUEST_PLAY.md) verifies source
+checkpoint b92e6ab and an original control through mouse/ball/pause/editor/save/
+reload/exit under the same Wine/Xvfb settings. It retains 77/79 read-only state
+samples and ten captures. Opening and both static editor scenes are pixel-equal;
+both profiles show the observed missing glyph-fill issue in this environment.
+Its cause and physical graphics/audio/full campaign fidelity remain unproved.
+No new compiler, source or exact claim follows; older checks below keep their
+own product identities.
+
 The Windows adapter now binds the maintained mode/gameplay/audio controllers
 to real Win32, DirectDraw, DirectSound and WinMM calls. Both VC4 and MinGW build
 experimental game EXEs. A bounded Wine check runs the original and both source
