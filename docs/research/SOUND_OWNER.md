@@ -1,5 +1,10 @@
 # DirectSound controller and WAV loading
 
+The [current digital-audio observation](CURRENT_DIGITAL_AUDIO.md) records
+nonzero stereo PCM from the current VC4 game's own PulseAudio sink input.
+It adds actual host-backend delivery evidence while retaining physical audio,
+waveform/mixing equivalence and asynchronous MIDI as separate open questions.
+
 The [initialization filename recovery](exact/SOUND_INIT_FILENAME_SCOPE.md)
 limits the existing filename workspace to the nonnull retained-sound reload
 branch. One MT compile restores the original response/filename homes and

@@ -34,6 +34,19 @@ binary are restored by hashes without a second compile; rejected stage/receipt
 remain private in the same folder. DO NOT recreate this duplicate functionality.
 No target writes, hooks or altered boards; full campaign still unproved here.
 
+Current VC4 digital-audio delivery is now observed independently during the
+same live campaign: one per-input Pulse monitor records5.948458seconds,
+262327finite samples/channel,44651/44539nonzero samples, peaks1.0 and RMS
+0.101348/0.071733. The selected sink-input owner matches the recorded game's
+PID/start ticks before/after; another application on the same silent sink is
+excluded by `--monitor-stream`. No target/routing changes or extra game run.
+The2,098,616PCMbytes are preserved byte-exactly in199,929bytegzip; rawcopyremoved.
+See [digital-audio evidence](../research/CURRENT_DIGITAL_AUDIO.md).
+No physical playback, waveform/mixing/pan/frequency or asynchronousMIDI claim.
+The guarded `.analysis/current-vc40-campaign/verify-finished.py` is prepared
+to consume final capture/full50initial-boardevents/report hashes after all
+recorded processes terminate. Do not invoke another producer for visibility.
+
 Current-product natural game-over at640x480x24 passes original219/VC4234/
 MinGW213 read-only states: nine actual life losses, `rex`/Backspace/Shift-A to
 `reA`, independent660-byte ranking expectations in memory/file, fresh-process
@@ -75,8 +88,8 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | Exact code / separate metadata bytes | 44,406 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current completed product receipt: `.analysis/gameover-display-depth/product-verification.json`.
-Completed seal: `.analysis/checkpoints/gameover-display-depth-285-206/sha256.json`.
+Current completed product receipt: `.analysis/current-vc40-campaign/audio-verification.json`.
+Completed seal: `.analysis/checkpoints/current-digital-audio-285-206/sha256.json`.
 Rejected stage: `.analysis/paddle-cursor-load-order/rejected-order-stage/`.
 Cleanup only recorded probe copies after unique files are retained, then immutable
 hash-equal before/new-seal copies versus immediately preceding display-depth seal.
