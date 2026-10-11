@@ -47,43 +47,42 @@ DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
     DxBallInt mapped = 0;
     DxBallMidiHandle file = (DxBallMidiHandle)-1, mapping = 0;
 
-    do {
-        if ((mode & 3) == 0 || (mode & 3) == 3) {
-            result = 4;
-            break;
+    if ((mode & 3) == 0 || (mode & 3) == 3) {
+        result = 4;
+        goto done;
+    }
+    context = (DxBallMdsContext *)dxball_local_alloc(0x40, sizeof(*context));
+    if (context == NULL) {
+        result = 1;
+        goto done;
+    }
+    context->magic = 0x4953444dUL;
+    context->stream = 0;
+    context->pending_buffers = 0;
+    if ((mode & 2) == 0) {
+        mapped = 1;
+        file = dxball_file_create((const char *)input, 0x80000000UL,
+                                      1, NULL, 3, 0x80, 0);
+        input = NULL;
+        if (file == (DxBallMidiHandle)-1) {
+            result = 2;
+            goto done;
         }
-        context = (DxBallMdsContext *)dxball_local_alloc(0x40, sizeof(*context));
-        if (context == NULL) {
-            result = 1;
-            break;
+        length = dxball_file_size(file, NULL);
+        mapping = dxball_midi_create_mapping(file, NULL, 2, 0, 0, NULL);
+        if (mapping == 0) {
+            result = 2;
+            goto done;
         }
-        context->magic = 0x4953444dUL;
-        context->stream = 0;
-        context->pending_buffers = 0;
-        if ((mode & 2) == 0) {
-            mapped = 1;
-            file = dxball_file_create((const char *)input, 0x80000000UL,
-                                          1, NULL, 3, 0x80, 0);
-            input = NULL;
-            if (file == (DxBallMidiHandle)-1) {
-                result = 2;
-                break;
-            }
-            length = dxball_file_size(file, NULL);
-            mapping = dxball_midi_create_mapping(file, NULL, 2, 0, 0, NULL);
-            if (mapping == 0) {
-                result = 2;
-                break;
-            }
-            input = dxball_midi_map_view(mapping, 4, 0, 0, 0);
-            if (input == NULL) {
-                result = 2;
-                break;
-            }
+        input = dxball_midi_map_view(mapping, 4, 0, 0, 0);
+        if (input == NULL) {
+            result = 2;
+            goto done;
         }
-        result = dxball_parse_mds(context, input, length);
-    } while (0);
+    }
+    result = dxball_parse_mds(context, input, length);
 
+done:
     if (result != 0) {
         if (context != NULL) dxball_local_free(context);
     } else {
@@ -158,14 +157,14 @@ DxBallInt dxball_parse_mds(DxBallMdsContext *context, const void *memory,
         header->next = NULL;
         if (length < 8) {
             result = 3;
-            break;
+            goto done;
         }
         block = *(const DxBallMdsBlock *)memory;
         length -= sizeof(block);
         memory = (const DxBallByte *)memory + sizeof(block);
         if (context->format.buffer_capacity < block.bytes || block.bytes > length) {
             result = 3;
-            break;
+            goto done;
         }
         if ((context->format.flags & 1) == 0) {
             header->bytes_recorded = block.bytes;
@@ -175,7 +174,7 @@ DxBallInt dxball_parse_mds(DxBallMdsContext *context, const void *memory,
             input.buffer_length = input.bytes_recorded = block.bytes;
             if (!dxball_expand_mds_events(&input, header)) {
                 result = 3;
-                break;
+                goto done;
             }
         }
         length -= block.bytes;

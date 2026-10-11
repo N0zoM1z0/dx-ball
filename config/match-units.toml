@@ -5101,12 +5101,12 @@ boundary_evidence = "docs/research/exact/EXACT_MDS_PARSER.md; complete 522/868-b
 relocations = [
   { offset = 383, type = "DIR32", symbol = "_dxball_midi_global_alloc", addend = 0, target = 0x00441294 },
   { offset = 390, type = "DIR32", symbol = "_dxball_midi_global_lock", addend = 0, target = 0x00441290 },
-  { offset = 638, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x00416610 },
-  { offset = 677, type = "REL32", symbol = "_dxball_expand_mds_events", addend = 0, target = 0x00401580 },
-  { offset = 769, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
-  { offset = 776, type = "DIR32", symbol = "_dxball_midi_global_unlock", addend = 0, target = 0x0044128C },
-  { offset = 789, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
-  { offset = 796, type = "DIR32", symbol = "_dxball_midi_global_free", addend = 0, target = 0x00441284 },
+  { offset = 648, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x00416610 },
+  { offset = 687, type = "REL32", symbol = "_dxball_expand_mds_events", addend = 0, target = 0x00401580 },
+  { offset = 784, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
+  { offset = 791, type = "DIR32", symbol = "_dxball_midi_global_unlock", addend = 0, target = 0x0044128C },
+  { offset = 804, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
+  { offset = 811, type = "DIR32", symbol = "_dxball_midi_global_free", addend = 0, target = 0x00441284 },
 ]
 
 [candidates.expand-mds-events]
@@ -5178,16 +5178,16 @@ target_address = 0x401000
 size = 522
 boundary_evidence = "docs/research/exact/EXACT_BITMAP_LOADER.md; complete saved976 Bitmap dossier and522 MDS span, shared File3/Local2 physical import cells, distinct422798 prefix and genuine CRT targets"
 relocations = [
-  { offset = 90, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x00441280 },
-  { offset = 192, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x0044127C },
-  { offset = 236, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x00441270 },
-  { offset = 259, type = "DIR32", symbol = "_dxball_midi_create_mapping", addend = 0, target = 0x004412B8 },
-  { offset = 302, type = "DIR32", symbol = "_dxball_midi_map_view", addend = 0, target = 0x004412B4 },
-  { offset = 344, type = "REL32", symbol = "_dxball_parse_mds", addend = 0, target = 0x00401210 },
-  { offset = 380, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x0044126C },
-  { offset = 423, type = "DIR32", symbol = "_dxball_midi_unmap_view", addend = 0, target = 0x00441268 },
-  { offset = 443, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x00441264 },
-  { offset = 463, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x00441264 },
+  { offset = 95, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x00441280 },
+  { offset = 202, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x0044127C },
+  { offset = 251, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x00441270 },
+  { offset = 274, type = "DIR32", symbol = "_dxball_midi_create_mapping", addend = 0, target = 0x004412B8 },
+  { offset = 322, type = "DIR32", symbol = "_dxball_midi_map_view", addend = 0, target = 0x004412B4 },
+  { offset = 369, type = "REL32", symbol = "_dxball_parse_mds", addend = 0, target = 0x00401210 },
+  { offset = 405, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x0044126C },
+  { offset = 448, type = "DIR32", symbol = "_dxball_midi_unmap_view", addend = 0, target = 0x00441268 },
+  { offset = 468, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x00441264 },
+  { offset = 488, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x00441264 },
 ]
 
 [units.claim-instance]

@@ -1,10 +1,20 @@
 # MDS music owner
 
+The [complete loader/parser cleanup recovery](exact/EXACT_MDS_OPEN_CLEANUP.md)
+restores eight actual error gotos and all 130 bytes of common-cleanup compiler
+continuations, including 65 provider-unowned bytes. Parse now emits 868/868
+bytes with forty unmasked frame-storage differences; all 231 instruction
+operands and CFG targets correspond through twelve mapped frame references.
+Open remains 530/522 with 443 differences and an unresolved parameter-type
+interpretation. Release and pause remain exact. Final selected checks pass
+253 parser cases, 284 loader cases, eighty wrapper cases and 134 separate
+connected checks. Other suites retain their historical scopes and products.
+
 The [current MIDI lowering recovery](exact/EXACT_MIDI_PLAY_LOWERING.md) uses one
 shared C++ owner with C linkage and restores the final restart error goto.
 The compiler naturally generates the four observed cleanup tail stubs and
 skipped jumps. Play remains516/513bytes with169 full-span differences; release
-and pause remain exact. Current Native/original and actual emitted MIDI/music
+and pause remain exact. That lowering checkpoint's Native/original and actual emitted MIDI/music
 objects pass the same2,109 maintained cases plus134 connected checks. Historical
 epochs below retain their prior source paths, products and scopes.
 
@@ -13,7 +23,7 @@ epochs below retain their prior source paths, products and scopes.
 The [MDS loader and converter recovery](exact/EXACT_MDS_PARSER.md) restores
 the 12-byte format record, eight-byte block record and full input MIDIHDR.
 Open, parse and event expansion preserve the original cursor and cleanup
-order. The converter is now 343/343 bytes with 38 local-storage differences;
+order. At that checkpoint the converter is 343/343 bytes with 38 local-storage differences;
 all three remain candidates. The existing MIDI Oracle passes 2,109 direct
 cases / 134 connected checks, and all 99 affected accepted units remain exact.
 
