@@ -16,7 +16,20 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest origin batch independently verifies two external COFF ABS constants
+The latest render audit explains the complete dirty-restoration candidate:
+827/846 bytes,198 instructions,22 branches,2 COM calls,61 actual relocations.
+All19 page/index producers form equal addresses through every CFG successor;
+partial EFLAGS writes and actual scratch/void-exit ABI limits are explicit.
+No new source gap is identified;746 strict differences remain.54 unchanged
+restore cases pass in the initial stage; only36 private original/native COM
+mutation cases run after correcting their reduced-global wrapper lookup.
+Page/count/presentation/surface changes all retain the observed live reads.
+Verified fixture is reused; no compiler/provider/gameplay replay or source edit.
+See [complete region flow](../research/exact/EXACT_REGION_ADDRESS_FLOW.md), private
+`.analysis/region-address-flow/`, and immutable seal
+`.analysis/checkpoints/region-address-flow-283-186/sha256.json`.
+
+The preceding origin batch independently verifies two external COFF ABS constants
 and the complete relocation-free536-byte MBCS initialized section. Its four
 actual external definitions unlock three complete object-local CRT sections:
 58/44/466 bytes,11 relocations, all zero differences. Runtime total becomes79;
@@ -115,7 +128,15 @@ nonunique zero storage are not guessed. The remaining exact16-byte no-op at
 0x40CC20 still lacks authored-origin/active-use proof. Address range alone is
 not an authored denominator.
 
-Investigate genuine consumers/control flow in `capture-sprite`, `restore-regions`
+Dirty restoration's19 abstract change groups are completely explained by
+page/index producer scheduling; retire it as a source-gap hypothesis. The
+latest proof binds the actual object used by the current VC4 game. All270
+currently classified authored entries have source;35 lack their own semantic
+ledger row, but many already have exact or connected private evidence. This is
+not a complete authored denominator. Reuse existing owner evidence rather than
+rerunning a check merely to fill a ledger count.
+
+Investigate genuine consumers/control flow in `capture-sprite`
 or the larger ball/render owners. Their larger abstract change groups need
 actual instruction/caller/typed-storage inspection; register scheduling or an
 inline table can explain a group without a source gap. Prefer a complete coherent
@@ -189,7 +210,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is46; use47 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is47; use48 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -197,3 +218,8 @@ the preceding product-specific Wine observations and palette-phase limits. The
 latest origin batch adds one complete536-byte REA read (5205-byte carrier); raw
 and normalized results are identical1168-byte compact projections. One provider
 RSS sample540172KiB/CPU0 is not a peak or verified runtime heap-cap measurement.
+The latest render audit reuses historical1896724-byte Evidence; its complete
+assembly projection is6682 bytes. These are retained bytes, not current REA
+transport/tokens. Final36 private mutation checks take0.337s locally; initial
+54 unchanged checks have a separate saved terminal-stage receipt. No new
+provider/compiler or measured RSS/token consumption occurs in that audit.

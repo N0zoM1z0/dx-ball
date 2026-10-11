@@ -54,6 +54,13 @@ particle drawing remains a complete 311/320-byte candidate with 212 differences.
 All real relocations are applied. Generated literal names are refreshed against
 their complete contents, and switch labels against their actual code sections.
 
+The later [complete dirty-region flow audit](EXACT_REGION_ADDRESS_FLOW.md)
+explains all198 instructions/22 branches/2 COM calls/61 relocations. Its19
+producer-order groups form equal page/index addresses; no new source gap is
+identified.54 unchanged cases and36 controlled original/native COM mutation
+cases pass. The846/827 candidate remains nonexact with746 strict differences;
+do not retry local layout or spelling to force register scheduling.
+
 ## Build and behavior
 
 The shared rectangle declaration affects 23 compiler recipes, compiled together
