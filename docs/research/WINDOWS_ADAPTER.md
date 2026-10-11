@@ -267,6 +267,31 @@ sound or asynchronous MIDI delivery. Both controls share Wine/Xvfb's 8-bit
 palette environment. Preserve the differing images and the indexed-resource
 localization when following up on render fidelity.
 
+## Current complete menu frames at naturally equal phases
+
+A focused follow-up observes the original executable and the current VC4 game
+from the PCX packet-loop checkpoint. Real opening input reaches menu mode zero;
+the existing SDK reader observes that mode before and after each capture
+interval. Each process supplies 32 unmodified complete 640 by 480 captures,
+with 31 distinct RGB frames. Five original/current pairs match over all
+307,200 decoded pixels, independently comparing every RGB byte after selecting
+equal hashes. No cropping, recoloring or palette normalization is applied.
+
+This strengthens the palette-phase explanation with complete equal menu frames
+from the current product. It does not prove synchronized animation clocks:
+matching frames occur naturally in separate asynchronous samples. It also
+does not establish pause, physical Windows display, audio/MIDI or whole-game
+fidelity. Both controls use Wine and the same Xvfb 8-bit environment.
+
+The current VC4 executable identity is
+`0302cf38a82c7d9843af135e2c054b26d2dd5c7f1d12d53199f1b1584c3a4b28`.
+Both games exit normally with code zero. All 49 originals and the four current
+products remain unchanged. No compiler or game build is needed. Private
+complete frames, state observations, input identities and paired comparisons
+are retained in `.analysis/menu-palette-phase/report.json`; the two temporary
+working copies are removed only after hash verification. This is direct
+runtime observation, without a new REA Evidence claim or function acceptance.
+
 ## Natural life loss and persisted rankings
 
 `tests/test_windows_gameover.py` reuses the reviewed game-over state addresses

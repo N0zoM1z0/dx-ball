@@ -31,7 +31,19 @@ actual FPinit callback member without a new provider session: full sections
 absolute fields are independently bound. No callback/origin authority changes.
 See the callback-placement section in
 [complete initialized CRT objects](../research/CRT_INITIALIZED_OBJECTS.md)
-and `.analysis/crt-fpinit-callbacks/preflight.json`. Next entry is 64.
+and `.analysis/crt-fpinit-callbacks/preflight.json`.
+
+Entry 64 observes the current PCX-checkpoint VC4 executable and original menu:
+32 natural complete captures each, 31 distinct RGB frames each, five matching
+640 by 480 pairs with every decoded pixel equal. Opening input and read-only
+SDK mode observations bracket the menu interval; both games exit with code
+zero. No screenshot normalization, build or full gameplay replay. Temporary
+working copies are hash-verified and removed; unique captures stay in
+`.analysis/menu-palette-phase/`. This strengthens menu palette-phase equivalence
+but does not prove synchronized clocks, pause or full physical display/audio
+fidelity. See [Windows adapter](../research/WINDOWS_ADAPTER.md). Next entry 65
+can observe deterministic attached-ball pause frames at naturally equal phases,
+using actual input and read-only state; do not rerun the successful menu sample.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
