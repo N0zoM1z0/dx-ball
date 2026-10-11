@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Real Wine gameplay/editor checks, observing state without modifying the target."""
+import argparse
 import json
 import os
 from pathlib import Path
@@ -209,14 +210,18 @@ def observe(profile, env, reports):
             captures['editor'], _ = capture_ready(output, 'editor', env)
             command(['xdotool', 'key', 'BackSpace'], env)
             observer.wait('editor-cleared', lambda state: state['board_tiles'] == 0)
-            click(env, 67, 392)
-            observer.wait('editor-tile2-selected', lambda state: state['editor_selected_tile'] == 2)
+            command(['xdotool', 'mousemove', '67', '392', 'mousedown', '1'], env)
+            try:
+                observer.wait('editor-tile2-selected', lambda state: state['editor_selected_tile'] == 2)
+            finally:
+                command(['xdotool', 'mouseup', '1'], env)
+            observer.wait('editor-choice-released', lambda state: state['mouse_action'] == 0)
             command(['xdotool', 'keydown', 'ctrl', 'mousemove', '35', '57', 'mousedown', '1'], env)
             observer.wait('editor-control-held', lambda state: state['control_pressed'] == 1)
-            time.sleep(0.25)
+            observer.wait('editor-first-cell-painted', lambda state: state['board_tiles'] == 2)
             command(['xdotool', 'mousemove', '65', '57'], env)
-            observer.wait('editor-second-cell', lambda state: state['mouse_x'] == 65)
-            time.sleep(0.25)
+            observer.wait('editor-second-cell-painted', lambda state: state['mouse_x'] == 65
+                          and state['board_tiles'] == 0x202)
             command(['xdotool', 'mouseup', '1', 'keyup', 'ctrl'], env)
             observer.wait('editor-release', lambda state: state['control_pressed'] == 0 and state['mouse_action'] == 0)
             command(['xdotool', 'key', 's'], env)
@@ -287,6 +292,10 @@ def reader_identity():
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
+                        help='Xvfb depth; 24 renders the original palette correctly here')
+    args = parser.parse_args()
     limit_cpu()
     if os.environ.get('DXBALL_PLAY_DISPLAY') != '1':
         lock = session_lock()
@@ -295,8 +304,9 @@ def main():
                         '-o', str(READER)], check=True, timeout=60)
         lock.close()
         env = os.environ.copy(); env['DXBALL_PLAY_DISPLAY'] = '1'
-        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x8',
-                        str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve())],
+        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
+                        str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()),
+                        '--display-depth', str(args.display_depth)],
                        env=env, check=True, timeout=300)
         return
     lock = session_lock()
@@ -307,6 +317,7 @@ def main():
         observations.append(observe(profile, environment(), reports))
         print(profile + ': real ball/pause/editor/zero-exit checks passed', flush=True)
     report = {'status': 'pass', 'kind': 'real-Wine-ball-pause-editor-control-runs',
+              'display': 'Xvfb 640x480x' + str(args.display_depth),
               'observations': observations, 'inputs': input_identities(), **reader_identity(),
               'vc40_map_sha256': digest(ROOT / 'build/vc40/dxball.map'),
               'mingw_dll_sha256': digest(ROOT / 'build/windows-i686/libdxball_core.dll'),
@@ -315,7 +326,7 @@ def main():
                               'Scalar/ball reads are sequential, not an atomic frame snapshot.',
                               'Input/state predicates verify paths; random trajectories are not synchronized.',
                               'No physical audio, asynchronous MIDI, all-board/full-game fidelity claim.',
-                              'Original and source controls share Wine/Xvfb palette limitations.']}
+                              'Wine/Xvfb presentation does not establish physical display fidelity.']}
     (ROOT / 'build/reports/windows-play.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Real gameplay/editor controls passed; full bank bytes and live state retained.')
 

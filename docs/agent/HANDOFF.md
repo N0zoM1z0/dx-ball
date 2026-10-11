@@ -8,6 +8,44 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
+Current runtime checkpoint locates missing filled glyph/title pixels in the
+historical8-bit Xvfb configuration. Same unmodified original on640x480x24 renders
+complete text; game still requests original8-bit DirectDraw mode. Prior failed
+800x600x24 changed resolution too. Runtime/play checks now default24-bit with
+--display-depth8 retained. See [display depth](../research/WINDOWS_DISPLAY_DEPTH.md).
+Original opening-only check41states/zeroexit; extended original103/VC4115/
+MinGW116states withfivecaptures each pass actual ball/pause/resume/editor/save/
+reload/zeroexit and unchanged49assets. Full saved banks identical b88441...cd2.
+Both source opening and initial editor full307200pixel RGB buffers equal original.
+Reload186differences entirely at red/white original pointer inclusive65,57..86,76;
+presentation phase unsynchronized, not source-defect or whole-frame equality.
+Pause18111 and menu18344/13446 differences remain unmasked/unsynchronized.
+First original extended attempt misses fixed0.25s tile press; preserved failure.
+Harness now waits for actual selection, release and two paint writes before
+moving/releasing, preserving fixtures/coordinates and read-only SDK access.
+Original andVC4 complete; initial third-profile MinGW launch exits before window
+because core imports undeployed libwinpthread-1.dll. Preserve completed controls
+from retained states/captures/fullbanks/pass-output; do not replay successful runs.
+MinGW-only core link adds-static; DLL imports onlyddraw/dsound/Kernel32/msvcrt.
+One selected relink leaves43existingobject hashes unchanged; zero source compiles.
+Only repairedMinGW reruns and passes. Native/VC4 products unchanged. Reader
+reused by complete pinned identity; no reader/legacy/provider/oracle repetitions.
+Current products `.analysis/windows-glyph-display-depth/product-verification.json`;
+seal `.analysis/checkpoints/windows-glyph-display-depth-285-206/sha256.json`.
+Counts unchanged206/44406/136,285present/270authored/249semantic,117/42/99origins.
+Historical249 scopes/cases preserved; refresh CMake-only inventories, no replay.
+New public changes onlyMinGW link option, runtime/play display configuration and
+actual-input acknowledgement, docs, semantic inventory; no game-source forcing.
+Goal active: full authored denominator/source identity, physical display/audio,
+MIDI/full campaign and synchronized moving frames unproved. New pointer capture
+is a bounded presentation question; do not infer a source bug from unsynced frame.
+Cleanup recorded probe copies after unique exit files retained; hash-equal immutable
+before/seal copies only versus preceding random-runtime seal. Public/current
+inodes independent. Feedback optional; existing single/tmp document only.
+Commit ANDpush verified checkpoints. Continue evidenced reconstruction.
+
+The preceding checkpoint follows.
+
 Current source fixes a real portable-default RNG divergence: seed1 gives original
 41/18467/6334/26500/19169 versus old native17767/9158/6249/18547/23633.
 New src/random.c/h recover original unsigned32 state initialized1 at0x4230F4,

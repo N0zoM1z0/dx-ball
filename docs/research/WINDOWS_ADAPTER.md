@@ -139,8 +139,13 @@ these observations do not upgrade function-level exact acceptance or establish
 frame-equivalent rendering across the game.
 
 The initial 800x600x24 environment could not satisfy the original 640x480x8
-display-mode request. The 640x480x8 environment does, but its palette artifacts
-also appear in the original control. The test waits for nonblank presentation
+display-mode request. The historical 640x480x8 environment does, but its palette
+artifacts also appear in the original control. The later
+[display-depth comparison](WINDOWS_DISPLAY_DEPTH.md) holds resolution at
+640x480 and uses a 24-bit host screen: the original mode request succeeds and
+filled text/title pixels render correctly. Runtime/play checks now default to
+that configuration; `--display-depth 8` retains historical reproduction.
+The test waits for nonblank presentation
 before forcing X focus: changing focus during initialization left the original
 control at a blank window. That is a harness limitation, not a source fix.
 The Wine logs also report an unavailable ALSA sequencer. Physical audio and

@@ -1,5 +1,11 @@
 # Current intro recovery in real Wine play
 
+The later [display-depth comparison](WINDOWS_DISPLAY_DEPTH.md) locates the
+missing glyph/title pixels below in the eight-bit Xvfb configuration. The
+unchanged original renders complete text on a 640-by-480 24-bit host screen.
+The historical captures and original executable identities in this note stay
+unchanged; they do not describe the later display configuration.
+
 The VC4 game built from source checkpoint `b92e6ab` passes the unchanged
 `observe(vc40)` opening/menu/ball/pause/editor/exit path after the
 [point animation request-write recovery](exact/INTRO_UNUSED_FILL_WRITES.md).

@@ -64,9 +64,9 @@ if(WIN32)
     target_link_libraries(dxball_core PRIVATE dsound ddraw)
 endif()
 if(MINGW)
-    # Keep integer-runtime helpers in the DLL so the game and inspectors do
-    # not need a separately deployed compiler runtime DLL for 64-bit division.
-    target_link_options(dxball_core PRIVATE -static-libgcc -static-libstdc++)
+    # Keep compiler runtime dependencies in the DLL, including the POSIX
+    # toolchain's pthread support pulled in by the static C++ runtime.
+    target_link_options(dxball_core PRIVATE -static -static-libgcc -static-libstdc++)
 endif()
 target_include_directories(dxball_core PUBLIC src)
 set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Observe real game startup/input/shutdown under Wine, with original controls."""
+import argparse
 import json
 import os
 from pathlib import Path
@@ -122,6 +123,10 @@ def difference(left, right, rectangle):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
+                        help='Xvfb depth; 24 renders the original palette correctly here')
+    args = parser.parse_args()
     limit_cpu()
     if os.environ.get('DXBALL_RUNTIME_DISPLAY') != '1':
         for tool in ('xvfb-run', 'wine', 'xdotool', 'import', 'convert'):
@@ -130,8 +135,9 @@ def main():
         env = os.environ.copy()
         env['DXBALL_RUNTIME_DISPLAY'] = '1'
         # xvfb-run handles an occupied display and auth; automatic -displayfd fails here.
-        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x8',
-                        str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve())],
+        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
+                        str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()),
+                        '--display-depth', str(args.display_depth)],
                        env=env, check=True, timeout=180)
         return
     lock = session_lock()
@@ -158,12 +164,12 @@ def main():
                 'scripts/windows_runtime.py', 'scripts/legacy_toolchain.py',
                 'scripts/resource_limits.py', 'tests/test_windows_runtime.py']
     report = {'status': 'pass', 'kind': 'real-Wine-window-input-shutdown-probe',
-              'display': 'Xvfb 640x480x8', 'observations': observations,
+              'display': 'Xvfb 640x480x' + str(args.display_depth), 'observations': observations,
               'pixel_comparisons': comparisons,
               'inputs': {name: digest(ROOT / name) for name in sources},
               'originals': verified_originals(),
               'limitations': ['Unsynchronized frames; pixel differences are reported, not masked or exact claims.',
-                              '8-bit Wine/Xvfb palette artifacts also affect the original control.',
+                              'Wine/Xvfb presentation does not establish physical display fidelity.',
                               'No physical audio or asynchronous MIDI delivery claim.',
                               'No complete-game, editor, focus-recovery or all-board acceptance.']}
     (ROOT / 'build/reports/windows-runtime.json').write_text(json.dumps(report, indent=2) + '\n')
