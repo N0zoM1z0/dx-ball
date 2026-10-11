@@ -70,3 +70,42 @@ seal without a second copy. Hash-verified temporary runtime copies are removed
 after both processes stop, releasing 3,424,256 allocated bytes. Feedback on REA
 performance, response size and usability continues in the single existing
 `/tmp/dxball_rea_feedback_20261010.md`.
+
+## Different paddle offset
+
+A subsequent actual-input case moves the paddle to x435 and observes a
+different angle bin. All 116 distinct complete vectors agree in order, including
+32 reflected vectors; there are no unpaired vectors. The first reflected state
+is x404/y441, previous403/439, angle135/speed5, dx-4/dy-3, bounce count1 and wall
+bounces0. Both reach x280/y348, previous284/351, with score10/lives3. Complete
+400-byte board effects remain equal. This exercises a different outcome of the
+recovered [paddle reflection routine](../../src/balls.c), without changing it.
+
+The existing reader is reused. After the required rising state is received,
+the harness intentionally stops only its owned read-only observer group, then
+uses independent one-shot observations and actual Escape input to check menu
+and game shutdown. Both games exit zero. The observer exits with SIGTERM/-15,
+explicitly recorded as `observer_interval_complete`; it is not claimed to have
+exited naturally or observed the later menu/shutdown interval.
+
+The complete declared observation intervals retain 165 original and 167 VC4
+records, zero malformed, totaling 413,774 raw bytes. Every raw byte extent and
+input identity verifies. This avoids irrelevant later SDK records: retained
+raw size is about 65.7 percent below the earlier paddle415 case despite more
+reflected samples. The different input and intervals do not constitute an
+isolated performance benchmark. Host receipt intervals span about 9.42 to
+18.67 ms for the original and 6.24 to 17.80 ms for VC4; buffered host delivery
+does not determine target simulation ticks.
+
+REA6.4 controlled-replay Evidence:
+`ev_4effb5e70464b80590d8d1b792e0b197c25de65b583ddcab7b6b078662c00836`.
+The 33.432-second capture ends with child exit zero and hashes the complete
+10,680-byte report without filesystem omissions. Process sampling is explicitly
+partial at64 with zero failures; recorder binding limitations remain. Private
+`.analysis/paddle-offset-reflection/` retains complete interval streams, indexes,
+report, scenario, Evidence and offline derivation. Its seal references raw
+carriers and the earlier helper/compiler/product closures without copying them.
+Hash-verified runtime copies again release 3,424,256 allocated bytes after
+shutdown. Existing source/exact/origin counts and all four products remain
+unchanged. Other angles, speeds, later walls/boards, synchronized clocks and
+physical rendering/audio remain open.

@@ -88,10 +88,23 @@ is explicitly partial at64, distinct from retained SDK stream coverage.
 Temporary runtime copies are hash-verified and removed; unique streams remain
 in `.analysis/first-paddle-reflection/`, referenced without extra raw copies by
 its small seal. See [first paddle reflection](../research/FIRST_PADDLE_REFLECTION.md).
-Next feedback entry:68. Investigate a different reflection angle, speed or
-campaign question; do not repeat successful menu, pause, first miss or paddle415
-capture intervals unchanged. Synchronized clocks/full-frame physics/audio
-and whole-campaign fidelity remain open; the reconstruction goal stays active.
+Entry68 observes paddle435: all116 complete vectors agree in order, including
+32reflected states at angle135/speed5, dx-4/dy-3. Both rise to x280/y348 with
+score10/lives3 and equal complete board effects. Intentional observer stop after
+the completed trajectory interval records SIGTERM/-15; independently checked
+games still exit zero after actual Escape/menu input. Do not claim natural
+reader exit or coverage of later shutdown. Complete165/167-record interval
+streams total413,774bytes, withzero malformed. REA6.4 controlled-replay Evidence
+`ev_4effb5e70464b80590d8d1b792e0b197c25de65b583ddcab7b6b078662c00836`
+hashes the full report; process sampling is partial at64. Private
+`.analysis/paddle-offset-reflection/` and its small seal reference unique raw
+streams and prior helper/product closures. Runtime copies are hash-verified
+and removed. No helper/game compile or source/exact/origin change.
+Next feedback entry:69. Investigate later wall/brick interactions, other speeds
+or another campaign question. Do not repeat successful menu, pause, first miss,
+paddle415 or paddle435 capture intervals unchanged. Synchronized clocks,
+full-frame physics/audio and whole-campaign fidelity remain open; the
+reconstruction goal stays active.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.

@@ -342,6 +342,11 @@ vectors at angle105/speed5, dx-1/dy-4. Score10/lives3 and complete board effects
 agree. Both games and reused readers exit zero; no compilation is needed.
 See [first paddle reflection](FIRST_PADDLE_REFLECTION.md) for retained streams,
 reflection parameters, sampling limits and controlled-replay Evidence.
+A different paddle435 case matches all116 complete vectors, including32
+reflected states at angle135/speed5, dx-4/dy-3. The observer stops at its declared
+completed interval; independent actual-input game shutdown still exits zero.
+This reduces retained raw records without claiming synchronized clocks or
+natural observer exit. Both cases reuse the same verified reader and products.
 
 ## Natural life loss and persisted rankings
 
