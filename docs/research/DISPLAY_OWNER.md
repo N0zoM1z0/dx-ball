@@ -1,5 +1,15 @@
 # Lightning and frame drawing
 
+The later [complete crop-chain audit](exact/EXACT_LIGHTNING_CROP_CHAIN.md)
+retains the current source. Both original and current arithmetic include shared
+inverse/negation steps omitted by a difference-only summary. The complete
+1057/1067-byte candidate has297/302 instructions,25 branches,22 calls and51
+relocations, with992 strict differences. One direct-subtraction diagnostic is
+rejected and its source/object restored without recompiling.197 unchanged
+last-brick cases and162 overlay calls pass on the final restored current
+product; the separate historical multi-tile case is not rerun. No new exact or
+source count, provider, game link or physical-runtime observation follows.
+
 The current countdown uses the independent typed WinMM import in
 `clock_api.h`. Instructions at `0x415F56` and `0x415F63` establish time before
 RNG; `0x415F7F` samples time again. VC4 evaluates the initial combined

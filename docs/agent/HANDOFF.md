@@ -16,7 +16,23 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest origin batch binds actual COFF symbol indices by hash-identified
+The latest countdown audit rejects direct crop subtraction as unsupported
+source simplification: the original also has shared inverse/negation steps
+absent from unequal-group summaries. Current source/object are restored by
+their exact before identities after one diagnostic `/MT` compilation; no
+Native/MinGW build or game link. All nine affected exact units pass in that
+diagnostic, but its1061/1057 with993 differences is not accepted. Final current
+1057/1067 proof covers297/302 instructions,25 branches,22 calls,51 relocations
+and16 frame homes with four explicit producer groups;992 differences remain.
+197 unchanged countdown/crop cases and162 overlays pass on the restored current
+Native product (existing198-case last-brick scope's separate multi-tile case
+is not rerun). Scratch residue through arbitrary callees stays outside the
+static producer/CFG claim. See
+[complete crop chains](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), private
+`.analysis/lightning-crop-subtraction/`, and immutable seal
+`.analysis/checkpoints/lightning-crop-chain-283-186/sha256.json`.
+
+The preceding origin batch binds actual COFF symbol indices by hash-identified
 archive member. Static names cannot use the shared external map. Four whole
 sections (__ismbblead18, __control8763, __controlfp24, __setdefaultprecision19)
 match all124 bytes/five relocations; runtime becomes83, unknown133. Final CRT
@@ -156,6 +172,10 @@ inline table can explain a group without a source gap. Prefer a complete coheren
 flow over a tiny passing helper. Do not perform source-name, declaration-order,
 layout, padding or equivalent-relational-spelling trials to force stack homes.
 A compiler API/declaration hypothesis needs evidence that distinguishes it.
+Last-brick's two crop producer groups also contain no missing arithmetic: read
+their complete shared XOR/SUB/NEG neighborhood. Do not retry a direct-expression
+rewrite or claim the smaller diagnostic as restored original source. Time/RNG
+storage and exact stack layout retain their prior ABI limits.
 
 The preceding original/VC4 Wine ball/pause/editor/save/reload/exit flows pass on the
 unchanged `4c24034` source products:87 observations each and all49 originals
@@ -223,7 +243,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is48; use49 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is49; use50 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -242,3 +262,8 @@ call or token/latency measurement occurs. Two unchanged maintained runs and one
 final four-candidate run are retained separately; the extra unchanged run follows
 a consumer guard comparing equivalent hexadecimal address spellings. A missing
 old process handle is recovered from its saved completed receipt, not restarted.
+Latest countdown work uses one rejected matching compilation, restores saved
+source/object without repeating it, and reuses closed2316097-byte REA Evidence
+with a9495-byte full assembly projection.197/162 selected current cases take
+3.393s; these are local artifact/runtime measurements, not current REA tokens,
+provider latency, RSS or full-game fidelity.
