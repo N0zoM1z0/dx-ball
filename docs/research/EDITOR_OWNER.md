@@ -1,5 +1,14 @@
 # Editor controller evidence
 
+The [exact editor status scopes](exact/EXACT_EDITOR_STATUS_SCOPES.md) restore the
+preview-only rectangle and board-number label workspace. One MT compile matches
+all 431 bytes, 25 unchanged bindings and six complete strings, preserving
+12 exact companions across 2377 bytes. Original 52-byte frame and all 137 REA
+instruction boundaries verify. Existing 46 status cases plus 32 connected
+editor checks pass; Native/MinGW update and the matching editor object links
+with 35 unchanged ones. Current totals are 206 exact / 44,406 code bytes /
+136 metadata bytes. Historical checkpoints below retain their own epochs.
+
 REA 4.1.0 with Ghidra 12.1.4 follows mode 2 through initialization, redraw,
 mouse painting, key commands and cleanup, then into its toolbar hit regions.
 Ten maintained entries reuse the existing board-bank, tile mapping, rendering,

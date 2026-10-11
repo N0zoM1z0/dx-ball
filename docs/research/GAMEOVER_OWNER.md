@@ -12,6 +12,14 @@ EXEs; complete-game and physical audio fidelity remain pending.
 
 ## Direct score persistence recovery
 
+A later [editor-status checkpoint](exact/EXACT_EDITOR_STATUS_SCOPES.md) checks
+the shift-only counter's nonfinal-rank branch scope once. The complete insertion
+comparison remains 446 bytes / three differences, and all six exact companions
+plus the drawing comparison stay identical. That source/object control is
+retained privately and the verified before source/object restored without
+recompilation. Do not repeat this scope or the earlier equivalent relational
+expressions below. No insertion exact claim or new game-over case is added.
+
 The score initializer and reader now match their complete 723-byte and 94-byte
 bodies; see [startup evidence](STARTUP_UI_OWNER.md). Insertion at `0x406D20`
 restores the distinct last-rank branch, backwards scan and shift loops, and

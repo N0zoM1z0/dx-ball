@@ -74,26 +74,28 @@ void dxball_draw_editor_choices(void)
 void dxball_draw_editor_status(void)
 {
     DxBallInt sprite, x = 25, y = 5;
-    DxBallRect preview;
-    char number[8];
-    DxBallRect label;
     sprite = dxball_board_tile_sprite(dxball_editor_selected_tile);
     if (sprite != 0) {
         dxball_draw_sprite(sprite, x, y);
     } else {
+        DxBallRect preview;
         preview.left = x; preview.top = y;
         preview.right = x + 30; preview.bottom = y + 15;
         ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
             (DxBallDDSurface *)dxball_active_surface, x, y,
             (DxBallDDSurface *)dxball_background_surface, &preview, 0x10);
     }
-    label.left = x + 40; label.top = y;
-    label.right = 639; label.bottom = y + 15;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_active_surface, x + 40, y,
-        (DxBallDDSurface *)dxball_background_surface, &label, 0x10);
-    _itoa(dxball_board_index + 1, number, 10);
-    dxball_draw_text(x + 50, y + 12, (DxBallInt)strlen(number), number);
+    {
+        char number[8];
+        DxBallRect label;
+        label.left = x + 40; label.top = y;
+        label.right = 639; label.bottom = y + 15;
+        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
+            (DxBallDDSurface *)dxball_active_surface, x + 40, y,
+            (DxBallDDSurface *)dxball_background_surface, &label, 0x10);
+        _itoa(dxball_board_index + 1, number, 10);
+        dxball_draw_text(x + 50, y + 12, (DxBallInt)strlen(number), number);
+    }
     dxball_draw_text(360, 380, 25, "+           -- Next Board");
     dxball_draw_text(360, 390, 29, "-           -- Previous Board");
     dxball_draw_text(360, 400, 20, "BKSP  -- Clear Board");

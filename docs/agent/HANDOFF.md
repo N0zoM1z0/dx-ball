@@ -8,7 +8,37 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores splash palette pulsing at 0x407EF0
+The latest source checkpoint restores editor status at 0x40CA70 exactly:
+all 431 bytes, 25 unchanged relocation bindings and six complete NUL strings.
+Scope the blank-preview rectangle to the sprite-zero branch and the existing
+8-byte number/label rectangle workspace to board-number drawing in src/editor.c.
+Keep the hint strings afterward. Names/types/executable tokens stay unchanged.
+One canonical editor MT compile restores original frame 52: sprite -4, x -8,
+y -12, preview base -28, number base -36 and label base -52. All 137 retained
+REA instruction boundaries, three branches and 13 calls verify. Twelve exact
+companions across 2377 bytes and the editor-key full candidate record stay identical.
+Two unchanged Oracle loops pass 46 status cases and 32 connected editor mode/key/
+window, toolbar, paint and independent actual-host board-file checks; production
+readonly/default prelude verifies. Native/MinGW update once; matching editor
+object links with 35 unchanged ones, with no extra legacy source compile.
+All 206 exact closures, 247 historical scopes and 36 objects verify; 235 inventories
+refresh without broad replays. Counts: 206 exact / 44406 code / 136 metadata;
+283 source-present / 270 authored.
+Current products: `.analysis/editor-status-phases/product-verification.json`;
+seal: `.analysis/checkpoints/editor-status-phases-283-206/sha256.json`.
+See [exact editor status scopes](../research/exact/EXACT_EDITOR_STATUS_SCOPES.md).
+One additional game-over MT compile scopes shift-only i to its nonfinal-rank
+branch; complete 446-byte comparison stays at three differences at 172/175/177,
+all six exact companions across 2329 bytes and drawing candidate unchanged. Preserve the
+rejected source/object/receipt in `.analysis/score-shift-scope/`, restore verified
+before source/object without recompiling, and do not repeat this scope or prior
+relational-expression variants. No other game-over source change or test occurs.
+Continue another evidenced source family. No coextensive score-row variable
+splits merely to force homes. Full authored denominator, source spelling,
+physical render/audio and campaign remain unproved; the goal stays active.
+Commit and push verified checkpoints. REA feedback stays optional in one /tmp doc.
+
+The preceding source checkpoint restores splash palette pulsing at 0x407EF0
 exactly: all 370 bytes and 29 relocation bindings. Scope the fade counter and
 pulse-color center to their separate phases in src/intro.c, retaining the shared
 half-span factor. Names/types/executable tokens stay unchanged. One canonical MT

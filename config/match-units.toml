@@ -8658,7 +8658,7 @@ relocations = [
   { offset = 110, type = "REL32", symbol = "_dxball_set_hit_region", addend = 0, target = 0x00401EB0 },
 ]
 
-[candidates.draw-editor-status]
+[units.draw-editor-status]
 build = "editor"
 symbol = "_dxball_draw_editor_status"
 target_address = 0x0040CA70
