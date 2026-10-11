@@ -13,6 +13,19 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
+Current-product natural game-over at640x480x24 passes original219/VC4234/
+MinGW213 read-only states: nine actual life losses, `rex`/Backspace/Shift-A to
+`reA`, independent660-byte ranking expectations in memory/file, fresh-process
+reload and six zero-code exits. All three earn222/rank0 with saved rankingSHA
+fcc15ac92dc92e402d565da1a7fb5a23afd42d544e3308096a47aba8f65c62e8.
+Twelve unaltered frames/eight original-sourceRGBpairs have zero differences;
+name-entry/ranking44colors and filled text visible. These are sequential samples,
+not moving-frame synchronization or complete-campaign/audio/MIDI proof.
+Game-over nowselects `--profile`; game-over/round `--display-depth {8,24}`
+default24/forward/report. Round CLI/syntaxchecked only; no new round/focus flow.
+No game/reader compilation, link, provider request or owner-oracle replay.
+See [current game-over evidence](../research/GAMEOVER_DISPLAY_DEPTH.md).
+
 The cursor follow-up closes the persistent-missing-pointer hypothesis for the
 sampled editor states: initial board66 original/69VC4 reads; actual two-cell
 paint/save/clear/load75 original/82VC4 reads. Three samples each before reload,
@@ -41,12 +54,14 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | Exact code / separate metadata bytes | 44,406 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product receipt: `.analysis/editor-cursor-presentation/product-verification.json`.
-Seal: `.analysis/checkpoints/editor-cursor-presentation-285-206/sha256.json`.
+Current product receipt: `.analysis/gameover-display-depth/product-verification.json`.
+Seal: `.analysis/checkpoints/gameover-display-depth-285-206/sha256.json`.
 Rejected stage: `.analysis/paddle-cursor-load-order/rejected-order-stage/`.
 Cleanup only recorded probe copies after unique files are retained, then immutable
 hash-equal before/new-seal copies versus immediately preceding display-depth seal.
-Public/current files must remain independent of archives. Consume completed
+Game-over cleanup likewise preserves unique exits and compares immutable copies
+only with the immediately preceding editor-cursor seal. Public/current files
+must remain independent of archives. Consume completed
 receipts after output truncation or consumer errors; do not restart producers.
 
 ## Working runtime and recent source baseline

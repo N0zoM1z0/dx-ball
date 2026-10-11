@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Lose real balls through mouse input, then validate actual ranking persistence."""
+import argparse
 import json
 import os
 from pathlib import Path
@@ -111,8 +112,8 @@ def observe(profile, env, reports):
             assert bytes.fromhex(observer.read('initial-score-table')['scores']) == before
             click(env, 320, 390)
             over, losses, releases = lose_game(observer, env)
-            # Original high-score content uses only two visible colors on this
-            # 8-bit Wine/Xvfb palette. Keep the artifact; verify state/file below.
+            # Retain complete frames, including the historical 8-bit host case.
+            # State and file bytes establish persistence independently of color.
             captures['name-entry'], _ = capture_ready(output, 'name-entry', env, 2)
             command(['xdotool', 'key', 'r', 'e', 'x'], env)
             observer.wait('name-three-letters', lambda s: s['score_name_length'] == 3)
@@ -172,6 +173,11 @@ def observe(profile, env, reports):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
+    parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
+                        help='Xvfb depth; 24 renders the original palette correctly here')
+    args = parser.parse_args()
     limit_cpu()
     if os.environ.get('DXBALL_GAMEOVER_DISPLAY') != '1':
         lock = session_lock()
@@ -180,15 +186,15 @@ def main():
                         '-o', str(READER)], check=True, timeout=60)
         lock.close()
         env = os.environ.copy(); env['DXBALL_GAMEOVER_DISPLAY'] = '1'
-        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x8',
-                        str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve())],
+        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
+                        str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()), *sys.argv[1:]],
                        env=env, check=True, timeout=450)
         return
     lock = session_lock()
     reports = ROOT / 'build/reports/windows-gameover'
     reports.mkdir(parents=True, exist_ok=True)
     observations = []
-    for profile in ('original', 'vc40', 'windows-i686'):
+    for profile in ((args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')):
         row = observe(profile, environment(), reports)
         observations.append(row)
         print(profile + ': natural life loss, name entry and full ranking persistence passed', flush=True)
@@ -199,13 +205,14 @@ def main():
     for name, value in inputs.items():
         assert digest(ROOT / name) == value, name
     report = {'status': 'pass', 'kind': 'real-Wine-natural-life-loss-ranking-runs',
+              'display': 'Xvfb 640x480x' + str(args.display_depth),
               'observations': observations, 'inputs': inputs, 'original_addresses': FIELDS,
               **reader_identity(),
               'vc40_map_sha256': digest(ROOT / 'build/vc40/dxball.map'),
               'mingw_dll_sha256': digest(ROOT / 'build/windows-i686/libdxball_core.dll'),
               'originals': verified_originals(),
               'limitations': ['Real input only; observer never writes/patches/hooks target state.',
-                              'Original high-score scene has only two visible colors on this Wine/Xvfb palette; captures are not pixel-fidelity acceptance.',
+                              'Historical 8-bit host captures can lose glyph pixels; captures alone are not pixel-fidelity acceptance.',
                               'Random scores/trajectories differ; each full ranking has its own independent byte expectation.',
                               'Sequential state reads are not atomic snapshots.',
                               'Complete in-memory ranking and file checked after a fresh process restart.',

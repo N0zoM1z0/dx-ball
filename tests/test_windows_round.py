@@ -192,6 +192,8 @@ def observe(profile, env, reports, focus_recovery=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
+    parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
+                        help='Xvfb depth; 24 renders the original palette correctly here')
     parser.add_argument('--focus-recovery', action='store_true',
                         help='also diagnose focus recovery; original Wine control currently stalls')
     args = parser.parse_args()
@@ -203,7 +205,7 @@ def main():
                         '-o', str(READER)], check=True, timeout=60)
         lock.close()
         env = os.environ.copy(); env['DXBALL_ROUND_DISPLAY'] = '1'
-        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x8',
+        subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
                         str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()), *sys.argv[1:]],
                        env=env, check=True, timeout=360)
         return
@@ -233,6 +235,7 @@ def main():
                  'tests/test_powerups_differential.py'):
         inputs[name] = digest(ROOT / name)
     report = {'status': 'pass', 'kind': 'real-Wine-single-brick-clear-next-board-runs',
+              'display': 'Xvfb 640x480x' + str(args.display_depth),
               'focus_recovery_requested': args.focus_recovery,
               'observations': observations, 'inputs': inputs, 'original_addresses': FIELDS,
               'reader_shapes': {'board_tiles': ':board'}, **reader_identity(),

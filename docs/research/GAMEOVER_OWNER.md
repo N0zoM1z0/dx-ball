@@ -1,5 +1,11 @@
 # Game-over and high-score evidence
 
+The [current-product display follow-up](GAMEOVER_DISPLAY_DEPTH.md) observes
+natural life loss, real name editing and complete ranking persistence after a
+fresh-process restart in original/VC4/MinGW. All eight complete captured RGB
+pairs agree on 24-bit Xvfb; historical eight-bit-host palette limits retain
+their earlier scope. This adds runtime evidence without new source/exact claims.
+
 REA 4.1.0 with Ghidra 12.1.4 follows actual mode 3 from initialization and
 redraw into the per-frame controller, key routing, name editing and persisted
 ranking insertion. Eight maintained entries connect to existing mode dispatch,

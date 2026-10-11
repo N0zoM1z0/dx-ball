@@ -1,5 +1,10 @@
 # Correct Wine display depth and MinGW runtime deployment
 
+The [game-over follow-up](GAMEOVER_DISPLAY_DEPTH.md) extends the current-product
+24-bit-host control to natural life loss, name editing, complete ranking
+persistence and process restart. All eight unaltered original/source RGB pairs
+agree; no product rebuild or additional exact claim is involved.
+
 The later [editor cursor follow-up](EDITOR_CURSOR_PRESENTATION.md) checks the
 reload pointer difference below on both an initial board and the same two-cell
 paint/save/clear/load fixture. All 18 complete original/VC4 frame pairs agree

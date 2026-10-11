@@ -13,9 +13,13 @@ xvfb-run -a -s '-screen 0 640x480x24' scripts/repo-python scripts/run-windows.py
 The game still requests its original eight-bit DirectDraw mode. A 24-bit host
 screen presents its palette correctly in the tested Wine environment; an
 eight-bit Xvfb screen drops filled glyph and title pixels even in the unmodified
-original. Keep the 640-by-480 resolution. The optional Windows runtime/play
+original. Keep the 640-by-480 resolution. The optional Windows runtime/play/round/game-over
 checks now default to 24-bit Xvfb; `--display-depth 8` reproduces the historical
 configuration. See [the display-depth comparison](research/WINDOWS_DISPLAY_DEPTH.md).
+Round and game-over checks also accept `--profile original`, `--profile vc40`
+or `--profile windows-i686` to run only the affected control. The
+[current game-over controls](research/GAMEOVER_DISPLAY_DEPTH.md) retain actual
+life loss, name entry and complete ranking persistence through process restart.
 
 ## Set up the original files
 
