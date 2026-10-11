@@ -24,7 +24,14 @@ one pair of identical new immutable catalogs was also deduplicated. The small
 upgrade seal is `.analysis/checkpoints/rea-upgrade-6.4.0/sha256.json`, with
 59 owned files and 18 explicit dependencies. Current game products and
 source/origin proof inputs are unchanged. Feedback remains in the same
-`/tmp/dxball_rea_feedback_20261010.md`; next new entry is 63.
+`/tmp/dxball_rea_feedback_20261010.md`. The subsequent entry 63 inventories the
+actual FPinit callback member without a new provider session: full sections
+23/1/56/16 bytes have relocation-free runs below sixteen bytes, and the full
+16-byte flag setter has no match in the retained CRT carrier after its two
+absolute fields are independently bound. No callback/origin authority changes.
+See the callback-placement section in
+[complete initialized CRT objects](../research/CRT_INITIALIZED_OBJECTS.md)
+and `.analysis/crt-fpinit-callbacks/preflight.json`. Next entry is 64.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.

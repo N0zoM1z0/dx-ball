@@ -115,3 +115,32 @@ verify after fifteen scoped archive links replace 1,486,848 previously single-li
 allocated bytes, about 1.4 MiB. No device-free-space delta is claimed. Current and
 public paths retain independent archive inodes; unique Evidence, before inputs,
 current products and probe objects remain. Cleanup is confined to this new seal.
+
+## FPinit callback placement remains open
+
+A subsequent local dependency preflight reuses the closed 28-byte FPinit
+record and 39,136-byte CRT carrier. Both `__fpmath` and `__fpclear` are defined
+in the same 1,721-byte archive member at offset 936384. The three data
+relocations target `__fpmath`, `__fpclear` and `__fpclear`; pointer bytes alone
+do not independently establish those function definitions.
+
+| Complete member section | Bytes | Relocations | Longest relocation-free run |
+| --- | ---: | ---: | ---: |
+| `__fpmath` | 23 | 4 | 3 |
+| `__fpclear` | 1 | 0 | 1 |
+| `__cfltcvt_init` | 56 | 11 | 2 |
+| `___setfflag` | 16 | 2 | 6 |
+
+These runs do not meet the maintained sixteen-byte independent code-anchor
+requirement. A one-byte return cannot gain unique function identity from an
+observed callback pointer. The full flag setter has two absolute relocations
+that can be grounded from the independently verified `___fastflag` object.
+Its complete relocated pattern has no match in the retained CRT carrier;
+this does not rule out another binary interval or library variant.
+
+No new origin, callback-object or enclosing-section authority is published.
+Source and product counts remain unchanged. Private actual-index dependency
+inventory and bounded comparison: `.analysis/crt-fpinit-callbacks/preflight.json`.
+No new REA session, raw range, compiler trial, build or gameplay check was
+needed. Further work requires independent conversion-table/code placement
+evidence rather than a pointer-derived binding.
