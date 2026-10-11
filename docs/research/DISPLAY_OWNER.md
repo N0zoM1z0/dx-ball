@@ -1,5 +1,15 @@
 # Lightning and frame drawing
 
+The [merge-index lifetime recovery](exact/PRESENTATION_MERGE_SCOPE.md) restores
+the original shared-index/current-index homes in the dirty-region presenter.
+Its complete 984-byte comparison improves from 55 differences to two unresolved
+minimum-top index-read operands; all 246 original boundaries and 58 bindings
+verify. Nine exact companions across 1,843 bytes and every other candidate
+record stay unchanged. Existing 60 sorting, 146 merge and 60 presentation
+cases plus the reset prelude pass. Native/MinGW and the VC4 relink pass without
+extra legacy compilation. Totals stay 206 exact / 44,406 code / 136 metadata;
+the following checkpoints retain their own scopes and products.
+
 The later [complete crop-chain audit](exact/EXACT_LIGHTNING_CROP_CHAIN.md)
 retains the current source. Both original and current arithmetic include shared
 inverse/negation steps omitted by a difference-only summary. The complete

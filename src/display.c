@@ -310,11 +310,12 @@ void dxball_present(void)
 
 void dxball_present_regions_now(void)
 {
-    DxBallInt i, current;
+    DxBallInt i;
     for (i = 0; i <= dxball_present_count - 1; ++i) {
         dxball_present_keys[i] = dxball_present_regions[i].top + dxball_present_regions[i].left;
     }
     if (dxball_present_count > 0) {
+        DxBallInt current;
         dxball_sort_present_regions(0, dxball_present_count - 1);
         current = 0;
         for (i = 1; i <= dxball_present_count - 1; ++i) {

@@ -8,7 +8,37 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The current source checkpoint restores the observed discarded sprite Restore
+The current source checkpoint scopes the dirty-region presenter's current
+rectangle index to its positive-count sorting/merge branch in src/display.c.
+The shared loop index stays outside because key generation and both Blt loops
+consume it. Names/types/executable tokens remain unchanged. One display MT
+compile restores original frame 8: shared index -4/current index -8. Complete
+984-byte comparison improves 55 to two differences at offsets 315/327, both
+minimum-top index loads at 0x409239/0x409245. The compiler reads current then
+loop index where the original reads loop then current; both compute the same
+signed minimum. All 246 original boundaries/widths, 35 branches/four calls and
+58 unchanged ordered bindings verify. Preserve both strict differences; no
+exact promotion or original source-spelling claim. Do not trial operand/local
+spelling merely to force those two reads.
+Nine exact companions across 1,843 bytes and every other display candidate
+record stay identical. Four unchanged loops pass 60 sorting/146 merge/60
+presentation cases plus the one-call reset prelude. Sorting retains the
+original RNG history before merge vectors. Initial private aggregate counter
+expected 120 rather than the existing presentation matrix's 60 cases; preserve
+initial driver/correction receipt, corrected four-loop verification reran once.
+No tracked test/fixture changed or new unique semantic cases were added.
+Native/MinGW update once; final matching display object links with 35 unchanged
+VC4 objects and no additional legacy source compile. All 206 exact closures,
+247 unchanged historical scopes and 36 objects verify; inventories refresh.
+Counts stay 206 exact / 44,406 code / 136 metadata; 283 source-present / 270 authored.
+Current products: `.analysis/presentation-merge-scope/product-verification.json`;
+seal: `.analysis/checkpoints/presentation-merge-scope-283-206/sha256.json`.
+See [presentation merge lifetime](../research/exact/PRESENTATION_MERGE_SCOPE.md).
+Continue another evidenced source family; full denominator, original spelling,
+physical rendering/audio and complete campaign remain unproved, goal active.
+Commit and push verified checkpoints; REA feedback remains optional in one /tmp doc.
+
+The preceding source checkpoint restores the observed discarded sprite Restore
 HRESULT store at 0x403E0B in src/device.c's actual nonnull call branch. Keep the
 existing bank/slot declarations; no new HRESULT check is introduced. Complete
 sprite recovery is now 282/282 bytes with 18 strict EBP displacement differences,
