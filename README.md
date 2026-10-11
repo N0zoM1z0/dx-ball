@@ -9,10 +9,6 @@ compiled into a working game. Codex uses [REA](https://github.com/morluto/rea)
 to inspect the original executable through Ghidra, recover its functions, and
 refine the source by comparing compiled code with the original.
 
-This guide takes you from downloading the original game to continuing its
-reconstruction with REA and Codex. It includes the setup commands and an
-English `/goal` prompt you can use in your own checkout.
-
 ## Reconstruction with REA
 
 REA gives Codex access to Ghidra's pseudocode, instructions, calls, and data
@@ -40,18 +36,17 @@ to source and a complete compiler match.
 
 ## Try the workflow with Codex
 
-The commands below use Linux x86-64. You will continue from the source and
-research already in this repository. Before you start, install:
+The tutorial below uses Linux x86-64 and continues the reconstruction from
+this repository's source and research. You will need:
 
 - Git and Python 3.11+ with pip.
 - Node.js 22.19.0 with npm. Use the official Linux x64 binary; the project
   checks the Node executable's hash as well as its version.
 - Wine with 32-bit support, Xvfb with `xvfb-run`, `unzip`, and `tar`.
   Wine runs the original-era Windows compiler on Linux.
+- CMake, Ninja, and GCC or Clang to build the portable source.
 
-The setup scripts download the JDK, Ghidra, and Visual C++ 4.0 compiler.
-For build commands and instructions to run the recovered game, see
-[Build and play](docs/BUILD.md).
+The setup scripts install the JDK, Ghidra, and Visual C++ 4.0 compiler.
 
 If you need the matching Node version, download
 [`node-v22.19.0-linux-x64.tar.gz`](https://nodejs.org/download/release/v22.19.0/node-v22.19.0-linux-x64.tar.gz)
@@ -90,11 +85,10 @@ scripts/bootstrap-python.sh
 scripts/repo-python scripts/import-target.py /absolute/path/to/DX_Ball_Win_Preinstalled_EN.zip
 ```
 
-Replace the archive path with your download. The importer verifies the ZIP
-and its game files, then places `DXBALL.EXE` and the assets in `original/`.
-It should report that the original files were verified and imported.
-The expected version and hashes are in [the target configuration](config/target.toml).
-Git ignores `original/`, so the game files stay in your local workspace.
+Replace the archive path with your download. The importer checks the ZIP and
+its game files against [the target configuration](config/target.toml), then
+puts `DXBALL.EXE` and the assets in `original/`. Its final line reports how
+many files were verified and imported. Git ignores this directory.
 
 ### 2. Install REA and connect it to Codex
 
@@ -129,11 +123,11 @@ rea setup --client codex
 rea doctor --client codex --provider ghidra --json
 ```
 
-Review and accept the changes shown by setup. It registers REA as an MCP
-server, saves the Ghidra and JDK paths, and installs the REA skill. Codex can
-then call REA's tools and read the skill's instructions for using them.
-The doctor command checks that registration and the Ghidra provider. Look
-for `healthy: true`; failed checks include instructions for fixing them.
+Setup shows the configuration changes for you to review and accept. It
+registers REA as an MCP server, saves the Ghidra and JDK paths, and installs
+the REA skill with instructions for Codex. The doctor command checks the
+registration and Ghidra provider. Look for `healthy: true`, or follow the
+instructions beside a failed check.
 
 The [REA setup guide](https://github.com/morluto/rea/blob/main/docs/installation.md)
 also covers using an existing Ghidra installation. To update an existing
@@ -148,11 +142,11 @@ From the same terminal, run:
 codex
 ```
 
-Sign in with your ChatGPT account or API key when prompted. Starting in the
-repository lets Codex read `AGENTS.md` and find the executable, source, and
-research notes. If Codex was already running during REA setup, start a new
-session to load the integration. The
-[Codex CLI guide](https://developers.openai.com/codex/cli/) explains sign-in.
+Sign in when prompted; the [Codex CLI guide](https://developers.openai.com/codex/cli/)
+explains the authentication options. Codex reads `AGENTS.md` from this
+checkout and can inspect the original executable, recovered source, and
+research notes. Restart Codex if it was running during REA setup so it loads
+the newly registered tools.
 
 ### 4. Give Codex a reconstruction goal
 
@@ -167,10 +161,9 @@ rebuildable C/C++. First recover every game-authored function as faithfully as
 possible and maximize complete byte-exact matches with Visual C++ 4.0. Once
 function recovery is complete, validate the rebuilt game's full behavior.
 
-Read AGENTS.md, docs/agent/HANDOFF.md, and docs/agent/WORKFLOW.md, then continue
-from the handoff. Use REA to inspect unresolved functions and their callers,
-callees, and data. Reuse saved evidence and work through related functions
-together.
+Read AGENTS.md, docs/agent/HANDOFF.md, and docs/agent/WORKFLOW.md. Continue from
+the handoff, using REA to inspect unresolved functions and their callers,
+callees, and data. Reuse saved evidence and recover related functions together.
 
 Write typed source shared by the portable and legacy builds, preserving the
 original calling conventions, integer widths, ownership, and state changes.
@@ -178,9 +171,9 @@ Compile each stable batch and compare whole functions with explicit mappings
 for address references. Fix the differences and recheck affected exact matches.
 Use focused checks to answer recovery questions along the way.
 
-Update the match ledgers, progress, and handoff with verified results. Keep code
-and documentation in English. Follow the project's resource limits, preserve
-unique evidence, and clean disposable build products. Commit verified
+Record verified results in the match ledgers, progress, and handoff. Keep code
+and documentation in English. Follow the project's resource limits and clean
+disposable build products after preserving unique evidence. Commit verified
 checkpoints with the prefix "gpt-6.1-sol: " and push to origin/main.
 
 Report progress through recovered functions and exact matches. For remaining
