@@ -8,7 +8,25 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores bonus generation at0x4138D0 exactly:
+The latest source checkpoint restores moving balls at 0x410770 and projectile
+updates at 0x413170 exactly: 3223/276 and 328/23 complete bytes/relocations.
+Restore live-ball y/sign and reduced/full particle scopes, then projectile
+iteration row in src/core.c; names/types/operations/RNG order stay unchanged.
+Two canonical MT owner compiles preserve six exact companions across 771 bytes.
+2505 unchanged core-oracle calls pass (2373 ball, 126 projectile, 6 spawn setups).
+Native/MinGW update; final matching core object links with 35 unchanged objects.
+All 192 exact closures/247 unchanged semantic scopes/36 production objects verify.
+Counts: 192 exact / 40110 code / 136 metadata; 283 source-present; 270 known authored.
+Current products: `.analysis/moving-ball-scope/product-verification.json`;
+seal: `.analysis/checkpoints/moving-ball-scope-283-192/sha256.json`.
+See [exact ball/projectile scopes](../research/exact/EXACT_BALL_PROJECTILE_SCOPES.md).
+Continue with another remaining nonexact game owner using complete original
+source/CFG/storage evidence. Reconstruction is primary; feedback optional.
+Do not rerun successful ball/projectile cases or historical visual probes.
+Original identifiers/declaration spelling, authored denominator, synchronized
+render/audio and full campaign remain unproved; the active goal is incomplete.
+
+The preceding source checkpoint restores bonus generation at0x4138D0 exactly:
 all1197bytes/89relocations, including76table bytes and a five-byte unowned exit.
 Restore particle/case and creation-success scopes in src/bonuses.c without
 changed names/types/operations/padding. Correct the old candidate table binding

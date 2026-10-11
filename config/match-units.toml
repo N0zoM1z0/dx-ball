@@ -2103,7 +2103,7 @@ relocations = [
   { offset = 1312, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x409610 }
 ]
 
-[candidates.update-balls]
+[units.update-balls]
 build = "core"
 symbol = "_dxball_update_balls"
 target_address = 0x00410770
@@ -2388,7 +2388,7 @@ relocations = [
   { offset = 3209, type = "REL32", symbol = "_dxball_lose_life", addend = 0, target = 0x00415BB0 },
 ]
 
-[candidates.update-projectiles]
+[units.update-projectiles]
 build = "core"
 symbol = "_dxball_update_projectiles"
 target_address = 0x00413170

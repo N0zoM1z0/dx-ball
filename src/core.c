@@ -143,7 +143,7 @@ void dxball_drop_bricks(void)
 /* Main physics: the cached paddle position belongs to the previous frame. */
 void dxball_update_balls(void)
 {
-    DxBallInt chance, x, y, sign, i, j;
+    DxBallInt chance, x;
     if (dxball_begin_balls(&dxball_balls)) {
         do {
             if (dxball_balls.current->attached == 0) {
@@ -169,6 +169,7 @@ void dxball_update_balls(void)
                     dxball_play_sound(5, 0, dxball_screen_pan(dxball_balls.current->x), 0);
                     dxball_retire_ball();
                 } else {
+                    DxBallInt y, sign;
                     if (dxball_balls.current->x < 20) {
                         dxball_balls.current->x = 20;
                         dxball_balls.current->dx = abs(dxball_balls.current->dx);
@@ -224,12 +225,14 @@ void dxball_update_balls(void)
                             if (dxball_balls.current->speed > 7) {
                                 dxball_play_sound(15, 0, dxball_screen_pan(dxball_balls.current->x), 0);
                                 if (dxball_reduced_particles != 0) {
+                                    DxBallInt i;
                                     for (i = 0; i < 6; ++i) {
                                         dxball_spawn_particle(dxball_balls.current->x, dxball_balls.current->y,
                                             3 - dxball_random_range(7),
                                             -1 - dxball_random_range(3), 176, 1);
                                     }
                                 } else {
+                                    DxBallInt j;
                                     for (j = 0; j < 10; ++j) {
                                         dxball_spawn_particle(dxball_balls.current->x, dxball_balls.current->y,
                                             3 - dxball_random_range(7),
@@ -320,9 +323,10 @@ void dxball_update_balls(void)
 
 void dxball_update_projectiles(void)
 {
-    DxBallInt column, row;
+    DxBallInt column;
     if (dxball_begin_projectiles(&dxball_projectiles)) {
         do {
+            DxBallInt row;
             dxball_projectiles.current->previous_x = dxball_projectiles.current->x;
             dxball_projectiles.current->previous_y = dxball_projectiles.current->y;
             dxball_projectiles.current->y -= 8;
