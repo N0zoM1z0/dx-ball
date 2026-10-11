@@ -1,5 +1,11 @@
 # Correct Wine display depth and MinGW runtime deployment
 
+The later [editor cursor follow-up](EDITOR_CURSOR_PRESENTATION.md) checks the
+reload pointer difference below on both an initial board and the same two-cell
+paint/save/clear/load fixture. All 18 complete original/VC4 frame pairs agree
+after stationary sampling and pointer motion. The earlier differing capture
+remains retained; no game-source fix or additional MinGW run is inferred.
+
 The missing filled text/title pixels in prior captures were reproduced in the
 unmodified original on an eight-bit Xvfb screen. Holding resolution at 640 by
 480 and changing the host screen to 24 bits restores complete colored letters

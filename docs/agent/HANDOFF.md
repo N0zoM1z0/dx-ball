@@ -1,1407 +1,155 @@
 # Reconstruction handoff
 
 Continue toward nearly complete original English DX-Ball v1.07 source that
-rebuilds and plays. Commit with `gpt-6.1-sol: ` subjects and push verified
-checkpoints to `origin/main`; the user resumed publishing. This handoff is authoritative. The older
-`/tmp/dxball_reconstruction_handoff.md` is stale and is not updated: the user
-requires all ongoing REA feedback in one existing `/tmp` document only.
+rebuilds and plays. The goal is active and incomplete. Prioritize actual source
+and game-flow recovery; exact counts alone do not establish completion.
+Commit verified checkpoints with English `gpt-6.1-sol: ` subjects and push to
+`origin/main`, then independently verify remote HEAD and a clean worktree.
+
+This file is authoritative. The old `/tmp/dxball_reconstruction_handoff.md` is
+stale. Optional REA feedback goes only into the existing
+`/tmp/dxball_rea_feedback_20261010.md`; latest entry is 75. Append, never create
+another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Current runtime checkpoint locates missing filled glyph/title pixels in the
-historical8-bit Xvfb configuration. Same unmodified original on640x480x24 renders
-complete text; game still requests original8-bit DirectDraw mode. Prior failed
-800x600x24 changed resolution too. Runtime/play checks now default24-bit with
---display-depth8 retained. See [display depth](../research/WINDOWS_DISPLAY_DEPTH.md).
-Original opening-only check41states/zeroexit; extended original103/VC4115/
-MinGW116states withfivecaptures each pass actual ball/pause/resume/editor/save/
-reload/zeroexit and unchanged49assets. Full saved banks identical b88441...cd2.
-Both source opening and initial editor full307200pixel RGB buffers equal original.
-Reload186differences entirely at red/white original pointer inclusive65,57..86,76;
-presentation phase unsynchronized, not source-defect or whole-frame equality.
-Pause18111 and menu18344/13446 differences remain unmasked/unsynchronized.
-First original extended attempt misses fixed0.25s tile press; preserved failure.
-Harness now waits for actual selection, release and two paint writes before
-moving/releasing, preserving fixtures/coordinates and read-only SDK access.
-Original andVC4 complete; initial third-profile MinGW launch exits before window
-because core imports undeployed libwinpthread-1.dll. Preserve completed controls
-from retained states/captures/fullbanks/pass-output; do not replay successful runs.
-MinGW-only core link adds-static; DLL imports onlyddraw/dsound/Kernel32/msvcrt.
-One selected relink leaves43existingobject hashes unchanged; zero source compiles.
-Only repairedMinGW reruns and passes. Native/VC4 products unchanged. Reader
-reused by complete pinned identity; no reader/legacy/provider/oracle repetitions.
-Current products `.analysis/windows-glyph-display-depth/product-verification.json`;
-seal `.analysis/checkpoints/windows-glyph-display-depth-285-206/sha256.json`.
-Counts unchanged206/44406/136,285present/270authored/249semantic,117/42/99origins.
-Historical249 scopes/cases preserved; refresh CMake-only inventories, no replay.
-New public changes onlyMinGW link option, runtime/play display configuration and
-actual-input acknowledgement, docs, semantic inventory; no game-source forcing.
-Goal active: full authored denominator/source identity, physical display/audio,
-MIDI/full campaign and synchronized moving frames unproved. New pointer capture
-is a bounded presentation question; do not infer a source bug from unsynced frame.
-Cleanup recorded probe copies after unique exit files retained; hash-equal immutable
-before/seal copies only versus preceding random-runtime seal. Public/current
-inodes independent. Feedback optional; existing single/tmp document only.
-Commit ANDpush verified checkpoints. Continue evidenced reconstruction.
-
-The preceding checkpoint follows.
-
-Current source fixes a real portable-default RNG divergence: seed1 gives original
-41/18467/6334/26500/19169 versus old native17767/9158/6249/18547/23633.
-New src/random.c/h recover original unsigned32 state initialized1 at0x4230F4,
-recurrence214013U*state+2531011U and mask7FFF0000/shift16. Startup seed/range
-and exported default ops use the shared implementation in every build.
-Clock seed unsigned modulo300 and signed range remainder remain unchanged.
-Original seed0x4179F0 complete10 and next0x417A00 complete42 match pinned
-libc.lib member677870 with all3 actual DIR32 fields to static symbol index4.
-The observed producer/consumer cell and full initializer1 are grounded, but
-independently unique CRT data placement/original link/spelling are unproved.
-DO NOT extend maintained89-code/20-data/7-object authority or publish scoped
-CRT exports from this compatibility proof. See RANDOM_RUNTIME.md for Evidence IDs.
-Two source entries become runtime dependencies and scoped semantic accepts:
-source285/authored270/semantic249; origins117runtime/42generated/99unknown.
-All206 exact bodies44406code/136metadata remain. Six startup units1381bytes
-pass complete comparison after22 actual literal/API alias updates; final review
-repairs13 cascaded text aliases by unit/offset without repeating producers; unrelated
-recipes/units/candidates preserved. New runtime candidates seed19/10 with19diff,
-next65/42 with62diff; no vendor schedule forcing or source spelling claim.
-Fresh real-default original/native fixture passes169seeds/2728directnextcalls,
-full32bitstate and adjacent guards,90actualrange calls and8clockseed cases.
-Existing startup fixture unchanged158cases+1connectedcheck passes after actual
-ELF import-name adaptation. Both run once; no full queue/provider repeat.
-Native/MinGW rebuild once; VC4 links2 matching startup/random objects plus35
-unchanged objects, zero additional legacy source compiles. Historical247 scopes
-retain cases/contracts; input inventories refresh without case replays.
-Current product receipt `.analysis/crt-random-origin/product-verification.json`;
-seal `.analysis/checkpoints/crt-random-origin-285-206/sha256.json`.
-See [original random runtime](../research/RANDOM_RUNTIME.md).
-REA6.4.0/Ghidra12.1.4 new bounded session11-40 closed; five full saved carriers
-(two reused, three new) and pinned CRT member retained. Do not restart producers
-for truncated output or failed metadata consumers; inspect saved receipts.
-Goal stays active: full authored denominator/source identity, physical graphics/
-audio/full campaign remain unproved. Continue concrete source recovery and
-commit AND push. Feedback stays optional in one existing /tmp document.
-Cleanup only immutable hash-equal before/new seal copies against immediately
-preceding rotation-pixel-traversal seal; current/public inodes independent.
-Earlier physical play receipts are historical for their recorded executable hashes.
-
-The preceding checkpoint follows.
-
-Current source recovers software rotation's per-pixel unsigned source cursor/pitch
-rollover, origin dimension snapshots, stored destination-pixel addresses, live API
-operands, ignored Unlock result writes and observed float expression order.
-Source src/rotation.c; renderer0x4026A0 current1447/original1572bytes with1491 strict
-differences (before1335/1490). This is actual operation recovery, not byte-difference
-improvement or whole-frame operand equivalence. New complete renderer candidate
-has58 explicit fields/literal attestations; double2.0 uses independently verified
-0x420098 ball constant, not original renderer float2.0 authority0x420038.
-Original365/current366instructions:363 paired normalized opcodes excluding2
-unclassified original zero stores and3 extra current m64 argument pushes;
-3conditional encodings also differ. Operand/register/frame/width equality unproved.
-DO NOT add fake locals for the two zeros or repeat float storage/name trials.
-Two MT source compiles: accepted traversal1447; rejected typed stored4-byte divisor
-1437 recovers m32 but loses3 prior exact projections. Preserve both stages;
-accepted source/object restored by hashes without recompilation.
-Accepted natural change swaps current exact membership: y-offset0x402DE0 now
-complete191bytes/10bindings exact, including original unowned5-byte epilogue jump;
-height0x402FB0 now193/191 with158 differences, prior exact claim withdrawn.
-Three unchanged exact companions wrapper40/horizontal259/width259 remain byte-equal.
-Both affected projection source bodies are unchanged; no helper forcing trial.
-Total206/44406/136 remains, source283/authored270/semantic247;origins115/42/101.
-Fresh unchanged pixel fixtures pass351 renderer+344wrapper=695cases once,
-including7live surface/bank/retry scenarios and complete guarded buffers/owners.
-Normal CRT division only; no new cases/full replay/provider/Wine run.
-Native/MinGW rebuild once; VC4 accepted rotation+35 unchanged objects link once,
-zero extra legacy source compiles. Verify206 exact closures/247 historical scopes/
-36objects; refresh235 inventories without historical replays. Consumer repairs
-address12 complete literal aliases, observed membership swap and a table-replacement
-range that included an interleaved build declaration. Corrected manifest proves
-all builds/unrelated units/candidates identical to before. Consume completed
-products; never repeat compiler or fixture because a bounded consumer failed.
-Current product receipt: `.analysis/rotation-pixel-traversal/product-verification.json`;
-seal `.analysis/checkpoints/rotation-pixel-traversal-283-206/sha256.json`.
-See [rotation pixel traversal](../research/exact/ROTATION_PIXEL_TRAVERSAL.md).
-Reuse renderer10-33 run03 ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26;
-constant40-byte ev_3981d4fe3871c6d5f4976aaec23007d066c24f80aedca23dd51270d63c19de71;
-y-offset ev_0bb8d29f0bbb9230ce62dfeaaa226c4099138a7443f31974dbb2b206ef459987 and
-5-byte gap ev_ef7ec380e69c68892ba8533b87c32732187310fd913801791fd55af7d41f3d99.
-Goal remains active: source denominator/spelling, physical rendering/audio/full
-campaign unproved. Continue evidenced source recovery and commit AND push.
-Earlier Wine probes below describe their original executable hashes, not this link.
-Optional feedback stays in one /tmp doc. Cleanup is confined to new immutable
-hash-equal copies versus immediately previous screen-point seal; preserve both
-compiler stages and current/public inode independence.
-
-The preceding checkpoint follows.
-
-
-Current source checkpoint restores screen-point collision's initial X/Y copies,
-inclusive copied-Y guards50..349, separate in-place subtraction/division writes
-and two signed-byte tile loads in src/core.c. Original337 bytes/90instructions,
-13branches/2calls/10bindings all correspond. Candidate325/337 with302 strict
-differences improves337/337 with26, entirely column/row scalar homes: current
-EBP-8/-4 versus original-4/-8. Mapping only those26 displacement bytes makes
-all337 bytes identical. No exact promotion or spelling/layout/capacity trials;
-retire this body as a missing-operation hypothesis. Complete candidate is now
-explicit in config/match-units.toml. Existing8 exact core bodies4322bytes and
-frame/drop-bricks candidate results remain unchanged.
-Two MT core compiles: coordinate-only339/189 intermediate is preserved; final
-signed loads337/26. No compiler repeat for a preparation missing-callee binding
-or a wrong assembly-index receipt assertion. Consume completed products and
-correct bounded metadata. The unchanged coordinate loop passes1152 original/native
-cases once. Native/MinGW rebuild and oneVC4 link with matching core plus35
-verified reused objects; zero extra legacy source compiles. All206 exact closures,
-247 historical scopes and36 objects verify;235 historical input inventories refresh
-without case replays. Counts remain206/44406/136,283 source-present/270authored;
-115runtime/42generated/101unknown. No new provider or full gameplay run.
-REA reuse ev_a3dbe09d41da07ce2638ea83d054f31af646f507b1cedf2495bd03630db46f7b,
-closed08-21 run00. Current products: `.analysis/screen-point-stages/product-verification.json`;
-seal `.analysis/checkpoints/screen-point-stages-283-206/sha256.json`.
-See [screen-point stages](../research/exact/SCREEN_POINT_STAGES.md).
-The following Wine receipt is historical for the preceding b92e6ab products;
-do not describe it as a run of this new executable. Goal stays active: complete
-source denominator/spelling, physical rendering/audio/full campaign remain open.
-Continue concrete source recovery and commit AND push verified checkpoints.
-One remaining graphics frontier is the software rotation renderer0x4026A0:
-its complete1572-byte retained dossier exists, while current ownCOFF has1335bytes
-and45relocations. Its source has no complete configured candidate yet. Initial
-zero writes and actual dimension/storage operations deserve bounded inspection;
-no arbitrary local type or capacity is established by that observation.
-Optional REA feedback stays in the one /tmp doc. Cleanup is confined to immutable
-hash-equal copies against immediately previous intro-request-play seal; preserve
-unique intermediate evidence and mutable/public inode independence.
-
-The preceding checkpoint follows.
-
-
-Current-product real-Wine follow-up: source checkpoint b92e6ab VC4 executable
-passes the unchanged ball/pause/editor/save-load/zero-exit observe path. A fresh
-original control passes the same path and Wine/Xvfb 640x480x8 settings. There
-are 77 source and 79 original read-only SDK observations, five PNGs per profile,
-and identical full saved-bank hash b88441eb5e06676a106501a60a450b8046fa7b880e8f53ffe5f556ae75a42cd2.
-All 49 original assets remain unchanged. Source executable SHA-256 is
-4070daf5398f67a95975cca45ef98c2c8fdffeb4effe45acad2bc8d711bdd5be.
-Opening/editor/editor-reload full RGB buffers are equal. Both profiles show
-missing filled glyph pixels; cause unlocated. Pause/menu frames are unsynchronized
-(8125/11101 differing pixels), so do not infer source divergence or full graphics
-fidelity. Physical graphics/audio and full campaign remain unproved.
-Retain `.analysis/windows-play-intro-request-writes/` and seal
-`.analysis/checkpoints/intro-request-play-283-206/sha256.json`.
-Reader reuse first rejects an older receipt before launch; current retained
-reader matches `.analysis/windows-play-current-render/reader-compile.json`.
-No reader/game/source compile, owner Oracle replay or new REA session occurs.
-No source, exact or semantic counts change: 206/44,406/136, 283 present / 270 authored.
-Source-frontier inspection finds no new operation gap in the main frame,
-resource loader or rectangle overlap; do not trial declarations/capacities
-solely to force remaining storage choices. Current source checkpoint remains
-the request-write recovery below; current products remain its verified files.
-See [current real-play follow-up](../research/INTRO_REQUEST_PLAY.md).
-Temporary probe runtime copies are cleaned after unique exit files are sealed;
-only hash-equal immutable copies link to the immediately previous source seal.
-Continue concrete source reconstruction; commit AND push verified checkpoints.
-Optional REA feedback stays in the one existing /tmp doc. Goal remains active.
-
-
-The current checkpoint restores point animation's two observed unpassed request
-writes before redraw: size 100 at original EBP-116, zero at -36 (+80), using the
-existing 100-byte DxBallColorFillFx ABI. Independent clear-surface at 0x409F10 has
-identical size/+80 color writes and passes that area to Blt; the animation's
-actual original type/spelling remains inferred. No arbitrary capacity, padding,
-extra call or initialization of untouched fields. Source src/intro.c explicitly
-includes the already-consumed device.h. One canonical MT compile restores all
-180 operations, 14 branches, ten calls and 40 bindings. Both frames are 236,
-versus current 136 before; candidate 682/711 bytes with 604 differences improves
-to 702/711 with 570. Each instruction's register/operand/call/CFG corresponds
-through explicit actual frame roles and branch-index mapping. Seven width
-changes are real disp8/disp32 encodings: two stores +3 each, five descriptor/
-pixel accesses -3 each. Preserve 570 strict differences; no exact promotion
-or declaration/name/scope trials.
-Reuse closed Evidence ev_380287bfea6a4f582b8e8ee477b5c7d470de69c6555f3ab997e0f5f7d4650b2d
-and ev_017375bcddb7d6708aadc8ec0d071b77e9d37c7f877f9da584462f4e561360db.
-Thirty-six moved offsets are grounded in original instruction operands.
-Fifty-two generated bindings reconcile 37 complete literals (preserved data_hex)
-and 15 actual code labels with their owner and original entry-relative values.
-Fifteen exact bodies across 3,864 bytes and all other candidate byte/metadata
-results stay unchanged; generated names may change. Initial stale-alias
-consumer rejection and too-narrow literal-only audit recover from the completed
-product without recompilation. Two restored-write receipt indices are corrected
-to original instructions 18/19 before sealing.
-The unchanged oracle passes 37 direct point cases, 36 compared preparations and
-58 separate connected splash/menu/key checks once. Native/MinGW rebuild;
-matching intro object links with 35 unchanged VC4 objects and no extra legacy
-source compile. All 206 exact closures, 247 historical scopes and 36 objects
-verify; 235 inventories refresh without rerunning historical cases. Counts stay
-206/44,406/136, 283 source-present / 270 authored. Current products:
-`.analysis/intro-unused-fill-writes/product-verification.json`; seal:
-`.analysis/checkpoints/intro-unused-fill-writes-283-206/sha256.json`.
-See [observed unpassed writes](../research/exact/INTRO_UNUSED_FILL_WRITES.md).
-Goal stays active: authored denominator, original source spelling, physical
-rendering/audio and full campaign remain unproved. Continue another concrete
-source flow; commit AND push. Optional REA feedback stays in the one existing
-/tmp document. Clean only immutable hash-equal copies against the immediately
-preceding mask-lifetime seal.
-
-The preceding checkpoint follows.
-
-The preceding checkpoint scopes initialize_intro_points' existing 287-byte binary
-mask to grid seeding before the separate 360-entry offset-table loop in src/intro.c.
-Names/types/capacity/initializer/executable tokens remain unchanged. One accepted
-intro MT compile improves 2041/1996 bytes with 750 differences to 1996/1996 with 13.
-All 368 complete REA boundaries/widths, 9 branches/2 calls/10 bindings verify. Both
-frames 304; mask base 304 and shared index 12 match original; original/current
-X 4/8, Y 8/16, angle 16/4 explain every strict difference. Preserve 13 candidate
-differences; no exact promotion or declaration spelling claim. Reuse closed
-Evidence ev_001f48ac971f132ed4b29b98cf1549ec4136da2eab0a9448b6ed27d7f5e41fb8.
-Nine relocation offsets move; raw original operands/boundaries ground each,
-all old row metadata stays intact. Consume completed producer after stale-offset
-rejection, never recompile solely for a consumer failure. 15 exact companions
-3864 bytes and every other intro candidate record remain unchanged. Unchanged
-focused oracle passes 37 direct point cases, 36 compared preparations and 58 separate
-connected splash/menu/key checks. Driver selection initially includes an unrelated
-seed statement; corrected before body execution, final oracle runs once.
-Native/MinGW rebuild once; matching intro object links with 35 unchanged VC4 objects,
-0 extra legacy source compiles. Verify 206 exact closures/247 historical scopes/36 objects;
-counts 206/44406/136, 283 source-present/270 authored. Current product receipt:
-`.analysis/intro-mask-lifetime/product-verification.json`; current seal:
-`.analysis/checkpoints/intro-mask-lifetime-283-206/sha256.json`.
-This turn also used one rejected runtime overlay/coordinate-scope compile:
-679/677 bytes 494 dif versus 678/677 with 494 differences before. Prior runtime source/object restored
-by hashes without recompilation; preserve `.analysis/paddle-overlay-lifetimes/`.
-Do not repeat that closed scope or force scalar homes with declaration/name trials.
-See [intro mask lifetime](../research/exact/INTRO_MASK_LIFETIME.md).
-Goal remains active: complete authored denominator/source spelling/physical
-rendering/audio/full campaign unproved. Focus on another evidenced source flow.
-Commit AND push verified checkpoints. Optional REA feedback stays in the single
-existing /tmp document; keep unique evidence and clean immutable duplicate copies.
-
-The preceding checkpoint follows.
-
-The preceding source checkpoint scopes initialize_sound's existing 256-byte
-filename copy to its final nonnull retained-sound reload branch in src/sound.c.
-Names/types/capacities/executable tokens are unchanged. One sound MT compile
-restores original response -36 and filename base -292. Twelve response accesses
-shrink by three bytes each: complete emission improves 1741/1705 bytes with
-1447 differences to 1705/1705 with 27. Both frames 324; remaining original/current
-homes result4/32, retry8/28, slot12/24, descriptor base32/20 and flags28/16. All
-377 original boundaries/widths, 99 branches/34 calls and 97 ordered bindings
-verify through the explicit frame roles. Preserve all 27 strict differences;
-no exact promotion or original source declaration/layout claim.
-Reuse closed function Evidence ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f
-and complete 1705-byte read ev_ea17c0f8232c3bed494b5f8e97ff67790e1d38eb410d071395c0337072d22447.
-The original owned 1635 excludes 70 bytes: 14 actual five-byte JMP rel32s are
-verified from saved bytes/targets and merged with provider assembly. No original
-general decoder/new provider session. Preserve complete boundary receipt as a
-seal dependency, not just the Ghidra-owned assembly.
-89 relocation offsets contract; six generated title-string aliases shift by
-one after the declaration move. All complete 8-byte old/new/original NUL strings
-and twelve prior literal attestations verify. Initial consumer rejects stale
-offsets; first serializer also drops data_hex attestations. Both are recovered
-from the completed producer with zero repeated compilations. Never rerun the
-producer or successful offset-reconciliation script just for consumer repair.
-14 exact companions across 2,087 bytes and load-sound/parse-wave candidate records stay
-identical. Four unchanged loops pass 124 initialization/prepare cases and 48
-connected focus/reload/lost-buffer checks. Native/MinGW update once; final
-matching sound object links with 35 unchanged VC4 objects and no extra legacy
-source compile. All 206 exact closures / 247 unchanged historical scopes / 36 objects
-verify; 235 inventories refresh. Counts stay 206 exact / 44,406 code / 136 metadata;
-283 source-present / 270 authored. Current products:
-`.analysis/sound-init-filename-scope/product-verification.json`; seal:
-`.analysis/checkpoints/sound-init-filename-scope-283-206/sha256.json`.
-See [sound initialization filename lifetime](../research/exact/SOUND_INIT_FILENAME_SCOPE.md).
-Do not vary local names/layouts or add padding to force remaining homes.
-Continue another evidenced source family; full denominator, original spelling,
-physical rendering/audio and complete campaign remain unproved, goal active.
-Commit and push verified checkpoints; REA feedback remains optional in one /tmp doc.
-
-The preceding source checkpoint scopes the dirty-region presenter's current
-rectangle index to its positive-count sorting/merge branch in src/display.c.
-The shared loop index stays outside because key generation and both Blt loops
-consume it. Names/types/executable tokens remain unchanged. One display MT
-compile restores original frame 8: shared index -4/current index -8. Complete
-984-byte comparison improves 55 to two differences at offsets 315/327, both
-minimum-top index loads at 0x409239/0x409245. The compiler reads current then
-loop index where the original reads loop then current; both compute the same
-signed minimum. All 246 original boundaries/widths, 35 branches/four calls and
-58 unchanged ordered bindings verify. Preserve both strict differences; no
-exact promotion or original source-spelling claim. Do not trial operand/local
-spelling merely to force those two reads.
-Nine exact companions across 1,843 bytes and every other display candidate
-record stay identical. Four unchanged loops pass 60 sorting/146 merge/60
-presentation cases plus the one-call reset prelude. Sorting retains the
-original RNG history before merge vectors. Initial private aggregate counter
-expected 120 rather than the existing presentation matrix's 60 cases; preserve
-initial driver/correction receipt, corrected four-loop verification reran once.
-No tracked test/fixture changed or new unique semantic cases were added.
-Native/MinGW update once; final matching display object links with 35 unchanged
-VC4 objects and no additional legacy source compile. All 206 exact closures,
-247 unchanged historical scopes and 36 objects verify; inventories refresh.
-Counts stay 206 exact / 44,406 code / 136 metadata; 283 source-present / 270 authored.
-Current products: `.analysis/presentation-merge-scope/product-verification.json`;
-seal: `.analysis/checkpoints/presentation-merge-scope-283-206/sha256.json`.
-See [presentation merge lifetime](../research/exact/PRESENTATION_MERGE_SCOPE.md).
-Continue another evidenced source family; full denominator, original spelling,
-physical rendering/audio and complete campaign remain unproved, goal active.
-Commit and push verified checkpoints; REA feedback remains optional in one /tmp doc.
-
-The preceding source checkpoint restores the observed discarded sprite Restore
-HRESULT store at 0x403E0B in src/device.c's actual nonnull call branch. Keep the
-existing bank/slot declarations; no new HRESULT check is introduced. Complete
-sprite recovery is now 282/282 bytes with 18 strict EBP displacement differences,
-down from 279/282 with 80. Original frame 12,85 boundaries,ten branches/two calls
-and seven unchanged ordered relocation targets verify. Original/current homes:
-bank4/8, result8/12, slot12/4. Original authored-local versus compiler-temporary
-provenance and source spelling remain unknown; no exact promotion occurs.
-Four device exact companions526bytes and the full palette candidate record stay
-identical. Only two relocation offsets move by three after the restored store,
-independently grounded in original instructions. Recover the completed producer
-after a stale-offset consumer rejection; never compile again just for that.
-Three unchanged loops pass 64 bank cases / 63 recovery cases/eight connected lost
-presentations. Native/MinGW update once; final matching device object links
-with 35 unchanged VC4 objects and no extra legacy source compilation. All 206
-exact closures / 247 historical scopes / 36 objects verify; 235 inventories refresh.
-Counts stay 206 exact / 44,406 code / 136 metadata;283 source-present / 270 authored.
-Current products: `.analysis/sprite-restore-result-only/product-verification.json`;
-seal: `.analysis/checkpoints/sprite-restore-result-283-206/sha256.json`.
-See [sprite Restore result](../research/exact/SPRITE_RESTORE_RESULT.md).
-Three actual device compilations occurred: rejected scan-only scope 279/128,
-result+scan scope 282/67, and final branch-local result capture 282/18. Retain all
-stages in `.analysis/sprite-bank-scan-scope/`, `.analysis/sprite-restore-result/`
-and `.analysis/sprite-restore-result-only/`; do not repeat the closed scan scopes
-or vary names/layouts to force remaining homes. Restore-only result capture is
-maintained because the original actually stores the return; its location is
-still unproved. Continue another evidenced source family; full denominator,
-physical rendering/audio and complete campaign remain unproved, goal active.
-Commit and push verified checkpoints; REA feedback remains optional in one /tmp doc.
-
-The preceding exact source checkpoint restores editor status at 0x40CA70 exactly:
-all 431 bytes, 25 unchanged relocation bindings and six complete NUL strings.
-Scope the blank-preview rectangle to the sprite-zero branch and the existing
-8-byte number/label rectangle workspace to board-number drawing in src/editor.c.
-Keep the hint strings afterward. Names/types/executable tokens stay unchanged.
-One canonical editor MT compile restores original frame 52: sprite -4, x -8,
-y -12, preview base -28, number base -36 and label base -52. All 137 retained
-REA instruction boundaries, three branches and 13 calls verify. Twelve exact
-companions across 2377 bytes and the editor-key full candidate record stay identical.
-Two unchanged Oracle loops pass 46 status cases and 32 connected editor mode/key/
-window, toolbar, paint and independent actual-host board-file checks; production
-readonly/default prelude verifies. Native/MinGW update once; matching editor
-object links with 35 unchanged ones, with no extra legacy source compile.
-All 206 exact closures, 247 historical scopes and 36 objects verify; 235 inventories
-refresh without broad replays. Counts: 206 exact / 44406 code / 136 metadata;
-283 source-present / 270 authored.
-Current products: `.analysis/editor-status-phases/product-verification.json`;
-seal: `.analysis/checkpoints/editor-status-phases-283-206/sha256.json`.
-See [exact editor status scopes](../research/exact/EXACT_EDITOR_STATUS_SCOPES.md).
-One additional game-over MT compile scopes shift-only i to its nonfinal-rank
-branch; complete 446-byte comparison stays at three differences at 172/175/177,
-all six exact companions across 2329 bytes and drawing candidate unchanged. Preserve the
-rejected source/object/receipt in `.analysis/score-shift-scope/`, restore verified
-before source/object without recompiling, and do not repeat this scope or prior
-relational-expression variants. No other game-over source change or test occurs.
-Continue another evidenced source family. No coextensive score-row variable
-splits merely to force homes. Full authored denominator, source spelling,
-physical render/audio and campaign remain unproved; the goal stays active.
-Commit and push verified checkpoints. REA feedback stays optional in one /tmp doc.
-
-The preceding source checkpoint restores splash palette pulsing at 0x407EF0
-exactly: all 370 bytes and 29 relocation bindings. Scope the fade counter and
-pulse-color center to their separate phases in src/intro.c, retaining the shared
-half-span factor. Names/types/executable tokens stay unchanged. One canonical MT
-compile restores the original 16-byte frame: half -4, fade counter -8, center -12,
-real integer-multiply temporary -16. The two red-index additions now retain the
-original local-first register order; no comparison rewrite occurs. All 96 REA
-instruction boundaries, nine branches and three calls verify. The before body
-is 368/370 with 127 differences. Twelve actual relocation offsets move; each
-is grounded in the original instruction/target+addend, with unchanged ordered
-symbols/types/addends/targets. Initial comparison rejects old offsets; reuse the
-completed object without another compile. Fourteen exact companions across
-3494 bytes and all other candidate records remain identical. Two unchanged
-Oracle loops pass 120 pulse cases and 58 connected splash/intro/editor mode/key
-checks; their unchanged default/readonly prelude verifies production tables.
-Native/MinGW update once; matching intro object links with 35 unchanged objects
-and no extra legacy source compiles. All 205 exact closures, 247 historical
-scopes and 36 objects verify; 235 inventories refresh without broad replays.
-Counts: 205 exact / 43975 code / 136 metadata; 283 source-present / 270 authored.
-Current products: `.analysis/pulse-color-phase/product-verification.json`;
-seal: `.analysis/checkpoints/pulse-color-phase-283-205/sha256.json`.
-See [exact splash pulse scopes](../research/exact/EXACT_SPLASH_PULSE_SCOPES.md).
-Continue another evidenced source family. Scroller wave remains 235 bytes with
-19 local-home differences; its rectangle initialization precedes the loop, so
-per-iteration initialization is not original. No scroller trial was compiled.
-Unknown source spelling, full authored denominator, physical render/audio and
-campaign remain unproved; the goal stays active. Commit and push verified
-checkpoints. REA feedback stays optional in the same /tmp document.
-
-The preceding source checkpoint restores splash redraw at 0x4075D0 exactly:
-all 949 bytes, 68 unchanged relocation bindings and 17 complete NUL strings.
-Keep the full-screen rectangle across background setup and final surface copy;
-put logo, line counter and foreground logo/band/text operations in their shared
-phase in src/intro.c. Original 36-byte frame: full rectangle -16, line counter
--20, logo rectangle -36. Names/types/executable tokens stay unchanged. All 256
-retained REA instruction boundaries, 13 branches and 30 calls verify.
-Two bounded canonical MT compiles preserve 13 exact companions across 2545 bytes
-and every other intro candidate comparison. The first logo-only stage remains
-nonexact (17 differences, before 23); the final foreground phase is exact.
-No comparison/name/layout/ABI/capacity trial. Two unchanged Oracle loops pass
-16 redraw cases and 58 connected splash/intro/editor mode/key checks. Separate
-unchanged readonly/default prelude verifies production tables and welcome/colors.
-Native/MinGW update once; matching intro object links with 35 unchanged objects,
-no extra legacy source compiles. All 204 exact closures, 247 historical scopes
-and 36 production objects verify; 235 inventories refresh without broad replays.
-Counts: 204 exact / 43605 code / 136 metadata; 283 source-present / 270 authored.
-Current products: `.analysis/splash-logo-scope/product-verification.json`;
-seal: `.analysis/checkpoints/splash-logo-scope-283-204/sha256.json`.
-See [exact splash foreground phase](../research/exact/EXACT_SPLASH_FOREGROUND_SCOPE.md).
-Continue another evidenced source family. Scroller wave remains 235 bytes with
-19 differences; pulse remains 368/370 with 127. Avoid arbitrary coextensive
-scope/name splits. Runtime cleanup remains 107/106 solely because the shared
-board/explosion backing member address emits six-byte LEA rather than five-byte
-MOV; preserve the overlapping storage, do not force a separate original global.
-Reset-round's bank-address operand scheduling remains nonexact; neither runtime
-body was changed/compiled this turn. Full authored denominator, original spelling,
-physical render/audio and campaign remain unproved; the goal stays active.
-Push verified checkpoints. REA feedback stays optional in the same /tmp document.
-
-The preceding source checkpoint restores explosion animation phase lifetimes at
-0x412730 in src/effects.c. Board x/y belong to the frame-five branch; rectangle
-and cleanup x/y belong to expiration. Names/types/executable tokens and calls
-stay unchanged. One canonical MT compile improves the complete 797-byte
-comparison 47 to 13 differences. All 251 retained REA instruction boundaries and
-widths, 18 branches and 14 calls correspond through recorded frame roles;
-all 13 differences are actual frame displacement operands. Frame 32 and
-frame-five x/y -4/-8 now match. Cleanup remains nonexact: original/current
-rectangle base -28/-24, cleanup x -32/-28, cleanup y -12/-32. Do not split
-coextensive cleanup locals or rename/reorder variables to force those homes;
-original declaration spelling and compiler temporary provenance remain unknown.
-Four exact effects companions 841 bytes and 49 unchanged relocation bindings
-verify. Two unchanged Oracle loops pass 9720 animation steps and 288 mixed-queue
-process calls. Native/MinGW update; matching effects object links with 35
-verified unchanged objects. All 203 exact closures, 247 historical scopes and 36
-production objects verify; 235 inventories refresh without unrelated replays.
-Counts stay 203 exact / 42,656 code / 136 metadata; 283 source-present / 270 authored.
-Current products: `.analysis/explosion-phase-scopes/product-verification.json`;
-seal: `.analysis/checkpoints/explosion-phase-scopes-283-203/sha256.json`.
-See [explosion phase scopes](../research/exact/EXPLOSION_PHASE_SCOPES.md).
-Continue another evidence-supported source family. Full authored denominator,
-original spelling, physical render/audio and campaign remain unproved; the goal
-stays active. Commit and push verified checkpoints. REA feedback stays optional
-and in the same /tmp document.
-
-The preceding source checkpoint restores the complete score-strip operation at
-0x4158D0: compound (lives+1)*22, observed top/bottom/left/right stores, rect.top
-as second BltFast Y, and strip-only life-span temporary in src/runtime.c.
-One canonical MT compile improves the complete 433-byte comparison from 76 to
-21 differences. All 135 retained REA instruction boundaries/widths, seven
-branches and nine calls correspond through recorded typed frame roles; only
-21 frame allocation/displacement bytes remain. Original frame 56/current 48;
-text original -40/current -32 and four following locals differ by eight.
-Keep the 11-byte decimal buffer:
-its original capacity is unproved; no padding/capacity trial is justified.
-One actual relocation offset moves two bytes, reconciled against the original
-operand; the same completed object compares without another compile. Ten
-runtime exacts across 2,282 bytes and all other candidate comparisons stay
-identical. All 126 existing score/refresh calls pass. Native/MinGW update;
-the current runtime object links with 35 unchanged objects. All 203 exact
-closures, 247 unchanged historical scopes and 36 objects verify; 235 input
-inventories refresh without unrelated suite replays. Counts stay 203 exact /
-42656 code / 136 metadata; 283 source-present; 270 authored.
-Current products: `.analysis/score-strip-source/product-verification.json`;
-seal: `.analysis/checkpoints/score-strip-source-283-203/sha256.json`.
-See [score-strip source](../research/exact/SCORE_STRIP_SOURCE.md).
-Continue another evidenced source family; do not enlarge the array simply to
-close the eight-byte footprint. Sound upload remains 695 bytes with 31
-differences; file loader 307/304 with 89. Their original lifetime homes need
-stronger source evidence.
-Full authored denominator, original spelling, physical render/audio and campaign
-remain unproved; the goal stays active. Push verified checkpoints; optional REA
-feedback stays in the same /tmp document.
-
-The preceding source checkpoint restores particle drawing at 0x414CB0 exactly:
-all 320 bytes/21 relocations. Nonempty description and per-particle pointer
-scopes in src/particles.c restore the 132-byte frame: rectangle -16, result -20,
-description108 at -128 and pixels -132. Names/types/executable tokens unchanged.
-One canonical MT compile preserves creation/movement across 477 bytes.
-Initial consumer rejects 14 stale offsets from the shorter 311-byte before
-candidate; reconcile them against original REA instruction positions/targets
-and compare the already completed object, without a repeated compile.
-Native/MinGW completed once; the legacy link consumer initially stops for the
-pending comparison receipt, then one actual link reuses the matching object
-with 35 unchanged objects. Two unchanged Oracle loops pass 36 pixel cases and
-980 connected hit/effect/bonus/particle checks, including 240 draw calls.
-All 203 exact closures, 247 unchanged historical scopes and 36 objects verify;
-235 historical input inventories refresh without unrelated suite replays.
-Counts: 203 exact / 42656 code / 136 metadata; 283 source-present; 270 authored.
-Current products: `.analysis/particle-draw-scopes/product-verification.json`;
-seal: `.analysis/checkpoints/particle-draw-scopes-283-203/sha256.json`.
-See [exact particle draw scopes](../research/exact/EXACT_PARTICLE_DRAW_SCOPES.md).
-Continue another evidenced game family. Measure-text and score insertion each
-retain three reversed comparison bytes. Current count>i text source still emits
-the reversed original comparison; inspect prior trial evidence before any new
-equivalent spelling. Paddle position retains four reversed-operand bytes. No
-comparison rewrite was compiled here. Original spelling, full authored denominator,
-physical render/audio and campaign remain unproved; the goal stays active.
-Push verified checkpoints; optional REA feedback stays in the same /tmp document.
-
-The preceding source checkpoint restores explosive-neighbor conversion at
-0x4150A0 exactly: all 824 bytes, 39 relocations, 208 instructions, 26 branches
-and nine calls. Restore collection-phase and per-column inner scan scopes in
-src/gameplay.c; original 20-byte frame is x/y -4/-8, scan_x -12, signed tile
--16 and scan_y -20. Names/types/executable tokens and collection-before-mutation
-order stay unchanged. One canonical MT compile preserves four exact companions
-across 748 bytes; hit/enqueue full comparisons stay identical and nonexact.
-706 unchanged spread cases pass, including all 50 original boards and 400
-boundary/interior source grids. Native/MinGW update; the final matching gameplay
-object links with 35 verified unchanged objects. All 202 exact closures,
-247 unchanged historical semantic scopes and 36 production objects verify;
-235 input inventories refresh without unrelated suite replays.
-Counts: 202 exact / 42336 code / 136 metadata; 283 source-present; 270 authored.
-Current products: `.analysis/explosive-collection-scopes/product-verification.json`;
-seal: `.analysis/checkpoints/explosive-collection-scopes-283-202/sha256.json`.
-See [exact explosive scopes](../research/exact/EXACT_EXPLOSIVE_COLLECTION_SCOPES.md).
-Continue another evidenced game family. Explosion animation remains 797 bytes
-with 47 local-home differences; its cleanup row/rectangle/column homes are not
-explained by simply grouping all expiration locals. No effects source trial
-was compiled here. Hit remains 1316/1315 with 418 differences; avoid arbitrary
-coextensive-variable scope splits or name permutations. Full authored denominator,
-original spelling, physical render/audio and campaign remain unproved. The goal
-stays active. Commit and push verified checkpoints; REA feedback is optional
-and stays in the same /tmp document.
-
-The preceding source checkpoint restores MIDI stop at 0x401A20 and completion
-callback at 0x401B10 exactly: 225/127 complete bytes and 3/1 relocations.
-Restore validated-operation pointer and callback header scopes in src/midi.cpp;
-header scope ends before context pending decrement/final function return.
-Names/types/executable tokens and five-argument stdcall ABI stay unchanged.
-Two canonical MT compiles preserve release/pause across 282 bytes. The first
-callback block-final return emitted an extra five-byte continuation; the retained
-stage has 132/127 bytes and 15 differences. Do not repeat that model. Four
-unchanged Oracle loops pass 828 direct MIDI cases plus 54 connected checks for
-six songs. Native/MinGW update; the final matching MIDI object links with 35
-unchanged objects. All 201 exact closures, 247 unchanged historical semantic
-scopes and 36 objects verify. Counts: 201 exact / 41512 code / 136 metadata;
-283 source-present; 270 known authored.
-Current products: `.analysis/midi-operation-scopes/product-verification.json`;
-seal: `.analysis/checkpoints/midi-operation-scopes-283-201/sha256.json`.
-See [exact MIDI scopes](../research/exact/EXACT_MIDI_OPERATION_SCOPES.md).
-Play 516/513 bytes with 169 differences, parse 868/868 with 40, expansion
-343/343 with 41 and open 530/522 with 443 remain candidates. Continue another
-meaningful source family; no artificial
-storage/name/order trials. Full campaign/render/audio and original spelling
-remain unproved; the reconstruction goal stays active. Push verified checkpoints
-to origin/main. REA feedback is optional and stays in the same /tmp document.
-
-The preceding source checkpoint restores rectangle fill at 0x403230 exactly:
-85 complete bytes/zero relocations; outer rect EBP-16 and operation-local 100-byte
-fx EBP-116. Three rotation counters now occupy original EBP-16 loop homes;
-remaining 4/6/6 red/green-home differences stay nonexact. One neutral fade
-comparison orientation compile emitted the same 18 differences and zero changed
-bindings; its source/object/receipt are retained, and original device source/
-verified before object restored without recompilation. Do not repeat that model.
-Four legacy compiles (device 1/display 1/UI 2), 178 unchanged fill/rotation/setup
-calls, 13 affected exact companions across 2317 bytes and 4 restored device companions across 526 bytes.
-Native/MinGW update; two final matching objects link with 34 unchanged objects.
-All 199 exact closures/247 unchanged semantic scopes/36 production objects verify.
-Counts: 199 exact / 41160 code / 136 metadata; 283 source-present; 270 known authored.
-Current products: `.analysis/palette-operation-scopes/product-verification.json`;
-seal: `.analysis/checkpoints/palette-operation-scopes-283-199/sha256.json`.
-See [fill/palette loop scopes](../research/exact/EXACT_FILL_PALETTE_LOOP_SCOPES.md).
-The user explicitly resumed pushes. The previously accepted backlog is confirmed
-at origin/main b48660d; commit and push subsequent verified source checkpoints.
-Continue another evidence-supported source family; do not split coextensive
-color snapshots or vary names merely to force storage. Full authored denominator,
-original spelling, driver display/audio and campaign fidelity remain unproved;
-the reconstruction goal remains active. REA feedback is optional, one /tmp doc.
-
-The preceding source checkpoint restores six sound operations exactly across
-965 bytes/43 relocations: stop/rewind, frequency/pan/volume setters, whole-bank
-restoration and buffer creation. Restore post-guard results, scan/status/reload
-filename and descriptor lifetimes in src/sound.c; names/types/operations stay
-unchanged. One canonical MT owner compile preserves eight companions across 1122 bytes.
-Seven unchanged Oracle loops pass 4317 direct calls and 48 connected focus/reload/
-recovery checks. Native/MinGW update; matching sound object links with 35 unchanged
-objects. All 198 exact closures/247 unchanged semantic scopes/36 objects verify.
-Counts: 198 exact / 41075 code / 136 metadata; 283 source-present; 270 known authored.
-Current products: `.analysis/sound-operation-scopes/product-verification.json`;
-seal: `.analysis/checkpoints/sound-operation-scopes-283-198/sha256.json`.
-See [exact sound scopes](../research/exact/EXACT_SOUND_OPERATION_SCOPES.md).
-Sound initialization, WAV parser and upload loader remain nonexact; do not try
-blind storage/name/declaration permutations. Continue another evidenced source
-family or inspect meaningful original declaration lifetimes in those bodies.
-Physical/asynchronous audio, original declaration spelling, authored denominator,
-full render and campaign remain unproved; the goal remains active and incomplete.
-Reconstruction remains primary; no new REA provider or capture was needed.
-
-The preceding source checkpoint restores moving balls at 0x410770 and projectile
-updates at 0x413170 exactly: 3223/276 and 328/23 complete bytes/relocations.
-Restore live-ball y/sign and reduced/full particle scopes, then projectile
-iteration row in src/core.c; names/types/operations/RNG order stay unchanged.
-Two canonical MT owner compiles preserve six exact companions across 771 bytes.
-2505 unchanged core-oracle calls pass (2373 ball, 126 projectile, 6 spawn setups).
-Native/MinGW update; final matching core object links with 35 unchanged objects.
-All 192 exact closures/247 unchanged semantic scopes/36 production objects verify.
-Counts: 192 exact / 40110 code / 136 metadata; 283 source-present; 270 known authored.
-Current products: `.analysis/moving-ball-scope/product-verification.json`;
-seal: `.analysis/checkpoints/moving-ball-scope-283-192/sha256.json`.
-See [exact ball/projectile scopes](../research/exact/EXACT_BALL_PROJECTILE_SCOPES.md).
-Continue with another remaining nonexact game owner using complete original
-source/CFG/storage evidence. Reconstruction is primary; feedback optional.
-Do not rerun successful ball/projectile cases or historical visual probes.
-Original identifiers/declaration spelling, authored denominator, synchronized
-render/audio and full campaign remain unproved; the active goal is incomplete.
-
-The preceding source checkpoint restores bonus generation at0x4138D0 exactly:
-all1197bytes/89relocations, including76table bytes and a five-byte unowned exit.
-Restore particle/case and creation-success scopes in src/bonuses.c without
-changed names/types/operations/padding. Correct the old candidate table binding
-from case13 to independently observed0x413D21. Two bounded compiles preserve
-three exact companions2287bytes; only final object links with 35 unchanged ones.
-1750unchanged generation cases pass with ordered RNG/audio/particle events and
-complete queues. All190 exact closures/247 unchanged semantic scopes/36 objects
-verify. Current products: `.analysis/bonus-generation-scope/product-verification.json`;
-seal: `.analysis/checkpoints/bonus-generation-scope-283-190/sha256.json`.
-See [exact bonus scopes](../research/exact/EXACT_BONUS_GENERATION_SCOPE.md).
-Continue with complete original moving-ball bounds/attachment/particle scope
-evidence or another remaining game owner; do not repeat closed source models.
-
-The preceding source checkpoint restores device initialization at0x403A00 exactly:
-all359 bytes/28actual relocations, including direct failure return and the
-nested vertical-blank counter scope in src/startup.c. Five startup companions
-remain exact across1022bytes. One canonical MTmatching compile is reused by
-the VC4 link with 35 unchanged objects; Native/MinGW rebuild the affected owner.
-The unchanged startup suite passes158 cases plus one connected dispatch check.
-All189 exact input/object identities and247 unchanged historical semantic
-scopes verify;235 input closures refresh. No provider startup/gameplay replay.
-Its products are in `.analysis/startup-calibration-scope/product-verification.json`,
-with independent product seal
-`.analysis/checkpoints/startup-calibration-scope-283-189/sha256.json`.
-The earlier menu/flight/reflection
-captures below describe their retained PCX-checkpoint executable, not a fresh
-rendering claim for these new products. See
-[exact calibration scope](../research/exact/EXACT_DEVICE_CALIBRATION_SCOPE.md).
-Reconstruction is primary; REA feedback is optional and briefly appended to
-the same existing /tmp document. Continue with evidence-supported source/CFG
-recovery of a remaining nonexact game owner; do not substitute repeated small
-gameplay observations or CRT counting for source progress.
-
-The local REA runtime is now 6.4.0, with the matching version-37 skill and
-170 advertised MCP tools. A fresh `npm ci` reproduces the entire installed
-dependency tree. Node 22.19.0, Ghidra 12.1.4 and the JDK remain pinned.
-The intact 43-record 6.3 snapshot is retained under
-`.analysis/rea-upgrade-6.4.0/before/`; 6.4 rejected its analysis profile.
-A fresh 6.4 native session read only the 12-byte locale record, agreed with
-the archived bytes, saved one Evidence record and closed successfully.
-The first read cost 49.37 seconds; no game build or replay was needed.
-The new portable bundle-summary CLI can discover a selected historical
-6.3 record without opening Ghidra. See [REA commands](REA.md) for the
-upgrade and retained-evidence workflow. Verified cleanup removed 250.7 MiB
-of obsolete runtime, validation tree, npm cache and temporary bundle allocation;
-one pair of identical new immutable catalogs was also deduplicated. The small
-upgrade seal is `.analysis/checkpoints/rea-upgrade-6.4.0/sha256.json`, with
-59 owned files and 18 explicit dependencies. Current game products and
-source/origin proof inputs are unchanged. Feedback remains in the same
-`/tmp/dxball_rea_feedback_20261010.md`. The subsequent entry 63 inventories the
-actual FPinit callback member without a new provider session: full sections
-23/1/56/16 bytes have relocation-free runs below sixteen bytes, and the full
-16-byte flag setter has no match in the retained CRT carrier after its two
-absolute fields are independently bound. No callback/origin authority changes.
-See the callback-placement section in
-[complete initialized CRT objects](../research/CRT_INITIALIZED_OBJECTS.md)
-and `.analysis/crt-fpinit-callbacks/preflight.json`.
-
-Entry 64 observes the current PCX-checkpoint VC4 executable and original menu:
-32 natural complete captures each, 31 distinct RGB frames each, five matching
-640 by 480 pairs with every decoded pixel equal. Opening input and read-only
-SDK mode observations bracket the menu interval; both games exit with code
-zero. No screenshot normalization, build or full gameplay replay. Temporary
-working copies are hash-verified and removed; unique captures stay in
-`.analysis/menu-palette-phase/`. This strengthens menu palette-phase equivalence
-but does not prove synchronized clocks, pause or full physical display/audio
-fidelity. See [Windows adapter](../research/WINDOWS_ADAPTER.md). Entry 65
-observes attached-ball pause frames at naturally equal phases,
-using actual input and read-only state; do not rerun the successful menu sample.
-Both original/current VC4 controls retain the attached ball at x320/y441,
-score zero, three lives, paddle x320 and unchanged full ball fields. Each
-provides 32 captures covering eight distinct RGB frames; all eight have equal
-complete 640 by 480 counterparts. Space resumes, Escape returns to menu,
-and another Escape exits zero. REA 6.4
-controlled-replay Evidence is
-`ev_d5cefc4042fda9ea205b51380ca4a011c3a620d5761b675ca9eca1b9b7406791`;
-its filesystem checkpoint hashes the complete report. Process sampling hits 64
-and remains explicitly partial; the observed child exit and independent
-full-frame comparisons remain valid, without proving complete process history.
-Private `.analysis/pause-palette-phase/` retains all unique frames and inputs;
-temporary working copies are removed after hash verification. No new build or
-source/exact/origin promotion. Sampled scene equivalence leaves moving-ball
-trajectories, synchronized clocks, full campaign and physical audio unproved.
-Entry 66 uses actual release input and a persistent read-only reader for the
-first ball's flight. The reader now emits all thirteen already-read ball fields;
-one strict C90 helper compile binds 108 actual recursive include dependencies.
-Complete streams retain 669 original and 659 VC4 records, with zero malformed
-records. Ninety distinct moving vectors per target share 89 full vectors in
-order; one released-before-motion sample and one unsampled x387/y375 vector
-remain explicit. Both clear tile 291 from 11 to 0, gain ten points, lose one life
-after the paddle moves away, initialize a fresh attached ball and exit zero.
-Complete board states/effects agree. No game build or function-count change.
-See [first ball flight](../research/FIRST_BALL_FLIGHT.md), private
-`.analysis/first-ball-flight/`, REA controlled-replay Evidence
-`ev_004437a523c46dcf6514bb61fe88d62e789f3b0ff8502264e4b493dbb4027735`.
-The recorder hashes the complete report; process sampling remains explicitly
-partial. Raw streams are complete within their declared intervals, without an
-atomic-frame or synchronized-clock claim. Temporary working copies are removed
-after hash checks; unique streams/reader/proof remain.
-Entry 67 moves the paddle to x415 through actual mouse input and observes its
-first reflection. All 108 complete sampled vectors agree in order, including
-24 reflected vectors at angle105/speed5, dx-1/dy-4. First reflected position is
-x404/y441 with previous403/439, bounce count1 and wall bounces0; both rise to
-x381/y349 with score10/lives3 and equal complete400-byte board effects.
-The existing verified persistent reader is reused without a helper/game build.
-Complete streams retain540/523 records with zero malformed records. REA6.4
-controlled-replay Evidence
-`ev_bb68bea389757a7cf605b424b195a0f0651f3f0330aeefd9b97ad41edc46a0e3`
-hashes the complete report; child, games and readers exit zero. Process sampling
-is explicitly partial at64, distinct from retained SDK stream coverage.
-Temporary runtime copies are hash-verified and removed; unique streams remain
-in `.analysis/first-paddle-reflection/`, referenced without extra raw copies by
-its small seal. See [first paddle reflection](../research/FIRST_PADDLE_REFLECTION.md).
-Entry68 observes paddle435: all116 complete vectors agree in order, including
-32reflected states at angle135/speed5, dx-4/dy-3. Both rise to x280/y348 with
-score10/lives3 and equal complete board effects. Intentional observer stop after
-the completed trajectory interval records SIGTERM/-15; independently checked
-games still exit zero after actual Escape/menu input. Do not claim natural
-reader exit or coverage of later shutdown. Complete165/167-record interval
-streams total413,774bytes, withzero malformed. REA6.4 controlled-replay Evidence
-`ev_4effb5e70464b80590d8d1b792e0b197c25de65b583ddcab7b6b078662c00836`
-hashes the full report; process sampling is partial at64. Private
-`.analysis/paddle-offset-reflection/` and its small seal reference unique raw
-streams and prior helper/product closures. Runtime copies are hash-verified
-and removed. No helper/game compile or source/exact/origin change.
-Entry69 continues paddle435 through a second brick and left wall. Original181/
-VC4 182distinct full vectors share181in order; the VC4-only x336/y390 sample
-remains explicit, with original successor predecessor coordinates only.
-Both clear tile28511->0 after291, reach score20/lives3 and equal400-byte boards.
-Full pre-wall x20/y395 dx-4/dy3 counters2/1 and post-wall x20/y398 dx4/dy3
-counters3/2 agree; wall_bounces counts brick collisions as well as walls.
-Complete256/257-record streams total639,532bytes withzero malformed; derived
-comparison is compact61,061-byte JSON with unique complete vectors and index
-references. Intentional observer SIGTERM/-15 and independent gamezeroexit
-remain distinct. REA6.4 controlled-replay Evidence
-`ev_b4e031e71bf056d40b665e1449d1ec847a780ebf963933cb49bc752117a39a6a`
-hashes the full report, with partial process sampling at64. Private
-`.analysis/post-reflection-wall/` and its small seal reference unique raw
-carriers and prior closures; runtime copies are hash-verified and removed.
-No game/helper compilation or source/exact/origin change.
-Entry70 is the source checkpoint at the top: device initialization now matches
-all359bytes. Entry71 closes bonus generation1197bytes. Next feedback entry:72. Prioritize remaining game source/CFG
-recovery; REA feedback is optional and must not become the primary task.
-Do not repeat successful menu, pause, first miss, paddle415, paddle435 or
-second-brick/left-wall captures unchanged. Synchronized clocks, full-frame
-physics/audio and whole-campaign fidelity remain open; the goal stays active.
-
-- 283 source-present entries and 247 scoped semantic acceptances.
-- 190 exact functions / 36,559 complete code bytes / 136 accepted metadata bytes.
-- Origins: 270 authored, 115 runtime, 42 compiler-generated, 101 unknown.
-- Score initialization/read/name editing and the connected score-table source
-  recovery are complete checkpoints; do not restart score initialization.
-- Full authored denominator, original declaration spelling, synchronized render
-  or audio fidelity and nearly complete original-source recovery remain unproved.
-
-The latest origin audit verifies seven complete initialized objects, separately
-from enclosing section authority. Four FPinit objects cover16 bytes at423090;
-three locale objects cover12 bytes at42387c. Actual COFF indices and next-symbol
-boundaries cover each complete4-byte allocation extent; no unselected pointer
-or static section definition becomes authority. The new crt_objects.py helper
-publishes only these objects after unique initialized bytes/complete Evidence/
-PE comparison. Original C types or declaration spelling are not inferred.
-
-Object-scoped __adjust_fdiv unlocks whole87tran code519/data244, independently
-placed at41cc00/423ef0 from73-byte code and20-byte data anchors. All19 code/
-28 data relocations match and publish atomically. One unknown entry41cda1
-becomes runtime. Complete cropzeros89 at418de0 binds both locale references;
-its entry is absent from imported inventory, withno invented row. Current
-maintained89 code sections/14669 disjoint bytes/105 origin entries,20 whole
-data sections/3330 bytes,plus seven complete objects/28 bytes;425 whole-section
-definitions/235 static andseven separately scoped object definitions. All prior
-87 code/19 data/394 definitions survive. One positive/six rejected object-scope
-controls; candidate/public recipe alias and actual executed receipt are explicit.
-Four game products remain PCX-checkpoint products; no source/compiler/build/
-gameplay replay. Reuse original FPinit28;two new closed REA6.3 sessions observe
-locale12 andtable244 bytes,49169.66/47805.31ms,7137 retainedcarrier bytes. See
-[complete initialized CRT objects](../research/CRT_INITIALIZED_OBJECTS.md),
-private `.analysis/crt-locale-frontier/`,seal
-`.analysis/checkpoints/crt-initialized-objects-283-188/sha256.json`.
-The three FPinit callback pointers remain unverified;conversion-table/locale/BSS
-andfull original-source/authored denominator/synchronized fidelity remain open.
-Continue independently scoped complete initialization or remaining origin
-boundaries; do not derive globals from observed fields to fit relocations.
-That source checkpoint uses feedback entry 61; the REA upgrade uses entry 62.
-
-The preceding origin audit proves the complete multiprocessing FDIV test at
-0x418C50: 278 bytes and twelve actual relocations through five independently
-unique complete strings / 89 bytes, a previously verified test body and named
-PE imports. One unknown entry becomes runtime. A separate 23-byte __positive
-body at0x418E40 is absent from the imported inventory; retain its complete
-library provenance without inventing a row. Current maintained scope:
-87 code sections / 14061 disjoint bytes / 104 origin entries, 19 data sections /
-3086 bytes, 394 actual definitions / 219 static. All prior85 code / 14 data
-result rows survive. Whole small ASCII string validation permits the nine-byte
-KERNEL32 literal with its actual MSVC symbol, unique carrier placement and full
-Evidence/PE agreement; untyped constants still require16 bytes. Four controls
-reject partial or shifted strings, an untyped short constant and a wrong
-literal symbol. Actual candidate-path receipt and byte-identical published
-recipe alias are explicit. No game source/compiler/build/gameplay replay.
-Four current products remain those ofpcx-packet-loop/product-verification.json.
-
-The actual fpinit.obj data is initialized28 bytes; a unique16-byte prefix places
-423090 independently. Candidate __adjust_fdiv is42309c; the three original
-function pointers and complete28 bytes are observed but code/table dependencies
-remain unclosed. No partial section authority is published. Continue independent
-conversion-table/locale/BSS or whole initialization-group evidence; do not derive
-bindings from observed fields to fit a relocation. One closed REA6.3 session
-reads117 raw bytes: first53374.63ms, five later1.03–7.21ms, 18787 retained carrier
-bytes. See [FDIV initialization frontier](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md),
-private `.analysis/crt-fdiv-control/`, seal
-`.analysis/checkpoints/crt-fdiv-control-283-188/sha256.json`.
-That checkpoint uses feedback entry60; the current entry is61.
-
-The latest source batch restores PCX's original body-tail packet increment and
-direct backedge to its guard. Matching979/862 bytes,227 paired instructions,
-851 strict differences(previous984/862,869);no new exact function. All12
-accepted resource units/2197 target bytes survive;five candidates compared.
-Complete typed proof:205 normalized instructions,22 in six commuted signed
-comparison groups/two low32 products;30 branch ordinals/10 call operands agree.
-305 typed+3 compiler-padding frame bytes map;four original unaddressed bytes
-remain unexplained. Do not add padding or retry equivalent operand/local
-spelling. One stable MLmatching compile,one necessary MTproduction compile;
-production847 bytes uses three getc calls andis not the matching body. VC4
-reuses35 unchanged objects;Native/MinGW resource-dependent builds pass.99
-unchanged original/Native PCX cases pass once;235 historical input closures
-refresh with247 scopes unchanged. No new REA session/full replay/Wine/audio
-verification. Current four products:
-`.analysis/pcx-packet-loop/product-verification.json`. See
-[original PCX packet loop](../research/exact/EXACT_PCX_PACKET_LOOP.md),private
-`.analysis/pcx-packet-loop/`,seal
-`.analysis/checkpoints/pcx-packet-loop-283-188/sha256.json`.
-Next evidence must distinguish unresolved origin/storage or synchronized runtime
-fidelity;closed PCX/capture/display/key/window layouts are not source gaps.
-That source checkpoint uses feedback entry59; the current entry is60.
-Keep public/current paths independent from immutable archive inodes.
-
-The preceding origin audit closes two pointer-bearing code/data groups atomically:
-87trig43/114 bytes and adj_fdiv3467/352. Both code/data bases independently follow
-unique nonrelocated anchors;all22 code/76 data actual-index relocations pass
-before group authority is published. Eight FDIV rows become runtime. The43-byte
-trig assembly body is missing from the imported function inventory;it is proved
-without inventing a new row. New `scripts/crt_coupled.py` integrates the bounded
-group check after preceding independently verified sections. One positive run
-preserves all prior83 code/12 data result rows;three controls reject shifted
-data,partial code and altered dispatch pointer with no authority publication.
-Current maintained85 sections/13760 code/103 origin entries,14 data/2997 bytes,
-380 definitions/212 static. No game source/compiler/build/gameplay replay or
-exact/semantic promotion;four products unchanged. Candidate/public recipe is a
-byte-identical alias;actual executed receipt remains unchanged. One closed
-REA6.3/Ghidra12.1.4 session reads two data extents466 bytes;66497.05ms then1.64ms.
-See [complete code/data groups](../research/CRT_CODE_DATA_GROUPS.md),private
-`.analysis/crt-pointer-storage/`,seal
-`.analysis/checkpoints/crt-pointer-storage-283-188/sha256.json`.
-Its remaining103 unknown origins,assert/transcendental partial data and ungrounded
-BSS require new independent authority;full authored denominator/fidelity remain
-open. Keep current and public paths independent from immutable archive inodes.
-
-The preceding origin audit independently places nine nonzero initialized CRT data
-sections/1401 bytes,then proves14 complete code sections/2897 bytes/81 actual
-relocations,covering22 formerly unknown entries. No code relocation guesses a
-data address;static names retain actual member/index authority. The unchanged
-maintained verifier passes83 complete sections/10250 bytes/95 origin entries,
-12 data sections/2531 bytes/272 scoped definitions. Two controls reject shifted
-or partial new data;no acceptance report. Candidate/published recipes are
-byte-identical;the actual candidate-path receipt is retained without rebasing.
-One closed REA6.3/Ghidra12.1.4 session reads nine exact extents;first59037.66ms,
-eight later1.57–18.82ms. No source/compiler/build/gameplay replay or new exact/
-semantic acceptance. Their historical four products remain the window-switch products.
-See [complete initialized CRT storage](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md),
-private `.analysis/crt-initialized-storage-next/`,seal
-`.analysis/checkpoints/crt-initialized-storage-283-188/sha256.json`.
-Unknown111 and the full authored denominator remain unresolved. Nine first-round
-and five second-round code matches exhaust these data seeds;do not repeat that
-unchanged scan. Next origin work requires independently grounded BSS/pointer
-storage or code authority. Three unparsed members/debug relocation sections and
-unused/partial data placements remain diagnostic,not excluded from the goal.
-
-The preceding read-only audit closes both display initialization bodies as missing
-source hypotheses within their defined typed API scope. Fullscreen1343/1406 has
-325 paired instructions,32 direct branches/42 calls/114 actual relocations;
-compatible1147/1180 has288,20/42/110. Complete472/468-byte typed frame bijections
-explain every instruction after frame and CFG translation;1278/1092 strict
-differences remain. No source edit, compiler/provider/build/runtime replay or
-new acceptance. The matching object is the actual linked production owner;
-four current products verify unchanged. Raw frame addresses/arbitrary driver
-aliasing or retention/uninitialized fields/scratch flags/source spelling and
-physical DirectDraw fidelity are excluded. See
-[complete display initialization](../research/exact/EXACT_DISPLAY_INITIALIZATION_FRAME.md),
-private `.analysis/display-initialization-frame/`, seal
-`.analysis/checkpoints/display-frame-flow-283-188/sha256.json`.
-Do not retry declaration/name/storage ordering. Continue independently scoped
-unknown-origin/storage evidence or a demonstrated missing game effect;the
-full authored denominator and synchronized fidelity remain open.
-Storage cleanup removes1616 optional Ghidra API-doc/editor-completion files,
-accounting104804352 single-link allocated bytes;206 pinned required runtime
-files/four current products remain verified. Unique historical evidence stays.
-Deletion inventory/restore archive identity are in the private audit folder.
-No device-free-space delta is claimed. All REA feedback still appends only to
-`/tmp/dxball_rea_feedback_20261010.md`.
-
-The preceding exact source batch makes WindowProc at0x40DA70 exact across all1171 bytes/
-74 actual relocations. Restore its cursor-case switch exit and empty create/
-erase-message exit after right-button release. Full230 instructions/1151 bytes
-include227 reachable instructions and three dead five-byte switch tails; the
-complete20-byte/five-target table is included. Eight affected other exact units/
-1767 bytes remain exact,including game-key831. One stable matching compilation,
-one Native/MinGW build stage and one VC4 link reuse35 unchanged objects;no
-additional game source compile.2138 unchanged WindowProc cases pass once after
-a private missing-messages-assignment failure before cases. No key/clock/
-dispatch/full historical replay.235 historical semantic closures refresh with
-247 scopes unchanged. Its historical products:
-`.analysis/window-switch-exits/product-verification.json`. See
-[exact window switch exits](../research/exact/EXACT_WINDOW_SWITCH_EXITS.md),
-private `.analysis/window-switch-exits/`,seal
-`.analysis/checkpoints/window-switch-exits-283-188/sha256.json`.
-WindowProc and game-key source/CFG hypotheses are closed. Do not reopen them
-based on old owned-byte inventories or retry case/local-layout spelling.
-Remaining full authored denominator and synchronized game/audio fidelity need
-actual whole-owner or independently distinguished origin evidence.
-
-The preceding source batch makes game-key at0x410290 exact across all831 bytes and
-68 actual relocations. Original pause/space share one break, and unpause returns
-directly before a standalone switch. Full partition:153 instructions/655 bytes,
-176 inline table/selector bytes,35 direct branches/two indirect dispatches/
-15 calls, all6 music/15 key destinations and92 selectors. Both unowned switch
-end jumps are included. Seven affected accepted units/936 bytes remain exact.
-Three actual matching compiles: partial shared break831/1, rejected early return
-plus else836/615, final831/0. Only final source gets one Native/MinGW build and
-one VC4 link (same matching object+35 unchanged objects); no intermediate
-product build/case or additional game source compile.420 unchanged existing key
-cases pass once after a private missing-dependency-path failure before cases.
-No clock/dispatch/full historical replay.235 historical semantic input closures
-refresh with their247 scopes unchanged. Current four products:
-`.analysis/game-key-shared-exit/product-verification.json`. See
-[exact key exits](../research/exact/EXACT_GAME_KEY_SHARED_EXIT.md), private
-`.analysis/game-key-shared-exit/`, seal
-`.analysis/checkpoints/game-key-shared-exit-283-187/sha256.json`.
-Game-key's complete source/CFG frontier is closed. The subsequent checkpoint
-above also closes WindowProc;never add fake locals/padding/operations or retry
-these closed switch spellings.
-Original declaration spelling/full authored denominator/game fidelity remain
-unproved. Its historical counts187/33832/136 precede the current188/35003/136.
-
-The preceding read-only source audit closes capture-sprite's abstract groups as a
-missing-producer hypothesis. Both complete852/876-byte bodies have248 decoded
-instructions.18 actual eight-instruction groups symbolically form the same
-1048*bank+4*sprite address through separately live selector/slot reads; all104
-other instructions agree through a complete140-byte typed frame map, five
-direct branch successors and seven call targets. Matching and already-linked
-production capture code/all42 actual relocations are identical.803 strict
-differences remain; raw frame pointer addresses, arbitrary driver/COM aliasing
-or retained stack addresses, uninitialized fields, scratch/flags/void-exit
-residue and original spelling are excluded. No source, compiler/provider/build
-or runtime replay change. Existing resource cases keep their historical scope.
-Current four products remain those of the scan-source checkpoint below.
-See [complete capture flow](../research/exact/EXACT_CAPTURE_ADDRESS_FLOW.md),
-private `.analysis/capture-producer-flow/` and immutable seal
-`.analysis/checkpoints/capture-address-flow-283-186/sha256.json`.
-
-The preceding source batch restores scan initialization, pending[next] initial-y,
-and consumed row/bounds arguments in both polygon controllers. Complete bodies
-have926 instructions/3135 bytes with138 direct branch successors/22 call targets
-and identical instruction boundaries. Scoped producer/frame correspondence
-explains89 unequal normalized instructions;837 agree. Original20/current19 local
-words include one current saved pointer with two disjoint original homes.
-Raw internal frame addresses/flags/scratch/void-exit residue and original
-local declaration spelling remain outside this claim. Final ordinary1543/1543
-with223 differences; clipped1592/1592 with220; triangle1710/1710 with99 and
-complete160-byte candidate metadata exact. Nine affected accepted units remain
-exact. Each original/Native and VC4 COFF/Native profile passes1080 existing
-polygon cases. Complete triangle/span COFF and Native emissions, eight Native
-fixed-point functions and PLT targets/bindings are unchanged; their historical
-cases are not rerun. One actual matching compilation, one affected Native/MinGW
-build and one VC4 link reuse35 unchanged objects; no rejected diagnostic or
-additional game source compilation.235 historical semantic input closures
-refresh without changing their scopes. Current products:
-`.analysis/polygon-scan-span/product-verification.json`. See
-[scan setup/span](../research/exact/EXACT_POLYGON_SCAN_SPAN.md), private
-`.analysis/polygon-scan-span/`, and immutable seal
-`.analysis/checkpoints/polygon-scan-span-283-186/sha256.json`.
-The preceding [sort lifecycle](../research/exact/EXACT_POLYGON_SORT_LIFECYCLE.md)
-retains its rejected-stage and final profile evidence. The concrete scan-source
-gaps it identified are now closed. Further recovery requires actual missing
-producer/game-flow evidence; do not trial names, local layout, equivalent
-comparison spelling or fake locals to force a frame match. Full original
-source declaration spelling and complete-game fidelity remain open.
-
-The preceding source batch restores polygon endpoint rereads and repeated indexed
-edge-field stores in both `src/raster.cpp` controllers. Complete candidates are
-1484/1543 with1025 differences and1544/1592 with1048. Each construction interval
-has89 instructions at original offsets; eight frame homes and two equivalent
-ordinary comparisons explain scoped correspondence. Nine affected accepted
-units remain exact. Triangle1710/1710 retains109 differences and exact160-byte
-candidate metadata; its unchanged source emits one operand-reversed MOV/IMUL
-producer. Each original/Native and actual VC4 COFF/Native profile passes1080
-existing polygon and72 existing triangle cases. Only raster recompiles for
-Native/MinGW; VC4 links the matching object plus35 verified unchanged objects.
-235 historical semantic input closures refresh without changing their scopes.
-Current four product identities are in `.analysis/polygon-endpoint-storage/
-product-verification.json`. See [polygon storage](../research/exact/EXACT_POLYGON_ENDPOINT_STORAGE.md),
-private `.analysis/polygon-endpoint-storage/`, and immutable seal
-`.analysis/checkpoints/polygon-endpoint-storage-283-186/sha256.json`.
-Remaining complete-controller storage/sort/loop differences need actual enclosing
-original evidence; do not trial equivalent expressions or local-name/layout changes.
-
-The preceding countdown audit rejects direct crop subtraction as unsupported
-source simplification: the original also has shared inverse/negation steps
-absent from unequal-group summaries. Current source/object are restored by
-their exact before identities after one diagnostic `/MT` compilation; no
-Native/MinGW build or game link. All nine affected exact units pass in that
-diagnostic, but its1061/1057 with993 differences is not accepted. Final current
-1057/1067 proof covers297/302 instructions,25 branches,22 calls,51 relocations
-and16 frame homes with four explicit producer groups;992 differences remain.
-197 unchanged countdown/crop cases and162 overlays pass on the restored current
-Native product (existing198-case last-brick scope's separate multi-tile case
-is not rerun). Scratch residue through arbitrary callees stays outside the
-static producer/CFG claim. See
-[complete crop chains](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), private
-`.analysis/lightning-crop-subtraction/`, and immutable seal
-`.analysis/checkpoints/lightning-crop-chain-283-186/sha256.json`.
-
-The preceding origin batch binds actual COFF symbol indices by hash-identified
-archive member. Static names cannot use the shared external map. Four whole
-sections (__ismbblead18, __control8763, __controlfp24, __setdefaultprecision19)
-match all124 bytes/five relocations; runtime becomes83, unknown133. Final CRT
-receipt covers69 complete sections/7353 bytes/73 distinct origin rows, with
-three data sections/1130 bytes and two separate ABS constants unchanged.
-Six actual-member helper controls and five complete-verifier rejections pass.
-No game source/exact/semantic change, compiler/provider or runtime replay.
-See [member-scoped CRT bindings](../research/CRT_MEMBER_SCOPED_BINDINGS.md),
-private `.analysis/crt-member-scope/`, and immutable seal
-`.analysis/checkpoints/crt-member-scope-283-186/sha256.json`.
-
-The preceding render audit explains the complete dirty-restoration candidate:
-827/846 bytes,198 instructions,22 branches,2 COM calls,61 actual relocations.
-All19 page/index producers form equal addresses through every CFG successor;
-partial EFLAGS writes and actual scratch/void-exit ABI limits are explicit.
-No new source gap is identified;746 strict differences remain.54 unchanged
-restore cases pass in the initial stage; only36 private original/native COM
-mutation cases run after correcting their reduced-global wrapper lookup.
-Page/count/presentation/surface changes all retain the observed live reads.
-Verified fixture is reused; no compiler/provider/gameplay replay or source edit.
-See [complete region flow](../research/exact/EXACT_REGION_ADDRESS_FLOW.md), private
-`.analysis/region-address-flow/`, and immutable seal
-`.analysis/checkpoints/region-address-flow-283-186/sha256.json`.
-
-The preceding origin batch independently verifies two external COFF ABS constants
-and the complete relocation-free536-byte MBCS initialized section. Its four
-actual external definitions unlock three complete object-local CRT sections:
-58/44/466 bytes,11 relocations, all zero differences. Runtime total becomes79;
-game source/exact/semantic counts and four products remain unchanged. Final CRT
-receipt covers65 complete code sections/7229 bytes/69 distinct origin rows,
-three complete initialized sections/1130 bytes and two separate ABS constants.
-Seven real-member rejection controls pass. One fresh REA536-byte read is closed;
-its39544.76ms first-read latency is observed without an isolated cause. See
-[independent CRT bindings](../research/CRT_ABSOLUTE_AND_MBCS.md), private
-`.analysis/crt-absolute-frontier/`, and immutable seal
-`.analysis/checkpoints/crt-absolute-mbcs-283-186/sha256.json`.
-
-The latest source batch restores the consumed signed tile integer and direct
-explosive-source condition in `src/gameplay.c`, replacing the single-case switch.
-Complete824/824 retains58 strict differences, down from844/824 with751. All208
-instructions/operands/offsets,26 branches and9 calls agree through five
-nonescaping local homes. Four gameplay exact functions survive;706 unchanged
-existing spread cases pass. Native/MinGW each rebuild only gameplay; VC4 links
-one matching object and35 verified unchanged objects. Headers/tests stay fixed.
-No new exact count or physical game observation. See
-[explosive source collection](../research/exact/EXACT_EXPLOSIVE_SOURCE_CONDITIONAL.md)
-and private `.analysis/explosive-source-conditional/`. That batch
-product identities are in its `product-verification.json`; immutable seal
-`.analysis/checkpoints/explosive-source-conditional-283-186/sha256.json`.
-
-The preceding connected MDS cleanup batch changes only `src/midi.cpp`: five loader
-errors and three parser block-header/capacity/conversion errors use the observed
-common-cleanup gotos. The compiler generates all26 common-cleanup jumps /130
-original bytes, including65 bytes outside Ghidra's imported ownership. See
-[complete MDS cleanup](../research/exact/EXACT_MDS_OPEN_CLEANUP.md) and private
-`.analysis/source-dataflow-frontier/`.
-
-- Open remains530/522 with443 unmasked differences. Its135 original/140 current
-  instructions correspond through9 frame references and3 input-normalization
-  groups; all30 direct branch targets match. Original parameter declaration and
-  EAX residue through arbitrary external callees are not proved. A whole-slot
-  load whose high bits are discarded does not prove a wide source parameter.
-- Parse is868/868 with40 unmasked differences, down from838/868 with341.
-  All231 instructions/operands/CFG targets correspond through12 frame references;
-  all16 common-cleanup jumps /80 bytes, including40 unowned bytes, are retained.
-  No operand-reversed comparison or differing register residue remains.
-- Release149 and pause133 remain exact. Converter source is unchanged:343/343,
-  now41 differences rather than the historical38 after canonical frame reassignment.
-- Final selected checks:253 parser +284 loader +80 wrapper cases /617 direct;
-  134 separate connected checks, including all six original songs. Original
-  matrices, case bodies, ordered effects and complete payload/context comparisons
-  stay intact. Other semantic suites are historical with refreshed inputs.
-- Ten actual matching compilations:2 diagnostic MIDI,6 diagnostic header consumers,
-  one valid open-only stage and one final connected MIDI stage. Both parameter
-  hypotheses and all six diagnostic owners are reverted; restored owner objects
-  differ from diagnostics only in COFF timestamps. Headers/tests stay unchanged.
-- Native/MinGW rebuild only MIDI in each valid stage. Final VC4 links one matching
-  owner and35 verified unchanged objects, without additional source compilation.
-- 235 historical semantic input inventories refresh; counts/scopes stay fixed.
-
-The preceding MDS product identities are in
-`.analysis/source-dataflow-frontier/product-verification.json`; its actual final
-source/object verification is in `final-review.json`. Do not reuse historical
-product hashes from an earlier checkpoint or call a loader-only test a final
-parser result. The immutable seal is
-`.analysis/checkpoints/mds-cleanup-flow-283-186/sha256.json`.
-
-## Recent anchors worth retaining
-
-| Checkpoint | Evidence and remaining limit |
-| --- | --- |
-| `1f40ee1` intro pixel pointer | Natural consumed pointer/timer exit;682/711 with604 differences;178 retained instructions/14 branch targets/11 frame references;36 point +58 connected checks. Unpassed100-byte region has only two stores; type unknown. Native descriptor fixture supports actual108/120 callers; original Oracle stays108/14. |
-| `9beaac4` raster metadata | Correct current generated definitions/interior offsets; complete160 metadata bytes exact, triangle code1710/1710 with107 differences.482 instructions/37 frame references/four signed comparisons explained; EAX/flag residue checked through actual callees. This160-byte candidate metadata is not added to accepted136. |
-| `9d5bcd7` effects exhaustion | Both signed zero predicates restored. Brick step complete313 bytes exact; explosion797 remains47 differences.540 existing step cases +128 queue calls. Four relational spelling changes compiled identically and were reverted; do not repeat them. |
-| `905dacc` window/runtime origins |227 reachable window instructions correspond; embedded20-byte table and five dispatch destinations bound. Full code1171/1166 remains1006 differences. Eight whole-section CRT origins accepted; runtime total76, unknown140. |
-| `63bf276` game frame | Natural void pause return, signed byte and zero brick predicate;1691/1688 with1156 differences.379 instructions/162 relocations/40 branch targets explained. Historical708 phase-one calls and final24 pause checks retain separate products. |
-| `5674dca` projectile retirement | Complete32-byte void helper exact; callers discard/overwrite EAX. Relevant unused-header closures were proved rather than guessed. |
-
-The prior long handoff is preserved in Git and the new batch's `before/`
-archive. Owner notes retain the detailed historical evidence; the table above
-is not a replacement for their full claim scopes.
-
-## Next useful work
-
-The pre-batch read-only frontier is
-`.analysis/source-dataflow-frontier/discovery.json`, with compact `summary.json`.
-All82 candidate code streams bind their actual declared relocations without a
-compiler/provider. It abstracts frame offsets and branch destinations only for
-discovery: it is not a semantic proof, metadata acceptance or switch-table
-boundary audit. MIDI rows describe the pre-batch objects; final comparisons are
-in `comparison.json`. Do not rescan or compile merely because a summary is old.
-
-PCX packet control is now paired completely;its862/979 matching extent and
-312/308-byte frames retain compiler storage/operand residuals. Do not retry local spelling or
-layout. Point-distance x87 scheduling retains exactly representable coordinate
-differences; no missing arithmetic was inferred. CRT ABS-only discovery adds no
-code match; the later MBCS data unlocks the three accepted complete sections.
-The later actual-index member closure proves four additional complete CRT
-sections and reaches no further unique match in its fourth discovery round.
-Object-local names remain scoped to the hash-identified member; unresolved BSS
-and nonunique zero storage are not guessed. The remaining exact16-byte no-op at
-0x40CC20 still lacks authored-origin/active-use proof. Address range alone is
-not an authored denominator.
-
-Dirty restoration's19 abstract change groups are completely explained by
-page/index producer scheduling; retire it as a source-gap hypothesis. The
-latest proof binds the actual object used by the current VC4 game. All270
-currently classified authored entries have source;35 lack their own semantic
-ledger row, but many already have exact or connected private evidence. This is
-not a complete authored denominator. Reuse existing owner evidence rather than
-rerunning a check merely to fill a ledger count.
-
-Capture's complete address/frame/CFG proof retires its abstract groups as a
-source-gap hypothesis. Game-key831 andWindowProc1171 are already exact;all
-actual dispatch tables,successors andenclosing jumps are bound. PCX's227 paired
-instructions close packet topology withonly explicit storage/commuted producers.
-Do not reopen these based on old owned-byte inventories orperform source-name,
-declaration-order,layout,padding or equivalent-relational-spelling trials.
-A compiler API/declaration hypothesis needs evidence that distinguishes it.
-Last-brick's two crop producer groups also contain no missing arithmetic: read
-their complete shared XOR/SUB/NEG neighborhood. Do not retry a direct-expression
-rewrite or claim the smaller diagnostic as restored original source. Time/RNG
-storage and exact stack layout retain their prior ABI limits.
-
-The preceding original/VC4 Wine ball/pause/editor/save/reload/exit flows pass on the
-unchanged `4c24034` source products:87 observations each and all49 originals
-unchanged. Opening/editor/editor-reload complete640x480 RGB/PNG captures match.
-Menu's3445 differences are entirely palette indices48..63; all14289 relevant
-asset pixels match original/current right rotations11/9. Pause's7472 differences
-are entirely original tile8/sprite9 indices224..231, which continue animating
-while paused; live palette/phase equality remains unobserved. Full receipts,
-unaltered images and index localization are in
-`.analysis/windows-play-current-render/`; immutable seal
-`.analysis/checkpoints/windows-play-current-render-283-186/sha256.json`.
-See [current runtime scope](../research/WINDOWS_ADAPTER.md). Only the observer
-compiled once in that runtime batch; no game compilation or provider request.
-Those captures do not observe the newer explosive-source products.
-Hardware display/audio, synchronized timing and whole-campaign fidelity remain
-unproved. Reuse existing probes for a concrete gap; do not repeat this flow to
-recover lost output or run a broad historical matrix.
-
-## Work and verification rules
-
-Read `AGENTS.md`, [workflow](WORKFLOW.md) and the affected owner note before edits.
-Use `scripts/repo-python`; originals, toolchains, products and raw evidence stay
-private. Pin REA6.4.0/Ghidra12.1.4 through `scripts/rea`. Official npm latest was
-verified as6.4.0 on2026-10-11; no repeated doctor/setup is needed. Reuse closed
-Evidence/ranges with their target/file hashes; request only a concrete missing
-range or consumer. Retain full carriers locally and return focused projections.
-
-Use one writable compiler/provider session, one allowed CPU, Ghidra512MiB and
-CMake `--parallel 1`. Use `legacy_toolchain.session_lock()` for writable legacy
-work. Route automated audio with `PULSE_SINK=dxball_reconstruction_silent`.
-No proactive subagents; work sequentially unless explicitly authorized.
-
-At a new binary/compiler phase verify the relevant inputs:
-
-```bash
-scripts/repo-python scripts/verify-target.py
-scripts/repo-python scripts/verify-toolchain.py
-scripts/repo-python scripts/validate-tracking.py --require-target
-```
-
-New exact claims require the complete span, compiler inputs/flags, every actual
-relocation and attached initialized data/metadata. Compare affected accepted
-units together after a stable owner compile; preserve unchanged current object/
-input receipts instead of cold-compiling all186. Refresh changed inventories
-without claiming historical suites reran. Reuse actual native fixtures and
-existing affected case blocks; keep original constructors, matrices and complete
-state/effect assertions. Diagnose a failed receipt/count separately from a
-provider or implementation failure.
-
-COFF uses `storage`, `DIR32` and `REL32`. Generated symbol ordinals are not stable
-identities: bind owning sections, offsets, literal contents and independent
-original targets. Exact objects are under `build/exact/`. Semantic rows are
-unique by address, not unit label. A truncated tool response is unobserved output;
-recover a narrow saved result instead of restarting a compiler/provider. Poll
-only handles confirmed live; no task handle is inherited from this handoff.
-
-Preserve unique evidence and current products before cleanup. Prefer scoped,
-hash-verified hardlinks against relevant immutable seals; never link mutable
-current products to old seals. Distinguish logical file-size estimates, replaced
-single-link inode allocation and measured device free-space changes. Avoid a
-global archive sweep/keeper reassignment after every small batch. The new seal
-records explicit prior dependency links and is checked after scoped cleanup.
-
-## REA feedback
-
-Append English performance, output/token/context, usability and optimization
-feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is55; use56 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
-feedback externally. Record actual measurements with their limits. Retained
-archive bytes are not MCP/model tokens or current-version latency. The latest
-source batch reuses closed Evidence; its706 selected cases are separate from
-the preceding product-specific Wine observations and palette-phase limits. The
-latest origin batch adds one complete536-byte REA read (5205-byte carrier); raw
-and normalized results are identical1168-byte compact projections. One provider
-RSS sample540172KiB/CPU0 is not a peak or verified runtime heap-cap measurement.
-The latest render audit reuses historical1896724-byte Evidence; its complete
-assembly projection is6682 bytes. These are retained bytes, not current REA
-transport/tokens. Final36 private mutation checks take0.337s locally; initial
-54 unchanged checks have a separate saved terminal-stage receipt. No new
-provider/compiler or measured RSS/token consumption occurs in that audit.
-Latest CRT member discovery reuses closed Evidence and all69 baseline input
-identities; deliberately removed probes resolve to archived copies. No provider
-call or token/latency measurement occurs. Two unchanged maintained runs and one
-final four-candidate run are retained separately; the extra unchanged run follows
-a consumer guard comparing equivalent hexadecimal address spellings. A missing
-old process handle is recovered from its saved completed receipt, not restarted.
-Latest countdown work uses one rejected matching compilation, restores saved
-source/object without repeating it, and reuses closed2316097-byte REA Evidence
-with a9495-byte full assembly projection.197/162 selected current cases take
-3.393s; these are local artifact/runtime measurements, not current REA tokens,
-provider latency, RSS or full-game fidelity.
-
-Latest polygon source work reuses two closed original carriers2786590/2858306
-bytes and complete compact assembly17025/17327 bytes. These are retained
-artifact sizes, not current REA transport/tokens. One matching compilation,
-9 accepted comparisons,3 complete candidates and separately scoped1080/72
-cases in each profile; no fresh provider/full replay. Recover truncated
-output from narrow saved receipts. Feedback remains in the single existing
-/tmp document, next new entry51.
-
-Latest sort work retains one rejected conditional-swap diagnostic and one final
-early-exit source stage; each has its actual matching compile and affected
-build/link. Only final source runs selected1080/72 cases per profile. Four full
-sort intervals are70 instructions each; inherited closed REA carriers remain
-2786590/2858306 bytes, not current transport/token measurements. Feedback
-continues only in the existing /tmp document; next new entry52.
-
-The scan setup/span batch adds complete926-instruction correspondence and
-1080 unchanged polygon cases per profile. Complete unchanged emission checks
-avoid triangle/span/fixed-point case replay. Products/receipts and cleanup are
-in `.analysis/polygon-scan-span/`; its seal preserves unique before/current
-evidence. User explicitly requests small storage: inspect actual usage and
-clean completed disposable installation caches or verified duplicate payloads,
-retaining current tools/products and unique evidence. Feedback remains only in
-the existing /tmp document; next new entry53. Goal remains active.
-
-Scan batch cleanup:79 sealed files/173 explicit immutable dependencies verify
-after36 scoped hardlinks replace4,227,072 single-link allocated bytes. Three
-completed wheel-download caches remove17,997,824 single-link allocated bytes;
-installed package versions/module locations and four products remain unchanged.
-No measured device-free-space claim. Supplemental post-cleanup review and
-identities bind cleanup scripts/journals and current documentation. Do not
-recreate installation caches merely to rerun a completed installation.
-
-Capture-address audit: no new compilation/provider/build/runtime job. Complete
-852/876-byte proof explains all248 instructions with18 symbolic address groups,
-140-byte typed frame mapping and all branch/call successors. Source/exact/
-semantic/origin counts and four current products stay unchanged. Retire capture
-as a missing producer; next current-proof frontier is game-key's enclosing dispatch layout.
-All feedback remains only in the existing /tmp document; next new entry54.
-
-Game-key's original full reads/tables are already retained in
-`EXACT_WINDOW_KEYS.md`:six music targets, fifteen key targets and92 selectors,
-including all enclosing jumps. Reuse that evidence; inspect current complete
-code/table CFG correspondence rather than opening another provider to recover
-already-observed bytes. Capture seal25 owned/24 dependencies and four products
-verify after five scoped hardlinks replace1,191,936 single-link allocated bytes.
-No unique evidence/product is removed; post-cleanup identities bind current
-receipts/documentation. No device-free-space or fresh runtime claim.
-
-Game-key's original full-read and complete current code/table CFG frontier is
-now closed with831 exact bytes. Do not reopen it based on the old645 owned-byte
-inventory or the previous fully_decoded=false linear scan. Inline176 bytes are
-data. Current products/187 exact receipts are in game-key-shared-exit; older
-capture/scan checkpoints retain their own186-count products. Feedback remains
-only in the same /tmp document; next new entry55. Goal remains active.
-
-Key-exit cleanup:207 owned files/145 explicit immutable dependencies and four
-products verify after97 scoped hardlinks replace4,501,504 single-link allocated
-bytes.62 fully archived stage copies are removed (1,487,650 logical bytes),
-including31 partial and31 rejected-stage inputs/objects/reports. Stage identity
-inventories remain; every consumer in the final reviewer resolves archived
-payloads, including direct report reads. Post-cleanup identities bind current
-receipts/docs without changing the immutable seal. No measured device-free-
-space delta. Do not rerun closed pre-promotion comparison scripts against the
-promoted live manifest; their exact input manifest/stages remain archived.
-
-Window switch exits supersede the WindowProc nonexact frontier:1171 bytes/
-74 bindings are exact,including all three original dead tails and inline table.
-Current188/35003/136 receipts/products are in window-switch-exits. Older187/
-186-count checkpoints remain historical. Full goal stays active;feedback remains
-only in the existing /tmp document,next new entry56. No full replay is needed.
-
-Window-exit seal98 owned/188 explicit immutable dependencies and four products
-verify after52 scoped hardlinks replace4,317,184 single-link allocated bytes.
-No diagnostic/mutable product or unique evidence is deleted;no measured device
-free-space delta. Supplemental post-cleanup identities bind current docs and
-receipts. A fresh official npm registry read still reports6.3.0,matching the
-installed REA package;no install/setup/provider session is repeated.
-
-Checkpoint preservation: 116 owned files and 133 explicit immutable dependencies
-verify after 26 scoped hash-verified archive links replace 4,800,512 previously
-single-link allocated bytes. This accounts for about 4.6 MiB of duplicate storage,
-not a measured device-free-space delta. Current/public files retain independent
-inodes; unique Evidence, current products and complete before inputs remain.
-Cleanup is confined to this new seal. No broad archive scan or additional
-provider, compiler or case replay is performed.
-
-This checkpoint preserves 62 owned files and 277 explicit immutable dependencies.
-Eleven scoped archive links replace 1,433,600 previously single-link allocated
-bytes, about 1.4 MiB; no device-free-space delta is claimed. Mutable current and
-public paths remain on independent inodes. Unique Evidence, before inputs,
-current products and probe objects stay. Cleanup is confined to the new seal.
-No additional game/compiler/provider/case queue runs.
-
-Checkpoint preservation: 79 owned files and 291 explicit immutable dependencies
-verify after fifteen scoped archive links replace 1,486,848 previously single-link
-allocated bytes, about 1.4 MiB. No device-free-space delta is claimed. Current and
-public paths retain independent archive inodes; unique Evidence, before inputs,
-current products and probe objects remain. Cleanup is confined to this new seal.
+The cursor follow-up closes the persistent-missing-pointer hypothesis for the
+sampled editor states: initial board66 original/69VC4 reads; actual two-cell
+paint/save/clear/load75 original/82VC4 reads. Three samples each before reload,
+after reload and after motion give36 unaltered frames/18 complete RGB pairs,
+all zero differences. Cursor X/Y and draw-to-primary are observed through the
+retained read-only SDK reader; all four runs exit zero,49assets unchanged.
+Two-cell saved banks equal b88441eb5e06676a106501a60a450b8046fa7b880e8f53ffe5f556ae75a42cd2.
+Prior186-pixel snapshot remains historical/unsynchronized; no source defect,
+atomic synchronization, all-state fidelity or fresh MinGW cursor run is claimed.
+See [editor cursor presentation](../research/EDITOR_CURSOR_PRESENTATION.md).
+
+One canonical paddle compilation tests the natural reversed inequality spelling.
+The complete203-byte body and all20bindings are identical to before; four
+reversed equality-address bytes remain at139/140/145/146. Reject the diagnostic;
+source/object restored by hashes without another compilation. DO NOT repeat
+paddle equality spellings or infer a missing operation from the commuted read.
+REA dossier ev_5be09046f1c60aeabad5697e07a604bbd89c05139b40ac5bda631e4864a44630
+is reused; no new provider request. No native/MinGW rebuild, legacy link, reader
+compile or owner-oracle replay. All four products remain byte-identical.
+
+| Current claims | Count |
+| --- | ---: |
+| Source-present / inferred authored | 285 /270 |
+| Scoped semantic acceptances | 249 |
+| Complete exact functions | 206 |
+| Exact code / separate metadata bytes | 44,406 /136 |
+| Runtime /compiler-generated /unknown origins | 117 /42 /99 |
+
+Current product receipt: `.analysis/editor-cursor-presentation/product-verification.json`.
+Seal: `.analysis/checkpoints/editor-cursor-presentation-285-206/sha256.json`.
+Rejected stage: `.analysis/paddle-cursor-load-order/rejected-order-stage/`.
+Cleanup only recorded probe copies after unique files are retained, then immutable
+hash-equal before/new-seal copies versus immediately preceding display-depth seal.
+Public/current files must remain independent of archives. Consume completed
+receipts after output truncation or consumer errors; do not restart producers.
+
+## Working runtime and recent source baseline
+
+Use640x480x24 Xvfb for headless Wine. The game still requests original8-bit
+DirectDraw;8-bit host Xvfb drops filled glyph/title pixels even in the original.
+Maintained runtime/play checks default24; `--display-depth 8` reproduces history.
+Editor input tests hold presses until actual selection/paint acknowledgement.
+[Display/deployment](../research/WINDOWS_DISPLAY_DEPTH.md) records original103,
+VC4115 and repairedMinGW116 states,15captures, real ball/pause/editor/save/reload/
+zeroexit, and complete equal saved banks. Opening/initial-editor full RGB buffers
+agree; animation/clock observations remain unsynchronized. MinGW core links
+compiler support statically, including POSIX pthread: imports onlyddraw/dsound/
+Kernel32/msvcrt. That repair relinks with43unchanged objects and zero source
+compiles; native/VC4 products unchanged. Current cursor runs follow this baseline.
+
+[Random runtime](../research/RANDOM_RUNTIME.md) fixes differing host rand defaults:
+original seed1 gives41/18467/6334/26500/19169. Shared unsigned32 global state starts1,
+uses214013U*state+2531011U and mask7FFF0000/shift16. Actual startup seed remains
+unsigned clock modulo300; range remains signed remainder.169seeds/2728directnext/
+90realrange/8clockseed cases and158startup+1connected check passed once.
+Six startup exacts1381bytes remain. Runtime seed19/10/19diff andnext65/42/62diff
+are candidates, not optimized vendor exactness or unique source spelling.
+Complete52 original bytes/3actual COFF fields corroborate runtime origin and
+observed cell4230F4, not independently unique CRT data placement.
+
+## Preserve these closed questions
+
+These notes retain complete proofs and compiler stages. Reuse them instead of
+repeating speculative source, declaration, capacity or spelling permutations.
+
+- [Rotation traversal](../research/exact/ROTATION_PIXEL_TRAVERSAL.md): renderer1447/
+  original1572/1491diff; actual traversal/dimension/pointer/Unlock/float operations
+  restored, full operand/frame/width equality unproved. Float2.0 m32 versus emitted
+  m64 remains unresolved. Rejected stored-float trial loses three projections;
+  preserve it and accepted stage. No fake locals for two unclassified zeros.
+  Y-offset191bytes/10bindings exact; unchanged height193/191/158diff is candidate.
+- [Screen-point stages](../research/exact/SCREEN_POINT_STAGES.md): complete337bytes,
+  26 scalar-frame-home differences; all90operations/13branches/2calls/10bindings
+  correspond. No new missing-operation or name/layout hypothesis.
+- [Platform owner](../research/PLATFORM_OWNER.md) and
+  [display initialization](../research/exact/EXACT_DISPLAY_INITIALIZATION_FRAME.md):
+  complete fullscreen/compatible operations map through typed frames/registers;
+  retire layout/name trials. [Main frame](../research/exact/MAIN_FRAME.md),
+  [device frame](../research/exact/DEVICE_FRAME.md) and
+  [control flow](../research/FRAME_CONTROL_FLOW.md) retain complete source phases.
+- [Capture flow](../research/exact/EXACT_CAPTURE_ADDRESS_FLOW.md): all248instructions,
+  18bank-address groups/140byte frame explained;876/852/803diff candidate.
+  [Region flow](../research/exact/EXACT_REGION_ADDRESS_FLOW.md) similarly closes
+  aggregate address scheduling. LEA versus MOV of aggregate owners is not a new
+  producer. [PCX](../research/exact/EXACT_PCX_PACKET_LOOP.md) retains independent
+  packet paths and original tail increment; register/frame/commuted arithmetic
+  differs. Glyph and draw-line addressing have already been reviewed.
+- [Score strip](../research/exact/SCORE_STRIP_SOURCE.md),
+  [intro storage](../research/INTRO_POINT_STORAGE.md) and
+  [intro request writes](../research/exact/INTRO_UNUSED_FILL_WRITES.md): retain real
+  source writes. Do not expand arrays from reserved frame gaps (intro32/11 versus
+  gaps100/20, score eight-byte gap) or split coextensive scopes without evidence.
+  Equal-CMP reversals in measure-text/score insertion already have trial evidence.
+- [Early helpers](../research/exact/EXACT_EARLY_HELPERS.md): the16-byte no-effect
+  entry40CC20 remains unknown origin. Bounded initialized-pointer searches do not
+  prove complete incoming-reference absence or authored ownership. Source-present
+  and byte equality do not establish its original source role.
+- [CRT storage closure](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md) and
+  [FDIV frontier](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md): maintained
+  authority is89complete code sections/20data sections/seven initialized objects.
+  Unresolved BSS and FP initializer callbacks remain open;23/1/56/16-byte entries
+  lack independent16-byte anchors. Static symbol names are member-local; initialized
+  definitions do not place themselves. Never weaken unique placement, scopes,
+  namespaces or verifier gates to promote compatibility discovery.
+
+## Next work and operating rules
+
+Find the next concrete missing state operation, call/ABI, resource lifetime or
+actual game-flow failure. Inspect `config/functions.csv`, current owner notes,
+full retained REA assembly and emitted complete units. The remaining99 origins,
+full authored denominator, original source spelling/link selection, physical
+rendering/audio/MIDI, synchronized moving frames and complete campaign remain
+unproved. Keep the original objective intact; do not mark complete from tests.
+The sampled editor pointer is now closed as a persistent source-gap hypothesis.
+
+- Read [workflow](WORKFLOW.md); run Python via `scripts/repo-python`.
+- New binary queries use `scripts/rea`; pinned/currentREA6.4.0/Ghidra12.1.4,
+  one allowedCPU and512MiB provider heap. Reuse saved dossiers first; retain full
+  Evidence IDs/target hashes and close/save every opened session.
+- One writable compiler/provider/Wine session via `legacy_toolchain.session_lock()`;
+  CMake `--parallel 1`. Automated audio uses `PULSE_SINK=dxball_reconstruction_silent`.
+- Natural typed source shared by portable/legacy builds; preserve ABI,widths,
+  ownership, actual writes/call order. No machine-code copies, assembly,padding,
+  fake locals, alternate profile bodies or blind storage/name/capacity trials.
+- Compile once per stable family; compare every affected accepted unit with actual
+  relocations/full literals/complete extents. Run only the minimum useful affected
+  Oracle or runtime check. Refresh historical input inventories without claiming
+  new case execution. Do not repeat successful historical/full queues.
+- Live handle/terminal receipts determine process state. Observation timeout or
+  truncated client output is not producer failure. Recover bounded saved output,
+  repair consumers and reuse completed products; never restart just for visibility.
+- Keep originals/tools/products/raw evidence private. Cleanup only verified
+  disposable files or immutable hash-equal copies; preserve unique stages, evidence,
+  manual saves and archive/current inode independence. Do not recreate install caches.
+
+The previous100,614-byte chronological handoff is preserved in Git at
+[2d2b0dd](https://github.com/N0zoM1z0/dx-ball/blob/2d2b0dd/docs/agent/HANDOFF.md)
+and `.analysis/paddle-cursor-load-order/before/docs/agent/HANDOFF.md`.
+Historical case/compiler counts belong to those recorded products, not this run.
+Use the linked focused research notes for detail; keep this handoff compact.
