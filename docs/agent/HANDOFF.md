@@ -21,23 +21,23 @@ inputs/products/probe/report files are untouched. The general cleanup script
 requires the writable session lock and includes runtime probes; do not run it
 against the live campaign. See [REA storage](REA.md).
 
-ACTIVE: new current VC4 full-bank attempt under an independent supervisor.
-`.analysis/current-vc40-campaign-independent/launcher.json`, `launch.json` and
-`live-processes.json` record boot/PIDs/start ticks. Supervisor2534702 is verified
-live with parentPID1; controller/game/reader identities are also recorded/live.
-This has no unified-executor session handle: inspect actual `/proc` identities
-and saved receipts rather than starting another producer. Complete initial
-slots0/1 are verified in `prefix-verification.json`. Full goal remains all50
-initial slots, terminal50/mode0/clearedrequests; final status is pending.
-108inputs reuse the preceding hash-verified immutable carrier, all four products
-and the existing campaign SDK reader are unchanged. No compile, modified bank,
-game write/hook or controller policy change. Existing harness owns the one
-writable session lock; do not start another compiler/provider/Wine session.
-The detached supervisor preserves eventual `child-exit.json` independently of
-an executor wait. No continuous REA process sampler runs in this attempt; this
-removes that producer's resource use, not proof of higher game speed or immunity
-to external termination. `verify-finished.py` is prepared for the saved result
-after the recorded identities terminate. Do not invoke it while live.
+STOPPED: the user requires exact function restoration before long game validation.
+The independent VC4 campaign received SIGINT at its verified controller identity;
+child exit130 and all five recorded process identities inactive are confirmed.
+The compiler session is available. Private
+`.analysis/current-vc40-campaign-independent/stopped-for-exact/verification.json`
+checks108 frozen inputs, four products and unchanged originals, and retains
+complete initial slots0–14 plus the final partial observation and SDK logs.
+KeyboardInterrupt leaves the harness status as running despite finally cleanup;
+the lifecycle receipt establishes termination. This is a deliberate priority
+stop, not a full pass or game-source failure. Do not run `verify-finished.py`
+or restart the campaign.49 backed runtime copies are removed, releasing
+1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
+
+Next priority: the65 authored non-exact functions. Use current manifest objects
+under `build/exact/` and validate their input closures; `build/vc40/` contains
+older candidate objects. Advance source and complete-unit comparisons with
+focused checks. Long campaigns wait until function recovery is ready.
 
 INTERRUPTED: current VC4 full original-bank campaign, executor session7397
 returned143. All recorded boot/PID/start-tick identities are inactive. Complete

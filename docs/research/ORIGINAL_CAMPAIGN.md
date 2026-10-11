@@ -6,24 +6,17 @@ The campaign harness now defaults to640x480x24 Xvfb, consistent with the
 report; use8 to reproduce the historical full controls below. This changes the
 host screen, not the game's original eight-bit DirectDraw request.
 
-An independent new attempt is now active with the same current VC4 product,
-unchanged original bank, existing persistent SDK reader and ordinary mouse
-controller. Complete initial slots0 and1 are verified. It keeps the full goal:
-all50 initial boards followed by terminal50/mode0/cleared end/reset/menu flags.
-No full pass is claimed from this prefix. The detached supervisor records its
-eventual child result independently of a unified-executor wait; its live kernel
-identity is verified with parentPID1. This changes execution lifecycle, not game
-source, input policy, bank contents or the acceptance predicate.
-
-Private `.analysis/current-vc40-campaign-independent/` retains launch/process
-identities and the verified prefix, reusing the preceding108 hash-verified
-immutable input copies and unchanged four products. No game/reader compilation
-or continuous REA process sampler runs in this attempt. There is no measured
-speedup or proof of immunity to external termination. The prepared final
-consumer will verify the saved harness result, all50 complete initial events,
-product/input/bank identities and SDK stream digest after process termination.
-Its direct harness receipt will remain distinct from a REA process Evidence.
-The interrupted attempt below remains preserved and is not relabeled a pass.
+The independent current VC4 attempt was deliberately stopped when the user
+reaffirmed exact function restoration as the first priority. SIGINT to the
+verified controller produces child exit130; all five saved process identities
+are inactive. Complete initial slots0–14, partial observer/SDK logs,108 frozen
+inputs, unchanged four products and originals are verified in
+`.analysis/current-vc40-campaign-independent/stopped-for-exact/verification.json`.
+The harness's KeyboardInterrupt cleanup retains status running in its partial
+observation; the terminal child receipt establishes that execution has ended.
+The full50-board predicate remains unproved for this product.49 disposable
+runtime copies are removed after backup equality checks. Further long campaigns
+are deferred while exact function recovery proceeds.
 
 A fresh current-product VC4 full-bank run was interrupted. Its unchanged game
 SHA-256 is `7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551`.

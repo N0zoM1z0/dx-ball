@@ -2,6 +2,9 @@
 
 The goal is nearly 100% restoration of English DX-Ball v1.07 source and a
 rebuildable, playable game. Prioritize complete game flows and exact restoration.
+The user's first priority is recovering all functions as exactly as possible.
+Advance complete-function comparisons with focused checks; defer long full-game
+campaigns until the function recovery work is ready for them.
 Keep the README focused on the reconstruction approach and REA's role,
 with sections that help readers follow the workflow.
 Put operational detail in these instructions or `docs/agent/`.
