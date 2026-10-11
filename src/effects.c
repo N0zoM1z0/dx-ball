@@ -72,13 +72,11 @@ void dxball_spawn_brick_effect(DxBallInt x, DxBallInt y, DxBallByte tile, DxBall
 
 void dxball_step_explosion_effect(void)
 {
-    DxBallInt x, y;
-    DxBallRect rect;
-    DxBallInt cleanup_x, cleanup_y;
     ++dxball_brick_effects.current->ticks;
     if (dxball_brick_effects.current->period <= dxball_brick_effects.current->ticks) {
         --dxball_brick_effects.current->frames;
         if (dxball_brick_effects.current->frames == 5) {
+            DxBallInt x, y;
             x = (dxball_brick_effects.current->x - 20) / 30;
             y = (dxball_brick_effects.current->y - 50) / 15;
             if ((signed char)dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] == 8) {
@@ -102,6 +100,8 @@ void dxball_step_explosion_effect(void)
             dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] = 0;
         }
         if (dxball_brick_effects.current->frames <= 0) {
+            DxBallRect rect;
+            DxBallInt cleanup_x, cleanup_y;
             rect.left = dxball_brick_effects.current->x;
             rect.top = dxball_brick_effects.current->y;
             rect.right = dxball_brick_effects.current->x + 30;

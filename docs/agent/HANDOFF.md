@@ -8,7 +8,32 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores the complete score-strip operation at
+The latest source checkpoint restores explosion animation phase lifetimes at
+0x412730 in src/effects.c. Board x/y belong to the frame-five branch; rectangle
+and cleanup x/y belong to expiration. Names/types/executable tokens and calls
+stay unchanged. One canonical MT compile improves the complete 797-byte
+comparison 47 to 13 differences. All 251 retained REA instruction boundaries and
+widths, 18 branches and 14 calls correspond through recorded frame roles;
+all 13 differences are actual frame displacement operands. Frame 32 and
+frame-five x/y -4/-8 now match. Cleanup remains nonexact: original/current
+rectangle base -28/-24, cleanup x -32/-28, cleanup y -12/-32. Do not split
+coextensive cleanup locals or rename/reorder variables to force those homes;
+original declaration spelling and compiler temporary provenance remain unknown.
+Four exact effects companions 841 bytes and 49 unchanged relocation bindings
+verify. Two unchanged Oracle loops pass 9720 animation steps and 288 mixed-queue
+process calls. Native/MinGW update; matching effects object links with 35
+verified unchanged objects. All 203 exact closures, 247 historical scopes and 36
+production objects verify; 235 inventories refresh without unrelated replays.
+Counts stay 203 exact / 42,656 code / 136 metadata; 283 source-present / 270 authored.
+Current products: `.analysis/explosion-phase-scopes/product-verification.json`;
+seal: `.analysis/checkpoints/explosion-phase-scopes-283-203/sha256.json`.
+See [explosion phase scopes](../research/exact/EXPLOSION_PHASE_SCOPES.md).
+Continue another evidence-supported source family. Full authored denominator,
+original spelling, physical render/audio and campaign remain unproved; the goal
+stays active. Commit and push verified checkpoints. REA feedback stays optional
+and in the same /tmp document.
+
+The preceding source checkpoint restores the complete score-strip operation at
 0x4158D0: compound (lives+1)*22, observed top/bottom/left/right stores, rect.top
 as second BltFast Y, and strip-only life-span temporary in src/runtime.c.
 One canonical MT compile improves the complete 433-byte comparison from 76 to

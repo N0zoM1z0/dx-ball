@@ -1,5 +1,15 @@
 # Explosion requests and brick animations
 
+The [explosion phase scopes](exact/EXPLOSION_PHASE_SCOPES.md) separate frame-five
+board coordinates from expiration rectangle/occupancy coordinates. One canonical
+compile improves the full 797-byte body from 47 to 13 differences; all 251 original
+REA instruction boundaries, 18 branches and 14 calls correspond. Remaining
+cleanup homes stay nonexact. Four exact companions 841 bytes and 49 unchanged
+bindings verify. Existing 9720 step cases and 288 mixed-queue calls pass;
+Native/MinGW update and the matching effects object links with 35 unchanged ones.
+Current totals remain 203 exact / 42,656 code bytes / 136 metadata bytes. The historical
+checkpoints below retain their own scopes and products.
+
 The [current entity allocation checkpoint](exact/EXACT_ENTITY_ALLOCATION.md)
 restores actual operator-new/delete edges and direct RNG/bonus/audio calls in
 the extracted request phase. Native checks use the original full-frame phase

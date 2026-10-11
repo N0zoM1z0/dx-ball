@@ -1,5 +1,9 @@
 # Complete brick animation lifecycle
 
+The later [explosion phase scopes](EXPLOSION_PHASE_SCOPES.md) restore branch-local
+board and expiration variables. Its 797-byte candidate has 13 remaining cleanup
+displacement differences. The historical comparisons below retain their epoch.
+
 The later [zero-frame checkpoint](EXACT_EFFECT_FRAME_EXHAUSTION.md) makes
 the complete 313-byte brick step exact and restores the explosion step's zero
 comparison. The historical scope and counts below remain tied to this batch.
