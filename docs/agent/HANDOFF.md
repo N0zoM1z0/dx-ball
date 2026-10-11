@@ -16,6 +16,29 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
+The latest read-only audit closes both display initialization bodies as missing
+source hypotheses within their defined typed API scope. Fullscreen1343/1406 has
+325 paired instructions,32 direct branches/42 calls/114 actual relocations;
+compatible1147/1180 has288,20/42/110. Complete472/468-byte typed frame bijections
+explain every instruction after frame and CFG translation;1278/1092 strict
+differences remain. No source edit, compiler/provider/build/runtime replay or
+new acceptance. The matching object is the actual linked production owner;
+four current products verify unchanged. Raw frame addresses/arbitrary driver
+aliasing or retention/uninitialized fields/scratch flags/source spelling and
+physical DirectDraw fidelity are excluded. See
+[complete display initialization](../research/exact/EXACT_DISPLAY_INITIALIZATION_FRAME.md),
+private `.analysis/display-initialization-frame/`, seal
+`.analysis/checkpoints/display-frame-flow-283-188/sha256.json`.
+Do not retry declaration/name/storage ordering. Continue independently scoped
+unknown-origin/storage evidence or a demonstrated missing game effect;the
+full authored denominator and synchronized fidelity remain open.
+Storage cleanup removes1616 optional Ghidra API-doc/editor-completion files,
+accounting104804352 single-link allocated bytes;206 pinned required runtime
+files/four current products remain verified. Unique historical evidence stays.
+Deletion inventory/restore archive identity are in the private audit folder.
+No device-free-space delta is claimed. All REA feedback still appends only to
+`/tmp/dxball_rea_feedback_20261010.md`.
+
 The latest source batch makes WindowProc at0x40DA70 exact across all1171 bytes/
 74 actual relocations. Restore its cursor-case switch exit and empty create/
 erase-message exit after right-button release. Full230 instructions/1151 bytes
@@ -53,11 +76,11 @@ refresh with their247 scopes unchanged. Current four products:
 [exact key exits](../research/exact/EXACT_GAME_KEY_SHARED_EXIT.md), private
 `.analysis/game-key-shared-exit/`, seal
 `.analysis/checkpoints/game-key-shared-exit-283-187/sha256.json`.
-Game-key's complete source/CFG frontier is closed. Inspect actual remaining
-WindowProc flow if prior complete evidence distinguishes its1166/1171 span;
-never add fake locals/padding/operations or retry closed key switch spelling.
+Game-key's complete source/CFG frontier is closed. The subsequent checkpoint
+above also closes WindowProc;never add fake locals/padding/operations or retry
+these closed switch spellings.
 Original declaration spelling/full authored denominator/game fidelity remain
-unproved. Current counts187/33832/136 supersede historical checkpoint counts.
+unproved. Its historical counts187/33832/136 precede the current188/35003/136.
 
 The preceding read-only source audit closes capture-sprite's abstract groups as a
 missing-producer hypothesis. Both complete852/876-byte bodies have248 decoded
