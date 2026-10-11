@@ -1,5 +1,9 @@
 # Exact reconstruction notes
 
+The latest [window switch exits](EXACT_WINDOW_SWITCH_EXITS.md) add the complete
+1,171-byte WindowProc. Totals are 188 exact functions / 35,003 complete span
+bytes / 136 accepted metadata bytes, with 2,138 selected existing window cases.
+
 The latest [game-key exit restoration](EXACT_GAME_KEY_SHARED_EXIT.md) adds one
 complete 831-byte exact controller. Totals are 187 exact functions / 33,832
 complete span bytes / 136 accepted metadata bytes. Its 655 instruction bytes

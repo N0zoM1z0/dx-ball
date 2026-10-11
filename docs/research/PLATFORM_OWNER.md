@@ -1,5 +1,11 @@
 # Windows startup and input routing
 
+The latest [window switch exits](exact/EXACT_WINDOW_SWITCH_EXITS.md) make
+WindowProc exact across all 1,171 bytes / 74 relocations. All 227 reachable and
+three dead instructions plus the 20-byte table are included. Eight other exact
+platform units remain intact; 2,138 unchanged WindowProc cases pass on current
+products. The key-source checkpoint and earlier notes retain their own scope.
+
 The latest [exact key exits](exact/EXACT_GAME_KEY_SHARED_EXIT.md) restores the
 shared pause/space break and direct unpause return. The complete 831-byte
 controller, including 176 inline table/selector bytes and all 68 relocations,

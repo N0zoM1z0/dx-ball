@@ -1,5 +1,12 @@
 # Window messages, focus and shutdown
 
+The latest [switch exit restoration](EXACT_WINDOW_SWITCH_EXITS.md) makes the
+entire WindowProc exact: 1,171 bytes and all 74 relocations. It restores the
+cursor's per-case switch tail and the original empty-message exit position;
+all 230 instructions, three dead tails and the 20-byte table are included.
+One matching compilation preserves eight other exact units. Only 2,138 existing
+WindowProc cases run on current products. Earlier notes below remain historical.
+
 The later bounded control-flow audit checks all227 reachable instructions,
 operands and edges against the current object. The20-byte table is treated as
 data with all five ordered message destinations. Original code has three

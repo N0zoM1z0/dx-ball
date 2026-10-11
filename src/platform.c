@@ -572,6 +572,8 @@ DxBallWindowResult DXBALL_DDCALL dxball_window_proc(DxBallHandle window,
     case 0x20:
         dxball_window_set_cursor(0);
         return 1;
+        /* Retain the original per-case switch exit after the direct return. */
+        break;
     case 0x100:
         if (wparam == 0x1b) {
             if (dxball_display_mode == 0) {
@@ -652,6 +654,9 @@ DxBallWindowResult DXBALL_DDCALL dxball_window_proc(DxBallHandle window,
         dxball_window_release_capture();
         dxball_mouse_action = 0;
         break;
+    case 1:
+    case 0x14:
+        break;
     case 0x311:
         if (dxball_direct_draw != NULL && dxball_primary_surface != NULL &&
             dxball_device_reset_requested == 0) {
@@ -666,9 +671,6 @@ DxBallWindowResult DXBALL_DDCALL dxball_window_proc(DxBallHandle window,
         /* fall through */
     default:
         return dxball_window_default_window_proc(window, message, wparam, lparam);
-    case 1:
-    case 0x14:
-        break;
     }
     return 0;
 }

@@ -9,14 +9,34 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 ## Current state
 
 - 283 source-present entries and 247 scoped semantic acceptances.
-- 187 exact functions / 33,832 complete code bytes / 136 accepted metadata bytes.
+- 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
 - Origins: 270 authored, 83 runtime, 42 compiler-generated, 133 unknown.
 - Score initialization/read/name editing and the connected score-table source
   recovery are complete checkpoints; do not restart score initialization.
 - Full authored denominator, original declaration spelling, synchronized render
   or audio fidelity and nearly complete original-source recovery remain unproved.
 
-The latest source batch makes game-key at0x410290 exact across all831 bytes and
+The latest source batch makes WindowProc at0x40DA70 exact across all1171 bytes/
+74 actual relocations. Restore its cursor-case switch exit and empty create/
+erase-message exit after right-button release. Full230 instructions/1151 bytes
+include227 reachable instructions and three dead five-byte switch tails; the
+complete20-byte/five-target table is included. Eight affected other exact units/
+1767 bytes remain exact,including game-key831. One stable matching compilation,
+one Native/MinGW build stage and one VC4 link reuse35 unchanged objects;no
+additional game source compile.2138 unchanged WindowProc cases pass once after
+a private missing-messages-assignment failure before cases. No key/clock/
+dispatch/full historical replay.235 historical semantic closures refresh with
+247 scopes unchanged. Current products:
+`.analysis/window-switch-exits/product-verification.json`. See
+[exact window switch exits](../research/exact/EXACT_WINDOW_SWITCH_EXITS.md),
+private `.analysis/window-switch-exits/`,seal
+`.analysis/checkpoints/window-switch-exits-283-188/sha256.json`.
+WindowProc and game-key source/CFG hypotheses are closed. Do not reopen them
+based on old owned-byte inventories or retry case/local-layout spelling.
+Remaining full authored denominator and synchronized game/audio fidelity need
+actual whole-owner or independently distinguished origin evidence.
+
+The preceding source batch makes game-key at0x410290 exact across all831 bytes and
 68 actual relocations. Original pause/space share one break, and unpause returns
 directly before a standalone switch. Full partition:153 instructions/655 bytes,
 176 inline table/selector bytes,35 direct branches/two indirect dispatches/
@@ -329,7 +349,7 @@ records explicit prior dependency links and is checked after scoped cleanup.
 
 Append English performance, output/token/context, usability and optimization
 feedback only to existing `/tmp/dxball_rea_feedback_20261010.md`; last completed
-entry is54; use55 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
+entry is55; use56 for the next new entry. Never create another `/tmp` feedback/handoff document or send the
 feedback externally. Record actual measurements with their limits. Retained
 archive bytes are not MCP/model tokens or current-version latency. The latest
 source batch reuses closed Evidence; its706 selected cases are separate from
@@ -418,3 +438,16 @@ payloads, including direct report reads. Post-cleanup identities bind current
 receipts/docs without changing the immutable seal. No measured device-free-
 space delta. Do not rerun closed pre-promotion comparison scripts against the
 promoted live manifest; their exact input manifest/stages remain archived.
+
+Window switch exits supersede the WindowProc nonexact frontier:1171 bytes/
+74 bindings are exact,including all three original dead tails and inline table.
+Current188/35003/136 receipts/products are in window-switch-exits. Older187/
+186-count checkpoints remain historical. Full goal stays active;feedback remains
+only in the existing /tmp document,next new entry56. No full replay is needed.
+
+Window-exit seal98 owned/188 explicit immutable dependencies and four products
+verify after52 scoped hardlinks replace4,317,184 single-link allocated bytes.
+No diagnostic/mutable product or unique evidence is deleted;no measured device
+free-space delta. Supplemental post-cleanup identities bind current docs and
+receipts. A fresh official npm registry read still reports6.3.0,matching the
+installed REA package;no install/setup/provider session is repeated.
