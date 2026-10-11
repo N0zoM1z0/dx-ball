@@ -13,6 +13,14 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
+Latest storage cleanup compresses only the completed REA4.1 historical snapshot:
+`.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json.gz` preserves all72,771,098bytes
+with verified decompressed SHA; `snapshot-compression.json` records identities
+and removal of the raw copy.68,034,560allocated bytes released. Active campaign
+inputs/products/probe/report files are untouched. The general cleanup script
+requires the writable session lock and includes runtime probes; do not run it
+against the live campaign. See [REA storage](REA.md).
+
 ACTIVE: new current VC4 full-bank attempt under an independent supervisor.
 `.analysis/current-vc40-campaign-independent/launcher.json`, `launch.json` and
 `live-processes.json` record boot/PIDs/start ticks. Supervisor2534702 is verified

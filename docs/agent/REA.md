@@ -63,11 +63,17 @@ before claiming exact recovery. The assembly schema returns a string; general
 large-body pagination has not been verified.
 
 The upgrade from 4.1.0 to 6.3.0 retained the old snapshot at
-`.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json`. The new release failed its
+`.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json.gz`. The new release failed its
 integrity validation (root cause unisolated), so the current snapshot starts with the new focused queries.
 Keep reusing historical dossiers directly; their Evidence IDs and original
 bytes remain available. Upgrade receipts and both scoped doctor reports are
 in `.analysis/rea-upgrade-6.3.0/`.
+
+The old snapshot is a byte-exact gzip carrier: 72,771,098 original bytes become
+4,731,476 compressed bytes. `snapshot-compression.json` records both hashes and
+the verified decompressed hash before removal of the raw copy, releasing
+68,034,560 allocated bytes including the receipt. Decompress only when needed;
+no current task input or sealed external dependency uses the removed raw path.
 
 The installed REA skill is synchronized with the current package: skill version
 37 and 170 tools. The 6.4 upgrade receipts, prior version-34 skill, and intact
