@@ -8,7 +8,7 @@ host screen, not the game's original eight-bit DirectDraw request.
 
 A fresh current-product VC4 full-bank run is in progress. Its unchanged game
 SHA-256 is `7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551`.
-At this checkpoint the SDK has verified complete initial slots0 and1 in the
+At this checkpoint the SDK has verified complete initial slots0–11 in the
 unaltered20,000-byte original bank. The goal remains all50 initial slots followed
 by terminal index50, mode0 and cleared end/reset/menu flags. No full pass or
 normal game exit is claimed from this prefix. The existing persistent reader
@@ -17,6 +17,22 @@ Private `.analysis/current-vc40-campaign/` retains108 frozen inputs, the actual
 SDK compile receipt, products, scenario and live kernel process identities.
 The final REA Evidence/report must be consumed after the existing producer
 terminates; do not start another campaign merely because a client wait expires.
+
+A completed passive visual supplement retains three unaltered640x480 frames
+from this existing game's display, with147/148/147 colors. The frames show the
+brick field, ball, paddle, falling bonuses, projectiles and score. The existing
+controller's display authorization is reused; no input, target memory or
+display access policy changes, and no extra game run. A subsequent X window
+ownership check identifies the same recorded game PID/start ticks. Periodic
+observer rows are not synchronized to frames: no exact frame-to-board assignment,
+original/source pixel equality or all-state rendering claim follows.
+
+Private `play-spotcheck/verification.json` within the campaign folder verifies
+all108 frozen inputs and four unchanged products, the capture driver and three
+image digests/dimensions, and retains complete initial-board event witnesses for
+slots0–11. Its small supplementary manifest refers to the preceding completed
+digital-audio seal. This is a verified campaign prefix and visual observation;
+the full50-board predicate and final REA process Evidence remain pending.
 
 The earlier terminal control completes 50 editor-created single-brick boards.
 It establishes the terminal storage and routing behavior described in

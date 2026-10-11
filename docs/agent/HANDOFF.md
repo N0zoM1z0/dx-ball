@@ -16,7 +16,7 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 ACTIVE: current VC4 full original-bank campaign, executor session7397. Do not
 restart it while alive. `.analysis/current-vc40-campaign/live-processes.json`
 records boot ID/PIDs/start ticks; check actual `/proc` identities and poll that
-confirmed handle. First original initial slots0/1 are verified; final status is
+confirmed handle. Original initial slots0–11 are verified; final status is
 still pending. Full goal50 initial slots then terminal50/mode0/clearedrequests.
 The game SHA remains7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551.
 Existing campaign reader/controller are reused on640x480x24; the new campaign
@@ -33,6 +33,21 @@ rejected on finding the existing persistent campaign observer. Its source and
 binary are restored by hashes without a second compile; rejected stage/receipt
 remain private in the same folder. DO NOT recreate this duplicate functionality.
 No target writes, hooks or altered boards; full campaign still unproved here.
+
+Completed passive frame supplement:
+`.analysis/current-vc40-campaign/play-spotcheck/verification.json` and
+`sha256.json`. Three unaltered640x480 frames show actual play;147/148/147colors.
+All108 frozen inputs/four products verify; complete initial events0–11 retained.
+Later X window owner matches the game's kernel PID/start ticks. Periodic states
+are not frame-synchronized: do not assign an exact board or claim pixel fidelity.
+No extra game run, target input/write, rebuild or new ledger acceptance.
+First ImageMagick client omitted XAUTHORITY and produced no image; corrected
+capture reused the controller's existing authorization without changing access.
+Completed observation snapshots are byte-exact verified gzip carriers; raw
+copies removed, approximately2.5MiB released. See `compression.json`; no live
+campaign file is modified. The supplement retains its original digest manifest.
+The capture is complete; consume saved report/images instead of restarting it
+after the prior client-output truncation. Full campaign7397 remains separate.
 
 Current VC4 digital-audio delivery is now observed independently during the
 same live campaign: one per-input Pulse monitor records5.948458seconds,
