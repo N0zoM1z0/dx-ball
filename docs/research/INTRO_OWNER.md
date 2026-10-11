@@ -1,5 +1,19 @@
 # Menu and splash evidence
 
+The [observed unpassed fill-request writes](exact/INTRO_UNUSED_FILL_WRITES.md)
+restore the original size-100/+80-zero stores before point animation's redraw.
+The existing color-fill ABI is supported independently by clear-surface; the
+original animation type and spelling remain inferred. One MT compile restores
+all 180 operations, 14 branches, ten calls and 40 bindings through explicit
+frame roles. Frame 136 becomes the original 236; the full candidate improves
+682/711 bytes with 604 differences to 702/711 with 570. Fifteen exact intro
+companions across 3,864 bytes and every other candidate's byte result remain
+unchanged after complete literal/owner-label alias reconciliation. Existing
+37 point cases plus 36 compared preparations and 58 separate connected checks
+pass. Native/MinGW and the matching-object VC4 relink pass; counts remain
+206 exact / 44,406 code / 136 metadata bytes. Historical epochs below retain
+their products and narrower storage observations.
+
 The [point-seeding mask lifetime](exact/INTRO_MASK_LIFETIME.md) scopes the
 existing 287-byte local mask to grid initialization before the wave-offset loop.
 One intro MT compile restores the complete 1,996-byte length and mask base -304,
@@ -67,8 +81,10 @@ call, actual HRESULT retry storage, direct indexed point/offset accesses,
 rectangle-store order and descriptor size/flags. The dossier has no whole-record
 zeroing; that extra memset is removed. Returned pitch and pixel fields are
 consumed only after the descriptor/lock APIs. The original also writes size 100
-and zero at +80 into a separate unpassed request-shaped area. Its type/source
-origin remains inferred/unexplained; no unused local is added to force a match.
+and zero at +80 into a separate unpassed request-shaped area. The [later write recovery](exact/INTRO_UNUSED_FILL_WRITES.md) restores those
+observed writes using the independently supported color-fill ABI. Its actual
+original type/source spelling remains inferred. This historical checkpoint
+omitted that storage rather than assigning an arbitrary local type.
 That checkpoint's complete 666/711-byte candidate has forty relocations and 637 unaligned
 full-span differences, including missing storage and differing local addressing.
 This is a control-flow/API recovery, not an exact or complete-storage claim.

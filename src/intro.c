@@ -1,5 +1,6 @@
 #include "intro.h"
 #include "platform.h"
+#include "device.h"
 #include "paddle.h"
 #include "round.h"
 #include "effects.h"
@@ -98,12 +99,17 @@ void dxball_initialize_intro_points(void)
 void dxball_update_intro_points(void)
 {
     DxBallRect rect;
+    DxBallColorFillFx fill;
     DxBallSurfaceDesc desc;
     DxBallInt i, result;
     DxBallByte *pixel;
     if (dxball_elapsed(dxball_intro_tick, 50) == 0)
         return;
     dxball_select_surface((DxBallSurface)dxball_board_surface);
+    /* The original writes these fields although no call consumes the object. */
+    fill.size = sizeof(fill);
+    fill.fill_color = 0;
+    (void)fill;
     rect.top = 37; rect.bottom = 115;
     rect.left = 112; rect.right = 530;
     ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(

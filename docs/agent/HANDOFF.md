@@ -8,7 +8,48 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The current checkpoint scopes initialize_intro_points' existing 287-byte binary
+The current checkpoint restores point animation's two observed unpassed request
+writes before redraw: size 100 at original EBP-116, zero at -36 (+80), using the
+existing 100-byte DxBallColorFillFx ABI. Independent clear-surface at 0x409F10 has
+identical size/+80 color writes and passes that area to Blt; the animation's
+actual original type/spelling remains inferred. No arbitrary capacity, padding,
+extra call or initialization of untouched fields. Source src/intro.c explicitly
+includes the already-consumed device.h. One canonical MT compile restores all
+180 operations, 14 branches, ten calls and 40 bindings. Both frames are 236,
+versus current 136 before; candidate 682/711 bytes with 604 differences improves
+to 702/711 with 570. Each instruction's register/operand/call/CFG corresponds
+through explicit actual frame roles and branch-index mapping. Seven width
+changes are real disp8/disp32 encodings: two stores +3 each, five descriptor/
+pixel accesses -3 each. Preserve 570 strict differences; no exact promotion
+or declaration/name/scope trials.
+Reuse closed Evidence ev_380287bfea6a4f582b8e8ee477b5c7d470de69c6555f3ab997e0f5f7d4650b2d
+and ev_017375bcddb7d6708aadc8ec0d071b77e9d37c7f877f9da584462f4e561360db.
+Thirty-six moved offsets are grounded in original instruction operands.
+Fifty-two generated bindings reconcile 37 complete literals (preserved data_hex)
+and 15 actual code labels with their owner and original entry-relative values.
+Fifteen exact bodies across 3,864 bytes and all other candidate byte/metadata
+results stay unchanged; generated names may change. Initial stale-alias
+consumer rejection and too-narrow literal-only audit recover from the completed
+product without recompilation. Two restored-write receipt indices are corrected
+to original instructions 18/19 before sealing.
+The unchanged oracle passes 37 direct point cases, 36 compared preparations and
+58 separate connected splash/menu/key checks once. Native/MinGW rebuild;
+matching intro object links with 35 unchanged VC4 objects and no extra legacy
+source compile. All 206 exact closures, 247 historical scopes and 36 objects
+verify; 235 inventories refresh without rerunning historical cases. Counts stay
+206/44,406/136, 283 source-present / 270 authored. Current products:
+`.analysis/intro-unused-fill-writes/product-verification.json`; seal:
+`.analysis/checkpoints/intro-unused-fill-writes-283-206/sha256.json`.
+See [observed unpassed writes](../research/exact/INTRO_UNUSED_FILL_WRITES.md).
+Goal stays active: authored denominator, original source spelling, physical
+rendering/audio and full campaign remain unproved. Continue another concrete
+source flow; commit AND push. Optional REA feedback stays in the one existing
+/tmp document. Clean only immutable hash-equal copies against the immediately
+preceding mask-lifetime seal.
+
+The preceding checkpoint follows.
+
+The preceding checkpoint scopes initialize_intro_points' existing 287-byte binary
 mask to grid seeding before the separate 360-entry offset-table loop in src/intro.c.
 Names/types/capacity/initializer/executable tokens remain unchanged. One accepted
 intro MT compile improves 2041/1996 bytes with 750 differences to 1996/1996 with 13.
