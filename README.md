@@ -5,44 +5,51 @@
 </p>
 
 This project reconstructs English DX-Ball v1.07 from its original executable
-into readable C/C++ that can be rebuilt and played. We use
-[REA](https://github.com/morluto/rea) to inspect the executable, recover the
-functions, and guide the reconstruction. The tutorial below takes you from
-downloading the game to continuing this work with Codex.
+into readable, rebuildable C/C++. [REA](https://github.com/morluto/rea) lets
+Codex inspect the executable and use Ghidra's analysis to recover the source.
+The tutorial below shows how to get the game, set up the tools, and continue
+the reconstruction with a Codex Goal.
 
 ## Reconstruction with REA
 
-REA gives the agent access to Ghidra's analysis of the executable: pseudocode,
-instructions, calls, and data references. We use those observations to recover
-the game's logic and object layouts. The immediate priority is to restore
-every game function and make as many complete functions byte-exact as possible:
-the rebuilt machine code should match the original once addresses for calls
-and data are mapped. Comparing those bytes helps resolve details that
-pseudocode can miss, such as argument widths, branch conditions, and the order
-of state changes.
+REA gives Codex access to Ghidra's pseudocode, instructions, calls, and data
+references. We use them in a repeated cycle:
 
 1. **Inspect a function with REA.** Read pseudocode alongside instructions,
    then follow its callers, callees, and data references to understand the logic
    and field layouts.
 2. **Recover the source.** Turn those findings into typed C/C++ and connect
    the recovered functions into the game.
-3. **Rebuild and refine.** Compile with VC4, compare the affected functions
-   against the original executable, and use the differences to refine the source.
-   Check the affected behavior when it helps answer a remaining question.
+3. **Rebuild and refine.** Compile with Visual C++ 4.0 and compare complete
+   functions against the original executable. Use the differences to refine
+   the source, with focused behavior checks where they help resolve a question.
 
-Saved REA responses connect the recovered source to its evidence. The
+A byte-exact match means the machine code agrees after mapping addresses for
+calls and data. These comparisons help resolve argument widths, branch
+conditions, and the order of state changes that pseudocode alone can miss.
+
+The first priority is to restore every game function as exactly as possible.
+During recovery, focused checks answer questions about the affected code;
+broader game testing follows once the function work is ready. Saved REA
+responses let readers trace source decisions back to the executable. The
 [worked example](docs/REA.md) follows a projectile-list routine from analysis
 to source and a complete compiler match.
 
 ## Try the workflow with Codex
 
-These steps continue the existing reconstruction on Linux x86-64. Install Git,
-Python 3.11+ with pip, and Node.js 22.19.0 with npm. Use the official
-[Node.js Linux x64 release](https://nodejs.org/download/release/v22.19.0/)
-and put its `bin/` directory on your `PATH`: the project checks the Node
-executable's hash as well as its version. The legacy compiler runs through
-Wine, so also install Wine with 32-bit support, Xvfb, `xvfb-run`, `unzip`, and
-`tar`. See [Build and play](docs/BUILD.md) for the other build targets.
+These steps continue this repository's reconstruction on Linux x86-64.
+Before you start, install:
+
+- Git and Python 3.11+ with pip.
+- Node.js 22.19.0 with npm, from the official
+  [Linux x64 release](https://nodejs.org/download/release/v22.19.0/).
+  Put its `bin/` directory on your `PATH`; the project verifies the Node
+  executable's hash as well as its version.
+- Wine with 32-bit support, Xvfb with `xvfb-run`, `unzip`, and `tar`.
+  Wine runs the original-era Windows compiler on Linux.
+
+The scripts below download the remaining tools. For building and launching
+the game, see [Build and play](docs/BUILD.md).
 
 ### 1. Get the game and prepare the workspace
 
@@ -53,7 +60,8 @@ The [original English readme](https://oldgamesdownload.com/readme/dx-ball-window
 identifies version 1.07 and describes the game and its controls. Keep the ZIP
 intact; the importer extracts the executable and assets together.
 
-Clone this repository, enter it, and import your download:
+Clone this repository and import your download. If you want Codex to push
+checkpoints to your own repository, fork it first and use your fork's URL:
 
 ```bash
 git clone https://github.com/N0zoM1z0/dx-ball.git
@@ -63,13 +71,12 @@ scripts/repo-python scripts/import-target.py /absolute/path/to/DX_Ball_Win_Prein
 ```
 
 Replace the archive path with your download. The importer verifies the ZIP
-and its game files, then places the executable and assets in `original/`.
+and its game files, then places `DXBALL.EXE` and the assets in `original/`.
 The expected version and hashes are in [the target configuration](config/target.toml).
-Use your fork's URL in the clone command if you want Codex to push your changes.
 
 ### 2. Install REA and connect it to Codex
 
-Install the current CLI releases:
+Install or update Codex and REA:
 
 ```bash
 npm install --global @openai/codex@latest rea-agents@latest
@@ -77,19 +84,18 @@ codex --version
 rea --version
 ```
 
-Next, prepare the project's analysis engine and compiler from the repository root:
+From the repository root, install the project's compiler and analysis tools:
 
 ```bash
 scripts/repo-python scripts/bootstrap-tools.py
 scripts/repo-python scripts/bootstrap-rea.py
 ```
 
-The first command installs the recorded JDK and Visual C++ 4.0 compiler.
-The second installs REA 6.4.0 and Ghidra 12.1.4, as specified in
-[the REA lock file](config/rea.lock.json). Tools stay in `.tools/`, and the
-scripts verify their hashes. The global REA CLI connects Codex to the latest
-release; the local copy keeps this repository's analysis and comparisons
-reproducible.
+The first command installs the JDK and Visual C++ 4.0 compiler. The second
+installs the repository's fixed REA 6.4.0 and Ghidra 12.1.4 versions from
+[the REA lock file](config/rea.lock.json). Both scripts verify their downloads
+and keep the tools in `.tools/`. The global CLI supplies the current Codex
+integration; the project uses its local REA copy for reproducible analysis.
 
 Point REA at the installed Ghidra and JDK, then connect it to Codex:
 
@@ -100,18 +106,18 @@ rea setup --client codex
 rea doctor --client codex --provider ghidra --json
 ```
 
-Setup shows the changes it will make to Codex's configuration and skill files.
-Accept the proposed REA integration. Setup registers the MCP server, records
-the Ghidra and JDK paths, and installs the matching agent skill. The doctor
-report checks the registration and provider; look for `healthy: true`.
-If a check fails, follow the remedy in the report.
+Review and accept the REA integration shown by setup. It registers the MCP
+server in Codex's configuration, saves the Ghidra and JDK paths, and installs
+the REA skill that guides the agent's analysis. The doctor command checks the
+Codex registration and Ghidra provider. Look for `healthy: true`; failed checks
+include instructions for fixing them.
 
 The [REA setup guide](https://github.com/morluto/rea/blob/main/docs/installation.md)
-also covers using an existing Ghidra installation. During reconstruction,
-Codex follows [the project REA instructions](docs/agent/REA.md) and uses
-`scripts/rea`, which applies the repository's tool checks and resource limits.
-When updating an existing Codex integration, rerun the installation and setup
-commands above, then restart Codex.
+also covers using an existing Ghidra installation. In this project, Codex
+follows [the REA instructions](docs/agent/REA.md) and runs analysis through
+`scripts/rea`, which checks the tools and applies the project's resource limits.
+To update an existing integration, repeat the installation and setup commands,
+then restart Codex.
 
 ### 3. Start Codex in the repository
 
@@ -121,47 +127,47 @@ From the same terminal, run:
 codex
 ```
 
-Sign in when prompted. Keep Codex in the repository root so it can read
-`AGENTS.md`, find the original executable, and follow the source and research notes.
-If Codex was already open when you configured REA, restart it to load the server
-and skill. See the [Codex CLI guide](https://developers.openai.com/codex/cli/)
-for installation and sign-in details.
+Sign in with your ChatGPT account or API key when prompted. Starting here lets
+Codex read `AGENTS.md` and find the executable, source, and research notes.
+Restart any Codex session that was open during REA setup so it loads the
+integration. The [Codex CLI guide](https://developers.openai.com/codex/cli/)
+explains installation and sign-in.
 
 ### 4. Give Codex a reconstruction goal
 
 A [Codex Goal](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex)
-keeps the reconstruction moving across turns: inspect, recover, compare, then
-choose the next unresolved function. It requires Codex 0.128.0 or newer.
-Paste the following English prompt:
+lets Codex keep working toward an outcome across turns. It requires Codex
+0.128.0 or newer. The prompt below starts from the repository's current
+handoff and prioritizes function recovery. If your fork is ready for pushes,
+paste it into Codex:
 
 ```text
-/goal Reconstruct English DX-Ball v1.07 from original/DXBALL.EXE into readable
-C/C++ that builds and reproduces the original game. Your first priority is to
-recover all authored functions and make as many complete functions byte-exact
-as possible using the project's Visual C++ 4.0 toolchain.
+/goal Reconstruct English DX-Ball v1.07 from original/DXBALL.EXE into readable,
+rebuildable C/C++ that reproduces the game. Recover every authored function
+and make as many complete functions byte-exact as possible with the project's
+Visual C++ 4.0 toolchain. Function recovery is the first priority.
 
 Read AGENTS.md, docs/agent/HANDOFF.md, and docs/agent/WORKFLOW.md. Use REA to
-inspect instructions, calls, data layouts, and function boundaries. Reuse saved
-evidence and work through unresolved functions in related groups.
+inspect instructions, calls, data layouts, and function boundaries. Start
+from the current handoff, reuse saved evidence, and work through unresolved
+functions in related groups.
 
 Write natural source shared by the portable and legacy builds. Preserve the
 original calling conventions, integer widths, ownership, and state changes.
-Compile each stable batch once, compare complete functions with explicit
-relocation mappings, and use the differences to refine the source. Recheck
-existing exact functions that share the changed compiler inputs. Use focused
-checks during recovery; defer long full-game campaigns until the functions
-have been restored as far as possible.
+Compile each stable batch once and compare complete functions with explicit
+relocation mappings. Refine the source from those differences, and recheck
+existing exact functions affected by the changes. Use focused checks during
+recovery. Run broader game validation after restoring the functions as far
+as possible.
 
-Update the match ledgers, progress, and handoff with verified results. Keep
-code and documentation in English. Use one CPU and one compiler or analysis
-session at a time. Preserve unique evidence and clean disposable build products.
-Commit verified checkpoints with the prefix "gpt-6.1-sol: " and push them
-to my writable remote.
+Record verified results in the match ledgers, progress, and handoff. Keep code
+and documentation in English. Use one CPU and one compiler or analysis session
+at a time. Preserve unique evidence and clean disposable build products.
+Commit verified checkpoints with the prefix "gpt-6.1-sol: " and push to origin.
 
-Continue through the entire function inventory, then verify the rebuilt game's
-behavior. For functions that still differ, record the comparison and pursue
-the remaining source corrections. If progress depends on missing tools or
-inputs, report the specific blocker and what would resolve it.
+Work through the entire function inventory, pursuing source corrections for
+every remaining mismatch, then verify the rebuilt game's behavior. If missing
+tools or inputs block progress, explain what is needed to continue.
 ```
 
 You can steer the work with ordinary follow-up messages in the same thread.
