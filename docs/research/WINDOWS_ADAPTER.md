@@ -292,6 +292,38 @@ are retained in `.analysis/menu-palette-phase/report.json`; the two temporary
 working copies are removed only after hash verification. This is direct
 runtime observation, without a new REA Evidence claim or function acceptance.
 
+## Current attached-ball pause frames
+
+The next focused observation uses actual opening/play/P/mouse input to pause
+the first attached ball. Both original and current VC4 controls have paddle
+x320, ball x320/y441, score zero and three lives. Complete ball observations
+are identical across controls and unchanged before and after each capture
+interval. Each process supplies 32 complete captures covering eight distinct
+RGB frames. Every sampled distinct frame has an equal counterpart: all eight
+pairs compare every decoded RGB byte, with zero differing pixels across
+307,200 pixels per pair. Screenshots are not modified or phase-normalized.
+
+Real Space input resumes; Escape returns to menu and another Escape exits
+normally. Read-only state, asset identities and current product hashes remain
+verified. The temporary working copies are removed after hash checks.
+This proves the sampled attached-ball pause scene under Wine/Xvfb. It does
+not establish moving-ball trajectory parity, synchronized clocks, physical
+display/audio/MIDI or whole-campaign fidelity.
+
+REA 6.4 process capture retains this run as controlled-replay Evidence
+`ev_d5cefc4042fda9ea205b51380ca4a011c3a620d5761b675ca9eca1b9b7406791`.
+The child exits zero and the after-filesystem checkpoint hashes the complete
+52,368-byte runtime report. Process sampling reaches the declared 64-sample
+cap; its partial coverage is retained without implying a complete process
+history. Terminal frames are not screenshot frames. Executable identity is
+a prelaunch path sample, with the recorder's atomic-binding limitation;
+the child report separately binds the original/current game file hashes.
+
+Complete unique PNGs, state/scene report, scenario, recorder Evidence and
+progress are in `.analysis/pause-palette-phase/`. No compiler, game build or
+full historical replay is needed. Existing exact/source/origin counts remain
+unchanged; no new function acceptance follows from these sampled frames.
+
 ## Natural life loss and persisted rankings
 
 `tests/test_windows_gameover.py` reuses the reviewed game-over state addresses

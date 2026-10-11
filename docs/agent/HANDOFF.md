@@ -41,9 +41,25 @@ zero. No screenshot normalization, build or full gameplay replay. Temporary
 working copies are hash-verified and removed; unique captures stay in
 `.analysis/menu-palette-phase/`. This strengthens menu palette-phase equivalence
 but does not prove synchronized clocks, pause or full physical display/audio
-fidelity. See [Windows adapter](../research/WINDOWS_ADAPTER.md). Next entry 65
-can observe deterministic attached-ball pause frames at naturally equal phases,
+fidelity. See [Windows adapter](../research/WINDOWS_ADAPTER.md). Entry 65
+observes attached-ball pause frames at naturally equal phases,
 using actual input and read-only state; do not rerun the successful menu sample.
+Both original/current VC4 controls retain the attached ball at x320/y441,
+score zero, three lives, paddle x320 and unchanged full ball fields. Each
+provides 32 captures covering eight distinct RGB frames; all eight have equal
+complete 640 by 480 counterparts. Space resumes, Escape returns to menu,
+and another Escape exits zero. REA 6.4
+controlled-replay Evidence is
+`ev_d5cefc4042fda9ea205b51380ca4a011c3a620d5761b675ca9eca1b9b7406791`;
+its filesystem checkpoint hashes the complete report. Process sampling hits 64
+and remains explicitly partial; the observed child exit and independent
+full-frame comparisons remain valid, without proving complete process history.
+Private `.analysis/pause-palette-phase/` retains all unique frames and inputs;
+temporary working copies are removed after hash verification. No new build or
+source/exact/origin promotion. Sampled scene equivalence leaves moving-ball
+trajectories, synchronized clocks, full campaign and physical audio unproved.
+Next feedback entry: 66. Choose a new trajectory/campaign evidence gap;
+do not repeat successful menu or pause capture intervals.
 
 - 283 source-present entries and 247 scoped semantic acceptances.
 - 188 exact functions / 35,003 complete code bytes / 136 accepted metadata bytes.
