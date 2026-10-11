@@ -8,7 +8,33 @@ requires all ongoing REA feedback in one existing `/tmp` document only.
 
 ## Current state
 
-The latest source checkpoint restores explosive-neighbor conversion at
+The latest source checkpoint restores particle drawing at 0x414CB0 exactly:
+all 320 bytes/21 relocations. Nonempty description and per-particle pointer
+scopes in src/particles.c restore the 132-byte frame: rectangle -16, result -20,
+description108 at -128 and pixels -132. Names/types/executable tokens unchanged.
+One canonical MT compile preserves creation/movement across 477 bytes.
+Initial consumer rejects 14 stale offsets from the shorter 311-byte before
+candidate; reconcile them against original REA instruction positions/targets
+and compare the already completed object, without a repeated compile.
+Native/MinGW completed once; the legacy link consumer initially stops for the
+pending comparison receipt, then one actual link reuses the matching object
+with 35 unchanged objects. Two unchanged Oracle loops pass 36 pixel cases and
+980 connected hit/effect/bonus/particle checks, including 240 draw calls.
+All 203 exact closures, 247 unchanged historical scopes and 36 objects verify;
+235 historical input inventories refresh without unrelated suite replays.
+Counts: 203 exact / 42656 code / 136 metadata; 283 source-present; 270 authored.
+Current products: `.analysis/particle-draw-scopes/product-verification.json`;
+seal: `.analysis/checkpoints/particle-draw-scopes-283-203/sha256.json`.
+See [exact particle draw scopes](../research/exact/EXACT_PARTICLE_DRAW_SCOPES.md).
+Continue another evidenced game family. Measure-text and score insertion each
+retain three reversed comparison bytes. Current count>i text source still emits
+the reversed original comparison; inspect prior trial evidence before any new
+equivalent spelling. Paddle position retains four reversed-operand bytes. No
+comparison rewrite was compiled here. Original spelling, full authored denominator,
+physical render/audio and campaign remain unproved; the goal stays active.
+Push verified checkpoints; optional REA feedback stays in the same /tmp document.
+
+The preceding source checkpoint restores explosive-neighbor conversion at
 0x4150A0 exactly: all 824 bytes, 39 relocations, 208 instructions, 26 branches
 and nine calls. Restore collection-phase and per-column inner scan scopes in
 src/gameplay.c; original 20-byte frame is x/y -4/-8, scan_x -12, signed tile

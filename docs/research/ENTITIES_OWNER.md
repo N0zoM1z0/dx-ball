@@ -1,5 +1,18 @@
 # Particles and bonus production through REA
 
+The [particle draw scope recovery](exact/EXACT_PARTICLE_DRAW_SCOPES.md) makes
+the complete 320-byte body exact with 21 relocations. Nonempty description
+and per-particle pointer scopes restore the original 132-byte frame; creation
+and movement stay exact across 477 bytes. One MT compile, 36 unchanged pixel
+cases and 980 connected entity checks pass. Native/MinGW rebuild; VC4 uses
+the matching object with 35 unchanged objects. Current totals are 203 exact
+functions / 42,656 code bytes / 136 metadata bytes. Historical epochs below
+retain their source, products and acceptance boundaries.
+
+The later [bonus generation scopes](exact/EXACT_BONUS_GENERATION_SCOPE.md) also
+make generation exact across all 1,197 bytes, including switch data and the
+unowned exit. The older nonexact figures below describe their earlier checkpoint.
+
 The [current allocation checkpoint](exact/EXACT_ENTITY_ALLOCATION.md) restores
 genuine operator-new/delete calls across particles, bonuses, explosion requests
 and brick animations. All 28 affected exact units retain their complete 5,400
@@ -92,7 +105,7 @@ without copying the original switch table.
 Drawing traverses bonuses through the controlled reduced-sprite dependency at
 `0x004085D0`. Retiring first removes current and then decrements the count, even
 if current is absent. The movement/collision/power-up application body at
-`0x00413E20` has been investigated but is not implemented or accepted.
+`0x00413E20` is restored in the later [complete bonus checkpoint](exact/EXACT_BONUSES.md).
 
 ## Independent verification
 

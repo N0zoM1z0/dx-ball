@@ -72,10 +72,9 @@ void dxball_update_particles(void)
 void dxball_draw_particles(void)
 {
     DxBallRect rect;
-    DxBallSurfaceDesc description;
     DxBallInt result;
-    DxBallByte *pixels;
     if (dxball_begin_particles(&dxball_particles)) {
+        DxBallSurfaceDesc description;
         description.size = sizeof(description);
         description.flags = 0xE;
         ((DxBallDDSurface *)dxball_effect_surface)->vtable->get_desc(
@@ -85,6 +84,7 @@ void dxball_draw_particles(void)
                 (DxBallDDSurface *)dxball_effect_surface, NULL, &description, 0, NULL);
         } while (result != 0);
         do {
+            DxBallByte *pixels;
             pixels = description.pixels;
             pixels += dxball_particles.current->y * description.pitch +
                       dxball_particles.current->x;

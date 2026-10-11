@@ -4321,34 +4321,34 @@ relocations = [
   { offset = 65, type = "REL32", symbol = "@dxball_advance_bonus@4", addend = 0, target = 0x4146e0 },
 ]
 
-[candidates.draw-particles]
+[units.draw-particles]
 build = "particles"
 symbol = "_dxball_draw_particles"
 target_address = 0x414cb0
 size = 320
 boundary_evidence = "docs/research/exact/EXACT_RENDER_RESTORATION.md; full RET-inclusive REA evidence and genuine original call/data targets"
 relocations = [
-  { offset = 13, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 18, type = "REL32", symbol = "@dxball_begin_particles@4", addend = 0, target = 0x414c10 },
-  { offset = 49, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
-  { offset = 55, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
-  { offset = 75, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
-  { offset = 81, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
-  { offset = 116, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 129, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 141, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 154, type = "REL32", symbol = "_memset", addend = 0, target = 0x417c40 },
-  { offset = 170, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 183, type = "REL32", symbol = "_memset", addend = 0, target = 0x417c40 },
-  { offset = 191, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 202, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 216, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 226, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 255, type = "REL32", symbol = "_dxball_queue_region", addend = 0, target = 0x408990 },
-  { offset = 263, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x43a868 },
-  { offset = 268, type = "REL32", symbol = "@dxball_advance_particle@4", addend = 0, target = 0x414c50 },
-  { offset = 283, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
-  { offset = 289, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690 },
+  { offset = 13, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 18, type = "REL32", symbol = "@dxball_begin_particles@4", addend = 0, target = 0x00414C10 },
+  { offset = 49, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 55, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 75, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 81, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 113, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 126, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 141, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 157, type = "REL32", symbol = "_memset", addend = 0, target = 0x00417C40 },
+  { offset = 176, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 192, type = "REL32", symbol = "_memset", addend = 0, target = 0x00417C40 },
+  { offset = 200, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 211, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 225, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 235, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 264, type = "REL32", symbol = "_dxball_queue_region", addend = 0, target = 0x00408990 },
+  { offset = 272, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 277, type = "REL32", symbol = "@dxball_advance_particle@4", addend = 0, target = 0x00414C50 },
+  { offset = 292, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 298, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
 ]
 
 [units.queue-region]
