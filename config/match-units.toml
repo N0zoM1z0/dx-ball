@@ -1254,7 +1254,7 @@ symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z"
 target_address = 0x40b2d0
 size = 0xb6
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1301", addend = 0x0, target = 0x40b36b },
+  { offset = 0x6, type = "DIR32", symbol = "$L1280", addend = 0x0, target = 0x40b36b },
   { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x33, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
@@ -1262,17 +1262,17 @@ relocations = [
   { offset = 0x84, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
   { offset = 0x8d, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
   { offset = 0x96, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
-  { offset = 0x9c, type = "DIR32", symbol = "$T1308", addend = 0x0, target = 0x420350 },
+  { offset = 0x9c, type = "DIR32", symbol = "$T1287", addend = 0x0, target = 0x420350 },
   { offset = 0xa1, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
   { offset = 0xab, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
 ]
 build = "raster"
 data_comdats = [
-  { symbol = "$T1308", target_address = 0x420350, size = 0x38, relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1309", addend = 0x0, target = 0x420370 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1306", addend = 0x0, target = 0x40b346 },
-  { offset = 0x2c, type = "DIR32", symbol = "$L1302", addend = 0x0, target = 0x40b362 },
-  { offset = 0x34, type = "DIR32", symbol = "$L1303", addend = 0x0, target = 0x40b359 }
+  { symbol = "$T1287", target_address = 0x420350, size = 0x38, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1288", addend = 0x0, target = 0x420370 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1285", addend = 0x0, target = 0x40b346 },
+  { offset = 0x2c, type = "DIR32", symbol = "$L1281", addend = 0x0, target = 0x40b362 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1282", addend = 0x0, target = 0x40b359 }
 ] }
 ]
 
@@ -1290,19 +1290,19 @@ symbol = "??MDxBallFixedPoint@@QAEHV0@@Z"
 target_address = 0x40b3c0
 size = 0x81
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1312", addend = 0x0, target = 0x40b426 },
+  { offset = 0x6, type = "DIR32", symbol = "$L1291", addend = 0x0, target = 0x40b426 },
   { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x61, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
-  { offset = 0x67, type = "DIR32", symbol = "$T1317", addend = 0x0, target = 0x420388 },
+  { offset = 0x67, type = "DIR32", symbol = "$T1296", addend = 0x0, target = 0x420388 },
   { offset = 0x6c, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
   { offset = 0x76, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
 ]
 build = "raster"
 data_comdats = [
-  { symbol = "$T1317", target_address = 0x420388, size = 0x28, relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1318", addend = 0x0, target = 0x4203a8 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1313", addend = 0x0, target = 0x40b41d }
+  { symbol = "$T1296", target_address = 0x420388, size = 0x28, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1297", addend = 0x0, target = 0x4203a8 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1292", addend = 0x0, target = 0x40b41d }
 ] }
 ]
 
@@ -1311,19 +1311,19 @@ symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z"
 target_address = 0x40b450
 size = 0x6e
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1321", addend = 0x0, target = 0x40b4a3 },
+  { offset = 0x6, type = "DIR32", symbol = "$L1300", addend = 0x0, target = 0x40b4a3 },
   { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x4e, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
-  { offset = 0x54, type = "DIR32", symbol = "$T1324", addend = 0x0, target = 0x4203b0 },
+  { offset = 0x54, type = "DIR32", symbol = "$T1303", addend = 0x0, target = 0x4203b0 },
   { offset = 0x59, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
   { offset = 0x63, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
 ]
 build = "raster"
 data_comdats = [
-  { symbol = "$T1324", target_address = 0x4203b0, size = 0x28, relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1325", addend = 0x0, target = 0x4203d0 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1322", addend = 0x0, target = 0x40b49a }
+  { symbol = "$T1303", target_address = 0x4203b0, size = 0x28, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1304", addend = 0x0, target = 0x4203d0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1301", addend = 0x0, target = 0x40b49a }
 ] }
 ]
 
@@ -1332,99 +1332,99 @@ symbol = "_dxball_fill_triangle"
 target_address = 0x40AB90
 size = 1710
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1277", addend = 0, target = 0x40B226 },
-  { offset = 0xC, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
+  { offset = 0x6, type = "DIR32", symbol = "$L1256", addend = 0, target = 0x40b226 },
+  { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
-  { offset = 0x22, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B240 },
-  { offset = 0x31, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B240 },
-  { offset = 0x3D, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B240 },
-  { offset = 0x49, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B240 },
-  { offset = 0x135, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x14F, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x15A, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0, target = 0x40B2D0 },
-  { offset = 0x18A, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x1C7, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x1E1, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x1EC, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0, target = 0x40B2D0 },
-  { offset = 0x21C, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x23A, type = "REL32", symbol = "??MDxBallFixedPoint@@QAEHV0@@Z", addend = 0, target = 0x40B3C0 },
-  { offset = 0x26D, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x280, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x297, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x2B3, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x2CB, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40B4C0 },
-  { offset = 0x2E3, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x2EF, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x324, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x337, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x34E, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x36A, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x382, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40B4C0 },
-  { offset = 0x39A, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x3A6, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x3F2, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x40C, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x417, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0, target = 0x40B2D0 },
-  { offset = 0x447, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40B280 },
-  { offset = 0x465, type = "REL32", symbol = "??MDxBallFixedPoint@@QAEHV0@@Z", addend = 0, target = 0x40B3C0 },
-  { offset = 0x498, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x4AB, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x4C2, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x4DE, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x4F6, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40B4C0 },
-  { offset = 0x50E, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x51A, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x54F, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x562, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x579, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x595, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40B2B0 },
-  { offset = 0x5AD, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40B4C0 },
-  { offset = 0x5C5, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x5D1, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40B450 },
-  { offset = 0x60A, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x613, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x61C, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x625, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x62E, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x637, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x640, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x649, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x652, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x65B, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x664, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x66D, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x676, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x67F, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x688, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x691, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x697, type = "DIR32", symbol = "$T1297", addend = 0, target = 0x4202B0 },
-  { offset = 0x69C, type = "REL32", symbol = "___CxxFrameHandler", addend = 0, target = 0x418570 },
-  { offset = 0x6A5, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
+  { offset = 0x22, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b240 },
+  { offset = 0x31, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b240 },
+  { offset = 0x3d, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b240 },
+  { offset = 0x49, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b240 },
+  { offset = 0x135, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x14f, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x15a, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0, target = 0x40b2d0 },
+  { offset = 0x18a, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x1c7, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x1e1, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x1ec, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0, target = 0x40b2d0 },
+  { offset = 0x21c, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x23a, type = "REL32", symbol = "??MDxBallFixedPoint@@QAEHV0@@Z", addend = 0, target = 0x40b3c0 },
+  { offset = 0x26d, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x280, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x297, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x2b3, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x2cb, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40b4c0 },
+  { offset = 0x2e3, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x2ef, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x324, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x337, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x34e, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x36a, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x382, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40b4c0 },
+  { offset = 0x39a, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x3a6, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x3f2, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x40c, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x417, type = "REL32", symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z", addend = 0, target = 0x40b2d0 },
+  { offset = 0x447, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@H@Z", addend = 0, target = 0x40b280 },
+  { offset = 0x465, type = "REL32", symbol = "??MDxBallFixedPoint@@QAEHV0@@Z", addend = 0, target = 0x40b3c0 },
+  { offset = 0x498, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x4ab, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x4c2, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x4de, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x4f6, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40b4c0 },
+  { offset = 0x50e, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x51a, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x54f, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x562, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x579, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x595, type = "REL32", symbol = "??BDxBallFixedPoint@@QAEHXZ", addend = 0, target = 0x40b2b0 },
+  { offset = 0x5ad, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40b4c0 },
+  { offset = 0x5c5, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x5d1, type = "REL32", symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z", addend = 0, target = 0x40b450 },
+  { offset = 0x60a, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x613, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x61c, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x625, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x62e, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x637, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x640, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x649, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x652, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x65b, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x664, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x66d, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x676, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x67f, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x688, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x691, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40b260 },
+  { offset = 0x697, type = "DIR32", symbol = "$T1276", addend = 0, target = 0x4202b0 },
+  { offset = 0x69c, type = "REL32", symbol = "___CxxFrameHandler", addend = 0, target = 0x418570 },
+  { offset = 0x6a5, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
 ]
 build = "raster"
 
 [[candidates.fill-triangle.data_comdats]]
-symbol = "$T1297"
+symbol = "$T1276"
 target_address = 0x4202B0
 size = 160
 relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1299", addend = 0, target = 0x4202D0 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1278", addend = 0, target = 0x40B21D },
-  { offset = 0x2C, type = "DIR32", symbol = "$L1279", addend = 0, target = 0x40B214 },
-  { offset = 0x34, type = "DIR32", symbol = "$L1280", addend = 0, target = 0x40B20B },
-  { offset = 0x3C, type = "DIR32", symbol = "$L1281", addend = 0, target = 0x40B202 },
-  { offset = 0x44, type = "DIR32", symbol = "$L1283", addend = 0, target = 0x40B1F0 },
-  { offset = 0x4C, type = "DIR32", symbol = "$L1282", addend = 0, target = 0x40B1F9 },
-  { offset = 0x54, type = "DIR32", symbol = "$L1284", addend = 0, target = 0x40B1E7 },
-  { offset = 0x5C, type = "DIR32", symbol = "$L1285", addend = 0, target = 0x40B1DE },
-  { offset = 0x64, type = "DIR32", symbol = "$L1287", addend = 0, target = 0x40B1CC },
-  { offset = 0x6C, type = "DIR32", symbol = "$L1286", addend = 0, target = 0x40B1D5 },
-  { offset = 0x74, type = "DIR32", symbol = "$L1288", addend = 0, target = 0x40B1C3 },
-  { offset = 0x7C, type = "DIR32", symbol = "$L1289", addend = 0, target = 0x40B1BA },
-  { offset = 0x84, type = "DIR32", symbol = "$L1291", addend = 0, target = 0x40B1A8 },
-  { offset = 0x8C, type = "DIR32", symbol = "$L1290", addend = 0, target = 0x40B1B1 },
-  { offset = 0x94, type = "DIR32", symbol = "$L1292", addend = 0, target = 0x40B19F },
-  { offset = 0x9C, type = "DIR32", symbol = "$L1293", addend = 0, target = 0x40B196 },
+  { offset = 0x8, type = "DIR32", symbol = "$T1278", addend = 0, target = 0x4202D0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1257", addend = 0, target = 0x40B21D },
+  { offset = 0x2C, type = "DIR32", symbol = "$L1258", addend = 0, target = 0x40B214 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1259", addend = 0, target = 0x40B20B },
+  { offset = 0x3C, type = "DIR32", symbol = "$L1260", addend = 0, target = 0x40B202 },
+  { offset = 0x44, type = "DIR32", symbol = "$L1262", addend = 0, target = 0x40B1F0 },
+  { offset = 0x4C, type = "DIR32", symbol = "$L1261", addend = 0, target = 0x40B1F9 },
+  { offset = 0x54, type = "DIR32", symbol = "$L1263", addend = 0, target = 0x40B1E7 },
+  { offset = 0x5C, type = "DIR32", symbol = "$L1264", addend = 0, target = 0x40B1DE },
+  { offset = 0x64, type = "DIR32", symbol = "$L1266", addend = 0, target = 0x40B1CC },
+  { offset = 0x6C, type = "DIR32", symbol = "$L1265", addend = 0, target = 0x40B1D5 },
+  { offset = 0x74, type = "DIR32", symbol = "$L1267", addend = 0, target = 0x40B1C3 },
+  { offset = 0x7C, type = "DIR32", symbol = "$L1268", addend = 0, target = 0x40B1BA },
+  { offset = 0x84, type = "DIR32", symbol = "$L1270", addend = 0, target = 0x40B1A8 },
+  { offset = 0x8C, type = "DIR32", symbol = "$L1269", addend = 0, target = 0x40B1B1 },
+  { offset = 0x94, type = "DIR32", symbol = "$L1271", addend = 0, target = 0x40B19F },
+  { offset = 0x9C, type = "DIR32", symbol = "$L1272", addend = 0, target = 0x40B196 },
 ]
 
 [builds.list_initializers]
@@ -9280,17 +9280,17 @@ target_address = 0x0040B550
 size = 1543
 boundary_evidence = "docs/research/exact/EXACT_RASTER_CONTROLLERS.md"
 relocations = [
-  { offset = 24, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 42, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 60, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 115, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 137, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 159, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 904, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00417CA0 },
-  { offset = 1313, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x0040B4C0 },
-  { offset = 1500, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 1512, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 1524, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
+  { offset = 24, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 42, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 60, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 115, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 137, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 159, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 904, type = "REL32", symbol = "_memmove", addend = 0, target = 0x417ca0 },
+  { offset = 1313, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40b4c0 },
+  { offset = 1500, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 1512, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 1524, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
 ]
 
 [candidates.fill-polygon-clipped]
@@ -9300,17 +9300,17 @@ target_address = 0x0040BB60
 size = 1592
 boundary_evidence = "docs/research/exact/EXACT_RASTER_CONTROLLERS.md"
 relocations = [
-  { offset = 24, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 42, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 60, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 115, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 137, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 159, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 904, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00417CA0 },
-  { offset = 1362, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x0040B4C0 },
-  { offset = 1549, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 1561, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 1573, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
+  { offset = 24, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 42, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 60, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 115, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 137, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 159, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 904, type = "REL32", symbol = "_memmove", addend = 0, target = 0x417ca0 },
+  { offset = 1362, type = "REL32", symbol = "_dxball_fill_horizontal_span", addend = 0, target = 0x40b4c0 },
+  { offset = 1549, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 1561, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 1573, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
 ]
 
 [units.remove-ball]

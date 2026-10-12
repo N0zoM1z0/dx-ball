@@ -15,6 +15,29 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **229 exact functions /57,649 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 44 authored nonexact functions.
+The latest [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md)
+groups64 bytes of scan/sort state while leaving two endpoint points separate.
+Complete polygon1543/211 and clipped1592/210 improve from218/218; unchanged
+triangle1710/107 worsens from99, net seven fewer raw differences. Nine raster
+exacts retain715 code+136metadata bytes; triangle160-byte candidate metadata
+stays exact. Each original/native and relocated VC4/native profile passes1152
+existing calls; builds and VC4 one matching+36 unchanged link pass. No game.
+No new exact count. `.analysis/polygon-scan-workspace-20261012/verification.json`.
+The user's latest direction is local binary/REA/compiler reconstruction only;
+do not seek online source or use the unrelated author tutorial as reconstruction
+evidence. Queue-pair, whole80-byte record and coordinate-kind trials are closed.
+
+The [current44-candidate audit](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
+compares every complete candidate with verified current input/object receipts;
+none is already exact. Eight completed diagnostics and one C89 draft close
+nested origin conversions, axis/source-plane records, rotation `/Op`, C++
+rectangle copying, two direct cursor imports and a related author compiler
+setting. All are rejected before the selected polygon workspace above.
+Read [the results](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up)
+before further trials. PCX has no missing operation or evidence for enlarging
+its128-byte header. Original PE has no COFF symbols/debug directory. No new fixtures,
+game or provider sessions. `.analysis/exact-candidate-audit-20261012/comparison.json`.
+
 The latest [line interface recovery](../research/exact/LINE_INTERFACE_BOUNDARY.md)
 uses an actual DirectDraw surface pointer and updates its six callers. Five
 recipes preserve53 exact bodies; all229 complete closures and486 existing line

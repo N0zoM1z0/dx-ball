@@ -1,5 +1,10 @@
 # Separate polygon sort temporaries
 
+The later [scan/sort workspace](POLYGON_SCAN_WORKSPACE.md) keeps the two
+exchange values distinct and improves the complete candidates to211/210
+differences. It preserves all nine exact raster companions; neither polygon
+is yet exact.
+
 The polygon controllers now give each Shell sort its own consumed exchange
 pointer. The pending-by-top sort and active-by-X sort originally use distinct
 stack homes; the maintained function-wide `saved` pointer had combined them.

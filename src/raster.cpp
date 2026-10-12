@@ -53,113 +53,127 @@ void dxball_fill_horizontal_span(DxBallByte *row, DxBallInt left,
     return;
 }
 
+/* Pending and active edges share one scan/sort workspace. Every field has
+   an actual producer and consumer; the two sort exchanges remain distinct. */
+struct RasterPolygonWorkspace {
+    RasterEdge *edge;
+    DxBallByte *row;
+    RasterEdge *active_exchange, *pending_exchange;
+    DxBallInt j;
+    RasterEdge **pending, **active;
+    DxBallInt i, y;
+    RasterEdge *storage;
+    DxBallInt gap, used, live;
+    DxBallInt left, next;
+    DxBallInt right;
+};
+
 /* FUNCTION: DXBALL 0x0040B550 */
 void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
     const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
 {
-    RasterEdge *storage, **pending, **active, *edge;
+    RasterPolygonWorkspace work;
     DxBallRasterPoint first, second;
-    DxBallInt used, live, next, gap, i, j, y, left, right;
-    storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*storage)));
-    pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*pending)));
-    active = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*active)));
-    if (storage == NULL || pending == NULL || active == NULL) {
-        if (storage != NULL) dxball_heap_release(storage);
-        if (pending != NULL) dxball_heap_release(pending);
-        if (active != NULL) dxball_heap_release(active);
+    work.storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*work.storage)));
+    work.pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*work.pending)));
+    work.active = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*work.active)));
+    if (work.storage == NULL || work.pending == NULL || work.active == NULL) {
+        if (work.storage != NULL) dxball_heap_release(work.storage);
+        if (work.pending != NULL) dxball_heap_release(work.pending);
+        if (work.active != NULL) dxball_heap_release(work.active);
         return;
     }
-    i = 0;
-    used = 0;
-    for (; i < count; ++i) {
-        first = points[i];
-        second = points[(i + 1) % count];
+    work.i = 0;
+    work.used = 0;
+    for (; work.i < count; ++work.i) {
+        first = points[work.i];
+        second = points[(work.i + 1) % count];
         if (first.y == second.y)
             continue;
         if (first.y > second.y) {
             first = second;
-            second = points[i];
+            second = points[work.i];
         }
-        storage[used].top = first.y;
-        storage[used].bottom = second.y;
-        storage[used].x = first.x;
-        storage[used].dx = second.x - first.x;
-        storage[used].dy = second.y - first.y;
-        storage[used].error = 0;
-        pending[used] = &storage[used];
-        ++used;
+        work.storage[work.used].top = first.y;
+        work.storage[work.used].bottom = second.y;
+        work.storage[work.used].x = first.x;
+        work.storage[work.used].dx = second.x - first.x;
+        work.storage[work.used].dy = second.y - first.y;
+        work.storage[work.used].error = 0;
+        work.pending[work.used] = &work.storage[work.used];
+        ++work.used;
     }
-    for (gap = 1; gap < used; gap = gap * 3 + 1) { }
-    for (gap /= 3; gap > 0; gap /= 3) {
-        for (i = gap; i < used; ++i) {
-            for (j = i - gap; j >= 0; j -= gap) {
-                if (pending[j + gap]->top >= pending[j]->top)
+    for (work.gap = 1; work.gap < work.used; work.gap = work.gap * 3 + 1) { }
+    for (work.gap /= 3; work.gap > 0; work.gap /= 3) {
+        for (work.i = work.gap; work.i < work.used; ++work.i) {
+            for (work.j = work.i - work.gap; work.j >= 0; work.j -= work.gap) {
+                if (work.pending[work.j + work.gap]->top >= work.pending[work.j]->top)
                     break;
-                RasterEdge *saved = pending[j];
-                pending[j] = pending[j + gap];
-                pending[j + gap] = saved;
+                work.pending_exchange = work.pending[work.j];
+                work.pending[work.j] = work.pending[work.j + work.gap];
+                work.pending[work.j + work.gap] = work.pending_exchange;
             }
         }
     }
-    live = 0;
-    next = 0;
+    work.live = 0;
+    work.next = 0;
     /* A nonhorizontal closed contour and representable arithmetic are the
-       original routine's required domain; its zero-edge read is unresolved. */
-    y = pending[next]->top;
-    while (next < used || live != 0) {
-        while (next < used && pending[next]->top == y)
-            active[live++] = pending[next++];
-        i = 0;
-        while (i < live) {
-            if (active[i]->bottom == y) {
-                --live;
-                memmove(&active[i], &active[i + 1], (live - i) * sizeof(*active));
+       original routine's required domain; its zero-work.edge read is unresolved. */
+    work.y = work.pending[work.next]->top;
+    while (work.next < work.used || work.live != 0) {
+        while (work.next < work.used && work.pending[work.next]->top == work.y)
+            work.active[work.live++] = work.pending[work.next++];
+        work.i = 0;
+        while (work.i < work.live) {
+            if (work.active[work.i]->bottom == work.y) {
+                --work.live;
+                memmove(&work.active[work.i], &work.active[work.i + 1], (work.live - work.i) * sizeof(*work.active));
             } else {
-                ++i;
+                ++work.i;
             }
         }
-        for (gap = 1; gap < live; gap = gap * 3 + 1) { }
-        for (gap /= 3; gap > 0; gap /= 3) {
-            for (i = gap; i < live; ++i) {
-                for (j = i - gap; j >= 0; j -= gap) {
-                    if (active[j + gap]->x >= active[j]->x)
+        for (work.gap = 1; work.gap < work.live; work.gap = work.gap * 3 + 1) { }
+        for (work.gap /= 3; work.gap > 0; work.gap /= 3) {
+            for (work.i = work.gap; work.i < work.live; ++work.i) {
+                for (work.j = work.i - work.gap; work.j >= 0; work.j -= work.gap) {
+                    if (work.active[work.j + work.gap]->x >= work.active[work.j]->x)
                         break;
-                    RasterEdge *saved = active[j];
-                    active[j] = active[j + gap];
-                    active[j + gap] = saved;
+                    work.active_exchange = work.active[work.j];
+                    work.active[work.j] = work.active[work.j + work.gap];
+                    work.active[work.j + work.gap] = work.active_exchange;
                 }
             }
         }
-        for (i = 0; i < live; i += 2) {
-            left = active[i]->x;
-            right = active[i + 1]->x;
-            if (active[i]->error > 0) ++left;
-            if (active[i + 1]->error <= 0) --right;
-            if (left <= right) {
-                DxBallByte *row = pixels + y * pitch;
-                dxball_fill_horizontal_span(row, left, right, color);
+        for (work.i = 0; work.i < work.live; work.i += 2) {
+            work.left = work.active[work.i]->x;
+            work.right = work.active[work.i + 1]->x;
+            if (work.active[work.i]->error > 0) ++work.left;
+            if (work.active[work.i + 1]->error <= 0) --work.right;
+            if (work.left <= work.right) {
+                work.row = pixels + work.y * pitch;
+                dxball_fill_horizontal_span(work.row, work.left, work.right, color);
             }
         }
-        for (i = 0; i < live; ++i) {
-            edge = active[i];
-            edge->error += edge->dx;
-            if (edge->dx < 0) {
-                while (edge->dy <= -edge->error) {
-                    edge->error += edge->dy;
-                    --edge->x;
+        for (work.i = 0; work.i < work.live; ++work.i) {
+            work.edge = work.active[work.i];
+            work.edge->error += work.edge->dx;
+            if (work.edge->dx < 0) {
+                while (work.edge->dy <= -work.edge->error) {
+                    work.edge->error += work.edge->dy;
+                    --work.edge->x;
                 }
             } else {
-                while (edge->dy <= edge->error) {
-                    edge->error -= edge->dy;
-                    ++edge->x;
+                while (work.edge->dy <= work.edge->error) {
+                    work.edge->error -= work.edge->dy;
+                    ++work.edge->x;
                 }
             }
         }
-        ++y;
+        ++work.y;
     }
-    dxball_heap_release(storage);
-    dxball_heap_release(pending);
-    dxball_heap_release(active);
+    dxball_heap_release(work.storage);
+    dxball_heap_release(work.pending);
+    dxball_heap_release(work.active);
     return;
 }
 
@@ -167,110 +181,109 @@ void DXBALL_RASTER_CALL dxball_fill_polygon(DxBallByte *pixels, DxBallInt pitch,
 void DXBALL_RASTER_CALL dxball_fill_polygon_clipped(DxBallByte *pixels, DxBallInt pitch,
     const DxBallRasterPoint *points, DxBallInt count, DxBallByte color)
 {
-    RasterEdge *storage, **pending, **active, *edge;
+    RasterPolygonWorkspace work;
     DxBallRasterPoint first, second;
-    DxBallInt used, live, next, gap, i, j, y, left, right;
-    storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*storage)));
-    pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*pending)));
-    active = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*active)));
-    if (storage == NULL || pending == NULL || active == NULL) {
-        if (storage != NULL) dxball_heap_release(storage);
-        if (pending != NULL) dxball_heap_release(pending);
-        if (active != NULL) dxball_heap_release(active);
+    work.storage = (RasterEdge *)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*work.storage)));
+    work.pending = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*work.pending)));
+    work.active = (RasterEdge **)dxball_runtime_malloc((DxBallUInt)(count * sizeof(*work.active)));
+    if (work.storage == NULL || work.pending == NULL || work.active == NULL) {
+        if (work.storage != NULL) dxball_heap_release(work.storage);
+        if (work.pending != NULL) dxball_heap_release(work.pending);
+        if (work.active != NULL) dxball_heap_release(work.active);
         return;
     }
-    i = 0;
-    used = 0;
-    for (; i < count; ++i) {
-        first = points[i];
-        second = points[(i + 1) % count];
+    work.i = 0;
+    work.used = 0;
+    for (; work.i < count; ++work.i) {
+        first = points[work.i];
+        second = points[(work.i + 1) % count];
         if (first.y == second.y)
             continue;
         if (first.y > second.y) {
             first = second;
-            second = points[i];
+            second = points[work.i];
         }
-        storage[used].top = first.y;
-        storage[used].bottom = second.y;
-        storage[used].x = first.x;
-        storage[used].dx = second.x - first.x;
-        storage[used].dy = second.y - first.y;
-        storage[used].error = 0;
-        pending[used] = &storage[used];
-        ++used;
+        work.storage[work.used].top = first.y;
+        work.storage[work.used].bottom = second.y;
+        work.storage[work.used].x = first.x;
+        work.storage[work.used].dx = second.x - first.x;
+        work.storage[work.used].dy = second.y - first.y;
+        work.storage[work.used].error = 0;
+        work.pending[work.used] = &work.storage[work.used];
+        ++work.used;
     }
-    for (gap = 1; gap < used; gap = gap * 3 + 1) { }
-    for (gap /= 3; gap > 0; gap /= 3) {
-        for (i = gap; i < used; ++i) {
-            for (j = i - gap; j >= 0; j -= gap) {
-                if (pending[j + gap]->top >= pending[j]->top)
+    for (work.gap = 1; work.gap < work.used; work.gap = work.gap * 3 + 1) { }
+    for (work.gap /= 3; work.gap > 0; work.gap /= 3) {
+        for (work.i = work.gap; work.i < work.used; ++work.i) {
+            for (work.j = work.i - work.gap; work.j >= 0; work.j -= work.gap) {
+                if (work.pending[work.j + work.gap]->top >= work.pending[work.j]->top)
                     break;
-                RasterEdge *saved = pending[j];
-                pending[j] = pending[j + gap];
-                pending[j + gap] = saved;
+                work.pending_exchange = work.pending[work.j];
+                work.pending[work.j] = work.pending[work.j + work.gap];
+                work.pending[work.j + work.gap] = work.pending_exchange;
             }
         }
     }
-    live = 0;
-    next = 0;
+    work.live = 0;
+    work.next = 0;
     /* A nonhorizontal closed contour and representable arithmetic are the
-       original routine's required domain; its zero-edge read is unresolved. */
-    y = pending[next]->top;
-    while (next < used || live != 0) {
-        while (next < used && pending[next]->top == y)
-            active[live++] = pending[next++];
-        i = 0;
-        while (i < live) {
-            if (active[i]->bottom == y) {
-                --live;
-                memmove(&active[i], &active[i + 1], (live - i) * sizeof(*active));
+       original routine's required domain; its zero-work.edge read is unresolved. */
+    work.y = work.pending[work.next]->top;
+    while (work.next < work.used || work.live != 0) {
+        while (work.next < work.used && work.pending[work.next]->top == work.y)
+            work.active[work.live++] = work.pending[work.next++];
+        work.i = 0;
+        while (work.i < work.live) {
+            if (work.active[work.i]->bottom == work.y) {
+                --work.live;
+                memmove(&work.active[work.i], &work.active[work.i + 1], (work.live - work.i) * sizeof(*work.active));
             } else {
-                ++i;
+                ++work.i;
             }
         }
-        for (gap = 1; gap < live; gap = gap * 3 + 1) { }
-        for (gap /= 3; gap > 0; gap /= 3) {
-            for (i = gap; i < live; ++i) {
-                for (j = i - gap; j >= 0; j -= gap) {
-                    if (active[j + gap]->x >= active[j]->x)
+        for (work.gap = 1; work.gap < work.live; work.gap = work.gap * 3 + 1) { }
+        for (work.gap /= 3; work.gap > 0; work.gap /= 3) {
+            for (work.i = work.gap; work.i < work.live; ++work.i) {
+                for (work.j = work.i - work.gap; work.j >= 0; work.j -= work.gap) {
+                    if (work.active[work.j + work.gap]->x >= work.active[work.j]->x)
                         break;
-                    RasterEdge *saved = active[j];
-                    active[j] = active[j + gap];
-                    active[j + gap] = saved;
+                    work.active_exchange = work.active[work.j];
+                    work.active[work.j] = work.active[work.j + work.gap];
+                    work.active[work.j + work.gap] = work.active_exchange;
                 }
             }
         }
-        for (i = 0; i < live; i += 2) {
-            left = active[i]->x;
-            right = active[i + 1]->x;
-            if (active[i]->error > 0) ++left;
-            if (active[i + 1]->error <= 0) --right;
-            if (left <= right && y >= 0 && y < 480) {
-                DxBallByte *row = pixels + y * pitch;
-                dxball_fill_horizontal_span(row, left > 0 ? left : 0,
-                    right < 639 ? right : 639, color);
+        for (work.i = 0; work.i < work.live; work.i += 2) {
+            work.left = work.active[work.i]->x;
+            work.right = work.active[work.i + 1]->x;
+            if (work.active[work.i]->error > 0) ++work.left;
+            if (work.active[work.i + 1]->error <= 0) --work.right;
+            if (work.left <= work.right && work.y >= 0 && work.y < 480) {
+                work.row = pixels + work.y * pitch;
+                dxball_fill_horizontal_span(work.row, work.left > 0 ? work.left : 0,
+                    work.right < 639 ? work.right : 639, color);
             }
         }
-        for (i = 0; i < live; ++i) {
-            edge = active[i];
-            edge->error += edge->dx;
-            if (edge->dx < 0) {
-                while (edge->dy <= -edge->error) {
-                    edge->error += edge->dy;
-                    --edge->x;
+        for (work.i = 0; work.i < work.live; ++work.i) {
+            work.edge = work.active[work.i];
+            work.edge->error += work.edge->dx;
+            if (work.edge->dx < 0) {
+                while (work.edge->dy <= -work.edge->error) {
+                    work.edge->error += work.edge->dy;
+                    --work.edge->x;
                 }
             } else {
-                while (edge->dy <= edge->error) {
-                    edge->error -= edge->dy;
-                    ++edge->x;
+                while (work.edge->dy <= work.edge->error) {
+                    work.edge->error -= work.edge->dy;
+                    ++work.edge->x;
                 }
             }
         }
-        ++y;
+        ++work.y;
     }
-    dxball_heap_release(storage);
-    dxball_heap_release(pending);
-    dxball_heap_release(active);
+    dxball_heap_release(work.storage);
+    dxball_heap_release(work.pending);
+    dxball_heap_release(work.active);
     return;
 }
 

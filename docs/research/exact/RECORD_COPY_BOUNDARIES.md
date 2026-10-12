@@ -13,6 +13,8 @@ forming its address and reading members. The original passes four direct EBP
 loads. This adds one instruction and two bytes:799/797 with227 strict differences,
 compared with the canonical797/797 and13 home differences. The record is rejected.
 The coextensive cleanup lifetimes are kept intact.
+The later C++ copy check retains the same799/797 bytes and227 differences;
+changing language does not remove the address-based argument instruction.
 
 Original evidence is
 `ev_b10ee96258ecd655c8f9258fc4ae6cb2c52939077283dc0409f9f912688f79b3`,

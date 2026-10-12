@@ -1,5 +1,10 @@
 # Rotation origin operands and initial storage
 
+The later [closed follow-up](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up)
+tests nested origin conversions, axis records, a sampled source-plane record and
+floating consistency. None is adopted; the current renderer remains1451/1572
+with1475 differences.
+
 The renderer at `0x4026A0` now restores its two previously omitted zero writes
 and the four-byte operand used by its first three origin divisions. One VC4
 compilation preserves all four exact rotation companions, totaling 749 bytes.

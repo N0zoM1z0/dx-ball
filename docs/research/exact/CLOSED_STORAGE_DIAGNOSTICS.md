@@ -80,3 +80,45 @@ differences unchanged: VC4 still loads advance before shift and commutes the
 comparison. One intro compilation preserves all 17 exact companions and is
 rejected. Do not repeat this guard spelling. Its carrier is
 `.analysis/scroller-update-guard-20261012/`. Neither probe runs fixtures or games.
+
+## Rotation and value-copy follow-up
+
+Eight completed compilations and one rejected C89 draft close these additional
+questions. Canonical source, flags and objects remain unchanged.
+
+| Model | Complete result |
+| --- | --- |
+| Nested double conversions instead of named rotation intermediates | Restores compiler temporary homes -368/-400; renderer1451/1572 with1476 differences, but loses two accepted projection bodies at261/223 each. |
+| Per-axis origin/scan records | Renderer1451/1572 with1475 differences; same two projection losses. |
+| Sampled source height/pixel/width record | Renderer1436/1572 with1479 differences; same projection losses. Initial declaration placement fails C89; corrected sampling/zero-store order compiles once. |
+| VC4 floating consistency `/Op` | Four companions remain exact; renderer1455/1572 with1473 differences and additional FP operations. |
+| C++ explosion cleanup record | Four companions remain exact across841 bytes; nested rectangle still uses address-based argument loads,799/797 with227 differences. Decorated calls bind their actual C API identities only in the private comparison. |
+| Direct SetCursorPos import, narrow and actual SDK declarations | Both remain203/203 with four differences; USER32 IAT0x441350 is confirmed. Neither is adopted. |
+| Disabled global optimization with `/O2` | VC4 `/O2 /Og-` preserves both geometry companions; collision remains329 bytes with two differences. |
+
+The axis pairs have actual adjacent homes and coupled row/scan lifetimes. The
+sampled plane groups only its consumed dimensions and cursor; both original
+unclassified zero words remain separate. Neither record introduces padding or
+extra fields. Private carriers use the corresponding `rotation-*`,
+`explosion-cpp-value-copy-*`, `direct-cursor-import-*` and
+`author-global-optimizer-*` directories under `.analysis/`.
+
+A bounded PCX review verifies the existing227-instruction correspondence and
+current979/862-byte comparison. The original reads exactly128 header bytes;
+the unexplained four-byte frame gap has no access. No larger header, extra
+stream member or missing packet operation is supported.
+
+All [44 current candidates](REMAINING_EXACT_FUNCTIONS.md) receive complete
+comparisons against verified canonical objects. None is already exact. These
+rejected stages run no fixtures, game or provider session.
+
+## Polygon record-copy boundary
+
+A pending/active queue-pointer pair retains all nine accepted raster bodies,
+but leaves ordinary/clipped differences at211/226. A whole20-role80-byte
+workspace restores the intended record extent but adds five LEAs for nested
+point copies:1553/1543 with1274 differences and1602/1592 with1314. Both reject.
+Separating the two real endpoint temporaries yields the selected
+[64-byte scan/sort workspace](POLYGON_SCAN_WORKSPACE.md), with211/210 differences.
+A signed-long32 coordinate-kind diagnostic worsens those to212/214 and is
+rejected; `raster.h` is restored. No original Windows POINT type is claimed.
