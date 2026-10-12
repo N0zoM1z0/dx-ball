@@ -1,5 +1,10 @@
 # Sprite capture allocation and API phases
 
+The later [API workspace](CAPTURE_API_WORKSPACE.md) also restores descriptor
+and result homes, reducing capture to 864 bytes / 726 differences. All five
+homes match; register/address scheduling remains nonexact. The results below
+retain their earlier source and product scope.
+
 Capture at `0x004042B0` now keeps its allocation pointer inside the allocation,
 failure-check and publication block. All later sprite accesses still reread
 the live bank. The surface description and result belong to the API phase

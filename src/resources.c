@@ -131,27 +131,29 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.bottom = height;
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.right = width;
     {
-        DxBallInt result;
-        DxBallSurfaceDesc description;
-        description.size = sizeof(description);
-        description.flags = 0xf;
-        description.caps = 0x840;
-        description.height = height;
-        description.width = width;
-        result = dxball_direct_draw->vtable->create_surface(
-            dxball_direct_draw, &description,
+        struct {
+            DxBallSurfaceDesc description;
+            DxBallInt result;
+        } api;
+        api.description.size = sizeof(api.description);
+        api.description.flags = 0xf;
+        api.description.caps = 0x840;
+        api.description.height = height;
+        api.description.width = width;
+        api.result = dxball_direct_draw->vtable->create_surface(
+            dxball_direct_draw, &api.description,
             &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
-        if (result != 0) return;
+        if (api.result != 0) return;
         key.low = 0;
         key.high = 0;
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
             dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
-        description.flags = 0x7f9ee;
+        api.description.flags = 0x7f9ee;
         do {
-            result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
-                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &description);
-        } while (result != 0);
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = description.pitch;
+            api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
+                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &api.description);
+        } while (api.result != 0);
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = api.description.pitch;
     }
     capture.left = x;
     capture.top = y;

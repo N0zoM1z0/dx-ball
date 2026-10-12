@@ -15,6 +15,19 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [capture API workspace](../research/exact/CAPTURE_API_WORKSPACE.md)
+groups only description and result, restoring all five original homes in the
+140-byte frame. Complete capture improves from 873/745 to 864/726 against the
+original 852 bytes, with all 248 instructions and 42 bindings included. Twelve
+longer bank-selector loads explain all 12 extra bytes; scheduling remains
+nonexact. This matches an earlier rejected capture sequence while now preserving
+all 12 resource exacts / 2197 bytes, including glyph search at 145 bytes. The
+other 40 candidate hashes are unchanged. Existing 12 capture and three callback
+cases, Native/MinGW, separate VC4 /ML and /MT compiles, 36 unchanged linked objects
+and all 232 closures pass; 235 historical inventories refresh. No game runs.
+`.analysis/capture-api-workspace-20261013/verification.json`. Independent source,
+frame, input and complete-candidate review passes. Nineteen completed copies
+are gzip verified, releasing 4,321,280 allocated bytes.
 The latest [capture allocation/API phases](../research/exact/CAPTURE_ALLOCATION_PHASES.md)
 restore the allocation-pointer home at EBP-28 and narrow descriptor/result use
 through pitch transfer. Complete capture improves from 876/852 with 803
