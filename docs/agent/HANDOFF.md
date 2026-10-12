@@ -13,8 +13,21 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **231 exact functions /58,775 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 42 authored nonexact functions.
+Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [intro point phases](../research/exact/EXACT_INTRO_POINT_PHASES.md)
+restore complete 711-byte point animation, all 180 instructions and 40 actual
+bindings. Header request, shared index, locked pass and per-point pointer scopes
+restore all six homes in the 236-byte frame while keeping RECT standalone.
+Four record stages restore point code but lose pulse; all are rejected. Selected
+plain scopes preserve all 17 intro exacts / 6095 bytes, including the 370-byte pulse, and
+both remaining intro candidates. All 41 remaining candidate hashes are unchanged.
+Existing 36 original/native update cases and 36 compared preparations pass.
+Native/MinGW builds, VC4 one matching plus 36 unchanged link and all 232 closures
+pass; 235 historical input inventories refresh. No game runs.
+`.analysis/intro-point-pass-workspace-20261013/verification.json`. Independent
+source/ABI/input and whole-unit review passes. Twenty-nine completed copies are
+gzip verified, releasing 4,460,544 allocated bytes; current products are preserved.
 The latest [triangle scanline scope](../research/exact/TRIANGLE_SCANLINE_SCOPE.md)
 restores y to original EBP-36 by limiting it to both scan phases after long-X
 initialization. Complete triangle

@@ -1,5 +1,9 @@
 # Point animation's observed unpassed request writes
 
+The later [point phase scopes](EXACT_INTRO_POINT_PHASES.md) make the complete
+711-byte update exact, including these request writes. The results below retain
+their earlier source and product scope.
+
 `dxball_update_intro_points` at `0x40ED40` now restores two actual original
 writes after selecting the board surface and before constructing the redraw
 rectangle: size 100 at EBP-116 and zero at EBP-36. The earlier reconstruction

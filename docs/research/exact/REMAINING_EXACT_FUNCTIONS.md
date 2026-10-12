@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-All 42 authored candidates were compared against the complete original extents
+All 41 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**231 functions / 58,775 code bytes / 136 metadata bytes**.
+**232 functions / 59,486 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -24,8 +24,8 @@ None of these candidates is already exact. The accepted total remains
 | `store-editor-board` | 52 | 58 | 42 |
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
-| `draw-paddle` | 677 | 677 | 104 |
 | `fill-triangle` | 1710 | 1710 | 88 |
+| `draw-paddle` | 677 | 677 | 104 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
 | `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon-clipped` | 1592 | 1592 | 210 |
@@ -42,7 +42,6 @@ None of these candidates is already exact. The accepted total remains
 | `hit-board-tile` | 1315 | 1316 | 418 |
 | `bounce-ball-from-paddle` | 681 | 687 | 550 |
 | `redraw-intro` | 587 | 578 | 560 |
-| `update-intro-points` | 711 | 702 | 570 |
 | `restore-regions` | 827 | 846 | 746 |
 | `capture-sprite` | 852 | 876 | 803 |
 | `load-pcx` | 862 | 979 | 851 |
@@ -68,11 +67,12 @@ polygon comparisons while preserving all accepted raster functions. The three
 raster candidates above reflect that verified checkpoint. The original EXE has
 no COFF symbols or debug directory.
 
-The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its complete797-byte
-controller to exact. The [secondary-width scope](EXACT_OVERLAP_SECONDARY_WIDTH.md) also promotes the
-complete329-byte overlap. The latest [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md) reduces its
-complete comparison from 107 to 88 differing positions. All other 41 candidate
-code hashes are unchanged.
+The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its
+797-byte controller; the [secondary-width scope](EXACT_OVERLAP_SECONDARY_WIDTH.md)
+promotes the 329-byte overlap. The [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md)
+reduces its differences from 107 to 88. The latest
+[intro point phases](EXACT_INTRO_POINT_PHASES.md) promote the 711-byte update.
+All remaining 41 candidate code hashes are unchanged.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

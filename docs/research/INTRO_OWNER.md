@@ -1,5 +1,10 @@
 # Menu and splash evidence
 
+The latest [point rendering phases](exact/EXACT_INTRO_POINT_PHASES.md) restore the
+complete 711-byte animation controller and all 40 bindings. All 17 prior intro
+exacts remain exact; redraw and scroller candidates are unchanged. The following
+checkpoint notes retain their original source and product scopes.
+
 The [observed unpassed fill-request writes](exact/INTRO_UNUSED_FILL_WRITES.md)
 restore the original size-100/+80-zero stores before point animation's redraw.
 The existing color-fill ABI is supported independently by clear-surface; the
