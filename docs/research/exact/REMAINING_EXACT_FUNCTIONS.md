@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-All 44 authored candidates were compared against the complete original extents
+All 43 authored candidates were compared against the complete original extents
 on October 12, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**229 functions / 57,649 code bytes / 136 metadata bytes**.
+**230 functions / 58,446 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -18,7 +18,6 @@ None of these candidates is already exact. The accepted total remains
 | `animate-palette` | 234 | 234 | 6 |
 | `refresh-score` | 74 | 74 | 6 |
 | `draw-line` | 445 | 445 | 9 |
-| `step-explosion-effect` | 797 | 797 | 13 |
 | `palette-transition` | 1339 | 1339 | 18 |
 | `reset-round` | 426 | 426 | 20 |
 | `draw-score` | 433 | 433 | 21 |
@@ -69,6 +68,9 @@ The latest [polygon workspace](POLYGON_SCAN_WORKSPACE.md) reduces the two
 polygon comparisons while preserving all accepted raster functions. The three
 raster candidates above reflect that verified checkpoint. The original EXE has
 no COFF symbols or debug directory.
+
+The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its complete797-byte
+controller to exact. All remaining43 candidate code hashes are unchanged.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

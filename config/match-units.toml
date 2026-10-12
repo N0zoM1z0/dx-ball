@@ -3996,7 +3996,7 @@ relocations = [
   { offset = 110, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
 ]
 
-[candidates.step-explosion-effect]
+[units.step-explosion-effect]
 build = "effects"
 symbol = "_dxball_step_explosion_effect"
 target_address = 0x412730

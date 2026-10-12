@@ -1,5 +1,9 @@
 # Record models at value-copy boundaries
 
+The explosion controller is now [complete797-byte exact source](EXACT_EXPLOSION_CLEANUP_SCOPE.md).
+The rejected record models below remain historical diagnostics; the selected
+block scope retains a standalone rectangle and its direct value loads.
+
 Two remaining owners have bounded record checks that should not be repeated
 without additional evidence. Their source and canonical objects are restored
 by their recorded hashes. The accepted total remains225 functions /55,998 code

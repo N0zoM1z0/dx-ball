@@ -13,8 +13,16 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **229 exact functions /57,649 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 44 authored nonexact functions.
+Latest checkpoint: **230 exact functions /58,446 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 43 authored nonexact functions.
+The latest [explosion cleanup scope](../research/exact/EXACT_EXPLOSION_CLEANUP_SCOPE.md)
+restores the complete797-byte animation controller and49 actual bindings.
+Cleanup Y is scoped around the expiration/drawing split; RECT and cleanup X
+stay inside expiration. All eight original homes and direct RECT value loads
+match; four prior effects exacts preserve841 bytes. Existing810 explosion calls,
+Native/MinGW builds, VC4 one matching+36 unchanged link and all230 closures pass.
+235 historical inventories refresh. Declaration-only reorder leaves13 differences
+and is rejected. No game runs. `.analysis/explosion-cleanup-homes-20261012/verification.json`.
 The latest [signed glyph code model](../research/exact/GLYPH_SIGNED_CODE_DOMAIN.md)
 uses explicit signed8 fields/parameters and signed text-byte comparison, following
 original paired MOVSX reads. All26 affected matching recipes preserve213 exacts
@@ -41,7 +49,7 @@ The user's latest direction is local binary/REA/compiler reconstruction only;
 do not seek online source or use the unrelated author tutorial as reconstruction
 evidence. Queue-pair, whole80-byte record and coordinate-kind trials are closed.
 
-The [current44-candidate audit](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
+The [current43-candidate audit](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 compares every complete candidate with verified current input/object receipts;
 none is already exact. Eight completed diagnostics and one C89 draft close
 nested origin conversions, axis/source-plane records, rotation `/Op`, C++

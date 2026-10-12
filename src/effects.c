@@ -99,35 +99,38 @@ void dxball_step_explosion_effect(void)
             }
             dxball_board_tiles[x + y * DXBALL_BOARD_WIDTH] = 0;
         }
-        if (dxball_brick_effects.current->frames <= 0) {
-            DxBallRect rect;
-            DxBallInt cleanup_x, cleanup_y;
-            rect.left = dxball_brick_effects.current->x;
-            rect.top = dxball_brick_effects.current->y;
-            rect.right = dxball_brick_effects.current->x + 30;
-            rect.bottom = dxball_brick_effects.current->y + 15;
-            ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
-                (DxBallDDSurface *)dxball_board_surface,
-                dxball_brick_effects.current->x, dxball_brick_effects.current->y,
-                (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
-            dxball_restore_effect_region(rect);
-            cleanup_x = (dxball_brick_effects.current->x - 20) / 30;
-            cleanup_y = (dxball_brick_effects.current->y - 50) / 15;
-            dxball_board_aux[cleanup_x + cleanup_y * DXBALL_BOARD_WIDTH] = 0;
-            dxball_remove_brick_effect(&dxball_brick_effects);
-        } else {
-            dxball_select_surface(dxball_effect_surface);
-            if (dxball_reduced_particles != 0) {
-                dxball_draw_reduced_sprite(dxball_brick_effects.current->sprite,
-                                           dxball_brick_effects.current->x,
-                                           dxball_brick_effects.current->y);
+        {
+            DxBallInt cleanup_y;
+            if (dxball_brick_effects.current->frames <= 0) {
+                DxBallRect rect;
+                DxBallInt cleanup_x;
+                rect.left = dxball_brick_effects.current->x;
+                rect.top = dxball_brick_effects.current->y;
+                rect.right = dxball_brick_effects.current->x + 30;
+                rect.bottom = dxball_brick_effects.current->y + 15;
+                ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
+                    (DxBallDDSurface *)dxball_board_surface,
+                    dxball_brick_effects.current->x, dxball_brick_effects.current->y,
+                    (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
+                dxball_restore_effect_region(rect);
+                cleanup_x = (dxball_brick_effects.current->x - 20) / 30;
+                cleanup_y = (dxball_brick_effects.current->y - 50) / 15;
+                dxball_board_aux[cleanup_x + cleanup_y * DXBALL_BOARD_WIDTH] = 0;
+                dxball_remove_brick_effect(&dxball_brick_effects);
             } else {
-                dxball_draw_sprite(dxball_brick_effects.current->sprite,
-                                   dxball_brick_effects.current->x,
-                                   dxball_brick_effects.current->y);
+                dxball_select_surface(dxball_effect_surface);
+                if (dxball_reduced_particles != 0) {
+                    dxball_draw_reduced_sprite(dxball_brick_effects.current->sprite,
+                                               dxball_brick_effects.current->x,
+                                               dxball_brick_effects.current->y);
+                } else {
+                    dxball_draw_sprite(dxball_brick_effects.current->sprite,
+                                       dxball_brick_effects.current->x,
+                                       dxball_brick_effects.current->y);
+                }
+                ++dxball_brick_effects.current->sprite;
+                dxball_brick_effects.current->ticks = 0;
             }
-            ++dxball_brick_effects.current->sprite;
-            dxball_brick_effects.current->ticks = 0;
         }
     }
     return;
