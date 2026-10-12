@@ -13,22 +13,29 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **218 exact functions /51,887 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 55 authored nonexact functions.
-WAV upload now matches all 695 bytes and 40 relocations. One consumed upload
-workspace restores its ten original homes; all seventeen configured sound
-functions are exact across 4,756 bytes. Polygon sorts now own distinct exchange
-pointers and retain the original index/count zero-write order. Both80-byte frames
-and20 bijective homes agree; complete1543/1592-byte candidates retain218 differences.
-One sound/two raster compilations, Linux/MinGW builds and a VC4 relink reusing35
-unchanged objects pass. Existing227 upload cases and1080 polygon cases per
-original/native andVC4/native profile pass; all218 exact closures verify.
-No game campaign. See [upload workspace](../research/exact/EXACT_SOUND_UPLOAD_WORKSPACE.md),
-[polygon temporaries](../research/exact/POLYGON_SORT_TEMPORARIES.md) and
-`.analysis/sound-upload-workspace-20261012/verification.json`. Continue the55 candidates.
+Latest checkpoint: **219 exact functions /53,883 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 54 authored nonexact functions.
+Intro point initialization now matches all1,996 bytes and10 relocations. A consumed
+sixteen-byte grid cursor restores X/Y/index/angle homes while preserving the287-byte
+mask and304-byte frame; fifteen intro exacts retain3,864 bytes. Ranking text/position
+records restore all36-byte frame homes but remain403/404 bytes with330 differences.
+Six game-over exacts retain2,329 bytes; insertion stays446/3. Two UI measurement
+record diagnostics worsen its whole comparison and are rejected; canonical UI
+source/object identities are restored without recompilation. Do not repeat them.
+One intro/one game-over compile and two rejected UI compiles, Linux/MinGW builds,
+a VC4 relink reusing35 unchanged objects and all219 exact closures verify.
+Existing initialization compares all287 points/360 wave offsets;17 ranking cases
+pass. No game campaign. See [grid cursor](../research/exact/EXACT_INTRO_GRID_CURSOR.md),
+[ranking records](../research/exact/RANKING_ROW_RECORDS.md) and
+`.analysis/intro-grid-cursor-20261012/verification.json`. Continue the54 candidates.
 
 Recent retained source checkpoints:
 
+- [WAV upload](../research/exact/EXACT_SOUND_UPLOAD_WORKSPACE.md): complete695-byte
+  upload exact, completing seventeen configured sound bodies across4,756 bytes;
+  227 upload cases pass. [Polygon temporaries](../research/exact/POLYGON_SORT_TEMPORARIES.md)
+  restore both80-byte frames/twenty homes;218 differences remain per controller,
+  and1080 cases per original/native andVC4/native profile pass.
 - [Sound workspaces](../research/exact/EXACT_SOUND_WORKSPACES.md): complete
   1,705/269-byte initialization/parser exact, including 70/5 provider-unowned jumps;
   fourteen prior sound companions and 922 initialization/parser/prepare cases pass.
@@ -82,7 +89,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 55 authored non-exact functions. Use current manifest objects
+Next priority: the 54 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -180,11 +187,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 218 |
-| Exact code / separate metadata bytes | 51,887 /136 |
+| Complete exact functions | 219 |
+| Exact code / separate metadata bytes | 53,883 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/sound-upload-workspace-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/intro-grid-cursor-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

@@ -308,3 +308,12 @@ frames and20 distinct homes; complete candidates retain218 differences each.
 Existing227 upload cases and1080 polygon cases per original/native andVC4/native
 profile pass. Current totals:218 exact functions /51,887 code bytes /136 metadata;
 55 authored functions remain nonexact.
+
+## Exact intro grid cursor (2026-10-12)
+
+The [intro grid cursor](exact/EXACT_INTRO_GRID_CURSOR.md) matches all1,996 bytes
+and10 bindings, with fifteen intro companions preserved.
+[Ranking records](exact/RANKING_ROW_RECORDS.md) restore all36-byte frame homes,
+while the complete403/404-byte body retains330 differences. Existing full-array
+initialization and17 ranking cases pass. Current totals:219 exact functions
+/53,883 code bytes /136 metadata;54 authored functions remain nonexact.

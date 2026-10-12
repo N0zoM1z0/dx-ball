@@ -1,5 +1,8 @@
 # Intro point-seeding mask lifetime
 
+Historical checkpoint: the remaining scalar homes are now recovered by the
+[grid cursor](EXACT_INTRO_GRID_CURSOR.md); all 1,996 bytes are exact.
+
 The 287-byte binary mask in `dxball_initialize_intro_points` at `0x40E570`
 is consumed only while seeding the 41 by seven point grid. Its initialized
 storage now ends before the separate 360-entry wave-offset loop. The shared

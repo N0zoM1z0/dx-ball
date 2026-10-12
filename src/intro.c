@@ -58,7 +58,7 @@ DxBallInt dxball_wave_y(DxBallInt origin, DxBallInt angle, DxBallInt amplitude)
 
 void dxball_initialize_intro_points(void)
 {
-    DxBallInt x, y, i, angle;
+    struct { DxBallInt angle, index, y, x; } grid;
     {
         /* Consumed local binary mask: 41 columns by seven rows. */
         char mask[287] = {
@@ -70,28 +70,28 @@ void dxball_initialize_intro_points(void)
             0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         };
-        x = 116; y = 41; angle = 0;
-        for (i = 0; i < 287; ++i) {
-            dxball_intro_points[i].x = x;
-            dxball_intro_points[i].y = y;
-            dxball_intro_points[i].angle = angle;
-            dxball_intro_points[i].kind = mask[i];
-            if (mask[i] == 1) {
-                dxball_intro_points[i].y -= 5;
-                dxball_intro_points[i].angle += 30;
+        grid.x = 116; grid.y = 41; grid.angle = 0;
+        for (grid.index = 0; grid.index < 287; ++grid.index) {
+            dxball_intro_points[grid.index].x = grid.x;
+            dxball_intro_points[grid.index].y = grid.y;
+            dxball_intro_points[grid.index].angle = grid.angle;
+            dxball_intro_points[grid.index].kind = mask[grid.index];
+            if (mask[grid.index] == 1) {
+                dxball_intro_points[grid.index].y -= 5;
+                dxball_intro_points[grid.index].angle += 30;
             }
-            x += 10;
-            angle += 20;
-            if (x - 116 > 400) {
-                x = 116;
-                y += 10;
-                angle = y - 41;
+            grid.x += 10;
+            grid.angle += 20;
+            if (grid.x - 116 > 400) {
+                grid.x = 116;
+                grid.y += 10;
+                grid.angle = grid.y - 41;
             }
         }
     }
-    for (i = 0; i < 360; ++i) {
-        dxball_intro_offsets[i].x = dxball_wave_x(0, i, 4);
-        dxball_intro_offsets[i].y = dxball_wave_y(0, i, 3);
+    for (grid.index = 0; grid.index < 360; ++grid.index) {
+        dxball_intro_offsets[grid.index].x = dxball_wave_x(0, grid.index, 4);
+        dxball_intro_offsets[grid.index].y = dxball_wave_y(0, grid.index, 3);
     }
     return;
 }
