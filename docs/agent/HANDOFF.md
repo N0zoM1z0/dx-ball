@@ -15,6 +15,14 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The [direct surface virtual-call models](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#directdraw-surface-virtual-calls)
+are rejected. Three coherent C++ interface/data views each produce private
+zero comparisons for blit/capture/glyph, but lose existing stretch, release or
+keyed-draw exacts. SDK-record stretch has correct rectangle arithmetic and two
+longer reordered address producers. No canonical input/product changes, new
+exact, fixture, game or provider run. Thirty-five completed copies are gzip
+verified, releasing 684,032 allocated bytes. Preserve the rejection before
+trying more interface or primitive-type combinations.
 The latest [standalone color-key phase](../research/exact/BANK_COLOR_KEY_PHASE.md)
 moves only that declaration into its consuming surface-transfer block. The
 116-byte API record stays unchanged. Key EBP-64 now matches the original,

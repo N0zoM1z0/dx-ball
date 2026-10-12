@@ -249,3 +249,32 @@ The complete comparisons, declaration and rejection receipt remain in
 `.analysis/explosion-member-call-20261013/`. Thirty-one completed copies are
 gzip verified, releasing 593,920 allocated bytes. Reuse this result before
 trying a member declaration as an embedded-address fix.
+
+## DirectDraw surface virtual calls
+
+Three private C++ compilations replace eighteen explicit surface vtable calls
+with direct virtual member calls. The ordered interface follows all 36 original
+IDirectDrawSurface/IUnknown slots, with stdcall and no virtual destructor.
+The local VC4 `objbase.h` and installed DirectDraw header corroborate this ABI;
+the original instruction sequence does not establish a unique source language.
+
+Every model produces complete private zero comparisons for blit, capture and
+glyph drawing. None preserves all accepted resource functions:
+
+| Interface/data view | Accepted functions that lose their match |
+| --- | --- |
+| Existing fixed-width domains | Stretch: 139 bytes / 4 differences; release: 269 / 245 |
+| Pinned SDK scalar types and Win32 records | Stretch: 141 / 90 |
+| SDK method scalar types with shared C records | Keyed draw: 107 / 94; stretch: 141 / 94; release: 269 / 245 |
+
+The SDK-record stretch retains its original rectangle arithmetic, but its two
+bank/sprite address producers change register order and grow by one byte each.
+There is no missing dispatch operation to restore. These models are rejected;
+their three private zeros do not increase the exact count. Canonical source,
+headers, recipes and products remain unchanged. No fixture, game or new provider
+session runs.
+
+Complete source views, actual compiler inputs, bindings and owner comparisons
+remain in `.analysis/ddraw-virtual-surface-20261013/`. Thirty-five completed
+copies are gzip verified, releasing 684,032 allocated bytes. Further primitive
+type or interface permutations need new evidence.
