@@ -8,10 +8,21 @@ Commit verified checkpoints with English `gpt-6.1-sol: ` subjects and push to
 
 This file is authoritative. The old `/tmp/dxball_reconstruction_handoff.md` is
 stale. Optional REA feedback goes only into the existing
-`/tmp/dxball_rea_feedback_20261010.md`; latest entry is 76. Append, never create
+`/tmp/dxball_rea_feedback_20261010.md`; latest entry is 77. Append, never create
 another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
+
+Exact-first recovery resumes with the tile mapper at 0x0040CCF0: one result
+local and a common return replace direct case returns and the added abort.
+The entire 426-byte body, 92 inline switch-table bytes and 24 address bindings
+match. One canonical VC4 owner compile preserves all six prior board exacts.
+The project is now 207 exact functions / 44,832 code bytes / 136 metadata bytes.
+Linux/MinGW builds, the legacy relink, 23 existing mapper cases and all 207
+complete accepted-object/input closures pass. No game campaign was run.
+Evidence: `.analysis/exact-board-mapper-20261012/`; source/evidence details:
+[board mapper](../research/KNOWLEDGE_BASE.md). Continue the remaining 64
+non-exact authored functions with focused complete-unit comparisons.
 
 Latest storage cleanup compresses only the completed REA4.1 historical snapshot:
 `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json.gz` preserves all72,771,098bytes
@@ -34,7 +45,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the65 authored non-exact functions. Use current manifest objects
+Next priority: the 64 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -132,12 +143,12 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 206 |
-| Exact code / separate metadata bytes | 44,406 /136 |
+| Complete exact functions | 207 |
+| Exact code / separate metadata bytes | 44,832 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current completed product receipt: `.analysis/current-vc40-campaign/audio-verification.json`.
-Completed seal: `.analysis/checkpoints/current-digital-audio-285-206/sha256.json`.
+Current product/comparison receipt: `.analysis/exact-board-mapper-20261012/verification.json`.
+Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;
 four ordinary F5 requests each trace stream-open and MIDIERR_INVALIDSETUP,

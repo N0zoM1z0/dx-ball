@@ -8,8 +8,8 @@ The current records cover gameplay, all five screen modes, resources, graphics a
 | Provisional Ghidra candidates | 528 |
 | Source-present functions | 285 |
 | Functions with scoped semantic acceptance | 249 |
-| Byte-exact functions | 206 |
-| Complete exact code bytes | 44406 |
+| Byte-exact functions | 207 |
+| Complete exact code bytes | 44832 |
 | Entries identified as runtime dependencies | 117 |
 | Entries identified as compiler-generated code | 42 |
 | Origin still unclassified | 99 |

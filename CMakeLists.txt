@@ -77,6 +77,9 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
         COMPILE_OPTIONS -fcheck-new)
 endif()
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    # The original tile mapper leaves its result unset outside tiles 0..22.
+    set_source_files_properties(src/boards.c PROPERTIES
+        COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
     # The original lightning controller requires an eligible tile in its scan.
     set_source_files_properties(src/display.c PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)

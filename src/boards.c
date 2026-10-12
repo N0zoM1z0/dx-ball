@@ -72,34 +72,35 @@ void dxball_initialize_board(void)
    1..22 palette producer. Colors/bonus meanings have not been established. */
 DxBallInt dxball_board_tile_sprite(DxBallInt tile)
 {
+    DxBallInt sprite;
     switch (tile) {
-    case 0: return 0;
-    case 1: return 3;
-    case 2: return 4;
-    case 3: return 5;
-    case 4: return 6;
-    case 5: return 7;
-    case 6: return 8;
-    case 7: return 19;
-    case 8: return 9;
-    case 9: return 10;
-    case 10: return 11;
-    case 11: return 12;
-    case 12: return 13;
-    case 13: return 14;
-    case 14: return 15;
-    case 15: return 16;
-    case 16: return 17;
-    case 17: return 18;
-    case 18: return 56;
-    case 19: return 57;
-    case 20: return 58;
-    case 21: return 59;
-    case 22: return 60;
+    case 0: sprite = 0; break;
+    case 1: sprite = 3; break;
+    case 2: sprite = 4; break;
+    case 3: sprite = 5; break;
+    case 4: sprite = 6; break;
+    case 5: sprite = 7; break;
+    case 6: sprite = 8; break;
+    case 7: sprite = 19; break;
+    case 8: sprite = 9; break;
+    case 9: sprite = 10; break;
+    case 10: sprite = 11; break;
+    case 11: sprite = 12; break;
+    case 12: sprite = 13; break;
+    case 13: sprite = 14; break;
+    case 14: sprite = 15; break;
+    case 15: sprite = 16; break;
+    case 16: sprite = 17; break;
+    case 17: sprite = 18; break;
+    case 18: sprite = 56; break;
+    case 19: sprite = 57; break;
+    case 20: sprite = 58; break;
+    case 21: sprite = 59; break;
+    case 22: sprite = 60; break;
     }
-    /* Deliberate host safety policy outside the target's defined return domain.
-       Never count this source as a full-domain or byte-exact reconstruction. */
-    abort();
+    /* Unsupported tiles read the uninitialized result in the original.
+       Game/editor producers supply tile values 0..22. */
+    return sprite;
 }
 
 /* FUNCTION: DXBALL 0x00403E50 */

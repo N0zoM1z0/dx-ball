@@ -33,9 +33,11 @@ helpers. Initialization `0x00411930` zeroes the auxiliary grid then loads the
 current bank slot. Editor input at `0x0040C3B0` corroborates row-major layout.
 
 Tile sprite mapping at `0x0040CCF0` has cases 0..22; the palette producer at
-`0x0040C9C0` generates 1..22. Unsupported values return an uninitialized stack
-local in the target. The host helper aborts outside the supported domain, which
-is an explicit semantic limitation and excludes it from exact promotion.
+`0x0040C9C0` generates 1..22. The original stores each case result in one DWORD local and returns it
+through a common epilogue. Unsupported values read that uninitialized local.
+The maintained source now preserves this structure instead of direct case
+returns and an extra abort call. Its complete 426-byte VC4 body, including the
+92-byte inline switch table and 24 actual address references, is exact.
 
 `0x004119F0` draws a cell at `(20 + 30*x, 50 + 15*y)`, rectangle 30×15.
 Zero tiles and tile 7 in mode 1 restore the background with BltFast flag `0x10`.
@@ -58,8 +60,8 @@ New REA 6.3/Ghidra dossiers are retained in the closed private run
 mapper `ev_d7a2961bada2ef2ea2d66ea668a92a1a7994a8ca73733679b79e1eaaa0cc0f90`,
 traversal `ev_f53253c73641216725dd6f0dcf08cb633735d7914a5d277b4ad3ee1514825025`,
 cell drawing `ev_3fee51ff34d257d7415734913e2adb8aa8f630f30a940c11839cc0a40e042e29`.
-The mapper's unsupported-input read remains undefined in the original; its
-host abort policy and 0..22 acceptance are unchanged. It is not exact.
+The mapper's unsupported-input read remains undefined in the original and
+the recovered source; semantic acceptance continues to cover tiles 0..22.
 
 This family used two VC4 compilations: the second corrects the tile local's
 actual DWORD storage, established by MOVSX and its store/load consumers.
@@ -216,3 +218,30 @@ and original unwind metadata, rather than additional authored bodies. See
 [the audit](ORIGIN_AUDIT.md). Origins are 270 authored, 48 runtime, 42 generated
 and 168 unknown. No source, semantic or exact acceptance is added; 95% complete
 source recovery and whole-game fidelity remain unproven.
+
+
+## Exact tile mapper checkpoint (2026-10-12)
+
+The original REA mapper dossier above already establishes the result local
+and all 23 assignments. Recovering that source structure gives a complete
+426-byte match, with all 24 COFF address references mapped explicitly. Each
+switch label belongs to the same function section; its original table target
+and whole instruction body agree. The five-byte jump after the result load
+is included. One VC4 owner compilation also preserves the six existing board
+exacts, totaling 2,154 matched bytes across the seven functions.
+
+The portable and legacy builds use the same source. The existing 23 defined
+mapper cases pass against the original x86. Linux and MinGW builds pass;
+GCC's observed maybe-uninitialized warning remains visible and is nonfatal
+for this owner, as it already is for the sound and lightning owners. The
+legacy game relinks with the new board object and 36 verified unchanged
+objects, retaining the current resources and DirectX import libraries.
+No game campaign or unrelated semantic case suite was run.
+
+All 207 current exact extents, object hashes and compiler-input closures
+verify. The project now records 44,832 exact code bytes and 136 separate
+metadata bytes; source presence remains 285 and semantic acceptance 249.
+Other semantic input inventories were refreshed for the source/build-policy
+change while keeping their historical scopes and case counts. Private inputs,
+original REA record hashes, compiler products, full comparisons and the
+23-case receipt are retained in `.analysis/exact-board-mapper-20261012/`.
