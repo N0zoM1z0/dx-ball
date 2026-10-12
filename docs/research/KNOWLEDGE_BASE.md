@@ -265,3 +265,13 @@ capabilities and registration workspaces reproduce all472/468 original frame
 bytes. Nine exact companions stay exact;248 existing initialization cases and
 Linux/MinGW/VC4 builds pass. The ledger reaches211 exact functions/47374 code bytes,
 with62 remaining authored candidates. Receipts: `.analysis/window-workspaces-20261012/`.
+
+
+## Exact MDS workspaces (2026-10-12)
+
+The [parser and event converter](exact/EXACT_MDS_WORKSPACES.md) now match all
+868/343 original bytes, including forty provider-unowned parser jump bytes.
+Progress/cursor records preserve the existing calls, partial writes and cleanup.
+Four exact companions stay exact;841 existing parser/converter cases and
+Linux/MinGW/VC4 builds pass. The ledger reaches213 exact functions/48585 code bytes,
+with60 authored candidates remaining. Receipts: `.analysis/mds-workspaces-20261012/`.

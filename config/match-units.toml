@@ -4950,12 +4950,12 @@ target_address = 0x4016e0
 size = 149
 boundary_evidence = "docs/research/exact/EXACT_MIDI_IMPORTS.md; complete RET-inclusive saved REA dossiers; each independently owned typed import cell or real allocator boundary has one original target"
 relocations = [
-  { offset = 58, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x00401A20 },
-  { offset = 87, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
-  { offset = 94, type = "DIR32", symbol = "_dxball_midi_global_unlock", addend = 0, target = 0x0044128C },
-  { offset = 107, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
-  { offset = 114, type = "DIR32", symbol = "_dxball_midi_global_free", addend = 0, target = 0x00441284 },
-  { offset = 133, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x0044126C },
+  { offset = 58, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x401a20 },
+  { offset = 87, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x441288 },
+  { offset = 94, type = "DIR32", symbol = "_dxball_midi_global_unlock", addend = 0, target = 0x44128c },
+  { offset = 107, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x441288 },
+  { offset = 114, type = "DIR32", symbol = "_dxball_midi_global_free", addend = 0, target = 0x441284 },
+  { offset = 133, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
 ]
 
 [candidates.play-mds]
@@ -4965,13 +4965,13 @@ target_address = 0x401780
 size = 513
 boundary_evidence = "docs/research/exact/EXACT_MIDI_IMPORTS.md; complete RET-inclusive saved REA dossiers; each independently owned typed import cell or real allocator boundary has one original target"
 relocations = [
-  { offset = 125, type = "DIR32", symbol = "_dxball_midi_callback@20", addend = 0, target = 0x00401B10 },
-  { offset = 144, type = "DIR32", symbol = "_dxball_midi_stream_open", addend = 0, target = 0x004413B4 },
-  { offset = 207, type = "DIR32", symbol = "_dxball_midi_stream_property", addend = 0, target = 0x004413B8 },
-  { offset = 287, type = "DIR32", symbol = "_dxball_midi_prepare_header", addend = 0, target = 0x004413BC },
-  { offset = 314, type = "DIR32", symbol = "_dxball_midi_stream_out", addend = 0, target = 0x004413C0 },
-  { offset = 409, type = "DIR32", symbol = "_dxball_midi_stream_restart", addend = 0, target = 0x004413C4 },
-  { offset = 476, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x00401A20 },
+  { offset = 125, type = "DIR32", symbol = "_dxball_midi_callback@20", addend = 0, target = 0x401b10 },
+  { offset = 144, type = "DIR32", symbol = "_dxball_midi_stream_open", addend = 0, target = 0x4413b4 },
+  { offset = 207, type = "DIR32", symbol = "_dxball_midi_stream_property", addend = 0, target = 0x4413b8 },
+  { offset = 287, type = "DIR32", symbol = "_dxball_midi_prepare_header", addend = 0, target = 0x4413bc },
+  { offset = 314, type = "DIR32", symbol = "_dxball_midi_stream_out", addend = 0, target = 0x4413c0 },
+  { offset = 409, type = "DIR32", symbol = "_dxball_midi_stream_restart", addend = 0, target = 0x4413c4 },
+  { offset = 476, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x401a20 },
 ]
 
 [units.pause-mds]
@@ -4981,7 +4981,7 @@ target_address = 0x401990
 size = 133
 boundary_evidence = "docs/research/exact/EXACT_MIDI_IMPORTS.md; complete RET-inclusive saved REA dossiers; each independently owned typed import cell or real allocator boundary has one original target"
 relocations = [
-  { offset = 92, type = "DIR32", symbol = "_dxball_midi_stream_pause", addend = 0, target = 0x004413A0 },
+  { offset = 92, type = "DIR32", symbol = "_dxball_midi_stream_pause", addend = 0, target = 0x4413a0 },
 ]
 
 [units.stop-mds]
@@ -4991,9 +4991,9 @@ target_address = 0x401a20
 size = 225
 boundary_evidence = "docs/research/exact/EXACT_MIDI_IMPORTS.md; complete RET-inclusive saved REA dossiers; each independently owned typed import cell or real allocator boundary has one original target"
 relocations = [
-  { offset = 79, type = "DIR32", symbol = "_dxball_midi_out_reset", addend = 0, target = 0x004413A8 },
-  { offset = 159, type = "DIR32", symbol = "_dxball_midi_unprepare_header", addend = 0, target = 0x004413AC },
-  { offset = 189, type = "DIR32", symbol = "_dxball_midi_stream_close", addend = 0, target = 0x004413B0 },
+  { offset = 79, type = "DIR32", symbol = "_dxball_midi_out_reset", addend = 0, target = 0x4413a8 },
+  { offset = 159, type = "DIR32", symbol = "_dxball_midi_unprepare_header", addend = 0, target = 0x4413ac },
+  { offset = 189, type = "DIR32", symbol = "_dxball_midi_stream_close", addend = 0, target = 0x4413b0 },
 ]
 
 [units.midi-callback]
@@ -5003,7 +5003,7 @@ target_address = 0x401b10
 size = 127
 boundary_evidence = "docs/research/exact/EXACT_MIDI_IMPORTS.md; complete RET-inclusive saved REA dossiers; each independently owned typed import cell or real allocator boundary has one original target"
 relocations = [
-  { offset = 92, type = "DIR32", symbol = "_dxball_midi_stream_out", addend = 0, target = 0x004413C0 },
+  { offset = 92, type = "DIR32", symbol = "_dxball_midi_stream_out", addend = 0, target = 0x4413c0 },
 ]
 
 [units.load-music]
@@ -5091,31 +5091,31 @@ relocations = [
   { offset = 87, type = "DIR32", symbol = "_dxball_music", addend = 0, target = 0x421060 },
 ]
 
-[candidates.parse-mds]
+[units.parse-mds]
 build = "midi"
 symbol = "_dxball_parse_mds"
 target_address = 0x401210
 size = 868
-boundary_evidence = "docs/research/exact/EXACT_MDS_PARSER.md; complete 522/868-byte PE-verified REA raw spans, including all internal gap jumps; contiguous 343-byte converter dossier; real independent import cells and original memcpy thunk"
+boundary_evidence = "docs/research/exact/EXACT_MDS_PARSER.md; complete 522/868-byte PE-verified REA raw spans, including all internal gap jumps; contiguous 343-byte converter dossier; real independent import cells and original memcpy thunk; docs/research/exact/EXACT_MDS_WORKSPACES.md"
 relocations = [
-  { offset = 383, type = "DIR32", symbol = "_dxball_midi_global_alloc", addend = 0, target = 0x00441294 },
-  { offset = 390, type = "DIR32", symbol = "_dxball_midi_global_lock", addend = 0, target = 0x00441290 },
-  { offset = 648, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x00416610 },
-  { offset = 687, type = "REL32", symbol = "_dxball_expand_mds_events", addend = 0, target = 0x00401580 },
-  { offset = 784, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
-  { offset = 791, type = "DIR32", symbol = "_dxball_midi_global_unlock", addend = 0, target = 0x0044128C },
-  { offset = 804, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x00441288 },
-  { offset = 811, type = "DIR32", symbol = "_dxball_midi_global_free", addend = 0, target = 0x00441284 },
+  { offset = 383, type = "DIR32", symbol = "_dxball_midi_global_alloc", addend = 0, target = 0x441294 },
+  { offset = 390, type = "DIR32", symbol = "_dxball_midi_global_lock", addend = 0, target = 0x441290 },
+  { offset = 648, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x416610 },
+  { offset = 687, type = "REL32", symbol = "_dxball_expand_mds_events", addend = 0, target = 0x401580 },
+  { offset = 784, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x441288 },
+  { offset = 791, type = "DIR32", symbol = "_dxball_midi_global_unlock", addend = 0, target = 0x44128c },
+  { offset = 804, type = "DIR32", symbol = "_dxball_midi_global_handle", addend = 0, target = 0x441288 },
+  { offset = 811, type = "DIR32", symbol = "_dxball_midi_global_free", addend = 0, target = 0x441284 },
 ]
 
-[candidates.expand-mds-events]
+[units.expand-mds-events]
 build = "midi"
 symbol = "_dxball_expand_mds_events"
 target_address = 0x401580
 size = 343
-boundary_evidence = "docs/research/exact/EXACT_MDS_PARSER.md; complete 522/868-byte PE-verified REA raw spans, including all internal gap jumps; contiguous 343-byte converter dossier; real independent import cells and original memcpy thunk"
+boundary_evidence = "docs/research/exact/EXACT_MDS_PARSER.md; complete 522/868-byte PE-verified REA raw spans, including all internal gap jumps; contiguous 343-byte converter dossier; real independent import cells and original memcpy thunk; docs/research/exact/EXACT_MDS_WORKSPACES.md"
 relocations = [
-  { offset = 264, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x00416610 },
+  { offset = 264, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x416610 },
 ]
 
 [builds.file]
@@ -5177,16 +5177,16 @@ target_address = 0x401000
 size = 522
 boundary_evidence = "docs/research/exact/EXACT_BITMAP_LOADER.md; complete saved976 Bitmap dossier and522 MDS span, shared File3/Local2 physical import cells, distinct422798 prefix and genuine CRT targets"
 relocations = [
-  { offset = 95, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x00441280 },
-  { offset = 202, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x0044127C },
-  { offset = 251, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x00441270 },
-  { offset = 274, type = "DIR32", symbol = "_dxball_midi_create_mapping", addend = 0, target = 0x004412B8 },
-  { offset = 322, type = "DIR32", symbol = "_dxball_midi_map_view", addend = 0, target = 0x004412B4 },
-  { offset = 369, type = "REL32", symbol = "_dxball_parse_mds", addend = 0, target = 0x00401210 },
-  { offset = 405, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x0044126C },
-  { offset = 448, type = "DIR32", symbol = "_dxball_midi_unmap_view", addend = 0, target = 0x00441268 },
-  { offset = 468, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x00441264 },
-  { offset = 488, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x00441264 },
+  { offset = 95, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x441280 },
+  { offset = 202, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x44127c },
+  { offset = 251, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x441270 },
+  { offset = 274, type = "DIR32", symbol = "_dxball_midi_create_mapping", addend = 0, target = 0x4412b8 },
+  { offset = 322, type = "DIR32", symbol = "_dxball_midi_map_view", addend = 0, target = 0x4412b4 },
+  { offset = 369, type = "REL32", symbol = "_dxball_parse_mds", addend = 0, target = 0x401210 },
+  { offset = 405, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
+  { offset = 448, type = "DIR32", symbol = "_dxball_midi_unmap_view", addend = 0, target = 0x441268 },
+  { offset = 468, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
+  { offset = 488, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
 ]
 
 [units.claim-instance]

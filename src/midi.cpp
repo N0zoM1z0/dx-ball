@@ -101,93 +101,99 @@ DxBallInt dxball_parse_mds(DxBallMdsContext *context, const void *memory,
                          DxBallUInt length)
 {
     DxBallMdsBlock block;
-    DxBallMidiHeader input;
-    DxBallUInt chunk;
-    DxBallInt remaining, result;
-    DxBallMidiHeader *header;
+    {
+        DxBallMidiHeader input;
+        DxBallUInt chunk;
+        {
+            struct {
+                DxBallMidiHeader *header;
+                DxBallInt result, remaining;
+            } progress;
 
-    result = 0;
-    context->buffers = NULL;
-    if (length < 12 || *(const DxBallUInt *)memory != 0x46464952UL ||
-        ((const DxBallUInt *)memory)[2] != 0x5344494dUL) {
-        result = 3;
-        goto done;
-    }
-    chunk = ((const DxBallUInt *)memory)[1];
-    memory = (const DxBallUInt *)memory + 2;
-    length -= 8;
-    if (chunk > length) {
-        result = 3;
-        goto done;
-    }
-    memory = (const DxBallUInt *)memory + 1;
-    length -= 4;
-    if (length < 8 || *(const DxBallUInt *)memory != 0x20746d66UL ||
-        (chunk = ((const DxBallUInt *)memory)[1]) > length || chunk < 12) {
-        result = 3;
-        goto done;
-    }
-    memory = (const DxBallUInt *)memory + 2;
-    length -= 8;
-    context->format = *(const DxBallMdsFormat *)memory;
-    memory = (const DxBallByte *)memory + chunk;
-    length -= chunk;
-    if (length < 8 || *(const DxBallUInt *)memory != 0x61746164UL ||
-        (chunk = ((const DxBallUInt *)memory)[1]) > length || chunk < 4) {
-        result = 3;
-        goto done;
-    }
-    context->buffer_count = (DxBallInt)((const DxBallUInt *)memory)[2];
-    memory = (const DxBallUInt *)memory + 3;
-    length -= 12;
-    chunk = (DxBallUInt)((context->format.buffer_capacity + sizeof(*header)) *
-        context->buffer_count);
-    context->buffers = (DxBallMidiHeader *)dxball_midi_global_lock(
-        dxball_midi_global_alloc(0x2002, chunk));
-    if (context->buffers == NULL) {
-        result = 1;
-        goto done;
-    }
-    header = context->buffers;
-    for (remaining = context->buffer_count; remaining != 0; --remaining) {
-        header->data = (DxBallByte *)(header + 1);
-        header->buffer_length = context->format.buffer_capacity;
-        header->flags = 0;
-        header->user = (size_t)context;
-        header->next = NULL;
-        if (length < 8) {
-            result = 3;
-            goto done;
-        }
-        block = *(const DxBallMdsBlock *)memory;
-        length -= sizeof(block);
-        memory = (const DxBallByte *)memory + sizeof(block);
-        if (context->format.buffer_capacity < block.bytes || block.bytes > length) {
-            result = 3;
-            goto done;
-        }
-        if ((context->format.flags & 1) == 0) {
-            header->bytes_recorded = block.bytes;
-            memcpy(header->data, memory, block.bytes);
-        } else {
-            input.data = (DxBallByte *)memory;
-            input.buffer_length = input.bytes_recorded = block.bytes;
-            if (!dxball_expand_mds_events(&input, header)) {
-                result = 3;
+            progress.result = 0;
+            context->buffers = NULL;
+            if (length < 12 || *(const DxBallUInt *)memory != 0x46464952UL ||
+                ((const DxBallUInt *)memory)[2] != 0x5344494dUL) {
+                progress.result = 3;
                 goto done;
             }
+            chunk = ((const DxBallUInt *)memory)[1];
+            memory = (const DxBallUInt *)memory + 2;
+            length -= 8;
+            if (chunk > length) {
+                progress.result = 3;
+                goto done;
+            }
+            memory = (const DxBallUInt *)memory + 1;
+            length -= 4;
+            if (length < 8 || *(const DxBallUInt *)memory != 0x20746d66UL ||
+                (chunk = ((const DxBallUInt *)memory)[1]) > length || chunk < 12) {
+                progress.result = 3;
+                goto done;
+            }
+            memory = (const DxBallUInt *)memory + 2;
+            length -= 8;
+            context->format = *(const DxBallMdsFormat *)memory;
+            memory = (const DxBallByte *)memory + chunk;
+            length -= chunk;
+            if (length < 8 || *(const DxBallUInt *)memory != 0x61746164UL ||
+                (chunk = ((const DxBallUInt *)memory)[1]) > length || chunk < 4) {
+                progress.result = 3;
+                goto done;
+            }
+            context->buffer_count = (DxBallInt)((const DxBallUInt *)memory)[2];
+            memory = (const DxBallUInt *)memory + 3;
+            length -= 12;
+            chunk = (DxBallUInt)((context->format.buffer_capacity + sizeof(*progress.header)) *
+                context->buffer_count);
+            context->buffers = (DxBallMidiHeader *)dxball_midi_global_lock(
+                dxball_midi_global_alloc(0x2002, chunk));
+            if (context->buffers == NULL) {
+                progress.result = 1;
+                goto done;
+            }
+            progress.header = context->buffers;
+            for (progress.remaining = context->buffer_count; progress.remaining != 0; --progress.remaining) {
+                progress.header->data = (DxBallByte *)(progress.header + 1);
+                progress.header->buffer_length = context->format.buffer_capacity;
+                progress.header->flags = 0;
+                progress.header->user = (size_t)context;
+                progress.header->next = NULL;
+                if (length < 8) {
+                    progress.result = 3;
+                    goto done;
+                }
+                block = *(const DxBallMdsBlock *)memory;
+                length -= sizeof(block);
+                memory = (const DxBallByte *)memory + sizeof(block);
+                if (context->format.buffer_capacity < block.bytes || block.bytes > length) {
+                    progress.result = 3;
+                    goto done;
+                }
+                if ((context->format.flags & 1) == 0) {
+                    progress.header->bytes_recorded = block.bytes;
+                    memcpy(progress.header->data, memory, block.bytes);
+                } else {
+                    input.data = (DxBallByte *)memory;
+                    input.buffer_length = input.bytes_recorded = block.bytes;
+                    if (!dxball_expand_mds_events(&input, progress.header)) {
+                        progress.result = 3;
+                        goto done;
+                    }
+                }
+                length -= block.bytes;
+                memory = (const DxBallByte *)memory + block.bytes;
+                progress.header = (DxBallMidiHeader *)((DxBallByte *)progress.header +
+                    (context->format.buffer_capacity + sizeof(*progress.header)));
+            }
+        done:
+            if (progress.result != 0 && context->buffers != NULL) {
+                dxball_midi_global_unlock(dxball_midi_global_handle(context->buffers));
+                dxball_midi_global_free(dxball_midi_global_handle(context->buffers));
+            }
+            return progress.result;
         }
-        length -= block.bytes;
-        memory = (const DxBallByte *)memory + block.bytes;
-        header = (DxBallMidiHeader *)((DxBallByte *)header +
-            (context->format.buffer_capacity + sizeof(*header)));
     }
-done:
-    if (result != 0 && context->buffers != NULL) {
-        dxball_midi_global_unlock(dxball_midi_global_handle(context->buffers));
-        dxball_midi_global_free(dxball_midi_global_handle(context->buffers));
-    }
-    return result;
 }
 
 /* FUNCTION: DXBALL 0x00401580 */
@@ -195,37 +201,44 @@ DxBallInt dxball_expand_mds_events(const DxBallMidiHeader *input,
                                   DxBallMidiHeader *header)
 {
     DxBallUInt payload;
-    const DxBallUInt *source = (const DxBallUInt *)input->data;
-    DxBallUInt *destination = (DxBallUInt *)header->data;
-    DxBallUInt remaining = input->bytes_recorded;
-    DxBallUInt capacity = header->buffer_length;
+    {
+        struct {
+            DxBallUInt remaining, capacity;
+            DxBallUInt *destination;
+            const DxBallUInt *source;
+        } cursor;
+        cursor.source = (const DxBallUInt *)input->data;
+        cursor.destination = (DxBallUInt *)header->data;
+        cursor.remaining = input->bytes_recorded;
+        cursor.capacity = header->buffer_length;
 
-    if ((remaining & 3) != 0) return 0;
-    while (remaining != 0) {
-        if (capacity < 12) return 0;
-        *destination++ = *source++;
-        remaining -= 4;
-        if (remaining == 0) return 0;
-        *destination++ = 0;
-        capacity -= 8;
-        payload = 0;
-        if ((*source & 0x80000000UL) != 0)
-            payload = *source & 0xffffffUL;
-        payload = (payload + 3) & 0xfffffffcUL;
-        *destination++ = *source++;
-        remaining -= 4;
-        capacity -= 4;
-        if (payload != 0) {
-            if (remaining < payload || capacity < payload) return 0;
-            memcpy(destination, source, payload);
+        if ((cursor.remaining & 3) != 0) return 0;
+        while (cursor.remaining != 0) {
+            if (cursor.capacity < 12) return 0;
+            *cursor.destination++ = *cursor.source++;
+            cursor.remaining -= 4;
+            if (cursor.remaining == 0) return 0;
+            *cursor.destination++ = 0;
+            cursor.capacity -= 8;
+            payload = 0;
+            if ((*cursor.source & 0x80000000UL) != 0)
+                payload = *cursor.source & 0xffffffUL;
+            payload = (payload + 3) & 0xfffffffcUL;
+            *cursor.destination++ = *cursor.source++;
+            cursor.remaining -= 4;
+            cursor.capacity -= 4;
+            if (payload != 0) {
+                if (cursor.remaining < payload || cursor.capacity < payload) return 0;
+                memcpy(cursor.destination, cursor.source, payload);
+            }
+            cursor.destination += payload / sizeof(*cursor.destination);
+            cursor.source += payload / sizeof(*cursor.source);
+            cursor.remaining -= payload;
+            cursor.capacity -= payload;
         }
-        destination += payload / sizeof(*destination);
-        source += payload / sizeof(*source);
-        remaining -= payload;
-        capacity -= payload;
+        header->bytes_recorded = (DxBallUInt)((DxBallByte *)cursor.destination - header->data);
+        return 1;
     }
-    header->bytes_recorded = (DxBallUInt)((DxBallByte *)destination - header->data);
-    return 1;
 }
 
 /* FUNCTION: DXBALL 0x004016E0 */

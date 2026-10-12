@@ -1,5 +1,10 @@
 # MDS loading and event conversion
 
+The subsequent [workspace recovery](EXACT_MDS_WORKSPACES.md) makes the complete
+868-byte parser and343-byte converter exact. Their operation order and cleanup
+are preserved. The current ledger has213 exact functions/48585 code bytes;
+the earlier comparisons below retain their historical products.
+
 The file loader, RIFF/MIDS parser and compact-event converter now follow their
 complete original instruction flows. The parser uses a real format record,
 block record and input MIDIHDR. Four authored word/buffer helpers have been

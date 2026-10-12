@@ -1,5 +1,10 @@
 # Complete MDS loading and parsing cleanup
 
+The subsequent [workspace recovery](EXACT_MDS_WORKSPACES.md) closes the parser's
+remaining forty storage differences and makes the event converter exact too.
+The loader remains a530/522-byte candidate. The results below describe the
+earlier cleanup-flow checkpoint.
+
 The shared C++ MIDI owner now uses the original error gotos in both the loader
 and parser. Five loader failures and three block-header/capacity/conversion
 failures reach their common cleanup labels. The compiler naturally produces

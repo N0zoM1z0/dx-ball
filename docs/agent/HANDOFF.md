@@ -13,6 +13,19 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
+Latest checkpoint: **213 exact functions /48,585 code bytes /136 metadata bytes**;
+285 source-present,249 historical semantic scopes and60 authored nonexact functions.
+The MDS parser and event converter now match all868/343 bytes. Mutable parser
+progress and input/output cursor records restore their original88/20-byte frames;
+cleanup and partial writes are unchanged. Four prior MIDI exacts retain634 bytes.
+Two owner compilations, Linux/MinGW builds, the legacy relink with36 unchanged
+objects,253 parser plus588 converter cases and all213 exact closures pass.
+All six original songs are included in the parser cases. No game campaign.
+See [MDS workspaces](../research/exact/EXACT_MDS_WORKSPACES.md) and
+`.analysis/mds-workspaces-20261012/`. Continue the60 authored candidates.
+
+Previous checkpoint:
+
 Latest checkpoint: **211 exact functions /47,374 code bytes /136 metadata bytes**;
 285 source-present,249 historical semantic scopes and62 authored nonexact functions.
 The two application initialization bodies at0x40CF70 and0x40D4B0 now match all
@@ -163,11 +176,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 211 |
-| Exact code / separate metadata bytes | 47,374 /136 |
+| Complete exact functions | 213 |
+| Exact code / separate metadata bytes | 48,585 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/window-workspaces-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/mds-workspaces-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;
