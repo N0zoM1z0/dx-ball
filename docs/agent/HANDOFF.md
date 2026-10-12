@@ -15,6 +15,30 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **231 exact functions /58,775 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 42 authored nonexact functions.
+The latest [triangle scanline scope](../research/exact/TRIANGLE_SCANLINE_SCOPE.md)
+restores y to original EBP-36 by limiting it to both scan phases after long-X
+initialization. Complete triangle
+1710/1710 improves from 107 to 88 differences; 160-byte candidate metadata stays
+exact. Nine raster exacts preserve 715 code and 136 metadata bytes; polygon
+1543/211 and 1592/210 and the other 41 candidate code hashes are unchanged.
+Both original/native and relocated VC4/native profiles pass 72 existing triangle
+cases. Native/MinGW builds, VC4 one matching plus 36 unchanged link and all 231
+closures pass; 235 historical input inventories refresh. No game runs.
+`.analysis/triangle-scanline-scope-20261013/verification.json`. Independent source,
+actual-home and whole-unit review passes. Seventeen completed copies are gzip
+verified, releasing 4,317,184 allocated bytes; current products are preserved.
+The latest plain traversal iterator lifetime trials are rejected and all source
+is restored: measurement 280/279 with 63 differences, line 439/445 with 281. Six UI
+companions survive both trials; all 231 canonical code/literal/metadata closures
+and compiler inputs verify afterward. Do not repeat these two blocks. See
+[closed diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#traversal-iterator-lifetimes).
+No game, fixture, provider or online source search. Completed copies are gzip
+verified; 16,384 allocated bytes released. The whole 180-byte sprite-bank loading
+workspace was already tested in `sprite-bank-transfer-state-20261012`; do not
+repeat it as a new lead. A read-only check explains its eleven extra bytes:
+eleven bank-selector reads use six-byte register loads instead of five-byte
+EAX loads. Both bodies have 425 instructions; the nine local-address LEAs
+already match. See [record-copy boundaries](../research/exact/RECORD_COPY_BOUNDARIES.md#sprite-bank-transfer).
 The latest [secondary-width scope](../research/exact/EXACT_OVERLAP_SECONDARY_WIDTH.md)
 restores complete329-byte overlap and four real abs bindings, including both gap
 jumps. An outer secondary-width scalar beside the20-byte inner cache preserves

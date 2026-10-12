@@ -146,3 +146,37 @@ and opaque-counter models as an exactness improvement. The six palette compare
 groups and elapsed/measure/scroller/presentation operand commutations receive
 read-only reviews; no missing source operation or justified new state model is
 found. Their earlier equivalent spelling experiments remain closed.
+
+
+## Traversal iterator lifetimes
+
+Two bounded trials on October 13 limit real iterators to their consuming
+traversals. Neither introduces a value or changes an executable expression.
+
+Text measurement keeps the sprite index and returned width outside a block
+containing only its character iterator and loop. The complete emitter grows
+from 279 to 280 bytes and differences rise from 3 to 63. The original iterator,
+sprite and width homes were already EBP-8, EBP-4 and EBP-12; narrowing the iterator
+lifetime does not preserve that arrangement.
+
+Line drawing keeps one shared iterator in a block around the major-axis
+if/else and both loops, after step normalization and before Unlock. Original
+iterator initialization occurs at 0x403151 or 0x4031B5, with no consumer before
+Lock or after traversal. The emitter shrinks from 445 to 439 bytes and
+differences rise from 9 to 281. This plain block is distinct from the previously
+closed four-value iteration record.
+
+Both trials preserve all six accepted UI companions, but neither restores
+a complete candidate. Sources are restored byte-for-byte; canonical compiler
+objects and build products were never replaced. All 231 accepted complete
+code/literal/metadata closures and their compiler inputs verify afterward.
+No fixture, game, new provider session or online source search runs.
+
+Original measurement evidence is
+`ev_6a25f94931f763de87b46ce0de325939c392113a9c31de1568162431ea46a545`;
+line evidence is
+`ev_25f8571b40b1ee8c589f398fa1211552c03d241352d0737d904789e2664b8af2`.
+Private full comparisons and rejected sources are retained in
+`.analysis/measurement-loop-scope-20261013/` and
+`.analysis/line-traversal-scope-20261013/`. Verified gzip copies release 16,384
+allocated bytes while retaining the complete inputs and emitted objects.

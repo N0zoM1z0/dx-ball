@@ -293,7 +293,7 @@ void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
     DxBallInt x3, DxBallInt y3, DxBallByte color)
 {
     DxBallFixedPoint long_step, short_step, long_x, short_x;
-    DxBallInt vertical_scale, y;
+    DxBallInt vertical_scale;
     if (y2 < y1) {
         y1 ^= y2; y2 ^= y1; y1 ^= y2;
         x1 ^= x2; x2 ^= x1; x1 ^= x2;
@@ -313,13 +313,44 @@ void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
     (void)vertical_scale;
     long_step = DxBallFixedPoint(x3 - x1) / DxBallFixedPoint(y3 - y1);
     long_x = DxBallFixedPoint(x1);
-    y = y1;
-    pixels += y1 * pitch;
-    if (y2 > y1) {
-        short_step = DxBallFixedPoint(x2 - x1) / DxBallFixedPoint(y2 - y1);
-        short_x = DxBallFixedPoint(x1);
-        if (long_step < short_step) {
-            while (y2 > y) {
+    {
+        DxBallInt y;
+        y = y1;
+        pixels += y1 * pitch;
+        if (y2 > y1) {
+            short_step = DxBallFixedPoint(x2 - x1) / DxBallFixedPoint(y2 - y1);
+            short_x = DxBallFixedPoint(x1);
+            if (long_step < short_step) {
+                while (y2 > y) {
+                    if (y >= 0 && y < 480) {
+                        DxBallInt right, left;
+                        if ((DxBallInt)short_x <= 639) right = (DxBallInt)short_x;
+                        else right = 639;
+                        if ((DxBallInt)long_x < 0) left = 0;
+                        else left = (DxBallInt)long_x;
+                        dxball_fill_horizontal_span(pixels, left, right, color);
+                    }
+                    ++y; pixels += pitch; long_x += long_step; short_x += short_step;
+                }
+            } else {
+                while (y2 > y) {
+                    if (y >= 0 && y < 480) {
+                        DxBallInt right, left;
+                        if ((DxBallInt)long_x <= 639) right = (DxBallInt)long_x;
+                        else right = 639;
+                        if ((DxBallInt)short_x < 0) left = 0;
+                        else left = (DxBallInt)short_x;
+                        dxball_fill_horizontal_span(pixels, left, right, color);
+                    }
+                    ++y; pixels += pitch; long_x += long_step; short_x += short_step;
+                }
+            }
+        }
+        if (y3 - y2 == 0) return;
+        short_step = DxBallFixedPoint(x3 - x2) / DxBallFixedPoint(y3 - y2);
+        short_x = DxBallFixedPoint(x2);
+        if (long_x < short_x) {
+            while (y3 > y) {
                 if (y >= 0 && y < 480) {
                     DxBallInt right, left;
                     if ((DxBallInt)short_x <= 639) right = (DxBallInt)short_x;
@@ -331,7 +362,7 @@ void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
                 ++y; pixels += pitch; long_x += long_step; short_x += short_step;
             }
         } else {
-            while (y2 > y) {
+            while (y3 > y) {
                 if (y >= 0 && y < 480) {
                     DxBallInt right, left;
                     if ((DxBallInt)long_x <= 639) right = (DxBallInt)long_x;
@@ -342,34 +373,6 @@ void dxball_fill_triangle(DxBallByte *pixels, DxBallInt pitch,
                 }
                 ++y; pixels += pitch; long_x += long_step; short_x += short_step;
             }
-        }
-    }
-    if (y3 - y2 == 0) return;
-    short_step = DxBallFixedPoint(x3 - x2) / DxBallFixedPoint(y3 - y2);
-    short_x = DxBallFixedPoint(x2);
-    if (long_x < short_x) {
-        while (y3 > y) {
-            if (y >= 0 && y < 480) {
-                DxBallInt right, left;
-                if ((DxBallInt)short_x <= 639) right = (DxBallInt)short_x;
-                else right = 639;
-                if ((DxBallInt)long_x < 0) left = 0;
-                else left = (DxBallInt)long_x;
-                dxball_fill_horizontal_span(pixels, left, right, color);
-            }
-            ++y; pixels += pitch; long_x += long_step; short_x += short_step;
-        }
-    } else {
-        while (y3 > y) {
-            if (y >= 0 && y < 480) {
-                DxBallInt right, left;
-                if ((DxBallInt)long_x <= 639) right = (DxBallInt)long_x;
-                else right = 639;
-                if ((DxBallInt)short_x < 0) left = 0;
-                else left = (DxBallInt)short_x;
-                dxball_fill_horizontal_span(pixels, left, right, color);
-            }
-            ++y; pixels += pitch; long_x += long_step; short_x += short_step;
         }
     }
 }

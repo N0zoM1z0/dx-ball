@@ -1,5 +1,8 @@
 # Polygon scan and sort workspace
 
+The later [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md) reduces its
+comparison to 88 differences. The polygon source and results below are unchanged.
+
 Both polygon controllers now keep their edge queues, sort cursors, scanline
 state and two distinct exchange pointers in one 64-byte i386 workspace.
 The two endpoint points remain separate construction temporaries. All values

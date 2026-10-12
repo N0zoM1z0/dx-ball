@@ -48,6 +48,17 @@ edits are made from those decompiler artifacts. Full generated string identities
 are refreshed only in the private comparison, with complete literal attestation.
 Private receipts are in `.analysis/sprite-bank-transfer-state-20261012/`.
 
+A later read-only check explains the workspace's eleven extra bytes. Original
+and workspace bodies both contain 425 instructions and 24 bank-selector
+loads. The original uses fourteen five-byte EAX absolute loads and ten six-byte
+loads into other registers (130 bytes); the workspace uses three and twenty-one
+respectively (141 bytes). All other instructions total 1,345 bytes in each
+body. The nine local-address LEAs already follow the original field homes.
+This is bank/index address scheduling, so another record-copy or lifetime
+trial would not address the observed length difference. The comparison uses
+saved original REA assembly and decodes only the reconstructed COFF. Its proof
+is `.analysis/measurement-loop-scope-20261013/bank-selector-encoding-review.json`.
+
 These three rejected compilations do not replace accepted objects, change the
 manifest, run a game or establish new semantic acceptance. Completed object and
 tracking copies are retained in verified compressed carriers. Current builds,

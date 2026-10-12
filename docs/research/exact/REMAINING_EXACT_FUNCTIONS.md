@@ -25,7 +25,7 @@ None of these candidates is already exact. The accepted total remains
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
 | `draw-paddle` | 677 | 677 | 104 |
-| `fill-triangle` | 1710 | 1710 | 107 |
+| `fill-triangle` | 1710 | 1710 | 88 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
 | `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon-clipped` | 1592 | 1592 | 210 |
@@ -70,7 +70,9 @@ no COFF symbols or debug directory.
 
 The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its complete797-byte
 controller to exact. The [secondary-width scope](EXACT_OVERLAP_SECONDARY_WIDTH.md) also promotes the
-complete329-byte overlap. All remaining42 candidate code hashes are unchanged.
+complete329-byte overlap. The latest [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md) reduces its
+complete comparison from 107 to 88 differing positions. All other 41 candidate
+code hashes are unchanged.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.
