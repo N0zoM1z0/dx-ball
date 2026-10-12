@@ -13,32 +13,25 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **213 exact functions /48,585 code bytes /136 metadata bytes**;
-285 source-present,249 historical semantic scopes and60 authored nonexact functions.
-The MDS parser and event converter now match all868/343 bytes. Mutable parser
-progress and input/output cursor records restore their original88/20-byte frames;
-cleanup and partial writes are unchanged. Four prior MIDI exacts retain634 bytes.
-Two owner compilations, Linux/MinGW builds, the legacy relink with36 unchanged
-objects,253 parser plus588 converter cases and all213 exact closures pass.
-All six original songs are included in the parser cases. No game campaign.
-See [MDS workspaces](../research/exact/EXACT_MDS_WORKSPACES.md) and
-`.analysis/mds-workspaces-20261012/`. Continue the60 authored candidates.
-
-Previous checkpoint:
-
-Latest checkpoint: **211 exact functions /47,374 code bytes /136 metadata bytes**;
-285 source-present,249 historical semantic scopes and62 authored nonexact functions.
-The two application initialization bodies at0x40CF70 and0x40D4B0 now match all
-1343/1147 bytes and224 total relocations. Window registration/capability workspaces
-end after their consumers; HRESULT and descriptor scopes restore the original
-472/468-byte frames. Nine prior platform exacts retain2938 bytes.
-Linux/MinGW builds, the legacy relink with36 unchanged objects,126 fullscreen plus
-122 compatible existing cases and all211 exact closures pass. No game campaign.
-See [window workspaces](../research/exact/EXACT_WINDOW_WORKSPACES.md) and
-`.analysis/window-workspaces-20261012/`. Continue the62 authored candidates.
+Latest checkpoint: **214 exact functions /48,922 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 59 authored nonexact functions.
+The screen-point collision body at 0x4116C0 now matches all 337 bytes and ten
+relocations. A row/column position record restores its two original stack homes
+while retaining the ordered conversion and state writes. Eight prior core exacts
+retain 4,322 bytes. One core compilation, Linux/MinGW builds, the legacy relink
+with 36 unchanged objects, 1,152 existing coordinate cases and all 214 exact
+closures pass. No game campaign. See
+[position record](../research/exact/EXACT_SCREEN_POSITION.md) and
+`.analysis/screen-position-record-20261012/`. Continue the 59 authored candidates.
 
 Recent retained source checkpoints:
 
+- [MDS workspaces](../research/exact/EXACT_MDS_WORKSPACES.md): parser and
+  converter exact across 868/343 bytes, including all 40 provider-unowned parser
+  jump bytes. Four MIDI exact companions and 253 parser/588 converter cases pass.
+- [Window workspaces](../research/exact/EXACT_WINDOW_WORKSPACES.md): two
+  initialization bodies exact across 1,343/1,147 bytes and 224 relocations.
+  Nine platform companions and 126 fullscreen/122 compatible cases pass.
 - [Optimized RNG](../research/exact/EXACT_RANDOM_RUNTIME.md): two runtime exacts,
   52 bytes and initialized state word; compatible /O2 /MT recipe is integrated.
 - [Line cursor](../research/exact/LINE_LOCKED_CURSOR.md):445 complete bytes,
@@ -78,7 +71,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 64 authored non-exact functions. Use current manifest objects
+Next priority: the 59 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -176,11 +169,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 213 |
-| Exact code / separate metadata bytes | 48,585 /136 |
+| Complete exact functions | 214 |
+| Exact code / separate metadata bytes | 48,922 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/mds-workspaces-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/screen-position-record-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

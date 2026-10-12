@@ -72,24 +72,25 @@ void dxball_process_fire_effects(void)
 
 DxBallInt dxball_hit_screen_point(DxBallInt x, DxBallInt y)
 {
-    DxBallInt column = x;
-    DxBallInt row = y;
-    if (row >= 50 && row <= 349) {
-        column -= 20;
-        row -= 50;
-        column /= 30;
-        row /= 15;
-        if (column < 0) column = 0;
-        if (column > 19) column = 19;
-        if (row < 0) row = 0;
-        if (row > 19) row = 19;
-        if ((signed char)dxball_board_tiles[column + row * 20] != 0) {
+    struct { DxBallInt row, column; } position;
+    position.column = x;
+    position.row = y;
+    if (position.row >= 50 && position.row <= 349) {
+        position.column -= 20;
+        position.row -= 50;
+        position.column /= 30;
+        position.row /= 15;
+        if (position.column < 0) position.column = 0;
+        if (position.column > 19) position.column = 19;
+        if (position.row < 0) position.row = 0;
+        if (position.row > 19) position.row = 19;
+        if ((signed char)dxball_board_tiles[position.column + position.row * 20] != 0) {
             if (dxball_balls.current->sprite == 61) {
-                if ((signed char)dxball_board_tiles[column + row * 20] == 2) ++dxball_remaining_bricks;
-                dxball_board_tiles[column + row * 20] = 8;
+                if ((signed char)dxball_board_tiles[position.column + position.row * 20] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[position.column + position.row * 20] = 8;
                 if (dxball_destroy_hard_tiles == 0) dxball_spawn_fire_effect(x, y);
             }
-            if (dxball_hit_board_tile(column, row)) dxball_score += dxball_balls.current->speed * 2;
+            if (dxball_hit_board_tile(position.column, position.row)) dxball_score += dxball_balls.current->speed * 2;
             return 1;
         }
     }

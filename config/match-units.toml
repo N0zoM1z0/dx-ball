@@ -9458,12 +9458,12 @@ symbol = "_dxball_crt_srand"
 addend = 0
 target = 0x004179F0
 
-[candidates.hit-screen-point]
+[units.hit-screen-point]
 build = "core"
 symbol = "_dxball_hit_screen_point"
-target_address = 0x004116C0
+target_address = 0x4116c0
 size = 337
-boundary_evidence = "docs/research/exact/SCREEN_POINT_STAGES.md; ev_a3dbe09d41da07ce2638ea83d054f31af646f507b1cedf2495bd03630db46f7b"
+boundary_evidence = "docs/research/exact/SCREEN_POINT_STAGES.md; docs/research/exact/EXACT_SCREEN_POSITION.md"
 relocations = [
   { offset = 164, type = "DIR32", symbol = "_dxball_board_storage", addend = 20032, target = 0x43aab8 },
   { offset = 177, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x43a8b8 },

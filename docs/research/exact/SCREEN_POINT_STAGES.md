@@ -1,5 +1,9 @@
 # Screen-point coordinate stages and signed tile reads
 
+Historical checkpoint: the remaining coordinate homes are now recovered by
+the [position record](EXACT_SCREEN_POSITION.md); all 337 bytes are exact.
+The comparisons below describe the earlier scalar-local stage.
+
 `dxball_hit_screen_point` at `0x4116C0` now preserves the original coordinate
 copies, ordered in-place arithmetic and signed tile reads in `src/core.c`.
 The complete candidate improves from 325 / 337 bytes with 302 strict differences
