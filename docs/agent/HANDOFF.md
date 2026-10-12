@@ -30,6 +30,12 @@ inventories refresh 235 rows. No new exact or game runs.
 `.analysis/bank-transfer-workspace-20261013/verification.json` retains the receipts.
 Independent review confirms the source transfer, original homes and PCX change.
 Twenty-one completed copies are gzip verified, releasing 4,341,760 allocated bytes.
+A private [explosion-list member-call probe](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#embedded-explosion-list-member-call)
+also fails to recover the embedded address producer. Cleanup stays 107/106
+with 59 differences; ten runtime exacts preserve 2282 bytes. C++ paddle emission
+worsens to 678/210, so the caller is rejected. The method is declaration-only,
+not a recovered implementation or new exact. Canonical inputs/products are
+untouched; 31 completed copies are gzip verified, releasing 593,920 bytes.
 The latest [rotation visible-pixel scope](../research/exact/ROTATION_VISIBLE_PIXEL_PHASE.md)
 moves four existing locals into their sole consuming branch. The complete
 renderer improves from 1451/1572 with 1475 differences to 1466/1572 with 1466;

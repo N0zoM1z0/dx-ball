@@ -227,3 +227,25 @@ These private results do not change the published exact count. Sources, actual
 input receipts, complete comparisons and the independent SDK review remain in
 `.analysis/ddraw-result-kinds-20261013/`, `.analysis/ddraw-native-sdk-20261013/`
 and `.analysis/sdk-interface-boundary-20261013/`. No game runs accompany them.
+
+## Embedded explosion-list member call
+
+A private C++ caller declares `clear()` on the existing explosion-list type
+and uses that member for both list clears in the entity cleanup controller.
+The declaration follows the established ECX/list-pointer contract. It tests
+whether a member call changes the embedded owner's address producer; no method
+implementation is recovered or counted by this probe.
+
+One compilation leaves cleanup at 107/106 bytes with 59 differences: the
+embedded-owner LEA remains. Ten accepted runtime bodies retain all 2282 bytes.
+Elapsed changes from three to two differences, while paddle drawing worsens
+from 677/104 to 678/210. The C++ caller is rejected and canonical source, recipes
+and products stay unchanged. There is no fixture, game or provider run.
+
+Actual C++ names are bound through their unchanged source declarations.
+Generated switch labels are checked against the owning function section and
+their actual offsets, types and storage; section ordinals alone are insufficient.
+The complete comparisons, declaration and rejection receipt remain in
+`.analysis/explosion-member-call-20261013/`. Thirty-one completed copies are
+gzip verified, releasing 593,920 allocated bytes. Reuse this result before
+trying a member declaration as an embedded-address fix.
