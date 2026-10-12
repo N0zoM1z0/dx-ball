@@ -118,19 +118,19 @@ void dxball_clear_surface(DxBallSurface surface, DxBallInt color)
 
 void dxball_restore_sprite_banks(void)
 {
-    DxBallInt bank, slot;
-    for (bank = 0; bank < 3; ++bank) {
-        if (dxball_sprite_banks[bank].allocation_mode == 1) {
+    struct { DxBallInt result, bank; } recovery;
+    for (recovery.bank = 0; recovery.bank < 3; ++recovery.bank) {
+        if (dxball_sprite_banks[recovery.bank].allocation_mode == 1) {
+            DxBallInt slot;
             for (slot = 0; slot < 255; ++slot) {
-                if (dxball_sprite_banks[bank].sprites[slot] != NULL &&
-                    dxball_sprite_banks[bank].sprites[slot]->surface != NULL) {
-                    DxBallInt result;
-                    result = dxball_sprite_banks[bank].sprites[slot]->surface->vtable->restore(
-                        dxball_sprite_banks[bank].sprites[slot]->surface);
-                    (void)result;
+                if (dxball_sprite_banks[recovery.bank].sprites[slot] != NULL &&
+                    dxball_sprite_banks[recovery.bank].sprites[slot]->surface != NULL) {
+                    recovery.result = dxball_sprite_banks[recovery.bank].sprites[slot]->surface->vtable->restore(
+                        dxball_sprite_banks[recovery.bank].sprites[slot]->surface);
+                    (void)recovery.result;
                 }
             }
-            dxball_load_sprite_bank(bank, 1, dxball_sprite_banks[bank].filename);
+            dxball_load_sprite_bank(recovery.bank, 1, dxball_sprite_banks[recovery.bank].filename);
         }
     }
     return;

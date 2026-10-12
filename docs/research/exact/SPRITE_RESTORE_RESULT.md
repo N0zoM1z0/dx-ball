@@ -1,5 +1,9 @@
 # Sprite Restore result storage
 
+The later [sprite recovery state](EXACT_SPRITE_RECOVERY_STATE.md) makes the
+complete282-byte body exact, including its original homes and address schedule.
+The comparisons below describe the preceding result-only checkpoint.
+
 The sprite-bank recovery body at `0x403D30` now restores its observed discarded
 32-bit Restore HRESULT write. The source captures that result in the actual
 nonnull sprite/surface branch and deliberately leaves it unchecked. A failure

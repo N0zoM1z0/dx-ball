@@ -365,3 +365,12 @@ bytes, thirteen bindings and the full multiplier. The separate iteration cursor
 preserves sixteen intro companions; the combined workspace loses pulse and is
 rejected. Four existing cases pass. Totals:224 exact /55,716 code bytes /136
 metadata bytes, with49 authored nonexact functions.
+
+## Exact sprite-bank recovery state (2026-10-12)
+
+[Sprite recovery state](exact/EXACT_SPRITE_RECOVERY_STATE.md) restores282 exact
+bytes, seven bindings and allthree frame homes. Bank/result record plus the
+scalar slot restores bank-first address production; both whole-scan and
+slot/result cursor models retain60 differences and are rejected. Four device
+companions and64 existing cases pass. Totals:225 exact /55,998 code bytes /136
+metadata bytes, with48 authored nonexact functions.

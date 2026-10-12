@@ -1,5 +1,11 @@
 # Palette transitions and surface recovery
 
+The latest [sprite recovery state](exact/EXACT_SPRITE_RECOVERY_STATE.md) restores
+the complete282-byte bank recovery body, allseven bindings and original12-byte
+frame. Four companions retain526 exact bytes and64 existing bank cases pass.
+Totals:225 exact /55,998 code bytes /136 metadata bytes. Earlier notes below
+retain their historical comparisons.
+
 The [Restore result recovery](exact/SPRITE_RESTORE_RESULT.md) restores the
 original discarded HRESULT write in the sprite call branch. The complete body
 is now 282/282 bytes with 18 strict frame-home differences, down from 279/282

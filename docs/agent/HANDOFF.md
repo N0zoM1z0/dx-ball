@@ -13,16 +13,22 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **224 exact functions /55,716 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 49 authored nonexact functions.
-The latest [scroller-wave cursor](../research/exact/EXACT_SCROLLER_WAVE_CURSOR.md)
-restores the complete235-byte waveform, thirteen bindings, full multiplier and
-allsix original frame homes. The separate iteration cursor preserves sixteen
-accepted intro companions across5860 bytes. Combined workspace stage matches
-wave but loses pulse368/370 and is rejected. Four unchanged waveform cases
-compare112 strip blits each. Linux/MinGW builds, VC4 relink with36 unchanged
-objects and all224 exact closures pass. No game campaign. Receipts:
-`.analysis/scroller-wave-cursor-20261012/verification.json`.
+Latest checkpoint: **225 exact functions /55,998 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 48 authored nonexact functions.
+The latest [sprite recovery state](../research/exact/EXACT_SPRITE_RECOVERY_STATE.md)
+restores282 complete exact bytes and seven bindings with original12-byte frame:
+bank4/result8/slot12. The bank/result record with bank-scoped scalar slot
+preserves bank-first address production. Whole-scan and slot/result cursor
+models restore homes but retain60 schedule differences; both rejected.
+Four device companions retain526 exact bytes; palette candidate unchanged.
+Sixty-four existing bank cases, Linux/MinGW builds, VC4 relink with36 verified
+unchanged objects and all225 exact closures pass. No game campaign. Receipts:
+`.analysis/sprite-recovery-cursor-20261012/verification.json`.
+
+The preceding [scroller-wave cursor](../research/exact/EXACT_SCROLLER_WAVE_CURSOR.md)
+restores235 exact bytes, allsix homes and thirteen bindings; sixteen intro
+companions and four existing waveform cases pass. Combined workspace loses
+pulse and is rejected.
 
 The preceding [frame-wait cursor](../research/exact/FRAME_WAIT_CURSOR.md) restores
 waiting to170/170 and allfour homes; six guard bytes remain. Guard reversal is
@@ -31,7 +37,7 @@ closed. Ten display exacts and18 existing waiting cases pass.
 The preceding [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md)
 restores130 exact bytes. [Geometry/frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md)
 restore rectangle/frame homes; rectangle retains two read-order bytes, and frame
-retains three MOV/LEA forms after position translation. Continue the49 candidates.
+retains three MOV/LEA forms after position translation. Continue the48 candidates.
 
 Recent retained source checkpoints:
 
