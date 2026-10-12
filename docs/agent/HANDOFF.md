@@ -13,8 +13,15 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **230 exact functions /58,446 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 43 authored nonexact functions.
+Latest checkpoint: **231 exact functions /58,775 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 42 authored nonexact functions.
+The latest [secondary-width scope](../research/exact/EXACT_OVERLAP_SECONDARY_WIDTH.md)
+restores complete329-byte overlap and four real abs bindings, including both gap
+jumps. An outer secondary-width scalar beside the20-byte inner cache preserves
+all six homes and fixes the final two read-order bytes. Angle109 anddistance130
+remainexact. Existing8000 rectangle cases, Native/MinGW builds, VC4 one matching+
+36 unchanged link and all231 closures pass;235 historical inventories refresh.
+No game runs. `.analysis/overlap-secondary-scopes-20261013/verification.json`.
 The latest [explosion cleanup scope](../research/exact/EXACT_EXPLOSION_CLEANUP_SCOPE.md)
 restores the complete797-byte animation controller and49 actual bindings.
 Cleanup Y is scoped around the expiration/drawing split; RECT and cleanup X
@@ -49,7 +56,7 @@ The user's latest direction is local binary/REA/compiler reconstruction only;
 do not seek online source or use the unrelated author tutorial as reconstruction
 evidence. Queue-pair, whole80-byte record and coordinate-kind trials are closed.
 
-The [current43-candidate audit](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
+The [current42-candidate audit](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 compares every complete candidate with verified current input/object receipts;
 none is already exact. Eight completed diagnostics and one C89 draft close
 nested origin conversions, axis/source-plane records, rotation `/Op`, C++

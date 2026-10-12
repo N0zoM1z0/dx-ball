@@ -1,14 +1,13 @@
 # Remaining exact functions
 
-All 43 authored candidates were compared against the complete original extents
-on October 12, 2026. Current compiler inputs and objects match their receipts.
+All 42 authored candidates were compared against the complete original extents
+on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**230 functions / 58,446 code bytes / 136 metadata bytes**.
+**231 functions / 58,775 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
-| `rectangles-overlap` | 329 | 329 | 2 |
 | `present-regions-now` | 984 | 984 | 2 |
 | `elapsed` | 81 | 81 | 3 |
 | `measure-text` | 279 | 279 | 3 |
@@ -70,7 +69,8 @@ raster candidates above reflect that verified checkpoint. The original EXE has
 no COFF symbols or debug directory.
 
 The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its complete797-byte
-controller to exact. All remaining43 candidate code hashes are unchanged.
+controller to exact. The [secondary-width scope](EXACT_OVERLAP_SECONDARY_WIDTH.md) also promotes the
+complete329-byte overlap. All remaining42 candidate code hashes are unchanged.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

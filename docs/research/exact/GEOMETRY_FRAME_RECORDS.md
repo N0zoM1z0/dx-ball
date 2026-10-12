@@ -1,5 +1,9 @@
 # Overlap and frame-effects records
 
+Overlap is now [complete329-byte exact source](EXACT_OVERLAP_SECONDARY_WIDTH.md).
+The records and remaining-difference statements below retain their historical
+compiler products; the selected secondary-width scope closes the final two bytes.
+
 Rectangle collision now uses a 24-byte workspace for its six consumed values.
 The primary rectangle's dimensions and cached center separations form one
 record; secondary dimensions remain independent. All original homes agree:

@@ -8,26 +8,28 @@ DxBallInt dxball_rectangles_overlap(DxBallInt left_a, DxBallInt top_a,
     DxBallInt right_a, DxBallInt bottom_a, DxBallInt left_b, DxBallInt top_b,
     DxBallInt right_b, DxBallInt bottom_b)
 {
-    struct {
-        DxBallInt height_b;
-        struct { DxBallInt width_a, distance_y, height_a, distance_x; } primary;
-        DxBallInt width_b;
-    } overlap;
-    overlap.primary.width_a = right_a - left_a;
-    overlap.primary.height_a = bottom_a - top_a;
-    overlap.width_b = right_b - left_b;
-    overlap.height_b = bottom_b - top_b;
-    overlap.primary.distance_x = abs(left_a + overlap.primary.width_a / 2 - (left_b + overlap.width_b / 2));
-    overlap.primary.distance_y = abs(top_a + overlap.primary.height_a / 2 - (top_b + overlap.height_b / 2));
-    if ((overlap.primary.width_a + overlap.width_b) / 2 >= overlap.primary.distance_x &&
-            (overlap.primary.height_a + overlap.height_b) / 2 >= overlap.primary.distance_y) {
-        return 1;
-    } else {
-        if (abs(left_a + overlap.primary.width_a / 2 - (left_b + overlap.width_b / 2)) < overlap.primary.width_a / 2 &&
-                abs(top_a + overlap.primary.height_a / 2 - (top_b + overlap.height_b / 2)) < overlap.primary.height_a / 2) {
+    DxBallInt width_b;
+    {
+        struct {
+            DxBallInt height_b;
+            struct { DxBallInt width_a, distance_y, height_a, distance_x; } primary;
+        } overlap;
+        overlap.primary.width_a = right_a - left_a;
+        overlap.primary.height_a = bottom_a - top_a;
+        width_b = right_b - left_b;
+        overlap.height_b = bottom_b - top_b;
+        overlap.primary.distance_x = abs(left_a + overlap.primary.width_a / 2 - (left_b + width_b / 2));
+        overlap.primary.distance_y = abs(top_a + overlap.primary.height_a / 2 - (top_b + overlap.height_b / 2));
+        if ((overlap.primary.width_a + width_b) / 2 >= overlap.primary.distance_x &&
+                (overlap.primary.height_a + overlap.height_b) / 2 >= overlap.primary.distance_y) {
             return 1;
         } else {
-            return 0;
+            if (abs(left_a + overlap.primary.width_a / 2 - (left_b + width_b / 2)) < overlap.primary.width_a / 2 &&
+                    abs(top_a + overlap.primary.height_a / 2 - (top_b + overlap.height_b / 2)) < overlap.primary.height_a / 2) {
+                return 1;
+            } else {
+                return 0;
+            }
         }
     }
 }
