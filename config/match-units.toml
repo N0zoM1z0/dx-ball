@@ -4439,12 +4439,12 @@ relocations = [
   { offset = 966, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8 },
 ]
 
-[candidates.sort-present-regions]
+[units.sort-present-regions]
 build = "display"
 symbol = "_dxball_sort_present_regions"
 target_address = 0x4094e0
 size = 296
-boundary_evidence = "docs/research/exact/EXACT_PRESENTATION.md; full RET-inclusive REA evidence and genuine original call/data targets"
+boundary_evidence = "docs/research/exact/EXACT_PRESENTATION.md; docs/research/exact/EXACT_PRESENT_SORT_RECORD.md; ev_6fa464860fec11c6c9b89b25ac22ba8445585a8dba2390986ff40878fc054f10"
 relocations = [
   { offset = 77, type = "DIR32", symbol = "_dxball_present_keys", addend = 0, target = 0x42e698 },
   { offset = 84, type = "DIR32", symbol = "_dxball_present_keys", addend = 0, target = 0x42e698 },

@@ -13,19 +13,21 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **214 exact functions /48,922 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 59 authored nonexact functions.
-The screen-point collision body at 0x4116C0 now matches all 337 bytes and ten
-relocations. A row/column position record restores its two original stack homes
-while retaining the ordered conversion and state writes. Eight prior core exacts
-retain 4,322 bytes. One core compilation, Linux/MinGW builds, the legacy relink
-with 36 unchanged objects, 1,152 existing coordinate cases and all 214 exact
-closures pass. No game campaign. See
-[position record](../research/exact/EXACT_SCREEN_POSITION.md) and
-`.analysis/screen-position-record-20261012/`. Continue the 59 authored candidates.
+Latest checkpoint: **215 exact functions /49,218 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 58 authored nonexact functions.
+The presentation selection sort at 0x4094E0 now matches all 296 bytes and ten
+relocations. A consumed selection/exchange record and individual loop scopes
+restore its original 32-byte frame and comparison scheduling. Nine display
+exacts retain 1,843 bytes. Three owner stages, Linux/MinGW builds, the legacy
+relink with 36 unchanged objects, 60 sorting/146 merging/60 presentation cases
+and their reset prelude pass. All 215 exact closures verify. No game campaign.
+See [selection record](../research/exact/EXACT_PRESENT_SORT_RECORD.md) and
+`.analysis/presentation-sort-records-20261012/`. Continue the 58 authored candidates.
 
 Recent retained source checkpoints:
 
+- [Screen-point position](../research/exact/EXACT_SCREEN_POSITION.md): complete
+  337-byte collision body exact, eight core companions and 1,152 boundary cases pass.
 - [MDS workspaces](../research/exact/EXACT_MDS_WORKSPACES.md): parser and
   converter exact across 868/343 bytes, including all 40 provider-unowned parser
   jump bytes. Four MIDI exact companions and 253 parser/588 converter cases pass.
@@ -71,7 +73,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 59 authored non-exact functions. Use current manifest objects
+Next priority: the 58 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -169,11 +171,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 214 |
-| Exact code / separate metadata bytes | 48,922 /136 |
+| Complete exact functions | 215 |
+| Exact code / separate metadata bytes | 49,218 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/screen-position-record-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/presentation-sort-records-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

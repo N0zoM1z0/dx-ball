@@ -1,5 +1,9 @@
 # Dirty-region presentation
 
+Historical checkpoint: selection sorting is now complete exact in the
+[selection-record recovery](EXACT_PRESENT_SORT_RECORD.md). The presenter has
+since improved to two differences in [merge-index recovery](PRESENTATION_MERGE_SCOPE.md).
+
 This batch restores queueing, selection sorting, sequential rectangle merging
 and presentation, together with the lightning overlay's queue caller.
 

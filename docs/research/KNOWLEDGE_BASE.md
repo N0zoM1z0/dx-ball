@@ -283,3 +283,10 @@ remaining two coordinate homes. The complete 337-byte body and ten relocations
 are exact; eight core exact companions and 1,152 existing boundary cases pass.
 Current totals: 214 exact functions /48,922 code bytes /136 metadata bytes;
 59 authored functions remain nonexact.
+
+## Exact presentation selection sort (2026-10-12)
+
+The [selection-record recovery](exact/EXACT_PRESENT_SORT_RECORD.md) matches the
+complete 296-byte sorter and ten relocations. Nine display companions and the
+existing sort/merge/presentation loops pass. Current totals: 215 exact functions
+/49,218 code bytes /136 metadata bytes; 58 authored functions remain nonexact.

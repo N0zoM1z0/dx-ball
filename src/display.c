@@ -378,21 +378,25 @@ void dxball_present_regions_now(void)
 /* FUNCTION: DXBALL 0x004094E0 */
 void dxball_sort_present_regions(DxBallInt first, DxBallInt last)
 {
-    DxBallInt selected, key;
-    DxBallRect rect;
-    DxBallInt i, j;
-    for (i = first; i <= last - 1; ++i) {
-        selected = i;
-        for (j = i; j <= last; ++j) {
-            if (dxball_present_keys[selected] > dxball_present_keys[j]) selected = j;
-        }
-        if (selected > i) {
-            key = dxball_present_keys[i];
-            dxball_present_keys[i] = dxball_present_keys[selected];
-            dxball_present_keys[selected] = key;
-            rect = dxball_present_regions[i];
-            dxball_present_regions[i] = dxball_present_regions[selected];
-            dxball_present_regions[selected] = rect;
+    struct { DxBallRect rect; DxBallInt key, selected; } selection;
+    {
+        DxBallInt i;
+        for (i = first; i <= last - 1; ++i) {
+            selection.selected = i;
+            {
+                DxBallInt j;
+                for (j = i; j <= last; ++j) {
+                    if (dxball_present_keys[selection.selected] > dxball_present_keys[j]) selection.selected = j;
+                }
+            }
+            if (selection.selected > i) {
+                selection.key = dxball_present_keys[i];
+                dxball_present_keys[i] = dxball_present_keys[selection.selected];
+                dxball_present_keys[selection.selected] = selection.key;
+                selection.rect = dxball_present_regions[i];
+                dxball_present_regions[i] = dxball_present_regions[selection.selected];
+                dxball_present_regions[selection.selected] = selection.rect;
+            }
         }
     }
     return;
