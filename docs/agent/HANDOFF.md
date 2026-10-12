@@ -24,6 +24,14 @@ Evidence: `.analysis/exact-board-mapper-20261012/`; source/evidence details:
 [board mapper](../research/KNOWLEDGE_BASE.md). Continue the remaining 64
 non-exact authored functions with focused complete-unit comparisons.
 
+The subsequent [compiler-model checks](../research/exact/FRONTIER_COMPILER_MODELS.md)
+add no exact function. Presentation condition spelling, UI C++ lowering,
+sound allocation/upload scopes and an offsetof projection of the embedded
+explosion list were rejected. All source changes and canonical products are
+restored; all207 complete accepted bodies and input/object closures verify.
+Do not repeat these closed hypotheses without new evidence. No game campaign
+or portable rebuild ran. Receipts: `.analysis/exact-frontier-20261012/`.
+
 Latest storage cleanup compresses only the completed REA4.1 historical snapshot:
 `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json.gz` preserves all72,771,098bytes
 with verified decompressed SHA; `snapshot-compression.json` records identities
