@@ -13,19 +13,22 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **221 exact functions /55,163 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 52 authored nonexact functions.
-Bitmap loading now matches all976 bytes,237 instructions and18 relocations.
-The consumed loading workspace restores its original2508-byte frame and arithmetic
-lowering; input/output sizes, unwritten suffixes/flags and cleanup order remain.
-One Bitmap compilation, Linux/MinGW builds and a VC4 relink reusing36 unchanged
-objects pass. Existing975 full-buffer cases pass with the verified stack helper
-reused without compilation. All221 exact closures verify. No game campaign.
-See [Bitmap workspace](../research/exact/EXACT_BITMAP_LOAD_WORKSPACE.md) and
-`.analysis/bitmap-load-workspace-20261012/verification.json`. Continue the52 candidates.
+Latest checkpoint: **222 exact functions /55,351 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 51 authored nonexact functions.
+RGB component rotation now matches all188 bytes and both relocations. The consumed
+signed-DWORD color record restores red/green homes; five UI exacts retain559 bytes.
+One UI compilation, Linux/MinGW builds, a VC4 relink reusing36 unchanged objects,
+20 existing RGB pool/canary cases and all222 exact closures pass. No game campaign.
+A resources capture-workspace diagnostic loses accepted glyph search and is rejected;
+its source/object are restored by identity without recompilation. Do not repeat it.
+PCX's unobserved four-byte frame region remains unresolved; no source gap is assumed.
+See [RGB record](../research/exact/EXACT_RGB_ROTATION_RECORD.md) and
+`.analysis/rgb-rotation-record-20261012/verification.json`. Continue the51 candidates.
 
 Recent retained source checkpoints:
 
+- [Bitmap workspace](../research/exact/EXACT_BITMAP_LOAD_WORKSPACE.md): complete976-byte
+  loader exact,18 bindings and975 full-buffer cases pass with a verified reused stack helper.
 - [File transfer](../research/exact/EXACT_FILE_TRANSFER_STATE.md): complete304-byte
   loader exact, including ten bindings and its four-byte prefix;38 file cases pass.
 - [Intro grid cursor](../research/exact/EXACT_INTRO_GRID_CURSOR.md): complete1,996-byte
@@ -91,7 +94,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 52 authored non-exact functions. Use current manifest objects
+Next priority: the 51 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -189,11 +192,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 221 |
-| Exact code / separate metadata bytes | 55,163 /136 |
+| Complete exact functions | 222 |
+| Exact code / separate metadata bytes | 55,351 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/bitmap-load-workspace-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/rgb-rotation-record-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

@@ -1940,12 +1940,12 @@ boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
 ]
 
-[candidates.rotate-rgb-colors]
+[units.rotate-rgb-colors]
 build = "ui"
 symbol = "_dxball_rotate_rgb_colors"
 target_address = 0x40aa60
 size = 188
-boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
+boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md; docs/research/exact/EXACT_RGB_ROTATION_RECORD.md; ev_d69a03478a3300403b907eadb1d092d72ea91325ee9a2d51042a1105207b5bb3"
 relocations = [
   { offset = 11, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x00422898 },
   { offset = 171, type = "REL32", symbol = "_dxball_set_palette_rgb", addend = 0, target = 0x0040AB20 },

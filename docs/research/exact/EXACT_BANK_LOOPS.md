@@ -1,5 +1,8 @@
 # Bank loops and palette state restoration
 
+Historical checkpoint: [the RGB record](EXACT_RGB_ROTATION_RECORD.md) now makes
+the complete 188-byte component rotation exact.
+
 Three complete functions pass grouped cold replay with zero differences: bank
 initialization (131), bank release (125), and palette initialization (206),
 462 code bytes in total. All 97 preceding units preserve their complete code

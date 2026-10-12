@@ -333,3 +333,11 @@ the original2508-byte frame and all976 code bytes/18 bindings. Existing975
 full-buffer cases pass with the verified existing stack helper. Current totals:
 221 exact functions /55,163 code bytes /136 metadata bytes;52 authored functions
 remain nonexact.
+
+## Exact RGB rotation (2026-10-12)
+
+The [color record](exact/EXACT_RGB_ROTATION_RECORD.md) restores all188 bytes
+and both bindings, with five UI companions and20 pool/canary cases passing.
+The capture-workspace model is rejected after losing glyph search; its before
+source/object identities are restored. Current totals:222 exact functions
+/55,351 code bytes /136 metadata bytes;51 authored functions remain nonexact.

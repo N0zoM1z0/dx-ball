@@ -153,14 +153,14 @@ void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap
 
 void dxball_rotate_rgb_colors(DxBallInt entry, DxBallInt count, DxBallInt *colors)
 {
-    DxBallInt red, green, blue;
+    struct { DxBallInt green, red, blue; } color;
     if (dxball_cursor_warp_disabled == 1) return;
-    red = colors[0]; green = colors[1]; blue = colors[2];
+    color.red = colors[0]; color.green = colors[1]; color.blue = colors[2];
     {
         DxBallInt i;
         for (i = 0; i <= count - 4; ++i) colors[i] = colors[i + 3];
     }
-    colors[count - 3] = red; colors[count - 2] = green; colors[count - 1] = blue;
+    colors[count - 3] = color.red; colors[count - 2] = color.green; colors[count - 1] = color.blue;
     dxball_set_palette_rgb(entry, (DxBallByte)colors[0], (DxBallByte)colors[1], (DxBallByte)colors[2]);
     return;
 }
