@@ -1,5 +1,9 @@
 # Sprite-bank upload pointer
 
+The later [color-key phase](BANK_COLOR_KEY_PHASE.md) keeps the key independent
+and moves it into the same consuming block. Current bank differences are 72;
+the results below describe the preceding pointer checkpoint.
+
 The bank loader's API workspace now includes the existing destination pixel
 pointer alongside its surface description and return value. The pointer is
 computed and consumed only during the locked upload. File pixels, metadata,

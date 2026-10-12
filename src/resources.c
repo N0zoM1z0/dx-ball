@@ -174,7 +174,6 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
     DxBallUInt pixel_count;
     DxBallByte *pixels;
     DxBallSprite *record;
-    DxBallColorKey key;
     DxBallInt row, column, cursor, pitch;
     saved_bank = dxball_sprite_bank;
     dxball_select_sprite_bank(bank);
@@ -210,6 +209,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.bottom = height;
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.right = width;
         {
+            DxBallColorKey key;
             struct {
                 DxBallSurfaceDesc description;
                 DxBallInt result;

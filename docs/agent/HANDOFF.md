@@ -15,6 +15,19 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [standalone color-key phase](../research/exact/BANK_COLOR_KEY_PHASE.md)
+moves only that declaration into its consuming surface-transfer block. The
+116-byte API record stays unchanged. Key EBP-64 now matches the original,
+alongside description/result/pixel at EBP-180/-72/-68. Complete bank stays
+1475 bytes, 425 instructions and a 180-byte frame; differences fall from 74
+to 72. All twelve resource exacts retain 2197 bytes, including glyph search
+that the earlier key-as-record-field model lost. All forty other candidate
+code identities are unchanged. Ten existing bank and three callback cases,
+Native/MinGW, separate VC4 matching/production builds and all 232 closures pass;
+36 unchanged objects link and 235 historical inventories refresh. No new exact
+or game runs. `.analysis/bank-color-key-phase-20261013/verification.json`.
+Independent source/input/frame review passes. Nineteen completed copies are
+gzip verified, releasing 4,325,376 allocated bytes; current products remain.
 The latest [bank upload pointer](../research/exact/BANK_TRANSFER_WORKSPACE.md)
 joins its existing description/result workspace. The 116-byte record restores
 pixel EBP-68 while description EBP-180 and result EBP-72 remain correct.
