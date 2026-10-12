@@ -15,6 +15,17 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [intro score phase](../research/exact/INTRO_SCORE_PHASE.md) narrows
+text, decimal buffer and length locals to the score-present branch. Standalone
+RECT now matches EBP-16 and length EBP-20; capacities stay 32/11 and are not
+claimed original. Complete redraw remains 578/587 with 560 differences, 174
+instructions and a changed code identity. All 18 intro exacts retain 6806 bytes;
+all 40 other candidate hashes are unchanged. Nine unchanged redraw cases,
+Native/MinGW, VC4 one matching plus 36 unchanged link and all 232 closures pass;
+235 historical inventories refresh. No game runs or new exact function.
+`.analysis/intro-score-phase-20261013/verification.json`. Independent frame/source
+review passes. 17 completed copies are gzip verified, releasing
+4,329,472 allocated bytes; current products are retained.
 The latest [sprite-bank API workspace](../research/exact/BANK_API_WORKSPACE.md)
 limits descriptor/result ownership to each surface-transfer phase. Complete
 bank loading improves from 1655/1475 with 1577 differences to 1475/1475 with 76;

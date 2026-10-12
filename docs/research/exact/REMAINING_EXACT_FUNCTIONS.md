@@ -81,5 +81,9 @@ The [sprite-bank API workspace](BANK_API_WORKSPACE.md) restores the complete
 1475-byte loader size and reduces its comparison from 1577 to 76 differences,
 while preserving all 12 resource exacts.
 
+The [intro score phase](INTRO_SCORE_PHASE.md) restores rectangle and text-length
+homes while keeping the buffers unchanged. Redraw remains 578/587 with 560
+differences; the change preserves every accepted intro body.
+
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

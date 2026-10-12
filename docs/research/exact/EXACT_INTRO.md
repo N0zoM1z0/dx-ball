@@ -58,3 +58,6 @@ in native-resume-record.json, with subsequent project commands CPU-limited.
 The optional 711-byte point-update controller is excluded until its unconsumed
 request-state writes have a source-origin explanation. The >=95% complete-source
 goal remains active and unachieved.
+The later [intro score phase](INTRO_SCORE_PHASE.md) restores the full-screen
+rectangle and text-length homes without changing buffer capacities. Its complete
+comparison remains 578/587 with 560 differences; no exact claim is added.

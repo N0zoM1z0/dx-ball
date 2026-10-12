@@ -191,8 +191,6 @@ void dxball_initialize_intro(void)
 void dxball_redraw_intro(void)
 {
     DxBallRect rect;
-    char text[32], number[11];
-    DxBallInt count;
     rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
     dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
     if (dxball_draw_to_primary == 0) dxball_clear_surface((DxBallSurface)dxball_secondary_surface, 0);
@@ -203,6 +201,8 @@ void dxball_redraw_intro(void)
     dxball_select_surface((DxBallSurface)dxball_board_surface); dxball_select_font_bank(2);
     dxball_wait_frames(1);
     if ((DxBallUInt)dxball_score > 0) {
+        char text[32], number[11];
+        DxBallInt count;
         strcpy(text, "Last Score - ");
         _ultoa((unsigned long)(DxBallUInt)dxball_score, number, 10);
         strcat(text, number);
