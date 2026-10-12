@@ -2,8 +2,9 @@
 
 The later [closed follow-up](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up)
 tests nested origin conversions, axis records, a sampled source-plane record and
-floating consistency. None is adopted; the current renderer remains1451/1572
-with1475 differences.
+floating consistency. None is adopted. The later
+[visible-pixel scope](ROTATION_VISIBLE_PIXEL_PHASE.md) changes only four local
+declarations and brings the current renderer to 1466/1572 with 1466 differences.
 
 The renderer at `0x4026A0` now restores its two previously omitted zero writes
 and the four-byte operand used by its first three origin divisions. One VC4

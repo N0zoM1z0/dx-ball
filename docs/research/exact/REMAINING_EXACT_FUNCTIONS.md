@@ -48,7 +48,7 @@ None of these candidates is already exact. The accepted total remains
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 992 |
 | `game-frame` | 1688 | 1691 | 1155 |
-| `render-rotated-sprite` | 1572 | 1451 | 1475 |
+| `render-rotated-sprite` | 1572 | 1466 | 1466 |
 
 Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
@@ -84,6 +84,11 @@ while preserving all 12 resource exacts.
 The [intro score phase](INTRO_SCORE_PHASE.md) restores rectangle and text-length
 homes while keeping the buffers unchanged. Redraw remains 578/587 with 560
 differences; the change preserves every accepted intro body.
+
+The [rotation visible-pixel scope](ROTATION_VISIBLE_PIXEL_PHASE.md) brings its
+comparison to 1466/1572 with 1466 differences while preserving all four accepted
+rotation functions. The frame and instruction count stay unchanged; the local
+homes still differ from the original.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

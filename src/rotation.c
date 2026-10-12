@@ -17,7 +17,7 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
     DxBallSurfaceDesc destination_desc, source_desc;
     DxBallUInt origin_width, origin_height;
     DxBallByte *pixel;
-    DxBallInt column, row, rounded_x, rounded_y, truncated_x, truncated_y, result;
+    DxBallInt column, row, result;
     double row_x, row_y, x, y, column_dx, column_dy, row_dx, row_dy;
     double first_x_term, first_y_term;
 
@@ -68,6 +68,7 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
             y = column_dy + y;
             if (*pixel != 0 && y > 0.0 && y < (double)(destination_desc.height - 1)
                 && x > 0.0 && x < (double)(destination_desc.width - 1)) {
+                DxBallInt rounded_x, rounded_y, truncated_x, truncated_y;
                 DxBallByte *destination_pixel;
                 rounded_x = (DxBallInt)((long double)x + 0.5);
                 rounded_y = (DxBallInt)((long double)y + 0.5);

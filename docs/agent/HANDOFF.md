@@ -15,6 +15,24 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [rotation visible-pixel scope](../research/exact/ROTATION_VISIBLE_PIXEL_PHASE.md)
+moves four existing locals into their sole consuming branch. The complete
+renderer improves from 1451/1572 with 1475 differences to 1466/1572 with 1466;
+365 instructions and the 424-byte frame remain. Five displacement encodings
+explain the added 15 bytes; the local homes still differ from the original.
+Four rotation exacts retain 749 bytes and the other 40 candidate code identities
+are unchanged. Existing 351 renderer and 344 wrapper cases, Native/MinGW,
+VC4 one matching plus 36 unchanged linked objects and all 232 closures pass.
+Historical input inventories refresh 235 rows. No new exact or game runs.
+`.analysis/rotation-visible-pixel-phase-20261013/verification.json` retains the
+checks and independent source/input review.
+Together with the rejected SDK stages, 124 completed copies are gzip verified,
+releasing 8,622,080 allocated bytes. Current products and unique evidence remain.
+The [SDK type/interface stages](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#directdraw-sdk-return-types-and-interface-boundary)
+are rejected. Private resource zero comparisons lose accepted companions or
+the bonus update elsewhere in the shared family. The interface split also
+loses resource exacts. All such source and recipe changes are restored; no
+private zero is promoted.
 The latest [DirectDraw pointer qualifiers](../research/exact/DDRAW_MUTABLE_POINTERS.md)
 follow mutable SDK LPRECT/LPDDCOLORKEY/LPPALETTEENTRY declarations, including
 board forwarding and typed inspector callbacks. Twelve qualifier removals in

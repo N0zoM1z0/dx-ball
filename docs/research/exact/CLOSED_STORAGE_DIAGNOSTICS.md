@@ -208,3 +208,22 @@ Original REA evidence is
 `ev_6055fe1d318fa3f71d76b5cdbbbe862a3944dd9890035a53264b8ccfa2d7a074`.
 Private source, compilation and complete comparison are retained in
 `.analysis/rebound-contact-stages-20261013/`. No game or new fixture runs.
+
+## DirectDraw SDK return types and interface boundary
+
+Local VC4 headers establish HRESULT as LONG and ULONG/DWORD as unsigned long.
+Seven resource compilations examine those actual types and the RECT coordinate
+type. Some produce zero-difference blit, capture and glyph candidates, but lose
+accepted resource companions. Adding the SDK flag and descriptor types preserves
+the companions while leaving capture with two differences. None is adopted.
+
+One full family comparison then retains all twelve resource exacts and obtains
+three additional private zero comparisons, totaling 3572 bytes. It fails at
+`update-bonuses`, whose complete comparison has 180 differences. A separate
+typed interface split also fails the accepted resource comparisons. Both are
+rejected; all tracked source and recipes return to the prior checkpoint.
+
+These private results do not change the published exact count. Sources, actual
+input receipts, complete comparisons and the independent SDK review remain in
+`.analysis/ddraw-result-kinds-20261013/`, `.analysis/ddraw-native-sdk-20261013/`
+and `.analysis/sdk-interface-boundary-20261013/`. No game runs accompany them.
