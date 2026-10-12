@@ -1,5 +1,9 @@
 # Explosion animation phase lifetimes
 
+The later [record-copy check](RECORD_COPY_BOUNDARIES.md) restores cleanup homes
+but changes rectangle-by-value code generation and is rejected. This canonical
+797-byte candidate and its13 home differences remain unchanged.
+
 The complete explosion step at `0x412730..0x412A4C` now places its board
 coordinates in the frame-five branch and its rectangle/occupancy coordinates
 in the expiration branch. One canonical MT compile improves the full 797-byte

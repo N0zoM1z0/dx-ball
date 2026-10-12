@@ -83,6 +83,13 @@ Recent retained source checkpoints:
 - [Tile mapper](../research/KNOWLEDGE_BASE.md):426 complete bytes including92
   switch-table bytes and24 bindings exact; six prior board exacts preserved.
 
+[Record-copy checks](../research/exact/RECORD_COPY_BOUNDARIES.md) close two new
+models. Nested explosion cleanup restores homes but adds a by-value argument
+instruction:799/797,227 differences; reject, keep canonical797/13. Bank workspace
+restores180-byte frame and improves1655 to1486 bytes but loses glyph search146/86;
+separate file/surface records worsen1663/1584. Both reject; canonical source/object
+hashes restored, no build/game/Oracle for rejected stages. Do not repeat them.
+
 [Closed compiler hypotheses](../research/exact/FRONTIER_COMPILER_MODELS.md)
 cover condition/negation spellings, UI/Bitmap C++ models, geometry/core /Z7,
 UI/resource /Os, sound upload scopes and sprite prototype variants. Do not
