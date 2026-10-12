@@ -164,7 +164,7 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
 void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const char *path)
 {
     DxBallInt saved_bank, sprite, count, width, height, baseline;
-    char code;
+    signed char code;
     DxBallUInt pixel_count;
     DxBallByte *pixels, *pixel;
     DxBallSprite *record;
@@ -257,7 +257,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
 
 /* FUNCTION: DXBALL 0x00404E40
    The count-th slot is intentionally excluded, and an empty bank returns 1. */
-DxBallInt dxball_find_glyph(char code)
+DxBallInt dxball_find_glyph(signed char code)
 {
     DxBallInt sprite = 0;
     do {
@@ -270,7 +270,7 @@ DxBallInt dxball_find_glyph(char code)
 }
 
 /* FUNCTION: DXBALL 0x00404CF0 */
-DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline)
+DxBallInt dxball_draw_glyph(signed char code, DxBallInt x, DxBallInt baseline)
 {
     DxBallInt sprite;
     DxBallRect destination;

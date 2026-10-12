@@ -15,6 +15,14 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **229 exact functions /57,649 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 44 authored nonexact functions.
+The latest [signed glyph code model](../research/exact/GLYPH_SIGNED_CODE_DOMAIN.md)
+uses explicit signed8 fields/parameters and signed text-byte comparison, following
+original paired MOVSX reads. All26 affected matching recipes preserve213 exacts
+(56151 code bytes); all44 candidate code hashes remain unchanged. Existing2185
+original/native glyph/text calls pass; Native/MinGW and VC4 25 matching+five game
+objects+seven unchanged link pass. All229 closures pass;235 historical input
+inventories refresh. No new exact count or game run.
+`.analysis/glyph-code-domain-20261012/verification.json`.
 The latest owner-local Kernel clock diagnostics are rejected and all canonical
 source/VC4 products restored. Four runtime and one each gameover/resources/
 display/startup compilations close private SDK and opaque-counter models;

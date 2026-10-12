@@ -13,7 +13,7 @@ DxBallInt dxball_measure_text(DxBallInt count, const char *text)
         do {
             sprite = sprite + 1;
         } while (dxball_sprite_banks[dxball_font_bank].count > sprite &&
-                 dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != text[i]);
+                 dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != (signed char)text[i]);
         if (dxball_sprite_banks[dxball_font_bank].count == sprite)
             sprite = 0;
         if (sprite == 0)
