@@ -13,19 +13,22 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **215 exact functions /49,218 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 58 authored nonexact functions.
-The presentation selection sort at 0x4094E0 now matches all 296 bytes and ten
-relocations. A consumed selection/exchange record and individual loop scopes
-restore its original 32-byte frame and comparison scheduling. Nine display
-exacts retain 1,843 bytes. Three owner stages, Linux/MinGW builds, the legacy
-relink with 36 unchanged objects, 60 sorting/146 merging/60 presentation cases
-and their reset prelude pass. All 215 exact closures verify. No game campaign.
-See [selection record](../research/exact/EXACT_PRESENT_SORT_RECORD.md) and
-`.analysis/presentation-sort-records-20261012/`. Continue the 58 authored candidates.
+Latest checkpoint: **217 exact functions /51,192 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 56 authored nonexact functions.
+Sound initialization and WAV parsing now match all 1,705/269 bytes, including
+70/5 provider-unowned internal jump bytes. Consumed initialization/container/chunk
+records restore their original 324/24-byte frames. Fourteen sound exacts retain
+2,087 bytes. Two owner compilations, Linux/MinGW builds, the legacy relink with
+36 unchanged objects, 798 parser/116 initialization/eight prepare cases and all
+217 exact closures pass. All 26 original WAVs are included. No game campaign.
+See [sound workspaces](../research/exact/EXACT_SOUND_WORKSPACES.md) and
+`.analysis/wave-chunk-records-20261012/`. Continue the 56 authored candidates.
 
 Recent retained source checkpoints:
 
+- [Presentation selection sort](../research/exact/EXACT_PRESENT_SORT_RECORD.md):
+  complete 296-byte sort exact, nine display companions and 60 sort/146 merge/60
+  presentation cases pass.
 - [Screen-point position](../research/exact/EXACT_SCREEN_POSITION.md): complete
   337-byte collision body exact, eight core companions and 1,152 boundary cases pass.
 - [MDS workspaces](../research/exact/EXACT_MDS_WORKSPACES.md): parser and
@@ -73,7 +76,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 58 authored non-exact functions. Use current manifest objects
+Next priority: the 56 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -171,11 +174,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 215 |
-| Exact code / separate metadata bytes | 49,218 /136 |
+| Complete exact functions | 217 |
+| Exact code / separate metadata bytes | 51,192 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/presentation-sort-records-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/wave-chunk-records-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

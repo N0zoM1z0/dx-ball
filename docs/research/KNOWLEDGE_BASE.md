@@ -290,3 +290,11 @@ The [selection-record recovery](exact/EXACT_PRESENT_SORT_RECORD.md) matches the
 complete 296-byte sorter and ten relocations. Nine display companions and the
 existing sort/merge/presentation loops pass. Current totals: 215 exact functions
 /49,218 code bytes /136 metadata bytes; 58 authored functions remain nonexact.
+
+## Exact sound workspaces (2026-10-12)
+
+[Sound initialization and WAV parsing](exact/EXACT_SOUND_WORKSPACES.md) now
+match all 1,705/269 bytes, including 70/5 internal jump bytes outside the provider
+owned ranges. Fourteen sound companions and 922 existing parser/initialization/
+prepare cases pass. Current totals: 217 exact functions /51,192 code bytes
+/136 metadata bytes; 56 authored functions remain nonexact.

@@ -1,5 +1,8 @@
 # Sound initialization filename lifetime
 
+Historical checkpoint: the remaining homes are now restored by the
+[initialization workspace](EXACT_SOUND_WORKSPACES.md), making all 1,705 bytes exact.
+
 The existing 256-byte filename workspace now lives only in the nonnull sound
 reload branch at the end of `dxball_initialize_sound`. It is copied immediately
 before the synchronous loader call and never used elsewhere. The retry,

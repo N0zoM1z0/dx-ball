@@ -31,91 +31,134 @@ static const char primary_play_message[] =
 /* FUNCTION: DXBALL 0x00405120 */
 void dxball_initialize_sound(DxBallHandle window)
 {
-    DxBallInt result, retry, slot;
-    DxBallSoundBufferDesc descriptor;
-    DxBallInt response;
+    struct {
+        DxBallSoundBufferDesc descriptor;
+        DxBallInt slot, retry, result;
+    } initialization;
 
     if (dxball_sound_device != NULL) return;
-    retry = 1;
-    while (retry != 0) {
-        result = DirectSoundCreate(NULL, &dxball_sound_device, NULL);
+    {
+        DxBallInt response;
+        initialization.retry = 1;
+        while (initialization.retry != 0) {
+            initialization.result = DirectSoundCreate(NULL, &dxball_sound_device, NULL);
+            if (dxball_direct_draw != NULL) {
+                if (initialization.result != 0) {
+                    dxball_sound_device = NULL;
+                    return;
+                } else {
+                    initialization.retry = 0;
+                }
+            } else {
+                switch (initialization.result) {
+                case 0:
+                    initialization.retry = 0;
+                    break;
+                case (DxBallInt)0x8878000aUL:
+                    response = dxball_window_message_box(window,
+                        occupied_message, "DX-Ball", 0x42);
+                    switch (response) {
+                    case 3:
+                        exit(10);
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        dxball_sound_device = NULL;
+                        return;
+                        break;
+                    }
+                    break;
+                case (DxBallInt)0x88780078UL:
+                    response = dxball_window_message_box(window,
+                        no_card_message, "DX-Ball", 0x24);
+                    switch (response) {
+                    case 6:
+                        dxball_sound_device = NULL;
+                        return;
+                        break;
+                    case 7:
+                        exit(11);
+                        break;
+                    default:
+                        dxball_sound_device = NULL;
+                        return;
+                    }
+                    break;
+                default:
+                    response = dxball_window_message_box(window,
+                        create_message, "DX-Ball", 0x24);
+                    switch (response) {
+                    case 6:
+                        dxball_sound_device = NULL;
+                        return;
+                        break;
+                    case 7:
+                        exit(12);
+                        break;
+                    default:
+                        dxball_sound_device = NULL;
+                        return;
+                    }
+                }
+            }
+        }
+        initialization.result = dxball_sound_device->vtable->set_cooperative_level(
+            dxball_sound_device, window, 1);
         if (dxball_direct_draw != NULL) {
-            if (result != 0) {
+            if (initialization.result != 0) {
+                dxball_sound_device->vtable->release(dxball_sound_device);
                 dxball_sound_device = NULL;
                 return;
-            } else {
-                retry = 0;
             }
         } else {
-            switch (result) {
-            case 0:
-                retry = 0;
-                break;
-            case (DxBallInt)0x8878000aUL:
-                response = dxball_window_message_box(window,
-                    occupied_message, "DX-Ball", 0x42);
-                switch (response) {
-                case 3:
-                    exit(10);
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    dxball_sound_device = NULL;
-                    return;
-                    break;
-                }
-                break;
-            case (DxBallInt)0x88780078UL:
-                response = dxball_window_message_box(window,
-                    no_card_message, "DX-Ball", 0x24);
-                switch (response) {
-                case 6:
-                    dxball_sound_device = NULL;
-                    return;
-                    break;
-                case 7:
-                    exit(11);
-                    break;
+            if (initialization.result != 0) {
+                switch (initialization.result) {
                 default:
-                    dxball_sound_device = NULL;
-                    return;
-                }
-                break;
-            default:
-                response = dxball_window_message_box(window,
-                    create_message, "DX-Ball", 0x24);
-                switch (response) {
-                case 6:
-                    dxball_sound_device = NULL;
-                    return;
-                    break;
-                case 7:
-                    exit(12);
-                    break;
-                default:
-                    dxball_sound_device = NULL;
-                    return;
+                    response = dxball_window_message_box(window,
+                        cooperate_message, "DX-Ball", 0x24);
+                    switch (response) {
+                    case 6:
+                        dxball_sound_device->vtable->release(dxball_sound_device);
+                        dxball_sound_device = NULL;
+                        return;
+                        break;
+                    case 7:
+                        exit(13);
+                        break;
+                    default:
+                        dxball_sound_device->vtable->release(dxball_sound_device);
+                        dxball_sound_device = NULL;
+                        return;
+                    }
                 }
             }
         }
-    }
-    result = dxball_sound_device->vtable->set_cooperative_level(
-        dxball_sound_device, window, 1);
-    if (dxball_direct_draw != NULL) {
-        if (result != 0) {
-            dxball_sound_device->vtable->release(dxball_sound_device);
-            dxball_sound_device = NULL;
-            return;
-        }
-    } else {
-        if (result != 0) {
-            switch (result) {
-            default:
+        memset(&initialization.descriptor, 0, sizeof(initialization.descriptor));
+        initialization.descriptor.size = 20;
+        initialization.descriptor.flags = 1;
+        initialization.result = dxball_sound_device->vtable->create_buffer(dxball_sound_device,
+            &initialization.descriptor, &dxball_primary_sound, NULL);
+        if (dxball_direct_draw != NULL) {
+            if (initialization.result != 0) {
+                if (dxball_primary_sound != NULL) {
+                    dxball_primary_sound->vtable->release(dxball_primary_sound);
+                    dxball_primary_sound = NULL;
+                }
+                dxball_sound_device->vtable->release(dxball_sound_device);
+                dxball_sound_device = NULL;
+                return;
+            }
+        } else {
+            if (initialization.result != 0) {
                 response = dxball_window_message_box(window,
-                    cooperate_message, "DX-Ball", 0x24);
+                    primary_create_message, "DX-Ball", 0x24);
                 switch (response) {
                 case 6:
+                    if (dxball_primary_sound != NULL) {
+                        dxball_primary_sound->vtable->release(dxball_primary_sound);
+                        dxball_primary_sound = NULL;
+                    }
                     dxball_sound_device->vtable->release(dxball_sound_device);
                     dxball_sound_device = NULL;
                     return;
@@ -124,97 +167,58 @@ void dxball_initialize_sound(DxBallHandle window)
                     exit(13);
                     break;
                 default:
+                    if (dxball_primary_sound != NULL) {
+                        dxball_primary_sound->vtable->release(dxball_primary_sound);
+                        dxball_primary_sound = NULL;
+                    }
                     dxball_sound_device->vtable->release(dxball_sound_device);
                     dxball_sound_device = NULL;
                     return;
                 }
             }
         }
-    }
-    memset(&descriptor, 0, sizeof(descriptor));
-    descriptor.size = 20;
-    descriptor.flags = 1;
-    result = dxball_sound_device->vtable->create_buffer(dxball_sound_device,
-        &descriptor, &dxball_primary_sound, NULL);
-    if (dxball_direct_draw != NULL) {
-        if (result != 0) {
-            if (dxball_primary_sound != NULL) {
+        initialization.result = dxball_primary_sound->vtable->play(dxball_primary_sound, 0, 0, 1);
+        if (dxball_direct_draw != NULL) {
+            if (initialization.result != 0) {
                 dxball_primary_sound->vtable->release(dxball_primary_sound);
                 dxball_primary_sound = NULL;
+                dxball_sound_device->vtable->release(dxball_sound_device);
+                dxball_sound_device = NULL;
+                return;
             }
-            dxball_sound_device->vtable->release(dxball_sound_device);
-            dxball_sound_device = NULL;
-            return;
-        }
-    } else {
-        if (result != 0) {
-            response = dxball_window_message_box(window,
-                primary_create_message, "DX-Ball", 0x24);
-            switch (response) {
-            case 6:
-                if (dxball_primary_sound != NULL) {
+        } else {
+            if (initialization.result != 0) {
+                response = dxball_window_message_box(window,
+                    primary_play_message, "DX-Ball", 0x24);
+                switch (response) {
+                case 6:
                     dxball_primary_sound->vtable->release(dxball_primary_sound);
                     dxball_primary_sound = NULL;
-                }
-                dxball_sound_device->vtable->release(dxball_sound_device);
-                dxball_sound_device = NULL;
-                return;
-                break;
-            case 7:
-                exit(13);
-                break;
-            default:
-                if (dxball_primary_sound != NULL) {
+                    dxball_sound_device->vtable->release(dxball_sound_device);
+                    dxball_sound_device = NULL;
+                    return;
+                    break;
+                case 7:
+                    exit(13);
+                    break;
+                default:
                     dxball_primary_sound->vtable->release(dxball_primary_sound);
                     dxball_primary_sound = NULL;
+                    dxball_sound_device->vtable->release(dxball_sound_device);
+                    dxball_sound_device = NULL;
+                    return;
                 }
-                dxball_sound_device->vtable->release(dxball_sound_device);
-                dxball_sound_device = NULL;
-                return;
             }
         }
-    }
-    result = dxball_primary_sound->vtable->play(dxball_primary_sound, 0, 0, 1);
-    if (dxball_direct_draw != NULL) {
-        if (result != 0) {
-            dxball_primary_sound->vtable->release(dxball_primary_sound);
-            dxball_primary_sound = NULL;
-            dxball_sound_device->vtable->release(dxball_sound_device);
-            dxball_sound_device = NULL;
-            return;
-        }
-    } else {
-        if (result != 0) {
-            response = dxball_window_message_box(window,
-                primary_play_message, "DX-Ball", 0x24);
-            switch (response) {
-            case 6:
-                dxball_primary_sound->vtable->release(dxball_primary_sound);
-                dxball_primary_sound = NULL;
-                dxball_sound_device->vtable->release(dxball_sound_device);
-                dxball_sound_device = NULL;
-                return;
-                break;
-            case 7:
-                exit(13);
-                break;
-            default:
-                dxball_primary_sound->vtable->release(dxball_primary_sound);
-                dxball_primary_sound = NULL;
-                dxball_sound_device->vtable->release(dxball_sound_device);
-                dxball_sound_device = NULL;
-                return;
+        for (initialization.slot = 0; initialization.slot < DXBALL_SOUND_COUNT; ++initialization.slot) {
+            if (dxball_sounds[initialization.slot] != NULL) {
+                char filename[256];
+                strcpy(filename, dxball_sounds[initialization.slot]->filename);
+                dxball_load_sound(initialization.slot, filename);
             }
         }
+        return;
     }
-    for (slot = 0; slot < DXBALL_SOUND_COUNT; ++slot) {
-        if (dxball_sounds[slot] != NULL) {
-            char filename[256];
-            strcpy(filename, dxball_sounds[slot]->filename);
-            dxball_load_sound(slot, filename);
-        }
-    }
-    return;
 }
 
 void dxball_prepare_sound(DxBallHandle window)
@@ -482,38 +486,38 @@ void dxball_restore_sounds(void)
 DxBallInt dxball_parse_wave(const void *file, const void **format,
     const void **data, DxBallUInt *bytes)
 {
-    DxBallUInt riff;
-    const DxBallByte *end;
-    DxBallUInt tag, length;
-    const DxBallByte *cursor;
-    cursor = (const DxBallByte *)file;
-    riff = *(const DxBallUInt *)cursor;
-    cursor += 4;
-    length = *(const DxBallUInt *)cursor;
-    cursor += 4;
-    tag = *(const DxBallUInt *)cursor;
-    cursor += 4;
-    if (riff != 0x46464952UL) return 0;
-    if (tag != 0x45564157UL) return 0;
-    end = cursor + length - 4;
-    while (cursor < end) {
-        tag = *(const DxBallUInt *)cursor;
-        cursor += 4;
-        length = *(const DxBallUInt *)cursor;
-        cursor += 4;
-        switch (tag) {
-            case 0x20746d66UL:
-                if (length < 14) return 0;
-                *format = cursor;
-                break;
-            case 0x61746164UL:
-                *data = cursor;
-                *bytes = length;
-                return 1;
+    struct { const DxBallByte *end; DxBallUInt signature; } container;
+    {
+        struct { const DxBallByte *cursor; DxBallUInt length, tag; } chunk;
+        chunk.cursor = (const DxBallByte *)file;
+        container.signature = *(const DxBallUInt *)chunk.cursor;
+        chunk.cursor += 4;
+        chunk.length = *(const DxBallUInt *)chunk.cursor;
+        chunk.cursor += 4;
+        chunk.tag = *(const DxBallUInt *)chunk.cursor;
+        chunk.cursor += 4;
+        if (container.signature != 0x46464952UL) return 0;
+        if (chunk.tag != 0x45564157UL) return 0;
+        container.end = chunk.cursor + chunk.length - 4;
+        while (chunk.cursor < container.end) {
+            chunk.tag = *(const DxBallUInt *)chunk.cursor;
+            chunk.cursor += 4;
+            chunk.length = *(const DxBallUInt *)chunk.cursor;
+            chunk.cursor += 4;
+            switch (chunk.tag) {
+                case 0x20746d66UL:
+                    if (chunk.length < 14) return 0;
+                    *format = chunk.cursor;
+                    break;
+                case 0x61746164UL:
+                    *data = chunk.cursor;
+                    *bytes = chunk.length;
+                    return 1;
+            }
+            chunk.cursor += (chunk.length + 1) & 0xfffffffeUL;
         }
-        cursor += (length + 1) & 0xfffffffeUL;
+        return 0;
     }
-    return 0;
 }
 
 /* FUNCTION: DXBALL 0x004063A0 */

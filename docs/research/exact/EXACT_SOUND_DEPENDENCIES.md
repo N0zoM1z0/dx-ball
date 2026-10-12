@@ -1,5 +1,8 @@
 # Sound initialization and WAV loading
 
+Historical checkpoint: initialization and WAV parsing now match their complete
+original bodies in [sound-workspace recovery](EXACT_SOUND_WORKSPACES.md).
+
 The shared implementation in [`sound.c`](../../../src/sound.c) now follows
 the complete initialization, WAV parsing and binary-file loading bodies.
 
