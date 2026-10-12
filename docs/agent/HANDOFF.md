@@ -15,6 +15,23 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [sprite-bank API workspace](../research/exact/BANK_API_WORKSPACE.md)
+limits descriptor/result ownership to each surface-transfer phase. Complete
+bank loading improves from 1655/1475 with 1577 differences to 1475/1475 with 76;
+all 77 actual bindings are covered. Twelve resource exacts retain 2197 bytes,
+and all 40 other candidate code hashes are unchanged. Ten existing bank cases
+and three callback-mutation cases pass. Native/MinGW, separate VC4 /ML matching
+and /MT production builds, 36 unchanged linked objects and all 232 closures
+pass. Production bank body is 1486 bytes; it is not identical to the matching
+body. Historical input inventories refresh 235 rows. No new exact or game runs.
+`.analysis/bank-api-phase-20261013/verification.json`. Independent source, frame
+and full-candidate review passes. 25 completed copies are gzip verified,
+releasing 4,395,008 allocated bytes; current products are retained.
+A separate [rebound contact stage](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#rebound-contact-stages)
+is rejected: restoring the observed offset write with one reused float and the
+existing precise carrier worsens 687/550 to 699/552. Three ball exacts survive;
+source is restored and canonical objects are untouched. Chained float assignment
+would change native first-threshold rounding. Do not repeat either model.
 The latest [capture API workspace](../research/exact/CAPTURE_API_WORKSPACE.md)
 groups only description and result, restoring all five original homes in the
 140-byte frame. Complete capture improves from 873/745 to 864/726 against the

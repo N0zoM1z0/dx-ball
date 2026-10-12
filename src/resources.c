@@ -174,9 +174,8 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
     DxBallUInt pixel_count;
     DxBallByte *pixels, *pixel;
     DxBallSprite *record;
-    DxBallSurfaceDesc description;
     DxBallColorKey key;
-    DxBallInt result, row, column, cursor, pitch;
+    DxBallInt row, column, cursor, pitch;
     saved_bank = dxball_sprite_bank;
     dxball_select_sprite_bank(bank);
     for (sprite = 1; sprite < 254; sprite = sprite + 1)
@@ -210,50 +209,56 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.left = 0;
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.bottom = height;
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.right = width;
-        description.size = sizeof(description);
-        description.flags = 0xf;
-        if (dxball_sprite_banks[dxball_sprite_bank].allocation_mode == 1) {
-            description.caps = 0x40;
-        } else {
-            description.caps = 0x840;
-        }
-        description.height = height;
-        description.width = width;
-        result = dxball_direct_draw->vtable->create_surface(
-            dxball_direct_draw, &description,
-            &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
-        /* Creation failure preserves the target's partial owner and leaks;
-           it does not restore the bank, close the stream or free these buffers. */
-        if (result != 0)
-            return;
-        key.low = 0;
-        key.high = 0;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
-        description.flags = 0x7f9ee;
-        do {
-            result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
-                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &description);
-        } while (result != 0);
-        /* GetSurfaceDesc supplies the row stride before Lock; later API writes
-           to the descriptor or current record do not replace that snapshot. */
-        pitch = description.pitch;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = pitch;
-        do {
-            result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->lock(
-                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
-                NULL, &description, 0, NULL);
-        } while (result != 0);
-        cursor = 0;
-        for (row = height - 1; row >= 0; --row) {
-            for (column = 0; column <= width - 1; ++column) {
-                pixel = description.pixels + row * pitch + column;
-                *pixel = pixels[cursor];
-                cursor = cursor + 1;
+        {
+            struct {
+                DxBallSurfaceDesc description;
+                DxBallInt result;
+            } api;
+            api.description.size = sizeof(api.description);
+            api.description.flags = 0xf;
+            if (dxball_sprite_banks[dxball_sprite_bank].allocation_mode == 1) {
+                api.description.caps = 0x40;
+            } else {
+                api.description.caps = 0x840;
             }
+            api.description.height = height;
+            api.description.width = width;
+            api.result = dxball_direct_draw->vtable->create_surface(
+                dxball_direct_draw, &api.description,
+                &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
+            /* Creation failure preserves the target's partial owner and leaks;
+               it does not restore the bank, close the stream or free these buffers. */
+            if (api.result != 0)
+                return;
+            key.low = 0;
+            key.high = 0;
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
+                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
+            api.description.flags = 0x7f9ee;
+            do {
+                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
+                    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &api.description);
+            } while (api.result != 0);
+            /* GetSurfaceDesc supplies the row stride before Lock; later API writes
+               to the descriptor or current record do not replace that snapshot. */
+            pitch = api.description.pitch;
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = pitch;
+            do {
+                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->lock(
+                    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
+                    NULL, &api.description, 0, NULL);
+            } while (api.result != 0);
+            cursor = 0;
+            for (row = height - 1; row >= 0; --row) {
+                for (column = 0; column <= width - 1; ++column) {
+                    pixel = row * pitch + column + api.description.pixels;
+                    *pixel = pixels[cursor];
+                    cursor = cursor + 1;
+                }
+            }
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->unlock(
+                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
         }
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->unlock(
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
         dxball_heap_release(pixels);
     }
     fclose(dxball_board_file);

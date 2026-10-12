@@ -29,6 +29,10 @@ decoded. Private source, comparison and rejection receipt are retained in
 
 ## Sprite-bank transfer
 
+The later [112-byte API workspace](BANK_API_WORKSPACE.md) preserves the accepted
+glyph search and produces a 1475-byte loader with 76 differences. The rejected
+whole-frame and split-record diagnostics below describe earlier models.
+
 The complete1475-byte original body reserves180 stack bytes. Its descriptor,
 color key, file metadata, saved bank, allocation pointers, row stride and pixel
 cursors all have actual producers and consumers. A whole file/surface workspace

@@ -24,6 +24,7 @@ None of these candidates is already exact. The accepted total remains
 | `store-editor-board` | 52 | 58 | 42 |
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
+| `load-sprite-bank` | 1475 | 1475 | 76 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-paddle` | 677 | 677 | 104 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
@@ -48,7 +49,6 @@ None of these candidates is already exact. The accepted total remains
 | `last-brick` | 1057 | 1067 | 992 |
 | `game-frame` | 1688 | 1691 | 1155 |
 | `render-rotated-sprite` | 1572 | 1451 | 1475 |
-| `load-sprite-bank` | 1475 | 1655 | 1577 |
 
 Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
@@ -76,6 +76,10 @@ The [capture allocation phases](CAPTURE_ALLOCATION_PHASES.md) reduce its
 comparison from 803 to 745 differences. The latest
 [API workspace](CAPTURE_API_WORKSPACE.md) restores the remaining frame homes
 and reduces differences to 726; the other 40 candidate hashes are unchanged.
+
+The [sprite-bank API workspace](BANK_API_WORKSPACE.md) restores the complete
+1475-byte loader size and reduces its comparison from 1577 to 76 differences,
+while preserving all 12 resource exacts.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

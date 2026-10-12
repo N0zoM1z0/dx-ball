@@ -180,3 +180,26 @@ Private full comparisons and rejected sources are retained in
 `.analysis/measurement-loop-scope-20261013/` and
 `.analysis/line-traversal-scope-20261013/`. Verified gzip copies release 16,384
 allocated bytes while retaining the complete inputs and emitted objects.
+
+## Rebound contact stages
+
+Original rebound reuses one float slot for the paddle left edge, relative offset
+and normalized contact position. At `0x411476`, an intermediate FST writes the
+offset without popping the x87 value before division. The first threshold uses
+the retained quotient; later thresholds use the stored float.
+
+A shared-source stage reuses the float local and restores the intermediate write
+while retaining the existing precise carrier for division and the first check.
+Its complete comparison worsens from 687/681 with 550 differences to 699/681
+with 552. All three accepted ball bodies in that recipe remain exact. The stage
+is rejected and source restored; canonical objects and receipts are untouched.
+
+A carrier-free chained assignment would return a float before the first native
+comparison. For an offset of 7 and width of 100, that rounds above double 0.07
+and changes the branch. No compiler-specific source body is introduced. The
+original expression and portable precision requirement remain unresolved.
+
+Original REA evidence is
+`ev_6055fe1d318fa3f71d76b5cdbbbe862a3944dd9890035a53264b8ccfa2d7a074`.
+Private source, compilation and complete comparison are retained in
+`.analysis/rebound-contact-stages-20261013/`. No game or new fixture runs.
