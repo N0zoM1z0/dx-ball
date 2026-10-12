@@ -287,48 +287,55 @@ void dxball_release_sound(DxBallInt slot)
 /* FUNCTION: DXBALL 0x00405990 */
 void dxball_load_sound(DxBallInt slot, const char *path)
 {
-    void *file, *first, *second;
-    const void *format, *data;
-    DxBallUInt bytes, first_bytes, second_bytes;
-    DxBallSound *sound;
-    DxBallInt result;
+    struct {
+        const void *format;
+        DxBallSound *sound;
+        DxBallUInt bytes;
+        void *second;
+        const void *data;
+        DxBallUInt second_bytes;
+        void *file;
+        void *first;
+        DxBallUInt first_bytes;
+        DxBallInt result;
+    } upload;
 
-    file = NULL;
+    upload.file = NULL;
     dxball_release_sound(slot);
-    sound = (DxBallSound *)dxball_runtime_malloc(sizeof(*sound) + 1);
-    if (sound == NULL) exit(1);
-    dxball_sounds[slot] = sound;
-    file = dxball_load_binary_file(path, file, 1);
-    if (file == NULL) {
+    upload.sound = (DxBallSound *)dxball_runtime_malloc(sizeof(*upload.sound) + 1);
+    if (upload.sound == NULL) exit(1);
+    dxball_sounds[slot] = upload.sound;
+    upload.file = dxball_load_binary_file(path, upload.file, 1);
+    if (upload.file == NULL) {
         dxball_heap_release(dxball_sounds[slot]);
         return;
     }
-    if (!dxball_parse_wave(file, &format, &data, &bytes)) {
-        dxball_heap_release(file);
+    if (!dxball_parse_wave(upload.file, &upload.format, &upload.data, &upload.bytes)) {
+        dxball_heap_release(upload.file);
         dxball_heap_release(dxball_sounds[slot]);
         return;
     }
     if (dxball_sound_device != NULL) {
-        result = dxball_create_sound_buffer(dxball_sound_device,
-            &dxball_sounds[slot]->buffer, format, bytes);
-        if (result != 0) {
-            dxball_heap_release(file);
+        upload.result = dxball_create_sound_buffer(dxball_sound_device,
+            &dxball_sounds[slot]->buffer, upload.format, upload.bytes);
+        if (upload.result != 0) {
+            dxball_heap_release(upload.file);
             dxball_heap_release(dxball_sounds[slot]);
             return;
         }
-        result = dxball_sounds[slot]->buffer->vtable->lock(
-            dxball_sounds[slot]->buffer, 0, bytes,
-            &first, &first_bytes, &second, &second_bytes, 0);
-        if (result != 0) {
-            dxball_heap_release(file);
+        upload.result = dxball_sounds[slot]->buffer->vtable->lock(
+            dxball_sounds[slot]->buffer, 0, upload.bytes,
+            &upload.first, &upload.first_bytes, &upload.second, &upload.second_bytes, 0);
+        if (upload.result != 0) {
+            dxball_heap_release(upload.file);
             dxball_heap_release(dxball_sounds[slot]);
             return;
         }
-        memcpy(first, data, first_bytes);
-        if (second_bytes != 0)
-            memcpy(second, (const DxBallByte *)data + first_bytes, second_bytes);
+        memcpy(upload.first, upload.data, upload.first_bytes);
+        if (upload.second_bytes != 0)
+            memcpy(upload.second, (const DxBallByte *)upload.data + upload.first_bytes, upload.second_bytes);
         dxball_sounds[slot]->buffer->vtable->unlock(
-            dxball_sounds[slot]->buffer, first, first_bytes, second, second_bytes);
+            dxball_sounds[slot]->buffer, upload.first, upload.first_bytes, upload.second, upload.second_bytes);
         dxball_sounds[slot]->buffer->vtable->get_frequency(
             dxball_sounds[slot]->buffer, &dxball_sounds[slot]->frequency);
         dxball_sounds[slot]->buffer->vtable->get_pan(
@@ -338,7 +345,7 @@ void dxball_load_sound(DxBallInt slot, const char *path)
     } else {
         dxball_sounds[slot]->buffer = NULL;
     }
-    dxball_heap_release(file);
+    dxball_heap_release(upload.file);
     strcpy(dxball_sounds[slot]->filename, path);
     return;
 }

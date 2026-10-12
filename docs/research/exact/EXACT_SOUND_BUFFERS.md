@@ -1,5 +1,8 @@
 # Sound upload and release
 
+Historical checkpoint: upload now matches its complete 695-byte body in
+[upload-workspace recovery](EXACT_SOUND_UPLOAD_WORKSPACE.md).
+
 This batch recovers four complete bodies in `src/sound.c`, covering 1,147
 original bytes, from existing REA dossiers.
 

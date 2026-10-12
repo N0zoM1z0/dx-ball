@@ -1,5 +1,9 @@
 # Polygon scan setup and consumed span arguments
 
+Historical checkpoint: [separate sort temporaries](POLYGON_SORT_TEMPORARIES.md)
+now restore both original 80-byte frames and twenty distinct consumed homes.
+The complete candidates retain 218 differences each.
+
 Both polygon controllers now restore the original independent `live` and `next`
 zero assignments, initial `pending[next]->top` load, and consumed row-address
 local before horizontal fill. Clipped fill selects `left > 0 ? left : 0` and

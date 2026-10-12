@@ -13,19 +13,25 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **217 exact functions /51,192 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 56 authored nonexact functions.
-Sound initialization and WAV parsing now match all 1,705/269 bytes, including
-70/5 provider-unowned internal jump bytes. Consumed initialization/container/chunk
-records restore their original 324/24-byte frames. Fourteen sound exacts retain
-2,087 bytes. Two owner compilations, Linux/MinGW builds, the legacy relink with
-36 unchanged objects, 798 parser/116 initialization/eight prepare cases and all
-217 exact closures pass. All 26 original WAVs are included. No game campaign.
-See [sound workspaces](../research/exact/EXACT_SOUND_WORKSPACES.md) and
-`.analysis/wave-chunk-records-20261012/`. Continue the 56 authored candidates.
+Latest checkpoint: **218 exact functions /51,887 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 55 authored nonexact functions.
+WAV upload now matches all 695 bytes and 40 relocations. One consumed upload
+workspace restores its ten original homes; all seventeen configured sound
+functions are exact across 4,756 bytes. Polygon sorts now own distinct exchange
+pointers and retain the original index/count zero-write order. Both80-byte frames
+and20 bijective homes agree; complete1543/1592-byte candidates retain218 differences.
+One sound/two raster compilations, Linux/MinGW builds and a VC4 relink reusing35
+unchanged objects pass. Existing227 upload cases and1080 polygon cases per
+original/native andVC4/native profile pass; all218 exact closures verify.
+No game campaign. See [upload workspace](../research/exact/EXACT_SOUND_UPLOAD_WORKSPACE.md),
+[polygon temporaries](../research/exact/POLYGON_SORT_TEMPORARIES.md) and
+`.analysis/sound-upload-workspace-20261012/verification.json`. Continue the55 candidates.
 
 Recent retained source checkpoints:
 
+- [Sound workspaces](../research/exact/EXACT_SOUND_WORKSPACES.md): complete
+  1,705/269-byte initialization/parser exact, including 70/5 provider-unowned jumps;
+  fourteen prior sound companions and 922 initialization/parser/prepare cases pass.
 - [Presentation selection sort](../research/exact/EXACT_PRESENT_SORT_RECORD.md):
   complete 296-byte sort exact, nine display companions and 60 sort/146 merge/60
   presentation cases pass.
@@ -76,7 +82,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 56 authored non-exact functions. Use current manifest objects
+Next priority: the 55 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -174,11 +180,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 217 |
-| Exact code / separate metadata bytes | 51,192 /136 |
+| Complete exact functions | 218 |
+| Exact code / separate metadata bytes | 51,887 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/wave-chunk-records-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/sound-upload-workspace-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

@@ -1254,7 +1254,7 @@ symbol = "??KDxBallFixedPoint@@QAE?AV0@V0@@Z"
 target_address = 0x40b2d0
 size = 0xb6
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1299", addend = 0x0, target = 0x40b36b },
+  { offset = 0x6, type = "DIR32", symbol = "$L1301", addend = 0x0, target = 0x40b36b },
   { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x33, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b240 },
@@ -1262,17 +1262,17 @@ relocations = [
   { offset = 0x84, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
   { offset = 0x8d, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
   { offset = 0x96, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
-  { offset = 0x9c, type = "DIR32", symbol = "$T1306", addend = 0x0, target = 0x420350 },
+  { offset = 0x9c, type = "DIR32", symbol = "$T1308", addend = 0x0, target = 0x420350 },
   { offset = 0xa1, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
   { offset = 0xab, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
 ]
 build = "raster"
 data_comdats = [
-  { symbol = "$T1306", target_address = 0x420350, size = 0x38, relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1307", addend = 0x0, target = 0x420370 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1304", addend = 0x0, target = 0x40b346 },
-  { offset = 0x2c, type = "DIR32", symbol = "$L1300", addend = 0x0, target = 0x40b362 },
-  { offset = 0x34, type = "DIR32", symbol = "$L1301", addend = 0x0, target = 0x40b359 }
+  { symbol = "$T1308", target_address = 0x420350, size = 0x38, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1309", addend = 0x0, target = 0x420370 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1306", addend = 0x0, target = 0x40b346 },
+  { offset = 0x2c, type = "DIR32", symbol = "$L1302", addend = 0x0, target = 0x40b362 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1303", addend = 0x0, target = 0x40b359 }
 ] }
 ]
 
@@ -1290,19 +1290,19 @@ symbol = "??MDxBallFixedPoint@@QAEHV0@@Z"
 target_address = 0x40b3c0
 size = 0x81
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1310", addend = 0x0, target = 0x40b426 },
+  { offset = 0x6, type = "DIR32", symbol = "$L1312", addend = 0x0, target = 0x40b426 },
   { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x61, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
-  { offset = 0x67, type = "DIR32", symbol = "$T1315", addend = 0x0, target = 0x420388 },
+  { offset = 0x67, type = "DIR32", symbol = "$T1317", addend = 0x0, target = 0x420388 },
   { offset = 0x6c, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
   { offset = 0x76, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
 ]
 build = "raster"
 data_comdats = [
-  { symbol = "$T1315", target_address = 0x420388, size = 0x28, relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1316", addend = 0x0, target = 0x4203a8 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1311", addend = 0x0, target = 0x40b41d }
+  { symbol = "$T1317", target_address = 0x420388, size = 0x28, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1318", addend = 0x0, target = 0x4203a8 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1313", addend = 0x0, target = 0x40b41d }
 ] }
 ]
 
@@ -1311,19 +1311,19 @@ symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z"
 target_address = 0x40b450
 size = 0x6e
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1319", addend = 0x0, target = 0x40b4a3 },
+  { offset = 0x6, type = "DIR32", symbol = "$L1321", addend = 0x0, target = 0x40b4a3 },
   { offset = 0xc, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 },
   { offset = 0x4e, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0x0, target = 0x40b260 },
-  { offset = 0x54, type = "DIR32", symbol = "$T1322", addend = 0x0, target = 0x4203b0 },
+  { offset = 0x54, type = "DIR32", symbol = "$T1324", addend = 0x0, target = 0x4203b0 },
   { offset = 0x59, type = "REL32", symbol = "___CxxFrameHandler", addend = 0x0, target = 0x418570 },
   { offset = 0x63, type = "DIR32", symbol = "__except_list", addend = 0x0, target = 0x0 }
 ]
 build = "raster"
 data_comdats = [
-  { symbol = "$T1322", target_address = 0x4203b0, size = 0x28, relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1323", addend = 0x0, target = 0x4203d0 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1320", addend = 0x0, target = 0x40b49a }
+  { symbol = "$T1324", target_address = 0x4203b0, size = 0x28, relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "$T1325", addend = 0x0, target = 0x4203d0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1322", addend = 0x0, target = 0x40b49a }
 ] }
 ]
 
@@ -1332,7 +1332,7 @@ symbol = "_dxball_fill_triangle"
 target_address = 0x40AB90
 size = 1710
 relocations = [
-  { offset = 0x6, type = "DIR32", symbol = "$L1275", addend = 0, target = 0x40B226 },
+  { offset = 0x6, type = "DIR32", symbol = "$L1277", addend = 0, target = 0x40B226 },
   { offset = 0xC, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
   { offset = 0x14, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
   { offset = 0x22, type = "REL32", symbol = "??0DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B240 },
@@ -1397,34 +1397,34 @@ relocations = [
   { offset = 0x67F, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
   { offset = 0x688, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
   { offset = 0x691, type = "REL32", symbol = "??1DxBallFixedPoint@@QAE@XZ", addend = 0, target = 0x40B260 },
-  { offset = 0x697, type = "DIR32", symbol = "$T1295", addend = 0, target = 0x4202B0 },
+  { offset = 0x697, type = "DIR32", symbol = "$T1297", addend = 0, target = 0x4202B0 },
   { offset = 0x69C, type = "REL32", symbol = "___CxxFrameHandler", addend = 0, target = 0x418570 },
   { offset = 0x6A5, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x0 },
 ]
 build = "raster"
 
 [[candidates.fill-triangle.data_comdats]]
-symbol = "$T1295"
+symbol = "$T1297"
 target_address = 0x4202B0
 size = 160
 relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "$T1297", addend = 0, target = 0x4202D0 },
-  { offset = 0x24, type = "DIR32", symbol = "$L1276", addend = 0, target = 0x40B21D },
-  { offset = 0x2C, type = "DIR32", symbol = "$L1277", addend = 0, target = 0x40B214 },
-  { offset = 0x34, type = "DIR32", symbol = "$L1278", addend = 0, target = 0x40B20B },
-  { offset = 0x3C, type = "DIR32", symbol = "$L1279", addend = 0, target = 0x40B202 },
-  { offset = 0x44, type = "DIR32", symbol = "$L1281", addend = 0, target = 0x40B1F0 },
-  { offset = 0x4C, type = "DIR32", symbol = "$L1280", addend = 0, target = 0x40B1F9 },
-  { offset = 0x54, type = "DIR32", symbol = "$L1282", addend = 0, target = 0x40B1E7 },
-  { offset = 0x5C, type = "DIR32", symbol = "$L1283", addend = 0, target = 0x40B1DE },
-  { offset = 0x64, type = "DIR32", symbol = "$L1285", addend = 0, target = 0x40B1CC },
-  { offset = 0x6C, type = "DIR32", symbol = "$L1284", addend = 0, target = 0x40B1D5 },
-  { offset = 0x74, type = "DIR32", symbol = "$L1286", addend = 0, target = 0x40B1C3 },
-  { offset = 0x7C, type = "DIR32", symbol = "$L1287", addend = 0, target = 0x40B1BA },
-  { offset = 0x84, type = "DIR32", symbol = "$L1289", addend = 0, target = 0x40B1A8 },
-  { offset = 0x8C, type = "DIR32", symbol = "$L1288", addend = 0, target = 0x40B1B1 },
-  { offset = 0x94, type = "DIR32", symbol = "$L1290", addend = 0, target = 0x40B19F },
-  { offset = 0x9C, type = "DIR32", symbol = "$L1291", addend = 0, target = 0x40B196 },
+  { offset = 0x8, type = "DIR32", symbol = "$T1299", addend = 0, target = 0x4202D0 },
+  { offset = 0x24, type = "DIR32", symbol = "$L1278", addend = 0, target = 0x40B21D },
+  { offset = 0x2C, type = "DIR32", symbol = "$L1279", addend = 0, target = 0x40B214 },
+  { offset = 0x34, type = "DIR32", symbol = "$L1280", addend = 0, target = 0x40B20B },
+  { offset = 0x3C, type = "DIR32", symbol = "$L1281", addend = 0, target = 0x40B202 },
+  { offset = 0x44, type = "DIR32", symbol = "$L1283", addend = 0, target = 0x40B1F0 },
+  { offset = 0x4C, type = "DIR32", symbol = "$L1282", addend = 0, target = 0x40B1F9 },
+  { offset = 0x54, type = "DIR32", symbol = "$L1284", addend = 0, target = 0x40B1E7 },
+  { offset = 0x5C, type = "DIR32", symbol = "$L1285", addend = 0, target = 0x40B1DE },
+  { offset = 0x64, type = "DIR32", symbol = "$L1287", addend = 0, target = 0x40B1CC },
+  { offset = 0x6C, type = "DIR32", symbol = "$L1286", addend = 0, target = 0x40B1D5 },
+  { offset = 0x74, type = "DIR32", symbol = "$L1288", addend = 0, target = 0x40B1C3 },
+  { offset = 0x7C, type = "DIR32", symbol = "$L1289", addend = 0, target = 0x40B1BA },
+  { offset = 0x84, type = "DIR32", symbol = "$L1291", addend = 0, target = 0x40B1A8 },
+  { offset = 0x8C, type = "DIR32", symbol = "$L1290", addend = 0, target = 0x40B1B1 },
+  { offset = 0x94, type = "DIR32", symbol = "$L1292", addend = 0, target = 0x40B19F },
+  { offset = 0x9C, type = "DIR32", symbol = "$L1293", addend = 0, target = 0x40B196 },
 ]
 
 [builds.list_initializers]
@@ -4769,12 +4769,12 @@ relocations = [
   { offset = 131, type = "DIR32", symbol = "_dxball_sounds", addend = 0, target = 0x4265d0 },
 ]
 
-[candidates.load-sound]
+[units.load-sound]
 build = "sound"
 symbol = "_dxball_load_sound"
 target_address = 0x405990
 size = 695
-boundary_evidence = "docs/research/exact/EXACT_SOUND_BUFFERS.md; full RET-inclusive REA evidence and genuine original call/data targets"
+boundary_evidence = "docs/research/exact/EXACT_SOUND_BUFFERS.md; docs/research/exact/EXACT_SOUND_UPLOAD_WORKSPACE.md; ev_e5e44144f4d74b3812d2c83fe7b7b649dde02f9a2107482ff677eb58455dd745"
 relocations = [
   { offset = 21, type = "REL32", symbol = "_dxball_release_sound", addend = 0, target = 0x4058f0 },
   { offset = 31, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },

@@ -298,3 +298,13 @@ match all 1,705/269 bytes, including 70/5 internal jump bytes outside the provid
 owned ranges. Fourteen sound companions and 922 existing parser/initialization/
 prepare cases pass. Current totals: 217 exact functions /51,192 code bytes
 /136 metadata bytes; 56 authored functions remain nonexact.
+
+## Exact WAV upload and polygon temporaries (2026-10-12)
+
+[WAV upload](exact/EXACT_SOUND_UPLOAD_WORKSPACE.md) now matches all695 bytes
+and40 bindings, completing the seventeen configured sound exacts.
+[Polygon temporaries](exact/POLYGON_SORT_TEMPORARIES.md) restore both80-byte
+frames and20 distinct homes; complete candidates retain218 differences each.
+Existing227 upload cases and1080 polygon cases per original/native andVC4/native
+profile pass. Current totals:218 exact functions /51,887 code bytes /136 metadata;
+55 authored functions remain nonexact.
