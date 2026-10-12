@@ -32,6 +32,11 @@ Earlier checkpoints below retain their own scopes, products and counts.
 
 ## Current text and line source recovery
 
+The subsequent [locked-cursor recovery](exact/LINE_LOCKED_CURSOR.md) restores
+the complete445-byte line footprint and all140 frame homes. Nine differences
+remain in three signed comparison groups; five exact UI companions stay exact.
+The following compiler comparisons describe the earlier checkpoint.
+
 Measurement at `0x404FD0` now restores the local glyph-search loop present in
 the original instructions. Its former helper call had equivalent results but
 was absent from this body. The count-first search excludes the final slot;

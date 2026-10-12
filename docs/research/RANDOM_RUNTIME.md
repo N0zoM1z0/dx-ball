@@ -1,5 +1,10 @@
 # Original random state and portable defaults
 
+The subsequent [optimized compilation](exact/EXACT_RANDOM_RUNTIME.md) matches
+both complete RNG functions, totaling52 bytes, and their four-byte initializer.
+Their source is unchanged. The current ledger reaches209 exact functions and
+44884 code bytes; the unoptimized compiler results below are historical.
+
 The real native default previously used host `rand/srand`. With seed 1, the
 unmodified original game returns `41, 18467, 6334, 26500, 19169`, while the old
 native library returns `17767, 9158, 6249, 18547, 23633` through the actual

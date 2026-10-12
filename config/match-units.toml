@@ -9546,28 +9546,27 @@ relocations = [
 source = "src/random.c"
 object = "build/exact/random.obj"
 inputs = ["src/random.c", "src/random.h", "src/state_types.h"]
-flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
 
-[candidates.crt-srand]
+[units.crt-srand]
 build = "random"
 symbol = "_dxball_crt_srand"
 target_address = 0x4179f0
 size = 10
-boundary_evidence = "docs/research/RANDOM_RUNTIME.md; observed52-byte CRT code and state writes"
+boundary_evidence = "docs/research/RANDOM_RUNTIME.md; docs/research/exact/EXACT_RANDOM_RUNTIME.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
+  { offset = 5, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4, data_hex = "01000000" },
 ]
 
-[candidates.crt-rand]
+[units.crt-rand]
 build = "random"
 symbol = "_dxball_crt_rand"
 target_address = 0x417a00
 size = 42
-boundary_evidence = "docs/research/RANDOM_RUNTIME.md; observed52-byte CRT code and state writes"
+boundary_evidence = "docs/research/RANDOM_RUNTIME.md; docs/research/exact/EXACT_RANDOM_RUNTIME.md"
 relocations = [
-  { offset = 7, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
-  { offset = 38, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
-  { offset = 43, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4 },
+  { offset = 1, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4, data_hex = "01000000" },
+  { offset = 29, type = "DIR32", symbol = "_dxball_random_state", addend = 0, target = 0x4230f4, data_hex = "01000000" },
 ]
 
 [units.board-tile-sprite]

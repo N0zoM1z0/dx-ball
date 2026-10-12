@@ -51,45 +51,55 @@ void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count,
 void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
     DxBallInt x2, DxBallInt y2, DxBallByte color)
 {
-    DxBallSurfaceDesc desc;
-    DxBallByte *pixel;
-    DxBallInt dx, dy, step_x, step_y, error = 0, i, result;
-    desc.size = sizeof(desc);
-    desc.flags = 14;
-    ((DxBallDDSurface *)handle)->vtable->get_desc((DxBallDDSurface *)handle, &desc);
-    do {
-        result = ((DxBallDDSurface *)handle)->vtable->lock(
-            (DxBallDDSurface *)handle, NULL, &desc, 0, NULL);
-    } while (result != 0);
-    pixel = desc.pixels;
-    pixel += desc.pitch * y1 + x1;
-    dx = x2 - x1; dy = y2 - y1;
-    if (dx >= 0) {
-        step_x = 1;
-    } else {
-        step_x = -1;
-        dx = -dx;
-    }
-    if (dy >= 0) {
-        step_y = desc.pitch;
-    } else {
-        step_y = -desc.pitch;
-        dy = -dy;
-    }
-    if (dy < dx) {
-        for (i = 0; i <= dx; ++i) {
-            *pixel = color; error += dy;
-            if (error > dx) { error -= dx; pixel += step_y; }
-            pixel += step_x;
+    DxBallInt i;
+    {
+        DxBallInt dx, dy, error = 0;
+        {
+            DxBallSurfaceDesc desc;
+            DxBallInt result;
+            desc.size = sizeof(desc);
+            desc.flags = 14;
+            ((DxBallDDSurface *)handle)->vtable->get_desc((DxBallDDSurface *)handle, &desc);
+            do {
+                result = ((DxBallDDSurface *)handle)->vtable->lock(
+                    (DxBallDDSurface *)handle, NULL, &desc, 0, NULL);
+            } while (result != 0);
+            {
+                DxBallByte *pixel;
+                /* X advances one byte; Y advances one row of the locked plane. */
+                DxBallInt step[2];
+                pixel = desc.pixels;
+                pixel += desc.pitch * y1 + x1;
+                dx = x2 - x1; dy = y2 - y1;
+                if (dx >= 0) {
+                    step[0] = 1;
+                } else {
+                    step[0] = -1;
+                    dx = -dx;
+                }
+                if (dy >= 0) {
+                    step[1] = desc.pitch;
+                } else {
+                    step[1] = -desc.pitch;
+                    dy = -dy;
+                }
+                if (dx > dy) {
+                    for (i = 0; i <= dx; ++i) {
+                        *pixel = color; error += dy;
+                        if (error > dx) { error -= dx; pixel += step[1]; }
+                        pixel += step[0];
+                    }
+                } else {
+                    for (i = 0; i <= dy; ++i) {
+                        *pixel = color; error += dx;
+                        if (error > 0) { error -= dy; pixel += step[0]; }
+                        pixel += step[1];
+                    }
+                }
+            }
+            ((DxBallDDSurface *)handle)->vtable->unlock((DxBallDDSurface *)handle, NULL);
         }
-    } else {
-        for (i = 0; i <= dy; ++i) {
-            *pixel = color; error += dx;
-            if (error > 0) { error -= dy; pixel += step_x; }
-            pixel += step_y;
-        }
     }
-    ((DxBallDDSurface *)handle)->vtable->unlock((DxBallDDSurface *)handle, NULL);
     return;
 }
 

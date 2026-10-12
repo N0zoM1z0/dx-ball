@@ -13,6 +13,25 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
+Latest checkpoint reaches209 exact functions/44884 code bytes/136 metadata.
+The unchanged RNG source now matches both original runtime functions (10+42
+bytes) under /O2 /MT; its complete initialized state word is attested. The legacy
+builder consumes that owner recipe. An initial matching /ML stage failed game
+linking with duplicate CRT startup symbols; the matching /MT stage links cleanly.
+See [exact RNG](../research/exact/EXACT_RANDOM_RUNTIME.md) and
+`.analysis/random-optimized-model-20261012/`. Source285, semantic249 and authored
+nonexact64 remain unchanged. All209 complete accepted extents and compiler
+closures verify. No game run or fresh RNG case suite.
+
+The line owner now emits all445 original bytes with nine strict differences,
+improved from409/445bytes and379 differences. All140 frame homes and121 instruction
+boundaries/widths agree; only three signed comparison groups differ. Five exact
+UI companions are preserved; Linux/MinGW builds and486 existing line/pixel cases
+pass. See [locked cursor](../research/exact/LINE_LOCKED_CURSOR.md) and
+`.analysis/line-locked-cursor-20261012/`. Negating the three guards changes no
+comparison bytes; the diagnostic is rejected. Public sprite-prototype variants
+lose established resource exacts and are also rejected; do not repeat them.
+
 Latest source recovery restores two actual initial zero writes and three m32
 division operands/fallback calls in the software renderer. Its frame is now424
 bytes and instruction count365, matching the original totals. Complete current

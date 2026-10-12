@@ -38,3 +38,10 @@ existing complete comparisons, including every remaining candidate difference.
 Debug information does not resolve their stack-home allocation. The two objects
 and full literal-alias checks are retained in
 `.analysis/debug-compiler-model-20261012/`; canonical recipes are unchanged.
+
+Removing names from the public unkeyed-blit prototype makes its complete195-byte
+candidate exact, but loses the existing draw-sprite and glyph-search matches.
+Applying the same declaration style to both keyed/unkeyed prototypes also loses
+stretch-keyed-sprite. Both proposals are rejected; the public header and canonical
+resource object are unchanged. Full owner comparisons are retained in
+`.analysis/unkeyed-prototype-20261012/`. Do not repeat these declaration variants.
