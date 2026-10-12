@@ -1,5 +1,10 @@
 # Software rotation pixel traversal
 
+The subsequent [origin-storage restoration](ROTATION_ORIGIN_STORAGE.md) recovers
+the two zero writes and m32 operands left open here. Its current renderer is
+1,451/1,572 bytes with 1,475 differences; all four exact companions are preserved.
+The compiler products and comparisons below describe the earlier checkpoint.
+
 `dxball_render_rotated_sprite` at `0x4026A0` now restores the original per-pixel
 source cursor, pitch rollover, origin-dimension copies, destination-address
 stores, live surface operands and ignored Unlock-result writes. The existing

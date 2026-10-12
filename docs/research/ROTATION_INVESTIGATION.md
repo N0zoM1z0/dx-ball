@@ -1,5 +1,11 @@
 # Software sprite rotation
 
+The latest [origin-storage restoration](exact/ROTATION_ORIGIN_STORAGE.md)
+recovers the two omitted zero writes and three float division operands/fallbacks.
+The current renderer is1,451/1,572bytes with1,475 strict differences and a424-byte
+frame. Four rotation exacts remain accepted; all695 existing pixel checks pass.
+The following traversal figures describe their earlier checkpoint.
+
 The [current pixel-traversal recovery](exact/ROTATION_PIXEL_TRAVERSAL.md) restores
 the actual unsigned per-pixel rollover, origin copies, destination pointer stores,
 live API operands and ignored Unlock-result writes. Fresh existing pixel checks

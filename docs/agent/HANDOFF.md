@@ -13,6 +13,18 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
+Latest source recovery restores two actual initial zero writes and three m32
+division operands/fallback calls in the software renderer. Its frame is now424
+bytes and instruction count365, matching the original totals. Complete current
+1451/original1572bytes retains1475 differences, improved from1491. Four exact
+rotation companions remain exact; totals stay207/44832/136. One rotation owner
+compile, Linux/MinGW builds, legacy relink with36 unchanged objects,695 existing
+pixel comparisons and all207 exact closures pass. No game run. See
+[origin storage](../research/exact/ROTATION_ORIGIN_STORAGE.md) and
+`.analysis/rotation-origin-storage-20261012/`. Continue the64 remaining authored
+non-exact functions. Geometry/core `/Z7` diagnostics do not improve comparisons;
+do not repeat them without new compiler evidence.
+
 Exact-first recovery resumes with the tile mapper at 0x0040CCF0: one result
 local and a common return replace direct case returns and the added abort.
 The entire 426-byte body, 92 inline switch-table bytes and 24 address bindings

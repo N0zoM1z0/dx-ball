@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+static const float origin_divisor = 2.0f;
+
 /* FUNCTION: DXBALL 0x004026A0 */
 void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
                                   DxBallInt slot, DxBallInt angle)
@@ -10,12 +12,17 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
     DxBallUInt source_column = 0;
     DxBallUInt width = (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->width;
     DxBallUInt height = (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->height;
+    /* Two original frame words are zeroed here and never read afterward. */
+    DxBallUInt unclassified_zero_first = 0, unclassified_zero_second = 0;
     DxBallSurfaceDesc destination_desc, source_desc;
     DxBallUInt origin_width, origin_height;
     DxBallByte *pixel;
     DxBallInt column, row, rounded_x, rounded_y, truncated_x, truncated_y, result;
     double row_x, row_y, x, y, column_dx, column_dy, row_dx, row_dy;
     double first_x_term, first_y_term;
+
+    (void)unclassified_zero_first;
+    (void)unclassified_zero_second;
 
     /* Dimensions are sampled before API calls; surface globals are read again
        at each API boundary, including lock retries and final unlocks. */
@@ -40,12 +47,12 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
     origin_width = width;
     origin_height = height;
 
-    first_x_term = (double)(-((long double)origin_width * dxball_cosine(angle) / 2.0f) +
+    first_x_term = (double)(-((long double)origin_width * dxball_cosine(angle) / origin_divisor) +
         (long double)center_x);
     row_x = (double)((long double)first_x_term -
-        (long double)origin_width * dxball_sine(angle) / 2.0f);
+        (long double)origin_width * dxball_sine(angle) / origin_divisor);
     first_y_term = (double)((long double)center_y +
-        (long double)origin_height * dxball_sine(angle) / 2.0f);
+        (long double)origin_height * dxball_sine(angle) / origin_divisor);
     row_y = (double)((long double)first_y_term -
         (long double)origin_height * dxball_cosine(angle) / 2.046);
     column_dx = dxball_cosine(angle);

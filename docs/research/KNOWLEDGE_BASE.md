@@ -245,3 +245,13 @@ Other semantic input inventories were refreshed for the source/build-policy
 change while keeping their historical scopes and case counts. Private inputs,
 original REA record hashes, compiler products, full comparisons and the
 23-case receipt are retained in `.analysis/exact-board-mapper-20261012/`.
+
+## Rotation origin storage (2026-10-12)
+
+The [renderer follow-up](exact/ROTATION_ORIGIN_STORAGE.md) restores two original
+zero writes and the first three divisions' float operands and m32 FDIV fallback
+calls. The current frame is424bytes and body365instructions; its complete
+1451/1572-byte comparison retains1475 differences. All four rotation exacts
+remain accepted. Existing695 pixel comparisons and Linux/MinGW/VC4 builds pass;
+the accepted total stays207 functions/44832code bytes. Evidence and cleanup
+receipts are in `.analysis/rotation-origin-storage-20261012/`.

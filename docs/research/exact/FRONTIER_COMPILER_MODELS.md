@@ -32,3 +32,9 @@ Private inputs, compiler outputs and complete comparisons are retained in
 cleanup receipt are in `.analysis/exact-frontier-20261012/`. Only a hash-equal
 duplicate diagnostic object was removed. No game run or portable rebuild was
 needed for the rejected changes.
+
+A later `/Z7` diagnostic on the geometry and core owners preserves all their
+existing complete comparisons, including every remaining candidate difference.
+Debug information does not resolve their stack-home allocation. The two objects
+and full literal-alias checks are retained in
+`.analysis/debug-compiler-model-20261012/`; canonical recipes are unchanged.
