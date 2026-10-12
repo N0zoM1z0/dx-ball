@@ -122,3 +122,27 @@ Separating the two real endpoint temporaries yields the selected
 [64-byte scan/sort workspace](POLYGON_SCAN_WORKSPACE.md), with211/210 differences.
 A signed-long32 coordinate-kind diagnostic worsens those to212/214 and is
 rejected; `raster.h` is restored. No original Windows POINT type is claimed.
+
+## Owner-local Kernel clock declarations
+
+Four runtime compilations test a private SDK sample, an opaque SDK counter and
+narrow direct import declarations. The private and opaque models preserve all
+ten runtime exacts (2,282 bytes), but change the paddle candidate from677/104 to
+678/494. Seven ranking and twelve resource exacts also survive the opaque model.
+None gains a complete function. The narrow import model loses accepted effect
+blit366/332 and waiting170/6 in the display owner; startup's six exacts survive.
+All source and canonical VC4 objects are restored.
+
+The private SDK sample passes468 existing original/native clock and elapsed
+cases. An initial receipt assertion mishandles unchanged zero-count keys; the
+corrected receipt passes. Native and MinGW products are rebuilt from restored
+source. Complete original code and real relocation mappings remain the basis
+for the229 accepted exact closures. No game, provider query or online source
+search accompanies this batch.
+
+The complete comparisons, source stages and rejection receipt are retained in
+`.analysis/kernel-clock-boundary-20261012/`. This closes owner-local SDK exposure
+and opaque-counter models as an exactness improvement. The six palette compare
+groups and elapsed/measure/scroller/presentation operand commutations receive
+read-only reviews; no missing source operation or justified new state model is
+found. Their earlier equivalent spelling experiments remain closed.

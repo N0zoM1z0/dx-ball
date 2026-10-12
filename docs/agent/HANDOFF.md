@@ -15,6 +15,12 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **229 exact functions /57,649 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 44 authored nonexact functions.
+The latest owner-local Kernel clock diagnostics are rejected and all canonical
+source/VC4 products restored. Four runtime and one each gameover/resources/
+display/startup compilations close private SDK and opaque-counter models;
+the narrow declaration stage loses two display exacts. No new exact function.
+See [the retained results](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#owner-local-kernel-clock-declarations)
+and `.analysis/kernel-clock-boundary-20261012/rejection.json`. No internet or game.
 The latest [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md)
 groups64 bytes of scan/sort state while leaving two endpoint points separate.
 Complete polygon1543/211 and clipped1592/210 improve from218/218; unchanged
