@@ -350,3 +350,10 @@ their source homes; collision retains two width-read differences, game-frame thr
 MOV/LEA forms after full position correspondence. Six existing distance inputs,
 8000 rectangle cases and708 frame cases pass. Current totals:223 exact functions
 /55,481 code bytes /136 metadata bytes;50 authored functions remain nonexact.
+
+## Frame-wait cursor (2026-10-12)
+
+[Frame-wait cursor](exact/FRAME_WAIT_CURSOR.md) restores the original170-byte
+body and allfour homes in the16-byte frame. Six guard bytes remain; reversing
+the guard spelling has identical output. Ten display exacts retain2139 bytes,
+18 existing wait cases pass, and all223 exact closures stay valid.

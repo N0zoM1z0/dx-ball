@@ -1,5 +1,9 @@
 # Frame boundary and lightning control
 
+The later [frame-wait cursor](FRAME_WAIT_CURSOR.md) restores waiting to the
+original170-byte extent and four stack homes, with six guard bytes still different.
+The counts and comparisons below describe the earlier checkpoint.
+
 This batch restores four complete bodies in `src/display.c`, covering 1,674
 original bytes. It reuses the saved REA dossiers.
 

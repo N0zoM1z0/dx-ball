@@ -4531,10 +4531,10 @@ relocations = [
   { offset = 55, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
   { offset = 61, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
   { offset = 102, type = "REL32", symbol = "_dxball_current_time", addend = 0, target = 0x403450 },
-  { offset = 114, type = "DIR32", symbol = "_dxball_frame_wait_tick", addend = 0, target = 0x4228cc },
-  { offset = 130, type = "DIR32", symbol = "_dxball_frame_wait_tick", addend = 0, target = 0x4228cc },
-  { offset = 147, type = "REL32", symbol = "_dxball_current_time", addend = 0, target = 0x403450 },
-  { offset = 152, type = "DIR32", symbol = "_dxball_frame_wait_tick", addend = 0, target = 0x4228cc },
+  { offset = 0x6e, type = "DIR32", symbol = "_dxball_frame_wait_tick", addend = 0, target = 0x4228cc },
+  { offset = 0x81, type = "DIR32", symbol = "_dxball_frame_wait_tick", addend = 0, target = 0x4228cc },
+  { offset = 0x92, type = "REL32", symbol = "_dxball_current_time", addend = 0, target = 0x403450 },
+  { offset = 0x97, type = "DIR32", symbol = "_dxball_frame_wait_tick", addend = 0, target = 0x4228cc },
 ]
 
 [candidates.last-brick]

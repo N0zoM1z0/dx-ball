@@ -15,21 +15,18 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **223 exact functions /55,481 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 50 authored nonexact functions.
-Point-distance now matches all130 bytes and four CRT bindings, with its original
-48-byte frame and x87 stores. Four geometry stages recover the primary overlap
-cache and measurement workspace; angle retains109 exact bytes. Collision restores
-all24-byte frame homes but keeps two combined-width read differences. The width
-spelling reversal has no effect and is not selected; do not repeat it.
-One core compilation restores allfive source homes in game-frame. Complete379
-instruction proof leaves three embedded-list MOV/LEA forms;376 instruction byte
-sequences agree after position translation. Raw1691/1688 candidate retains1155.
-Nine core exacts retain4659 bytes. Six existing distance inputs agree across
-original/VC4/native;8000 rectangle and708 frame cases pass, with200 connected harness
-frames as subset. Linux/MinGW builds, the VC4 relink reusing35 unchanged objects
-and all223 exact closures pass. No game campaign.
-See [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md),
-[frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md) and
-`.analysis/rectangle-overlap-record-20261012/verification.json`. Continue the50 candidates.
+The latest [frame-wait cursor](../research/exact/FRAME_WAIT_CURSOR.md) restores
+waiting to170/170 bytes and allfour original stack homes; six guard comparison
+bytes remain. Guard reversal emits identical code and is closed. Two display
+compilations preserve allten accepted display functions across2139 bytes;
+18 existing wait cases pass. Linux/MinGW products and VC4 relink with36 verified
+unchanged objects pass. All223 accepted exact closures pass; no game campaign.
+Receipts: `.analysis/frame-wait-cursor-20261012/verification.json`.
+
+The preceding [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md)
+restores130 exact bytes. [Geometry/frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md)
+restore rectangle/frame homes; rectangle retains two read-order bytes, and frame
+retains three MOV/LEA forms after position translation. Continue the50 candidates.
 
 Recent retained source checkpoints:
 

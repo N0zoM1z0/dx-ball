@@ -405,19 +405,18 @@ void dxball_sort_present_regions(DxBallInt first, DxBallInt last)
 /* FUNCTION: DXBALL 0x00409610 */
 void dxball_wait_frames(DxBallInt frames)
 {
-    DxBallInt i;
-    DxBallUInt now;
-    i = 0;
+    struct { DxBallUInt now; DxBallInt index; } cursor;
+    cursor.index = 0;
     if (dxball_wait_vertical_blank != 0) {
-        while (i++ < frames) {
+        while (cursor.index++ < frames) {
             dxball_direct_draw->vtable->wait_vertical_blank(dxball_direct_draw, 1, NULL);
         }
     } else {
-        while (i++ < frames) {
+        while (cursor.index++ < frames) {
             do {
-                now = dxball_current_time();
-                if (now < dxball_frame_wait_tick) break;
-            } while (now < dxball_frame_wait_tick + 17);
+                cursor.now = dxball_current_time();
+                if (cursor.now < dxball_frame_wait_tick) break;
+            } while (cursor.now < dxball_frame_wait_tick + 17);
             dxball_frame_wait_tick = dxball_current_time();
         }
     }
