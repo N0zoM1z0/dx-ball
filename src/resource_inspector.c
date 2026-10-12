@@ -34,7 +34,7 @@ static DxBallInt DXBALL_DDCALL describe_surface(DxBallDDSurface *surface,
 }
 
 static DxBallInt DXBALL_DDCALL lock_surface(DxBallDDSurface *surface,
-    const DxBallRect *rect, DxBallSurfaceDesc *description, DxBallUInt flags, void *event)
+    DxBallRect *rect, DxBallSurfaceDesc *description, DxBallUInt flags, void *event)
 {
     (void)rect; (void)flags; (void)event;
     return describe_surface(surface, description);
@@ -47,14 +47,14 @@ static DxBallInt DXBALL_DDCALL unlock_surface(DxBallDDSurface *surface, void *pi
 }
 
 static DxBallInt DXBALL_DDCALL set_key(DxBallDDSurface *surface,
-                                      DxBallUInt flags, const DxBallColorKey *key)
+                                      DxBallUInt flags, DxBallColorKey *key)
 {
     (void)surface; (void)flags; (void)key;
     return 0;
 }
 
 static DxBallInt DXBALL_DDCALL set_entries(DxBallDDPalette *palette,
-    DxBallUInt flags, DxBallUInt start, DxBallUInt count, const DxBallPaletteEntry *entries)
+    DxBallUInt flags, DxBallUInt start, DxBallUInt count, DxBallPaletteEntry *entries)
 {
     (void)palette; (void)flags; (void)start; (void)count; (void)entries;
     return 0;

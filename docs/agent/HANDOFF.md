@@ -15,6 +15,19 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [DirectDraw pointer qualifiers](../research/exact/DDRAW_MUTABLE_POINTERS.md)
+follow mutable SDK LPRECT/LPDDCOLORKEY/LPPALETTEENTRY declarations, including
+board forwarding and typed inspector callbacks. Twelve qualifier removals in
+five files preserve operations, slots, widths and stdcall. The earlier four
+SDK-type models still retained const and did not test this correction.
+All 28 affected matching recipes preserve 221 exacts / 58,719 bytes; all 232
+closures pass and all 41 candidate code hashes are unchanged. Native/MinGW
+libraries, game transports and resource inspectors build. VC4 links 27 matching,
+five production and five unchanged objects; 235 historical inventories refresh.
+No new exact or game runs. `.analysis/ddraw-mutable-pointers-20261013/verification.json`.
+Independent SDK/source review passes with local header line and hash evidence.
+147 completed copies are gzip verified, releasing 4,632,576 allocated bytes;
+current products are preserved.
 The latest [intro score phase](../research/exact/INTRO_SCORE_PHASE.md) narrows
 text, decimal buffer and length locals to the score-present branch. Standalone
 RECT now matches EBP-16 and length EBP-20; capacities stay 32/11 and are not

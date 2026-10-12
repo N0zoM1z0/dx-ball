@@ -38,11 +38,11 @@ typedef struct DxBallDDSurfaceVTable {
     DxBallUnknownDDMethod query_interface, add_ref;
     DxBallUInt (DXBALL_DDCALL *release)(DxBallDDSurface *);
     DxBallUnknownDDMethod add_attached_surface, add_overlay_dirty_rect;
-    DxBallInt (DXBALL_DDCALL *blt)(DxBallDDSurface *, const DxBallRect *,
-                                 DxBallDDSurface *, const DxBallRect *, DxBallUInt, void *);
+    DxBallInt (DXBALL_DDCALL *blt)(DxBallDDSurface *, DxBallRect *,
+                                 DxBallDDSurface *, DxBallRect *, DxBallUInt, void *);
     DxBallUnknownDDMethod blt_batch;
     DxBallInt (DXBALL_DDCALL *blt_fast)(DxBallDDSurface *, DxBallUInt, DxBallUInt,
-                                      DxBallDDSurface *, const DxBallRect *, DxBallUInt);
+                                      DxBallDDSurface *, DxBallRect *, DxBallUInt);
     DxBallUnknownDDMethod slots_8_to_10[3];
     DxBallInt (DXBALL_DDCALL *flip)(DxBallDDSurface *, DxBallDDSurface *, DxBallUInt);
     DxBallUnknownDDMethod slot_12;
@@ -50,13 +50,13 @@ typedef struct DxBallDDSurfaceVTable {
     DxBallUnknownDDMethod slots_14_to_21[8];
     DxBallInt (DXBALL_DDCALL *get_desc)(DxBallDDSurface *, DxBallSurfaceDesc *);
     DxBallUnknownDDMethod initialize, is_lost;
-    DxBallInt (DXBALL_DDCALL *lock)(DxBallDDSurface *, const DxBallRect *,
+    DxBallInt (DXBALL_DDCALL *lock)(DxBallDDSurface *, DxBallRect *,
                                   DxBallSurfaceDesc *, DxBallUInt, void *);
     DxBallUnknownDDMethod release_dc;
     DxBallInt (DXBALL_DDCALL *restore)(DxBallDDSurface *);
     DxBallUnknownDDMethod set_clipper;
     DxBallInt (DXBALL_DDCALL *set_color_key)(DxBallDDSurface *, DxBallUInt,
-                                            const DxBallColorKey *);
+                                            DxBallColorKey *);
     DxBallUnknownDDMethod set_overlay_position;
     DxBallInt (DXBALL_DDCALL *set_palette)(DxBallDDSurface *, DxBallDDPalette *);
     DxBallInt (DXBALL_DDCALL *unlock)(DxBallDDSurface *, void *);
@@ -79,7 +79,7 @@ struct DxBallPaletteEntry { DxBallByte red, green, blue, flags; };
 typedef struct DxBallDDPaletteVTable {
     DxBallUnknownDDMethod slots_0_to_5[6];
     DxBallInt (DXBALL_DDCALL *set_entries)(DxBallDDPalette *, DxBallUInt, DxBallUInt,
-                                          DxBallUInt, const DxBallPaletteEntry *);
+                                          DxBallUInt, DxBallPaletteEntry *);
 } DxBallDDPaletteVTable;
 struct DxBallDDPalette { const DxBallDDPaletteVTable *vtable; };
 

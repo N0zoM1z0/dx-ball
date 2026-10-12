@@ -18,7 +18,7 @@ typedef struct DxBallRect {
 typedef struct DxBallRenderOps {
     void (*sprite)(DxBallInt sprite, DxBallInt x, DxBallInt y);
     void (*restore)(DxBallSurface destination, DxBallInt x, DxBallInt y,
-                    DxBallSurface source, const DxBallRect *rect, DxBallUInt flags);
+                    DxBallSurface source, DxBallRect *rect, DxBallUInt flags);
     void (*invalidate)(DxBallRect rect);
 } DxBallRenderOps;
 

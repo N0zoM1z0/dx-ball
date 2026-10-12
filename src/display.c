@@ -537,7 +537,7 @@ void dxball_draw_last_brick(void)
 }
 
 void dxball_restore_board_region(DxBallSurface destination, DxBallInt x, DxBallInt y,
-                                DxBallSurface source, const DxBallRect *rect, DxBallUInt flags)
+                                DxBallSurface source, DxBallRect *rect, DxBallUInt flags)
 {
     DxBallDDSurface *surface;
     surface = (DxBallDDSurface *)destination;

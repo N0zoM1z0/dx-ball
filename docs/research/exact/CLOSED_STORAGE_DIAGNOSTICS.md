@@ -19,6 +19,11 @@ address scheduling still adds two bytes relative to the original; canonical
 capacity. The original paddle dossier is Evidence
 `ev_0b4d5d681d951be5b6a69ac1d9d09db3cc965811c767e0b2b4f7296609cc020a`.
 
+The later [pointer-qualifier correction](DDRAW_MUTABLE_POINTERS.md) follows the
+SDK's mutable rectangle, key and palette-entry parameters. All four earlier
+SDK-type headers below retained const pointers; this was a separate question.
+The correction preserves all exact functions and leaves candidate code unchanged.
+
 The SDK diagnoses use actual declarations: pinned VC4 `windef.h` defines DWORD
 as unsigned long and RECT members as LONG; `winnt.h` defines LONG as long;
 `wtypes.h` defines HRESULT as LONG. The installed DirectDraw header corroborates
