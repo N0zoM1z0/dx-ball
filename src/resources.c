@@ -110,18 +110,18 @@ void dxball_release_sprite(DxBallInt sprite)
 void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
                            DxBallInt width, DxBallInt height)
 {
-    DxBallSprite *record;
-    DxBallSurfaceDesc description;
     DxBallColorKey key;
     DxBallRect capture;
-    DxBallInt result;
     dxball_release_sprite(sprite);
-    /* The target requests 45 bytes for the 44-byte x86 record. The last byte's
-       purpose is unclassified; pointer-sized host storage grows naturally. */
-    record = (DxBallSprite *)dxball_runtime_malloc(sizeof(DxBallSprite) + 1);
-    if (record == NULL)
-        exit(1);
-    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
+    {
+        DxBallSprite *record;
+        /* The target requests 45 bytes for the 44-byte x86 record. The last byte's
+           purpose is unclassified; pointer-sized host storage grows naturally. */
+        record = (DxBallSprite *)dxball_runtime_malloc(sizeof(DxBallSprite) + 1);
+        if (record == NULL)
+            exit(1);
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
+    }
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width = width;
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height = height;
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->code = 0;
@@ -130,25 +130,29 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.left = 0;
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.bottom = height;
     dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.right = width;
-    description.size = sizeof(description);
-    description.flags = 0xf;
-    description.caps = 0x840;
-    description.height = height;
-    description.width = width;
-    result = dxball_direct_draw->vtable->create_surface(
-        dxball_direct_draw, &description,
-        &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
-    if (result != 0) return;
-    key.low = 0;
-    key.high = 0;
-    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
-    description.flags = 0x7f9ee;
-    do {
-        result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &description);
-    } while (result != 0);
-    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = description.pitch;
+    {
+        DxBallInt result;
+        DxBallSurfaceDesc description;
+        description.size = sizeof(description);
+        description.flags = 0xf;
+        description.caps = 0x840;
+        description.height = height;
+        description.width = width;
+        result = dxball_direct_draw->vtable->create_surface(
+            dxball_direct_draw, &description,
+            &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
+        if (result != 0) return;
+        key.low = 0;
+        key.high = 0;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
+        description.flags = 0x7f9ee;
+        do {
+            result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
+                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &description);
+        } while (result != 0);
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = description.pitch;
+    }
     capture.left = x;
     capture.top = y;
     capture.right = width + x;

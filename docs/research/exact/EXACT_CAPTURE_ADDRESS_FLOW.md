@@ -1,5 +1,10 @@
 # Complete sprite capture address and interface flow
 
+The later [allocation/API phases](CAPTURE_ALLOCATION_PHASES.md) restore the
+allocation-pointer home and improve capture to 873 bytes / 745 differences.
+Descriptor/result storage and bank addressing remain nonexact. The complete
+correspondence below retains its original product and frame map.
+
 The complete original852-byte/current876-byte capture bodies contain248
 instructions each. All instructions decode; none of the enclosing span is
 excluded. The remaining803 strict differences do not reveal a missing source

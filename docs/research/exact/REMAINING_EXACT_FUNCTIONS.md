@@ -42,8 +42,8 @@ None of these candidates is already exact. The accepted total remains
 | `hit-board-tile` | 1315 | 1316 | 418 |
 | `bounce-ball-from-paddle` | 681 | 687 | 550 |
 | `redraw-intro` | 587 | 578 | 560 |
+| `capture-sprite` | 852 | 873 | 745 |
 | `restore-regions` | 827 | 846 | 746 |
-| `capture-sprite` | 852 | 876 | 803 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 992 |
 | `game-frame` | 1688 | 1691 | 1155 |
@@ -72,7 +72,9 @@ The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its
 promotes the 329-byte overlap. The [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md)
 reduces its differences from 107 to 88. The latest
 [intro point phases](EXACT_INTRO_POINT_PHASES.md) promote the 711-byte update.
-All remaining 41 candidate code hashes are unchanged.
+The latest [capture allocation phases](CAPTURE_ALLOCATION_PHASES.md) reduce
+its complete comparison from 803 to 745 differences; the other 40 candidate
+code hashes are unchanged.
 
 Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
 No new game, fixture or provider session accompanies this audit.

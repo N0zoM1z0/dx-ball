@@ -15,6 +15,20 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [capture allocation/API phases](../research/exact/CAPTURE_ALLOCATION_PHASES.md)
+restore the allocation-pointer home at EBP-28 and narrow descriptor/result use
+through pitch transfer. Complete capture improves from 876/852 with 803
+differences to 873/852 with 745; 248 instructions, 42 bindings and 140-byte frame
+remain covered. RECT/key/record homes match; descriptor/result still translate
+(-136/-140 versus original -140/-32). Twelve resource exacts retain 2197 bytes;
+all 40 other candidate code hashes are unchanged. Existing 12 capture cases and
+three callback-mutation cases pass. Native/MinGW builds, separate VC4 /ML and /MT
+resource compiles plus 36 unchanged objects and all 232 closures pass; 235
+historical inventories refresh. No new exact or game runs. PCX header-only
+scope 985/929 is rejected and capture source/object restored without recompiling.
+`.analysis/capture-phase-scopes-20261013/verification.json`. Independent source,
+actual-frame, input and complete-candidate review passes. Twenty-five completed
+copies are gzip verified, releasing 4,370,432 allocated bytes.
 The latest [intro point phases](../research/exact/EXACT_INTRO_POINT_PHASES.md)
 restore complete 711-byte point animation, all 180 instructions and 40 actual
 bindings. Header request, shared index, locked pass and per-point pointer scopes
