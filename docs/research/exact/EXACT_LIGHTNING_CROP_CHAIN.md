@@ -1,5 +1,9 @@
 # Complete lightning crop chains and retained countdown
 
+The later [direct WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) makes waiting fully
+exact across 170 bytes. Its actual import closure preserves the explicit
+last-brick time sample; the historical diagnostics below retain their scopes.
+
 The last-brick candidate does not omit a direct right/bottom crop subtraction.
 Its original arithmetic also contains inverse/negation steps that an unequal
 instruction summary hides. The current source and object are retained unchanged;

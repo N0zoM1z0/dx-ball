@@ -61,7 +61,7 @@ if(UNIX)
         "${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map")
 endif()
 if(WIN32)
-    target_link_libraries(dxball_core PRIVATE dsound ddraw)
+    target_link_libraries(dxball_core PRIVATE dsound ddraw winmm)
 endif()
 if(MINGW)
     # Keep compiler runtime dependencies in the DLL, including the POSIX

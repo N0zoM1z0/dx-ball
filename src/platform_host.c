@@ -22,6 +22,13 @@ static DxBallInt DXBALL_DDCALL clock_counter(DxBallCounter *value)
 }
 
 DxBallUInt (DXBALL_DDCALL *dxball_time_get_time)(void) = clock_time;
+#if !defined(_WIN32)
+DxBallUInt DXBALL_DDCALL timeGetTime(void)
+{
+    return dxball_time_get_time();
+}
+#endif
+
 DxBallInt (DXBALL_DDCALL *dxball_query_performance_frequency)(DxBallCounter *) = clock_frequency;
 DxBallInt (DXBALL_DDCALL *dxball_query_performance_counter)(DxBallCounter *) = clock_counter;
 

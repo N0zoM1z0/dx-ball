@@ -401,3 +401,11 @@ shift index at EBP-4/-8. The full446-byte body and26 bindings are exact; six
 game-over companions retain2329 exact bytes. Existing102 insertion-only cases
 compare complete rankings, poisoned tails, file outputs and ordered CRT calls.
 See [the complete recovery](exact/EXACT_RANKING_INSERTION_CURSOR.md).
+
+## Genuine WinMM clock import
+
+Original `WINMM.dll!timeGetTime` occupies IAT `0x4413A4`. The direct unsigned-long32
+stdcall import and native live-callback bridge restore complete 170-byte waiting
+and eight bindings, preserving 26 prior exacts. Paddle is 677/677 with 104 differences;
+its source clock calls now use the actual API. The Windows core DLL links winmm.
+See [the import and waiting recovery](exact/EXACT_WINMM_CLOCK_IMPORT.md).

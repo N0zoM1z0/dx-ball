@@ -1,5 +1,9 @@
 # Frame-wait cursor
 
+The later [direct WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) makes waiting fully
+exact across 170 bytes. Its actual import closure preserves the explicit
+last-brick time sample; the historical diagnostics below retain their scopes.
+
 `dxball_wait_frames` at `0x409610` now has the original 170-byte extent and
 16-byte stack frame. An eight-byte cursor holds the sampled clock and completed
 frame index. Its members occupy EBP-8 and EBP-4; the two postincrement guards

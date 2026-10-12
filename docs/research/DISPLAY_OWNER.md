@@ -1,5 +1,11 @@
 # Lightning and frame drawing
 
+The later [direct WinMM import](exact/EXACT_WINMM_CLOCK_IMPORT.md) restores the
+170-byte waiting function exactly and preserves all 26 prior affected exacts.
+Paddle drawing becomes677/677 with 104 differences; last-brick keeps its explicit
+time-before-RNG sample. 1,186 selected existing calls and all 229 exact closures
+pass, with Native/MinGW products and the VC4 link. No game campaign.
+
 The [merge-index lifetime recovery](exact/PRESENTATION_MERGE_SCOPE.md) restores
 the original shared-index/current-index homes in the dirty-region presenter.
 Its complete 984-byte comparison improves from 55 differences to two unresolved

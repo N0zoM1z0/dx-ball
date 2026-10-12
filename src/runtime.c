@@ -48,7 +48,7 @@ DxBallUInt dxball_current_time(void)
         if (dxball_clock_divisor == 0) {
             result = dxball_query_performance_frequency(&value);
             if (result == 0) {
-                return dxball_time_get_time();
+                return timeGetTime();
                 /* The original full span retains this unreachable store. */
                 dxball_clock_divisor = 0;
             } else {
@@ -58,7 +58,7 @@ DxBallUInt dxball_current_time(void)
         dxball_query_performance_counter(&value);
         return value.low / dxball_clock_divisor;
     } else {
-        return dxball_time_get_time();
+        return timeGetTime();
     }
 }
 
@@ -96,10 +96,10 @@ void dxball_draw_paddle(void)
         sprite += 64; offset_y = 0;
     }
     if (dxball_attached_ball_cue == 1) {
-        if (dxball_paddle_overlay_deadline < dxball_time_get_time() ||
+        if (dxball_paddle_overlay_deadline < timeGetTime() ||
             dxball_paddle_overlay_width != dxball_paddle_width) {
             dxball_paddle_overlay_sprite = dxball_random_range(4) + factor * 4 + 124;
-            dxball_paddle_overlay_deadline = dxball_time_get_time() + 33;
+            dxball_paddle_overlay_deadline = timeGetTime() + 33;
             dxball_paddle_overlay_width = dxball_paddle_width;
         }
         if (dxball_bonus_8_active == 1)

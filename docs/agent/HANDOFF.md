@@ -13,9 +13,29 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **228 exact functions /57,479 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 45 authored nonexact functions.
-The latest [ranking insertion cursor](../research/exact/EXACT_RANKING_INSERTION_CURSOR.md)
+Latest checkpoint: **229 exact functions /57,649 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 44 authored nonexact functions.
+The latest [direct WinMM clock import](../research/exact/EXACT_WINMM_CLOCK_IMPORT.md)
+restores complete170-byte frame waiting and eight bindings. Genuine timeGetTime
+DLL import uses unsigned-long32/stdcall; native host forwards the existing live
+callback cell. CMake core DLL now links winmm. Three recipes preserve26 prior
+exact bodies; paddle improves to677/677 with104 differences. Last-brick retains
+explicit time-before-RNG sampling and1067/1057 with992 differences. Three display
+stages and one runtime/startup compile, plus both game transports once, pass.
+All229 exact closures,1186 selected existing calls, Native/MinGW builds and VC4
+3 matching+2 rebuilt transports+32 unchanged link pass.249 historical inventories
+refresh. No game runs. `.analysis/direct-winmm-import-20261012/verification.json`.
+
+The [clock/cursor diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#clock-and-cursor-follow-up)
+are closed: five SDK timestamp-kind compiles, separate ranking row cursor,
+unsigned score/cache ownership and combined presentation cursor produce no
+adoptable complete gain. Shared timestamp kinds make reset426 exact but lose
+accepted resource bodies. Narrow clock-owned types remove that gain. Sources
+and canonical objects are restored before the direct WinMM family. Read-only
+rotation/resource/raster reviews identify no missing operation. Do not repeat
+these models or widen the narrow color/key parameters.
+
+The preceding [ranking insertion cursor](../research/exact/EXACT_RANKING_INSERTION_CURSOR.md)
 restores the complete446-byte insertion and26 bindings with one VC4 compilation.
 Actual8-byte rank/shift-index state preserves EBP-4/-8 and restores the final
 three comparison bytes. Six accepted game-over companions preserve2329 bytes;
@@ -74,7 +94,7 @@ closed. Ten display exacts and18 existing waiting cases pass.
 The preceding [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md)
 restores130 exact bytes. [Geometry/frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md)
 restore rectangle/frame homes; rectangle retains two read-order bytes, and frame
-retains three MOV/LEA forms after position translation. Continue the45 candidates.
+retains three MOV/LEA forms after position translation. Continue the44 candidates.
 
 Recent retained source checkpoints:
 

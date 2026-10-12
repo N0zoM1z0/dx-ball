@@ -36,3 +36,30 @@ Private complete source stages, objects and comparisons are in
 `.analysis/ddraw-word-types-20261012/`. There are one, four and six completed
 compilations respectively. No fixture, game or provider run accompanies these
 rejected models. Completed copies are retained in verified gzip carriers.
+
+## Clock and cursor follow-up
+
+Five clock SDK-kind compilations test actual DWORD/LONG counter and tick contracts.
+SDK-only kinds lose three accepted grayscale-read bytes. A consumed grayscale
+cursor restores them, but grouped paddle states retain 679/677 with487 differences.
+Shared full-word timestamp declarations make reset 426 exact but lose accepted
+resource stretch and glyph search. A clock-owned header preserves runtime
+companions but reset retains20 differences. These stages are rejected; their
+private carrier is `.analysis/clock-sdk-kinds-20261012/`.
+
+Three additional one-compile models are also closed. Separate fixed-X ranking
+origin and mutable Y/index cursor keep 403/404 with330 differences and seven
+companions exact. Unsigned score/cache ownership leaves every runtime result
+unchanged and does not establish unique original signedness. Joint shared-index/
+merge-index state keeps 984 bytes but worsens presentation from two to 14 differences.
+All canonical inputs/products are restored before the later direct WinMM recovery.
+Private carriers are `.analysis/ranking-row-cursor-20261012/`,
+`.analysis/unsigned-score-state-20261012/` and
+`.analysis/presentation-merge-cursor-20261012/`. No fixture or game accompanies them.
+
+A bounded independent rotation/resource/raster review finds no missing operation.
+The bank-loader pseudocode's `local_4c = 0` before Lock has no corresponding original
+store: complete assembly goes directly from pitch at `0x404A8E` to pushes at
+`0x404A91`. Do not add that pseudocode artifact. Both polygon controllers retain
+identical mnemonic sequences, all mapped homes and equivalent operand scheduling.
+No new layout, capacity or parameter-width model is justified by these reviews.

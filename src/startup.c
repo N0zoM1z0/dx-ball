@@ -85,7 +85,7 @@ void dxball_read_scores(void)
 void dxball_seed_random(void)
 {
     DxBallUInt seed;
-    seed = dxball_time_get_time() % 300;
+    seed = timeGetTime() % 300;
     dxball_crt_srand(seed);
     return;
 }
