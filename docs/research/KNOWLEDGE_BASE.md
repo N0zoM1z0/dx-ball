@@ -325,3 +325,11 @@ initialization and17 ranking cases pass. Current totals:219 exact functions
 ten bindings and four-byte prefix match;38 existing file cases pass.
 Current totals:220 exact functions /54,187 code bytes /136 metadata bytes;
 53 authored functions remain nonexact.
+
+## Exact Bitmap workspace (2026-10-12)
+
+The [Bitmap loading workspace](exact/EXACT_BITMAP_LOAD_WORKSPACE.md) restores
+the original2508-byte frame and all976 code bytes/18 bindings. Existing975
+full-buffer cases pass with the verified existing stack helper. Current totals:
+221 exact functions /55,163 code bytes /136 metadata bytes;52 authored functions
+remain nonexact.

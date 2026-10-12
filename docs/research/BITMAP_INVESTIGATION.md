@@ -1,5 +1,9 @@
 # Bitmap loader and unwritten stack storage
 
+The [loading workspace](exact/EXACT_BITMAP_LOAD_WORKSPACE.md) now restores the
+complete 976-byte exact body; all 975 existing full-buffer cases pass.
+The products and nonexact comparisons below describe earlier checkpoints.
+
 The [current source recovery](exact/EXACT_BITMAP_LOADER.md) replaces the callback
 table with shared file and local-memory imports and restores typed input records.
 Its complete VC4 candidate is 928/976 bytes; the existing native Oracle passes

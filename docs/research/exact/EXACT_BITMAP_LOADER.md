@@ -1,5 +1,8 @@
 # Bitmap records and shared imports
 
+Historical checkpoint: the [loading workspace](EXACT_BITMAP_LOAD_WORKSPACE.md)
+now matches all 976 original bytes and eighteen relocations.
+
 The complete `load_bitmap` body at `0x409F70..0x40A33F` reads a file into a
 DirectDraw surface and creates its palette. REA dossier
 `ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad`

@@ -5143,12 +5143,12 @@ relocations = [
   { offset = 287, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
 ]
 
-[candidates.load-bitmap]
+[units.load-bitmap]
 build = "bitmap"
 symbol = "_dxball_load_bitmap"
 target_address = 0x409f70
 size = 976
-boundary_evidence = "docs/research/exact/EXACT_BITMAP_LOADER.md; complete saved976 Bitmap dossier and522 MDS span, shared File3/Local2 physical import cells, distinct422798 prefix and genuine CRT targets"
+boundary_evidence = "docs/research/exact/EXACT_BITMAP_LOADER.md; docs/research/exact/EXACT_BITMAP_LOAD_WORKSPACE.md; ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad"
 relocations = [
   { offset = 36, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x44127c },
   { offset = 60, type = "DIR32", symbol = "_dxball_bitmap_fallback_prefix", addend = 0, target = 0x422798, data_hex = "2e2e5c00" },
@@ -5159,15 +5159,15 @@ relocations = [
   { offset = 228, type = "DIR32", symbol = "_dxball_file_read", addend = 0, target = 0x441298 },
   { offset = 302, type = "DIR32", symbol = "_dxball_file_read", addend = 0, target = 0x441298 },
   { offset = 339, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x441280 },
-  { offset = 399, type = "DIR32", symbol = "_dxball_file_read", addend = 0, target = 0x441298 },
-  { offset = 417, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
-  { offset = 440, type = "REL32", symbol = "_memset", addend = 0, target = 0x417c40 },
-  { offset = 507, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
-  { offset = 646, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x417ca0 },
-  { offset = 703, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
-  { offset = 716, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
-  { offset = 856, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
-  { offset = 862, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
+  { offset = 408, type = "DIR32", symbol = "_dxball_file_read", addend = 0, target = 0x441298 },
+  { offset = 429, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
+  { offset = 452, type = "REL32", symbol = "_memset", addend = 0, target = 0x417c40 },
+  { offset = 522, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
+  { offset = 679, type = "REL32", symbol = "_memcpy", addend = 0, target = 0x417ca0 },
+  { offset = 745, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
+  { offset = 758, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
+  { offset = 901, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
+  { offset = 907, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
 ]
 
 [candidates.open-mds]
