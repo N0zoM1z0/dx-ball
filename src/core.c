@@ -382,7 +382,7 @@ void dxball_ignite_balls(void)
 
 void dxball_game_frame(void)
 {
-    DxBallInt sound_offset, slow_sign_x, slow_sign_y, fast_sign_x, fast_sign_y;
+    struct { DxBallInt fast_sign_y, fast_sign_x, slow_sign_y, slow_sign_x, sound_offset; } effects;
     if (dxball_paused == 1) {
         if (dxball_elapsed(dxball_palette_tick, 32)) {
             dxball_animate_palette(224, 231, 1);
@@ -445,25 +445,25 @@ void dxball_game_frame(void)
         } while (dxball_advance_explosion(&dxball_explosions));
     }
     if (dxball_explosion_pending == 1) {
-        sound_offset = dxball_random_range(3);
-        dxball_stop_sound(sound_offset + 30);
-        dxball_play_sound(sound_offset + 30, 0, 0, 0);
+        effects.sound_offset = dxball_random_range(3);
+        dxball_stop_sound(effects.sound_offset + 30);
+        dxball_play_sound(effects.sound_offset + 30, 0, 0, 0);
         dxball_explosion_pending = 0;
     }
     if (dxball_bonus_3_active == 1) {
         if (dxball_begin_balls(&dxball_balls)) {
             do {
-                if (dxball_balls.current->dx > 0) slow_sign_x = 1;
-                else slow_sign_x = -1;
-                if (dxball_balls.current->dy > 0) slow_sign_y = 1;
-                else slow_sign_y = -1;
+                if (dxball_balls.current->dx > 0) effects.slow_sign_x = 1;
+                else effects.slow_sign_x = -1;
+                if (dxball_balls.current->dy > 0) effects.slow_sign_y = 1;
+                else effects.slow_sign_y = -1;
                 dxball_balls.current->speed = 4;
                 dxball_balls.current->dx = (DxBallInt)((long double)dxball_cosine(
                     dxball_balls.current->angle) * dxball_balls.current->speed * 1.2);
                 dxball_balls.current->dy = (DxBallInt)(-((long double)dxball_sine(
                     dxball_balls.current->angle) * dxball_balls.current->speed));
-                dxball_balls.current->dx = abs(dxball_balls.current->dx) * slow_sign_x;
-                dxball_balls.current->dy = abs(dxball_balls.current->dy) * slow_sign_y;
+                dxball_balls.current->dx = abs(dxball_balls.current->dx) * effects.slow_sign_x;
+                dxball_balls.current->dy = abs(dxball_balls.current->dy) * effects.slow_sign_y;
                 if (dxball_balls.current->sprite != 61) dxball_balls.current->sprite = 1;
             } while (dxball_advance_ball(&dxball_balls));
         }
@@ -472,18 +472,18 @@ void dxball_game_frame(void)
     if (dxball_bonus_14_active == 1) {
         if (dxball_begin_balls(&dxball_balls)) {
             do {
-                if (dxball_balls.current->dx > 0) fast_sign_x = 1;
-                else fast_sign_x = -1;
-                if (dxball_balls.current->dy > 0) fast_sign_y = 1;
-                else fast_sign_y = -1;
+                if (dxball_balls.current->dx > 0) effects.fast_sign_x = 1;
+                else effects.fast_sign_x = -1;
+                if (dxball_balls.current->dy > 0) effects.fast_sign_y = 1;
+                else effects.fast_sign_y = -1;
                 dxball_balls.current->speed += 2;
                 if (dxball_balls.current->speed > 9) dxball_balls.current->speed = 9;
                 dxball_balls.current->dx = (DxBallInt)((long double)dxball_cosine(
                     dxball_balls.current->angle) * dxball_balls.current->speed * 1.2);
                 dxball_balls.current->dy = (DxBallInt)(-((long double)dxball_sine(
                     dxball_balls.current->angle) * dxball_balls.current->speed));
-                dxball_balls.current->dx = abs(dxball_balls.current->dx) * fast_sign_x;
-                dxball_balls.current->dy = abs(dxball_balls.current->dy) * fast_sign_y;
+                dxball_balls.current->dx = abs(dxball_balls.current->dx) * effects.fast_sign_x;
+                dxball_balls.current->dy = abs(dxball_balls.current->dy) * effects.fast_sign_y;
             } while (dxball_advance_ball(&dxball_balls));
         }
         dxball_bonus_14_active = 0;

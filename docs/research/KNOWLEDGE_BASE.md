@@ -341,3 +341,12 @@ and both bindings, with five UI companions and20 pool/canary cases passing.
 The capture-workspace model is rejected after losing glyph search; its before
 source/object identities are restored. Current totals:222 exact functions
 /55,351 code bytes /136 metadata bytes;51 authored functions remain nonexact.
+
+## Exact distance and frame records (2026-10-12)
+
+The [distance workspace](exact/EXACT_DISTANCE_WORKSPACE.md) matches all130 bytes
+and four bindings. [Overlap/frame records](exact/GEOMETRY_FRAME_RECORDS.md) restore
+their source homes; collision retains two width-read differences, game-frame three
+MOV/LEA forms after full position correspondence. Six existing distance inputs,
+8000 rectangle cases and708 frame cases pass. Current totals:223 exact functions
+/55,481 code bytes /136 metadata bytes;50 authored functions remain nonexact.

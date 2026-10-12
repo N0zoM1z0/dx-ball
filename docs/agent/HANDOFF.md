@@ -13,20 +13,29 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **222 exact functions /55,351 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 51 authored nonexact functions.
-RGB component rotation now matches all188 bytes and both relocations. The consumed
-signed-DWORD color record restores red/green homes; five UI exacts retain559 bytes.
-One UI compilation, Linux/MinGW builds, a VC4 relink reusing36 unchanged objects,
-20 existing RGB pool/canary cases and all222 exact closures pass. No game campaign.
-A resources capture-workspace diagnostic loses accepted glyph search and is rejected;
-its source/object are restored by identity without recompilation. Do not repeat it.
-PCX's unobserved four-byte frame region remains unresolved; no source gap is assumed.
-See [RGB record](../research/exact/EXACT_RGB_ROTATION_RECORD.md) and
-`.analysis/rgb-rotation-record-20261012/verification.json`. Continue the51 candidates.
+Latest checkpoint: **223 exact functions /55,481 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 50 authored nonexact functions.
+Point-distance now matches all130 bytes and four CRT bindings, with its original
+48-byte frame and x87 stores. Four geometry stages recover the primary overlap
+cache and measurement workspace; angle retains109 exact bytes. Collision restores
+all24-byte frame homes but keeps two combined-width read differences. The width
+spelling reversal has no effect and is not selected; do not repeat it.
+One core compilation restores allfive source homes in game-frame. Complete379
+instruction proof leaves three embedded-list MOV/LEA forms;376 instruction byte
+sequences agree after position translation. Raw1691/1688 candidate retains1155.
+Nine core exacts retain4659 bytes. Six existing distance inputs agree across
+original/VC4/native;8000 rectangle and708 frame cases pass, with200 connected harness
+frames as subset. Linux/MinGW builds, the VC4 relink reusing35 unchanged objects
+and all223 exact closures pass. No game campaign.
+See [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md),
+[frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md) and
+`.analysis/rectangle-overlap-record-20261012/verification.json`. Continue the50 candidates.
 
 Recent retained source checkpoints:
 
+- [RGB rotation](../research/exact/EXACT_RGB_ROTATION_RECORD.md): complete188-byte
+  rotation exact, five UI companions and20 pool/canary cases pass. The capture
+  workspace loses glyph search and is rejected; source/object identities restored.
 - [Bitmap workspace](../research/exact/EXACT_BITMAP_LOAD_WORKSPACE.md): complete976-byte
   loader exact,18 bindings and975 full-buffer cases pass with a verified reused stack helper.
 - [File transfer](../research/exact/EXACT_FILE_TRANSFER_STATE.md): complete304-byte
@@ -94,7 +103,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 51 authored non-exact functions. Use current manifest objects
+Next priority: the 50 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -192,11 +201,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 222 |
-| Exact code / separate metadata bytes | 55,351 /136 |
+| Complete exact functions | 223 |
+| Exact code / separate metadata bytes | 55,481 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/rgb-rotation-record-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/rectangle-overlap-record-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

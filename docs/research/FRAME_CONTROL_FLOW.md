@@ -1,5 +1,9 @@
 # Full frame control flow and signed consumers
 
+The [frame-effects record](exact/GEOMETRY_FRAME_RECORDS.md) now restores all
+five source homes. Complete position-aware comparison leaves only the three
+embedded-list MOV/LEA forms; the full function remains nonexact.
+
 The maintained `dxball_game_frame` at original `0x40F8B0` now preserves three
 instruction-level details: the paused phase returns directly to the epilogue,
 the explosion phase reads auxiliary occupancy as a signed byte, and completion

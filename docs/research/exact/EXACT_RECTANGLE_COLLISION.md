@@ -1,5 +1,9 @@
 # Complete rectangle collision fallback
 
+The [overlap record](GEOMETRY_FRAME_RECORDS.md) now restores all six original
+homes and reduces the complete candidate to two width-read differences.
+The comparisons below describe the earlier scalar-local checkpoint.
+
 `src/geometry.c` restores the complete control flow of the integer-center
 collision function at `0x402100`. The original first compares cached absolute
 center distances inclusively against the combined half-width and half-height.
