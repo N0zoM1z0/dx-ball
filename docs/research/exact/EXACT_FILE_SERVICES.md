@@ -1,5 +1,8 @@
 # Shared file services
 
+Historical checkpoint: the loader now matches all 304 bytes in
+[file-transfer state recovery](EXACT_FILE_TRANSFER_STATE.md).
+
 The binary-file loader at `0x403320` and MDS opener at `0x401000` use the same
 Kernel32 import cells. [`file.c`](../../../src/file.c) now owns those four
 services and the complete loader; sound and MIDI consume that shared interface.

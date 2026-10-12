@@ -13,24 +13,23 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **219 exact functions /53,883 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 54 authored nonexact functions.
-Intro point initialization now matches all1,996 bytes and10 relocations. A consumed
-sixteen-byte grid cursor restores X/Y/index/angle homes while preserving the287-byte
-mask and304-byte frame; fifteen intro exacts retain3,864 bytes. Ranking text/position
-records restore all36-byte frame homes but remain403/404 bytes with330 differences.
-Six game-over exacts retain2,329 bytes; insertion stays446/3. Two UI measurement
-record diagnostics worsen its whole comparison and are rejected; canonical UI
-source/object identities are restored without recompilation. Do not repeat them.
-One intro/one game-over compile and two rejected UI compiles, Linux/MinGW builds,
-a VC4 relink reusing35 unchanged objects and all219 exact closures verify.
-Existing initialization compares all287 points/360 wave offsets;17 ranking cases
-pass. No game campaign. See [grid cursor](../research/exact/EXACT_INTRO_GRID_CURSOR.md),
-[ranking records](../research/exact/RANKING_ROW_RECORDS.md) and
-`.analysis/intro-grid-cursor-20261012/verification.json`. Continue the54 candidates.
+Latest checkpoint: **220 exact functions /54,187 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 53 authored nonexact functions.
+The binary-file loader now matches all304 bytes and10 relocations, including its
+four-byte fallback prefix. File size/handle/path state and the actual ReadFile
+output restore the original272-byte frame; all opening, read and cleanup effects
+are unchanged. One file compile, Linux/MinGW builds, a VC4 relink reusing36
+unchanged objects,38 existing file cases and all220 exact closures pass.
+No game campaign. See [file transfer](../research/exact/EXACT_FILE_TRANSFER_STATE.md)
+and `.analysis/file-transfer-state-20261012/verification.json`. Continue the53 candidates.
 
 Recent retained source checkpoints:
 
+- [Intro grid cursor](../research/exact/EXACT_INTRO_GRID_CURSOR.md): complete1,996-byte
+  initializer exact, fifteen intro companions and full287-point/360-wave case pass.
+  [Ranking records](../research/exact/RANKING_ROW_RECORDS.md) restore36-byte frame
+  homes but remain403/404 with330 differences; seventeen drawing cases pass.
+  Both worsening UI measurement record diagnostics are rejected. Do not repeat them.
 - [WAV upload](../research/exact/EXACT_SOUND_UPLOAD_WORKSPACE.md): complete695-byte
   upload exact, completing seventeen configured sound bodies across4,756 bytes;
   227 upload cases pass. [Polygon temporaries](../research/exact/POLYGON_SORT_TEMPORARIES.md)
@@ -89,7 +88,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 54 authored non-exact functions. Use current manifest objects
+Next priority: the 53 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -187,11 +186,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 219 |
-| Exact code / separate metadata bytes | 53,883 /136 |
+| Complete exact functions | 220 |
+| Exact code / separate metadata bytes | 54,187 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/intro-grid-cursor-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/file-transfer-state-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

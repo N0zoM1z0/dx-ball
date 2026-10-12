@@ -317,3 +317,11 @@ and10 bindings, with fifteen intro companions preserved.
 while the complete403/404-byte body retains330 differences. Existing full-array
 initialization and17 ranking cases pass. Current totals:219 exact functions
 /53,883 code bytes /136 metadata;54 authored functions remain nonexact.
+
+## Exact binary-file loader (2026-10-12)
+
+[File-transfer state](exact/EXACT_FILE_TRANSFER_STATE.md) restores the original
+272-byte frame and short ReadFile output address. The complete304-byte loader,
+ten bindings and four-byte prefix match;38 existing file cases pass.
+Current totals:220 exact functions /54,187 code bytes /136 metadata bytes;
+53 authored functions remain nonexact.

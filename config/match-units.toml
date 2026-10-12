@@ -5124,23 +5124,23 @@ object = "build/exact/file.obj"
 inputs = ["src/allocator.h", "src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/file.c", "src/file.h", "src/gameplay.h", "src/platform.h", "src/resources.h", "src/runtime.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
-[candidates.load-binary-file]
+[units.load-binary-file]
 build = "file"
 symbol = "_dxball_load_binary_file"
 target_address = 0x403320
 size = 304
-boundary_evidence = "docs/research/exact/EXACT_FILE_SERVICES.md; complete saved304 loader dossier and522 MDS span, each actual shared Kernel32 import cell and real CRT target"
+boundary_evidence = "docs/research/exact/EXACT_FILE_SERVICES.md; docs/research/exact/EXACT_FILE_TRANSFER_STATE.md; ev_a52bb0030eab7563b8a83f854ffdd76af7e5b0382cd75bda896a04c3efed70a0"
 relocations = [
   { offset = 36, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x44127c },
-  { offset = 60, type = "DIR32", symbol = "_dxball_file_fallback_prefix", addend = 0, target = 0x42106c },
+  { offset = 60, type = "DIR32", symbol = "_dxball_file_fallback_prefix", addend = 0, target = 0x42106c, data_hex = "2e2e5c00" },
   { offset = 72, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x4177f0 },
   { offset = 91, type = "REL32", symbol = "_strcat", addend = 0, target = 0x4177f8 },
   { offset = 125, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x44127c },
   { offset = 166, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x441270 },
   { offset = 194, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
-  { offset = 250, type = "DIR32", symbol = "_dxball_file_read", addend = 0, target = 0x441298 },
-  { offset = 267, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
-  { offset = 290, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
+  { offset = 247, type = "DIR32", symbol = "_dxball_file_read", addend = 0, target = 0x441298 },
+  { offset = 264, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 287, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
 ]
 
 [candidates.load-bitmap]

@@ -15,25 +15,30 @@ const char dxball_file_fallback_prefix[] = "..\\";
 /* FUNCTION: DXBALL 0x00403320 */
 void *dxball_load_binary_file(const char *path, void *destination, DxBallInt allocate)
 {
-    DxBallHandle handle;
-    DxBallUInt bytes, read;
-    char fallback[260];
-    handle = dxball_file_create(path, 0x80000000UL, 1, NULL, 3, 0x80, 0);
-    if (handle == (DxBallHandle)-1) {
-        strcpy(fallback, dxball_file_fallback_prefix);
-        strcat(fallback, path);
-        handle = dxball_file_create(fallback, 0x80000000UL, 1, NULL, 3, 0x80, 0);
-        if (handle == (DxBallHandle)-1) return NULL;
+    DxBallUInt read;
+    {
+        struct {
+            DxBallUInt bytes;
+            DxBallHandle handle;
+            char fallback[260];
+        } file;
+        file.handle = dxball_file_create(path, 0x80000000UL, 1, NULL, 3, 0x80, 0);
+        if (file.handle == (DxBallHandle)-1) {
+            strcpy(file.fallback, dxball_file_fallback_prefix);
+            strcat(file.fallback, path);
+            file.handle = dxball_file_create(file.fallback, 0x80000000UL, 1, NULL, 3, 0x80, 0);
+            if (file.handle == (DxBallHandle)-1) return NULL;
+        }
+        file.bytes = dxball_file_size(file.handle, NULL);
+        if (allocate != 0) {
+            destination = dxball_runtime_malloc(file.bytes);
+            if (destination == NULL) return NULL;
+        }
+        if (!dxball_file_read(file.handle, destination, file.bytes, &read, NULL)) {
+            dxball_heap_release(destination);
+            return NULL;
+        }
+        dxball_file_close(file.handle);
+        return destination;
     }
-    bytes = dxball_file_size(handle, NULL);
-    if (allocate != 0) {
-        destination = dxball_runtime_malloc(bytes);
-        if (destination == NULL) return NULL;
-    }
-    if (!dxball_file_read(handle, destination, bytes, &read, NULL)) {
-        dxball_heap_release(destination);
-        return NULL;
-    }
-    dxball_file_close(handle);
-    return destination;
 }
