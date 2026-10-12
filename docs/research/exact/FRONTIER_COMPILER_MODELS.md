@@ -45,3 +45,11 @@ Applying the same declaration style to both keyed/unkeyed prototypes also loses
 stretch-keyed-sprite. Both proposals are rejected; the public header and canonical
 resource object are unchanged. Full owner comparisons are retained in
 `.analysis/unkeyed-prototype-20261012/`. Do not repeat these declaration variants.
+
+Appending `/Os` to the canonical UI and resource recipes invokes materially
+different code generation and loses established exacts. Those two code-size
+models are rejected. Compiling the unchanged Bitmap source as C++ retains its
+same928-byte body and614 differences rather than restoring the original976-byte
+extent. Canonical flags, header declarations and products remain unchanged.
+Receipts are in `.analysis/codegen-options-20261012/` and
+`.analysis/bitmap-cpp-model-20261012/`; do not repeat these closed models.

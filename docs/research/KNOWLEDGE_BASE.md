@@ -255,3 +255,13 @@ calls. The current frame is424bytes and body365instructions; its complete
 remain accepted. Existing695 pixel comparisons and Linux/MinGW/VC4 builds pass;
 the accepted total stays207 functions/44832code bytes. Evidence and cleanup
 receipts are in `.analysis/rotation-origin-storage-20261012/`.
+
+
+## Exact window workspaces (2026-10-12)
+
+Both [window initialization paths](exact/EXACT_WINDOW_WORKSPACES.md) now match
+2490 complete application bytes and224 address bindings. The HRESULT, descriptor,
+capabilities and registration workspaces reproduce all472/468 original frame
+bytes. Nine exact companions stay exact;248 existing initialization cases and
+Linux/MinGW/VC4 builds pass. The ledger reaches211 exact functions/47374 code bytes,
+with62 remaining authored candidates. Receipts: `.analysis/window-workspaces-20261012/`.

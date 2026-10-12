@@ -13,55 +13,36 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint reaches209 exact functions/44884 code bytes/136 metadata.
-The unchanged RNG source now matches both original runtime functions (10+42
-bytes) under /O2 /MT; its complete initialized state word is attested. The legacy
-builder consumes that owner recipe. An initial matching /ML stage failed game
-linking with duplicate CRT startup symbols; the matching /MT stage links cleanly.
-See [exact RNG](../research/exact/EXACT_RANDOM_RUNTIME.md) and
-`.analysis/random-optimized-model-20261012/`. Source285, semantic249 and authored
-nonexact64 remain unchanged. All209 complete accepted extents and compiler
-closures verify. No game run or fresh RNG case suite.
+Latest checkpoint: **211 exact functions /47,374 code bytes /136 metadata bytes**;
+285 source-present,249 historical semantic scopes and62 authored nonexact functions.
+The two application initialization bodies at0x40CF70 and0x40D4B0 now match all
+1343/1147 bytes and224 total relocations. Window registration/capability workspaces
+end after their consumers; HRESULT and descriptor scopes restore the original
+472/468-byte frames. Nine prior platform exacts retain2938 bytes.
+Linux/MinGW builds, the legacy relink with36 unchanged objects,126 fullscreen plus
+122 compatible existing cases and all211 exact closures pass. No game campaign.
+See [window workspaces](../research/exact/EXACT_WINDOW_WORKSPACES.md) and
+`.analysis/window-workspaces-20261012/`. Continue the62 authored candidates.
 
-The line owner now emits all445 original bytes with nine strict differences,
-improved from409/445bytes and379 differences. All140 frame homes and121 instruction
-boundaries/widths agree; only three signed comparison groups differ. Five exact
-UI companions are preserved; Linux/MinGW builds and486 existing line/pixel cases
-pass. See [locked cursor](../research/exact/LINE_LOCKED_CURSOR.md) and
-`.analysis/line-locked-cursor-20261012/`. Negating the three guards changes no
-comparison bytes; the diagnostic is rejected. Public sprite-prototype variants
-lose established resource exacts and are also rejected; do not repeat them.
+Recent retained source checkpoints:
 
-Latest source recovery restores two actual initial zero writes and three m32
-division operands/fallback calls in the software renderer. Its frame is now424
-bytes and instruction count365, matching the original totals. Complete current
-1451/original1572bytes retains1475 differences, improved from1491. Four exact
-rotation companions remain exact; totals stay207/44832/136. One rotation owner
-compile, Linux/MinGW builds, legacy relink with36 unchanged objects,695 existing
-pixel comparisons and all207 exact closures pass. No game run. See
-[origin storage](../research/exact/ROTATION_ORIGIN_STORAGE.md) and
-`.analysis/rotation-origin-storage-20261012/`. Continue the64 remaining authored
-non-exact functions. Geometry/core `/Z7` diagnostics do not improve comparisons;
-do not repeat them without new compiler evidence.
+- [Optimized RNG](../research/exact/EXACT_RANDOM_RUNTIME.md): two runtime exacts,
+  52 bytes and initialized state word; compatible /O2 /MT recipe is integrated.
+- [Line cursor](../research/exact/LINE_LOCKED_CURSOR.md):445 complete bytes,
+  all140 frame homes and121 instruction boundaries agree; nine comparison
+  differences remain. Five exact UI companions and486 pixel cases pass.
+- [Rotation origin](../research/exact/ROTATION_ORIGIN_STORAGE.md): two original
+  zero writes and three m32 division operands/fallbacks recovered;1451/1572bytes
+  retains1475 differences. Four exact companions and695 pixel cases pass.
+- [Tile mapper](../research/KNOWLEDGE_BASE.md):426 complete bytes including92
+  switch-table bytes and24 bindings exact; six prior board exacts preserved.
 
-Exact-first recovery resumes with the tile mapper at 0x0040CCF0: one result
-local and a common return replace direct case returns and the added abort.
-The entire 426-byte body, 92 inline switch-table bytes and 24 address bindings
-match. One canonical VC4 owner compile preserves all six prior board exacts.
-The project is now 207 exact functions / 44,832 code bytes / 136 metadata bytes.
-Linux/MinGW builds, the legacy relink, 23 existing mapper cases and all 207
-complete accepted-object/input closures pass. No game campaign was run.
-Evidence: `.analysis/exact-board-mapper-20261012/`; source/evidence details:
-[board mapper](../research/KNOWLEDGE_BASE.md). Continue the remaining 64
-non-exact authored functions with focused complete-unit comparisons.
-
-The subsequent [compiler-model checks](../research/exact/FRONTIER_COMPILER_MODELS.md)
-add no exact function. Presentation condition spelling, UI C++ lowering,
-sound allocation/upload scopes and an offsetof projection of the embedded
-explosion list were rejected. All source changes and canonical products are
-restored; all207 complete accepted bodies and input/object closures verify.
-Do not repeat these closed hypotheses without new evidence. No game campaign
-or portable rebuild ran. Receipts: `.analysis/exact-frontier-20261012/`.
+[Closed compiler hypotheses](../research/exact/FRONTIER_COMPILER_MODELS.md)
+cover condition/negation spellings, UI/Bitmap C++ models, geometry/core /Z7,
+UI/resource /Os, sound upload scopes and sprite prototype variants. Do not
+repeat them without new evidence. The current window checkpoint also retains
+its rejected attachment-record/sibling-result stages. Canonical private products
+and unique Evidence remain preserved; completed disposable copies are compressed.
 
 Latest storage cleanup compresses only the completed REA4.1 historical snapshot:
 `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json.gz` preserves all72,771,098bytes
@@ -182,11 +163,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 207 |
-| Exact code / separate metadata bytes | 44,832 /136 |
+| Complete exact functions | 211 |
+| Exact code / separate metadata bytes | 47,374 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/exact-board-mapper-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/window-workspaces-20261012/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

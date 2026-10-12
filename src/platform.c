@@ -88,254 +88,269 @@ const char dxball_compatible_primary_clipper_message[] = "Direct X could not ini
 /* FUNCTION: DXBALL 0x0040CF70 */
 DxBallInt dxball_initialize_fullscreen(DxBallHandle instance, DxBallInt show)
 {
-    DxBallWindowClass window_class;
-    DxBallDrawCaps caps;
-    DxBallSurfaceDesc surface;
-    DxBallInt result;
     DxBallUInt attached;
-    window_class.style = 3;
-    window_class.procedure = dxball_window_proc;
-    window_class.class_extra = 0;
-    window_class.window_extra = 0;
-    window_class.instance = instance;
-    window_class.icon = dxball_window_load_icon(instance, 0x7f00);
-    window_class.cursor = dxball_window_load_cursor(0, 0x7f00);
-    window_class.background = dxball_window_stock_object(4);
-    window_class.menu = dxball_fullscreen_name;
-    window_class.name = dxball_fullscreen_name;
-    dxball_window_register_class(&window_class);
-    dxball_main_window = dxball_window_create_window_ex(0, dxball_fullscreen_name, dxball_fullscreen_name,
-        0x80000000UL, 0, 0, 640, 480, 0, 0, instance, NULL);
-    if (dxball_main_window == 0) return 0;
-    dxball_window_show_window(dxball_main_window, show);
-    dxball_window_update_window(dxball_main_window);
-    dxball_window_set_focus(dxball_main_window);
-    dxball_window_show_window(dxball_main_window, 0);
-    dxball_prepare_sound(dxball_main_window);
-    dxball_window_show_window(dxball_main_window, 5);
-    result = DirectDrawCreate(NULL, &dxball_direct_draw, NULL);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_fullscreen_factory_message,
-            dxball_fullscreen_factory_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    result = ((DxBallSetCooperativeLevel)dxball_direct_draw->vtable->slots_7_to_21[13])(
-        dxball_direct_draw, dxball_main_window, 0x11);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_fullscreen_cooperative_message,
-            dxball_fullscreen_cooperative_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    result = ((DxBallSetDisplayMode)dxball_direct_draw->vtable->slots_7_to_21[14])(
-        dxball_direct_draw, 640, 480, 8);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_fullscreen_display_message,
-            dxball_fullscreen_display_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    dxball_draw_to_primary = 0;
-    caps.size = 316;
-    result = ((DxBallGetCaps)dxball_direct_draw->vtable->slots_7_to_21[4])(
-        dxball_direct_draw, &caps, NULL);
-    if ((caps.caps & 0x02000000UL) != 0) {
-        dxball_software_only = 1;
-        dxball_reduced_particles = 1;
-    } else {
-        dxball_software_only = 0;
-        dxball_reduced_particles = 0;
-    }
-    if (dxball_software_only == 0 && caps.free_video_memory < 310000UL) {
-        dxball_reduced_particles = 1;
-        dxball_low_video_memory = 1;
-    }
-    if (dxball_display_buffer_count == 0) {
-        surface.size = 108;
-        surface.flags = 1;
-        surface.caps = 0x200;
-    } else {
-        surface.size = 108;
-        surface.flags = 0x21;
-        surface.caps = 0x218;
-        surface.ancillary[0] = (DxBallUInt)dxball_display_buffer_count;
-    }
-    result = dxball_direct_draw->vtable->create_surface(
-        dxball_direct_draw, &surface, &dxball_primary_surface, NULL);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_fullscreen_primary_message,
-            dxball_fullscreen_primary_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    if (dxball_display_buffer_count != 0) {
-        attached = 4;
-        result = ((DxBallGetAttachedSurface)dxball_primary_surface->vtable->slot_12)(
-            dxball_primary_surface, &attached, &dxball_secondary_surface);
-        if (result != 0) {
-            dxball_window_destroy_window(dxball_main_window);
-            return 0;
-        }
-    }
-    surface.flags = 7;
-    surface.caps = 0x40;
-    surface.height = 480;
-    surface.width = 640;
-    result = dxball_direct_draw->vtable->create_surface(
-        dxball_direct_draw, &surface, &dxball_board_surface, NULL);
-    if (result != 0) {
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    if (dxball_clip_regions == 1) {
-        result = ((DxBallCreateClipper)dxball_direct_draw->vtable->slots_0_to_4[4])(
-            dxball_direct_draw, 0, &dxball_direct_clipper, NULL);
-        if (result != 0) {
-            dxball_window_destroy_window(dxball_main_window);
-            return 0;
-        }
-        result = dxball_direct_clipper->vtable->set_window(
-            dxball_direct_clipper, 0, dxball_main_window);
-        if (result != 0) {
-            dxball_window_destroy_window(dxball_main_window);
-            return 0;
-        }
-        result = ((DxBallSetClipper)dxball_primary_surface->vtable->set_clipper)(
-            dxball_primary_surface, dxball_direct_clipper);
-        if (result != 0) {
-            dxball_window_destroy_window(dxball_main_window);
-            return 0;
-        }
-        if (dxball_secondary_surface != NULL) {
-            result = ((DxBallSetClipper)dxball_secondary_surface->vtable->set_clipper)(
-                dxball_secondary_surface, dxball_direct_clipper);
+    {
+        DxBallInt result;
+        {
+            DxBallSurfaceDesc surface;
+            {
+                DxBallDrawCaps caps;
+                {
+                    DxBallWindowClass window_class;
+                    window_class.style = 3;
+                    window_class.procedure = dxball_window_proc;
+                    window_class.class_extra = 0;
+                    window_class.window_extra = 0;
+                    window_class.instance = instance;
+                    window_class.icon = dxball_window_load_icon(instance, 0x7f00);
+                    window_class.cursor = dxball_window_load_cursor(0, 0x7f00);
+                    window_class.background = dxball_window_stock_object(4);
+                    window_class.menu = dxball_fullscreen_name;
+                    window_class.name = dxball_fullscreen_name;
+                    dxball_window_register_class(&window_class);
+                }
+                dxball_main_window = dxball_window_create_window_ex(0, dxball_fullscreen_name, dxball_fullscreen_name,
+                    0x80000000UL, 0, 0, 640, 480, 0, 0, instance, NULL);
+                if (dxball_main_window == 0) return 0;
+                dxball_window_show_window(dxball_main_window, show);
+                dxball_window_update_window(dxball_main_window);
+                dxball_window_set_focus(dxball_main_window);
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_prepare_sound(dxball_main_window);
+                dxball_window_show_window(dxball_main_window, 5);
+                result = DirectDrawCreate(NULL, &dxball_direct_draw, NULL);
+                if (result != 0) {
+                    dxball_window_show_window(dxball_main_window, 0);
+                    dxball_window_message_box(dxball_main_window, dxball_fullscreen_factory_message,
+                        dxball_fullscreen_factory_title, 0);
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+                result = ((DxBallSetCooperativeLevel)dxball_direct_draw->vtable->slots_7_to_21[13])(
+                    dxball_direct_draw, dxball_main_window, 0x11);
+                if (result != 0) {
+                    dxball_window_show_window(dxball_main_window, 0);
+                    dxball_window_message_box(dxball_main_window, dxball_fullscreen_cooperative_message,
+                        dxball_fullscreen_cooperative_title, 0);
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+                result = ((DxBallSetDisplayMode)dxball_direct_draw->vtable->slots_7_to_21[14])(
+                    dxball_direct_draw, 640, 480, 8);
+                if (result != 0) {
+                    dxball_window_show_window(dxball_main_window, 0);
+                    dxball_window_message_box(dxball_main_window, dxball_fullscreen_display_message,
+                        dxball_fullscreen_display_title, 0);
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+                dxball_draw_to_primary = 0;
+                caps.size = 316;
+                result = ((DxBallGetCaps)dxball_direct_draw->vtable->slots_7_to_21[4])(
+                    dxball_direct_draw, &caps, NULL);
+                if ((caps.caps & 0x02000000UL) != 0) {
+                    dxball_software_only = 1;
+                    dxball_reduced_particles = 1;
+                } else {
+                    dxball_software_only = 0;
+                    dxball_reduced_particles = 0;
+                }
+                if (dxball_software_only == 0 && caps.free_video_memory < 310000UL) {
+                    dxball_reduced_particles = 1;
+                    dxball_low_video_memory = 1;
+                }
+            }
+            if (dxball_display_buffer_count == 0) {
+                surface.size = 108;
+                surface.flags = 1;
+                surface.caps = 0x200;
+            } else {
+                surface.size = 108;
+                surface.flags = 0x21;
+                surface.caps = 0x218;
+                surface.ancillary[0] = (DxBallUInt)dxball_display_buffer_count;
+            }
+            result = dxball_direct_draw->vtable->create_surface(
+                dxball_direct_draw, &surface, &dxball_primary_surface, NULL);
+            if (result != 0) {
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_window_message_box(dxball_main_window, dxball_fullscreen_primary_message,
+                    dxball_fullscreen_primary_title, 0);
+                dxball_window_destroy_window(dxball_main_window);
+                return 0;
+            }
+            if (dxball_display_buffer_count != 0) {
+                attached = 4;
+                result = ((DxBallGetAttachedSurface)dxball_primary_surface->vtable->slot_12)(
+                    dxball_primary_surface, &attached, &dxball_secondary_surface);
+                if (result != 0) {
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+            }
+            surface.flags = 7;
+            surface.caps = 0x40;
+            surface.height = 480;
+            surface.width = 640;
+            result = dxball_direct_draw->vtable->create_surface(
+                dxball_direct_draw, &surface, &dxball_board_surface, NULL);
             if (result != 0) {
                 dxball_window_destroy_window(dxball_main_window);
                 return 0;
             }
+            if (dxball_clip_regions == 1) {
+                result = ((DxBallCreateClipper)dxball_direct_draw->vtable->slots_0_to_4[4])(
+                    dxball_direct_draw, 0, &dxball_direct_clipper, NULL);
+                if (result != 0) {
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+                result = dxball_direct_clipper->vtable->set_window(
+                    dxball_direct_clipper, 0, dxball_main_window);
+                if (result != 0) {
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+                result = ((DxBallSetClipper)dxball_primary_surface->vtable->set_clipper)(
+                    dxball_primary_surface, dxball_direct_clipper);
+                if (result != 0) {
+                    dxball_window_destroy_window(dxball_main_window);
+                    return 0;
+                }
+                if (dxball_secondary_surface != NULL) {
+                    result = ((DxBallSetClipper)dxball_secondary_surface->vtable->set_clipper)(
+                        dxball_secondary_surface, dxball_direct_clipper);
+                    if (result != 0) {
+                        dxball_window_destroy_window(dxball_main_window);
+                        return 0;
+                    }
+                }
+            }
+            dxball_initialize_sprite_banks();
+            dxball_select_surface((DxBallSurface)dxball_primary_surface);
+            return 1;
         }
+
     }
-    dxball_initialize_sprite_banks();
-    dxball_select_surface((DxBallSurface)dxball_primary_surface);
-    return 1;
 }
 
 /* FUNCTION: DXBALL 0x0040D4B0 */
 DxBallInt dxball_initialize_compatible(DxBallHandle instance, DxBallInt show)
 {
-    DxBallWindowClass window_class;
-    DxBallDrawCaps caps;
-    DxBallSurfaceDesc surface;
     DxBallInt result;
-    window_class.style = 3;
-    window_class.procedure = dxball_window_proc;
-    window_class.class_extra = 0;
-    window_class.window_extra = 0;
-    window_class.instance = instance;
-    window_class.icon = dxball_window_load_icon(instance, 0x7f00);
-    window_class.cursor = dxball_window_load_cursor(0, 0x7f00);
-    window_class.background = dxball_window_stock_object(4);
-    window_class.menu = dxball_compatible_name;
-    window_class.name = dxball_compatible_name;
-    dxball_window_register_class(&window_class);
-    dxball_main_window = dxball_window_create_window_ex(0, dxball_compatible_name, dxball_compatible_name,
-        0x80000000UL, 0, 0, 640, 480, 0, 0, instance, NULL);
-    if (dxball_main_window == 0) return 0;
-    dxball_window_show_window(dxball_main_window, show);
-    dxball_window_update_window(dxball_main_window);
-    dxball_window_set_focus(dxball_main_window);
-    dxball_window_show_window(dxball_main_window, 0);
-    dxball_prepare_sound(dxball_main_window);
-    dxball_window_show_window(dxball_main_window, 5);
-    result = DirectDrawCreate(NULL, &dxball_direct_draw, NULL);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_compatible_factory_message,
-            dxball_compatible_factory_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    result = ((DxBallSetCooperativeLevel)dxball_direct_draw->vtable->slots_7_to_21[13])(
-        dxball_direct_draw, dxball_main_window, 8);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_compatible_cooperative_message,
-            dxball_compatible_cooperative_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    dxball_draw_to_primary = 1;
-    dxball_display_buffer_count = 0;
-    caps.size = 316;
-    result = ((DxBallGetCaps)dxball_direct_draw->vtable->slots_7_to_21[4])(
-        dxball_direct_draw, &caps, NULL);
-    if ((caps.caps & 0x02000000UL) != 0) {
-        dxball_software_only = 1;
-    } else {
-        dxball_software_only = 0;
-    }
-    surface.size = 108;
-    surface.flags = 1;
-    surface.caps = 0x200;
-    result = dxball_direct_draw->vtable->create_surface(
-        dxball_direct_draw, &surface, &dxball_primary_surface, NULL);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_compatible_primary_message,
-            dxball_compatible_primary_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    surface.flags = 7;
-    surface.caps = 0x40;
-    surface.height = 480;
-    surface.width = 640;
-    result = dxball_direct_draw->vtable->create_surface(
-        dxball_direct_draw, &surface, &dxball_board_surface, NULL);
-    if (result != 0) {
-        dxball_window_show_window(dxball_main_window, 0);
-        dxball_window_message_box(dxball_main_window, dxball_compatible_board_message,
-            dxball_compatible_board_title, 0);
-        dxball_window_destroy_window(dxball_main_window);
-        return 0;
-    }
-    if (dxball_clip_regions == 1) {
-        result = ((DxBallCreateClipper)dxball_direct_draw->vtable->slots_0_to_4[4])(
-            dxball_direct_draw, 0, &dxball_direct_clipper, NULL);
+    {
+        DxBallSurfaceDesc surface;
+        {
+            DxBallDrawCaps caps;
+            {
+                DxBallWindowClass window_class;
+                window_class.style = 3;
+                window_class.procedure = dxball_window_proc;
+                window_class.class_extra = 0;
+                window_class.window_extra = 0;
+                window_class.instance = instance;
+                window_class.icon = dxball_window_load_icon(instance, 0x7f00);
+                window_class.cursor = dxball_window_load_cursor(0, 0x7f00);
+                window_class.background = dxball_window_stock_object(4);
+                window_class.menu = dxball_compatible_name;
+                window_class.name = dxball_compatible_name;
+                dxball_window_register_class(&window_class);
+            }
+            dxball_main_window = dxball_window_create_window_ex(0, dxball_compatible_name, dxball_compatible_name,
+                0x80000000UL, 0, 0, 640, 480, 0, 0, instance, NULL);
+            if (dxball_main_window == 0) return 0;
+            dxball_window_show_window(dxball_main_window, show);
+            dxball_window_update_window(dxball_main_window);
+            dxball_window_set_focus(dxball_main_window);
+            dxball_window_show_window(dxball_main_window, 0);
+            dxball_prepare_sound(dxball_main_window);
+            dxball_window_show_window(dxball_main_window, 5);
+            result = DirectDrawCreate(NULL, &dxball_direct_draw, NULL);
+            if (result != 0) {
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_window_message_box(dxball_main_window, dxball_compatible_factory_message,
+                    dxball_compatible_factory_title, 0);
+                dxball_window_destroy_window(dxball_main_window);
+                return 0;
+            }
+            result = ((DxBallSetCooperativeLevel)dxball_direct_draw->vtable->slots_7_to_21[13])(
+                dxball_direct_draw, dxball_main_window, 8);
+            if (result != 0) {
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_window_message_box(dxball_main_window, dxball_compatible_cooperative_message,
+                    dxball_compatible_cooperative_title, 0);
+                dxball_window_destroy_window(dxball_main_window);
+                return 0;
+            }
+            dxball_draw_to_primary = 1;
+            dxball_display_buffer_count = 0;
+            caps.size = 316;
+            result = ((DxBallGetCaps)dxball_direct_draw->vtable->slots_7_to_21[4])(
+                dxball_direct_draw, &caps, NULL);
+            if ((caps.caps & 0x02000000UL) != 0) {
+                dxball_software_only = 1;
+            } else {
+                dxball_software_only = 0;
+            }
+        }
+        surface.size = 108;
+        surface.flags = 1;
+        surface.caps = 0x200;
+        result = dxball_direct_draw->vtable->create_surface(
+            dxball_direct_draw, &surface, &dxball_primary_surface, NULL);
         if (result != 0) {
             dxball_window_show_window(dxball_main_window, 0);
-            dxball_window_message_box(dxball_main_window, dxball_compatible_clipper_message,
-                dxball_compatible_clipper_title, 0);
+            dxball_window_message_box(dxball_main_window, dxball_compatible_primary_message,
+                dxball_compatible_primary_title, 0);
             dxball_window_destroy_window(dxball_main_window);
             return 0;
         }
-        result = dxball_direct_clipper->vtable->set_window(
-            dxball_direct_clipper, 0, dxball_main_window);
+        surface.flags = 7;
+        surface.caps = 0x40;
+        surface.height = 480;
+        surface.width = 640;
+        result = dxball_direct_draw->vtable->create_surface(
+            dxball_direct_draw, &surface, &dxball_board_surface, NULL);
         if (result != 0) {
             dxball_window_show_window(dxball_main_window, 0);
-            dxball_window_message_box(dxball_main_window, dxball_compatible_clip_window_message,
-                dxball_compatible_clip_window_title, 0);
+            dxball_window_message_box(dxball_main_window, dxball_compatible_board_message,
+                dxball_compatible_board_title, 0);
             dxball_window_destroy_window(dxball_main_window);
             return 0;
         }
-        result = ((DxBallSetClipper)dxball_primary_surface->vtable->set_clipper)(
-            dxball_primary_surface, dxball_direct_clipper);
-        if (result != 0) {
-            dxball_window_show_window(dxball_main_window, 0);
-            dxball_window_message_box(dxball_main_window, dxball_compatible_primary_clipper_message,
-                dxball_compatible_primary_clipper_title, 0);
-            dxball_window_destroy_window(dxball_main_window);
-            return 0;
+        if (dxball_clip_regions == 1) {
+            result = ((DxBallCreateClipper)dxball_direct_draw->vtable->slots_0_to_4[4])(
+                dxball_direct_draw, 0, &dxball_direct_clipper, NULL);
+            if (result != 0) {
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_window_message_box(dxball_main_window, dxball_compatible_clipper_message,
+                    dxball_compatible_clipper_title, 0);
+                dxball_window_destroy_window(dxball_main_window);
+                return 0;
+            }
+            result = dxball_direct_clipper->vtable->set_window(
+                dxball_direct_clipper, 0, dxball_main_window);
+            if (result != 0) {
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_window_message_box(dxball_main_window, dxball_compatible_clip_window_message,
+                    dxball_compatible_clip_window_title, 0);
+                dxball_window_destroy_window(dxball_main_window);
+                return 0;
+            }
+            result = ((DxBallSetClipper)dxball_primary_surface->vtable->set_clipper)(
+                dxball_primary_surface, dxball_direct_clipper);
+            if (result != 0) {
+                dxball_window_show_window(dxball_main_window, 0);
+                dxball_window_message_box(dxball_main_window, dxball_compatible_primary_clipper_message,
+                    dxball_compatible_primary_clipper_title, 0);
+                dxball_window_destroy_window(dxball_main_window);
+                return 0;
+            }
         }
+        dxball_initialize_sprite_banks();
+        dxball_select_surface((DxBallSurface)dxball_primary_surface);
+        return 1;
     }
-    dxball_initialize_sprite_banks();
-    dxball_select_surface((DxBallSurface)dxball_primary_surface);
-    return 1;
 }
 
 /* FUNCTION: DXBALL 0x0040DF10 */

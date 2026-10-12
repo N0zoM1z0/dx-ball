@@ -1,5 +1,10 @@
 # Window initialization
 
+The subsequent [workspace recovery](EXACT_WINDOW_WORKSPACES.md) makes both
+complete initialization bodies exact, adding2490 application bytes. The current
+ledger has211 exact functions/47374 code bytes; the comparisons below describe
+the earlier shared-source checkpoint.
+
 The fullscreen and compatible initialization routines recover the original
 window creation, DirectDraw setup, audio preparation and failure paths in
 `src/platform.c`. Their complete saved REA bodies contain 1,343 and 1,147 bytes.
