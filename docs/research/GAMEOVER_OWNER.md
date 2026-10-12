@@ -16,6 +16,12 @@ The later [Windows adapter](WINDOWS_ADAPTER.md) binds real APIs and checks
 natural life loss, name entry and ranking persistence in experimental game
 EXEs; complete-game and physical audio fidelity remain pending.
 
+The later [ranking insertion cursor](exact/EXACT_RANKING_INSERTION_CURSOR.md)
+closes all three remaining insertion differences: complete446 bytes and26
+bindings exact. Its eight-byte rank/shift state preserves both original homes.
+Six exact companions and102 existing insertion cases pass. The earlier rejected
+scope and condition diagnostics below remain closed.
+
 ## Direct score persistence recovery
 
 A later [editor-status checkpoint](exact/EXACT_EDITOR_STATUS_SCOPES.md) checks

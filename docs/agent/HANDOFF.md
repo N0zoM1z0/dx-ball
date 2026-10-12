@@ -13,9 +13,26 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **227 exact functions /57,033 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 46 authored nonexact functions.
-The latest [MDS controller states](../research/exact/EXACT_MDS_CONTROLLER_STATES.md)
+Latest checkpoint: **228 exact functions /57,479 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 45 authored nonexact functions.
+The latest [ranking insertion cursor](../research/exact/EXACT_RANKING_INSERTION_CURSOR.md)
+restores the complete446-byte insertion and26 bindings with one VC4 compilation.
+Actual8-byte rank/shift-index state preserves EBP-4/-8 and restores the final
+three comparison bytes. Six accepted game-over companions preserve2329 bytes;
+ranking drawing remains403/404 with330 differences. Existing102 insertion-only
+original/native cases pass full rankings, names, file outputs, poison tails and
+CRT calls. A report consumer wrongly expected zero-count keys absent; recover
+from completed-case counters, no fixture replay. Native/MinGW builds, VC4 one
+matching+36 unchanged link and all228 complete exact closures pass. Private
+`.analysis/ranking-insertion-cursor-20261012/verification.json`. No game runs.
+
+The [closed storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md)
+record the line iteration, four paddle records and three SDK declaration stages.
+All are rejected and canonical inputs/products restored. Do not repeat them.
+The large rotation renderer still needs a justified storage model; no new source
+layout or compilation was attempted after reading its complete saved dossier.
+
+The preceding [MDS controller states](../research/exact/EXACT_MDS_CONTROLLER_STATES.md)
 restore522/513 complete exact bytes and10/7 bindings, including25/20 provider-
 unowned jump bytes. Loading/submission records restore all20/32-byte frame homes.
 Mode is now signed32 and playback flags unsigned32; the pinned compiler reproduces
@@ -57,7 +74,7 @@ closed. Ten display exacts and18 existing waiting cases pass.
 The preceding [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md)
 restores130 exact bytes. [Geometry/frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md)
 restore rectangle/frame homes; rectangle retains two read-order bytes, and frame
-retains three MOV/LEA forms after position translation. Continue the46 candidates.
+retains three MOV/LEA forms after position translation. Continue the45 candidates.
 
 Recent retained source checkpoints:
 

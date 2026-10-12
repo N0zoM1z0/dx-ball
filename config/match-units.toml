@@ -6681,111 +6681,111 @@ symbol = "_fclose"
 addend = 0
 target = 0x00417A30
 
-[candidates.insert-high-score]
+[units.insert-high-score]
 build = "gameover"
 symbol = "_dxball_insert_high_score"
 target_address = 0x00406D20
 size = 446
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 10
 type = "REL32"
 symbol = "_dxball_read_scores"
 addend = 0
 target = 0x00406CC0
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 19
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 656
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 74
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 40
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 123
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 0
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 129
 type = "REL32"
 symbol = "_strcpy"
 addend = 0
 target = 0x004177F0
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 154
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 40
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 196
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 0
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 216
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 0
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 222
 type = "REL32"
 symbol = "_strcpy"
 addend = 0
 target = 0x004177F0
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 244
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 40
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 264
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 40
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 294
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 0
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 300
 type = "REL32"
 symbol = "_strcpy"
 addend = 0
 target = 0x004177F0
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 325
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 40
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 332
 type = "DIR32"
 symbol = "$SG1266"
@@ -6793,14 +6793,14 @@ addend = 0
 target = 0x0042149C
 data_hex = "73636f72652e64617400"
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 337
 type = "REL32"
 symbol = "_access"
 addend = 0
 target = 0x00417FF0
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 353
 type = "DIR32"
 symbol = "$SG1267"
@@ -6808,7 +6808,7 @@ addend = 0
 target = 0x004214A8
 data_hex = "776200"
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 358
 type = "DIR32"
 symbol = "$SG1268"
@@ -6816,56 +6816,56 @@ addend = 0
 target = 0x004214AC
 data_hex = "73636f72652e64617400"
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 363
 type = "REL32"
 symbol = "_fopen"
 addend = 0
 target = 0x00417C20
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 371
 type = "DIR32"
 symbol = "_dxball_board_file"
 addend = 0
 target = 0x004265C8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 377
 type = "DIR32"
 symbol = "_dxball_board_file"
 addend = 0
 target = 0x004265C8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 397
 type = "DIR32"
 symbol = "_dxball_board_file"
 addend = 0
 target = 0x004265C8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 407
 type = "DIR32"
 symbol = "_dxball_scores"
 addend = 0
 target = 0x004266A8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 412
 type = "REL32"
 symbol = "_fwrite"
 addend = 0
 target = 0x00417E70
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 420
 type = "DIR32"
 symbol = "_dxball_board_file"
 addend = 0
 target = 0x004265C8
 
-[[candidates.insert-high-score.relocations]]
+[[units.insert-high-score.relocations]]
 offset = 426
 type = "REL32"
 symbol = "_fclose"

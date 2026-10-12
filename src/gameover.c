@@ -25,34 +25,34 @@ DxBallInt dxball_entering_score_name;
 
 DxBallInt dxball_insert_high_score(const char *name, DxBallUInt score)
 {
-    DxBallInt rank, i;
+    struct { DxBallInt index, rank; } insertion;
     dxball_read_scores();
     if (score < dxball_scores[14].score) return -1;
-    rank = 14;
-    while (rank >= 0 && dxball_scores[rank].score <= score) {
-        --rank;
+    insertion.rank = 14;
+    while (insertion.rank >= 0 && dxball_scores[insertion.rank].score <= score) {
+        --insertion.rank;
     }
-    ++rank;
-    if (rank == 14) {
-        strcpy(dxball_scores[rank].name, name);
-        dxball_scores[rank].score = score;
+    ++insertion.rank;
+    if (insertion.rank == 14) {
+        strcpy(dxball_scores[insertion.rank].name, name);
+        dxball_scores[insertion.rank].score = score;
     } else {
-        i = 13;
-        while (i >= rank) {
-            strcpy(dxball_scores[i + 1].name, dxball_scores[i].name);
-            dxball_scores[i + 1].score = dxball_scores[i].score;
-            --i;
+        insertion.index = 13;
+        while (insertion.index >= insertion.rank) {
+            strcpy(dxball_scores[insertion.index + 1].name, dxball_scores[insertion.index].name);
+            dxball_scores[insertion.index + 1].score = dxball_scores[insertion.index].score;
+            --insertion.index;
         }
-        strcpy(dxball_scores[rank].name, name);
-        dxball_scores[rank].score = score;
+        strcpy(dxball_scores[insertion.rank].name, name);
+        dxball_scores[insertion.rank].score = score;
     }
     if (access("score.dat", 2) == 0) {
         dxball_board_file = fopen("score.dat", "wb");
-        if (dxball_board_file == NULL) return rank;
+        if (dxball_board_file == NULL) return insertion.rank;
         fwrite(dxball_scores, sizeof(dxball_scores[0]), 15, dxball_board_file);
         fclose(dxball_board_file);
     }
-    return rank;
+    return insertion.rank;
 }
 
 void dxball_draw_high_scores(void)

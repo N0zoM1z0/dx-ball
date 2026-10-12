@@ -393,3 +393,11 @@ unsigned playback flags reproduce the original reads and masks. Existing656
 loader/player plus56 high-bit word cases pass. Six match consumers preserve62
 accepted bodies; rebuilt Windows adapter changes only COFF timestamp. All227
 exact closures pass:57,033 code bytes /136 metadata bytes,46 authored candidates.
+
+## Ranking insertion cursor
+
+The eight-byte insertion state at `0x406D20` groups the selected rank and backwards
+shift index at EBP-4/-8. The full446-byte body and26 bindings are exact; six
+game-over companions retain2329 exact bytes. Existing102 insertion-only cases
+compare complete rankings, poisoned tails, file outputs and ordered CRT calls.
+See [the complete recovery](exact/EXACT_RANKING_INSERTION_CURSOR.md).
