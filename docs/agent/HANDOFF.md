@@ -13,20 +13,25 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **223 exact functions /55,481 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 50 authored nonexact functions.
-The latest [frame-wait cursor](../research/exact/FRAME_WAIT_CURSOR.md) restores
-waiting to170/170 bytes and allfour original stack homes; six guard comparison
-bytes remain. Guard reversal emits identical code and is closed. Two display
-compilations preserve allten accepted display functions across2139 bytes;
-18 existing wait cases pass. Linux/MinGW products and VC4 relink with36 verified
-unchanged objects pass. All223 accepted exact closures pass; no game campaign.
-Receipts: `.analysis/frame-wait-cursor-20261012/verification.json`.
+Latest checkpoint: **224 exact functions /55,716 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 49 authored nonexact functions.
+The latest [scroller-wave cursor](../research/exact/EXACT_SCROLLER_WAVE_CURSOR.md)
+restores the complete235-byte waveform, thirteen bindings, full multiplier and
+allsix original frame homes. The separate iteration cursor preserves sixteen
+accepted intro companions across5860 bytes. Combined workspace stage matches
+wave but loses pulse368/370 and is rejected. Four unchanged waveform cases
+compare112 strip blits each. Linux/MinGW builds, VC4 relink with36 unchanged
+objects and all224 exact closures pass. No game campaign. Receipts:
+`.analysis/scroller-wave-cursor-20261012/verification.json`.
+
+The preceding [frame-wait cursor](../research/exact/FRAME_WAIT_CURSOR.md) restores
+waiting to170/170 and allfour homes; six guard bytes remain. Guard reversal is
+closed. Ten display exacts and18 existing waiting cases pass.
 
 The preceding [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md)
 restores130 exact bytes. [Geometry/frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md)
 restore rectangle/frame homes; rectangle retains two read-order bytes, and frame
-retains three MOV/LEA forms after position translation. Continue the50 candidates.
+retains three MOV/LEA forms after position translation. Continue the49 candidates.
 
 Recent retained source checkpoints:
 

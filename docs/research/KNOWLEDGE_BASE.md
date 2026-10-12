@@ -357,3 +357,11 @@ MOV/LEA forms after full position correspondence. Six existing distance inputs,
 body and allfour homes in the16-byte frame. Six guard bytes remain; reversing
 the guard spelling has identical output. Ten display exacts retain2139 bytes,
 18 existing wait cases pass, and all223 exact closures stay valid.
+
+## Exact scroller-wave cursor (2026-10-12)
+
+[Scroller-wave cursor](exact/EXACT_SCROLLER_WAVE_CURSOR.md) restores235 exact
+bytes, thirteen bindings and the full multiplier. The separate iteration cursor
+preserves sixteen intro companions; the combined workspace loses pulse and is
+rejected. Four existing cases pass. Totals:224 exact /55,716 code bytes /136
+metadata bytes, with49 authored nonexact functions.

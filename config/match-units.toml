@@ -3148,12 +3148,12 @@ relocations = [
   { offset = 171, type = "REL32", symbol = "_dxball_close_music", addend = 0, target = 0x00401DA0 },
 ]
 
-[candidates.draw-scroller-wave]
+[units.draw-scroller-wave]
 build = "intro"
 symbol = "_dxball_draw_scroller_wave"
 target_address = 0x407ba0
 size = 235
-boundary_evidence = "docs/research/exact/EXACT_SPLASH.md"
+boundary_evidence = "docs/research/exact/EXACT_SCROLLER_WAVE_CURSOR.md"
 relocations = [
   { offset = 82, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x004228D8 },
   { offset = 100, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },

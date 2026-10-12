@@ -389,20 +389,20 @@ void dxball_update_scroller(void)
 void dxball_draw_scroller_wave(void)
 {
     DxBallRect rect;
-    DxBallInt x, step;
+    struct { DxBallInt x, step; } cursor;
     rect.top = 440; rect.bottom = 475;
-    step = 5;
-    for (x = 40; x <= 600 - step; x += step) {
-        rect.left = x; rect.right = step + x;
+    cursor.step = 5;
+    for (cursor.x = 40; cursor.x <= 600 - cursor.step; cursor.x += cursor.step) {
+        rect.left = cursor.x; rect.right = cursor.step + cursor.x;
         if (dxball_reduced_particles != 0) {
             ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
-                (DxBallDDSurface *)dxball_primary_surface, x,
-                (DxBallInt)(dxball_sine(x) * 20.0) + 420,
+                (DxBallDDSurface *)dxball_primary_surface, cursor.x,
+                (DxBallInt)(dxball_sine(cursor.x) * 20.0) + 420,
                 (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
         } else {
             ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
-                (DxBallDDSurface *)dxball_effect_surface, x,
-                (DxBallInt)(dxball_sine(x) * 20.0) + 420,
+                (DxBallDDSurface *)dxball_effect_surface, cursor.x,
+                (DxBallInt)(dxball_sine(cursor.x) * 20.0) + 420,
                 (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
         }
     }

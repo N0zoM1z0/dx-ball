@@ -1,5 +1,9 @@
 # Complete splash source restoration
 
+The later [scroller-wave cursor](EXACT_SCROLLER_WAVE_CURSOR.md) makes the
+complete235-byte waveform exact while preserving the accepted pulse and other
+intro companions. Scroller update remains a candidate.
+
 The later [pulse scopes](EXACT_SPLASH_PULSE_SCOPES.md) make the complete
 370-byte palette pulse exact. Current scroller candidates remain explicit;
 the historical comparisons below retain their original epoch.
