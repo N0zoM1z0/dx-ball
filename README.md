@@ -14,15 +14,14 @@ refine the source by comparing compiled code with the original.
 REA gives Codex access to Ghidra's pseudocode, instructions, calls, and data
 references. The reconstruction proceeds function by function:
 
-1. **Inspect a function with REA.** Read pseudocode alongside instructions,
-   then follow its callers, callees, and data references to understand the logic
-   and field layouts.
-2. **Recover the source.** Turn those findings into typed C/C++ and connect
-   the recovered functions into the game.
-3. **Rebuild and refine.** Compile with Visual C++ 4.0 and compare complete
-   functions against the original executable. Use the differences to refine
-   the source. Run a focused behavior check when the comparison leaves a
-   question about what the function does.
+1. **Inspect a function with REA.** Read its pseudocode and instructions,
+   then follow calls and data references to understand its logic and field layouts.
+2. **Recover the source.** Express that logic in typed C/C++ and connect it
+   to the rest of the game.
+3. **Compile and compare.** Build with Visual C++ 4.0 and compare the whole
+   function with the original. Use each difference to decide what to inspect
+   or change next. A focused behavior check can resolve questions left by
+   the code comparison.
 
 A byte-exact match means the entire function's machine code agrees after
 mapping addresses for calls and data. The original and rebuilt programs place
@@ -36,8 +35,8 @@ to source and a complete compiler match.
 
 ## Try the workflow with Codex
 
-The tutorial below uses Linux x86-64 and continues the reconstruction from
-this repository's source and research. You will need:
+These steps set up a Linux x86-64 workspace and let Codex continue the
+reconstruction from the source and research in this repository. You will need:
 
 - Git and Python 3.11+ with pip.
 - Node.js 22.19.0 with npm. Use the official Linux x64 binary; the project
@@ -46,7 +45,7 @@ this repository's source and research. You will need:
   Wine runs the original-era Windows compiler on Linux.
 - CMake, Ninja, and GCC or Clang to build the portable source.
 
-The setup scripts install the JDK, Ghidra, and Visual C++ 4.0 compiler.
+The setup scripts below download the JDK, Ghidra, and Visual C++ 4.0 compiler.
 
 If you need the matching Node version, download
 [`node-v22.19.0-linux-x64.tar.gz`](https://nodejs.org/download/release/v22.19.0/node-v22.19.0-linux-x64.tar.gz)
@@ -75,8 +74,8 @@ identifies version 1.07 and describes the game and its controls. Keep the ZIP
 intact; the importer extracts the executable and assets together.
 
 Fork [this repository](https://github.com/N0zoM1z0/dx-ball) on GitHub so Codex
-can publish checkpoints to your copy. Replace `YOUR_GITHUB_USERNAME` below
-with your username, and use Git credentials that can push to the fork:
+can push its work to your copy. Replace `YOUR_GITHUB_USERNAME` with your
+username. Configure Git authentication for your fork before starting Codex:
 
 ```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/dx-ball.git
@@ -85,10 +84,10 @@ scripts/bootstrap-python.sh
 scripts/repo-python scripts/import-target.py /absolute/path/to/DX_Ball_Win_Preinstalled_EN.zip
 ```
 
-Replace the archive path with your download. The importer checks the ZIP and
-its game files against [the target configuration](config/target.toml), then
-puts `DXBALL.EXE` and the assets in `original/`. Its final line reports how
-many files were verified and imported. Git ignores this directory.
+Replace the archive path with your download. The importer verifies the ZIP
+and game files against [the target configuration](config/target.toml), then
+puts `DXBALL.EXE` and the assets in `original/`. It reports the number of
+verified and imported files. This directory is excluded from Git.
 
 ### 2. Install REA and connect it to Codex
 
@@ -123,11 +122,10 @@ rea setup --client codex
 rea doctor --client codex --provider ghidra --json
 ```
 
-Setup shows the configuration changes for you to review and accept. It
-registers REA as an MCP server, saves the Ghidra and JDK paths, and installs
-the REA skill with instructions for Codex. The doctor command checks the
-registration and Ghidra provider. Look for `healthy: true`, or follow the
-instructions beside a failed check.
+Review and accept the changes shown by setup. It registers the REA MCP
+server, saves the Ghidra and JDK paths, and installs the REA skill that guides
+Codex's analysis. The doctor command checks the connection and provider;
+look for `healthy: true`. A failed check includes instructions for fixing it.
 
 The [REA setup guide](https://github.com/morluto/rea/blob/main/docs/installation.md)
 also covers using an existing Ghidra installation. To update an existing
@@ -143,17 +141,21 @@ codex
 ```
 
 Sign in when prompted; the [Codex CLI guide](https://developers.openai.com/codex/cli/)
-explains the authentication options. Codex reads `AGENTS.md` from this
-checkout and can inspect the original executable, recovered source, and
-research notes. Restart Codex if it was running during REA setup so it loads
-the newly registered tools.
+explains the authentication options. In Codex, enter `/mcp` to check that
+REA is connected. If Codex was open during REA setup, restart it to load
+the new registration.
+
+Starting from the repository root gives Codex access to `AGENTS.md`, the
+original executable, recovered source, and research notes. The repository's
+instructions tell it which toolchain to use and where to resume recovery.
 
 ### 4. Give Codex a reconstruction goal
 
 A [Codex Goal](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex)
-keeps Codex working toward an outcome across turns. Paste this prompt into
-Codex. It makes function recovery the first priority and asks Codex to push
-verified checkpoints to your fork:
+lets Codex continue working toward an outcome across turns. Paste the
+following English prompt into Codex. It starts with function recovery,
+then moves to full game validation, and publishes verified checkpoints
+to your fork:
 
 ```text
 /goal Reconstruct English DX-Ball v1.07 from original/DXBALL.EXE as readable,
@@ -167,6 +169,8 @@ callees, and data. Reuse saved evidence and recover related functions together.
 
 Write typed source shared by the portable and legacy builds, preserving the
 original calling conventions, integer widths, ownership, and state changes.
+Recover the implementation from the evidence; avoid copied machine code,
+assembly replacements, or padding added to force a match.
 Compile each stable batch and compare whole functions with explicit mappings
 for address references. Fix the differences and recheck affected exact matches.
 Use focused checks to answer recovery questions along the way.
@@ -180,10 +184,20 @@ Report progress through recovered functions and exact matches. For remaining
 mismatches, give the function addresses, comparison results, and next steps.
 ```
 
-You can steer the work with ordinary follow-up messages in the same thread.
-Use `/goal` to view the objective, `/goal pause` to pause it, and `/goal resume`
-to continue. As results arrive, the [matching guide](docs/MATCHING.md) explains
-the comparisons and the [source map](src/README.md) helps you follow the code.
+Use ordinary follow-up messages in the same thread to adjust priorities.
+Enter `/goal` to view the objective, `/goal pause` to pause work, and
+`/goal resume` to continue. Follow the results through the
+[matching guide](docs/MATCHING.md) and [source map](src/README.md).
+
+If you also want to collect REA feedback, add this optional instruction.
+Keeping it in one file makes it easy to review without interrupting recovery:
+
+```text
+Append useful REA feedback to /tmp/dxball-rea-feedback.md. Note slow calls,
+oversized responses, token and context costs, and usability improvements,
+with a concrete example when available. Keep this optional and brief;
+function reconstruction remains the priority. Reuse the same document.
+```
 
 ## Progress
 
