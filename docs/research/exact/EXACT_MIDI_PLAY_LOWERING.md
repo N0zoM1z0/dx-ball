@@ -1,5 +1,9 @@
 # MIDI error exits and C++ lowering
 
+The later [MDS controller states](EXACT_MDS_CONTROLLER_STATES.md) make loading
+and playback exact across522/513 bytes, completing all eight MIDI bodies.
+The byte parameters and candidate comparisons below belong to this earlier epoch.
+
 The MIDI owner now has one shared implementation in
 [`midi.cpp`](../../../src/midi.cpp), compiled as C++ by Native, MinGW and VC4.
 Project declarations retain C linkage, so existing C callers, independent

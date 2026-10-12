@@ -13,16 +13,27 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **225 exact functions /55,998 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 48 authored nonexact functions.
-The latest [brick-drop cursor](../research/exact/BRICK_DROP_CURSOR.md) restores
-all44-byte frame homes and accounts for all120 original operations/registers
-through branch-position translation and two base/member address groups. Two
-extra five-byte ADDs remain:436/426 bytes,306 raw differences. Explicit base
-pointer grows442/313 and is rejected. Nine core exacts retain4659 bytes;56
-existing original/native board cases, Linux/MinGW builds, VC4 relink with36
-unchanged objects and all225 exact closures pass. No game campaign. Receipts:
-`.analysis/brick-drop-cursor-20261012/verification.json`.
+Latest checkpoint: **227 exact functions /57,033 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 46 authored nonexact functions.
+The latest [MDS controller states](../research/exact/EXACT_MDS_CONTROLLER_STATES.md)
+restore522/513 complete exact bytes and10/7 bindings, including25/20 provider-
+unowned jump bytes. Loading/submission records restore all20/32-byte frame homes.
+Mode is now signed32 and playback flags unsigned32; the pinned compiler reproduces
+mixed DWORD/AL reads and direct low-bit test. All eight MIDI bodies match2880 bytes.
+Five MIDI stages, six header-consuming recipes and one Windows adapter compile
+are retained. Sixty-two accepted companions preserve their full bodies; adapter
+code/data/BSS/symbols/relocations identical, only COFF timestamp differs. Its
+comparison consumer corrects BSS raw offset zero without recompiling.
+Existing284 loader/372 player and56 new raw-word cases pass; full state/payload/
+SDK/cleanup compares. Native/MinGW builds, VC4 links7 matching+1 rebuilt adapter+
+29 verified unchanged objects, and all227 exact closures pass. First link preflight
+catches the adapter dependency before linker execution. No game campaign. Receipts:
+`.analysis/mds-open-state-20261012/verification.json`. Source typedef spelling inferred.
+
+The preceding [brick-drop cursor](../research/exact/BRICK_DROP_CURSOR.md) restores
+all44-byte homes and120 source operations/registers; two extra owner/member ADDs
+remain436/426 with306 raw differences. Base-pointer442/313 is rejected;56 existing
+board cases pass.
 
 Glyph rectangle scope keeps332/328 and258 differences. Triangle span records
 keep1710/99 code and160-byte metadata identities; only attested generated symbols
@@ -46,7 +57,7 @@ closed. Ten display exacts and18 existing waiting cases pass.
 The preceding [distance workspace](../research/exact/EXACT_DISTANCE_WORKSPACE.md)
 restores130 exact bytes. [Geometry/frame records](../research/exact/GEOMETRY_FRAME_RECORDS.md)
 restore rectangle/frame homes; rectangle retains two read-order bytes, and frame
-retains three MOV/LEA forms after position translation. Continue the48 candidates.
+retains three MOV/LEA forms after position translation. Continue the46 candidates.
 
 Recent retained source checkpoints:
 

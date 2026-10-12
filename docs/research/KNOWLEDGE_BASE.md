@@ -383,3 +383,13 @@ two base/member address groups. Two extra ADDs remain; candidate436/426 with306
 raw differences. Nine core exacts and56 existing board cases pass;225 exacts
 retain55,998 code bytes. Base-pointer, glyph-scope, triangle-span and height-
 projection models are closed; canonical objects and sources are preserved.
+
+## Exact MDS controller states (2026-10-12)
+
+[MDS controller states](exact/EXACT_MDS_CONTROLLER_STATES.md) restore522/513
+exact bytes and complete all eight MIDI bodies across2880 bytes. Actual loading
+and submission records restore20/32-byte frames; full-word signed mode and
+unsigned playback flags reproduce the original reads and masks. Existing656
+loader/player plus56 high-bit word cases pass. Six match consumers preserve62
+accepted bodies; rebuilt Windows adapter changes only COFF timestamp. All227
+exact closures pass:57,033 code bytes /136 metadata bytes,46 authored candidates.

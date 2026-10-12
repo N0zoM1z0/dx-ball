@@ -1,5 +1,9 @@
 # Complete MDS loading and parsing cleanup
 
+The later [MDS controller states](EXACT_MDS_CONTROLLER_STATES.md) make loading
+and playback exact across522/513 bytes, completing all eight MIDI bodies.
+The byte parameters and candidate comparisons below belong to this earlier epoch.
+
 The subsequent [workspace recovery](EXACT_MDS_WORKSPACES.md) closes the parser's
 remaining forty storage differences and makes the event converter exact too.
 The loader remains a530/522-byte candidate. The results below describe the

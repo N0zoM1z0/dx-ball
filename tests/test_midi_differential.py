@@ -216,8 +216,8 @@ class Native(Backend):
                 try:return self.api(name,values)
                 except BaseException as exc:self.errors.append(exc);return 0
             fn=C.CFUNCTYPE(result,*args)(callback);self.callbacks.append(fn);P.in_dll(self.lib,shared_cells.get(name,'dxball_midi_'+name)).value=C.cast(fn,P).value
-        argtypes={'open_mds':[P,P,U,C.c_ubyte],'parse_mds':[P,P,U],'expand_mds_events':[P,P],
-            'play_mds':[P,C.c_ubyte],'midi_callback':[Z,U,Z,P,Z],'load_music':[P,I]}
+        argtypes={'open_mds':[P,P,U,I],'parse_mds':[P,P,U],'expand_mds_events':[P,P],
+            'play_mds':[P,U],'midi_callback':[Z,U,Z,P,Z],'load_music':[P,I]}
         for name in ENTRIES:
             fn=getattr(self.lib,'dxball_'+name)
             fn.argtypes=argtypes.get(name,[P] if name in ('release_mds','pause_mds','stop_mds') else [])

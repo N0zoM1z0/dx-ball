@@ -67,11 +67,11 @@ extern DxBallUInt (DXBALL_DDCALL *dxball_midi_unprepare_header)(DxBallMidiHandle
 extern DxBallUInt (DXBALL_DDCALL *dxball_midi_stream_close)(DxBallMidiHandle);
 
 extern DxBallMusic *dxball_music;
-DxBallInt dxball_open_mds(DxBallMdsContext **, const void *, DxBallUInt, DxBallByte);
+DxBallInt dxball_open_mds(DxBallMdsContext **, const void *, DxBallUInt, DxBallInt);
 DxBallInt dxball_parse_mds(DxBallMdsContext *, const void *, DxBallUInt);
 DxBallInt dxball_expand_mds_events(const DxBallMidiHeader *, DxBallMidiHeader *);
 DxBallInt dxball_release_mds(DxBallMdsContext *);
-DxBallInt dxball_play_mds(DxBallMdsContext *, DxBallByte);
+DxBallInt dxball_play_mds(DxBallMdsContext *, DxBallUInt);
 DxBallInt dxball_pause_mds(DxBallMdsContext *);
 DxBallInt dxball_stop_mds(DxBallMdsContext *);
 void DXBALL_DDCALL dxball_midi_callback(DxBallMidiHandle, DxBallUInt,

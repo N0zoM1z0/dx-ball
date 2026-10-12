@@ -40,60 +40,67 @@ typedef struct DxBallMdsBlock {
 
 /* FUNCTION: DXBALL 0x00401000 */
 DxBallInt dxball_open_mds(DxBallMdsContext **output, const void *input,
-                         DxBallUInt length, DxBallByte mode)
+                         DxBallUInt length, DxBallInt mode)
 {
-    DxBallInt result = 0;
-    DxBallMdsContext *context = NULL;
-    DxBallInt mapped = 0;
-    DxBallMidiHandle file = (DxBallMidiHandle)-1, mapping = 0;
+    struct {
+        DxBallInt result;
+        DxBallMdsContext *context;
+        DxBallInt mapped;
+        DxBallMidiHandle mapping, file;
+    } load;
+    load.result = 0;
+    load.context = NULL;
+    load.mapped = 0;
+    load.file = (DxBallMidiHandle)-1;
+    load.mapping = 0;
 
     if ((mode & 3) == 0 || (mode & 3) == 3) {
-        result = 4;
+        load.result = 4;
         goto done;
     }
-    context = (DxBallMdsContext *)dxball_local_alloc(0x40, sizeof(*context));
-    if (context == NULL) {
-        result = 1;
+    load.context = (DxBallMdsContext *)dxball_local_alloc(0x40, sizeof(*load.context));
+    if (load.context == NULL) {
+        load.result = 1;
         goto done;
     }
-    context->magic = 0x4953444dUL;
-    context->stream = 0;
-    context->pending_buffers = 0;
+    load.context->magic = 0x4953444dUL;
+    load.context->stream = 0;
+    load.context->pending_buffers = 0;
     if ((mode & 2) == 0) {
-        mapped = 1;
-        file = dxball_file_create((const char *)input, 0x80000000UL,
+        load.mapped = 1;
+        load.file = dxball_file_create((const char *)input, 0x80000000UL,
                                       1, NULL, 3, 0x80, 0);
         input = NULL;
-        if (file == (DxBallMidiHandle)-1) {
-            result = 2;
+        if (load.file == (DxBallMidiHandle)-1) {
+            load.result = 2;
             goto done;
         }
-        length = dxball_file_size(file, NULL);
-        mapping = dxball_midi_create_mapping(file, NULL, 2, 0, 0, NULL);
-        if (mapping == 0) {
-            result = 2;
+        length = dxball_file_size(load.file, NULL);
+        load.mapping = dxball_midi_create_mapping(load.file, NULL, 2, 0, 0, NULL);
+        if (load.mapping == 0) {
+            load.result = 2;
             goto done;
         }
-        input = dxball_midi_map_view(mapping, 4, 0, 0, 0);
+        input = dxball_midi_map_view(load.mapping, 4, 0, 0, 0);
         if (input == NULL) {
-            result = 2;
+            load.result = 2;
             goto done;
         }
     }
-    result = dxball_parse_mds(context, input, length);
+    load.result = dxball_parse_mds(load.context, input, length);
 
 done:
-    if (result != 0) {
-        if (context != NULL) dxball_local_free(context);
+    if (load.result != 0) {
+        if (load.context != NULL) dxball_local_free(load.context);
     } else {
-        *output = context;
+        *output = load.context;
     }
-    if (mapped) {
+    if (load.mapped) {
         if (input != NULL) dxball_midi_unmap_view(input);
-        if (mapping != 0) dxball_file_close(mapping);
-        if (file != (DxBallMidiHandle)-1) dxball_file_close(file);
+        if (load.mapping != 0) dxball_file_close(load.mapping);
+        if (load.file != (DxBallMidiHandle)-1) dxball_file_close(load.file);
     }
-    return result;
+    return load.result;
 }
 
 /* FUNCTION: DXBALL 0x00401210 */
@@ -258,58 +265,60 @@ DxBallInt dxball_release_mds(DxBallMdsContext *context)
 }
 
 /* FUNCTION: DXBALL 0x00401780 */
-DxBallInt dxball_play_mds(DxBallMdsContext *context, DxBallByte flags)
+DxBallInt dxball_play_mds(DxBallMdsContext *context, DxBallUInt flags)
 {
-    DxBallUInt device;
-    DxBallMidiProperty property;
-    DxBallInt created, remaining;
-    DxBallMdsContext *current;
-    DxBallInt result;
-    DxBallMidiHeader *header;
+    struct {
+        DxBallMidiHeader *header;
+        DxBallInt result;
+        DxBallMdsContext *current;
+        DxBallInt remaining, created;
+        DxBallMidiProperty property;
+        DxBallUInt device;
+    } submission;
 
-    result = 0;
-    created = 0;
+    submission.result = 0;
+    submission.created = 0;
     if (context->magic != MDS_MAGIC) return 6;
-    current = context;
-    if (current->stream != 0 && (current->state & 4) == 0) return 7;
-    if (current->stream == 0) {
-        created = 1;
-        device = 0xffffffffUL;
-        if (dxball_midi_stream_open(&current->stream, &device, 1,
+    submission.current = context;
+    if (submission.current->stream != 0 && (submission.current->state & 4) == 0) return 7;
+    if (submission.current->stream == 0) {
+        submission.created = 1;
+        submission.device = 0xffffffffUL;
+        if (dxball_midi_stream_open(&submission.current->stream, &submission.device, 1,
                 dxball_midi_callback, 0, 0x30000) != 0) {
-            result = 5;
+            submission.result = 5;
             goto done;
         }
-        property.size = 8;
-        property.value = current->format.time_division;
-        if (dxball_midi_stream_property(current->stream, &property,
+        submission.property.size = 8;
+        submission.property.value = submission.current->format.time_division;
+        if (dxball_midi_stream_property(submission.current->stream, &submission.property,
                 0x80000001UL) != 0) {
-            result = 5;
+            submission.result = 5;
             goto done;
         }
-        header = current->buffers;
-        for (remaining = current->buffer_count; remaining != 0; --remaining) {
-            if (dxball_midi_prepare_header(current->stream, header, MIDI_HEADER_BYTES) != 0 ||
-                dxball_midi_stream_out(current->stream, header, MIDI_HEADER_BYTES) != 0) {
-                result = 5;
+        submission.header = submission.current->buffers;
+        for (submission.remaining = submission.current->buffer_count; submission.remaining != 0; --submission.remaining) {
+            if (dxball_midi_prepare_header(submission.current->stream, submission.header, MIDI_HEADER_BYTES) != 0 ||
+                dxball_midi_stream_out(submission.current->stream, submission.header, MIDI_HEADER_BYTES) != 0) {
+                submission.result = 5;
                 goto done;
             }
-            ++current->pending_buffers;
-            header = (DxBallMidiHeader *)((DxBallByte *)header +
-                (sizeof(*header) + header->buffer_length));
+            ++submission.current->pending_buffers;
+            submission.header = (DxBallMidiHeader *)((DxBallByte *)submission.header +
+                (sizeof(*submission.header) + submission.header->buffer_length));
         }
     }
-    current->state &= ~2UL;
-    if ((flags & 1) != 0) current->state |= 2;
-    current->state &= ~4UL;
-    if (dxball_midi_stream_restart(current->stream) != 0) {
-        result = 5;
+    submission.current->state &= ~2UL;
+    if ((flags & 1) != 0) submission.current->state |= 2;
+    submission.current->state &= ~4UL;
+    if (dxball_midi_stream_restart(submission.current->stream) != 0) {
+        submission.result = 5;
         goto done;
     }
 done:
-    if (result != 0 && created != 0 && current->stream != 0)
+    if (submission.result != 0 && submission.created != 0 && submission.current->stream != 0)
         dxball_stop_mds(context);
-    return result;
+    return submission.result;
 }
 
 /* FUNCTION: DXBALL 0x00401990 */

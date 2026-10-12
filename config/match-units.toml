@@ -4958,20 +4958,20 @@ relocations = [
   { offset = 133, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
 ]
 
-[candidates.play-mds]
+[units.play-mds]
 build = "midi"
 symbol = "_dxball_play_mds"
 target_address = 0x401780
 size = 513
-boundary_evidence = "docs/research/exact/EXACT_MIDI_IMPORTS.md; complete RET-inclusive saved REA dossiers; each independently owned typed import cell or real allocator boundary has one original target"
+boundary_evidence = "docs/research/exact/EXACT_MDS_CONTROLLER_STATES.md"
 relocations = [
   { offset = 125, type = "DIR32", symbol = "_dxball_midi_callback@20", addend = 0, target = 0x401b10 },
   { offset = 144, type = "DIR32", symbol = "_dxball_midi_stream_open", addend = 0, target = 0x4413b4 },
   { offset = 207, type = "DIR32", symbol = "_dxball_midi_stream_property", addend = 0, target = 0x4413b8 },
   { offset = 287, type = "DIR32", symbol = "_dxball_midi_prepare_header", addend = 0, target = 0x4413bc },
   { offset = 314, type = "DIR32", symbol = "_dxball_midi_stream_out", addend = 0, target = 0x4413c0 },
-  { offset = 409, type = "DIR32", symbol = "_dxball_midi_stream_restart", addend = 0, target = 0x4413c4 },
-  { offset = 476, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x401a20 },
+  { offset = 0x196, type = "DIR32", symbol = "_dxball_midi_stream_restart", addend = 0, target = 0x4413c4 },
+  { offset = 0x1d9, type = "REL32", symbol = "_dxball_stop_mds", addend = 0, target = 0x401a20 },
 ]
 
 [units.pause-mds]
@@ -5170,23 +5170,23 @@ relocations = [
   { offset = 907, type = "DIR32", symbol = "_dxball_direct_draw", addend = 0, target = 0x4228b0 },
 ]
 
-[candidates.open-mds]
+[units.open-mds]
 build = "midi"
 symbol = "_dxball_open_mds"
 target_address = 0x401000
 size = 522
-boundary_evidence = "docs/research/exact/EXACT_BITMAP_LOADER.md; complete saved976 Bitmap dossier and522 MDS span, shared File3/Local2 physical import cells, distinct422798 prefix and genuine CRT targets"
+boundary_evidence = "docs/research/exact/EXACT_MDS_CONTROLLER_STATES.md"
 relocations = [
-  { offset = 95, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x441280 },
-  { offset = 202, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x44127c },
-  { offset = 251, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x441270 },
-  { offset = 274, type = "DIR32", symbol = "_dxball_midi_create_mapping", addend = 0, target = 0x4412b8 },
-  { offset = 322, type = "DIR32", symbol = "_dxball_midi_map_view", addend = 0, target = 0x4412b4 },
-  { offset = 369, type = "REL32", symbol = "_dxball_parse_mds", addend = 0, target = 0x401210 },
-  { offset = 405, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
-  { offset = 448, type = "DIR32", symbol = "_dxball_midi_unmap_view", addend = 0, target = 0x441268 },
-  { offset = 468, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
-  { offset = 488, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
+  { offset = 0x5a, type = "DIR32", symbol = "_dxball_local_alloc", addend = 0, target = 0x441280 },
+  { offset = 0xc2, type = "DIR32", symbol = "_dxball_file_create", addend = 0, target = 0x44127c },
+  { offset = 0xf3, type = "DIR32", symbol = "_dxball_file_size", addend = 0, target = 0x441270 },
+  { offset = 0x10a, type = "DIR32", symbol = "_dxball_midi_create_mapping", addend = 0, target = 0x4412b8 },
+  { offset = 0x13a, type = "DIR32", symbol = "_dxball_midi_map_view", addend = 0, target = 0x4412b4 },
+  { offset = 0x169, type = "REL32", symbol = "_dxball_parse_mds", addend = 0, target = 0x401210 },
+  { offset = 0x18d, type = "DIR32", symbol = "_dxball_local_free", addend = 0, target = 0x44126c },
+  { offset = 0x1b8, type = "DIR32", symbol = "_dxball_midi_unmap_view", addend = 0, target = 0x441268 },
+  { offset = 0x1cc, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
+  { offset = 0x1e0, type = "DIR32", symbol = "_dxball_file_close", addend = 0, target = 0x441264 },
 ]
 
 [units.claim-instance]

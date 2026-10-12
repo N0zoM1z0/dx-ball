@@ -1,5 +1,11 @@
 # MDS music owner
 
+The latest [MDS controller states](exact/EXACT_MDS_CONTROLLER_STATES.md) restore
+loading and playback across522/513 exact bytes. All eight MIDI bodies now match
+2,880 bytes. Existing656 loader/player and56 full-word flag cases pass; the
+shared interface uses a32-bit mode selector and playback flags. Earlier notes
+below retain their historical scopes and comparisons.
+
 The [stop/callback scope recovery](exact/EXACT_MIDI_OPERATION_SCOPES.md) restores
 both complete bodies exactly: 225/127 bytes and three/one actual relocations.
 Validated stop-operation pointers and the callback header lifetime now occupy
