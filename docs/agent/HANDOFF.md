@@ -15,15 +15,24 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **225 exact functions /55,998 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 48 authored nonexact functions.
-The latest [sprite recovery state](../research/exact/EXACT_SPRITE_RECOVERY_STATE.md)
-restores282 complete exact bytes and seven bindings with original12-byte frame:
-bank4/result8/slot12. The bank/result record with bank-scoped scalar slot
-preserves bank-first address production. Whole-scan and slot/result cursor
-models restore homes but retain60 schedule differences; both rejected.
-Four device companions retain526 exact bytes; palette candidate unchanged.
-Sixty-four existing bank cases, Linux/MinGW builds, VC4 relink with36 verified
+The latest [brick-drop cursor](../research/exact/BRICK_DROP_CURSOR.md) restores
+all44-byte frame homes and accounts for all120 original operations/registers
+through branch-position translation and two base/member address groups. Two
+extra five-byte ADDs remain:436/426 bytes,306 raw differences. Explicit base
+pointer grows442/313 and is rejected. Nine core exacts retain4659 bytes;56
+existing original/native board cases, Linux/MinGW builds, VC4 relink with36
 unchanged objects and all225 exact closures pass. No game campaign. Receipts:
-`.analysis/sprite-recovery-cursor-20261012/verification.json`.
+`.analysis/brick-drop-cursor-20261012/verification.json`.
+
+Glyph rectangle scope keeps332/328 and258 differences. Triangle span records
+keep1710/99 code and160-byte metadata identities; only attested generated symbols
+change. Height projection record keeps193/191 and158 differences. Allreverted
+by canonical source/object hashes; no extra Oracle/build/game for those stages.
+Triangle has one failed declaration edit and one complete corrected compile.
+
+The preceding [sprite recovery state](../research/exact/EXACT_SPRITE_RECOVERY_STATE.md)
+restores282 exact bytes and seven bindings. Four device companions and64 existing
+bank cases pass. Whole-scan/slot-result records keep60 differences and are rejected.
 
 The preceding [scroller-wave cursor](../research/exact/EXACT_SCROLLER_WAVE_CURSOR.md)
 restores235 exact bytes, allsix homes and thirteen bindings; sixteen intro

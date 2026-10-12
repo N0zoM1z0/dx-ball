@@ -108,32 +108,35 @@ void dxball_retire_ball(void)
 
 void dxball_drop_bricks(void)
 {
-    DxBallInt column, moved;
-    signed char *tile, *below;
-    DxBallInt row;
-    DxBallRect rect;
-    DxBallInt redraw_column, redraw_row;
-    moved = 0;
+    struct {
+        DxBallInt row;
+        signed char *below, *tile;
+        DxBallInt moved, column;
+    } scan;
+    scan.moved = 0;
     dxball_stop_sound(20);
     dxball_play_sound(20, 0, 0, 0);
-    for (column = 0; column < 20; ++column) {
-        for (row = 18; row >= 0; --row) {
-            tile = (signed char *)&dxball_board_tiles[row * 20 + column];
-            below = (signed char *)&dxball_board_tiles[(row + 1) * 20 + column];
-            if (*tile != 0 && *below == 0) {
-                *below = *tile;
-                *tile = 0;
-                moved = 1;
+    for (scan.column = 0; scan.column < 20; ++scan.column) {
+        for (scan.row = 18; scan.row >= 0; --scan.row) {
+            scan.tile = (signed char *)&dxball_board_tiles[scan.row * 20 + scan.column];
+            scan.below = (signed char *)&dxball_board_tiles[(scan.row + 1) * 20 + scan.column];
+            if (*scan.tile != 0 && *scan.below == 0) {
+                *scan.below = *scan.tile;
+                *scan.tile = 0;
+                scan.moved = 1;
             }
         }
     }
-    if (moved == 1) {
+    if (scan.moved == 1) {
+        DxBallRect rect;
+        DxBallInt redraw_column;
         rect.left = 20; rect.top = 50; rect.right = 620; rect.bottom = 350;
         ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
             (DxBallDDSurface *)dxball_board_surface, &rect, (DxBallDDSurface *)dxball_background_surface,
             &rect, 0x01000000, NULL);
         dxball_select_surface((DxBallSurface)dxball_board_surface);
         for (redraw_column = 0; redraw_column < 20; ++redraw_column) {
+            DxBallInt redraw_row;
             for (redraw_row = 0; redraw_row < 20; ++redraw_row) {
                 if ((signed char)dxball_board_tiles[redraw_column + redraw_row * 20] != 0)
                     dxball_draw_board_tile(redraw_column, redraw_row, 1);

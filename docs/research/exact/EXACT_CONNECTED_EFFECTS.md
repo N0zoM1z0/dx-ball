@@ -1,5 +1,9 @@
 # Connected brick-drop and fire-effect source restoration
 
+The later [brick-drop cursor](BRICK_DROP_CURSOR.md) restores all44-byte frame
+homes and isolates two extra owner-address ADDs. The complete436/426-byte
+candidate keeps306 strict differences; the comparisons below are historical.
+
 This batch restores four complete observed function bodies from retained full
 REA dossiers: brick dropping (426 original bytes), fire-effect allocation and
 clamping (185), fire-effect iteration (124), and rectangle invalidation (336).

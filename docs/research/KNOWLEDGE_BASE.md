@@ -374,3 +374,12 @@ scalar slot restores bank-first address production; both whole-scan and
 slot/result cursor models retain60 differences and are rejected. Four device
 companions and64 existing cases pass. Totals:225 exact /55,998 code bytes /136
 metadata bytes, with48 authored nonexact functions.
+
+## Brick-drop cursor (2026-10-12)
+
+[Brick-drop cursor](exact/BRICK_DROP_CURSOR.md) restores all44-byte frame homes.
+All120 original operations/registers correspond after position translation and
+two base/member address groups. Two extra ADDs remain; candidate436/426 with306
+raw differences. Nine core exacts and56 existing board cases pass;225 exacts
+retain55,998 code bytes. Base-pointer, glyph-scope, triangle-span and height-
+projection models are closed; canonical objects and sources are preserved.
