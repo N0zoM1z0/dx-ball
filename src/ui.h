@@ -10,7 +10,7 @@ const char *dxball_copy_text_word(DxBallInt skip, const char *source,
 void dxball_draw_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text);
 void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text);
 DxBallInt dxball_measure_text(DxBallInt count, const char *text);
-void dxball_draw_line(DxBallSurface surface, DxBallInt x1, DxBallInt y1,
+void dxball_draw_line(struct DxBallDDSurface *surface, DxBallInt x1, DxBallInt y1,
     DxBallInt x2, DxBallInt y2, DxBallByte color);
 void dxball_fill_rect(DxBallSurface surface, DxBallInt left, DxBallInt top,
     DxBallInt right, DxBallInt bottom, DxBallUInt color);

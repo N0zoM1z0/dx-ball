@@ -64,10 +64,10 @@ void dxball_draw_high_scores(void)
         position.y = 170;
         for (position.index = 0; position.index <= 14; ++position.index) {
             if (position.index == dxball_selected_score_index) {
-                dxball_draw_line(dxball_active_surface, 5, position.y - 14, 635, position.y - 14, 200);
-                dxball_draw_line(dxball_active_surface, 5, position.y + 5, 635, position.y + 5, 200);
-                dxball_draw_line(dxball_active_surface, 5, position.y - 14, 5, position.y + 4, 200);
-                dxball_draw_line(dxball_active_surface, 635, position.y - 14, 635, position.y + 4, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, position.y - 14, 635, position.y - 14, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, position.y + 5, 635, position.y + 5, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, position.y - 14, 5, position.y + 4, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 635, position.y - 14, 635, position.y + 4, 200);
             }
             text.count = (DxBallInt)strlen(dxball_scores[position.index].name);
             dxball_draw_text(position.x, position.y, text.count, dxball_scores[position.index].name);

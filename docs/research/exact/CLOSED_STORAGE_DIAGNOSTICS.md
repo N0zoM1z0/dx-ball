@@ -63,3 +63,20 @@ store: complete assembly goes directly from pitch at `0x404A8E` to pushes at
 `0x404A91`. Do not add that pseudocode artifact. Both polygon controllers retain
 identical mnemonic sequences, all mapped homes and equivalent operand scheduling.
 No new layout, capacity or parameter-width model is justified by these reviews.
+
+## Direct Kernel clock and scroller guard
+
+The genuine QueryPerformanceFrequency/Counter imports bind the original IAT
+slots `0x4412A0` and `0x44129C`. A shared Windows SDK header makes refresh-score
+74 bytes exact, but loses three accepted ranking-insertion bytes. Narrow ABI
+declarations preserve ranking insertion and remove that gain. Moving the SDK
+to the clock header loses the accepted effect blit and still leaves refresh-score
+with six differences. All three stages are rejected and canonical source and
+products restored. Four runtime, two game-over, one display and one startup
+compilation are retained in `.analysis/direct-kernel-clock-20261012/`.
+
+Reversing the equivalent scroller advance guard leaves 233 bytes and three
+differences unchanged: VC4 still loads advance before shift and commutes the
+comparison. One intro compilation preserves all 17 exact companions and is
+rejected. Do not repeat this guard spelling. Its carrier is
+`.analysis/scroller-update-guard-20261012/`. Neither probe runs fixtures or games.

@@ -15,6 +15,14 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **229 exact functions /57,649 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 44 authored nonexact functions.
+The latest [line interface recovery](../research/exact/LINE_INTERFACE_BOUNDARY.md)
+uses an actual DirectDraw surface pointer and updates its six callers. Five
+recipes preserve53 exact bodies; all229 complete closures and486 existing line
+cases pass. Native/MinGW builds and VC4 five matching+32 unchanged link pass.
+No new exact count or game run. `.analysis/line-interface-20261012/verification.json`.
+Direct Kernel clock SDK contexts and the equivalent scroller guard are rejected;
+see the new section in [closed diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#direct-kernel-clock-and-scroller-guard).
+
 The latest [direct WinMM clock import](../research/exact/EXACT_WINMM_CLOCK_IMPORT.md)
 restores complete170-byte frame waiting and eight bindings. Genuine timeGetTime
 DLL import uses unsigned-long32/stdcall; native host forwards the existing live

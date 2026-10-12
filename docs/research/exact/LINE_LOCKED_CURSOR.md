@@ -1,5 +1,9 @@
 # Line drawing workspace and axis steps
 
+The later [interface recovery](LINE_INTERFACE_BOUNDARY.md) gives the routine
+its genuine DirectDraw surface pointer. All five consuming recipes preserve
+their accepted bodies; line remains 445 bytes with nine differences.
+
 The complete line at `0x403070` now emits **445 bytes**, matching the original
 extent. Its strict comparison improves from 379 differences to **nine**.
 All 121 instruction boundaries and widths agree, and every other byte matches.

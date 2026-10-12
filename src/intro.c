@@ -333,8 +333,8 @@ void dxball_redraw_splash(void)
             dxball_bind_display_surface((DxBallSurface)dxball_secondary_surface);
         }
         for (y = 155; y <= dxball_splash_span * 2 + 155; y += 2) {
-            dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
-            dxball_draw_line((DxBallSurface)dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
+            dxball_draw_line(dxball_primary_surface, 0, y, 639, y, (DxBallByte)((y - 155) / 2 + 48));
+            dxball_draw_line(dxball_primary_surface, 0, y + 1, 639, y + 1, (DxBallByte)((y - 155) / 2 + 48));
         }
         dxball_select_surface((DxBallSurface)dxball_primary_surface); dxball_select_font_bank(0);
         dxball_draw_text(20, 190, 11, "VIDEO CARD:");

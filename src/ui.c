@@ -48,7 +48,7 @@ void dxball_draw_centered_text(DxBallInt x, DxBallInt baseline, DxBallInt count,
 }
 
 /* FUNCTION: DXBALL 0x00403070 */
-void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
+void dxball_draw_line(DxBallDDSurface *surface, DxBallInt x1, DxBallInt y1,
     DxBallInt x2, DxBallInt y2, DxBallByte color)
 {
     DxBallInt i;
@@ -59,10 +59,10 @@ void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
             DxBallInt result;
             desc.size = sizeof(desc);
             desc.flags = 14;
-            ((DxBallDDSurface *)handle)->vtable->get_desc((DxBallDDSurface *)handle, &desc);
+            surface->vtable->get_desc(surface, &desc);
             do {
-                result = ((DxBallDDSurface *)handle)->vtable->lock(
-                    (DxBallDDSurface *)handle, NULL, &desc, 0, NULL);
+                result = surface->vtable->lock(
+                    surface, NULL, &desc, 0, NULL);
             } while (result != 0);
             {
                 DxBallByte *pixel;
@@ -97,7 +97,7 @@ void dxball_draw_line(DxBallSurface handle, DxBallInt x1, DxBallInt y1,
                     }
                 }
             }
-            ((DxBallDDSurface *)handle)->vtable->unlock((DxBallDDSurface *)handle, NULL);
+            surface->vtable->unlock(surface, NULL);
         }
     }
     return;
