@@ -24,7 +24,7 @@ None of these candidates is already exact. The accepted total remains
 | `store-editor-board` | 52 | 58 | 42 |
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
-| `load-sprite-bank` | 1475 | 1475 | 76 |
+| `load-sprite-bank` | 1475 | 1475 | 74 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-paddle` | 677 | 677 | 104 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
@@ -80,6 +80,11 @@ and reduces differences to 726; the other 40 candidate hashes are unchanged.
 The [sprite-bank API workspace](BANK_API_WORKSPACE.md) restores the complete
 1475-byte loader size and reduces its comparison from 1577 to 76 differences,
 while preserving all 12 resource exacts.
+
+The later [upload-pointer workspace](BANK_TRANSFER_WORKSPACE.md) restores the
+pixel pointer's original EBP-68 home and reduces that comparison to 74
+differences. The descriptor and result homes remain exact; the loader is still
+a candidate.
 
 The [intro score phase](INTRO_SCORE_PHASE.md) restores rectangle and text-length
 homes while keeping the buffers unchanged. Redraw remains 578/587 with 560

@@ -15,6 +15,21 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
+The latest [bank upload pointer](../research/exact/BANK_TRANSFER_WORKSPACE.md)
+joins its existing description/result workspace. The 116-byte record restores
+pixel EBP-68 while description EBP-180 and result EBP-72 remain correct.
+Complete bank stays 1475 bytes, 425 instructions and a 180-byte frame;
+differences fall from 76 to 74. A separate 124-byte record including the color
+key loses glyph search and is rejected. All twelve resource exacts retain 2197
+bytes and all 232 closures pass. Thirty-nine other candidate code identities
+are unchanged. PCX has only two commuted bound-product operand bytes; source,
+all other instructions and its 979/862 with 851 differences stay unchanged.
+Ten existing bank and three callback cases, Native/MinGW and separate
+VC4 matching/production builds pass; 36 unchanged objects link. Historical
+inventories refresh 235 rows. No new exact or game runs.
+`.analysis/bank-transfer-workspace-20261013/verification.json` retains the receipts.
+Independent review confirms the source transfer, original homes and PCX change.
+Twenty-one completed copies are gzip verified, releasing 4,341,760 allocated bytes.
 The latest [rotation visible-pixel scope](../research/exact/ROTATION_VISIBLE_PIXEL_PHASE.md)
 moves four existing locals into their sole consuming branch. The complete
 renderer improves from 1451/1572 with 1475 differences to 1466/1572 with 1466;

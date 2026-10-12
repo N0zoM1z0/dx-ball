@@ -172,7 +172,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
     DxBallInt saved_bank, sprite, count, width, height, baseline;
     signed char code;
     DxBallUInt pixel_count;
-    DxBallByte *pixels, *pixel;
+    DxBallByte *pixels;
     DxBallSprite *record;
     DxBallColorKey key;
     DxBallInt row, column, cursor, pitch;
@@ -213,6 +213,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
             struct {
                 DxBallSurfaceDesc description;
                 DxBallInt result;
+                DxBallByte *pixel;
             } api;
             api.description.size = sizeof(api.description);
             api.description.flags = 0xf;
@@ -251,8 +252,8 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
             cursor = 0;
             for (row = height - 1; row >= 0; --row) {
                 for (column = 0; column <= width - 1; ++column) {
-                    pixel = row * pitch + column + api.description.pixels;
-                    *pixel = pixels[cursor];
+                    api.pixel = row * pitch + column + api.description.pixels;
+                    *api.pixel = pixels[cursor];
                     cursor = cursor + 1;
                 }
             }

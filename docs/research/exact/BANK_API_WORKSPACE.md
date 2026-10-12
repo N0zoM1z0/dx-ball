@@ -1,5 +1,9 @@
 # Sprite-bank API workspace
 
+The later [upload-pointer workspace](BANK_TRANSFER_WORKSPACE.md) extends the
+selected record to 116 bytes and restores the pixel pointer at EBP-68. Current
+bank differences are 74; the results below describe the preceding checkpoint.
+
 The loader at `0x00404610` now groups its existing surface description and API
 result in a 112-byte workspace inside each sprite iteration. Its lifetime starts
 with the surface request and ends after Unlock. File metadata, the color key,
