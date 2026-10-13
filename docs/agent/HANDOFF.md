@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 320 |
+| Source-present functions | 324 |
 | Exact functions | 255 |
 | Complete exact code bytes | 64,031 |
 | Attached exact metadata bytes | 136 |
@@ -61,7 +61,7 @@ goal with the prompt above, preserving the same objective.
 These are separate ledgers; 255 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 85 unclassified origins remain open.
+The authored denominator and 81 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -163,10 +163,23 @@ See [the source note](../research/exact/RUNTIME_LOWIO_WRITE.md) and
 five complete final comparisons and native/i686 standalone compilation cover
 the changed owner; no runtime tests, game builds or new REA session run.
 
+Read/close recovery now supplies four more complete source bodies and the
+observed lookahead byte. Console switch/common-zero-error dispatch restores
+close199/14, handle invalidation144/12 and installation163/13. The full reader
+is605/611/463 after transferred-count/end/error-phase recovery. None is exact;
+all255 accepted results and53 preceding candidate results remain unchanged.
+Source presence324 and candidates57:34 authored/23 runtime are current; origins
+270/135/43/81. See [read/close](../research/exact/RUNTIME_LOWIO_READ_CLOSE.md) and
+`.analysis/runtime-lowio-read-close-20261013/verification.json`. One closed
+twelve-record REA session and complete pinned CRT sections ground all four.
+All three header-consuming owners compile natively/i686 and their ten complete
+units compare; the two affected exacts retain169 bytes and table360. No runtime
+tests or game builds run. Registry/application/error storage and integration remain open.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `c1a75ea`
-(low-I/O source and exact handle/error mapping).
+Latest published source checkpoint before this continuation: `5384796`
+(write outcome storage and scalar homes).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -180,12 +193,14 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 255 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 53 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 57 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-write-lifetimes-20261013/verification.json`: current
+- `.analysis/runtime-lowio-read-close-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-write-lifetimes-20261013/verification.json`: preceding
+  write lifetime scope; affected inputs/products are frozen in the new `before/`.
 - `.analysis/runtime-lowio-write-20261013/verification.json`: preceding
   low-I/O source scope; affected sources/products are frozen in the new `before/`.
 - `.analysis/runtime-stream-buffers-20261013/verification.json`: preceding

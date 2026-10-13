@@ -34,6 +34,10 @@ unlisted11-byte function boundary. Current comparisons total50 candidates:
 bytes, three candidates and all360 private error-table bytes. The current set
 has53 candidates:34 authored and19 runtime. The game candidates remain unchanged.
 
+[Reading and closing](RUNTIME_LOWIO_READ_CLOSE.md) adds four maintained source
+candidates. Current comparisons total57:34 authored and23 runtime; all preceding
+candidate results and255 exact results are unchanged.
+
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
 | `present-regions-now` | 984 | 984 | 2 |

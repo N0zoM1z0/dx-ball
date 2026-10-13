@@ -411,13 +411,13 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00419D90,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00419E80,runtime,allocator,dependency,high,ev_10ce1eaed90f0753871a24f6fad805895e13fb1cbf155903597f6e751ae3cd91
 0x00419EA0,runtime,allocator,dependency,high,ev_f350f41184bab52523f0483486ead9de4bd0a0db5c326426842820aa5b3b20df
-0x00419ED0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00419ED0,runtime,crt_library,dependency,high,ev_fb5d79fbf5495cebe4676620cce5489788744920795a5dbf91115a82dcbfa96f; docs/research/exact/RUNTIME_LOWIO_READ_CLOSE.md
 0x00419FA0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00419FE0,runtime,crt_library,dependency,high,ev_b8e3e38462f32cba491fd31561ec4f2967ed068199f0081570f55294e79cc951; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
 0x0041A030,runtime,crt_library,dependency,high,ev_0428330c4424cb77eb35a2cfa3587d2b3b61df571196849f2e6d26767ae87de9; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
 0x0041A0A0,runtime,crt_library,dependency,high,ev_2b96ddc20d95568cb8f2717d4ed51aaf96288f922afc0effc425fe20fb9d8390; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
 0x0041A0B0,runtime,crt_library,dependency,high,ev_0d9a280f965f1b554b92650e44a97ba496a0947f8056451e0236fd91485a9582; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
-0x0041A120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041A120,runtime,crt_library,dependency,high,ev_02e35e338ff7df1f23dfe392cb0377475551fc65a6478dddc7655119a428532f; docs/research/exact/RUNTIME_LOWIO_READ_CLOSE.md
 0x0041A390,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041A5A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041A620,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -485,8 +485,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041D700,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041D7C0,runtime,crt_conversion,maintain,high,ev_b94ec26c821c24f465811ee1f668d3d0226e2c078cc1623e08f20740ed02b64a
 0x0041D7D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041D890,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041D940,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041D890,runtime,crt_library,dependency,high,ev_eb676ab1d96d829d5ba31d1f7b96a6d3179124e8cf6c961277d64854cceecfc2; docs/research/exact/RUNTIME_LOWIO_READ_CLOSE.md
+0x0041D940,runtime,crt_library,dependency,high,ev_51ef29f63e0e3f6ff2927f17ba1073630f3e9e18ddccedba0cffeb95e1e9793d; docs/research/exact/RUNTIME_LOWIO_READ_CLOSE.md
 0x0041D9D0,runtime,crt_library,dependency,high,ev_e8f8828265772c93dddfabc78b92c24a6c9d6df6f8bdc2d6301d7a8810153890; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041DA20,runtime,crt_library,dependency,high,ev_f4f7ba8eec0ab4ce8154979ba16dc1278f442cd5d982f06429e53f68b865e4c8; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041DB80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
