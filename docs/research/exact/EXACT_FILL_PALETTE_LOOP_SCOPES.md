@@ -36,6 +36,28 @@ such trials were made. These functions remain nonexact. Complete instruction
 addresses, loop branches, API calls and actual frame operands are retained in
 the private proof rather than inferred from a short difference preview.
 
+## Declaration-order control on October 13
+
+Both current palette shifts are 234-byte candidates. Their six differences
+at offsets 49, 62, 83, 87, 146 and 159 are red/green cache displacements.
+Original homes are red EBP−8, green EBP−12 and blue EBP−4; current homes
+are red EBP−12, green EBP−8 and blue EBP−4. These are separate byte locals
+in four-byte-spaced slots, not a compact three-byte record.
+
+One controlled experiment swaps only the two existing declarations to
+`DxBallByte green, red, blue;`. The predicted exchange of red/green homes
+does not occur. Two matching compilations compare all 29 complete UI/display
+units: every code, literal and metadata result remains unchanged; eighteen
+accepted functions preserve 4,050 bytes. This rules out that source-order
+explanation in the current compiler context. It establishes neither original
+variable names nor a particular compiler allocation algorithm.
+
+Independent source/input/comparison review is retained in
+`.analysis/palette-declaration-order-20261013/`. Canonical declarations and
+products remain unchanged. No other ordering or naming variants are tried.
+Twenty-eight gzip-verified carriers release 45,056 allocated bytes including
+the cleanup receipt.
+
 ## Rejected fade comparison hypothesis
 
 The complete 1339-byte transition at 0x40A340 retains 18 differences: six RGB

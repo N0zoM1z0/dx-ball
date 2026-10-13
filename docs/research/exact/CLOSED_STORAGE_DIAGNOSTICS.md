@@ -147,7 +147,7 @@ search accompanies this batch.
 
 The complete comparisons, source stages and rejection receipt are retained in
 `.analysis/kernel-clock-boundary-20261012/`. This closes owner-local SDK exposure
-and opaque-counter models as an exactness improvement. The six palette compare
+and opaque-counter models as an exactness improvement. The six fade comparison
 groups and elapsed/measure/scroller/presentation operand commutations receive
 read-only reviews; no missing source operation or justified new state model is
 found. Their earlier equivalent spelling experiments remain closed.
@@ -595,3 +595,22 @@ routes, real import and native callback bridge. Retain
 `.analysis/paddle-input-boundary-20261013/`. Gzip-verified cleanup of thirty
 completed carriers releases 12,288 allocated bytes including its receipt.
 Canonical sources and products remain unchanged; no fixture or game runs.
+
+## UI surface and palette member calls together
+
+One private C++ UI model converts four surface calls and both palette calls
+through the current shared interfaces. The preceding surface-only model still
+used manual palette dispatch. Project declarations retain C linkage; the
+existing color-fill payload passes at the same address through the opaque
+SDK argument type. All thirteen project headers, executable arguments, local
+types, scopes and writes remain unchanged.
+
+One matching compilation compares all nine complete functions and 38 actual
+relocations. There are no gains. Draw-text loses its 150-byte match, with three
+differences; five accepted companions preserve 597 bytes. Right palette
+rotation becomes 234/9 differences, measurement 280/279 bytes with 55
+differences, and line drawing retains its complete preceding code identity.
+Reject the model. Independent source, ABI, input and comparison proofs are in
+`.analysis/ui-all-com-20261013/`. Eighteen gzip-verified carriers release
+8,192 allocated bytes including the cleanup receipt. Canonical remains
+238 exact functions / 62,514 bytes; no fixture or game runs.

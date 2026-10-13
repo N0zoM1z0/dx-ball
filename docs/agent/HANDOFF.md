@@ -15,6 +15,18 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **238 exact functions /62,514 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 35 authored nonexact functions.
+The latest [device surface/palette calls](../research/exact/DEVICE_SURFACE_PALETTE_CALLS.md)
+reduce transition1339 from18 to12 differences, restoring both blue comparison
+groups. Five accepted device companions preserve808 bytes; all238 closures
+pass and34 other candidate code identities are unchanged. Canonical13inputs
+and flags match the retained one-owner producer; no duplicate matching compile.
+Native/MinGW build; VC4 links1matching+36unchanged objects. Native796 existing
+function cases pass (774transition/4creation/18fill), with no game run.
+All249 historical inventories refresh without changing cases or scopes.
+`.analysis/device-com-integration-20261013/verification.json`.
+Independent review seals68 inputs/37gameobjects/fiveproducts/sixCexports.
+Thirty-four gzip-verified completed carriers release4,243,456 allocated bytes
+including the cleanup receipt; current products and unique evidence remain.
 The latest [palette interface](../research/exact/EXACT_PALETTE_COM_CALLS.md)
 promotes complete stretch (139 bytes/six bindings) and reset (426/43).
 The seven-slot stdcall palette class replaces three dispatches in existing
@@ -88,6 +100,16 @@ extracts the shared calling-convention macro and gives paddle only its primitive
 dependencies. One four-input pilot still emits the same 203-byte body with four
 differences, so it is rejected without broader compilation. Source/dependency/
 import review passes; thirty gzip-verified carriers release 12,288 allocated bytes.
+The [complete UI surface/palette projection](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#ui-surface-and-palette-member-calls-together)
+compares all nine functions once, with no gains and a 150-byte draw-text loss.
+Reject it; all thirteen headers and canonical products remain unchanged.
+Independent source/ABI/comparison review passes. Eighteen gzip-verified
+carriers release 8,192 allocated bytes including the receipt.
+The [palette declaration-order control](../research/exact/EXACT_FILL_PALETTE_LOOP_SCOPES.md#declaration-order-control-on-october-13)
+leaves all 29 UI/display code identities unchanged. Red/green homes do not
+exchange, rejecting the specific source-order explanation for the six palette
+differences. Eighteen exact companions preserve 4,050 bytes; independent review
+passes. Twenty-eight gzip-verified carriers release 45,056 allocated bytes.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes

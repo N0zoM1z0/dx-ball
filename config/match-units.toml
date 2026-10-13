@@ -1926,9 +1926,9 @@ relocations = [
 ]
 
 [builds.device]
-source = "src/device.c"
+source = "src/device.cpp"
 object = "build/exact/device.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.c", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameplay.h", "src/paddle.h", "src/resources.h", "src/runtime.h", "src/state_types.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.cpp", "src/device.h", "src/display.h", "src/explosion_types.h", "src/gameplay.h", "src/paddle.h", "src/resources.h", "src/runtime.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.fill-rect]
@@ -2078,8 +2078,8 @@ relocations = [
   { offset = 949, type = "DIR32", symbol = "_dxball_live_palette", addend = 1, target = 0x4386f0 },
   { offset = 966, type = "DIR32", symbol = "_dxball_live_palette", addend = 1, target = 0x4386f0 },
   { offset = 979, type = "DIR32", symbol = "_dxball_live_palette", addend = 1, target = 0x4386f0 },
-  { offset = 998, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
-  { offset = 1010, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
+  { offset = 998, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
+  { offset = 1010, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
   { offset = 1030, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
   { offset = 1042, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
   { offset = 1050, type = "REL32", symbol = "_abs", addend = 0, target = 0x416780 },
@@ -2087,8 +2087,8 @@ relocations = [
   { offset = 1082, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
   { offset = 1099, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
   { offset = 1112, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
-  { offset = 1136, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
-  { offset = 1148, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
+  { offset = 1136, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
+  { offset = 1148, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
   { offset = 1168, type = "DIR32", symbol = "_dxball_live_palette", addend = 2, target = 0x4386f0 },
   { offset = 1180, type = "DIR32", symbol = "_dxball_saved_palette", addend = 2, target = 0x4382f0 },
   { offset = 1188, type = "REL32", symbol = "_abs", addend = 0, target = 0x416780 },

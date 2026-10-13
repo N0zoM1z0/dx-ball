@@ -1,5 +1,10 @@
 # Palette transitions and surface recovery
 
+The [current surface and palette calls](exact/DEVICE_SURFACE_PALETTE_CALLS.md)
+reduce the complete transition from 18 to 12 differences. All five exact
+device companions preserve 808 bytes. Current totals remain 238 exact
+functions / 62,514 code bytes / 136 metadata bytes.
+
 The latest [sprite recovery state](exact/EXACT_SPRITE_RECOVERY_STATE.md) restores
 the complete282-byte bank recovery body, allseven bindings and original12-byte
 frame. Four companions retain526 exact bytes and64 existing bank cases pass.
@@ -23,7 +28,7 @@ The [dependency restoration](exact/DEVICE_DEPENDENCIES.md) also makes the
 
 REA's gameplay initialization and presentation callers lead to the palette
 transition controller at `0x40A340` and recovery at `0x403640`. The maintained
-owner is [device.c](../../src/device.c), with shared declarations in
+owner is [device.cpp](../../src/device.cpp), with shared declarations in
 [device.h](../../src/device.h). These are algorithms over the original DirectDraw
 interfaces; creation of the actual Windows device and driver behavior remain
 pending.

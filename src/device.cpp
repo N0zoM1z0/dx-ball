@@ -1,5 +1,7 @@
+extern "C" {
 #include "device.h"
 #include "paddle.h"
+}
 #include <stdlib.h>
 #include <string.h>
 
@@ -30,7 +32,7 @@ void dxball_palette_transition(DxBallInt frames, DxBallInt step,
                     changed = 1;
                 }
             }
-            dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0,
+            dxball_direct_palette->set_entries(0,
                 first, last - first + 1, &dxball_live_palette[first]);
             dxball_wait_frames(frames);
         } while (changed);
@@ -73,7 +75,7 @@ void dxball_palette_transition(DxBallInt frames, DxBallInt step,
                     changed = 1;
                 }
             }
-            dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0,
+            dxball_direct_palette->set_entries(0,
                 first, last - first + 1, &dxball_live_palette[first]);
             dxball_wait_frames(frames);
         } while (changed);
@@ -95,8 +97,7 @@ void dxball_initialize_palette(void)
     result = dxball_direct_draw->vtable->create_palette(dxball_direct_draw, 4,
         dxball_live_palette, &dxball_direct_palette, NULL);
     if (result != 0) return;
-    result = ((DxBallDDSurface *)dxball_primary_surface)->vtable->set_palette(
-        (DxBallDDSurface *)dxball_primary_surface, dxball_direct_palette);
+    result = ((DxBallDDSurface *)dxball_primary_surface)->set_palette(dxball_direct_palette);
     if (result != 0) return;
     return;
 }
@@ -111,8 +112,7 @@ void dxball_clear_surface(DxBallSurface surface, DxBallInt color)
     rect.bottom = 480;
     rect.left = 0;
     rect.right = 640;
-    ((DxBallDDSurface *)surface)->vtable->blt((DxBallDDSurface *)surface,
-        &rect, NULL, NULL, 0x400, &fill);
+    ((DxBallDDSurface *)surface)->blt(&rect, NULL, NULL, 0x400, reinterpret_cast<DxBallDDBltFx *>(&fill));
     return;
 }
 
@@ -125,8 +125,7 @@ void dxball_restore_sprite_banks(void)
             for (slot = 0; slot < 255; ++slot) {
                 if (dxball_sprite_banks[recovery.bank].sprites[slot] != NULL &&
                     dxball_sprite_banks[recovery.bank].sprites[slot]->surface != NULL) {
-                    recovery.result = dxball_sprite_banks[recovery.bank].sprites[slot]->surface->vtable->restore(
-                        dxball_sprite_banks[recovery.bank].sprites[slot]->surface);
+                    recovery.result = dxball_sprite_banks[recovery.bank].sprites[slot]->surface->restore();
                     (void)recovery.result;
                 }
             }
@@ -139,10 +138,10 @@ void dxball_restore_sprite_banks(void)
 void dxball_recover_surfaces(void)
 {
     DxBallInt result;
-    result = dxball_primary_surface->vtable->restore(dxball_primary_surface);
+    result = dxball_primary_surface->restore();
     if (result != 0)
         return;
-    result = dxball_board_surface->vtable->restore(dxball_board_surface);
+    result = dxball_board_surface->restore();
     if (result != 0)
         return;
     dxball_restore_sprite_banks();
@@ -160,7 +159,7 @@ void dxball_synchronize_surface(void)
         }
     } else {
         result = 0;
-        result = dxball_primary_surface->vtable->get_blt_status(dxball_primary_surface, 1);
+        result = dxball_primary_surface->get_blt_status(1);
         if (result == (DxBallInt)0x887601c2UL)
             dxball_recover_surfaces();
         if (dxball_surface_restore_requested == 1)

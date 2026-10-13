@@ -18,7 +18,7 @@ None of these candidates is already exact. The accepted total remains
 | `rotate-palette-right` | 234 | 234 | 6 |
 | `wait-frames` | 170 | 170 | 6 |
 | `draw-line` | 445 | 445 | 9 |
-| `palette-transition` | 1339 | 1339 | 18 |
+| `palette-transition` | 1339 | 1339 | 12 |
 | `draw-score` | 433 | 433 | 21 |
 | `load-editor-board` | 52 | 58 | 23 |
 | `store-editor-board` | 52 | 58 | 42 |
@@ -48,6 +48,10 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [device surface and palette calls](DEVICE_SURFACE_PALETTE_CALLS.md)
+restore two blue comparison groups and reduce transition differences from
+18 to 12. Five exact device companions retain 808 bytes.
 
 The [palette interface](EXACT_PALETTE_COM_CALLS.md) promotes complete stretch
 and reset while preserving all affected exacts. Paddle improves from 68 to 48

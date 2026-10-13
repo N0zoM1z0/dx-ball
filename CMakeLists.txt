@@ -35,7 +35,7 @@ add_library(dxball_core SHARED
     # Frame dispatch and presentation
     src/runtime.cpp
     src/display.cpp
-    src/device.c
+    src/device.cpp
 
     # Platform, screens, and audio
     src/platform.c
