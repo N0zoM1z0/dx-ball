@@ -39,6 +39,55 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_cpp_tables]
+source = "src/runtime_cpp_tables.cpp"
+object = "build/exact/runtime_cpp_tables.obj"
+inputs = ["src/runtime_cpp_tables.cpp", "src/runtime_cpp_tables.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.cpp-adjust-pointer]
+build = "runtime_cpp_tables"
+symbol = "_dxball_cpp_adjust_pointer"
+target_address = 0x0041BBE0
+size = 33
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TABLES.md"
+relocations = [
+]
+
+[units.cpp-select-try-range]
+build = "runtime_cpp_tables"
+symbol = "_dxball_cpp_select_try_range"
+target_address = 0x0041B5F0
+size = 159
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TABLES.md"
+relocations = [
+  { offset = 65, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 135, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+]
+
+[candidates.cpp-find-foreign-handler]
+build = "runtime_cpp_tables"
+symbol = "_dxball_cpp_find_foreign_handler"
+target_address = 0x0041B510
+size = 213
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TABLES.md"
+relocations = [
+  { offset = 5, type = "DIR32", symbol = "_dxball_cpp_se_translator", addend = 0, target = 0x0042389C },
+  { offset = 52, type = "REL32", symbol = "_dxball_cpp_call_se_translator", addend = 0, target = 0x00418650 },
+  { offset = 95, type = "REL32", symbol = "_dxball_cpp_select_try_range", addend = 0, target = 0x0041B5F0 },
+  { offset = 181, type = "REL32", symbol = "_dxball_cpp_catch_it", addend = 0, target = 0x0041B780 },
+]
+
+[units.cpp-frame-unwind-filter]
+build = "runtime_cpp_tables"
+symbol = "_dxball_cpp_frame_unwind_filter"
+target_address = 0x0041B760
+size = 22
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TABLES.md"
+relocations = [
+  { offset = 15, type = "REL32", symbol = "_dxball_cpp_terminate", addend = 0, target = 0x0041BC60 },
+]
+
 [builds.runtime_fp_dispatch]
 source = "src/runtime_fp_dispatch.cpp"
 object = "build/exact/runtime_fp_dispatch.obj"

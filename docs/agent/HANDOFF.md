@@ -50,18 +50,28 @@ goal with the prompt above, preserving the same objective.
 
 | Item | Current value |
 | --- | ---: |
-| Provisional function candidates | 538 |
-| Source-present functions | 410 |
-| Exact functions | 304 |
-| Complete exact code bytes | 68,066 |
+| Provisional function candidates | 539 |
+| Source-present functions | 414 |
+| Exact functions | 307 |
+| Complete exact code bytes | 68,280 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 304 exact functions does not prove project completion.
+These are separate ledgers; 307 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 36 unclassified origins remain open.
+The authored denominator and 34 unclassified origins remain open.
+
+C++ exception tables add four bodies and three complete exacts across214 bytes:
+pointer adjustment33, range159 and unwind filter22. Foreign213/213/70 remains
+a candidate. The newly proved filter brings inventory539; source414/exact307,
+code68,280 and candidates98 (34 authored/64 runtime). All304 preceding exacts
+and97 candidates are preserved. Native-width metadata, PMD displacements and
+real pre-table state reads are restored without fabricated sentinel storage.
+See [C++ tables](../research/exact/RUNTIME_CPP_TABLES.md) and
+`.analysis/runtime-cpp-tables-20261014/verification.json`. Two closed REA runs,
+seven records; no runtime/game tests. Exception transfer/integration remains open.
 
 FP dispatch now supplies both complete raising/handling bodies and all40
 initialized util constants. Raise880/876/328 and handle708/704/436 remain

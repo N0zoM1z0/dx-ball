@@ -340,6 +340,11 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_cpp_tables]
+source = "src/runtime_cpp_tables.cpp"
+header = "src/runtime_cpp_tables.h"
+additional_inputs = []
+
 [owners.runtime_fp_dispatch]
 source = "src/runtime_fp_dispatch.cpp"
 header = "src/runtime_fp_dispatch.h"
