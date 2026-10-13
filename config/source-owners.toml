@@ -324,3 +324,13 @@ additional_inputs = ["src/state_types.h"]
 source = "src/runtime_locale_backends.cpp"
 header = "src/runtime_locale_backends.h"
 additional_inputs = ["src/runtime_case_conversion.h", "src/runtime_resize.h", "src/allocator.h", "src/state_types.h"]
+
+[owners.runtime_fatal]
+source = "src/runtime_fatal.c"
+header = "src/runtime_fatal.h"
+additional_inputs = ["src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
+
+[owners.runtime_lowio_startup]
+source = "src/runtime_lowio_startup.c"
+header = "src/runtime_lowio_startup.h"
+additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/allocator.h"]

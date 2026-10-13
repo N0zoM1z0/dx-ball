@@ -51,17 +51,28 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 349 |
-| Exact functions | 268 |
-| Complete exact code bytes | 65,496 |
+| Source-present functions | 353 |
+| Exact functions | 270 |
+| Complete exact code bytes | 65,599 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 268 exact functions does not prove project completion.
+These are separate ledgers; 270 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 64 unclassified origins remain open.
+The authored denominator and 60 unclassified origins remain open.
+
+Low-I/O startup/fatal recovery adds four full bodies and the complete17-row
+error catalog. Fatal42 and banner61 are exact; the old fatal38-byte extent is
+corrected through its trailing cleanup/return. Packed inherited metadata restores
+the startup68-byte frame; initialization468/467/304 and formatting493/494/419
+remain nonexact. Source353/exact270/65,599 code bytes; candidates74 (34 authored/
+40 runtime), origins270/156/43/60. All268 old exacts and72 candidates preserve
+their producer inputs/products/results. See [startup/fatal recovery](../research/exact/RUNTIME_LOWIO_STARTUP.md)
+and `.analysis/runtime-lowio-startup-20261014/verification.json`. Message-box
+backend, original formatting frame and OS/game integration remain open.
+No runtime tests or game builds run.
 
 The locale-backend follow-up restores both mapping/classification paths and
 their private bounded counter. Character-type conversion291 is exact with all
@@ -278,8 +289,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `abad143`
-(exit registration and exact termination entries).
+Latest published source checkpoint before this continuation: `d39da73`
+(locale backends and exact character-type conversion).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -292,12 +303,18 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 265 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 69 candidates;
+- `build/reports/exact-replay.json`: all 270 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 74 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-integer-text-20261013/verification.json`: current
+- `.analysis/runtime-lowio-startup-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-locale-backends-20261014/verification.json`: preceding
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-case-conversion-20261014/verification.json`: preceding
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-integer-text-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-onexit-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.

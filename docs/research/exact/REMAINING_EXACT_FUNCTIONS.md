@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**265 functions / 64,747 code bytes / 136 metadata bytes**.
+**270 functions / 65,599 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -65,6 +65,11 @@ and the maintained96-byte helper with two comparison-direction differences.
 Its reversal uses address cursors so a one-digit conversion does not form a
 before-array pointer. Current candidates69:34 authored/35 runtime; all prior
 263 exact and68 candidate results remain unchanged.
+
+[Case conversion](RUNTIME_CASE_CONVERSION.md), [locale backends](RUNTIME_LOCALE_BACKENDS.md)
+and [startup/fatal recovery](RUNTIME_LOWIO_STARTUP.md) add five complete runtime
+exacts across852 bytes. Current candidates74:34 authored/40 runtime; every
+authored result below remains unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

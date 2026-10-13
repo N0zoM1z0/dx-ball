@@ -375,7 +375,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00418650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00418730,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004187A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00418930,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00418930,runtime,crt-startup,maintain,high,ev_851cf2b71d136e23d4b9af1063451b2165d151d2d95ec2fcfef200a68b4df76c
 0x00418990,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004189CE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00418A04,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -426,7 +426,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041AA10,runtime,crt-locale,maintain,high,ev_e7659c72931b8bf01792878b3338d776b2981b07db91c0292626e01c2cafef04
 0x0041AC40,runtime,crt-locale,maintain,high,ev_f49f4dba00890637cf91c60d334ffeecc4feda4b8b61e522f92fe7cc3b5d95e3
 0x0041AC70,runtime,crt-locale,maintain,high,ev_47a036db560d67307ffa7aad537b42b78fdfebb00d193f40a063e500f094cc8e
-0x0041AD10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041AD10,runtime,crt-startup,maintain,high,ev_ff7340af30b2e504f64919461b80d310aaea86a1280a86f1a33fcde880d36f87
 0x0041AEF0,runtime,crt_library,dependency,high,ev_8a3e48cca502a2f1a3d34d1246d360fca7389ba17f0326a8af68ad678e4e7aa0; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
 0x0041AF40,runtime,crt_library,dependency,high,ev_b168811a2cb1c68a1af06a7efadaf93b8d3b14073ce429293e7225330d28088a; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041B000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -455,8 +455,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041C6E0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041C710,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041C7E1,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
-0x0041C800,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041C840,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041C800,runtime,crt-startup,maintain,high,ev_5728861eadf1839d5726e6492f8cdafee59fcc2b4a908ff3e3cabf6b6a3d4eb5
+0x0041C840,runtime,crt-startup,maintain,high,ev_4337657dfbcfb469e995ef62b64dbd6d0ee53aa2189f2439a7b420161e4b53c7
 0x0041CA30,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041CA97,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041CB3B,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
