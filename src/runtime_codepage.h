@@ -28,7 +28,7 @@ extern "C" {
 extern int __mbcodepage;
 extern unsigned int __mblcid;
 extern unsigned short __mbulinfo[6];
-extern int __lc_codepage;
+extern unsigned int __lc_codepage;
 
 DXBALL_CODEPAGE_IMPORT unsigned int DXBALL_CODEPAGE_CALL GetACP(void);
 DXBALL_CODEPAGE_IMPORT unsigned int DXBALL_CODEPAGE_CALL GetOEMCP(void);

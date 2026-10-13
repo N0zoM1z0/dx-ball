@@ -51,17 +51,30 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 531 |
-| Source-present functions | 370 |
-| Exact functions | 281 |
-| Complete exact code bytes | 66,062 |
+| Source-present functions | 374 |
+| Exact functions | 282 |
+| Complete exact code bytes | 66,281 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 281 exact functions does not prove project completion.
+These are separate ledgers; 282 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 53 unclassified origins remain open.
+The authored denominator and 50 unclassified origins remain open.
+
+Argument/environment recovery adds four full bodies. Environment setup219 is
+exact; setup151/155/116, parsing475/466/280 and acquisition389/411/404 remain
+candidates. Separate native-width globals follow proven external ownership;
+quoted DBCS counting asymmetry and all original stores are retained. Cached OS
+acquisition has an original uninitialized-stack read and remains unproved.
+Source374/exact282/66,281 code bytes; candidates83 (34 authored/49 runtime),
+origins270/168/43/50. Four code-page exacts227 and its candidate are recompiled
+unchanged after the shared unsigned locale declaration correction; other277
+exacts/79 candidates are reused. See [startup arguments](../research/exact/RUNTIME_ARGUMENTS.md)
+and `.analysis/runtime-arguments-20261014/verification.json`. One closed12-record
+REA run and whole CRT sections ground the source. No runtime tests/game builds;
+startup/OS/game integration and native semantic acceptance remain open.
 
 Code-page recovery adds five full bodies and525 logical initialized bytes.
 System selection77, locale mapping95, single-byte reset44 and startup11 are
@@ -336,8 +349,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `08d4c05`
-(decimal output and exact multibyte lead classification).
+Latest published source checkpoint before this continuation: `c05bc2e`
+(code-page startup and four complete exact bodies).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -350,12 +363,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 281 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 80 candidates;
+- `build/reports/exact-replay.json`: all 282 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 83 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-codepage-20261014/verification.json`: current
+- `.analysis/runtime-arguments-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-codepage-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-decimal-output-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
