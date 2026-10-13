@@ -1,6 +1,12 @@
 # Sprite, font, PCX and palette owner
 
-The latest [complete capture flow](exact/EXACT_CAPTURE_ADDRESS_FLOW.md) explains
+The [shared surface COM implementation](exact/EXACT_SURFACE_COM_CALLS.md) now
+matches complete ordinary blit, capture and glyph drawing. Stretch becomes a
+candidate; the net gain is two exact functions and 1,236 bytes. All 1,869 existing
+resource cases and six retained callback scenarios pass. The earlier owner
+investigations below describe their historical source and products.
+
+The earlier [complete capture flow](exact/EXACT_CAPTURE_ADDRESS_FLOW.md) explains
 all248 original/current instructions without a new source change.18 actual
 bank-address groups prove the same1048*bank+4*sprite slot address;104 other
 instructions agree through a complete140-byte typed frame map and five direct
@@ -174,7 +180,7 @@ connected private draft below remains historical failure-path evidence; see
 
 Evidence is the hash-pinned DX-Ball v1.07 target in `config/target.toml`.
 Attested Ghidra queries cover the entries below; original x86 execution supplies
-the behavioral evidence. The maintained implementation is `src/resources.c`.
+the behavioral evidence. The maintained implementation is `src/resources.cpp`.
 
 | Entry | Maintained function | Target extent | Acceptance |
 | --- | --- | ---: | --- |
@@ -182,13 +188,13 @@ the behavioral evidence. The maintained implementation is `src/resources.c`.
 | `0x00403E90` | select_font_bank | 24 | full exact |
 | `0x00403F70` | blt_keyed_sprite | 195 | full exact |
 | `0x00404040` | draw_keyed_sprite | 105 | full exact |
-| `0x004040B0` | blt_sprite | 195 | scoped semantic; exact candidate |
+| `0x004040B0` | blt_sprite | 195 | full exact |
 | `0x00404180` | draw_sprite | 105 | full exact |
-| `0x004041F0` | stretch_keyed_sprite | 139 | full exact |
-| `0x004042B0` | capture_sprite | 852 | scoped semantic; exact candidate |
+| `0x004041F0` | stretch_keyed_sprite | 139 | scoped semantic; exact candidate |
+| `0x004042B0` | capture_sprite | 852 | full exact |
 | `0x00404610` | load_sprite_bank | 1475 | scoped semantic; exact candidate |
 | `0x00404BE0` | release_sprite | 262 | full exact |
-| `0x00404CF0` | draw_glyph | 328 | scoped semantic; exact candidate |
+| `0x00404CF0` | draw_glyph | 328 | full exact |
 | `0x00404E40` | find_glyph | 145 | full exact |
 | `0x00409790` | load_live_palette | 337 | full exact |
 | `0x004098F0` | load_saved_palette | 307 | full exact |

@@ -1,4 +1,6 @@
+extern "C" {
 #include "allocator.h"
+}
 #include "resources.h"
 
 #include <stdlib.h>
@@ -29,8 +31,7 @@ void dxball_select_font_bank(DxBallInt bank)
 /* FUNCTION: DXBALL 0x00404180 */
 void dxball_draw_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
 {
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_active_surface, x, y,
+    ((DxBallDDSurface *)dxball_active_surface)->blt_fast(x, y,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x10);
     return;
@@ -39,8 +40,7 @@ void dxball_draw_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
 /* FUNCTION: DXBALL 0x00404040 */
 void dxball_draw_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
 {
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_active_surface, x, y,
+    ((DxBallDDSurface *)dxball_active_surface)->blt_fast(x, y,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x11);
     return;
@@ -54,8 +54,7 @@ void dxball_blt_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     destination.top = y;
     destination.right = x + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width;
     destination.bottom = y + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_active_surface, &destination,
+    ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
     return;
@@ -69,8 +68,7 @@ void dxball_blt_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     destination.top = y;
     destination.right = x + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width;
     destination.bottom = y + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_active_surface, &destination,
+    ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1000000, NULL);
     return;
@@ -85,8 +83,7 @@ void dxball_stretch_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     destination.top = y;
     destination.right = x + width;
     destination.bottom = y + height;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_active_surface, &destination,
+    ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
     return;
@@ -97,8 +94,7 @@ void dxball_release_sprite(DxBallInt sprite)
 {
     if (dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] == NULL) return;
     if (dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface != NULL) {
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->release(
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface);
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->release();
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface = NULL;
     }
     dxball_heap_release(dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]);
@@ -146,12 +142,10 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
         if (api.result != 0) return;
         key.low = 0;
         key.high = 0;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->set_color_key(8, &key);
         api.description.flags = 0x7f9ee;
         do {
-            api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
-                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &api.description);
+            api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->get_desc(&api.description);
         } while (api.result != 0);
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = api.description.pitch;
     }
@@ -159,9 +153,7 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     capture.top = y;
     capture.right = width + x;
     capture.bottom = height + y;
-    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->blt(
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
-        &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect,
+    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->blt(&dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect,
         (DxBallDDSurface *)dxball_active_surface, &capture, 0x1000000, NULL);
     return;
 }
@@ -233,21 +225,17 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
                 return;
             key.low = 0;
             key.high = 0;
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->set_color_key(
-                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, 8, &key);
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->set_color_key(8, &key);
             api.description.flags = 0x7f9ee;
             do {
-                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->get_desc(
-                    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, &api.description);
+                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->get_desc(&api.description);
             } while (api.result != 0);
             /* GetSurfaceDesc supplies the row stride before Lock; later API writes
                to the descriptor or current record do not replace that snapshot. */
             pitch = api.description.pitch;
             dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = pitch;
             do {
-                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->lock(
-                    dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
-                    NULL, &api.description, 0, NULL);
+                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->lock(NULL, &api.description, 0, NULL);
             } while (api.result != 0);
             cursor = 0;
             for (row = height - 1; row >= 0; --row) {
@@ -257,8 +245,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
                     cursor = cursor + 1;
                 }
             }
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->vtable->unlock(
-                dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->unlock(NULL);
         }
         dxball_heap_release(pixels);
     }
@@ -293,8 +280,7 @@ DxBallInt dxball_draw_glyph(signed char code, DxBallInt x, DxBallInt baseline)
                          - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
         destination.right = dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + x;
         destination.bottom = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
-        ((DxBallDDSurface *)dxball_active_surface)->vtable->blt(
-            (DxBallDDSurface *)dxball_active_surface, &destination,
+        ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
             dxball_sprite_banks[dxball_font_bank].sprites[sprite]->surface,
             &dxball_sprite_banks[dxball_font_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
         return dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width;
@@ -355,7 +341,7 @@ void dxball_load_surface_palette(DxBallDDSurface *surface, const char *path)
     if (result != 0) {
         return;
     }
-    result = surface->vtable->set_palette(surface, dxball_direct_palette);
+    result = surface->set_palette(dxball_direct_palette);
     return;
 }
 
@@ -391,7 +377,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
     DxBallInt header_index, run_index;
     description.size = sizeof(description);
     description.flags = 0xe;
-    surface->vtable->get_desc(surface, &description);
+    surface->get_desc(&description);
     width = description.width;
     height = description.height;
     pitch = description.pitch;
@@ -406,7 +392,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
     xmax = header.xmax;
     ymax = header.ymax;
     do {
-        result = surface->vtable->lock(surface, NULL, &description, 0, NULL);
+        result = surface->lock(NULL, &description, 0, NULL);
     } while (result != 0);
     pixel = description.pixels;
     decoded = 0;
@@ -450,7 +436,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
             column = column + 1;
         }
     }
-    surface->vtable->unlock(surface, NULL);
+    surface->unlock(NULL);
     fclose(file);
     if (palette_mode == 1)
         dxball_load_live_palette(path);

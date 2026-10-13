@@ -55,20 +55,20 @@ address,symbol,source,scope,semantic_unit
 0x00403CB0,dxball_release_sprite_banks,src/startup.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",startup-release-sprite-banks
 0x00403D30,dxball_restore_sprite_banks,src/device.c,"See docs/research/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-restore-sprite-banks
 0x00403E50,dxball_select_surface,src/boards.c,all 32-bit handles,board-render
-0x00403E70,dxball_select_sprite_bank,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
-0x00403E90,dxball_select_font_bank,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-font-bank
-0x00403EB0,dxball_release_sprite_bank,src/resources.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,release-sprite-bank
-0x00403F70,dxball_blt_keyed_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-keyed-sprite
-0x00404040,dxball_draw_keyed_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-keyed-sprite
-0x004040B0,dxball_blt_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-sprite
-0x00404180,dxball_draw_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-sprite
-0x004041F0,dxball_stretch_keyed_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-stretch-keyed-sprite
+0x00403E70,dxball_select_sprite_bank,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-sprite-bank
+0x00403E90,dxball_select_font_bank,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-select-font-bank
+0x00403EB0,dxball_release_sprite_bank,src/resources.cpp,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,release-sprite-bank
+0x00403F70,dxball_blt_keyed_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-keyed-sprite
+0x00404040,dxball_draw_keyed_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-keyed-sprite
+0x004040B0,dxball_blt_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-sprite
+0x00404180,dxball_draw_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-sprite
+0x004041F0,dxball_stretch_keyed_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-stretch-keyed-sprite
 0x00404280,dxball_draw_rotated_sprite,src/rotation.c,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-draw-sprite
-0x004042B0,dxball_capture_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
-0x00404610,dxball_load_sprite_bank,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
-0x00404BE0,dxball_release_sprite,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite
-0x00404CF0,dxball_draw_glyph,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
-0x00404E40,dxball_find_glyph,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
+0x004042B0,dxball_capture_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
+0x00404610,dxball_load_sprite_bank,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
+0x00404BE0,dxball_release_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite
+0x00404CF0,dxball_draw_glyph,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
+0x00404E40,dxball_find_glyph,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
 0x00404EE0,dxball_draw_text,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-text
 0x00404F80,dxball_draw_centered_text,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-centered-text
 0x00404FD0,dxball_measure_text,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-measure-text
@@ -127,10 +127,10 @@ address,symbol,source,scope,semantic_unit
 0x004094E0,dxball_sort_present_regions,src/display.c,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-sort-present-regions
 0x00409610,dxball_wait_frames,src/display.c,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-wait-frames
 0x004096C0,dxball_initialize_palette,src/device.c,"See docs/research/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-initialize-palette
-0x00409790,dxball_load_live_palette,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
-0x004098F0,dxball_load_saved_palette,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
-0x00409A30,dxball_load_surface_palette,src/resources.c,See docs/research/exact/EXACT_PALETTES.md; valid file and initialized typed DirectDraw owner; complete-byte acceptance; active use unresolved; no separate direct cases,
-0x00409BB0,dxball_load_pcx,src/resources.c,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
+0x00409790,dxball_load_live_palette,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
+0x004098F0,dxball_load_saved_palette,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette
+0x00409A30,dxball_load_surface_palette,src/resources.cpp,See docs/research/exact/EXACT_PALETTES.md; valid file and initialized typed DirectDraw owner; complete-byte acceptance; active use unresolved; no separate direct cases,
+0x00409BB0,dxball_load_pcx,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-pcx
 0x00409F10,dxball_clear_surface,src/device.c,"See docs/research/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-clear-surface
 0x00409F70,dxball_load_bitmap,src/bitmap.c,"See docs/research/BITMAP_INVESTIGATION.md: bounded nonnegative geometry/backing, four pre-entry stack seeds, controlled API effects and fallback paths; physical driver and active gameplay use unproven",bitmap-load
 0x0040A340,dxball_palette_transition,src/device.c,"See docs/research/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-palette-transition

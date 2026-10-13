@@ -13,16 +13,35 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **232 exact functions /59,486 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 41 authored nonexact functions.
-The [direct surface virtual-call models](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#directdraw-surface-virtual-calls)
-are rejected. Three coherent C++ interface/data views each produce private
-zero comparisons for blit/capture/glyph, but lose existing stretch, release or
-keyed-draw exacts. SDK-record stretch has correct rectangle arithmetic and two
-longer reordered address producers. No canonical input/product changes, new
-exact, fixture, game or provider run. Thirty-five completed copies are gzip
-verified, releasing 684,032 allocated bytes. Preserve the rejection before
-trying more interface or primitive-type combinations.
+Latest checkpoint: **234 exact functions /60,722 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 39 authored nonexact functions.
+The [shared surface COM implementation](../research/exact/EXACT_SURFACE_COM_CALLS.md)
+promotes complete blit195, capture852 and glyph328. Stretch explicitly demotes
+from139 exact to141/139 with90 differences: its rectangle prefix agrees, while
+two bank/sprite address producers add one byte each. Net gain is2 functions
+and1236 bytes. Exact claims need not be monotonic; compare the full affected
+family and retain explicit historical demotions. The saved SDK-record stage
+needed allocator C linkage before integration; current objects bind real C
+exports, without decorated-symbol diagnostic mappings.
+All28 affected matching recipes and all234 whole closures pass. Native1869
+resource cases and six retained capture/bank callback cases pass. Native/MinGW
+build; VC4 links27 matching, five production and five unchanged objects.
+Historical input inventories refresh249 rows, without claiming fresh unrelated
+behavioral cases. Thirty-seven retained candidates keep code identities;
+PCX changes one signed comparison group but stays979/862 with851 differences.
+Bank stays1475/72. No game/provider/new fixture run.
+`.analysis/surface-com-integration-20261013/verification.json`.
+Independent review confirms all234 closures,68 input identities, five products,
+actual allocator C symbols and explicit promotion/demotion ledgers. Completed
+private copies and two obsolete CMake C objects are gzip verified:104 carriers
+release221184 allocated bytes. Current products remain.
+The larger all-COM interface trial loses more accepted functions and rejects;
+retain `.analysis/ddraw-full-com-20261013/`. Missing original source/debug
+materials are not a prerequisite to further reconstruction. Continue exploring
+binary-supported source and compiler models rather than treating their absence
+as a blocker.
+The earlier [surface virtual-call diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#directdraw-surface-virtual-calls)
+remain historical, including their rejected fixed/shared-record variants.
 The latest [standalone color-key phase](../research/exact/BANK_COLOR_KEY_PHASE.md)
 moves only that declaration into its consuming surface-transfer block. The
 116-byte API record stays unchanged. Key EBP-64 now matches the original,
@@ -400,7 +419,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 50 authored non-exact functions. Use current manifest objects
+Next priority: the 39 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -498,11 +517,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 223 |
-| Exact code / separate metadata bytes | 55,481 /136 |
+| Complete exact functions | 234 |
+| Exact code / separate metadata bytes | 60,722 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/rectangle-overlap-record-20261012/verification.json`.
+Current product/comparison receipt: `.analysis/surface-com-integration-20261013/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

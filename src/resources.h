@@ -12,6 +12,33 @@
 #define DXBALL_DDCALL
 #endif
 
+#ifdef __cplusplus
+#if defined(_WIN32)
+#include <windows.h>
+#include <wtypes.h>
+typedef HRESULT DxBallDDResult;
+typedef DWORD DxBallDDWord;
+typedef ULONG DxBallDDRefCount;
+typedef LONG DxBallDDLong;
+typedef HDC DxBallDDDC;
+typedef HANDLE DxBallDDHandle;
+#else
+typedef DxBallInt DxBallDDResult;
+typedef DxBallUInt DxBallDDWord, DxBallDDRefCount;
+typedef DxBallInt DxBallDDLong;
+typedef void *DxBallDDDC, *DxBallDDHandle;
+#endif
+#define DX_DD_RESULT DxBallDDResult
+#define DX_DD_WORD DxBallDDWord
+#define DX_DD_LONG DxBallDDLong
+#define DX_DD_REFCOUNT DxBallDDRefCount
+#else
+#define DX_DD_RESULT DxBallInt
+#define DX_DD_WORD DxBallUInt
+#define DX_DD_LONG DxBallInt
+#define DX_DD_REFCOUNT DxBallUInt
+#endif
+
 typedef struct DxBallDDSurface DxBallDDSurface;
 typedef struct DxBallDDraw DxBallDDraw;
 typedef struct DxBallDDPalette DxBallDDPalette;
@@ -19,67 +46,121 @@ typedef struct DxBallPaletteEntry DxBallPaletteEntry;
 typedef void (DXBALL_DDCALL *DxBallUnknownDDMethod)(void);
 
 typedef struct DxBallSurfaceDesc {
-    DxBallUInt size, flags, height, width;
-    DxBallInt pitch;
-    DxBallUInt ancillary[4];
+    DX_DD_WORD size, flags, height, width;
+    DX_DD_LONG pitch;
+    DX_DD_WORD ancillary[4];
     DxBallByte *pixels;
-    DxBallUInt color_keys[8];
-    DxBallUInt pixel_format[8];
-    DxBallUInt caps;
+    DX_DD_WORD color_keys[8];
+    DX_DD_WORD pixel_format[8];
+    DX_DD_WORD caps;
 } DxBallSurfaceDesc;
 
 typedef struct DxBallColorKey {
-    DxBallUInt low, high;
+    DX_DD_WORD low, high;
 } DxBallColorKey;
 
 /* Unknown slots are opaque and never invoked by this owner. Known slot indices
    come from target calls, corroborated by the original DirectDraw interface. */
 typedef struct DxBallDDSurfaceVTable {
     DxBallUnknownDDMethod query_interface, add_ref;
-    DxBallUInt (DXBALL_DDCALL *release)(DxBallDDSurface *);
+    DX_DD_REFCOUNT (DXBALL_DDCALL *release)(DxBallDDSurface *);
     DxBallUnknownDDMethod add_attached_surface, add_overlay_dirty_rect;
-    DxBallInt (DXBALL_DDCALL *blt)(DxBallDDSurface *, DxBallRect *,
-                                 DxBallDDSurface *, DxBallRect *, DxBallUInt, void *);
+    DX_DD_RESULT (DXBALL_DDCALL *blt)(DxBallDDSurface *, DxBallRect *,
+                                 DxBallDDSurface *, DxBallRect *, DX_DD_WORD, void *);
     DxBallUnknownDDMethod blt_batch;
-    DxBallInt (DXBALL_DDCALL *blt_fast)(DxBallDDSurface *, DxBallUInt, DxBallUInt,
-                                      DxBallDDSurface *, DxBallRect *, DxBallUInt);
+    DX_DD_RESULT (DXBALL_DDCALL *blt_fast)(DxBallDDSurface *, DX_DD_WORD, DX_DD_WORD,
+                                      DxBallDDSurface *, DxBallRect *, DX_DD_WORD);
     DxBallUnknownDDMethod slots_8_to_10[3];
-    DxBallInt (DXBALL_DDCALL *flip)(DxBallDDSurface *, DxBallDDSurface *, DxBallUInt);
+    DX_DD_RESULT (DXBALL_DDCALL *flip)(DxBallDDSurface *, DxBallDDSurface *, DX_DD_WORD);
     DxBallUnknownDDMethod slot_12;
-    DxBallInt (DXBALL_DDCALL *get_blt_status)(DxBallDDSurface *, DxBallUInt);
+    DX_DD_RESULT (DXBALL_DDCALL *get_blt_status)(DxBallDDSurface *, DX_DD_WORD);
     DxBallUnknownDDMethod slots_14_to_21[8];
-    DxBallInt (DXBALL_DDCALL *get_desc)(DxBallDDSurface *, DxBallSurfaceDesc *);
+    DX_DD_RESULT (DXBALL_DDCALL *get_desc)(DxBallDDSurface *, DxBallSurfaceDesc *);
     DxBallUnknownDDMethod initialize, is_lost;
-    DxBallInt (DXBALL_DDCALL *lock)(DxBallDDSurface *, DxBallRect *,
-                                  DxBallSurfaceDesc *, DxBallUInt, void *);
+    DX_DD_RESULT (DXBALL_DDCALL *lock)(DxBallDDSurface *, DxBallRect *,
+                                  DxBallSurfaceDesc *, DX_DD_WORD, void *);
     DxBallUnknownDDMethod release_dc;
-    DxBallInt (DXBALL_DDCALL *restore)(DxBallDDSurface *);
+    DX_DD_RESULT (DXBALL_DDCALL *restore)(DxBallDDSurface *);
     DxBallUnknownDDMethod set_clipper;
-    DxBallInt (DXBALL_DDCALL *set_color_key)(DxBallDDSurface *, DxBallUInt,
+    DX_DD_RESULT (DXBALL_DDCALL *set_color_key)(DxBallDDSurface *, DX_DD_WORD,
                                             DxBallColorKey *);
     DxBallUnknownDDMethod set_overlay_position;
-    DxBallInt (DXBALL_DDCALL *set_palette)(DxBallDDSurface *, DxBallDDPalette *);
-    DxBallInt (DXBALL_DDCALL *unlock)(DxBallDDSurface *, void *);
+    DX_DD_RESULT (DXBALL_DDCALL *set_palette)(DxBallDDSurface *, DxBallDDPalette *);
+    DX_DD_RESULT (DXBALL_DDCALL *unlock)(DxBallDDSurface *, void *);
 } DxBallDDSurfaceVTable;
 
+#ifdef __cplusplus
+/* C++ projection of the original IDirectDrawSurface interface. Widths use
+   the same fixed-width ABI types as the public C view. No virtual destructor. */
+struct DxBallDDGuid { DX_DD_WORD a; unsigned short b, c; DxBallByte d[8]; };
+struct DxBallDDBltFx;
+struct DxBallDDBltBatch;
+struct DxBallDDCaps;
+struct DxBallDDClipper;
+struct DxBallDDPixelFormat;
+struct DxBallDDOverlayFx;
+typedef DX_DD_RESULT (DXBALL_DDCALL *DxBallDDEnumSurface)(
+    DxBallDDSurface *, DxBallSurfaceDesc *, void *);
+struct DxBallDDUnknown {
+    virtual DX_DD_RESULT DXBALL_DDCALL query_interface(const DxBallDDGuid &, void **) = 0;
+    virtual DX_DD_REFCOUNT DXBALL_DDCALL add_ref() = 0;
+    virtual DX_DD_REFCOUNT DXBALL_DDCALL release() = 0;
+};
+struct DxBallDDSurface : public DxBallDDUnknown {
+    virtual DX_DD_RESULT DXBALL_DDCALL add_attached_surface(DxBallDDSurface *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL add_overlay_dirty_rect(DxBallRect *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL blt(DxBallRect *, DxBallDDSurface *, DxBallRect *, DX_DD_WORD, DxBallDDBltFx *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL blt_batch(DxBallDDBltBatch *, DX_DD_WORD, DX_DD_WORD) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL blt_fast(DX_DD_WORD, DX_DD_WORD, DxBallDDSurface *, DxBallRect *, DX_DD_WORD) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL delete_attached_surface(DX_DD_WORD, DxBallDDSurface *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL enum_attached_surfaces(void *, DxBallDDEnumSurface) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL enum_overlay_z_orders(DX_DD_WORD, void *, DxBallDDEnumSurface) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL flip(DxBallDDSurface *, DX_DD_WORD) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_attached_surface(DxBallDDCaps *, DxBallDDSurface **) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_blt_status(DX_DD_WORD) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_caps(DxBallDDCaps *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_clipper(DxBallDDClipper **) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_color_key(DX_DD_WORD, DxBallColorKey *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_dc(DxBallDDDC *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_flip_status(DX_DD_WORD) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_overlay_position(DX_DD_LONG *, DX_DD_LONG *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_palette(DxBallDDPalette **) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_pixel_format(DxBallDDPixelFormat *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_desc(DxBallSurfaceDesc *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL initialize(DxBallDDraw *, DxBallSurfaceDesc *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL is_lost() = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL lock(DxBallRect *, DxBallSurfaceDesc *, DX_DD_WORD, DxBallDDHandle) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL release_dc(DxBallDDDC) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL restore() = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL set_clipper(DxBallDDClipper *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL set_color_key(DX_DD_WORD, DxBallColorKey *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL set_overlay_position(DX_DD_LONG, DX_DD_LONG) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL set_palette(DxBallDDPalette *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL unlock(void *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL update_overlay(DxBallRect *, DxBallDDSurface *, DxBallRect *, DX_DD_WORD, DxBallDDOverlayFx *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL update_overlay_display(DX_DD_WORD) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL update_overlay_z_order(DX_DD_WORD, DxBallDDSurface *) = 0;
+};
+#else
 struct DxBallDDSurface { const DxBallDDSurfaceVTable *vtable; };
+#endif
 
 typedef struct DxBallDDrawVTable {
     DxBallUnknownDDMethod slots_0_to_4[5];
-    DxBallInt (DXBALL_DDCALL *create_palette)(DxBallDDraw *, DxBallUInt,
+    DX_DD_RESULT (DXBALL_DDCALL *create_palette)(DxBallDDraw *, DX_DD_WORD,
         DxBallPaletteEntry *, DxBallDDPalette **, void *);
-    DxBallInt (DXBALL_DDCALL *create_surface)(DxBallDDraw *, DxBallSurfaceDesc *,
+    DX_DD_RESULT (DXBALL_DDCALL *create_surface)(DxBallDDraw *, DxBallSurfaceDesc *,
                                              DxBallDDSurface **, void *);
     DxBallUnknownDDMethod slots_7_to_21[15];
-    DxBallInt (DXBALL_DDCALL *wait_vertical_blank)(DxBallDDraw *, DxBallUInt, void *);
+    DX_DD_RESULT (DXBALL_DDCALL *wait_vertical_blank)(DxBallDDraw *, DX_DD_WORD, void *);
 } DxBallDDrawVTable;
 struct DxBallDDraw { const DxBallDDrawVTable *vtable; };
 
 struct DxBallPaletteEntry { DxBallByte red, green, blue, flags; };
 typedef struct DxBallDDPaletteVTable {
     DxBallUnknownDDMethod slots_0_to_5[6];
-    DxBallInt (DXBALL_DDCALL *set_entries)(DxBallDDPalette *, DxBallUInt, DxBallUInt,
-                                          DxBallUInt, DxBallPaletteEntry *);
+    DX_DD_RESULT (DXBALL_DDCALL *set_entries)(DxBallDDPalette *, DX_DD_WORD, DX_DD_WORD,
+                                          DX_DD_WORD, DxBallPaletteEntry *);
 } DxBallDDPaletteVTable;
 struct DxBallDDPalette { const DxBallDDPaletteVTable *vtable; };
 
@@ -97,6 +178,10 @@ typedef struct DxBallSpriteBank {
     DxBallInt count, allocation_mode;
     char filename[20];
 } DxBallSpriteBank;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 extern DxBallSpriteBank dxball_sprite_banks[3];
 extern DxBallInt dxball_sprite_bank, dxball_font_bank;
@@ -126,5 +211,14 @@ void dxball_load_saved_palette(const char *path);
 void dxball_load_surface_palette(DxBallDDSurface *, const char *);
 void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                      DxBallInt palette_mode, DxBallInt x, DxBallInt y);
+
+#ifdef __cplusplus
+}
+#endif
+
+#undef DX_DD_RESULT
+#undef DX_DD_WORD
+#undef DX_DD_LONG
+#undef DX_DD_REFCOUNT
 
 #endif

@@ -14,7 +14,7 @@ add_library(dxball_core SHARED
     src/allocator_host.c
     src/cpp_allocator.cpp
     src/boards.c
-    src/resources.c
+    src/resources.cpp
     src/rotation.c
     src/raster.cpp
     src/list_initializers.cpp

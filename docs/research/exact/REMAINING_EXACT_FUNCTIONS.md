@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-All 41 authored candidates were compared against the complete original extents
+All 39 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**232 functions / 59,486 code bytes / 136 metadata bytes**.
+**234 functions / 60,722 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -13,9 +13,9 @@ None of these candidates is already exact. The accepted total remains
 | `measure-text` | 279 | 279 | 3 |
 | `update-scroller` | 233 | 233 | 3 |
 | `update-paddle-position` | 203 | 203 | 4 |
-| `rotate-palette-right` | 234 | 234 | 6 |
 | `animate-palette` | 234 | 234 | 6 |
 | `refresh-score` | 74 | 74 | 6 |
+| `rotate-palette-right` | 234 | 234 | 6 |
 | `draw-line` | 445 | 445 | 9 |
 | `palette-transition` | 1339 | 1339 | 18 |
 | `reset-round` | 426 | 426 | 20 |
@@ -26,24 +26,22 @@ None of these candidates is already exact. The accepted total remains
 | `clear-all-entities` | 106 | 107 | 59 |
 | `load-sprite-bank` | 1475 | 1475 | 72 |
 | `fill-triangle` | 1710 | 1710 | 88 |
+| `stretch-keyed-sprite` | 139 | 141 | 90 |
 | `draw-paddle` | 677 | 677 | 104 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
-| `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon-clipped` | 1592 | 1592 | 210 |
 | `fill-polygon` | 1543 | 1543 | 211 |
 | `queue-sprite-region` | 272 | 274 | 245 |
 | `stretch-effect-sprite` | 306 | 308 | 252 |
-| `draw-glyph` | 328 | 332 | 258 |
 | `editor-key` | 632 | 638 | 260 |
 | `drop-bricks` | 426 | 436 | 306 |
-| `draw-high-scores` | 404 | 403 | 330 |
 | `draw-effect-sprite` | 361 | 365 | 330 |
+| `draw-high-scores` | 404 | 403 | 330 |
 | `draw-reduced-sprite` | 361 | 365 | 330 |
 | `blt-reduced-sprite` | 362 | 366 | 332 |
 | `hit-board-tile` | 1315 | 1316 | 418 |
 | `bounce-ball-from-paddle` | 681 | 687 | 550 |
 | `redraw-intro` | 587 | 578 | 560 |
-| `capture-sprite` | 852 | 864 | 726 |
 | `restore-regions` | 827 | 846 | 746 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 992 |
@@ -54,6 +52,13 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [surface COM integration](EXACT_SURFACE_COM_CALLS.md) promotes ordinary
+blit, capture and glyph drawing, and explicitly demotes stretch. Its two
+longer address producers leave 141/139 with 90 differences. PCX commutes one
+signed comparison group and retains 979/862 with 851 differences. The other
+37 retained candidate code identities stay unchanged. All 234 accepted
+closures, 1,869 existing resource cases and six existing callback cases pass.
 
 The latest rotation expression, axis-cursor and sampled-plane records are
 rejected: they leave the renderer nonexact and lose two accepted projection

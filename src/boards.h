@@ -9,9 +9,14 @@
 extern "C" {
 #endif
 
+#if defined(__cplusplus) && defined(_WIN32)
+#include <windows.h>
+typedef RECT DxBallRect;
+#else
 typedef struct DxBallRect {
     DxBallInt left, top, right, bottom;
 } DxBallRect;
+#endif
 
 /* Host bridge for dependencies whose original implementations are still pending.
    Surface handles are opaque; the original executable uses 32-bit COM pointers. */

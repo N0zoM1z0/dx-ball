@@ -252,6 +252,11 @@ trying a member declaration as an embedded-address fix.
 
 ## DirectDraw surface virtual calls
 
+The [later linked integration](EXACT_SURFACE_COM_CALLS.md) supersedes the
+SDK-record rejection below. It restores allocator C linkage and validates
+the whole shared family, promoting three bodies and explicitly demoting stretch
+for a net gain of two exact functions. The other two views remain rejected.
+
 Three private C++ compilations replace eighteen explicit surface vtable calls
 with direct virtual member calls. The ordered interface follows all 36 original
 IDirectDrawSurface/IUnknown slots, with stdcall and no virtual destructor.
@@ -269,10 +274,10 @@ glyph drawing. None preserves all accepted resource functions:
 
 The SDK-record stretch retains its original rectangle arithmetic, but its two
 bank/sprite address producers change register order and grow by one byte each.
-There is no missing dispatch operation to restore. These models are rejected;
-their three private zeros do not increase the exact count. Canonical source,
-headers, recipes and products remain unchanged. No fixture, game or new provider
-session runs.
+There is no missing dispatch operation to restore. This initial batch rejected
+all three views because each lost an accepted function; its private zeros were
+not promoted. Canonical source, headers, recipes and products stayed unchanged
+in that batch. No fixture, game or new provider session ran.
 
 Complete source views, actual compiler inputs, bindings and owner comparisons
 remain in `.analysis/ddraw-virtual-surface-20261013/`. Thirty-five completed

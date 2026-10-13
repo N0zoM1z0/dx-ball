@@ -19,7 +19,7 @@ flowchart TD
     Loop -->|messages| Input["platform.c: window_proc"]
     Dispatch --> Modes["Menu · Game · Editor · Game over · Splash"]
     Input -->|input| Modes
-    Modes --> Draw["display.c · resources.c · ui.c"]
+    Modes --> Draw["display.c · resources.cpp · ui.c"]
     Draw --> Surfaces["DirectDraw surfaces"]
 ```
 
@@ -60,7 +60,7 @@ defines their canonical global owners and constructors.
 explosion owner, ball count, and working tiles in one storage object.
 [boards.c](../src/boards.c) loads the 50-board bank and draws its 20×20 tile grids.
 
-[resources.c](../src/resources.c) loads sprite banks and PCX images, selects
+[resources.cpp](../src/resources.cpp) loads sprite banks and PCX images, selects
 sprite/font banks, and draws through the DirectDraw declarations in
 [resources.h](../src/resources.h). [display.c](../src/display.c) tracks dirty
 regions, restores backgrounds, and presents by flipping or copying regions.

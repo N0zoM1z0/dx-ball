@@ -244,7 +244,7 @@ def main():
 
     report = {"target_sha256": target.target_sha256, "cases": cases,
               "total": sum(cases.values()), "scope": "target resource execution; controlled CRT/DirectDraw boundaries",
-              "source_sha256": hashlib.sha256((ROOT / "src/resources.c").read_bytes()).hexdigest()}
+              "source_sha256": hashlib.sha256((ROOT / "src/resources.cpp").read_bytes()).hexdigest()}
     output = ROOT / "build/reports/resources-differential.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n")
