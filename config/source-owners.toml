@@ -340,6 +340,11 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_x87_bridge]
+source = "src/runtime_x87_bridge.c"
+header = "src/runtime_x87_bridge.h"
+additional_inputs = ["src/runtime_fp_dispatch.h", "src/runtime_fp_exceptions.h", "src/runtime_float.h", "src/runtime_fp_control.h", "src/runtime_fp_decomposition.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+
 [owners.runtime_access]
 source = "src/runtime_access.c"
 header = "src/runtime_access.h"

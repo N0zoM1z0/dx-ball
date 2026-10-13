@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 540 |
-| Source-present functions | 419 |
+| Source-present functions | 420 |
 | Exact functions | 310 |
 | Complete exact code bytes | 68,589 |
 | Attached exact metadata bytes | 136 |
@@ -61,7 +61,17 @@ goal with the prompt above, preserving the same objective.
 These are separate ledgers; 310 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 31 unclassified origins remain open.
+The authored denominator and 30 unclassified origins remain open.
+
+The full x87 bridge now supplies288 bytes of maintained source:255 code plus33
+alignment/switch bytes previously omitted from its boundary. Original15
+relocations and all switch bytes are covered. DWORD transport improves292/234
+to288/14; a22-difference write-phase trial is reverted. Final source matches the
+retained14-difference producer. No new exact: source420/exact310/code68,589,
+candidates101 (34 authored/67 runtime), origins270/197/43/30. All310 preceding
+exacts/100 candidates are preserved. See [bridge](../research/exact/RUNTIME_X87_BRIDGE.md)
+and `.analysis/runtime-x87-bridge-20261014/verification.json`. One closed three-record
+REA run; no runtime/game tests. Physical control and integration remain open.
 
 File access checking adds a full77-byte exact with all five actual relocations.
 The SDK confirms int mode; genuine attribute/error APIs and errno13/doserrno5
@@ -450,8 +460,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `af06fa4`
-(complete C++ handler search source).
+Latest published source checkpoint before this continuation: `b38b179`
+(exact file access checking).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -465,11 +475,13 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 310 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 100 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 101 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-access-20261014/verification.json`: current
+- `.analysis/runtime-x87-bridge-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-access-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-cpp-handler-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

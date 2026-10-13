@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **310 functions / 68,589 code bytes / 136 metadata bytes**.
 
+[The full x87 bridge](RUNTIME_X87_BRIDGE.md) adds source288/288/14 and corrects
+its omitted33-byte switch/alignment tail. Source420/candidates101 (34 authored/
+67 runtime); all310 old exacts and100 candidates remain unchanged. No new exact.
+
 [File access checking](RUNTIME_ACCESS.md) adds one complete77-byte exact.
 Source419; all309 preceding exacts and100 candidates retain their inputs/products.
 
