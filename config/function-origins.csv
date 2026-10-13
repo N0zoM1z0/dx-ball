@@ -436,14 +436,15 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041AEF0,runtime,crt_library,dependency,high,ev_8a3e48cca502a2f1a3d34d1246d360fca7389ba17f0326a8af68ad678e4e7aa0; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
 0x0041AF40,runtime,crt_library,dependency,high,ev_b168811a2cb1c68a1af06a7efadaf93b8d3b14073ce429293e7225330d28088a; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041B000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041B1B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041B1B0,runtime,crt-cpp-transfer,maintain,high,ev_c65eb53b197610a53d10b285791ea78af0a0b4d359b7348b0115a52780329da4
 0x0041B270,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041B510,runtime,crt-cpp-tables,maintain,high,ev_cd70ffee232513bdc49078e35aba3fae573fc71477c569ee4be908d3c4989487
 0x0041B5F0,runtime,crt-cpp-tables,maintain,high,ev_8c3828525404370a2d1fbb5e5096caed95d157818b3bee23cb10caaa076fd652
 0x0041B690,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041B760,runtime,crt-cpp-tables,maintain,high,ev_c892ca178623884015e490d89be81760a9d9e16fb40a7cd99284a07377242e26
-0x0041B780,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041B780,runtime,crt-cpp-transfer,maintain,high,ev_422051616475627e1688206ffa76240663e159f07e5243bee1e1c0085ff3738d
 0x0041B820,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041B930,runtime,crt-cpp-transfer,maintain,high,ev_dd0ce1871904693ab617713da1f9cd82ee598ca86319986dab98543e20a55f9b
 0x0041B960,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041BB60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041BBE0,runtime,crt-cpp-tables,maintain,high,ev_d89a010c9bcdc8fbc2408b71d08b2d27c6c6771aea1bdf0233b2bdd1f5dfcba2

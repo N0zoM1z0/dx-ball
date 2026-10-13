@@ -50,18 +50,29 @@ goal with the prompt above, preserving the same objective.
 
 | Item | Current value |
 | --- | ---: |
-| Provisional function candidates | 539 |
-| Source-present functions | 414 |
-| Exact functions | 307 |
-| Complete exact code bytes | 68,280 |
+| Provisional function candidates | 540 |
+| Source-present functions | 417 |
+| Exact functions | 309 |
+| Complete exact code bytes | 68,512 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 307 exact functions does not prove project completion.
+These are separate ledgers; 309 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 34 unclassified origins remain open.
+The authored denominator and 32 unclassified origins remain open.
+
+C++ frame dispatch and rethrow recognition add two full exacts across232 bytes
+(188/44), plus the catch-transfer147/148/90 candidate. A dedicated exception
+record owner keeps the preceding table inputs unchanged; the initial shared
+header expansion's range regression is rejected. All307 old exacts/98 candidates
+are preserved. Current source417/exact309/code68,512, inventory540 and
+candidates99 (34 authored/65 runtime); origins270/195/43/32. See
+[transfer](../research/exact/RUNTIME_CPP_TRANSFER.md) and
+`.analysis/runtime-cpp-transfer-20261014/verification.json`. One closed five-record
+REA session; no runtime/game tests. Genuine structured unwinding and integration
+remain open.
 
 C++ exception tables add four bodies and three complete exacts across214 bytes:
 pointer adjustment33, range159 and unwind filter22. Foreign213/213/70 remains
@@ -422,8 +433,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `cca157f`
-(typed IEEE exception entries and matherr storage).
+Latest published source checkpoint before this continuation: `9525dc6`
+(exact C++ pointer/range helpers and unwind filtering).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -436,12 +447,16 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 304 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 97 candidates;
+- `build/reports/exact-replay.json`: all 309 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 99 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-fp-dispatch-20261014/verification.json`: current
+- `.analysis/runtime-cpp-transfer-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-cpp-tables-20261014/verification.json`: preceding
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-fp-dispatch-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-fp-decomposition-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

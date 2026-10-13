@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**307 functions / 68,280 code bytes / 136 metadata bytes**.
+**309 functions / 68,512 code bytes / 136 metadata bytes**.
+
+[C++ dispatch/transfer](RUNTIME_CPP_TRANSFER.md) adds two full exacts across232
+bytes and one candidate. Inventory540/source417/candidates99 (34 authored/65
+runtime); all307 prior exacts and98 candidates are preserved.
 
 [C++ exception tables](RUNTIME_CPP_TABLES.md) add four source bodies and three
 complete exacts across214 bytes. One candidate remains; source414,

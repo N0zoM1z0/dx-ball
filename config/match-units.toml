@@ -39,6 +39,47 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_cpp_transfer]
+source = "src/runtime_cpp_transfer.cpp"
+object = "build/exact/runtime_cpp_transfer.obj"
+inputs = ["src/runtime_cpp_transfer.cpp", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.cpp-internal-frame-handler]
+build = "runtime_cpp_transfer"
+symbol = "_dxball_cpp_internal_frame_handler"
+target_address = 0x0041B1B0
+size = 188
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TRANSFER.md"
+relocations = [
+  { offset = 14, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 55, type = "REL32", symbol = "_dxball_cpp_frame_unwind_to_state", addend = 0, target = 0x0041B690 },
+  { offset = 174, type = "REL32", symbol = "_dxball_cpp_find_handler", addend = 0, target = 0x0041B270 },
+]
+
+[candidates.cpp-catch-it]
+build = "runtime_cpp_transfer"
+symbol = "_dxball_cpp_catch_it"
+target_address = 0x0041B780
+size = 148
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TRANSFER.md"
+relocations = [
+  { offset = 29, type = "REL32", symbol = "_dxball_cpp_build_catch_object", addend = 0, target = 0x0041B960 },
+  { offset = 59, type = "REL32", symbol = "_dxball_cpp_unwind_nested_frames@8", addend = 0, target = 0x00418510 },
+  { offset = 83, type = "REL32", symbol = "_dxball_cpp_frame_unwind_to_state", addend = 0, target = 0x0041B690 },
+  { offset = 124, type = "REL32", symbol = "_dxball_cpp_call_catch_block", addend = 0, target = 0x0041B820 },
+  { offset = 138, type = "REL32", symbol = "_dxball_cpp_jump_to_continuation@8", addend = 0, target = 0x004184A0 },
+]
+
+[units.cpp-rethrow-filter]
+build = "runtime_cpp_transfer"
+symbol = "_dxball_cpp_rethrow_filter"
+target_address = 0x0041B930
+size = 44
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TRANSFER.md"
+relocations = [
+]
+
 [builds.runtime_cpp_tables]
 source = "src/runtime_cpp_tables.cpp"
 object = "build/exact/runtime_cpp_tables.obj"
