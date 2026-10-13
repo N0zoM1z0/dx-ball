@@ -697,3 +697,18 @@ Receipts are in `.analysis/pcx-surface-workspace-20261013/`,
 `.analysis/ui-pentium-emission-20261013/`. One initial PCX draft failed to compile
 because its transformation also qualified the descriptor's width member; the
 corrected source compiles once. Do not count the failed draft as an emission.
+
+## Rotation bank receiver and inline expansion
+
+One ordinary inline bank/slot accessor restores the height function's two
+original bank-first address groups, but each expansion introduces a five-byte
+entry jump: 201/191 bytes, 180 differences. `/O2 /Og-` retains that same complete
+code. A direct bank-pointer expression retains canonical 193/191 with 158
+differences. C++ expansion also retains 201/180 and loses the 259-byte horizontal
+offset match. Four single-owner compilations compare all six complete functions
+each; no model is adopted. Canonical game source and products remain unchanged.
+Retain `.analysis/rotation-inline-bank-access-20261013/`,
+`.analysis/rotation-inline-local-opt-20261013/`,
+`.analysis/rotation-bank-pointer-expression-20261013/` and
+`.analysis/rotation-cpp-inline-bank-access-20261013/`. No runtime or provider
+query accompanies these controls.

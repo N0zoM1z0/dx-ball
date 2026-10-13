@@ -9600,3 +9600,39 @@ relocations = [
   { offset = 405, type = "DIR32", symbol = "$L788", addend = 0, target = 0x0040CE00 },
   { offset = 409, type = "DIR32", symbol = "$L789", addend = 0, target = 0x0040CE0C },
 ]
+
+[builds.runtime_float]
+source = "src/runtime_float.c"
+object = "build/exact/runtime_float.obj"
+inputs = ["src/runtime_float.c", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
+[units.crt-ascii-to-double]
+build = "runtime_float"
+symbol = "_dxball_ascii_to_double"
+target_address = 0x0041D580
+size = 53
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_CONVERSIONS.md"
+relocations = [
+  { offset = 27, type = "REL32", symbol = "__strgtold12", addend = 0, target = 0x0041E7D0 },
+  { offset = 45, type = "REL32", symbol = "__ld12tod", addend = 0, target = 0x0041D540 },
+]
+
+[units.crt-ascii-to-float]
+build = "runtime_float"
+symbol = "_dxball_ascii_to_float"
+target_address = 0x0041D5C0
+size = 53
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_CONVERSIONS.md"
+relocations = [
+  { offset = 27, type = "REL32", symbol = "__strgtold12", addend = 0, target = 0x0041E7D0 },
+  { offset = 45, type = "REL32", symbol = "__ld12tof", addend = 0, target = 0x0041D560 },
+]
+
+[units.crt-math-error]
+build = "runtime_float"
+symbol = "_dxball_math_error"
+target_address = 0x0041D7C0
+size = 3
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_CONVERSIONS.md"
+relocations = []

@@ -51,17 +51,26 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 528 |
-| Source-present functions | 285 |
-| Exact functions | 239 |
-| Complete exact code bytes | 63,195 |
+| Source-present functions | 288 |
+| Exact functions | 242 |
+| Complete exact code bytes | 63,304 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 239 exact functions does not prove project completion.
+These are separate ledgers; 242 exact functions does not prove project completion.
 All 34 candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 99 unclassified origins remain open.
+The authored denominator and 96 unclassified origins remain open.
+
+The October 13 continuation recovers two 53-byte CRT conversion wrappers and
+the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
+four actual relocations match. This standalone module compiles on native,
+i686 and VC4; parser/converter body recovery and backend/game integration remain
+open. The game still uses its existing runtime. See
+[the source note](../research/exact/RUNTIME_FLOAT_CONVERSIONS.md) and
+`.analysis/runtime-conversion-functions-20261013/`. No runtime tests run.
+The 34 authored candidates and previous game products are unchanged.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
@@ -78,13 +87,15 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 239 exact closures and current producers.
+- `build/reports/exact-replay.json`: all 242 exact closures and current producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 34 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
+- `.analysis/runtime-conversion-functions-20261013/verification.json`: new
+  standalone source/producer/ledger seal.
 - `.analysis/rebound-contact-integration-20261013/verification.json` and
-  `independent-review.json`: current input/product/ledger seal.
+  `independent-review.json`: preceding unchanged game input/product seal.
 
 ## Latest recovery and closed boundaries
 

@@ -246,3 +246,7 @@ header = "src/random.h"
 oracle = "tests/test_random_differential.py"
 target_oracle = "tests/target_oracle.py"
 additional_inputs = ["src/state_types.h", "src/startup.c", "src/startup.h", "src/clock_api.h", "CMakeLists.txt", "scripts/resource_limits.py", "scripts/legacy_toolchain.py"]
+
+[owners.runtime_float]
+source = "src/runtime_float.c"
+header = "src/runtime_float.h"

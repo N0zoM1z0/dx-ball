@@ -4,7 +4,10 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**239 functions / 63,195 code bytes / 136 metadata bytes**.
+**242 functions / 63,304 code bytes / 136 metadata bytes**.
+
+The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
+runtime functions and 109 bytes. All 34 authored candidates below remain open.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
