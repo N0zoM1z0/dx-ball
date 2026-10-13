@@ -669,3 +669,31 @@ Receipts are in `.analysis/kernel-sample-current-owner-20261013/`.
 Independent reviews seal both controls. Verified gzip cleanup of 8
 completed carriers releases 1,077,248 allocated bytes; current
 source, matching objects and build products remain.
+
+## PCX, brick-hit and processor controls after handoff
+
+Five completed private compilations compare 67 complete owner units against
+the current target, including every relocation, literal and attached metadata.
+The PCX API record groups the adjacent descriptor, queried width and Lock result;
+the scanline record groups the adjacent pixel cursor and two row values.
+The two scope trials move existing values only to their actual consumers.
+
+| Trial | Complete candidate result | Accepted companions |
+| --- | --- | --- |
+| PCX descriptor/width/result workspace | 973/862 bytes, 839 differences (previously 979/851) | 15 exacts / 3,572 bytes preserved |
+| PCX scanline state | 1,003/862 bytes, 912 differences | 15 exacts / 3,572 bytes preserved |
+| PCX packet-byte iteration scope | 979/862 bytes, 850 differences | 15 exacts / 3,572 bytes preserved |
+| Brick-hit iterator confined to tile-seven case | 1,316/1,315 bytes, 416 differences (previously 418) | 5 exacts / 1,572 bytes preserved |
+| Unchanged UI with VC4 `/G5` | No exact gain; measurement 278/279 bytes, 65 differences | Draw-text and centered text lose 223 exact bytes |
+
+No complete function becomes exact. All stages remain private and canonical
+sources, objects and products stay unchanged at 239 exact functions. No runtime
+test, game or new provider query runs. Retained REA evidence supplies the PCX
+and brick-hit operations; comparisons use the verified original in full.
+Receipts are in `.analysis/pcx-surface-workspace-20261013/`,
+`.analysis/pcx-scanline-state-20261013/`,
+`.analysis/pcx-packet-value-scope-20261013/`,
+`.analysis/brick-hit-particle-scope-20261013/` and
+`.analysis/ui-pentium-emission-20261013/`. One initial PCX draft failed to compile
+because its transformation also qualified the descriptor's width member; the
+corrected source compiles once. Do not count the failed draft as an emission.
