@@ -51,17 +51,17 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 340 |
-| Exact functions | 263 |
-| Complete exact code bytes | 64,657 |
+| Source-present functions | 343 |
+| Exact functions | 265 |
+| Complete exact code bytes | 64,747 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 263 exact functions does not prove project completion.
+These are separate ledgers; 265 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 68 unclassified origins remain open.
+The authored denominator and 67 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -240,10 +240,26 @@ no runtime tests/game builds. The common append guard leaves two differences
 and is closed. The controller's portable platform bridge, initialized callback
 storage, physical exit and full teardown/game integration remain open.
 
+Integer text recovery adds all three bodies. Itoa60 and ultoa30 are exact
+across90 bytes/three call bindings; static xtoa96/2 remains nonexact. The
+first pointer translation matches186 bytes but forms a before-array cursor
+after a single-character swap. The retained address-cursor source avoids that
+operation while preserving96 bytes and all writes; two comparison-direction
+bytes remain. Unsigned negation supports INT_MIN; sign is decimal-only, and
+the original two divisions and mandatory reversal are retained. Source343/
+exact265/64,747, candidates69:34 authored/35 runtime, origins270/149/43/67
+are current. See [integer text](../research/exact/RUNTIME_INTEGER_TEXT.md) and
+`.analysis/runtime-integer-text-20261013/verification.json`. Old helper/unsigned
+REA dossiers are reused; only itoa needs a closed three-record query. All three
+pinned CRT sections match. Three final comparisons and native/i686 standalone
+compilation cover the owner; all263 old exacts/68 candidates are unchanged.
+No runtime tests/game builds. The unsafe first-pass match is not accepted;
+runtime integration remains open and the score owner keeps its prior boundary.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `daecac6`
-(exact file sizing, zero allocation and stream retirement).
+Latest published source checkpoint before this continuation: `abad143`
+(exit registration and exact termination entries).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -256,12 +272,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 263 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 68 candidates;
+- `build/reports/exact-replay.json`: all 265 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 69 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-onexit-20261013/verification.json`: current
+- `.analysis/runtime-integer-text-20261013/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-onexit-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-file-size-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.

@@ -6,13 +6,13 @@ The current records cover gameplay, all five screen modes, resources, graphics a
 | Fact | Count |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 340 |
+| Source-present functions | 343 |
 | Functions with scoped semantic acceptance | 249 |
-| Byte-exact functions | 263 |
-| Complete exact code bytes | 64657 |
-| Entries identified as runtime dependencies | 148 |
+| Byte-exact functions | 265 |
+| Complete exact code bytes | 64747 |
+| Entries identified as runtime dependencies | 149 |
 | Entries identified as compiler-generated code | 43 |
-| Origin still unclassified | 68 |
+| Origin still unclassified | 67 |
 
 The inventory includes game routines, runtime dependencies and compiler-generated code.
 Both Windows builds have completed recorded original-board campaigns under Wine.

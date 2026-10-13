@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**263 functions / 64,657 code bytes / 136 metadata bytes**.
+**265 functions / 64,747 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -59,6 +59,12 @@ existing normal/quick18/18 wrappers without modifying termination source.
 Onexit121/2 and the initializer walker32/6 are complete candidates. Current
 comparisons total68:34 authored/34 runtime. All preceding260 exact and66
 candidate results and historical semantic inputs are unchanged.
+
+[Integer text](RUNTIME_INTEGER_TEXT.md) adds complete itoa60/ultoa30 exacts
+and the maintained96-byte helper with two comparison-direction differences.
+Its reversal uses address cursors so a one-digit conversion does not form a
+before-array pointer. Current candidates69:34 authored/35 runtime; all prior
+263 exact and68 candidate results remain unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

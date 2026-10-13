@@ -9758,6 +9758,12 @@ object = "build/exact/termination_exact.obj"
 inputs = ["src/termination.c", "src/termination.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 
+[builds.runtime_integer_text]
+source = "src/runtime_integer_text.c"
+object = "build/exact/runtime_integer_text.obj"
+inputs = ["src/runtime_integer_text.c", "src/runtime_integer_text.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
 [units.crt-zero-mantissa-tail]
 build = "runtime_float"
 symbol = "__ZeroTail"
@@ -10483,6 +10489,36 @@ target_address = 0x004179D0
 size = 32
 boundary_evidence = "docs/research/exact/RUNTIME_ONEXIT.md"
 relocations = [
+]
+
+[units.crt-integer-text]
+build = "runtime_integer_text"
+symbol = "_dxball_crt_itoa"
+target_address = 0x0041F4D0
+size = 60
+boundary_evidence = "docs/research/exact/RUNTIME_INTEGER_TEXT.md"
+relocations = [
+  { offset = 28, type = "REL32", symbol = "_dxball_crt_xtoa", addend = 0, target = 0x0041F510 },
+  { offset = 49, type = "REL32", symbol = "_dxball_crt_xtoa", addend = 0, target = 0x0041F510 },
+]
+
+[candidates.crt-integer-digits]
+build = "runtime_integer_text"
+symbol = "_dxball_crt_xtoa"
+target_address = 0x0041F510
+size = 96
+boundary_evidence = "docs/research/exact/RUNTIME_INTEGER_TEXT.md"
+relocations = [
+]
+
+[units.crt-unsigned-text]
+build = "runtime_integer_text"
+symbol = "_dxball_crt_ultoa"
+target_address = 0x0041F570
+size = 30
+boundary_evidence = "docs/research/exact/RUNTIME_INTEGER_TEXT.md"
+relocations = [
+  { offset = 19, type = "REL32", symbol = "_dxball_crt_xtoa", addend = 0, target = 0x0041F510 },
 ]
 
 [candidates.crt-open-shared-descriptor]
