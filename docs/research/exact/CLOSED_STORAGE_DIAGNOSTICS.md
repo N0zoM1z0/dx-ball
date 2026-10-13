@@ -410,3 +410,69 @@ caller/SDK contracts, compiler inputs and comparisons are retained in
 `.analysis/sdk-counter-palette-20261013/`. No native, game or fixture run accompanies the trial.
 Verified gzip cleanup of 123 completed carriers releases 397,312 allocated
 bytes including its receipt; current sources and products remain untouched.
+
+## Counter definition owned by the clock interface
+
+A follow-up keeps the same actual Kernel calls but makes the counter opaque
+in runtime.h. Only clock_api.h provides the complete SDK union or native
+eight-byte structure. This confines the type definition to consumers that
+need its value or fields; pointer-only consumers retain a forward declaration.
+The four-file delta leaves the current restart and drawing code intact.
+
+All 21 matching recipes compile once, and all 182 complete affected units are
+compared. The two effect draw bodies match, while reduced blit, reduced draw
+and splash palette pulsing lose their matches. The net result is
+**−1 function / −370 code bytes**, so the model is rejected. Current-time and
+reset remain exact; canonical state stays at 238 functions / 62,514 bytes.
+
+Complete source reversal, native/Win32 header ownership, SDK/IAT contracts and
+comparisons are retained in `.analysis/opaque-clock-owner-20261013/`.
+Gzip-verified cleanup of 123 completed carriers releases 397,312 allocated
+bytes including its receipt. No game or fixture runs accompany the trial.
+
+## Rotation surface member calls
+
+One rotation-owner projection replaces its six GetSurfaceDesc, Lock and Unlock
+dispatches with members of the recovered surface interface. It preserves the
+live receiver expressions, retries, result stores, locals and scopes. Project
+headers retain C linkage; the standard library stays outside that enclosure.
+No shared header changes.
+
+All six complete functions are compared after one matching compilation.
+There are no gains. Horizontal offset loses its 259-byte match at three
+differences; three accepted companions retain 490 bytes. The renderer becomes
+1,458/1,572 with 1,467 differences, and height remains 193/191 with 158.
+Reject the projection and keep canonical sources and products unchanged.
+
+Complete source reversal, unchanged header inputs, all 116 relocation bindings
+and full literal-container identities are retained in
+`.analysis/rotation-surface-com-20261013/`. Gzip-verified cleanup of thirteen
+completed carriers releases 20,480 allocated bytes including its receipt.
+No fixture or game runs accompany this trial.
+
+## Implemented explosion traversal members
+
+The original frame loads the explosion owner into ECX before begin, remove
+and advance; the callees consume that object and return with plain RET.
+One private model moves their complete implementations into the existing
+list class. Three genuine C adapters forward to those methods for remaining
+C consumers. Original entry bindings refer to the implemented members,
+not the adapters. The frame and list cleanup call the members directly.
+
+The core C++ projection also needs the previously tested surface Blt conversion
+to use the current interface. Every receiver expression, list operation,
+node deletion and local scope is preserved. No data layout changes.
+
+Two matching compilations compare all 53 core and list-owner functions.
+All 51 accepted exacts retain 9,027 bytes, including the implemented members
+at 57, 89 and 220 bytes and list cleanup at 48. Neither candidate improves:
+frame stays 1,691/1,688 with 1,155 differences, and brick dropping stays
+436/426 with 306. The three embedded-owner address loads still use LEA.
+
+The model is rejected without compiling the remaining header consumers.
+This is a two-owner result; it makes no linked-product or broader caller
+claim. Independent source and full comparison review agrees. Retain
+`.analysis/explosion-traversal-members-20261013/` for implementations,
+compiler inputs, actual member bindings and complete comparisons.
+Gzip-verified cleanup of 32 completed carriers releases 110,592 allocated
+bytes including its receipt; canonical products remain untouched.

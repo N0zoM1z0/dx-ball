@@ -47,6 +47,25 @@ bodies but lose six exacts, net −4 functions / −1,136 bytes. Effect stretch
 reaches 306/306 with two differences. Current-time/reset remain exact; no
 candidate is promoted. All four-file source/SDK/IAT proofs are retained.
 Gzip-verified cleanup of 123 carriers releases 397,312 allocated bytes.
+The [clock-owned counter follow-up](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#counter-definition-owned-by-the-clock-interface)
+keeps the definition out of pointer-only consumers. All 21 recipes and 182
+complete comparisons finish: two gains, three losses, net −1 / −370 bytes.
+It is rejected; canonical state remains 238 / 62,514. Full source/header/SDK/
+comparison proofs are in `.analysis/opaque-clock-owner-20261013/`; verified
+cleanup releases another 397,312 allocated bytes including the receipt.
+The [rotation member-call projection](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#rotation-surface-member-calls)
+compares all six functions once and gains no exact. Horizontal offset loses
+its 259-byte match; the model is rejected. Complete source/input/binding
+proofs are in `.analysis/rotation-surface-com-20261013/`, and verified cleanup
+releases 20,480 allocated bytes including its receipt.
+The [implemented traversal members](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#implemented-explosion-traversal-members)
+preserve all 51 accepted core/list functions across 9,027 bytes. All 53 complete
+comparisons finish, with no candidate improvement. Actual member definitions
+own the original entry bindings; retained C adapters have no entry claims.
+The private model is rejected at this two-owner boundary, without compiling
+other header consumers. Evidence is in `.analysis/explosion-traversal-members-20261013/`.
+Verified cleanup of 32 completed carriers releases 110,592 allocated bytes
+including its receipt; canonical source and products stay unchanged.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
