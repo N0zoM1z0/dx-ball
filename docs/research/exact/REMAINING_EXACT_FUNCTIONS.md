@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-All 35 authored candidates were compared against the complete original extents
+All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**238 functions / 62,514 code bytes / 136 metadata bytes**.
+**239 functions / 63,195 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -37,7 +37,6 @@ None of these candidates is already exact. The accepted total remains
 | `draw-high-scores` | 404 | 403 | 330 |
 | `blt-effect-sprite` | 362 | 366 | 332 |
 | `hit-board-tile` | 1315 | 1316 | 418 |
-| `bounce-ball-from-paddle` | 681 | 687 | 550 |
 | `redraw-intro` | 587 | 578 | 560 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 992 |
@@ -48,6 +47,9 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [stored-contact precision](EXACT_REBOUND_STORED_CONTACT.md) closes the
+complete 681-byte paddle rebound while preserving its three exact companions.
 
 The [sprite iteration lifetime](BANK_SPRITE_ITERATION_SCOPE.md) reduces bank
 differences from 72 to 70 while preserving all fifteen exact resource companions.

@@ -1,31 +1,30 @@
+extern "C" {
 #include "balls.h"
 #include "allocator.h"
 #include "effects.h"
 #include "paddle.h"
 #include "sound.h"
 #include "trig.h"
+}
 #include <stdlib.h>
 
 
 void dxball_bounce_ball_from_paddle(void)
 {
-    float left, ratio;
-    long double precise_ratio;
-    left = (float)((long double)dxball_paddle_x - dxball_paddle_width / 2);
-    precise_ratio = ((long double)(dxball_balls.current->x +
-        dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width / 2) - left) / dxball_paddle_width;
-    ratio = (float)precise_ratio;
-    if (precise_ratio <= 0.07) {
+    float ratio;
+    ratio = (float)((long double)dxball_paddle_x - dxball_paddle_width / 2);
+    if ((ratio = (ratio = (long double)(dxball_balls.current->x +
+        dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_balls.current->sprite]->width / 2) - ratio) / dxball_paddle_width) <= 0.07) {
         dxball_balls.current->angle = 150;
         dxball_stop_sound(16);
         dxball_play_sound(16, 0, dxball_screen_pan(dxball_balls.current->x), 0);
     }
-    else if (ratio <= 0.2) dxball_balls.current->angle = 135;
-    else if (ratio <= 0.35) dxball_balls.current->angle = 120;
-    else if (ratio <= 0.5) dxball_balls.current->angle = 105;
-    else if (ratio <= 0.65) dxball_balls.current->angle = 75;
-    else if (ratio <= 0.8) dxball_balls.current->angle = 60;
-    else if (ratio <= 0.93) dxball_balls.current->angle = 45;
+    else if (static_cast<const volatile float &>(ratio) <= 0.2) dxball_balls.current->angle = 135;
+    else if (static_cast<const volatile float &>(ratio) <= 0.35) dxball_balls.current->angle = 120;
+    else if (static_cast<const volatile float &>(ratio) <= 0.5) dxball_balls.current->angle = 105;
+    else if (static_cast<const volatile float &>(ratio) <= 0.65) dxball_balls.current->angle = 75;
+    else if (static_cast<const volatile float &>(ratio) <= 0.8) dxball_balls.current->angle = 60;
+    else if (static_cast<const volatile float &>(ratio) <= 0.93) dxball_balls.current->angle = 45;
     else {
         dxball_balls.current->angle = 30;
         dxball_stop_sound(16);

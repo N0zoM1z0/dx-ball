@@ -29,7 +29,7 @@ add_library(dxball_core SHARED
     src/paddle.c
     src/round.c
     src/trig.c
-    src/balls.c
+    src/balls.cpp
     src/core.c
 
     # Frame dispatch and presentation
@@ -75,6 +75,13 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     # VC4 new can return NULL; retain the observed terminal allocation branch.
     set_source_files_properties(src/list_initializers.cpp PROPERTIES
         COMPILE_OPTIONS -fcheck-new)
+endif()
+# Rebound compares the live x87 quotient once, then reads stored float contacts.
+# C++17 sequences the chained assignment; GNU must retain excess precision at
+# that first comparison. The later cv-qualified reads impose float storage.
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set_source_files_properties(src/balls.cpp PROPERTIES COMPILE_OPTIONS
+        "-std=c++17;-O2;-mfpmath=387;-fexcess-precision=fast;-Wno-sequence-point")
 endif()
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     # The original tile mapper leaves its result unset outside tiles 0..22.

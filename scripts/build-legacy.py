@@ -25,7 +25,7 @@ def main():
     directory.mkdir(parents=True, exist_ok=True)
     objects = []
     log = []
-    for source in ("src/allocator.c", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/rotation.c", "src/raster.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.c", "src/core.c", "src/runtime.cpp", "src/display.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
+    for source in ("src/allocator.c", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/rotation.c", "src/raster.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.c", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/display.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
         output = directory / (Path(source).stem + ".obj")
         flags = owner_flags.get(source, build["flags"])
         log.append(toolchain.compile(ROOT / source, output, flags).stdout)

@@ -1,5 +1,9 @@
 # Ball ownership and paddle rebound
 
+The later [stored-contact recovery](EXACT_REBOUND_STORED_CONTACT.md) closes the
+681-byte rebound in `src/balls.cpp`. The records below describe the earlier
+callback and allocation recovery.
+
 The shared `src/balls.c` now calls the genuine runtime operator-new/delete and
 direct sound functions. Paddle rebound preserves the original independent live
 angle check and current sprite-bank/height reads after its audio calls. This

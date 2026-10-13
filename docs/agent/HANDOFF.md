@@ -13,8 +13,22 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **238 exact functions /62,514 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 35 authored nonexact functions.
+Latest checkpoint: **239 exact functions /63,195 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 34 authored nonexact functions.
+The latest [stored-contact precision](../research/exact/EXACT_REBOUND_STORED_CONTACT.md)
+closes rebound681 with50 real bindings. One float contact local and six later
+cv-qualified reads preserve first live x87 precision and later stored32 checks.
+The18 frozen inputs equal canonical balls.cpp; three companions preserve965bytes.
+All239 closures pass and34 remaining candidate identities stay unchanged.
+GNU ball-only C++17/O2/x87-fast options preserve the numeric contract; Native
+and MinGW build. VC4 links1 matching+36 unchanged objects with no new compile.
+Existing831 private ball cases+4liveaudio controls pass; full native runtime
+object/relocation/symbol equality and36identical linked objects support their
+reuse. Two canonical numeric witnesses also pass. No game run.
+`.analysis/rebound-contact-integration-20261013/verification.json`.
+Independent review seals68 inputs/37gameobjects/fiveproducts. Gzip-verified
+cleanup of10 completed negative/archival carriers releases1,179,648 allocated
+bytes; accepted matching/native producers and current products remain.
 The latest [sprite iteration lifetime](../research/exact/BANK_SPRITE_ITERATION_SCOPE.md)
 moves seven existing per-sprite locals into their consuming iteration. Bank1475
 improves72→70 differences; the two removed displacement positions do not prove
@@ -24,10 +38,11 @@ eight inputs/flags match the frozen producer. Native/MinGW build; VC4 compiles
 one productionMT resource object and links36 unchanged objects. Existing10bank
 and3livecallback cases pass;235 historical inventories refresh with unchanged
 cases/scopes. `.analysis/bank-iteration-integration-20261013/verification.json`.
-The [chained rebound precision controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#rebound-contact-stages)
+The earlier [chained rebound precision controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#rebound-contact-stages)
 reproduce681-byte legacy exact privately, but actual GNU precision witnesses
-fail. No promotion or canonical ball change. The explicit four-byte contact
-class remains755/681; preserve all source/backend failure receipts.
+fail. Those models remain rejected; the later stored-contact reads close the
+function. The explicit four-byte contact class remains755/681; preserve its
+source/backend failure receipts.
 Independent bank review seals68 inputs/37gameobjects/fiveproducts. Verified
 gzip cleanup preserves112 completed bank/failed-rebound carriers and releases
 9,437,184 allocated bytes including the receipt; current products remain.

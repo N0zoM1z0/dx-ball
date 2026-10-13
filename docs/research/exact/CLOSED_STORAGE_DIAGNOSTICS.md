@@ -188,6 +188,9 @@ allocated bytes while retaining the complete inputs and emitted objects.
 
 ## Rebound contact stages
 
+The later [stored-contact reads](EXACT_REBOUND_STORED_CONTACT.md) close the
+complete rebound. The rejected models below retain their historical results.
+
 Original rebound reuses one float slot for the paddle left edge, relative offset
 and normalized contact position. At `0x411476`, an intermediate FST writes the
 offset without popping the x87 value before division. The first threshold uses

@@ -196,10 +196,10 @@ address,symbol,source,scope,semantic_unit
 0x004101D0,dxball_advance_ball,src/list_initializers.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-advance-ball
 0x00410230,dxball_advance_projectile,src/list_initializers.cpp,"See docs/research/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-advance-projectile
 0x00410290,dxball_game_key,src/platform.c,"See docs/research/PLATFORM_OWNER.md; defined API output fields, valid terminating input/device states and explicit Windows/COM/audio/non-game/glyph/resource boundaries",platform-game-key
-0x004105D0,dxball_spawn_ball,src/balls.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-spawn-ball
+0x004105D0,dxball_spawn_ball,src/balls.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-spawn-ball
 0x004106D0,dxball_append_ball,src/list_initializers.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-append-ball
 0x00410770,dxball_update_balls,src/core.c,See docs/research/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-update-balls
-0x00411410,dxball_bounce_ball_from_paddle,src/balls.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-bounce-ball-from-paddle
+0x00411410,dxball_bounce_ball_from_paddle,src/balls.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-bounce-ball-from-paddle
 0x004116C0,dxball_hit_screen_point,src/core.c,See docs/research/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-hit-screen-point
 0x00411820,dxball_retire_ball,src/core.c,See docs/research/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-retire-ball
 0x00411850,dxball_remove_ball,src/list_initializers.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-remove-ball
@@ -244,7 +244,7 @@ address,symbol,source,scope,semantic_unit
 0x00414C10,dxball_begin_particles,src/list_initializers.cpp,"See docs/research/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-begin-particles
 0x00414C50,dxball_advance_particle,src/list_initializers.cpp,"See docs/research/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-advance-particle
 0x00414CB0,dxball_draw_particles,src/particles.c,"See docs/research/ENTITIES_OWNER.md; valid typed lists, bounded arithmetic, controlled RNG/audio/rendering and writable 8-bit surfaces",particles-draw-particles
-0x00414DF0,dxball_clone_balls,src/balls.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-clone-balls
+0x00414DF0,dxball_clone_balls,src/balls.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-clone-balls
 0x00415070,dxball_clear_ball_list,src/list_initializers.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-clear-ball-list
 0x004150A0,dxball_spread_explosive_bricks,src/gameplay.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-spread-explosive-bricks
 0x004153E0,dxball_clear_explosion_list,src/list_initializers.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-clear-explosion-list
@@ -252,7 +252,7 @@ address,symbol,source,scope,semantic_unit
 0x004155A0,dxball_scan_explosive_tiles,src/gameplay.c,See docs/research/GAMEPLAY_OWNER.md; tested state and dependency effects,gameplay-scan-explosive-tiles
 0x00415630,dxball_ignite_balls,src/core.c,"See docs/research/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-ignite-balls
 0x00415670,dxball_drop_bricks,src/core.c,See docs/research/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-drop-bricks
-0x00415820,dxball_release_attached_balls,src/balls.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-release-attached-balls
+0x00415820,dxball_release_attached_balls,src/balls.cpp,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-release-attached-balls
 0x00415880,dxball_refresh_score,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-refresh-score
 0x004158D0,dxball_draw_score,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-draw-score
 0x00415A90,dxball_count_destructible_bricks,src/gameplay.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-count-destructible-bricks
