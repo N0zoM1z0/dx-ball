@@ -283,3 +283,26 @@ Complete source views, actual compiler inputs, bindings and owner comparisons
 remain in `.analysis/ddraw-virtual-surface-20261013/`. Thirty-five completed
 copies are gzip verified, releasing 684,032 allocated bytes. Further primitive
 type or interface permutations need new evidence.
+
+## Device and board surface calls
+
+Two further owner projections use the shared stdcall surface class with
+unchanged expressions and scopes. Device converts six calls and preserves all
+six complete relocated code hashes: five exacts retain 808 bytes and palette
+transition stays 1339 bytes with 18 differences. Boards converts two BltFast
+calls and preserves all nine complete code hashes: seven exacts retain 2,154
+bytes, while editor load/store stay 58 bytes with 23/42 differences against
+52-byte originals. Neither projection is adopted. Complete private inputs and
+comparisons are retained in `.analysis/device-surface-com-20261013/` and
+`.analysis/boards-surface-com-20261013/`.
+
+A separate C board-copy trial passes the address of the complete 400-byte tile
+array to memmove instead of letting the array decay. This preserves the same
+aggregate owner and overlapping-copy behavior. VC4 still emits the root load,
+20032-byte offset addition and pointer push, where the original load pushes
+`0x43F8F8` directly. All nine complete code hashes are unchanged, so the trial
+is rejected. Original load evidence is
+`ev_5aa7369fc6fd8a1333d312332d7a4e40977ab9fa76272a6e0dd9192277fe66d2`;
+retain `.analysis/board-copy-object-address-20261013/`. These are three bounded
+single-compilation trials with no canonical edits or gameplay runs. Their
+completed source/header/object copies are gzip verified before cleanup.

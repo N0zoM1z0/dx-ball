@@ -29,6 +29,9 @@ Independent review passes all235 exacts,38 candidates,68 input identities,
 68 completed carriers releases233472 allocated bytes; current products remain.
 The combined drawing-record model679/487 and game-over surface model408/334
 are rejected. Source/debug files are not required to continue exploring.
+Further device/board surface projections and the board complete-array address
+trial preserve all respective code hashes and are rejected. See
+[closed diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#device-and-board-surface-calls); three stable compiles, no canonical edit or gameplay.
 The [display COM implementation](../research/exact/EXACT_DISPLAY_COM_CALLS.md)
 promotes reduced blit362, sprite region272, reduced draw361 and restoration827.
 It explicitly demotes effect blit362 to366/332, sort296 to296/3, and wait170
