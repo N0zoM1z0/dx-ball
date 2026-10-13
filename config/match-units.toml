@@ -39,6 +39,26 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_access]
+source = "src/runtime_access.c"
+object = "build/exact/runtime_access.obj"
+inputs = ["src/runtime_access.c", "src/runtime_access.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.crt-access]
+build = "runtime_access"
+symbol = "_dxball_crt_access"
+target_address = 0x00417FF0
+size = 77
+boundary_evidence = "docs/research/exact/RUNTIME_ACCESS.md"
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "__imp__GetFileAttributesA@4", addend = 0, target = 0x004412C0 },
+  { offset = 18, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
+  { offset = 24, type = "REL32", symbol = "_dxball_crt_map_os_error", addend = 0, target = 0x0041A9A0 },
+  { offset = 50, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 60, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+]
+
 [builds.runtime_cpp_handler]
 source = "src/runtime_cpp_handler.cpp"
 object = "build/exact/runtime_cpp_handler.obj"

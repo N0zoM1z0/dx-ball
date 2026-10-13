@@ -51,17 +51,24 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 540 |
-| Source-present functions | 418 |
-| Exact functions | 309 |
-| Complete exact code bytes | 68,512 |
+| Source-present functions | 419 |
+| Exact functions | 310 |
+| Complete exact code bytes | 68,589 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 309 exact functions does not prove project completion.
+These are separate ledgers; 310 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 31 unclassified origins remain open.
+
+File access checking adds a full77-byte exact with all five actual relocations.
+The SDK confirms int mode; genuine attribute/error APIs and errno13/doserrno5
+writes are preserved. Source419/exact310/code68,589; all309 preceding exacts and
+100 candidates remain unchanged. See [access](../research/exact/RUNTIME_ACCESS.md)
+and `.analysis/runtime-access-20261014/verification.json`. One closed six-record
+REA run includes four exploratory string records; no runtime/game tests.
 
 Complete C++ FindHandler659 now has maintained source663/659/605. It preserves
 rethrow substitution, actual ValidateRead length1, inline name/qualifier tests,
@@ -443,8 +450,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `28a9596`
-(exact C++ frame dispatch and rethrow recognition).
+Latest published source checkpoint before this continuation: `af06fa4`
+(complete C++ handler search source).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -457,12 +464,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 309 exact closures and current producers.
+- `build/reports/exact-replay.json`: all 310 exact closures and current producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 100 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-cpp-handler-20261014/verification.json`: current
+- `.analysis/runtime-access-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-cpp-handler-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-cpp-transfer-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
