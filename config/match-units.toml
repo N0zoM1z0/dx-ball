@@ -39,6 +39,62 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_fp_dispatch]
+source = "src/runtime_fp_dispatch.cpp"
+object = "build/exact/runtime_fp_dispatch.obj"
+inputs = ["src/runtime_fp_dispatch.cpp", "src/runtime_fp_dispatch.h", "src/runtime_fp_exceptions.h", "src/runtime_float.h", "src/runtime_fp_control.h", "src/runtime_fp_decomposition.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_fp_exception_constants]
+source = "src/runtime_fp_exception_constants.c"
+object = "build/exact/runtime_fp_exception_constants.obj"
+inputs = ["src/runtime_fp_exception_constants.c", "src/runtime_fp_dispatch.h", "src/runtime_fp_exceptions.h", "src/runtime_float.h", "src/runtime_fp_control.h", "src/runtime_fp_decomposition.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-raise-float-exception]
+build = "runtime_fp_dispatch"
+symbol = "_dxball_crt_raise_float_exception"
+target_address = 0x00419560
+size = 876
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DISPATCH.md"
+relocations = [
+  { offset = 290, type = "REL32", symbol = "__statfp", addend = 0, target = 0x00419370 },
+  { offset = 640, type = "REL32", symbol = "__clrfp", addend = 0, target = 0x00419390 },
+  { offset = 656, type = "DIR32", symbol = "__imp__RaiseException@16", addend = 0, target = 0x0044133C },
+  { offset = 724, type = "DIR32", symbol = "$L619", addend = 0, target = 0x004198C0 },
+  { offset = 864, type = "DIR32", symbol = "$L548", addend = 0, target = 0x00419838 },
+  { offset = 868, type = "DIR32", symbol = "$L549", addend = 0, target = 0x00419840 },
+  { offset = 872, type = "DIR32", symbol = "$L550", addend = 0, target = 0x00419850 },
+  { offset = 876, type = "DIR32", symbol = "$L551", addend = 0, target = 0x00419860 },
+]
+
+[candidates.crt-handle-float-exception]
+build = "runtime_fp_dispatch"
+symbol = "_dxball_crt_handle_float_exception"
+target_address = 0x004198D0
+size = 704
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DISPATCH.md"
+relocations = [
+  { offset = 37, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
+  { offset = 70, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
+  { offset = 108, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
+  { offset = 192, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 209, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
+  { offset = 221, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 249, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 266, type = "DIR32", symbol = "__d_max", addend = 4, target = 0x004234B8 },
+  { offset = 278, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
+  { offset = 306, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
+  { offset = 323, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
+  { offset = 335, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 363, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
+  { offset = 380, type = "DIR32", symbol = "__d_max", addend = 4, target = 0x004234B8 },
+  { offset = 392, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
+  { offset = 473, type = "REL32", symbol = "_dxball_crt_decompose_double", addend = 0, target = 0x00419D90 },
+  { offset = 655, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
+  { offset = 686, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
+]
+
 [builds.runtime_fp_decomposition]
 source = "src/runtime_fp_decomposition.c"
 object = "build/exact/runtime_fp_decomposition.obj"

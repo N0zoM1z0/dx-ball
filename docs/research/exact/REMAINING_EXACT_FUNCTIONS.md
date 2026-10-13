@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **304 functions / 68,066 code bytes / 136 metadata bytes**.
 
+[Floating dispatch](RUNTIME_FP_DISPATCH.md) adds two complete source candidates
+and all40 initialized constant bytes, with no new exact claim. Source410,
+candidates97 (34 authored/63 runtime); all preceding comparisons are preserved.
+
 [Decomposition/exceptions](RUNTIME_FP_DECOMPOSITION.md) adds two complete exacts
 across266 bytes and four candidates. Source408, candidates95 (34 authored/61
 runtime); all302 preceding exacts are preserved. The converter candidate changes

@@ -19,12 +19,16 @@ typedef struct DxBallIeeeValue {
     unsigned int valid : 1;
     unsigned int format : 4;
 } DxBallIeeeValue;
-typedef struct DxBallIeeeFlags {
-    unsigned int inexact : 1;
-    unsigned int underflow : 1;
-    unsigned int overflow : 1;
-    unsigned int zero_divide : 1;
-    unsigned int invalid : 1;
+typedef union DxBallIeeeFlags {
+    /* The producer clears all32 storage bits, then uses the SDK bit view. */
+    unsigned int raw;
+    struct {
+        unsigned int inexact : 1;
+        unsigned int underflow : 1;
+        unsigned int overflow : 1;
+        unsigned int zero_divide : 1;
+        unsigned int invalid : 1;
+    } bits;
 } DxBallIeeeFlags;
 typedef struct DxBallIeeeRecord {
     unsigned int rounding : 2;

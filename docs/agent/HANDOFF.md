@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 538 |
-| Source-present functions | 408 |
+| Source-present functions | 410 |
 | Exact functions | 304 |
 | Complete exact code bytes | 68,066 |
 | Attached exact metadata bytes | 136 |
@@ -62,6 +62,16 @@ These are separate ledgers; 304 exact functions does not prove project completio
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 36 unclassified origins remain open.
+
+FP dispatch now supplies both complete raising/handling bodies and all40
+initialized util constants. Raise880/876/328 and handle708/704/436 remain
+candidates; no new exact claim. Raising's full876-byte extent includes18 bytes
+past its imported code prefix. Real raw-word/bitfield views preserve IEEE88
+layout and the original precision-writeback mask. All304 old exacts/95 candidates
+are preserved; current candidates97 (34 authored/63 runtime). See
+[dispatch](../research/exact/RUNTIME_FP_DISPATCH.md) and
+`.analysis/runtime-fp-dispatch-20261014/verification.json`. One closed five-record
+REA run; no runtime/game tests. Physical x87 helpers and integration remain open.
 
 FP decomposition/exception recovery adds six bodies and two full exacts across
 266 bytes: exception entry187 and quiet-NaN entry79. The88-byte IEEE record uses
@@ -402,8 +412,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `b734cb6`
-(floating controls and six complete exact bodies).
+Latest published source checkpoint before this continuation: `cca157f`
+(typed IEEE exception entries and matherr storage).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -417,11 +427,13 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 304 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 95 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 97 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-fp-decomposition-20261014/verification.json`: current
+- `.analysis/runtime-fp-dispatch-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-fp-decomposition-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-fp-control-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

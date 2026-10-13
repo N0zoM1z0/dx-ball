@@ -6,7 +6,7 @@ The current records cover gameplay, all five screen modes, resources, graphics a
 | Fact | Count |
 | --- | ---: |
 | Provisional function candidates | 538 |
-| Source-present functions | 408 |
+| Source-present functions | 410 |
 | Functions with scoped semantic acceptance | 249 |
 | Byte-exact functions | 304 |
 | Complete exact code bytes | 68066 |
