@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-All 38 authored candidates were compared against the complete original extents
+All 37 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**235 functions / 61,716 code bytes / 136 metadata bytes**.
+**236 functions / 61,949 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -12,7 +12,6 @@ None of these candidates is already exact. The accepted total remains
 | `elapsed` | 81 | 81 | 3 |
 | `measure-text` | 279 | 279 | 3 |
 | `sort-present-regions` | 296 | 296 | 3 |
-| `update-scroller` | 233 | 233 | 3 |
 | `update-paddle-position` | 203 | 203 | 4 |
 | `animate-palette` | 234 | 234 | 6 |
 | `refresh-score` | 74 | 74 | 6 |
@@ -51,6 +50,10 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [intro surface calls](EXACT_INTRO_COM_CALLS.md) promote the complete
+233-byte scroller while preserving all eighteen intro exact companions. The
+remaining 37 candidate code identities are unchanged.
 
 The [runtime surface calls](RUNTIME_SURFACE_COM_CALLS.md) reduce paddle
 differences from 104 to 68 while preserving all ten runtime exact functions.

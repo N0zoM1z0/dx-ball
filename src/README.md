@@ -11,7 +11,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [startup.c](startup.c) | Working resources, score files, RNG, and sprite-bank cleanup |
 | [runtime.cpp](runtime.cpp) | Five-mode dispatch, game lifecycle, clock, paddle drawing, and score |
 | [core.c](core.c) | Gameplay frame, ball/projectile movement, firing, and entity queues |
-| [intro.c](intro.c) | Menu and splash lifecycles, point animation, scroller, and credits |
+| [intro.cpp](intro.cpp) | Menu and splash lifecycles, point animation, scroller, and credits |
 | [editor.c](editor.c) | Board editor, toolbar hit regions, painting, and persistence |
 | [gameover.c](gameover.c) | Name entry, rankings, and high-score persistence |
 | [boards.c](boards.c), [board_storage.h](board_storage.h) | Board bank, working tiles, shared storage, and tile drawing |

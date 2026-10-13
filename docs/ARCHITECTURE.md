@@ -29,11 +29,11 @@ a requested mode change cleans up the old mode and initializes the next.
 
 | Mode | Frame and screen code |
 | --- | --- |
-| 0 — Menu | [intro.c](../src/intro.c), including the point animation |
+| 0 — Menu | [intro.cpp](../src/intro.cpp), including the point animation |
 | 1 — Game | [core.c](../src/core.c); lifecycle and score code in [runtime.cpp](../src/runtime.cpp) |
 | 2 — Editor | [editor.c](../src/editor.c) |
 | 3 — Game over | [gameover.c](../src/gameover.c), including name entry and rankings |
-| 4 — Splash | [intro.c](../src/intro.c), including credits and the scroller |
+| 4 — Splash | [intro.cpp](../src/intro.cpp), including credits and the scroller |
 
 ## An unpaused gameplay frame
 

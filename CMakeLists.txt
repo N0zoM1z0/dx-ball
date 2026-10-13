@@ -42,7 +42,7 @@ add_library(dxball_core SHARED
     src/platform_host.c
     src/startup.c
     src/ui.c
-    src/intro.c
+    src/intro.cpp
     src/gameover.c
     src/editor.c
     src/midi.cpp

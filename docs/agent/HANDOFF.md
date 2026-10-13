@@ -13,8 +13,24 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **235 exact functions /61,716 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 38 authored nonexact functions.
+Latest checkpoint: **236 exact functions /61,949 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 37 authored nonexact functions.
+The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
+promote the complete 233-byte scroller, including all 20 actual relocations.
+Twenty surface calls use the shared stdcall interface; expressions, scopes
+and C API linkage are preserved. All eighteen previous intro exacts remain,
+giving nineteen functions and 7,039 bytes. All 236 whole closures pass, and
+all 37 retained candidate code hashes are unchanged.
+Native passes 110 existing focused cases: 48 scroller, 36 point update, one
+point initialization, nine intro redraw and sixteen splash redraw. Native and
+MinGW build; VC4 links the matching intro object with 36 verified others.
+No connected frames or game run. Historical input inventories refresh 249 rows.
+`.analysis/intro-com-integration-20261013/verification.json`.
+Independent review verifies 236 exacts, 37 candidates, 68 input identities,
+37 game objects, five products and twenty C exports. Gzip-verified cleanup of
+60 carriers releases 245,760 allocated bytes, including obsolete CMake C objects.
+Current products remain. The core surface projection preserves all eleven
+complete code hashes and is rejected.
 The latest [runtime surface calls](../research/exact/RUNTIME_SURFACE_COM_CALLS.md)
 reduce complete paddle677 from104 to68 differences. Six virtual stdcall calls
 share the canonical interface; expressions/scopes and C API linkage are unchanged.
@@ -551,11 +567,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 235 |
-| Exact code / separate metadata bytes | 61,716 /136 |
+| Complete exact functions | 236 |
+| Exact code / separate metadata bytes | 61,949 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/runtime-com-integration-20261013/verification.json`.
+Current product/comparison receipt: `.analysis/intro-com-integration-20261013/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

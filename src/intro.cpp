@@ -1,3 +1,4 @@
+extern "C" {
 #include "intro.h"
 #include "platform.h"
 #include "device.h"
@@ -9,6 +10,8 @@
 #include "midi.h"
 #include "startup.h"
 #include "sound.h"
+}
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -111,8 +114,7 @@ void dxball_update_intro_points(void)
     }
     rect.top = 37; rect.bottom = 115;
     rect.left = 112; rect.right = 530;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_active_surface, rect.left, rect.top,
+    ((DxBallDDSurface *)dxball_active_surface)->blt_fast(rect.left, rect.top,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
     {
         DxBallInt i;
@@ -120,11 +122,9 @@ void dxball_update_intro_points(void)
             DxBallInt result;
             DxBallSurfaceDesc desc;
             desc.size = 108; desc.flags = 14;
-            ((DxBallDDSurface *)dxball_active_surface)->vtable->get_desc(
-                (DxBallDDSurface *)dxball_active_surface, &desc);
+            ((DxBallDDSurface *)dxball_active_surface)->get_desc(&desc);
             do {
-                result = ((DxBallDDSurface *)dxball_active_surface)->vtable->lock(
-                    (DxBallDDSurface *)dxball_active_surface, NULL, &desc, 0, NULL);
+                result = ((DxBallDDSurface *)dxball_active_surface)->lock(NULL, &desc, 0, NULL);
             } while (result != 0);
             for (i = 0; i < 287; ++i) {
                 if (dxball_intro_points[i].kind == 0) {
@@ -140,8 +140,7 @@ void dxball_update_intro_points(void)
                     *pixel = 200;
                 }
             }
-            ((DxBallDDSurface *)dxball_active_surface)->vtable->unlock(
-                (DxBallDDSurface *)dxball_active_surface, NULL);
+            ((DxBallDDSurface *)dxball_active_surface)->unlock(NULL);
         }
         for (i = 0; i < 287; ++i) {
             if (dxball_intro_points[i].kind == 1) {
@@ -195,8 +194,7 @@ void dxball_redraw_intro(void)
     dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
     if (dxball_draw_to_primary == 0) dxball_clear_surface((DxBallSurface)dxball_secondary_surface, 0);
     dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_board_surface, &rect,
+    ((DxBallDDSurface *)dxball_board_surface)->blt(&rect,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
     dxball_select_surface((DxBallSurface)dxball_board_surface); dxball_select_font_bank(2);
     dxball_wait_frames(1);
@@ -216,12 +214,10 @@ void dxball_redraw_intro(void)
     dxball_select_font_bank(1);
     dxball_wait_frames(1); dxball_draw_centered_text(317, 210, 22, "BASED ON  ``MEGABALL``");
     dxball_wait_frames(1); dxball_draw_centered_text(317, 250, 19, "BY ED AND AL MACKEY");
-    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_primary_surface, &rect,
+    ((DxBallDDSurface *)dxball_primary_surface)->blt(&rect,
         (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
     if (dxball_draw_to_primary == 0) {
-        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
-            (DxBallDDSurface *)dxball_secondary_surface, &rect,
+        ((DxBallDDSurface *)dxball_secondary_surface)->blt(&rect,
             (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
     }
     return;
@@ -275,8 +271,7 @@ void dxball_dispose_intro(DxBallInt fade)
         dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
         dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
         if (dxball_draw_to_primary == 0) {
-            ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
-                (DxBallDDSurface *)dxball_secondary_surface, &rect,
+            ((DxBallDDSurface *)dxball_secondary_surface)->blt(&rect,
                 (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
         }
         dxball_release_sprite_banks();
@@ -306,8 +301,7 @@ void dxball_initialize_splash(void)
     dxball_scroller_index = 0; dxball_scroller_shift = 0; dxball_scroller_advance = 0;
     dxball_credit_first_y = 0; dxball_credit_second_y = 0; dxball_credit_angle = 0;
     key.low = 0; key.high = 0;
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->set_color_key(
-        (DxBallDDSurface *)dxball_board_surface, 8, &key);
+    ((DxBallDDSurface *)dxball_board_surface)->set_color_key(8, &key);
     dxball_redraw_mode(); dxball_update_sound(0, 0, 0, 0);
     for (i = 48; i <= dxball_splash_span + 48; ++i) {
         dxball_saved_palette[i].red = 0;
@@ -325,15 +319,13 @@ void dxball_redraw_splash(void)
     dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
     if (dxball_draw_to_primary == 0) dxball_fill_rect((DxBallSurface)dxball_secondary_surface, 0, 0, 639, 479, 0);
     dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_board_surface, &full,
+    ((DxBallDDSurface *)dxball_board_surface)->blt(&full,
         (DxBallDDSurface *)dxball_background_surface, &full, 0x01000000, NULL);
     {
         DxBallRect logo;
         DxBallInt y;
         logo.left = 0; logo.top = 19; logo.right = 639; logo.bottom = 169;
-        ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
-            (DxBallDDSurface *)dxball_primary_surface, &logo,
+        ((DxBallDDSurface *)dxball_primary_surface)->blt(&logo,
             (DxBallDDSurface *)dxball_board_surface, &logo, 0x01000000, NULL);
         if (dxball_draw_to_primary == 0) {
             dxball_bind_display_surface((DxBallSurface)dxball_primary_surface); dxball_draw_waving_credits();
@@ -368,8 +360,7 @@ void dxball_redraw_splash(void)
         dxball_draw_centered_text(320, 350, 37, "HINT FOR LEVEL EDITOR AND OTHER TIPS.");
     }
     if (dxball_draw_to_primary == 0) {
-        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
-            (DxBallDDSurface *)dxball_secondary_surface, &full,
+        ((DxBallDDSurface *)dxball_secondary_surface)->blt(&full,
             (DxBallDDSurface *)dxball_primary_surface, &full, 0x01000000, NULL);
     }
     return;
@@ -388,8 +379,7 @@ void dxball_update_scroller(void)
         dxball_scroller_shift = 0;
     }
     rect.left = 40; rect.top = 440; rect.right = 639; rect.bottom = 475;
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_board_surface, 36, 440,
+    ((DxBallDDSurface *)dxball_board_surface)->blt_fast(36, 440,
         (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
     return;
 }
@@ -402,13 +392,11 @@ void dxball_draw_scroller_wave(void)
     for (cursor.x = 40; cursor.x <= 600 - cursor.step; cursor.x += cursor.step) {
         rect.left = cursor.x; rect.right = cursor.step + cursor.x;
         if (dxball_reduced_particles != 0) {
-            ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
-                (DxBallDDSurface *)dxball_primary_surface, cursor.x,
+            ((DxBallDDSurface *)dxball_primary_surface)->blt_fast(cursor.x,
                 (DxBallInt)(dxball_sine(cursor.x) * 20.0) + 420,
                 (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
         } else {
-            ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
-                (DxBallDDSurface *)dxball_effect_surface, cursor.x,
+            ((DxBallDDSurface *)dxball_effect_surface)->blt_fast(cursor.x,
                 (DxBallInt)(dxball_sine(cursor.x) * 20.0) + 420,
                 (DxBallDDSurface *)dxball_board_surface, &rect, 0x10);
         }
@@ -425,18 +413,14 @@ void dxball_draw_waving_credits(void)
     dxball_credit_first_y = (DxBallInt)(dxball_sine(dxball_credit_angle) * 3.0);
     dxball_credit_second_y = (DxBallInt)(dxball_sine(-dxball_credit_angle) * 3.0);
     if (dxball_reduced_particles != 0) {
-        ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_primary_surface, 0, dxball_credit_first_y + 3,
+        ((DxBallDDSurface *)dxball_primary_surface)->blt_fast(0, dxball_credit_first_y + 3,
             (DxBallDDSurface *)dxball_board_surface, &first, 0x10);
-        ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_primary_surface, 0, dxball_credit_second_y + 127,
+        ((DxBallDDSurface *)dxball_primary_surface)->blt_fast(0, dxball_credit_second_y + 127,
             (DxBallDDSurface *)dxball_board_surface, &second, 0x10);
     } else {
-        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_effect_surface, 0, dxball_credit_first_y + 3,
+        ((DxBallDDSurface *)dxball_effect_surface)->blt_fast(0, dxball_credit_first_y + 3,
             (DxBallDDSurface *)dxball_board_surface, &first, 0x10);
-        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_effect_surface, 0, dxball_credit_second_y + 127,
+        ((DxBallDDSurface *)dxball_effect_surface)->blt_fast(0, dxball_credit_second_y + 127,
             (DxBallDDSurface *)dxball_board_surface, &second, 0x10);
     }
     return;
@@ -501,8 +485,7 @@ void dxball_dispose_splash(DxBallInt fade)
         dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
         dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
         if (dxball_draw_to_primary == 0) {
-            ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
-                (DxBallDDSurface *)dxball_secondary_surface, &rect,
+            ((DxBallDDSurface *)dxball_secondary_surface)->blt(&rect,
                 (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
         }
         dxball_release_sprite_banks();
