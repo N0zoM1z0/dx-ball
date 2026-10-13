@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**270 functions / 65,599 code bytes / 136 metadata bytes**.
+**274 functions / 65,721 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -70,6 +70,10 @@ before-array pointer. Current candidates69:34 authored/35 runtime; all prior
 and [startup/fatal recovery](RUNTIME_LOWIO_STARTUP.md) add five complete runtime
 exacts across852 bytes. Current candidates74:34 authored/40 runtime; every
 authored result below remains unchanged.
+
+[Error controls](RUNTIME_ERROR_CONTROL.md) add three exact validators and full
+abort31 across122 bytes, plus the complete MessageBox146/90 candidate. Current
+candidates75:34 authored/41 runtime; the authored results below remain unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

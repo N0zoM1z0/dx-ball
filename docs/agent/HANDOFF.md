@@ -51,17 +51,28 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 353 |
-| Exact functions | 270 |
-| Complete exact code bytes | 65,599 |
+| Source-present functions | 358 |
+| Exact functions | 274 |
+| Complete exact code bytes | 65,721 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 270 exact functions does not prove project completion.
+These are separate ledgers; 274 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 60 unclassified origins remain open.
+The authored denominator and 58 unclassified origins remain open.
+
+Error-control recovery adds MessageBox, three validators and abort source.
+Read/write/code checks32/32/27 and full abort31 are exact across122 bytes; the
+imported abort27-byte boundary is corrected. MessageBox improves152/121 to146/90
+and remains nonexact with all58 literal bytes checked. C++ validation ABI and
+local static callback ownership follow pinned symbols. Source358/exact274/
+65,721 code bytes; candidates75 (34 authored/41 runtime), origins270/158/43/58.
+All270 old exacts and74 candidates retain their producer inputs/products/results.
+See [error controls](../research/exact/RUNTIME_ERROR_CONTROL.md) and
+`.analysis/runtime-error-control-20261014/verification.json`. Signal source and
+physical UI/exception/game integration remain open; no runtime tests/game builds.
 
 Low-I/O startup/fatal recovery adds four full bodies and the complete17-row
 error catalog. Fatal42 and banner61 are exact; the old fatal38-byte extent is
@@ -289,8 +300,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `d39da73`
-(locale backends and exact character-type conversion).
+Latest published source checkpoint before this continuation: `1688fc6`
+(low-I/O startup and exact fatal dispatch bodies).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -303,12 +314,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 270 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 74 candidates;
+- `build/reports/exact-replay.json`: all 274 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 75 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-lowio-startup-20261014/verification.json`: current
+- `.analysis/runtime-error-control-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-lowio-startup-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-locale-backends-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
