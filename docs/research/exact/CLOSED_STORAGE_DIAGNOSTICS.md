@@ -577,3 +577,21 @@ Reject the one-owner trial without compiling other header consumers. Retain
 contracts, separate uncompiled source closures and independent review.
 Verified gzip cleanup of 29 carriers releases 16,384 allocated bytes including
 its receipt. Neither of these trials runs a fixture or game.
+
+## Motion API dependency boundary
+
+Paddle declarations need only fixed32 integers and the platform calling
+convention. One private model extracts the unchanged convention macro into
+platform_abi.h, consumed by resources and paddle. Paddle no longer includes
+the resource interface; its C++ implementation privately includes the genuine
+Windows API for SetCursorPos. Other existing callers retain their independent
+resource dependencies. No SDK interface view or executable expression changes.
+
+The single matching compilation has four actual project inputs. Its complete
+203-byte function and twenty bindings retain the same code identity and four
+differences. Reject the pilot without compiling the remaining header consumers.
+Independent review verifies the macro identity, source reversal, dependency
+routes, real import and native callback bridge. Retain
+`.analysis/paddle-input-boundary-20261013/`. Gzip-verified cleanup of thirty
+completed carriers releases 12,288 allocated bytes including its receipt.
+Canonical sources and products remain unchanged; no fixture or game runs.

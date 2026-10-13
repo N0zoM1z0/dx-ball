@@ -83,6 +83,11 @@ projection uses the real SetCursorPos API but keeps the same 203-byte code
 identity and four differences, so it also rejects. Full source/API/comparison
 reviews and gzip-verified cleanup are retained in the two linked private phases.
 Canonical state remains 238 / 62,514; cleanup releases 471,040 allocated bytes.
+The [motion API dependency boundary](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#motion-api-dependency-boundary)
+extracts the shared calling-convention macro and gives paddle only its primitive
+dependencies. One four-input pilot still emits the same 203-byte body with four
+differences, so it is rejected without broader compilation. Source/dependency/
+import review passes; thirty gzip-verified carriers release 12,288 allocated bytes.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
