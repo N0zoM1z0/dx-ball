@@ -340,10 +340,20 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_float_format]
+source = "src/runtime_float_format.c"
+header = "src/runtime_float_format.h"
+additional_inputs = ["src/runtime_float.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_case_conversion.h"]
+
+[owners.runtime_float_format_state]
+source = "src/runtime_float_format_state.c"
+header = "src/runtime_float_format.h"
+additional_inputs = ["src/runtime_float.h"]
+
 [owners.runtime_initialization]
 source = "src/runtime_initialization.c"
 header = "src/runtime_initialization.h"
-additional_inputs = ["src/termination.h"]
+additional_inputs = ["src/termination.h", "src/runtime_float_format.h", "src/runtime_float.h"]
 
 [owners.runtime_fp_initialization_state]
 source = "src/runtime_fp_initialization_state.c"

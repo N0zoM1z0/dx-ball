@@ -39,10 +39,119 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_float_format]
+source = "src/runtime_float_format.c"
+object = "build/exact/runtime_float_format.obj"
+inputs = ["src/runtime_float_format.c", "src/runtime_float_format.h", "src/runtime_float.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_case_conversion.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_float_format_state]
+source = "src/runtime_float_format_state.c"
+object = "build/exact/runtime_float_format_state.obj"
+inputs = ["src/runtime_float_format_state.c", "src/runtime_float_format.h", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.crt-initialize-float-callbacks]
+build = "runtime_initialization"
+symbol = "_dxball_crt_initialize_conversion_table"
+target_address = 0x004175B0
+size = 56
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__cfltcvt_tab", addend = 4, target = 0x004231F8 },
+  { offset = 6, type = "DIR32", symbol = "_dxball_crt_crop_float_zeros", addend = 0, target = 0x00418DE0 },
+  { offset = 12, type = "DIR32", symbol = "__cfltcvt_tab", addend = 8, target = 0x004231F8 },
+  { offset = 16, type = "DIR32", symbol = "_dxball_crt_assign_float", addend = 0, target = 0x00418E60 },
+  { offset = 22, type = "DIR32", symbol = "__cfltcvt_tab", addend = 12, target = 0x004231F8 },
+  { offset = 26, type = "DIR32", symbol = "_dxball_crt_force_decimal_point", addend = 0, target = 0x00418D70 },
+  { offset = 32, type = "DIR32", symbol = "__cfltcvt_tab", addend = 16, target = 0x004231F8 },
+  { offset = 36, type = "DIR32", symbol = "_dxball_crt_float_positive", addend = 0, target = 0x00418E40 },
+  { offset = 41, type = "DIR32", symbol = "_dxball_crt_format_float", addend = 0, target = 0x00419200 },
+  { offset = 46, type = "DIR32", symbol = "__cfltcvt_tab", addend = 0, target = 0x004231F8 },
+  { offset = 51, type = "DIR32", symbol = "__cfltcvt_tab", addend = 20, target = 0x004231F8 },
+]
+
+[units.crt-dispatch-float-format]
+build = "runtime_float_format"
+symbol = "_dxball_crt_format_float"
+target_address = 0x00419200
+size = 101
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 35, type = "REL32", symbol = "_dxball_crt_format_fixed", addend = 0, target = 0x00418FF0 },
+  { offset = 64, type = "REL32", symbol = "_dxball_crt_format_general", addend = 0, target = 0x004190F0 },
+  { offset = 93, type = "REL32", symbol = "_dxball_crt_format_exponent", addend = 0, target = 0x00418EB0 },
+]
+
+[candidates.crt-force-decimal-point]
+build = "runtime_float_format"
+symbol = "_dxball_crt_force_decimal_point"
+target_address = 0x00418D70
+size = 101
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 11, type = "REL32", symbol = "_dxball_crt_tolower", addend = 0, target = 0x00418130 },
+  { offset = 31, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 44, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 58, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 78, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+]
+
+[units.crt-crop-float-zeros]
+build = "runtime_float_format"
+symbol = "_dxball_crt_crop_float_zeros"
+target_address = 0x00418DE0
+size = 89
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+  { offset = 69, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+]
+
+[candidates.crt-assign-float]
+build = "runtime_float_format"
+symbol = "_dxball_crt_assign_float"
+target_address = 0x00418E60
+size = 76
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 21, type = "REL32", symbol = "_dxball_ascii_to_double", addend = 0, target = 0x0041D580 },
+  { offset = 56, type = "REL32", symbol = "_dxball_ascii_to_float", addend = 0, target = 0x0041D5C0 },
+]
+
+[units.crt-positive-float]
+build = "runtime_float_format"
+symbol = "_dxball_crt_float_positive"
+target_address = 0x00418E40
+size = 23
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+]
+
+[units.crt-float-unavailable]
+build = "runtime_float_format"
+symbol = "_dxball_crt_float_unavailable"
+target_address = 0x0041D0D0
+size = 11
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 3, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x00418930 },
+]
+
+[candidates.crt-float-text-digits]
+build = "runtime_float_format"
+symbol = "_dxball_crt_float_digits"
+target_address = 0x0041D600
+size = 129
+boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
+relocations = [
+  { offset = 110, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00416610 },
+]
+
 [builds.runtime_initialization]
 source = "src/runtime_initialization.c"
 object = "build/exact/runtime_initialization.obj"
-inputs = ["src/runtime_initialization.c", "src/runtime_initialization.h", "src/termination.h"]
+inputs = ["src/runtime_initialization.c", "src/runtime_initialization.h", "src/termination.h", "src/runtime_float_format.h", "src/runtime_float.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
 
 [builds.runtime_fp_initialization_state]

@@ -1,4 +1,15 @@
 #include "runtime_initialization.h"
+#include "runtime_float_format.h"
+
+void dxball_crt_initialize_conversion_table(void)
+{
+    _cfltcvt_tab.crop.active = dxball_crt_crop_float_zeros;
+    _cfltcvt_tab.assign.active = dxball_crt_assign_float;
+    _cfltcvt_tab.force_decimal.active = dxball_crt_force_decimal_point;
+    _cfltcvt_tab.positive.active = dxball_crt_float_positive;
+    _cfltcvt_tab.convert.active = dxball_crt_format_float;
+    _cfltcvt_tab.convert_compat.active = dxball_crt_format_float;
+}
 
 void dxball_crt_initialize_runtime(void)
 {
