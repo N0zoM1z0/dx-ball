@@ -1,5 +1,8 @@
 #include "runtime_float.h"
 
+/* Original matherr.obj marker: the default callback is not user-installed. */
+int _matherr_flag = 9876;
+
 /* FUNCTION: DXBALL 0x0041D580 */
 int dxball_ascii_to_double(double *result, const char *text)
 {

@@ -51,17 +51,29 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 538 |
-| Source-present functions | 402 |
-| Exact functions | 302 |
-| Complete exact code bytes | 67,800 |
+| Source-present functions | 408 |
+| Exact functions | 304 |
+| Complete exact code bytes | 68,066 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 302 exact functions does not prove project completion.
+These are separate ledgers; 304 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 39 unclassified origins remain open.
+The authored denominator and 36 unclassified origins remain open.
+
+FP decomposition/exception recovery adds six bodies and two full exacts across
+266 bytes: exception entry187 and quiet-NaN entry79. The88-byte IEEE record uses
+the real operand2-valid bitfield. Callback names are now writable; all350 logical
+catalog bytes match. The default matherr owner restores its9876 marker4. All302
+preceding exacts are preserved, including15 fresh shared-owner replays. Of six
+recompiled old candidates, only converter459 changes94 to95 differences.
+Current candidates95 (34 authored/61 runtime), origins270/189/43/36. See
+[decomposition/exceptions](../research/exact/RUNTIME_FP_DECOMPOSITION.md) and
+`.analysis/runtime-fp-decomposition-20261014/verification.json`. One closed17-record
+REA session; no runtime/game tests. Physical rounding/control/exception boundaries
+and integration remain open.
 
 FP control/classification adds eight source bodies and six complete exacts across
 517 bytes: translations161/141, control24, errno42, error priority50 and special
@@ -390,8 +402,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `255d553`
-(float rendering and six complete exact bodies).
+Latest published source checkpoint before this continuation: `b734cb6`
+(floating controls and six complete exact bodies).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -404,12 +416,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 302 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 91 candidates;
+- `build/reports/exact-replay.json`: all 304 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 95 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-fp-control-20261014/verification.json`: current
+- `.analysis/runtime-fp-decomposition-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-fp-control-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-float-render-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

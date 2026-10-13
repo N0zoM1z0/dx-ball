@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**302 functions / 67,800 code bytes / 136 metadata bytes**.
+**304 functions / 68,066 code bytes / 136 metadata bytes**.
+
+[Decomposition/exceptions](RUNTIME_FP_DECOMPOSITION.md) adds two complete exacts
+across266 bytes and four candidates. Source408, candidates95 (34 authored/61
+runtime); all302 preceding exacts are preserved. The converter candidate changes
+94 to95 differences in the genuine matherr-marker source context.
 
 [FP control/classification](RUNTIME_FP_CONTROL.md) adds six complete exacts
 across517 bytes and two candidates. Source402, candidates91 (34 authored/57

@@ -340,6 +340,16 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_fp_decomposition]
+source = "src/runtime_fp_decomposition.c"
+header = "src/runtime_fp_decomposition.h"
+additional_inputs = ["src/runtime_fp_control.h", "src/runtime_float.h"]
+
+[owners.runtime_fp_exceptions]
+source = "src/runtime_fp_exceptions.cpp"
+header = "src/runtime_fp_exceptions.h"
+additional_inputs = ["src/runtime_fp_control.h", "src/runtime_float.h"]
+
 [owners.runtime_fp_control]
 source = "src/runtime_fp_control.c"
 header = "src/runtime_fp_control.h"

@@ -20,17 +20,27 @@ int dxball_crt_math_error_code(unsigned int flags)
     return (flags & 0x02) * 2;
 }
 
-const char *dxball_crt_math_function_name(int function)
+char *dxball_crt_math_function_name(int function)
 {
-    struct Name { int function; const char *name; };
+    struct Name { int function; char *name; };
+    /* The original catalog is writable: matherr receives a borrowed char *. */
+    static char exp_text[] = "exp", pow_text[] = "pow", log_text[] = "log";
+    static char log10_text[] = "log10", sinh_text[] = "sinh", cosh_text[] = "cosh";
+    static char tanh_text[] = "tanh", asin_text[] = "asin", acos_text[] = "acos";
+    static char atan_text[] = "atan", atan2_text[] = "atan2", sqrt_text[] = "sqrt";
+    static char sin_text[] = "sin", cos_text[] = "cos", tan_text[] = "tan";
+    static char ceil_text[] = "ceil", floor_text[] = "floor", fabs_text[] = "fabs";
+    static char modf_text[] = "modf", ldexp_text[] = "ldexp", cabs_text[] = "_cabs";
+    static char hypot_text[] = "_hypot", fmod_text[] = "fmod", frexp_text[] = "frexp";
+    static char y0_text[] = "_y0", y1_text[] = "_y1", yn_text[] = "_yn";
     static Name names[] = {
-        {20, "exp"}, {29, "pow"}, {26, "log"}, {27, "log10"},
-        {31, "sinh"}, {19, "cosh"}, {33, "tanh"}, {14, "asin"},
-        {13, "acos"}, {15, "atan"}, {16, "atan2"}, {5, "sqrt"},
-        {30, "sin"}, {18, "cos"}, {32, "tan"}, {12, "ceil"},
-        {11, "floor"}, {21, "fabs"}, {28, "modf"}, {25, "ldexp"},
-        {17, "_cabs"}, {24, "_hypot"}, {22, "fmod"}, {23, "frexp"},
-        {34, "_y0"}, {35, "_y1"}, {36, "_yn"}
+        {20, exp_text}, {29, pow_text}, {26, log_text}, {27, log10_text},
+        {31, sinh_text}, {19, cosh_text}, {33, tanh_text}, {14, asin_text},
+        {13, acos_text}, {15, atan_text}, {16, atan2_text}, {5, sqrt_text},
+        {30, sin_text}, {18, cos_text}, {32, tan_text}, {12, ceil_text},
+        {11, floor_text}, {21, fabs_text}, {28, modf_text}, {25, ldexp_text},
+        {17, cabs_text}, {24, hypot_text}, {22, fmod_text}, {23, frexp_text},
+        {34, y0_text}, {35, y1_text}, {36, yn_text}
     };
     int index = 0;
     Name *entry = names;

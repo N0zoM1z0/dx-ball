@@ -39,6 +39,95 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_fp_decomposition]
+source = "src/runtime_fp_decomposition.c"
+object = "build/exact/runtime_fp_decomposition.obj"
+inputs = ["src/runtime_fp_decomposition.c", "src/runtime_fp_decomposition.h", "src/runtime_fp_control.h", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_fp_exceptions]
+source = "src/runtime_fp_exceptions.cpp"
+object = "build/exact/runtime_fp_exceptions.obj"
+inputs = ["src/runtime_fp_exceptions.cpp", "src/runtime_fp_exceptions.h", "src/runtime_fp_control.h", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-decompose-double]
+build = "runtime_fp_decomposition"
+symbol = "_dxball_crt_decompose_double"
+target_address = 0x00419D90
+size = 238
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DECOMPOSITION.md"
+relocations = [
+  { offset = 182, type = "REL32", symbol = "_dxball_crt_set_float_exponent", addend = 0, target = 0x00419CE0 },
+]
+
+[candidates.crt-double-integer-type]
+build = "runtime_fp_decomposition"
+symbol = "_dxball_crt_double_integer_type"
+target_address = 0x0041E540
+size = 127
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DECOMPOSITION.md"
+relocations = [
+  { offset = 15, type = "REL32", symbol = "_dxball_crt_classify_double", addend = 0, target = 0x0041F8E0 },
+  { offset = 50, type = "REL32", symbol = "__frnd", addend = 0, target = 0x0041F8C0 },
+  { offset = 89, type = "DIR32", symbol = "$T235", addend = 0, target = 0x00420228, data_hex = "000000000000e03f" },
+  { offset = 108, type = "REL32", symbol = "__frnd", addend = 0, target = 0x0041F8C0 },
+]
+
+[candidates.crt-classify-double]
+build = "runtime_fp_decomposition"
+symbol = "_dxball_crt_classify_double"
+target_address = 0x0041F8E0
+size = 162
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DECOMPOSITION.md"
+relocations = [
+  { offset = 26, type = "REL32", symbol = "_dxball_crt_float_special_type", addend = 0, target = 0x00419D20 },
+]
+
+[candidates.crt-user-math-error]
+build = "runtime_fp_exceptions"
+symbol = "_dxball_crt_user_math_error"
+target_address = 0x00419B90
+size = 174
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DECOMPOSITION.md"
+relocations = [
+  { offset = 10, type = "REL32", symbol = "_dxball_crt_math_function_name", addend = 0, target = 0x00419C70 },
+  { offset = 92, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+  { offset = 105, type = "REL32", symbol = "_dxball_math_error", addend = 0, target = 0x0041D7C0 },
+  { offset = 118, type = "REL32", symbol = "_dxball_crt_set_math_errno", addend = 0, target = 0x00419C40 },
+  { offset = 145, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+  { offset = 158, type = "REL32", symbol = "_dxball_crt_set_math_errno", addend = 0, target = 0x00419C40 },
+]
+
+[units.crt-handle-single-exception]
+build = "runtime_fp_exceptions"
+symbol = "_dxball_crt_handle_single_exception"
+target_address = 0x004194A0
+size = 187
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DECOMPOSITION.md"
+relocations = [
+  { offset = 21, type = "REL32", symbol = "_dxball_crt_handle_float_exception", addend = 0, target = 0x004198D0 },
+  { offset = 67, type = "REL32", symbol = "_dxball_crt_raise_float_exception", addend = 0, target = 0x00419560 },
+  { offset = 82, type = "REL32", symbol = "_dxball_crt_math_error_code", addend = 0, target = 0x00419CA0 },
+  { offset = 91, type = "DIR32", symbol = "__matherr_flag", addend = 0, target = 0x00424018 },
+  { offset = 134, type = "REL32", symbol = "_dxball_crt_user_math_error", addend = 0, target = 0x00419B90 },
+  { offset = 149, type = "REL32", symbol = "_dxball_crt_set_math_errno", addend = 0, target = 0x00419C40 },
+  { offset = 170, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+]
+
+[units.crt-handle-single-quiet-nan]
+build = "runtime_fp_exceptions"
+symbol = "_dxball_crt_handle_single_quiet_nan"
+target_address = 0x00419450
+size = 79
+boundary_evidence = "docs/research/exact/RUNTIME_FP_DECOMPOSITION.md"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__matherr_flag", addend = 0, target = 0x00424018 },
+  { offset = 38, type = "REL32", symbol = "_dxball_crt_user_math_error", addend = 0, target = 0x00419B90 },
+  { offset = 57, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 67, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+]
+
 [builds.runtime_fp_control]
 source = "src/runtime_fp_control.c"
 object = "build/exact/runtime_fp_control.obj"
