@@ -447,7 +447,7 @@ void dxball_pulse_splash_palette(void)
         dxball_live_palette[middle + dxball_splash_offset + 1].red = 160;
         dxball_live_palette[middle - dxball_splash_offset].blue = 160;
         dxball_live_palette[middle - dxball_splash_offset + 1].blue = 160;
-        dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, 48, dxball_splash_span + 48, dxball_live_palette + 48);
+        dxball_direct_palette->set_entries(0, 48, dxball_splash_span + 48, dxball_live_palette + 48);
     }
     return;
 }

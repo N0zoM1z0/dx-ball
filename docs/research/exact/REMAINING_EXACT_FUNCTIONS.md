@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-All 37 authored candidates were compared against the complete original extents
+All 35 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**236 functions / 61,949 code bytes / 136 metadata bytes**.
+**238 functions / 62,514 code bytes / 136 metadata bytes**.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -19,7 +19,6 @@ None of these candidates is already exact. The accepted total remains
 | `wait-frames` | 170 | 170 | 6 |
 | `draw-line` | 445 | 445 | 9 |
 | `palette-transition` | 1339 | 1339 | 18 |
-| `reset-round` | 426 | 426 | 20 |
 | `draw-score` | 433 | 433 | 21 |
 | `load-editor-board` | 52 | 58 | 23 |
 | `store-editor-board` | 52 | 58 | 42 |
@@ -27,8 +26,7 @@ None of these candidates is already exact. The accepted total remains
 | `clear-all-entities` | 106 | 107 | 59 |
 | `load-sprite-bank` | 1475 | 1475 | 72 |
 | `fill-triangle` | 1710 | 1710 | 88 |
-| `stretch-keyed-sprite` | 139 | 141 | 90 |
-| `draw-paddle` | 677 | 677 | 68 |
+| `draw-paddle` | 677 | 677 | 48 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
 | `fill-polygon-clipped` | 1592 | 1592 | 210 |
 | `fill-polygon` | 1543 | 1543 | 211 |
@@ -50,6 +48,10 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [palette interface](EXACT_PALETTE_COM_CALLS.md) promotes complete stretch
+and reset while preserving all affected exacts. Paddle improves from 68 to 48
+differences; the other 34 retained candidate code identities are unchanged.
 
 The [intro surface calls](EXACT_INTRO_COM_CALLS.md) promote the complete
 233-byte scroller while preserving all eighteen intro exact companions. The

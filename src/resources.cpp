@@ -302,7 +302,7 @@ void dxball_load_live_palette(const char *path)
         dxball_live_palette[color].blue = (DxBallByte)getc(file);
     }
     fclose(file);
-    dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, 0, 256,
+    dxball_direct_palette->set_entries(0, 0, 256,
                                               dxball_live_palette);
     return;
 }

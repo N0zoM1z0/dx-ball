@@ -162,7 +162,17 @@ typedef struct DxBallDDPaletteVTable {
     DX_DD_RESULT (DXBALL_DDCALL *set_entries)(DxBallDDPalette *, DX_DD_WORD, DX_DD_WORD,
                                           DX_DD_WORD, DxBallPaletteEntry *);
 } DxBallDDPaletteVTable;
+#ifdef __cplusplus
+/* Seven original IDirectDrawPalette slots, inherited IUnknown first. */
+struct DxBallDDPalette : public DxBallDDUnknown {
+    virtual DX_DD_RESULT DXBALL_DDCALL get_caps(DX_DD_WORD *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL get_entries(DX_DD_WORD, DX_DD_WORD, DX_DD_WORD, DxBallPaletteEntry *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL initialize(DxBallDDraw *, DX_DD_WORD, DxBallPaletteEntry *) = 0;
+    virtual DX_DD_RESULT DXBALL_DDCALL set_entries(DX_DD_WORD, DX_DD_WORD, DX_DD_WORD, DxBallPaletteEntry *) = 0;
+};
+#else
 struct DxBallDDPalette { const DxBallDDPaletteVTable *vtable; };
+#endif
 
 typedef struct DxBallSprite {
     DxBallDDSurface *surface;

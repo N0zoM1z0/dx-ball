@@ -430,7 +430,7 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
     dxball_live_palette[last].red = red;
     dxball_live_palette[last].green = green;
     dxball_live_palette[last].blue = blue;
-    dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, first,
+    dxball_direct_palette->set_entries(0, first,
         last - first + 1, &dxball_live_palette[first]);
     return;
 }

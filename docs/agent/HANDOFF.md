@@ -13,8 +13,29 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **236 exact functions /61,949 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 37 authored nonexact functions.
+Latest checkpoint: **238 exact functions /62,514 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 35 authored nonexact functions.
+The latest [palette interface](../research/exact/EXACT_PALETTE_COM_CALLS.md)
+promotes complete stretch (139 bytes/six bindings) and reset (426/43).
+The seven-slot stdcall palette class replaces three dispatches in existing
+C++ owners. All 219 affected previous exacts retain 60,122 bytes; no demotions.
+Paddle stays 677 bytes and improves from 68 to 48 differences; the other 34
+retained candidate code identities are unchanged.
+All 238 whole closures pass. The 26 frozen matching products are reused after
+complete canonical input byte-equivalence and flag checks, with actual producer
+receipts retained. Native and MinGW build; VC4 links 25 matching, five fresh
+production and seven unchanged objects. Native passes 542 unchanged focused
+cases: 36 stretch, five live palette, 81 rotation, 120 pulse and 300 reset.
+No connected frames or game run. Historical inventories refresh 235 rows,
+with all 249 semantic scopes and case counts preserved.
+`.analysis/palette-com-integration-20261013/verification.json`.
+Independent review verifies 238 exacts, 35 candidates, 68 input identities,
+37 game objects, five products and current C exports. Actual frozen producer
+paths and canonical input identities agree; path/time macros are absent.
+Gzip-verified cleanup of 152 completed carriers releases 561,152
+allocated bytes while preserving current products and unique evidence.
+The paddle consumed-record followup restores frame homes but remains 679/677
+with 467 differences, so it is rejected; eleven runtime exacts preserve.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
@@ -577,11 +598,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 236 |
-| Exact code / separate metadata bytes | 61,949 /136 |
+| Complete exact functions | 238 |
+| Exact code / separate metadata bytes | 62,514 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/intro-com-integration-20261013/verification.json`.
+Current product/comparison receipt: `.analysis/palette-com-integration-20261013/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;
