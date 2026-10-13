@@ -537,3 +537,43 @@ including its receipt.
 Both lifetime models have independent source and complete comparison reviews.
 Canonical sources and products remain unchanged. No fixture or game runs
 accompany these four trials.
+
+## SDK types in the current Windows C view
+
+Two header gates extend the existing HRESULT, DWORD, ULONG, LONG and RECT
+declarations to Windows C consumers. C++ and native header branches remain
+unchanged. Seven resource-inspector callbacks receive the corresponding SDK
+return and argument types, with fixed32 native aliases and unchanged bodies.
+This model uses the current surface and palette interfaces rather than the
+earlier C-only SDK context.
+
+All 28 affected recipes compile once; all 259 complete units compare.
+Paddle positioning matches its complete 203 bytes. Five accepted functions
+lose their matches: bonus update, rotation offset and width, bitmap loading
+and hit-region initialization. The net result is **−4 functions / −3,606 bytes**,
+so the model is rejected. All 128 code, literal and metadata identities across
+the seven C++ owners remain unchanged.
+
+Independent review verifies source reversals, callback contracts, actual SDK
+declarations and all compiler receipts. Retain
+`.analysis/sdk-c-view-current-20261013/`. Verified gzip cleanup of 150 completed
+carriers releases 454,656 allocated bytes including its receipt; two complete
+preprocessor carriers remain compressed. Canonical sources and products stay
+unchanged.
+
+## C++ paddle positioning with the actual cursor API
+
+One isolated paddle projection preserves canonical SDK headers and replaces
+the callback-cell call with the actual SetCursorPos import. Project declarations
+retain C linkage. The native API forwarder calls the existing live callback;
+the Windows call follows the SDK BOOL/stdcall/int-coordinate contract.
+All arithmetic, guards, global writes and the callback export remain intact.
+
+One matching compilation compares all 203 bytes and twenty actual bindings.
+The complete relocated code identity is unchanged, with four differences.
+The real USER32 import is independently bound to named IAT entry 0x441350.
+Reject the one-owner trial without compiling other header consumers. Retain
+`.analysis/paddle-win32-cpp-20261013/` for complete source reversal, API/native
+contracts, separate uncompiled source closures and independent review.
+Verified gzip cleanup of 29 carriers releases 16,384 allocated bytes including
+its receipt. Neither of these trials runs a fixture or game.

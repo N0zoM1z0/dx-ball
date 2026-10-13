@@ -75,6 +75,14 @@ also leaves all twelve identities unchanged; the bank's four-scalar transfer
 scope worsens to 1,487/279 differences while preserving fifteen exact companions.
 All four source and comparison reviews pass, and completed carriers are gzip
 verified before cleanup. Current canonical state remains 238 / 62,514.
+The [current SDK Windows C view](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#sdk-types-in-the-current-windows-c-view)
+compares 259 complete units once across 28 recipes. Paddle positioning gains
+its 203-byte match, but five losses give net −4 / −3,606 bytes; reject the model.
+All 128 identities in seven C++ owners remain unchanged. A separate C++ paddle
+projection uses the real SetCursorPos API but keeps the same 203-byte code
+identity and four differences, so it also rejects. Full source/API/comparison
+reviews and gzip-verified cleanup are retained in the two linked private phases.
+Canonical state remains 238 / 62,514; cleanup releases 471,040 allocated bytes.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
