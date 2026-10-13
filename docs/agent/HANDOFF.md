@@ -51,17 +51,29 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 531 |
-| Source-present functions | 362 |
-| Exact functions | 276 |
-| Complete exact code bytes | 65,817 |
+| Source-present functions | 365 |
+| Exact functions | 277 |
+| Complete exact code bytes | 65,835 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 276 exact functions does not prove project completion.
+These are separate ledgers; 277 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 57 unclassified origins remain open.
+The authored denominator and 56 unclassified origins remain open.
+
+Decimal output and multibyte recovery adds three full source bodies. Lead-byte
+classification18 is exact; its private classifier58/7 and decimal output922/923/
+535 remain candidates. Original80-bit argument,26-byte result, full special-value
+strings and guard-digit/rounding lifetimes are restored without before-object
+pointers. Source365/exact277/65,835 code bytes; candidates79 (34 authored/45
+runtime), origins270/162/43/56. All276 preceding exacts and77 candidates preserve
+their inputs/products/results. See [decimal output](../research/exact/RUNTIME_DECIMAL_OUTPUT.md)
+and `.analysis/runtime-decimal-output-20261014/verification.json`. Retained REA
+evidence and full pinned CRT sections are reused; no new provider, runtime tests
+or game builds. Classification register allocation, decimal scheduling and
+shared storage/integration remain open.
 
 Signal/exception recovery adds four complete bodies and initialized state140.
 Both lookup bodies49/47 are exact; raise includes all53 switch bytes beyond its
@@ -313,8 +325,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `4bbac1d`
-(error controls and four complete exact bodies).
+Latest published source checkpoint before this continuation: `053bd7d`
+(signal dispatch and two complete exact lookup bodies).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -327,12 +339,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 276 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 77 candidates;
+- `build/reports/exact-replay.json`: all 277 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 79 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-signals-20261014/verification.json`: current
+- `.analysis/runtime-decimal-output-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-signals-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-error-control-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

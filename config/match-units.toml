@@ -39,6 +39,64 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_decimal_output]
+source = "src/runtime_decimal_output.c"
+object = "build/exact/runtime_decimal_output.obj"
+inputs = ["src/runtime_decimal_output.c", "src/runtime_decimal_output.h", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_multibyte]
+source = "src/runtime_multibyte.c"
+object = "build/exact/runtime_multibyte.obj"
+inputs = ["src/runtime_multibyte.c", "src/runtime_multibyte.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-decimal-output]
+build = "runtime_decimal_output"
+symbol = "_dxball_crt_decimal_output"
+target_address = 0x0041EF20
+size = 923
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_OUTPUT.md"
+relocations = [
+  { offset = 202, type = "DIR32", symbol = "??_C@_06LKFM@1?$CDSNAN?$AA@", addend = 0, target = 0x00424348, data_hex = "3123534e414e00" },
+  { offset = 207, type = "DIR32", symbol = "??_C@_06LKFM@1?$CDSNAN?$AA@", addend = 0, target = 0x00424348, data_hex = "3123534e414e00" },
+  { offset = 271, type = "DIR32", symbol = "??_C@_05EDPF@1?$CDIND?$AA@", addend = 0, target = 0x00424340, data_hex = "3123494e4400" },
+  { offset = 276, type = "DIR32", symbol = "??_C@_05EDPF@1?$CDIND?$AA@", addend = 0, target = 0x00424340, data_hex = "3123494e4400" },
+  { offset = 329, type = "DIR32", symbol = "??_C@_05BGNL@1?$CDINF?$AA@", addend = 0, target = 0x00424338, data_hex = "3123494e4600" },
+  { offset = 334, type = "DIR32", symbol = "??_C@_05BGNL@1?$CDINF?$AA@", addend = 0, target = 0x00424338, data_hex = "3123494e4600" },
+  { offset = 369, type = "DIR32", symbol = "??_C@_06PAPI@1?$CDQNAN?$AA@", addend = 0, target = 0x00424330, data_hex = "3123514e414e00" },
+  { offset = 374, type = "DIR32", symbol = "??_C@_06PAPI@1?$CDQNAN?$AA@", addend = 0, target = 0x00424330, data_hex = "3123514e414e00" },
+  { offset = 517, type = "REL32", symbol = "___multtenpow12", addend = 0, target = 0x0041FC40 },
+  { offset = 546, type = "REL32", symbol = "___ld12mul", addend = 0, target = 0x0041F990 },
+  { offset = 655, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 685, type = "REL32", symbol = "___shr_12", addend = 0, target = 0x0041E6A0 },
+  { offset = 736, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 749, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 767, type = "REL32", symbol = "___add_12", addend = 0, target = 0x0041E5F0 },
+  { offset = 780, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+]
+
+[units.crt-multibyte-lead]
+build = "runtime_multibyte"
+symbol = "_dxball_crt_ismbblead"
+target_address = 0x0041BEF0
+size = 18
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_OUTPUT.md"
+relocations = [
+  { offset = 10, type = "REL32", symbol = "_dxball_crt_ismbbtype", addend = 0, target = 0x0041BF10 },
+]
+
+[candidates.crt-multibyte-classify]
+build = "runtime_multibyte"
+symbol = "_dxball_crt_ismbbtype"
+target_address = 0x0041BF10
+size = 58
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_OUTPUT.md"
+relocations = [
+  { offset = 10, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x00423948 },
+  { offset = 39, type = "DIR32", symbol = "__ctype", addend = 2, target = 0x00423678 },
+]
+
 [units.screen-pan]
 build = "gameplay"
 symbol = "_dxball_screen_pan"
