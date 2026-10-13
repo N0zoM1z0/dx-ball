@@ -5,14 +5,14 @@ The current records cover gameplay, all five screen modes, resources, graphics a
 
 | Fact | Count |
 | --- | ---: |
-| Provisional Ghidra candidates | 528 |
-| Source-present functions | 309 |
+| Provisional function candidates | 529 |
+| Source-present functions | 315 |
 | Functions with scoped semantic acceptance | 249 |
-| Byte-exact functions | 250 |
-| Complete exact code bytes | 63718 |
-| Entries identified as runtime dependencies | 122 |
+| Byte-exact functions | 253 |
+| Complete exact code bytes | 63862 |
+| Entries identified as runtime dependencies | 127 |
 | Entries identified as compiler-generated code | 43 |
-| Origin still unclassified | 93 |
+| Origin still unclassified | 89 |
 
 The inventory includes game routines, runtime dependencies and compiler-generated code.
 Both Windows builds have completed recorded original-board campaigns under Wine.

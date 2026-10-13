@@ -40,7 +40,7 @@ def main():
         "# Reconstruction progress\n\nRecover the original game source into a rebuildable, playable game.\n"
         "The current records cover gameplay, all five screen modes, resources, graphics and audio.\n\n"
         "| Fact | Count |\n| --- | ---: |\n"
-        f"| Provisional Ghidra candidates | {status['function_candidates']} |\n"
+        f"| Provisional function candidates | {status['function_candidates']} |\n"
         f"| Source-present functions | {status['source_present']} |\n"
         f"| Functions with scoped semantic acceptance | {status['semantic_validated_with_scope']} |\n"
         f"| Byte-exact functions | {status['exact_functions']} |\n"

@@ -274,3 +274,8 @@ header = "src/runtime_file_modes.h"
 source = "src/runtime_resize.c"
 header = "src/runtime_resize.h"
 additional_inputs = ["src/allocator.h", "src/state_types.h"]
+
+[owners.runtime_stream]
+source = "src/runtime_stream.c"
+header = "src/runtime_stream.h"
+additional_inputs = ["src/allocator.h", "src/state_types.h"]
