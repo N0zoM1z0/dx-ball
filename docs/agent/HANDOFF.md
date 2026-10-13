@@ -51,17 +51,28 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 346 |
-| Exact functions | 267 |
-| Complete exact code bytes | 65,205 |
+| Source-present functions | 349 |
+| Exact functions | 268 |
+| Complete exact code bytes | 65,496 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 267 exact functions does not prove project completion.
+These are separate ledgers; 268 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 66 unclassified origins remain open.
+The authored denominator and 64 unclassified origins remain open.
+
+The locale-backend follow-up restores both mapping/classification paths and
+their private bounded counter. Character-type conversion291 is exact with all
+bindings and both complete probe constants. Mapping565/555/280 and counting44/15
+remain candidates. The original private-cache mangling establishes C++ local
+statics; real maintained C allocator linkage is explicit. Source349/exact268/
+65,496 code bytes; candidates72 (34 authored/38 runtime), origins270/152/43/64.
+All267 preceding exacts and70 candidates retain their producer inputs/products.
+See [locale backends](../research/exact/RUNTIME_LOCALE_BACKENDS.md) and
+`.analysis/runtime-locale-backends-20261014/verification.json`. OS/runtime
+integration remains open. No runtime tests or game builds run.
 
 The October14 continuation restores both full229-byte case converters and the
 145-byte classification dependency. Both converters are exact across458 bytes;
