@@ -7,7 +7,7 @@ All ten affected exacts preserve 502 bytes. The 239 other producers are unchange
 
 | Candidate | Current/original bytes | Differences |
 | --- | ---: | ---: |
-| Numeric digits | 232/232 | 21 |
+| Numeric digits | 232/232 | 20 |
 | Parser and embedded tables | 1851/1871 | 1661 |
 | Multiplication | 708/678 | 666 |
 | Decimal scaling | 133/123 | 127 |
@@ -38,3 +38,7 @@ Power bytes reuse `ev_b739e7f968490a9c85dd91573b9bbbacf7d8361d44ac9c31cd884e82c2
 Source stages and full comparisons are in `.analysis/runtime-decimal-conversion-20261013/`.
 All four owners compile on VC4, native and i686. No runtime tests or game builds
 run. Locale dependencies, remaining exact gaps and game integration stay open.
+
+The next continuation restores the coarse shift's middle-limb carry accumulator
+and OR direction, reducing numeric conversion to 20 differences. The exact
+addition companion is preserved. See [the current source note](RUNTIME_FILE_MODES.md).

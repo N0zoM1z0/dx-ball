@@ -265,3 +265,12 @@ additional_inputs = ["src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
 source = "src/runtime_decimal_powers.c"
 header = "src/runtime_decimal.h"
 additional_inputs = ["src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+
+[owners.runtime_file_modes]
+source = "src/runtime_file_modes.c"
+header = "src/runtime_file_modes.h"
+
+[owners.runtime_resize]
+source = "src/runtime_resize.c"
+header = "src/runtime_resize.h"
+additional_inputs = ["src/allocator.h", "src/state_types.h"]

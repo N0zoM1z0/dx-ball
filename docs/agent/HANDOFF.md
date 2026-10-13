@@ -51,17 +51,17 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 528 |
-| Source-present functions | 306 |
-| Exact functions | 249 |
-| Complete exact code bytes | 63,697 |
+| Source-present functions | 309 |
+| Exact functions | 250 |
+| Complete exact code bytes | 63,718 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 249 exact functions does not prove project completion.
+These are separate ledgers; 250 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 95 unclassified origins remain open.
+The authored denominator and 93 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -113,10 +113,22 @@ See [decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
 `.analysis/runtime-decimal-conversion-20261013/`. Locale dependencies and
 game integration remain open; no runtime tests or game builds run.
 
+The latest continuation restores descriptor modes, realloc and heap-size source.
+Heap size is complete exact across21 bytes and both actual bindings. All249
+preceding exact results are unchanged; the three source bodies bring presence
+to309 and exacts to250/63,718. Numeric digits improve to20 differences; descriptor
+modes have128/128 bytes with2 differences and realloc106/111 with15. Current
+candidates total47:34 authored and13 runtime. The intervening47-byte chkstk is
+verified as a special-ABI compiler dependency, not an invented C unit. Origins
+are270 authored/122 runtime/43 compiler-generated/93 unknown. See
+[modes and resizing](../research/exact/RUNTIME_FILE_MODES.md) and
+`.analysis/runtime-digit-core-20261013/verification.json`. Native/i686 standalone
+compilation covers the three changed owners. No runtime tests or game builds run.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `8793689`
-(indexed zero testing and 96-bit addition exact).
+Latest published source checkpoint before this continuation: `7cd6ff2`
+(decimal conversion source and full power tables).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -129,13 +141,15 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 249 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 45 candidates;
+- `build/reports/exact-replay.json`: all 250 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 47 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-decimal-conversion-20261013/verification.json`: current
+- `.analysis/runtime-digit-core-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-decimal-conversion-20261013/verification.json`: preceding
+  decimal source scope; affected arithmetic inputs/products are frozen in the new `before/`.
 - `.analysis/runtime-mantissa-lifetimes-20261013/verification.json`: preceding
   iteration/arithmetic scope; source and products are frozen in the new `before/`.
 - `.analysis/runtime-mantissa-helpers-20261013/verification.json`: preceding

@@ -72,14 +72,18 @@ void __mtold12(const char *digits, int count, DxBallExtended12 *result)
     if (mantissa[2] == 0) {
         unsigned int high;
         do {
-            unsigned int middle, low;
+            unsigned int middle, low, low_carry;
             exponent -= 16;
             middle = mantissa[1];
             high = middle >> 16;
             low = mantissa[0];
+            middle <<= 16;
             mantissa[2] = high;
-            mantissa[1] = (middle << 16) | (low >> 16);
-            mantissa[0] = low << 16;
+            low_carry = low >> 16;
+            low <<= 16;
+            middle |= low_carry;
+            mantissa[1] = middle;
+            mantissa[0] = low;
         } while (high == 0);
     }
     while ((((unsigned char *)result)[9] & 0x80) == 0) {
