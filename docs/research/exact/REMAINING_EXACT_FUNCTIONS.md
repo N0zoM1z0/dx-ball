@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **309 functions / 68,512 code bytes / 136 metadata bytes**.
 
+[Complete C++ handler search](RUNTIME_CPP_HANDLER.md) adds the full659-byte source
+candidate663/605. Source418/candidates100 (34 authored/66 runtime); all preceding
+exact and candidate producers remain unchanged. No new exact claim.
+
 [C++ dispatch/transfer](RUNTIME_CPP_TRANSFER.md) adds two full exacts across232
 bytes and one candidate. Inventory540/source417/candidates99 (34 authored/65
 runtime); all307 prior exacts and98 candidates are preserved.

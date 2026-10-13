@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 540 |
-| Source-present functions | 417 |
+| Source-present functions | 418 |
 | Exact functions | 309 |
 | Complete exact code bytes | 68,512 |
 | Attached exact metadata bytes | 136 |
@@ -61,7 +61,17 @@ goal with the prompt above, preserving the same objective.
 These are separate ledgers; 309 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 32 unclassified origins remain open.
+The authored denominator and 31 unclassified origins remain open.
+
+Complete C++ FindHandler659 now has maintained source663/659/605. It preserves
+rethrow substitution, actual ValidateRead length1, inline name/qualifier tests,
+all handler/type scans and recursive destruction/foreign termination. The
+single-record-view trial reduces initial671/616 to663/605; no new exact claim.
+All309 preceding exacts/99 candidates remain unchanged. Current source418 and
+candidates100 (34 authored/66 runtime), origins270/196/43/31. See
+[handler search](../research/exact/RUNTIME_CPP_HANDLER.md) and
+`.analysis/runtime-cpp-handler-20261014/verification.json`. One closed two-record
+REA run; no runtime/game tests. Catch-object SEH and integration remain open.
 
 C++ frame dispatch and rethrow recognition add two full exacts across232 bytes
 (188/44), plus the catch-transfer147/148/90 candidate. A dedicated exception
@@ -433,8 +443,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `9525dc6`
-(exact C++ pointer/range helpers and unwind filtering).
+Latest published source checkpoint before this continuation: `28a9596`
+(exact C++ frame dispatch and rethrow recognition).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -448,11 +458,13 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 309 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 99 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 100 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-cpp-transfer-20261014/verification.json`: current
+- `.analysis/runtime-cpp-handler-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-cpp-transfer-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-cpp-tables-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

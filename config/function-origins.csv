@@ -437,7 +437,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041AF40,runtime,crt_library,dependency,high,ev_b168811a2cb1c68a1af06a7efadaf93b8d3b14073ce429293e7225330d28088a; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041B000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041B1B0,runtime,crt-cpp-transfer,maintain,high,ev_c65eb53b197610a53d10b285791ea78af0a0b4d359b7348b0115a52780329da4
-0x0041B270,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041B270,runtime,crt-cpp-handler,maintain,high,ev_b7793371b5f07e9492d8850e491d9885bc44822324300925915ce55cf1ce5f2a
 0x0041B510,runtime,crt-cpp-tables,maintain,high,ev_cd70ffee232513bdc49078e35aba3fae573fc71477c569ee4be908d3c4989487
 0x0041B5F0,runtime,crt-cpp-tables,maintain,high,ev_8c3828525404370a2d1fbb5e5096caed95d157818b3bee23cb10caaa076fd652
 0x0041B690,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

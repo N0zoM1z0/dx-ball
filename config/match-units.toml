@@ -39,6 +39,33 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_cpp_handler]
+source = "src/runtime_cpp_handler.cpp"
+object = "build/exact/runtime_cpp_handler.obj"
+inputs = ["src/runtime_cpp_handler.cpp", "src/runtime_cpp_handler.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.cpp-find-handler]
+build = "runtime_cpp_handler"
+symbol = "_dxball_cpp_find_handler"
+target_address = 0x0041B270
+size = 659
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_HANDLER.md"
+relocations = [
+  { offset = 33, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 76, type = "DIR32", symbol = "_dxball_cpp_current_exception", addend = 0, target = 0x00423894 },
+  { offset = 89, type = "DIR32", symbol = "_dxball_cpp_current_exception", addend = 0, target = 0x00423894 },
+  { offset = 94, type = "DIR32", symbol = "_dxball_cpp_current_context", addend = 0, target = 0x00423898 },
+  { offset = 110, type = "REL32", symbol = "?_ValidateRead@@YAHPBXI@Z", addend = 0, target = 0x0041E1D0 },
+  { offset = 122, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 160, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 229, type = "REL32", symbol = "_dxball_cpp_select_try_range", addend = 0, target = 0x0041B5F0 },
+  { offset = 527, type = "REL32", symbol = "_dxball_cpp_catch_it", addend = 0, target = 0x0041B780 },
+  { offset = 572, type = "REL32", symbol = "_dxball_cpp_destruct_exception_object", addend = 0, target = 0x0041BB60 },
+  { offset = 635, type = "REL32", symbol = "_dxball_cpp_find_foreign_handler", addend = 0, target = 0x0041B510 },
+  { offset = 651, type = "REL32", symbol = "_dxball_cpp_terminate", addend = 0, target = 0x0041BC60 },
+]
+
 [builds.runtime_cpp_transfer]
 source = "src/runtime_cpp_transfer.cpp"
 object = "build/exact/runtime_cpp_transfer.obj"
