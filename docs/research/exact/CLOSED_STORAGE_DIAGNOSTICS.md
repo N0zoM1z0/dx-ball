@@ -353,3 +353,36 @@ at 638/632 with 260 differences. Reject the projection; retain
 `.analysis/editor-surface-com-20261013/`. Both owners are unchanged in canonical
 source. Each trial compiles once; no fixtures or games run. Completed private
 sources, headers and objects are gzip verified before cleanup.
+
+## DirectDraw-only calls after palette integration
+
+A separate class projection keeps the accepted surface and palette interfaces
+and restores only IDirectDraw's 23 SDK slots. Four existing C++ calls change:
+two surface creations and one palette creation in resources, and vertical-blank
+waiting in display. The enum callback, HWND boundary and original three-argument
+SetDisplayMode follow the installed SDK. No caps layout is inferred.
+
+All 26 affected owners compile once, and all 253 complete affected units are
+compared without unresolved mappings. The model gains no exact and loses seven:
+keyed draw, keyed blit, stretch, ordinary blit, sprite release, reset and splash
+palette pulse. Its net result is **−7 functions / −1,692 code bytes**. Reject it.
+The three changed files reverse exactly to the previous source, and native C
+and Win32 C preprocessing retain identical interface views. Complete source,
+ABI, input and comparison receipts are in `.analysis/ddraw-only-com-20261013/`.
+Canonical sources and products stay unchanged. Verified gzip cleanup of 144
+completed carriers releases 483,328 allocated bytes including its receipt.
+
+## Board byte-owner slice
+
+One bounded copy-address stage replaces tile-array decay with the actual
+whole-region byte pointer plus `offsetof(DxBallBoardStorage, tiles)` in both
+editor memmove calls. Ownership, member layout, transfer size and overlapping
+copy behavior are preserved. The compiler still emits a root load followed by
+an offset addition. All nine complete code hashes are unchanged: seven exacts
+retain 2,154 bytes; load/store remain 58/52 with 23/42 differences.
+
+Reject the stage and retain `.analysis/board-copy-byte-slice-20261013/`.
+The byte slice and the earlier complete-array address now both have complete
+trial receipts; further cast/offset spelling changes have no new support.
+No fixture, game, new provider session or online search runs. Completed private
+source/header/object copies are gzip verified before cleanup.

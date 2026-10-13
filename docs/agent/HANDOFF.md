@@ -36,6 +36,11 @@ Gzip-verified cleanup of 152 completed carriers releases 561,152
 allocated bytes while preserving current products and unique evidence.
 The paddle consumed-record followup restores frame homes but remains 679/677
 with 467 differences, so it is rejected; eleven runtime exacts preserve.
+The [DirectDraw-only and board byte-slice trials](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#directdraw-only-calls-after-palette-integration)
+are rejected. The 26-owner DirectDraw class pass has no gains and seven losses,
+net −1,692 bytes; the board slice preserves all nine code hashes without gain.
+Canonical state remains 238 exacts / 62,514 bytes. Both complete input/source/
+comparison proofs are retained; completed private products are gzip verified.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
