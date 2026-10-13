@@ -9716,6 +9716,12 @@ object = "build/exact/runtime_stream.obj"
 inputs = ["src/runtime_stream.c", "src/runtime_stream.h", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
 
+[builds.runtime_lowio]
+source = "src/runtime_lowio.c"
+object = "build/exact/runtime_lowio.obj"
+inputs = ["src/runtime_lowio.c", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
 [units.crt-zero-mantissa-tail]
 build = "runtime_float"
 symbol = "__ZeroTail"
@@ -10021,4 +10027,91 @@ size = 11
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_BUFFERS.md"
 relocations = [
   { offset = 3, type = "REL32", symbol = "_dxball_crt_flush_all", addend = 0, target = 0x0041A0B0 },
+]
+
+[candidates.crt-commit-descriptor]
+build = "runtime_lowio"
+symbol = "_dxball_crt_commit"
+target_address = 0x0041DA20
+size = 111
+boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
+relocations = [
+  { offset = 6, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+  { offset = 27, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 40, type = "REL32", symbol = "_dxball_crt_get_osfhandle", addend = 0, target = 0x0041D9D0 },
+  { offset = 50, type = "DIR32", symbol = "__imp__FlushFileBuffers@4", addend = 0, target = 0x00441260 },
+  { offset = 65, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
+  { offset = 75, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 84, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 96, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+]
+
+[units.crt-get-os-handle]
+build = "runtime_lowio"
+symbol = "_dxball_crt_get_osfhandle"
+target_address = 0x0041D9D0
+size = 67
+boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
+relocations = [
+  { offset = 6, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+  { offset = 25, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 43, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 53, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+]
+
+[units.crt-map-os-error]
+build = "runtime_lowio"
+symbol = "_dxball_crt_map_os_error"
+target_address = 0x0041A9A0
+size = 102
+boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_crt_error_map$S83", addend = 0, target = 0x004234D8, data_hex = "0100000016000000020000000200000003000000020000000400000018000000050000000d0000000600000009000000070000000c000000080000000c000000090000000c0000000a000000070000000b000000080000000c000000160000000d000000160000000f00000002000000100000000d00000011000000120000001200000002000000210000000d0000003500000002000000410000000d00000043000000020000005000000011000000520000000d000000530000000d0000005700000016000000590000000b0000006c0000000d0000006d00000020000000700000001c00000072000000090000000600000016000000800000000a000000810000000a00000082000000090000008300000016000000840000000d00000091000000290000009e0000000d000000a100000002000000a40000000b000000a70000000d000000b700000011000000ce00000002000000d70000000b000000180700000c000000" },
+  { offset = 12, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 26, type = "DIR32", symbol = "_dxball_crt_error_map$S83", addend = 360, target = 0x004234D8 },
+  { offset = 44, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 56, type = "DIR32", symbol = "_dxball_crt_error_map$S83", addend = 4, target = 0x004234D8 },
+  { offset = 61, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 82, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 93, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+]
+
+[candidates.crt-seek-descriptor]
+build = "runtime_lowio"
+symbol = "_dxball_crt_seek"
+target_address = 0x0041AF40
+size = 188
+boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+  { offset = 29, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 56, type = "REL32", symbol = "_dxball_crt_get_osfhandle", addend = 0, target = 0x0041D9D0 },
+  { offset = 76, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 102, type = "DIR32", symbol = "__imp__SetFilePointer@16", addend = 0, target = 0x004412F0 },
+  { offset = 120, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
+  { offset = 130, type = "REL32", symbol = "_dxball_crt_map_os_error", addend = 0, target = 0x0041A9A0 },
+  { offset = 167, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 177, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+]
+
+[candidates.crt-write-descriptor]
+build = "runtime_lowio"
+symbol = "_dxball_crt_write"
+target_address = 0x0041A770
+size = 555
+boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
+relocations = [
+  { offset = 12, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+  { offset = 35, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 115, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 256, type = "DIR32", symbol = "__imp__WriteFile@20", addend = 0, target = 0x00441310 },
+  { offset = 299, type = "DIR32", symbol = "__imp__WriteFile@20", addend = 0, target = 0x00441310 },
+  { offset = 327, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
+  { offset = 362, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 377, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 401, type = "REL32", symbol = "_dxball_crt_map_os_error", addend = 0, target = 0x0041A9A0 },
+  { offset = 474, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 484, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 527, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 537, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
 ]

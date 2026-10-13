@@ -279,3 +279,8 @@ additional_inputs = ["src/allocator.h", "src/state_types.h"]
 source = "src/runtime_stream.c"
 header = "src/runtime_stream.h"
 additional_inputs = ["src/allocator.h", "src/state_types.h"]
+
+[owners.runtime_lowio]
+source = "src/runtime_lowio.c"
+header = "src/runtime_lowio.h"
+additional_inputs = ["src/runtime_file_modes.h", "src/state_types.h"]

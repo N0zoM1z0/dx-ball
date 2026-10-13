@@ -6,7 +6,7 @@ int _setmode(int descriptor, int mode)
     unsigned char *flags;
     unsigned int previous;
     if ((unsigned int)descriptor < (unsigned int)_nhandle) {
-        flags = &__pioinfo[descriptor >> 5][descriptor & 31].bytes[4];
+        flags = &__pioinfo[descriptor >> 5][descriptor & 31].flags;
         if (*flags & 1) {
             previous = *flags & 0x80;
             if (mode == 0x8000) {

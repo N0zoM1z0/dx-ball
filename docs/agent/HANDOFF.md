@@ -51,17 +51,17 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 315 |
-| Exact functions | 253 |
-| Complete exact code bytes | 63,862 |
+| Source-present functions | 320 |
+| Exact functions | 255 |
+| Complete exact code bytes | 64,031 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 253 exact functions does not prove project completion.
+These are separate ledgers; 255 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 89 unclassified origins remain open.
+The authored denominator and 85 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -138,10 +138,25 @@ at the entry. Inventory529 and origins270/127/43/89 are current. See
 `.analysis/runtime-stream-buffers-20261013/verification.json`. Lower-I/O
 write/commit and registry/counter storage remain open. No runtime tests or game builds run.
 
+The low-I/O continuation restores write555, seek188, commit111, handle lookup67
+and error mapping102 source, plus the complete45-record/360-byte private error
+table. Lookup and mapper are exact across169 bytes and12 bindings. All253
+preceding exact results and50 candidates are unchanged; source320 and
+exacts255/64,031 are current. Write improves563/288 to555/37 with a shared OS
+failure path and consumed cache/progress record. Seek188/15 and commit110/111/65
+remain candidates; the pinned io.h signatures are retained. The original ST
+CRT profile is `/ML`, preserving direct global errno rather than an accessor.
+File-mode source/header now expose the proven native-width handle and flags;
+its128-byte/two-difference result is preserved with a refreshed producer. Origins
+are270/131/43/85; candidates53:34 authored and19 runtime. See
+[low-I/O writing](../research/exact/RUNTIME_LOWIO_WRITE.md) and
+`.analysis/runtime-lowio-write-20261013/verification.json`. No runtime tests or
+game builds run; low-I/O registry/error storage and game integration remain open.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `1965493`
-(modes/resizing source and exact heap-size wrapper).
+Latest published source checkpoint before this continuation: `76ac55e`
+(stream buffering source and three complete exacts).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -154,15 +169,17 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 253 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 50 candidates;
+- `build/reports/exact-replay.json`: all 255 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 53 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-stream-buffers-20261013/verification.json`: current
+- `.analysis/runtime-lowio-write-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-stream-buffers-20261013/verification.json`: preceding
+  stream buffering scope; its sources/products are unchanged.
 - `.analysis/runtime-digit-core-20261013/verification.json`: preceding
-  modes/resizing source scope; its sources/products are unchanged.
+  modes/resizing source scope; file-mode inputs/product are frozen in the new `before/`.
 - `.analysis/runtime-decimal-conversion-20261013/verification.json`: preceding
   decimal source scope; affected arithmetic inputs/products are frozen in the new `before/`.
 - `.analysis/runtime-mantissa-lifetimes-20261013/verification.json`: preceding

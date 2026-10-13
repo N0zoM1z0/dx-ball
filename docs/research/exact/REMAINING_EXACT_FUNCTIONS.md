@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**253 functions / 63,862 code bytes / 136 metadata bytes**.
+**255 functions / 64,031 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -29,6 +29,10 @@ wrapper and two candidates. [Stream buffering](RUNTIME_STREAM_BUFFERS.md)
 adds three complete exacts across144 bytes, three candidates and a previously
 unlisted11-byte function boundary. Current comparisons total50 candidates:
 34 authored and16 runtime. All34 game candidates below remain unchanged.
+
+[Low-I/O writing](RUNTIME_LOWIO_WRITE.md) adds two complete exacts across169
+bytes, three candidates and all360 private error-table bytes. The current set
+has53 candidates:34 authored and19 runtime. The game candidates remain unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

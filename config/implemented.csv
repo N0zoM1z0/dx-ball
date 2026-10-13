@@ -314,3 +314,8 @@ address,symbol,source,scope,semantic_unit
 0x00419FE0,dxball_crt_fflush,src/runtime_stream.c,Backed original stream or NULL; original traversal/flush/commit boundaries; complete code exact without separate runtime acceptance,crt-flush-stream
 0x0041A0B0,dxball_crt_flush_all,src/runtime_stream.c,Shared table of512 backed or NULL original stream records; mode0 write/error and mode1 all/success-count behavior; full source candidate without runtime acceptance,crt-flush-all-streams
 0x0041A0A0,dxball_crt_flushall,src/runtime_stream.c,Original mode1 traversal boundary; complete11-byte source/code exact without separate runtime acceptance,crt-flushall-entry
+0x0041A770,dxball_crt_write,src/runtime_lowio.c,Backed unsigned32 source length; native-width handles and fixed-width OS outputs; original text expansion and partial-write behavior; full source candidate without runtime acceptance,crt-write-descriptor
+0x0041A9A0,dxball_crt_map_os_error,src/runtime_lowio.c,All unsigned32 OS errors and original45-record table; complete code and360 literal bytes exact without separate runtime acceptance,crt-map-os-error
+0x0041AF40,dxball_crt_seek,src/runtime_lowio.c,Backed low-I/O blocks and original signed32 seek domain; fixed-width position/error outputs and EOF-bit update; full source candidate without runtime acceptance,crt-seek-descriptor
+0x0041D9D0,dxball_crt_get_osfhandle,src/runtime_lowio.c,Backed low-I/O blocks and native-width handle identity; complete code exact without separate runtime acceptance,crt-get-os-handle
+0x0041DA20,dxball_crt_commit,src/runtime_lowio.c,Backed low-I/O blocks and genuine OS flush/error boundary; original validation/error publication distinction; full source candidate without runtime acceptance,crt-commit-descriptor

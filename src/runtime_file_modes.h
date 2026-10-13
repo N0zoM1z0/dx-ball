@@ -1,10 +1,12 @@
 #ifndef DXBALL_RUNTIME_FILE_MODES_H
 #define DXBALL_RUNTIME_FILE_MODES_H
 
-/* Original low-I/O records have an eight-byte stride. Only byte four is
-   accessed here; the other bytes remain owned by the low-I/O runtime. */
+/* The handle and flag byte are established by the original low-I/O consumers.
+   Their natural Win32 layout has the original eight-byte record stride.
+   Host handles retain native pointer width; unknown trailing bytes are not fields. */
 typedef struct DxBallLowioRecord {
-    unsigned char bytes[8];
+    void *handle;
+    unsigned char flags;
 } DxBallLowioRecord;
 
 #ifdef __cplusplus
