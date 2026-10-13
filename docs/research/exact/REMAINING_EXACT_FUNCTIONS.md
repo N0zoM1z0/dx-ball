@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**257 functions / 64,185 code bytes / 136 metadata bytes**.
+**259 functions / 64,243 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -42,6 +42,12 @@ candidate results and255 exact results are unchanged.
 and terminal flags42, plus four maintained candidates. Current comparisons
 total61:34 authored/27 runtime. Slot acquisition retains two comparison-
 commutation differences and is not counted exact.
+
+[File opening](RUNTIME_STREAM_OPEN.md) adds exact stream wrappers37/21 and
+three maintained candidates, including both complete mode/open switch carriers.
+Current comparisons total64:34 authored/30 runtime. The full1053-byte opener
+retains only two temporary-register differences; the parser526/49 and
+allocation184/37 remain nonexact.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

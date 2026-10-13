@@ -51,17 +51,17 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 330 |
-| Exact functions | 257 |
-| Complete exact code bytes | 64,185 |
+| Source-present functions | 335 |
+| Exact functions | 259 |
+| Complete exact code bytes | 64,243 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 257 exact functions does not prove project completion.
+These are separate ledgers; 259 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 75 unclassified origins remain open.
+The authored denominator and 70 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -191,10 +191,27 @@ run; no runtime tests or game builds. Shared registry/storage and integration
 remain open; conditional-arm/minimum/loop spelling and grouped read state
 trials are closed, not new exacts.
 
+Opening recovery adds five bodies, including both exact stream wrappers37/21
+and all three call bindings. Source335/exact259/64,243 are current. Base-mode
+parsing lifetime improves the full526-byte parser372→49 differences; security
+inheritance and installed-record publication restore the full1053-byte opener
+and reduce934→15→2. Allocation184/37 remains a third candidate. Original
+parser/opener extents now include their115/72 additional alignment/switch bytes;
+all tables and actual relocations are included, not omitted. All257 preceding
+exacts and61 candidates are unchanged; current candidates64:34 authored/30
+runtime, origins270/146/43/70. See [file opening](../research/exact/RUNTIME_STREAM_OPEN.md)
+and `.analysis/runtime-stream-open-20261013/verification.json`. One closed15-record
+REA run and complete pinned CRT sections ground all five. Only standalone
+native/i686 compilation and whole comparisons run; no runtime tests/game builds.
+The opener's two temporary-register differences, parser49 and allocation37
+remain open. `_chsize` is the next missing direct dependency; registry/default
+storage and integration are still open. Consumed flags-result and publication
+without the local flag phase are closed worse trials, not retained.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `7c6ba9b`
-(descriptor reads and handle lifetime).
+Latest published source checkpoint before this continuation: `34f6429`
+(stream transfers, closure and terminal flags).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -207,12 +224,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 257 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 61 candidates;
+- `build/reports/exact-replay.json`: all 259 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 64 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-stream-transfer-20261013/verification.json`: current
+- `.analysis/runtime-stream-open-20261013/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-stream-transfer-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-lowio-read-close-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
