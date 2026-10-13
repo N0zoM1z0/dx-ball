@@ -476,3 +476,64 @@ claim. Independent source and full comparison review agrees. Retain
 compiler inputs, actual member bindings and complete comparisons.
 Gzip-verified cleanup of 32 completed carriers releases 110,592 allocated
 bytes including its receipt; canonical products remain untouched.
+
+## Complete explosion-list API and callers
+
+The full model implements append, begin, advance, remove and clear as ordinary
+members of the existing list class. Every game caller uses those definitions:
+gameplay, effects, core, runtime and list cleanup. Five C adapters remain for
+fixtures, with no original-entry bindings. Necessary C++ owner conversions
+retain C API linkage and the current surface interface. List fields, constructor,
+allocation, deletion and traversal operations stay unchanged.
+
+All 28 affected recipes compile once, and all 259 complete units compare.
+The five implemented methods stay exact. Effect blit becomes exact, but keyed
+blit, glyph drawing, reset, reduced drawing and region restoration lose their
+matches. The net result is **−4 functions / −1,775 code bytes**, so the model
+is rejected. Frame, brick dropping, explosion queueing and total cleanup retain
+their previous complete code identities.
+
+Independent review verifies all six source reversals, actual member definitions,
+caller bindings, compiler inputs and comparisons. Retain
+`.analysis/explosion-list-api-20261013/`. Gzip-verified cleanup of 152 completed
+carriers releases 491,520 allocated bytes including its receipt.
+
+## Captured HRESULT values in current C++ owners
+
+One stage gives all six stored DirectDraw results their actual HRESULT type:
+capture and bank API workspaces, surface palette loading, PCX Lock, display Flip
+and intro Lock. The existing alias supplies Windows LONG and native signed32.
+Calls, expressions, declaration order, scopes and shared headers are unchanged.
+This extends the earlier two-field C diagnostic to current C++ virtual calls.
+
+Three matching compilations compare all 57 complete affected functions.
+Every complete code identity is unchanged; 46 exacts preserve 13,914 bytes.
+Reject the stage as an exactness improvement. Complete source reversals,
+SDK contracts and independent review are in
+`.analysis/hresult-local-captures-20261013/`. Verified gzip cleanup of 38
+completed carriers releases 122,880 allocated bytes including its receipt.
+
+## Scalar calculation and transfer lifetimes
+
+The triangle's vertical-scale calculation writes one scalar before constructing
+the long-edge expression, then never reads it. One computation-only block moves
+that declaration beside the existing assignment. Four FixedPoint objects and
+the scanline block remain intact. All twelve complete code identities and
+metadata blocks stay unchanged, including triangle's 1,710 bytes, 88 differences
+and exact 160-byte metadata. The scale home stays EBP−32 rather than original
+EBP−28. Reject the stage; retain `.analysis/triangle-scale-lifetime-20261013/`.
+Verified gzip cleanup of seven carriers releases 24,576 allocated bytes.
+
+The bank's pitch, cursor, row and column have no consumer outside its existing
+surface-transfer block. One stage moves their unchanged declaration into that
+block, retaining the pitch snapshot before Lock and both upload loops.
+After one compilation, all seventeen complete functions compare: fifteen exacts
+preserve 3,572 bytes and sixteen code identities stay unchanged. Bank loading
+worsens from 1,475/72 differences to 1,487/279, with 425 instructions in both.
+Reject it and retain `.analysis/bank-transfer-scalars-20261013/`.
+Verified gzip cleanup of eleven carriers releases 36,864 allocated bytes
+including its receipt.
+
+Both lifetime models have independent source and complete comparison reviews.
+Canonical sources and products remain unchanged. No fixture or game runs
+accompany these four trials.

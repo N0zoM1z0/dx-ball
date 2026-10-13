@@ -66,6 +66,15 @@ The private model is rejected at this two-owner boundary, without compiling
 other header consumers. Evidence is in `.analysis/explosion-traversal-members-20261013/`.
 Verified cleanup of 32 completed carriers releases 110,592 allocated bytes
 including its receipt; canonical source and products stay unchanged.
+The [complete list API and caller family](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#complete-explosion-list-api-and-callers)
+compares 259 complete units across 28 recipes. Five implemented methods remain
+exact, but one gain and five losses give net −4 / −1,775 bytes; it is rejected.
+The [six HRESULT captures](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#captured-hresult-values-in-current-c-owners)
+leave all 57 code identities unchanged. The triangle calculation-only scope
+also leaves all twelve identities unchanged; the bank's four-scalar transfer
+scope worsens to 1,487/279 differences while preserving fifteen exact companions.
+All four source and comparison reviews pass, and completed carriers are gzip
+verified before cleanup. Current canonical state remains 238 / 62,514.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
