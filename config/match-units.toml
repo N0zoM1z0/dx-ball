@@ -1007,73 +1007,73 @@ relocations = [
 ]
 
 [builds.display]
-source = "src/display.c"
+source = "src/display.cpp"
 object = "build/exact/display.obj"
-inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/clock_api.h", "src/core.h", "src/device.h", "src/display.c", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h"]
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/clock_api.h", "src/core.h", "src/device.h", "src/display.cpp", "src/display.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/geometry.h", "src/paddle.h", "src/particles.h", "src/platform.h", "src/resources.h", "src/runtime.h", "src/sound.h", "src/startup.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
-[units.blt-effect-sprite]
+[candidates.blt-effect-sprite]
 build = "display"
 symbol = "_dxball_blt_effect_sprite"
 target_address = 0x00408180
 size = 362
 boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
-  { offset = 22, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 45, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 59, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 82, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 103, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 126, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 135, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
-  { offset = 158, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 170, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
-  { offset = 176, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
-  { offset = 186, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
-  { offset = 193, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x004305E0 },
-  { offset = 212, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
-  { offset = 219, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x004305E0 },
-  { offset = 228, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
-  { offset = 239, type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x004305E8 },
-  { offset = 266, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
-  { offset = 273, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x004305E0 },
-  { offset = 279, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x004228D8 },
-  { offset = 292, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x004305D8 },
-  { offset = 311, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x004305D8 },
-  { offset = 320, type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x00426990 },
-  { offset = 348, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x004305D8 },
+  { offset = 26, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 46, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 64, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 84, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 109, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 129, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 142, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
+  { offset = 162, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 174, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 180, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x0042E690 },
+  { offset = 190, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
+  { offset = 197, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x004305E0 },
+  { offset = 216, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
+  { offset = 223, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x004305E0 },
+  { offset = 232, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
+  { offset = 243, type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x004305E8 },
+  { offset = 270, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x004382EC },
+  { offset = 277, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x004305E0 },
+  { offset = 283, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x004228D8 },
+  { offset = 296, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x004305D8 },
+  { offset = 315, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x004305D8 },
+  { offset = 324, type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x00426990 },
+  { offset = 352, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x004305D8 },
 ]
 
-[candidates.blt-reduced-sprite]
+[units.blt-reduced-sprite]
 build = "display"
 symbol = "_dxball_blt_reduced_sprite"
 target_address = 0x00408460
 size = 362
 boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
-  { offset = 0x1a, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
-  { offset = 0x2e, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 0x40, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
-  { offset = 0x54, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 0x6d, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
-  { offset = 0x81, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 0x8e, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
-  { offset = 0xa2, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
-  { offset = 0xae, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0x0, target = 0x42e690 },
-  { offset = 0xb4, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0x0, target = 0x42e690 },
-  { offset = 0xbe, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
-  { offset = 0xc5, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
-  { offset = 0xd8, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
-  { offset = 0xdf, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
-  { offset = 0xe8, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
-  { offset = 0xf3, type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0x0, target = 0x4305e8 },
-  { offset = 0x10e, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
-  { offset = 0x115, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
-  { offset = 0x11b, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0x0, target = 0x4228d8 },
-  { offset = 0x128, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
-  { offset = 0x13b, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
-  { offset = 0x144, type = "DIR32", symbol = "_dxball_present_regions", addend = 0x0, target = 0x426990 },
-  { offset = 0x160, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
+  { offset = 22, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 45, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 59, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 82, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 103, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 126, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 135, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0x0, target = 0x421088 },
+  { offset = 158, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0x0, target = 0x425980 },
+  { offset = 170, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0x0, target = 0x42e690 },
+  { offset = 176, type = "DIR32", symbol = "_dxball_effect_surface", addend = 0x0, target = 0x42e690 },
+  { offset = 186, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
+  { offset = 193, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
+  { offset = 212, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
+  { offset = 219, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
+  { offset = 228, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
+  { offset = 239, type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0x0, target = 0x4305e8 },
+  { offset = 266, type = "DIR32", symbol = "_dxball_dirty_page", addend = 0x0, target = 0x4382ec },
+  { offset = 273, type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0x0, target = 0x4305e0 },
+  { offset = 279, type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0x0, target = 0x4228d8 },
+  { offset = 292, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
+  { offset = 311, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
+  { offset = 320, type = "DIR32", symbol = "_dxball_present_regions", addend = 0x0, target = 0x426990 },
+  { offset = 348, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
 ]
 
 [candidates.stretch-effect-sprite]
@@ -1104,30 +1104,30 @@ relocations = [
   { offset = 0x126, type = "DIR32", symbol = "_dxball_present_count", addend = 0x0, target = 0x4305d8 },
 ]
 
-[candidates.queue-sprite-region]
+[units.queue-sprite-region]
 build = "display"
 symbol = "_dxball_queue_sprite_region"
 target_address = 0x00408880
 size = 272
 boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
-  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 26 },
-  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 46 },
-  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 64 },
-  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 84 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 98 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 105 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 124 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 131 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 140 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 151 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 178 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 185 },
-  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 191 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 204 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 223 },
-  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 232 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 260 },
+  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 22 },
+  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 45 },
+  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 59 },
+  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 82 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 96 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 103 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 122 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 129 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 138 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 149 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 176 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 183 },
+  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 189 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 202 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 221 },
+  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 230 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 258 },
 ]
 
 [candidates.draw-effect-sprite]
@@ -1162,36 +1162,36 @@ relocations = [
   { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 351 },
 ]
 
-[candidates.draw-reduced-sprite]
+[units.draw-reduced-sprite]
 build = "display"
 symbol = "_dxball_draw_reduced_sprite"
 target_address = 0x004085D0
 size = 361
 boundary_evidence = "docs/research/exact/EXACT_CONNECTED_EFFECTS.md"
 relocations = [
-  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 26 },
-  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 46 },
-  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 64 },
-  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 84 },
-  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 104 },
-  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 124 },
-  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 137 },
-  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 157 },
-  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 173 },
-  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 179 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 189 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 196 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 215 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 222 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 231 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 242 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 269 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 276 },
-  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 282 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 295 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 314 },
-  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 323 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 351 },
+  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 22 },
+  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 45 },
+  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 59 },
+  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 82 },
+  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 98 },
+  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 121 },
+  { type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x421088, offset = 130 },
+  { type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x425980, offset = 153 },
+  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 169 },
+  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 175 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 185 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 192 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 211 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 218 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 227 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 238 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 265 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 272 },
+  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 278 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 291 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 310 },
+  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 319 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 347 },
 ]
 
 [units.blt-sprite]
@@ -4233,7 +4233,7 @@ relocations = [
   { offset = 267, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8 },
 ]
 
-[candidates.restore-regions]
+[units.restore-regions]
 build = "display"
 symbol = "_dxball_restore_regions"
 target_address = 0x408cc0
@@ -4243,64 +4243,64 @@ relocations = [
   { type = "DIR32", symbol = "_dxball_clip_regions", addend = 0, target = 0x42289c, offset = 11 },
   { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 38 },
   { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 45 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 67 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 77 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 99 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 12, target = 0x4305e8, offset = 109 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 128 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 138 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 160 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 8, target = 0x4305e8, offset = 170 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 194 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 204 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 223 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 233 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 249 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 12, target = 0x4305e8, offset = 259 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 281 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 12, target = 0x4305e8, offset = 291 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 307 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 317 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 336 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 346 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 362 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 8, target = 0x4305e8, offset = 372 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 394 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 8, target = 0x4305e8, offset = 404 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 427 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 437 },
-  { type = "DIR32", symbol = "_dxball_restore_surface", addend = 0, target = 0x4382e8, offset = 443 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 456 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 466 },
-  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 472 },
-  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 478 },
-  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 489 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 502 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 524 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 534 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 540 },
-  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 549 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 577 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 607 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 614 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 638 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 648 },
-  { type = "DIR32", symbol = "_dxball_restore_surface", addend = 0, target = 0x4382e8, offset = 654 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 667 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 677 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 690 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 700 },
-  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 706 },
-  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 712 },
-  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 723 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 736 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 758 },
-  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 768 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 774 },
-  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 783 },
-  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 811 },
-  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 821 },
-  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 828 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 60 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 76 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 91 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 12, target = 0x4305e8, offset = 107 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 119 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 135 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 150 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 8, target = 0x4305e8, offset = 166 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 183 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 199 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 211 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 227 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 236 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 12, target = 0x4305e8, offset = 252 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 267 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 12, target = 0x4305e8, offset = 283 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 292 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 308 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 320 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 336 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 345 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 8, target = 0x4305e8, offset = 361 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 376 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 8, target = 0x4305e8, offset = 392 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 408 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 424 },
+  { type = "DIR32", symbol = "_dxball_restore_surface", addend = 0, target = 0x4382e8, offset = 430 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 436 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 452 },
+  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 458 },
+  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 464 },
+  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 475 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 488 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 503 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 519 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 525 },
+  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 534 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 562 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 592 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 599 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 616 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 632 },
+  { type = "DIR32", symbol = "_dxball_restore_surface", addend = 0, target = 0x4382e8, offset = 638 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 644 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 4, target = 0x4305e8, offset = 660 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 666 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 682 },
+  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 688 },
+  { type = "DIR32", symbol = "_dxball_effect_surface", addend = 0, target = 0x42e690, offset = 694 },
+  { type = "DIR32", symbol = "_dxball_reduced_particles", addend = 0, target = 0x4228d8, offset = 705 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 718 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 733 },
+  { type = "DIR32", symbol = "_dxball_dirty_regions", addend = 0, target = 0x4305e8, offset = 749 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 755 },
+  { type = "DIR32", symbol = "_dxball_present_regions", addend = 0, target = 0x426990, offset = 764 },
+  { type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8, offset = 792 },
+  { type = "DIR32", symbol = "_dxball_dirty_page", addend = 0, target = 0x4382ec, offset = 802 },
+  { type = "DIR32", symbol = "_dxball_dirty_counts", addend = 0, target = 0x4305e0, offset = 809 },
 ]
 
 [units.draw-bonuses]
@@ -4439,7 +4439,7 @@ relocations = [
   { offset = 966, type = "DIR32", symbol = "_dxball_present_count", addend = 0, target = 0x4305d8 },
 ]
 
-[units.sort-present-regions]
+[candidates.sort-present-regions]
 build = "display"
 symbol = "_dxball_sort_present_regions"
 target_address = 0x4094e0
@@ -4520,7 +4520,7 @@ relocations = [
   { offset = 166, type = "REL32", symbol = "_dxball_present_regions_now", addend = 0, target = 0x409100 },
 ]
 
-[units.wait-frames]
+[candidates.wait-frames]
 build = "display"
 symbol = "_dxball_wait_frames"
 target_address = 0x409610

@@ -13,8 +13,25 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 ## Current state
 
-Latest checkpoint: **234 exact functions /60,722 code bytes /136 metadata bytes**;
-285 source-present, 249 historical semantic scopes and 39 authored nonexact functions.
+Latest checkpoint: **235 exact functions /61,716 code bytes /136 metadata bytes**;
+285 source-present, 249 historical semantic scopes and 38 authored nonexact functions.
+The [display COM implementation](../research/exact/EXACT_DISPLAY_COM_CALLS.md)
+promotes reduced blit362, sprite region272, reduced draw361 and restoration827.
+It explicitly demotes effect blit362 to366/332, sort296 to296/3, and wait170
+to170/6, for net+1 function/+994 bytes. Thirteen surface calls use the shared
+stdcall interface; all other executable source tokens and scopes agree.
+All20 display comparisons and all235 current whole closures pass. Native2040
+unchanged focused cases and36 existing callback cases pass; no connected frames
+or game/provider run. Native/MinGW build; VC4 reuses the fresh matching display
+object and36 verified others. Historical input inventories refresh249 rows;
+35 retained candidate code identities are unchanged.
+`.analysis/display-com-integration-20261013/verification.json`.
+Independent review verifies all235 exacts,38 candidates,68 input identities,
+five products and21 C exports. Completed copies and obsolete CMake C objects
+are gzip verified:37 carriers release135168 allocated bytes.
+Two UI virtual-call/result-type compiles gain nothing and reject: draw-text150/3,
+right palette234/9, measurement279/3 and line445/9. Retain
+`.analysis/ui-surface-com-20261013/`; canonical UI source remains C.
 The [shared surface COM implementation](../research/exact/EXACT_SURFACE_COM_CALLS.md)
 promotes complete blit195, capture852 and glyph328. Stretch explicitly demotes
 from139 exact to141/139 with90 differences: its rectangle prefix agrees, while
@@ -419,7 +436,7 @@ stop, not a full pass or game-source failure. Do not run `verify-finished.py`
 or restart the campaign.49 backed runtime copies are removed, releasing
 1,708,032allocated bytes; see `stopped-for-exact/cleanup.json`.
 
-Next priority: the 39 authored non-exact functions. Use current manifest objects
+Next priority: the 38 authored non-exact functions. Use current manifest objects
 under `build/exact/` and validate their input closures; `build/vc40/` contains
 older candidate objects. Advance source and complete-unit comparisons with
 focused checks. Long campaigns wait until function recovery is ready.
@@ -517,11 +534,11 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | --- | ---: |
 | Source-present / inferred authored | 285 /270 |
 | Scoped semantic acceptances | 249 |
-| Complete exact functions | 234 |
-| Exact code / separate metadata bytes | 60,722 /136 |
+| Complete exact functions | 235 |
+| Exact code / separate metadata bytes | 61,716 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/surface-com-integration-20261013/verification.json`.
+Current product/comparison receipt: `.analysis/display-com-integration-20261013/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

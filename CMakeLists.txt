@@ -34,7 +34,7 @@ add_library(dxball_core SHARED
 
     # Frame dispatch and presentation
     src/runtime.c
-    src/display.c
+    src/display.cpp
     src/device.c
 
     # Platform, screens, and audio
@@ -81,7 +81,7 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     set_source_files_properties(src/boards.c PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
     # The original lightning controller requires an eligible tile in its scan.
-    set_source_files_properties(src/display.c PROPERTIES
+    set_source_files_properties(src/display.cpp PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
     # The WAV parser can return data before fmt; loading requires fmt first.
     set_source_files_properties(src/sound.c PROPERTIES

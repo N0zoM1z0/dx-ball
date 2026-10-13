@@ -1,5 +1,9 @@
 # Complete dirty-region address and callback flow
 
+The [later C++ surface integration](EXACT_DISPLAY_COM_CALLS.md) recovers all
+827 original bytes and 198 instructions. The address-scheduling diagnosis below
+describes the earlier C emission and explains its nineteen extra bytes.
+
 The dirty-region restoration candidate has no newly identified source gap.
 Its complete 827-byte original and current 846-byte object contain the same
 198 instruction positions and control flow. All 19 changed address producers

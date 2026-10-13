@@ -20,7 +20,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [effects.c](effects.c) | Brick and explosion animation lifecycle |
 | [bonuses.c](bonuses.c), [particles.c](particles.c) | Bonus selection/collection and particle movement/drawing |
 | [resources.cpp](resources.cpp), [resources.h](resources.h) | Sprite banks, PCX loading, glyphs, palettes, and DirectDraw interfaces |
-| [display.c](display.c), [device.c](device.c) | Dirty regions, presentation, fades, synchronization, and surface recovery |
+| [display.cpp](display.cpp), [device.c](device.c) | Dirty regions, presentation, fades, synchronization, and surface recovery |
 | [ui.c](ui.c) | Text layout, lines, fill requests, and palette operations |
 | [rotation.c](rotation.c), [raster.cpp](raster.cpp), [bitmap.c](bitmap.c) | Software rotation, fixed-point rasterization, and bitmap reading |
 | [geometry.c](geometry.c), [trig.c](trig.c) | Overlap/distance helpers and quantized trigonometry |

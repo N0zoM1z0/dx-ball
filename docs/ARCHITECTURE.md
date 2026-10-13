@@ -19,7 +19,7 @@ flowchart TD
     Loop -->|messages| Input["platform.c: window_proc"]
     Dispatch --> Modes["Menu · Game · Editor · Game over · Splash"]
     Input -->|input| Modes
-    Modes --> Draw["display.c · resources.cpp · ui.c"]
+    Modes --> Draw["display.cpp · resources.cpp · ui.c"]
     Draw --> Surfaces["DirectDraw surfaces"]
 ```
 
@@ -62,7 +62,7 @@ explosion owner, ball count, and working tiles in one storage object.
 
 [resources.cpp](../src/resources.cpp) loads sprite banks and PCX images, selects
 sprite/font banks, and draws through the DirectDraw declarations in
-[resources.h](../src/resources.h). [display.c](../src/display.c) tracks dirty
+[resources.h](../src/resources.h). [display.cpp](../src/display.cpp) tracks dirty
 regions, restores backgrounds, and presents by flipping or copying regions.
 [device.c](../src/device.c) handles palette fades and surface recovery;
 [ui.c](../src/ui.c) builds text and line drawing on those services.
