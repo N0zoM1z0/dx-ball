@@ -633,3 +633,39 @@ Reject the model. Independent source, ABI, input and comparison proofs are in
 `.analysis/ui-all-com-20261013/`. Eighteen gzip-verified carriers release
 8,192 allocated bytes including the cleanup receipt. Canonical remains
 238 exact functions / 62,514 bytes; no fixture or game runs.
+
+## Device-local DirectDraw creation
+
+One device-only trial adds the recovered 23-slot IDirectDraw interface in a
+separate C++ header and changes the remaining CreatePalette dispatch to its
+member call. The shared raw interface view, receiver address, arguments and
+existing surface/palette calls are unchanged. The actual slot-five stdcall
+contract follows the retained SDK and target call.
+
+All six whole device functions compare after one fourteen-input compile.
+Five exact companions retain their 808 code bytes, including the complete
+206-byte palette initializer. Transition remains 1,339 bytes but worsens
+from 12 to 18 differences. Reject the model; canonical inputs and products
+stay unchanged. Complete source, ABI and comparison receipts are retained in
+`.analysis/device-ddraw-local-interface-20261013/`.
+
+## Current clock sample boundary
+
+A current C++ runtime trial limits the SDK sample and actual Kernel calls to
+that owner and its native transport. Shared runtime and clock headers stay
+unchanged. Windows uses LARGE_INTEGER and its named `u.LowPart` view; the native
+union overlays that view with the existing eight-byte callback representation.
+The source calls QueryPerformanceFrequency and QueryPerformanceCounter through
+their genuine imports, whose original PE slots verify at 0x4412A0 and 0x44129C.
+
+One twenty-seven-input matching compilation compares all sixteen complete
+runtime functions. All code hashes remain unchanged: eleven exacts retain
+2,708 bytes and five candidates retain their existing differences. A saved-object
+comparison resolves the new named import bindings without another compilation.
+The native union lifetime has no new language-level acceptance proof, and no
+native or game check is added. Keep this model private; there is no exact gain.
+Receipts are in `.analysis/kernel-sample-current-owner-20261013/`.
+
+Independent reviews seal both controls. Verified gzip cleanup of 8
+completed carriers releases 1,077,248 allocated bytes; current
+source, matching objects and build products remain.

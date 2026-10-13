@@ -15,6 +15,12 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **239 exact functions /63,195 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 34 authored nonexact functions.
+The [device-local DirectDraw and current clock boundary controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#device-local-directdraw-creation)
+remain private. Device1compile/14inputs/6units preserves5exacts808 but fade12→18.
+Runtime1compile/27inputs/16units leaves every code hash unchanged, including
+11exacts2708 and5candidates; actual namedQuery IATs are verified. No additional
+compile follows import-binding resolution. No native/game run or new exact
+claim. Preserve both phases' full source/SDK/binding/comparison receipts.
 The latest [stored-contact precision](../research/exact/EXACT_REBOUND_STORED_CONTACT.md)
 closes rebound681 with50 real bindings. One float contact local and six later
 cv-qualified reads preserve first live x87 precision and later stored32 checks.
@@ -831,3 +837,7 @@ The previous100,614-byte chronological handoff is preserved in Git at
 and `.analysis/paddle-cursor-load-order/before/docs/agent/HANDOFF.md`.
 Historical case/compiler counts belong to those recorded products, not this run.
 Use the linked focused research notes for detail; keep this handoff compact.
+
+Independent reviews seal both controls. Verified gzip cleanup of 8
+completed carriers releases 1,077,248 allocated bytes; current
+source, matching objects and build products remain.
