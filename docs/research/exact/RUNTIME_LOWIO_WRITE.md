@@ -6,7 +6,7 @@ the mapper also enforces all360 initialized table bytes in its match recipe.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
-| `_write`, `0x41A770` | 555/555 | 37 |
+| `_write`, `0x41A770` | 555/555 | 19 |
 | `_dosmaperr`, `0x41A9A0` | 102/102 | 0 |
 | `_lseek`, `0x41AF40` | 188/188 | 15 |
 | `_get_osfhandle`, `0x41D9D0` | 67/67 | 0 |
@@ -41,3 +41,13 @@ All253 previous exact results and50 preceding candidate results are unchanged.
 Totals are320 source-present functions and255 exacts/64,031 code bytes.
 Native/i686 standalone compilation covers both changed owners. No runtime tests
 or game builds run. Low-I/O registry/error storage and game integration stay open.
+
+The follow-up separates the two-field OS outcome from the three-field
+cache/progress owner. This preserves555 bytes and restores all five scalar
+homes relative to the post-save ESP: error16, written20, block24, offset28 and
+total32. The translation buffer remains at36. Eighteen differing displacement
+positions disappear; the remaining19 rotate input/output/inserted-count registers.
+Text input, per-chunk output and per-byte values now have their consuming
+lifetimes, but that second trial changes no code. Two complete owner exacts
+preserve169 bytes and the full360-byte table. No new exact function is claimed.
+Current proof: `.analysis/runtime-write-lifetimes-20261013/verification.json`.

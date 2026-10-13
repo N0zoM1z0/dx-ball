@@ -153,10 +153,20 @@ are270/131/43/85; candidates53:34 authored and19 runtime. See
 `.analysis/runtime-lowio-write-20261013/verification.json`. No runtime tests or
 game builds run; low-I/O registry/error storage and game integration remain open.
 
+The next write continuation separates OS outcome and cache/progress records.
+All five scalar homes and the translation buffer now match; the complete555-byte
+writer improves37→19 differences. Input/output/inserted-count register rotation
+remains. Consuming text cursor scopes do not change emission. All255 exact
+results and52 other candidates are preserved; totals remain320/255/64,031.
+See [the source note](../research/exact/RUNTIME_LOWIO_WRITE.md) and
+`.analysis/runtime-write-lifetimes-20261013/verification.json`. Two VC4 trials,
+five complete final comparisons and native/i686 standalone compilation cover
+the changed owner; no runtime tests, game builds or new REA session run.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `76ac55e`
-(stream buffering source and three complete exacts).
+Latest published source checkpoint before this continuation: `c1a75ea`
+(low-I/O source and exact handle/error mapping).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -174,8 +184,10 @@ Current comparison and producer authorities:
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-lowio-write-20261013/verification.json`: current
+- `.analysis/runtime-write-lifetimes-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-lowio-write-20261013/verification.json`: preceding
+  low-I/O source scope; affected sources/products are frozen in the new `before/`.
 - `.analysis/runtime-stream-buffers-20261013/verification.json`: preceding
   stream buffering scope; its sources/products are unchanged.
 - `.analysis/runtime-digit-core-20261013/verification.json`: preceding

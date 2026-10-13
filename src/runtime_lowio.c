@@ -125,11 +125,11 @@ int dxball_crt_write(int descriptor, const void *buffer, unsigned int bytes)
         size_t record_offset;
         DxBallCrtDword total;
     } progress;
-    DxBallCrtDword error, written;
+    struct {
+        DxBallCrtDword error;
+        DxBallCrtDword written;
+    } outcome;
     unsigned int inserted;
-    const char *input;
-    char *output;
-    char value;
     /* A final LF can cross the 1024-byte threshold by one generated CR. */
     char translated[1025];
     if ((unsigned int)descriptor >= (unsigned int)_nhandle) goto bad_descriptor;
@@ -143,11 +143,14 @@ int dxball_crt_write(int descriptor, const void *buffer, unsigned int bytes)
     if (DXBALL_CRT_IO_RECORD(progress.block, progress.record_offset)->flags & 0x20)
         dxball_crt_seek(descriptor, 0, 2);
     if (DXBALL_CRT_IO_RECORD(progress.block, progress.record_offset)->flags & 0x80) {
-        error = 0;
+        const char *input;
+        outcome.error = 0;
         input = (const char *)buffer;
         while ((unsigned int)(input - (const char *)buffer) < bytes) {
+            char *output;
             output = translated;
             do {
+                char value;
                 if ((unsigned int)(input - (const char *)buffer) >= bytes) break;
                 value = *input++;
                 if (value == '\n') {
@@ -158,28 +161,28 @@ int dxball_crt_write(int descriptor, const void *buffer, unsigned int bytes)
                 *output++ = value;
             } while (output - translated < 1024);
             if (!WriteFile(DXBALL_CRT_IO_RECORD(progress.block, progress.record_offset)->handle,
-                           translated, (DxBallCrtDword)(output - translated), &written, NULL))
+                           translated, (DxBallCrtDword)(output - translated), &outcome.written, NULL))
                 goto os_write_error;
-            progress.total += written;
-            if ((int)written < (int)(output - translated)) break;
+            progress.total += outcome.written;
+            if ((int)outcome.written < (int)(output - translated)) break;
         }
     } else {
         if (!WriteFile(DXBALL_CRT_IO_RECORD(progress.block, progress.record_offset)->handle,
-                       buffer, bytes, &written, NULL)) goto os_write_error;
-        error = 0;
-        progress.total = written;
+                       buffer, bytes, &outcome.written, NULL)) goto os_write_error;
+        outcome.error = 0;
+        progress.total = outcome.written;
     }
     goto write_result;
 os_write_error:
-    error = GetLastError();
+    outcome.error = GetLastError();
 write_result:
     if (progress.total == 0) {
-        if (error != 0) {
-            if (error == 5) {
+        if (outcome.error != 0) {
+            if (outcome.error == 5) {
                 errno = 9;
-                _doserrno = error;
+                _doserrno = outcome.error;
             } else {
-                dxball_crt_map_os_error(error);
+                dxball_crt_map_os_error(outcome.error);
             }
             return -1;
         }
