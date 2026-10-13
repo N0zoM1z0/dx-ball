@@ -43,7 +43,8 @@ keep resource use bounded, preserve honest exact claims, and commit and push
 verified checkpoints. Do not switch to TH04 or search online for a reconstruction.
 ```
 
-In the current thread, resume the existing goal instead of replacing it.
+If the thread still has a registered goal, resume it. Otherwise start a new
+goal with the prompt above, preserving the same objective.
 
 ## Current authoritative state
 
