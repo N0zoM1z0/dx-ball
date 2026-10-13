@@ -386,3 +386,27 @@ The byte slice and the earlier complete-array address now both have complete
 trial receipts; further cast/offset spelling changes have no new support.
 No fixture, game, new provider session or online search runs. Completed private
 source/header/object copies are gzip verified before cleanup.
+
+## SDK counter and Kernel calls after palette integration
+
+One API-only stage replaces the clock callback-cell calls with the actual
+QueryPerformanceFrequency/Counter APIs. Windows uses SDK LARGE_INTEGER; the
+native view keeps the same eight-byte LowPart/HighPart layout and forwards
+through the existing live callback cells. The delta is limited to runtime.h,
+clock_api.h, runtime.cpp and platform_host.c. Current restart, timestamp globals,
+surface and palette code remain intact.
+
+All 21 affected matching recipes compile once, and all 182 complete affected
+units are compared. Effect blit (362 bytes) and effect drawing (361 bytes)
+become private zero comparisons. Six accepted functions lose their match:
+hit-region initialization/search, reduced blit/draw, splash palette pulsing
+and high-score insertion. The net result is **−4 functions / −1,136 bytes**;
+reject the stage. Current-time and reset remain exact. Effect stretch improves
+to 306/306 with two differences, but no candidate is promoted from this model.
+
+Actual stdcall import symbols are bound to independently verified named PE IAT
+entries: frequency at 0x4412A0 and counter at 0x44129C. Complete source reversal,
+caller/SDK contracts, compiler inputs and comparisons are retained in
+`.analysis/sdk-counter-palette-20261013/`. No native, game or fixture run accompanies the trial.
+Verified gzip cleanup of 123 completed carriers releases 397,312 allocated
+bytes including its receipt; current sources and products remain untouched.

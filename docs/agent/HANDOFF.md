@@ -41,6 +41,12 @@ are rejected. The 26-owner DirectDraw class pass has no gains and seven losses,
 net −1,692 bytes; the board slice preserves all nine code hashes without gain.
 Canonical state remains 238 exacts / 62,514 bytes. Both complete input/source/
 comparison proofs are retained; completed private products are gzip verified.
+The [SDK counter/API-only trial](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#sdk-counter-and-kernel-calls-after-palette-integration)
+also rejects: 21 recipes and 182 complete comparisons gain both effect draw
+bodies but lose six exacts, net −4 functions / −1,136 bytes. Effect stretch
+reaches 306/306 with two differences. Current-time/reset remain exact; no
+candidate is promoted. All four-file source/SDK/IAT proofs are retained.
+Gzip-verified cleanup of 123 carriers releases 397,312 allocated bytes.
 The latest [intro surface calls](../research/exact/EXACT_INTRO_COM_CALLS.md)
 promote the complete 233-byte scroller, including all 20 actual relocations.
 Twenty surface calls use the shared stdcall interface; expressions, scopes
