@@ -347,8 +347,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004179D0,runtime,crt_termination,dependency,high,ev_db9b75cfc245d4d07c1f7ac4e273aced3e99823502913955529db3cc962382e2
 0x004179F0,runtime,crt,dependency,high,ev_25f7f3aed6a65c29e1ae6659c1351396bc3a157f9abbc1b7871017ee695e320b
 0x00417A00,runtime,crt,dependency,high,ev_379007ac2a3fcba011d66ff74552cab8e02ec3aa79a635917f54970feec764a4
-0x00417A30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00417AA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00417A30,runtime,crt-stream,maintain,high,ev_e90ec22d7310954a5e9277b07e81c8b043d45252a2a27ed5006cf7030eb985df
+0x00417AA0,runtime,crt-stream,maintain,high,ev_2c3ef6dadb7fe8e79f5377c686891fa9f7960a56a3e3833e4295fc293d9986c7
 0x00417BF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00417C20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00417C40,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
@@ -358,7 +358,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00417FF0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00418040,runtime,crt_locale,dependency,high,ev_741079328a09289a6523e5a9365d6ca97b607694cbe5dd64cf98e1e917cddc67
 0x00418130,runtime,crt_locale,dependency,high,ev_b85e4d23ab3b7cd4d420c6629eca0ead2ace6d4c26aa6ec924e209ad525785d5
-0x00418220,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00418220,runtime,crt-stream,maintain,high,ev_91a9310cf92dca9150512376bee0f195b30c53103dc2cd532fc2d0a44a101e26
 0x00418310,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004183AC,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x004183EE,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
@@ -419,8 +419,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041A0B0,runtime,crt_library,dependency,high,ev_0d9a280f965f1b554b92650e44a97ba496a0947f8056451e0236fd91485a9582; docs/research/exact/RUNTIME_STREAM_BUFFERS.md
 0x0041A120,runtime,crt_library,dependency,high,ev_02e35e338ff7df1f23dfe392cb0377475551fc65a6478dddc7655119a428532f; docs/research/exact/RUNTIME_LOWIO_READ_CLOSE.md
 0x0041A390,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041A5A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041A620,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041A5A0,runtime,crt-stream,maintain,high,ev_a7491a8c4445f083b3f7afa2cf201a5108e0ad674c288ea8ad9802083fe3db79
+0x0041A620,runtime,crt-stream,maintain,high,ev_fa18ebc65c1908d327efbd23b5f10599c53122af843b8caa2a4939037a46e4b4
 0x0041A770,runtime,crt_library,dependency,high,ev_6dc0b2fcd6da3ca2b90b2700ed2451331641bc83ddc77694ecaf70c5a94940ff; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041A9A0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041AA10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -490,7 +490,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041D9D0,runtime,crt_library,dependency,high,ev_e8f8828265772c93dddfabc78b92c24a6c9d6df6f8bdc2d6301d7a8810153890; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041DA20,runtime,crt_library,dependency,high,ev_f4f7ba8eec0ab4ce8154979ba16dc1278f442cd5d982f06429e53f68b865e4c8; docs/research/exact/RUNTIME_LOWIO_WRITE.md
 0x0041DB80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041DFA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041DFA0,runtime,crt-stream,maintain,high,ev_7c4c07745b7758561f7c8cbda368ee20bbbc5a606518bafceb7516e3cbab8721
 0x0041DFD0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041E000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E160,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

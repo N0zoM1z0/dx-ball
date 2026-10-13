@@ -51,17 +51,17 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 324 |
-| Exact functions | 255 |
-| Complete exact code bytes | 64,031 |
+| Source-present functions | 330 |
+| Exact functions | 257 |
+| Complete exact code bytes | 64,185 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 255 exact functions does not prove project completion.
+These are separate ledgers; 257 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 81 unclassified origins remain open.
+The authored denominator and 75 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -176,10 +176,25 @@ All three header-consuming owners compile natively/i686 and their ten complete
 units compare; the two affected exacts retain169 bytes and table360. No runtime
 tests or game builds run. Registry/application/error storage and integration remain open.
 
+Stream transfer recovery adds six complete bodies and exact fclose112/isatty42
+with all six actual bindings. Source330/exact257/64,185 are current. Slot
+acquisition improves48→2 and remains nonexact. Terminal flags become exact in
+the corrected final shared header context, which also avoids MinGW errno macros.
+Bulk read324/326/218, input refill251/240/238 and output refill288/328/311 are
+complete candidates. All255 preceding exacts and57 candidates are unchanged;
+current candidates61:34 authored/27 runtime, origins270/141/43/75. See
+[stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md) and
+`.analysis/runtime-stream-transfer-20261013/verification.json`. The closed REA
+run retains18 records; six whole pinned CRT sections establish the original
+boundaries. Only native/i686 standalone compilation and full unit comparisons
+run; no runtime tests or game builds. Shared registry/storage and integration
+remain open; conditional-arm/minimum/loop spelling and grouped read state
+trials are closed, not new exacts.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `5384796`
-(write outcome storage and scalar homes).
+Latest published source checkpoint before this continuation: `7c6ba9b`
+(descriptor reads and handle lifetime).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -192,12 +207,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 255 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 57 candidates;
+- `build/reports/exact-replay.json`: all 257 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 61 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-lowio-read-close-20261013/verification.json`: current
+- `.analysis/runtime-stream-transfer-20261013/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-lowio-read-close-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-write-lifetimes-20261013/verification.json`: preceding
   write lifetime scope; affected inputs/products are frozen in the new `before/`.

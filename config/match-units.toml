@@ -9728,6 +9728,12 @@ object = "build/exact/runtime_lowio_read.obj"
 inputs = ["src/runtime_lowio_read.c", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 
+[builds.runtime_stream_transfer]
+source = "src/runtime_stream_transfer.c"
+object = "build/exact/runtime_stream_transfer.obj"
+inputs = ["src/runtime_stream_transfer.c", "src/runtime_stream_transfer.h", "src/runtime_stream.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/allocator.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
 [units.crt-zero-mantissa-tail]
 build = "runtime_float"
 symbol = "__ZeroTail"
@@ -10193,4 +10199,86 @@ relocations = [
   { offset = 113, type = "DIR32", symbol = "__imp__SetStdHandle@8", addend = 0, target = 0x004412E0 },
   { offset = 142, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
   { offset = 152, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+]
+
+[units.crt-close-stream]
+build = "runtime_stream_transfer"
+symbol = "_dxball_crt_fclose"
+target_address = 0x00417A30
+size = 112
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
+relocations = [
+  { offset = 36, type = "REL32", symbol = "_dxball_crt_flush_buffer", addend = 0, target = 0x0041A030 },
+  { offset = 47, type = "REL32", symbol = "_dxball_crt_free_buffer", addend = 0, target = 0x00419FA0 },
+  { offset = 59, type = "REL32", symbol = "_dxball_crt_close", addend = 0, target = 0x00419ED0 },
+  { offset = 86, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
+]
+
+[candidates.crt-read-stream]
+build = "runtime_stream_transfer"
+symbol = "_dxball_crt_fread"
+target_address = 0x00417AA0
+size = 326
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
+relocations = [
+  { offset = 180, type = "REL32", symbol = "_dxball_crt_read", addend = 0, target = 0x0041A120 },
+  { offset = 206, type = "REL32", symbol = "_dxball_crt_fill_input", addend = 0, target = 0x00418220 },
+]
+
+[candidates.crt-get-stream]
+build = "runtime_stream_transfer"
+symbol = "_dxball_crt_get_stream"
+target_address = 0x0041A5A0
+size = 126
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 16, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 42, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 51, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 63, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
+  { offset = 72, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 81, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+]
+
+[candidates.crt-fill-input]
+build = "runtime_stream_transfer"
+symbol = "_dxball_crt_fill_input"
+target_address = 0x00418220
+size = 240
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
+relocations = [
+  { offset = 58, type = "REL32", symbol = "_dxball_crt_get_buffer", addend = 0, target = 0x0041AEF0 },
+  { offset = 85, type = "REL32", symbol = "_dxball_crt_read", addend = 0, target = 0x0041A120 },
+  { offset = 118, type = "DIR32", symbol = "_dxball_crt_invalid_io", addend = 0, target = 0x00423888 },
+  { offset = 143, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+]
+
+[candidates.crt-flush-output]
+build = "runtime_stream_transfer"
+symbol = "_dxball_crt_flush_output"
+target_address = 0x0041A620
+size = 328
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
+relocations = [
+  { offset = 89, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 32, target = 0x00424058 },
+  { offset = 97, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 64, target = 0x00424058 },
+  { offset = 105, type = "REL32", symbol = "_dxball_crt_isatty", addend = 0, target = 0x0041DFA0 },
+  { offset = 118, type = "REL32", symbol = "_dxball_crt_get_buffer", addend = 0, target = 0x0041AEF0 },
+  { offset = 161, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
+  { offset = 173, type = "DIR32", symbol = "_dxball_crt_invalid_io", addend = 0, target = 0x00423888 },
+  { offset = 197, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 216, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 247, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
+]
+
+[units.crt-is-terminal]
+build = "runtime_stream_transfer"
+symbol = "_dxball_crt_isatty"
+target_address = 0x0041DFA0
+size = 42
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
+relocations = [
+  { offset = 6, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+  { offset = 28, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
 ]

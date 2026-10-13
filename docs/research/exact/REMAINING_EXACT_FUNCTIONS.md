@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**255 functions / 64,031 code bytes / 136 metadata bytes**.
+**257 functions / 64,185 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -37,6 +37,11 @@ has53 candidates:34 authored and19 runtime. The game candidates remain unchanged
 [Reading and closing](RUNTIME_LOWIO_READ_CLOSE.md) adds four maintained source
 candidates. Current comparisons total57:34 authored and23 runtime; all preceding
 candidate results and255 exact results are unchanged.
+
+[Stream transfer](RUNTIME_STREAM_TRANSFER.md) adds complete exact closure112
+and terminal flags42, plus four maintained candidates. Current comparisons
+total61:34 authored/27 runtime. Slot acquisition retains two comparison-
+commutation differences and is not counted exact.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
