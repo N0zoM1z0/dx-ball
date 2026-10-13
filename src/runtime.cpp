@@ -1,3 +1,4 @@
+extern "C" {
 #include "runtime.h"
 #include "bonuses.h"
 #include "effects.h"
@@ -14,6 +15,8 @@
 #include "midi.h"
 #include "sound.h"
 #include "clock_api.h"
+}
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -113,8 +116,7 @@ void dxball_draw_paddle(void)
         rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite]->height;
         dirty.left = x; dirty.top = rect.top + y;
         dirty.right = dxball_paddle_width + x; dirty.bottom = rect.bottom + y;
-        ((DxBallDDSurface *)dxball_effect_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_effect_surface, x, y,
+        ((DxBallDDSurface *)dxball_effect_surface)->blt_fast(x, y,
             dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite]->surface,
             &rect, 0x11);
         dxball_queue_region(dirty);
@@ -132,8 +134,7 @@ void dxball_draw_score(void)
     _ultoa((unsigned long)(DxBallUInt)dxball_score, text, 10);
     count = (DxBallInt)strlen(text);
     rect.left = 20; rect.top = 0; rect.right = count * 35 + 20; rect.bottom = 32;
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
-        (DxBallDDSurface *)dxball_board_surface, 20, 0,
+    ((DxBallDDSurface *)dxball_board_surface)->blt_fast(20, 0,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
     dxball_select_surface((DxBallSurface)dxball_board_surface);
     dxball_draw_text(30, 31, count, text);
@@ -145,8 +146,7 @@ void dxball_draw_score(void)
         lives = (lives + 1) * 22;
         rect.top = 0; rect.bottom = 16;
         rect.left = 620 - lives; rect.right = 620;
-        ((DxBallDDSurface *)dxball_board_surface)->vtable->blt_fast(
-            (DxBallDDSurface *)dxball_board_surface, rect.left, rect.top,
+        ((DxBallDDSurface *)dxball_board_surface)->blt_fast(rect.left, rect.top,
             (DxBallDDSurface *)dxball_background_surface, &rect, 0x10);
     }
     x = 598; y = 2;
@@ -254,18 +254,15 @@ void dxball_redraw_game(void)
     rect.left = 0; rect.top = 0; rect.right = 640; rect.bottom = 480;
     dxball_clear_surface((DxBallSurface)dxball_primary_surface, 0);
     dxball_clear_surface((DxBallSurface)dxball_board_surface, 0);
-    ((DxBallDDSurface *)dxball_board_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_board_surface, &rect,
+    ((DxBallDDSurface *)dxball_board_surface)->blt(&rect,
         (DxBallDDSurface *)dxball_background_surface, &rect, 0x01000000, NULL);
     dxball_draw_score();
     dxball_draw_board(0);
     if (dxball_paused == 1) dxball_draw_centered_text(320, 240, 6, "PAUSED");
-    ((DxBallDDSurface *)dxball_primary_surface)->vtable->blt(
-        (DxBallDDSurface *)dxball_primary_surface, &rect,
+    ((DxBallDDSurface *)dxball_primary_surface)->blt(&rect,
         (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
     if (dxball_display_buffer_count > 0 && dxball_draw_to_primary == 0) {
-        ((DxBallDDSurface *)dxball_secondary_surface)->vtable->blt(
-            (DxBallDDSurface *)dxball_secondary_surface, &rect,
+        ((DxBallDDSurface *)dxball_secondary_surface)->blt(&rect,
             (DxBallDDSurface *)dxball_board_surface, &rect, 0x01000000, NULL);
     }
     return;

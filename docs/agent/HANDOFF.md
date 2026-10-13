@@ -15,6 +15,20 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **235 exact functions /61,716 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 38 authored nonexact functions.
+The latest [runtime surface calls](../research/exact/RUNTIME_SURFACE_COM_CALLS.md)
+reduce complete paddle677 from104 to68 differences. Six virtual stdcall calls
+share the canonical interface; expressions/scopes and C API linkage are unchanged.
+Ten runtime exacts retain2282 bytes; all235 whole closures pass. All37 other
+candidate code identities are unchanged. Native950 existing focused cases and
+six paddle callback cases pass; Native/MinGW build; VC4 links the matching
+runtime object and36 verified others. No connected frames or game run.
+Historical input inventories refresh249 rows.
+`.analysis/runtime-com-integration-20261013/verification.json`.
+Independent review passes all235 exacts,38 candidates,68 input identities,
+37 game objects, five products and16 C exports. Gzip-verified cleanup of
+68 completed carriers releases233472 allocated bytes; current products remain.
+The combined drawing-record model679/487 and game-over surface model408/334
+are rejected. Source/debug files are not required to continue exploring.
 The [display COM implementation](../research/exact/EXACT_DISPLAY_COM_CALLS.md)
 promotes reduced blit362, sprite region272, reduced draw361 and restoration827.
 It explicitly demotes effect blit362 to366/332, sort296 to296/3, and wait170
@@ -538,7 +552,7 @@ compile or owner-oracle replay. All four products remain byte-identical.
 | Exact code / separate metadata bytes | 61,716 /136 |
 | Runtime /compiler-generated /unknown origins | 117 /42 /99 |
 
-Current product/comparison receipt: `.analysis/display-com-integration-20261013/verification.json`.
+Current product/comparison receipt: `.analysis/runtime-com-integration-20261013/verification.json`.
 Earlier digital-audio receipts and the 285/206 seal retain their historical products.
 Additional current live MIDI unavailable-device receipt:
 `.analysis/midi-device-fallback/verification.json`. Original58/VC457 SDK reads;

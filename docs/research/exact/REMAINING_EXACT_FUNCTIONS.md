@@ -29,7 +29,7 @@ None of these candidates is already exact. The accepted total remains
 | `load-sprite-bank` | 1475 | 1475 | 72 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `stretch-keyed-sprite` | 139 | 141 | 90 |
-| `draw-paddle` | 677 | 677 | 104 |
+| `draw-paddle` | 677 | 677 | 68 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
 | `fill-polygon-clipped` | 1592 | 1592 | 210 |
 | `fill-polygon` | 1543 | 1543 | 211 |
@@ -51,6 +51,11 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [runtime surface calls](RUNTIME_SURFACE_COM_CALLS.md) reduce paddle
+differences from 104 to 68 while preserving all ten runtime exact functions.
+The other 37 candidate code identities are unchanged. The drawing-record
+combination and game-over call projection are rejected.
 
 The [display COM integration](EXACT_DISPLAY_COM_CALLS.md) promotes four complete
 functions and explicitly demotes three, for a net gain of one function and

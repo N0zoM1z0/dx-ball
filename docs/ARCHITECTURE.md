@@ -1,7 +1,7 @@
 # How the game fits together
 
 Start with [the Windows loop](../src/platform.c), then follow
-[mode dispatch](../src/runtime.c) into [the gameplay frame](../src/core.c).
+[mode dispatch](../src/runtime.cpp) into [the gameplay frame](../src/core.c).
 The [source map](../src/README.md) lists the supporting modules.
 
 ## Entry and mode dispatch
@@ -15,7 +15,7 @@ the current mode.
 ```mermaid
 flowchart TD
     Entry["windows_entry.c: WinMain"] --> Loop["platform.c: message / idle loop"]
-    Loop -->|idle| Dispatch["runtime.c: dispatch_frame"]
+    Loop -->|idle| Dispatch["runtime.cpp: dispatch_frame"]
     Loop -->|messages| Input["platform.c: window_proc"]
     Dispatch --> Modes["Menu · Game · Editor · Game over · Splash"]
     Input -->|input| Modes
@@ -23,14 +23,14 @@ flowchart TD
     Draw --> Surfaces["DirectDraw surfaces"]
 ```
 
-The mode table in `runtime.c` supplies initialization, redraw, frame, and
+The mode table in `runtime.cpp` supplies initialization, redraw, frame, and
 cleanup functions. Device-reset handling runs before the selected frame;
 a requested mode change cleans up the old mode and initializes the next.
 
 | Mode | Frame and screen code |
 | --- | --- |
 | 0 — Menu | [intro.c](../src/intro.c), including the point animation |
-| 1 — Game | [core.c](../src/core.c); lifecycle and score code in [runtime.c](../src/runtime.c) |
+| 1 — Game | [core.c](../src/core.c); lifecycle and score code in [runtime.cpp](../src/runtime.cpp) |
 | 2 — Editor | [editor.c](../src/editor.c) |
 | 3 — Game over | [gameover.c](../src/gameover.c), including name entry and rankings |
 | 4 — Splash | [intro.c](../src/intro.c), including credits and the scroller |
