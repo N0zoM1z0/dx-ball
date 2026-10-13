@@ -9683,7 +9683,19 @@ relocations = [
 [builds.runtime_mantissa_arithmetic]
 source = "src/runtime_mantissa_arithmetic.c"
 object = "build/exact/runtime_mantissa_arithmetic.obj"
-inputs = ["src/runtime_mantissa_arithmetic.c", "src/runtime_float.h"]
+inputs = ["src/runtime_mantissa_arithmetic.c", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
+[builds.runtime_decimal]
+source = "src/runtime_decimal.c"
+object = "build/exact/runtime_decimal.obj"
+inputs = ["src/runtime_decimal.c", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
+[builds.runtime_decimal_powers]
+source = "src/runtime_decimal_powers.c"
+object = "build/exact/runtime_decimal_powers.obj"
+inputs = ["src/runtime_decimal_powers.c", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
 
 [units.crt-zero-mantissa-tail]
@@ -9784,3 +9796,107 @@ target_address = 0x0041E5C0
 size = 35
 boundary_evidence = "docs/research/exact/RUNTIME_MANTISSA_HELPERS.md"
 relocations = []
+
+[candidates.crt-decimal-digits96]
+build = "runtime_mantissa_arithmetic"
+symbol = "___mtold12"
+target_address = 0x0041E6E0
+size = 232
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
+relocations = [
+  { offset = 69, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 80, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 94, type = "REL32", symbol = "___add_12", addend = 0, target = 0x0041E5F0 },
+  { offset = 103, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 141, type = "REL32", symbol = "___add_12", addend = 0, target = 0x0041E5F0 },
+  { offset = 207, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+]
+
+[candidates.crt-parse-extended12]
+build = "runtime_decimal"
+symbol = "__strgtold12"
+target_address = 0x0041E7D0
+size = 1871
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
+relocations = [
+  { offset = 106, type = "DIR32", symbol = "$L391", addend = 0, target = 0x0041EDE8 },
+  { offset = 132, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+  { offset = 241, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+  { offset = 276, type = "DIR32", symbol = "$L392", addend = 0, target = 0x0041EE30 },
+  { offset = 283, type = "DIR32", symbol = "$L393", addend = 0, target = 0x0041EE18 },
+  { offset = 339, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+  { offset = 394, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 409, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 422, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 477, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
+  { offset = 512, type = "DIR32", symbol = "$L394", addend = 0, target = 0x0041EE80 },
+  { offset = 519, type = "DIR32", symbol = "$L395", addend = 0, target = 0x0041EE6C },
+  { offset = 582, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 597, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 610, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 676, type = "DIR32", symbol = "$L396", addend = 0, target = 0x0041EED0 },
+  { offset = 683, type = "DIR32", symbol = "$L397", addend = 0, target = 0x0041EEBC },
+  { offset = 717, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 732, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 745, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 992, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 1007, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 1020, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 1070, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 1085, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 1098, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 1294, type = "REL32", symbol = "___mtold12", addend = 0, target = 0x0041E6E0 },
+  { offset = 1384, type = "REL32", symbol = "___multtenpow12", addend = 0, target = 0x0041FC40 },
+  { offset = 1560, type = "DIR32", symbol = "$L235", addend = 0, target = 0x0041E83E },
+  { offset = 1564, type = "DIR32", symbol = "$L247", addend = 0, target = 0x0041E8A3 },
+  { offset = 1568, type = "DIR32", symbol = "$L259", addend = 0, target = 0x0041E90D },
+  { offset = 1572, type = "DIR32", symbol = "$L265", addend = 0, target = 0x0041E950 },
+  { offset = 1576, type = "DIR32", symbol = "$L280", addend = 0, target = 0x0041E9EF },
+  { offset = 1580, type = "DIR32", symbol = "$L296", addend = 0, target = 0x0041EA93 },
+  { offset = 1584, type = "DIR32", symbol = "$L298", addend = 0, target = 0x0041EAE4 },
+  { offset = 1588, type = "DIR32", symbol = "$L306", addend = 0, target = 0x0041EB42 },
+  { offset = 1592, type = "DIR32", symbol = "$L310", addend = 0, target = 0x0041EB73 },
+  { offset = 1596, type = "DIR32", symbol = "$L315", addend = 0, target = 0x0041EBA4 },
+  { offset = 1600, type = "DIR32", symbol = "$L228", addend = 0, target = 0x0041EC74 },
+  { offset = 1604, type = "DIR32", symbol = "$L323", addend = 0, target = 0x0041EC32 },
+  { offset = 1608, type = "DIR32", symbol = "$L255", addend = 0, target = 0x0041E8EF },
+  { offset = 1612, type = "DIR32", symbol = "$L255", addend = 0, target = 0x0041E8EF },
+  { offset = 1616, type = "DIR32", symbol = "$L256", addend = 0, target = 0x0041E8F9 },
+  { offset = 1620, type = "DIR32", symbol = "$L257", addend = 0, target = 0x0041E903 },
+  { offset = 1624, type = "DIR32", symbol = "$L257", addend = 0, target = 0x0041E903 },
+  { offset = 1628, type = "DIR32", symbol = "$finish$246", addend = 0, target = 0x0041EC6E },
+  { offset = 1692, type = "DIR32", symbol = "$L277", addend = 0, target = 0x0041E9DB },
+  { offset = 1696, type = "DIR32", symbol = "$L277", addend = 0, target = 0x0041E9DB },
+  { offset = 1700, type = "DIR32", symbol = "$L278", addend = 0, target = 0x0041E9E5 },
+  { offset = 1704, type = "DIR32", symbol = "$L278", addend = 0, target = 0x0041E9E5 },
+  { offset = 1708, type = "DIR32", symbol = "$finish$246", addend = 0, target = 0x0041EC6E },
+  { offset = 1772, type = "DIR32", symbol = "$L293", addend = 0, target = 0x0041EA7F },
+  { offset = 1776, type = "DIR32", symbol = "$L293", addend = 0, target = 0x0041EA7F },
+  { offset = 1780, type = "DIR32", symbol = "$L294", addend = 0, target = 0x0041EA89 },
+  { offset = 1784, type = "DIR32", symbol = "$L294", addend = 0, target = 0x0041EA89 },
+  { offset = 1788, type = "DIR32", symbol = "$finish$246", addend = 0, target = 0x0041EC6E },
+]
+
+[candidates.crt-multiply-extended12]
+build = "runtime_decimal"
+symbol = "___ld12mul"
+target_address = 0x0041F990
+size = 678
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
+relocations = [
+  { offset = 311, type = "REL32", symbol = "___addl", addend = 0, target = 0x0041E5C0 },
+  { offset = 394, type = "REL32", symbol = "___shl_12", addend = 0, target = 0x0041E660 },
+  { offset = 465, type = "REL32", symbol = "___shr_12", addend = 0, target = 0x0041E6A0 },
+]
+
+[candidates.crt-scale-decimal12]
+build = "runtime_decimal"
+symbol = "___multtenpow12"
+target_address = 0x0041FC40
+size = 123
+boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
+relocations = [
+  { offset = 13, type = "DIR32", symbol = "__pow10pos", addend = 0, target = 0x00424390 },
+  { offset = 30, type = "DIR32", symbol = "__pow10neg", addend = 0, target = 0x004244F0 },
+  { offset = 114, type = "REL32", symbol = "___ld12mul", addend = 0, target = 0x0041F990 },
+]

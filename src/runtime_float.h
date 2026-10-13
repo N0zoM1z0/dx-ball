@@ -25,7 +25,7 @@ typedef struct DxBallMathException {
 extern "C" {
 #endif
 
-/* Decimal parsing dependency; its maintained body remains to be recovered. */
+/* Recovered decimal parsing entry point. */
 int _strgtold12(DxBallExtended12 *value, const char **end, const char *text,
                int option1, int option2, int option3, int option4);
 

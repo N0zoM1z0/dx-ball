@@ -1,4 +1,4 @@
-#include "runtime_float.h"
+#include "runtime_mantissa_arithmetic.h"
 
 /* FUNCTION: DXBALL 0x0041E5C0 */
 int __addl(unsigned int left, unsigned int right, unsigned int *result)
@@ -42,4 +42,49 @@ void __shr_12(unsigned int *mantissa)
     mantissa[2] >>= 1;
     mantissa[1] = (mantissa[1] >> 1) | high_carry;
     mantissa[0] = (mantissa[0] >> 1) | middle_carry;
+}
+
+/* FUNCTION: DXBALL 0x0041E6E0 */
+void __mtold12(const char *digits, int count, DxBallExtended12 *result)
+{
+    DxBallExtended12 saved;
+    unsigned int *saved_words = (unsigned int *)&saved;
+    unsigned int *mantissa = (unsigned int *)result;
+    unsigned short exponent = 0x404e;
+    mantissa[0] = 0;
+    mantissa[1] = 0;
+    mantissa[2] = 0;
+    while (count != 0) {
+        unsigned int digit;
+        saved = *result;
+        __shl_12(mantissa);
+        --count;
+        ++digits;
+        __shl_12(mantissa);
+        __add_12(mantissa, saved_words);
+        __shl_12(mantissa);
+        digit = (unsigned int)digits[-1];
+        saved_words[1] = 0;
+        saved_words[2] = 0;
+        saved_words[0] = digit;
+        __add_12(mantissa, saved_words);
+    }
+    if (mantissa[2] == 0) {
+        unsigned int high;
+        do {
+            unsigned int middle, low;
+            exponent -= 16;
+            middle = mantissa[1];
+            high = middle >> 16;
+            low = mantissa[0];
+            mantissa[2] = high;
+            mantissa[1] = (middle << 16) | (low >> 16);
+            mantissa[0] = low << 16;
+        } while (high == 0);
+    }
+    while ((((unsigned char *)result)[9] & 0x80) == 0) {
+        --exponent;
+        __shl_12(mantissa);
+    }
+    result->exponent = exponent;
 }

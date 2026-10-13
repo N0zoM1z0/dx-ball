@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 528 |
-| Source-present functions | 302 |
+| Source-present functions | 306 |
 | Exact functions | 249 |
 | Complete exact code bytes | 63,697 |
 | Attached exact metadata bytes | 136 |
@@ -61,7 +61,7 @@ goal with the prompt above, preserving the same objective.
 These are separate ledgers; 249 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 96 unclassified origins remain open.
+The authored denominator and 95 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -102,10 +102,21 @@ scalar addition has five differences, and the new left/right shifts have
 See [iteration and arithmetic](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md)
 and `.analysis/runtime-mantissa-lifetimes-20261013/`. Runtime tests remain deferred.
 
+Decimal parsing and its three arithmetic dependencies now have maintained
+source, together with all 58 power records. Exact totals are unchanged; all
+249 unit results and 41 preceding candidates are preserved. Four new candidates
+bring the total to 45: 34 authored and 11 runtime. Numeric digits are 232/232
+bytes with 21 differences; the complete parser/table carrier is 1851/1871 with
+1661 differences, multiplication 708/678 with 666 and scaling 133/123 with 127.
+The original parser owns 293 table/alignment bytes beyond its decoded body.
+See [decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
+`.analysis/runtime-decimal-conversion-20261013/`. Locale dependencies and
+game integration remain open; no runtime tests or game builds run.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `0d914f6`
-(mantissa helper source and three exact functions).
+Latest published source checkpoint before this continuation: `8793689`
+(indexed zero testing and 96-bit addition exact).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -119,12 +130,14 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 249 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 41 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 45 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-mantissa-lifetimes-20261013/verification.json`: current
+- `.analysis/runtime-decimal-conversion-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-mantissa-lifetimes-20261013/verification.json`: preceding
+  iteration/arithmetic scope; source and products are frozen in the new `before/`.
 - `.analysis/runtime-mantissa-helpers-20261013/verification.json`: preceding
   helper checkpoint; its sources and products are frozen in the new `before/`.
 - `.analysis/runtime-binary-conversion-20261013/verification.json`: preceding

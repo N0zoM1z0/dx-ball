@@ -20,6 +20,10 @@ zero testing and 96-bit addition exact, and adds two shift candidates. The
 current set has 41 candidates: 34 authored and seven runtime bodies. The
 converter has 94 differences in the current shared source context.
 
+[Decimal conversion](RUNTIME_DECIMAL_CONVERSION.md) supplies four new source
+candidates and all 58 power records. The current set therefore has 45 candidates:
+34 authored and 11 runtime. All preceding exact and candidate results are preserved.
+
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
 | `present-regions-now` | 984 | 984 | 2 |
