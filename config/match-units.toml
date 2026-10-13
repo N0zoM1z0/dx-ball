@@ -39,6 +39,36 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_cpp_filter_lifetime]
+source = "src/runtime_cpp_filter_lifetime.cpp"
+object = "build/exact/runtime_cpp_filter_lifetime.obj"
+inputs = ["src/runtime_cpp_filter_lifetime.cpp", "src/runtime_cpp_filter_lifetime.h", "src/runtime_cpp_filter.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_onexit.h", "src/runtime_resize.h", "src/allocator.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.cpp-install-unhandled-filter]
+build = "runtime_cpp_filter_lifetime"
+symbol = "_dxball_cpp_install_unhandled_filter"
+target_address = 0x0041E140
+size = 30
+boundary_evidence = "docs/research/exact/RUNTIME_FILTER_LIFETIME.md"
+relocations = [
+  { offset = 1, type = "DIR32", symbol = "_dxball_cpp_restore_unhandled_filter", addend = 0, target = 0x0041E1C0 },
+  { offset = 6, type = "REL32", symbol = "_dxball_crt_atexit", addend = 0, target = 0x0041F860 },
+  { offset = 14, type = "DIR32", symbol = "_dxball_cpp_unhandled_filter@4", addend = 0, target = 0x0041E160 },
+  { offset = 20, type = "DIR32", symbol = "__imp__SetUnhandledExceptionFilter@4", addend = 0, target = 0x00441254 },
+  { offset = 25, type = "DIR32", symbol = "_dxball_cpp_previous_filter", addend = 0, target = 0x0043FC50 },
+]
+
+[units.cpp-filter-initializer]
+build = "runtime_cpp_filter_lifetime"
+symbol = "_dxball_cpp_filter_initializer"
+target_address = 0x0041E130
+size = 5
+boundary_evidence = "docs/research/exact/RUNTIME_FILTER_LIFETIME.md"
+relocations = [
+  { offset = 1, type = "REL32", symbol = "_dxball_cpp_install_unhandled_filter", addend = 0, target = 0x0041E140 },
+]
+
 [builds.runtime_stream_position]
 source = "src/runtime_stream_position.c"
 object = "build/exact/runtime_stream_position.obj"

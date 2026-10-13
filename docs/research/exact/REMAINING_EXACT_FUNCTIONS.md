@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**312 functions / 68,690 code bytes / 136 metadata bytes**.
+**314 functions / 68,725 code bytes / 136 metadata bytes**.
+
+[Filter initialization/lifetime](RUNTIME_FILTER_LIFETIME.md) adds two full exacts
+across35 bytes and a complete4-byte initialized record. Inventory543/source425;
+all312 preceding exacts/102 candidates remain unchanged. Linker integration is open.
 
 [Stream position/C++ filtering](RUNTIME_POSITION_FILTER.md) adds two full exacts
 across101 bytes and the ftell413/432/360 candidate. Inventory541/source423/
