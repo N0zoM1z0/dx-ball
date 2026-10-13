@@ -50,18 +50,28 @@ goal with the prompt above, preserving the same objective.
 
 | Item | Current value |
 | --- | ---: |
-| Provisional function candidates | 540 |
-| Source-present functions | 420 |
-| Exact functions | 310 |
-| Complete exact code bytes | 68,589 |
+| Provisional function candidates | 541 |
+| Source-present functions | 423 |
+| Exact functions | 312 |
+| Complete exact code bytes | 68,690 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 310 exact functions does not prove project completion.
+These are separate ledgers; 312 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 30 unclassified origins remain open.
+The authored denominator and 28 unclassified origins remain open.
+
+Stream position and C++ filtering add three bodies and two full exacts across101
+bytes (filter88/restoration13). Ftell413/432/360 remains a candidate. Restoration
+is a newly proved entry; inventory541/source423/exact312/code68,690, candidates102
+(34 authored/68 runtime), origins270/200/43/28. All310 old exacts/101 candidates
+are preserved. The4-byte saved-filter BSS lies in the PE zero-filled virtual
+tail; the failed file-backed state consumer is corrected without recompiling.
+See [position/filter](../research/exact/RUNTIME_POSITION_FILTER.md) and
+`.analysis/runtime-position-filter-20261014/verification.json`. One closed five-record
+REA run; no runtime/game tests. Filter installation and integration remain open.
 
 The full x87 bridge now supplies288 bytes of maintained source:255 code plus33
 alignment/switch bytes previously omitted from its boundary. Original15
@@ -460,8 +470,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `b38b179`
-(exact file access checking).
+Latest published source checkpoint before this continuation: `cf3ee17`
+(full x87 bridge and corrected switch extent).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -474,12 +484,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 310 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 101 candidates;
+- `build/reports/exact-replay.json`: all 312 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 102 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-x87-bridge-20261014/verification.json`: current
+- `.analysis/runtime-position-filter-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-x87-bridge-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-access-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

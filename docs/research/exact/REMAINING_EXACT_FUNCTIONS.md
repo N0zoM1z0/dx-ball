@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**310 functions / 68,589 code bytes / 136 metadata bytes**.
+**312 functions / 68,690 code bytes / 136 metadata bytes**.
+
+[Stream position/C++ filtering](RUNTIME_POSITION_FILTER.md) adds two full exacts
+across101 bytes and the ftell413/432/360 candidate. Inventory541/source423/
+candidates102 (34 authored/68 runtime); all310 old exacts/101 candidates remain.
 
 [The full x87 bridge](RUNTIME_X87_BRIDGE.md) adds source288/288/14 and corrects
 its omitted33-byte switch/alignment tail. Source420/candidates101 (34 authored/

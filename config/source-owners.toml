@@ -340,6 +340,16 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_stream_position]
+source = "src/runtime_stream_position.c"
+header = "src/runtime_stream_position.h"
+additional_inputs = ["src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/runtime_stream.h", "src/allocator.h"]
+
+[owners.runtime_cpp_filter]
+source = "src/runtime_cpp_filter.cpp"
+header = "src/runtime_cpp_filter.h"
+additional_inputs = ["src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
+
 [owners.runtime_x87_bridge]
 source = "src/runtime_x87_bridge.c"
 header = "src/runtime_x87_bridge.h"

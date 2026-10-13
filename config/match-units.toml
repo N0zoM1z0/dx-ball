@@ -39,6 +39,58 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_stream_position]
+source = "src/runtime_stream_position.c"
+object = "build/exact/runtime_stream_position.obj"
+inputs = ["src/runtime_stream_position.c", "src/runtime_stream_position.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/runtime_stream.h", "src/allocator.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_cpp_filter]
+source = "src/runtime_cpp_filter.cpp"
+object = "build/exact/runtime_cpp_filter.obj"
+inputs = ["src/runtime_cpp_filter.cpp", "src/runtime_cpp_filter.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-stream-position]
+build = "runtime_stream_position"
+symbol = "_dxball_crt_ftell"
+target_address = 0x0041B000
+size = 432
+boundary_evidence = "docs/research/exact/RUNTIME_POSITION_FILTER.md"
+relocations = [
+  { offset = 41, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 125, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 204, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 270, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 297, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 348, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+]
+
+[units.cpp-unhandled-filter]
+build = "runtime_cpp_filter"
+symbol = "_dxball_cpp_unhandled_filter@4"
+target_address = 0x0041E160
+size = 88
+boundary_evidence = "docs/research/exact/RUNTIME_POSITION_FILTER.md"
+relocations = [
+  { offset = 31, type = "REL32", symbol = "_dxball_cpp_terminate", addend = 0, target = 0x0041BC60 },
+  { offset = 46, type = "DIR32", symbol = "_dxball_cpp_previous_filter", addend = 0, target = 0x0043FC50 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_cpp_previous_filter", addend = 0, target = 0x0043FC50 },
+  { offset = 60, type = "REL32", symbol = "?_ValidateExecute@@YAHP6GHXZ@Z", addend = 0, target = 0x0041E210 },
+  { offset = 74, type = "DIR32", symbol = "_dxball_cpp_previous_filter", addend = 0, target = 0x0043FC50 },
+]
+
+[units.cpp-restore-unhandled-filter]
+build = "runtime_cpp_filter"
+symbol = "_dxball_cpp_restore_unhandled_filter"
+target_address = 0x0041E1C0
+size = 13
+boundary_evidence = "docs/research/exact/RUNTIME_POSITION_FILTER.md"
+relocations = [
+  { offset = 1, type = "DIR32", symbol = "_dxball_cpp_previous_filter", addend = 0, target = 0x0043FC50 },
+  { offset = 8, type = "DIR32", symbol = "__imp__SetUnhandledExceptionFilter@4", addend = 0, target = 0x00441254 },
+]
+
 [builds.runtime_x87_bridge]
 source = "src/runtime_x87_bridge.c"
 object = "build/exact/runtime_x87_bridge.obj"
