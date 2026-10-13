@@ -298,3 +298,6 @@ address,symbol,source,scope,semantic_unit
 0x0041D5C0,dxball_ascii_to_float,src/runtime_float.c,Complete standalone CRT wrapper; parsing and binary32 conversion are declared runtime dependencies; native backend and game integration remain open,crt-ascii-to-float
 0x0041D7C0,dxball_math_error,src/runtime_float.c,Complete default CRT error callback; supplied exception is untouched and return is zero; caller and runtime integration remain separate,crt-math-error
 0x0041E5C0,__addl,src/runtime_mantissa_arithmetic.c,Two unsigned32 operands and writable result; original carry checks precede result store; source candidate without runtime acceptance,crt-add-with-carry
+0x0041E5F0,__add_12,src/runtime_mantissa_arithmetic.c,Three aligned little-endian limbs per operand; nested carry and ordered aliasing behavior preserved; complete source/code without separate runtime acceptance,crt-add-mantissa96
+0x0041E660,__shl_12,src/runtime_mantissa_arithmetic.c,Three aligned little-endian limbs; captured carries and ordered single-bit left shift; source candidate without runtime acceptance,crt-left-mantissa96
+0x0041E6A0,__shr_12,src/runtime_mantissa_arithmetic.c,Three aligned little-endian limbs; captured carries and descending single-bit right shift; source candidate without runtime acceptance,crt-right-mantissa96

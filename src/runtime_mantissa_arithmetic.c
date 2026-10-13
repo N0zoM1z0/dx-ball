@@ -9,3 +9,37 @@ int __addl(unsigned int left, unsigned int right, unsigned int *result)
     *result = sum;
     return carry;
 }
+
+/* FUNCTION: DXBALL 0x0041E5F0 */
+void __add_12(unsigned int *left, const unsigned int *right)
+{
+    if (__addl(left[0], right[0], &left[0])) {
+        if (__addl(left[1], 1, &left[1])) ++left[2];
+    }
+    if (__addl(left[1], right[1], &left[1])) ++left[2];
+    __addl(left[2], right[2], &left[2]);
+}
+
+/* FUNCTION: DXBALL 0x0041E660 */
+void __shl_12(unsigned int *mantissa)
+{
+    unsigned int low_carry = mantissa[0] & 0x80000000U;
+    unsigned int middle_carry = mantissa[1] & 0x80000000U;
+    low_carry >>= 31;
+    middle_carry >>= 31;
+    mantissa[0] <<= 1;
+    mantissa[1] = (mantissa[1] << 1) | low_carry;
+    mantissa[2] = (mantissa[2] << 1) | middle_carry;
+}
+
+/* FUNCTION: DXBALL 0x0041E6A0 */
+void __shr_12(unsigned int *mantissa)
+{
+    unsigned int high_carry = mantissa[2] & 1U;
+    unsigned int middle_carry = mantissa[1] & 1U;
+    high_carry <<= 31;
+    middle_carry <<= 31;
+    mantissa[2] >>= 1;
+    mantissa[1] = (mantissa[1] >> 1) | high_carry;
+    mantissa[0] = (mantissa[0] >> 1) | middle_carry;
+}

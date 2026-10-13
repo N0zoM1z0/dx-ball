@@ -9732,12 +9732,41 @@ size = 29
 boundary_evidence = "docs/research/exact/RUNTIME_MANTISSA_HELPERS.md"
 relocations = []
 
-[candidates.crt-is-zero-mantissa]
+[units.crt-is-zero-mantissa]
 build = "runtime_float"
 symbol = "__IsZeroMan"
 target_address = 0x0041D2A0
 size = 29
 boundary_evidence = "docs/research/exact/RUNTIME_MANTISSA_HELPERS.md"
+relocations = []
+
+[units.crt-add-mantissa96]
+build = "runtime_mantissa_arithmetic"
+symbol = "___add_12"
+target_address = 0x0041E5F0
+size = 102
+boundary_evidence = "docs/research/exact/RUNTIME_MANTISSA_LIFETIMES.md"
+relocations = [
+  { offset = 18, type = "REL32", symbol = "___addl", addend = 0, target = 0x0041E5C0 },
+  { offset = 39, type = "REL32", symbol = "___addl", addend = 0, target = 0x0041E5C0 },
+  { offset = 65, type = "REL32", symbol = "___addl", addend = 0, target = 0x0041E5C0 },
+  { offset = 92, type = "REL32", symbol = "___addl", addend = 0, target = 0x0041E5C0 },
+]
+
+[candidates.crt-left-mantissa96]
+build = "runtime_mantissa_arithmetic"
+symbol = "___shl_12"
+target_address = 0x0041E660
+size = 62
+boundary_evidence = "docs/research/exact/RUNTIME_MANTISSA_LIFETIMES.md"
+relocations = []
+
+[candidates.crt-right-mantissa96]
+build = "runtime_mantissa_arithmetic"
+symbol = "___shr_12"
+target_address = 0x0041E6A0
+size = 54
+boundary_evidence = "docs/research/exact/RUNTIME_MANTISSA_LIFETIMES.md"
 relocations = []
 
 [candidates.crt-shift-mantissa]

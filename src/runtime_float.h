@@ -46,6 +46,11 @@ int _RoundMan(unsigned int *mantissa, int precision);
 void _ShrMan(unsigned int *mantissa, int bits);
 int __addl(unsigned int left, unsigned int right, unsigned int *result);
 
+/* Decimal arithmetic uses the opposite limb order: least significant first. */
+void __add_12(unsigned int *left, const unsigned int *right);
+void __shl_12(unsigned int *mantissa);
+void __shr_12(unsigned int *mantissa);
+
 int dxball_ascii_to_double(double *result, const char *text);
 int dxball_ascii_to_float(float *result, const char *text);
 int dxball_math_error(DxBallMathException *exception);

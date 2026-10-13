@@ -1,5 +1,9 @@
 # CRT mantissa operations
 
+This note records the preceding checkpoint. The
+[iteration and arithmetic continuation](RUNTIME_MANTISSA_LIFETIMES.md) adds two
+exacts (131 bytes), raises totals to 249 and supplies three arithmetic bodies.
+
 All seven mantissa helpers and their addition dependency now have maintained
 source. Complete comparisons accept tail testing (100 bytes), carry propagation
 (99) and three-limb clearing (15), adding 214 exact bytes. Totals become

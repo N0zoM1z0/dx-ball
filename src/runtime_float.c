@@ -161,12 +161,10 @@ void _FillZeroMan(unsigned int *mantissa)
 /* FUNCTION: DXBALL 0x0041D2A0 */
 int _IsZeroMan(const unsigned int *mantissa)
 {
-    int word = 0;
-    do {
-        if (*mantissa != 0) return 0;
-        ++mantissa;
-        ++word;
-    } while (word < 3);
+    int word;
+    for (word = 0; word < 3; ++word) {
+        if (mantissa[word] != 0) return 0;
+    }
     return 1;
 }
 
@@ -181,7 +179,8 @@ void _ShrMan(unsigned int *mantissa, int bits)
     for (word = 0; word < 3; ++word) {
         unsigned int tail = mantissa[word] & mask;
         mantissa[word] >>= partial;
-        mantissa[word] |= carry;
+        carry |= mantissa[word];
+        mantissa[word] = carry;
         carry = tail << ((32 - partial) & 31);
     }
     for (word = 2; word >= 0; --word) {

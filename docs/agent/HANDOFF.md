@@ -51,14 +51,14 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 528 |
-| Source-present functions | 299 |
-| Exact functions | 247 |
-| Complete exact code bytes | 63,566 |
+| Source-present functions | 302 |
+| Exact functions | 249 |
+| Complete exact code bytes | 63,697 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 247 exact functions does not prove project completion.
+These are separate ledgers; 249 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 96 unclassified origins remain open.
@@ -92,10 +92,20 @@ of this conversion chain. See
 [mantissa helpers](../research/exact/RUNTIME_MANTISSA_HELPERS.md) and
 `.analysis/runtime-mantissa-helpers-20261013/`.
 
+The next continuation makes indexed zero testing (29 bytes) and little-endian
+96-bit addition (102) exact. Both one-bit shifts now have maintained source.
+Ten affected exacts preserve 502 bytes; 239 other producers are unchanged.
+Current candidates total 41: 34 authored and seven runtime. The converter has
+94 differences, the big-endian shift has 172/173 bytes with 134 differences,
+scalar addition has five differences, and the new left/right shifts have
+50/62 and 48/54 bytes with 47 and 35 differences. Rounding and copy are unchanged.
+See [iteration and arithmetic](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md)
+and `.analysis/runtime-mantissa-lifetimes-20261013/`. Runtime tests remain deferred.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `679932c`
-(binary conversion source and two exact format entries).
+Latest published source checkpoint before this continuation: `0d914f6`
+(mantissa helper source and three exact functions).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -108,13 +118,15 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 247 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 40 candidates;
+- `build/reports/exact-replay.json`: all 249 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 41 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-mantissa-helpers-20261013/verification.json`: current
+- `.analysis/runtime-mantissa-lifetimes-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-mantissa-helpers-20261013/verification.json`: preceding
+  helper checkpoint; its sources and products are frozen in the new `before/`.
 - `.analysis/runtime-binary-conversion-20261013/verification.json`: preceding
   binary format/converter scope; sources are retained in the new `before/`.
 - `.analysis/runtime-conversion-functions-20261013/verification.json`: preceding
@@ -256,7 +268,8 @@ scripts/repo-python scripts/verify-toolchain.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 ```
 
-Then select one new instruction-supported source question from the 34 candidates,
+Then select a new instruction-supported source question from the remaining
+candidates or a missing dependency in the recovered runtime chain,
 freeze the affected inputs/products, make the bounded trial and compare all
 complete affected units. Record negative results and move on; publish verified
 improvements promptly. Keep the original goal active when resumed, and do not

@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**247 functions / 63,566 code bytes / 136 metadata bytes**.
+**249 functions / 63,697 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -14,8 +14,11 @@ The [binary conversion continuation](RUNTIME_BINARY_CONVERSION.md) adds two
 `crt-extended-convert`, initially 459/459 bytes with 94 differences. Both
 24-byte format records match in full. The [mantissa helper continuation](RUNTIME_MANTISSA_HELPERS.md)
 adds three exacts and five implemented candidates. The current comparison set
-contains 40 candidates: 34 authored and six runtime bodies. The converter has
-95 differences in the current shared source context.
+initially contains 40 candidates: 34 authored and six runtime bodies. The
+[iteration and arithmetic continuation](RUNTIME_MANTISSA_LIFETIMES.md) makes
+zero testing and 96-bit addition exact, and adds two shift candidates. The
+current set has 41 candidates: 34 authored and seven runtime bodies. The
+converter has 94 differences in the current shared source context.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
