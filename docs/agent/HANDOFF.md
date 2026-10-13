@@ -51,14 +51,14 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 338 |
-| Exact functions | 260 |
-| Complete exact code bytes | 64,602 |
+| Source-present functions | 340 |
+| Exact functions | 263 |
+| Complete exact code bytes | 64,657 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 260 exact functions does not prove project completion.
+These are separate ledgers; 263 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 68 unclassified origins remain open.
@@ -224,10 +224,26 @@ tests or game builds. Opener header consolidation worsens2→42 and is reverted;
 loop-carried calloc heap/result worsens77/16→85/64 and is not retained.
 Shared registry/default storage and integration remain open.
 
+Exit registration now adds two complete source bodies. Atexit19 and unchanged
+normal/quick exit wrappers18/18 are exact across55 bytes and three bindings.
+Onexit121/2 and the unchanged initializer walker32/6 remain candidates.
+Registration keeps the int-returning API, explicit legacy result-discarded slot
+conversion, four-slot growth, post-callback shared-bound reloads and publication
+order. Source340/exact263/64,657 are current; candidates68:34 authored/34 runtime.
+Origins remain270/148/43/68. See [exit registration](../research/exact/RUNTIME_ONEXIT.md)
+and `.analysis/runtime-onexit-20261013/verification.json`. Six new closed REA
+records and retained termination dossiers ground five complete comparisons;
+all five pinned CRT sections match. Existing termination source/header and
+semantic inputs are unchanged, as are all260 prior exact and66 candidate
+producers/results. Native/i686 standalone compilation covers both owners;
+no runtime tests/game builds. The common append guard leaves two differences
+and is closed. The controller's portable platform bridge, initialized callback
+storage, physical exit and full teardown/game integration remain open.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `21f72d8`
-(file opening and exact stream entries).
+Latest published source checkpoint before this continuation: `daecac6`
+(exact file sizing, zero allocation and stream retirement).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -240,12 +256,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 260 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 66 candidates;
+- `build/reports/exact-replay.json`: all 263 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 68 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-file-size-20261013/verification.json`: current
+- `.analysis/runtime-onexit-20261013/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-file-size-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-stream-open-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.

@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**260 functions / 64,602 code bytes / 136 metadata bytes**.
+**263 functions / 64,657 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -53,6 +53,12 @@ allocation184/37 remain nonexact.
 and calloc/fcloseall source candidates. Current comparisons total66:
 34 authored/32 runtime. The preceding msize exact21 and realloc106/111/15
 are recompiled and preserved; all other preceding results remain unchanged.
+
+[Exit registration](RUNTIME_ONEXIT.md) adds atexit19 exact and promotes the
+existing normal/quick18/18 wrappers without modifying termination source.
+Onexit121/2 and the initializer walker32/6 are complete candidates. Current
+comparisons total68:34 authored/34 runtime. All preceding260 exact and66
+candidate results and historical semantic inputs are unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
