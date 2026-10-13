@@ -51,17 +51,27 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 425 |
-| Exact functions | 314 |
-| Complete exact code bytes | 68,725 |
+| Source-present functions | 426 |
+| Exact functions | 315 |
+| Complete exact code bytes | 69,003 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 314 exact functions does not prove project completion.
+These are separate ledgers; 315 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Multiprocessing FDIV testing adds a full278-byte exact and all89 literal bytes.
+Separating process-handle acquisition removes the initial twelve preparation
+differences. Preserve32-position system-mask scanning, ignored affinity failures,
+system-mask restoration and retained module reference. Source426/exact315/code69,003;
+all314 preceding exacts/102 candidates are preserved. See
+[FDIV processors](../research/exact/RUNTIME_FDIV_PROCESSORS.md) and
+`.analysis/runtime-fdiv-processors-20261014/verification.json`. One empty provider
+session and one two-record session are closed; no CPU/runtime/game tests.
+The actual physical x87 test and game integration remain open.
 
 Filter lifetime adds installer30 and forwarding initializer5 as full exacts,
 plus the complete4-byte CRT$XCC pointer record. Restoration registration precedes
@@ -480,8 +490,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `3fcf9cc`
-(exact C++ filtering/restoration and full ftell source).
+Latest published source checkpoint before this continuation: `26de2c1`
+(exact filter lifetime entries and initialized record).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -494,12 +504,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 314 exact closures and current producers.
+- `build/reports/exact-replay.json`: all 315 exact closures and current producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 102 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-filter-lifetime-20261014/verification.json`: current
+- `.analysis/runtime-fdiv-processors-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-filter-lifetime-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-position-filter-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

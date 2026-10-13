@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**314 functions / 68,725 code bytes / 136 metadata bytes**.
+**315 functions / 69,003 code bytes / 136 metadata bytes**.
+
+[FDIV processor testing](RUNTIME_FDIV_PROCESSORS.md) adds the full278-byte exact
+and five complete89-byte literals. Source426; all314 old exacts/102 candidates
+remain unchanged. Physical hardware testing and integration are open.
 
 [Filter initialization/lifetime](RUNTIME_FILTER_LIFETIME.md) adds two full exacts
 across35 bytes and a complete4-byte initialized record. Inventory543/source425;

@@ -39,6 +39,33 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_fdiv_processors]
+source = "src/runtime_fdiv_processors.cpp"
+object = "build/exact/runtime_fdiv_processors.obj"
+inputs = ["src/runtime_fdiv_processors.cpp", "src/runtime_fdiv_processors.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_initialization.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.crt-test-fdiv-processors]
+build = "runtime_fdiv_processors"
+symbol = "_dxball_crt_test_fdiv_processors"
+target_address = 0x00418C50
+size = 278
+boundary_evidence = "docs/research/exact/RUNTIME_FDIV_PROCESSORS.md"
+relocations = [
+  { offset = 8, type = "REL32", symbol = "__ms_p5_test_fdiv", addend = 0, target = 0x00418C00 },
+  { offset = 30, type = "DIR32", symbol = "??_C@_08OBID@KERNEL32?$AA@", addend = 0, target = 0x004231EC, data_hex = "4b45524e454c333200" },
+  { offset = 36, type = "DIR32", symbol = "__imp__LoadLibraryA@4", addend = 0, target = 0x00441330 },
+  { offset = 57, type = "DIR32", symbol = "??_C@_0BH@KAJB@GetProcessAffinityMask?$AA@", addend = 0, target = 0x004231D4, data_hex = "47657450726f63657373416666696e6974794d61736b00" },
+  { offset = 64, type = "DIR32", symbol = "__imp__GetProcAddress@8", addend = 0, target = 0x00441338 },
+  { offset = 85, type = "DIR32", symbol = "??_C@_0BC@CFOG@GetCurrentProcess?$AA@", addend = 0, target = 0x004231C0, data_hex = "47657443757272656e7450726f6365737300" },
+  { offset = 92, type = "DIR32", symbol = "__imp__GetProcAddress@8", addend = 0, target = 0x00441338 },
+  { offset = 113, type = "DIR32", symbol = "??_C@_0BG@PMJE@SetThreadAffinityMask?$AA@", addend = 0, target = 0x004231A8, data_hex = "536574546872656164416666696e6974794d61736b00" },
+  { offset = 120, type = "DIR32", symbol = "__imp__GetProcAddress@8", addend = 0, target = 0x00441338 },
+  { offset = 141, type = "DIR32", symbol = "??_C@_0BB@JPOE@GetCurrentThread?$AA@", addend = 0, target = 0x00423194, data_hex = "47657443757272656e7454687265616400" },
+  { offset = 148, type = "DIR32", symbol = "__imp__GetProcAddress@8", addend = 0, target = 0x00441338 },
+  { offset = 221, type = "REL32", symbol = "__ms_p5_test_fdiv", addend = 0, target = 0x00418C00 },
+]
+
 [builds.runtime_cpp_filter_lifetime]
 source = "src/runtime_cpp_filter_lifetime.cpp"
 object = "build/exact/runtime_cpp_filter_lifetime.obj"
