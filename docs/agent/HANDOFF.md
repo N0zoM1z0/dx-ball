@@ -50,18 +50,31 @@ goal with the prompt above, preserving the same objective.
 
 | Item | Current value |
 | --- | ---: |
-| Provisional function candidates | 529 |
-| Source-present functions | 358 |
-| Exact functions | 274 |
-| Complete exact code bytes | 65,721 |
+| Provisional function candidates | 531 |
+| Source-present functions | 362 |
+| Exact functions | 276 |
+| Complete exact code bytes | 65,817 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 274 exact functions does not prove project completion.
+These are separate ledgers; 276 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 58 unclassified origins remain open.
+The authored denominator and 57 unclassified origins remain open.
+
+Signal/exception recovery adds four complete bodies and initialized state140.
+Both lookup bodies49/47 are exact; raise includes all53 switch bytes beyond its
+old340-byte prefix. Raise393/323 and filtering376/351/355 remain nonexact.
+Two verified entries absent from Ghidra's inventory extend it to531: filter
+0x41BD60/351 and lookup0x41BEC0/47. Full REA byte ranges and complete pinned CRT
+sections agree; local decoding supplements unavailable provider procedures.
+Hardware-context scopes preserve typed callbacks and all restoration order.
+Source362/exact276/65,817 code bytes; candidates77 (34 authored/43 runtime),
+origins270/161/43/57. All274 preceding exacts and75 candidates preserve their
+inputs/products/results. See [signal dispatch](../research/exact/RUNTIME_SIGNALS.md)
+and `.analysis/runtime-signals-20261014/verification.json`. Registration and
+physical OS/exception/game integration remain open; no runtime tests/game builds.
 
 Error-control recovery adds MessageBox, three validators and abort source.
 Read/write/code checks32/32/27 and full abort31 are exact across122 bytes; the
@@ -300,8 +313,8 @@ runtime integration remains open and the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `1688fc6`
-(low-I/O startup and exact fatal dispatch bodies).
+Latest published source checkpoint before this continuation: `4bbac1d`
+(error controls and four complete exact bodies).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -314,12 +327,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 274 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 75 candidates;
+- `build/reports/exact-replay.json`: all 276 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 77 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-error-control-20261014/verification.json`: current
+- `.analysis/runtime-signals-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-error-control-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-lowio-startup-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.

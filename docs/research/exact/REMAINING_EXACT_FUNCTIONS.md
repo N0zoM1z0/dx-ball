@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**274 functions / 65,721 code bytes / 136 metadata bytes**.
+**276 functions / 65,817 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -74,6 +74,10 @@ authored result below remains unchanged.
 [Error controls](RUNTIME_ERROR_CONTROL.md) add three exact validators and full
 abort31 across122 bytes, plus the complete MessageBox146/90 candidate. Current
 candidates75:34 authored/41 runtime; the authored results below remain unchanged.
+
+[Signal dispatch](RUNTIME_SIGNALS.md) adds exact lookup49/47 and full raise/filter
+candidates. The original raise owns53 additional switch bytes. Two new verified
+entries bring inventory to531; current candidates77:34 authored/43 runtime.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
