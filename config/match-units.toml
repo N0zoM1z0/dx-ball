@@ -9764,6 +9764,12 @@ object = "build/exact/runtime_integer_text.obj"
 inputs = ["src/runtime_integer_text.c", "src/runtime_integer_text.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 
+[builds.runtime_case_conversion]
+source = "src/runtime_case_conversion.c"
+object = "build/exact/runtime_case_conversion.obj"
+inputs = ["src/runtime_case_conversion.c", "src/runtime_case_conversion.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
 [units.crt-zero-mantissa-tail]
 build = "runtime_float"
 symbol = "__ZeroTail"
@@ -10563,4 +10569,48 @@ relocations = [
   { offset = 992, type = "DIR32", symbol = "$L340", addend = 0, target = 0x0041DC76 },
   { offset = 996, type = "DIR32", symbol = "$L341", addend = 0, target = 0x0041DC80 },
   { offset = 1000, type = "DIR32", symbol = "$L342", addend = 0, target = 0x0041DC41 },
+]
+
+[units.crt-uppercase]
+build = "runtime_case_conversion"
+symbol = "_dxball_crt_toupper"
+target_address = 0x00418040
+size = 229
+boundary_evidence = "docs/research/exact/RUNTIME_CASE_CONVERSION.md"
+relocations = [
+  { offset = 5, type = "DIR32", symbol = "___lc_handle", addend = 8, target = 0x00423650 },
+  { offset = 47, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 58, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 69, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 100, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 155, type = "DIR32", symbol = "___lc_handle", addend = 8, target = 0x00423650 },
+  { offset = 173, type = "REL32", symbol = "___crtLCMapStringA", addend = 0, target = 0x0041AA10 },
+]
+
+[units.crt-lowercase]
+build = "runtime_case_conversion"
+symbol = "_dxball_crt_tolower"
+target_address = 0x00418130
+size = 229
+boundary_evidence = "docs/research/exact/RUNTIME_CASE_CONVERSION.md"
+relocations = [
+  { offset = 5, type = "DIR32", symbol = "___lc_handle", addend = 8, target = 0x00423650 },
+  { offset = 47, type = "DIR32", symbol = "___mb_cur_max", addend = 0, target = 0x0042387C },
+  { offset = 58, type = "REL32", symbol = "__isctype", addend = 0, target = 0x0041AC70 },
+  { offset = 69, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 100, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 155, type = "DIR32", symbol = "___lc_handle", addend = 8, target = 0x00423650 },
+  { offset = 173, type = "REL32", symbol = "___crtLCMapStringA", addend = 0, target = 0x0041AA10 },
+]
+
+[candidates.crt-classify-character]
+build = "runtime_case_conversion"
+symbol = "__isctype"
+target_address = 0x0041AC70
+size = 145
+boundary_evidence = "docs/research/exact/RUNTIME_CASE_CONVERSION.md"
+relocations = [
+  { offset = 20, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 46, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
+  { offset = 109, type = "REL32", symbol = "___crtGetStringTypeA", addend = 0, target = 0x0041E000 },
 ]

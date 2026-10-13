@@ -51,17 +51,26 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 343 |
-| Exact functions | 265 |
-| Complete exact code bytes | 64,747 |
+| Source-present functions | 346 |
+| Exact functions | 267 |
+| Complete exact code bytes | 65,205 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 265 exact functions does not prove project completion.
+These are separate ledgers; 267 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 67 unclassified origins remain open.
+The authored denominator and 66 unclassified origins remain open.
+
+The October14 continuation restores both full229-byte case converters and the
+145-byte classification dependency. Both converters are exact across458 bytes;
+classification retains17 differences. Source346/exact267/65,205 code bytes;
+candidates70 (34 authored/36 runtime), origins270/150/43/66. All265 previous
+exact results and69 candidates preserve their producer inputs and products.
+See [case conversion](../research/exact/RUNTIME_CASE_CONVERSION.md) and
+`.analysis/runtime-case-conversion-20261014/verification.json`. Locale storage
+and mapping backends remain open. No runtime tests or game builds run.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
