@@ -51,17 +51,17 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 529 |
-| Source-present functions | 335 |
-| Exact functions | 259 |
-| Complete exact code bytes | 64,243 |
+| Source-present functions | 338 |
+| Exact functions | 260 |
+| Complete exact code bytes | 64,602 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 259 exact functions does not prove project completion.
+These are separate ledgers; 260 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 70 unclassified origins remain open.
+The authored denominator and 68 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
@@ -208,10 +208,26 @@ remain open. `_chsize` is the next missing direct dependency; registry/default
 storage and integration are still open. Consumed flags-result and publication
 without the local flag phase are closed worse trials, not retained.
 
+Length changes, calloc and fcloseall now add three complete source bodies.
+Chsize359 is exact across18 bindings and its4100-byte frame. Full intrinsic
+zeroing and a common seek-failure exit restore376/284→359/0; mode/position
+restoration and original error distinctions are retained. Calloc77/82/16 and
+fcloseall115/19 remain candidates. Source338/exact260/64,602 are current;
+candidates66:34 authored/32 runtime, origins270/148/43/68. The old msize21 and
+realloc106/111/15 are recompiled and preserved, with preceding inputs/products
+frozen under `.analysis/runtime-file-size-20261013/before/`. Other258 exacts
+and63 candidates are unchanged. See [file sizing](../research/exact/RUNTIME_FILE_SIZE.md)
+and `.analysis/runtime-file-size-20261013/verification.json`. One closed nine-record
+REA run and three whole pinned CRT sections ground the new bodies; five final
+comparisons and native/i686 compilation cover both changed owners. No runtime
+tests or game builds. Opener header consolidation worsens2→42 and is reverted;
+loop-carried calloc heap/result worsens77/16→85/64 and is not retained.
+Shared registry/default storage and integration remain open.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `34f6429`
-(stream transfers, closure and terminal flags).
+Latest published source checkpoint before this continuation: `21f72d8`
+(file opening and exact stream entries).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -224,12 +240,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 259 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 64 candidates;
+- `build/reports/exact-replay.json`: all 260 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 66 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-stream-open-20261013/verification.json`: current
+- `.analysis/runtime-file-size-20261013/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-stream-open-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-stream-transfer-20261013/verification.json`: preceding
   standalone source/producer/ledger seal.

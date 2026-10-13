@@ -9740,6 +9740,12 @@ object = "build/exact/runtime_stream_open.obj"
 inputs = ["src/runtime_stream_open.c", "src/runtime_stream_open.h", "src/runtime_stream_transfer.h", "src/runtime_stream.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 
+[builds.runtime_file_size]
+source = "src/runtime_file_size.c"
+object = "build/exact/runtime_file_size.obj"
+inputs = ["src/runtime_file_size.c", "src/runtime_file_size.h", "src/runtime_stream_transfer.h", "src/runtime_stream.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/allocator.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
 [units.crt-zero-mantissa-tail]
 build = "runtime_float"
 symbol = "__ZeroTail"
@@ -10347,6 +10353,62 @@ relocations = [
   { offset = 100, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
   { offset = 114, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
   { offset = 126, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+]
+
+[units.crt-change-file-size]
+build = "runtime_file_size"
+symbol = "_dxball_crt_chsize"
+target_address = 0x0041F670
+size = 359
+boundary_evidence = "docs/research/exact/RUNTIME_FILE_SIZE.md"
+relocations = [
+  { offset = 6, type = "REL32", symbol = "__chkstk", addend = 0, target = 0x0041FD40 },
+  { offset = 25, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
+  { offset = 50, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 70, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 95, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 146, type = "REL32", symbol = "__setmode", addend = 0, target = 0x0041FCC0 },
+  { offset = 174, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
+  { offset = 196, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 205, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 218, type = "REL32", symbol = "__setmode", addend = 0, target = 0x0041FCC0 },
+  { offset = 234, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 243, type = "REL32", symbol = "_dxball_crt_get_osfhandle", addend = 0, target = 0x0041D9D0 },
+  { offset = 253, type = "DIR32", symbol = "__imp__SetEndOfFile@4", addend = 0, target = 0x00441250 },
+  { offset = 269, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 279, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
+  { offset = 284, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 297, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 341, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+]
+
+[candidates.crt-close-all-streams]
+build = "runtime_file_size"
+symbol = "_dxball_crt_fcloseall"
+target_address = 0x0041F5F0
+size = 115
+boundary_evidence = "docs/research/exact/RUNTIME_FILE_SIZE.md"
+relocations = [
+  { offset = 13, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 30, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 48, type = "REL32", symbol = "_dxball_crt_fclose", addend = 0, target = 0x00417A30 },
+  { offset = 67, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 76, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
+  { offset = 85, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 102, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+]
+
+[candidates.crt-zero-allocate]
+build = "runtime_resize"
+symbol = "_dxball_runtime_calloc"
+target_address = 0x0041F590
+size = 82
+boundary_evidence = "docs/research/exact/RUNTIME_FILE_SIZE.md"
+relocations = [
+  { offset = 22, type = "DIR32", symbol = "__imp__HeapAlloc@12", addend = 0, target = 0x00441318 },
+  { offset = 27, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x00440D70 },
+  { offset = 52, type = "DIR32", symbol = "_dxball_malloc_mode", addend = 0, target = 0x004234D4 },
+  { offset = 61, type = "REL32", symbol = "_dxball_call_new_handler", addend = 0, target = 0x00419EA0 },
 ]
 
 [candidates.crt-open-shared-descriptor]

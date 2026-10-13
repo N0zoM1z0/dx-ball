@@ -1,5 +1,20 @@
 #include "runtime_resize.h"
 
+/* FUNCTION: DXBALL 0x0041F590 */
+void *DXBALL_NEW_CALL dxball_runtime_calloc(DxBallUInt count, DxBallUInt bytes)
+{
+    void *value;
+    DxBallUInt total = count * bytes;
+    if (total == 0) total = 1;
+    do {
+        value = dxball_runtime_heap;
+        if (total > 0xffffffe0U) value = NULL;
+        else value = HeapAlloc(value, 8, total);
+        if (value != NULL || dxball_malloc_mode == 0) return value;
+    } while (dxball_call_new_handler(total));
+    return NULL;
+}
+
 /* FUNCTION: DXBALL 0x0041FD70 */
 void *DXBALL_NEW_CALL dxball_runtime_realloc(void *memory, DxBallUInt bytes)
 {
