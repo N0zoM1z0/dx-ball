@@ -35,12 +35,16 @@ int _ld12tof(const DxBallExtended12 *value, float *result);
 int _ld12cvt(const DxBallExtended12 *value, void *result,
             const DxBallBinaryFormat *format);
 
-/* Original mantissa helpers; their maintained bodies remain open. */
+/* The three limbs are ordered from most to least significant. Bit positions
+   count from the most significant bit of limb zero. */
+int _ZeroTail(const unsigned int *mantissa, int position);
+int _IncMan(unsigned int *mantissa, int position);
 void _CopyMan(unsigned int *destination, const unsigned int *source);
 void _FillZeroMan(unsigned int *mantissa);
 int _IsZeroMan(const unsigned int *mantissa);
 int _RoundMan(unsigned int *mantissa, int precision);
 void _ShrMan(unsigned int *mantissa, int bits);
+int __addl(unsigned int left, unsigned int right, unsigned int *result);
 
 int dxball_ascii_to_double(double *result, const char *text);
 int dxball_ascii_to_float(float *result, const char *text);

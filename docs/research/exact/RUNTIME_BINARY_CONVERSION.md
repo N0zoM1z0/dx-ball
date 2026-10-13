@@ -1,5 +1,10 @@
 # CRT binary conversion and format entries
 
+This note records the preceding checkpoint. The
+[mantissa continuation](RUNTIME_MANTISSA_HELPERS.md) supplies all eight helper
+dependencies, raises the exact total to 247 and retains the converter at
+459 bytes with 95 differences. Decimal parsing and integration remain open.
+
 The two 24-byte format entries at `0x41D540` and `0x41D560` now have maintained
 source and complete exact comparisons. Both actual relocations and all 24
 initialized bytes of each format record match. The earlier three float-owner

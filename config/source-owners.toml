@@ -250,3 +250,7 @@ additional_inputs = ["src/state_types.h", "src/startup.c", "src/startup.h", "src
 [owners.runtime_float]
 source = "src/runtime_float.c"
 header = "src/runtime_float.h"
+
+[owners.runtime_mantissa_arithmetic]
+source = "src/runtime_mantissa_arithmetic.c"
+header = "src/runtime_float.h"

@@ -98,3 +98,94 @@ int _ld12cvt(const DxBallExtended12 *value, void *result,
     }
     return status;
 }
+
+/* FUNCTION: DXBALL 0x0041D0E0 */
+int _ZeroTail(const unsigned int *mantissa, int position)
+{
+    int word = position / 32;
+    int bit = 31 - position % 32;
+    if (mantissa[word] & ~(~0U << bit)) return 0;
+    for (++word; word < 3; ++word) {
+        if (mantissa[word] != 0) return 0;
+    }
+    return 1;
+}
+
+/* FUNCTION: DXBALL 0x0041D150 */
+int _IncMan(unsigned int *mantissa, int position)
+{
+    unsigned int increment = 1;
+    int word = position / 32;
+    int carry;
+    increment <<= 31 - position % 32;
+    carry = __addl(mantissa[word], increment, &mantissa[word]);
+    for (--word; word >= 0; --word) {
+        if (carry == 0) break;
+        carry = __addl(mantissa[word], 1, &mantissa[word]);
+    }
+    return carry;
+}
+
+/* FUNCTION: DXBALL 0x0041D1C0 */
+int _RoundMan(unsigned int *mantissa, int precision)
+{
+    int carry = 0;
+    int previous_position = precision;
+    int round_position = previous_position--;
+    int word = round_position / 32;
+    int bit = 31 - round_position % 32;
+    unsigned int *selected = &mantissa[word];
+    if (*selected & (1U << bit)) {
+        if (!_ZeroTail(mantissa, round_position + 1))
+            carry = _IncMan(mantissa, previous_position);
+    }
+    *selected &= ~0U << bit;
+    for (++word; word < 3; ++word) mantissa[word] = 0;
+    return carry;
+}
+
+/* FUNCTION: DXBALL 0x0041D270 */
+void _CopyMan(unsigned int *destination, const unsigned int *source)
+{
+    int word;
+    for (word = 0; word < 3; ++word) destination[word] = source[word];
+}
+
+/* FUNCTION: DXBALL 0x0041D290 */
+void _FillZeroMan(unsigned int *mantissa)
+{
+    int word;
+    for (word = 0; word < 3; ++word) mantissa[word] = 0;
+}
+
+/* FUNCTION: DXBALL 0x0041D2A0 */
+int _IsZeroMan(const unsigned int *mantissa)
+{
+    int word = 0;
+    do {
+        if (*mantissa != 0) return 0;
+        ++mantissa;
+        ++word;
+    } while (word < 3);
+    return 1;
+}
+
+/* FUNCTION: DXBALL 0x0041D2C0 */
+void _ShrMan(unsigned int *mantissa, int bits)
+{
+    int words = bits / 32;
+    int partial = bits % 32;
+    unsigned int carry = 0;
+    unsigned int mask = ~(~0U << partial);
+    int word;
+    for (word = 0; word < 3; ++word) {
+        unsigned int tail = mantissa[word] & mask;
+        mantissa[word] >>= partial;
+        mantissa[word] |= carry;
+        carry = tail << ((32 - partial) & 31);
+    }
+    for (word = 2; word >= 0; --word) {
+        if (word >= words) mantissa[word] = mantissa[word - words];
+        else mantissa[word] = 0;
+    }
+}

@@ -51,14 +51,14 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 528 |
-| Source-present functions | 291 |
-| Exact functions | 244 |
-| Complete exact code bytes | 63,352 |
+| Source-present functions | 299 |
+| Exact functions | 247 |
+| Complete exact code bytes | 63,566 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 244 exact functions does not prove project completion.
+These are separate ledgers; 247 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 96 unclassified origins remain open.
@@ -79,13 +79,23 @@ reuses the exponent scalar; its denormal shift is stored before the copy.
 It is the additional runtime candidate, bringing configured candidates to 35.
 See [binary conversion](../research/exact/RUNTIME_BINARY_CONVERSION.md) and
 `.analysis/runtime-binary-conversion-20261013/`. Five owner functions retain
-157 exact code bytes; 239 other exact producers are unchanged. Remaining
-mantissa helpers and decimal parsing are the next source dependencies.
+157 exact code bytes; 239 other exact producers are unchanged.
+
+The mantissa continuation adds all seven helpers and their addition dependency.
+Tail testing (100 bytes), carry propagation (99) and clearing (15) are complete exacts.
+All eight affected exacts preserve 371 bytes; 239 other producers are unchanged.
+There are now 40 candidates: 34 authored and six runtime. The converter has
+459 bytes / 95 differences in this source context. Rounding has 163/172 bytes,
+copying has five differences, zero testing six, shifting 174/173 bytes and
+addition seven differences. These remain nonexact. Decimal parsing is the remaining source dependency
+of this conversion chain. See
+[mantissa helpers](../research/exact/RUNTIME_MANTISSA_HELPERS.md) and
+`.analysis/runtime-mantissa-helpers-20261013/`.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest published source checkpoint before this continuation: `b4afdff`
-(exact CRT float conversion wrappers and default math callback).
+Latest published source checkpoint before this continuation: `679932c`
+(binary conversion source and two exact format entries).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -98,13 +108,15 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 244 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 35 candidates;
+- `build/reports/exact-replay.json`: all 247 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 40 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-binary-conversion-20261013/verification.json`: current
+- `.analysis/runtime-mantissa-helpers-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-binary-conversion-20261013/verification.json`: preceding
+  binary format/converter scope; sources are retained in the new `before/`.
 - `.analysis/runtime-conversion-functions-20261013/verification.json`: preceding
   three-function scope; frozen sources are retained in the new phase's `before/`.
 - `.analysis/rebound-contact-integration-20261013/verification.json` and
