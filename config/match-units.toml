@@ -9636,3 +9636,46 @@ target_address = 0x0041D7C0
 size = 3
 boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_CONVERSIONS.md"
 relocations = []
+
+[units.crt-extended-to-double]
+build = "runtime_float"
+symbol = "__ld12tod"
+target_address = 0x0041D540
+size = 24
+boundary_evidence = "docs/research/exact/RUNTIME_BINARY_CONVERSION.md"
+relocations = [
+  { offset = 5, type = "DIR32", symbol = "?format@?1??_ld12tod@@9@9", addend = 0, target = 0x00423FE8, data_hex = "0004000001fcffff350000000b00000040000000ff030000" },
+  { offset = 16, type = "REL32", symbol = "__ld12cvt", addend = 0, target = 0x0041D370 },
+]
+
+[units.crt-extended-to-float]
+build = "runtime_float"
+symbol = "__ld12tof"
+target_address = 0x0041D560
+size = 24
+boundary_evidence = "docs/research/exact/RUNTIME_BINARY_CONVERSION.md"
+relocations = [
+  { offset = 5, type = "DIR32", symbol = "?format@?1??_ld12tof@@9@9", addend = 0, target = 0x00424000, data_hex = "8000000081ffffff1800000008000000200000007f000000" },
+  { offset = 16, type = "REL32", symbol = "__ld12cvt", addend = 0, target = 0x0041D370 },
+]
+
+[candidates.crt-extended-convert]
+build = "runtime_float"
+symbol = "__ld12cvt"
+target_address = 0x0041D370
+size = 459
+boundary_evidence = "docs/research/exact/RUNTIME_BINARY_CONVERSION.md"
+relocations = [
+  { offset = 85, type = "REL32", symbol = "__IsZeroMan", addend = 0, target = 0x0041D2A0 },
+  { offset = 113, type = "REL32", symbol = "__FillZeroMan", addend = 0, target = 0x0041D290 },
+  { offset = 145, type = "REL32", symbol = "__CopyMan", addend = 0, target = 0x0041D270 },
+  { offset = 166, type = "REL32", symbol = "__RoundMan", addend = 0, target = 0x0041D1C0 },
+  { offset = 198, type = "REL32", symbol = "__FillZeroMan", addend = 0, target = 0x0041D290 },
+  { offset = 232, type = "REL32", symbol = "__CopyMan", addend = 0, target = 0x0041D270 },
+  { offset = 246, type = "REL32", symbol = "__ShrMan", addend = 0, target = 0x0041D2C0 },
+  { offset = 265, type = "REL32", symbol = "__RoundMan", addend = 0, target = 0x0041D1C0 },
+  { offset = 283, type = "REL32", symbol = "__ShrMan", addend = 0, target = 0x0041D2C0 },
+  { offset = 307, type = "REL32", symbol = "__FillZeroMan", addend = 0, target = 0x0041D290 },
+  { offset = 332, type = "REL32", symbol = "__ShrMan", addend = 0, target = 0x0041D2C0 },
+  { offset = 372, type = "REL32", symbol = "__ShrMan", addend = 0, target = 0x0041D2C0 },
+]

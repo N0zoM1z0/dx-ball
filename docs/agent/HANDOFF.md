@@ -51,30 +51,41 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 528 |
-| Source-present functions | 288 |
-| Exact functions | 242 |
-| Complete exact code bytes | 63,304 |
+| Source-present functions | 291 |
+| Exact functions | 244 |
+| Complete exact code bytes | 63,352 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 242 exact functions does not prove project completion.
-All 34 candidates have complete comparisons. Their sizes and differences are in
+These are separate ledgers; 244 exact functions does not prove project completion.
+All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 96 unclassified origins remain open.
 
 The October 13 continuation recovers two 53-byte CRT conversion wrappers and
 the 3-byte default math callback in `src/runtime_float.c`. All 109 bytes and
 four actual relocations match. This standalone module compiles on native,
-i686 and VC4; parser/converter body recovery and backend/game integration remain
+i686 and VC4; parser recovery and backend/game integration remain
 open. The game still uses its existing runtime. See
 [the source note](../research/exact/RUNTIME_FLOAT_CONVERSIONS.md) and
 `.analysis/runtime-conversion-functions-20261013/`. No runtime tests run.
 The 34 authored candidates and previous game products are unchanged.
 
+The follow-up recovers both complete 24-byte binary format entries and their
+48 initialized data bytes. The full converter body is now maintained at the
+original 459 bytes / 157 instructions, with 94 differences. Its packed result
+reuses the exponent scalar; its denormal shift is stored before the copy.
+It is the additional runtime candidate, bringing configured candidates to 35.
+See [binary conversion](../research/exact/RUNTIME_BINARY_CONVERSION.md) and
+`.analysis/runtime-binary-conversion-20261013/`. Five owner functions retain
+157 exact code bytes; 239 other exact producers are unchanged. Remaining
+mantissa helpers and decimal parsing are the next source dependencies.
+
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
-Latest source checkpoint: `a273bfe` (exact paddle contact precision).
+Latest published source checkpoint before this continuation: `b4afdff`
+(exact CRT float conversion wrappers and default math callback).
 Latest pre-handoff checkpoint: `5834536` (closed device/clock controls).
 Both were pushed; remote HEAD and a clean worktree were independently verified.
 
@@ -87,13 +98,15 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 242 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 34 candidates;
+- `build/reports/exact-replay.json`: all 244 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 35 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-conversion-functions-20261013/verification.json`: new
+- `.analysis/runtime-binary-conversion-20261013/verification.json`: current
   standalone source/producer/ledger seal.
+- `.analysis/runtime-conversion-functions-20261013/verification.json`: preceding
+  three-function scope; frozen sources are retained in the new phase's `before/`.
 - `.analysis/rebound-contact-integration-20261013/verification.json` and
   `independent-review.json`: preceding unchanged game input/product seal.
 

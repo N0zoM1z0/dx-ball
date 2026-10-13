@@ -4,10 +4,16 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**242 functions / 63,304 code bytes / 136 metadata bytes**.
+**244 functions / 63,352 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
+
+The [binary conversion continuation](RUNTIME_BINARY_CONVERSION.md) adds two
+24-byte exact runtime format entries and the maintained converter candidate:
+`crt-extended-convert`, 459/459 bytes, 94 differences. The configured comparison
+set therefore contains 35 candidates: these 34 authored functions plus that
+runtime body. Both 24-byte format records match in full.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

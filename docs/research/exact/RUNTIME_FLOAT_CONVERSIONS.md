@@ -1,5 +1,9 @@
 # Exact CRT conversion wrappers and default math callback
 
+The [binary conversion follow-up](RUNTIME_BINARY_CONVERSION.md) now supplies the
+two format entry bodies and a complete converter candidate. Counts below
+describe this earlier three-function checkpoint.
+
 Three maintained bodies in `src/runtime_float.c` match complete original
 functions: double conversion at `0x41D580` (53 bytes), float conversion at
 `0x41D5C0` (53 bytes), and the default math-error callback at `0x41D7C0`
