@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**277 functions / 65,835 code bytes / 136 metadata bytes**.
+**281 functions / 66,062 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -82,6 +82,11 @@ entries bring inventory to531; current candidates77:34 authored/43 runtime.
 [Decimal output](RUNTIME_DECIMAL_OUTPUT.md) adds exact lead-byte classification18
 and two complete candidates: decimal output922/923/535 and classification58/7.
 Current candidates79:34 authored/45 runtime. All preceding results are unchanged.
+
+[Code pages](RUNTIME_CODEPAGE.md) adds four complete exacts across227 bytes,
+525 initialized logical data bytes and the setter473/475/128 candidate. The full
+mapping95 includes39 embedded dispatch bytes. Current candidates80:34 authored/
+46 runtime; all preceding results are unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
