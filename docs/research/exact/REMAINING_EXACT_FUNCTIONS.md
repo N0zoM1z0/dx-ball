@@ -4,7 +4,7 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**282 functions / 66,281 code bytes / 136 metadata bytes**.
+**285 functions / 66,349 code bytes / 136 metadata bytes**.
 
 The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
 runtime functions and 109 bytes. All 34 authored candidates below remain open.
@@ -92,6 +92,10 @@ mapping95 includes39 embedded dispatch bytes. Current candidates80:34 authored/
 exact and three whole candidates: setup151/155/116, parser475/466/280 and
 acquisition389/411/404. Code-page companions preserve227 exact bytes after a
 shared declaration correction. Current candidates83:34 authored/49 runtime.
+
+[Initialization](RUNTIME_INITIALIZATION.md) adds controller48/precision19/noop1
+exact and math25/23/5 candidate, plus the full28-byte FP record. One missing real
+callback entry extends inventory to532. Current candidates84:34 authored/50 runtime.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

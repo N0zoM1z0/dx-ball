@@ -39,6 +39,67 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_initialization]
+source = "src/runtime_initialization.c"
+object = "build/exact/runtime_initialization.obj"
+inputs = ["src/runtime_initialization.c", "src/runtime_initialization.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_fp_initialization_state]
+source = "src/runtime_fp_initialization_state.c"
+object = "build/exact/runtime_fp_initialization_state.obj"
+inputs = ["src/runtime_fp_initialization_state.c", "src/runtime_initialization.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.crt-initialize-runtime]
+build = "runtime_initialization"
+symbol = "_dxball_crt_initialize_runtime"
+target_address = 0x004178E0
+size = 48
+boundary_evidence = "docs/research/exact/RUNTIME_INITIALIZATION.md"
+relocations = [
+  { offset = 1, type = "DIR32", symbol = "__FPinit", addend = 0, target = 0x004230A0 },
+  { offset = 12, type = "DIR32", symbol = "___xi_z", addend = 0, target = 0x0042103C },
+  { offset = 17, type = "DIR32", symbol = "___xi_a", addend = 0, target = 0x00421030 },
+  { offset = 22, type = "REL32", symbol = "_dxball_crt_run_initializers", addend = 0, target = 0x004179D0 },
+  { offset = 30, type = "DIR32", symbol = "___xc_z", addend = 0, target = 0x0042102C },
+  { offset = 35, type = "DIR32", symbol = "___xc_a", addend = 0, target = 0x00421000 },
+  { offset = 40, type = "REL32", symbol = "_dxball_crt_run_initializers", addend = 0, target = 0x004179D0 },
+]
+
+[candidates.crt-initialize-math]
+build = "runtime_initialization"
+symbol = "_dxball_crt_initialize_math"
+target_address = 0x00417580
+size = 23
+boundary_evidence = "docs/research/exact/RUNTIME_INITIALIZATION.md"
+relocations = [
+  { offset = 1, type = "REL32", symbol = "_dxball_crt_initialize_conversion_table", addend = 0, target = 0x004175B0 },
+  { offset = 6, type = "REL32", symbol = "_dxball_crt_test_fdiv_processors", addend = 0, target = 0x00418C50 },
+  { offset = 11, type = "DIR32", symbol = "__adjust_fdiv", addend = 0, target = 0x0042309C },
+  { offset = 16, type = "REL32", symbol = "_dxball_crt_set_default_precision", addend = 0, target = 0x00418BE0 },
+  { offset = 21, type = "REL32", symbol = "__clrfp", addend = 0, target = 0x00419390 },
+]
+
+[units.crt-fp-thread-noop]
+build = "runtime_initialization"
+symbol = "_dxball_crt_fp_thread_noop"
+target_address = 0x004175A0
+size = 1
+boundary_evidence = "docs/research/exact/RUNTIME_INITIALIZATION.md"
+relocations = [
+]
+
+[units.crt-default-fp-precision]
+build = "runtime_initialization"
+symbol = "_dxball_crt_set_default_precision"
+target_address = 0x00418BE0
+size = 19
+boundary_evidence = "docs/research/exact/RUNTIME_INITIALIZATION.md"
+relocations = [
+  { offset = 11, type = "REL32", symbol = "__controlfp", addend = 0, target = 0x0041CF70 },
+]
+
 [builds.runtime_arguments]
 source = "src/runtime_arguments.cpp"
 object = "build/exact/runtime_arguments.obj"
