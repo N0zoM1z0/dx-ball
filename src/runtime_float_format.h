@@ -52,8 +52,8 @@ int dxball_crt_float_positive(const double *value);
 void dxball_crt_float_digits(char *buffer, int digits, DxBallCrtFloatText *value);
 
 /* Genuine remaining formatter bodies; their source is a separate dependency. */
-void dxball_crt_format_exponent(const double *, char *, int, int);
-void dxball_crt_format_fixed(const double *, char *, int);
+char *dxball_crt_format_exponent(const double *, char *, int, int);
+char *dxball_crt_format_fixed(const double *, char *, int);
 void dxball_crt_format_general(const double *, char *, int, int);
 
 #ifdef __cplusplus

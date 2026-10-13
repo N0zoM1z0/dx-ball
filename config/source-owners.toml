@@ -340,6 +340,16 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_float_render]
+source = "src/runtime_float_render.c"
+header = "src/runtime_float_render.h"
+additional_inputs = ["src/runtime_float_format.h", "src/runtime_decimal_output.h", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+
+[owners.runtime_float_output]
+source = "src/runtime_float_output.c"
+header = "src/runtime_float_render.h"
+additional_inputs = ["src/runtime_float_format.h", "src/runtime_decimal_output.h", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+
 [owners.runtime_float_format]
 source = "src/runtime_float_format.c"
 header = "src/runtime_float_format.h"

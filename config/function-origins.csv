@@ -391,13 +391,13 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00418DE0,runtime,crt-float-format,maintain,high,ev_a7683cd7563f530aca25992b5151e399b86c11f129a7380abf11af963e013b28
 0x00418E40,runtime,crt-float-format,maintain,high,ev_a016014d75060161baf06fcbfd48411dce827a7046969783bb6e0abadbf4dc4c
 0x00418E60,runtime,crt-float-format,maintain,high,ev_c8fb3a302ec8caa477585de4fe2ba67b16cfa1dad5b34c4b08a38abff4c645d8
-0x00418EB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00418FF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004190F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004191A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004191D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00418EB0,runtime,crt-float-render,maintain,high,ev_57a1f9babef8690c2e77355893cdefcb81004db10e2f38396a379bac76dac69f
+0x00418FF0,runtime,crt-float-render,maintain,high,ev_fb7ce1de3a40d16c520aa4f0aac16847556cb76545e61d2a699e5e90125144b1
+0x004190F0,runtime,crt-float-render,maintain,high,ev_180da04aff011cc07e93aa756d5f108519fa6cf0132d2f44d7423c4fdeb784b9
+0x004191A0,runtime,crt-float-render,maintain,high,ev_885fa9cbf1d638d08279925a3752b4a0e7779281e3b1a858c347027b209762c6
+0x004191D0,runtime,crt-float-render,maintain,high,ev_ebc782a361c209c119e3627171a42b84a2fd91e96b77b3a833fd67b88ec75646
 0x00419200,runtime,crt-float-format,maintain,high,ev_69882551cfab23af8ef39f4a5143abbf46a657a621cb4636650add1465cfaf15
-0x00419270,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00419270,runtime,crt-float-render,maintain,high,ev_2ff956dac25e35d1e49133157c9792aafce36f8b06c438ea8b529321daed0a91
 0x004192DC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041930C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00419370,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
@@ -490,8 +490,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041D580,runtime,crt_conversion,maintain,high,ev_7dfae3807bc41b299b1aa30dddc6fbd6e97277c90191565ac8ec3ed4ac16c85d
 0x0041D5C0,runtime,crt_conversion,maintain,high,ev_303c82601fd292e68914e354abe283ce69ec89e0f5b06025ea83fa3f44809f4a
 0x0041D600,runtime,crt-float-format,maintain,high,ev_15ae8106c5ec8f0c8ad0f4d532027870d80f14b3db5e3a2166d499292c7b498e
-0x0041D690,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041D700,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
+0x0041D690,runtime,crt-float-render,maintain,high,ev_803caf928c6a3e5060190bd1a45c7479c76071248013fcef53e08ed311c2ad87
+0x0041D700,runtime,crt-float-render,maintain,high,ev_3776dd8ae2873f3eda4c890a5b7574d5c8d3b9bab936e0ee320a0dbc8403cde0
 0x0041D7C0,runtime,crt_conversion,maintain,high,ev_b94ec26c821c24f465811ee1f668d3d0226e2c078cc1623e08f20740ed02b64a
 0x0041D7D0,"runtime",crt-stream,"maintain",high,ev_fd61eddd9f92bb9a855286cceef9a6c9bb8ccc2298a8c07f192cdafe5a0a80b5
 0x0041D890,runtime,crt_library,dependency,high,ev_eb676ab1d96d829d5ba31d1f7b96a6d3179124e8cf6c961277d64854cceecfc2; docs/research/exact/RUNTIME_LOWIO_READ_CLOSE.md

@@ -51,17 +51,26 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 538 |
-| Source-present functions | 386 |
-| Exact functions | 290 |
-| Complete exact code bytes | 66,629 |
+| Source-present functions | 394 |
+| Exact functions | 296 |
+| Complete exact code bytes | 67,283 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 290 exact functions does not prove project completion.
+These are separate ledgers; 296 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 47 unclassified origins remain open.
+The authored denominator and 40 unclassified origins remain open.
+
+Float rendering/output adds eight source bodies and six full exacts across654
+bytes: fixed251, general176, mode wrappers43/38, shift43 and output103. Exponent
+310/2 and binary64 conversion185/187/75 remain candidates. E/F return signatures
+are corrected without losing any preceding290 exacts or87 candidates. Current
+candidates89 (34 authored/55 runtime), origins270/185/43/40. See
+[rendering](../research/exact/RUNTIME_FLOAT_RENDER.md) and
+`.analysis/runtime-float-render-20261014/verification.json`. No runtime/game tests;
+physical integration remains open.
 
 Float formatting adds eight source bodies and five complete exacts across280
 bytes: callback initialization56, dispatch101, zero cropping89, positive23 and
@@ -385,12 +394,14 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 290 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 87 candidates;
+- `build/reports/exact-replay.json`: all 296 exact closures and current producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 89 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
-- `.analysis/runtime-float-format-20261014/verification.json`: current
+- `.analysis/runtime-float-render-20261014/verification.json`: current
+  standalone source/producer/ledger seal.
+- `.analysis/runtime-float-format-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
 - `.analysis/runtime-initialization-20261014/verification.json`: preceding
   standalone source/producer/ledger seal.
