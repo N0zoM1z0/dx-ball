@@ -24,7 +24,7 @@ None of these candidates is already exact. The accepted total remains
 | `store-editor-board` | 52 | 58 | 42 |
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
-| `load-sprite-bank` | 1475 | 1475 | 72 |
+| `load-sprite-bank` | 1475 | 1475 | 70 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-paddle` | 677 | 677 | 48 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
@@ -48,6 +48,9 @@ Differences are raw byte positions after genuine relocation resolution, not
 a count of missing operations. Different instruction lengths move later bytes.
 The matching recipes and target addresses are in `config/match-units.toml`;
 each candidate links its retained research evidence there.
+
+The [sprite iteration lifetime](BANK_SPRITE_ITERATION_SCOPE.md) reduces bank
+differences from 72 to 70 while preserving all fifteen exact resource companions.
 
 The [device surface and palette calls](DEVICE_SURFACE_PALETTE_CALLS.md)
 restore two blue comparison groups and reduce transition differences from

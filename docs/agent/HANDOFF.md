@@ -15,6 +15,22 @@ another feedback/handoff file in `/tmp`. Keep code and repository docs English.
 
 Latest checkpoint: **238 exact functions /62,514 code bytes /136 metadata bytes**;
 285 source-present, 249 historical semantic scopes and 35 authored nonexact functions.
+The latest [sprite iteration lifetime](../research/exact/BANK_SPRITE_ITERATION_SCOPE.md)
+moves seven existing per-sprite locals into their consuming iteration. Bank1475
+improves72→70 differences; the two removed displacement positions do not prove
+matching multiplication roles. Fifteen resource exacts preserve3572 bytes;
+all238 closures pass and34 other candidate identities stay unchanged. Canonical
+eight inputs/flags match the frozen producer. Native/MinGW build; VC4 compiles
+one productionMT resource object and links36 unchanged objects. Existing10bank
+and3livecallback cases pass;235 historical inventories refresh with unchanged
+cases/scopes. `.analysis/bank-iteration-integration-20261013/verification.json`.
+The [chained rebound precision controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#rebound-contact-stages)
+reproduce681-byte legacy exact privately, but actual GNU precision witnesses
+fail. No promotion or canonical ball change. The explicit four-byte contact
+class remains755/681; preserve all source/backend failure receipts.
+Independent bank review seals68 inputs/37gameobjects/fiveproducts. Verified
+gzip cleanup preserves112 completed bank/failed-rebound carriers and releases
+9,437,184 allocated bytes including the receipt; current products remain.
 The latest [device surface/palette calls](../research/exact/DEVICE_SURFACE_PALETTE_CALLS.md)
 reduce transition1339 from18 to12 differences, restoring both blue comparison
 groups. Five accepted device companions preserve808 bytes; all238 closures

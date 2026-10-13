@@ -204,6 +204,22 @@ comparison. For an offset of 7 and width of 100, that rounds above double 0.07
 and changes the branch. No compiler-specific source body is introduced. The
 original expression and portable precision requirement remain unresolved.
 
+A later chained float expression reproduces all 681 original bytes privately,
+including all fifty bindings. Its C++ form retains C exports and also matches
+the three exact ball companions. C++17 sequencing is independently checked.
+It is not adopted: GNU's debug x87 model fails the added 7/100 precision witness;
+optimized x87 fails an existing later threshold; adding float-store fails the
+first witness again. Existing passing samples do not resolve those failures.
+
+An explicit four-byte contact object separates the rounded stored value from
+the unrounded immediate result. Its `/Ob1` legacy output is 755/681 bytes with
+681 differences; three companions preserve 965 bytes. Inlined arguments and
+returns still spill through double slots and change the first comparison.
+That shared value model also remains unselected. Keep these compiler and
+precision controls in `.analysis/rebound-x87-expression-20261013/`,
+`.analysis/rebound-x87-cpp-20261013/` and
+`.analysis/rebound-contact-value-20261013/`; canonical rebound stays 687/681.
+
 Original REA evidence is
 `ev_6055fe1d318fa3f71d76b5cdbbbe862a3944dd9890035a53264b8ccfa2d7a074`.
 Private source, compilation and complete comparison are retained in

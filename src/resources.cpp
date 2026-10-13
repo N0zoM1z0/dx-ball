@@ -161,11 +161,7 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
 /* FUNCTION: DXBALL 0x00404610 */
 void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const char *path)
 {
-    DxBallInt saved_bank, sprite, count, width, height, baseline;
-    signed char code;
-    DxBallUInt pixel_count;
-    DxBallByte *pixels;
-    DxBallSprite *record;
+    DxBallInt saved_bank, sprite, count;
     DxBallInt row, column, cursor, pitch;
     saved_bank = dxball_sprite_bank;
     dxball_select_sprite_bank(bank);
@@ -176,6 +172,11 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         exit(1);
     fread(&count, 4, 1, dxball_board_file);
     for (sprite = 1; sprite < count + 1; sprite = sprite + 1) {
+        DxBallInt width, height, baseline;
+        signed char code;
+        DxBallUInt pixel_count;
+        DxBallByte *pixels;
+        DxBallSprite *record;
         fread(&width, 4, 1, dxball_board_file);
         fread(&height, 4, 1, dxball_board_file);
         fread(&code, 1, 1, dxball_board_file);
