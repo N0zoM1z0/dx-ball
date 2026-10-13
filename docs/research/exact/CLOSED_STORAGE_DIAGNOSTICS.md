@@ -306,3 +306,50 @@ is rejected. Original load evidence is
 retain `.analysis/board-copy-object-address-20261013/`. These are three bounded
 single-compilation trials with no canonical edits or gameplay runs. Their
 completed source/header/object copies are gzip verified before cleanup.
+
+## Shared clock types in the current surface context
+
+The previous shared-timestamp model was retested against the current C++
+surface owners. It uses the Win32 unsigned-long clock word and LONG counter
+fields, closes clock return/elapsed/callback types, and retains the earlier
+consumed grayscale conversion cursor. Current source and surface interfaces
+are preserved in an isolated tree.
+
+Thirty-one matching recipes compile once each. All 273 complete units are
+compared: 236 accepted functions and 37 candidates, including actual bindings,
+full literals and 136 metadata bytes. Rotation height (191 bytes) and waiting
+(170 bytes) become private zero comparisons. Fourteen accepted functions lose
+their match: MDS parsing, seven resource functions, bonus update, rectangle
+collision, rotation offset/width, reduced sprite drawing and hit-region
+initialization. Reset remains nonexact in this context. The private result is
+224 functions / 55,994 bytes: **net −12 functions / −5,955 bytes**. The coherent
+model is rejected after the complete family comparison. These private zeros
+do not enter the accepted ledger.
+
+Four initial comparator gaps involved reordered genuine global reads and
+renumbered static data. They were resolved against the saved objects without
+recompiling. An auxiliary allocator recipe has no claim units; its old object
+identity and current source inventory do not imply known prior compiler inputs.
+Canonical sources, objects and products remain unchanged. Retain
+`.analysis/shared-timestamp-surface-20261013/` for the full frozen tree, compiler
+receipts, source/caller proof and comparisons. No fixture or game run accompanies
+this trial.
+
+## PCX header lifetime and editor interface
+
+The 128-byte PCX header, its byte pointer and read iterator are used only before
+Lock. One private source stage gives those three locals a block containing the
+unchanged header read and maxima extraction. It introduces no fields, padding
+or buffer capacity. The complete body worsens from 979/862 with 851 differences
+to 985/862 with 929, while all fourteen resource exacts retain 3,433 bytes.
+Reject the stage. Original header consumers end at 0x409CAC; retained evidence
+is `ev_93b5290136b33bfcc5cee2cc186d2f6440c5a8c1595647d46ec6172e7d5c8566`.
+Complete inputs and comparisons are in `.analysis/pcx-header-read-phase-20261013/`.
+
+An editor projection converts five surface calls to virtual stdcall dispatch
+with preserved source expressions, scopes and C linkage. It gains no exact,
+loses hit-region search (172/173 bytes, 132 differences), and leaves editor key
+at 638/632 with 260 differences. Reject the projection; retain
+`.analysis/editor-surface-com-20261013/`. Both owners are unchanged in canonical
+source. Each trial compiles once; no fixtures or games run. Completed private
+sources, headers and objects are gzip verified before cleanup.

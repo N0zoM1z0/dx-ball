@@ -31,6 +31,16 @@ Independent review verifies 236 exacts, 37 candidates, 68 input identities,
 60 carriers releases 245,760 allocated bytes, including obsolete CMake C objects.
 Current products remain. The core surface projection preserves all eleven
 complete code hashes and is rejected.
+Further [closed trials](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#shared-clock-types-in-the-current-surface-context)
+cover one coherent shared-clock model across 31 matching recipes and all 273
+complete units. It gains rotation height/waiting but loses fourteen exacts:
+net −12 functions / −5,955 bytes, so it is rejected. Reset stays nonexact.
+The PCX header-only lifetime stage worsens to 985/862 with 929 differences;
+editor virtual calls lose hit-region search and gain nothing. Both reject.
+Canonical sources and products remain unchanged; no fixture or game runs.
+Clock cleanup preserves 164 gzip-verified carriers; the compressed payload
+is 246,779 bytes instead of 882,228. PCX/editor cleanup releases 110,592
+allocated bytes across 38 verified carriers.
 The latest [runtime surface calls](../research/exact/RUNTIME_SURFACE_COM_CALLS.md)
 reduce complete paddle677 from104 to68 differences. Six virtual stdcall calls
 share the canonical interface; expressions/scopes and C API linkage are unchanged.
