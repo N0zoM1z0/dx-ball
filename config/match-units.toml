@@ -39,6 +39,102 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_fp_control]
+source = "src/runtime_fp_control.c"
+object = "build/exact/runtime_fp_control.obj"
+inputs = ["src/runtime_fp_control.c", "src/runtime_fp_control.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_fp_errors]
+source = "src/runtime_fp_errors.cpp"
+object = "build/exact/runtime_fp_errors.obj"
+inputs = ["src/runtime_fp_errors.cpp", "src/runtime_fp_control.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_fp_bits]
+source = "src/runtime_fp_bits.c"
+object = "build/exact/runtime_fp_bits.obj"
+inputs = ["src/runtime_fp_bits.c", "src/runtime_fp_control.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.crt-abstract-control-word]
+build = "runtime_fp_control"
+symbol = "_dxball_crt_abstract_control_word"
+target_address = 0x0041CF90
+size = 161
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+]
+
+[units.crt-hardware-control-word]
+build = "runtime_fp_control"
+symbol = "_dxball_crt_hardware_control_word"
+target_address = 0x0041D040
+size = 141
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+]
+
+[units.crt-control-fp]
+build = "runtime_fp_control"
+symbol = "__controlfp"
+target_address = 0x0041CF70
+size = 24
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+  { offset = 16, type = "REL32", symbol = "__control87", addend = 0, target = 0x0041CF30 },
+]
+
+[units.crt-set-math-errno]
+build = "runtime_fp_errors"
+symbol = "_dxball_crt_set_math_errno"
+target_address = 0x00419C40
+size = 42
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+  { offset = 22, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 33, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+]
+
+[units.crt-math-error-code]
+build = "runtime_fp_errors"
+symbol = "_dxball_crt_math_error_code"
+target_address = 0x00419CA0
+size = 50
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+]
+
+[candidates.crt-math-function-name]
+build = "runtime_fp_errors"
+symbol = "_dxball_crt_math_function_name"
+target_address = 0x00419C70
+size = 38
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+  { offset = 3, type = "DIR32", symbol = "?names@?1??dxball_crt_math_function_name@@9@9", addend = 0, target = 0x004233D0 },
+  { offset = 21, type = "DIR32", symbol = "?names@?1??dxball_crt_math_function_name@@9@9", addend = 216, target = 0x004233D0 },
+  { offset = 33, type = "DIR32", symbol = "?names@?1??dxball_crt_math_function_name@@9@9", addend = 4, target = 0x004233D0 },
+]
+
+[candidates.crt-set-float-exponent]
+build = "runtime_fp_bits"
+symbol = "_dxball_crt_set_float_exponent"
+target_address = 0x00419CE0
+size = 57
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+]
+
+[units.crt-float-special-type]
+build = "runtime_fp_bits"
+symbol = "_dxball_crt_float_special_type"
+target_address = 0x00419D20
+size = 99
+boundary_evidence = "docs/research/exact/RUNTIME_FP_CONTROL.md"
+relocations = [
+]
+
 [builds.runtime_float_render]
 source = "src/runtime_float_render.c"
 object = "build/exact/runtime_float_render.obj"

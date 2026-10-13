@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**296 functions / 67,283 code bytes / 136 metadata bytes**.
+**302 functions / 67,800 code bytes / 136 metadata bytes**.
+
+[FP control/classification](RUNTIME_FP_CONTROL.md) adds six complete exacts
+across517 bytes and two candidates. Source402, candidates91 (34 authored/57
+runtime); all prior comparisons remain intact.
 
 [Float rendering](RUNTIME_FLOAT_RENDER.md) adds six full exacts across654 bytes
 and two candidates. Current source394, candidates89 (34 authored/55 runtime);
