@@ -1,14 +1,23 @@
 # CRT reading and handle lifetime
 
 Four complete source bodies now cover descriptor reads, closes, handle
-installation and handle invalidation. None is yet a complete exact.
+installation and handle invalidation. Descriptor closing is now a complete exact.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `_read`, `0x41A120` | 611/605 | 463 |
-| `_close`, `0x419ED0` | 199/199 | 14 |
+| `_close`, `0x419ED0` | 199/199 | 0 |
 | `_set_osfhnd`, `0x41D890` | 163/163 | 13 |
 | `_free_osfhnd`, `0x41D940` | 144/144 | 12 |
+
+Direct record expressions and the owned validation-error return from shipped
+`close.c` improve199/14 to199/2. Capturing stdout before stderr reduces this
+to one commuted comparison byte; consuming both handle snapshots restores the
+original comparison and closes all199 bytes and eleven actual relocations.
+The complete pinned section and retained REA assembly independently agree.
+All344 old exacts and104 other candidates remain; the three owner companions
+have identical complete results. Three compiler sets, no runtime/provider work.
+Receipt `.analysis/descriptor-close-original-expression-20261014/verification.json`.
 
 The low-I/O record adds only its observed lookahead byte at Win32 offset5;
 natural stride remains8 and host handle width still grows. Reading retains

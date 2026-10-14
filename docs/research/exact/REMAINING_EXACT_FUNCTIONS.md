@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**344 functions / 71,269 code bytes / 136 metadata bytes**.
+**345 functions / 71,468 code bytes / 136 metadata bytes**.
+
+Descriptor close199 closes through direct records, owned validation return
+and both standard-handle snapshots in original query/comparison order. All344
+old exacts and104 other candidates remain. See [handle lifetime](RUNTIME_LOWIO_READ_CLOSE.md).
 
 Descriptor seek188 closes through original record expressions, assignment
 conditions and invalid-descriptor return ownership. All343 previous exacts,

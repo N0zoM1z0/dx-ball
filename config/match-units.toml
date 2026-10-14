@@ -11699,7 +11699,7 @@ relocations = [
   { offset = 537, type = "DIR32", symbol = "__doserrno", target = 0x4230b0, addend = 0 },
 ]
 
-[candidates.crt-close-descriptor]
+[units.crt-close-descriptor]
 build = "runtime_lowio_read"
 symbol = "_dxball_crt_close"
 target_address = 0x00419ED0

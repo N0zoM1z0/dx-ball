@@ -52,16 +52,23 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 344 |
-| Complete exact code bytes | 71,269 |
+| Exact functions | 345 |
+| Complete exact code bytes | 71,468 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 344 exact functions does not prove project completion.
+These are separate ledgers; 345 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Descriptor close closes199 bytes and all eleven actual relocations through
+direct record expressions, owned validation errors and both standard-handle
+snapshots in original query/comparison order. All344 old exacts and104 other
+candidates remain. Three compiler sets, no runtime/provider work. See
+[handle lifetime](../research/exact/RUNTIME_LOWIO_READ_CLOSE.md) and
+`.analysis/descriptor-close-original-expression-20261014/verification.json`.
 
 Descriptor seek closes188 bytes and all nine actual relocations through the
 original record expressions, assignment conditions and owned invalid-descriptor
