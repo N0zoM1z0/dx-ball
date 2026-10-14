@@ -44,7 +44,10 @@ void dxball_cpp_catch_it(DxBallCppExceptionRecord *exception,
 {
     if (catchable)
         dxball_cpp_build_catch_object(exception, registration, handler, catchable);
-    dxball_cpp_unwind_nested_frames(marker ? marker : registration, exception);
+    if (!marker)
+        dxball_cpp_unwind_nested_frames(registration, exception);
+    else
+        dxball_cpp_unwind_nested_frames(marker, exception);
     dxball_cpp_frame_unwind_to_state(registration, dispatcher, function, entry->try_low);
     registration->state = entry->try_high + 1;
     void *continuation = dxball_cpp_call_catch_block(exception, registration, context,

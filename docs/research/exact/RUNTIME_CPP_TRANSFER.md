@@ -3,7 +3,7 @@
 The complete pinned frame.obj sections and five retained REA records establish
 frame dispatch188, catch transfer148 and rethrow recognition44. Dispatch and
 recognition match in full, including every actual relocation. Catch transfer
-emits147 bytes with90 complete-span differences and remains a candidate.
+now matches all148 bytes and its five actual relocations.
 The new44-byte entry at0x0041B930 lies between catch-block calling and object
 construction; the provisional inventory previously omitted it.
 
@@ -31,3 +31,19 @@ trials plus the final objects and proofs remain private under
 `.analysis/runtime-cpp-transfer-20261014/`. Full structured unwinding,
 FindHandler, object construction, catch-block execution and integration remain
 open genuine dependencies.
+
+The later catch-transfer checkpoint restores the original conditional argument
+transport: default registration first, nonnull marker second, one merged
+stdcall unwind call. The earlier ternary materializes a merged EAX value and
+emits147/148/90. Explicit marker-first branches give148/148/3; the observed
+default-first order gives148/148/0. No argument, storage, call or state write is
+added. Both188-byte and44-byte owner exacts remain unchanged. Whole pinned
+frame.obj and retained REA `ev_422051616475627e1688206ffa76240663e159f07e5243bee1e1c0085ff3738d`
+provide complete original boundaries and all five bindings.
+
+Two VC4/native/i686 compilation sets and full owner comparisons; no runtime
+tests or provider session. All336 old exacts,112 other candidates and249
+semantic rows remain. Totals543 inventory/457 source/337 exact/69,994 code
+bytes/136 metadata/112 candidates. This does not close structured unwinding or
+game/runtime integration. Receipt:
+`.analysis/cpp-marker-argument-branches-20261014/verification.json`.

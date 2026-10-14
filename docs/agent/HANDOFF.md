@@ -52,16 +52,26 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 336 |
-| Complete exact code bytes | 69,846 |
+| Exact functions | 337 |
+| Complete exact code bytes | 69,994 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 336 exact functions does not prove project completion.
+These are separate ledgers; 337 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Catch transfer closes all148 bytes and five actual relocations by restoring
+default-frame-first argument branches around the single genuine stdcall unwind
+call. Intermediate marker-first148/3 is retained; final148/0 exact. Both188-byte
+and44-byte owner exacts remain; all336 old exacts/112 other candidates/249 semantic
+rows are preserved. Exact337/code69,994/candidates112; source457 unchanged.
+Two VC4/native/i686 sets, retained REA and no runtime tests/provider session.
+See [catch transfer](../research/exact/RUNTIME_CPP_TRANSFER.md) and
+`.analysis/cpp-marker-argument-branches-20261014/verification.json`. Full SEH,
+catch-object/catch-block execution and game integration remain open.
 
 Locale mapping improves565/555/280 to561/555/278 by beginning wide-buffer/count/
 result lifetimes only after ANSI and invalid-mode exits. Classification291 exact

@@ -656,18 +656,18 @@ relocations = [
   { offset = 174, type = "REL32", symbol = "_dxball_cpp_find_handler", addend = 0, target = 0x0041B270 },
 ]
 
-[candidates.cpp-catch-it]
+[units.cpp-catch-it]
 build = "runtime_cpp_transfer"
 symbol = "_dxball_cpp_catch_it"
 target_address = 0x0041B780
 size = 148
 boundary_evidence = "docs/research/exact/RUNTIME_CPP_TRANSFER.md"
 relocations = [
-  { offset = 29, type = "REL32", symbol = "_dxball_cpp_build_catch_object", addend = 0, target = 0x0041B960 },
-  { offset = 59, type = "REL32", symbol = "_dxball_cpp_unwind_nested_frames@8", addend = 0, target = 0x00418510 },
-  { offset = 83, type = "REL32", symbol = "_dxball_cpp_frame_unwind_to_state", addend = 0, target = 0x0041B690 },
-  { offset = 124, type = "REL32", symbol = "_dxball_cpp_call_catch_block", addend = 0, target = 0x0041B820 },
-  { offset = 138, type = "REL32", symbol = "_dxball_cpp_jump_to_continuation@8", addend = 0, target = 0x004184A0 },
+  { offset = 29, type = "REL32", symbol = "_dxball_cpp_build_catch_object", target = 0x41b960, addend = 0 },
+  { offset = 60, type = "REL32", symbol = "_dxball_cpp_unwind_nested_frames@8", target = 0x418510, addend = 0 },
+  { offset = 84, type = "REL32", symbol = "_dxball_cpp_frame_unwind_to_state", target = 0x41b690, addend = 0 },
+  { offset = 125, type = "REL32", symbol = "_dxball_cpp_call_catch_block", target = 0x41b820, addend = 0 },
+  { offset = 139, type = "REL32", symbol = "_dxball_cpp_jump_to_continuation@8", target = 0x4184a0, addend = 0 },
 ]
 
 [units.cpp-rethrow-filter]

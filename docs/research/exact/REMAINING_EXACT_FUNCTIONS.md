@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**336 functions / 69,846 code bytes / 136 metadata bytes**.
+**337 functions / 69,994 code bytes / 136 metadata bytes**.
+
+Catch transfer adds one complete148-byte exact through all five actual
+relocations. Both owner exacts188/44 and all336 prior exact units remain.
+Source457/candidates112; all34 authored candidates remain unchanged. See
+[C++ catch transfer](RUNTIME_CPP_TRANSFER.md).
 
 Exit control closes all128 bytes and13 relocations through the actual imported
 process API and reverse address cursor. Both18-byte wrappers remain exact;
