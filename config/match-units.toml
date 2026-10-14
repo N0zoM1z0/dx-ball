@@ -2867,7 +2867,30 @@ relocations = [
 source = "src/list_initializers.cpp"
 object = "build/exact/list_initializers.obj"
 inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/list_initializers.cpp", "src/list_initializers.h", "src/particles.h", "src/resources.h", "src/state_types.h"]
-flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+flags = ["/nologo", "/c", "/Od", "/Ob1", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+
+[candidates.list-global-init-13]
+build = "list_initializers"
+symbol = "_$E13"
+target_address = 0x0040F320
+size = 26
+boundary_evidence = "docs/research/exact/LIST_EMBEDDED_INITIALIZATION.md"
+source_generator = { kind = "vc4-global-embedded-list-initializer", type = "DxBallBoardStorage", global_name = "dxball_board_storage", member = "explosions", member_type = "DxBallExplosionList", member_offset = 20008, storage_header = "src/board_storage.h", constructor_unit = "initialize-explosion-list", inner_unit = "list-global-init-13", stage = "inner" }
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "_dxball_board_storage", addend = 20008, target = 0x0043AAB8 },
+  { offset = 13, type = "REL32", symbol = "??0DxBallExplosionList@@QAE@XZ", addend = 0, target = 0x0040F340 },
+]
+
+[units.list-global-init-14]
+build = "list_initializers"
+symbol = "_$E14"
+target_address = 0x0040F140
+size = 21
+boundary_evidence = "docs/research/exact/LIST_EMBEDDED_INITIALIZATION.md"
+source_generator = { kind = "vc4-global-embedded-list-initializer", type = "DxBallBoardStorage", global_name = "dxball_board_storage", member = "explosions", member_type = "DxBallExplosionList", member_offset = 20008, storage_header = "src/board_storage.h", constructor_unit = "initialize-explosion-list", inner_unit = "list-global-init-13", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E13", addend = 0, target = 0x0040F320 },
+]
 
 [units.initialize-projectile-list]
 build = "list_initializers"

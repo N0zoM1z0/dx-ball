@@ -51,17 +51,26 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 453 |
-| Exact functions | 334 |
-| Complete exact code bytes | 69,697 |
+| Source-present functions | 455 |
+| Exact functions | 335 |
+| Complete exact code bytes | 69,718 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 334 exact functions does not prove project completion.
+These are separate ledgers; 335 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Embedded list initialization adds one complete21-byte exact outer stage and a
+full inner candidate32/26/21. `/Ob1` expands only the implicit aggregate bridge;
+all58 existing owner exacts remain unchanged, with genuine constructor bindings.
+Source455/exact335/code69,718/candidates111; authored and origins unchanged.
+See [embedded initialization](../research/exact/LIST_EMBEDDED_INITIALIZATION.md)
+and `.analysis/list-implicit-inline-20261014/verification.json`. One VC4 compile,
+retained REA reused, no runtime/game tests. These are generated source emissions,
+not new authored routines; the inner stage and startup graph remain nonexact.
 
 Stream seeking/output add full153/381-byte source bodies with21/29 differences.
 No new exact:334/code69,697 unchanged; source453/candidates110. Preserve all334

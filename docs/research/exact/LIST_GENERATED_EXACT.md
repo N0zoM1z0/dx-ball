@@ -19,8 +19,10 @@ routines. Authored provenance remains 270; inventory remains 543. Current
 totals are source448/exact333/code69,468, attached metadata136 and candidates106.
 All 317 preceding exacts, 106 candidates and 249 semantic rows are preserved.
 
-The embedded board-storage initializer pair is still excluded because its
-source-only aggregate constructor lacks an attested original address. No whole
+The embedded board-storage pair was excluded because its source-only aggregate
+constructor lacked an attested original address. The later [inline expansion](LIST_EMBEDDED_INITIALIZATION.md)
+removes that boundary: its outer stage becomes exact, while the inner stage
+remains a complete candidate with direct real constructor bindings. No whole
 startup graph, CRT-table placement or execution claim follows from these units.
 Complete original procedure Evidence is reused from the list-layout run of
 October 9. Current comparisons and frozen inputs/products are retained under

@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**334 functions / 69,697 code bytes / 136 metadata bytes**.
+**335 functions / 69,718 code bytes / 136 metadata bytes**.
+
+Embedded list initialization adds the complete21-byte outer exact while all58
+owner exacts remain unchanged. Its inner stage is32/26/21, not exact. Source455/
+candidates111; authored count unchanged. See [embedded initialization](LIST_EMBEDDED_INITIALIZATION.md).
 
 Stream seeking/output restore full153/381-byte bodies with21/29 differences;
 neither is exact. Source453/candidates110, all334 old exacts/108 candidates
