@@ -54,6 +54,7 @@ extern DxBallInt dxball_lightning_x, dxball_lightning_y, dxball_lightning_frames
 extern DxBallInt dxball_device_reset_requested, dxball_surface_restore_requested;
 extern DxBallInt dxball_display_buffer_count;
 extern DxBallDDSurface *dxball_primary_surface, *dxball_secondary_surface;
+extern void (*dxball_present_screen_hook)(void);
 
 /* The Windows CRT supplies this cdecl import. The portable host bridge is
    limited to the recovered unsigned32 decimal score domain. */
