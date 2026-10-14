@@ -1,4 +1,7 @@
 #include <SDL.h>
+#include <AudioToolbox/AudioToolbox.h>
+#include <pthread.h>
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -684,6 +687,7 @@ typedef struct MacSoundBuffer {
     int pan;
     uint32_t frequency;
     int playing;
+    int looping;
     float cursor; // Sample position in buffer
     struct MacSoundBuffer *next;
 } MacSoundBuffer;
@@ -720,23 +724,41 @@ static void SDLCALL sdl_audio_callback(void *userdata, Uint8 *stream, int len) {
             for (int i = 0; i < samples; ++i) {
                 uint32_t s_idx = (uint32_t)cur->cursor;
                 if (s_idx >= total_samples) {
-                    cur->playing = 0;
-                    cur->cursor = 0.0f;
-                    break;
+                    if (cur->looping && total_samples > 0) {
+                        cur->cursor = fmodf(cur->cursor, (float)total_samples);
+                        s_idx = (uint32_t)cur->cursor;
+                    } else {
+                        cur->playing = 0;
+                        cur->cursor = 0.0f;
+                        break;
+                    }
                 }
 
-                int32_t sample_l = 0, sample_r = 0;
-                uint8_t *p = cur->pcm_data + s_idx * bytes_per_sample;
+                float frac = cur->cursor - (float)s_idx;
+                uint32_t s_next = s_idx + 1;
+                if (s_next >= total_samples) {
+                    s_next = cur->looping ? 0 : s_idx;
+                }
+
+                int32_t s1_l = 0, s1_r = 0;
+                int32_t s2_l = 0, s2_r = 0;
+                uint8_t *p1 = cur->pcm_data + s_idx * bytes_per_sample;
+                uint8_t *p2 = cur->pcm_data + s_next * bytes_per_sample;
 
                 if (cur->bits_per_sample == 8) {
-                    int16_t s = (int16_t)(((int)p[0] - 128) << 8);
-                    sample_l = s;
-                    sample_r = (cur->channels > 1) ? (int16_t)(((int)p[1] - 128) << 8) : s;
+                    s1_l = ((int)p1[0] - 128) << 8;
+                    s1_r = (cur->channels > 1) ? (((int)p1[1] - 128) << 8) : s1_l;
+                    s2_l = ((int)p2[0] - 128) << 8;
+                    s2_r = (cur->channels > 1) ? (((int)p2[1] - 128) << 8) : s2_l;
                 } else if (cur->bits_per_sample == 16) {
-                    int16_t s = *(int16_t *)p;
-                    sample_l = s;
-                    sample_r = (cur->channels > 1) ? *((int16_t *)p + 1) : s;
+                    s1_l = *(int16_t *)p1;
+                    s1_r = (cur->channels > 1) ? *((int16_t *)p1 + 1) : s1_l;
+                    s2_l = *(int16_t *)p2;
+                    s2_r = (cur->channels > 1) ? *((int16_t *)p2 + 1) : s2_l;
                 }
+
+                int32_t sample_l = (int32_t)((float)s1_l * (1.0f - frac) + (float)s2_l * frac);
+                int32_t sample_r = (int32_t)((float)s1_r * (1.0f - frac) + (float)s2_r * frac);
 
                 int32_t mixed_l = out[i * 2] + (int32_t)(sample_l * vol * pan_left);
                 int32_t mixed_r = out[i * 2 + 1] + (int32_t)(sample_r * vol * pan_right);
@@ -795,14 +817,17 @@ static DxBallInt DXBALL_DDCALL mac_sound_buffer_get_status(DxBallSoundBuffer *se
 static DxBallInt DXBALL_DDCALL mac_sound_buffer_lock(DxBallSoundBuffer *self, DxBallUInt offset, DxBallUInt bytes,
                                                     void **ptr1, DxBallUInt *bytes1, void **ptr2, DxBallUInt *bytes2, DxBallUInt flags)
 {
-    (void)offset; (void)flags;
+    (void)flags;
     MacSoundBuffer *b = (MacSoundBuffer *)self;
     if (!b) return -1;
     if (!b->pcm_data) {
-        b->pcm_data = (uint8_t *)calloc(1, bytes);
-        b->size = bytes;
+        b->pcm_data = (uint8_t *)calloc(1, offset + bytes);
+        b->size = offset + bytes;
+    } else if (offset + bytes > b->size) {
+        b->pcm_data = (uint8_t *)realloc(b->pcm_data, offset + bytes);
+        b->size = offset + bytes;
     }
-    if (ptr1) *ptr1 = b->pcm_data;
+    if (ptr1) *ptr1 = b->pcm_data + offset;
     if (bytes1) *bytes1 = bytes;
     if (ptr2) *ptr2 = NULL;
     if (bytes2) *bytes2 = 0;
@@ -813,19 +838,28 @@ static DxBallInt DXBALL_DDCALL mac_sound_buffer_unlock(DxBallSoundBuffer *self, 
     return 0;
 }
 static DxBallInt DXBALL_DDCALL mac_sound_buffer_play(DxBallSoundBuffer *self, DxBallUInt r1, DxBallUInt r2, DxBallUInt flags) {
-    (void)r1; (void)r2; (void)flags;
+    (void)r1; (void)r2;
     MacSoundBuffer *b = (MacSoundBuffer *)self;
     if (b) {
         if (g_audio_dev) SDL_LockAudioDevice(g_audio_dev);
-        b->cursor = 0.0f;
-        b->playing = 1;
+        b->looping = (flags & 1) != 0;
+        if (!b->playing) {
+            b->cursor = 0.0f;
+            b->playing = 1;
+        }
         if (g_audio_dev) SDL_UnlockAudioDevice(g_audio_dev);
     }
     return 0;
 }
 static DxBallInt DXBALL_DDCALL mac_sound_buffer_set_current_position(DxBallSoundBuffer *self, DxBallUInt pos) {
     MacSoundBuffer *b = (MacSoundBuffer *)self;
-    if (b) b->cursor = (float)pos;
+    if (b) {
+        if (g_audio_dev) SDL_LockAudioDevice(g_audio_dev);
+        int bytes_per_sample = (b->bits_per_sample / 8) * b->channels;
+        if (bytes_per_sample <= 0) bytes_per_sample = 1;
+        b->cursor = (float)(pos / bytes_per_sample);
+        if (g_audio_dev) SDL_UnlockAudioDevice(g_audio_dev);
+    }
     return 0;
 }
 static DxBallInt DXBALL_DDCALL mac_sound_buffer_set_volume(DxBallSoundBuffer *self, DxBallInt vol) {
@@ -845,7 +879,11 @@ static DxBallInt DXBALL_DDCALL mac_sound_buffer_set_frequency(DxBallSoundBuffer 
 }
 static DxBallInt DXBALL_DDCALL mac_sound_buffer_stop(DxBallSoundBuffer *self) {
     MacSoundBuffer *b = (MacSoundBuffer *)self;
-    if (b) b->playing = 0;
+    if (b) {
+        if (g_audio_dev) SDL_LockAudioDevice(g_audio_dev);
+        b->playing = 0;
+        if (g_audio_dev) SDL_UnlockAudioDevice(g_audio_dev);
+    }
     return 0;
 }
 static DxBallInt DXBALL_DDCALL mac_sound_buffer_restore(DxBallSoundBuffer *self) {
@@ -1545,25 +1583,325 @@ static DxBallMidiHandle DXBALL_DDCALL mac_midi_global_handle(const void *p) { re
 static DxBallInt DXBALL_DDCALL mac_midi_global_unlock(DxBallMidiHandle h) { (void)h; return 1; }
 static DxBallMidiHandle DXBALL_DDCALL mac_midi_global_free(DxBallMidiHandle h) { free((void *)h); return 0; }
 
-static DxBallUInt DXBALL_DDCALL mac_midi_stream_open(DxBallMidiHandle *s, DxBallUInt *d, DxBallUInt c, DxBallMidiCallback cb, size_t in, DxBallUInt f) {
-    (void)s; (void)d; (void)c; (void)cb; (void)in; (void)f; return 0;
+static uint64_t mac_get_time_us(void) {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (uint64_t)ts.tv_sec * 1000000ULL + (uint64_t)ts.tv_nsec / 1000ULL;
 }
+
+typedef struct MacMidiHeaderNode {
+    DxBallMidiHeader *header;
+    struct MacMidiHeaderNode *next;
+} MacMidiHeaderNode;
+
+typedef struct MacMidiStream {
+    AUGraph graph;
+    AudioUnit synth_unit;
+    DxBallMidiCallback callback;
+    size_t callback_instance;
+    uint32_t time_division;
+    uint32_t us_per_quarter_note;
+
+    pthread_mutex_t mutex;
+    pthread_cond_t cond;
+    pthread_t thread;
+
+    MacMidiHeaderNode *queue_head;
+    MacMidiHeaderNode *queue_tail;
+
+    int thread_running;
+    int playing;
+    int reset_requested;
+    int stop_requested;
+} MacMidiStream;
+
+static void *mac_midi_worker_thread(void *arg) {
+    MacMidiStream *stream = (MacMidiStream *)arg;
+
+    pthread_mutex_lock(&stream->mutex);
+    while (!stream->stop_requested) {
+        while (!stream->stop_requested && (!stream->playing || stream->queue_head == NULL)) {
+            pthread_cond_wait(&stream->cond, &stream->mutex);
+        }
+        if (stream->stop_requested) break;
+
+        MacMidiHeaderNode *node = stream->queue_head;
+        if (!node) continue;
+        stream->queue_head = node->next;
+        if (!stream->queue_head) stream->queue_tail = NULL;
+        DxBallMidiHeader *hdr = node->header;
+        free(node);
+
+        stream->reset_requested = 0;
+        pthread_mutex_unlock(&stream->mutex);
+
+        DxBallByte *p = hdr->data;
+        DxBallByte *end = hdr->data + hdr->bytes_recorded;
+        uint64_t target_time_us = 0;
+
+        while (p + 12 <= end) {
+            pthread_mutex_lock(&stream->mutex);
+            int abort_flag = (stream->stop_requested || stream->reset_requested || !stream->playing);
+            pthread_mutex_unlock(&stream->mutex);
+            if (abort_flag) break;
+
+            uint32_t delta_ticks = *(uint32_t *)p; p += 4;
+            uint32_t stream_id   = *(uint32_t *)p; p += 4;
+            (void)stream_id;
+            uint32_t event       = *(uint32_t *)p; p += 4;
+            uint32_t payload_len = 0;
+            if (event & 0x80000000UL) {
+                payload_len = event & 0x00FFFFFFUL;
+                payload_len = (payload_len + 3) & ~3UL;
+            }
+
+            if (delta_ticks > 0 && stream->time_division > 0) {
+                uint64_t wait_us = ((uint64_t)delta_ticks * stream->us_per_quarter_note) / stream->time_division;
+                uint64_t now_us = mac_get_time_us();
+                if (target_time_us == 0 || target_time_us < now_us) {
+                    target_time_us = now_us + wait_us;
+                } else {
+                    target_time_us += wait_us;
+                }
+                while (1) {
+                    pthread_mutex_lock(&stream->mutex);
+                    int abort_wait = (stream->stop_requested || stream->reset_requested || !stream->playing);
+                    pthread_mutex_unlock(&stream->mutex);
+                    if (abort_wait) break;
+
+                    uint64_t cur_us = mac_get_time_us();
+                    if (cur_us >= target_time_us) break;
+                    uint64_t sleep_us = target_time_us - cur_us;
+                    if (sleep_us > 5000) sleep_us = 5000;
+                    usleep((useconds_t)sleep_us);
+                }
+            }
+
+            pthread_mutex_lock(&stream->mutex);
+            abort_flag = (stream->stop_requested || stream->reset_requested || !stream->playing);
+            pthread_mutex_unlock(&stream->mutex);
+            if (abort_flag) break;
+
+            uint8_t ev_type = (event >> 24) & 0xFF;
+            if (ev_type == 0) {
+                uint8_t status = event & 0xFF;
+                uint8_t d1 = (event >> 8) & 0xFF;
+                uint8_t d2 = (event >> 16) & 0xFF;
+                if (stream->synth_unit) {
+                    MusicDeviceMIDIEvent(stream->synth_unit, status, d1, d2, 0);
+                }
+            } else if (ev_type == 1) {
+                uint32_t tempo = event & 0x00FFFFFFUL;
+                if (tempo > 0) {
+                    stream->us_per_quarter_note = tempo;
+                }
+            }
+
+            if (payload_len > 0) {
+                p += payload_len;
+            }
+        }
+
+        pthread_mutex_lock(&stream->mutex);
+        int can_callback = (!stream->stop_requested && !stream->reset_requested && stream->playing);
+        pthread_mutex_unlock(&stream->mutex);
+
+        if (can_callback && stream->callback) {
+            stream->callback((DxBallMidiHandle)stream, 0x3c9, stream->callback_instance, hdr, 0);
+        }
+
+        pthread_mutex_lock(&stream->mutex);
+    }
+    pthread_mutex_unlock(&stream->mutex);
+    return NULL;
+}
+
+static DxBallUInt DXBALL_DDCALL mac_midi_stream_open(DxBallMidiHandle *s, DxBallUInt *d, DxBallUInt c,
+                                                     DxBallMidiCallback cb, size_t in, DxBallUInt f)
+{
+    (void)d; (void)c; (void)f;
+    if (!s) return 1;
+
+    MacMidiStream *stream = (MacMidiStream *)calloc(1, sizeof(MacMidiStream));
+    if (!stream) return 1;
+
+    stream->callback = cb;
+    stream->callback_instance = in;
+    stream->time_division = 96;
+    stream->us_per_quarter_note = 500000;
+    pthread_mutex_init(&stream->mutex, NULL);
+    pthread_cond_init(&stream->cond, NULL);
+
+    NewAUGraph(&stream->graph);
+    AudioComponentDescription cd = {
+        .componentType = kAudioUnitType_MusicDevice,
+        .componentSubType = kAudioUnitSubType_DLSSynth,
+        .componentManufacturer = kAudioUnitManufacturer_Apple,
+        .componentFlags = 0,
+        .componentFlagsMask = 0
+    };
+    AUNode synthNode, outNode;
+    AUGraphAddNode(stream->graph, &cd, &synthNode);
+
+    AudioComponentDescription outCd = {
+        .componentType = kAudioUnitType_Output,
+        .componentSubType = kAudioUnitSubType_DefaultOutput,
+        .componentManufacturer = kAudioUnitManufacturer_Apple,
+        .componentFlags = 0,
+        .componentFlagsMask = 0
+    };
+    AUGraphAddNode(stream->graph, &outCd, &outNode);
+    AUGraphConnectNodeInput(stream->graph, synthNode, 0, outNode, 0);
+    AUGraphOpen(stream->graph);
+    AUGraphInitialize(stream->graph);
+    AUGraphStart(stream->graph);
+
+    AUGraphNodeInfo(stream->graph, synthNode, NULL, &stream->synth_unit);
+
+    stream->thread_running = 1;
+    pthread_create(&stream->thread, NULL, mac_midi_worker_thread, stream);
+
+    *s = (DxBallMidiHandle)stream;
+    return 0;
+}
+
 static DxBallUInt DXBALL_DDCALL mac_midi_stream_property(DxBallMidiHandle s, DxBallMidiProperty *p, DxBallUInt f) {
-    (void)s; (void)p; (void)f; return 0;
+    if (!s || !p) return 1;
+    MacMidiStream *stream = (MacMidiStream *)s;
+    if (f & 0x80000000UL) {
+        if ((f & 0x7FFFFFFFUL) == 1) { // MIDIPROP_TIMEDIV
+            stream->time_division = p->value;
+        }
+    }
+    return 0;
 }
+
 static DxBallUInt DXBALL_DDCALL mac_midi_prepare_header(DxBallMidiHandle s, DxBallMidiHeader *h, DxBallUInt sz) {
-    (void)s; (void)h; (void)sz; return 0;
+    (void)s; (void)sz;
+    if (h) h->flags |= 1;
+    return 0;
 }
-static DxBallUInt DXBALL_DDCALL mac_midi_stream_out(DxBallMidiHandle s, DxBallMidiHeader *h, DxBallUInt sz) {
-    (void)s; (void)h; (void)sz; return 0;
-}
-static DxBallUInt DXBALL_DDCALL mac_midi_stream_restart(DxBallMidiHandle s) { (void)s; return 0; }
-static DxBallUInt DXBALL_DDCALL mac_midi_stream_pause(DxBallMidiHandle s) { (void)s; return 0; }
-static DxBallUInt DXBALL_DDCALL mac_midi_out_reset(DxBallMidiHandle s) { (void)s; return 0; }
+
 static DxBallUInt DXBALL_DDCALL mac_midi_unprepare_header(DxBallMidiHandle s, DxBallMidiHeader *h, DxBallUInt sz) {
-    (void)s; (void)h; (void)sz; return 0;
+    (void)s; (void)sz;
+    if (h) h->flags &= ~1;
+    return 0;
 }
-static DxBallUInt DXBALL_DDCALL mac_midi_stream_close(DxBallMidiHandle s) { (void)s; return 0; }
+
+static DxBallUInt DXBALL_DDCALL mac_midi_stream_out(DxBallMidiHandle s, DxBallMidiHeader *h, DxBallUInt sz) {
+    (void)sz;
+    if (!s || !h) return 1;
+    MacMidiStream *stream = (MacMidiStream *)s;
+
+    MacMidiHeaderNode *node = (MacMidiHeaderNode *)malloc(sizeof(MacMidiHeaderNode));
+    if (!node) return 1;
+    node->header = h;
+    node->next = NULL;
+
+    pthread_mutex_lock(&stream->mutex);
+    if (!stream->queue_head) {
+        stream->queue_head = node;
+        stream->queue_tail = node;
+    } else {
+        stream->queue_tail->next = node;
+        stream->queue_tail = node;
+    }
+    pthread_cond_signal(&stream->cond);
+    pthread_mutex_unlock(&stream->mutex);
+    return 0;
+}
+
+static DxBallUInt DXBALL_DDCALL mac_midi_stream_restart(DxBallMidiHandle s) {
+    if (!s) return 1;
+    MacMidiStream *stream = (MacMidiStream *)s;
+    pthread_mutex_lock(&stream->mutex);
+    stream->playing = 1;
+    pthread_cond_signal(&stream->cond);
+    pthread_mutex_unlock(&stream->mutex);
+    return 0;
+}
+
+static DxBallUInt DXBALL_DDCALL mac_midi_stream_pause(DxBallMidiHandle s) {
+    if (!s) return 1;
+    MacMidiStream *stream = (MacMidiStream *)s;
+    pthread_mutex_lock(&stream->mutex);
+    stream->playing = 0;
+    pthread_mutex_unlock(&stream->mutex);
+    if (stream->synth_unit) {
+        for (int ch = 0; ch < 16; ++ch) {
+            MusicDeviceMIDIEvent(stream->synth_unit, 0xB0 | ch, 120, 0, 0); // All Sound Off
+            MusicDeviceMIDIEvent(stream->synth_unit, 0xB0 | ch, 123, 0, 0); // All Notes Off
+        }
+    }
+    return 0;
+}
+
+static DxBallUInt DXBALL_DDCALL mac_midi_out_reset(DxBallMidiHandle s) {
+    if (!s) return 0;
+    MacMidiStream *stream = (MacMidiStream *)s;
+    pthread_mutex_lock(&stream->mutex);
+    stream->reset_requested = 1;
+    MacMidiHeaderNode *cur = stream->queue_head;
+    while (cur) {
+        MacMidiHeaderNode *next = cur->next;
+        free(cur);
+        cur = next;
+    }
+    stream->queue_head = NULL;
+    stream->queue_tail = NULL;
+    pthread_cond_broadcast(&stream->cond);
+    pthread_mutex_unlock(&stream->mutex);
+
+    if (stream->synth_unit) {
+        for (int ch = 0; ch < 16; ++ch) {
+            MusicDeviceMIDIEvent(stream->synth_unit, 0xB0 | ch, 120, 0, 0);
+            MusicDeviceMIDIEvent(stream->synth_unit, 0xB0 | ch, 123, 0, 0);
+        }
+    }
+    return 0;
+}
+
+static DxBallUInt DXBALL_DDCALL mac_midi_stream_close(DxBallMidiHandle s) {
+    if (!s) return 0;
+    MacMidiStream *stream = (MacMidiStream *)s;
+    pthread_mutex_lock(&stream->mutex);
+    stream->stop_requested = 1;
+    stream->playing = 0;
+    MacMidiHeaderNode *cur = stream->queue_head;
+    while (cur) {
+        MacMidiHeaderNode *next = cur->next;
+        free(cur);
+        cur = next;
+    }
+    stream->queue_head = NULL;
+    stream->queue_tail = NULL;
+    pthread_cond_broadcast(&stream->cond);
+    pthread_mutex_unlock(&stream->mutex);
+
+    if (stream->thread_running) {
+        pthread_join(stream->thread, NULL);
+        stream->thread_running = 0;
+    }
+
+    if (stream->synth_unit) {
+        for (int ch = 0; ch < 16; ++ch) {
+            MusicDeviceMIDIEvent(stream->synth_unit, 0xB0 | ch, 120, 0, 0);
+            MusicDeviceMIDIEvent(stream->synth_unit, 0xB0 | ch, 123, 0, 0);
+        }
+    }
+
+    if (stream->graph) {
+        AUGraphStop(stream->graph);
+        AUGraphClose(stream->graph);
+        DisposeAUGraph(stream->graph);
+        stream->graph = NULL;
+    }
+
+    pthread_mutex_destroy(&stream->mutex);
+    pthread_cond_destroy(&stream->cond);
+    free(stream);
+    return 0;
+}
 
 void dxball_bind_mac(void)
 {
