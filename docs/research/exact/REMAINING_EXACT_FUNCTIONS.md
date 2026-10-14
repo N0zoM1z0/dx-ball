@@ -10,6 +10,11 @@ MessageBox adds one complete146-byte exact with14 relocations and58 literal
 bytes. All337 prior exacts remain; source457/candidates111. See
 [error controls](RUNTIME_ERROR_CONTROL.md).
 
+Raise improves393/393/323 to397/393/215 through captured FPE action traversal
+and shared typed dispatch with a genuine hardware guard. All53 original dispatch
+bytes remain covered; both lookup exacts/filter351/9 unchanged. See
+[signal dispatch](RUNTIME_SIGNALS.md).
+
 Exception filtering improves376/351/355 to351/351/9 through captured FPE
 countdown/action-slot traversal and the native-width tagged handler snapshot.
 Both owner exacts/full140-byte state and raise393/323 remain. See

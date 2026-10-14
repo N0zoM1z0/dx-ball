@@ -51,44 +51,53 @@ DxBallCrtSignalRecord *dxball_crt_exception_lookup(DxBallCrtDword exception_code
 int dxball_crt_raise(int signal_number)
 {
     DxBallCrtSignalAction *slot;
-    DxBallCrtSignalAction handler;
-    int index;
+    size_t handler;
+    DxBallCrtExceptionPointers *saved_information;
+    int saved_floating;
+    int hardware;
     switch (signal_number) {
-    case 2: slot = &control_c; handler = control_c; break;
+    case 2: slot = &control_c; handler = control_c.tag; break;
     case 4:
     case 8:
     case 11:
         slot = &dxball_crt_siglookup(signal_number)->action;
-        handler = *slot;
+        handler = slot->tag;
         break;
-    case 15: slot = &terminate_action; handler = terminate_action; break;
-    case 21: slot = &control_break; handler = control_break; break;
-    case 22: slot = &abort_action; handler = abort_action; break;
+    case 15: slot = &terminate_action; handler = terminate_action.tag; break;
+    case 21: slot = &control_break; handler = control_break.tag; break;
+    case 22: slot = &abort_action; handler = abort_action.tag; break;
     default: return -1;
     }
-    if (handler.tag == 1) return 0;
-    if (handler.tag == 0) dxball_crt_quick_exit(3);
-    if (signal_number == 8 || signal_number == 11 || signal_number == 4) {
-        DxBallCrtExceptionPointers *saved_information = dxball_crt_signal_state.information;
+    if (handler == 1) return 0;
+    if (handler == 0) dxball_crt_quick_exit(3);
+    hardware = signal_number == 8 || signal_number == 11 || signal_number == 4;
+    if (hardware) {
+        saved_information = dxball_crt_signal_state.information;
         dxball_crt_signal_state.information = 0;
         if (signal_number == 8) {
-            int saved_floating = dxball_crt_signal_state.floating_code;
+            saved_floating = dxball_crt_signal_state.floating_code;
             dxball_crt_signal_state.floating_code = 140;
-            for (index = dxball_crt_signal_state.first_floating;
-                 index < dxball_crt_signal_state.first_floating + dxball_crt_signal_state.floating_count;
-                 ++index)
-                dxball_crt_signal_state.records[index].action.tag = 0;
-            handler.floating(8, dxball_crt_signal_state.floating_code);
-            dxball_crt_signal_state.information = saved_information;
-            dxball_crt_signal_state.floating_code = saved_floating;
-        } else {
-            slot->tag = 0;
-            handler.simple(signal_number);
-            dxball_crt_signal_state.information = saved_information;
         }
-    } else {
-        slot->tag = 0;
-        handler.simple(signal_number);
+    }
+    if (signal_number == 8) {
+        int first = dxball_crt_signal_state.first_floating;
+        if (first < dxball_crt_signal_state.first_floating + dxball_crt_signal_state.floating_count) {
+            unsigned char *cursor = (unsigned char *)&dxball_crt_signal_state +
+                first * sizeof(DxBallCrtSignalRecord) + offsetof(DxBallCrtSignalRecord, action);
+            int remaining = dxball_crt_signal_state.floating_count;
+            do {
+                ((DxBallCrtSignalAction *)(void *)cursor)->tag = 0;
+                cursor += sizeof(DxBallCrtSignalRecord);
+            } while (--remaining != 0);
+        }
+    } else slot->tag = 0;
+    if (signal_number == 8)
+        ((DxBallCrtFloatingHandler)handler)(8, dxball_crt_signal_state.floating_code);
+    else
+        ((DxBallCrtSignalHandler)handler)(signal_number);
+    if (hardware) {
+        dxball_crt_signal_state.information = saved_information;
+        if (signal_number == 8) dxball_crt_signal_state.floating_code = saved_floating;
     }
     return 0;
 }

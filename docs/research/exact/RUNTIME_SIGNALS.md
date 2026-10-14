@@ -8,11 +8,21 @@ simple and floating callbacks use their observed one/two-argument signatures.
 
 Raise now includes its complete393-byte carrier, not the old340-byte decoded
 prefix: all53 embedded switch bytes and actual bindings are compared. Current
-raise is393/393 with323 differences; exception filtering is351/351 with9.
+raise is397/393 with215 differences; exception filtering is351/351 with9.
 Both remain nonexact. Handler snapshot/fallback improves filtering378/356→376/355.
 Hardware-only save/call/restore scopes improve raise401/328→393/323 and avoid
 MinGW's flat-guard uninitialized-state diagnostic without fake initial values.
 Two exact lookups are preserved across all three legacy compilations.
+
+Raise now uses the real tagged handler word, captured FPE action-slot countdown
+and shared one/two-argument callback segment. A captured hardware classification
+ties conditional context capture/restoration together without fake initial values,
+resolving the i686 diagnostic. This improves393/323 to397/215; still nonexact and
+all53 original dispatch bytes remain covered. Count-only389/340 is rejected;
+shared-dispatch397/130 and const-input variant retain the i686 diagnostic. Four
+VC4/native sets and four i686 attempts (two pass); no runtime/provider/game work.
+Both lookup exacts, full140-byte state and filter351/9 are unchanged. Current seal:
+`.analysis/signal-raise-separated-traversal-20261014/verification.json`.
 
 Filtering now captures the original native-width tagged handler word and calls
 its real one/two-argument signatures. FPE action slots use a whole-carrier byte

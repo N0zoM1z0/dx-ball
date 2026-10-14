@@ -63,6 +63,14 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Raise improves393/393/323 to397/393/215 through its tagged handler snapshot,
+captured FPE countdown and shared callback segment with genuine hardware guard.
+No fake initialization or diagnostic suppression; all53 original dispatch bytes,
+both lookup exacts/full140-byte state and filter351/9 remain. Four VC4/native sets,
+four i686 attempts/two pass; no runtime/provider/game work. Global counts unchanged.
+See [signal dispatch](../research/exact/RUNTIME_SIGNALS.md) and
+`.analysis/signal-raise-separated-traversal-20261014/verification.json`.
+
 Exception filtering improves376/351/355 to351/351/9 through the real tagged
 handler snapshot and captured FPE action-slot countdown. Both exact lookups and
 full140-byte state remain; raise393/323 including53 dispatch bytes is unchanged.
