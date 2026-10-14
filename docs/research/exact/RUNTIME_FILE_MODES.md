@@ -1,13 +1,22 @@
 # CRT descriptor modes and heap resizing
 
-Three original entries now have maintained, shared C source. The heap-size
-wrapper is exact; descriptor modes and resizing remain candidates.
+Three original entries now have maintained, shared C source. Heap sizing and
+resizing are exact; descriptor modes remain a candidate.
 
 | Entry | Original bytes | Current bytes | Differences |
 | --- | ---: | ---: | ---: |
 | `_setmode`, `0x41FCC0` | 128 | 128 | 2 |
-| `realloc`, `0x41FD70` | 111 | 106 | 15 |
+| `realloc`, `0x41FD70` | 111 | 111 | 0 |
 | `_msize`, `0x41FDE0` | 21 | 21 | 0 |
+
+Shipped `realloc.c` establishes an unbounded retry loop and an owned failure
+return after the new handler. Restoring these closes111 bytes and all seven
+actual relocations, including the unconditional heap reload at0x41FDD2 before
+the backward branch. The full pinned section and retained REA
+`ev_a7c91aa32057e35dc478b2453e1f69719213eb4b36a84df67971d205b09236cd`
+independently cover the original. Msize21 exact, calloc82/11 and all346 old exacts
+remain. One compiler set, no runtime/provider work. Current347/code71,723;
+receipt `.analysis/heap-resize-original-retry-20261014/verification.json`.
 
 `runtime_file_modes.c` validates the unsigned descriptor limit and open bit,
 indexes 32-record low-I/O blocks with an eight-byte stride, and changes only
@@ -22,9 +31,10 @@ owners. NULL requests use malloc; zero-size requests free. Other requests use
 the genuine stdcall HeapReAlloc import, reject sizes above `0xFFFFFFE0`, and
 retry failed allocations only when the current mode and handler permit it.
 The original reloads the heap unconditionally after the handler, before its
-backward branch. Current code loads it at the next iteration. An explicit
-loop-carried heap/result value adds a separate register and is worse; direct
-and cached import calls retain the same 15 differences. These trials are closed.
+backward branch. The earlier reconstructed do/while loaded it at the next
+iteration. An explicit loop-carried heap/result value adds a separate register
+and is worse; direct and cached import calls retained15 differences. Those
+trials are closed; original retry/failure ownership now restores the exact body.
 The exact heap-size wrapper uses the existing heap and genuine HeapSize import.
 
 The intervening `0x41FD40` entry is the 47-byte compiler stack probe, with EAX

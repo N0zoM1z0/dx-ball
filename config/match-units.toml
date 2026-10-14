@@ -11533,19 +11533,20 @@ relocations = [
   { offset = 119, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
 ]
 
-[candidates.crt-resize-memory]
+[units.crt-resize-memory]
 build = "runtime_resize"
 symbol = "_dxball_runtime_realloc"
-target_address = 0x0041FD70
+target_address = 0x41fd70
 size = 111
 boundary_evidence = "docs/research/exact/RUNTIME_FILE_MODES.md"
 relocations = [
-  { offset = 17, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 34, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 49, type = "DIR32", symbol = "__imp__HeapReAlloc@16", addend = 0, target = 0x00441278 },
-  { offset = 54, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x00440D70 },
-  { offset = 80, type = "DIR32", symbol = "_dxball_malloc_mode", addend = 0, target = 0x004234D4 },
-  { offset = 89, type = "REL32", symbol = "_dxball_call_new_handler", addend = 0, target = 0x00419EA0 },
+  { offset = 17, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 34, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { offset = 49, type = "DIR32", symbol = "__imp__HeapReAlloc@16", addend = 0, target = 0x441278 },
+  { offset = 54, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x440d70 },
+  { offset = 80, type = "DIR32", symbol = "_dxball_malloc_mode", addend = 0, target = 0x4234d4 },
+  { offset = 89, type = "REL32", symbol = "_dxball_call_new_handler", addend = 0, target = 0x419ea0 },
+  { offset = 99, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x440d70 },
 ]
 
 [units.crt-memory-size]

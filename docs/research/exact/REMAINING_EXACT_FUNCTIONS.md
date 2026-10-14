@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**346 functions / 71,612 code bytes / 136 metadata bytes**.
+**347 functions / 71,723 code bytes / 136 metadata bytes**.
+
+Heap resizing111 closes through the original retry loop and owned handler-failure
+return, restoring unconditional heap reload before the backward branch. All346
+old exacts, msize21 and calloc82/11 remain; candidates102. See
+[heap resizing](RUNTIME_FILE_MODES.md).
 
 Original `close.obj`/`osfinfo.obj` source ownership closes handle invalidation144
 through all six actual relocations while preserving close199 exact. Installation

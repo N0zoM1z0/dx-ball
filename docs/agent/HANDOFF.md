@@ -52,16 +52,27 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 346 |
-| Complete exact code bytes | 71,612 |
+| Exact functions | 347 |
+| Complete exact code bytes | 71,723 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 346 exact functions does not prove project completion.
+These are separate ledgers; 347 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Heap resizing closes111 bytes and all seven actual relocations through the
+original unbounded retry and owned handler-failure return from shipped realloc.c.
+This restores the unconditional post-handler heap reload before the backward
+branch. Msize21 exact, calloc82/11 and all346 old exacts remain. One compiler set,
+no runtime/provider work. Current347/code71,723/candidates102. See
+[heap resizing](../research/exact/RUNTIME_FILE_MODES.md) and
+`.analysis/heap-resize-original-retry-20261014/verification.json`.
+Signed-counter/cursor recovery gives44/19 instead of44/15 and is reverted;
+the multibyte consumed-index/logical-return trial is byte-identical58/7 and
+reverted. Their private producer phases retain the negative evidence.
 
 Original CRT object ownership resolves the handle-gate conflict: `close.obj`
 and `osfinfo.obj` are separate source producers, not one reconstructed aggregate.
