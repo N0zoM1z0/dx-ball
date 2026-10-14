@@ -98,25 +98,30 @@ int dxball_crt_exception_filter(DxBallCrtDword exception_code,
                                 DxBallCrtExceptionPointers *information)
 {
     DxBallCrtSignalRecord *record = dxball_crt_exception_lookup(exception_code);
-    DxBallCrtSignalAction handler;
+    size_t handler;
     DxBallCrtExceptionPointers *saved_information;
     int saved_floating;
-    int index;
     if (record == 0) goto unhandled;
-    handler = record->action;
-    if (handler.tag == 0) goto unhandled;
-    if (handler.tag == 5) {
+    handler = record->action.tag;
+    if (handler == 0) goto unhandled;
+    if (handler == 5) {
         record->action.tag = 0;
         return 1;
     }
-    if (handler.tag == 1) return -1;
+    if (handler == 1) return -1;
     saved_information = dxball_crt_signal_state.information;
     dxball_crt_signal_state.information = information;
     if (record->signal_number == 8) {
-        for (index = dxball_crt_signal_state.first_floating;
-             index < dxball_crt_signal_state.first_floating + dxball_crt_signal_state.floating_count;
-             ++index)
-            dxball_crt_signal_state.records[index].action.tag = 0;
+        int first = dxball_crt_signal_state.first_floating;
+        if (first < dxball_crt_signal_state.first_floating + dxball_crt_signal_state.floating_count) {
+            unsigned char *cursor = (unsigned char *)&dxball_crt_signal_state +
+                first * sizeof(DxBallCrtSignalRecord) + offsetof(DxBallCrtSignalRecord, action);
+            int remaining = dxball_crt_signal_state.floating_count;
+            do {
+                ((DxBallCrtSignalAction *)(void *)cursor)->tag = 0;
+                cursor += sizeof(DxBallCrtSignalRecord);
+            } while (--remaining != 0);
+        }
         saved_floating = dxball_crt_signal_state.floating_code;
         if (record->exception_code == 0xc000008eUL) dxball_crt_signal_state.floating_code = 131;
         else if (record->exception_code == 0xc0000090UL) dxball_crt_signal_state.floating_code = 129;
@@ -125,11 +130,11 @@ int dxball_crt_exception_filter(DxBallCrtDword exception_code,
         else if (record->exception_code == 0xc000008dUL) dxball_crt_signal_state.floating_code = 130;
         else if (record->exception_code == 0xc000008fUL) dxball_crt_signal_state.floating_code = 134;
         else if (record->exception_code == 0xc0000092UL) dxball_crt_signal_state.floating_code = 138;
-        handler.floating(8, dxball_crt_signal_state.floating_code);
+        ((DxBallCrtFloatingHandler)handler)(8, dxball_crt_signal_state.floating_code);
         dxball_crt_signal_state.floating_code = saved_floating;
     } else {
         record->action.tag = 0;
-        handler.simple(record->signal_number);
+        ((DxBallCrtSignalHandler)handler)(record->signal_number);
     }
     dxball_crt_signal_state.information = saved_information;
     return -1;

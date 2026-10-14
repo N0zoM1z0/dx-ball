@@ -8,11 +8,22 @@ simple and floating callbacks use their observed one/two-argument signatures.
 
 Raise now includes its complete393-byte carrier, not the old340-byte decoded
 prefix: all53 embedded switch bytes and actual bindings are compared. Current
-raise is393/393 with323 differences; exception filtering is376/351 with355.
+raise is393/393 with323 differences; exception filtering is351/351 with9.
 Both remain nonexact. Handler snapshot/fallback improves filtering378/356→376/355.
 Hardware-only save/call/restore scopes improve raise401/328→393/323 and avoid
 MinGW's flat-guard uninitialized-state diagnostic without fake initial values.
 Two exact lookups are preserved across all three legacy compilations.
+
+Filtering now captures the original native-width tagged handler word and calls
+its real one/two-argument signatures. FPE action slots use a whole-carrier byte
+cursor and one captured countdown, preserving the existing coherent-group guard.
+This restores the zero-local-byte frame and reduces376/355 to351/9. All351 bytes,
+21 bindings and140 initialized state bytes are checked; only the entry comparison
+and loop ECX/EDI allocation remain. A corresponding raise trial369/358 is rejected.
+Its original393/323 and all53 dispatch bytes are preserved after actual same-value
+COFF definition checks resolve renamed private labels. Four VC4/native/i686 sets,
+no runtime/provider/game tests. All338 exacts/109 other candidates/249 semantic rows
+remain. Current seal: `.analysis/signal-filter-fpe-countdown-20261014/verification.json`.
 
 Lookup reads use byte views of the complete carrier, preserving terminal
 metadata reads without forming an out-of-array C access. Dispatch requires

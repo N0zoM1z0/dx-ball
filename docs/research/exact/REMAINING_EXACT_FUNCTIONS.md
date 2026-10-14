@@ -10,6 +10,11 @@ MessageBox adds one complete146-byte exact with14 relocations and58 literal
 bytes. All337 prior exacts remain; source457/candidates111. See
 [error controls](RUNTIME_ERROR_CONTROL.md).
 
+Exception filtering improves376/351/355 to351/351/9 through captured FPE
+countdown/action-slot traversal and the native-width tagged handler snapshot.
+Both owner exacts/full140-byte state and raise393/323 remain. See
+[signal dispatch](RUNTIME_SIGNALS.md).
+
 Output refill improves288/328/311 to320/328/277 through active write-count
 lifetime and separate early error returns. It remains nonexact; all338 exacts
 and the three owner candidate companions are unchanged. See

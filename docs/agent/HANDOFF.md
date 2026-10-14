@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Exception filtering improves376/351/355 to351/351/9 through the real tagged
+handler snapshot and captured FPE action-slot countdown. Both exact lookups and
+full140-byte state remain; raise393/323 including53 dispatch bytes is unchanged.
+Its corresponding369/358 trial is rejected; renamed private COFF definitions
+are independently resolved with equal values/whole393 raw bytes. Four VC4/native/
+i686 sets, retained REA and no runtime/provider/game tests. Global counts unchanged.
+See [signal dispatch](../research/exact/RUNTIME_SIGNALS.md) and
+`.analysis/signal-filter-fpe-countdown-20261014/verification.json`.
+
 Output refill improves288/328/311 to320/328/277 through active write-count
 initialization and separately owned early error returns. Two owner exacts and
 three other candidates remain; all338 exacts/249 semantic rows are preserved.
