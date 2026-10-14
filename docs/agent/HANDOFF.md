@@ -52,16 +52,23 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 343 |
-| Complete exact code bytes | 71,081 |
+| Exact functions | 344 |
+| Complete exact code bytes | 71,269 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 343 exact functions does not prove project completion.
+These are separate ledgers; 344 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Descriptor seek closes188 bytes and all nine actual relocations through the
+original record expressions, assignment conditions and owned invalid-descriptor
+return from shipped CRT source. All343 previous exacts,105 other candidates and
+the complete360-byte error table remain. One compiler set, no runtime/provider
+work. See [low-I/O](../research/exact/RUNTIME_LOWIO_WRITE.md) and
+`.analysis/descriptor-seek-source-expression-20261014/verification.json`.
 
 Descriptor commit improves110/111/65 to111/111/2 through genuine register
 descriptor/status and shared error/completion ownership from shipped CRT source.

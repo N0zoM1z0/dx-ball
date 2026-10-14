@@ -1,16 +1,25 @@
 # CRT low-I/O write chain
 
 Five complete functions now have shared C source in `runtime_lowio.c`.
-Handle lookup and error mapping are exact across169 bytes and12 bindings;
+Handle lookup, error mapping and seeking are exact across357 bytes and21 bindings;
 the mapper also enforces all360 initialized table bytes in its match recipe.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `_write`, `0x41A770` | 555/555 | 22 |
 | `_dosmaperr`, `0x41A9A0` | 102/102 | 0 |
-| `_lseek`, `0x41AF40` | 188/188 | 13 |
+| `_lseek`, `0x41AF40` | 188/188 | 0 |
 | `_get_osfhandle`, `0x41D9D0` | 67/67 | 0 |
 | `_commit`, `0x41DA20` | 111/111 | 2 |
+
+The shipped `lseek.c` establishes direct record expressions, assignment
+conditions for handle/position acquisition and an owned invalid-descriptor
+return. Restoring these closes188 bytes and all nine actual relocations.
+REA `ev_b168811a2cb1c68a1af06a7efadaf93b8d3b14073ce429293e7225330d28088a`
+and the complete pinned CRT section independently cover the original body.
+All343 previous exacts,105 other candidates and the complete360-byte error
+table remain. One compiler set, no runtime/provider work.
+Receipt `.analysis/descriptor-seek-source-expression-20261014/verification.json`.
 
 The shipped `commit.c` establishes a register descriptor/status and shared
 error/completion labels, with DOS error published before errno9. Restoring that

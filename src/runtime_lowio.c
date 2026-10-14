@@ -100,31 +100,28 @@ commit_complete:
 /* FUNCTION: DXBALL 0x0041AF40 */
 DxBallCrtLong dxball_crt_seek(int descriptor, DxBallCrtLong offset, int origin)
 {
-    DxBallLowioRecord **block;
-    size_t record_offset;
-    void *handle;
     DxBallCrtDword position, error;
-    if ((unsigned int)descriptor >= (unsigned int)_nhandle) goto bad_descriptor;
-    block = &__pioinfo[descriptor >> 5];
-    record_offset = (descriptor & 31) * sizeof(DxBallLowioRecord);
-    if ((DXBALL_CRT_IO_RECORD(block, record_offset)->flags & 1) == 0) goto bad_descriptor;
-    handle = (void *)dxball_crt_get_osfhandle(descriptor);
-    if (handle == (void *)(size_t)-1) {
+    void *handle;
+    if ((unsigned int)descriptor >= (unsigned int)_nhandle ||
+        (__pioinfo[descriptor >> 5][descriptor & 31].flags & 1) == 0) {
+        errno = 9;
+        _doserrno = 0;
+        return -1;
+    }
+    if ((handle = (void *)dxball_crt_get_osfhandle(descriptor)) == (void *)(size_t)-1) {
         errno = 9;
         return -1;
     }
-    position = SetFilePointer(handle, offset, NULL, (DxBallCrtDword)origin);
-    error = position == (DxBallCrtDword)-1 ? GetLastError() : 0;
+    if ((position = SetFilePointer(handle, offset, NULL, (DxBallCrtDword)origin)) == (DxBallCrtDword)-1)
+        error = GetLastError();
+    else
+        error = 0;
     if (error != 0) {
         dxball_crt_map_os_error(error);
         return -1;
     }
-    DXBALL_CRT_IO_RECORD(block, record_offset)->flags &= 0xfd;
+    __pioinfo[descriptor >> 5][descriptor & 31].flags &= ~2;
     return (DxBallCrtLong)position;
-bad_descriptor:
-    errno = 9;
-    _doserrno = 0;
-    return -1;
 }
 
 /* FUNCTION: DXBALL 0x0041A770 */

@@ -11659,7 +11659,7 @@ relocations = [
   { offset = 93, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
 ]
 
-[candidates.crt-seek-descriptor]
+[units.crt-seek-descriptor]
 build = "runtime_lowio"
 symbol = "_dxball_crt_seek"
 target_address = 0x0041AF40
