@@ -63,6 +63,14 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Locale mapping improves565/555/280 to561/555/278 by beginning wide-buffer/count/
+result lifetimes only after ANSI and invalid-mode exits. Classification291 exact
+and counter44/15 remain; all336 exacts/111 other candidates/249 semantic rows
+are preserved. Explicit mode publication emits identical mapper bytes and is
+reverted. Two VC4 stages, one native/i686 set, retained REA and no runtime tests;
+global counts unchanged. See [locale backends](../research/exact/RUNTIME_LOCALE_BACKENDS.md)
+and `.analysis/locale-mode-publication-20261014/verification.json`.
+
 Scaling improves133/123/127 to125/123/115 through the native-width numeric table
 address cursor, avoiding a pre-array C pointer. All47 instructions correspond;
 only two MOV5/LEA6 root loads remain. Split capture is unchanged; pointer/address

@@ -21,10 +21,6 @@ int __crtLCMapStringA(DxBallCrtLocaleWord locale, DxBallCrtLocaleWord flags,
                      int output_count, int code_page)
 {
     static int mapping_api;
-    unsigned short *wide_input;
-    unsigned short *wide_output;
-    int wide_count;
-    int result;
     if (mapping_api == 0) {
         if (LCMapStringA(0, 0x100, "\0", 1, 0, 0)) mapping_api = 2;
         else if (LCMapStringW(0, 0x100, empty_wide, 1, 0, 0)) mapping_api = 1;
@@ -35,6 +31,10 @@ int __crtLCMapStringA(DxBallCrtLocaleWord locale, DxBallCrtLocaleWord flags,
     if (mapping_api == 2)
         return LCMapStringA(locale, flags, input, input_count, output, output_count);
     if (mapping_api != 1) return mapping_api;
+    unsigned short *wide_input;
+    unsigned short *wide_output;
+    int wide_count;
+    int result;
     wide_output = 0;
     if (code_page == 0) code_page = (int)__lc_codepage;
     wide_count = MultiByteToWideChar((unsigned int)code_page, 9, input, input_count, 0, 0);

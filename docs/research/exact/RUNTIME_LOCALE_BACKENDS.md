@@ -2,7 +2,7 @@
 
 `__crtGetStringTypeA` at `0x41E000` is complete exact across291 bytes and
 all15 actual relocations, including both full2/4-byte probe constants.
-`__crtLCMapStringA` at `0x41AA10` has complete565/555-byte source with280
+`__crtLCMapStringA` at `0x41AA10` has complete561/555-byte source with278
 differences; private `strncnt` at `0x41AC40` has44/44 bytes with15 differences.
 Neither candidate is exact. Full pinned CRT sections independently prove all
 original extents and bindings; imports are checked against the PE import table.
@@ -28,3 +28,13 @@ Source349/exact268/65,496 code bytes; metadata136, candidates72 unchanged in
 meaning. Runtime locale storage/OS execution and game integration remain open;
 no runtime tests or game builds. Private seal:
 `.analysis/runtime-locale-backends-20261014/verification.json`.
+
+The later lifetime checkpoint begins the four wide-buffer/count/result
+declarations only after ANSI and invalid-cache exits. It retains all original
+initializers, allocation/conversion calls and cleanup, reducing565/280 to561/278.
+Classification291 remains exact, with both full probe constants; counter44/15
+is unchanged. Explicit captured-mode publication produces identical mapper
+bytes and is not adopted. Two VC4 stages and one native/i686 set, retained REA,
+no runtime tests. All336 exacts/111 other candidates/249 semantic rows remain;
+global counts do not change. Receipt:
+`.analysis/locale-mode-publication-20261014/verification.json`.
