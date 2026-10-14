@@ -70,11 +70,17 @@ void dxball_crt_crop_float_zeros(char *buffer)
 
 void dxball_crt_assign_float(int use_double, void *destination, const char *text)
 {
-    double double_value;
+    union {
+        double value;
+        struct { unsigned int low, high; } words;
+    } double_value;
     float float_value;
     if (use_double) {
-        dxball_ascii_to_double(&double_value, text);
-        memcpy(destination, &double_value, sizeof(double_value));
+        dxball_ascii_to_double(&double_value.value, text);
+        /* Preserve both binary64 words without an x87 load or NaN conversion. */
+        memcpy(destination, &double_value.words.low, sizeof(double_value.words.low));
+        memcpy((char *)destination + sizeof(double_value.words.low),
+            &double_value.words.high, sizeof(double_value.words.high));
     } else {
         dxball_ascii_to_float(&float_value, text);
         memcpy(destination, &float_value, sizeof(float_value));

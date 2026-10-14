@@ -63,6 +63,14 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Float assignment improves77/76/47 to76/76/9 through genuine binary64 word
+representation/transport. Separate scalar carriers76/19 enlarge the frame and
+whole-copy77/47 is rejected. All four owner exacts/two other candidates remain;
+global457/335/code69,718/candidates113 unchanged. See [float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md)
+and `.analysis/runtime-float-assignment-20261014/verification.json`. Three
+VC4/native/i686 sets, retained REA reused, no provider/runtime/game tests.
+Remaining register/load differences do not justify a permutation sweep.
+
 String copy/concatenation add full source models198/232/232 and291/224/276.
 Strcpy's old7-byte range was only its entry jump; full232-byte shared original
 extent overlaps strcat224, not independent byte coverage. Exact335/code69,718

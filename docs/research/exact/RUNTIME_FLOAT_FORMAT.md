@@ -11,12 +11,25 @@ source bodies. Five match every byte after every actual relocation:
 | 00418E40 | Classify nonnegative or unordered value | 23 |
 | 0041D0D0 | Report unavailable float support | 11 |
 
-Decimal insertion remains101 bytes/5 differences, assignment77/76 bytes with47
+Decimal insertion remains101 bytes/5 differences, assignment76/76 bytes with9
 differences, and digit generation122/129 bytes with68 differences. Digit shifting
 uses overlap-safe memmove rather than the original overlapping intrinsic strcpy.
 Assignment preserves object representations, including NaNs. The original
 three-argument digit routine uses a guard digit and updates decimal position on
 carry. Decimal insertion requires a defined spare byte after the terminator.
+
+Assignment continuation restores the actual two-word binary64 representation
+and separate four-byte transport, without floating loads or NaN conversion.
+Independent word temporaries give76/19 but enlarge the frame; the real union
+view retains the original12-byte conversion frame and76/9. Whole representation
+copy reverts to77/47 and is rejected. The remaining nine differences are register
+and load scheduling; no permutation sweep is made. All four owner exacts and two
+other owner candidates are re-compared unchanged, all331 other exacts/110 other
+candidates/249 semantic rows retain their inputs/products. Three VC4/native/i686
+sets run; retained REA bytes `ev_c8fb3a302ec8caa477585de4fe2ba67b16cfa1dad5b34c4b08a38abff4c645d8`
+and the complete pinned section are reused. No provider/runtime/game tests run.
+Current totals457/335/69,718, candidates113. Receipt:
+`.analysis/runtime-float-assignment-20261014/verification.json`.
 
 The callback state matches all24 initialized bytes and six genuine relocations.
 Typed union slots hold the unavailable callback before activation and each

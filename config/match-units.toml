@@ -1158,7 +1158,7 @@ size = 76
 boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
 relocations = [
   { offset = 21, type = "REL32", symbol = "_dxball_ascii_to_double", addend = 0, target = 0x0041D580 },
-  { offset = 56, type = "REL32", symbol = "_dxball_ascii_to_float", addend = 0, target = 0x0041D5C0 },
+  { offset = 55, type = "REL32", symbol = "_dxball_ascii_to_float", addend = 0, target = 0x0041D5C0 },
 ]
 
 [units.crt-positive-float]
