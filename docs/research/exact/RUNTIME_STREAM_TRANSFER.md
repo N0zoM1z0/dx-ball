@@ -6,19 +6,24 @@ input/output refill and terminal flags. Closure, input refill and terminal flags
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `fclose`, `0x417A30` | 112/112 | 0 |
-| `fread`, `0x417AA0` | 326/324 | 218 |
+| `fread`, `0x417AA0` | 326/328 | 232 |
 | `_getstream`, `0x41A5A0` | 126/126 | 2 |
 | `_filbuf`, `0x418220` | 240/240 | 0 |
-| `_flsbuf`, `0x41A620` | 328/328 | 50 |
+| `_flsbuf`, `0x41A620` | 328/328 | 1 |
 | `_isatty`, `0x41DFA0` | 42/42 | 0 |
 
-Output refill improves328/67 to328/50 through the conditional safe-record
-selection established by shipped `internal.h`. The negative buffer-acquisition
-guard from `_flsbuf.c` gives an identical complete result. All actual relocations
-are refreshed; three owner exacts, fread324/218 and getstream126/2 remain fully
-unchanged. Two compiler sets, no runtime/provider work; all349 exacts/72,681 code
-bytes and249 semantic rows remain. Receipt
-`.analysis/output-refill-original-safe-record-20261015/verification.json`.
+Output refill improves328/67 through328/50 to328/1. Shipped `internal.h`
+establishes conditional safe-record selection; the original independent
+`_flsbuf.obj` boundary closes register rotation and error-epilogue scheduling.
+All122 instruction addresses/widths and327 bytes match after nine actual
+relocations. Only CMP operand commutation at0x41A738 remains; reversed source
+comparison emits the identical result and is reverted. The body moves unchanged
+to `src/runtime_stream_output.c`. Three owner exacts and getstream126/2 remain;
+unchanged fread emits328/326/232 instead of324/326/218 after separation.
+Three compiler sets, with the selected isolated product reused through
+byte-identical source/header inputs; no runtime/provider work. All349 exacts,
+72,681 code bytes and249 semantic rows remain. Receipt
+`.analysis/output-refill-original-object-owner-20261015/verification.json`.
 The separate original fread assignment/update-order trial gives324/223 and is
 rejected, with its source restored before these output-refill compilations.
 

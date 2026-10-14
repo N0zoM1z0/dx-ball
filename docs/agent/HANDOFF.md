@@ -63,12 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
-Output refill improves328/328/67 to328/328/50 through original conditional
-safe-record selection. The original negative buffer-acquisition guard adds no
-further byte gain. All three owner exacts, both other candidates and all349
-exacts remain unchanged. Two compiler sets, no runtime/provider work; see
+Output refill improves328/328/67 through50 to328/328/1. Original conditional
+safe-record selection reduces17 differences; independent _flsbuf object
+ownership closes the register rotation and error-epilogue scheduling. Only
+the CMP operand commutation at0x41A738 remains; swapping source operands gives
+the identical result and is reverted. All349 exacts and getstream126/2 remain;
+unchanged fread source emits328/326/232 instead of324/326/218 after separation.
+Three compiler sets for ownership, with the selected isolated object reused
+through byte-identical source/header inputs; no runtime/provider work. See
 [stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md) and
-`.analysis/output-refill-original-safe-record-20261015/verification.json`.
+`.analysis/output-refill-original-object-owner-20261015/verification.json`.
 The independent fread assignment/update-order trial worsens324/218 to324/223
 and is fully reverted; its retained evidence prevents repeating that route.
 

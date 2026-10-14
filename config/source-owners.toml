@@ -305,6 +305,11 @@ source = "src/runtime_stream_transfer.c"
 header = "src/runtime_stream_transfer.h"
 additional_inputs = ["src/runtime_stream.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/allocator.h", "src/state_types.h"]
 
+[owners.runtime_stream_output]
+source = "src/runtime_stream_output.c"
+header = "src/runtime_stream_transfer.h"
+additional_inputs = ["src/runtime_stream.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/allocator.h", "src/state_types.h"]
+
 [owners.runtime_stream_open]
 source = "src/runtime_stream_open.c"
 header = "src/runtime_stream_open.h"
