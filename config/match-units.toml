@@ -39,6 +39,28 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_absolute_double]
+source = "src/runtime_absolute_double.c"
+object = "build/exact/runtime_absolute_double.obj"
+inputs = ["src/runtime_absolute_double.c", "src/runtime_absolute_double.h", "src/runtime_fp_exceptions.h", "src/runtime_float.h", "src/runtime_fp_control.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[units.crt-absolute-double]
+build = "runtime_absolute_double"
+symbol = "_dxball_crt_absolute_double"
+target_address = 0x00417660
+size = 229
+boundary_evidence = "docs/research/exact/RUNTIME_ABSOLUTE_DOUBLE.md"
+relocations = [
+  { offset = 15, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+  { offset = 54, type = "REL32", symbol = "_dxball_crt_float_special_type", addend = 0, target = 0x00419D20 },
+  { offset = 104, type = "REL32", symbol = "_dxball_crt_handle_single_exception", addend = 0, target = 0x004194A0 },
+  { offset = 123, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+  { offset = 146, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+  { offset = 177, type = "REL32", symbol = "_dxball_crt_handle_single_quiet_nan", addend = 0, target = 0x00419450 },
+  { offset = 213, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+]
+
 [builds.runtime_memory_copy]
 source = "src/runtime_memory_copy.c"
 object = "build/exact/runtime_memory_copy.obj"

@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**333 functions / 69,468 code bytes / 136 metadata bytes**.
+**334 functions / 69,697 code bytes / 136 metadata bytes**.
+
+The full 229-byte CRT fabs is exact, including real special-value/error handling
+and all seven calls. Source450/candidates107; all333 old exacts/107 candidates
+are preserved. See [double absolute value](RUNTIME_ABSOLUTE_DOUBLE.md).
 
 Sixteen whole compiler-generated list initializer stages add 376 exact bytes
 from unchanged current source and products. Source-emission entries448;

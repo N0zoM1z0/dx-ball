@@ -51,17 +51,26 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 449 |
-| Exact functions | 333 |
-| Complete exact code bytes | 69,468 |
+| Source-present functions | 450 |
+| Exact functions | 334 |
+| Complete exact code bytes | 69,697 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 333 exact functions does not prove project completion.
+These are separate ledgers; 334 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Full CRT fabs229 is exact. Preserve real control/classification/error boundaries,
+infinity/NaN handling and finite binary64 representation before control restore
+and return load. Category dispatch130→18, genuine result union18→0. Source450/
+exact334/code69,697; all333 old exacts/107 candidates unchanged. See
+[double absolute value](../research/exact/RUNTIME_ABSOLUTE_DOUBLE.md) and
+`.analysis/runtime-absolute-double-20261014/verification.json`. One closed two-
+record REA session; no runtime/game checks. Exponent suffix differences remain
+commuted additions; no unsupported spelling/layout trial was made.
 
 Memory copy adds partial forward-phase source,124/334 bytes with333 differences.
 The declared nonoverlapping API is modeled, but the original reverse extension
@@ -559,7 +568,7 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 333 exact closures and current producers.
+- `build/reports/exact-replay.json`: all 334 exact closures and current producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 107 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
