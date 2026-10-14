@@ -13,10 +13,21 @@ and whole pinned VC4 CRT sections. Six are exact after every actual relocation:
 | 00419D20 | Infinity/quiet-NaN/signaling-NaN classification | 99 |
 
 Name lookup retains38 bytes/5 register-allocation differences. Exponent editing
-improves60/57 bytes with57 differences to57/57 with22 differences. Both remain
+improves60/57 bytes with57 differences to57/57 with4 differences. Both remain
 candidates. Its full int argument contributes only a wrapped biased low word;
 unsigned biasing avoids signed overflow and negative-shift undefined behavior.
 Binary64 views are alias-safe, and the work union retains natural double alignment.
+
+The later typed representation snapshot captures the complete two-word value
+before editing its high halfword. It preserves all bits without an early x87
+load, and reduces22 differences to4. Generic memcpy59/57/57 is rejected; the
+selected typed snapshot is57/57/4. Only initial high/low word loading and saving
+order differs now. No field/operand permutation sweep is made. The99-byte special
+classifier remains exact. Two VC4/native/i686 sets and full comparisons run,
+retained REA assembly `ev_d4d7a619bff0091472889fd2dab1cad759538df445e025a04ff6c08e7e9b6e22`
+is reused; no provider/runtime/game tests.
+Current totals457/335/code69,718/candidates113 stay unchanged. Receipts:
+`.analysis/runtime-float-exponent-20261014/verification.json`.
 
 All27 name records/216 initialized bytes,27 pointer relocations and134 complete
 literal bytes match. Native record pointers retain natural width. The control

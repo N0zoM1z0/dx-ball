@@ -29,8 +29,8 @@ double dxball_crt_set_float_exponent(double value, int exponent)
     const DxBallFpDoubleParts *parts = (const DxBallFpDoubleParts *)(const void *)&value;
     const DxBallFpDoubleWords *input = (const DxBallFpDoubleWords *)(const void *)&value;
     unsigned short biased;
-    result.parts.low = parts->low;
-    result.parts.high = parts->high;
+    /* Capture the complete representation without a floating load/conversion. */
+    result.parts = *parts;
     /* The argument occupies a full int slot; only its wrapped biased low word
        reaches the serialized exponent field. */
     biased = (unsigned short)((unsigned int)exponent + 0x3feU);

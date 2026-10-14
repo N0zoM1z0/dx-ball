@@ -63,6 +63,13 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Exponent editing improves57/57/22 to57/57/4 through a typed two-word snapshot.
+The99-byte classification companion remains exact; generic memcpy59/57/57 is
+rejected. Remaining initial word load/store order is nonexact. See [FP control](../research/exact/RUNTIME_FP_CONTROL.md)
+and `.analysis/runtime-float-exponent-20261014/verification.json`. Two
+VC4/native/i686 sets, retained REA reused, no provider/runtime/game tests.
+Global457/335/code69,718/candidates113 unchanged; no permutation sweep.
+
 Float assignment improves77/76/47 to76/76/9 through genuine binary64 word
 representation/transport. Separate scalar carriers76/19 enlarge the frame and
 whole-copy77/47 is rejected. All four owner exacts/two other candidates remain;
