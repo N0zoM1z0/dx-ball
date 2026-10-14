@@ -52,16 +52,27 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 335 |
-| Complete exact code bytes | 69,718 |
+| Exact functions | 336 |
+| Complete exact code bytes | 69,846 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 335 exact functions does not prove project completion.
+These are separate ledgers; 336 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Exit control128 is exact through real ExitProcess stdcall and decrement-before-
+comparison address traversal. Both18-byte wrapper exacts remain; walker32/6 is
+unchanged. Source457/exact336/code69,846/candidates113, old335 exacts/113 candidates
+preserved. Only four semantic rows refresh after the same1,031 calls/1,026 fixtures
+across native and reused VC4/i686 objects, with unchanged observation digest.
+See [termination](../research/TERMINATION_OWNER.md) and
+`.analysis/termination-process-api-20261014/verification.json`. Retained REA,
+one VC4/native/i686 set plus one native shared fixture build; no new cases,
+provider/game/hardware tests or physical process exit. The native operation
+table is fixture-only; source now invokes the genuine API. Startup/integration open.
 
 Exponent editing improves57/57/22 to57/57/4 through a typed two-word snapshot.
 The99-byte classification companion remains exact; generic memcpy59/57/57 is

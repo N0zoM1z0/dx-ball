@@ -1,4 +1,6 @@
 #include "termination.h"
+#include "termination_process_api.h"
+#include <stddef.h>
 
 DxBallTerminationOps dxball_termination_ops;
 unsigned int dxball_termination_done;
@@ -8,7 +10,6 @@ DxBallCrtCallback *dxball_onexit_end;
 DxBallCrtCallback dxball_preterminators[2];
 DxBallCrtCallback dxball_terminators[1];
 
-/* 0x4179D0: bounds are local arguments; callback slots are read as visited. */
 void dxball_crt_run_initializers(DxBallCrtCallback *first,
                                  DxBallCrtCallback *last)
 {
@@ -19,19 +20,21 @@ void dxball_crt_run_initializers(DxBallCrtCallback *first,
     }
 }
 
-/* 0x417950: the reverse walk captures the end but reloads the global begin. */
 void dxball_crt_do_exit(unsigned int status, int quick, int return_to_caller)
 {
-    DxBallCrtCallback *cursor;
+    size_t cursor;
     dxball_termination_done = 1;
     dxball_exit_flag = (unsigned char)return_to_caller;
     if (!quick) {
         if (dxball_onexit_begin) {
-            cursor = dxball_onexit_end;
-            while (cursor > dxball_onexit_begin) {
-                --cursor;
-                if (*cursor)
-                    (*cursor)();
+            /* Decrement before comparison, without forming a before-array
+               pointer on the original empty-table path. */
+            cursor = (size_t)(void *)dxball_onexit_end - sizeof(DxBallCrtCallback);
+            while (cursor >= (size_t)(void *)dxball_onexit_begin) {
+                DxBallCrtCallback *slot = (DxBallCrtCallback *)(void *)cursor;
+                if (*slot)
+                    (*slot)();
+                cursor -= sizeof(DxBallCrtCallback);
             }
         }
         dxball_crt_run_initializers(dxball_preterminators,
@@ -39,16 +42,14 @@ void dxball_crt_do_exit(unsigned int status, int quick, int return_to_caller)
     }
     dxball_crt_run_initializers(dxball_terminators, dxball_terminators + 1);
     if (!return_to_caller)
-        dxball_termination_ops.exit_process(status);
+        ExitProcess(status);
 }
 
-/* 0x417910: normal exit, including on-exit and pretermination callbacks. */
 void dxball_crt_exit(unsigned int status)
 {
     dxball_crt_do_exit(status, 0, 0);
 }
 
-/* 0x417930: C _exit still executes the termination table in this CRT. */
 void dxball_crt_quick_exit(unsigned int status)
 {
     dxball_crt_do_exit(status, 1, 0);

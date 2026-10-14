@@ -31,7 +31,12 @@ class CoffTarget(Target):
         self.uc.mem_map(self.BASE, 0x100000)
         addresses = {i + 1: self.BASE + i * 0x2000 for i in range(len(sections))}
         common = {'_' + name: self.COMMON + i * 0x40 for i, name in enumerate(WIDTHS)}
+        exit_import = self.COMMON + 0xF00
+        self.write_u32(exit_import, self.EXIT)
         def resolve(symbol):
+            if symbol['section'] == 0 and symbol['name'] == '__imp__ExitProcess@4':
+                assert symbol['value'] == 0 and symbol['storage'] == 2
+                return exit_import
             if symbol['section'] == 0 and symbol['name'] in common:
                 assert symbol['storage'] == 2 and symbol['value'] == WIDTHS[symbol['name'][1:]], symbol
                 return common[symbol['name']]
@@ -82,7 +87,7 @@ class CoffTarget(Target):
 
     def exit_hook(self, uc, address, size, userdata):
         self.platform_exit(self._args(1)[0])
-        self._return()  # Explicit portable C dependency bridge uses cdecl.
+        self._return(pop=4)  # Actual Windows ExitProcess import is stdcall on both objects.
 
 
 def main():
@@ -132,8 +137,8 @@ def main():
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(json.dumps(dict(status='pass', inputs=frozen,
             target_sha256=original.target_sha256, products=products,
-            limitations=['Generated-code semantics with controlled cdecl callbacks/platform bridge; no exactness claim.',
-                         'Original ExitProcess uses stdcall; portable object dependency bridge uses cdecl.',
+            limitations=['Generated-code semantics with controlled callbacks and returning ExitProcess; no physical exit claim.',
+                         'Original and generated ExitProcess imports use stdcall; native fixture interposition uses its native ABI.',
                          'Profiles repeat the same original cases, counted once.']), indent=2) + '\n')
         print('CRT termination original/objects:', {name: value['total'] for name, value in products.items()})
 

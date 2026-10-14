@@ -61,6 +61,7 @@ def inputs():
     # Freeze the actual imported Python source/cache and native engine images,
     # in addition to this owner's declared source and target manifest.
     paths = {ROOT / name for name in ('src/termination.c', 'src/termination.h',
+             'src/termination_process_api.h', 'tests/termination_process_interposer.c',
              'tests/termination_oracle.py', 'tests/test_termination_differential.py',
              'tests/target_oracle.py', 'scripts/repo-python', 'config/target.toml')}
     paths.add(Path(sys.executable).resolve())
@@ -95,13 +96,15 @@ def main():
     with session_lock():
         library = args.library.resolve() if args.library else ROOT / 'build/probes/termination/libtermination.so'
         compiled = {}
-        build_inputs = {str(ROOT / n): sha(ROOT / n) for n in ('src/termination.c', 'src/termination.h')}
+        build_inputs = {str(ROOT / n): sha(ROOT / n) for n in ('src/termination.c', 'src/termination.h',
+                        'src/termination_process_api.h', 'tests/termination_process_interposer.c')}
         if not args.library:
             library.parent.mkdir(parents=True, exist_ok=True)
             compiler = Path(shutil.which('cc')).resolve()
             build_inputs.update(compiler_inputs(compiler, linked=True))
             command = [str(compiler), '-std=c90', '-Wall', '-Wextra', '-Wpedantic', '-Werror',
-                       '-O2', '-fPIC', '-shared', str(ROOT / 'src/termination.c'), '-o', str(library)]
+                       '-O2', '-fPIC', '-shared', str(ROOT / 'src/termination.c'),
+                       str(ROOT / 'tests/termination_process_interposer.c'), '-o', str(library)]
             compiled = dict(command=command, compiler_sha256=sha(compiler))
             result = subprocess.run(command, capture_output=True, text=True)
             (library.parent / 'native-compiler.log').write_text(result.stdout + result.stderr)

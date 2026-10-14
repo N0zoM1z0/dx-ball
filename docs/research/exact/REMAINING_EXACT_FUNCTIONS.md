@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**335 functions / 69,718 code bytes / 136 metadata bytes**.
+**336 functions / 69,846 code bytes / 136 metadata bytes**.
+
+Exit control closes all128 bytes and13 relocations through the actual imported
+process API and reverse address cursor. Both18-byte wrappers remain exact;
+walker32/6 remains a candidate. Source457/candidates113 unchanged. See
+[termination continuation](../TERMINATION_OWNER.md).
 
 Exponent editing improves57/57/22 to57/57/4 while its99-byte exact companion
 remains unchanged. Global457/335/113 stay unchanged. See [FP control](RUNTIME_FP_CONTROL.md).

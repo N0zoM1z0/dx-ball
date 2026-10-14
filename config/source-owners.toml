@@ -222,7 +222,7 @@ source = "src/termination.c"
 header = "src/termination.h"
 oracle = "tests/test_termination_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/cpp_allocator.cpp", "config/native-symbols.map", "CMakeLists.txt", "tests/termination_oracle.py", "tests/test_termination_coff.py", "scripts/coff.py", "scripts/legacy_toolchain.py", "scripts/resource_limits.py", "scripts/repo-python", "config/target.toml", "config/tools.lock.toml"]
+additional_inputs = ["src/cpp_allocator.cpp", "config/native-symbols.map", "CMakeLists.txt", "tests/termination_oracle.py", "tests/test_termination_coff.py", "scripts/coff.py", "scripts/legacy_toolchain.py", "scripts/resource_limits.py", "scripts/repo-python", "config/target.toml", "config/tools.lock.toml", "src/termination_process_api.h", "tests/termination_process_interposer.c"]
 
 [owners.list_initializers]
 source = "src/list_initializers.cpp"

@@ -39,6 +39,28 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[units.crt-do-exit]
+build = "termination_exact"
+symbol = "_dxball_crt_do_exit"
+target_address = 0x00417950
+size = 128
+boundary_evidence = "docs/research/TERMINATION_OWNER.md"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "_dxball_termination_done", addend = 0, target = 0x004230F0 },
+  { offset = 23, type = "DIR32", symbol = "_dxball_exit_flag", addend = 0, target = 0x004230EC },
+  { offset = 31, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
+  { offset = 40, type = "DIR32", symbol = "_dxball_onexit_end", addend = 0, target = 0x00440D78 },
+  { offset = 49, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
+  { offset = 68, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
+  { offset = 75, type = "DIR32", symbol = "_dxball_preterminators", addend = 8, target = 0x00421040 },
+  { offset = 80, type = "DIR32", symbol = "_dxball_preterminators", addend = 0, target = 0x00421040 },
+  { offset = 85, type = "REL32", symbol = "_dxball_crt_run_initializers", addend = 0, target = 0x004179D0 },
+  { offset = 93, type = "DIR32", symbol = "_dxball_terminators", addend = 4, target = 0x0042104C },
+  { offset = 98, type = "DIR32", symbol = "_dxball_terminators", addend = 0, target = 0x0042104C },
+  { offset = 103, type = "REL32", symbol = "_dxball_crt_run_initializers", addend = 0, target = 0x004179D0 },
+  { offset = 121, type = "DIR32", symbol = "__imp__ExitProcess@4", addend = 0, target = 0x0044131C },
+]
+
 [builds.runtime_string_concatenation]
 source = "src/runtime_string_concatenation.c"
 object = "build/exact/runtime_string_concatenation.obj"
@@ -11238,7 +11260,7 @@ flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 [builds.termination_exact]
 source = "src/termination.c"
 object = "build/exact/termination_exact.obj"
-inputs = ["src/termination.c", "src/termination.h"]
+inputs = ["src/termination.c", "src/termination.h", "src/termination_process_api.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 
 [builds.runtime_integer_text]

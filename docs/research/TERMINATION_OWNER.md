@@ -1,5 +1,33 @@
 # CRT termination owner
 
+## Exact process-boundary continuation
+
+The complete128-byte cleanup controller now matches every byte and all13 actual
+relocations. Restore the real imported `ExitProcess` stdcall boundary and the
+observed decrement-before-comparison traversal. Address cursors preserve the
+empty-table path without forming a before-array pointer; the captured end and
+dynamic begin reloads, low-byte flag and full-width exit decision remain intact.
+The two18-byte wrapper exacts are preserved; the32-byte walker remains6 differences.
+The host operation table is retained only for controlled native interposition,
+not called by the recovered controller. Windows loading uses the real API import.
+
+One VC4 and one i686 object plus one native standalone object are produced;
+the exact VC4 object is adopted after byte-identical canonical input checks,
+without recompilation. One native shared fixture build replays the same1,031
+direct calls/1,026 fixtures as both existing objects. All three observations
+retain digest `da4051d3d037b8c6b44b5b421d9e612751fc96b289f86e85bf2eabc74d0da204`.
+Only the actual API boundary is adapted; no cases or game/hardware campaigns
+are added. A positional hook-argument mistake is corrected to `pop=4`; the
+same compiled objects are reused. No physical process termination is executed.
+
+All335 prior exacts/113 candidates remain; only four existing semantic rows are
+refreshed after this replay. Source457/exact336/code69,846/metadata136;
+semantic249 and all origins unchanged. Complete pinned `_doexit`128 and retained
+REA assembly `ev_708cef33a373375bddd52f451b3dcb5c0c69e2fefd4e9cb94a8f8876f53e098b`
+are reused. Receipts: `.analysis/termination-process-api-20261014/verification.json`.
+The following sections retain the earlier portable-bridge checkpoint; startup
+tables, callback allocation and wider game integration remain open.
+
 The allocation-failure path reaches C `exit` at `0x417910`. This batch follows
 that edge through the original cleanup controller and callback-table walker,
 recovering four standalone functions in [termination.c](../../src/termination.c).
