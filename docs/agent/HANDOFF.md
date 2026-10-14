@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Scaling improves133/123/127 to125/123/115 through the native-width numeric table
+address cursor, avoiding a pre-array C pointer. All47 instructions correspond;
+only two MOV5/LEA6 root loads remain. Split capture is unchanged; pointer/address
+union149/146 rejected. Coupled multiplication678/103, parser1851/1662; actual
+definition offsets/tables and all336 exacts/110 other candidates/249 semantic
+rows preserved. Three VC4 stages, one native/i686 set, no runtime tests. See
+[decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
+`.analysis/decimal-power-address-cursor-20261014/verification.json`.
+
 Multiplication further improves678/678/446 to678/678/104 through complete input
 exponent-word snapshots and branch-local sticky reads. Its28-byte frame and all
 three actual calls remain; not exact. Raw-exponent-only672/678/316 is retained.

@@ -1,4 +1,5 @@
 #include "runtime_decimal.h"
+#include <stddef.h>
 
 /* The intermediate product is a 96-bit integer until the final exponent
    is inserted. The packed view exposes its retained 80 bits above the guard. */
@@ -126,22 +127,22 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
 /* FUNCTION: DXBALL 0x0041FC40 */
 void __multtenpow12(DxBallExtended12 *value, int exponent, int keep_tail)
 {
-    const DxBallExtended12 *powers = _pow10pos;
-    int group = -8;
+    size_t group = (size_t)(const void *)_pow10pos - 8 * sizeof(_pow10pos[0]);
     if (exponent != 0) {
         if (exponent < 0) {
             exponent = -exponent;
-            powers = _pow10neg;
+            group = (size_t)(const void *)_pow10neg - 8 * sizeof(_pow10neg[0]);
         }
         if (!keep_tail) value->extra = 0;
         while (exponent != 0) {
             int index;
-            group += 7;
+            group += 7 * sizeof(_pow10pos[0]);
             index = exponent & 7;
             exponent >>= 3;
             if (index != 0) {
                 DxBallExtended12 corrected;
-                const DxBallExtended12 *power = &powers[group + index];
+                const DxBallExtended12 *power = (const DxBallExtended12 *)(const void *)
+                    (group + (size_t)index * sizeof(_pow10pos[0]));
                 if (power->extra >= 0x8000) {
                     corrected = *power;
                     --corrected.low;

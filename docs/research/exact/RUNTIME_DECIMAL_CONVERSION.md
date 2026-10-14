@@ -9,8 +9,8 @@ All ten affected exacts preserve 502 bytes. The 239 other producers are unchange
 | --- | ---: | ---: |
 | Numeric digits | 232/232 | 20 |
 | Parser and embedded tables | 1851/1871 | 1662 |
-| Multiplication | 678/678 | 104 |
-| Decimal scaling | 133/123 | 127 |
+| Multiplication | 678/678 | 103 |
+| Decimal scaling | 125/123 | 115 |
 
 The parser preserves sign/point/exponent rollback, `D/E` markers, optional
 implicit exponents and all seven parameters. It stores up to 25 digits, then
@@ -71,3 +71,18 @@ unchanged internal definition offsets, branches and tables. Scaling is unchanged
 Two VC4 stages and one native/i686 set; no runtime tests. All336 exacts,110 other
 candidates and249 semantic rows are preserved. Receipt:
 `.analysis/multiply-exponent-snapshot-20261014/verification.json`.
+
+Scaling now advances a native-width numeric table cursor by84 bytes, initially
+biased96 bytes before the table. Only live power positions become pointers;
+the pre-array position is never materialized as a C pointer. This restores the
+original group state and improves133/123/127 to125/123/115. All47 original/current
+instructions correspond, including branch ordinals and all three bindings.
+Only two MOV-immediate5 versus LEA-absolute6 address loads differ. Split root
+capture leaves125/115 unchanged; pointer/address union149/146 is rejected.
+
+The shared include/compiler context commutes two multiplication SIB sums and
+its final sign/exponent OR reads; all other raw body bytes are unchanged,
+with678/103 rather than678/104. Parser1851/1662 and all tables remain. Three VC4
+stages and one selected native/i686 set; no runtime tests, new exacts or new
+semantic acceptance. All336 exacts/110 other candidates/249 semantic rows remain.
+Receipt: `.analysis/decimal-power-address-cursor-20261014/verification.json`.
