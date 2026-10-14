@@ -11547,15 +11547,15 @@ relocations = [
   { offset = 16, type = "DIR32", symbol = "__imp__HeapSize@12", addend = 0, target = 0x00441274 },
 ]
 
-[candidates.crt-get-stream-buffer]
+[units.crt-get-stream-buffer]
 build = "runtime_stream"
 symbol = "_dxball_crt_get_buffer"
 target_address = 0x0041AEF0
 size = 75
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_BUFFERS.md"
 relocations = [
-  { offset = 3, type = "DIR32", symbol = "_dxball_crt_buffer_requests", addend = 0, target = 0x004242D8 },
-  { offset = 17, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
+  { offset = 3, type = "DIR32", symbol = "_dxball_crt_buffer_requests", target = 0x4242d8, addend = 0 },
+  { offset = 17, type = "REL32", symbol = "_dxball_runtime_malloc", target = 0x417770, addend = 0 },
 ]
 
 [units.crt-free-stream-buffer]
@@ -11568,14 +11568,14 @@ relocations = [
   { offset = 21, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
 ]
 
-[candidates.crt-flush-stream-buffer]
+[units.crt-flush-stream-buffer]
 build = "runtime_stream"
 symbol = "_dxball_crt_flush_buffer"
 target_address = 0x0041A030
 size = 100
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_BUFFERS.md"
 relocations = [
-  { offset = 47, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
+  { offset = 47, type = "REL32", symbol = "_dxball_crt_write", target = 0x41a770, addend = 0 },
 ]
 
 [units.crt-flush-stream]

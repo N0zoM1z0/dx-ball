@@ -1,16 +1,27 @@
 # CRT stream buffering
 
-Six functions now have shared C source in `runtime_stream.c`. Three complete
-units are exact after all five actual relocations, adding 144 bytes.
+Six functions have shared C source in `runtime_stream.c`. Five complete units
+are exact, including acquisition and buffer flushing restored in the continuation.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
-| `_getbuf`, `0x41AEF0` | 75/75 | 23 |
+| `_getbuf`, `0x41AEF0` | 75/75 | 0 |
 | `_freebuf`, `0x419FA0` | 57/57 | 0 |
-| `_flush`, `0x41A030` | 100/100 | 12 |
+| `_flush`, `0x41A030` | 100/100 | 0 |
 | `fflush`, `0x419FE0` | 76/76 | 0 |
-| `flsall`, `0x41A0B0` | 107/107 | 13 |
+| `flsall`, `0x41A0B0` | 107/107 | 14 |
 | `_flushall`, `0x41A0A0` | 11/11 | 0 |
+
+The shipped CRT `_getbuf.c` and `fflush.c` establish genuine local stream
+ownership and `REG1/REG2/REG3`, defined as C `register` for x86 by `cruntime.h`.
+Restoring those locals closes75 and100 bytes through all three actual bindings.
+The request counter precedes stream capture; flushing retains its status and
+byte-count locals. Full pinned members and retained REA assembly confirm both.
+All338 prior exacts remain; totals340/70,315 code bytes, candidates109.
+Traversal source is unchanged, but shared compiler context rotates registers
+and changes13 differences to14. Its register-index and explicit-return trials
+also give14 and are not retained. Four compiler sets, no runtime tests;
+receipt `.analysis/stream-buffer-register-owner-20261014/verification.json`.
 
 The eight-field record follows pinned VC4 `stdio.h:159–167`, not host FILE.
 Acquisition preserves the request counter, 4096-byte allocation and two-byte

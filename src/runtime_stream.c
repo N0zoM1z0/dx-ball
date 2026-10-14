@@ -1,9 +1,11 @@
 #include "runtime_stream.h"
 
 /* FUNCTION: DXBALL 0x0041AEF0 */
-void dxball_crt_get_buffer(DxBallCrtStream *stream)
+void dxball_crt_get_buffer(DxBallCrtStream *argument)
 {
+    register DxBallCrtStream *stream;
     ++dxball_crt_buffer_requests;
+    stream = argument;
     if ((stream->buffer = (char *)dxball_runtime_malloc(4096)) != NULL) {
         stream->flags |= 8;
         stream->capacity = 4096;
@@ -29,10 +31,12 @@ void dxball_crt_free_buffer(DxBallCrtStream *stream)
 }
 
 /* FUNCTION: DXBALL 0x0041A030 */
-int dxball_crt_flush_buffer(DxBallCrtStream *stream)
+int dxball_crt_flush_buffer(DxBallCrtStream *argument)
 {
-    int status = 0;
-    int bytes;
+    register DxBallCrtStream *stream;
+    register int status = 0;
+    register int bytes;
+    stream = argument;
     if ((stream->flags & 3) == 2 && (stream->flags & 0x108) &&
         (bytes = (int)(stream->cursor - stream->buffer)) > 0) {
         if (dxball_crt_write(stream->descriptor, stream->buffer,

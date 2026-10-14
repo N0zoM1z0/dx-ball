@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 338 |
-| Complete exact code bytes | 70,140 |
+| Exact functions | 340 |
+| Complete exact code bytes | 70,315 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 338 exact functions does not prove project completion.
+These are separate ledgers; 340 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Buffer acquisition75 and flushing100 are now complete exacts after all three
+actual relocations. Genuine register locals follow shipped CRT source, not
+guessed storage. Three owner exacts/all338 prior exacts remain; source457,
+exact340/code70,315/candidates109. Unchanged traversal source emits107/14 after
+register rotation; both traversal trials14 are closed. Four compiler sets,
+no runtime/provider work. See [stream buffers](../research/exact/RUNTIME_STREAM_BUFFERS.md)
+and `.analysis/stream-buffer-register-owner-20261014/verification.json`.
 
 Raise improves393/393/323 to397/393/215 through its tagged handler snapshot,
 captured FPE countdown and shared callback segment with genuine hardware guard.
