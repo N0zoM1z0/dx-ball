@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **335 functions / 69,718 code bytes / 136 metadata bytes**.
 
+String copy/concatenation restore full source and correct the strcpy entry jump
+to its232-byte overlapping shared extent. Source457/candidates113; all335 old
+exacts/111 candidates unchanged. Neither new routine is exact. See [string concatenation](RUNTIME_STRING_CONCATENATION.md).
+
 Embedded list initialization adds the complete21-byte outer exact while all58
 owner exacts remain unchanged. Its inner stage is32/26/21, not exact. Source455/
 candidates111; authored count unchanged. See [embedded initialization](LIST_EMBEDDED_INITIALIZATION.md).

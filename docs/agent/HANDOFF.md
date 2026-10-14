@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 455 |
+| Source-present functions | 457 |
 | Exact functions | 335 |
 | Complete exact code bytes | 69,718 |
 | Attached exact metadata bytes | 136 |
@@ -62,6 +62,16 @@ These are separate ledgers; 335 exact functions does not prove project completio
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+String copy/concatenation add full source models198/232/232 and291/224/276.
+Strcpy's old7-byte range was only its entry jump; full232-byte shared original
+extent overlaps strcat224, not independent byte coverage. Exact335/code69,718
+unchanged; source457/candidates113, all old335 exacts/111 candidates preserved.
+See [string concatenation](../research/exact/RUNTIME_STRING_CONCATENATION.md)
+and `.analysis/runtime-string-concatenation-20261014/verification.json`.
+One closed one-record REA session; one VC4/native/i686 set, no runtime/game tests.
+Explicit aggregate initialization is rejected by VC4 C2552; source restored,
+unique failure retained. Do not repeat equivalent initializer spellings.
 
 Embedded list initialization adds one complete21-byte exact outer stage and a
 full inner candidate32/26/21. `/Ob1` expands only the implicit aggregate bridge;

@@ -340,6 +340,11 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_string_concatenation]
+source = "src/runtime_string_concatenation.c"
+header = "src/runtime_string_concatenation.h"
+additional_inputs = []
+
 [owners.runtime_stream_operations]
 source = "src/runtime_stream_operations.c"
 header = "src/runtime_stream_operations.h"
