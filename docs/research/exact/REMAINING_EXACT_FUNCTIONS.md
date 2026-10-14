@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**341 functions / 70,555 code bytes / 136 metadata bytes**.
+**342 functions / 70,936 code bytes / 136 metadata bytes**.
+
+Bulk output381 closes through genuine scalar lifetimes, unsigned write result
+and original update order from shipped CRT source. All341 old exacts remain;
+seeking153/21 improves to153/20, candidates107. See
+[stream operations](RUNTIME_STREAM_OPERATIONS.md).
 
 Stream position improves413/432/360 to431/432/324 through original local
 lifetimes, direct record expressions and the shared zero-count return. It is

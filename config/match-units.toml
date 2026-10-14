@@ -98,22 +98,22 @@ target_address = 0x00418310
 size = 153
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_OPERATIONS.md"
 relocations = [
-  { offset = 47, type = "REL32", symbol = "_dxball_crt_ftell", addend = 0, target = 0x0041B000 },
-  { offset = 68, type = "REL32", symbol = "_dxball_crt_flush_buffer", addend = 0, target = 0x0041A030 },
-  { offset = 117, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
-  { offset = 142, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 47, type = "REL32", symbol = "_dxball_crt_ftell", target = 0x41b000, addend = 0 },
+  { offset = 68, type = "REL32", symbol = "_dxball_crt_flush_buffer", target = 0x41a030, addend = 0 },
+  { offset = 117, type = "REL32", symbol = "_dxball_crt_seek", target = 0x41af40, addend = 0 },
+  { offset = 142, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
 ]
 
-[candidates.crt-fwrite]
+[units.crt-fwrite]
 build = "runtime_stream_operations"
 symbol = "_dxball_crt_fwrite"
 target_address = 0x00417E70
 size = 381
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_OPERATIONS.md"
 relocations = [
-  { offset = 158, type = "REL32", symbol = "_dxball_crt_flush_buffer", addend = 0, target = 0x0041A030 },
-  { offset = 205, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
-  { offset = 261, type = "REL32", symbol = "_dxball_crt_flush_output", addend = 0, target = 0x0041A620 },
+  { offset = 158, type = "REL32", symbol = "_dxball_crt_flush_buffer", target = 0x41a030, addend = 0 },
+  { offset = 205, type = "REL32", symbol = "_dxball_crt_write", target = 0x41a770, addend = 0 },
+  { offset = 261, type = "REL32", symbol = "_dxball_crt_flush_output", target = 0x41a620, addend = 0 },
 ]
 
 [builds.runtime_string_length]

@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 341 |
-| Complete exact code bytes | 70,555 |
+| Exact functions | 342 |
+| Complete exact code bytes | 70,936 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 341 exact functions does not prove project completion.
+These are separate ledgers; 342 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Bulk output closes381 bytes and all three actual relocations through the seven
+genuine scalar lifetimes, unsigned write result and original update order from
+shipped CRT source. Seeking153/21 improves to153/20 through its register stream
+and relative-offset/origin update order. Three compiler sets, no runtime/provider
+work; all341 old exacts and106 outside-owner candidates remain. Source457,
+exact342/code70,936/candidates107. See [stream operations](../research/exact/RUNTIME_STREAM_OPERATIONS.md)
+and `.analysis/stream-seek-register-owner-20261014/verification.json`.
 
 Stream position improves413/432/360 to431/432/324 through the genuine register
 stream/cursor, single adjusted offset, path-local scans and shared zero-count

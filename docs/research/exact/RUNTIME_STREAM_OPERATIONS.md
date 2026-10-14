@@ -3,10 +3,18 @@
 The complete pinned `_fseek` and `_fwrite` sections match the original at
 0x418310/153 and 0x417E70/381 after all actual relocations. Shared typed source
 now restores both functions through the existing stream and low-I/O owners.
-Current complete comparisons retain 21 and 29 differences, respectively;
-neither is exact. The seeking differences are register allocation/scheduling;
-output differences are local storage, copy scheduling and comparison direction.
+Output now matches all381 bytes and three actual relocations. Seeking retains
+20 differences across153 bytes and remains a candidate.
 No artificial storage or declaration permutations are used to force a match.
+
+The shipped CRT `fwrite.c` establishes seven scalar lifetimes, an unsigned write
+result and copy/slow-path update order. Restoring those declarations and updates
+reduces381/29 to381/22, then closes381/0. `fseek.c` establishes its genuine register
+stream and relative-offset update before origin reset, reducing153/21 to153/20.
+Three compiler sets preserve all341 prior exacts and106 outside-owner candidates;
+totals342/70,936 code bytes, candidates107. Full pinned sections and retained REA
+remain authoritative. No runtime tests or provider work; receipt
+`.analysis/stream-seek-register-owner-20261014/verification.json`.
 
 Seeking validates stream flags and origin, clears EOF, resolves relative offsets
 through the real `ftell`, ignores the flush result, resets update-stream direction
