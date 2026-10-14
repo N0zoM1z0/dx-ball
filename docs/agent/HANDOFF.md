@@ -51,17 +51,28 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 432 |
-| Exact functions | 317 |
-| Complete exact code bytes | 69,092 |
+| Source-present functions | 448 |
+| Exact functions | 333 |
+| Complete exact code bytes | 69,468 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 317 exact functions does not prove project completion.
+These are separate ledgers; 333 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Sixteen compiler-generated list initializer stages are now registered as exact,
+376 complete bytes from the unchanged current source/product. Source448/exact333/
+code69,468; authored270 and origins270/200/45/28 remain unchanged. Explicit
+source_generator records bind real global declarations, accepted constructors
+and inner stages; no wrapper source or storage is added. All42 existing owner
+exacts re-compared unchanged; all317 prior exacts/106 candidates/249 semantic
+rows preserved. See [generated list exacts](../research/exact/LIST_GENERATED_EXACT.md)
+and `.analysis/list-generated-exact-20261014/verification.json`. No compilation,
+provider or game/runtime execution repeated. Embedded board-storage pair and
+whole startup graph remain unclaimed.
 
 Physical FDIV detection now supplies the full79-byte exact body. Volatile
 operands retain hardware division; the consumed24-byte dividend/divisor/residual
@@ -540,7 +551,7 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 317 exact closures and current producers.
+- `build/reports/exact-replay.json`: all 333 exact closures and current producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 106 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`

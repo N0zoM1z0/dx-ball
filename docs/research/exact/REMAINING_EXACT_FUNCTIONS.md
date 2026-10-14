@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**317 functions / 69,092 code bytes / 136 metadata bytes**.
+**333 functions / 69,468 code bytes / 136 metadata bytes**.
+
+Sixteen whole compiler-generated list initializer stages add 376 exact bytes
+from unchanged current source and products. Source-emission entries448;
+authored270/candidates106 remain unchanged. All317 prior exacts and42 shared-
+owner exact units are preserved. See [generated list stages](LIST_GENERATED_EXACT.md).
 
 The full 79-byte physical FDIV probe is exact. Source432, candidates106;
 all316 preceding exacts/106 candidates are preserved. Three member-call ABI

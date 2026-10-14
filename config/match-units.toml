@@ -39,6 +39,190 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[units.list-global-init-1]
+symbol = "_$E1"
+target_address = 0x0040F1E0
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallProjectileList", global = "dxball_projectiles", constructor_unit = "initialize-projectile-list", inner_unit = "list-global-init-1", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_projectiles", addend = 0, target = 0x0043A898 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallProjectileList@@QAE@XZ", addend = 0, target = 0x0040F200 },
+]
+
+[units.list-global-init-2]
+symbol = "_$E2"
+target_address = 0x0040F1C0
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallProjectileList", global = "dxball_projectiles", constructor_unit = "initialize-projectile-list", inner_unit = "list-global-init-1", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E1", addend = 0, target = 0x0040F1E0 },
+]
+
+[units.list-global-init-4]
+symbol = "_$E4"
+target_address = 0x0040F240
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBallList", global = "dxball_balls", constructor_unit = "initialize-ball-list", inner_unit = "list-global-init-4", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_balls", addend = 0, target = 0x0043A8B8 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallBallList@@QAE@XZ", addend = 0, target = 0x0040F260 },
+]
+
+[units.list-global-init-5]
+symbol = "_$E5"
+target_address = 0x0040F1A0
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBallList", global = "dxball_balls", constructor_unit = "initialize-ball-list", inner_unit = "list-global-init-4", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E4", addend = 0, target = 0x0040F240 },
+]
+
+[units.list-global-init-7]
+symbol = "_$E7"
+target_address = 0x0040F2A0
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBallList", global = "dxball_duplicate_balls", constructor_unit = "initialize-ball-list", inner_unit = "list-global-init-7", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_duplicate_balls", addend = 0, target = 0x0043AAA8 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallBallList@@QAE@XZ", addend = 0, target = 0x0040F260 },
+]
+
+[units.list-global-init-8]
+symbol = "_$E8"
+target_address = 0x0040F180
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBallList", global = "dxball_duplicate_balls", constructor_unit = "initialize-ball-list", inner_unit = "list-global-init-7", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E7", addend = 0, target = 0x0040F2A0 },
+]
+
+[units.list-global-init-10]
+symbol = "_$E10"
+target_address = 0x0040F2C0
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBrickEffectList", global = "dxball_brick_effects", constructor_unit = "initialize-brick-effect-list", inner_unit = "list-global-init-10", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_brick_effects", addend = 0, target = 0x0043FA98 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallBrickEffectList@@QAE@XZ", addend = 0, target = 0x0040F2E0 },
+]
+
+[units.list-global-init-11]
+symbol = "_$E11"
+target_address = 0x0040F160
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBrickEffectList", global = "dxball_brick_effects", constructor_unit = "initialize-brick-effect-list", inner_unit = "list-global-init-10", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E10", addend = 0, target = 0x0040F2C0 },
+]
+
+[units.list-global-init-16]
+symbol = "_$E16"
+target_address = 0x0040F380
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallExplosionList", global = "dxball_explosive_sources", constructor_unit = "initialize-explosion-list", inner_unit = "list-global-init-16", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_explosive_sources", addend = 0, target = 0x0043FAA8 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallExplosionList@@QAE@XZ", addend = 0, target = 0x0040F340 },
+]
+
+[units.list-global-init-17]
+symbol = "_$E17"
+target_address = 0x0040F120
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallExplosionList", global = "dxball_explosive_sources", constructor_unit = "initialize-explosion-list", inner_unit = "list-global-init-16", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E16", addend = 0, target = 0x0040F380 },
+]
+
+[units.list-global-init-19]
+symbol = "_$E19"
+target_address = 0x0040F3A0
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBonusList", global = "dxball_bonuses", constructor_unit = "initialize-bonus-list", inner_unit = "list-global-init-19", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_bonuses", addend = 0, target = 0x0043FAC8 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallBonusList@@QAE@XZ", addend = 0, target = 0x0040F3C0 },
+]
+
+[units.list-global-init-20]
+symbol = "_$E20"
+target_address = 0x0040F100
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallBonusList", global = "dxball_bonuses", constructor_unit = "initialize-bonus-list", inner_unit = "list-global-init-19", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E19", addend = 0, target = 0x0040F3A0 },
+]
+
+[units.list-global-init-22]
+symbol = "_$E22"
+target_address = 0x0040F400
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallParticleList", global = "dxball_particles", constructor_unit = "initialize-particle-list", inner_unit = "list-global-init-22", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_particles", addend = 0, target = 0x0043A868 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallParticleList@@QAE@XZ", addend = 0, target = 0x0040F420 },
+]
+
+[units.list-global-init-23]
+symbol = "_$E23"
+target_address = 0x0040F0E0
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallParticleList", global = "dxball_particles", constructor_unit = "initialize-particle-list", inner_unit = "list-global-init-22", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E22", addend = 0, target = 0x0040F400 },
+]
+
+[units.list-global-init-25]
+symbol = "_$E25"
+target_address = 0x0040F460
+size = 26
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallFireEffectList", global = "dxball_fire_effects", constructor_unit = "initialize-fire-effect-list", inner_unit = "list-global-init-25", stage = "inner" }
+relocations = [
+  { offset = 7, type = "DIR32", symbol = "_dxball_fire_effects", addend = 0, target = 0x0043A8E0 },
+  { offset = 12, type = "REL32", symbol = "??0DxBallFireEffectList@@QAE@XZ", addend = 0, target = 0x0040F480 },
+]
+
+[units.list-global-init-26]
+symbol = "_$E26"
+target_address = 0x0040F0C0
+size = 21
+build = "list_initializers"
+boundary_evidence = "docs/research/exact/LIST_GENERATED_EXACT.md"
+source_generator = { kind = "vc4-global-list-initializer", type = "DxBallFireEffectList", global = "dxball_fire_effects", constructor_unit = "initialize-fire-effect-list", inner_unit = "list-global-init-25", stage = "outer" }
+relocations = [
+  { offset = 7, type = "REL32", symbol = "_$E25", addend = 0, target = 0x0040F460 },
+]
+
 [builds.runtime_fdiv_physical]
 source = "src/runtime_fdiv_physical.c"
 object = "build/exact/runtime_fdiv_physical.obj"

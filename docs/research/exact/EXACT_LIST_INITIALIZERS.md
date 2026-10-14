@@ -58,13 +58,15 @@ call the per-object wrappers at `0x40F460`, `0x40F400`, `0x40F3A0`,
 `0x40F380`, `0x40F320`, `0x40F2C0`, `0x40F2A0`, `0x40F240`, `0x40F1E0`,
 respectively. Each 21-byte outer stage calls a 26-byte wrapper, which binds a
 canonical root and invokes the typed constructor. Ordinary global definitions
-cause VC4 to emit this two-stage pattern. The 18 entries are classified as
-`compiler_generated` in the origin ledger; they are not separate authored
-functions, source-present additions, or accepted exact units.
+cause VC4 to emit this two-stage pattern. The 18 entries remain classified as
+`compiler_generated`, not separate authored functions. The October 14
+[current-product reconciliation](LIST_GENERATED_EXACT.md) accepts sixteen
+complete stages and traces their source through actual global declarations.
 
 Eight pairs (16 complete functions, 376 bytes) also matched in a private
-comparison after every root/call relocation was mapped. Their bytes remain
-outside the exact-code ledger. The embedded explosion instance is owned by
+comparison after every root/call relocation was mapped. All sixteen now also
+match the current canonical product and are included in the exact ledger.
+The embedded explosion instance is owned by
 `dxball_board_storage`, whose reconstructed aggregate contains the list as a
 member. VC4 naturally emits a 39-byte aggregate constructor and calls that
 member constructor. That helper has no attested original address, so its two

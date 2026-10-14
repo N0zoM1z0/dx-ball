@@ -38,6 +38,55 @@ def validate_build_owners(manifest, implementations):
                 raise ValueError(f"{group} build owner disagrees with source ledger: {name}")
 
 
+def validate_generated_source(address, implementation, source, origins, matches, manifest):
+    name = implementation["semantic_unit"]
+    unit = manifest["units"].get(name)
+    if unit is None or "source_generator" not in unit:
+        return False
+    generator = unit["source_generator"]
+    fields = {"kind", "type", "global", "constructor_unit", "inner_unit", "stage"}
+    if (set(generator) != fields or generator["kind"] != "vc4-global-list-initializer" or
+            origins[address]["origin"] != "compiler_generated" or
+            unit["symbol"] != implementation["symbol"] or
+            unit["target_address"] != int(address, 0) or
+            manifest["builds"][unit["build"]]["source"] != implementation["source"] or
+            matches.get(address, {}).get("unit") != name):
+        raise ValueError(f"invalid generated source identity: {address}")
+    type_name, global_name = generator["type"], generator["global"]
+    for identifier in (type_name, global_name):
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", identifier):
+            raise ValueError("invalid generated source declaration")
+    declaration = r"^\s*" + re.escape(type_name) + r"\s+" + re.escape(global_name) + r"\s*;\s*$"
+    constructor = re.escape(type_name + "::" + type_name) + r"\s*\([^;]*\)\s*\{"
+    if not re.search(declaration, source, re.MULTILINE) or not re.search(constructor, source):
+        raise ValueError(f"missing real generated source anchor: {address}")
+    ctor = manifest["units"][generator["constructor_unit"]]
+    inner = manifest["units"][generator["inner_unit"]]
+    expected_inner = dict(generator, stage="inner")
+    if (ctor["build"] != unit["build"] or inner["build"] != unit["build"] or
+            ctor["symbol"] != "??0" + type_name + "@@QAE@XZ" or
+            inner.get("source_generator") != expected_inner or
+            matches.get(f'0x{ctor["target_address"]:08X}', {}).get("unit") != generator["constructor_unit"] or
+            matches.get(f'0x{inner["target_address"]:08X}', {}).get("unit") != generator["inner_unit"]):
+        raise ValueError(f"unattested generated source dependency: {address}")
+    if generator["stage"] == "inner":
+        relocations = unit["relocations"]
+        if (unit["size"] != 26 or len(relocations) != 2 or
+                relocations[0] != dict(offset=7, type="DIR32", symbol="_" + global_name,
+                                       addend=0, target=relocations[0]["target"]) or
+                relocations[1] != dict(offset=12, type="REL32", symbol=ctor["symbol"],
+                                       addend=0, target=ctor["target_address"])):
+            raise ValueError(f"invalid generated constructor bindings: {address}")
+    elif generator["stage"] == "outer":
+        expected = [dict(offset=7, type="REL32", symbol=inner["symbol"],
+                         addend=0, target=inner["target_address"])]
+        if unit["size"] != 21 or unit["relocations"] != expected:
+            raise ValueError(f"invalid generated initializer binding: {address}")
+    else:
+        raise ValueError("unknown generated source stage")
+    return True
+
+
 def validate(require_target=False):
     target = tomllib.loads((ROOT / "config/target.toml").read_text())
     pe = target["pe"]
@@ -48,6 +97,8 @@ def validate(require_target=False):
     matches = unique(rows("matches.csv"), "address")
     owners = tomllib.loads((ROOT / "config/source-owners.toml").read_text())["owners"]
     by_source = {owner["source"]: owner for owner in owners.values()}
+    manifest_path = ROOT / "config/match-units.toml"
+    manifest = tomllib.loads(manifest_path.read_text()) if manifest_path.exists() else {"units": {}}
     if functions.keys() != origins.keys():
         raise ValueError("function and origin ledgers disagree")
     for address, function in functions.items():
@@ -60,8 +111,10 @@ def validate(require_target=False):
             raise ValueError(f"implementation absent from function ledger: {address}")
         path = (ROOT / implementation["source"]).resolve()
         path.relative_to((ROOT / "src").resolve())
-        if not re.search(r"\b" + re.escape(implementation["symbol"]) + r"\s*\([^;]*\)\s*\{",
-                         path.read_text()):
+        source = path.read_text()
+        if validate_generated_source(address, implementation, source, origins, matches, manifest):
+            continue
+        if not re.search(r"\b" + re.escape(implementation["symbol"]) + r"\s*\([^;]*\)\s*\{", source):
             raise ValueError(f"missing source definition: {implementation['symbol']}")
     for address, accepted in semantics.items():
         if address not in implementations or accepted["unit"] != implementations[address]["semantic_unit"]:
@@ -81,8 +134,6 @@ def validate(require_target=False):
         inputs += owner["additional_inputs"]
         if json.loads(accepted["inputs_sha256"]) != {name: sha(ROOT / name) for name in inputs}:
             raise ValueError("accepted semantic input set changed; replay required")
-    manifest_path = ROOT / "config/match-units.toml"
-    manifest = tomllib.loads(manifest_path.read_text()) if manifest_path.exists() else {"units": {}}
     validate_build_owners(manifest, implementations)
     for address, match in matches.items():
         if address not in implementations or int(match["difference_count"]) != 0:
