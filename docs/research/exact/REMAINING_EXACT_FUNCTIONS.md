@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **343 functions / 71,081 code bytes / 136 metadata bytes**.
 
+Descriptor commit improves110/111/65 to111/111/2 through original register
+status/descriptor and error ownership. Bound-comparison commutation remains;
+not exact. Both owner exacts/full360-byte table hold; unchanged seek/write
+source emits188/13 and555/22 in this context. See [low-I/O](RUNTIME_LOWIO_WRITE.md).
+
 Character classification145 closes through the original unsigned-char lead-byte
 table index and signed payload/length order. Both229-byte converters and all342
 old exacts remain; candidates106. See [case conversion](RUNTIME_CASE_CONVERSION.md).

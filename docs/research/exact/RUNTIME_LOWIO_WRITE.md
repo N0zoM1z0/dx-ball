@@ -6,11 +6,23 @@ the mapper also enforces all360 initialized table bytes in its match recipe.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
-| `_write`, `0x41A770` | 555/555 | 19 |
+| `_write`, `0x41A770` | 555/555 | 22 |
 | `_dosmaperr`, `0x41A9A0` | 102/102 | 0 |
-| `_lseek`, `0x41AF40` | 188/188 | 15 |
+| `_lseek`, `0x41AF40` | 188/188 | 13 |
 | `_get_osfhandle`, `0x41D9D0` | 67/67 | 0 |
-| `_commit`, `0x41DA20` | 111/110 | 65 |
+| `_commit`, `0x41DA20` | 111/111 | 2 |
+
+The shipped `commit.c` establishes a register descriptor/status and shared
+error/completion labels, with DOS error published before errno9. Restoring that
+ownership improves110/111/65 to111/111/2. All instruction addresses and widths
+agree; only the bound CMP and its equivalent JAE/JBE encoding differ at two
+bytes, so no exact is claimed. Seek15 becomes13 and write19 becomes22 through
+shared-context register allocation; neither source body changed. Both owner
+exacts and the complete360-byte table remain. Two compiler sets, no runtime
+tests; retained objects are re-consumed with the table attestation restored
+after its comparison metadata was omitted, without recompilation. All343 old
+exacts/103 outside-owner candidates/249 semantic rows remain unchanged.
+Receipt `.analysis/descriptor-commit-register-owner-20261014/verification.json`.
 
 The shared low-I/O record now exposes only its proven handle and flag byte.
 Natural Win32 layout retains the eight-byte stride; host handles grow with

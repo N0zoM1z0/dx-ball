@@ -70,21 +70,31 @@ DxBallCrtOsHandle dxball_crt_get_osfhandle(int descriptor)
 }
 
 /* FUNCTION: DXBALL 0x0041DA20 */
-int dxball_crt_commit(int descriptor)
+int dxball_crt_commit(register int descriptor)
 {
-    DxBallCrtDword error;
-    if ((unsigned int)descriptor < (unsigned int)_nhandle &&
-        (__pioinfo[descriptor >> 5][descriptor & 31].flags & 1)) {
-        error = FlushFileBuffers((void *)dxball_crt_get_osfhandle(descriptor)) ? 0 : GetLastError();
-        if (error != 0) {
-            errno = 9;
-            _doserrno = error;
-            return -1;
-        }
-        return (int)error;
+    register int result;
+    if ((unsigned int)descriptor >= (unsigned int)_nhandle ||
+        (__pioinfo[descriptor >> 5][descriptor & 31].flags & 1) == 0) {
+        errno = 9;
+        return -1;
     }
+    if (__pioinfo[descriptor >> 5][descriptor & 31].flags & 1) {
+        if (!FlushFileBuffers((void *)dxball_crt_get_osfhandle(descriptor)))
+            result = (int)GetLastError();
+        else
+            result = 0;
+        if (result == 0)
+            goto commit_complete;
+        else {
+            _doserrno = (DxBallCrtDword)result;
+            goto commit_failed;
+        }
+    }
+commit_failed:
     errno = 9;
-    return -1;
+    result = -1;
+commit_complete:
+    return result;
 }
 
 /* FUNCTION: DXBALL 0x0041AF40 */

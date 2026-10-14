@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Descriptor commit improves110/111/65 to111/111/2 through genuine register
+descriptor/status and shared error/completion ownership from shipped CRT source.
+All109 other bytes, instruction addresses and widths match; only bound CMP/Jcc
+commutation remains. Both owner exacts/full360-byte table remain. Seek15 becomes13,
+write19 becomes22 in this context, with unchanged source. Two compiler sets;
+retained objects re-consume restored table metadata without recompiling. All343
+exacts/103 outside-owner candidates/249 semantic rows preserved, no runtime/provider
+work. See [low-I/O](../research/exact/RUNTIME_LOWIO_WRITE.md) and
+`.analysis/descriptor-commit-register-owner-20261014/verification.json`.
+
 Character classification closes145 bytes and all three actual relocations.
 The shipped isleadbyte macro's unsigned-char table index, signed three-byte
 payload and consumed payload/length order restore the exact body. Both229-byte

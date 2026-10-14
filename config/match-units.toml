@@ -11619,14 +11619,14 @@ target_address = 0x0041DA20
 size = 111
 boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
 relocations = [
-  { offset = 6, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 27, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 40, type = "REL32", symbol = "_dxball_crt_get_osfhandle", addend = 0, target = 0x0041D9D0 },
-  { offset = 50, type = "DIR32", symbol = "__imp__FlushFileBuffers@4", addend = 0, target = 0x00441260 },
-  { offset = 65, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
-  { offset = 75, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 84, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
-  { offset = 96, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+  { offset = 6, type = "DIR32", symbol = "__nhandle", target = 0x440c60, addend = 0 },
+  { offset = 27, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
+  { offset = 41, type = "REL32", symbol = "_dxball_crt_get_osfhandle", target = 0x41d9d0, addend = 0 },
+  { offset = 51, type = "DIR32", symbol = "__imp__FlushFileBuffers@4", target = 0x441260, addend = 0 },
+  { offset = 66, type = "DIR32", symbol = "__imp__GetLastError@0", target = 0x441320, addend = 0 },
+  { offset = 76, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 85, type = "DIR32", symbol = "__doserrno", target = 0x4230b0, addend = 0 },
+  { offset = 97, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
 ]
 
 [units.crt-get-os-handle]
@@ -11666,15 +11666,15 @@ target_address = 0x0041AF40
 size = 188
 boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
 relocations = [
-  { offset = 8, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 29, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 56, type = "REL32", symbol = "_dxball_crt_get_osfhandle", addend = 0, target = 0x0041D9D0 },
-  { offset = 76, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 102, type = "DIR32", symbol = "__imp__SetFilePointer@16", addend = 0, target = 0x004412F0 },
-  { offset = 120, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
-  { offset = 130, type = "REL32", symbol = "_dxball_crt_map_os_error", addend = 0, target = 0x0041A9A0 },
-  { offset = 167, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 177, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 8, type = "DIR32", symbol = "__nhandle", target = 0x440c60, addend = 0 },
+  { offset = 29, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
+  { offset = 56, type = "REL32", symbol = "_dxball_crt_get_osfhandle", target = 0x41d9d0, addend = 0 },
+  { offset = 76, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 102, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x4412f0, addend = 0 },
+  { offset = 120, type = "DIR32", symbol = "__imp__GetLastError@0", target = 0x441320, addend = 0 },
+  { offset = 130, type = "REL32", symbol = "_dxball_crt_map_os_error", target = 0x41a9a0, addend = 0 },
+  { offset = 167, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 177, type = "DIR32", symbol = "__doserrno", target = 0x4230b0, addend = 0 },
 ]
 
 [candidates.crt-write-descriptor]
@@ -11684,19 +11684,19 @@ target_address = 0x0041A770
 size = 555
 boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_WRITE.md"
 relocations = [
-  { offset = 12, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 35, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 115, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
-  { offset = 256, type = "DIR32", symbol = "__imp__WriteFile@20", addend = 0, target = 0x00441310 },
-  { offset = 299, type = "DIR32", symbol = "__imp__WriteFile@20", addend = 0, target = 0x00441310 },
-  { offset = 327, type = "DIR32", symbol = "__imp__GetLastError@0", addend = 0, target = 0x00441320 },
-  { offset = 362, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 377, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
-  { offset = 401, type = "REL32", symbol = "_dxball_crt_map_os_error", addend = 0, target = 0x0041A9A0 },
-  { offset = 474, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 484, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
-  { offset = 527, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 537, type = "DIR32", symbol = "__doserrno", addend = 0, target = 0x004230B0 },
+  { offset = 12, type = "DIR32", symbol = "__nhandle", target = 0x440c60, addend = 0 },
+  { offset = 35, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
+  { offset = 115, type = "REL32", symbol = "_dxball_crt_seek", target = 0x41af40, addend = 0 },
+  { offset = 256, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x441310, addend = 0 },
+  { offset = 299, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x441310, addend = 0 },
+  { offset = 327, type = "DIR32", symbol = "__imp__GetLastError@0", target = 0x441320, addend = 0 },
+  { offset = 362, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 377, type = "DIR32", symbol = "__doserrno", target = 0x4230b0, addend = 0 },
+  { offset = 401, type = "REL32", symbol = "_dxball_crt_map_os_error", target = 0x41a9a0, addend = 0 },
+  { offset = 474, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 484, type = "DIR32", symbol = "__doserrno", target = 0x4230b0, addend = 0 },
+  { offset = 527, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 537, type = "DIR32", symbol = "__doserrno", target = 0x4230b0, addend = 0 },
 ]
 
 [candidates.crt-close-descriptor]
