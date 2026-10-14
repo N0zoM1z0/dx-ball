@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 430 |
+| Source-present functions | 431 |
 | Exact functions | 316 |
 | Complete exact code bytes | 69,013 |
 | Attached exact metadata bytes | 136 |
@@ -62,6 +62,13 @@ These are separate ledgers; 316 exact functions does not prove project completio
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Memory fill adds real alignment/word/tail source,177/88 bytes with176 differences.
+Original REP STOSD remains nonexact; no assembly/intrinsic forcing. Source431,
+candidates106; all316 old exacts/105 candidates unchanged. See
+[memory fill](../research/exact/RUNTIME_MEMORY_FILL.md). The two REA queries
+completed; close reported cleanup_incomplete, but owned wrapper/provider PIDs
+are confirmed gone. Retained temporary resources are not removed. No runtime/game tests.
 
 Pow special handling adds a full584-byte source body with eight differences,
 down from567/140. Preserve unordered carry branches and binary64 result/word
@@ -523,7 +530,7 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 316 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 105 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 106 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
