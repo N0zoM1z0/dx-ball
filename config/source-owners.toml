@@ -340,6 +340,11 @@ source = "src/runtime_error_control.cpp"
 header = "src/runtime_error_control.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
 
+[owners.runtime_absolute]
+source = "src/runtime_absolute.c"
+header = "src/runtime_absolute.h"
+additional_inputs = []
+
 [owners.runtime_string_copy]
 source = "src/runtime_string_copy.c"
 header = "src/runtime_string_copy.h"
