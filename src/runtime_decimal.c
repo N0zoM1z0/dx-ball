@@ -17,14 +17,17 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
     const unsigned int *right_words = (const unsigned int *)right;
     const unsigned short *left_halves = (const unsigned short *)left;
     const unsigned short *right_halves = (const unsigned short *)right;
-    unsigned short sign = (left->exponent ^ right->exponent) & 0x8000;
-    unsigned short left_exponent = left->exponent & 0x7fff;
-    unsigned short right_exponent = right->exponent & 0x7fff;
-    unsigned short exponent = left_exponent + right_exponent;
+    unsigned short left_exponent = left->exponent;
+    unsigned short right_exponent = right->exponent;
+    unsigned short sign = (left_exponent ^ right_exponent) & 0x8000;
+    unsigned short exponent;
     int diagonal, product_offset;
     product.words[0] = 0;
     product.words[1] = 0;
     product.words[2] = 0;
+    left_exponent &= 0x7fff;
+    right_exponent &= 0x7fff;
+    exponent = left_exponent + right_exponent;
     if (left_exponent >= 0x7fff || right_exponent >= 0x7fff || exponent > 0xbffd) {
         left_words[1] = 0;
         left_words[0] = 0;
@@ -75,15 +78,18 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
         --exponent;
     }
     if ((short)exponent <= 0) {
-        unsigned int sticky = product.words[0];
+        unsigned int sticky;
         --exponent;
         if ((short)exponent < 0) {
             unsigned short shifts = (unsigned short)-(short)exponent;
+            sticky = product.words[0];
             exponent += shifts;
             do {
                 if (product.halves[0] & 1) ++sticky;
                 __shr_12(product.words);
             } while (--shifts);
+        } else {
+            sticky = product.words[0];
         }
         if (sticky != 0) product.bytes[0] |= 1;
     }

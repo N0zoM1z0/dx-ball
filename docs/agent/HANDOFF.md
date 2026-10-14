@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Multiplication further improves678/678/446 to678/678/104 through complete input
+exponent-word snapshots and branch-local sticky reads. Its28-byte frame and all
+three actual calls remain; not exact. Raw-exponent-only672/678/316 is retained.
+Parser1851/1871/1662 and scaling133/123/127 retain their counts, with proved parser
+output-register interchange/generated-label rebinding. Two VC4 stages, one
+native/i686 set, retained REA and no runtime tests; all336 exacts/110 other
+candidates/249 semantic rows remain. See [decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md)
+and `.analysis/multiply-exponent-snapshot-20261014/verification.json`.
+
 Multiplication improves708/678/666 to678/678/446 by restoring the product and
 operand byte cursors and original positive-count entry. Not exact. Coupled parser
 1851/1871/1661 becomes1662 through equality-CMP/output-register changes; internal

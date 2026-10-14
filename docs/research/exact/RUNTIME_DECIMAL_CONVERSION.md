@@ -9,7 +9,7 @@ All ten affected exacts preserve 502 bytes. The 239 other producers are unchange
 | --- | ---: | ---: |
 | Numeric digits | 232/232 | 20 |
 | Parser and embedded tables | 1851/1871 | 1662 |
-| Multiplication | 678/678 | 446 |
+| Multiplication | 678/678 | 104 |
 | Decimal scaling | 133/123 | 127 |
 
 The parser preserves sign/point/exponent rollback, `D/E` markers, optional
@@ -60,3 +60,14 @@ set; retained REA reused, no runtime tests. All336 exact producers,110 other
 candidates and249 semantic rows stay unchanged. Totals457 source/336 exact/
 69,846 code bytes/113 candidates. Receipt:
 `.analysis/multiply-product-cursor-20261014/verification.json`.
+
+The next checkpoint captures both full input exponent words before extracting
+the sign and masking their magnitudes. Sticky state is read in each consuming
+branch, rather than hoisted before the exponent decrement. The raw-exponent
+stage gives672/678/316; restoring both sticky read sites gives678/678/104 with
+the original28-byte frame and all three call bindings. The body remains nonexact.
+The parser keeps1851/1871/1662; its low/high output registers interchange, with
+unchanged internal definition offsets, branches and tables. Scaling is unchanged.
+Two VC4 stages and one native/i686 set; no runtime tests. All336 exacts,110 other
+candidates and249 semantic rows are preserved. Receipt:
+`.analysis/multiply-exponent-snapshot-20261014/verification.json`.
