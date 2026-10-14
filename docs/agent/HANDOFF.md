@@ -52,16 +52,29 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 349 |
-| Complete exact code bytes | 72,681 |
+| Exact functions | 350 |
+| Complete exact code bytes | 72,807 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 349 exact functions does not prove project completion.
+These are separate ledgers; 350 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Original fread object ownership and seven genuine scalar lifetimes improve
+328/326/232 to326/326/2. All128 instruction addresses/widths and324 other bytes
+agree; the initial multiplication loads opposite parameters. Reversing product
+operands or initializing the owned total first emits identical full results;
+both trials are reverted. Removing fread and its unused string header closes
+the unchanged getstream126 body and all seven actual relocations. All349 old
+exacts and98 other candidates remain; current350/code72,807, candidates99.
+Four compiler sets, selected isolated product reused through identical canonical
+inputs; retained evidence re-consumed after a publication-reader error without
+recompilation. No runtime/provider work. See
+[stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md) and
+`.analysis/bulk-read-original-object-owner-20261015/verification.json`.
 
 Output refill improves328/328/67 through50 to328/328/1. Original conditional
 safe-record selection reduces17 differences; independent _flsbuf object

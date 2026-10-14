@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**349 functions / 72,681 code bytes / 136 metadata bytes**.
+**350 functions / 72,807 code bytes / 136 metadata bytes**.
+
+Getstream126 closes after original fread source separation and removal of
+the unused string header. Original seven-scalar fread improves328/326/232 to
+326/326/2; only multiplication parameter loads differ. All349 old exacts remain;
+current350/code72,807, candidates99. See [stream transfer](RUNTIME_STREAM_TRANSFER.md).
 
 Output refill328/328/67 improves through50 to328/328/1 through original
 conditional safe-record selection and independent _flsbuf object ownership.

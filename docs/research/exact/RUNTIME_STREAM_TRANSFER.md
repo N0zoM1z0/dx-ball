@@ -1,16 +1,31 @@
 # CRT stream transfer and retirement
 
 Six complete bodies now cover stream closure, bulk reading, slot acquisition,
-input/output refill and terminal flags. Closure, input refill and terminal flags are exact.
+input/output refill and terminal flags. Closure, slot acquisition, input refill
+and terminal flags are exact.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `fclose`, `0x417A30` | 112/112 | 0 |
-| `fread`, `0x417AA0` | 326/328 | 232 |
-| `_getstream`, `0x41A5A0` | 126/126 | 2 |
+| `fread`, `0x417AA0` | 326/326 | 2 |
+| `_getstream`, `0x41A5A0` | 126/126 | 0 |
 | `_filbuf`, `0x418220` | 240/240 | 0 |
 | `_flsbuf`, `0x41A620` | 328/328 | 1 |
 | `_isatty`, `0x41DFA0` | 42/42 | 0 |
+
+Original independent fread ownership and its seven scalar lifetimes restore
+326/326/2 from328/326/232. All128 instruction addresses/widths and324 other
+bytes agree after both actual relocations; only the initial multiplication
+loads opposite parameters. Reversed operands and consumed-total initialization
+give identical complete results and are reverted. The original update order,
+unsigned read result and buffered/direct/refill state now live in
+`src/runtime_stream_read.c`. Removing fread and its unused string header closes
+the unchanged getstream126 body and all seven actual relocations. All349 old
+exacts and98 other candidates remain; current350/code72,807, candidates99.
+Four compiler sets; selected isolated product reused through byte-identical
+canonical inputs. Publication re-consumes retained products after a reader error,
+without recompilation. No runtime/provider work. Receipt
+`.analysis/bulk-read-original-object-owner-20261015/verification.json`.
 
 Output refill improves328/67 through328/50 to328/1. Shipped `internal.h`
 establishes conditional safe-record selection; the original independent
@@ -43,7 +58,8 @@ on failure, and releases the temporary name only after successful close.
 All112 bytes and four actual call relocations agree. Slot acquisition rereads
 the registry after allocation and resets only six observed fields; capacity
 and the character buffer are not initialized. Following its nonnull/unused
-branch order reduces48 differences to2; loop comparison commutation remains.
+branch order reduces48 differences to2; original fread producer separation
+closes the remaining loop comparison commutation without changing the slot body.
 Terminal flags return64 rather than a normalized boolean, without publishing
 errno or checking the open bit. Its signed-byte promotion restores42 bytes.
 Declaring the lower-I/O boundary before the stream's CRT includes avoids the

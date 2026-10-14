@@ -1,5 +1,4 @@
 #include "runtime_stream_transfer.h"
-#include <string.h>
 
 /* FUNCTION: DXBALL 0x00417A30 */
 int dxball_crt_fclose(DxBallCrtStream *stream)
@@ -89,50 +88,3 @@ int dxball_crt_fill_input(DxBallCrtStream *argument)
     return (unsigned char)*stream->cursor++;
 }
 
-/* FUNCTION: DXBALL 0x00417AA0 */
-unsigned int dxball_crt_fread(void *buffer, unsigned int element_size,
-                            unsigned int elements, DxBallCrtStream *stream)
-{
-    struct {
-        char *destination;
-        unsigned int total;
-        unsigned int capacity;
-    } transfer;
-    unsigned int remaining;
-    transfer.destination = (char *)buffer;
-    transfer.total = element_size * elements;
-    remaining = transfer.total;
-    if (transfer.total == 0) return 0;
-    transfer.capacity = stream->flags & 0x10c ? (unsigned int)stream->capacity : 4096;
-    while (remaining != 0) {
-        if ((stream->flags & 0x10c) && stream->count != 0) {
-            unsigned int available = (unsigned int)stream->count;
-            unsigned int amount = remaining < available ? remaining : available;
-            remaining -= amount;
-            memcpy(transfer.destination, stream->cursor, amount);
-            stream->count -= amount;
-            stream->cursor += amount;
-            transfer.destination += amount;
-        } else if (remaining >= transfer.capacity) {
-            unsigned int amount = transfer.capacity ? remaining - remaining % transfer.capacity : remaining;
-            int received = dxball_crt_read(stream->descriptor, transfer.destination, amount);
-            if (received == 0) {
-                stream->flags |= 0x10;
-                return (transfer.total - remaining) / element_size;
-            }
-            if (received == -1) {
-                stream->flags |= 0x20;
-                return (transfer.total - remaining) / element_size;
-            }
-            remaining -= received;
-            transfer.destination += received;
-        } else {
-            int value = dxball_crt_fill_input(stream);
-            if (value == -1) return (transfer.total - remaining) / element_size;
-            --remaining;
-            *transfer.destination++ = (char)value;
-            transfer.capacity = (unsigned int)stream->capacity;
-        }
-    }
-    return elements;
-}
