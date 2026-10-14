@@ -61,7 +61,13 @@ goal with the prompt above, preserving the same objective.
 These are separate ledgers; 338 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 26 unclassified origins remain open.
+The authored denominator and 24 unclassified origins remain open.
+
+Terminal dependency identities/boundaries close two unknown origins:
+terminate0x41BC60/inconsistency0x41BCE0, each115 bytes including the omitted RET.
+Full hooks.obj code and both24-byte SEH tables match; source/exact remain open.
+Origins270/204/45/24;338 exact/source457/candidates111 unchanged. See
+[C++ handler dependencies](../research/exact/RUNTIME_CPP_HANDLER.md).
 
 MessageBox lazy binding closes all146 bytes,14 actual relocations and58 literal
 bytes by grouping the required module/export checks into a positive success

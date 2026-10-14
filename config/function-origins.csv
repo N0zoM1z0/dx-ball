@@ -449,8 +449,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041BB60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041BBE0,runtime,crt-cpp-tables,maintain,high,ev_d89a010c9bcdc8fbc2408b71d08b2d27c6c6771aea1bdf0233b2bdd1f5dfcba2
 0x0041BC10,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
-0x0041BC60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041BCE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041BC60,runtime,crt-cpp-terminal,dependency,high,ev_06745feb23b4c1b0c656b39548712dadb099e59d4a043230cbe90f4f93a44d61
+0x0041BCE0,runtime,crt-cpp-terminal,dependency,high,ev_f561022b68290f5ac8530cdf4642e42957fba725cea515587a46e868788f0a66
 0x0041BD60,runtime,crt-signals,maintain,high,ev_a870a4ae15b5a9f20af8bf95864f1136bd058327b38f383c2cc51059a58b5b74
 0x0041BEC0,runtime,crt-signals,maintain,high,ev_345f137d526724ec93de692e732a5506399018db313ac0fc0611f547a2636172
 0x0041BEF0,runtime,crt-multibyte,maintain,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
