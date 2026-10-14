@@ -39,6 +39,21 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_fdiv_physical]
+source = "src/runtime_fdiv_physical.c"
+object = "build/exact/runtime_fdiv_physical.obj"
+inputs = ["src/runtime_fdiv_physical.c", "src/runtime_fdiv_processors.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_initialization.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy", "/QIfdiv-"]
+
+[units.crt-physical-fdiv-test]
+build = "runtime_fdiv_physical"
+symbol = "__ms_p5_test_fdiv"
+target_address = 0x00418C00
+size = 79
+boundary_evidence = "docs/research/exact/RUNTIME_FDIV_PHYSICAL.md"
+relocations = [
+]
+
 [builds.runtime_memory_fill]
 source = "src/runtime_memory_fill.c"
 object = "build/exact/runtime_memory_fill.obj"

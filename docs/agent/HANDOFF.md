@@ -51,17 +51,28 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 431 |
-| Exact functions | 316 |
-| Complete exact code bytes | 69,013 |
+| Source-present functions | 432 |
+| Exact functions | 317 |
+| Complete exact code bytes | 69,092 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 316 exact functions does not prove project completion.
+These are separate ledgers; 317 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Physical FDIV detection now supplies the full79-byte exact body. Volatile
+operands retain hardware division; the consumed24-byte dividend/divisor/residual
+record removes eight scalar-local address differences. Source432/exact317/
+code69,092; all316 old exacts/106 candidates unchanged. See
+[physical FDIV](../research/exact/RUNTIME_FDIV_PHYSICAL.md) and
+`.analysis/runtime-fdiv-physical-20261014/verification.json`. The eight-record
+REA session closed successfully. Three member-call attempts are rejected:
+explicit thiscall is reserved in VC4; member-pointer interfaces are not the
+original raw-address ABI. Unique rejected trials are retained, no bridge
+source/acceptance is added. No hardware, affinity, runtime or game execution.
 
 Memory fill adds real alignment/word/tail source,177/88 bytes with176 differences.
 Original REP STOSD remains nonexact; no assembly/intrinsic forcing. Source431,
@@ -529,7 +540,7 @@ VC4 compiler is 10.00.5270; linker is 3.00.5270.
 Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
-- `build/reports/exact-replay.json`: all 316 exact closures and current producers.
+- `build/reports/exact-replay.json`: all 317 exact closures and current producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 106 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`

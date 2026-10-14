@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**316 functions / 69,013 code bytes / 136 metadata bytes**.
+**317 functions / 69,092 code bytes / 136 metadata bytes**.
+
+The full 79-byte physical FDIV probe is exact. Source432, candidates106;
+all316 preceding exacts/106 candidates are preserved. Three member-call ABI
+attempts are rejected, not accepted source. See [physical FDIV](RUNTIME_FDIV_PHYSICAL.md).
 
 Signed CRT absolute value adds one complete10-byte exact; source429 and
 candidates104. Unsigned wraparound variants were nonexact; the signed API
