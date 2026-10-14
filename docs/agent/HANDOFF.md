@@ -52,16 +52,25 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 348 |
-| Complete exact code bytes | 72,155 |
+| Exact functions | 349 |
+| Complete exact code bytes | 72,681 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 348 exact functions does not prove project completion.
+These are separate ledgers; 349 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Openfile closes526 bytes and all16 actual relocations, including its alignment
+byte and full114-byte switch carrier. Shipped _open.c establishes register mode,
+flags and late stream capture, preincrement scanning, flag update order and
+chained null stores after successful opening. All348 old exacts and100 other
+candidate byte results remain; local-symbol bindings are refreshed from the
+retained object without recompilation. One compiler set, no runtime/provider
+work. Current349/code72,681. See [stream opening](../research/exact/RUNTIME_STREAM_OPEN.md)
+and `.analysis/stream-open-original-register-lifetimes-20261015/verification.json`.
 
 Float digits improves122/129/68 to122/129/65 through genuine register pointers,
 consumed guard-byte advance and original conditional stores from shipped _fptostr.c.

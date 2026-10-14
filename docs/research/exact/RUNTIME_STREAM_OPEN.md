@@ -1,16 +1,29 @@
 # CRT file opening
 
 Five complete source bodies restore both stream wrappers, mode parsing,
-descriptor allocation and the underlying OS open flow. The two wrappers are
-whole exacts across58 bytes and all three actual call bindings.
+descriptor allocation and the underlying OS open flow. The two wrappers and
+mode parser are whole exacts across584 bytes and all19 actual bindings.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `_fsopen`, `0x417BF0` | 37/37 | 0 |
 | `fopen`, `0x417C20` | 21/21 | 0 |
-| `_openfile`, `0x41A390` | 526/526 | 49 |
+| `_openfile`, `0x41A390` | 526/526 | 0 |
 | `_alloc_osfhnd`, `0x41D7D0` | 184/184 | 4 |
 | `_sopen`, `0x41DB80` | 1053/1053 | 2 |
+
+Shipped `_open.c` establishes register mode/flags/stream lifetimes, a single
+initial commit flag, preincrement scanning and the original flag-update order.
+After successful opening, increment the shared counter before capturing the
+stream argument, then perform the original chained pointer clears. Restoring
+this closes526 bytes and all16 relocations, including411 instruction bytes,
+one alignment byte and the full114-byte switch carrier. No table or padding
+inside the carrier is excluded. All348 old exacts and100 other candidate byte
+results remain; allocation184/4 and sopen1053/2 retain their complete byte hashes.
+One compiler set, no runtime/provider work. Retained object consumers refresh
+actual local-symbol bindings without recompilation. Full pinned section and
+REA `ev_a445b56fc2e2b4edb1f2820dd32de51b1b6cf10ab9ad4ce4167f3c808b7e101b`
+are reused. Receipt `.analysis/stream-open-original-register-lifetimes-20261015/verification.json`.
 
 Shipped `osfinfo.c` uses a block index and record cursor, not redundant base,
 slot and cached-end owners. Restoring these and table-before-capacity publication
@@ -29,7 +42,7 @@ alignment byte and114 switch bytes; sopen includes981 instruction bytes,
 three alignment bytes and69 switch bytes. Both pinned CRT sections match
 the original in full, including all local and external relocations. The
 inventory extents are reconciled to these526/1053-byte carriers; following
-interfunction alignment is excluded. Neither candidate drops its tables.
+interfunction alignment is excluded. Neither comparison drops its tables.
 
 Mode parsing retains `a/r/w`, update/binary/text flags, access/temporary hints
 and commit toggles. Duplicate or unknown suffixes stop parsing rather than

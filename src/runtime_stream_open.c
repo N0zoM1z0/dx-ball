@@ -19,34 +19,34 @@ DxBallCrtStream *dxball_crt_fopen(const char *filename, const char *mode)
 }
 
 /* FUNCTION: DXBALL 0x0041A390 */
-DxBallCrtStream *dxball_crt_open_file(const char *filename, const char *mode,
-                                   int sharing, DxBallCrtStream *stream)
+DxBallCrtStream *dxball_crt_open_file(const char *filename, register const char *mode,
+                                   int sharing, DxBallCrtStream *argument)
 {
-    int access_hint = 0;
+    register int open_flags;
+    int stream_flags = dxball_crt_default_commit;
     int commit_hint = 0;
+    int access_hint = 0;
     int active;
-    int open_flags;
-    int stream_flags;
     int descriptor;
+    register DxBallCrtStream *stream;
     switch (*mode) {
     case 'a': open_flags = 0x109; goto writing;
-    case 'r': open_flags = 0; stream_flags = dxball_crt_default_commit | 1; break;
+    case 'r': open_flags = 0; stream_flags |= 1; break;
     case 'w': open_flags = 0x301;
 writing:
-        stream_flags = dxball_crt_default_commit | 2;
+        stream_flags |= 2;
         break;
     default: return NULL;
     }
     active = 1;
-    ++mode;
-    while (*mode != '\0' && active) {
+    while (*++mode != '\0' && active) {
         switch (*mode) {
         case '+':
             if (open_flags & 2) active = 0;
             else {
                 open_flags |= 2;
-                stream_flags |= 0x80;
                 open_flags &= ~1;
+                stream_flags |= 0x80;
                 stream_flags &= ~3;
             }
             break;
@@ -84,16 +84,13 @@ writing:
             break;
         default: active = 0;
         }
-        ++mode;
     }
-    descriptor = dxball_crt_sopen(filename, open_flags, sharing, 0x1a4);
-    if (descriptor < 0) return NULL;
+    if ((descriptor = dxball_crt_sopen(filename, open_flags, sharing, 0x1a4)) < 0) return NULL;
     ++dxball_crt_buffer_requests;
+    stream = argument;
     stream->flags = stream_flags;
     stream->count = 0;
-    stream->cursor = NULL;
-    stream->buffer = NULL;
-    stream->temporary_name = NULL;
+    stream->temporary_name = stream->buffer = stream->cursor = NULL;
     stream->descriptor = descriptor;
     return stream;
 }

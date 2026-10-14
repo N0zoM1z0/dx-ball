@@ -11888,29 +11888,29 @@ relocations = [
   { offset = 13, type = "REL32", symbol = "_dxball_crt_fsopen", addend = 0, target = 0x00417BF0 },
 ]
 
-[candidates.crt-open-file]
+[units.crt-open-file]
 build = "runtime_stream_open"
 symbol = "_dxball_crt_open_file"
-target_address = 0x0041A390
+target_address = 0x41a390
 size = 526
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_OPEN.md"
 relocations = [
   { target = 0x4242dc, offset = 54, type = "DIR32", symbol = "_dxball_crt_default_commit", addend = 0 },
   { target = 0x4242dc, offset = 70, type = "DIR32", symbol = "_dxball_crt_default_commit", addend = 0 },
-  { offset = 122, type = "DIR32", symbol = "$L391", addend = 0, target = 0x41a554 },
-  { offset = 137, type = "DIR32", symbol = "$L392", addend = 0, target = 0x41a52c },
+  { offset = 122, type = "DIR32", symbol = "$L392", addend = 0, target = 0x41a554 },
+  { offset = 137, type = "DIR32", symbol = "$L393", addend = 0, target = 0x41a52c },
   { target = 0x41db80, offset = 351, type = "REL32", symbol = "_dxball_crt_sopen", addend = 0 },
   { target = 0x4242d8, offset = 382, type = "DIR32", symbol = "_dxball_crt_buffer_requests", addend = 0 },
-  { offset = 412, type = "DIR32", symbol = "$L258", addend = 0, target = 0x41a424 },
-  { offset = 416, type = "DIR32", symbol = "$L261", addend = 0, target = 0x41a444 },
-  { offset = 420, type = "DIR32", symbol = "$L264", addend = 0, target = 0x41a455 },
-  { offset = 424, type = "DIR32", symbol = "$L267", addend = 0, target = 0x41a467 },
-  { offset = 428, type = "DIR32", symbol = "$L270", addend = 0, target = 0x41a479 },
-  { offset = 432, type = "DIR32", symbol = "$L273", addend = 0, target = 0x41a48a },
-  { offset = 436, type = "DIR32", symbol = "$L276", addend = 0, target = 0x41a49b },
-  { offset = 440, type = "DIR32", symbol = "$L279", addend = 0, target = 0x41a4b0 },
-  { offset = 444, type = "DIR32", symbol = "$L282", addend = 0, target = 0x41a4c5 },
-  { offset = 448, type = "DIR32", symbol = "$L285", addend = 0, target = 0x41a41d },
+  { offset = 412, type = "DIR32", symbol = "$L259", addend = 0, target = 0x41a424 },
+  { offset = 416, type = "DIR32", symbol = "$L262", addend = 0, target = 0x41a444 },
+  { offset = 420, type = "DIR32", symbol = "$L265", addend = 0, target = 0x41a455 },
+  { offset = 424, type = "DIR32", symbol = "$L268", addend = 0, target = 0x41a467 },
+  { offset = 428, type = "DIR32", symbol = "$L271", addend = 0, target = 0x41a479 },
+  { offset = 432, type = "DIR32", symbol = "$L274", addend = 0, target = 0x41a48a },
+  { offset = 436, type = "DIR32", symbol = "$L277", addend = 0, target = 0x41a49b },
+  { offset = 440, type = "DIR32", symbol = "$L280", addend = 0, target = 0x41a4b0 },
+  { offset = 444, type = "DIR32", symbol = "$L283", addend = 0, target = 0x41a4c5 },
+  { offset = 448, type = "DIR32", symbol = "$L286", addend = 0, target = 0x41a41d },
 ]
 
 [candidates.crt-allocate-descriptor]
@@ -12086,8 +12086,8 @@ relocations = [
   { target = 0x424364, offset = 68, type = "DIR32", symbol = "_dxball_crt_default_file_mode", addend = 0 },
   { target = 0x4230ac, offset = 113, type = "DIR32", symbol = "_errno", addend = 0 },
   { target = 0x4230b0, offset = 123, type = "DIR32", symbol = "__doserrno", addend = 0 },
-  { offset = 182, type = "DIR32", symbol = "$L405", addend = 0, target = 0x41df6c },
-  { offset = 189, type = "DIR32", symbol = "$L406", addend = 0, target = 0x41df58 },
+  { offset = 182, type = "DIR32", symbol = "$L406", addend = 0, target = 0x41df6c },
+  { offset = 189, type = "DIR32", symbol = "$L407", addend = 0, target = 0x41df58 },
   { target = 0x4230ac, offset = 201, type = "DIR32", symbol = "_errno", addend = 0 },
   { target = 0x4230b0, offset = 211, type = "DIR32", symbol = "__doserrno", addend = 0 },
   { target = 0x4230ac, offset = 344, type = "DIR32", symbol = "_errno", addend = 0 },
@@ -12113,11 +12113,11 @@ relocations = [
   { target = 0x419ed0, offset = 884, type = "REL32", symbol = "_dxball_crt_close", addend = 0 },
   { target = 0x41af40, offset = 910, type = "REL32", symbol = "_dxball_crt_seek", addend = 0 },
   { target = 0x419ed0, offset = 924, type = "REL32", symbol = "_dxball_crt_close", addend = 0 },
-  { offset = 984, type = "DIR32", symbol = "$L335", addend = 0, target = 0x41dc62 },
-  { offset = 988, type = "DIR32", symbol = "$L336", addend = 0, target = 0x41dc6c },
-  { offset = 992, type = "DIR32", symbol = "$L337", addend = 0, target = 0x41dc76 },
-  { offset = 996, type = "DIR32", symbol = "$L338", addend = 0, target = 0x41dc80 },
-  { offset = 1000, type = "DIR32", symbol = "$L339", addend = 0, target = 0x41dc41 },
+  { offset = 984, type = "DIR32", symbol = "$L336", addend = 0, target = 0x41dc62 },
+  { offset = 988, type = "DIR32", symbol = "$L337", addend = 0, target = 0x41dc6c },
+  { offset = 992, type = "DIR32", symbol = "$L338", addend = 0, target = 0x41dc76 },
+  { offset = 996, type = "DIR32", symbol = "$L339", addend = 0, target = 0x41dc80 },
+  { offset = 1000, type = "DIR32", symbol = "$L340", addend = 0, target = 0x41dc41 },
 ]
 
 [units.crt-uppercase]
