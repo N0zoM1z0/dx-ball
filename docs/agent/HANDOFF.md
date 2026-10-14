@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Whole typed two-word copies improve user matherr174/174/41 to174/174/28;
+both187-byte/79-byte owner exacts are preserved. No new exact; global counts
+remain unchanged. One VC4/native/i686 set, retained REA reused, no runtime tests.
+See [floating decomposition](../research/exact/RUNTIME_FP_DECOMPOSITION.md) and
+`.analysis/math-error-representation-20261014/verification.json`. A separate
+unordered-rounding expression trial expands154 to165 against original127;
+rejected and source restored, with its unique product retained under
+`.analysis/decomposition-zero-representation-20261014/`. Do not repeat it.
+
 Exit control128 is exact through real ExitProcess stdcall and decrement-before-
 comparison address traversal. Both18-byte wrapper exacts remain; walker32/6 is
 unchanged. Source457/exact336/code69,846/candidates113, old335 exacts/113 candidates

@@ -25,12 +25,9 @@ double dxball_crt_user_math_error(int error, int operation, double argument1,
         const DxBallMathDoubleBits *first_input = (const DxBallMathDoubleBits *)(const void *)&argument1;
         const DxBallMathDoubleBits *second_input = (const DxBallMathDoubleBits *)(const void *)&argument2;
         const DxBallMathDoubleBits *result_input = (const DxBallMathDoubleBits *)(const void *)&result;
-        first->low = first_input->low;
-        first->high = first_input->high;
-        second->low = second_input->low;
-        second->high = second_input->high;
-        returned->low = result_input->low;
-        returned->high = result_input->high;
+        *first = *first_input;
+        *second = *second_input;
+        *returned = *result_input;
         _ctrlfp(control, 0xffff);
         if (!dxball_math_error(&exception))
             dxball_crt_set_math_errno(error);
