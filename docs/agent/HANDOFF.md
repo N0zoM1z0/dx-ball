@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 426 |
+| Source-present functions | 428 |
 | Exact functions | 315 |
 | Complete exact code bytes | 69,003 |
 | Attached exact metadata bytes | 136 |
@@ -62,6 +62,12 @@ These are separate ledgers; 315 exact functions does not prove project completio
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Bounded string copy/append now have maintained source:58/36 bytes with56
+differences and69/49 with68 differences. Their handwritten string-instruction
+bodies remain candidates; exact315/code69,003 is unchanged, candidates104.
+All315 old exacts/102 candidates are preserved. See
+[bounded strings](../research/exact/RUNTIME_STRING_COPY.md).
 
 Multiprocessing FDIV testing adds a full278-byte exact and all89 literal bytes.
 Separating process-handle acquisition removes the initial twelve preparation
@@ -505,7 +511,7 @@ Current comparison and producer authorities:
 
 - `config/match-units.toml`: exact recipes, complete extents and bindings.
 - `build/reports/exact-replay.json`: all 315 exact closures and current producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 102 candidates;
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 104 candidates;
   its directory name is historical, its contents are current.
 - `config/functions.csv`, `implemented.csv`, `matches.csv`, `semantic-acceptance.csv`
   and `source-owners.toml`: source, status, ownership and scoped evidence.
