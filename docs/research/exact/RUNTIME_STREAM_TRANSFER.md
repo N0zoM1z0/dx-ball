@@ -9,7 +9,7 @@ input/output refill and terminal flags. Closure and terminal flags are exact.
 | `fread`, `0x417AA0` | 326/324 | 218 |
 | `_getstream`, `0x41A5A0` | 126/126 | 2 |
 | `_filbuf`, `0x418220` | 240/251 | 238 |
-| `_flsbuf`, `0x41A620` | 328/320 | 277 |
+| `_flsbuf`, `0x41A620` | 328/328 | 67 |
 | `_isatty`, `0x41DFA0` | 42/42 | 0 |
 
 Closure preserves flush/free/descriptor-close order, clears stream flags even
@@ -30,7 +30,17 @@ returns; the final write-mismatch exit stays separate. This improves288/311 to
 320/277; not exact. Deferred-count-only292/281 and write-mode-entry316/279 are
 retained; the latter is rejected. Both owner exacts and three other candidates
 remain unchanged. Three VC4/native/i686 sets, retained REA, no runtime/game tests.
-Current private seal: `.analysis/stream-output-write-lifetime-20261014/verification.json`.
+That checkpoint is retained under `.analysis/stream-output-write-lifetime-20261014/`.
+
+The shipped CRT `_flsbuf.c` establishes the genuine register stream, expected
+count and written count, plus their chained active-path initialization. EOF
+success and final write mismatch own their respective transitions/returns.
+Restoring those declarations and branches improves320/328/277 to328/328/67.
+Both bodies contain122 instructions; stream/descriptor register allocation,
+record-address scheduling and error epilogues remain different. Two compiler
+sets preserve both owner exacts and all three other candidates, with all340
+old exacts/249 semantic rows unchanged. No runtime tests or provider work;
+receipt `.analysis/output-buffer-register-owner-20261014/verification.json`.
 
 Input distinguishes zero/-1 from other counts, detects text Ctrl-Z state and
 expands the owned512-byte buffer to4096. Output retains read-to-write EOF

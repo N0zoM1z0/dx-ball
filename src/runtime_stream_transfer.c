@@ -89,28 +89,31 @@ int dxball_crt_fill_input(DxBallCrtStream *stream)
 }
 
 /* FUNCTION: DXBALL 0x0041A620 */
-int dxball_crt_flush_output(int value, DxBallCrtStream *stream)
+int dxball_crt_flush_output(int value, DxBallCrtStream *argument)
 {
-    int descriptor = stream->descriptor;
-    int written;
-    int expected;
+    register DxBallCrtStream *stream;
+    register int expected;
+    register int written;
+    int descriptor;
+    stream = argument;
+    descriptor = stream->descriptor;
     if ((stream->flags & 0x82) == 0 || (stream->flags & 0x40)) {
         stream->flags |= 0x20;
         return -1;
     }
     if (stream->flags & 1) {
         stream->count = 0;
-        if ((stream->flags & 0x10) == 0) {
+        if (stream->flags & 0x10) {
+            stream->cursor = stream->buffer;
+            stream->flags &= ~1;
+        } else {
             stream->flags |= 0x20;
             return -1;
         }
-        stream->cursor = stream->buffer;
-        stream->flags &= ~1;
     }
     stream->flags |= 2;
     stream->flags &= ~0x10;
-    stream->count = 0;
-    written = 0;
+    written = expected = stream->count = 0;
     if ((stream->flags & 0x10c) == 0) {
         if ((stream == &dxball_crt_standard_streams[1] ||
              stream == &dxball_crt_standard_streams[2]) && dxball_crt_isatty(descriptor)) {
@@ -132,11 +135,11 @@ int dxball_crt_flush_output(int value, DxBallCrtStream *stream)
         expected = 1;
         written = dxball_crt_write(descriptor, &value, 1);
     }
-    if (expected != written) goto stream_error;
+    if (written != expected) {
+        stream->flags |= 0x20;
+        return -1;
+    }
     return value & 0xff;
-stream_error:
-    stream->flags |= 0x20;
-    return -1;
 }
 
 /* FUNCTION: DXBALL 0x00417AA0 */

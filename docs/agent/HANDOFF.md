@@ -95,12 +95,13 @@ i686 sets, retained REA and no runtime/provider/game tests. Global counts unchan
 See [signal dispatch](../research/exact/RUNTIME_SIGNALS.md) and
 `.analysis/signal-filter-fpe-countdown-20261014/verification.json`.
 
-Output refill improves288/328/311 to320/328/277 through active write-count
-initialization and separately owned early error returns. Two owner exacts and
-three other candidates remain; all338 exacts/249 semantic rows are preserved.
-Three VC4/native/i686 sets, retained REA, no runtime/game tests. Global counts
-unchanged. See [stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md)
-and `.analysis/stream-output-write-lifetime-20261014/verification.json`.
+Output refill now328/328/67, improving320/328/277 through genuine register
+stream/count locals and separately owned final error return from shipped CRT
+source. Both bodies have122 instructions; register/address/epilogue scheduling
+remains nonexact. Two owner exacts and three other candidates remain; all340
+exacts/249 semantic rows are preserved. Two compiler sets, no runtime/provider
+work. See [stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md) and
+`.analysis/output-buffer-register-owner-20261014/verification.json`.
 
 Terminal dependency identities/boundaries close two unknown origins:
 terminate0x41BC60/inconsistency0x41BCE0, each115 bytes including the omitted RET.

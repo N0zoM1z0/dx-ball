@@ -29,8 +29,8 @@ countdown/action-slot traversal and the native-width tagged handler snapshot.
 Both owner exacts/full140-byte state and raise393/323 remain. See
 [signal dispatch](RUNTIME_SIGNALS.md).
 
-Output refill improves288/328/311 to320/328/277 through active write-count
-lifetime and separate early error returns. It remains nonexact; all338 exacts
+Output refill improves320/328/277 to328/328/67 through genuine register locals
+and its owned final error return. It remains nonexact; all340 exacts
 and the three owner candidate companions are unchanged. See
 [stream transfer](RUNTIME_STREAM_TRANSFER.md).
 
