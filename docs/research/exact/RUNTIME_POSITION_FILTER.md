@@ -1,9 +1,18 @@
 # Stream position and unhandled C++ filtering
 
 Complete pinned CRT sections identify ftell432, the stdcall C++ filter88 and
-restoration13. Filtering/restoration match in full; ftell emits431 bytes with324
-differences and remains a candidate. Restoration's unique complete13-byte match
+restoration13. All three match in full. Restoration's unique complete13-byte match
 and REA byte read establish a previously unlisted entry at0x0041E1C0.
+
+The shipped `ftell.c` uses ordinary differences between pointers into the same
+buffer, not differences between converted integer addresses. Restoring both
+expressions and its seek-result assignment condition closes432 bytes and all
+six actual relocations. Coherent backed spans and representable pointer
+differences are required; explicit32-bit offset wrapping remains unchanged.
+All347 previous exacts and101 other candidates retain their results. One
+compiler set, no runtime/provider work. The complete pinned archive member and
+retained REA assembly independently cover the original. Receipt:
+`.analysis/stream-position-original-pointer-differences-20261015/verification.json`.
 
 Position calculation preserves negative-count clamping, the buffered/unbuffered
 split, newline expansion, read-count-zero behavior, EOF seeking/restoration,

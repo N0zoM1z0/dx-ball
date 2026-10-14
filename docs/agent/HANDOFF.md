@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 347 |
-| Complete exact code bytes | 71,723 |
+| Exact functions | 348 |
+| Complete exact code bytes | 72,155 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 347 exact functions does not prove project completion.
+These are separate ledgers; 348 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Stream position closes432 bytes and all six actual relocations through the
+original same-buffer pointer differences and seek-result assignment condition.
+The pointer fields require coherent backed spans and representable differences;
+32-bit offset wrapping remains explicit. All347 old exacts and101 other candidates
+remain. One compiler set, no runtime/provider work. Current348/code72,155. See
+[stream position](../research/exact/RUNTIME_POSITION_FILTER.md) and
+`.analysis/stream-position-original-pointer-differences-20261015/verification.json`.
 
 Heap resizing closes111 bytes and all seven actual relocations through the
 original unbounded retry and owned handler-failure return from shipped realloc.c.

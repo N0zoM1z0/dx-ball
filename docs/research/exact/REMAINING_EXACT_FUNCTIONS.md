@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**347 functions / 71,723 code bytes / 136 metadata bytes**.
+**348 functions / 72,155 code bytes / 136 metadata bytes**.
+
+Stream position432 closes through the original same-buffer pointer differences
+and seek-result assignment condition. All347 old exacts and101 other candidates
+remain. See [stream position](RUNTIME_POSITION_FILTER.md).
 
 Heap resizing111 closes through the original retry loop and owned handler-failure
 return, restoring unconditional heap reload before the backward branch. All346

@@ -13,12 +13,11 @@ DxBallCrtLong dxball_crt_ftell(DxBallCrtStream *argument)
     descriptor = stream->descriptor;
     if (stream->count < 0)
         stream->count = 0;
-    position = dxball_crt_seek(descriptor, 0, 1);
-    if (position < 0)
+    if ((position = dxball_crt_seek(descriptor, 0, 1)) < 0)
         return -1;
     if (!(stream->flags & 0x108))
         return (DxBallCrtLong)((unsigned int)position - (unsigned int)stream->count);
-    offset = (unsigned int)((size_t)stream->cursor - (size_t)stream->buffer);
+    offset = (unsigned int)(stream->cursor - stream->buffer);
     if (stream->flags & 3) {
         if (__pioinfo[descriptor >> 5][descriptor & 31].flags & 0x80)
             for (cursor = stream->buffer; cursor < stream->cursor; ++cursor) {
@@ -36,7 +35,7 @@ DxBallCrtLong dxball_crt_ftell(DxBallCrtStream *argument)
             offset = 0;
         else {
             total = (unsigned int)stream->count +
-                (unsigned int)((size_t)stream->cursor - (size_t)stream->buffer);
+                (unsigned int)(stream->cursor - stream->buffer);
             if (__pioinfo[descriptor >> 5][descriptor & 31].flags & 0x80) {
                 if (dxball_crt_seek(descriptor, 0, 2) == position) {
                     end = stream->buffer + total;
