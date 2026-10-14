@@ -4,11 +4,15 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**337 functions / 69,994 code bytes / 136 metadata bytes**.
+**338 functions / 70,140 code bytes / 136 metadata bytes**.
+
+MessageBox adds one complete146-byte exact with14 relocations and58 literal
+bytes. All337 prior exacts remain; source457/candidates111. See
+[error controls](RUNTIME_ERROR_CONTROL.md).
 
 Catch transfer adds one complete148-byte exact through all five actual
 relocations. Both owner exacts188/44 and all336 prior exact units remain.
-Source457/candidates112; all34 authored candidates remain unchanged. See
+Source457/candidates111; all34 authored candidates remain unchanged. See
 [C++ catch transfer](RUNTIME_CPP_TRANSFER.md).
 
 Exit control closes all128 bytes and13 relocations through the actual imported
@@ -172,7 +176,8 @@ exacts across852 bytes. Current candidates74:34 authored/40 runtime; every
 authored result below remains unchanged.
 
 [Error controls](RUNTIME_ERROR_CONTROL.md) add three exact validators and full
-abort31 across122 bytes, plus the complete MessageBox146/90 candidate. Current
+abort31 across122 bytes, plus the initial MessageBox146/90 candidate (now exact).
+At that checkpoint,
 candidates75:34 authored/41 runtime; the authored results below remain unchanged.
 
 [Signal dispatch](RUNTIME_SIGNALS.md) adds exact lookup49/47 and full raise/filter

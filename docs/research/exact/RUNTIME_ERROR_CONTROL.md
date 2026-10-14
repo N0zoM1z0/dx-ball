@@ -12,11 +12,17 @@ grow naturally on native hosts. These are recovered historical probes, not a
 claim of race-free memory safety. Abort preserves error10, signal22 and quick
 exit3 in the observed order; the signal backend remains a dependency.
 
-MessageBox retains146 bytes with90 differences and is not exact. Its three
+MessageBox is now complete146-byte exact. Its three
 typed local static callbacks start null; required binding failure returns0,
 optional window/popup exports remain optional, and the loaded module is kept.
 All four export literals match in full across58 bytes. A shared binding-failure
-exit improves152/121 to146/90; compiler failure-block placement remains open.
+exit improves152/121 to146/90. A positive short-circuit binding-success block
+then restores the terminal failure return and removes all90 differences.
+All14 actual relocations and58 literal bytes are covered; the four existing
+owner exacts are unchanged. One VC4/native/i686 compilation set, retained REA
+and no runtime/UI/game tests. Exact338/code70,140/candidates111; all337 prior
+exacts,111 other candidates and249 semantic rows preserved. Current private seal:
+`.analysis/messagebox-binding-success-20261014/verification.json`.
 GetProcAddress results are converted to the actual export signatures, preserving
 native-width window handles. Standalone GNU compilation disables only that
 intentional export-pointer conversion diagnostic; there are no alternate bodies.

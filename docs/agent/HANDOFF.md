@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 337 |
-| Complete exact code bytes | 69,994 |
+| Exact functions | 338 |
+| Complete exact code bytes | 70,140 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 337 exact functions does not prove project completion.
+These are separate ledgers; 338 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
-The authored denominator and 28 unclassified origins remain open.
+The authored denominator and 26 unclassified origins remain open.
+
+MessageBox lazy binding closes all146 bytes,14 actual relocations and58 literal
+bytes by grouping the required module/export checks into a positive success
+block. VC4 restores the terminal failure return; all four owner exacts remain.
+Exact338/code70,140/candidates111; source457 and249 semantic rows unchanged.
+One VC4/native/i686 set, retained REA, no runtime/UI/game tests. See
+[error controls](../research/exact/RUNTIME_ERROR_CONTROL.md) and
+`.analysis/messagebox-binding-success-20261014/verification.json`.
 
 Catch transfer closes all148 bytes and five actual relocations by restoring
 default-frame-first argument branches around the single genuine stdcall unwind

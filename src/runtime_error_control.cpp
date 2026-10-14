@@ -9,11 +9,12 @@ int __crtMessageBoxA(const char *text, const char *caption, unsigned int flags)
     void *parent = 0;
     if (message_box == 0) {
         void *module = LoadLibraryA("user32.dll");
-        if (module == 0) goto failure;
-        message_box = reinterpret_cast<DxBallCrtMessageBox>(GetProcAddress(module, "MessageBoxA"));
-        if (message_box == 0) goto failure;
-        active_window = reinterpret_cast<DxBallCrtActiveWindow>(GetProcAddress(module, "GetActiveWindow"));
-        last_popup = reinterpret_cast<DxBallCrtLastPopup>(GetProcAddress(module, "GetLastActivePopup"));
+        if (module && (message_box = reinterpret_cast<DxBallCrtMessageBox>(GetProcAddress(module, "MessageBoxA")))) {
+            active_window = reinterpret_cast<DxBallCrtActiveWindow>(GetProcAddress(module, "GetActiveWindow"));
+            last_popup = reinterpret_cast<DxBallCrtLastPopup>(GetProcAddress(module, "GetLastActivePopup"));
+        } else {
+            goto failure;
+        }
     }
     if (active_window) parent = active_window();
     if (parent && last_popup) parent = last_popup(parent);

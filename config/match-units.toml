@@ -12300,27 +12300,27 @@ relocations = [
   { offset = 456, type = "DIR32", symbol = "__imp__SetHandleCount@4", addend = 0, target = 0x004412FC },
 ]
 
-[candidates.crt-message-box]
+[units.crt-message-box]
 build = "runtime_error_control"
 symbol = "___crtMessageBoxA"
 target_address = 0x0041E250
 size = 146
 boundary_evidence = "docs/research/exact/RUNTIME_ERROR_CONTROL.md"
 relocations = [
-  { offset = 7, type = "DIR32", symbol = "?message_box@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242E8 },
-  { offset = 14, type = "DIR32", symbol = "??_C@_0L@HKL@user32?4dll?$AA@", addend = 0, target = 0x00424324, data_hex = "7573657233322e646c6c00" },
-  { offset = 20, type = "DIR32", symbol = "__imp__LoadLibraryA@4", addend = 0, target = 0x00441330 },
-  { offset = 31, type = "DIR32", symbol = "??_C@_0M@PKCK@MessageBoxA?$AA@", addend = 0, target = 0x00424318, data_hex = "4d657373616765426f784100" },
-  { offset = 37, type = "DIR32", symbol = "__imp__GetProcAddress@8", addend = 0, target = 0x00441338 },
-  { offset = 45, type = "DIR32", symbol = "?message_box@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242E8 },
-  { offset = 60, type = "DIR32", symbol = "??_C@_0BA@GILI@GetActiveWindow?$AA@", addend = 0, target = 0x00424308, data_hex = "47657441637469766557696e646f7700" },
-  { offset = 68, type = "DIR32", symbol = "??_C@_0BD@NJFP@GetLastActivePopup?$AA@", addend = 0, target = 0x004242F4, data_hex = "4765744c617374416374697665506f70757000" },
-  { offset = 73, type = "DIR32", symbol = "?active_window@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242EC },
-  { offset = 81, type = "DIR32", symbol = "?last_popup@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242F0 },
-  { offset = 86, type = "DIR32", symbol = "?active_window@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242EC },
-  { offset = 104, type = "DIR32", symbol = "?last_popup@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242F0 },
-  { offset = 114, type = "DIR32", symbol = "?last_popup@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242F0 },
-  { offset = 138, type = "DIR32", symbol = "?message_box@?1??__crtMessageBoxA@@9@9", addend = 0, target = 0x004242E8 },
+  { offset = 7, type = "DIR32", symbol = "?message_box@?1??__crtMessageBoxA@@9@9", target = 0x4242e8, addend = 0 },
+  { offset = 14, type = "DIR32", symbol = "??_C@_0L@HKL@user32?4dll?$AA@", target = 0x424324, addend = 0, data_hex = "7573657233322e646c6c00" },
+  { offset = 20, type = "DIR32", symbol = "__imp__LoadLibraryA@4", target = 0x441330, addend = 0 },
+  { offset = 31, type = "DIR32", symbol = "??_C@_0M@PKCK@MessageBoxA?$AA@", target = 0x424318, addend = 0, data_hex = "4d657373616765426f784100" },
+  { offset = 37, type = "DIR32", symbol = "__imp__GetProcAddress@8", target = 0x441338, addend = 0 },
+  { offset = 45, type = "DIR32", symbol = "?message_box@?1??__crtMessageBoxA@@9@9", target = 0x4242e8, addend = 0 },
+  { offset = 54, type = "DIR32", symbol = "??_C@_0BA@GILI@GetActiveWindow?$AA@", target = 0x424308, addend = 0, data_hex = "47657441637469766557696e646f7700" },
+  { offset = 62, type = "DIR32", symbol = "??_C@_0BD@NJFP@GetLastActivePopup?$AA@", target = 0x4242f4, addend = 0, data_hex = "4765744c617374416374697665506f70757000" },
+  { offset = 67, type = "DIR32", symbol = "?active_window@?1??__crtMessageBoxA@@9@9", target = 0x4242ec, addend = 0 },
+  { offset = 75, type = "DIR32", symbol = "?last_popup@?1??__crtMessageBoxA@@9@9", target = 0x4242f0, addend = 0 },
+  { offset = 80, type = "DIR32", symbol = "?active_window@?1??__crtMessageBoxA@@9@9", target = 0x4242ec, addend = 0 },
+  { offset = 98, type = "DIR32", symbol = "?last_popup@?1??__crtMessageBoxA@@9@9", target = 0x4242f0, addend = 0 },
+  { offset = 108, type = "DIR32", symbol = "?last_popup@?1??__crtMessageBoxA@@9@9", target = 0x4242f0, addend = 0 },
+  { offset = 132, type = "DIR32", symbol = "?message_box@?1??__crtMessageBoxA@@9@9", target = 0x4242e8, addend = 0 },
 ]
 
 [units.crt-validate-read]
