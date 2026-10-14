@@ -290,6 +290,16 @@ source = "src/runtime_lowio_read.c"
 header = "src/runtime_lowio_read.h"
 additional_inputs = ["src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
 
+[owners.runtime_close]
+source = "src/runtime_close.c"
+header = "src/runtime_lowio_read.h"
+additional_inputs = ["src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+
+[owners.runtime_osfinfo]
+source = "src/runtime_osfinfo.c"
+header = "src/runtime_lowio_read.h"
+additional_inputs = ["src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+
 [owners.runtime_stream_transfer]
 source = "src/runtime_stream_transfer.c"
 header = "src/runtime_stream_transfer.h"

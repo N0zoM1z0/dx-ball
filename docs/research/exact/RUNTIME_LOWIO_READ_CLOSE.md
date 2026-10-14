@@ -1,14 +1,26 @@
 # CRT reading and handle lifetime
 
 Four complete source bodies now cover descriptor reads, closes, handle
-installation and handle invalidation. Descriptor closing is now a complete exact.
+installation and handle invalidation. Closing and invalidation are complete exacts.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
-| `_read`, `0x41A120` | 611/605 | 463 |
+| `_read`, `0x41A120` | 611/609 | 473 |
 | `_close`, `0x419ED0` | 199/199 | 0 |
-| `_set_osfhnd`, `0x41D890` | 163/163 | 13 |
-| `_free_osfhnd`, `0x41D940` | 144/144 | 12 |
+| `_set_osfhnd`, `0x41D890` | 163/163 | 2 |
+| `_free_osfhnd`, `0x41D940` | 144/144 | 0 |
+
+The pinned archive assigns closing to `close.obj`, both handle updates to
+`osfinfo.obj`, and reading to `read.obj`. Restoring this source ownership in
+shared `runtime_close.c`/`runtime_osfinfo.c` preserves close199 exact and closes
+invalidation144 with all six actual relocations. Direct records and the positive
+live-handle gate follow shipped `osfinfo.c`; installation improves163/13 to163/2.
+Reading's entire source body is unchanged, but its separate context emits609/473
+instead of605/463. All345 preceding exacts remain; current346/code71,612 and103
+candidates. Three producer compilations, no runtime/provider work. Retained REA
+`ev_51ef29f63e0e3f6ff2927f17ba1073630f3e9e18ddccedba0cffeb95e1e9793d`
+and the full pinned member independently cover invalidation.
+Receipt `.analysis/lowio-original-source-owners-20261014/verification.json`.
 
 Direct record expressions and the owned validation-error return from shipped
 `close.c` improve199/14 to199/2. Capturing stdout before stderr reduces this

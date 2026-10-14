@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**345 functions / 71,468 code bytes / 136 metadata bytes**.
+**346 functions / 71,612 code bytes / 136 metadata bytes**.
+
+Original `close.obj`/`osfinfo.obj` source ownership closes handle invalidation144
+through all six actual relocations while preserving close199 exact. Installation
+163/13 improves to163/2; unchanged read source emits609/611/473. All345 old exacts
+remain; candidates103. See [handle lifetime](RUNTIME_LOWIO_READ_CLOSE.md).
 
 Zero allocation improves77/82/16 to82/82/11 through original consumed-size
 and retry-failure ownership, restoring the unconditional post-handler heap

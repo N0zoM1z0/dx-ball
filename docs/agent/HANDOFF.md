@@ -52,16 +52,25 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 345 |
-| Complete exact code bytes | 71,468 |
+| Exact functions | 346 |
+| Complete exact code bytes | 71,612 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 345 exact functions does not prove project completion.
+These are separate ledgers; 346 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Original CRT object ownership resolves the handle-gate conflict: `close.obj`
+and `osfinfo.obj` are separate source producers, not one reconstructed aggregate.
+Shared `runtime_close.c` preserves199 exact; shared `runtime_osfinfo.c` closes144
+invalidation bytes and all six relocations, installation163/13 improves to163/2.
+Read source is unchanged but emits609/611/473 in its separate context. All345 old
+exacts remain; current346/code71,612/candidates103. Three producer compilations,
+no runtime/provider work. See [handle lifetime](../research/exact/RUNTIME_LOWIO_READ_CLOSE.md)
+and `.analysis/lowio-original-source-owners-20261014/verification.json`.
 
 Zero allocation improves77/82/16 to82/82/11 through the original consumed size
 parameter, retry loop and owned failure return. The unconditional post-handler
