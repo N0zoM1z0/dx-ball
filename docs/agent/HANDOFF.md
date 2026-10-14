@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
 
+Multiplication improves708/678/666 to678/678/446 by restoring the product and
+operand byte cursors and original positive-count entry. Not exact. Coupled parser
+1851/1871/1661 becomes1662 through equality-CMP/output-register changes; internal
+definition offsets, branches and tables remain. Scaling133/123/127 is unchanged.
+Three VC4 trials, one native/i686 set, retained REA, no runtime tests. All336
+exacts/110 other candidates/249 semantic rows are preserved; totals unchanged.
+See [decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
+`.analysis/multiply-product-cursor-20261014/verification.json`.
+
 Whole typed two-word copies improve user matherr174/174/41 to174/174/28;
 both187-byte/79-byte owner exacts are preserved. No new exact; global counts
 remain unchanged. One VC4/native/i686 set, retained REA reused, no runtime tests.

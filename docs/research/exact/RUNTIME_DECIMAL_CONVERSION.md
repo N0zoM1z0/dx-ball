@@ -8,8 +8,8 @@ All ten affected exacts preserve 502 bytes. The 239 other producers are unchange
 | Candidate | Current/original bytes | Differences |
 | --- | ---: | ---: |
 | Numeric digits | 232/232 | 20 |
-| Parser and embedded tables | 1851/1871 | 1661 |
-| Multiplication | 708/678 | 666 |
+| Parser and embedded tables | 1851/1871 | 1662 |
+| Multiplication | 678/678 | 446 |
 | Decimal scaling | 133/123 | 127 |
 
 The parser preserves sign/point/exponent rollback, `D/E` markers, optional
@@ -42,3 +42,21 @@ run. Locale dependencies, remaining exact gaps and game integration stay open.
 The next continuation restores the coarse shift's middle-limb carry accumulator
 and OR direction, reducing numeric conversion to 20 differences. The exact
 addition companion is preserved. See [the current source note](RUNTIME_FILE_MODES.md).
+
+The multiplication continuation restores the independent product byte cursor,
+relative operand byte cursors and positive-count entry before the descending
+count loop. Product position is initialized only after the early exits and
+advances two bytes before the diagonal ordinal. Carry uses that same byte
+position directly, without an unnecessary half-index mask. Numeric operand
+cursors may end negative; no before-array pointer is formed. The original and
+current bodies now both contain678 bytes, with446 full-span differences instead
+of708/666; this is not exact. All three actual call relocations are included.
+
+The unchanged parser source emits four commuted equality comparisons and a
+three-register output permutation in this compiler context. Internal definition
+offsets, branches and embedded tables are preserved; its full comparison changes
+1661 to1662. Scaling remains133/123/127. Three VC4 compilations and one native/i686
+set; retained REA reused, no runtime tests. All336 exact producers,110 other
+candidates and249 semantic rows stay unchanged. Totals457 source/336 exact/
+69,846 code bytes/113 candidates. Receipt:
+`.analysis/multiply-product-cursor-20261014/verification.json`.

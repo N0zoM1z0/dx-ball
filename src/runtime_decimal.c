@@ -21,7 +21,7 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
     unsigned short left_exponent = left->exponent & 0x7fff;
     unsigned short right_exponent = right->exponent & 0x7fff;
     unsigned short exponent = left_exponent + right_exponent;
-    int diagonal;
+    int diagonal, product_offset;
     product.words[0] = 0;
     product.words[1] = 0;
     product.words[2] = 0;
@@ -53,18 +53,21 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
             return;
         }
     }
-    for (diagonal = 0; diagonal < 5; ++diagonal) {
-        int left_index = diagonal;
-        int right_index = 4;
+    for (product_offset = 0, diagonal = 0; diagonal < 5;
+            product_offset += sizeof(product.halves[0]), ++diagonal) {
+        int left_offset = diagonal * sizeof(*left_halves);
+        int right_offset = 4 * sizeof(*right_halves);
         int remaining = 5 - diagonal;
-        unsigned int *accumulator = (unsigned int *)(product.bytes + diagonal * 2);
-        while (remaining != 0) {
-            unsigned int term = (unsigned int)left_halves[left_index] * right_halves[right_index];
-            if (__addl(*accumulator, term, accumulator)) ++product.halves[diagonal + 2];
-            ++left_index;
-            --right_index;
-            --remaining;
-        }
+        unsigned int *accumulator = (unsigned int *)(product.bytes + product_offset);
+        if (remaining > 0) do {
+            unsigned int term = (unsigned int)*(const unsigned short *)
+                ((const unsigned char *)left_halves + left_offset) *
+                *(const unsigned short *)((const unsigned char *)right_halves + right_offset);
+            if (__addl(*accumulator, term, accumulator))
+                ++*(unsigned short *)(product.bytes + product_offset + sizeof(product.words[0]));
+            left_offset += sizeof(*left_halves);
+            right_offset -= sizeof(*right_halves);
+        } while (--remaining);
     }
     exponent -= 0x3ffe;
     while ((short)exponent > 0 && (product.words[2] & 0x80000000U) == 0) {
