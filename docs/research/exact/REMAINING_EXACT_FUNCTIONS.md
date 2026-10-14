@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **334 functions / 69,697 code bytes / 136 metadata bytes**.
 
+Stream seeking/output restore full153/381-byte bodies with21/29 differences;
+neither is exact. Source453/candidates110, all334 old exacts/108 candidates
+preserved. See [stream operations](RUNTIME_STREAM_OPERATIONS.md).
+
 The full 229-byte CRT fabs is exact, including real special-value/error handling
 and all seven calls. Source450/candidates107; all333 old exacts/107 candidates
 are preserved. See [double absolute value](RUNTIME_ABSOLUTE_DOUBLE.md).

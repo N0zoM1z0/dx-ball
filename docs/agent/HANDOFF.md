@@ -51,7 +51,7 @@ goal with the prompt above, preserving the same objective.
 | Item | Current value |
 | --- | ---: |
 | Provisional function candidates | 543 |
-| Source-present functions | 451 |
+| Source-present functions | 453 |
 | Exact functions | 334 |
 | Complete exact code bytes | 69,697 |
 | Attached exact metadata bytes | 136 |
@@ -62,6 +62,12 @@ These are separate ledgers; 334 exact functions does not prove project completio
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 28 unclassified origins remain open.
+
+Stream seeking/output add full153/381-byte source bodies with21/29 differences.
+No new exact:334/code69,697 unchanged; source453/candidates110. Preserve all334
+old exacts/108 candidates/249 semantic rows. See [stream operations](../research/exact/RUNTIME_STREAM_OPERATIONS.md)
+and `.analysis/runtime-stream-operations-20261014/verification.json`. One closed
+five-record REA session; one VC4/native/i686 set, no runtime/game tests.
 
 Aligned strlen adds a full source model,102/119 bytes with112 differences.
 Preserve32-bit zero-byte detection, actual word reread and precise byte probes;

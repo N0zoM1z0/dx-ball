@@ -39,6 +39,37 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_stream_operations]
+source = "src/runtime_stream_operations.c"
+object = "build/exact/runtime_stream_operations.obj"
+inputs = ["src/runtime_stream_operations.c", "src/runtime_stream_operations.h", "src/runtime_stream_transfer.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/runtime_stream.h", "src/allocator.h", "src/runtime_stream_position.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-fseek]
+build = "runtime_stream_operations"
+symbol = "_dxball_crt_fseek"
+target_address = 0x00418310
+size = 153
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_OPERATIONS.md"
+relocations = [
+  { offset = 47, type = "REL32", symbol = "_dxball_crt_ftell", addend = 0, target = 0x0041B000 },
+  { offset = 68, type = "REL32", symbol = "_dxball_crt_flush_buffer", addend = 0, target = 0x0041A030 },
+  { offset = 117, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 142, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
+]
+
+[candidates.crt-fwrite]
+build = "runtime_stream_operations"
+symbol = "_dxball_crt_fwrite"
+target_address = 0x00417E70
+size = 381
+boundary_evidence = "docs/research/exact/RUNTIME_STREAM_OPERATIONS.md"
+relocations = [
+  { offset = 158, type = "REL32", symbol = "_dxball_crt_flush_buffer", addend = 0, target = 0x0041A030 },
+  { offset = 205, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
+  { offset = 261, type = "REL32", symbol = "_dxball_crt_flush_output", addend = 0, target = 0x0041A620 },
+]
+
 [builds.runtime_string_length]
 source = "src/runtime_string_length.c"
 object = "build/exact/runtime_string_length.obj"
