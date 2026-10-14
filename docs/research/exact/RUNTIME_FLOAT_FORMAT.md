@@ -11,12 +11,21 @@ source bodies. Five match every byte after every actual relocation:
 | 00418E40 | Classify nonnegative or unordered value | 23 |
 | 0041D0D0 | Report unavailable float support | 11 |
 
-Decimal insertion remains101 bytes/5 differences, assignment76/76 bytes with9
+Decimal insertion remains101 bytes/4 differences, assignment76/76 bytes with9
 differences, and digit generation122/129 bytes with68 differences. Digit shifting
 uses overlap-safe memmove rather than the original overlapping intrinsic strcpy.
 Assignment preserves object representations, including NaNs. The original
 three-argument digit routine uses a guard digit and updates decimal position on
 carry. Decimal insertion requires a defined spare byte after the terminator.
+
+The insertion entry's original JE at0x418D85 targets0x418DBB, not the return:
+leading e/E skips digit scanning but still inserts the decimal point. Restoring
+this shared path reduces5 differences to4. Both pinned CRT and retained REA
+bytes `ev_632e632c407b30e55f8a6eeb4be8d564b0dc36a776d0c668ef38ce4cfd80cdd2`
+confirm the branch. A captured-write reordering gives10 differences and is
+rejected; remaining differences are loop store/scheduling. Four owner exacts
+and both other candidates remain unchanged. Two compiler sets, no runtime tests;
+receipt `.analysis/decimal-point-insertion-flow-20261014/verification.json`.
 
 Assignment continuation restores the actual two-word binary64 representation
 and separate four-byte transport, without floating loads or NaN conversion.

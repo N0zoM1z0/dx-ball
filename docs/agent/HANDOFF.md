@@ -71,6 +71,13 @@ four i686 attempts/two pass; no runtime/provider/game work. Global counts unchan
 See [signal dispatch](../research/exact/RUNTIME_SIGNALS.md) and
 `.analysis/signal-raise-separated-traversal-20261014/verification.json`.
 
+Decimal insertion restores the original leading-e/E branch: skip digit scanning,
+not insertion. Whole101/101 comparison improves5 to4 differences; four owner
+exacts and both other candidates remain. The remaining loop scheduling is not
+exact; captured-write reordering10 is rejected. Two compiler sets, no runtime
+tests. See [float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md) and
+`.analysis/decimal-point-insertion-flow-20261014/verification.json`.
+
 Exception filtering improves376/351/355 to351/351/9 through the real tagged
 handler snapshot and captured FPE action-slot countdown. Both exact lookups and
 full140-byte state remain; raise393/323 including53 dispatch bytes is unchanged.

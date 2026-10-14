@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **338 functions / 70,140 code bytes / 136 metadata bytes**.
 
+Decimal insertion101/5 improves to101/4 by restoring the original leading-e/E
+branch into insertion, rather than returning. No new exact; four owner exacts
+and both other candidates remain. See [float formatting](RUNTIME_FLOAT_FORMAT.md).
+
 MessageBox adds one complete146-byte exact with14 relocations and58 literal
 bytes. All337 prior exacts remain; source457/candidates111. See
 [error controls](RUNTIME_ERROR_CONTROL.md).

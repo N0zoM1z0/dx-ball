@@ -24,19 +24,20 @@ void dxball_crt_format_float(const double *value, char *buffer,
 void dxball_crt_force_decimal_point(char *buffer)
 {
     char carried, next, written;
-    if (dxball_crt_tolower(*buffer) == 'e')
-        return;
-    do {
-        ++buffer;
-    } while ((__mb_cur_max > 1 ? _isctype(*buffer, 4) : _pctype[(int)*buffer] & 4));
+    if (dxball_crt_tolower(*buffer) != 'e') {
+        do {
+            ++buffer;
+        } while ((__mb_cur_max > 1 ? _isctype(*buffer, 4) : _pctype[(int)*buffer] & 4));
+    }
     carried = *buffer;
     *buffer++ = __decimal_point;
     do {
         /* Insertion backing includes this defined spare byte after the NUL. */
         next = *buffer;
         written = carried;
-        *buffer++ = written;
+        *buffer = written;
         carried = next;
+        ++buffer;
     } while (written);
 }
 
