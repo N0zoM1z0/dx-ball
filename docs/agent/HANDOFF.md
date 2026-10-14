@@ -63,6 +63,14 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Float digits improves122/129/68 to122/129/65 through genuine register pointers,
+consumed guard-byte advance and original conditional stores from shipped _fptostr.c.
+Keep the defined complete memmove shift: original REP strlen/copy remains nonexact.
+Explicit forward copying emits108/129/69 and is rejected. All four owner exacts,
+both other owner candidates and all348 exacts remain. Two compiler sets, no
+runtime/provider work. See [float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md)
+and `.analysis/float-digits-original-lifetimes-20261015/verification.json`.
+
 Descriptor allocation improves184/37 to184/4 through original block-index and
 record-cursor lifetimes, direct bounds and table-before-capacity publication.
 All instruction addresses/widths and180 other bytes match; only two commuted

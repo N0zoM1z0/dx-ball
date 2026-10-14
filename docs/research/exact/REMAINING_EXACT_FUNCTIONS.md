@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **348 functions / 72,155 code bytes / 136 metadata bytes**.
 
+Float digits122/129/68 improves to122/129/65 through original register pointer
+lifetimes and digit stores. Defined complete memmove shifting remains; original
+REP copying is nonexact. All348 exacts remain. See [float formatting](RUNTIME_FLOAT_FORMAT.md).
+
 Descriptor allocation184/37 improves to184/4 through original index/cursor
 lifetimes and table-before-capacity publication. Only two equivalent CMP/Jcc
 pairs differ; not exact. All348 exacts remain. See [stream opening](RUNTIME_STREAM_OPEN.md).

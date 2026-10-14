@@ -94,18 +94,13 @@ int dxball_crt_float_positive(const double *value)
     return !(*value < 0.0);
 }
 
-void dxball_crt_float_digits(char *buffer, int digits, DxBallCrtFloatText *value)
+void dxball_crt_float_digits(char *buffer, int digits, register DxBallCrtFloatText *value)
 {
-    char *first = buffer + 1;
-    char *output = first;
-    const char *mantissa = value->mantissa;
-    *buffer = '0';
+    register char *output = buffer;
+    register const char *mantissa = value->mantissa;
+    *output++ = '0';
     while (digits > 0) {
-        if (*mantissa)
-            *output = *mantissa++;
-        else
-            *output = '0';
-        ++output;
+        *output++ = *mantissa ? *mantissa++ : '0';
         --digits;
     }
     *output = 0;
@@ -119,7 +114,7 @@ void dxball_crt_float_digits(char *buffer, int digits, DxBallCrtFloatText *value
     if (*buffer == '1')
         ++value->decimal_position;
     else
-        /* The original intrinsic strcpy overlaps here. Preserve its actual
-           forward left-shift effects with the defined overlap-safe API. */
-        memmove(buffer, first, strlen(first) + 1);
+        /* Preserve the original complete left shift without invoking an
+           overlapping strcpy. The source begins one byte after destination. */
+        memmove(buffer, buffer + 1, strlen(buffer + 1) + 1);
 }
