@@ -39,6 +39,37 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_pow_special]
+source = "src/runtime_pow_special.c"
+object = "build/exact/runtime_pow_special.obj"
+inputs = ["src/runtime_pow_special.c", "src/runtime_pow_special.h", "src/runtime_fp_dispatch.h", "src/runtime_fp_exceptions.h", "src/runtime_fp_decomposition.h", "src/runtime_fp_control.h", "src/runtime_float.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-pow-special]
+build = "runtime_pow_special"
+symbol = "_dxball_crt_pow_special"
+target_address = 0x0041E2F0
+size = 584
+boundary_evidence = "docs/research/exact/RUNTIME_POW_SPECIAL.md"
+relocations = [
+  { offset = 50, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
+  { offset = 61, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 110, type = "DIR32", symbol = "__d_ind", addend = 4, target = 0x004234B0 },
+  { offset = 126, type = "DIR32", symbol = "__d_ind", addend = 0, target = 0x004234B0 },
+  { offset = 209, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
+  { offset = 220, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 232, type = "DIR32", symbol = "__d_ind", addend = 4, target = 0x004234B0 },
+  { offset = 248, type = "DIR32", symbol = "__d_ind", addend = 0, target = 0x004234B0 },
+  { offset = 294, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
+  { offset = 305, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 403, type = "REL32", symbol = "_dxball_crt_double_integer_type", addend = 0, target = 0x0041E540 },
+  { offset = 432, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 445, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
+  { offset = 451, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
+  { offset = 506, type = "DIR32", symbol = "__d_mzero", addend = 4, target = 0x004234C8 },
+  { offset = 512, type = "DIR32", symbol = "__d_mzero", addend = 0, target = 0x004234C8 },
+]
+
 [builds.runtime_absolute]
 source = "src/runtime_absolute.c"
 object = "build/exact/runtime_absolute.obj"
