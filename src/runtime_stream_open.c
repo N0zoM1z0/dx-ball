@@ -102,26 +102,22 @@ writing:
 int dxball_crt_allocate_descriptor(void)
 {
     int descriptor = -1;
-    int index = 0;
-    int base = 0;
-    DxBallLowioRecord **slot;
-    for (slot = __pioinfo; slot < __pioinfo + 64; ++slot, ++index, base += 32) {
-        DxBallLowioRecord *record = *slot;
-        if (record != NULL) {
-            DxBallLowioRecord *end = record + 32;
-            for (; record < end; ++record) {
+    int index;
+    DxBallLowioRecord *record;
+    for (index = 0; index < 64; ++index) {
+        if (__pioinfo[index] != NULL) {
+            for (record = __pioinfo[index]; record < __pioinfo[index] + 32; ++record) {
                 if ((record->flags & 1) == 0) {
                     record->handle = (void *)(size_t)-1;
-                    descriptor = (int)(record - *slot) + base;
+                    descriptor = index * 32 + (int)(record - __pioinfo[index]);
                     break;
                 }
             }
             if (descriptor != -1) break;
         } else {
-            record = (DxBallLowioRecord *)dxball_runtime_malloc(32 * sizeof(*record));
-            if (record != NULL) {
-                _nhandle += 32;
+            if ((record = (DxBallLowioRecord *)dxball_runtime_malloc(32 * sizeof(*record))) != NULL) {
                 __pioinfo[index] = record;
+                _nhandle += 32;
                 for (; record < __pioinfo[index] + 32; ++record) {
                     record->flags = 0;
                     record->handle = (void *)(size_t)-1;

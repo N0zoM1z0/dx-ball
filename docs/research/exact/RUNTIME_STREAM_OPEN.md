@@ -9,8 +9,20 @@ whole exacts across58 bytes and all three actual call bindings.
 | `_fsopen`, `0x417BF0` | 37/37 | 0 |
 | `fopen`, `0x417C20` | 21/21 | 0 |
 | `_openfile`, `0x41A390` | 526/526 | 49 |
-| `_alloc_osfhnd`, `0x41D7D0` | 184/184 | 37 |
+| `_alloc_osfhnd`, `0x41D7D0` | 184/184 | 4 |
 | `_sopen`, `0x41DB80` | 1053/1053 | 2 |
+
+Shipped `osfinfo.c` uses a block index and record cursor, not redundant base,
+slot and cached-end owners. Restoring these and table-before-capacity publication
+improves allocation184/37 to184/4. All instruction addresses and widths, plus180
+other bytes, agree. Only CMP/JAE versus CMP/JBE at0x41D7EE/0x41D7F0 and CMP/JB
+versus CMP/JA at0x41D7FF/0x41D801 differ; no exact is claimed. Both owner exacts
+and all348 preceding exacts remain. Openfile526/49 and sopen1053/2 retain identical
+complete byte hashes; their actual local-symbol bindings are refreshed.
+One compiler set, no runtime/provider work. Re-consume the retained object after
+local-symbol names change, without recompiling. Full pinned184-byte section and
+REA `ev_fd61eddd9f92bb9a855286cceef9a6c9bb8ccc2298a8c07f192cdafe5a0a80b5`
+are reused. Receipt `.analysis/descriptor-allocation-original-index-20261015/verification.json`.
 
 The complete original openfile carrier includes411 instruction bytes, one
 alignment byte and114 switch bytes; sopen includes981 instruction bytes,
@@ -29,7 +41,7 @@ Reusing the flags scalar for the descriptor worsens49→63 and is not retained.
 Descriptor allocation scans64 blocks of32 records, grows handle capacity
 only after allocation succeeds, and initializes only handle/flags/lookahead.
 An existing free slot has only its invalid handle rewritten. Allocation does
-not publish the open bit. This remains a register/scheduling candidate.
+not publish the open bit. Only the two loop-comparison commutations remain.
 
 OS opening keeps the actual variadic creation mode, sharing/access validation,
 creation dispositions, default text mode, creation mask, delete/temporary hints

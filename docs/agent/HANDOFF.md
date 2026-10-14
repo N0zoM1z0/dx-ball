@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Descriptor allocation improves184/37 to184/4 through original block-index and
+record-cursor lifetimes, direct bounds and table-before-capacity publication.
+All instruction addresses/widths and180 other bytes match; only two commuted
+loop comparisons and their equivalent branches remain. Both owner exacts,
+all348 old exacts and the other100 candidate byte results remain. One compiler
+set; retained object re-consumed with actual local-symbol bindings, no compiler
+repeat or runtime/provider work. See [stream opening](../research/exact/RUNTIME_STREAM_OPEN.md)
+and `.analysis/descriptor-allocation-original-index-20261015/verification.json`.
+The onexit live-table byte-distance trial remains121/2 and is reverted.
+
 Stream position closes432 bytes and all six actual relocations through the
 original same-buffer pointer differences and seek-result assignment condition.
 The pointer fields require coherent backed spans and representable differences;
