@@ -63,6 +63,18 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Zero allocation improves77/82/16 to82/82/11 through the original consumed size
+parameter, retry loop and owned failure return. The unconditional post-handler
+heap reload and complete extent are restored; multiplication input and initial
+import/heap load order remain nonexact. Msize21 exact, realloc106/111/15 and all345
+old exacts remain. Two compiler sets, no runtime/provider work. See
+[zero allocation](../research/exact/RUNTIME_FILE_SIZE.md) and
+`.analysis/zero-allocation-original-retry-20261014/verification.json`.
+The handle-gate trial reaches144/0 but makes close199/3; all changes are reverted.
+Do not repeat it: `.analysis/descriptor-handle-original-gates-20261014/` retains
+three producer sets and the comparison-commutation proof. The authentic setmode
+register/record trial remains128/2 and is also reverted.
+
 Descriptor close closes199 bytes and all eleven actual relocations through
 direct record expressions, owned validation errors and both standard-handle
 snapshots in original query/comparison order. All344 old exacts and104 other

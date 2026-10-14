@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **345 functions / 71,468 code bytes / 136 metadata bytes**.
 
+Zero allocation improves77/82/16 to82/82/11 through original consumed-size
+and retry-failure ownership, restoring the unconditional post-handler heap
+reload. Not exact; msize21 exact, realloc106/111/15 and all345 exacts remain.
+See [zero allocation](RUNTIME_FILE_SIZE.md).
+
 Descriptor close199 closes through direct records, owned validation return
 and both standard-handle snapshots in original query/comparison order. All344
 old exacts and104 other candidates remain. See [handle lifetime](RUNTIME_LOWIO_READ_CLOSE.md).

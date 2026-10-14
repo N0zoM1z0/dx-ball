@@ -6,8 +6,19 @@ add zero allocation and nonstandard-stream retirement. Length change is exact.
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `_chsize`, `0x41F670` | 359/359 | 0 |
-| `calloc`, `0x41F590` | 82/77 | 16 |
+| `calloc`, `0x41F590` | 82/82 | 11 |
 | `_fcloseall`, `0x41F5F0` | 115/115 | 19 |
+
+The shipped `calloc.c` uses its consumed size parameter, an unbounded retry
+loop and an owned handler-failure return. Restoring these improves77/82/16
+to82/82/11 and restores the unconditional heap reload after the handler at
+0x41F5D6. All bytes from0x41F5AF onward match, including the original extent;
+the remaining11 bytes select opposite multiplication inputs and swap the two
+initial import/heap loads. A shared heap/result phase instead reverts77/16 and
+is rejected. Msize21 exact, realloc106/111/15 and all345 old exacts remain.
+Two compiler sets, no runtime/provider work. Complete original section and
+REA `ev_4ea2a3daef2a5b9ff7dcaf86f2d74cc2e6035db22af65e1963e44d67371aa50c`
+are reused. Receipt `.analysis/zero-allocation-original-retry-20261014/verification.json`.
 
 All359 chsize bytes and18 actual bindings match, including the compiler's
 special-ABI stack probe. Its4100-byte frame contains the consumed original
