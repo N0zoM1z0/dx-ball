@@ -116,10 +116,9 @@ int dxball_crt_flush_output(int value, DxBallCrtStream *argument)
     stream->flags &= ~0x10;
     written = expected = stream->count = 0;
     if ((stream->flags & 0x10c) == 0) {
-        if ((stream == &dxball_crt_standard_streams[1] ||
-             stream == &dxball_crt_standard_streams[2]) && dxball_crt_isatty(descriptor)) {
-            /* Standard device streams retain their existing unbuffered path. */
-        } else dxball_crt_get_buffer(stream);
+        if (!((stream == &dxball_crt_standard_streams[1] ||
+               stream == &dxball_crt_standard_streams[2]) && dxball_crt_isatty(descriptor)))
+            dxball_crt_get_buffer(stream);
     }
     if (stream->flags & 0x108) {
         expected = (int)(stream->cursor - stream->buffer);
@@ -127,8 +126,8 @@ int dxball_crt_flush_output(int value, DxBallCrtStream *argument)
         stream->count = stream->capacity - 1;
         if (expected > 0) written = dxball_crt_write(descriptor, stream->buffer, expected);
         else {
-            DxBallLowioRecord *record = &dxball_crt_invalid_io;
-            if (descriptor != -1) record = &__pioinfo[descriptor >> 5][descriptor & 31];
+            DxBallLowioRecord *record = descriptor != -1
+                ? &__pioinfo[descriptor >> 5][descriptor & 31] : &dxball_crt_invalid_io;
             if (record->flags & 0x20) dxball_crt_seek(descriptor, 0, 2);
         }
         *stream->buffer = (char)value;

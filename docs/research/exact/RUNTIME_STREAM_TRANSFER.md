@@ -9,8 +9,18 @@ input/output refill and terminal flags. Closure, input refill and terminal flags
 | `fread`, `0x417AA0` | 326/324 | 218 |
 | `_getstream`, `0x41A5A0` | 126/126 | 2 |
 | `_filbuf`, `0x418220` | 240/240 | 0 |
-| `_flsbuf`, `0x41A620` | 328/328 | 67 |
+| `_flsbuf`, `0x41A620` | 328/328 | 50 |
 | `_isatty`, `0x41DFA0` | 42/42 | 0 |
+
+Output refill improves328/67 to328/50 through the conditional safe-record
+selection established by shipped `internal.h`. The negative buffer-acquisition
+guard from `_flsbuf.c` gives an identical complete result. All actual relocations
+are refreshed; three owner exacts, fread324/218 and getstream126/2 remain fully
+unchanged. Two compiler sets, no runtime/provider work; all349 exacts/72,681 code
+bytes and249 semantic rows remain. Receipt
+`.analysis/output-refill-original-safe-record-20261015/verification.json`.
+The separate original fread assignment/update-order trial gives324/223 and is
+rejected, with its source restored before these output-refill compilations.
 
 Input refill now matches all240 bytes and four actual relocations. The shipped
 CRT `_filbuf.c` establishes its local register stream and zero/-1 error exit;

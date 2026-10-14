@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Output refill improves328/328/67 to328/328/50 through original conditional
+safe-record selection. The original negative buffer-acquisition guard adds no
+further byte gain. All three owner exacts, both other candidates and all349
+exacts remain unchanged. Two compiler sets, no runtime/provider work; see
+[stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md) and
+`.analysis/output-refill-original-safe-record-20261015/verification.json`.
+The independent fread assignment/update-order trial worsens324/218 to324/223
+and is fully reverted; its retained evidence prevents repeating that route.
+
 Codepage setter improves473/475/128 to475/475/11 through the original six-word
 case-info publication loop. Unsigned counters, local lead-range ownership and
 OS clear-counter lifetime follow shipped mbctype.c. Only EAX/ECX rotation in the
