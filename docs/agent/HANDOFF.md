@@ -63,6 +63,13 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Stream position improves413/432/360 to431/432/324 through the genuine register
+stream/cursor, single adjusted offset, path-local scans and shared zero-count
+return from shipped CRT source. Direct record expressions retain seek-time
+reloads. Three compiler sets, no runtime/provider work; all341 exacts and107
+other candidates remain. Not exact. See [stream position](../research/exact/RUNTIME_POSITION_FILTER.md)
+and `.analysis/stream-position-register-owner-20261014/verification.json`.
+
 Input refill closes240 bytes and all four actual relocations through its genuine
 register stream, zero/-1 error exit and conditional safe-record selection from
 shipped CRT source. All340 preceding exacts and three owner candidates remain;

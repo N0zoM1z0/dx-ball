@@ -528,12 +528,12 @@ target_address = 0x0041B000
 size = 432
 boundary_evidence = "docs/research/exact/RUNTIME_POSITION_FILTER.md"
 relocations = [
-  { offset = 41, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
-  { offset = 125, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 204, type = "DIR32", symbol = "_errno", addend = 0, target = 0x004230AC },
-  { offset = 270, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 297, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
-  { offset = 348, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
+  { offset = 41, type = "REL32", symbol = "_dxball_crt_seek", target = 0x41af40, addend = 0 },
+  { offset = 147, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
+  { offset = 206, type = "DIR32", symbol = "_errno", target = 0x4230ac, addend = 0 },
+  { offset = 270, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
+  { offset = 315, type = "REL32", symbol = "_dxball_crt_seek", target = 0x41af40, addend = 0 },
+  { offset = 365, type = "REL32", symbol = "_dxball_crt_seek", target = 0x41af40, addend = 0 },
 ]
 
 [units.cpp-unhandled-filter]

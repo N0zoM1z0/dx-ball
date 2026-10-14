@@ -1,7 +1,7 @@
 # Stream position and unhandled C++ filtering
 
 Complete pinned CRT sections identify ftell432, the stdcall C++ filter88 and
-restoration13. Filtering/restoration match in full; ftell emits413 bytes with360
+restoration13. Filtering/restoration match in full; ftell emits431 bytes with324
 differences and remains a candidate. Restoration's unique complete13-byte match
 and REA byte read establish a previously unlisted entry at0x0041E1C0.
 
@@ -12,6 +12,16 @@ block slot is reloaded after seeking. Offset arithmetic retains original32-bit
 wrapping without signed overflow; pointer fields retain native width and require
 coherent readable buffer spans. Low-I/O declarations precede the stream header,
 avoiding the observed MinGW errno declaration/import conflict.
+
+The shipped CRT `ftell.c` establishes register stream/cursor locals, a single
+adjusted offset, path-local scans and the shared read-count-zero return. Direct
+low-I/O expressions retain the record reload after seeking; EOF scanning captures
+its endpoint before changing the read total. This improves413/432/360 to431/432/324.
+The local-lifetime-only400/381 trial is not selected. Three compiler sets preserve
+all341 exacts and107 other candidates; no runtime tests or provider work.
+Full432-byte pinned member and retained REA assembly
+`ev_b1b7a9b8fc8b250f41653267342b884951a9eb17e9dadbd03d965a4115bf63b4`
+remain authoritative. Receipt `.analysis/stream-position-register-owner-20261014/verification.json`.
 
 Filtering terminates recognized three-parameter C++ exceptions, otherwise checks
 the saved callback with the genuine C++ ValidateExecute API before invoking its

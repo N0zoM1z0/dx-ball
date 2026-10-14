@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **341 functions / 70,555 code bytes / 136 metadata bytes**.
 
+Stream position improves413/432/360 to431/432/324 through original local
+lifetimes, direct record expressions and the shared zero-count return. It is
+not exact; all341 exacts and107 other candidates remain. See
+[stream position](RUNTIME_POSITION_FILTER.md).
+
 Input refill240 closes through genuine register stream ownership and conditional
 safe-record selection from shipped CRT source. All340 previous exacts remain;
 candidates108. Scalar fread324/223 is rejected, existing324/218 preserved.
