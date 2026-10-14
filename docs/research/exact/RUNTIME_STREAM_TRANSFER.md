@@ -9,7 +9,7 @@ input/output refill and terminal flags. Closure and terminal flags are exact.
 | `fread`, `0x417AA0` | 326/324 | 218 |
 | `_getstream`, `0x41A5A0` | 126/126 | 2 |
 | `_filbuf`, `0x418220` | 240/251 | 238 |
-| `_flsbuf`, `0x41A620` | 328/288 | 311 |
+| `_flsbuf`, `0x41A620` | 328/320 | 277 |
 | `_isatty`, `0x41DFA0` | 42/42 | 0 |
 
 Closure preserves flush/free/descriptor-close order, clears stream flags even
@@ -23,6 +23,14 @@ errno or checking the open bit. Its signed-byte promotion restores42 bytes.
 Declaring the lower-I/O boundary before the stream's CRT includes avoids the
 MinGW errno macro collision; in this final shared context all42 terminal bytes
 and both data bindings match. No existing consumer header changes.
+
+Output write-count initialization now starts only on the active write path.
+Initial invalid-stream and read-without-EOF failures own their flag writes and
+returns; the final write-mismatch exit stays separate. This improves288/311 to
+320/277; not exact. Deferred-count-only292/281 and write-mode-entry316/279 are
+retained; the latter is rejected. Both owner exacts and three other candidates
+remain unchanged. Three VC4/native/i686 sets, retained REA, no runtime/game tests.
+Current private seal: `.analysis/stream-output-write-lifetime-20261014/verification.json`.
 
 Input distinguishes zero/-1 from other counts, detects text Ctrl-Z state and
 expands the owned512-byte buffer to4096. Output retains read-to-write EOF

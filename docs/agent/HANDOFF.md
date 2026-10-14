@@ -63,6 +63,13 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Output refill improves288/328/311 to320/328/277 through active write-count
+initialization and separately owned early error returns. Two owner exacts and
+three other candidates remain; all338 exacts/249 semantic rows are preserved.
+Three VC4/native/i686 sets, retained REA, no runtime/game tests. Global counts
+unchanged. See [stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md)
+and `.analysis/stream-output-write-lifetime-20261014/verification.json`.
+
 Terminal dependency identities/boundaries close two unknown origins:
 terminate0x41BC60/inconsistency0x41BCE0, each115 bytes including the omitted RET.
 Full hooks.obj code and both24-byte SEH tables match; source/exact remain open.

@@ -92,18 +92,25 @@ int dxball_crt_fill_input(DxBallCrtStream *stream)
 int dxball_crt_flush_output(int value, DxBallCrtStream *stream)
 {
     int descriptor = stream->descriptor;
-    int written = 0;
+    int written;
     int expected;
-    if ((stream->flags & 0x82) == 0 || (stream->flags & 0x40)) goto stream_error;
+    if ((stream->flags & 0x82) == 0 || (stream->flags & 0x40)) {
+        stream->flags |= 0x20;
+        return -1;
+    }
     if (stream->flags & 1) {
         stream->count = 0;
-        if ((stream->flags & 0x10) == 0) goto stream_error;
+        if ((stream->flags & 0x10) == 0) {
+            stream->flags |= 0x20;
+            return -1;
+        }
         stream->cursor = stream->buffer;
         stream->flags &= ~1;
     }
     stream->flags |= 2;
     stream->flags &= ~0x10;
     stream->count = 0;
+    written = 0;
     if ((stream->flags & 0x10c) == 0) {
         if ((stream == &dxball_crt_standard_streams[1] ||
              stream == &dxball_crt_standard_streams[2]) && dxball_crt_isatty(descriptor)) {

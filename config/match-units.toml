@@ -11832,15 +11832,15 @@ target_address = 0x0041A620
 size = 328
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
 relocations = [
-  { offset = 89, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 32, target = 0x00424058 },
-  { offset = 97, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 64, target = 0x00424058 },
-  { offset = 105, type = "REL32", symbol = "_dxball_crt_isatty", addend = 0, target = 0x0041DFA0 },
-  { offset = 118, type = "REL32", symbol = "_dxball_crt_get_buffer", addend = 0, target = 0x0041AEF0 },
-  { offset = 161, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
-  { offset = 173, type = "DIR32", symbol = "_dxball_crt_invalid_io", addend = 0, target = 0x00423888 },
-  { offset = 197, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 216, type = "REL32", symbol = "_dxball_crt_seek", addend = 0, target = 0x0041AF40 },
-  { offset = 247, type = "REL32", symbol = "_dxball_crt_write", addend = 0, target = 0x0041A770 },
+  { offset = 105, type = "DIR32", symbol = "_dxball_crt_standard_streams", target = 0x424058, addend = 32 },
+  { offset = 113, type = "DIR32", symbol = "_dxball_crt_standard_streams", target = 0x424058, addend = 64 },
+  { offset = 121, type = "REL32", symbol = "_dxball_crt_isatty", target = 0x41dfa0, addend = 0 },
+  { offset = 134, type = "REL32", symbol = "_dxball_crt_get_buffer", target = 0x41aef0, addend = 0 },
+  { offset = 177, type = "REL32", symbol = "_dxball_crt_write", target = 0x41a770, addend = 0 },
+  { offset = 189, type = "DIR32", symbol = "_dxball_crt_invalid_io", target = 0x423888, addend = 0 },
+  { offset = 213, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
+  { offset = 232, type = "REL32", symbol = "_dxball_crt_seek", target = 0x41af40, addend = 0 },
+  { offset = 263, type = "REL32", symbol = "_dxball_crt_write", target = 0x41a770, addend = 0 },
 ]
 
 [units.crt-is-terminal]

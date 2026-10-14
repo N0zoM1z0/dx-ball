@@ -10,6 +10,11 @@ MessageBox adds one complete146-byte exact with14 relocations and58 literal
 bytes. All337 prior exacts remain; source457/candidates111. See
 [error controls](RUNTIME_ERROR_CONTROL.md).
 
+Output refill improves288/328/311 to320/328/277 through active write-count
+lifetime and separate early error returns. It remains nonexact; all338 exacts
+and the three owner candidate companions are unchanged. See
+[stream transfer](RUNTIME_STREAM_TRANSFER.md).
+
 Catch transfer adds one complete148-byte exact through all five actual
 relocations. Both owner exacts188/44 and all336 prior exact units remain.
 Source457/candidates111; all34 authored candidates remain unchanged. See
