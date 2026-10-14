@@ -65,23 +65,21 @@ int dxball_crt_tolower(int character)
 /* FUNCTION: DXBALL 0x0041AC70 */
 int _isctype(int character, int mask)
 {
-    unsigned char input[3];
-    unsigned short classification;
-    unsigned char high;
     int length;
+    unsigned short classification;
+    char input[3];
     if ((unsigned int)character + 1 <= 256) return _pctype[character] & mask;
-    high = (unsigned char)((unsigned int)character >> 8);
-    if (_pctype[high] & 0x8000) {
-        length = 2;
-        input[0] = high;
+    if (_pctype[(unsigned char)((character >> 8) & 0xff)] & 0x8000) {
+        input[0] = (char)((character >> 8) & 0xff);
+        input[1] = (char)character;
         input[2] = 0;
-        input[1] = (unsigned char)character;
+        length = 2;
     } else {
-        length = 1;
-        input[0] = (unsigned char)character;
+        input[0] = (char)character;
         input[1] = 0;
+        length = 1;
     }
-    if (!__crtGetStringTypeA(1, (const char *)input, length, &classification, 0, 0))
+    if (!__crtGetStringTypeA(1, input, length, &classification, 0, 0))
         return 0;
     return classification & mask;
 }

@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**342 functions / 70,936 code bytes / 136 metadata bytes**.
+**343 functions / 71,081 code bytes / 136 metadata bytes**.
+
+Character classification145 closes through the original unsigned-char lead-byte
+table index and signed payload/length order. Both229-byte converters and all342
+old exacts remain; candidates106. See [case conversion](RUNTIME_CASE_CONVERSION.md).
 
 Bulk output381 closes through genuine scalar lifetimes, unsigned write result
 and original update order from shipped CRT source. All341 old exacts remain;

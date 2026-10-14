@@ -52,16 +52,23 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 342 |
-| Complete exact code bytes | 70,936 |
+| Exact functions | 343 |
+| Complete exact code bytes | 71,081 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 342 exact functions does not prove project completion.
+These are separate ledgers; 343 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Character classification closes145 bytes and all three actual relocations.
+The shipped isleadbyte macro's unsigned-char table index, signed three-byte
+payload and consumed payload/length order restore the exact body. Both229-byte
+converters/all342 prior exacts remain; source457/exact343/code71,081/candidates106.
+One compiler set, no runtime/provider work. See [case conversion](../research/exact/RUNTIME_CASE_CONVERSION.md)
+and `.analysis/character-classification-macro-selection-20261014/verification.json`.
 
 Bulk output closes381 bytes and all three actual relocations through the seven
 genuine scalar lifetimes, unsigned write result and original update order from

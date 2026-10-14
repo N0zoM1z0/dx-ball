@@ -12138,16 +12138,16 @@ relocations = [
   { offset = 173, type = "REL32", symbol = "___crtLCMapStringA", addend = 0, target = 0x0041AA10 },
 ]
 
-[candidates.crt-classify-character]
+[units.crt-classify-character]
 build = "runtime_case_conversion"
 symbol = "__isctype"
 target_address = 0x0041AC70
 size = 145
 boundary_evidence = "docs/research/exact/RUNTIME_CASE_CONVERSION.md"
 relocations = [
-  { offset = 20, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
-  { offset = 46, type = "DIR32", symbol = "__pctype", addend = 0, target = 0x00423670 },
-  { offset = 109, type = "REL32", symbol = "___crtGetStringTypeA", addend = 0, target = 0x0041E000 },
+  { offset = 20, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
+  { offset = 46, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
+  { offset = 109, type = "REL32", symbol = "___crtGetStringTypeA", target = 0x41e000, addend = 0 },
 ]
 
 [candidates.crt-locale-map]

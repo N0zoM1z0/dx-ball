@@ -2,8 +2,16 @@
 
 The complete `toupper` and `tolower` bodies at `0x418040` and `0x418130`
 are exact:229 bytes each, with all14 actual relocations. `_isctype` at
-`0x41AC70` has complete source at145 bytes/17 differences, not an exact claim.
+`0x41AC70` now matches all145 bytes and three actual relocations.
 The three complete pinned VC4 CRT sections independently match the original.
+
+The shipped `ctype.h` macro casts the lead-byte table index to unsigned char.
+Restoring that exact selection with the signed three-byte payload and consumed
+payload/length order from `isctype.c` closes17 differences. Both229-byte converters
+remain exact; all342 prior exacts and106 other candidates retain their verified
+inputs/products. One compiler set, no runtime tests or provider work;
+totals343/71,081 code bytes, candidates106. Receipt:
+`.analysis/character-classification-macro-selection-20261014/verification.json`.
 
 Source retains the C-locale fast path, shared `_pctype`/`__mb_cur_max` state,
 lead-byte selection, observed NUL stores, locale backend calls and unsigned
