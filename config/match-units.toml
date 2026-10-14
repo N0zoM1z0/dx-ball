@@ -39,6 +39,21 @@ relocations = [
   { offset = 124, type = "REL32", symbol = "_exit", addend = 0, target = 0x00417910 },
 ]
 
+[builds.runtime_string_length]
+source = "src/runtime_string_length.c"
+object = "build/exact/runtime_string_length.obj"
+inputs = ["src/runtime_string_length.c", "src/runtime_string_length.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-string-length]
+build = "runtime_string_length"
+symbol = "_dxball_crt_string_length"
+target_address = 0x00417DF0
+size = 119
+boundary_evidence = "docs/research/exact/RUNTIME_STRING_LENGTH.md"
+relocations = [
+]
+
 [builds.runtime_absolute_double]
 source = "src/runtime_absolute_double.c"
 object = "build/exact/runtime_absolute_double.obj"
