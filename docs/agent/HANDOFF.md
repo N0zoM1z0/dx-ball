@@ -63,6 +63,17 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Codepage setter improves473/475/128 to475/475/11 through the original six-word
+case-info publication loop. Unsigned counters, local lead-range ownership and
+OS clear-counter lifetime follow shipped mbctype.c. Only EAX/ECX rotation in the
+OS lead-byte loop remains; all instruction addresses/widths and464 other bytes
+agree. Four owner exacts, all525 initialized data bytes and all349 old exacts
+remain. Four compiler sets, no runtime/provider work; retained objects re-consume
+actual local-symbol bindings without compiler repeats. See
+[codepage startup](../research/exact/RUNTIME_CODEPAGE.md) and
+`.analysis/codepage-original-case-copy-20261015/verification.json`.
+Three shared-open flag/index trials worsen1053/2; all source is reverted.
+
 Openfile closes526 bytes and all16 actual relocations, including its alignment
 byte and full114-byte switch carrier. Shipped _open.c establishes register mode,
 flags and late stream capture, preincrement scanning, flag update order and

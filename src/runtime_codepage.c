@@ -72,10 +72,10 @@ static void dxball_crt_set_single_byte(void)
 
 int dxball_crt_setmbcp(int code_page)
 {
-    DxBallCrtCodePageInfo info;
-    int index;
+    unsigned int index;
     unsigned int category, character;
     unsigned char *range;
+    DxBallCrtCodePageInfo info;
     code_page = dxball_crt_system_code_page(code_page);
     if (__mbcodepage == code_page)
         return 0;
@@ -96,18 +96,19 @@ int dxball_crt_setmbcp(int code_page)
             }
             __mbcodepage = code_page;
             __mblcid = dxball_crt_codepage_locale(code_page);
-            memcpy(__mbulinfo, code_page_ranges[index].case_info, sizeof(__mbulinfo));
+            for (category = 0; category < 6; ++category)
+                __mbulinfo[category] = code_page_ranges[index].case_info[category];
             return 0;
         }
     }
     if (GetCPInfo((unsigned int)code_page, &info) == 1) {
-        memset(_mbctype, 0, sizeof(_mbctype));
+        unsigned char *lead_range;
+        for (character = 0; character < sizeof(_mbctype); ++character)
+            _mbctype[character] = 0;
         if (info.max_character_size > 1) {
-            range = info.lead_bytes;
-            while (range[0] && range[1]) {
-                for (character = range[0]; character <= range[1]; ++character)
+            for (lead_range = info.lead_bytes; *lead_range && lead_range[1]; lead_range += 2) {
+                for (character = *lead_range; character <= lead_range[1]; ++character)
                     _mbctype[character + 1] |= 4;
-                range += 2;
             }
             for (character = 1; character < 0xff; ++character)
                 _mbctype[character + 1] |= 8;

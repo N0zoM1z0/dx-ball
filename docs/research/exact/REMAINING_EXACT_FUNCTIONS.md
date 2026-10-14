@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **349 functions / 72,681 code bytes / 136 metadata bytes**.
 
+Codepage setter473/475/128 improves to475/475/11 through original six-word
+case publication and counter/range lifetimes. Remaining OS-loop register
+rotation is nonexact; all349 exacts and525 initialized data bytes remain.
+See [codepage startup](RUNTIME_CODEPAGE.md).
+
 Openfile526 closes through original register lifetimes, preincrement scanning
 and success-owned stream capture. All16 relocations and114 switch bytes match;
 all348 old exacts and100 other candidate byte results remain. See
