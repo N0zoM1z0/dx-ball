@@ -11812,17 +11812,17 @@ relocations = [
   { offset = 81, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
 ]
 
-[candidates.crt-fill-input]
+[units.crt-fill-input]
 build = "runtime_stream_transfer"
 symbol = "_dxball_crt_fill_input"
 target_address = 0x00418220
 size = 240
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_TRANSFER.md"
 relocations = [
-  { offset = 58, type = "REL32", symbol = "_dxball_crt_get_buffer", addend = 0, target = 0x0041AEF0 },
-  { offset = 85, type = "REL32", symbol = "_dxball_crt_read", addend = 0, target = 0x0041A120 },
-  { offset = 118, type = "DIR32", symbol = "_dxball_crt_invalid_io", addend = 0, target = 0x00423888 },
-  { offset = 143, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 56, type = "REL32", symbol = "_dxball_crt_get_buffer", target = 0x41aef0, addend = 0 },
+  { offset = 83, type = "REL32", symbol = "_dxball_crt_read", target = 0x41a120, addend = 0 },
+  { offset = 114, type = "DIR32", symbol = "_dxball_crt_invalid_io", target = 0x423888, addend = 0 },
+  { offset = 136, type = "DIR32", symbol = "___pioinfo", target = 0x440c70, addend = 0 },
 ]
 
 [candidates.crt-flush-output]

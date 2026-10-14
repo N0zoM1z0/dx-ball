@@ -1,16 +1,27 @@
 # CRT stream transfer and retirement
 
 Six complete bodies now cover stream closure, bulk reading, slot acquisition,
-input/output refill and terminal flags. Closure and terminal flags are exact.
+input/output refill and terminal flags. Closure, input refill and terminal flags are exact.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `fclose`, `0x417A30` | 112/112 | 0 |
 | `fread`, `0x417AA0` | 326/324 | 218 |
 | `_getstream`, `0x41A5A0` | 126/126 | 2 |
-| `_filbuf`, `0x418220` | 240/251 | 238 |
+| `_filbuf`, `0x418220` | 240/240 | 0 |
 | `_flsbuf`, `0x41A620` | 328/328 | 67 |
 | `_isatty`, `0x41DFA0` | 42/42 | 0 |
+
+Input refill now matches all240 bytes and four actual relocations. The shipped
+CRT `_filbuf.c` establishes its local register stream and zero/-1 error exit;
+`internal.h` establishes conditional safe-record selection before reading flags.
+The local declaration alone gives240/8; conditional selection closes the last
+load-order difference. Its first retained object is re-consumed after actual
+fread call-offset changes, without recompiling. A separate scalar fread trial
+gives324/223 and is rejected; selected fread324/218, both owner exacts and two
+other candidates remain byte-identical. Three compiler sets, no runtime tests;
+totals341 exact/70,555 code bytes, candidates108, all340 prior exacts preserved.
+Receipt `.analysis/input-buffer-register-owner-20261014/verification.json`.
 
 Closure preserves flush/free/descriptor-close order, clears stream flags even
 on failure, and releases the temporary name only after successful close.

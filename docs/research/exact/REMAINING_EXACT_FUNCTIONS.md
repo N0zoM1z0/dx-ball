@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**340 functions / 70,315 code bytes / 136 metadata bytes**.
+**341 functions / 70,555 code bytes / 136 metadata bytes**.
+
+Input refill240 closes through genuine register stream ownership and conditional
+safe-record selection from shipped CRT source. All340 previous exacts remain;
+candidates108. Scalar fread324/223 is rejected, existing324/218 preserved.
+See [stream transfer](RUNTIME_STREAM_TRANSFER.md).
 
 Buffer acquisition75 and flushing100 close through genuine register locals
 from shipped CRT source. All338 previous exacts remain; candidates109.

@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 340 |
-| Complete exact code bytes | 70,315 |
+| Exact functions | 341 |
+| Complete exact code bytes | 70,555 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 340 exact functions does not prove project completion.
+These are separate ledgers; 341 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Input refill closes240 bytes and all four actual relocations through its genuine
+register stream, zero/-1 error exit and conditional safe-record selection from
+shipped CRT source. All340 preceding exacts and three owner candidates remain;
+source457/exact341/code70,555/candidates108. First retained object is re-consumed
+without recompiling; scalar fread324/223 is rejected/restored to324/218. Three
+compiler sets, no runtime/provider work. See [stream transfer](../research/exact/RUNTIME_STREAM_TRANSFER.md)
+and `.analysis/input-buffer-register-owner-20261014/verification.json`.
 
 Buffer acquisition75 and flushing100 are now complete exacts after all three
 actual relocations. Genuine register locals follow shipped CRT source, not

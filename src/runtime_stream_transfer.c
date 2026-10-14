@@ -59,8 +59,10 @@ int dxball_crt_isatty(int descriptor)
 }
 
 /* FUNCTION: DXBALL 0x00418220 */
-int dxball_crt_fill_input(DxBallCrtStream *stream)
+int dxball_crt_fill_input(DxBallCrtStream *argument)
 {
+    register DxBallCrtStream *stream;
+    stream = argument;
     if ((stream->flags & 0x83) == 0 || (stream->flags & 0x40)) return -1;
     if (stream->flags & 2) {
         stream->flags |= 0x20;
@@ -70,22 +72,21 @@ int dxball_crt_fill_input(DxBallCrtStream *stream)
     if ((stream->flags & 0x10c) == 0) dxball_crt_get_buffer(stream);
     else stream->cursor = stream->buffer;
     stream->count = dxball_crt_read(stream->descriptor, stream->buffer, stream->capacity);
-    if (stream->count != 0 && stream->count != -1) {
-        if ((stream->flags & 0x82) == 0) {
-            DxBallLowioRecord *record = &dxball_crt_invalid_io;
-            if (stream->descriptor != -1)
-                record = &__pioinfo[stream->descriptor >> 5][stream->descriptor & 31];
-            if ((record->flags & 0x82) == 0x82) stream->flags |= 0x2000;
-        }
-        if (stream->capacity == 512 && (stream->flags & 8) && (stream->flags & 0x400) == 0)
-            stream->capacity = 4096;
-        --stream->count;
-        return (unsigned char)*stream->cursor++;
-    } else {
-        stream->flags |= stream->count == 0 ? 0x10 : 0x20;
+    if (stream->count == 0 || stream->count == -1) {
+        stream->flags |= stream->count ? 0x20 : 0x10;
         stream->count = 0;
         return -1;
     }
+    if ((stream->flags & 0x82) == 0) {
+        DxBallLowioRecord *record = stream->descriptor == -1
+            ? &dxball_crt_invalid_io
+            : &__pioinfo[stream->descriptor >> 5][stream->descriptor & 31];
+        if ((record->flags & 0x82) == 0x82) stream->flags |= 0x2000;
+    }
+    if (stream->capacity == 512 && (stream->flags & 8) && (stream->flags & 0x400) == 0)
+        stream->capacity = 4096;
+    --stream->count;
+    return (unsigned char)*stream->cursor++;
 }
 
 /* FUNCTION: DXBALL 0x0041A620 */
