@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**355 functions / 73,888 code bytes / 136 metadata bytes**.
+**356 functions / 74,592 code bytes / 136 metadata bytes**.
+
+FP exception handling closes all704 bytes/18 relocations through original
+status-call/local-mask and zero/inexact phases. All355 old exacts, raising and
+full40-byte constants remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).
 
 FP exception handling improves708/704/436 to704/704/21 through original exponent,
 result-branch and inexact lifetimes. Four scheduling swaps remain nonexact;

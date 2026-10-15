@@ -757,7 +757,7 @@ relocations = [
   { offset = 876, type = "DIR32", symbol = "$L551", addend = 0, target = 0x00419860 },
 ]
 
-[candidates.crt-handle-float-exception]
+[units.crt-handle-float-exception]
 build = "runtime_fp_dispatch"
 symbol = "_dxball_crt_handle_float_exception"
 target_address = 0x004198D0

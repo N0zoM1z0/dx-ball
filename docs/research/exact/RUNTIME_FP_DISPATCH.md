@@ -2,11 +2,20 @@
 
 The complete local CRT sections and retained/fresh REA evidence establish
 raise876 and handle704. Raise includes18 switch/alignment bytes beyond its old
-858-byte inventory entry. Current source emits880/328 and704/21 respectively;
-both remain candidates, with every actual relocation and self-relative case
-binding compared across the whole original extent.
+858-byte inventory entry. Raising emits880 bytes with328 differences and remains
+a candidate. Handling is exact across704 bytes,207 instructions and all18 actual
+relocations. Whole extents and raising's self-relative case bindings are compared.
 
-Handling now separates the decompose output slot, adjusted exponent and shift
+Status calls before local pending-mask updates, and tiny-result zero stores before
+inexact publication, close the four remaining scheduling swaps. The full704-byte
+comparison has zero differences. Raising's full byte result and all40 initialized
+constant bytes remain unchanged. All355 prior exacts and93 other candidate byte
+results are preserved; totals are356 exact functions/74,592 code bytes and93
+candidates. One VC4/native/i686 set is reused through identical canonical inputs.
+Retained REA/full CRT are reused, with no runtime tests. Receipt:
+`.analysis/fp-handler-status-write-phases-20261015/verification.json`.
+
+The preceding recovery separates the decompose output slot, adjusted exponent and shift
 countdown. Positive/unordered overflow branches precede negative stores; the
 nonzero underflow path precedes its zero fallback. Explicit inexact writes and
 ordered zero stores restore the original207 instructions and704-byte extent.

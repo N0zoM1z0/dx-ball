@@ -98,11 +98,11 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
     DxBallDispatchDoubleWork fraction;
     int exponent, adjusted_exponent, inexact, negative;
     if ((flags & 0x08) && (control & 0x01)) {
-        pending &= ~0x08U;
         _set_statfp(0x01);
+        pending &= ~0x08U;
     } else if ((flags & 0x04) && (control & 0x04)) {
-        pending &= ~0x04U;
         _set_statfp(0x04);
+        pending &= ~0x04U;
     } else if ((flags & 0x01) && (control & 0x08)) {
         _set_statfp(0x08);
         switch (control & 0xc00) {
@@ -138,9 +138,9 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
             fraction.value = dxball_crt_decompose_double(*result, &exponent);
             adjusted_exponent = exponent - 1536;
             if (adjusted_exponent < -1074) {
-                inexact = 1;
                 fraction.bits.low = 0;
                 fraction.bits.high = 0;
+                inexact = 1;
             } else {
                 negative = fraction.value < 0.0;
                 fraction.words[3] &= 0x000f;
@@ -169,8 +169,8 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
         pending &= ~0x02U;
     }
     if ((flags & 0x10) && (control & 0x20)) {
-        pending &= ~0x10U;
         _set_statfp(0x20);
+        pending &= ~0x10U;
     }
     return pending == 0;
 }

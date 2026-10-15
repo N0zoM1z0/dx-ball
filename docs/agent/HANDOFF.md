@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 355 |
-| Complete exact code bytes | 73,888 |
+| Exact functions | 356 |
+| Complete exact code bytes | 74,592 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 355 exact functions does not prove project completion.
+These are separate ledgers; 356 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+FP exception handling closes all704 bytes/207 instructions/18 actual relocations
+through original status-call/local-mask and zero/inexact phases. The four prior
+scheduling swaps are resolved. Raising's full byte result/full40-byte constants
+and all355 old exacts remain; current356/code74,592/candidates93. One VC4/native/
+i686 set reused through identical canonical inputs, retained REA/full CRT reused,
+no runtime/game tests. See [FP dispatch](../research/exact/RUNTIME_FP_DISPATCH.md)
+and `.analysis/fp-handler-status-write-phases-20261015/verification.json`.
 
 FP exception handling improves708/704/436 to704/704/21 through separate decompose
 output/adjusted exponent/countdown, original result branches and inexact writes.
