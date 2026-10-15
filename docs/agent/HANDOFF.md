@@ -52,16 +52,31 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 350 |
-| Complete exact code bytes | 72,807 |
+| Exact functions | 351 |
+| Complete exact code bytes | 72,922 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 350 exact functions does not prove project completion.
+These are separate ledgers; 351 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Fcloseall closes115 bytes and all seven actual relocations through original
+independent closeall.obj ownership. Its source body is unchanged; chsize359
+and all350 old exacts remain, as do98 other candidates. Current351/code72,922,
+candidates98. Two successful compiler sets, one failed private extraction
+corrected before producing an object, no runtime tests. Retained REA and full
+CRT section reused. Register index/count hints and original fread identifiers
+each give identical complete results and are reverted. See
+[stream retirement](../research/exact/RUNTIME_FILE_SIZE.md) and
+`.analysis/stream-retirement-original-object-owner-20261015/verification.json`.
+The rejected commit/seek/mapper ownership cascade is fully restored; retain
+`.analysis/descriptor-commit-original-object-owner-20261015/closed-trials.json`.
+Four unimplemented short entries received new scoped REA evidence; their code
+requires x87/intrinsic or special-entry support. No shared C implementation
+or exact acceptance is claimed for them.
 
 Original fread object ownership and seven genuine scalar lifetimes improve
 328/326/232 to326/326/2. All128 instruction addresses/widths and324 other bytes

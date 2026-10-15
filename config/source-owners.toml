@@ -325,6 +325,11 @@ source = "src/runtime_file_size.c"
 header = "src/runtime_file_size.h"
 additional_inputs = ["src/runtime_stream_transfer.h", "src/runtime_stream.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/allocator.h", "src/state_types.h"]
 
+[owners.runtime_stream_retirement]
+source = "src/runtime_stream_retirement.c"
+header = "src/runtime_file_size.h"
+additional_inputs = ["src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/runtime_stream_transfer.h", "src/runtime_stream.h", "src/allocator.h"]
+
 [owners.runtime_onexit]
 source = "src/runtime_onexit.c"
 header = "src/runtime_onexit.h"

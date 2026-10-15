@@ -1,13 +1,24 @@
 # CRT length changes, zero allocation and stream retirement
 
 Three complete bodies close the opener's missing length-change dependency and
-add zero allocation and nonstandard-stream retirement. Length change is exact.
+add zero allocation and nonstandard-stream retirement. Length change and
+stream retirement are exact.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `_chsize`, `0x41F670` | 359/359 | 0 |
 | `calloc`, `0x41F590` | 82/82 | 11 |
-| `_fcloseall`, `0x41F5F0` | 115/115 | 19 |
+| `_fcloseall`, `0x41F5F0` | 115/115 | 0 |
+
+Original independent `closeall.obj` ownership closes all115 fcloseall bytes and
+seven actual relocations without changing its body. It now lives in
+`src/runtime_stream_retirement.c`; chsize359 and all350 old exacts remain.
+All98 other candidates and249 semantic rows are unchanged; current351 exacts,
+72,922 code bytes. Two successful VC4/native/i686 sets; one malformed private
+extraction failed without an object and was corrected. Retained REA and complete
+pinned CRT section are reused; no runtime tests. Both original register hints
+produce identical full results and are reverted. Receipt
+`.analysis/stream-retirement-original-object-owner-20261015/verification.json`.
 
 The shipped `calloc.c` uses its consumed size parameter, an unbounded retry
 loop and an owned handler-failure return. Restoring these improves77/82/16
@@ -45,7 +56,8 @@ realloc106/111/15. Their affected inputs/products are frozen in this phase's
 Fcloseall skips slots0–2, counts successful closes, and frees/nulls dynamic
 records from slot20 even after close failure. Registry and limit are reread
 after calls. The20 threshold establishes retirement ownership, not an invented
-standard-array capacity. Register rotation and loop comparison remain nonexact.
+standard-array capacity. Original independent source ownership closes its
+register rotation and loop comparison.
 Its115/21 initial result becomes115/19 in the final intrinsic/SDK context.
 Replacing the opener's existing genuine chsize declaration with a new header
 worsens its two differences to42; that context trial is closed and reverted.
