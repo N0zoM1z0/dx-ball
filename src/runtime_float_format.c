@@ -114,7 +114,6 @@ void dxball_crt_float_digits(char *buffer, int digits, register DxBallCrtFloatTe
     if (*buffer == '1')
         ++value->decimal_position;
     else
-        /* Preserve the original complete left shift without invoking an
-           overlapping strcpy. The source begins one byte after destination. */
-        memmove(buffer, buffer + 1, strlen(buffer + 1) + 1);
+        /* Preserve the shipped CRT operation, including its overlapping input. */
+        strcpy(buffer, buffer + 1);
 }

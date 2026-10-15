@@ -1,7 +1,7 @@
 # Float formatting callbacks
 
 The local v1.07 executable and complete pinned VC4 CRT sections establish eight
-source bodies. Five match every byte after every actual relocation:
+source bodies. Six match every byte after every actual relocation:
 
 | Entry | Body | Bytes |
 | --- | --- | ---: |
@@ -10,20 +10,30 @@ source bodies. Five match every byte after every actual relocation:
 | 00418DE0 | Crop trailing fractional zeros | 89 |
 | 00418E40 | Classify nonnegative or unordered value | 23 |
 | 0041D0D0 | Report unavailable float support | 11 |
+| 0041D600 | Generate and round mantissa digits | 129 |
 
 Decimal insertion remains101 bytes/4 differences, assignment76/76 bytes with9
-differences, and digit generation122/129 bytes with65 differences. Digit shifting
-uses overlap-safe memmove rather than the original overlapping intrinsic strcpy.
+differences. Digit generation now matches all129 bytes, including the original
+inline REP string scan and forward word/byte copy.
 Assignment preserves object representations, including NaNs. The original
 three-argument digit routine uses a guard digit and updates decimal position on
 carry. Decimal insertion requires a defined spare byte after the terminator.
+
+Shipped `_fptostr.c` explicitly uses `strcpy(buf, buf + 1)` to remove the unused
+guard digit. Restoring that operation replaces the earlier memmove substitution
+and closes129 bytes with no relocations. This preserves the original overlapping
+call; it does not establish defined modern-C overlap behavior or native runtime
+acceptance. Platform-port handling remains deferred. One VC4/native/i686 set;
+the four existing owner exacts, two other candidate results and all358 previous
+exacts remain unchanged. Current359 exacts/75,189 code bytes/90 candidates.
+Receipt: `.analysis/float-digits-original-string-operation-20261015/verification.json`.
 
 Shipped `_fptostr.c` uses genuine register value/output/mantissa pointers; x86
 REG4 for the digit count is empty. Restoring the guard-byte advance and conditional
 digit stores improves122/129/68 to122/129/65. The original suffix scans length and
 uses REP word/byte copies, not a byte-copy loop. Explicit safe forward copying
-emits108/129/69 and is rejected; retain complete overlap-safe memmove shifting.
-No overlapping strcpy or memcpy is introduced. All four owner exacts, both other
+emits108/129/69 and was rejected; that checkpoint retained memmove. The original
+strcpy operation is restored above. All four owner exacts, both other
 owner candidates and all348 old exacts remain. Two compiler sets, no runtime or
 provider work. Full129-byte pinned section and retained REA
 `ev_15ae8106c5ec8f0c8ad0f4d532027870d80f14b3db5e3a2166d499292c7b498e`

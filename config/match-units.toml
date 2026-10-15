@@ -1203,14 +1203,13 @@ relocations = [
   { offset = 3, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x00418930 },
 ]
 
-[candidates.crt-float-text-digits]
+[units.crt-float-text-digits]
 build = "runtime_float_format"
 symbol = "_dxball_crt_float_digits"
 target_address = 0x0041D600
 size = 129
 boundary_evidence = "docs/research/exact/RUNTIME_FLOAT_FORMAT.md"
 relocations = [
-  { offset = 110, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00416610 },
 ]
 
 [builds.runtime_initialization]

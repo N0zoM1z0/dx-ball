@@ -52,16 +52,25 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 358 |
-| Complete exact code bytes | 75,060 |
+| Exact functions | 359 |
+| Complete exact code bytes | 75,189 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 358 exact functions does not prove project completion.
+These are separate ledgers; 359 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Float digits closes129 bytes by restoring the shipped _fptostr.c
+strcpy(buffer, buffer+1) operation instead of the earlier memmove substitution.
+VC4 emits the original inline scan/forward REP word/byte copy. Preserve the
+original overlap; no defined modern-C overlap/native-runtime acceptance is added.
+Four owner exacts, both other candidate results and all358 previous exacts remain.
+Current359/code75,189/candidates90. One VC4/native/i686 set, retained REA/full CRT,
+no runtime tests. See [float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md)
+and `.analysis/float-digits-original-string-operation-20261015/verification.json`.
 
 Exponent editing closes all57 bytes through direct binary64 assignment, restoring
 the original high/low integer transfer order before the exponent write. The99-byte
@@ -292,7 +301,8 @@ and `.analysis/stream-open-original-register-lifetimes-20261015/verification.jso
 
 Float digits improves122/129/68 to122/129/65 through genuine register pointers,
 consumed guard-byte advance and original conditional stores from shipped _fptostr.c.
-Keep the defined complete memmove shift: original REP strlen/copy remains nonexact.
+The earlier memmove substitution is superseded by the original strcpy recovery
+above; the complete129-byte function now matches.
 Explicit forward copying emits108/129/69 and is rejected. All four owner exacts,
 both other owner candidates and all348 exacts remain. Two compiler sets, no
 runtime/provider work. See [float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md)

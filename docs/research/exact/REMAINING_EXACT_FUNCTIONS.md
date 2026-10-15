@@ -4,7 +4,13 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**358 functions / 75,060 code bytes / 136 metadata bytes**.
+**359 functions / 75,189 code bytes / 136 metadata bytes**.
+
+Float digit generation closes129 bytes through the shipped _fptostr.c strcpy
+operation, including original inline REP copying. This supersedes the memmove
+substitution, without adding a modern-C overlap/runtime guarantee. Four owner
+exacts, both other candidate results and all358 previous exacts remain. See
+[float formatting](RUNTIME_FLOAT_FORMAT.md).
 
 Exponent editing closes all57 bytes through direct binary64 assignment, restoring
 the original high/low integer transfer order before the exponent write. The99-byte
