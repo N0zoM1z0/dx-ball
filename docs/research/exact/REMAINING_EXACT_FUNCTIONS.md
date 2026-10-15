@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **357 functions / 75,003 code bytes / 136 metadata bytes**.
 
+User matherr improves174/174/28 to174/174/21 through direct binary64 assignments;
+both187/79 companions and all357 exacts remain. C mode/definition order do not
+improve it; full original FP ownership worsens raising and is rejected. See
+[FP exception entries](RUNTIME_FP_DECOMPOSITION.md).
+
 FP raising improves880/876/328 to876/876/22 through direct IEEE binary64 member
 assignments, preserving handling704 exact. The C producer gives raising876 exact
 but loses handling to29 differences, so it remains a private control. All357 exacts,

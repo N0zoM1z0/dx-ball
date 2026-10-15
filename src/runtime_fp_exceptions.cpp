@@ -2,14 +2,6 @@
 
 extern "C" { extern int errno; }
 
-#if defined(__GNUC__)
-typedef struct __attribute__((__may_alias__)) DxBallMathDoubleBits {
-#else
-typedef struct DxBallMathDoubleBits {
-#endif
-    unsigned int low, high;
-} DxBallMathDoubleBits;
-
 double dxball_crt_user_math_error(int error, int operation, double argument1,
                                  double argument2, double result, unsigned int control)
 {
@@ -17,17 +9,9 @@ double dxball_crt_user_math_error(int error, int operation, double argument1,
     exception.name = dxball_crt_math_function_name(operation);
     if (exception.name) {
         exception.type = error;
-        /* The callback receives the original representations, not an early
-           floating conversion that might quiet a signaling NaN. */
-        DxBallMathDoubleBits *first = (DxBallMathDoubleBits *)(void *)&exception.arg1;
-        DxBallMathDoubleBits *second = (DxBallMathDoubleBits *)(void *)&exception.arg2;
-        DxBallMathDoubleBits *returned = (DxBallMathDoubleBits *)(void *)&exception.retval;
-        const DxBallMathDoubleBits *first_input = (const DxBallMathDoubleBits *)(const void *)&argument1;
-        const DxBallMathDoubleBits *second_input = (const DxBallMathDoubleBits *)(const void *)&argument2;
-        const DxBallMathDoubleBits *result_input = (const DxBallMathDoubleBits *)(const void *)&result;
-        *first = *first_input;
-        *second = *second_input;
-        *returned = *result_input;
+        exception.arg1 = argument1;
+        exception.arg2 = argument2;
+        exception.retval = result;
         _ctrlfp(control, 0xffff);
         if (!dxball_math_error(&exception))
             dxball_crt_set_math_errno(error);

@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+User matherr improves174/174/28 to174/174/21 through direct binary64 assignments,
+removing six word-view pointers/their alias type. Both187/79 companions stay
+exact. C mode and original definition order are unchanged controls. Full original
+fpexcept.c ownership preserves five exacts but worsens raising22 to36; reject it.
+Its i686 native check also rejects an imported errno redeclaration. Three selected
+family VC4/native/i686 sets pass; full-owner VC4/native pass, i686 fails. All357
+exacts/91 other candidate results remain. See
+[FP exception entries](../research/exact/RUNTIME_FP_DECOMPOSITION.md) and
+`.analysis/math-error-typed-double-transport-20261015/verification.json`.
+
 FP raising improves880/876/328 to876/876/22 through direct IEEE binary64 member
 assignments instead of four explicit word-view pointers. VC4 emits the original
 integer transfers; remaining ESI/EDI ownership/final POP placement is nonexact.
