@@ -63,6 +63,17 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Extended multiplication improves678/678/103 to678/678/21 through early product
+initialization, positive-count-owned accumulator setup and the original
+`<= 0x3fbf` underflow cutoff. Remaining differences are two SIB commutations and
+carry-store/compare scheduling, not exact. Parser/scaling full byte results
+and all355 exacts remain; current355/code73,888/candidates94 unchanged. One
+recovery VC4/native/i686 set plus one formatting-only set give identical full
+results. Selected private product reused through identical canonical inputs;
+retained REA/full CRT reused, no runtime/game tests. See
+[decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
+`.analysis/multiply-original-initialization-phases-20261015/verification.json`.
+
 Argument setup closes155 bytes and all11 actual relocations through original
 post-publication command selection after parser/character-type/byte-block
 recovery. The old published-name159/155/136 trial preceded those changed inputs;

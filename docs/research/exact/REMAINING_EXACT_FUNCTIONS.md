@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **355 functions / 73,888 code bytes / 136 metadata bytes**.
 
+Extended multiplication improves678/678/103 to678/678/21 through product and
+guarded accumulator initialization, plus the original underflow cutoff. Not
+exact; all355 exacts and93 other candidate bytes remain. See
+[decimal conversion](RUNTIME_DECIMAL_CONVERSION.md).
+
 Argument setup155 closes through original post-publication command selection
 after parser, character-type and byte-block recovery. Parser466 and all354 old
 exacts remain;94 other candidates unchanged. See [arguments](RUNTIME_ARGUMENTS.md).

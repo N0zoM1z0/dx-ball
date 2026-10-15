@@ -11467,90 +11467,90 @@ relocations = [
 [candidates.crt-parse-extended12]
 build = "runtime_decimal"
 symbol = "__strgtold12"
-target_address = 0x0041E7D0
+target_address = 0x41e7d0
 size = 1871
 boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
 relocations = [
-  { offset = 106, type = "DIR32", symbol = "$L399", target = 0x41ede8, addend = 0 },
-  { offset = 132, type = "DIR32", symbol = "___decimal_point", target = 0x423880, addend = 0 },
-  { offset = 241, type = "DIR32", symbol = "___decimal_point", target = 0x423880, addend = 0 },
-  { offset = 276, type = "DIR32", symbol = "$L400", target = 0x41ee30, addend = 0 },
-  { offset = 283, type = "DIR32", symbol = "$L401", target = 0x41ee18, addend = 0 },
-  { offset = 339, type = "DIR32", symbol = "___decimal_point", target = 0x423880, addend = 0 },
-  { offset = 394, type = "DIR32", symbol = "___mb_cur_max", target = 0x42387c, addend = 0 },
-  { offset = 409, type = "REL32", symbol = "__isctype", target = 0x41ac70, addend = 0 },
-  { offset = 422, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
-  { offset = 477, type = "DIR32", symbol = "___decimal_point", target = 0x423880, addend = 0 },
-  { offset = 512, type = "DIR32", symbol = "$L402", target = 0x41ee80, addend = 0 },
-  { offset = 519, type = "DIR32", symbol = "$L403", target = 0x41ee6c, addend = 0 },
-  { offset = 582, type = "DIR32", symbol = "___mb_cur_max", target = 0x42387c, addend = 0 },
-  { offset = 597, type = "REL32", symbol = "__isctype", target = 0x41ac70, addend = 0 },
-  { offset = 610, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
-  { offset = 676, type = "DIR32", symbol = "$L404", target = 0x41eed0, addend = 0 },
-  { offset = 683, type = "DIR32", symbol = "$L405", target = 0x41eebc, addend = 0 },
-  { offset = 717, type = "DIR32", symbol = "___mb_cur_max", target = 0x42387c, addend = 0 },
-  { offset = 732, type = "REL32", symbol = "__isctype", target = 0x41ac70, addend = 0 },
-  { offset = 745, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
-  { offset = 992, type = "DIR32", symbol = "___mb_cur_max", target = 0x42387c, addend = 0 },
-  { offset = 1007, type = "REL32", symbol = "__isctype", target = 0x41ac70, addend = 0 },
-  { offset = 1020, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
-  { offset = 1070, type = "DIR32", symbol = "___mb_cur_max", target = 0x42387c, addend = 0 },
-  { offset = 1085, type = "REL32", symbol = "__isctype", target = 0x41ac70, addend = 0 },
-  { offset = 1098, type = "DIR32", symbol = "__pctype", target = 0x423670, addend = 0 },
-  { offset = 1294, type = "REL32", symbol = "___mtold12", target = 0x41e6e0, addend = 0 },
-  { offset = 1384, type = "REL32", symbol = "___multtenpow12", target = 0x41fc40, addend = 0 },
-  { offset = 1560, type = "DIR32", symbol = "$L244", target = 0x41e83e, addend = 0 },
-  { offset = 1564, type = "DIR32", symbol = "$L256", target = 0x41e8a3, addend = 0 },
-  { offset = 1568, type = "DIR32", symbol = "$L268", target = 0x41e90d, addend = 0 },
-  { offset = 1572, type = "DIR32", symbol = "$L274", target = 0x41e950, addend = 0 },
-  { offset = 1576, type = "DIR32", symbol = "$L289", target = 0x41e9ef, addend = 0 },
-  { offset = 1580, type = "DIR32", symbol = "$L305", target = 0x41ea93, addend = 0 },
-  { offset = 1584, type = "DIR32", symbol = "$L307", target = 0x41eae4, addend = 0 },
-  { offset = 1588, type = "DIR32", symbol = "$L315", target = 0x41eb42, addend = 0 },
-  { offset = 1592, type = "DIR32", symbol = "$L319", target = 0x41eb73, addend = 0 },
-  { offset = 1596, type = "DIR32", symbol = "$L324", target = 0x41eba4, addend = 0 },
-  { offset = 1600, type = "DIR32", symbol = "$L237", target = 0x41ec74, addend = 0 },
-  { offset = 1604, type = "DIR32", symbol = "$L332", target = 0x41ec32, addend = 0 },
-  { offset = 1608, type = "DIR32", symbol = "$L264", target = 0x41e8ef, addend = 0 },
-  { offset = 1612, type = "DIR32", symbol = "$L264", target = 0x41e8ef, addend = 0 },
-  { offset = 1616, type = "DIR32", symbol = "$L265", target = 0x41e8f9, addend = 0 },
-  { offset = 1620, type = "DIR32", symbol = "$L266", target = 0x41e903, addend = 0 },
-  { offset = 1624, type = "DIR32", symbol = "$L266", target = 0x41e903, addend = 0 },
-  { offset = 1628, type = "DIR32", symbol = "$finish$255", target = 0x41ec6e, addend = 0 },
-  { offset = 1692, type = "DIR32", symbol = "$L286", target = 0x41e9db, addend = 0 },
-  { offset = 1696, type = "DIR32", symbol = "$L286", target = 0x41e9db, addend = 0 },
-  { offset = 1700, type = "DIR32", symbol = "$L287", target = 0x41e9e5, addend = 0 },
-  { offset = 1704, type = "DIR32", symbol = "$L287", target = 0x41e9e5, addend = 0 },
-  { offset = 1708, type = "DIR32", symbol = "$finish$255", target = 0x41ec6e, addend = 0 },
-  { offset = 1772, type = "DIR32", symbol = "$L302", target = 0x41ea7f, addend = 0 },
-  { offset = 1776, type = "DIR32", symbol = "$L302", target = 0x41ea7f, addend = 0 },
-  { offset = 1780, type = "DIR32", symbol = "$L303", target = 0x41ea89, addend = 0 },
-  { offset = 1784, type = "DIR32", symbol = "$L303", target = 0x41ea89, addend = 0 },
-  { offset = 1788, type = "DIR32", symbol = "$finish$255", target = 0x41ec6e, addend = 0 },
+  { offset = 106, type = "DIR32", symbol = "$L399", addend = 0, target = 0x41ede8 },
+  { target = 0x423880, offset = 132, type = "DIR32", symbol = "___decimal_point", addend = 0 },
+  { target = 0x423880, offset = 241, type = "DIR32", symbol = "___decimal_point", addend = 0 },
+  { offset = 276, type = "DIR32", symbol = "$L400", addend = 0, target = 0x41ee30 },
+  { offset = 283, type = "DIR32", symbol = "$L401", addend = 0, target = 0x41ee18 },
+  { target = 0x423880, offset = 339, type = "DIR32", symbol = "___decimal_point", addend = 0 },
+  { target = 0x42387c, offset = 394, type = "DIR32", symbol = "___mb_cur_max", addend = 0 },
+  { target = 0x41ac70, offset = 409, type = "REL32", symbol = "__isctype", addend = 0 },
+  { target = 0x423670, offset = 422, type = "DIR32", symbol = "__pctype", addend = 0 },
+  { target = 0x423880, offset = 477, type = "DIR32", symbol = "___decimal_point", addend = 0 },
+  { offset = 512, type = "DIR32", symbol = "$L402", addend = 0, target = 0x41ee80 },
+  { offset = 519, type = "DIR32", symbol = "$L403", addend = 0, target = 0x41ee6c },
+  { target = 0x42387c, offset = 582, type = "DIR32", symbol = "___mb_cur_max", addend = 0 },
+  { target = 0x41ac70, offset = 597, type = "REL32", symbol = "__isctype", addend = 0 },
+  { target = 0x423670, offset = 610, type = "DIR32", symbol = "__pctype", addend = 0 },
+  { offset = 676, type = "DIR32", symbol = "$L404", addend = 0, target = 0x41eed0 },
+  { offset = 683, type = "DIR32", symbol = "$L405", addend = 0, target = 0x41eebc },
+  { target = 0x42387c, offset = 717, type = "DIR32", symbol = "___mb_cur_max", addend = 0 },
+  { target = 0x41ac70, offset = 732, type = "REL32", symbol = "__isctype", addend = 0 },
+  { target = 0x423670, offset = 745, type = "DIR32", symbol = "__pctype", addend = 0 },
+  { target = 0x42387c, offset = 992, type = "DIR32", symbol = "___mb_cur_max", addend = 0 },
+  { target = 0x41ac70, offset = 1007, type = "REL32", symbol = "__isctype", addend = 0 },
+  { target = 0x423670, offset = 1020, type = "DIR32", symbol = "__pctype", addend = 0 },
+  { target = 0x42387c, offset = 1070, type = "DIR32", symbol = "___mb_cur_max", addend = 0 },
+  { target = 0x41ac70, offset = 1085, type = "REL32", symbol = "__isctype", addend = 0 },
+  { target = 0x423670, offset = 1098, type = "DIR32", symbol = "__pctype", addend = 0 },
+  { target = 0x41e6e0, offset = 1294, type = "REL32", symbol = "___mtold12", addend = 0 },
+  { target = 0x41fc40, offset = 1384, type = "REL32", symbol = "___multtenpow12", addend = 0 },
+  { offset = 1560, type = "DIR32", symbol = "$L244", addend = 0, target = 0x41e83e },
+  { offset = 1564, type = "DIR32", symbol = "$L256", addend = 0, target = 0x41e8a3 },
+  { offset = 1568, type = "DIR32", symbol = "$L268", addend = 0, target = 0x41e90d },
+  { offset = 1572, type = "DIR32", symbol = "$L274", addend = 0, target = 0x41e950 },
+  { offset = 1576, type = "DIR32", symbol = "$L289", addend = 0, target = 0x41e9ef },
+  { offset = 1580, type = "DIR32", symbol = "$L305", addend = 0, target = 0x41ea93 },
+  { offset = 1584, type = "DIR32", symbol = "$L307", addend = 0, target = 0x41eae4 },
+  { offset = 1588, type = "DIR32", symbol = "$L315", addend = 0, target = 0x41eb42 },
+  { offset = 1592, type = "DIR32", symbol = "$L319", addend = 0, target = 0x41eb73 },
+  { offset = 1596, type = "DIR32", symbol = "$L324", addend = 0, target = 0x41eba4 },
+  { offset = 1600, type = "DIR32", symbol = "$L237", addend = 0, target = 0x41ec74 },
+  { offset = 1604, type = "DIR32", symbol = "$L332", addend = 0, target = 0x41ec32 },
+  { offset = 1608, type = "DIR32", symbol = "$L264", addend = 0, target = 0x41e8ef },
+  { offset = 1612, type = "DIR32", symbol = "$L264", addend = 0, target = 0x41e8ef },
+  { offset = 1616, type = "DIR32", symbol = "$L265", addend = 0, target = 0x41e8f9 },
+  { offset = 1620, type = "DIR32", symbol = "$L266", addend = 0, target = 0x41e903 },
+  { offset = 1624, type = "DIR32", symbol = "$L266", addend = 0, target = 0x41e903 },
+  { offset = 1628, type = "DIR32", symbol = "$finish$255", addend = 0, target = 0x41ec6e },
+  { offset = 1692, type = "DIR32", symbol = "$L286", addend = 0, target = 0x41e9db },
+  { offset = 1696, type = "DIR32", symbol = "$L286", addend = 0, target = 0x41e9db },
+  { offset = 1700, type = "DIR32", symbol = "$L287", addend = 0, target = 0x41e9e5 },
+  { offset = 1704, type = "DIR32", symbol = "$L287", addend = 0, target = 0x41e9e5 },
+  { offset = 1708, type = "DIR32", symbol = "$finish$255", addend = 0, target = 0x41ec6e },
+  { offset = 1772, type = "DIR32", symbol = "$L302", addend = 0, target = 0x41ea7f },
+  { offset = 1776, type = "DIR32", symbol = "$L302", addend = 0, target = 0x41ea7f },
+  { offset = 1780, type = "DIR32", symbol = "$L303", addend = 0, target = 0x41ea89 },
+  { offset = 1784, type = "DIR32", symbol = "$L303", addend = 0, target = 0x41ea89 },
+  { offset = 1788, type = "DIR32", symbol = "$finish$255", addend = 0, target = 0x41ec6e },
 ]
 
 [candidates.crt-multiply-extended12]
 build = "runtime_decimal"
 symbol = "___ld12mul"
-target_address = 0x0041F990
+target_address = 0x41f990
 size = 678
 boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
 relocations = [
-  { offset = 290, type = "REL32", symbol = "___addl", target = 0x41e5c0, addend = 0 },
-  { offset = 370, type = "REL32", symbol = "___shl_12", target = 0x41e660, addend = 0 },
-  { offset = 441, type = "REL32", symbol = "___shr_12", target = 0x41e6a0, addend = 0 },
+  { target = 0x41e5c0, offset = 290, type = "REL32", symbol = "___addl", addend = 0 },
+  { target = 0x41e660, offset = 370, type = "REL32", symbol = "___shl_12", addend = 0 },
+  { target = 0x41e6a0, offset = 441, type = "REL32", symbol = "___shr_12", addend = 0 },
 ]
 
 [candidates.crt-scale-decimal12]
 build = "runtime_decimal"
 symbol = "___multtenpow12"
-target_address = 0x0041FC40
+target_address = 0x41fc40
 size = 123
 boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
 relocations = [
-  { offset = 12, type = "DIR32", symbol = "__pow10pos", target = 0x424390, addend = 4294967200 },
-  { offset = 26, type = "DIR32", symbol = "__pow10neg", target = 0x4244f0, addend = 4294967200 },
-  { offset = 107, type = "REL32", symbol = "___ld12mul", target = 0x41f990, addend = 0 },
+  { target = 0x424390, offset = 12, type = "DIR32", symbol = "__pow10pos", addend = 4294967200 },
+  { target = 0x4244f0, offset = 26, type = "DIR32", symbol = "__pow10neg", addend = 4294967200 },
+  { target = 0x41f990, offset = 107, type = "REL32", symbol = "___ld12mul", addend = 0 },
 ]
 
 [candidates.crt-set-file-mode]

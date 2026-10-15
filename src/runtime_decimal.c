@@ -18,14 +18,15 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
     const unsigned int *right_words = (const unsigned int *)right;
     const unsigned short *left_halves = (const unsigned short *)left;
     const unsigned short *right_halves = (const unsigned short *)right;
-    unsigned short left_exponent = left->exponent;
-    unsigned short right_exponent = right->exponent;
-    unsigned short sign = (left_exponent ^ right_exponent) & 0x8000;
+    unsigned short left_exponent, right_exponent, sign;
     unsigned short exponent;
     int diagonal, product_offset;
     product.words[0] = 0;
     product.words[1] = 0;
     product.words[2] = 0;
+    left_exponent = left->exponent;
+    right_exponent = right->exponent;
+    sign = (left_exponent ^ right_exponent) & 0x8000;
     left_exponent &= 0x7fff;
     right_exponent &= 0x7fff;
     exponent = left_exponent + right_exponent;
@@ -35,7 +36,7 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
         left_words[2] = (sign == 0 ? 0x80000000U : 0U) - 0x8000;
         return;
     }
-    if (exponent < 0x3fc0) {
+    if (exponent <= 0x3fbf) {
         left_words[2] = 0;
         left_words[1] = 0;
         left_words[0] = 0;
@@ -62,16 +63,19 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
         int left_offset = diagonal * sizeof(*left_halves);
         int right_offset = 4 * sizeof(*right_halves);
         int remaining = 5 - diagonal;
-        unsigned int *accumulator = (unsigned int *)(product.bytes + product_offset);
-        if (remaining > 0) do {
-            unsigned int term = (unsigned int)*(const unsigned short *)
-                ((const unsigned char *)left_halves + left_offset) *
-                *(const unsigned short *)((const unsigned char *)right_halves + right_offset);
-            if (__addl(*accumulator, term, accumulator))
-                ++*(unsigned short *)(product.bytes + product_offset + sizeof(product.words[0]));
-            left_offset += sizeof(*left_halves);
-            right_offset -= sizeof(*right_halves);
-        } while (--remaining);
+        unsigned int *accumulator;
+        if (remaining > 0) {
+            accumulator = (unsigned int *)(product.bytes + product_offset);
+            do {
+                unsigned int term = (unsigned int)*(const unsigned short *)
+                    ((const unsigned char *)left_halves + left_offset) *
+                    *(const unsigned short *)((const unsigned char *)right_halves + right_offset);
+                if (__addl(*accumulator, term, accumulator))
+                    ++*(unsigned short *)(product.bytes + product_offset + sizeof(product.words[0]));
+                left_offset += sizeof(*left_halves);
+                right_offset -= sizeof(*right_halves);
+            } while (--remaining);
+        }
     }
     exponent -= 0x3ffe;
     while ((short)exponent > 0 && (product.words[2] & 0x80000000U) == 0) {

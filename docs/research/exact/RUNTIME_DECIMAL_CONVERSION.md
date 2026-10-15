@@ -9,8 +9,21 @@ All ten affected exacts preserve 502 bytes. The 239 other producers are unchange
 | --- | ---: | ---: |
 | Numeric digits | 232/232 | 20 |
 | Parser and embedded tables | 1851/1871 | 1662 |
-| Multiplication | 678/678 | 103 |
+| Multiplication | 678/678 | 21 |
 | Decimal scaling | 125/123 | 115 |
+
+Multiplication now initializes the product before capturing operand exponents
+and establishes the accumulator only inside the positive-count path. Its
+underflow test uses the original `<= 0x3fbf` cutoff. This reduces103 differences
+to21 while retaining678 bytes and all three actual call relocations. The
+remaining differences are two commuted SIB operand pairs and the scheduling
+of carry-zero stores against the next comparisons; the body is not exact.
+Parser/scaling byte results and all355 exacts remain unchanged. One recovery
+compiler set and one formatting-only set have identical complete results;
+both include native/i686 compilation. The selected private product is reused
+through identical canonical inputs. Retained REA and the complete pinned
+`tenpow.obj` section are reused, with no runtime/game checks. Receipt:
+`.analysis/multiply-original-initialization-phases-20261015/verification.json`.
 
 The parser preserves sign/point/exponent rollback, `D/E` markers, optional
 implicit exponents and all seven parameters. It stores up to 25 digits, then
