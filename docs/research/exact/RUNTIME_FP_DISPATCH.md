@@ -2,9 +2,22 @@
 
 The complete local CRT sections and retained/fresh REA evidence establish
 raise876 and handle704. Raise includes18 switch/alignment bytes beyond its old
-858-byte inventory entry. Current source emits880/328 and708/436 respectively;
+858-byte inventory entry. Current source emits880/328 and704/21 respectively;
 both remain candidates, with every actual relocation and self-relative case
 binding compared across the whole original extent.
+
+Handling now separates the decompose output slot, adjusted exponent and shift
+countdown. Positive/unordered overflow branches precede negative stores; the
+nonzero underflow path precedes its zero fallback. Explicit inexact writes and
+ordered zero stores restore the original207 instructions and704-byte extent.
+The full difference count improves436 to21. All operands, calls and branch
+targets agree; four adjacent instruction-scheduling swaps remain nonexact.
+Raising's complete byte result and all40 initialized constant bytes are unchanged.
+Four VC4/native/i686 sets cover flag writes, exponent lifetimes, result branches
+and the final inexact phase. The selected private product is reused through
+identical canonical inputs. All355 exacts and93 other candidate byte results
+remain; retained REA/full CRT are reused, with no runtime tests. Receipt:
+`.analysis/fp-underflow-original-flag-lifetimes-20261015/verification.json`.
 
 The implementations retain cause/code priority, raw status capture and clearing,
 the native-width OS pointer payload, callback-modified enable/rounding/precision

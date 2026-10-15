@@ -747,10 +747,10 @@ target_address = 0x00419560
 size = 876
 boundary_evidence = "docs/research/exact/RUNTIME_FP_DISPATCH.md"
 relocations = [
-  { offset = 290, type = "REL32", symbol = "__statfp", addend = 0, target = 0x00419370 },
-  { offset = 640, type = "REL32", symbol = "__clrfp", addend = 0, target = 0x00419390 },
-  { offset = 656, type = "DIR32", symbol = "__imp__RaiseException@16", addend = 0, target = 0x0044133C },
-  { offset = 724, type = "DIR32", symbol = "$L619", addend = 0, target = 0x004198C0 },
+  { target = 0x00419370, offset = 290, type = "REL32", symbol = "__statfp", addend = 0 },
+  { target = 0x00419390, offset = 640, type = "REL32", symbol = "__clrfp", addend = 0 },
+  { target = 0x0044133C, offset = 656, type = "DIR32", symbol = "__imp__RaiseException@16", addend = 0 },
+  { offset = 724, type = "DIR32", symbol = "$L622", addend = 0, target = 0x004198C0 },
   { offset = 864, type = "DIR32", symbol = "$L548", addend = 0, target = 0x00419838 },
   { offset = 868, type = "DIR32", symbol = "$L549", addend = 0, target = 0x00419840 },
   { offset = 872, type = "DIR32", symbol = "$L550", addend = 0, target = 0x00419850 },
@@ -764,24 +764,24 @@ target_address = 0x004198D0
 size = 704
 boundary_evidence = "docs/research/exact/RUNTIME_FP_DISPATCH.md"
 relocations = [
-  { offset = 37, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
-  { offset = 70, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
-  { offset = 108, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
-  { offset = 192, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
-  { offset = 209, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
-  { offset = 221, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
-  { offset = 249, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
-  { offset = 266, type = "DIR32", symbol = "__d_max", addend = 4, target = 0x004234B8 },
-  { offset = 278, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
-  { offset = 306, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
-  { offset = 323, type = "DIR32", symbol = "__d_inf", addend = 4, target = 0x004234A8 },
-  { offset = 335, type = "DIR32", symbol = "__d_inf", addend = 0, target = 0x004234A8 },
-  { offset = 363, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
-  { offset = 380, type = "DIR32", symbol = "__d_max", addend = 4, target = 0x004234B8 },
-  { offset = 392, type = "DIR32", symbol = "__d_max", addend = 0, target = 0x004234B8 },
-  { offset = 473, type = "REL32", symbol = "_dxball_crt_decompose_double", addend = 0, target = 0x00419D90 },
-  { offset = 655, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
-  { offset = 686, type = "REL32", symbol = "__set_statfp", addend = 0, target = 0x004193F0 },
+  { target = 0x004193F0, offset = 37, type = "REL32", symbol = "__set_statfp", addend = 0 },
+  { target = 0x004193F0, offset = 70, type = "REL32", symbol = "__set_statfp", addend = 0 },
+  { target = 0x004193F0, offset = 108, type = "REL32", symbol = "__set_statfp", addend = 0 },
+  { target = 0x004234A8, offset = 191, type = "DIR32", symbol = "__d_inf", addend = 4 },
+  { target = 0x004234A8, offset = 203, type = "DIR32", symbol = "__d_inf", addend = 0 },
+  { target = 0x004234A8, offset = 216, type = "DIR32", symbol = "__d_inf", addend = 0 },
+  { target = 0x004234B8, offset = 248, type = "DIR32", symbol = "__d_max", addend = 4 },
+  { target = 0x004234B8, offset = 260, type = "DIR32", symbol = "__d_max", addend = 0 },
+  { target = 0x004234A8, offset = 273, type = "DIR32", symbol = "__d_inf", addend = 0 },
+  { target = 0x004234A8, offset = 305, type = "DIR32", symbol = "__d_inf", addend = 4 },
+  { target = 0x004234A8, offset = 317, type = "DIR32", symbol = "__d_inf", addend = 0 },
+  { target = 0x004234B8, offset = 330, type = "DIR32", symbol = "__d_max", addend = 0 },
+  { target = 0x004234B8, offset = 362, type = "DIR32", symbol = "__d_max", addend = 4 },
+  { target = 0x004234B8, offset = 374, type = "DIR32", symbol = "__d_max", addend = 0 },
+  { target = 0x004234B8, offset = 387, type = "DIR32", symbol = "__d_max", addend = 0 },
+  { target = 0x00419D90, offset = 474, type = "REL32", symbol = "_dxball_crt_decompose_double", addend = 0 },
+  { target = 0x004193F0, offset = 651, type = "REL32", symbol = "__set_statfp", addend = 0 },
+  { target = 0x004193F0, offset = 682, type = "REL32", symbol = "__set_statfp", addend = 0 },
 ]
 
 [builds.runtime_fp_decomposition]

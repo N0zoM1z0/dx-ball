@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **355 functions / 73,888 code bytes / 136 metadata bytes**.
 
+FP exception handling improves708/704/436 to704/704/21 through original exponent,
+result-branch and inexact lifetimes. Four scheduling swaps remain nonexact;
+raising/constants/all355 exacts remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).
+
 Environment acquisition improves389/411/404 to396/411/399 through original
 cursor scans and allocation-result lifetimes. Entry initialization remains
 nonexact; all355 exacts and93 other candidates remain. See [environment](RUNTIME_ARGUMENTS.md).

@@ -96,7 +96,7 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
     unsigned int pending = flags & 0x1f;
     DxBallDispatchDoubleBits *result_bits = (DxBallDispatchDoubleBits *)(void *)result;
     DxBallDispatchDoubleWork fraction;
-    int exponent, inexact, negative;
+    int exponent, adjusted_exponent, inexact, negative;
     if ((flags & 0x08) && (control & 0x01)) {
         pending &= ~0x08U;
         _set_statfp(0x01);
@@ -107,23 +107,23 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
         _set_statfp(0x08);
         switch (control & 0xc00) {
         case 0:
-            if (*result <= 0.0) *result = -_d_inf.value;
-            else { result_bits->high = _d_inf.words.high; result_bits->low = _d_inf.words.low; }
+            if (!(*result <= 0.0)) { result_bits->high = _d_inf.words.high; result_bits->low = _d_inf.words.low; }
+            else *result = -_d_inf.value;
             pending &= ~0x01U;
             break;
         case 0x400:
-            if (*result <= 0.0) *result = -_d_inf.value;
-            else { result_bits->high = _d_max.words.high; result_bits->low = _d_max.words.low; }
+            if (!(*result <= 0.0)) { result_bits->high = _d_max.words.high; result_bits->low = _d_max.words.low; }
+            else *result = -_d_inf.value;
             pending &= ~0x01U;
             break;
         case 0x800:
-            if (*result <= 0.0) *result = -_d_max.value;
-            else { result_bits->high = _d_inf.words.high; result_bits->low = _d_inf.words.low; }
+            if (!(*result <= 0.0)) { result_bits->high = _d_inf.words.high; result_bits->low = _d_inf.words.low; }
+            else *result = -_d_max.value;
             pending &= ~0x01U;
             break;
         case 0xc00:
-            if (*result <= 0.0) *result = -_d_max.value;
-            else { result_bits->high = _d_max.words.high; result_bits->low = _d_max.words.low; }
+            if (!(*result <= 0.0)) { result_bits->high = _d_max.words.high; result_bits->low = _d_max.words.low; }
+            else *result = -_d_max.value;
             pending &= ~0x01U;
             break;
         default:
@@ -131,21 +131,22 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
             break;
         }
     } else if ((flags & 0x02) && (control & 0x10)) {
-        inexact = (flags & 0x10) != 0;
-        if (((result_bits->high & 0x7fffffffU) | result_bits->low) == 0) {
+        inexact = 0;
+        if (flags & 0x10)
             inexact = 1;
-        } else {
+        if (((result_bits->high & 0x7fffffffU) | result_bits->low) != 0) {
             fraction.value = dxball_crt_decompose_double(*result, &exponent);
-            exponent -= 1536;
-            if (exponent < -1074) {
+            adjusted_exponent = exponent - 1536;
+            if (adjusted_exponent < -1074) {
                 inexact = 1;
-                fraction.bits.low = fraction.bits.high = 0;
+                fraction.bits.low = 0;
+                fraction.bits.high = 0;
             } else {
                 negative = fraction.value < 0.0;
                 fraction.words[3] &= 0x000f;
                 fraction.bytes[6] |= 0x10;
-                if (exponent < -1021) {
-                    exponent = -1021 - exponent;
+                if (adjusted_exponent < -1021) {
+                    int shift = -1021 - adjusted_exponent;
                     do {
                         if ((fraction.bits.low & 1) && !inexact)
                             inexact = 1;
@@ -153,13 +154,15 @@ int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsign
                         if (fraction.bits.high & 1)
                             fraction.bits.low |= 0x80000000U;
                         fraction.bits.high >>= 1;
-                    } while (--exponent);
+                    } while (--shift);
                 }
                 if (negative)
                     fraction.value = -fraction.value;
             }
             result_bits->high = fraction.bits.high;
             result_bits->low = fraction.bits.low;
+        } else {
+            inexact = 1;
         }
         if (inexact)
             _set_statfp(0x10);

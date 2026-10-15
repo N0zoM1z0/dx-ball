@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+FP exception handling improves708/704/436 to704/704/21 through separate decompose
+output/adjusted exponent/countdown, original result branches and inexact writes.
+All207 instructions/operands/calls/branch targets correspond except four adjacent
+scheduling swaps; not exact. Raising's full byte result and40 initialized constant
+bytes remain, as do355 exacts/93 other candidate byte results. Totals355/code73,888/
+candidates94 unchanged. Four VC4/native/i686 sets; selected private product reused
+through identical canonical inputs, retained REA/full CRT reused, no runtime tests.
+See [FP dispatch](../research/exact/RUNTIME_FP_DISPATCH.md) and
+`.analysis/fp-underflow-original-flag-lifetimes-20261015/verification.json`.
+
 Environment acquisition improves389/411/404 to396/411/399 through shipped
 aw_env.c scans, signed counts and allocation-result lifetimes. All143 trailing
 instructions/317 bytes correspond with16 branch targets and actual calls;
