@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**361 functions / 75,408 code bytes / 136 metadata bytes**.
+**362 functions / 75,484 code bytes / 136 metadata bytes**.
+
+Float assignment closes76 bytes through the shipped DOUBLE record model,
+restoring original integer transport and12-byte frame. Five owner exacts,
+insertion and all361 previous exacts remain. Native alignment follows the record
+type; see [float formatting](RUNTIME_FLOAT_FORMAT.md).
 
 Decimal scaling closes123 bytes by restoring the original biased typed-table
 pointer state. Both power arrays/full700-byte carrier, parser/multiplication

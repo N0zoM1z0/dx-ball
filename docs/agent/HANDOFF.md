@@ -52,16 +52,26 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 361 |
-| Complete exact code bytes | 75,408 |
+| Exact functions | 362 |
+| Complete exact code bytes | 75,484 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 361 exact functions does not prove project completion.
+These are separate ledgers; 362 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Float assignment closes76 bytes/both bindings through the single-member DOUBLE
+record model documented in shipped fltintrn.h. Aggregate copy restores original
+integer load/store order and12-byte frame; float transport stays unchanged. Native
+double destinations require the record's ordinary alignment; no unaligned/native
+runtime acceptance is claimed. Five owner exacts, insertion and all361 previous
+exacts/87 other candidates remain. Current362/code75,484/candidates87. One VC4/
+native/i686 set, retained REA, no runtime tests. See
+[float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md) and
+`.analysis/float-assignment-original-double-record-20261015/verification.json`.
 
 Decimal scaling closes123 bytes/47 instructions/three bindings through a typed
 12-byte table pointer, biased eight records before the table and advanced seven
@@ -559,13 +569,14 @@ and `.analysis/runtime-float-exponent-20261014/verification.json`. Two
 VC4/native/i686 sets, retained REA reused, no provider/runtime/game tests.
 Global457/335/code69,718/candidates113 unchanged; no permutation sweep.
 
-Float assignment improves77/76/47 to76/76/9 through genuine binary64 word
+Earlier float assignment improves77/76/47 to76/76/9 through genuine binary64 word
 representation/transport. Separate scalar carriers76/19 enlarge the frame and
 whole-copy77/47 is rejected. All four owner exacts/two other candidates remain;
 global457/335/code69,718/candidates113 unchanged. See [float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md)
 and `.analysis/runtime-float-assignment-20261014/verification.json`. Three
 VC4/native/i686 sets, retained REA reused, no provider/runtime/game tests.
 Remaining register/load differences do not justify a permutation sweep.
+The DOUBLE aggregate recovery above supersedes that word-view model.
 
 String copy/concatenation add full source models198/232/232 and291/224/276.
 Strcpy's old7-byte range was only its entry jump; full232-byte shared original

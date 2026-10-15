@@ -1173,7 +1173,7 @@ relocations = [
   { offset = 69, type = "DIR32", symbol = "___decimal_point", addend = 0, target = 0x00423880 },
 ]
 
-[candidates.crt-assign-float]
+[units.crt-assign-float]
 build = "runtime_float_format"
 symbol = "_dxball_crt_assign_float"
 target_address = 0x00418E60

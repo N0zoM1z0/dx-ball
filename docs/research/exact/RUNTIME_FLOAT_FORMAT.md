@@ -1,7 +1,7 @@
 # Float formatting callbacks
 
 The local v1.07 executable and complete pinned VC4 CRT sections establish eight
-source bodies. Six match every byte after every actual relocation:
+source bodies. Seven match every byte after every actual relocation:
 
 | Entry | Body | Bytes |
 | --- | --- | ---: |
@@ -9,15 +9,28 @@ source bodies. Six match every byte after every actual relocation:
 | 00419200 | Dispatch e/E, f and general formatting | 101 |
 | 00418DE0 | Crop trailing fractional zeros | 89 |
 | 00418E40 | Classify nonnegative or unordered value | 23 |
+| 00418E60 | Assign parsed float/double | 76 |
 | 0041D0D0 | Report unavailable float support | 11 |
 | 0041D600 | Generate and round mantissa digits | 129 |
 
-Decimal insertion remains101 bytes/4 differences, assignment76/76 bytes with9
-differences. Digit generation now matches all129 bytes, including the original
+Decimal insertion remains101 bytes/4 differences. Assignment now matches all76
+bytes. Digit generation matches all129 bytes, including the original
 inline REP string scan and forward word/byte copy.
-Assignment preserves object representations, including NaNs. The original
+VC4 assignment preserves object representations, including NaNs. The original
 three-argument digit routine uses a guard digit and updates decimal position on
 carry. Decimal insertion requires a defined spare byte after the terminator.
+
+The shipped `fltintrn.h` defines a single-member `DOUBLE` struct expressly to
+avoid floating instructions during copies. Restoring that aggregate model in
+assignment replaces the two-word union/memcpy sequence and closes76 bytes/both
+actual bindings, with the original12-byte frame and integer transfers. Float
+transport is unchanged. Native double destinations now follow the record's
+ordinary alignment; the earlier unaligned-destination scope is not a native
+runtime guarantee. One VC4/native/i686 set; five existing owner exacts and the
+remaining insertion candidate have identical results. All361 preceding exacts
+and87 other candidate results remain. Current362 exacts/75,484 code bytes/87
+candidates. Receipt:
+`.analysis/float-assignment-original-double-record-20261015/verification.json`.
 
 Shipped `_fptostr.c` explicitly uses `strcpy(buf, buf + 1)` to remove the unused
 guard digit. Restoring that operation replaces the earlier memmove substitution
@@ -48,7 +61,7 @@ rejected; remaining differences are loop store/scheduling. Four owner exacts
 and both other candidates remain unchanged. Two compiler sets, no runtime tests;
 receipt `.analysis/decimal-point-insertion-flow-20261014/verification.json`.
 
-Assignment continuation restores the actual two-word binary64 representation
+The earlier assignment continuation restores the two-word binary64 representation
 and separate four-byte transport, without floating loads or NaN conversion.
 Independent word temporaries give76/19 but enlarge the frame; the real union
 view retains the original12-byte conversion frame and76/9. Whole representation
