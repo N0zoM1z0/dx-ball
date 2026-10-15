@@ -63,6 +63,15 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+User matherr improves174/174/21 through17 to6 differences using the shipped
+DOUBLE carrier for both arguments and explicit low/high four-byte result copies.
+Only an adjacent argument-high store/result-high load interchange remains.
+Both187/79 companions and all362 exact results/86 other candidates remain; totals
+362/code75,484/candidates87 unchanged. C controls have identical complete results;
+retain the C++ producer. Four VC4/native/i686 sets, no new REA/runtime tests. See
+[FP exception entries](../research/exact/RUNTIME_FP_DECOMPOSITION.md) and
+`.analysis/math-error-original-double-record-20261015/verification.json`.
+
 Float assignment closes76 bytes/both bindings through the single-member DOUBLE
 record model documented in shipped fltintrn.h. Aggregate copy restores original
 integer load/store order and12-byte frame; float transport stays unchanged. Native

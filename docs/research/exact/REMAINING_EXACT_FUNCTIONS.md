@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **362 functions / 75,484 code bytes / 136 metadata bytes**.
 
+User matherr improves174/174/21 through17 to6 differences using DOUBLE argument
+carriers and separate low/high result copies. Both187/79 companions and all362
+exacts remain; one adjacent store/load interchange is still nonexact. See
+[FP exception entries](RUNTIME_FP_DECOMPOSITION.md).
+
 Float assignment closes76 bytes through the shipped DOUBLE record model,
 restoring original integer transport and12-byte frame. Five owner exacts,
 insertion and all361 previous exacts remain. Native alignment follows the record

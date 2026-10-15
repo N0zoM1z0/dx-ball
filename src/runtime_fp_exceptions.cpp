@@ -1,6 +1,11 @@
 #include "runtime_fp_exceptions.h"
+#include <string.h>
 
 extern "C" { extern int errno; }
+
+typedef struct DxBallMathDoubleStorage {
+    double value;
+} DxBallMathDoubleStorage;
 
 double dxball_crt_user_math_error(int error, int operation, double argument1,
                                  double argument2, double result, unsigned int control)
@@ -9,9 +14,13 @@ double dxball_crt_user_math_error(int error, int operation, double argument1,
     exception.name = dxball_crt_math_function_name(operation);
     if (exception.name) {
         exception.type = error;
-        exception.arg1 = argument1;
-        exception.arg2 = argument2;
-        exception.retval = result;
+        *(DxBallMathDoubleStorage *)(void *)&exception.arg1 =
+            *(const DxBallMathDoubleStorage *)(const void *)&argument1;
+        *(DxBallMathDoubleStorage *)(void *)&exception.arg2 =
+            *(const DxBallMathDoubleStorage *)(const void *)&argument2;
+        memcpy(&exception.retval, &result, sizeof(unsigned int));
+        memcpy((char *)&exception.retval + sizeof(unsigned int),
+               (const char *)&result + sizeof(unsigned int), sizeof(unsigned int));
         _ctrlfp(control, 0xffff);
         if (!dxball_math_error(&exception))
             dxball_crt_set_math_errno(error);

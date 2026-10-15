@@ -33,7 +33,7 @@ All216 table bytes,134 text bytes and27 actual relocations still match.
 The matherr.obj default marker is9876, not zero; its full4 bytes are restored in
 the existing default-callback owner.
 
-Remaining candidates: user error174/174 bytes with21 differences,
+Remaining candidates: user error174/174 bytes with6 differences,
 classification161/162 with148, and integer type154/127 with141.
 Integer classification explicitly preserves unordered acceptance and both
 actual rounding calls on NaNs; ordinary modern NaN equality would change it.
@@ -59,7 +59,7 @@ VC4/native/i686 compilation set and full owner comparisons; no runtime tests.
 Global source457/exact336/code69,846/candidates113 and249 semantic rows remain
 unchanged. Receipt: `.analysis/math-error-representation-20261014/verification.json`.
 
-Direct binary64 assignments now replace the six word-view pointers and their
+The preceding direct binary64 assignments replace the six word-view pointers and their
 alias type in user matherr. VC4 retains integer loads/stores and the174-byte
 extent, reducing28 differences to21; the32-byte frame and six relocations remain.
 Both187/79 companion exacts are unchanged. C mode and original definition order
@@ -68,3 +68,14 @@ existing exacts but regresses raising22 to36 differences, so it is not adopted.
 The selected C++ product and both portable products reuse identical maintained
 inputs. All357 exacts and91 other candidate results remain; no runtime tests.
 Receipt: `.analysis/math-error-typed-double-transport-20261015/verification.json`.
+
+The shipped single-member DOUBLE model restores low/high transport of both
+matherr arguments. Copying the result in two four-byte phases restores its
+original low/high loads without floating conversion. Complete comparison
+improves21 to17 to6 differences, retaining174 bytes, the32-byte frame and all six
+bindings. Only the adjacent second-argument high-word store/result high-word
+load are interchanged. C controls have identical complete results; the maintained
+C++ producer is retained. Both187/79 companion exacts, all362 exacts and86 other
+candidate results remain unchanged. Four VC4/native/i686 sets; no runtime tests
+or new REA session. Receipt:
+`.analysis/math-error-original-double-record-20261015/verification.json`.
