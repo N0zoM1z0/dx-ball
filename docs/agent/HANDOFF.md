@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+FP raising improves880/876/328 to876/876/22 through direct IEEE binary64 member
+assignments instead of four explicit word-view pointers. VC4 emits the original
+integer transfers; remaining ESI/EDI ownership/final POP placement is nonexact.
+Handling704 stays exact. Original fpexcept.c C producer gives raising876 exact
+but handling704/29; not adopted. Old pointer body in C is unchanged. All357 exacts,
+91 other candidate byte results and40 constant bytes remain; totals unchanged.
+Three VC4/native/i686 sets, retained objects/evidence, no runtime tests. See
+[FP dispatch](../research/exact/RUNTIME_FP_DISPATCH.md) and
+`.analysis/fp-original-c-producer-20261015/verification.json`.
+
 Locale mapping improves561/555/278 to551/555/110 through the original C producer
 and separate mapper/classifier object boundaries. COFF `.file` records identify
 aw_map.c and aw_str.c; C++-style local-static names do not prove C++ source mode.

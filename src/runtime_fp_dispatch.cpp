@@ -19,8 +19,6 @@ void dxball_crt_raise_float_exception(DxBallIeeeRecord *record, unsigned int *co
                                      const double *argument, double *result)
 {
     unsigned int code, status;
-    DxBallDispatchDoubleBits *operand_bits, *result_bits;
-    const DxBallDispatchDoubleBits *input_bits, *returned_bits;
     /* The caller reaches this boundary only with a nonzero unhandled IEEE
        cause among bits0..4. No exception code exists for an empty cause. */
     record->cause.raw = 0;
@@ -56,16 +54,10 @@ void dxball_crt_raise_float_exception(DxBallIeeeRecord *record, unsigned int *co
     record->operation = (unsigned int)operation;
     record->operand1.valid = 1;
     record->operand1.format = 1;
-    operand_bits = (DxBallDispatchDoubleBits *)(void *)&record->operand1.value.fp64;
-    input_bits = (const DxBallDispatchDoubleBits *)(const void *)argument;
-    operand_bits->high = input_bits->high;
-    operand_bits->low = input_bits->low;
+    record->operand1.value.fp64 = *argument;
     record->result.valid = 1;
     record->result.format = 1;
-    result_bits = (DxBallDispatchDoubleBits *)(void *)&record->result.value.fp64;
-    returned_bits = (const DxBallDispatchDoubleBits *)(const void *)result;
-    result_bits->high = returned_bits->high;
-    result_bits->low = returned_bits->low;
+    record->result.value.fp64 = *result;
     _clrfp();
     RaiseException(code, 0, 1, (const size_t *)(const void *)&record);
     if (record->enable.bits.invalid) *control &= 0xfffffffeU;
@@ -85,10 +77,7 @@ void dxball_crt_raise_float_exception(DxBallIeeeRecord *record, unsigned int *co
     case 1: *control = (*control & 0xfffff3ffU) | 0x200; break;
     case 2: *control &= 0xfffff3ffU; break;
     }
-    returned_bits = (const DxBallDispatchDoubleBits *)(const void *)&record->result.value.fp64;
-    result_bits = (DxBallDispatchDoubleBits *)(void *)result;
-    result_bits->high = returned_bits->high;
-    result_bits->low = returned_bits->low;
+    *result = record->result.value.fp64;
 }
 
 int dxball_crt_handle_float_exception(unsigned int flags, double *result, unsigned int control)

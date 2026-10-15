@@ -748,13 +748,13 @@ size = 876
 boundary_evidence = "docs/research/exact/RUNTIME_FP_DISPATCH.md"
 relocations = [
   { target = 0x00419370, offset = 290, type = "REL32", symbol = "__statfp", addend = 0 },
-  { target = 0x00419390, offset = 640, type = "REL32", symbol = "__clrfp", addend = 0 },
-  { target = 0x0044133C, offset = 656, type = "DIR32", symbol = "__imp__RaiseException@16", addend = 0 },
-  { offset = 724, type = "DIR32", symbol = "$L622", addend = 0, target = 0x004198C0 },
-  { offset = 864, type = "DIR32", symbol = "$L548", addend = 0, target = 0x00419838 },
-  { offset = 868, type = "DIR32", symbol = "$L549", addend = 0, target = 0x00419840 },
-  { offset = 872, type = "DIR32", symbol = "$L550", addend = 0, target = 0x00419850 },
-  { offset = 876, type = "DIR32", symbol = "$L551", addend = 0, target = 0x00419860 },
+  { target = 0x00419390, offset = 636, type = "REL32", symbol = "__clrfp", addend = 0 },
+  { target = 0x0044133C, offset = 652, type = "DIR32", symbol = "__imp__RaiseException@16", addend = 0 },
+  { offset = 720, type = "DIR32", symbol = "$L606", addend = 0, target = 0x004198BC },
+  { offset = 860, type = "DIR32", symbol = "$L536", addend = 0, target = 0x00419834 },
+  { offset = 864, type = "DIR32", symbol = "$L537", addend = 0, target = 0x0041983C },
+  { offset = 868, type = "DIR32", symbol = "$L538", addend = 0, target = 0x0041984C },
+  { offset = 872, type = "DIR32", symbol = "$L539", addend = 0, target = 0x0041985C },
 ]
 
 [units.crt-handle-float-exception]

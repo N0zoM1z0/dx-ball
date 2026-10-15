@@ -2,9 +2,22 @@
 
 The complete local CRT sections and retained/fresh REA evidence establish
 raise876 and handle704. Raise includes18 switch/alignment bytes beyond its old
-858-byte inventory entry. Raising emits880 bytes with328 differences and remains
+858-byte inventory entry. Raising emits876 bytes with22 differences and remains
 a candidate. Handling is exact across704 bytes,207 instructions and all18 actual
 relocations. Whole extents and raising's self-relative case bindings are compared.
+
+Direct binary64 member assignments replace four explicit word-view pointers in
+raising. VC4 emits the original integer high/low transfers, not x87 arithmetic,
+restoring all876 bytes and reducing328 differences to22. Only ESI/EDI ownership
+and the corresponding final POP placement differ; handling704 remains exact.
+Original COFF `.file` identifies fpexcept.c. The same typed assignments under C
+produce raising876 exact but rotate handling's registers (29 differences), so
+that shared-producer control is not adopted. C compilation of the old pointer
+body changes neither result. Keep the C++ producer until both can coexist.
+All357 exacts,91 other candidate byte results and40 initialized constant bytes
+remain. Three VC4/native/i686 sets, selected products reused through identical
+maintained inputs; no runtime tests or new REA session. Receipt:
+`.analysis/fp-original-c-producer-20261015/verification.json`.
 
 Status calls before local pending-mask updates, and tiny-result zero stores before
 inexact publication, close the four remaining scheduling swaps. The full704-byte

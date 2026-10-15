@@ -6,6 +6,11 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **357 functions / 75,003 code bytes / 136 metadata bytes**.
 
+FP raising improves880/876/328 to876/876/22 through direct IEEE binary64 member
+assignments, preserving handling704 exact. The C producer gives raising876 exact
+but loses handling to29 differences, so it remains a private control. All357 exacts,
+91 other candidates and40 constant bytes remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).
+
 Environment acquisition closes411 bytes through original pointer declarations
 and the C producer established by `aw_env.c` file metadata. Original cached-path
 indeterminate reads remain. All356 old exacts and92 other candidates are preserved.
