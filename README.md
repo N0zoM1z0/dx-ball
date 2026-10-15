@@ -1,5 +1,9 @@
 # DX-Ball reconstruction
 
+**Status:** Exact reconstruction is in progress. We'll finish that first,
+then get the game building and playable with the original Visual C++ 4.0
+compiler. Platform ports will resume after that.
+
 <p align="center">
   <img src="resources/dxball-title.png" alt="DX-Ball title screen" width="900">
 </p>
