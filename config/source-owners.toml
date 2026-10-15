@@ -535,6 +535,11 @@ source = "src/runtime_arguments.cpp"
 header = "src/runtime_arguments.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_multibyte.h", "src/allocator.h"]
 
+[owners.runtime_environment_setup]
+source = "src/runtime_environment_setup.cpp"
+header = "src/runtime_arguments.h"
+additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_multibyte.h", "src/allocator.h"]
+
 [owners.runtime_environment]
 source = "src/runtime_environment.cpp"
 header = "src/runtime_environment.h"

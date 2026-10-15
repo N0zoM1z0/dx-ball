@@ -1,12 +1,27 @@
 # Command-line and environment startup
 
-Four full bodies now have standalone shared source. Environment setup219 is
-exact; argument setup151/155/116, parsing475/466/280 and environment acquisition
-389/411/404 remain candidates. Five native-width state definitions live outside
+Four full bodies have standalone shared source. Command-line parsing466 and
+environment setup219 are exact; argument setup151/155/116 and environment
+acquisition389/411/404 remain candidates. Five native-width state definitions live outside
 the consuming argument translation unit, following actual CRT external symbols.
 Four definitions are proved in `crt0dat.obj`; the original aenvptr defining member
 remains unknown. All20 initial target field bytes agree. Program-name storage is
 260 bytes, as proved by the actual local symbol and API count, not a frame gap.
+
+The command-line continuation restores the original `stdargv.obj` ownership
+and function order, separating unchanged environment setup into
+`runtime_environment_setup.cpp`. Original cursor phases improve parsing to
+464/466 bytes with185 differences; character buffers with unsigned-byte
+lead-table indexing close all466 bytes and four actual relocations. The complete
+pinned section and retained REA assembly
+`ev_5b5c3dd118c1465ae7e05bc0d744cc6ee86e3ab06ce5ca30be8d122763738a67`
+cover the original. Argument allocation uses a byte-block cursor and publishes
+argc before argv, as in shipped `stdargv.c`; its complete comparison is unchanged.
+Environment setup219, all352 old exacts and96 other candidate results remain.
+Five VC4/native/i686 compilation sets were used; identical canonical inputs
+reuse the selected two products. No new REA sessions or runtime/game checks.
+Current totals:353 exact functions and73,495 code bytes. Receipts:
+`.analysis/arguments-original-object-owners-20261015/verification.json`.
 
 The parser preserves two passes, terminal argument slot, first-program-name
 rules, quoted DBCS counting asymmetry, slash parity, doubled quotes and consumed

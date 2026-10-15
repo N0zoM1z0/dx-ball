@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**352 functions / 73,029 code bytes / 136 metadata bytes**.
+**353 functions / 73,495 code bytes / 136 metadata bytes**.
+
+Command-line parsing466 closes through original stdargv cursor phases and
+character/unsigned lead-index types in its original producer ownership/order.
+Environment setup219 and all352 old exacts remain; argument setup and96 other
+candidate results are unchanged. See [arguments](RUNTIME_ARGUMENTS.md).
 
 Stream traversal107 closes through original fflush.obj ownership and shipped
 function order. All four bodies are unchanged; all351 old exacts and97 other

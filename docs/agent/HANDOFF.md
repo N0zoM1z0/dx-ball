@@ -52,16 +52,28 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 352 |
-| Complete exact code bytes | 73,029 |
+| Exact functions | 353 |
+| Complete exact code bytes | 73,495 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 352 exact functions does not prove project completion.
+These are separate ledgers; 353 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Command-line parsing closes466 bytes and all four actual relocations through
+shipped stdargv cursor phases and character/unsigned lead-index types, in the
+original stdargv producer boundary and function order. Cursor recovery improves
+475/466/280 to464/466/185; character types close466/466/0. Environment setup moves
+unchanged to runtime_environment_setup.cpp and remains219 exact. Argument
+setup151/155/116 is unchanged, including after original byte-block ownership and
+argc-before-argv publication. All352 old exacts and96 other candidate results
+remain; current353/code73,495/candidates96. Five VC4/native/i686 sets; selected
+two products reused through byte-identical canonical inputs. Retained REA/full
+CRT section reused, no runtime/game tests. See [arguments](../research/exact/RUNTIME_ARGUMENTS.md)
+and `.analysis/arguments-original-object-owners-20261015/verification.json`.
 
 Stream traversal closes107 bytes and all three actual relocations through
 the original fflush.obj producer boundary and shipped function order. All four

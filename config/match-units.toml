@@ -1279,6 +1279,12 @@ object = "build/exact/runtime_arguments.obj"
 inputs = ["src/runtime_arguments.cpp", "src/runtime_arguments.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_multibyte.h", "src/allocator.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
 
+[builds.runtime_environment_setup]
+source = "src/runtime_environment_setup.cpp"
+object = "build/exact/runtime_environment_setup.obj"
+inputs = ["src/runtime_environment_setup.cpp", "src/runtime_arguments.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_multibyte.h", "src/allocator.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
 [builds.runtime_environment]
 source = "src/runtime_environment.cpp"
 object = "build/exact/runtime_environment.obj"
@@ -1292,7 +1298,7 @@ inputs = ["src/runtime_argument_state.c", "src/runtime_arguments.h", "src/runtim
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
 
 [units.crt-set-environment]
-build = "runtime_arguments"
+build = "runtime_environment_setup"
 symbol = "_dxball_crt_setenvp"
 target_address = 0x0041BF50
 size = 219
@@ -1328,17 +1334,17 @@ relocations = [
   { offset = 142, type = "DIR32", symbol = "___argc", addend = 0, target = 0x004230C8 },
 ]
 
-[candidates.crt-parse-commandline]
+[units.crt-parse-commandline]
 build = "runtime_arguments"
 symbol = "_dxball_crt_parse_cmdline"
-target_address = 0x0041C0D0
+target_address = 0x41c0d0
 size = 466
 boundary_evidence = "docs/research/exact/RUNTIME_ARGUMENTS.md"
 relocations = [
-  { offset = 73, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x00423948 },
-  { offset = 147, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x00423948 },
-  { offset = 372, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x00423948 },
-  { offset = 404, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x00423948 },
+  { offset = 75, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x423948 },
+  { offset = 143, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x423948 },
+  { offset = 372, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x423948 },
+  { offset = 405, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x423948 },
 ]
 
 [candidates.crt-environment-strings]
