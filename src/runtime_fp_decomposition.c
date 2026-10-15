@@ -32,8 +32,8 @@ double dxball_crt_decompose_double(double value, int *exponent)
     } else {
         biased = words->words[3] & 0x7ff0;
         if (biased == 0 && ((parts->high & 0xfffffU) || parts->low)) {
-            negative = value < 0.0;
             scale = -1021;
+            negative = value < 0.0;
             while (!(words->words[3] & 0x10)) {
                 parts->high <<= 1;
                 if (parts->low & 0x80000000U)
@@ -46,8 +46,9 @@ double dxball_crt_decompose_double(double value, int *exponent)
                 bytes[7] |= 0x80;
             fraction = dxball_crt_set_float_exponent(value, 0);
         } else {
-            scale = (short)(biased >> 4) - 1022;
             fraction = dxball_crt_set_float_exponent(value, 0);
+            biased >>= 4;
+            scale = (short)biased - 1022;
         }
     }
     *exponent = scale;

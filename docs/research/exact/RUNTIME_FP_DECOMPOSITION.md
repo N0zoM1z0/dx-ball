@@ -1,8 +1,23 @@
 # Floating decomposition and exception entries
 
 Six complete source bodies now cover decomposition, classification, integer
-parity and single-argument exception dispatch. The187-byte exception entry and
-79-byte quiet-NaN entry match completely after every actual relocation.
+parity and single-argument exception dispatch. Decomposition238, the187-byte
+exception entry and79-byte quiet-NaN entry match completely after every actual relocation.
+
+Decomposition restores the denormal counter before sign capture and consumes
+the owned16-bit biased exponent after normal-path result materialization.
+These lifetimes preserve both original set-exponent calls:209/238/192 improves
+through238/238/16 to238/238/0. Retained REA assembly
+`ev_d5db4385978916d564927479f46de9c792d0e18d068681ea9d1a57d70e3d1b64`
+and the full pinned `util.obj` section cover all238 bytes and both relocations.
+The ownership-only regrouping gives unchanged results and is not adopted;
+the final maintained file keeps its existing ownership. Both companion candidate
+byte results and the full eight-byte half constant remain unchanged, with the
+actual new COFF literal name recorded. Four VC4/native/i686 sets were used;
+identical canonical inputs reuse the maintained-owner product. All353 old
+exacts and95 other candidate byte results remain. Current totals:354 exact
+functions and73,733 code bytes. No new REA sessions or runtime/game checks.
+Receipt: `.analysis/fp-utility-original-owner-20261015/verification.json`.
 
 The caller's IEEE record is88 bytes, established by the pinned SDK and all
 actual accesses. Operand2 validity is a named bitfield assignment, not a read of
@@ -18,8 +33,8 @@ All216 table bytes,134 text bytes and27 actual relocations still match.
 The matherr.obj default marker is9876, not zero; its full4 bytes are restored in
 the existing default-callback owner.
 
-Remaining candidates: user error174/174 bytes with28 differences, decomposition
-209/238 with192, classification161/162 with148, and integer type154/127 with141.
+Remaining candidates: user error174/174 bytes with28 differences,
+classification161/162 with148, and integer type154/127 with141.
 Integer classification explicitly preserves unordered acceptance and both
 actual rounding calls on NaNs; ordinary modern NaN equality would change it.
 The full eight-byte half constant is attested at its source-pool offset.

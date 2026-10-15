@@ -52,16 +52,28 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 353 |
-| Complete exact code bytes | 73,495 |
+| Exact functions | 354 |
+| Complete exact code bytes | 73,733 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 353 exact functions does not prove project completion.
+These are separate ledgers; 354 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Double decomposition closes238 bytes and both relocations through genuine
+denormal-counter and post-call16-bit exponent lifetimes. Original separate
+set-exponent calls remain:209/238/192 improves through238/238/16 to238/238/0.
+Ownership-only util regrouping is unchanged and not adopted; only the lifetime
+adjustment enters the existing maintained owner. Both companion candidate byte
+results/full eight-byte half constant remain, with actual COFF literal UID
+rebound. All353 old exacts and95 other candidate bytes remain; current354/
+code73,733/candidates95. Four VC4/native/i686 sets; selected maintained-owner
+product reused through identical canonical inputs. Retained REA/full CRT reused,
+no runtime/game tests. See [decomposition](../research/exact/RUNTIME_FP_DECOMPOSITION.md)
+and `.analysis/fp-utility-original-owner-20261015/verification.json`.
 
 Low-I/O startup improves468/467/304 to467/467/32 through shipped ioinit.c block
 index, packed-handle cursor, shared descriptor counter and acquisition guards.

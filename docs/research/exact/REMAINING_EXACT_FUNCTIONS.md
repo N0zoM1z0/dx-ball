@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**353 functions / 73,495 code bytes / 136 metadata bytes**.
+**354 functions / 73,733 code bytes / 136 metadata bytes**.
+
+Double decomposition238 closes through denormal-counter and post-call16-bit
+exponent lifetimes, retaining both original set-exponent calls. All353 old
+exacts and95 other candidate bytes remain; the full half constant is preserved.
+See [decomposition](RUNTIME_FP_DECOMPOSITION.md).
 
 Low-I/O startup improves468/467/304 to467/467/32 through original block-index,
 packed-handle cursor and acquisition phases. Not exact; all353 exacts and95
