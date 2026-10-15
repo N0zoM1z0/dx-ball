@@ -12320,29 +12320,29 @@ relocations = [
 [candidates.crt-initialize-lowio]
 build = "runtime_lowio_startup"
 symbol = "_dxball_crt_initialize_lowio"
-target_address = 0x0041AD10
+target_address = 0x41ad10
 size = 467
 boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_STARTUP.md"
 relocations = [
-  { offset = 13, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 29, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x00418930 },
-  { offset = 44, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 50, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 86, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 106, type = "DIR32", symbol = "__imp__GetStartupInfoA@4", addend = 0, target = 0x0044132C },
-  { offset = 160, type = "DIR32", symbol = "___pioinfo", addend = 4, target = 0x00440C70 },
-  { offset = 166, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 178, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 193, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 246, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 256, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 281, type = "DIR32", symbol = "__imp__GetFileType@4", addend = 0, target = 0x004412F8 },
-  { offset = 304, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 333, type = "DIR32", symbol = "__imp__GetStdHandle@4", addend = 0, target = 0x004412F4 },
-  { offset = 346, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
-  { offset = 395, type = "DIR32", symbol = "__imp__GetFileType@4", addend = 0, target = 0x004412F8 },
-  { offset = 449, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x00440C60 },
-  { offset = 456, type = "DIR32", symbol = "__imp__SetHandleCount@4", addend = 0, target = 0x004412FC },
+  { offset = 13, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 29, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x418930 },
+  { offset = 44, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x440c70 },
+  { offset = 50, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x440c60 },
+  { offset = 86, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x440c70 },
+  { offset = 106, type = "DIR32", symbol = "__imp__GetStartupInfoA@4", addend = 0, target = 0x44132c },
+  { offset = 160, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x440c60 },
+  { offset = 167, type = "DIR32", symbol = "___pioinfo", addend = 4, target = 0x440c70 },
+  { offset = 177, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 199, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x440c60 },
+  { offset = 245, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x440c60 },
+  { offset = 255, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x440c60 },
+  { offset = 280, type = "DIR32", symbol = "__imp__GetFileType@4", addend = 0, target = 0x4412f8 },
+  { offset = 303, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x440c70 },
+  { offset = 332, type = "DIR32", symbol = "__imp__GetStdHandle@4", addend = 0, target = 0x4412f4 },
+  { offset = 345, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x440c70 },
+  { offset = 394, type = "DIR32", symbol = "__imp__GetFileType@4", addend = 0, target = 0x4412f8 },
+  { offset = 448, type = "DIR32", symbol = "__nhandle", addend = 0, target = 0x440c60 },
+  { offset = 455, type = "DIR32", symbol = "__imp__SetHandleCount@4", addend = 0, target = 0x4412fc },
 ]
 
 [units.crt-message-box]

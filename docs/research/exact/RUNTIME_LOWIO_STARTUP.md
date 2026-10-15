@@ -3,8 +3,19 @@
 Four complete bodies now have maintained source. Fatal dispatch at `0x418930`
 is42-byte exact, not the imported38-byte prefix: the trailing stack cleanup and
 return are included. Banner dispatch at `0x41C800` is61-byte exact. All nine
-actual bindings match. Initialization at `0x41AD10` has468/467 bytes with304
+actual bindings match. Initialization at `0x41AD10` has467/467 bytes with32
 differences; error formatting at `0x41C840` has493/494 with419. Both remain candidates.
+
+Shipped `ioinit.c` establishes the integer block index, packed handle cursor,
+shared descriptor counter and standard-handle acquisition guards. Restoring
+those lifetimes reduces initialization from468/467/304 to467/467/32. All19 actual
+relocations are covered; remaining differences are register rotation and
+equivalent comparison direction. The original flag/standard-handle type trial
+gives37 differences and is rejected. Two VC4/native/i686 sets were used; the
+selected private product is reused through identical canonical inputs. All353
+exacts and95 other candidate results remain unchanged. Retained REA and full
+CRT section are reused; no runtime/game checks. Receipt:
+`.analysis/lowio-startup-original-cursors-20261015/verification.json`.
 
 Initialization restores32-record allocation,64-block ownership, the2048-handle
 inheritance cap, packed count/handle decoding, post-import handle reloads and

@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Low-I/O startup improves468/467/304 to467/467/32 through shipped ioinit.c block
+index, packed-handle cursor, shared descriptor counter and acquisition guards.
+All19 actual relocations are compared; remaining register rotation and equivalent
+comparison direction are nonexact. Original flag/standard-handle types give37
+differences and are rejected. All353 exacts and95 other candidate results remain;
+totals353/code73,495/candidates96 unchanged. Two VC4/native/i686 sets; selected
+private product reused through identical canonical inputs. Retained REA/full CRT
+section reused, no runtime/game tests. See [low-I/O startup](../research/exact/RUNTIME_LOWIO_STARTUP.md)
+and `.analysis/lowio-startup-original-cursors-20261015/verification.json`.
+
 Command-line parsing closes466 bytes and all four actual relocations through
 shipped stdargv cursor phases and character/unsigned lead-index types, in the
 original stdargv producer boundary and function order. Cursor recovery improves

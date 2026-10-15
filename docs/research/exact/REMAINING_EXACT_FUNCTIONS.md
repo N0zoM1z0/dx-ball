@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **353 functions / 73,495 code bytes / 136 metadata bytes**.
 
+Low-I/O startup improves468/467/304 to467/467/32 through original block-index,
+packed-handle cursor and acquisition phases. Not exact; all353 exacts and95
+other candidate results remain. See [low-I/O startup](RUNTIME_LOWIO_STARTUP.md).
+
 Command-line parsing466 closes through original stdargv cursor phases and
 character/unsigned lead-index types in its original producer ownership/order.
 Environment setup219 and all352 old exacts remain; argument setup and96 other

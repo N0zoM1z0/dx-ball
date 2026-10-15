@@ -7,14 +7,17 @@ DxBallLowioRecord *__pioinfo[64];
 void dxball_crt_initialize_lowio(void)
 {
     DxBallCrtStartupInfo startup;
-    DxBallLowioRecord *record;
-    DxBallLowioRecord **block;
     int count;
-    int index;
+    int descriptor;
+    int block_index;
+    DxBallLowioRecord *record;
     unsigned char *flags;
-    unsigned char *handles;
-    record = (DxBallLowioRecord *)dxball_runtime_malloc(32 * sizeof(*record));
-    if (record == 0) dxball_crt_amsg_exit(27);
+    const DxBallCrtInheritedHandle *handles;
+    void *standard_handle;
+    DxBallCrtDword type;
+
+    if ((record = (DxBallLowioRecord *)dxball_runtime_malloc(32 * sizeof(*record))) == NULL)
+        dxball_crt_amsg_exit(27);
     __pioinfo[0] = record;
     _nhandle = 32;
     for (; record < __pioinfo[0] + 32; ++record) {
@@ -23,56 +26,49 @@ void dxball_crt_initialize_lowio(void)
         record->lookahead = '\n';
     }
     GetStartupInfoA(&startup);
-    if (startup.reserved_count != 0 && startup.reserved_data != 0) {
+    if (startup.reserved_count != 0 && startup.reserved_data != NULL) {
         count = ((const DxBallCrtInheritedCount *)startup.reserved_data)->value;
-        flags = startup.reserved_data + sizeof(count);
-        handles = flags + count;
-        if (count >= 2048) count = 2048;
-        for (block = __pioinfo + 1; count > _nhandle; ++block) {
-            record = (DxBallLowioRecord *)dxball_runtime_malloc(32 * sizeof(*record));
-            if (record == 0) {
+        flags = startup.reserved_data + sizeof(int);
+        handles = (const DxBallCrtInheritedHandle *)(flags + count);
+        count = count < 2048 ? count : 2048;
+        for (block_index = 1; _nhandle < count; ++block_index) {
+            if ((record = (DxBallLowioRecord *)dxball_runtime_malloc(32 * sizeof(*record))) == NULL) {
                 count = _nhandle;
                 break;
             }
-            *block = record;
+            __pioinfo[block_index] = record;
             _nhandle += 32;
-            for (; record < *block + 32; ++record) {
+            for (; record < __pioinfo[block_index] + 32; ++record) {
                 record->flags = 0;
                 record->handle = (void *)(ptrdiff_t)-1;
                 record->lookahead = '\n';
             }
         }
-        for (index = 0; index < count; ++index, ++flags, handles += sizeof(DxBallCrtOsHandle)) {
-            DxBallCrtOsHandle inherited;
-            /* Serialized handles can start at an unaligned address. */
-            inherited = ((const DxBallCrtInheritedHandle *)handles)->value;
-            if (inherited != -1 && (*flags & 1) && GetFileType((void *)inherited)) {
-                inherited = ((const DxBallCrtInheritedHandle *)handles)->value;
-                record = &__pioinfo[index >> 5][index & 31];
-                record->handle = (void *)inherited;
+        for (descriptor = 0; descriptor < count; ++descriptor, ++flags, ++handles) {
+            if (handles->value != -1 && (*flags & 1) && GetFileType((void *)handles->value)) {
+                record = &__pioinfo[descriptor >> 5][descriptor & 31];
+                record->handle = (void *)handles->value;
                 record->flags = *flags;
             }
         }
     }
-    for (index = 0; index < 3; ++index) {
-        record = &__pioinfo[0][index];
+    for (descriptor = 0; descriptor < 3; ++descriptor) {
+        record = __pioinfo[0] + descriptor;
         if (record->handle == (void *)(ptrdiff_t)-1) {
-            void *handle;
-            DxBallCrtDword type;
-            DxBallCrtDword standard;
             record->flags = 0x81;
-            if (index == 0) standard = (DxBallCrtDword)-10;
-            else if (index == 1) standard = (DxBallCrtDword)-11;
-            else standard = (DxBallCrtDword)-12;
-            handle = GetStdHandle(standard);
-            if (handle == (void *)(ptrdiff_t)-1 || (type = GetFileType(handle)) == 0)
-                record->flags |= 0x40;
-            else {
-                record->handle = handle;
+            if ((standard_handle = GetStdHandle(descriptor == 0 ? (DxBallCrtDword)-10 :
+                                                (descriptor == 1 ? (DxBallCrtDword)-11 :
+                                                 (DxBallCrtDword)-12))) != (void *)(ptrdiff_t)-1 &&
+                (type = GetFileType(standard_handle)) != 0) {
+                record->handle = standard_handle;
                 if ((type & 255) == 2) record->flags |= 0x40;
                 else if ((type & 255) == 3) record->flags |= 8;
+            } else {
+                record->flags |= 0x40;
             }
-        } else record->flags |= 0x80;
+        } else {
+            record->flags |= 0x80;
+        }
     }
     SetHandleCount((unsigned int)_nhandle);
 }
