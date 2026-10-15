@@ -13,8 +13,19 @@ Private complete proof: `.analysis/cpp-terminal-boundaries-20261014/original-pro
 
 The original's full659-byte frame.obj section and its twelve actual relocations
 prove FindHandler at0x0041B270. Two retained REA records cover complete pseudocode
-and assembly. The maintained source emits663 bytes with605 full-span differences;
-it is a source candidate, not exact. The initial671/616 producer is retained.
+and assembly. The maintained source emits658 bytes with326 full-span differences;
+it is a source candidate, not exact. Earlier671/616 and663/605 producers are retained.
+
+The exception parameter now owns rethrow substitution instead of a separate
+cached detail pointer. This restores the original24-byte frame from28 bytes.
+Per-type throw-info capture, a common type-match failure path, the two range
+output homes and the catchable-pointer read at transfer restore the remaining
+source lifetimes. Both original and current bodies have219 instructions; register
+allocation, comparisons and scheduling remain nonexact. Five VC4/native/i686
+sets retain each bounded step. The selected private product is reused through
+identical canonical inputs; all356 exacts and92 other candidate results remain.
+Retained REA/full CRT are reused; no runtime tests. Receipt:
+`.analysis/cpp-handler-per-type-metadata-20261015/verification.json`.
 
 The implementation validates the captured registration state, recognizes a
 rethrow, substitutes the genuine current record/context and preserves the
@@ -28,8 +39,8 @@ the next try entry if it returns. Recursive typed dispatch destroys the exceptio
 recursive foreign dispatch terminates. Normal foreign dispatch uses the recovered
 foreign handler.
 
-A single first-member record view preserves actual field widths without a
-duplicate cached pointer identity. Metadata pointers retain native width and
+Typed first-member views preserve actual field widths while consuming the
+original exception parameter. Metadata pointers retain native width and
 natural alignment. The pointer-slot reader follows the real count/offset; it
 does not pretend the variable tail has a one-element array bound. Current
 record/context globals and destruction remain genuine unresolved owners, not

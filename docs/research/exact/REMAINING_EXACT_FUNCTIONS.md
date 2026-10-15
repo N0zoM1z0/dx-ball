@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **356 functions / 74,592 code bytes / 136 metadata bytes**.
 
+C++ handler search improves663/659/605 to658/659/326 through exception-parameter
+ownership, per-type metadata and transfer lifetimes. Its original24-byte frame
+and219 instruction count are restored; not exact. See [handler search](RUNTIME_CPP_HANDLER.md).
+
 FP exception handling closes all704 bytes/18 relocations through original
 status-call/local-mask and zero/inexact phases. All355 old exacts, raising and
 full40-byte constants remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).

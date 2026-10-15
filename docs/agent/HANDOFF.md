@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+C++ handler search improves663/659/605 to658/659/326 through original exception
+parameter ownership, per-type metadata, common match failure, range-output homes
+and transfer type reads. Original24-byte frame and219 instruction count restored;
+register/comparison/scheduling differences remain nonexact. All356 exacts and92
+other candidates remain; totals356/code74,592/candidates93 unchanged. Five
+VC4/native/i686 sets, selected private product reused through identical canonical
+inputs, retained REA/full CRT reused, no runtime tests. See
+[handler search](../research/exact/RUNTIME_CPP_HANDLER.md) and
+`.analysis/cpp-handler-per-type-metadata-20261015/verification.json`.
+
 FP exception handling closes all704 bytes/207 instructions/18 actual relocations
 through original status-call/local-mask and zero/inexact phases. The four prior
 scheduling swaps are resolved. Raising's full byte result/full40-byte constants
