@@ -1316,23 +1316,24 @@ relocations = [
   { offset = 198, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
 ]
 
-[candidates.crt-set-arguments]
+[units.crt-set-arguments]
 build = "runtime_arguments"
 symbol = "_dxball_crt_setargv"
-target_address = 0x0041C030
+target_address = 0x41c030
 size = 155
 boundary_evidence = "docs/research/exact/RUNTIME_ARGUMENTS.md"
 relocations = [
-  { offset = 6, type = "DIR32", symbol = "?program_name@?1??dxball_crt_setargv@@9@9", addend = 0, target = 0x0043FB18 },
-  { offset = 20, type = "DIR32", symbol = "__imp__GetModuleFileNameA@12", addend = 0, target = 0x004412D8 },
-  { offset = 25, type = "DIR32", symbol = "__acmdln", addend = 0, target = 0x00440D74 },
-  { offset = 31, type = "DIR32", symbol = "__pgmptr", addend = 0, target = 0x004230E4 },
-  { offset = 58, type = "REL32", symbol = "_dxball_crt_parse_cmdline", addend = 0, target = 0x0041C0D0 },
-  { offset = 78, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 94, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x00418930 },
-  { offset = 122, type = "REL32", symbol = "_dxball_crt_parse_cmdline", addend = 0, target = 0x0041C0D0 },
-  { offset = 136, type = "DIR32", symbol = "___argv", addend = 0, target = 0x004230CC },
-  { offset = 142, type = "DIR32", symbol = "___argc", addend = 0, target = 0x004230C8 },
+  { offset = 11, type = "DIR32", symbol = "?program_name@?1??dxball_crt_setargv@@9@9", addend = 0, target = 0x43fb18 },
+  { offset = 20, type = "DIR32", symbol = "__imp__GetModuleFileNameA@12", addend = 0, target = 0x4412d8 },
+  { offset = 25, type = "DIR32", symbol = "__acmdln", addend = 0, target = 0x440d74 },
+  { offset = 31, type = "DIR32", symbol = "__pgmptr", addend = 0, target = 0x4230e4 },
+  { offset = 42, type = "DIR32", symbol = "__acmdln", addend = 0, target = 0x440d74 },
+  { offset = 62, type = "REL32", symbol = "_dxball_crt_parse_cmdline", addend = 0, target = 0x41c0d0 },
+  { offset = 82, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
+  { offset = 98, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x418930 },
+  { offset = 126, type = "REL32", symbol = "_dxball_crt_parse_cmdline", addend = 0, target = 0x41c0d0 },
+  { offset = 140, type = "DIR32", symbol = "___argv", addend = 0, target = 0x4230cc },
+  { offset = 146, type = "DIR32", symbol = "___argc", addend = 0, target = 0x4230c8 },
 ]
 
 [units.crt-parse-commandline]

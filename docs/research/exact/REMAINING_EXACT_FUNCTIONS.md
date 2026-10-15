@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**354 functions / 73,733 code bytes / 136 metadata bytes**.
+**355 functions / 73,888 code bytes / 136 metadata bytes**.
+
+Argument setup155 closes through original post-publication command selection
+after parser, character-type and byte-block recovery. Parser466 and all354 old
+exacts remain;94 other candidates unchanged. See [arguments](RUNTIME_ARGUMENTS.md).
 
 Double decomposition238 closes through denormal-counter and post-call16-bit
 exponent lifetimes, retaining both original set-exponent calls. All353 old

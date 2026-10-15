@@ -11,12 +11,11 @@ void dxball_crt_setargv(void)
 {
     static char program_name[260];
     int arguments, characters;
-    char *command = program_name;
+    char *command;
     char *block;
-    GetModuleFileNameA(0, command, sizeof(program_name));
-    _pgmptr = command;
-    if (*_acmdln)
-        command = _acmdln;
+    GetModuleFileNameA(0, program_name, sizeof(program_name));
+    _pgmptr = program_name;
+    command = (*_acmdln == 0) ? _pgmptr : _acmdln;
     dxball_crt_parse_cmdline(command, 0, 0, &arguments, &characters);
     block = (char *)dxball_runtime_malloc((DxBallUInt)(arguments * sizeof(char *) + characters));
     if (block == 0)

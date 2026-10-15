@@ -1,14 +1,26 @@
 # Command-line and environment startup
 
-Four full bodies have standalone shared source. Command-line parsing466 and
-environment setup219 are exact; argument setup151/155/116 and environment
-acquisition389/411/404 remain candidates. Five native-width state definitions live outside
+Four full bodies have standalone shared source. Argument setup155, command-line
+parsing466 and environment setup219 are exact. Environment acquisition389/411/404
+remains a candidate. Five native-width state definitions live outside
 the consuming argument translation unit, following actual CRT external symbols.
 Four definitions are proved in `crt0dat.obj`; the original aenvptr defining member
 remains unknown. All20 initial target field bytes agree. Program-name storage is
 260 bytes, as proved by the actual local symbol and API count, not a frame gap.
 
-The command-line continuation restores the original `stdargv.obj` ownership
+After parser, character-type and byte-block recovery, the original post-publication
+command selection closes all155 setup bytes and11 actual relocations. The earlier
+published-name trial predated those changes; its159/155/136 result does not describe
+the current inputs. Full466-byte parser results remain identical. The complete
+pinned `__setargv` section and retained REA assembly
+`ev_72edc84d923cf4c4e2ee0b30c94ecc79dd9ba1945b825902fd1befc0e0c1edc5`
+cover the original; the full260-byte initial program-name storage also agrees.
+One VC4/native/i686 compilation set, reused through identical canonical inputs,
+preserves all354 old exacts and94 other candidates. Current totals:355 exacts
+and73,888 code bytes. No new REA sessions or runtime/game checks. Receipt:
+`.analysis/arguments-original-command-selection-20261015/verification.json`.
+
+The earlier command-line continuation restores the original `stdargv.obj` ownership
 and function order, separating unchanged environment setup into
 `runtime_environment_setup.cpp`. Original cursor phases improve parsing to
 464/466 bytes with185 differences; character buffers with unsigned-byte

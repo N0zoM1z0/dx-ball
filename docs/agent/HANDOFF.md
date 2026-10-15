@@ -52,16 +52,27 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 354 |
-| Complete exact code bytes | 73,733 |
+| Exact functions | 355 |
+| Complete exact code bytes | 73,888 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 354 exact functions does not prove project completion.
+These are separate ledgers; 355 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Argument setup closes155 bytes and all11 actual relocations through original
+post-publication command selection after parser/character-type/byte-block
+recovery. The old published-name159/155/136 trial preceded those changed inputs;
+the current full155/155/0 comparison is authoritative. Parser466 full results
+remain identical; complete260-byte initial program-name storage is verified.
+All354 old exacts and94 other candidates remain; current355/code73,888/
+candidates94. One VC4/native/i686 set; identical canonical inputs reuse its
+product. Retained REA/full CRT reused, no runtime/game tests. See
+[arguments](../research/exact/RUNTIME_ARGUMENTS.md) and
+`.analysis/arguments-original-command-selection-20261015/verification.json`.
 
 Double decomposition closes238 bytes and both relocations through genuine
 denormal-counter and post-call16-bit exponent lifetimes. Original separate
