@@ -4,7 +4,11 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**351 functions / 72,922 code bytes / 136 metadata bytes**.
+**352 functions / 73,029 code bytes / 136 metadata bytes**.
+
+Stream traversal107 closes through original fflush.obj ownership and shipped
+function order. All four bodies are unchanged; all351 old exacts and97 other
+candidates remain. See [stream buffers](RUNTIME_STREAM_BUFFERS.md).
 
 Fcloseall115 closes through original independent closeall.obj ownership.
 Chsize359 and all350 old exacts remain; candidates98. See

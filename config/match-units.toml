@@ -11222,6 +11222,12 @@ object = "build/exact/runtime_stream.obj"
 inputs = ["src/runtime_stream.c", "src/runtime_stream.h", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
 
+[builds.runtime_stream_flushing]
+source = "src/runtime_stream_flushing.c"
+object = "build/exact/runtime_stream_flushing.obj"
+inputs = ["src/runtime_stream_flushing.c", "src/runtime_stream.h", "src/allocator.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
 [builds.runtime_lowio]
 source = "src/runtime_lowio.c"
 object = "build/exact/runtime_lowio.obj"
@@ -11601,7 +11607,7 @@ relocations = [
 ]
 
 [units.crt-flush-stream-buffer]
-build = "runtime_stream"
+build = "runtime_stream_flushing"
 symbol = "_dxball_crt_flush_buffer"
 target_address = 0x0041A030
 size = 100
@@ -11611,7 +11617,7 @@ relocations = [
 ]
 
 [units.crt-flush-stream]
-build = "runtime_stream"
+build = "runtime_stream_flushing"
 symbol = "_dxball_crt_fflush"
 target_address = 0x00419FE0
 size = 76
@@ -11622,20 +11628,20 @@ relocations = [
   { offset = 52, type = "REL32", symbol = "_dxball_crt_commit", addend = 0, target = 0x0041DA20 },
 ]
 
-[candidates.crt-flush-all-streams]
-build = "runtime_stream"
+[units.crt-flush-all-streams]
+build = "runtime_stream_flushing"
 symbol = "_dxball_crt_flush_all"
-target_address = 0x0041A0B0
+target_address = 0x41a0b0
 size = 107
 boundary_evidence = "docs/research/exact/RUNTIME_STREAM_BUFFERS.md"
 relocations = [
-  { offset = 15, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
-  { offset = 40, type = "REL32", symbol = "_dxball_crt_fflush", addend = 0, target = 0x00419FE0 },
-  { offset = 65, type = "REL32", symbol = "_dxball_crt_fflush", addend = 0, target = 0x00419FE0 },
+  { offset = 15, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x43fc58 },
+  { offset = 40, type = "REL32", symbol = "_dxball_crt_fflush", addend = 0, target = 0x419fe0 },
+  { offset = 65, type = "REL32", symbol = "_dxball_crt_fflush", addend = 0, target = 0x419fe0 },
 ]
 
 [units.crt-flushall-entry]
-build = "runtime_stream"
+build = "runtime_stream_flushing"
 symbol = "_dxball_crt_flushall"
 target_address = 0x0041A0A0
 size = 11

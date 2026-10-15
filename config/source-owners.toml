@@ -280,6 +280,11 @@ source = "src/runtime_stream.c"
 header = "src/runtime_stream.h"
 additional_inputs = ["src/allocator.h", "src/state_types.h"]
 
+[owners.runtime_stream_flushing]
+source = "src/runtime_stream_flushing.c"
+header = "src/runtime_stream.h"
+additional_inputs = ["src/allocator.h", "src/state_types.h"]
+
 [owners.runtime_lowio]
 source = "src/runtime_lowio.c"
 header = "src/runtime_lowio.h"

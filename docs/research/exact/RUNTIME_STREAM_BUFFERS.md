@@ -1,7 +1,8 @@
 # CRT stream buffering
 
-Six functions have shared C source in `runtime_stream.c`. Five complete units
-are exact, including acquisition and buffer flushing restored in the continuation.
+All six stream-buffering functions are exact. Buffer acquisition and retirement
+remain in `runtime_stream.c`; the four original `fflush.obj` functions live in
+`runtime_stream_flushing.c`, in their shipped `fflush.c` order.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
@@ -9,8 +10,21 @@ are exact, including acquisition and buffer flushing restored in the continuatio
 | `_freebuf`, `0x419FA0` | 57/57 | 0 |
 | `_flush`, `0x41A030` | 100/100 | 0 |
 | `fflush`, `0x419FE0` | 76/76 | 0 |
-| `flsall`, `0x41A0B0` | 107/107 | 14 |
+| `flsall`, `0x41A0B0` | 107/107 | 0 |
 | `_flushall`, `0x41A0A0` | 11/11 | 0 |
+
+Restoring that producer boundary and function order closes all107 traversal
+bytes and three actual relocations without changing any function body or flags.
+The full pinned `fflush.obj` section and retained REA assembly
+`ev_0d9a280f965f1b554b92650e44a97ba496a0947f8056451e0236fd91485a9582`
+cover the original. Both remaining buffer functions and the other three flushing
+functions stay exact. Two VC4/native/i686 compilation sets were used, one per
+owner; identical canonical source/header bytes reuse those products. All351
+old exacts and97 other candidates remain. Current totals are352 exact functions
+and73,029 code bytes. No runtime or game checks ran. Receipt:
+`.analysis/stream-flushing-original-owner-20261015/verification.json`.
+
+Earlier register-local recovery:
 
 The shipped CRT `_getbuf.c` and `fflush.c` establish genuine local stream
 ownership and `REG1/REG2/REG3`, defined as C `register` for x86 by `cruntime.h`.

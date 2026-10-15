@@ -52,16 +52,25 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 351 |
-| Complete exact code bytes | 72,922 |
+| Exact functions | 352 |
+| Complete exact code bytes | 73,029 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 351 exact functions does not prove project completion.
+These are separate ledgers; 352 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Stream traversal closes107 bytes and all three actual relocations through
+the original fflush.obj producer boundary and shipped function order. All four
+bodies are unchanged. Buffer acquisition75/retirement57 and the other three
+flushing exacts remain, as do all351 old exacts and97 other candidates. Current
+352/code73,029, candidates97. Two VC4/native/i686 compiler sets; byte-identical
+canonical inputs reuse the private products. Retained REA and full CRT section
+reused; no runtime/game tests. See [stream buffers](../research/exact/RUNTIME_STREAM_BUFFERS.md)
+and `.analysis/stream-flushing-original-owner-20261015/verification.json`.
 
 Fcloseall closes115 bytes and all seven actual relocations through original
 independent closeall.obj ownership. Its source body is unchanged; chsize359
