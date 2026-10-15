@@ -11327,6 +11327,12 @@ object = "build/exact/runtime_locale_backends.obj"
 inputs = ["src/runtime_locale_backends.cpp", "src/runtime_locale_backends.h", "src/runtime_case_conversion.h", "src/runtime_resize.h", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
 
+[builds.runtime_locale_map]
+source = "src/runtime_locale_map.c"
+object = "build/exact/runtime_locale_map.obj"
+inputs = ["src/runtime_locale_map.c", "src/runtime_locale_backends.h", "src/runtime_case_conversion.h", "src/runtime_resize.h", "src/allocator.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
 [builds.runtime_fatal]
 source = "src/runtime_fatal.c"
 object = "build/exact/runtime_fatal.obj"
@@ -12199,43 +12205,43 @@ relocations = [
 ]
 
 [candidates.crt-locale-map]
-build = "runtime_locale_backends"
+build = "runtime_locale_map"
 symbol = "___crtLCMapStringA"
-target_address = 0x0041AA10
+target_address = 4303376
 size = 555
 boundary_evidence = "docs/research/exact/RUNTIME_LOCALE_BACKENDS.md"
 relocations = [
-  { offset = 2, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0, target = 0x423644 },
-  { offset = 17, type = "DIR32", symbol = "__imp__LCMapStringA@24", addend = 0, target = 0x441308 },
-  { offset = 26, type = "DIR32", symbol = "??_C@_01A@?$AA?$AA@", addend = 0, target = 0x423648 },
-  { offset = 57, type = "DIR32", symbol = "_empty_wide$S325", addend = 0, target = 0x42364c },
-  { offset = 70, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0, target = 0x441300 },
-  { offset = 94, type = "DIR32", symbol = "__imp__LCMapStringA@24", addend = 0, target = 0x441308 },
-  { offset = 103, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0, target = 0x423644 },
-  { offset = 118, type = "REL32", symbol = "_dxball_crt_strncnt", addend = 0, target = 0x41ac40 },
-  { offset = 128, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0, target = 0x423644 },
-  { offset = 133, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0, target = 0x423644 },
-  { offset = 176, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0, target = 0x423644 },
-  { offset = 198, type = "DIR32", symbol = "___lc_codepage", addend = 0, target = 0x423668 },
-  { offset = 225, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0, target = 0x44130c },
-  { offset = 251, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
-  { offset = 288, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0, target = 0x44130c },
-  { offset = 318, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0, target = 0x441300 },
-  { offset = 379, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0, target = 0x441300 },
-  { offset = 402, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x417770 },
-  { offset = 431, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0, target = 0x441300 },
-  { offset = 469, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0, target = 0x441304 },
-  { offset = 501, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0, target = 0x441304 },
-  { offset = 513, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
-  { offset = 522, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
-  { offset = 538, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
-  { offset = 547, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x417750 },
+  { target = 0x423644, offset = 2, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0 },
+  { target = 0x441308, offset = 17, type = "DIR32", symbol = "__imp__LCMapStringA@24", addend = 0 },
+  { target = 0x423648, data_hex = "0000", offset = 26, type = "DIR32", symbol = "??_C@_01A@?$AA?$AA@", addend = 0 },
+  { target = 0x42364c, data_hex = "00000000", offset = 57, type = "DIR32", symbol = "_empty_wide$S172", addend = 0 },
+  { target = 0x441300, offset = 70, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0 },
+  { target = 0x441308, offset = 94, type = "DIR32", symbol = "__imp__LCMapStringA@24", addend = 0 },
+  { target = 0x423644, offset = 103, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0 },
+  { target = 0x41ac40, offset = 118, type = "REL32", symbol = "_dxball_crt_strncnt", addend = 0 },
+  { target = 0x423644, offset = 128, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0 },
+  { target = 0x423644, offset = 133, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0 },
+  { target = 0x423644, offset = 176, type = "DIR32", symbol = "?mapping_api@?1??__crtLCMapStringA@@9@9", addend = 0 },
+  { target = 0x423668, offset = 198, type = "DIR32", symbol = "___lc_codepage", addend = 0 },
+  { target = 0x44130c, offset = 225, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0 },
+  { target = 0x417770, offset = 251, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
+  { target = 0x44130c, offset = 288, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0 },
+  { target = 0x441300, offset = 314, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0 },
+  { target = 0x441300, offset = 367, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0 },
+  { target = 0x417750, offset = 381, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
+  { target = 0x417750, offset = 390, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
+  { target = 0x417770, offset = 413, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
+  { target = 0x441300, offset = 442, type = "DIR32", symbol = "__imp__LCMapStringW@24", addend = 0 },
+  { target = 0x441304, offset = 480, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
+  { target = 0x441304, offset = 512, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
+  { target = 0x417750, offset = 528, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
+  { target = 0x417750, offset = 537, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
 ]
 
 [candidates.crt-bounded-byte-count]
-build = "runtime_locale_backends"
+build = "runtime_locale_map"
 symbol = "_dxball_crt_strncnt"
-target_address = 0x0041AC40
+target_address = 4303936
 size = 44
 boundary_evidence = "docs/research/exact/RUNTIME_LOCALE_BACKENDS.md"
 relocations = [
@@ -12244,25 +12250,25 @@ relocations = [
 [units.crt-locale-classify]
 build = "runtime_locale_backends"
 symbol = "___crtGetStringTypeA"
-target_address = 0x0041E000
+target_address = 4317184
 size = 291
 boundary_evidence = "docs/research/exact/RUNTIME_LOCALE_BACKENDS.md"
 relocations = [
-  { offset = 4, type = "DIR32", symbol = "?classification_api@?1??__crtGetStringTypeA@@9@9", addend = 0, target = 0x004242E4 },
-  { offset = 22, type = "DIR32", symbol = "__imp__GetStringTypeA@20", addend = 0, target = 0x0044125C },
-  { offset = 30, type = "DIR32", symbol = "??_C@_01A@?$AA?$AA@", addend = 0, target = 0x00423648, data_hex = "0000" },
-  { offset = 59, type = "DIR32", symbol = "_empty_wide$S325", addend = 0, target = 0x0042364C, data_hex = "00000000" },
-  { offset = 67, type = "DIR32", symbol = "__imp__GetStringTypeW@16", addend = 0, target = 0x00441258 },
-  { offset = 94, type = "DIR32", symbol = "__imp__GetStringTypeA@20", addend = 0, target = 0x0044125C },
-  { offset = 99, type = "DIR32", symbol = "?classification_api@?1??__crtGetStringTypeA@@9@9", addend = 0, target = 0x004242E4 },
-  { offset = 118, type = "DIR32", symbol = "___lc_handle", addend = 8, target = 0x00423650 },
-  { offset = 154, type = "DIR32", symbol = "?classification_api@?1??__crtGetStringTypeA@@9@9", addend = 0, target = 0x004242E4 },
-  { offset = 177, type = "DIR32", symbol = "___lc_codepage", addend = 0, target = 0x00423668 },
-  { offset = 200, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0, target = 0x0044130C },
-  { offset = 214, type = "REL32", symbol = "_dxball_runtime_calloc", addend = 0, target = 0x0041F590 },
-  { offset = 244, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0, target = 0x0044130C },
-  { offset = 266, type = "DIR32", symbol = "__imp__GetStringTypeW@16", addend = 0, target = 0x00441258 },
-  { offset = 274, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
+  { target = 0x4242e4, offset = 4, type = "DIR32", symbol = "?classification_api@?1??__crtGetStringTypeA@@9@9", addend = 0 },
+  { target = 0x44125c, offset = 22, type = "DIR32", symbol = "__imp__GetStringTypeA@20", addend = 0 },
+  { target = 0x423648, data_hex = "0000", offset = 30, type = "DIR32", symbol = "??_C@_01A@?$AA?$AA@", addend = 0 },
+  { target = 0x42364c, data_hex = "00000000", offset = 59, type = "DIR32", symbol = "_empty_wide$S325", addend = 0 },
+  { target = 0x441258, offset = 67, type = "DIR32", symbol = "__imp__GetStringTypeW@16", addend = 0 },
+  { target = 0x44125c, offset = 94, type = "DIR32", symbol = "__imp__GetStringTypeA@20", addend = 0 },
+  { target = 0x4242e4, offset = 99, type = "DIR32", symbol = "?classification_api@?1??__crtGetStringTypeA@@9@9", addend = 0 },
+  { target = 0x423650, offset = 118, type = "DIR32", symbol = "___lc_handle", addend = 8 },
+  { target = 0x4242e4, offset = 154, type = "DIR32", symbol = "?classification_api@?1??__crtGetStringTypeA@@9@9", addend = 0 },
+  { target = 0x423668, offset = 177, type = "DIR32", symbol = "___lc_codepage", addend = 0 },
+  { target = 0x44130c, offset = 200, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0 },
+  { target = 0x41f590, offset = 214, type = "REL32", symbol = "_dxball_runtime_calloc", addend = 0 },
+  { target = 0x44130c, offset = 244, type = "DIR32", symbol = "__imp__MultiByteToWideChar@24", addend = 0 },
+  { target = 0x441258, offset = 266, type = "DIR32", symbol = "__imp__GetStringTypeW@16", addend = 0 },
+  { target = 0x417750, offset = 274, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
 ]
 
 [units.crt-fatal-exit]

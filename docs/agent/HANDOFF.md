@@ -63,6 +63,17 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Locale mapping improves561/555/278 to551/555/110 through the original C producer
+and separate mapper/classifier object boundaries. COFF `.file` records identify
+aw_map.c and aw_str.c; C++-style local-static names do not prove C++ source mode.
+Mapper/counter move to runtime_locale_map.c; unchanged classification stays exact
+in runtime_locale_backends.cpp. C classification and shipped-local-layout controls
+are rejected. All357 exacts and91 other candidate byte results remain; totals
+357/code75,003/candidates92 unchanged. Five VC4/native/i686 sets, selected objects
+reused with identical maintained inputs; no new REA sessions or runtime tests.
+See [locale backends](../research/exact/RUNTIME_LOCALE_BACKENDS.md) and
+`.analysis/locale-original-c-producer-20261015/verification.json`.
+
 Environment acquisition closes411 bytes through original uninitialized pointer
 declarations and the C producer: pinned COFF file metadata says aw_env.c, despite
 C++-style local-static names. C++401/411/365 is only a control; C411/411/0 is

@@ -2,7 +2,7 @@
 
 `__crtGetStringTypeA` at `0x41E000` is complete exact across291 bytes and
 all15 actual relocations, including both full2/4-byte probe constants.
-`__crtLCMapStringA` at `0x41AA10` has complete561/555-byte source with278
+`__crtLCMapStringA` at `0x41AA10` has complete551/555-byte source with110
 differences; private `strncnt` at `0x41AC40` has44/44 bytes with15 differences.
 Neither candidate is exact. Full pinned CRT sections independently prove all
 original extents and bindings; imports are checked against the PE import table.
@@ -10,9 +10,9 @@ original extents and bindings; imports are checked against the PE import table.
 Source restores cached ANSI/Unicode probing, code-page/locale defaults,
 bounded input counting, both wide conversions, sorting-key output and every
 allocation/free path. The original counter also reads the bound's sentinel:
-positive-count input must back that extra byte. Original local-cache symbol
-mangling establishes the C++ translation boundary; the maintained C allocator
-dependencies have explicit C linkage. The two cache cells retain local static
+positive-count input must back that extra byte. Original COFF `.file` records
+identify `aw_map.c` and `aw_str.c`; VC4 also emits C++-style local-static names
+in C mode, so those names do not establish a C++ source boundary. The two cache cells retain local static
 zero initialization and the probe constants keep their complete original sizes.
 
 Closed REA run `2026-10-13T16-22-03.789Z-interactive-1828283`; assembly IDs:
@@ -38,3 +38,15 @@ bytes and is not adopted. Two VC4 stages and one native/i686 set, retained REA,
 no runtime tests. All336 exacts/111 other candidates/249 semantic rows remain;
 global counts do not change. Receipt:
 `.analysis/locale-mode-publication-20261014/verification.json`.
+
+The original C producer and separate object boundaries reduce mapping from
+561/555/278 to551/555/110. Mapper and counter now live in
+`src/runtime_locale_map.c`; classification retains its unchanged exact C++ body
+in `src/runtime_locale_backends.cpp`. A C classification control loses exactness
+and is not adopted. Restoring the shipped mapper's five-local layout instead
+produces561/555/118 and changes the counter, so that control is also rejected.
+The selected counter's complete byte result is unchanged. Both producers retain
+the full2/4-byte probe constants. Five VC4/native/i686 sets; selected objects are
+reused with identical maintained inputs. All357 exacts and91 other candidate byte
+results remain, with no new exact claim or runtime tests. Receipt:
+`.analysis/locale-original-c-producer-20261015/verification.json`.
