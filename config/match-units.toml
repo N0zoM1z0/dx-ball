@@ -11547,16 +11547,16 @@ relocations = [
   { target = 0x41e6a0, offset = 441, type = "REL32", symbol = "___shr_12", addend = 0 },
 ]
 
-[candidates.crt-scale-decimal12]
+[units.crt-scale-decimal12]
 build = "runtime_decimal"
 symbol = "___multtenpow12"
-target_address = 0x41fc40
+target_address = 0x0041FC40
 size = 123
 boundary_evidence = "docs/research/exact/RUNTIME_DECIMAL_CONVERSION.md"
 relocations = [
-  { target = 0x424390, offset = 12, type = "DIR32", symbol = "__pow10pos", addend = 4294967200 },
-  { target = 0x4244f0, offset = 26, type = "DIR32", symbol = "__pow10neg", addend = 4294967200 },
-  { target = 0x41f990, offset = 107, type = "REL32", symbol = "___ld12mul", addend = 0 },
+  { target = 0x00424390, offset = 11, type = "DIR32", symbol = "__pow10pos", addend = 4294967200 },
+  { target = 0x004244F0, offset = 24, type = "DIR32", symbol = "__pow10neg", addend = 4294967200 },
+  { target = 0x0041F990, offset = 105, type = "REL32", symbol = "___ld12mul", addend = 0 },
 ]
 
 [candidates.crt-set-file-mode]

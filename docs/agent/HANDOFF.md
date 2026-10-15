@@ -52,16 +52,26 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 360 |
-| Complete exact code bytes | 75,285 |
+| Exact functions | 361 |
+| Complete exact code bytes | 75,408 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 360 exact functions does not prove project completion.
+These are separate ledgers; 361 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Decimal scaling closes123 bytes/47 instructions/three bindings through a typed
+12-byte table pointer, biased eight records before the table and advanced seven
+records per exponent group. Original relocations/consumers establish that state;
+retain pre-array pointer formation without defined modern-C/native acceptance.
+Both29-record arrays/full700-byte carrier remain exact. Parser/multiplication
+byte results and all360 previous exacts/88 other candidates remain. Current361/
+code75,408/candidates88. One VC4/native/i686 set, retained REA, no runtime tests.
+See [decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
+`.analysis/decimal-original-table-pointers-20261015/verification.json`.
 
 Integer reversal closes96 bytes by restoring the shipped xtoa.c pointer loop
 instead of address cursors. The single-character terminal decrement can form a
@@ -494,7 +504,7 @@ reverted. Two VC4 stages, one native/i686 set, retained REA and no runtime tests
 global counts unchanged. See [locale backends](../research/exact/RUNTIME_LOCALE_BACKENDS.md)
 and `.analysis/locale-mode-publication-20261014/verification.json`.
 
-Scaling improves133/123/127 to125/123/115 through the native-width numeric table
+Earlier scaling improves133/123/127 to125/123/115 through the native-width numeric table
 address cursor, avoiding a pre-array C pointer. All47 instructions correspond;
 only two MOV5/LEA6 root loads remain. Split capture is unchanged; pointer/address
 union149/146 rejected. Coupled multiplication678/103, parser1851/1662; actual
@@ -502,6 +512,7 @@ definition offsets/tables and all336 exacts/110 other candidates/249 semantic
 rows preserved. Three VC4 stages, one native/i686 set, no runtime tests. See
 [decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md) and
 `.analysis/decimal-power-address-cursor-20261014/verification.json`.
+The typed-pointer recovery above supersedes this numeric-address substitution.
 
 Multiplication further improves678/678/446 to678/678/104 through complete input
 exponent-word snapshots and branch-local sticky reads. Its28-byte frame and all

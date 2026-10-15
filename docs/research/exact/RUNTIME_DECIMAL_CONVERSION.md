@@ -1,16 +1,28 @@
 # Decimal conversion source
 
-Four missing bodies now have maintained source: numeric digits to an extended
-record, the seven-argument parser, packed multiplication and decimal scaling.
-Source presence is 306; exact totals remain 249 / 63,697 code bytes / 136 metadata.
-All ten affected exacts preserve 502 bytes. The 239 other producers are unchanged.
+Four recovered bodies cover numeric digits to an extended record, the
+seven-argument parser, packed multiplication and decimal scaling. Scaling is
+now exact; the other three retain complete nonexact comparisons below.
 
 | Candidate | Current/original bytes | Differences |
 | --- | ---: | ---: |
 | Numeric digits | 232/232 | 20 |
 | Parser and embedded tables | 1851/1871 | 1662 |
 | Multiplication | 678/678 | 21 |
-| Decimal scaling | 125/123 | 115 |
+| Decimal scaling | 123/123 | 0 |
+
+Scaling restores the typed12-byte table cursor: initialize eight records before
+the selected table, then advance seven records per three-bit exponent group.
+Original relocations and consumers establish the96-byte bias/84-byte steps.
+This replaces the numeric-address substitution and closes all123 bytes/47
+instructions/three actual bindings, including both MOV-immediate root loads.
+Original pre-array pointer formation is retained; defined modern-C/native runtime
+behavior remains open for porting. Both complete29-record arrays and the700-byte
+carrier remain exact. Parser and multiplication byte results are unchanged, as
+are all360 preceding exacts and88 other candidates. One VC4/native/i686 set,
+retained REA/full CRT, no runtime tests. Current361 exacts/75,408 code bytes/88
+candidates. Receipt:
+`.analysis/decimal-original-table-pointers-20261015/verification.json`.
 
 Multiplication now initializes the product before capturing operand exponents
 and establishes the accumulator only inside the positive-count path. Its
@@ -32,8 +44,8 @@ original rounding behavior is not replaced with a modern conversion algorithm.
 Output fields become live only after parsing. Numeric conversion keeps the
 aggregate snapshot and captured digit read before clearing its upper words.
 Multiplication preserves five diagonal sums, packed x86 word access and the
-original guard/sticky handling. Scaling uses integer group indices instead of
-forming temporary pointers outside the two power arrays.
+original guard/sticky handling. Scaling retains the original biased pointer
+state described above rather than replacing it with integer addresses.
 
 Both complete 29-record arrays match; their original 700-byte carrier includes
 four alignment bytes. Original parser ownership is 1,871 bytes: 1,578 decoded
@@ -85,7 +97,7 @@ Two VC4 stages and one native/i686 set; no runtime tests. All336 exacts,110 othe
 candidates and249 semantic rows are preserved. Receipt:
 `.analysis/multiply-exponent-snapshot-20261014/verification.json`.
 
-Scaling now advances a native-width numeric table cursor by84 bytes, initially
+The earlier scaling model advances a native-width numeric table cursor by84 bytes, initially
 biased96 bytes before the table. Only live power positions become pointers;
 the pre-array position is never materialized as a C pointer. This restores the
 original group state and improves133/123/127 to125/123/115. All47 original/current

@@ -131,22 +131,21 @@ void __ld12mul(DxBallExtended12 *left, const DxBallExtended12 *right)
 /* FUNCTION: DXBALL 0x0041FC40 */
 void __multtenpow12(DxBallExtended12 *value, int exponent, int keep_tail)
 {
-    size_t group = (size_t)(const void *)_pow10pos - 8 * sizeof(_pow10pos[0]);
+    const DxBallExtended12 *group = _pow10pos - 8;
     if (exponent != 0) {
         if (exponent < 0) {
             exponent = -exponent;
-            group = (size_t)(const void *)_pow10neg - 8 * sizeof(_pow10neg[0]);
+            group = _pow10neg - 8;
         }
         if (!keep_tail) value->extra = 0;
         while (exponent != 0) {
             int index;
-            group += 7 * sizeof(_pow10pos[0]);
+            group += 7;
             index = exponent & 7;
             exponent >>= 3;
             if (index != 0) {
                 DxBallExtended12 corrected;
-                const DxBallExtended12 *power = (const DxBallExtended12 *)(const void *)
-                    (group + (size_t)index * sizeof(_pow10pos[0]));
+                const DxBallExtended12 *power = group + index;
                 if (power->extra >= 0x8000) {
                     corrected = *power;
                     --corrected.low;

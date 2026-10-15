@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**360 functions / 75,285 code bytes / 136 metadata bytes**.
+**361 functions / 75,408 code bytes / 136 metadata bytes**.
+
+Decimal scaling closes123 bytes by restoring the original biased typed-table
+pointer state. Both power arrays/full700-byte carrier, parser/multiplication
+byte results and all360 previous exacts remain. Original pre-array pointer
+formation is retained for port review. See [decimal conversion](RUNTIME_DECIMAL_CONVERSION.md).
 
 Integer reversal closes96 bytes through the original xtoa.c pointer loop.
 The retained exact VC4 object matches current inputs/flags and is reused; both
