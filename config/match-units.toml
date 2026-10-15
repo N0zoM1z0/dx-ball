@@ -12096,7 +12096,7 @@ relocations = [
   { offset = 49, type = "REL32", symbol = "_dxball_crt_xtoa", addend = 0, target = 0x0041F510 },
 ]
 
-[candidates.crt-integer-digits]
+[units.crt-integer-digits]
 build = "runtime_integer_text"
 symbol = "_dxball_crt_xtoa"
 target_address = 0x0041F510

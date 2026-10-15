@@ -5,13 +5,12 @@ static void dxball_crt_xtoa(DxBallIntegerTextWord value, char *buffer,
                            unsigned int radix, int negative)
 {
     char *cursor = buffer;
-    size_t first_address;
-    size_t end_address;
+    char *first;
     if (negative) {
         *cursor++ = '-';
         value = 0 - value;
     }
-    first_address = (size_t)cursor;
+    first = cursor;
     do {
         unsigned int digit = value % radix;
         value /= radix;
@@ -20,15 +19,14 @@ static void dxball_crt_xtoa(DxBallIntegerTextWord value, char *buffer,
         ++cursor;
     } while (value != 0);
     *cursor = '\0';
-    /* The final decrement may cross the first character, but is never dereferenced. */
-    end_address = (size_t)cursor - 1;
+    --cursor;
     do {
-        char value_at_end = *(char *)end_address;
-        *(char *)end_address = *(char *)first_address;
-        --end_address;
-        *(char *)first_address = value_at_end;
-        ++first_address;
-    } while (first_address < end_address);
+        char value_at_end = *cursor;
+        *cursor = *first;
+        --cursor;
+        *first = value_at_end;
+        ++first;
+    } while (first < cursor);
 }
 
 /* FUNCTION: DXBALL 0x0041F4D0 */

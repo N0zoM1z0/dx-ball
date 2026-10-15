@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**359 functions / 75,189 code bytes / 136 metadata bytes**.
+**360 functions / 75,285 code bytes / 136 metadata bytes**.
+
+Integer reversal closes96 bytes through the original xtoa.c pointer loop.
+The retained exact VC4 object matches current inputs/flags and is reused; both
+wrappers, all359 previous exacts and89 other candidates remain. Original terminal
+pointer behavior is retained for later port review. See [integer text](RUNTIME_INTEGER_TEXT.md).
 
 Float digit generation closes129 bytes through the shipped _fptostr.c strcpy
 operation, including original inline REP copying. This supersedes the memmove

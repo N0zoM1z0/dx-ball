@@ -52,16 +52,26 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 359 |
-| Complete exact code bytes | 75,189 |
+| Exact functions | 360 |
+| Complete exact code bytes | 75,285 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 359 exact functions does not prove project completion.
+These are separate ledgers; 360 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Integer reversal closes96 bytes by restoring the shipped xtoa.c pointer loop
+instead of address cursors. The single-character terminal decrement can form a
+before-array pointer; retain the original operation without native runtime or
+defined modern-C acceptance. Retained VC4 exact product matches every current
+input/flag and is reused without recompilation; fresh native/i686 compilation
+passes. Both wrappers60/30 and all359 previous exacts remain, as do89 candidates.
+Current360/code75,285/candidates89. See
+[integer text](../research/exact/RUNTIME_INTEGER_TEXT.md) and
+`.analysis/integer-original-pointer-reversal-20261015/verification.json`.
 
 Float digits closes129 bytes by restoring the shipped _fptostr.c
 strcpy(buffer, buffer+1) operation instead of the earlier memmove substitution.
@@ -1065,8 +1075,9 @@ are current. See [integer text](../research/exact/RUNTIME_INTEGER_TEXT.md) and
 REA dossiers are reused; only itoa needs a closed three-record query. All three
 pinned CRT sections match. Three final comparisons and native/i686 standalone
 compilation cover the owner; all263 old exacts/68 candidates are unchanged.
-No runtime tests/game builds. The unsafe first-pass match is not accepted;
-runtime integration remains open and the score owner keeps its prior boundary.
+No runtime tests/game builds. This earlier address-cursor decision is superseded
+by the original pointer recovery above. Runtime integration remains open and
+the score owner keeps its prior boundary.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
 Branch and publish target: `origin/main`.
