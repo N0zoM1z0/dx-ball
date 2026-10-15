@@ -1352,27 +1352,27 @@ relocations = [
 [candidates.crt-environment-strings]
 build = "runtime_environment"
 symbol = "_dxball_crt_environment_strings"
-target_address = 0x0041C2B0
+target_address = 0x41c2b0
 size = 411
 boundary_evidence = "docs/research/exact/RUNTIME_ARGUMENTS.md"
 relocations = [
-  { offset = 13, type = "DIR32", symbol = "__imp__GetEnvironmentStringsW@0", addend = 0, target = 0x004412C8 },
-  { offset = 19, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0, target = 0x00423940 },
-  { offset = 35, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0, target = 0x00423940 },
-  { offset = 47, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0, target = 0x004412E8 },
-  { offset = 59, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0, target = 0x00423940 },
-  { offset = 81, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0, target = 0x00423940 },
-  { offset = 158, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0, target = 0x00441304 },
-  { offset = 170, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 197, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0, target = 0x00441304 },
-  { offset = 207, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
-  { offset = 219, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0, target = 0x004412CC },
-  { offset = 236, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0, target = 0x004412CC },
-  { offset = 252, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0, target = 0x00423940 },
-  { offset = 265, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0, target = 0x004412E8 },
-  { offset = 308, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
-  { offset = 326, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0, target = 0x004412D4 },
-  { offset = 363, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0, target = 0x004412D4 },
+  { target = 0x4412c8, offset = 13, type = "DIR32", symbol = "__imp__GetEnvironmentStringsW@0", addend = 0 },
+  { target = 0x423940, offset = 19, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x423940, offset = 35, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x4412e8, offset = 47, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0 },
+  { target = 0x423940, offset = 59, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x423940, offset = 81, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x441304, offset = 162, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
+  { target = 0x417770, offset = 174, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
+  { target = 0x441304, offset = 201, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
+  { target = 0x417750, offset = 211, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
+  { target = 0x4412cc, offset = 223, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0 },
+  { target = 0x4412cc, offset = 240, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0 },
+  { target = 0x423940, offset = 256, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x4412e8, offset = 269, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0 },
+  { target = 0x417770, offset = 315, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
+  { target = 0x4412d4, offset = 333, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0 },
+  { target = 0x4412d4, offset = 370, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0 },
 ]
 
 [builds.runtime_codepage]

@@ -5,8 +5,10 @@ char *dxball_crt_environment_strings(void)
 {
     static int backend = 0;
     unsigned short *wide = 0;
+    unsigned short *wide_end;
     char *ansi = 0;
-    char *result;
+    char *ansi_end;
+    int count, bytes;
     if (backend == 0) {
         wide = GetEnvironmentStringsW();
         if (wide)
@@ -20,49 +22,42 @@ char *dxball_crt_environment_strings(void)
         }
     }
     if (backend == 1) {
-        unsigned short *end;
-        int count, bytes;
         if (wide == 0 && (wide = GetEnvironmentStringsW()) == 0)
             return 0;
-        end = wide;
-        while (*end) {
-            while (*++end)
-                ;
-            ++end;
+        wide_end = wide;
+        while (*wide_end) {
+            if (*++wide_end == 0)
+                ++wide_end;
         }
-        count = (int)(end - wide) + 1;
+        count = (int)(wide_end - wide) + 1;
         bytes = WideCharToMultiByte(0, 0, wide, count, 0, 0, 0, 0);
-        if (bytes && (result = (char *)dxball_runtime_malloc((DxBallUInt)bytes)) != 0) {
-            if (WideCharToMultiByte(0, 0, wide, count, result, bytes, 0, 0) == 0) {
-                dxball_heap_release(result);
-                result = 0;
-            }
+        if (bytes == 0 || (ansi = (char *)dxball_runtime_malloc((DxBallUInt)bytes)) == 0) {
             FreeEnvironmentStringsW(wide);
-            return result;
+            return 0;
+        }
+        if (WideCharToMultiByte(0, 0, wide, count, ansi, bytes, 0, 0) == 0) {
+            dxball_heap_release(ansi);
+            ansi = 0;
         }
         FreeEnvironmentStringsW(wide);
-        return 0;
+        return ansi;
     }
     if (backend == 2) {
-        char *end;
-        size_t bytes;
         if (ansi == 0 && (ansi = GetEnvironmentStrings()) == 0)
             return 0;
-        end = ansi;
-        while (*end) {
-            while (*++end)
-                ;
-            ++end;
+        ansi_end = ansi;
+        while (*ansi_end) {
+            if (*++ansi_end == 0)
+                ++ansi_end;
         }
-        bytes = (size_t)(end - ansi) + 1;
-        result = (char *)dxball_runtime_malloc((DxBallUInt)bytes);
-        if (result == 0) {
+        bytes = (int)(ansi_end - ansi) + 1;
+        if ((ansi_end = (char *)dxball_runtime_malloc((DxBallUInt)bytes)) == 0) {
             FreeEnvironmentStringsA(ansi);
             return 0;
         }
-        memcpy(result, ansi, bytes);
+        memcpy(ansi_end, ansi, (size_t)bytes);
         FreeEnvironmentStringsA(ansi);
-        return result;
+        return ansi_end;
     }
     return 0;
 }

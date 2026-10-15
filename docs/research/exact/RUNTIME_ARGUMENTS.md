@@ -1,7 +1,7 @@
 # Command-line and environment startup
 
 Four full bodies have standalone shared source. Argument setup155, command-line
-parsing466 and environment setup219 are exact. Environment acquisition389/411/404
+parsing466 and environment setup219 are exact. Environment acquisition396/411/399
 remains a candidate. Five native-width state definitions live outside
 the consuming argument translation unit, following actual CRT external symbols.
 Four definitions are proved in `crt0dat.obj`; the original aenvptr defining member
@@ -50,6 +50,18 @@ The original cached path reads an uninitialized stack slot. Source initializes
 the actual acquisition pointers; cached-path fidelity remains unproved and the
 backend is not exact or runtime-accepted. C++ mode follows genuine local-static
 mangling; allocator/fatal APIs keep their existing C linkage.
+
+Shipped `aw_env.c` restores both conditional cursor scans, signed byte counts
+and the original allocation-result lifetimes. The full comparison improves
+389/411/404 to396/411/399. After backend selection, all143 instructions across
+the remaining317 bytes correspond, including16 branch targets and every call.
+Entry differences retain defined zero initialization instead of three original
+uninitialized stack reads; no partial exact unit is added. Block lengths must
+fit positive signed32-bit counts. The four-byte initial backend state agrees.
+One VC4/native/i686 set is reused through identical canonical inputs; all355
+exacts and93 other candidate results remain unchanged. Retained REA/full CRT
+are reused, with no runtime tests. Receipt:
+`.analysis/environment-original-cursor-lifetimes-20261015/verification.json`.
 
 Private `.analysis/runtime-arguments-20261014/verification.json` retains four
 whole CRT proofs and one closed12-record REA run. Affected VC4 whole comparisons

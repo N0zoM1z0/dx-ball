@@ -6,6 +6,10 @@ Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
 **355 functions / 73,888 code bytes / 136 metadata bytes**.
 
+Environment acquisition improves389/411/404 to396/411/399 through original
+cursor scans and allocation-result lifetimes. Entry initialization remains
+nonexact; all355 exacts and93 other candidates remain. See [environment](RUNTIME_ARGUMENTS.md).
+
 Fatal formatting restores its original424-byte frame through shipped message
 buffer declarations and catalog indexing;493/494/419 improves to493/494/412.
 Not exact; both owner exacts and full catalog/literals remain. See

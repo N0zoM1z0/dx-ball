@@ -63,6 +63,16 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Environment acquisition improves389/411/404 to396/411/399 through shipped
+aw_env.c scans, signed counts and allocation-result lifetimes. All143 trailing
+instructions/317 bytes correspond with16 branch targets and actual calls;
+defined pointer initialization differs from three original uninitialized stack
+reads. No partial exact claim. All355 exacts/93 other candidate results remain;
+totals355/code73,888/candidates94 unchanged. One VC4/native/i686 set reused
+through identical canonical inputs, retained REA/full CRT reused, no runtime
+tests. See [environment](../research/exact/RUNTIME_ARGUMENTS.md) and
+`.analysis/environment-original-cursor-lifetimes-20261015/verification.json`.
+
 Fatal formatting restores the original424-byte frame through shipped crt0msg.c
 160-byte message/260-byte program buffers and GUI-branch ownership. Original
 integer catalog indexing improves493/494/419 to493/494/412. All159 instructions
