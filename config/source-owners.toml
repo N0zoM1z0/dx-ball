@@ -541,7 +541,7 @@ header = "src/runtime_arguments.h"
 additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_multibyte.h", "src/allocator.h"]
 
 [owners.runtime_environment]
-source = "src/runtime_environment.cpp"
+source = "src/runtime_environment.c"
 header = "src/runtime_environment.h"
 additional_inputs = ["src/runtime_locale_backends.h", "src/runtime_case_conversion.h", "src/runtime_resize.h", "src/allocator.h", "src/state_types.h"]
 

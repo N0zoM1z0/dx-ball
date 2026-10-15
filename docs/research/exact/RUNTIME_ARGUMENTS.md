@@ -1,8 +1,8 @@
 # Command-line and environment startup
 
 Four full bodies have standalone shared source. Argument setup155, command-line
-parsing466 and environment setup219 are exact. Environment acquisition396/411/399
-remains a candidate. Five native-width state definitions live outside
+parsing466, environment setup219 and environment acquisition411 are exact.
+Five native-width state definitions live outside
 the consuming argument translation unit, following actual CRT external symbols.
 Four definitions are proved in `crt0dat.obj`; the original aenvptr defining member
 remains unknown. All20 initial target field bytes agree. Program-name storage is
@@ -46,17 +46,27 @@ the temporary block without clearing the shared stale pointer, as in the origina
 
 Environment acquisition retains the first OS block, supports UTF-16/ANSI paths,
 converts the whole terminated block and releases OS ownership on all paths.
-The original cached path reads an uninitialized stack slot. Source initializes
-the actual acquisition pointers; cached-path fidelity remains unproved and the
-backend is not exact or runtime-accepted. C++ mode follows genuine local-static
-mangling; allocator/fatal APIs keep their existing C linkage.
+The original acquisition pointers are uninitialized: cached calls can read
+indeterminate values. That defect is preserved, not repaired with zero stores.
+The pinned object's file record is `aw_env.c`; its local-static mangling does
+not establish C++ mode. Restoring the original declarations gives401/411/365
+under C++, while the C producer matches all411 bytes and every relocation.
+The maintained source is now `runtime_environment.c`, with unchanged C ABI.
+All four initial backend bytes agree. All356 prior exacts and92 other candidates
+remain; current totals357 exact functions/75,003 code bytes/92 candidates.
+Two VC4 sets provide the C++ control and selected C product, reused through
+identical canonical inputs. Two strict g++ checks reject the original pointer
+reads; native/i686 C compilation retains their `maybe-uninitialized` warnings
+as warnings. No defined cached-path behavior, runtime safety or semantic
+acceptance is claimed. Retained REA/full CRT are reused; no runtime tests.
+Receipt: `.analysis/environment-original-pointer-declarations-20261015/verification.json`.
 
-Shipped `aw_env.c` restores both conditional cursor scans, signed byte counts
+The preceding shipped `aw_env.c` recovery restores conditional cursor scans, signed byte counts
 and the original allocation-result lifetimes. The full comparison improves
 389/411/404 to396/411/399. After backend selection, all143 instructions across
 the remaining317 bytes correspond, including16 branch targets and every call.
-Entry differences retain defined zero initialization instead of three original
-uninitialized stack reads; no partial exact unit is added. Block lengths must
+That earlier product retains zero initialization instead of three original
+uninitialized stack reads; no partial exact unit was added. Block lengths must
 fit positive signed32-bit counts. The four-byte initial backend state agrees.
 One VC4/native/i686 set is reused through identical canonical inputs; all355
 exacts and93 other candidate results remain unchanged. Retained REA/full CRT

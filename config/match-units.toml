@@ -1287,9 +1287,9 @@ inputs = ["src/runtime_environment_setup.cpp", "src/runtime_arguments.h", "src/r
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
 
 [builds.runtime_environment]
-source = "src/runtime_environment.cpp"
+source = "src/runtime_environment.c"
 object = "build/exact/runtime_environment.obj"
-inputs = ["src/runtime_environment.cpp", "src/runtime_environment.h", "src/runtime_locale_backends.h", "src/runtime_case_conversion.h", "src/runtime_resize.h", "src/allocator.h", "src/state_types.h"]
+inputs = ["src/runtime_environment.c", "src/runtime_environment.h", "src/runtime_locale_backends.h", "src/runtime_case_conversion.h", "src/runtime_resize.h", "src/allocator.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
 
 [builds.runtime_argument_state]
@@ -1349,30 +1349,31 @@ relocations = [
   { offset = 405, type = "DIR32", symbol = "__mbctype", addend = 1, target = 0x423948 },
 ]
 
-[candidates.crt-environment-strings]
+[units.crt-environment-strings]
 build = "runtime_environment"
 symbol = "_dxball_crt_environment_strings"
-target_address = 0x41c2b0
+target_address = 0x0041C2B0
 size = 411
 boundary_evidence = "docs/research/exact/RUNTIME_ARGUMENTS.md"
 relocations = [
-  { target = 0x4412c8, offset = 13, type = "DIR32", symbol = "__imp__GetEnvironmentStringsW@0", addend = 0 },
-  { target = 0x423940, offset = 19, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
-  { target = 0x423940, offset = 35, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
-  { target = 0x4412e8, offset = 47, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0 },
-  { target = 0x423940, offset = 59, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
-  { target = 0x423940, offset = 81, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
-  { target = 0x441304, offset = 162, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
-  { target = 0x417770, offset = 174, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
-  { target = 0x441304, offset = 201, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
-  { target = 0x417750, offset = 211, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
-  { target = 0x4412cc, offset = 223, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0 },
-  { target = 0x4412cc, offset = 240, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0 },
-  { target = 0x423940, offset = 256, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
-  { target = 0x4412e8, offset = 269, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0 },
-  { target = 0x417770, offset = 315, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
-  { target = 0x4412d4, offset = 333, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0 },
-  { target = 0x4412d4, offset = 370, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0 },
+  { target = 0x00423940, offset = 5, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x004412C8, offset = 18, type = "DIR32", symbol = "__imp__GetEnvironmentStringsW@0", addend = 0 },
+  { target = 0x00423940, offset = 32, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x004412E8, offset = 48, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0 },
+  { target = 0x00423940, offset = 60, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x004412C8, offset = 90, type = "DIR32", symbol = "__imp__GetEnvironmentStringsW@0", addend = 0 },
+  { target = 0x00423940, offset = 96, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x00441304, offset = 177, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
+  { target = 0x00417770, offset = 189, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
+  { target = 0x00441304, offset = 216, type = "DIR32", symbol = "__imp__WideCharToMultiByte@32", addend = 0 },
+  { target = 0x00417750, offset = 226, type = "REL32", symbol = "_dxball_heap_release", addend = 0 },
+  { target = 0x004412CC, offset = 238, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0 },
+  { target = 0x004412CC, offset = 255, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsW@4", addend = 0 },
+  { target = 0x00423940, offset = 271, type = "DIR32", symbol = "?backend@?1??dxball_crt_environment_strings@@9@9", addend = 0 },
+  { target = 0x004412E8, offset = 284, type = "DIR32", symbol = "__imp__GetEnvironmentStrings@0", addend = 0 },
+  { target = 0x00417770, offset = 330, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0 },
+  { target = 0x004412D4, offset = 348, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0 },
+  { target = 0x004412D4, offset = 385, type = "DIR32", symbol = "__imp__FreeEnvironmentStringsA@4", addend = 0 },
 ]
 
 [builds.runtime_codepage]

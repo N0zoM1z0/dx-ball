@@ -52,16 +52,28 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 356 |
-| Complete exact code bytes | 74,592 |
+| Exact functions | 357 |
+| Complete exact code bytes | 75,003 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 356 exact functions does not prove project completion.
+These are separate ledgers; 357 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Environment acquisition closes411 bytes through original uninitialized pointer
+declarations and the C producer: pinned COFF file metadata says aw_env.c, despite
+C++-style local-static names. C++401/411/365 is only a control; C411/411/0 is
+authoritative. Source moves to runtime_environment.c. Original cached-path
+indeterminate reads remain; no safety/native-runtime acceptance. All356 old
+exacts and92 other candidates remain; current357/code75,003/candidates92.
+Two VC4 sets, two rejected strict g++ checks, native/i686 C compilation with
+original maybe-uninitialized warnings retained. Selected C product reused through
+identical canonical inputs; retained REA/full CRT reused, no runtime tests. See
+[environment](../research/exact/RUNTIME_ARGUMENTS.md) and
+`.analysis/environment-original-pointer-declarations-20261015/verification.json`.
 
 C++ handler search improves663/659/605 to658/659/326 through original exception
 parameter ownership, per-type metadata, common match failure, range-output homes

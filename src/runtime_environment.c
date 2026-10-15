@@ -4,9 +4,9 @@
 char *dxball_crt_environment_strings(void)
 {
     static int backend = 0;
-    unsigned short *wide = 0;
+    unsigned short *wide;
     unsigned short *wide_end;
-    char *ansi = 0;
+    char *ansi;
     char *ansi_end;
     int count, bytes;
     if (backend == 0) {

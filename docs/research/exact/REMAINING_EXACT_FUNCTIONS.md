@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**356 functions / 74,592 code bytes / 136 metadata bytes**.
+**357 functions / 75,003 code bytes / 136 metadata bytes**.
+
+Environment acquisition closes411 bytes through original pointer declarations
+and the C producer established by `aw_env.c` file metadata. Original cached-path
+indeterminate reads remain. All356 old exacts and92 other candidates are preserved.
+See [environment](RUNTIME_ARGUMENTS.md).
 
 C++ handler search improves663/659/605 to658/659/326 through exception-parameter
 ownership, per-type metadata and transfer lifetimes. Its original24-byte frame
