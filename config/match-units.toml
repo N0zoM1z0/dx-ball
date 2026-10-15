@@ -12298,7 +12298,7 @@ target_address = 0x0041C840
 size = 494
 boundary_evidence = "docs/research/exact/RUNTIME_LOWIO_STARTUP.md"
 relocations = [
-  { offset = 7, type = "DIR32", symbol = "_runtime_errors$S278", addend = 0, target = 0x00423DC8 },
+  { offset = 9, type = "DIR32", symbol = "_runtime_errors$S278", addend = 0, target = 0x00423DC8 },
   { offset = 33, type = "DIR32", symbol = "_runtime_errors$S278", addend = 136, target = 0x00423DC8 },
   { offset = 42, type = "DIR32", symbol = "_runtime_errors$S278", addend = 0, target = 0x00423DC8 },
   { offset = 61, type = "DIR32", symbol = "_dxball_crt_error_mode", addend = 0, target = 0x00423114 },

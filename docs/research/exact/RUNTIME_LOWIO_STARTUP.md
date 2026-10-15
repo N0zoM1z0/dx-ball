@@ -4,7 +4,7 @@ Four complete bodies now have maintained source. Fatal dispatch at `0x418930`
 is42-byte exact, not the imported38-byte prefix: the trailing stack cleanup and
 return are included. Banner dispatch at `0x41C800` is61-byte exact. All nine
 actual bindings match. Initialization at `0x41AD10` has467/467 bytes with32
-differences; error formatting at `0x41C840` has493/494 with419. Both remain candidates.
+differences; error formatting at `0x41C840` has493/494 with412. Both remain candidates.
 
 Shipped `ioinit.c` establishes the integer block index, packed handle cursor,
 shared descriptor counter and standard-handle acquisition guards. Restoring
@@ -30,9 +30,20 @@ Error mode and application type are distinct cells at `0x423114`/`0x423118`.
 The exit callback's four-byte initializer targets the existing quick-exit entry
 at `0x417930`; debug callbacks remain optional and are read after banner output.
 Formatting preserves console output, filename fallback, the59-character tail,
-three-byte ellipsis overwrite and the GUI message-box call. Its139-byte output
-bound follows all format/text maxima. Unexplained original frame space is not
-turned into a guessed larger array; original formatting frame recovery is open.
+three-byte ellipsis overwrite and the GUI message-box call. Shipped `crt0msg.c`
+establishes the original160-byte message buffer,260-byte filename buffer and
+GUI-branch scope. These declarations restore the424-byte frame; the earlier
+139-byte message capacity came from format maxima, not the original declaration.
+Original integer catalog indexing reduces the full comparison419 to412.
+All159 instructions correspond after branch-position translation and the initial
+EAX/ECX interchange; the accumulator CMP encoding accounts for the one-byte
+size difference. The function remains nonexact. Both owner exacts, full136-byte
+catalog, strings and exit initializer remain unchanged. Four VC4/native/i686
+sets cover scoped storage, integer indexing, the unsigned catalog bound and
+original object ownership. The latter two give identical code; ownership changes
+are not adopted. The selected private product is reused through identical
+canonical inputs. Retained REA/full CRT are reused; no runtime tests. Receipt:
+`.analysis/fatal-original-message-buffer-20261015/verification.json`.
 Inputs require a catalog reason, terminated module filename and backed nonnegative
 inherited packet. The startup allocation-failure exit must not return. Native
 packets carry native-width handles; original Win32 packets retain four-byte handles.

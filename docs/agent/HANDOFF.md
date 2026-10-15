@@ -63,6 +63,18 @@ All 34 authored candidates have complete comparisons. Their sizes and difference
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
 
+Fatal formatting restores the original424-byte frame through shipped crt0msg.c
+160-byte message/260-byte program buffers and GUI-branch ownership. Original
+integer catalog indexing improves493/494/419 to493/494/412. All159 instructions
+correspond except initial EAX/ECX interchange; its CMP encoding leaves one byte
+of size difference. Not exact. Both owner exacts/full catalog/literals and all355
+exacts remain; totals355/code73,888/candidates94 unchanged. Four VC4/native/i686
+sets; unsigned-bound/original-owner controls give identical code, no ownership
+reorganization adopted. Selected product reused through identical canonical
+inputs; retained REA/full CRT reused, no runtime/game tests. See
+[fatal output](../research/exact/RUNTIME_LOWIO_STARTUP.md) and
+`.analysis/fatal-original-message-buffer-20261015/verification.json`.
+
 Extended multiplication improves678/678/103 to678/678/21 through early product
 initialization, positive-count-owned accumulator setup and the original
 `<= 0x3fbf` underflow cutoff. Remaining differences are two SIB commutations and

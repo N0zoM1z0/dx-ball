@@ -53,16 +53,10 @@ void dxball_crt_error_banner(void)
 /* FUNCTION: DXBALL 0x0041C840 */
 void dxball_crt_write_error(int reason)
 {
-    DxBallRuntimeError *cursor = runtime_errors;
-    unsigned int index = 0;
+    int index;
     DxBallCrtDword written;
-    char program[260];
-    /* The complete observed format needs139 bytes. Unmapped frame space is
-       not used to infer a larger original array or force stack agreement. */
-    char message[sizeof("Runtime Error!\n\nProgram: ") + 59 + 2 + 52];
-    char *name;
-    for (; cursor < runtime_errors + 17; ++cursor, ++index) {
-        if (cursor->reason == reason) break;
+    for (index = 0; (size_t)index < sizeof(runtime_errors) / sizeof(runtime_errors[0]); ++index) {
+        if (reason == runtime_errors[index].reason) break;
     }
     if (runtime_errors[index].reason == reason) {
         if (dxball_crt_error_mode == 1 ||
@@ -72,6 +66,9 @@ void dxball_crt_write_error(int reason)
             WriteFile(handle, runtime_errors[index].text,
                       (DxBallCrtDword)strlen(runtime_errors[index].text), &written, 0);
         } else if (reason != 252) {
+            char *name;
+            char program[260];
+            char message[60 + 100];
             if (!GetModuleFileNameA(0, program, sizeof(program)))
                 strcpy(program, "<program name unknown>");
             name = program;
