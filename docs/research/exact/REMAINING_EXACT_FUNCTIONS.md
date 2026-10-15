@@ -4,7 +4,12 @@ All 34 authored candidates were compared against the complete original extents
 on October 13, 2026. Current compiler inputs and objects match their receipts.
 Every relocation, declared literal and attached metadata block is included.
 None of these candidates is already exact. The accepted total remains
-**357 functions / 75,003 code bytes / 136 metadata bytes**.
+**358 functions / 75,060 code bytes / 136 metadata bytes**.
+
+Exponent editing closes all57 bytes through direct binary64 assignment, restoring
+the original high/low integer transfer order before the exponent write. The99-byte
+classifier, all357 previous exact results and91 other candidates remain. See
+[FP control](RUNTIME_FP_CONTROL.md).
 
 User matherr improves174/174/28 to174/174/21 through direct binary64 assignments;
 both187/79 companions and all357 exacts remain. C mode/definition order do not

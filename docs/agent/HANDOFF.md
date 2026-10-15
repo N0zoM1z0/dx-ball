@@ -52,16 +52,24 @@ goal with the prompt above, preserving the same objective.
 | --- | ---: |
 | Provisional function candidates | 543 |
 | Source-present functions | 457 |
-| Exact functions | 357 |
-| Complete exact code bytes | 75,003 |
+| Exact functions | 358 |
+| Complete exact code bytes | 75,060 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Confirmed authored nonexact candidates | 34 |
 
-These are separate ledgers; 357 exact functions does not prove project completion.
+These are separate ledgers; 358 exact functions does not prove project completion.
 All 34 authored candidates have complete comparisons. Their sizes and differences are in
 [REMAINING_EXACT_FUNCTIONS.md](../research/exact/REMAINING_EXACT_FUNCTIONS.md).
 The authored denominator and 24 unclassified origins remain open.
+
+Exponent editing closes all57 bytes through direct binary64 assignment, restoring
+the original high/low integer transfer order before the exponent write. The99-byte
+classifier and all357 previous exact results remain, as do91 other candidates.
+Current358/code75,060/candidates91. One VC4/native/i686 set, selected product reused
+with identical maintained inputs; retained REA/full CRT reused, no runtime tests.
+See [FP control](../research/exact/RUNTIME_FP_CONTROL.md) and
+`.analysis/exponent-original-double-transport-20261015/verification.json`.
 
 User matherr improves174/174/28 to174/174/21 through direct binary64 assignments,
 removing six word-view pointers/their alias type. Both187/79 companions stay

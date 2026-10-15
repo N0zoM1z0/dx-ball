@@ -952,7 +952,7 @@ relocations = [
   { offset = 33, type = "DIR32", symbol = "?names@?1??dxball_crt_math_function_name@@9@9", addend = 4, target = 0x004233D0 },
 ]
 
-[candidates.crt-set-float-exponent]
+[units.crt-set-float-exponent]
 build = "runtime_fp_bits"
 symbol = "_dxball_crt_set_float_exponent"
 target_address = 0x00419CE0
