@@ -1,0 +1,144 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "source": "src/runtime_io_state.c",
+  "header": "src/runtime_stream_open.h",
+  "inputs": [
+    "src/allocator.h",
+    "src/runtime_file_modes.h",
+    "src/runtime_io_state.c",
+    "src/runtime_lowio.h",
+    "src/runtime_lowio_read.h",
+    "src/runtime_stream.h",
+    "src/runtime_stream_open.h",
+    "src/runtime_stream_transfer.h",
+    "src/state_types.h"
+  ],
+  "flags": [
+    "/nologo",
+    "/c",
+    "/O2",
+    "/Ob0",
+    "/Oi-",
+    "/Gd",
+    "/ML",
+    "/Gy"
+  ],
+  "object": "build/exact/runtime_io_state.obj",
+  "section": ".data",
+  "emitted_size": 32,
+  "typed_state_bytes": 28,
+  "compiler_alignment_bytes": 4,
+  "relocations": [],
+  "records": [
+    {
+      "name": "errno",
+      "symbol": "_errno",
+      "source_offset": 0,
+      "size": 4,
+      "target_address": "0x004230AC",
+      "original_member": {
+        "name": "build\\intel\\st_obj\\crt0dat.obj",
+        "header_offset": 720672,
+        "sha256": "39f0367c946b5ee25bc877c0115457d8ac0b91d0b509873bff1f3d1beb09294b",
+        "symbol": "_errno",
+        "section_index": 1,
+        "offset": 0
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-10T21-18-21.181Z-requests-1227282/00-read_bytes.json",
+      "evidence_id": "ev_1bd03ba587bf4cb8cb739d2e1ec4fd40ea4aabd9238dbe9fc0f4136976870bc0",
+      "placement_basis": "Established crt0dat section and declared offset; no independent zero-data anchor."
+    },
+    {
+      "name": "_doserrno",
+      "symbol": "__doserrno",
+      "source_offset": 4,
+      "size": 4,
+      "target_address": "0x004230B0",
+      "original_member": {
+        "name": "build\\intel\\st_obj\\crt0dat.obj",
+        "header_offset": 720672,
+        "sha256": "39f0367c946b5ee25bc877c0115457d8ac0b91d0b509873bff1f3d1beb09294b",
+        "symbol": "__doserrno",
+        "section_index": 1,
+        "offset": 4
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-10T21-18-21.181Z-requests-1227282/00-read_bytes.json",
+      "evidence_id": "ev_1bd03ba587bf4cb8cb739d2e1ec4fd40ea4aabd9238dbe9fc0f4136976870bc0",
+      "placement_basis": "Established crt0dat section and declared offset; no independent zero-data anchor."
+    },
+    {
+      "name": "dxball_crt_creation_mask",
+      "symbol": "_dxball_crt_creation_mask",
+      "source_offset": 8,
+      "size": 4,
+      "target_address": "0x004230B4",
+      "original_member": {
+        "name": "build\\intel\\st_obj\\crt0dat.obj",
+        "header_offset": 720672,
+        "sha256": "39f0367c946b5ee25bc877c0115457d8ac0b91d0b509873bff1f3d1beb09294b",
+        "symbol": "__umaskval",
+        "section_index": 1,
+        "offset": 8
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-10T21-18-21.181Z-requests-1227282/00-read_bytes.json",
+      "evidence_id": "ev_1bd03ba587bf4cb8cb739d2e1ec4fd40ea4aabd9238dbe9fc0f4136976870bc0",
+      "placement_basis": "Established crt0dat section and declared offset; no independent zero-data anchor."
+    },
+    {
+      "name": "dxball_crt_default_commit",
+      "symbol": "_dxball_crt_default_commit",
+      "source_offset": 12,
+      "size": 4,
+      "target_address": "0x004242DC",
+      "original_member": {
+        "name": "build\\intel\\st_obj\\ncommode.obj",
+        "header_offset": 859018,
+        "sha256": "0c09594b741ecce9f3d85fee0b44c8e4ef72d7f6cc7edbaa207db4b3a70655a1",
+        "symbol": "__commode",
+        "section_index": 1,
+        "offset": 0
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-16T14-38-21.002Z-state-requests-956842/01-read_bytes.json",
+      "evidence_id": "ev_672dabb18f0fe7ec6524a2d1f9c3f85a0c979bbc3ee243f5826c3bc622b5f9c0",
+      "placement_basis": "Observed zero word and complete named original member; consumer binding only, no independent zero-data placement."
+    },
+    {
+      "name": "dxball_crt_default_file_mode",
+      "symbol": "_dxball_crt_default_file_mode",
+      "source_offset": 16,
+      "size": 4,
+      "target_address": "0x00424364",
+      "original_member": {
+        "name": "build\\intel\\st_obj\\txtmode.obj",
+        "header_offset": 538898,
+        "sha256": "724ccaa094f0bb2f049f78e4a16bcc0d18f4f2fa133a4dd54b6dcb3628d891c5",
+        "symbol": "__fmode",
+        "section_index": 1,
+        "offset": 0
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-16T14-38-21.002Z-state-requests-956842/02-read_bytes.json",
+      "evidence_id": "ev_d88eea36ab64904f22f7c477d9e3e2e217b24af5730a60864bf23de2b8c3f135",
+      "placement_basis": "Observed zero word and complete named original member; consumer binding only, no independent zero-data placement."
+    },
+    {
+      "name": "dxball_crt_invalid_io",
+      "symbol": "_dxball_crt_invalid_io",
+      "source_offset": 24,
+      "size": 8,
+      "target_address": "0x00423888",
+      "original_member": {
+        "name": "build\\intel\\st_obj\\ioinit.obj",
+        "header_offset": 524504,
+        "sha256": "fb65367e592eaa996273587c64acc8c6572fa1d35a4cd93255f32d51f3995246",
+        "symbol": "___badioinfo",
+        "section_index": 1,
+        "offset": 0
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-16T14-38-21.002Z-state-requests-956842/00-read_bytes.json",
+      "evidence_id": "ev_85bc5f1db1f3c2d3b5c17188767e792a3bc2af4aa9e3c58b854bb536830452da",
+      "placement_basis": "Unique complete initialized eight-byte record in the original carrier."
+    }
+  ],
+  "scope": "Six complete typed globals. The invalid-record placement is unique; zero-state placements retain the stated limits. This is not a contiguous 32-byte original record or a new function/exact claim. Other fields from the original 72-byte crt0dat section belong to their existing state owners.",
+  "research": "docs/research/exact/RUNTIME_IO_STATE.md"
+}

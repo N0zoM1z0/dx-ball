@@ -1,5 +1,10 @@
 # CRT file opening
 
+Later [I/O state recovery](RUNTIME_IO_STATE.md) supplies the real zero defaults,
+creation mask and error words. Physical file checks cover text/binary defaults,
+explicit text override, commit selection and read-only creation. These opening
+bodies and their accepted comparisons remain unchanged.
+
 Five complete source bodies restore both stream wrappers, mode parsing,
 descriptor allocation and the underlying OS open flow. The two wrappers and
 mode parser are whole exacts across584 bytes and all19 actual bindings.

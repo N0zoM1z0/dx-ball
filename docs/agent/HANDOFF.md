@@ -1,15 +1,26 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after actual CRT process-entry and SEH exit checks.
+Updated October 16, 2026, after restoring I/O state and checking physical files.
 Current totals are 475 source entries, 380 exacts and 95 complete candidates.
-The restored CRT startup now runs at the PE entry point with all48 production
-objects reused and zero production compilations. Real OS command/environment,
-version, heap/CP, FP/XI/XC and exit paths pass: normal31, quoted/show32 and
+Six formerly external I/O globals now have typed source: error/DOS state,
+creation mask, file/commit defaults and the invalid-descriptor record.
+Their 28 typed bytes match the original values and actual linked data. A real
+CRT-entry process passes physical binary/text I/O, mode overrides, commit flags,
+read-only creation and both error words. Of 64 maintained source objects, 63 are
+reused; only the state owner compiles. Full-game integration remains open:
+adding the whole original LIBC duplicates recovered startup/data owners.
+Use explicit members and typed standard-name adapters instead. The MinGW SDK's
+errno macro also needs a policy before adopting this state owner there.
+The preceding entry-only image runs restored CRT startup at the PE entry point
+with all 48 production objects reused and zero production compilations.
+Real OS command/environment, version, heap/CP, FP/XI/XC and exit paths pass:
+normal31, quoted/show32 and
 native SEH quick exit0xC0000005. The full390-byte entry/12-byte scope and13 whole
 linked source bodies match their emitted objects. FP52/nine and CRT84/thirteen
 data bindings remain correct. WinMain is an observed fixture; real game/Win32
 binding remains open. All function ledgers/reports and249 semantic rows are
-byte-identical. No full replay or provider query ran.
+byte-identical. No full replay ran; the new state check reads 16 original data
+bytes in one closed REA session, reusing the preceding 72-byte error-state record.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -152,6 +163,15 @@ pass through the maintained consumers and typed fixture boundaries. The whole
 original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
+
+The new [I/O state owner](../research/exact/RUNTIME_IO_STATE.md) fills six missing
+definitions without changing existing headers or function producers. Its recipe
+is `config/runtime-io-state.json`. The image with 64 source objects uses actual
+Kernel32 files and source flush/close owners, with no flush/close fixture.
+The complete eight-byte invalid record is uniquely placed; zero words retain their
+stated placement limits. Native C90 passes. A MinGW compilation exposes its SDK
+errno accessor macro; that CRT integration remains open. Private game-entry and
+standard-name adapters remain diagnostic after the whole-LIBC link conflict.
 
 The complete entry now runs as the PE entry of a Windows-subsystem image,
 including real command/environment and startup fields. Two normal returns and
@@ -353,6 +373,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 I/O state | Six complete globals/28 typed bytes;64 source owners,63 reused; real entry and physical binary/text/default-mode/mask/error checks | [I/O state](../research/exact/RUNTIME_IO_STATE.md); `.analysis/crt-game-entry-20261016/io-verification.json` |
 | October 16 actual CRT entry | 48 source owners reused; real OS argv/environment/show; normal31/quoted32/SEH quick0xC0000005;390-byte entry/12-byte scope and13 linked bodies | [Entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md); `.analysis/crt-full-entry-20261016/verification.json` |
 | October 16 FP startup | Actual FP/controller/XI/XC/XP/XT flow; 41 source owners, 40 reused; 52 FP data bytes/nine bindings and 84 CRT bytes/thirteen bindings; eight real conversion calls | [FP startup](../research/exact/RUNTIME_FP_STARTUP.md); `.analysis/crt-fp-startup-20261016/verification.json` |
 | October 16 locale category/code-page owner | Six real 32-bit LCIDs and code-page word; relative 28-byte layout; 12 category calls/four selector scenarios; no new absolute placement or exact claim | [Locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md); `.analysis/locale-handles-source-20261016/adoption.json` |
@@ -438,6 +459,15 @@ question, not merely the smallest differing-position count.
   Preserve that binding and the live heap when replacing host startup. Reuse the
   48-object closure and current state recipes. The full game and original tail
   transports remain unfinished.
+
+- The I/O state definitions now support actual source stdio and physical files.
+  Reuse the 64 source objects and `config/runtime-io-state.json`. The staged
+  real-game link needs explicit low-level member selection and typed adapters;
+  whole LIBC pulls duplicate CRT startup/data and unwanted main. Do not force
+  duplicate definitions or repeat that unchanged link. Keep .CRT$XIC stdio
+  before onexit, as recorded in the existing entry recipe. The MinGW errno
+  macro needs an explicit policy when that restored-CRT profile is integrated;
+  existing default game profiles do not include the new state owner.
 
 - Locale handles/code page now have a source owner. Keep six 32-bit category
   values even on LP64; the null-address recipe records the absence of independent

@@ -1,5 +1,10 @@
 # CRT reading and handle lifetime
 
+Later [I/O state recovery](RUNTIME_IO_STATE.md) supplies the error words,
+creation/default modes and invalid-descriptor record. A real CRT-entry process
+now checks physical binary/text files and error publication without changing
+these function bodies or their comparison results.
+
 Four complete source bodies now cover descriptor reads, closes, handle
 installation and handle invalidation. Closing and invalidation are complete exacts.
 
