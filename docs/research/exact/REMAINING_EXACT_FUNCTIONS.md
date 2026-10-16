@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after exact exit bootstrap and default stdio cleanup.
-Accepted totals are **379 functions / 77,292 code bytes / 244 metadata bytes**.
+Updated October 16, 2026, after exact stdio initialization and stream storage.
+Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
 There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
 These 88 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 75 of the 542 independent inventory entries lack a
+report gaps. Another 75 of the 543 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -21,6 +21,10 @@ Two omitted complete runtime functions add74 exact bytes: onexit bootstrap54
 and stdio finalizer20. Default pretermination storage now invokes the finalizer;
 all prior exact and candidate byte results are preserved. See
 [exit bootstrap](RUNTIME_TERMINATION_BOOTSTRAP.md).
+
+The omitted193-byte stdio initializer is also exact, with644 initialized data
+bytes/two bindings restored. Prior exact/candidate results remain unchanged.
+See [stdio initialization](RUNTIME_STDIO_INITIALIZATION.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.

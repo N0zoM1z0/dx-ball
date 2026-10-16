@@ -92,8 +92,8 @@ covering77,292 code bytes plus244 attached metadata bytes. All377 prior exact
 results and all88 candidates are unchanged. Unaffected objects, complete input
 identities and results are reused; no full historical replay or game build ran.
 
-Remaining work includes the XI registration table, the pinned `_file.obj`
-193-byte stdio initializer and its standard-stream storage, wider CRT storage
-and linkage, remaining low-level functions, and the final VC4 game/play check.
-The initializer's target placement has not yet been accepted. These standalone
-owners remain outside the current experimental game build.
+The subsequent [stdio initialization recovery](RUNTIME_STDIO_INITIALIZATION.md)
+accepts the complete193-byte initializer at0x41DA90 and644-byte stream storage,
+and observes the correct XI contents. XI source/linker registration, wider CRT
+storage/linkage, remaining low-level functions and the final VC4 game/play check
+remain open. These standalone owners remain outside the current game build.

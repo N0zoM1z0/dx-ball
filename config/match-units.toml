@@ -12921,3 +12921,34 @@ relocations = [
   { offset = 44, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
   { offset = 49, type = "DIR32", symbol = "_dxball_onexit_end", addend = 0, target = 0x00440D78 },
 ]
+
+[builds.runtime_stdio_initialization]
+source = "src/runtime_stdio_initialization.c"
+object = "build/exact/runtime_stdio_initialization.obj"
+inputs = ["src/allocator.h", "src/runtime_fatal.h", "src/runtime_file_modes.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_resize.h", "src/runtime_stdio_initialization.c", "src/runtime_stdio_initialization.h", "src/runtime_stream.h", "src/runtime_stream_transfer.h", "src/state_types.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
+[units.crt-initialize-stdio]
+build = "runtime_stdio_initialization"
+symbol = "_dxball_crt_initialize_stdio"
+target_address = 0x0041DA90
+size = 193
+boundary_evidence = "docs/research/exact/RUNTIME_STDIO_INITIALIZATION.md"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 12, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 24, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 33, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 44, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 50, type = "REL32", symbol = "_dxball_runtime_calloc", addend = 0, target = 0x0041F590 },
+  { offset = 58, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 68, type = "DIR32", symbol = "_dxball_crt_stream_limit", addend = 0, target = 0x0043FC54 },
+  { offset = 81, type = "REL32", symbol = "_dxball_runtime_calloc", addend = 0, target = 0x0041F590 },
+  { offset = 89, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 100, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x00418930 },
+  { offset = 108, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 0, target = 0x00424058 },
+  { offset = 116, type = "DIR32", symbol = "_dxball_crt_streams", addend = 0, target = 0x0043FC58 },
+  { offset = 138, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 16, target = 0x00424058 },
+  { offset = 157, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
+  { offset = 185, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 112, target = 0x00424058 },
+]

@@ -1,11 +1,10 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after exact exit bootstrap and stdio finalization.
-Current totals are 467 source entries, 379 exacts and 88 complete candidates.
-Two omitted complete functions add74 exact code bytes. The real default
-pretermination table now invokes stdio cleanup. The affected native owner's
-1,031 calls pass; four existing semantic rows are refreshed, total249 unchanged.
-Unchanged function products/results are reused without a full replay.
+Updated October 16, 2026, after exact stdio initialization and stream storage.
+Current totals are468 source entries,380 exacts and88 complete candidates.
+The omitted193-byte initializer is exact;644 initialized data bytes/two bindings
+match. Fourteen focused original/native calls pass. All379 prior exact products
+and results are reused; all249 semantic rows remain byte-identical this phase.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -50,18 +49,18 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional independent function inventory | 542 |
+| Provisional independent function inventory | 543 |
 | Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 467 |
-| Accepted exact functions | 379 |
-| Complete exact code bytes | 77,292 |
+| Source-present independent entries | 468 |
+| Accepted exact functions | 380 |
+| Complete exact code bytes | 77,485 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 75 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 242 runtime / 21 compiler-generated / 9 unknown |
+| Inventory origins | 270 authored / 243 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
@@ -149,12 +148,21 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+The complete193-byte stdio initializer now matches all16 bindings. A separate
+storage owner supplies the original20 stream records,4096-byte input buffer,
+request counter and table state; initialized644 bytes/two bindings match.
+Fourteen original/native calls cover limits, fallback/fatal26 and invalid/null
+standard handles. The correct12-byte XI range confirms both initialization
+entries in order; reconstructed section registration and full startup remain
+open. No existing consumer/header or historical scope changes. See
+[stdio initialization](../research/exact/RUNTIME_STDIO_INITIALIZATION.md).
+
 The complete54-byte onexit initializer and20-byte stdio finalizer are now exact.
 The initialized pretermination/termination arrays have a separate source owner;
 controller128 and both18-byte wrapper exacts are preserved, walker32/6 unchanged.
 Actual private-heap registration/growth, returning cleanup and physical exit
 probes pass with controlled stdio/fatal dependencies. Only the affected native
-scope and eight retained-object calls ran. XI registration, stdio initialization
+scope and eight retained-object calls ran. XI source registration
 and final CRT/game linkage remain open. See
 [exit bootstrap and default cleanup](../research/exact/RUNTIME_TERMINATION_BOOTSTRAP.md).
 
@@ -473,6 +481,11 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The stdio-initialization phase shared19 identical immutable header snapshots
+and a closed-run catalog, reclaiming about8.4MiB. Unique products and before
+ledgers remain; canonical objects retain independent inodes. Receipt:
+`.analysis/stdio-initialization-source-20261016/cleanup.json`.
 
 The exit-bootstrap phase shared47 byte-identical immutable evidence carriers,
 reclaiming about13.7MiB. Unique trial sources, diagnostics and products remain;

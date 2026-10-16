@@ -1,0 +1,84 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "source": "src/runtime_stdio_state.c",
+  "header": "src/runtime_stdio_initialization.h",
+  "inputs": [
+    "src/allocator.h",
+    "src/runtime_file_modes.h",
+    "src/runtime_lowio.h",
+    "src/runtime_lowio_read.h",
+    "src/runtime_stdio_initialization.h",
+    "src/runtime_stdio_state.c",
+    "src/runtime_stream.h",
+    "src/runtime_stream_transfer.h",
+    "src/state_types.h"
+  ],
+  "flags": [
+    "/nologo",
+    "/c",
+    "/O2",
+    "/Ob0",
+    "/Oi-",
+    "/Gd",
+    "/ML",
+    "/Gy"
+  ],
+  "object": "build/exact/runtime_stdio_state.obj",
+  "target_address": "0x00424058",
+  "size": 644,
+  "section": ".data",
+  "writable": true,
+  "symbols": [
+    {
+      "symbol": "_dxball_crt_standard_streams",
+      "offset": 0,
+      "size": 640
+    },
+    {
+      "symbol": "_dxball_crt_buffer_requests",
+      "offset": 640,
+      "size": 4
+    }
+  ],
+  "relocations": [
+    {
+      "offset": 0,
+      "type": "DIR32",
+      "symbol": "_dxball_crt_standard_input_buffer",
+      "addend": 0,
+      "target": 4455520
+    },
+    {
+      "offset": 8,
+      "type": "DIR32",
+      "symbol": "_dxball_crt_standard_input_buffer",
+      "addend": 0,
+      "target": 4455520
+    }
+  ],
+  "common_definitions": [
+    {
+      "symbol": "_dxball_crt_standard_input_buffer",
+      "size": 4096,
+      "target_address": "0x0043FC60",
+      "placement_evidence": "Both serialized standard-input pointers in the unique initialized record."
+    },
+    {
+      "symbol": "_dxball_crt_stream_limit",
+      "size": 4,
+      "target_address": "0x0043FC54",
+      "placement_evidence": "Existing complete stream consumers and the initializer; no standalone unique zero-data anchor."
+    },
+    {
+      "symbol": "_dxball_crt_streams",
+      "size": 4,
+      "target_address": "0x0043FC58",
+      "placement_evidence": "Existing complete stream consumers and the initializer; no standalone unique zero-data anchor."
+    }
+  ],
+  "evidence_path": ".analysis/rea/runs/2026-10-16T10-56-09.215Z-requests-717911/00-read_bytes.json",
+  "evidence_id": "ev_84d4a2a7fd9c983f31ccc78b78acfc3b32119d64c608e4d17ec5c3f60cd8803b",
+  "original_member": ".analysis/crt-termination-bootstrap-20261016/members/000bb106.obj",
+  "original_member_sha256": "fdb5cef7b6700d53844123e04114fd356b3bf69eea56262cda43821ff2a6c170",
+  "scope": "Complete initialized644-byte source/member record and two actual bindings. Common storage widths come from the original member and typed consumers; no serialized4096-byte BSS comparison or complete linker layout claim."
+}
