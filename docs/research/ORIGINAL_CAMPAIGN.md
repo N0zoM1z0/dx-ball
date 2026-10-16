@@ -3,8 +3,10 @@
 ## Current restored-CRT original-bank prefix, October 17
 
 One full original-50 attempt uses current image `345a6887…` from source baseline
-`41fe125`. A saved checkpoint verifies the complete initial boards 0, 1 and 2
-(1,200 bytes) and progression through the first two unchanged original boards.
+`41fe125`. The latest saved checkpoint verifies the complete initial boards 0
+through 4 (2,000 bytes), with a ready gameplay witness for each, and progression
+through the first four unchanged original boards. The earlier three-board
+checkpoint remains retained separately.
 The entire 20,000-byte bank, all 49 immutable originals, current inputs and game
 products remain unchanged. This is verified prefix evidence, not a full campaign
 pass. The producer is still running at the checkpoint; no terminal receipt is
@@ -23,9 +25,17 @@ from 100 to 10 ms to reduce long throttling pauses; `cpu.max` changes from
 affinity, target code, clock APIs and input/controller code stay unchanged. This
 scheduling adjustment does not establish a measured frame-rate improvement.
 
+A later 49-second live resource window measures about 35% of one CPU and
+238 MiB current memory, with an observed peak of 252 MiB at that sample. No
+memory-high, memory-max or OOM events are recorded. This is a sampled running
+interval, not final lifetime resource accounting.
+
 Private `.analysis/restored-crt-original50-20261017/` retains frozen inputs,
 launch/observed kernel identities, live resource samples, the quota-period change
-and a sealed prefix snapshot. Its `tool-session.json` and `status.py` support
+and sealed three- and five-board prefix snapshots. The latter is
+`prefix-checkpoint-five/verification.json`; it checks all frozen inputs/products
+and all 49 originals again, with all three PID/start-tick identities live before
+and after capture. Its `tool-session.json` and `status.py` support
 checking the same producer; a saved snapshot alone does not establish liveness.
 Final original50 completion remains unproved at this checkpoint.
 

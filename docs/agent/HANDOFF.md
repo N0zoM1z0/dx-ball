@@ -12,9 +12,9 @@ from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
 One [current original50 producer](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
-is running at this checkpoint, with complete initial boards 0, 1 and 2 verified and
-the first two unchanged originals traversed. This is prefix evidence, not a
-full pass. **Do not launch a duplicate campaign or compiler/provider session.**
+is running at this checkpoint, with complete ready initial boards 0 through 4
+verified and the first four unchanged originals traversed. This is prefix
+evidence, not a full pass. **Do not launch a duplicate campaign or compiler/provider session.**
 The producer owns compiler-session.lock. Client exec session 47586 and private
 `.analysis/restored-crt-original50-20261017/tool-session.json` identify it; poll
 that handle and check saved PID/start-tick identities with `status.py`. Files
@@ -22,8 +22,12 @@ alone are not liveness proof. It reuses all products/reader and targets all 50
 initial slots plus terminal 50 / menu 0, with 14400 seconds total deadline. CPU stays
 35% on one CPU, memory high 640 / max 768 MiB; the host quota period changes 100→10ms
 at about 804 seconds without target clock/code/input changes. Frozen inputs,
-resource records and the sealed 1200-byte prefix remain private. Preserve actual
-terminal output when it arrives; do not infer completion or restart on a stale
+resource records and the sealed 2000-byte prefix remain private; the earlier
+1200-byte snapshot is retained separately. `prefix-checkpoint-five/verification.json`
+checks all frozen inputs/products and 49 originals, with three live kernel
+identities before/after capture. A 49-second sample measures 35% of one CPU and
+238 MiB current/252 MiB observed-peak memory, with no memory-limit/OOM events.
+Preserve actual terminal output when it arrives; do not infer completion or restart on a stale
 or temporarily unavailable progress read. All 34 authored candidates stay open.
 
 The [PCX workspace recheck](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#pcx-brick-hit-and-processor-controls-after-handoff)
@@ -234,11 +238,14 @@ operand exchange explains the one-byte extent difference and shifted suffix;
 reversing source operands leaves the complete code unchanged. Seven exact
 companions retain 2,775 bytes. Do not repeat this spelling trial.
 
-The bounded original prefix review covers 289 source-present spans in
-`0x401000..0x4165FF`, including all 270 currently authored entries. Its 259 gaps
-contain only 2,145 CC bytes. Unknown 40CC20 remains unknown; this does not prove a
-final authored denominator or whole-CRT completeness. The [Windows raster
-binding](../research/RASTER_WIN32_DEFAULTS.md) and [C++ terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md)
+The [joined declared text review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#joined-declared-text-coverage)
+reconciles all 126,700 bytes from 401000 to 41FEEB across the source prefix, two
+import thunks/four CC bytes and the CRT suffix. All 475 original source-span hashes
+match their retained comparisons. No non-CC gap byte lacks an existing CRT owner;
+3,650 remaining gap bytes are CC. Unknown 40CC20 remains unknown, and interior
+entry points/final inventory/source optimality stay unproved. No compiler,
+provider, instruction decoding, runtime or replay follows this receipt audit.
+The [Windows raster binding](../research/RASTER_WIN32_DEFAULTS.md) and [C++ terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md)
 retain their current source and limits. Exceptional paths, complete gameplay
 and native Windows/driver fidelity remain open. REA stays pinned to 6.5.0.
 

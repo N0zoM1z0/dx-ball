@@ -72,3 +72,37 @@ Private `.analysis/crt-suffix-ownership-20261017/` retains both gap maps,
 seven section authorities, every byte classification, before ledgers and the
 extent adoption. The earlier [dependency coverage](CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
 and [authored prefix review](../../agent/HANDOFF.md) retain their own boundaries.
+
+## Joined declared text coverage
+
+A subsequent receipt audit joins those boundaries across the original `.text`
+section, without compiling, decoding instructions or opening a provider session.
+The section is the PE's only section marked executable. Its declared extent is
+`0x401000..0x41FEEB`, or 126,700 bytes:
+
+| Range, end exclusive | Bytes | Reconciled coverage |
+| --- | ---: | --- |
+| `0x401000..0x416600` | 87,552 | 289 complete source comparison spans; 2,145 CC gap bytes |
+| `0x416600..0x416610` | 16 | Two existing six-byte import thunks; four CC bytes |
+| `0x416610..0x41FEEC` | 39,132 | Current inventory/fragments and the matched CRT sections above |
+
+The bridge bytes are `ff252c124400ff2534124400cccccccc`: the existing
+DirectDrawCreate and DirectSoundCreate import receipts bind the first twelve
+bytes. The four remaining bytes complete the interval between the earlier
+reviews. All 475 source-present entries have their original target-span hashes
+checked against their retained complete comparisons. The current 553 inventory
+entries, 24 parent fragments and 78 complete no-source receipts reconcile with
+those spans; no source or exact acceptance changes.
+
+Across these coverage bases, 4,472 bytes lie outside declared entry spans:
+814 belong to already matched CRT code sections, eight are the runtime signature
+and 3,650 are remaining CC bytes. No non-CC gap byte lacks an existing owner.
+This closes the address-range join, not the final independent-function inventory:
+possible interior entries, raw section tail semantics and data used as code are
+outside the claim. Source-present no-op `0x40CC20` still has unknown authorship;
+all 34 authored candidates remain nonexact. Source optimality and complete game
+behavior are not established by this byte audit.
+
+Private `.analysis/declared-text-coverage-20261017/proof.json` retains all 475
+target span hashes, segment arithmetic, bridge authorities and input identities.
+The current game image and running original50 producer remain unchanged.
