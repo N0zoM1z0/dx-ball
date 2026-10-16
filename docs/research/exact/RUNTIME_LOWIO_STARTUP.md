@@ -1,5 +1,10 @@
 # Low-I/O startup and fatal errors
 
+October 16 [CRT-entry follow-up](RUNTIME_ENTRY.md) restores the original GUI
+application-type initializer2 in the fatal owner. Both exact code results, the
+full format candidate and catalog/string contents are rechecked unchanged.
+The following earlier checkpoint totals retain their historical scope.
+
 Four complete bodies now have maintained source. Fatal dispatch at `0x418930`
 is42-byte exact, not the imported38-byte prefix: the trailing stack cleanup and
 return are included. Banner dispatch at `0x41C800` is61-byte exact. All nine

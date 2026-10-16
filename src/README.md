@@ -30,6 +30,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [list_initializers.cpp](list_initializers.cpp) | Global list owners and their C++ constructors |
 | [runtime_text_host.c](runtime_text_host.c) | Unix implementation of the score caller's decimal conversion boundary |
 | [board_inspector.c](board_inspector.c), [resource_inspector.c](resource_inspector.c) | Command-line board and image/sprite-bank inspection |
+| [runtime_entry.c](runtime_entry.c) | Exact original WinMain CRT startup, version/command state and real SEH; standalone owner outside the CMake game library |
 | [runtime_cpp_catch.cpp](runtime_cpp_catch.cpp) | Exact catch invocation, current exception/context storage, rethrow and finally cleanup; standalone Win32 SEH CRT owner |
 | [runtime_cpp_unwind.cpp](runtime_cpp_unwind.cpp) | Exact state-map unwinding with real Win32 SEH and the original frame-setting transport; standalone CRT owner outside the CMake game library |
 | [runtime_cpp_object.cpp](runtime_cpp_object.cpp) | Catch-object construction and exception-object destruction with real member ABI and Win32 SEH; standalone CRT owner outside the CMake game library |

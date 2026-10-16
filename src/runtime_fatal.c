@@ -2,7 +2,7 @@
 #include <string.h>
 
 int dxball_crt_error_mode;
-int dxball_crt_application_type;
+int dxball_crt_application_type = 2;
 DxBallCrtCallback dxball_crt_debug_message;
 DxBallCrtExitRoutine dxball_crt_exit_routine = dxball_crt_quick_exit;
 
