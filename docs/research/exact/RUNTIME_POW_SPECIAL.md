@@ -18,3 +18,13 @@ This remains a candidate, not exact. All 316 exacts and 104 older candidates
 retain unchanged inputs and products. Four VC4/native/i686 compilation sets
 completed; no runtime/game checks. Products and full comparisons are retained in
 `.analysis/runtime-pow-special-20261014/`.
+
+An October 16 control tests the shipped `fltintrn.h` single-field DOUBLE record
+for both materialized negative-infinity result copies. One VC4 compilation
+emits 584 bytes with 16 differences, worsening the maintained eight-difference
+result. Native/i686 C90 compilation passes. The record changes integer copy
+order without recovering the original scheduling; no original `powhlp.c`
+spelling is established. The trial is rejected, the maintained source restored
+by hash and all ledgers/reports preserved. Do not sweep record/field forms.
+Private receipts: `.analysis/pow-original-double-record-20261016/`. Only this
+complete function was compared; no full replay, new provider or runtime run.

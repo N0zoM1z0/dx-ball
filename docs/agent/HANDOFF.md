@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after integer-snapshot checkpoint `35f9b10` and the
-C++ allocation entry/build binding repair below. Function source/exact totals,
-all 376 accepted comparison rows and all 88 candidate rows are unchanged.
-Historical semantic scopes are retained with explicit dependency input refresh.
+Updated October 16, 2026, after C++ allocation checkpoint `db85520` and the
+two complete x87 dispatch origin proofs below. A bounded pow DOUBLE-record
+trial is rejected and source restored. All source/exact/semantic ledgers and
+376 accepted/88 candidate comparison rows are unchanged by this checkpoint.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -59,10 +59,10 @@ An exact-function count is progress, not the completion criterion.
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 56 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 219 runtime / 21 compiler-generated / 10 unknown |
+| Inventory origins | 270 authored / 221 runtime / 21 compiler-generated / 8 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and 10 unknown origins remain open.
+The authored denominator and eight unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
@@ -87,6 +87,14 @@ native fixture binds the two real C++ dependency operands to its existing
 typed callbacks; uninstrumented probes verify production paths separately.
 No full replay, final game build or play claim follows from these checks.
 See [the allocation entry repair](../research/ALLOCATOR_OWNER.md#actual-c-allocation-entries-october-16-2026).
+
+Two complete named x87 routines now have proven runtime origins:
+`__ctrandisp1`44 and `__fload`60. The complete relocation-free loader uniquely
+places its text section; the dispatcher binds the independently proven
+`__trandisp1`. Its unrelocated calls, including the shared418A3E dependency,
+are reviewed explicitly. The shared BSS-dependent handler and full589-byte
+section remain unverified. No source or exact gain follows; see
+[dispatch tail](../research/exact/RUNTIME_X87_DISPATCH_TAIL.md).
 
 Current accounting is 520 independent entries plus 24 parent-owned compiler
 fragments, preserving all 544 previously recorded addresses. The twenty
@@ -259,9 +267,11 @@ question, not merely the smallest differing-position count.
   the pinned named descriptor family are covered; unmatched fmod/sinh/cosh/tanh
   records are not added. The last32-byte sqrt owner reuses the prior448 bytes.
   Prefix constants remain outside the trig/transcendental record claims.
-  Their original opaque machine entries and low-level helpers
-  remain open. The seven C-dispatcher entries still lack independent authority
-  for LocalFac/intrinflag BSS; do not infer those addresses from code operands.
+  Their original opaque machine entries and low-level helpers remain open.
+  Two BSS-free C-dispatch bodies have complete origin proofs; the other five
+  entries still lack independent authority for LocalFac/intrinflag BSS. Do not
+  infer those addresses from code operands. The scalar/intrinsic trig entry
+  inventory observed in87ctrig.obj needs a separate complete CFG/binding review.
   See [operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md).
 - Foreign handling now carries the original one-past catch-list pointer through
   its final type checks, subtracting only for the transfer argument. Its remaining
@@ -290,6 +300,9 @@ question, not merely the smallest differing-position count.
   22 differences; C mode makes raising exact but loses the 704-byte handling
   exact. Full original fpexcept ownership also worsens raising. These controls
   are closed unless new evidence changes the question.
+- Pow's single-field DOUBLE result-copy control emits584/16, worsening the
+  maintained584/8. It is rejected with source restored; do not repeat record or
+  field forms. See [pow source](../research/exact/RUNTIME_POW_SPECIAL.md).
 - The 34 authored bodies include frame/render/resource flows. Their whole-body
   comparisons and evidence links are in the remaining-functions table and
   `match-units.toml`. Preserve accepted companions when changing shared inputs.
