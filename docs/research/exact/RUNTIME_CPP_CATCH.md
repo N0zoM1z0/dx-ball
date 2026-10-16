@@ -1,5 +1,9 @@
 # C++ catch-block invocation and cleanup
 
+Later inventory follow-up: [the omitted catch guard](RUNTIME_CPP_CATCH_GUARD.md)
+is now recorded, with full guard/transport origin proofs. The wrapper-adoption
+totals below precede that inventory reconciliation.
+
 `src/runtime_cpp_catch.cpp` restores the complete catch-block wrapper at
 `0x0041B820`. Its **272 code bytes and 24 scope bytes match exactly**, after
 all 17 code and three scope relocations. The previous 213-byte imported extent

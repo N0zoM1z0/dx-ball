@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after frame-unwind checkpoint `f3b52c0` on
-`origin/main` and the complete catch-block wrapper recovery below. The wrapper's
-272 code / 24 scope bytes are exact, and it now owns initialized current
-exception/context state. REA is pinned to 6.5.0.
+Updated October 16, 2026, after exact catch-wrapper checkpoint `b1df015`
+on `origin/main` and the catch-guard inventory reconciliation below. The wrapper
+is complete and exact; the omitted guard is now recorded with a proven runtime
+origin. Its low-level source remains open. REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
 This document describes the current state, not a running history.
@@ -47,7 +47,7 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional function inventory | 543 |
+| Provisional function inventory | 544 |
 | Source-present entries | 463 |
 | Accepted exact functions | 372 |
 | Complete exact code bytes | 76,452 |
@@ -55,12 +55,12 @@ An exact-function count is progress, not the completion criterion.
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 3 |
-| Inventory entries without a source-present ledger row | 80 |
+| Inventory entries without a source-present ledger row | 81 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 211 runtime / 45 compiler-generated / 17 unknown |
+| Inventory origins | 270 authored / 213 runtime / 45 compiler-generated / 16 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and 17 unknown origins remain open.
+The authored denominator and 16 unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
@@ -68,10 +68,16 @@ now lists all 88 maintained candidates.
 Three additional source-present entries remain in `src/allocator.c`: physical
 HeapFree, HeapAlloc and HeapCreate wrappers. Five other allocator entries now
 have complete exact acceptance. Thus 88 is not the total remaining work:
-91 source-present entries are not exact, and another 80 inventory entries lack
+91 source-present entries are not exact, and another 81 inventory entries lack
 a source-present row. The remaining-functions page lists the three gaps.
 
-The October 16 catch-wrapper checkpoint has 543 / 463 / 372. Its complete
+The current state is 544 / 463 / 372 after reconciling the omitted 41-byte
+CatchGuardHandler. The complete 98-byte catch transport and guard match the
+pinned CRT sections with all actual bindings. Neither has restored source;
+the guard retains a real CLD operation. The source/exact ledgers are unchanged
+by origin review. See [catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md).
+
+The preceding catch-wrapper checkpoint added one exact source. Its complete
 272-byte body and 24-byte scope table match after all 17 code and three scope
 bindings. The earlier 213-byte imported boundary omitted exception tails and
 the pointer return. The full eight-byte initialized current exception/context
@@ -132,6 +138,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 catch guard | One omitted 41-byte callback reconciled; complete transport/guard origins; inventory 544, exact unchanged | [Catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md); `.analysis/cpp-catch-guard-origin-20261016/adoption.json` |
 | October 16 catch wrapper | Complete 272 code / 24 scope bytes exact; both current-state pointers recovered; total 372 | [Catch invocation](../research/exact/RUNTIME_CPP_CATCH.md); `.analysis/cpp-catch-block-source-20261016/adoption.json` |
 | October 16 frame unwind | Complete 206 code / 12 scope bytes exact; total 371 | [Frame unwind](../research/exact/RUNTIME_CPP_UNWIND.md); `.analysis/cpp-frame-unwind-source-20261016/adoption.json` |
 | October 16 C++ object | Two complete sources; destruction 113 code / 12 scope bytes exact; construction 510 / 4 differences; total 370 | [C++ object source](../research/exact/RUNTIME_CPP_OBJECT.md); `.analysis/cpp-exception-object-source-20261016/adoption.json` |
@@ -197,7 +204,7 @@ question, not merely the smallest differing-position count.
   one consistent import-cell owner. Read [allocator ownership](../research/ALLOCATOR_OWNER.md)
   before revisiting them: shared public cells and an allocator-only import header
   both lose accepted companions and are closed controls. Do not rebase one table
-  differently per function. The 80 inventory entries without source rows remain
+  differently per function. The 81 inventory entries without source rows remain
   in scope.
 - The C++ terminal owner now supplies callback state and two real nested SEH
   scopes. Its source requires a Win32 SEH-capable compiler; VC4 and Clang Win32
@@ -207,7 +214,8 @@ question, not merely the smallest differing-position count.
   is now complete and exact. [Catch invocation and cleanup](../research/exact/RUNTIME_CPP_CATCH.md)
   now have a complete exact wrapper and current-state storage. Frame-setting
   and catch transports, guard callbacks, remaining transfer helpers and full
-  dispatcher integration remain open. The
+  dispatcher integration remain open. The 41-byte catch guard is now included
+  in the inventory; preserve its observed CLD and original forwarding contract. The
   three member-call trampolines have proven runtime origins but no restored bodies.
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/
   general regressions and exponent improvement together if pursuing that owner;
