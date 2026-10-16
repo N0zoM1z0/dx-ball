@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after scalar trig inventory and dispatch constant recovery.
+Updated October 16, 2026, after the SEH collision callback and CRT entry review.
 Accepted totals are **376 functions / 76,908 code bytes / 244 metadata bytes**.
-There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
+There are **89 complete nonexact comparisons: 34 authored, 54 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 88 are all currently source-present nonexact entries. The eight allocator
+These 89 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 60 of the 524 independent inventory entries lack a
+report gaps. Another 75 of the 540 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -105,6 +105,7 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-raise-float-exception` | 876 | 876 | 22 |
 | `crt-write-descriptor` | 555 | 555 | 22 |
 | `crt-initialize-lowio` | 467 | 467 | 32 |
+| `crt-unwind-handler` | 34 | 31 | 34 |
 | `crt-right-mantissa96` | 54 | 48 | 35 |
 | `crt-left-mantissa96` | 62 | 50 | 47 |
 | `crt-strncpy` | 36 | 58 | 56 |

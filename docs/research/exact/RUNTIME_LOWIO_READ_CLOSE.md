@@ -3,6 +3,15 @@
 Four complete source bodies now cover descriptor reads, closes, handle
 installation and handle invalidation. Closing and invalidation are complete exacts.
 
+An October 16 private control follows the shipped `read.c` scalar counts,
+independent error state and structured translation branches. It emits600/611
+bytes with533 differences, against the maintained609/611/473, and is rejected.
+A second control retains the maintained body and uses the shipped `ioinfo`
+char/char flag/lookahead declarations; its complete result is unchanged.
+Both pass native/i686 compilation. Canonical source, headers, products and
+claims remain unchanged; do not repeat these models without new evidence.
+Private receipts: `.analysis/read-original-state-20261016/`.
+
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
 | `_read`, `0x41A120` | 611/609 | 473 |

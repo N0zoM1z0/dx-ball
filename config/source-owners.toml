@@ -599,3 +599,8 @@ additional_inputs = ["src/runtime_cpp_handler.h", "src/runtime_cpp_transfer.h", 
 source = "src/runtime_entry.c"
 header = "src/runtime_entry.h"
 additional_inputs = ["src/runtime_arguments.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_multibyte.h", "src/allocator.h", "src/allocator_imports.h", "src/runtime_environment.h", "src/runtime_locale_backends.h", "src/runtime_case_conversion.h", "src/runtime_resize.h", "src/runtime_initialization.h", "src/runtime_lowio_startup.h", "src/runtime_codepage.h", "src/runtime_signals.h", "src/platform.h", "src/device.h", "src/display.h", "src/runtime.h", "src/core.h", "src/balls.h", "src/gameplay.h", "src/boards.h", "src/board_storage.h", "src/explosion_types.h", "src/resources.h"]
+
+[owners.runtime_seh]
+source = "src/runtime_seh.c"
+header = "src/runtime_seh.h"
+additional_inputs = ["src/state_types.h"]
