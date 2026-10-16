@@ -1,11 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October16,2026, after XP/XT sections complete the84-byte CRT table.
-Counts remain468 source entries,380 exacts and88 complete candidates. All
-function products/results and the candidate report remain byte-identical.
-Actual VC4 returning cleanup and physical exits63/64 pass after XI/XC startup,
-with controlled stdio endpoints. The affected native1,031-call scope passes;
-four existing semantic input identities are refreshed, total249 unchanged.
+Updated October16,2026, after restoring two omitted unsigned64 helpers.
+Current totals are470 source entries,380 exacts and90 complete candidates.
+The original104/117-byte assembly helpers have complete327/280-byte C bodies
+with actual64-bit stdcall ABI; they remain nonexact. All990 logical arithmetic
+and12 emulated fault cases pass. Prior380 exact and88 candidate results/products
+are reused; all249 semantic rows remain byte-identical this phase.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -50,27 +50,27 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional independent function inventory | 543 |
+| Provisional independent function inventory | 545 |
 | Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 468 |
+| Source-present independent entries | 470 |
 | Accepted exact functions | 380 |
 | Complete exact code bytes | 77,485 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
-| Complete nonexact comparisons | 88 |
+| Complete nonexact comparisons | 90 |
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 75 |
-| Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 243 runtime / 21 compiler-generated / 9 unknown |
+| Nonexact origins | 34 authored / 55 runtime / 1 compiler-generated |
+| Inventory origins | 270 authored / 245 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
-now lists all 88 maintained candidates.
+now lists all 90 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
-three physical Heap API wrappers. All 88 source-present nonexact entries have
+three physical Heap API wrappers. All 90 source-present nonexact entries have
 complete candidate comparisons. Another 75 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
@@ -148,6 +148,15 @@ pass through the maintained consumers and typed fixture boundaries. The whole
 original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
+
+Two whole original sections missing from the inventory are now restored:
+unsigned64 division104 and remainder117. Natural32-bit-limb C preserves the
+64-bit return and stdcall16 ABI; VC4 emits327/280 bytes, so both remain candidates.
+All495 operand pairs per function match original/VC4/i686/native arithmetic;
+six zero-divisor cases each match emulated divide-error0. Preserved registers,
+stack cleanup and stack-only writes pass. The bounded library scan retains its
+three parse skips and excludes short/shared sections; no exhaustive inventory
+claim follows. See [unsigned64 arithmetic](../research/exact/RUNTIME_U64_ARITHMETIC.md).
 
 The complete84-byte CRT table now includes XP/XT and both end markers, with13
 actual callback bindings matching the retained original and linked VC4 image.
@@ -504,6 +513,11 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The unsigned64 phase shared eight identical immutable carriers and reclaimed
+about3.2MiB. Unique source, member, compiler and arithmetic/fault receipts remain;
+the canonical object has an independent inode. Receipt:
+`.analysis/crt-uninventoried-sections-20261016/cleanup.json`.
 
 The exit-section phase shared12 identical immutable carriers and reclaimed
 about3.6MiB. The successful native fixture library is archived alongside the

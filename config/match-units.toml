@@ -12952,3 +12952,25 @@ relocations = [
   { offset = 157, type = "DIR32", symbol = "___pioinfo", addend = 0, target = 0x00440C70 },
   { offset = 185, type = "DIR32", symbol = "_dxball_crt_standard_streams", addend = 112, target = 0x00424058 },
 ]
+
+[builds.runtime_u64_arithmetic]
+source = "src/runtime_u64_arithmetic.c"
+object = "build/exact/runtime_u64_arithmetic.obj"
+inputs = ["src/runtime_u64_arithmetic.c", "src/runtime_u64_arithmetic.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-u64-divide]
+build = "runtime_u64_arithmetic"
+symbol = "_dxball_crt_u64_divide@16"
+target_address = 0x0041FE00
+size = 104
+boundary_evidence = "docs/research/exact/RUNTIME_U64_ARITHMETIC.md"
+relocations = []
+
+[candidates.crt-u64-remainder]
+build = "runtime_u64_arithmetic"
+symbol = "_dxball_crt_u64_remainder@16"
+target_address = 0x0041FE70
+size = 117
+boundary_evidence = "docs/research/exact/RUNTIME_U64_ARITHMETIC.md"
+relocations = []

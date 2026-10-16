@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after exact stdio initialization and stream storage.
+Updated October 16, 2026, after complete C recovery of two omitted unsigned64 helpers.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
-There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
+There are **90 complete nonexact comparisons: 34 authored, 55 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 88 are all currently source-present nonexact entries. The eight allocator
+These 90 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 75 of the 543 independent inventory entries lack a
+report gaps. Another 75 of the 545 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -25,6 +25,11 @@ all prior exact and candidate byte results are preserved. See
 The omitted193-byte stdio initializer is also exact, with644 initialized data
 bytes/two bindings restored. Prior exact/candidate results remain unchanged.
 See [stdio initialization](RUNTIME_STDIO_INITIALIZATION.md).
+
+Two new complete runtime candidates cover unsigned64 division/remainder with
+actual stdcall16 and64-bit results. Their327/104 and280/117-byte comparisons
+remain nonexact;990 logical arithmetic cases and12 emulated fault cases pass.
+See [unsigned64 helpers](RUNTIME_U64_ARITHMETIC.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -142,6 +147,8 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-read-descriptor` | 611 | 609 | 473 |
 | `crt-decimal-output` | 923 | 922 | 535 |
 | `crt-parse-extended12` | 1871 | 1851 | 1662 |
+| `crt-u64-divide` | 104 | 327 | 322 |
+| `crt-u64-remainder` | 117 | 280 | 275 |
 
 ## Compiler-generated candidate
 
