@@ -12974,3 +12974,11 @@ target_address = 0x0041FE70
 size = 117
 boundary_evidence = "docs/research/exact/RUNTIME_U64_ARITHMETIC.md"
 relocations = []
+
+[candidates.crt-memcpy-entry]
+build = "runtime_memory_copy"
+symbol = "_dxball_crt_memcpy"
+target_address = 0x00416610
+size = 334
+boundary_evidence = "docs/research/exact/RUNTIME_MEMORY_COPY.md"
+relocations = []

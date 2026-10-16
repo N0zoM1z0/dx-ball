@@ -1,11 +1,12 @@
 # DX-Ball reconstruction handoff
 
-Updated October16,2026, after restoring two omitted unsigned64 helpers.
-Current totals are470 source entries,380 exacts and90 complete candidates.
-The original104/117-byte assembly helpers have complete327/280-byte C bodies
-with actual64-bit stdcall ABI; they remain nonexact. All990 logical arithmetic
-and12 emulated fault cases pass. Prior380 exact and88 candidate results/products
-are reused; all249 semantic rows remain byte-identical this phase.
+Updated October 16, 2026, after completing the ordinary-memory copy contracts.
+Current totals are 471 source entries, 380 exacts and 91 complete candidates.
+The missing memcpy entry now has shared C source; the existing memmove entry
+also handles reverse overlap. Both remain nonexact at 215/334 bytes each.
+All 1,688 layouts and eight unmapped zero-count cases pass. Prior 380 exact
+and 89 other candidate results/products are reused; all 249 semantic rows
+remain byte-identical. No full replay or new provider session was needed.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -52,26 +53,26 @@ An exact-function count is progress, not the completion criterion.
 | --- | ---: |
 | Provisional independent function inventory | 545 |
 | Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 470 |
+| Source-present independent entries | 471 |
 | Accepted exact functions | 380 |
 | Complete exact code bytes | 77,485 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
-| Complete nonexact comparisons | 90 |
+| Complete nonexact comparisons | 91 |
 | Source-present entries outside the two comparison reports | 0 |
-| Inventory entries without a source-present ledger row | 75 |
-| Nonexact origins | 34 authored / 55 runtime / 1 compiler-generated |
+| Inventory entries without a source-present ledger row | 74 |
+| Nonexact origins | 34 authored / 56 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 245 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
-now lists all 90 maintained candidates.
+now lists all 91 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
-three physical Heap API wrappers. All 90 source-present nonexact entries have
-complete candidate comparisons. Another 75 independent inventory entries lack
+three physical Heap API wrappers. All 91 source-present nonexact entries have
+complete candidate comparisons. Another 74 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
 native/Win32 evidence.
@@ -149,6 +150,15 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+Both 334-byte memcpy/memmove entries now have ordinary-memory C contracts,
+including overlap. Incoming EDX chooses only a zero-to-three-byte reverse
+prefix, so every grouping gives the same valid-memory result; no added argument
+or guessed register value is needed. Access widths/order remain different.
+The saved 13,376 original observations are reused for the generated comparison;
+1,688 layouts plus eight unmapped zero-count cases pass across original,
+VC4, i686 and native C. Both 215-byte bodies remain nonexact. See
+[memory copy](../research/exact/RUNTIME_MEMORY_COPY.md).
+
 Two whole original sections missing from the inventory are now restored:
 unsigned64 division104 and remainder117. Natural32-bit-limb C preserves the
 64-bit return and stdcall16 ABI; VC4 emits327/280 bytes, so both remain candidates.
@@ -217,7 +227,7 @@ ranges were already part of those units; they are now recorded in
 All four complete parent comparisons reproduce their retained results from
 the existing canonical object: three exact methods and the unchanged 88-byte
 triangle candidate. That reconciliation repeated no compiler/provider/runtime
-work and changed no source or exact claim. The 75
+work and changed no source or exact claim. The 74
 independent entries without source remain in scope. See
 [compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
 
@@ -391,7 +401,7 @@ question, not merely the smallest differing-position count.
   modifying `allocator.h`. Earlier controls that removed its public declaration
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
-  teardown and the 75 independent entries without source remain open.
+  teardown and the 74 independent entries without source remain open.
 - The decimal accumulator now snapshots three integer limbs explicitly. All five
   byte results remain unchanged; native/i686 C90 compilation passes. Shift masks
   and remaining register choices are closed controls without new evidence. Do

@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after complete C recovery of two omitted unsigned64 helpers.
+Updated October 16, 2026, after completing the ordinary-memory copy contracts.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
-There are **90 complete nonexact comparisons: 34 authored, 55 runtime and one
+There are **91 complete nonexact comparisons: 34 authored, 56 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 90 are all currently source-present nonexact entries. The eight allocator
+These 91 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 75 of the 545 independent inventory entries lack a
+report gaps. Another 74 of the 545 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -30,6 +30,11 @@ Two new complete runtime candidates cover unsigned64 division/remainder with
 actual stdcall16 and64-bit results. Their327/104 and280/117-byte comparisons
 remain nonexact;990 logical arithmetic cases and12 emulated fault cases pass.
 See [unsigned64 helpers](RUNTIME_U64_ARITHMETIC.md).
+
+Both memcpy/memmove entries now have complete ordinary-memory source, including
+overlap. Their 215/334-byte comparisons remain nonexact; 1,688 layouts and eight
+unmapped zero-count cases pass. The original EDX-dependent grouping preserves
+the final bytes without a hidden argument. See [memory copy](RUNTIME_MEMORY_COPY.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -142,7 +147,8 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-strcpy` | 232 | 198 | 232 |
 | `crt-strcat` | 224 | 291 | 276 |
 | `cpp-find-handler` | 659 | 658 | 326 |
-| `crt-memory-copy` | 334 | 124 | 333 |
+| `crt-memory-copy` | 334 | 215 | 327 |
+| `crt-memcpy-entry` | 334 | 215 | 329 |
 | `crt-write-error` | 494 | 493 | 412 |
 | `crt-read-descriptor` | 611 | 609 | 473 |
 | `crt-decimal-output` | 923 | 922 | 535 |
