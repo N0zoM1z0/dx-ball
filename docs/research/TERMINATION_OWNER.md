@@ -1,5 +1,14 @@
 # CRT termination owner
 
+## Linked exit sections
+
+The [complete CRT table recovery](exact/RUNTIME_EXIT_SECTIONS.md) places the
+existing arrays in XP/XT sections with their true end markers. All84 table
+bytes/13 bindings match. Returning, low-byte and physical normal/quick cleanup
+pass in a VC4 executable without a host CRT, with controlled stdio endpoints.
+The affected native1,031-call scope passes; all function products/results and
+counts remain unchanged. The following sections retain earlier checkpoints.
+
 ## Default cleanup and bootstrap, October16,2026
 
 The recovered54-byte onexit initializer and20-byte stdio finalizer are exact.

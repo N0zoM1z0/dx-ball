@@ -137,6 +137,25 @@
         "/MT",
         "/Gy"
       ]
+    },
+    "runtime_termination_tables": {
+      "source": "src/runtime_termination_tables.c",
+      "object": "build/exact/runtime_termination_tables.obj",
+      "inputs": [
+        "src/runtime_stdio_finalization.h",
+        "src/runtime_termination_tables.c",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
     }
   },
   "records": [
@@ -168,6 +187,22 @@
       "object": "build/exact/runtime_initializer_sections.obj",
       "section": ".CRT$XIZ",
       "target_address": 4329532,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "section": ".CRT$XPZ",
+      "target_address": 4329544,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "section": ".CRT$XTZ",
+      "target_address": 4329552,
       "size": 4,
       "relocations": [],
       "difference_count": 0
@@ -291,6 +326,30 @@
         }
       ],
       "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_termination_tables.obj",
+      "section": ".CRT$XPA",
+      "target_address": 4329536,
+      "size": 8,
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_end_stdio",
+          "addend": 0,
+          "target": 4316000
+        }
+      ],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_termination_tables.obj",
+      "section": ".CRT$XTA",
+      "target_address": 4329548,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
     }
   ],
   "table_ranges": [
@@ -309,6 +368,22 @@
       "begin_symbol": "___xi_a",
       "end_symbol": "___xi_z",
       "consumed_size": 12
+    },
+    {
+      "kind": "XP",
+      "target_address": 4329536,
+      "size": 12,
+      "begin_symbol": "_dxball_preterminators",
+      "end_symbol": "___xp_z",
+      "consumed_size": 8
+    },
+    {
+      "kind": "XT",
+      "target_address": 4329548,
+      "size": 8,
+      "begin_symbol": "_dxball_terminators",
+      "end_symbol": "___xt_z",
+      "consumed_size": 4
     }
   ],
   "same_section_link_order": {
@@ -402,8 +477,16 @@
       "symbol": "_dxball_crt_initialize_onexit",
       "original_address": 4323456,
       "function_exact": true
+    },
+    {
+      "offset": 68,
+      "unit": "crt-end-stdio",
+      "symbol": "_dxball_crt_end_stdio",
+      "original_address": 4316000,
+      "function_exact": true
     }
   ],
-  "scope": "Complete XC48/XI16 records and twelve source callback bindings. Table matching does not assert exactness of every called constructor or the board aggregate helper. Actual no-host-CRT initialization probe only; FP/full entry, exception dispatch, physical stdio, XP/XT section producers and final game remain open.",
-  "portability": "Shared declarations use VC4 data_seg or GNU section/used attributes. Native/i686 object compilation is checked; GNU/ELF linker integration is not claimed."
+  "scope": "Complete XC48/XI16/XP12/XT8 tables and thirteen actual source bindings. Existing two-slot pretermination array groups original XPA/XPX records into XPA. Real startup/returning and physical exits use controlled stdio/fatal/unused exception-dispatch boundaries. No FP/full entry, physical stdio backend, board aggregate exactness or final game claim.",
+  "portability": "Shared declarations use VC4 data_seg or GNU section/used attributes. Native/i686 object compilation is checked; GNU/ELF linker integration is not claimed.",
+  "pretermination_grouping": "The existing two-slot public array contributes both original XPA/XPX slots in CRT$XPA. XPZ follows at the original logical end; the emitted whole table and caller bounds match. This is a grouped source owner, not the original separate XPX producer."
 }

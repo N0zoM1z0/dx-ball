@@ -21,7 +21,7 @@
   "records": [
     {
       "symbol": "_dxball_preterminators",
-      "object_section": ".data",
+      "object_section": ".CRT$XPA",
       "object_offset": 0,
       "size": 8,
       "target_address": "0x00421040",
@@ -39,8 +39,8 @@
     },
     {
       "symbol": "_dxball_terminators",
-      "object_section": ".data",
-      "object_offset": 8,
+      "object_section": ".CRT$XTA",
+      "object_offset": 0,
       "size": 4,
       "target_address": "0x0042104C",
       "relocations": [],
@@ -50,5 +50,5 @@
   ],
   "evidence_path": ".analysis/rea/runs/2026-10-16T10-30-04.352Z-requests-671430/01-read_bytes.json",
   "evidence_id": "ev_e071555ff2a07f693cdf6788da722cec1f2704cd05724223a14276f33a3d58e8",
-  "scope": "Initialized default tables over two separate caller-bound ranges. Original XP/XTenclosing linker layout and XI initialization registration remain open. No additional exact function count."
+  "scope": "Initialized default arrays now contribute to sorted CRT exit sections, with XPZ/XTZ markers from runtime_initializer_sections.c. Original consumed8/4-byte ranges and the complete84-byte table match. Existing two-slot pretermination array groups original XPA/XPX records; no new function exact count."
 }

@@ -1,11 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October16,2026, after restoring XI/XC linker-section producers.
-Counts remain468 source entries,380 exacts and88 complete candidates. All four
-changed-owner functions retain exact bytes. The complete64-byte initialization
-prefix/twelve callback bindings matches; a VC4 entry without a host CRT runs
-actual heap/low-I/O, XI/XC, filter lifetime and nine list-root initialization.
-The candidate report and all249 semantic rows remain byte-identical.
+Updated October16,2026, after XP/XT sections complete the84-byte CRT table.
+Counts remain468 source entries,380 exacts and88 complete candidates. All
+function products/results and the candidate report remain byte-identical.
+Actual VC4 returning cleanup and physical exits63/64 pass after XI/XC startup,
+with controlled stdio endpoints. The affected native1,031-call scope passes;
+four existing semantic input identities are refreshed, total249 unchanged.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -149,6 +149,17 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+The complete84-byte CRT table now includes XP/XT and both end markers, with13
+actual callback bindings matching the retained original and linked VC4 image.
+The existing two-slot pretermination array groups original XPA/XPX records in
+XPA while preserving the public ABI and caller bounds. Returning normal/quick
+and low-byte cleanup, real filter restoration and physical exits63/64 pass
+following actual XI/XC startup. Only two data owners compile; all function
+producers/results stay unchanged. The affected native1,031-call scope refreshes
+four semantic input identities. Stdio/fatal/unused exception dispatch remain
+controlled dependencies; FP/full CRT entry, remaining function recovery and the
+final game remain open. See [exit sections](../research/exact/RUNTIME_EXIT_SECTIONS.md).
+
 XI/XC now use their real linker sections, including the previously ordinary
 C++ filter pointer in `.CRT$XCC`. Four null boundary records, three explicit
 registration records and nine reused C++ compiler contributions reproduce the
@@ -156,7 +167,7 @@ complete64-byte prefix/twelve bindings. The isolated VC4 image imports only
 KERNEL32 and uses a custom entry: actual heap/low-I/O initialization, both table
 walks, filter installation/restoration and nine prefilled list roots pass.
 All380 exact results remain; only three existing producer identities change.
-The board aggregate helper remains nonexact/unresolved. XP/XT sections, FP/full
+The board aggregate helper remains nonexact/unresolved. Later XP/XT section recovery closes the table layout; FP/full
 CRT entry and the final game remain open. See
 [initializer sections](../research/exact/RUNTIME_INITIALIZER_SECTIONS.md).
 
@@ -493,6 +504,11 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The exit-section phase shared12 identical immutable carriers and reclaimed
+about3.6MiB. The successful native fixture library is archived alongside the
+three Windows-process receipts and source snapshots; current data objects keep
+independent inodes. Receipt: `.analysis/crt-exit-sections-20261016/cleanup.json`.
 
 The initializer-section phase shared33 identical immutable carriers and
 reclaimed about10.5MiB. Unique source trials, provider read/error receipts and

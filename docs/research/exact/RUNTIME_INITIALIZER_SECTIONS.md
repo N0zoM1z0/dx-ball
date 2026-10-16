@@ -1,5 +1,10 @@
 # CRT initializer sections and linked startup stages
 
+The later [exit-section recovery](RUNTIME_EXIT_SECTIONS.md) extends this
+64-byte initialization prefix to the complete 84-byte table, including XP/XT,
+and checks returning cleanup and physical normal/quick exits. The following
+text retains the XI/XC checkpoint and its original scope.
+
 XI/XC now use real linker sections. Stdio and onexit contribute to `.CRT$XIC`;
 the C++ filter entry contributes to `.CRT$XCC`; four null records delimit XI
 and XC. The existing list object supplies nine compiler-generated `.CRT$XCU`

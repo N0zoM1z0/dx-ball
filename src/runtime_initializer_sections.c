@@ -29,6 +29,16 @@ DxBallCrtCallback __xc_a[] DXBALL_CRT_SECTION(".CRT$XCA") = { NULL };
 DxBallCrtCallback __xc_z[] DXBALL_CRT_SECTION(".CRT$XCZ") = { NULL };
 
 #if defined(_MSC_VER)
+#pragma data_seg(".CRT$XPZ")
+#endif
+DxBallCrtCallback __xp_z[] DXBALL_CRT_SECTION(".CRT$XPZ") = { NULL };
+
+#if defined(_MSC_VER)
+#pragma data_seg(".CRT$XTZ")
+#endif
+DxBallCrtCallback __xt_z[] DXBALL_CRT_SECTION(".CRT$XTZ") = { NULL };
+
+#if defined(_MSC_VER)
 #pragma data_seg()
 #pragma comment(linker, "/merge:.CRT=.data")
 #endif
