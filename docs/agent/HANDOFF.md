@@ -1,11 +1,23 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after natural game-over persistence through the source
-CRT. The user permits retaining the 19 explicit original CRT
+Updated October 17, 2026, after complete effect-sprite path correspondence.
+The user permits retaining the 19 explicit original CRT
 members in the final VC4 delivery; prioritize authored function exactness.
 Removing those runtime dependencies is not a delivery gate. Their source/origin
 gaps remain recorded, without changing any function claim or declaring the game
 complete.
+
+The three effect-sprite candidates now have complete symbolic path comparisons:
+300 instructions on each side across the three entries, six paths per entry, with matching
+DirectDraw arguments, mutable-RECT callback effects, ordered public writes and
+ABI restoration in the declared ordinary-memory model. All 34 adopted SMT
+queries pass, including six mutation controls and independent arithmetic
+normalization. Strict differences remain 332/252/330; no exact gain is claimed.
+The current linked Draw body agrees with the same source object (365 bytes /
+23 bindings). Blt/Stretch have no source-object callers or current map entries
+under OPT:REF, while their complete maintained bodies remain available.
+Source, products and ledgers stay unchanged; no compiler/provider/game/full
+replay runs. See [effect-sprite correspondence](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md).
 
 The current 19-member `vc40-restored-crt` image now passes natural 3→2→1→0 life
 loss, name editing, complete 660-byte ranking persistence and fresh-process

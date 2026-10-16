@@ -1,5 +1,10 @@
 # Complete display surface calls
 
+The later [effect-sprite path review](EFFECT_SPRITE_PATH_CORRESPONDENCE.md)
+checks all six paths in each of the three remaining effect-sprite candidates,
+including mutable RECT callbacks and ordered queue writes. Their strict byte
+comparisons and maintained source stay unchanged.
+
 The shared [display implementation](../../../src/display.cpp) now uses the
 same stdcall surface interface as the resource owner. Thirteen calls change
 from explicit C vtable dispatch to virtual member dispatch. Expressions,
