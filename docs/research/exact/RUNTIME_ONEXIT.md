@@ -1,5 +1,12 @@
 # CRT exit registration and entry wrappers
 
+The initial callback allocation now has complete54-byte exact source, and the
+real default exit tables invoke the complete20-byte exact stdio finalizer.
+Actual private-heap registration,37-slot growth and cleanup have focused Win32
+probe evidence. XI registration and full CRT/game linkage remain open. See
+[exit bootstrap](RUNTIME_TERMINATION_BOOTSTRAP.md). The following text preserves
+the registration checkpoint and its historical validation scope.
+
 Two maintained registration bodies now share the termination owner's actual
 begin/end globals and the recovered heap-size/realloc boundaries. Three entry
 wrappers are complete exacts; registration and the existing walker are candidates.

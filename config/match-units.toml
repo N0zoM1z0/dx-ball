@@ -12882,3 +12882,42 @@ target_address = 0x004183CC
 size = 34
 boundary_evidence = "docs/research/exact/RUNTIME_SEH_ENTRIES.md"
 relocations = []
+
+[builds.runtime_onexit_init]
+source = "src/runtime_onexit_init.c"
+object = "build/exact/runtime_onexit_init.obj"
+inputs = ["src/allocator.h", "src/runtime_fatal.h", "src/runtime_file_modes.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_onexit.h", "src/runtime_onexit_init.c", "src/runtime_onexit_init.h", "src/runtime_resize.h", "src/state_types.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
+[builds.runtime_stdio_finalization]
+source = "src/runtime_stdio_finalization.c"
+object = "build/exact/runtime_stdio_finalization.obj"
+inputs = ["src/allocator.h", "src/runtime_file_modes.h", "src/runtime_file_size.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_stdio_finalization.c", "src/runtime_stdio_finalization.h", "src/runtime_stream.h", "src/runtime_stream_transfer.h", "src/state_types.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/ML", "/Gy"]
+
+[units.crt-end-stdio]
+build = "runtime_stdio_finalization"
+symbol = "_dxball_crt_end_stdio"
+target_address = 0x0041DB60
+size = 20
+boundary_evidence = "docs/research/exact/RUNTIME_TERMINATION_BOOTSTRAP.md"
+relocations = [
+  { offset = 1, type = "REL32", symbol = "_dxball_crt_flushall", addend = 0, target = 0x0041A0A0 },
+  { offset = 7, type = "DIR32", symbol = "_dxball_exit_flag", addend = 0, target = 0x004230EC },
+  { offset = 15, type = "REL32", symbol = "_dxball_crt_fcloseall", addend = 0, target = 0x0041F5F0 },
+]
+
+[units.crt-initialize-onexit]
+build = "runtime_onexit_init"
+symbol = "_dxball_crt_initialize_onexit"
+target_address = 0x0041F880
+size = 54
+boundary_evidence = "docs/research/exact/RUNTIME_TERMINATION_BOOTSTRAP.md"
+relocations = [
+  { offset = 6, type = "REL32", symbol = "_dxball_runtime_malloc", addend = 0, target = 0x00417770 },
+  { offset = 14, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
+  { offset = 25, type = "REL32", symbol = "_dxball_crt_amsg_exit", addend = 0, target = 0x00418930 },
+  { offset = 33, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
+  { offset = 44, type = "DIR32", symbol = "_dxball_onexit_begin", addend = 0, target = 0x00440D7C },
+  { offset = 49, type = "DIR32", symbol = "_dxball_onexit_end", addend = 0, target = 0x00440D78 },
+]

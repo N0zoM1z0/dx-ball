@@ -1,0 +1,54 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "source": "src/runtime_termination_tables.c",
+  "header": "src/termination.h",
+  "inputs": [
+    "src/runtime_stdio_finalization.h",
+    "src/runtime_termination_tables.c",
+    "src/termination.h"
+  ],
+  "flags": [
+    "/nologo",
+    "/c",
+    "/O2",
+    "/Ob0",
+    "/Oi-",
+    "/Gd",
+    "/ML",
+    "/Gy"
+  ],
+  "object": "build/exact/runtime_termination_tables.obj",
+  "records": [
+    {
+      "symbol": "_dxball_preterminators",
+      "object_section": ".data",
+      "object_offset": 0,
+      "size": 8,
+      "target_address": "0x00421040",
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_end_stdio",
+          "addend": 0,
+          "target": 4316000
+        }
+      ],
+      "difference_count": 0,
+      "relocated_sha256": "e85dacfafbb10a4c7b6cb6b298e59487f28d5ea21a8e6f644b189b55a13a7a97"
+    },
+    {
+      "symbol": "_dxball_terminators",
+      "object_section": ".data",
+      "object_offset": 8,
+      "size": 4,
+      "target_address": "0x0042104C",
+      "relocations": [],
+      "difference_count": 0,
+      "relocated_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  ],
+  "evidence_path": ".analysis/rea/runs/2026-10-16T10-30-04.352Z-requests-671430/01-read_bytes.json",
+  "evidence_id": "ev_e071555ff2a07f693cdf6788da722cec1f2704cd05724223a14276f33a3d58e8",
+  "scope": "Initialized default tables over two separate caller-bound ranges. Original XP/XTenclosing linker layout and XI initialization registration remain open. No additional exact function count."
+}

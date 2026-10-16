@@ -1,10 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after character-state checkpoint `58abe70` and the
-locale category/code-page source owner below. Its complete 28-byte relative
-layout matches the pinned member; absolute placement remains unverified.
-Current totals remain 465 source entries, 377 exacts and 88 complete candidates.
-All 249 semantic scopes retain their existing evidence.
+Updated October 16, 2026, after exact exit bootstrap and stdio finalization.
+Current totals are 467 source entries, 379 exacts and 88 complete candidates.
+Two omitted complete functions add74 exact code bytes. The real default
+pretermination table now invokes stdio cleanup. The affected native owner's
+1,031 calls pass; four existing semantic rows are refreshed, total249 unchanged.
+Unchanged function products/results are reused without a full replay.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -49,18 +50,18 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional independent function inventory | 540 |
+| Provisional independent function inventory | 542 |
 | Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 465 |
-| Accepted exact functions | 377 |
-| Complete exact code bytes | 77,218 |
+| Source-present independent entries | 467 |
+| Accepted exact functions | 379 |
+| Complete exact code bytes | 77,292 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 75 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 240 runtime / 21 compiler-generated / 9 unknown |
+| Inventory origins | 270 authored / 242 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
@@ -147,6 +148,15 @@ pass through the maintained consumers and typed fixture boundaries. The whole
 original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
+
+The complete54-byte onexit initializer and20-byte stdio finalizer are now exact.
+The initialized pretermination/termination arrays have a separate source owner;
+controller128 and both18-byte wrapper exacts are preserved, walker32/6 unchanged.
+Actual private-heap registration/growth, returning cleanup and physical exit
+probes pass with controlled stdio/fatal dependencies. Only the affected native
+scope and eight retained-object calls ran. XI registration, stdio initialization
+and final CRT/game linkage remain open. See
+[exit bootstrap and default cleanup](../research/exact/RUNTIME_TERMINATION_BOOTSTRAP.md).
 
 The collision-unwind callback now has complete natural C source. Its original
 34 bytes compare against a 31-byte VC4 body, so it remains nonexact; all 142
@@ -463,6 +473,11 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The exit-bootstrap phase shared47 byte-identical immutable evidence carriers,
+reclaiming about13.7MiB. Unique trial sources, diagnostics and products remain;
+current canonical compiler objects retain independent inodes. Receipt:
+`.analysis/crt-termination-bootstrap-20261016/cleanup.json`.
 
 The CRT-entry phase reclaimed about 33 MiB by sharing identical immutable
 closed-run REA catalogs and removing the verified generated latest catalog

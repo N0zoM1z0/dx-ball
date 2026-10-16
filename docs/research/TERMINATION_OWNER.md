@@ -1,5 +1,17 @@
 # CRT termination owner
 
+## Default cleanup and bootstrap, October16,2026
+
+The recovered54-byte onexit initializer and20-byte stdio finalizer are exact.
+Default tables now live in their own source owner and contain the original
+stdio callback. Controller128 and wrappers18/18 remain exact; walker32/6 is
+unchanged. The affected native1,031-call scope passes with its original digest;
+eight retained-object calls check the COFF storage resolver. Real private-heap
+registration/growth and physical normal/quick exit probes use controlled
+stdio/fatal endpoints. Full XI startup and reconstructed game linking remain
+open. See [the current bootstrap note](exact/RUNTIME_TERMINATION_BOOTSTRAP.md).
+The sections below retain their earlier checkpoint scopes and totals.
+
 ## Exact process-boundary continuation
 
 The complete128-byte cleanup controller now matches every byte and all13 actual

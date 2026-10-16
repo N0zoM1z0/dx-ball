@@ -10,6 +10,7 @@ if not __debug__:
 import argparse
 from collections import Counter
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import shutil
@@ -41,6 +42,18 @@ def compiler_inputs(compiler, linked=False):
     return {str(path): sha(path) for path in sorted(paths)}
 
 
+def owner_build_inputs():
+    spec = importlib.util.spec_from_file_location('legacy_builder', ROOT / 'scripts/build-legacy.py')
+    builder = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(builder)
+    found = {str(ROOT / 'scripts/build-legacy.py'): sha(ROOT / 'scripts/build-legacy.py')}
+    for source in ('src/termination.c', 'src/runtime_termination_tables.c',
+                   'src/runtime_stdio_finalization.c',
+                   'tests/termination_process_interposer.c'):
+        found.update({str(ROOT / name): digest for name, digest in builder.project_inputs(source).items()})
+    return found
+
+
 def compare(original, maintained):
     from termination_oracle import fixtures
     counts = Counter()
@@ -61,7 +74,8 @@ def inputs():
     # Freeze the actual imported Python source/cache and native engine images,
     # in addition to this owner's declared source and target manifest.
     paths = {ROOT / name for name in ('src/termination.c', 'src/termination.h',
-             'src/termination_process_api.h', 'tests/termination_process_interposer.c',
+             'src/termination_process_api.h', 'src/runtime_stdio_finalization.c',
+             'src/runtime_stdio_finalization.h', 'tests/termination_process_interposer.c',
              'tests/termination_oracle.py', 'tests/test_termination_differential.py',
              'tests/target_oracle.py', 'scripts/repo-python', 'config/target.toml')}
     paths.add(Path(sys.executable).resolve())
@@ -96,14 +110,15 @@ def main():
     with session_lock():
         library = args.library.resolve() if args.library else ROOT / 'build/probes/termination/libtermination.so'
         compiled = {}
-        build_inputs = {str(ROOT / n): sha(ROOT / n) for n in ('src/termination.c', 'src/termination.h',
-                        'src/termination_process_api.h', 'tests/termination_process_interposer.c')}
+        build_inputs = owner_build_inputs()
         if not args.library:
             library.parent.mkdir(parents=True, exist_ok=True)
             compiler = Path(shutil.which('cc')).resolve()
             build_inputs.update(compiler_inputs(compiler, linked=True))
             command = [str(compiler), '-std=c90', '-Wall', '-Wextra', '-Wpedantic', '-Werror',
                        '-O2', '-fPIC', '-shared', str(ROOT / 'src/termination.c'),
+                       str(ROOT / 'src/runtime_termination_tables.c'),
+                       str(ROOT / 'src/runtime_stdio_finalization.c'),
                        str(ROOT / 'tests/termination_process_interposer.c'), '-o', str(library)]
             compiled = dict(command=command, compiler_sha256=sha(compiler))
             result = subprocess.run(command, capture_output=True, text=True)

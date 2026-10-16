@@ -7,8 +7,6 @@ unsigned int dxball_termination_done;
 unsigned char dxball_exit_flag;
 DxBallCrtCallback *dxball_onexit_begin;
 DxBallCrtCallback *dxball_onexit_end;
-DxBallCrtCallback dxball_preterminators[2];
-DxBallCrtCallback dxball_terminators[1];
 
 void dxball_crt_run_initializers(DxBallCrtCallback *first,
                                  DxBallCrtCallback *last)

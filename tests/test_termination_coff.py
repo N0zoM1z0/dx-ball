@@ -38,7 +38,9 @@ class CoffTarget(Target):
                 assert symbol['value'] == 0 and symbol['storage'] == 2
                 return exit_import
             if symbol['section'] == 0 and symbol['name'] in common:
-                assert symbol['storage'] == 2 and symbol['value'] == WIDTHS[symbol['name'][1:]], symbol
+                # Production tables now have a separate initialized owner;
+                # this controlled fixture supplies their actual typed storage.
+                assert symbol['storage'] == 2 and symbol['value'] in (0, WIDTHS[symbol['name'][1:]]), symbol
                 return common[symbol['name']]
             assert symbol['section'] > 0, ('Unresolved termination dependency', symbol)
             assert symbol['value'] <= sections[symbol['section'] - 1]['size']

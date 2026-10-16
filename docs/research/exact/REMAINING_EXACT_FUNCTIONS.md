@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after character/locale storage and exact exponent recovery.
-Accepted totals are **377 functions / 77,218 code bytes / 244 metadata bytes**.
+Updated October 16, 2026, after exact exit bootstrap and default stdio cleanup.
+Accepted totals are **379 functions / 77,292 code bytes / 244 metadata bytes**.
 There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
 These 88 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 75 of the 540 independent inventory entries lack a
+report gaps. Another 75 of the 542 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -16,6 +16,11 @@ The original two-byte decimal-point array and shared declarations close all310
 exponent-formatting bytes and the six-byte suffix, preserving all13 affected
 prior exacts. Multiplication's unchanged C body emits50 differences through the
 new declaration context. See [character state](RUNTIME_CHARACTER_STATE.md).
+
+Two omitted complete runtime functions add74 exact bytes: onexit bootstrap54
+and stdio finalizer20. Default pretermination storage now invokes the finalizer;
+all prior exact and candidate byte results are preserved. See
+[exit bootstrap](RUNTIME_TERMINATION_BOOTSTRAP.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.

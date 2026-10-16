@@ -222,7 +222,7 @@ source = "src/termination.c"
 header = "src/termination.h"
 oracle = "tests/test_termination_differential.py"
 target_oracle = "tests/target_oracle.py"
-additional_inputs = ["src/cpp_allocator.cpp", "config/native-symbols.map", "CMakeLists.txt", "tests/termination_oracle.py", "tests/test_termination_coff.py", "scripts/coff.py", "scripts/legacy_toolchain.py", "scripts/resource_limits.py", "scripts/repo-python", "config/target.toml", "config/tools.lock.toml", "src/termination_process_api.h", "tests/termination_process_interposer.c"]
+additional_inputs = ["CMakeLists.txt", "config/native-symbols.map", "config/target.toml", "config/tools.lock.toml", "scripts/build-legacy.py", "scripts/coff.py", "scripts/legacy_toolchain.py", "scripts/repo-python", "scripts/resource_limits.py", "src/allocator.h", "src/cpp_allocator.cpp", "src/runtime_file_modes.h", "src/runtime_file_size.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_stdio_finalization.c", "src/runtime_stdio_finalization.h", "src/runtime_stream.h", "src/runtime_stream_transfer.h", "src/runtime_termination_tables.c", "src/state_types.h", "src/termination_process_api.h", "tests/termination_oracle.py", "tests/termination_process_interposer.c", "tests/test_termination_coff.py"]
 
 [owners.list_initializers]
 source = "src/list_initializers.cpp"
@@ -619,3 +619,18 @@ additional_inputs = []
 source = "src/runtime_locale_handles.c"
 header = "src/runtime_locale_handles.h"
 additional_inputs = ["src/runtime_case_conversion.h", "src/state_types.h"]
+
+[owners.runtime_onexit_init]
+source = "src/runtime_onexit_init.c"
+header = "src/runtime_onexit_init.h"
+additional_inputs = ["src/allocator.h", "src/runtime_fatal.h", "src/runtime_file_modes.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_onexit.h", "src/runtime_resize.h", "src/state_types.h", "src/termination.h"]
+
+[owners.runtime_stdio_finalization]
+source = "src/runtime_stdio_finalization.c"
+header = "src/runtime_stdio_finalization.h"
+additional_inputs = ["src/allocator.h", "src/runtime_file_modes.h", "src/runtime_file_size.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_stream.h", "src/runtime_stream_transfer.h", "src/state_types.h", "src/termination.h"]
+
+[owners.runtime_termination_tables]
+source = "src/runtime_termination_tables.c"
+header = "src/termination.h"
+additional_inputs = ["src/runtime_stdio_finalization.h"]
