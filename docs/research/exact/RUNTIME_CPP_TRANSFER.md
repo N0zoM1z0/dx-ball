@@ -3,7 +3,9 @@
 October 16 object follow-up: [construction and destruction](RUNTIME_CPP_OBJECT.md)
 now have complete source, with destruction exact and construction a four-byte
 nonexact candidate. [Frame unwinding](RUNTIME_CPP_UNWIND.md) is also now complete
-and exact. Earlier checkpoint totals below remain historical.
+and exact. [Catch invocation and cleanup](RUNTIME_CPP_CATCH.md) also now have
+a complete exact wrapper and initialized current exception/context storage.
+Low-level transports remain open. Earlier checkpoint totals below remain historical.
 
 The complete pinned frame.obj sections and five retained REA records establish
 frame dispatch188, catch transfer148 and rethrow recognition44. Dispatch and

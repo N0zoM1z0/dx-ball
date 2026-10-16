@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after the C++ frame-unwind source checkpoint.
-Accepted totals are **371 functions / 76,180 code bytes / 208 metadata bytes**.
+Updated October 16, 2026, after the C++ catch-wrapper source checkpoint.
+Accepted totals are **372 functions / 76,452 code bytes / 232 metadata bytes**.
 There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
 These 88 are not all unfinished functions. Three other source-present allocator
-entries are outside both current comparison reports, so 91 of the 462
-source-present entries are not exact. Another 81 of the 543 inventory entries
+entries are outside both current comparison reports, so 91 of the 463
+source-present entries are not exact. Another 80 of the 543 inventory entries
 lack a source-present ledger row. The provisional inventory and origin review
 still need reconciliation; these numbers are not a final authored denominator.
 

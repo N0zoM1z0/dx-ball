@@ -589,3 +589,8 @@ additional_inputs = ["src/runtime_cpp_handler.h", "src/runtime_cpp_transfer.h", 
 source = "src/runtime_cpp_unwind.cpp"
 header = "src/runtime_cpp_unwind.h"
 additional_inputs = ["src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h"]
+
+[owners.runtime_cpp_catch]
+source = "src/runtime_cpp_catch.cpp"
+header = "src/runtime_cpp_catch.h"
+additional_inputs = ["src/runtime_cpp_handler.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
