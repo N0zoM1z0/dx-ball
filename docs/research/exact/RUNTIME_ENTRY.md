@@ -1,5 +1,12 @@
 # Original WinMain CRT startup
 
+Later [actual process-entry checks](RUNTIME_ENTRY_EXECUTION.md) run this complete
+entry as the PE entry point with real OS arguments, environment and startup
+fields. Two normal returns and the selected native SEH quick-exit path pass,
+with all48 production objects reused. Full390-byte linked code and12-byte scope
+checks pass. The observed WinMain is a fixture; real game/Win32 binding and
+final playability remain open. The text below retains the source-adoption scope.
+
 `src/runtime_entry.c` restores `WinMainCRTStartup` at `0x004187A0` as natural
 C with genuine Win32 SEH. One canonical VC4 compilation matches its complete
 **390 code bytes and 12 scope bytes**, including all 34 code and two scope
@@ -10,7 +17,7 @@ entry point of a verified complete restored-game build.
 The [subsequent heap-boundary repair](../WINDOWS_HEAP_STARTUP.md) supplies real
 Win32 default callbacks before game binding and preserves a heap initialized
 before the host WinMain wrapper. It prepares the pre-entry allocation contract;
-it does not integrate or execute this complete startup owner.
+that earlier heap-only checkpoint did not execute this complete startup owner.
 
 ## Initialization and the game call
 

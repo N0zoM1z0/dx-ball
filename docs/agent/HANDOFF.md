@@ -1,15 +1,15 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after linking FP initialization through XI/XC/XP/XT.
+Updated October 16, 2026, after actual CRT process-entry and SEH exit checks.
 Current totals are 475 source entries, 380 exacts and 95 complete candidates.
-The isolated custom entry now runs real FP setup, the maintained initializer
-controller, XI/XC and returning XP/XT cleanup without host CRT startup.
-Forty of 41 source objects are reused; one stale callback-data producer is
-refreshed. Complete52-byte FP state/nine bindings and84-byte CRT table/thirteen
-bindings match, as do eight complete linked source bodies. Eight actual
-conversion callbacks, streams/onexit/filter and nine list roots pass.
-All function ledgers, producers and comparison reports remain unchanged;
-all249 semantic rows are byte-identical. No full replay or provider query ran.
+The restored CRT startup now runs at the PE entry point with all48 production
+objects reused and zero production compilations. Real OS command/environment,
+version, heap/CP, FP/XI/XC and exit paths pass: normal31, quoted/show32 and
+native SEH quick exit0xC0000005. The full390-byte entry/12-byte scope and13 whole
+linked source bodies match their emitted objects. FP52/nine and CRT84/thirteen
+data bindings remain correct. WinMain is an observed fixture; real game/Win32
+binding remains open. All function ledgers/reports and249 semantic rows are
+byte-identical. No full replay or provider query ran.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -153,14 +153,26 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+The complete entry now runs as the PE entry of a Windows-subsystem image,
+including real command/environment and startup fields. Two normal returns and
+the selected SEH DIE/quick-exit path preserve full DWORD statuses and the
+expected cleanup behavior. All48 source owners are reused;390 entry bytes,
+12 scope bytes,13 linked bodies and both initialization data groups pass.
+The application remains a typed observation boundary. Existing `windows_entry.c`
+binds Win32 APIs before the game; connect that binding for the restored direct
+call without resetting the live heap. See
+[entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md) and
+`config/runtime-entry-link.json`.
+
 The actual FP callback now runs through the recovered controller before XI/XC,
 with XP/XT returning cleanup afterward. The current callback-state producer
 uses its real header closure; the new FP state recipe records both initialized
 owners. Hardware precision/status, all six active slots, eight conversion calls,
 streams/onexit, real filter lifetime and nine list roots pass in a KERNEL32-only
 image without host CRT startup. Physical x87/SEH remain pinned dependencies;
-flush/close effects remain typed fixture boundaries. Full CRT entry, remaining
-low-level source and final game are open. See
+flush/close effects remain typed fixture boundaries. Later entry execution
+checks the command/environment and selected SEH path; remaining low-level
+source and final game are open. See
 [FP startup](../research/exact/RUNTIME_FP_STARTUP.md) and
 `config/runtime-fp-state.json`.
 
@@ -210,8 +222,8 @@ following actual XI/XC startup. Only two data owners compile; all function
 producers/results stay unchanged. The affected native1,031-call scope refreshes
 four semantic input identities. That exit-only probe used controlled
 stdio/fatal/unused exception dispatch. Later FP startup runs the actual FP,
-fatal, terminal and validation owners; full CRT entry, remaining function
-recovery and the final game remain open. See
+fatal, terminal and validation owners. Later process-entry checks run the
+remaining entry stages; function recovery and the final game remain open. See
 [exit sections](../research/exact/RUNTIME_EXIT_SECTIONS.md).
 
 XI/XC now use their real linker sections, including the previously ordinary
@@ -222,8 +234,8 @@ KERNEL32 and uses a custom entry: actual heap/low-I/O initialization, both table
 walks, filter installation/restoration and nine prefilled list roots pass.
 All380 exact results remain; only three existing producer identities change.
 The board aggregate helper remains nonexact/unresolved. Later XP/XT and FP
-startup checks close the table layout and higher-level FP flow; full CRT entry
-and the final game remain open. See
+startup checks close the table layout and higher-level FP flow. Later entry
+execution checks the remaining startup stages; the final game remains open. See
 [initializer sections](../research/exact/RUNTIME_INITIALIZER_SECTIONS.md).
 
 The complete193-byte stdio initializer now matches all16 bindings. A separate
@@ -341,6 +353,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 actual CRT entry | 48 source owners reused; real OS argv/environment/show; normal31/quoted32/SEH quick0xC0000005;390-byte entry/12-byte scope and13 linked bodies | [Entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md); `.analysis/crt-full-entry-20261016/verification.json` |
 | October 16 FP startup | Actual FP/controller/XI/XC/XP/XT flow; 41 source owners, 40 reused; 52 FP data bytes/nine bindings and 84 CRT bytes/thirteen bindings; eight real conversion calls | [FP startup](../research/exact/RUNTIME_FP_STARTUP.md); `.analysis/crt-fp-startup-20261016/verification.json` |
 | October 16 locale category/code-page owner | Six real 32-bit LCIDs and code-page word; relative 28-byte layout; 12 category calls/four selector scenarios; no new absolute placement or exact claim | [Locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md); `.analysis/locale-handles-source-20261016/adoption.json` |
 | October 16 character/locale state | Two-byte decimal-point array; complete310-byte exponent exact;13 prior family exacts preserved;534 data bytes/two bindings;3,855 native consumer checks | [Character state](../research/exact/RUNTIME_CHARACTER_STATE.md); `.analysis/ctype-state-source-20261016/adoption.json` |
@@ -418,11 +431,13 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
-- Higher-level FP/XI/XC/XP/XT initialization now runs with actual source state.
-  Continue the full CRT entry's command/environment and OS boundaries, or a
-  specific remaining low-level source question. Reuse the41-object closure and
-  current FP data recipe rather than recompiling unchanged initialization code.
-  The full game and original tail transports remain unfinished.
+- The actual entry now passes real command/environment/show and selected SEH
+  exit cases. Connect the real game and Win32 binding next, or pursue a specific
+  remaining low-level source question. `windows_entry.c` currently binds Windows
+  before calling `dxball_win_main`; the restored entry calls the latter directly.
+  Preserve that binding and the live heap when replacing host startup. Reuse the
+  48-object closure and current state recipes. The full game and original tail
+  transports remain unfinished.
 
 - Locale handles/code page now have a source owner. Keep six 32-bit category
   values even on LP64; the null-address recipe records the absence of independent
@@ -484,9 +499,9 @@ question, not merely the smallest differing-position count.
   in the inventory; preserve its observed CLD and original forwarding contract.
 - The original CRT entry now has [complete exact source](../research/exact/RUNTIME_ENTRY.md)
   and supplies version/command state. Fatal default application type is GUI2.
-  It remains outside CMake: final CRT storage/linking, low-level helpers and
-  the final original-compiler build/play check are still required. Do not
-  count the new standalone object as a verified reconstructed game startup. The
+  It remains outside CMake. Its actual PE-entry and selected exit paths now pass
+  with a typed WinMain observation fixture; real game/Win32 binding, low-level
+  source and the final original-compiler build/play check remain. The
   three member-call entries now have typed C++ direct-call bodies; their original
   tail transport and return-address identity remain nonexact.
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/

@@ -1,5 +1,10 @@
 # FP initialization through the actual CRT controller
 
+The later [actual CRT entry check](RUNTIME_ENTRY_EXECUTION.md) also runs the
+version, command/environment and multibyte stages before this FP/XI/XC chain,
+then observes normal and native SEH quick exits. Its WinMain is a typed fixture;
+the real game remains open. The following text retains this FP-stage scope.
+
 The isolated VC4 startup now runs the maintained FP callback and initialization
 controller before XI/XC, followed by the existing XP/XT cleanup. It links 41
 source owners and imports only KERNEL32. Its custom entry uses `/NODEFAULTLIB`;

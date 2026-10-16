@@ -1,0 +1,344 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "entry_unit": "crt-startup",
+  "entry_symbol": "_dxball_crt_startup",
+  "subsystem": "WINDOWS",
+  "default_libraries": false,
+  "import_libraries": [
+    "kernel32.lib"
+  ],
+  "source_owner_order": [
+    "runtime_initializer_sections",
+    "runtime_termination_tables",
+    "allocator",
+    "runtime_resize",
+    "runtime_lowio_startup",
+    "termination_exact",
+    "runtime_stdio_state",
+    "runtime_stdio_finalization",
+    "allocator_host",
+    "runtime_onexit",
+    "runtime_cpp_filter",
+    "list_initializers",
+    "cpp_allocator",
+    "runtime_stdio_initialization",
+    "runtime_onexit_init",
+    "runtime_cpp_filter_lifetime",
+    "runtime_case_conversion",
+    "runtime_control87",
+    "runtime_cpp_terminal",
+    "runtime_ctype_state",
+    "runtime_decimal",
+    "runtime_decimal_output",
+    "runtime_decimal_powers",
+    "runtime_error_control",
+    "runtime_fatal",
+    "runtime_fdiv_physical",
+    "runtime_fdiv_processors",
+    "runtime_float",
+    "runtime_float_format",
+    "runtime_float_format_state",
+    "runtime_float_output",
+    "runtime_float_render",
+    "runtime_fp_control",
+    "runtime_fp_initialization_state",
+    "runtime_initialization",
+    "runtime_locale_backends",
+    "runtime_locale_handles",
+    "runtime_locale_map",
+    "runtime_locale_state",
+    "runtime_mantissa_arithmetic",
+    "runtime_signals",
+    "runtime_argument_state",
+    "runtime_arguments",
+    "runtime_codepage",
+    "runtime_entry",
+    "runtime_environment",
+    "runtime_environment_setup",
+    "runtime_multibyte"
+  ],
+  "function_producers": "config/match-units.toml:builds",
+  "additional_producers": [
+    {
+      "owner": "allocator_host",
+      "source": "src/allocator_host.c",
+      "object": "build/vc40/allocator_host.obj",
+      "inputs": [
+        "src/allocator.h",
+        "src/allocator_host.c",
+        "src/allocator_imports.h",
+        "src/state_types.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/Od",
+        "/Ob0",
+        "/Oi-",
+        "/Oy-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "cpp_allocator",
+      "source": "src/cpp_allocator.cpp",
+      "object": "build/vc40/cpp_allocator.obj",
+      "inputs": [
+        "src/allocator.h",
+        "src/cpp_allocator.cpp",
+        "src/state_types.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "runtime_ctype_state",
+      "source": "src/runtime_ctype_state.c",
+      "object": "build/exact/runtime_ctype_state.obj",
+      "inputs": [
+        "src/runtime_ctype_state.c",
+        "src/runtime_ctype_state.h",
+        "src/runtime_multibyte.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "runtime_initializer_sections",
+      "source": "src/runtime_initializer_sections.c",
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "inputs": [
+        "src/runtime_initialization.h",
+        "src/runtime_initializer_sections.c",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "runtime_locale_handles",
+      "source": "src/runtime_locale_handles.c",
+      "object": "build/exact/runtime_locale_handles.obj",
+      "inputs": [
+        "src/runtime_case_conversion.h",
+        "src/runtime_locale_handles.c",
+        "src/runtime_locale_handles.h",
+        "src/state_types.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "runtime_locale_state",
+      "source": "src/runtime_locale_state.c",
+      "object": "build/exact/runtime_locale_state.obj",
+      "inputs": [
+        "src/runtime_locale_state.c",
+        "src/runtime_locale_state.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "runtime_stdio_state",
+      "source": "src/runtime_stdio_state.c",
+      "object": "build/exact/runtime_stdio_state.obj",
+      "inputs": [
+        "src/allocator.h",
+        "src/runtime_file_modes.h",
+        "src/runtime_lowio.h",
+        "src/runtime_lowio_read.h",
+        "src/runtime_stdio_initialization.h",
+        "src/runtime_stdio_state.c",
+        "src/runtime_stream.h",
+        "src/runtime_stream_transfer.h",
+        "src/state_types.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    {
+      "owner": "runtime_termination_tables",
+      "source": "src/runtime_termination_tables.c",
+      "object": "build/exact/runtime_termination_tables.obj",
+      "inputs": [
+        "src/runtime_stdio_finalization.h",
+        "src/runtime_termination_tables.c",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    }
+  ],
+  "state_recipes": [
+    "config/runtime-fp-state.json",
+    "config/runtime-character-state.json",
+    "config/runtime-locale-handles.json",
+    "config/runtime-stdio-state.json",
+    "config/runtime-initializer-sections.json",
+    "config/runtime-termination-tables.json"
+  ],
+  "legacy_dependencies": [
+    {
+      "symbol": "__ctrlfp",
+      "member": {
+        "member": "..\\build\\intel\\st_obj\\fpctrl.obj",
+        "header_offset": 987486
+      },
+      "object_sha256": "2827238e074fd523c92059bbedfd244a840fd755fbfe9f832ce956e56cf4247c"
+    },
+    {
+      "symbol": "__except_handler3",
+      "member": {
+        "member": "build\\intel\\st_obj\\exsup3.obj",
+        "header_offset": 597250
+      },
+      "object_sha256": "f0f13c89d335646b341b1a7411134c6888cc783b12b6c58f116deaf4ddbe72b6"
+    },
+    {
+      "symbol": "__global_unwind2",
+      "member": {
+        "member": "build\\intel\\st_obj\\exsup.obj",
+        "header_offset": 595672
+      },
+      "object_sha256": "1b5106b67ce8c9b7e9668d096890209d45c5ddbc0e492c229f606ef89392bce4"
+    },
+    {
+      "symbol": "_memmove",
+      "member": {
+        "member": "build\\intel\\st_obj\\memmove.obj",
+        "header_offset": 862174
+      },
+      "object_sha256": "c630b539fb413c2c70599abc5feaf02335ac428a6738588863c34cc4b50c83ab"
+    },
+    {
+      "symbol": "_strncpy",
+      "member": {
+        "member": "build\\intel\\st_obj\\strncpy.obj",
+        "header_offset": 867770
+      },
+      "object_sha256": "dd327bbed43fa8903837d6d3efdc5ff8728ef7fe60c866be888a883bca4809c2"
+    }
+  ],
+  "application_boundary": {
+    "symbol": "_dxball_win_main@16",
+    "declaration": "src/platform.h",
+    "language_linkage": "C",
+    "calling_convention": "stdcall",
+    "argument_bytes": 16,
+    "role": "Typed observation fixture in this checked image; actual game binding remains open."
+  },
+  "fixture_boundaries": [
+    "WinMain observations",
+    "flush/close observations",
+    "C exit forwarding"
+  ],
+  "scenarios": [
+    {
+      "name": "normal",
+      "command_line": "alias.exe normal \"two words\"",
+      "show_flag": false,
+      "show": 10,
+      "argc": 3,
+      "argv": [
+        "alias.exe",
+        "normal",
+        "two words"
+      ],
+      "winmain_tail": "normal \"two words\"",
+      "full_exit_code": "0x0000001F",
+      "cleanup_trace": "BAF"
+    },
+    {
+      "name": "quoted-show",
+      "command_line": "\"alias with space.exe\"\tshown \"two words\"",
+      "show_flag": true,
+      "show": 7,
+      "argc": 3,
+      "argv": [
+        "alias with space.exe",
+        "shown",
+        "two words"
+      ],
+      "winmain_tail": "shown \"two words\"",
+      "full_exit_code": "0x00000020",
+      "cleanup_trace": "BAF"
+    },
+    {
+      "name": "seh-quick",
+      "command_line": "alias.exe fault \"two words\"",
+      "show_flag": false,
+      "show": 10,
+      "argc": 3,
+      "argv": [
+        "alias.exe",
+        "fault",
+        "two words"
+      ],
+      "winmain_tail": "fault \"two words\"",
+      "full_exit_code": "0xC0000005",
+      "cleanup_trace": "",
+      "controlled_condition": "Actual RaiseException; recovered signal-record DIE action5 selects the genuine outer execute-handler path."
+    }
+  ],
+  "research": "docs/research/exact/RUNTIME_ENTRY_EXECUTION.md",
+  "scope": "Checked source link closure and process-entry scenarios, not a complete game build command. Producers are rebuilt from the named recipes when private cache is absent; fixture/application bindings must be supplied explicitly. Physical x87/SEH and two string dependencies remain pinned original members. No source/exact promotion follows."
+}
