@@ -1,0 +1,160 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "records": [
+    {
+      "owner": "runtime_fp_initialization_state",
+      "source": "src/runtime_fp_initialization_state.c",
+      "header": "src/runtime_initialization.h",
+      "inputs": [
+        "src/runtime_fp_initialization_state.c",
+        "src/runtime_initialization.h",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ],
+      "object": "build/exact/runtime_fp_initialization_state.obj",
+      "target_address": "0x00423090",
+      "size": 28,
+      "symbols": {
+        "__FPmtterm": 24,
+        "__FPmtinit": 20,
+        "__FPinit": 16,
+        "__adjust_fdiv": 12,
+        "___fastflag": 8,
+        "__ldused": 4,
+        "__fltused": 0
+      },
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_initialize_math",
+          "addend": 0,
+          "target": 4289920
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_fp_thread_noop",
+          "addend": 0,
+          "target": 4289952
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_fp_thread_noop",
+          "addend": 0,
+          "target": 4289952
+        }
+      ],
+      "source_and_linked_full_original_equal": true,
+      "original_member": {
+        "member": "..\\build\\intel\\st_obj\\fpinit.obj",
+        "header_offset": 936384,
+        "sha256": "08c95a176a368af279c043ccd0114da46b980db126db6ef365e1ae7f5ba91625"
+      },
+      "basis": {
+        "kind": "retained-complete-member-state-proof",
+        "path": ".analysis/runtime-initialization-20261014/original-proof.json",
+        "key": "fp_state",
+        "unique_nonrelocated_prefix_size": 16
+      }
+    },
+    {
+      "owner": "runtime_float_format_state",
+      "source": "src/runtime_float_format_state.c",
+      "header": "src/runtime_float_format.h",
+      "inputs": [
+        "src/runtime_float.h",
+        "src/runtime_float_format.h",
+        "src/runtime_float_format_state.c"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ],
+      "object": "build/exact/runtime_float_format_state.obj",
+      "target_address": "0x004231F8",
+      "size": 24,
+      "symbols": {
+        "__cfltcvt_tab": 0
+      },
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_float_unavailable",
+          "addend": 0,
+          "target": 4313296
+        },
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_float_unavailable",
+          "addend": 0,
+          "target": 4313296
+        },
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_float_unavailable",
+          "addend": 0,
+          "target": 4313296
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_float_unavailable",
+          "addend": 0,
+          "target": 4313296
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_float_unavailable",
+          "addend": 0,
+          "target": 4313296
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_float_unavailable",
+          "addend": 0,
+          "target": 4313296
+        }
+      ],
+      "source_and_linked_full_original_equal": true,
+      "original_member": {
+        "member": "build\\intel\\st_obj\\cmiscdat.obj",
+        "header_offset": 621486,
+        "sha256": "4dfd82e6ce9515a41e6e17e3cc10d5788843830af1f75ddd6305b095ede58a21"
+      },
+      "basis": {
+        "kind": "retained-REA-bytes-and-complete-member-proof",
+        "evidence_path": ".analysis/rea/runs/2026-10-13T20-06-50.669Z-interactive-2061986/06-read_bytes.json",
+        "evidence_id": "ev_3614fb6adcf9e27cdd447d1b2cdb786a06ebfbe2ddca1dcb664853b0f49b745a",
+        "proof": ".analysis/runtime-float-format-20261014/callback-state/data.json"
+      }
+    }
+  ],
+  "initialization_controller": "crt-initialize-runtime",
+  "initializer_sections_recipe": "config/runtime-initializer-sections.json",
+  "research": "docs/research/exact/RUNTIME_FP_STARTUP.md",
+  "scope": "Complete initialized52-byte FP state/nine bindings. Actual isolated startup verifies FP before XI/XC through the maintained controller, plus existing XP/XT cleanup. Physical x87/SEH remain explicit pinned dependencies; no final CRT entry/game claim.",
+  "library": ".tools/msvc400/lib/libc.lib",
+  "library_sha256": "e5f0d0e6dd2e01dbb0005e9dd4764507b852ede9a824798f0970bc570966a7e3"
+}

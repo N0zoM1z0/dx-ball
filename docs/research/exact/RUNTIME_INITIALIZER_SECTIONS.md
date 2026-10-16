@@ -1,5 +1,11 @@
 # CRT initializer sections and linked startup stages
 
+Later [FP startup integration](RUNTIME_FP_STARTUP.md) also runs the real FP
+callback and maintained controller before these XI/XC ranges, then returning
+XP/XT cleanup. The full84-byte table remains correct; hardware state, actual
+conversion callbacks, streams/filter and list roots pass without host CRT
+startup. Full CRT entry and the final game remain open.
+
 The later [exit-section recovery](RUNTIME_EXIT_SECTIONS.md) extends this
 64-byte initialization prefix to the complete 84-byte table, including XP/XT,
 and checks returning cleanup and physical normal/quick exits. The following

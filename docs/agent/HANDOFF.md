@@ -1,14 +1,15 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after restoring three C++ direct-member call APIs.
+Updated October 16, 2026, after linking FP initialization through XI/XC/XP/XT.
 Current totals are 475 source entries, 380 exacts and 95 complete candidates.
-The stdcall-to-thiscall bridges use real Microsoft x86 member-pointer types,
-with the original argument counts and public declarations. They remain
-nonexact at 37/42/47 bytes against seven bytes each; the extra C++ call frame
-and return-address difference remain explicit. All 784 emulated logical cases
-and seven affected Win32 construction/destruction/SEH selectors pass.
-Prior 380 exact and 92 candidate results/products are reused; all 249 semantic
-rows are unchanged. No full replay or new provider query ran.
+The isolated custom entry now runs real FP setup, the maintained initializer
+controller, XI/XC and returning XP/XT cleanup without host CRT startup.
+Forty of 41 source objects are reused; one stale callback-data producer is
+refreshed. Complete52-byte FP state/nine bindings and84-byte CRT table/thirteen
+bindings match, as do eight complete linked source bodies. Eight actual
+conversion callbacks, streams/onexit/filter and nine list roots pass.
+All function ledgers, producers and comparison reports remain unchanged;
+all249 semantic rows are byte-identical. No full replay or provider query ran.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -152,6 +153,17 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+The actual FP callback now runs through the recovered controller before XI/XC,
+with XP/XT returning cleanup afterward. The current callback-state producer
+uses its real header closure; the new FP state recipe records both initialized
+owners. Hardware precision/status, all six active slots, eight conversion calls,
+streams/onexit, real filter lifetime and nine list roots pass in a KERNEL32-only
+image without host CRT startup. Physical x87/SEH remain pinned dependencies;
+flush/close effects remain typed fixture boundaries. Full CRT entry, remaining
+low-level source and final game are open. See
+[FP startup](../research/exact/RUNTIME_FP_STARTUP.md) and
+`config/runtime-fp-state.json`.
+
 Three original seven-byte member-call entries now have C++ direct-call source,
 including genuine stdcall cleanup and thiscall arguments. VC4 rejects explicit
 `__thiscall` callback types; actual compiler member-pointer types plus asserted
@@ -196,9 +208,11 @@ XPA while preserving the public ABI and caller bounds. Returning normal/quick
 and low-byte cleanup, real filter restoration and physical exits63/64 pass
 following actual XI/XC startup. Only two data owners compile; all function
 producers/results stay unchanged. The affected native1,031-call scope refreshes
-four semantic input identities. Stdio/fatal/unused exception dispatch remain
-controlled dependencies; FP/full CRT entry, remaining function recovery and the
-final game remain open. See [exit sections](../research/exact/RUNTIME_EXIT_SECTIONS.md).
+four semantic input identities. That exit-only probe used controlled
+stdio/fatal/unused exception dispatch. Later FP startup runs the actual FP,
+fatal, terminal and validation owners; full CRT entry, remaining function
+recovery and the final game remain open. See
+[exit sections](../research/exact/RUNTIME_EXIT_SECTIONS.md).
 
 XI/XC now use their real linker sections, including the previously ordinary
 C++ filter pointer in `.CRT$XCC`. Four null boundary records, three explicit
@@ -207,8 +221,9 @@ complete64-byte prefix/twelve bindings. The isolated VC4 image imports only
 KERNEL32 and uses a custom entry: actual heap/low-I/O initialization, both table
 walks, filter installation/restoration and nine prefilled list roots pass.
 All380 exact results remain; only three existing producer identities change.
-The board aggregate helper remains nonexact/unresolved. Later XP/XT section recovery closes the table layout; FP/full
-CRT entry and the final game remain open. See
+The board aggregate helper remains nonexact/unresolved. Later XP/XT and FP
+startup checks close the table layout and higher-level FP flow; full CRT entry
+and the final game remain open. See
 [initializer sections](../research/exact/RUNTIME_INITIALIZER_SECTIONS.md).
 
 The complete193-byte stdio initializer now matches all16 bindings. A separate
@@ -315,15 +330,18 @@ Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/`
 private. A source-only clone does not include these evidence/products.
 Historical native, MinGW and VC4 builds/play controls exist, but recent CRT
 recovery used affected standalone compilation and complete comparisons.
-Shared CRT storage/default bindings, BSS/FP initialization and physical
-integration remain open; do not claim a current end-to-end rebuilt game from
-standalone results. See [CRT storage closure](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md)
+Shared CRT storage/default bindings, remaining BSS/low-level source and full
+entry integration remain open. Higher-level FP startup now runs in the isolated
+image; do not claim a current end-to-end rebuilt game from that result. See
+[FP startup](../research/exact/RUNTIME_FP_STARTUP.md),
+[CRT storage closure](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md)
 and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 ## Latest adopted source work
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 FP startup | Actual FP/controller/XI/XC/XP/XT flow; 41 source owners, 40 reused; 52 FP data bytes/nine bindings and 84 CRT bytes/thirteen bindings; eight real conversion calls | [FP startup](../research/exact/RUNTIME_FP_STARTUP.md); `.analysis/crt-fp-startup-20261016/verification.json` |
 | October 16 locale category/code-page owner | Six real 32-bit LCIDs and code-page word; relative 28-byte layout; 12 category calls/four selector scenarios; no new absolute placement or exact claim | [Locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md); `.analysis/locale-handles-source-20261016/adoption.json` |
 | October 16 character/locale state | Two-byte decimal-point array; complete310-byte exponent exact;13 prior family exacts preserved;534 data bytes/two bindings;3,855 native consumer checks | [Character state](../research/exact/RUNTIME_CHARACTER_STATE.md); `.analysis/ctype-state-source-20261016/adoption.json` |
 | October 16 SEH/CRT entry review | Complete collision callback source; 31/34-byte candidate; 142 emulated ABI/effect cases; 16 omitted entries reconciled; prior 376 exacts unchanged | [SEH entries](../research/exact/RUNTIME_SEH_ENTRIES.md); `.analysis/crt-omitted-entries-20261016/adoption.json` |
@@ -399,6 +417,12 @@ to that control only. Do not copy its zero result into maintained ledgers.
 
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
+
+- Higher-level FP/XI/XC/XP/XT initialization now runs with actual source state.
+  Continue the full CRT entry's command/environment and OS boundaries, or a
+  specific remaining low-level source question. Reuse the41-object closure and
+  current FP data recipe rather than recompiling unchanged initialization code.
+  The full game and original tail transports remain unfinished.
 
 - Locale handles/code page now have a source owner. Keep six 32-bit category
   values even on LP64; the null-address recipe records the absence of independent

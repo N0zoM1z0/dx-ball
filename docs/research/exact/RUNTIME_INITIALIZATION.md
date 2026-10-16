@@ -1,5 +1,12 @@
 # Runtime and floating-point initialization
 
+Later [FP startup integration](RUNTIME_FP_STARTUP.md) runs the actual FP callback
+and this controller through XI/XC, followed by returning XP/XT cleanup. It checks
+the complete52-byte FP state/nine bindings,84-byte CRT table/thirteen bindings,
+hardware state and actual conversion slots without host CRT startup. Full CRT
+entry, physical low-level source and the final game remain open. The text below
+retains the earlier code/section checkpoints.
+
 The subsequent [initializer-section recovery](RUNTIME_INITIALIZER_SECTIONS.md)
 supplies XI/XC producers and checks the complete64-byte linked prefix with12
 bindings. An isolated VC4 entry without a host CRT runs actual heap/low-I/O,
