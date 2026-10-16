@@ -26,6 +26,12 @@ resource records and the sealed 1200-byte prefix remain private. Preserve actual
 terminal output when it arrives; do not infer completion or restart on a stale
 or temporarily unavailable progress read. All 34 authored candidates stay open.
 
+The [PCX workspace recheck](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#pcx-brick-hit-and-processor-controls-after-handoff)
+confirms its rejection from retained instructions and current source/object
+identities. Adjacent descriptor/width/result homes do not establish a source
+aggregate; the smaller private body adds no recovered operation or exact.
+No new source question, compilation, provider or replay follows this review.
+
 The [SIGINT reporting repair](../research/ORIGINAL_CAMPAIGN.md#sigint-reporting-during-observation-october-17)
 writes `interrupted` to both active-observation reports and preserves the latest
 complete SDK state and counters. One intentional signal check exits 130 with 767

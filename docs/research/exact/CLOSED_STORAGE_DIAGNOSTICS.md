@@ -736,6 +736,18 @@ Receipts are in `.analysis/pcx-surface-workspace-20261013/`,
 because its transformation also qualified the descriptor's width member; the
 corrected source compiles once. Do not count the failed draft as an emission.
 
+An October 17 read-only review reconciles the API-workspace rejection against
+the retained original instructions and current compiler closure. The 108-byte
+descriptor, copied width and Lock result have adjacent stack homes, but no
+instruction consumes them as one 116-byte record. Adjacency alone does not
+recover that source aggregate. The saved comparison records no semantic or
+relocation failure; its smaller body remains nonexact and adds no recovered
+operation. The current PCX function and all seven associated headers equal the
+trial baseline, and the current matching object verifies against its source
+closure. Keep the aggregate trial closed; this review supplies no new source
+question. Receipt: `.analysis/pcx-workspace-recheck-20261017/review.json`. No
+compiler, provider, runtime or replay runs, and no acceptance changes.
+
 ## Rotation bank receiver and inline expansion
 
 One ordinary inline bank/slot accessor restores the height function's two
