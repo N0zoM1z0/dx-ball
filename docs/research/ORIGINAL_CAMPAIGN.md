@@ -1,5 +1,53 @@
 # Original-board integration
 
+## Restored-CRT entry and gameplay episode clock, October 17
+
+The campaign CLI now accepts `--profiles vc40-restored-crt` and records that
+profile's own map digest. It uses the existing Observer checks for the current
+image, all 116 source objects and actual shared-storage offsets. The default
+three historical profiles and the full 50-board predicate are unchanged.
+
+`--episode-seconds` now starts at the first initialized, ready gameplay sample.
+Previously startup consumed this interval: an entry check ended after 25.715
+seconds total, immediately after board 0 became ready. That record validates the
+new profile/map route, without establishing 20 seconds of gameplay. Earlier
+records retain their elapsed observer times; no gameplay duration is backfilled.
+
+A final check of image `345a6887…` runs **20.000 seconds after ready gameplay**
+within 44.005 seconds total. It consumes 1,314 valid SDK samples with no malformed
+lines, retains two complete initial-board-0 witnesses and sends 101 mouse clicks.
+The score reaches 40, lives stay 3 and remaining bricks fall 168→164. The complete
+20,000-byte bank and all 49 immutable originals remain unchanged. The result is
+`bounded-episode`; it supplies no full-campaign, normal application-exit,
+physical audio or synchronized pixel claim. The observer stops the game process
+group after the episode. Only eleven bounded events and the consumed stream
+digest are retained, not the full raw sample stream.
+
+One strict SDK compile supplies the entry check. The final check reuses that
+verified reader with unchanged C inputs through the existing child entry; no
+game compilation, relink or full replay runs. It explicitly routes audio to
+`dxball_reconstruction_silent` and leaves the host default unchanged. The initial
+entry check used inherited audio routing and carries no silent-audio claim.
+
+With the existing project silent sink available, the public short command is:
+
+```bash
+systemd-run --user --scope --quiet \
+  -p CPUQuota=35% -p MemoryHigh=640M -p MemoryMax=768M \
+  env PULSE_SINK=dxball_reconstruction_silent \
+  scripts/repo-python tests/test_windows_campaign.py \
+  --profiles vc40-restored-crt --episode-seconds 20 --seconds 90
+```
+
+The public entry compiles the SDK reader. Total `--seconds` still bounds startup
+and gameplay together. Private `.analysis/restored-crt-campaign-entry-20261017/`
+retains both executed source versions, reports, reader products, final frozen
+inputs, resource sample and verification. Forty-nine disposable runtime copies
+are removed after equality checks, releasing 1,703,936 allocated copy bytes.
+Game source, products, 380 exacts and all other acceptance remain unchanged.
+
+## Display and retained campaigns
+
 The campaign harness now defaults to640x480x24 Xvfb, consistent with the
 [original display-depth correction](WINDOWS_DISPLAY_DEPTH.md). Its new
 `--display-depth {8,24}` option is forwarded to the child and recorded in the

@@ -147,17 +147,19 @@ def observe(profile, args, reports):
                'initialized_board_indices': [], 'executable_sha256': digest(runtime / 'dxball.exe'),
                'bank_input_sha256': digest(runtime / 'DEFAULT.BDS'),
                'reader_arguments': observer.arguments,
+               'episode_clock': 'elapsed wall time after the first initialized ready gameplay sample',
                'controller': dict(contact_biases=CONTACT_BIASES, decisions_per_bias=DECISIONS_PER_CONTACT_BIAS,
                                   basis='processed latest SDK samples; cadence depends on scheduling'),
                'controller_phase_requests': [0] * len(CONTACT_BIASES)}
     if profile == 'windows-i686':
         summary['dll_sha256'] = digest(runtime / 'libdxball_core.dll')
-    if profile == 'vc40':
-        summary['map_sha256'] = digest(ROOT / 'build/vc40/dxball.map')
+    if profile in ('vc40', 'vc40-restored-crt'):
+        summary['map_sha256'] = digest(ROOT / 'build' / profile / 'dxball.map')
     began = time.monotonic()
     stream = mouse = process = None
     previous = None
     seen_game = False
+    gameplay_began = None
     opening_input = 0
     sample_steps = clicks = 0
     last_click = last_record = 0
@@ -235,6 +237,8 @@ def observe(profile, args, reports):
                                 raise AssertionError('Board initialization observation deadline')
                             continue
                     if ready and index < 50:
+                        if gameplay_began is None:
+                            gameplay_began = now
                         seen_game = True
                         requested_x = choose_mouse(state, sample_steps)
                         mouse.move(record['origin'], requested_x)
@@ -264,12 +268,15 @@ def observe(profile, args, reports):
                             break
                     else:
                         raise AssertionError('Returned to menu before full campaign')
-                if args.episode_seconds and seen_game and now - began >= args.episode_seconds:
+                if (args.episode_seconds and gameplay_began is not None
+                        and now - gameplay_began >= args.episode_seconds):
                     summary['status'] = 'bounded-episode'
                     break
                 if now - began > args.seconds:
                     raise AssertionError('Campaign observation deadline')
             summary['last_state'] = state
+            if gameplay_began is not None:
+                summary['gameplay_seconds'] = round(now - gameplay_began, 3)
         except Exception as error:
             summary.update(status='fail', error=repr(error))
             raise
@@ -295,12 +302,12 @@ def main():
     if not __debug__:
         raise RuntimeError("Campaign observations require assertions; do not use -O.")
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profiles', nargs='+', choices=('original', 'vc40', 'windows-i686'),
+    parser.add_argument('--profiles', nargs='+', choices=('original', 'vc40', 'vc40-restored-crt', 'windows-i686'),
                         default=['original', 'vc40', 'windows-i686'])
     parser.add_argument('--seconds', type=int, default=3600)
     parser.add_argument('--boards', type=int, choices=range(1, 51), default=50)
     parser.add_argument('--episode-seconds', type=int, default=0,
-                        help='Explicit bounded episode; never reported as a campaign pass')
+                        help='Seconds after ready gameplay starts; never reported as a campaign pass')
     parser.add_argument('--compile-only', action='store_true',
                         help='Public strict SDK compilation; no original files or Wine run')
     parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
