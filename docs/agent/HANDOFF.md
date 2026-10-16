@@ -1,10 +1,10 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after allocator checkpoint `d82efd2` and the inverse-
-trigonometric table source recovery below. Four writable operation records now
-match all 176 initialized bytes and 28 relocations; these storage bytes are
-separate from function exact totals. Two original CRT helper origins are proved.
-Existing function source, exact and semantic ledgers are unchanged.
+Updated October 16, 2026, after operation-table checkpoint `e91fde1` and the
+alignment/seven-record follow-up below. Eleven writable records now match
+448 bytes and 68 relocations. Their common type now preserves the original
+two-byte alignment. Storage bytes are separate from function exact totals;
+existing function source, exact and semantic ledgers remain unchanged.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -157,6 +157,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 x87 record alignment | Two-byte ABI restored; seven more records add272 bytes; family448 bytes/68 bindings; prior176 bytes preserved | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-unary-operation-tables-20261016/comparison.json` |
 | October 16 x87 operation tables | Four complete writable records /176 bytes and28 bindings; two CRT origins; no function source/exact gain | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/crt-dispatch-boundaries-20261016/source-comparison.json` |
 | October 16 independent heap imports | All eight allocator bodies exact; three gaps closed, +66 code bytes; total 376; public header unchanged | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-independent-imports-20261016/adoption.json` |
 | October 16 foreign-handler tail | Original one-past handler pointer, negative-offset type test and deferred last-handler argument; 212/213 bytes, 105 differences; three owner exacts preserved | [C++ tables](../research/exact/RUNTIME_CPP_TABLES.md); `.analysis/cpp-foreign-handler-tail-20261016/adoption.json` |
@@ -230,8 +231,10 @@ question, not merely the smallest differing-position count.
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
   teardown and the 56 independent entries without source remain open.
-- Four inverse-trigonometric operation records now have complete176-byte source
-  storage, with original opaque machine-entry addresses. Their low-level helpers
+- Eleven x87 operation records now have complete448-byte source storage and
+  the original two-byte type alignment. Seven further sin/cos/tan/pow/log/exp
+  records reuse complete retained groups. Prefix constants remain outside those
+  new record claims. Their original opaque machine entries and low-level helpers
   remain open. The seven C-dispatcher entries still lack independent authority
   for LocalFac/intrinflag BSS; do not infer those addresses from code operands.
   See [operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md).

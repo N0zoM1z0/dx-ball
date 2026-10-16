@@ -1,29 +1,5 @@
 {
-  "source": "src/runtime_x87_operation_tables.c",
   "header": "src/runtime_x87_operation_tables.h",
-  "object": "build/exact/runtime_x87_operation_tables.obj",
-  "inputs": [
-    "src/runtime_x87_operation_tables.c",
-    "src/runtime_x87_operation_tables.h"
-  ],
-  "flags": [
-    "/nologo",
-    "/c",
-    "/O2",
-    "/Ob0",
-    "/Oi-",
-    "/Gd",
-    "/MT",
-    "/Gy"
-  ],
-  "target_address": "0x00423230",
-  "size": 176,
-  "scope": "Complete writable operation-table storage; separate from exact-function code and attached exception metadata. Machine entries remain genuine external dependencies; no C call ABI or implementation is invented.",
-  "original_member": {
-    "name": "..\\build\\intel\\st_obj\\87triga.obj",
-    "header_offset": 966344,
-    "sha256": "0619b86aa3ff3e97f431f028fb8bcccaa2e69386e2b31a160f50c43ee56be624"
-  },
   "header_layout": {
     "size": 16,
     "name_length": 0,
@@ -32,334 +8,885 @@
     "unclassified_0c": 12,
     "operand_count": 13,
     "operation": 14,
-    "dispatch": 16
+    "dispatch": 16,
+    "alignment": 2
   },
-  "independent_data_anchor": {
-    "address": "0x423230",
-    "offset": 0,
-    "size": 16,
-    "file_offset": 137776,
-    "bytes_hex": "046173696e0000000000000000010e00"
-  },
-  "tables": [
+  "owners": [
     {
-      "symbol": "_dxball_x87_asin_operation",
-      "address": "0x00423230",
-      "size": 32
+      "source": "src/runtime_x87_operation_tables.c",
+      "object": "build/exact/runtime_x87_operation_tables.obj",
+      "inputs": [
+        "src/runtime_x87_operation_tables.c",
+        "src/runtime_x87_operation_tables.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ],
+      "target_address": "0x00423230",
+      "size": 176,
+      "tables": [
+        {
+          "symbol": "_dxball_x87_asin_operation",
+          "address": "0x00423230",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_acos_operation",
+          "address": "0x00423250",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_atan_operation",
+          "address": "0x00423270",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_atan2_operation",
+          "address": "0x00423290",
+          "size": 80
+        }
+      ],
+      "entry_bindings": {
+        "_dxball_x87_asin_kernel": {
+          "original_symbol": "fFASN",
+          "target_address": 4297376,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_acos_kernel": {
+          "original_symbol": "fFACS",
+          "target_address": 4297385,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_atan_kernel": {
+          "original_symbol": "fFATN",
+          "target_address": 4297394,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_atan2_kernel": {
+          "original_symbol": "fFATN2",
+          "target_address": 4297404,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_half_pi": {
+          "original_symbol": "__rtpiby2",
+          "target_address": 4297484,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_atan_infinite": {
+          "original_symbol": "_rtforatninf",
+          "target_address": 4297528,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_atan2_zero_divisor": {
+          "original_symbol": "_rtforatnby0",
+          "target_address": 4297522,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_atan2_zero": {
+          "original_symbol": "_rtforatn20",
+          "target_address": 4297493,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_atan2_both_zero": {
+          "original_symbol": "_rtforatn200",
+          "target_address": 4297515,
+          "basis": "same complete original code/data group"
+        },
+        "_dxball_x87_return_top": {
+          "original_symbol": "__rttosnpop",
+          "target_address": 4311852,
+          "basis": "prior completely verified87disp.obj definition"
+        },
+        "_dxball_x87_top_nan_unary": {
+          "original_symbol": "__tosnan1",
+          "target_address": 4311874,
+          "basis": "prior completely verified87disp.obj definition"
+        },
+        "_dxball_x87_indefinite_pop": {
+          "original_symbol": "__rtindfnpop",
+          "target_address": 4312024,
+          "basis": "prior completely verified87disp.obj definition"
+        },
+        "_dxball_x87_top_nan_binary": {
+          "original_symbol": "__tosnan2",
+          "target_address": 4311919,
+          "basis": "prior completely verified87disp.obj definition"
+        },
+        "_dxball_x87_next_nan_binary": {
+          "original_symbol": "__nosnan2",
+          "target_address": 4311917,
+          "basis": "prior completely verified87disp.obj definition"
+        },
+        "_dxball_x87_nan_binary": {
+          "original_symbol": "__nan2",
+          "target_address": 4311959,
+          "basis": "prior completely verified87disp.obj definition"
+        },
+        "_dxball_x87_indefinite": {
+          "original_symbol": "__rtindfpop",
+          "target_address": 4312022,
+          "basis": "prior completely verified87disp.obj definition"
+        }
+      },
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_asin_kernel",
+          "addend": 0,
+          "target": 4297376
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_return_top",
+          "addend": 0,
+          "target": 4311852
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_indefinite_pop",
+          "addend": 0,
+          "target": 4312024
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_acos_kernel",
+          "addend": 0,
+          "target": 4297385
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_half_pi",
+          "addend": 0,
+          "target": 4297484
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_indefinite_pop",
+          "addend": 0,
+          "target": 4312024
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan_kernel",
+          "addend": 0,
+          "target": 4297394
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_return_top",
+          "addend": 0,
+          "target": 4311852
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan_infinite",
+          "addend": 0,
+          "target": 4297528
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_kernel",
+          "addend": 0,
+          "target": 4297404
+        },
+        {
+          "offset": 116,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_zero_divisor",
+          "addend": 0,
+          "target": 4297522
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_binary",
+          "addend": 0,
+          "target": 4311919
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_zero",
+          "addend": 0,
+          "target": 4297493
+        },
+        {
+          "offset": 128,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_zero",
+          "addend": 0,
+          "target": 4297493
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_both_zero",
+          "addend": 0,
+          "target": 4297515
+        },
+        {
+          "offset": 136,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_binary",
+          "addend": 0,
+          "target": 4311919
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_zero",
+          "addend": 0,
+          "target": 4297493
+        },
+        {
+          "offset": 144,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_next_nan_binary",
+          "addend": 0,
+          "target": 4311917
+        },
+        {
+          "offset": 148,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_next_nan_binary",
+          "addend": 0,
+          "target": 4311917
+        },
+        {
+          "offset": 152,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_nan_binary",
+          "addend": 0,
+          "target": 4311959
+        },
+        {
+          "offset": 156,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_next_nan_binary",
+          "addend": 0,
+          "target": 4311917
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_zero_divisor",
+          "addend": 0,
+          "target": 4297522
+        },
+        {
+          "offset": 164,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_atan2_zero_divisor",
+          "addend": 0,
+          "target": 4297522
+        },
+        {
+          "offset": 168,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_binary",
+          "addend": 0,
+          "target": 4311919
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_indefinite",
+          "addend": 0,
+          "target": 4312022
+        }
+      ],
+      "original_member": {
+        "name": "..\\build\\intel\\st_obj\\87triga.obj",
+        "header_offset": 966344,
+        "sha256": "0619b86aa3ff3e97f431f028fb8bcccaa2e69386e2b31a160f50c43ee56be624"
+      }
     },
     {
-      "symbol": "_dxball_x87_acos_operation",
-      "address": "0x00423250",
-      "size": 32
+      "source": "src/runtime_x87_trig_tables.c",
+      "object": "build/exact/runtime_x87_trig_tables.obj",
+      "inputs": [
+        "src/runtime_x87_trig_tables.c",
+        "src/runtime_x87_operation_tables.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ],
+      "target_address": "0x00423132",
+      "size": 96,
+      "tables": [
+        {
+          "symbol": "_dxball_x87_sin_operation",
+          "address": "0x00423132",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_cos_operation",
+          "address": "0x00423152",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_tan_operation",
+          "address": "0x00423172",
+          "size": 32
+        }
+      ],
+      "entry_bindings": {
+        "_dxball_x87_sin_kernel": {
+          "original_symbol": "fFSIN",
+          "target_address": 4295018,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_cos_kernel": {
+          "original_symbol": "fFCOS",
+          "target_address": 4295008,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_tan_kernel": {
+          "original_symbol": "fFTAN",
+          "target_address": 4295028,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_return_top": {
+          "original_symbol": "__rttosnpop",
+          "target_address": 4311852,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_return_one": {
+          "original_symbol": "__rtonenpop",
+          "target_address": 4311869,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_top_nan_unary": {
+          "original_symbol": "__tosnan1",
+          "target_address": 4311874,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_indefinite_pop": {
+          "original_symbol": "__rtindfnpop",
+          "target_address": 4312024,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        }
+      },
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_sin_kernel",
+          "addend": 0,
+          "target": 4295018
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_return_top",
+          "addend": 0,
+          "target": 4311852
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_indefinite_pop",
+          "addend": 0,
+          "target": 4312024
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_cos_kernel",
+          "addend": 0,
+          "target": 4295008
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_return_one",
+          "addend": 0,
+          "target": 4311869
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_indefinite_pop",
+          "addend": 0,
+          "target": 4312024
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_tan_kernel",
+          "addend": 0,
+          "target": 4295028
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_return_top",
+          "addend": 0,
+          "target": 4311852
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_indefinite_pop",
+          "addend": 0,
+          "target": 4312024
+        }
+      ],
+      "original_member": {
+        "member": "..\\build\\intel\\st_obj\\87trig.obj",
+        "member_header_offset": 965394,
+        "member_sha256": "ca4830058eabbcc1a798f27a1ae4cf09975e3500b1c5a64b16275fa1a38f6ab1"
+      },
+      "original_data_section": {
+        "address": "0x423120",
+        "size": 114,
+        "section_index": 2,
+        "basis": {
+          "kind": "unique_initialized_symbol",
+          "symbol": ".data",
+          "size": 18
+        },
+        "evidence_path": ".analysis/rea/runs/2026-10-11T04-40-02.986Z-requests-1720639/00-read_bytes.json",
+        "evidence_id": "ev_f585a80429f6f35d273f39b3a7cd2b5c0ab75c5c2a4f84a4037271fa1621974b"
+      },
+      "original_record_offset": 18
     },
     {
-      "symbol": "_dxball_x87_atan_operation",
-      "address": "0x00423270",
-      "size": 32
-    },
-    {
-      "symbol": "_dxball_x87_atan2_operation",
-      "address": "0x00423290",
-      "size": 80
+      "source": "src/runtime_x87_transcendental_tables.c",
+      "object": "build/exact/runtime_x87_transcendental_tables.obj",
+      "inputs": [
+        "src/runtime_x87_transcendental_tables.c",
+        "src/runtime_x87_operation_tables.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ],
+      "target_address": "0x00423F34",
+      "size": 176,
+      "tables": [
+        {
+          "symbol": "_dxball_x87_pow_operation",
+          "address": "0x00423F34",
+          "size": 80
+        },
+        {
+          "symbol": "_dxball_x87_log10_operation",
+          "address": "0x00423F84",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_log_operation",
+          "address": "0x00423FA4",
+          "size": 32
+        },
+        {
+          "symbol": "_dxball_x87_exp_operation",
+          "address": "0x00423FC4",
+          "size": 32
+        }
+      ],
+      "entry_bindings": {
+        "_dxball_x87_pow_kernel": {
+          "original_symbol": "fFYTOX",
+          "target_address": 4312064,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_pow_zero_exponent": {
+          "original_symbol": "_rtforyto0",
+          "target_address": 4312264,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_pow_dispatch_fallback": {
+          "original_symbol": "_usepowhlp",
+          "target_address": 4312533,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_pow_zero_base": {
+          "original_symbol": "_rtfor0tox",
+          "target_address": 4312269,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_pow_both_zero": {
+          "original_symbol": "_rtfor0to0",
+          "target_address": 4312174,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_top_nan_binary": {
+          "original_symbol": "__tosnan2",
+          "target_address": 4311919,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_next_nan_binary": {
+          "original_symbol": "__nosnan2",
+          "target_address": 4311917,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_nan_binary": {
+          "original_symbol": "__nan2",
+          "target_address": 4311959,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_log10_kernel": {
+          "original_symbol": "fFLOGm",
+          "target_address": 4312249,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_log_kernel": {
+          "original_symbol": "fFLNm",
+          "target_address": 4312253,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_log_zero": {
+          "original_symbol": "_rtforln0",
+          "target_address": 4312228,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_log_infinite": {
+          "original_symbol": "_rtforloginf",
+          "target_address": 4312244,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_top_nan_unary": {
+          "original_symbol": "__tosnan1",
+          "target_address": 4311874,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_exp_kernel": {
+          "original_symbol": "fFEXP",
+          "target_address": 4312081,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_exp_infinite": {
+          "original_symbol": "_rtforexpinf",
+          "target_address": 4312401,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        },
+        "_dxball_x87_return_one": {
+          "original_symbol": "__rtonenpop",
+          "target_address": 4311869,
+          "basis": "actual definition from prior complete code/data or87disp section"
+        }
+      },
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_kernel",
+          "addend": 0,
+          "target": 4312064
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_zero_exponent",
+          "addend": 0,
+          "target": 4312264
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_binary",
+          "addend": 0,
+          "target": 4311919
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_dispatch_fallback",
+          "addend": 0,
+          "target": 4312533
+        },
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_zero_base",
+          "addend": 0,
+          "target": 4312269
+        },
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_both_zero",
+          "addend": 0,
+          "target": 4312174
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_binary",
+          "addend": 0,
+          "target": 4311919
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_dispatch_fallback",
+          "addend": 0,
+          "target": 4312533
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_next_nan_binary",
+          "addend": 0,
+          "target": 4311917
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_next_nan_binary",
+          "addend": 0,
+          "target": 4311917
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_nan_binary",
+          "addend": 0,
+          "target": 4311959
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_next_nan_binary",
+          "addend": 0,
+          "target": 4311917
+        },
+        {
+          "offset": 64,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_dispatch_fallback",
+          "addend": 0,
+          "target": 4312533
+        },
+        {
+          "offset": 68,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_dispatch_fallback",
+          "addend": 0,
+          "target": 4312533
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_binary",
+          "addend": 0,
+          "target": 4311919
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_pow_dispatch_fallback",
+          "addend": 0,
+          "target": 4312533
+        },
+        {
+          "offset": 96,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_log10_kernel",
+          "addend": 0,
+          "target": 4312249
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_log_zero",
+          "addend": 0,
+          "target": 4312228
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_log_infinite",
+          "addend": 0,
+          "target": 4312244
+        },
+        {
+          "offset": 128,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_log_kernel",
+          "addend": 0,
+          "target": 4312253
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_log_zero",
+          "addend": 0,
+          "target": 4312228
+        },
+        {
+          "offset": 136,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_log_infinite",
+          "addend": 0,
+          "target": 4312244
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_exp_kernel",
+          "addend": 0,
+          "target": 4312081
+        },
+        {
+          "offset": 164,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_return_one",
+          "addend": 0,
+          "target": 4311869
+        },
+        {
+          "offset": 168,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_exp_infinite",
+          "addend": 0,
+          "target": 4312401
+        }
+      ],
+      "original_member": {
+        "member": "..\\build\\intel\\st_obj\\87tran.obj",
+        "member_header_offset": 962694,
+        "member_sha256": "587a044c014158e0f0d2890b6480326ec8353526bb3e017373c6299f355f8301"
+      },
+      "original_data_section": {
+        "address": "0x423ef0",
+        "size": 244,
+        "section_index": 2,
+        "basis": {
+          "kind": "unique_initialized_symbol",
+          "symbol": "_log2max",
+          "size": 20
+        },
+        "evidence_path": ".analysis/rea/runs/2026-10-11T05-42-20.681Z-coupled-requests-1791122/00-read_bytes.json",
+        "evidence_id": "ev_86e6cb7d19a108f9784a3a93e2ab193547dfcfc6258578eb1c0e07e753b3a3ce"
+      },
+      "original_record_offset": 68
     }
   ],
-  "entry_bindings": {
-    "_dxball_x87_asin_kernel": {
-      "original_symbol": "fFASN",
-      "target_address": 4297376,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_acos_kernel": {
-      "original_symbol": "fFACS",
-      "target_address": 4297385,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_atan_kernel": {
-      "original_symbol": "fFATN",
-      "target_address": 4297394,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_atan2_kernel": {
-      "original_symbol": "fFATN2",
-      "target_address": 4297404,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_half_pi": {
-      "original_symbol": "__rtpiby2",
-      "target_address": 4297484,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_atan_infinite": {
-      "original_symbol": "_rtforatninf",
-      "target_address": 4297528,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_atan2_zero_divisor": {
-      "original_symbol": "_rtforatnby0",
-      "target_address": 4297522,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_atan2_zero": {
-      "original_symbol": "_rtforatn20",
-      "target_address": 4297493,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_atan2_both_zero": {
-      "original_symbol": "_rtforatn200",
-      "target_address": 4297515,
-      "basis": "same complete original code/data group"
-    },
-    "_dxball_x87_return_top": {
-      "original_symbol": "__rttosnpop",
-      "target_address": 4311852,
-      "basis": "prior completely verified87disp.obj definition"
-    },
-    "_dxball_x87_top_nan_unary": {
-      "original_symbol": "__tosnan1",
-      "target_address": 4311874,
-      "basis": "prior completely verified87disp.obj definition"
-    },
-    "_dxball_x87_indefinite_pop": {
-      "original_symbol": "__rtindfnpop",
-      "target_address": 4312024,
-      "basis": "prior completely verified87disp.obj definition"
-    },
-    "_dxball_x87_top_nan_binary": {
-      "original_symbol": "__tosnan2",
-      "target_address": 4311919,
-      "basis": "prior completely verified87disp.obj definition"
-    },
-    "_dxball_x87_next_nan_binary": {
-      "original_symbol": "__nosnan2",
-      "target_address": 4311917,
-      "basis": "prior completely verified87disp.obj definition"
-    },
-    "_dxball_x87_nan_binary": {
-      "original_symbol": "__nan2",
-      "target_address": 4311959,
-      "basis": "prior completely verified87disp.obj definition"
-    },
-    "_dxball_x87_indefinite": {
-      "original_symbol": "__rtindfpop",
-      "target_address": 4312022,
-      "basis": "prior completely verified87disp.obj definition"
-    }
-  },
-  "relocations": [
-    {
-      "offset": 16,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_asin_kernel",
-      "addend": 0,
-      "target": 4297376
-    },
-    {
-      "offset": 20,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_return_top",
-      "addend": 0,
-      "target": 4311852
-    },
-    {
-      "offset": 24,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_top_nan_unary",
-      "addend": 0,
-      "target": 4311874
-    },
-    {
-      "offset": 28,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_indefinite_pop",
-      "addend": 0,
-      "target": 4312024
-    },
-    {
-      "offset": 48,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_acos_kernel",
-      "addend": 0,
-      "target": 4297385
-    },
-    {
-      "offset": 52,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_half_pi",
-      "addend": 0,
-      "target": 4297484
-    },
-    {
-      "offset": 56,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_top_nan_unary",
-      "addend": 0,
-      "target": 4311874
-    },
-    {
-      "offset": 60,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_indefinite_pop",
-      "addend": 0,
-      "target": 4312024
-    },
-    {
-      "offset": 80,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan_kernel",
-      "addend": 0,
-      "target": 4297394
-    },
-    {
-      "offset": 84,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_return_top",
-      "addend": 0,
-      "target": 4311852
-    },
-    {
-      "offset": 88,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_top_nan_unary",
-      "addend": 0,
-      "target": 4311874
-    },
-    {
-      "offset": 92,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan_infinite",
-      "addend": 0,
-      "target": 4297528
-    },
-    {
-      "offset": 112,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_kernel",
-      "addend": 0,
-      "target": 4297404
-    },
-    {
-      "offset": 116,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_zero_divisor",
-      "addend": 0,
-      "target": 4297522
-    },
-    {
-      "offset": 120,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_top_nan_binary",
-      "addend": 0,
-      "target": 4311919
-    },
-    {
-      "offset": 124,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_zero",
-      "addend": 0,
-      "target": 4297493
-    },
-    {
-      "offset": 128,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_zero",
-      "addend": 0,
-      "target": 4297493
-    },
-    {
-      "offset": 132,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_both_zero",
-      "addend": 0,
-      "target": 4297515
-    },
-    {
-      "offset": 136,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_top_nan_binary",
-      "addend": 0,
-      "target": 4311919
-    },
-    {
-      "offset": 140,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_zero",
-      "addend": 0,
-      "target": 4297493
-    },
-    {
-      "offset": 144,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_next_nan_binary",
-      "addend": 0,
-      "target": 4311917
-    },
-    {
-      "offset": 148,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_next_nan_binary",
-      "addend": 0,
-      "target": 4311917
-    },
-    {
-      "offset": 152,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_nan_binary",
-      "addend": 0,
-      "target": 4311959
-    },
-    {
-      "offset": 156,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_next_nan_binary",
-      "addend": 0,
-      "target": 4311917
-    },
-    {
-      "offset": 160,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_zero_divisor",
-      "addend": 0,
-      "target": 4297522
-    },
-    {
-      "offset": 164,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_atan2_zero_divisor",
-      "addend": 0,
-      "target": 4297522
-    },
-    {
-      "offset": 168,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_top_nan_binary",
-      "addend": 0,
-      "target": 4311919
-    },
-    {
-      "offset": 172,
-      "type": "DIR32",
-      "symbol": "_dxball_x87_indefinite",
-      "addend": 0,
-      "target": 4312022
-    }
-  ],
+  "total_storage_bytes": 448,
+  "total_records": 11,
+  "total_relocations": 68,
+  "scope": "Complete writable operation records only; separate from function exact code and attached exception metadata. The18/68-byte original constant prefixes are outside the two newly recovered owners. Machine helpers remain genuine external dependencies.",
   "boundary_evidence": "docs/research/exact/RUNTIME_X87_OPERATION_TABLES.md",
-  "data_evidence_id": "ev_d7b5e3077aa89e06757c2366971896bffbded18b2eeb3e07f63c6486a8a3fafa",
-  "original_code": {
-    "address": "0x004192A0",
-    "size": 162,
-    "nonrelocated_anchor": {
-      "address": "0x4192a0",
-      "offset": 0,
-      "size": 104,
-      "file_offset": 100000,
-      "bytes_hex": "e83700000086e9eb22e82e000000d9c9eb19d9e1d9e88ae932c9eb0fc68570fffffffed9e1d9c9d9e1d9c9d9f30ac97404d9ebdee10aed7402d9e0c3d9e1d9c0d9c0d9e8dee1d9c9d9e8dec1dec9d9e49bddbd60ffffff9bf68561ffffff01750532edd9fac358e9"
+  "prior_arctrig_authority": {
+    "original_code": {
+      "address": "0x004192A0",
+      "size": 162,
+      "nonrelocated_anchor": {
+        "address": "0x4192a0",
+        "offset": 0,
+        "size": 104,
+        "file_offset": 100000,
+        "bytes_hex": "e83700000086e9eb22e82e000000d9c9eb19d9e1d9e88ae932c9eb0fc68570fffffffed9e1d9c9d9e1d9c9d9f30ac97404d9ebdee10aed7402d9e0c3d9e1d9c0d9c0d9e8dee1d9c9d9e8dec1dec9d9e49bddbd60ffffff9bf68561ffffff01750532edd9fac358e9"
+      },
+      "code_evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12",
+      "entries": [
+        "0x004192DC",
+        "0x0041930C"
+      ]
     },
-    "code_evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12",
-    "entries": [
-      "0x004192DC",
-      "0x0041930C"
-    ]
-  },
-  "original_header_placement": "The complete16-byte operation-header subobject, corroborated by the dispatch pointer boundary and consumers of offsets12/14; not the old partial initialized-symbol placement policy."
+    "independent_data_anchor": {
+      "address": "0x423230",
+      "offset": 0,
+      "size": 16,
+      "file_offset": 137776,
+      "bytes_hex": "046173696e0000000000000000010e00"
+    },
+    "data_evidence_id": "ev_d7b5e3077aa89e06757c2366971896bffbded18b2eeb3e07f63c6486a8a3fafa"
+  }
 }
