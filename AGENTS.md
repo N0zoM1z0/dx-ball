@@ -19,7 +19,7 @@ against instructions, exits and embedded data.
 
 - Run Python through `scripts/repo-python`.
 - Use `scripts/rea` and the installed REA skill for new binary analysis.
-  The project pins REA 6.4.0/Ghidra 12.1.4 in `config/rea.lock.json`.
+  The project pins REA 6.5.0/Ghidra 12.1.4 in `config/rea.lock.json`.
   Retain full responses, Evidence IDs and snapshots under `.analysis/rea/`.
 - Write natural typed source shared by portable and legacy builds. Preserve
   ABI, widths, ownership and actual state writes. Do not force matches with
@@ -31,7 +31,10 @@ against instructions, exits and embedded data.
   optional; do not run the full historical queue by default or repeat unchanged
   checks. Remove redundant scripts and their obsolete references when appropriate.
 - Use one writable compiler/provider session, one allowed CPU, CMake
-  `--parallel 1`, and the 512 MiB Ghidra heap through the project entry points.
+  `--parallel 1`, and the 256 MiB Ghidra heap through the REA entry point.
+  On this host, wrap compiler/provider/Wine commands in a user systemd scope
+  with `CPUQuota=35%`, `MemoryHigh=640M` and `MemoryMax=768M`. This caps the
+  whole process tree; do not overlap heavy tasks. See `docs/agent/REA.md`.
   Route automated game/audio probes to `PULSE_SINK=dxball_reconstruction_silent`.
 - Keep originals in `original/`, tools in `.tools/`, products in `build/`,
   raw evidence in `.analysis/`, and databases in `ghidra-project/`; these are private.

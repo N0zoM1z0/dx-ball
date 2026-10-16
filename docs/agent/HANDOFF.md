@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after source checkpoint `02164bd` on `origin/main`.
+Updated October 16, 2026, after source checkpoint `04344f1` on `origin/main`.
 The two C++ terminal callbacks now have restored SEH source, complete exact
 code/scope comparisons, initialized callback storage and bounded Wine checks.
 The reconstruction objective is unfinished.
@@ -77,6 +77,13 @@ abort endpoint. The previous 367 exacts are reused after verifying unchanged
 recipes, actual input closures, flags and object hashes; they were not recompiled.
 Current totals are 75,861 code bytes and 184 attached metadata bytes. This is
 not a final restored-game build or play test.
+
+REA is now pinned to 6.5.0, with bundled skill version 42 and 207 tools. The
+420-record 6.4 snapshot is preserved as a verified gzip carrier because 6.5
+rejects its analysis profile. A fresh 6.5 read of the object-scope table bytes
+matches the original and closes normally. The current profile uses a 256 MiB
+Ghidra heap, 35% of one CPU and a 768 MiB whole-task memory limit. Upgrade proof
+and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
 
 ### Authorities and private inputs
 
@@ -238,12 +245,14 @@ before overwriting them, including recursively consumed headers.
 - One writable compiler/provider/Wine session at a time.
   `legacy_toolchain.session_lock()` is blocking and non-reentrant; do not
   acquire it around a helper that already acquires it.
-- CMake builds use `--parallel 1`. Ghidra uses the supported
-  `GHIDRA_HEADLESS_MAXMEM=512M` path through project entry points.
+- CMake builds use `--parallel 1`. The REA entry point uses the supported
+  `GHIDRA_HEADLESS_MAXMEM=256M` path. On this host, wrap compiler/provider/Wine
+  commands in a user systemd scope with `CPUQuota=35%`, `MemoryHigh=640M` and
+  `MemoryMax=768M`; run heavy tasks serially. See [REA commands](REA.md).
 - Automated audio/game probes use `PULSE_SINK=dxball_reconstruction_silent`.
   Prepare native interposers before taking the session lock.
 - For new binary analysis, read the installed reverse-engineering skill and
-  use `scripts/rea`: pinned REA 6.4.0 / Ghidra 12.1.4.
+  use `scripts/rea`: pinned REA 6.5.0 / Ghidra 12.1.4.
   Reuse retained dossiers first. Save full responses, Evidence IDs and snapshots
   under `.analysis/rea/`; close/save sessions. Read only relevant facets.
 - Use LeanToken for bounded repository exploration. Avoid dumping huge manifests

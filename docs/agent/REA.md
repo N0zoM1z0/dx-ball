@@ -2,7 +2,7 @@
 
 Use `scripts/rea` from the repository root. It selects Ghidra and applies the
 project's target checks and process limits. Versions are pinned in
-[`config/rea.lock.json`](../../config/rea.lock.json): REA 6.4.0 and Ghidra 12.1.4.
+[`config/rea.lock.json`](../../config/rea.lock.json): REA 6.5.0 and Ghidra 12.1.4.
 
 Supply the matching executable and assets under `original/`; see
 [`config/target.toml`](../../config/target.toml) and [build setup](../BUILD.md).
@@ -75,15 +75,48 @@ the verified decompressed hash before removal of the raw copy, releasing
 68,034,560 allocated bytes including the receipt. Decompress only when needed;
 no current task input or sealed external dependency uses the removed raw path.
 
-The installed REA skill is synchronized with the current package: skill version
-37 and 170 tools. The 6.4 upgrade receipts, prior version-34 skill, and intact
-43-record 6.3 snapshot are in `.analysis/rea-upgrade-6.4.0/`. Opening that
-snapshot with 6.4 returned `evidence_integrity_mismatch` / `profile_mismatch`;
-the current snapshot starts with the focused 6.4 calibration. Reuse archived
-6.3 Evidence directly without redoing successful analyses. Node 22.19.0,
-Ghidra 12.1.4 and the JDK remain the pinned engines; no MCP registration changed.
-Keep tool discovery bounded: retain the complete catalog outside the agent
-context and inspect only the selected operation's schema.
+The installed REA skill is synchronized with 6.5.0: skill version 42 and 207
+advertised tools. Upgrade receipts, the prior version-37 skill and a verified
+420-record 6.4 snapshot are in `.analysis/rea-upgrade-6.5.0/`. Opening the old
+snapshot with 6.5 returned `evidence_integrity_mismatch` / `profile_mismatch`.
+The archived payloads remain authoritative for their original observations;
+new 6.5 work uses a fresh snapshot. Earlier 6.3/6.4 upgrade evidence remains in
+its existing private carriers. No MCP registration or engine version changed;
+current processes with an older tool catalog require a client reconnection,
+so new work here uses fresh project CLI sessions.
+
+The 6.5 check opened the verified target with 207 actual tools, read all 28 bytes
+at `0x4201C8` and matched the PE, then closed and saved one fresh Evidence record:
+`ev_ad8b7d65b442e9a523841c43f495ec948be8f44624cf7d644cfa9c818756eb1c`.
+The selected Ghidra doctor scope is healthy; unrelated optional environment
+checks were not used as a gate. No historical native query queue was replayed.
+The cold provider read took 164,048 ms under the CPU cap; sampled whole-scope
+memory peak was 671,502,336 bytes, with the JVM's `-Xmx256M` observed directly.
+These timings and memory samples describe this bounded upgrade check.
+
+The old expanded runtime was removed only after a complete sequential archive
+verification of its 6,506 regular files and symlink checks. Its 18,445,330-byte
+rollback archive remains intact; the reviewed cleanup removed 6,522 old leaves
+and released about 97 MiB of expanded tool storage. The current runtime and
+standard-bootstrap `npm ci` product remain fully hash-attested.
+
+The project REA entry point now sets the supported `GHIDRA_HEADLESS_MAXMEM=256M`.
+On this development host, cap a heavy command and all descendants with a user
+systemd scope, in addition to the existing one-CPU affinity and serial session:
+
+```bash
+systemd-run --user --scope --quiet \
+  -p CPUQuota=35% -p MemoryHigh=640M -p MemoryMax=768M \
+  scripts/rea session path/to/requests.json
+```
+
+Use the same scope for compiler/Wine commands. The kernel reports
+`cpu.max` as `35000 100000` and `memory.max` as `805306368`; these are whole-tree
+limits, not just launch-process settings. Do not run heavy sessions together.
+The historical general helper still records its earlier 512 MiB profile;
+the current REA wrapper explicitly selects the smaller heap. Node 22.19.0,
+Ghidra 12.1.4 and the existing JDK remain pinned. Keep discovery bounded and
+save full catalogs outside the conversation before inspecting selected schemas.
 
 The release advertises `inspect_analysis_view` for completed binary-layout and
 JavaScript application Evidence, using same-session retained IDs or inline

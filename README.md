@@ -113,7 +113,7 @@ scripts/repo-python scripts/bootstrap-rea.py
 
 The first command installs the JDK and Visual C++ 4.0 compiler. The second
 installs REA and Ghidra from [the project's lock file](config/rea.lock.json),
-currently REA 6.4.0 and Ghidra 12.1.4. Both scripts verify their downloads
+currently REA 6.5.0 and Ghidra 12.1.4. Both scripts verify their downloads
 and keep the tools in `.tools/`. The global REA CLI configures Codex;
 the project's `scripts/rea` command uses the locked tools for analysis.
 

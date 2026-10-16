@@ -36,7 +36,11 @@ def environment():
     env = os.environ.copy()
     env.update(GHIDRA_INSTALL_DIR=str(ghidra.resolve()), JAVA_HOME=str(java.resolve()),
                REA_ANALYSIS_PROVIDER="ghidra")
-    return node, runtime, ghidra_environment(env)
+    provider_environment = ghidra_environment(env)
+    # The REA entry point uses the lower budget requested for this workspace.
+    # Keep the provider's supported launcher variable and pinned files intact.
+    provider_environment["GHIDRA_HEADLESS_MAXMEM"] = "256M"
+    return node, runtime, provider_environment
 
 
 def main(arguments):
