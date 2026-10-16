@@ -1,5 +1,8 @@
 # Rotation renderer frame roles
 
+The later [pixel-address recovery](ROTATION_PIXEL_ADDRESS.md) restores two
+integer offset/add-base orders without changing the frame or totals below.
+
 The complete renderer at `0x4026A0` still compares at **1466/1572 bytes with
 1466 differing positions**. The October 17 review accounts for all 424 bytes
 of both automatic frames. There is no unexplained frame hole to fill. It does

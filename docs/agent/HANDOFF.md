@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the CRT dependency inventory audit.
+Updated October 17, 2026, after the rotation pixel-address recovery.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -9,7 +9,19 @@ recorded. The reconstruction objective is unfinished and ports remain deferred.
 Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
-`ebe4a4ff8e6557fe0a89a32a064365941103b574f7373460e8e7cd5f51b2eb56`.
+`844247ba7095eedbf99cc7e3bfeaf3ec43a4d232c1cb6b7fcfc2e68de8ed42be`.
+
+The [rotation address recovery](../research/exact/ROTATION_PIXEL_ADDRESS.md)
+forms each integer row-plus-column offset before adding the pixel base, as in
+the original. Only four ADD operands/eight bytes change; every other instruction
+byte and five complete companions remain identical. The renderer stays1466/1572
+with1466 differences,365 instructions and424-byte frame. Four exacts retain749
+bytes; existing351 renderer plus344 wrapper cases pass once. Historical235 input
+inventories refresh without rerunning their other cases. One eight-input compile
+covers all six functions; the delivery builder reuses all116 objects. All1091 map
+addresses remain identical and the renderer is discarded by `/OPT:REF`: only12
+bytes in six parsed timestamps differ from the preceding `ebe4a4ff…` image.
+No game, full replay or provider query runs. This source improvement adds no exact.
 
 The [dependency inventory audit](../research/exact/CRT_DEPENDENCY_INVENTORY.md)
 adds eight omitted arctrig/sqrt entries: three proved runtime and five still

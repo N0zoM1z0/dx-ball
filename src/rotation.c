@@ -74,10 +74,10 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
                 rounded_y = (DxBallInt)((long double)y + 0.5);
                 truncated_x = (DxBallInt)x;
                 truncated_y = (DxBallInt)y;
-                destination_pixel = destination_desc.pixels + rounded_y * destination_desc.pitch + rounded_x;
+                destination_pixel = destination_desc.pixels + (rounded_y * destination_desc.pitch + rounded_x);
                 *destination_pixel = *pixel;
                 if (rounded_x != truncated_x || rounded_y != truncated_y) {
-                    destination_pixel = destination_desc.pixels + truncated_y * destination_desc.pitch + rounded_x;
+                    destination_pixel = destination_desc.pixels + (truncated_y * destination_desc.pitch + rounded_x);
                     *destination_pixel = *pixel;
                 }
             }

@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after the bank allocation scope improvement.
+Updated October 17, 2026, after the rotation pixel-address recovery.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
 There are **95 complete nonexact comparisons: 34 authored, 60 runtime and one
 compiler-generated**. None is an accepted exact.
@@ -72,6 +72,9 @@ resource requirements and resume procedure.
 All 34 authored candidates were compared across their complete original
 extents on October 13. The bank loader's [allocation scope](BANK_ALLOCATION_SCOPE.md)
 updates its complete comparison on October 17; the other results are unchanged.
+The [rotation address recovery](ROTATION_PIXEL_ADDRESS.md) changes eight bytes
+to restore integer-offset-before-base evaluation at both pixel writes; its
+complete raw difference count remains1466 and all five companions are unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
