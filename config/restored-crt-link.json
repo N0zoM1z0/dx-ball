@@ -154,7 +154,6 @@
     "member:000e99ba",
     "member:000e96da",
     "member:000e919c",
-    "member:00031148",
     "member:0002eaf8",
     "member:000ebec8",
     "member:000ebb12",
@@ -252,12 +251,6 @@
       "object_sha256": "c3f26c154bb97db7dddc9c6b54dda905828f27bb00d70e86fc98225367c3f3f4"
     },
     {
-      "id": "member:00031148",
-      "member": "build\\intel\\st_obj\\hooks.obj",
-      "header_offset": 201032,
-      "object_sha256": "2c3bb7b97929c93beca2a5a7e118a11f4379e8d8c9a8c93f91d05ca37ad31187"
-    },
-    {
       "id": "member:0002eaf8",
       "member": "build\\intel\\st_obj\\lowhelpr.obj",
       "header_offset": 191224,
@@ -306,6 +299,6 @@
       "object_sha256": "587a044c014158e0f0d2890b6480326ec8353526bb3e017373c6299f355f8301"
     }
   ],
-  "remaining_scope": "Original members still supply x87 routines, signed64 division, stack/SEH transports and C++ frame/terminal dispatch. This integration profile is not fully reconstructed CRT source or complete playability verification.",
+  "remaining_scope": "Original members still supply x87 routines, signed64 division, stack/SEH transports and C++ frame/translator transport. Terminal callbacks and translator storage use maintained source. This integration profile is not fully reconstructed CRT source or complete playability verification.",
   "research": "docs/research/RESTORED_CRT_GAME_ENTRY.md"
 }

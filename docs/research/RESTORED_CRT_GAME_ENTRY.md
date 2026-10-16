@@ -21,22 +21,23 @@ launch it. The same original assets and compiler prerequisites apply.
 
 [The checked link recipe](../../config/restored-crt-link.json) names every
 input and preserves the verified initializer order. It uses 113 maintained
-source objects, three integration objects, 21 pinned original library members
+source objects, three integration objects, 20 pinned original library members
 and the resource object, with `/NODEFAULTLIB`.
 
 `runtime_legacy_imports.c` binds the original CRT names to their existing typed
 implementations, including allocation, normal/quick exit, onexit, stdio,
 strings, case conversion, matherr and the x87 exception bridge. The C++ adapter
 preserves the original unhandled-filter link name and delegates to the
-maintained filter. These adapters are integration glue; they add no original
+maintained filter. Its canonical terminate/inconsistency entry names now call
+the recovered terminal bodies. These adapters are integration glue; they add no original
 function or exact claim. Original memcpy grouping and member-call tail-frame
 differences remain described in their owner notes.
 
-The original members still supply thirteen x87/control/kernel modules, four
-C++ frame/hooks/transport modules, two SEH modules, signed64 division and the
-stack probe. In particular, the C++ frame dispatcher and terminal callback
-hooks remain original code in this profile. Their presence is not evidence
-that the corresponding recovered source is integrated. The exact remaining
+The original members still supply thirteen x87/control/kernel modules, three
+C++ frame/transport modules, two SEH modules, signed64 division and the
+stack probe. Original `hooks.obj` is removed: the SDK-typed canonical translator
+cell and terminal callbacks now use source. The original C++ frame dispatcher
+and translator transport remain dependencies. The exact remaining
 members, archive offsets and full hashes are explicit in the recipe.
 
 No original stdio, allocation, CRT startup, onexit or matherr owner is silently
@@ -55,6 +56,11 @@ Changed products and preceding build receipts are retained in the profile's
 history directory. Resource conversion stays inside that profile's directory.
 
 ## Actual first-board evidence
+
+The following process observations belong to the initial 21-member integration
+checkpoint. The subsequent [hooks-state change](exact/RUNTIME_CPP_TERMINAL.md)
+checks its affected functions and eight runtime selectors without another game
+run. Its public build reuses all 116 objects and retains 20 original members.
 
 One real Wine process uses the original copied data and existing observation
 helpers. The state reader is reused, not recompiled. Its addresses come from
@@ -79,7 +85,7 @@ environment issue without changing the game. Those diagnostics are retained.
 
 ## Linked verification and limits
 
-The public image's full code, read-only data, writable data, imports,
+At that initial checkpoint, the public image's full code, read-only data, writable data, imports,
 relocations, virtual extents and entry address agree with the executed image.
 Resource payloads, identifiers, addresses and all other resource bytes agree;
 only resource-directory and PE timestamps vary. This static comparison reuses
@@ -91,7 +97,7 @@ independently by its unique relocated contents. Retained integration bodies
 also agree with their actual source objects. The full 84-byte CRT table keeps
 all thirteen original callback bindings and stdio-before-onexit ordering.
 
-Function/source/origin/exact ledgers and both comparison reports are unchanged:
+At that checkpoint, function/source/origin/exact ledgers and both comparison reports are unchanged:
 545 inventory entries, 475 source entries, 380 exacts and 95 complete candidates.
 The builder is a declared input of four termination semantic rows. Reusing the
 existing native library, the affected 1,031 original/native cases pass with the
@@ -108,7 +114,7 @@ brings the allocated-storage reduction to about 2.8 MiB. Unique observations,
 failures, history, current build products and runtime data are preserved.
 
 This is a first-board integration checkpoint. Remaining function recovery,
-C++ frame/callback-state integration, x87/SEH transport source, exceptional
+C++ frame/translator integration, x87/SEH transport source, exceptional
 game paths and complete playability remain open. Ports still follow that work.
 The MinGW CRT errno macro issue is unchanged; this optional profile uses VC4.
 

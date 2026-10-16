@@ -9,3 +9,7 @@ DxBallCrtLong DXBALL_CRT_OS_CALL __CxxUnhandledExceptionFilter(
     return dxball_cpp_unhandled_filter(
         reinterpret_cast<DxBallCppExceptionPointers *>(pointers));
 }
+
+/* The remaining frame transport calls these original C++ interfaces. */
+void terminate(void) { dxball_cpp_terminate(); }
+void _inconsistency(void) { dxball_cpp_inconsistency(); }

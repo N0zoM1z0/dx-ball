@@ -71,7 +71,7 @@ void dxball_cpp_find_foreign_handler(DxBallCppExceptionRecord *exception,
 {
     unsigned int low, high;
     const DxBallCppTryEntry *entry;
-    if (dxball_cpp_se_translator && dxball_cpp_call_se_translator(exception, registration,
+    if (__pSETranslator && dxball_cpp_call_se_translator(exception, registration,
             context, dispatcher, function, nesting, marker))
         return;
     entry = dxball_cpp_select_try_range(function, nesting, state, &low, &high);

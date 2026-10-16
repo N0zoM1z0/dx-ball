@@ -1,25 +1,29 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after real-game startup through the restored CRT.
-Current totals are 475 source entries, 380 exacts and 95 complete candidates.
-The optional `vc40-restored-crt` profile links the actual game with 113 reused
-source objects and three new typed integration objects, retaining 21 explicit
-original members. Live state confirms opening/menu, the original first board's
-400 bytes and 168 bricks, three lives, zero score, ball release/movement, one
-preserved heap and normal exit0. Reviewed captures identify the real scenes.
-The public builder reuses all 116 objects with zero compilations. Its loaded
-code/data/imports/relocations and resource payloads agree with the executed
-image; only resource/PE timestamps vary. The full390-byte entry/12-byte scope
-and CRT84/thirteen bindings pass. Function ledgers/reports remain byte-identical.
-Only four termination semantic builder-input identities refresh after 1,031
-original/native cases with the same complete observation projection; all scopes,
-counts and the other 245 rows are unchanged. No full replay or provider query ran.
-Original C++ frame/hooks and x87/SEH/stack support remain explicit dependencies;
-this is not a fully source-restored CRT or final playability claim. The default
-host-CRT profile is still the default. Function recovery and ports retain their
-original priority. See [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
-REA is pinned to 6.5.0.
-The reconstruction objective is unfinished.
+Updated October 17, 2026, after sharing the original C++ translator state.
+Current totals remain 475 source entries, 380 exacts and 95 complete candidates.
+The optional `vc40-restored-crt` profile now retains 20 explicit original
+members after removing `hooks.obj`. The source owns the canonical C++
+`__pSETranslator` cell with the SDK callback type; the foreign-handler model
+reads that same cell. Typed canonical terminate/inconsistency adapters use
+recovered source. There is no duplicate C translator variable or alias option.
+Only the 21 affected complete comparisons run: 15 exacts and six candidate
+outcomes are unchanged. All ten affected owners have identical raw sections;
+private label changes follow actual COFF definitions/relocations. Other 365
+exact/89 candidate results are reused, and all 249 semantic rows are unchanged.
+The public game builder reuses all 116 objects with zero compilations.
+Eight Wine selectors pass, including the actual original209-byte translator
+reading the source cell and passing real SDK exception/context pointers, and
+seven canonical terminal callback/SEH selectors with the controlled abort73.
+Full16-byte source data/two bindings and retained linked code/scopes pass.
+No full replay, new provider query or additional game run is needed here.
+The previous21-member first-board/ball movement/heap/exit0 evidence remains
+historical; see [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
+Current scope and private carrier are in
+[terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md).
+Original C++ frame/translator and x87/SEH/stack transports remain explicit
+source gaps. Function recovery remains first; ports and final playability wait.
+REA is pinned to 6.5.0. The reconstruction objective is unfinished.
 
 This document describes the current state, not a running history.
 [Earlier handoff and trial history](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/agent/HANDOFF.md)

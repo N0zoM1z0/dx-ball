@@ -1,7 +1,7 @@
 #include "runtime_cpp_terminal.h"
 
 /* The complete hooks.obj data record is at 0x0042389C. */
-DxBallCppTranslator dxball_cpp_se_translator = 0;
+DxBallCppTranslator __pSETranslator = 0;
 DxBallCppTerminalHandler dxball_cpp_terminate_handler = 0;
 DxBallCppTerminalHandler dxball_cpp_unexpected_handler = dxball_cpp_terminate;
 DxBallCppTerminalHandler dxball_cpp_inconsistency_handler = dxball_cpp_terminate;

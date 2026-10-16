@@ -40,9 +40,12 @@ typedef struct DxBallCppExceptionPointers {
     DxBallCppContext *context;
 } DxBallCppExceptionPointers;
 typedef struct DxBallCppCatchableType DxBallCppCatchableType;
-typedef void (*DxBallCppTranslator)(unsigned int, DxBallCppExceptionPointers *);
+/* Keep the original SDK pointer type at the translator ABI boundary. */
+struct _EXCEPTION_POINTERS;
+typedef void (*DxBallCppTranslator)(unsigned int, struct _EXCEPTION_POINTERS *);
 
 #ifdef __cplusplus
+extern DxBallCppTranslator __pSETranslator;
 extern "C" {
 void *dxball_cpp_adjust_pointer(void *object, const DxBallCppPmd &displacement);
 int dxball_cpp_frame_unwind_filter(DxBallCppExceptionPointers *pointers);
@@ -54,7 +57,6 @@ void dxball_cpp_find_foreign_handler(DxBallCppExceptionRecord *exception,
     DxBallCppRegistration *marker);
 
 /* Genuine remaining translator, transfer and fatal boundaries. */
-extern DxBallCppTranslator dxball_cpp_se_translator;
 void dxball_cpp_inconsistency(void);
 void dxball_cpp_terminate(void);
 int dxball_cpp_call_se_translator(DxBallCppExceptionRecord *, DxBallCppRegistration *,
