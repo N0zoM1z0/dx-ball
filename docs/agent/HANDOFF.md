@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the upload and endpoint lifetime controls.
+Updated October 17, 2026, after the complete editor-key correspondence.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,15 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [editor-key review](../research/exact/EDITOR_KEY_ADDRESS_CORRESPONDENCE.md)
+explains its complete 638/632/260 comparison with one six-byte address producer.
+It includes 87 original / 89 maintained code instructions, all 265 table bytes,
+256 input-byte routes, 48 actual bindings and the five-byte unowned exit jump.
+The four-byte frame and remaining code/data correspond at mapped sites. This is
+an explanatory proof, not exact acceptance or whole CPU equivalence. Preserve
+the shared terminal-overlap storage; do not retry offset/cast forms. No compiler,
+provider, runtime, relink or full replay runs. Canonical code/products stay fixed.
 
 Two [private lifetime controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#upload-and-endpoint-iteration-scopes-october-17)
 are rejected. Bank post-Lock cursor/row/column scope worsens 1475/66 to 1508/316;

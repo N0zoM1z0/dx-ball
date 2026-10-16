@@ -89,6 +89,10 @@ complete raw difference count remains1466 and all five companions are unchanged.
 The [last-brick expiry scope](LIGHTNING_EXPIRY_SCOPE.md) restores six original
 homes and improves its complete comparison from992 to990 differences, preserving
 all twelve exact companions and the other nineteen complete code identities.
+The [editor-key correspondence](EDITOR_KEY_ADDRESS_CORRESPONDENCE.md) explains
+its six-byte extent difference through the board-clear address producer, with
+the complete switch data and all 256 input-byte routes accounted for. Its
+maintained 638/632/260 comparison remains unchanged and nonexact.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

@@ -1,5 +1,11 @@
 # Editor controller evidence
 
+The [complete key correspondence](exact/EDITOR_KEY_ADDRESS_CORRESPONDENCE.md)
+accounts for its 638/632-byte, 260-difference candidate through one six-byte
+address-producer difference and the resulting site shifts. All 265 switch-data
+bytes, 256 input-byte routes and the five-byte unowned jump are included.
+No source or exact acceptance changes; the shared terminal-overlap storage stays.
+
 The [exact editor status scopes](exact/EXACT_EDITOR_STATUS_SCOPES.md) restore the
 preview-only rectangle and board-number label workspace. One MT compile matches
 all 431 bytes, 25 unchanged bindings and six complete strings, preserving
