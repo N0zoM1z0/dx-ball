@@ -1,4 +1,4 @@
-#include "allocator.h"
+#include "allocator_imports.h"
 
 void *dxball_runtime_heap;
 DxBallNewHandler dxball_new_handler;
@@ -7,7 +7,7 @@ DxBallInt dxball_malloc_mode;
 /* 0x00419E80: startup does not test EAX; retain the observed full handle. */
 void *DXBALL_NEW_CALL dxball_initialize_runtime_heap(void)
 {
-    dxball_runtime_heap = dxball_heap_api.create(1, 0x1000, 0);
+    dxball_runtime_heap = dxball_heap_create(1, 0x1000, 0);
     return dxball_runtime_heap;
 }
 
@@ -32,7 +32,7 @@ void DXBALL_NEW_CALL dxball_runtime_delete(void *memory)
 /* 0x00417750: a failed physical release is not converted to a game return. */
 void DXBALL_NEW_CALL dxball_heap_release(void *memory)
 {
-    if (memory != NULL) dxball_heap_api.release(dxball_runtime_heap, 0, memory);
+    if (memory != NULL) dxball_heap_free(dxball_runtime_heap, 0, memory);
 }
 
 /* 0x00417790: callbacks can change the heap and handler before a retry. */
@@ -51,7 +51,7 @@ void *DXBALL_NEW_CALL dxball_allocate_with_handler(DxBallUInt bytes, DxBallInt e
 /* 0x004177D0: fetch the current opaque heap for each physical request. */
 void *DXBALL_NEW_CALL dxball_heap_allocate(DxBallUInt bytes)
 {
-    return dxball_heap_api.allocate(dxball_runtime_heap, 0, bytes);
+    return dxball_heap_alloc(dxball_runtime_heap, 0, bytes);
 }
 
 /* 0x00419EA0: every nonzero callback result, including negatives, is true. */

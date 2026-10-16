@@ -1,6 +1,6 @@
 /* Explicit portable dependency bridge. These callbacks use the host CRT and
-   do not implement a Windows private heap. Game startup replaces the table. */
-#include "allocator.h"
+   do not implement a Windows private heap. Game startup binds the Windows imports. */
+#include "allocator_imports.h"
 #include <stdlib.h>
 
 static unsigned char host_heap_identity;
@@ -20,11 +20,19 @@ static DxBallInt DXBALL_HEAP_CALL host_release(void *heap, DxBallUInt flags, voi
     free(memory);
     return 1;
 }
+/* Adapters may inspect the current binding record. Calls use the independent
+   import cells; update both through dxball_bind_heap_api. */
 DxBallHeapApi dxball_heap_api = { host_create, host_allocate, host_release };
+void *(DXBALL_HEAP_CALL *dxball_heap_create)(DxBallUInt, size_t, size_t) = host_create;
+void *(DXBALL_HEAP_CALL *dxball_heap_alloc)(void *, DxBallUInt, size_t) = host_allocate;
+DxBallInt (DXBALL_HEAP_CALL *dxball_heap_free)(void *, DxBallUInt, void *) = host_release;
 
 void dxball_bind_heap_api(const DxBallHeapApi *api)
 {
     dxball_heap_api = *api;
+    dxball_heap_create = api->create;
+    dxball_heap_alloc = api->allocate;
+    dxball_heap_free = api->release;
 }
 
 /* Owner callback APIs take size_t. Reject host counts outside the original

@@ -106,6 +106,9 @@ class Native(Script):
         self.create_callback = Create(protect(self.create_response))
         api.create = self.create_callback
         api.allocate, api.release = self.allocate_callback, self.release_callback
+        self.lib.dxball_bind_heap_api.argtypes = [C.POINTER(HeapApi)]
+        self.lib.dxball_bind_heap_api.restype = None
+        self.lib.dxball_bind_heap_api(C.byref(api))
         for name in ENTRIES:
             function = getattr(self.lib, 'dxball_' + name)
             function.argtypes = ([] if name == 'initialize_runtime_heap'

@@ -2128,7 +2128,7 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 [builds.allocator]
 source = "src/allocator.c"
 object = "build/exact/allocator.obj"
-inputs = ["src/allocator.c", "src/allocator.h", "src/state_types.h"]
+inputs = ["src/allocator.c", "src/allocator.h", "src/allocator_imports.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
 
 [units.initialize-trig]
@@ -12831,4 +12831,37 @@ size = 12
 relocations = [
   { offset = 4, type = "DIR32", symbol = "$L1070", addend = 0, target = 0x004188E5 },
   { offset = 8, type = "DIR32", symbol = "$L1071", addend = 0, target = 0x00418900 },
+]
+
+[units.allocator-heap-allocate]
+build = "allocator"
+symbol = "_dxball_heap_allocate"
+target_address = 0x004177D0
+size = 21
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained complete REA allocator dossiers and independently named original KERNEL32 IAT cells"
+relocations = [
+  { offset = 6, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x00440D70 },
+  { offset = 16, type = "DIR32", symbol = "_dxball_heap_alloc", addend = 0, target = 0x00441318 },
+]
+
+[units.allocator-heap-release]
+build = "allocator"
+symbol = "_dxball_heap_release"
+target_address = 0x00417750
+size = 24
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained complete REA allocator dossiers and independently named original KERNEL32 IAT cells"
+relocations = [
+  { offset = 12, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x00440D70 },
+  { offset = 19, type = "DIR32", symbol = "_dxball_heap_free", addend = 0, target = 0x00441314 },
+]
+
+[units.allocator-initialize-runtime-heap]
+build = "allocator"
+symbol = "_dxball_initialize_runtime_heap"
+target_address = 0x00419E80
+size = 21
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained complete REA allocator dossiers and independently named original KERNEL32 IAT cells"
+relocations = [
+  { offset = 11, type = "DIR32", symbol = "_dxball_heap_create", addend = 0, target = 0x00441328 },
+  { offset = 16, type = "DIR32", symbol = "_dxball_runtime_heap", addend = 0, target = 0x00440D70 },
 ]

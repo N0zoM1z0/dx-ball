@@ -9,10 +9,56 @@ MIDI, resource and sound owners. Saved REA `analyze_function` dossiers establish
 213 contiguous original bytes and their contracts; original x86 execution,
 native C and actual VC4/MinGW objects corroborate tested behavior. These are
 runtime dependencies, counted separately from the 235 maintained game entries.
-Five bodies now have complete byte-exact acceptance; the three physical Heap
-API wrappers still need consistent import-cell ownership.
+All eight bodies now have complete byte-exact acceptance, including the three
+physical Heap API wrappers.
 
-## Complete exact comparisons (October 16, 2026)
+## Independent imports with the public binding record (October 16, 2026)
+
+The eight complete bodies now match all **213 code bytes**. The final three
+acceptances are HeapFree24, HeapAlloc21 and HeapCreate21, with each independent
+stdcall cell bound to its actual named KERNEL32 IAT slot: `0x441314`,
+`0x441318` and `0x441328`. No per-function rebasing of one table is used.
+The project total is **376 exact functions / 76,908 code bytes / 244 attached
+metadata bytes**.
+
+`allocator_imports.h` owns the three private typed import declarations. The
+public `allocator.h` is byte-identical to the preceding checkpoint. The host
+bridge retains the existing public binding record for adapters that inspect
+current callbacks and initializes the real import cells with the host defaults.
+`dxball_bind_heap_api` copies the record and publishes all three cells. Existing
+fixture writers now use that setter after configuring callbacks, including
+raster restoration. Game/Windows callers already use it. This is actual API
+ownership, without invented IAT padding or alternate function bodies.
+
+The two rejected controls below removed the public record declaration. This
+recovery preserves that declaration and its live inspection use; all outside
+compiler inputs and recipes remain unchanged. One VC4 compilation compares
+only the eight allocator functions. The five existing exact results are
+identical; the 368 outside exact comparison rows and 88 candidates are reused
+without full replay or an outside compiler pass.
+
+The current native library passes the unchanged 1,433 fixtures / 1,437 original
+calls and seven host-width controls. The modified raster and sound binding
+fixtures also pass their existing cases. A standalone Wine probe uses the
+three Windows adapter callbacks extracted verbatim, the maintained allocator
+and host bridge, with both VC4 and MinGW. It checks default allocation, binding
+record inspection, rebinding/restoration, stdcall and three real private-heap
+roundtrips, null release and oversized rejection. It does not link the full
+Windows adapter/game or establish native Windows behavior.
+
+Existing scoped semantic counts and scopes are retained by dependency
+substitution: unchanged owner bodies and vectors, all eight exact Win32 heap
+bodies, focused current native checks, and the real typed setter contract.
+Their input closures are refreshed explicitly; this is not a new execution
+claim for every historical owner. The prior ledger and inputs remain retained.
+
+Proofs, original/new recipes, compiler products, focused checks and adoption
+receipt: `.analysis/allocator-independent-imports-20261016/`. No new REA session
+was needed; complete allocator dossiers and named PE imports were reused.
+Handler registration, heap teardown, broader CRT linking and final game fidelity
+remain open.
+
+## Earlier five-function checkpoint and rejected controls
 
 The maintained source is unchanged. A single VC4 compilation uses the same
 `/O2 /Ob0 /Oi- /Gd /MT /Gy` recipe as the maintained CRT allocation helpers.
@@ -60,7 +106,8 @@ baseline inputs/object/receipt, both rejected source and object controls,
 complete comparison reports, the native result, and `verification.json`.
 The adopted `adopted-comparison.json` and current exact report bind the same
 verified baseline object. All prior shared inputs and accepted objects were
-restored before the final replay. Physical import ownership, handler registration,
+restored before the final replay. That earlier checkpoint left physical import ownership open; the independent
+imports follow-up above closes those three comparisons. Handler registration,
 startup/teardown integration and whole-game fidelity remain open.
 
 ## Recovered contracts
@@ -98,7 +145,8 @@ a request that cannot fit the original unsigned width is rejected before
 allocation. Those dependency helpers are not additional recovered entries.
 The Windows adapter installs typed stdcall HeapCreate/HeapAlloc/HeapFree
 callbacks through `dxball_bind_heap_api`, including when the core resides in a
-DLL. The pointer table is copied by code that owns its storage.
+DLL. The public binding record remains inspectable; its setter publishes the three
+independent call cells. Writers use `dxball_bind_heap_api` for updates.
 
 | Consumer | Maintained default |
 | --- | --- |

@@ -1,17 +1,16 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after compiler-fragment ownership reconciliation.
-Accepted totals are **373 functions / 76,842 code bytes / 244 metadata bytes**.
+Updated October 16, 2026, after independent allocator import recovery.
+Accepted totals are **376 functions / 76,908 code bytes / 244 metadata bytes**.
 There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 88 are not all unfinished functions. Three other source-present allocator
-entries are outside both current comparison reports, so 91 of the 464
-source-present entries are not exact. Another 56 of the 520 independent inventory entries
-lack a source-present ledger row. The 24 overlapping compiler fragments are
-tracked separately in `config/compiler-fragments.csv`; no source or exact
-acceptance changed. The provisional inventory and origin review
-still need reconciliation; these numbers are not a final authored denominator.
+These 88 are all currently source-present nonexact entries. The eight allocator
+functions now have complete exact comparisons, closing the three previous
+report gaps. Another 56 of the 520 independent inventory entries lack a
+source-present ledger row. The 24 overlapping compiler fragments are tracked
+separately in `config/compiler-fragments.csv`. The provisional inventory and
+origin review still need reconciliation; this is not a final authored denominator.
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -136,25 +135,14 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | --- | ---: | ---: | ---: |
 | `list-global-init-13` | 26 | 32 | 21 |
 
-## Source-present allocator entries outside current reports
+## Allocator comparison gaps closed
 
-Five allocator bodies now have complete exact acceptance: delete, new, malloc,
-the handler-enabled allocation loop and handler dispatch, totaling 147 bytes.
-The three physical Heap API bodies below retain historical scoped behavior
-evidence and no row in either maintained comparison report. Their optimized
-instruction sequences and lengths agree, but the current table cannot bind all
-three noncontiguous original IAT cells with one base symbol. Do not assign an
-exact result by independently rebasing the same table per body.
-
-See [allocator ownership](../ALLOCATOR_OWNER.md) for the original ABI, retained
-REA dossiers and the two rejected independent-cell source controls. Both lose
-accepted companions; the maintained source and all previous objects are restored.
-
-| Original entry | Source symbol |
-| --- | --- |
-| `0x00417750` | `dxball_heap_release` |
-| `0x004177D0` | `dxball_heap_allocate` |
-| `0x00419E80` | `dxball_initialize_runtime_heap` |
+All eight allocator bodies now match 213 complete code bytes. Independent typed
+Heap import cells preserve the public binding record and unchanged public
+header, so the five prior allocator exacts and outside compiler inputs remain.
+See [allocator ownership](../ALLOCATOR_OWNER.md) for the three new acceptances,
+focused native/Win32 checks and the earlier rejected controls. There are now
+zero source-present entries outside the exact and candidate comparison reports.
 
 ## Evidence and closed controls
 

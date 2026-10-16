@@ -1,11 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after translator-origin checkpoint `f5bb9f2` and
-the original foreign-handler tail-pointer source recovery below. The four
-affected units alone are compiled and compared; three owner exacts remain.
-Source, exact and semantic totals are unchanged. Twenty-four old auto-analysis
-splits have explicit parent mappings, and every original address remains
-recorded. The translator guard extent is corrected from 98 to 107 bytes.
+Updated October 16, 2026, after source checkpoint `67674bf` and independent
+allocator import recovery below. All eight allocator bodies are now exact;
+three former comparison gaps add 66 code bytes. The public header remains
+byte-identical. Only the eight affected functions are compiled and compared.
+Twenty-four old auto-analysis splits remain mapped to parents, and every
+original address remains recorded.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -53,12 +53,12 @@ An exact-function count is progress, not the completion criterion.
 | Provisional independent function inventory | 520 |
 | Parent-owned compiler fragments, counted separately | 24 |
 | Source-present independent entries | 464 |
-| Accepted exact functions | 373 |
-| Complete exact code bytes | 76,842 |
+| Accepted exact functions | 376 |
+| Complete exact code bytes | 76,908 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
-| Source-present entries outside the two comparison reports | 3 |
+| Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 56 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 217 runtime / 21 compiler-generated / 12 unknown |
@@ -69,11 +69,12 @@ All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
 
-Three additional source-present entries remain in `src/allocator.c`: physical
-HeapFree, HeapAlloc and HeapCreate wrappers. Five other allocator entries now
-have complete exact acceptance. Thus 88 is not the total remaining work:
-91 source-present entries are not exact, and another 56 independent inventory entries lack
-a source-present row. The remaining-functions page lists the three gaps.
+All eight allocator entries now have complete exact acceptance, including the
+three physical Heap API wrappers. All 88 source-present nonexact entries have
+complete candidate comparisons. Another 56 independent inventory entries lack
+a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
+records the preserved public binding API, three actual import cells and focused
+native/Win32 evidence.
 
 Current accounting is 520 independent entries plus 24 parent-owned compiler
 fragments, preserving all 544 previously recorded addresses. The twenty
@@ -84,8 +85,8 @@ ranges were already part of those units; they are now recorded in
 
 All four complete parent comparisons reproduce their retained results from
 the existing canonical object: three exact methods and the unchanged 88-byte
-triangle candidate. No compiler/provider/runtime work was repeated. Source464,
-exact373, code76,842, metadata244 and semantic249 remain unchanged. The 56
+triangle candidate. That reconciliation repeated no compiler/provider/runtime
+work and changed no source or exact claim. The 56
 independent entries without source remain in scope. See
 [compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
 
@@ -127,7 +128,7 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
 - `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 373 accepted comparisons/producers.
+- `build/reports/exact-replay.json`: current 376 accepted comparisons/producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 88
   candidates/producers. The directory date is historical; its contents are current.
 - Selected phase `verification.json` files and owner notes explain each adoption.
@@ -157,6 +158,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 independent heap imports | All eight allocator bodies exact; three gaps closed, +66 code bytes; total 376; public header unchanged | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-independent-imports-20261016/adoption.json` |
 | October 16 foreign-handler tail | Original one-past handler pointer, negative-offset type test and deferred last-handler argument; 212/213 bytes, 105 differences; three owner exacts preserved | [C++ tables](../research/exact/RUNTIME_CPP_TABLES.md); `.analysis/cpp-foreign-handler-tail-20261016/adoption.json` |
 | October 16 compiler fragments | 24 overlapping cleanup/epilogue rows mapped to four existing parents; 520 independent entries, source/exact unchanged | [Compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md); `.analysis/compiler-fragment-ownership-20261016/verification.json` |
 | October 16 CRT startup | Complete 390 code / 12 scope bytes exact; GUI initializer fixed; fatal family preserved; total 373 | [CRT startup](../research/exact/RUNTIME_ENTRY.md); `.analysis/crt-entry-source-20261016/adoption.json` |
@@ -222,12 +224,12 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
-- Five allocator entries are now exact. The three Heap API wrappers still need
-  one consistent import-cell owner. Read [allocator ownership](../research/ALLOCATOR_OWNER.md)
-  before revisiting them: shared public cells and an allocator-only import header
-  both lose accepted companions and are closed controls. Do not rebase one table
-  differently per function. The 56 independent inventory entries without source rows remain
-  in scope.
+- All eight allocator entries are now exact. The private typed import cells and
+  retained public binding record close all three physical-wrapper gaps without
+  modifying `allocator.h`. Earlier controls that removed its public declaration
+  remain rejected; do not repeat them or rebase a table per function. Fixture
+  updates use the existing setter, including restoration. Handler registration,
+  teardown and the 56 independent entries without source remain open.
 - Foreign handling now carries the original one-past catch-list pointer through
   its final type checks, subtracting only for the transfer argument. Its remaining
   register/bound-comparison differences are nonexact; do not sweep spellings or

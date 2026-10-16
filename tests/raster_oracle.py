@@ -141,6 +141,9 @@ class RasterNative:
         self.heap_release_callback = HeapRelease(self.heap_release)
         self.heap_api.allocate = self.heap_allocate_callback
         self.heap_api.release = self.heap_release_callback
+        self.lib.dxball_bind_heap_api.argtypes = [C.POINTER(HeapApi)]
+        self.lib.dxball_bind_heap_api.restype = None
+        self.lib.dxball_bind_heap_api(C.byref(self.heap_api))
         for name in ('dxball_fill_polygon', 'dxball_fill_polygon_clipped'):
             function = getattr(self.lib, name)
             function.argtypes = [C.c_void_p, C.c_int32, C.POINTER(Point), C.c_int32, C.c_uint8]
@@ -152,7 +155,7 @@ class RasterNative:
 
     def restore(self):
         C.memmove(C.addressof(self.ops), self.saved_ops, len(self.saved_ops))
-        C.memmove(C.addressof(self.heap_api), self.saved_heap_api, len(self.saved_heap_api))
+        self.lib.dxball_bind_heap_api(C.byref(HeapApi.from_buffer_copy(self.saved_heap_api)))
         self.heap.value = self.saved_heap
         self.malloc_mode.value = self.saved_malloc_mode
 

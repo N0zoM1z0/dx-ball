@@ -259,6 +259,9 @@ class Native(Backend):
                         self.errors.append(exc);return 0
                 fn=C.CFUNCTYPE(result,P,U,arg)(cb);self.callbacks.append(fn);return fn
             heap[slot]=C.cast(bind(name,result,arg),P).value
+        self.lib.dxball_bind_heap_api.argtypes=[P]
+        self.lib.dxball_bind_heap_api.restype=None
+        self.lib.dxball_bind_heap_api(C.addressof(heap))
         self.tables=[]
         for methods,length in ((DEVICE,7),(BUFFER,21)):
             table=(P*length)();self.tables.append(table)
