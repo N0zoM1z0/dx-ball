@@ -147,7 +147,6 @@
     "runtime_x87_bridge",
     "member:0002dd2c",
     "member:000ecb74",
-    "member:00058eb2",
     "member:000af48e",
     "member:000f1666",
     "member:000f1942",
@@ -207,12 +206,6 @@
       "member": "..\\build\\intel\\st_obj\\adj_fdiv.obj",
       "header_offset": 969588,
       "object_sha256": "1d15c93898522da7d9731fd955ca3a7dba073eefacca6334c185902239509573"
-    },
-    {
-      "id": "member:00058eb2",
-      "member": "build\\intel\\st_obj\\lldiv.obj",
-      "header_offset": 364210,
-      "object_sha256": "76f9fe8fe9fd5659fb39700ea90ec3d58b8ff94abd60c9b2712dcc795556ceff"
     },
     {
       "id": "member:000af48e",
@@ -299,6 +292,6 @@
       "object_sha256": "587a044c014158e0f0d2890b6480326ec8353526bb3e017373c6299f355f8301"
     }
   ],
-  "remaining_scope": "Original members still supply x87 routines, signed64 division, stack/SEH transports and C++ frame/translator transport. Terminal callbacks and translator storage use maintained source. This integration profile is not fully reconstructed CRT source or complete playability verification.",
+  "remaining_scope": "Original members still supply x87 routines, stack/SEH transports and C++ frame/translator transport. Windows raster defaults use real MulDiv; no signed64 division member is needed. Terminal callbacks and translator storage use maintained source. This integration profile is not fully reconstructed CRT source or complete playability verification.",
   "research": "docs/research/RESTORED_CRT_GAME_ENTRY.md"
 }

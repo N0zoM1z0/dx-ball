@@ -21,7 +21,7 @@ launch it. The same original assets and compiler prerequisites apply.
 
 [The checked link recipe](../../config/restored-crt-link.json) names every
 input and preserves the verified initializer order. It uses 113 maintained
-source objects, three integration objects, 20 pinned original library members
+source objects, three integration objects, 19 pinned original library members
 and the resource object, with `/NODEFAULTLIB`.
 
 `runtime_legacy_imports.c` binds the original CRT names to their existing typed
@@ -34,8 +34,9 @@ function or exact claim. Original memcpy grouping and member-call tail-frame
 differences remain described in their owner notes.
 
 The original members still supply thirteen x87/control/kernel modules, three
-C++ frame/transport modules, two SEH modules, signed64 division and the
-stack probe. Original `hooks.obj` is removed: the SDK-typed canonical translator
+C++ frame/transport modules, two SEH modules and the stack probe.
+[Windows raster defaults](RASTER_WIN32_DEFAULTS.md) use real MulDiv and remove
+the portable fallback's signed64 division member. Original `hooks.obj` is removed: the SDK-typed canonical translator
 cell and terminal callbacks now use source. The original C++ frame dispatcher
 and translator transport remain dependencies. The exact remaining
 members, archive offsets and full hashes are explicit in the recipe.
@@ -60,7 +61,9 @@ history directory. Resource conversion stays inside that profile's directory.
 The following process observations belong to the initial 21-member integration
 checkpoint. The subsequent [hooks-state change](exact/RUNTIME_CPP_TERMINAL.md)
 checks its affected functions and eight runtime selectors without another game
-run. Its public build reuses all 116 objects and retains 20 original members.
+run. That hooks build retains 20 original members. The subsequent Windows
+raster default repair retains 19, reuses all 116 objects and checks twelve real
+MulDiv calls plus callback/Windows binding without another gameplay run.
 
 One real Wine process uses the original copied data and existing observation
 helpers. The state reader is reused, not recompiled. Its addresses come from

@@ -1,29 +1,34 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after sharing the original C++ translator state.
+Updated October 17, 2026, after repairing the Windows raster default.
 Current totals remain 475 source entries, 380 exacts and 95 complete candidates.
-The optional `vc40-restored-crt` profile now retains 20 explicit original
-members after removing `hooks.obj`. The source owns the canonical C++
-`__pSETranslator` cell with the SDK callback type; the foreign-handler model
-reads that same cell. Typed canonical terminate/inconsistency adapters use
-recovered source. There is no duplicate C translator variable or alias option.
-Only the 21 affected complete comparisons run: 15 exacts and six candidate
-outcomes are unchanged. All ten affected owners have identical raw sections;
-private label changes follow actual COFF definitions/relocations. Other 365
-exact/89 candidate results are reused, and all 249 semantic rows are unchanged.
-The public game builder reuses all 116 objects with zero compilations.
-Eight Wine selectors pass, including the actual original209-byte translator
-reading the source cell and passing real SDK exception/context pointers, and
-seven canonical terminal callback/SEH selectors with the controlled abort73.
-Full16-byte source data/two bindings and retained linked code/scopes pass.
-No full replay, new provider query or additional game run is needed here.
-The previous21-member first-board/ball movement/heap/exit0 evidence remains
-historical; see [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
-Current scope and private carrier are in
+Windows raster defaults now use real Kernel32 MulDiv through a static callback
+initializer. The public callback table and authored bodies are unchanged;
+non-Windows preprocessing is identical. The optional `vc40-restored-crt` game
+links 116 reused source objects with zero compilations and 19 explicit original
+members, removing the portable fallback's signed64 division dependency.
+Only 12 affected full comparisons run: nine exacts are preserved, triangle
+remains 1710/88, and polygon candidates now have 214/214 differences. Five
+operand-reversed signed comparisons explain all polygon code changes, with
+identical predicates and dead scratch/flags; all other instructions agree.
+Private labels and 24 compiler fragments follow actual COFF definitions.
+One production-closure Wine probe passes 12 early-default API calls, a controlled
+callback and real Windows rebinding. The loaded 12-byte callback record/three
+bindings and full CRT 84/thirteen callbacks pass. No extra initializer is added.
+All 249 native semantic scopes/counts/observations are retained; 235 rows refresh
+only source input identities on the unchanged native preprocessed program.
+No full replay, new provider query or game campaign runs. Wine's INT_MIN MulDiv
+corner differs from the retained portable expression; native Windows and full
+cross-platform corner equivalence remain open. Ports remain deferred.
+See [Windows raster defaults](../research/RASTER_WIN32_DEFAULTS.md).
+The prior hooks checkpoint removed duplicate translator state and original
+`hooks.obj`, with eight Wine selectors passing; see
 [terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md).
+The original 21-member first-board/ball/heap/exit0 run remains historical;
+see [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
 Original C++ frame/translator and x87/SEH/stack transports remain explicit
-source gaps. Function recovery remains first; ports and final playability wait.
-REA is pinned to 6.5.0. The reconstruction objective is unfinished.
+source gaps. Function recovery remains first. REA is pinned to 6.5.0.
+The reconstruction objective is unfinished.
 
 This document describes the current state, not a running history.
 [Earlier handoff and trial history](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/agent/HANDOFF.md)
@@ -350,8 +355,8 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
 - `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 377 accepted comparisons/producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 88
+- `build/reports/exact-replay.json`: current 380 accepted comparisons/producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 95
   candidates/producers. The directory date is historical; its contents are current.
 - Selected phase `verification.json` files and owner notes explain each adoption.
   Older phase reports are historical unless their inputs/products still agree.
@@ -382,6 +387,8 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 17 Windows raster defaults | Real MulDiv before binding; nine exacts retained;12 early API cases and callback/Windows binding;116 reused objects/19 original members; native preprocessing unchanged | [Raster defaults](../research/RASTER_WIN32_DEFAULTS.md); `.analysis/raster-win32-default-20261017/verification.json` |
+| October 17 C++ hooks state | One SDK-typed canonical translator cell; eight Wine selectors;21 comparison outcomes unchanged; original hooks removed | [Terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md); `.analysis/crt-cpp-hooks-20261016/verification.json` |
 | October 16 real game / restored CRT | 113 maintained objects reused,3 integration objects; public build116 reused/0 compiled; original first400 board bytes/168 bricks, ball movement, heap preservation and exit0 | [Game entry](../research/RESTORED_CRT_GAME_ENTRY.md); `.analysis/crt-game-members-20261016/verification.json` |
 | October 16 I/O state | Six complete globals/28 typed bytes;64 source owners,63 reused; real entry and physical binary/text/default-mode/mask/error checks | [I/O state](../research/exact/RUNTIME_IO_STATE.md); `.analysis/crt-game-entry-20261016/io-verification.json` |
 | October 16 actual CRT entry | 48 source owners reused; real OS argv/environment/show; normal31/quoted32/SEH quick0xC0000005;390-byte entry/12-byte scope and13 linked bodies | [Entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md); `.analysis/crt-full-entry-20261016/verification.json` |
@@ -464,8 +471,9 @@ question, not merely the smallest differing-position count.
 
 - Actual game startup now uses the recovered entry through the optional
   `vc40-restored-crt` profile. Reuse its116-object cache and checked recipe.
-  Continue a concrete remaining function/ABI question; original C++ frame/hooks,
-  x87 dispatch, signed64 and stack/SEH transports remain21 pinned members.
+  Continue a concrete remaining function/ABI question; original C++ frame/translator,
+  x87 dispatch and stack/SEH transports remain 19 pinned members. Hooks state is
+  shared source, and Windows raster defaults no longer need the signed64 member.
   Do not infer full source integration from the successful first-board run.
   A screenshot-change-only check was too weak; adopted evidence uses live
   modes, all400 original board bytes, ball movement and reviewed captures.

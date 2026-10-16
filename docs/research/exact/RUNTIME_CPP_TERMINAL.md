@@ -21,8 +21,9 @@ relocated results. The other 365 exact and 89 candidate results are reused.
 Current totals remain 475 source entries, 380 exacts and 95 candidates; all
 249 semantic rows and the function/source/origin ledgers are unchanged.
 
-The game rebuild reuses all 116 source objects and links 20 explicit original
-members. Its map places the canonical translator in the source terminal owner,
+At this hooks checkpoint the game rebuild reuses all 116 source objects and
+links 20 explicit original members. The later [Windows raster default repair](../RASTER_WIN32_DEFAULTS.md)
+removes another member without changing these terminal sources. Its map places the canonical translator in the source terminal owner,
 with no `hooks.obj` or second translator definition. The full 16-byte data
 record and two bindings still agree with the original. Actual retained terminal
 code and its independently located scope table agree with the source object.

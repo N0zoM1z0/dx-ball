@@ -1,5 +1,12 @@
 # Software raster controllers
 
+The [Windows default repair](RASTER_WIN32_DEFAULTS.md) uses real MulDiv before
+explicit binding and removes the restored-CRT game's signed64 division member.
+Nine exacts and the triangle result are preserved. Two complete polygon
+candidates now have 214/214 differences; five equivalent signed comparison
+groups explain all changes against the previous objects. Native preprocessing
+is unchanged; twelve real default calls and callback/Windows rebinding pass.
+
 The current [metadata correspondence](RASTER_METADATA_CORRESPONDENCE.md) restores
 complete triangle metadata comparison and explains the remaining 107 code
 differences through frame references and four equivalent signed predicates.

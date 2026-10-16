@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after restoring three C++ direct-member call APIs.
+Updated October 17, 2026, after the Windows raster default repair.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
 There are **95 complete nonexact comparisons: 34 authored, 60 runtime and one
 compiler-generated**. None is an accepted exact.
@@ -90,8 +90,8 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `load-sprite-bank` | 1475 | 1475 | 70 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
-| `fill-polygon-clipped` | 1592 | 1592 | 210 |
-| `fill-polygon` | 1543 | 1543 | 211 |
+| `fill-polygon-clipped` | 1592 | 1592 | 214 |
+| `fill-polygon` | 1543 | 1543 | 214 |
 | `stretch-effect-sprite` | 306 | 308 | 252 |
 | `editor-key` | 632 | 638 | 260 |
 | `drop-bricks` | 426 | 436 | 306 |

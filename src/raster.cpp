@@ -10,6 +10,12 @@ typedef struct RasterEdge {
     DxBallByte unknown[4];
     DxBallInt dx, dy, error;
 } RasterEdge;
+
+#if defined(_WIN32)
+extern "C" DxBallInt DXBALL_RASTER_CALL MulDiv(
+    DxBallInt number, DxBallInt numerator, DxBallInt denominator);
+DxBallRasterOps dxball_raster_ops = { malloc, free, MulDiv };
+#else
 /* Both spellings denote the same signed 64-bit arithmetic type. The legacy
    compiler predates C99's long-long spelling; no layout or body is selected. */
 #if defined(_MSC_VER)
@@ -35,6 +41,7 @@ static DxBallInt DXBALL_RASTER_CALL portable_muldiv(DxBallInt number, DxBallInt 
 }
 
 DxBallRasterOps dxball_raster_ops = { malloc, free, portable_muldiv };
+#endif
 
 /* FUNCTION: DXBALL 0x0040B4C0 */
 void dxball_fill_horizontal_span(DxBallByte *row, DxBallInt left,

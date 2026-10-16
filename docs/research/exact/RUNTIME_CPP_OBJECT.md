@@ -57,6 +57,14 @@ and ECX when loading/testing catch displacement and forming the destination.
 All remaining code positions agree after relocation. No name, declaration,
 type or register-spelling sweep was used to eliminate these equivalent choices.
 
+Two bounded October 17 controls express the destination through the typed
+one-past registration pointer, with either base or displacement first. Both
+retain exactly those four differences and exact destruction, including both
+scope tables. Neither is adopted. Source, flags, complete results and consumed
+header snapshots are retained in `.analysis/cpp-registration-tail-20261017/`.
+Typed record stepping and operand order are closed controls without improvement;
+do not repeat them as a register-spelling search.
+
 ## Original producer and evidence
 
 Complete `frame.obj` from the pinned VC4 `libc.lib` matches both original code
