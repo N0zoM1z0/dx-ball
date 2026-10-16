@@ -7,6 +7,11 @@ relocations. The same source passes Clang's i686 MSVC C99 compilation.
 This standalone owner is outside the CMake game library; it is not yet the
 entry point of a verified complete restored-game build.
 
+The [subsequent heap-boundary repair](../WINDOWS_HEAP_STARTUP.md) supplies real
+Win32 default callbacks before game binding and preserves a heap initialized
+before the host WinMain wrapper. It prepares the pre-entry allocation contract;
+it does not integrate or execute this complete startup owner.
+
 ## Initialization and the game call
 
 Read the full `GetVersion()` result, derive the original unsigned major/minor,

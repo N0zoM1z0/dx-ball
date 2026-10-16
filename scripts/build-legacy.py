@@ -154,7 +154,8 @@ def main():
                                 "/INCREMENTAL:NO", "/PDB:NONE", "/NODEFAULTLIB:LIBC",
                                 "/OUT:" + windows_path(executable)]
         arguments = [*inspector_link_flags,
-                     *map(windows_path, objects + [entry] + directx_imports)]
+                     *map(windows_path, objects + [entry] + directx_imports),
+                     "winmm.lib"]
         log.append(toolchain.run("link.exe", arguments).stdout)
         if not executable.is_file():
             raise RuntimeError("legacy linker produced no executable")

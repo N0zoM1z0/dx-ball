@@ -1,6 +1,17 @@
-/* Explicit portable dependency bridge. These callbacks use the host CRT and
-   do not implement a Windows private heap. Game startup binds the Windows imports. */
+/* Win32 defaults are ready before game binding and CRT initialization.
+   Other hosts retain the explicit malloc/free dependency bridge. */
 #include "allocator_imports.h"
+#if defined(_WIN32)
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
+static void *DXBALL_HEAP_CALL host_create(DxBallUInt flags, size_t initial, size_t maximum)
+{ return (void *)HeapCreate((DWORD)flags, (DWORD)initial, (DWORD)maximum); }
+static void *DXBALL_HEAP_CALL host_allocate(void *heap, DxBallUInt flags, size_t bytes)
+{ return HeapAlloc((HANDLE)heap, (DWORD)flags, (DWORD)bytes); }
+static DxBallInt DXBALL_HEAP_CALL host_release(void *heap, DxBallUInt flags, void *memory)
+{ return (DxBallInt)HeapFree((HANDLE)heap, (DWORD)flags, memory); }
+#else
 #include <stdlib.h>
 
 static unsigned char host_heap_identity;
@@ -20,6 +31,7 @@ static DxBallInt DXBALL_HEAP_CALL host_release(void *heap, DxBallUInt flags, voi
     free(memory);
     return 1;
 }
+#endif
 /* Adapters may inspect the current binding record. Calls use the independent
    import cells; update both through dxball_bind_heap_api. */
 DxBallHeapApi dxball_heap_api = { host_create, host_allocate, host_release };

@@ -12,6 +12,16 @@ runtime dependencies, counted separately from the 235 maintained game entries.
 All eight bodies now have complete byte-exact acceptance, including the three
 physical Heap API wrappers.
 
+## Windows initialization and heap lifetime (October 16, 2026)
+
+Win32 default callbacks now use the real heap APIs before game binding. The
+host WinMain wrapper preserves a heap initialized earlier, and the resource
+inspector initializes its heap before decoding. The original initializer and
+the other seven exact bodies are unchanged; the public header stays identical.
+Both former integration failures are reproduced and repaired with physical
+Win32 heap/typed-node checks. Native preprocessing is unchanged, and current
+native/VC4 inspector outputs agree. See [startup heap ownership](WINDOWS_HEAP_STARTUP.md).
+
 ## Actual C++ allocation entries (October 16, 2026)
 
 `cpp_allocator.cpp` now calls the recovered allocation loop with handler mode 1

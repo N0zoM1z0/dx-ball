@@ -1,10 +1,10 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after trig/constants checkpoint `12c97a9` and the VC4
-owner-recipe/linkage repair below. The current game reuses all 37 verified
-objects, 52 linked bodies agree and read-only first-board controls pass.
-All function source/exact/semantic ledgers and 376 accepted/88 candidate
-comparison rows remain unchanged.
+Updated October 16, 2026, after owner-linkage checkpoint `d11c556` and the Win32
+default heap/entry lifetime repair below. Both former heap failures now pass.
+The game and tools build reuses 35 objects and compiles four. All function
+source/exact ledgers and 376 accepted/88 candidate result rows are unchanged;
+243 semantic dependency closures refresh while all 249 scopes/counts remain.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -106,7 +106,7 @@ differences under VC4, with native/i686 C90 compilation. These constants remain
 separate from the unchanged480-byte descriptor family. See
 [trig entries and constant source](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md).
 
-The VC4 game now links the matching allocator/list/resource products with
+At checkpoint `d11c556`, the VC4 game links the matching allocator/list/resource products with
 their actual owner flags. Default LIBC is excluded after a retained mixed-CRT
 link failure; the successful map uses one LIBCMT runtime. Complete owner
 products and previous adapter objects are reused by compiler/flags/full project
@@ -118,6 +118,17 @@ pixel-only scene claim was insufficient and is retained with that limitation.
 This checks current owner integration; remaining function recovery and the
 standalone reconstructed CRT entry/storage/link remain open. See
 [VC4 owner linkage](../research/VC4_OWNER_LINKAGE.md).
+
+Win32 defaults now supply genuine heap APIs before game binding. The host
+WinMain wrapper retains an existing heap; the resource inspector explicitly
+initializes one before decoding. Fresh, early-default and early-Windows-bound
+entry checks pass with actual heap handles, pre-entry bytes/typed nodes and
+real release. The native translation unit is unchanged after preprocessing;
+native/VC4 SFONT and INTRO inspector outputs agree, and MinGW physical default
+heap checks pass. The legacy console tools now link their missing winmm
+dependency. These focused checks do not repeat the previous GUI control or
+integrate the standalone restored CRT entry. See
+[Windows heap startup](../research/WINDOWS_HEAP_STARTUP.md).
 
 Current accounting is 524 independent entries plus 24 parent-owned compiler
 fragments, preserving all 544 previously recorded addresses and adding four
@@ -204,6 +215,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 Windows heap startup | Real Win32 defaults; early heap/allocations survive WinMain; three physical entry controls and native/VC4 tool checks pass; eight exact bodies unchanged | [Heap startup](../research/WINDOWS_HEAP_STARTUP.md); `.analysis/windows-heap-startup-20261016/adoption.json` |
 | October 16 VC4 owner linkage | Three corrected owner profiles; single LIBCMT; 37 objects reused; 52 linked bodies and read-only first-board controls pass; source/exact totals unchanged | [VC4 linkage](../research/VC4_OWNER_LINKAGE.md); `.analysis/legacy-owner-reuse-20261016/` |
 | October 16 trig entries/constants | Scalar24 bytes/four bindings; four omitted entries; six readonly constants48-byte source; function exact/source totals unchanged | [Trig entries](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md); `.analysis/trig-entries-dispatch-constants-20261016/adoption.json` |
 | October 16 mantissa snapshot | Explicit three-limb integer snapshot; five complete byte results unchanged; one owner compilation | [Mantissa lifetimes](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md); `.analysis/mantissa96-integer-snapshot-20261016/adoption.json` |

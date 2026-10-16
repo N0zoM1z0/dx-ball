@@ -7,9 +7,10 @@
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command_line, int show)
 {
     dxball_bind_windows();
-    /* Original CRT startup creates the private heap before entering the game.
-       Its return is not tested. The reconstructed host CRT remains separate. */
-    dxball_initialize_runtime_heap();
+    /* Keep the heap and allocations supplied by restored CRT startup.
+       The compiler-CRT build still needs its first private-heap initialization. */
+    if (dxball_runtime_heap == NULL)
+        dxball_initialize_runtime_heap();
     return (int)dxball_win_main((DxBallHandle)instance, (DxBallHandle)previous,
         (DxBallHandle)command_line, show);
 }

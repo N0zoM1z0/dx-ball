@@ -73,6 +73,10 @@ recovered heap. Its allocator flags and other owner overrides are recorded in
 Allocator, list and resource files now use their maintained comparison recipes.
 The linker selects one `LIBCMT` runtime while preserving the resource owner's
 `/ML` compiler lowering. See [owner linkage and the focused game check](research/VC4_OWNER_LINKAGE.md).
+Windows allocation defaults use real private-heap APIs. Standalone clients must
+initialize the heap before allocating; the game wrapper and resource inspector
+do so when needed. An earlier heap survives game-entry binding. See
+[heap startup checks](research/WINDOWS_HEAP_STARTUP.md).
 
 Windows builds import `DirectDrawCreate` and `DirectSoundCreate` from the SDK
 libraries. MinGW supplies `ddraw` and `dsound`. The pinned legacy build uses

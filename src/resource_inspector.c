@@ -1,6 +1,7 @@
 /* Host analysis utility, not an original DX-Ball function or display backend.
    Exercise the maintained decoder with owned, pitch-padded memory surfaces. */
 #include "resources.h"
+#include "allocator.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -160,6 +161,8 @@ int main(int argc, char **argv)
         return 2;
     }
     fclose(probe);
+    if (dxball_runtime_heap == NULL)
+        dxball_initialize_runtime_heap();
     surface_methods.release = release_surface;
     surface_methods.get_desc = describe_surface;
     surface_methods.lock = lock_surface;
