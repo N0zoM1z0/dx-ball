@@ -12565,3 +12565,63 @@ boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained REA complete RET
 relocations = [
   { offset = 2, type = "DIR32", symbol = "_dxball_new_handler", addend = 0, target = 0x0043FB10 },
 ]
+
+[builds.runtime_cpp_terminal]
+source = "src/runtime_cpp_terminal.cpp"
+object = "build/exact/runtime_cpp_terminal.obj"
+inputs = ["src/runtime_cpp_terminal.cpp", "src/runtime_cpp_terminal.h", "src/runtime_cpp_tables.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
+[units.cpp-terminate]
+build = "runtime_cpp_terminal"
+symbol = "_dxball_cpp_terminate"
+target_address = 0x0041BC60
+size = 115
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TERMINAL.md; complete pinned hooks.obj sections, retained REA and two-level scope tables"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 12, type = "DIR32", symbol = "$T322", addend = 0, target = 0x004201E8 },
+  { offset = 17, type = "DIR32", symbol = "__except_handler3", addend = 0, target = 0x0041C724 },
+  { offset = 25, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 46, type = "DIR32", symbol = "_dxball_cpp_terminate_handler", addend = 0, target = 0x004238A0 },
+  { offset = 77, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 105, type = "DIR32", symbol = "$L317", addend = 0, target = 0x0041BCA7 },
+  { offset = 110, type = "REL32", symbol = "_dxball_crt_abort", addend = 0, target = 0x0041E230 },
+]
+
+[[units.cpp-terminate.data_comdats]]
+symbol = "$T322"
+target_address = 0x004201E8
+size = 24
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "$L315", addend = 0, target = 0x0041BCCD },
+  { offset = 16, type = "DIR32", symbol = "$L318", addend = 0, target = 0x0041BCA1 },
+  { offset = 20, type = "DIR32", symbol = "$L319", addend = 0, target = 0x0041BCB7 },
+]
+
+[units.cpp-inconsistency]
+build = "runtime_cpp_terminal"
+symbol = "_dxball_cpp_inconsistency"
+target_address = 0x0041BCE0
+size = 115
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_TERMINAL.md; complete pinned hooks.obj sections, retained REA and two-level scope tables"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 12, type = "DIR32", symbol = "$T337", addend = 0, target = 0x00420200 },
+  { offset = 17, type = "DIR32", symbol = "__except_handler3", addend = 0, target = 0x0041C724 },
+  { offset = 25, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 46, type = "DIR32", symbol = "_dxball_cpp_inconsistency_handler", addend = 0, target = 0x004238A8 },
+  { offset = 77, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 105, type = "DIR32", symbol = "$L332", addend = 0, target = 0x0041BD27 },
+  { offset = 110, type = "REL32", symbol = "_dxball_cpp_terminate", addend = 0, target = 0x0041BC60 },
+]
+
+[[units.cpp-inconsistency.data_comdats]]
+symbol = "$T337"
+target_address = 0x00420200
+size = 24
+relocations = [
+  { offset = 8, type = "DIR32", symbol = "$L330", addend = 0, target = 0x0041BD4D },
+  { offset = 16, type = "DIR32", symbol = "$L333", addend = 0, target = 0x0041BD21 },
+  { offset = 20, type = "DIR32", symbol = "$L334", addend = 0, target = 0x0041BD37 },
+]

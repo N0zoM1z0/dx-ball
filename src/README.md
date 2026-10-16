@@ -30,6 +30,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [list_initializers.cpp](list_initializers.cpp) | Global list owners and their C++ constructors |
 | [runtime_text_host.c](runtime_text_host.c) | Unix implementation of the score caller's decimal conversion boundary |
 | [board_inspector.c](board_inspector.c), [resource_inspector.c](resource_inspector.c) | Command-line board and image/sprite-bank inspection |
+| [runtime_cpp_terminal.cpp](runtime_cpp_terminal.cpp) | Original C++ terminal callbacks and Win32 SEH scopes; standalone CRT owner outside the CMake game library |
 | [termination.c](termination.c) | Separate CRT initializer/exit reconstruction; outside the CMake game library |
 
 Each module's `.h` file describes its public state and call contracts.

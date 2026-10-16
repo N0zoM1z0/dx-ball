@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after the allocator comparison checkpoint.
-Accepted totals are **367 functions / 75,631 code bytes / 136 metadata bytes**.
+Updated October 16, 2026, after the C++ terminal source checkpoint.
+Accepted totals are **369 functions / 75,861 code bytes / 184 metadata bytes**.
 There are **87 complete nonexact comparisons: 34 authored, 52 runtime and one
 compiler-generated**. None is an accepted exact.
 
 These 87 are not all unfinished functions. Three other source-present allocator
-entries are outside both current comparison reports, so 90 of the 457
-source-present entries are not exact. Another 86 of the 543 inventory entries
+entries are outside both current comparison reports, so 90 of the 459
+source-present entries are not exact. Another 84 of the 543 inventory entries
 lack a source-present ledger row. The provisional inventory and origin review
 still need reconciliation; these numbers are not a final authored denominator.
 
@@ -189,3 +189,7 @@ rejected source controls. The rejected public-cell control also ran the existing
 allocator differential check; no gameplay was rerun. The final complete replay
 uses retained verified objects; `validate-tracking.py --require-target` passes
 with 543 / 457 / 367.
+The subsequent C++ terminal checkpoint adds two exact source bodies and their
+scope tables; tracking passes 543 / 459 / 369. Previous exact inputs/products
+are verified and reused; seven Wine SEH boundary controls pass. See
+[terminal source](RUNTIME_CPP_TERMINAL.md).

@@ -35,3 +35,7 @@ runtime tests or game builds. Two closed REA runs retain seven records under
 `.analysis/rea/`; proofs and unique compiler products are retained under
 `.analysis/runtime-cpp-tables-20261014/`. OS exception transfer and game
 integration remain open.
+
+The later [terminal source recovery](RUNTIME_CPP_TERMINAL.md) supplies the
+translator/default callback state and exact inconsistency/terminate SEH bodies.
+The translator execution and complete exception-runtime integration remain open.

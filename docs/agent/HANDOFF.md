@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after resuming from handoff checkpoint `a3acaaf`
-on `origin/main`. Five allocator comparisons were accepted; two independent
-import-cell controls were rejected and restored. The reconstruction objective
-is unfinished.
+Updated October 16, 2026, after source checkpoint `02164bd` on `origin/main`.
+The two C++ terminal callbacks now have restored SEH source, complete exact
+code/scope comparisons, initialized callback storage and bounded Wine checks.
+The reconstruction objective is unfinished.
 
 This document describes the current state, not a running history.
 [Earlier handoff and trial history](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/agent/HANDOFF.md)
@@ -47,14 +47,14 @@ An exact-function count is progress, not the completion criterion.
 | Item | Value |
 | --- | ---: |
 | Provisional function inventory | 543 |
-| Source-present entries | 457 |
-| Accepted exact functions | 367 |
-| Complete exact code bytes | 75,631 |
-| Attached exact metadata bytes | 136 |
+| Source-present entries | 459 |
+| Accepted exact functions | 369 |
+| Complete exact code bytes | 75,861 |
+| Attached exact metadata bytes | 184 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 87 |
 | Source-present entries outside the two comparison reports | 3 |
-| Inventory entries without a source-present ledger row | 86 |
+| Inventory entries without a source-present ledger row | 84 |
 | Nonexact origins | 34 authored / 52 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 204 runtime / 45 compiler-generated / 24 unknown |
 
@@ -67,14 +67,16 @@ now lists all 87 maintained candidates.
 Three additional source-present entries remain in `src/allocator.c`: physical
 HeapFree, HeapAlloc and HeapCreate wrappers. Five other allocator entries now
 have complete exact acceptance. Thus 87 is not the total remaining work:
-90 source-present entries are not exact, and another 86 inventory entries lack
+90 source-present entries are not exact, and another 84 inventory entries lack
 a source-present row. The remaining-functions page lists the three gaps.
 
-The October 16 allocator checkpoint passes `validate-tracking.py --require-target`
-with 543 / 457 / 367. Complete comparisons of all current retained exact objects
-produce 367 zero-difference units, totaling 75,631 code bytes and 136 metadata
-bytes. Actual producer inputs and object hashes were verified first. This was
-a retained-object replay, not a fresh whole-game compilation or play test.
+The October 16 C++ terminal checkpoint passes `validate-tracking.py --require-target`
+with 543 / 459 / 369. The two new 115-byte functions and both 24-byte scope tables
+compare exactly. Seven Wine controls exercise real VC4 SEH with a controlled
+abort endpoint. The previous 367 exacts are reused after verifying unchanged
+recipes, actual input closures, flags and object hashes; they were not recompiled.
+Current totals are 75,861 code bytes and 184 attached metadata bytes. This is
+not a final restored-game build or play test.
 
 ### Authorities and private inputs
 
@@ -84,7 +86,7 @@ a retained-object replay, not a fresh whole-game compilation or play test.
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
 - `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 367 accepted comparisons/producers.
+- `build/reports/exact-replay.json`: current 369 accepted comparisons/producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 87
   candidates/producers. The directory date is historical; its contents are current.
 - Selected phase `verification.json` files and owner notes explain each adoption.
@@ -114,6 +116,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 C++ terminal | Two complete SEH bodies, 230 code / 48 scope bytes; total 369 | [C++ terminal source](../research/exact/RUNTIME_CPP_TERMINAL.md); `.analysis/cpp-terminal-source-20261016/verification.json` |
 | October 16 allocator | Five complete exact functions, 147 bytes; total 367 | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-complete-owner-20261016/verification.json` |
 | `d3053eb` | Matherr 174-byte body: 21 → 17 → 6 differing positions; no new exact | [FP exception entries](../research/exact/RUNTIME_FP_DECOMPOSITION.md); `.analysis/math-error-original-double-record-20261015/verification.json` |
 | `aa9538f` | Float assignment: complete 76-byte exact; total 362 | [Float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md); `.analysis/float-assignment-original-double-record-20261015/verification.json` |
@@ -175,8 +178,13 @@ question, not merely the smallest differing-position count.
   one consistent import-cell owner. Read [allocator ownership](../research/ALLOCATOR_OWNER.md)
   before revisiting them: shared public cells and an allocator-only import header
   both lose accepted companions and are closed controls. Do not rebase one table
-  differently per function. The 86 inventory entries without source rows remain
+  differently per function. The 84 inventory entries without source rows remain
   in scope.
+- The C++ terminal owner now supplies callback state and two real nested SEH
+  scopes. Its source requires a Win32 SEH-capable compiler; VC4 and Clang Win32
+  compile the same implementation. Do not replace it with a no-op host catch.
+  Frame/object construction, destruction, transfer helpers and dispatcher
+  integration remain genuine missing owners; see [terminal source](../research/exact/RUNTIME_CPP_TERMINAL.md).
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/
   general regressions and exponent improvement together if pursuing that owner;
   do not recompile the unchanged control or split bodies solely to collect zeros.
@@ -272,9 +280,9 @@ Its decompressed SHA-256 remains
 After preview, `clean-local.py --evidence-only --apply` completed 128 archived
 hardlink replacements and removed 56 verified redundant root REA aliases.
 Journal: `.analysis/cleanup/20261016T040714413096Z.json`. Allocated analysis storage
-fell by about 289 MiB; `build/` remained unchanged. All 82 current exact producer
-objects and their inputs were hash-verified again, and tracking still passes
-543 / 457 / 367. No probe product or unique trial carrier was deleted.
+fell by about 289 MiB; `build/` remained unchanged. All 82 exact producers at that
+cleanup checkpoint and their inputs were hash-verified again; its tracking check
+passed 543 / 457 / 367. No probe product or unique trial carrier was deleted.
 
 Preserve unique trial sources, receipts, originals and accepted/current products.
 Read verified `.gz` fallbacks instead of rerunning producers. Keep mutable current

@@ -1,12 +1,13 @@
 # Complete C++ handler search
 
-The remaining terminal dependencies are now independently identified as
+The terminal dependencies were independently identified as
 terminate0x41BC60 and inconsistency0x41BCE0, not unexpected. Their complete
 hooks.obj sections are115 bytes each: the imported114-byte boundaries omitted
 the final RET. All16 code relocations and both24-byte scope tables/six bindings
 match. Inner constant-one filters handle callback faults; outer finally scopes
-dispatch abort/terminate. These are runtime-origin proofs, not restored source
-or new exact units. REA assembly IDs:
+dispatch abort/terminate. These original proofs now ground the two complete
+[restored terminal sources and exact scope tables](RUNTIME_CPP_TERMINAL.md).
+The handler-search candidate below is unchanged. REA assembly IDs:
 `ev_06745feb23b4c1b0c656b39548712dadb099e59d4a043230cbe90f4f93a44d61`,
 `ev_f561022b68290f5ac8530cdf4642e42957fba725cea515587a46e868788f0a66`.
 Private complete proof: `.analysis/cpp-terminal-boundaries-20261014/original-proof.json`.
