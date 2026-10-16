@@ -1,5 +1,43 @@
 # Closed drawing and SDK storage diagnostics
 
+## Upload and endpoint iteration scopes, October 17
+
+Two private lifetime models preserve executable operations, types, names and
+call order. Neither improves the complete original comparison; both are rejected.
+
+| Model | Current bytes/differences to proposal | Preserved accepted companions |
+| --- | --- | --- |
+| Bank cursor, row and column inside the post-Lock upload block | 1475/66 to 1508/316 | 15 functions / 3572 code bytes |
+| Each polygon endpoint pair inside its edge-construction iteration | Ordinary 1543/214 to 1543/222; clipped 1592/214 to 1592/221 | 9 functions / 715 code bytes / 136 metadata bytes |
+
+The bank model leaves pitch at its existing source sampling boundary before
+Lock. Retained REA instructions ground pitch at EBP-16 from descriptor offset16
+at `0x404A65..0x404A6B`. Cursor EBP-4, row EBP-36 and column EBP-24 have no
+access outside `0x404AED..0x404B52`, after the successful Lock guard and before
+Unlock. This is distinct from the earlier four-scalar whole-transfer model.
+These observed uses support the trial's lifetime, without proving original scope.
+
+The polygon model moves only the two existing POD endpoint declarations into
+the existing construction loops. Endpoint rereads, indexed field stores and
+the separate scan/sort workspace remain unchanged. The triangle's complete
+1710/88 comparison is unchanged, and its complete 160-byte candidate metadata
+remains exact. No candidate is promoted.
+
+Two serial VC4 compilations compare all 17 resource and 12 raster functions,
+including actual relocations, complete literals and attached metadata. The
+other 16 resource and 10 raster code identities stay unchanged. Canonical source,
+objects, reports, ledgers and the current game image are untouched. No native
+build, relink, fixture, game, provider query or full replay follows rejected code.
+CPU is capped at 35%, with memory high 640 MiB / maximum 768 MiB.
+
+Frozen proposals, before inputs, full comparisons and rejection receipts are in
+`.analysis/bank-upload-loop-scope-20261017/` and
+`.analysis/polygon-endpoint-iteration-20261017/`. Verified archive/gzip cleanup
+releases 110592 allocated bytes while retaining unique evidence. Do not repeat
+either lifetime model without evidence that changes the question.
+
+## Initial drawing and SDK controls
+
 These models were tested against the frozen 041b1c1 compiler inputs and rejected.
 Canonical source, objects and accepted receipts are restored by hash. Preserve
 these results when choosing the next question.

@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the CRT suffix and particle RNG-order reviews.
+Updated October 17, 2026, after the upload and endpoint lifetime controls.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,15 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+Two [private lifetime controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#upload-and-endpoint-iteration-scopes-october-17)
+are rejected. Bank post-Lock cursor/row/column scope worsens 1475/66 to 1508/316;
+polygon endpoint iteration scope worsens ordinary 214→222 and clipped 214→221.
+Two compilations compare all 29 affected functions, preserving 24 exact companions
+and all metadata; the other 26 function code identities stay unchanged. Canonical
+source, objects, reports, ledgers and image are untouched. Do not repeat these
+models. Frozen proposals and receipts are sealed; cleanup releases 110592 allocated
+bytes. No runtime, relink, provider query or full replay runs.
 
 One [last-brick compiler control](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#compiler-dependent-particle-argument-order)
 confirms a portability gap: current GCC/original RNG limits `11, 14, 15, 30` become
