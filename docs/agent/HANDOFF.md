@@ -1,11 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after alignment checkpoint `8454e2d` and the square-
-root record follow-up below. Twelve writable records now match 480 bytes and
-72 relocations; the earlier 448-byte family is reused unchanged. The bounded
-pinned-library descriptor inventory finds twelve unique original headers out
-of sixteen definitions. Existing function source, exact and semantic ledgers
-remain unchanged.
+Updated October 16, 2026, after descriptor-family checkpoint `43198aa` and the
+explicit 96-bit integer snapshot source recovery below. Five complete owner
+comparisons retain identical raw byte results. Function source/exact totals and
+semantic scopes are unchanged; the one affected exact producer is refreshed.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -158,6 +156,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 mantissa snapshot | Explicit three-limb integer snapshot; five complete byte results unchanged; one owner compilation | [Mantissa lifetimes](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md); `.analysis/mantissa96-integer-snapshot-20261016/adoption.json` |
 | October 16 sqrt record | Complete32-byte record/four bindings; descriptor family480 bytes/72 bindings; old448 bytes reused | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-remaining-operation-records-20261016/comparison.json` |
 | October 16 x87 record alignment | Two-byte ABI restored; seven more records add272 bytes; family448 bytes/68 bindings; prior176 bytes preserved | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-unary-operation-tables-20261016/comparison.json` |
 | October 16 x87 operation tables | Four complete writable records /176 bytes and28 bindings; two CRT origins; no function source/exact gain | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/crt-dispatch-boundaries-20261016/source-comparison.json` |
@@ -233,6 +232,10 @@ question, not merely the smallest differing-position count.
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
   teardown and the 56 independent entries without source remain open.
+- The decimal accumulator now snapshots three integer limbs explicitly. All five
+  byte results remain unchanged; native/i686 C90 compilation passes. Shift masks
+  and remaining register choices are closed controls without new evidence. Do
+  not repeat integer-type or mask variations to seek compiler coincidences.
 - The named x87 descriptor-family recovery is closed at twelve matched records
   from sixteen pinned-library definitions. Do not repeat unchanged data compiles
   or add the four unmatched records. Continue with remaining function source and

@@ -44,11 +44,22 @@ void __shr_12(unsigned int *mantissa)
     mantissa[0] = (mantissa[0] >> 1) | middle_carry;
 }
 
+/* Digit accumulation uses all three words before publishing the exponent.
+   Retain the two-byte alignment of the incoming extended record. */
+#pragma pack(push, 2)
+#if defined(__GNUC__)
+typedef struct __attribute__((__may_alias__)) DxBallMantissa96 {
+#else
+typedef struct DxBallMantissa96 {
+#endif
+    unsigned int words[3];
+} DxBallMantissa96;
+#pragma pack(pop)
+
 /* FUNCTION: DXBALL 0x0041E6E0 */
 void __mtold12(const char *digits, int count, DxBallExtended12 *result)
 {
-    DxBallExtended12 saved;
-    unsigned int *saved_words = (unsigned int *)&saved;
+    DxBallMantissa96 saved;
     unsigned int *mantissa = (unsigned int *)result;
     unsigned short exponent = 0x404e;
     mantissa[0] = 0;
@@ -56,18 +67,18 @@ void __mtold12(const char *digits, int count, DxBallExtended12 *result)
     mantissa[2] = 0;
     while (count != 0) {
         unsigned int digit;
-        saved = *result;
+        saved = *(const DxBallMantissa96 *)(const void *)result;
         __shl_12(mantissa);
         --count;
         ++digits;
         __shl_12(mantissa);
-        __add_12(mantissa, saved_words);
+        __add_12(mantissa, saved.words);
         __shl_12(mantissa);
         digit = (unsigned int)digits[-1];
-        saved_words[1] = 0;
-        saved_words[2] = 0;
-        saved_words[0] = digit;
-        __add_12(mantissa, saved_words);
+        saved.words[1] = 0;
+        saved.words[2] = 0;
+        saved.words[0] = digit;
+        __add_12(mantissa, saved.words);
     }
     if (mantissa[2] == 0) {
         unsigned int high;

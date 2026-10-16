@@ -1,5 +1,10 @@
 # Mantissa iteration and 96-bit arithmetic
 
+October 16 follow-up: the decimal accumulator now uses an explicit integer
+snapshot. All five owner comparisons retain their preceding byte results;
+current totals remain 464 source-present / 376 exact. Earlier totals below
+describe their original checkpoint.
+
 The complete zero predicate now matches all 29 bytes. Indexed three-limb
 iteration preserves its original EAX counter and ECX pointer. The 102-byte
 little-endian addition also matches, including all four actual carry calls.
@@ -43,3 +48,33 @@ Actual source stages, producers and all seventeen comparisons are retained in
 `.analysis/runtime-mantissa-lifetimes-20261013/`. Both owners compile on VC4,
 native and i686. No runtime test or game build runs. Parser recovery,
 remaining exact gaps and game integration stay open.
+
+## Integer snapshot during decimal accumulation (October 16)
+
+`__mtold12` now snapshots the accumulator as three unsigned 32-bit limbs,
+matching the three original DWORD transfers. Its snapshot is used for
+`10 * mantissa + digit`; the final extended-record exponent is written only
+after normalization. The previous temporary borrowed the final extended
+record type and maintained a separate cast word pointer. The source now uses
+one `DxBallMantissa96` record and its consumed `words[3]` directly. Two-byte
+alignment follows the actual incoming record, and the native compiler alias
+annotation describes the existing shared byte storage. No extra state is added.
+
+One stable VC4 compilation compares all five complete functions. Every raw
+comparison row, including each relocated-body hash, equals the prior result:
+addition102 exact, scalar addition35/five differences, left shift50/62 with47,
+right shift48/54 with35, and decimal accumulation232/232 with20. Native and
+i686 C90 compilation pass with warnings as errors. Source/header scope is
+limited to this owner; the public headers are unchanged. This improves the
+integer-stage representation without claiming unique original typedef spelling
+or a new exact function. Existing mask/register differences are closed controls
+without new evidence; no type, spelling or register sweep follows this result.
+
+Original control flow and transfers reuse the retained complete REA/CRT evidence
+linked above and the [decimal conversion note](RUNTIME_DECIMAL_CONVERSION.md).
+No new provider, runtime check or full replay runs. Both function comparison
+result maps remain identical; only the affected owner producer/receipt and its
+one exact source/object identity are refreshed. The remaining 375 exact results,
+84 outside candidate results and 249 semantic scopes retain their records.
+Source, object, compiler logs, complete comparisons and adoption receipt remain
+in `.analysis/mantissa96-integer-snapshot-20261016/`.
