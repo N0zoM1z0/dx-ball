@@ -40,6 +40,8 @@ placement, every decoded control edge and full comparisons are retained in
 `.analysis/crt-dispatch-tail-origins-20261016/`.
 
 All 464 source entries, 376 accepted exacts, 88 complete candidates and 249
-semantic rows retain byte-identical ledgers and comparison reports. The separate
-scalar/intrinsic trig entry inventory observed in the same archive still needs
-its own complete control-flow and binding review.
+semantic rows retain byte-identical ledgers and comparison reports. The subsequent
+[scalar trig review and constant recovery](RUNTIME_X87_TRIG_ENTRIES.md) prove
+the scalar group and add four omitted entries. Its intrinsic group still needs
+one shared external binding. The subsequent inventory counts supersede the
+origin-only checkpoint totals above.

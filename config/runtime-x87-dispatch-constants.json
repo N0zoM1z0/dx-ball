@@ -1,0 +1,100 @@
+{
+  "source": "src/runtime_x87_dispatch_constants.c",
+  "header": "src/runtime_x87_dispatch_constants.h",
+  "object": "build/exact/runtime_x87_dispatch_constants.obj",
+  "inputs": [
+    "src/runtime_file_modes.h",
+    "src/runtime_float.h",
+    "src/runtime_fp_control.h",
+    "src/runtime_fp_decomposition.h",
+    "src/runtime_fp_dispatch.h",
+    "src/runtime_fp_exceptions.h",
+    "src/runtime_lowio.h",
+    "src/runtime_x87_dispatch_constants.c",
+    "src/runtime_x87_dispatch_constants.h",
+    "src/state_types.h"
+  ],
+  "flags": [
+    "/nologo",
+    "/c",
+    "/O2",
+    "/Ob0",
+    "/Oi-",
+    "/Gd",
+    "/MT",
+    "/Gy"
+  ],
+  "symbol": "_dxball_x87_dispatch_constants",
+  "target_address": "0x00420140",
+  "size": 48,
+  "readonly": true,
+  "relocations": [],
+  "original_member": {
+    "member": "..\\build\\intel\\st_obj\\87cdisp.obj",
+    "archive_offset": 953054,
+    "sha256": "a72c4be7501651af3ce2b8d1ca8e32f8de560454c601130eac1eec047c167589"
+  },
+  "fields": [
+    {
+      "field": "maximum_finite",
+      "original_symbol": "DblMax",
+      "offset": 0,
+      "low": 4294967295,
+      "high": 2146435071,
+      "consumer_address": 4295425,
+      "consumer_mnemonic": "fcomp",
+      "consumer_relocation_offset": 371
+    },
+    {
+      "field": "minimum_normal",
+      "original_symbol": "DblMin",
+      "offset": 8,
+      "low": 0,
+      "high": 1048576,
+      "consumer_address": 4295379,
+      "consumer_mnemonic": "fcomp",
+      "consumer_relocation_offset": 325
+    },
+    {
+      "field": "overflow_exponent",
+      "original_symbol": "IeeeAdjO",
+      "offset": 16,
+      "low": 0,
+      "high": 3231186944,
+      "consumer_address": 4295409,
+      "consumer_mnemonic": "fld",
+      "consumer_relocation_offset": 355
+    },
+    {
+      "field": "underflow_exponent",
+      "original_symbol": "IeeeAdjU",
+      "offset": 24,
+      "low": 0,
+      "high": 1083703296,
+      "consumer_address": 4295363,
+      "consumer_mnemonic": "fld",
+      "consumer_relocation_offset": 309
+    },
+    {
+      "field": "infinity",
+      "original_symbol": "_infinity",
+      "offset": 32,
+      "low": 0,
+      "high": 2146435072,
+      "consumer_address": 4295437,
+      "consumer_mnemonic": "fmul",
+      "consumer_relocation_offset": 383
+    },
+    {
+      "field": "zero",
+      "original_symbol": "_zero",
+      "offset": 40,
+      "low": 0,
+      "high": 0,
+      "consumer_address": 4295391,
+      "consumer_mnemonic": "fmul",
+      "consumer_relocation_offset": 337
+    }
+  ],
+  "scope": "Complete readonly48-byte source/original/PE record. No whole589-byte dispatcher/BSS, function source/exact, or hardware execution claim."
+}

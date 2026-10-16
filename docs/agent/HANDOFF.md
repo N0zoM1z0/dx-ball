@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after C++ allocation checkpoint `db85520` and the
-two complete x87 dispatch origin proofs below. A bounded pow DOUBLE-record
-trial is rejected and source restored. All source/exact/semantic ledgers and
-376 accepted/88 candidate comparison rows are unchanged by this checkpoint.
+Updated October 16, 2026, after dispatch-tail checkpoint `96c4bcc` and the scalar
+trig inventory/48-byte readonly constant recovery below. Four omitted entries
+are included; three scalar origins are proved. All function source/exact/semantic
+ledgers and 376 accepted/88 candidate comparison rows remain unchanged.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -48,7 +48,7 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional independent function inventory | 520 |
+| Provisional independent function inventory | 524 |
 | Parent-owned compiler fragments, counted separately | 24 |
 | Source-present independent entries | 464 |
 | Accepted exact functions | 376 |
@@ -57,19 +57,19 @@ An exact-function count is progress, not the completion criterion.
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 0 |
-| Inventory entries without a source-present ledger row | 56 |
+| Inventory entries without a source-present ledger row | 60 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 221 runtime / 21 compiler-generated / 8 unknown |
+| Inventory origins | 270 authored / 224 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and eight unknown origins remain open.
+The authored denominator and nine unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
 three physical Heap API wrappers. All 88 source-present nonexact entries have
-complete candidate comparisons. Another 56 independent inventory entries lack
+complete candidate comparisons. Another 60 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
 native/Win32 evidence.
@@ -96,8 +96,18 @@ are reviewed explicitly. The shared BSS-dependent handler and full589-byte
 section remain unverified. No source or exact gain follows; see
 [dispatch tail](../research/exact/RUNTIME_X87_DISPATCH_TAIL.md).
 
-Current accounting is 520 independent entries plus 24 parent-owned compiler
-fragments, preserving all 544 previously recorded addresses. The twenty
+The sin/cos/tan scalar group now matches all24 bytes/four independently grounded
+bindings. Tan and three intrinsic entries were omitted from the inventory.
+The intrinsic group still has one unresolved external exit and remains unknown;
+the four additions account for the denominator and unknown-count increase.
+Six readonly dispatch constants have complete48-byte C source and zero-byte
+differences under VC4, with native/i686 C90 compilation. These constants remain
+separate from the unchanged480-byte descriptor family. See
+[trig entries and constant source](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md).
+
+Current accounting is 524 independent entries plus 24 parent-owned compiler
+fragments, preserving all 544 previously recorded addresses and adding four
+trig entries. The twenty
 fixed-point unwind cleanups and four shared epilogues belong to the complete
 triangle/division/comparison/addition owners. Their source, metadata and code
 ranges were already part of those units; they are now recorded in
@@ -106,7 +116,7 @@ ranges were already part of those units; they are now recorded in
 All four complete parent comparisons reproduce their retained results from
 the existing canonical object: three exact methods and the unchanged 88-byte
 triangle candidate. That reconciliation repeated no compiler/provider/runtime
-work and changed no source or exact claim. The 56
+work and changed no source or exact claim. The 60
 independent entries without source remain in scope. See
 [compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
 
@@ -143,6 +153,8 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
 
 - `config/functions.csv`: provisional entries and reconciled extents.
 - `config/function-origins.csv`: independent entry origin classification.
+- `config/runtime-x87-operation-tables.json`: twelve complete writable records, 480 bytes/72 bindings.
+- `config/runtime-x87-dispatch-constants.json`: separate complete 48-byte readonly source record and six qword consumers.
 - `config/compiler-fragments.csv`: parent-owned unwind/epilogue aliases with original ranges and evidence; excluded from independent counts.
 - `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv`:
   source, exact and scoped semantic claims.
@@ -178,6 +190,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 trig entries/constants | Scalar24 bytes/four bindings; four omitted entries; six readonly constants48-byte source; function exact/source totals unchanged | [Trig entries](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md); `.analysis/trig-entries-dispatch-constants-20261016/adoption.json` |
 | October 16 mantissa snapshot | Explicit three-limb integer snapshot; five complete byte results unchanged; one owner compilation | [Mantissa lifetimes](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md); `.analysis/mantissa96-integer-snapshot-20261016/adoption.json` |
 | October 16 sqrt record | Complete32-byte record/four bindings; descriptor family480 bytes/72 bindings; old448 bytes reused | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-remaining-operation-records-20261016/comparison.json` |
 | October 16 x87 record alignment | Two-byte ABI restored; seven more records add272 bytes; family448 bytes/68 bindings; prior176 bytes preserved | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-unary-operation-tables-20261016/comparison.json` |
@@ -253,7 +266,7 @@ question, not merely the smallest differing-position count.
   modifying `allocator.h`. Earlier controls that removed its public declaration
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
-  teardown and the 56 independent entries without source remain open.
+  teardown and the 60 independent entries without source remain open.
 - The decimal accumulator now snapshots three integer limbs explicitly. All five
   byte results remain unchanged; native/i686 C90 compilation passes. Shift masks
   and remaining register choices are closed controls without new evidence. Do
@@ -270,8 +283,10 @@ question, not merely the smallest differing-position count.
   Their original opaque machine entries and low-level helpers remain open.
   Two BSS-free C-dispatch bodies have complete origin proofs; the other five
   entries still lack independent authority for LocalFac/intrinflag BSS. Do not
-  infer those addresses from code operands. The scalar/intrinsic trig entry
-  inventory observed in87ctrig.obj needs a separate complete CFG/binding review.
+  infer those addresses from code operands. The scalar trig group has a complete
+  origin proof; three newly inventoried intrinsic entries still need independent
+  authority for their shared exit to cintrindisp1. The readonly48-byte constant
+  record has source, without claiming the unverified589-byte dispatcher or BSS.
   See [operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md).
 - Foreign handling now carries the original one-past catch-list pointer through
   its final type checks, subtracting only for the transfer argument. Its remaining

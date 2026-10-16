@@ -81,16 +81,18 @@ The group identifies two previously unknown inventory entries:
 | `0x004192DC` | 48 | Internal asin/acos reduction at section +60; ST0, inherited EBP scratch and nonlocal error path |
 | `0x0041930C` | 9 | External `__rtpiby2` at +108; pop ST0 and load the genuine extended-precision half-pi constant |
 
-Their low-level source remains open. Origins now comprise **270 authored /
+Their low-level source remains open. At that checkpoint origins comprised **270 authored /
 219 runtime / 21 compiler-generated / 10 unknown**. Inventory 520, parent
 fragments 24, source-present functions 464 and exact functions 376 are unchanged.
 The verified section also retains its other exported and internal labels;
 this does not declare the provisional function inventory complete.
 
-The seven unresolved C-dispatcher entries still need independent placement of
-its nine-byte BSS section (`LocalFac` plus `intrinflag`). Its literal code and
-48-byte constants have unique anchors, but that does not authorize guessing
-the BSS addresses. Those entries are not reclassified by this recovery.
+The initial checkpoint left seven C-dispatcher origins unresolved. Two now have
+complete [BSS-free origin proofs](RUNTIME_X87_DISPATCH_TAIL.md); the remaining
+five still need independent placement of the nine-byte BSS section (`LocalFac`
+plus `intrinflag`). The [subsequent constant recovery](RUNTIME_X87_TRIG_ENTRIES.md)
+supplies all 48 readonly constant bytes as typed source, without authorizing
+guesses for the BSS addresses or claiming the full dispatcher.
 
 ## Evidence and validation
 

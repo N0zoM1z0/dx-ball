@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after independent allocator import recovery.
+Updated October 16, 2026, after scalar trig inventory and dispatch constant recovery.
 Accepted totals are **376 functions / 76,908 code bytes / 244 metadata bytes**.
 There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
 These 88 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 56 of the 520 independent inventory entries lack a
+report gaps. Another 60 of the 524 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
