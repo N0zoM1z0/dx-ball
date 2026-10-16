@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after the Windows raster default repair.
+Updated October 17, 2026, after the bank allocation scope improvement.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
 There are **95 complete nonexact comparisons: 34 authored, 60 runtime and one
 compiler-generated**. None is an accepted exact.
@@ -66,7 +66,8 @@ resource requirements and resume procedure.
 ## Authored candidates
 
 All 34 authored candidates were compared across their complete original
-extents on October 13. Their retained results are unchanged at this checkpoint.
+extents on October 13. The bank loader's [allocation scope](BANK_ALLOCATION_SCOPE.md)
+updates its complete comparison on October 17; the other results are unchanged.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -87,7 +88,7 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `draw-paddle` | 677 | 677 | 48 |
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
-| `load-sprite-bank` | 1475 | 1475 | 70 |
+| `load-sprite-bank` | 1475 | 1475 | 66 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
 | `fill-polygon-clipped` | 1592 | 1592 | 214 |

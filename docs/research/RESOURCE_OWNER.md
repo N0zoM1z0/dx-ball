@@ -1,5 +1,10 @@
 # Sprite, font, PCX and palette owner
 
+The latest [allocation-only pointer scope](exact/BANK_ALLOCATION_SCOPE.md)
+improves the complete bank candidate from 70 to 66 differences. Fifteen resource
+exacts remain unchanged, thirteen existing bank/callback cases pass, and the
+restored-CRT image relinks from 116 reused objects without a GUI replay.
+
 The [shared surface COM implementation](exact/EXACT_SURFACE_COM_CALLS.md) now
 matches complete ordinary blit, capture and glyph drawing. Stretch becomes a
 candidate; the net gain is two exact functions and 1,236 bytes. All 1,869 existing

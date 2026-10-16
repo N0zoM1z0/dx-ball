@@ -176,7 +176,6 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         signed char code;
         DxBallUInt pixel_count;
         DxBallByte *pixels;
-        DxBallSprite *record;
         fread(&width, 4, 1, dxball_board_file);
         fread(&height, 4, 1, dxball_board_file);
         fread(&code, 1, 1, dxball_board_file);
@@ -185,10 +184,13 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         pixels = (DxBallByte *)dxball_runtime_malloc(pixel_count + 3);
         if (pixels == NULL)
             exit(1);
-        record = (DxBallSprite *)dxball_runtime_malloc(sizeof(DxBallSprite) + 1);
-        if (record == NULL)
-            exit(1);
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
+        {
+            DxBallSprite *record;
+            record = (DxBallSprite *)dxball_runtime_malloc(sizeof(DxBallSprite) + 1);
+            if (record == NULL)
+                exit(1);
+            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
+        }
         fread(pixels, 1, pixel_count, dxball_board_file);
         dxball_sprite_banks[dxball_sprite_bank].count = count;
         dxball_sprite_banks[dxball_sprite_bank].allocation_mode = allocation_mode;

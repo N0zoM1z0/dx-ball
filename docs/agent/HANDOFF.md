@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the ranking comparison review.
+Updated October 17, 2026, after the bank allocation scope improvement.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -8,10 +8,20 @@ recorded. The reconstruction objective is unfinished and ports remain deferred.
 
 Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new function claim follows
-from the integration checks below. The current 116-source-object image remains
-`cbe767d19d7adc1363facdc862652d2c42342ba50bb01ec4d8eca57383183cfe`.
+from the checks below. The current 116-source-object image is
+`ebe4a4ff8e6557fe0a89a32a064365941103b574f7373460e8e7cd5f51b2eb56`.
 
-Current real-input evidence for this same 19-member image is:
+The [bank allocation scope](../research/exact/BANK_ALLOCATION_SCOPE.md) confines
+one temporary pointer to allocation/check/publication. Complete comparison is
+now 1475/66 differences; fifteen exact companions preserve 3,572 bytes. All 425
+instructions are accounted for: only fifteen displacement bytes across three
+DWORD homes change. Ten existing bank and three callback cases pass. All 116
+VC4 objects are reused at relink, with the same nineteen original CRT members.
+All 1,091 map addresses remain unchanged; every other image byte agrees apart
+from six explicitly parsed COFF/resource timestamps. No GUI run accompanies
+this source change; 235 historical input inventories are refreshed.
+
+Retained real-input evidence for the preceding `cbe767d1…` image is:
 
 - [Ball/pause/editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md):
   159 read-only states, two painted cells, complete save/reload/recreate and
@@ -30,11 +40,10 @@ Current real-input evidence for this same 19-member image is:
   original/current VC4 instruction cases check both overlap directions,
   initialization, whole-image writes and ABI. No game recompilation.
 
-All 49 originals remain unchanged. These selected runs reuse the current game
-and reader without compilation; other profiles are not rerun. Selected source
-bodies and actual relocations agree in the executed image. Source, game objects,
-all function ledgers and complete comparison reports remain unchanged. No full
-replay or new provider query runs. The original Wine focus failure remains in
+All 49 originals remain unchanged. Those selected runs reused their attested game
+and reader without compilation; other profiles were not rerun. Selected source
+bodies and actual relocations agree in the recorded image. No full replay or
+new provider query accompanies the latest change. The original Wine focus failure remains in
 [the focus diagnostic](../research/ROUND_FOCUS_RUNTIME.md); do not alter exact
 game behavior to hide it or repeat its known polling loop without new evidence.
 

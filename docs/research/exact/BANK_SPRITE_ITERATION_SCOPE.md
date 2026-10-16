@@ -1,5 +1,8 @@
 # Sprite-bank iteration lifetime
 
+The later [allocation-only pointer scope](BANK_ALLOCATION_SCOPE.md) reduces the
+current loader to 66 differences. The measurements below retain their earlier scope.
+
 The bank loader now declares each sprite's width, height, baseline, code,
 pixel count, file pixel buffer and allocated record inside the existing sprite
 iteration. All seven values are produced and consumed there; the pixel buffer
