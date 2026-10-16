@@ -1,0 +1,365 @@
+{
+  "source": "src/runtime_x87_operation_tables.c",
+  "header": "src/runtime_x87_operation_tables.h",
+  "object": "build/exact/runtime_x87_operation_tables.obj",
+  "inputs": [
+    "src/runtime_x87_operation_tables.c",
+    "src/runtime_x87_operation_tables.h"
+  ],
+  "flags": [
+    "/nologo",
+    "/c",
+    "/O2",
+    "/Ob0",
+    "/Oi-",
+    "/Gd",
+    "/MT",
+    "/Gy"
+  ],
+  "target_address": "0x00423230",
+  "size": 176,
+  "scope": "Complete writable operation-table storage; separate from exact-function code and attached exception metadata. Machine entries remain genuine external dependencies; no C call ABI or implementation is invented.",
+  "original_member": {
+    "name": "..\\build\\intel\\st_obj\\87triga.obj",
+    "header_offset": 966344,
+    "sha256": "0619b86aa3ff3e97f431f028fb8bcccaa2e69386e2b31a160f50c43ee56be624"
+  },
+  "header_layout": {
+    "size": 16,
+    "name_length": 0,
+    "name": 1,
+    "name_capacity": 11,
+    "unclassified_0c": 12,
+    "operand_count": 13,
+    "operation": 14,
+    "dispatch": 16
+  },
+  "independent_data_anchor": {
+    "address": "0x423230",
+    "offset": 0,
+    "size": 16,
+    "file_offset": 137776,
+    "bytes_hex": "046173696e0000000000000000010e00"
+  },
+  "tables": [
+    {
+      "symbol": "_dxball_x87_asin_operation",
+      "address": "0x00423230",
+      "size": 32
+    },
+    {
+      "symbol": "_dxball_x87_acos_operation",
+      "address": "0x00423250",
+      "size": 32
+    },
+    {
+      "symbol": "_dxball_x87_atan_operation",
+      "address": "0x00423270",
+      "size": 32
+    },
+    {
+      "symbol": "_dxball_x87_atan2_operation",
+      "address": "0x00423290",
+      "size": 80
+    }
+  ],
+  "entry_bindings": {
+    "_dxball_x87_asin_kernel": {
+      "original_symbol": "fFASN",
+      "target_address": 4297376,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_acos_kernel": {
+      "original_symbol": "fFACS",
+      "target_address": 4297385,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_atan_kernel": {
+      "original_symbol": "fFATN",
+      "target_address": 4297394,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_atan2_kernel": {
+      "original_symbol": "fFATN2",
+      "target_address": 4297404,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_half_pi": {
+      "original_symbol": "__rtpiby2",
+      "target_address": 4297484,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_atan_infinite": {
+      "original_symbol": "_rtforatninf",
+      "target_address": 4297528,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_atan2_zero_divisor": {
+      "original_symbol": "_rtforatnby0",
+      "target_address": 4297522,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_atan2_zero": {
+      "original_symbol": "_rtforatn20",
+      "target_address": 4297493,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_atan2_both_zero": {
+      "original_symbol": "_rtforatn200",
+      "target_address": 4297515,
+      "basis": "same complete original code/data group"
+    },
+    "_dxball_x87_return_top": {
+      "original_symbol": "__rttosnpop",
+      "target_address": 4311852,
+      "basis": "prior completely verified87disp.obj definition"
+    },
+    "_dxball_x87_top_nan_unary": {
+      "original_symbol": "__tosnan1",
+      "target_address": 4311874,
+      "basis": "prior completely verified87disp.obj definition"
+    },
+    "_dxball_x87_indefinite_pop": {
+      "original_symbol": "__rtindfnpop",
+      "target_address": 4312024,
+      "basis": "prior completely verified87disp.obj definition"
+    },
+    "_dxball_x87_top_nan_binary": {
+      "original_symbol": "__tosnan2",
+      "target_address": 4311919,
+      "basis": "prior completely verified87disp.obj definition"
+    },
+    "_dxball_x87_next_nan_binary": {
+      "original_symbol": "__nosnan2",
+      "target_address": 4311917,
+      "basis": "prior completely verified87disp.obj definition"
+    },
+    "_dxball_x87_nan_binary": {
+      "original_symbol": "__nan2",
+      "target_address": 4311959,
+      "basis": "prior completely verified87disp.obj definition"
+    },
+    "_dxball_x87_indefinite": {
+      "original_symbol": "__rtindfpop",
+      "target_address": 4312022,
+      "basis": "prior completely verified87disp.obj definition"
+    }
+  },
+  "relocations": [
+    {
+      "offset": 16,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_asin_kernel",
+      "addend": 0,
+      "target": 4297376
+    },
+    {
+      "offset": 20,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_return_top",
+      "addend": 0,
+      "target": 4311852
+    },
+    {
+      "offset": 24,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_top_nan_unary",
+      "addend": 0,
+      "target": 4311874
+    },
+    {
+      "offset": 28,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_indefinite_pop",
+      "addend": 0,
+      "target": 4312024
+    },
+    {
+      "offset": 48,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_acos_kernel",
+      "addend": 0,
+      "target": 4297385
+    },
+    {
+      "offset": 52,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_half_pi",
+      "addend": 0,
+      "target": 4297484
+    },
+    {
+      "offset": 56,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_top_nan_unary",
+      "addend": 0,
+      "target": 4311874
+    },
+    {
+      "offset": 60,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_indefinite_pop",
+      "addend": 0,
+      "target": 4312024
+    },
+    {
+      "offset": 80,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan_kernel",
+      "addend": 0,
+      "target": 4297394
+    },
+    {
+      "offset": 84,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_return_top",
+      "addend": 0,
+      "target": 4311852
+    },
+    {
+      "offset": 88,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_top_nan_unary",
+      "addend": 0,
+      "target": 4311874
+    },
+    {
+      "offset": 92,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan_infinite",
+      "addend": 0,
+      "target": 4297528
+    },
+    {
+      "offset": 112,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_kernel",
+      "addend": 0,
+      "target": 4297404
+    },
+    {
+      "offset": 116,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_zero_divisor",
+      "addend": 0,
+      "target": 4297522
+    },
+    {
+      "offset": 120,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_top_nan_binary",
+      "addend": 0,
+      "target": 4311919
+    },
+    {
+      "offset": 124,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_zero",
+      "addend": 0,
+      "target": 4297493
+    },
+    {
+      "offset": 128,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_zero",
+      "addend": 0,
+      "target": 4297493
+    },
+    {
+      "offset": 132,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_both_zero",
+      "addend": 0,
+      "target": 4297515
+    },
+    {
+      "offset": 136,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_top_nan_binary",
+      "addend": 0,
+      "target": 4311919
+    },
+    {
+      "offset": 140,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_zero",
+      "addend": 0,
+      "target": 4297493
+    },
+    {
+      "offset": 144,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_next_nan_binary",
+      "addend": 0,
+      "target": 4311917
+    },
+    {
+      "offset": 148,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_next_nan_binary",
+      "addend": 0,
+      "target": 4311917
+    },
+    {
+      "offset": 152,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_nan_binary",
+      "addend": 0,
+      "target": 4311959
+    },
+    {
+      "offset": 156,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_next_nan_binary",
+      "addend": 0,
+      "target": 4311917
+    },
+    {
+      "offset": 160,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_zero_divisor",
+      "addend": 0,
+      "target": 4297522
+    },
+    {
+      "offset": 164,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_atan2_zero_divisor",
+      "addend": 0,
+      "target": 4297522
+    },
+    {
+      "offset": 168,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_top_nan_binary",
+      "addend": 0,
+      "target": 4311919
+    },
+    {
+      "offset": 172,
+      "type": "DIR32",
+      "symbol": "_dxball_x87_indefinite",
+      "addend": 0,
+      "target": 4312022
+    }
+  ],
+  "boundary_evidence": "docs/research/exact/RUNTIME_X87_OPERATION_TABLES.md",
+  "data_evidence_id": "ev_d7b5e3077aa89e06757c2366971896bffbded18b2eeb3e07f63c6486a8a3fafa",
+  "original_code": {
+    "address": "0x004192A0",
+    "size": 162,
+    "nonrelocated_anchor": {
+      "address": "0x4192a0",
+      "offset": 0,
+      "size": 104,
+      "file_offset": 100000,
+      "bytes_hex": "e83700000086e9eb22e82e000000d9c9eb19d9e1d9e88ae932c9eb0fc68570fffffffed9e1d9c9d9e1d9c9d9f30ac97404d9ebdee10aed7402d9e0c3d9e1d9c0d9c0d9e8dee1d9c9d9e8dec1dec9d9e49bddbd60ffffff9bf68561ffffff01750532edd9fac358e9"
+    },
+    "code_evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12",
+    "entries": [
+      "0x004192DC",
+      "0x0041930C"
+    ]
+  },
+  "original_header_placement": "The complete16-byte operation-header subobject, corroborated by the dispatch pointer boundary and consumers of offsets12/14; not the old partial initialized-symbol placement policy."
+}

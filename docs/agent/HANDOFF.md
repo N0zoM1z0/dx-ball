@@ -1,11 +1,10 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after source checkpoint `67674bf` and independent
-allocator import recovery below. All eight allocator bodies are now exact;
-three former comparison gaps add 66 code bytes. The public header remains
-byte-identical. Only the eight affected functions are compiled and compared.
-Twenty-four old auto-analysis splits remain mapped to parents, and every
-original address remains recorded.
+Updated October 16, 2026, after allocator checkpoint `d82efd2` and the inverse-
+trigonometric table source recovery below. Four writable operation records now
+match all 176 initialized bytes and 28 relocations; these storage bytes are
+separate from function exact totals. Two original CRT helper origins are proved.
+Existing function source, exact and semantic ledgers are unchanged.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -61,10 +60,10 @@ An exact-function count is progress, not the completion criterion.
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 56 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 217 runtime / 21 compiler-generated / 12 unknown |
+| Inventory origins | 270 authored / 219 runtime / 21 compiler-generated / 10 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and 12 unknown origins remain open.
+The authored denominator and 10 unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
@@ -158,6 +157,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 x87 operation tables | Four complete writable records /176 bytes and28 bindings; two CRT origins; no function source/exact gain | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/crt-dispatch-boundaries-20261016/source-comparison.json` |
 | October 16 independent heap imports | All eight allocator bodies exact; three gaps closed, +66 code bytes; total 376; public header unchanged | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-independent-imports-20261016/adoption.json` |
 | October 16 foreign-handler tail | Original one-past handler pointer, negative-offset type test and deferred last-handler argument; 212/213 bytes, 105 differences; three owner exacts preserved | [C++ tables](../research/exact/RUNTIME_CPP_TABLES.md); `.analysis/cpp-foreign-handler-tail-20261016/adoption.json` |
 | October 16 compiler fragments | 24 overlapping cleanup/epilogue rows mapped to four existing parents; 520 independent entries, source/exact unchanged | [Compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md); `.analysis/compiler-fragment-ownership-20261016/verification.json` |
@@ -230,6 +230,11 @@ question, not merely the smallest differing-position count.
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
   teardown and the 56 independent entries without source remain open.
+- Four inverse-trigonometric operation records now have complete176-byte source
+  storage, with original opaque machine-entry addresses. Their low-level helpers
+  remain open. The seven C-dispatcher entries still lack independent authority
+  for LocalFac/intrinflag BSS; do not infer those addresses from code operands.
+  See [operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md).
 - Foreign handling now carries the original one-past catch-list pointer through
   its final type checks, subtracting only for the transfer argument. Its remaining
   register/bound-comparison differences are nonexact; do not sweep spellings or
