@@ -5,6 +5,9 @@ ball/pause/editor flow. This checks actual board-file persistence through the
 source CRT, beyond the earlier first-board startup selection. It does not add
 source, exact or semantic-ledger claims.
 
+The same image subsequently passes [natural game-over and ranking persistence](RESTORED_CRT_GAMEOVER_FLOW.md),
+including a fresh process reading the complete saved score table.
+
 The public observer now accepts this profile, validates its executable/map,
 complete build inputs and actual source objects, then derives read addresses
 from the map and emitted board-storage layout. The existing cases, input

@@ -1,23 +1,31 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the user's CRT dependency decision and a bounded
-rotation-frame review. The user permits retaining the 19 explicit original CRT
+Updated October 17, 2026, after natural game-over persistence through the source
+CRT. The user permits retaining the 19 explicit original CRT
 members in the final VC4 delivery; prioritize authored function exactness.
 Removing those runtime dependencies is not a delivery gate. Their source/origin
 gaps remain recorded, without changing any function claim or declaring the game
 complete.
 
-The rotation renderer's 424-byte original/current frames now have complete
-storage-role coverage: 150 frame-reference instructions each, no unassigned
-bytes. The original's two intermediate doubles use lower temporary homes;
-current named intermediates occupy upper homes instead (344+80 versus 360+64).
-Original round/truncate values form adjacent eight-byte pairs for each axis.
-One isolated pair-record compilation gains no exact and loses two projection
-matches; reject it. Canonical source, products and all ledgers remain unchanged.
-Only the six rotation functions are compared; no full replay, provider or game
-run occurs. See [the frame review](../research/exact/ROTATION_FRAME_ROLES.md).
+The current 19-member `vc40-restored-crt` image now passes natural 3→2→1→0 life
+loss, name editing, complete 660-byte ranking persistence and fresh-process
+reload. The existing single-profile driver records 297 read-only states, two
+distinct game PIDs and two normal exits. Score 222 / name reA / rank zero and
+all file bytes agree with the independent expectation. All 49 originals remain
+unchanged. Twenty-five selected score/game-over/CRT bodies, 5,370 bytes and
+358 bindings, agree with their actual source objects in the executed image.
+The unchanged image also retains the earlier stdio linkage proof. Opening and
+restart RGB frames match historical original samples; name entry differs only
+at eight cursor pixels, ranking only at its 1,298-pixel selection outline color.
+Animation phases are unsynchronized. No game/reader compilation or full replay
+runs. See [game-over persistence](../research/RESTORED_CRT_GAMEOVER_FLOW.md).
+The public game-over selector now accepts this profile and reports only its
+selected product identities. Game source, objects and all ledgers stay unchanged.
 
-The preceding checkpoint verified real editor persistence through the source CRT.
+The [rotation-frame review](../research/exact/ROTATION_FRAME_ROLES.md) accounts
+for all 424 frame bytes and closes a per-axis rounding-record model without
+an exact gain. Do not repeat that model.
+
 Totals remain 475 source entries, 380 exacts and 95 complete candidates. The
 current 19-member `vc40-restored-crt` image passes the existing ball/pause/editor
 flow with 159 read-only states. Real CTRL painting and S save all 20,000 expected
@@ -30,7 +38,7 @@ The actual 10-byte entry/two bindings and 17 selected board/stdio bodies coverin
 MSVCRT supplies these paths. The public observer now accepts this profile and
 validates its current build/map/inputs; `--profile` runs one existing selection.
 All function/source/origin/exact/semantic ledgers and comparison reports remain
-byte-identical. No full replay or provider query runs.
+byte-identical. No new provider query runs.
 A bounded target-extent review covers 289 source-present units in
 `0x401000..0x4165FF`, including all 270 currently authored entries. All 259 gaps
 are CC bytes/2,145 bytes. Unknown 40CC20 remains unknown; this does not prove a

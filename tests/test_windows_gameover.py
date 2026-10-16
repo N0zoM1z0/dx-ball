@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
-from windows_runtime import digest, environment, launch, prepare, stop, verified_originals
+from windows_runtime import PROFILES, digest, environment, launch, prepare, stop, verified_originals
 from test_windows_runtime import command, game_window
 from test_windows_play import (FLAGS, ORIGINAL, READER, Observer, capture_ready, click,
                                input_identities, reader_identity)
@@ -174,7 +174,8 @@ def observe(profile, env, reports):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
+    parser.add_argument('--profile', choices=('original', *PROFILES),
+                        help='run only this profile; otherwise run the three historical controls')
     parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
                         help='Xvfb depth; 24 renders the original palette correctly here')
     args = parser.parse_args()
@@ -194,7 +195,8 @@ def main():
     reports = ROOT / 'build/reports/windows-gameover'
     reports.mkdir(parents=True, exist_ok=True)
     observations = []
-    for profile in ((args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')):
+    profiles = (args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')
+    for profile in profiles:
         row = observe(profile, environment(), reports)
         observations.append(row)
         print(profile + ': natural life loss, name entry and full ranking persistence passed', flush=True)
@@ -208,8 +210,6 @@ def main():
               'display': 'Xvfb 640x480x' + str(args.display_depth),
               'observations': observations, 'inputs': inputs, 'original_addresses': FIELDS,
               **reader_identity(),
-              'vc40_map_sha256': digest(ROOT / 'build/vc40/dxball.map'),
-              'mingw_dll_sha256': digest(ROOT / 'build/windows-i686/libdxball_core.dll'),
               'originals': verified_originals(),
               'limitations': ['Real input only; observer never writes/patches/hooks target state.',
                               'Historical 8-bit host captures can lose glyph pixels; captures alone are not pixel-fidelity acceptance.',
@@ -217,6 +217,12 @@ def main():
                               'Sequential state reads are not atomic snapshots.',
                               'Complete in-memory ranking and file checked after a fresh process restart.',
                               'No full-level, physical audio or asynchronous MIDI claim.']}
+    if 'vc40' in profiles:
+        report['vc40_map_sha256'] = digest(ROOT / 'build/vc40/dxball.map')
+    if 'windows-i686' in profiles:
+        report['mingw_dll_sha256'] = digest(ROOT / 'build/windows-i686/libdxball_core.dll')
+    if 'vc40-restored-crt' in profiles:
+        report['restored_crt_build_sha256'] = digest(ROOT / 'build/vc40-restored-crt/build.json')
     (ROOT / 'build/reports/windows-gameover.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Natural game-over/ranking runs passed; complete file bytes and live state retained.')
 
