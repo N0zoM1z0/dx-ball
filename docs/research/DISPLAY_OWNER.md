@@ -1,5 +1,10 @@
 # Lightning and frame drawing
 
+The latest [expiry-local scope](exact/LIGHTNING_EXPIRY_SCOPE.md) restores six
+original last-brick frame homes and reduces its complete differences992→990.
+Twelve exact companions/3303 bytes and the other nineteen code identities remain;
+197 selected original/native calls pass, with no overlay or game replay.
+
 The later [direct WinMM import](exact/EXACT_WINMM_CLOCK_IMPORT.md) restores the
 170-byte waiting function exactly and preserves all 26 prior affected exacts.
 Paddle drawing becomes677/677 with 104 differences; last-brick keeps its explicit

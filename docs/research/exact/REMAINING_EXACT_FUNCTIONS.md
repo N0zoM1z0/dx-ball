@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after the rotation pixel-address recovery.
+Updated October 17, 2026, after the last-brick expiry scope recovery.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
 There are **95 complete nonexact comparisons: 34 authored, 60 runtime and one
 compiler-generated**. None is an accepted exact.
@@ -75,6 +75,9 @@ updates its complete comparison on October 17; the other results are unchanged.
 The [rotation address recovery](ROTATION_PIXEL_ADDRESS.md) changes eight bytes
 to restore integer-offset-before-base evaluation at both pixel writes; its
 complete raw difference count remains1466 and all five companions are unchanged.
+The [last-brick expiry scope](LIGHTNING_EXPIRY_SCOPE.md) restores six original
+homes and improves its complete comparison from992 to990 differences, preserving
+all twelve exact companions and the other nineteen complete code identities.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -109,7 +112,7 @@ complete raw difference count remains1466 and all five companions are unchanged.
 | `hit-board-tile` | 1315 | 1316 | 418 |
 | `redraw-intro` | 587 | 578 | 560 |
 | `load-pcx` | 862 | 979 | 851 |
-| `last-brick` | 1057 | 1067 | 992 |
+| `last-brick` | 1057 | 1067 | 990 |
 | `game-frame` | 1688 | 1691 | 1155 |
 | `render-rotated-sprite` | 1572 | 1466 | 1466 |
 

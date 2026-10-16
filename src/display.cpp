@@ -438,9 +438,7 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt rotate)
 /* FUNCTION: DXBALL 0x00415F40 */
 void dxball_last_brick(void)
 {
-    DxBallInt remaining, tile_x, tile_y;
-    DxBallRect rect;
-    DxBallInt x, y, center_x, center_y, column, row, tile;
+    DxBallInt remaining;
     if (dxball_last_brick_deadline == 0) {
         DxBallUInt started = timeGetTime();
         dxball_last_brick_deadline = (DxBallInt)(started +
@@ -448,6 +446,9 @@ void dxball_last_brick(void)
     }
     remaining = (DxBallInt)((DxBallUInt)dxball_last_brick_deadline - timeGetTime());
     if (remaining < 1) {
+        DxBallInt tile_x, tile_y;
+        DxBallRect rect;
+        DxBallInt x, y, center_x, center_y, column, row, tile;
         dxball_stop_sound(21);
         dxball_play_sound(22, 0, 0, 0);
         for (column = 0; column < DXBALL_BOARD_WIDTH; ++column) {

@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the complete renderer correspondence review.
+Updated October 17, 2026, after the last-brick expiry scope recovery.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -9,7 +9,21 @@ recorded. The reconstruction objective is unfinished and ports remain deferred.
 Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
-`844247ba7095eedbf99cc7e3bfeaf3ec43a4d232c1cb6b7fcfc2e68de8ed42be`.
+`345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [last-brick expiry scope](../research/exact/LIGHTNING_EXPIRY_SCOPE.md) puts
+tile/center/scan/rectangle/destination locals inside their sole consuming branch.
+The complete candidate improves1067/1057 with992 differences to990, preserving
+12 exact companions/3303 bytes and all other19 code identities. Only60 EBP
+displacements change across a17-DWORD bijection;302 instructions and68-byte frame
+remain. Six original homes are restored: remaining time, tile Y and four RECT
+fields. The explicit time-before-RNG and crop producers stay unchanged/open.
+Existing35 clock/deadline plus162 expiry/crop cases pass; overlay is not rerun.
+Historical235 input inventories refresh without new cases. One display compile
+covers20 functions; the delivery relink reuses all116 objects and the same19 CRT
+members. All1091 map addresses are identical; only60 proved displacements plus12
+timestamp bytes differ from the preceding `844247ba…` image. No game, full replay
+or provider query runs. This is a partial source improvement, not a new exact.
 
 The [complete renderer correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md#complete-renderer-correspondence)
 pairs all365 instructions:285 ordinary role/operand pairs and80 instructions in

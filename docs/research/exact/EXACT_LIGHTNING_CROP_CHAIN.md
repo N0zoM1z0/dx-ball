@@ -1,5 +1,10 @@
 # Complete lightning crop chains and retained countdown
 
+The later [expiry-local scope](LIGHTNING_EXPIRY_SCOPE.md) restores six original
+frame homes and improves the maintained candidate to1067/1057 bytes with990
+differences. The complete instruction/producer review below retains its earlier
+source/product identities; its before code is reused by that scope proof.
+
 The later [direct WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) makes waiting fully
 exact across 170 bytes. Its actual import closure preserves the explicit
 last-brick time sample; the historical diagnostics below retain their scopes.
