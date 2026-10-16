@@ -50,8 +50,9 @@ the changed source hash; their other cases are not rerun.
 The native incremental build compiles this owner and its pending raster owner,
 then links the library. The restored-CRT builder reuses all 116 source objects
 and only relinks; its resource producer already uses the same `/ML` recipe.
-There is no second VC4 source compilation or GUI run. The approved nineteen
-original CRT members remain unchanged.
+The allocation-scope batch has no second VC4 source compilation or GUI run.
+The approved nineteen original CRT members remain unchanged. A subsequent
+startup observation uses this image, as described below.
 
 The new image SHA-256 is
 `ebe4a4ff8e6557fe0a89a32a064365941103b574f7373460e8e7cd5f51b2eb56`.
@@ -61,6 +62,42 @@ inside six parsed COFF/resource-directory timestamp fields. Resource payloads
 and all other image bytes are identical. The linked 1,475-byte body verifies
 after all 77 relocations. Earlier GUI observations remain evidence for their
 recorded preceding image; they are not claimed as new executions of this image.
+
+## Current-image startup
+
+One subsequent run records 75 read-only states from this `ebe4a4ff…` image,
+using the unchanged startup/mouse/release prefix of the maintained play observer.
+It reuses the existing game and SDK reader without compilation. The complete
+400-byte initial board equals original board 0; the entire 20,000-byte saved
+bank and all 49 originals remain unchanged. Real mouse input moves the paddle
+to 480 then 200; a real click releases the ball and its coordinates change.
+The game returns to menu mode 0 and completes the existing zero-exit/no-window
+assertion. Reviewed captures show the colored first board, paddle and free ball.
+
+The private driver's later first-board postcondition initially exits with code 1: it takes
+the first `game-ready`-labelled poll, which still shows the menu. The wait records
+every attempt. Existing gameplay and shutdown assertions had already completed
+before that postcondition. A separate verifier checks the final successful wait
+sample and the retained files; no second game runs. The executed driver,
+traceback, corrected future driver, all samples and captures remain in private
+`.analysis/bank-startup-20261017/`. The result is explicitly a verification of
+retained observations, rather than a claim that the initial driver exited zero.
+Pause, editor, clear, ranking, terminal and focus controls are not repeated.
+
+## Closed file-metadata scope
+
+One later private model limits baseline, signed code and pixel count to the
+file-read/allocation/record-initialization phase. Width, height and file pixels
+keep their iteration lifetime. All operations and the existing allocation/API
+blocks remain unchanged. One compilation compares all 17 complete resource
+functions: fifteen exact companions preserve 3,572 bytes and the other sixteen
+code identities stay unchanged, but the bank worsens from 66 to 69 differences.
+Reject this scope; canonical source, cached objects, ledgers and the linked
+image stay unchanged. Do not repeat this model. Frozen source reversal,
+comparisons and rejection are retained under
+`.analysis/bank-file-metadata-scope-20261017/`; no runtime check uses that proposal.
+
+## Retained evidence and scope
 
 Private `.analysis/bank-allocation-scope-20261017/` retains source reversal,
 before/after products and reports, complete comparisons, instruction changes,
@@ -73,6 +110,9 @@ neither correction repeats a compiler or game run.
 Nineteen frozen input/report files are archived and both matching objects are
 compressed after complete byte checks, releasing 5,382,144 allocated bytes.
 Current cache objects and the linked/native products remain available.
+The subsequent metadata/startup batch archives eight proposal inputs and 233
+observer inputs, then removes 49 verified automated runtime copies, releasing
+another 2,936,832 allocated bytes. Manual runtimes and other profiles remain.
 
 Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. No full replay runs. Heavy work remains serial under

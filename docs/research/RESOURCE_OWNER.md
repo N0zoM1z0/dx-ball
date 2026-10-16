@@ -3,7 +3,10 @@
 The latest [allocation-only pointer scope](exact/BANK_ALLOCATION_SCOPE.md)
 improves the complete bank candidate from 70 to 66 differences. Fifteen resource
 exacts remain unchanged, thirteen existing bank/callback cases pass, and the
-restored-CRT image relinks from 116 reused objects without a GUI replay.
+restored-CRT image relinks from 116 reused objects. A later selected
+[current-image startup](exact/BANK_ALLOCATION_SCOPE.md#current-image-startup)
+records 75 states, real paddle/ball input, complete initial board and shutdown.
+The file-metadata scope trial is rejected at 69 differences; source stays at 66.
 
 The [shared surface COM implementation](exact/EXACT_SURFACE_COM_CALLS.md) now
 matches complete ordinary blit, capture and glyph drawing. Stretch becomes a

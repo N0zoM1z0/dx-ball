@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the bank allocation scope improvement.
+Updated October 17, 2026, after the current-image startup observation.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -18,8 +18,13 @@ instructions are accounted for: only fifteen displacement bytes across three
 DWORD homes change. Ten existing bank and three callback cases pass. All 116
 VC4 objects are reused at relink, with the same nineteen original CRT members.
 All 1,091 map addresses remain unchanged; every other image byte agrees apart
-from six explicitly parsed COFF/resource timestamps. No GUI run accompanies
-this source change; 235 historical input inventories are refreshed.
+from six explicitly parsed COFF/resource timestamps; 235 historical input
+inventories are refreshed. A later selected startup records 75 states from this
+image: complete original board0, paddle 480/200, release/motion, menu return and
+completed zero-exit/no-window assertion. A first-poll postcondition error is
+retained and corrected using the same stable samples, without a second game.
+The file-metadata phase trial worsens 66 to 69 differences across 17 complete
+comparisons and is rejected; no source or ledger change. Do not repeat it.
 
 Retained real-input evidence for the preceding `cbe767d1…` image is:
 
