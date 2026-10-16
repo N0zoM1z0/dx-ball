@@ -57,12 +57,22 @@ scripts/repo-python scripts/build-legacy.py
 scripts/repo-python scripts/run-windows.py --profile vc40
 ```
 
+For a game-only iteration, use `scripts/repo-python scripts/build-legacy.py --game-only`.
+The builder reuses objects only after checking compiler identity, flags, current
+source/header inputs and object hashes. Matching accepted owner objects take
+precedence over previous game objects. `build/vc40/build.json` records each
+reuse or compilation and its inputs; the default command still builds both
+diagnostic tools as well as the game.
+
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
 The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the
 recovered heap. Its allocator flags and other owner overrides are recorded in
 `build.json`; focused entry/link checks are described in the
 [allocator note](research/ALLOCATOR_OWNER.md).
+Allocator, list and resource files now use their maintained comparison recipes.
+The linker selects one `LIBCMT` runtime while preserving the resource owner's
+`/ML` compiler lowering. See [owner linkage and the focused game check](research/VC4_OWNER_LINKAGE.md).
 
 Windows builds import `DirectDrawCreate` and `DirectSoundCreate` from the SDK
 libraries. MinGW supplies `ddraw` and `dsound`. The pinned legacy build uses

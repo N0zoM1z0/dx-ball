@@ -1,9 +1,10 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after dispatch-tail checkpoint `96c4bcc` and the scalar
-trig inventory/48-byte readonly constant recovery below. Four omitted entries
-are included; three scalar origins are proved. All function source/exact/semantic
-ledgers and 376 accepted/88 candidate comparison rows remain unchanged.
+Updated October 16, 2026, after trig/constants checkpoint `12c97a9` and the VC4
+owner-recipe/linkage repair below. The current game reuses all 37 verified
+objects, 52 linked bodies agree and read-only first-board controls pass.
+All function source/exact/semantic ledgers and 376 accepted/88 candidate
+comparison rows remain unchanged.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -105,6 +106,19 @@ differences under VC4, with native/i686 C90 compilation. These constants remain
 separate from the unchanged480-byte descriptor family. See
 [trig entries and constant source](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md).
 
+The VC4 game now links the matching allocator/list/resource products with
+their actual owner flags. Default LIBC is excluded after a retained mixed-CRT
+link failure; the successful map uses one LIBCMT runtime. Complete owner
+products and previous adapter objects are reused by compiler/flags/full project
+input/object identity. The final game build reuses all 37 objects. All 52 linked
+allocator/list/C++ API bodies agree after actual image relocations. A probe with
+78 read-only observations confirms modes 4/0/1, attached ball, paddle input,
+release/motion, menu return and exit 0; the first-board screenshot is reviewed. The coarse
+pixel-only scene claim was insufficient and is retained with that limitation.
+This checks current owner integration; remaining function recovery and the
+standalone reconstructed CRT entry/storage/link remain open. See
+[VC4 owner linkage](../research/VC4_OWNER_LINKAGE.md).
+
 Current accounting is 524 independent entries plus 24 parent-owned compiler
 fragments, preserving all 544 previously recorded addresses and adding four
 trig entries. The twenty
@@ -190,6 +204,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 VC4 owner linkage | Three corrected owner profiles; single LIBCMT; 37 objects reused; 52 linked bodies and read-only first-board controls pass; source/exact totals unchanged | [VC4 linkage](../research/VC4_OWNER_LINKAGE.md); `.analysis/legacy-owner-reuse-20261016/` |
 | October 16 trig entries/constants | Scalar24 bytes/four bindings; four omitted entries; six readonly constants48-byte source; function exact/source totals unchanged | [Trig entries](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md); `.analysis/trig-entries-dispatch-constants-20261016/adoption.json` |
 | October 16 mantissa snapshot | Explicit three-limb integer snapshot; five complete byte results unchanged; one owner compilation | [Mantissa lifetimes](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md); `.analysis/mantissa96-integer-snapshot-20261016/adoption.json` |
 | October 16 sqrt record | Complete32-byte record/four bindings; descriptor family480 bytes/72 bindings; old448 bytes reused | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-remaining-operation-records-20261016/comparison.json` |
