@@ -64,6 +64,14 @@ precedence over previous game objects. `build/vc40/build.json` records each
 reuse or compilation and its inputs; the default command still builds both
 diagnostic tools as well as the game.
 
+To build the optional restored-CRT entry profile, use
+`scripts/repo-python scripts/build-legacy.py --restored-crt`, then
+`scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt`.
+It builds only the game in `build/vc40-restored-crt/`, with explicit source and
+remaining original-member dependencies. Its first original board, ball release
+and normal exit are checked; complete function recovery and playability remain
+open. See [the entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md).
+
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
 The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the

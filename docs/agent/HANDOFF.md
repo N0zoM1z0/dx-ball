@@ -1,26 +1,23 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after restoring I/O state and checking physical files.
+Updated October 16, 2026, after real-game startup through the restored CRT.
 Current totals are 475 source entries, 380 exacts and 95 complete candidates.
-Six formerly external I/O globals now have typed source: error/DOS state,
-creation mask, file/commit defaults and the invalid-descriptor record.
-Their 28 typed bytes match the original values and actual linked data. A real
-CRT-entry process passes physical binary/text I/O, mode overrides, commit flags,
-read-only creation and both error words. Of 64 maintained source objects, 63 are
-reused; only the state owner compiles. Full-game integration remains open:
-adding the whole original LIBC duplicates recovered startup/data owners.
-Use explicit members and typed standard-name adapters instead. The MinGW SDK's
-errno macro also needs a policy before adopting this state owner there.
-The preceding entry-only image runs restored CRT startup at the PE entry point
-with all 48 production objects reused and zero production compilations.
-Real OS command/environment, version, heap/CP, FP/XI/XC and exit paths pass:
-normal31, quoted/show32 and
-native SEH quick exit0xC0000005. The full390-byte entry/12-byte scope and13 whole
-linked source bodies match their emitted objects. FP52/nine and CRT84/thirteen
-data bindings remain correct. WinMain is an observed fixture; real game/Win32
-binding remains open. All function ledgers/reports and249 semantic rows are
-byte-identical. No full replay ran; the new state check reads 16 original data
-bytes in one closed REA session, reusing the preceding 72-byte error-state record.
+The optional `vc40-restored-crt` profile links the actual game with 113 reused
+source objects and three new typed integration objects, retaining 21 explicit
+original members. Live state confirms opening/menu, the original first board's
+400 bytes and 168 bricks, three lives, zero score, ball release/movement, one
+preserved heap and normal exit0. Reviewed captures identify the real scenes.
+The public builder reuses all 116 objects with zero compilations. Its loaded
+code/data/imports/relocations and resource payloads agree with the executed
+image; only resource/PE timestamps vary. The full390-byte entry/12-byte scope
+and CRT84/thirteen bindings pass. Function ledgers/reports remain byte-identical.
+Only four termination semantic builder-input identities refresh after 1,031
+original/native cases with the same complete observation projection; all scopes,
+counts and the other 245 rows are unchanged. No full replay or provider query ran.
+Original C++ frame/hooks and x87/SEH/stack support remain explicit dependencies;
+this is not a fully source-restored CRT or final playability claim. The default
+host-CRT profile is still the default. Function recovery and ports retain their
+original priority. See [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -164,6 +161,14 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+The [optional real-game entry profile](../research/RESTORED_CRT_GAME_ENTRY.md)
+now installs Windows bindings before the recovered CRT creates its heap. Source
+standard-name adapters prevent whole-LIBC startup/stdio collisions. The checked
+138-input order is `config/restored-crt-link.json`; the public command is
+`scripts/repo-python scripts/build-legacy.py --restored-crt`. First-board and
+normal-exit state checks pass. Keep the remaining21 original members explicit,
+including C++ frame/hooks; complete source linking and playability remain open.
+
 The new [I/O state owner](../research/exact/RUNTIME_IO_STATE.md) fills six missing
 definitions without changing existing headers or function producers. Its recipe
 is `config/runtime-io-state.json`. The image with 64 source objects uses actual
@@ -173,14 +178,14 @@ stated placement limits. Native C90 passes. A MinGW compilation exposes its SDK
 errno accessor macro; that CRT integration remains open. Private game-entry and
 standard-name adapters remain diagnostic after the whole-LIBC link conflict.
 
-The complete entry now runs as the PE entry of a Windows-subsystem image,
+The preceding isolated entry check runs as the PE entry of a Windows-subsystem image,
 including real command/environment and startup fields. Two normal returns and
 the selected SEH DIE/quick-exit path preserve full DWORD statuses and the
 expected cleanup behavior. All48 source owners are reused;390 entry bytes,
 12 scope bytes,13 linked bodies and both initialization data groups pass.
-The application remains a typed observation boundary. Existing `windows_entry.c`
-binds Win32 APIs before the game; connect that binding for the restored direct
-call without resetting the live heap. See
+That application remains a typed observation boundary. The later optional game
+profile connects Win32 bindings before the restored direct call without
+resetting the live heap. See
 [entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md) and
 `config/runtime-entry-link.json`.
 
@@ -373,6 +378,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 real game / restored CRT | 113 maintained objects reused,3 integration objects; public build116 reused/0 compiled; original first400 board bytes/168 bricks, ball movement, heap preservation and exit0 | [Game entry](../research/RESTORED_CRT_GAME_ENTRY.md); `.analysis/crt-game-members-20261016/verification.json` |
 | October 16 I/O state | Six complete globals/28 typed bytes;64 source owners,63 reused; real entry and physical binary/text/default-mode/mask/error checks | [I/O state](../research/exact/RUNTIME_IO_STATE.md); `.analysis/crt-game-entry-20261016/io-verification.json` |
 | October 16 actual CRT entry | 48 source owners reused; real OS argv/environment/show; normal31/quoted32/SEH quick0xC0000005;390-byte entry/12-byte scope and13 linked bodies | [Entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md); `.analysis/crt-full-entry-20261016/verification.json` |
 | October 16 FP startup | Actual FP/controller/XI/XC/XP/XT flow; 41 source owners, 40 reused; 52 FP data bytes/nine bindings and 84 CRT bytes/thirteen bindings; eight real conversion calls | [FP startup](../research/exact/RUNTIME_FP_STARTUP.md); `.analysis/crt-fp-startup-20261016/verification.json` |
@@ -452,19 +458,19 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
-- The actual entry now passes real command/environment/show and selected SEH
-  exit cases. Connect the real game and Win32 binding next, or pursue a specific
-  remaining low-level source question. `windows_entry.c` currently binds Windows
-  before calling `dxball_win_main`; the restored entry calls the latter directly.
-  Preserve that binding and the live heap when replacing host startup. Reuse the
-  48-object closure and current state recipes. The full game and original tail
-  transports remain unfinished.
+- Actual game startup now uses the recovered entry through the optional
+  `vc40-restored-crt` profile. Reuse its116-object cache and checked recipe.
+  Continue a concrete remaining function/ABI question; original C++ frame/hooks,
+  x87 dispatch, signed64 and stack/SEH transports remain21 pinned members.
+  Do not infer full source integration from the successful first-board run.
+  A screenshot-change-only check was too weak; adopted evidence uses live
+  modes, all400 original board bytes, ball movement and reviewed captures.
 
 - The I/O state definitions now support actual source stdio and physical files.
-  Reuse the 64 source objects and `config/runtime-io-state.json`. The staged
-  real-game link needs explicit low-level member selection and typed adapters;
-  whole LIBC pulls duplicate CRT startup/data and unwanted main. Do not force
-  duplicate definitions or repeat that unchanged link. Keep .CRT$XIC stdio
+  Reuse the state recipe and the later real-game closure. Whole LIBC pulls
+  duplicate CRT startup/data and unwanted main; explicit members and typed
+  adapters now close that link. Do not repeat the rejected whole-library link.
+  Keep .CRT$XIC stdio
   before onexit, as recorded in the existing entry recipe. The MinGW errno
   macro needs an explicit policy when that restored-CRT profile is integrated;
   existing default game profiles do not include the new state owner.
@@ -529,9 +535,10 @@ question, not merely the smallest differing-position count.
   in the inventory; preserve its observed CLD and original forwarding contract.
 - The original CRT entry now has [complete exact source](../research/exact/RUNTIME_ENTRY.md)
   and supplies version/command state. Fatal default application type is GUI2.
-  It remains outside CMake. Its actual PE-entry and selected exit paths now pass
-  with a typed WinMain observation fixture; real game/Win32 binding, low-level
-  source and the final original-compiler build/play check remain. The
+  It remains outside CMake. Its actual PE-entry and selected exit paths pass
+  with a typed observation fixture; the later optional profile also reaches
+  the real first board. Low-level source, C++ frame integration and the final
+  original-compiler build/play check remain. The
   three member-call entries now have typed C++ direct-call bodies; their original
   tail transport and return-address identity remain nonexact.
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/

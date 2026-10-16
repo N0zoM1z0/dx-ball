@@ -55,9 +55,9 @@ def accepted_objects(builds, compiler_sha256):
     return verified
 
 
-def previous_objects(compiler_sha256):
+def previous_objects(compiler_sha256, path=None):
     """Reuse prior game/adapter products with current complete project inputs."""
-    path = ROOT / 'build/vc40/build.json'
+    path = ROOT / 'build/vc40/build.json' if path is None else path
     try:
         report = json.loads(path.read_text())
         if report['compiler_sha256'] != compiler_sha256:
@@ -77,7 +77,7 @@ def previous_objects(compiler_sha256):
             verified[(source, tuple(record['flags']))] = dict(
                 object=record['object'], object_sha256=record['object_sha256'],
                 flags=record['flags'], inputs=record['inputs'],
-                report='build/vc40/build.json', report_sha256=report_sha256)
+                report=str(path.relative_to(ROOT)), report_sha256=report_sha256)
         except (OSError, KeyError, ValueError, TypeError):
             continue
     return verified
@@ -87,15 +87,28 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--game-only', action='store_true',
                         help='build the game without the two diagnostic executables')
+    parser.add_argument('--restored-crt', action='store_true',
+                        help='build the game with restored CRT entry and explicit remaining original members')
     args = parser.parse_args()
     lock = session_lock()
     toolchain = Toolchain()
     toolchain.verify(execute=True)
     from windows_resources import prepare_game_resources
     from directx_imports import prepare_directx_imports
-    resource_object, resource_metadata = prepare_game_resources('vc40', toolchain)
+    resource_profile = 'vc40-restored-crt' if args.restored_crt else 'vc40'
+    resource_object, resource_metadata = prepare_game_resources(resource_profile, toolchain)
     directx_imports, directx_import_metadata = prepare_directx_imports(toolchain)
     builds = tomllib.loads((ROOT / "config/match-units.toml").read_text())["builds"]
+    if args.restored_crt:
+        from restored_crt_build import build_game
+        reusable = previous_objects(toolchain.lock['compiler_sha256'])
+        for receipt in ('build.json', 'object-cache.json'):
+            reusable.update(previous_objects(toolchain.lock['compiler_sha256'],
+                ROOT / 'build/vc40-restored-crt' / receipt))
+        reusable.update(accepted_objects(builds, toolchain.lock['compiler_sha256']))
+        build_game(toolchain, builds, resource_object, resource_metadata,
+                   directx_imports, directx_import_metadata, reusable, project_inputs)
+        return
     build = builds["boards"]
     owner_flags = {
         "src/raster.cpp": builds["raster"]["flags"],

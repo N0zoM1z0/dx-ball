@@ -8,7 +8,7 @@ import subprocess
 
 from legacy_toolchain import ROOT, Toolchain
 
-PROFILES = ('vc40', 'windows-i686')
+PROFILES = ('vc40', 'windows-i686', 'vc40-restored-crt')
 
 
 def digest(path):

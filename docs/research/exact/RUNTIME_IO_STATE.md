@@ -1,5 +1,10 @@
 # I/O error, default-mode and invalid-record state
 
+Later [real-game entry integration](../RESTORED_CRT_GAME_ENTRY.md) uses this
+state and actual source stdio through the restored CRT. The optional build
+passes the first original board and normal exit while retaining explicit
+original x87/SEH/C++ dependencies. The text below retains the state-adoption scope.
+
 `runtime_io_state.c` supplies six previously external globals used by the
 recovered single-thread CRT: `errno`, `_doserrno`, the creation mask, default
 commit mode, default file mode and the invalid-descriptor record. The five

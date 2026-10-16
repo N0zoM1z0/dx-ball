@@ -63,7 +63,7 @@ def prepare_game_resources(profile, toolchain=None):
         resource.write_bytes(binary)
     obj.unlink(missing_ok=True)
     manifest = json.loads(MANIFEST.read_text())
-    if profile == 'vc40':
+    if profile in ('vc40', 'vc40-restored-crt'):
         converter = ROOT / manifest['legacy_converter']['path']
         if sha256(converter) != manifest['legacy_converter']['sha256']:
             raise ValueError('Legacy resource converter hash mismatch')

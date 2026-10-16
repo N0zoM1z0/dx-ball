@@ -1,5 +1,9 @@
 # Actual process entry, arguments and SEH exit
 
+Later [real-game integration](../RESTORED_CRT_GAME_ENTRY.md) installs Windows
+bindings before calling this unchanged entry and reaches the first original
+board. The following text retains the isolated three-process observation scope.
+
 The restored `dxball_crt_startup` now runs as the PE entry point of an isolated
 VC4 Windows-subsystem executable. All 48 source objects are reused by complete
 input, flags and product identity; no production source is recompiled. Only
