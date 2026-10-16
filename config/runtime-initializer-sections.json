@@ -1,0 +1,409 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "evidence_path": ".analysis/rea/runs/2026-10-16T11-07-20.602Z-requests-734514/00-read_bytes.json",
+  "evidence_id": "ev_73a146a038dc9800cd869abb7261b6989c3713c813683a1453cd464602ea0586",
+  "objects": {
+    "runtime_initializer_sections": {
+      "source": "src/runtime_initializer_sections.c",
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "inputs": [
+        "src/runtime_initialization.h",
+        "src/runtime_initializer_sections.c",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    "runtime_stdio_initialization": {
+      "source": "src/runtime_stdio_initialization.c",
+      "object": "build/exact/runtime_stdio_initialization.obj",
+      "inputs": [
+        "src/allocator.h",
+        "src/runtime_fatal.h",
+        "src/runtime_file_modes.h",
+        "src/runtime_lowio.h",
+        "src/runtime_lowio_read.h",
+        "src/runtime_resize.h",
+        "src/runtime_stdio_initialization.c",
+        "src/runtime_stdio_initialization.h",
+        "src/runtime_stream.h",
+        "src/runtime_stream_transfer.h",
+        "src/state_types.h",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    "runtime_onexit_init": {
+      "source": "src/runtime_onexit_init.c",
+      "object": "build/exact/runtime_onexit_init.obj",
+      "inputs": [
+        "src/allocator.h",
+        "src/runtime_fatal.h",
+        "src/runtime_file_modes.h",
+        "src/runtime_lowio.h",
+        "src/runtime_lowio_read.h",
+        "src/runtime_onexit.h",
+        "src/runtime_onexit_init.c",
+        "src/runtime_onexit_init.h",
+        "src/runtime_resize.h",
+        "src/state_types.h",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    "runtime_cpp_filter_lifetime": {
+      "source": "src/runtime_cpp_filter_lifetime.cpp",
+      "object": "build/exact/runtime_cpp_filter_lifetime.obj",
+      "inputs": [
+        "src/allocator.h",
+        "src/runtime_cpp_filter.h",
+        "src/runtime_cpp_filter_lifetime.cpp",
+        "src/runtime_cpp_filter_lifetime.h",
+        "src/runtime_cpp_tables.h",
+        "src/runtime_cpp_transfer.h",
+        "src/runtime_error_control.h",
+        "src/runtime_fatal.h",
+        "src/runtime_file_modes.h",
+        "src/runtime_lowio.h",
+        "src/runtime_lowio_read.h",
+        "src/runtime_onexit.h",
+        "src/runtime_resize.h",
+        "src/state_types.h",
+        "src/termination.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ]
+    },
+    "list_initializers": {
+      "source": "src/list_initializers.cpp",
+      "object": "build/exact/list_initializers.obj",
+      "inputs": [
+        "src/balls.h",
+        "src/board_storage.h",
+        "src/boards.h",
+        "src/bonuses.h",
+        "src/core.h",
+        "src/effects.h",
+        "src/explosion_types.h",
+        "src/gameplay.h",
+        "src/list_initializers.cpp",
+        "src/list_initializers.h",
+        "src/particles.h",
+        "src/resources.h",
+        "src/state_types.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/Od",
+        "/Ob1",
+        "/Oi-",
+        "/Oy-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ]
+    }
+  },
+  "records": [
+    {
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "section": ".CRT$XCA",
+      "target_address": 4329472,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "section": ".CRT$XCZ",
+      "target_address": 4329516,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "section": ".CRT$XIA",
+      "target_address": 4329520,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_initializer_sections.obj",
+      "section": ".CRT$XIZ",
+      "target_address": 4329532,
+      "size": 4,
+      "relocations": [],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_stdio_initialization.obj",
+      "section": ".CRT$XIC",
+      "target_address": 4329524,
+      "size": 4,
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_initialize_stdio",
+          "addend": 0,
+          "target": 4315792
+        }
+      ],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_onexit_init.obj",
+      "section": ".CRT$XIC",
+      "target_address": 4329528,
+      "size": 4,
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "_dxball_crt_initialize_onexit",
+          "addend": 0,
+          "target": 4323456
+        }
+      ],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/runtime_cpp_filter_lifetime.obj",
+      "section": ".CRT$XCC",
+      "target_address": 4329476,
+      "size": 4,
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "_dxball_cpp_filter_initializer",
+          "addend": 0,
+          "target": 4317488
+        }
+      ],
+      "difference_count": 0
+    },
+    {
+      "object": "build/exact/list_initializers.obj",
+      "section": ".CRT$XCU",
+      "target_address": 4329480,
+      "size": 36,
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "_$E2",
+          "addend": 0,
+          "target": 4256192
+        },
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "_$E5",
+          "addend": 0,
+          "target": 4256160
+        },
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "_$E8",
+          "addend": 0,
+          "target": 4256128
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "_$E11",
+          "addend": 0,
+          "target": 4256096
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_$E14",
+          "addend": 0,
+          "target": 4256064
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_$E17",
+          "addend": 0,
+          "target": 4256032
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "_$E20",
+          "addend": 0,
+          "target": 4256000
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "_$E23",
+          "addend": 0,
+          "target": 4255968
+        },
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "_$E26",
+          "addend": 0,
+          "target": 4255936
+        }
+      ],
+      "difference_count": 0
+    }
+  ],
+  "table_ranges": [
+    {
+      "kind": "XC",
+      "target_address": 4329472,
+      "size": 48,
+      "begin_symbol": "___xc_a",
+      "end_symbol": "___xc_z",
+      "consumed_size": 44
+    },
+    {
+      "kind": "XI",
+      "target_address": 4329520,
+      "size": 16,
+      "begin_symbol": "___xi_a",
+      "end_symbol": "___xi_z",
+      "consumed_size": 12
+    }
+  ],
+  "same_section_link_order": {
+    ".CRT$XIC": [
+      "runtime_stdio_initialization",
+      "runtime_onexit_init"
+    ]
+  },
+  "merge_directive_source": "src/runtime_initializer_sections.c",
+  "callbacks": [
+    {
+      "offset": 4,
+      "unit": "cpp-filter-initializer",
+      "symbol": "_dxball_cpp_filter_initializer",
+      "original_address": 4317488,
+      "function_exact": true
+    },
+    {
+      "offset": 8,
+      "unit": "list-global-init-2",
+      "symbol": "_$E2",
+      "original_address": 4256192,
+      "function_exact": true
+    },
+    {
+      "offset": 12,
+      "unit": "list-global-init-5",
+      "symbol": "_$E5",
+      "original_address": 4256160,
+      "function_exact": true
+    },
+    {
+      "offset": 16,
+      "unit": "list-global-init-8",
+      "symbol": "_$E8",
+      "original_address": 4256128,
+      "function_exact": true
+    },
+    {
+      "offset": 20,
+      "unit": "list-global-init-11",
+      "symbol": "_$E11",
+      "original_address": 4256096,
+      "function_exact": true
+    },
+    {
+      "offset": 24,
+      "unit": "list-global-init-14",
+      "symbol": "_$E14",
+      "original_address": 4256064,
+      "function_exact": true
+    },
+    {
+      "offset": 28,
+      "unit": "list-global-init-17",
+      "symbol": "_$E17",
+      "original_address": 4256032,
+      "function_exact": true
+    },
+    {
+      "offset": 32,
+      "unit": "list-global-init-20",
+      "symbol": "_$E20",
+      "original_address": 4256000,
+      "function_exact": true
+    },
+    {
+      "offset": 36,
+      "unit": "list-global-init-23",
+      "symbol": "_$E23",
+      "original_address": 4255968,
+      "function_exact": true
+    },
+    {
+      "offset": 40,
+      "unit": "list-global-init-26",
+      "symbol": "_$E26",
+      "original_address": 4255936,
+      "function_exact": true
+    },
+    {
+      "offset": 52,
+      "unit": "crt-initialize-stdio",
+      "symbol": "_dxball_crt_initialize_stdio",
+      "original_address": 4315792,
+      "function_exact": true
+    },
+    {
+      "offset": 56,
+      "unit": "crt-initialize-onexit",
+      "symbol": "_dxball_crt_initialize_onexit",
+      "original_address": 4323456,
+      "function_exact": true
+    }
+  ],
+  "scope": "Complete XC48/XI16 records and twelve source callback bindings. Table matching does not assert exactness of every called constructor or the board aggregate helper. Actual no-host-CRT initialization probe only; FP/full entry, exception dispatch, physical stdio, XP/XT section producers and final game remain open.",
+  "portability": "Shared declarations use VC4 data_seg or GNU section/used attributes. Native/i686 object compilation is checked; GNU/ELF linker integration is not claimed."
+}

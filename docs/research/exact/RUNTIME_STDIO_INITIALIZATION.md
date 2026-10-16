@@ -1,5 +1,10 @@
 # CRT stdio initialization and storage
 
+The later [initializer-section recovery](RUNTIME_INITIALIZER_SECTIONS.md)
+supplies actual XI/XC producers and checks their linked startup stages without
+a host CRT, preserving this193-byte exact and initial storage. The historical
+scopes below do not claim the full reconstructed entry or game.
+
 The previously omitted `___initstdio` at `0x41DA90` now has complete shared C
 source. Its 193 bytes and all 16 actual relocations match under VC4. The
 standard-stream storage now supplies the real 20 records, 4096-byte input

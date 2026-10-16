@@ -29,3 +29,13 @@ void dxball_crt_initialize_stdio(void)
             dxball_crt_standard_streams[index].descriptor = -1;
     }
 }
+
+/* The original CRT invokes this through its C-initializer section. */
+#if defined(_MSC_VER)
+#pragma data_seg(".CRT$XIC")
+static DxBallCrtCallback dxball_stdio_initializer = dxball_crt_initialize_stdio;
+#pragma data_seg()
+#else
+static DxBallCrtCallback dxball_stdio_initializer
+    __attribute__((used, section(".CRT$XIC"))) = dxball_crt_initialize_stdio;
+#endif

@@ -1,10 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after exact stdio initialization and stream storage.
-Current totals are468 source entries,380 exacts and88 complete candidates.
-The omitted193-byte initializer is exact;644 initialized data bytes/two bindings
-match. Fourteen focused original/native calls pass. All379 prior exact products
-and results are reused; all249 semantic rows remain byte-identical this phase.
+Updated October16,2026, after restoring XI/XC linker-section producers.
+Counts remain468 source entries,380 exacts and88 complete candidates. All four
+changed-owner functions retain exact bytes. The complete64-byte initialization
+prefix/twelve callback bindings matches; a VC4 entry without a host CRT runs
+actual heap/low-I/O, XI/XC, filter lifetime and nine list-root initialization.
+The candidate report and all249 semantic rows remain byte-identical.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -148,13 +149,24 @@ original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
 
+XI/XC now use their real linker sections, including the previously ordinary
+C++ filter pointer in `.CRT$XCC`. Four null boundary records, three explicit
+registration records and nine reused C++ compiler contributions reproduce the
+complete64-byte prefix/twelve bindings. The isolated VC4 image imports only
+KERNEL32 and uses a custom entry: actual heap/low-I/O initialization, both table
+walks, filter installation/restoration and nine prefilled list roots pass.
+All380 exact results remain; only three existing producer identities change.
+The board aggregate helper remains nonexact/unresolved. XP/XT sections, FP/full
+CRT entry and the final game remain open. See
+[initializer sections](../research/exact/RUNTIME_INITIALIZER_SECTIONS.md).
+
 The complete193-byte stdio initializer now matches all16 bindings. A separate
 storage owner supplies the original20 stream records,4096-byte input buffer,
 request counter and table state; initialized644 bytes/two bindings match.
 Fourteen original/native calls cover limits, fallback/fatal26 and invalid/null
 standard handles. The correct12-byte XI range confirms both initialization
-entries in order; reconstructed section registration and full startup remain
-open. No existing consumer/header or historical scope changes. See
+entries in order; XI/XC section registration is supplied by the later section owner; full
+startup remains open. No existing consumer/header or historical scope changes. See
 [stdio initialization](../research/exact/RUNTIME_STDIO_INITIALIZATION.md).
 
 The complete54-byte onexit initializer and20-byte stdio finalizer are now exact.
@@ -162,8 +174,8 @@ The initialized pretermination/termination arrays have a separate source owner;
 controller128 and both18-byte wrapper exacts are preserved, walker32/6 unchanged.
 Actual private-heap registration/growth, returning cleanup and physical exit
 probes pass with controlled stdio/fatal dependencies. Only the affected native
-scope and eight retained-object calls ran. XI source registration
-and final CRT/game linkage remain open. See
+scope and eight retained-object calls ran. Later XI/XC section recovery does
+not close full CRT/game linkage. See
 [exit bootstrap and default cleanup](../research/exact/RUNTIME_TERMINATION_BOOTSTRAP.md).
 
 The collision-unwind callback now has complete natural C source. Its original
@@ -481,6 +493,11 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The initializer-section phase shared33 identical immutable carriers and
+reclaimed about10.5MiB. Unique source trials, provider read/error receipts and
+both probe stages remain; current objects have independent inodes. Receipt:
+`.analysis/crt-c-initializer-sections-20261016/cleanup.json`.
 
 The stdio-initialization phase shared19 identical immutable header snapshots
 and a closed-run catalog, reclaiming about8.4MiB. Unique products and before

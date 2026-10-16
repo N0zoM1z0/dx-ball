@@ -11,3 +11,13 @@ void dxball_crt_initialize_onexit(void)
     *dxball_onexit_begin = NULL;
     dxball_onexit_end = dxball_onexit_begin;
 }
+
+/* The original CRT invokes this through its C-initializer section. */
+#if defined(_MSC_VER)
+#pragma data_seg(".CRT$XIC")
+static DxBallCrtCallback dxball_onexit_initializer = dxball_crt_initialize_onexit;
+#pragma data_seg()
+#else
+static DxBallCrtCallback dxball_onexit_initializer
+    __attribute__((used, section(".CRT$XIC"))) = dxball_crt_initialize_onexit;
+#endif

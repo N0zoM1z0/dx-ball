@@ -644,3 +644,8 @@ additional_inputs = ["src/allocator.h", "src/runtime_fatal.h", "src/runtime_file
 source = "src/runtime_stdio_state.c"
 header = "src/runtime_stdio_initialization.h"
 additional_inputs = ["src/allocator.h", "src/runtime_file_modes.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/runtime_stream.h", "src/runtime_stream_transfer.h", "src/state_types.h"]
+
+[owners.runtime_initializer_sections]
+source = "src/runtime_initializer_sections.c"
+header = "src/runtime_initialization.h"
+additional_inputs = ["src/termination.h"]

@@ -1,5 +1,11 @@
 # Runtime and floating-point initialization
 
+The subsequent [initializer-section recovery](RUNTIME_INITIALIZER_SECTIONS.md)
+supplies XI/XC producers and checks the complete64-byte linked prefix with12
+bindings. An isolated VC4 entry without a host CRT runs actual heap/low-I/O,
+XI/XC, filter lifetime and list constructors. FP/full entry, XP/XT sections
+and the final game remain open. Text below retains the earlier code checkpoint.
+
 Three complete bodies are exact: initialization controller48, default precision19
 and the original empty thread callback1. The callback entry4175A0 is absent from
 Ghidra's procedure inventory: the complete pinned fpinit definition, actual

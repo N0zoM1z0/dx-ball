@@ -1,5 +1,11 @@
 # Exact filter initialization and lifetime
 
+The [initializer-section recovery](RUNTIME_INITIALIZER_SECTIONS.md) now places
+the record in `.CRT$XCC`, preserving both exacts. An isolated VC4 probe checks
+real installation, saved callback state, onexit registration and restoration.
+Exception dispatch and the complete entry/game remain open. The following
+text retains the earlier record/code checkpoint.
+
 The complete unhandld.obj sections establish the30-byte installer at0x0041E140
 and5-byte forwarding entry at0x0041E130. Both source bodies match in full after
 all actual relocations. Each complete relocated section has one original code
