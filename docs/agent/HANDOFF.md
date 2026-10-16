@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the CRT suffix ownership/continuation extent review.
+Updated October 17, 2026, after the CRT suffix and particle RNG-order reviews.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,13 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+One [last-brick compiler control](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#compiler-dependent-particle-argument-order)
+confirms a portability gap: current GCC/original RNG limits `11, 14, 15, 30` become
+`30, 15, 14, 11` under Clang 18. It privately replaces one native owner and reuses 36
+objects. Two one-case existing checks retain both traces; no canonical source,
+object, acceptance or image changes. Keep authored exact recovery first and
+preserve original RNG sequencing when port work resumes. No full replay runs.
 
 The [CRT suffix review](../research/exact/CRT_SUFFIX_OWNERSHIP.md) checks 39,132
 declared text bytes from416610. Its193 inventory/fragment gaps total2330 bytes;
@@ -218,7 +225,7 @@ An exact-function count is progress, not the completion criterion.
 | Inventory origins | 270 authored / 261 runtime / 21 compiler-generated / 1 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and fourteen unknown origins remain open.
+The final authored denominator and the one source-present unknown origin remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 95 maintained candidates.

@@ -85,3 +85,22 @@ Reject this block and retain the maintained990 result. Source, cached objects,
 image and ledgers remain unchanged; no native check, relink or game follows.
 Frozen inputs, objects and complete comparisons are retained under
 `.analysis/lightning-scan-scope-20261017/`. Do not repeat this scope model.
+
+## Compiler-dependent particle argument order
+
+A single existing expired-deadline/crop case confirms that the current GCC
+native owner and the original both call the four particle RNG boundaries with
+limits `11, 14, 15, 30`. Replacing only display's native object with a Clang 18 build
+reverses that sequence to `30, 15, 14, 11` and fails the unchanged ordered-event
+comparison. The controls use the same existing fixture and the other 36 native
+objects. The calls share one C++ argument list, whose
+evaluation order is unspecified. This is a demonstrated future portability gap,
+not a failure of the current VC4 behavior or a new exact-source result.
+
+Retain the current VC4 source while authored exact recovery has priority.
+Portable sequencing must preserve the original RNG order when port work resumes;
+do not treat the GCC result as compiler-independent evidence. No source, accepted
+comparison, canonical object, game image or case scope changes. Two one-case
+checks run, without a full replay or game build. Private
+`.analysis/lightning-rng-order-20261017/` retains the commands, consumed inputs,
+both complete event traces and compressed alternate object/library carriers.
