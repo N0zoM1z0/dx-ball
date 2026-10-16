@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the restored-CRT campaign entry/episode-clock repair.
+Updated October 17, 2026, after SIGINT reporting and current authored receipt audits.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,17 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [SIGINT reporting repair](../research/ORIGINAL_CAMPAIGN.md#sigint-reporting-during-observation-october-17)
+writes `interrupted` to both active-observation reports and preserves the latest
+complete SDK state and counters. One intentional signal check exits 130 with 767
+valid samples/no malformed lines; all three owned kernel identities are absent.
+Normal-path AST and all game products/acceptance remain unchanged. Old reports
+are not rewritten; hard kills, SIGTERM and cleanup interruptions are not covered.
+The same phase audits all 270 classified authored source/current comparison rows
+and 29 matching compiler closures: 236 exact plus 34 candidates. This is coverage,
+not source-optimality or final-denominator proof. No compilation or full replay runs;
+49 checked probe copies are removed after preserving unique evidence.
 
 The [campaign entry](../research/ORIGINAL_CAMPAIGN.md#restored-crt-entry-and-gameplay-episode-clock-october-17)
 now accepts `vc40-restored-crt` and records its own map digest. Episode time starts

@@ -277,8 +277,13 @@ def observe(profile, args, reports):
             summary['last_state'] = state
             if gameplay_began is not None:
                 summary['gameplay_seconds'] = round(now - gameplay_began, 3)
-        except Exception as error:
-            summary.update(status='fail', error=repr(error))
+        except (Exception, KeyboardInterrupt) as error:
+            summary.update(status='interrupted' if isinstance(error, KeyboardInterrupt) else 'fail',
+                           error=repr(error))
+            if stream is not None and stream.latest is not None:
+                summary['last_state'] = stream.latest['values']
+            if gameplay_began is not None:
+                summary['gameplay_seconds'] = round(time.monotonic() - gameplay_began, 3)
             raise
         finally:
             if stream is not None:
@@ -365,8 +370,9 @@ def main():
             if len(statuses) != 1:
                 raise AssertionError('Products completed different requested scopes: ' + str(statuses))
             report['status'] = statuses.pop()
-        except Exception as error:
-            report.update(status='fail', error=repr(error))
+        except (Exception, KeyboardInterrupt) as error:
+            report.update(status='interrupted' if isinstance(error, KeyboardInterrupt) else 'fail',
+                          error=repr(error))
             raise
         finally:
             destination.write_text(json.dumps(report, indent=2) + '\n')

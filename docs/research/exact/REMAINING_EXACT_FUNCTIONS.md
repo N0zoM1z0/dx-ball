@@ -80,6 +80,13 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
+An October 17 receipt audit verifies current source/object/flag identities for
+all 270 classified authored entries across 29 matching-build recipes: 236 exact
+and 34 complete candidates. It reuses existing comparisons without replaying.
+This coverage audit does not establish source optimality, semantic equivalence
+or the final authored denominator. Its retained rows and compiler closures are
+`.analysis/campaign-interruption-20261017/authored-coverage.json`.
+
 All 34 authored candidates were compared across their complete original
 extents on October 13. The bank loader's [allocation scope](BANK_ALLOCATION_SCOPE.md)
 updates its complete comparison on October 17; the other results are unchanged.

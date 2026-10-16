@@ -46,6 +46,31 @@ inputs, resource sample and verification. Forty-nine disposable runtime copies
 are removed after equality checks, releasing 1,703,936 allocated copy bytes.
 Game source, products, 380 exacts and all other acceptance remain unchanged.
 
+## SIGINT reporting during observation, October 17
+
+Ctrl-C during active observation now writes `interrupted` to both the profile
+observation and top-level summary. The profile retains its latest complete SDK
+state, partial gameplay duration, consumed-stream counters and unchanged-file
+checks. KeyboardInterrupt is re-raised, preserving exit 130; ordinary exceptions
+remain `fail`. Completed episode/campaign predicates and normal control paths
+are unchanged.
+
+One real SIGINT check waits for original board 0 initialization, then signals only
+the verified controller PID/start-tick identity. The child exits 130; both reports
+contain `KeyboardInterrupt()` and `interrupted`. All three owned controller,
+reader and game kernel identities are subsequently absent. The profile retains
+767 valid SDK samples with no malformed lines. This is an intentional-cancellation
+check, not a game or campaign pass. It reuses the current image and existing SDK
+reader with the explicit silent sink; no compilation, relink or replay runs.
+
+Private `.analysis/campaign-interruption-20261017/` retains the actual signal,
+process identities, executed-source/input hashes, reports and normal-path AST
+comparison. Forty-nine runtime copies are removed after equality checks,
+releasing 1,703,936 allocated copy bytes. Historical interrupted reports below
+retain their original `running` values and external terminal receipts; none are
+rewritten. SIGTERM, hard kills, transport loss and interruption during cleanup
+are outside this check.
+
 ## Display and retained campaigns
 
 The campaign harness now defaults to640x480x24 Xvfb, consistent with the
