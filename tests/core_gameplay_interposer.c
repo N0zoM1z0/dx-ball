@@ -212,6 +212,19 @@ void DXBALL_NEW_CALL dxball_runtime_delete(void *node)
     delete_active = 0;
 }
 
+/* Actual dependency signatures of the restored C++ API entries. */
+void *DXBALL_NEW_CALL dxball_test_cpp_new(DxBallUInt bytes, DxBallInt enabled)
+{
+    if (enabled != 1)
+        binding_failure("CoreNative C++ new: handler policy changed");
+    return dxball_runtime_new(bytes);
+}
+
+void DXBALL_NEW_CALL dxball_test_cpp_delete(void *node)
+{
+    dxball_runtime_delete(node);
+}
+
 void dxball_draw_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
 {
     void (*callback)(DxBallInt, DxBallInt, DxBallInt) = real_sprite;

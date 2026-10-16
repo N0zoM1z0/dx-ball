@@ -12,6 +12,47 @@ runtime dependencies, counted separately from the 235 maintained game entries.
 All eight bodies now have complete byte-exact acceptance, including the three
 physical Heap API wrappers.
 
+## Actual C++ allocation entries (October 16, 2026)
+
+`cpp_allocator.cpp` now calls the recovered allocation loop with handler mode 1
+and the recovered heap release directly. With the allocator's
+`/O2 /Ob0 /Oi- /Gd /MT /Gy` flags, its actual C++ ABI entries reproduce the
+complete original `operator new` at `0x416770` (16 bytes) and `operator delete`
+at `0x416760` (14 bytes), including their two dependency relocations. These
+corroborate the same two entries already accepted through their C ABI helpers;
+the project total remains 376 exact functions.
+
+The legacy build previously omitted this C++ object, although CMake included it.
+A VC4 typed-list probe reproduced the consequence: append used the compiler CRT
+and reached none of the bound heap callbacks. The legacy builder now includes
+the object, selects its allocator flags and records owner flag overrides in
+`build.json`. With that object linked, the same typed append/remove reaches the
+shared heap and verifies immediate success, one and three handler retries,
+balanced release and real exit status 1 on terminal failure. The exit observer
+also verifies that failed append leaves the list empty. Current native and
+standalone MinGW paths pass the same controls. This is a focused link/runtime
+proof; the final restored game build and play check remain pending.
+
+CoreNative's existing callbacks used the C compatibility entries. The fixture
+now binds the two actual C++ dependency edges to typed wrappers that dispatch
+those same scoped callbacks. Only the two existing REL32 displacement operands
+in the fixture's separate mapped native image change. Symbol extents, original
+complete bodies, dependency addresses, callback ownership and displacement
+range are checked before binding. Instructions and argument preparation stay
+intact; copied files, the canonical library and the original EXE stay unchanged.
+The decoder identity is included in the shim recipe. Uninstrumented production
+typed-list probes above exercise the real allocation loop and heap release.
+
+The affected existing entity oracle passes 7,343 cases and 980 connected steps;
+both existing Core allocation-failure selectors exit 1. Other semantic rows
+retain their historical counts and scopes through explicit dependency
+substitution, based on unchanged caller bodies, equivalent C/C++ core calls,
+the complete 16/14-byte comparisons and these focused checks. Their input
+hashes are refreshed without claiming that every historical owner ran again.
+The 376 exact result rows and 88 candidate rows are reused unchanged; this
+change touches none of their compiler input closures. Private receipts are in
+`.analysis/cpp-allocation-entry-binding-20261016/`.
+
 ## Independent imports with the public binding record (October 16, 2026)
 
 The eight complete bodies now match all **213 code bytes**. The final three

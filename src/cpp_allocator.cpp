@@ -10,10 +10,10 @@ extern "C" {
    The ELF link map keeps these adapters local to this library. */
 void *operator new(size_t bytes)
 {
-    return dxball_runtime_new((DxBallUInt)bytes);
+    return dxball_allocate_with_handler((DxBallUInt)bytes, 1);
 }
 
 void operator delete(void *memory) throw()
 {
-    dxball_runtime_delete(memory);
+    dxball_heap_release(memory);
 }

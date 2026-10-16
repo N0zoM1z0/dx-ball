@@ -1,7 +1,8 @@
 """Load one verified native image with test-only sound/RNG/render/lifecycle boundaries.
 
 Fresh default audits keep loading the canonical LOCAL image. CoreNative uses a
-byte-identical image with its own inode after this shim enters the GLOBAL scope.
+disk-identical image with its own inode after this shim enters the GLOBAL scope.
+Its two mapped C++ allocation dependency operands bind to typed fixture callbacks.
 Nothing loads or compiles merely by importing this module.
 """
 import argparse
@@ -14,6 +15,7 @@ from pathlib import Path
 import shlex
 import shutil
 import subprocess
+import struct
 import sys
 import tempfile
 
@@ -57,8 +59,12 @@ def _compiler():
 
 
 def _recipe():
+    import capstone
     compiler = _compiler()
     return {'compiler': str(compiler), 'compiler_sha256': _sha(compiler),
+            'decoder': {'version': capstone.__version__,
+                        'module_sha256': _sha(capstone.__file__),
+                        'library_sha256': _sha(capstone._cs._name)},
             'flags': FLAGS, 'source': str(SOURCE),
             'cleared_compiler_environment': IGNORED_COMPILER_ENV,
             'loader_sha256': _sha(__file__),
@@ -137,6 +143,125 @@ def prepare_interposer():
     return identity
 
 
+def _bind_cpp_allocation_edges(image):
+    """Rebind two compiler call relocations only in this fixture's mapped copy."""
+    from capstone import Cs, CS_ARCH_X86, CS_MODE_64
+    from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_REG_RIP
+    data = image.path.read_bytes()
+    if data[:6] != b'\x7fELF\x02\x01' or struct.unpack_from('<H', data, 18)[0] != 62:
+        raise RuntimeError('CoreNative C++ boundary requires x86-64 ELF')
+    start = struct.unpack_from('<Q', data, 40)[0]
+    stride, count = struct.unpack_from('<HH', data, 58)
+    sections = [struct.unpack_from('<IIQQQQIIQQ', data, start + i * stride)
+                for i in range(count)]
+    wanted = {'_Znwm': ('dxball_allocate_with_handler', 'dxball_runtime_new',
+                        'dxball_test_cpp_new'),
+              '_ZdlPv': ('dxball_heap_release', 'dxball_runtime_delete',
+                        'dxball_test_cpp_delete')}
+    symbols = {}
+    for section in sections:
+        if section[1] != 2:  # SHT_SYMTAB; the product keeps the C++ entries local.
+            continue
+        strings = sections[section[6]]
+        for offset in range(section[4], section[4] + section[5], section[9]):
+            name, info, _, index, value, size = struct.unpack_from('<IBBHQQ', data, offset)
+            at = strings[4] + name
+            name = data[at:data.index(b'\0', at)].decode('ascii')
+            if name in wanted and info & 15 == 2 and index:
+                if name in symbols or not size:
+                    raise RuntimeError('Ambiguous C++ allocation function extent')
+                symbols[name] = (index, value, size)
+    if set(symbols) != set(wanted):
+        raise RuntimeError('Missing complete local C++ allocation symbols')
+    host = C.CDLL(None, use_errno=True)
+    host.dladdr.argtypes, host.dladdr.restype = [C.c_void_p, C.POINTER(_DlInfo)], C.c_int
+    host.mprotect.argtypes, host.mprotect.restype = [C.c_void_p, C.c_size_t, C.c_int], C.c_int
+    info = _DlInfo()
+    entry = C.cast(image.lib.dxball_allocate_with_handler, C.c_void_p).value
+    if not host.dladdr(entry, C.byref(info)) or _function_owner(entry) != image.path.resolve():
+        raise RuntimeError('C++ dependency body belongs to another image')
+    base = info.base
+    decoder = Cs(CS_ARCH_X86, CS_MODE_64)
+    decoder.detail = True
+    executable = [(base + s[3], base + s[3] + s[5]) for s in sections if s[2] & 4]
+    readable = [(base + s[3], base + s[3] + s[5]) for s in sections if s[2] & 2]
+    plans, records = [], []
+    for name, (dependency, compatibility, callback) in wanted.items():
+        index, value, size = symbols[name]
+        section = sections[index]
+        offset = section[4] + value - section[3]
+        original = data[offset:offset + size]
+        address = base + value
+        if len(original) != size or C.string_at(address, size) != original:
+            raise RuntimeError('C++ allocation body differs before fixture binding')
+        real = C.cast(getattr(image.lib, dependency), C.c_void_p).value
+        legacy = C.cast(getattr(_shim, compatibility), C.c_void_p).value
+        replacement = C.cast(getattr(_shim, callback), C.c_void_p).value
+        if _function_owner(real) != image.path.resolve() or _function_owner(replacement) != ARTIFACT.resolve():
+            raise RuntimeError('C++ allocation dependency/callback owner mismatch')
+        matches, old_bridge = [], False
+        for instruction in decoder.disasm(original, address):
+            if (instruction.mnemonic not in ('call', 'jmp') or
+                    len(instruction.operands) != 1 or instruction.operands[0].type != X86_OP_IMM):
+                continue
+            target = instruction.operands[0].imm
+            if not any(lo <= target <= hi - 16 for lo, hi in executable):
+                continue
+            for stub in decoder.disasm(C.string_at(target, 16), target):
+                if (stub.mnemonic != 'jmp' or len(stub.operands) != 1 or
+                        stub.operands[0].type != X86_OP_MEM or
+                        stub.operands[0].mem.base != X86_REG_RIP):
+                    continue
+                slot = stub.address + stub.size + stub.operands[0].mem.disp
+                if not any(lo <= slot <= hi - C.sizeof(C.c_void_p) for lo, hi in readable):
+                    raise RuntimeError('C++ PLT dependency slot exceeds the selected image')
+                resolved = C.c_void_p.from_address(slot).value
+                old_bridge |= resolved == legacy
+                if resolved == real:
+                    matches.append(instruction)
+                break
+        if not matches and old_bridge:
+            records.append(dict(symbol=name, kind='existing C compatibility import'))
+            continue
+        if len(matches) != 1:
+            raise RuntimeError('Expected one named C++ allocation dependency edge')
+        instruction = matches[0]
+        displacement = replacement - instruction.address - instruction.size
+        if instruction.imm_size != 4 or not -(1 << 31) <= displacement < (1 << 31):
+            raise RuntimeError('C++ fixture relocation is not a representable REL32')
+        patch = instruction.address + instruction.imm_offset
+        before = C.string_at(patch, 4)
+        after = struct.pack('<i', displacement)
+        plans.append((patch, before, after))
+        records.append(dict(symbol=name, dependency=dependency, callback=callback,
+                            instruction_offset=instruction.address - address,
+                            relocation_offset=patch - address, address=patch,
+                            original_hex=before.hex(), fixture_hex=after.hex(),
+                            complete_body_sha256=hashlib.sha256(original).hexdigest()))
+    # Only dependency displacement fields change; source instructions and argument
+    # preparation remain intact. Disk copies and the canonical product stay fixed.
+    page_size = os.sysconf('SC_PAGE_SIZE')
+    mappings = [line.split()[:2] for line in Path('/proc/self/maps').read_text().splitlines()]
+    for address, before, after in plans:
+        permissions = next((p for bounds, p in mappings
+                            if int(bounds.split('-')[0], 16) <= address < int(bounds.split('-')[1], 16)), None)
+        if permissions is None or 'x' not in permissions or C.string_at(address, 4) != before:
+            raise RuntimeError('C++ fixture relocation is not unchanged mapped code')
+        protection = sum(bit for flag, bit in [('r', 1), ('w', 2), ('x', 4)] if flag in permissions)
+        page = address & -page_size
+        length = ((address + 4 - page + page_size - 1) // page_size) * page_size
+        if host.mprotect(page, length, protection | 2):
+            raise OSError(C.get_errno(), 'Cannot bind C++ fixture dependency')
+        try:
+            C.memmove(address, after, 4)
+        finally:
+            if host.mprotect(page, length, protection):
+                raise OSError(C.get_errno(), 'Cannot restore C++ fixture page permissions')
+        if C.string_at(address, 4) != after:
+            raise RuntimeError('C++ fixture dependency was not retained')
+    return records
+
+
 class _Image:
     def __init__(self, canonical, canonical_sha256, identity):
         self.canonical = canonical
@@ -150,6 +275,7 @@ class _Image:
         if (self.path.stat().st_dev, self.path.stat().st_ino) == (canonical.stat().st_dev, canonical.stat().st_ino):
             raise RuntimeError('CoreNative library copy must have a separate inode')
         self.lib = C.CDLL(str(self.path.resolve()))
+        self.cpp_allocation_edges = _bind_cpp_allocation_edges(self)
         self.function_addresses = {}
         boundaries = [('dxball_effect_ops', 5, 0, 'dxball_runtime_delete'),
                       ('dxball_render_ops', 3, 0, 'dxball_draw_sprite'),
@@ -341,6 +467,9 @@ def fixture_image(library):
     if key not in _copies:
         _copies[key] = _Image(canonical, canonical_sha256, identity)
     image = _copies[key]
+    for binding in image.cpp_allocation_edges:
+        if ('fixture_hex' in binding and C.string_at(binding['address'], 4).hex() != binding['fixture_hex']):
+            raise RuntimeError('CoreNative C++ dependency relocation changed after binding')
     if _sha(image.path) != canonical_sha256 or _sha(canonical) != canonical_sha256:
         raise RuntimeError('CoreNative copied or selected library identity changed')
     actual = C.addressof(C.c_void_p.in_dll(image.lib, 'dxball_startup_load_boards'))

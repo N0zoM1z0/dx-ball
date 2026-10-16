@@ -59,6 +59,10 @@ scripts/repo-python scripts/run-windows.py --profile vc40
 
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
+The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the
+recovered heap. Its allocator flags and other owner overrides are recorded in
+`build.json`; focused entry/link checks are described in the
+[allocator note](research/ALLOCATOR_OWNER.md).
 
 Windows builds import `DirectDrawCreate` and `DirectSoundCreate` from the SDK
 libraries. MinGW supplies `ddraw` and `dsound`. The pinned legacy build uses

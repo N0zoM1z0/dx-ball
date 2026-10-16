@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after descriptor-family checkpoint `43198aa` and the
-explicit 96-bit integer snapshot source recovery below. Five complete owner
-comparisons retain identical raw byte results. Function source/exact totals and
-semantic scopes are unchanged; the one affected exact producer is refreshed.
+Updated October 16, 2026, after integer-snapshot checkpoint `35f9b10` and the
+C++ allocation entry/build binding repair below. Function source/exact totals,
+all 376 accepted comparison rows and all 88 candidate rows are unchanged.
+Historical semantic scopes are retained with explicit dependency input refresh.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -73,6 +73,20 @@ complete candidate comparisons. Another 56 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
 native/Win32 evidence.
+
+The actual C++ `new/delete` now call the recovered allocation loop and heap
+release directly. Their full 16/14-byte VC4 comparisons have zero differences,
+corroborating the same accepted addresses without adding two functions. The
+legacy builder now includes the previously omitted `cpp_allocator.cpp` with
+the allocator flags and records owner overrides. A typed-list VC4 control
+reproduces the missing-object bypass; the repaired link, current native DSO and
+standalone MinGW probe pass real allocation, handler retries, release and
+terminal exit1/empty-list checks. Only affected native entity cases (7,343 plus
+980 connections) and two Core allocation-failure selectors ran. The copied
+native fixture binds the two real C++ dependency operands to its existing
+typed callbacks; uninstrumented probes verify production paths separately.
+No full replay, final game build or play claim follows from these checks.
+See [the allocation entry repair](../research/ALLOCATOR_OWNER.md#actual-c-allocation-entries-october-16-2026).
 
 Current accounting is 520 independent entries plus 24 parent-owned compiler
 fragments, preserving all 544 previously recorded addresses. The twenty
