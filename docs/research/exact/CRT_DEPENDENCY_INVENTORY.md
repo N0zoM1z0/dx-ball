@@ -11,6 +11,9 @@ The nineteen explicit original CRT members remain user-approved dependencies.
 The subsequent [complete intrinsic-entry audit](CRT_CI_ENTRY_ORIGINS.md) resolves
 all thirteen no-source unknown origins. Current origins are 270 authored / 261
 runtime / 21 compiler-generated / one unknown; source and exact totals stay fixed.
+The [receipt reconciliation below](#complete-receipt-coverage) now connects all
+78 no-source entries to complete original comparisons, reusing five earlier
+handler proofs rather than repeating their producers.
 
 ## Eight omitted definitions
 
@@ -91,16 +94,47 @@ Member offsets and hashes remain in `config/restored-crt-link.json`.
 The audit verifies the current nineteen members and reuses cached provenance
 with all 121 input identities intact, rather than repeating the library scan.
 
-Carrier association is weaker than a complete original comparison. After the
-later closure, 73 entries have complete function/section/group or import receipts.
-Five retain earlier runtime labels with region associations only here: the C++
-handler/catch/translator entries at
-`0x418570`, `0x4185B0`, `0x418620`, `0x418650` and `0x418730`.
-No association promotes source presence, origin or exactness. Full group proofs
-promote thirteen runtime origins, with no source or exact acceptance. The only
-unknown origin is the already source-present `0x40CC20` no-op. Updated private
-coverage is in `.analysis/crt-ci-entry-origins-20261017/coverage.json`; the initial
-audit's59/19 coverage artifact remains unchanged as historical evidence.
+Carrier association is weaker than a complete original comparison. The
+intrinsic-origin closure connected 73 complete receipts; a later reconciliation
+connects the five existing C++ handler/catch/translator proofs. All 78 current
+no-source entries now have complete function/section/group or import receipts.
+No region association alone promotes source presence, origin or exactness. The
+only unknown origin is the already source-present `0x40CC20` no-op. Current
+coverage is in `.analysis/crt-handler-entry-coverage-20261017/coverage.json`.
+The earlier59/19 and73/5 artifacts remain unchanged as historical evidence.
+
+## Complete receipt coverage
+
+Five complete original `trnsctrl.obj` sections were already proved in the
+[catch/translator review](RUNTIME_CPP_CATCH_GUARD.md). The coverage index had
+retained only their weaker region associations. Their member hash, whole
+section extents, all nine actual COFF descriptors and full original code hashes
+now verify against the pinned inputs, and those existing receipts are reused.
+
+| Entry | Address | Complete bytes | Bindings |
+| --- | --- | ---: | ---: |
+| C++ frame entry | `0x418570` | 60 | 1 |
+| Catch transport | `0x4185B0` | 98 | 2 |
+| Catch guard | `0x418620` | 41 | 1 |
+| SE translator transport | `0x418650` | 209 | 3 |
+| Translator guard, including fallback tail | `0x418730` | 107 | 2 |
+| Total | | 515 | 9 |
+
+The original CLD, implicit EAX descriptor, FS registration, saved stack/frame
+and continuation behavior are preserved as machine dependencies. No ordinary
+C forwarding body, inferred prototype or invented live edge replaces them.
+This adds no source, origin or exact acceptance, and performs no compiler,
+provider, solver, runtime, game or link invocation.
+
+The final coverage is **78/78 existing no-source entries**: three import thunks
+and 75 entries in sixteen approved members, classified as 77 runtime and one
+compiler-generated. All nineteen approved members remain unchanged, including
+the three with zero entries in this inventory. This is not a proof of a final
+function inventory, authored denominator, missing runtime source recovery or
+original campaign behavior. Source475 / exact380 / complete candidates95 and
+the current image remain unchanged. Private
+`.analysis/crt-handler-entry-coverage-20261017/verification.json` retains the
+reused receipt identities, five original spans and all current artifact hashes.
 
 ## Five recovered existing identities
 

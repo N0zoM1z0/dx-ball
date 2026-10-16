@@ -107,3 +107,27 @@ Private `.analysis/rotation-row-origin-order-20261017/` retains the complete
 instruction map, original dossier identity, address/guard/product queries,
 scratch-boundary walks, rejected source/object and six-function comparisons.
 This is analysis evidence, not a new exact or semantic acceptance.
+
+## Height helper correspondence
+
+The height helper at `0x402FB0` contains 63 instructions on each side. Forty-seven
+pairs have the same registers, frame homes, operands and call targets after
+branch-ordinal translation. The other sixteen instructions are two instances
+of the bank-address graphs already proved above, with the real slot argument
+at EBP+8. Each current graph is one byte longer, accounting for the complete
+193/191-byte extent difference. No return, multiplication, branch or FP operation
+is missing. The 16-byte frame and all branch successors agree.
+
+The prior universal bank-address proof and its counterexample control are
+reused after checking both concrete graphs exactly. Eight scratch-register
+boundary walks confirm that the differing ECX/EDX values are not subsequently
+consumed before overwrite or the normal call boundary. Stable ordinary mapped
+memory, valid objects/calls and normal ABI scratch rules remain the scope;
+unrestricted flags, trap state, aliasing and actual gameplay use are not claimed.
+
+The complete candidate remains193/191 with158 differences. Source, objects,
+image and ledgers remain unchanged; no compiler, provider, solver or runtime
+runs. Private `.analysis/rotation-height-correspondence-20261017/verification.json`
+retains all63 pairs, two graph matches, eight boundary walks and original/current
+identities. Future height work needs evidence about the original address
+producer context; a different max/return/FP expression is not justified here.

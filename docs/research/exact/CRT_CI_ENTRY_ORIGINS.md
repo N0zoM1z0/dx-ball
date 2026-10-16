@@ -54,10 +54,13 @@ public COFF definitions. Their original names and machine interfaces remain
 unrecovered; inferred Ghidra C prototypes are not adopted.
 
 The no-source inventory remains 78: **77 runtime and one compiler-generated**.
-There are now 73 complete original comparison receipts, up from 59. Five older
-runtime labels retain region associations only in this coverage audit:
+This origin closure reached 73 complete original comparison receipts, up from
+59. Five older runtime labels still had only region associations in that index:
 `0x418570`, `0x4185B0`, `0x418620`, `0x418650` and `0x418730`. They are not silently
-promoted to complete comparisons.
+promoted to complete comparisons by this origin audit. The later
+[receipt reconciliation](CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
+validates their existing complete proofs and brings current coverage to78/78,
+without repeating a compiler, provider or runtime.
 
 Overall origins are **270 authored / 261 runtime / 21 compiler-generated /
 one unknown**. The unknown is source-present no-op `0x40CC20`; its origin stays

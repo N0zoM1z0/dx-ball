@@ -18,6 +18,11 @@ counts and all 34 authored comparisons remain unchanged.
 The subsequent [intrinsic-entry closure](CRT_CI_ENTRY_ORIGINS.md) proves thirteen
 runtime origins; only source-present no-op40CC20 remains origin-unknown. It adds
 no source or exact acceptance and does not prove the final authored denominator.
+The [dependency receipt reconciliation](CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
+now gives all78 current no-source entries complete original receipts; it adds no
+source, exact or origin claim. The [height correspondence](ROTATION_PIXEL_ADDRESS.md#height-helper-correspondence)
+accounts for all63 instructions and identifies only two bank-address producers
+as its extent difference; the maintained comparison remains unchanged.
 
 The original two-byte decimal-point array and shared declarations close all310
 exponent-formatting bytes and the six-byte suffix, preserving all13 affected

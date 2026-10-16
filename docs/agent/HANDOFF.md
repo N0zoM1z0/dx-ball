@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the complete CRT intrinsic-entry origin closure.
+Updated October 17, 2026, after complete dependency receipt and height reviews.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,18 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [dependency receipt reconciliation](../research/exact/CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
+now covers all 78 current no-source entries. Five existing original trnsctrl
+proofs verify 515 bytes / nine actual bindings and fill the coverage index,
+without rerunning a producer. Source, ABI, origin, exact and image claims stay
+unchanged; the nineteen approved members remain. This is not a final inventory
+or authored denominator. The [height review](../research/exact/ROTATION_PIXEL_ADDRESS.md#height-helper-correspondence)
+also accounts for all 63 instructions: 47 ordinary operand pairs and two already
+proved bank-address groups. Each group adds one byte, explaining the193/191
+extent difference;158 raw differences remain. Eight scratch boundaries pass.
+No new source model, compiler, provider, solver, native fixture, game or relink
+runs. Do not try new max/return/FP spellings for that accounted height body.
 
 The [intrinsic-entry closure](../research/exact/CRT_CI_ENTRY_ORIGINS.md) promotes
 13 unknown entries to runtime through 725 complete original code bytes / 44 actual
@@ -67,10 +79,10 @@ No game, full replay or provider query runs. This source improvement adds no exa
 The [dependency inventory audit](../research/exact/CRT_DEPENDENCY_INVENTORY.md)
 adds eight omitted arctrig/sqrt entries, now all proved runtime. Inventory is553
 with78 no-source entries; source remains475. Three no-source entries are import
-thunks;75 associate with sixteen approved CRT carriers. Updated coverage has73
-complete original receipts and five prior runtime labels with associations only.
-The latter are418570/4185B0/418620/418650/418730; no new full-body claim is made
-for them. Five earlier helper names stay recovered without source or ABI claims.
+thunks;75 associate with sixteen approved CRT carriers. Updated coverage has78
+complete original receipts after connecting the five earlier handler proofs.
+All78 entries have complete receipt coverage; the earlier73/5 index remains
+historical. Five earlier helper names stay recovered without source or ABI claims.
 The constant-pointer view is rejected after one core pilot: 1691→1705 bytes,
 ten unbound alias-cell references, nine exact companions preserved. Do not
 repeat this shared-view model or expand it into flag/profile/name variants.

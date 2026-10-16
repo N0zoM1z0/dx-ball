@@ -1,5 +1,10 @@
 # Catch transport and the omitted guard callback
 
+The later [complete dependency coverage](CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
+revalidates and connects all five original-section receipts below to the current
+78-entry no-source inventory. Their source/ABI limits remain unchanged, and no
+compiler, provider or runtime repeats. The checkpoint totals below are historical.
+
 The catch transport at `0x004185B0` stores `0x00418620` as its temporary
 registration's handler. That address is a real **41-byte CatchGuardHandler**,
 ending at `0x00418648`. The provisional inventory omitted it because Ghidra
