@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after SEH checkpoint `927fab6` and the character/locale
-storage correction below. The genuine decimal-point array closes the complete
-310-byte exponent formatter without losing the 13 affected prior exacts.
-Current totals are 465 source entries, 377 exacts and 88 complete candidates.
+Updated October 16, 2026, after character-state checkpoint `58abe70` and the
+locale category/code-page source owner below. Its complete 28-byte relative
+layout matches the pinned member; absolute placement remains unverified.
+Current totals remain 465 source entries, 377 exacts and 88 complete candidates.
 All 249 semantic scopes retain their existing evidence.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
@@ -139,6 +139,15 @@ multiplication C body is unchanged but its shared declaration context emits
 C-locale consumer checks pass. See
 [character state and exact formatting](../research/exact/RUNTIME_CHARACTER_STATE.md).
 
+The locale category/code-page producer now supplies the real six-slot vector
+and unsigned code-page word. They retain 32-bit LCID/UINT width on the native
+64-bit host. Twelve category-routing calls and four locale-selector scenarios
+pass through the maintained consumers and typed fixture boundaries. The whole
+28-byte relative initialized layout matches; all-zero storage has no unique
+original anchor, so no independent absolute data/exact claim is added. All
+function ledgers and raw comparisons remain byte-identical. See
+[locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
+
 The collision-unwind callback now has complete natural C source. Its original
 34 bytes compare against a 31-byte VC4 body, so it remains nonexact; all 142
 original/VC4 emulated cdecl/effect cases agree. Native/i686 C90 compilation
@@ -196,6 +205,7 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
 - `config/functions.csv`: provisional entries and reconciled extents.
 - `config/function-origins.csv`: independent entry origin classification.
 - `config/runtime-x87-operation-tables.json`: twelve complete writable records, 480 bytes/72 bindings.
+- `config/runtime-locale-handles.json`: complete source/member relative 28-byte locale storage; target address remains null.
 - `config/runtime-character-state.json`: complete writable 522/12-byte ctype/locale source owners and two pointer bindings.
 - `config/runtime-x87-dispatch-constants.json`: separate complete 48-byte readonly source record and six qword consumers.
 - `config/compiler-fragments.csv`: parent-owned unwind/epilogue aliases with original ranges and evidence; excluded from independent counts.
@@ -233,6 +243,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 locale category/code-page owner | Six real 32-bit LCIDs and code-page word; relative 28-byte layout; 12 category calls/four selector scenarios; no new absolute placement or exact claim | [Locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md); `.analysis/locale-handles-source-20261016/adoption.json` |
 | October 16 character/locale state | Two-byte decimal-point array; complete310-byte exponent exact;13 prior family exacts preserved;534 data bytes/two bindings;3,855 native consumer checks | [Character state](../research/exact/RUNTIME_CHARACTER_STATE.md); `.analysis/ctype-state-source-20261016/adoption.json` |
 | October 16 SEH/CRT entry review | Complete collision callback source; 31/34-byte candidate; 142 emulated ABI/effect cases; 16 omitted entries reconciled; prior 376 exacts unchanged | [SEH entries](../research/exact/RUNTIME_SEH_ENTRIES.md); `.analysis/crt-omitted-entries-20261016/adoption.json` |
 | October 16 Windows heap startup | Real Win32 defaults; early heap/allocations survive WinMain; three physical entry controls and native/VC4 tool checks pass; eight exact bodies unchanged | [Heap startup](../research/WINDOWS_HEAP_STARTUP.md); `.analysis/windows-heap-startup-20261016/adoption.json` |
@@ -308,6 +319,11 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
+- Locale handles/code page now have a source owner. Keep six 32-bit category
+  values even on LP64; the null-address recipe records the absence of independent
+  absolute placement. Category/selector fixture transport passes; OS locale
+  drivers and full reconstructed CRT linking remain open. Do not relabel the
+  all-zero relative-layout proof as independently located target data.
 - The decimal point is a two-byte array, not a scalar. Preserve its shared
   declaration and element-zero reads. Exponent formatting now matches all 310
   bytes and the full suffix with fixed/general exacts retained. Initial writable

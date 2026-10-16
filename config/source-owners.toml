@@ -614,3 +614,8 @@ additional_inputs = ["src/runtime_multibyte.h"]
 source = "src/runtime_locale_state.c"
 header = "src/runtime_locale_state.h"
 additional_inputs = []
+
+[owners.runtime_locale_handles]
+source = "src/runtime_locale_handles.c"
+header = "src/runtime_locale_handles.h"
+additional_inputs = ["src/runtime_case_conversion.h", "src/state_types.h"]

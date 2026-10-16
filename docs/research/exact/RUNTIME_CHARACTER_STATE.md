@@ -55,6 +55,10 @@ classification flags, initial pointers and natural two-byte string.
 
 ## Focused validation and remaining scope
 
+The subsequent [locale category owner](RUNTIME_LOCALE_HANDLES.md) supplies the
+six LCID slots and code-page word. Its 28-byte relative layout is verified;
+independent absolute placement remains open and adds no target-data exact claim.
+
 Both new data owners pass native/i686 C90 compilation; all six affected numeric
 owners pass native/i686 C11 compilation. A native fixture links the actual
 maintained classification/case functions to the new state and checks 3,855

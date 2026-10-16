@@ -1,0 +1,52 @@
+{
+  "source": "src/runtime_locale_handles.c",
+  "header": "src/runtime_locale_handles.h",
+  "inputs": [
+    "src/runtime_case_conversion.h",
+    "src/runtime_locale_handles.c",
+    "src/runtime_locale_handles.h",
+    "src/state_types.h"
+  ],
+  "flags": [
+    "/nologo",
+    "/c",
+    "/O2",
+    "/Ob0",
+    "/Oi-",
+    "/Gd",
+    "/ML",
+    "/Gy"
+  ],
+  "object": "build/exact/runtime_locale_handles.obj",
+  "library": ".tools/msvc400/lib/libc.lib",
+  "library_sha256": "e5f0d0e6dd2e01dbb0005e9dd4764507b852ede9a824798f0970bc570966a7e3",
+  "original_member": {
+    "name": "build\\intel\\st_obj\\nlsdata2.obj",
+    "header_offset": 674030,
+    "sha256": "1e447e85e51f3b7de022ca17c39df03d9cf861592fca1f429e40867ee36a94c3"
+  },
+  "section": ".data",
+  "size": 28,
+  "zero_initialized": true,
+  "relocations": [],
+  "symbols": [
+    {
+      "source_name": "__lc_handle",
+      "coff_symbol": "___lc_handle",
+      "offset": 0,
+      "bytes": 24,
+      "word_bytes": 4,
+      "count": 6
+    },
+    {
+      "source_name": "__lc_codepage",
+      "coff_symbol": "___lc_codepage",
+      "offset": 24,
+      "bytes": 4,
+      "word_bytes": 4
+    }
+  ],
+  "target_address": null,
+  "placement": "Not independently verified; all-zero bytes are not a unique target anchor.",
+  "scope": "Complete source/member relative layout and existing typed-consumer ABI only. No new independently placed target data, function exact or game-integration claim."
+}
