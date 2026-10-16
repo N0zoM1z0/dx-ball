@@ -1,10 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after operation-table checkpoint `e91fde1` and the
-alignment/seven-record follow-up below. Eleven writable records now match
-448 bytes and 68 relocations. Their common type now preserves the original
-two-byte alignment. Storage bytes are separate from function exact totals;
-existing function source, exact and semantic ledgers remain unchanged.
+Updated October 16, 2026, after alignment checkpoint `8454e2d` and the square-
+root record follow-up below. Twelve writable records now match 480 bytes and
+72 relocations; the earlier 448-byte family is reused unchanged. The bounded
+pinned-library descriptor inventory finds twelve unique original headers out
+of sixteen definitions. Existing function source, exact and semantic ledgers
+remain unchanged.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -157,6 +158,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 sqrt record | Complete32-byte record/four bindings; descriptor family480 bytes/72 bindings; old448 bytes reused | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-remaining-operation-records-20261016/comparison.json` |
 | October 16 x87 record alignment | Two-byte ABI restored; seven more records add272 bytes; family448 bytes/68 bindings; prior176 bytes preserved | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-unary-operation-tables-20261016/comparison.json` |
 | October 16 x87 operation tables | Four complete writable records /176 bytes and28 bindings; two CRT origins; no function source/exact gain | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/crt-dispatch-boundaries-20261016/source-comparison.json` |
 | October 16 independent heap imports | All eight allocator bodies exact; three gaps closed, +66 code bytes; total 376; public header unchanged | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-independent-imports-20261016/adoption.json` |
@@ -231,10 +233,16 @@ question, not merely the smallest differing-position count.
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
   teardown and the 56 independent entries without source remain open.
-- Eleven x87 operation records now have complete448-byte source storage and
-  the original two-byte type alignment. Seven further sin/cos/tan/pow/log/exp
-  records reuse complete retained groups. Prefix constants remain outside those
-  new record claims. Their original opaque machine entries and low-level helpers
+- The named x87 descriptor-family recovery is closed at twelve matched records
+  from sixteen pinned-library definitions. Do not repeat unchanged data compiles
+  or add the four unmatched records. Continue with remaining function source and
+  independently grounded runtime storage.
+- Twelve x87 operation records now have complete480-byte source storage and
+  the original two-byte type alignment. All twelve unique original headers in
+  the pinned named descriptor family are covered; unmatched fmod/sinh/cosh/tanh
+  records are not added. The last32-byte sqrt owner reuses the prior448 bytes.
+  Prefix constants remain outside the trig/transcendental record claims.
+  Their original opaque machine entries and low-level helpers
   remain open. The seven C-dispatcher entries still lack independent authority
   for LocalFac/intrinflag BSS; do not infer those addresses from code operands.
   See [operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md).

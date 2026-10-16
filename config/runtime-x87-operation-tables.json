@@ -856,11 +856,108 @@
         "evidence_id": "ev_86e6cb7d19a108f9784a3a93e2ab193547dfcfc6258578eb1c0e07e753b3a3ce"
       },
       "original_record_offset": 68
+    },
+    {
+      "source": "src/runtime_x87_sqrt_table.c",
+      "object": "build/exact/runtime_x87_sqrt_table.obj",
+      "inputs": [
+        "src/runtime_x87_sqrt_table.c",
+        "src/runtime_x87_sqrt_table.h",
+        "src/runtime_x87_operation_tables.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/MT",
+        "/Gy"
+      ],
+      "target_address": "0x004232E0",
+      "size": 32,
+      "tables": [
+        {
+          "symbol": "_dxball_x87_sqrt_operation",
+          "address": "0x004232E0",
+          "size": 32
+        }
+      ],
+      "entry_bindings": {
+        "_dxball_x87_sqrt_kernel": {
+          "original_symbol": "fFSQRT",
+          "target_address": 4297552,
+          "basis": "complete original27-byte kernel"
+        },
+        "_dxball_x87_sqrt_zero": {
+          "original_symbol": "_rtforsqrtzero",
+          "target_address": 4297564,
+          "basis": "complete original27-byte kernel"
+        },
+        "_dxball_x87_sqrt_infinite": {
+          "original_symbol": "_rtforsqrtinf",
+          "target_address": 4297559,
+          "basis": "complete original27-byte kernel"
+        },
+        "_dxball_x87_top_nan_unary": {
+          "original_symbol": "__tosnan1",
+          "target_address": 4311874,
+          "basis": "prior complete87disp.obj definition"
+        }
+      },
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_sqrt_kernel",
+          "addend": 0,
+          "target": 4297552
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_sqrt_zero",
+          "addend": 0,
+          "target": 4297564
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_top_nan_unary",
+          "addend": 0,
+          "target": 4311874
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "_dxball_x87_sqrt_infinite",
+          "addend": 0,
+          "target": 4297559
+        }
+      ],
+      "original_member": {
+        "member": "..\\build\\intel\\st_obj\\87sqrt.obj",
+        "member_header_offset": 962072,
+        "member_sha256": "70c87410c2ed599ccfaf3e183b97c4d33b9a22eabea2f81ef9901acd296a09eb"
+      },
+      "original_code": {
+        "address": "0x00419350",
+        "size": 27,
+        "nonrelocated_anchor_bytes": 23,
+        "code_evidence_id": "ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12"
+      },
+      "header_evidence": {
+        "evidence_id": "ev_f6a414600d6f4d61172f65edeb5491e6d910bbcfc248fad3ddebaba403ab32cc",
+        "address": "0x004232E0",
+        "size": 16
+      },
+      "comparison_scope": "Complete32-byte record and four pointers compare with the pinned PE/CRT; retained REA observes the16-byte header and complete27-byte code, not a new whole-table data read."
     }
   ],
-  "total_storage_bytes": 448,
-  "total_records": 11,
-  "total_relocations": 68,
+  "total_storage_bytes": 480,
+  "total_records": 12,
+  "total_relocations": 72,
   "scope": "Complete writable operation records only; separate from function exact code and attached exception metadata. The18/68-byte original constant prefixes are outside the two newly recovered owners. Machine helpers remain genuine external dependencies.",
   "boundary_evidence": "docs/research/exact/RUNTIME_X87_OPERATION_TABLES.md",
   "prior_arctrig_authority": {
