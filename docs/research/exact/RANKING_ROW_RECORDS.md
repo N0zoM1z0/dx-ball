@@ -27,6 +27,35 @@ operation 05 of run `2026-10-07T13-44-46.898Z-interactive-3331671`.
 No new provider query runs. Before inputs, complete compiler comparison and
 focused cases are retained in `.analysis/ranking-row-records-20261012/`.
 
+## Complete comparison review, October 17
+
+A single private trial exchanges the selected-row equality's source operands.
+The complete emitted code and all eighteen bindings remain unchanged: 403/404
+bytes and 330 strict differences. All seven current exact companions preserve
+2,775 bytes. Reject this spelling; no canonical source or product changes.
+
+The complete original and current functions each decode to 135 instructions.
+An explicit correspondence accounts for every byte and frame operand: 118
+ordinary instructions are byte-identical, five internal edges reach the same
+instruction and ten calls retain identical targets. The remaining two
+instructions exchange the index/global equality operands. The zero predicate
+agrees for every DWORD pair. On the unequal edge, the next MOV replaces EAX
+before use; both successor paths redefine arithmetic flags before further use
+or a call. This review assumes valid ordinary memory, stable observations and
+normal ABI calls without caller-code inspection.
+
+The equality SMT query is UNSAT; a signed-order replacement has a SAT witness.
+The structural checker rejects changed branch polarity, selected-global binding
+and line color. This is an instruction correspondence with explicit limits,
+not a new exact or all-input semantic acceptance. The current restored-CRT
+object contains the same complete function/bindings; its earlier executed-image
+linkage receipt remains valid. Private `.analysis/ranking-equality-20261017/`
+retains the proposal, compiler receipt, eight full comparisons, all instruction
+pairs, solver inputs, mutation controls and reused original REA dossier identity.
+No game, provider query or full replay runs.
+
+## Earlier UI diagnostics
+
 Two separate UI diagnostics test a consumed measurement/index record with
 either a grouped or separate glyph index. They produce 281/279 bytes with
 186 differences and 280/279 with 58, respectively. Both preserve the five UI

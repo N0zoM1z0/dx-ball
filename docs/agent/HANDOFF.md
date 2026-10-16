@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the restored-CRT terminal boundary check.
+Updated October 17, 2026, after the ranking comparison review.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -46,6 +46,12 @@ including six mutation controls; strict differences stay 332/252/330. The
 all 424 frame bytes and rejects the per-axis rounding record. Reuse these closed
 results rather than repeating source permutations. Remaining authored exact
 work still requires a concrete instruction-backed source or producer question.
+
+The [ranking comparison review](../research/exact/RANKING_ROW_RECORDS.md#complete-comparison-review-october-17)
+accounts for all 135 instructions and eighteen bindings. Its single equality
+operand exchange explains the one-byte extent difference and shifted suffix;
+reversing source operands leaves the complete code unchanged. Seven exact
+companions retain 2,775 bytes. Do not repeat this spelling trial.
 
 The bounded original prefix review covers 289 source-present spans in
 `0x401000..0x4165FF`, including all 270 currently authored entries. Its 259 gaps
