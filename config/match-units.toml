@@ -12982,3 +12982,22 @@ target_address = 0x00416610
 size = 334
 boundary_evidence = "docs/research/exact/RUNTIME_MEMORY_COPY.md"
 relocations = []
+
+[builds.runtime_control87]
+source = "src/runtime_control87.c"
+object = "build/exact/runtime_control87.obj"
+inputs = ["src/runtime_control87.c", "src/runtime_float.h", "src/runtime_fp_control.h", "src/runtime_fp_exceptions.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi", "/Gd", "/ML", "/Gy"]
+
+[candidates.crt-control87]
+build = "runtime_control87"
+symbol = "__control87"
+target_address = 0x0041CF30
+size = 63
+boundary_evidence = "docs/research/exact/RUNTIME_CONTROL87.md"
+relocations = [
+  { offset = 6, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+  { offset = 15, type = "REL32", symbol = "_dxball_crt_abstract_control_word", addend = 0, target = 0x0041CF90 },
+  { offset = 45, type = "REL32", symbol = "_dxball_crt_hardware_control_word", addend = 0, target = 0x0041D040 },
+  { offset = 57, type = "REL32", symbol = "__ctrlfp", addend = 0, target = 0x004193B0 },
+]

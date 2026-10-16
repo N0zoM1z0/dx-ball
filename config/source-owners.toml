@@ -654,3 +654,8 @@ additional_inputs = ["src/termination.h"]
 source = "src/runtime_u64_arithmetic.c"
 header = "src/runtime_u64_arithmetic.h"
 additional_inputs = ["src/state_types.h"]
+
+[owners.runtime_control87]
+source = "src/runtime_control87.c"
+header = "src/runtime_fp_control.h"
+additional_inputs = ["src/runtime_fp_exceptions.h", "src/runtime_float.h"]

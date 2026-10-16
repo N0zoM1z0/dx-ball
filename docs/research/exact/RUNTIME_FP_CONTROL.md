@@ -1,5 +1,12 @@
 # Floating control and classification
 
+Later recovery: the complete [abstract `_control87` entry](RUNTIME_CONTROL87.md)
+now has ordinary control-layer C source, including unconditional hardware
+canonicalization for mask zero. Its 68/63-byte comparison remains nonexact;
+1,792 logical cases and an actual Win32 x87 comparison pass. The physical
+`_ctrlfp` backend and full startup remain open. The following text retains
+the preceding converter/error checkpoints.
+
 Eight full bodies are recovered from the local executable,18 fresh REA records
 and whole pinned VC4 CRT sections. Seven are exact after every actual relocation:
 

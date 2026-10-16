@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after completing the ordinary-memory copy contracts.
+Updated October 16, 2026, after restoring the abstract x87 control entry.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
-There are **91 complete nonexact comparisons: 34 authored, 56 runtime and one
+There are **92 complete nonexact comparisons: 34 authored, 57 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 91 are all currently source-present nonexact entries. The eight allocator
+These 92 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 74 of the 545 independent inventory entries lack a
+report gaps. Another 73 of the 545 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -35,6 +35,11 @@ Both memcpy/memmove entries now have complete ordinary-memory source, including
 overlap. Their 215/334-byte comparisons remain nonexact; 1,688 layouts and eight
 unmapped zero-count cases pass. The original EDX-dependent grouping preserves
 the final bytes without a hidden argument. See [memory copy](RUNTIME_MEMORY_COPY.md).
+
+The abstract `_control87` layer now has complete C source. Its 68/63-byte
+comparison remains nonexact with 44 differing positions; 1,792 logical cases
+and 1,792 actual Win32 x87 comparisons pass. Physical backend source and full
+startup remain open. See [abstract x87 control](RUNTIME_CONTROL87.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -129,6 +134,7 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-initialize-lowio` | 467 | 467 | 32 |
 | `crt-unwind-handler` | 34 | 31 | 34 |
 | `crt-right-mantissa96` | 54 | 48 | 35 |
+| `crt-control87` | 63 | 68 | 44 |
 | `crt-left-mantissa96` | 62 | 50 | 47 |
 | `crt-multiply-extended12` | 678 | 678 | 50 |
 | `crt-strncpy` | 36 | 58 | 56 |

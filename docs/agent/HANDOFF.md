@@ -1,12 +1,13 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after completing the ordinary-memory copy contracts.
-Current totals are 471 source entries, 380 exacts and 91 complete candidates.
-The missing memcpy entry now has shared C source; the existing memmove entry
-also handles reverse overlap. Both remain nonexact at 215/334 bytes each.
-All 1,688 layouts and eight unmapped zero-count cases pass. Prior 380 exact
-and 89 other candidate results/products are reused; all 249 semantic rows
-remain byte-identical. No full replay or new provider session was needed.
+Updated October 16, 2026, after restoring the abstract x87 control entry.
+Current totals are 472 source entries, 380 exacts and 92 complete candidates.
+The complete C `_control87` layer merges abstract bits and unconditionally
+canonicalizes/writes hardware, including mask zero. It remains nonexact at
+68/63 bytes and 44 differing positions. All 1,792 original/generated/native
+cases and 1,792 physical Win32 x87 comparisons pass. Prior 380 exact and
+91 candidate results/products are reused; all 249 semantic rows are unchanged.
+The physical hardware backend remains a dependency. No full replay ran.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -53,26 +54,26 @@ An exact-function count is progress, not the completion criterion.
 | --- | ---: |
 | Provisional independent function inventory | 545 |
 | Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 471 |
+| Source-present independent entries | 472 |
 | Accepted exact functions | 380 |
 | Complete exact code bytes | 77,485 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
-| Complete nonexact comparisons | 91 |
+| Complete nonexact comparisons | 92 |
 | Source-present entries outside the two comparison reports | 0 |
-| Inventory entries without a source-present ledger row | 74 |
-| Nonexact origins | 34 authored / 56 runtime / 1 compiler-generated |
+| Inventory entries without a source-present ledger row | 73 |
+| Nonexact origins | 34 authored / 57 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 245 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
-now lists all 91 maintained candidates.
+now lists all 92 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
-three physical Heap API wrappers. All 91 source-present nonexact entries have
-complete candidate comparisons. Another 74 independent inventory entries lack
+three physical Heap API wrappers. All 92 source-present nonexact entries have
+complete candidate comparisons. Another 73 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
 native/Win32 evidence.
@@ -149,6 +150,16 @@ pass through the maintained consumers and typed fixture boundaries. The whole
 original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
+
+The `_control87` entry now has complete ordinary control-layer C source.
+The original always canonicalizes hardware, even for mask zero, and returns
+all merged abstract bits. The C body uses the genuine `_ctrlfp` boundary;
+its additional same-value write and pending-exception timing remain outside
+the equivalence claim. The 1,792 logical cases and actual Win32 x87 comparison
+pass with accepted C converters reused. All existing comparison inputs/results
+remain. Two bounded complementary library scans expose no additional missing
+entry within their stated predicates. See
+[abstract x87 control](../research/exact/RUNTIME_CONTROL87.md).
 
 Both 334-byte memcpy/memmove entries now have ordinary-memory C contracts,
 including overlap. Incoming EDX chooses only a zero-to-three-byte reverse
@@ -227,7 +238,7 @@ ranges were already part of those units; they are now recorded in
 All four complete parent comparisons reproduce their retained results from
 the existing canonical object: three exact methods and the unchanged 88-byte
 triangle candidate. That reconciliation repeated no compiler/provider/runtime
-work and changed no source or exact claim. The 74
+work and changed no source or exact claim. The 73
 independent entries without source remain in scope. See
 [compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
 
@@ -401,7 +412,7 @@ question, not merely the smallest differing-position count.
   modifying `allocator.h`. Earlier controls that removed its public declaration
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
-  teardown and the 74 independent entries without source remain open.
+  teardown and the 73 independent entries without source remain open.
 - The decimal accumulator now snapshots three integer limbs explicitly. All five
   byte results remain unchanged; native/i686 C90 compilation passes. Shift masks
   and remaining register choices are closed controls without new evidence. Do
