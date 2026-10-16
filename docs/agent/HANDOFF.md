@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the complete editor-key correspondence.
+Updated October 17, 2026, after current-image natural lightning expiry.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,17 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [current-image natural expiry](../research/RESTORED_CRT_LIGHTNING_FLOW.md)
+episode reuses all116 source objects, the19 approved CRT members and the existing
+SDK reader. It records228 states:95 countdown ball samples remain attached;
+after about55.299 seconds, score4/lives3 and the complete original board1/222
+bricks verify. Real editor save, menu return and normal exit pass; originals stay
+unchanged. No positive lightning frame is sampled, so there is no flash/timing
+claim. The scope is one custom single-brick expiry, not the original campaign.
+All source, products and acceptance stay fixed. No compiler, relink, provider or
+full replay runs. Frozen inputs/trace are sealed;49 probe copies are removed after
+backup equality checks, releasing about2.01 MiB with trace compression.
 
 The [editor-key review](../research/exact/EDITOR_KEY_ADDRESS_CORRESPONDENCE.md)
 explains its complete 638/632/260 comparison with one six-byte address producer.

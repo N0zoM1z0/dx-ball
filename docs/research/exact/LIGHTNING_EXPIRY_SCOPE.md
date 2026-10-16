@@ -74,6 +74,16 @@ Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. No full replay or port work runs; heavy operations stay
 serial under CPU 35%, memory high 640 MiB / maximum 768 MiB.
 
+## Current-image natural expiry
+
+One later [real-game episode](../RESTORED_CRT_LIGHTNING_FLOW.md) checks the current
+`345a6887…` image, reusing all 116 source objects and 19 approved CRT members.
+The ball remains attached in 95 board0 samples while the timer expires naturally.
+The game clears the editor-created single brick, reaches score4/lives3, loads all
+400 bytes of original board1 with222 bricks and exits normally. The 228 samples
+do not capture positive lightning frames, so no flash/timing claim follows.
+No compiler, relink, provider query or full replay runs; exact acceptance stays380.
+
 ## Closed scan-only scope
 
 One later private model limits column, row and tile to a block containing only
