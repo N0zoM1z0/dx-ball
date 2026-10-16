@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the last-brick expiry scope recovery.
+Updated October 17, 2026, after the complete CRT intrinsic-entry origin closure.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,20 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [intrinsic-entry closure](../research/exact/CRT_CI_ENTRY_ORIGINS.md) promotes
+13 unknown entries to runtime through 725 complete original code bytes / 44 actual
+relocations across four pinned members. A unique 48-byte readonly section receives
+new REA 6.5.0 evidence; six consistent operands place the original nine-byte private
+BSS at 43FB00. Three entry queries confirm 58/7/304-byte bounds; inferred prototypes
+are not adopted. Overall origins are 270 authored / 261 runtime / 21 generated / one
+unknown. The unknown 40CC20 is source-present; the final authored denominator is
+still unproved. No source/exact/ABI acceptance, runtime check or relink follows.
+One serial capped provider session closes normally; all 121 cached provenance
+inputs remain current without repeating the library scan. Source and image stay
+unchanged. The separate scan-only last-brick scope worsens 990→991 and is rejected
+after one compilation of 20 functions; 12 exacts / 3,303 bytes and all 19 companions remain.
+Do not repeat that block model or run its unchanged runtime logic again.
 
 The [last-brick expiry scope](../research/exact/LIGHTNING_EXPIRY_SCOPE.md) puts
 tile/center/scan/rectangle/destination locals inside their sole consuming branch.
@@ -51,12 +65,12 @@ bytes in six parsed timestamps differ from the preceding `ebe4a4ff…` image.
 No game, full replay or provider query runs. This source improvement adds no exact.
 
 The [dependency inventory audit](../research/exact/CRT_DEPENDENCY_INVENTORY.md)
-adds eight omitted arctrig/sqrt entries: three proved runtime and five still
-unknown. Inventory is now 553 with 78 no-source entries; source remains 475.
-Three no-source entries are import thunks; 75 associate with sixteen approved
-CRT carriers. Only 59 have complete comparison receipts in this audit, so
-association does not resolve the thirteen unknown no-source origins. Five
-existing physical-helper names are recovered; no source/body or ABI is invented.
+adds eight omitted arctrig/sqrt entries, now all proved runtime. Inventory is553
+with78 no-source entries; source remains475. Three no-source entries are import
+thunks;75 associate with sixteen approved CRT carriers. Updated coverage has73
+complete original receipts and five prior runtime labels with associations only.
+The latter are418570/4185B0/418620/418650/418730; no new full-body claim is made
+for them. Five earlier helper names stay recovered without source or ABI claims.
 The constant-pointer view is rejected after one core pilot: 1691→1705 bytes,
 ten unbound alias-cell references, nine exact companions preserved. Do not
 repeat this shared-view model or expand it into flag/profile/name variants.
@@ -177,7 +191,7 @@ An exact-function count is progress, not the completion criterion.
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 78 |
 | Nonexact origins | 34 authored / 60 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 248 runtime / 21 compiler-generated / 14 unknown |
+| Inventory origins | 270 authored / 261 runtime / 21 compiler-generated / 1 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and fourteen unknown origins remain open.

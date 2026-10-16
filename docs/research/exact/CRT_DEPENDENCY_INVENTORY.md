@@ -8,6 +8,9 @@ exact acceptance or runtime case. The 24 parent-owned fragments stay separate.
 All 270 currently classified authored functions have source: 236 exact and
 34 complete candidates. The final authored denominator remains unproved.
 The nineteen explicit original CRT members remain user-approved dependencies.
+The subsequent [complete intrinsic-entry audit](CRT_CI_ENTRY_ORIGINS.md) resolves
+all thirteen no-source unknown origins. Current origins are 270 authored / 261
+runtime / 21 compiler-generated / one unknown; source and exact totals stay fixed.
 
 ## Eight omitted definitions
 
@@ -19,11 +22,11 @@ entry boundaries. None overlaps a current independent entry or parent fragment.
 | asin | `0x4175F0` | 10 | Runtime proved |
 | acos | `0x4175FA` | 7 | Runtime proved |
 | atan | `0x417601` | 7 | Runtime proved |
-| __CIasin | `0x417612` | 10 | Unknown; dispatcher binding pending |
-| __CIacos | `0x41761C` | 7 | Unknown; dispatcher binding pending |
-| __CIatan | `0x417623` | 7 | Unknown; dispatcher binding pending |
-| __CIatan2 | `0x41762A` | 10 | Unknown; dispatcher binding pending |
-| __CIsqrt | `0x41764A` | 10 | Unknown; dispatcher binding pending |
+| __CIasin | `0x417612` | 10 | Runtime proved by complete later group |
+| __CIacos | `0x41761C` | 7 | Runtime proved by complete later group |
+| __CIatan | `0x417623` | 7 | Runtime proved by complete later group |
+| __CIatan2 | `0x41762A` | 10 | Runtime proved by complete later group |
+| __CIsqrt | `0x41764A` | 10 | Runtime proved by complete later group |
 
 The complete 24-byte asin/acos/atan control-flow group matches after all four
 actual relocations. Selector addresses come from the independently located
@@ -34,16 +37,15 @@ ten bytes and two bindings against the independent sqrt table/dispatcher.
 
 All ten definitions in the 68-byte `87ctriga.obj` and 20-byte `87csqrt.obj`
 sections decode completely. Their selectors, internal jumps and owned spans
-agree with retained original observations. The intrinsic paths still require
+agree with retained original observations. The intrinsic paths require
 `__cintrindisp1` or `__cintrindisp2`; the existing atan2 path requires
-`__ctrandisp2`. Observed destinations supply no new binding authority.
-The older atan2 origin row is retained, without newly authorizing that binding.
-Neither whole member receives a new complete-origin claim.
+`__ctrandisp2`. The initial inventory audit left those bindings unresolved.
+The later complete dispatcher proof supplies their authority, and both whole
+groups now have complete comparisons, including the existing atan2 entry.
 
-The eight additions total 68 owned instruction bytes. Three add runtime origins;
-five add unknown origins. Current origin totals are **270 authored / 248 runtime /
-21 compiler-generated / 14 unknown**. Intrinsics keep their machine ABI; no
-ordinary C replacement is invented.
+The eight additions total 68 owned instruction bytes. Initially three added
+runtime origins and five unknown origins; all eight are now proved runtime.
+Intrinsics keep their machine ABI; no ordinary C replacement is invented.
 
 The source data proofs remain in [operation tables](RUNTIME_X87_OPERATION_TABLES.md),
 and the dispatcher proof in [the C-dispatch tail](RUNTIME_X87_DISPATCH_TAIL.md).
@@ -53,7 +55,8 @@ The independent arctrig table observation is
 `ev_d7b5e3077aa89e06757c2366971896bffbded18b2eeb3e07f63c6486a8a3fafa`;
 the earlier sqrt header observation is
 `ev_f6a414600d6f4d61172f65edeb5491e6d910bbcfc248fad3ddebaba403ab32cc`.
-No new provider query runs or old observation is restamped as a new one.
+The initial audit reused those observations. The later closure has its own four
+new focused REA observations; no older observation is restamped as new.
 
 ## No-source entries and approved carriers
 
@@ -71,15 +74,15 @@ with text regions in sixteen of the nineteen approved members:
 | chkstk.obj | 1 | 0 |
 | frnd.obj | 1 | 0 |
 | ftol.obj | 1 | 0 |
-| 87ctriga.obj | 8 | 4 |
-| 87ctrig.obj | 6 | 3 |
-| 87csqrt.obj | 2 | 1 |
+| 87ctriga.obj | 8 | 0 |
+| 87ctrig.obj | 6 | 0 |
+| 87csqrt.obj | 2 | 0 |
 | lowhelpr.obj | 1 | 0 |
 | 87triga.obj | 2 | 0 |
 | 87trig.obj | 0 | 0 |
 | 87sqrt.obj | 0 | 0 |
 | frame.obj | 0 | 0 |
-| 87cdisp.obj | 7 | 5 |
+| 87cdisp.obj | 7 | 0 |
 | 87disp.obj | 5 | 0 |
 | 87tran.obj | 1 | 0 |
 
@@ -88,14 +91,16 @@ Member offsets and hashes remain in `config/restored-crt-link.json`.
 The audit verifies the current nineteen members and reuses cached provenance
 with all 121 input identities intact, rather than repeating the library scan.
 
-Carrier association is weaker than a complete original comparison. This audit
-has complete function/section/group or import receipts for 59 entries. Nineteen
-have only region associations here: thirteen retain unknown origins; the other
-six retain earlier runtime labels without a new full-body proof. Those six are
-atan2 and the five C++ handler/catch/translator entries at
+Carrier association is weaker than a complete original comparison. After the
+later closure, 73 entries have complete function/section/group or import receipts.
+Five retain earlier runtime labels with region associations only here: the C++
+handler/catch/translator entries at
 `0x418570`, `0x4185B0`, `0x418620`, `0x418650` and `0x418730`.
-No association promotes source presence, origin or exactness. The other unknown
-origin is the already source-present `0x40CC20` no-op.
+No association promotes source presence, origin or exactness. Full group proofs
+promote thirteen runtime origins, with no source or exact acceptance. The only
+unknown origin is the already source-present `0x40CC20` no-op. Updated private
+coverage is in `.analysis/crt-ci-entry-origins-20261017/coverage.json`; the initial
+audit's59/19 coverage artifact remains unchanged as historical evidence.
 
 ## Five recovered existing identities
 

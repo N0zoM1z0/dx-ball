@@ -73,3 +73,15 @@ carriers; current products and unique evidence remain available.
 Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. No full replay or port work runs; heavy operations stay
 serial under CPU 35%, memory high 640 MiB / maximum 768 MiB.
+
+## Closed scan-only scope
+
+One later private model limits column, row and tile to a block containing only
+the board scan. Selected tile/center results retain their expiry-branch scope.
+All operations, types, names and order stay unchanged. One compilation compares
+all twenty functions: twelve exacts retain 3,303 bytes and the other nineteen
+code identities remain unchanged, but last-brick worsens990→991 differences.
+Reject this block and retain the maintained990 result. Source, cached objects,
+image and ledgers remain unchanged; no native check, relink or game follows.
+Frozen inputs, objects and complete comparisons are retained under
+`.analysis/lightning-scan-scope-20261017/`. Do not repeat this scope model.

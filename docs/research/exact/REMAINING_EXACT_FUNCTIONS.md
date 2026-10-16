@@ -15,6 +15,9 @@ origin review still need reconciliation; this is not a final authored denominato
 The [dependency inventory audit](CRT_DEPENDENCY_INVENTORY.md) adds eight omitted
 CRT entries and recovers five existing helper identities. Source/exact/candidate
 counts and all 34 authored comparisons remain unchanged.
+The subsequent [intrinsic-entry closure](CRT_CI_ENTRY_ORIGINS.md) proves thirteen
+runtime origins; only source-present no-op40CC20 remains origin-unknown. It adds
+no source or exact acceptance and does not prove the final authored denominator.
 
 The original two-byte decimal-point array and shared declarations close all310
 exponent-formatting bytes and the six-byte suffix, preserving all13 affected
