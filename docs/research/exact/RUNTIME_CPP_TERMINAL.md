@@ -1,5 +1,9 @@
 # C++ terminal callbacks and SEH ownership
 
+October 16 object follow-up: [construction and destruction](RUNTIME_CPP_OBJECT.md)
+now have complete source, with destruction exact and construction a four-byte
+nonexact candidate. Earlier checkpoint totals below remain historical.
+
 `src/runtime_cpp_terminal.cpp` restores the two complete terminal functions from
 the original `hooks.obj`, including their compiler-owned SEH registration,
 filters, cleanup continuations and scope tables.

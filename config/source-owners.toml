@@ -579,3 +579,8 @@ additional_inputs = ["src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/run
 source = "src/runtime_cpp_terminal.cpp"
 header = "src/runtime_cpp_terminal.h"
 additional_inputs = ["src/runtime_cpp_tables.h"]
+
+[owners.runtime_cpp_object]
+source = "src/runtime_cpp_object.cpp"
+header = "src/runtime_cpp_object.h"
+additional_inputs = ["src/runtime_cpp_handler.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]

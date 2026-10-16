@@ -1,5 +1,11 @@
 # Complete C++ handler search
 
+October 16 follow-up: [object construction and destruction](RUNTIME_CPP_OBJECT.md)
+now have complete SEH source. Destruction is exact; construction has four
+register-encoding differences. The current exception/context globals, remaining
+transfer helpers and full dispatcher integration remain open. The following
+handler-search comparisons retain their original checkpoint scope.
+
 The terminal dependencies were independently identified as
 terminate0x41BC60 and inconsistency0x41BCE0, not unexpected. Their complete
 hooks.obj sections are115 bytes each: the imported114-byte boundaries omitted
@@ -44,8 +50,8 @@ Typed first-member views preserve actual field widths while consuming the
 original exception parameter. Metadata pointers retain native width and
 natural alignment. The pointer-slot reader follows the real count/offset; it
 does not pretend the variable tail has a one-element array bound. Current
-record/context globals and destruction remain genuine unresolved owners, not
-fixture defaults. The real existing C++ ValidateRead API is used directly.
+record/context globals remain genuine unresolved owners, not fixture defaults.
+The destruction dependency is now supplied by the object owner linked above. The real existing C++ ValidateRead API is used directly.
 
 No preceding source or headers change. All309 old exacts and99 candidates are
 preserved by current input/object identity; the new total is418 source and100

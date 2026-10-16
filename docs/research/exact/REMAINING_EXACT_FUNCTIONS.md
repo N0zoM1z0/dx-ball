@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after the C++ terminal source checkpoint.
-Accepted totals are **369 functions / 75,861 code bytes / 184 metadata bytes**.
-There are **87 complete nonexact comparisons: 34 authored, 52 runtime and one
+Updated October 16, 2026, after the C++ object source checkpoint.
+Accepted totals are **370 functions / 75,974 code bytes / 196 metadata bytes**.
+There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 87 are not all unfinished functions. Three other source-present allocator
-entries are outside both current comparison reports, so 90 of the 459
-source-present entries are not exact. Another 84 of the 543 inventory entries
+These 88 are not all unfinished functions. Three other source-present allocator
+entries are outside both current comparison reports, so 91 of the 461
+source-present entries are not exact. Another 82 of the 543 inventory entries
 lack a source-present ledger row. The provisional inventory and origin review
 still need reconciliation; these numbers are not a final authored denominator.
 
@@ -82,6 +82,7 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-register-onexit` | 121 | 121 | 2 |
 | `crt-set-file-mode` | 128 | 128 | 2 |
 | `crt-set-os-handle` | 163 | 163 | 2 |
+| `cpp-build-catch-object` | 510 | 510 | 4 |
 | `crt-allocate-descriptor` | 184 | 184 | 4 |
 | `crt-force-decimal-point` | 101 | 101 | 4 |
 | `crt-add-with-carry` | 35 | 35 | 5 |

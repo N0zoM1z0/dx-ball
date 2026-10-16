@@ -1,5 +1,9 @@
 # C++ frame dispatch and catch transfer
 
+October 16 object follow-up: [construction and destruction](RUNTIME_CPP_OBJECT.md)
+now have complete source, with destruction exact and construction a four-byte
+nonexact candidate. Earlier checkpoint totals below remain historical.
+
 The complete pinned frame.obj sections and five retained REA records establish
 frame dispatch188, catch transfer148 and rethrow recognition44. Dispatch and
 recognition match in full, including every actual relocation. Catch transfer

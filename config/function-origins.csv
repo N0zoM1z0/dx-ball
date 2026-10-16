@@ -367,9 +367,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00418479,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00418482,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x004184A0,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
-0x004184E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004184F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00418500,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004184E0,runtime,crt-cpp-member-call,maintain,high,ev_9554d6425abb2bf0af02f3f70295dd3ef28680df23c302182d2c2a101558a06d
+0x004184F0,runtime,crt-cpp-member-call,maintain,high,ev_7a6ecb0fd8d57961c646fb0702fc5f096898490de4d7b729f91ca8b8062a5167
+0x00418500,runtime,crt-cpp-member-call,maintain,high,ev_1c0ff3b374b6ce4bf4babc9db7281ffbed34f8f99d3bf1428bd49fd683ecd008
 0x00418510,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x00418570,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004185B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -445,8 +445,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041B780,runtime,crt-cpp-transfer,maintain,high,ev_422051616475627e1688206ffa76240663e159f07e5243bee1e1c0085ff3738d
 0x0041B820,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041B930,runtime,crt-cpp-transfer,maintain,high,ev_dd0ce1871904693ab617713da1f9cd82ee598ca86319986dab98543e20a55f9b
-0x0041B960,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041BB60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041B960,runtime,crt-cpp-object,maintain,high,ev_6c03116da19af1710c6392a3ab9e6d61b410e90e351f7bedf9808ee5ec864b58
+0x0041BB60,runtime,crt-cpp-object,maintain,high,ev_d255dfe534c4690060a83bc274407fdfc544fccd9fb3bd9d33dac6fa20a71837
 0x0041BBE0,runtime,crt-cpp-tables,maintain,high,ev_d89a010c9bcdc8fbc2408b71d08b2d27c6c6771aea1bdf0233b2bdd1f5dfcba2
 0x0041BC10,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
 0x0041BC60,runtime,crt-cpp-terminal,dependency,high,ev_06745feb23b4c1b0c656b39548712dadb099e59d4a043230cbe90f4f93a44d61

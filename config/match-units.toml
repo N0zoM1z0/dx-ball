@@ -12625,3 +12625,77 @@ relocations = [
   { offset = 16, type = "DIR32", symbol = "$L333", addend = 0, target = 0x0041BD21 },
   { offset = 20, type = "DIR32", symbol = "$L334", addend = 0, target = 0x0041BD37 },
 ]
+
+[builds.runtime_cpp_object]
+source = "src/runtime_cpp_object.cpp"
+object = "build/exact/runtime_cpp_object.obj"
+inputs = ["src/runtime_cpp_object.cpp", "src/runtime_cpp_object.h", "src/runtime_cpp_handler.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h", "src/runtime_error_control.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
+[candidates.cpp-build-catch-object]
+build = "runtime_cpp_object"
+symbol = "_dxball_cpp_build_catch_object"
+target_address = 0x0041B960
+size = 510
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_OBJECT.md; complete frame.obj code and scope tables; original caller ABI and retained REA bytes"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 12, type = "DIR32", symbol = "$T949", addend = 0, target = 0x004201C8 },
+  { offset = 17, type = "DIR32", symbol = "__except_handler3", addend = 0, target = 0x0041C724 },
+  { offset = 28, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 102, type = "REL32", symbol = "?_ValidateRead@@YAHPBXI@Z", addend = 0, target = 0x0041E1D0 },
+  { offset = 121, type = "REL32", symbol = "?_ValidateWrite@@YAHPAXI@Z", addend = 0, target = 0x0041E1F0 },
+  { offset = 150, type = "REL32", symbol = "_dxball_cpp_adjust_pointer", addend = 0, target = 0x0041BBE0 },
+  { offset = 182, type = "REL32", symbol = "?_ValidateRead@@YAHPBXI@Z", addend = 0, target = 0x0041E1D0 },
+  { offset = 201, type = "REL32", symbol = "?_ValidateWrite@@YAHPAXI@Z", addend = 0, target = 0x0041E1F0 },
+  { offset = 226, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00416610 },
+  { offset = 259, type = "REL32", symbol = "_dxball_cpp_adjust_pointer", addend = 0, target = 0x0041BBE0 },
+  { offset = 289, type = "REL32", symbol = "?_ValidateRead@@YAHPBXI@Z", addend = 0, target = 0x0041E1D0 },
+  { offset = 308, type = "REL32", symbol = "?_ValidateWrite@@YAHPAXI@Z", addend = 0, target = 0x0041E1F0 },
+  { offset = 336, type = "REL32", symbol = "_dxball_cpp_adjust_pointer", addend = 0, target = 0x0041BBE0 },
+  { offset = 346, type = "REL32", symbol = "_memmove", addend = 0, target = 0x00416610 },
+  { offset = 359, type = "REL32", symbol = "?_ValidateRead@@YAHPBXI@Z", addend = 0, target = 0x0041E1D0 },
+  { offset = 374, type = "REL32", symbol = "?_ValidateWrite@@YAHPAXI@Z", addend = 0, target = 0x0041E1F0 },
+  { offset = 390, type = "REL32", symbol = "?_ValidateExecute@@YAHP6GHXZ@Z", addend = 0, target = 0x0041E210 },
+  { offset = 417, type = "REL32", symbol = "_dxball_cpp_adjust_pointer", addend = 0, target = 0x0041BBE0 },
+  { offset = 431, type = "REL32", symbol = "?_CallMemberFunction2@@YGXPAX00H@Z", addend = 0, target = 0x00418500 },
+  { offset = 446, type = "REL32", symbol = "_dxball_cpp_adjust_pointer", addend = 0, target = 0x0041BBE0 },
+  { offset = 460, type = "REL32", symbol = "?_CallMemberFunction1@@YGXPAX00@Z", addend = 0, target = 0x004184F0 },
+  { offset = 467, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 483, type = "REL32", symbol = "_dxball_cpp_terminate", addend = 0, target = 0x0041BC60 },
+  { offset = 500, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+]
+
+[[candidates.cpp-build-catch-object.data_comdats]]
+symbol = "$T949"
+target_address = 0x004201C8
+size = 12
+relocations = [
+  { offset = 4, type = "DIR32", symbol = "$L945", addend = 0, target = 0x0041BB39 },
+  { offset = 8, type = "DIR32", symbol = "$L946", addend = 0, target = 0x0041BB3F },
+]
+
+[units.cpp-destruct-exception-object]
+build = "runtime_cpp_object"
+symbol = "_dxball_cpp_destruct_exception_object"
+target_address = 0x0041BB60
+size = 113
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_OBJECT.md; complete frame.obj code and scope tables; original caller ABI and retained REA bytes"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 12, type = "DIR32", symbol = "$T965", addend = 0, target = 0x004201D8 },
+  { offset = 17, type = "DIR32", symbol = "__except_handler3", addend = 0, target = 0x0041C724 },
+  { offset = 28, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 68, type = "REL32", symbol = "?_CallMemberFunction0@@YGXPAX0@Z", addend = 0, target = 0x004184E0 },
+  { offset = 86, type = "REL32", symbol = "_dxball_cpp_terminate", addend = 0, target = 0x0041BC60 },
+  { offset = 103, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+]
+
+[[units.cpp-destruct-exception-object.data_comdats]]
+symbol = "$T965"
+target_address = 0x004201D8
+size = 12
+relocations = [
+  { offset = 4, type = "DIR32", symbol = "$L961", addend = 0, target = 0x0041BBAA },
+  { offset = 8, type = "DIR32", symbol = "$L962", addend = 0, target = 0x0041BBB2 },
+]
