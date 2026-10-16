@@ -1,7 +1,7 @@
 #include "runtime_float_render.h"
+#include "runtime_locale_state.h"
 #include <string.h>
 
-extern char __decimal_point;
 static char g_format = 0;
 static int g_magnitude = 0;
 static char g_round_expansion = 0;
@@ -27,7 +27,7 @@ char *dxball_crt_format_exponent(const double *value, char *buffer,
         *cursor++ = '-';
     if (precision > 0) {
         *cursor = cursor[1];
-        *++cursor = __decimal_point;
+        *++cursor = __decimal_point[0];
     }
     /* Cold conversion contributes one extra significant digit before the
        precision-sized fractional tail and its exponent suffix. */
@@ -88,7 +88,7 @@ char *dxball_crt_format_fixed(const double *value, char *buffer, int precision)
     }
     if (precision > 0) {
         dxball_crt_shift_float_text(cursor, 1);
-        *cursor++ = __decimal_point;
+        *cursor++ = __decimal_point[0];
         if (digits->decimal_position < 0) {
             if (g_format) {
                 zeros = -digits->decimal_position;

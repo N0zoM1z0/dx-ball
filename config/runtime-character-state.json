@@ -1,0 +1,92 @@
+{
+  "target_sha256": "756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba",
+  "records": [
+    {
+      "source": "src/runtime_ctype_state.c",
+      "header": "src/runtime_ctype_state.h",
+      "inputs": [
+        "src/runtime_ctype_state.c",
+        "src/runtime_ctype_state.h",
+        "src/runtime_multibyte.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ],
+      "object": "build/exact/runtime_ctype_state.obj",
+      "target_address": "0x423670",
+      "size": 522,
+      "writable": true,
+      "original_member": {
+        "header_offset": 623368,
+        "sha256": "442972f351472321229086dd80e7b4173dd309911ec369d61a116a363e0efbc1"
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-10T21-20-56.653Z-ctype-requests-1233305/00-read_bytes.json",
+      "evidence_id": "ev_84b9961d1896477a16328bb23a2f1fe39d45cf14bdf71e35bafc0536fae3fe6b",
+      "symbols": {
+        "__ctype": 8,
+        "__pwctype": 4,
+        "__pctype": 0
+      },
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "__ctype",
+          "addend": 2,
+          "target": 4339320
+        },
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "__ctype",
+          "addend": 2,
+          "target": 4339320
+        }
+      ]
+    },
+    {
+      "source": "src/runtime_locale_state.c",
+      "header": "src/runtime_locale_state.h",
+      "inputs": [
+        "src/runtime_locale_state.c",
+        "src/runtime_locale_state.h"
+      ],
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob0",
+        "/Oi-",
+        "/Gd",
+        "/ML",
+        "/Gy"
+      ],
+      "object": "build/exact/runtime_locale_state.obj",
+      "target_address": "0x42387c",
+      "size": 12,
+      "writable": true,
+      "original_member": {
+        "header_offset": 673712,
+        "sha256": "544b726b7b5fa34ef803e33a9156b15dffa2a4b9720e2c8a05617443925cc229"
+      },
+      "evidence_path": ".analysis/rea/runs/2026-10-11T05-36-42.465Z-requests-1784528/00-read_bytes.json",
+      "evidence_id": "ev_b5bf61f78c4eecb0f1c01d471e91e46c88a67cfa311621b1d2b0a62f8e8c4119",
+      "symbols": {
+        "___decimal_point_length": 8,
+        "___decimal_point": 4,
+        "___mb_cur_max": 0
+      },
+      "relocations": []
+    }
+  ],
+  "scope": "Complete writable ctype522 and nlsdata1 twelve-byte initial storage, including both pointer bindings. Independent data-source claims; outside the current CMake game and not counted as exact functions.",
+  "library": ".tools/msvc400/lib/libc.lib",
+  "library_sha256": "e5f0d0e6dd2e01dbb0005e9dd4764507b852ede9a824798f0970bc570966a7e3"
+}

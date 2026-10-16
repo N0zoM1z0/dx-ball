@@ -1,10 +1,10 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after heap checkpoint `b045343` and the SEH/CRT entry
-review below. Sixteen omitted entries are reconciled; the collision callback
-adds one complete C source/candidate. Current totals are 465 source entries,
-376 exacts and 89 complete candidates. Prior results/products are unchanged;
-all 249 semantic scopes retain their existing evidence.
+Updated October 16, 2026, after SEH checkpoint `927fab6` and the character/locale
+storage correction below. The genuine decimal-point array closes the complete
+310-byte exponent formatter without losing the 13 affected prior exacts.
+Current totals are 465 source entries, 377 exacts and 88 complete candidates.
+All 249 semantic scopes retain their existing evidence.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -52,24 +52,24 @@ An exact-function count is progress, not the completion criterion.
 | Provisional independent function inventory | 540 |
 | Parent-owned compiler fragments, counted separately | 24 |
 | Source-present independent entries | 465 |
-| Accepted exact functions | 376 |
-| Complete exact code bytes | 76,908 |
+| Accepted exact functions | 377 |
+| Complete exact code bytes | 77,218 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
-| Complete nonexact comparisons | 89 |
+| Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 0 |
 | Inventory entries without a source-present ledger row | 75 |
-| Nonexact origins | 34 authored / 54 runtime / 1 compiler-generated |
+| Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 240 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
-now lists all 89 maintained candidates.
+now lists all 88 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
-three physical Heap API wrappers. All 89 source-present nonexact entries have
+three physical Heap API wrappers. All 88 source-present nonexact entries have
 complete candidate comparisons. Another 75 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
@@ -130,6 +130,15 @@ dependency. These focused checks do not repeat the previous GUI control or
 integrate the standalone restored CRT entry. See
 [Windows heap startup](../research/WINDOWS_HEAP_STARTUP.md).
 
+The writable character table, two real pointer slots and small locale defaults
+now have complete source storage: 534 bytes/two bindings match. Numeric consumers
+use the original two-byte decimal-point array, closing exponent formatting's
+complete 310 bytes and six-byte suffix. All 13 affected old exacts remain. The
+multiplication C body is unchanged but its shared declaration context emits
+50 differences instead of 21; it remains a complete candidate. The 3,855 native
+C-locale consumer checks pass. See
+[character state and exact formatting](../research/exact/RUNTIME_CHARACTER_STATE.md).
+
 The collision-unwind callback now has complete natural C source. Its original
 34 bytes compare against a 31-byte VC4 body, so it remains nonexact; all 142
 original/VC4 emulated cdecl/effect cases agree. Native/i686 C90 compilation
@@ -187,14 +196,15 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
 - `config/functions.csv`: provisional entries and reconciled extents.
 - `config/function-origins.csv`: independent entry origin classification.
 - `config/runtime-x87-operation-tables.json`: twelve complete writable records, 480 bytes/72 bindings.
+- `config/runtime-character-state.json`: complete writable 522/12-byte ctype/locale source owners and two pointer bindings.
 - `config/runtime-x87-dispatch-constants.json`: separate complete 48-byte readonly source record and six qword consumers.
 - `config/compiler-fragments.csv`: parent-owned unwind/epilogue aliases with original ranges and evidence; excluded from independent counts.
 - `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv`:
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
 - `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 376 accepted comparisons/producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 89
+- `build/reports/exact-replay.json`: current 377 accepted comparisons/producers.
+- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 88
   candidates/producers. The directory date is historical; its contents are current.
 - Selected phase `verification.json` files and owner notes explain each adoption.
   Older phase reports are historical unless their inputs/products still agree.
@@ -223,6 +233,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 character/locale state | Two-byte decimal-point array; complete310-byte exponent exact;13 prior family exacts preserved;534 data bytes/two bindings;3,855 native consumer checks | [Character state](../research/exact/RUNTIME_CHARACTER_STATE.md); `.analysis/ctype-state-source-20261016/adoption.json` |
 | October 16 SEH/CRT entry review | Complete collision callback source; 31/34-byte candidate; 142 emulated ABI/effect cases; 16 omitted entries reconciled; prior 376 exacts unchanged | [SEH entries](../research/exact/RUNTIME_SEH_ENTRIES.md); `.analysis/crt-omitted-entries-20261016/adoption.json` |
 | October 16 Windows heap startup | Real Win32 defaults; early heap/allocations survive WinMain; three physical entry controls and native/VC4 tool checks pass; eight exact bodies unchanged | [Heap startup](../research/WINDOWS_HEAP_STARTUP.md); `.analysis/windows-heap-startup-20261016/adoption.json` |
 | October 16 VC4 owner linkage | Three corrected owner profiles; single LIBCMT; 37 objects reused; 52 linked bodies and read-only first-board controls pass; source/exact totals unchanged | [VC4 linkage](../research/VC4_OWNER_LINKAGE.md); `.analysis/legacy-owner-reuse-20261016/` |
@@ -297,6 +308,12 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
+- The decimal point is a two-byte array, not a scalar. Preserve its shared
+  declaration and element-zero reads. Exponent formatting now matches all 310
+  bytes and the full suffix with fixed/general exacts retained. Initial writable
+  ctype/locale storage is restored; remaining locale/BSS/physical integration
+  needs independent evidence. Multiplication remains678/50 after this context
+  change; do not select its older21-difference object against changed inputs.
 - The newly reconciled collision callback is complete C source but not exact.
   Its 31/34-byte result differs in mask-test width and caller-clobbered scheduling.
   Preserve that honest candidate; do not force volatile loads or add assembly.

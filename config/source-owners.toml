@@ -259,12 +259,12 @@ additional_inputs = ["src/runtime_float.h"]
 [owners.runtime_decimal]
 source = "src/runtime_decimal.c"
 header = "src/runtime_decimal.h"
-additional_inputs = ["src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+additional_inputs = ["src/runtime_float.h", "src/runtime_locale_state.h", "src/runtime_mantissa_arithmetic.h"]
 
 [owners.runtime_decimal_powers]
 source = "src/runtime_decimal_powers.c"
 header = "src/runtime_decimal.h"
-additional_inputs = ["src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+additional_inputs = ["src/runtime_float.h", "src/runtime_locale_state.h", "src/runtime_mantissa_arithmetic.h"]
 
 [owners.runtime_file_modes]
 source = "src/runtime_file_modes.c"
@@ -508,17 +508,17 @@ additional_inputs = []
 [owners.runtime_float_render]
 source = "src/runtime_float_render.c"
 header = "src/runtime_float_render.h"
-additional_inputs = ["src/runtime_float_format.h", "src/runtime_decimal_output.h", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+additional_inputs = ["src/runtime_decimal.h", "src/runtime_decimal_output.h", "src/runtime_float.h", "src/runtime_float_format.h", "src/runtime_locale_state.h", "src/runtime_mantissa_arithmetic.h"]
 
 [owners.runtime_float_output]
 source = "src/runtime_float_output.c"
 header = "src/runtime_float_render.h"
-additional_inputs = ["src/runtime_float_format.h", "src/runtime_decimal_output.h", "src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+additional_inputs = ["src/runtime_decimal.h", "src/runtime_decimal_output.h", "src/runtime_float.h", "src/runtime_float_format.h", "src/runtime_locale_state.h", "src/runtime_mantissa_arithmetic.h"]
 
 [owners.runtime_float_format]
 source = "src/runtime_float_format.c"
 header = "src/runtime_float_format.h"
-additional_inputs = ["src/runtime_float.h", "src/runtime_fatal.h", "src/runtime_lowio_read.h", "src/runtime_lowio.h", "src/runtime_file_modes.h", "src/state_types.h", "src/termination.h", "src/runtime_case_conversion.h"]
+additional_inputs = ["src/runtime_case_conversion.h", "src/runtime_fatal.h", "src/runtime_file_modes.h", "src/runtime_float.h", "src/runtime_locale_state.h", "src/runtime_lowio.h", "src/runtime_lowio_read.h", "src/state_types.h", "src/termination.h"]
 
 [owners.runtime_float_format_state]
 source = "src/runtime_float_format_state.c"
@@ -563,7 +563,7 @@ additional_inputs = ["src/runtime_multibyte.h"]
 [owners.runtime_decimal_output]
 source = "src/runtime_decimal_output.c"
 header = "src/runtime_decimal_output.h"
-additional_inputs = ["src/runtime_decimal.h", "src/runtime_mantissa_arithmetic.h", "src/runtime_float.h"]
+additional_inputs = ["src/runtime_decimal.h", "src/runtime_float.h", "src/runtime_locale_state.h", "src/runtime_mantissa_arithmetic.h"]
 
 [owners.runtime_multibyte]
 source = "src/runtime_multibyte.c"
@@ -604,3 +604,13 @@ additional_inputs = ["src/runtime_arguments.h", "src/runtime_fatal.h", "src/runt
 source = "src/runtime_seh.c"
 header = "src/runtime_seh.h"
 additional_inputs = ["src/state_types.h"]
+
+[owners.runtime_ctype_state]
+source = "src/runtime_ctype_state.c"
+header = "src/runtime_ctype_state.h"
+additional_inputs = ["src/runtime_multibyte.h"]
+
+[owners.runtime_locale_state]
+source = "src/runtime_locale_state.c"
+header = "src/runtime_locale_state.h"
+additional_inputs = []

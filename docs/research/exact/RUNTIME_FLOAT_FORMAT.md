@@ -1,5 +1,10 @@
 # Float formatting callbacks
 
+The October 16 [locale-state correction](RUNTIME_CHARACTER_STATE.md) replaces
+the scalar decimal-point declaration with the original two-byte array and
+element-zero reads. All affected callback exacts remain; the force-point
+candidate retains its complete 101-byte/four-difference result.
+
 The local v1.07 executable and complete pinned VC4 CRT sections establish eight
 source bodies. Seven match every byte after every actual relocation:
 

@@ -2,14 +2,13 @@
 #define DXBALL_RUNTIME_DECIMAL_H
 
 #include "runtime_mantissa_arithmetic.h"
+#include "runtime_locale_state.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Original locale/classification dependencies; supplied by the runtime. */
-extern int __mb_cur_max;
-extern char __decimal_point;
 extern unsigned short *_pctype;
 int _isctype(int character, int mask);
 

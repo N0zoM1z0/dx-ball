@@ -1,10 +1,11 @@
 # Float rendering and output
 
 Eight complete CRT bodies are recovered from the local executable, fresh REA
-assembly/pseudocode and whole pinned VC4 sections. Six match every byte:
+assembly/pseudocode and whole pinned VC4 sections. Seven match every byte:
 
 | Entry | Body | Bytes |
 | --- | --- | ---: |
+| 00418EB0 | Exponent formatting | 310 |
 | 00418FF0 | Fixed formatting | 251 |
 | 004190F0 | General formatting | 176 |
 | 004191A0 | General-to-exponent mode wrapper | 43 |
@@ -12,10 +13,12 @@ assembly/pseudocode and whole pinned VC4 sections. Six match every byte:
 | 00419270 | Overlap-safe text shifting | 43 |
 | 0041D690 | Floating output record | 103 |
 
-Exponent formatting remains310 bytes/2 differences, both in suffix-address
-addition scheduling. Binary64-to-serialized80 conversion remains185/187 bytes
-with75 differences. These are candidates, not exact claims. Every actual
-relocation and the complete six-byte `e+000` literal is attested.
+The original two-byte decimal-point array declaration now closes exponent
+formatting's suffix-address scheduling difference. Its complete 310 bytes and
+six-byte `e+000` literal match while fixed/general and all 13 affected preceding
+exacts remain. See [character and locale state](RUNTIME_CHARACTER_STATE.md).
+Binary64-to-serialized80 conversion remains185/187 bytes with75 differences;
+that body remains a candidate. Every actual relocation is attested.
 
 The output routine takes double by value, not the argument-free prototype shown
 by the decompiler. E/F formatters return the original buffer. Correcting those

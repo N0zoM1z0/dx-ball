@@ -191,7 +191,7 @@ int _strgtold12(DxBallExtended12 *value, const char **end, const char *text,
                 state = INTEGER;
                 goto reprocess;
             }
-            if (character == __decimal_point) {
+            if (character == __decimal_point[0]) {
                 state = AFTER_POINT;
             } else if (character == '+') {
                 sign = 0;
@@ -211,7 +211,7 @@ int _strgtold12(DxBallExtended12 *value, const char **end, const char *text,
                 state = INTEGER;
                 goto reprocess;
             }
-            if (character == __decimal_point) {
+            if (character == __decimal_point[0]) {
                 state = FRACTION;
             } else {
                 switch (character) {
@@ -234,7 +234,7 @@ int _strgtold12(DxBallExtended12 *value, const char **end, const char *text,
                 state = INTEGER;
                 goto reprocess;
             }
-            if (character == __decimal_point) {
+            if (character == __decimal_point[0]) {
                 state = AFTER_POINT;
             } else if (character == '0') {
                 state = LEADING_ZERO;
@@ -254,7 +254,7 @@ int _strgtold12(DxBallExtended12 *value, const char **end, const char *text,
                 }
                 character = *cursor++;
             }
-            if (character == __decimal_point) {
+            if (character == __decimal_point[0]) {
                 state = FRACTION;
             } else {
                 switch (character) {

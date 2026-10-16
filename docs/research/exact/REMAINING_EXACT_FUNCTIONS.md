@@ -1,16 +1,21 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after the SEH collision callback and CRT entry review.
-Accepted totals are **376 functions / 76,908 code bytes / 244 metadata bytes**.
-There are **89 complete nonexact comparisons: 34 authored, 54 runtime and one
+Updated October 16, 2026, after character/locale storage and exact exponent recovery.
+Accepted totals are **377 functions / 77,218 code bytes / 244 metadata bytes**.
+There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 89 are all currently source-present nonexact entries. The eight allocator
+These 88 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 75 of the 540 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
+
+The original two-byte decimal-point array and shared declarations close all310
+exponent-formatting bytes and the six-byte suffix, preserving all13 affected
+prior exacts. Multiplication's unchanged C body emits50 differences through the
+new declaration context. See [character state](RUNTIME_CHARACTER_STATE.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -77,7 +82,6 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | --- | ---: | ---: | ---: |
 | `crt-flush-output` | 328 | 328 | 1 |
 | `crt-commit-descriptor` | 111 | 111 | 2 |
-| `crt-format-exponent` | 310 | 310 | 2 |
 | `crt-open-shared-descriptor` | 1053 | 1053 | 2 |
 | `crt-read-stream` | 326 | 326 | 2 |
 | `crt-register-onexit` | 121 | 121 | 2 |
@@ -101,13 +105,13 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-bounded-byte-count` | 44 | 44 | 15 |
 | `crt-decimal-digits96` | 232 | 232 | 20 |
 | `crt-fseek` | 153 | 153 | 20 |
-| `crt-multiply-extended12` | 678 | 678 | 21 |
 | `crt-raise-float-exception` | 876 | 876 | 22 |
 | `crt-write-descriptor` | 555 | 555 | 22 |
 | `crt-initialize-lowio` | 467 | 467 | 32 |
 | `crt-unwind-handler` | 34 | 31 | 34 |
 | `crt-right-mantissa96` | 54 | 48 | 35 |
 | `crt-left-mantissa96` | 62 | 50 | 47 |
+| `crt-multiply-extended12` | 678 | 678 | 50 |
 | `crt-strncpy` | 36 | 58 | 56 |
 | `crt-strncat` | 49 | 69 | 68 |
 | `crt-double-to-extended` | 187 | 185 | 75 |

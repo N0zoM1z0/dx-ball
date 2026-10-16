@@ -1,9 +1,9 @@
 #include "runtime_float_format.h"
 #include "runtime_fatal.h"
 #include "runtime_case_conversion.h"
+#include "runtime_locale_state.h"
 #include <string.h>
 
-extern char __decimal_point;
 
 typedef struct DxBallCrtDoubleStorage {
     double value;
@@ -34,7 +34,7 @@ void dxball_crt_force_decimal_point(char *buffer)
         } while ((__mb_cur_max > 1 ? _isctype(*buffer, 4) : _pctype[(int)*buffer] & 4));
     }
     carried = *buffer;
-    *buffer++ = __decimal_point;
+    *buffer++ = __decimal_point[0];
     do {
         /* Insertion backing includes this defined spare byte after the NUL. */
         next = *buffer;
@@ -50,7 +50,7 @@ void dxball_crt_crop_float_zeros(char *buffer)
     size_t cursor = (size_t)(void *)buffer;
     size_t end;
     char character;
-    while (*(char *)cursor && *(char *)cursor != __decimal_point)
+    while (*(char *)cursor && *(char *)cursor != __decimal_point[0])
         ++cursor;
     end = cursor++;
     if (*(char *)end == 0)
@@ -61,7 +61,7 @@ void dxball_crt_crop_float_zeros(char *buffer)
     --cursor;
     while (*(char *)cursor == '0')
         --cursor;
-    if (*(char *)cursor == __decimal_point)
+    if (*(char *)cursor == __decimal_point[0])
         --cursor;
     /* A leading decimal point can leave an address cursor before the buffer.
        It is incremented back into the object before forming a write pointer. */

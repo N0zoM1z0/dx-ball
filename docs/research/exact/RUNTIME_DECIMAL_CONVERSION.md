@@ -8,8 +8,15 @@ now exact; the other three retain complete nonexact comparisons below.
 | --- | ---: | ---: |
 | Numeric digits | 232/232 | 20 |
 | Parser and embedded tables | 1851/1871 | 1662 |
-| Multiplication | 678/678 | 21 |
+| Multiplication | 678/678 | 50 |
 | Decimal scaling | 123/123 | 0 |
+
+The October 16 [locale-storage correction](RUNTIME_CHARACTER_STATE.md) restores
+the genuine decimal-point array and element-zero reads. Scaling stays exact;
+the parser retains 1662 differences with four commuted equality CMPs. The
+multiplication body is unchanged C, but its shared declaration context now
+emits 50 differences instead of 21. It remains nonexact. Earlier checkpoints
+below retain their historical producer scopes.
 
 Scaling restores the typed12-byte table cursor: initialize eight records before
 the selected table, then advance seven records per three-bit exponent group.
