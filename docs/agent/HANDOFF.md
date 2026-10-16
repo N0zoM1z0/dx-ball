@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after complete dependency receipt and height reviews.
+Updated October 17, 2026, after the CRT suffix ownership/continuation extent review.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,18 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+The [CRT suffix review](../research/exact/CRT_SUFFIX_OWNERSHIP.md) checks 39,132
+declared text bytes from416610. Its193 inventory/fragment gaps total2330 bytes;
+all non-CC bytes belong to seven complete approved CRT sections. The eight-byte
+VC20XC00 marker is data. Continuation transfer at4184A0 now covers its full53-byte
+COMDAT, correcting46 by including the seven-byte fallback epilogue at4184CE.
+No live edge, source, ABI or exact acceptance is invented. After correction,
+2323 gap bytes comprise814 matched CRT bytes,8 signature bytes and1501 remaining
+CC bytes. No residual non-CC byte lies outside the matched owners in this scope;
+this is not a final entry count or authored denominator. Current78-entry receipt
+coverage has the corrected extent. No compiler, provider, build, game or replay
+runs; all code/artifact and acceptance identities remain unchanged.
 
 The [dependency receipt reconciliation](../research/exact/CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
 now covers all 78 current no-source entries. Five existing original trnsctrl

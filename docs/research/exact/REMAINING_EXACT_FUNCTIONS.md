@@ -23,6 +23,9 @@ now gives all78 current no-source entries complete original receipts; it adds no
 source, exact or origin claim. The [height correspondence](ROTATION_PIXEL_ADDRESS.md#height-helper-correspondence)
 accounts for all63 instructions and identifies only two bank-address producers
 as its extent difference; the maintained comparison remains unchanged.
+The [CRT suffix ownership review](CRT_SUFFIX_OWNERSHIP.md) accounts for every
+non-CC gap byte through existing complete CRT sections and corrects one
+46→53-byte runtime extent. It adds no source, exact or independent entry.
 
 The original two-byte decimal-point array and shared declarations close all310
 exponent-formatting bytes and the six-byte suffix, preserving all13 affected

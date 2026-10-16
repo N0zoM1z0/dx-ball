@@ -100,7 +100,8 @@ connects the five existing C++ handler/catch/translator proofs. All 78 current
 no-source entries now have complete function/section/group or import receipts.
 No region association alone promotes source presence, origin or exactness. The
 only unknown origin is the already source-present `0x40CC20` no-op. Current
-coverage is in `.analysis/crt-handler-entry-coverage-20261017/coverage.json`.
+coverage is in `.analysis/crt-suffix-ownership-20261017/coverage.json`, including
+the [continuation extent correction](CRT_SUFFIX_OWNERSHIP.md).
 The earlier59/19 and73/5 artifacts remain unchanged as historical evidence.
 
 ## Complete receipt coverage
@@ -135,6 +136,9 @@ original campaign behavior. Source475 / exact380 / complete candidates95 and
 the current image remain unchanged. Private
 `.analysis/crt-handler-entry-coverage-20261017/verification.json` retains the
 reused receipt identities, five original spans and all current artifact hashes.
+The subsequent [suffix review](CRT_SUFFIX_OWNERSHIP.md) corrects the continuation
+entry from46 to53 bytes, including its existing fallback tail. The complete CRT
+section receipt already covered those bytes; source and acceptance remain fixed.
 
 ## Five recovered existing identities
 
