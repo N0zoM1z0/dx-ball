@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Observe 50 real clears and diagnose the unresolved terminal storage contract."""
+"""Observe 50 real clears and compare terminal routing and adjacent storage."""
 import argparse
 import json
 import os
@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
-from windows_runtime import digest, environment, launch, prepare, stop, verified_originals
+from windows_runtime import PROFILES, digest, environment, launch, prepare, stop, verified_originals
 from test_windows_runtime import command, game_window
 from test_windows_play import (FLAGS, READER, Observer, board_file, capture_ready,
                                click, input_identities, reader_identity)
@@ -63,14 +63,23 @@ def observe(profile, env, reports):
             observer.wait('editor-control-released', lambda s: s['control_pressed'] == 0)
             click(env, 37, 392)
             observer.wait('editor-tile1-selected', lambda s: s['editor_selected_tile'] == 1)
+            observer.wait('editor-choice-released', lambda s: s['mouse_action'] == 0)
             for index in range(50):
                 observer.wait('editor-board-' + str(index), lambda s: s['board_index'] == index)
                 command(['xdotool', 'key', 'BackSpace'], env)
                 observer.wait('editor-empty-' + str(index),
                               lambda s: bytes.fromhex(s['board_tiles']) == bytes(400))
-                click(env, 215, 327)
-                observer.wait('editor-brick-' + str(index),
-                              lambda s: bytes.fromhex(s['board_tiles']) == bytes(brick))
+                # Use the same observed CTRL paint/release sequence as the round
+                # control; a short click can finish while a slow redraw runs.
+                command(['xdotool', 'keydown', 'ctrl', 'mousemove', '215', '327', 'mousedown', '1'], env)
+                try:
+                    observer.wait('editor-control-held-' + str(index), lambda s: s['control_pressed'] == 1)
+                    observer.wait('editor-brick-' + str(index),
+                                  lambda s: bytes.fromhex(s['board_tiles']) == bytes(brick))
+                finally:
+                    command(['xdotool', 'mouseup', '1', 'keyup', 'ctrl'], env)
+                observer.wait('editor-paint-released-' + str(index),
+                              lambda s: s['control_pressed'] == 0 and s['mouse_action'] == 0)
                 if index < 49:
                     command(['xdotool', 'key', 'equal'], env)
             command(['xdotool', 'key', 's'], env)
@@ -151,7 +160,10 @@ def observe(profile, env, reports):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
+    parser.add_argument('--profile', choices=('original', *PROFILES),
+                        help='run only this profile; otherwise run the three historical controls')
+    parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
+                        help='Xvfb depth; 24 renders the original palette correctly here')
     args = parser.parse_args()
     limit_cpu()
     if os.environ.get('DXBALL_TERMINAL_DISPLAY') != '1':
@@ -161,7 +173,7 @@ def main():
                         '-o', str(READER)], check=True, timeout=60)
         lock.close()
         env = dict(os.environ, DXBALL_TERMINAL_DISPLAY='1')
-        return subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x8',
+        return subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
                                str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()),
                                *sys.argv[1:]], env=env, timeout=1140).returncode
     lock = session_lock()
@@ -171,7 +183,8 @@ def main():
     aggregate.unlink(missing_ok=True)
     (reports / 'failure.json').unlink(missing_ok=True)
     observations = []
-    for profile in ((args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')):
+    profiles = (args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')
+    for profile in profiles:
         try:
             observations.append(observe(profile, environment(), reports))
         except Exception as error:
@@ -180,13 +193,16 @@ def main():
                 'inputs': identities(), 'reader': reader_identity()}, indent=2) + '\n')
             raise
     passed = all(row['status'] == 'pass' for row in observations)
-    aggregate.write_text(json.dumps({'status': 'pass' if passed else 'mismatch',
+    report = {'status': 'pass' if passed else 'mismatch',
+        'display': 'Xvfb 640x480x' + str(args.display_depth),
         'observations': observations, 'inputs': identities(), 'reader': reader_identity(),
         'limitations': ['50 editor-created single-brick boards, not the original campaign.',
                         'Original clock bytes vary; a scoped storage pattern is compared.',
                         'A routing pass alone does not establish terminal storage fidelity.',
-                        'No target writes, hooks or complete-frame pixel comparison.']},
-        indent=2) + '\n')
+                        'No target writes, hooks or complete-frame pixel comparison.']}
+    if 'vc40-restored-crt' in profiles:
+        report['restored_crt_build_sha256'] = digest(ROOT / 'build/vc40-restored-crt/build.json')
+    aggregate.write_text(json.dumps(report, indent=2) + '\n')
     print('Terminal storage diagnostic: ' + ('pass' if passed else 'mismatch'), flush=True)
     return 0 if passed else 1
 

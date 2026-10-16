@@ -7,6 +7,11 @@ guided the shared storage reconstruction; an independent x86 copy driver also
 checks nonzero state and both overlap directions. This closes the collected
 storage fixture, not the original campaign or all possible terminal states.
 
+The [restored-CRT terminal check](RESTORED_CRT_TERMINAL_FLOW.md) covers the same
+fixture in the current 19-member delivery image, with 50 real clears and three
+additional original/current VC4 nonzero-storage boundary cases. Earlier controls
+below retain their original scope and counts.
+
 ## Reproduce the diagnostic
 
 After importing the pinned original and building both Windows products:

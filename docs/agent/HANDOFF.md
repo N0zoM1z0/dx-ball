@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the restored-CRT board transition.
+Updated October 17, 2026, after the restored-CRT terminal boundary check.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -24,6 +24,11 @@ Current real-input evidence for this same 19-member image is:
   load with 222 bricks and normal exit. The first short-click failure is retained;
   the driver now synchronizes CTRL painting and tolerates a missed zero-brick
   sample before independently checking the complete destination board.
+- [Terminal boundary](../research/RESTORED_CRT_TERMINAL_FLOW.md): 1,608 states,
+  50 custom single-brick clears, menu/index50 with lives3/score500, complete
+  adjacent-storage fixture and normal exit. Three fixed nonzero-storage
+  original/current VC4 instruction cases check both overlap directions,
+  initialization, whole-image writes and ABI. No game recompilation.
 
 All 49 originals remain unchanged. These selected runs reuse the current game
 and reader without compilation; other profiles are not rerun. Selected source
