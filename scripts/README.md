@@ -14,7 +14,7 @@ Run Python entry points through `scripts/repo-python` from the repository root.
 | Compare selected complete functions | `replay-exact-units.py --unit UNIT` |
 | Check source and acceptance ledgers | `validate-tracking.py` |
 | Refresh public progress | `progress.py` |
-| Preview disposable local products | `clean-local.py` |
+| Preview disposable products and verified raw/gzip evidence deduplication | `clean-local.py` |
 
 See [build and play](../docs/BUILD.md), [REA in practice](../docs/REA.md), and
 [matching](../docs/MATCHING.md) for commands in context. Choose an affected

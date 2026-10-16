@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Remove superseded probes and redundant REA aliases; preserve archived evidence."""
 import argparse
+import gzip
 import hashlib
 import json
 import os
@@ -19,6 +20,21 @@ def digest(path):
 
 def regular(path):
     return path.is_file() and not path.is_symlink()
+
+
+def sealed_carrier(path, expected):
+    """Verify the sealed bytes, then return the actual carrier and its digest."""
+    if path.exists() or path.is_symlink():
+        if regular(path) and path.resolve() == path and digest(path) == expected:
+            return path, expected
+    else:
+        compressed = path.with_name(path.name + '.gz')
+        if regular(compressed) and compressed.resolve() == compressed:
+            with gzip.open(compressed, 'rb') as stream:
+                actual = hashlib.file_digest(stream, 'sha256').hexdigest()
+            if actual == expected:
+                return compressed, digest(compressed)
+    raise RuntimeError('Sealed checkpoint input changed: ' + str(path))
 
 
 def plan():
@@ -58,15 +74,17 @@ def plan():
         for name, hashed in sorted(declared.items()):
             path = seal.parent / name
             path.resolve().relative_to(seal.parent.resolve())
-            if not regular(path) or path.resolve() != path or digest(path) != hashed:
-                raise RuntimeError('Sealed checkpoint input changed: ' + str(path))
+            # A prior retention pass may have replaced a raw snapshot with a
+            # verified gzip carrier. Its decompressed bytes obey the old seal;
+            # hardlink only identical physical carriers, using their own hash.
+            path, carrier_hash = sealed_carrier(path, hashed)
             if path in sealed_paths:
                 continue
             sealed_paths.add(path)
-            key = (path.stat().st_size, hashed)
+            key = (path.stat().st_size, carrier_hash)
             keeper = closed_records.setdefault(key, path)
             if path != keeper and not os.path.samefile(path, keeper):
-                actions.append(('hardlink', path, keeper, hashed))
+                actions.append(('hardlink', path, keeper, carrier_hash))
     # Root aliases are mutable: never hardlink them to an immutable archive.
     for path in sorted((ROOT / '.analysis/rea').glob('[0-9][0-9]-*.json')):
         if not regular(path):

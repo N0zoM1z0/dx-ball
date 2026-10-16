@@ -253,25 +253,33 @@ before overwriting them, including recursively consumed headers.
 
 ### Cleanup state
 
-The maintained worktree was clean before the handoff edits. No source
-reformatting, trial promotion, evidence deletion or compiler rerun was needed.
-The long handoff and remaining-functions history were condensed; their complete
-previous versions remain at the source checkpoint linked above.
+The allocator trials are closed. Their unique sources, objects, compiler
+receipts and comparisons remain in `.analysis/allocator-complete-owner-20261016/`.
+The maintained shared source and all previous accepted objects were restored.
 
-The cleanup dry run stopped before mutation because a historical seal names
-a raw snapshot that has already been compressed:
-`.analysis/checkpoints/exact-midi-lifecycle-283-131/.analysis/exact-midi-lifecycle/before/.analysis/rea/dxball.snapshot.json`.
-The `.gz` exists and its decompressed SHA-256 matches the seal:
+`clean-local.py` now accepts a missing raw sealed file only when its canonical
+regular `.gz` carrier decompresses to the declared SHA-256. Deduplication uses
+the compressed carrier's own bytes and SHA, never the raw seal as a compressed
+identity. A changed or symlinked raw path cannot be bypassed with a gzip copy.
+Eight bounded checks cover valid raw/gzip, changed raw/gzip, invalid gzip,
+symlinked raw/gzip and missing carriers.
+
+The previously blocking compressed snapshot remains intact at
+`.analysis/checkpoints/exact-midi-lifecycle-283-131/.analysis/exact-midi-lifecycle/before/.analysis/rea/dxball.snapshot.json.gz`.
+Its decompressed SHA-256 remains
 `dc6ac7d79539cb10b212b70d4634f4dde43be101436e91d67a12283f9f6cb3ac`.
-This is a raw-path assumption in `clean-local.py`, not evidence of changed
-snapshot contents. No `--apply` was run. Leave the archive intact; account for
-verified compressed carriers before attempting that cleanup again.
+
+After preview, `clean-local.py --evidence-only --apply` completed 128 archived
+hardlink replacements and removed 56 verified redundant root REA aliases.
+Journal: `.analysis/cleanup/20261016T040714413096Z.json`. Allocated analysis storage
+fell by about 289 MiB; `build/` remained unchanged. All 82 current exact producer
+objects and their inputs were hash-verified again, and tracking still passes
+543 / 457 / 367. No probe product or unique trial carrier was deleted.
 
 Preserve unique trial sources, receipts, originals and accepted/current products.
-Many old carriers have verified `.gz` fallbacks; read those instead of rerunning
-producers. Keep mutable current products inode-independent from archives.
-Preview exact targets before cleanup; do not recursively copy/delete evidence
-trees or tool caches.
+Read verified `.gz` fallbacks instead of rerunning producers. Keep mutable current
+products inode-independent from archives. Preview exact targets before cleanup;
+do not recursively copy/delete evidence trees or tool caches.
 
 ## Resume and publish
 
