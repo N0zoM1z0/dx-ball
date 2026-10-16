@@ -53,3 +53,57 @@ fixture selection, input-ledger reversal and complete image verification.
 Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. There is no full replay or port work. Heavy operations
 remain serial under CPU 35%, memory high 640 MiB / maximum 768 MiB.
+
+## Complete renderer correspondence
+
+A subsequent review pairs all 365 original/current instructions through their
+actual operands, the established 424-byte frame map and complete relocation
+bindings. All 22 direct/indirect calls agree; all 26 branch destinations map to
+the same instruction ordinal. No partial-byte mask establishes this result.
+
+| Instruction class | Paired instructions | Remaining difference |
+| --- | ---: | --- |
+| Ordinary operations | 285 | Operand identity after frame/branch translation |
+| Eight sprite-bank address producers | 64 | Register allocation and equivalent scaled-address decomposition |
+| Signed column-loop guard | 3 | Transposed operands and JLE/JGE |
+| Unsigned source-column rollover | 3 | Transposed operands and JB/JA |
+| Two row/pitch products | 4 | Commuted low-32-bit multiplication |
+| Two row-origin updates | 6 | FLD coordinate/FADD step versus FLD step/FADD coordinate |
+| Total | 365 | Complete instruction inventory |
+
+Four bit-vector queries prove equal bank effective addresses, signed and
+unsigned branch predicates, and low-32-bit products for all 32-bit inputs.
+The eight address producers have identical graphs on each side, so one query
+covers their repeated arithmetic. Equal addresses imply equal loads from stable
+memory. Four separate expression mutants produce counterexamples. A CFG walk
+also checks 36 scratch-register boundaries: the differing EAX/ECX/EDX values
+are overwritten or leave through the normal void/cdecl/stdcall boundary before
+being consumed. Source and destination memory remain ordinary mapped storage;
+concurrent writes, arbitrary frame aliasing, flags residue and raw frame-pointer
+identity are outside this correspondence.
+
+The row additions transpose two finite operands and store the same coordinate.
+This explanation uses the established normal masked floating-point environment;
+it does not claim unrestricted NaN payload, status residue or trap-location
+equivalence. There is no missing arithmetic, call, guard or branch in this
+bounded correspondence. Frame/register allocation, original producer context
+and the listed operand scheduling still prevent an exact result.
+
+One isolated source control reverses only the two row-origin addition
+expressions to follow the original load order. It emits identical complete raw
+functions and relocation bindings for all six owner functions; their resolved
+comparisons are also unchanged. Reject the control and do not repeat this
+spelling trial. Canonical source, objects, image, ledgers and counts stay
+unchanged. No native build/test, delivery relink, game or full replay follows
+that result.
+
+The first array-valued mutant query reaches its explicit five-second solver
+limit after proving the unmutated load equality. That incomplete attempt is
+retained. The completed proof compares the actual effective-address expressions
+directly and obtains all four UNSAT/four SAT results; it does not treat timeout
+as evidence of equivalence. No compiler or provider repeats for this correction.
+
+Private `.analysis/rotation-row-origin-order-20261017/` retains the complete
+instruction map, original dossier identity, address/guard/product queries,
+scratch-boundary walks, rejected source/object and six-function comparisons.
+This is analysis evidence, not a new exact or semantic acceptance.

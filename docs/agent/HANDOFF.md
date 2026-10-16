@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the rotation pixel-address recovery.
+Updated October 17, 2026, after the complete renderer correspondence review.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,19 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `844247ba7095eedbf99cc7e3bfeaf3ec43a4d232c1cb6b7fcfc2e68de8ed42be`.
+
+The [complete renderer correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md#complete-renderer-correspondence)
+pairs all365 instructions:285 ordinary role/operand pairs and80 instructions in
+explicit address/guard/product/row-add groups. All22 calls and26 branch targets
+correspond. Four bit-vector equalities and four counterexample controls pass;
+36 scratch-register boundaries are checked. The claim is bounded to ordinary
+stable memory and finite normal FP values, not unrestricted CPU equivalence.
+One two-expression row-add source control emits identical raw bodies/bindings
+for all six functions and is rejected. Do not repeat this spelling trial.
+Canonical source, image and ledgers stay unchanged; no runtime check or relink
+follows it. The initial array-valued solver timeout is retained separately from
+the completed effective-address proof. No missing operation is found in this
+bounded renderer inventory; original frame/register/producer context remains open.
 
 The [rotation address recovery](../research/exact/ROTATION_PIXEL_ADDRESS.md)
 forms each integer row-plus-column offset before adding the pixel base, as in

@@ -2,6 +2,9 @@
 
 The later [pixel-address recovery](ROTATION_PIXEL_ADDRESS.md) restores two
 integer offset/add-base orders without changing the frame or totals below.
+Its [complete instruction correspondence](ROTATION_PIXEL_ADDRESS.md#complete-renderer-correspondence)
+now accounts for all365 instructions under the explicit memory/FP scope; the
+two-expression row-add control emits identical code and is closed.
 
 The complete renderer at `0x4026A0` still compares at **1466/1572 bytes with
 1466 differing positions**. The October 17 review accounts for all 424 bytes
