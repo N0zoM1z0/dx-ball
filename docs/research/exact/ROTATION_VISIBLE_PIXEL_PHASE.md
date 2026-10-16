@@ -1,5 +1,9 @@
 # Rotation visible-pixel locals
 
+The later [frame-role review](ROTATION_FRAME_ROLES.md) accounts for all 424
+frame bytes and closes one per-axis round/truncate record model without
+changing this maintained source or its complete comparisons.
+
 The renderer's four round/truncate locals are now declared in the visible,
 nonzero-pixel branch that consumes them. Their names, types and declaration
 order stay the same. The destination pointer already belongs to this branch.

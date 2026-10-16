@@ -3,6 +3,9 @@
 The goal is nearly 100% restoration of English DX-Ball v1.07 source and a
 rebuildable, playable game. Prioritize complete game flows and exact restoration.
 The user's first priority is recovering all functions as exactly as possible.
+The user permits the 19 explicit original CRT members in the restored-CRT
+delivery. Keep those dependencies documented and prioritize authored game
+functions; removing the remaining x87/SEH runtime members is not a delivery gate.
 Finish exact reconstruction first, then build and verify a playable game with
 the original Visual C++ 4.0 compiler. Resume platform ports only after that.
 Advance complete-function comparisons with focused checks; defer long full-game

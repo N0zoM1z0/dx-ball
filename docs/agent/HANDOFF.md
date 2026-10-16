@@ -1,6 +1,23 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after real editor persistence through the source CRT.
+Updated October 17, 2026, after the user's CRT dependency decision and a bounded
+rotation-frame review. The user permits retaining the 19 explicit original CRT
+members in the final VC4 delivery; prioritize authored function exactness.
+Removing those runtime dependencies is not a delivery gate. Their source/origin
+gaps remain recorded, without changing any function claim or declaring the game
+complete.
+
+The rotation renderer's 424-byte original/current frames now have complete
+storage-role coverage: 150 frame-reference instructions each, no unassigned
+bytes. The original's two intermediate doubles use lower temporary homes;
+current named intermediates occupy upper homes instead (344+80 versus 360+64).
+Original round/truncate values form adjacent eight-byte pairs for each axis.
+One isolated pair-record compilation gains no exact and loses two projection
+matches; reject it. Canonical source, products and all ledgers remain unchanged.
+Only the six rotation functions are compared; no full replay, provider or game
+run occurs. See [the frame review](../research/exact/ROTATION_FRAME_ROLES.md).
+
+The preceding checkpoint verified real editor persistence through the source CRT.
 Totals remain 475 source entries, 380 exacts and 95 complete candidates. The
 current 19-member `vc40-restored-crt` image passes the existing ball/pause/editor
 flow with 159 read-only states. Real CTRL painting and S save all 20,000 expected
