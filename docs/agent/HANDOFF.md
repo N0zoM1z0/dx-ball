@@ -1,71 +1,54 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after complete effect-sprite path correspondence.
-The user permits retaining the 19 explicit original CRT
-members in the final VC4 delivery; prioritize authored function exactness.
-Removing those runtime dependencies is not a delivery gate. Their source/origin
-gaps remain recorded, without changing any function claim or declaring the game
-complete.
+Updated October 17, 2026, after the restored-CRT board transition.
+The user permits retaining the 19 explicit original CRT members in final VC4
+delivery. Prioritize authored function exactness; removing those runtime
+dependencies is not a delivery gate. Their remaining source/origin gaps stay
+recorded. The reconstruction objective is unfinished and ports remain deferred.
 
-The three effect-sprite candidates now have complete symbolic path comparisons:
-300 instructions on each side across the three entries, six paths per entry, with matching
-DirectDraw arguments, mutable-RECT callback effects, ordered public writes and
-ABI restoration in the declared ordinary-memory model. All 34 adopted SMT
-queries pass, including six mutation controls and independent arithmetic
-normalization. Strict differences remain 332/252/330; no exact gain is claimed.
-The current linked Draw body agrees with the same source object (365 bytes /
-23 bindings). Blt/Stretch have no source-object callers or current map entries
-under OPT:REF, while their complete maintained bodies remain available.
-Source, products and ledgers stay unchanged; no compiler/provider/game/full
-replay runs. See [effect-sprite correspondence](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md).
+Totals remain 475 source entries, 380 exact functions and 95 complete candidates
+(34 authored / 60 runtime / 1 compiler-generated). No new function claim follows
+from the integration checks below. The current 116-source-object image remains
+`cbe767d19d7adc1363facdc862652d2c42342ba50bb01ec4d8eca57383183cfe`.
 
-The current 19-member `vc40-restored-crt` image now passes natural 3→2→1→0 life
-loss, name editing, complete 660-byte ranking persistence and fresh-process
-reload. The existing single-profile driver records 297 read-only states, two
-distinct game PIDs and two normal exits. Score 222 / name reA / rank zero and
-all file bytes agree with the independent expectation. All 49 originals remain
-unchanged. Twenty-five selected score/game-over/CRT bodies, 5,370 bytes and
-358 bindings, agree with their actual source objects in the executed image.
-The unchanged image also retains the earlier stdio linkage proof. Opening and
-restart RGB frames match historical original samples; name entry differs only
-at eight cursor pixels, ranking only at its 1,298-pixel selection outline color.
-Animation phases are unsynchronized. No game/reader compilation or full replay
-runs. See [game-over persistence](../research/RESTORED_CRT_GAMEOVER_FLOW.md).
-The public game-over selector now accepts this profile and reports only its
-selected product identities. Game source, objects and all ledgers stay unchanged.
+Current real-input evidence for this same 19-member image is:
 
-The [rotation-frame review](../research/exact/ROTATION_FRAME_ROLES.md) accounts
-for all 424 frame bytes and closes a per-axis rounding-record model without
-an exact gain. Do not repeat that model.
+- [Ball/pause/editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md):
+  159 read-only states, two painted cells, complete save/reload/recreate and
+  preservation of the other 49 boards.
+- [Natural game-over](../research/RESTORED_CRT_GAMEOVER_FLOW.md): 297 states,
+  three natural life losses, name editing, full 660-byte ranking persistence,
+  fresh-process reload and two normal exits.
+- [Board transition](../research/RESTORED_CRT_ROUND_FLOW.md): 135 passing states,
+  editor-created single-brick clear, score 10 / lives 3, complete original board1
+  load with 222 bricks and normal exit. The first short-click failure is retained;
+  the driver now synchronizes CTRL painting and tolerates a missed zero-brick
+  sample before independently checking the complete destination board.
 
-Totals remain 475 source entries, 380 exacts and 95 complete candidates. The
-current 19-member `vc40-restored-crt` image passes the existing ball/pause/editor
-flow with 159 read-only states. Real CTRL painting and S save all 20,000 expected
-bank bytes, preserving the other 49 boards; Backspace/L and a second S after
-removing the working file restore and recreate the complete bank. Normal exit 0
-and all 49 immutable original identities pass. Reviewed editor-reload imagery
-shows the two painted cells. No game or reader compilation is needed.
-The actual 10-byte entry/two bindings and 17 selected board/stdio bodies covering
-3,006 bytes/86 bindings agree with source in the executed image. No imported
-MSVCRT supplies these paths. The public observer now accepts this profile and
-validates its current build/map/inputs; `--profile` runs one existing selection.
-All function/source/origin/exact/semantic ledgers and comparison reports remain
-byte-identical. No new provider query runs.
-A bounded target-extent review covers 289 source-present units in
-`0x401000..0x4165FF`, including all 270 currently authored entries. All 259 gaps
-are CC bytes/2,145 bytes. Unknown 40CC20 remains unknown; this does not prove a
-final authored denominator or whole-CRT completeness.
-See [editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md).
-The preceding [Windows raster default](../research/RASTER_WIN32_DEFAULTS.md)
-uses real MulDiv, retaining 19 original members and all nine raster exacts.
-Its Wine INT_MIN corner differs from the unchanged portable fallback.
-[Terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md) supplies one
-canonical translator cell and source terminal hooks. Original C++ frame/translator
-and x87/SEH/stack source gaps, exceptional paths and full playability remain open.
-The earlier 21-member 400-byte first-board identity check remains historical;
-see [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
-REA remains pinned to 6.5.0. Function recovery stays first and ports are deferred.
-The reconstruction objective is unfinished.
+All 49 originals remain unchanged. These selected runs reuse the current game
+and reader without compilation; other profiles are not rerun. Selected source
+bodies and actual relocations agree in the executed image. Source, game objects,
+all function ledgers and complete comparison reports remain unchanged. No full
+replay or new provider query runs. The original Wine focus failure remains in
+[the focus diagnostic](../research/ROUND_FOCUS_RUNTIME.md); do not alter exact
+game behavior to hide it or repeat its known polling loop without new evidence.
+
+The latest [effect-sprite review](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md)
+checks 300 instructions on each side, eighteen paths, mutable RECT callbacks
+and ABI/write effects under its explicit memory model. All 34 SMT queries pass,
+including six mutation controls; strict differences stay 332/252/330. The
+[rotation frame review](../research/exact/ROTATION_FRAME_ROLES.md) accounts for
+all 424 frame bytes and rejects the per-axis rounding record. Reuse these closed
+results rather than repeating source permutations. Remaining authored exact
+work still requires a concrete instruction-backed source or producer question.
+
+The bounded original prefix review covers 289 source-present spans in
+`0x401000..0x4165FF`, including all 270 currently authored entries. Its 259 gaps
+contain only 2,145 CC bytes. Unknown 40CC20 remains unknown; this does not prove a
+final authored denominator or whole-CRT completeness. The [Windows raster
+binding](../research/RASTER_WIN32_DEFAULTS.md) and [C++ terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md)
+retain their current source and limits. Exceptional paths, complete gameplay
+and native Windows/driver fidelity remain open. REA stays pinned to 6.5.0.
 
 This document describes the current state, not a running history.
 [Earlier handoff and trial history](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/agent/HANDOFF.md)

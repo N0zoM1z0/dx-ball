@@ -1,5 +1,10 @@
 # Actual round transition and focus diagnostics
 
+The current [restored-CRT round control](RESTORED_CRT_ROUND_FLOW.md) also passes
+with its 19 explicit dependencies. It synchronizes real CTRL painting and
+accepts an already advanced clear before checking the complete next board.
+The original focus failure below remains unresolved and is not rerun there.
+
 The original, VC4 and MinGW Wine controls now clear an editor-created board,
 load the next untouched original board and exit normally. This closes one
 connected runtime path through the maintained editor, collision, round and

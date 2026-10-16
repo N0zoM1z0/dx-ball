@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
-from windows_runtime import digest, environment, launch, prepare, stop, verified_originals
+from windows_runtime import PROFILES, digest, environment, launch, prepare, stop, verified_originals
 from test_windows_runtime import command, game_window
 from test_windows_play import (FLAGS, ORIGINAL, READER, Observer, board_file, capture_ready,
                                click, input_identities, reader_identity)
@@ -120,8 +120,16 @@ def observe(profile, env, reports, focus_recovery=False):
             observer.wait('editor-completely-empty', lambda s: bytes.fromhex(s['board_tiles']) == bytes(400))
             click(env, 37, 392)
             observer.wait('editor-tile1-selected', lambda s: s['editor_selected_tile'] == 1)
-            click(env, 215, 327)
-            observer.wait('editor-single-brick', lambda s: bytes.fromhex(s['board_tiles']) == bytes(edited))
+            observer.wait('editor-choice-released', lambda s: s['mouse_action'] == 0)
+            # CTRL keeps the real paint action active until a frame consumes the
+            # new cursor position; a fixed-duration click can end during redraw.
+            command(['xdotool', 'keydown', 'ctrl', 'mousemove', '215', '327', 'mousedown', '1'], env)
+            try:
+                observer.wait('editor-control-held', lambda s: s['control_pressed'] == 1)
+                observer.wait('editor-single-brick', lambda s: bytes.fromhex(s['board_tiles']) == bytes(edited))
+            finally:
+                command(['xdotool', 'mouseup', '1', 'keyup', 'ctrl'], env)
+            observer.wait('editor-paint-released', lambda s: s['control_pressed'] == 0 and s['mouse_action'] == 0)
             command(['xdotool', 'key', 's'], env)
             deadline = time.monotonic() + 20
             while board_file(runtime).read_bytes() != bank_expected:
@@ -138,7 +146,10 @@ def observe(profile, env, reports, focus_recovery=False):
             assert bytes.fromhex(initial['board_tiles']) == bytes(edited)
             assert initial['lives'] == 3 and initial['score'] == 0
             release(observer, env, 185, 'single-brick-release')
-            observer.wait('single-brick-hit', lambda s: s['score'] > 0 and s['remaining_bricks'] == 0)
+            # The same frame can clear and advance before the next SDK sample.
+            # The stable next-board assertions below still check every tile.
+            observer.wait('single-brick-hit', lambda s: s['score'] > 0 and
+                          (s['remaining_bricks'] == 0 or s['board_index'] > initial['board_index']))
             advanced = observer.wait('next-original-board-ready', lambda s: s['display_mode'] == 1
                                      and s['board_index'] == 1 and s['restart_requested'] == 0
                                      and s['level_changed'] == 0 and s['end_requested'] == 0
@@ -191,7 +202,8 @@ def observe(profile, env, reports, focus_recovery=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile', choices=('original', 'vc40', 'windows-i686'))
+    parser.add_argument('--profile', choices=('original', *PROFILES),
+                        help='run only this profile; otherwise run the three historical controls')
     parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
                         help='Xvfb depth; 24 renders the original palette correctly here')
     parser.add_argument('--focus-recovery', action='store_true',
@@ -216,7 +228,8 @@ def main():
     (ROOT / 'build/reports' / (report_name + '.json')).unlink(missing_ok=True)
     (reports / 'failure.json').unlink(missing_ok=True)
     observations = []
-    for profile in ((args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')):
+    profiles = (args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')
+    for profile in profiles:
         try:
             row = observe(profile, environment(), reports, args.focus_recovery)
         except Exception as error:
@@ -239,14 +252,18 @@ def main():
               'focus_recovery_requested': args.focus_recovery,
               'observations': observations, 'inputs': inputs, 'original_addresses': FIELDS,
               'reader_shapes': {'board_tiles': ':board'}, **reader_identity(),
-              'vc40_map_sha256': digest(ROOT / 'build/vc40/dxball.map'),
-              'mingw_dll_sha256': digest(ROOT / 'build/windows-i686/libdxball_core.dll'),
               'originals': verified_originals(),
               'limitations': ['No target writes/hooks/injected calls; board edits use the real editor.',
                               'Editor-created single-brick board tests a real transition to original board1, not completion of all original levels.',
                               'Focus flags/request clearance and resumed movement do not by themselves prove an actual SURFACELOST/Restore call.',
                               'Sequential reads and Wine/Xvfb captures do not establish atomic-frame/pixel fidelity.',
                               'Physical audio, asynchronous MIDI and terminal board50 remain unverified.']}
+    if 'vc40' in profiles:
+        report['vc40_map_sha256'] = digest(ROOT / 'build/vc40/dxball.map')
+    if 'windows-i686' in profiles:
+        report['mingw_dll_sha256'] = digest(ROOT / 'build/windows-i686/libdxball_core.dll')
+    if 'vc40-restored-crt' in profiles:
+        report['restored_crt_build_sha256'] = digest(ROOT / 'build/vc40-restored-crt/build.json')
     (ROOT / 'build/reports' / (report_name + '.json')).write_text(json.dumps(report, indent=2) + '\n')
     print('Round-transition controls passed; full banks/loaded board and live states retained.')
 
