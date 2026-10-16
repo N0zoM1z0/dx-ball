@@ -2124,12 +2124,12 @@ object = "build/exact/bitmap.obj"
 inputs = ["src/balls.h", "src/bitmap.c", "src/bitmap.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/explosion_types.h", "src/file.h", "src/gameplay.h", "src/memory.h", "src/platform.h", "src/resources.h", "src/runtime.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
-# Generated-code semantic execution only; no exact allocator units claimed.
+# Complete optimized allocator wrappers, handler and retry-loop comparisons.
 [builds.allocator]
 source = "src/allocator.c"
 object = "build/exact/allocator.obj"
 inputs = ["src/allocator.c", "src/allocator.h", "src/state_types.h"]
-flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
 
 [units.initialize-trig]
 build = "trig"
@@ -12512,4 +12512,56 @@ relocations = [
   { offset = 1, type = "DIR32", symbol = "_dxball_crt_signal_state", addend = 0, target = 0x004238B0, data_hex = "050000c00b000000000000001d0000c00400000000000000960000c004000000000000008d0000c008000000000000008e0000c008000000000000008f0000c00800000000000000900000c00800000000000000910000c00800000000000000920000c00800000000000000930000c0080000000000000003000000070000000a0000008c00000000000000" },
   { offset = 17, type = "DIR32", symbol = "_dxball_crt_signal_state", addend = 128, target = 0x004238B0, data_hex = "050000c00b000000000000001d0000c00400000000000000960000c004000000000000008d0000c008000000000000008e0000c008000000000000008f0000c00800000000000000900000c00800000000000000910000c00800000000000000920000c00800000000000000930000c0080000000000000003000000070000000a0000008c00000000000000" },
   { offset = 27, type = "DIR32", symbol = "_dxball_crt_signal_state", addend = 0, target = 0x004238B0, data_hex = "050000c00b000000000000001d0000c00400000000000000960000c004000000000000008d0000c008000000000000008e0000c008000000000000008f0000c00800000000000000900000c00800000000000000910000c00800000000000000920000c00800000000000000930000c0080000000000000003000000070000000a0000008c00000000000000" },
+]
+
+[units.allocator-runtime-delete]
+build = "allocator"
+symbol = "_dxball_runtime_delete"
+target_address = 0x00416760
+size = 14
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained REA complete RET-inclusive extent and original allocator globals/callees"
+relocations = [
+  { offset = 6, type = "REL32", symbol = "_dxball_heap_release", addend = 0, target = 0x00417750 },
+]
+
+[units.allocator-runtime-new]
+build = "allocator"
+symbol = "_dxball_runtime_new"
+target_address = 0x00416770
+size = 16
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained REA complete RET-inclusive extent and original allocator globals/callees"
+relocations = [
+  { offset = 8, type = "REL32", symbol = "_dxball_allocate_with_handler", addend = 0, target = 0x00417790 },
+]
+
+[units.allocator-runtime-malloc]
+build = "allocator"
+symbol = "_dxball_runtime_malloc"
+target_address = 0x00417770
+size = 20
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained REA complete RET-inclusive extent and original allocator globals/callees"
+relocations = [
+  { offset = 1, type = "DIR32", symbol = "_dxball_malloc_mode", addend = 0, target = 0x004234D4 },
+  { offset = 12, type = "REL32", symbol = "_dxball_allocate_with_handler", addend = 0, target = 0x00417790 },
+]
+
+[units.allocator-allocate-with-handler]
+build = "allocator"
+symbol = "_dxball_allocate_with_handler"
+target_address = 0x00417790
+size = 64
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained REA complete RET-inclusive extent and original allocator globals/callees"
+relocations = [
+  { offset = 31, type = "REL32", symbol = "_dxball_heap_allocate", addend = 0, target = 0x004177D0 },
+  { offset = 48, type = "REL32", symbol = "_dxball_call_new_handler", addend = 0, target = 0x00419EA0 },
+]
+
+[units.allocator-call-new-handler]
+build = "allocator"
+symbol = "_dxball_call_new_handler"
+target_address = 0x00419EA0
+size = 33
+boundary_evidence = "docs/research/ALLOCATOR_OWNER.md; retained REA complete RET-inclusive extent and original allocator globals/callees"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "_dxball_new_handler", addend = 0, target = 0x0043FB10 },
 ]

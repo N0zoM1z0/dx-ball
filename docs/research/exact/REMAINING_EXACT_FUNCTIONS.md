@@ -1,12 +1,12 @@
 # Remaining exact functions
 
-Current at source checkpoint `d3053eb`, checked October 16, 2026.
-Accepted totals are **362 functions / 75,484 code bytes / 136 metadata bytes**.
+Updated October 16, 2026, after the allocator comparison checkpoint.
+Accepted totals are **367 functions / 75,631 code bytes / 136 metadata bytes**.
 There are **87 complete nonexact comparisons: 34 authored, 52 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 87 are not all unfinished functions. Eight other source-present allocator
-entries are outside both current comparison reports, so 95 of the 457
+These 87 are not all unfinished functions. Three other source-present allocator
+entries are outside both current comparison reports, so 90 of the 457
 source-present entries are not exact. Another 86 of the 543 inventory entries
 lack a source-present ledger row. The provisional inventory and origin review
 still need reconciliation; these numbers are not a final authored denominator.
@@ -31,7 +31,7 @@ resource requirements and resume procedure.
 ## Authored candidates
 
 All 34 authored candidates were compared across their complete original
-extents on October 13. Their retained results are unchanged at this handoff.
+extents on October 13. Their retained results are unchanged at this checkpoint.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -135,22 +135,23 @@ extents on October 13. Their retained results are unchanged at this handoff.
 
 ## Source-present allocator entries outside current reports
 
-These eight bodies in `src/allocator.c` have historical scoped behavior evidence,
-not byte-exact acceptance. They have no row in either current comparison report.
+Five allocator bodies now have complete exact acceptance: delete, new, malloc,
+the handler-enabled allocation loop and handler dispatch, totaling 147 bytes.
+The three physical Heap API bodies below retain historical scoped behavior
+evidence and no row in either maintained comparison report. Their optimized
+instruction sequences and lengths agree, but the current table cannot bind all
+three noncontiguous original IAT cells with one base symbol. Do not assign an
+exact result by independently rebasing the same table per body.
+
 See [allocator ownership](../ALLOCATOR_OWNER.md) for the original ABI, retained
-REA dossier IDs, typed Heap API bridge and limits of the old checks. Establish
-current complete comparisons before assigning a differing-position count.
+REA dossiers and the two rejected independent-cell source controls. Both lose
+accepted companions; the maintained source and all previous objects are restored.
 
 | Original entry | Source symbol |
 | --- | --- |
-| `0x00416760` | `dxball_runtime_delete` |
-| `0x00416770` | `dxball_runtime_new` |
 | `0x00417750` | `dxball_heap_release` |
-| `0x00417770` | `dxball_runtime_malloc` |
-| `0x00417790` | `dxball_allocate_with_handler` |
 | `0x004177D0` | `dxball_heap_allocate` |
 | `0x00419E80` | `dxball_initialize_runtime_heap` |
-| `0x00419EA0` | `dxball_call_new_handler` |
 
 ## Evidence and closed controls
 
@@ -183,5 +184,8 @@ Read the relevant note before selecting another source model:
   [FDIV initialization](../CRT_FDIV_INITIALIZATION_FRONTIER.md) cover integration
   frontiers separately from standalone function exactness.
 
-This handoff did not recompile or rerun gameplay/fixtures. The tables inspect
-retained comparison results; `validate-tracking.py --require-target` passed.
+The allocator checkpoint includes one adopted optimized compilation and two
+rejected source controls. The rejected public-cell control also ran the existing
+allocator differential check; no gameplay was rerun. The final complete replay
+uses retained verified objects; `validate-tracking.py --require-target` passes
+with 543 / 457 / 367.

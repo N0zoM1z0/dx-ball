@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Prepared October 16, 2026, from source checkpoint
-`d3053ebf453d5e2db1dc545dbe188f28f02f2d00` on `origin/main`.
-The user requested cleanup and handoff; no further reconstruction trial was
-started after that request. The reconstruction objective is unfinished.
+Updated October 16, 2026, after resuming from handoff checkpoint `a3acaaf`
+on `origin/main`. Five allocator comparisons were accepted; two independent
+import-cell controls were rejected and restored. The reconstruction objective
+is unfinished.
 
 This document describes the current state, not a running history.
 [Earlier handoff and trial history](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/agent/HANDOFF.md)
@@ -48,12 +48,12 @@ An exact-function count is progress, not the completion criterion.
 | --- | ---: |
 | Provisional function inventory | 543 |
 | Source-present entries | 457 |
-| Accepted exact functions | 362 |
-| Complete exact code bytes | 75,484 |
+| Accepted exact functions | 367 |
+| Complete exact code bytes | 75,631 |
 | Attached exact metadata bytes | 136 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 87 |
-| Source-present entries outside the two comparison reports | 8 |
+| Source-present entries outside the two comparison reports | 3 |
 | Inventory entries without a source-present ledger row | 86 |
 | Nonexact origins | 34 authored / 52 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 204 runtime / 45 compiler-generated / 24 unknown |
@@ -64,18 +64,17 @@ All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 87 maintained candidates.
 
-The eight additional source-present entries are the allocator family in
-`src/allocator.c`. They have scoped historical behavior evidence, but no
-acceptance in the current exact report and no row in the current candidate
-report. Thus 87 is not the total remaining work: 95 source-present entries
-are not exact, and another 86 inventory entries lack a source-present row.
-The remaining-functions page lists the eight allocator addresses separately.
+Three additional source-present entries remain in `src/allocator.c`: physical
+HeapFree, HeapAlloc and HeapCreate wrappers. Five other allocator entries now
+have complete exact acceptance. Thus 87 is not the total remaining work:
+90 source-present entries are not exact, and another 86 inventory entries lack
+a source-present row. The remaining-functions page lists the three gaps.
 
-The October 16 handoff check passed:
-`validate-tracking.py --require-target` reports 543 / 457 / 362.
-The retained exact report contains 362 zero-difference units, totaling
-75,484 code bytes and 136 metadata bytes. This was an inspection of retained
-results, not a fresh compilation or whole-game test.
+The October 16 allocator checkpoint passes `validate-tracking.py --require-target`
+with 543 / 457 / 367. Complete comparisons of all current retained exact objects
+produce 367 zero-difference units, totaling 75,631 code bytes and 136 metadata
+bytes. Actual producer inputs and object hashes were verified first. This was
+a retained-object replay, not a fresh whole-game compilation or play test.
 
 ### Authorities and private inputs
 
@@ -85,7 +84,7 @@ results, not a fresh compilation or whole-game test.
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
 - `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 362 accepted comparisons/producers.
+- `build/reports/exact-replay.json`: current 367 accepted comparisons/producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 87
   candidates/producers. The directory date is historical; its contents are current.
 - Selected phase `verification.json` files and owner notes explain each adoption.
@@ -115,6 +114,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 allocator | Five complete exact functions, 147 bytes; total 367 | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-complete-owner-20261016/verification.json` |
 | `d3053eb` | Matherr 174-byte body: 21 → 17 → 6 differing positions; no new exact | [FP exception entries](../research/exact/RUNTIME_FP_DECOMPOSITION.md); `.analysis/math-error-original-double-record-20261015/verification.json` |
 | `aa9538f` | Float assignment: complete 76-byte exact; total 362 | [Float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md); `.analysis/float-assignment-original-double-record-20261015/verification.json` |
 | `a1445a0` | Decimal table scaler: complete 123-byte exact | [Decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md); `.analysis/decimal-original-table-pointers-20261015/verification.json` |
@@ -171,11 +171,12 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
-- Close comparison coverage for the eight allocator entries if choosing a new
-  family. Read [allocator ownership](../research/ALLOCATOR_OWNER.md); the current
-  source uses a typed Heap API bridge. Establish original ABI/import bindings
-  and complete producer comparisons rather than treating old behavior checks
-  as exactness. The 86 inventory entries without source rows also remain in scope.
+- Five allocator entries are now exact. The three Heap API wrappers still need
+  one consistent import-cell owner. Read [allocator ownership](../research/ALLOCATOR_OWNER.md)
+  before revisiting them: shared public cells and an allocator-only import header
+  both lose accepted companions and are closed controls. Do not rebase one table
+  differently per function. The 86 inventory entries without source rows remain
+  in scope.
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/
   general regressions and exponent improvement together if pursuing that owner;
   do not recompile the unchanged control or split bodies solely to collect zeros.

@@ -9,7 +9,59 @@ MIDI, resource and sound owners. Saved REA `analyze_function` dossiers establish
 213 contiguous original bytes and their contracts; original x86 execution,
 native C and actual VC4/MinGW objects corroborate tested behavior. These are
 runtime dependencies, counted separately from the 235 maintained game entries.
-The allocation bodies have no byte-exact acceptance.
+Five bodies now have complete byte-exact acceptance; the three physical Heap
+API wrappers still need consistent import-cell ownership.
+
+## Complete exact comparisons (October 16, 2026)
+
+The maintained source is unchanged. A single VC4 compilation uses the same
+`/O2 /Ob0 /Oi- /Gd /MT /Gy` recipe as the maintained CRT allocation helpers.
+The old allocator product used `/Od /Oy-` for semantic execution. The optimized
+object reproduces these complete functions after resolving every relocation:
+
+| Unit | Address | Complete bytes | Differences |
+| --- | --- | ---: | ---: |
+| `allocator-runtime-delete` | `0x416760` | 14 | 0 |
+| `allocator-runtime-new` | `0x416770` | 16 | 0 |
+| `allocator-runtime-malloc` | `0x417770` | 20 | 0 |
+| `allocator-allocate-with-handler` | `0x417790` | 64 | 0 |
+| `allocator-call-new-handler` | `0x419ea0` | 33 | 0 |
+
+These five acceptances add 147 code bytes. The original heap, handler and mode
+bindings and the complete RET-inclusive extents follow the retained REA dossiers
+listed below. The handler's Boolean normalization and the retry loop, including
+zero normalization and oversized-request rejection, need no source adjustment.
+The project total is **367 exact functions / 75,631 code bytes / 136 attached
+metadata bytes**. All previous 362 units were compared again from their retained
+objects after verifying their actual input closures, flags and object hashes.
+This was a retained-object replay, not a fresh 367-unit compilation or game run.
+
+The other three bodies emit the original instruction sequences and lengths
+(HeapFree 24, HeapAlloc 21 and HeapCreate 21 bytes), but their current table has
+one base symbol with offsets 8, 4 and 0. The original import slots are respectively
+`0x441314`, `0x441318` and `0x441328`; those addresses cannot share that base.
+Per-function rebasing of the same table would misrepresent storage ownership.
+No exact claim or maintained candidate binding is added for these three bodies.
+
+Two complete source controls recovered independent typed import cells. Both made
+all eight allocator bodies exact, but shared-header emission changed accepted
+companions. Putting all three declarations in `allocator.h` caused four confirmed
+code differences plus unresolved symbol-name changes. Keeping the declarations
+in an allocator-only header still enlarged accepted keyed drawing from 105 to
+107 bytes and keyed stretching from 139 to 141 bytes. Other generated names also
+moved. Neither control is adopted; no declaration or spelling sweep follows it.
+The public-cell control also passed the existing original/native allocator
+comparison: 1,433 fixtures / 1,437 calls and seven host-width controls. That check
+belongs to the rejected source snapshot, not the restored maintained source.
+Historical semantic observations and their original identities remain unchanged.
+
+Private carrier: `.analysis/allocator-complete-owner-20261016/`. It retains the
+baseline inputs/object/receipt, both rejected source and object controls,
+complete comparison reports, the native result, and `verification.json`.
+The adopted `adopted-comparison.json` and current exact report bind the same
+verified baseline object. All prior shared inputs and accepted objects were
+restored before the final replay. Physical import ownership, handler registration,
+startup/teardown integration and whole-game fidelity remain open.
 
 ## Recovered contracts
 
