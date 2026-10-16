@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from legacy_toolchain import session_lock, windows_path
 from resource_limits import limit_cpu
-from windows_runtime import digest, environment, launch, prepare, stop, verified_originals
+from windows_runtime import PROFILES, digest, environment, launch, prepare, stop, verified_originals
 from test_windows_runtime import command, game_window, screenshot
 
 # Retained original state contracts, already used by the named differential suites.
@@ -49,11 +49,21 @@ class Observer:
             self.arguments += ['dxball_' + name + shapes.get(name, shape(name)) for name in fields]
         else:
             addresses = fields
-            if profile == 'vc40':
-                metadata = json.loads((ROOT / 'build/vc40/build.json').read_text())
-                link_map = ROOT / 'build/vc40/dxball.map'
-                executable = ROOT / 'build/vc40/dxball.exe'
-                if (metadata['game_map_sha256'] != digest(link_map)
+            if profile in ('vc40', 'vc40-restored-crt'):
+                directory = ROOT / 'build' / profile
+                metadata = json.loads((directory / 'build.json').read_text())
+                link_map = directory / 'dxball.map'
+                executable = directory / 'dxball.exe'
+                if profile == 'vc40-restored-crt':
+                    assert metadata['status'] == 'linked' and metadata['profile'] == profile
+                    assert metadata['game_map_sha256'] == digest(link_map)
+                    assert metadata['executable_sha256'] == digest(executable)
+                    assert metadata['objects']
+                    for name, expected in metadata['inputs'].items():
+                        assert expected == digest(ROOT / name), name
+                    for row in metadata['objects'].values():
+                        assert row['object_sha256'] == digest(ROOT / row['object'])
+                elif (metadata['game_map_sha256'] != digest(link_map)
                         or metadata['executables']['dxball'] != digest(executable)):
                     # Focused rebuilds retain a receipt for every reused object.
                     # Bind the reader to that receipt without recompiling other owners.
@@ -293,6 +303,8 @@ def reader_identity():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--profile', choices=('original', *PROFILES),
+                        help='run only this profile; otherwise run the three historical controls')
     parser.add_argument('--display-depth', type=int, choices=(8, 24), default=24,
                         help='Xvfb depth; 24 renders the original palette correctly here')
     args = parser.parse_args()
@@ -304,29 +316,37 @@ def main():
                         '-o', str(READER)], check=True, timeout=60)
         lock.close()
         env = os.environ.copy(); env['DXBALL_PLAY_DISPLAY'] = '1'
+        child_arguments = ['--display-depth', str(args.display_depth)]
+        if args.profile:
+            child_arguments += ['--profile', args.profile]
         subprocess.run(['xvfb-run', '-a', '-s', '-screen 0 640x480x' + str(args.display_depth),
                         str(ROOT / 'scripts/repo-python'), str(Path(__file__).resolve()),
-                        '--display-depth', str(args.display_depth)],
+                        *child_arguments],
                        env=env, check=True, timeout=300)
         return
     lock = session_lock()
     reports = ROOT / 'build/reports/windows-play'
     reports.mkdir(parents=True, exist_ok=True)
     observations = []
-    for profile in ('original', 'vc40', 'windows-i686'):
+    profiles = (args.profile,) if args.profile else ('original', 'vc40', 'windows-i686')
+    for profile in profiles:
         observations.append(observe(profile, environment(), reports))
         print(profile + ': real ball/pause/editor/zero-exit checks passed', flush=True)
     report = {'status': 'pass', 'kind': 'real-Wine-ball-pause-editor-control-runs',
               'display': 'Xvfb 640x480x' + str(args.display_depth),
               'observations': observations, 'inputs': input_identities(), **reader_identity(),
-              'vc40_map_sha256': digest(ROOT / 'build/vc40/dxball.map'),
-              'mingw_dll_sha256': digest(ROOT / 'build/windows-i686/libdxball_core.dll'),
               'original_addresses': ORIGINAL, 'originals': verified_originals(),
               'limitations': ['ReadProcessMemory only; no target writes/hooks/thread suspension.',
                               'Scalar/ball reads are sequential, not an atomic frame snapshot.',
                               'Input/state predicates verify paths; random trajectories are not synchronized.',
                               'No physical audio, asynchronous MIDI, all-board/full-game fidelity claim.',
                               'Wine/Xvfb presentation does not establish physical display fidelity.']}
+    if 'vc40' in profiles:
+        report['vc40_map_sha256'] = digest(ROOT / 'build/vc40/dxball.map')
+    if 'windows-i686' in profiles:
+        report['mingw_dll_sha256'] = digest(ROOT / 'build/windows-i686/libdxball_core.dll')
+    if 'vc40-restored-crt' in profiles:
+        report['restored_crt_build_sha256'] = digest(ROOT / 'build/vc40-restored-crt/build.json')
     (ROOT / 'build/reports/windows-play.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Real gameplay/editor controls passed; full bank bytes and live state retained.')
 

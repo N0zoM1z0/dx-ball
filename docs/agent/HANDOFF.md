@@ -1,33 +1,33 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after repairing the Windows raster default.
-Current totals remain 475 source entries, 380 exacts and 95 complete candidates.
-Windows raster defaults now use real Kernel32 MulDiv through a static callback
-initializer. The public callback table and authored bodies are unchanged;
-non-Windows preprocessing is identical. The optional `vc40-restored-crt` game
-links 116 reused source objects with zero compilations and 19 explicit original
-members, removing the portable fallback's signed64 division dependency.
-Only 12 affected full comparisons run: nine exacts are preserved, triangle
-remains 1710/88, and polygon candidates now have 214/214 differences. Five
-operand-reversed signed comparisons explain all polygon code changes, with
-identical predicates and dead scratch/flags; all other instructions agree.
-Private labels and 24 compiler fragments follow actual COFF definitions.
-One production-closure Wine probe passes 12 early-default API calls, a controlled
-callback and real Windows rebinding. The loaded 12-byte callback record/three
-bindings and full CRT 84/thirteen callbacks pass. No extra initializer is added.
-All 249 native semantic scopes/counts/observations are retained; 235 rows refresh
-only source input identities on the unchanged native preprocessed program.
-No full replay, new provider query or game campaign runs. Wine's INT_MIN MulDiv
-corner differs from the retained portable expression; native Windows and full
-cross-platform corner equivalence remain open. Ports remain deferred.
-See [Windows raster defaults](../research/RASTER_WIN32_DEFAULTS.md).
-The prior hooks checkpoint removed duplicate translator state and original
-`hooks.obj`, with eight Wine selectors passing; see
-[terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md).
-The original 21-member first-board/ball/heap/exit0 run remains historical;
+Updated October 17, 2026, after real editor persistence through the source CRT.
+Totals remain 475 source entries, 380 exacts and 95 complete candidates. The
+current 19-member `vc40-restored-crt` image passes the existing ball/pause/editor
+flow with 159 read-only states. Real CTRL painting and S save all 20,000 expected
+bank bytes, preserving the other 49 boards; Backspace/L and a second S after
+removing the working file restore and recreate the complete bank. Normal exit 0
+and all 49 immutable original identities pass. Reviewed editor-reload imagery
+shows the two painted cells. No game or reader compilation is needed.
+The actual 10-byte entry/two bindings and 17 selected board/stdio bodies covering
+3,006 bytes/86 bindings agree with source in the executed image. No imported
+MSVCRT supplies these paths. The public observer now accepts this profile and
+validates its current build/map/inputs; `--profile` runs one existing selection.
+All function/source/origin/exact/semantic ledgers and comparison reports remain
+byte-identical. No full replay or provider query runs.
+A bounded target-extent review covers 289 source-present units in
+`0x401000..0x4165FF`, including all 270 currently authored entries. All 259 gaps
+are CC bytes/2,145 bytes. Unknown 40CC20 remains unknown; this does not prove a
+final authored denominator or whole-CRT completeness.
+See [editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md).
+The preceding [Windows raster default](../research/RASTER_WIN32_DEFAULTS.md)
+uses real MulDiv, retaining 19 original members and all nine raster exacts.
+Its Wine INT_MIN corner differs from the unchanged portable fallback.
+[Terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md) supplies one
+canonical translator cell and source terminal hooks. Original C++ frame/translator
+and x87/SEH/stack source gaps, exceptional paths and full playability remain open.
+The earlier 21-member 400-byte first-board identity check remains historical;
 see [real-game CRT entry](../research/RESTORED_CRT_GAME_ENTRY.md).
-Original C++ frame/translator and x87/SEH/stack transports remain explicit
-source gaps. Function recovery remains first. REA is pinned to 6.5.0.
+REA remains pinned to 6.5.0. Function recovery stays first and ports are deferred.
 The reconstruction objective is unfinished.
 
 This document describes the current state, not a running history.
@@ -387,6 +387,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 17 source-CRT editor flow | Actual 19-member game; full 20,000-byte save/reload/recreate and 49 other boards preserved; 159 read-only states, ball/pause/exit 0; no compilations; ledgers unchanged | [Editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md); `.analysis/restored-crt-editor-20261017/verification.json` |
 | October 17 Windows raster defaults | Real MulDiv before binding; nine exacts retained;12 early API cases and callback/Windows binding;116 reused objects/19 original members; native preprocessing unchanged | [Raster defaults](../research/RASTER_WIN32_DEFAULTS.md); `.analysis/raster-win32-default-20261017/verification.json` |
 | October 17 C++ hooks state | One SDK-typed canonical translator cell; eight Wine selectors;21 comparison outcomes unchanged; original hooks removed | [Terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md); `.analysis/crt-cpp-hooks-20261016/verification.json` |
 | October 16 real game / restored CRT | 113 maintained objects reused,3 integration objects; public build116 reused/0 compiled; original first400 board bytes/168 bricks, ball movement, heap preservation and exit0 | [Game entry](../research/RESTORED_CRT_GAME_ENTRY.md); `.analysis/crt-game-members-20261016/verification.json` |

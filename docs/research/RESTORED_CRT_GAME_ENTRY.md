@@ -17,6 +17,12 @@ The first command builds only the game under `build/vc40-restored-crt/`.
 The second prepares an isolated Windows directory; omit `--prepare-only` to
 launch it. The same original assets and compiler prerequisites apply.
 
+The current 19-member image also passes the existing
+[editor persistence and ball/pause flow](RESTORED_CRT_EDITOR_FLOW.md): complete
+20,000-byte save/reload/recreate, 159 state reads and exit 0 through source stdio.
+The profile can be selected independently with `test_windows_play.py --profile`.
+The initial first-board evidence below retains its original checkpoint scope.
+
 ## Source and original boundaries
 
 [The checked link recipe](../../config/restored-crt-link.json) names every
