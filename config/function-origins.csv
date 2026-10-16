@@ -440,7 +440,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041B270,runtime,crt-cpp-handler,maintain,high,ev_b7793371b5f07e9492d8850e491d9885bc44822324300925915ce55cf1ce5f2a
 0x0041B510,runtime,crt-cpp-tables,maintain,high,ev_cd70ffee232513bdc49078e35aba3fae573fc71477c569ee4be908d3c4989487
 0x0041B5F0,runtime,crt-cpp-tables,maintain,high,ev_8c3828525404370a2d1fbb5e5096caed95d157818b3bee23cb10caaa076fd652
-0x0041B690,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041B690,runtime,crt-cpp-unwind,maintain,high,ev_f169e7cedaf8953e13d9654e0dc30010d5278acd0a2538e5ff18630639a2564d
 0x0041B760,runtime,crt-cpp-tables,maintain,high,ev_c892ca178623884015e490d89be81760a9d9e16fb40a7cd99284a07377242e26
 0x0041B780,runtime,crt-cpp-transfer,maintain,high,ev_422051616475627e1688206ffa76240663e159f07e5243bee1e1c0085ff3738d
 0x0041B820,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

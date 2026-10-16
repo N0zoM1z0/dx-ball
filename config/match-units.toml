@@ -12699,3 +12699,36 @@ relocations = [
   { offset = 4, type = "DIR32", symbol = "$L961", addend = 0, target = 0x0041BBAA },
   { offset = 8, type = "DIR32", symbol = "$L962", addend = 0, target = 0x0041BBB2 },
 ]
+
+[builds.runtime_cpp_unwind]
+source = "src/runtime_cpp_unwind.cpp"
+object = "build/exact/runtime_cpp_unwind.obj"
+inputs = ["src/runtime_cpp_unwind.cpp", "src/runtime_cpp_unwind.h", "src/runtime_cpp_transfer.h", "src/runtime_cpp_tables.h"]
+flags = ["/nologo", "/c", "/O2", "/Ob0", "/Oi-", "/Gd", "/MT", "/Gy"]
+
+[units.cpp-frame-unwind-to-state]
+build = "runtime_cpp_unwind"
+symbol = "_dxball_cpp_frame_unwind_to_state"
+target_address = 0x41b690
+size = 206
+boundary_evidence = "docs/research/exact/RUNTIME_CPP_UNWIND.md; complete frame.obj COMDAT; REA 6.5 code/scope reads and original caller ABI"
+relocations = [
+  { offset = 2, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 12, type = "DIR32", symbol = "$T441", addend = 0, target = 0x004201A0 },
+  { offset = 17, type = "DIR32", symbol = "__except_handler3", addend = 0, target = 0x0041C724 },
+  { offset = 28, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+  { offset = 75, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 120, type = "REL32", symbol = "__CallSettingFrame@12", addend = 0, target = 0x0041BC10 },
+  { offset = 131, type = "REL32", symbol = "_dxball_cpp_frame_unwind_filter", addend = 0, target = 0x0041B760 },
+  { offset = 178, type = "REL32", symbol = "_dxball_cpp_inconsistency", addend = 0, target = 0x0041BCE0 },
+  { offset = 200, type = "DIR32", symbol = "__except_list", addend = 0, target = 0x00000000 },
+]
+
+[[units.cpp-frame-unwind-to-state.data_comdats]]
+symbol = "$T441"
+target_address = 0x4201a0
+size = 12
+relocations = [
+  { offset = 4, type = "DIR32", symbol = "$L435", addend = 0, target = 0x0041B70E },
+  { offset = 8, type = "DIR32", symbol = "$L436", addend = 0, target = 0x0041B71B },
+]

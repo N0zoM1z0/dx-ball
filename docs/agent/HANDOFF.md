@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after REA upgrade checkpoint `a5b2897` on `origin/main`
-and the C++ object source recovery below. Construction and destruction now
-have complete SEH source; destruction is exact and construction has four
-register-encoding differences. Twelve bounded Wine cases pass.
+Updated October 16, 2026, after C++ object checkpoint `b58c50f` on `origin/main`
+and the exact frame-unwind source recovery below. Frame unwinding and object
+destruction have complete exact SEH source; construction remains a four-byte
+nonexact candidate. REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
 This document describes the current state, not a running history.
@@ -48,19 +48,19 @@ An exact-function count is progress, not the completion criterion.
 | Item | Value |
 | --- | ---: |
 | Provisional function inventory | 543 |
-| Source-present entries | 461 |
-| Accepted exact functions | 370 |
-| Complete exact code bytes | 75,974 |
-| Attached exact metadata bytes | 196 |
+| Source-present entries | 462 |
+| Accepted exact functions | 371 |
+| Complete exact code bytes | 76,180 |
+| Attached exact metadata bytes | 208 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 3 |
-| Inventory entries without a source-present ledger row | 82 |
+| Inventory entries without a source-present ledger row | 81 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 209 runtime / 45 compiler-generated / 19 unknown |
+| Inventory origins | 270 authored / 210 runtime / 45 compiler-generated / 18 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and 19 unknown origins remain open.
+The authored denominator and 18 unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
@@ -68,19 +68,21 @@ now lists all 88 maintained candidates.
 Three additional source-present entries remain in `src/allocator.c`: physical
 HeapFree, HeapAlloc and HeapCreate wrappers. Five other allocator entries now
 have complete exact acceptance. Thus 88 is not the total remaining work:
-91 source-present entries are not exact, and another 82 inventory entries lack
+91 source-present entries are not exact, and another 81 inventory entries lack
 a source-present row. The remaining-functions page lists the three gaps.
 
-The October 16 C++ object checkpoint has 543 / 461 / 370. Destruction's
-113-byte body and 12-byte scope table are exact; construction is a complete
-510-byte candidate with four EAX/ECX encoding differences and an exact 12-byte
-table. Twelve Wine cases exercise actual member ABI and real VC4 SEH, with an
-isolated unchanged pointer helper and controlled abort endpoint. Prior 369
-exacts and 87 candidates are reused through unchanged recipes, complete input
-hashes, flags and object hashes; they were not recompiled. Current accepted
-totals are 75,974 code bytes and 196 attached metadata bytes. Three original
-member-call trampolines gain proven runtime origins, without source claims.
-This is not a final restored-game build or play test.
+The October 16 frame-unwind checkpoint has 543 / 462 / 371. The complete
+206-byte body and 12-byte scope table match after all nine code and two scope
+bindings. One stable VC4 compilation and Clang Win32 compilation ran; no new
+runtime check. The preceding 370 exact and 88 candidate producers are retained
+through unchanged recipes, complete input hashes, flags and actual object
+hashes. Current accepted totals are 76,180 code bytes and 208 metadata bytes.
+
+The preceding object checkpoint restored exact destruction and construction
+with four EAX/ECX differences. Its twelve Wine cases exercise actual member
+ABI and real VC4 SEH, with an isolated unchanged pointer helper and controlled
+abort endpoint. Three member-call trampolines have proven runtime origins,
+without source claims. These checks do not establish a final game build/play.
 
 REA is now pinned to 6.5.0, with bundled skill version 42 and 207 tools. The
 420-record 6.4 snapshot is preserved as a verified gzip carrier because 6.5
@@ -97,7 +99,7 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
 - `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 370 accepted comparisons/producers.
+- `build/reports/exact-replay.json`: current 371 accepted comparisons/producers.
 - `.analysis/exact-candidate-audit-20261012/comparison.json`: current 88
   candidates/producers. The directory date is historical; its contents are current.
 - Selected phase `verification.json` files and owner notes explain each adoption.
@@ -127,6 +129,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 frame unwind | Complete 206 code / 12 scope bytes exact; total 371 | [Frame unwind](../research/exact/RUNTIME_CPP_UNWIND.md); `.analysis/cpp-frame-unwind-source-20261016/adoption.json` |
 | October 16 C++ object | Two complete sources; destruction 113 code / 12 scope bytes exact; construction 510 / 4 differences; total 370 | [C++ object source](../research/exact/RUNTIME_CPP_OBJECT.md); `.analysis/cpp-exception-object-source-20261016/adoption.json` |
 | October 16 C++ terminal | Two complete SEH bodies, 230 code / 48 scope bytes; total 369 | [C++ terminal source](../research/exact/RUNTIME_CPP_TERMINAL.md); `.analysis/cpp-terminal-source-20261016/verification.json` |
 | October 16 allocator | Five complete exact functions, 147 bytes; total 367 | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-complete-owner-20261016/verification.json` |
@@ -190,13 +193,14 @@ question, not merely the smallest differing-position count.
   one consistent import-cell owner. Read [allocator ownership](../research/ALLOCATOR_OWNER.md)
   before revisiting them: shared public cells and an allocator-only import header
   both lose accepted companions and are closed controls. Do not rebase one table
-  differently per function. The 82 inventory entries without source rows remain
+  differently per function. The 81 inventory entries without source rows remain
   in scope.
 - The C++ terminal owner now supplies callback state and two real nested SEH
   scopes. Its source requires a Win32 SEH-capable compiler; VC4 and Clang Win32
   compile the same implementation. Do not replace it with a no-op host catch.
   Object construction/destruction now have [complete source](../research/exact/RUNTIME_CPP_OBJECT.md);
-  construction remains nonexact at four register encodings. Frame unwinding,
+  construction remains nonexact at four register encodings. [Frame unwinding](../research/exact/RUNTIME_CPP_UNWIND.md)
+  is now complete and exact. Frame-setting transport, catch-block execution,
   remaining transfer helpers and dispatcher integration remain open. The
   three member-call trampolines have proven runtime origins but no restored bodies.
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/
@@ -276,6 +280,13 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The frame-unwind phase verified complete duplicate REA 6.5 catalogs before
+sharing three closed-run carriers and removing the regenerated latest catalog
+alias. About 25 MiB of allocated storage was reclaimed. Mutable aliases are
+never hardlinked to immutable evidence. Receipt:
+`.analysis/cpp-frame-unwind-source-20261016/catalog-retention.json`. All unique
+Evidence, source trials and accepted products remain.
 
 The allocator trials are closed. Their unique sources, objects, compiler
 receipts and comparisons remain in `.analysis/allocator-complete-owner-20261016/`.

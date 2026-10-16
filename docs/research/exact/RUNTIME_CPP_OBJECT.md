@@ -1,5 +1,8 @@
 # C++ exception object construction and destruction
 
+Later October 16 follow-up: [frame unwinding](RUNTIME_CPP_UNWIND.md) is now
+restored and exact. Checkpoint totals below describe this object-source adoption.
+
 The restored owner is `src/runtime_cpp_object.cpp`, with genuine Win32
 `__try`/`__except` source. VC4 produces the complete 113-byte destruction
 function and its 12-byte scope table exactly. Construction produces all 510
@@ -124,5 +127,5 @@ missing target-header failure is retained separately. Heavy commands ran
 serially with CPUQuota 35%, MemoryHigh 640 MiB and MemoryMax 768 MiB.
 
 These checks do not establish native Windows behavior or a final restored-game
-build. Frame unwinding, remaining transfer helpers and dispatcher integration
+build. Remaining transfer helpers and dispatcher integration
 remain open; construction still has four compiler register differences.
