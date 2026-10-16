@@ -1,14 +1,16 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after the original CRT startup checkpoint.
+Updated October 16, 2026, after compiler-fragment ownership reconciliation.
 Accepted totals are **373 functions / 76,842 code bytes / 244 metadata bytes**.
 There are **88 complete nonexact comparisons: 34 authored, 53 runtime and one
 compiler-generated**. None is an accepted exact.
 
 These 88 are not all unfinished functions. Three other source-present allocator
 entries are outside both current comparison reports, so 91 of the 464
-source-present entries are not exact. Another 80 of the 544 inventory entries
-lack a source-present ledger row. The provisional inventory and origin review
+source-present entries are not exact. Another 56 of the 520 independent inventory entries
+lack a source-present ledger row. The 24 overlapping compiler fragments are
+tracked separately in `config/compiler-fragments.csv`; no source or exact
+acceptance changed. The provisional inventory and origin review
 still need reconciliation; these numbers are not a final authored denominator.
 
 The tables below come from the retained current comparison report:

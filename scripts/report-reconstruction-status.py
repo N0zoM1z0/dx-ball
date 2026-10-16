@@ -18,10 +18,12 @@ def status():
     matches = read("matches.csv")
     semantics = read("semantic-acceptance.csv")
     origins = read("function-origins.csv")
+    fragments = read("compiler-fragments.csv")
     units_path = ROOT / "config/match-units.toml"
     units = tomllib.loads(units_path.read_text())["units"] if units_path.exists() else {}
     return {"target": "DX-Ball v1.07 (English)", "function_candidates": len(functions),
             "source_present": len(implementations), "exact_functions": len(matches),
+            "parent_owned_compiler_fragments": len(fragments),
             "exact_bytes": sum(units[row["unit"]]["size"] for row in matches),
             "authored_confirmed": sum(row["origin"] == "authored" for row in origins),
             "runtime_identified": sum(row["origin"] == "runtime" for row in origins),
@@ -32,7 +34,7 @@ def status():
             "playable": False,
             "products": ["analysis library", "board/resource inspectors", "experimental i686 Windows game EXEs", "read-only Windows state reader"],
             "windows_runtime_scope": "Wine ball/paddle/pause, editor bank, custom-brick clear/next-original-board, 50 custom-board clears with scoped terminal storage, natural life loss/name entry/ranking persistence/shutdown; successful focus recovery and whole-game fidelity unverified",
-            "denominator": "528 provisional Ghidra candidates, including compiler-generated initialization and unclassified CRT/library code"}
+            "denominator": f"{len(functions)} provisional independent entries, including compiler-generated initialization and unclassified CRT/library code; {len(fragments)} parent-owned compiler fragments are tracked separately"}
 
 
 if __name__ == "__main__":
@@ -46,5 +48,6 @@ if __name__ == "__main__":
     else:
         print(f"{result['target']}: {result['function_candidates']} provisional candidates")
         print(f"Source-present: {result['source_present']}; exact: {result['exact_functions']} ({result['exact_bytes']} bytes)")
+        print(f"Parent-owned compiler fragments: {result['parent_owned_compiler_fragments']} (excluded from the independent entry count)")
         print(f"Authored confirmed: {result['authored_confirmed']}; runtime identified: {result['runtime_identified']}; compiler-generated identified: {result['compiler_generated_identified']}; origin unknown: {result['origin_unknown']}")
         print(f"Windows runtime scope: {result['windows_runtime_scope']}")

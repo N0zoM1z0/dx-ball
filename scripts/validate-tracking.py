@@ -136,6 +136,43 @@ def validate_generated_source(address, implementation, source, origins, matches,
     return True
 
 
+def validate_compiler_fragments(functions, origins, implementations, semantics, matches, manifest):
+    fragments = unique(rows("compiler-fragments.csv"), "address")
+    units = dict(manifest.get("units", {}), **manifest.get("candidates", {}))
+    for address, fragment in fragments.items():
+        if any(address in ledger for ledger in
+               (functions, origins, implementations, semantics, matches)):
+            raise ValueError(f"compiler fragment counted independently: {address}")
+        parent = units[fragment["parent_unit"]]
+        parent_address = f"0x{parent['target_address']:08X}"
+        build = manifest["builds"][parent["build"]]
+        start, size = int(address, 0), int(fragment["size"])
+        end = int(fragment["span_end"], 0)
+        if (size <= 0 or end != start + size - 1 or
+                not parent["target_address"] < start <= end <
+                    parent["target_address"] + parent["size"] or
+                fragment["parent_address"] != parent_address or
+                fragment["parent_symbol"] != parent["symbol"] or
+                fragment["source"] != build["source"] or
+                implementations[parent_address]["source"] != build["source"] or
+                not re.fullmatch(r"ev_[0-9a-f]{64}", fragment["evidence_id"])):
+            raise ValueError(f"invalid compiler fragment ownership: {address}")
+        if fragment["kind"] == "unwind_cleanup":
+            bindings = [row for metadata in parent.get("data_comdats", [])
+                        if metadata["symbol"] == fragment["metadata_symbol"]
+                        for row in metadata["relocations"]
+                        if row["symbol"] == fragment["source_label"] and
+                           row["target"] == start]
+            if len(bindings) != 1:
+                raise ValueError(f"compiler cleanup lacks parent unwind binding: {address}")
+        elif fragment["kind"] == "shared_epilogue":
+            if (end + 1 != parent["target_address"] + parent["size"] or
+                    fragment["metadata_symbol"] or fragment["source_label"]):
+                raise ValueError(f"invalid parent epilogue extent: {address}")
+        else:
+            raise ValueError(f"unknown compiler fragment kind: {address}")
+
+
 def validate(require_target=False):
     target = tomllib.loads((ROOT / "config/target.toml").read_text())
     pe = target["pe"]
@@ -148,6 +185,7 @@ def validate(require_target=False):
     by_source = {owner["source"]: owner for owner in owners.values()}
     manifest_path = ROOT / "config/match-units.toml"
     manifest = tomllib.loads(manifest_path.read_text()) if manifest_path.exists() else {"units": {}}
+    validate_compiler_fragments(functions, origins, implementations, semantics, matches, manifest)
     if functions.keys() != origins.keys():
         raise ValueError("function and origin ledgers disagree")
     for address, function in functions.items():

@@ -1,9 +1,9 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after catch-guard checkpoint `7546e78` on
-`origin/main` and the original CRT startup recovery below. The complete
-390-byte startup and 12-byte scope are exact; the GUI error-mode initializer
-is restored, with both fatal exacts and the format candidate preserved.
+Updated October 16, 2026, after CRT-startup checkpoint `14cc03c` on
+`origin/main` and compiler-fragment ownership reconciliation below. Twenty-four
+old auto-analysis splits now have explicit parent mappings. Source, exact and
+semantic claims are unchanged; every original address remains recorded.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -48,17 +48,18 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional function inventory | 544 |
-| Source-present entries | 464 |
+| Provisional independent function inventory | 520 |
+| Parent-owned compiler fragments, counted separately | 24 |
+| Source-present independent entries | 464 |
 | Accepted exact functions | 373 |
 | Complete exact code bytes | 76,842 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 88 |
 | Source-present entries outside the two comparison reports | 3 |
-| Inventory entries without a source-present ledger row | 80 |
+| Inventory entries without a source-present ledger row | 56 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 214 runtime / 45 compiler-generated / 15 unknown |
+| Inventory origins | 270 authored / 214 runtime / 21 compiler-generated / 15 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and 15 unknown origins remain open.
@@ -69,23 +70,30 @@ now lists all 88 maintained candidates.
 Three additional source-present entries remain in `src/allocator.c`: physical
 HeapFree, HeapAlloc and HeapCreate wrappers. Five other allocator entries now
 have complete exact acceptance. Thus 88 is not the total remaining work:
-91 source-present entries are not exact, and another 80 inventory entries lack
+91 source-present entries are not exact, and another 56 independent inventory entries lack
 a source-present row. The remaining-functions page lists the three gaps.
 
-The original CRT startup checkpoint has 544 / 464 / 373. The complete
-390-byte body and 12-byte scope match after all 34 code and two scope bindings.
-The real startup flow reaches the maintained WinMain, exit and exception-filter
-APIs. Its four version fields are initialized; the command-line pointer keeps
-its original common definition. The original GUI application-type initializer
-is now 2 in the fatal owner, rather than zero. Both fatal exacts and the full
-format candidate are rechecked unchanged, including catalog bytes/strings.
+Current accounting is 520 independent entries plus 24 parent-owned compiler
+fragments, preserving all 544 previously recorded addresses. The twenty
+fixed-point unwind cleanups and four shared epilogues belong to the complete
+triangle/division/comparison/addition owners. Their source, metadata and code
+ranges were already part of those units; they are now recorded in
+`config/compiler-fragments.csv` and validated against their parents.
 
-One stable VC4 compilation each for entry and changed fatal source, plus
-Clang Win32 compilation, ran. The other 370 exact and 87 candidate producers
-are reused through unchanged recipes, complete inputs, flags and object
-hashes. Current accepted totals are 76,842 code bytes and 244 metadata bytes;
-initialized state is attested separately. No runtime/game build was run.
-See [CRT startup](../research/exact/RUNTIME_ENTRY.md).
+All four complete parent comparisons reproduce their retained results from
+the existing canonical object: three exact methods and the unchanged 88-byte
+triangle candidate. No compiler/provider/runtime work was repeated. Source464,
+exact373, code76,842, metadata244 and semantic249 remain unchanged. The 56
+independent entries without source remain in scope. See
+[compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
+
+The preceding original CRT startup checkpoint restored the complete 390-byte
+body and 12-byte scope with all 34 code/two scope bindings. Four version fields
+and command state are supplied, and the genuine WinMain/exit/filter APIs are
+used. The fatal owner's GUI initializer is now 2; both fatal exacts, the format
+candidate and catalog/strings remain verified. It is still a standalone owner,
+without a final restored-game build/play claim. See
+[CRT startup](../research/exact/RUNTIME_ENTRY.md).
 
 The preceding catch wrapper is also complete and exact, including its former
 59-byte imported-boundary gap and initialized current exception/context state.
@@ -109,7 +117,8 @@ and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
 ### Authorities and private inputs
 
 - `config/functions.csv`: provisional entries and reconciled extents.
-- `config/function-origins.csv`: origin classification.
+- `config/function-origins.csv`: independent entry origin classification.
+- `config/compiler-fragments.csv`: parent-owned unwind/epilogue aliases with original ranges and evidence; excluded from independent counts.
 - `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv`:
   source, exact and scoped semantic claims.
 - `config/source-owners.toml`: maintained source ownership.
@@ -144,6 +153,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 compiler fragments | 24 overlapping cleanup/epilogue rows mapped to four existing parents; 520 independent entries, source/exact unchanged | [Compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md); `.analysis/compiler-fragment-ownership-20261016/verification.json` |
 | October 16 CRT startup | Complete 390 code / 12 scope bytes exact; GUI initializer fixed; fatal family preserved; total 373 | [CRT startup](../research/exact/RUNTIME_ENTRY.md); `.analysis/crt-entry-source-20261016/adoption.json` |
 | October 16 catch guard | One omitted 41-byte callback reconciled; complete transport/guard origins; inventory 544, exact unchanged | [Catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md); `.analysis/cpp-catch-guard-origin-20261016/adoption.json` |
 | October 16 catch wrapper | Complete 272 code / 24 scope bytes exact; both current-state pointers recovered; total 372 | [Catch invocation](../research/exact/RUNTIME_CPP_CATCH.md); `.analysis/cpp-catch-block-source-20261016/adoption.json` |
@@ -211,7 +221,7 @@ question, not merely the smallest differing-position count.
   one consistent import-cell owner. Read [allocator ownership](../research/ALLOCATOR_OWNER.md)
   before revisiting them: shared public cells and an allocator-only import header
   both lose accepted companions and are closed controls. Do not rebase one table
-  differently per function. The 80 inventory entries without source rows remain
+  differently per function. The 56 independent inventory entries without source rows remain
   in scope.
 - The C++ terminal owner now supplies callback state and two real nested SEH
   scopes. Its source requires a Win32 SEH-capable compiler; VC4 and Clang Win32

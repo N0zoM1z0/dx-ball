@@ -41,6 +41,7 @@ def main():
         "The current records cover gameplay, all five screen modes, resources, graphics and audio.\n\n"
         "| Fact | Count |\n| --- | ---: |\n"
         f"| Provisional function candidates | {status['function_candidates']} |\n"
+        f"| Parent-owned compiler fragments, counted separately | {status['parent_owned_compiler_fragments']} |\n"
         f"| Source-present functions | {status['source_present']} |\n"
         f"| Functions with scoped semantic acceptance | {status['semantic_validated_with_scope']} |\n"
         f"| Byte-exact functions | {status['exact_functions']} |\n"

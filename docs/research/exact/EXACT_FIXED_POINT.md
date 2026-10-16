@@ -1,5 +1,10 @@
 # Fixed-point class and triangle lifetime recovery
 
+October 16 [ownership follow-up](COMPILER_FRAGMENT_OWNERSHIP.md): the 24 old
+auto-analysis splits are now recorded as parent-owned compiler fragments,
+without independent source/exact claims. Complete parent extents and current
+comparison results are unchanged. Earlier counts below are historical.
+
 This batch restores eight previously unmaintained fixed-point entries in the
 shared [C++ raster owner](../../../src/raster.cpp), adding 571 complete code bytes.
 The accepted ledger becomes 63 exact units / 8,802 code bytes and 265
