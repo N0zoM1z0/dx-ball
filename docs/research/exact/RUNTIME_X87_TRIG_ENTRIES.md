@@ -1,5 +1,9 @@
 # Scalar trigonometric entries and dispatch constants
 
+The later [dependency inventory audit](CRT_DEPENDENCY_INVENTORY.md) adds eight
+omitted inverse-trig/sqrt entries. Its current inventory totals supersede the
+historical checkpoint below; this scalar/intrinsic proof remains unchanged.
+
 Three scalar entries from pinned `87ctrig.obj` now have complete runtime-origin
 proofs. The review also finds four entries omitted from the provisional
 inventory. These additions recover inventory coverage, without adding function

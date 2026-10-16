@@ -1,15 +1,26 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the current-image startup observation.
+Updated October 17, 2026, after the CRT dependency inventory audit.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
 recorded. The reconstruction objective is unfinished and ports remain deferred.
 
 Totals remain 475 source entries, 380 exact functions and 95 complete candidates
-(34 authored / 60 runtime / 1 compiler-generated). No new function claim follows
+(34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `ebe4a4ff8e6557fe0a89a32a064365941103b574f7373460e8e7cd5f51b2eb56`.
+
+The [dependency inventory audit](../research/exact/CRT_DEPENDENCY_INVENTORY.md)
+adds eight omitted arctrig/sqrt entries: three proved runtime and five still
+unknown. Inventory is now 553 with 78 no-source entries; source remains 475.
+Three no-source entries are import thunks; 75 associate with sixteen approved
+CRT carriers. Only 59 have complete comparison receipts in this audit, so
+association does not resolve the thirteen unknown no-source origins. Five
+existing physical-helper names are recovered; no source/body or ABI is invented.
+The constant-pointer view is rejected after one core pilot: 1691→1705 bytes,
+ten unbound alias-cell references, nine exact companions preserved. Do not
+repeat this shared-view model or expand it into flag/profile/name variants.
 
 The [bank allocation scope](../research/exact/BANK_ALLOCATION_SCOPE.md) confines
 one temporary pointer to allocation/check/publication. Complete comparison is
@@ -116,7 +127,7 @@ An exact-function count is progress, not the completion criterion.
 
 | Item | Value |
 | --- | ---: |
-| Provisional independent function inventory | 545 |
+| Provisional independent function inventory | 553 |
 | Parent-owned compiler fragments, counted separately | 24 |
 | Source-present independent entries | 475 |
 | Accepted exact functions | 380 |
@@ -125,19 +136,19 @@ An exact-function count is progress, not the completion criterion.
 | Historical scoped semantic rows | 249 |
 | Complete nonexact comparisons | 95 |
 | Source-present entries outside the two comparison reports | 0 |
-| Inventory entries without a source-present ledger row | 70 |
+| Inventory entries without a source-present ledger row | 78 |
 | Nonexact origins | 34 authored / 60 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 245 runtime / 21 compiler-generated / 9 unknown |
+| Inventory origins | 270 authored / 248 runtime / 21 compiler-generated / 14 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and nine unknown origins remain open.
+The authored denominator and fourteen unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 95 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
 three physical Heap API wrappers. All 95 source-present nonexact entries have
-complete candidate comparisons. Another 70 independent inventory entries lack
+complete candidate comparisons. Another 78 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
 native/Win32 evidence.

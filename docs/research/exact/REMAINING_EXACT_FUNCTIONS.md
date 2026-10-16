@@ -7,10 +7,14 @@ compiler-generated**. None is an accepted exact.
 
 These 95 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 70 of the 545 independent inventory entries lack a
+report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
+
+The [dependency inventory audit](CRT_DEPENDENCY_INVENTORY.md) adds eight omitted
+CRT entries and recovers five existing helper identities. Source/exact/candidate
+counts and all 34 authored comparisons remain unchanged.
 
 The original two-byte decimal-point array and shared declarations close all310
 exponent-formatting bytes and the six-byte suffix, preserving all13 affected
