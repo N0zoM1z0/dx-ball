@@ -2,6 +2,9 @@
 
 Later October 16 follow-up: [frame unwinding](RUNTIME_CPP_UNWIND.md) is now
 restored and exact. Checkpoint totals below describe this object-source adoption.
+The later [member-call source recovery](RUNTIME_CPP_MEMBER_CALL.md) supplies all
+three typed direct-call APIs and checks the affected construction/destruction
+paths. Extra C++ call frames remain nonexact.
 
 The restored owner is `src/runtime_cpp_object.cpp`, with genuine Win32
 `__try`/`__except` source. VC4 produces the complete 113-byte destruction
@@ -91,8 +94,9 @@ section matches pinned `trnsctrl.obj`. They move the object to ECX, arrange the
 return/argument stack and jump to the member address. Their identical bytes
 alone do not distinguish names: actual caller arity and the shipped C++
 stdcall declarations establish each contract. The maintained header retains
-those declarations with opaque code addresses; no replacement thunk body is
-introduced. Their origins are classified as runtime, with source recovery open.
+those declarations with opaque code addresses. The later member-call owner
+uses actual compiler member-pointer types to implement those direct calls;
+the original tail transport remains a nonexact boundary.
 
 The complete member comparison is `member-call-provenance.json` in the private
 phase directory. REA assembly IDs, in address order:

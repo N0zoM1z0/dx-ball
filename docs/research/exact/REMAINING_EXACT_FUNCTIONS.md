@@ -1,13 +1,13 @@
 # Remaining exact functions
 
-Updated October 16, 2026, after restoring the abstract x87 control entry.
+Updated October 16, 2026, after restoring three C++ direct-member call APIs.
 Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
-There are **92 complete nonexact comparisons: 34 authored, 57 runtime and one
+There are **95 complete nonexact comparisons: 34 authored, 60 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 92 are all currently source-present nonexact entries. The eight allocator
+These 95 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
-report gaps. Another 73 of the 545 independent inventory entries lack a
+report gaps. Another 70 of the 545 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
@@ -40,6 +40,11 @@ The abstract `_control87` layer now has complete C source. Its 68/63-byte
 comparison remains nonexact with 44 differing positions; 1,792 logical cases
 and 1,792 actual Win32 x87 comparisons pass. Physical backend source and full
 startup remain open. See [abstract x87 control](RUNTIME_CONTROL87.md).
+
+Three stdcall-to-thiscall member-call APIs now have C++ direct-call source,
+with 784 logical cases and seven affected Win32 selectors passing. Their
+37/42/47-byte bodies remain nonexact against seven bytes each; extra call-frame
+and return-address identity remain open. See [member calls](RUNTIME_CPP_MEMBER_CALL.md).
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -134,7 +139,10 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-initialize-lowio` | 467 | 467 | 32 |
 | `crt-unwind-handler` | 34 | 31 | 34 |
 | `crt-right-mantissa96` | 54 | 48 | 35 |
+| `cpp-call-member-0` | 7 | 37 | 37 |
+| `cpp-call-member-1` | 7 | 42 | 42 |
 | `crt-control87` | 63 | 68 | 44 |
+| `cpp-call-member-2` | 7 | 47 | 47 |
 | `crt-left-mantissa96` | 62 | 50 | 47 |
 | `crt-multiply-extended12` | 678 | 678 | 50 |
 | `crt-strncpy` | 36 | 58 | 56 |

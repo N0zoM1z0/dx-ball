@@ -1,13 +1,14 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after restoring the abstract x87 control entry.
-Current totals are 472 source entries, 380 exacts and 92 complete candidates.
-The complete C `_control87` layer merges abstract bits and unconditionally
-canonicalizes/writes hardware, including mask zero. It remains nonexact at
-68/63 bytes and 44 differing positions. All 1,792 original/generated/native
-cases and 1,792 physical Win32 x87 comparisons pass. Prior 380 exact and
-91 candidate results/products are reused; all 249 semantic rows are unchanged.
-The physical hardware backend remains a dependency. No full replay ran.
+Updated October 16, 2026, after restoring three C++ direct-member call APIs.
+Current totals are 475 source entries, 380 exacts and 95 complete candidates.
+The stdcall-to-thiscall bridges use real Microsoft x86 member-pointer types,
+with the original argument counts and public declarations. They remain
+nonexact at 37/42/47 bytes against seven bytes each; the extra C++ call frame
+and return-address difference remain explicit. All 784 emulated logical cases
+and seven affected Win32 construction/destruction/SEH selectors pass.
+Prior 380 exact and 92 candidate results/products are reused; all 249 semantic
+rows are unchanged. No full replay or new provider query ran.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -54,26 +55,26 @@ An exact-function count is progress, not the completion criterion.
 | --- | ---: |
 | Provisional independent function inventory | 545 |
 | Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 472 |
+| Source-present independent entries | 475 |
 | Accepted exact functions | 380 |
 | Complete exact code bytes | 77,485 |
 | Attached exact metadata bytes | 244 |
 | Historical scoped semantic rows | 249 |
-| Complete nonexact comparisons | 92 |
+| Complete nonexact comparisons | 95 |
 | Source-present entries outside the two comparison reports | 0 |
-| Inventory entries without a source-present ledger row | 73 |
-| Nonexact origins | 34 authored / 57 runtime / 1 compiler-generated |
+| Inventory entries without a source-present ledger row | 70 |
+| Nonexact origins | 34 authored / 60 runtime / 1 compiler-generated |
 | Inventory origins | 270 authored / 245 runtime / 21 compiler-generated / 9 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
 The authored denominator and nine unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
-now lists all 92 maintained candidates.
+now lists all 95 maintained candidates.
 
 All eight allocator entries now have complete exact acceptance, including the
-three physical Heap API wrappers. All 92 source-present nonexact entries have
-complete candidate comparisons. Another 73 independent inventory entries lack
+three physical Heap API wrappers. All 95 source-present nonexact entries have
+complete candidate comparisons. Another 70 independent inventory entries lack
 a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
 records the preserved public binding API, three actual import cells and focused
 native/Win32 evidence.
@@ -150,6 +151,15 @@ pass through the maintained consumers and typed fixture boundaries. The whole
 original anchor, so no independent absolute data/exact claim is added. All
 function ledgers and raw comparisons remain byte-identical. See
 [locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
+
+Three original seven-byte member-call entries now have C++ direct-call source,
+including genuine stdcall cleanup and thiscall arguments. VC4 rejects explicit
+`__thiscall` callback types; actual compiler member-pointer types plus asserted
+direct32-bit representation preserve the ABI. All 784 logical cases and seven
+affected Win32 selectors pass; four whole linked source bodies also agree.
+The extra call frame/return address remains nonexact, and no native Itanium
+member-pointer ABI is claimed. See
+[member-call bridges](../research/exact/RUNTIME_CPP_MEMBER_CALL.md).
 
 The `_control87` entry now has complete ordinary control-layer C source.
 The original always canonicalizes hardware, even for mask zero, and returns
@@ -238,7 +248,7 @@ ranges were already part of those units; they are now recorded in
 All four complete parent comparisons reproduce their retained results from
 the existing canonical object: three exact methods and the unchanged 88-byte
 triangle candidate. That reconciliation repeated no compiler/provider/runtime
-work and changed no source or exact claim. The 73
+work and changed no source or exact claim. The 70
 independent entries without source remain in scope. See
 [compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
 
@@ -412,7 +422,7 @@ question, not merely the smallest differing-position count.
   modifying `allocator.h`. Earlier controls that removed its public declaration
   remain rejected; do not repeat them or rebase a table per function. Fixture
   updates use the existing setter, including restoration. Handler registration,
-  teardown and the 73 independent entries without source remain open.
+  teardown and the 70 independent entries without source remain open.
 - The decimal accumulator now snapshots three integer limbs explicitly. All five
   byte results remain unchanged; native/i686 C90 compilation passes. Shift masks
   and remaining register choices are closed controls without new evidence. Do
@@ -453,7 +463,8 @@ question, not merely the smallest differing-position count.
   It remains outside CMake: final CRT storage/linking, low-level helpers and
   the final original-compiler build/play check are still required. Do not
   count the new standalone object as a verified reconstructed game startup. The
-  three member-call trampolines have proven runtime origins but no restored bodies.
+  three member-call entries now have typed C++ direct-call bodies; their original
+  tail transport and return-address identity remain nonexact.
 - The complete `cvt.c` result is a useful retained control. Inspect the fixed/
   general regressions and exponent improvement together if pursuing that owner;
   do not recompile the unchanged control or split bodies solely to collect zeros.
