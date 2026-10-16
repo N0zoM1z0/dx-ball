@@ -1,409 +1,37 @@
 # Remaining exact functions
 
-All 34 authored candidates were compared against the complete original extents
-on October 13, 2026. Current compiler inputs and objects match their receipts.
-Every relocation, declared literal and attached metadata block is included.
-None of these candidates is already exact. The accepted total remains
-**362 functions / 75,484 code bytes / 136 metadata bytes**.
-
-User matherr improves174/174/21 through17 to6 differences using DOUBLE argument
-carriers and separate low/high result copies. Both187/79 companions and all362
-exacts remain; one adjacent store/load interchange is still nonexact. See
-[FP exception entries](RUNTIME_FP_DECOMPOSITION.md).
-
-Float assignment closes76 bytes through the shipped DOUBLE record model,
-restoring original integer transport and12-byte frame. Five owner exacts,
-insertion and all361 previous exacts remain. Native alignment follows the record
-type; see [float formatting](RUNTIME_FLOAT_FORMAT.md).
-
-Decimal scaling closes123 bytes by restoring the original biased typed-table
-pointer state. Both power arrays/full700-byte carrier, parser/multiplication
-byte results and all360 previous exacts remain. Original pre-array pointer
-formation is retained for port review. See [decimal conversion](RUNTIME_DECIMAL_CONVERSION.md).
-
-Integer reversal closes96 bytes through the original xtoa.c pointer loop.
-The retained exact VC4 object matches current inputs/flags and is reused; both
-wrappers, all359 previous exacts and89 other candidates remain. Original terminal
-pointer behavior is retained for later port review. See [integer text](RUNTIME_INTEGER_TEXT.md).
-
-Float digit generation closes129 bytes through the shipped _fptostr.c strcpy
-operation, including original inline REP copying. This supersedes the memmove
-substitution, without adding a modern-C overlap/runtime guarantee. Four owner
-exacts, both other candidate results and all358 previous exacts remain. See
-[float formatting](RUNTIME_FLOAT_FORMAT.md).
-
-Exponent editing closes all57 bytes through direct binary64 assignment, restoring
-the original high/low integer transfer order before the exponent write. The99-byte
-classifier, all357 previous exact results and91 other candidates remain. See
-[FP control](RUNTIME_FP_CONTROL.md).
-
-User matherr improves174/174/28 to174/174/21 through direct binary64 assignments;
-both187/79 companions and all357 exacts remain. C mode/definition order do not
-improve it; full original FP ownership worsens raising and is rejected. See
-[FP exception entries](RUNTIME_FP_DECOMPOSITION.md).
-
-FP raising improves880/876/328 to876/876/22 through direct IEEE binary64 member
-assignments, preserving handling704 exact. The C producer gives raising876 exact
-but loses handling to29 differences, so it remains a private control. All357 exacts,
-91 other candidates and40 constant bytes remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).
-
-Environment acquisition closes411 bytes through original pointer declarations
-and the C producer established by `aw_env.c` file metadata. Original cached-path
-indeterminate reads remain. All356 old exacts and92 other candidates are preserved.
-See [environment](RUNTIME_ARGUMENTS.md).
-
-C++ handler search improves663/659/605 to658/659/326 through exception-parameter
-ownership, per-type metadata and transfer lifetimes. Its original24-byte frame
-and219 instruction count are restored; not exact. See [handler search](RUNTIME_CPP_HANDLER.md).
-
-FP exception handling closes all704 bytes/18 relocations through original
-status-call/local-mask and zero/inexact phases. All355 old exacts, raising and
-full40-byte constants remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).
-
-FP exception handling improves708/704/436 to704/704/21 through original exponent,
-result-branch and inexact lifetimes. Four scheduling swaps remain nonexact;
-raising/constants/all355 exacts remain. See [FP dispatch](RUNTIME_FP_DISPATCH.md).
-
-Environment acquisition improves389/411/404 to396/411/399 through original
-cursor scans and allocation-result lifetimes. Entry initialization remains
-nonexact; all355 exacts and93 other candidates remain. See [environment](RUNTIME_ARGUMENTS.md).
-
-Fatal formatting restores its original424-byte frame through shipped message
-buffer declarations and catalog indexing;493/494/419 improves to493/494/412.
-Not exact; both owner exacts and full catalog/literals remain. See
-[fatal output](RUNTIME_LOWIO_STARTUP.md).
-
-Extended multiplication improves678/678/103 to678/678/21 through product and
-guarded accumulator initialization, plus the original underflow cutoff. Not
-exact; all355 exacts and93 other candidate bytes remain. See
-[decimal conversion](RUNTIME_DECIMAL_CONVERSION.md).
-
-Argument setup155 closes through original post-publication command selection
-after parser, character-type and byte-block recovery. Parser466 and all354 old
-exacts remain;94 other candidates unchanged. See [arguments](RUNTIME_ARGUMENTS.md).
-
-Double decomposition238 closes through denormal-counter and post-call16-bit
-exponent lifetimes, retaining both original set-exponent calls. All353 old
-exacts and95 other candidate bytes remain; the full half constant is preserved.
-See [decomposition](RUNTIME_FP_DECOMPOSITION.md).
-
-Low-I/O startup improves468/467/304 to467/467/32 through original block-index,
-packed-handle cursor and acquisition phases. Not exact; all353 exacts and95
-other candidate results remain. See [low-I/O startup](RUNTIME_LOWIO_STARTUP.md).
-
-Command-line parsing466 closes through original stdargv cursor phases and
-character/unsigned lead-index types in its original producer ownership/order.
-Environment setup219 and all352 old exacts remain; argument setup and96 other
-candidate results are unchanged. See [arguments](RUNTIME_ARGUMENTS.md).
-
-Stream traversal107 closes through original fflush.obj ownership and shipped
-function order. All four bodies are unchanged; all351 old exacts and97 other
-candidates remain. See [stream buffers](RUNTIME_STREAM_BUFFERS.md).
-
-Fcloseall115 closes through original independent closeall.obj ownership.
-Chsize359 and all350 old exacts remain; candidates98. See
-[stream retirement](RUNTIME_FILE_SIZE.md).
-
-Getstream126 closes after original fread source separation and removal of
-the unused string header. Original seven-scalar fread improves328/326/232 to
-326/326/2; only multiplication parameter loads differ. All349 old exacts remain;
-current350/code72,807, candidates99. See [stream transfer](RUNTIME_STREAM_TRANSFER.md).
-
-Output refill328/328/67 improves through50 to328/328/1 through original
-conditional safe-record selection and independent _flsbuf object ownership.
-Only CMP operand commutation remains; not exact. All349 exacts remain;
-unchanged fread source regresses to328/326/232 after separation. See
-[stream transfer](RUNTIME_STREAM_TRANSFER.md).
-
-Codepage setter473/475/128 improves to475/475/11 through original six-word
-case publication and counter/range lifetimes. Remaining OS-loop register
-rotation is nonexact; all349 exacts and525 initialized data bytes remain.
-See [codepage startup](RUNTIME_CODEPAGE.md).
-
-Openfile526 closes through original register lifetimes, preincrement scanning
-and success-owned stream capture. All16 relocations and114 switch bytes match;
-all348 old exacts and100 other candidate byte results remain. See
-[stream opening](RUNTIME_STREAM_OPEN.md).
-
-Float digits122/129/68 improves to122/129/65 through original register pointer
-lifetimes and digit stores. Defined complete memmove shifting remains; original
-REP copying is nonexact. All348 exacts remain. See [float formatting](RUNTIME_FLOAT_FORMAT.md).
-
-Descriptor allocation184/37 improves to184/4 through original index/cursor
-lifetimes and table-before-capacity publication. Only two equivalent CMP/Jcc
-pairs differ; not exact. All348 exacts remain. See [stream opening](RUNTIME_STREAM_OPEN.md).
-
-Stream position432 closes through the original same-buffer pointer differences
-and seek-result assignment condition. All347 old exacts and101 other candidates
-remain. See [stream position](RUNTIME_POSITION_FILTER.md).
-
-Heap resizing111 closes through the original retry loop and owned handler-failure
-return, restoring unconditional heap reload before the backward branch. All346
-old exacts, msize21 and calloc82/11 remain; candidates102. See
-[heap resizing](RUNTIME_FILE_MODES.md).
-
-Original `close.obj`/`osfinfo.obj` source ownership closes handle invalidation144
-through all six actual relocations while preserving close199 exact. Installation
-163/13 improves to163/2; unchanged read source emits609/611/473. All345 old exacts
-remain; candidates103. See [handle lifetime](RUNTIME_LOWIO_READ_CLOSE.md).
-
-Zero allocation improves77/82/16 to82/82/11 through original consumed-size
-and retry-failure ownership, restoring the unconditional post-handler heap
-reload. Not exact; msize21 exact, realloc106/111/15 and all345 exacts remain.
-See [zero allocation](RUNTIME_FILE_SIZE.md).
-
-Descriptor close199 closes through direct records, owned validation return
-and both standard-handle snapshots in original query/comparison order. All344
-old exacts and104 other candidates remain. See [handle lifetime](RUNTIME_LOWIO_READ_CLOSE.md).
-
-Descriptor seek188 closes through original record expressions, assignment
-conditions and invalid-descriptor return ownership. All343 previous exacts,
-105 other candidates and the full360-byte error table remain. See
-[low-I/O](RUNTIME_LOWIO_WRITE.md).
-
-Descriptor commit improves110/111/65 to111/111/2 through original register
-status/descriptor and error ownership. Bound-comparison commutation remains;
-not exact. Both owner exacts/full360-byte table hold; unchanged seek/write
-source emits188/13 and555/22 in this context. See [low-I/O](RUNTIME_LOWIO_WRITE.md).
-
-Character classification145 closes through the original unsigned-char lead-byte
-table index and signed payload/length order. Both229-byte converters and all342
-old exacts remain; candidates106. See [case conversion](RUNTIME_CASE_CONVERSION.md).
-
-Bulk output381 closes through genuine scalar lifetimes, unsigned write result
-and original update order from shipped CRT source. All341 old exacts remain;
-seeking153/21 improves to153/20, candidates107. See
-[stream operations](RUNTIME_STREAM_OPERATIONS.md).
-
-Stream position improves413/432/360 to431/432/324 through original local
-lifetimes, direct record expressions and the shared zero-count return. It is
-not exact; all341 exacts and107 other candidates remain. See
-[stream position](RUNTIME_POSITION_FILTER.md).
-
-Input refill240 closes through genuine register stream ownership and conditional
-safe-record selection from shipped CRT source. All340 previous exacts remain;
-candidates108. Scalar fread324/223 is rejected, existing324/218 preserved.
-See [stream transfer](RUNTIME_STREAM_TRANSFER.md).
-
-Buffer acquisition75 and flushing100 close through genuine register locals
-from shipped CRT source. All338 previous exacts remain; candidates109.
-Unchanged traversal source now emits107/14 in this context; not exact.
-See [stream buffers](RUNTIME_STREAM_BUFFERS.md).
-
-Decimal insertion101/5 improves to101/4 by restoring the original leading-e/E
-branch into insertion, rather than returning. No new exact; four owner exacts
-and both other candidates remain. See [float formatting](RUNTIME_FLOAT_FORMAT.md).
-
-MessageBox adds one complete146-byte exact with14 relocations and58 literal
-bytes. All337 prior exacts remain; source457/candidates111. See
-[error controls](RUNTIME_ERROR_CONTROL.md).
-
-Raise improves393/393/323 to397/393/215 through captured FPE action traversal
-and shared typed dispatch with a genuine hardware guard. All53 original dispatch
-bytes remain covered; both lookup exacts/filter351/9 unchanged. See
-[signal dispatch](RUNTIME_SIGNALS.md).
-
-Exception filtering improves376/351/355 to351/351/9 through captured FPE
-countdown/action-slot traversal and the native-width tagged handler snapshot.
-Both owner exacts/full140-byte state and raise393/323 remain. See
-[signal dispatch](RUNTIME_SIGNALS.md).
-
-Output refill improves320/328/277 to328/328/67 through genuine register locals
-and its owned final error return. It remains nonexact; all340 exacts
-and the three owner candidate companions are unchanged. See
-[stream transfer](RUNTIME_STREAM_TRANSFER.md).
-
-Catch transfer adds one complete148-byte exact through all five actual
-relocations. Both owner exacts188/44 and all336 prior exact units remain.
-Source457/candidates111; all34 authored candidates remain unchanged. See
-[C++ catch transfer](RUNTIME_CPP_TRANSFER.md).
-
-Exit control closes all128 bytes and13 relocations through the actual imported
-process API and reverse address cursor. Both18-byte wrappers remain exact;
-walker32/6 remains a candidate. Source457/candidates113 unchanged. See
-[termination continuation](../TERMINATION_OWNER.md).
-
-Exponent editing improves57/57/22 to57/57/4 while its99-byte exact companion
-remains unchanged. Global457/335/113 stay unchanged. See [FP control](RUNTIME_FP_CONTROL.md).
-
-Float assignment improves to76/76 bytes with9 differences from77/76/47. Four
-owner exacts and two other candidates remain unchanged; totals457/335/113 are
-unchanged. See [float formatting](RUNTIME_FLOAT_FORMAT.md).
-
-String copy/concatenation restore full source and correct the strcpy entry jump
-to its232-byte overlapping shared extent. Source457/candidates113; all335 old
-exacts/111 candidates unchanged. Neither new routine is exact. See [string concatenation](RUNTIME_STRING_CONCATENATION.md).
-
-Embedded list initialization adds the complete21-byte outer exact while all58
-owner exacts remain unchanged. Its inner stage is32/26/21, not exact. Source455/
-candidates111; authored count unchanged. See [embedded initialization](LIST_EMBEDDED_INITIALIZATION.md).
-
-Stream seeking/output restore full153/381-byte bodies with21/29 differences;
-neither is exact. Source453/candidates110, all334 old exacts/108 candidates
-preserved. See [stream operations](RUNTIME_STREAM_OPERATIONS.md).
-
-The full 229-byte CRT fabs is exact, including real special-value/error handling
-and all seven calls. Source450/candidates107; all333 old exacts/107 candidates
-are preserved. See [double absolute value](RUNTIME_ABSOLUTE_DOUBLE.md).
-
-Sixteen whole compiler-generated list initializer stages add 376 exact bytes
-from unchanged current source and products. Source-emission entries448;
-authored270/candidates106 remain unchanged. All317 prior exacts and42 shared-
-owner exact units are preserved. See [generated list stages](LIST_GENERATED_EXACT.md).
-
-The full 79-byte physical FDIV probe is exact. Source432, candidates106;
-all316 preceding exacts/106 candidates are preserved. Three member-call ABI
-attempts are rejected, not accepted source. See [physical FDIV](RUNTIME_FDIV_PHYSICAL.md).
-
-Signed CRT absolute value adds one complete10-byte exact; source429 and
-candidates104. Unsigned wraparound variants were nonexact; the signed API
-requires a representable absolute value. All315 preceding exacts/104 candidates
-are preserved. See [absolute value](RUNTIME_ABSOLUTE.md).
-
-[FDIV processor testing](RUNTIME_FDIV_PROCESSORS.md) adds the full278-byte exact
-and five complete89-byte literals. Source426; all314 old exacts/102 candidates
-remain unchanged. Physical hardware testing and integration are open.
-
-[Filter initialization/lifetime](RUNTIME_FILTER_LIFETIME.md) adds two full exacts
-across35 bytes and a complete4-byte initialized record. Inventory543/source425;
-all312 preceding exacts/102 candidates remain unchanged. Linker integration is open.
-
-[Stream position/C++ filtering](RUNTIME_POSITION_FILTER.md) adds two full exacts
-across101 bytes and the ftell413/432/360 candidate. Inventory541/source423/
-candidates102 (34 authored/68 runtime); all310 old exacts/101 candidates remain.
-
-[The full x87 bridge](RUNTIME_X87_BRIDGE.md) adds source288/288/14 and corrects
-its omitted33-byte switch/alignment tail. Source420/candidates101 (34 authored/
-67 runtime); all310 old exacts and100 candidates remain unchanged. No new exact.
-
-[File access checking](RUNTIME_ACCESS.md) adds one complete77-byte exact.
-Source419; all309 preceding exacts and100 candidates retain their inputs/products.
-
-[Complete C++ handler search](RUNTIME_CPP_HANDLER.md) adds the full659-byte source
-candidate663/605. Source418/candidates100 (34 authored/66 runtime); all preceding
-exact and candidate producers remain unchanged. No new exact claim.
-
-[C++ dispatch/transfer](RUNTIME_CPP_TRANSFER.md) adds two full exacts across232
-bytes and one candidate. Inventory540/source417/candidates99 (34 authored/65
-runtime); all307 prior exacts and98 candidates are preserved.
-
-[C++ exception tables](RUNTIME_CPP_TABLES.md) add four source bodies and three
-complete exacts across214 bytes. One candidate remains; source414,
-inventory539 and candidates98 (34 authored/64 runtime). All304 preceding exacts
-and97 candidates are preserved.
-
-[Floating dispatch](RUNTIME_FP_DISPATCH.md) adds two complete source candidates
-and all40 initialized constant bytes, with no new exact claim. Source410,
-candidates97 (34 authored/63 runtime); all preceding comparisons are preserved.
-
-[Decomposition/exceptions](RUNTIME_FP_DECOMPOSITION.md) adds two complete exacts
-across266 bytes and four candidates. Source408, candidates95 (34 authored/61
-runtime); all302 preceding exacts are preserved. The converter candidate changes
-94 to95 differences in the genuine matherr-marker source context.
-
-[FP control/classification](RUNTIME_FP_CONTROL.md) adds six complete exacts
-across517 bytes and two candidates. Source402, candidates91 (34 authored/57
-runtime); all prior comparisons remain intact.
-
-[Float rendering](RUNTIME_FLOAT_RENDER.md) adds six full exacts across654 bytes
-and two candidates. Current source394, candidates89 (34 authored/55 runtime);
-all preceding comparisons remain intact.
-
-[Float formatting](RUNTIME_FLOAT_FORMAT.md) adds five complete exacts across280
-bytes and three candidates. All34 authored candidates remain unchanged; current
-comparisons total87 candidates (34 authored/53 runtime), with386 source bodies.
-
-The [CRT conversion wrappers](RUNTIME_FLOAT_CONVERSIONS.md) add three complete
-runtime functions and 109 bytes. All 34 authored candidates below remain open.
-
-The [binary conversion continuation](RUNTIME_BINARY_CONVERSION.md) adds two
-24-byte exact runtime format entries and the maintained converter candidate:
-`crt-extended-convert`, initially 459/459 bytes with 94 differences. Both
-24-byte format records match in full. The [mantissa helper continuation](RUNTIME_MANTISSA_HELPERS.md)
-adds three exacts and five implemented candidates. The current comparison set
-initially contains 40 candidates: 34 authored and six runtime bodies. The
-[iteration and arithmetic continuation](RUNTIME_MANTISSA_LIFETIMES.md) makes
-zero testing and 96-bit addition exact, and adds two shift candidates. The
-current set has 41 candidates: 34 authored and seven runtime bodies. The
-converter has 94 differences in the current shared source context.
-
-[Decimal conversion](RUNTIME_DECIMAL_CONVERSION.md) supplies four new source
-candidates and all 58 power records. The current set therefore has 45 candidates:
-34 authored and 11 runtime. All preceding exact and candidate results are preserved.
-
-[Modes and resizing](RUNTIME_FILE_MODES.md) add the exact21-byte heap-size
-wrapper and two candidates. [Stream buffering](RUNTIME_STREAM_BUFFERS.md)
-adds three complete exacts across144 bytes, three candidates and a previously
-unlisted11-byte function boundary. Current comparisons total50 candidates:
-34 authored and16 runtime. All34 game candidates below remain unchanged.
-
-[Low-I/O writing](RUNTIME_LOWIO_WRITE.md) adds two complete exacts across169
-bytes, three candidates and all360 private error-table bytes. The current set
-has53 candidates:34 authored and19 runtime. The game candidates remain unchanged.
-
-[Reading and closing](RUNTIME_LOWIO_READ_CLOSE.md) adds four maintained source
-candidates. Current comparisons total57:34 authored and23 runtime; all preceding
-candidate results and255 exact results are unchanged.
-
-[Stream transfer](RUNTIME_STREAM_TRANSFER.md) adds complete exact closure112
-and terminal flags42, plus four maintained candidates. Current comparisons
-total61:34 authored/27 runtime. Slot acquisition retains two comparison-
-commutation differences and is not counted exact.
-
-[File opening](RUNTIME_STREAM_OPEN.md) adds exact stream wrappers37/21 and
-three maintained candidates, including both complete mode/open switch carriers.
-Current comparisons total64:34 authored/30 runtime. The full1053-byte opener
-retains only two temporary-register differences; the parser526/49 and
-allocation184/37 remain nonexact.
-
-[Length and retirement](RUNTIME_FILE_SIZE.md) adds complete chsize359 exact
-and calloc/fcloseall source candidates. Current comparisons total66:
-34 authored/32 runtime. The preceding msize exact21 and realloc106/111/15
-are recompiled and preserved; all other preceding results remain unchanged.
-
-[Exit registration](RUNTIME_ONEXIT.md) adds atexit19 exact and promotes the
-existing normal/quick18/18 wrappers without modifying termination source.
-Onexit121/2 and the initializer walker32/6 are complete candidates. Current
-comparisons total68:34 authored/34 runtime. All preceding260 exact and66
-candidate results and historical semantic inputs are unchanged.
-
-[Integer text](RUNTIME_INTEGER_TEXT.md) adds complete itoa60/ultoa30 exacts
-and the maintained96-byte helper with two comparison-direction differences.
-Its reversal uses address cursors so a one-digit conversion does not form a
-before-array pointer. Current candidates69:34 authored/35 runtime; all prior
-263 exact and68 candidate results remain unchanged.
-
-[Case conversion](RUNTIME_CASE_CONVERSION.md), [locale backends](RUNTIME_LOCALE_BACKENDS.md)
-and [startup/fatal recovery](RUNTIME_LOWIO_STARTUP.md) add five complete runtime
-exacts across852 bytes. Current candidates74:34 authored/40 runtime; every
-authored result below remains unchanged.
-
-[Error controls](RUNTIME_ERROR_CONTROL.md) add three exact validators and full
-abort31 across122 bytes, plus the initial MessageBox146/90 candidate (now exact).
-At that checkpoint,
-candidates75:34 authored/41 runtime; the authored results below remain unchanged.
-
-[Signal dispatch](RUNTIME_SIGNALS.md) adds exact lookup49/47 and full raise/filter
-candidates. The original raise owns53 additional switch bytes. Two new verified
-entries bring inventory to531; current candidates77:34 authored/43 runtime.
-
-[Decimal output](RUNTIME_DECIMAL_OUTPUT.md) adds exact lead-byte classification18
-and two complete candidates: decimal output922/923/535 and classification58/7.
-Current candidates79:34 authored/45 runtime. All preceding results are unchanged.
-
-[Code pages](RUNTIME_CODEPAGE.md) adds four complete exacts across227 bytes,
-525 initialized logical data bytes and the setter473/475/128 candidate. The full
-mapping95 includes39 embedded dispatch bytes. Current candidates80:34 authored/
-46 runtime; all preceding results are unchanged.
-
-[Argument/environment startup](RUNTIME_ARGUMENTS.md) adds environment setup219
-exact and three whole candidates: setup151/155/116, parser475/466/280 and
-acquisition389/411/404. Code-page companions preserve227 exact bytes after a
-shared declaration correction. Current candidates83:34 authored/49 runtime.
-
-[Initialization](RUNTIME_INITIALIZATION.md) adds controller48/precision19/noop1
-exact and math25/23/5 candidate, plus the full28-byte FP record. One missing real
-callback entry extends inventory to532. Current candidates84:34 authored/50 runtime.
+Current at source checkpoint `d3053eb`, checked October 16, 2026.
+Accepted totals are **362 functions / 75,484 code bytes / 136 metadata bytes**.
+There are **87 complete nonexact comparisons: 34 authored, 52 runtime and one
+compiler-generated**. None is an accepted exact.
+
+These 87 are not all unfinished functions. Eight other source-present allocator
+entries are outside both current comparison reports, so 95 of the 457
+source-present entries are not exact. Another 86 of the 543 inventory entries
+lack a source-present ledger row. The provisional inventory and origin review
+still need reconciliation; these numbers are not a final authored denominator.
+
+The tables below come from the retained current comparison report:
+`.analysis/exact-candidate-audit-20261012/comparison.json`.
+The directory date is historical; its contents are current.
+`config/match-units.toml` supplies target addresses, full extents, compiler
+inputs, relocation bindings and research links. Origin classification comes
+from `config/function-origins.csv`.
+
+Differences count raw byte positions after relocation resolution, not missing
+operations. Different instruction lengths shift later bytes. Whole functions,
+actual relocations, declared literals and attached metadata are compared;
+zero in a private control is not automatically a maintained exact.
+
+The earlier recovery chronology is preserved
+[in Git](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/research/exact/REMAINING_EXACT_FUNCTIONS.md).
+Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
+resource requirements and resume procedure.
+
+## Authored candidates
+
+All 34 authored candidates were compared across their complete original
+extents on October 13. Their retained results are unchanged at this handoff.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -421,11 +49,11 @@ callback entry extends inventory to532. Current candidates84:34 authored/50 runt
 | `draw-score` | 433 | 433 | 21 |
 | `load-editor-board` | 52 | 58 | 23 |
 | `store-editor-board` | 52 | 58 | 42 |
+| `draw-paddle` | 677 | 677 | 48 |
 | `queue-explosion-at` | 99 | 100 | 51 |
 | `clear-all-entities` | 106 | 107 | 59 |
 | `load-sprite-bank` | 1475 | 1475 | 70 |
 | `fill-triangle` | 1710 | 1710 | 88 |
-| `draw-paddle` | 677 | 677 | 48 |
 | `rotated-sprite-height` | 191 | 193 | 158 |
 | `fill-polygon-clipped` | 1592 | 1592 | 210 |
 | `fill-polygon` | 1543 | 1543 | 211 |
@@ -442,91 +70,118 @@ callback entry extends inventory to532. Current candidates84:34 authored/50 runt
 | `game-frame` | 1688 | 1691 | 1155 |
 | `render-rotated-sprite` | 1572 | 1466 | 1466 |
 
-Differences are raw byte positions after genuine relocation resolution, not
-a count of missing operations. Different instruction lengths move later bytes.
-The matching recipes and target addresses are in `config/match-units.toml`;
-each candidate links its retained research evidence there.
+## Runtime candidates
 
-The [stored-contact precision](EXACT_REBOUND_STORED_CONTACT.md) closes the
-complete 681-byte paddle rebound while preserving its three exact companions.
+| Function | Original bytes | Current bytes | Differing positions |
+| --- | ---: | ---: | ---: |
+| `crt-flush-output` | 328 | 328 | 1 |
+| `crt-commit-descriptor` | 111 | 111 | 2 |
+| `crt-format-exponent` | 310 | 310 | 2 |
+| `crt-open-shared-descriptor` | 1053 | 1053 | 2 |
+| `crt-read-stream` | 326 | 326 | 2 |
+| `crt-register-onexit` | 121 | 121 | 2 |
+| `crt-set-file-mode` | 128 | 128 | 2 |
+| `crt-set-os-handle` | 163 | 163 | 2 |
+| `crt-allocate-descriptor` | 184 | 184 | 4 |
+| `crt-force-decimal-point` | 101 | 101 | 4 |
+| `crt-add-with-carry` | 35 | 35 | 5 |
+| `crt-copy-mantissa` | 29 | 29 | 5 |
+| `crt-initialize-math` | 23 | 25 | 5 |
+| `crt-math-function-name` | 38 | 38 | 5 |
+| `crt-run-initializers` | 32 | 32 | 6 |
+| `crt-user-math-error` | 174 | 174 | 6 |
+| `crt-multibyte-classify` | 58 | 58 | 7 |
+| `crt-pow-special` | 584 | 584 | 8 |
+| `crt-exception-filter` | 351 | 351 | 9 |
+| `crt-set-codepage` | 475 | 475 | 11 |
+| `crt-zero-allocate` | 82 | 82 | 11 |
+| `crt-x87-exception-bridge` | 288 | 288 | 14 |
+| `crt-bounded-byte-count` | 44 | 44 | 15 |
+| `crt-decimal-digits96` | 232 | 232 | 20 |
+| `crt-fseek` | 153 | 153 | 20 |
+| `crt-multiply-extended12` | 678 | 678 | 21 |
+| `crt-raise-float-exception` | 876 | 876 | 22 |
+| `crt-write-descriptor` | 555 | 555 | 22 |
+| `crt-initialize-lowio` | 467 | 467 | 32 |
+| `crt-right-mantissa96` | 54 | 48 | 35 |
+| `crt-left-mantissa96` | 62 | 50 | 47 |
+| `crt-strncpy` | 36 | 58 | 56 |
+| `crt-strncat` | 49 | 69 | 68 |
+| `cpp-find-foreign-handler` | 213 | 213 | 70 |
+| `crt-double-to-extended` | 187 | 185 | 75 |
+| `crt-extended-convert` | 459 | 459 | 95 |
+| `crt-locale-map` | 555 | 551 | 110 |
+| `crt-string-length` | 119 | 102 | 112 |
+| `crt-shift-mantissa` | 173 | 172 | 134 |
+| `crt-double-integer-type` | 127 | 154 | 141 |
+| `crt-classify-double` | 162 | 161 | 148 |
+| `crt-round-mantissa` | 172 | 163 | 153 |
+| `crt-memory-fill` | 88 | 177 | 176 |
+| `crt-raise-signal` | 393 | 397 | 215 |
+| `crt-strcpy` | 232 | 198 | 232 |
+| `crt-strcat` | 224 | 291 | 276 |
+| `cpp-find-handler` | 659 | 658 | 326 |
+| `crt-memory-copy` | 334 | 124 | 333 |
+| `crt-write-error` | 494 | 493 | 412 |
+| `crt-read-descriptor` | 611 | 609 | 473 |
+| `crt-decimal-output` | 923 | 922 | 535 |
+| `crt-parse-extended12` | 1871 | 1851 | 1662 |
 
-The [sprite iteration lifetime](BANK_SPRITE_ITERATION_SCOPE.md) reduces bank
-differences from 72 to 70 while preserving all fifteen exact resource companions.
+## Compiler-generated candidate
 
-The [device surface and palette calls](DEVICE_SURFACE_PALETTE_CALLS.md)
-restore two blue comparison groups and reduce transition differences from
-18 to 12. Five exact device companions retain 808 bytes.
+| Function | Original bytes | Current bytes | Differing positions |
+| --- | ---: | ---: | ---: |
+| `list-global-init-13` | 26 | 32 | 21 |
 
-The [palette interface](EXACT_PALETTE_COM_CALLS.md) promotes complete stretch
-and reset while preserving all affected exacts. Paddle improves from 68 to 48
-differences; the other 34 retained candidate code identities are unchanged.
+## Source-present allocator entries outside current reports
 
-The [intro surface calls](EXACT_INTRO_COM_CALLS.md) promote the complete
-233-byte scroller while preserving all eighteen intro exact companions. The
-remaining 37 candidate code identities are unchanged.
+These eight bodies in `src/allocator.c` have historical scoped behavior evidence,
+not byte-exact acceptance. They have no row in either current comparison report.
+See [allocator ownership](../ALLOCATOR_OWNER.md) for the original ABI, retained
+REA dossier IDs, typed Heap API bridge and limits of the old checks. Establish
+current complete comparisons before assigning a differing-position count.
 
-The [runtime surface calls](RUNTIME_SURFACE_COM_CALLS.md) reduce paddle
-differences from 104 to 68 while preserving all ten runtime exact functions.
-The other 37 candidate code identities are unchanged. The drawing-record
-combination and game-over call projection are rejected.
+| Original entry | Source symbol |
+| --- | --- |
+| `0x00416760` | `dxball_runtime_delete` |
+| `0x00416770` | `dxball_runtime_new` |
+| `0x00417750` | `dxball_heap_release` |
+| `0x00417770` | `dxball_runtime_malloc` |
+| `0x00417790` | `dxball_allocate_with_handler` |
+| `0x004177D0` | `dxball_heap_allocate` |
+| `0x00419E80` | `dxball_initialize_runtime_heap` |
+| `0x00419EA0` | `dxball_call_new_handler` |
 
-The [display COM integration](EXACT_DISPLAY_COM_CALLS.md) promotes four complete
-functions and explicitly demotes three, for a net gain of one function and
-994 bytes. All 35 retained candidate code identities stay unchanged.
+## Evidence and closed controls
 
-The [surface COM integration](EXACT_SURFACE_COM_CALLS.md) promotes ordinary
-blit, capture and glyph drawing, and explicitly demotes stretch. Its two
-longer address producers leave 141/139 with 90 differences. PCX commutes one
-signed comparison group and retains 979/862 with 851 differences. The other
-37 retained candidate code identities stay unchanged. All 234 accepted
-closures, 1,869 existing resource cases and six existing callback cases pass.
+Read the relevant note before selecting another source model:
 
-The latest rotation expression, axis-cursor and sampled-plane records are
-rejected: they leave the renderer nonexact and lose two accepted projection
-bodies. Floating consistency also leaves it nonexact. C++ rectangle passing
-retains the extra instruction in explosion cleanup; both direct cursor-import
-contexts leave four paddle-position differences. See
-[closed diagnostics](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up).
+- [Closed storage diagnostics](CLOSED_STORAGE_DIAGNOSTICS.md) covers rejected
+  game-owner layout, SDK, declaration, rotation and workspace controls.
+  Preserve accepted companions; do not sweep equivalent spellings or invent
+  buffer capacity/padding to explain a frame gap.
+- [Float rendering](RUNTIME_FLOAT_RENDER.md) records the completed private
+  original `cvt.c` owner control: exponent formatting becomes exact, but fixed
+  and general lose their accepted results. Not adopted; maintained values above
+  remain authoritative.
+- [FP exception entries](RUNTIME_FP_DECOMPOSITION.md) records matherr's remaining
+  adjacent store/load scheduling difference. [FP dispatch](RUNTIME_FP_DISPATCH.md)
+  records the C producer's raising-exact/handling-nonexact tradeoff.
+- [Stream transfer](RUNTIME_STREAM_TRANSFER.md),
+  [stream opening](RUNTIME_STREAM_OPEN.md),
+  [stream operations](RUNTIME_STREAM_OPERATIONS.md) and
+  [low-I/O lifetime](RUNTIME_LOWIO_READ_CLOSE.md) retain near-match producer
+  controls. Original ownership helps some functions but is not a blanket fix.
+- [Decimal conversion](RUNTIME_DECIMAL_CONVERSION.md) retains full parser,
+  multiplication and table evidence. Do not introduce fake uninitialized reads
+  solely to fill an original length difference.
+- [Memory copy](RUNTIME_MEMORY_COPY.md),
+  [string concatenation](RUNTIME_STRING_CONCATENATION.md) and
+  [memory fill](RUNTIME_MEMORY_FILL.md) describe assembly-origin boundaries;
+  do not replace missing ABI evidence with copied bytes or a convenient wrapper.
+- [CRT initialized storage](../CRT_INITIALIZED_STORAGE_CLOSURE.md) and
+  [FDIV initialization](../CRT_FDIV_INITIALIZATION_FRONTIER.md) cover integration
+  frontiers separately from standalone function exactness.
 
-The latest [polygon workspace](POLYGON_SCAN_WORKSPACE.md) reduces the two
-polygon comparisons while preserving all accepted raster functions. The three
-raster candidates above reflect that verified checkpoint. The original EXE has
-no COFF symbols or debug directory.
-The verified original game archive contains 51 files, with no source, PDB,
-object files or linker map. Its inventory is retained in
-`.analysis/exact-input-frontier-20261013/audit.json`; no online search runs.
-
-The [explosion cleanup scope](EXACT_EXPLOSION_CLEANUP_SCOPE.md) promotes its
-797-byte controller; the [secondary-width scope](EXACT_OVERLAP_SECONDARY_WIDTH.md)
-promotes the 329-byte overlap. The [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md)
-reduces its differences from 107 to 88. The latest
-[intro point phases](EXACT_INTRO_POINT_PHASES.md) promote the 711-byte update.
-The [capture allocation phases](CAPTURE_ALLOCATION_PHASES.md) reduce its
-comparison from 803 to 745 differences. The latest
-[API workspace](CAPTURE_API_WORKSPACE.md) restores the remaining frame homes
-and reduces differences to 726; the other 40 candidate hashes are unchanged.
-
-The [sprite-bank API workspace](BANK_API_WORKSPACE.md) restores the complete
-1475-byte loader size and reduces its comparison from 1577 to 76 differences,
-while preserving all 12 resource exacts.
-
-The later [upload-pointer workspace](BANK_TRANSFER_WORKSPACE.md) restores the
-pixel pointer's original EBP-68 home and reduces that comparison to 74
-differences. The descriptor and result homes remain exact; the loader is still
-a candidate.
-
-The [standalone color-key phase](BANK_COLOR_KEY_PHASE.md) restores EBP-64 and
-brings the bank comparison to 72 differences. It preserves glyph search,
-which the earlier key-as-record-field model lost.
-
-The [intro score phase](INTRO_SCORE_PHASE.md) restores rectangle and text-length
-homes while keeping the buffers unchanged. Redraw remains 578/587 with 560
-differences; the change preserves every accepted intro body.
-
-The [rotation visible-pixel scope](ROTATION_VISIBLE_PIXEL_PHASE.md) brings its
-comparison to 1466/1572 with 1466 differences while preserving all four accepted
-rotation functions. The frame and instruction count stay unchanged; the local
-homes still differ from the original.
-
-Private complete comparison: `.analysis/exact-candidate-audit-20261012/comparison.json`.
-No new game, fixture or provider session accompanies this audit.
+This handoff did not recompile or rerun gameplay/fixtures. The tables inspect
+retained comparison results; `validate-tracking.py --require-target` passed.

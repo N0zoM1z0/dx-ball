@@ -1,9 +1,11 @@
 # Contributor reconstruction workflow
 
-Aim for nearly complete original game source that rebuilds and plays. Choose
-work that closes a game flow: initialization, a frame phase, drawing, input,
-audio, or resource lifetime. Small exact helpers are useful dependencies, but
-an exact-function count is not the project's completion measure.
+Recover all original functions as exactly as possible first. Then build the
+restored game with the original Visual C++ 4.0 compiler and verify playability;
+resume platform ports after that. Within reconstruction, choose coherent source
+families and complete game flows. Tests, documentation and tooling support that
+work; they are not the main task. An exact-function count is not the project's
+completion measure.
 
 ## Establish the next question
 
@@ -36,7 +38,7 @@ bytes inside the enclosing span. Read the original instructions alongside
 pseudocode. Establish structures from both their producers and consumers;
 check the ABI against the actual callers and callees.
 
-Write natural typed C in the existing owner. Portable and legacy builds share
+Write natural typed C/C++ in the existing owner. Portable and legacy builds share
 one implementation. Preserve meaningful state writes, resource ownership,
 integer widths and call order. Keep unknown source spelling or backend behavior
 in the notes. Do not introduce fake locals, padding, copied code bytes or

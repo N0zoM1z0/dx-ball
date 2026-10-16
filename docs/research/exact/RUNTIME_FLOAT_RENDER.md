@@ -30,6 +30,24 @@ bytes agree. Original alignment gaps are not source fields; native pointers grow
 naturally. One failed REA request-name setup was closed and recovered; the next
 session completed13 queries and closed. Products and full evidence are retained
 in `.analysis/runtime-float-render-20261014/`. Only scoped compilation and whole
-comparisons ran, with no game/runtime tests. All290 preceding exacts and87
-candidates are preserved. Current totals:394 source bodies,296 exacts/67,283 code
-bytes/136 metadata bytes, and89 candidates. Physical integration remains open.
+comparisons ran, with no game/runtime tests. That initial checkpoint preserved
+all 290 preceding exacts and 87 candidates, reaching 394 source bodies, 296 exacts/
+67,283 code bytes/136 metadata bytes and 89 candidates. See the handoff for current
+totals. Physical integration remains open.
+
+## Complete original cvt.c owner control
+
+The October 15 private control reunites all eleven original `cvt.c` definitions
+in member order and restores the three original static helpers. It excludes the
+unrelated `_fptostr.c` and trap functions from the current formatting owner.
+One VC4 compilation and native/i686 compilation completed; full inputs, objects
+and comparisons are retained under
+`.analysis/cvt-original-complete-owner-20261015/original-cvt-c-owner/`.
+
+Exponent formatting becomes exact across 310 bytes and the full suffix literal.
+However, fixed formatting loses its exact result to one differing byte and
+general formatting to two. Seven other accepted bodies remain exact, while
+decimal insertion remains 101 bytes/four differences. The private owner has
+eight exact bodies, but loses two maintained exacts; it is not adopted or counted.
+Do not repeat this unchanged producer or publish only its exponent result.
+The maintained source, recipes and ledgers are unchanged.
