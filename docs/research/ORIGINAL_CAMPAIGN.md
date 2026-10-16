@@ -1,5 +1,34 @@
 # Original-board integration
 
+## Current restored-CRT original-bank prefix, October 17
+
+One full original-50 attempt uses current image `345a6887…` from source baseline
+`41fe125`. A saved checkpoint verifies the complete initial boards 0, 1 and 2
+(1,200 bytes) and progression through the first two unchanged original boards.
+The entire 20,000-byte bank, all 49 immutable originals, current inputs and game
+products remain unchanged. This is verified prefix evidence, not a full campaign
+pass. The producer is still running at the checkpoint; no terminal receipt is
+inferred from its progress file.
+
+The unchanged goal requires all 50 initial slots, then terminal index 50 in menu
+mode 0 with cleared end/reset/menu requests. Only `vc40-restored-crt` runs, with
+`--boards 50 --seconds 14400` and no episode limit. The existing SDK reader,
+116 source objects and 19 approved CRT members are reused. No compilation, relink
+or function replay runs.
+
+The scope uses one CPU, quota 35%, memory high 640 MiB / maximum 768 MiB and the
+dedicated silent sink. After about 804 seconds, its host CPU quota period changes
+from 100 to 10 ms to reduce long throttling pauses; `cpu.max` changes from
+`35000 100000` to `3500 10000`, preserving the same 35% average ceiling. Memory,
+affinity, target code, clock APIs and input/controller code stay unchanged. This
+scheduling adjustment does not establish a measured frame-rate improvement.
+
+Private `.analysis/restored-crt-original50-20261017/` retains frozen inputs,
+launch/observed kernel identities, live resource samples, the quota-period change
+and a sealed prefix snapshot. Its `tool-session.json` and `status.py` support
+checking the same producer; a saved snapshot alone does not establish liveness.
+Final original50 completion remains unproved at this checkpoint.
+
 ## Restored-CRT entry and gameplay episode clock, October 17
 
 The campaign CLI now accepts `--profiles vc40-restored-crt` and records that

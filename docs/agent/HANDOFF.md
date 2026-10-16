@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after SIGINT reporting and current authored receipt audits.
+Updated October 17, 2026, at the running current-image original50 prefix checkpoint.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -10,6 +10,21 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+
+One [current original50 producer](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
+is running at this checkpoint, with complete initial boards 0, 1 and 2 verified and
+the first two unchanged originals traversed. This is prefix evidence, not a
+full pass. **Do not launch a duplicate campaign or compiler/provider session.**
+The producer owns compiler-session.lock. Client exec session 47586 and private
+`.analysis/restored-crt-original50-20261017/tool-session.json` identify it; poll
+that handle and check saved PID/start-tick identities with `status.py`. Files
+alone are not liveness proof. It reuses all products/reader and targets all 50
+initial slots plus terminal 50 / menu 0, with 14400 seconds total deadline. CPU stays
+35% on one CPU, memory high 640 / max 768 MiB; the host quota period changes 100→10ms
+at about 804 seconds without target clock/code/input changes. Frozen inputs,
+resource records and the sealed 1200-byte prefix remain private. Preserve actual
+terminal output when it arrives; do not infer completion or restart on a stale
+or temporarily unavailable progress read. All 34 authored candidates stay open.
 
 The [SIGINT reporting repair](../research/ORIGINAL_CAMPAIGN.md#sigint-reporting-during-observation-october-17)
 writes `interrupted` to both active-observation reports and preserves the latest
