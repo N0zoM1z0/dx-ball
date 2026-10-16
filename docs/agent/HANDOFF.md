@@ -4,6 +4,8 @@ Updated October 16, 2026, after CRT-startup checkpoint `14cc03c` on
 `origin/main` and compiler-fragment ownership reconciliation below. Twenty-four
 old auto-analysis splits now have explicit parent mappings. Source, exact and
 semantic claims are unchanged; every original address remains recorded.
+Three additional C++ exception entries now have complete original CRT origin
+proofs; the translator guard extent is corrected from 98 to 107 bytes.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -59,10 +61,10 @@ An exact-function count is progress, not the completion criterion.
 | Source-present entries outside the two comparison reports | 3 |
 | Inventory entries without a source-present ledger row | 56 |
 | Nonexact origins | 34 authored / 53 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 214 runtime / 21 compiler-generated / 15 unknown |
+| Inventory origins | 270 authored / 217 runtime / 21 compiler-generated / 12 unknown |
 
 These are separate inventories, not interchangeable completion percentages.
-The authored denominator and 15 unknown origins remain open.
+The authored denominator and 12 unknown origins remain open.
 All 34 authored candidates have complete comparisons; the
 [remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
 now lists all 88 maintained candidates.
@@ -98,7 +100,9 @@ without a final restored-game build/play claim. See
 The preceding catch wrapper is also complete and exact, including its former
 59-byte imported-boundary gap and initialized current exception/context state.
 The omitted 41-byte guard is in the inventory with a proven runtime origin;
-its CLD and low-level forwarding source remain open. See
+its CLD and low-level forwarding source remain open. Three more original
+transport sections now match all 376 bytes and six relocations; their source
+remains open. See
 [catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md).
 
 The preceding object checkpoint restored exact destruction and construction

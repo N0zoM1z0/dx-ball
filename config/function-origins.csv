@@ -347,11 +347,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004184F0,runtime,crt-cpp-member-call,maintain,high,ev_7a6ecb0fd8d57961c646fb0702fc5f096898490de4d7b729f91ca8b8062a5167
 0x00418500,runtime,crt-cpp-member-call,maintain,high,ev_1c0ff3b374b6ce4bf4babc9db7281ffbed34f8f99d3bf1428bd49fd683ecd008
 0x00418510,runtime,crt_library,dependency,high,ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12
-0x00418570,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00418570,runtime,crt-cpp-frame-entry,maintain,high,ev_4508867ac2559a1476790eebf4ebcc66f06b1002418ecd68cef6f5580ad461a4
 0x004185B0,runtime,crt-cpp-catch-transport,maintain,high,ev_d6151e8f684ec5f76809b0f912d45d2c7bc02ddf86ea5f5fb858c95bd467a9ab
 0x00418620,runtime,crt-cpp-catch-guard,maintain,high,ev_2f5b0729f185df86fe78b66cd025fb299714c7b78584120d344c9fe41bc05f82
-0x00418650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00418730,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00418650,runtime,crt-cpp-se-translator,maintain,high,ev_5997988a35c92ec75e177c0d3602a3e76f3c0f2a8d9567d1d377dedba83d305a
+0x00418730,runtime,crt-cpp-translator-guard,maintain,high,ev_a6a2fe2f32fcd6d0e7516dd958192ef0ce2b4e7bb473ada8e3f814da782cda52
 0x004187A0,runtime,crt-entry,maintain,high,ev_23405af9219f09ff1db213e298ce53efc4d4f7a64c8f2a4455125d1a2c11da7f
 0x00418930,runtime,crt-startup,maintain,high,ev_851cf2b71d136e23d4b9af1063451b2165d151d2d95ec2fcfef200a68b4df76c
 0x00418990,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

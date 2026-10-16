@@ -58,3 +58,42 @@ entries without source rows. Origins are 270 authored, 213 runtime,
 three separate allocator comparison gaps and 249 semantic rows are unchanged.
 The source and exact ledgers are byte-for-byte unchanged by this reconciliation.
 No compiler or runtime test ran for these original-section origin claims.
+
+## Frame entry and SE translator boundary review (October 16)
+
+Three further complete sections from the same pinned `trnsctrl.obj` match the
+original with every relocation resolved:
+
+| Entry | Address | Complete bytes | Relocations |
+| --- | --- | ---: | ---: |
+| `___CxxFrameHandler` | `0x00418570` | 60 | 1 |
+| `_CallSETranslator` | `0x00418650` | 209 | 3 |
+| `TranslatorGuardHandler` | `0x00418730` | 107 | 2 |
+
+The old guard extent stopped at the indirect continuation jump. The original
+section also includes a nine-byte fallback epilogue at `0x00418792`: return 1,
+restore ESI/EBX/EBP, then RET. Its bytes match through `0x0041879A`; no live
+control-flow edge to this otherwise unreachable tail is invented.
+
+The frame entry takes its function descriptor implicitly in EAX and executes
+CLD. The translator installs a temporary FS registration with guard `0x418730`,
+local continuation `0x4186E7`, and translator callback cell `0x42389C`. The guard
+uses the original internal frame handler and nested-frame unwind entries,
+restores saved ESP/EBP and jumps to that continuation. These machine-state
+contracts remain open source work; ordinary C forwarding would lose behavior.
+
+REA 6.5.0 / Ghidra 12.1.4 complete reads:
+`ev_5997988a35c92ec75e177c0d3602a3e76f3c0f2a8d9567d1d377dedba83d305a`
+and `ev_a6a2fe2f32fcd6d0e7516dd958192ef0ce2b4e7bb473ada8e3f814da782cda52`.
+The earlier complete frame dossier is reused under its original REA 4.1
+identity, `ev_4508867ac2559a1476790eebf4ebcc66f06b1002418ecd68cef6f5580ad461a4`.
+New responses are retained in
+`.analysis/rea/runs/2026-10-16T05-46-21.766Z-requests-188128/`;
+the three complete section comparisons and explicit bindings are in
+`.analysis/cpp-translator-boundaries-20261016/complete-comparison.json`.
+
+Current origins are 270 authored, 217 runtime, 21 compiler-generated and 12
+unknown. The 520 independent entries, 24 parent fragments, 464 source-present
+entries and 373 accepted exact functions are unchanged. This review compared
+only the three affected original sections: no compiler, full replay or runtime
+check ran, and no source/exact acceptance was added.
