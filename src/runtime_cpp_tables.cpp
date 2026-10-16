@@ -77,10 +77,10 @@ void dxball_cpp_find_foreign_handler(DxBallCppExceptionRecord *exception,
     entry = dxball_cpp_select_try_range(function, nesting, state, &low, &high);
     while (low < high) {
         if (entry->try_low <= state && state <= entry->try_high) {
-            const DxBallCppHandler *handler = entry->handlers + entry->catch_count - 1;
-            if (!handler->type || handler->type->name[0] == 0)
+            const DxBallCppHandler *end = entry->handlers + entry->catch_count;
+            if (!end[-1].type || end[-1].type->name[0] == 0)
                 dxball_cpp_catch_it(exception, registration, context, dispatcher,
-                    function, handler, 0, entry, nesting, marker);
+                    function, end - 1, 0, entry, nesting, marker);
         }
         ++entry;
         ++low;

@@ -1,11 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 16, 2026, after CRT-startup checkpoint `14cc03c` on
-`origin/main` and compiler-fragment ownership reconciliation below. Twenty-four
-old auto-analysis splits now have explicit parent mappings. Source, exact and
-semantic claims are unchanged; every original address remains recorded.
-Three additional C++ exception entries now have complete original CRT origin
-proofs; the translator guard extent is corrected from 98 to 107 bytes.
+Updated October 16, 2026, after translator-origin checkpoint `f5bb9f2` and
+the original foreign-handler tail-pointer source recovery below. The four
+affected units alone are compiled and compared; three owner exacts remain.
+Source, exact and semantic totals are unchanged. Twenty-four old auto-analysis
+splits have explicit parent mappings, and every original address remains
+recorded. The translator guard extent is corrected from 98 to 107 bytes.
 REA is pinned to 6.5.0.
 The reconstruction objective is unfinished.
 
@@ -157,6 +157,7 @@ and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
 
 | Checkpoint | Result | Evidence / owner note |
 | --- | --- | --- |
+| October 16 foreign-handler tail | Original one-past handler pointer, negative-offset type test and deferred last-handler argument; 212/213 bytes, 105 differences; three owner exacts preserved | [C++ tables](../research/exact/RUNTIME_CPP_TABLES.md); `.analysis/cpp-foreign-handler-tail-20261016/adoption.json` |
 | October 16 compiler fragments | 24 overlapping cleanup/epilogue rows mapped to four existing parents; 520 independent entries, source/exact unchanged | [Compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md); `.analysis/compiler-fragment-ownership-20261016/verification.json` |
 | October 16 CRT startup | Complete 390 code / 12 scope bytes exact; GUI initializer fixed; fatal family preserved; total 373 | [CRT startup](../research/exact/RUNTIME_ENTRY.md); `.analysis/crt-entry-source-20261016/adoption.json` |
 | October 16 catch guard | One omitted 41-byte callback reconciled; complete transport/guard origins; inventory 544, exact unchanged | [Catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md); `.analysis/cpp-catch-guard-origin-20261016/adoption.json` |
@@ -227,6 +228,10 @@ question, not merely the smallest differing-position count.
   both lose accepted companions and are closed controls. Do not rebase one table
   differently per function. The 56 independent inventory entries without source rows remain
   in scope.
+- Foreign handling now carries the original one-past catch-list pointer through
+  its final type checks, subtracting only for the transfer argument. Its remaining
+  register/bound-comparison differences are nonexact; do not sweep spellings or
+  registers. Three owner exacts are preserved by one four-unit comparison.
 - The C++ terminal owner now supplies callback state and two real nested SEH
   scopes. Its source requires a Win32 SEH-capable compiler; VC4 and Clang Win32
   compile the same implementation. Do not replace it with a no-op host catch.

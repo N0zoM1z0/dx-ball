@@ -110,9 +110,9 @@ extents on October 13. Their retained results are unchanged at this checkpoint.
 | `crt-left-mantissa96` | 62 | 50 | 47 |
 | `crt-strncpy` | 36 | 58 | 56 |
 | `crt-strncat` | 49 | 69 | 68 |
-| `cpp-find-foreign-handler` | 213 | 213 | 70 |
 | `crt-double-to-extended` | 187 | 185 | 75 |
 | `crt-extended-convert` | 459 | 459 | 95 |
+| `cpp-find-foreign-handler` | 213 | 212 | 105 |
 | `crt-locale-map` | 555 | 551 | 110 |
 | `crt-string-length` | 119 | 102 | 112 |
 | `crt-shift-mantissa` | 173 | 172 | 134 |

@@ -715,7 +715,7 @@ relocations = [
   { offset = 5, type = "DIR32", symbol = "_dxball_cpp_se_translator", addend = 0, target = 0x0042389C },
   { offset = 52, type = "REL32", symbol = "_dxball_cpp_call_se_translator", addend = 0, target = 0x00418650 },
   { offset = 95, type = "REL32", symbol = "_dxball_cpp_select_try_range", addend = 0, target = 0x0041B5F0 },
-  { offset = 181, type = "REL32", symbol = "_dxball_cpp_catch_it", addend = 0, target = 0x0041B780 },
+  { offset = 180, type = "REL32", symbol = "_dxball_cpp_catch_it", addend = 0, target = 0x0041B780 },
 ]
 
 [units.cpp-frame-unwind-filter]
