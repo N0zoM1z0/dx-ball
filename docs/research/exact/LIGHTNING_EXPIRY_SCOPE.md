@@ -96,6 +96,30 @@ image and ledgers remain unchanged; no native check, relink or game follows.
 Frozen inputs, objects and complete comparisons are retained under
 `.analysis/lightning-scan-scope-20261017/`. Do not repeat this scope model.
 
+## Closed clock expression with RNG on the left
+
+One distinct private proposal replaces the explicit start-time local with
+`dxball_random_range(20000) + timeGetTime() + 40000`. The earlier combined-expression
+control put time on the left and failed under VC4. The new proposal tests the
+opposite operand order, motivated by the original time-before-RNG/EBX sequence;
+it does not establish original spelling or register emission.
+
+The current GCC native configuration calls RNG first. One unchanged existing
+countdown case, deadline0/now1000, compares it against the original and rejects
+the reversed events. The first two events are exchanged; the subsequent event
+trace agrees in this case. A passing numeric sum would not preserve the observed
+call order. Retain the explicit time sample and do not pursue equivalent addition
+spellings for register allocation.
+
+The failed ordered case stops this proposal before any VC4 compilation or
+complete-function comparison. One private native owner compiles and links with
+36 unchanged objects; no canonical source, object, library, report, ledger or game
+image changes. There is no new semantic acceptance, game, provider or full replay.
+Both traces, commands and consumed inputs are retained in
+`.analysis/lightning-clock-operand-order-20261017/`. Unique private products and
+proposal inputs are compressed with byte equality before disposable copies are
+removed. This failure does not prove a source optimum or resolve original EBX use.
+
 ## Compiler-dependent particle argument order
 
 A single existing expired-deadline/crop case confirms that the current GCC

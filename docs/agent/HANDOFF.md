@@ -11,6 +11,14 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
+One [clock-expression proposal](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#closed-clock-expression-with-rng-on-the-left)
+with RNG on the left fails a single existing ordered countdown case under the
+current GCC configuration. Keep the explicit time-before-RNG sample. The failed
+gate stops before VC4 compilation/comparison; only one private native owner and
+link run, reusing36 objects. Canonical source/products/acceptance stay unchanged.
+Frozen traces/proposal products are retained before verified cleanup. Do not
+repeat this addition-order model or infer original EBX emission from it.
+
 The [exact local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md)
 prevents a zero-byte comparison from concealing a changed internal COFF label.
 One real302-byte object counterexample passes the old comparator and is rejected
