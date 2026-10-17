@@ -1,1103 +1,262 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the declared game-prefix direct-transfer review.
-The user permits retaining the 19 explicit original CRT members in final VC4
-delivery. Prioritize authored function exactness; removing those runtime
-dependencies is not a delivery gate. Their remaining source/origin gaps stay
-recorded. The reconstruction objective is unfinished and ports remain deferred.
-
-Totals remain 475 source entries, 380 exact functions and 95 complete candidates
-(34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
-from the checks below. The current 116-source-object image is
-`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
-Earlier live observations below retain their recorded image identities; the
-latest relink now has the bounded entry/exit check below; no new full campaign passes.
-
-The [current-image entry check](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
-passes5.019 seconds on untouched original board0,1,410 valid samples/no malformed
-lines, score10/lives3, menu return and actual zero exit. All400 initial board
-bytes and20,000 bank bytes verify. An earlier per-read attempt fails at opening
-with reset requested; keep its42 samples and exit1 separately. Persistent-reader
-success does not establish failure causality or focus recovery. Reuse these
-sealed observations rather than repeating the same episode. No compiler, relink,
-full replay, acceptance gain or source change. Return to authored recovery.
-
-The [sparse-tail selector](../research/CAMPAIGN_TAIL_CONTACTS.md#sparse-tail-selector-and-delayed-input-checks)
-ranks six existing safe contact choices only for eligible single-ball speed9
-tails. Twelve delayed-input controls/909 complete original/native frames pass;
-eleven fallback checks preserve the old policy. The selected phase is now reported
-separately from the processed-sample schedule. The integer wrapper uses that same
-decision; final cases execute the current source after its width guard.
-The preceding twelve fixed-phase cases/1,229 frames remain separately preserved.
-The ray is approximate: no measured live speedup or full campaign pass follows.
-The reusable fixture records genuine particle-producer provenance for same-frame
-frees while retaining all ownership/event/poison checks. Game source/products and
-acceptance stay unchanged; those frame controls require no compiler/provider/game/
-relink/full replay.
-A [bounded real-input check](../research/CAMPAIGN_TAIL_CONTACTS.md#bounded-real-entry-and-constructor-failure-reporting)
-now exits0 after20.02 seconds of gameplay,1,968 valid samples/no malformed lines,
-original board0 and score174/lives3. New request fields verify on retained contact
-requests; tail-ray is not observed, so no live tail speedup or full50 pass follows.
-A stale build-manifest guard first rejects before target launch. Its old profile
-files are marked stale; constructor errors now write a fresh failure profile.
-An explicit build-identity refresh preserves old execution hashes and proves
-only the two earlier comparison targets changed; all116 objects/19 members/map/
-image stay fixed. The final strict constructor accepts, without compilation or
-relink. All three owned process identities are absent;49 verified runtime copies
-are removed. Measured CPU is about34% of one CPU, observed peak334 MiB,
-with no memory-limit events. Return to instruction-backed authored recovery;
-do not repeat the same initial-board episode or unchanged full campaign.
-
-One [clock-expression proposal](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#closed-clock-expression-with-rng-on-the-left)
-with RNG on the left fails a single existing ordered countdown case under the
-current GCC configuration. Keep the explicit time-before-RNG sample. The failed
-gate stops before VC4 compilation/comparison; only one private native owner and
-link run, reusing36 objects. Canonical source/products/acceptance stay unchanged.
-Frozen traces/proposal products are retained before verified cleanup. Do not
-repeat this addition-order model or infer original EBX emission from it.
-
-The [exact local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md)
-prevents a zero-byte comparison from concealing a changed internal COFF label.
-One real302-byte object counterexample passes the old comparator and is rejected
-after the repair; its canonical exact remains. Four focused fixture checks pass.
-A definition-only audit verifies all380 accepted units/203 internal sites and
-eleven exact metadata sections; no complete comparisons are replayed. All34
-authored candidates/35 internal sites have no current target collisions; the
-retained old manifest exposes the two known brick-hit groups. This is a narrow
-binding check, not general target correctness or new source/exact acceptance.
-No compiler/provider/game/relink runs; current products and ledgers stay fixed.
-Tracking now also checks known function bindings against their catalogued entry
-addresses: all475 source functions/1,331 sites agree, including985 authored
-sites. Five focused checks pass, including a wrong real call mapping and
-constructed metadata/addend controls. This verifies catalog consistency only;
-unknown symbols and original identity/ABI still require independent evidence.
-
-The [declared-body reference review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#incoming-references-to-declared-game-bodies)
-covers all270 authored functions/1,149 incoming sites, reusing259 dossiers and
-querying only eleven missing facets with REA6.5. All190 non-entry destinations
-come from DATA sites inside the same owner's enclosing span; no observed
-external call/jump enters a declared body at an interior address. Undeclared or
-body-excluded entries and unresolved computed targets remain open. The capped
-session closes normally; no compiler/game/relink/full replay or acceptance gain.
-The [original PE relocation audit](../research/exact/CRT_SUFFIX_OWNERSHIP.md#original-pe-code-address-relocations)
-also accounts for all249 game-prefix words among4,556 HIGHLOW entries, including
-body-excluded table addresses, four registered handlers and one unused switch
-slot. All40 handler bytes match their actual compiled C++ parents. No additional
-independent entry or origin update follows; relative/computed targets remain
-open. The24-row retired-fragment ledger and current image stay unchanged.
-The subsequent [direct-transfer review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#direct-transfers-in-the-declared-game-prefix)
-accounts for all289 declared prefix spans,23,469 instruction sites and3,719
-direct transfers, including body-excluded parent blocks. Every represented
-direct destination is a known entry or same-parent instruction. Sixteen tables
-contain191 address words/492 selector bytes;142 other indirect sites use known
-import cells and177 register-relative calls retain unresolved runtime values.
-No new independent entry, source or exact acceptance follows. Outside-prefix
-sources, alternate code and dynamic destinations remain open; final authorship
-and source optimality are unproved. Reuse this sealed walk rather than repeating
-it. Only eight missing REA assembly facets run, with281 records reused; no
-compiler, game, relink or full replay. Verified cleanup releases about19.09 MiB.
-
-The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
-accounts for all362 instructions and71 switch bytes. It finds and repairs two
-wrong comparison-manifest targets for cases8 and21 through actual COFF definitions
-and original instruction mapping. One current cached comparison is refreshed;
-its digest changes while the reviewed1316/1315/418 result remains nonexact.
-The subsequent [particle iterator scope](../research/exact/EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
-restores the score flag at EBP-8 and improves the current result to416 differences.
-All prior producer inputs still agree, so its object is reused without a new
-VC4 compilation. Seven complete comparisons preserve five exacts/1,572 bytes;
-all380 exact results and94 other candidates stay unchanged. A final108-case
-native selection passes with the existing typed board-surface backing; initial
-unadapted fixture crashes and a private cleanup error remain retained. The
-restored-CRT link reuses116 objects/19 members; all1,091 addresses stay fixed,
-with only nine frame displacements and twelve timestamp bytes changed. Counter/
-pan homes and one receiver producer remain open. That adoption itself runs no
-game or full replay; the later short entry check is recorded separately above.
-
-The [retained original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
-has ended with actual observer exit 1 and `fail`: the 14,400-second observation
-deadline expired. All twenty initial original layouts for indices 0 through 19
-were verified; the final retained events include all 8,000 initial bytes. The last
-sample is gameplay on index 19, with 15 bricks, score 52,538 and three lives,
-application active and unpaused. This is not a full50 pass, a sampled crash or a
-normal application-exit check. The observer stops its groups during cleanup.
-All three saved PID/start-tick identities are absent; exec session 47586 is closed.
-Do not poll/restart the historical producer or repeat its unchanged full campaign.
-Return to focused authored source recovery; all 34 authored candidates stay open.
-
-Private `.analysis/restored-crt-original50-20261017/verification.json` seals the
-actual failure, 611,084 valid SDK samples/no malformed lines and 1,473 retained
-events. It verifies all 237 frozen inputs, 12 artifacts, 116 source objects,
-19 approved CRT members, 49 originals and the archived input bytes before any
-ledger edit. The final private observation is compressed with byte equality;
-49 verified disposable runtime copies are removed after preserving deltas.
-The public failure reports and historical 3/5/10/15/20-board prefix snapshots
-remain intact. CPU stays capped at 35% of one CPU, memory high 640 / max 768 MiB;
-measured windows remain about 35%, with last observed peak 252 MiB and no memory
-limit/OOM events. The final cgroup is gone, so no final lifetime peak is claimed.
-
-Thirteen exact-row notes now remove superseded nonexact or semantic-only clauses,
-after the campaign's frozen-input checks and failure seal. Current complete exact
-receipts support each correction; every other field and raw line is unchanged.
-Source, status, extent, ABI, acceptance and counts do not change. The applied
-receipt is `.analysis/tracking-note-reconciliation-20261017/applied.json`.
-The refreshed read-only coverage audit is
-`.analysis/brick-hit-scope-adoption-20261017/authored-coverage.json`: all 270
-classified authored entries have current source and complete receipts across
-29 compiler closures, with 236 exact and 34 candidates. No compiler or replay runs.
-Earlier coverage audits remain sealed under their historical phases.
-
-The [live softening review](../research/ORIGINAL_CAMPAIGN.md#live-board-softening-consistency)
-reconciles a counter increase from 41 to 64 on board index 16: 24 hard tiles
-become destructible, six type-21 tiles soften and one ordinary tile clears.
-All 400 resulting bytes and both counts computed from the grids agree. The
-397-byte helper remains exact, with source/object identities unchanged. The two
-samples add runtime evidence for the current image, with invocation timing unobserved;
-no new acceptance, game, compiler, provider or replay follows.
-
-The [PCX workspace recheck](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#pcx-brick-hit-and-processor-controls-after-handoff)
-confirms its rejection from retained instructions and current source/object
-identities. Adjacent descriptor/width/result homes do not establish a source
-aggregate; the smaller private body adds no recovered operation or exact.
-No new source question, compilation, provider or replay follows this review.
-
-The [SIGINT reporting repair](../research/ORIGINAL_CAMPAIGN.md#sigint-reporting-during-observation-october-17)
-writes `interrupted` to both active-observation reports and preserves the latest
-complete SDK state and counters. One intentional signal check exits 130 with 767
-valid samples/no malformed lines; all three owned kernel identities are absent.
-Normal-path AST and all game products/acceptance remain unchanged. Old reports
-are not rewritten; hard kills, SIGTERM and cleanup interruptions are not covered.
-The same phase audits all 270 classified authored source/current comparison rows
-and 29 matching compiler closures: 236 exact plus 34 candidates. This is coverage,
-not source-optimality or final-denominator proof. No compilation or full replay runs;
-49 checked probe copies are removed after preserving unique evidence.
-
-The [campaign entry](../research/ORIGINAL_CAMPAIGN.md#restored-crt-entry-and-gameplay-episode-clock-october-17)
-now accepts `vc40-restored-crt` and records its own map digest. Episode time starts
-after the first initialized ready gameplay sample, so startup no longer consumes
-the requested play interval. A final 20-second episode consumes 1314 valid SDK
-samples with no malformed lines: score 40 / lives 3, bricks 168→164 and two complete
-initial original-board-0 witnesses. It remains `bounded-episode`, not a campaign
-pass. One SDK compile supplies the initial entry check; the final run reuses it
-with the explicit silent sink. Game source/products and all acceptance stay fixed.
-Both reports and source versions are sealed; 49 checked probe copies are removed.
-No game compile, relink, full replay or long campaign runs.
-
-The [current-image natural expiry](../research/RESTORED_CRT_LIGHTNING_FLOW.md)
-episode reuses all116 source objects, the19 approved CRT members and the existing
-SDK reader. It records228 states:95 countdown ball samples remain attached;
-after about55.299 seconds, score4/lives3 and the complete original board1/222
-bricks verify. Real editor save, menu return and normal exit pass; originals stay
-unchanged. No positive lightning frame is sampled, so there is no flash/timing
-claim. The scope is one custom single-brick expiry, not the original campaign.
-All source, products and acceptance stay fixed. No compiler, relink, provider or
-full replay runs. Frozen inputs/trace are sealed;49 probe copies are removed after
-backup equality checks, releasing about2.01 MiB with trace compression.
-
-The [editor-key review](../research/exact/EDITOR_KEY_ADDRESS_CORRESPONDENCE.md)
-explains its complete 638/632/260 comparison with one six-byte address producer.
-It includes 87 original / 89 maintained code instructions, all 265 table bytes,
-256 input-byte routes, 48 actual bindings and the five-byte unowned exit jump.
-The four-byte frame and remaining code/data correspond at mapped sites. This is
-an explanatory proof, not exact acceptance or whole CPU equivalence. Preserve
-the shared terminal-overlap storage; do not retry offset/cast forms. No compiler,
-provider, runtime, relink or full replay runs. Canonical code/products stay fixed.
-
-Two [private lifetime controls](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#upload-and-endpoint-iteration-scopes-october-17)
-are rejected. Bank post-Lock cursor/row/column scope worsens 1475/66 to 1508/316;
-polygon endpoint iteration scope worsens ordinary 214→222 and clipped 214→221.
-Two compilations compare all 29 affected functions, preserving 24 exact companions
-and all metadata; the other 26 function code identities stay unchanged. Canonical
-source, objects, reports, ledgers and image are untouched. Do not repeat these
-models. Frozen proposals and receipts are sealed; cleanup releases 110592 allocated
-bytes. No runtime, relink, provider query or full replay runs.
-
-One [last-brick compiler control](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#compiler-dependent-particle-argument-order)
-confirms a portability gap: current GCC/original RNG limits `11, 14, 15, 30` become
-`30, 15, 14, 11` under Clang 18. It privately replaces one native owner and reuses 36
-objects. Two one-case existing checks retain both traces; no canonical source,
-object, acceptance or image changes. Keep authored exact recovery first and
-preserve original RNG sequencing when port work resumes. No full replay runs.
-
-The [CRT suffix review](../research/exact/CRT_SUFFIX_OWNERSHIP.md) checks 39,132
-declared text bytes from416610. Its193 inventory/fragment gaps total2330 bytes;
-all non-CC bytes belong to seven complete approved CRT sections. The eight-byte
-VC20XC00 marker is data. Continuation transfer at4184A0 now covers its full53-byte
-COMDAT, correcting46 by including the seven-byte fallback epilogue at4184CE.
-No live edge, source, ABI or exact acceptance is invented. After correction,
-2323 gap bytes comprise814 matched CRT bytes,8 signature bytes and1501 remaining
-CC bytes. No residual non-CC byte lies outside the matched owners in this scope;
-this is not a final entry count or authored denominator. Current78-entry receipt
-coverage has the corrected extent. No compiler, provider, build, game or replay
-runs; all code/artifact and acceptance identities remain unchanged.
-
-The [dependency receipt reconciliation](../research/exact/CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
-now covers all 78 current no-source entries. Five existing original trnsctrl
-proofs verify 515 bytes / nine actual bindings and fill the coverage index,
-without rerunning a producer. Source, ABI, origin, exact and image claims stay
-unchanged; the nineteen approved members remain. This is not a final inventory
-or authored denominator. The [height review](../research/exact/ROTATION_PIXEL_ADDRESS.md#height-helper-correspondence)
-also accounts for all 63 instructions: 47 ordinary operand pairs and two already
-proved bank-address groups. Each group adds one byte, explaining the193/191
-extent difference;158 raw differences remain. Eight scratch boundaries pass.
-No new source model, compiler, provider, solver, native fixture, game or relink
-runs. Do not try new max/return/FP spellings for that accounted height body.
-
-The [intrinsic-entry closure](../research/exact/CRT_CI_ENTRY_ORIGINS.md) promotes
-13 unknown entries to runtime through 725 complete original code bytes / 44 actual
-relocations across four pinned members. A unique 48-byte readonly section receives
-new REA 6.5.0 evidence; six consistent operands place the original nine-byte private
-BSS at 43FB00. Three entry queries confirm 58/7/304-byte bounds; inferred prototypes
-are not adopted. Overall origins are 270 authored / 261 runtime / 21 generated / one
-unknown. The unknown 40CC20 is source-present; the final authored denominator is
-still unproved. No source/exact/ABI acceptance, runtime check or relink follows.
-One serial capped provider session closes normally; all 121 cached provenance
-inputs remain current without repeating the library scan. Source and image stay
-unchanged. The separate scan-only last-brick scope worsens 990→991 and is rejected
-after one compilation of 20 functions; 12 exacts / 3,303 bytes and all 19 companions remain.
-Do not repeat that block model or run its unchanged runtime logic again.
-
-The [last-brick expiry scope](../research/exact/LIGHTNING_EXPIRY_SCOPE.md) puts
-tile/center/scan/rectangle/destination locals inside their sole consuming branch.
-The complete candidate improves1067/1057 with992 differences to990, preserving
-12 exact companions/3303 bytes and all other19 code identities. Only60 EBP
-displacements change across a17-DWORD bijection;302 instructions and68-byte frame
-remain. Six original homes are restored: remaining time, tile Y and four RECT
-fields. The explicit time-before-RNG and crop producers stay unchanged/open.
-Existing35 clock/deadline plus162 expiry/crop cases pass; overlay is not rerun.
-Historical235 input inventories refresh without new cases. One display compile
-covers20 functions; the delivery relink reuses all116 objects and the same19 CRT
-members. All1091 map addresses are identical; only60 proved displacements plus12
-timestamp bytes differ from the preceding `844247ba…` image. No game, full replay
-or provider query runs. This is a partial source improvement, not a new exact.
-
-The [complete renderer correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md#complete-renderer-correspondence)
-pairs all365 instructions:285 ordinary role/operand pairs and80 instructions in
-explicit address/guard/product/row-add groups. All22 calls and26 branch targets
-correspond. Four bit-vector equalities and four counterexample controls pass;
-36 scratch-register boundaries are checked. The claim is bounded to ordinary
-stable memory and finite normal FP values, not unrestricted CPU equivalence.
-One two-expression row-add source control emits identical raw bodies/bindings
-for all six functions and is rejected. Do not repeat this spelling trial.
-Canonical source, image and ledgers stay unchanged; no runtime check or relink
-follows it. The initial array-valued solver timeout is retained separately from
-the completed effective-address proof. No missing operation is found in this
-bounded renderer inventory; original frame/register/producer context remains open.
-
-The [rotation address recovery](../research/exact/ROTATION_PIXEL_ADDRESS.md)
-forms each integer row-plus-column offset before adding the pixel base, as in
-the original. Only four ADD operands/eight bytes change; every other instruction
-byte and five complete companions remain identical. The renderer stays1466/1572
-with1466 differences,365 instructions and424-byte frame. Four exacts retain749
-bytes; existing351 renderer plus344 wrapper cases pass once. Historical235 input
-inventories refresh without rerunning their other cases. One eight-input compile
-covers all six functions; the delivery builder reuses all116 objects. All1091 map
-addresses remain identical and the renderer is discarded by `/OPT:REF`: only12
-bytes in six parsed timestamps differ from the preceding `ebe4a4ff…` image.
-No game, full replay or provider query runs. This source improvement adds no exact.
-
-The [dependency inventory audit](../research/exact/CRT_DEPENDENCY_INVENTORY.md)
-adds eight omitted arctrig/sqrt entries, now all proved runtime. Inventory is553
-with78 no-source entries; source remains475. Three no-source entries are import
-thunks;75 associate with sixteen approved CRT carriers. Updated coverage has78
-complete original receipts after connecting the five earlier handler proofs.
-All78 entries have complete receipt coverage; the earlier73/5 index remains
-historical. Five earlier helper names stay recovered without source or ABI claims.
-The constant-pointer view is rejected after one core pilot: 1691→1705 bytes,
-ten unbound alias-cell references, nine exact companions preserved. Do not
-repeat this shared-view model or expand it into flag/profile/name variants.
-
-The [bank allocation scope](../research/exact/BANK_ALLOCATION_SCOPE.md) confines
-one temporary pointer to allocation/check/publication. Complete comparison is
-now 1475/66 differences; fifteen exact companions preserve 3,572 bytes. All 425
-instructions are accounted for: only fifteen displacement bytes across three
-DWORD homes change. Ten existing bank and three callback cases pass. All 116
-VC4 objects are reused at relink, with the same nineteen original CRT members.
-All 1,091 map addresses remain unchanged; every other image byte agrees apart
-from six explicitly parsed COFF/resource timestamps; 235 historical input
-inventories are refreshed. A later selected startup records 75 states from this
-image: complete original board0, paddle 480/200, release/motion, menu return and
-completed zero-exit/no-window assertion. A first-poll postcondition error is
-retained and corrected using the same stable samples, without a second game.
-The file-metadata phase trial worsens 66 to 69 differences across 17 complete
-comparisons and is rejected; no source or ledger change. Do not repeat it.
-
-Retained real-input evidence for the preceding `cbe767d1…` image is:
-
-- [Ball/pause/editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md):
-  159 read-only states, two painted cells, complete save/reload/recreate and
-  preservation of the other 49 boards.
-- [Natural game-over](../research/RESTORED_CRT_GAMEOVER_FLOW.md): 297 states,
-  three natural life losses, name editing, full 660-byte ranking persistence,
-  fresh-process reload and two normal exits.
-- [Board transition](../research/RESTORED_CRT_ROUND_FLOW.md): 135 passing states,
-  editor-created single-brick clear, score 10 / lives 3, complete original board1
-  load with 222 bricks and normal exit. The first short-click failure is retained;
-  the driver now synchronizes CTRL painting and tolerates a missed zero-brick
-  sample before independently checking the complete destination board.
-- [Terminal boundary](../research/RESTORED_CRT_TERMINAL_FLOW.md): 1,608 states,
-  50 custom single-brick clears, menu/index50 with lives3/score500, complete
-  adjacent-storage fixture and normal exit. Three fixed nonzero-storage
-  original/current VC4 instruction cases check both overlap directions,
-  initialization, whole-image writes and ABI. No game recompilation.
-
-All 49 originals remain unchanged. Those selected runs reused their attested game
-and reader without compilation; other profiles were not rerun. Selected source
-bodies and actual relocations agree in the recorded image. No full replay or
-new provider query accompanies the latest change. The original Wine focus failure remains in
-[the focus diagnostic](../research/ROUND_FOCUS_RUNTIME.md); do not alter exact
-game behavior to hide it or repeat its known polling loop without new evidence.
-
-The latest [effect-sprite review](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md)
-checks 300 instructions on each side, eighteen paths, mutable RECT callbacks
-and ABI/write effects under its explicit memory model. All 34 SMT queries pass,
-including six mutation controls; strict differences stay 332/252/330. The
-[rotation frame review](../research/exact/ROTATION_FRAME_ROLES.md) accounts for
-all 424 frame bytes and rejects the per-axis rounding record. Reuse these closed
-results rather than repeating source permutations. Remaining authored exact
-work still requires a concrete instruction-backed source or producer question.
-
-The [ranking comparison review](../research/exact/RANKING_ROW_RECORDS.md#complete-comparison-review-october-17)
-accounts for all 135 instructions and eighteen bindings. Its single equality
-operand exchange explains the one-byte extent difference and shifted suffix;
-reversing source operands leaves the complete code unchanged. Seven exact
-companions retain 2,775 bytes. Do not repeat this spelling trial.
-
-The [joined declared text review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#joined-declared-text-coverage)
-reconciles all 126,700 bytes from 401000 to 41FEEB across the source prefix, two
-import thunks/four CC bytes and the CRT suffix. All 475 original source-span hashes
-match their retained comparisons. No non-CC gap byte lacks an existing CRT owner;
-3,650 remaining gap bytes are CC. Unknown 40CC20 remains unknown, and interior
-entry points/final inventory/source optimality stay unproved. No compiler,
-provider, instruction decoding, runtime or replay follows this receipt audit.
-The [Windows raster binding](../research/RASTER_WIN32_DEFAULTS.md) and [C++ terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md)
-retain their current source and limits. Exceptional paths, complete gameplay
-and native Windows/driver fidelity remain open. REA stays pinned to 6.5.0.
-
-This document describes the current state, not a running history.
-[Earlier handoff and trial history](https://github.com/N0zoM1z0/dx-ball/blob/d3053ebf453d5e2db1dc545dbe188f28f02f2d00/docs/agent/HANDOFF.md)
-remain in Git. Historical owner-note totals describe their own checkpoints;
-use the ledgers and reports below for current totals.
-
-## Goal and priorities
-
-The user's first priority is **“先把所有的函数尽可能 exact 还原完”**:
-recover all original English DX-Ball v1.07 functions as exactly as possible,
-as readable, rebuildable C/C++.
-
-The route is:
-
-1. Finish function reconstruction and complete-function exact comparisons.
-2. Get the reconstructed game building with the original Visual C++ 4.0
-   compiler and verify that it is playable.
-3. Resume platform ports, including macOS.
-
-Existing build/play evidence does not establish step 2 for the final restored
-source. Do not move to ports because a partial build or a small fixture passes.
-An exact-function count is progress, not the completion criterion.
-
-- Stay on DX-Ball; leave TH04 alone.
-- Use the local original, retained REA evidence and shipped compiler/CRT
-  sources. Do not search online for game source or another reconstruction.
-  The verified original game archive contains no source, PDB, objects or map.
-- Favor concrete source recovery over test, documentation, tooling or feedback
-  work. Those are supporting tasks, not the main deliverable. Run a focused
-  existing check only when it answers a real question; no historical test queue.
-- Work from a specific instruction-supported gap: ABI, expression, state write,
-  ownership, lifetime or original producer boundary. Make a bounded trial,
-  compare the complete affected family, record the result and move on.
-- Keep repository prose and code English. Write plainly and concisely. Keep the
-  README tutorial, centered 900px title PNG and progress SVG.
-- Preserve the full objective across turns. Do not mark it complete after an
-  isolated exact gain, a handoff, a successful fixture or a compatibility build.
-
-## Current authoritative state
-
-| Item | Value |
-| --- | ---: |
-| Provisional independent function inventory | 553 |
-| Parent-owned compiler fragments, counted separately | 24 |
-| Source-present independent entries | 475 |
-| Accepted exact functions | 380 |
-| Complete exact code bytes | 77,485 |
-| Attached exact metadata bytes | 244 |
-| Historical scoped semantic rows | 249 |
-| Complete nonexact comparisons | 95 |
-| Source-present entries outside the two comparison reports | 0 |
-| Inventory entries without a source-present ledger row | 78 |
-| Nonexact origins | 34 authored / 60 runtime / 1 compiler-generated |
-| Inventory origins | 270 authored / 261 runtime / 21 compiler-generated / 1 unknown |
-
-These are separate inventories, not interchangeable completion percentages.
-The final authored denominator and the one source-present unknown origin remain open.
-All 34 authored candidates have complete comparisons; the
-[remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md)
-now lists all 95 maintained candidates.
-
-All eight allocator entries now have complete exact acceptance, including the
-three physical Heap API wrappers. All 95 source-present nonexact entries have
-complete candidate comparisons. Another 78 independent inventory entries lack
-a source-present row. The [allocator note](../research/ALLOCATOR_OWNER.md)
-records the preserved public binding API, three actual import cells and focused
-native/Win32 evidence.
-
-The actual C++ `new/delete` now call the recovered allocation loop and heap
-release directly. Their full 16/14-byte VC4 comparisons have zero differences,
-corroborating the same accepted addresses without adding two functions. The
-legacy builder now includes the previously omitted `cpp_allocator.cpp` with
-the allocator flags and records owner overrides. A typed-list VC4 control
-reproduces the missing-object bypass; the repaired link, current native DSO and
-standalone MinGW probe pass real allocation, handler retries, release and
-terminal exit1/empty-list checks. Only affected native entity cases (7,343 plus
-980 connections) and two Core allocation-failure selectors ran. The copied
-native fixture binds the two real C++ dependency operands to its existing
-typed callbacks; uninstrumented probes verify production paths separately.
-No full replay, final game build or play claim follows from these checks.
-See [the allocation entry repair](../research/ALLOCATOR_OWNER.md#actual-c-allocation-entries-october-16-2026).
-
-Two complete named x87 routines now have proven runtime origins:
-`__ctrandisp1`44 and `__fload`60. The complete relocation-free loader uniquely
-places its text section; the dispatcher binds the independently proven
-`__trandisp1`. Its unrelocated calls, including the shared418A3E dependency,
-are reviewed explicitly. The shared BSS-dependent handler and full589-byte
-section remain unverified. No source or exact gain follows; see
-[dispatch tail](../research/exact/RUNTIME_X87_DISPATCH_TAIL.md).
-
-The sin/cos/tan scalar group now matches all24 bytes/four independently grounded
-bindings. Tan and three intrinsic entries were omitted from the inventory.
-The intrinsic group still has one unresolved external exit and remains unknown;
-the four additions account for the denominator and unknown-count increase.
-Six readonly dispatch constants have complete48-byte C source and zero-byte
-differences under VC4, with native/i686 C90 compilation. These constants remain
-separate from the unchanged480-byte descriptor family. See
-[trig entries and constant source](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md).
-
-At checkpoint `d11c556`, the VC4 game links the matching allocator/list/resource products with
-their actual owner flags. Default LIBC is excluded after a retained mixed-CRT
-link failure; the successful map uses one LIBCMT runtime. Complete owner
-products and previous adapter objects are reused by compiler/flags/full project
-input/object identity. The final game build reuses all 37 objects. All 52 linked
-allocator/list/C++ API bodies agree after actual image relocations. A probe with
-78 read-only observations confirms modes 4/0/1, attached ball, paddle input,
-release/motion, menu return and exit 0; the first-board screenshot is reviewed. The coarse
-pixel-only scene claim was insufficient and is retained with that limitation.
-This checks current owner integration; remaining function recovery and the
-standalone reconstructed CRT entry/storage/link remain open. See
-[VC4 owner linkage](../research/VC4_OWNER_LINKAGE.md).
-
-Win32 defaults now supply genuine heap APIs before game binding. The host
-WinMain wrapper retains an existing heap; the resource inspector explicitly
-initializes one before decoding. Fresh, early-default and early-Windows-bound
-entry checks pass with actual heap handles, pre-entry bytes/typed nodes and
-real release. The native translation unit is unchanged after preprocessing;
-native/VC4 SFONT and INTRO inspector outputs agree, and MinGW physical default
-heap checks pass. The legacy console tools now link their missing winmm
-dependency. These focused checks do not repeat the previous GUI control or
-integrate the standalone restored CRT entry. See
-[Windows heap startup](../research/WINDOWS_HEAP_STARTUP.md).
-
-The writable character table, two real pointer slots and small locale defaults
-now have complete source storage: 534 bytes/two bindings match. Numeric consumers
-use the original two-byte decimal-point array, closing exponent formatting's
-complete 310 bytes and six-byte suffix. All 13 affected old exacts remain. The
-multiplication C body is unchanged but its shared declaration context emits
-50 differences instead of 21; it remains a complete candidate. The 3,855 native
-C-locale consumer checks pass. See
-[character state and exact formatting](../research/exact/RUNTIME_CHARACTER_STATE.md).
-
-The locale category/code-page producer now supplies the real six-slot vector
-and unsigned code-page word. They retain 32-bit LCID/UINT width on the native
-64-bit host. Twelve category-routing calls and four locale-selector scenarios
-pass through the maintained consumers and typed fixture boundaries. The whole
-28-byte relative initialized layout matches; all-zero storage has no unique
-original anchor, so no independent absolute data/exact claim is added. All
-function ledgers and raw comparisons remain byte-identical. See
-[locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md).
-
-The [optional real-game entry profile](../research/RESTORED_CRT_GAME_ENTRY.md)
-now installs Windows bindings before the recovered CRT creates its heap. Source
-standard-name adapters prevent whole-LIBC startup/stdio collisions. The checked
-138-input order is `config/restored-crt-link.json`; the public command is
-`scripts/repo-python scripts/build-legacy.py --restored-crt`. First-board and
-normal-exit state checks pass. Keep the remaining21 original members explicit,
-including C++ frame/hooks; complete source linking and playability remain open.
-
-The new [I/O state owner](../research/exact/RUNTIME_IO_STATE.md) fills six missing
-definitions without changing existing headers or function producers. Its recipe
-is `config/runtime-io-state.json`. The image with 64 source objects uses actual
-Kernel32 files and source flush/close owners, with no flush/close fixture.
-The complete eight-byte invalid record is uniquely placed; zero words retain their
-stated placement limits. Native C90 passes. A MinGW compilation exposes its SDK
-errno accessor macro; that CRT integration remains open. Private game-entry and
-standard-name adapters remain diagnostic after the whole-LIBC link conflict.
-
-The preceding isolated entry check runs as the PE entry of a Windows-subsystem image,
-including real command/environment and startup fields. Two normal returns and
-the selected SEH DIE/quick-exit path preserve full DWORD statuses and the
-expected cleanup behavior. All48 source owners are reused;390 entry bytes,
-12 scope bytes,13 linked bodies and both initialization data groups pass.
-That application remains a typed observation boundary. The later optional game
-profile connects Win32 bindings before the restored direct call without
-resetting the live heap. See
-[entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md) and
-`config/runtime-entry-link.json`.
-
-The actual FP callback now runs through the recovered controller before XI/XC,
-with XP/XT returning cleanup afterward. The current callback-state producer
-uses its real header closure; the new FP state recipe records both initialized
-owners. Hardware precision/status, all six active slots, eight conversion calls,
-streams/onexit, real filter lifetime and nine list roots pass in a KERNEL32-only
-image without host CRT startup. Physical x87/SEH remain pinned dependencies;
-flush/close effects remain typed fixture boundaries. Later entry execution
-checks the command/environment and selected SEH path; remaining low-level
-source and final game are open. See
-[FP startup](../research/exact/RUNTIME_FP_STARTUP.md) and
-`config/runtime-fp-state.json`.
-
-Three original seven-byte member-call entries now have C++ direct-call source,
-including genuine stdcall cleanup and thiscall arguments. VC4 rejects explicit
-`__thiscall` callback types; actual compiler member-pointer types plus asserted
-direct32-bit representation preserve the ABI. All 784 logical cases and seven
-affected Win32 selectors pass; four whole linked source bodies also agree.
-The extra call frame/return address remains nonexact, and no native Itanium
-member-pointer ABI is claimed. See
-[member-call bridges](../research/exact/RUNTIME_CPP_MEMBER_CALL.md).
-
-The `_control87` entry now has complete ordinary control-layer C source.
-The original always canonicalizes hardware, even for mask zero, and returns
-all merged abstract bits. The C body uses the genuine `_ctrlfp` boundary;
-its additional same-value write and pending-exception timing remain outside
-the equivalence claim. The 1,792 logical cases and actual Win32 x87 comparison
-pass with accepted C converters reused. All existing comparison inputs/results
-remain. Two bounded complementary library scans expose no additional missing
-entry within their stated predicates. See
-[abstract x87 control](../research/exact/RUNTIME_CONTROL87.md).
-
-Both 334-byte memcpy/memmove entries now have ordinary-memory C contracts,
-including overlap. Incoming EDX chooses only a zero-to-three-byte reverse
-prefix, so every grouping gives the same valid-memory result; no added argument
-or guessed register value is needed. Access widths/order remain different.
-The saved 13,376 original observations are reused for the generated comparison;
-1,688 layouts plus eight unmapped zero-count cases pass across original,
-VC4, i686 and native C. Both 215-byte bodies remain nonexact. See
-[memory copy](../research/exact/RUNTIME_MEMORY_COPY.md).
-
-Two whole original sections missing from the inventory are now restored:
-unsigned64 division104 and remainder117. Natural32-bit-limb C preserves the
-64-bit return and stdcall16 ABI; VC4 emits327/280 bytes, so both remain candidates.
-All495 operand pairs per function match original/VC4/i686/native arithmetic;
-six zero-divisor cases each match emulated divide-error0. Preserved registers,
-stack cleanup and stack-only writes pass. The bounded library scan retains its
-three parse skips and excludes short/shared sections; no exhaustive inventory
-claim follows. See [unsigned64 arithmetic](../research/exact/RUNTIME_U64_ARITHMETIC.md).
-
-The complete84-byte CRT table now includes XP/XT and both end markers, with13
-actual callback bindings matching the retained original and linked VC4 image.
-The existing two-slot pretermination array groups original XPA/XPX records in
-XPA while preserving the public ABI and caller bounds. Returning normal/quick
-and low-byte cleanup, real filter restoration and physical exits63/64 pass
-following actual XI/XC startup. Only two data owners compile; all function
-producers/results stay unchanged. The affected native1,031-call scope refreshes
-four semantic input identities. That exit-only probe used controlled
-stdio/fatal/unused exception dispatch. Later FP startup runs the actual FP,
-fatal, terminal and validation owners. Later process-entry checks run the
-remaining entry stages; function recovery and the final game remain open. See
-[exit sections](../research/exact/RUNTIME_EXIT_SECTIONS.md).
-
-XI/XC now use their real linker sections, including the previously ordinary
-C++ filter pointer in `.CRT$XCC`. Four null boundary records, three explicit
-registration records and nine reused C++ compiler contributions reproduce the
-complete64-byte prefix/twelve bindings. The isolated VC4 image imports only
-KERNEL32 and uses a custom entry: actual heap/low-I/O initialization, both table
-walks, filter installation/restoration and nine prefilled list roots pass.
-All380 exact results remain; only three existing producer identities change.
-The board aggregate helper remains nonexact/unresolved. Later XP/XT and FP
-startup checks close the table layout and higher-level FP flow. Later entry
-execution checks the remaining startup stages; the final game remains open. See
-[initializer sections](../research/exact/RUNTIME_INITIALIZER_SECTIONS.md).
-
-The complete193-byte stdio initializer now matches all16 bindings. A separate
-storage owner supplies the original20 stream records,4096-byte input buffer,
-request counter and table state; initialized644 bytes/two bindings match.
-Fourteen original/native calls cover limits, fallback/fatal26 and invalid/null
-standard handles. The correct12-byte XI range confirms both initialization
-entries in order; XI/XC section registration is supplied by the later section owner; full
-startup remains open. No existing consumer/header or historical scope changes. See
-[stdio initialization](../research/exact/RUNTIME_STDIO_INITIALIZATION.md).
-
-The complete54-byte onexit initializer and20-byte stdio finalizer are now exact.
-The initialized pretermination/termination arrays have a separate source owner;
-controller128 and both18-byte wrapper exacts are preserved, walker32/6 unchanged.
-Actual private-heap registration/growth, returning cleanup and physical exit
-probes pass with controlled stdio/fatal dependencies. Only the affected native
-scope and eight retained-object calls ran. Later XI/XC section recovery does
-not close full CRT/game linkage. See
-[exit bootstrap and default cleanup](../research/exact/RUNTIME_TERMINATION_BOOTSTRAP.md).
-
-The collision-unwind callback now has complete natural C source. Its original
-34 bytes compare against a 31-byte VC4 body, so it remains nonexact; all 142
-original/VC4 emulated cdecl/effect cases agree. Native/i686 C90 compilation
-passes. Sixteen omitted CRT definitions are reconciled from complete existing
-code/data proofs, including this callback. The other fifteen retain their
-low-level ABI gaps. No current game build or physical Windows-unwind claim
-follows. See [SEH and entry boundaries](../research/exact/RUNTIME_SEH_ENTRIES.md).
-
-Current accounting is 540 independent entries plus 24 parent-owned compiler
-fragments. All previous addresses are preserved, including the four added trig
-entries; the latest review adds sixteen omitted CRT entries. The twenty
-fixed-point unwind cleanups and four shared epilogues belong to the complete
-triangle/division/comparison/addition owners. Their source, metadata and code
-ranges were already part of those units; they are now recorded in
-`config/compiler-fragments.csv` and validated against their parents.
-
-All four complete parent comparisons reproduce their retained results from
-the existing canonical object: three exact methods and the unchanged 88-byte
-triangle candidate. That reconciliation repeated no compiler/provider/runtime
-work and changed no source or exact claim. The 70
-independent entries without source remain in scope. See
-[compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md).
-
-The preceding original CRT startup checkpoint restored the complete 390-byte
-body and 12-byte scope with all 34 code/two scope bindings. Four version fields
-and command state are supplied, and the genuine WinMain/exit/filter APIs are
-used. The fatal owner's GUI initializer is now 2; both fatal exacts, the format
-candidate and catalog/strings remain verified. It is still a standalone owner,
-without a final restored-game build/play claim. See
-[CRT startup](../research/exact/RUNTIME_ENTRY.md).
-
-The preceding catch wrapper is also complete and exact, including its former
-59-byte imported-boundary gap and initialized current exception/context state.
-The omitted 41-byte guard is in the inventory with a proven runtime origin;
-its CLD and low-level forwarding source remain open. Three more original
-transport sections now match all 376 bytes and six relocations; their source
-remains open. See
-[catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md).
-
-The preceding object checkpoint restored exact destruction and construction
-with four EAX/ECX differences. Its twelve Wine cases exercise actual member
-ABI and real VC4 SEH, with an isolated unchanged pointer helper and controlled
-abort endpoint. Three member-call trampolines have proven runtime origins,
-without source claims. These checks do not establish a final game build/play.
-
-REA is now pinned to 6.5.0, with bundled skill version 42 and 207 tools. The
-420-record 6.4 snapshot is preserved as a verified gzip carrier because 6.5
-rejects its analysis profile. A fresh 6.5 read of the object-scope table bytes
-matches the original and closes normally. The current profile uses a 256 MiB
-Ghidra heap, 35% of one CPU and a 768 MiB whole-task memory limit. Upgrade proof
-and backups are in `.analysis/rea-upgrade-6.5.0/`; see [REA commands](REA.md).
-
-### Authorities and private inputs
-
-- `config/functions.csv`: provisional entries and reconciled extents.
-- `config/function-origins.csv`: independent entry origin classification.
-- `config/runtime-x87-operation-tables.json`: twelve complete writable records, 480 bytes/72 bindings.
-- `config/runtime-locale-handles.json`: complete source/member relative 28-byte locale storage; target address remains null.
-- `config/runtime-character-state.json`: complete writable 522/12-byte ctype/locale source owners and two pointer bindings.
-- `config/runtime-x87-dispatch-constants.json`: separate complete 48-byte readonly source record and six qword consumers.
-- `config/compiler-fragments.csv`: parent-owned unwind/epilogue aliases with original ranges and evidence; excluded from independent counts.
-- `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv`:
-  source, exact and scoped semantic claims.
-- `config/source-owners.toml`: maintained source ownership.
-- `config/match-units.toml`: compiler inputs, flags, complete extents and bindings.
-- `build/reports/exact-replay.json`: current 380 accepted comparisons/producers.
-- `.analysis/exact-candidate-audit-20261012/comparison.json`: current 95
-  candidates/producers. The directory date is historical; its contents are current.
-- Selected phase `verification.json` files and owner notes explain each adoption.
-  Older phase reports are historical unless their inputs/products still agree.
+Updated October 17, 2026. The reconstruction is unfinished. Recover the English
+DX-Ball v1.07 functions as exactly as possible, as readable shared C/C++;
+then verify the original VC4 build and playability; resume ports after that.
+The user permits the **19 explicit original CRT members** in the restored-CRT
+delivery. Removing them is not a delivery gate. Prioritize authored functions.
 
 Repository: `/home/pentester/coding/codex_ida/dx-ball-reconstruction/dx-ball`.
-The environment may start one directory above it.
+The environment may start one directory above it. Read [AGENTS.md](../../AGENTS.md),
+[WORKFLOW.md](WORKFLOW.md) and the selected owner note before changing source.
+Keep code, tracked documentation and commits English. Keep the README focused on
+the reconstruction approach and REA, with its two centered 900px images.
 
-Original: `original/DXBALL.EXE`, English v1.07, 158,208 bytes, SHA-256
+This file describes current decisions and open work. The previous detailed
+[handoff at 865a648](https://github.com/N0zoM1z0/dx-ball/blob/865a648e959df831813b07002f0dbd011c550877/docs/agent/HANDOFF.md)
+retains the historical adoption and cleanup chronology. Owner notes and raw
+receipts remain in place; old checkpoint totals are not current totals.
+
+## Current authorities
+
+| Inventory | Current value |
+| --- | ---: |
+| Provisional independent entries | 553 |
+| Retired parent-owned compiler-fragment rows, counted separately | 24 |
+| Source-present entries | 475 |
+| Accepted complete exact functions | 380 |
+| Exact code / attached metadata bytes | 77,485 / 244 |
+| Complete nonexact comparisons | 95: 34 authored / 60 runtime / 1 generated |
+| Scoped semantic ledger rows | 249 |
+| Entries without source | 78: 77 runtime / 1 generated |
+| Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
+
+All 270 classified authored entries have source and complete current comparisons:
+236 exact and 34 candidates across 29 compiler closures. The source-present
+16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
+authored denominator nor source optimality has been established. These inventories
+are separate claims, not interchangeable completion percentages.
+
+| Authority | Purpose |
+| --- | --- |
+| `config/functions.csv`, `function-origins.csv` | Provisional entries, reconciled extents and origins |
+| `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
+| `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
+| `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
+| `build/reports/exact-replay.json` | Current 380 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 95 complete candidates; directory date is historical |
+| [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
+| `.analysis/brick-hit-scope-adoption-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+
+Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-
-Original-era toolchain: VC4 compiler 10.00.5270, linker 3.00.5270;
-CRT library `.tools/msvc400/lib/libc.lib`.
-The compiler recorded by current reports has SHA-256
+The pinned compiler is VC4 10.00.5270 and linker 3.00.5270; original CRT provenance
+uses `.tools/msvc400/lib/libc.lib`. The compiler identity is
 `f097e736bb04d38391c8b524945d58809ec4c42e97c056eca6f40bba2de910c3`.
+Original compiler settings cannot be inferred solely from this candidate toolchain.
 
-Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/`
-private. A source-only clone does not include these evidence/products.
-Historical native, MinGW and VC4 builds/play controls exist, but recent CRT
-recovery used affected standalone compilation and complete comparisons.
-Shared CRT storage/default bindings, remaining BSS/low-level source and full
-entry integration remain open. Higher-level FP startup now runs in the isolated
-image; do not claim a current end-to-end rebuilt game from that result. See
-[FP startup](../research/exact/RUNTIME_FP_STARTUP.md),
-[CRT storage closure](../research/CRT_INITIALIZED_STORAGE_CLOSURE.md)
-and [FDIV initialization](../research/CRT_FDIV_INITIALIZATION_FRONTIER.md).
+Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/` private.
+A source-only clone does not include the assets, tools, products or raw evidence.
 
-## Latest adopted source work
+## Current source and delivery
 
-| Checkpoint | Result | Evidence / owner note |
+The current restored-CRT executable is
+`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
+Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
+integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
+and no MSVCRT DLL. The image, map and full input/object identities are in
+`build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
+
+The latest source adoption is [brick-hit iterator scope](../research/exact/EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
+at `fd4196d`: score-flag storage returns to original EBP-8; the complete candidate
+improves from 418 to 416 differences. A retained object with identical producer
+inputs supplies the change without another VC4 compile. Seven complete comparisons
+preserve five exacts/1,572 bytes and all other affected identities. The final
+108-case native selection passes with the existing typed board-surface backing;
+initial fixture crashes and a private cleanup error remain retained. Relinking
+reuses all 116 objects/19 members; all 1,091 map addresses stay fixed. Only nine
+proved frame displacements and twelve timestamp bytes differ from the preceding
+image. Counter/pan homes and one receiver producer remain open.
+
+Earlier adopted authored changes remain in their owner notes: [bank allocation scope](../research/exact/BANK_ALLOCATION_SCOPE.md),
+[rotation pixel addresses](../research/exact/ROTATION_PIXEL_ADDRESS.md) and
+[last-brick expiry scope](../research/exact/LIGHTNING_EXPIRY_SCOPE.md). Their
+historical game observations retain their own image identities. No new exact
+function follows from these partial improvements.
+
+The [local-target comparator guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md)
+checks actual same-section COFF destinations before accepting a zero-byte result.
+Tracking also checks known function-symbol mappings against catalogued entries,
+including attached metadata. These guards do not independently recover unknown
+symbol identity or ABI. Keep addends separate from symbol targets. The two earlier
+brick-hit case mappings are repaired; explanatory operand projections are not exacts.
+
+## Next source question
+
+Choose a specific unaccounted operation, ABI, ownership, lifetime or producer fact.
+A small difference count is not itself a source question. Complete correspondence
+and unchanged tests do not prove original declarations or absolute optimality.
+
+An independent read-only October 17 review finds no grounded, untried edit in the
+following storage gaps. The user has been asked for any existing original 1.07
+project, MAP/PDB, headers or build records. New material must first be tied to this
+pinned target; its mere authorship or version proximity is insufficient.
+The read-only review is retained in
+`.analysis/source-frontier-review-20261017/review.json`.
+
+| Function | Established boundary | Missing producer fact |
 | --- | --- | --- |
-| October 17 source-CRT editor flow | Actual 19-member game; full 20,000-byte save/reload/recreate and 49 other boards preserved; 159 read-only states, ball/pause/exit 0; no compilations; ledgers unchanged | [Editor persistence](../research/RESTORED_CRT_EDITOR_FLOW.md); `.analysis/restored-crt-editor-20261017/verification.json` |
-| October 17 Windows raster defaults | Real MulDiv before binding; nine exacts retained;12 early API cases and callback/Windows binding;116 reused objects/19 original members; native preprocessing unchanged | [Raster defaults](../research/RASTER_WIN32_DEFAULTS.md); `.analysis/raster-win32-default-20261017/verification.json` |
-| October 17 C++ hooks state | One SDK-typed canonical translator cell; eight Wine selectors;21 comparison outcomes unchanged; original hooks removed | [Terminal integration](../research/exact/RUNTIME_CPP_TERMINAL.md); `.analysis/crt-cpp-hooks-20261016/verification.json` |
-| October 16 real game / restored CRT | 113 maintained objects reused,3 integration objects; public build116 reused/0 compiled; original first400 board bytes/168 bricks, ball movement, heap preservation and exit0 | [Game entry](../research/RESTORED_CRT_GAME_ENTRY.md); `.analysis/crt-game-members-20261016/verification.json` |
-| October 16 I/O state | Six complete globals/28 typed bytes;64 source owners,63 reused; real entry and physical binary/text/default-mode/mask/error checks | [I/O state](../research/exact/RUNTIME_IO_STATE.md); `.analysis/crt-game-entry-20261016/io-verification.json` |
-| October 16 actual CRT entry | 48 source owners reused; real OS argv/environment/show; normal31/quoted32/SEH quick0xC0000005;390-byte entry/12-byte scope and13 linked bodies | [Entry execution](../research/exact/RUNTIME_ENTRY_EXECUTION.md); `.analysis/crt-full-entry-20261016/verification.json` |
-| October 16 FP startup | Actual FP/controller/XI/XC/XP/XT flow; 41 source owners, 40 reused; 52 FP data bytes/nine bindings and 84 CRT bytes/thirteen bindings; eight real conversion calls | [FP startup](../research/exact/RUNTIME_FP_STARTUP.md); `.analysis/crt-fp-startup-20261016/verification.json` |
-| October 16 locale category/code-page owner | Six real 32-bit LCIDs and code-page word; relative 28-byte layout; 12 category calls/four selector scenarios; no new absolute placement or exact claim | [Locale handles](../research/exact/RUNTIME_LOCALE_HANDLES.md); `.analysis/locale-handles-source-20261016/adoption.json` |
-| October 16 character/locale state | Two-byte decimal-point array; complete310-byte exponent exact;13 prior family exacts preserved;534 data bytes/two bindings;3,855 native consumer checks | [Character state](../research/exact/RUNTIME_CHARACTER_STATE.md); `.analysis/ctype-state-source-20261016/adoption.json` |
-| October 16 SEH/CRT entry review | Complete collision callback source; 31/34-byte candidate; 142 emulated ABI/effect cases; 16 omitted entries reconciled; prior 376 exacts unchanged | [SEH entries](../research/exact/RUNTIME_SEH_ENTRIES.md); `.analysis/crt-omitted-entries-20261016/adoption.json` |
-| October 16 Windows heap startup | Real Win32 defaults; early heap/allocations survive WinMain; three physical entry controls and native/VC4 tool checks pass; eight exact bodies unchanged | [Heap startup](../research/WINDOWS_HEAP_STARTUP.md); `.analysis/windows-heap-startup-20261016/adoption.json` |
-| October 16 VC4 owner linkage | Three corrected owner profiles; single LIBCMT; 37 objects reused; 52 linked bodies and read-only first-board controls pass; source/exact totals unchanged | [VC4 linkage](../research/VC4_OWNER_LINKAGE.md); `.analysis/legacy-owner-reuse-20261016/` |
-| October 16 trig entries/constants | Scalar24 bytes/four bindings; four omitted entries; six readonly constants48-byte source; function exact/source totals unchanged | [Trig entries](../research/exact/RUNTIME_X87_TRIG_ENTRIES.md); `.analysis/trig-entries-dispatch-constants-20261016/adoption.json` |
-| October 16 mantissa snapshot | Explicit three-limb integer snapshot; five complete byte results unchanged; one owner compilation | [Mantissa lifetimes](../research/exact/RUNTIME_MANTISSA_LIFETIMES.md); `.analysis/mantissa96-integer-snapshot-20261016/adoption.json` |
-| October 16 sqrt record | Complete32-byte record/four bindings; descriptor family480 bytes/72 bindings; old448 bytes reused | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-remaining-operation-records-20261016/comparison.json` |
-| October 16 x87 record alignment | Two-byte ABI restored; seven more records add272 bytes; family448 bytes/68 bindings; prior176 bytes preserved | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/x87-unary-operation-tables-20261016/comparison.json` |
-| October 16 x87 operation tables | Four complete writable records /176 bytes and28 bindings; two CRT origins; no function source/exact gain | [Operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md); `.analysis/crt-dispatch-boundaries-20261016/source-comparison.json` |
-| October 16 independent heap imports | All eight allocator bodies exact; three gaps closed, +66 code bytes; total 376; public header unchanged | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-independent-imports-20261016/adoption.json` |
-| October 16 foreign-handler tail | Original one-past handler pointer, negative-offset type test and deferred last-handler argument; 212/213 bytes, 105 differences; three owner exacts preserved | [C++ tables](../research/exact/RUNTIME_CPP_TABLES.md); `.analysis/cpp-foreign-handler-tail-20261016/adoption.json` |
-| October 16 compiler fragments | 24 overlapping cleanup/epilogue rows mapped to four existing parents; 520 independent entries, source/exact unchanged | [Compiler ownership](../research/exact/COMPILER_FRAGMENT_OWNERSHIP.md); `.analysis/compiler-fragment-ownership-20261016/verification.json` |
-| October 16 CRT startup | Complete 390 code / 12 scope bytes exact; GUI initializer fixed; fatal family preserved; total 373 | [CRT startup](../research/exact/RUNTIME_ENTRY.md); `.analysis/crt-entry-source-20261016/adoption.json` |
-| October 16 catch guard | One omitted 41-byte callback reconciled; complete transport/guard origins; inventory 544, exact unchanged | [Catch guard](../research/exact/RUNTIME_CPP_CATCH_GUARD.md); `.analysis/cpp-catch-guard-origin-20261016/adoption.json` |
-| October 16 catch wrapper | Complete 272 code / 24 scope bytes exact; both current-state pointers recovered; total 372 | [Catch invocation](../research/exact/RUNTIME_CPP_CATCH.md); `.analysis/cpp-catch-block-source-20261016/adoption.json` |
-| October 16 frame unwind | Complete 206 code / 12 scope bytes exact; total 371 | [Frame unwind](../research/exact/RUNTIME_CPP_UNWIND.md); `.analysis/cpp-frame-unwind-source-20261016/adoption.json` |
-| October 16 C++ object | Two complete sources; destruction 113 code / 12 scope bytes exact; construction 510 / 4 differences; total 370 | [C++ object source](../research/exact/RUNTIME_CPP_OBJECT.md); `.analysis/cpp-exception-object-source-20261016/adoption.json` |
-| October 16 C++ terminal | Two complete SEH bodies, 230 code / 48 scope bytes; total 369 | [C++ terminal source](../research/exact/RUNTIME_CPP_TERMINAL.md); `.analysis/cpp-terminal-source-20261016/verification.json` |
-| October 16 allocator | Five complete exact functions, 147 bytes; total 367 | [Allocator ownership](../research/ALLOCATOR_OWNER.md); `.analysis/allocator-complete-owner-20261016/verification.json` |
-| `d3053eb` | Matherr 174-byte body: 21 → 17 → 6 differing positions; no new exact | [FP exception entries](../research/exact/RUNTIME_FP_DECOMPOSITION.md); `.analysis/math-error-original-double-record-20261015/verification.json` |
-| `aa9538f` | Float assignment: complete 76-byte exact; total 362 | [Float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md); `.analysis/float-assignment-original-double-record-20261015/verification.json` |
-| `a1445a0` | Decimal table scaler: complete 123-byte exact | [Decimal conversion](../research/exact/RUNTIME_DECIMAL_CONVERSION.md); `.analysis/decimal-original-table-pointers-20261015/verification.json` |
-| `84c468f` | Integer reversal: complete 96-byte exact, retained VC4 producer reused | [Integer text](../research/exact/RUNTIME_INTEGER_TEXT.md); `.analysis/integer-original-pointer-reversal-20261015/verification.json` |
-| `e1336ea` | Float digits: complete 129-byte exact | [Float formatting](../research/exact/RUNTIME_FLOAT_FORMAT.md); `.analysis/float-digits-original-string-operation-20261015/verification.json` |
-| `f1c91a4` | Exponent transport: complete 57-byte exact | [FP control](../research/exact/RUNTIME_FP_CONTROL.md); `.analysis/exponent-original-double-transport-20261015/verification.json` |
+| `draw-score` | All 135 instructions correspond; frame56 versus48 accounts for the 21 displacement/allocation differences | Original decimal-buffer capacity and surrounding declarations; pointer-taking callees expose no capacity |
+| `redraw-intro` | Both have 174 instructions; frame140 versus64 and two longer LEAs account for the nine-byte extent gap; rectangle/count homes restored | Original declarations for text/number storage; bases -120/-140 do not prove capacities100/20 or object grouping |
+| `load-pcx` | All 227 instructions accounted; current frame308 contains305 typed bytes plus3 slot-padding bytes | Original distances61–64 are unaddressed; their owner, declaration/lifetime context and producer scheduling remain unknown |
 
-Matherr now uses the shipped single-field DOUBLE record for argument copies
-and separate low/high four-byte result copies. Its only remaining difference
-is the order of two adjacent four-byte instructions at offsets 70/74: an
-argument-high store and result-high load. The retained certificate proves that
-interchanging those chunks matches the entire original. Both 187/79-byte
-companions remain exact. C controls give the same result; the maintained
-producer remains C++. Do not add volatile or artificial barriers to force order.
+Reuse [intro score phase](../research/exact/INTRO_SCORE_PHASE.md),
+[score strip](../research/exact/SCORE_STRIP_SOURCE.md),
+[PCX packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md) and
+[closed storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md).
+Keep the current justified buffer capacities. Adjacency does not establish an
+aggregate; a smaller body or one-position count gain does not recover a variable
+home. The PCX packet trial rotates four homes and restores none; it stays rejected.
+Do not repeat its API-record, scanline-record, header-scope or packet-scope trials.
 
-The new exacts restore original operations, not portability substitutes:
-overlapping `strcpy(buffer, buffer + 1)`, original terminal/pre-array pointer
-formation, and aligned DOUBLE aggregate assignment. Preserve these documented
-source decisions for the exact stage. Native compilation alone does not establish
-defined modern-C behavior or an unaligned-access guarantee.
+Other closed authored boundaries:
 
-## Retained private cvt owner control: not adopted
-
-Directory: `.analysis/cvt-original-complete-owner-20261015/`.
-
-The original CRT member
-`.analysis/runtime-float-format-20261014/crt-members/000e369c.obj`
-identifies `cvt.c` and eleven function definitions in original order.
-A private control reunited those eleven current bodies, restored the three
-original static helpers, and excluded the unrelated `_fptostr.c` and trap bodies.
-It used one VC4 compilation plus successful native and i686 compilation.
-
-| Unit | Maintained differences | Private complete-owner differences |
-| --- | ---: | ---: |
-| Exponent formatting, 310 bytes | 2 | 0 |
-| Fixed formatting, 251 bytes | 0 | 1 |
-| General formatting, 176 bytes | 0 | 2 |
-| Force decimal point, 101 bytes | 4 | 4 |
-| Seven other previously exact bodies | 0 | 0 |
-
-Thus the private owner has eight exact bodies but loses two accepted exacts.
-It is not adopted or counted. No compiler/provider process from this trial
-remained running at handoff; no maintained source or ledger changed.
-
-Retained files under `original-cvt-c-owner/` include `compile.json`,
-`comparison.json`, `portable-products.json`, logs, full source/header snapshots,
-`units.json` and the object. Object SHA-256:
-`dd330088e7a1cd8ea82a8b505b32f46b89521e81897a70bd658307e0fa52799a`.
-The private source/header changes and self-local/literal binding mappings belong
-to that control only. Do not copy its zero result into maintained ledgers.
-
-## Next useful work and closed boundaries
-
-Read the selected owner note before editing. Choose a concrete new source
-question, not merely the smallest differing-position count.
+- Preserve the real 20,432-byte `DxBallBoardStorage` and the 368-byte terminal
+  overlap. No alias cells, split globals, artificial padding, alternate offset/cast
+  spellings or source unification solely to force emission. Editor key and game
+  frame differences include already explained address producers.
+- [Rotation](../research/exact/ROTATION_PIXEL_ADDRESS.md) accounts for all 365
+  renderer instructions, 22 calls and 26 branches under its stated stable-memory,
+  finite-FP model. Height's two bank-address groups explain its two extra bytes.
+  Row-add, inline-bank, max/return/FP and type-context controls are closed.
+- [Effect sprites](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md) have
+  complete path/ABI/RECT-write correspondence and retained SMT mutation controls.
+  SDK/interface/record context trials do not justify another permutation.
+- Triangle's four root-constructed FixedPoint objects precede early exits; do not
+  narrow them arbitrarily. The adopted scanline scope restores y's home; vertical
+  scale and polygon endpoint-scope controls are closed.
+- Bank cursor/row/column, file-metadata and transfer-workspace scopes are closed.
+  Preserve callback-visible state and the pitch snapshot before Lock.
+- Line, ranking, presentation, palette, clock and text near-matches include known
+  compare/register commutations. Reversing guards, renaming identifiers, changing
+  equivalent types or sweeping `/G3`, `/G4`, `/G5` is not new evidence.
+- Keep time sampled before RNG. The reversed-addition proposal fails an existing
+  ordered case. Clang reverses the four last-brick particle RNG arguments relative
+  to original/current GCC; the recorded port gap is deferred, not repaired here.
 
 The [public author-context review](../research/exact/AUTHOR_SOURCE_CONTEXT.md)
-checks the author's linked VC5 tutorial and nine pinned publisher-source files.
-It supplies no1.07 declaration, capacity, compiler-setting or shared-routine
-identity. Do not transfer another project's flags or names into this target.
-This is a bounded negative result, not proof that original source never existed
-or that uninspected files have no related code. Current34 game candidates stay open.
+supplies no 1.07 declaration, capacity, flag or shared-routine identity. Do not
+repeat that search or import another project's settings. Do not replace source
+work with repeated coverage audits or unchanged runtime episodes.
 
-- Actual game startup now uses the recovered entry through the optional
-  `vc40-restored-crt` profile. Reuse its116-object cache and checked recipe.
-  Continue a concrete remaining function/ABI question; original C++ frame/translator,
-  x87 dispatch and stack/SEH transports remain 19 pinned members. Hooks state is
-  shared source, and Windows raster defaults no longer need the signed64 member.
-  Do not infer full source integration from the successful first-board run.
-  A screenshot-change-only check was too weak; adopted evidence uses live
-  modes, all400 original board bytes, ball movement and reviewed captures.
+## Inventory evidence and approved runtime dependencies
 
-- The I/O state definitions now support actual source stdio and physical files.
-  Reuse the state recipe and the later real-game closure. Whole LIBC pulls
-  duplicate CRT startup/data and unwanted main; explicit members and typed
-  adapters now close that link. Do not repeat the rejected whole-library link.
-  Keep .CRT$XIC stdio
-  before onexit, as recorded in the existing entry recipe. The MinGW errno
-  macro needs an explicit policy when that restored-CRT profile is integrated;
-  existing default game profiles do not include the new state owner.
+[Joined text coverage](../research/exact/CRT_SUFFIX_OWNERSHIP.md#joined-declared-text-coverage)
+accounts for all 126,700 declared text bytes through existing source/CRT owners;
+3,650 gap bytes are CC. [Incoming-reference](../research/exact/CRT_SUFFIX_OWNERSHIP.md#incoming-references-to-declared-game-bodies)
+and [PE relocation](../research/exact/CRT_SUFFIX_OWNERSHIP.md#original-pe-code-address-relocations)
+reviews retain their bounded scopes. The [direct-transfer review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#direct-transfers-in-the-declared-game-prefix)
+accounts for all 289 declared prefix spans: 23,469 instruction sites, 3,719 direct
+transfers, 16 tables/191 address words and 492 selector bytes. All represented
+direct/table destinations are known entries or same-parent instructions. Another
+142 calls use import cells; 177 register-relative call values remain unresolved.
+Outside-prefix sources, alternate code and runtime-only targets remain open.
+None of these checks proves the final authored denominator. Reuse their sealed
+results rather than repeating a walk for the unchanged original.
 
-- Locale handles/code page now have a source owner. Keep six 32-bit category
-  values even on LP64; the null-address recipe records the absence of independent
-  absolute placement. Category/selector fixture transport passes; OS locale
-  drivers and full reconstructed CRT linking remain open. Do not relabel the
-  all-zero relative-layout proof as independently located target data.
-- The decimal point is a two-byte array, not a scalar. Preserve its shared
-  declaration and element-zero reads. Exponent formatting now matches all 310
-  bytes and the full suffix with fixed/general exacts retained. Initial writable
-  ctype/locale storage is restored; remaining locale/BSS/physical integration
-  needs independent evidence. Multiplication remains678/50 after this context
-  change; do not select its older21-difference object against changed inputs.
-- The newly reconciled collision callback is complete C source but not exact.
-  Its 31/34-byte result differs in mask-test width and caller-clobbered scheduling.
-  Preserve that honest candidate; do not force volatile loads or add assembly.
-  The other fifteen omitted entries still need their actual low-level ABI.
-  Original read scalar/structured flow and char/char record controls are closed
-  without improvement; see [reading](../research/exact/RUNTIME_LOWIO_READ_CLOSE.md).
-- All eight allocator entries are now exact. The private typed import cells and
-  retained public binding record close all three physical-wrapper gaps without
-  modifying `allocator.h`. Earlier controls that removed its public declaration
-  remain rejected; do not repeat them or rebase a table per function. Fixture
-  updates use the existing setter, including restoration. Handler registration,
-  teardown and the 70 independent entries without source remain open.
-- The decimal accumulator now snapshots three integer limbs explicitly. All five
-  byte results remain unchanged; native/i686 C90 compilation passes. Shift masks
-  and remaining register choices are closed controls without new evidence. Do
-  not repeat integer-type or mask variations to seek compiler coincidences.
-- The named x87 descriptor-family recovery is closed at twelve matched records
-  from sixteen pinned-library definitions. Do not repeat unchanged data compiles
-  or add the four unmatched records. Continue with remaining function source and
-  independently grounded runtime storage.
-- Twelve x87 operation records now have complete480-byte source storage and
-  the original two-byte type alignment. All twelve unique original headers in
-  the pinned named descriptor family are covered; unmatched fmod/sinh/cosh/tanh
-  records are not added. The last32-byte sqrt owner reuses the prior448 bytes.
-  Prefix constants remain outside the trig/transcendental record claims.
-  Their original opaque machine entries and low-level helpers remain open.
-  Two BSS-free C-dispatch bodies have complete origin proofs; the other five
-  entries still lack independent authority for LocalFac/intrinflag BSS. Do not
-  infer those addresses from code operands. The scalar trig group has a complete
-  origin proof; three newly inventoried intrinsic entries still need independent
-  authority for their shared exit to cintrindisp1. The readonly48-byte constant
-  record has source, without claiming the unverified589-byte dispatcher or BSS.
-  See [operation tables](../research/exact/RUNTIME_X87_OPERATION_TABLES.md).
-- Foreign handling now carries the original one-past catch-list pointer through
-  its final type checks, subtracting only for the transfer argument. Its remaining
-  register/bound-comparison differences are nonexact; do not sweep spellings or
-  registers. Three owner exacts are preserved by one four-unit comparison.
-- The C++ terminal owner now supplies callback state and two real nested SEH
-  scopes. Its source requires a Win32 SEH-capable compiler; VC4 and Clang Win32
-  compile the same implementation. Do not replace it with a no-op host catch.
-  Object construction/destruction now have [complete source](../research/exact/RUNTIME_CPP_OBJECT.md);
-  construction remains nonexact at four register encodings. [Frame unwinding](../research/exact/RUNTIME_CPP_UNWIND.md)
-  is now complete and exact. [Catch invocation and cleanup](../research/exact/RUNTIME_CPP_CATCH.md)
-  now have a complete exact wrapper and current-state storage. Frame-setting
-  and catch transports, guard callbacks, remaining transfer helpers and full
-  dispatcher integration remain open. The 41-byte catch guard is now included
-  in the inventory; preserve its observed CLD and original forwarding contract.
-- The original CRT entry now has [complete exact source](../research/exact/RUNTIME_ENTRY.md)
-  and supplies version/command state. Fatal default application type is GUI2.
-  It remains outside CMake. Its actual PE-entry and selected exit paths pass
-  with a typed observation fixture; the later optional profile also reaches
-  the real first board. Low-level source, C++ frame integration and the final
-  original-compiler build/play check remain. The
-  three member-call entries now have typed C++ direct-call bodies; their original
-  tail transport and return-address identity remain nonexact.
-- The complete `cvt.c` result is a useful retained control. Inspect the fixed/
-  general regressions and exponent improvement together if pursuing that owner;
-  do not recompile the unchanged control or split bodies solely to collect zeros.
-- Matherr's adjacent store/load order remains open. FP raising is 876 bytes /
-  22 differences; C mode makes raising exact but loses the 704-byte handling
-  exact. Full original fpexcept ownership also worsens raising. These controls
-  are closed unless new evidence changes the question.
-- Pow's single-field DOUBLE result-copy control emits584/16, worsening the
-  maintained584/8. It is rejected with source restored; do not repeat record or
-  field forms. See [pow source](../research/exact/RUNTIME_POW_SPECIAL.md).
-- The 34 authored bodies include frame/render/resource flows. Their whole-body
-  comparisons and evidence links are in the remaining-functions table and
-  `match-units.toml`. Preserve accepted companions when changing shared inputs.
-- Near matches such as flush-output 328/1, shared-open 1053/2, fread 326/2,
-  setmode 128/2, commit 111/2, handle installation 163/2 and onexit 121/2
-  are candidates, not missing-operation counts. Equivalent CMP/register choices
-  do not justify spelling or declaration sweeps.
-- Read [closed storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md).
-  Device interfaces, SDK contexts, rotation records, declaration permutations,
-  score/intro buffer enlargement and fake board padding have closed controls.
-  Keep `DxBallBoardStorage` and its real terminal copy effects.
-- Original CRT assembly memcpy/strlen/memset and the EAX/ESP stack probe are not
-  ordinary C wrappers. The translator guard restores stack state and jumps.
-  Do not invent callback returns, arguments, register initialization or byte arrays.
-- The decimal parser has original indeterminate/dead reads. Do not introduce
-  fake uninitialized locals solely to reproduce its extra bytes. Likewise,
-  do not repair an original memcpy register bug and call that exact recovery.
-- No original `/G3`, `/G4` or `/G5` setting has been established. Inspected
-  CRT members lack compile/CPU records; shipped release `makefile.sub` says
-  `-O2`. This is not evidence for a CPU-option sweep.
+[Dependency receipts](../research/exact/CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
+cover all 78 no-source entries; 19 member dependencies remain explicitly approved.
+Do not fabricate ordinary C wrappers for EAX/ESP stack probes, x87/SEH transports,
+or assembly memcpy/strlen/memset. C++ frame handlers use their actual implicit EAX
+contract. Original dead/indeterminate reads, overlapping copies and pointer
+formation are documented behaviors, not opportunities for silent repair.
 
-Integration/build/play work follows function recovery; ports follow that.
-The README already states this route. The macOS PR was already thanked and
-deferred in [PR #1](https://github.com/N0zoM1z0/dx-ball/pull/1#issuecomment-6186305581);
-no further reply or port work is pending in this handoff.
+Existing runtime/data source authorities remain separate from function counts:
+`runtime-x87-operation-tables.json` (12 records/480 bytes),
+`runtime-x87-dispatch-constants.json` (48 readonly bytes),
+`runtime-character-state.json` (ctype/locale storage and pointer bindings), and
+`runtime-locale-handles.json` (28-byte relative layout; target address null), all
+under `config/`. No independent BSS address follows merely from a code operand.
+All eight allocator functions are exact; actual C++ new/delete, entry, stdio and
+exit integration are documented in their owner notes. Preserve `.CRT$XIC` stdio
+before onexit, the shared callback state and real Win32 heap/raster defaults.
+SEH bodies require a capable compiler; do not substitute no-op host catches.
+Historical whole-cvt/C-mode/register-order controls remain rejected. Keep accepted
+companions; do not split owners or add barriers solely to select private zeros.
 
-## Source, evidence and resource requirements
+## Actual game evidence
 
-Use natural typed source shared by portable and legacy builds. Preserve ABI,
-integer widths, data ownership, actual stores and call order. Do not force
-matches with copied machine code, assembly, guessed padding, fake locals,
-alternate profile bodies or blind name/type/layout/flag permutations.
-Original CRT provenance comes from actual member/file evidence, not symbol
-spelling: VC4 C can emit C++-style local-static names.
+The [current-image bounded entry/exit check](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
+passes 5.019 seconds on original board0: all 400 initial bytes, 1,410 valid samples,
+no malformed lines, score10/lives3, menu return and actual exit0/no window. The
+20,000-byte bank and 49 originals stay unchanged. Measured CPU is32.1% of one CPU,
+peak301.668 MiB, no memory-limit events. A preceding per-read attempt fails before
+gameplay with 42 reset-requested samples; keep its failure separate. Persistent
+reader success does not establish failure causality or focus recovery. Both runs
+reuse the game/reader without compilation. Do not repeat this unchanged episode.
 
-An exact claim covers the complete function, every actual relocation, full
-literal contents and declared attached metadata. Resolve real function exits,
-embedded tables and alignment; imported boundaries are provisional. Compare
-all accepted units sharing changed inputs. Freeze previous inputs/products
-before overwriting them, including recursively consumed headers.
+The historical [original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
+is terminal, observer exit1 at the14,400-second deadline. It verifies initial
+boards0–19, then retains index19/15 bricks/score52,538/lives3. Its611,084 valid
+samples and1,473 events do not establish full50 completion, a crash or normal
+application exit. All three owned identities are absent. Never restart its
+producer or reapply pass-only verification to that failure.
 
-- Run Python through `scripts/repo-python`. Private Python probes use
-  `resource_limits.limit_cpu()` and one already-allowed CPU.
-- One writable compiler/provider/Wine session at a time.
-  `legacy_toolchain.session_lock()` is blocking and non-reentrant; do not
-  acquire it around a helper that already acquires it.
-- CMake builds use `--parallel 1`. The REA entry point uses the supported
-  `GHIDRA_HEADLESS_MAXMEM=256M` path. On this host, wrap compiler/provider/Wine
-  commands in a user systemd scope with `CPUQuota=35%`, `MemoryHigh=640M` and
-  `MemoryMax=768M`; run heavy tasks serially. See [REA commands](REA.md).
-- Automated audio/game probes use `PULSE_SINK=dxball_reconstruction_silent`.
-  Prepare native interposers before taking the session lock.
-- For new binary analysis, read the installed reverse-engineering skill and
-  use `scripts/rea`: pinned REA 6.5.0 / Ghidra 12.1.4.
-  Reuse retained dossiers first. Save full responses, Evidence IDs and snapshots
-  under `.analysis/rea/`; close/save sessions. Read only relevant facets.
-- Use LeanToken for bounded repository exploration. Avoid dumping huge manifests
-  or REA dossiers into context.
-- Compile once per stable family. Reuse an object only after checking actual
-  input closure, flags and product hashes. Repair comparison readers from
-  retained objects without restarting the compiler.
-- Truncated output or an observation timeout is not producer failure. Poll the
-  retained handle or inspect terminal receipts before deciding to restart.
-- Keep `src/balls.cpp`'s source-specific GNU C++17 / x87 / excess-precision
-  options and C API linkage; see [stored contact](../research/exact/EXACT_REBOUND_STORED_CONTACT.md).
-- REA feedback is optional and secondary. If useful, append observed latency,
-  output/context cost or usability issues to the existing single file
-  `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
+Earlier [editor](../research/RESTORED_CRT_EDITOR_FLOW.md),
+[game-over](../research/RESTORED_CRT_GAMEOVER_FLOW.md),
+[round](../research/RESTORED_CRT_ROUND_FLOW.md),
+[custom terminal50](../research/RESTORED_CRT_TERMINAL_FLOW.md) and
+[natural expiry](../research/RESTORED_CRT_LIGHTNING_FLOW.md) controls keep their
+recorded images and limits. Custom single-brick boards are not the untouched
+original campaign. [Sparse-tail controller](../research/CAMPAIGN_TAIL_CONTACTS.md)
+checks do not prove live speedup or full50 progression. The original Wine9
+[focus/surface-loss failure](../research/ROUND_FOCUS_RUNTIME.md) remains unresolved;
+do not patch exact game behavior or rerun its unchanged loop. Physical Windows,
+graphics/audio fidelity, exceptional paths and full campaign acceptance stay open.
+The macOS PR was already answered and deferred; no further message or port work
+is pending. The complete objective remains active and unachieved.
 
-### Cleanup state
+## Resources, cleanup and publication
 
-The current-image cleanup archives and verifies23 superseded native build
-directories before removing their865 files, and removes49 checked runtime
-copies after normal shutdown. Net allocated product storage falls24.215 MiB
-after accounting for the retained archive. Canonical native/exact/VC4 caches,
-current image, original assets and manual runtime directories remain. Receipt:
-`.analysis/storage-cleanup-current-20261017/verification.json`. Restore a historical
-native product from that phase's archive only if needed; do not rebuild it merely
-because its old disposable directory is absent. `clean-local.py` now includes
-the restored-CRT automated runtime directory alongside the other probe profiles.
+Use `scripts/repo-python`, `resource_limits.limit_cpu()` and one allowed CPU.
+One writable compiler/provider/Wine session at a time; the blocking
+`legacy_toolchain.session_lock()` is non-reentrant. Do not wrap a helper that
+already acquires it. CMake uses `--parallel 1`; keep `balls.cpp`'s documented GNU
+C++17/x87/excess-precision options and C linkage. Prepare native interposers before
+taking the lock. Automated audio goes to `PULSE_SINK=dxball_reconstruction_silent`;
+never change the default sink.
 
-The subsequent maintained cleanup completes164 operations:21 immutable hardlink
-replacements,25 redundant REA aliases,69 disposable probe products and49 older
-VC4 runtime copies. All118 disposable files are archived and verified first.
-Its49.06 MiB total counts logical duplicate/probe bytes, not measured physical
-release. Receipt: `.analysis/storage-maintenance-20261017/verification.json`;
-journal `.analysis/cleanup/20261017T052619336672Z.json`. Manual saves, current
-products and unique evidence remain intact.
+Run heavy commands in a user scope with CPU35%, memory high640 MiB/max768 MiB.
+[REA](REA.md) is pinned at6.5.0/Ghidra12.1.4 with a256 MiB heap. Reuse retained
+Evidence first, query only missing facets, retain full responses and close/save
+sessions. Use LeanToken for bounded source reads. A timeout/truncated preview is
+not producer failure: poll its live handle or inspect terminal receipts before
+considering a restart. Optional REA feedback stays in the existing single
+`/tmp/dxball_rea_feedback_20261010.md` file.
 
-The unsigned64 phase shared eight identical immutable carriers and reclaimed
-about3.2MiB. Unique source, member, compiler and arithmetic/fault receipts remain;
-the canonical object has an independent inode. Receipt:
-`.analysis/crt-uninventoried-sections-20261016/cleanup.json`.
+Compile once per stable family; compare complete affected candidates and accepted
+companions, including all relocations, full literals and attached metadata. Freeze
+previous products and recursively consumed inputs before overwriting them. Use
+only the minimum useful existing Oracle/play check. No default historical queue,
+repeated unchanged checks or full replay after every edit. When beginning actual
+binary/compiler work, verify relevant inputs with `verify-target.py`,
+`verify-toolchain.py` and `validate-tracking.py --require-target` through repo Python.
 
-The exit-section phase shared12 identical immutable carriers and reclaimed
-about3.6MiB. The successful native fixture library is archived alongside the
-three Windows-process receipts and source snapshots; current data objects keep
-independent inodes. Receipt: `.analysis/crt-exit-sections-20261016/cleanup.json`.
+Clean unused products regularly after verifying unique evidence. Historical
+`build/native-*` directories were archived and removed; restore their retained
+product only if needed. Current native/exact/VC4 caches, originals and manual saves
+remain. `scripts/clean-local.py` previews cleanup and includes restored-CRT probe
+directories. Its verified gzip fallback obeys the decompressed old seal; mutable
+current products must never be hardlinked to immutable archives. Do not recursively
+delete evidence trees or tool caches. Recent journals are
+`.analysis/storage-cleanup-current-20261017/verification.json`,
+`.analysis/storage-maintenance-20261017/verification.json`, and
+`.analysis/game-prefix-direct-flow-20261017/verification.json`. They distinguish
+allocated disk release from logical duplicate-byte totals.
 
-The initializer-section phase shared33 identical immutable carriers and
-reclaimed about10.5MiB. Unique source trials, provider read/error receipts and
-both probe stages remain; current objects have independent inodes. Receipt:
-`.analysis/crt-c-initializer-sections-20261016/cleanup.json`.
-
-The stdio-initialization phase shared19 identical immutable header snapshots
-and a closed-run catalog, reclaiming about8.4MiB. Unique products and before
-ledgers remain; canonical objects retain independent inodes. Receipt:
-`.analysis/stdio-initialization-source-20261016/cleanup.json`.
-
-The exit-bootstrap phase shared47 byte-identical immutable evidence carriers,
-reclaiming about13.7MiB. Unique trial sources, diagnostics and products remain;
-current canonical compiler objects retain independent inodes. Receipt:
-`.analysis/crt-termination-bootstrap-20261016/cleanup.json`.
-
-The CRT-entry phase reclaimed about 33 MiB by sharing identical immutable
-closed-run REA catalogs and removing the verified generated latest catalog
-alias. All unique reads, the rejected guard lookup, source trials and compiler
-products remain. Receipt: `.analysis/crt-entry-source-20261016/catalog-retention.json`.
-
-The frame-unwind phase verified complete duplicate REA 6.5 catalogs before
-sharing three closed-run carriers and removing the regenerated latest catalog
-alias. About 25 MiB of allocated storage was reclaimed. Mutable aliases are
-never hardlinked to immutable evidence. Receipt:
-`.analysis/cpp-frame-unwind-source-20261016/catalog-retention.json`. All unique
-Evidence, source trials and accepted products remain.
-
-The allocator trials are closed. Their unique sources, objects, compiler
-receipts and comparisons remain in `.analysis/allocator-complete-owner-20261016/`.
-The maintained shared source and all previous accepted objects were restored.
-
-`clean-local.py` now accepts a missing raw sealed file only when its canonical
-regular `.gz` carrier decompresses to the declared SHA-256. Deduplication uses
-the compressed carrier's own bytes and SHA, never the raw seal as a compressed
-identity. A changed or symlinked raw path cannot be bypassed with a gzip copy.
-Eight bounded checks cover valid raw/gzip, changed raw/gzip, invalid gzip,
-symlinked raw/gzip and missing carriers.
-
-The previously blocking compressed snapshot remains intact at
-`.analysis/checkpoints/exact-midi-lifecycle-283-131/.analysis/exact-midi-lifecycle/before/.analysis/rea/dxball.snapshot.json.gz`.
-Its decompressed SHA-256 remains
-`dc6ac7d79539cb10b212b70d4634f4dde43be101436e91d67a12283f9f6cb3ac`.
-
-After preview, `clean-local.py --evidence-only --apply` completed 128 archived
-hardlink replacements and removed 56 verified redundant root REA aliases.
-Journal: `.analysis/cleanup/20261016T040714413096Z.json`. Allocated analysis storage
-fell by about 289 MiB; `build/` remained unchanged. All 82 exact producers at that
-cleanup checkpoint and their inputs were hash-verified again; its tracking check
-passed 543 / 457 / 367. No probe product or unique trial carrier was deleted.
-
-Preserve unique trial sources, receipts, originals and accepted/current products.
-Read verified `.gz` fallbacks instead of rerunning producers. Keep mutable current
-products inode-independent from archives. Preview exact targets before cleanup;
-do not recursively copy/delete evidence trees or tool caches.
-
-## Resume and publish
-
-1. Read [AGENTS.md](../../AGENTS.md), this handoff,
-   [WORKFLOW.md](WORKFLOW.md), the remaining-functions table and the selected
-   owner note. Inspect `git status --short` and the current reports.
-2. When beginning binary/compiler work, verify relevant inputs:
-
-   ```bash
-   scripts/repo-python scripts/verify-target.py
-   scripts/repo-python scripts/verify-toolchain.py
-   scripts/repo-python scripts/validate-tracking.py --require-target
-   ```
-
-3. Freeze affected inputs/products, make one evidence-backed trial, compile the
-   stable family once, and compare complete affected candidates and accepted
-   companions. Use only the minimum useful existing runtime check.
-4. Update only changed claims/owner notes. Refresh progress when ledgers change.
-   Distinguish executed checks from reused evidence and negative controls.
-5. Commit and push verified checkpoints to `origin/main`. Subjects are English
-   and begin exactly `gpt-6.1-sol: `. The body states the source question,
-   evidence, actual checks, gains/losses and any cleanup.
-
-   ```bash
-   git -c http.version=HTTP/1.1 push origin main
-   git rev-parse HEAD
-   git ls-remote origin refs/heads/main
-   git status --short
-   ```
-
-Verify remote HEAD independently and leave a clean worktree.
-A handoff is not completion of the reconstruction; retain the same full
-objective when work resumes. Do not create a new registered goal automatically.
+Update only changed claims; refresh progress when ledgers change. Commit and push
+verified checkpoints to `origin/main` with the English subject prefix
+`gpt-6.1-sol: `. State the actual source question, evidence, checks and limits.
+Disable opportunistic git GC for these checkpoints, verify the remote independently
+with `git ls-remote`, and finish with `git status --short`. Do not mark the goal
+complete because a fixture passes, all current rows have source, or a handoff is tidy.
