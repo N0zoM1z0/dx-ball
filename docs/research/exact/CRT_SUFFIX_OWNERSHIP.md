@@ -105,4 +105,27 @@ behavior are not established by this byte audit.
 
 Private `.analysis/declared-text-coverage-20261017/proof.json` retains all 475
 target span hashes, segment arithmetic, bridge authorities and input identities.
-The current game image and running original50 producer remain unchanged.
+The current game image remains unchanged. The original50 producer described by
+that historical audit is now terminal; see the current handoff.
+
+## Incoming references to declared game bodies
+
+A subsequent review covers all270 classified authored functions:259 retained
+REA dossiers plus eleven missing incoming-reference facets queried with6.5.
+There are1,149 observed incoming sites after excluding51 self-body sites from
+the new facets. Every observed non-entry destination is one of190 DATA sites
+whose source lies inside the same owner's enclosing span. No observed external
+call or jump enters a declared game body at a non-entry address.
+
+This narrows the interior-entry question for those declared Ghidra bodies only.
+Body-excluded or undeclared entries, unresolved computed flows and runtime-only
+destinations remain open. It establishes neither the final authored denominator
+nor original declarations, source optimality or new exact acceptance.
+
+Private `.analysis/game-entry-reference-review-20261017/complete.json.gz` retains
+every selected Evidence ID, input digest, body range and edge. The eleven new
+records are archived in REA run `2026-10-17T04-26-55.759Z-requests-2339124`;
+the session closes normally with exit0. Its whole-tree cap is35% of one CPU,
+memory high640 / max768 MiB. Sampled peak is about641 MiB with high-water reclaim
+events, no sampled max/OOM event. No compilation, game, relink or full replay
+runs; protected source/manifest/ledger/report/image identities stay unchanged.

@@ -26,6 +26,7 @@ save('requests.json', requests);
 const allowed = new Set(['binary_overview', 'binary_session', 'analyze_function',
   'batch_decompile', 'read_bytes', 'inspect_native_load_image', 'procedure_info',
   'procedure_pseudo_code', 'procedure_assembly', 'procedure_callers', 'procedure_callees',
+  'procedure_references',
   'search_strings', 'search_procedures', 'xrefs', 'get_call_graph',
   'inspect_native_instruction', 'inspect_native_data_type', 'resolve_native_call_targets',
   'inspect_native_api', 'trace_native_values', 'address_to_file_offset']);

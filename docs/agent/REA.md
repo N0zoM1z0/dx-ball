@@ -52,6 +52,7 @@ facets are also verified with 6.3:
 {"name":"procedure_info","arguments":{"procedure":"0x00404E40"}}
 {"name":"procedure_pseudo_code","arguments":{"procedure":"0x00404E40"}}
 {"name":"procedure_assembly","arguments":{"procedure":"0x00404E40"}}
+{"name":"procedure_references","arguments":{"procedure":"0x00404E40","direction":"incoming"}}
 {"close":true}
 ```
 
@@ -61,6 +62,10 @@ the cold provider delay. Native function views may omit unreachable intervals
 inside the enclosing span; check information ranges against the full bytes
 before claiming exact recovery. The assembly schema returns a string; general
 large-body pagination has not been verified.
+The session helper also permits `procedure_references`, verified through eleven
+incoming-reference queries on 6.5. It retains self-body edges as well as external
+sources; exclude self-body sources explicitly when comparing it with dossier
+incoming edges. Unresolved computed destinations remain unknown.
 
 The upgrade from 4.1.0 to 6.3.0 retained the old snapshot at
 `.analysis/rea-upgrade-6.3.0/snapshot-4.1.0.json.gz`. The new release failed its

@@ -61,6 +61,14 @@ sites. Five focused checks pass, including a wrong real call mapping and
 constructed metadata/addend controls. This verifies catalog consistency only;
 unknown symbols and original identity/ABI still require independent evidence.
 
+The [declared-body reference review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#incoming-references-to-declared-game-bodies)
+covers all270 authored functions/1,149 incoming sites, reusing259 dossiers and
+querying only eleven missing facets with REA6.5. All190 non-entry destinations
+come from DATA sites inside the same owner's enclosing span; no observed
+external call/jump enters a declared body at an interior address. Undeclared or
+body-excluded entries and unresolved computed targets remain open. The capped
+session closes normally; no compiler/game/relink/full replay or acceptance gain.
+
 The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
 accounts for all362 instructions and71 switch bytes. It finds and repairs two
 wrong comparison-manifest targets for cases8 and21 through actual COFF definitions
