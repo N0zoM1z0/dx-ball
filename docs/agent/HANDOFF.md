@@ -12,9 +12,11 @@ from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
 One [current original50 producer](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
-is running at this checkpoint, with complete ready initial boards 0 through 4
-verified and the first four unchanged originals traversed. This is prefix
-evidence, not a full pass. **Do not launch a duplicate campaign or compiler/provider session.**
+is running at this checkpoint, with all ten initial readiness/layout checks for
+boards 0 through 9 verified and the first nine unchanged originals traversed.
+Saved events contain all 4000 initial bytes; eight boards also have retained
+ready complete witnesses. This is prefix evidence, not a full pass.
+**Do not launch a duplicate campaign or compiler/provider session.**
 The producer owns compiler-session.lock. Client exec session 47586 and private
 `.analysis/restored-crt-original50-20261017/tool-session.json` identify it; poll
 that handle and check saved PID/start-tick identities with `status.py`. Files
@@ -22,13 +24,22 @@ alone are not liveness proof. It reuses all products/reader and targets all 50
 initial slots plus terminal 50 / menu 0, with 14400 seconds total deadline. CPU stays
 35% on one CPU, memory high 640 / max 768 MiB; the host quota period changes 100→10ms
 at about 804 seconds without target clock/code/input changes. Frozen inputs,
-resource records and the sealed 2000-byte prefix remain private; the earlier
-1200-byte snapshot is retained separately. `prefix-checkpoint-five/verification.json`
+resource records and the sealed 4000-byte prefix remain private; the earlier
+1200-/2000-byte snapshots are retained separately. `prefix-checkpoint-10/verification.json`
 checks all frozen inputs/products and 49 originals, with three live kernel
 identities before/after capture. A 49-second sample measures 35% of one CPU and
 238 MiB current/252 MiB observed-peak memory, with no memory-limit/OOM events.
 Preserve actual terminal output when it arrives; do not infer completion or restart on a stale
 or temporarily unavailable progress read. All 34 authored candidates stay open.
+
+A note-only draft identifies thirteen exact rows with superseded nonexact or
+semantic-only clauses. Current complete exact receipts support every correction;
+all other fields and raw lines are preserved. It is prepared, not applied:
+`.analysis/tracking-note-reconciliation-20261017/pending-notes.json`. Apply only
+after the original50 phase's final frozen-input verification and sealing have
+finished, including `verify-final.py` if the campaign passes. The canonical CSV
+must remain unchanged until then. Source, status, extent, ABI and acceptance
+are unaffected by this pending cleanup.
 
 The [PCX workspace recheck](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#pcx-brick-hit-and-processor-controls-after-handoff)
 confirms its rejection from retained instructions and current source/object

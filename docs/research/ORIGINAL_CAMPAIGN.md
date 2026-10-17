@@ -3,10 +3,14 @@
 ## Current restored-CRT original-bank prefix, October 17
 
 One full original-50 attempt uses current image `345a6887…` from source baseline
-`41fe125`. The latest saved checkpoint verifies the complete initial boards 0
-through 4 (2,000 bytes), with a ready gameplay witness for each, and progression
-through the first four unchanged original boards. The earlier three-board
-checkpoint remains retained separately.
+`41fe125`. The latest saved checkpoint verifies all ten live initial readiness
+and layout checks for boards 0 through 9, with progression through the first nine
+unchanged original boards. Saved periodic events contain all ten complete
+400-byte layouts (4,000 bytes), eight with matching ready gameplay fields.
+Indices 7 and 8 retain complete byte witnesses without ready flags; the unchanged
+live observer itself requires two ready complete samples before printing each
+initialization marker. The earlier three- and five-board checkpoints remain
+retained separately.
 The entire 20,000-byte bank, all 49 immutable originals, current inputs and game
 products remain unchanged. This is verified prefix evidence, not a full campaign
 pass. The producer is still running at the checkpoint; no terminal receipt is
@@ -32,8 +36,8 @@ interval, not final lifetime resource accounting.
 
 Private `.analysis/restored-crt-original50-20261017/` retains frozen inputs,
 launch/observed kernel identities, live resource samples, the quota-period change
-and sealed three- and five-board prefix snapshots. The latter is
-`prefix-checkpoint-five/verification.json`; it checks all frozen inputs/products
+and sealed three-, five- and ten-board prefix snapshots. The latest is
+`prefix-checkpoint-10/verification.json`; it checks all frozen inputs/products
 and all 49 originals again, with all three PID/start-tick identities live before
 and after capture. Its `tool-session.json` and `status.py` support
 checking the same producer; a saved snapshot alone does not establish liveness.
