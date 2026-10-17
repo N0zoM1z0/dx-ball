@@ -64,7 +64,7 @@ explosion owner, ball count, and working tiles in one storage object.
 sprite/font banks, and draws through the DirectDraw declarations in
 [resources.h](../src/resources.h). [display.cpp](../src/display.cpp) tracks dirty
 regions, restores backgrounds, and presents by flipping or copying regions.
-[device.c](../src/device.c) handles palette fades and surface recovery;
+[device.cpp](../src/device.cpp) handles palette fades and surface recovery;
 [ui.c](../src/ui.c) builds text and line drawing on those services.
 [rotation.c](../src/rotation.c), [raster.cpp](../src/raster.cpp), and
 [bitmap.c](../src/bitmap.c) contain the separate software drawing and image helpers.
