@@ -140,13 +140,11 @@ def observe(profile, args, reports):
     output = reports / profile
     output.mkdir(parents=True, exist_ok=True)
     env = environment()
-    observer = Observer(profile, env, output / 'unused.json', FIELDS, SHAPES)
-    observer.arguments[1] = str(READER)
     events, initialized = [], set()
     summary = {'profile': profile, 'status': 'running', 'events': events,
                'initialized_board_indices': [], 'executable_sha256': digest(runtime / 'dxball.exe'),
                'bank_input_sha256': digest(runtime / 'DEFAULT.BDS'),
-               'reader_arguments': observer.arguments,
+               'reader_arguments': None,
                'episode_clock': 'elapsed wall time after the first initialized ready gameplay sample',
                'controller': dict(contact_biases=CONTACT_BIASES, decisions_per_bias=DECISIONS_PER_CONTACT_BIAS,
                                   basis='processed latest SDK schedule; eligible sparse tails rank six contact phases with a bounded center ray'),
@@ -168,6 +166,9 @@ def observe(profile, args, reports):
     last_mouse_request = None
     with (output / 'wine.log').open('w') as wine_log, (output / 'reader.log').open('w') as reader_log:
         try:
+            observer = Observer(profile, env, output / 'unused.json', FIELDS, SHAPES)
+            observer.arguments[1] = str(READER)
+            summary['reader_arguments'] = observer.arguments
             process = launch(runtime, env, wine_log)
             window = wait_window(process, env)
             stream = Stream(observer.arguments, env, reader_log)

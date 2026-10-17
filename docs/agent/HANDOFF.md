@@ -21,8 +21,21 @@ The preceding twelve fixed-phase cases/1,229 frames remain separately preserved.
 The ray is approximate: no measured live speedup or full campaign pass follows.
 The reusable fixture records genuine particle-producer provenance for same-frame
 frees while retaining all ownership/event/poison checks. Game source/products and
-acceptance stay unchanged; no compiler/provider/game/relink/full replay runs.
-Next gate is a bounded real-input/reporting check, not an unchanged full restart.
+acceptance stay unchanged; those frame controls require no compiler/provider/game/
+relink/full replay.
+A [bounded real-input check](../research/CAMPAIGN_TAIL_CONTACTS.md#bounded-real-entry-and-constructor-failure-reporting)
+now exits0 after20.02 seconds of gameplay,1,968 valid samples/no malformed lines,
+original board0 and score174/lives3. New request fields verify on retained contact
+requests; tail-ray is not observed, so no live tail speedup or full50 pass follows.
+A stale build-manifest guard first rejects before target launch. Its old profile
+files are marked stale; constructor errors now write a fresh failure profile.
+An explicit build-identity refresh preserves old execution hashes and proves
+only the two earlier comparison targets changed; all116 objects/19 members/map/
+image stay fixed. The final strict constructor accepts, without compilation or
+relink. All three owned process identities are absent;49 verified runtime copies
+are removed. Measured CPU is about34% of one CPU, observed peak334 MiB,
+with no memory-limit events. Return to instruction-backed authored recovery;
+do not repeat the same initial-board episode or unchanged full campaign.
 
 One [clock-expression proposal](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#closed-clock-expression-with-rng-on-the-left)
 with RNG on the left fails a single existing ordered countdown case under the

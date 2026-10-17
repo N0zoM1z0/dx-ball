@@ -108,5 +108,54 @@ source, actual execution inputs, complete controls and wrapper checks. A
 preliminary local cost sample averages about0.29ms process CPU time per eligible
 decision; it is not runtime throughput. Heavy checks remain
 serial under the existing resource limits. Game source, objects, executable and
-acceptance ledgers stay unchanged. A bounded real-input check is still needed
-before claiming live behavior; full original50 completion remains unproved.
+acceptance ledgers stay unchanged. The subsequent bounded real-input check below
+covers entry/report integration; live tail performance and full original50
+completion remain unproved.
+
+## Bounded real entry and constructor-failure reporting
+
+The subsequent real-input episode reuses image `345a6887…`, all116 source
+objects,19 approved CRT members and SDK reader `f9dda620…`. It exits0 with
+`bounded-episode`:20.02 seconds of ready gameplay,1,968 valid SDK samples and
+zero malformed lines. Original board0 initializes with all400 bytes checked;
+the last sample has135 remaining bricks, score174 and three lives.
+
+Two retained mouse requests contain the selected/scheduled phases, policy and
+predicted-cell field. Both use the contact fallback. The tail-ray branch is not
+observed, so this proves real entry/input/report integration only. It establishes
+neither live tail performance nor full original50 completion. The existing
+observer stops its process groups; this is not a normal application-exit check.
+All three saved PID/start-tick identities are absent afterward.
+
+Before that episode, the observer correctly rejects a stale build-input hash:
+the build record predates the two candidate-only brick-hit mapping corrections.
+The first public invocation stops before launching a game or reader. Its summary
+is new, while its profile/log files still belong to the older failed full50 run;
+those files are explicitly marked stale in the preserved provenance receipt.
+
+The reporting repair moves Observer construction inside the existing error and
+cleanup scope. An actual constructor-rejection check replaces a stale sentinel
+with a fresh empty failure profile and null reader arguments, without launching
+the target. Reversing just that scope move restores the preceding source bytes.
+
+The build record receives an explicit `input_identity_refresh`, preserving the
+original manifest hash as an execution-input override and retaining its prior
+report. Full configuration comparison confirms that only the two comparison
+targets changed. All compiler recipes, ownership,116 object/input closures,
+19 CRT members, map and executable verify unchanged. No compilation or relink
+is performed; the original strict constructor then accepts the refreshed record.
+
+The44-second supervisor resource window measures about34.1% of one CPU, with an
+observed334 MiB peak at its post-child capture and no memory-limit/OOM events.
+The scope retains one CPU,35% quota with a10ms period,640/768 MiB memory limits
+and the dedicated silent sink. The host default sink and49 originals stay
+unchanged. Prior public reports are archived before replacement;49 verified
+runtime copies are removed after preserving any differing bytes.
+
+The startup rejection is sealed separately under
+`.analysis/campaign-tail-real-input-20261017/`; its stale profile is not a new
+game observation. The metadata/reporting repair, actual constructor controls,
+frozen inputs, successful episode and cleanup receipts are under
+`.analysis/campaign-tail-live-final-20261017/`. Source/acceptance counts remain
+475/380 with34 authored candidates. No provider query or full replay runs.
+Do not repeat this initial-board episode merely to collect the same fields.
