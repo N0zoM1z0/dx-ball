@@ -45,6 +45,34 @@ archived run; root-level result files are latest-query aliases. A request array
 can also be passed as `scripts/rea session path/to/requests.json`. Inspect the
 saved tool catalog before composing requests for another operation.
 
+For a concrete compiler-lowering question, a dedicated session can inspect the
+hash-pinned VC4 backend:
+
+```bash
+scripts/rea compiler-session vc4-backend path/to/requests.json
+scripts/rea compiler-session vc4-backend --interactive
+```
+
+This mode verifies the complete installed toolchain and selects its attested
+`c2.exe`. Its records and snapshot live under `.analysis/rea/vc4-backend/`,
+separately from game investigations. The opened target hash must agree before
+the session may save a snapshot; a rejected target is closed without saving.
+Compiler records have immutable per-run paths without duplicate latest-result
+aliases. Interactive use requires an open stdin; automation here uses a PTY.
+Use the same serial systemd resource scope below. Compiler observations can
+support a specific source hypothesis, but do not establish the original game's
+compiler settings or translation-unit declarations.
+
+The first compiler import exceeded the default 330-second provider startup
+budget. The completed focused session omitted `Apply Data Archives` using
+`REA_GHIDRA_DISABLED_ANALYZERS='Apply Data Archives'` and set
+`REA_GHIDRA_STARTUP_TIMEOUT_MS=900000`. Compiler-session client calls allow
+930 seconds; game sessions retain their existing timeout and analysis profile.
+The first query took394,604 ms, with subsequent queries reusing the live import.
+CPU35%, memory high640 MiB/max768 MiB and the256 MiB Java heap were retained.
+See [the bounded compiler findings](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md)
+before importing again;14 observations and the closed snapshot are retained.
+
 For a missing native ABI, control-flow or instruction question, the narrower
 facets are also verified with 6.3:
 

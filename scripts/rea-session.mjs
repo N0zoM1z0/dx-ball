@@ -8,9 +8,16 @@ import { basename, dirname, resolve } from 'node:path';
 import { createInterface } from 'node:readline';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const directory = resolve(root, '.analysis/rea');
+const targetMode = process.argv[3] ?? 'game';
+if (!['game', 'vc4-backend'].includes(targetMode)) throw new Error('unsupported pinned REA target');
+const compilerTarget = targetMode === 'vc4-backend';
+const expectedTargetHash = process.argv[4];
+if (compilerTarget && !/^[0-9a-f]{64}$/.test(expectedTargetHash ?? '')) {
+  throw new Error('compiler session requires its attested backend hash');
+}
+const directory = resolve(root, compilerTarget ? '.analysis/rea/vc4-backend' : '.analysis/rea');
 mkdirSync(directory, { recursive: true, mode: 0o700 });
-const snapshot = resolve(directory, 'dxball.snapshot.json');
+const snapshot = resolve(directory, compilerTarget ? 'vc4-backend.snapshot.json' : 'dxball.snapshot.json');
 const interactive = process.argv[2] === '--interactive';
 const requests = interactive ? [] : JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const runDirectory = resolve(directory, 'runs',
@@ -19,8 +26,8 @@ mkdirSync(runDirectory, { recursive: true, mode: 0o700 });
 function save(filename, data) {
   const json = JSON.stringify(data, null, 2);
   writeFileSync(resolve(runDirectory, filename), json, {mode: 0o600});
-  // Keep the latest results compatible with the existing smoke verifier.
-  writeFileSync(resolve(directory, filename), json, {mode: 0o600});
+  // Only game smoke verification needs mutable latest-result aliases.
+  if (!compilerTarget) writeFileSync(resolve(directory, filename), json, {mode: 0o600});
 }
 save('requests.json', requests);
 const allowed = new Set(['binary_overview', 'binary_session', 'analyze_function',
@@ -44,6 +51,7 @@ const transport = new StdioClientTransport({command: process.execPath,
   args: [resolve(root, '.tools/rea-runtime/node_modules/rea-agents/scripts/rea.mjs'), 'mcp'],
   env: process.env, stderr: 'inherit', maxBufferSize: 32 * 1024 * 1024});
 let opened = false;
+let persistSnapshot = !compilerTarget;
 let completed = 0;
 let failure;
 let input;
@@ -52,7 +60,8 @@ async function call(name, args) {
   // The pinned split client SDK accepts options as its second argument.
   const started = performance.now();
   const response = await client.callTool({name, arguments: args},
-    {timeout: 360000, maxTotalTimeout: 360000});
+    {timeout: compilerTarget ? 930000 : 360000,
+      maxTotalTimeout: compilerTarget ? 930000 : 360000});
   responseMetrics.push({name, response_bytes: Buffer.byteLength(JSON.stringify(response)),
     elapsed_ms: Math.round(performance.now() - started)});
   save('response-metrics.json', responseMetrics);
@@ -67,10 +76,14 @@ try {
   await client.connect(transport);
   const catalog = await client.listTools();
   save('catalog.json', catalog);
-  const open = await call('open_binary', {path: resolve(root, 'original/DXBALL.EXE'),
+  const open = await call('open_binary', {path: resolve(root, compilerTarget ? '.tools/msvc400/bin/c2.exe' : 'original/DXBALL.EXE'),
     provider_id: 'ghidra', ...(existsSync(snapshot) ? {snapshot_path: snapshot} : {})});
   opened = true;
   save('open.json', open);
+  if (compilerTarget && open.result.sha256 !== expectedTargetHash) {
+    throw new Error('REA opened a different compiler backend');
+  }
+  persistSnapshot = true;
   console.log(`REA opened ${open.result.sha256}; ${catalog.tools.length} MCP tools`);
   async function inspect(request) {
     const index = completed;
@@ -106,11 +119,16 @@ try {
   input?.close();
   try {
     if (opened) {
-      const closed = await call('close_binary', {snapshot_path: snapshot, overwrite: existsSync(snapshot)});
+      const closed = await call('close_binary', persistSnapshot
+        ? {snapshot_path: snapshot, overwrite: existsSync(snapshot)} : {});
       opened = false;
       save('close.json', closed);
-      const saved = JSON.parse(readFileSync(snapshot, 'utf8'));
-      console.log(`REA snapshot saved: ${saved.evidence_bundle.records.length} Evidence records, ${closed.result.primitive_entries} primitive cache entries; session closed`);
+      if (persistSnapshot) {
+        const saved = JSON.parse(readFileSync(snapshot, 'utf8'));
+        console.log(`REA snapshot saved: ${saved.evidence_bundle.records.length} Evidence records, ${closed.result.primitive_entries} primitive cache entries; session closed`);
+      } else {
+        console.log('REA rejected target closed without saving a snapshot');
+      }
     }
   } catch (error) {
     save('close-failure.json', {message: String(error)});

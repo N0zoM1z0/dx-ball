@@ -180,6 +180,16 @@ resource control preserves all17 full bodies/literals, with only COFF/file
 bookkeeping differences. Do not repeat these pilots or the earlier complete
 explosion-member API control. Current source, caches, image and counts are unchanged.
 
+The distinct [fixture callback-table extraction](../research/exact/INDEPENDENT_BOARD_STORAGE.md#fixture-callback-table-owner-control)
+compares17 complete resource units: a private262-byte release-sprite zero comes
+with six prior exact losses. It is closed without adoption; do not mix that
+object with canonical headers or repeat the same pilot. Its bridge was prepared
+but never integrated. [VC4 backend record observations](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md)
+retain14 actual REA records and a separate closed snapshot. They locate a
+kind-dependent reader but do not establish the cause of game operand scheduling.
+Reuse those records before another cold compiler import. Current totals remain391
+exacts/24 authored candidates; source, cache and delivery identities are unchanged.
+
 Other authored boundaries and retained controls:
 
 - Preserve the real20,432-byte Win32 storage layout and368-byte terminal overlap.

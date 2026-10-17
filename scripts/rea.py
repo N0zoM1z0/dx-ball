@@ -9,7 +9,7 @@ import subprocess
 import sys
 import tomllib
 
-from legacy_toolchain import ROOT, sha256, tree_hash, session_lock
+from legacy_toolchain import ROOT, Toolchain, sha256, tree_hash, session_lock
 from resource_limits import ghidra_environment, limit_cpu
 
 
@@ -45,6 +45,10 @@ def environment():
 
 def main(arguments):
     limit_cpu()
+    compiler_session = bool(arguments and arguments[0] == "compiler-session")
+    if compiler_session:
+        if len(arguments) != 3 or arguments[1] != "vc4-backend":
+            raise ValueError("usage: scripts/rea compiler-session vc4-backend REQUESTS.json|--interactive")
     node, runtime, env = environment()
     if not arguments:
         arguments = ["--help"]
@@ -65,6 +69,19 @@ def main(arguments):
         target, _, _ = module.verify()
         if len(arguments) < 2 or Path(arguments[1]).resolve() != target.resolve():
             raise ValueError("REA query must use the configured original/DXBALL.EXE")
+    if compiler_session:
+        # Compiler investigation has its own pinned input and REA snapshot.
+        # Keep the ordinary game-query guard and game session unchanged.
+        lock = session_lock()
+        toolchain = Toolchain()
+        toolchain.verify()
+        target = ROOT / ".tools/msvc400/bin/c2.exe"
+        if target.resolve() != (toolchain.path / "bin/c2.exe").resolve():
+            raise ValueError("REA compiler target is not the pinned VC4 backend")
+        request = arguments[2] if arguments[2] == "--interactive" else str(Path(arguments[2]).resolve())
+        return subprocess.run([str(node), str(ROOT / "scripts/rea-session.mjs"),
+                               request, "vc4-backend", toolchain.lock["optimizer_sha256"]],
+                              env=env, cwd=ROOT).returncode
     if arguments[0] == "session":
         if len(arguments) != 2:
             raise ValueError("usage: scripts/rea session REQUESTS.json|--interactive")

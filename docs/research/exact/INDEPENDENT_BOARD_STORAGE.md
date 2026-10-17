@@ -293,6 +293,37 @@ verified, then49 raw files deleted; net245,760 allocated bytes are released
 after carrier and retained proposal-copy costs, excluding small JSON receipts.
 Totals remain391 exacts and24 authored candidates; the reconstruction is unfinished.
 
+### Fixture callback-table owner control
+
+An exhaustive source search finds that `DxBallRenderOps` and
+`dxball_render_ops` occur only as a typedef, extern and initialized definition;
+authored bodies call restored APIs directly. Python fixtures read and modify
+the table and derive real default function addresses from it. This supports a
+distinct ownership hypothesis: move the unchanged table to one fixture bridge
+and omit its declarations from authored headers. The earlier common-engine
+pilot retained the table. Its extraction is therefore a new bounded control.
+
+One resource compile with the uniform proposed header compares all17 complete
+units. `release-sprite` becomes262 bytes exact, with the full resolved/target
+SHA-256 `73d1a40d79b07a6725503ebc9b9ce494d85ccf8d856f925280d977c6f2930af2`.
+All15 relocation identities, addends and targets are unchanged; only their
+actual offsets move. The normal complete-span/local-target guards remain active.
+However, six prior exacts regress: draw-sprite, keyed/plain blit, capture-sprite,
+find-glyph and draw-glyph. Six others stay exact, leaving seven private exacts
+versus twelve before. Keyed stretch changes92 to90 differences; the other three
+candidates retain their results.
+
+The branch is closed without adoption or a broad affected-owner build. The
+prepared bridge preserves the callback ABI/default addresses but is uncompiled
+and unvalidated; it is not a delivered implementation. The private zero cannot
+be combined with canonical objects that consume different headers. Source,
+ledgers, current caches and delivery remain unchanged. There is no full replay,
+runtime check or new game query. Raw trial inputs/products are hash-verified in
+an archive before cleanup. Authorities are
+`.analysis/render-fixture-owner-20261017/{summary,comparison-resources,units-resources}.json`.
+The separate [compiler-record observations](VC4_BACKEND_SYMBOL_RECORDS.md) do not
+yet establish the cause of these declaration-context emission changes.
+
 ## Closed proposal phase
 
 Before adoption, the seven-object proposal was ready for production placement, startup
