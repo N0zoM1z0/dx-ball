@@ -50,6 +50,9 @@ no new original-game queries, compiler-setting changes or exact claims.
 
 Private static metadata, request identities, failures, lifecycle checks and
 cleanup receipts are in `.analysis/compiler-lowering-discovery-20261017/`.
-Reuse these records before another compiler import. The next useful question
-must connect a specific consumed record field to a specific emitted producer;
-these observations alone do not authorize arbitrary declaration experiments.
+Reuse these records before another compiler import. The later
+[expression-ordering investigation](VC4_EXPRESSION_ORDERING.md) connects the
+numeric lookup field at record`+0x24` to an actual subtree-ranking and swap
+decision. Its64-record cumulative snapshot includes these14 observations.
+The specific original-game producer link remains missing; neither investigation
+authorizes arbitrary declaration experiments.

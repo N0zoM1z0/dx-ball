@@ -63,6 +63,13 @@ Use the same serial systemd resource scope below. Compiler observations can
 support a specific source hypothesis, but do not establish the original game's
 compiler settings or translation-unit declarations.
 
+An interactive inspection returning REA category `invalid_input` retains an
+indexed `.error.json` with its request, error and full response, then keeps the
+same import open. `inspection-errors.json` lists those failed attempts. This
+does not retry a request or reopen the provider. Batch errors and transport,
+provider, open, target-identity and close failures still terminate the session.
+Successful records keep their attempted-request indices, including any gaps.
+
 The first compiler import exceeded the default 330-second provider startup
 budget. The completed focused session omitted `Apply Data Archives` using
 `REA_GHIDRA_DISABLED_ANALYZERS='Apply Data Archives'` and set
@@ -70,8 +77,12 @@ budget. The completed focused session omitted `Apply Data Archives` using
 930 seconds; game sessions retain their existing timeout and analysis profile.
 The first query took394,604 ms, with subsequent queries reusing the live import.
 CPU35%, memory high640 MiB/max768 MiB and the256 MiB Java heap were retained.
-See [the bounded compiler findings](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md)
-before importing again;14 observations and the closed snapshot are retained.
+See [the record reader](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md) and
+[expression ordering](../research/exact/VC4_EXPRESSION_ORDERING.md) findings
+before importing again. The closed cumulative snapshot now retains64 records.
+The ordering follow-up reuses one live import after its407,402 ms cold query;
+44 synthetic executions confirm the actual rank/swap helpers, without claiming
+original-game record keys or a cause for its instruction differences.
 
 For a missing native ABI, control-flow or instruction question, the narrower
 facets are also verified with 6.3:

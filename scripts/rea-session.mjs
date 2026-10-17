@@ -56,6 +56,7 @@ let completed = 0;
 let failure;
 let input;
 const responseMetrics = [];
+const inspectionErrors = [];
 async function call(name, args) {
   // The pinned split client SDK accepts options as its second argument.
   const started = performance.now();
@@ -68,7 +69,10 @@ async function call(name, args) {
   const data = response.structuredContent ?? JSON.parse(response.content.find(c => c.type === 'text').text);
   if (response.isError) {
     save('failed-response.json', {name, arguments: args, response});
-    throw new Error(JSON.stringify(data));
+    const error = new Error(JSON.stringify(data));
+    error.reaError = data.error;
+    error.reaResponse = response;
+    throw error;
   }
   return data;
 }
@@ -89,7 +93,23 @@ try {
     const index = completed;
     if (!allowed.has(request.name)) throw new Error(`unsupported inspection tool: ${request.name}`);
     if (!catalog.tools.some(t => t.name === request.name)) throw new Error(`unadvertised tool: ${request.name}`);
-    const data = await call(request.name, request.arguments ?? {});
+    let data;
+    try {
+      data = await call(request.name, request.arguments ?? {});
+    } catch (error) {
+      // A missing procedure is a query result, not a reason to discard an
+      // expensive live import. Batch verification and all other failures
+      // retain fail-fast behavior; this never retries or reopens a provider.
+      if (!interactive || error.reaError?.category !== 'invalid_input') throw error;
+      const filename = `${String(index).padStart(2, '0')}-${request.name}.error.json`;
+      const record = {index, request, error: error.reaError, response: error.reaResponse};
+      save(filename, record);
+      inspectionErrors.push(record);
+      save('inspection-errors.json', inspectionErrors);
+      completed += 1;
+      console.error(`${request.name}: invalid input retained -> ${runDirectory}/${filename}; session remains open`);
+      return;
+    }
     const filename = `${String(index).padStart(2, '0')}-${request.name}.json`;
     save(filename, data);
     completed += 1;

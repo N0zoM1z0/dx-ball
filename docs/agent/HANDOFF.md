@@ -249,10 +249,17 @@ compares17 complete resource units: a private262-byte release-sprite zero comes
 with six prior exact losses. It is closed without adoption; do not mix that
 object with canonical headers or repeat the same pilot. Its bridge was prepared
 but never integrated. [VC4 backend record observations](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md)
-retain14 actual REA records and a separate closed snapshot. They locate a
-kind-dependent reader but do not establish the cause of game operand scheduling.
-Reuse those records before another cold compiler import. Those controls changed no source or claim; the later bonus adoption above
-sets the current totals and delivery identities.
+and the [expression-ordering follow-up](../research/exact/VC4_EXPRESSION_ORDERING.md)
+retain64 cumulative REA records in a separate closed snapshot. The latter
+establishes the actual child swap/opcode map and a rank derived from numeric
+record key`+0x24`;44 executions of the pinned helper bytes pass. Concrete game
+node keys/ranks and their final emitted instructions remain unobserved. This is
+not a declaration-order/name/count/flag experiment basis. Reuse the closed
+records before another cold import. Interactive invalid-input queries now retain
+their complete diagnostics without discarding the import; seven mocked cases
+pass. Two closed catalogs share hash-verified storage, releasing16.7 MiB net.
+No game source, claim or product changes in this follow-up; rotation above sets
+the current totals and delivery identities.
 
 Other authored boundaries and retained controls:
 
