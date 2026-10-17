@@ -11,6 +11,17 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
+A [tail-contact counterfactual](../research/CAMPAIGN_TAIL_CONTACTS.md) checks two
+retained four-tile geometries across the six current contact phases: twelve
+catches and1,229 complete original/native frames agree. Three phases per geometry
+change a tile; phase5 is fastest in both bounded choices. The static ray misses
+one hit per geometry, and this is no live speedup or campaign claim. A private
+typed particle-producer adapter handles same-frame transient frees while retaining
+all ownership/event/poison checks. Initial fixture failures and final traces stay
+preserved. Controller, game source/products and acceptance are unchanged; no
+compiler/provider/game/relink/full replay runs. Next gate is delayed-input testing
+of an actual proposed selector, not an unchanged full campaign restart.
+
 One [clock-expression proposal](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#closed-clock-expression-with-rng-on-the-left)
 with RNG on the left fails a single existing ordered countdown case under the
 current GCC configuration. Keep the explicit time-before-RNG sample. The failed
