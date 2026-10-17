@@ -196,6 +196,31 @@ bytes net of archive/journal. Scope peak167,350,272 bytes, zero high/max/OOM
 events; required resource limits hold. No native build, relink, provider, game
 or full replay. Canonical source, objects, delivery and counts remain unchanged.
 
+The later [clock owner control](../research/exact/EXACT_WINMM_CLOCK_IMPORT.md#closed-clock-implementation-owner-october18)
+compares27 full functions/777 bindings from three compiles: no exact gain/loss,
+26 unchanged code identities; paddle alone regresses677/68→678/210. Reject it.
+Two fixed [legacy clock-expression checks](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#complete-vc4-clock-expression-rejections-october18)
+each compare all20 current-C++ display functions/421 bindings. Both yield the
+same1063/356 last-brick body with a64-byte frame but wrongly call RNG before
+time. Reject both despite closer raw bytes. The first corrects a prior native-only
+closure; the second answers a time-left control previously compiled only as C.
+Neither changes source, products, semantic/exact claims or delivery. All80 raw
+inputs/products across these three pilots are archived/member-hash verified
+before removal, releasing452 KiB net; scope peaks stay below246 MiB with zero
+high/max/OOM events. No native build, relink, runtime, provider query, game or
+full replay follows. Sealed evidence lives in `.analysis/clock-family-owner-20261018/`,
+`.analysis/lightning-rng-left-vc4-20261018/` and
+`.analysis/lightning-time-left-cpp-20261018/`. A separate four-query
+[polygon source-identity search](../research/exact/POLYGON_SCAN_WORKSPACE.md#bounded-source-identity-search-october18)
+finds that Graphics Gems' ConcaveScan differs in allocations, sorting, edge fields
+and advancement. Retain its hash-verified gzip source carrier; delete the raw
+copy. The supplied edge stride was incorrectly24; a separately sealed erratum
+verifies28 against both original allocation producers, including the unknown
+four-byte slot at offset12. Do not describe the old search premise as complete.
+This bounded negative result supplies no new original declaration. The capped
+standard cleanup preview finds zero further registered disposable products;
+the build tree remains about62 MiB with useful caches and current products.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

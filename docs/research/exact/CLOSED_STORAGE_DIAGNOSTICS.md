@@ -1,5 +1,15 @@
 # Closed drawing and SDK storage diagnostics
 
+## Clock implementation owner, October18
+
+The [three-function clock owner](EXACT_WINMM_CLOCK_IMPORT.md#closed-clock-implementation-owner-october18)
+tests unchanged sampling, elapsed and detection bodies with their actual state.
+Three compiles compare27 full functions/777 bindings: no gains or losses,26
+unchanged code identities. Paddle alone regresses677/68→678/210 by exchanging
+two right-edge operand producers. All24 exact companions survive; reject the
+model without variants. Canonical source, products, delivery and counts remain
+unchanged. Verified archival/removal releases212 KiB net.
+
 ## Glyph/text implementation owner, October18
 
 The distinct [five-function glyph/text family](../STARTUP_UI_OWNER.md#glyphtext-implementation-owner-control-october18)

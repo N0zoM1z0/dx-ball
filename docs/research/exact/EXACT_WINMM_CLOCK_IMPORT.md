@@ -47,3 +47,29 @@ operation 10 of closed run `2026-10-07T09-29-28.570Z-interactive-2776129`.
 Its countdown dossier, operation 00, is Evidence
 `ev_f8610be2baa2323aec8fcd14317794aebe74eefa78b4d66c9cf874ca117eb5bc`.
 No new provider query is needed.
+
+## Closed clock implementation owner, October18
+
+One fixed private model groups the three adjacent original entries: current time
+at403450, elapsed time at4034F0 and clock detection at403550. Detection writes the
+high-resolution selection read by sampling; elapsed calls sampling. Move their
+unchanged bodies and the existing clock state to one C++ owner, retaining full
+runtime/platform/clock headers, C linkage and `/MT`. The hosted callback table
+is necessary integration state, not evidence of an original translation unit.
+
+Three serial compiles compare all27 affected functions with777 actual bindings,
+74 complete literal references and60 same-section local-target checks. All24
+prior exacts retain8,323 bytes;26 full code identities remain unchanged. Elapsed
+stays81/3 and reset426/20. Only paddle changes,677/68→678/210: two instructions
+exchange the local/global right-edge operands and add one byte. Its other183
+instructions and frame homes agree. Reject the complete model without variants.
+
+Independent review checks full relocated bodies, unchanged residual owners and
+the moved external-C BSS objects' widths/zero initialization. Canonical source,
+products, ledgers and delivery remain unchanged at394 exacts/21 authored
+candidates. Private `.analysis/clock-family-owner-20261018/` retains sealed
+comparisons and reviews. Archive/member-hash verification precedes removal of
+36 raw inputs/products, including five objects, releasing212 KiB net of archive
+and journal. Scope peak257,736,704 bytes; the one-CPU/35%/640–768 MiB limits hold
+with zero high/max/OOM events. No native build, relink, provider query, runtime
+case, game or full replay follows.

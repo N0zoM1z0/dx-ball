@@ -96,7 +96,7 @@ image and ledgers remain unchanged; no native check, relink or game follows.
 Frozen inputs, objects and complete comparisons are retained under
 `.analysis/lightning-scan-scope-20261017/`. Do not repeat this scope model.
 
-## Closed clock expression with RNG on the left
+## Initial native clock-expression rejection
 
 One distinct private proposal replaces the explicit start-time local with
 `dxball_random_range(20000) + timeGetTime() + 40000`. The earlier combined-expression
@@ -111,7 +111,7 @@ trace agrees in this case. A passing numeric sum would not preserve the observed
 call order. Retain the explicit time sample and do not pursue equivalent addition
 spellings for register allocation.
 
-The failed ordered case stops this proposal before any VC4 compilation or
+The failed ordered case initially stops this proposal before any VC4 compilation or
 complete-function comparison. One private native owner compiles and links with
 36 unchanged objects; no canonical source, object, library, report, ledger or game
 image changes. There is no new semantic acceptance, game, provider or full replay.
@@ -119,6 +119,48 @@ Both traces, commands and consumed inputs are retained in
 `.analysis/lightning-clock-operand-order-20261017/`. Unique private products and
 proposal inputs are compressed with byte equality before disposable copies are
 removed. This failure does not prove a source optimum or resolve original EBX use.
+
+## Complete VC4 clock-expression rejections, October18
+
+The native failure above did not answer the legacy source question: that receipt
+contains zero VC4 compiles and zero complete comparisons. With exact legacy
+recovery taking priority and ports deferred, one fixed RNG-left model now receives
+its missing VC4 check. Original time-before-RNG order remains a hard acceptance
+condition; native-only semantic demotion could not excuse a legacy regression.
+
+One current C++ display compile compares all20 complete functions/421 actual
+bindings. Nineteen companion code identities, including16 exacts, stay unchanged.
+Last-brick becomes1063 bytes/356 differences and reserves the original64-byte
+frame, but its first calls are RNG then time. At415F5B it calls403B70, preserves
+the RNG result in EBX, then calls the time import at415F65. Original415F56 calls
+time, preserves that result in EBX at415F5C, then calls RNG at415F63. This can
+change the sampled deadline, not merely the trace presentation. Reject it.
+
+A separate bounded provenance check finds that the earlier time-left VC4 control
+used `display.c` with no `/TP`; it predates display's C++ adoption at4e2b0f2.
+Commit752d800 changed runtime, not display. One fixed current-C++ time-left
+expression therefore answers a distinct uncovered frontend closure. All other
+tokens, scopes, headers and flags stay unchanged. Its20 complete bodies and
+421 bindings are identical to the RNG-left result: it also calls RNG first.
+Reject this model too. This does not isolate frontend causality or establish
+unique original source; the older C owner's local scopes also differ.
+
+Independent complete instruction accounting covers297 original/301 proposed
+instructions,16 frame roles/62 accesses,25 branches,22 calls and nine global
+stores. Besides the initial exchanged calls, the two existing crop producers
+remain nonexact. The restored frame and smaller raw difference count cannot
+override the call-order failure. No additional expression, cast, parenthesis,
+register or flag variants follow; retain the explicit canonical time sample.
+
+Private `.analysis/lightning-rng-left-vc4-20261018/` and
+`.analysis/lightning-time-left-cpp-20261018/` retain sealed full comparisons,
+provenance and independent reviews. Each archives and member-hash verifies22
+raw inputs/products, including two objects, before deleting them, releasing
+120 KiB net per model. Scope peaks are155,910,144/156,430,336 bytes with zero
+high/max/OOM events under the required caps. No new native build, runtime case,
+provider query, relink, game or full replay follows. Canonical source, products,
+semantic/exact ledgers and delivery stay unchanged at394 exacts/21 authored
+candidates; neither rejected proposal requires semantic demotion.
 
 ## Closed crop/publication lifetime
 

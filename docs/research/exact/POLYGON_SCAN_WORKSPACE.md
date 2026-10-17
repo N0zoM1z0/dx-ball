@@ -116,3 +116,32 @@ confirms the source, ABI, binding and instruction deltas. Private evidence is
 in `.analysis/polygon-current-c-owner-20261017/`. All seven raw input/object
 copies are archived, every member hash verified, then removed, releasing
 48 KiB net of the archive, excluding receipt costs. Useful current caches remain.
+
+## Bounded source-identity search, October18
+
+Four specific searches use a supplied fingerprint: three allocations, two
+Knuth Shellsort passes with gap3n+1, active-pointer removal by memmove and integer
+error carry. Its edge-size input was wrong: it said24 bytes. Independent review
+checks both original allocation producers, `(count*8-count)*4`, and corrects
+the stride to28 bytes: six observed integer fields plus one unclassified4-byte
+slot at offset12. Thus these queries did not use a fully accurate original
+fingerprint. The only qualifying
+primary source inspected is Paul Heckbert's
+[ConcaveScan.c](https://github.com/erich666/GraphicsGems/blob/master/gems/ConcaveScan.c),
+identified through the [official Graphics Gems site](https://www.realtimerendering.com/resources/GraphicsGems/).
+
+It does not establish direct source identity. It allocates two buffers, stores
+double x/dx plus an integer index, uses qsort twice, removes Edge values with
+memcpy and advances floating-point intersections without integer error carry.
+The supplied24-byte edge size is not evidence connecting the implementations.
+Generic active-edge similarity supplies no missing declaration. No qualifying
+original WinG/PCGPE candidate is found within these four queries; earlier revisions,
+heavy adaptation and a common algorithm remain outside this bounded result.
+
+Private `.analysis/polygon-source-archaeology-20261018/` retains the exact queries,
+URLs and a2,116-byte gzip carrier whose decompressed5,185-byte source hash is
+verified. Its sealed review retains the supplied error; a separate
+`.analysis/polygon-source-archaeology-20261018-erratum/` records the correction.
+The redundant raw download is deleted. No compiler, provider, runtime,
+source or comparison change follows; do not turn this negative search into an
+attribution or a declaration variant.
