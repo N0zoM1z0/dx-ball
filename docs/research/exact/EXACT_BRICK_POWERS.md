@@ -193,3 +193,28 @@ source reversal, retained-producer equivalence, comparisons, failures, final
 cases and image verification. Totals remain475 source /380 exact /95 candidates.
 The native product is retained in a byte-verified gzip carrier before removing
 three fresh identical disposable fixture copies; crash diagnostics remain intact.
+
+## Closed pan consumer scope
+
+A subsequent private trial narrows the existing sound-pan variable to its
+assignment and switch consumers. The score flag remains outside; the block ends
+before surface selection/redrawing. All six sound consumers, expression order,
+variable names/types and particle-counter scope stay unchanged. No address of
+pan escapes. The lifetime follows its observed consumers, not a recovered original
+source declaration.
+
+One gameplay compilation compares all seven complete units. Five exacts retain
+1,572 bytes, and all six other body identities remain fixed. The hit body remains
+1,316 bytes with the same bindings and sixteen-byte frame, but worsens from416
+to418 differences. Ten actual EBP displacement bytes move score flag -8→-4 and
+pan -4→-8. Pan still misses original -12 and all three restored score-flag
+accesses are lost; the counter stays -12 rather than original -4. Reject this
+scope and keep the current source/object. Do not repeat this consumer block or
+turn it into a declaration-order search.
+
+Private `.analysis/brick-hit-pan-scope-20261017/` retains the source reversal,
+complete comparisons, byte/home proof and real compile receipt. Inputs are
+archived and both raw objects compressed after byte verification before removing
+the disposable copies. Canonical source, cache, ledgers, reports and image remain
+unchanged. No provider, runtime, relink or full replay runs; no exact or semantic
+acceptance is added.

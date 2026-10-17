@@ -137,6 +137,9 @@ Other closed authored boundaries:
   scale and polygon endpoint-scope controls are closed.
 - Bank cursor/row/column, file-metadata and transfer-workspace scopes are closed.
   Preserve callback-visible state and the pitch snapshot before Lock.
+- [Brick-hit pan consumer scope](../research/exact/EXACT_BRICK_POWERS.md#closed-pan-consumer-scope)
+  is rejected:416→418 differences, wrong pan home and loss of the restored score
+  flag. One owner compile preserves all five exact companions; keep current source.
 - Line, ranking, presentation, palette, clock and text near-matches include known
   compare/register commutations. Reversing guards, renaming identifiers, changing
   equivalent types or sweeping `/G3`, `/G4`, `/G5` is not new evidence.
