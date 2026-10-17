@@ -232,6 +232,67 @@ bytes net of the archive and installed replacement products; small JSON receipt
 allocation is excluded. Current matching products and canonical delivery caches
 remain reusable. The fixture-generated default board is also removed.
 
+## Consumer producer follow-up
+
+The October17 follow-up accounts for372 instruction pairs across six newly
+nonexact consumers using the retained prior-exact/current object digests.
+Fifteen concrete bank/slot address groups occur in keyed draw, keyed stretch,
+sprite release, rotated offset and rotated width. Each computes the same
+`0x425980 +1048*bank +4*slot` load, compare or store. Keyed stretch also
+transposes the two operands of its low32 `y +height` sum. Hit-region search
+instead transposes its signed count/index comparison and branch condition;
+the shorter global-load encoding accounts for its one-byte extent change.
+All other instructions and branch successor ordinals agree. Scratch checks
+end at actual overwrites or normal ABI calls; group end addresses are exclusive.
+
+A separate independent retained-instruction review isolates the same address
+producer in round reset (one31-byte group) and bonus update (eight31-byte groups
+and one32-byte group). They account for20 and180 differing positions respectively;
+all following addresses rejoin unchanged code. Live selector reads, including
+reads after sound callbacks, remain necessary. Caching these values would remove
+observed operations. Stable ordinary storage and actual normal calling contracts
+bound this analysis; arbitrary aliasing, concurrency, flags/traps and implicit
+register APIs are not established. No comparison mask or acceptance follows.
+
+Two distinct declaration hypotheses then receive bounded private pilots:
+
+| Hypothesis | Whole consumer comparisons | Result |
+| --- | ---: | --- |
+| Uniform actual Win32 SDK scalar/RECT kinds in C and C++, preserving fixed32 Native types | 30 from three owner compiles | 21 prior exacts preserved; no gain/loss. Only measure-text changes279/3 to281/186 bytes/differences. |
+| Uniform shared FILE*/surface/RECT/render declarations, generic resource dependency and scalar-only trig dependency, with game board state omitted from both pilot consumers | 23 from two owner compiles | 15 prior exacts preserved; no gain/loss. Only renderer changes1458 to1466 bytes, with1466 strict differences unchanged. |
+
+The SDK question differs from the October12 pre-C++-interface control; the
+engine-state question differs from the descriptor-only split that retained all
+seven board declarations. Both have independent source/consumer support as
+inferences, but neither result justifies adoption or a broad compile. Canonical
+headers, sources, caches, ledgers and delivery stay unchanged. Do not repeat
+these same controls or infer original header organization from tidier layering.
+
+One further canonical-path resource compile compares all17 complete units and
+literals against the existing frozen-root results. All resolved digests agree.
+Whole objects differ in COFF timestamp, `.file` source-path auxiliary records,
+symbol count and resulting numeric relocation indexes. All25 section extents,
+initialized payloads, primary symbol definitions, non-file auxiliary records and
+named relocation targets agree. This establishes the tested owner's path pair,
+not universal compiler path independence. The metadata explanation contributes
+no code-acceptance mask. The six compiles total70 focused complete comparisons;
+there is no full replay, runtime check, new provider query or game run.
+
+The existing full explosion-member API control is also retained: all five real
+member bodies are exact and259 complete consumer comparisons give net-4 exacts.
+Zero-argument ECX callers alone cannot distinguish thiscall members from the
+existing sole-pointer fastcall functions. That older result does not justify
+another class-family rewrite or an unobserved destructor.
+
+Authorities are `.analysis/board-consumer-producers-20261017/`,
+`.analysis/win32-shared-dd-kinds-20261017/`,
+`.analysis/engine-state-declarations-20261017/` and
+`.analysis/canonical-resource-path-20261017/`. Successful producers are not
+repeated. Closed input/object products are archived, member/decompressed hashes
+verified, then49 raw files deleted; net245,760 allocated bytes are released
+after carrier and retained proposal-copy costs, excluding small JSON receipts.
+Totals remain391 exacts and24 authored candidates; the reconstruction is unfinished.
+
 ## Closed proposal phase
 
 Before adoption, the seven-object proposal was ready for production placement, startup

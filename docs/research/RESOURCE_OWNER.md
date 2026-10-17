@@ -1,6 +1,15 @@
 # Sprite, font, PCX and palette owner
 
-The latest [allocation-only pointer scope](exact/BANK_ALLOCATION_SCOPE.md)
+Current membership follows [independent board ownership](exact/INDEPENDENT_BOARD_STORAGE.md):
+12 complete resource exacts and five complete candidates across17 entries.
+Keyed draw, keyed stretch and single-sprite release are explicit demotions;
+bank load is1486/1475 bytes with945 differences, PCX979/862 with850.
+The [consumer follow-up](exact/INDEPENDENT_BOARD_STORAGE.md#consumer-producer-follow-up)
+accounts for their address lowering and closes two no-gain declaration pilots.
+A current canonical-path compile preserves all17 complete existing results.
+Earlier chronological checkpoints below retain their original counts and scopes.
+
+The earlier [allocation-only pointer scope](exact/BANK_ALLOCATION_SCOPE.md)
 improves the complete bank candidate from 70 to 66 differences. Fifteen resource
 exacts remain unchanged, thirteen existing bank/callback cases pass, and the
 restored-CRT image relinks from 116 reused objects. A later selected
@@ -194,20 +203,23 @@ the behavioral evidence. The maintained implementation is `src/resources.cpp`.
 | --- | --- | ---: | --- |
 | `0x00403E70` | select_sprite_bank | 24 | full exact |
 | `0x00403E90` | select_font_bank | 24 | full exact |
+| `0x00403EB0` | release_sprite_bank | 178 | full exact |
 | `0x00403F70` | blt_keyed_sprite | 195 | full exact |
-| `0x00404040` | draw_keyed_sprite | 105 | full exact |
+| `0x00404040` | draw_keyed_sprite | 105 | complete candidate107/94 |
 | `0x004040B0` | blt_sprite | 195 | full exact |
 | `0x00404180` | draw_sprite | 105 | full exact |
-| `0x004041F0` | stretch_keyed_sprite | 139 | scoped semantic; exact candidate |
+| `0x004041F0` | stretch_keyed_sprite | 139 | complete candidate141/92 |
 | `0x004042B0` | capture_sprite | 852 | full exact |
-| `0x00404610` | load_sprite_bank | 1475 | scoped semantic; exact candidate |
-| `0x00404BE0` | release_sprite | 262 | full exact |
+| `0x00404610` | load_sprite_bank | 1475 | complete candidate1486/945 |
+| `0x00404BE0` | release_sprite | 262 | complete candidate269/245 |
 | `0x00404CF0` | draw_glyph | 328 | full exact |
 | `0x00404E40` | find_glyph | 145 | full exact |
 | `0x00409790` | load_live_palette | 337 | full exact |
 | `0x004098F0` | load_saved_palette | 307 | full exact |
 | `0x00409A30` | load_surface_palette | 376 | full exact; active use unresolved |
-| `0x00409BB0` | load_pcx | 862 | scoped semantic; exact candidate |
+| `0x00409BB0` | load_pcx | 862 | complete candidate979/850 |
+
+Candidate cells above give current bytes/differing positions; the target extent is a separate column.
 
 ## Storage and interface
 

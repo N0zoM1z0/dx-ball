@@ -1,5 +1,18 @@
 # Closed drawing and SDK storage diagnostics
 
+## Shared declarations after independent board ownership, October17
+
+The [consumer producer follow-up](INDEPENDENT_BOARD_STORAGE.md#consumer-producer-follow-up)
+closes two new bounded models: uniform actual SDK kinds across current C/C++
+interfaces (three compiles/30 comparisons), and one shared engine-state declaration
+family that removes board state from generic resources/rotation (two compiles/23
+comparisons). Neither gains a complete exact or loses a prior exact; measure-text
+worsens in the first and renderer size changes without strict improvement in the
+second. No canonical change or broad expansion follows. These are distinct from
+the older SDK and descriptor-only controls below, which retain their own inputs.
+A single current canonical-path resource compile preserves all17 full resolved
+bodies/literals and explains only source-path/COFF bookkeeping differences.
+
 ## Upload and endpoint iteration scopes, October 17
 
 Two private lifetime models preserve executable operations, types, names and

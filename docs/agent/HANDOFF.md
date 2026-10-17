@@ -172,6 +172,14 @@ Do not repeat the closed five-declaration broad trial, member-call probe or
 uniform layout/interface split (nine regressions across27 prior exacts).
 Avoid name/order/count/flag sweeps or owner-specific header variants.
 
+The latest [producer follow-up](../research/exact/INDEPENDENT_BOARD_STORAGE.md#consumer-producer-follow-up)
+accounts for all eight new demotions through actual bank address, sum or guard
+lowering. Two bounded SDK/common-engine declaration pilots gain nothing and
+remain unadopted; their53 complete comparisons are retained. A canonical-path
+resource control preserves all17 full bodies/literals, with only COFF/file
+bookkeeping differences. Do not repeat these pilots or the earlier complete
+explosion-member API control. Current source, caches, image and counts are unchanged.
+
 Other authored boundaries and retained controls:
 
 - Preserve the real20,432-byte Win32 storage layout and368-byte terminal overlap.
