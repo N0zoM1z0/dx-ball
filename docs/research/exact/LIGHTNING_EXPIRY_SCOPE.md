@@ -1,5 +1,16 @@
 # Last-brick expiry-local scope
 
+A later passive recheck of both rejected expression objects confirms their
+first two calls remain RNG then time, violating the original time-then-RNG
+sequence. The second time sample already preserves the remaining value in EBX
+in the canonical explicit-local body and both controls. An older private
+receipt's claim that this second producer was restored relative to that body
+was incorrect: it was already present and merely moved four bytes. The hard
+call-order rejection stands. Private
+`.analysis/lightning-clock-rejection-recheck-20261018/` retains complete-body,
+call and producer checks plus independent review. No new source hypothesis,
+compiler, provider or replay follows this correction.
+
 This note records the earlier adopted scope change. The later
 [complete crop-producer recovery](EXACT_LIGHTNING_CROP_CHAIN.md) keeps that scope
 and restores both original crop chains: the current candidate is1061/1057 bytes

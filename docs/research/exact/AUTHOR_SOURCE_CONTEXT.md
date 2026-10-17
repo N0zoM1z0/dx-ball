@@ -1,10 +1,11 @@
 # Public author context and the pinned target
 
 A bounded primary-source search checks whether publicly released author material
-can resolve the remaining game declarations or compiler context. It establishes
-no new target-function identity or exact acceptance. All34 authored candidates
-remain open; original names, capacities and build settings are not inferred from
-the author's other projects.
+can resolve the remaining game declarations or compiler context. The initial
+search below established no new target-function identity or exact acceptance;
+its34-candidate count is historical. The later DOS-demo investigation finds real
+debug records and connects two complete routine families. Related-source names
+remain hypotheses about the pinned game, rather than recovered1.07 source text.
 
 Michael P. Welch's [archived development page](https://classic.blitwise.com/Scorched_Reality/index.html)
 directly links [simple1.zip](https://classic.blitwise.com/Scorched_Reality/simple1.zip).
@@ -89,3 +90,148 @@ or code downloaded. Self-reconstruction/mirrors remain excluded. Sealed
 `.analysis/triangle-constant-source-search-20261018/` retains the exact query
 responses in a decompression-hash-verified gzip; the raw response is removed.
 This is a four-query boundary, not proof of source absence or original declarations.
+
+## Author DOS demo with complete debug records, October18
+
+The same archived author page directly links
+[plasm.zip](https://classic.blitwise.com/Scorched_Reality/plasm.zip), a previously
+uninspected27-member archive. Its README identifies Watcom10.0a, Fastgraph4.02
+and Digipak; its literal date string is`11-1895`. The archive contains no source
+member. Its153,543-byte`PLASM.EXE`, however, retains genuine Watcom V3 types,
+locals, procedures and source cues. No executable member is extracted or run.
+Archive SHA-256 is
+`7700f825d6f71f2509b76f0f79fc9044ec0eccfa75c1a32c1610b24a81563856`;
+the executable member is
+`dd368e82a31b62db65f71d40d4b89c21445687cb64cae1528bfb170847b60249`.
+
+REA6.5.0's built-in artifact graph inventories every member. Its full retained
+Evidence is
+`ev_6772cd222f33611aadf634763b98badac5b73ec0f0c29975b864684ecadd5215`.
+Twenty-seven member edges lead to26 unique member-byte nodes because two sound
+drivers are identical. No native provider is opened. A separately checked
+format parser uses the official Open Watcom
+[debug definitions](https://raw.githubusercontent.com/open-watcom/open-watcom-v2/master/bld/watcom/h/wdbginfo.h)
+and [LE definitions](https://raw.githubusercontent.com/open-watcom/open-watcom-v2/master/bld/watcom/h/exeflat.h).
+These maintained format sources corroborate the bytes; they are not identified
+as the original compiler's headers.
+
+The38,823-byte debug trailer ends exactly at EOF. It contains145 modules,
+691 globals and198 address entries. Module0 has89 type indices,57 procedures,
+261 variable records and731 source-line records. Actual source cues assign
+23 procedures to`sprite.c`,18 to`misc.c` and16 to`plasma.c`; included files are
+not inferred to be independent debug modules. The complete contiguous debug
+segment extents match the two LE object sizes, and actual`_cstart_` agrees with
+the LE entry point. The data object has104,336 bytes without file backing;
+no missing bytes or runtime contents are fabricated.
+
+An independent asset connection precedes the routine comparison. All four
+`PLASM.SBK` records use exactly the game's custom bank framing: a32-bit count,
+then width32/height32/code8/baseline32 and width-times-height pixel bytes.
+The original game's six actual`fread` sites confirm that order. Three sampled
+banks parse to EOF; this is not an assertion that the game validates EOF.
+The foreign runtime`SHAPE` is packed17 bytes, while the game's record is44;
+the common disk format does not establish identical runtime declarations.
+
+Complete`letterfind` and`fontwidth` machine bodies connect to original1.07
+`find-glyph` and`measure-text`: preincremented search from slot1, a short-circuit
+count bound, count-equal missing sentinel, signed count-controlled text iteration,
+missing glyph half-width from slot1, and hit width plus spacing. The four bodies
+contain36/66/44/79 instructions, respectively. Every3/9/4/9 branch is accounted
+for, and all four bodies contain zero calls. Six real calls from three foreign
+callers establish the surrounding family. Nine absolute/indexed operand sites
+bind to actual LE fixups and actual debug globals, rather than numeric-address
+resemblance. Foreign duplicate width reads, addition association, ABI, bank
+representation and signedness defaults remain explicit differences. Source
+duplication versus compiler inlining is unresolved.
+
+`fontwidth`'s records and consumers prove`size` and`array` are parameters,
+`i` is the inner glyph search,`j` is the outer character index, and`width` is
+the accumulator. The record order is`size,array,i,j,width`; it does not prove
+lexical declaration order or the original1.07 names. This supports one fixed
+private declaration hypothesis while preserving every maintained type, cast,
+operation, scope, header, ABI and flag. It does not justify further name/order
+permutations or copying the foreign packed structure into the game.
+
+Private phases`author-plasma-inventory-20261018`,
+`author-plasma-debug-format-20261018`,`author-plasma-code-map-20261018` and
+`author-plasma-font-linkage-20261018` retain the complete primary bytes,
+typed records, file mapping, fixup-bound bodies and independent reviews under
+`.analysis/`. Their conclusions are passive observations; the following model
+comparison, if performed, is separate compiler evidence.
+
+### One fixed text declaration comparison
+
+Independent byte, role, token and closure review permits exactly one private
+model: parameters`size,array`, inner`i`, outer`j`, and inferred local declaration
+order`i,j,width`. All bytes outside the function remain unchanged. One VC4
+compilation uses the canonical source path under the serial session lock,
+then restores the source in a`finally` block. All14 inputs, canonical object,
+comparison authorities and tested delivery reverify afterwards.
+
+All seven complete UI bodies and38 actual bindings compare. Their relocated
+code identities are all unchanged: five accepted functions remain exact,
+`rotate-palette-right` remains234 bytes/6 differences, and`measure-text`
+remains279 bytes/3 differences. No missing operation or exact gain results.
+Independent review also checks the entire2,987-byte COFF: only two bytes inside
+its timestamp differ; all nine sections,24 symbols and relocation tables agree.
+Do not adopt the model or try identifier/declaration permutations. Actual
+related-author debug names do not resolve this backend residual.
+
+The compilation takes3.934 seconds on one allowed CPU with a35% scope quota;
+peak memory is276,594,688 bytes, with zero high/max/OOM events. No provider,
+native/MinGW build, game, relink or full replay runs. Private
+`.analysis/author-font-declaration-model-20261018/` retains the fixed proposal,
+complete comparisons, input identities and resource counters. Current exact
+and delivery authorities remain unchanged.
+The closed model archives and member-hash verifies17 copied inputs/products
+before deleting them, including both temporary objects and the proposal copy.
+All protected inputs and delivery hashes reverify after cleanup. Current tested
+products and useful incremental caches remain; the regular cleanup preview
+finds zero additional known disposable items.
+
+### Palette family and material version differences
+
+Four complete debug-bound DOS palette bodies cover288 instructions. Their
+actual LE fixups bind22 selected operands to`paletteRGB`, and eight real
+relative calls bind the Fastgraph DAC/wait functions. The paired rotation,
+flash and fade fingerprints support related-family continuity as an inference.
+They also expose real differences: DOS byte-array shift endpoints differ from
+the game's inclusive four-byte entries; DOS flash starts at−1 while the game
+starts at0; and the four-parameter DOS fade has unit steps and different mode
+handling from the game's five-parameter fade with step/clamp logic. Actual DAC
+callees do not hide an extra index adjustment.
+
+The current game palette residuals account for the complete original operations;
+these foreign declarations supply no missing producer or justified new naming
+trial. Preserve the game endpoints, entry flags, step and mode semantics.
+Private`.analysis/author-plasma-palette-linkage-20261018/` retains complete
+byte/CFG/fixup evidence, compressed with a decompression-hash check, and the
+bounded review. No raw executable, compile or runtime product is created.
+
+### Bank-loader core and ownership boundary
+
+Complete`loadshapes` and`fontload` bodies contain125/128 instructions and
+465/477 bytes. Each has11 branches and14 calls. Actual debug records, LE
+fixups and callees establish the shared core: ordered width/height/code/baseline
+reads, width-times-height pixel count, a pixel allocation with three extra
+bytes, a record allocation with one extra byte, publication before pixel input,
+and subsequent field writes through the live array. The game retains these
+concrete producers. Foreign debug names belong to real root locals; they do
+not establish the pinned game's lexical scope or declaration order.
+
+The DOS routines retain bitmap frames and deletion frees only the frame.
+Their cleanup uses the previous count; notably`fontload` reads`nshapes` while
+freeing font frames. The game's loader instead scans exactly slots1..253
+(`index <254`), creates/uploads a Win32 surface, frees temporary pixels and has
+additional COM/failure paths. The foreign17-byte record is allocated as18
+bytes, rather than establishing the game's44-byte record. These are material
+ownership and platform differences, not compiler bookkeeping to normalize away.
+
+This is a connected loader-core inference, not complete cross-version
+equivalence or recovered1.07 source. No missing game producer is identified;
+do not reopen the closed root-scope model or compile a foreign-name list.
+Private`.analysis/author-plasma-bank-linkage-20261018/` retains complete bodies,
+actual records/fixups, the source-model boundary and independent review. Its full
+proof is compressed with a decompression-hash check before removing the raw
+JSON. No executable is
+extracted, and no further compiler, provider or runtime is invoked.

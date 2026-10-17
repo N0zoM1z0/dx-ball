@@ -60,6 +60,43 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The latest [author DOS-demo investigation](../research/exact/AUTHOR_SOURCE_CONTEXT.md#author-dos-demo-with-complete-debug-records-october18)
+finds genuine Watcom debug records in the author's previously unread`plasm.zip`:
+145 modules and57 typed author procedures with actual`sprite.c`/`misc.c` cues.
+The custom SBK framing and complete fixup-bound font routines connect directly
+to the pinned game's families. Foreign packed17-byte records and register ABI
+are explicit differences. Actual`fontwidth` records identify inner`i`/outer`j`
+and parameters`size,array`; lexical declaration order and original1.07 spelling
+remain unknown. One independently reviewed fixed declaration model compiles at
+the canonical UI source path, then restores it. All seven full bodies/38 actual
+bindings retain identical code; measure279/3 and right-palette234/6 remain
+candidates. Reject this model without permutations. No exact count, source,
+recipe or delivery change; no game, relink or full replay. Compiler peak is
+276,594,688 bytes on one CPU/35%, with zero memory-limit events. Reuse the
+retained complete debug/fixup proofs; do not repeat archive inventory or this
+text hypothesis. Complete related palette bodies retain real endpoint, step,
+mode and ABI differences; they supply no missing game operation or justified
+declaration trial. Their full proof is compressed and hash verified. The UI
+model's17 copied inputs/products, including both objects, are archive/member-
+hash verified and removed; protected current products and caches remain.
+The independently reviewed complete bank loaders establish the shared
+allocation/publication/read/field-write core. DOS old-count/frame ownership
+differs from the game's slots1..253 and surface-upload/temporary-bitmap cleanup;
+there is no missing game producer or justified name/root-scope model. Its
+256,420-byte full proof is retained as a38,174-byte roundtrip-verified gzip.
+All three related families are now closed evidence boundaries, not pending
+declaration trials.
+
+A fresh [current PCX proof](../research/exact/EXACT_PCX_PACKET_LOOP.md#current-object-correspondence-refresh-october18)
+replaces the historical205-direct/22-grouped partition for the current object:
+202 direct instructions plus seven exchanged signed comparison triples and two
+product pairs cover all227. All30 branches/10 calls/8 bindings/full literal
+verify;18 EAX/flags CFG walks end at defined overwrites. Original four unused
+frame bytes remain unknown. The [clock rejection recheck](../research/exact/LIGHTNING_EXPIRY_SCOPE.md)
+also corrects an old private receipt: the second sample's EBX producer was
+already present; the two rejected controls still reverse the first time/RNG
+calls. Neither passive review changes source or calls for another trial.
+
 The current restored-CRT executable is
 `20b375170714052afe0f8ae69a364f2149b77b992e6572b4af1d6217b508e973`.
 Its recipe is `vc40-restored-crt`: 117 source objects from 114 owners plus three
@@ -664,6 +701,13 @@ resource producers. Load-bank's complete extent is restored at1475 bytes with66
 remaining differences; use its retained full body and current trace to locate
 the remaining actual producer before another compile. The fixed owner control
 is closed; do not search wrapper position, function order or key values.
+
+The author's related DOS routines now provide real typed names and complete
+code, rather than an unconnected name list. The fixed text declaration control
+nevertheless produces the same complete COFF apart from timestamps. Palette
+endpoint/platform differences prohibit wholesale transfer. Reuse these closed
+findings when selecting the next actual game producer; related names or debug
+record order alone do not justify another compilation.
 
 Continue exploring the remaining21 authored candidates. The user explicitly
 corrected the earlier missing-declarations blocker: recovering those facts is

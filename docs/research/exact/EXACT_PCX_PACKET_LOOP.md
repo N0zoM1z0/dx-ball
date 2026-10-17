@@ -1,5 +1,29 @@
 # Original PCX packet loop
 
+## Current-object correspondence refresh, October18
+
+A passive review now binds the entire current979-byte matching object to the
+original862-byte body,227 instructions each. The older205-direct/22-grouped
+partition below describes its historical object. Current instruction ordinals
+135..137 exchange the packet-guard operands and use`JGE` instead of`JLE`;
+the successor and combined15-byte span remain unchanged. All224 other
+instruction dictionaries agree with the older current listing.
+
+The refreshed proof pairs202 instructions directly and25 through seven signed
+comparison triples and two low32 product pairs. All30 branch destinations,
+10 calls,8 actual COFF bindings, the full`rb\0` literal and9-input project
+closure verify. Eighteen explicit CFG traversals track EAX aliases and six
+arithmetic flags until defined overwrites; none relies on an ABI cutoff or
+assumes undefined flags agree. Current308 frame bytes map to the same305 typed
+and3 compiler-slot bytes. Original distances61..64 remain unobserved; they do
+not establish a132-byte header or another source declaration.
+
+Private`.analysis/pcx-current-correspondence-20261018/` retains the full proof,
+original REA carrier bindings, current listing, liveness paths and independent
+review. This refresh changes no source, product, exact count or semantic claim.
+It executes no compiler, provider, runtime case or replay. The historical
+sections below retain their original checkpoint scope.
+
 The decoder at `0x409BB0` now puts the RLE index increment at the body tail
 and jumps directly to its guard, matching the complete original control flow.
 The earlier `for` lowering added an initial jump and placed the increment
