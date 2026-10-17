@@ -12,9 +12,9 @@ from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
 One [current original50 producer](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
-is running at this checkpoint, with all ten initial readiness/layout checks for
-boards 0 through 9 verified and the first nine unchanged originals traversed.
-Saved events contain all 4000 initial bytes; eight boards also have retained
+is running at this checkpoint, with all fifteen initial readiness/layout checks
+for boards 0 through 14 verified and the first fourteen unchanged originals traversed.
+Saved events contain all 6000 initial bytes; thirteen boards also have retained
 ready complete witnesses. This is prefix evidence, not a full pass.
 **Do not launch a duplicate campaign or compiler/provider session.**
 The producer owns compiler-session.lock. Client exec session 47586 and private
@@ -24,11 +24,12 @@ alone are not liveness proof. It reuses all products/reader and targets all 50
 initial slots plus terminal 50 / menu 0, with 14400 seconds total deadline. CPU stays
 35% on one CPU, memory high 640 / max 768 MiB; the host quota period changes 100→10ms
 at about 804 seconds without target clock/code/input changes. Frozen inputs,
-resource records and the sealed 4000-byte prefix remain private; the earlier
-1200-/2000-byte snapshots are retained separately. `prefix-checkpoint-10/verification.json`
+resource records and the sealed 6000-byte prefix remain private; the earlier
+1200-/2000-/4000-byte snapshots are retained separately. `prefix-checkpoint-15/verification.json`
 checks all frozen inputs/products and 49 originals, with three live kernel
-identities before/after capture. A 49-second sample measures 35% of one CPU and
-238 MiB current/252 MiB observed-peak memory, with no memory-limit/OOM events.
+identities before/after capture. Recorded resource windows measure about 35% of
+one CPU: 238 MiB current memory initially, 224 MiB in the later window and the
+same 252 MiB observed peak, with no memory-limit/OOM events.
 Preserve actual terminal output when it arrives; do not infer completion or restart on a stale
 or temporarily unavailable progress read. All 34 authored candidates stay open.
 

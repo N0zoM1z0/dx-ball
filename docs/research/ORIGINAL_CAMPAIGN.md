@@ -3,13 +3,13 @@
 ## Current restored-CRT original-bank prefix, October 17
 
 One full original-50 attempt uses current image `345a6887…` from source baseline
-`41fe125`. The latest saved checkpoint verifies all ten live initial readiness
-and layout checks for boards 0 through 9, with progression through the first nine
-unchanged original boards. Saved periodic events contain all ten complete
-400-byte layouts (4,000 bytes), eight with matching ready gameplay fields.
+`41fe125`. The latest saved checkpoint verifies all fifteen live initial readiness
+and layout checks for boards 0 through 14, with progression through the first fourteen
+unchanged original boards. Saved periodic events contain all fifteen complete
+400-byte layouts (6,000 bytes), thirteen with matching ready gameplay fields.
 Indices 7 and 8 retain complete byte witnesses without ready flags; the unchanged
 live observer itself requires two ready complete samples before printing each
-initialization marker. The earlier three- and five-board checkpoints remain
+initialization marker. The earlier three-, five- and ten-board checkpoints remain
 retained separately.
 The entire 20,000-byte bank, all 49 immutable originals, current inputs and game
 products remain unchanged. This is verified prefix evidence, not a full campaign
@@ -34,10 +34,17 @@ A later 49-second live resource window measures about 35% of one CPU and
 memory-high, memory-max or OOM events are recorded. This is a sampled running
 interval, not final lifetime resource accounting.
 
+A follow-up 40-second window near two hours records about 35% of one CPU and
+224 MiB current memory, with the same 252 MiB observed peak and zero memory-limit
+or OOM events. A separate 42-second attribution window records about 25.1% for
+the game, 1.5% for the reader itself and 5.4% for the shared Wine server, all as
+fractions of one CPU. These measure CPU time, not game frame rate or causal
+reader overhead. No observer or game-code change follows these measurements.
+
 Private `.analysis/restored-crt-original50-20261017/` retains frozen inputs,
 launch/observed kernel identities, live resource samples, the quota-period change
-and sealed three-, five- and ten-board prefix snapshots. The latest is
-`prefix-checkpoint-10/verification.json`; it checks all frozen inputs/products
+and sealed three-, five-, ten- and fifteen-board prefix snapshots. The latest is
+`prefix-checkpoint-15/verification.json`; it checks all frozen inputs/products
 and all 49 originals again, with all three PID/start-tick identities live before
 and after capture. Its `tool-session.json` and `status.py` support
 checking the same producer; a saved snapshot alone does not establish liveness.
