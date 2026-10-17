@@ -111,6 +111,11 @@ frame bytes remain unknown. The [clock rejection recheck](../research/exact/LIGH
 also corrects an old private receipt: the second sample's EBX producer was
 already present; the two rejected controls still reverse the first time/RNG
 calls. Neither passive review changes source or calls for another trial.
+The later [actual1.09 loader comparison](../research/exact/EXACT_PCX_PACKET_LOOP.md#successor-loader-boundary-october18)
+binds its full637-byte/201-instruction body and corrects the decompiler's argument
+count from real ESP flow. Its128-byte header has no new field access; another
+unused four-byte tail does not establish a132-byte declaration. Close this
+related-version check without a source trial; reuse its archived proof.
 
 The current restored-CRT executable is
 `20b375170714052afe0f8ae69a364f2149b77b992e6572b4af1d6217b508e973`.

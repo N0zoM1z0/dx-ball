@@ -1,5 +1,37 @@
 # Original PCX packet loop
 
+## Successor-loader boundary, October18
+
+The actual Classic1.09 game member supplies a related complete loader at402490:
+637 bytes,201 instructions,28 branches and10 calls. One pinned REA6.5.0/Ghidra
+session follows the real`intro.pcx` reference, binds all body bytes and inspects
+the two palette helpers and three stream helpers. Its inclusive`xmax*ymax`
+bound, byte-getter header fill, redundant C0/FF token guard, zero-run/value
+consumption, both clipped pixel paths, Lock retry and independent palette modes
+connect the implementation beyond ordinary format similarity. Successor code
+caches the product and uses a run countdown; no original-source identity follows.
+
+All201 instructions agree with the raw-byte decode and are reachable, with
+consistent ESP deltas at every CFG merge. Assembly establishes five cdecl
+arguments; Ghidra's inferred three-argument signature is unreliable across COM
+callee purges. The observed128-byte header and signed16 maxima8/10 have no
+additional field access. Four successor frame bytes immediately after that
+observed range are also unused. Repetition of this physical gap does not recover
+a132-byte declaration, a field or an original1.07 storage contract. No source
+trial follows. Original862-byte/current979-byte comparisons and all counts stay
+unchanged; all15 protected inputs/products retain their hashes.
+
+Private`.analysis/pcx-successor-linkage-20261018/` retains full responses,
+snapshot, complete frame/access proof and independent review. Main Evidence is
+`ev_4960587e3403299c5e22246f2e89028c81e6868f1c8b2e028ffc3f9d98395053`.
+The one-CPU35% scope peaks at671,608,832 bytes; soft-high events3374, max/OOM0.
+No compiler, member execution, game, relink or replay runs. Raw carriers and the
+temporary game member are removed only after archive/member-hash verification.
+All17 closed carriers are verified and removed, releasing13,570,048 allocated
+bytes net of the archive and cleanup receipts. The full1,019,890-byte archive is
+under`.analysis/rea/pcx-successor-linkage-20261018/`; the cleanup receipt supplies
+its restore command. Current build products and useful caches remain intact.
+
 ## Current-object correspondence refresh, October18
 
 A passive review now binds the entire current979-byte matching object to the
