@@ -276,3 +276,28 @@ the 65-stream CRC and 51-record path bindings remain valid. Current source,
 toolchain, products and exact authorities stay unchanged; no compile, game,
 relink or replay runs. Four exact-name searches from the recovered DOS debug
 names also return no results, within that four-query boundary only.
+
+## Contemporary DirectDraw wrapper check, October 18
+
+The archived [November 1995 MSJ article](https://jacobfilipp.com/MSJ/1995/1995-11.pdf)
+and its [source index](https://jacobfilipp.com/msj-index/) identify Dave Edson's
+WinDonut framework. The retrieved source carrier is 242,024 bytes, versus the
+index's 321,838; no identical historical package claim follows. Its actual
+nested `WINDONUT.zip` has 20 CRC/SHA-bound members. Eight inspected source/header
+files contain a distinct BMP-backed framework: 28-byte low sprites, 104-byte
+animation instances and a 12-byte composite descriptor, versus the game's
+44-byte resource records and 1,048-byte banks. The drawing routines add clipping,
+a source-Y adjustment and bounded retries absent from the original game bodies.
+
+These concrete differences establish no shared routine or new declaration
+model. All 15 C/header/makefile members also receive a bounded marker scan;
+that scan is not proof of source absence. No game source, flags or claims change.
+Private `.analysis/msj-windonut-source-20261018/` retains the full review and
+member identities. REA6.5.0 Evidence
+`ev_c5b79f7a1da46671d7f71f62083700d866e36344632f1bcaf54c2081b1df974c`
+covers only the outer PE; nested ZIP linkage is independently verified.
+There is no compile, native provider, game or replay. The single root inspection
+peaks at 671,612,928 bytes with 419 soft-limit reclaims and no max/OOM events;
+remaining checks read small ZIP members in memory. Seven downloaded/raw web
+carriers are archived and every member verified before deletion, releasing
+116 KiB net of archive/journal while preserving current products and caches.

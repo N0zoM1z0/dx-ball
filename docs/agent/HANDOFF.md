@@ -744,6 +744,12 @@ overly restrictive capacity decision. Form a specific inference from actual
 consumers and independent layout facts, compile once, then judge the complete
 result while preserving the distinction between inferred and unique source.
 
+The [contemporary MSJ wrapper check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#contemporary-directdraw-wrapper-check-october-18)
+finds a distinct BMP/composite-sprite implementation, without a connecting game
+routine or new source model. Its source-package size differs from the archive
+index; use the actual nested member identities and retained limits. No compiler
+trial follows, and seven raw carriers are removed after verified archival.
+
 | Function | Established boundary | Missing producer fact |
 | --- | --- | --- |
 | `load-pcx` | All 227 instructions accounted; current frame308 contains305 typed bytes plus3 slot-padding bytes | Original distances61–64 are unaddressed; their owner, declaration/lifetime context and producer scheduling remain unknown |
