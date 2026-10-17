@@ -24,7 +24,7 @@ add_library(dxball_core SHARED
     src/gameplay.c
     src/effects.c
     src/particles.c
-    src/bonuses.c
+    src/bonuses.cpp
     src/geometry.c
     src/paddle.c
     src/round.c

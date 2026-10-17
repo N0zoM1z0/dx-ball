@@ -5,7 +5,7 @@ and all 89 relocations. Three accepted companions retain their exact 2,287 bytes
 The total advances to 190 exact functions / 36,559 code bytes / 136 metadata
 bytes, with source presence and origin counts unchanged.
 
-[`src/bonuses.c`](../../../src/bonuses.c) restores creation-success, particle-loop
+[`src/bonuses.cpp`](../../../src/bonuses.cpp) restores creation-success, particle-loop
 and rare-reward case scopes. Screen x/chance remain outer; screen y/kind belong
 to the creation branch; each loop and rare case owns its temporary. These typed
 scopes reproduce the original 36-byte frame, including the compiler selector.

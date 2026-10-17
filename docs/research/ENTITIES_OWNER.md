@@ -31,7 +31,7 @@ remains 1,197/1,197 with 16 differences in consumed local allocation. C argument
 evaluation order is compiler-dependent; the supported Native and VC4 products
 are checked against the existing original oracles and complete comparison.
 
-`src/particles.c` and `src/bonuses.c` recover fourteen functions from the pinned
+`src/particles.c` and `src/bonuses.cpp` recover fourteen functions from the pinned
 DX-Ball v1.07 target. REA's `analyze_function` dossiers supply pseudocode,
 instructions, callers and body ranges. Independent original-x86 execution
 corroborates the recovered behavior; the dossiers are static evidence.

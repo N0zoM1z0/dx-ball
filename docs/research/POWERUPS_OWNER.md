@@ -1,5 +1,12 @@
 # Bonus application, paddle and ball dependencies
 
+The current [C++ bonus implementation owner](exact/BONUS_CPP_OWNER.md) recovers
+the complete2,168-byte updater while preserving the three other exact bonus
+functions. Its bodies and public APIs remain unchanged. Existing2,851 affected
+bonus calls plus one setup pass; current BSS placement and moved references are
+verified in the linked VC4 delivery. Historical epochs below retain their own
+source and validation scopes.
+
 The [explosive collection scope recovery](exact/EXACT_EXPLOSIVE_COLLECTION_SCOPES.md)
 now makes the full neighbor-conversion function exact: 824 bytes and 39 actual
 relocations. Its separate collection phase and per-column scan restore the

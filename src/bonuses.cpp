@@ -1,3 +1,4 @@
+extern "C" {
 #include "bonuses.h"
 #include "allocator.h"
 #include "effects.h"
@@ -9,6 +10,7 @@
 #include "particles.h"
 #include "startup.h"
 #include "display.h"
+}
 
 #include <stdlib.h>
 

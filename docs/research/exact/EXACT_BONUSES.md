@@ -1,5 +1,11 @@
 # Complete bonus generation and application
 
+The current [C++ implementation owner](BONUS_CPP_OWNER.md) makes all four bonus
+functions exact, including the complete2,168-byte updater and1,197-byte generator.
+It supersedes the historical C-owner code comparisons below. The original REA
+spans and evidence remain applicable; historical build/test totals retain their
+own source identities.
+
 The original generator `0x004138D0` owns 1,116 instruction bytes in a complete
 1,197-byte enclosing span, REA Evidence
 `ev_ef8ebb1d4341bf24e0f31fba3bfb64c963503539c43bd3f13e61c367b4d84aed`.

@@ -24,15 +24,15 @@ receipts remain in place; old checkpoint totals are not current totals.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 391 |
-| Exact code / attached metadata bytes | 82,242 / 244 |
-| Complete nonexact comparisons | 84: 24 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 392 |
+| Exact code / attached metadata bytes | 84,410 / 244 |
+| Complete nonexact comparisons | 83: 23 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-246 exact and 24 candidates across 29 compiler closures. The source-present
+247 exact and 23 candidates across 29 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -43,10 +43,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 391 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 84 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/paddle-current-frame-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/bonus-cpp-owner-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,13 +61,25 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`f739d00c06d30faca4a6b81b7c95535cb0272eacc0cf427d744f67483bbd46f0`.
+`bc06b8a7018a227259cb2fc8c2a4e1a2aa13eeff417c1c7f3a5f263e6831a17b`.
 Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest [paddle width sampling scope](../research/exact/PADDLE_WIDTH_SAMPLING_SCOPE.md)
+The latest [bonus C++ implementation owner](../research/exact/BONUS_CPP_OWNER.md)
+recovers the complete2,168-byte update function, reducing180 differences to zero
+while preserving all three prior bonus exacts/1,316 bytes. All bodies and public
+APIs remain unchanged; frontend and complete header view are tested together.
+Native/MinGW each compile this owner once using retained caches;2,851 existing
+bonus calls plus one trig setup pass. VC4 reuses116 objects/19 CRT members.
+Ten globals now occupy actual40-byte BSS, moving157 mapped names; complete linked
+bonus bodies and3,162 moved-data reference fields pass. Board terminal ABI,
+resources and imports remain intact. No full replay or new game observation.
+Temporary copies and obsolete C objects are archived, member-hash verified and
+removed; current tested products and useful canonical CMake caches remain.
+
+The preceding [paddle width sampling scope](../research/exact/PADDLE_WIDTH_SAMPLING_SCOPE.md)
 restores the677-byte extent and original right-edge sum order, reducing210 to68
 strict differences. All15 runtime companions retain their code identities,
 including13 exacts. All185 instructions,12 branches,10 calls and52 bindings are
@@ -166,7 +178,7 @@ Choose a specific unaccounted operation, ABI, ownership, lifetime or producer fa
 A small difference count is not itself a source question. Complete correspondence
 and unchanged tests do not prove original declarations or absolute optimality.
 
-Continue exploring the remaining24 authored candidates. The user explicitly
+Continue exploring the remaining23 authored candidates. The user explicitly
 corrected the earlier missing-declarations blocker: recovering those facts is
 the task. Original source, MAP/PDB or build records would help but are not a
 prerequisite. Do not treat an unproved declaration as proof no hypothesis can be
@@ -201,7 +213,7 @@ in `reconciled/`. The later paddle scope replaces the runtime producer; the othe
 in `.analysis/independent-board-production-20261017/`. Current source/object and
 comparison authority follows the table above. No full replay or game run.
 
-Continue the24 current authored candidates, including the eight declared-context
+Continue the23 current authored candidates, including the eight declared-context
 demotions. Choose a concrete producer, ownership, ABI or lifetime discrepancy;
 no evidence requires accepting the present declaration context as optimal.
 Do not repeat the closed five-declaration broad trial, member-call probe or
@@ -223,8 +235,8 @@ object with canonical headers or repeat the same pilot. Its bridge was prepared
 but never integrated. [VC4 backend record observations](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md)
 retain14 actual REA records and a separate closed snapshot. They locate a
 kind-dependent reader but do not establish the cause of game operand scheduling.
-Reuse those records before another cold compiler import. Current totals remain391
-exacts/24 authored candidates; source, cache and delivery identities are unchanged.
+Reuse those records before another cold compiler import. Those controls changed no source or claim; the later bonus adoption above
+sets the current totals and delivery identities.
 
 Other authored boundaries and retained controls:
 

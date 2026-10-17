@@ -1,5 +1,14 @@
 # Closed drawing and SDK storage diagnostics
 
+## Bonus implementation language, October 17
+
+The distinct [complete C++ bonus owner](BONUS_CPP_OWNER.md) is adopted: one
+compile makes update-bonuses2,168 bytes exact, preserving three prior exacts.
+Bodies and APIs stay unchanged; the frontend and full C++ header view change
+together. This supersedes the maintained180-difference C result referenced in
+the older SDK controls below. Those controls remain closed under their actual
+inputs; this result does not justify repeating them or other language trials.
+
 ## Paddle sampling follow-up, October17
 
 One current-context complete-frame record control still fails679/487 and adds

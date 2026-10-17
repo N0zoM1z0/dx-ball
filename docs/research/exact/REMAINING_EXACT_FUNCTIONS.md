@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after paddle width sampling recovery.
-Accepted totals are **391 functions / 82,242 code bytes / 244 metadata bytes**.
-There are **84 complete nonexact comparisons: 24 authored and 60 runtime**. None is an accepted exact.
+Updated October 17, 2026, after bonus C++ owner recovery.
+Accepted totals are **392 functions / 84,410 code bytes / 244 metadata bytes**.
+There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
 
-These 84 are all currently source-present nonexact entries. The eight allocator
+These 83 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -67,6 +67,13 @@ companions and four other candidate identities survive36 complete comparisons;
 135 existing focused calls pass. Capacities remain inferred, not uniquely
 recovered source declarations. There is no full replay or game campaign.
 
+The [bonus C++ owner](BONUS_CPP_OWNER.md) restores the complete2,168-byte updater,
+reducing180 differences to zero while preserving all three prior bonus exacts.
+Only the implementation language and complete header view change; all bodies
+and public APIs remain unchanged. Existing2,851 bonus calls plus one setup pass.
+The current linked BSS and all actual references to moved mapped data are checked.
+No full replay or game run follows.
+
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
 The directory date is historical; its contents are current.
@@ -93,10 +100,10 @@ contexts are later publisher projects. All34 comparisons remain unchanged; this
 is neither a whole-repository search nor proof of source optimality.
 
 The current receipt audit verifies source/object/flag identities for all270
-classified authored entries across29 matching recipes:246 exact and24 complete
+classified authored entries across29 matching recipes:247 exact and23 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/paddle-current-frame-20261017/authored-coverage.json`.
+Authority: `.analysis/bonus-cpp-owner-20261017/authored-coverage.json`.
 
 The [sampled paddle width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) restores its
 677-byte extent and original right-edge sum order, reducing210 to68 strict
@@ -163,7 +170,6 @@ One owner compile preserves five exact companions and six other body identities;
 | `stretch-keyed-sprite` | 139 | 141 | 92 |
 | `draw-keyed-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
-| `update-bonuses` | 2168 | 2168 | 180 |
 | `fill-polygon` | 1543 | 1543 | 214 |
 | `fill-polygon-clipped` | 1592 | 1592 | 214 |
 | `rotated-sprite-offset` | 259 | 261 | 223 |

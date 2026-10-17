@@ -46,7 +46,7 @@ a requested mode change cleans up the old mode and initializes the next.
 
 [gameplay.c](../src/gameplay.c) owns brick-hit rules and explosion requests.
 [effects.c](../src/effects.c) advances brick/explosion animations;
-[bonuses.c](../src/bonuses.c) and [particles.c](../src/particles.c) own their
+[bonuses.cpp](../src/bonuses.cpp) and [particles.c](../src/particles.c) own their
 respective entities. [balls.cpp](../src/balls.cpp) handles ball creation, cloning,
 and rebound helpers, while `core.c` handles movement and collisions.
 [round.c](../src/round.c) connects board initialization to level progression.
