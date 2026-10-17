@@ -1,5 +1,17 @@
 # Closed drawing and SDK storage diagnostics
 
+## C-compatible polygon owner, October 17
+
+The [separate POD-owner control](POLYGON_SCAN_WORKSPACE.md#c-compatible-polygon-owner-control-october-17)
+preserves all four aggregate copies in each controller and tests the inferred
+C language boundary independently of the genuine C++ triangle lifetime family.
+One compile/two complete comparisons reproduce both rejected full80 C++ bodies
+exactly:1553/1274 and1602/1314 bytes/differences. Five extra copy-address LEAs
+account for ten extra bytes in each. No canonical adoption follows. Scalar
+component expansion is declined before compiling because it changes the observed
+paired-read/paired-write producer order. Do not repeat either model as an
+unchanged-copy exactness improvement.
+
 ## Shared declarations after independent board ownership, October17
 
 The [consumer producer follow-up](INDEPENDENT_BOARD_STORAGE.md#consumer-producer-follow-up)

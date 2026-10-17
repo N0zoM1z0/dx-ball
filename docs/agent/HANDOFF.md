@@ -196,6 +196,11 @@ Other authored boundaries and retained controls:
 - Triangle's four root-constructed FixedPoint objects precede early exits; do not
   narrow them arbitrarily. The adopted scanline scope restores y's home; vertical
   scale and polygon endpoint-scope controls are closed.
+- The [C-compatible polygon owner](../research/exact/POLYGON_SCAN_WORKSPACE.md#c-compatible-polygon-owner-control-october-17)
+  full80 pilot reproduces the rejected C++ full80 bodies, including five extra
+  copy-address LEAs each. Separate x/y assignments would change the original
+  paired reads and writes; that proposal is declined before compiling. Neither
+  result proves the original language boundary or a source optimum.
 - Bank cursor/row/column, file-metadata and transfer-workspace scopes are closed.
   Preserve callback-visible state and the pitch snapshot before Lock.
 - [Brick-hit pan consumer scope](../research/exact/EXACT_BRICK_POWERS.md#closed-pan-consumer-scope)

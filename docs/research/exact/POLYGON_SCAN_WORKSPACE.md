@@ -43,3 +43,43 @@ Original evidence remains
 `ev_493013a754a8856f617731fcd1fddd0b00f6bd3d39f2de9d39f29742e542e205`
 and `ev_4ae581c6e8ad135b183d562df04de63db4419e39e3f9b46891bdec2634ee5358`.
 Complete receipts are in `.analysis/polygon-scan-workspace-20261012/`.
+
+## C-compatible polygon owner control, October 17
+
+One later private pilot tests the two POD polygon controllers as a separate C
+owner, keeping the previously tested full80-byte workspace and every aggregate
+copy. The actual C-compatible public declarations, explicit stdcall convention,
+allocator/span APIs and absence of class lifetimes support this bounded source
+family hypothesis. Triangle and its FixedPoint lifetime machinery stay in C++.
+Neither the original language nor translation-unit boundary is established.
+
+| Complete controller | Maintained bytes / differences | C full80 pilot |
+| --- | ---: | ---: |
+| Ordinary polygon | 1543 / 214 | 1553 / 1274 |
+| Clipped polygon | 1592 / 214 | 1602 / 1314 |
+
+Both complete relocation-resolved pilot digests equal the earlier rejected
+full80 C++ results. Selecting the C frontend does not remove the nested-copy
+address producers in this model. Each controller has four point-copy statements;
+the emitted copies add five LEAs and ten bytes. Original copies read X and Y
+before either destination store. For example, the first ordinary copy reads at
+`0x40B626` and `0x40B628`, then stores directly to its two EBP homes at
+`0x40B62B` and `0x40B62E`. The nested workspace instead forms the destination
+address between the paired reads and stores. The local-to-local copy also forms
+its source address. The retained proof accounts for all eight copy sites.
+
+A separate proposal to expand the copies into x/y assignments is declined
+before compilation: it would interleave stores with reads and repeat indexed
+expressions, including the modulo producer. Ordinary stable, nonalias values
+would not establish the original producer order. No temporary pointer, padding,
+alternate body or flag sweep is introduced to repair that lowering.
+
+The C-owner pilot is rejected without integration. One serial, resource-capped
+compile supplies two complete comparisons; there is no companion compile,
+fixture, game, provider query or full replay. Current source, cached objects,
+delivery and totals remain unchanged:391 exacts and24 authored candidates.
+This closes the tested full80/C model, not all possible source declarations or
+all frontend behavior. Private `.analysis/polygon-c-owner-20261017/` retains the
+inputs, complete comparisons, independent reviews and copy-producer proof.
+Verified archival replaces seven disposable input/object files, releasing48 KiB
+of allocated storage after archive cost, excluding small JSON receipts.
