@@ -1,5 +1,7 @@
 """Mouse choices from observed gameplay state; no game-memory writes."""
 
+import struct
+
 
 CONTACT_BIASES = (0.08, -0.18, 0.30, -0.34, 0.16, -0.05)
 DECISIONS_PER_CONTACT_BIAS = 100
@@ -83,6 +85,88 @@ def choose_contact_mouse(state, step, lookahead=2):
     return _choose_for_ball(state, step, projected, lookahead)
 
 
+def _tail_hit(grid, ball, x, paddle_y, velocity):
+    """Bounded center-ray ranking, not a replacement for brick collision."""
+    y = paddle_y - ball['height']
+    dx, dy = velocity
+    for frames in range(1, 201):
+        x += dx
+        y += dy
+        if x < 20:
+            x, dx = 20, abs(dx)
+        if x > 619 - ball['width']:
+            x, dx = 619 - ball['width'], -abs(dx)
+        if y < 0:
+            y, dy = 0, abs(dy)
+        point_y = y if dy < 0 else y + ball['height']
+        if 50 <= point_y <= 349:
+            column = max(0, min(19, (x + ball['width'] // 2 - 20) // 30))
+            row = (point_y - 50) // 15
+            if grid[column + row * 20]:
+                return dict(frames=frames, column=column, row=row,
+                            tile=grid[column + row * 20])
+        if dy > 0 and y >= paddle_y - ball['height']:
+            break
+    return None
+
+
+def choose_mouse_decision(state, step, lookahead=2):
+    """Keep contact safety; rank six choices only for a known sparse tail."""
+    scheduled = (step // DECISIONS_PER_CONTACT_BIAS) % len(CONTACT_BIASES)
+    fallback = dict(x=choose_contact_mouse(state, step, lookahead), phase=scheduled,
+                    scheduled_phase=scheduled, policy='contact')
+    balls = state.get('balls') or []
+    if (len(balls) != 1 or state['paddle_width'] <= 0
+            or state.get('bonuses') or state.get('bonus_3_ticks', 0)
+            or state.get('sprite_bank', 0) != 0):
+        return fallback
+    ball = balls[0]
+    if (ball['attached'] or ball['dy'] <= 0 or ball['y'] < 350
+            or ball.get('speed') != 9 or ball['width'] != ball['height']
+            or ball['width'] not in (5, 9)):
+        return fallback
+    try:
+        grid = bytes.fromhex(state.get('board_tiles', ''))
+    except (TypeError, ValueError):
+        return fallback
+    if len(grid) != 400 or not 2 <= sum(bool(v) for v in grid) <= 8 or 2 in grid:
+        return fallback
+    paddle_y = state.get('paddle_previous_y', 450)
+    radius = (7 + ball['height']) // 2
+    lower = paddle_y + 3 - radius - ball['height'] // 2
+    upper = paddle_y + 3 + radius - ball['height'] // 2
+    frames = max(1, (lower - ball['y'] + ball['dy'] - 1) // ball['dy'])
+    if frames > 100 or ball['y'] + frames * ball['dy'] > upper:
+        return fallback
+    x, dx = ball['x'], ball['dx']
+    for _ in range(frames):
+        x += dx
+        if x < 20:
+            x, dx = 20, abs(dx)
+        if x > 619 - ball['width']:
+            x, dx = 619 - ball['width'], -abs(dx)
+    choices = []
+    for phase in range(len(CONTACT_BIASES)):
+        mouse = choose_contact_mouse(state, phase * DECISIONS_PER_CONTACT_BIAS, lookahead)
+        ratio = (x + ball['width'] // 2 - (mouse - state['paddle_width'] // 2)) / state['paddle_width']
+        ratio = struct.unpack('<f', struct.pack('<f', ratio))[0]
+        # Interior speed9 bins are measured by the original rebound fixtures.
+        if ratio <= 0.07 or ratio > 0.93:
+            continue
+        for bound, velocity in ((0.2, (-7, -6)), (0.35, (-5, -7)), (0.5, (-2, -8)),
+                                (0.65, (2, -8)), (0.8, (5, -7)), (0.93, (7, -6))):
+            if ratio <= bound:
+                break
+        hit = _tail_hit(grid, ball, x, paddle_y, velocity)
+        if hit is not None:
+            choices.append((hit['frames'], phase != scheduled, phase, mouse, hit))
+    if not choices:
+        return fallback
+    _, _, phase, mouse, hit = min(choices)
+    return dict(x=mouse, phase=phase, scheduled_phase=scheduled,
+                policy='tail-ray', predicted_hit=hit)
+
+
 def choose_mouse(state, step, lookahead=2):
     """Live ordinary-input policy, checked against original frame execution."""
-    return choose_contact_mouse(state, step, lookahead)
+    return choose_mouse_decision(state, step, lookahead)['x']

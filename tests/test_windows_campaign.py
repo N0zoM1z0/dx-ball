@@ -18,7 +18,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from campaign_controller import CONTACT_BIASES, DECISIONS_PER_CONTACT_BIAS, choose_mouse
+from campaign_controller import CONTACT_BIASES, DECISIONS_PER_CONTACT_BIAS, choose_mouse_decision
 from legacy_toolchain import session_lock
 from resource_limits import limit_cpu
 from windows_runtime import digest, environment, launch, prepare, stop, verified_originals
@@ -149,7 +149,7 @@ def observe(profile, args, reports):
                'reader_arguments': observer.arguments,
                'episode_clock': 'elapsed wall time after the first initialized ready gameplay sample',
                'controller': dict(contact_biases=CONTACT_BIASES, decisions_per_bias=DECISIONS_PER_CONTACT_BIAS,
-                                  basis='processed latest SDK samples; cadence depends on scheduling'),
+                                  basis='processed latest SDK schedule; eligible sparse tails rank six contact phases with a bounded center ray'),
                'controller_phase_requests': [0] * len(CONTACT_BIASES)}
     if profile == 'windows-i686':
         summary['dll_sha256'] = digest(runtime / 'libdxball_core.dll')
@@ -240,12 +240,16 @@ def observe(profile, args, reports):
                         if gameplay_began is None:
                             gameplay_began = now
                         seen_game = True
-                        requested_x = choose_mouse(state, sample_steps)
+                        decision = choose_mouse_decision(state, sample_steps)
+                        requested_x = decision['x']
                         mouse.move(record['origin'], requested_x)
-                        phase = (sample_steps // DECISIONS_PER_CONTACT_BIAS) % len(CONTACT_BIASES)
+                        phase = decision['phase']
                         summary['controller_phase_requests'][phase] += 1
                         last_mouse_request = dict(seconds=round(now - began, 3),
-                                                  processed_sample=sample_steps, phase=phase, x=requested_x)
+                                                  processed_sample=sample_steps, phase=phase, x=requested_x,
+                                                  scheduled_phase=decision['scheduled_phase'],
+                                                  policy=decision['policy'],
+                                                  predicted_hit=decision.get('predicted_hit'))
                         summary['last_mouse_request'] = last_mouse_request
                         if not mouse.down and now - last_click >= 0.03:
                             mouse.button(True)
