@@ -120,6 +120,28 @@ Both traces, commands and consumed inputs are retained in
 proposal inputs are compressed with byte equality before disposable copies are
 removed. This failure does not prove a source optimum or resolve original EBX use.
 
+## Closed crop/publication lifetime
+
+A subsequent private model retains the adopted expiry scope and moves only
+`rect`, `x` and `y` into their actual crop/publication phase, after selecting
+sprite bank 2. These ordinary nonescaping values have no earlier producers or
+later consumers. All executable tokens, calls, live reads and crop expressions
+remain unchanged. This differs from the rejected scan-only and crop-expression
+controls; original lexical scope remains inferred.
+
+One VC4 compile compares all 20 complete display functions. Last-brick regresses
+from 1067/990 to 1067/992 bytes/differences; reject it. A bijection of 17 homes
+accounts for all 58 changed one-byte frame displacements across 302 instructions.
+The 68-byte frame and every other instruction byte remain unchanged. All 19 companion
+code/metadata identities, including 16 current exacts, remain unchanged. Historical
+companion counts above belong to their earlier declaration contexts.
+
+The current source, objects, reports, ledgers and delivery remain unchanged.
+No native build, relink, game, provider query or full replay follows rejected code.
+Private `.analysis/lightning-crop-lifetime-20261017/` retains the complete
+comparisons, frame proof and frozen proposal/input/object archive. Do not extend
+this scope model without a new producer fact.
+
 ## Compiler-dependent particle argument order
 
 A single existing expired-deadline/crop case confirms that the current GCC

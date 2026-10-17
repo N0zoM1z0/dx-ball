@@ -78,6 +78,17 @@ changes are confined to paddle/alignment, nine actual loader relocation updates
 and six timestamp fields. No game run or full replay follows. Valid canonical
 CMake configurations now remain for incremental reuse.
 
+Two later bounded lifetime controls are closed without adoption. The
+[joint paddle model](../research/exact/PADDLE_WIDTH_SAMPLING_SCOPE.md#closed-joint-lifetime-model)
+keeps short sampled width with long factor, but regresses to 679/487; all 15
+companions, including 13 exacts, retain their identities. The
+[last-brick crop/publication scope](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#closed-croppublication-lifetime)
+moves only rectangle and destination locals after bank 2 selection. It regresses
+1067/990 to 1067/992; all 19 companions, including 16 current exacts, remain
+unchanged. Its 302 instructions differ only in 58 frame-displacement bytes.
+Keep both canonical implementations and all current claim/product identities.
+No native build, relink, game, provider query or full replay follows rejected code.
+
 The latest [independent board globals](../research/exact/INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
 recover seven real neighboring objects instead of an enclosing instance, while
 preserving the full terminal-copy ABI. All278 affected complete units are
@@ -350,6 +361,21 @@ delete evidence trees or tool caches. Recent journals are
 `.analysis/storage-maintenance-20261017/verification.json`, and
 `.analysis/game-prefix-direct-flow-20261017/verification.json`. They distinguish
 allocated disk release from logical duplicate-byte totals.
+
+The later `.analysis/historical-json-retention-20261017/receipt.json` records
+205 unused raw JSON carriers compressed under existing immutable checkpoint
+seals. Each has a single link and at least 256 KiB; every decompressed SHA-256
+is verified before deleting the raw file. The unchanged seal still identifies
+the logical bytes, and `clean-local.py` already accepts the `.json.gz` fallback.
+Use `gzip -dc <historical-path>.gz > <historical-path>` to restore a historical
+raw path if needed, then check its seal. This releases 301,236,224 allocated bytes
+net of carriers, excluding receipt costs. Current source, reports, matching
+objects, tested executable and valid CMake configurations retain their hashes.
+The two rejected lifetime trials additionally archive and remove 50 raw files,
+releasing 282,624 allocated bytes net of their verified archives. Their receipts
+are `.analysis/paddle-joint-lifetimes-20261017/cleanup.json` and
+`.analysis/lightning-crop-lifetime-20261017/cleanup.json`.
+
 The independent-storage investigation additionally archives239 closed/superseded
 files and releases4,927,488 allocated bytes net of verified carriers. Receipts are
 `.analysis/independent-board-storage-20261017/cleanup.json` and

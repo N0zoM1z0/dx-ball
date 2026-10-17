@@ -92,3 +92,24 @@ Cleanup removes78 closed raw input/product files and one regenerable bytecode
 file, releasing8,273,920 allocated bytes net of the verified archive, excluding
 small receipt costs. Current tested products, matching objects and valid
 canonical CMake caches remain available for continued incremental work.
+
+## Closed joint lifetime model
+
+One subsequent model retains the adopted short width sample and long-lived
+factor, while grouping animation and overlay values at their actual consumers.
+Unlike the earlier complete-frame control, it does not keep sampled width and
+factor in a function-long scale record. All executable tokens, types, reads and
+calls remain unchanged after accounting for the record member names.
+
+One compile compares all 16 runtime functions. Paddle regresses to 679 bytes and 487
+differences; its resolved digest differs from the earlier complete-frame control
+despite those equal summary counts. All 15 companion code/metadata identities,
+including 13 exacts, remain unchanged. Reject the joint model and retain 677/68.
+No source, canonical product, ledger or delivery change follows; no native build,
+game, provider query or full replay runs. Do not extend this record/scope family
+without a new producer fact.
+
+Private `.analysis/paddle-joint-lifetimes-20261017/` retains the complete
+comparisons and rejection receipt. All 28 raw proposal/input/object files are
+archived and individually hash-verified before deletion, releasing 151,552
+allocated bytes net of the archive, excluding small receipt costs.

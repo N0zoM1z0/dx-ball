@@ -10,6 +10,12 @@ right-edge sum order, with68 strict differences. Both16-unit comparisons
 preserve13 exact companions;332 existing paddle calls pass. Physical source
 homes remain different. Do not repeat either model unchanged.
 
+The subsequent [joint lifetime model](PADDLE_WIDTH_SAMPLING_SCOPE.md#closed-joint-lifetime-model)
+keeps the short width sample while placing animation/overlay records at actual
+consumers. One 16-unit comparison rejects 679/487, preserving all 15 companions
+and 13 exacts. Its digest differs from the earlier full-frame control. Keep the
+maintained 677/68 result; do not extend this scope/record family without a new fact.
+
 ## C-compatible polygon owner, October 17
 
 The [separate POD-owner control](POLYGON_SCAN_WORKSPACE.md#c-compatible-polygon-owner-control-october-17)
