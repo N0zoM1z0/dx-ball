@@ -1,5 +1,15 @@
 # Closed drawing and SDK storage diagnostics
 
+## Glyph/text implementation owner, October18
+
+The distinct [five-function glyph/text family](../STARTUP_UI_OWNER.md#glyphtext-implementation-owner-control-october18)
+joins the two resource glyph functions, three UI text functions and real spacing
+state without changing bodies or headers. Three compiles compare27 full units/
+300 bindings. There is no gain and glyph lookup loses its match; PCX also changes
+two multiplicand operands while keeping its979/851 size/count. Exactly25 code
+identities remain unchanged. Reject the complete model and close without
+header/order/name/flag variants; no canonical source, product or claim changes.
+
 ## Complete surface descriptor, October18
 
 The distinct [nested v1 descriptor control](SURFACE_DESCRIPTOR_CONTRACT.md)

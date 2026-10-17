@@ -69,3 +69,15 @@ Private `.analysis/related-raster-source-20261018/` retains URLs, full checks
 and a member-hash-verified archive. The three raw downloads are removed after
 verification, releasing40,960 allocated bytes after archive/journal costs.
 No compiler, provider, runtime, relink or replay runs for this follow-up.
+
+One later [Poly.cpp](https://github.com/LongbowGames/TreadMarks/blob/6af9528c67d867f7903eb2ea4834db0750629034/src/game/Poly.cpp)
+check follows the already read header's commented software-raster interfaces.
+All33,444 bytes verify against the pinned Git blob. It retains commented
+textured mesh/sprite renderers, float edge/UV interpolation and integer16.16
+UV accumulators. These do not establish the pinned triangle's four independent
+FixedPoint roots/vertical scale or the angle-based rotation routine. No names,
+owners, settings or foreign code are adopted. This is one complete implementation,
+not a repository/history search or proof of no predecessor. Private
+`.analysis/tread-software-raster-20261018/` retains the full checks and verified
+archive; removing the raw download releases20,480 allocated bytes after archive/
+journal costs. No compiler, provider or runtime executes for this check.

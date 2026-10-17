@@ -79,6 +79,37 @@ controls remain historical after input refresh; no full owner or historical
 validation queue was replayed. Driver rasterization, synchronized pixels,
 physical audio/MIDI and nearly complete source fidelity remain unproven.
 
+## Glyph/text implementation owner control, October18
+
+One fixed C++ owner groups the five consecutive original entries at404CF0,
+404E40,404EE0,404F80 and404FD0. Glyph lookup/drawing and text drawing/centering/
+measurement share a real call graph, signed-code/font-bank contracts and the
+existing spacing state. This differs from the older whole-UI C++/COM controls,
+which leave the two lower glyph functions in resources. It is an inferred
+implementation family, not unique recovery of the original translation unit.
+
+The private model moves exactly five byte-identical bodies and the actual
+`dxball_text_spacing = 1` definition. Complete unchanged `ui.h`/`resources.h`
+retain C linkage; the new owner inherits the UI `/MT` recipe. Three serial
+compiles compare all27 functions and300 actual bindings/six complete literal
+references: resources16, residual UI6 and text5. No exact is gained. Glyph
+lookup loses its145-byte match, becoming146/86 through one bank/slot address
+producer. PCX exchanges two multiplicand loads while retaining979/851;
+25 other code identities stay unchanged, including measurement279/3.
+Equal size/difference counts are not code-identity evidence.
+
+Reject the whole fixed model without selective adoption or header/order/name/
+flag variants. Private `.analysis/text-glyph-owner-20261018/` retains complete
+inputs, transformation, comparisons, independent reviews and final verification.
+The review corrects an informal26-unchanged inference to the actual25 before
+documentation/adoption. No source, claim, canonical object or delivery changes;
+no native build, relink, provider, game or full replay follows. One CPU35%,
+memory high640MiB/max768MiB limits hold; observed peak is167,350,272 bytes with
+zero high/max/OOM events. All24 disposable copied inputs/products, including
+five objects, are archived/member-hash verified before removal, releasing
+118,784 allocated bytes after archive/journal costs. Tested products and useful
+incremental caches remain.
+
 ## Exact score initialization and reading
 
 The initializer at `0x406EE0` now restores all fifteen explicit name-clear,

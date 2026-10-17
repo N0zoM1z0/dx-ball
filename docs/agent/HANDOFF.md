@@ -183,6 +183,19 @@ establishes no PCX/triangle routine connection, checks57,186 bytes against pinne
 Git blobs and removes raw copies after archive/member verification, releasing
 40,960 allocated bytes. Neither review nor bounded search changes source or claims.
 
+The later [five-function glyph/text owner](../research/STARTUP_UI_OWNER.md#glyphtext-implementation-owner-control-october18)
+joins the original contiguous lower-glyph/upper-text call family and real spacing
+state, unlike the older whole-UI controls. All five bodies and full headers stay
+unchanged. Three compiles compare27 functions/300 bindings/six literals: no gain,
+one glyph-lookup loss145/0→146/86. PCX also exchanges two multiplicand operands
+while staying979/851;25 code identities survive. Reject without variants or
+partial adoption. `.analysis/text-glyph-owner-20261018/` retains independent
+reviews and sealed full verification. All24 raw inputs/products, including five
+objects, are archived/member-verified and removed, releasing118,784 allocated
+bytes net of archive/journal. Scope peak167,350,272 bytes, zero high/max/OOM
+events; required resource limits hold. No native build, relink, provider, game
+or full replay. Canonical source, objects, delivery and counts remain unchanged.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;
