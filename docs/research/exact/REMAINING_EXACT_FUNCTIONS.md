@@ -113,11 +113,14 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
-The [public author-context check](AUTHOR_SOURCE_CONTEXT.md) finds no basis within
-its inspected pages/archive/nine source files for a new1.07 declaration or
-compiler-setting trial. The linked tutorial explicitly uses VC5, and the other
-contexts are later publisher projects. All34 comparisons remain unchanged; this
-is neither a whole-repository search nor proof of source optimality.
+The [public author-context check](AUTHOR_SOURCE_CONTEXT.md) initially inspected
+a VC5 tutorial and later publisher sources; its34-candidate count is historical.
+Actual DOS debug records subsequently connect the author's font, palette and
+bank families. One fixed text declaration model leaves all seven UI code bodies
+unchanged and is rejected. The Classic1.09 installer supplies no source/PDB/MAP
+among its49 named main paths, and its actual game PE has no symbols or debug
+directory. These are bounded findings, not proof of source absence or optimality;
+no further declaration or compiler-setting trial follows from them.
 
 The current receipt audit verifies source/object/flag identities for all270
 classified authored entries across30 matching recipes:249 exact and21 complete

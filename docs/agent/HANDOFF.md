@@ -87,6 +87,21 @@ there is no missing game producer or justified name/root-scope model. Its
 All three related families are now closed evidence boundaries, not pending
 declaration trials.
 
+The later [Classic 1.09 installer inspection](../research/exact/AUTHOR_SOURCE_CONTEXT.md#classic-109-installer-boundary-october18)
+uses REA 6.5.0 root inventory and independently verified Wise framing: 65 CRC-valid
+streams, 51 typed records and 49 main paths. The bound game has no COFF symbols
+or PE debug directory; none of the 49 main paths names source/PDB/MAP. No new
+1.07 declaration or settings fact follows. Eighteen copied decoder/HTTP carriers
+are archive/member verified and removed; no raw game member is extracted.
+Current `elapsed`/`reset-round` and paddle residual reviews also find no missing
+producer: swapped unsigned comparison, equivalent bank/slot address scheduling,
+and known frame homes respectively. Paddle's dirty rectangle is a pre-COM
+snapshot, queued by value afterwards; it cannot be delayed or merged with the
+source-rectangle pointer. Reuse the private `runtime-residual-frontier-20261018`
+and `paddle-residual-frontier-20261018` receipts. No compile, native provider,
+game, relink or replay runs for these follow-ups; all current authorities remain
+unchanged.
+
 A fresh [current PCX proof](../research/exact/EXACT_PCX_PACKET_LOOP.md#current-object-correspondence-refresh-october18)
 replaces the historical205-direct/22-grouped partition for the current object:
 202 direct instructions plus seven exchanged signed comparison triples and two

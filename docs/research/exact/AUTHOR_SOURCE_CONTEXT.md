@@ -235,3 +235,44 @@ actual records/fixups, the source-model boundary and independent review. Its ful
 proof is compressed with a decompression-hash check before removing the raw
 JSON. No executable is
 extracted, and no further compiler, provider or runtime is invoked.
+
+## Classic 1.09 installer boundary, October18
+
+The [same author page](https://classic.blitwise.com/Scorched_Reality/index.html)
+also directly links [DXBall19.EXE](https://classic.blitwise.com/Scorched_Reality/DXBall19.EXE),
+identified as Classic 1.09 with speed, high-score and sound fixes. The downloaded
+840,345-byte Wise installer has SHA-256
+`2472a555ba5cbda459f6c7b9df9e2aebc37eaca2c730e86d31b46a088d81ae77`.
+REA 6.5.0 inventories its PE root in
+`ev_fb31894e982eb750e20e7a22023ccb496fdec0f5b1d10e7dc10fe32cc8295eac`.
+That root-only graph does not attest embedded files.
+
+The actual old header and [SabreTools WiseScript reader](https://github.com/SabreTools/SabreTools.Serialization/blob/main/SabreTools.Serialization.Readers/WiseScript.cs)
+establish the compressed-data boundary and typed file records. Separately
+validated raw-DEFLATE/CRC framing accounts for 65 consecutive streams,
+2,639,536 decompressed bytes and exact installer EOF. Fifty-one actual
+InstallFile records bind two helpers and 49 consecutive main files; the review
+does not claim to decode the entire installation state machine. None of these
+49 named main paths is a source, PDB or MAP path. No installer or recovered
+member executes, and no raw member is written to disk.
+
+The actual `DXBall.exe` record binds stream 27 to a 104,448-byte x86 PE, SHA-256
+`191c113582e1f31016a158d40372fa21ea68d9348bf847bbfbc8e7c7bdfe195f`.
+Its actual text contains `V 1.09`; linker version is 5.10. It has zero COFF
+symbols, zero debug-directory RVA/size, no overlay and no selected CodeView,
+source-path or RTTI markers. Its bound README dates 1.09 to December 19, 1998.
+These metadata do not establish 1.07 compiler settings or original declarations.
+No native provider or cross-version code comparison is needed to close this
+specific debug/source-carrier question.
+
+Private `.analysis/dxball109-inventory-20261018/` retains the unique installer,
+full REA result, stream and game metadata, README observations and independent
+review. Sealed `.analysis/dxball109-wise-format-20261018/` retains primary decoder
+sources and the full typed format/name proof in verified compressed carriers.
+Eighteen copied source/HTTP carriers are removed after archive/member-hash
+verification. A metadata-only `MessageFont` serialization error in the sealed
+format proof is explicitly corrected in the later independent inventory review;
+the 65-stream CRC and 51-record path bindings remain valid. Current source,
+toolchain, products and exact authorities stay unchanged; no compile, game,
+relink or replay runs. Four exact-name searches from the recovered DOS debug
+names also return no results, within that four-query boundary only.
