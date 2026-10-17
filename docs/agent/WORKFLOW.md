@@ -82,6 +82,13 @@ contents and declared metadata against the verified target. Zero differences
 can establish exactness; partial similarity remains a candidate. A source
 restoration can still be valuable when compiler storage choices differ.
 
+For a zero-difference section, the comparator also checks that same-section
+COFF definitions retain their actual internal destinations. A declared original
+target cannot hide a changed local label. See the
+[local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md) and its focused
+four-case check. Other-section and external mappings still need independent
+evidence.
+
 Use one writable compiler/provider session at a time. Existing project entry
 points constrain CPU and provider heap use. Keep audio probes on the silent
 capture sink described in the owner notes.

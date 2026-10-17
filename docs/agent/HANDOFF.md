@@ -11,6 +11,17 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
+The [exact local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md)
+prevents a zero-byte comparison from concealing a changed internal COFF label.
+One real302-byte object counterexample passes the old comparator and is rejected
+after the repair; its canonical exact remains. Four focused fixture checks pass.
+A definition-only audit verifies all380 accepted units/203 internal sites and
+eleven exact metadata sections; no complete comparisons are replayed. All34
+authored candidates/35 internal sites have no current target collisions; the
+retained old manifest exposes the two known brick-hit groups. This is a narrow
+binding check, not general target correctness or new source/exact acceptance.
+No compiler/provider/game/relink runs; current products and ledgers stay fixed.
+
 The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
 accounts for all362 instructions and71 switch bytes. It finds and repairs two
 wrong comparison-manifest targets for cases8 and21 through actual COFF definitions

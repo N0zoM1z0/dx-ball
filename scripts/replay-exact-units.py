@@ -18,6 +18,29 @@ verify_target = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(verify_target)
 
 
+def _validate_exact_local_targets(object_path, unit):
+    """An exact section must preserve the linker's own internal destinations."""
+    if not unit["relocations"]:
+        return
+    _, _, symbols = parse(object_path)
+    anchors = [s for s in symbols.values() if s["name"] == unit["symbol"]
+               and s["section"] > 0]
+    if len(anchors) != 1:
+        raise ValueError(f"exact local targets need one section anchor: {unit['symbol']}")
+    anchor = anchors[0]
+    for binding in unit["relocations"]:
+        local = [s for s in symbols.values() if s["name"] == binding["symbol"]
+                 and s["section"] == anchor["section"]]
+        if not local:
+            continue
+        if len(local) != 1:
+            raise ValueError(f"ambiguous exact local target: {binding['symbol']}")
+        expected = unit["target_address"] + local[0]["value"] - anchor["value"]
+        if binding["target"] != expected:
+            raise ValueError(f"exact local target differs for {binding['symbol']}: "
+                             f"declared {binding['target']:#x}, COFF definition {expected:#x}")
+
+
 def _compare_section(object_path, unit, pe, contents, actual_relocations):
     expected = unit["relocations"]
     actual_keys = [(r["offset"], r["type"], r["symbol"]) for r in actual_relocations]
@@ -49,6 +72,8 @@ def _compare_section(object_path, unit, pe, contents, actual_relocations):
         raise ValueError("target extent is not fully file-backed")
     differences = [i for i in range(max(len(contents), len(target)))
                    if i >= len(contents) or i >= len(target) or contents[i] != target[i]]
+    if not differences:
+        _validate_exact_local_targets(object_path, unit)
     return {"symbol": unit["symbol"], "address": f"0x{address:08X}",
             "object_size": len(contents), "target_size": len(target),
             "relocations": actual_relocations, "difference_count": len(differences),
