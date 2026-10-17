@@ -150,3 +150,24 @@ URLs, original Evidence ID/carrier hashes, geometry and limits. Its comparison
 mapping belongs to the retained packet-loop epoch, not a new current-object
 attestation. No new compile, provider, runtime check or raw temporary product
 follows.
+
+## Closed RLE run-index lifetime, October18
+
+Original run-index at EBP−48 has only three access sites:409DAF zeroes it,
+409DB6 reads it for the run guard, and409E34 increments it before the backedge.
+Earlier header/value/scanline/API-workspace proposals all retain its root
+declaration; their actual C++ inputs do not cover this scope model.
+
+One fixed current-C++ proposal moves only the uninitialized declaration to the
+RLE branch start. Its original zero-store position, all operations and control
+flow remain. One resource compile compares18 functions/262 bindings/six literals:
+17 complete identities and all13 exacts/3,050 bytes survive. PCX stays979 bytes/
+227 instructions/frame308, but differences rise851→871. Run-index moves−8→−308,
+rather than original−48; no selected typed role home is restored. Reject without
+further scope or declaration variants.
+
+Sealed `.analysis/pcx-run-index-scope-20261018/` retains provenance, complete
+comparisons and independent review. Eleven raw inputs/products, including two
+objects, are archived/member-verified then removed, releasing72 KiB net.
+Peak159,277,056 bytes with zero high/max/OOM events. Canonical source, products
+and claims remain unchanged; no native, provider, relink, runtime or full replay.

@@ -319,6 +319,27 @@ OOM events. The separate endpoint-bias source search remains a four-query
 negative, with compressed complete responses and an explicit zero-slope wording
 erratum; it supplies no original polygon declaration or compiled source model.
 
+The [RLE run-index scope](../research/exact/EXACT_PCX_PACKET_LOOP.md#closed-rle-run-index-lifetime-october18)
+closes an uncovered declaration-only question: old C++ header/value/workspace
+models all kept run-index at root. One compile compares18 complete functions/
+262 bindings/six literals, preserving17 identities and13 exacts. PCX979/851→
+979/871, run-index−8→−308 rather than original−48; no original typed role is
+restored. Reject without variants. Its11 raw inputs/products/two objects are
+archived/member-verified then removed, releasing72 KiB net.
+The [three-function round owner](../research/exact/EXACT_LIFECYCLE.md#closed-round-implementation-owner-october18)
+uses actual consecutive finish/reset/restart entries and their direct protocol.
+Two compiles retain the full16-project/two-standard include prelude and compare
+16 units/352 bindings/33 literals/24 actual local targets: every full identity
+stays unchanged,13 exacts/2,895 bytes survive; reset426/20 remains nonexact.
+Reject without further partition/header/type/name/order/flag variants. Its30 raw
+inputs/products/three objects are archived/member-verified then removed,
+releasing148 KiB net. Both phases are sealed under their respective
+`.analysis/pcx-run-index-scope-20261018/` and
+`.analysis/round-lifecycle-owner-20261018/` directories. Together41 raw files/five
+objects are removed, releasing220 KiB net; canonical source/products/counts stay
+fixed. Scope peaks stay below161 MB, with zero high/max/OOM events; no new
+provider, native, relink, runtime or full replay runs.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

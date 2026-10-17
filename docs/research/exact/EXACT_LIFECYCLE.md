@@ -49,6 +49,31 @@ plus 136 separate metadata bytes. All 99 preceding complete code/metadata identi
 remain unchanged. Source presence stays 283; scoped rows 247 and cases 112,273 stay
 fixed. All 78 relocations are explicit, including complete path literal content.
 
+## Closed round implementation owner, October18
+
+The original finish/reset/restart bodies are consecutive at415C10,415C40 and
+415DF0. Restart checks the actual request, cleans state, then directly selects
+finish/reset by lives; reset clears the handoff flags after attaching the new
+ball. This supports one inferred implementation family, distinct from earlier
+clock/header/whole-runtime interface controls. It does not establish a TU identity.
+
+One private C++ owner moves these three unchanged bodies in original entry
+order. The entire existing prelude remains byte-identical:16 project headers
+plus two standard includes. Shared state/Ops definitions stay in runtime;
+dispose is not added. Two inherited-recipe compiles compare all16 functions/
+352 bindings/33 complete literals and24 actual local targets. Every full code
+identity stays unchanged, preserving13 exacts/2,895 bytes. Reset remains426/20,
+with74 instructions and no local storage; its eight bank/slot producer
+instructions are still nonexact. Reject without further partition/header/type/
+name/order/flag variants.
+
+Sealed `.analysis/round-lifecycle-owner-20261018/` retains full producers,
+reversal and independent reviews. Thirty raw copied inputs/products, including
+three objects, are archived/member-hash verified before removal, releasing148 KiB
+net. Peak160,722,944 bytes with zero high/max/OOM events. Canonical source,
+delivery and counts stay unchanged; no provider, native, runtime, relink or
+full replay follows.
+
 Native fixtures add eight genuine typed symbol boundaries to the existing five:
 load_saved_palette, palette_transition, clear_surface, reset_regions,
 release_sounds, release_sprite_banks, close_music and wait_frames. Wrappers read
