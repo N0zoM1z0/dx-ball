@@ -50,6 +50,29 @@ and after capture. Its `tool-session.json` and `status.py` support
 checking the same producer; a saved snapshot alone does not establish liveness.
 Final original50 completion remains unproved at this checkpoint.
 
+### Live board-softening consistency
+
+Two retained states on board index 16 explain a temporary increase in the
+remaining-brick count. The earlier state contains a kind-2 bonus, 24 type-2
+hard tiles, six type-21 tiles and a remaining count of 41. About 10.001 seconds
+later, the bonus is absent, those thirty tiles are type 20, one ordinary type-18
+tile at column 12 / row 15 has cleared, and the remaining count is 64.
+
+All 400 later board bytes agree with the existing softening transformation
+plus that one cleared tile. Only type-2 tiles add new destructible bricks, so
+the count is `41 + 24 - 1 = 64`; both sampled counters also equal their grids'
+nonempty, non-type-2 cell counts. Kind-2 collection calls
+`dxball_soften_special_bricks`, whose complete 397-byte exact comparison and
+current source/object identities remain unchanged.
+
+This is current-image integration evidence from the same ongoing producer.
+Sequential SDK snapshots leave frame-level invocation and causal timing
+unobserved; the helper also has a wall-bounce trigger. Exact/semantic acceptance
+and full-campaign status remain unchanged. No additional game, compiler,
+provider or function replay runs. Private
+`.analysis/live-softening-consistency-20261017/verification.json` preserves both
+complete states, the byte projection, count arithmetic and current input hashes.
+
 ## Restored-CRT entry and gameplay episode clock, October 17
 
 The campaign CLI now accepts `--profiles vc40-restored-crt` and records that

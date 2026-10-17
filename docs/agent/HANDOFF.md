@@ -42,6 +42,14 @@ finished, including `verify-final.py` if the campaign passes. The canonical CSV
 must remain unchanged until then. Source, status, extent, ABI and acceptance
 are unaffected by this pending cleanup.
 
+The [live softening review](../research/ORIGINAL_CAMPAIGN.md#live-board-softening-consistency)
+reconciles a counter increase from 41 to 64 on board index 16: 24 hard tiles
+become destructible, six type-21 tiles soften and one ordinary tile clears.
+All 400 resulting bytes and both counts computed from the grids agree. The
+397-byte helper remains exact, with source/object identities unchanged. The two
+samples add runtime evidence for the current image, with invocation timing unobserved;
+no new acceptance, game, compiler, provider or replay follows.
+
 The [PCX workspace recheck](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#pcx-brick-hit-and-processor-controls-after-handoff)
 confirms its rejection from retained instructions and current source/object
 identities. Adjacent descriptor/width/result homes do not establish a source
