@@ -767,6 +767,13 @@ to that control only. Do not copy its zero result into maintained ledgers.
 Read the selected owner note before editing. Choose a concrete new source
 question, not merely the smallest differing-position count.
 
+The [public author-context review](../research/exact/AUTHOR_SOURCE_CONTEXT.md)
+checks the author's linked VC5 tutorial and nine pinned publisher-source files.
+It supplies no1.07 declaration, capacity, compiler-setting or shared-routine
+identity. Do not transfer another project's flags or names into this target.
+This is a bounded negative result, not proof that original source never existed
+or that uninspected files have no related code. Current34 game candidates stay open.
+
 - Actual game startup now uses the recovered entry through the optional
   `vc40-restored-crt` profile. Reuse its116-object cache and checked recipe.
   Continue a concrete remaining function/ABI question; original C++ frame/translator,

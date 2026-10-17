@@ -80,6 +80,12 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
+The [public author-context check](AUTHOR_SOURCE_CONTEXT.md) finds no basis within
+its inspected pages/archive/nine source files for a new1.07 declaration or
+compiler-setting trial. The linked tutorial explicitly uses VC5, and the other
+contexts are later publisher projects. All34 comparisons remain unchanged; this
+is neither a whole-repository search nor proof of source optimality.
+
 An October 17 receipt audit verifies current source/object/flag identities for
 all 270 classified authored entries across 29 matching-build recipes: 236 exact
 and 34 complete candidates. It reuses existing comparisons without replaying.
