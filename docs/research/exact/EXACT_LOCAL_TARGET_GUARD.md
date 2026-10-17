@@ -60,3 +60,34 @@ Private `.analysis/exact-local-target-guard-20261017/` retains the before/after
 counterexample, failed-before/passing-after tests, current definition audit and
 input identities. The unique mutant object is retained in a byte-verified gzip
 carrier before removing its disposable uncompressed copy.
+
+## Cross-function catalog consistency
+
+Tracking validation also checks every code and attached-metadata relocation
+whose symbol names a function in `units` or `candidates`. Its declared base
+target must be one of that symbol's catalogued entry addresses. Relocation
+addends remain separate; unknown imports, data and local labels retain their
+explicit mappings. Multiple declared entries for an alias remain permissible.
+This is catalog self-consistency, not independent proof of the function's
+original identity, ABI or destination.
+
+The current audit covers all475 source functions and1,331 known function sites,
+including985 sites in the270 authored functions. There are no conflicting
+targets or ambiguous function symbols. Current attached metadata has no sites
+referencing catalogued function symbols; that path is exercised by an explicitly
+constructed test, not reported as observed game evidence.
+
+Five focused tests check the current catalog, a wrong real brick-hit call
+target, metadata base targets with nonzero addends, unlisted symbols and
+declared aliases:
+
+```bash
+scripts/repo-python tests/test_function_target_consistency.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+```
+
+Both pass. Private `.analysis/function-target-consistency-20261017/` retains the
+site audit, test logs, original validator and unchanged protected input hashes.
+No source, manifest, acceptance ledger, comparison report, image or map changes;
+no compilation, provider call, game, relink or complete replay runs. The counts
+remain475 source /380 exact /95 complete candidates.

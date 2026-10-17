@@ -38,6 +38,27 @@ def validate_build_owners(manifest, implementations):
                 raise ValueError(f"{group} build owner disagrees with source ledger: {name}")
 
 
+def validate_function_targets(manifest):
+    """Known function bindings must agree with their declared entry identities."""
+    units = {**manifest.get("units", {}), **manifest.get("candidates", {})}
+    targets = {}
+    for unit in units.values():
+        targets.setdefault(unit["symbol"], set()).add(unit["target_address"])
+    checked = 0
+    for name, unit in units.items():
+        for section in (unit, *unit.get("data_comdats", [])):
+            for binding in section["relocations"]:
+                symbol = binding["symbol"]
+                if symbol not in targets:
+                    continue
+                checked += 1
+                if binding["target"] not in targets[symbol]:
+                    raise ValueError(f"function target disagrees with declared entry: "
+                                     f"{name}/{section['symbol']} -> {symbol} at "
+                                     f"{binding['target']:#x}")
+    return checked
+
+
 def validate_generated_source(address, implementation, source, origins, matches, manifest):
     name = implementation["semantic_unit"]
     unit = manifest["units"].get(name, manifest.get("candidates", {}).get(name))
@@ -185,6 +206,7 @@ def validate(require_target=False):
     by_source = {owner["source"]: owner for owner in owners.values()}
     manifest_path = ROOT / "config/match-units.toml"
     manifest = tomllib.loads(manifest_path.read_text()) if manifest_path.exists() else {"units": {}}
+    validate_function_targets(manifest)
     validate_compiler_fragments(functions, origins, implementations, semantics, matches, manifest)
     if functions.keys() != origins.keys():
         raise ValueError("function and origin ledgers disagree")

@@ -89,6 +89,12 @@ target cannot hide a changed local label. See the
 four-case check. Other-section and external mappings still need independent
 evidence.
 
+Tracking validation checks known function relocation symbols against their
+declared catalog entries, including attached metadata and candidates. This
+catalog consistency check does not independently establish original identity or
+ABI. Unknown symbols still require explicit evidence; relocation addends are
+separate from the symbol's base target.
+
 Use one writable compiler/provider session at a time. Existing project entry
 points constrain CPU and provider heap use. Keep audio probes on the silent
 capture sink described in the owner notes.

@@ -55,6 +55,11 @@ authored candidates/35 internal sites have no current target collisions; the
 retained old manifest exposes the two known brick-hit groups. This is a narrow
 binding check, not general target correctness or new source/exact acceptance.
 No compiler/provider/game/relink runs; current products and ledgers stay fixed.
+Tracking now also checks known function bindings against their catalogued entry
+addresses: all475 source functions/1,331 sites agree, including985 authored
+sites. Five focused checks pass, including a wrong real call mapping and
+constructed metadata/addend controls. This verifies catalog consistency only;
+unknown symbols and original identity/ABI still require independent evidence.
 
 The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
 accounts for all362 instructions and71 switch bytes. It finds and repairs two
