@@ -106,3 +106,71 @@ The standard build-cleanup preview finds no additional disposable products.
 Current tested objects, delivery and valid CMake caches remain. Six resource
 observations retain one CPU, CPU35%, memory high640MiB/max768MiB, with no max/OOM
 events; soft-high reclamation events are explicitly recorded.
+
+## NameMap key generation, October18
+
+A focused follow-up distinguishes numeric symbol keys from the scope-table hash
+above. Full472-byte/137-instruction `48B887` writes a source symbol's DWORD`+14`;
+that is a different object/field from the scope table's WORD mask at`+14`.
+The earlier record40 already supplied pseudocode. New complete assembly and
+byte ranges establish its actual branches and finite-width arithmetic.
+
+For ordinary named symbols, it prepares a name and calls vtable slot`+8` on
+the object reached through`[4B52B4]+4`, passing a name and output-index address.
+The initializer at`498262` obtains that object through IAT`4BD1E0`:
+the actual import is `MSPDB40.DLL::NameMap::open`. Both open sites pass the
+root's`+4` as the output slot. Structured external parameter types remain
+unavailable; the virtual query method is not named here. The fallback name
+producer`40E15E` delegates to`40E028` or`44598F`, so a bare-identifier lookup is
+not established.
+
+On successful query, the exact machine formulas are:
+
+```text
+cached_word = (old_word & 7) | u32(output_index * 8 + 0x80)
+returned_key = cached_word >> 3 = (output_index + 16) & 0x1fffffff
+```
+
+All eight combinations of the low three flags survive. The29-bit projection
+matters at wrap boundaries; an unrestricted32-bit `output_index+16` is wrong.
+Other paths use bounded descending/increasing counters for special flagged
+symbols or a descending fallback for missing/sentinel names. The routine also
+checks its high-water mark against the descending counter; diagnostic callees
+retain their own boundaries.
+
+The CASE5 caller, rather than`48B887` itself, reuses a nonzero cached key.
+At`44A1F4..44A214`, it reads symbol`+14`, calls the generator only when the upper
+29 bits are zero, otherwise shifts by three. The alternate mode reads symbol
+`+18`'s low24 bits. The ordinary kind1 format includes CASE5. Complete retained
+blocks cover both integer-byte stores and the shared output-cursor increment;
+this is static encoding evidence, not a live transport observation.
+
+The root selection writes`4B5E80` or`4B5BF8` to`4B52B4`. Decoding all30 reported
+direct references finds one writer, at`426273`; this does not exclude alias
+writes. Runtime NameMap outputs, serialized bytes and the actual current C2
+`record+24` have not yet been observed together. That is the next bounded
+producer question. Original names, settings, database state and reversibility
+remain unknown; no name/order/header/type/flag or source-scope trial follows.
+
+Primary assembly is `ev_7e18dcba42aaba6cc891b3a770d9234657d3568cd6b06559da2257b6229f9021`;
+the exact NameMap import observation is
+`ev_0845015b6bfd4027e49ca0b8a8397b39964b25355981e283198645b1f4f53675`.
+The closed run`2026-10-17T19-35-55.498Z-interactive-132738` retains71 direct
+records and74 Evidence records including composed-workflow substeps. Private
+`.analysis/frontend-key-producer-20261018/` retains full byte checks, field
+formulas, source/product identities and independent review.
+
+This separately recorded profile disables `Apply Data Archives` and the earlier
+timed-out `Decompiler Parameter ID`, keeping REA6.5.0/Ghidra12.1.4 and256MiB heap.
+The old115-record snapshot remains in its already verified sealed gzip; the new
+74-record snapshot does not mix profiles. First query takes327,899ms, followed
+by fast same-import queries. Analysis succeeds and the owned temporary project
+is removed after normal close. One CPU/35% and640–768MiB whole-tree limits hold;
+peak671,612,928 bytes,2,868 soft-high reclamation events, zero hard-max/OOM events.
+Canonical source, objects, delivery and394 exact claims remain unchanged.
+No game compilation, replay, relink or runtime observation runs.
+The closed identical8.36MiB tool catalog shares its verified immutable carrier.
+Two prefix-only intermediate logs and the archive-covered old raw snapshot are
+removed; the new snapshot's gzip carrier is decompression-hash verified. Cleanup releases
+10,043,392 allocated bytes net of that archive and journal. Primary Evidence,
+the current useful snapshot and tested game products/caches remain.

@@ -108,6 +108,15 @@ may consider that exact optional analyzer separately; do not silently change a
 retained profile or trust its inferred signatures. Nine Python guard/dispatch
 cases and six provider-free JavaScript lifecycle cases pass for the new mode.
 
+The later [NameMap producer follow-up](../research/exact/VC4_FRONTEND_SYMBOL_ORDER.md#namemap-key-generation-october18)
+explicitly omits both `Apply Data Archives,Decompiler Parameter ID`. It starts a
+fresh profile after verifying the existing sealed115-record gzip against the
+old mutable snapshot, then removes only that duplicate raw snapshot. Its
+71 direct results/74 Evidence records remain separate from the old profile;
+first query327,899ms and subsequent queries share one import. Full instructions
+and bytes dominate inferred signatures. The new74-record snapshot is current;
+the old115 observations retain their original immutable run/archive identities.
+
 For a missing native ABI, control-flow or instruction question, the narrower
 facets are also verified with 6.3:
 

@@ -133,6 +133,22 @@ verified archive procedure. Current caches and tested delivery remain. Both heav
 one CPU/35%, peaks288,722,944/164,306,944 bytes with zero memory-limit events.
 No provider, native build, runtime case, game, relink or full replay runs.
 
+The later [NameMap key-producer investigation](../research/exact/VC4_FRONTEND_SYMBOL_ORDER.md#namemap-key-generation-october18)
+checks full472-byte C1XX48B887 and the actual CASE5 encoding blocks. Ordinary
+named keys use a NameMap query, preserve the source symbol's low3 flags and
+return`(output_index+16)&1fffffff`; cache reuse occurs in the caller. The actual
+MSPDB40 NameMap::open import supplies the queried object. Scope hashes/masks,
+prepared names and numeric keys remain distinct. No bare-name/method-name or
+original-name recovery is claimed. Next observe actual C1 key/cache/bytes against
+current C2+24, with unchanged inputs and complete affected comparisons; do not
+start name/order/context variants. One fresh explicit profile omits the timed-out
+parameter analyzer, retains old115 records in their existing sealed carrier,
+and closes with74 new Evidence records/71 direct results. First query327,899ms;
+owned temporary database is removed. Private `.analysis/frontend-key-producer-20261018/`
+retains checks/review. No game source, build, exact claim, replay or delivery change.
+Verified snapshot retention, immutable-catalog sharing and duplicate-log removal
+release10,043,392 allocated bytes net; current game caches and tested delivery stay.
+
 The preceding [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 compiles the unchanged drawing-primitive owner once under an owned C2 observer.
 All62 helper entries/returns pair;55 belong to line and seven to fill. Current

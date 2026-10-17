@@ -81,3 +81,11 @@ not a repository/history search or proof of no predecessor. Private
 `.analysis/tread-software-raster-20261018/` retains the full checks and verified
 archive; removing the raw download releases20,480 allocated bytes after archive/
 journal costs. No compiler, provider or runtime executes for this check.
+
+Four further queries use the original triangle's unused`F0000/(y3-y1)` producer,
+XOR vertex sorting, fixed-point roots and the author's name. No qualifying
+independent routine appears in the returned excerpts; no source page is opened
+or code downloaded. Self-reconstruction/mirrors remain excluded. Sealed
+`.analysis/triangle-constant-source-search-20261018/` retains the exact query
+responses in a decompression-hash-verified gzip; the raw response is removed.
+This is a four-query boundary, not proof of source absence or original declarations.
