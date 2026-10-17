@@ -92,7 +92,48 @@ six objects and12 superseded VC4 history copies, releasing8,658,944 allocated
 bytes net of archive/journal. Current tested products and useful caches remain;
 the regular cleanup preview finds zero further disposable items.
 
-A subsequent [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
+The later [complete retained rotation-origin review](../research/exact/ROTATION_ORIGIN_STORAGE.md#complete-retained-model-tradeoff-october18)
+reuses the existing fixed nested/current objects and fills its78→365 instruction
+boundary. All five comparisons/115 bindings/25 literals reverify. Both renderers
+have identical complete role-normalized operations across424 bytes/36 roles:
+349 instructions agree with original directly and16 belong to explicitly
+checked compare/product/finite-row-add groups. All22 calls/26 branch targets
+agree;30 scratch-register CFG walks pass. Current eight bank-address groups
+already have original forms after frame translation. Nested restores19 concrete
+renderer instructions/56 physical frame-role bytes with no renderer loss, but
+horizontal offset loses16 original producer instructions and its259-byte exact.
+The family521→524 concrete-instruction match count is not a full-function gain
+or source-optimality proof; keep canonical394 exact/21 authored candidates.
+Original named/temporary allocation order remains unknown; do not infer an
+impossible464-byte frame from unsupported parent-first/no-reuse assumptions.
+Private `.analysis/rotation-nested-origin-complete-20261018/` retains the complete
+proof, source/object identities and independent review. Two extracted object
+copies are removed only after their existing sealed archive members reverify;
+current tested products/caches remain. No compiler, provider, solver, emulator,
+runtime case, relink, game or full replay follows this passive review.
+
+The [actual rotation scope-output observation](../research/exact/ROTATION_ORIGIN_STORAGE.md#observed-scope-output-and-fixed-root-local-model-october18)
+then observes23 root symbols/340 bytes before five visible locals/20 bytes in
+the current renderer. Eight snapshots pair with guarded MOV single steps;
+all five complete output bodies/115 bindings/25 literals remain unchanged.
+Actual scope names identify the renderer; recycled owner addresses and event
+order do not identify the other snapshots. This supports one fixed all-five-root
+declaration hypothesis, preserving every expression and both first-term locals.
+Its single compilation retains four exact helpers/900 bytes but changes renderer
+1458/1466→1443/1470. Full365 role instructions agree; concrete original matches
+fall241→239 and physical frame-role bytes32→24, with no restored home/instruction.
+Reject the model, keep canonical counts/delivery, and do not combine the earlier
+nested model or start scope permutations. Current C2 named/scratch allocation
+events, cursor reset and reuse remain the specific missing mechanism facts.
+Private `.analysis/rotation-scope-output-list-20261018/` and
+`.analysis/rotation-visible-root-20261018/` retain full comparisons/reviews.
+Observation cleanup removes11 archive-verified copied inputs/products, releasing
+192 KiB net; the fixed model's ten copies/products release44 KiB by the same
+verified archive procedure. Current caches and tested delivery remain. Both heavy steps use
+one CPU/35%, peaks288,722,944/164,306,944 bytes with zero memory-limit events.
+No provider, native build, runtime case, game, relink or full replay runs.
+
+The preceding [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 compiles the unchanged drawing-primitive owner once under an owned C2 observer.
 All62 helper entries/returns pair;55 belong to line and seven to fill. Current
 scalar-load ranks i43/dx44/dy45 follow actual record keys and the retained

@@ -85,3 +85,118 @@ net after archive/journal costs. Peak159,252,480 bytes; no high/max/OOM events.
 Canonical source, products, delivery and counts stay unchanged. No provider,
 native build, runtime case, relink, game or full replay follows; no further
 cast, parenthesis, flags or selective-object variants are queued.
+
+
+## Complete retained-model tradeoff, October18
+
+A later passive review fills the preceding78-instruction boundary using the
+same sealed current and nested objects. No source variant or compilation is
+introduced. All five complete comparisons,115 bindings and25 full literal
+references reverify; the prior seal/archive and current eight project inputs agree.
+
+The entire365-instruction renderer now has a nonoverlapping424-byte map across
+36 value roles. Current and nested models have identical operations and
+operands after translating each role's concrete frame address. Against the
+original,349 instructions agree directly under that translation; the other16
+belong to two signed loop guards, one unsigned rollover guard, two commuted
+low32 products and one finite row-Y addition. Their exact operands, opposite
+Jcc pairs and successors are checked. All22 call sites and26 branch targets
+agree, and no branch enters a grouped dependency sequence partway through.
+
+This current context differs from the old C-owner correspondence: the eight
+bank-address groups already have the original operation/operand form after
+frame translation. Reuse the earlier proof for its historical objects rather
+than describing those64 instructions as current unexplained producers.
+Thirty concrete CFG walks show that differing scratch-register values are
+replaced or reach ordinary ABI boundaries before any read. Normal finite FP,
+ordinary stable mapped memory and standard ABI scratch rules remain the scope;
+unrestricted flags, traps, NaN payloads, frame aliasing and pointer retention
+are not established.
+
+| Concrete instruction correspondence | Maintained | Retained nested model |
+| --- | ---: | ---: |
+| Renderer, of365 |241 |260 |
+| Horizontal offset, of77 |77 |61 |
+| Other three helpers combined |203 |203 |
+| Five-function total, of645 |521 |524 |
+| Original physical renderer frame-role bytes, of424 |32 |88 |
+
+The metric compares complete decoded operations and concrete operands, mapping
+branch destinations by instruction ordinal. It is neither a raw exact count nor
+a source-completion percentage. The nested renderer restores19 instructions
+and56 physical frame-role bytes without losing a maintained matching renderer
+instruction. Its two first-term homes and five integer-conversion homes move
+to the original addresses. However, two complete eight-instruction bank
+producers in horizontal offset lose their original forms. Exact coefficient
+maps modulo2^32 still give `425980 + bank*1048 + slot*4` in each case, but the
+259-byte exact helper becomes261/223. The other three helpers remain exact.
+
+This is a real family tradeoff. Three more aggregate instruction matches do
+not restore a complete function or dominate the maintained source. Keep the
+canonical model and all394 exact claims; no selective old helper object is
+adopted. The role map does not prove that original first-term stores were
+unnamed compiler temporaries: rotation's original records and complete
+named/temporary allocation, release and reuse order remain unknown. In
+particular, deriving a464-byte impossibility from a named slot at−400 would
+require unproved allocation-order and no-reuse assumptions.
+
+Private `.analysis/rotation-nested-origin-complete-20261018/` retains the full
+role/group/CFG proof and independent review. Its two tiny extracted object
+copies are rechecked against the already sealed, member-verified original
+archive before removal; no second archive of identical products is needed.
+The verified cleanup releases12 KiB net after its journal; all19 protected
+input/product identities remain intact.
+Current source, objects, delivery, caches and counts remain unchanged. There
+is no compiler, provider, solver, emulator, runtime case, relink, game or full
+replay invocation.
+
+## Observed scope output and fixed root-local model, October18
+
+The preceding proof leaves a concrete producer question: how does the current
+C++ frontend order its actual scope tables? One unchanged rotation compilation
+observes C1XX at `417EF3`, immediately before `MOV EDI,[ESI+30]`. All eight list
+snapshots pair with a checked single step of those exact three bytes; the
+destination, owner, stack and other registers/ordinary flags are verified.
+All three compiler processes exit normally. Only the known `4AB7D0` scope-table
+vtable is decoded; eight other objects remain opaque. Eighteen null-head scope
+tables are legitimate empty tables. All32 observed symbol occurrences verify
+the actual stored hash word, bucket and linked-chain order.
+
+The renderer is identified by its actual `source_column`, first-term and
+descriptor names, rather than event order or reused owner addresses. Its
+root table contains23 symbols/340 frame bytes; a later visible-pixel table
+contains five symbols/20 bytes. Their actual bucket traversal orders agree
+with the two maintained physical home sequences. Observed known parents
+precede children in these lists; list construction, general parent-first
+allocation and temporary release/reuse are not recovered. The other seven
+snapshots remain unassigned to original entry points.
+
+The five original pixel homes interleave pre-API height/zero roles within the
+upper344 bytes. Together with the new actual table observation, this supports
+one finite declaration hypothesis: move all five pixel locals to the function
+root, preserving every expression, type, name, header, flag and other declaration.
+The older four-root-local model retained the destination pointer in the branch.
+The new model leaves both first-term declarations and all rounding untouched;
+it does not combine the rejected nested-origin control.
+
+One compilation checks all five complete units/115 bindings/25 full literal
+references. The four exact companions retain all900 bytes and their complete
+identities. Renderer changes1458/1466 to1443/1470, but code shrinkage and raw
+positional differences do not decide adoption. Its365 instructions retain
+identical operations and role operands under the complete424-byte/36-role map.
+Concrete original instruction correspondences fall241→239: the two row-X-step
+accesses lose their matching−24 home, moving to−32; none are restored. Matching
+frame-role bytes fall32→24, and none of the five pixel homes match the original.
+Reject this fixed model and retain the canonical source. This closes one
+observed producer hypothesis, not all possible original scopes or declarations.
+
+Sealed `.analysis/rotation-scope-output-list-20261018/` retains the actual trace,
+guards and independent review. Its complete five-function output is unchanged;
+11 copied inputs/products are archived and member-hash verified before deletion,
+releasing192 KiB net. The fixed-model evidence and independent comparison are
+retained in `.analysis/rotation-visible-root-20261018/`. Observation/model peaks
+are288,722,944/164,306,944 bytes, with one CPU at35% and no memory-limit events.
+The model's ten copied inputs/products, including two objects, are likewise
+archived and member-hash verified before deletion, releasing44 KiB net.
+No provider, native build, game, semantic replay, relink or full replay runs.
+All394 exact claims and the tested restored-CRT delivery remain unchanged.

@@ -1,5 +1,11 @@
 # Rotation renderer frame roles
 
+The [later complete current-context review](ROTATION_ORIGIN_STORAGE.md#complete-retained-model-tradeoff-october18)
+checks all365 instructions for both the maintained C++ renderer and the retained
+nested-origin model. They remain1458/1572 bytes and nonexact; the historical
+sizes/context below are unchanged. It also records the full physical-operand
+tradeoff and why original intermediate declaration kinds remain unproven.
+
 The later [pixel-address recovery](ROTATION_PIXEL_ADDRESS.md) restores two
 integer offset/add-base orders without changing the frame or totals below.
 Its [complete instruction correspondence](ROTATION_PIXEL_ADDRESS.md#complete-renderer-correspondence)
