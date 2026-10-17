@@ -9,7 +9,9 @@ recorded. The reconstruction objective is unfinished and ports remain deferred.
 Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 (34 authored / 60 runtime / 1 compiler-generated). No new source/exact acceptance follows
 from the checks below. The current 116-source-object image is
-`345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
+`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
+Earlier live observations below retain their recorded image identities; the
+latest relink has no new game/campaign execution claim.
 
 The [sparse-tail selector](../research/CAMPAIGN_TAIL_CONTACTS.md#sparse-tail-selector-and-delayed-input-checks)
 ranks six existing safe contact choices only for eligible single-ball speed9
@@ -73,12 +75,17 @@ The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#
 accounts for all362 instructions and71 switch bytes. It finds and repairs two
 wrong comparison-manifest targets for cases8 and21 through actual COFF definitions
 and original instruction mapping. One current cached comparison is refreshed;
-its digest changes, but strict1316/1315/418 remains nonexact. All380 exact rows
-and94 other candidate comparisons stay unchanged. The remaining differences
-are three DWORD homes/16 displacement sites and one MOV-to-LEA receiver address
-producer, with position-adjusted branches/calls. No new source model or source,
-compiler, provider, runtime, relink or full replay follows. Do not use this
-explanatory correspondence as exact acceptance or retry declaration permutations.
+its digest changes while the reviewed1316/1315/418 result remains nonexact.
+The subsequent [particle iterator scope](../research/exact/EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
+restores the score flag at EBP-8 and improves the current result to416 differences.
+All prior producer inputs still agree, so its object is reused without a new
+VC4 compilation. Seven complete comparisons preserve five exacts/1,572 bytes;
+all380 exact results and94 other candidates stay unchanged. A final108-case
+native selection passes with the existing typed board-surface backing; initial
+unadapted fixture crashes and a private cleanup error remain retained. The
+restored-CRT link reuses116 objects/19 members; all1,091 addresses stay fixed,
+with only nine frame displacements and twelve timestamp bytes changed. Counter/
+pan homes and one receiver producer remain open. No new exact, game or full replay.
 
 The [current original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
 has ended with actual observer exit 1 and `fail`: the 14,400-second observation
@@ -108,7 +115,7 @@ receipts support each correction; every other field and raw line is unchanged.
 Source, status, extent, ABI, acceptance and counts do not change. The applied
 receipt is `.analysis/tracking-note-reconciliation-20261017/applied.json`.
 The refreshed read-only coverage audit is
-`.analysis/brick-hit-binding-repair-20261017/authored-coverage.json`: all 270
+`.analysis/brick-hit-scope-adoption-20261017/authored-coverage.json`: all 270
 classified authored entries have current source and complete receipts across
 29 compiler closures, with 236 exact and 34 candidates. No compiler or replay runs.
 Earlier coverage audits remain sealed under their historical phases.

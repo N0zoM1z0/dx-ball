@@ -90,7 +90,7 @@ bonus-phase 113. The >=95% complete-source goal remains active and unachieved.
 
 ## Complete hit correspondence and internal binding repair, October 17
 
-The current complete hit comparison remains **1,316 current / 1,315 original
+The pre-adoption complete hit comparison has **1,316 current / 1,315 original
 bytes, 418 differing positions**, with no new exact or semantic acceptance.
 A read-only review of the retained REA dossier and current COFF object accounts
 for all 362 instructions, 1,244 original / 1,245 current code bytes, 26 direct
@@ -102,6 +102,9 @@ is unchanged. Three consumed DWORD values have different homes:
 | Particle-loop counter | -4 | -8 |
 | Score-hit flag | -8 | -12 |
 | Sound pan | -12 | -4 |
+
+The following scope adoption supersedes these current-home and difference
+figures. This review's original instruction evidence remains unchanged.
 
 The compiler selector remains at -16. Sixteen displacement bytes differ across
 these three values. The only instruction form with a different length is the
@@ -148,3 +151,45 @@ assertion failures are preserved: one guessed relocation count, followed by the
 raw-table equality check that exposed the wrong targets. A transient script
 syntax error is retained separately. The applied repair and current authored
 coverage audit are in `.analysis/brick-hit-binding-repair-20261017/`.
+
+## Particle iterator scope adoption
+
+The particle counter now belongs to case7 and its two existing loops. No other
+branch uses it. Its declaration leaves the root scope; types, names, executable
+expressions, call order and the sixteen-byte frame stay unchanged. This restores
+all three score-flag accesses to original EBP-8. The counter moves from-8 to-12
+but still differs from original-4; pan stays at-4 rather than original-12.
+Original source scope remains unknown.
+
+The earlier private emission is reused after checking every current source/header
+input, compiler recipe and object identity. Nine actual displacement bytes swap
+the two DWORD homes; all other code bytes and six companion bodies are identical.
+Five generated switch-label names are reconciled by actual owner/value/type,
+keeping every target, including the two repaired cases above. Seven complete
+comparisons preserve five exact companions/1,572 bytes and improve the hit
+candidate from418 to416 differences across1,316/1,315 bytes. No new VC4 source
+compilation, exact or semantic acceptance follows. All380 exact comparison
+results and94 other candidates stay unchanged; five exact input closures and
+235 historical semantic input inventories refresh without replaying them.
+
+The final native check passes108 existing tile2/7/8 matrix cases, retaining their
+original random-board positions. Full returns,400 board bytes, scalar/surface
+state, RNG cursor, ordered events and lists compare. Initial unadapted runs
+segfault: standalone `GameNative` leaves logical surface0x500000 as a native COM
+pointer. A direct call to the unchanged board-drawing body reproduces this in
+GDB without entering the changed hit function. The scoped driver reuses the
+existing isolated-board COM backing block unchanged; game bodies and tracked
+fixtures stay intact. A private cleanup-method error and all failure records
+remain preserved. Only the final108-case result is a passing execution claim.
+
+The native build compiles one owner and links. The restored-CRT link reuses all
+116 source objects and the same19 approved members. All1,091 map addresses stay
+fixed; the complete image differs only at the nine proved displacements and
+twelve bytes in parsed timestamp fields. The new image is
+`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
+No game or full replay runs; preceding live observations retain their recorded
+image identities. Private `.analysis/brick-hit-scope-adoption-20261017/` retains
+source reversal, retained-producer equivalence, comparisons, failures, final
+cases and image verification. Totals remain475 source /380 exact /95 candidates.
+The native product is retained in a byte-verified gzip carrier before removing
+three fresh identical disposable fixture copies; crash diagnostics remain intact.

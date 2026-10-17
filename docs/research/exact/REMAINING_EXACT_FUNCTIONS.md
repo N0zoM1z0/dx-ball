@@ -91,15 +91,16 @@ all 270 classified authored entries across 29 matching-build recipes: 236 exact
 and 34 complete candidates. It reuses existing comparisons without replaying.
 This coverage audit does not establish source optimality, semantic equivalence
 or the final authored denominator. Its retained rows and compiler closures are
-`.analysis/brick-hit-binding-repair-20261017/authored-coverage.json`.
-This read-only refresh follows thirteen notes-only ledger corrections and two
-instruction-backed brick-hit internal target repairs; source, status, extents,
-ABI, acceptance and all comparison counts stay
-unchanged. The earlier coverage receipt remains preserved in its original phase.
+`.analysis/brick-hit-scope-adoption-20261017/authored-coverage.json`.
+This read-only refresh follows the particle-counter scope adoption and includes
+its current416-difference comparison and retained-producer closure. Status,
+extents, ABI, acceptance and function counts stay unchanged. Earlier coverage
+receipts remain preserved in their original phases.
 
 All 34 authored candidates were compared across their complete original
 extents on October 13. The bank loader's [allocation scope](BANK_ALLOCATION_SCOPE.md)
-updates its complete comparison on October 17; the other results are unchanged.
+updates its complete comparison on October 17; subsequent source updates are
+described below.
 The [rotation address recovery](ROTATION_PIXEL_ADDRESS.md) changes eight bytes
 to restore integer-offset-before-base evaluation at both pixel writes; its
 complete raw difference count remains1466 and all five companions are unchanged.
@@ -114,8 +115,11 @@ maintained 638/632/260 comparison remains unchanged and nonexact.
 The [complete brick-hit review](EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
 accounts for all362 instructions and71 switch bytes, repairing two wrong internal
 comparison targets from actual COFF definitions. The complete relocated digest
-changes while1316/1315/418 and all acceptance counts stay unchanged. Three DWORD
-homes and one receiver address producer remain; no new source or compiler trial.
+changes while its pre-adoption1316/1315/418 result stays nonexact. The subsequent
+[particle scope adoption](EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
+reuses the unchanged prior producer closure and restores the score-flag home,
+improving the current comparison to1316/1315/416. Counter/pan homes and one
+receiver address producer remain; no new VC4 source compilation or exact gain.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -147,7 +151,7 @@ homes and one receiver address producer remain; no new source or compiler trial.
 | `draw-effect-sprite` | 361 | 365 | 330 |
 | `draw-high-scores` | 404 | 403 | 330 |
 | `blt-effect-sprite` | 362 | 366 | 332 |
-| `hit-board-tile` | 1315 | 1316 | 418 |
+| `hit-board-tile` | 1315 | 1316 | 416 |
 | `redraw-intro` | 587 | 578 | 560 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 990 |

@@ -710,6 +710,12 @@ source, matching objects and build products remain.
 
 ## PCX, brick-hit and processor controls after handoff
 
+The later [brick-hit scope adoption](EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
+uses the complete frame-role proof and unchanged retained producer inputs to
+adopt that one scope without repeating the compiler trial. It restores the
+score-flag home, remains nonexact and leaves the PCX/processor controls closed.
+The table below records their earlier unselected checkpoint.
+
 Five completed private compilations compare 67 complete owner units against
 the current target, including every relocation, literal and attached metadata.
 The PCX API record groups the adjacent descriptor, queried width and Lock result;

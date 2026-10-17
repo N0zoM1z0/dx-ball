@@ -125,7 +125,7 @@ DxBallInt dxball_screen_pan(DxBallInt x)
 
 DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)
 {
-    DxBallInt i, score_hit, pan;
+    DxBallInt score_hit, pan;
     score_hit = 1;
     pan = dxball_screen_pan(x * 30 + 20);
     switch ((signed char)dxball_board_tiles[x + y * 20]) {
@@ -161,7 +161,8 @@ DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)
         dxball_stop_sound(1);
         dxball_play_sound(1, 0, pan, 0);
         break;
-    case 7:
+    case 7: {
+        DxBallInt i;
         dxball_spawn_brick_effect(x, y, dxball_board_tiles[x + y * 20], 1);
         dxball_board_tiles[x + y * 20] = 6;
         if (dxball_destroy_hard_tiles != 0) {
@@ -185,6 +186,7 @@ DxBallInt dxball_hit_board_tile(DxBallInt x, DxBallInt y)
             }
         }
         break;
+    }
     case 8:
         dxball_explosion_pending = 1;
         dxball_append_explosion(&dxball_explosions);
