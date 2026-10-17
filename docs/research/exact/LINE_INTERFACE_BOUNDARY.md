@@ -26,3 +26,9 @@ The initial public prototype used the resource typedef before its declaration.
 Using the existing `struct DxBallDDSurface` forward declaration fixes that
 dependency; the final five-owner family compiles once. Private receipts are in
 `.analysis/line-interface-20261012/`.
+
+The later [drawing-primitive owner](DRAWING_PRIMITIVES_OWNER.md) moves line and
+fill into one C++ implementation while retaining the public C API. Their full
+445/9 and85/0 comparisons stay unchanged; one residual palette guard recovers
+three bytes. The new complete owner, final products and562 focused cases are
+verified together. The original owner boundary remains inferred.

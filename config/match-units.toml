@@ -3157,12 +3157,11 @@ relocations = [
 [units.copy-text-word]
 build = "ui"
 symbol = "_dxball_copy_text_word"
-target_address = 0x403290
-size = 0x8f
+target_address = 0x00403290
+size = 143
 boundary_evidence = "docs/research/exact/EXACT_PROJECTIONS_TEXT.md; docs/research/exact/EXACT_EARLY_HELPERS.md"
 relocations = [
 ]
-
 
 [units.release-sprite-bank]
 build = "resources"
@@ -3370,7 +3369,7 @@ relocations = [
 symbol = "_dxball_draw_text"
 build = "ui"
 size = 150
-target_address = 0x404ee0
+target_address = 0x00404EE0
 boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 68, type = "REL32", symbol = "_dxball_draw_glyph", addend = 0, target = 0x00404CF0 },
@@ -3383,7 +3382,7 @@ relocations = [
 symbol = "_dxball_draw_centered_text"
 build = "ui"
 size = 73
-target_address = 0x404f80
+target_address = 0x00404F80
 boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 18, type = "REL32", symbol = "_dxball_measure_text", addend = 0, target = 0x00404FD0 },
@@ -3394,7 +3393,7 @@ relocations = [
 symbol = "_dxball_set_palette_rgb"
 build = "ui"
 size = 108
-target_address = 0x40ab20
+target_address = 0x0040AB20
 boundary_evidence = "docs/research/exact/EXACT_EXITS.md"
 relocations = [
   { offset = 8, type = "DIR32", symbol = "_dxball_cursor_warp_disabled", addend = 0, target = 0x00422898 },
@@ -3448,9 +3447,9 @@ inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "s
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.fill-rect]
-build = "ui"
+build = "drawing_primitives"
 symbol = "_dxball_fill_rect"
-target_address = 0x403230
+target_address = 0x00403230
 size = 85
 boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
@@ -3459,7 +3458,7 @@ relocations = [
 [units.rotate-rgb-colors]
 build = "ui"
 symbol = "_dxball_rotate_rgb_colors"
-target_address = 0x40aa60
+target_address = 0x0040AA60
 size = 188
 boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md; docs/research/exact/EXACT_RGB_ROTATION_RECORD.md; ev_d69a03478a3300403b907eadb1d092d72ea91325ee9a2d51042a1105207b5bb3"
 relocations = [
@@ -3470,7 +3469,7 @@ relocations = [
 [candidates.rotate-palette-right]
 build = "ui"
 symbol = "_dxball_rotate_palette_right"
-target_address = 0x40a880
+target_address = 0x0040A880
 size = 234
 boundary_evidence = "docs/research/exact/EXACT_BANK_LOOPS.md"
 relocations = [
@@ -8946,7 +8945,7 @@ relocations = [
 ]
 
 [candidates.draw-line]
-build = "ui"
+build = "drawing_primitives"
 symbol = "_dxball_draw_line"
 target_address = 0x00403070
 size = 445
@@ -11204,3 +11203,9 @@ boundary_evidence = "docs/research/exact/RUNTIME_CPP_MEMBER_CALL.md"
 relocations = [
   { offset = 16, type = "REL32", symbol = "_dxball_crt_memcpy", addend = 0, target = 0x00416610 },
 ]
+
+[builds.drawing_primitives]
+source = "src/drawing_primitives.cpp"
+object = "build/exact/drawing_primitives.obj"
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "src/device.h", "src/display.h", "src/drawing_primitives.cpp", "src/explosion_types.h", "src/gameplay.h", "src/resources.h", "src/runtime.h", "src/state_types.h", "src/ui.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]

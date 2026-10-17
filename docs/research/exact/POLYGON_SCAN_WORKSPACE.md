@@ -145,3 +145,12 @@ verified. Its sealed review retains the supplied error; a separate
 The redundant raw download is deleted. No compiler, provider, runtime,
 source or comparison change follows; do not turn this negative search into an
 attribution or a declaration variant.
+
+A later passive review checks all30 edge-field instructions in each complete
+controller against the original bytes. Only DWORD offsets0/4/8/16/20/24 are used;
+12–15 remain untouched. No domain callee receives an edge record: span receives
+pixels and scalar endpoints, memmove receives pointer-array entries, and free
+receives pool bases. Thus no outside field producer is exposed by this pair.
+An unused historical field is possible, but its type/name remain unknown. Sealed
+`.analysis/polygon-edge-field-access-20261018/` retains sites, primary Evidence
+IDs, carrier hashes and independent verification without new provider work.

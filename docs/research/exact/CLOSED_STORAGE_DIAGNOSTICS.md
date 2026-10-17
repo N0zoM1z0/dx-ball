@@ -1,5 +1,24 @@
 # Closed drawing and SDK storage diagnostics
 
+## Drawing primitive owner, October18
+
+The [distinct two-function primitive family](DRAWING_PRIMITIVES_OWNER.md) is
+adopted together: line/fill retain their complete identities, while residual
+right-palette restores three original guard bytes with no loss,234/9→234/6.
+All nine complete functions/38 bindings and six exacts are checked, with eight
+unchanged code identities. Original owner boundaries remain inferred. Final
+canonical, Native/MinGW,562 existing calls and full VC4 linked proofs pass.
+No exact count gain or source-order/header/name/flag variant follows.
+
+## Complete PCX disk header, October18
+
+One [fixed external128-byte header model](EXACT_PCX_PACKET_LOOP.md#complete-external-header-control-october18)
+keeps the decoder and signed maxima unchanged. Its single current resource
+compile preserves all18 complete identities/262 bindings/six literals, including
+13 exacts/3,050 bytes. Reject it as an exact-recovery improvement. Same-sized
+format fields do not explain the frame gap; do not extend into field/type/name
+variants. Canonical resource inputs and products stay unchanged.
+
 ## Clock implementation owner, October18
 
 The [three-function clock owner](EXACT_WINMM_CLOCK_IMPORT.md#closed-clock-implementation-owner-october18)

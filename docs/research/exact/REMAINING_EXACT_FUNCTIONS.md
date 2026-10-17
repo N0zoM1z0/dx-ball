@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after the fixed resource drawing-wrapper owner.
+Updated October 18, 2026, after the drawing-primitive owner partial recovery.
 Accepted totals are **394 functions / 84,872 code bytes / 244 metadata bytes**.
 There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.
 
@@ -87,6 +87,12 @@ restores y-offset191, keyed draw105 and stretch139, explicitly demoting ordinary
 draw and blt. Net+1 exact/+135 bytes. Load-bank improves to1475/66; PCX is979/851.
 All23 full functions and their constants/bindings are compared together;16 code
 identities survive. Current classified authored coverage is249 exact/21 candidates.
+
+The [drawing-primitive owner](DRAWING_PRIMITIVES_OWNER.md) moves line/fill together
+and restores three original right-palette guard bytes,234/9→234/6, with no lost
+matching byte. Eight complete companions and all six affected exacts survive.
+Existing562 focused calls pass. Classified authored coverage remains249 exact/
+21 candidates, now across30 compiler closures; there is no new exact claim.
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -177,7 +183,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `wait-frames` | 170 | 170 | 8 |
 | `animate-palette` | 234 | 234 | 9 |
 | `draw-line` | 445 | 445 | 9 |
-| `rotate-palette-right` | 234 | 234 | 9 |
+| `rotate-palette-right` | 234 | 234 | 6 |
 | `reset-round` | 426 | 426 | 20 |
 | `load-sprite-bank` | 1475 | 1475 | 66 |
 | `draw-paddle` | 677 | 677 | 68 |

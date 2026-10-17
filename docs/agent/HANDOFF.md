@@ -32,7 +32,7 @@ receipts remain in place; old checkpoint totals are not current totals.
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-249 exact and 21 candidates across 29 compiler closures. The source-present
+249 exact and 21 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -46,7 +46,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 394 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 81 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/rotation-backend-ranks-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/drawing-primitives-owner-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,13 +61,34 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`c8f4db718c15c9ee9b2cedfdc2287b3553cb16ed84dad439b662a614659415c5`.
-Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
+`068d2e8bc904e8433d0fa9260ebc374cd9e3349947752ab0266bacb582fd3123`.
+Its recipe is `vc40-restored-crt`: 117 source objects from 114 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest [resource drawing-wrapper owner](../research/exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
+The latest [drawing-primitive owner](../research/exact/DRAWING_PRIMITIVES_OWNER.md)
+moves the adjacent line/fill pair to one C++ implementation with full unchanged
+public headers. Line445/9 and fill85exact retain their complete identities;
+right-palette234/9→234/6 restores three original guard bytes without losing a
+matching byte. All nine functions/38 bindings compare; eight identities and six
+exacts survive. The original owner boundary remains inferred. Final canonical
+compiles attest comments moved with the functions. Native/MinGW each compile
+only two files using valid caches;562 existing line/fill/right-palette cases pass.
+All249 semantic input inventories refresh without changing historical scopes
+or cases. The linked image reuses117 objects/19 CRT members, with no new compile.
+Five functions move; full old/new bodies, nine incoming fields,20 replaced loader
+RVAs and all1,064 changed PE bytes are checked. All other PE bytes, resources and
+six OS DLL imports remain unchanged. No provider, full replay or new game runs.
+`.analysis/drawing-primitives-owner-20261018/` retains final producers, independent
+reviews, affected checks and full linked verification. Current totals stay394
+exacts/21 authored candidates across30 verified compiler closures.
+Archive/member-hash verification precedes deletion of43 closed input/product
+copies, including six objects and four superseded history files, releasing
+7,647,232 allocated bytes net of archive/journal costs. Current tested products
+and valid incremental caches remain; final tracking passes553/475/394.
+
+The preceding [resource drawing-wrapper owner](../research/exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
 moves only the unchanged40-byte argument adapter to resources, with the complete
 rotation header under C linkage. Both owners are accepted together: y-offset191,
 keyed draw105 and stretch139 become exact; ordinary draw107/94 and blt199/173 are
@@ -220,6 +241,17 @@ four-byte slot at offset12. Do not describe the old search premise as complete.
 This bounded negative result supplies no new original declaration. The capped
 standard cleanup preview finds zero further registered disposable products;
 the build tree remains about62 MiB with useful caches and current products.
+
+The later [complete PCX disk-header control](../research/exact/EXACT_PCX_PACKET_LOOP.md#complete-external-header-control-october18)
+tests one independently documented128-byte record without changing decoder
+tokens or signed maxima. One current resource compile leaves all18 full bodies/
+262 bindings/six literals unchanged. Reject it without variants; original
+declarations and the frame gap stay unresolved. Its11 raw inputs/products are
+archived/member-verified then removed, releasing72 KiB net. A separate passive
+[edge-consumer review](../research/exact/POLYGON_SCAN_WORKSPACE.md#bounded-source-identity-search-october18)
+confirms30 actual accesses per polygon, with+12..15 untouched and no external
+domain consumer of the records. Both investigations retain sealed evidence;
+neither adds a function, exact claim, provider query or runtime case.
 
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to

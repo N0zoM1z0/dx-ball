@@ -95,3 +95,30 @@ not a measured device-free-space delta. Current/public files retain independent
 inodes; unique Evidence, current products and complete before inputs remain.
 Cleanup is confined to this new seal. No broad archive scan or additional
 provider, compiler or case replay is performed.
+
+## Complete external header control, October18
+
+The128 byte writes through the header pointer establish a genuine complete
+disk object. One fixed model replaces `prefix[8]`/`remainder[116]` with the full
+PCX field layout documented by the preserved
+[ZSoft Revision5 manual](https://www.neperos.com/article/rntibjd550e697a4)
+and the contemporaneous [Ian Ashdown article](https://jacobfilipp.com/DrDobbs/articles/CUJ/1991/9108/ashdown/ashdown.htm).
+It retains128 bytes, signed-short maxima at8/10 and every decoder token. Fields
+include the format bytes, image window, DPI,48-byte palette, plane information,
+scanline size, screen dimensions and the real54-byte reserved disk tail. No
+packing, extra frame word, initialization or general decoder fix is introduced.
+Unconsumed word signedness and names remain inferred, not recovered from DX-Ball.
+
+One serial resource compile compares all18 functions/262 actual bindings/six
+complete literals. Every full code identity remains unchanged;13 exacts retain
+3,050 bytes, PCX stays979/851 and bank1475/66. Independent review confirms the
+fixed layout, complete source reversal, actual bindings and literal contents.
+Close this model without adoption or variants. A fuller external-format
+declaration alone neither establishes original source nor resolves the frame gap.
+
+Private `.analysis/pcx-full-header-contract-20261018/` retains compressed primary
+document carriers and sealed comparison/review receipts. Eleven raw inputs and
+products, including two objects, are archived/member-hash verified before
+removal, releasing72 KiB net. Scope peak173,301,760 bytes with zero high/max/OOM
+events under the required caps. No native build, runtime case, relink, provider,
+game or full replay follows this rejected model.

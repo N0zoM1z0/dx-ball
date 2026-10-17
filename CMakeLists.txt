@@ -42,6 +42,7 @@ add_library(dxball_core SHARED
     src/platform_host.c
     src/startup.c
     src/ui.c
+    src/drawing_primitives.cpp
     src/intro.cpp
     src/gameover.c
     src/editor.c

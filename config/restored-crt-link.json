@@ -96,6 +96,7 @@
     "game:src/platform_host.c",
     "startup",
     "ui",
+    "drawing_primitives",
     "intro",
     "gameover",
     "editor",
@@ -162,7 +163,7 @@
     "member:000ea00c",
     "member:000eb086"
   ],
-  "source_objects": 113,
+  "source_objects": 114,
   "integration_objects": 3,
   "sdk_libraries": [
     "kernel32.lib",
