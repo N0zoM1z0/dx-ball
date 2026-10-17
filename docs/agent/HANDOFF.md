@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, at the running current-image original50 prefix checkpoint.
+Updated October 17, 2026, after sealing the current-image original50 deadline failure.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -11,36 +11,38 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
-One [current original50 producer](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
-is running at this checkpoint, with all fifteen initial readiness/layout checks
-for boards 0 through 14 verified and the first fourteen unchanged originals traversed.
-Saved events contain all 6000 initial bytes; thirteen boards also have retained
-ready complete witnesses. This is prefix evidence, not a full pass.
-**Do not launch a duplicate campaign or compiler/provider session.**
-The producer owns compiler-session.lock. Client exec session 47586 and private
-`.analysis/restored-crt-original50-20261017/tool-session.json` identify it; poll
-that handle and check saved PID/start-tick identities with `status.py`. Files
-alone are not liveness proof. It reuses all products/reader and targets all 50
-initial slots plus terminal 50 / menu 0, with 14400 seconds total deadline. CPU stays
-35% on one CPU, memory high 640 / max 768 MiB; the host quota period changes 100→10ms
-at about 804 seconds without target clock/code/input changes. Frozen inputs,
-resource records and the sealed 6000-byte prefix remain private; the earlier
-1200-/2000-/4000-byte snapshots are retained separately. `prefix-checkpoint-15/verification.json`
-checks all frozen inputs/products and 49 originals, with three live kernel
-identities before/after capture. Recorded resource windows measure about 35% of
-one CPU: 238 MiB current memory initially, 224 MiB in the later window and the
-same 252 MiB observed peak, with no memory-limit/OOM events.
-Preserve actual terminal output when it arrives; do not infer completion or restart on a stale
-or temporarily unavailable progress read. All 34 authored candidates stay open.
+The [current original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
+has ended with actual observer exit 1 and `fail`: the 14,400-second observation
+deadline expired. All twenty initial original layouts for indices 0 through 19
+were verified; the final retained events include all 8,000 initial bytes. The last
+sample is gameplay on index 19, with 15 bricks, score 52,538 and three lives,
+application active and unpaused. This is not a full50 pass, a sampled crash or a
+normal application-exit check. The observer stops its groups during cleanup.
+All three saved PID/start-tick identities are absent; exec session 47586 is closed.
+Do not poll/restart the historical producer or repeat its unchanged full campaign.
+Return to focused authored source recovery; all 34 authored candidates stay open.
 
-A note-only draft identifies thirteen exact rows with superseded nonexact or
-semantic-only clauses. Current complete exact receipts support every correction;
-all other fields and raw lines are preserved. It is prepared, not applied:
-`.analysis/tracking-note-reconciliation-20261017/pending-notes.json`. Apply only
-after the original50 phase's final frozen-input verification and sealing have
-finished, including `verify-final.py` if the campaign passes. The canonical CSV
-must remain unchanged until then. Source, status, extent, ABI and acceptance
-are unaffected by this pending cleanup.
+Private `.analysis/restored-crt-original50-20261017/verification.json` seals the
+actual failure, 611,084 valid SDK samples/no malformed lines and 1,473 retained
+events. It verifies all 237 frozen inputs, 12 artifacts, 116 source objects,
+19 approved CRT members, 49 originals and the archived input bytes before any
+ledger edit. The final private observation is compressed with byte equality;
+49 verified disposable runtime copies are removed after preserving deltas.
+The public failure reports and historical 3/5/10/15/20-board prefix snapshots
+remain intact. CPU stays capped at 35% of one CPU, memory high 640 / max 768 MiB;
+measured windows remain about 35%, with last observed peak 252 MiB and no memory
+limit/OOM events. The final cgroup is gone, so no final lifetime peak is claimed.
+
+Thirteen exact-row notes now remove superseded nonexact or semantic-only clauses,
+after the campaign's frozen-input checks and failure seal. Current complete exact
+receipts support each correction; every other field and raw line is unchanged.
+Source, status, extent, ABI, acceptance and counts do not change. The applied
+receipt is `.analysis/tracking-note-reconciliation-20261017/applied.json`.
+The refreshed read-only coverage audit is
+`.analysis/authored-coverage-after-notes-20261017/authored-coverage.json`: all 270
+classified authored entries have current source and complete receipts across
+29 compiler closures, with 236 exact and 34 candidates. No compiler or replay runs.
+The earlier coverage audit remains sealed under its historical phase.
 
 The [live softening review](../research/ORIGINAL_CAMPAIGN.md#live-board-softening-consistency)
 reconciles a counter increase from 41 to 64 on board index 16: 24 hard tiles

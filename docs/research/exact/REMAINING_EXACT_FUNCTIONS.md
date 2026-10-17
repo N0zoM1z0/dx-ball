@@ -85,7 +85,10 @@ all 270 classified authored entries across 29 matching-build recipes: 236 exact
 and 34 complete candidates. It reuses existing comparisons without replaying.
 This coverage audit does not establish source optimality, semantic equivalence
 or the final authored denominator. Its retained rows and compiler closures are
-`.analysis/campaign-interruption-20261017/authored-coverage.json`.
+`.analysis/authored-coverage-after-notes-20261017/authored-coverage.json`.
+This read-only refresh follows thirteen notes-only corrections in the function
+ledger; source, status, extents, ABI, acceptance and all comparison counts stay
+unchanged. The earlier coverage receipt remains preserved in its original phase.
 
 All 34 authored candidates were compared across their complete original
 extents on October 13. The bank loader's [allocation scope](BANK_ALLOCATION_SCOPE.md)

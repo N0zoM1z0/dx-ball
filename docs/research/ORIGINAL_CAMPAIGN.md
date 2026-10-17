@@ -2,19 +2,23 @@
 
 ## Current restored-CRT original-bank prefix, October 17
 
-One full original-50 attempt uses current image `345a6887…` from source baseline
-`41fe125`. The latest saved checkpoint verifies all fifteen live initial readiness
-and layout checks for boards 0 through 14, with progression through the first fourteen
-unchanged original boards. Saved periodic events contain all fifteen complete
-400-byte layouts (6,000 bytes), thirteen with matching ready gameplay fields.
-Indices 7 and 8 retain complete byte witnesses without ready flags; the unchanged
-live observer itself requires two ready complete samples before printing each
-initialization marker. The earlier three-, five- and ten-board checkpoints remain
-retained separately.
-The entire 20,000-byte bank, all 49 immutable originals, current inputs and game
-products remain unchanged. This is verified prefix evidence, not a full campaign
-pass. The producer is still running at the checkpoint; no terminal receipt is
-inferred from its progress file.
+The current-image attempt has ended with **observer exit 1 / status `fail`**.
+Its 14,400-second observation deadline expired after 14,374.43 seconds of gameplay.
+It reused image `345a6887…` from source baseline `41fe125`; no game/compiler input
+changed during the run. All twenty initial readiness/layout checks for indices
+0 through 19 passed. The final retained events contain all twenty complete
+400-byte initial layouts (8,000 bytes); earlier prefix snapshots remain historical.
+The last sampled state is board index 19 (the twentieth board), 15 bricks,
+score 52,538, three lives, application active and unpaused. This is not evidence
+of a game crash or a full campaign pass. The observer stops its process groups
+in cleanup, so this is not a normal application-exit check.
+
+The profile report retains 611,084 valid SDK samples, zero malformed samples,
+607,511 processed latest samples and 1,473 bounded events. The summary reports
+failure; its observations list is empty because observation raised before append.
+The separate profile report retains the partial result. All three saved
+PID/start-tick identities are absent and exec session 47586 is closed. Do not
+restart this unchanged campaign or infer completion from its prefix checkpoints.
 
 The unchanged goal requires all 50 initial slots, then terminal index 50 in menu
 mode 0 with cleared end/reset/menu requests. Only `vc40-restored-crt` runs, with
@@ -41,14 +45,17 @@ the game, 1.5% for the reader itself and 5.4% for the shared Wine server, all as
 fractions of one CPU. These measure CPU time, not game frame rate or causal
 reader overhead. No observer or game-code change follows these measurements.
 
-Private `.analysis/restored-crt-original50-20261017/` retains frozen inputs,
-launch/observed kernel identities, live resource samples, the quota-period change
-and sealed three-, five-, ten- and fifteen-board prefix snapshots. The latest is
-`prefix-checkpoint-15/verification.json`; it checks all frozen inputs/products
-and all 49 originals again, with all three PID/start-tick identities live before
-and after capture. Its `tool-session.json` and `status.py` support
-checking the same producer; a saved snapshot alone does not establish liveness.
-Final original50 completion remains unproved at this checkpoint.
+Private `.analysis/restored-crt-original50-20261017/verification.json` seals the
+actual deadline failure. It checks all 237 frozen inputs, 12 artifacts, 116 source
+objects, 19 CRT members and 49 immutable originals, plus every frozen archive
+member, before subsequent ledger edits. The final private profile report is
+compressed with byte equality; 49 disposable runtime copies are removed after
+preserving differing files. Public failure reports stay intact. Saved 3/5/10/15/20
+prefix checkpoints remain immutable records of their respective running captures;
+they do not turn the terminal failure into a pass. The last observed memory peak
+is 252 MiB; the final cgroup is gone, so final lifetime peak accounting is unavailable.
+No unchanged full campaign is restarted. Full original50 completion for this
+image remains unproved; authored source exactness is the next priority.
 
 ### Live board-softening consistency
 
@@ -65,7 +72,7 @@ nonempty, non-type-2 cell counts. Kind-2 collection calls
 `dxball_soften_special_bricks`, whose complete 397-byte exact comparison and
 current source/object identities remain unchanged.
 
-This is current-image integration evidence from the same ongoing producer.
+This is current-image integration evidence from the same attempt before its deadline.
 Sequential SDK snapshots leave frame-level invocation and causal timing
 unobserved; the helper also has a wall-bounce trigger. Exact/semantic acceptance
 and full-campaign status remain unchanged. No additional game, compiler,
