@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after the current-image bounded entry/exit check and storage cleanup.
+Updated October 17, 2026, after the declared game-prefix direct-transfer review.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -85,6 +85,17 @@ body-excluded table addresses, four registered handlers and one unused switch
 slot. All40 handler bytes match their actual compiled C++ parents. No additional
 independent entry or origin update follows; relative/computed targets remain
 open. The24-row retired-fragment ledger and current image stay unchanged.
+The subsequent [direct-transfer review](../research/exact/CRT_SUFFIX_OWNERSHIP.md#direct-transfers-in-the-declared-game-prefix)
+accounts for all289 declared prefix spans,23,469 instruction sites and3,719
+direct transfers, including body-excluded parent blocks. Every represented
+direct destination is a known entry or same-parent instruction. Sixteen tables
+contain191 address words/492 selector bytes;142 other indirect sites use known
+import cells and177 register-relative calls retain unresolved runtime values.
+No new independent entry, source or exact acceptance follows. Outside-prefix
+sources, alternate code and dynamic destinations remain open; final authorship
+and source optimality are unproved. Reuse this sealed walk rather than repeating
+it. Only eight missing REA assembly facets run, with281 records reused; no
+compiler, game, relink or full replay. Verified cleanup releases about19.09 MiB.
 
 The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
 accounts for all362 instructions and71 switch bytes. It finds and repairs two

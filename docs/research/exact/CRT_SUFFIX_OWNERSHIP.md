@@ -178,3 +178,50 @@ Header Evidence is `ev_bf17f7be59c5dfb453a8ba6c17f10a47eae91d94a1d7863d6c565b8fe
 relocation Evidence is `ev_c53664744e198041fb44d9e5b75e547c264526576edaf212311da5dd2b276968`.
 Both are archived in run `2026-10-17T04-51-12.726Z-requests-2428519`; the session
 closes normally. Reuse this result for the unchanged original directory.
+
+## Direct transfers in the declared game prefix
+
+The next review accounts for the complete declared spans of all289 prefix
+entries:270 authored,18 compiler-generated and the existing unknown no-op.
+It reuses281 REA assembly records and queries only eight missing assembly
+facets with6.5. Raw instruction lengths and immediate destinations are checked
+against the verified original; this is not a source recompilation or exact replay.
+
+The spans contain23,469 instruction sites /84,151 instruction bytes and1,256
+embedded data bytes. Together with the previously verified2,145 CC alignment
+bytes, they cover the87,552-byte prefix `0x401000..0x4165FF`. Data is kept out
+of instruction decoding. The1,925 bytes omitted from the selected Ghidra bodies
+are350 bytes of E9 sequences, one15-byte zero-store/jump block,304 bytes of
+known C++ parent tails and the1,256 embedded bytes. The parent tails comprise
+the24 retired fragment rows, four registered handlers and the existing19-byte
+conditional return cleanup; they add no independent definitions.
+
+All3,719 direct transfers resolve:1,253 to catalogued entries and2,466 to
+instructions within the same complete parent span. This includes34 transfers
+to previously body-excluded cleanup/epilogue blocks. No unclassified direct
+target or additional independent entry is indicated by this set. The16 declared
+switch tables contain191 original address words and492 selector bytes; every
+word points to a known same-parent instruction and every selector value fits
+its declared table. This does not prove runtime index bounds. Of335 originally
+indirect transfer sites,16 are these table jumps and142 use declared import
+cells. The remaining177 calls use register-relative memory operands; their
+actual runtime destinations are not established here.
+
+Neither direct transfers nor these table words target40CC20. Its authorship
+remains unknown. Targets originating outside this prefix, dynamic call values,
+alternate/overlapping code and runtime-only entries remain outside the claim.
+The final authored denominator, source optimality and the34 nonexact authored
+functions stay open. Do not repeat this walk for the unchanged original prefix.
+
+Private `.analysis/game-prefix-direct-flow-20261017/` retains compressed
+projections, all selected Evidence identities, original bytes, protected input
+digests and verification. New records are in REA run
+`2026-10-17T05-31-39.105Z-requests-2553246`; for example, the0x403E50 assembly
+is Evidence `ev_f9ac2b28893c4acc5a9e0bfdcbbacfff1aea2f05b5d1723c34053ca633f5d6fa`.
+The session closes with exit0 and58 cumulative Evidence records. Sampled peak
+is640.5 MiB under the35% CPU /640 MiB high /768 MiB maximum scope, with
+high-water reclaim and no sampled hard-limit/OOM event. Verified compression,
+immutable sharing and redundant-alias removal release about19.09 MiB. All116
+current source objects,19 approved CRT members and full compiler inputs verify;
+source, ledgers, reports and current game image stay unchanged. No compiler,
+game, relink or full replay runs.
