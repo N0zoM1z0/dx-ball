@@ -194,6 +194,51 @@ reset across named-record and body-temporary stages. Existing backend run
 writes/non401551 callers. Do not re-query the complete helper or infer scratch
 allocation solely from renderer344+80/current360+64 or PCX312/308 frame sizes.
 
+The [cursor/reset investigation](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md#cursor-resets-and-later-home-reassignment-october18)
+then closes 26 new direct records/112 total using the same C2 profile. Eight raw
+carriers/2,442 bytes match pinned C2. Five reported direct cursor writers include
+two resets. Beyond initial named allocation, actual callers allocate internal
+kind`0x18` records and later special/sequential/grouped homes. `41EE56` can reset
+the cursor and rewrite record`+4`; `4304F8` can share a group base or store
+`group_base + group_size - record_size`. These mechanisms invalidate assuming
+initial homes are always final; current renderer branch, liveness semantics and
+original storage remain unknown. This motivates one unchanged rotation observation
+before drawing a source model. The provider is closed and owned temporary tree
+removed. Private `.analysis/backend-frame-cursor-20261018/` is sealed and
+independently reviewed; catalog sharing releases 8,683,520 allocated bytes net.
+Sampled peak 672,075,776 bytes includes soft reclaim, with zero hard/OOM events.
+No game compile/replay, source or exact/delivery changes in this static phase.
+
+The accompanying passive frame review confirms no unassigned renderer byte and
+disproves universal 8-byte alignment using original doubles 20 bytes apart, while
+leaving phase-specific allocation alignment open. PCX's original 128-byte header
+occupies−192..−65; the four-byte gap−64..−61 has no established typed consumer.
+Three new public-source queries for short screen-size fields/filler58 yield no
+qualifying original declaration. Private
+`.analysis/pcx-extra-screen-fields-source-search-20261018/` retains this bounded
+negative with verified compressed responses; it does not justify a 132-byte
+header or another declaration trial.
+
+The following [actual rotation allocation observation](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md#observed-rotation-allocations-october18)
+completes that single unchanged `/MT` compile: 246 guarded steps, comprising
+48 allocator calls/four sites each, six initial resets, 32 named-home and
+16 internal-home writes. Renderer records match 28 current names/360 bytes,
+then eight internal records of eight bytes extend the frame to 424. Alignment
+is actually four. Four helpers each have one eight-byte named record and two
+four-byte internal records. Later reset/special/sequential/group writes have
+zero hits; there is no manager-entry trap, so do not infer skipped versus early
+return or exclude aliases. The reset tag still names the previous function.
+All five complete functions/115 bindings/25 literals remain identical; peak
+269,717,504 bytes, zero memory-limit events, one CPU35%. Private
+`.analysis/backend-frame-runtime-20261018/` retains exact states and comparisons.
+This answers the selected current allocation mechanism. Return to concrete
+remaining game differences; it does not recover original declarations or
+justify more identifier/order/flag/context sweeps or another unchanged compile.
+Archive/member-hash verification precedes removal of eight copied inputs,
+two objects and the observer executable; private Python cache removal is also
+recorded. Net release is 208,896 allocated bytes, preserving current tested
+products and useful build caches. No source, exact count or delivery changes.
+
 The preceding [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 compiles the unchanged drawing-primitive owner once under an owned C2 observer.
 All62 helper entries/returns pair;55 belong to line and seven to fill. Current

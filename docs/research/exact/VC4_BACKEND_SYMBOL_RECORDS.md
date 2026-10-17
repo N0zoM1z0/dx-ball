@@ -206,3 +206,107 @@ pinned-helper calls reproduce all16 current bank names in the retained reader
 order using the four current source scopes. Emitter/header calls are explicit
 boundaries; no live frontend transport or original identifier recovery is
 claimed. No source, exact count or delivery changes follow.
+
+## Cursor resets and later home reassignment, October18
+
+The initial named-record allocation is not necessarily the final frame layout.
+One reused-profile C2 import answers the previously missing cursor-reference
+and allocator-caller questions, retaining 26 new records and a 112-record closed
+snapshot. All eight raw byte carriers, 2,442 bytes, match pinned C2. No game
+compilation or source variant is part of this static investigation.
+
+| Primary evidence | Evidence ID |
+| --- | --- |
+| Eight reported references to cursor`47EA40` | `ev_450e5dec3fc939ad7a9de7431ff10ac9fb35cccf73ca7a9445b04f49ba13de7e` |
+| Five direct calls to allocator`40AED4` | `ev_1da95d6166a93ae67517fd9ed996f13f644499e15fdf484f55a44e7456566630` |
+| Later reset/reassignment manager`41EE56` | `ev_92ffda4a12872ae9f14d62d23dced166fba8c7e52bed3f95322d20ecf19920aa` |
+| Internal record constructor`42BE93` | `ev_ea344559ddff0618c0750884d0bcc9dc1aab0cafeb6cca408276c284060bf6cc` |
+| Group allocator and home writer`4304F8` | `ev_72568a191e59c36542e386e8a221091cbac7167de23b06bd6b2cc9e526ad5e8f` |
+
+The reported direct writes comprise the allocator's subtraction and two cursor
+stores, plus zero resets at`41A9D1` and`41EEA7`. References do not exclude alias
+writes. The five direct allocator calls are initial named allocation`401551`,
+special late allocation`41EF46`, sequential late allocation`41F088`, internal
+record allocation`42BE86`, and grouped allocation`430640`.
+
+The later manager queries the current extent and returns when it is nonpositive.
+Otherwise it resets the cursor. A nonzero`48B6A0` receives a new allocation and
+record`+4` write. Candidate records then use sequential allocation if any of
+three packed bits is set: global`48173C` object's byte`+28` mask`0x01`, its nested
+object's byte`+11` mask`0x10`, or nested byte`+65` mask`0x02`. Offsets are hexadecimal.
+With those bits clear and
+a nonempty list, the manager invokes the group allocator. These are raw bit
+conditions; their source-level configuration names remain unknown.
+
+The group path allocates one maximum-size extent per group and rewrites each
+record's home at`4306C4`. Depending on its fourth parameter, the stored home is
+the group base or `group_base + group_size - record_size`. This establishes
+actual reassignment arithmetic; helper-set semantics, liveness and participation
+of the current renderer remain unobserved. Initial allocation alone therefore
+cannot establish a universal no-reuse rule or an original frame-size bound.
+
+The internal constructor retains the requested size at`+8`, sets kind byte`+C`
+to`18` hex and links the record through`481CC8`. Its wrapper rounds the size,
+calls the ordinary cursor allocator and writes home`+4` at`42BE8C`. This is an
+internal record mechanism, without a recovered source declaration or a general
+classification of generated temporaries.
+
+Private `.analysis/backend-frame-cursor-20261018/` retains the closed snapshot,
+full records, byte checks, resource samples and independent review. The owned
+temporary database is gone. Verified immutable-catalog sharing releases
+8,683,520 allocated bytes net of the new archive/journal. Heavy work remains
+serial at CPU 35%, one CPU, memory high 640/max 768 MiB; the sampled peak is
+672,075,776 bytes, with soft-limit reclaim and zero hard-limit/OOM events.
+Current source, objects, delivery, 394 exact and 21 authored candidates remain
+unchanged. The next bounded question is which cursor/home paths one unchanged
+rotation compilation actually executes.
+
+## Observed rotation allocations, October18
+
+One unchanged `/MT` rotation compilation installs traps at the 11 selected sites
+and single-steps their original instructions. All 246 hits pass independent
+checks of the destination memory, eight general registers, next instruction
+address and flags. The cursor subtraction additionally predicts CF, PF, AF,
+ZF, SF and OF. All five complete functions, 115 relocation bindings and 25
+full literal references remain identical to the maintained object.
+All 48 requests pair through the four allocator sites to the same record's
+following home write, with matching caller, returned value and continuous
+observed cursor values.
+
+| Observed site | Hits |
+| --- | ---: |
+| Allocator entry, subtraction, aligned store, final store | 48 each |
+| Initial cursor reset | 6 |
+| Initial named-record home write | 32 |
+| Internal kind`0x18` home write | 16 |
+| Later reassignment reset, special/sequential/group home writes | 0 each |
+
+The renderer's actual named records occupy 360 bytes: 28 distinct names and
+homes, including first terms at −324 and −336. Eight subsequent internal
+records request eight bytes each and occupy −368 through −424. The alignment
+global is four in these samples. Each other helper has one eight-byte named
+`projections` record and two four-byte internal records, ending at −16.
+The renderer's 36 records match the complete retained current instruction-role
+map by name/size/home for named records and unique home/extent for internal ones.
+Record names are observed C2 strings, with a leading underscore; matching
+those current records does not recover original identifiers.
+
+Function globals are context samples. The reset after the renderer still
+names the renderer while changing cursor −424 to zero; the following named
+record belongs to the next helper. Do not assign a reset to a new function
+using that stale tag alone. No later reassignment write is observed in this
+compile. There is no manager-entry or extent-gate trap, so this does not
+distinguish a skipped manager from an early return or exclude alias writes.
+The static group mechanism remains real but has no demonstrated role in this
+current frame layout. Original declarations and original allocation/reuse
+remain unresolved; no source model or exactness gain follows automatically.
+
+Private `.analysis/backend-frame-runtime-20261018/` retains the raw before/after
+states, exact input identities, full comparisons and independent reviews. The
+single observed compile takes 3.825 seconds. Its scoped memory peak is
+269,717,504 bytes, with zero soft/hard/OOM events under the one-CPU/35% and
+640/768 MiB limits. No provider, game, native build or full replay is run.
+Eleven disposable raw files (eight copied inputs, two objects and the observer
+executable) are archived and member-hash verified before deletion. Removing
+those files and this phase's Python cache releases 208,896 allocated bytes net
+of the archive/journal. Current tested products and useful build caches remain.
