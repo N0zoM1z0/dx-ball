@@ -1,5 +1,7 @@
 # Embedded explosion-list initialization
 
+This note records the earlier embedded-owner stage. [Independent board ownership](INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17) now replaces the actual aggregate with seven real neighboring objects; the genuine global explosion list emits both inner26 and outer21 exactly. Its ordinary section-qualified source-generator anchors supersede the embedded special case.
+
 One bounded `/Ob1` compilation permits expansion of the implicit board-storage
 constructor. The actual global declaration, aggregate region and embedded
 explosion-list member are unchanged. The generated inner stage now calls the

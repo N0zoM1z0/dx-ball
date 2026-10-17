@@ -1,11 +1,14 @@
-# Independent board globals: tested reconstruction, not yet adopted
+# Independent board globals
 
 The original immediate explosion-list receivers and its26-byte generated
 initializer support an independent global owner. The current reconstructed
 aggregate instead produces LEA receivers and a32-byte embedded initializer.
-This is a concrete ownership question, rather than a request for missing
-original declarations. The canonical source and its382 exact claims remain
-unchanged while the proposed replacement is checked.
+This ownership reconstruction is now adopted after the complete consumer and
+production checks below. Seventeen complete units become exact and eight prior
+exacts are explicitly demoted: the current total is391 exact functions,
+82,242 code bytes and244 attached metadata bytes. Of270 classified authored
+entries,246 are exact and24 remain complete candidates. Declarations remain
+inferred, not uniquely recovered original source.
 
 ## Storage model and evidence
 
@@ -41,8 +44,9 @@ contract; it is not a claim of ISO C/C++ array-bounds portability.
 
 One successful diagnostic execution per ABI checks every actual object address,
 initial zero state and both complete-region index50 transfer directions.
-Observation copies each object within its own bounds. The observed offsets,
-relative to the bank, are:
+The VC4/Native diagnostics retain a raw region observer under the stated ABI
+contract; the corrected MinGW observer gathers/scatters each object within its
+own bounds. The observed offsets, relative to the bank, are:
 
 | Object / extent | VC4 and MinGW x86 | Native64 |
 | --- | ---: | ---: |
@@ -75,7 +79,7 @@ and a PIC data consumer remove those copy relocations and pass the address and
 overlap checks. The proposal therefore includes those linkage controls for ELF.
 The Windows model does not receive ELF visibility attributes.
 
-## Complete consumer comparisons
+## Complete consumer comparisons during the proposal phase
 
 The first two-owner pilot yields complete zeros for editor load/store, queue
 explosion and brick hit. The independent globals also expose four changed
@@ -93,7 +97,7 @@ does not preserve every other exact; it is not a universal emission fix.
 The observed context sensitivity does not establish a parser-ID explanation.
 No name, declaration-count, ordering or compiler-flag sweep was performed.
 
-The current seven-object authority compares all278 complete units sharing the
+The completed seven-object proposal compares all278 complete units sharing the
 header:248 prior exacts and30 prior candidates. Each of29 stable owner products
 is compiled once or reused after full input/flag/object equivalence. Nine control
 comparisons are reused. Six initially unhandled mappings are then reconciled
@@ -115,12 +119,12 @@ There are17 new private zero results, covering7,528 complete code bytes:
 | Palette transition | 1,339 |
 | Generated explosion-list inner initializer | 26 |
 
-These are16 authored functions and one generated function, **not accepted ledger
-promotions**. Eight previously exact functions become nonexact: keyed draw,
+At that point these were16 authored functions and one generated function, awaiting
+production acceptance. Eight previously exact functions become nonexact: keyed draw,
 keyed stretch, rotated offset, rotated width, hit-region search, sprite release,
 round reset and bonus update. A selective report of only the new zeros would
 misstate the result. All other240 prior exact companions in this closure remain
-exact. Canonical source, ledgers, caches and delivery remain unchanged.
+exact. Canonical source, ledgers, caches and delivery stayed unchanged until the production gates below passed.
 
 Literal contents, relocation addends and actual same-section local destinations
 remain checked by the maintained full-span comparator. Named operand loads can
@@ -143,9 +147,94 @@ needs the post-split descriptor. Nevertheless, two representative owner compiles
 produce nine regressions across27 prior exacts. This branch is closed without
 another broad build; owners must not receive selective header variants.
 
-## Continuation and acceptance
+## Production acceptance, October 17
 
-The seven-object proposal is concrete enough for production placement, startup
+The actual restored-CRT VC4 image, MinGW Release DLL and Native Debug library
+retain all seven addresses and the complete extents in the table above.
+VC4's actual `.CRT$XCU` contains the nine distinct owners once in the recovered
+order; each outer wrapper calls its inner once, and the explosion inner uses
+the direct receiver and real constructor clearing offsets0/4/8/12. The linked
+normal startup chain reaches the initializer walk once, conditional on successful
+startup. This is static linked evidence, not an observed VC4 game startup.
+One ordinary Native `dlopen`, observed with read-only constructor breakpoints,
+constructs those nine actual owners once in order and leaves the full region zero.
+
+Two production-only failures required actual linkage/build fixes. CMake's
+generic position-independent setting gives executable consumers `-fPIE`;
+the two ELF data consumers need explicit `-fPIC` to avoid destructive COPY
+relocations against the protected globals. Their actual relocations were checked.
+More seriously, GCC Release turns the cross-object `memmove` into forward
+`REP MOVSL`: existing Windows storage case303, terminal load50, first differs
+at region byte20,064. The earlier diagnostic build did not reveal this.
+The failing DLL, object, complete fixtures/results and first mismatch are sealed
+before cleanup. The maintained GNU board recipe now uses
+`-fno-builtin-memmove`, retaining the genuine overlap-aware library call in both
+directions. No game body changes for this fix. VC4 already uses `/Oi-`.
+
+The corrected actual MinGW DLL passes all459 existing full-region original
+comparisons: three operations, all51 indices, zero/ramp/random state and nine
+terminal cases. Native passes150 normal original calls and nine complete
+20,448-byte terminal controls with its genuine wide-pointer layout. Existing
+focused original/source matrices also pass for all eight demoted functions:
+keyed draw36, keyed stretch36, release9, hit-region search400, round reset300,
+bonus update912, rotated offset329 and rotated width329. The width check uses
+the existing bounded geometry against the actual original width entry, including
+unchanged-state/event assertions. Other historical owner loops were not run.
+
+The eight demotions are retained deliberately: independent receivers, generated
+construction and terminal-layout evidence support real independent globals.
+Their five owning source files are byte-identical to the prior source; the
+shared declaration context changes backend emission. All278 complete affected
+units, including248 prior exacts, were already compared. The17 gains and eight
+losses are both reflected in the manifest, reports and ledgers;240 prior exact
+companions remain. No owner receives a selective interface or old accepted
+object for changed inputs. The eight current nonexact results are:
+
+| Function | Current / original bytes | Differing positions |
+| --- | ---: | ---: |
+| Keyed draw | 107 /105 | 94 |
+| Keyed stretch | 141 /139 | 92 |
+| Rotated offset / width | 261 /259 each | 223 each |
+| Hit-region search | 172 /173 | 132 |
+| Sprite release | 269 /262 | 245 |
+| Round reset | 426 /426 | 20 |
+| Bonus update | 2,168 /2,168 | 180 |
+
+The generated inner/outer anchors now describe the ordinary real list instance
+with its explicit section qualifier. Tracking accepts the actual declaration
+and rejects wrong-slot, wrong-type and arbitrary-suffix controls while retaining
+all constructor, dependency, extent and binding checks. The obsolete embedded
+initializer special case is removed. Historical semantic scopes/counts are
+preserved; their source-input inventories are refreshed with this documented
+compatibility evidence. Before-images remain sealed. This does not claim the
+entire historical semantic queue was rerun.
+
+The canonical VC4 delivery relink reuses all116 current objects and the same19
+approved original CRT members, compiling nothing further. Its image differs
+from the checked private production image only in the PE timestamp. Current GNU
+libraries/tools are installed byte-identically from the tested products with
+input-equivalence receipts. Their old CMake caches are removed; later builds
+must configure from current source. Native debug paths retain the private source
+root. There is no new game run or full replay.
+
+Current production/adoption authority:
+`.analysis/independent-board-production-20261017/`, particularly
+`placement-current.json`, `native-startup.json`, `windows-storage.json`,
+`native-storage.json`, the five `*-flows.json` receipts, `adopted.json`,
+`canonical-link.json` and `authored-coverage.json`. A tracking-format helper
+initially stops before manifest writing because nested TOML array tables remain
+after replacement; the corrected continuation repeats no producer or comparison.
+Other driver/parser failures remain separate from actual successful producers.
+
+Closed products are compressed, extracted member hashes verified, then deleted.
+The latest cleanup removes669 closed files and releases13,246,464 allocated
+bytes net of the archive and installed replacement products; small JSON receipt
+allocation is excluded. Current matching products and canonical delivery caches
+remain reusable. The fixture-generated default board is also removed.
+
+## Closed proposal phase
+
+Before adoption, the seven-object proposal was ready for production placement, startup
 and storage checks. Before adopting it, verify the actual VC4 restored-CRT,
 MinGW Release DLL and Native Debug library layouts; exactly-once list construction
 and the real `+0xC` clear; existing full-storage/terminal controls and affected

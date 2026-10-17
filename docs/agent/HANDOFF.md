@@ -24,15 +24,15 @@ receipts remain in place; old checkpoint totals are not current totals.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 382 |
-| Exact code / attached metadata bytes | 78,505 / 244 |
-| Complete nonexact comparisons | 93: 32 authored / 60 runtime / 1 generated |
+| Accepted complete exact functions | 391 |
+| Exact code / attached metadata bytes | 82,242 / 244 |
+| Complete nonexact comparisons | 84: 24 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-238 exact and 32 candidates across 29 compiler closures. The source-present
+246 exact and 24 candidates across 29 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -43,10 +43,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 382 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 93 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 391 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 84 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/brick-hit-shared-counter-pan-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/independent-board-production-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,20 +61,36 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`e528611e4506388d2c11b6587304497176d4454c88074e7229b729268c811c8f`.
+`5f4e581b8e19ef4a77c550590936c6cc7a871dc5ee735775555056ca0a7f25df`.
 Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest [joint hit scope](../research/exact/EXACT_BRICK_POWERS.md#shared-counter-and-switch-pan-scope)
-restores the counter/pan homes while preserving the score flag: all19 frame
-accesses, including three compiler selector sites, match original. One owner
-compile compares seven functions and preserves five exacts/1,572 bytes;
-the hit candidate improves416→405. Existing108 focused cases pass. The cached
-delivery relink changes only13 proved frame bytes and12 timestamp bytes;
-all1,091 map addresses stay fixed. The remaining receiver MOV/LEA discrepancy
-still prevents exact acceptance. Original scopes remain inferred.
+The latest [independent board globals](../research/exact/INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
+recover seven real neighboring objects instead of an enclosing instance, while
+preserving the full terminal-copy ABI. All278 affected complete units are
+accounted:17 promotions and eight explicit demotions give a net nine exacts,
+including16 authored gains/eight authored losses. The generated inner initializer
+is26 bytes exact. The eight demoted owners' bodies are unchanged; declaration
+context changes backend emission. Keep both gains and losses in current reports.
+
+Actual VC4, MinGW Release and Native Debug placement passes. The existing MinGW
+full-storage459 cases, Native150 normal original calls/nine wide terminal cases,
+and focused flows for all eight demotions pass. Native dlopen observes nine
+list owners once; VC4 startup has conditional linked static evidence, not a new
+game observation. GNU boards retain the real memmove call because Release
+inlining produced an observed terminal overlap failure. ELF data tools use
+explicit-fPIC with protected globals. All116 current VC4 producers/19 members
+are reused for the canonical relink, with zero new compiles. GNU tested products
+are installed byte-identically, with retained-build.json receipts; old CMake
+caches are removed. Configure fresh builds for later source changes.
+
+The earlier [joint hit scope](../research/exact/EXACT_BRICK_POWERS.md#shared-counter-and-switch-pan-scope)
+restored all19 frame homes and reduced416→405 differences. The independent
+receiver now completes that function exactly at1,315 bytes. Original scopes and
+declarations remain inferred. Earlier delivery/game observations retain their
+own image identities.
 
 The preceding adoption restores [score formatting workspace regions](../research/exact/SCORE_WORKSPACE_REGIONS.md):
 decimal20 in both formatters and menu text100 make `draw-score`433 and
@@ -115,7 +131,7 @@ Choose a specific unaccounted operation, ABI, ownership, lifetime or producer fa
 A small difference count is not itself a source question. Complete correspondence
 and unchanged tests do not prove original declarations or absolute optimality.
 
-Continue exploring the remaining32 authored candidates. The user explicitly
+Continue exploring the remaining24 authored candidates. The user explicitly
 corrected the earlier missing-declarations blocker: recovering those facts is
 the task. Original source, MAP/PDB or build records would help but are not a
 prerequisite. Do not treat an unproved declaration as proof no hypothesis can be
@@ -138,56 +154,37 @@ aggregate; a smaller body or one-position count gain does not recover a variable
 home. The PCX packet trial rotates four homes and restores none; it stays rejected.
 Do not repeat its API-record, scanline-record, header-scope or packet-scope trials.
 
-The [independent board-storage proposal](../research/exact/INDEPENDENT_BOARD_STORAGE.md)
-now has executed three-ABI diagnostic placement/overlap evidence and a complete
-278-function affected-closure comparison. Its seven real objects retain natural
-pointer widths, both mutable unknown slots and the list's constructor-cleared
-word. Ordered linker sections provide adjacency; cross-object traversal is an
-explicit compiler/linker ABI contract. A separate ELF shared-library control
-observes destructive COPY relocations and verifies protected definitions plus
-PIC consumers. These are diagnostic observations, not production acceptance.
+The adopted [independent board storage](../research/exact/INDEPENDENT_BOARD_STORAGE.md)
+keeps all seven real objects, both mutable unknown slots, the real +0xC list
+word and natural pointer widths. Ordered linker sections and retained memmove
+provide the supported compiler/linker ABI contract. It is not an ISO array-bounds
+portability claim. The layout descriptor is a view, with no enclosing instance.
+The current29 matching products/frozen inputs remain in
+`.analysis/independent-board-storage-20261017/complete-wide/`; complete comparison
+authority is its `reconciled/` directory. Production/adoption receipts and the
+current authored-coverage audit are in
+`.analysis/independent-board-production-20261017/`. No full replay or game run.
 
-The current seven-object model has17 new private zeros:16 authored functions and
-the26-byte initializer. Eight prior exacts regress;240 prior companions remain
-exact. All six initially unhandled mappings are reconciled against actual named
-identities;272 completed comparisons are reused, and only six more run from the
-existing objects. An independent review verifies409 binding records, including
-the three additional zeros for paddle position, score refresh and palette
-transition. No canonical source, ledger, cache or delivery change follows yet.
-
-Next, check the real VC4 restored-CRT, MinGW Release and Native Debug placement,
-startup/once-only construction, all unknown bytes, terminal overlap and affected
-flows. The proposal and all29 current owner products/frozen inputs are retained
-under `.analysis/independent-board-storage-20261017/candidate/` and
-`complete-wide/`; authoritative results are `complete-wide/reconciled/`.
-Resolve the eight regressions with supported source evidence, or explicitly
-justify/record demotions alongside a stronger ownership reconstruction after
-production gates. Comparing accepted companions is required; unchanged old
-objects cannot stand in for changed inputs. Do not silently report only gains.
-
-Do not repeat the old member-call probe, the five-declaration broad trial, or
-the complete-interface control. A uniform split of layout metadata from game
-declarations has also been tested in two representative owners: nine regressions
-across27 prior exacts, so no broad expansion followed. Compiler-context causality
-remains unproved; do not turn these results into a name/order/count/flag sweep.
-Closed diagnostic products and superseded trees have verified archive carriers;
-keep the current29-owner closure reusable. Keep canonical storage until the
-remaining production and adoption work is complete.
+Continue the24 current authored candidates, including the eight declared-context
+demotions. Choose a concrete producer, ownership, ABI or lifetime discrepancy;
+no evidence requires accepting the present declaration context as optimal.
+Do not repeat the closed five-declaration broad trial, member-call probe or
+uniform layout/interface split (nine regressions across27 prior exacts).
+Avoid name/order/count/flag sweeps or owner-specific header variants.
 
 Other authored boundaries and retained controls:
 
 - Preserve the real20,432-byte Win32 storage layout and368-byte terminal overlap.
-  The enclosing type is a recovered view, not uniquely recovered original source.
+  The descriptor is a recovered view, not uniquely recovered original source.
   No alias cells, artificial padding, unverified split or alternate offset/cast
-  spelling solely to force emission. Editor key and game-frame differences
-  include already explained address producers; investigate ownership as above.
+  spelling solely to force emission. Editor key and game frame are now exact after the independent ownership adoption.
 - [Rotation](../research/exact/ROTATION_PIXEL_ADDRESS.md) accounts for all 365
   renderer instructions, 22 calls and 26 branches under its stated stable-memory,
-  finite-FP model. Height's two bank-address groups explain its two extra bytes.
+  finite-FP model. Height is now exact after independent board ownership; offset/width are explicit new candidates.
   Row-add, inline-bank, max/return/FP and type-context controls are closed.
 - [Effect sprites](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md) have
   complete path/ABI/RECT-write correspondence and retained SMT mutation controls.
-  SDK/interface/record context trials do not justify another permutation.
+  Independent board ownership now makes all three effect-sprite entries exact; other context trials stay closed.
 - Triangle's four root-constructed FixedPoint objects precede early exits; do not
   narrow them arbitrarily. The adopted scanline scope restores y's home; vertical
   scale and polygon endpoint-scope controls are closed.
@@ -195,7 +192,7 @@ Other authored boundaries and retained controls:
   Preserve callback-visible state and the pitch snapshot before Lock.
 - [Brick-hit pan consumer scope](../research/exact/EXACT_BRICK_POWERS.md#closed-pan-consumer-scope)
   alone was rejected:416→418 differences and loss of the score flag. The distinct
-  joint scope above is adopted at405 with all original homes restored. Do not
+  joint scope restored all original homes; independent ownership subsequently makes the complete hit exact. Do not
   repeat the standalone trial or treat its rejection as closing all combinations.
 - Line, ranking, presentation, palette, clock and text near-matches include known
   compare/register commutations. Reversing guards, renaming identifiers, changing

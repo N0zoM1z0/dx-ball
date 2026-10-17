@@ -1,5 +1,7 @@
 # Editor key address producer and complete switch
 
+The historical aggregate-address correspondence below is superseded by [independent board ownership](INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17). Actual independently placed globals preserve terminal overlap and make the complete632-byte editor-key function exact.
+
 The complete editor-key comparison remains **638 current / 632 original bytes,
 260 differing positions**. One board-clear address producer accounts for its
 six extra bytes and two extra instructions. No source or exact acceptance changes.

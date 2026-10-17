@@ -1,5 +1,7 @@
 # Full frame control flow and signed consumers
 
+The historical correspondence below predates [independent board ownership](exact/INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17). That adoption makes the complete game-frame exact while preserving the terminal-copy ABI; the descriptor now has no enclosing instance.
+
 The [frame-effects record](exact/GEOMETRY_FRAME_RECORDS.md) now restores all
 five source homes. Complete position-aware comparison leaves only the three
 embedded-list MOV/LEA forms; the full function remains nonexact.

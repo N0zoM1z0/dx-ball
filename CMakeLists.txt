@@ -56,9 +56,11 @@ if(UNIX)
     target_link_libraries(dxball_core PRIVATE m)
     # Keep recovered C++ allocation inside this image's existing heap boundary.
     target_link_options(dxball_core PRIVATE
-        "LINKER:--version-script=${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map")
+        "LINKER:--version-script=${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map"
+        "LINKER:-T,${CMAKE_CURRENT_SOURCE_DIR}/config/board-storage.ld")
     set_property(TARGET dxball_core APPEND PROPERTY LINK_DEPENDS
-        "${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map")
+        "${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map"
+        "${CMAKE_CURRENT_SOURCE_DIR}/config/board-storage.ld")
 endif()
 if(WIN32)
     target_link_libraries(dxball_core PRIVATE dsound ddraw winmm)
@@ -85,8 +87,10 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 endif()
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     # The original tile mapper leaves its result unset outside tiles 0..22.
+    # Bank index50 crosses adjacent globals; keep the actual overlap primitive.
+    # GCC otherwise folds memmove into a forward copy between distinct objects.
     set_source_files_properties(src/boards.c PROPERTIES
-        COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
+        COMPILE_OPTIONS "-Wno-error=maybe-uninitialized;-fno-builtin-memmove")
     # The original lightning controller requires an eligible tile in its scan.
     set_source_files_properties(src/display.cpp PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
@@ -105,6 +109,12 @@ add_executable(dxball_boards src/board_inspector.c)
 target_link_libraries(dxball_boards PRIVATE dxball_core)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(dxball_boards PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+
+if(UNIX AND CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    # Protected board data needs GOT references; executable PIE permits COPY relocations.
+    target_compile_options(dxball_resources PRIVATE -fPIC)
+    target_compile_options(dxball_boards PRIVATE -fPIC)
 endif()
 
 if(WIN32)

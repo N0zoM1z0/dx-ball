@@ -38,10 +38,10 @@ void dxball_spread_explosive_bricks(void)
         do {
             x = dxball_explosive_sources.current->x;
             y = dxball_explosive_sources.current->y;
-            if (x > 0 && (signed char)dxball_board_tiles[x - 1 + y * 20] != 8) {
-                if ((signed char)dxball_board_tiles[x - 1 + y * 20] == 0 ||
-                        (signed char)dxball_board_tiles[x - 1 + y * 20] == 2) ++dxball_remaining_bricks;
-                dxball_board_tiles[x - 1 + y * 20] = 8;
+            if (x > 0 && (signed char)dxball_board_tiles[x + y * 20 - 1] != 8) {
+                if ((signed char)dxball_board_tiles[x + y * 20 - 1] == 0 ||
+                        (signed char)dxball_board_tiles[x + y * 20 - 1] == 2) ++dxball_remaining_bricks;
+                dxball_board_tiles[x + y * 20 - 1] = 8;
                 dxball_draw_board_tile(x - 1, y, 0);
             }
             if (x < 19 && (signed char)dxball_board_tiles[x + 1 + y * 20] != 8) {

@@ -65,57 +65,8 @@ def validate_generated_source(address, implementation, source, origins, matches,
     if unit is None or "source_generator" not in unit:
         return False
     generator = unit["source_generator"]
-    if generator.get("kind") == "vc4-global-embedded-list-initializer":
-        expected_generator = dict(kind="vc4-global-embedded-list-initializer",
-            type="DxBallBoardStorage", global_name="dxball_board_storage",
-            member="explosions", member_type="DxBallExplosionList",
-            member_offset=20008, storage_header="src/board_storage.h",
-            constructor_unit="initialize-explosion-list", inner_unit="list-global-init-13",
-            stage=generator.get("stage"))
-        build = manifest["builds"][unit["build"]]
-        if (generator != expected_generator or
-                origins[address]["origin"] != "compiler_generated" or
-                unit["symbol"] != implementation["symbol"] or
-                unit["target_address"] != int(address, 0) or
-                build["source"] != implementation["source"] or
-                build["flags"].count("/Ob1") != 1 or "/Ob0" in build["flags"] or
-                generator["storage_header"] not in build["inputs"] or
-                not re.search(r"^\s*DxBallBoardStorage\s+dxball_board_storage\s*;\s*$", source, re.MULTILINE)):
-            raise ValueError(f"invalid embedded initializer identity: {address}")
-        storage = (ROOT / generator["storage_header"]).read_text()
-        if (not re.search(r"\bDxBallExplosionList\s+explosions\s*;", storage) or
-                "offsetof(DxBallBoardStorage, explosions) == 20008" not in storage or
-                not re.search(r"DxBallExplosionList::DxBallExplosionList\s*\([^;]*\)\s*\{", source)):
-            raise ValueError(f"missing embedded initializer source anchor: {address}")
-        ctor = manifest["units"][generator["constructor_unit"]]
-        inner = manifest["candidates"][generator["inner_unit"]]
-        if (ctor["build"] != unit["build"] or inner["build"] != unit["build"] or
-                ctor["symbol"] != "??0DxBallExplosionList@@QAE@XZ" or
-                matches.get(f'0x{ctor["target_address"]:08X}', {}).get("unit") != generator["constructor_unit"] or
-                inner.get("source_generator") != dict(generator, stage="inner")):
-            raise ValueError(f"unattested embedded initializer dependency: {address}")
-        expected_inner = [dict(offset=8, type="DIR32", symbol="_dxball_board_storage",
-                               addend=20008, target=0x0043AAB8),
-                          dict(offset=13, type="REL32", symbol=ctor["symbol"],
-                               addend=0, target=ctor["target_address"])]
-        if (inner["symbol"] != "_$E13" or inner["target_address"] != 0x0040F320 or
-                inner["size"] != 26 or inner["relocations"] != expected_inner):
-            raise ValueError(f"invalid embedded constructor bindings: {address}")
-        if generator["stage"] == "inner":
-            if name != generator["inner_unit"] or address in matches:
-                raise ValueError(f"embedded inner stage is not exact: {address}")
-        elif generator["stage"] == "outer":
-            if (name != "list-global-init-14" or unit["target_address"] != 0x0040F140 or
-                    unit["symbol"] != "_$E14" or unit["size"] != 21 or
-                    matches.get(address, {}).get("unit") != name or
-                    unit["relocations"] != [dict(offset=7, type="REL32",
-                        symbol=inner["symbol"], addend=0, target=inner["target_address"])]):
-                raise ValueError(f"invalid embedded outer binding: {address}")
-        else:
-            raise ValueError("unknown embedded source stage")
-        return True
     fields = {"kind", "type", "global", "constructor_unit", "inner_unit", "stage"}
-    if (set(generator) != fields or generator["kind"] != "vc4-global-list-initializer" or
+    if (set(generator) not in (fields, fields | {"placement_attribute"}) or generator["kind"] != "vc4-global-list-initializer" or
             origins[address]["origin"] != "compiler_generated" or
             unit["symbol"] != implementation["symbol"] or
             unit["target_address"] != int(address, 0) or
@@ -126,7 +77,14 @@ def validate_generated_source(address, implementation, source, origins, matches,
     for identifier in (type_name, global_name):
         if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", identifier):
             raise ValueError("invalid generated source declaration")
-    declaration = r"^\s*" + re.escape(type_name) + r"\s+" + re.escape(global_name) + r"\s*;\s*$"
+    placement = generator.get("placement_attribute", "")
+    if placement:
+        if (not re.fullmatch(r'DXBALL_BOARD_SLOT\("[0-9]{2}", ' + re.escape(type_name) + r'\)', placement) or
+                not re.search(r"^#define DXBALL_BOARD_SLOT\(N, T\)", source, re.MULTILINE)):
+            raise ValueError(f"invalid generated source placement: {address}")
+    qualifier = r"\s+" + re.escape(placement) if placement else ""
+    declaration = (r"^\s*" + re.escape(type_name) + r"\s+" +
+                   re.escape(global_name) + qualifier + r"\s*;\s*$")
     constructor = re.escape(type_name + "::" + type_name) + r"\s*\([^;]*\)\s*\{"
     if not re.search(declaration, source, re.MULTILINE) or not re.search(constructor, source):
         raise ValueError(f"missing real generated source anchor: {address}")

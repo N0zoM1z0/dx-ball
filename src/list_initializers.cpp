@@ -1,14 +1,62 @@
 #include <stdlib.h>
 #include "list_initializers.h"
 
-/* Canonical owners, in the recovered constructor-wrapper order. The board
-   storage remains one aggregate: its real explosion member owns the +0xC
-   observation word also visible to the terminal bank-copy operation. */
+/* Canonical owners retain the recovered constructor order. Independently
+   named board globals use ordered linker sections to preserve the observed
+   neighboring bytes and terminal overlap. The layout type is metadata only. */
 DxBallProjectileList dxball_projectiles;
 DxBallBallList dxball_balls;
 DxBallBallList dxball_duplicate_balls;
 DxBallBrickEffectList dxball_brick_effects;
-DxBallBoardStorage dxball_board_storage;
+#if defined(__GNUC__)
+#if defined(_WIN32)
+#define DXBALL_BOARD_SLOT(N, T) __attribute__((section(".dxb$" N), aligned(__alignof__(T))))
+#else
+#define DXBALL_BOARD_SLOT(N, T) __attribute__((section(".dxb." N), aligned(__alignof__(T)), visibility("protected")))
+#endif
+#else
+#define DXBALL_BOARD_SLOT(N, T)
+#endif
+
+extern "C" {
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$00")
+#endif
+DxBallByte dxball_board_storage[DXBALL_BOARD_COUNT][DXBALL_BOARD_SIZE] DXBALL_BOARD_SLOT("00", DxBallByte) = {0};
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$01")
+#endif
+DxBallUInt dxball_palette_tick DXBALL_BOARD_SLOT("01", DxBallUInt) = 0;
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$02")
+#endif
+DxBallByte dxball_unclassified_clock_tail[4] DXBALL_BOARD_SLOT("02", DxBallByte) = {0};
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$03")
+#endif
+#if defined(_MSC_VER)
+__declspec(allocate(".dxb$03"))
+#endif
+DxBallExplosionList dxball_explosions DXBALL_BOARD_SLOT("03", DxBallExplosionList);
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$04")
+#endif
+DxBallInt dxball_ball_count DXBALL_BOARD_SLOT("04", DxBallInt) = 0;
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$05")
+#endif
+DxBallByte dxball_unclassified_count_tail[4] DXBALL_BOARD_SLOT("05", DxBallByte) = {0};
+#if defined(_MSC_VER)
+#pragma data_seg(".dxb$06")
+#endif
+DxBallByte dxball_board_tiles[DXBALL_BOARD_SIZE] DXBALL_BOARD_SLOT("06", DxBallByte) = {0};
+#if defined(_MSC_VER)
+#pragma data_seg()
+#endif
+}
+
+#undef DXBALL_BOARD_SLOT
+
 DxBallExplosionList dxball_explosive_sources;
 DxBallBonusList dxball_bonuses;
 DxBallParticleList dxball_particles;

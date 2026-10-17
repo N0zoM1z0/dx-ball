@@ -29,7 +29,13 @@ typedef char DxBallBoardStorageX86Contract[
 #ifdef __cplusplus
 extern "C" {
 #endif
-extern DxBallBoardStorage dxball_board_storage;
+extern DxBallByte dxball_board_storage[DXBALL_BOARD_COUNT][DXBALL_BOARD_SIZE];
+extern DxBallUInt dxball_palette_tick;
+extern DxBallByte dxball_unclassified_clock_tail[4];
+extern DxBallExplosionList dxball_explosions;
+extern DxBallInt dxball_ball_count;
+extern DxBallByte dxball_unclassified_count_tail[4];
+extern DxBallByte dxball_board_tiles[DXBALL_BOARD_SIZE];
 /* Read-only analysis metadata: bank, clock, requests, count, tiles, total size.
  * Values come from this compiler's offsetof/sizeof, not profile literals. */
 extern const DxBallUInt dxball_board_storage_offsets[6];
@@ -37,10 +43,6 @@ extern const DxBallUInt dxball_board_storage_offsets[6];
 }
 #endif
 
-#define dxball_board_bank (dxball_board_storage.bank)
-#define dxball_palette_tick (dxball_board_storage.palette_tick)
-#define dxball_explosions (dxball_board_storage.explosions)
-#define dxball_ball_count (dxball_board_storage.ball_count)
-#define dxball_board_tiles (dxball_board_storage.tiles)
+#define dxball_board_bank (dxball_board_storage)
 
 #endif

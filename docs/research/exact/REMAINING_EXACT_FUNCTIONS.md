@@ -1,11 +1,10 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after the score workspace recovery.
-Accepted totals are **382 functions / 78,505 code bytes / 244 metadata bytes**.
-There are **93 complete nonexact comparisons: 32 authored, 60 runtime and one
-compiler-generated**. None is an accepted exact.
+Updated October 17, 2026, after independent board ownership adoption.
+Accepted totals are **391 functions / 82,242 code bytes / 244 metadata bytes**.
+There are **84 complete nonexact comparisons: 24 authored and 60 runtime**. None is an accepted exact.
 
-These 93 are all currently source-present nonexact entries. The eight allocator
+These 84 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -93,15 +92,19 @@ compiler-setting trial. The linked tutorial explicitly uses VC5, and the other
 contexts are later publisher projects. All34 comparisons remain unchanged; this
 is neither a whole-repository search nor proof of source optimality.
 
-An October 17 receipt audit verifies current source/object/flag identities for
-all 270 classified authored entries across 29 matching-build recipes: 238 exact
-and 32 complete candidates. It reuses existing comparisons without replaying.
-This coverage audit does not establish source optimality, semantic equivalence
-or the final authored denominator. Its retained rows and compiler closures are
-`.analysis/brick-hit-shared-counter-pan-20261017/authored-coverage.json`.
-This read-only refresh follows the joint hit scope adoption and includes its
-405-difference comparison and current producer closure. Earlier coverage
-receipts remain preserved in their original phases.
+The current receipt audit verifies source/object/flag identities for all270
+classified authored entries across29 matching recipes:246 exact and24 complete
+candidates. It reuses existing comparisons without replaying; it does not prove
+source optimality, semantic equivalence or a final authored denominator.
+Authority: `.analysis/independent-board-production-20261017/authored-coverage.json`.
+
+The [independent-global adoption](INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
+compares all278 affected complete units, promotes17 and explicitly demotes eight.
+This includes16 authored gains/eight authored losses and one generated gain.
+Actual production placement, terminal-copy and the eight demoted flows pass;
+all prior before-images and failures remain retained. No selective interfaces,
+old objects for changed inputs or full historical replay are used. The historical
+context below predates that adoption; the tables show current comparisons.
 
 All 34 authored candidates were compared across their complete original
 extents on October 13. The bank loader's [allocation scope](BANK_ALLOCATION_SCOPE.md)
@@ -128,42 +131,34 @@ improving that comparison to1316/1315/416. The subsequent
 [joint shared-counter/switch-pan scope](EXACT_BRICK_POWERS.md#shared-counter-and-switch-pan-scope)
 restores all19 frame accesses to their original homes and improves416→405.
 One owner compile preserves five exact companions and six other body identities;
-108 existing cases pass. One receiver address producer still prevents exactness.
+108 existing cases pass. Independent ownership subsequently restores that receiver and the full1,315-byte function is exact.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
-| `present-regions-now` | 984 | 984 | 2 |
 | `elapsed` | 81 | 81 | 3 |
 | `measure-text` | 279 | 279 | 3 |
-| `sort-present-regions` | 296 | 296 | 3 |
-| `update-paddle-position` | 203 | 203 | 4 |
-| `animate-palette` | 234 | 234 | 6 |
-| `refresh-score` | 74 | 74 | 6 |
-| `rotate-palette-right` | 234 | 234 | 6 |
-| `wait-frames` | 170 | 170 | 6 |
+| `present-regions-now` | 984 | 984 | 6 |
+| `wait-frames` | 170 | 170 | 8 |
+| `animate-palette` | 234 | 234 | 9 |
 | `draw-line` | 445 | 445 | 9 |
-| `palette-transition` | 1339 | 1339 | 12 |
-| `load-editor-board` | 52 | 58 | 23 |
-| `store-editor-board` | 52 | 58 | 42 |
-| `draw-paddle` | 677 | 677 | 48 |
-| `queue-explosion-at` | 99 | 100 | 51 |
-| `clear-all-entities` | 106 | 107 | 59 |
-| `load-sprite-bank` | 1475 | 1475 | 66 |
+| `rotate-palette-right` | 234 | 234 | 9 |
+| `reset-round` | 426 | 426 | 20 |
 | `fill-triangle` | 1710 | 1710 | 88 |
-| `rotated-sprite-height` | 191 | 193 | 158 |
-| `fill-polygon-clipped` | 1592 | 1592 | 214 |
+| `stretch-keyed-sprite` | 139 | 141 | 92 |
+| `draw-keyed-sprite` | 105 | 107 | 94 |
+| `find-hit-region` | 173 | 172 | 132 |
+| `update-bonuses` | 2168 | 2168 | 180 |
+| `draw-paddle` | 677 | 678 | 210 |
 | `fill-polygon` | 1543 | 1543 | 214 |
-| `stretch-effect-sprite` | 306 | 308 | 252 |
-| `editor-key` | 632 | 638 | 260 |
-| `drop-bricks` | 426 | 436 | 306 |
-| `draw-effect-sprite` | 361 | 365 | 330 |
+| `fill-polygon-clipped` | 1592 | 1592 | 214 |
+| `rotated-sprite-offset` | 259 | 261 | 223 |
+| `rotated-sprite-width` | 259 | 261 | 223 |
+| `release-sprite` | 262 | 269 | 245 |
 | `draw-high-scores` | 404 | 403 | 330 |
-| `blt-effect-sprite` | 362 | 366 | 332 |
-| `hit-board-tile` | 1315 | 1316 | 405 |
-| `load-pcx` | 862 | 979 | 851 |
+| `load-pcx` | 862 | 979 | 850 |
+| `load-sprite-bank` | 1475 | 1486 | 945 |
 | `last-brick` | 1057 | 1067 | 990 |
-| `game-frame` | 1688 | 1691 | 1155 |
-| `render-rotated-sprite` | 1572 | 1466 | 1466 |
+| `render-rotated-sprite` | 1572 | 1458 | 1466 |
 
 ## Runtime candidates
 
@@ -219,7 +214,9 @@ One owner compile preserves five exact companions and six other body identities;
 | `crt-memory-fill` | 88 | 177 | 176 |
 | `crt-raise-signal` | 393 | 397 | 215 |
 | `crt-strcpy` | 232 | 198 | 232 |
+| `crt-u64-remainder` | 117 | 280 | 275 |
 | `crt-strcat` | 224 | 291 | 276 |
+| `crt-u64-divide` | 104 | 327 | 322 |
 | `cpp-find-handler` | 659 | 658 | 326 |
 | `crt-memory-copy` | 334 | 215 | 327 |
 | `crt-memcpy-entry` | 334 | 215 | 329 |
@@ -227,14 +224,8 @@ One owner compile preserves five exact companions and six other body identities;
 | `crt-read-descriptor` | 611 | 609 | 473 |
 | `crt-decimal-output` | 923 | 922 | 535 |
 | `crt-parse-extended12` | 1871 | 1851 | 1662 |
-| `crt-u64-divide` | 104 | 327 | 322 |
-| `crt-u64-remainder` | 117 | 280 | 275 |
 
-## Compiler-generated candidate
-
-| Function | Original bytes | Current bytes | Differing positions |
-| --- | ---: | ---: | ---: |
-| `list-global-init-13` | 26 | 32 | 21 |
+No compiler-generated candidate remains; the real global-list inner initializer is now exact.
 
 ## Allocator comparison gaps closed
 
