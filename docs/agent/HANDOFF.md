@@ -104,6 +104,15 @@ pinned target; its mere authorship or version proximity is insufficient.
 The read-only review is retained in
 `.analysis/source-frontier-review-20261017/review.json`.
 
+Continuation is currently blocked on missing producer evidence. Three consecutive
+continuation checks found no new material or grounded source change within the
+recorded constraints; the latest local check found no source, MAP/PDB or project
+files in `original/`. Both scoped reviewers are complete, with no pending job.
+Resume when target-linked declarations, build context or another independently
+supported operation/ABI/storage fact supplies a concrete source question. This
+does not prove source optimality or that original source is the only possible
+way forward. Do not repeat closed trials or unchanged checks while waiting.
+
 | Function | Established boundary | Missing producer fact |
 | --- | --- | --- |
 | `draw-score` | All 135 instructions correspond; frame56 versus48 accounts for the 21 displacement/allocation differences | Original decimal-buffer capacity and surrounding declarations; pointer-taking callees expose no capacity |
@@ -217,7 +226,8 @@ checks do not prove live speedup or full50 progression. The original Wine9
 do not patch exact game behavior or rerun its unchanged loop. Physical Windows,
 graphics/audio fidelity, exceptional paths and full campaign acceptance stay open.
 The macOS PR was already answered and deferred; no further message or port work
-is pending. The complete objective remains active and unachieved.
+is pending. The complete objective remains unachieved; continuation is blocked
+as described above.
 
 ## Resources, cleanup and publication
 
