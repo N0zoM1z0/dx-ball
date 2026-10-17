@@ -46,7 +46,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 382 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 93 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/score-workspace-regions-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/brick-hit-shared-counter-pan-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,13 +61,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`1fcba8f2f40a2c6e822159475048f26a656d7e954b1b11bd532fd74a61ede9c4`.
+`e528611e4506388d2c11b6587304497176d4454c88074e7229b729268c811c8f`.
 Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest adoption restores [score formatting workspace regions](../research/exact/SCORE_WORKSPACE_REGIONS.md):
+The latest [joint hit scope](../research/exact/EXACT_BRICK_POWERS.md#shared-counter-and-switch-pan-scope)
+restores the counter/pan homes while preserving the score flag: all19 frame
+accesses, including three compiler selector sites, match original. One owner
+compile compares seven functions and preserves five exacts/1,572 bytes;
+the hit candidate improves416→405. Existing108 focused cases pass. The cached
+delivery relink changes only13 proved frame bytes and12 timestamp bytes;
+all1,091 map addresses stay fixed. The remaining receiver MOV/LEA discrepancy
+still prevents exact acceptance. Original scopes remain inferred.
+
+The preceding adoption restores [score formatting workspace regions](../research/exact/SCORE_WORKSPACE_REGIONS.md):
 decimal20 in both formatters and menu text100 make `draw-score`433 and
 `redraw-intro`587 bytes exact. Two owner compiles compare36 complete functions,
 preserving30 prior exacts and four other candidate identities. Existing135
@@ -84,7 +93,8 @@ preserve five exacts/1,572 bytes and all other affected identities. The final
 initial fixture crashes and a private cleanup error remain retained. Relinking
 reuses all 116 objects/19 members; all 1,091 map addresses stay fixed. Only nine
 proved frame displacements and twelve timestamp bytes differ from the preceding
-image. Counter/pan homes and one receiver producer remain open.
+image. The subsequent joint scope above restores counter/pan homes; one receiver
+producer remains open.
 
 Earlier adopted authored changes remain in their owner notes: [bank allocation scope](../research/exact/BANK_ALLOCATION_SCOPE.md),
 [rotation pixel addresses](../research/exact/ROTATION_PIXEL_ADDRESS.md) and
@@ -128,12 +138,23 @@ aggregate; a smaller body or one-position count gain does not recover a variable
 home. The PCX packet trial rotates four homes and restores none; it stays rejected.
 Do not repeat its API-record, scanline-record, header-scope or packet-scope trials.
 
-Other closed authored boundaries:
+The next shared-storage question is whether the enclosing reconstructed object
+obscures independent original globals. Multiple immediate list receivers and the
+original26-byte initializer, versus the current32-byte embedded initializer,
+supply independent support for investigating that hypothesis. The old C++
+member-call probe still emits LEA; do not repeat that syntax-only model.
+Before any adoption, demonstrate actual compiler/linker placement across the
+maintained builds, startup construction, all mutable unknown bytes and the
+terminal overlap. Ordinary source declaration order is not a placement guarantee;
+account explicitly for any cross-object access. Keep current storage until proved.
 
-- Preserve the real 20,432-byte `DxBallBoardStorage` and the 368-byte terminal
-  overlap. No alias cells, split globals, artificial padding, alternate offset/cast
-  spellings or source unification solely to force emission. Editor key and game
-  frame differences include already explained address producers.
+Other authored boundaries and retained controls:
+
+- Preserve the real20,432-byte Win32 storage layout and368-byte terminal overlap.
+  The enclosing type is a recovered view, not uniquely recovered original source.
+  No alias cells, artificial padding, unverified split or alternate offset/cast
+  spelling solely to force emission. Editor key and game-frame differences
+  include already explained address producers; investigate ownership as above.
 - [Rotation](../research/exact/ROTATION_PIXEL_ADDRESS.md) accounts for all 365
   renderer instructions, 22 calls and 26 branches under its stated stable-memory,
   finite-FP model. Height's two bank-address groups explain its two extra bytes.
@@ -147,8 +168,9 @@ Other closed authored boundaries:
 - Bank cursor/row/column, file-metadata and transfer-workspace scopes are closed.
   Preserve callback-visible state and the pitch snapshot before Lock.
 - [Brick-hit pan consumer scope](../research/exact/EXACT_BRICK_POWERS.md#closed-pan-consumer-scope)
-  is rejected:416→418 differences, wrong pan home and loss of the restored score
-  flag. One owner compile preserves all five exact companions; keep current source.
+  alone was rejected:416→418 differences and loss of the score flag. The distinct
+  joint scope above is adopted at405 with all original homes restored. Do not
+  repeat the standalone trial or treat its rejection as closing all combinations.
 - Line, ranking, presentation, palette, clock and text near-matches include known
   compare/register commutations. Reversing guards, renaming identifiers, changing
   equivalent types or sweeping `/G3`, `/G4`, `/G5` is not new evidence.

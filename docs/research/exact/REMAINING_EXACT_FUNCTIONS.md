@@ -98,9 +98,9 @@ all 270 classified authored entries across 29 matching-build recipes: 238 exact
 and 32 complete candidates. It reuses existing comparisons without replaying.
 This coverage audit does not establish source optimality, semantic equivalence
 or the final authored denominator. Its retained rows and compiler closures are
-`.analysis/score-workspace-regions-20261017/authored-coverage.json`.
-This read-only refresh follows the score workspace adoption and includes the
-brick-hit416-difference comparison and retained-producer closure. Earlier coverage
+`.analysis/brick-hit-shared-counter-pan-20261017/authored-coverage.json`.
+This read-only refresh follows the joint hit scope adoption and includes its
+405-difference comparison and current producer closure. Earlier coverage
 receipts remain preserved in their original phases.
 
 All 34 authored candidates were compared across their complete original
@@ -124,8 +124,11 @@ comparison targets from actual COFF definitions. The complete relocated digest
 changes while its pre-adoption1316/1315/418 result stays nonexact. The subsequent
 [particle scope adoption](EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
 reuses the unchanged prior producer closure and restores the score-flag home,
-improving the current comparison to1316/1315/416. Counter/pan homes and one
-receiver address producer remain; no new VC4 source compilation or exact gain.
+improving that comparison to1316/1315/416. The subsequent
+[joint shared-counter/switch-pan scope](EXACT_BRICK_POWERS.md#shared-counter-and-switch-pan-scope)
+restores all19 frame accesses to their original homes and improves416→405.
+One owner compile preserves five exact companions and six other body identities;
+108 existing cases pass. One receiver address producer still prevents exactness.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
@@ -156,7 +159,7 @@ receiver address producer remain; no new VC4 source compilation or exact gain.
 | `draw-effect-sprite` | 361 | 365 | 330 |
 | `draw-high-scores` | 404 | 403 | 330 |
 | `blt-effect-sprite` | 362 | 366 | 332 |
-| `hit-board-tile` | 1315 | 1316 | 416 |
+| `hit-board-tile` | 1315 | 1316 | 405 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 990 |
 | `game-frame` | 1688 | 1691 | 1155 |

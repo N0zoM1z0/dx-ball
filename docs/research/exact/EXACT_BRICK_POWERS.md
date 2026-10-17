@@ -212,9 +212,74 @@ accesses are lost; the counter stays -12 rather than original -4. Reject this
 scope and keep the current source/object. Do not repeat this consumer block or
 turn it into a declaration-order search.
 
+The following joint-scope recovery supersedes this standalone trial's source
+decision. It tests a different, previously uncompiled model rather than repeating
+the unchanged consumer block with a case-local counter.
+
 Private `.analysis/brick-hit-pan-scope-20261017/` retains the source reversal,
 complete comparisons, byte/home proof and real compile receipt. Inputs are
 archived and both raw objects compressed after byte verification before removing
 the disposable copies. Canonical source, cache, ledgers, reports and image remain
 unchanged. No provider, runtime, relink or full replay runs; no exact or semantic
 acceptance is added.
+
+## Shared counter and switch pan scope
+
+After the user's clarification to continue inferring the remaining source,
+one bounded model combines a genuine shared outer particle counter with a
+switch-local pan. The two particle loops still share the same existing `i`,
+each initializing it before reading. Pan is assigned before dispatch, used by
+six sound calls and leaves scope before selection/redraw. The return flag stays
+outer. No value, type, name, executable expression or call order changes.
+Neither counter nor pan has an escaping address. No permutation sweep runs.
+
+The original three homes and the two retained allocator transformations support
+this joint hypothesis; they do not uniquely recover the original lexical
+scopes. The earlier decision to reject it solely for lack of that unique proof
+was too restrictive. Independent read-only semantic and acceptance reviews
+find no contrary instruction evidence.
+
+| Value | Previous EBP | Adopted EBP | Original EBP | Accesses |
+| --- | ---: | ---: | ---: | ---: |
+| Particle counter | -12 | -4 | -4 | 6 |
+| Score flag | -8 | -8 | -8 | 3 |
+| Pan | -4 | -12 | -12 | 7 |
+| Compiler selector | -16 | -16 | -16 | 3 |
+
+All19 frame accesses now have their original homes. Exactly13 EBP displacement
+bytes change; the16-byte frame and every other byte of the emitted hit body
+stay fixed. Five generated-label renames preserve actual function owner,
+relative value, type and storage class. All81 relocation positions, types,
+addends and targets remain; the repaired case8/21 destinations remain intact.
+The complete candidate improves **416→405 differences** across1,316/1,315 bytes.
+The other six function bodies and comparison records are identical, preserving
+five exact companions/1,572 bytes. One gameplay compilation compares all seven
+complete functions.
+
+This is still nonexact: the embedded-list receiver retains its one-byte-longer
+LEA in place of original MOV, with consequent positional changes. The prior
+complete correspondence accounts for the operations and switch data; no masked
+or explanatory-projection bytes contribute to the maintained comparison.
+
+The existing108-case tile2/7/8 selection passes with its unchanged typed board
+surface adapter and original RNG positions. Full returns, board/state, events
+and lists agree. Native builds one owner and links. The restored-CRT relink
+reuses116 source objects and the same19 approved members; all1,091 map addresses
+stay fixed. Its complete image changes only the13 proved displacement bytes
+and12 parsed timestamp bytes. Image SHA-256 is
+`e528611e4506388d2c11b6587304497176d4454c88074e7229b729268c811c8f`.
+No game, provider query or full replay runs. Earlier live observations retain
+their earlier image identities.
+
+Private `.analysis/brick-hit-shared-counter-pan-20261017/` retains the single
+producer, source reversal, full inputs/bindings/comparisons, frame-site proof,
+independent reviews, focused cases and complete image-delta verification.
+All382 exact result records and92 other candidate records remain identical;
+five exact input closures and235 historical input inventories refresh without
+rerunning their case suites. Totals stay475 source /382 exact /93 candidates,
+including32 authored candidates. Original scopes and source optimality remain
+unproved.
+Verified archives replace19 compiler-input copies and two raw objects, releasing
+96 KiB of allocated storage after carrier cost. Current products and unique
+before evidence remain intact. Heavy commands stay serial under CPU35%, memory
+high640 MiB/max768 MiB, with one allowed CPU.
