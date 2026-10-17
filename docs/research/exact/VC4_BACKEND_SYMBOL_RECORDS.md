@@ -199,3 +199,10 @@ Current tested products, valid caches and unique evidence remain. Source,
 394 exact/21 authored candidates, delivery and semantic cases stay unchanged.
 No game or full replay runs. Heavy work is serial on one CPU under CPU35%,
 memory high640 MiB/maximum768 MiB.
+
+The later [C1XX traversal investigation](VC4_FRONTEND_SYMBOL_ORDER.md) recovers
+the actual name hash, head insertion and ascending bucket walk.36 controlled
+pinned-helper calls reproduce all16 current bank names in the retained reader
+order using the four current source scopes. Emitter/header calls are explicit
+boundaries; no live frontend transport or original identifier recovery is
+claimed. No source, exact count or delivery changes follow.

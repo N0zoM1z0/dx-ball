@@ -9,15 +9,19 @@ import { createInterface } from 'node:readline';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const targetMode = process.argv[3] ?? 'game';
-if (!['game', 'vc4-backend'].includes(targetMode)) throw new Error('unsupported pinned REA target');
-const compilerTarget = targetMode === 'vc4-backend';
+const compilerTargets = new Map([
+  ['vc4-backend', 'c2.exe'],
+  ['vc4-cpp-frontend', 'c1xx.exe'],
+]);
+if (targetMode !== 'game' && !compilerTargets.has(targetMode)) throw new Error('unsupported pinned REA target');
+const compilerTarget = compilerTargets.has(targetMode);
 const expectedTargetHash = process.argv[4];
 if (compilerTarget && !/^[0-9a-f]{64}$/.test(expectedTargetHash ?? '')) {
-  throw new Error('compiler session requires its attested backend hash');
+  throw new Error('compiler session requires its attested tool hash');
 }
-const directory = resolve(root, compilerTarget ? '.analysis/rea/vc4-backend' : '.analysis/rea');
+const directory = resolve(root, compilerTarget ? `.analysis/rea/${targetMode}` : '.analysis/rea');
 mkdirSync(directory, { recursive: true, mode: 0o700 });
-const snapshot = resolve(directory, compilerTarget ? 'vc4-backend.snapshot.json' : 'dxball.snapshot.json');
+const snapshot = resolve(directory, compilerTarget ? `${targetMode}.snapshot.json` : 'dxball.snapshot.json');
 const interactive = process.argv[2] === '--interactive';
 const requests = interactive ? [] : JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const runDirectory = resolve(directory, 'runs',
@@ -80,12 +84,12 @@ try {
   await client.connect(transport);
   const catalog = await client.listTools();
   save('catalog.json', catalog);
-  const open = await call('open_binary', {path: resolve(root, compilerTarget ? '.tools/msvc400/bin/c2.exe' : 'original/DXBALL.EXE'),
+  const open = await call('open_binary', {path: resolve(root, compilerTarget ? `.tools/msvc400/bin/${compilerTargets.get(targetMode)}` : 'original/DXBALL.EXE'),
     provider_id: 'ghidra', ...(existsSync(snapshot) ? {snapshot_path: snapshot} : {})});
   opened = true;
   save('open.json', open);
   if (compilerTarget && open.result.sha256 !== expectedTargetHash) {
-    throw new Error('REA opened a different compiler backend');
+    throw new Error('REA opened a different compiler tool');
   }
   persistSnapshot = true;
   console.log(`REA opened ${open.result.sha256}; ${catalog.tools.length} MCP tools`);

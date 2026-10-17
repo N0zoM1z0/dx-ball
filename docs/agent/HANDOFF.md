@@ -119,6 +119,23 @@ removed; the closed identical catalog shares its immutable carrier. Cleanup
 releases8.66 MiB after archive/journal. Receipts are in
 `.analysis/bank-frame-writer-20261017/`; retain current tested products and caches.
 
+The later [C1XX traversal investigation](../research/exact/VC4_FRONTEND_SYMBOL_ORDER.md)
+explains all16 current bank records through actual name hashing, head insertion
+and ascending buckets.36 controlled pinned-helper calls agree with the earlier
+live C2 trace for the four current source declaration groups. Explicit mode1/
+kind9/mask15 inputs and emitter/header stubs limit that result: no new live
+frontend mask, complete IL transport or original names/scopes are recovered.
+Do not turn the hash into name/order/mask fishing or reopen the root14 control.
+The pinned wrapper adds only `vc4-cpp-frontend`; nine Python and six JavaScript
+provider-free guard/lifecycle cases pass. One reused import closes115 records
+and five indexed failures. Reuse them before another819,640ms cold query.
+Private `.analysis/frontend-record-order-20261017/` retains full primary evidence,
+machine checks, independent review and the compressed closed snapshot. The
+temporary Ghidra project is removed; catalog sharing releases8,658,944 allocated
+bytes after snapshot/journal. Standard cleanup previews zero further disposable
+products. No game source, exact count, compiler run, delivery, game or replay changes.
+One CPU/35%, memory high640MiB/max768MiB remain enforced with no max/OOM events.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

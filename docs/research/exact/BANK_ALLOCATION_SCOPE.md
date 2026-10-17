@@ -142,3 +142,10 @@ remain unknown; no new source model or acceptance follows. The retained C++
 before-iteration body proves root14/current116-byte API workspace was already
 instantiated and compared at1475/72. Its exact reversal/product identities are
 retained; do not retry that model solely because declaration context changed.
+
+The later [C1XX symbol traversal](VC4_FRONTEND_SYMBOL_ORDER.md) explains the
+current16-object order through actual name hashing, head insertion and ascending
+bucket traversal.36 controlled compiler-helper calls match the earlier actual
+C2 trace. Current source scopes/names are explicit inputs; original identifiers
+and declarations remain unknown. This does not authorize identifier permutations
+or reopen the root14 control. The bank remains1475/66 without another compile.

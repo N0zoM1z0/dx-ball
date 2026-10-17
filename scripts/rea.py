@@ -13,6 +13,12 @@ from legacy_toolchain import ROOT, Toolchain, sha256, tree_hash, session_lock
 from resource_limits import ghidra_environment, limit_cpu
 
 
+COMPILER_TARGETS = {
+    "vc4-backend": ("c2.exe", "optimizer_sha256"),
+    "vc4-cpp-frontend": ("c1xx.exe", "cpp_frontend_sha256"),
+}
+
+
 def environment():
     lock = json.loads((ROOT / "config/rea.lock.json").read_text())
     runtime = ROOT / ".tools/rea-runtime"
@@ -47,8 +53,9 @@ def main(arguments):
     limit_cpu()
     compiler_session = bool(arguments and arguments[0] == "compiler-session")
     if compiler_session:
-        if len(arguments) != 3 or arguments[1] != "vc4-backend":
-            raise ValueError("usage: scripts/rea compiler-session vc4-backend REQUESTS.json|--interactive")
+        if len(arguments) != 3 or arguments[1] not in COMPILER_TARGETS:
+            raise ValueError("usage: scripts/rea compiler-session "
+                             "vc4-backend|vc4-cpp-frontend REQUESTS.json|--interactive")
     node, runtime, env = environment()
     if not arguments:
         arguments = ["--help"]
@@ -75,12 +82,14 @@ def main(arguments):
         lock = session_lock()
         toolchain = Toolchain()
         toolchain.verify()
-        target = ROOT / ".tools/msvc400/bin/c2.exe"
-        if target.resolve() != (toolchain.path / "bin/c2.exe").resolve():
-            raise ValueError("REA compiler target is not the pinned VC4 backend")
+        mode = arguments[1]
+        executable, hash_key = COMPILER_TARGETS[mode]
+        target = ROOT / ".tools/msvc400/bin" / executable
+        if target.resolve() != (toolchain.path / "bin" / executable).resolve():
+            raise ValueError("REA compiler target is not the selected pinned VC4 tool")
         request = arguments[2] if arguments[2] == "--interactive" else str(Path(arguments[2]).resolve())
         return subprocess.run([str(node), str(ROOT / "scripts/rea-session.mjs"),
-                               request, "vc4-backend", toolchain.lock["optimizer_sha256"]],
+                               request, mode, toolchain.lock[hash_key]],
                               env=env, cwd=ROOT).returncode
     if arguments[0] == "session":
         if len(arguments) != 2:

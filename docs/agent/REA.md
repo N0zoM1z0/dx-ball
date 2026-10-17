@@ -46,14 +46,15 @@ can also be passed as `scripts/rea session path/to/requests.json`. Inspect the
 saved tool catalog before composing requests for another operation.
 
 For a concrete compiler-lowering question, a dedicated session can inspect the
-hash-pinned VC4 backend:
+hash-pinned VC4 compiler tools:
 
 ```bash
 scripts/rea compiler-session vc4-backend path/to/requests.json
 scripts/rea compiler-session vc4-backend --interactive
+scripts/rea compiler-session vc4-cpp-frontend --interactive
 ```
 
-This mode verifies the complete installed toolchain and selects its attested
+The backend mode verifies the complete installed toolchain and selects its attested
 `c2.exe`. Its records and snapshot live under `.analysis/rea/vc4-backend/`,
 separately from game investigations. The opened target hash must agree before
 the session may save a snapshot; a rejected target is closed without saving.
@@ -93,6 +94,19 @@ controlled pinned-code calls reproduce the current16 homes with explicit cursor/
 alignment inputs. This establishes the current C2 allocation path, while frontend
 production order and original declarations remain open. Reuse the86-record snapshot
 and retained traces before another import.
+
+The [C++ frontend traversal follow-up](../research/exact/VC4_FRONTEND_SYMBOL_ORDER.md)
+selects only attested `c1xx.exe` through `vc4-cpp-frontend`, with its own directory
+and snapshot under `.analysis/rea/vc4-cpp-frontend/`. It retains115 successful
+observations/five indexed invalid inputs and closes normally. The first query
+takes819,640ms under the same limits; reuse its records before another cold
+import. Name hashing, head insertion and ascending buckets reproduce all16
+current bank objects in36 controlled helper calls, with emitter/header boundaries
+intercepted. This is not live frontend transport or original-name recovery.
+The cold import logs retain a Decompiler Parameter ID timeout. Future imports
+may consider that exact optional analyzer separately; do not silently change a
+retained profile or trust its inferred signatures. Nine Python guard/dispatch
+cases and six provider-free JavaScript lifecycle cases pass for the new mode.
 
 For a missing native ABI, control-flow or instruction question, the narrower
 facets are also verified with 6.3:
