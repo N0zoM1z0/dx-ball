@@ -102,3 +102,32 @@ frozen inputs, closed provider records, full code/metadata comparison, compiler
 products, reports and a losslessly compressed 387-evidence snapshot before
 cleanup. Historical display, palette, list, core and allocator native products
 retain their identities. Originals and compiler binaries remain private.
+
+## Read-only receiver control, October 17
+
+The original conversion, division and comparison read their receiver without
+writing it; addition mutates it. This supports one coherent inferred API model
+with `const` on the first three methods, while retaining their by-value operands,
+result lifetime and complete executable bodies. Read-only behavior does not
+uniquely establish the original qualification. No equivalent control was found
+in the bounded retained fixed-lifetime and triangle-scope records.
+
+One current raster compile compares all12 complete functions. All resolved code
+digests and attached metadata equal their retained canonical results: nine
+accepted bodies retain715 code bytes/136 metadata bytes; triangle remains
+1710/88 bytes/differences with its full160-byte metadata exact. The polygon
+candidates remain1543/214 and1592/214. The model is closed as an exactness
+improvement, without adoption or further qualifier combinations.
+
+Three explicit actual method definitions change from non-const to const
+decorated identities. The21 changed triangle bindings are16 conversions, three
+divisions and two comparisons. Every original target, relocation type and
+addend is preserved; other decorated rebinding stays prohibited. Complete-span
+and local-target checks remain active. No byte projection or mask is accepted.
+
+Private `.analysis/fixedpoint-const-receivers-20261017/` retains the transformation,
+full comparisons, actual definition/binding checks and independent review.
+Raw inputs/products are archived and every member hash verified before deletion.
+Canonical source, cached objects, ledgers, image and totals remain unchanged:
+391 exacts and24 authored candidates. No provider query, runtime check, game run
+or full replay accompanies this rejected source model.

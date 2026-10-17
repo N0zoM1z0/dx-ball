@@ -206,6 +206,9 @@ Other authored boundaries and retained controls:
 - Triangle's four root-constructed FixedPoint objects precede early exits; do not
   narrow them arbitrarily. The adopted scanline scope restores y's home; vertical
   scale and polygon endpoint-scope controls are closed.
+  The [read-only FixedPoint receiver model](../research/exact/EXACT_FIXED_POINT.md#read-only-receiver-control-october-17)
+  also closes unchanged: all12 full code digests and attached metadata agree
+  after one compile. It changes no claim; do not repeat qualifier combinations.
 - The [C-compatible polygon owner](../research/exact/POLYGON_SCAN_WORKSPACE.md#c-compatible-polygon-owner-control-october-17)
   full80 pilot reproduces the rejected C++ full80 bodies, including five extra
   copy-address LEAs each. Separate x/y assignments would change the original
