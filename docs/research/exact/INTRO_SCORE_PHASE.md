@@ -1,5 +1,10 @@
 # Intro score phase
 
+The October 17 [cross-function workspace recovery](SCORE_WORKSPACE_REGIONS.md)
+supersedes the buffer gap below: text100/decimal20 emits the complete587-byte
+function exactly. Original declaration capacities remain inferred. The
+following records the earlier scope-only checkpoint.
+
 Menu redraw at `0x0040E0E0` now declares its score text, decimal buffer and text
 length inside the existing score-present branch. The full-screen rectangle
 stays outside that branch because it is used by all three surface copies.

@@ -4316,12 +4316,12 @@ relocations = [
     { offset = 250, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
 ]
 
-[candidates.draw-score]
+[units.draw-score]
 build = "runtime"
 symbol = "_dxball_draw_score"
 target_address = 0x4158d0
 size = 433
-boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
+boundary_evidence = "docs/research/exact/SCORE_WORKSPACE_REGIONS.md"
 relocations = [
   { offset = 16, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
   { offset = 22, type = "REL32", symbol = "__ultoa", addend = 0, target = 0x0041F570 },
@@ -4384,61 +4384,61 @@ relocations = [
     { offset = 260, type = "REL32", symbol = "_dxball_palette_transition", addend = 0, target = 0x0040A340 },
 ]
 
-[candidates.redraw-intro]
+[units.redraw-intro]
 build = "intro"
 symbol = "_dxball_redraw_intro"
 target_address = 0x0040E0E0
 size = 587
-boundary_evidence = "docs/research/exact/EXACT_INTRO.md"
+boundary_evidence = "docs/research/exact/SCORE_WORKSPACE_REGIONS.md"
 relocations = [
-    { offset = 40, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x004228B4 },
-    { offset = 46, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x00409F10 },
-    { offset = 55, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x004228D0 },
-    { offset = 69, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
-    { offset = 75, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x00409F10 },
-    { offset = 85, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
-    { offset = 91, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x00409F10 },
-    { offset = 110, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x00421070 },
-    { offset = 120, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
-    { offset = 126, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
-    { offset = 136, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
-    { offset = 142, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x00403E50 },
-    { offset = 152, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x00403E90 },
-    { offset = 162, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 171, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
-    { offset = 183, type = "DIR32", symbol = "$SG29607", addend = 0, target = 0x00422C14, data_hex = "4c6173742053636f7265202d2000" },
-    { offset = 192, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x004177F0 },
-    { offset = 206, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
-    { offset = 212, type = "REL32", symbol = "__ultoa", addend = 0, target = 0x0041F570 },
-    { offset = 228, type = "REL32", symbol = "_strcat", addend = 0, target = 0x004177F8 },
-    { offset = 240, type = "REL32", symbol = "_strlen", addend = 0, target = 0x00417DF0 },
-    { offset = 263, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
-    { offset = 273, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 281, type = "DIR32", symbol = "$SG29611", addend = 0, target = 0x00422C24, data_hex = "5620312e303700" },
-    { offset = 295, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
-    { offset = 305, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 313, type = "DIR32", symbol = "$SG29612", addend = 0, target = 0x00422C2C, data_hex = "4279204d69636861656c20502e2057656c636800" },
-    { offset = 330, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
-    { offset = 340, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 348, type = "DIR32", symbol = "$SG29613", addend = 0, target = 0x00422C40, data_hex = "436f7079726967687420203139393620206279204d69636861656c20502e2057656c63682c2020416c6c205269676874732052657365727665642e00" },
-    { offset = 362, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
-    { offset = 372, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 380, type = "DIR32", symbol = "$SG29614", addend = 0, target = 0x00422C7C, data_hex = "596f75206d617920667265656c79206469737472696275746520746869732067616d6520736f206c6f6e672061732069742773206e6f7420736f6c6420666f722070726f66697420776974686f75742074686520617574686f722773207772697474656e20636f6e73656e742e00" },
-    { offset = 394, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
-    { offset = 404, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x00403E90 },
-    { offset = 414, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 422, type = "DIR32", symbol = "$SG29615", addend = 0, target = 0x00422CEC, data_hex = "4241534544204f4e202060604d45474142414c4c606000" },
-    { offset = 439, type = "REL32", symbol = "_dxball_draw_centered_text", addend = 0, target = 0x00404F80 },
-    { offset = 449, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
-    { offset = 457, type = "DIR32", symbol = "$SG29616", addend = 0, target = 0x00422D04, data_hex = "425920454420414e4420414c204d41434b455900" },
-    { offset = 474, type = "REL32", symbol = "_dxball_draw_centered_text", addend = 0, target = 0x00404F80 },
-    { offset = 493, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
-    { offset = 503, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x004228B4 },
-    { offset = 509, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x004228B4 },
-    { offset = 520, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x004228D0 },
-    { offset = 543, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
-    { offset = 553, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
-    { offset = 559, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
+    { offset = 43, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x004228B4 },
+    { offset = 49, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x00409F10 },
+    { offset = 58, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x004228D0 },
+    { offset = 72, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
+    { offset = 78, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x00409F10 },
+    { offset = 88, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
+    { offset = 94, type = "REL32", symbol = "_dxball_clear_surface", addend = 0, target = 0x00409F10 },
+    { offset = 113, type = "DIR32", symbol = "_dxball_background_surface", addend = 0, target = 0x00421070 },
+    { offset = 123, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
+    { offset = 129, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
+    { offset = 139, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
+    { offset = 145, type = "REL32", symbol = "_dxball_select_surface", addend = 0, target = 0x00403E50 },
+    { offset = 155, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x00403E90 },
+    { offset = 165, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 174, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
+    { offset = 186, type = "DIR32", symbol = "$SG29607", addend = 0, target = 0x00422C14, data_hex = "4c6173742053636f7265202d2000" },
+    { offset = 195, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x004177F0 },
+    { offset = 212, type = "DIR32", symbol = "_dxball_score", addend = 0, target = 0x00422D18 },
+    { offset = 218, type = "REL32", symbol = "__ultoa", addend = 0, target = 0x0041F570 },
+    { offset = 237, type = "REL32", symbol = "_strcat", addend = 0, target = 0x004177F8 },
+    { offset = 249, type = "REL32", symbol = "_strlen", addend = 0, target = 0x00417DF0 },
+    { offset = 272, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
+    { offset = 282, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 290, type = "DIR32", symbol = "$SG29611", addend = 0, target = 0x00422C24, data_hex = "5620312e303700" },
+    { offset = 304, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
+    { offset = 314, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 322, type = "DIR32", symbol = "$SG29612", addend = 0, target = 0x00422C2C, data_hex = "4279204d69636861656c20502e2057656c636800" },
+    { offset = 339, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
+    { offset = 349, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 357, type = "DIR32", symbol = "$SG29613", addend = 0, target = 0x00422C40, data_hex = "436f7079726967687420203139393620206279204d69636861656c20502e2057656c63682c2020416c6c205269676874732052657365727665642e00" },
+    { offset = 371, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
+    { offset = 381, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 389, type = "DIR32", symbol = "$SG29614", addend = 0, target = 0x00422C7C, data_hex = "596f75206d617920667265656c79206469737472696275746520746869732067616d6520736f206c6f6e672061732069742773206e6f7420736f6c6420666f722070726f66697420776974686f75742074686520617574686f722773207772697474656e20636f6e73656e742e00" },
+    { offset = 403, type = "REL32", symbol = "_dxball_draw_text", addend = 0, target = 0x00404EE0 },
+    { offset = 413, type = "REL32", symbol = "_dxball_select_font_bank", addend = 0, target = 0x00403E90 },
+    { offset = 423, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 431, type = "DIR32", symbol = "$SG29615", addend = 0, target = 0x00422CEC, data_hex = "4241534544204f4e202060604d45474142414c4c606000" },
+    { offset = 448, type = "REL32", symbol = "_dxball_draw_centered_text", addend = 0, target = 0x00404F80 },
+    { offset = 458, type = "REL32", symbol = "_dxball_wait_frames", addend = 0, target = 0x00409610 },
+    { offset = 466, type = "DIR32", symbol = "$SG29616", addend = 0, target = 0x00422D04, data_hex = "425920454420414e4420414c204d41434b455900" },
+    { offset = 483, type = "REL32", symbol = "_dxball_draw_centered_text", addend = 0, target = 0x00404F80 },
+    { offset = 502, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
+    { offset = 512, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x004228B4 },
+    { offset = 518, type = "DIR32", symbol = "_dxball_primary_surface", addend = 0, target = 0x004228B4 },
+    { offset = 529, type = "DIR32", symbol = "_dxball_draw_to_primary", addend = 0, target = 0x004228D0 },
+    { offset = 552, type = "DIR32", symbol = "_dxball_board_surface", addend = 0, target = 0x004228BC },
+    { offset = 562, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
+    { offset = 568, type = "DIR32", symbol = "_dxball_secondary_surface", addend = 0, target = 0x004228B8 },
 ]
 
 [units.initialize-intro-points]

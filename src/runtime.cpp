@@ -128,7 +128,7 @@ void dxball_draw_paddle(void)
 
 void dxball_draw_score(void)
 {
-    char text[11];
+    char text[20];
     DxBallInt count, x, y, i;
     DxBallRect rect;
     _ultoa((unsigned long)(DxBallUInt)dxball_score, text, 10);

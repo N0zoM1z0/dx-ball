@@ -1,5 +1,10 @@
 # Score-strip source and remaining storage footprint
 
+The October 17 [cross-function workspace recovery](SCORE_WORKSPACE_REGIONS.md)
+supersedes the storage gap below: the 20-byte decimal array emits the complete
+433-byte function exactly. Original declaration capacity remains inferred.
+The following records the earlier 21-difference checkpoint.
+
 The complete score-display body at `0x4158D0..0x415A80` restores its original
 life-strip arithmetic, rectangle store order and Y argument. Its 433-byte
 comparison improves from 76 differences to 21. All remaining differences are

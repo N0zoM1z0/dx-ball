@@ -15,6 +15,13 @@ function boundaries are provisional. Reuse the existing REA dossier before
 opening another analysis session. Record what behavior is missing and which
 caller, callee or data owner will answer it.
 
+Missing original source declarations are a reconstruction question, not by
+themselves an external blocker. Form bounded hypotheses from actual producers,
+consumers and independent layout observations, then test complete affected
+functions. Distinguish an inferred declaration from uniquely recovered source;
+exact compiler output can establish the former without proving the latter.
+Avoid blind permutations, unused padding and repeated unchanged trials.
+
 Use repository Python and the pinned REA wrapper. When beginning binary or
 compiler work, verify the inputs relevant to that work:
 

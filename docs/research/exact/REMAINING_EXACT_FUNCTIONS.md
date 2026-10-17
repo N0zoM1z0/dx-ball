@@ -1,11 +1,11 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after the last-brick expiry scope recovery.
-Accepted totals are **380 functions / 77,485 code bytes / 244 metadata bytes**.
-There are **95 complete nonexact comparisons: 34 authored, 60 runtime and one
+Updated October 17, 2026, after the score workspace recovery.
+Accepted totals are **382 functions / 78,505 code bytes / 244 metadata bytes**.
+There are **93 complete nonexact comparisons: 32 authored, 60 runtime and one
 compiler-generated**. None is an accepted exact.
 
-These 95 are all currently source-present nonexact entries. The eight allocator
+These 93 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -61,6 +61,13 @@ with 784 logical cases and seven affected Win32 selectors passing. Their
 37/42/47-byte bodies remain nonexact against seven bytes each; extra call-frame
 and return-address identity remain open. See [member calls](RUNTIME_CPP_MEMBER_CALL.md).
 
+The [cross-function score workspaces](SCORE_WORKSPACE_REGIONS.md) restore two
+complete exact functions: draw-score433 and redraw-intro587. The existing consumed
+arrays use decimal20 in both functions and menu text100. All30 prior exact
+companions and four other candidate identities survive36 complete comparisons;
+135 existing focused calls pass. Capacities remain inferred, not uniquely
+recovered source declarations. There is no full replay or game campaign.
+
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
 The directory date is historical; its contents are current.
@@ -87,14 +94,13 @@ contexts are later publisher projects. All34 comparisons remain unchanged; this
 is neither a whole-repository search nor proof of source optimality.
 
 An October 17 receipt audit verifies current source/object/flag identities for
-all 270 classified authored entries across 29 matching-build recipes: 236 exact
-and 34 complete candidates. It reuses existing comparisons without replaying.
+all 270 classified authored entries across 29 matching-build recipes: 238 exact
+and 32 complete candidates. It reuses existing comparisons without replaying.
 This coverage audit does not establish source optimality, semantic equivalence
 or the final authored denominator. Its retained rows and compiler closures are
-`.analysis/brick-hit-scope-adoption-20261017/authored-coverage.json`.
-This read-only refresh follows the particle-counter scope adoption and includes
-its current416-difference comparison and retained-producer closure. Status,
-extents, ABI, acceptance and function counts stay unchanged. Earlier coverage
+`.analysis/score-workspace-regions-20261017/authored-coverage.json`.
+This read-only refresh follows the score workspace adoption and includes the
+brick-hit416-difference comparison and retained-producer closure. Earlier coverage
 receipts remain preserved in their original phases.
 
 All 34 authored candidates were compared across their complete original
@@ -134,7 +140,6 @@ receiver address producer remain; no new VC4 source compilation or exact gain.
 | `wait-frames` | 170 | 170 | 6 |
 | `draw-line` | 445 | 445 | 9 |
 | `palette-transition` | 1339 | 1339 | 12 |
-| `draw-score` | 433 | 433 | 21 |
 | `load-editor-board` | 52 | 58 | 23 |
 | `store-editor-board` | 52 | 58 | 42 |
 | `draw-paddle` | 677 | 677 | 48 |
@@ -152,7 +157,6 @@ receiver address producer remain; no new VC4 source compilation or exact gain.
 | `draw-high-scores` | 404 | 403 | 330 |
 | `blt-effect-sprite` | 362 | 366 | 332 |
 | `hit-board-tile` | 1315 | 1316 | 416 |
-| `redraw-intro` | 587 | 578 | 560 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 990 |
 | `game-frame` | 1688 | 1691 | 1155 |

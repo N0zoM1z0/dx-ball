@@ -24,15 +24,15 @@ receipts remain in place; old checkpoint totals are not current totals.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 380 |
-| Exact code / attached metadata bytes | 77,485 / 244 |
-| Complete nonexact comparisons | 95: 34 authored / 60 runtime / 1 generated |
+| Accepted complete exact functions | 382 |
+| Exact code / attached metadata bytes | 78,505 / 244 |
+| Complete nonexact comparisons | 93: 32 authored / 60 runtime / 1 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-236 exact and 34 candidates across 29 compiler closures. The source-present
+238 exact and 32 candidates across 29 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -43,10 +43,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 380 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 95 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 382 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 93 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/brick-hit-scope-adoption-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/score-workspace-regions-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,14 +61,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
+`1fcba8f2f40a2c6e822159475048f26a656d7e954b1b11bd532fd74a61ede9c4`.
 Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest source adoption is [brick-hit iterator scope](../research/exact/EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
-at `fd4196d`: score-flag storage returns to original EBP-8; the complete candidate
+The latest adoption restores [score formatting workspace regions](../research/exact/SCORE_WORKSPACE_REGIONS.md):
+decimal20 in both formatters and menu text100 make `draw-score`433 and
+`redraw-intro`587 bytes exact. Two owner compiles compare36 complete functions,
+preserving30 prior exacts and four other candidate identities. Existing135
+focused calls pass; the delivery relink reuses116 source objects/19 members.
+No game run follows this change. Original capacity declarations remain inferred,
+not uniquely recovered; the complete emitted functions are exact.
+
+The earlier [brick-hit iterator scope](../research/exact/EXACT_BRICK_POWERS.md#particle-iterator-scope-adoption)
+at `fd4196d` returns score-flag storage to original EBP-8; the complete candidate
 improves from 418 to 416 differences. A retained object with identical producer
 inputs supplies the change without another VC4 compile. Seven complete comparisons
 preserve five exacts/1,572 bytes and all other affected identities. The final
@@ -97,33 +105,25 @@ Choose a specific unaccounted operation, ABI, ownership, lifetime or producer fa
 A small difference count is not itself a source question. Complete correspondence
 and unchanged tests do not prove original declarations or absolute optimality.
 
-An independent read-only October 17 review finds no grounded, untried edit in the
-following storage gaps. The user has been asked for any existing original 1.07
-project, MAP/PDB, headers or build records. New material must first be tied to this
-pinned target; its mere authorship or version proximity is insufficient.
-The read-only review is retained in
-`.analysis/source-frontier-review-20261017/review.json`.
-
-Continuation is currently blocked on missing producer evidence. Three consecutive
-continuation checks found no new material or grounded source change within the
-recorded constraints; the latest local check found no source, MAP/PDB or project
-files in `original/`. Both scoped reviewers are complete, with no pending job.
-Resume when target-linked declarations, build context or another independently
-supported operation/ABI/storage fact supplies a concrete source question. This
-does not prove source optimality or that original source is the only possible
-way forward. Do not repeat closed trials or unchanged checks while waiting.
+Continue exploring the remaining32 authored candidates. The user explicitly
+corrected the earlier missing-declarations blocker: recovering those facts is
+the task. Original source, MAP/PDB or build records would help but are not a
+prerequisite. Do not treat an unproved declaration as proof no hypothesis can be
+tested. The score workspace recovery supersedes the earlier read-only review's
+overly restrictive capacity decision. Form a specific inference from actual
+consumers and independent layout facts, compile once, then judge the complete
+result while preserving the distinction between inferred and unique source.
 
 | Function | Established boundary | Missing producer fact |
 | --- | --- | --- |
-| `draw-score` | All 135 instructions correspond; frame56 versus48 accounts for the 21 displacement/allocation differences | Original decimal-buffer capacity and surrounding declarations; pointer-taking callees expose no capacity |
-| `redraw-intro` | Both have 174 instructions; frame140 versus64 and two longer LEAs account for the nine-byte extent gap; rectangle/count homes restored | Original declarations for text/number storage; bases -120/-140 do not prove capacities100/20 or object grouping |
 | `load-pcx` | All 227 instructions accounted; current frame308 contains305 typed bytes plus3 slot-padding bytes | Original distances61–64 are unaddressed; their owner, declaration/lifetime context and producer scheduling remain unknown |
 
 Reuse [intro score phase](../research/exact/INTRO_SCORE_PHASE.md),
 [score strip](../research/exact/SCORE_STRIP_SOURCE.md),
 [PCX packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md) and
 [closed storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md).
-Keep the current justified buffer capacities. Adjacency does not establish an
+Score/intro capacities are inferred from both independent workspace regions and
+their complete exact emissions. Adjacency alone does not establish a PCX
 aggregate; a smaller body or one-position count gain does not recover a variable
 home. The PCX packet trial rotates four homes and restores none; it stays rejected.
 Do not repeat its API-record, scanline-record, header-scope or packet-scope trials.
@@ -198,13 +198,14 @@ companions; do not split owners or add barriers solely to select private zeros.
 
 ## Actual game evidence
 
-The [current-image bounded entry/exit check](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
+The [preceding-image bounded entry/exit check](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
 passes 5.019 seconds on original board0: all 400 initial bytes, 1,410 valid samples,
 no malformed lines, score10/lives3, menu return and actual exit0/no window. The
 20,000-byte bank and 49 originals stay unchanged. Measured CPU is32.1% of one CPU,
 peak301.668 MiB, no memory-limit events. A preceding per-read attempt fails before
 gameplay with 42 reset-requested samples; keep its failure separate. Persistent
-reader success does not establish failure causality or focus recovery. Both runs
+reader success does not establish failure causality or focus recovery. These
+observations retain image50e40609, before the score workspace adoption. Both runs
 reuse the game/reader without compilation. Do not repeat this unchanged episode.
 
 The historical [original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
@@ -226,8 +227,7 @@ checks do not prove live speedup or full50 progression. The original Wine9
 do not patch exact game behavior or rerun its unchanged loop. Physical Windows,
 graphics/audio fidelity, exceptional paths and full campaign acceptance stay open.
 The macOS PR was already answered and deferred; no further message or port work
-is pending. The complete objective remains unachieved; continuation is blocked
-as described above.
+is pending. The complete objective remains active and unachieved.
 
 ## Resources, cleanup and publication
 

@@ -199,7 +199,7 @@ void dxball_redraw_intro(void)
     dxball_select_surface((DxBallSurface)dxball_board_surface); dxball_select_font_bank(2);
     dxball_wait_frames(1);
     if ((DxBallUInt)dxball_score > 0) {
-        char text[32], number[11];
+        char text[100], number[20];
         DxBallInt count;
         strcpy(text, "Last Score - ");
         _ultoa((unsigned long)(DxBallUInt)dxball_score, number, 10);
