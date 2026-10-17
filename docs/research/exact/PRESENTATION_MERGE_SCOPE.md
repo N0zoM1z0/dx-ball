@@ -59,3 +59,22 @@ selected-case identities and products are retained under
 `.analysis/presentation-merge-scope/`. Current products are identified by
 `product-verification.json`; the independent seal is
 `.analysis/checkpoints/presentation-merge-scope-283-206/sha256.json`.
+
+## Current producer correspondence, October 17
+
+The current independent-global declaration context emits 984 bytes with six
+strict differences. All 246 instruction boundaries agree with the original;
+the 35 branches, four calls and 58 actual bindings retain their identities.
+Only the two index loads in each of three signed min/max groups differ: left,
+right and bottom. Each schedule selects the same bound and stores it
+unconditionally under the existing ordinary queue-storage domain. The top
+producer now agrees exactly; the historical two-difference description above
+belongs to its earlier producer inputs.
+
+The pinned SDK's `min`, `max`, `__min` and `__max` definitions expand to the
+same conditional expressions. They do not supply a missing intrinsic or a new
+source-operation hypothesis. No macro, operand-order, lifetime or declaration
+variant is compiled. The six differences remain unmasked in the candidate.
+Private `.analysis/presentation-current-producers-20261017/` retains the current
+complete inspection, compiler-input hashes and SDK identities. There is no
+source change, provider query, native build, test, game or replay.

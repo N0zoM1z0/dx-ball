@@ -104,6 +104,15 @@ differences. All15 runtime companion identities and13 exacts survive;332 existin
 paddle calls pass. This is partial source recovery; exact/candidate counts stay
 unchanged, and physical variable homes remain different.
 
+The [ranking implementation owner control](RANKING_OWNER_FAMILY.md) leaves all
+14 affected code/metadata identities unchanged, including 13 exacts. Ranking
+drawing's complete 135-instruction correspondence has all original frame homes;
+one comparison producer explains its one-byte shortening. The model is rejected
+without source or claim changes. The current
+[presenter correspondence](PRESENTATION_MERGE_SCOPE.md#current-producer-correspondence-october-17)
+locates all six differences in left/right/bottom min/max index loads, with top
+now matching. These are complete candidate explanations, not new exacts.
+
 The [independent-global adoption](INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
 compares all278 affected complete units, promotes17 and explicitly demotes eight.
 This includes16 authored gains/eight authored losses and one generated gain.

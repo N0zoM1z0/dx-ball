@@ -89,6 +89,18 @@ unchanged. Its 302 instructions differ only in 58 frame-displacement bytes.
 Keep both canonical implementations and all current claim/product identities.
 No native build, relink, game, provider query or full replay follows rejected code.
 
+The later [ranking implementation owner](../research/exact/RANKING_OWNER_FAMILY.md)
+control moves the shared table and four consecutive drawing/persistence functions
+into one private implementation. Three compiles compare exactly 14 functions;
+all complete code/metadata identities, including 13 exacts/4,156 bytes, remain
+unchanged. Reject the model without order/include variants. Ranking drawing has
+all original frame homes and 135 instructions; only its two-instruction
+index/global comparison producer explains the 403/404-byte extent difference.
+The [current presenter correspondence](../research/exact/PRESENTATION_MERGE_SCOPE.md#current-producer-correspondence-october-17)
+accounts for its six changed loads in left/right/bottom min/max producers; top
+now agrees. SDK macros expand to the current expressions. Neither comparison
+justifies a new text-scope or equivalent-expression compile.
+
 The latest [independent board globals](../research/exact/INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
 recover seven real neighboring objects instead of an enclosing instance, while
 preserving the full terminal-copy ABI. All278 affected complete units are

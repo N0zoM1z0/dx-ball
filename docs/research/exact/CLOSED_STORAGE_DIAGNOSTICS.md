@@ -16,6 +16,15 @@ consumers. One 16-unit comparison rejects 679/487, preserving all 15 companions
 and 13 exacts. Its digest differs from the earlier full-frame control. Keep the
 maintained 677/68 result; do not extend this scope/record family without a new fact.
 
+## Ranking implementation owner, October 17
+
+The distinct [ranking implementation owner control](RANKING_OWNER_FAMILY.md)
+is also closed: one fixed four-function/shared-table extraction, three compiles
+and exactly 14 complete comparisons retain every code/metadata identity. The
+13 prior exacts retain 4,156 bytes; drawing remains 403/404 with 330 differences.
+Its full frame already matches, so a row-local text lifetime is declined before
+compiling. Do not pursue function-order or include variants from this result.
+
 ## C-compatible polygon owner, October 17
 
 The [separate POD-owner control](POLYGON_SCAN_WORKSPACE.md#c-compatible-polygon-owner-control-october-17)

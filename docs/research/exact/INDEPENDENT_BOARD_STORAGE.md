@@ -295,10 +295,13 @@ Totals remain391 exacts and24 authored candidates; the reconstruction is unfinis
 
 ### Fixture callback-table owner control
 
-An exhaustive source search finds that `DxBallRenderOps` and
-`dxball_render_ops` occur only as a typedef, extern and initialized definition;
-authored bodies call restored APIs directly. Python fixtures read and modify
-the table and derive real default function addresses from it. This supports a
+Within `src`, `DxBallRenderOps` and `dxball_render_ops` occur only as a typedef,
+extern and initialized definition; authored bodies call restored APIs directly.
+Python fixtures read and modify the table and derive default function addresses
+from it. `tests/core_gameplay_interposer.c` also consumes the type through
+`bound_render` and typed binders, reading its live callbacks. An extraction must
+preserve the shared C type, writable table, callback ABI and default addresses
+for both consumer families. This supports a
 distinct ownership hypothesis: move the unchanged table to one fixture bridge
 and omit its declarations from authored headers. The earlier common-engine
 pilot retained the table. Its extraction is therefore a new bounded control.
