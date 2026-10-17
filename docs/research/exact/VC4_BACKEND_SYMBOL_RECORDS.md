@@ -125,3 +125,77 @@ Cleanup releases3.38 MiB of allocated storage after its archive and journal.
 Originals, historical image/map/captures/states, current tested products, useful
 CMake caches and direct traces remain. The job uses one CPU, CPU35%, memory
 high640 MiB/maximum768 MiB; no provider import or full replay runs.
+
+## Frame allocation from the symbol reader
+
+The next investigation captures the same16 real records after reader copy at
+`0x41bd19` and before post-emission cleanup at`0x43a473`. Each retains its
+address, kind, key and actual underscore-prefixed name. Record`+4` is the only
+DWORD field matching all16 signed homes; `+8` retains object sizes.
+
+A second unchanged resource compilation watches the actual count record's
+four-byte`+4` field. One hardware write changes0 to−4; ESI identifies that record
+and EAX is−4. Its write-after EIP is`0x401559`. REA confirms the preceding
+three-byte instruction at`0x401556`: `MOV [ESI+4],EAX`. The complete64-byte
+runtime code window agrees with pinned C2. Both observed compiles preserve all18
+complete resource identities,262 bindings and six literal references; source,
+flags, canonical object and toolchain identities verify before/after.
+
+One REA6.5.0 import retains22 new records in
+`2026-10-17T14-59-10.027Z-interactive-3840208`. Its first query takes417,663 ms;
+follow-ups reuse the import. It closes and saves the86-record cumulative snapshot.
+
+| Actual instruction/control-flow evidence | Evidence ID |
+| --- | --- |
+| Store`0x401556` | `ev_418fb7cd83932a1e1c5c51e48f3f8a52ef27eaa657ddf34e153401530a665f12` |
+| Reader loop and call`0x41b877 → 0x401508` | `ev_d97167a8c80b3bcf0e7bf2043f79c3114c8f0f8d505f864a50a42dbd140d907f` |
+| Storage allocator`0x401508` | `ev_39e7d020c2953a85cd140179aa6dd0376e42d7f45f28d3b8a262a756ff17aaa8` |
+| Negative frame cursor helper`0x40aed4` | `ev_8afd04dca8799979d3de5a2b025a7cb4e1e976eac61373c4703bbec2cd8ed56d` |
+| Alignment helper`0x40aeff` | `ev_d715b0bae3f8ead36ff7343e6b55fc54cbb5c41066128e2ffbe8d7fdb46459c2` |
+| Shared return tail`0x401559..0x401565` | `ev_b53bf95127532a4e2d3446a6103ce8d62ed147ae96007e05ddc9d225fc8d888d` |
+
+The actual kind1 path reads a record, processes/inserts it, checks its flags,
+calls the allocator and returns to the reader loop. In the observed normal
+storage case, it rounds`record+8` to the alignment at`0x47ea30`, obtains a
+negative position through`0x40aed4`/`0x40aeff`, writes`+4` and sets allocated
+bit`0x800` at`+0x10`. A subsequent request returns zero without changing the
+record or cursor. This normal path does not read key`+0x24` or walk a lookup
+bucket; reader-order production upstream remains unresolved.
+
+Imported boundaries require care. Ghidra splits the13-byte shared return tail
+from its parent and splits the reader prologue from its loop. Actual jumps,
+fallthrough and saved-register restoration reconnect them. The tail is not an
+independent normal callable entry. Ghidra gives`0x40aed4` a void signature,
+although its actual EAX is consumed as the negative frame position.
+
+Seventeen final controlled calls execute unmodified mapped C2 instructions:
+16 retained pre-records in observed order and one already-allocated guard.
+With explicit starting cursor0/alignment4, all16 homes, the180-byte frame,
+padded returns, allocated flags, saved registers and stack balance agree. Four
+is also the initialized PE alignment default; this does not independently observe
+the runtime global. Other storage cases and frontend emission are outside the
+check. The initial harness whitelist omitted the already-retained cold guard;
+its correction and failure remain available, with no compiler repeat.
+
+All66 bank differences are explained:63 ordinary home substitutions and three
+within two commuted products. All425 boundaries,23 calls and22 branches agree.
+One product instruction is byte-identical despite different role operands, so
+both complete product groups are included. Width already matches EBP−52;
+thirteen other scalar homes differ. This is a candidate explanation with no new
+exact or semantic acceptance.
+
+An offline archive proof closes root14 precisely: its body equals the retained
+C++ before-iteration model, including the116-byte API workspace and current
+operations. That complete comparison is1475/72. A later context alone supplies
+no new source-model basis. A target-ordered aggregate of all14 roles lacks an
+independent aggregate producer/consumer and is not compiled.
+
+Private `.analysis/bank-frame-writer-20261017/` retains both direct traces,
+hardware write, complete comparisons, corrections, archive proof and independent
+reviews. Four observer products are archived/member-verified before removal;
+the closed run's identical8.36 MiB catalog shares its immutable carrier while
+preserving all paths and bytes. Cleanup releases8.66 MiB after archive/journal.
+Current tested products, valid caches and unique evidence remain. Source,
+394 exact/21 authored candidates, delivery and semantic cases stay unchanged.
+No game or full replay runs. Heavy work is serial on one CPU under CPU35%,
+memory high640 MiB/maximum768 MiB.

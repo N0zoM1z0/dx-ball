@@ -100,6 +100,25 @@ releasing3.38 MiB net after the cleanup archive/journal. Current tested products
 and valid CMake caches remain. The producer of reader order is the next concrete
 gap; do not repeat the closed root/scope/name/order controls.
 
+The subsequent [frame allocator investigation](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md#frame-allocation-from-the-symbol-reader)
+connects that correlation to actual C2 control flow.16 same-address records retain
+kind/key/decorated name; only+4 matches every signed home. A count data watch
+captures0→−4 at401556; reader41b877 calls401508, which rounds size+8 and stores
+the negative cursor result. The normal path does not read key+24; upstream
+reader-order production is the next gap. One reused REA import adds22 records,
+closes and saves86 cumulative observations. Account for the imported shared-tail/
+prologue splits and wrong void signature.17 final pinned-code synthetic calls
+reproduce all16 homes/180-byte frame with explicit cursor0/alignment4. The66-byte
+residual review covers425 boundaries/23 calls/22 branches. An archive proof closes
+root14/current116-byte API workspace by exact body equality to the prior1475/72
+model. A whole-loader aggregate lacks independent ownership evidence and is not
+tried. Both unchanged-closure observed compiles preserve18 full comparisons/262
+bindings/six literal references. No source, count, delivery, semantic case, game
+or full replay changes. Four observer products are archived/member-verified and
+removed; the closed identical catalog shares its immutable carrier. Cleanup
+releases8.66 MiB after archive/journal. Receipts are in
+`.analysis/bank-frame-writer-20261017/`; retain current tested products and caches.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

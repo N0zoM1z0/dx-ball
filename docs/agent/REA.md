@@ -79,10 +79,20 @@ The first query took394,604 ms, with subsequent queries reusing the live import.
 CPU35%, memory high640 MiB/max768 MiB and the256 MiB Java heap were retained.
 See [the record reader](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md) and
 [expression ordering](../research/exact/VC4_EXPRESSION_ORDERING.md) findings
-before importing again. The closed cumulative snapshot now retains64 records.
+before importing again. The closed cumulative snapshot now retains86 records.
 The ordering follow-up reuses one live import after its407,402 ms cold query;
 44 synthetic executions confirm the actual rank/swap helpers, without claiming
 original-game record keys or a cause for its instruction differences.
+
+The later [frame-allocation investigation](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md#frame-allocation-from-the-symbol-reader)
+adds22 records through one417,663 ms cold import and fast same-session follow-ups.
+It follows an actual symbol-field hardware write through the reader and allocator.
+The imported allocator tail and reader loop/prologue are split across records;
+reconnect actual jumps/fallthrough before reasoning about whole behavior.17 final
+controlled pinned-code calls reproduce the current16 homes with explicit cursor/
+alignment inputs. This establishes the current C2 allocation path, while frontend
+production order and original declarations remain open. Reuse the86-record snapshot
+and retained traces before another import.
 
 For a missing native ABI, control-flow or instruction question, the narrower
 facets are also verified with 6.3:

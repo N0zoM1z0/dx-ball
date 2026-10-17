@@ -132,3 +132,13 @@ Width remains EBP−52 in both bodies; height is original−28/current−48. All
 complete resource identities survive one observed compile; no source proposal,
 claim update, semantic replay, relink or game run follows. Current repository
 totals remain394 exact/81 candidates, including21 authored candidates.
+
+The subsequent [actual allocator investigation](VC4_BACKEND_SYMBOL_RECORDS.md#frame-allocation-from-the-symbol-reader)
+identifies record`+4` across all16 objects and observes its real count write at
+`0x401556`. The reader calls the normal allocation path per record, without
+another bulk ordering step.17 final controlled pinned-code calls reproduce all
+current homes and the180-byte frame. Original record order and declarations
+remain unknown; no new source model or acceptance follows. The retained C++
+before-iteration body proves root14/current116-byte API workspace was already
+instantiated and compared at1475/72. Its exact reversal/product identities are
+retained; do not retry that model solely because declaration context changed.
