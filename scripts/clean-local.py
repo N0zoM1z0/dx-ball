@@ -102,7 +102,7 @@ def plan():
             if regular(path) and path.suffix in ('.obj', '.log'):
                 actions.append(('remove_probe', path, None, digest(path)))
     # These are resettable test fixtures, never the manual run directories/saves.
-    for profile in ('original', 'vc40', 'windows-i686'):
+    for profile in ('original', 'vc40', 'vc40-restored-crt', 'windows-i686'):
         directory = ROOT / 'build/runtime' / ('probe-' + profile)
         if directory.is_symlink():
             continue

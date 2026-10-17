@@ -754,6 +754,18 @@ closure. Keep the aggregate trial closed; this review supplies no new source
 question. Receipt: `.analysis/pcx-workspace-recheck-20261017/review.json`. No
 compiler, provider, runtime or replay runs, and no acceptance changes.
 
+The separate October 17 packet-scope recheck also keeps that trial closed.
+Its 22 changed EBP displacement bytes merely rotate four real homes: byte
+value -296 to -308, column -300 to -296, decoded count -304 to -300 and xmax
+-308 to -304. Their original homes are respectively -312, -36, -20 and -12;
+none is restored. The current 979-byte body equals the retained trial baseline.
+The historical 851-to-850 differing-position change therefore supplies no
+recovered storage, and the canonical result remains 979/862 bytes with 851
+differences. All seven headers agree, but later bank changes prevent treating
+the historical proposal as a current whole-owner object. No compilation,
+comparison replay or source adoption follows. Receipt:
+`.analysis/pcx-packet-scope-recheck-20261017/review.json`.
+
 ## Rotation bank receiver and inline expansion
 
 One ordinary inline bank/slot accessor restores the height function's two

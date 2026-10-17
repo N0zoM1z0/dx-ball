@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026, after sealing the current-image original50 deadline failure.
+Updated October 17, 2026, after the current-image bounded entry/exit check and storage cleanup.
 The user permits retaining the 19 explicit original CRT members in final VC4
 delivery. Prioritize authored function exactness; removing those runtime
 dependencies is not a delivery gate. Their remaining source/origin gaps stay
@@ -11,7 +11,16 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 from the checks below. The current 116-source-object image is
 `50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
 Earlier live observations below retain their recorded image identities; the
-latest relink has no new game/campaign execution claim.
+latest relink now has the bounded entry/exit check below; no new full campaign passes.
+
+The [current-image entry check](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
+passes5.019 seconds on untouched original board0,1,410 valid samples/no malformed
+lines, score10/lives3, menu return and actual zero exit. All400 initial board
+bytes and20,000 bank bytes verify. An earlier per-read attempt fails at opening
+with reset requested; keep its42 samples and exit1 separately. Persistent-reader
+success does not establish failure causality or focus recovery. Reuse these
+sealed observations rather than repeating the same episode. No compiler, relink,
+full replay, acceptance gain or source change. Return to authored recovery.
 
 The [sparse-tail selector](../research/CAMPAIGN_TAIL_CONTACTS.md#sparse-tail-selector-and-delayed-input-checks)
 ranks six existing safe contact choices only for eligible single-ball speed9
@@ -91,9 +100,10 @@ native selection passes with the existing typed board-surface backing; initial
 unadapted fixture crashes and a private cleanup error remain retained. The
 restored-CRT link reuses116 objects/19 members; all1,091 addresses stay fixed,
 with only nine frame displacements and twelve timestamp bytes changed. Counter/
-pan homes and one receiver producer remain open. No new exact, game or full replay.
+pan homes and one receiver producer remain open. That adoption itself runs no
+game or full replay; the later short entry check is recorded separately above.
 
-The [current original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
+The [retained original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
 has ended with actual observer exit 1 and `fail`: the 14,400-second observation
 deadline expired. All twenty initial original layouts for indices 0 through 19
 were verified; the final retained events include all 8,000 initial bytes. The last
@@ -964,6 +974,24 @@ before overwriting them, including recursively consumed headers.
   `/tmp/dxball_rea_feedback_20261010.md`; do not start another feedback document.
 
 ### Cleanup state
+
+The current-image cleanup archives and verifies23 superseded native build
+directories before removing their865 files, and removes49 checked runtime
+copies after normal shutdown. Net allocated product storage falls24.215 MiB
+after accounting for the retained archive. Canonical native/exact/VC4 caches,
+current image, original assets and manual runtime directories remain. Receipt:
+`.analysis/storage-cleanup-current-20261017/verification.json`. Restore a historical
+native product from that phase's archive only if needed; do not rebuild it merely
+because its old disposable directory is absent. `clean-local.py` now includes
+the restored-CRT automated runtime directory alongside the other probe profiles.
+
+The subsequent maintained cleanup completes164 operations:21 immutable hardlink
+replacements,25 redundant REA aliases,69 disposable probe products and49 older
+VC4 runtime copies. All118 disposable files are archived and verified first.
+Its49.06 MiB total counts logical duplicate/probe bytes, not measured physical
+release. Receipt: `.analysis/storage-maintenance-20261017/verification.json`;
+journal `.analysis/cleanup/20261017T052619336672Z.json`. Manual saves, current
+products and unique evidence remain intact.
 
 The unsigned64 phase shared eight identical immutable carriers and reclaimed
 about3.2MiB. Unique source, member, compiler and arithmetic/fault receipts remain;

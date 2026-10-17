@@ -1,6 +1,6 @@
 # Board transition through the restored CRT
 
-The current 19-member `vc40-restored-crt` image clears an editor-created
+The earlier 19-member `vc40-restored-crt` image identified below clears an editor-created
 single-brick board, loads the untouched original second board and exits zero.
 This adds the round transition to its existing [editor](RESTORED_CRT_EDITOR_FLOW.md)
 and [game-over](RESTORED_CRT_GAMEOVER_FLOW.md) observations. Game source,
@@ -96,3 +96,41 @@ After retaining evidence, 49 verified automated runtime copies are removed and
 those cleanup operations. Other profile and manual runtime directories remain
 untouched. Heavy work stays serial under CPU 35%, memory high 640 MiB / maximum
 768 MiB.
+
+## Current image bounded entry and exit
+
+The later brick-hit scope image
+`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`
+passes a separate 5.019-second original-board0 episode and normal shutdown.
+The unchanged maintained campaign observer verifies all 400 initial board
+bytes and uses ordinary XTest mouse input. The last gameplay sample has score10,
+167 remaining bricks and three lives. A reviewed capture shows the board,
+moving ball and paddle. Escape reaches a completed menu; the next Escape exits0
+and removes the game window. All 20,000 bank bytes and 49 originals stay fixed.
+
+The persistent reader is reused at SHA-256
+`f9dda62006f50395eb367cd0b60ea8137dbaa9cad58348a39ceafb2df4f4a8a1`.
+It yields 1,410 valid SDK samples, no malformed lines and 1,257 processed episode
+samples. The private driver appends only the menu/exit helper after the original
+episode loop; removing that call restores the maintained observer's complete AST.
+No game or reader compilation, relink, new function acceptance or full replay runs.
+This short episode does not repeat the earlier edited-board transition or
+establish full50 progression, focus recovery or physical-driver fidelity.
+
+An earlier per-read observation of this same image fails before gameplay:
+42 samples retain the graphics-reset request and the opening-ready wait times
+out. Its observer exits1 and stops the process during cleanup; no normal exit
+is claimed for that attempt. The passing persistent transport is a different
+observation method, not proof that reader startup caused the first failure.
+Neither attempt has a new HRESULT trace establishing the known focus mechanism.
+Keep both outcomes; do not restart either producer or patch game code for them.
+
+Private `.analysis/current-restored-crt-entry-20261017/` retains the failed
+attempt; `.analysis/current-restored-crt-persistent-entry-20261017/` retains the
+passing run, complete frozen compiler inputs including C++, AST proof, bounded
+states, capture, real exit and verification. All three recorded owned process
+identities are absent. Measured average CPU is32.1% of one CPU, peak301.668 MiB,
+with no memory-limit events under the35% /640 /768 MiB scope. Audio remains on
+the silent sink and the default sink stays unchanged. After byte verification,
+the passing run's49 disposable runtime copies are removed. Historical public
+reports retain their own image identities.
