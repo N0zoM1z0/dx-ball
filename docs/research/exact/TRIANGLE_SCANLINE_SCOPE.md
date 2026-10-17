@@ -41,3 +41,16 @@ The separate 168-byte cleanup/handler continuation and complete metadata
 attestation are retained in the
 [full correspondence note](../RASTER_METADATA_CORRESPONDENCE.md). Complete
 comparisons cover those bytes as well as the provider-owned body.
+
+## Edge-record ownership review, October18
+
+The original root constructors run long step (EBP−24), short step (−20), long
+position (−32), then short position (−16), before sorting and both early exits.
+The four root cleanup funclets reverse that order. Two ordinary slope/position
+edge records would group construction by edge, contrary to these instructions;
+the long pair is also separated by the retained vertical-scale home at−28.
+The actual increment operators couple values logically but do not establish
+aggregate ownership. No edge-record or narrower-root lifetime trial follows.
+Private `.analysis/triangle-edge-ownership-20261018/review.json` retains exact
+constructor/cleanup addresses and the original dossier, continuation and metadata
+Evidence IDs. This does not establish unique original names or declarations.

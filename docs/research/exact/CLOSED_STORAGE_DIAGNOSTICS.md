@@ -1,5 +1,15 @@
 # Closed drawing and SDK storage diagnostics
 
+## Palette implementation owner, October18
+
+One [four-function palette-effects owner](PALETTE_EFFECTS_OWNER.md) is closed:
+three fixed owner compiles compare29 full functions and459 bindings. All29
+resolved digests remain unchanged, preserving22 exacts/5,375 bytes and every
+candidate result. The model extracts the four consecutive palette operations
+and changes only two genuine SetEntries call spellings. It differs from the
+older whole-UI C++ control. Do not expand it into order/header/name variants.
+Canonical sources, objects, caches, delivery and totals remain unchanged.
+
 ## Rotation in the independent-global context, October 17
 
 The [complete current C++ rotation owner](ROTATION_CPP_OWNER.md) is adopted:

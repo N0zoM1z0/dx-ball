@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 17, 2026. The reconstruction is unfinished. Recover the English
+Updated October 18, 2026. The reconstruction is unfinished. Recover the English
 DX-Ball v1.07 functions as exactly as possible, as readable shared C/C++;
 then verify the original VC4 build and playability; resume ports after that.
 The user permits the **19 explicit original CRT members** in the restored-CRT
@@ -135,6 +135,22 @@ temporary Ghidra project is removed; catalog sharing releases8,658,944 allocated
 bytes after snapshot/journal. Standard cleanup previews zero further disposable
 products. No game source, exact count, compiler run, delivery, game or replay changes.
 One CPU/35%, memory high640MiB/max768MiB remain enforced with no max/OOM events.
+
+The October18 [palette-effects owner control](../research/exact/PALETTE_EFFECTS_OWNER.md)
+extracts four consecutive original palette operations into one C++ owner, with
+complete unchanged public headers and two genuine SetEntries member calls.
+Three compiles compare29 complete functions/459 bindings. Every resolved digest
+stays unchanged;22 exacts/5,375 bytes and all seven candidates survive. Close
+without adoption or order/header/name variants. Independent review and full
+receipts are in `.analysis/palette-implementation-owner-20261018/`. Archive/member
+verification precedes deletion of28 raw copies/products and a Python cache,
+releasing163,840 allocated bytes after archive/journal. Canonical source, objects,
+caches, delivery and totals stay unchanged; no provider, game or replay runs.
+The separate [triangle edge review](../research/exact/TRIANGLE_SCANLINE_SCOPE.md#edge-record-ownership-review-october18)
+rejects two slope/position records before compiling: original root construction/
+cleanup order and noncontiguous long-edge homes contradict that ordinary model.
+Keep all four root objects before sorting/exits. Its primary IDs/addresses remain
+in `.analysis/triangle-edge-ownership-20261018/review.json`.
 
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
