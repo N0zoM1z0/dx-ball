@@ -1,5 +1,16 @@
 # Closed drawing and SDK storage diagnostics
 
+## Current C++ nested rotation origin, October18
+
+The [fixed nested-origin control](ROTATION_ORIGIN_STORAGE.md#current-c-nested-origin-control-october18)
+differs from the older C trial in its actual frontend and complete inputs.
+One compile compares all five functions/115 bindings/25 literals: no gain,
+offset259exact→261/223, three exact companions unchanged, renderer1458/1466
+with a new digest. Two original temporary homes are recovered, but the shared
+family loses an exact; reject it together. No selective old object or further
+expression variants follow. Verified archival/removal releases44 KiB net;
+canonical source, counts and delivery remain unchanged.
+
 ## Drawing primitive owner, October18
 
 The [distinct two-function primitive family](DRAWING_PRIMITIVES_OWNER.md) is

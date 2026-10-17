@@ -122,3 +122,31 @@ products, including two objects, are archived/member-hash verified before
 removal, releasing72 KiB net. Scope peak173,301,760 bytes with zero high/max/OOM
 events under the required caps. No native build, runtime case, relink, provider,
 game or full replay follows this rejected model.
+
+## Header-tail geometry and bounded search, October18
+
+The original header base is EBP−192 (`LEA` at409C2F), with a128-byte loop
+bound at409C47 and signed16-bit maxima at offsets8/10 (409C9B/409CA5).
+Its observed range ends at EBP−65. The four unobserved bytes at−64..−61
+immediately precede the pixel pointer at−60..−57. On the opposite side,
+Lock result−196..−193, width−200..−197 and the108-byte descriptor−308..−201
+account for the neighboring objects. No wide/FP access among the227 original
+instructions establishes an eight-byte alignment requirement. Adjacency
+permits, but does not establish, a larger header declaration.
+
+Four targeted external queries find no published declaration combining a
+native132-byte extent, signed16-bit maxima at8/10 and a fixed128-byte read.
+Returned primary-source excerpts include an
+[author-posted decoder](https://groups.google.com/g/comp.os.msdos.programmer/c/PPR33g4g0Ps)
+using word tail fields and a `sizeof` read, and a
+[developer source diff](https://sourceforge.net/p/paintown/mailman/message/30226292/)
+using16-bit tail fields. These search excerpts establish no qualifying source
+lineage or VC4 layout; no matching source carrier was downloaded. This bounded
+negative is not proof that no historical declaration exists. Do not synthesize
+an extra four-byte field from the gap.
+
+Sealed `.analysis/pcx-header-tail-search-20261018/` records the four queries,
+URLs, original Evidence ID/carrier hashes, geometry and limits. Its comparison
+mapping belongs to the retained packet-loop epoch, not a new current-object
+attestation. No new compile, provider, runtime check or raw temporary product
+follows.

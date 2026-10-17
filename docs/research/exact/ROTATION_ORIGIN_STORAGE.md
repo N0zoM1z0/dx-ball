@@ -53,3 +53,35 @@ Inputs, complete comparisons, instruction inventories, products and the focused
 Oracle are retained in `.analysis/rotation-origin-storage-20261012/`. No game
 campaign ran. Verified gzip carriers retain disposable diagnostic object bytes
 after cleanup.
+
+## Current C++ nested-origin control, October18
+
+A bounded review of21 earlier rotation phases and33 retained renderer sources
+finds just one nested first-term model, compiled as C with older declarations.
+The current C++ owner had not tested that fixed model. Original first-term
+`FSTP qword` stores at EBP−368/−400 cross the following trig calls; current named
+terms use−324/−336. This supports one current-context control, without proving
+the original spelling or reopening other old models.
+
+Remove only the two named first-term declarations and substitute the same prior
+nested expressions, retaining explicit double rounding, full headers, flags,
+integer pixel addressing and all five current functions. One compile compares
+five complete units/115 bindings/25 literal references. There is no gain:
+offset loses its259-byte exact result, becoming261/223. Y-offset191, width259
+and height191 retain their exact identities. Renderer stays1458/1466 with a
+different full digest. Reject the whole model; retaining the old offset object
+selectively would conceal the shared-input loss.
+
+Independent review checks78 origin instructions: the proposed temporary homes
+match−368/−400, actual64-bit rounding and trig order survive, and normal/bug
+fallback division paths retain their operands. This bounded check does not
+claim complete renderer equivalence. Recovering these two homes alone does not
+recover its source or offset's compiler context.
+
+Sealed `.analysis/rotation-current-cpp-origin-20261018/` retains complete inputs,
+comparisons and independent reviews. Ten raw copies/products, including two
+objects, are archived and member-hash verified before deletion, releasing44 KiB
+net after archive/journal costs. Peak159,252,480 bytes; no high/max/OOM events.
+Canonical source, products, delivery and counts stay unchanged. No provider,
+native build, runtime case, relink, game or full replay follows; no further
+cast, parenthesis, flags or selective-object variants are queued.

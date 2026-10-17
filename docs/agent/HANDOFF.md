@@ -253,6 +253,28 @@ confirms30 actual accesses per polygon, with+12..15 untouched and no external
 domain consumer of the records. Both investigations retain sealed evidence;
 neither adds a function, exact claim, provider query or runtime case.
 
+The later [current C++ nested-origin control](../research/exact/ROTATION_ORIGIN_STORAGE.md#current-c-nested-origin-control-october18)
+closes a specific gap: the sole earlier nested model used C and older inputs.
+One current compile compares five complete functions/115 bindings/25 literals.
+No gain; offset259exact→261/223, three other exacts retain their identities,
+renderer1458/1466 changes digest. Original first-term homes−368/−400 return,
+with78 origin instructions checking64-bit rounding, trig order and both FDIV
+paths; this is not a full renderer equivalence claim. Reject the whole model,
+without selective old objects or further expression variants. Sealed
+`.analysis/rotation-current-cpp-origin-20261018/` retains reviews and full
+comparisons. Ten raw inputs/products including two objects are archived/member
+verified then removed, releasing44 KiB net. Peak159,252,480 bytes, zero high/max/
+OOM events. No source, claim, delivery, provider, runtime or full replay changes.
+
+The separate [PCX header-tail review](../research/exact/EXACT_PCX_PACKET_LOOP.md#header-tail-geometry-and-bounded-search-october18)
+places the unexplained four bytes immediately after the observed128-byte
+header and before its pixel pointer. Adjacency and incidental alignment do
+not establish a132-byte declaration. Four targeted external queries find no
+qualifying published declaration; the receipt preserves search excerpts and
+their limitations, not downloaded source provenance. No guessed header is
+compiled. Sealed `.analysis/pcx-header-tail-search-20261018/` retains original
+Evidence/carrier hashes and geometry; no disposable raw files are created.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;
