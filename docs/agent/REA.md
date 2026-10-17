@@ -195,6 +195,16 @@ the current REA wrapper explicitly selects the smaller heap. Node 22.19.0,
 Ghidra 12.1.4 and the existing JDK remain pinned. Keep discovery bounded and
 save full catalogs outside the conversation before inspecting selected schemas.
 
+Input attestation hashes files through `hashlib.file_digest` rather than loading
+each whole file. The October 18 verification preserves all VC4, Node dependency
+tree, Ghidra and JDK pins. Separate children hashing the same 142,255,299-byte JDK
+module file peak at 153,760 KiB with the old helper and 17,688 KiB with streaming;
+their digests agree. This measures single-file hashing RSS, not whole-REA peak
+memory. The serial full input attestation has zero memory-limit events. Reuse
+`.analysis/streamed-input-hashing-20261018/` receipts; no provider, compiler or
+game replay is needed for this helper change. Its duplicate before-copy is
+removed after byte comparison with the reachable Git beforeimage.
+
 The release advertises `inspect_analysis_view` for completed binary-layout and
 JavaScript application Evidence, using same-session retained IDs or inline
 Evidence. Native function-dossier views and old-record compatibility are not
