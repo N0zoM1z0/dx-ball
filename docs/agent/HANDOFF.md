@@ -734,6 +734,8 @@ nevertheless produces the same complete COFF apart from timestamps. Palette
 endpoint/platform differences prohibit wholesale transfer. Reuse these closed
 findings when selecting the next actual game producer; related names or debug
 record order alone do not justify another compilation.
+Its displayed char-pointer types also do not establish absence of pointee
+`const`; the proposed qualifier change is declined before compilation.
 
 Continue exploring the remaining21 authored candidates. The user explicitly
 corrected the earlier missing-declarations blocker: recovering those facts is

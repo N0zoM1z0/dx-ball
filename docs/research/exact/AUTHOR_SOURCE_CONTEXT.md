@@ -152,6 +152,15 @@ private declaration hypothesis while preserving every maintained type, cast,
 operation, scope, header, ABI and flag. It does not justify further name/order
 permutations or copying the foreign packed structure into the game.
 
+The displayed `char *` does not establish absence of pointee `const`.
+The actual chain is near386 pointer type68 → named `char` type10 → scalar
+type5; the retained format/reader supplies no usable cv-qualification evidence.
+A later proposal to remove `const` from the three game font APIs is therefore
+declined before any compilation or canonical staging. This does not prove that
+the actual 1995 compiler discarded qualifiers. Private
+`.analysis/author-font-pointer-contract-20261018/` retains the corrected review;
+both unused proposals are archived, member-hash verified and removed.
+
 Private phases`author-plasma-inventory-20261018`,
 `author-plasma-debug-format-20261018`,`author-plasma-code-map-20261018` and
 `author-plasma-font-linkage-20261018` retain the complete primary bytes,
