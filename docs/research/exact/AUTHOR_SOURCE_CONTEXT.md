@@ -91,6 +91,28 @@ or code downloaded. Self-reconstruction/mirrors remain excluded. Sealed
 responses in a decompression-hash-verified gzip; the raw response is removed.
 This is a four-query boundary, not proof of source absence or original declarations.
 
+## Related timer source, October18
+
+Two previously unread files at the same pinned ParticleFire commit are checked:
+[Timer.cpp](https://github.com/LongbowGames/ParticleFire/blob/dbf61926072a34ff04879d1e35fa57c25014f014/src/Tools/Timer.cpp)
+and [Timer.h](https://github.com/LongbowGames/ParticleFire/blob/dbf61926072a34ff04879d1e35fa57c25014f014/src/Tools/Timer.h).
+All2,827 bytes verify against their actual Git blob identities. The class uses
+a64-bit elapsed-counter calculation and caller-selected time scale, with a WinMM
+fallback dated November1998 in its header. The game's helper also has performance-
+counter and WinMM paths, but divides the low counter word by a cached low-word
+frequency divisor. Its elapsed predicate returns a threshold decision. Neither
+has the foreign receiver or scaling argument. Generic timer APIs do not establish
+a connected original routine or justify a source model.
+
+Private`.analysis/particle-timer-source-20261018/` retains primary URLs, hashes,
+the bounded comparison and a member-verified archive. Both raw source copies are
+removed; no compiler, provider, game or replay runs. A separate six-query search
+for rotation's unusual`2.046` divisor also finds no qualifying source in returned
+excerpts; reconstruction mirrors are excluded. Its final three-query response is
+retained compressed under`.analysis/rotation-divisor-source-20261018/`; the first
+three responses remain only in the conversation. Neither boundary establishes
+source absence or changes any exact/candidate claim.
+
 ## Author DOS demo with complete debug records, October18
 
 The same archived author page directly links
