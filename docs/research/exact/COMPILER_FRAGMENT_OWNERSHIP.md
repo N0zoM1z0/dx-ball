@@ -17,6 +17,13 @@ C/C++ function definitions and no longer duplicate the parent entries in
 This table lists the retired auto-analysis rows, not every internal block.
 The complete parent comparisons also retain the additional conditional-return
 cleanup and handler blocks that were never standalone inventory rows.
+The later [original PE relocation audit](CRT_SUFFIX_OWNERSHIP.md#original-pe-code-address-relocations)
+independently checks their registered addresses. All four ten-byte handlers
+match the current compiled parent sections:0x40B226,0x40B36B,0x40B426 and0x40B4A3.
+Each supplies its own FuncInfo in EAX before jumping to runtime0x418570. The
+division metadata also references the existing conditional cleanup0x40B346.
+None adds an independent source definition or exact-function claim; the table
+continues to count the24 retired auto-analysis rows only.
 
 ## Ownership evidence
 

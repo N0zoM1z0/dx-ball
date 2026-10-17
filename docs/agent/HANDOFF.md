@@ -70,6 +70,12 @@ come from DATA sites inside the same owner's enclosing span; no observed
 external call/jump enters a declared body at an interior address. Undeclared or
 body-excluded entries and unresolved computed targets remain open. The capped
 session closes normally; no compiler/game/relink/full replay or acceptance gain.
+The [original PE relocation audit](../research/exact/CRT_SUFFIX_OWNERSHIP.md#original-pe-code-address-relocations)
+also accounts for all249 game-prefix words among4,556 HIGHLOW entries, including
+body-excluded table addresses, four registered handlers and one unused switch
+slot. All40 handler bytes match their actual compiled C++ parents. No additional
+independent entry or origin update follows; relative/computed targets remain
+open. The24-row retired-fragment ledger and current image stay unchanged.
 
 The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
 accounts for all362 instructions and71 switch bytes. It finds and repairs two

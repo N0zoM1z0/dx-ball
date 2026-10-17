@@ -129,3 +129,52 @@ the session closes normally with exit0. Its whole-tree cap is35% of one CPU,
 memory high640 / max768 MiB. Sampled peak is about641 MiB with high-water reclaim
 events, no sampled max/OOM event. No compilation, game, relink or full replay
 runs; protected source/manifest/ledger/report/image identities stay unchanged.
+
+## Original PE code-address relocations
+
+The original HIGHLOW directory provides a second view of addresses that can be
+absent from Ghidra's declared instruction bodies. Two REA6.5 reads capture the
+1,024-byte headers and10,752-byte relocation section. Its declared9,424-byte
+directory contains36 blocks,4,556 HIGHLOW words and12 ABSOLUTE padding entries.
+All1,328 captured bytes after the declared directory are zero.
+The captured headers declare no PE debug directory or COFF symbol table. These
+bytes supply no additional producer-context hint; this is not a whole-artifact
+absence claim for nonstandard debug information.
+
+Of those words,249 point into the game-code prefix `0x401000..0x4165FF`:
+
+| Destination context | Words |
+| --- | ---: |
+| Already inventoried independent entries | 12 |
+| Existing internal DATA references | 190 |
+| Declared C++ exception metadata targets | 21 |
+| Embedded table/selector addresses outside the observed instruction bodies | 21 |
+| Registered parent-owned C++ handlers | 4 |
+| Unselected final brick-hit switch slot | 1 |
+
+The four registered handlers match all40 bytes of their actual current compiler
+sections. Each loads its parent's FuncInfo into EAX and jumps to the proven
+runtime `__CxxFrameHandler` at0x418570. The21 metadata targets comprise the20
+retired cleanup entries and the division parent's existing conditional-return
+cleanup at0x40B346. These additional parent blocks were already included in
+complete source comparisons; the24-row fragment ledger records retired
+auto-analysis rows, not every internal entry. Its accounting stays unchanged.
+
+The final switch word at0x41241B points to0x4123BA. All twelve table words and
+23 selector bytes agree with the current compiled candidate; selector index11
+is never used. No unexplained address word or additional independent entry is
+indicated by this set. No HIGHLOW word targets the16-byte unknown no-op40CC20;
+its origin and active use remain unknown.
+
+This is a loader-relocation audit, not proof of runtime execution or a final
+function denominator. Relative/computed/unrelocated addresses remain outside
+its scope. Source optimality and all34 authored nonexact functions stay open.
+No compilation, complete-function comparison, game, relink or full replay runs;
+current source, ledgers, reports and the50e40609… image remain unchanged.
+
+Private `.analysis/pe-game-entry-relocations-20261017/` retains the site inventory,
+original raw Evidence references, handler/table proof and protected identities.
+Header Evidence is `ev_bf17f7be59c5dfb453a8ba6c17f10a47eae91d94a1d7863d6c565b8fe1048544`;
+relocation Evidence is `ev_c53664744e198041fb44d9e5b75e547c264526576edaf212311da5dd2b276968`.
+Both are archived in run `2026-10-17T04-51-12.726Z-requests-2428519`; the session
+closes normally. Reuse this result for the unchanged original directory.
