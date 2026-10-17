@@ -11,6 +11,17 @@ Totals remain 475 source entries, 380 exact functions and 95 complete candidates
 from the checks below. The current 116-source-object image is
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 
+The [complete brick-hit correspondence](../research/exact/EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
+accounts for all362 instructions and71 switch bytes. It finds and repairs two
+wrong comparison-manifest targets for cases8 and21 through actual COFF definitions
+and original instruction mapping. One current cached comparison is refreshed;
+its digest changes, but strict1316/1315/418 remains nonexact. All380 exact rows
+and94 other candidate comparisons stay unchanged. The remaining differences
+are three DWORD homes/16 displacement sites and one MOV-to-LEA receiver address
+producer, with position-adjusted branches/calls. No new source model or source,
+compiler, provider, runtime, relink or full replay follows. Do not use this
+explanatory correspondence as exact acceptance or retry declaration permutations.
+
 The [current original50 attempt](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
 has ended with actual observer exit 1 and `fail`: the 14,400-second observation
 deadline expired. All twenty initial original layouts for indices 0 through 19
@@ -39,10 +50,10 @@ receipts support each correction; every other field and raw line is unchanged.
 Source, status, extent, ABI, acceptance and counts do not change. The applied
 receipt is `.analysis/tracking-note-reconciliation-20261017/applied.json`.
 The refreshed read-only coverage audit is
-`.analysis/authored-coverage-after-notes-20261017/authored-coverage.json`: all 270
+`.analysis/brick-hit-binding-repair-20261017/authored-coverage.json`: all 270
 classified authored entries have current source and complete receipts across
 29 compiler closures, with 236 exact and 34 candidates. No compiler or replay runs.
-The earlier coverage audit remains sealed under its historical phase.
+Earlier coverage audits remain sealed under their historical phases.
 
 The [live softening review](../research/ORIGINAL_CAMPAIGN.md#live-board-softening-consistency)
 reconciles a counter increase from 41 to 64 on board index 16: 24 hard tiles

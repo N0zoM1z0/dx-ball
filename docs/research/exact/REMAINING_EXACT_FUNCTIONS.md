@@ -85,9 +85,10 @@ all 270 classified authored entries across 29 matching-build recipes: 236 exact
 and 34 complete candidates. It reuses existing comparisons without replaying.
 This coverage audit does not establish source optimality, semantic equivalence
 or the final authored denominator. Its retained rows and compiler closures are
-`.analysis/authored-coverage-after-notes-20261017/authored-coverage.json`.
-This read-only refresh follows thirteen notes-only corrections in the function
-ledger; source, status, extents, ABI, acceptance and all comparison counts stay
+`.analysis/brick-hit-binding-repair-20261017/authored-coverage.json`.
+This read-only refresh follows thirteen notes-only ledger corrections and two
+instruction-backed brick-hit internal target repairs; source, status, extents,
+ABI, acceptance and all comparison counts stay
 unchanged. The earlier coverage receipt remains preserved in its original phase.
 
 All 34 authored candidates were compared across their complete original
@@ -103,6 +104,12 @@ The [editor-key correspondence](EDITOR_KEY_ADDRESS_CORRESPONDENCE.md) explains
 its six-byte extent difference through the board-clear address producer, with
 the complete switch data and all 256 input-byte routes accounted for. Its
 maintained 638/632/260 comparison remains unchanged and nonexact.
+
+The [complete brick-hit review](EXACT_BRICK_POWERS.md#complete-hit-correspondence-and-internal-binding-repair-october-17)
+accounts for all362 instructions and71 switch bytes, repairing two wrong internal
+comparison targets from actual COFF definitions. The complete relocated digest
+changes while1316/1315/418 and all acceptance counts stay unchanged. Three DWORD
+homes and one receiver address producer remain; no new source or compiler trial.
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |

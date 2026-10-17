@@ -87,3 +87,64 @@ Source presence stays 283, scoped semantic rows 247, unit-distinct cases 112,273
 addresses and scopes. Origins stay 270 authored / 50 runtime / 42 generated / 166
 unknown. Checkpoint `.analysis/checkpoints/exact-brick-powers-283-115` links to
 bonus-phase 113. The >=95% complete-source goal remains active and unachieved.
+
+## Complete hit correspondence and internal binding repair, October 17
+
+The current complete hit comparison remains **1,316 current / 1,315 original
+bytes, 418 differing positions**, with no new exact or semantic acceptance.
+A read-only review of the retained REA dossier and current COFF object accounts
+for all 362 instructions, 1,244 original / 1,245 current code bytes, 26 direct
+branches, 32 calls and the complete 71-byte switch data. The sixteen-byte frame
+is unchanged. Three consumed DWORD values have different homes:
+
+| Value | Original EBP displacement | Current EBP displacement |
+| --- | ---: | ---: |
+| Particle-loop counter | -4 | -8 |
+| Score-hit flag | -8 | -12 |
+| Sound pan | -12 | -4 |
+
+The compiler selector remains at -16. Sixteen displacement bytes differ across
+these three values. The only instruction form with a different length is the
+explosion-list receiver at `0x4122A5`: original `MOV ECX,0x43F8E0` becomes current
+`LEA ECX,[0x43F8E0]`, adding one byte. The real shared storage places that list at
+offset20008; no new declaration, name, padding, split-global or flag trial follows.
+
+The review also finds two wrong internal targets in the current comparison
+manifest. Actual COFF label definitions and the complete instruction mapping
+establish the correction independently of the old declared target:
+
+| Actual relocation | Case | Old declared target | Correct original target |
+| --- | ---: | --- | --- |
+| Offset1228, `$L1107` | 8 | `0x412081` | `0x41229B` |
+| Offset1236, `$L1109` | 21 | `0x412103` | `0x412338` |
+
+Both entries now resolve to their original case bodies. All twelve target
+DWORDs and 23 selector bytes agree; all 256 signed-byte dispatch routes agree
+after the existing unsigned guard. The twelve-slot table includes an entry not
+selected by those 23 selector bytes; it is still compared in full. The incorrect
+manifest bindings affected comparison evidence, not the actual game link.
+
+Only these two manifest target fields change. One complete comparison reuses
+the current object and all 81 actual relocation sites. Its relocated digest
+changes, while the raw difference count stays418: that count alone cannot detect
+this mapping error. All 380 accepted comparisons and 94 other complete candidate
+rows remain unchanged; their manifest identity is refreshed without recompilation
+or replay. The 380 exact ledger rows refresh only their global manifest digest;
+all other fields stay identical. Current source, objects, executable and
+acceptance statuses stay fixed.
+
+After the two binding corrections, an in-memory explanatory projection renames
+the observed frame homes, substitutes the single address producer and adjusts
+positional branches/calls. Every byte of the full 1,315-byte original span then
+agrees, including switch data. The projection is never emitted as an object or
+executable or submitted as exact acceptance. It does not establish original
+declarations/scopes, arbitrary callee stack inspection or whole CPU equivalence.
+
+Evidence `ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb`
+is reused; no provider, compiler, runtime, relink or full replay runs. Private
+`.analysis/brick-hit-correspondence-20261017/correspondence.json` retains the
+complete instruction/site/route proof and pre-repair identities. Initial private
+assertion failures are preserved: one guessed relocation count, followed by the
+raw-table equality check that exposed the wrong targets. A transient script
+syntax error is retained separately. The applied repair and current authored
+coverage audit are in `.analysis/brick-hit-binding-repair-20261017/`.
