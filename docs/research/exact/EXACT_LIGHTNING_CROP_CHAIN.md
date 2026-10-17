@@ -1,103 +1,118 @@
-# Complete lightning crop chains and retained countdown
+# Complete lightning crop producers and retained countdown
 
-The later [expiry-local scope](LIGHTNING_EXPIRY_SCOPE.md) restores six original
-frame homes and improves the maintained candidate to1067/1057 bytes with990
-differences. The complete instruction/producer review below retains its earlier
-source/product identities; its before code is reused by that scope proof.
+The maintained last-brick source now directly subtracts the right/bottom excess:
 
-The later [direct WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) makes waiting fully
-exact across 170 bytes. Its actual import closure preserves the explicit
-last-brick time sample; the historical diagnostics below retain their scopes.
+```cpp
+rect.right -= dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x - 639;
+rect.bottom -= dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y - 479;
+```
 
-The last-brick candidate does not omit a direct right/bottom crop subtraction.
-Its original arithmetic also contains inverse/negation steps that an unequal
-instruction summary hides. The current source and object are retained unchanged;
-a two-expression direct-subtraction diagnostic is rejected and reverted.
+These two expressions restore the complete original crop producers. The current
+C++ candidate shrinks from **1067 to1061 bytes** against1057 original bytes;
+strict raw differences change from990 to992 as later byte positions shift.
+Last-brick remains a candidate. All19 companion code identities, including16
+exacts/4,628 bytes, survive the complete20-function/421-binding comparison.
+There is no exact gain or loss; current totals remain394 exacts/84,872 code
+bytes/244 metadata bytes and21 authored candidates.
 
-## Read the shared instructions as well as the differences
+## Correction to the earlier rejection
 
-For each cropped dimension, the original starts with `XOR EAX,EAX`, forms
-`extent + coordinate - limit` in ECX, then performs `SUB EAX,ECX`, `NEG EAX`
-and subtracts EAX from the rectangle field. Limits remain 639 and 479.
+The earlier direct-subtraction diagnostic was rejected as an unsupported
+simplification. That reason was wrong: reading the actual old object shows that
+it already restored both full original chains. The shared `XOR EAX,EAX`,
+`SUB EAX,ECX`, `NEG EAX` and rectangle subtraction were present. An unequal-group
+summary did not establish the claimed omission.
 
-The current producer forms `limit - (extent + coordinate)` and negates ECX.
-It then uses the same shared zero/subtract/negate sequence before updating
-the field. Both complete chains subtract `extent + coordinate - limit`,
-modulo 2^32. The common final SUB/NEG has equal inputs and flags. No new
-clamping, extent cache or coordinate conversion is required.
+A passive reinspection verifies the old diagnostic source, complete20-input
+closure, matching `/MT` recipe, object, all51 actual bindings,297/298
+original/diagnostic instructions,25 branch destinations,22 calls and16 original
+frame roles. Its13-instruction/44-byte right chain differs from the original
+only at the X and rectangle-right EBP displacement bytes; the bottom chain
+likewise differs only at Y and rectangle-bottom. The historical diagnostic was
+not adopted or executed. That history and its immutable seals stay unchanged;
+the interpretation of its actual producer evidence is corrected here.
 
-An unequal-group summary displays the original nine-instruction producer and
-the current eleven-instruction producer, excluding shared instructions before
-and after them. That is insufficient to infer missing source. The retained
-proof checks both complete neighborhoods, their real bank/record addresses,
-coordinate homes and consumers. Original/current EBX/EDX scratch residue outside
-these chains is not silently treated as equal.
+This is concrete original producer evidence supporting the same fixed two
+expressions in the maintained closure. It is not a reason to explore additional
+expression, name, type, scope, header, order or compiler-flag variants.
 
-## Complete candidate audit
+## Current complete producer comparison
 
-The complete spans are 1,057 original and 1,067 current bytes, containing
-297/302 instructions. All 51 actual relocations are applied. The instruction
-comparison checks four explicit producer groups and maps every other operand,
-16 bijective frame homes, 25 branch destinations and 22 calls.
+For each dimension, the original starts with `XOR EAX,EAX`, loads the current
+bank, sprite1 and extent, adds the coordinate, subtracts the639/479 limit in
+ECX, then uses `SUB EAX,ECX`, `NEG EAX` and subtracts EAX from the rectangle.
+All13 instructions and44 bytes correspond in the adopted source. Only the
+existing coordinate-home displacement differs; the rectangle homes already
+agree with the original.
 
-Two groups preserve the consumed initial time across RNG using original
-callee-saved EBX versus a nonescaping current frame slot. The slot has exactly
-one store and one load. Time still precedes RNG(20000), followed by the 40,000
-addition and independent second time sample. The other two groups are the crop
-chains above. The frame remains 64/68 bytes and 992 strict byte differences;
-no stack-home, declaration, name or padding trial follows.
+| Producer | Original half-open span | Current half-open span |
+| --- | --- | --- |
+| Right crop |416235..416261 |416239..416265 |
+| Bottom crop |4162A8..4162D4 |4162AC..4162D8 |
 
-This is complete instruction/operand/CFG correspondence with explicit producer
-checks and ABI limits. It is not a proof that arbitrary scratch residue agrees
-through every possible external implementation, nor an exact byte or original
-source-spelling claim.
+The preceding maintained source's inverse producer needed two extra instructions per chain.
+Both original load orders and consumed ECX/EAX results are now restored, with
+EDX scratch production and no extra EBX write. No previously matching producer
+is lost. The full current body has298 instructions versus297 original; the
+preceding source had302. All17 current physical homes and the68-byte frame
+remain unchanged; the original has16 roles and a64-byte frame.
 
-## Rejected diagnostic and current behavior
+The explicit first time sample still precedes RNG(20000), the40,000 addition and
+an independent second time sample. Its existing extra frame slot has exactly
+one store and one load. Original EBX time preservation versus current frame/ECX
+representation remains unresolved. All22 calls,25 branch destinations and nine
+absolute state-write destinations/order are preserved. This is complete
+instruction/operand/CFG correspondence with explicit differing time and frame
+roles, not equality of arbitrary scratch residue at every external boundary or
+unique recovery of literal original source spelling.
 
-One matching `/MT` display compilation changes only the two crop expressions
-to direct excess subtraction. Its complete result is 1,061/1,057 bytes with
-993 strict differences. The nine affected accepted units remain exact;
-all eleven display candidates receive full private comparisons, with actual
-candidate relocation offsets adapted only in the private descriptors.
+The preceding [expiry-local scope](LIGHTNING_EXPIRY_SCOPE.md) remains adopted.
+The [WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) note retains its historical
+compiler context; its later current-owner results are recorded in the manifest.
 
-The direct-expression change is an unsupported simplification. Both source and
-the current matching/production object are restored from their verified saved
-identities. No compiler, Native/MinGW build or VC4 link repeats to restore them.
-The diagnostic source, object, 20 actual project inputs and comparisons remain
-retained independently; production manifests and acceptance receipts stay fixed.
+## Focused validation and linked delivery
 
-The final restored current Native product passes these unchanged existing cases:
+Native and MinGW reuse valid caches and each compile only display. The current
+Native library passes the existing35 deadline/time pairs and162 expiry/crop
+cases, including wrap, inclusive expiry, volume rounding, grid positions,
+reduced particles and sprite dimensions. Existing complete state/buffer and
+ordered-effect assertions remain unchanged. The fixture is reused; the
+unchanged overlay entry and separate multi-tile case are not rerun. Historical
+semantic case counts/scopes are unchanged;235 input inventories and16 source
+hashes refresh without claiming those historical cases as fresh executions.
 
-- 35 deadline/time pairs, including wrap, inclusive expiry and volume rounding.
-- 162 expiry/crop cases over the existing grid positions, graphics settings
-  and sprite dimensions.
-- 162 corresponding overlay calls, preserving queue dimensions and frame count.
+The VC4 delivery reuses117 source objects and19 approved original CRT members,
+with zero additional source compilations. All1,099 owner-qualified MAP records
+remain identical. Both complete linked last-brick bodies verify against their
+actual objects and51 bindings. The1072-byte aligned span stays fixed: trailing
+CC padding increases from5 to11 bytes.
 
-The existing constructors, selected case bodies, complete state/buffer checks
-and ordered effects are unchanged. These 197 last-brick cases are a selection
-of the existing 198-case scope; the separate multi-tile case is not rerun and
-is not claimed as fresh. The 162 overlay checks are a separate entry's scope,
-not extra last-brick acceptances. Final selection takes 3.393 seconds and
-reuses the verified native fixture. The rejected diagnostic is not executed.
+Every old/new PE byte is checked. Exactly318 bytes change:292 body/padding,
+14 loader-entry bytes and12 bytes in the six parsed COFF/resource timestamp
+fields. The4,488 HIGHLOW locations replace13 old sites with13 new sites derived
+from actual DIR32 fields; reconstructing both complete9,276-byte relocation
+directories verifies their encoding and alignment. Every other image byte,
+resource payload and six OS DLL import identities remain unchanged; no MSVCRT
+DLL is imported. Current image SHA-256:
+`20b375170714052afe0f8ae69a364f2149b77b992e6572b4af1d6217b508e973`.
+No provider query, full replay or new game/physical driver observation follows.
 
-## Evidence and remaining limits
+## Retained evidence
 
-Closed original REA Evidence:
+Original closed REA Evidence:
 `ev_f8610be2baa2323aec8fcd14317794aebe74eefa78b4d66c9cf874ca117eb5bc`.
-Its body is contiguous through RET at `0x00416360`; the target SHA-256 is
-verified. The full carrier is 2,316,097 retained bytes, while the complete
-297-line assembly facet compactly serializes to 9,495 bytes. These are historical
-artifact sizes, not current REA transport, context tokens or provider latency.
+Its contiguous297-instruction body ends at RET0x00416360. Original target SHA-256
+is `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
 
-Private `.analysis/lightning-crop-subtraction/` retains the full current proof,
-before-state, rejected diagnostic and final unchanged selected-case receipts.
-Immutable seal:
-`.analysis/checkpoints/lightning-crop-chain-283-186/sha256.json`.
-Performance and usability feedback remains in the one existing `/tmp` document.
+The old `.analysis/lightning-crop-subtraction/` and
+`.analysis/checkpoints/lightning-crop-chain-283-186/sha256.json` remain sealed.
+Current `.analysis/lightning-excess-producer-20261018/` retains the passive old
+proof review, fixed source transformation, full compiler inputs, all20 complete
+comparisons, independent reviews,197-case receipt, production identities and
+full linked proof. Archive/member-hash verification precedes removal of closed
+copied inputs, superseded objects and products; current tested products and
+valid incremental caches remain available.
 
-Source-present 283, scoped semantic 247, game exact 186 / 33,001 code bytes /
-136 metadata bytes and origins 270/83/42/133 stay fixed. All 36 current game
-object/input identities and four products retain the preceding `df23eea` state.
-No new REA provider, whole owner replay or physical game/audio observation
-occurs. Reuse the complete chain when choosing future source work; the shorter
-direct-expression diagnostic is not original-source recovery.
+The verified cleanup removes51 raw copies, including six objects and12 obsolete
+VC4 history files. Net allocated storage released is8,658,944 bytes after the
+archive/journal; the standard cleanup preview has zero remaining actions.

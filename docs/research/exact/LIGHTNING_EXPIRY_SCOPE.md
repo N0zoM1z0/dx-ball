@@ -1,5 +1,11 @@
 # Last-brick expiry-local scope
 
+This note records the earlier adopted scope change. The later
+[complete crop-producer recovery](EXACT_LIGHTNING_CROP_CHAIN.md) keeps that scope
+and restores both original crop chains: the current candidate is1061/1057 bytes
+with992 raw differences. Its independent197-case and full linked proofs belong
+to the later delivery; the image and measurements below are historical.
+
 The last-brick controller now declares its tile, center, scan, rectangle and
 destination locals inside the existing expired-deadline branch. Every producer
 and consumer of those values belongs there. Remaining time and the explicit
@@ -33,10 +39,10 @@ Six original homes are restored; offsets are signed EBP displacements:
 
 The other homes still differ. Raw differences count byte positions, including
 suffix shifts from existing producer differences; they do not measure missing
-operations or matching value roles. Original time preservation in EBX and the
-two crop producers remain unresolved. This scope does not establish original
-source spelling. The [complete crop-chain review](EXACT_LIGHTNING_CROP_CHAIN.md)
-and its rejected direct-subtraction/clock controls remain closed.
+operations or matching value roles. At this checkpoint, original EBX time preservation and the two crop producers
+were unresolved. The later [complete crop-chain review](EXACT_LIGHTNING_CROP_CHAIN.md)
+corrects the old direct-subtraction rejection and adopts those two producers;
+time preservation and original source spelling remain unresolved.
 
 The prior complete instruction correspondence has the same before-code identity
 and supplies the original frame-role map. It reuses REA Evidence
@@ -61,7 +67,7 @@ last-brick displacement bytes and twelve bytes in six parsed COFF/resource
 timestamp fields. All resource payloads and other image bytes agree. The full
 linked 1,067-byte body verifies with its 51 actual bindings. No game runs again.
 
-Current image SHA-256:
+Historical scope-checkpoint image SHA-256:
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 Earlier GUI observations keep their recorded image hashes.
 

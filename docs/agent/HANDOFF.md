@@ -46,7 +46,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 394 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 81 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/drawing-primitives-owner-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/lightning-excess-producer-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,13 +61,38 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`068d2e8bc904e8433d0fa9260ebc374cd9e3349947752ab0266bacb582fd3123`.
+`20b375170714052afe0f8ae69a364f2149b77b992e6572b4af1d6217b508e973`.
 Its recipe is `vc40-restored-crt`: 117 source objects from 114 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest [drawing-primitive owner](../research/exact/DRAWING_PRIMITIVES_OWNER.md)
+The latest [lightning crop-producer recovery](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md)
+adopts exactly two direct excess subtractions. A passive review of the sealed
+old diagnostic corrects its false unsupported-simplification rejection: both
+full original13-instruction/44-byte crop chains survive. Current C++ last-brick
+shrinks1067→1061 bytes; strict raw differences990→992 reflect suffix shifts,
+not a lost original producer. It remains a candidate: explicit time-before-RNG
+sampling, frame68 versus original64 and original EBX time preservation remain.
+All20 full display bodies/421 bindings compare;19 companion code identities
+and16 exacts/4,628 bytes survive. Current totals stay394/84,872/244 and21 authored
+candidates. Native/MinGW each compile only display using valid caches;197
+existing deadline/crop cases pass with the verified fixture.235 semantic input
+inventories/16 source hashes refresh; all249 case/scopes remain historical.
+VC4 reuses117 objects/19 CRT members with zero compiles. All1,099 owner-qualified
+MAP records remain identical. Both full linked bodies/51 bindings verify within
+the unchanged1072-byte padded span. All318 changed PE bytes are explained:
+292 body/padding,14 loader and12 parsed timestamp bytes. Thirteen changed DIR32
+sites explain the exact4,488-HIGHLOW set; both complete loader directories are
+reconstructed. All other PE bytes/resources/imports remain unchanged. No new
+provider, full replay or game run. Private
+`.analysis/lightning-excess-producer-20261018/` retains producers, independent
+reviews, focused cases and linked proof. Archive/member-hash verification precedes removal of51 raw files, including
+six objects and12 superseded VC4 history copies, releasing8,658,944 allocated
+bytes net of archive/journal. Current tested products and useful caches remain;
+the regular cleanup preview finds zero further disposable items.
+
+The preceding [drawing-primitive owner](../research/exact/DRAWING_PRIMITIVES_OWNER.md)
 moves the adjacent line/fill pair to one C++ implementation with full unchanged
 public headers. Line445/9 and fill85exact retain their complete identities;
 right-palette234/9→234/6 restores three original guard bytes without losing a

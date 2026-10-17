@@ -157,7 +157,11 @@ to restore integer-offset-before-base evaluation at both pixel writes; its
 complete raw difference count remains1466 and all five companions are unchanged.
 The [last-brick expiry scope](LIGHTNING_EXPIRY_SCOPE.md) restores six original
 homes and improves its complete comparison from992 to990 differences, preserving
-all twelve exact companions and the other nineteen complete code identities.
+all twelve exact companions and the other nineteen complete code identities. The later
+[complete crop-producer recovery](EXACT_LIGHTNING_CROP_CHAIN.md) restores both
+original13-instruction chains and shrinks the current body to1061 bytes;992 raw
+differences reflect shifted byte positions. All19 companions/16 current exacts
+retain their identities; time/frame representation remains unresolved.
 The [editor-key correspondence](EDITOR_KEY_ADDRESS_CORRESPONDENCE.md) explains
 its six-byte extent difference through the board-clear address producer, with
 the complete switch data and all 256 input-byte routes accounted for. Its
@@ -196,7 +200,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `release-sprite` | 262 | 269 | 245 |
 | `draw-high-scores` | 404 | 403 | 330 |
 | `load-pcx` | 862 | 979 | 851 |
-| `last-brick` | 1057 | 1067 | 990 |
+| `last-brick` | 1057 | 1061 | 992 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |
 
 ## Runtime candidates
