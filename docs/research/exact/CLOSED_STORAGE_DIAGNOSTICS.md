@@ -1,5 +1,31 @@
 # Closed drawing and SDK storage diagnostics
 
+## Complete C DirectDraw table, October18
+
+One fixed shared-header model gives the20 opaque C `IDirectDraw` slots their
+actual API signatures. The23-slot layout, existing called slots5/6/22, C++
+surface/palette projections and function bodies stay unchanged. The installed
+SDK corroborates the interface; it does not recover the original1996 header
+or source names. Unknown pointee layouts remain incomplete.
+
+Four serial compiles compare all47 complete resource/display/UI/primitive
+units,721 actual relocation bindings and six complete literal references.
+Draw-sprite107/94 becomes105exact, present-regions984/6 becomes984exact and
+release-sprite269/245 becomes262exact, but11 previously exact companions lose
+their matches. Reject the whole model without subsets, old companion objects
+or declaration variants. Other header consumers are uncompiled; this is an
+early rejection, not a complete all-consumer acceptance proof.
+
+The canonical header is restored, and all36 protected source/object/report/
+target/delivery hashes remain unchanged. Current authored totals stay249 exact
+and21 candidates. One CPU/35% holds; peak190,787,584 bytes, zero high/max/OOM
+events. No new provider query, native/MinGW build, runtime case, relink, game
+or full replay follows. Private `.analysis/ddraw-c-vtable-contract-20261018/`
+retains the plan, independently reviewed full comparisons and restoration
+receipt. Closed proposal products and bulky proof carriers are archived and
+member-hash verified before removal:13 raw files release675,840 allocated bytes
+net of archive/receipt/seal. Current products and useful caches remain.
+
 ## Independent hit-region owner, October18
 
 The [six-function C state family](../EDITOR_OWNER.md#closed-hit-region-implementation-owner-october18)

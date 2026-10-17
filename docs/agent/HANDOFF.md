@@ -60,6 +60,19 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [complete C DirectDraw table control](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#complete-c-directdraw-table-october18)
+completes20 opaque method signatures without changing23-slot layout, called
+slots or bodies. Four compiles/47 full units/721 bindings/six literals produce
+three candidate exacts but lose11 prior exacts; reject the entire model without
+subsets or variants. Uncompiled header consumers are not claimed unchanged.
+All36 protected canonical hashes remain fixed, including the restored header,
+matching objects and delivery. Totals stay249 authored exact/21 candidates.
+One CPU/35%, peak190,787,584 bytes, zero memory-limit events; no provider,
+runtime, relink or full replay. Private
+`.analysis/ddraw-c-vtable-contract-20261018/` retains the independent result
+review and archive/member-verified cleanup of13 closed pilot carriers, releasing
+675,840 allocated bytes net. Current tested products and useful caches remain.
+
 The latest [author DOS-demo investigation](../research/exact/AUTHOR_SOURCE_CONTEXT.md#author-dos-demo-with-complete-debug-records-october18)
 finds genuine Watcom debug records in the author's previously unread`plasm.zip`:
 145 modules and57 typed author procedures with actual`sprite.c`/`misc.c` cues.
