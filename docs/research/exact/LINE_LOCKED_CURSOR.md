@@ -107,3 +107,34 @@ Archive/member-hash verification precedes removal of16 closed raw files:13
 copied project inputs, two objects and the observer executable. Net allocated
 storage released is208,896 bytes after archive/journal costs. Primary trace,
 proofs and current tested products remain; no unused observer binary is kept.
+
+## Fixed role-rank declaration inference, October 18
+
+A subsequent independent calculation reproduces all 110 input ranks across
+the 55 observed line events. The original comparison directions require
+`Ri >= Rdx >= Rdy`; preserving the already matching error operations also
+requires `Rerror >= Rdx`. One fixed `dy, dx, i, error = 0` declaration cohort
+inside the existing coordinate block realizes those constraints under the
+observed key-cohort model. This is an inferred declaration, not recovered
+original names or a unique source order. No permutation search follows.
+
+One canonical-path compile restores all three comparison directions, but
+changes the original `i/error/dx` homes from `-4/-8/-12` to `-12/-4/-8`.
+`dy` stays at `-16`. The complete 445-byte, 121-instruction line consequently
+has 22 differing EBP-displacement bytes instead of nine comparison bytes.
+Every other byte, all 16 branches, three calls and the 140-byte frame extent
+agree; the 85-byte fill companion remains exact. A role-normalized comparison
+explains the result but does not establish exactness. Reject the whole model
+and retain the canonical source and objects. No follow-up declaration variant
+is queued; this failure does not prove source optimality or impossibility.
+
+Private `.analysis/line-rank-constraints-20261018/` and
+`.analysis/line-rank-declarations-20261018/` retain the complete mathematical
+review, actual full-body output, independent result review and identities.
+All 13 compiler inputs and six protected authorities/products are restored.
+The single compile takes 6.103 seconds, peaks at 273,899,520 bytes under the
+one-CPU/35% and 640–768 MiB caps, and records zero high/max/OOM events. There
+is no provider query, native/MinGW build, game run, relink or full replay.
+Archive/member verification precedes deletion of 16 obsolete files: 13 copied
+inputs, two objects and the proposal. Net release after archive/journal is
+61,440 allocated bytes; tested delivery and useful caches remain unchanged.

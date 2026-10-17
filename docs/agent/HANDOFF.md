@@ -300,7 +300,7 @@ i/dy calls actually swap their children and remap opcodes; role-based comparison
 accounts for all nine residual bytes across all121 instructions. Both complete
 bodies stay byte-identical:line445/9 andfill85exact. No original intermediate
 keys or emitter-consumption identity is observed; do not infer original names
-or try guard/name/scope/type/header/order/flag variants from this result.
+or start guard/name/scope/type/header/order/flag sweeps from this result.
 `.analysis/line-backend-comparisons-20261018/` retains all primary/secondary
 identities, full trace, comparisons and independent reviews. Original/production
 source, objects, delivery and current counts remain unchanged. One CPU/35% and
@@ -310,6 +310,17 @@ Archive/member-hash verification precedes removal of16 raw files:13 copied
 inputs, two objects and the observer executable, releasing208,896 allocated
 bytes net of archive/journal. Primary trace and proofs remain; current tested
 products and valid caches are preserved.
+
+The later [fixed role-rank inference](../research/exact/LINE_LOCKED_CURSOR.md#fixed-role-rank-declaration-inference-october-18)
+independently accounts for all 55 line events and tests one existing-variable
+declaration cohort. All three comparison directions recover, but i/error/dx
+homes cycle: line445/9 becomes445/22; fill85 stays exact. Reject the complete
+model, with no follow-up declaration variants. Canonical 13 inputs and six
+authorities/products remain unchanged. One compile takes 6.103s with 273,899,520
+peak bytes and zero high/max/OOM events; no full replay or runtime check runs.
+Member-verified archival removes 16 private copied inputs/products/proposal,
+releasing 61,440 allocated bytes net. Receipts remain under
+`.analysis/line-rank-declarations-20261018/`.
 
 The preceding [drawing-primitive owner](../research/exact/DRAWING_PRIMITIVES_OWNER.md)
 moves the adjacent line/fill pair to one C++ implementation with full unchanged
@@ -945,6 +956,16 @@ delete evidence trees or tool caches. Recent journals are
 `.analysis/storage-maintenance-20261017/verification.json`, and
 `.analysis/game-prefix-direct-flow-20261017/verification.json`. They distinguish
 allocated disk release from logical duplicate-byte totals.
+
+The October 18 maintenance pass additionally archives and member-hash verifies
+237 obsolete single-link `.analysis/*/before/build/` objects/libraries/executables,
+then removes their raw copies. The bounded selection excludes current builds,
+tools, source and primary evidence. It releases about 7.1 MiB net of its archive
+and receipts, with current source/object/report/delivery identities unchanged.
+Restore instructions and member hashes are in
+`.analysis/storage-before-products-20261018/started.json` and `cleanup.json`.
+The rejected line declaration pilot separately removes its 16 private inputs
+and products after verification; no unused proposal binary remains.
 
 The later `.analysis/historical-json-retention-20261017/receipt.json` records
 205 unused raw JSON carriers compressed under existing immutable checkpoint

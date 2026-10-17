@@ -130,6 +130,10 @@ Authority: `.analysis/lightning-excess-producer-20261018/authored-coverage.json`
 The later [actual line comparison observation](LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 captures the three current symbol-role swaps and checks their correspondence to
 all nine residual bytes. It changes no source, product or acceptance claim.
+One [fixed rank-constrained declaration model](LINE_LOCKED_CURSOR.md#fixed-role-rank-declaration-inference-october-18)
+then restores those three directions but cycles the previously correct scalar
+homes, producing445/22. It is rejected after a complete two-function comparison;
+canonical line445/9, fill85exact and all claim counts remain unchanged.
 
 The [sampled paddle width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) restores its
 677-byte extent and original right-edge sum order, reducing210 to68 strict
