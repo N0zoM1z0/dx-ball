@@ -148,6 +148,24 @@ owned temporary database is removed. Private `.analysis/frontend-key-producer-20
 retains checks/review. No game source, build, exact claim, replay or delivery change.
 Verified snapshot retention, immutable-catalog sharing and duplicate-log removal
 release10,043,392 allocated bytes net; current game caches and tested delivery stay.
+A first unchanged resources observation then finds zero hits at mode-zero cache
+branch44A1F4, although all compiler processes exit0; observer exit1 explicitly
+marks missing C1 samples. C2 has116 guarded hits and20 bank records. All18
+functions/262 bindings/6 literal references remain unchanged; no C1 mode,
+NameMap or transport linkage is established. The raw local names lack the
+function tag's leading underscore. Private `.analysis/frontend-wire-reader-20261018/`
+retains this bounded negative. Twelve archive-verified copies/products are
+removed, releasing225,280 bytes net; peak292,057,088 bytes, zero memory events.
+The [common-entry follow-up](../research/exact/VC4_FRONTEND_SYMBOL_ORDER.md#actual-transport-modes-october18)
+then observes28 C1 samples, all mode1/source+18 low24 with unchanged+14 and
+actual2-byte wire IDs. All stream flags2/3/4 select6090. C2 mode0 records16 bank
+locals with one matching key/raw name/function tag/encoding correspondence each;
+width28281 actually writes796e. No C2 stream byte positions or NameMap output
+are observed. All413 MOV hits are stepped,18/262/6 complete comparisons stay
+unchanged, peak181,526,528 bytes and zero memory events. Private
+`.analysis/frontend-mode-wire-reader-20261018/` retains the evidence. Next find
+the actual source+18 numeric-ID writer in this mode; the static NameMap branch
+is a different path. No names/scopes/flags/context trials follow automatically.
 
 The preceding [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 compiles the unchanged drawing-primitive owner once under an owned C2 observer.

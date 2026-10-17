@@ -174,3 +174,76 @@ Two prefix-only intermediate logs and the archive-covered old raw snapshot are
 removed; the new snapshot's gzip carrier is decompression-hash verified. Cleanup releases
 10,043,392 allocated bytes net of that archive and journal. Primary Evidence,
 the current useful snapshot and tested game products/caches remain.
+
+## Actual transport modes, October18
+
+An unchanged current `resources` compilation tests the mode-zero cache branch
+at `44A1F4`, rather than assuming the static NameMap path is active. CL, C1XX
+and C2 all exit normally, but that C1 site has zero hits. The observer therefore
+returns1 for zero selected samples. The C2 site has116 fully checked MOV
+hit/step pairs and20 load-bank records. This is a bounded negative observation:
+it establishes neither the actual C1 mode nor a cache/wire/reader linkage.
+The raw local names are unprefixed (`count`, `width`, etc.); the function tag
+has the separate spelling `_dxball_load_sprite_bank`. An unused positive
+verifier's underscore-local-name assumption is explicitly excluded.
+
+All18 complete affected functions,262 actual bindings and6 full literal
+references remain identical to the canonical object. One CPU/35% limits hold,
+peak292,057,088 bytes, with zero memory-limit events. No source variant, relink,
+runtime case, provider query or full replay runs. Private
+`.analysis/frontend-wire-reader-20261018/` retains the trace, negative verifier,
+independent review and sealed archive. Twelve archive/member-hash-verified input
+copies and products are removed, releasing225,280 allocated bytes net.
+
+The retained assembly identifies a common entry at `401BD5`, the complete
+four-byte `MOV EAX,[ESP+18]`. It preserves the previous mode comparison's flags.
+The nonzero C1 mode bypasses the cache generator and consumes
+`source+18 & 0xffffff`, with a two/four-byte WORD-based encoding. The C2 reader
+has its own actual mode at `481844`; numeric mode values must not be assumed to
+match between compiler stages. A common-entry observation can distinguish
+these paths without changing any game source or flags.
+
+The subsequent common-entry capture succeeds with one unchanged recipe. All28
+selected C1 samples have mode1 and use `source+18 & 0xffffff`; source`+14` stays
+unchanged. Six actual function tags disambiguate the samples. The16 bank locals
+have source`+14` values6 or7, with no cached high key bits. Their actual
+stream flags2/3/4 are nonzero, selecting sink`4B6090` before the mode-dependent
+sink branch. Every selected sample writes two bytes; all28 independently decode
+to the selected ID. This does not exercise the retained four-byte or compact
+encoding branches.
+
+| Current bank local | Selected/source`+18` ID | Actual wire bytes |
+| --- | ---: | --- |
+| `count` | 28268 | `6c 6e` |
+| `width` | 28281 | `79 6e` |
+| `key` | 28293 | `85 6e` |
+| `api` | 28303 | `8f 6e` |
+
+C2's actual decoder mode is0 for all20 bank records, consistent with this
+WORD-based encoding despite the different front-end mode value. All16 selected
+bank locals have one same-run correspondence by concrete key, raw local name,
+function tag and encoding mode. The other four C2 records are the unnamed
+record and parameters `path`, `allocation_mode`, `bank`, outside the selected
+local whitelist. The function spelling differs only by its observed leading
+underscore between stages; local spellings match directly. No event-order or
+name-only join is used. The observer does not record C2 stream byte positions,
+so these correspondences are not a byte-position consumption proof.
+
+All413 trap hits execute the complete original MOV and pass register, ESP,
+EIP, non-debug flags and actual C2-store checks. The28 entry/key/wire samples
+and20 C2 samples each have their own checked single step. All three compiler
+processes and the observer exit0, with no pending frame or read failures.
+All18 complete functions/262 actual bindings/6 full literals remain identical.
+Peak181,526,528 bytes, zero memory-limit events; one CPU/35% limits hold.
+No source variant, provider query, full replay, relink or runtime case runs.
+Private `.analysis/frontend-mode-wire-reader-20261018/` retains raw traces,
+comparisons, independently checked summaries and reviews.
+
+This actual recipe's key path is now `source+18 → selected ID → WORD bytes`,
+with independently corresponding current C2 records. The static NameMap/cache
+path remains a distinct mode and is not observed here. The next specific
+producer question is the writer of `source+18` in this mode and its relation to
+scope/declaration processing. It is not an invitation to vary names, scopes,
+flags or context without independent game evidence. Original IDs, names and
+settings remain unknown; exact coverage stays394 and the tested delivery is
+unchanged.
