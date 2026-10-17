@@ -22,7 +22,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [resources.cpp](resources.cpp), [resources.h](resources.h) | Sprite banks, PCX loading, glyphs, palettes, and DirectDraw interfaces |
 | [display.cpp](display.cpp), [device.cpp](device.cpp) | Dirty regions, presentation, fades, synchronization, and surface recovery |
 | [ui.c](ui.c) | Text layout, lines, fill requests, and palette operations |
-| [rotation.c](rotation.c), [raster.cpp](raster.cpp), [bitmap.c](bitmap.c) | Software rotation, fixed-point rasterization, and bitmap reading |
+| [rotation.cpp](rotation.cpp), [raster.cpp](raster.cpp), [bitmap.c](bitmap.c) | Software rotation, fixed-point rasterization, and bitmap reading |
 | [geometry.c](geometry.c), [trig.c](trig.c) | Overlap/distance helpers and quantized trigonometry |
 | [sound.c](sound.c), [midi.cpp](midi.cpp), [music.cpp](music.cpp) | DirectSound buffers, WinMM streams, and music object lifetime |
 | [file.c](file.c), [memory.c](memory.c) | Shared file and local-memory services for sound, MDS, and bitmap loading |

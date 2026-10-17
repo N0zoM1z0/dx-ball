@@ -1,5 +1,7 @@
+extern "C" {
 #include "rotation.h"
 #include "trig.h"
+}
 
 #include <stdlib.h>
 
@@ -28,20 +30,15 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
        at each API boundary, including lock retries and final unlocks. */
     destination_desc.size = 108;
     destination_desc.flags = 14;
-    ((DxBallDDSurface *)dxball_active_surface)->vtable->get_desc(
-        (DxBallDDSurface *)dxball_active_surface, &destination_desc);
+    ((DxBallDDSurface *)dxball_active_surface)->get_desc(&destination_desc);
     do {
-        result = ((DxBallDDSurface *)dxball_active_surface)->vtable->lock(
-            (DxBallDDSurface *)dxball_active_surface, NULL, &destination_desc, 0, NULL);
+        result = ((DxBallDDSurface *)dxball_active_surface)->lock(NULL, &destination_desc, 0, NULL);
     } while (result != 0);
     source_desc.size = 108;
     source_desc.flags = 14;
-    dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->vtable->get_desc(
-        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface, &source_desc);
+    dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->get_desc(&source_desc);
     do {
-        result = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->vtable->lock(
-            dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface,
-            NULL, &source_desc, 0, NULL);
+        result = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->lock(NULL, &source_desc, 0, NULL);
     } while (result != 0);
     pixel = source_desc.pixels;
     origin_width = width;
@@ -92,10 +89,8 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
         row_x = row_dx + row_x;
         row_y = row_dy + row_y;
     }
-    result = ((DxBallDDSurface *)dxball_active_surface)->vtable->unlock(
-        (DxBallDDSurface *)dxball_active_surface, NULL);
-    result = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->vtable->unlock(
-        dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface, NULL);
+    result = ((DxBallDDSurface *)dxball_active_surface)->unlock(NULL);
+    result = dxball_sprite_banks[dxball_sprite_bank].sprites[slot]->surface->unlock(NULL);
     (void)result;
     return;
 }

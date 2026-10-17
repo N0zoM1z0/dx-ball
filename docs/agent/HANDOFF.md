@@ -24,15 +24,15 @@ receipts remain in place; old checkpoint totals are not current totals.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 392 |
-| Exact code / attached metadata bytes | 84,410 / 244 |
-| Complete nonexact comparisons | 83: 23 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 393 |
+| Exact code / attached metadata bytes | 84,737 / 244 |
+| Complete nonexact comparisons | 82: 22 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-247 exact and 23 candidates across 29 compiler closures. The source-present
+248 exact and 22 candidates across 29 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -43,10 +43,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/bonus-cpp-owner-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/rotation-current-cpp-owner-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,13 +61,29 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`bc06b8a7018a227259cb2fc8c2a4e1a2aa13eeff417c1c7f3a5f263e6831a17b`.
+`66b4e627f3d19c63e3da2a21bd21c1586d1ca53281c8e6cd69200c178b9c30a1`.
 Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
 
-The latest [bonus C++ implementation owner](../research/exact/BONUS_CPP_OWNER.md)
+The latest [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
+restores offset and width at259 bytes each, explicitly demoting y-offset to
+193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;
+renderer stays1458/1466 with a new digest. All116 actual bindings and full
+literals pass. Six real surface member calls preserve arguments/live reads;
+four math bodies remain unchanged. Existing1,024 rotation calls,329 width cases
+and24 original/Native/full-VC4 helper observations pass. Native/MinGW each
+compile one owner using retained caches. The whole family is adopted together;
+all1,097 distinct MAP names and owner-qualified static records retain their
+addresses. All six rotation functions are discarded from the OPT:REF delivery;
+the complete PE changes only within six parsed timestamp fields. Source recovery
+is a separate claim. There is no selective object/header mix, full replay or new
+game run. Cleanup archives/member-verifies45 closed raw carriers and removes
+eight obsolete/duplicate products, releasing9.35 MiB net. Current tested objects,
+products and valid CMake configurations remain useful and retained.
+
+The preceding [bonus C++ implementation owner](../research/exact/BONUS_CPP_OWNER.md)
 recovers the complete2,168-byte update function, reducing180 differences to zero
 while preserving all three prior bonus exacts/1,316 bytes. All bodies and public
 APIs remain unchanged; frontend and complete header view are tested together.
@@ -178,7 +194,7 @@ Choose a specific unaccounted operation, ABI, ownership, lifetime or producer fa
 A small difference count is not itself a source question. Complete correspondence
 and unchanged tests do not prove original declarations or absolute optimality.
 
-Continue exploring the remaining23 authored candidates. The user explicitly
+Continue exploring the remaining22 authored candidates. The user explicitly
 corrected the earlier missing-declarations blocker: recovering those facts is
 the task. Original source, MAP/PDB or build records would help but are not a
 prerequisite. Do not treat an unproved declaration as proof no hypothesis can be
@@ -213,7 +229,7 @@ in `reconciled/`. The later paddle scope replaces the runtime producer; the othe
 in `.analysis/independent-board-production-20261017/`. Current source/object and
 comparison authority follows the table above. No full replay or game run.
 
-Continue the23 current authored candidates, including the eight declared-context
+Continue the22 current authored candidates, including the eight declared-context
 demotions. Choose a concrete producer, ownership, ABI or lifetime discrepancy;
 no evidence requires accepting the present declaration context as optimal.
 Do not repeat the closed five-declaration broad trial, member-call probe or
@@ -246,7 +262,7 @@ Other authored boundaries and retained controls:
   spelling solely to force emission. Editor key and game frame are now exact after the independent ownership adoption.
 - [Rotation](../research/exact/ROTATION_PIXEL_ADDRESS.md) accounts for all 365
   renderer instructions, 22 calls and 26 branches under its stated stable-memory,
-  finite-FP model. Height is now exact after independent board ownership; offset/width are explicit new candidates.
+  finite-FP model. Height is now exact after independent board ownership; offset/width are now exact under the C++ owner; y-offset is its explicit candidate.
   Row-add, inline-bank, max/return/FP and type-context controls are closed.
 - [Effect sprites](../research/exact/EFFECT_SPRITE_PATH_CORRESPONDENCE.md) have
   complete path/ABI/RECT-write correspondence and retained SMT mutation controls.
@@ -267,7 +283,7 @@ Other authored boundaries and retained controls:
   clipped stays1592/214 unchanged. Eight instruction bytes lose two prior
   original comparison orders while recovering the final dy/error comparison.
   Close without adoption or further variants; all current source/products and
-  392/23 totals remain unchanged. Seven raw copies are archived/member-verified
+  totals were unchanged at that checkpoint; the later rotation adoption sets current counts. Seven raw copies are archived/member-verified
   and removed, releasing48 KiB net; useful current caches remain.
 - Bank cursor/row/column, file-metadata and transfer-workspace scopes are closed.
   Preserve callback-visible state and the pitch snapshot before Lock.

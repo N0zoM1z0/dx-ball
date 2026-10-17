@@ -28,11 +28,11 @@ address,symbol,source,scope,semantic_unit
 0x00402560,dxball_wave_y,src/intro.cpp,"See docs/research/INTRO_OWNER.md; valid terminating storage/arithmetic domains, controlled pixels and selected COM fields, explicit resource/audio/driver/editor boundaries",intro-wave-y
 0x004025A0,dxball_point_angle,src/geometry.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,point-angle
 0x00402610,dxball_point_distance,src/geometry.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,point-distance
-0x004026A0,dxball_render_rotated_sprite,src/rotation.c,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-render-sprite
-0x00402CD0,dxball_rotated_sprite_offset,src/rotation.c,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-offset
-0x00402DE0,dxball_rotated_sprite_y_offset,src/rotation.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,rotated-sprite-y-offset
-0x00402EA0,dxball_rotated_sprite_width,src/rotation.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,rotated-sprite-width
-0x00402FB0,dxball_rotated_sprite_height,src/rotation.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,rotated-sprite-height
+0x004026A0,dxball_render_rotated_sprite,src/rotation.cpp,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-render-sprite
+0x00402CD0,dxball_rotated_sprite_offset,src/rotation.cpp,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-offset
+0x00402DE0,dxball_rotated_sprite_y_offset,src/rotation.cpp,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,rotated-sprite-y-offset
+0x00402EA0,dxball_rotated_sprite_width,src/rotation.cpp,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,rotated-sprite-width
+0x00402FB0,dxball_rotated_sprite_height,src/rotation.cpp,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,rotated-sprite-height
 0x00403070,dxball_draw_line,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-line
 0x00403230,dxball_fill_rect,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-fill-rect
 0x00403290,dxball_copy_text_word,src/ui.c,See docs/research/exact/EXACT_EARLY_HELPERS.md; complete observed body and explicit bounded backing/finite-result contracts; active use unresolved; private checks add no direct-case acceptance row,copy-text-word
@@ -63,7 +63,7 @@ address,symbol,source,scope,semantic_unit
 0x004040B0,dxball_blt_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-sprite
 0x00404180,dxball_draw_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-sprite
 0x004041F0,dxball_stretch_keyed_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-stretch-keyed-sprite
-0x00404280,dxball_draw_rotated_sprite,src/rotation.c,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-draw-sprite
+0x00404280,dxball_draw_rotated_sprite,src/rotation.cpp,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-draw-sprite
 0x004042B0,dxball_capture_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
 0x00404610,dxball_load_sprite_bank,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
 0x00404BE0,dxball_release_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite

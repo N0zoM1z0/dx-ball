@@ -66,7 +66,7 @@ sprite/font banks, and draws through the DirectDraw declarations in
 regions, restores backgrounds, and presents by flipping or copying regions.
 [device.cpp](../src/device.cpp) handles palette fades and surface recovery;
 [ui.c](../src/ui.c) builds text and line drawing on those services.
-[rotation.c](../src/rotation.c), [raster.cpp](../src/raster.cpp), and
+[rotation.cpp](../src/rotation.cpp), [raster.cpp](../src/raster.cpp), and
 [bitmap.c](../src/bitmap.c) contain the separate software drawing and image helpers.
 
 ## Platform boundaries

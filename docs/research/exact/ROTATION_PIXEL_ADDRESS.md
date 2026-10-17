@@ -1,5 +1,11 @@
 # Rotation pixel-address evaluation
 
+The later [current-context C++ owner](ROTATION_CPP_OWNER.md) promotes horizontal
+offset and width and explicitly demotes y-offset. Its renderer remains1458/1466
+with a new digest and ten changed instructions. The original evidence and scope
+below remain useful, but these historical producer identities do not describe
+the current complete renderer.
+
 Both renderer writes now form the integer row-plus-column offset before adding
 the destination pixel base. This follows the original address computation,
 while keeping the maintained types, dimensions, guards and pixel writes.

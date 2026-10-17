@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after bonus C++ owner recovery.
-Accepted totals are **392 functions / 84,410 code bytes / 244 metadata bytes**.
-There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
+Updated October 17, 2026, after current-context C++ rotation recovery.
+Accepted totals are **393 functions / 84,737 code bytes / 244 metadata bytes**.
+There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
-These 83 are all currently source-present nonexact entries. The eight allocator
+These 82 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -74,6 +74,14 @@ and public APIs remain unchanged. Existing2,851 bonus calls plus one setup pass.
 The current linked BSS and all actual references to moved mapped data are checked.
 No full replay or game run follows.
 
+The [current-context C++ rotation owner](ROTATION_CPP_OWNER.md) promotes complete
+horizontal offset259 and width259, and explicitly demotes vertical offset to
+193/191/159. Height and wrapper stay exact; the renderer keeps1458/1466 with a
+new digest. All six complete functions,116 actual bindings and full constants
+are checked together. Existing1,024 rotation calls,329 width cases and24
+original/Native/full-VC4 helper observations pass. This is a net one-exact gain,
+with no selective object/header mix or full replay.
+
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
 The directory date is historical; its contents are current.
@@ -100,10 +108,10 @@ contexts are later publisher projects. All34 comparisons remain unchanged; this
 is neither a whole-repository search nor proof of source optimality.
 
 The current receipt audit verifies source/object/flag identities for all270
-classified authored entries across29 matching recipes:247 exact and23 complete
+classified authored entries across29 matching recipes:248 exact and22 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/bonus-cpp-owner-20261017/authored-coverage.json`.
+Authority: `.analysis/rotation-current-cpp-owner-20261017/authored-coverage.json`.
 
 The [sampled paddle width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) restores its
 677-byte extent and original right-edge sum order, reducing210 to68 strict
@@ -170,10 +178,9 @@ One owner compile preserves five exact companions and six other body identities;
 | `stretch-keyed-sprite` | 139 | 141 | 92 |
 | `draw-keyed-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
+| `rotated-sprite-y-offset` | 191 | 193 | 159 |
 | `fill-polygon` | 1543 | 1543 | 214 |
 | `fill-polygon-clipped` | 1592 | 1592 | 214 |
-| `rotated-sprite-offset` | 259 | 261 | 223 |
-| `rotated-sprite-width` | 259 | 261 | 223 |
 | `release-sprite` | 262 | 269 | 245 |
 | `draw-high-scores` | 404 | 403 | 330 |
 | `load-pcx` | 862 | 979 | 850 |

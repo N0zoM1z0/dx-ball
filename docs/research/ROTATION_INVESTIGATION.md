@@ -1,5 +1,11 @@
 # Software sprite rotation
 
+The current [C++ owner recovery](exact/ROTATION_CPP_OWNER.md) makes horizontal
+offset and width exact, retaining height/wrapper exactness and explicitly
+demoting vertical offset. Current renderer and delivery identities follow that
+note; earlier investigation epochs below retain their own source and scope.
+
+
 The latest [origin-storage restoration](exact/ROTATION_ORIGIN_STORAGE.md)
 recovers the two omitted zero writes and three float division operands/fallbacks.
 The current renderer is1,451/1,572bytes with1,475 strict differences and a424-byte
@@ -28,7 +34,7 @@ VC4 emission is 261 bytes with 223 unmasked differing bytes; the helper remains
 a candidate. The existing 1,024 original/native and actual-COFF cases pass the
 new source. The four new trig/spawn exact units belong to that separate batch.
 
-The rotation owner restores three related entries in `src/rotation.c`, shared
+The rotation owner restores three related entries in `src/rotation.cpp`, shared
 by native, MinGW and VC4 builds. The saved REA renderer dossier provides a contiguous 1,572-byte body ending at `0x00402CC3`, with
 Evidence ID
 `ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26`.

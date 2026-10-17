@@ -1,5 +1,15 @@
 # Closed drawing and SDK storage diagnostics
 
+## Rotation in the independent-global context, October 17
+
+The [complete current C++ rotation owner](ROTATION_CPP_OWNER.md) is adopted:
+offset and width259 each become exact; y-offset is explicitly demoted to
+193/191/159, for net+1 exact/+327 bytes. All six complete functions are compared.
+Unlike the older aggregate-global control below, this tests the current seven
+independent globals after they changed four bank producers. Native/MinGW and
+existing focused checks pass. Old controls retain their actual input identities;
+do not treat this as permission to repeat other closed models.
+
 ## Bonus implementation language, October 17
 
 The distinct [complete C++ bonus owner](BONUS_CPP_OWNER.md) is adopted: one
