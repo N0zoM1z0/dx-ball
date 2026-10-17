@@ -1,5 +1,13 @@
 # Closed drawing and SDK storage diagnostics
 
+## Independent hit-region owner, October18
+
+The [six-function C state family](../EDITOR_OWNER.md#closed-hit-region-implementation-owner-october18)
+leaves all14 complete identities unchanged across two compiles/223 bindings/
+12 literals. All13 exacts/3,267 bytes survive; find remains172/132. Reject the
+model without variants or architectural adoption. Full editor-key switch bytes
+and20 actual local targets are checked; canonical source and products stay fixed.
+
 ## Current C++ nested rotation origin, October18
 
 The [fixed nested-origin control](ROTATION_ORIGIN_STORAGE.md#current-c-nested-origin-control-october18)

@@ -1,5 +1,29 @@
 # Editor controller evidence
 
+## Closed hit-region implementation owner, October18
+
+The six consecutive entries401E10/401EB0/401F20/401F90/402040/4020E0
+exclusively produce/consume the real region array and count. One fixed C owner
+moves their unchanged bodies and these two definitions, retaining the complete
+`editor.h`, inherited flags and C ABI. Selected tile and all eight remaining
+functions stay in editor. No collection object or `this` ABI is inferred.
+
+Two serial compiles compare all14 functions/223 actual bindings/12 complete
+literals. Every full code identity stays unchanged;13 exacts retain3,267 bytes.
+Find remains172/132: its count/index comparison producer still differs from
+the original. Independent review also checks20 actual local targets and all
+265 embedded switch bytes in the632-byte exact editor-key body. Reject this
+owner as a recovery improvement; no class, header, type, name, order or flag
+variants follow. Historical notes below retain their own comparison epochs.
+
+Private `.analysis/hit-regions-owner-20261018/` retains full comparisons, source
+reversal and independent reviews. No canonical source, claim or delivery changes;
+no native build, relink, provider, runtime case, game or full replay is needed.
+The two-owner scope peaks at208,924,672 bytes with zero high/max/OOM events.
+All26 raw copied inputs/products, including three objects, are archived and
+member-hash verified before removal, releasing116 KiB net after archive/journal
+costs. Current tested products and useful incremental caches remain.
+
 The [complete key correspondence](exact/EDITOR_KEY_ADDRESS_CORRESPONDENCE.md)
 accounts for its 638/632-byte, 260-difference candidate through one six-byte
 address-producer difference and the resulting site shifts. All 265 switch-data

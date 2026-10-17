@@ -275,6 +275,22 @@ their limitations, not downloaded source provenance. No guessed header is
 compiled. Sealed `.analysis/pcx-header-tail-search-20261018/` retains original
 Evidence/carrier hashes and geometry; no disposable raw files are created.
 
+The later [independent hit-region owner](../research/EDITOR_OWNER.md#closed-hit-region-implementation-owner-october18)
+moves six consecutive original functions and their exclusively accessed real
+array/count into one C file, retaining full editor.h and every body. Selected
+tile stays in editor. Two fixed compiles compare all14 units/223 bindings/12
+literals: every full identity is unchanged,13 exacts/3,267 bytes survive, find
+stays172/132. Independent review checks all265 editor-key switch bytes and20
+actual local targets. Reject without class/header/type/name/order/flag variants.
+`.analysis/hit-regions-owner-20261018/` retains full receipts; no canonical
+source, claim or delivery changes, and no provider/runtime/full replay follows.
+Archive/member verification precedes deletion of26 raw inputs/products including
+three objects, releasing116 KiB net. Together with the nested-origin control,
+this checkpoint removes36 raw files/five objects and releases160 KiB net;
+current tested products and valid caches remain. Peak208,924,672 bytes with no
+high/max/OOM events. The standard cleanup preview finds no other registered
+disposable products.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;
