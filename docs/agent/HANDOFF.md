@@ -85,6 +85,21 @@ No full replay or new game run follows.44 closed raw carriers are archived and
 member-hash verified before removal, releasing7.77 MiB net. Current tested
 products, direct traces and valid CMake caches remain.
 
+The later [bank symbol-reader observation](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md#current-bank-loader-reader-order)
+uses one unchanged resource compile and retained REA assembly. All14 scalar
+roles plus key/API workspace are captured; field+8 equals object size, and actual
+reader order accumulates to all16 current frame homes. saved_bank key28266 is
+directly observed. Width is original/current EBP−52; height is original−28/current−48.
+This is a current-closure correlation, not an allocator algorithm or original
+declaration recovery. All18 full comparisons/262 bindings/six literal references
+retain their identities, including13 exacts. No source, count, delivery, replay
+or game changes. Private `.analysis/sprite-bank-current-producers-20261017/`
+retains direct trace, corrections and reviews.98 old duplicate runtime copies
+and two archived observer products are removed after hash/reference checks,
+releasing3.38 MiB net after the cleanup archive/journal. Current tested products
+and valid CMake caches remain. The producer of reader order is the next concrete
+gap; do not repeat the closed root/scope/name/order controls.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

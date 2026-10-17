@@ -35,7 +35,8 @@ hash iteration or allocation order cause the game's operand changes.
 
 Pseudocode for`0x41bb61` shows kind-dependent record reads and calls to
 `0x41ba77`. Its inferred types/signature and omitted terminal fallthrough retain
-the provider's limitations; full assembly of that procedure was not requested.
+the provider's limitations. That initial session did not request full assembly;
+the later reader observation below uses the subsequently retained assembly.
 The reader's actual assembly establishes two encodings selected by a global:
 one reads a low15-bit word and conditionally adds16 upper bits shifted15;
 the other has separate one-, two- and three-byte paths. The global's meaning
@@ -56,3 +57,71 @@ numeric lookup field at record`+0x24` to an actual subtree-ranking and swap
 decision. Its64-record cumulative snapshot includes these14 observations.
 The specific original-game producer link remains missing; neither investigation
 authorizes arbitrary declaration experiments.
+
+## Current bank-loader reader order
+
+One later observation uses the unchanged current C++ resource recipe. The
+retained full reader assembly is Evidence
+`ev_b72644fd2d85d07e930898c7f59b826775d5ceeb65897545fdb7196799331f5a`,
+record41 in the closed `2026-10-17T13-45-34.524Z-interactive-3690015` run.
+At`0x41bc1f`, `MOV [ESP+0x1c],EAX` writes temporary record`+8`, because
+the record begins at`ESP+0x14`. Its key is at`ESP+0x38`; the current spelling
+buffer is`0x486118`. These establish the observation point without assuming
+what the incoming field means.
+
+A bounded debugger captures one unchanged resource compilation. It changes
+only one instruction byte in the owned C2 process, restores it for each
+single step, preserves condition flags and leaves compiler files unchanged. All three
+compiler processes exit zero. There are116 reader hits and20 selected bank
+events, with zero mandatory read failures. The selected events include all14
+scalar roles, key, API workspace, three parameters and one unnamed record.
+The previously missing `saved_bank` key is directly observed as28266.
+
+| Current local in actual reader order | Key | Incoming field`+8` | Current EBP home |
+| --- | ---: | ---: | ---: |
+| count |28268|4|−4|
+| cursor |28271|4|−8|
+| pitch |28272|4|−12|
+| row |28269|4|−16|
+| sprite |28267|4|−20|
+| saved_bank |28266|4|−24|
+| column |28270|4|−28|
+| pixels |28286|4|−32|
+| code |28284|1|−36|
+| baseline |28283|4|−40|
+| pixel_count |28285|4|−44|
+| height |28282|4|−48|
+| width |28281|4|−52|
+| record |28289|4|−56|
+| key |28293|8|−64|
+| api |28303|116|−180|
+
+For these16 objects, the incoming field equals the source object size, and
+its cumulative size rounded to four-byte boundaries agrees with every actual
+frame home. This is a current-closure correlation. It does not establish the
+allocator traversal algorithm, the producer of reader order, original symbol
+keys/names/scopes, or original compiler settings. The raw word at record`+0x36`
+is retained without naming its semantics. Known lookup buckets and numeric keys
+alone do not explain the order. The earlier root/scope and multiplication controls
+remain closed; no declaration variant follows this observation.
+
+All18 complete resource comparisons retain their current identities, including
+13 exacts,262 actual bindings and six full literal references. Source inputs,
+flags, canonical object and toolchain identities verify before and after. The
+bank stays1475 bytes/66 differences across425 matching instruction boundaries.
+The first width read at`0x4046c6` uses EBP−52 in both bodies; the second height
+read at`0x4046dc` uses original EBP−28/current EBP−48. An initial private verifier
+transposed these role labels; its preserved correction changes only metadata.
+A second correction separates the authority's `build` annotation from complete
+comparator equality. Neither repeats compilation. No source, claim, delivery,
+semantic case, replay or game observation changes.
+
+Private `.analysis/sprite-bank-current-producers-20261017/` retains the complete
+instruction correspondence, reader trace, verifier corrections and independent
+reviews. The observer EXE and duplicate observed COFF are archived, with every
+member hash checked before deletion. Another98 old copied runtime files are
+verified against49 retained carriers and removed after active-reference checks.
+Cleanup releases3.38 MiB of allocated storage after its archive and journal.
+Originals, historical image/map/captures/states, current tested products, useful
+CMake caches and direct traces remain. The job uses one CPU, CPU35%, memory
+high640 MiB/maximum768 MiB; no provider import or full replay runs.

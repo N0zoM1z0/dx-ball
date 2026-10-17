@@ -118,3 +118,17 @@ Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. No full replay runs. Heavy work remains serial under
 CPU 35%, memory high 640 MiB / maximum 768 MiB. This is a partial source improvement;
 original campaign and physical-driver fidelity remain open.
+
+## Current reader-order observation
+
+The later [resource drawing-wrapper owner](RESOURCE_ROTATION_WRAPPER_OWNER.md)
+leaves the bank at1475/66. A subsequent unchanged-closure
+[C2 symbol-reader observation](VC4_BACKEND_SYMBOL_RECORDS.md#current-bank-loader-reader-order)
+captures all14 scalar roles and both workspace objects. Incoming record`+8`
+values equal their object sizes; actual reader order accumulates to their current
+four-byte-aligned frame homes. This identifies a concrete intermediate order,
+without proving its producer, an allocator algorithm or original declarations.
+Width remains EBP−52 in both bodies; height is original−28/current−48. All18
+complete resource identities survive one observed compile; no source proposal,
+claim update, semantic replay, relink or game run follows. Current repository
+totals remain394 exact/81 candidates, including21 authored candidates.
