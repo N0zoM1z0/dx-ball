@@ -1,5 +1,9 @@
 # Rotation owner in the independent-global context
 
+The later [resource drawing-wrapper owner](RESOURCE_ROTATION_WRAPPER_OWNER.md)
+restores vertical offset and keeps the other projection helpers exact. This note
+retains the preceding six-function owner checkpoint and its explicit demotion.
+
 On October 17, the complete C++ rotation owner restores two functions:
 
 | Unit | Original / emitted bytes | Differences before → after |

@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after current-context C++ rotation recovery.
-Accepted totals are **393 functions / 84,737 code bytes / 244 metadata bytes**.
-There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
+Updated October 17, 2026, after the fixed resource drawing-wrapper owner.
+Accepted totals are **394 functions / 84,872 code bytes / 244 metadata bytes**.
+There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.
 
-These 82 are all currently source-present nonexact entries. The eight allocator
+These 81 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -81,6 +81,12 @@ new digest. All six complete functions,116 actual bindings and full constants
 are checked together. Existing1,024 rotation calls,329 width cases and24
 original/Native/full-VC4 helper observations pass. This is a net one-exact gain,
 with no selective object/header mix or full replay.
+
+The later [resource drawing-wrapper owner](RESOURCE_ROTATION_WRAPPER_OWNER.md)
+restores y-offset191, keyed draw105 and stretch139, explicitly demoting ordinary
+draw and blt. Net+1 exact/+135 bytes. Load-bank improves to1475/66; PCX is979/851.
+All23 full functions and their constants/bindings are compared together;16 code
+identities survive. Current classified authored coverage is249 exact/21 candidates.
 
 The tables below come from the retained current comparison report:
 `.analysis/exact-candidate-audit-20261012/comparison.json`.
@@ -173,18 +179,17 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-line` | 445 | 445 | 9 |
 | `rotate-palette-right` | 234 | 234 | 9 |
 | `reset-round` | 426 | 426 | 20 |
+| `load-sprite-bank` | 1475 | 1475 | 66 |
 | `draw-paddle` | 677 | 677 | 68 |
 | `fill-triangle` | 1710 | 1710 | 88 |
-| `stretch-keyed-sprite` | 139 | 141 | 92 |
-| `draw-keyed-sprite` | 105 | 107 | 94 |
+| `draw-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
-| `rotated-sprite-y-offset` | 191 | 193 | 159 |
+| `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon` | 1543 | 1543 | 214 |
 | `fill-polygon-clipped` | 1592 | 1592 | 214 |
 | `release-sprite` | 262 | 269 | 245 |
 | `draw-high-scores` | 404 | 403 | 330 |
-| `load-pcx` | 862 | 979 | 850 |
-| `load-sprite-bank` | 1475 | 1486 | 945 |
+| `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1067 | 990 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |
 

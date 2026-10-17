@@ -2,6 +2,9 @@ extern "C" {
 #include "allocator.h"
 }
 #include "resources.h"
+extern "C" {
+#include "rotation.h"
+}
 
 #include <stdlib.h>
 #include <string.h>
@@ -86,6 +89,14 @@ void dxball_stretch_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
+    return;
+}
+
+/* FUNCTION: DXBALL 0x00404280 */
+void dxball_draw_rotated_sprite(DxBallInt slot, DxBallUInt center_x,
+                               DxBallUInt center_y, DxBallInt angle)
+{
+    dxball_render_rotated_sprite(center_x, center_y, slot, angle);
     return;
 }
 

@@ -63,7 +63,7 @@ address,symbol,source,scope,semantic_unit
 0x004040B0,dxball_blt_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-blt-sprite
 0x00404180,dxball_draw_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-sprite
 0x004041F0,dxball_stretch_keyed_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-stretch-keyed-sprite
-0x00404280,dxball_draw_rotated_sprite,src/rotation.cpp,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-draw-sprite
+0x00404280,dxball_draw_rotated_sprite,src/resources.cpp,See docs/research/ROTATION_INVESTIGATION.md: bounded backing/conversions and finite controlled locks,rotation-draw-sprite
 0x004042B0,dxball_capture_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
 0x00404610,dxball_load_sprite_bank,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
 0x00404BE0,dxball_release_sprite,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite

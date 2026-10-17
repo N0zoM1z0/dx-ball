@@ -117,13 +117,6 @@ DxBallInt dxball_rotated_sprite_offset(DxBallInt slot, DxBallInt angle)
 
 
 
-/* FUNCTION: DXBALL 0x00404280 */
-void dxball_draw_rotated_sprite(DxBallInt slot, DxBallUInt center_x,
-                               DxBallUInt center_y, DxBallInt angle)
-{
-    dxball_render_rotated_sprite(center_x, center_y, slot, angle);
-    return;
-}
 
 /* FUNCTION: DXBALL 0x00402DE0 */
 DxBallInt dxball_rotated_sprite_y_offset(DxBallInt slot, DxBallInt angle)

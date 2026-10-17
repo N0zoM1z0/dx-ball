@@ -4,7 +4,8 @@ The October 17 investigation connects a numeric symbol-record lookup key to a
 real child-ordering decision in the pinned VC4 backend. It does **not** yet
 connect that decision to a specific original-game instruction difference.
 No game source, exact claim, compiler recipe or delivery product changes here.
-The current totals remain 393 exact functions and 22 authored candidates.
+This research-only checkpoint retained 393 exact functions and 22 authored
+candidates; the later linked owner note below supplies the current totals.
 
 The target is the attested `.tools/msvc400/bin/c2.exe`, SHA-256
 `820ed4e4930db97bcba646afb88fdb7d1f329631ca8e5b84096c0d6daa82e9a9`.
@@ -102,8 +103,8 @@ releasing 17,526,784 allocated bytes net (16.7 MiB). Their paths and bytes remai
 intact. Current tested build products and useful CMake caches remain retained.
 No game compilation, relink, game episode or full replay follows this research.
 
-The next useful producer observation is a concrete game's node opcode, record
-key and both child ranks at this stage, followed through to its emitted bank
-or comparison instruction. Original-game intermediate keys and original
+The later [resource drawing-wrapper investigation](RESOURCE_ROTATION_WRAPPER_OWNER.md)
+captures concrete current-game node opcodes, record keys and both child ranks,
+then compares all affected complete emitted functions. Original-game intermediate keys and original
 compiler/settings identity remain unknown. Do not turn the ranking mechanism
 into a name, declaration-count, order or compiler-flag sweep.
