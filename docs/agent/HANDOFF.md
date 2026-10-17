@@ -262,6 +262,13 @@ Other authored boundaries and retained controls:
   copy-address LEAs each. Separate x/y assignments would change the original
   paired reads and writes; that proposal is declined before compiling. Neither
   result proves the original language boundary or a source optimum.
+  The distinct [current64 C-owner control](../research/exact/POLYGON_SCAN_WORKSPACE.md#current-workspace-in-an-independent-c-owner-october-17)
+  preserves separate endpoints and all body tokens. Ordinary becomes1543/212,
+  clipped stays1592/214 unchanged. Eight instruction bytes lose two prior
+  original comparison orders while recovering the final dy/error comparison.
+  Close without adoption or further variants; all current source/products and
+  392/23 totals remain unchanged. Seven raw copies are archived/member-verified
+  and removed, releasing48 KiB net; useful current caches remain.
 - Bank cursor/row/column, file-metadata and transfer-workspace scopes are closed.
   Preserve callback-visible state and the pitch snapshot before Lock.
 - [Brick-hit pan consumer scope](../research/exact/EXACT_BRICK_POWERS.md#closed-pan-consumer-scope)

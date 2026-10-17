@@ -83,3 +83,36 @@ all frontend behavior. Private `.analysis/polygon-c-owner-20261017/` retains the
 inputs, complete comparisons, independent reviews and copy-producer proof.
 Verified archival replaces seven disposable input/object files, releasing48 KiB
 of allocated storage after archive cost, excluding small JSON receipts.
+
+## Current workspace in an independent C owner, October 17
+
+A distinct follow-up keeps the maintained 64-byte workspace and separate
+`first`/`second` points. The older C control above used full80 and therefore
+did not test this source model. The two controllers consume POD, C allocator/span
+APIs and explicit stdcall entries, with no class lifetimes. This supports one
+inferred C owner; it does not establish the original language or owner boundary.
+
+One serial, resource-capped compile compares both complete controllers:
+ordinary remains 1,543 bytes with 212 differences, versus 214 before; clipped
+remains 1,592 bytes with 214 differences and an identical resolved digest.
+The entire function bodies and every workspace member remain unchanged. C needs
+only a same-name typedef for the existing struct. Both actual `RET20` entries
+and their eleven relocation bindings each retain all symbols, targets and addends.
+
+Only eight ordinary-function instruction bytes change, in three comparisons.
+The endpoint equality at `0x40B64E/0x40B651` and orientation comparison at
+`0x40B65F/0x40B662/0x40B665` lose their prior original producer order after
+translation by actual point roles. The final dy/error comparison at
+`0x40BAF3/0x40BAF6/0x40BAF9` recovers the original instructions. Physical frame
+homes and every other byte stay unchanged. Thus two fewer raw differences
+include both recovered and lost producers; neither function becomes exact.
+The frontend and independent owner/header view were tested together.
+
+Close this fixed model without adoption or further layout/header/flag variants.
+There is no untouched C++ companion compile, Native/MinGW build, runtime test,
+new provider query, relink, game or full replay. Current source, cached products
+and ledgers remain at 392 exacts and 23 authored candidates. Independent review
+confirms the source, ABI, binding and instruction deltas. Private evidence is
+in `.analysis/polygon-current-c-owner-20261017/`. All seven raw input/object
+copies are archived, every member hash verified, then removed, releasing
+48 KiB net of the archive, excluding receipt costs. Useful current caches remain.

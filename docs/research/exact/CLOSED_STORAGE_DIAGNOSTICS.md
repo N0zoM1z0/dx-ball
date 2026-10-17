@@ -46,6 +46,14 @@ component expansion is declined before compiling because it changes the observed
 paired-read/paired-write producer order. Do not repeat either model as an
 unchanged-copy exactness improvement.
 
+The distinct [current64 C-owner follow-up](POLYGON_SCAN_WORKSPACE.md#current-workspace-in-an-independent-c-owner-october-17)
+keeps separate endpoint points and all body tokens. One compile gives ordinary
+1543/212 and unchanged clipped1592/214. Eight instruction bytes transpose three
+comparison groups: two prior original producer orders are lost, while the final
+dy/error producer is restored. It is closed without adoption, companion builds
+or runtime checks. The full80 result alone had not covered this current model;
+both bounded models are now retained separately.
+
 ## Shared declarations after independent board ownership, October17
 
 The [consumer producer follow-up](INDEPENDENT_BOARD_STORAGE.md#consumer-producer-follow-up)
