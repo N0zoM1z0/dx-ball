@@ -291,6 +291,34 @@ current tested products and valid caches remain. Peak208,924,672 bytes with no
 high/max/OOM events. The standard cleanup preview finds no other registered
 disposable products.
 
+The later [local FixedPoint aggregate control](../research/exact/TRIANGLE_SCANLINE_SCOPE.md#local-aggregate-compiler-control-october18)
+answers the previously untested local `/Od /Ob0 /GX` EH question in one small
+compiler fixture. Four independent roots produce four parent states; a plain
+two-member aggregate plus two roots produces three, with separate129/120-byte
+implicit ctor/dtor and internal partial-construction cleanup. Full11-section/
+61-relocation review passes. It does not match the original triangle machinery;
+no game slope-pair compile follows. Sealed
+`.analysis/fixedpoint-local-aggregate-20261018/` archives/member-verifies then
+removes five raw carriers/one object, releasing92 KiB net. Canonical game source,
+products and counts stay unchanged; no provider/runtime/relink/full replay.
+
+The later [capture/load/release lifecycle owner](../research/RESOURCE_OWNER.md#closed-captureloadrelease-owner-october18)
+tests three unchanged bodies backed by consecutive original entries and their
+actual allocation/publication/free protocol. Two compiles compare18 complete
+functions/262 bindings/six literals. Capture852exact→864/726 loses its match:
+12 bank/slot address groups each grow one byte. Release269/245 is unchanged;
+bank1475/66→1475/65 and PCX979/851 change only local product/guard producers.
+Fifteen full identities/12 exacts survive; reject the whole model, with no
+selective retention or variants. Sealed
+`.analysis/sprite-lifecycle-owner-20261018/` archives/member-verifies and removes
+13 raw files/three objects, releasing72 KiB net. Along with the local aggregate
+control this turn removes18 raw files/four objects, releasing164 KiB net.
+Canonical source, claims and delivery remain unchanged; no native, provider,
+runtime, relink or full replay. Both scopes stay below158 MB with zero high/max/
+OOM events. The separate endpoint-bias source search remains a four-query
+negative, with compressed complete responses and an explicit zero-slope wording
+erratum; it supplies no original polygon declaration or compiled source model.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

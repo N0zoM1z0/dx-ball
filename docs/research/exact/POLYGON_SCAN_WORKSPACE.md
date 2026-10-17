@@ -154,3 +154,13 @@ receives pool bases. Thus no outside field producer is exposed by this pair.
 An unused historical field is possible, but its type/name remain unknown. Sealed
 `.analysis/polygon-edge-field-access-20261018/` retains sites, primary Evidence
 IDs, carrier hashes and independent verification without new provider work.
+
+Four distinct follow-up queries use the left/right endpoint bias and signed
+integer-error stepping, with the corrected28-byte geometry. No qualifying
+published source appears in the returned excerpts; no source page is opened
+or downloaded. This does not establish the unknown slot or original declaration.
+Sealed `.analysis/polygon-endpoint-bias-search-20261018/` retains both complete
+query-response gzip carriers. A separate `-erratum/` corrects its step wording:
+the second branch includes zero (`dx >= 0`), verified by original CMP/JGE bytes
+at40BAB3/40BAB7 and40C0F4/40C0F8. Queries and their bounded negative remain
+unchanged. No source model, compilation or provider query follows.

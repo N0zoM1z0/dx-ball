@@ -69,3 +69,30 @@ without claiming impossibility. Private
 `.analysis/triangle-slope-ownership-20261018/review.json` retains the separate
 EH states, four unwind actions, counterexample and limitations. No compilation
 or provider query follows.
+
+## Local aggregate compiler control, October18
+
+A later fixed structural control answers the specific local `/GX` gap above.
+One pinned VC4 compile uses the unchanged raster flags, complete current
+FixedPoint header and actual empty but nontrivial ctor/dtor definitions.
+Two small callers compare four independent roots with a plain two-member slope
+aggregate plus two independent roots. The observer receives individual member
+pointers; no aggregate address escapes or custom aggregate method forces a boundary.
+
+The independent caller has four parent unwind states; the aggregate caller has
+three, with separate129-byte implicit constructor and120-byte destructor.
+Both generated methods have two-state48-byte metadata. Member construction
+uses offsets0/4; failure during second construction cleans only the first.
+Normal and early returns clean in reverse order. Full FixedPoint ctor/dtor
+bytes equal the maintained raster methods. Thus this fixed model does not
+flatten to the original triangle's four direct parent states/actions; no game
+slope-pair compilation follows. This is not a universal compiler exclusion or
+proof of original declarations.
+
+Independent review covers the complete3,459-byte object,11 sections and61
+actual relocations, including all EH tables and cleanup funclets. Sealed
+`.analysis/fixedpoint-local-aggregate-20261018/` retains the complete object,
+source and COFF record in a member-hash verified archive. Five raw carriers,
+including the sole object, are removed, releasing92 KiB net. Peak148,901,888
+bytes with zero high/max/OOM events. Canonical game inputs, products, counts
+and delivery stay unchanged; no provider, relink, runtime or full replay runs.
