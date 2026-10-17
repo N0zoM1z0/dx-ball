@@ -1,5 +1,16 @@
 # Closed drawing and SDK storage diagnostics
 
+## Complete surface descriptor, October18
+
+The distinct [nested v1 descriptor control](SURFACE_DESCRIPTOR_CONTRACT.md)
+uses named unions, genuine nested API records and a void surface pointer while
+retaining existing scalar abstractions and interfaces. Three serial compiles
+compare32 complete resource/UI/rotation functions. Two candidates become exact,
+but nine prior exacts are lost; reject the whole model. Fifteen code identities
+stay unchanged. No selective adoption, broader consumer compile or type/order
+variant follows. Modern SDK layout corroboration does not recover historical
+header text. Canonical source, products and counts remain unchanged.
+
 ## Palette implementation owner, October18
 
 One [four-function palette-effects owner](PALETTE_EFFECTS_OWNER.md) is closed:

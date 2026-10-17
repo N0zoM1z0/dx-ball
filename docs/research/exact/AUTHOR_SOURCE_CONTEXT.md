@@ -50,3 +50,22 @@ game, relink or replay runs.
 Private `.analysis/author-source-context-20261017/` retains primary pages,
 archive/member hashes, immutable source blobs, the executed check and the
 bounded finding. No expanded repository or compiler products are created.
+
+## Three related raster implementations, October18
+
+A separate bounded follow-up inspects three previously unread implementations:
+Tread Marks [Image.cpp](https://github.com/LongbowGames/TreadMarks/blob/6af9528c67d867f7903eb2ea4834db0750629034/src/game/Image.cpp),
+Particle Fire [BackBuffer.cpp](https://github.com/LongbowGames/ParticleFire/blob/dbf61926072a34ff04879d1e35fa57c25014f014/src/Backbuffer/BackBuffer.cpp)
+and [cdib.cpp](https://github.com/LongbowGames/ParticleFire/blob/dbf61926072a34ff04879d1e35fa57c25014f014/src/Backbuffer/cdib.cpp).
+All57,186 downloaded bytes verify against the already pinned Git blob identities.
+Complete-file checks find none of the selected PCX/header, triangle-constant or
+fixed-class markers; Image.cpp implements BMP loading. No independent connection
+to the pinned PCX or fixed-point triangle routine is established.
+
+This boundary is three selected files and bounded searches, not complete
+repository inspection or proof of absence. Self-reconstruction results remain
+excluded. No foreign source, compiler setting or declaration is adopted.
+Private `.analysis/related-raster-source-20261018/` retains URLs, full checks
+and a member-hash-verified archive. The three raw downloads are removed after
+verification, releasing40,960 allocated bytes after archive/journal costs.
+No compiler, provider, runtime, relink or replay runs for this follow-up.

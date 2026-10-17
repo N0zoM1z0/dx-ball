@@ -54,3 +54,18 @@ aggregate ownership. No edge-record or narrower-root lifetime trial follows.
 Private `.analysis/triangle-edge-ownership-20261018/review.json` retains exact
 constructor/cleanup addresses and the original dossier, continuation and metadata
 Evidence IDs. This does not establish unique original names or declarations.
+
+A separate slope-only pair has contiguous, order-compatible homes−24/−20;
+the preceding edge-pair layout objection does not reject that different model.
+However, the original parent advances four separate construction states and
+owns four direct FixedPoint cleanup actions. An aggregate would need its
+implicit construction/destruction flattened into that machinery. A retained
+VC4 `/Od /Ob0` object instead emits a39-byte implicit board-storage constructor;
+only its `/Ob1` control expands it. That global example has no nontrivial
+aggregate destructor, so it does not universally exclude local `/GX` aggregates.
+No consumer owns or takes a slope-pair object, and no retained example supplies
+the required flattening. The bounded review therefore declines a source trial
+without claiming impossibility. Private
+`.analysis/triangle-slope-ownership-20261018/review.json` retains the separate
+EH states, four unwind actions, counterexample and limitations. No compilation
+or provider query follows.

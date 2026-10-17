@@ -152,6 +152,37 @@ cleanup order and noncontiguous long-edge homes contradict that ordinary model.
 Keep all four root objects before sorting/exits. Its primary IDs/addresses remain
 in `.analysis/triangle-edge-ownership-20261018/review.json`.
 
+The distinct October18 [complete surface descriptor control](../research/exact/SURFACE_DESCRIPTOR_CONTRACT.md)
+reconstructs the genuine nested v1 API shape and void surface pointer, retaining
+current scalar abstractions and interfaces. Three serial compiles compare32
+complete resource/UI/rotation functions and415 bindings/31 literal references.
+Draw and release become exact, but nine prior exacts are lost: reject the fixed
+model as a family, with no selective object/header adoption or further variants.
+Fifteen code identities remain unchanged. Private
+`.analysis/surface-descriptor-contract-20261018/` retains full inputs,
+transformation, comparisons and independent reviews. No broader consumer build,
+native build, relink, provider, game or full replay follows. Scope peak is
+241,090,560 bytes with zero high/max/OOM events under the required one-CPU35%/
+high640MiB/max768MiB limits. Copied inputs and all six before/proposal objects
+are archived/member-verified before removal. Current source/products/counts stay
+unchanged. Modern SDK layout corroboration is not recovery of1990s header text.
+Cleanup removes26 raw copied inputs/products, releasing139,264 allocated bytes
+after archive/journal costs. Finalization corrects literal-name/report-annotation
+handling and the location of mapped literal data without repeating compiles or
+comparisons; the final verification passes. Standard cleanup previews zero other
+registered disposable products. The current build tree totals about62MiB.
+
+Two further bounded ownership reviews decline unsupported models before
+compilation: ordinary selected tile/center points contradict original homes
+([last-brick review](../research/exact/LIGHTNING_EXPIRY_SCOPE.md#selected-coordinate-ownership-review-october18));
+a slope-only triangle pair fits layout but lacks aggregate ownership/required
+ctor/EH flattening evidence ([triangle review](../research/exact/TRIANGLE_SCANLINE_SCOPE.md#edge-record-ownership-review-october18)).
+The latter does not universally exclude local `/GX` aggregates. A separate
+[three-file publisher-source follow-up](../research/exact/AUTHOR_SOURCE_CONTEXT.md#three-related-raster-implementations-october18)
+establishes no PCX/triangle routine connection, checks57,186 bytes against pinned
+Git blobs and removes raw copies after archive/member verification, releasing
+40,960 allocated bytes. Neither review nor bounded search changes source or claims.
+
 The preceding [current-context C++ rotation owner](../research/exact/ROTATION_CPP_OWNER.md)
 restores offset and width at259 bytes each, explicitly demoting y-offset to
 193/191/159. Net gain is one exact/327 bytes. Height and wrapper remain exact;

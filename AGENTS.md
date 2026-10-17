@@ -44,6 +44,10 @@ against instructions, exits and embedded data.
   Publish recovered source, useful research notes and claim ledgers.
 - Update the affected ledgers and progress when claims change. Preserve unique
   evidence before cleaning disposable products.
+- At each closed experiment, archive and member-hash verify useful evidence,
+  then delete obsolete proposal objects, executables and copied inputs. Retain
+  current tested products and useful incremental build caches; avoid accumulating
+  unused build products between checkpoints.
 - Commit and push verified checkpoints to the configured `origin/main`.
   The user resumed publishing; keep private originals/tools/evidence untracked.
   Subjects are English and begin

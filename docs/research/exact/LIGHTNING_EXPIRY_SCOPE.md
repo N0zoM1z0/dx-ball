@@ -142,6 +142,20 @@ Private `.analysis/lightning-crop-lifetime-20261017/` retains the complete
 comparisons, frame proof and frozen proposal/input/object archive. Do not extend
 this scope model without a new producer fact.
 
+## Selected coordinate ownership review, October18
+
+The selected tile coordinates jointly feed explosion placement, and their
+derived center jointly feeds fire, particles and crop positioning. These scalar
+consumers do not establish a point object. Original tile homes are x−8/y−12,
+in reverse memory order for an ordinary `{x,y}` point; center homes x−36/y−52
+are noncontiguous. No shared address or whole-object copy supplies the missing
+ownership evidence. Decline these two ordinary point models before compiling;
+do not try reversed fields or padding. This bounded review does not close other
+aggregate possibilities or recover unique declarations. Private
+`.analysis/last-brick-point-ownership-20261018/review.json` preserves the actual
+producer/consumer sites, original dossier and current homes. No source, compiler,
+provider, runtime or comparison changes follow.
+
 ## Compiler-dependent particle argument order
 
 A single existing expired-deadline/crop case confirms that the current GCC
