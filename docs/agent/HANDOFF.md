@@ -138,15 +138,41 @@ aggregate; a smaller body or one-position count gain does not recover a variable
 home. The PCX packet trial rotates four homes and restores none; it stays rejected.
 Do not repeat its API-record, scanline-record, header-scope or packet-scope trials.
 
-The next shared-storage question is whether the enclosing reconstructed object
-obscures independent original globals. Multiple immediate list receivers and the
-original26-byte initializer, versus the current32-byte embedded initializer,
-supply independent support for investigating that hypothesis. The old C++
-member-call probe still emits LEA; do not repeat that syntax-only model.
-Before any adoption, demonstrate actual compiler/linker placement across the
-maintained builds, startup construction, all mutable unknown bytes and the
-terminal overlap. Ordinary source declaration order is not a placement guarantee;
-account explicitly for any cross-object access. Keep current storage until proved.
+The [independent board-storage proposal](../research/exact/INDEPENDENT_BOARD_STORAGE.md)
+now has executed three-ABI diagnostic placement/overlap evidence and a complete
+278-function affected-closure comparison. Its seven real objects retain natural
+pointer widths, both mutable unknown slots and the list's constructor-cleared
+word. Ordered linker sections provide adjacency; cross-object traversal is an
+explicit compiler/linker ABI contract. A separate ELF shared-library control
+observes destructive COPY relocations and verifies protected definitions plus
+PIC consumers. These are diagnostic observations, not production acceptance.
+
+The current seven-object model has17 new private zeros:16 authored functions and
+the26-byte initializer. Eight prior exacts regress;240 prior companions remain
+exact. All six initially unhandled mappings are reconciled against actual named
+identities;272 completed comparisons are reused, and only six more run from the
+existing objects. An independent review verifies409 binding records, including
+the three additional zeros for paddle position, score refresh and palette
+transition. No canonical source, ledger, cache or delivery change follows yet.
+
+Next, check the real VC4 restored-CRT, MinGW Release and Native Debug placement,
+startup/once-only construction, all unknown bytes, terminal overlap and affected
+flows. The proposal and all29 current owner products/frozen inputs are retained
+under `.analysis/independent-board-storage-20261017/candidate/` and
+`complete-wide/`; authoritative results are `complete-wide/reconciled/`.
+Resolve the eight regressions with supported source evidence, or explicitly
+justify/record demotions alongside a stronger ownership reconstruction after
+production gates. Comparing accepted companions is required; unchanged old
+objects cannot stand in for changed inputs. Do not silently report only gains.
+
+Do not repeat the old member-call probe, the five-declaration broad trial, or
+the complete-interface control. A uniform split of layout metadata from game
+declarations has also been tested in two representative owners: nine regressions
+across27 prior exacts, so no broad expansion followed. Compiler-context causality
+remains unproved; do not turn these results into a name/order/count/flag sweep.
+Closed diagnostic products and superseded trees have verified archive carriers;
+keep the current29-owner closure reusable. Keep canonical storage until the
+remaining production and adoption work is complete.
 
 Other authored boundaries and retained controls:
 
@@ -288,6 +314,11 @@ delete evidence trees or tool caches. Recent journals are
 `.analysis/storage-maintenance-20261017/verification.json`, and
 `.analysis/game-prefix-direct-flow-20261017/verification.json`. They distinguish
 allocated disk release from logical duplicate-byte totals.
+The independent-storage investigation additionally archives239 closed/superseded
+files and releases4,927,488 allocated bytes net of verified carriers. Receipts are
+`.analysis/independent-board-storage-20261017/cleanup.json` and
+`superseded-cleanup.json`; the current29-owner tree/products and control producers
+remain available for the next production checks.
 
 Update only changed claims; refresh progress when ledgers change. Commit and push
 verified checkpoints to `origin/main` with the English subject prefix
