@@ -79,10 +79,13 @@ DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval)
 
 void dxball_draw_paddle(void)
 {
-    DxBallInt base_width, factor, sprite, offset_y, margin, x, y;
+    DxBallInt factor, sprite, offset_y, margin, x, y;
     DxBallRect rect, dirty;
-    base_width = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_sprite]->width;
-    factor = dxball_paddle_width / base_width;
+    {
+        DxBallInt base_width;
+        base_width = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_sprite]->width;
+        factor = dxball_paddle_width / base_width;
+    }
     offset_y = 0;
     sprite = factor * 4 + dxball_paddle_frame;
     if (dxball_elapsed(dxball_paddle_tick, 64)) {

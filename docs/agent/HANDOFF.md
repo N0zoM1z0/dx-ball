@@ -46,7 +46,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 391 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 84 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/independent-board-production-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/paddle-current-frame-20261017/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -61,11 +61,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 ## Current source and delivery
 
 The current restored-CRT executable is
-`5f4e581b8e19ef4a77c550590936c6cc7a871dc5ee735775555056ca0a7f25df`.
+`f739d00c06d30faca4a6b81b7c95535cb0272eacc0cf427d744f67483bbd46f0`.
 Its recipe is `vc40-restored-crt`: 116 source objects from 113 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
 `build/vc40-restored-crt/build.json`. Reuse only after checking the complete closure.
+
+The latest [paddle width sampling scope](../research/exact/PADDLE_WIDTH_SAMPLING_SCOPE.md)
+restores the677-byte extent and original right-edge sum order, reducing210 to68
+strict differences. All15 runtime companions retain their code identities,
+including13 exacts. All185 instructions,12 branches,10 calls and52 bindings are
+accounted; physical source homes remain different. The candidate stays nonexact.
+Existing332 paddle calls and fresh Native/MinGW builds pass. VC4 relinks with116
+reused objects/19 unchanged members; all1,097 map addresses stay fixed. Its PE
+changes are confined to paddle/alignment, nine actual loader relocation updates
+and six timestamp fields. No game run or full replay follows. Valid canonical
+CMake configurations now remain for incremental reuse.
 
 The latest [independent board globals](../research/exact/INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
 recover seven real neighboring objects instead of an enclosing instance, while
@@ -84,7 +95,8 @@ inlining produced an observed terminal overlap failure. ELF data tools use
 explicit-fPIC with protected globals. All116 current VC4 producers/19 members
 are reused for the canonical relink, with zero new compiles. GNU tested products
 are installed byte-identically, with retained-build.json receipts; old CMake
-caches are removed. Configure fresh builds for later source changes.
+caches were removed at that checkpoint. The later paddle scope above configures
+fresh canonical builds and retains their valid caches for subsequent reuse.
 
 The earlier [joint hit scope](../research/exact/EXACT_BRICK_POWERS.md#shared-counter-and-switch-pan-scope)
 restored all19 frame homes and reduced416→405 differences. The independent
@@ -159,11 +171,12 @@ keeps all seven real objects, both mutable unknown slots, the real +0xC list
 word and natural pointer widths. Ordered linker sections and retained memmove
 provide the supported compiler/linker ABI contract. It is not an ISO array-bounds
 portability claim. The layout descriptor is a view, with no enclosing instance.
-The current29 matching products/frozen inputs remain in
-`.analysis/independent-board-storage-20261017/complete-wide/`; complete comparison
-authority is its `reconciled/` directory. Production/adoption receipts and the
-current authored-coverage audit are in
-`.analysis/independent-board-production-20261017/`. No full replay or game run.
+That checkpoint's29 matching products/frozen inputs remain in
+`.analysis/independent-board-storage-20261017/complete-wide/`, with its comparisons
+in `reconciled/`. The later paddle scope replaces the runtime producer; the other
+28 remain current. Production/adoption receipts and the checkpoint audit remain
+in `.analysis/independent-board-production-20261017/`. Current source/object and
+comparison authority follows the table above. No full replay or game run.
 
 Continue the24 current authored candidates, including the eight declared-context
 demotions. Choose a concrete producer, ownership, ABI or lifetime discrepancy;

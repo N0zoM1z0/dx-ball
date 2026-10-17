@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 17, 2026, after independent board ownership adoption.
+Updated October 17, 2026, after paddle width sampling recovery.
 Accepted totals are **391 functions / 82,242 code bytes / 244 metadata bytes**.
 There are **84 complete nonexact comparisons: 24 authored and 60 runtime**. None is an accepted exact.
 
@@ -96,7 +96,13 @@ The current receipt audit verifies source/object/flag identities for all270
 classified authored entries across29 matching recipes:246 exact and24 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/independent-board-production-20261017/authored-coverage.json`.
+Authority: `.analysis/paddle-current-frame-20261017/authored-coverage.json`.
+
+The [sampled paddle width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) restores its
+677-byte extent and original right-edge sum order, reducing210 to68 strict
+differences. All15 runtime companion identities and13 exacts survive;332 existing
+paddle calls pass. This is partial source recovery; exact/candidate counts stay
+unchanged, and physical variable homes remain different.
 
 The [independent-global adoption](INDEPENDENT_BOARD_STORAGE.md#production-acceptance-october-17)
 compares all278 affected complete units, promotes17 and explicitly demotes eight.
@@ -143,12 +149,12 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-line` | 445 | 445 | 9 |
 | `rotate-palette-right` | 234 | 234 | 9 |
 | `reset-round` | 426 | 426 | 20 |
+| `draw-paddle` | 677 | 677 | 68 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `stretch-keyed-sprite` | 139 | 141 | 92 |
 | `draw-keyed-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
 | `update-bonuses` | 2168 | 2168 | 180 |
-| `draw-paddle` | 677 | 678 | 210 |
 | `fill-polygon` | 1543 | 1543 | 214 |
 | `fill-polygon-clipped` | 1592 | 1592 | 214 |
 | `rotated-sprite-offset` | 259 | 261 | 223 |

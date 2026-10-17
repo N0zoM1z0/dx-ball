@@ -1,5 +1,15 @@
 # Closed drawing and SDK storage diagnostics
 
+## Paddle sampling follow-up, October17
+
+One current-context complete-frame record control still fails679/487 and adds
+two scheduling differences despite restoring physical homes. It stays unadopted.
+The distinct [sampled-width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) is adopted:
+only width enters its initial read/division block, restoring677 bytes and the
+right-edge sum order, with68 strict differences. Both16-unit comparisons
+preserve13 exact companions;332 existing paddle calls pass. Physical source
+homes remain different. Do not repeat either model unchanged.
+
 ## C-compatible polygon owner, October 17
 
 The [separate POD-owner control](POLYGON_SCAN_WORKSPACE.md#c-compatible-polygon-owner-control-october-17)
@@ -78,7 +88,8 @@ these results when choosing the next question.
 The final paddle record restores all observed source homes in the 68-byte frame:
 scale, animation, margin, both rectangles and overlay coordinates. Bank/sprite
 address scheduling still adds two bytes relative to the original; canonical
-678/677 remains preferable. No record introduces unused fields or changes buffer
+678/677 remained preferable at that checkpoint. The later sampling follow-up
+above supersedes that baseline. No record introduces unused fields or changes buffer
 capacity. The original paddle dossier is Evidence
 `ev_0b4d5d681d951be5b6a69ac1d9d09db3cc965811c767e0b2b4f7296609cc020a`.
 
