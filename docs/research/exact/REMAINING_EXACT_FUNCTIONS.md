@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 18, 2026, after the drawing-primitive owner partial recovery.
+Updated October 18, 2026, after the lightning crop-producer recovery.
 Accepted totals are **394 functions / 84,872 code bytes / 244 metadata bytes**.
 There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.
 
@@ -120,10 +120,13 @@ contexts are later publisher projects. All34 comparisons remain unchanged; this
 is neither a whole-repository search nor proof of source optimality.
 
 The current receipt audit verifies source/object/flag identities for all270
-classified authored entries across29 matching recipes:248 exact and22 complete
+classified authored entries across30 matching recipes:249 exact and21 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/rotation-current-cpp-owner-20261017/authored-coverage.json`.
+Authority: `.analysis/lightning-excess-producer-20261018/authored-coverage.json`.
+The later [actual line comparison observation](LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
+captures the three current symbol-role swaps and checks their correspondence to
+all nine residual bytes. It changes no source, product or acceptance claim.
 
 The [sampled paddle width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) restores its
 677-byte extent and original right-edge sum order, reducing210 to68 strict

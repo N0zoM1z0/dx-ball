@@ -37,3 +37,73 @@ relink pass. One unchanged 486-case line loop compares all octants, both endpoin
 directions, equality, zero length, retries, complete padded pixels and COM calls.
 No text/palette suite or game campaign runs. Private evidence and products are
 retained in `.analysis/line-locked-cursor-20261012/`.
+
+
+## Actual backend comparison decisions, October18
+
+One instrumented compile of the unchanged current drawing-primitive owner
+connects its three residual comparisons to actual C2 ordering decisions. This
+adds compiler evidence, without a source variant or exact promotion. The existing
+[backend helper analysis](VC4_EXPRESSION_ORDERING.md) supplies the pinned code;
+no new provider import or query is required.
+
+The observer records all62 helper entries and actual returns:55 in line and
+seven in fill. All calls pair by PID/TID/index/node, with no pending call,
+secondary C2 thread, missing node/attribute or mandatory read failure. The helper
+really swaps ten child pairs and returns their unsigned minimum ranks. Every
+opcode/child write, saved register and ESP+8 return is checked. The compiler
+process tree exits normally. Two deeper child subtrees exceed the explicit
+depth5 recording bound; the three selected comparisons are fully captured.
+
+The relevant operands are scalar loads (opcode30) of the actual named records
+(opcode26). Their ranks are not the bare symbol ranks. Retained40846E assembly
+at4084C0..4084E4 transforms a child rank r as
+`((r-45)&15)|((r+16)&0xfff0)`. The known key formula gives leaf ranks24/25/26/27
+for current i/dx/dy/error keys28656/28657/28658/28659; the load ranks are therefore
+43/44/45/46. These ranks are independently derived from the assembly; the
+comparison's rank arguments and resulting child/opcode writes are observed.
+No additional helper emulation or compiler run is needed.
+
+| Actual role pair | Load ranks | Actual opcode before→after | Emitted group starts |
+| --- | --- | --- | --- |
+| dx / dy |44 /45 |24→22 |403145,403148,40314B |
+| i / dx |43 /44 |21→23 |403160,403163,403166 |
+| i / dy |43 /45 |21→23 |4031C4,4031C7,4031CA |
+
+Opcode numbers are hexadecimal. Each left rank is less than its right rank;
+all three actual calls swap the children and remap the comparison opcode.
+Selection uses function and operand-record identities, not event order or a
+numerical-key ordering assumption. The final current MOV loads the post-right
+role and CMP consumes the post-left role. The original uses the opposite role
+order, with the corresponding opposite Jcc and identical destination.
+
+A complete fresh comparison preserves all121 instruction boundaries,140 frame
+bytes and445 code bytes. These three groups contain all nine differing bytes;
+every other instruction byte agrees. Fill remains85 bytes exact. Both complete
+functions have zero COFF bindings or literal references, and their produced
+code bytes remain identical to the canonical objects. The source's complete13
+project inputs, compiler identities, claim ledgers, delivery and caches remain
+unchanged at394 exacts/84,872 code bytes/244 metadata bytes and21 authored
+candidates.
+
+This observes a current compiler decision and checks its correspondence to the
+specific emitted comparisons. The final emitter's consumption of those exact
+node identities is not traced; original keys, names, types, predicates and
+compiler settings remain unknown. Thus the result does not uniquely reconstruct
+original source or justify a name, scope, order, header, guard or flag sweep.
+Future line source changes still require an independent producer/consumer fact.
+
+Private `.analysis/line-backend-comparisons-20261018/` retains the complete trace,
+full two-function comparison, role proof, source/tool identities and independent
+reviews. The observer uses an owned kill-on-close Job, rejects extra C2 threads,
+restores its entry breakpoint after the saved return address and bounds every
+helper call. Timeout cleanup is limited to the owned tree; finally checks all
+canonical inputs and products. Only observed compiler process memory is patched;
+no tool file or emitted game code is modified. One CPU/35%, memory high640MiB/
+max768MiB hold; peak210,264,064 bytes and zero high/max/OOM events are recorded.
+No native/MinGW game build, runtime case, relink, game or full replay follows.
+
+Archive/member-hash verification precedes removal of16 closed raw files:13
+copied project inputs, two objects and the observer executable. Net allocated
+storage released is208,896 bytes after archive/journal costs. Primary trace,
+proofs and current tested products remain; no unused observer binary is kept.

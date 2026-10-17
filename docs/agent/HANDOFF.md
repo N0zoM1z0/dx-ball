@@ -92,6 +92,26 @@ six objects and12 superseded VC4 history copies, releasing8,658,944 allocated
 bytes net of archive/journal. Current tested products and useful caches remain;
 the regular cleanup preview finds zero further disposable items.
 
+A subsequent [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
+compiles the unchanged drawing-primitive owner once under an owned C2 observer.
+All62 helper entries/returns pair;55 belong to line and seven to fill. Current
+scalar-load ranks i43/dx44/dy45 follow actual record keys and the retained
+opcode30 transformation, not the bare symbol rank. The three dx/dy, i/dx and
+i/dy calls actually swap their children and remap opcodes; role-based comparison
+accounts for all nine residual bytes across all121 instructions. Both complete
+bodies stay byte-identical:line445/9 andfill85exact. No original intermediate
+keys or emitter-consumption identity is observed; do not infer original names
+or try guard/name/scope/type/header/order/flag variants from this result.
+`.analysis/line-backend-comparisons-20261018/` retains all primary/secondary
+identities, full trace, comparisons and independent reviews. Original/production
+source, objects, delivery and current counts remain unchanged. One CPU/35% and
+640–768MiB caps hold; peak210,264,064 bytes, zero high/max/OOM events. No new
+provider, native/MinGW game build, runtime case, relink, game or full replay.
+Archive/member-hash verification precedes removal of16 raw files:13 copied
+inputs, two objects and the observer executable, releasing208,896 allocated
+bytes net of archive/journal. Primary trace and proofs remain; current tested
+products and valid caches are preserved.
+
 The preceding [drawing-primitive owner](../research/exact/DRAWING_PRIMITIVES_OWNER.md)
 moves the adjacent line/fill pair to one C++ implementation with full unchanged
 public headers. Line445/9 and fill85exact retain their complete identities;
