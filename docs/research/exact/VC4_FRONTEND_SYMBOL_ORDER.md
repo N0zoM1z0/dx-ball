@@ -247,3 +247,102 @@ scope/declaration processing. It is not an invitation to vary names, scopes,
 flags or context without independent game evidence. Original IDs, names and
 settings remain unknown; exact coverage stays394 and the tested delivery is
 unchanged.
+
+## Low24 ID writers, October18
+
+The next REA import reuses the same explicit profile and closes normally with
+141 Evidence records: the prior74 plus67 new direct results. One indexed
+`procedure_info` miss at `40CC47` stays retained; no retry/import is used for it.
+Fifty-one complete byte carriers match the pinned C1XX PE. The counter's PE
+initial value is16; this does not establish its value at an arbitrary runtime
+point. Its121 reported direct references decode as40 comparisons,41 loads and
+40 increments. These reported references do not exclude alias writes.
+
+Exact dispatch bytes establish format directive`0x22` → table slot`402CE4` →
+`402AEB`. The block reads its object from`4B3868`, increments`4B0F90`, and writes
+`(old_word & ff000000) | (old_counter & ffffff)` to object`+18`. It preserves the
+high8 bits. That global object still has no established identity with the bank
+locals. The counter windows contain34 complete object`+18` stores across32
+carriers, including five stores through explicitly adjusted pointers. They are
+not34 local-symbol constructors. Other counter users return it, pass it to
+callees, write associated objects`+10`, or feed the separate`+14` cache path.
+
+Two tempting helper interpretations are also closed. `40CBFD` accepts an output
+DWORD and encoded value, compares the high byte against`4B14BC`, and can replace
+the low24 bits; it is not thereby an object`+18` constructor. `40CC70` reads a
+symbol's`+18`, checks that high byte and calls diagnostic`0x19` on mismatch;
+it does not lazily allocate an ID in that branch. `40E890` saves/restores
+`4B1978`, not the CASE22 global`4B3868`.
+
+The supported kind9 path in`40A84F` offers a more specific observation point.
+At`40AA0B` it tests source`+18` low24 for zero, then allocates from the counter;
+`40AA3F` is the complete three-byte `MOV [ESI+18],EDX`. ESI derives from the
+incoming EDX, ECX holds the old counter and EDX the composed word. A subsequent
+branch tests source kind9. The1377 bytes of declared Ghidra body ranges agree
+with assembly and raw bytes, but many actual shared-block targets lie outside
+those ranges: this is not complete execution-graph coverage or a recovered
+constructor ABI. Bank execution at the store was still unobserved in this static phase.
+
+Primary dispatch Evidence is
+`ev_21a678e29ebe2631645d6739af3882297c479eba66a7ec9c101c39694669582f`;
+writer-block Evidence is
+`ev_dd21b99aa6201f706e1be0bc002799fc10e5ac7052b06dccb1285cc2461bb61c`.
+The kind9-path assembly is
+`ev_508d038b7182abc504d93bfb56dc9a821c23fdae1bca9d1e8958d87c3ddf01dd`.
+Private `.analysis/frontend-local-id-producer-20261018/` retains all checks,
+independent review and sealed snapshots. The owned temporary database is removed.
+Sharing the closed byte-identical catalog and retaining a decompression-verified
+snapshot archive releases8,695,808 allocated bytes net. Resource samples retain
+one CPU/35%,640–768MiB limits and nonzero soft-high reclamation, with no hard-max
+or OOM events in those samples; final counters were unavailable after scope exit.
+No game compilation, source variant, replay or relink occurs in this static phase.
+
+The subsequent unchanged-resource observation confirms that specific writer in
+actual bank processing. It traps only C1's original `40AA3F` store and the
+`401BD5` CASE5 source-pointer MOV. All17,221 writer hits check the zero low24
+precondition, preserved high8, ECX counter, composed EDX and incremented global;
+the restored MOV's actual destination word is checked after every step. All241
+reader hits preserve the preceding CMP flags and load the actual source pointer.
+All17,462 hits pass their full MOV, register, ESP, EIP and non-debug-flag checks.
+Only28 selected writes and28 selected reads are printed, each with a paired
+step; the56 printed steps are not the total hit count.
+
+Each of the16 bank locals has exactly one earlier selected write matching its
+later read by PID, thread, symbol address, raw name, function name/pointer and
+complete word. All16 IDs agree independently with the previous sealed
+mode/wire/C2 observation. This capture does not repeat those wire/C2 traps, so
+it adds actual writer-to-source correspondence rather than another claim of
+same-run byte consumption. The selected write order for the first group is:
+
+```text
+saved_bank28266, sprite28267, count28268, row28269,
+column28270, cursor28271, pitch28272
+```
+
+The later observed emission order for that group is `count, cursor, pitch, row,
+sprite, saved_bank, column`. Numeric-ID assignment and scope-table traversal
+are therefore distinct actual stages here. This is current source evidence;
+it does not reveal original identifier spellings or license declaration/name
+permutations. Other counter writers, aliases/clones, intermediate field writes
+and complete object lifetimes are outside this two-site capture.
+
+CL/C1XX/C2 and the observer all exit0. Full18-function/262-binding/6-literal
+comparisons remain identical; no full replay, game run, relink or source variant
+is used. One CPU/35% and640–768MiB limits hold; capture peak215,941,120 bytes
+and zero memory-limit events. Private
+`.analysis/frontend-local-id-write-observation-20261018/` retains the trace,
+input identities, complete comparisons and independent reviews. The current-ID
+producer question is answered for these samples. Remaining original frame homes
+and expression order still require game/source evidence or the specific C2
+allocation/reset/reuse mechanism; further namespace surveying alone is not a
+source-reconstruction hypothesis.
+
+The observation's12 archive/member-hash-verified copied inputs and products are
+removed, releasing229,376 allocated bytes net. The current tested game products
+and useful caches remain. The next bounded mechanism question is C2 cursor
+`47EA40`: when does it save/restore/reset between named-record allocation and
+body temporaries, and do those temporaries call`40AED4`? The retained helper
+already proves decrement/alignment/negative-home arithmetic; incoming callers
+and other actual cursor writers are the missing evidence. Query those two
+reference sets before retrieving any additional helper or proposing a source
+lifetime model.

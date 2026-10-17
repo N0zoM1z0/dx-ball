@@ -166,6 +166,33 @@ unchanged, peak181,526,528 bytes and zero memory events. Private
 `.analysis/frontend-mode-wire-reader-20261018/` retains the evidence. Next find
 the actual source+18 numeric-ID writer in this mode; the static NameMap branch
 is a different path. No names/scopes/flags/context trials follow automatically.
+The [low24-writer investigation](../research/exact/VC4_FRONTEND_SYMBOL_ORDER.md#low24-id-writers-october18)
+then checks121 reported direct counter references/40 increments:34 complete
++18 stores across32 windows are distinct from output/tag helpers and+14 cache
+writes. Counter PE initial value16 is a static fact, not a sampled runtime reset.
+One reused-profile import closes with141 Evidence records/67 new direct results,
+one indexed invalid procedure lookup; the owned temporary database is removed.
+Private `.analysis/frontend-local-id-producer-20261018/` retains the proof and
+verified snapshot; closed-catalog sharing releases8,695,808 allocated bytes net.
+The actual40AA3F write observation subsequently links all16 bank locals to
+later CASE5 source reads by same PID/TID/address/raw name/function tag/fullword
+and order. All17,462 MOV hits are checked (17,221 writer/241 reader), while only
+28 selected pairs/56 step logs are printed. IDs agree with the earlier wire
+capture, without repeating C2/wire traps or excluding other writers/object reuse.
+Full18/262/6 comparisons stay unchanged; peak215,941,120 bytes/events0, one
+CPU35%. Private `.analysis/frontend-local-id-write-observation-20261018/` retains
+the capture. This current-ID producer question is answered for the selected
+samples. Return to the remaining game differences and concrete C2 scratch
+allocation/cursor-reset/reuse facts; no further name/order/context/namespace
+survey or source variant follows automatically.
+Twelve archive/member-hash-verified copied inputs/products are removed, releasing
+229,376 allocated bytes net. The exact next C2 gap is47EA40 cursor save/restore/
+reset across named-record and body-temporary stages. Existing backend run
+`2026-10-17T14-59-10.027Z-interactive-3840208` records05/13 already cover
+401551→40AED4, cursor subtraction/alignment and401556 record+4 write. Query
+`xrefs47EA40` and `40AED4` incoming references, then only uncovered actual cursor
+writes/non401551 callers. Do not re-query the complete helper or infer scratch
+allocation solely from renderer344+80/current360+64 or PCX312/308 frame sizes.
 
 The preceding [actual line comparison observation](../research/exact/LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 compiles the unchanged drawing-primitive owner once under an owned C2 observer.
