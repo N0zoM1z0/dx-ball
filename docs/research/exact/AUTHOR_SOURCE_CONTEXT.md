@@ -123,6 +123,39 @@ archival removes three obsolete working files, releasing a net53,248 allocated
 bytes after archive/receipt cost. This is a bounded negative source check, not
 source-absence proof or a new exact claim.
 
+## Earlier-release and Mac-carrier retrieval boundary, October18
+
+Selected indexed queries for Windows 1.00–1.06 identify no verifiable earlier
+carrier in their returned results. This is a search boundary, not evidence that
+those releases or their debug records never existed. The author's
+[development recollection](https://community.blitwise.com/post/dxball-game-coding-like-its-1996-10416372)
+supplies historical context, without a declaration used in this reconstruction.
+
+The author's [release history](https://classic.blitwise.com/history.html)
+identifies the official CTSP Mac conversion on September 5, 2002. A
+[distribution catalog](https://dx-ball.en.softonic.com/mac) lists `dxballmac.sit`, SHA-256
+`fd699cd9b36113d0d7ba06ed0ce761256b6065b2b7c87261798960bd3da129ca`;
+this is a catalog identity, **not a locally verified artifact**. The discovered
+mirror download returns 403; its advertised anonymous FTP host does not resolve.
+Macintosh Garden fails certificate-chain verification with both existing trust
+stores; verification is not disabled. A separate catalog TLS handshake times out.
+A filename-pattern Wayback query returns an empty list, while an explicit-domain query
+times out. No package is acquired, extracted or inspected. Its format, resource
+forks, symbols, debug records and relationship to individual Windows routines
+remain unknown. Do not describe these retrieval failures as absence of debug
+information, or repeat the same requests without a changed access condition or
+a new public carrier.
+
+Private `.analysis/mac-port-carrier-20261018/` retains the bounded responses and
+failure receipts. All 737 tracked baseline hashes and the current tested delivery
+hash verify unchanged before this note. There is no source model, compiler run,
+provider import, game execution or replay; 250 authored exact/20 candidates remain.
+Network helpers and verification use CPU 0/35%, 384/512 MiB limits. The guard process
+alone peaks at 43,425,792 bytes with no memory-limit events; this is not a peak
+measurement of the whole retrieval phase. A useful future Mac-carrier check
+starts with a fork-preserving inventory, then requires a real routine connection
+before applying a foreign declaration to the Windows source.
+
 ## Related timer source, October18
 
 Two previously unread files at the same pinned ParticleFire commit are checked:

@@ -60,6 +60,12 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [earlier-release/Mac-carrier retrieval boundary](../research/exact/AUTHOR_SOURCE_CONTEXT.md#earlier-release-and-mac-carrier-retrieval-boundary-october18)
+identifies the official 2002 port but acquires no artifact. Debug information and
+routine correspondence remain unknown; retain the failed-request boundary before
+retrying. No compiler/provider/runtime/replay or source model is introduced;
+all 737 tracked baseline hashes and the tested delivery verify before docs.
+
 The [fixed DisplayOps host-boundary control](../research/exact/PRESENTATION_MERGE_SCOPE.md#fixed-displayops-host-boundary-control-october18)
 compares20 units/421 bindings after moving only the fixture type/table. Private
 presenter984/6→984/2 restores three bounds but loses the previously matching top
