@@ -60,6 +60,28 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [paired raster colour control](../research/exact/EXACT_FIXED_POINT.md#paired-colour-declaration-control-october18)
+uses both connected SDK DWORD input declarations and the actual game caller/
+span byte-consumer flow. A narrower uncompiled proposal is archived before one
+fixed triangle+span model. One compile/all 12 functions/116 code+25 data bindings/
+296 EH bytes retains nine prior exacts/715 code+136 metadata bytes and all
+296 metadata bytes. Ten raw/resolved code identities stay unchanged, including
+triangle 1710/88 and span 144 exact. Polygon grows 1543/216 to 1545/423; clipped
+grows 1592/213 to 1594/450. Byte-to-DWORD zero-extension and further compare/add
+commutations explain the changes. Reject the whole model without variants.
+All 754 protected byte/mode/nsmtime identities restore; source, fixtures,
+delivery and 250 authored exact/20 candidates remain. CPU 0/35%, 384/512 MiB,
+peak 179,281,920 bytes, zero memory events; 5.682s is the entire pipeline.
+No provider, native build, runtime, relink, game or full replay. Twenty-five
+raw members are archived/member-verified before removal, releasing 917,504
+allocated file bytes net; current products/caches remain. One separate polygon
+source lookup corrects an established backslash ambiguity, returns HTTP 200/
+terminal done with zero matches and shard-match-limit, and supplies no source
+or declaration claim. Its six raw carriers are archived/member-verified before
+removal. A future search hit needs complete polygon/record correspondence
+before supporting an edge-field inference; other evidence-backed hypotheses
+remain eligible. No repeat index query or output-driven colour widening.
+
 The [complete reused score producers and parameter-kind control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-score-producers-and-parameter-kind-control)
 connects both existing Mac bodies: 1,600 bytes, 399 decoded instructions plus
 one explicitly unreachable word. Preserve the Mac grouped-list/framed-file

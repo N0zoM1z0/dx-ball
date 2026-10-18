@@ -361,3 +361,83 @@ actual member inventory, source difference and independent review. Eleven respon
 records verify; all746 canonical hashes remain unchanged before documentation.
 Three source members are retrieved, with only selected markers read in the larger
 `FLIPCUBE.CPP`. Neither the full archive nor every sample implementation is examined.
+
+## Paired colour declaration control, October18
+
+The complete connected SDK `Triangle8` and `FillScan8` source both declare a
+DWORD colour input. The span shares the game's length, alignment and leading/
+trailing byte-write algorithm; the game removes the donor's DWORD bulk loop.
+Original triangle has four DWORD stack-slot loads and the exact 144-byte span
+has two byte colour reads. These observations qualify a source-kind inference,
+without uniquely identifying either game formal. Preserve all game operations;
+do not import donor colour replication or bulk writes.
+
+The earlier SDK controller trial explicitly retained byte colour. A new
+triangle-only proposal is withdrawn before staging or compilation when the
+complete called-span declaration qualifies the coupled role. Its two members
+are archived and individually size/SHA verified before deletion. One definitive
+paired model changes only triangle/span definition and prototype input types,
+using a shared role alias: Win32 unsigned long, native fixed32 DxBallUInt.
+FixedPoint class, coordinates, locals, names, scopes, expressions, flags and
+polygon byte inputs stay unchanged. No unsupported polygon prototype is inferred.
+
+One serial VC4 compile covers all 12 raster functions, 116 code bindings,
+25 attached-data bindings and all 296 EH metadata bytes. Frozen physical
+whole-container anchors identify metadata base/interior symbols; numeric
+compiler names are not identities. All 25 references to owner code use their
+actual private definition offsets, including EH-table targets. The eight
+metadata references and 108 fixed references retain full multiplicities.
+Every code/data binding table freezes before strict private comparisons;
+full production metadata and local-target guards remain active.
+
+All nine prior exacts retain 715 code/136 metadata bytes. All 296 metadata
+bytes remain exact, and ten raw/resolved code identities stay unchanged,
+including triangle 1710/88 and span 144 exact. Ordinary polygon regresses
+1543/216 to 1545/423 and clipped 1592/213 to 1594/450. Complete three-epoch
+instruction review accounts for 458/459 and 468/469 baseline/private instructions.
+Both original-compatible DWORD argument loads become XOR EAX,EAX followed by
+MOV AL,[EBP+18h], adding one instruction/two bytes before PUSH EAX. Complete
+review also records four comparison and six add-operand commutations in ordinary
+polygon, plus two comparison commutations in clipped polygon. Reject the entire
+paired model without adoption, subsets or output-driven colour/type alternatives.
+All 754 protected byte/mode/nsmtime identities restore; toolchain verification
+passes before and after. Current source, fixtures, delivery and 250 authored
+exact/20 candidates remain unchanged. No native/Win32 consumer builds, runtime
+cases, provider, relink, game or full replay follow this rejected model.
+Only an adoption would require changing the two actual FFI inputs to uint32;
+no fixture or public contract change is made here.
+
+The 5.682s figure covers the full compile/restore/compare pipeline. CPU 0/35%,
+384/512 MiB and peak 179,281,920 B hold with zero memory-limit events.
+
+Frozen eligibility, paired-scope and result reviews remain under
+`.analysis/triangle-color-kind-20261018/`; result SHA-256 is
+`bd7c858fa0e5c2c6f134fe265a52c43a144cfd676dd74dc10fdda442164f07e0`.
+All 25 listed closed raw members, including both objects, definitive proposals,
+private bytecode and the earlier uncompiled-proposal archive, are member-size/
+SHA verified before exact-list deletion. The emptied private bytecode directory
+is removed. `closed-model.tar.gz` is 106,648 bytes, SHA-256
+`ede1fe5f3aee1d4bc0c52aa17a155118246cc222c8108f8f1219a19d95909069`.
+Cleanup releases 917,504 allocated file bytes net; current products and caches stay.
+
+A separate retained-source review identifies a bounded polygon-lineage gap.
+The old negative-carry/Shell-comment searches timed out; two other responses
+hit result limits, and actual requests preserve doubled backslashes. One new
+backslash-free query combines the original signed negative-carry relation with
+memmove removal, without a filename assumption. The exact URL-decoded query
+matches the retained request. HTTP 200/terminal done returns zero matches but
+also reports shard-match-limit, so coverage remains incomplete: this is no
+source-absence, prototype or edge-field claim. No source file is admitted,
+colour-model alternative inferred, or producer/engine/compile run repeated.
+The requested server 5s modifier is not a proven elapsed cap; the response reports
+15,771ms and the measured client request takes 15.211s within its 20s bound.
+Private `.analysis/polygon-lineage-query-20261018/` retains findings and a fully
+member-verified six-file source-evidence archive. All six raw carriers are removed
+after verification, releasing 45,056 allocated file bytes net. Admit a future
+search hit as edge-declaration evidence only after connecting its complete
+three-pool/two-Shell-sort/integer-edge routine and actual 28-byte record. The untouched
++12..+15 bytes have no known outside callee owner; a repeat callee query cannot
+identify their source field. Do not repeat this index request or blindly increase
+its count. Other bounded hypotheses from actual producers, consumers and
+independent layout observations remain eligible. The remaining original-source
+facts are reconstruction work, not an external blocker.
