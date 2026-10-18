@@ -138,3 +138,21 @@ is no provider query, native/MinGW build, game run, relink or full replay.
 Archive/member verification precedes deletion of 16 obsolete files: 13 copied
 inputs, two objects and the proposal. Net release after archive/journal is
 61,440 allocated bytes; tested delivery and useful caches remain unchanged.
+
+## Complete Mac line and fixed public-name control, October18
+
+The [reused Mac line body](MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-line-body-and-public-name-control)
+is already present in the corrected export:176B/44 instructions, with no new
+provider query. Its distinctive traversal, including y-major error>0, matches
+the Windows core. Raw pixels/pitch replace the surface boundary on Mac; they
+do not justify removing original COM operations or changing local declarations.
+The three known comparison groups still contain all nine Windows differences.
+
+One distinct inferred public name is tested by a single uniform UI-header macro,
+preserving all other tokens and the actual Windows signature. One compile
+compares the complete line/fill pair with zero bindings, literals or metadata.
+Both code identities stay unchanged:445/9 and85/0. Reject the whole model without
+name variants; other five header owners/65 functions remain uncompiled/unknown.
+No source, public-symbol, product or claim adoption follows. All751 protected
+hashes/modes/nsmtimes restore. All16 listed closed raw members are archived and
+member-hash verified before deletion, releasing143,360 allocated bytes net.

@@ -60,6 +60,24 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [complete reused Mac line and public-name control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-line-body-and-public-name-control)
+finds the176B/44-instruction body already in the corrected export, avoiding a
+new query. Its distinctive core, including y-major error>0, matches; preserve
+the separate raw-plane/COM boundaries. All nine Windows differences remain the
+three known comparison groups, with no new operation/type/lifetime model.
+One distinct fixed `line` identifier inference uses a single uniform UI-header
+macro. One compile/all2 drawing functions/zero bindings/literals/metadata leaves
+line445/9 and fill85exact unchanged. Reject the whole model without variants;
+other five owners/65 functions remain uncompiled/unknown. All751 protected
+hashes/modes/nsmtimes restore, including the current drawing object. CPU0/35%,
+384/512MiB, peak170,553,344B, zero memory-limit events;5.489s covers the full
+compile/restore/compare pipeline. No provider, native build, relink, game or
+full replay. Source, delivery and250 authored exact/20 candidates remain.
+All16 listed closed raw members, including both objects/proposal, are archived
+and member-hash verified before deletion, releasing143,360B net. Current
+products/caches/shared evidence stay. Reuse the remaining selected Mac score
+producer bodies before considering another engine query.
+
 The [reused paddle bodies and input-precision control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-paddle-bodies-and-input-precision-control)
 connect two complete Mac bodies/936B without another engine query. Preserve
 cursor-warp, clock, dirty-right and Image/COM port differences. Actual `Fsubs`
@@ -76,8 +94,7 @@ later passive review has its own light scope. No native build, game, relink or
 full replay;250 authored exact/20 candidates and delivery remain. All18 closed
 members, including both objects/proposal, are archived/member-hash verified
 before deletion, releasing323,584B net; current products/caches/shared evidence
-stay. Next inspect existing Windows line evidence and the positive Mac `line`
-metadata before deciding whether a missing full body query is justified.
+stay. The subsequent line review above reuses its existing complete body.
 
 The [reused bank/shape family and API-name control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control)
 checks five existing Mac bodies/1,996B without another engine query. Complete

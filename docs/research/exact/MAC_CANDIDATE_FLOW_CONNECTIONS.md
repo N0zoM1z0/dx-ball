@@ -263,3 +263,66 @@ All18 closed raw members, including both objects and the source proposal, are
 archived and member-size/SHA-256 verified before deletion. Listed net allocated
 release is323,584 bytes after archive/cleanup journals. Current products, caches,
 the corrected foreign export and static data remain available.
+
+## Reused line body and public-name control
+
+The corrected17-span export already contains the complete named Mac `line`:
+file90544..90720,176 bytes/44 instructions, SHA-256
+`ffb39e26b3b5db2137d0fbbe7f13c19226c08810a5af6c0136f06fa26e00e383`.
+The previous next-question note did not establish that this body was missing.
+Review locates it before any new query is prepared or run. All words decode,
+including the reachable NOP; nine local branches, two conditional returns and
+two plain returns are accounted for. There are no calls or r2/global references.
+
+The original Windows line dossier
+`ev_25f8571b40b1ee8c589f398fa1211552c03d241352d0737d904789e2664b8af2`
+is reread with the complete445B PE span and current object. Its121 instruction
+boundaries,140-byte frame,16 branches and three COM calls remain accounted for.
+The same distinctive traversal uses signed extent normalization, signed pitch,
+inclusive endpoints, byte color, and asymmetric error tests: error>dx in the
+x-major arm but error>0 in the y-major arm. The preliminary suggestion that the
+latter was a port difference is corrected before any source proposal.
+
+Mac takes pixels/pitch/four coordinates/color, seven explicit parameters.
+Windows takes a surface/four coordinates/color and retains GetSurfaceDesc,
+Lock retries and Unlock. The raw-plane signature and optimized CTR loops do not
+recover Windows local declarations or replace these operations. This is bounded
+ordinary-plane correspondence, not arbitrary-overflow or invalid-pointer
+equivalence. No new operation, type or lifetime correction follows.
+
+All nine Windows differences remain the three known commuted signed comparison
+groups: major-axis selection and two loop bounds. Every other byte and all frame
+homes match. The closed rank/declaration control cannot be reopened from PPC
+register choices. A bounded review of the selected prior controls finds no
+identical public `line` name control; that is not a global history absence proof.
+The actual name and complete distinctive core support one separate inferred
+identifier, without proving original Windows spelling.
+
+The fixed private proposal inserts only `#define dxball_draw_line line` in the
+existing full UI header. Windows signature, operations, locals, types, scopes
+and flags stay intact. Source spelling survives the macro; the old exported-name
+or dlsym ABI does not. No wrapper or consumer compatibility is claimed.
+The prospective closure is six owners/67 functions. One drawing-owner compile
+first compares both whole functions, with zero actual bindings, literals or
+attached metadata and applicable local-definition guards.
+
+Both code identities are unchanged: line445/9 and fill85 exact. Reject the whole
+name model without alternatives or adoption. The other five owners/65 functions
+remain uncompiled and unknown for this proposal. Full COFF review checks all
+three section headers/file-backed payloads and15 raw symbol records. The objects
+change1020→1002B: one defined function name becomes `_line`, its old18-byte
+string-table entry disappears, and timestamp bytes change. The `.file` path and
+auxiliary bytes are identical; no wrapper or other difference appears.
+
+All751 protected hashes/modes/nsmtimes restore before documentation edits,
+explicitly including the current drawing object. Serial compiler lock,
+before/after toolchain verification and owned-process cleanup remain enforced.
+The5.489s pilot includes compilation, restoration and comparison; it is not
+compiler-only timing. CPU0/35%,384/512MiB; peak170,553,344B and zero memory-limit
+events. No provider, native build, relink, game or full replay runs. Source,
+delivery and250 authored exacts/20 candidates remain. Private `mac-line-flow-20261018`
+and `mac-line-api-identifier-20261018` retain the complete reviews and result.
+All16 listed closed raw members, including both objects and the header proposal,
+are archived and member-size/SHA-256 verified before deletion, releasing143,360
+allocated bytes net of archive/cleanup journals. Current products, caches and
+the useful shared foreign export/data remain.
