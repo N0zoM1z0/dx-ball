@@ -78,3 +78,40 @@ variant is compiled. The six differences remain unmasked in the candidate.
 Private `.analysis/presentation-current-producers-20261017/` retains the current
 complete inspection, compiler-input hashes and SDK identities. There is no
 source change, provider query, native build, test, game or replay.
+
+## Current min/max rank observation, October18
+
+One unchanged display compilation reuses the sealed C2 observer without a
+new observer build. It records913 completed helper pairs, including155
+presenter pairs, before exiting18 during a later `wait-frames` entry. That
+entry records one mandatory-read failure and contains a kind24 record; the
+failing read address is not logged. The output object is empty. This is a
+failed capture with useful completed-prefix evidence, not a successful new
+compiler product or all-process-exit validation. No retry follows.
+
+Four field-identified presenter nodes give these actual child ranks and writes:
+
+| Bound | Node | Left/right ranks | Actual child exchange |
+| --- | --- | --- | --- |
+| left minimum | AF |174/185| yes |
+| top minimum | AF |198/187| no |
+| right maximum | AE |183/194| yes |
+| bottom maximum | AE |179/190| yes |
+
+The depth5 root snapshots retain the array record, stride16 and field offsets
+0/4/8/12. They omit each index load's child. Explicit earlier same-node snapshots
+supply the `i`/`current` record correspondence; they are not simultaneous complete
+tree reads or a proof against unobserved mutation/aliasing. The post-child order
+corresponds to incoming-index-first loads in the retained canonical body for
+all four bounds. The original uses that order only for top. No final-emitter
+node consumption, original keys, conditional spelling or source rewrite follows.
+
+All852 protected hashes and20 source modes/nanosecond mtimes verify before
+documentation. A separate comparison of the retained canonical object covers
+all20 functions/421 actual bindings, preserving16 exacts/4,628 bytes and all
+candidate identities. It does not compare the empty observed object. Presenter
+stays984/6 and authored coverage250 exact/20 candidates. The capture scope
+records CPU0/35%, memory high384 MiB/max512 MiB, peak214,421,504 bytes and no
+memory-limit events. Private `.analysis/presentation-backend-comparisons-20261018/`
+retains the raw failure boundary, completed pairs, explicit snapshot joins,
+canonical comparisons and independent review.

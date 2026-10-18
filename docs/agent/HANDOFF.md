@@ -60,6 +60,15 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [presenter min/max observation](../research/exact/PRESENTATION_MERGE_SCOPE.md#current-minmax-rank-observation-october18)
+records155 presenter helper pairs and four field-identified rank decisions.
+A later wait-frame record causes observer exit18; the new object is empty.
+Treat this as completed-prefix evidence, not a successful compile or observed-owner
+comparison. Depth5 index roles use explicit earlier same-node snapshots, with
+mutation/lifetime limits. All20 retained canonical functions/421 bindings and16
+exacts remain unchanged; no source rewrite or retry follows. The observer scope
+peaks at214,421,504 bytes under CPU0/35% and384/512 MiB with no memory-limit events.
+
 The [additional raster declaration-source check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#additional-raster-declaration-source-boundary-october18)
 reuses the complete145-module/691-global author-demo directory. Its five other
 demand-bearing modules identify Digipak audio source, and the selected graphics
