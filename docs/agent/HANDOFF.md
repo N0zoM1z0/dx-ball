@@ -60,11 +60,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [Mac candidate-flow connection](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md)
+now covers five additional complete PEF bodies/1,688B, with two explicit skipped
+words in `vwait` retained. Score rows correspond; waiting has a different15ms
+deadline/pump contract. `doLBricks` is a list dispatcher, while actual
+`doLightning`/`showLightning` connect the countdown/overlay family. Their reversed
+initial RNG/clock order, absent reduced-particle/pending-volume paths and different clipping
+ownership provide no new Windows source model. No compile/replay/game follows;
+250 authored exact/20 candidates and delivery remain. The static645,276B data
+image and3,134 relocation records are reusable observations, with no runtime r2
+model applied. All747 protected identities/modes/nsmtimes verify before docs.
+Serial CPU0/35%,384/512MiB captures peak403,161,088/403,128,320B, high788/629 and
+zero max/OOM. All26 closed raw members are archived/member-hash verified before
+deletion, releasing655,360B net. Keep the reviewed exports/data/current project
+and reuse them before new queries.
+
 The [Mac font-body connection and qualifier control](../research/exact/AUTHOR_SOURCE_CONTEXT.md#focused-pef-bodies-and-qualifier-control-october18)
 now use actual PEF code. REA6.5.0 process capture records pinned Ghidra headless
 with no global analysis: one import, then saved-project queries. Its native
 PEF admission remains rejected; process Evidence is not a native-provider
-snapshot. Use only the corrected32-bit17-span export, with r2 unset, and preserve
+snapshot. Use corrected32-bit exports with r2 unset, and preserve
 the wrong-width export/failed startup-main assertion as their actual outcomes.
 Full five-font-family control-flow review connects736B Mac/975B Windows bodies,
 with baseline offset38/40 and Image/COM differences retained. The Pc/PCc names

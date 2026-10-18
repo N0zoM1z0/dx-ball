@@ -391,6 +391,18 @@ proposals:1,245,184 allocated bytes released net, excluding loose journals.
 Full process Evidence remains archived under `.analysis/rea/mac-reference-20261018/`.
 Keep the useful foreign project/forks and reuse these records before new imports.
 
+### Additional PEF candidate flows, October18
+
+The [complete candidate-flow review](MAC_CANDIDATE_FLOW_CONNECTIONS.md) adds five
+actual saved-project spans/1,688B and reusable static data, without another import.
+It connects score rows and the actual lightning controller/overlay, distinguishes
+the `doLBricks` list dispatcher, and retains material timer, audio, particle and
+clipping differences. Independent full-byte/control reviews find no new Windows
+source model; no compiler, replay, relink or game follows. All747 protected
+identities verify before docs;250 authored exact/20 candidates remain. All26
+closed raw members are archived/member-hash verified before removal, releasing
+655,360 allocated bytes net. Reuse these exports/data and the saved project.
+
 ## Actual WinG1.0 source package, October18
 
 The [catalogued WinG package](https://ftp.zx.net.nz/pub/archive/ftp.microsoft.com/Softlib/MSLFILES/WING10.EXE)
