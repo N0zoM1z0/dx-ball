@@ -4,7 +4,7 @@ A bounded primary-source search checks whether publicly released author material
 can resolve the remaining game declarations or compiler context. The initial
 search below established no new target-function identity or exact acceptance;
 its34-candidate count is historical. The later DOS-demo investigation finds real
-debug records and connects two complete routine families. Related-source names
+debug records and connects complete routine families. Related-source names
 remain hypotheses about the pinned game, rather than recovered1.07 source text.
 
 Michael P. Welch's [archived development page](https://classic.blitwise.com/Scorched_Reality/index.html)
@@ -626,6 +626,53 @@ Current tested products and useful caches remain. Independent result SHA-256:
 `dbb41316dd2b25fd024797bb13147453ae9006e9d812c0c43d6483a54621f06d`.
 Archive SHA-256:
 `7f696c3ba245bc001ad51fc3aca24af06a69983e70ad2966f7a804084f55ba9b`.
+
+### Integer trigonometry and material scale difference
+
+Five previously unbound DOS math routines provide a further concrete family
+connection: `sincostablegen`, `ssin`, `ccos`, `circlepointx` and `circlepointy`.
+Their complete 524 bytes contain 192 instructions, eight branches and six
+calls. Actual raw debug records, source cues, all 104 fixups in the containing
+LE page and ten selected absolute operand fields bind the code, constants and
+tables. The signed `sin_look` and `cos_look` arrays are each `int[361]` in the
+real type records; their storage is in BSS, without fabricated file contents.
+
+The corresponding game functions are the initializer and the **integer**
+raw-sine/raw-cosine/wave-x/wave-y helpers. All five are already exact: 500 bytes,
+166 instructions, 24 actual code bindings and ten complete literal references.
+Current COFF bodies resolve completely to the pinned PE. Both families use
+the same signed negative-angle normalization, including endpoint 360, and
+write the selected table value back to the angle parameter. The coordinate
+helpers update and return their origin parameter. These concrete correspondences
+support related-family continuity, not unique original identifiers or source.
+
+There is a material scale change. The DOS initializer multiplies by the actual
+double **1000.0**, and both coordinate helpers use signed `IDIV 1000`. The game
+initializer uses **1024.0**, and its coordinate helpers divide by 1024 with the
+actual signed bias/shift sequence. Preserve that game behavior. Foreign Watcom
+CRT conversion/trigonometry internals and runtime numeric equivalence are not
+proved by this static relationship.
+
+The renderer calls the separate floating sine/cosine entries eight times and
+never calls the integer lookup entries. Both 130-byte floating wrappers are
+also exact. The renderer's original `2.0f` and double `2.046` payloads remain
+independently attested, including their real FDIV and compiler-workaround PUSH
+references. None of the selected DOS formulas supplies `2.046`, software pixel
+rotation, first-term storage or a renderer-specific declaration. No name, type,
+scope, ordering or flag trial follows from this bounded connection. Original
+renderer source and its temporary/scratch partition remain unresolved.
+
+Private `.analysis/author-plasma-trig-linkage-20261018/` retains the sealed full
+proofs, corrections and independent review. All 851 protected hashes and current
+products remain unchanged. No compiler, provider, download, member execution,
+game, relink or replay runs, and no executable or object is written to disk.
+Passive helpers use one CPU/35% with memory high 384 MiB / maximum 512 MiB.
+Earlier reader/binder peaks were not retained; only the final summary/hash-check
+scope records a 43,352,064-byte peak with zero memory-limit events. Independent
+verification separately peaks at 43,302,912 bytes with zero events. Archive
+member sizes and hashes verify before deleting twelve temporary carriers,
+releasing 217,088 allocated bytes net. Current tested products and useful caches
+remain; exact and candidate counts do not change.
 
 ## Pinned 1.07 distribution and installer boundary, October 18
 

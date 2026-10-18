@@ -60,6 +60,24 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [related integer trigonometry](../research/exact/AUTHOR_SOURCE_CONTEXT.md#integer-trigonometry-and-material-scale-difference)
+connects five complete DOS routines (524 bytes/192 instructions) to the game's
+already exact initializer/raw-lookups/coordinate helpers (500 bytes/166
+instructions/24 bindings/ten full literal references). Actual typed 361-entry
+tables, fixups, calls and angle/origin writes establish the relationship.
+Keep the material scale difference: DOS uses 1000, game uses 1024. The renderer
+instead calls the separate exact floating wrappers eight times, with no raw
+lookup call; no DOS formula explains its `2.046` or temporary partition. This
+supplies no renderer source model or new name/type/scope/order/flag trial.
+Independent review checks the raw artifacts, full current COFF-to-PE bodies and
+all 851 protected hashes. Source, delivery and 250 authored exact/20 candidates
+remain. No compile, provider, download, runtime, relink or replay runs, and no
+object/executable is written. Passive helpers retain one CPU/35%, 384/512 MiB;
+earlier helper peaks are unknown. The final summary/hash-check scope alone
+peaks at 43,352,064 bytes with zero events. Archive/member verification precedes
+removing twelve temporary carriers, releasing 217,088 allocated bytes net.
+Current tested products and useful caches remain.
+
 The [fixed paired palette iterator-scope model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-iterator-scope-model)
 uses the related author's actual emitted procedure ownership for both signed
 `i` locals. A complete raw 349-record walk and official Watcom scope consumer
