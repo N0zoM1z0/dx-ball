@@ -3466,7 +3466,7 @@ relocations = [
   { offset = 171, type = "REL32", symbol = "_dxball_set_palette_rgb", addend = 0, target = 0x0040AB20 },
 ]
 
-[candidates.rotate-palette-right]
+[units.rotate-palette-right]
 build = "ui"
 symbol = "_dxball_rotate_palette_right"
 target_address = 0x0040A880

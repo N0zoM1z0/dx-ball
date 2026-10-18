@@ -24,15 +24,15 @@ receipts remain in place; old checkpoint totals are not current totals.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 394 |
-| Exact code / attached metadata bytes | 84,872 / 244 |
-| Complete nonexact comparisons | 81: 21 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 395 |
+| Exact code / attached metadata bytes | 85,106 / 244 |
+| Complete nonexact comparisons | 80: 20 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-249 exact and 21 candidates across 30 compiler closures. The source-present
+250 exact and 20 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -43,10 +43,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 394 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 81 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 395 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 80 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/author-bank-debug-names-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/author-palette-debug-names-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -59,6 +59,42 @@ Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/` privat
 A source-only clone does not include the assets, tools, products or raw evidence.
 
 ## Current source and delivery
+
+The [fixed author palette declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-declaration-model)
+adopts one paired `r/g/b/mode` inference from actual debug-bound rotation roles.
+Right rotation becomes complete 234/0 exact; left rotation improves 234/9 to
+234/3. Only six original RGB frame-home bytes recover per function, with no lost
+matches. Two private compiles compare all 27 units and 459 bindings, retaining
+21 prior exacts/5,290 bytes and 25 other code identities. Independent result
+review verifies all 851 protected hashes and both source modes and nanosecond mtimes before
+adoption. Native compilation touches only the two changed sources; 146 unchanged
+existing checks pass. VC4 then reuses all 117 objects with zero game compiles.
+Full PE verification accounts for twelve palette bytes and twelve parsed
+timestamp bytes only; all 1,099 MAP records, 4,488 HIGHLOW sites, resources,
+imports and nineteen CRT dependencies remain. Current totals are 250 authored
+exact / 20 candidates and 395 total exacts / 85,106 code bytes / 244 metadata
+bytes. The private compiler peak is 188,338,176 bytes under one CPU/35% and
+384/512 MiB limits, with zero memory-limit events. No provider, game or full
+replay runs for this source adoption. Keep the whole paired model; do not try
+additional spellings or scopes from this result alone.
+Independent integration review passes. Archive/member checks precede removing
+55 obsolete raw carriers, including six objects and six production-history
+files, releasing 7,397,376 allocated bytes net. Current products, useful caches
+and the directly referenced `compiled.json` receipt remain. All 835 protected
+files outside sixteen intentional changes retain their hashes. A cleanup
+preflight corrects the history count before any archive/deletion; no completed
+producer is repeated.
+
+The [DX-Ball 2 installer check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#dx-ball-2-v12-installer-boundary-october-18)
+independently validates 77 CRC streams, 61 main file records and the real sequel
+PE, without execution or extraction of a game executable. It has no named main
+source/PDB/MAP attachment or PE debug directory. All 34 selected whole byte-clone
+checks miss; modified common source remains possible. This package supplies no
+new 1.07 declaration or compiler fact. Archive/member verification precedes
+removing sixteen raw carriers, including the download, releasing 319,488 allocated
+bytes net. The initial REA entry peaks at 671,473,664 bytes with 473 soft-high
+events and zero hard-max/OOM events; subsequent readers use 384/512 MiB limits
+and remain below 50 MB. Reuse the sealed evidence without another import.
 
 The [fixed author image-record declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-image-record-declaration-model)
 uses actual debug-bound `shp`/`SHAPE`, `letter` and `yoffset` roles as one inferred
@@ -234,7 +270,7 @@ unused four-byte tail does not establish a132-byte declaration. Close this
 related-version check without a source trial; reuse its archived proof.
 
 The current restored-CRT executable is
-`ed41c8fe134dea66ab0d5eb88779160b0b572ad7a72331b67e0b16ecb7a6c450`.
+`d5dca81954937a6f9f3212fb041a1aed02f455b037dea0d9b7997a19a98587f6`.
 Its recipe is `vc40-restored-crt`: 117 source objects from 114 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
@@ -970,16 +1006,19 @@ Other authored boundaries and retained controls:
   joint scope restored all original homes; independent ownership subsequently makes the complete hit exact. Do not
   repeat the standalone trial or treat its rejection as closing all combinations.
 - Line, ranking, presentation, palette, clock and text near-matches include known
-  compare/register commutations. Reversing guards, renaming identifiers, changing
-  equivalent types or sweeping `/G3`, `/G4`, `/G5` is not new evidence.
+  compare/register commutations. Blind guard/name/type/flag permutations add no
+  primary fact. Independently connected author declarations can support one
+  fixed inference, as in the bank and palette models; a missing executable
+  operation is not a prerequisite. Keep the closed model boundaries.
 - Keep time sampled before RNG. The reversed-addition proposal fails an existing
   ordered case. Clang reverses the four last-brick particle RNG arguments relative
   to original/current GCC; the recorded port gap is deferred, not repaired here.
 
-The [public author-context review](../research/exact/AUTHOR_SOURCE_CONTEXT.md)
-supplies no 1.07 declaration, capacity, flag or shared-routine identity. Do not
-repeat that search or import another project's settings. Do not replace source
-work with repeated coverage audits or unchanged runtime episodes.
+The initial [public author-context review](../research/exact/AUTHOR_SOURCE_CONTEXT.md)
+established no 1.07 declaration. Later connected debug roles support the adopted
+bank and palette inferences, without proving unique original spelling or another
+project's settings. Reuse those bounded results; do not replace source work with
+repeated coverage audits or unchanged runtime episodes.
 
 ## Inventory evidence and approved runtime dependencies
 

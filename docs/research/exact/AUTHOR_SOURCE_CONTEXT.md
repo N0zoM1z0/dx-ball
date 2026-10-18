@@ -302,12 +302,72 @@ starts at0; and the four-parameter DOS fade has unit steps and different mode
 handling from the game's five-parameter fade with step/clamp logic. Actual DAC
 callees do not hide an extra index adjustment.
 
-The current game palette residuals account for the complete original operations;
-these foreign declarations supply no missing producer or justified new naming
-trial. Preserve the game endpoints, entry flags, step and mode semantics.
+The current game palette residuals account for the complete original operations.
+The initial review treated the absence of another executable producer as a reason
+to decline a declaration trial. That condition is too restrictive: the complete
+paired rotations independently connect the actual channel-local and mode roles,
+supporting the single fixed inference below. Preserve the game endpoints, entry
+flags, step and mode semantics.
 Private`.analysis/author-plasma-palette-linkage-20261018/` retains complete
 byte/CFG/fixup evidence, compressed with a decompression-hash check, and the
 bounded review. No raw executable, compile or runtime product is created.
+
+### Fixed author palette declaration model
+
+Both complete DOS rotations have debug-bound `r`, `g`, `b` byte locals and a
+signed `mode` parameter. Their actual stores, zero paths, shifts and final
+channel reads establish the roles; both test `mode == 1`. One fixed model names
+the corresponding game locals and parameter accordingly in both rotation
+definitions. Twenty-eight bound identifier substitutions preserve all member
+selectors, game types, declaration order, scopes, loop conditions, inclusive
+endpoints, four-byte entry/flag moves, headers and COM operations. The DOS
+three-byte buffer formulas and extra `total` local are not imported. Continuity
+of these names into 1.07 is inferred, rather than uniquely recovered spelling.
+
+Two canonical-path compilations compare all 27 complete UI/display functions
+and 459 actual bindings, with no literal or metadata references. Right rotation
+becomes **234/0**, improving from six differing bytes. Left rotation improves
+**234/9 to 234/3**. Each body changes exactly six EBP displacement bytes:
+red/green regain the original −8/−12 homes; blue −4 and the loop counter −16
+remain. No previously matching byte is lost. All 25 other code identities and
+21 prior exacts covering 5,290 bytes survive. The left body's remaining three
+bytes select the existing equivalent signed comparison operands and branch;
+its control target remains `0x40AA00`. No further spelling or scope variant is
+justified by this fixed model's result.
+
+Independent review recomputes every binding and complete comparison and checks
+the restoration of all 851 protected hashes, including both source modes and
+nanosecond mtimes, before adopting the whole paired model. Native verification
+compiles only the two changed files. The unchanged existing case loops pass
+64 right rotations, 81 left rotations and one display-reset setup, checking
+full palette flags and ordered COM effects. Historical semantic case counts
+and scopes are unchanged; only 235 current input inventories and 22 source
+hashes are refreshed.
+
+The VC4 delivery reuses all 117 objects with zero further game compilations.
+The complete 166,400-byte PE changes only twelve palette displacement bytes and
+twelve bytes in parsed timestamp fields. All 1,099 MAP records, 4,488 HIGHLOW
+sites, resources, imports, nineteen original CRT members and six OS DLLs remain.
+New executable SHA256 is
+`d5dca81954937a6f9f3212fb041a1aed02f455b037dea0d9b7997a19a98587f6`.
+Current totals are **250 authored exact / 20 candidates** and **395 total
+exacts / 85,106 code bytes / 244 metadata bytes**. Tracking and current receipt
+coverage pass without full replay, provider or game execution. The two private
+compiles take 6.473 seconds including comparison and restoration, peaking at
+188,338,176 bytes under one CPU/35%, memory high 384 MiB / maximum 512 MiB,
+with zero memory-limit events. Private
+`.analysis/author-palette-debug-names-20261018/` retains the complete evidence.
+Independent integration review verifies all current ledgers and products, the
+unchanged 249 semantic rows' cases/scopes, selected existing case loops and the
+whole PE boundary. All archive members' sizes and hashes verify before removing
+55 obsolete raw carriers, including six objects and six production-history
+files. Cleanup releases 7,397,376 allocated bytes net. Current tested products,
+incremental caches and the directly referenced matching-producer receipt remain;
+835 protected files outside the sixteen intentional source/ledger/product/doc
+changes retain their hashes. The cleanup preflight corrects its expected
+history count from four to six before creating an archive or deleting anything:
+the builder also retains the two overwritten objects while reusing their new
+accepted products. No compiler or game run is repeated for that correction.
 
 ### Bank-loader core and ownership boundary
 
@@ -470,6 +530,49 @@ the 65-stream CRC and 51-record path bindings remain valid. Current source,
 toolchain, products and exact authorities stay unchanged; no compile, game,
 relink or replay runs. Four exact-name searches from the recovered DOS debug
 names also return no results, within that four-query boundary only.
+
+## DX-Ball 2 v1.2 installer boundary, October 18
+
+The saved author page's explicit
+[DX-Ball 2 download](https://classic.blitwise.com/Scorched_Reality/dxb2game12.exe)
+supplies a 2,166,291-byte installer, SHA256
+`3780753a6d4c830a58e767f882ad912c8dd84c0a9af4564af8e55bd003cd04a2`.
+REA 6.5.0 records root-only PE inventory as
+`ev_cf9b1fc38f04e1cacfd1d39aaa1efa5f4bb31f21cfc3da05afe0a8db581ccf6a`;
+this is not an inventory of the Wise payload. A separate bounded reader follows
+the actual PE overlay and 170-byte newer Wise header, validating all 77
+consecutive DEFLATE streams and their CRC trailers through exact file EOF.
+
+All 61 consecutive main InstallFile records bind their actual names, compressed
+ranges, sizes and CRCs to streams 14–74. Their developer-source fields are empty;
+none names a source, PDB or MAP attachment. The first binding draft incorrectly
+included the final two installer UI streams in its expected count and stopped
+before writing a result; the corrected consecutive block ends at opcode `0x11`.
+Auxiliary streams retain complete byte identities but not complete name/role
+assignments. These bounds do not establish source absence in all versions.
+
+The real `DXBall2.exe` is stream 26: 277,504 bytes, SHA256
+`1551eb5a828e80f113d67f1a0161571650084957e1cdbf1fd876785d5ceabc9e`.
+It reports linker 4.20, zero COFF symbols and no PE debug directory. Its readme
+credits Seumas McNally's programming and Michael P. Welch's original game. A
+complete byte-clone check covers all 21 then-current authored candidates plus
+the other thirteen resource functions. Only actual original HIGHLOW fields and
+external direct relative-control immediates are normalized; every other byte,
+including internal branch positions and stack homes, must match. None of these
+34 whole bodies occurs in the sequel's executable sections. This excludes
+unchanged reuse within that selection, not modified common source. No 1.07
+declaration, compiler setting or new source trial follows from this package.
+
+No installer or member executes, and no native provider database or extracted
+game executable is created. The REA entry scope takes 21.043 seconds and peaks
+at 671,473,664 bytes, with 473 soft-high reclamation events and no hard-max/OOM
+events under the original 640/768 MiB limits. Subsequent serial readers use
+stricter 384/512 MiB limits and stay below 50 MB with zero memory-limit events.
+Independent review recomputes the full inventory, bindings and clone checks.
+Private `.analysis/author-dxball2-inventory-20261018/` retains the sealed evidence;
+all archive member sizes and hashes verify before deleting sixteen raw carriers,
+including the downloaded executable. Cleanup releases 319,488 allocated bytes
+net while preserving current tested products and useful caches.
 
 ## Contemporary DirectDraw wrapper check, October 18
 

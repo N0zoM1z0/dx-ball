@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October 18, 2026, after the bank declaration inference.
-Accepted totals are **394 functions / 84,872 code bytes / 244 metadata bytes**.
-There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.
+Updated October 18, 2026, after the paired palette declaration inference.
+Accepted totals are **395 functions / 85,106 code bytes / 244 metadata bytes**.
+There are **80 complete nonexact comparisons: 20 authored and 60 runtime**. None is an accepted exact.
 
-These 81 are all currently source-present nonexact entries. The eight allocator
+These 80 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -123,10 +123,15 @@ directory. These are bounded findings, not proof of source absence or optimality
 no further declaration or compiler-setting trial follows from them.
 
 The current receipt audit verifies source/object/flag identities for all270
-classified authored entries across30 matching recipes:249 exact and21 complete
+classified authored entries across30 matching recipes:250 exact and20 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/author-bank-debug-names-20261018/authored-coverage.json`.
+Authority: `.analysis/author-palette-debug-names-20261018/authored-coverage.json`.
+The [fixed palette declaration inference](AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-declaration-model)
+uses actual connected `r/g/b/mode` roles in both rotations. Right rotation is
+now complete 234/0 exact, while animate-palette improves from nine differences
+to three. All 27 affected units/459 bindings compare, preserving 21 prior exacts
+and 25 other identities. The paired model is adopted without spelling variants.
 The later [actual line comparison observation](LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 captures the three current symbol-role swaps and checks their correspondence to
 all nine residual bytes. It changes no source, product or acceptance claim.
@@ -193,11 +198,10 @@ One owner compile preserves five exact companions and six other body identities;
 | --- | ---: | ---: | ---: |
 | `elapsed` | 81 | 81 | 3 |
 | `measure-text` | 279 | 279 | 3 |
+| `animate-palette` | 234 | 234 | 3 |
 | `present-regions-now` | 984 | 984 | 6 |
 | `wait-frames` | 170 | 170 | 8 |
-| `animate-palette` | 234 | 234 | 9 |
 | `draw-line` | 445 | 445 | 9 |
-| `rotate-palette-right` | 234 | 234 | 6 |
 | `reset-round` | 426 | 426 | 20 |
 | `load-sprite-bank` | 1475 | 1475 | 64 |
 | `draw-paddle` | 677 | 677 | 68 |

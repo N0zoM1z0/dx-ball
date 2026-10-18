@@ -59,24 +59,24 @@ void dxball_set_palette_rgb(DxBallInt entry, DxBallByte red, DxBallByte green, D
     return;
 }
 
-void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt wrap)
+void dxball_rotate_palette_right(DxBallInt first, DxBallInt last, DxBallInt mode)
 {
-    DxBallByte red, green, blue;
+    DxBallByte r, g, b;
     if (dxball_cursor_warp_disabled == 1) return;
-    if (wrap == 1) {
-        red = dxball_live_palette[last].red;
-        green = dxball_live_palette[last].green;
-        blue = dxball_live_palette[last].blue;
+    if (mode == 1) {
+        r = dxball_live_palette[last].red;
+        g = dxball_live_palette[last].green;
+        b = dxball_live_palette[last].blue;
     } else {
-        red = 0; green = 0; blue = 0;
+        r = 0; g = 0; b = 0;
     }
     {
         DxBallInt i;
         for (i = last; i > first; --i) dxball_live_palette[i] = dxball_live_palette[i - 1];
     }
-    dxball_live_palette[first].red = red;
-    dxball_live_palette[first].green = green;
-    dxball_live_palette[first].blue = blue;
+    dxball_live_palette[first].red = r;
+    dxball_live_palette[first].green = g;
+    dxball_live_palette[first].blue = b;
     dxball_direct_palette->vtable->set_entries(dxball_direct_palette, 0, first,
         last - first + 1, dxball_live_palette + first);
     return;
