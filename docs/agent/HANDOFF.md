@@ -60,6 +60,12 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [additional related source check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#three-related-raster-implementations-october18)
+verifies four new pinned Render/CDib files: voxel-terrain state and GDI wrappers,
+with no established game-routine connection or declaration model. All 851
+baseline hashes verify before docs; no compiler/provider/runtime/replay runs.
+Raw downloads are archived and member-hash verified before removal.
+
 The [genuine MulDiv boundary control](../research/exact/EXACT_FIXED_POINT.md#direct-muldiv-boundary-control-october18)
 preserves all nine raster exacts across 12 complete functions/141 bindings.
 Ratio remains exact through the real IAT; triangle is unchanged, ordinary polygon

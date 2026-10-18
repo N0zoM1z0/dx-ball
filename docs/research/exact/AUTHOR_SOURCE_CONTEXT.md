@@ -83,6 +83,22 @@ not a repository/history search or proof of no predecessor. Private
 archive; removing the raw download releases20,480 allocated bytes after archive/
 journal costs. No compiler, provider or runtime executes for this check.
 
+Four additional pinned Tread Marks files are checked:
+[Render.cpp/Render.h](https://github.com/LongbowGames/TreadMarks/tree/6af9528c67d867f7903eb2ea4834db0750629034/src/game)
+and the distinct `cdib.cpp/cdib.h` versions in that directory. All 55,517 bytes
+match the retained Git blob identities. Selected implementation windows, complete
+headers and full-file fingerprint checks identify voxel-terrain state and GDI
+`BitBlt`/`StretchBlt` wrappers, without establishing a complete connection to the
+game's FixedPoint, PCX or DirectDraw sprite routines. Render.cpp also contains
+an integer-vector rotation helper and mentions rendering to a locked DirectDraw
+surface; these do not establish whole game-routine or bank/record lineage.
+No declaration model or compile follows. This is a four-file boundary,
+not a repository/history absence claim. Private
+`.analysis/related-tread-render-20261018/` retains exact read ranges, checks and
+verified archived bytes; raw downloads are removed after verification. All 851
+current canonical baseline hashes and the tested delivery verify before docs.
+CPU 0/35% and 384/512 MiB limits remain; no provider, runtime or replay runs.
+
 Four further queries use the original triangle's unused`F0000/(y3-y1)` producer,
 XOR vertex sorting, fixed-point roots and the author's name. No qualifying
 independent routine appears in the returned excerpts; no source page is opened
@@ -155,6 +171,12 @@ alone peaks at 43,425,792 bytes with no memory-limit events; this is not a peak
 measurement of the whole retrieval phase. A useful future Mac-carrier check
 starts with a fork-preserving inventory, then requires a real routine connection
 before applying a foreign declaration to the Windows source.
+
+A later hypothesized exact-filename route on the distinct download host also
+fails TLS verification; an alternative public catalog download page returns 412.
+No artifact is acquired or analyzed. The separate
+`.analysis/mac-port-download-host-20261018/` receipts retain these outcomes without
+changing the earlier search boundary or implying absent debug information.
 
 ## Related timer source, October18
 
