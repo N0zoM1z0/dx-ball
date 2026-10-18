@@ -60,6 +60,25 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [reused paddle bodies and input-precision control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-paddle-bodies-and-input-precision-control)
+connect two complete Mac bodies/936B without another engine query. Preserve
+cursor-warp, clock, dirty-right and Image/COM port differences. Actual `Fsubs`
+supports one inferred two-site nested float-input cast, retaining the existing
+extended product; direct float-only replacement was withdrawn before proposal.
+One compile's fixed literal-ID guard stops on generated-name collision. Separate
+passive whole-object binding review then compares all16 functions/352 bindings/
+33 full literals: every raw/resolved code identity is unchanged,13 exacts/2,895B
+and paddle677/68 remain. Reject the entire model without variants; the original
+failed comparator remains recorded as failed. All750 protected identities,
+modes and nsmtimes restore, including the canonical runtime object. CPU0/35%,
+384/512MiB, compile/restoration peak171,892,736B, zero memory-limit events;
+later passive review has its own light scope. No native build, game, relink or
+full replay;250 authored exact/20 candidates and delivery remain. All18 closed
+members, including both objects/proposal, are archived/member-hash verified
+before deletion, releasing323,584B net; current products/caches/shared evidence
+stay. Next inspect existing Windows line evidence and the positive Mac `line`
+metadata before deciding whether a missing full body query is justified.
+
 The [reused bank/shape family and API-name control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control)
 checks five existing Mac bodies/1,996B without another engine query. Complete
 producer/consumer linkage supports one fixed five-function name inference,

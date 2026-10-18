@@ -113,3 +113,21 @@ Private `.analysis/paddle-joint-lifetimes-20261017/` retains the complete
 comparisons and rejection receipt. All 28 raw proposal/input/object files are
 archived and individually hash-verified before deletion, releasing 151,552
 allocated bytes net of the archive, excluding small receipt costs.
+
+## Foreign input precision control, October18
+
+The [complete Mac paddle connection](MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-paddle-bodies-and-input-precision-control)
+adds an independently observed single-precision input conversion, distinct from
+the closed scope/record models. Exactly two nested `(long double)(float)` input
+casts retain the existing product precision; direct float-only replacement was
+withdrawn before proposal or compilation. Original Windows cast spelling remains
+inferred, with no arbitrary-width equivalence claim.
+
+One compile is retained even though its initial fixed literal-ID guard stops.
+A separate full-object symbol/container review binds actual generated names
+before comparing all16 functions/352 bindings/33 full literals. Every raw and
+resolved function identity is unchanged;13 exacts/2,895B and paddle677/68 remain.
+Reject the whole model without further cast variants. All750 protected
+hashes/modes/nsmtimes restore, with no source/product/ledger/delivery adoption,
+native build, game or full replay. All18 closed raw members are archived and
+member-hash verified before deletion; listed net allocated release323,584B.

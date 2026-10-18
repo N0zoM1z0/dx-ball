@@ -190,3 +190,76 @@ All25 closed raw members, including both temporary objects and the header
 proposal, are archived and member-size/SHA-256 verified before deletion.
 Listed net allocated release is520,192 bytes after archive/cleanup journals;
 current products, caches and the useful shared foreign export/data remain.
+
+## Reused paddle bodies and input precision control
+
+The corrected export also supplies complete `doPaddle` and `drawPaddle` bodies:
+936 bytes, 234 instructions, nine calls and13 branches, with every word decoded.
+Independent review connects these to the Windows position update203B/20 bindings
+(already whole exact) and the original draw677B/185 instructions/10 calls/12
+branches. Retained raw instruction records reconstruct the complete pinned PE
+span; no separately located original REA response or new decoder is claimed.
+Current Windows draw remains677 bytes/68 differences with52 actual bindings.
+No new provider query, import or runtime context assignment is needed.
+
+| Flow | Shared operation | Material port difference |
+| --- | --- | --- |
+| Position | Mouse-x, y450, signed half-width clamps at21/618, sprite68 | Windows additionally conditionally warps the cursor and updates mouse-x |
+| Animation | Select the old frame before advancing/wrapping0..3 | Mac stores an absolute clock+64 deadline; Windows uses `elapsed` and an unadjusted last sample |
+| Attached overlay | Raw deadline/width refresh, random4, second clock+33, remembered width | Mac dirty-right subtracts twice the margin; original Windows explicitly uses width+x |
+| Drawing | Selected sprite, margin and rectangle producers | Mac uses Image/raw buffer/pitch; Windows uses COM `BltFast`, source RECT and queued dirty RECT |
+
+The actual `BlitTransClipped` call has six register arguments including `this`:
+Image, pixels, pitch, rectangle reference, x-margin and y/source-top. Its mangled
+name encodes five explicit parameters, while the printed pseudocode omits the
+last register argument. The final named boundary is `fastdrwBlit`. These caller
+facts do not establish unread Image behavior or after-call pixel equivalence.
+Windows `DxBallRect` already aliases SDK `RECT`; this is no new type-name model.
+
+Both Mac width conversions execute actual `Fsubs` words at10008564/100085A0,
+before double multiplication and integer conversion. The pinned PowerPC Sleigh
+rule explicitly rounds the subtraction to four-byte precision and extends it.
+Conditional evaluation with descriptor TOC10064D70 finds double0.075/0.03 and
+the integer-conversion bias; selected r2 contexts stay unset. This supports one
+foreign input-precision hypothesis, without proving an explicit cast or original
+Windows source spelling. Original Windows uses `FILD`/`FMUL`/`_ftol` without an
+explicit single-precision store at these sites.
+
+The fixed private proposal inserts `(float)` inside the existing `(long double)`
+cast at exactly two margin expressions. It preserves the outer product, double
+literals, integer result and every other token. Direct float-only replacement
+was withdrawn before proposal/compile: it changes product precision, including
+the existing width240 case. Input conversion is exact for integer widths with
+absolute value at most2^24; no arbitrary-int or floating-environment equivalence
+is claimed. Foreign compiler lowering remains an alternative explanation.
+
+One runtime compile uses all26 project inputs. The initial comparator correctly
+stops at a generated literal-ID collision: its sixth unit, `initialize-game`,
+finds `$SG29805` referring to different data from the fixed baseline ID. Keep
+that failure; the frozen runner never passed. A separate passive review of the
+retained object fixes an unambiguous symbol bijection from actual section,
+value, type, storage and complete container before comparing all16 functions,
+352 actual bindings,33 complete COFF/original-PE literals and applicable local
+targets. There is no second compilation or weakened original guard.
+
+Every raw and resolved function identity is unchanged. All13 prior exacts retain
+2,895 bytes; elapsed81/3, reset426/20 and paddle677/68 remain. Whole-object review
+checks23 identical section headers/payloads and389 logical relocation targets.
+The objects are not byte-identical:57 generated names change, `.file` auxiliary
+records shrink8→5, raw symbol records261→258 and relocation indices shift by
+three; debug path, timestamp and string-table differences are retained.
+Reject the whole precision model without cast, scope, name or flag variants.
+
+All750 protected hashes/modes/nsmtimes verify before documentation edits,
+including the current runtime object. The compiler lock, before/after toolchain
+verification and `finally` restoration include the failed comparison outcome.
+CPU0/35%, memory high384MiB/max512MiB constrain the compile/restoration scope;
+its peak is171,892,736 bytes, with zero memory-limit events. Later passive review
+uses a separate CPU0/10%,128/256MiB scope, without a measured peak claim.
+No native build, game, relink or full replay runs; source, delivery and250 authored
+exacts/20 candidates remain. Private `mac-paddle-flow-20261018` and
+`mac-paddle-input-precision-20261018` retain the bound reviews and result.
+All18 closed raw members, including both objects and the source proposal, are
+archived and member-size/SHA-256 verified before deletion. Listed net allocated
+release is323,584 bytes after archive/cleanup journals. Current products, caches,
+the corrected foreign export and static data remain available.
