@@ -60,6 +60,14 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [additional Game SDK check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#additional-game-sdk-source-boundary-october18)
+reads two complete timer/dirty-region samples and selected memory-benchmark
+ranges, without a new game source model. Reuse the reviewed22-member archive
+and explicit polygon query/28-byte correction boundaries. No compile/provider/
+runtime/replay runs;250 authored exact/20 candidates and delivery remain.
+All744 protected hashes verify before docs; acquisition peaks at43,458,560B
+under CPU0/35%,384/512MiB. Listed verified carrier cleanup releases61,440B net.
+
 The [earlier Game SDK source](../research/exact/EXACT_FIXED_POINT.md#earlier-game-sdk-source)
 now confirms an active XOR macro in a catalogued1995 source copy. Its full
 controller body/header otherwise equal the tested donor; do not recompile that

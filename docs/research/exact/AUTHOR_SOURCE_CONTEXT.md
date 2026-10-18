@@ -238,6 +238,32 @@ TLS handshakes with verification enabled; neither yields an artifact. Private
 `.analysis/mac-port-indexed-endpoints-20261018/` retains the page, actual links
 and bounded request outcomes. No new port or debug-information claim follows.
 
+## Additional Game SDK source boundary, October18
+
+Four further source members are acquired from the retained1995 Game SDK index.
+Complete reads of [CGTIMER.CPP](https://archive.org/download/gamesdk/GAMESDK.rar/GAMESDK%2FSDK%2FSAMPLES%2FIKLOWNS%2FCGTIMER.CPP)
+and [CGUPDATE.CPP](https://archive.org/download/gamesdk/GAMESDK.rar/GAMESDK%2FSDK%2FSAMPLES%2FIKLOWNS%2FCGUPDATE.CPP)
+find a WinMM/event timer and a single dirty-rectangle union. Neither establishes
+the game's cached low-word counter/divisor or sorted sequential rectangle merge.
+[MEMTIME.CPP](https://archive.org/download/gamesdk/GAMESDK.rar/GAMESDK%2FSDK%2FSAMPLES%2FMEMTIME%2FMEMTIME.CPP)
+is read semantically only at34..113 and540..685: its real low-word QPC subtraction
+benchmarks memory, while QPF converts throughput using double. ROIDS.C receives
+only a preview and whole-file marker/outline inspection, without a qualifying
+raster routine observed or an absence claim about unread bodies.
+
+Private`.analysis/sdk-source-followup-20261018/` retains the read boundaries,
+independent reviews and a22-member hash-verified archive of eight responses and
+their producers/receipts. Four polygon index requests establish no source model;
+two time out partially, and effective parsing of their retained doubled-backslash
+regex spelling is unproved. The reviewer task's24-byte edge premise is corrected
+separately to the already established28 bytes, with+12..15 still unclassified;
+no request is rerun or field invented. All744 protected hashes verify before
+these notes. No compile/provider/runtime/replay runs;250 authored exact/20
+candidates remain. Acquisition peaks at43,458,560B under CPU0/35%,384/512MiB,
+with zero memory events. Removing22 verified redundant carriers releases61,440
+net allocated bytes for those listed files, excluding new journals. Reuse the
+archive rather than repeating these acquisitions or searches.
+
 ## Related timer source, October18
 
 Two previously unread files at the same pinned ParticleFire commit are checked:
