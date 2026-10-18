@@ -207,6 +207,22 @@ mapping belongs to the retained packet-loop epoch, not a new current-object
 attestation. No new compile, provider, runtime check or raw temporary product
 follows.
 
+## Bounded decoder-flow source search, October 18
+
+An independent coverage review finds that prior queries mainly addressed header
+layout; one only combined `getc`, maxima and 128. Three distinct new queries
+combine the raw-maxima product, `getc`, 192 and DirectDraw `GetSurfaceDesc` in
+different subsets. The actual signed-maxima inclusive decoding bound is the
+source fingerprint; an unproved 132-byte header is not a search prerequisite.
+
+Returned excerpts establish no connected primary-source routine. Generic PCX
+references, later codecs, Pascal and unrelated maxima matches supply no new
+declaration; the reconstruction's own mirror is excluded. No source page is
+opened or downloaded and no source trial follows. This is a bounded negative,
+not global source absence. Private `.analysis/pcx-flow-fingerprint-search-20261018/`
+retains the complete response as a roundtrip/SHA-verified gzip and independent
+review; the redundant raw response is removed.
+
 ## Closed RLE run-index lifetime, October18
 
 Original run-index at EBP−48 has only three access sites:409DAF zeroes it,

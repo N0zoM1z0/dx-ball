@@ -220,6 +220,36 @@ All protected inputs and delivery hashes reverify after cleanup. Current tested
 products and useful incremental caches remain; the regular cleanup preview
 finds zero additional known disposable items.
 
+### Fixed author global declaration model
+
+A distinct actual declaration connects the DOS `fontspacing` global to the
+game's standalone text-spacing value. Typed record 115096 names signed `int`
+at data-object offset 708. The raw global record and `fontwidth` LE fixup bind
+that same object; file bytes at 101572 initialize it to 1. The complete linked
+metric algorithm reads it as hit-width plus spacing, matching the game role
+and initializer. This is stronger than mapping the DOS single-bank arrays onto
+the game's multiple banks. It supports one inferred spelling, without proving
+the original 1.07 identifier.
+
+One fixed private model changes only `dxball_text_spacing` to `fontspacing` in
+the definition, two reads and shared extern. Six canonical-path compilations
+compare all 67 affected functions, 1,276 actual bindings and 95 full literal
+references. Both renamed incoming bindings retain target `0x421084` and addend
+zero. All 67 resolved code identities remain unchanged; 59 accepted companions
+retain 17,310 bytes. Measure-text stays 279/3. Reject this model as an exactness
+improvement and do not try further spellings or context variants.
+
+Both source files are restored, with all 49 protected input/object/authority/
+delivery hashes unchanged. The six serial compiles take 16.678 seconds on one
+CPU/35%, peak at 292,687,872 bytes and record zero memory-limit events. There
+is no native build, relink, runtime, provider or full replay. Private
+`.analysis/author-fontspacing-global-20261018/` retains the declaration proof,
+complete comparisons and independent reviews. Current totals remain 249 authored
+exact and 21 candidates. Nineteen copied inputs/products/proofs, including all
+12 before/proposal objects, are archived and every member hash verified before
+raw removal. Cleanup releases 1,163,264 allocated bytes net of archive, cleanup
+script, receipt and seal; current tested products and useful caches remain.
+
 ### Palette family and material version differences
 
 Four complete debug-bound DOS palette bodies cover288 instructions. Their

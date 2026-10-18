@@ -60,6 +60,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed author global declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-global-declaration-model)
+tests actual DOS `fontspacing`: signed int, fixup-bound metric read and initial
+value 1 support one same-role inference. Only that identifier changes in two
+canonical files. Six serial compiles compare all 67 affected functions/1,276
+bindings/95 complete literals; every code identity stays unchanged, including
+59 accepted companions/17,310 bytes. Reject as an exactness improvement without
+spelling variants. All 49 protected canonical hashes are restored. Nineteen
+archive/member-verified raw carriers, including all 12 temporary objects, are
+removed, releasing 1,163,264 allocated bytes net; current products/caches remain.
+Peak memory
+is 292,687,872 bytes under one CPU/35%, with zero memory events; no game,
+provider, relink or full replay runs. A separate three-query
+[PCX decoder-flow search](../research/exact/EXACT_PCX_PACKET_LOOP.md#bounded-decoder-flow-source-search-october-18)
+finds no connected primary source in returned excerpts; it does not depend on
+the unproved 132-byte header. Current totals remain 249 authored exact/21 candidates.
+
 The [pinned 1.07 installer boundary](../research/exact/AUTHOR_SOURCE_CONTEXT.md#pinned-107-distribution-and-installer-boundary-october-18)
 binds all 64 CRC streams and 52 observed old-format file records. The actual
 installer game is byte-identical to the current target, so no game import or
