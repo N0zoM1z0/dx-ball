@@ -91,6 +91,38 @@ or code downloaded. Self-reconstruction/mirrors remain excluded. Sealed
 responses in a decompression-hash-verified gzip; the raw response is removed.
 This is a four-query boundary, not proof of source absence or original declarations.
 
+## Additional raster declaration-source boundary, October18
+
+The retained complete PLASM debug directory provides a narrower boundary than
+an executable-wide claim. Of145 modules, six have demand information. Apart
+from the already decoded author module, the other five identify Digipak
+`support.c`, `loader.c`, `modsnd.c`, `mixer.c` and `modload.c`. Their internal
+type/local records remain undecoded; those directory names do not identify
+an additional raster source module. Among the
+selected draw/line/poly/move/paint/rect/clip prefixes, all691 retained globals
+contain only `_fg_rect`, `_fg_move` and `_fg_clipmap`, associated with assembly
+modules. This does not exclude anonymous/private raster code or establish the
+semantics of other modules' undecoded demand records.
+
+Nine new bounded source queries use actual author function spellings, the
+fixed-point/MulDiv interface and a possible gradient interpretation of the
+unused `15*65536/(y3-y1)` producer. Their returned excerpts establish no matching
+independent routine. Reconstruction mirrors and unrelated algorithms remain
+excluded; no linked source page is opened or code downloaded. The numerical
+constant alone does not establish a shading ancestor, declaration or new model.
+
+Private `.analysis/author-raster-declaration-frontier-20261018/` retains the
+directory/global selections, original carrier hashes, exact nine queries and
+complete responses in a decompression-hash-verified gzip. All852 canonical
+hashes remain unchanged before documentation updates; this note and the handoff
+leave850 other baseline hashes unchanged. No source model, compile, provider,
+executable extraction, runtime, relink or replay follows. No build product or
+disposable source copy is created; the sealer's recorded resource scope retains
+one CPU/35% and memory high384 MiB/max512 MiB. Member-size/SHA-verified
+archival removes three obsolete working files, releasing a net53,248 allocated
+bytes after archive/receipt cost. This is a bounded negative source check, not
+source-absence proof or a new exact claim.
+
 ## Related timer source, October18
 
 Two previously unread files at the same pinned ParticleFire commit are checked:

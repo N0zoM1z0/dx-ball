@@ -60,6 +60,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [additional raster declaration-source check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#additional-raster-declaration-source-boundary-october18)
+reuses the complete145-module/691-global author-demo directory. Its five other
+demand-bearing modules identify Digipak audio source, and the selected graphics
+globals supply no new line/poly source-local record. Nine new author-spelling,
+fixed-arithmetic and gradient-ancestor queries establish no matching independent
+routine in returned excerpts. The unused `F0000/(y3-y1)` meaning remains open;
+do not turn its value into a new declaration model. Complete query responses
+are retained in a decompression-hash-verified gzip. No compile/provider/runtime,
+downloaded code, source model or build product is introduced. All852 hashes
+verify before docs; these two notes leave850 baseline hashes unchanged.
+Source, delivery and250 authored exact/20 candidates remain unchanged. The
+sealer retains CPU0/35% and384/512 MiB. Verified archival removes three obsolete
+working files, releasing a net53,248 allocated bytes. Reuse this boundary rather than
+repeating the same directory or source searches; other uninspected evidence
+remains eligible for a specific original-source inference.
+
 The [actual C1 editor writer/getter observation](../research/exact/VC4_C_FRONTEND_SYMBOL_KEYS.md#current-editor-writergetter-observation-october18)
 uses one unchanged editor compile. Actual mode1 reads join the count key219
 and local`i` key1178 to the same C1 store`406B04`, after counter INC`406AEF`.
