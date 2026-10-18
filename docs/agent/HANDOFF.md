@@ -60,6 +60,14 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [genuine MulDiv boundary control](../research/exact/EXACT_FIXED_POINT.md#direct-muldiv-boundary-control-october18)
+preserves all nine raster exacts across 12 complete functions/141 bindings.
+Ratio remains exact through the real IAT; triangle is unchanged, ordinary polygon
+regresses and clipped improves without becoming exact. Reject the full model;
+host/adapter/CMake/legacy/runtime integration remains unvalidated. All 851
+canonical hashes and four source modes/nsmtimes restore. CPU 0/35%, 384/512 MiB;
+pilot peak 192,634,880 bytes, zero memory-limit events. No source or exact adoption.
+
 The [earlier-release/Mac-carrier retrieval boundary](../research/exact/AUTHOR_SOURCE_CONTEXT.md#earlier-release-and-mac-carrier-retrieval-boundary-october18)
 identifies the official 2002 port but acquires no artifact. Debug information and
 routine correspondence remain unknown; retain the failed-request boundary before

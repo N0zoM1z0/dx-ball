@@ -131,3 +131,38 @@ Raw inputs/products are archived and every member hash verified before deletion.
 Canonical source, cached objects, ledgers, image and totals remain unchanged:
 391 exacts and24 authored candidates. No provider query, runtime check, game run
 or full replay accompanies this rejected source model.
+
+## Direct MulDiv boundary control, October18
+
+The original ratio's complete 35 bytes call `KERNEL32.dll!MulDiv` through IAT
+slot `0x4412A8`, with three signed 32-bit arguments and stdcall cleanup. The
+current table binding at `0x4412A0+8` attests that slot, not an original table.
+One fixed source model declares the genuine imported API and calls it directly.
+It moves the existing three-field fixture table and defaults to a host owner;
+native `MulDiv` forwards the live math callback. A Windows default wrapper avoids
+an imported function address requiring dynamic initialization. Arithmetic,
+local names, types, scopes, class methods and compiler flags remain unchanged.
+
+One canonical-path VC4 compile compares all 12 complete raster functions,
+141 actual code/metadata bindings and 296 attached metadata bytes. The genuine
+ratio binding remains 35-byte exact. All nine prior exacts retain 715 code bytes
+and 136 metadata bytes; triangle remains byte-identical at 1710/88. Ordinary
+polygon changes 1543/214→216 and clipped polygon 1592/214→213. The four inspected
+bodies preserve all 17/482/458/468 instruction boundaries and widths. Ordinary
+polygon changes 14 instructions, losing five previously raw-matching instructions
+and restoring three; clipped changes five and restores one raw-matching branch.
+These raw counts do not identify variable roles when stack homes differ.
+
+Reject the whole model as an exactness improvement without selective adoption
+or further variants. Host, adapter and CMake proposals are uncompiled; both
+legacy source-list integrations and runtime behavior remain unvalidated.
+All 851 protected canonical hashes and four source modes/nsmtimes restore;
+the new import header is removed. Source, delivery and 250 authored exact/20
+candidates remain unchanged. This does not reject the genuine API identity or
+establish original header placement, source names or optimality.
+
+Private `.analysis/raster-muldiv-api-20261018/` retains the prepared model,
+complete comparisons, instruction delta and independent reviews. The compile
+takes 2.589 seconds; its complete pilot scope peaks at 192,634,880 bytes under
+CPU 0/35% and 384/512 MiB limits, with no memory-limit events. There is no
+provider query, native build, relink, runtime case, game or full replay.
