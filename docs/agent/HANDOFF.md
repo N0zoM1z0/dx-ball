@@ -100,6 +100,17 @@ there is no missing game producer or justified name/root-scope model. Its
 All three related families are now closed evidence boundaries, not pending
 declaration trials.
 
+The later [three DOS drawing wrappers](../research/exact/AUTHOR_SOURCE_CONTEXT.md#drawing-wrapper-boundary)
+add105 complete instructions/6 real calls/9 actual fixups. Their separate
+`fg_move(x,y)` and height/width/pixel calls differ from the game's explicit
+banked surface/source-rectangle COM interface. The47-byte DOS deletion proof
+was already complete and is reused. No missing game operation or justified
+parameter-name/context model follows. Current draw/blt/release hashes and all
+claims remain unchanged; there is no compiler/provider/runtime/replay. Private
+`.analysis/author-plasma-draw-delete-boundary-20261018/` retains the independent
+review and roundtrip-hash-verified compressed proof; no new build product or
+executable extraction is created.
+
 The later [Classic 1.09 installer inspection](../research/exact/AUTHOR_SOURCE_CONTEXT.md#classic-109-installer-boundary-october18)
 uses REA 6.5.0 root inventory and independently verified Wise framing: 65 CRC-valid
 streams, 51 typed records and 49 main paths. The bound game has no COFF symbols

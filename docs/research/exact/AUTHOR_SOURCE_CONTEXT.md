@@ -267,6 +267,35 @@ proof is compressed with a decompression-hash check before removing the raw
 JSON. No executable is
 extracted, and no further compiler, provider or runtime is invoked.
 
+### Drawing-wrapper boundary
+
+The three previously unread complete`drwshape`, `clpshape` and`putshape`
+wrappers each occupy97 bytes/35 instructions, with no branches and two calls.
+Actual debug records bind`num,x,y` to integer register parameters. Nine real
+LE fixups bind the repeated`shape[num]` lookups; six direct calls bind the
+actual`_fg_move` and three distinct image-function symbols. Each wrapper first
+passes position to`fg_move(x,y)`, then reads height/width/pixels at
+record offsets4/0/13 and calls its image function. No baseline adjustment,
+new local workspace, record ownership or hidden bank parameter appears.
+
+The game instead uses banked44-byte records, source rectangles, surfaces and
+explicit COM destinations. Complete current draw/blt/release bodies retain
+their authoritative hashes and candidate results. The earlier complete
+47-byte deletion proof is reused rather than repeated: it frees only the DOS
+pixel frame. This supports a related drawing family, but supplies no missing
+game operation or source declaration. Do not compile parameter-name or context
+variants from this boundary. Fastgraph callee bodies and runtime clipping
+semantics are outside the check.
+
+Private`.analysis/author-plasma-draw-delete-boundary-20261018/` retains all105
+new wrapper instructions, raw debug/fixup identities and independent review.
+The complete proof is gzip/roundtrip-hash verified before raw removal. The
+archive member is read only in memory; no executable, object or copied input
+is created. Removing two verified raw carriers releases77,824 allocated bytes
+net of gzip/receipt/seal; all24 recorded input hashes remain unchanged.
+There is no compiler, new provider, download, runtime or full replay,
+and current249 authored exact/21 candidate claims remain unchanged.
+
 ## Classic 1.09 installer boundary, October18
 
 The [same author page](https://classic.blitwise.com/Scorched_Reality/index.html)
