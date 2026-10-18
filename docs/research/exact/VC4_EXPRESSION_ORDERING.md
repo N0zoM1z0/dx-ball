@@ -108,3 +108,63 @@ captures concrete current-game node opcodes, record keys and both child ranks,
 then compares all affected complete emitted functions. Original-game intermediate keys and original
 compiler/settings identity remain unknown. Do not turn the ranking mechanism
 into a name, declaration-count, order or compiler-flag sweep.
+
+## C-source comparison observation, October18
+
+The earlier line and resource observations compile C++ sources through C1XX.
+Their frontend addresses and source-field formulas do not establish the C1
+implementation used by `editor.c`. One unchanged editor compilation now observes
+the actual CL/C1/C2 process chain, with no C1XX process. The selected C frontend
+is pinned `c1.exe`, SHA-256
+`7a7c14aff9631b9460a5666a8c344a5a177fce125ba3c4e9c2a4d57c7f402bb2`.
+The existing sealed C2 debugger executable is reused byte-for-byte; no observer
+build, source adaptation, compiler option or game-source variant is introduced.
+
+All 181 helper entries have paired returns, including 23 in
+`find-hit-region`; 32 calls actually swap children. Every owned process exits0,
+all stack/register guards pass and there are no mandatory read failures or
+extra C2 threads. Ten omitted children lie below the explicit depth-five bound
+in unrelated trees. The selected loop guard has a complete five-node tree:
+two symbol leaves and their load wrappers below the comparison.
+
+| Current role | C2 record key | Record kind | Derived leaf rank | Observed load rank |
+| --- | ---: | ---: | ---: | ---: |
+| Live hit-region count | 219 | 1 | 29 | 32 |
+| Local `i` | 1178 | 1 | 28 | 47 |
+
+Call35 receives the actual rank pair32/47, exchanges the children and changes
+opcode `0x24` to `0x22`. Its 27 single-step events reach the saved return address
+with return rank32 and the expected stack/saved registers. The retained REA
+rank/load instructions independently reproduce the observed ranks. This agrees
+with the emitted current guard loading the count into EAX before comparing
+local `i` against it. Original instructions instead load `i`, compare the live
+count against EAX and exit through JLE rather than the current JGE.
+
+The complete original173/current172-byte bodies each contain46 instructions.
+Forty-two instruction encodings agree. Only the three guard instructions and
+the necessary backedge displacement differ; all eight branch successors agree
+by instruction ordinal. The strict132-position difference remains unmasked.
+All14 complete editor units,223 bindings and12 full literal references compare
+against the original and current authority, retaining every raw/resolved code
+identity and all13 prior exacts/3,267 bytes. Forty applicable exact local-target
+guards also pass. No exact, source or delivery claim changes.
+
+This observes C2 records from an actual C-source compilation. It does not locate
+C1's serializer/key-assignment instructions, observe a direct final-emitter node
+chain or recover original IDs/names/declarations. Do not transfer the C1XX
+NameMap/source-field formulas or derive source permutations from these ranks.
+The next concrete gap is the actual C1 output/key producer and its transport
+to these consumed records.
+
+Private `.analysis/editor-c-comparison-20261018/` retains the sealed trace,
+full comparisons, source/process identities and independent reviews. All851
+protected hashes and22 source-input modes/nanosecond mtimes remain unchanged.
+The single observation takes4.186 seconds, with a160,743,424-byte whole-scope
+peak under one CPU/35%, memory high384 MiB/max512 MiB and zero memory-limit
+events. There is no provider import, native build, oracle, game, relink or full
+replay. One explicit metadata receipt corrects a field label:42 counts equal
+instructions, not42 individual bytes; no successful producer is repeated.
+Archive/member verification precedes removing21 temporary carriers, including
+one object and one executable, releasing958,464 allocated bytes net. The reused
+observer remains in its earlier verified carrier, without a duplicate binary
+in the new archive. Current tested products and useful caches remain.

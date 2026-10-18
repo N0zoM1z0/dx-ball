@@ -60,6 +60,28 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [C-source comparison observation](../research/exact/VC4_EXPRESSION_ORDERING.md#c-source-comparison-observation-october18)
+uses one unchanged editor compile through actual CL/C1/C2, with no C1XX process.
+An existing sealed observer is reused without building or adapting it. All181
+paired C2 calls/32 swaps pass their return guards. The complete selected guard
+records count key219/load-rank32 and local `i` key1178/load-rank47; actual
+call35 swaps children/opcode0x24→0x22, agreeing with the current count-loaded CMP.
+All46 original/current instructions and eight branch successors are accounted;
+find remains173/172/132. All14 full units/223 bindings/12 literals retain their
+identities, including13 prior exacts/3,267 bytes and40 exact local-target guards.
+Independent review verifies851 hashes and22 input modes/nsmtimes. Source,
+delivery and250 authored exact/20 candidates remain. This does not observe
+C1's internal key producer, original IDs or direct emitter-node identity; do
+not transfer C1XX addresses/formulas or begin name/order/type/flag variants.
+Next locate the actual C1 serializer/key producer and its transport to C2.
+One observation takes4.186 seconds, peaks at160,743,424 bytes and retains one
+CPU/35%,384/512 MiB with zero memory events. No provider, native build, oracle,
+game, relink or full replay runs. A metadata-only instruction-count label
+correction retains the original proof without rerunning it. Archive/member
+verification precedes deleting21 temporary carriers, including one object and
+one executable, releasing958,464 allocated bytes net. The reused binary stays
+in its earlier verified archive; current tested products/caches remain.
+
 The [related integer trigonometry](../research/exact/AUTHOR_SOURCE_CONTEXT.md#integer-trigonometry-and-material-scale-difference)
 connects five complete DOS routines (524 bytes/192 instructions) to the game's
 already exact initializer/raw-lookups/coordinate helpers (500 bytes/166
