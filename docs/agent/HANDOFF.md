@@ -60,6 +60,19 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [pinned 1.07 installer boundary](../research/exact/AUTHOR_SOURCE_CONTEXT.md#pinned-107-distribution-and-installer-boundary-october-18)
+binds all 64 CRC streams and 52 observed old-format file records. The actual
+installer game is byte-identical to the current target, so no game import or
+code replay follows. Both inspected repacks also contain the same pinned files;
+no new declaration or compiler-setting evidence follows. Modern Wise records
+are not compatible with this installer's observed 19-byte prefix. Auxiliary
+stream roles remain limited; do not claim blanket source absence. Independent
+review passes. All 11 protected authority/original/delivery hashes and current
+249 authored exact/21 candidate claims remain fixed. Thirty-nine raw evidence
+carriers are archive/member-hash verified and removed; retired producers and
+both complete REA archive responses remain in the private phase archive. No
+new object or executable is written; current products and caches remain.
+
 The [clock-kind eligibility recheck](../research/exact/EXACT_WINMM_CLOCK_IMPORT.md#clock-kind-eligibility-recheck-october18)
 declines another compilation: the later C++ shared-timestamp control already
 covers the type/signature contract; the narrower header placement has no new

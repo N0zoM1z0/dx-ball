@@ -296,6 +296,63 @@ net of gzip/receipt/seal; all24 recorded input hashes remain unchanged.
 There is no compiler, new provider, download, runtime or full replay,
 and current249 authored exact/21 candidate claims remain unchanged.
 
+## Pinned 1.07 distribution and installer boundary, October 18
+
+REA 6.5.0 inventories all 53 entries in the supplied 475,404-byte ZIP. Independent
+CRC/member hashes verify 49 pinned game files, two directories and two download
+site texts. Complete local/central/EOCD framing has no unowned bytes; local and
+central extra fields are distinct records. No named source/PDB/MAP attachment
+appears. This site repack is not a proven original author ZIP. An Internet
+Archive 7z candidate has exactly the same 49 game files, including the same
+installation log and scores; it supplies no earlier code version. Its metadata
+filecount is not used as a member inventory. The pinned REA 6.5.0 reader lacks
+7z support, so existing 7z 23.01 performs one single-threaded stdout pass with
+every member CRC/SHA checked and no member files written. Independent review
+also streams and verifies this small archive once, within the same limits.
+
+The actual log names `DXBALL17.EXE`, leading to
+[DXBALL17.ZIP in the archive catalog](https://apajalista.net/Pelit?sivu=13).
+The 606,294-byte ZIP binds a 610,977-byte NE installer and 77-byte description.
+Its real NE segments/relocation tails/resources establish image end `0x3660`;
+a 64-byte Wise header then leads to 64 contiguous raw-DEFLATE/CRC32 streams
+ending exactly at input EOF. Do not reuse the newer 81-byte 1.09 header offsets.
+
+Three actual helper records establish payload base 82,774. All 49 consecutive
+main records use the observed 19-byte prefix, without the newer 20-byte operand
+block or script CRC field; every payload still has its own CRC trailer. The
+published modern reader is only a common-prefix reference, not a compatible
+parser. Forty-eight assets match current pins, with `Unwise.exe` the remaining
+main name. Game record 4352 binds stream 26 at 201,356: 158,208 bytes with the
+exact pinned 1.07 SHA256. No new game import, code comparison or source trial
+follows. All 49 source-path/description fields are empty and no main path names source,
+PDB, MAP or other debug output. The log's client-side installer path is not a
+developer source directory. Eleven auxiliary stream roles and the full Wise
+action state machine are outside this filename proof; this is not a blanket
+source-absence or source-optimality claim.
+
+Private `.analysis/early-distribution-frontier-20261018/` retains full framing,
+stream/file bindings and independent reviews; full REA records are under
+their original root-relative names in `closed-evidence.tar.gz`, including
+`.analysis/rea/original-distribution-inventory-20261018/artifact.json` and
+`.analysis/rea/dxball17-installer-20261018/artifact.json`. Main archive Evidence:
+
+- Supplied ZIP: `ev_0216c97ca1eb5e088dfa3d1ecd8b67a9d9dade93b4a5b5eefcffa6674b13b795`.
+- Installer ZIP: `ev_8bf3f80b3f88640bab30959804c4d34113d2b305ac1973f860f708525d19bc24`.
+
+Both REA operations inspect archives; there is no native provider import,
+compiler, member execution, relink, runtime case or full replay. Current source,
+products and 249 authored exact/21 candidate claims remain unchanged. All 11
+protected authority/original/delivery hashes remain fixed. Thirty-nine raw
+carriers, including retired producers, are archived and every member hash is
+verified before removal. The archive is 131,867 bytes; one copy of each useful
+compressed primary distribution remains, with no extracted executable or object.
+
+One CPU/35% holds. Original-ZIP scope peaks 671,449,088 bytes with 112 soft-high
+events and zero max/OOM events; installer-ZIP scope peaks 422,395,904 bytes with
+zero memory events. The parent 7z stream/CRC walk peaks 43,397,120/43,429,888
+bytes, also with zero events. Scope peaks include file cache; no process-RSS
+inference.
+
 ## Classic 1.09 installer boundary, October18
 
 The [same author page](https://classic.blitwise.com/Scorched_Reality/index.html)
