@@ -1,5 +1,12 @@
 # Software raster controllers
 
+The [October18 genuine MulDiv integration](exact/EXACT_FIXED_POINT.md#genuine-api-integration-october18)
+now calls the real imported API from the ratio routine and keeps its native
+callback/default in a separate host owner. All 12 complete current raster
+comparisons retain nine exacts; both polygons remain candidates. The existing
+7,164 original/native cases pass under the new boundary. The older source,
+compiler-case and total-count descriptions below retain their checkpoint scope.
+
 The [Windows default repair](RASTER_WIN32_DEFAULTS.md) uses real MulDiv before
 explicit binding and removes the restored-CRT game's signed64 division member.
 Nine exacts and the triangle result are preserved. Two complete polygon

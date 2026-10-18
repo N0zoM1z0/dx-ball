@@ -78,6 +78,7 @@
     "resources",
     "rotation",
     "raster",
+    "game:src/raster_host.cpp",
     "bitmap",
     "gameplay",
     "effects",
@@ -163,7 +164,7 @@
     "member:000ea00c",
     "member:000eb086"
   ],
-  "source_objects": 114,
+  "source_objects": 115,
   "integration_objects": 3,
   "sdk_libraries": [
     "kernel32.lib",

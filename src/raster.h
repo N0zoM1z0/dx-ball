@@ -9,15 +9,9 @@
 #endif
 
 typedef struct DxBallRasterPoint { DxBallInt x, y; } DxBallRasterPoint;
-typedef struct DxBallRasterOps {
-    void *(*allocate)(size_t bytes);
-    void (*deallocate)(void *memory);
-    DxBallInt (DXBALL_RASTER_CALL *muldiv)(DxBallInt number, DxBallInt numerator, DxBallInt denominator);
-} DxBallRasterOps;
 #ifdef __cplusplus
 extern "C" {
 #endif
-extern DxBallRasterOps dxball_raster_ops;
 DxBallInt dxball_fixed_divide(DxBallInt number, DxBallInt denominator);
 
 /* Coordinates, differences, fixed-point products, edge carries and pointer

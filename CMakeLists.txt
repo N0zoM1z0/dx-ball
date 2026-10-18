@@ -17,6 +17,7 @@ add_library(dxball_core SHARED
     src/resources.cpp
     src/rotation.cpp
     src/raster.cpp
+    src/raster_host.cpp
     src/list_initializers.cpp
     src/bitmap.c
 

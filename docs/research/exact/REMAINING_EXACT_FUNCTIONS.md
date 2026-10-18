@@ -126,7 +126,7 @@ The current receipt audit verifies source/object/flag identities for all270
 classified authored entries across30 matching recipes:250 exact and20 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/author-palette-debug-names-20261018/authored-coverage.json`.
+Authority: `.analysis/raster-muldiv-integration-20261018/authored-coverage.json`.
 The [fixed palette declaration inference](AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-declaration-model)
 uses actual connected `r/g/b/mode` roles in both rotations. Right rotation is
 now complete 234/0 exact, while animate-palette improves from nine differences
@@ -139,6 +139,14 @@ One [fixed rank-constrained declaration model](LINE_LOCKED_CURSOR.md#fixed-role-
 then restores those three directions but cycles the previously correct scalar
 homes, producing445/22. It is rejected after a complete two-function comparison;
 canonical line445/9, fill85exact and all claim counts remain unchanged.
+
+The [genuine MulDiv API integration](EXACT_FIXED_POINT.md#genuine-api-integration-october18)
+adopts the previously frozen direct-import/host model for its independently
+established API contract. All 12 raster functions, 141 bindings and 296 metadata
+bytes verify; nine existing exacts survive. Ordinary/clipped polygons change
+214→216 and 214→213 differences and remain paired candidates. Existing 7,164
+raster cases and both legacy builds pass. This restores an API boundary without
+claiming a new exact or original header placement; no full replay runs.
 
 The [sampled paddle width lifetime](PADDLE_WIDTH_SAMPLING_SCOPE.md) restores its
 677-byte extent and original right-edge sum order, reducing210 to68 strict
@@ -209,8 +217,8 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
 | `blt-sprite` | 195 | 199 | 173 |
-| `fill-polygon` | 1543 | 1543 | 214 |
-| `fill-polygon-clipped` | 1592 | 1592 | 214 |
+| `fill-polygon` | 1543 | 1543 | 216 |
+| `fill-polygon-clipped` | 1592 | 1592 | 213 |
 | `release-sprite` | 262 | 269 | 245 |
 | `draw-high-scores` | 404 | 403 | 330 |
 | `load-pcx` | 862 | 979 | 851 |

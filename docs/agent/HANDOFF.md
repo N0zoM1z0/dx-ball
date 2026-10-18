@@ -46,7 +46,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 395 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 80 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/author-palette-debug-names-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/raster-muldiv-integration-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -66,13 +66,20 @@ with no established game-routine connection or declaration model. All 851
 baseline hashes verify before docs; no compiler/provider/runtime/replay runs.
 Raw downloads are archived and member-hash verified before removal.
 
-The [genuine MulDiv boundary control](../research/exact/EXACT_FIXED_POINT.md#direct-muldiv-boundary-control-october18)
-preserves all nine raster exacts across 12 complete functions/141 bindings.
-Ratio remains exact through the real IAT; triangle is unchanged, ordinary polygon
-regresses and clipped improves without becoming exact. Reject the full model;
-host/adapter/CMake/legacy/runtime integration remains unvalidated. All 851
-canonical hashes and four source modes/nsmtimes restore. CPU 0/35%, 384/512 MiB;
-pilot peak 192,634,880 bytes, zero memory-limit events. No source or exact adoption.
+The [genuine MulDiv API integration](../research/exact/EXACT_FIXED_POINT.md#genuine-api-integration-october18)
+adopts the single frozen direct-import/host model after completing its integration.
+All nine raster exacts survive 12 full functions/141 bindings/296 metadata bytes;
+triangle remains 1710/88 and the paired polygons remain candidates at 216/213
+differences. No new VC4 raster compile or declaration variants run. Existing 7,164
+raster cases and native/Windows/both VC4 builds pass. The restored link reuses
+118 objects and retains the same 19 original CRT members. Complete linked
+containers and all 4,488 loader fields verify; no game or full replay runs.
+Recorded step peak 170,659,840 bytes, CPU 0/35%, 384/512 MiB, zero memory events.
+Current linked image SHA-256 is
+`40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`;
+earlier GUI observations retain their own image identities. The prior rejection
+receipt is preserved; actual API fidelity warrants adoption despite the mixed
+nonexact polygon scheduling, without claiming original header placement.
 
 The [earlier-release/Mac-carrier retrieval boundary](../research/exact/AUTHOR_SOURCE_CONTEXT.md#earlier-release-and-mac-carrier-retrieval-boundary-october18)
 identifies the official 2002 port but acquires no artifact. Debug information and

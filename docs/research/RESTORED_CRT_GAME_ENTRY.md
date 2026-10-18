@@ -17,16 +17,24 @@ The first command builds only the game under `build/vc40-restored-crt/`.
 The second prepares an isolated Windows directory; omit `--prepare-only` to
 launch it. The same original assets and compiler prerequisites apply.
 
-The current 19-member image also passes the existing
+The earlier 19-member image passed the existing
 [editor persistence and ball/pause flow](RESTORED_CRT_EDITOR_FLOW.md): complete
 20,000-byte save/reload/recreate, 159 state reads and exit 0 through source stdio.
 The profile can be selected independently with `test_windows_play.py --profile`.
 The initial first-board evidence below retains its original checkpoint scope.
 
+The [genuine MulDiv integration](exact/EXACT_FIXED_POINT.md#genuine-api-integration-october18)
+now links 115 source and three integration objects, reusing all 118 products
+with the same 19 explicit CRT members. The 166,400-byte image SHA-256 is
+`40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`.
+Complete linked containers, all 4,488 loader fields and the existing 7,164 native
+raster cases verify. No game process runs for this checkpoint; earlier GUI
+observations retain their recorded image identities.
+
 ## Source and original boundaries
 
 [The checked link recipe](../../config/restored-crt-link.json) names every
-input and preserves the verified initializer order. It uses 113 maintained
+input and preserves the verified initializer order. It uses 115 maintained
 source objects, three integration objects, 19 pinned original library members
 and the resource object, with `/NODEFAULTLIB`.
 

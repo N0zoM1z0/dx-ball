@@ -8,7 +8,7 @@
 #include "memory.h"
 #include "midi.h"
 #include "paddle.h"
-#include "raster.h"
+#include "raster_host.h"
 #include "bitmap.h"
 #include "allocator.h"
 #include "clock_api.h"

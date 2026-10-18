@@ -5,6 +5,10 @@ auto-analysis splits are now recorded as parent-owned compiler fragments,
 without independent source/exact claims. Complete parent extents and current
 comparison results are unchanged. Earlier counts below are historical.
 
+The later [genuine API integration](#genuine-api-integration-october18) adopts
+the direct imported MulDiv call and a separate host fixture. The earlier
+callback-table source and its IAT-root interpretation below are historical.
+
 This batch restores eight previously unmaintained fixed-point entries in the
 shared [C++ raster owner](../../../src/raster.cpp), adding 571 complete code bytes.
 The accepted ledger becomes 63 exact units / 8,802 code bytes and 265
@@ -153,9 +157,9 @@ polygon changes 14 instructions, losing five previously raw-matching instruction
 and restoring three; clipped changes five and restores one raw-matching branch.
 These raw counts do not identify variable roles when stack homes differ.
 
-Reject the whole model as an exactness improvement without selective adoption
-or further variants. Host, adapter and CMake proposals are uncompiled; both
-legacy source-list integrations and runtime behavior remain unvalidated.
+The initial control rejects the model as an exactness improvement, without
+selective adoption or variants. At that checkpoint the host, adapter and CMake
+proposals are uncompiled; both legacy integrations and runtime remain unvalidated.
 All 851 protected canonical hashes and four source modes/nsmtimes restore;
 the new import header is removed. Source, delivery and 250 authored exact/20
 candidates remain unchanged. This does not reject the genuine API identity or
@@ -166,3 +170,55 @@ complete comparisons, instruction delta and independent reviews. The compile
 takes 2.589 seconds; its complete pilot scope peaks at 192,634,880 bytes under
 CPU 0/35% and 384/512 MiB limits, with no memory-limit events. There is no
 provider query, native build, relink, runtime case, game or full replay.
+
+## Genuine API integration, October18
+
+The complete integration adopts that same frozen source model. The earlier
+decision gave too much weight to mixed instruction scheduling in two nonexact
+polygons: it did not establish a defect in the genuine API contract. The original
+35-byte ratio independently identifies `KERNEL32!MulDiv`, three signed 32-bit
+arguments and stdcall cleanup. Calling that import directly restores this
+contract without claiming recovery of its original header or translation unit.
+The earlier rejection and all comparison changes remain retained.
+
+[raster.cpp](../../../src/raster.cpp) now consumes the genuine
+[import declaration](../../../src/raster_imports.h). The existing callback type,
+table and portable default move to [raster_host.cpp](../../../src/raster_host.cpp)
+and its header. Native MulDiv forwards the live math callback; its saved portable
+default is a separate function. Windows uses a static 36-byte stdcall wrapper
+calling the real IAT, with no dynamic initializer. Both legacy source lists and
+CMake include the host owner. No algorithm, local spelling, type, scope or
+compiler flag changes from the frozen model.
+
+The prior single-compile raster object is reused after verifying all five inputs,
+flags and the pinned toolchain. Rechecking all 12 complete functions, 141 actual
+bindings and 296 metadata bytes reproduces the frozen results exactly. All nine
+prior exacts retain 715 code/136 metadata bytes. Triangle remains 1710/88;
+ordinary polygon is 1543/216 and clipped is 1592/213. Both polygons are adopted
+together as candidates; neither is claimed closer or exact. Twenty generated
+unwind-label pairs refresh through the actual parent metadata, preserving all
+24 fragment extents, ownership and original evidence.
+
+Native and Windows builds pass. The existing 7,164 original/native raster cases
+pass, including live callbacks and the saved portable default within their
+existing domain. All 249 semantic scopes, case counts and oracle identities
+remain unchanged; only their affected input inventories refresh. The ordinary
+VC4 game links, and the restored-CRT game reuses all 118 objects: 115 source and
+three integration objects, with the same 19 explicit original CRT members.
+
+Linked verification checks 673 complete located sections and 5,904 actual
+bindings across 137 source/CRT objects. Five additional complete data containers
+account for 39 fields. All 4,488 loader fields have actual COFF or SDK-thunk
+ownership. All 59 adapter function bodies retain their complete raw bytes;
+four bindings rename two compiler-generated static symbols, with actual BSS
+definitions and unchanged linked targets verified. Imports and resource
+payloads remain unchanged. This establishes those containers and bindings,
+not whole-PE byte identity or a new physical Windows observation.
+
+Current linked image: 166,400 bytes, SHA-256
+`40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`.
+Private `.analysis/raster-muldiv-integration-20261018/` retains the reuse proof,
+independent reviews, build/case results and initial verifier failures. The
+highest recorded step peak is 170,659,840 bytes, with CPU 0/35%, 384/512 MiB
+and zero memory-limit events. No VC4 raster recompile, provider query, game launch
+or full replay runs. Current authored coverage remains 250 exact/20 candidates.

@@ -178,6 +178,12 @@ No artifact is acquired or analyzed. The separate
 `.analysis/mac-port-download-host-20261018/` receipts retain these outcomes without
 changing the earlier search boundary or implying absent debug information.
 
+The catalog page is subsequently opened and confirms actual `download.php`
+links with IDs 9332 and 14121. Both distinct indexed endpoints time out during
+TLS handshakes with verification enabled; neither yields an artifact. Private
+`.analysis/mac-port-indexed-endpoints-20261018/` retains the page, actual links
+and bounded request outcomes. No new port or debug-information claim follows.
+
 ## Related timer source, October18
 
 Two previously unread files at the same pinned ParticleFire commit are checked:
