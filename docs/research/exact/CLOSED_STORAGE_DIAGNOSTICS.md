@@ -1,5 +1,68 @@
 # Closed drawing and SDK storage diagnostics
 
+## Historical Microsoft DirectDraw header, October18
+
+The earlier SDK controls did not have an actual historical `ddraw.h`. One
+fixed model now uses the complete 103,774-byte Microsoft header preserved at
+[the pinned VC4.2 repository commit](https://github.com/archaic-msvc/msvc420/blob/b42c244f0a83ba15ba2ffb62b0dc240d7b2dea50/include/DDRAW.H).
+Its copyright says 1994–1996; SHA-256 is
+`d8a3724958d3239015a2aa0cd4fbd54fb4b5faecdf6a0feef6155f27c7efbd1d` and
+Git blob is `a27c96b8a83c60314a67040fdb1b644f2c8c68a3`. The saved commit-specific
+API inventory binds the selected path to that blob, whose raw bytes independently
+hash correctly. The repository provenance and copyright date support this
+historical model; its exact SDK release and original-game use remain unproved.
+No toolchain or library upgrade
+occurs; CL 10.00.5270 and its complete pinned Windows/COM include tree remain.
+
+The whole header remains byte-identical, including its additional v2 interface
+declarations. A private include directory binds it after a wrapper that imports
+`windows.h`; its sole direct dependency is `objbase.h`. There is no modern MinGW
+helper, feature-detection bridge or version-macro variant. A genuine declaration
+difference is retained: historical `dwBackBufferCount/dwMipMapCount` share
+offset 20, with `dwZBufferBitDepth/dwRefreshRate` at 24. The modern header puts
+`dwMipMapCount` at 24. Complete native/C mirrors follow the historical records;
+all current game operations, locals, scopes and code-generation flags remain.
+The 17 existing files and two new shared headers form one coherent proposal.
+Both adopted palette naming models are preserved. Original 108-byte descriptor
+and v1 dispatch facts support the API inference without recovering header text.
+
+Two fixed C/C++ compatibility compiles pass on their first attempts. They check
+the 108/32/8/4-byte descriptor/pixel-format/key/caps records, actual historical
+union offsets, the 23/36/7-slot interfaces and typed calls/IUnknown upcasts.
+Independent decoding checks all nine indirect calls in each resulting fixture.
+This is compile-time and emitted-call evidence, not runtime ABI execution.
+The full prospective shared closure is 30 owners/278 units/4,704 bindings/252
+complete literals and one attached metadata unit. It is not accepted wholesale.
+
+One resource compile compares all 18 complete functions/262 actual bindings/six
+full literals. Release-sprite privately becomes 262/0 exact; bank 1475/64→1475/63
+and PCX 979/851→979/850. Five prior exacts are lost: keyed draw 105/0→107/94,
+stretch 139/0→141/90, capture 852/0→864/726, glyph lookup 145/0→146/86 and glyph
+draw 328/0→332/258. Ten code identities remain, including eight prior exacts/
+1,481 bytes. **Reject the entire fixed model.** Its other 29 owners/260 units
+and native/MinGW builds remain uncompiled; do not adopt a favorable subset or
+try header spelling, include-position or owner variants from this result.
+
+Independent review recomputes every whole function, relocation and literal,
+checks local targets, both fixture objects and the header's actual carrier,
+and verifies all 851 protected hashes. All 17 staged files regain their bytes,
+modes and nanosecond mtimes; both new headers are removed. Current delivery
+remains `d5dca81954937a6f9f3212fb041a1aed02f455b037dea0d9b7997a19a98587f6`,
+with 250 authored exact/20 candidates and 395 overall exacts. The compatibility
+pair takes 5.719 seconds with 157,458,432-byte scope peak; the game compile takes
+3.399 seconds with 163,635,200-byte peak. Both use one CPU/35% and 384/512 MiB,
+with zero memory-limit events. No provider, native build, oracle, game, relink
+or full replay runs.
+
+Private `.analysis/ddraw-historical-header-20261018/` retains the fixed plan,
+download receipts, compatibility results, reviews, summary and sealed archive.
+Member size/hash verification precedes removal of 68 obsolete raw carriers,
+including all three objects, releasing 1,150,976 allocated bytes net. Current
+tested products and useful caches remain. Independent result receipt SHA-256:
+`3b98ed6c296b663e41ef12b65b5fbe8e53df05f37c5f962473bc57ef3266d6fa`.
+Archive SHA-256:
+`e38472ba9d440295cc24229bd6bf204de02f4a43ef3c257de7ad53fa701e1523`.
+
 ## Genuine SDK interfaces, October18
 
 One fixed model uses actual `IDirectDraw`, `IDirectDrawSurface`,

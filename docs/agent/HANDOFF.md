@@ -60,6 +60,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [historical Microsoft header model](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#historical-microsoft-directdraw-header-october18)
+tests a complete 103,774-byte 1994–1996 `ddraw.h` from a pinned VC4.2 repository;
+the actual compiler/libraries stay VC4.0. Header release/original-game use remain
+unproved. Its real offset 20 mipmap union differs from the modern header, while
+the original consumed 108-byte descriptor/v1 methods agree. Two fixed C/C++
+compatibility compiles pass first try. One subsequent resource compile compares
+all 18 functions/262 bindings/six literals: release privately becomes 262 exact,
+bank/PCX each lose one difference, but five prior exacts regress. Reject the
+entire 30-owner/278-unit model; other 29 owners/260 units remain uncompiled.
+Do not adopt favorable owners or retry header/include-position variants.
+Independent review recomputes all results and both fixture objects. All 851
+hashes survive; 17 staged files regain bytes/mode/nsmtime and two new headers
+are removed. Current source, delivery and 250 authored exact/20 candidates stay
+unchanged. Resource compile takes 3.399 seconds with a 163,635,200-byte peak;
+the compatibility pair takes 5.719 seconds with a 157,458,432-byte peak.
+One CPU/35%, 384/512 MiB and zero memory-limit events hold. No provider, native build,
+oracle, game, relink or full replay runs. Archive/member checks precede deleting
+68 obsolete raw carriers, including three objects, releasing 1,150,976 allocated
+bytes net. Current products/caches remain.
+
 The [fixed drawing parameter model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-drawing-parameter-declaration-model)
 uses the retained complete DOS `num/x/y` index/coordinate witnesses for one
 four-function,16-token inference. The earlier missing-operation gate was an
