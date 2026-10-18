@@ -195,6 +195,10 @@ source-absence proof or a new exact claim.
 
 ## Earlier-release and Mac-carrier retrieval boundary, October18
 
+This is the historical failed-request boundary. The [later authenticated
+acquisition](#mac-port-acquisition-and-named-metadata-october18) obtains the Mac
+carrier and positive named metadata; reuse those artifacts before any retry.
+
 Selected indexed queries for Windows 1.00–1.06 identify no verifiable earlier
 carrier in their returned results. This is a search boundary, not evidence that
 those releases or their debug records never existed. The author's
@@ -237,6 +241,73 @@ links with IDs 9332 and 14121. Both distinct indexed endpoints time out during
 TLS handshakes with verification enabled; neither yields an artifact. Private
 `.analysis/mac-port-indexed-endpoints-20261018/` retains the page, actual links
 and bounded request outcomes. No new port or debug-information claim follows.
+
+## Mac-port acquisition and named metadata, October18
+
+The missing issuer certificate explains the earlier Garden TLS failure. The
+server supplies its leaf without Sectigo R36. Its actual AIA issuer is obtained
+and verified as an untrusted intermediate to R46 already in the system root
+bundle, with server purpose, hostname and validity checks. A private client
+bundle adds only that intermediate; global trust is unchanged. Python's partial
+chain flag is explicitly cleared. The final collector also rejects non-HTTPS
+redirects before following them. Earlier collector records remain separate from
+this stronger redirect policy.
+
+The authenticated [Garden page](https://macintoshgarden.org/games/dx-ball)
+provides the actual [mirror link](https://old.mac.gdn/games/dxballmac.sit).
+That mirror returns a complete 200 response without redirects: **2,083,697B**,
+SHA-256 `fd699cd9b36113d0d7ba06ed0ce761256b6065b2b7c87261798960bd3da129ca`,
+matching the earlier catalog identity. The separate signed download returns410
+and remains a failure. No installer or application is executed.
+
+REA6.5.0 rejects StuffIt, so installed lsar/unar inventory62 rows and extract
+only the Classic/OS X applications and readme, preserving all three resource
+forks as AppleDouble. Their data forks are258,527B/SHA `68757fc0…0cbedb49c`
+and1,031,644B/SHA `f1004702…7c37b69b`. Both begin `Joy!peffpwpc`: the OS X
+label does not make that file Mach-O. The readme identifies Michael S. Austin's
+Mac conversion and v1.01 high-score fix; it does not establish Windows1.07
+source equivalence. Resource maps contain `cfrg` in both builds, with12/13 types;
+the selected maps contain no `vers`. These are resource-map observations only.
+
+The pinned Ghidra12.1.4 [PEF format sources](https://github.com/NationalSecurityAgency/ghidra/tree/Ghidra_12.1.4_build/Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/pef)
+support bounded container/section/loader reads. Both loaders declare zero
+exports. Nevertheless, the OS X code contains **321 positive basic-layout
+named records**, including `.fontwidth__FiPc`, `.deleteshape__Fi`,
+`.drawPaddle__Fv`, `.line__FPUciiiiiUc` and platform/framework methods.
+Independent review checks every reported record's raw18-byte fields, name,
+distance, derived start and section bounds against the actual fork bytes.
+These are metadata-derived names and offsets, not recovered Windows declarations
+or verified function bodies. The initial letter-only filter missed leading dots;
+its zero result is retained without a stripped-symbol claim. The Classic scan's
+zero under the later predicate also does not establish absent debug information.
+
+`PefDebug.java` establishes the basic fields, not the analyst's bit-mask labels
+or a complete Mac32 traceback ABI. The correction journal preserves that
+distinction. Actual321-row verification does not prove scan exhaustiveness,
+full mangling semantics or correspondence to the remaining20 Windows candidates.
+The newly read names include game and port framework families; sharing a name
+alone cannot justify another source declaration trial.
+
+One explicit REA6.5.0 MCP `open_binary` with provider `ghidra` rejects the OS X
+PEF at format admission. Its actual raw-binary schema excludes PowerPC; no
+wrong-architecture retry, provider import or snapshot follows. Installed GNU
+objdump advertises only i386/iamcu targets. These observations constrain the
+inspected REA route and local tool, not Ghidra's general PEF support. No Mac body
+has yet been decompiled or connected to a complete Windows routine.
+
+Private `.analysis/mac-port-payload-20261018/` retains the useful forks, exact
+inventories, format sources, metadata and frozen independent reviews. Closed
+acquisition records are in the38-member archive under
+`.analysis/mac-port-chain-recovery-20261018/`; the complete MCP catalog/rejection
+are in the two-member archive under `.analysis/rea/mac-reference-20261018/`.
+All40 member sizes/SHA-256 values verify before deleting only their raw carriers,
+releasing8,445,952 allocated bytes net, excluding loose journals. All744 protected
+file hashes/modes/nsmtimes verify before docs; game source, products and250
+authored exact/20 candidates remain. No compile, game, relink or replay runs.
+CPU0/35%,384/512MiB limits cover the heavy work. The admission scope peaks
+at402,898,944B with six `memory.high` events and zero max/OOM events; this is not
+a whole-investigation peak. Retained bytes and reviews should be reused before
+another network request or provider attempt.
 
 ## Actual WinG1.0 source package, October18
 

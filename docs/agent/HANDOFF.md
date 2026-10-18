@@ -60,6 +60,20 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [Mac port is now acquired with positive named metadata](../research/exact/AUTHOR_SOURCE_CONTEXT.md#mac-port-acquisition-and-named-metadata-october18).
+The strict HTTPS mirror yields2,083,697B/SHA `fd699cd9…da129ca`; the repaired
+chain verifies to existing roots without changing global trust. Six selected
+forks preserve Classic/OS X PEF applications and readme. Independent review
+checks321 OS X basic-layout name records, including game and framework names;
+neither complete Mac bodies nor Windows declaration correspondence is established.
+REA6.5.0 rejects PEF admission; its raw schema excludes PPC. No provider import,
+compile, game or replay follows. Reuse the current extracted forks/metadata and
+the reviewed acquisition/admission archives, rather than retrying unchanged
+requests. All744 protected hashes/modes/nsmtimes verify before docs;250 authored
+exact/20 candidates and delivery remain. Listed member-verified carrier cleanup
+releases8,445,952B net. Admission peak402,898,944B, CPU0/35%,384/512MiB, six high
+events and zero max/OOM events; the process group is closed.
+
 The [actual WinG1.0 package](../research/exact/AUTHOR_SOURCE_CONTEXT.md#actual-wing10-source-package-october18)
 is now acquired and all79 members integrity-checked. Its selected Cube, transparent
 copy and timing paths supply no new game model. Reuse the reviewed25-member archive;
@@ -131,10 +145,10 @@ receipt is preserved; actual API fidelity warrants adoption despite the mixed
 nonexact polygon scheduling, without claiming original header placement.
 
 The [earlier-release/Mac-carrier retrieval boundary](../research/exact/AUTHOR_SOURCE_CONTEXT.md#earlier-release-and-mac-carrier-retrieval-boundary-october18)
-identifies the official 2002 port but acquires no artifact. Debug information and
-routine correspondence remain unknown; retain the failed-request boundary before
-retrying. No compiler/provider/runtime/replay or source model is introduced;
-all 737 tracked baseline hashes and the tested delivery verify before docs.
+retains the historical failed requests. The later acquisition above supersedes
+its artifact-availability boundary; the recorded failures remain failures.
+Earlier Windows releases remain unverified, and Mac-to-Windows routine
+correspondence is still an open reconstruction question.
 
 The [fixed DisplayOps host-boundary control](../research/exact/PRESENTATION_MERGE_SCOPE.md#fixed-displayops-host-boundary-control-october18)
 compares20 units/421 bindings after moving only the fixture type/table. Private
