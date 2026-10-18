@@ -60,6 +60,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed paired RNG declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-rng-declaration-model)
+binds two full DOS helpers (108 bytes / 51 instructions), actual typed `num`
+records and three actual CRT/clock calls to the game's complete 31/49-byte helpers. Preserve
+the Win32 unsigned clock/DIV difference. One inferred `rnd/rndseed/num` pair
+changes 50 public plus eight local/prototype tokens in nine shared files.
+All 11 actual affected owners compile once: 122 whole functions/3,338 bindings/
+177 full literals, all raw/resolved code identities unchanged, including 113
+prior exacts/42,881 bytes and nine candidates. Reject the whole pair without
+name, subset, owner or flag variants; no API aliases or test-export changes are
+adopted. Independent review verifies the complete primary witness, comparisons,
+source transform, 851 hashes and nine files' original bytes/modes/nsmtimes. Current
+source, delivery and 250 authored exact/20 candidates remain. Total affected
+compile/comparison takes 28.799 seconds, peaks at 207,253,504 bytes, and uses
+one CPU/35% and 384/512 MiB with zero memory-limit events.
+No provider, native build, oracle, game, relink or full historical replay runs.
+Two passive pre-output assertion corrections are retained, without compiler
+retries. Archive/member checks precede deleting 58 obsolete raw carriers,
+including 11 objects, releasing 3,624,960 allocated bytes net. Current products
+and useful caches remain.
+
 The [historical Microsoft header model](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#historical-microsoft-directdraw-header-october18)
 tests a complete 103,774-byte 1994–1996 `ddraw.h` from a pinned VC4.2 repository;
 the actual compiler/libraries stay VC4.0. Header release/original-game use remain

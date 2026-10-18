@@ -524,6 +524,68 @@ Every archive member's size and hash verifies before deleting nineteen obsolete
 raw carriers, including both temporary objects. Cleanup releases 503,808
 allocated bytes net; current tested products and useful caches remain.
 
+### Fixed author RNG declaration model
+
+Two previously unqualified complete DOS helpers provide a separate connected
+family. `rnd` and `rndseed` each occupy 54 bytes: 26 and 25 instructions, 108 bytes
+and 51 instructions in total. Actual debug records bind signed 32-bit `num` to the
+range parameter and seed local. Raw type/callee records, source cues, the
+contiguous debug segment directory, hashed LE pages and all 71 page-three fixups
+bind the bodies to the original in-memory archive member. Neither selected
+body contains a fixup. All three relative calls bind actual `rand_`,
+`_fg_getclock` and `srand_` symbols rather than names inferred from arithmetic.
+
+DOS range and the complete original 31-byte game helper both call CRT rand,
+take signed remainder by the supplied parameter, overwrite that parameter and
+return it. Both seed functions sample their real clock, compute remainder 300,
+store it and pass it to CRT srand. The game's complete 49-byte helper and actual
+`timeGetTime` IAT binding are independently checked against the retained exact
+object. A material difference remains: DOS uses signed int/IDIV and Fastgraph
+clock; Win32 uses unsigned timeGetTime/DIV. The Win32 types, API and units stay
+unchanged. This supports one declaration inference, not unique 1.07 names or a
+shared CRT implementation.
+
+One fixed pair renames `dxball_random_range/dxball_seed_random` to `rnd/rndseed`
+throughout the shared production source/prototypes/calls, and the two helpers'
+bound parameter/local plus prototype name to `num`. Nine files change: 50 public
+identifier tokens and eight local/prototype tokens. Comments, strings, callback
+field names, types, operations, lexical scopes and compiler options remain.
+No old-name aliases are added. Exactly two explicit COFF symbol mappings bind
+the renamed functions and their callers to the original 31/49-byte identities.
+Fixture export/default-pointer strings and permanent configs are deferred
+unless a complete improvement supports adoption.
+
+The actual affected closure is 11 owners/122 complete functions/3,338 relocation
+bindings/177 full literals, without attached metadata. All 11 owners compile
+once, retaining every full raw and relocated code identity. All 113 prior exacts/
+42,881 bytes and all nine candidate identities survive. Gains, losses and
+improvements are zero. The current last-brick/time/RNG order and all remaining
+candidate results stay unchanged. Reject the entire fixed pair as an exactness
+improvement without spelling, subset, owner or flag variants. This neither
+proves source optimality nor disproves the author-family relationship.
+
+Independent result review recomputes all 122 whole comparisons, actual binding
+multiplicities, full literals and exact local targets, and checks the complete
+DOS witness, source transform and all 11 compiler inputs/objects/logs. All 851
+protected hashes and all nine staged files' bytes, modes and nanosecond mtimes
+are restored. Existing public exports, source, ledgers and delivery remain;
+counts stay 250 authored exact/20 candidates and 395 overall exacts. The complete
+affected compile/comparison takes 28.799 seconds under one CPU/35% and 384/512 MiB,
+peaks at 207,253,504 bytes and has zero memory-limit events. No provider, native
+build, oracle, game, relink or full historical replay runs.
+
+Private `.analysis/author-rng-debug-declarations-20261018/` retains the plan,
+reviews, summary, restoration and sealed archive. Two pre-output assertion
+corrections retain their old scripts and journals: the true IAT symbol is
+`__imp__timeGetTime@0`, and the range definition has four bound parameter tokens,
+not three. No successful producer or compiler is repeated for those fixes.
+Archive/member size/hash checks precede deleting 58 obsolete raw carriers,
+including all 11 private objects, releasing 3,624,960 allocated bytes net.
+Current tested products and useful caches remain. Independent result SHA-256:
+`dbb41316dd2b25fd024797bb13147453ae9006e9d812c0c43d6483a54621f06d`.
+Archive SHA-256:
+`7f696c3ba245bc001ad51fc3aca24af06a69983e70ad2966f7a804084f55ba9b`.
+
 ## Pinned 1.07 distribution and installer boundary, October 18
 
 REA 6.5.0 inventories all 53 entries in the supplied 475,404-byte ZIP. Independent
