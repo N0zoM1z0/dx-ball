@@ -60,6 +60,15 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [clock-kind eligibility recheck](../research/exact/EXACT_WINMM_CLOCK_IMPORT.md#clock-kind-eligibility-recheck-october18)
+declines another compilation: the later C++ shared-timestamp control already
+covers the type/signature contract; the narrower header placement has no new
+original ownership support. Nine low-word timer source queries find no connected
+C/C++ elapsed/wait source in returned excerpts; full responses are compressed
+and hash verified. Current wait170/8, elapsed81/3 and reset426/20 retain matching
+source/object authority hashes. The WinMM note now labels its waiting exact as
+historical. No source/product/claim change, compile, provider, runtime or replay.
+
 The [complete C DirectDraw table control](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#complete-c-directdraw-table-october18)
 completes20 opaque method signatures without changing23-slot layout, called
 slots or bodies. Four compiles/47 full units/721 bindings/six literals produce

@@ -1,4 +1,10 @@
-# Direct WinMM clock import and exact frame waiting
+# Direct WinMM clock import
+
+Current status, October18: frame waiting is a170-byte candidate with eight
+differences; elapsed is81/3 and reset is426/20. Current source/recipe/object
+identities verify against the accepted producer report without a new replay.
+The earlier import adoption below records a historical waiting exact, not its
+current acceptance. See [the current wait review](FRAME_WAIT_CURSOR.md).
 
 The shared clock callers now use the genuine `timeGetTime` function. Windows
 imports its unsigned-long32, stdcall result from WinMM; the native host forwards
@@ -73,3 +79,28 @@ comparisons and reviews. Archive/member-hash verification precedes removal of
 and journal. Scope peak257,736,704 bytes; the one-CPU/35%/640–768 MiB limits hold
 with zero high/max/OOM events. No native build, relink, provider query, runtime
 case, game or full replay follows.
+
+## Clock-kind eligibility recheck, October18
+
+The old October12 clock-specific type model compiled`runtime.c`. However, the
+later`shared-timestamp-surface-20261013/run-trial.py` explicitly compiles
+`runtime.cpp` and already covers the same unsigned-long32 clock returns,
+elapsed parameters/local, callback signatures and LARGE_INTEGER word/long
+fields. All273 complete units across31 owners were compared; the complete
+model lost12 exacts net. Its aliases live in`state_types.h`, while the old
+narrow model adds`clock_types.h` through`core.h`: these are different deltas.
+No original ownership fact supports retrying that remaining header-placement
+difference. Independent review declines the proposed compile before any source
+or private compiler stage is prepared. SDK-counter-only controls are separate;
+they are not incorrectly counted as testing the shared timestamp signatures.
+
+Nine distinct low-word timer source queries also find no qualifying connected
+C/C++ elapsed/wait source in returned excerpts. A superficially similar VB
+example does not establish target source, types, names or ownership. No source
+page is opened or downloaded. This bounded search is not proof of source
+absence. Full responses are retained as three roundtrip-verified gzip carriers
+under`.analysis/clock-low-word-source-20261018/`; reuse them instead of repeating
+the queries. Eligibility and current-authority receipts are under
+`.analysis/clock-kind-current-context-20261018/`. Current394 exacts/21 authored
+candidates, source and products remain unchanged; no compiler, provider,
+runtime, game, relink or comparison replay runs.
