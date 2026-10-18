@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 18, 2026, after the lightning crop-producer recovery.
+Updated October 18, 2026, after the bank declaration inference.
 Accepted totals are **394 functions / 84,872 code bytes / 244 metadata bytes**.
 There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.
 
@@ -126,7 +126,7 @@ The current receipt audit verifies source/object/flag identities for all270
 classified authored entries across30 matching recipes:249 exact and21 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/lightning-excess-producer-20261018/authored-coverage.json`.
+Authority: `.analysis/author-bank-debug-names-20261018/authored-coverage.json`.
 The later [actual line comparison observation](LINE_LOCKED_CURSOR.md#actual-backend-comparison-decisions-october18)
 captures the three current symbol-role swaps and checks their correspondence to
 all nine residual bytes. It changes no source, product or acceptance claim.
@@ -199,7 +199,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-line` | 445 | 445 | 9 |
 | `rotate-palette-right` | 234 | 234 | 6 |
 | `reset-round` | 426 | 426 | 20 |
-| `load-sprite-bank` | 1475 | 1475 | 66 |
+| `load-sprite-bank` | 1475 | 1475 | 64 |
 | `draw-paddle` | 677 | 677 | 68 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-sprite` | 105 | 107 | 94 |

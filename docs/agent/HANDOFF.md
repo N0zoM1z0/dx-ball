@@ -46,7 +46,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 394 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 81 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/lightning-excess-producer-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/author-bank-debug-names-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -59,6 +59,26 @@ Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/` privat
 A source-only clone does not include the assets, tools, products or raw evidence.
 
 ## Current source and delivery
+
+The [actual bank declaration inference](../research/exact/BANK_ALLOCATION_SCOPE.md#actual-author-declaration-inference-october-18)
+adopts one fixed seven-role model from the author's debug-bound DOS loaders.
+The prior conceptual decline of this identical uncompiled model required a
+missing Win32 operation and was too restrictive; that condition is withdrawn.
+All game types/scopes/order/member names/operations remain. Bank1475/66→1475/64
+recovers both yoffset EBP−48 sites without losing a matching original byte;
+17 companions and13 exacts/3,050 bytes survive18 complete comparisons/262
+bindings/six literals. Ten unchanged existing bank cases pass. Native/MinGW
+each compile32 sources after old trial restores invalidated mtimes; completed
+builds are not repeated. VC4 compiles31 production objects/reuses86, with only
+resources.cpp content changed. Full PE verification accounts for18 bank bytes
+plus18 parsed timestamp bytes; all1,099 MAP records and other PE bytes remain.
+No game/provider/full replay runs. Current counts remain249 authored exact/21
+candidates. Separate current-input metadata corrects179 pre-existing helper
+hash fields; historical semantic cases/scopes are unchanged. Independent final
+review passes. Archive/member verification precedes removing59 obsolete raw
+carriers, including36 production-history files, releasing7,876,608 allocated
+bytes net; current tested products and useful caches remain. Do not try name
+or scope variants of this closed fixed model.
 
 The [fixed author global declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-global-declaration-model)
 tests actual DOS `fontspacing`: signed int, fixup-bound metric read and initial
@@ -180,7 +200,7 @@ unused four-byte tail does not establish a132-byte declaration. Close this
 related-version check without a source trial; reuse its archived proof.
 
 The current restored-CRT executable is
-`20b375170714052afe0f8ae69a364f2149b77b992e6572b4af1d6217b508e973`.
+`ed41c8fe134dea66ab0d5eb88779160b0b572ad7a72331b67e0b16ecb7a6c450`.
 Its recipe is `vc40-restored-crt`: 117 source objects from 114 owners plus three
 integration owners, 19 pinned CRT members, `/NODEFAULTLIB /OPT:REF`, six OS DLLs
 and no MSVCRT DLL. The image, map and full input/object identities are in
@@ -790,8 +810,9 @@ A small difference count is not itself a source question. Complete correspondenc
 and unchanged tests do not prove original declarations or absolute optimality.
 
 The drawing-wrapper owner now supplies actual named C2 rank observations for
-resource producers. Load-bank's complete extent is restored at1475 bytes with66
-remaining differences; use its retained full body and current trace to locate
+resource producers. Load-bank's complete extent is restored at1475 bytes with64
+remaining differences; the fixed author model also restores yoffset's home.
+Use its retained full body and current trace to locate
 the remaining actual producer before another compile. The fixed owner control
 is closed; do not search wrapper position, function order or key values.
 

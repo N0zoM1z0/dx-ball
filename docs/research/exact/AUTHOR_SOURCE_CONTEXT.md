@@ -289,13 +289,20 @@ bytes, rather than establishing the game's44-byte record. These are material
 ownership and platform differences, not compiler bookkeeping to normalize away.
 
 This is a connected loader-core inference, not complete cross-version
-equivalence or recovered1.07 source. No missing game producer is identified;
-do not reopen the closed root-scope model or compile a foreign-name list.
+equivalence or uniquely recovered1.07 source. The initial review declined an
+already enumerated seven-role name model without compiling it, requiring a
+missing Win32 operation. The later
+[actual declaration inference](BANK_ALLOCATION_SCOPE.md#actual-author-declaration-inference-october-18)
+withdraws that overly restrictive condition and tests exactly that model with
+all game types/scopes/order intact. It restores yoffset's original home and
+improves1475/66→1475/64 without lost matching bytes. This does not reopen the
+rejected root-scope model or justify further name permutations.
 Private`.analysis/author-plasma-bank-linkage-20261018/` retains complete bodies,
 actual records/fixups, the source-model boundary and independent review. Its full
 proof is compressed with a decompression-hash check before removing the raw
 JSON. No executable is
-extracted, and no further compiler, provider or runtime is invoked.
+extracted; its original passive investigation runs no compiler or runtime.
+The later comparison and integration have their separate complete receipts.
 
 ### Drawing-wrapper boundary
 

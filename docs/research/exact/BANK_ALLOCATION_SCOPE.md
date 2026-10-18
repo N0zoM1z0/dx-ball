@@ -1,5 +1,61 @@
 # Sprite-record allocation scope
 
+## Actual author declaration inference, October 18
+
+The complete bank candidate is now **1,475 bytes / 64 differences**, improving
+from 66. One fixed model uses seven role names from both complete, debug-bound
+DOS author loaders: `file`, `i`, `nbytes`, `bitmap`, `letter`, `yoffset` and
+`new_shape`. Ordered metadata reads, pixel-count multiplication, allocation
+sizes and publication connect these roles independently. All current game
+types, declaration order, scopes, member names, operations and headers remain.
+The names are inferred for 1.07; they are not uniquely recovered identifiers.
+
+The earlier bank review listed this exact model but declined it without a
+compile, requiring another missing Win32 operation. That prerequisite was too
+restrictive for a declaration inference and is withdrawn. This is one fixed
+comparison, not a spelling or scope search. Neither the DOS packed record nor
+its root placement is transplanted.
+
+One canonical-path compile compares all 18 resource functions, 262 actual
+bindings and six full literals. Seventeen companion code identities remain
+unchanged; 13 exacts retain 3,050 bytes. Bank still has 425 instruction boundaries,
+a 180-byte frame, 23 calls and 22 branches. Only 18 disp8 bytes change through
+five local-home substitutions. `yoffset` now occupies the original EBP−48:
+the read destination at `0x40470A` and consumed load at `0x404864` recover two
+original bytes, with **no lost matching original bytes**. Width stays EBP−52;
+the color key, descriptor, result and upload-pointer homes remain correct.
+The other scalar homes and two multiplication orders remain unresolved.
+
+Ten unchanged existing bank cases pass: seven real SBKs and three existing
+small-stream/failure/empty cases. Native and MinGW cached configurations each
+compile 32 sources because prior trials restored input bytes with newer mtimes;
+the completed builds are not repeated after correcting a one-compile metadata
+expectation. The VC4 builder compiles 31 production objects and reuses 86.
+Across their recorded source inputs, only `resources.cpp` content changes.
+All 117 objects, 19 original CRT members and six OS DLLs remain explicitly bound.
+The complete old/new PE comparison finds only 18 bank displacement bytes and
+18 bytes in parsed timestamp fields. All 1,099 MAP records, loader relocations,
+resource payloads and remaining image bytes agree. New executable SHA256:
+`ed41c8fe134dea66ab0d5eb88779160b0b572ad7a72331b67e0b16ecb7a6c450`.
+No game, new provider or full replay runs.
+
+The matching compile takes 4.609 seconds on one CPU/35%, peaks at 210,378,752
+bytes and records zero memory-limit events. Private
+`.analysis/author-bank-debug-names-20261018/` retains source/role proofs, complete
+comparisons, selected cases and integration evidence. The source changes 235
+current semantic input inventories. A separately documented pre-existing hash
+gap refreshes 179 helper fields after the earlier streamed-hash change; their
+173-row intersection gives 241 changed input inventories, including six
+helper-only rows. Historical case counts and execution scopes are unchanged.
+Current totals remain 249 authored exact / 21 candidates and 394 total exacts.
+After independent integration review, 59 obsolete objects, before snapshots,
+proof copies and production-history files are archived and every member hash
+verified before removal. Net allocated release is 7,876,608 bytes after archive,
+cleanup script, receipts and seal. Current tested products, directly referenced
+producer receipts and useful build caches remain.
+
+## Allocation-only pointer scope, October 17
+
 The bank loader's temporary record pointer now belongs to its allocation,
 null check and publication block. After publication, every record access reads
 the live bank slot; the pointer has no later consumer. The file pixel buffer

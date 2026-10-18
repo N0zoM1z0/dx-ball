@@ -170,50 +170,50 @@ void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
 }
 
 /* FUNCTION: DXBALL 0x00404610 */
-void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const char *path)
+void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const char *file)
 {
-    DxBallInt saved_bank, sprite, count;
+    DxBallInt saved_bank, i, count;
     DxBallInt row, column, cursor, pitch;
     saved_bank = dxball_sprite_bank;
     dxball_select_sprite_bank(bank);
-    for (sprite = 1; sprite < 254; sprite = sprite + 1)
-        dxball_release_sprite(sprite);
-    dxball_board_file = fopen(path, "rb");
+    for (i = 1; i < 254; i = i + 1)
+        dxball_release_sprite(i);
+    dxball_board_file = fopen(file, "rb");
     if (dxball_board_file == NULL)
         exit(1);
     fread(&count, 4, 1, dxball_board_file);
-    for (sprite = 1; sprite < count + 1; sprite = sprite + 1) {
-        DxBallInt width, height, baseline;
-        signed char code;
-        DxBallUInt pixel_count;
-        DxBallByte *pixels;
+    for (i = 1; i < count + 1; i = i + 1) {
+        DxBallInt width, height, yoffset;
+        signed char letter;
+        DxBallUInt nbytes;
+        DxBallByte *bitmap;
         fread(&width, 4, 1, dxball_board_file);
         fread(&height, 4, 1, dxball_board_file);
-        fread(&code, 1, 1, dxball_board_file);
-        fread(&baseline, 4, 1, dxball_board_file);
-        pixel_count = width * height;
-        pixels = (DxBallByte *)dxball_runtime_malloc(pixel_count + 3);
-        if (pixels == NULL)
+        fread(&letter, 1, 1, dxball_board_file);
+        fread(&yoffset, 4, 1, dxball_board_file);
+        nbytes = width * height;
+        bitmap = (DxBallByte *)dxball_runtime_malloc(nbytes + 3);
+        if (bitmap == NULL)
             exit(1);
         {
-            DxBallSprite *record;
-            record = (DxBallSprite *)dxball_runtime_malloc(sizeof(DxBallSprite) + 1);
-            if (record == NULL)
+            DxBallSprite *new_shape;
+            new_shape = (DxBallSprite *)dxball_runtime_malloc(sizeof(DxBallSprite) + 1);
+            if (new_shape == NULL)
                 exit(1);
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite] = record;
+            dxball_sprite_banks[dxball_sprite_bank].sprites[i] = new_shape;
         }
-        fread(pixels, 1, pixel_count, dxball_board_file);
+        fread(bitmap, 1, nbytes, dxball_board_file);
         dxball_sprite_banks[dxball_sprite_bank].count = count;
         dxball_sprite_banks[dxball_sprite_bank].allocation_mode = allocation_mode;
-        strcpy(dxball_sprite_banks[dxball_sprite_bank].filename, path);
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width = width;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height = height;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->code = code;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->baseline = baseline;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.top = 0;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.left = 0;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.bottom = height;
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect.right = width;
+        strcpy(dxball_sprite_banks[dxball_sprite_bank].filename, file);
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->width = width;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->height = height;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->code = letter;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->baseline = yoffset;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->source_rect.top = 0;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->source_rect.left = 0;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->source_rect.bottom = height;
+        dxball_sprite_banks[dxball_sprite_bank].sprites[i]->source_rect.right = width;
         {
             DxBallColorKey key;
             struct {
@@ -232,36 +232,36 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
             api.description.width = width;
             api.result = dxball_direct_draw->vtable->create_surface(
                 dxball_direct_draw, &api.description,
-                &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface, NULL);
+                &dxball_sprite_banks[dxball_sprite_bank].sprites[i]->surface, NULL);
             /* Creation failure preserves the target's partial owner and leaks;
                it does not restore the bank, close the stream or free these buffers. */
             if (api.result != 0)
                 return;
             key.low = 0;
             key.high = 0;
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->set_color_key(8, &key);
+            dxball_sprite_banks[dxball_sprite_bank].sprites[i]->surface->set_color_key(8, &key);
             api.description.flags = 0x7f9ee;
             do {
-                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->get_desc(&api.description);
+                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[i]->surface->get_desc(&api.description);
             } while (api.result != 0);
             /* GetSurfaceDesc supplies the row stride before Lock; later API writes
                to the descriptor or current record do not replace that snapshot. */
             pitch = api.description.pitch;
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->pitch = pitch;
+            dxball_sprite_banks[dxball_sprite_bank].sprites[i]->pitch = pitch;
             do {
-                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->lock(NULL, &api.description, 0, NULL);
+                api.result = dxball_sprite_banks[dxball_sprite_bank].sprites[i]->surface->lock(NULL, &api.description, 0, NULL);
             } while (api.result != 0);
             cursor = 0;
             for (row = height - 1; row >= 0; --row) {
                 for (column = 0; column <= width - 1; ++column) {
                     api.pixel = row * pitch + column + api.description.pixels;
-                    *api.pixel = pixels[cursor];
+                    *api.pixel = bitmap[cursor];
                     cursor = cursor + 1;
                 }
             }
-            dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface->unlock(NULL);
+            dxball_sprite_banks[dxball_sprite_bank].sprites[i]->surface->unlock(NULL);
         }
-        dxball_heap_release(pixels);
+        dxball_heap_release(bitmap);
     }
     fclose(dxball_board_file);
     dxball_select_sprite_bank(saved_bank);

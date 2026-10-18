@@ -3,7 +3,12 @@
 The current resource closure has18 complete entries:13 exacts/3,050 code bytes
 and five candidates. The [drawing-wrapper owner](exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
 restores keyed draw105 and stretch139, while ordinary draw107/94 and blt199/173
-remain explicit demotions. Release stays269/245, bank1475/66 and PCX979/851.
+remain explicit demotions. Release stays269/245, bank1475/64 and PCX979/851.
+The [actual author declaration inference](exact/BANK_ALLOCATION_SCOPE.md#actual-author-declaration-inference-october-18)
+restores the baseline/yoffset home through one fixed debug-bound model; both
+original byte sites recover with no lost matching bytes. All17 resource
+companion code identities survive. This is partial recovery, without an exact
+promotion or transfer of DOS scopes/types/storage.
 The [independent-board consumer review](exact/INDEPENDENT_BOARD_STORAGE.md#consumer-producer-follow-up)
 retains earlier address-lowering controls. Historical checkpoints below keep
 their own source, count and comparison epochs.

@@ -223,6 +223,35 @@ not global source absence. Private `.analysis/pcx-flow-fingerprint-search-202610
 retains the complete response as a roundtrip/SHA-verified gzip and independent
 review; the redundant raw response is removed.
 
+## Historical header-plus-payload record, October 18
+
+Eight further interface/source-location queries lead to one concrete primary
+record in [Quake gl_warp.c at bf4ac424](https://github.com/id-Software/Quake/blob/bf4ac424ce754894ac8f1dae6a3981954bc9852d/WinQuake/gl_warp.c#L333).
+It has unsigned 16-bit maxima at 8/10 and an unsigned data word at 128. Under
+the stated 32-bit ABI, its expected natural extent is 132 bytes. This is an
+actual historical header-plus-payload declaration, distinct from the previously
+tested complete 128-byte disk header. An initial byte/130-byte guess is corrected
+from the actual source before any model or compilation.
+
+The complete associated loader owns a local record, reads its whole size,
+loads a trailing palette, then seeks back to size minus four before decoding.
+It allocates RGBA pixels from `(xmax+1)*(ymax+1)` and its actual inner guard uses
+`ymax`. This is a different source contract from both inspected game versions:
+signed maxima, exactly 128 byte-getter header writes and subsequent byte-getter
+decoding. Neither game has a header-plus-128 access or escaping header consumer.
+The external record therefore does not identify the game's unused four bytes.
+Do not transplant its unused member or unsigned maxima. No declaration trial
+is supported by this check; it does not establish source lineage. Its `QUAKE2`
+conditional and copyright also do not establish availability before 1.07.
+
+The one complete 21,013-byte source file is fetched at the pinned commit and
+SHA256 `224631788933f8ba5a47fcf19793557460e440dd5c535a109ba68e2ee15c8401`.
+Private `.analysis/pcx-historical-payload-record-20261018/` retains exact source,
+all five web-response carriers, layout/loader proof and independent review.
+Seven raw carriers are archive/member-hash verified and removed, releasing
+86,016 allocated bytes net of archive/cleanup receipts. All 49 protected hashes
+remain unchanged; no compiler, provider, relink, runtime or replay follows.
+
 ## Closed RLE run-index lifetime, October18
 
 Original run-index at EBP−48 has only three access sites:409DAF zeroes it,
