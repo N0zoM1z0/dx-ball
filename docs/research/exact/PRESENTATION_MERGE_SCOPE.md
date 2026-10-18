@@ -115,3 +115,47 @@ records CPU0/35%, memory high384 MiB/max512 MiB, peak214,421,504 bytes and no
 memory-limit events. Private `.analysis/presentation-backend-comparisons-20261018/`
 retains the raw failure boundary, completed pairs, explicit snapshot joins,
 canonical comparisons and independent review.
+
+## Fixed DisplayOps host-boundary control, October18
+
+Within `src`, the display callback table occurs only as its typedef, extern and
+initialized definition; authored bodies call the restored APIs directly. Typed
+C and Python fixtures consume its live two-pointer state. One fixed model moves
+the unchanged type/table into `display_host.h`/`.c`, preserving C linkage,
+mutability and the two real default callbacks. The actual C fixture explicitly
+imports that header; the prepared CMake change adds the data owner to its shared
+core target. Every-profile integration is not validated. This is distinct from
+the closed RenderOps extraction. Neither model
+recovers a unique original header or licenses combinations of removals.
+
+One canonical-path `/MT` compile compares all20 complete display units and421
+actual named bindings, retaining full multiplicities, addends and target identity.
+Only the fixture declarations/definition move; all authored bodies, includes,
+scopes, types, names and flags remain. No literal or attached metadata is present.
+
+| Unit | Canonical bytes/differences | Private bytes/differences |
+| --- | --- | --- |
+| presenter |984/6|984/2|
+| stretch-effect-sprite |306/0|306/4|
+| queue-sprite-region |272/0|274/245|
+| restore-regions |827/0|846/746|
+| sort-present-regions |296/0|296/3|
+
+The presenter's complete246-instruction inspection identifies the two private
+residual bytes at315/327: the previously matching top index-load pair. Left,
+right and bottom now agree. This redistributes producer choices rather than
+preserving every previously matching producer. Fifteen other complete code
+identities remain unchanged, but four prior exacts regress and no function
+becomes exact. Reject the entire fixed model without variants or selective
+adoption. The prospective23-owner/183-unit expansion is not performed; the host,
+CMake and fixture integration remains prepared but uncompiled/unvalidated.
+
+All852 canonical hashes and20 source modes/nanosecond mtimes are restored before
+documentation. Current source, products, claims and delivery remain unchanged,
+including presenter984/6 and250 authored exact/20 candidates. Private
+`.analysis/display-host-boundary-20261018/` retains the complete proposal,
+comparisons, original-target bindings and independent review. The single-CPU35%
+scope records165,453,824 bytes peak under memory high384 MiB/max512 MiB, with no
+memory-limit events. No provider, runtime fixture, relink, game or full replay
+runs. Closed raw inputs/products are archived and member-size/hash verified
+before removal.

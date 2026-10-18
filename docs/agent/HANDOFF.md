@@ -60,6 +60,14 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed DisplayOps host-boundary control](../research/exact/PRESENTATION_MERGE_SCOPE.md#fixed-displayops-host-boundary-control-october18)
+compares20 units/421 bindings after moving only the fixture type/table. Private
+presenter984/6→984/2 restores three bounds but loses the previously matching top
+pair. Four prior exacts regress; reject the whole model without variants or
+23-owner expansion. All852 canonical hashes and20 source modes/nsmtimes restore;
+the host/CMake/fixture proposal is uncompiled, with no source or exact adoption.
+Peak165,453,824 bytes, CPU0/35%,384/512 MiB, no memory-limit events.
+
 The [presenter min/max observation](../research/exact/PRESENTATION_MERGE_SCOPE.md#current-minmax-rank-observation-october18)
 records155 presenter helper pairs and four field-identified rank decisions.
 A later wait-frame record causes observer exit18; the new object is empty.
