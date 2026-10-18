@@ -60,6 +60,17 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [independent Fixed-class contract](../research/exact/EXACT_FIXED_POINT.md#independent-fixed-class-contract-october18)
+provides a new complete eight-operation source inference. One frozen inline/
+signed32 model preserves nine exacts/715code/136metadata and triangle1710/88,
+across12 functions/141bindings/296metadata. Ordinary polygon privately216→212;
+clipped stays213 but trades an already correct producer for another. Keep the
+whole model private, with no subsets or variants. All746 canonical hashes and
+five modes/nsmtimes restore before docs; current250 authored exact/20 candidates
+and delivery remain. One compile2.613s, peak178,302,976B, CPU0/35%,384/512MiB,
+zero memory-limit events; no runtime or full replay. Reuse the independently
+reviewed archived model and explicit summary correction before another inquiry.
+
 The [additional related source check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#three-related-raster-implementations-october18)
 verifies four new pinned Render/CDib files: voxel-terrain state and GDI wrappers,
 with no established game-routine connection or declaration model. All 851

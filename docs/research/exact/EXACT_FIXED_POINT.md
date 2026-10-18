@@ -9,6 +9,10 @@ The later [genuine API integration](#genuine-api-integration-october18) adopts
 the direct imported MulDiv call and a separate host fixture. The earlier
 callback-table source and its IAT-root interpretation below are historical.
 
+The [independent Fixed-class model](#independent-fixed-class-contract-october18)
+below tests a newly found complete eight-operation contract. Its mixed polygon
+producer changes remain private; current source and exact claims are unchanged.
+
 This batch restores eight previously unmaintained fixed-point entries in the
 shared [C++ raster owner](../../../src/raster.cpp), adding 571 complete code bytes.
 The accepted ledger becomes 63 exact units / 8,802 code bytes and 265
@@ -222,3 +226,50 @@ independent reviews, build/case results and initial verifier failures. The
 highest recorded step peak is 170,659,840 bytes, with CPU 0/35%, 384/512 MiB
 and zero memory-limit events. No VC4 raster recompile, provider query, game launch
 or full replay runs. Current authored coverage remains 250 exact/20 candidates.
+
+## Independent Fixed-class contract, October18
+
+A code-index hit leads to the complete 1,742-byte
+[Fixed.h at Steem commit67925be](https://github.com/steem-engine/steem-engine/blob/67925be656c4b27151fd64de39be218f0ecfb262/include/fixed.h),
+SHA256 `9e1cc435e25ba7468998273ef54685d897ad867eaa4629a18f02acf0ffffc1fe`.
+Its private signed32 `long fx`, empty constructor/destructor, integer constructor,
+signed conversion, by-value division with local `c`, integer comparison,
+reference-return addition and `MulDiv(a,65536,b)` agree with all eight observed
+contracts. This supports a declaration inference beyond a shared constant;
+historical lineage to1.07 and original source spelling remain unproved.
+
+One fixed model moves only those eight operations into an inline header, using
+`Fixed/fx/i/a/c/fixed_div`. Windows long and native signed32 preserve four-byte
+storage; the existing unsigned intermediate shift remains. No unused donor
+constructors/operators or invented triangle names enter the model. The actual
+emitted eight-function order agrees with the original address order, even though
+the scalar helper definition precedes the class. This permits inline ownership;
+it does not uniquely establish the original declaration context.
+
+One unchanged-recipe VC4 compile compares all12 full functions,141 actual
+code/data bindings and296 metadata bytes. All nine prior exacts retain715 code/
+136 metadata bytes; triangle keeps its complete1710/88 result and160 metadata
+bytes. Ordinary polygon privately improves1543/216→212 by restoring two next/used
+comparison producers, with no formerly matching instruction lost. Clipped stays
+1592/213, but reverses an already correct first/second-Y producer while restoring
+a later sort comparison. The unchanged difference count conceals this tradeoff.
+
+Keep the whole model private, without subsets or further variants. The eligible
+independent class model does not establish a historical fidelity gain sufficient
+to adopt those mixed polygon changes. Current source, products and250 authored
+exacts/20 candidates remain. Full input hashes, actual eight-definition bindings,
+metadata ownership and local-target guards pass independent review. All746
+protected hashes and five source modes/nsmtimes restore before documentation;
+the temporary header is removed. A stale-variable bug in the summary's candidate
+display is corrected in a separate journal from unchanged raw comparisons,
+without repeating the compiler or producer.
+
+Private `.analysis/fixed-muldiv-code-index-20261018/` retains the complete donor,
+index responses, frozen model, comparisons and independent reviews. Archive
+members are size/SHA verified before deleting proposal objects, source copies
+and closed helpers. Compilation takes2.613 seconds; its comparison scope peaks
+at178,302,976 bytes under CPU0/35% and384/512MiB, with zero memory-limit events.
+No native build, relink, provider query, runtime case, game or full replay runs.
+Two additional ratio-index queries establish no connected triangle: the first
+matches comment openers; the corrected parenthesized-denominator query returns
+no match. These are bounded index findings, not proof of source absence.
