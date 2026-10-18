@@ -60,6 +60,18 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [earlier Game SDK source](../research/exact/EXACT_FIXED_POINT.md#earlier-game-sdk-source)
+now confirms an active XOR macro in a catalogued1995 source copy. Its full
+controller body/header otherwise equal the tested donor; do not recompile that
+unchanged model. The [original publisher packages](../research/exact/AUTHOR_SOURCE_CONTEXT.md#original-publisher-source-packages-october18)
+are also retrieved through actual snapshot/page/iframe links: BackBuffer.zip
+25,190B and Welch Simple1.zip15,964B, all16 ZIP members integrity-checked.
+Complete selected source reads find materially different DX-Ball2/GDI display
+flows, without a new1.07 declaration model. Reuse these received artifacts and
+reviews rather than retrying their retrieval. Source/delivery and250 authored
+exacts/20 candidates remain; no compile/provider/runtime/full replay in this pass.
+Network acquisition peaks at43,548,672B under CPU0/35%,384/512MiB, zero memory events.
+
 The [Microsoft flip2d controller](../research/exact/EXACT_FIXED_POINT.md#microsoft-flip2d-controller-october18)
 now independently connects the Fixed header to a complete triangle algorithm.
 Its three POINT arguments, root d/d0/x/x0/y and long constructor support one new

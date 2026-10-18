@@ -1,5 +1,10 @@
 # Public author context and the pinned target
 
+The [original publisher source packages](#original-publisher-source-packages-october18)
+are now retrieved through actual archived page and download links. Their received
+identities and inspected source boundaries are recorded below; they do not
+establish new game-function declaration models.
+
 A bounded primary-source search checks whether publicly released author material
 can resolve the remaining game declarations or compiler context. The initial
 search below established no new target-function identity or exact acceptance;
@@ -51,6 +56,55 @@ game, relink or replay runs.
 Private `.analysis/author-source-context-20261017/` retains primary pages,
 archive/member hashes, immutable source blobs, the executed check and the
 bounded finding. No expanded repository or compiler products are created.
+
+## Original publisher source packages, October18
+
+Following actual archived links now retrieves two previously unavailable source
+packages. The1999 publisher home links to `seumas/index.html`, whose graphics
+article links to Michael Welch's old home page. That page supplies `simple1.zip`.
+The [June2000 programming index](https://web.archive.org/web/20000619112018/http://www.longbowdigitalarts.com/seumas/index.html)
+instead supplies `backbuffer.html`, with an actual `BackBuffer.zip` download link.
+The received download pages are HTML playback wrappers; following their explicit
+iframe URLs obtains the ZIP bytes. No attachment filename is guessed.
+
+| Received artifact | Bytes | SHA256 |
+| --- | ---: | --- |
+| [BackBuffer.zip, August2000 capture](https://web.archive.org/web/20000818054308if_/http://www.longbowdigitalarts.com:80/seumas/BackBuffer.zip) | 25,190 | `b04322c16f5884824ed6e07da017ca0f46eb71548e05e2222ddd2c14802df766` |
+| [simple1.zip, October1999 capture](https://web.archive.org/web/19991008054954if_/http://home.stny.lrun.com:80/scorched/simple1.zip) | 15,964 | `151752ebee1f9214563936dcfeef43f2a6973b4da473a4088a04ebed1d1a393c` |
+
+All16 ZIP members pass size/CRC checks and have retained SHA256 identities.
+Actual capture dates, ZIP timestamps and article dates remain separate facts;
+these integrity checks do not prove identity with the original1.07 source.
+
+The complete BackBuffer header/implementation, CreateDib header/implementation
+and readme identify a DX-Ball2 display framework and GDI wrappers. BackBuffer
+merges the first touching dirty rectangle during insertion and maps/clips/scales
+rectangles while updating. The original1.07 presenter instead sorts left+top
+keys, merges sequentially, marks consumed records with top9999, then selects
+separate clipping loops. Reused complete REA presenter evidence and current
+source confirm this material difference. Generic DirectDraw calls cannot recover
+the game's missing local declarations. The inspected CreateDib code wraps
+HDC/HBITMAP, palettes, BitBlt and StretchBlt; it supplies no PCX or Fixed triangle
+implementation in those units. The two implementations also differ from the
+already pinned later ParticleFire versions; this is not a complete history.
+
+Independent reading of all four Simple1 source/readme files finds a1997 VC5
+CreateDIBSection example with a600×400 window, random pixels and WM_PAINT drawing.
+It does not establish the game's DirectDraw presentation,44-byte sprite/bank or
+PCX declaration lineage. Its included executable is only integrity-checked,
+never run. BackBuffer's GL files receive only outline/marker inspection; its
+demo bodies are not semantically examined. Negative conclusions keep these
+explicit file boundaries.
+
+No source model, compiler run, provider query, runtime case or full replay follows.
+All746 protected hashes remain unchanged before these documentation edits.
+Private `.analysis/backbuffer-native-route-20261018/` retains complete responses,
+actual links, both ZIP payloads, full member inventory and independent reviews.
+One availability-query429 is preserved; there is no immediate retry. Recorded
+acquisition scopes use CPU0/35%,384/512MiB and peak at43,548,672 bytes, with zero
+memory-limit events. No full SDK, standalone ZIP copy or extracted source tree
+is accumulated. This closes the publisher-package retrieval question while the
+game-specific source questions remain open.
 
 ## Three related raster implementations, October18
 

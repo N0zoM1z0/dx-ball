@@ -332,3 +332,32 @@ The bounded triangle-prototype index query misses even this retrieved source and
 reports a shard limit; index negatives cannot establish source absence. Seek an
 independently evidenced earlier controller revision or the game's modifications
 before another compiler model.
+
+### Earlier Game SDK source
+
+The [archived Game SDK catalog](https://archive.org/details/gamesdk) identifies a
+DirectX1.0 package dated December9,1995. Its complete archive-view inventory
+supplies1,245 member links, including `SDK/SAMPLES/FLIPCUBE/TRI.CPP` and `FIXED.H`,
+both stamped September29,1995. Individual member retrieval obtains the complete
+4,295-byte triangle source, SHA256
+`ad52912189f372c78bf11d9b6796e2bf232bfce9ff340409619f94ef2c65d3e4`,
+and1,742-byte header, SHA256
+`9e1cc435e25ba7468998273ef54685d897ad867eaa4629a18f02acf0ffffc1fe`.
+The full13,331,158-byte RAR is neither downloaded nor independently hash-verified;
+catalog dates and member timestamps are observations, not independent historical
+authentication.
+
+After newline normalization, the complete header equals the MSDN98 version;
+its raw bytes also equal the earlier Steem copy. The complete triangle difference
+is the1995 copyright and active y-then-x XOR macro, before the later Alpha workaround.
+All source from `FillScan8` through the end of `Triangle8` is identical, including
+the controller's root declarations and three POINT arguments. The frozen model
+above already retained the game's XOR swaps, so this earlier source supplies no
+new compiler model. No compile or source variation follows. The game's clipping,
+unread division and declaration modifications remain unresolved.
+
+Private `.analysis/triangle-sdk-versions-20261018/` retains received response bytes,
+actual member inventory, source difference and independent review. Eleven response
+records verify; all746 canonical hashes remain unchanged before documentation.
+Three source members are retrieved, with only selected markers read in the larger
+`FLIPCUBE.CPP`. Neither the full archive nor every sample implementation is examined.
