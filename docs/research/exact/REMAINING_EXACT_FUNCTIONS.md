@@ -113,6 +113,14 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
+At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
+closes after one resource compile: all18 complete raw/resolved bodies and13
+prior exacts remain unchanged; full COFF differences are timestamps only.
+The canonical const API and250 authored exact/20 candidates remain. The new
+complete Mac path helper does not recover Windows qualification or input
+mutability. Other27 header owners stay uncompiled for that rejected proposal.
+Reuse the archived evidence; no qualifier variants or full replay follow.
+
 The [public author-context check](AUTHOR_SOURCE_CONTEXT.md) initially inspected
 a VC5 tutorial and later publisher sources; its34-candidate count is historical.
 Actual DOS debug records subsequently connect the author's font, palette and

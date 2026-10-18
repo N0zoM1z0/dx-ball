@@ -410,3 +410,67 @@ Historical rotation zero-store gaps are superseded by the complete current
 frame-role correspondence. Re-examine original Windows producer/declaration
 evidence before qualifying another model; no blind spelling/context variants,
 repeated closed controls or automatic foreign queries follow this result.
+
+## Bank filename qualification and path boundary
+
+The next bounded question closes an actual gap in the retained bank family:
+`.loadshapes__FiPc` passes its input through `.cp_path__FPc`, whose complete body
+was not among the17 corrected exports. It does not call `Bankfile::Open`.
+One REA6.5.0 process capture queries the saved pinned Ghidra12.1.4 project without
+reimport, global analysis or an r2 assignment. The new span is416 bytes at
+`10019A60..10019BFF`,104 decoded instructions,18 branches, six calls to four
+unnamed targets, and one return. Raw/loaded bytes agree with the original PEF.
+
+Input is saved in r28. A pointer is loaded into r31 through `[r2-0x7234]`;
+all four direct nonstack byte-store sites use r31 or its derived cursor.
+The no-separator path returns the original input; the conversion path returns
+r31. The complete caller forwards that return to an open-like target, but later
+copies the original r28 filename into bank storage. These observations fit a
+port path-output buffer. With r2 unset, its identity/disjointness are unknown;
+the four callees are not fully inspected. Do not claim no indirect input write,
+a specific buffer capacity, recovered CFM TOC, or proven CRT identities.
+The decompiler omits the first call's actual input argument; instructions govern.
+
+The positive Pc metadata remains a foreign unqualified-pointer declaration,
+not a recovered Windows cv qualifier or a mutable-input requirement. Together
+with the complete bank connection it supports one bounded read-only API inference.
+The fixed private proposal changes only the bank definition/prototype and genuine
+RuntimeOps/interposer callback boundary to char*. Seven explicit C++ literal
+casts and one const inspector cast preserve the maintained no-write behavior;
+no fake buffer, function-pointer cast, unrelated filename API or operation changes.
+Earlier bank-name and three-UI-qualifier controls did not test this model.
+
+One resource compile is the frozen early rejection gate for the prospective
+28-owner/272-function closure. All18 complete raw/resolved code identities remain
+unchanged, including bank1475/64, draw107/94, blt199/173, release269/245 and
+PCX979/851. Thirteen prior exacts/3,050 bytes survive. All262 actual bindings and
+multiplicities, six physical literal anchors/whole containers and original-PE
+payloads verify; there are no attached metadata or same-section references.
+All18 mapping tables freeze before private comparisons. The complete12,332-byte
+objects differ only in COFF timestamp bytes4–5; all other bytes agree.
+Reject the entire model without qualification variants or adoption. The other
+27 owners/254 functions and native/fixture consumers stay uncompiled/unknown.
+Canonical source keeps the const filename API.
+
+All754 protected hashes/modes/nsmtimes restore under the serial lock, with
+Toolchain verification before/after including failure cleanup. The one compile/
+restore/comparison pipeline takes4.795s and peaks193,404,928 bytes with zero
+memory-limit events. The saved-project capture peaks403,165,184 bytes with767
+soft-high events and zero max/OOM events. Both use CPU0/35%,384/512MiB; the
+capture uses Java128MiB and Node192MiB. There is no further provider query,
+native build, relink, game or full replay after rejection.
+
+Private `mac-path-contract-20261018` retains the complete selected export,
+question, resource receipts and independent contract review. Process Evidence
+`ev_acd98536850530d1f826c778dcdfaea0a33588ea746708b4111168ceaf0ce64c`
+is retained in the verified archive; it is not native-provider admission or a
+snapshot. `bank-filename-qualifier-20261018` retains eligibility/plan/result
+reviews, summary, restoration and cleanup receipts. Its33-member archive is
+114,955 bytes, SHA-256
+`6f7aae5e8e1dc37d9f9e9f99f6615b05ae3876f7099e26977a99e8b1a6590d42`.
+Every member size/hash verifies before exact-list deletion of both temporary
+objects, seven proposals and closed capture/runner carriers. Net allocated
+release is729,088 bytes including the archive/manifest/cleanup receipt.
+Current tested products, useful caches, static Mac evidence and saved project
+remain; source/delivery and250 authored exact/20 candidates are unchanged.
+The user then stops exploration and requests handoff preparation.
