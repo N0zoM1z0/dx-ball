@@ -60,6 +60,24 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed drawing parameter model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-drawing-parameter-declaration-model)
+uses the retained complete DOS `num/x/y` index/coordinate witnesses for one
+four-function,16-token inference. The earlier missing-operation gate was an
+uncompiled conceptual decline and is withdrawn. One resource compile compares
+all18 complete functions/262 bindings/six full literals: every code identity
+remains unchanged, including13 prior exacts/3,050 bytes. The complete12,332-byte
+COFF differs only at two parsed timestamp bytes. Reject the entire fixed model
+without further spelling, subset or context variants. Independent review
+verifies all851 protected hashes and original source bytes/mode/nsmtime; source,
+current delivery and counts remain unchanged. The compile takes4.186 seconds,
+peaks at161,742,848 bytes, and has zero memory-limit events under one CPU/35%
+and384/512 MiB limits. No provider, native build, oracle, game, relink or full
+replay runs. Archive/member checks precede deleting20 obsolete raw carriers,
+including both objects, releasing421,888 allocated bytes net. Current products
+and useful caches remain. The tighter384/512 MiB defaults now appear in
+AGENTS and the REA instructions; reuse retained compiler evidence instead of
+repeating the already answered NameMap/mode/ID/cursor investigations.
+
 The [fixed capture/release declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-capturerelease-declaration-model)
 connects the newly checked complete DOS `getshape` allocation/null/publication
 and indexed metadata roles to the game. Actual debug names support one paired
@@ -912,7 +930,7 @@ record order alone do not justify another compilation.
 Its displayed char-pointer types also do not establish absence of pointee
 `const`; the proposed qualifier change is declined before compilation.
 
-Continue exploring the remaining21 authored candidates. The user explicitly
+Continue exploring the remaining20 authored candidates. The user explicitly
 corrected the earlier missing-declarations blocker: recovering those facts is
 the task. Original source, MAP/PDB or build records would help but are not a
 prerequisite. Do not treat an unproved declaration as proof no hypothesis can be
@@ -953,7 +971,7 @@ in `reconciled/`. The later paddle scope replaces the runtime producer; the othe
 in `.analysis/independent-board-production-20261017/`. Current source/object and
 comparison authority follows the table above. No full replay or game run.
 
-Continue the21 current authored candidates, including the eight declared-context
+Continue the20 current authored candidates, including the eight declared-context
 demotions. Choose a concrete producer, ownership, ABI or lifetime discrepancy;
 no evidence requires accepting the present declaration context as optimal.
 Do not repeat the closed five-declaration broad trial, member-call probe or

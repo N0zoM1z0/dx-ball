@@ -419,10 +419,11 @@ The game instead uses banked44-byte records, source rectangles, surfaces and
 explicit COM destinations. Complete current draw/blt/release bodies retain
 their authoritative hashes and candidate results. The earlier complete
 47-byte deletion proof is reused rather than repeated: it frees only the DOS
-pixel frame. This supports a related drawing family, but supplies no missing
-game operation or source declaration. Do not compile parameter-name or context
-variants from this boundary. Fastgraph callee bodies and runtime clipping
-semantics are outside the check.
+pixel frame. This supports a related drawing family. The initial decision to
+require a missing game operation before testing its parameter declarations was
+too restrictive; the single fixed inference below supersedes that uncompiled
+decision. Fastgraph callee bodies and runtime clipping semantics remain outside
+the check.
 
 Private`.analysis/author-plasma-draw-delete-boundary-20261018/` retains all105
 new wrapper instructions, raw debug/fixup identities and independent review.
@@ -432,6 +433,47 @@ is created. Removing two verified raw carriers releases77,824 allocated bytes
 net of gzip/receipt/seal; all24 recorded input hashes remain unchanged.
 There is no compiler, new provider, download, runtime or full replay,
 and current249 authored exact/21 candidate claims remain unchanged.
+
+### Fixed author drawing parameter declaration model
+
+The retained complete three-wrapper proof supports one fixed index/coordinate
+inference for the four Win32 three-argument drawing definitions:
+`dxball_draw_sprite`, `dxball_draw_keyed_sprite`, `dxball_blt_sprite` and
+`dxball_blt_keyed_sprite`. Rename only their bound `sprite` parameter tokens to
+`num`; `x/y` already match the actual debug-bound coordinate roles. Sixteen
+tokens change. This is an inferred declaration, not uniquely recovered original
+spelling or a one-to-one mapping of Fastgraph modes to COM transparency/clipping.
+All Win32 types, banked records, rectangles, receivers, flags, operations,
+headers, declaration scopes and source order remain. The five-argument stretch
+and rotation functions are outside this fixed model. Earlier capture/release,
+record-type and shared-context controls did not compile this four-function model.
+
+One canonical-path resource compile compares all18 complete functions,262 actual
+bindings and six full literals. Every code identity remains unchanged, including
+13 prior exacts/3,050 bytes. Ordinary draw stays107/94 and blt199/173; bank1475/64,
+release269/245 and PCX979/851 also stay unchanged. The complete12,332-byte COFF
+differs only at offsets4/5 within the parsed four-byte timestamp field; every
+other object byte agrees. All262 relocation provenance rows use the same actual
+offsets and identities, with the mapped units equal to the maintained manifest.
+Reject the entire model without further spelling, subset or context variants.
+
+Independent result review checks all851 protected hashes and restored source
+bytes, mode and nanosecond mtime, complete comparisons, literal payloads, local
+targets and the original in-memory DOS archive/debug/fixup witnesses. Current
+delivery stays `d5dca81954937a6f9f3212fb041a1aed02f455b037dea0d9b7997a19a98587f6`;
+counts remain250 authored exact/20 candidates and395 total exacts. No provider,
+native build, oracle, game, relink or full replay runs. The single compile takes
+4.186 seconds, peaks at161,742,848 bytes under one CPU/35% and384/512 MiB limits,
+and records zero memory-limit events.
+
+Private `.analysis/author-drawing-debug-names-20261018/` retains the plan,
+role proof, reviews, summary and sealed archive. Member size/hash verification
+precedes removal of20 obsolete raw carriers, including both objects, releasing
+421,888 allocated bytes net. Current products and useful caches remain.
+Independent result receipt SHA-256 is
+`1443420ea17c3f01d296265e91804a7266738ceed9211ad77a1cd4ef5a6eb0fe`;
+archive SHA-256 is
+`83bfed2cee236f8615b4d10e956fb94886e9302a6f9c3ced0a685439e0253065`.
 
 ### Fixed author capture/release declaration model
 

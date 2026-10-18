@@ -183,13 +183,17 @@ systemd scope, in addition to the existing one-CPU affinity and serial session:
 
 ```bash
 systemd-run --user --scope --quiet \
-  -p CPUQuota=35% -p MemoryHigh=640M -p MemoryMax=768M \
+  -p CPUQuota=35% -p MemoryHigh=384M -p MemoryMax=512M \
   scripts/rea session path/to/requests.json
 ```
 
 Use the same scope for compiler/Wine commands. The kernel reports
-`cpu.max` as `35000 100000` and `memory.max` as `805306368`; these are whole-tree
-limits, not just launch-process settings. Do not run heavy sessions together.
+`cpu.max` as `35000 100000`, `memory.high` as `402653184`, and `memory.max` as
+`536870912`; these are whole-tree limits, not just launch-process settings.
+These tighter defaults also apply to passive readers. Prefer the retained
+Evidence and traces: the historical cold-import peaks above used the older
+640/768 MiB scope and do not establish operation within the new limit.
+Do not run heavy sessions together.
 The historical general helper still records its earlier 512 MiB profile;
 the current REA wrapper explicitly selects the smaller heap. Node 22.19.0,
 Ghidra 12.1.4 and the existing JDK remain pinned. Keep discovery bounded and
