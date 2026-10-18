@@ -60,6 +60,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed paired palette iterator-scope model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-iterator-scope-model)
+uses the related author's actual emitted procedure ownership for both signed
+`i` locals. A complete raw 349-record walk and official Watcom scope consumer
+exclude silently omitted block records; historical producer block retention
+remains unknown. Earlier sources already compiled root `i` after RGB under
+older names/left C, so this is one independently grounded joint inference,
+not a first root trial. Move only the existing iterator after current RGB and
+remove its plain loop wrapper in both functions. Two serial compiles compare
+all 27 complete units/459 bindings: all raw/resolved code identities stay
+unchanged, including 22 prior exacts/5,524 bytes; right remains 234/0 and left
+234/3. Reject the whole pair without further name/scope/order/owner/flag variants.
+Independent review verifies actual COFF bodies/bindings, 851 hashes and both
+sources' original bytes/modes/nsmtimes. Current source, delivery and 250 authored
+exact/20 candidates remain. The full affected comparison takes 7.609 seconds,
+peaks at 166,141,952 bytes, and uses one CPU/35% and 384/512 MiB with zero
+memory-limit events. No provider, native build, oracle, game, relink or full
+replay runs. Archive/member verification precedes removing 21 obsolete raw
+carriers, including two objects, releasing 569,344 allocated bytes net.
+Current tested products and useful caches remain.
+
 The [fixed paired RNG declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-rng-declaration-model)
 binds two full DOS helpers (108 bytes / 51 instructions), actual typed `num`
 records and three actual CRT/clock calls to the game's complete 31/49-byte helpers. Preserve
@@ -1173,7 +1193,7 @@ C++17/x87/excess-precision options and C linkage. Prepare native interposers bef
 taking the lock. Automated audio goes to `PULSE_SINK=dxball_reconstruction_silent`;
 never change the default sink.
 
-Run heavy commands in a user scope with CPU35%, memory high640 MiB/max768 MiB.
+Run heavy commands in a user scope with CPU35%, memory high384 MiB/max512 MiB.
 [REA](REA.md) is pinned at6.5.0/Ghidra12.1.4 with a256 MiB heap. Reuse retained
 Evidence first, query only missing facets, retain full responses and close/save
 sessions. Use LeanToken for bounded source reads. A timeout/truncated preview is

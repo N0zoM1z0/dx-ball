@@ -369,6 +369,47 @@ history count from four to six before creating an archive or deleting anything:
 the builder also retains the two overwritten objects while reusing their new
 accepted products. No compiler or game run is repeated for that correction.
 
+### Fixed author palette iterator-scope model
+
+The related DOS artifact's complete module0 local stream contains 349 records:
+57 procedures, 261 locals, 30 module variables and one base record. None is a
+lexical `CODE_BLOCK` record (`0x20`/`0x23`). Both signed `i` records, at file
+offsets 115645 and 115743, follow their respective parent-zero `shiftup` and
+`shiftdown` procedure records. The official Watcom format distinguishes blocks
+from routines; its `FindLclVar`/`WalkOneBlock` consumer stops at the next code
+record, and `WalkScopedSymList` follows the actual parent field. The complete
+raw traversal therefore establishes emitted procedure ownership, rather than
+merely relying on the retained parser's function association. It does not prove
+that the historical producer preserved every original C lexical block.
+
+These scope records provide an independent basis for one fixed paired inference
+in the current `r/g/b/mode` model: move the existing signed `i` immediately after
+the root RGB declaration and remove its old plain loop wrapper. Names, types,
+initialization, loop operations, endpoints, whole-entry moves, APIs and flags
+remain. Earlier `palette-operation-scopes` before sources already compiled root
+`i` after RGB with older names and a C left rotation; this is not a first root
+trial. The later declaration-order control kept `i` nested. Neither changed
+context alone nor the remaining comparison difference motivates this revisit.
+
+Two serial canonical-path compilations compare all 27 complete UI/display units
+and all 459 actual bindings, with no literal or metadata references. Every raw
+and relocated code identity stays unchanged, including all 22 current exacts
+covering 5,524 bytes. Right remains 234/0 and left 234/3; all five candidates are
+unchanged. Reject the entire paired model without source adoption or further
+name, scope, order, owner or flag variants. This result does not establish that
+all possible source scopes are equivalent or recover the original lexical C.
+
+Independent review verifies the actual complete COFF spans and bindings, both
+source transformations, 851 protected hashes, original bytes/modes/nanosecond
+mtimes and the unchanged delivery. Private
+`.analysis/author-palette-iterator-scope-20261018/` retains the sealed proof,
+plan, comparisons and reviews. Compilation/comparison takes 7.609 seconds with
+a 166,141,952-byte whole-scope peak under one CPU/35%, memory high 384 MiB /
+maximum 512 MiB, and zero memory-limit events. No provider, native build,
+oracle, game, relink or full replay runs. Archive member sizes and hashes verify
+before deleting 21 obsolete raw carriers, including two objects, releasing
+569,344 allocated bytes net. Current products and useful caches remain.
+
 ### Bank-loader core and ownership boundary
 
 Complete`loadshapes` and`fontload` bodies contain125/128 instructions and
