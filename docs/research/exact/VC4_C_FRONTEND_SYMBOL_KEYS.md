@@ -1,11 +1,12 @@
 # VC4 C frontend symbol keys
 
 The pinned C frontend has its own observed low24 ID writers and serializer
-getter. This closes the static producer-location gap left by the
+getter. The later unchanged editor observation below also links the actual
+current count/iterator objects from counter assignment to that getter.
+This closes the producer-location gap left by the
 [actual C-source C2 comparison observation](VC4_EXPRESSION_ORDERING.md#c-source-comparison-observation-october18).
-It does not yet connect a particular editor symbol's creation, emitted bytes
-and C2 record in one execution. No source model or new exact claim follows
-from the static locations alone.
+It does not capture emitted bytes and their C2 consumption in one execution.
+No source model or new exact claim follows from these current producer facts alone.
 
 ## Target and retained evidence
 
@@ -125,9 +126,84 @@ with its retained C++ carrier releases8,769,536 allocated bytes net after the
 archive and manifest cost. Full observations, the current snapshot, small
 receipts, tested game products and useful incremental caches remain.
 
-The next concrete observation is C1 runtime mode and source-symbol identity at
-this getter/serializer during the unchanged editor compile, followed by the
-actual relevant writer and emitted-record relationship. A selected writer is
-not yet known to produce `i` or the hit-region count. Original-game IDs and
-declarations remain separate questions; these locations do not justify blind
-name, order, type, scope, flag or owner variants.
+That static checkpoint left runtime mode and editor-symbol identity open.
+The following observation resolves the current writer/getter question for the
+selected count and iterator. Original-game IDs and declarations remain separate
+questions; these findings do not justify blind name, order, type, scope, flag
+or owner variants.
+
+## Current editor writer/getter observation, October18
+
+One unchanged `editor.c` compilation observes actual CL/C1/C2 with no C1XX.
+A small Windows debugger watches four-byte writes to the own-C1 counter
+`455E14`. Eighteen complete INC instruction starts come from the retained55
+C1 reference addresses and their pinned PE bytes. A second hardware watch is
+armed only when the following instruction directly loads object`+18`, using
+the actual register context before that load. Unsupported paths remain gaps.
+The two software traps restore and execute only the original getter MOVs at
+`4180E8` and mode0 alternative`4401D7`.
+
+The capture records1,271 counter writes,1,265 watched object writes and464
+getter reads with464 guarded MOV steps. Every getter observes mode1; mode0 has
+zero hits. Six counter paths have an unsupported following load. There are no
+additional rejected assignment candidates or unresolved instruction boundaries.
+Each supported writer is established by forward decoding the captured
+PE-identical64-byte window from an attested INC end, stopping on intervening
+control flow. A three-byte suffix alone is not accepted as an instruction.
+Six complete writer sites are observed: `4045A4`, `406B04`, `41249B`, `4185D9`,
+`419AA2` and `41AA8A`. These are current executed sites, not all possible writers.
+
+Both selected roles are assigned at the newly observed `406B04`, after the
+actual `406AEF` counter increment. The store is the complete
+`MOV [EDI+18],EDX`. Its earlier counter value supplies low24 while preserving
+the object's high8 bits:
+
+| Captured role during `dxball_find_hit_region` | Counter before→after | Source address | Getter reads in that context |
+| --- | ---: | ---: | ---: |
+| `dxball_hit_region_count` |219→220|9434912|1|
+| `i` |1178→1179|62285436|9|
+
+All464 reads join an earlier supported write by the same PID/thread/object
+address, complete word and chronology. The table's raw bounded source`+8`
+strings and context-object`+8` strings identify these samples. They do not
+establish a universal source-symbol ABI, complete object lifetimes or absence
+of intervening alias writes. The object watch clears after its first write.
+
+The selected values agree with the earlier sealed identical-input/output C2
+observation's keys219/1178 and its rank pair32/47. This capture does not repeat
+the wire/C2 traps or claim same-run byte consumption. The current selected ID
+producer is now answered; original-game IDs/declarations remain unknown. Use
+the retained producer/rank evidence when selecting independent original-source
+or translation-unit evidence before another source inference or compiler run.
+Another unchanged getter or C2 capture would not recover original declarations.
+
+The debugger checks general registers, EIP/ESP and non-debug flags when updating
+debug contexts, and checks the actual MOV result at every getter step. These
+are guarded observations: the counter log serializes prepared resume Dr6/Dr7,
+and post-getter logs contain EAX plus the guard result rather than every raw
+post-step register. Do not describe the log as an independently replayable
+proof of every context bit. Mandatory reads have zero failures; optional raw
+string reads retain explicit null/unreadable/truncated/terminated outcomes.
+
+All14 complete editor units,223 bindings and12 full literals keep their raw
+and resolved identities, including13 prior exacts/3,267 bytes and all applicable
+local-target guards. Find remains173/172/132. All852 protected hashes and22
+source-input modes/nanosecond mtimes remain unchanged before documentation
+updates. This checkpoint changes this note and the handoff, leaving850 other
+baseline hashes unchanged. Source, delivery and250 authored exact/20 candidates
+remain unchanged. Private `.analysis/c1-editor-id-observation-20261018/` retains
+the complete trace, boundary checks, whole-owner comparisons and review.
+
+One observer build precedes the single9.205-second game compilation. The capture
+scope keeps CPU0/35%, memory high384 MiB/max512 MiB, peaks at166,559,744 bytes
+and has zero memory-limit events. The observer owns a kill-on-close job and
+bounded process group; all three compiler processes exit0. No provider import,
+source variant, relink, game, oracle or full replay runs. The earlier observer
+build's peak was not captured; it used the same resource limits.
+
+Independent passive review reconstructs all supported boundaries/joins and all
+14 full comparisons, including40 exact local-target guards. All54 archive
+members pass size/SHA-256 checks before35 obsolete copied inputs and products
+are removed, including the observer EXE and two objects. Net allocated space
+released is2,342,912 bytes. Complete raw evidence remains in the verified archive;
+current tested game products and useful incremental caches remain.

@@ -60,6 +60,30 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [actual C1 editor writer/getter observation](../research/exact/VC4_C_FRONTEND_SYMBOL_KEYS.md#current-editor-writergetter-observation-october18)
+uses one unchanged editor compile. Actual mode1 reads join the count key219
+and local`i` key1178 to the same C1 store`406B04`, after counter INC`406AEF`.
+These agree with the earlier sealed C2 keys under identical inputs/outputs;
+there is no same-run wire/C2 claim. All464 getters join earlier object writes;
+1,265 complete writer boundaries are established across six sites, with six
+explicit unsupported counter paths among1,271 counter writes. All464 getter
+MOV steps pass reviewed register/flag guards. Raw +8/context strings identify
+these samples, not a universal ABI or complete object lifetime. Original Dr6
+and complete post-MOV contexts are guarded by code rather than independently
+replayable from raw logs. All14 units/223 bindings/12 literals,13 exacts/3,267
+bytes and852 protected hashes remain unchanged before documentation updates;
+this note and the C1 note leave850 other baseline hashes unchanged. Source,
+delivery and250 authored exact/20 candidates remain. One CPU0/35%,384/512MiB,
+capture peak166,559,744 bytes, zero memory events;9.205 seconds. No provider,
+source variant, relink, game or replay. The selected current ID producer is
+answered. Next seek independent original-source/translation-unit evidence for
+a bounded declaration inference; do not repeat an unchanged current getter/C2
+capture solely to rediscover these IDs or turn key arithmetic into a sweep.
+Independent review reconstructs the actual joins and all14 full comparisons,
+including40 local-target guards. All54 archived members pass size/SHA-256 checks
+before35 temporary carriers, including one EXE/two objects, are removed; net
+allocated space released is2,342,912 bytes. Current game/products/caches remain.
+
 The [own-target C1 key investigation](../research/exact/VC4_C_FRONTEND_SYMBOL_KEYS.md)
 adds the attested `vc4-c-frontend` REA route and retains57 observations in one
 normally closed import. Actual C1 getter `4180DB` selects source`+18` low24
@@ -1121,8 +1145,11 @@ but never integrated. [VC4 backend record observations](../research/exact/VC4_BA
 and the [expression-ordering follow-up](../research/exact/VC4_EXPRESSION_ORDERING.md)
 retain64 cumulative REA records in a separate closed snapshot. The latter
 establishes the actual child swap/opcode map and a rank derived from numeric
-record key`+0x24`;44 executions of the pinned helper bytes pass. Concrete game
-node keys/ranks and their final emitted instructions remain unobserved. This is
+record key`+0x24`;44 executions of the pinned helper bytes pass. Later sealed
+resource/editor observations supply current game keys, ranks and corresponding
+complete instruction comparisons. The C1 observation above also supplies its
+actual selected editor ID producer. Original-game intermediate IDs and
+declaration context remain unknown. This is
 not a declaration-order/name/count/flag experiment basis. Reuse the closed
 records before another cold import. Interactive invalid-input queries now retain
 their complete diagnostics without discarding the import; seven mocked cases
