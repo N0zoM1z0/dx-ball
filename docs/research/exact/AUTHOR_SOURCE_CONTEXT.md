@@ -403,6 +403,21 @@ identities verify before docs;250 authored exact/20 candidates remain. All26
 closed raw members are archived/member-hash verified before removal, releasing
 655,360 allocated bytes net. Reuse these exports/data and the saved project.
 
+### Reused Mac shape family and function-name control, October18
+
+The [complete bank/shape connection](MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control)
+reuses five existing bodies/1,996B and supports one fixed function-identifier
+inference, distinct from the closed local/record controls. Exact fast-wrapper
+spellings come from Mac, not the different DOS drawing names. One private
+resource compile/all18 functions/262 bindings/six literals leaves every code
+identity unchanged. Reject the whole name model; the other27 header owners
+remain uncompiled/unknown, and no symbol-ABI compatibility or adoption is claimed.
+All749 protected identities restore before docs;250 authored exact/20 candidates
+and delivery remain. Peak174,260,224B under CPU0/35%,384/512MiB, zero memory events;
+no new provider, native build, relink, game or full replay.
+All25 closed members, including both objects/proposal, are archived/member-hash
+verified before raw deletion, releasing520,192B net; useful products/caches remain.
+
 ## Actual WinG1.0 source package, October18
 
 The [catalogued WinG package](https://ftp.zx.net.nz/pub/archive/ftp.microsoft.com/Softlib/MSLFILES/WING10.EXE)

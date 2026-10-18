@@ -119,3 +119,74 @@ their listed raw copies are deleted. The archive, including both full process
 responses, remains under `.analysis/rea/mac-reference-20261018/`; net allocated
 storage released after archive/journals is655,360 bytes. Useful static data,
 current products and incremental caches remain available.
+
+## Reused bank/shape bodies and API-name control
+
+The next question reuses five bodies from the earlier corrected export, with
+no new engine query or import. Independent review checks all 1,996 bytes,
+499 instructions, 33 calls and 19 branches. All words are decoded. The complete
+Windows capture/load/release dossiers cover 2,589 bytes, 753 instructions,
+32 calls and 31 branches; drawing checks retain their separate scope.
+
+| Actual Mac name | Windows counterpart | Connected operation and limit |
+| --- | --- | --- |
+| `deleteshape` | `release-sprite` | Null guards, live indexed owner, release/free and slot clear; Mac uses an Image destructor instead of explicit COM release and surface clear |
+| `getshape` | `capture-sprite` | Preliminary deletion, allocation/null/publication and metadata initialization; pixel capture uses a different backend |
+| `loadshapes` | `load-sprite-bank` | Save/select bank, release slots1..253, ordered metadata reads, allocation/publication and bottom-up upload; Mac lacks the Windows allocation-mode argument and COM failure path |
+| `fastdrwshape` | `draw-keyed-sprite` | Indexed Image draw through the named `BlitTransFast` boundary |
+| `fastputshape` | `draw-sprite` | Indexed Image draw through the named `BlitFast` boundary |
+
+These fast wrappers do not expose the separate Windows `blt-sprite` rectangle
+producers. Named Image/read-helper targets establish boundaries, not the
+implementation or all-input equivalence of those unread callees. Selected r2
+contexts remain unset. The shared bank stride is `0x418`, but the observed
+record allocation is43 bytes on Mac versus45 on Windows; the baseline field
+is at38 versus40. Do not transplant the foreign record layout or reopen the
+closed record-name model from those already distinct layouts.
+
+The capture caller also demonstrates a decompiler prototype limit. Besides
+r3..r10, it stores four outgoing words at SP+38/3C/40/44: the active pitch,
+479, width and height. The named `cp_blit` signature encodes twelve parameters;
+the default pseudocode prints only eight. Preserve the full caller evidence,
+without claiming recovered callee semantics or changing the exact Windows
+capture implementation.
+
+Complete linkage supports one new, fixed function-identifier inference:
+`loadshapes`, `getshape`, `deleteshape`, `fastdrwshape` and `fastputshape`.
+These are inferred Windows names, not uniquely recovered spellings. The DOS
+author evidence supports the first three family names, but its drawing names
+are `drwshape`/`clpshape`/`putshape`; the exact fast-wrapper names come from Mac.
+This differs from the closed parameter/local, record, global and qualifier
+controls. No prefix, spelling or subset variants follow this one model.
+
+The private proposal adds exactly five uniform header macros. It preserves
+source call spelling and calling conventions, while changing emitted C-symbol
+names. It does **not** preserve the old exported-name/dlsym ABI. No compiled
+wrapper is added, and no native-consumer compatibility or source adoption is
+claimed. The prospective header closure is28 owners/272 functions. One resource
+pilot first compares all18 complete functions, 262 actual bindings, six complete
+object/original-PE literal references and applicable local targets.
+
+Every resolved code identity is unchanged. Thirteen prior exacts retain3,050
+bytes; ordinary draw107/94, blt199/173, release269/245, bank1475/64 and PCX979/851
+remain. Independent full-COFF review checks all26 section payloads and actual
+relocation records. The five defined function names and corresponding string
+table/offset encoding change, plus two timestamp bytes; no wrapper or other
+symbol role appears.
+Reject the whole model as an exactness improvement. The other27 owners/254
+functions stay uncompiled and unknown for this proposal; do not claim their
+outputs are unchanged or continue the name model.
+
+The canonical header is staged only under the serial compiler lock and restored
+in `finally`, including bytes, mode and nanosecond mtime. Toolchain verification
+runs before/after the attempt, including failure cleanup. All749 protected
+identities verify before documentation edits, explicitly including the current
+resource object. The one pilot takes6.303s across compilation, restoration and
+comparison; this is not compiler-only timing. CPU0/35%,384/512MiB; peak174,260,224B
+and zero memory-limit events. No provider, native build, relink, game or full
+replay runs. Private `mac-shape-flow-20261018` and
+`mac-shape-api-identifiers-20261018` retain the bound reviews and closed result.
+All25 closed raw members, including both temporary objects and the header
+proposal, are archived and member-size/SHA-256 verified before deletion.
+Listed net allocated release is520,192 bytes after archive/cleanup journals;
+current products, caches and the useful shared foreign export/data remain.

@@ -60,6 +60,20 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [reused bank/shape family and API-name control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control)
+checks five existing Mac bodies/1,996B without another engine query. Complete
+producer/consumer linkage supports one fixed five-function name inference,
+with foreign record/backend and emitted-symbol ABI limits retained. One private
+resource compile/all18 functions/262 bindings/six literals leaves every code
+identity unchanged and retains13 exacts/3,050B; bank stays1475/64. Reject the
+whole model without compiling the other27 owners/254 functions or name variants.
+All749 protected hashes/modes/nsmtimes restore, including the canonical resource
+object. CPU0/35%,384/512MiB, peak174,260,224B, zero memory-limit events; pilot6.303s
+includes restoration/comparison. No provider, native build, relink, replay or game;
+250 authored exact/20 candidates and delivery remain. All25 closed members,
+including both objects/proposal, are archived/member-hash verified before raw
+deletion, releasing520,192B net; current products/caches and reusable evidence stay.
+
 The [Mac candidate-flow connection](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md)
 now covers five additional complete PEF bodies/1,688B, with two explicit skipped
 words in `vwait` retained. Score rows correspond; waiting has a different15ms
