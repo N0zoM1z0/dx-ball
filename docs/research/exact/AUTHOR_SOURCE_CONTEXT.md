@@ -238,6 +238,30 @@ TLS handshakes with verification enabled; neither yields an artifact. Private
 `.analysis/mac-port-indexed-endpoints-20261018/` retains the page, actual links
 and bounded request outcomes. No new port or debug-information claim follows.
 
+## Actual WinG1.0 source package, October18
+
+The [catalogued WinG package](https://ftp.zx.net.nz/pub/archive/ftp.microsoft.com/Softlib/MSLFILES/WING10.EXE)
+is acquired:856,034B, with all79 ZIP members checked for size/CRC/SHA-256.
+The [Microsoft article's](https://ftp.zx.net.nz/pub/archive/ftp.microsoft.com/MISC/KB/en-us/125/698.HTM)
+original download returns404. Selected SZDD source members are decoded without
+running the installer; an independent in-memory decoder confirms five complete
+outputs byte-for-byte. The complete Cube renderer calls GDI`Polygon`, unlike
+the game's integer active-edge converter. Complete`tblt.c` uses DIB/selector
+transparent copying, unlike the game's COM Blt calls. Two selected TIMEWING
+functions benchmark GDI blits using WinMM; they do not establish the game's
+counter cache or elapsed predicate. Other decoded files receive only identity
+and marker checks; no package-wide source-absence claim follows.
+
+REA6.5.0 rejects the outer MZ as an unsupported PE; retain that response alongside
+the independently verified ZIP/source inventory. Private
+`.analysis/wing-sdk-source-20261018/` holds the reviewed25-member archive and
+explicit read boundaries. All744 protected hashes verify before docs; no compiler,
+provider import, game or replay runs, and250 authored exact/20 candidates remain.
+Acquisition/verification peaks at43,405,312B under CPU0/35%,384/512MiB, zero memory
+events; REA/7z peaks are unmeasured. Verified removal of listed working copies
+releases139,264 net allocated bytes, excluding loose journals. Reuse this package
+and the selected-source boundary before considering another WinG inquiry.
+
 ## Additional Game SDK source boundary, October18
 
 Four further source members are acquired from the retained1995 Game SDK index.

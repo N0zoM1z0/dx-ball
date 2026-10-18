@@ -60,6 +60,12 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [actual WinG1.0 package](../research/exact/AUTHOR_SOURCE_CONTEXT.md#actual-wing10-source-package-october18)
+is now acquired and all79 members integrity-checked. Its selected Cube, transparent
+copy and timing paths supply no new game model. Reuse the reviewed25-member archive;
+250 authored exact/20 candidates and delivery remain, with no compile or replay.
+Listed verified working-copy cleanup releases139,264B net.
+
 The [additional Game SDK check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#additional-game-sdk-source-boundary-october18)
 reads two complete timer/dirty-region samples and selected memory-benchmark
 ranges, without a new game source model. Reuse the reviewed22-member archive
