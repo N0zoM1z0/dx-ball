@@ -60,6 +60,23 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed capture/release declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-capturerelease-declaration-model)
+connects the newly checked complete DOS `getshape` allocation/null/publication
+and indexed metadata roles to the game. Actual debug names support one paired
+`num`/`new_shape` inference, preserving all Win32 operations. DOS capture has no
+delete call; the game's preliminary release and additional COM/record/slot
+cleanup are explicit differences. One compile compares all eighteen resource
+units/262 bindings/six full literals. Every code identity stays unchanged;
+thirteen prior exacts/3,050 bytes survive. The entire 12,332-byte COFF differs
+only in two file-header timestamp bytes. Reject the whole model without name,
+subset or owner variants. All 851 hashes and original source bytes, mode and
+nanosecond mtime are restored and independently verified. Archive/member checks precede deleting
+nineteen obsolete raw carriers, including two objects, releasing 503,808 allocated
+bytes net. Current products and caches remain. Peak memory is 171,053,056 bytes
+under one CPU/35% and 384/512 MiB limits, with zero memory-limit events. No native
+build, provider, oracle, game, relink or full replay runs. Current totals and
+delivery remain 250 authored exact / 20 candidates and 395 total exacts.
+
 The [fixed author palette declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-declaration-model)
 adopts one paired `r/g/b/mode` inference from actual debug-bound rotation roles.
 Right rotation becomes complete 234/0 exact; left rotation improves 234/9 to

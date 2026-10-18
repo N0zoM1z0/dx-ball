@@ -433,6 +433,55 @@ net of gzip/receipt/seal; all24 recorded input hashes remain unchanged.
 There is no compiler, new provider, download, runtime or full replay,
 and current249 authored exact/21 candidate claims remain unchanged.
 
+### Fixed author capture/release declaration model
+
+A previously uninspected complete DOS `getshape` body contains 240 bytes and
+73 instructions, with two branches, six calls and six actual `_shape` LE
+fixups. Debug records bind its signed `num` index and `SHAPE *new_shape` local.
+After allocating a persistent pixel buffer, it allocates eighteen bytes for
+the seventeen-byte record, tests `new_shape` for null, exits with 1 on failure
+and publishes that pointer to `shape[num]`. It then calls the actual Fastgraph
+position/capture functions and writes frame, width, height, zero letter and
+zero yoffset through the same indexed record.
+
+The game preserves the record allocation/null/publication and metadata roles,
+using its 44-byte record plus one allocation byte. Its complete 852-byte capture
+also has a real preliminary call that passes the incoming index to the
+262-byte release function. The DOS capture has **no deletion call**; its separate
+47-byte `deleteshape` frees only the frame. Win32 adds null checks, COM surface
+release, record free and slot clear. These differences are retained, rather
+than claiming complete cross-version ownership equivalence. The register/ret4
+DOS ABI and the game's cdecl ABI also remain distinct.
+
+These connected roles support one fixed declaration inference: capture's
+`sprite` becomes `num` and allocation-only `record` becomes `new_shape`; release's
+incoming `sprite` becomes `num`. Twenty-eight bound tokens change in the two
+definitions. All comments, literals, member selectors, headers, types, order,
+scopes and operations remain. The names are inferred for 1.07, without claiming
+unique original spelling or requiring a missing executable operation.
+
+One canonical-path compilation compares all eighteen resource functions,
+262 actual bindings and six complete literal references. All eighteen code
+identities remain unchanged, including thirteen accepted exacts covering
+3,050 bytes. Capture stays 852/0, release 269/245, bank 1475/64 and PCX 979/851.
+The entire 12,332-byte COFF is independently identical apart from two bytes
+inside its parsed file-header timestamp. Actual before/after relocation tables
+are equal; repeated-symbol provenance offsets identify representative targets,
+rather than distinct occurrences. Reject the whole model as an exactness
+improvement, without subsets or further name/owner/context variants.
+
+Independent review checks the primary ZIP bytes, full bodies, bindings, literals
+and restoration of all 851 protected hashes plus original source bytes, mode
+and nanosecond mtime. The single comparison takes 4.789 seconds on one CPU/35%,
+peaks at 171,053,056 bytes under 384/512 MiB limits and records zero memory-limit
+events. No provider, native build, oracle, game, relink or full replay runs.
+Source, products, ledgers and totals stay unchanged: 250 authored exact / 20
+candidates, 395 total exacts. Private
+`.analysis/author-capture-debug-names-20261018/` retains the sealed evidence.
+Every archive member's size and hash verifies before deleting nineteen obsolete
+raw carriers, including both temporary objects. Cleanup releases 503,808
+allocated bytes net; current tested products and useful caches remain.
+
 ## Pinned 1.07 distribution and installer boundary, October 18
 
 REA 6.5.0 inventories all 53 entries in the supplied 475,404-byte ZIP. Independent
