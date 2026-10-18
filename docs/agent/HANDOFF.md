@@ -60,6 +60,33 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [own-target C1 key investigation](../research/exact/VC4_C_FRONTEND_SYMBOL_KEYS.md)
+adds the attested `vc4-c-frontend` REA route and retains57 observations in one
+normally closed import. Actual C1 getter `4180DB` selects source`+18` low24
+when mode`45662C` is nonzero; mode0 uses the separate source`+14` cache path.
+The operator and format serializers call that getter. Three actual stores
+`4185D9/419AA2/41AA8A` assign counter`455E14`, increment it and preserve the
+source word's high8. The lazy path assigns only when low24 is zero. Counter16
+and mode0 are initialized PE values, not observed editor runtime values. The
+selected writers are not established constructors for editor`i` or count.
+Next observe actual C1 mode/source identity and the relevant writer/record
+relationship during the unchanged editor compile; do not transfer C1XX
+addresses or begin declaration/name/order/type/flag sweeps. Twelve dispatcher
+and nine provider-free lifecycle cases pass. Before documentation updates,
+all849 hashes other than the two route scripts remain unchanged; this published
+checkpoint also changes the existing REA/handoff notes, leaving847 other baseline
+hashes unchanged and adding the C1 research note. Source and delivery remain
+unchanged;250 authored exact/20 candidates.
+No game compile, relink, runtime or replay runs. One CPU0/35%,384/512MiB and
+256MiB heap hold. Whole-session peak403,206,144 bytes;5200 soft-high reclaim
+events, no hard-max or OOM events. First-query wrapper timing is260,506ms and warm
+queries reuse it; normal close removes the temporary project.
+Independent passive review verifies all57 raw records/eight PE carriers and
+the current847 baseline hashes. All88 archived members pass size/SHA-256 checks
+before ten temporary carriers are removed. A byte-identical closed catalog is
+shared; net allocated space released is8,769,536 bytes. Current observations,
+snapshot, tested game and useful caches remain.
+
 The [C-source comparison observation](../research/exact/VC4_EXPRESSION_ORDERING.md#c-source-comparison-observation-october18)
 uses one unchanged editor compile through actual CL/C1/C2, with no C1XX process.
 An existing sealed observer is reused without building or adapting it. All181

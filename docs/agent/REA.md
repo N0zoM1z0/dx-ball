@@ -51,6 +51,7 @@ hash-pinned VC4 compiler tools:
 ```bash
 scripts/rea compiler-session vc4-backend path/to/requests.json
 scripts/rea compiler-session vc4-backend --interactive
+scripts/rea compiler-session vc4-c-frontend --interactive
 scripts/rea compiler-session vc4-cpp-frontend --interactive
 ```
 
@@ -63,6 +64,17 @@ aliases. Interactive use requires an open stdin; automation here uses a PTY.
 Use the same serial systemd resource scope below. Compiler observations can
 support a specific source hypothesis, but do not establish the original game's
 compiler settings or translation-unit declarations.
+
+The [C frontend investigation](../research/exact/VC4_C_FRONTEND_SYMBOL_KEYS.md)
+selects the attested `c1.exe` through `vc4-c-frontend` and saves its own
+`.analysis/rea/vc4-c-frontend/` run/snapshot. Twelve dispatcher and nine
+provider-free lifecycle cases pass. One fresh import with the two optional
+analyzers below disabled retains57 observations and closes normally; the first
+query's retained wrapper timing is260,506ms. It fits the current CPU35%, memory384/512MiB limits with
+the256MiB heap: peak403,206,144 bytes,5200 soft-high reclaim events, no hard-max
+or OOM events. Actual C1 getter and low24 writer locations are now retained;
+runtime editor-symbol and emitted-record correspondence remains open. Reuse
+this closed evidence rather than repeating an import to rediscover those sites.
 
 An interactive inspection returning REA category `invalid_input` retains an
 indexed `.error.json` with its request, error and full response, then keeps the

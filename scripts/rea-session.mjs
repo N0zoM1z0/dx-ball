@@ -11,6 +11,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const targetMode = process.argv[3] ?? 'game';
 const compilerTargets = new Map([
   ['vc4-backend', 'c2.exe'],
+  ['vc4-c-frontend', 'c1.exe'],
   ['vc4-cpp-frontend', 'c1xx.exe'],
 ]);
 if (targetMode !== 'game' && !compilerTargets.has(targetMode)) throw new Error('unsupported pinned REA target');

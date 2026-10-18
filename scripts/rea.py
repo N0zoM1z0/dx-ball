@@ -15,6 +15,7 @@ from resource_limits import ghidra_environment, limit_cpu
 
 COMPILER_TARGETS = {
     "vc4-backend": ("c2.exe", "optimizer_sha256"),
+    "vc4-c-frontend": ("c1.exe", "c_frontend_sha256"),
     "vc4-cpp-frontend": ("c1xx.exe", "cpp_frontend_sha256"),
 }
 
@@ -55,7 +56,7 @@ def main(arguments):
     if compiler_session:
         if len(arguments) != 3 or arguments[1] not in COMPILER_TARGETS:
             raise ValueError("usage: scripts/rea compiler-session "
-                             "vc4-backend|vc4-cpp-frontend REQUESTS.json|--interactive")
+                             "vc4-backend|vc4-c-frontend|vc4-cpp-frontend REQUESTS.json|--interactive")
     node, runtime, env = environment()
     if not arguments:
         arguments = ["--help"]
