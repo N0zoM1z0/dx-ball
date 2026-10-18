@@ -326,3 +326,87 @@ All16 listed closed raw members, including both objects and the header proposal,
 are archived and member-size/SHA-256 verified before deletion, releasing143,360
 allocated bytes net of archive/cleanup journals. Current products, caches and
 the useful shared foreign export/data remain.
+
+## Reused score producers and parameter-kind control
+
+The corrected 17-body export already contains both remaining score producers. Reuse
+it rather than opening another provider session. Complete reader/inserter spans
+are 740/860 bytes: 400 words, 399 decoded instructions, 39 calls and 43 local branch
+instructions. The sole undecoded word at 0x1000F11C is 60000000, skipped by the
+branch at 0x1000F118 and the loop back to 0x1000F120; keep it explicitly accounted
+for without counting it as decoded. Every word is bound to the original PEF.
+Original Windows read/insert/draw bodies are 94/446/404 bytes and 30/134/135
+instructions, with 54 actual bindings and five complete literal references.
+Current reader and inserter are exact; drawing remains 403 bytes/330 differences.
+Its only normalized discrepancy remains the known selected-global/index
+load/CMP pair; the 36-byte frame and all local homes already agree.
+
+The Mac producer/consumer connection confirms 15 rows of 44 bytes, 40-byte names
+and 4-byte score words. Its 732-byte grouped node also holds 8 bytes of links
+and a 64-byte group name. Clear/free-before-read, per-name tail clearing,
+group selection/creation and framed serialization are Mac behavior. Windows
+keeps one fixed 660-byte array, reads it before insertion, shifts names with
+strcpy and writes its raw bytes after access/open checks. Do not transplant
+Mac list ownership, clearing, headers, markers or endian helpers. Conditional
+static TOC observations are not applied r2 contexts or runtime proof.
+
+Actual `.updateHighScore__FPcUl` metadata and the incoming score's unsigned
+comparisons/stores qualify one foreign-derived Windows parameter-kind inference,
+not unique Windows source spelling. They do not establish the record field's
+nominal kind: the positively named writer helper encodes an int input. A
+conceptual field extension was declined before any proposal or compile.
+The one fixed proposal adds a role alias in existing gameover.h, using
+unsigned long on Win32 and existing 32-bit DxBallUInt on the host, and changes
+only the existing insertion definition/prototype parameter. Record score fields,
+44-byte layout, formatting cast, operations, names, qualifiers and scopes stay.
+No new header, assertion typedef or output-driven alternative is introduced.
+
+The actual header closure is runtime/platform/gameover: three serial compiles,
+all 35 complete functions, 1011 actual bindings, 87 full literal references and
+zero configured metadata. A frozen preflight accounts for 81 unique physical
+literal roles, 849 fixed nonliteral references and 75 same-section definitions.
+Generated numeric names are not literal identities: require a unique actual
+section/value/type/storage/aux anchor, complete unchanged initialized container,
+full payload/original PE payload and role multiplicity. Fixed symbols retain
+their actual definitions and target roles. Same-section targets derive from
+the new actual definition offsets, never forced old label addresses. All 35
+binding tables and provenance hashes freeze before any private code comparison;
+production full-span and applicable exact-local-target guards remain active.
+
+All 31 prior exacts/11,098 code bytes survive. All 34 other raw and resolved
+code identities stay unchanged, including elapsed 81/3, reset 426/20 and
+high-score drawing 403/330. Paddle drawing regresses from 677/68 to 678/210
+against 677 original bytes; there is no gain. Complete baseline/private paddle
+correspondence retains 185 instructions and the 68-byte frame. Only the dirty rectangle
+right-edge producer changes from a 5-byte global-width load plus 3-byte local-X add to a
+3-byte local-X load plus 6-byte global-width add; two branch encodings move
+with the extra byte. No new game operation is recovered. Reject the entire
+fixed model, with no field, spelling, qualifier, owner or subset variant and no adoption.
+All 754 protected byte/mode/nsmtime identities restore, including all three
+canonical objects; toolchain verification passes before and after staging.
+The 9.492s figure covers the complete compile/restore/compare pipeline.
+CPU 0/35%, 384/512 MiB and peak 179,445,760 B hold with zero memory-limit events.
+No new provider, native build, oracle, game, relink or full replay runs.
+Source, delivery and 250 authored exact/20 candidates remain unchanged.
+
+The frozen family review is retained at
+`.analysis/mac-score-producers-20261018/independent-family-review.json`, SHA-256
+`7dfc6215e1703de0716d5797832207a7f829c8607041fa9274e1463af47026f3`.
+Private plan/result reviews, binding freeze, summary and restoration receipts
+remain under `.analysis/mac-score-parameter-kind-20261018/`; result review SHA-256
+`063c08f328a5a8d5ac073269c133263494e19feb5226e36fd2dd2c6f5540fc63`.
+All 30 listed closed raw members, including six objects and both proposals,
+are archived and individually size/SHA verified before exact-list deletion.
+`closed-model.tar.gz` is 216,035 bytes, SHA-256
+`e2c1f37707a7245019154194a344f2288dd5c2d6ff204bc9a45361ef3725121b`.
+The net allocated file space released, including all cleanup journals, is
+2,310,144 bytes. Current products, useful caches and shared Mac evidence stay.
+
+A separate bounded review finds no qualified new missing-operation query in
+this retained Mac set. Both clock helpers are already in the corrected export.
+Unread Image::BlitClipped would describe the foreign rectangle mutation, while
+the Windows crop chains and COM boundary are already fully accounted for.
+Historical rotation zero-store gaps are superseded by the complete current
+frame-role correspondence. Re-examine original Windows producer/declaration
+evidence before qualifying another model; no blind spelling/context variants,
+repeated closed controls or automatic foreign queries follow this result.

@@ -60,6 +60,25 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [complete reused score producers and parameter-kind control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-score-producers-and-parameter-kind-control)
+connects both existing Mac bodies: 1,600 bytes, 399 decoded instructions plus
+one explicitly unreachable word. Preserve the Mac grouped-list/framed-file
+boundary. Actual Ul input metadata qualifies one parameter-only type inference;
+record-field extension is declined before proposal. Three serial compiles cover
+all 35 affected functions/1,011 bindings/87 full literals, with physical literal
+roles and true local destinations frozen before comparisons. All 31 prior
+exacts/11,098 bytes survive; 34 raw/resolved identities remain unchanged.
+Paddle regresses 677/68 to 678/210 through the width+X load/add encoding pair;
+high-score drawing remains 403/330. Reject the entire model without variants.
+All 754 protected byte/mode/nsmtime identities restore; source, delivery and
+250 authored exact/20 candidates remain. CPU 0/35%, 384/512 MiB, peak
+179,445,760 bytes, zero memory-limit events; 9.492s covers the entire pipeline.
+No provider, native build, game, relink or full replay. Archive/member checks
+precede removing all 30 listed raw members, including six objects and two
+proposals, releasing 2,310,144 allocated file bytes net. Current products/caches/shared
+evidence remain. The retained Mac set supplies no qualified new operation query;
+revisit original Windows producer/declaration evidence before another model.
+
 The [complete reused Mac line and public-name control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-line-body-and-public-name-control)
 finds the176B/44-instruction body already in the corrected export, avoiding a
 new query. Its distinctive core, including y-major error>0, matches; preserve
@@ -75,8 +94,8 @@ compile/restore/compare pipeline. No provider, native build, relink, game or
 full replay. Source, delivery and250 authored exact/20 candidates remain.
 All16 listed closed raw members, including both objects/proposal, are archived
 and member-hash verified before deletion, releasing143,360B net. Current
-products/caches/shared evidence stay. Reuse the remaining selected Mac score
-producer bodies before considering another engine query.
+products/caches/shared evidence stay. The subsequent score-producer review
+above also reuses its existing complete bodies.
 
 The [reused paddle bodies and input-precision control](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-paddle-bodies-and-input-precision-control)
 connect two complete Mac bodies/936B without another engine query. Preserve
