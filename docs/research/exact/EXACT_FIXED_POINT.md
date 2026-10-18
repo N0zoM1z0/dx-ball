@@ -12,6 +12,9 @@ callback-table source and its IAT-root interpretation below are historical.
 The [independent Fixed-class model](#independent-fixed-class-contract-october18)
 below tests a newly found complete eight-operation contract. Its mixed polygon
 producer changes remain private; current source and exact claims are unchanged.
+The later [Microsoft sample controller](#microsoft-flip2d-controller-october18)
+connects that class to a complete triangle algorithm, with a separately tested
+source model and explicit differences from the game.
 
 This batch restores eight previously unmaintained fixed-point entries in the
 shared [C++ raster owner](../../../src/raster.cpp), adding 571 complete code bytes.
@@ -273,3 +276,59 @@ No native build, relink, provider query, runtime case, game or full replay runs.
 Two additional ratio-index queries establish no connected triangle: the first
 matches comment openers; the corrected parenthesized-denominator query returns
 no match. These are bounded index findings, not proof of source absence.
+
+## Microsoft flip2d controller, October18
+
+A subsequent header-comment index hit identifies the MSDN98 DirectX `flip2d`
+sample in [dreamcast-docs at commit58027ae](https://github.com/Kochise/dreamcast-docs/tree/58027aeb669a80aa783a6d2cdcd2d161fd50d359/SDK/EXES/INSTALL%20VISUAL%206%20SDK/INPUT/6.0_980820/MSDN/VCPP/SMPL/MSDN98/98VSa/1036/SAMPLES/VC98/sdk/graphics/directx/flip2d).
+The actual directory inventory supplies filenames and Git blob identities;
+five downloaded source/readme files pass both size and Git blob checks. The
+complete `fixed.h` is1,700 bytes, SHA256
+`4c07db9745968768346f8628bafc8aa75422b4e16f464dab9a8c0a74c8352396`;
+`tri.cpp` is4,219 bytes, SHA256
+`1d61e0a865a50a049ca0721cc56a8341ee95ed4b5640aca4fa3b057b3d299a32`.
+The header agrees with the earlier Steem copy after newline normalization.
+The Microsoft copyright says1995–1997; this does not establish the sample's
+exact revision in the1996 game.
+
+`Triangle8` provides a connected controller: three by-value `POINT` parameters,
+root declarations `Fixed d,d0; Fixed x,x0; int y;`, the same two slope divisions,
+upper/lower scan loops and four span branches. Its swap comment retains the
+y-then-x XOR expression while the active macro copies a whole POINT for an
+Alpha compiler issue. The game keeps XOR swaps and adds640×480 clipping,
+branch-local clamps and the unread `0xF0000/(y3-y1)` local. The donor also expands
+a DWORD colour and writes DWORD spans; the game span consumes only its low byte.
+Four original triangle reads use DWORD stack slot `[EBP+28h]`, which does not
+uniquely recover the formal colour type. No WORD-colour claim follows.
+
+One frozen model uses that connected controller and the eight observed class
+operations. Actual Windows POINT fields select the signed32 long constructor;
+the native mirror remains eight bytes. The model keeps the game's XOR swaps,
+clipping, unread division and current byte-colour interface, without unused
+donor APIs or invented local names. One unchanged-recipe VC4 compile checks
+all12 complete functions,141 actual bindings and296 metadata bytes. Nine prior
+exacts retain715 code/136 metadata bytes. Triangle becomes1710/85 from1710/88;
+ordinary polygon becomes1543/212 from1543/216; clipped becomes1592/214 from1592/213.
+
+Complete original/baseline/proposal disassembly retains all482/458/468 instruction
+boundaries and widths. Triangle changes42 instructions:21 recover original raw
+instructions, including both slope homes, while18 previously matching instructions
+are lost, including y's home and one sort producer/branch. Ordinary polygon
+changes six instructions, restores four and loses none. Clipped changes five,
+restores none and reverses the already correct branch at`0x0040BC75`. Thus the
+new source establishes a substantial algorithm connection, without resolving the
+game's declaration edits or supporting adoption of this whole model. Keep it
+private, with no subsets or source variations based on these results.
+
+All746 protected canonical hashes and five source modes/nsmtimes restore;
+the temporary header is removed. Current source, delivery and250 authored exacts/
+20 candidates remain. Private `.analysis/sdk-flip2d-source-20261018/` retains the
+source inventory, full responses, ABI correspondence, frozen model and independent
+reviews. Closed proposal objects and input copies are archived and every member's
+size/SHA checked before removal. Compilation takes3.171 seconds; the full scope
+peaks at196,087,808 bytes under CPU0/35% and384/512MiB, with zero memory-limit events.
+No native build, relink, provider query, runtime case, game or full replay runs.
+The bounded triangle-prototype index query misses even this retrieved source and
+reports a shard limit; index negatives cannot establish source absence. Seek an
+independently evidenced earlier controller revision or the game's modifications
+before another compiler model.

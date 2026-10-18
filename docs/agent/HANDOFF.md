@@ -60,6 +60,18 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [Microsoft flip2d controller](../research/exact/EXACT_FIXED_POINT.md#microsoft-flip2d-controller-october18)
+now independently connects the Fixed header to a complete triangle algorithm.
+Its three POINT arguments, root d/d0/x/x0/y and long constructor support one new
+frozen model. One compile/all12 functions/141bindings/296metadata retains nine
+exacts, with private triangle1710/88→85, polygon1543/216→212 and clipped1592/213→214.
+Full instruction comparison finds real regressions in triangle and clipped;
+keep the whole model private, without subsets or output-driven variants.
+All746 hashes/five modes/nsmtimes restore; current250 authored exact/20 candidates
+and delivery remain. Peak196,087,808B, CPU0/35%,384/512MiB, zero memory events,
+no runtime or full replay. Use the pinned directory/source identities and reviewed
+archive; seek independent evidence of an earlier revision or game-specific edits.
+
 The [independent Fixed-class contract](../research/exact/EXACT_FIXED_POINT.md#independent-fixed-class-contract-october18)
 provides a new complete eight-operation source inference. One frozen inline/
 signed32 model preserves nine exacts/715code/136metadata and triangle1710/88,
