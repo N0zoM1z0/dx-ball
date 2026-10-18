@@ -250,6 +250,46 @@ exact and 21 candidates. Nineteen copied inputs/products/proofs, including all
 raw removal. Cleanup releases 1,163,264 allocated bytes net of archive, cleanup
 script, receipt and seal; current tested products and useful caches remain.
 
+### Fixed author image-record declaration model
+
+Actual Watcom records distinguish the DOS `struct shp` tag from its `SHAPE`
+typedef. The complete 17-byte record has `letter` at offset 8 and `yoffset` at
+offset 9. Linked loader stores and glyph/metric consumers connect those fields
+to the game's signed byte at offset 36 and signed integer at offset 40. The
+newly selected `fontletter` evidence is a narrow, byte-verified window containing
+the `_font` load and yoffset subtraction; it is not a previously saved complete
+algorithm comparison. Raw type records are checked directly against the cached
+author archive, and game windows against the original PE.
+
+This supports one inferred declaration model for 1.07, without proving its
+original spelling. The model uses `struct shp`, `SHAPE`, `letter` and `yoffset`,
+with `DxBallSprite` retained as an alias. It preserves the game's 44-byte record,
+signed letter, all Win32 fields, operations, scopes and compiler settings. The
+DOS unsigned letter, packed layout and persistent frame ownership are not
+transplanted. Four staged files contain ten bound member-use substitutions.
+
+The complete prospective closure contains 28 owners and 272 units, including
+254 accepted exacts. One resource compilation compares all 18 complete functions,
+262 actual bindings and six full literals. Release-sprite privately improves
+from 269/245 to 262/0; bank improves from 1475/64 to 1475/63 and PCX from 979/851
+to 979/850. However, draw-keyed-sprite, stretch-keyed-sprite, capture-sprite and
+find-glyph lose their accepted exact status. Nine prior exacts retain 1,809
+bytes; eleven complete code identities stay unchanged. Reject the entire fixed
+model, including its release-sprite gain. The other 27 owners and 254 units,
+including startup metadata, remain uncompiled and unknown. Do not retry subsets,
+spellings, aliases or owner variants of this closed model.
+
+Independent review recomputes all complete comparisons and verifies restoration
+of all 851 protected hashes, plus the four files' original bytes, modes and
+nanosecond mtimes. The single compile takes 3.898 seconds under one CPU/35%,
+peaks at 170,913,792 bytes and records zero memory-limit events. No provider,
+native build, relink, game, oracle or full replay runs. Current totals remain
+249 authored exact / 21 candidates and 394 total exacts; delivery is unchanged.
+Private `.analysis/author-shape-record-20261018/` retains proofs, reviews and a
+sealed archive. Every archived member's size and SHA256 verifies before removing
+21 obsolete raw files, including the sole private object. Cleanup releases
+966,656 allocated bytes net; current products and useful caches remain.
+
 ### Palette family and material version differences
 
 Four complete debug-bound DOS palette bodies cover288 instructions. Their

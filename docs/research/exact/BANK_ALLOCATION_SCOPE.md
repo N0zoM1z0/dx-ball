@@ -54,6 +54,13 @@ verified before removal. Net allocated release is 7,876,608 bytes after archive,
 cleanup script, receipts and seal. Current tested products, directly referenced
 producer receipts and useful build caches remain.
 
+The later [shared image-record declaration model](AUTHOR_SOURCE_CONTEXT.md#fixed-author-image-record-declaration-model)
+privately reduces the bank to 1475/63 and makes release-sprite exact, but loses
+four accepted resource exacts. The entire model is rejected after one complete
+resource-owner comparison; its other 27 owners remain uncompiled. No gain subset
+is adopted. The authoritative bank remains **1,475 bytes / 64 differences**,
+and current source, objects and delivery are unchanged.
+
 ## Allocation-only pointer scope, October 17
 
 The bank loader's temporary record pointer now belongs to its allocation,

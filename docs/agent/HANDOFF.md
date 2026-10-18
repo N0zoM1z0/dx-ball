@@ -60,6 +60,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [fixed author image-record declaration model](../research/exact/AUTHOR_SOURCE_CONTEXT.md#fixed-author-image-record-declaration-model)
+uses actual debug-bound `shp`/`SHAPE`, `letter` and `yoffset` roles as one inferred
+1.07 declaration, preserving the game's 44-byte layout and signed letter. One
+resource compile compares 18 whole functions, 262 bindings and six full literals.
+Release-sprite becomes privately exact and bank/PCX each lose one difference,
+but four prior exacts are lost. Reject the entire model without adopting gains;
+27 owners and 254 units remain uncompiled. All 851 protected hashes and four
+staged files' bytes, modes and nanosecond mtimes are restored and independently
+verified. Archive/member checks precede deleting 21 obsolete raw files, including
+the sole private object, releasing 966,656 allocated bytes net. Current products
+and caches remain. The single compile takes 3.898 seconds on one CPU/35%, peaks
+at 170,913,792 bytes and records zero memory-limit events. No provider, relink,
+game, oracle or full replay runs. Source, delivery and totals remain unchanged:
+249 authored exact / 21 candidates, 394 total exacts. Do not retry spelling,
+alias, subset or owner variants of this closed fixed model.
+
 The [genuine SDK interface model](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#genuine-sdk-interfaces-october18)
 uses actual installed DirectDraw/IUnknown declarations, which earlier custom
 interface controls did not test. A fixed VC4 feature-detection bridge makes
