@@ -1,5 +1,62 @@
 # Closed drawing and SDK storage diagnostics
 
+## Genuine SDK interfaces, October18
+
+One fixed model uses actual `IDirectDraw`, `IDirectDrawSurface`,
+`IDirectDrawPalette`, `IUnknown` and SDK record declarations on Windows C++.
+The earlier scalar, descriptor and custom-interface controls did not instantiate
+these genuine interfaces. The original factory protocol, 108-byte descriptor
+and surface slots support this API inference. The line dossier
+`ev_25f8571b40b1ee8c589f398fa1211552c03d241352d0737d904789e2664b8af2`
+observes dispatch at `0x403099/0x40309C/0x40309E`; it does not recover original
+type spelling, header text or a game IID.
+
+The installed MinGW 11.0.1 compatibility header is 161,746 bytes, SHA-256
+`ae60c1c78b9669695809be11264f293fff70d33745571d3076f1e5b46b397950`.
+Both it and `_mingw_dxhelper.h` remain byte-identical. Two initial C/C++
+compatibility compilations fail because the modern helper selects named unions
+when VC4 lacks the later `_MSC_EXTENSIONS` macro. A fixed bridge supplies
+`WINBOOL=BOOL` and truthfully normalizes that feature macro for default-extension
+VC4. The same two fixtures then compile without compiler warnings, checking
+SDK record sizes/offsets, C vtable slots and typed calls, and genuine C++
+`IUnknown` upcasts. Four actual compiler attempts are retained, including both
+failures. This establishes compile-time compatibility, not runtime ABI execution
+or use of this modern header by the original game.
+
+The shared game proposal uses genuine Windows C++ aliases, published fields and
+methods, explicit byte-plane conversions from SDK `LPVOID`, native C++ interface
+mirrors and consistent public forward aliases. The existing C vtable declarations
+remain unchanged, including the surface's consumed 33-slot prefix through
+`Unlock`; the full SDK/native C++ surface has 36 slots. Sprite/bank fields,
+operations, locals, scopes and original compiler options are preserved. The
+whole prospective closure is 30 owners/278 units/4,704 bindings/252 complete
+literal references, with attached metadata in `crt-startup`.
+
+One compilation of the resource owner compares all 18 functions/262 bindings/six
+complete literals, including all 13 prior exacts. It gains no exact and loses
+`blt-keyed-sprite` (195/0 to 199/173) and `draw-glyph` (328/0 to 332/258).
+These pairs give object size/differing bytes. `load-sprite-bank` changes from
+1475/64 to 1486/943; the other four resource candidates keep identical
+complete code. Fifteen code identities remain unchanged, including 11 prior
+exacts/2,527 bytes. **Reject the entire fixed model.** The other 29 owners/260
+units and native/MinGW profiles are uncompiled; do not claim their preservation
+or select a subset of owners for adoption.
+
+All 851 protected current file hashes survive. Temporary staging restores the
+17 existing files' bytes, modes and nanosecond modification times and removes
+both new headers, preserving valid incremental caches. The game pilot takes
+4.501 seconds under one CPU/35%, with peak scope memory 162,803,712 bytes and
+zero memory-limit events. The largest compatibility scope peaks at 198,963,200
+bytes. No provider, relink, game, oracle or full replay runs. Current source,
+products, 394 overall exacts and 249 authored exact/21 candidates remain fixed.
+
+Private `.analysis/ddraw-installed-sdk-compatibility-20261018/` and
+`.analysis/ddraw-genuine-sdk-model-20261018/` retain plans, independent reviews,
+restoration records and member-hash-verified archives. Cleanup removes 69 raw
+carriers, including all three private objects and unused SDK/proposal copies,
+releasing 917,504 allocated bytes net. Current products/caches remain. Do not
+repeat this closed model through spelling, include placement or owner variants.
+
 ## Complete C DirectDraw table, October18
 
 One fixed shared-header model gives the20 opaque C `IDirectDraw` slots their

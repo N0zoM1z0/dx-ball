@@ -60,6 +60,24 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The [genuine SDK interface model](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md#genuine-sdk-interfaces-october18)
+uses actual installed DirectDraw/IUnknown declarations, which earlier custom
+interface controls did not test. A fixed VC4 feature-detection bridge makes
+both unchanged SDK C/C++ fixtures compile after two retained initial failures.
+One subsequent resource compilation compares 18 whole functions/262 bindings/six
+literals: zero gains, two prior exact losses, bank1475/64→1486/943. Reject the
+entire model; its other 29 owners/260 units remain uncompiled. Current source and
+all 851 protected hashes survive; 17 staged files also regain their original
+mtime/mode, avoiding cache invalidation, and two new headers are removed.
+Independent result review passes. All 69 obsolete raw carriers, including three
+private objects, are archive/member-hash verified before deletion, releasing
+917,504 allocated bytes net. Current products and caches remain. Peak scope
+memory is 198,963,200 bytes across the four small compatibility attempts and one
+game-owner compile, all serial under one CPU/35%, with zero memory-limit events.
+No provider, relink, game, oracle or full replay runs; totals remain 249 authored
+exact/21 candidates. Do not try spelling/header-placement/owner variants of
+this closed fixed model.
+
 The [actual bank declaration inference](../research/exact/BANK_ALLOCATION_SCOPE.md#actual-author-declaration-inference-october-18)
 adopts one fixed seven-role model from the author's debug-bound DOS loaders.
 The prior conceptual decline of this identical uncompiled model required a
