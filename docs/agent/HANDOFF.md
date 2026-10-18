@@ -60,19 +60,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
-The [Mac port is now acquired with positive named metadata](../research/exact/AUTHOR_SOURCE_CONTEXT.md#mac-port-acquisition-and-named-metadata-october18).
-The strict HTTPS mirror yields2,083,697B/SHA `fd699cd9…da129ca`; the repaired
-chain verifies to existing roots without changing global trust. Six selected
-forks preserve Classic/OS X PEF applications and readme. Independent review
-checks321 OS X basic-layout name records, including game and framework names;
-neither complete Mac bodies nor Windows declaration correspondence is established.
-REA6.5.0 rejects PEF admission; its raw schema excludes PPC. No provider import,
-compile, game or replay follows. Reuse the current extracted forks/metadata and
-the reviewed acquisition/admission archives, rather than retrying unchanged
-requests. All744 protected hashes/modes/nsmtimes verify before docs;250 authored
-exact/20 candidates and delivery remain. Listed member-verified carrier cleanup
-releases8,445,952B net. Admission peak402,898,944B, CPU0/35%,384/512MiB, six high
-events and zero max/OOM events; the process group is closed.
+The [Mac font-body connection and qualifier control](../research/exact/AUTHOR_SOURCE_CONTEXT.md#focused-pef-bodies-and-qualifier-control-october18)
+now use actual PEF code. REA6.5.0 process capture records pinned Ghidra headless
+with no global analysis: one import, then saved-project queries. Its native
+PEF admission remains rejected; process Evidence is not a native-provider
+snapshot. Use only the corrected32-bit17-span export, with r2 unset, and preserve
+the wrong-width export/failed startup-main assertion as their actual outcomes.
+Full five-font-family control-flow review connects736B Mac/975B Windows bodies,
+with baseline offset38/40 and Image/COM differences retained. The Pc/PCc names
+and independently pinned reader support one foreign qualifier inference, without
+recovering original Windows const. One UI compile/all7 bodies/38 bindings leaves
+six exacts/896B and measure279/3 unchanged; the full COFF differs only in two
+timestamp bytes. Reject that complete model; no other header-owner compile,
+qualifier variant or adoption follows. All747 hashes/modes/nsmtimes restore before docs;
+250 authored exact/20 candidates and delivery remain. The60 closed members,
+including both temporary objects/proposals, are archived/member-hash verified
+before deletion, releasing1,245,184B net. Current foreign project/forks and game
+products/caches stay useful. UI pilot peak192,208,896B; headless scope maximum
+402,980,864B with nonzero high events and zero max/OOM. CPU0/35%,384/512MiB;
+no game, relink or full replay. Reuse the [acquired carrier](../research/exact/AUTHOR_SOURCE_CONTEXT.md#mac-port-acquisition-and-named-metadata-october18),
+corrected export and reviews before another request/import.
 
 The [actual WinG1.0 package](../research/exact/AUTHOR_SOURCE_CONTEXT.md#actual-wing10-source-package-october18)
 is now acquired and all79 members integrity-checked. Its selected Cube, transparent

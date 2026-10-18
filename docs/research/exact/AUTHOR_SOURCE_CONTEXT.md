@@ -292,8 +292,9 @@ One explicit REA6.5.0 MCP `open_binary` with provider `ghidra` rejects the OS X
 PEF at format admission. Its actual raw-binary schema excludes PowerPC; no
 wrong-architecture retry, provider import or snapshot follows. Installed GNU
 objdump advertises only i386/iamcu targets. These observations constrain the
-inspected REA route and local tool, not Ghidra's general PEF support. No Mac body
-has yet been decompiled or connected to a complete Windows routine.
+inspected REA route and local tool, not Ghidra's general PEF support. At that
+admission checkpoint no Mac body had been decompiled or connected to a complete
+Windows routine. The later focused export below supplies a separate connection.
 
 Private `.analysis/mac-port-payload-20261018/` retains the useful forks, exact
 inventories, format sources, metadata and frozen independent reviews. Closed
@@ -308,6 +309,87 @@ CPU0/35%,384/512MiB limits cover the heavy work. The admission scope peaks
 at402,898,944B with six `memory.high` events and zero max/OOM events; this is not
 a whole-investigation peak. Retained bytes and reviews should be reused before
 another network request or provider attempt.
+
+### Focused PEF bodies and qualifier control, October18
+
+REA6.5.0 process capture now records the existing pinned Ghidra12.1.4 headless
+PEF loader, with global analysis disabled and17 selected metadata-derived spans.
+This is a `rea-process` observation of the analysis engine, **not** successful
+native `open_binary` admission or a native-provider snapshot. The first128MiB
+Node heap attempt fails before launching the scenario. A distinct192MiB capture
+imports one private PEF project; later queries process that saved project.
+The game is never executed and no tool installation or pinned byte is changed
+by the reconstruction scripts. Generated language caches remain useful caches.
+
+The loader automatically chooses `PowerPC:BE:64:VLE-32addr/default`; retain that
+actual export without treating its `longlong` pseudocode as source types. An
+initial correction query rejects the assumption that the startup descriptor
+must point to application `.main`; its captured target exit is1 despite the
+headless launcher returning0. The subsequent saved-project query applies only
+`PowerPC:BE:32:default/default`, leaving all selected entry-r2 contexts unset.
+Actual descriptor PC is `0x1001DA90`, application-main metadata maps to
+`0x10018810`, and descriptor TOC is `0x10064D70`. No runtime register, absolute
+global binding or recovered CFM compiler ABI is inferred from those values.
+
+Independent review verifies all17 spans/5,564B against the actual PEF, including
+raw/loaded hashes, file/VA mappings and every4-byte export record. One skipped
+`60000000` word at `0x1000F11C` remains explicitly undecoded; byte coverage does
+not mean every word was decoded or every exported function was semantically
+reviewed. The separate full font-family review accounts for five Mac bodies
+(736B/184instructions/16branches/5calls) and five original Windows bodies
+(975B/310instructions/24branches/5calls), using complete instructions and actual
+branch/call destinations rather than pseudocode alone.
+
+| Mac named routine | Windows family | Connected behavior |
+| --- | --- | --- |
+| `letterfind` | `find-glyph` | Preincrement from0; first checked index1; count-bound search; count-equal miss becomes0 |
+| `fontwidth` | `measure-text` | Inlined glyph search; first-glyph half-width on miss; hit width plus spacing |
+| `fontletter` | `draw-glyph` | Search, missing return and baseline-adjusted drawing |
+| `fontprint` | `draw-text` | Apply previous advance before drawing the next glyph |
+| `fontprintcenter` | `draw-centered-text` | Subtract half the measured width before drawing |
+
+The bank stride `0x418`, count offset `0x3FC`, glyph width/height/code offsets
+`8/12/36` agree. Mac baseline is read at38 versus Windows40. Mac drawing calls
+the metadata-derived start named `BlitTransFast__5ImageFPUciii`; this identifies
+the named callee boundary, not equivalence between its unread body and Windows
+COM drawing. The r2-relative operand roles remain distinct from absolute object
+identity. Neither the port's layout nor its decompiler prototypes are copied
+into the Windows reconstruction.
+
+A new qualifier-bearing observation supports one narrow source inference.
+The actual three font names end in `Pc`, while the same artifact's `opendir`
+uses `PCc`. The source of the independent
+[CodeWarrior reader at9a3047b](https://github.com/encounter/cwdemangle/blob/9a3047bbcd078a0ef70df8c9b0fbeb6b72f1e4fa/lib/src/lib.rs)
+is received and verified against Git blob `449ef5ebb386f88af773825f3ac1d16333496295`.
+Its P/C/c rules distinguish pointer, const and char. This is an interpretation
+using an independent implementation, not the actual2002 compiler or proof of
+original Windows cv-qualification. The earlier Watcom pointer-chain limitation
+remains valid; that earlier qualifier proposal was never compiled.
+
+One fixed private model removes only pointee const from the three text API
+definitions and matching declarations. All names, operations, signed-char casts,
+scopes, flags and the separate copy-word cursor remain. One UI compile compares
+all seven complete functions/38 bindings, applicable internal targets and zero
+literal/metadata bytes. Every code identity is unchanged: six prior exacts/896B
+survive and `measure-text` remains279B/3 differences. Stronger full-COFF review
+finds only two timestamp-byte differences in the2,987B/nine-section object.
+Reject the whole model without compiling the other five header owners, adopting
+the proposal or trying further qualifier variants.
+
+All747 protected hashes/modes/nsmtimes verify after source restoration and
+cleanup, before these documentation edits, including canonical objects, reports
+and delivery;250 authored exact/20 candidates remain. The UI pilot takes4.392s,
+peak192,208,896B, zero memory events.
+The largest individual captured headless scope peaks at402,980,864B; the three
+completed scopes record343/262/336 high events respectively, with zero max/OOM
+events. Heavy work stays on CPU0/35%,384/512MiB; Java heap128MiB. No game, relink
+or full replay runs. Private `mac-pef-focused-bodies-20261018` and
+`mac-font-qualifier-context-20261018` retain the corrected export, reviews and
+closed model summaries. All36 capture-archive and24 model-archive members pass
+size/SHA-256 checks before raw removal, including both temporary objects and
+proposals:1,245,184 allocated bytes released net, excluding loose journals.
+Full process Evidence remains archived under `.analysis/rea/mac-reference-20261018/`.
+Keep the useful foreign project/forks and reuse these records before new imports.
 
 ## Actual WinG1.0 source package, October18
 
