@@ -62,3 +62,8 @@ instruction references, complete comparisons, actual old/new witness outcomes,
 independent review, source/inventory audit and adoption receipts. Compiler and
 probe trees use one allowed CPU, CPU35%, memory high384MiB/max512MiB. Closed
 products and input copies are archived/member-hash verified before cleanup.
+
+The subsequent [current VC4 build and play check](../CURRENT_VC4_BUILD.md)
+links this complete current resource object into the delivery and passes the
+existing actual gameplay/editor/save/reload/exit flow. The earlier18-body source
+comparison and bounded count witness retain their separate scopes.

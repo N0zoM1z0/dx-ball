@@ -16,8 +16,8 @@ The current records cover gameplay, all five screen modes, resources, graphics a
 | Origin still unclassified | 1 |
 
 The inventory includes game routines, runtime dependencies and compiler-generated code.
-Both Windows builds have completed recorded original-board campaigns under Wine.
-Continue with the remaining rendering and runtime routines.
+Earlier Windows builds have recorded original-board play under Wine.
+See the [current VC4 build and play check](research/CURRENT_VC4_BUILD.md) for its image and limits.
 
 See [the architecture](ARCHITECTURE.md), [compiler matching](MATCHING.md),
 and [recorded play runs](research/ORIGINAL_CAMPAIGN.md).

@@ -50,8 +50,8 @@ def main():
         f"| Entries identified as compiler-generated code | {status['compiler_generated_identified']} |\n"
         f"| Origin still unclassified | {status['origin_unknown']} |\n\n"
         "The inventory includes game routines, runtime dependencies and compiler-generated code.\n"
-        "Both Windows builds have completed recorded original-board campaigns under Wine.\n"
-        "Continue with the remaining rendering and runtime routines.\n\n"
+        "Earlier Windows builds have recorded original-board play under Wine.\n"
+        "See the [current VC4 build and play check](research/CURRENT_VC4_BUILD.md) for its image and limits.\n\n"
         "See [the architecture](ARCHITECTURE.md), [compiler matching](MATCHING.md),\n"
         "and [recorded play runs](research/ORIGINAL_CAMPAIGN.md).\n\n"
         "Generated from the ledgers by `scripts/repo-python scripts/progress.py`.\n")

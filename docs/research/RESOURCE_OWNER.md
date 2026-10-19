@@ -9,7 +9,8 @@ defines the observed low32 product before malloc/fread;
 find-glyph146/86 and draw-glyph332/258 are explicit context-related demotions,
 with all operations retained. PCX is979/850. One complete owner comparison,
 ten existing bank cases and a bounded actual-loader overflow witness support
-the change; no final game rebuild or play run follows yet.
+the change. The later [current VC4 build](CURRENT_VC4_BUILD.md) includes both
+recoveries and passes the actual ball/paddle/pause/editor/save/reload/exit flow.
 The earlier [drawing-wrapper owner](exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
 restores keyed draw105 and stretch139, while ordinary draw107/94 and blt199/173
 remain explicit demotions. Release stays269/245 and bank1475/64.

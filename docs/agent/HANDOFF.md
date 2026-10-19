@@ -65,38 +65,40 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
-Last linked delivery: `build/vc40-restored-crt/dxball.exe`, 166,400 bytes, SHA-256
-`40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`.
-The [genuine MulDiv integration](../research/exact/EXACT_FIXED_POINT.md#genuine-api-integration-october18)
-is the latest full linked source/API checkpoint. Its native/Windows/both VC4 builds,
-7,164 existing raster cases, complete linked containers and 4,488 loader fields
-pass within that checkpoint's scope. The restored link reuses 118 objects and
-19 approved original CRT members. Later private trials change no source,
-fixture, ledger, current object, or delivery identity before the October19 change.
+Current delivery: `build/vc40-restored-crt/dxball.exe`,166,400 bytes, SHA-256
+`f0f2fa2eefaa48aceb23b150dd894ee2daf6db13efe709f98c8cacacfcb8b5d4`.
+The [current VC4 build and play check](../research/CURRENT_VC4_BUILD.md) includes
+both October19 source recoveries at717cc2f. All118 current source/integration
+objects are verified and reused, then linked with the19 approved CRT members.
+Resources is the only changed source object relative to the preceding delivery.
+All1,099 named map addresses remain fixed. Complete linked sections,5,904 COFF
+bindings and all4,488 loader fields are checked; imports/resources stay fixed.
+
+The existing actual play flow passes on this image: ball/paddle/pause/resume,
+editor CTRL painting, exact20,000-byte save/reload and normal exit0. There are
+589 state observations and2,444 valid SDK samples,zero malformed samples;
+all49 originals remain fixed. CPU/memory are35%/384MiB high/512MiB max, with
+no high/max/OOM events. This does not establish full50,focus/surface recovery,
+physical-driver fidelity or every exceptional path. Detailed evidence and limits
+are in the linked note and private `current-vc4-build-20261019/` and
+`current-vc4-play-20261019/` directories under `.analysis/`.
 
 The [bank byte-count recovery](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
-defines the observed low32 product before the
-unsigned allocation/fread boundary. One resource compile compares18 full bodies,
-262 bindings and six literals;15 identities survive. Bank remains1475/64,
-find-glyph becomes146/86, draw-glyph332/258 and PCX979/850. Both glyph exacts
-are explicitly demoted; their operations remain accounted for. An actual
-65536×65536/CreateSurface-failure witness rejects old signed-overflow source
-and passes the restored source against the original. Ten existing bank cases
-pass after a one-source native rebuild. Current totals are248 authored exact/
-22 candidates,393 overall exacts. No final game rebuild or play run follows yet;
-the linked image above predates this source checkpoint.
-The later [count-bound recovery](../research/exact/BANK_COUNT_BOUND.md) defines
-the live modulo32 increment before the signed loop guard. Bank improves64 to63
-differing positions; all11 resource exacts and16 complete code identities
-survive18 full comparisons/262 bindings/six literals. An actual bounded
-INT_MAX witness rejects the old native path and passes the restored source;
-ten existing bank cases pass after rebuilding only resources. This is the
-latest source change. The linked image above predates both October19 changes.
-The current native receipts are `.analysis/bank-count-bound-20261019/native-build.json`
-and `selected-oracle.json`; the earlier byte-count receipt remains historical.
+defines the observed low32 allocation/fread product and explicitly demotes two
+glyph exacts after changed address producers. The latest
+[count-bound recovery](../research/exact/BANK_COUNT_BOUND.md) preserves the live
+modulo32 increment and signed guard, improving bank64→63 differences. All18
+resource bodies/262 bindings/six full literals compare together;11 exacts and
+16 complete code identities survive the count-bound change. The bounded actual
+INT_MAX counterexample and ten existing bank cases pass. PCX stays979/850;
+find-glyph146/86 and draw-glyph332/258 remain candidates. Current authored totals
+stay248 exact/22 complete candidates across30 verified compiler closures.
+The focused native receipts are `.analysis/bank-count-bound-20261019/native-build.json`
+and `selected-oracle.json`.
+
 The older `build/native/retained-build.json` predates MulDiv integration in four
 non-resource inputs; it remains historical and must not be used as a current
-whole-build input attestation. This checkpoint does not repair that older claim.
+whole-build input attestation. No such native claim is added here.
 
 Relevant accepted source contracts:
 
@@ -120,6 +122,15 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 [current VC4 rebuild and play](../research/CURRENT_VC4_BUILD.md) closes
+the previously missing current-source delivery check. The17.003s build and
+86.614s existing play flow pass under the capped scope. Seven closed build
+helper/evidence files are member-hash verified in a140,888-byte archive,
+releasing1,572,864 allocated bytes net before the receipt. The49 automated runtime
+copies are removed after matching retained originals,current game or complete
+saved bank; current products,caches and manual files stay. Exact/semantic counts
+are unchanged. Source recovery and broader acceptance remain unfinished.
 
 October19 [count-bound recovery](../research/exact/BANK_COUNT_BOUND.md) retains
 the original live count reload, DWORD increment and signed comparison without
@@ -252,7 +263,8 @@ producer. Custom single-brick boards and prior GUI episodes retain their own
 image identities. Physical Windows, graphics/audio fidelity, exceptional paths,
 full campaign acceptance and Wine9
 [focus/surface-loss](../research/ROUND_FOCUS_RUNTIME.md) remain open.
-No new game acceptance is claimed for the current image. Ports remain deferred.
+The current image passes only the bounded play/editor flow described above;
+it adds no full campaign or physical-driver acceptance. Ports remain deferred.
 
 ## Execution, cleanup and publication
 

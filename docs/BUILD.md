@@ -68,9 +68,11 @@ To build the optional restored-CRT entry profile, use
 `scripts/repo-python scripts/build-legacy.py --restored-crt`, then
 `scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt`.
 It builds only the game in `build/vc40-restored-crt/`, with explicit source and
-remaining original-member dependencies. Its first original board, ball release
-and normal exit are checked; complete function recovery and playability remain
-open. See [the entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md).
+remaining original-member dependencies. The [current VC4 build and play check](research/CURRENT_VC4_BUILD.md)
+covers both October19 resource recoveries and actual ball/paddle/pause/editor/
+save/reload/exit behavior. Full campaign and physical-driver acceptance remain
+open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
+retains its own image identity.
 
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
