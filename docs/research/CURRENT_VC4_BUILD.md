@@ -7,6 +7,11 @@ source recovery comes before complete game verification. The checks recorded
 below ran prematurely; they do not establish source readiness or completion.
 Do not extend them into a campaign or repeat them as source progress.
 
+The subsequent [text-width accumulator recovery](exact/TEXT_WIDTH_ACCUMULATOR.md)
+improves its candidate to279/3. The tested bff527e products below predate that
+source change and retain their recorded identities. No further game rebuild or
+observation follows the source change.
+
 ## Current local products
 
 The current restored-CRT executable is built from source checkpoint

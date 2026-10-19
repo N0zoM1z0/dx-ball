@@ -7,7 +7,8 @@ DxBallInt dxball_text_spacing = 1;
 /* FUNCTION: DXBALL 0x00404FD0 */
 DxBallInt dxball_measure_text(DxBallInt count, const char *text)
 {
-    DxBallInt i, sprite, width = 0;
+    DxBallInt i, sprite;
+    DxBallUInt width = 0;
     for (i = 0; count > i; ++i) {
         sprite = 0;
         do {
@@ -17,14 +18,12 @@ DxBallInt dxball_measure_text(DxBallInt count, const char *text)
         if (dxball_sprite_banks[dxball_font_bank].count == sprite)
             sprite = 0;
         if (sprite == 0)
-            width = (DxBallInt)((DxBallUInt)width +
-                dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2);
+            width += dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2;
         else
-            width = (DxBallInt)((DxBallUInt)width +
-                ((DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width
-                 + dxball_text_spacing));
+            width += (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width
+                + dxball_text_spacing;
     }
-    return width;
+    return (DxBallInt)width;
 }
 
 

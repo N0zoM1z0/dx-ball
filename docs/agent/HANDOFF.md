@@ -54,7 +54,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/blt-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/text-width-accumulator-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -68,12 +68,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes the [unsigned text-width accumulator](../research/exact/TEXT_WIDTH_ACCUMULATOR.md).
+The existing width uses unsigned32 storage and compound additions, preserving
+original modulo32 sums and signed glyph half-width division; conversion to the
+unchanged signed32 ABI occurs at return. One complete seven-function/38-binding
+compile improves measurement282/26→279/3, preserving all six exact companion
+raw/resolved identities. The216 unchanged existing measurement cases and four
+retained finite boundary controls pass. Only native ui.c rebuilds;38 other
+native objects stay fixed. Current native SHA is
+`a25f31c84a17af6c748e02781dc73bfa0241072a7a817bf82a40502e28681f80`.
+All270 authored receipts verify across30 closures. Counts remain392 exacts,
+247 authored exact/23 candidates. Private authority is
+`.analysis/text-width-accumulator-20261020/`. No game rebuild/run or full replay follows;
+the tested bff527e game/ZIP below predate this change. Source recovery continues.
+
 Current source includes [all six Blt destination-edge sums](../research/exact/BLT_COORDINATE_WRAP.md).
 One18-function/262-binding/six-literal compile promotes plain Blt195exact,
 preserves keyed195exact,and explicitly demotes stretch139exact→141/94 and
 unchanged capture852exact→864/726. Full51/248-instruction correspondences account
 for both losses; PCX's nine-byte comparison ripple keeps979/851. All six actual
-bank-prefix/failing-Blt witnesses and120 unchanged selected calls pass. Current
+bank-prefix/failing-Blt witnesses and120 unchanged selected calls pass. That checkpoint's
 native SHA is `0a632e94edf77f0278257d1c0b7f13512ec842e8b4f6cc72e5f669016dd957cc`.
 All270 authored receipts verify across30 closures. Totals are392 overall exacts,
 247 authored exacts/23 candidates; no old-object mix hides the net one-exact loss.
@@ -197,6 +211,18 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October20 [unsigned text-width accumulation](../research/exact/TEXT_WIDTH_ACCUMULATOR.md)
+retains the wrapping contract through the unsigned accumulator type and improves
+measurement to279/3 without changing exact counts. Six complete companions,
+38 bindings,216 existing calls and four retained finite boundaries verify.
+All270 authored closures are current. The235 historical semantic input rows
+refresh without changing scopes/cases or collapsing duplicate unit names.
+No game rebuild, game run or full replay follows this source checkpoint.
+Thirty-eight closed files are archived/member-size/SHA verified before removal:
+449,321-byte archive,6,111,232 allocated bytes released net before small receipts.
+All623 protected SHA/size/mode/mtime identities survive; current products/caches
+and unique JSON proofs remain. See the authority's archive/cleanup receipts.
 
 October20 current-source relink and existing play/lifecycle checks pass; the
 local bundle is refreshed as described above. These checks were premature under

@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October19,2026, after the six Blt destination-edge sums.
+Updated October20,2026, after the unsigned text-width accumulator.
 Accepted totals are **392 functions / 83,837 code bytes / 244 metadata bytes**.
 There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,15 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [unsigned text-width accumulator](TEXT_WIDTH_ACCUMULATOR.md) preserves the
+original modulo32 contract through the accumulator type and signed32 return
+conversion. One complete seven-function/38-binding compile improves measurement
+282/26→279/3 and preserves all six exact companion identities. The216 existing
+measurement cases and four retained finite boundary controls pass. No exact is
+gained; all270 authored receipts remain current across30 closures. No game or
+full replay follows. Current authority is
+`.analysis/text-width-accumulator-20261020/authored-coverage.json`.
 
 The [six Blt destination-edge sums](BLT_COORDINATE_WRAP.md) promote complete
 plain Blt195exact and explicitly demote stretch139exact→141/94 and unchanged
@@ -288,12 +297,12 @@ One owner compile preserves five exact companions and six other body identities;
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
 | `elapsed` | 81 | 81 | 3 |
+| `measure-text` | 279 | 279 | 3 |
 | `animate-palette` | 234 | 234 | 3 |
 | `present-regions-now` | 984 | 984 | 6 |
 | `wait-frames` | 170 | 170 | 8 |
 | `draw-line` | 445 | 445 | 9 |
 | `reset-round` | 426 | 426 | 20 |
-| `measure-text` | 279 | 282 | 26 |
 | `load-sprite-bank` | 1475 | 1475 | 68 |
 | `draw-paddle` | 677 | 677 | 68 |
 | `find-glyph` | 145 | 146 | 86 |

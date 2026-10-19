@@ -79,6 +79,10 @@ retained with its cause unresolved. Full campaign and physical-driver acceptance
 remain open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.
 
+The later [unsigned text-width accumulator](research/exact/TEXT_WIDTH_ACCUMULATOR.md)
+is in current source, matching objects and native library. The tested bff527e
+EXE/ZIP predate that change; no new game rebuild or observation follows it.
+
 The current private local bundle is
 `build/delivery/dxball-v1.07-vc40-reconstructed.zip`. It contains the rebuilt game,
 its verified supplied assets and extraction instructions; extract the whole
