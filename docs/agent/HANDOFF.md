@@ -171,6 +171,18 @@ Relevant accepted source contracts:
 
 ## Last closed work
 
+October19 [full early-SDK source check](../research/exact/EXACT_FIXED_POINT.md#full-sdk-carrier-and-source-corpus-check-october19)
+verifies both received Game SDK/DirectX2 packages and retains551 source/text
+members with original CRC and retained SHA checks. The1995 triangle was already
+obtained earlier; the1996 counterpart differs only in copyright year range.
+No new declaration model or compile follows the unchanged source. Four bounded
+fingerprints expose no new connected PCX/polygon candidate. Do not repeat the
+earlier SDK model; reuse `.analysis/early-sdk-raster-20261019/` for the now-retained
+source corpora and explicit search limits. Verified cleanup replaces the two
+whole package copies and18 closed files with source/helper archives, releasing
+41267200 allocated bytes net before small receipts. All90 protected identities
+and all claim totals stay fixed; no provider/runtime/relink/replay runs.
+
 October19 ranking subtraction recovery adopts one expression after a complete
 eight-body comparison, finite original/native counterexample and17 existing
 ranking cases. All code identities and claim counts remain unchanged. The

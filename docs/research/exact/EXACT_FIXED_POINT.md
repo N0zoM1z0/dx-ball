@@ -343,7 +343,7 @@ both stamped September29,1995. Individual member retrieval obtains the complete
 `ad52912189f372c78bf11d9b6796e2bf232bfce9ff340409619f94ef2c65d3e4`,
 and1,742-byte header, SHA256
 `9e1cc435e25ba7468998273ef54685d897ad867eaa4629a18f02acf0ffffc1fe`.
-The full13,331,158-byte RAR is neither downloaded nor independently hash-verified;
+At that checkpoint the full13,331,158-byte RAR is neither downloaded nor independently hash-verified;
 catalog dates and member timestamps are observations, not independent historical
 authentication.
 
@@ -361,6 +361,43 @@ actual member inventory, source difference and independent review. Eleven respon
 records verify; all746 canonical hashes remain unchanged before documentation.
 Three source members are retrieved, with only selected markers read in the larger
 `FLIPCUBE.CPP`. Neither the full archive nor every sample implementation is examined.
+
+### Full SDK carrier and source-corpus check, October19
+
+Later acquisition verifies the complete [Game SDK RAR](https://archive.org/download/gamesdk/GAMESDK.rar)
+and [DirectX2 RAR](https://archive.org/download/directx2sdk/DIRECTX2.rar) against
+their actual archive.org metadata sizes, SHA1 and MD5. Their SHA256 identities
+are respectively `b8acc28bd87b31bbc378cabf7b0629305a6a9cb26b4e04f9e3e9f081a51a82f3`
+and `94a2baa74e28f78a0897a3307fe061d8bffbc5bd57f698e601177cd4d4735834`.
+Received integrity does not independently authenticate historical release dates.
+
+The earlier Game SDK source above is reobtained, not newly discovered. The
+DirectX2 triangle has4300 bytes, SHA256
+`5d81e1fe91dc4b2b0261d178b8187c72adf2fbaabb128bb0b9e281153f3b5d68`.
+After newline normalization it differs from the4295-byte Game SDK triangle only
+in the copyright year range. Both have active y-then-x XOR swaps; their other
+declarations and code equal the already tested MSDN98 source. Both complete
+1742-byte Fixed headers are identical to the previously retained Steem source.
+The inspected MSVC makefiles are identical and use `-Oxa`; those sample settings
+do not establish the game's recipe. No new class, local, owner or flag trial follows.
+
+All318/233 inventoried C/C++ source/header and selected build/readme files in
+these received packages pass original size/CRC and retained size/SHA256 checks:
+551 members/6366246 bytes. Four literal fingerprints find no PCX marker;
+F0000 and memmove hits outside the known triangle family are only Win32 access-
+right constants and RtlMoveMemory macros. This is a literal/file-extension scope,
+not complete semantic inspection or proof that no related source exists.
+
+Private `.analysis/early-sdk-raster-20261019/` retains the complete source/text
+corpora in a1135114-byte archive, full acquisition/index receipts and the review.
+Eighteen closed helper/index/source copies are member-hash verified in a91911-byte
+archive. Both received RAR copies are removed only after all selected source/text
+members are retained and verified; unselected binary/other-extension payloads
+remain outside the source claim. Cleanup releases41267200 allocated bytes after
+both archive costs and before small receipts. All90 protected source/config/
+object/product identities stay fixed. Commands use CPU0/35%,384/512MiB; the
+cleanup process peaks43286528 bytes with zero limit events. No game compilation,
+provider query, runtime case, relink, full replay or new source/exact claim follows.
 
 ## Paired colour declaration control, October18
 
