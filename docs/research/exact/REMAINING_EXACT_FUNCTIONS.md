@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October19,2026, after the last-brick destination-Y correction.
-Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
-There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
+Updated October19,2026, after the six Blt destination-edge sums.
+Accepted totals are **392 functions / 83,837 code bytes / 244 metadata bytes**.
+There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
 
-These 82 are all currently source-present nonexact entries. The eight allocator
+These 83 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -112,6 +112,17 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [six Blt destination-edge sums](BLT_COORDINATE_WRAP.md) promote complete
+plain Blt195exact and explicitly demote stretch139exact→141/94 and unchanged
+capture852exact→864/726. One owner compile checks all18 functions/262 bindings/
+six whole literals. Full stretch/capture/PCX correspondences account for every
+changed operation; all six finite actual-loader witnesses and120 unchanged
+selected calls pass. Current270 authored receipts are in
+`.analysis/blt-coordinate-wrap-20261019/authored-coverage.json`:247 exact/23
+candidates. The pre-change bounded22-candidate review found this concrete gap;
+its other21 rows identified no additional missing consumed operation within their
+recorded domains. Final inventory/source context remain proof limits.
 
 The [last-brick Y correction](LIGHTNING_Y_COORDINATE_WRAP.md) preserves the
 consumed DWORD center-minus-height result before signed clipping. All20 complete
@@ -288,13 +299,14 @@ One owner compile preserves five exact companions and six other body identities;
 | `find-glyph` | 145 | 146 | 86 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-sprite` | 105 | 107 | 94 |
+| `stretch-keyed-sprite` | 139 | 141 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
-| `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon` | 1543 | 1543 | 216 |
 | `fill-polygon-clipped` | 1592 | 1592 | 213 |
 | `release-sprite` | 262 | 269 | 245 |
 | `draw-glyph` | 328 | 332 | 258 |
 | `draw-high-scores` | 404 | 403 | 330 |
+| `capture-sprite` | 852 | 864 | 726 |
 | `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1061 | 992 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |

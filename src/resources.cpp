@@ -55,8 +55,10 @@ void dxball_blt_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     DxBallRect destination;
     destination.left = x;
     destination.top = y;
-    destination.right = x + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width;
-    destination.bottom = y + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height;
+    destination.right = (DxBallInt)((DxBallUInt)x
+                        + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width);
+    destination.bottom = (DxBallInt)((DxBallUInt)y
+                         + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height);
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
@@ -69,8 +71,10 @@ void dxball_blt_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     DxBallRect destination;
     destination.left = x;
     destination.top = y;
-    destination.right = x + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width;
-    destination.bottom = y + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height;
+    destination.right = (DxBallInt)((DxBallUInt)x
+                        + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width);
+    destination.bottom = (DxBallInt)((DxBallUInt)y
+                         + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height);
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1000000, NULL);
@@ -84,8 +88,8 @@ void dxball_stretch_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     DxBallRect destination;
     destination.left = x;
     destination.top = y;
-    destination.right = x + width;
-    destination.bottom = y + height;
+    destination.right = (DxBallInt)((DxBallUInt)x + (DxBallUInt)width);
+    destination.bottom = (DxBallInt)((DxBallUInt)y + (DxBallUInt)height);
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);

@@ -1,5 +1,12 @@
 # Resource drawing wrapper ownership
 
+The later [six Blt-coordinate sums](BLT_COORDINATE_WRAP.md) preserve this ownership
+and all public APIs,while promoting plain Blt195exact and explicitly demoting
+stretch139exact→141/94 and unchanged capture852exact→864/726. Their complete
+instruction correspondences and six finite/120 unchanged calls pass. Current
+totals become392 exacts/247 authored exacts/23 candidates. The dated owner
+chronology below retains its own source context and comparison results.
+
 The October 17 fixed two-owner model moves the unchanged rotated-sprite drawing
 adapter from `rotation.cpp` to the resource drawing adapters in `resources.cpp`.
 It restores three exact functions and explicitly demotes two prior exacts:

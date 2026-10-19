@@ -29,15 +29,15 @@ necessary focused checks; no new campaign is pending.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 393 |
-| Exact code / attached metadata bytes | 84,633 / 244 |
-| Complete nonexact comparisons | 82: 22 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 392 |
+| Exact code / attached metadata bytes | 83,837 / 244 |
+| Complete nonexact comparisons | 83: 23 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-248 exact and 22 candidates across 30 compiler closures. The source-present
+247 exact and 23 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -48,10 +48,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/lightning-y-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/blt-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -65,12 +65,26 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes [all six Blt destination-edge sums](../research/exact/BLT_COORDINATE_WRAP.md).
+One18-function/262-binding/six-literal compile promotes plain Blt195exact,
+preserves keyed195exact,and explicitly demotes stretch139exact→141/94 and
+unchanged capture852exact→864/726. Full51/248-instruction correspondences account
+for both losses; PCX's nine-byte comparison ripple keeps979/851. All six actual
+bank-prefix/failing-Blt witnesses and120 unchanged selected calls pass. Current
+native SHA is `0a632e94edf77f0278257d1c0b7f13512ec842e8b4f6cc72e5f669016dd957cc`.
+All270 authored receipts verify across30 closures. Totals are392 overall exacts,
+247 authored exacts/23 candidates; no old-object mix hides the net one-exact loss.
+Private authority is `.analysis/blt-coordinate-wrap-20261019/`.
+
+The earlier recoveries below retain their own comparison epochs; current totals
+and products are given above.
+
 Current source includes [last-brick destination Y arithmetic](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md):
 one expression preserves the original consumed DWORD subtraction before signed
 clipping. A finite initialized-sprite witness rejects the old instrumented
 source and matches the original after recovery;197 unchanged countdown/crop
 cases pass. All20 complete display raw/resolved bodies/421 actual bindings
-stay fixed, including16 exact companions. Last-brick stays1061/992. The current
+stay fixed, including16 exact companions. Last-brick stays1061/992. That checkpoint's
 native SHA is `e980f545aca7e5019c46a4914caca066bd4d9eab5fa6ad52fe04950f39b080a0`.
 Private authority is `.analysis/lightning-y-wrap-20261019/`. All270 current
 authored closures verify without a replay; source recovery remains unfinished.
@@ -199,6 +213,18 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 [Blt coordinate recovery](../research/exact/BLT_COORDINATE_WRAP.md)
+adopts one frozen six-operation family after complete comparison and independent
+source/result review. Six old instrumented cases fail; six restored/canonical
+cases and108 existing Blt/twelve capture calls pass. All three compiler ripples
+are fully accounted. Plain Blt gains195 exact bytes; stretch/capture lose139/852
+exact bytes, giving392 exacts/83,837 code bytes and247 authored exact/23 candidates.
+Source recovery takes precedence over the prepared relink, which remains
+unexecuted. Current products/caches and the retained failed-play evidence stay.
+All66 closed copies/products/helpers are archived and member-size/SHA verified
+before cleanup,net8,372,224 allocated bytes released. All926 protected identities
+survive; the archive is1,356,538 bytes. No game or full replay is repeated.
 
 October19 [last-brick Y recovery](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md)
 adopts one expression after one complete display compile, an instrumented
@@ -368,7 +394,19 @@ zero matches with shard limits; it does not prove source absence.
 
 ## Resuming authored recovery
 
-Start with the current [22-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+The bounded22-candidate review at608cca4 identifies the Blt gap now closed above;
+the other21 rows expose no new consumed-operation omission in their stated
+domains. The inventory review finds no concrete missing authored body/callee:
+all3,719 direct edges,191 switch words,249 code-address words and177 COM sites
+are accounted,with no unexplained non-CC text-gap bytes. Final denominator and
+original context remain proof limits. Reuse `.analysis/authored-readiness-20261019/`.
+The next authorized work is a current-source VC4 build,then a focused diagnosis
+of the retained menu-init timeout using extra read-only bank/music/palette stage
+observations. Rebind the deferred build plan to the new source checkpoint;
+the current image and prior passing ZIP predate this source. Do not start another
+inventory pass,cast variant or identical game flow without a new concrete gap.
+
+For a new source question,use the current [23-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Missing original declarations are reconstruction work, not an external blocker.
 Form one bounded inference from actual producers, consumers, ownership or layout;

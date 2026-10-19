@@ -1,7 +1,16 @@
 # Sprite, font, PCX and palette owner
 
-The latest [glyph coordinate correction](exact/GLYPH_COORDINATE_WRAP.md) makes
-four consumed DWORD operations explicit in three expressions. Glyph stays332/258;
+The latest [Blt coordinate recovery](exact/BLT_COORDINATE_WRAP.md) makes six
+consumed DWORD sums explicit across plain,keyed and stretch adapters. Plain
+Blt195 becomes exact; stretch141/94 and unchanged capture864/726 are explicit
+demotions with complete instruction correspondence. All18 functions/262 bindings/
+six literals compare;14 other raw/resolved identities and nine prior exacts stay
+fixed. Ten current resource exacts retain1,781 bytes. Six actual bank-prefix/
+failed-Blt witnesses and120 existing drawing/capture calls pass. The native
+library updates; the current EXE and last verified ZIP predate this recovery.
+
+At the [glyph coordinate checkpoint](exact/GLYPH_COORDINATE_WRAP.md),
+four consumed DWORD operations become explicit in three expressions. Glyph stays332/258;
 11 resource exacts/17 code identities survive18 complete comparisons. PCX source
 is unchanged but its fully accounted compiler ripple changes979/850→979/851.
 Four finite actual-font cases and769 existing lookups/768 draws pass. The current
@@ -13,8 +22,8 @@ resource identities remain unchanged, including11 exacts and PCX979/850.
 Four finite clipped counterexamples and99 unchanged existing PCX cases pass;
 the native library updates, while the last verified EXE/ZIP remains older.
 
-The current resource closure has18 complete entries:11 exacts/2,577 code bytes
-and seven candidates. The [conditional-output correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md)
+The current resource closure has18 complete entries:ten exacts/1,781 code bytes
+and eight candidates. The earlier [conditional-output correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md)
 preserves four file-field lifetimes across later EOF. Bank becomes1475/68 from
 1475/63, while all17 companions and11 exacts stay fixed. A bounded later-EOF
 witness and ten unchanged existing bank cases pass. The verified EXE/ZIP still
@@ -26,7 +35,7 @@ defines the observed low32 product before malloc/fread;
 find-glyph146/86 and draw-glyph332/258 are explicit context-related demotions,
 with all operations retained. PCX is979/850. One complete owner comparison,
 ten existing bank cases and a bounded actual-loader overflow witness support
-the change. The later [current VC4 build](CURRENT_VC4_BUILD.md) includes both
+the change. The verified717cc2f [VC4 build](CURRENT_VC4_BUILD.md) includes both
 recoveries and passes the actual ball/paddle/pause/editor/save/reload/exit flow.
 The earlier [drawing-wrapper owner](exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
 restores keyed draw105 and stretch139, while ordinary draw107/94 and blt199/173

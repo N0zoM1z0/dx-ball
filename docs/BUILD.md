@@ -74,9 +74,12 @@ at12ccdb1. The latter includes file-field/text-width,PCX,ranking and glyph
 corrections and passes complete linked checks, but its play observation times
 out returning to menu after pause/resume. Its cause remains unresolved.
 The ZIP retains the earlier verified image. The subsequent
-[last-brick Y correction](research/exact/LIGHTNING_Y_COORDINATE_WRAP.md) is in
+[last-brick Y correction](research/exact/LIGHTNING_Y_COORDINATE_WRAP.md) and
+[six Blt coordinate sums](research/exact/BLT_COORDINATE_WRAP.md) are in
 current source/matching objects/native library and has not been linked into a
-new game. Continue source recovery before final build/game verification.
+new game. The bounded candidate review's concrete Blt gap is now closed;
+next rebuild from current source before diagnosing the retained menu-init timeout.
+The23 remaining nonexact functions and inventory/context proof limits stay explicit.
 Full campaign and physical-driver acceptance remain
 open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.

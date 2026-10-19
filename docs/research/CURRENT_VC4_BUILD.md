@@ -2,7 +2,8 @@
 
 The current on-disk EXE is an intermediate build at12ccdb1, while the local ZIP
 retains the last verified delivery at717cc2f. Their play results differ. The later
-[last-brick Y recovery](exact/LIGHTNING_Y_COORDINATE_WRAP.md) is in current source,
+[last-brick Y recovery](exact/LIGHTNING_Y_COORDINATE_WRAP.md) and
+[six Blt edge sums](exact/BLT_COORDINATE_WRAP.md) are in current source,
 matching objects and native library, but has no subsequent game rebuild/run.
 
 ## Intermediate rebuild after glyph corrections
