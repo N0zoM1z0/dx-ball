@@ -163,6 +163,15 @@ archive before removal, releasing9,302,016 allocated bytes net before its small
 receipts. Current matching/native products, useful caches and previous tested
 EXE/ZIP remain. See `archive-manifest.json` and `cleanup.json` in the authority.
 
+A subsequent [13-pattern Mac traceback check](../research/exact/AUTHOR_SOURCE_CONTEXT.md#nonzero-parameter-traceback-patterns-october19)
+finds no new bounded nonempty name/declaration under the primary32-bit PEF
+extension grammar: nine name overruns, one anchor-array overrun and three empty
+names, all with parameter-count contradictions. Private
+`.analysis/mac-traceback-parameter-layout-20261019/` retains raw slices, complete
+compressed format sources and independent verification. This closes only those
+previously excluded patterns, without changing source/counts or proving scan
+exhaustiveness. No new compile/provider/runtime or disposable files follow.
+
 October19 current-image round/game-over checks and the local delivery bundle
 close the missing current-version lifecycle evidence described above. Source,
 objects and all acceptance counts stay fixed; no compiler,relink,full replay or

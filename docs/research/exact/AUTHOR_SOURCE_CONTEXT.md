@@ -310,6 +310,33 @@ at402,898,944B with six `memory.high` events and zero max/OOM events; this is no
 a whole-investigation peak. Retained bytes and reviews should be reused before
 another network request or provider attempt.
 
+### Nonzero-parameter traceback patterns, October19
+
+The basic-layout scanner excludes nonzero parameter headers. A bounded follow-up
+checks its13 preliminary excluded patterns: two Classic and11 OS X. The primary
+GNU BFD [PEF traceback header](https://gnu.googlesource.com/binutils-gdb/+/refs/heads/gdb_7_3-branch/bfd/pef-traceback.h)
+and [PEF parser](https://gnu.googlesource.com/binutils-gdb/+/refs/heads/gdb_7_3-branch/bfd/pef.c)
+establish the tested32-bit extension order, including one four-byte parameter
+map before procedure distance, interrupt and controlled-storage fields and name.
+The retained complete source bytes verify their Git blob/SHA256 identities;
+this is not an assumption transferred from PPC64 ELF.
+
+Nine advertised names exceed their actual code section; one controlled-anchor
+array exceeds it before a name is reached; three names are empty. All13
+procedure distances align and fit, but every decoded parameter-map prefix
+exceeds its claimed fixed-parameter count. Zero new nonempty bounded names or
+connected authored declarations result. No source model or compiler trial is
+justified. Existing321 positive name rows recheck through the name field only;
+neither this control nor the13-pattern boundary establishes scanner completeness,
+every CodeWarrior extension, source absence or a final Windows denominator.
+
+Private `.analysis/mac-traceback-parameter-layout-20261019/result.json` retains
+all offsets, raw field/context slices, complete parser and member-hash-verified
+compressed format sources. `parent-verification.json` independently checks the13
+raw layouts/classifications and source/carrier identities. No disposable raw
+download/helper files, provider session, compiler, runtime or maintained test
+changes are created; current source/products/ledgers remain fixed.
+
 ### Focused PEF bodies and qualifier control, October18
 
 REA6.5.0 process capture now records the existing pinned Ghidra12.1.4 headless
