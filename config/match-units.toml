@@ -2432,7 +2432,7 @@ target_address = 0x00409790
 size = 337
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "$SG28340", addend = 0, target = 0x00422788, data_hex = "726200" },
+  { offset = 10, type = "DIR32", symbol = "$SG28341", addend = 0, target = 0x00422788, data_hex = "726200" },
   { offset = 19, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 41, type = "REL32", symbol = "_fseek", addend = 0, target = 0x00418310 },
   { offset = 108, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
@@ -2457,7 +2457,7 @@ target_address = 0x004098F0
 size = 307
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "$SG28351", addend = 0, target = 0x0042278C, data_hex = "726200" },
+  { offset = 10, type = "DIR32", symbol = "$SG28352", addend = 0, target = 0x0042278C, data_hex = "726200" },
   { offset = 19, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 41, type = "REL32", symbol = "_fseek", addend = 0, target = 0x00418310 },
   { offset = 108, type = "DIR32", symbol = "_dxball_saved_palette", addend = 0, target = 0x004382F0 },
@@ -2479,7 +2479,7 @@ target_address = 0x00409A30
 size = 376
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "$SG28364", addend = 0, target = 0x00422790, data_hex = "726200" },
+  { offset = 10, type = "DIR32", symbol = "$SG28365", addend = 0, target = 0x00422790, data_hex = "726200" },
   { offset = 19, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 41, type = "REL32", symbol = "_fseek", addend = 0, target = 0x00418310 },
   { offset = 108, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
@@ -3172,7 +3172,7 @@ relocations = [
   { offset = 54, type = "REL32", symbol = "_dxball_release_sprite", addend = 0, target = 0x00404BE0 },
   { offset = 85, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x00425980 },
   { offset = 109, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1024, target = 0x00425980 },
-  { offset = 118, type = "DIR32", symbol = "$SG28446", addend = 0, target = 0x00421090, data_hex = "2000" },
+  { offset = 118, type = "DIR32", symbol = "$SG28447", addend = 0, target = 0x00421090, data_hex = "2000" },
   { offset = 138, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
   { offset = 149, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x004177F0 },
   { offset = 161, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x00403E70 },
@@ -8863,7 +8863,7 @@ relocations = [
   { offset = 1458, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x00403E70 },
 ]
 
-[units.find-glyph]
+[candidates.find-glyph]
 build = "resources"
 symbol = "_dxball_find_glyph"
 target_address = 0x00404E40
@@ -8872,13 +8872,13 @@ boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 20, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
   { offset = 40, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x00425980 },
-  { offset = 51, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 74, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 95, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 115, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x00425980 },
+  { offset = 55, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 75, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 96, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 116, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x00425980 },
 ]
 
-[units.draw-glyph]
+[candidates.draw-glyph]
 build = "resources"
 symbol = "_dxball_draw_glyph"
 target_address = 0x00404CF0
@@ -8886,22 +8886,22 @@ size = 328
 boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
   { offset = 14, type = "REL32", symbol = "_dxball_find_glyph", addend = 0, target = 0x00404E40 },
-  { offset = 45, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 48, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
   { offset = 68, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 77, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 80, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
   { offset = 100, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 111, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 134, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 152, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 175, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 193, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 216, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 225, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 248, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
-  { offset = 260, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
-  { offset = 266, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
-  { offset = 276, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
-  { offset = 299, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 115, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 135, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 156, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 176, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 198, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 218, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 231, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 251, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
+  { offset = 263, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
+  { offset = 269, type = "DIR32", symbol = "_dxball_active_surface", addend = 0, target = 0x004265CC },
+  { offset = 283, type = "DIR32", symbol = "_dxball_font_bank", addend = 0, target = 0x0042108C },
+  { offset = 303, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
 ]
 
 [candidates.load-pcx]
@@ -8911,7 +8911,7 @@ target_address = 0x00409BB0
 size = 862
 boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
-  { offset = 105, type = "DIR32", symbol = "$SG28409", addend = 0, target = 0x00422794, data_hex = "726200" },
+  { offset = 105, type = "DIR32", symbol = "$SG28410", addend = 0, target = 0x00422794, data_hex = "726200" },
   { offset = 114, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 217, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
   { offset = 396, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },

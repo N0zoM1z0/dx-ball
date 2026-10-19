@@ -1,9 +1,15 @@
 # Sprite, font, PCX and palette owner
 
-The current resource closure has18 complete entries:13 exacts/3,050 code bytes
-and five candidates. The [drawing-wrapper owner](exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
+The current resource closure has18 complete entries:11 exacts/2,577 code bytes
+and seven candidates. The [byte-count recovery](exact/BANK_BYTE_COUNT_ARITHMETIC.md)
+defines the observed low32 product before malloc/fread. Bank stays1475/64;
+find-glyph146/86 and draw-glyph332/258 are explicit context-related demotions,
+with all operations retained. PCX is979/850. One complete owner comparison,
+ten existing bank cases and a bounded actual-loader overflow witness support
+the change; no final game rebuild or play run follows yet.
+The earlier [drawing-wrapper owner](exact/RESOURCE_ROTATION_WRAPPER_OWNER.md)
 restores keyed draw105 and stretch139, while ordinary draw107/94 and blt199/173
-remain explicit demotions. Release stays269/245, bank1475/64 and PCX979/851.
+remain explicit demotions. Release stays269/245 and bank1475/64.
 The [actual author declaration inference](exact/BANK_ALLOCATION_SCOPE.md#actual-author-declaration-inference-october-18)
 restores the baseline/yoffset home through one fixed debug-bound model; both
 original byte sites recover with no lost matching bytes. All17 resource

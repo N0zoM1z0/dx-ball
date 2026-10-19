@@ -191,7 +191,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         fread(&height, 4, 1, dxball_board_file);
         fread(&letter, 1, 1, dxball_board_file);
         fread(&yoffset, 4, 1, dxball_board_file);
-        nbytes = width * height;
+        nbytes = (DxBallUInt)width * height;
         bitmap = (DxBallByte *)dxball_runtime_malloc(nbytes + 3);
         if (bitmap == NULL)
             exit(1);

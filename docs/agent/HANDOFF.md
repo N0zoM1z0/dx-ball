@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 18, 2026. The reconstruction is unfinished. Recover the English
+Updated October 19, 2026. The reconstruction is unfinished. Recover the English
 DX-Ball v1.07 functions as exactly as possible, as readable shared C/C++;
 then verify the original VC4 build and playability; resume ports after that.
 The user permits the **19 explicit original CRT members** in the restored-CRT
@@ -18,9 +18,9 @@ retains the preceding adoption and cleanup chronology. Owner notes and private
 receipts remain authoritative within their stated scopes. Historical totals
 are not current totals.
 
-The user stopped exploration to prepare this handoff. No new restoration trial
-or campaign is pending. Resume source recovery only when requested; the
-reconstruction itself remains unfinished.
+The user resumed authored-source recovery, followed by the final game build and
+then actual game verification. Whole-EXE byte identity is not required. Use only
+necessary focused checks; no new campaign is pending.
 
 ## Current authorities
 
@@ -29,15 +29,15 @@ reconstruction itself remains unfinished.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 395 |
-| Exact code / attached metadata bytes | 85,106 / 244 |
-| Complete nonexact comparisons | 80: 20 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 393 |
+| Exact code / attached metadata bytes | 84,633 / 244 |
+| Complete nonexact comparisons | 82: 22 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-250 exact and 20 candidates across 30 compiler closures. The source-present
+248 exact and 22 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -48,10 +48,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 395 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 80 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/raster-muldiv-integration-20261018/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/bank-byte-count-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -65,14 +65,30 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
-Current delivery: `build/vc40-restored-crt/dxball.exe`, 166,400 bytes, SHA-256
+Last linked delivery: `build/vc40-restored-crt/dxball.exe`, 166,400 bytes, SHA-256
 `40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`.
 The [genuine MulDiv integration](../research/exact/EXACT_FIXED_POINT.md#genuine-api-integration-october18)
-is the latest adopted source/API change. Its native/Windows/both VC4 builds,
+is the latest full linked source/API checkpoint. Its native/Windows/both VC4 builds,
 7,164 existing raster cases, complete linked containers and 4,488 loader fields
 pass within that checkpoint's scope. The restored link reuses 118 objects and
 19 approved original CRT members. Later private trials change no source,
-fixture, ledger, current object, or delivery identity.
+fixture, ledger, current object, or delivery identity before the October19 change.
+
+The [bank byte-count recovery](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
+is the latest source change. It defines the observed low32 product before the
+unsigned allocation/fread boundary. One resource compile compares18 full bodies,
+262 bindings and six literals;15 identities survive. Bank remains1475/64,
+find-glyph becomes146/86, draw-glyph332/258 and PCX979/850. Both glyph exacts
+are explicitly demoted; their operations remain accounted for. An actual
+65536×65536/CreateSurface-failure witness rejects old signed-overflow source
+and passes the restored source against the original. Ten existing bank cases
+pass after a one-source native rebuild. Current totals are248 authored exact/
+22 candidates,393 overall exacts. No final game rebuild or play run follows yet;
+the linked image above predates this source checkpoint.
+The focused native receipt is `.analysis/bank-byte-count-20261019/native-summary.json`.
+The older `build/native/retained-build.json` predates MulDiv integration in four
+non-resource inputs; it remains historical and must not be used as a current
+whole-build input attestation. This checkpoint does not repair that older claim.
 
 Relevant accepted source contracts:
 
@@ -96,6 +112,16 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 [byte-count arithmetic](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
+is adopted with its full18-body comparison, bounded overflow witness, ten existing
+bank cases and explicit two-glyph demotion. All270 authored entries have current
+source/object/flag/complete-comparison receipts. The28 reviewed closed input and
+product files are member-hash verified in a1,023,104-byte archive, releasing
+7,790,592 allocated bytes after archive cost and before the small cleanup receipt.
+Current products and caches remain. Private authority is
+`.analysis/bank-byte-count-20261019/`, including independent review, coverage and
+`cleanup.json`. The following filename/path review is the preceding closed work.
 
 The [bank filename and path review](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
 reads one previously missing416-byte Mac helper through REA6.5 process capture
@@ -140,7 +166,7 @@ zero matches with shard limits; it does not prove source absence.
 
 ## Resuming authored recovery
 
-Start with the current [20-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+Start with the current [22-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Missing original declarations are reconstruction work, not an external blocker.
 Form one bounded inference from actual producers, consumers, ownership or layout;

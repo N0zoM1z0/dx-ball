@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October 18, 2026, after the paired palette declaration inference.
-Accepted totals are **395 functions / 85,106 code bytes / 244 metadata bytes**.
-There are **80 complete nonexact comparisons: 20 authored and 60 runtime**. None is an accepted exact.
+Updated October 19, 2026, after the bank byte-count arithmetic recovery.
+Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
+There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
-These 80 are all currently source-present nonexact entries. The eight allocator
+These 82 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -112,6 +112,16 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [bank byte-count recovery](BANK_BYTE_COUNT_ARITHMETIC.md) explicitly defines
+the original modulo32 product before malloc/fread. One resource compile checks
+all18 functions/262 bindings/six full literals. Bank remains1475/64; two glyph
+functions are honestly demoted to146/86 and332/258 after changed address
+producers. Their complete operations remain present. PCX becomes979/850.
+An actual overflow/CreateSurface-failure witness and ten existing bank cases
+pass. Current coverage is248 exact/22 candidates across30 compiler closures;
+`.analysis/bank-byte-count-20261019/authored-coverage.json` is authoritative.
+The historical October18 chronology below retains its own totals.
 
 At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
 closes after one resource compile: all18 complete raw/resolved bodies and13
@@ -221,6 +231,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `reset-round` | 426 | 426 | 20 |
 | `load-sprite-bank` | 1475 | 1475 | 64 |
 | `draw-paddle` | 677 | 677 | 68 |
+| `find-glyph` | 145 | 146 | 86 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
@@ -228,8 +239,9 @@ One owner compile preserves five exact companions and six other body identities;
 | `fill-polygon` | 1543 | 1543 | 216 |
 | `fill-polygon-clipped` | 1592 | 1592 | 213 |
 | `release-sprite` | 262 | 269 | 245 |
+| `draw-glyph` | 328 | 332 | 258 |
 | `draw-high-scores` | 404 | 403 | 330 |
-| `load-pcx` | 862 | 979 | 851 |
+| `load-pcx` | 862 | 979 | 850 |
 | `last-brick` | 1057 | 1061 | 992 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |
 
