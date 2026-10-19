@@ -1,5 +1,10 @@
 # Complete lightning crop producers and retained countdown
 
+The subsequent [destination-Y correction](LIGHTNING_Y_COORDINATE_WRAP.md) makes
+the consumed DWORD subtraction explicit without changing any of the20 complete
+display identities or421 actual bindings. Its finite witness and197 existing
+cases pass; last-brick stays1061/992. The chronology below retains its own totals.
+
 The maintained last-brick source now directly subtracts the right/bottom excess:
 
 ```cpp

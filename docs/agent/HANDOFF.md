@@ -51,7 +51,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/glyph-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/lightning-y-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -65,13 +65,23 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes [last-brick destination Y arithmetic](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md):
+one expression preserves the original consumed DWORD subtraction before signed
+clipping. A finite initialized-sprite witness rejects the old instrumented
+source and matches the original after recovery;197 unchanged countdown/crop
+cases pass. All20 complete display raw/resolved bodies/421 actual bindings
+stay fixed, including16 exact companions. Last-brick stays1061/992. The current
+native SHA is `e980f545aca7e5019c46a4914caca066bd4d9eab5fa6ad52fe04950f39b080a0`.
+Private authority is `.analysis/lightning-y-wrap-20261019/`. All270 current
+authored closures verify without a replay; source recovery remains unfinished.
+
 Current source includes [glyph destination coordinates](../research/exact/GLYPH_COORDINATE_WRAP.md):
 three expressions preserve four consumed DWORD arithmetic operations. Four
 finite actual-font/CreateSurface-failure cases match original rectangles and
 returns;769 existing lookups/768 draws pass. All18 complete resource functions/
 262 bindings/six literals compare;11 exacts and17 code identities survive.
 Glyph stays332/258. Unchanged PCX source has a fully accounted227-instruction
-compiler ripple,979/850→979/851; its strict result is not hidden. Current native
+compiler ripple,979/850→979/851; its strict result is not hidden. Glyph-checkpoint native
 SHA is `d400ba4da656ba3f9cb688812954e16ff87903109966cecdee1ed9d2e818097b`.
 Private authority is `.analysis/glyph-coordinate-wrap-20261019/`.
 
@@ -105,11 +115,20 @@ include those source changes. The preceding boundary-checkpoint native SHA was
 `8ed0f953adda504213452d801130961e1ad6ae0c6572d12e5ad077db33359bb5`.
 Private authority is `.analysis/authored-boundaries-20261019/`.
 
-The EXE/ZIP below remain the last verified delivery at717cc2f and **predate
-these current source changes**. Do not transfer their play claims to the
-new source. Continue authored recovery before the next final build/game check.
+The ZIP below remains the last verified delivery at717cc2f and predates these
+source changes. A later intermediate rebuild at12ccdb1 replaces
+`build/vc40-restored-crt/dxball.exe` with166,400-byte SHA-256
+`4d962eaaa2c6070047ffeb8e1edfb390f092a01b1f8e27eadda685242b217846`.
+All118 objects and19 approved CRT members,673 complete linked sections/5,904
+COFF bindings and all4,488 loader fields verify. Its play observation fails
+after pause/resume while returning to menu: mode0/end_requested1 persists to
+the existing20s readiness deadline. Cause remains unresolved; all three owned
+process identities are subsequently absent. Retain the complete failure under
+`.analysis/current-vc4-refresh-20261019/`; do not restart the same flow merely
+because observation expired. That EXE also predates the last-brick Y correction.
+Continue authored recovery before final build/game verification.
 
-Current delivery: `build/vc40-restored-crt/dxball.exe`,166,400 bytes, SHA-256
+Last verified delivery image, retained inside the ZIP below:166,400 bytes, SHA-256
 `f0f2fa2eefaa48aceb23b150dd894ee2daf6db13efe709f98c8cacacfcb8b5d4`.
 The [current VC4 build and play check](../research/CURRENT_VC4_BUILD.md) includes
 both October19 source recoveries at717cc2f. All118 current source/integration
@@ -180,6 +199,17 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 [last-brick Y recovery](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md)
+adopts one expression after one complete display compile, an instrumented
+before/after counterexample and197 unchanged countdown/crop cases. All20 raw
+and resolved bodies/421 actual bindings remain identical, including16 exacts.
+One native display compile/link and current finite witness pass. No provider,
+replay, game rebuild or game run follows. Counts remain248 authored exact/22
+candidates; all270 source/comparison receipts verify. Closed files are archived
+and member-hash verified before cleanup:57 files,1,303,455-byte archive and
+7,733,248 allocated bytes released net before small receipts. All925 protected
+identities survive; current products,caches and failed-play evidence remain.
 
 October19 glyph-coordinate recovery adopts three expressions after one complete
 resource compile, four bounded original/native counterexamples and unchanged
@@ -352,7 +382,7 @@ is not a new source question. Keep inference separate from recovered fact.
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Unknown80-byte frame difference is not permission to add padding; integer-offset-before-base order is restored |
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
-| Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep clock before RNG and existing callback-visible state |
+| Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Consumed destination-Y subtraction now wraps explicitly. Keep clock before RNG and existing callback-visible state; abs(INT_MIN) remains open |
 
 Ranking's signed630−measure_text question is closed by the adopted explicit
 DWORD subtraction. Its eight complete identities stay fixed; do not replay

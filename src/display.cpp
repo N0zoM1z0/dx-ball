@@ -481,7 +481,8 @@ void dxball_last_brick(void)
         }
         dxball_select_sprite_bank(2);
         x = center_x - dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width / 2;
-        y = center_y - dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height;
+        y = (DxBallInt)((DxBallUInt)center_y
+                      - (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height);
         rect.left = 0;
         rect.top = 0;
         rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width;

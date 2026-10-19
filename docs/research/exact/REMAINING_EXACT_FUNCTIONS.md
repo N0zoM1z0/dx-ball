@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October19,2026, after the glyph destination-coordinate correction.
+Updated October19,2026, after the last-brick destination-Y correction.
 Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
 There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,13 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [last-brick Y correction](LIGHTNING_Y_COORDINATE_WRAP.md) preserves the
+consumed DWORD center-minus-height result before signed clipping. All20 complete
+display raw/resolved identities/421 actual bindings stay fixed, including16
+exacts; last-brick remains1061/992. One finite original/native counterexample
+and197 unchanged countdown/crop cases pass. Current270 authored closure receipts
+are in `.analysis/lightning-y-wrap-20261019/authored-coverage.json`.
 
 The [glyph coordinate correction](GLYPH_COORDINATE_WRAP.md) defines four original
 DWORD operations without changing the332/258 glyph code identity. All18 resource

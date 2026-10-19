@@ -1,12 +1,40 @@
-# Current VC4 build and play check
+# VC4 build and play records
 
-This is the last verified game image. The subsequent
-[authored boundary corrections](exact/AUTHORED_BOUNDARY_CONTRACTS.md) and
-[PCX coordinate correction](exact/PCX_COORDINATE_WRAP.md) and
-[ranking coordinate subtraction](exact/RANKING_COORDINATE_WRAP.md), plus
-[glyph destination coordinates](exact/GLYPH_COORDINATE_WRAP.md), change
-resources.cpp, ui.c and gameover.c; this EXE/ZIP and its play evidence do not cover them.
-The current matching objects/native library do include those corrections.
+The current on-disk EXE is an intermediate build at12ccdb1, while the local ZIP
+retains the last verified delivery at717cc2f. Their play results differ. The later
+[last-brick Y recovery](exact/LIGHTNING_Y_COORDINATE_WRAP.md) is in current source,
+matching objects and native library, but has no subsequent game rebuild/run.
+
+## Intermediate rebuild after glyph corrections
+
+October19 source12ccdb1 includes the file-field/text-width,PCX,ranking and glyph
+corrections. A14.594s build reuses all118 verified source/integration objects
+and links the19 approved CRT members. Product
+`build/vc40-restored-crt/dxball.exe` is166,400 bytes, SHA-256
+`4d962eaaa2c6070047ffeb8e1edfb390f092a01b1f8e27eadda685242b217846`.
+Changed prior source objects are resources,ui and gameover. All1,099 named map
+addresses stay fixed. Full linked checks account for673 sections/144,669 bytes,
+5,904 COFF bindings and all4,488 HIGHLOW fields; imports/resources stay fixed.
+Build peak memory is174,530,560 bytes, with zero high/max/OOM events under the
+same CPU0/35%,384MiB high/512MiB max limits.
+
+The unchanged existing play body reaches opening/menu, attached ball, paddle
+movement, release/motion and pause/resume. It then fails its existing20s
+`game-return-menu-ready` deadline: display_mode0 and end_requested1 persist.
+There are424 state observations and1,647 valid SDK samples,zero malformed
+samples. The controller terminates its owned game during failure cleanup;
+subsequent PID/start-tick inspection confirms all three owned identities absent.
+All original/protected input identities and the default audio sink remain fixed.
+The run does not reach editor/save/reload or normal application exit. Its cause
+is unresolved; do not transfer the earlier image's passing results to this EXE
+or restart the identical flow solely because observation expired.
+
+Private authority `.analysis/current-vc4-refresh-20261019/` retains the complete
+linked proof, frozen inputs, failed observation, states/captures and process
+review. No replacement delivery ZIP is produced. Continue authored recovery
+before final build/game verification.
+
+## Last verified delivery
 
 October 19, 2026. Source checkpoint `717cc2f4cb0748c62e04cdfd785b3ff9d007f7f7`
 includes both sprite-bank byte-count and live count-bound recoveries. The current
@@ -29,7 +57,7 @@ integration objects. The resource object comes from the preceding focused VC4
 compile; no second resource compilation is needed. The link retains the19
 explicit user-approved original CRT members and uses `/NODEFAULTLIB`.
 
-Product: `build/vc40-restored-crt/dxball.exe`,166,400 bytes, SHA-256
+Product at this checkpoint, subsequently replaced on disk:166,400 bytes, SHA-256
 `f0f2fa2eefaa48aceb23b150dd894ee2daf6db13efe709f98c8cacacfcb8b5d4`.
 The only changed source object relative to the preceding delivery is resources.
 All1,099 named map records retain their addresses. Imports and embedded game
