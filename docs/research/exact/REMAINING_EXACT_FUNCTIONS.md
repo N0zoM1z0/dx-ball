@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October20,2026, after the unsigned text-advance recovery.
+Updated October20,2026, after the signed rotation row-step recovery.
 Accepted totals are **392 functions / 83,837 code bytes / 244 metadata bytes**.
 There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,15 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [signed rotation row step](ROTATION_SIGNED_ROW_STEP.md) preserves the original
+DWORD source offset as a signed Native64 pointer displacement. One32-byte
+negative-pitch witness matches original x86 after recovery; the preceding native
+library faults. Nine selected existing calls pass. All five complete VC4 bodies,
+115 bindings and25 full literal references retain their raw/resolved identities;
+the four exact companions survive and renderer stays1458/1466. No exact is gained.
+Current270 authored closure receipts are in
+`.analysis/rotation-signed-row-step-20261020/authored-coverage.json`.
 
 The [text-advance type recovery](TEXT_ADVANCE_ACCUMULATOR.md) defines two consumed
 DWORD additions while preserving all seven UI code identities and six exacts.

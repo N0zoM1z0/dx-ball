@@ -81,7 +81,7 @@ void dxball_render_rotated_sprite(DxBallUInt center_x, DxBallUInt center_y,
             ++source_column;
             if (source_column >= width) {
                 source_column = 0;
-                pixel += source_desc.pitch - width + 1;
+                pixel += (DxBallInt)(source_desc.pitch - width + 1);
             } else {
                 ++pixel;
             }

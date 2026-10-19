@@ -54,7 +54,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/text-advance-accumulator-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/rotation-signed-row-step-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -68,6 +68,24 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes the [signed rotation row step](../research/exact/ROTATION_SIGNED_ROW_STEP.md).
+One final signed32 conversion preserves the original DWORD row delta when
+applied to a Native64 pointer. A32-byte/two-row negative-pitch witness passes
+original x86, faults in the preceding native library, and matches after recovery.
+Nine unchanged selected calls also pass. One five-function/115-binding/25-literal
+VC4 compile preserves every raw/resolved identity and all four exact companions;
+renderer stays1458/1466. All270 authored receipts verify across30 closures;
+semantic scopes/counts remain fixed. Only native rotation recompiles;38 other
+objects stay fixed. Current native SHA is
+`2fc51bd6c8272ebfe13f18dd572fe757cf234380ed7fb802f60b3bc1a4e1f19e`.
+Private authority is `.analysis/rotation-signed-row-step-20261020/`, including
+the retained harness failures and corrected occurrence-provenance receipt.
+All36 closed copies/helpers are member-verified before removal;7,090,176 allocated
+bytes are released net and908 current identities remain fixed. The independent
+final review covers the native results and all ordered claim/input rows.
+Counts stay392 overall exacts,247 authored exact/23 candidates. No game rebuild
+or run follows; the historical bff527e game/ZIP predate this and both UI changes.
+
 Current source includes the [unsigned text advance](../research/exact/TEXT_ADVANCE_ACCUMULATOR.md).
 One type change defines both original consumed DWORD additions at404F0E/404F64,
 retaining signed glyph half-width division and the signed coordinate ABI.
@@ -76,7 +94,7 @@ draw-text stays150exact and measurement stays279/3. Two actual initialized-font
 prefix/failing-Blt cases reject old instrumented additions and consume the
 original wrapped next-glyph coordinates after recovery; the negative-half
 control passes. The216 unchanged drawing cases and all three canonical boundary
-cases pass. Only native ui.c rebuilds;38 other objects stay fixed. Current native
+cases pass. Only native ui.c rebuilds;38 other objects stay fixed. That checkpoint's native
 SHA is `a2f2ffa9a2bcfc624b52d747719ada2188a7b6074e0d928a95447626cae4396d`.
 All270 authored receipts verify across30 closures, without replay. Counts stay
 392 overall exacts,247 authored exact/23 candidates. Private authority is
