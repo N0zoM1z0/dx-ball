@@ -113,6 +113,13 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
+The [complete raster instruction correspondence](RASTER_OPERATION_CORRESPONDENCE.md)
+explains all1408 instructions in triangle and both polygons through consistent
+frame roles and20 comparison groups. Subsequent EAX/flag observations are checked;
+all517 strict differing bytes and all three candidate classifications remain.
+It introduces no source or semantic case acceptance and does not recover the
+original declaration/compiler context.
+
 The [ranking coordinate-subtraction correction](RANKING_COORDINATE_WRAP.md)
 preserves all8 complete gameover code identities/234 bindings/13 literals and
 seven exacts. A finite original/native boundary case and17 unchanged existing

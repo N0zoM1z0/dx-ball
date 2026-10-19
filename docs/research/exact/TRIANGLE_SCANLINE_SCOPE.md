@@ -1,5 +1,10 @@
 # Triangle scanline lifetime
 
+The later [complete instruction correspondence](RASTER_OPERATION_CORRESPONDENCE.md)
+accounts for all482 current/original instructions through a bijective frame-role
+mapping and two comparison groups with subsequent EAX/flag checks. The strict
+1710/88 result and original physical-home question below remain unchanged.
+
 The triangle routine at `0x0040AB90` now declares its scanline `y` in a block
 covering the upper and lower scan phases. The block starts after long-edge
 step and X initialization and includes the lower flat-edge return. Fixed-point

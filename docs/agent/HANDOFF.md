@@ -171,6 +171,18 @@ Relevant accepted source contracts:
 
 ## Last closed work
 
+October19 [complete raster instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md)
+accounts for all1408 instructions/4845 bytes of the three current raster
+candidates. Bijective frame-role maps and20 checked comparison groups explain
+every instruction difference;80 CFG register/flag checks leave no later
+observation of the exchanged values. The actual30-byte conversion callee and
+36 fixed EH-state byte writes verify. Strict517 differing bytes remain; no
+source, exact or semantic case acceptance changes. Private authority is
+`.analysis/raster-operation-correspondence-20261019/inspection.json`. This is a
+bounded source-operation correspondence, not unrestricted machine equivalence,
+original spelling, source optimality or actual EH execution. No compile, provider,
+target execution or replay follows; all90 protected identities remain fixed.
+
 October19 [full early-SDK source check](../research/exact/EXACT_FIXED_POINT.md#full-sdk-carrier-and-source-corpus-check-october19)
 verifies both received Game SDK/DirectX2 packages and retains551 source/text
 members with original CRC and retained SHA checks. The1995 triangle was already
@@ -316,7 +328,7 @@ is not a new source question. Keep inference separate from recovered fact.
 | --- | --- | --- |
 | Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/68 preserves extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; names, filename qualification, cursor/row/column and transfer scopes are closed |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
-| Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md) | Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
+| Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Unknown80-byte frame difference is not permission to add padding; integer-offset-before-base order is restored |
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
 | Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep clock before RNG and existing callback-visible state |

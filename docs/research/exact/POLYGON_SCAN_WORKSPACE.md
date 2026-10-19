@@ -1,5 +1,10 @@
 # Polygon scan and sort workspace
 
+The later [complete instruction correspondence](RASTER_OPERATION_CORRESPONDENCE.md)
+accounts for all458/468 current/original instructions through the same bijective
+frame-role map and11/7 checked comparison groups. Current strict1543/216 and
+1592/213 comparisons remain candidates; no declaration or exact claim changes.
+
 The later [triangle scanline scope](TRIANGLE_SCANLINE_SCOPE.md) reduces its
 comparison to 88 differences. The polygon source and results below are unchanged.
 
