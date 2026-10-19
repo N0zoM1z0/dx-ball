@@ -1,5 +1,11 @@
 # Ranking implementation owner control
 
+The later [coordinate subtraction recovery](RANKING_COORDINATE_WRAP.md) makes
+the original DWORD result explicit without changing any of the eight gameover
+code identities. Ranking remains403/330; the frame/producer correspondence below
+still applies. Current totals are248 authored exact/22 candidates,393 overall.
+The following owner control and its totals are historical.
+
 One private source model places ranking drawing, reading, insertion and default
 initialization, together with `dxball_scores[15]`, in a shared `scores.c` owner.
 The original functions are consecutive at `0x406B20`, `0x406CC0`, `0x406D20` and

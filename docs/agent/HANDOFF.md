@@ -51,7 +51,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/pcx-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/ranking-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -65,11 +65,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes the [ranking coordinate subtraction](../research/exact/RANKING_COORDINATE_WRAP.md):
+the original DWORD subtraction is explicit before the signed text coordinate.
+All8 gameover code identities/234 bindings/13 literals stay fixed, including
+seven exacts; ranking stays403/330. The finite boundary case and17 unchanged
+ranking cases pass. Current native SHA is
+`cd30d703f106cece05e62912d6033519b2c7238f25e26bc456fa3464efe83e2e`.
+Private authority is `.analysis/ranking-coordinate-wrap-20261019/`.
+The separate text-advance proposal loses draw-text150exact→153/20 and is rejected;
+canonical ui.c stays fixed. Its finite final-advance boundary remains documented,
+without claiming all exceptional text arithmetic is defined.
+
 Current source includes the [PCX coordinate correction](../research/exact/PCX_COORDINATE_WRAP.md):
 four literal/RLE destination increments preserve original DWORD wrap before
 signed clipping. All18 complete resource identities/262 bindings/six literals
 stay fixed, including11 exacts and PCX979/850. Four finite clipped counterexamples
-and99 unchanged existing PCX cases pass. Current native SHA is
+and99 unchanged existing PCX cases pass. The PCX-checkpoint native SHA was
 `78d8e0e6f9f63e8e19a277f3df7dc4e722243eff3fb2e605d30be5127dfb8c6c`.
 Private authority is `.analysis/pcx-coordinate-wrap-20261019/`.
 
@@ -159,6 +170,17 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 ranking subtraction recovery adopts one expression after a complete
+eight-body comparison, finite original/native counterexample and17 existing
+ranking cases. All code identities and claim counts remain unchanged. The
+separate UI unsigned-advance trial is rejected after its full comparison loses
+draw-text's exact body; no alternate source model or216-case replay follows.
+See [ranking coordinates](../research/exact/RANKING_COORDINATE_WRAP.md) for the
+source/fixture boundaries and private authorities.
+Both closed trials archive/member-verify80 files before exact-list removal,
+releasing10285056 allocated bytes net before the small receipts. Current tested
+products, useful caches, comparisons and unique evidence remain.
 
 October19 PCX destination-coordinate recovery adopts four explicit modulo32
 increments while preserving all18 complete resource code identities. One VC4
@@ -287,13 +309,12 @@ is not a new source question. Keep inference separate from recovered fact.
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
 | Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep clock before RNG and existing callback-visible state |
 
-A distinct remaining arithmetic question is ranking's signed630−measure_text.
-The original chain at406C81/406C8E/406C96/406C99 uses the actual measurement,
-DWORD SUB and text draw. Its raw bytes/carrier verify in
-`.analysis/ranking-width-subtraction-20261019/question.json`. A prior finite-font
-measurement already establishes INT_MIN results, but the ranking caller/font
-scope and any fixed source model still need review. Do not substitute a whole
-game path claim or replay the closed equality/owner controls.
+Ranking's signed630−measure_text question is closed by the adopted explicit
+DWORD subtraction. Its eight complete identities stay fixed; do not replay
+the closed equality/owner controls. The connected unsigned text-advance trial
+is also closed without adoption: the finite witness consumes no wrapped final
+advance, while the proposal loses a complete exact. Retain that boundary and
+avoid treating UBSan completion alone as an original-source declaration proof.
 
 Resource callback-table extraction and historical DirectDraw header controls
 can produce a private exact release-sprite while losing prior exact companions.

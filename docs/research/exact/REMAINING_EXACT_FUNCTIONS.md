@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October19,2026, after the PCX destination-coordinate correction.
+Updated October19,2026, after the ranking coordinate-subtraction correction.
 Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
 There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,14 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [ranking coordinate-subtraction correction](RANKING_COORDINATE_WRAP.md)
+preserves all8 complete gameover code identities/234 bindings/13 literals and
+seven exacts. A finite original/native boundary case and17 unchanged existing
+ranking cases pass; ranking stays403/330. The separate text-advance proposal
+loses the existing150-byte exact body and is rejected, with its boundary
+evidence retained. Current270 authored closure receipts are in
+`.analysis/ranking-coordinate-wrap-20261019/authored-coverage.json`.
 
 The [PCX destination-coordinate correction](PCX_COORDINATE_WRAP.md) makes four
 observed DWORD increments explicit without changing any of the18 complete

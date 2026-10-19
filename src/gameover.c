@@ -73,7 +73,7 @@ void dxball_draw_high_scores(void)
             dxball_draw_text(position.x, position.y, text.count, dxball_scores[position.index].name);
             _ultoa((unsigned long)dxball_scores[position.index].score, text.value, 10);
             text.count = (DxBallInt)strlen(text.value);
-            dxball_draw_text(630 - dxball_measure_text(text.count, text.value), position.y, text.count, text.value);
+            dxball_draw_text((DxBallInt)((DxBallUInt)630 - (DxBallUInt)dxball_measure_text(text.count, text.value)), position.y, text.count, text.value);
             position.y += 20;
         }
         return;
