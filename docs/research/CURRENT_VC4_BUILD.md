@@ -3,7 +3,8 @@
 This is the last verified game image. The subsequent
 [authored boundary corrections](exact/AUTHORED_BOUNDARY_CONTRACTS.md) and
 [PCX coordinate correction](exact/PCX_COORDINATE_WRAP.md) and
-[ranking coordinate subtraction](exact/RANKING_COORDINATE_WRAP.md) change
+[ranking coordinate subtraction](exact/RANKING_COORDINATE_WRAP.md), plus
+[glyph destination coordinates](exact/GLYPH_COORDINATE_WRAP.md), change
 resources.cpp, ui.c and gameover.c; this EXE/ZIP and its play evidence do not cover them.
 The current matching objects/native library do include those corrections.
 

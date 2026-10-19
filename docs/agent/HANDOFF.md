@@ -51,7 +51,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/ranking-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/glyph-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -65,11 +65,21 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes [glyph destination coordinates](../research/exact/GLYPH_COORDINATE_WRAP.md):
+three expressions preserve four consumed DWORD arithmetic operations. Four
+finite actual-font/CreateSurface-failure cases match original rectangles and
+returns;769 existing lookups/768 draws pass. All18 complete resource functions/
+262 bindings/six literals compare;11 exacts and17 code identities survive.
+Glyph stays332/258. Unchanged PCX source has a fully accounted227-instruction
+compiler ripple,979/850→979/851; its strict result is not hidden. Current native
+SHA is `d400ba4da656ba3f9cb688812954e16ff87903109966cecdee1ed9d2e818097b`.
+Private authority is `.analysis/glyph-coordinate-wrap-20261019/`.
+
 Current source includes the [ranking coordinate subtraction](../research/exact/RANKING_COORDINATE_WRAP.md):
 the original DWORD subtraction is explicit before the signed text coordinate.
 All8 gameover code identities/234 bindings/13 literals stay fixed, including
 seven exacts; ranking stays403/330. The finite boundary case and17 unchanged
-ranking cases pass. Current native SHA is
+ranking cases pass. The ranking-checkpoint native SHA was
 `cd30d703f106cece05e62912d6033519b2c7238f25e26bc456fa3464efe83e2e`.
 Private authority is `.analysis/ranking-coordinate-wrap-20261019/`.
 The separate text-advance proposal loses draw-text150exact→153/20 and is rejected;
@@ -170,6 +180,17 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 glyph-coordinate recovery adopts three expressions after one complete
+resource compile, four bounded original/native counterexamples and unchanged
+769-lookup/768-draw selection. Eleven resource exacts survive and17 code
+identities stay fixed. The PCX851 result is adopted with its complete before/
+proposal correspondence; no old object is retained to hide the compiler ripple.
+See [glyph coordinates](../research/exact/GLYPH_COORDINATE_WRAP.md). All270
+authored closures verify without a replay; exact/candidate totals stay fixed.
+Forty-seven closed input/product/helper files are archived/member-hash verified
+before cleanup, releasing7847936 allocated bytes net before small receipts.
+All91 current protected identities survive; current products/caches stay.
 
 October19 [complete raster instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md)
 accounts for all1408 instructions/4845 bytes of the three current raster

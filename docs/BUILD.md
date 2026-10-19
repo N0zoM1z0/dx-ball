@@ -73,7 +73,8 @@ covers both October19 resource recoveries and actual ball/paddle/pause/editor/
 save/reload/exit behavior at717cc2f. The subsequent
 [file-field/text-width corrections](research/exact/AUTHORED_BOUNDARY_CONTRACTS.md)
 and [PCX coordinate correction](research/exact/PCX_COORDINATE_WRAP.md), plus
-[ranking coordinate subtraction](research/exact/RANKING_COORDINATE_WRAP.md), are in
+[ranking coordinate subtraction](research/exact/RANKING_COORDINATE_WRAP.md) and
+[glyph destination coordinates](research/exact/GLYPH_COORDINATE_WRAP.md), are in
 current source/matching objects/native library, but not yet this EXE/ZIP.
 Full campaign and physical-driver acceptance remain
 open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)

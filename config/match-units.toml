@@ -2432,7 +2432,7 @@ target_address = 0x00409790
 size = 337
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "$SG28343", addend = 0, target = 0x00422788, data_hex = "726200" },
+  { offset = 10, type = "DIR32", symbol = "$SG28353", addend = 0, target = 0x00422788, data_hex = "726200" },
   { offset = 19, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 41, type = "REL32", symbol = "_fseek", addend = 0, target = 0x00418310 },
   { offset = 108, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
@@ -2457,7 +2457,7 @@ target_address = 0x004098F0
 size = 307
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "$SG28354", addend = 0, target = 0x0042278C, data_hex = "726200" },
+  { offset = 10, type = "DIR32", symbol = "$SG28364", addend = 0, target = 0x0042278C, data_hex = "726200" },
   { offset = 19, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 41, type = "REL32", symbol = "_fseek", addend = 0, target = 0x00418310 },
   { offset = 108, type = "DIR32", symbol = "_dxball_saved_palette", addend = 0, target = 0x004382F0 },
@@ -2479,7 +2479,7 @@ target_address = 0x00409A30
 size = 376
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
 relocations = [
-  { offset = 10, type = "DIR32", symbol = "$SG28367", addend = 0, target = 0x00422790, data_hex = "726200" },
+  { offset = 10, type = "DIR32", symbol = "$SG28377", addend = 0, target = 0x00422790, data_hex = "726200" },
   { offset = 19, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 41, type = "REL32", symbol = "_fseek", addend = 0, target = 0x00418310 },
   { offset = 108, type = "DIR32", symbol = "_dxball_live_palette", addend = 0, target = 0x004386F0 },
@@ -3172,7 +3172,7 @@ relocations = [
   { offset = 54, type = "REL32", symbol = "_dxball_release_sprite", addend = 0, target = 0x00404BE0 },
   { offset = 85, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1020, target = 0x00425980 },
   { offset = 109, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 1024, target = 0x00425980 },
-  { offset = 118, type = "DIR32", symbol = "$SG28457", addend = 0, target = 0x00421090, data_hex = "2000" },
+  { offset = 118, type = "DIR32", symbol = "$SG28467", addend = 0, target = 0x00421090, data_hex = "2000" },
   { offset = 138, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
   { offset = 149, type = "REL32", symbol = "_strcpy", addend = 0, target = 0x004177F0 },
   { offset = 161, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x00403E70 },
@@ -8911,7 +8911,7 @@ target_address = 0x00409BB0
 size = 862
 boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 relocations = [
-  { offset = 105, type = "DIR32", symbol = "$SG28412", addend = 0, target = 0x00422794, data_hex = "726200" },
+  { offset = 105, type = "DIR32", symbol = "$SG28422", addend = 0, target = 0x00422794, data_hex = "726200" },
   { offset = 114, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 217, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },
   { offset = 396, type = "REL32", symbol = "__filbuf", addend = 0, target = 0x00418220 },

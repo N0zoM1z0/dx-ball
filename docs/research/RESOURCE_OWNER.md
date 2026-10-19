@@ -1,7 +1,14 @@
 # Sprite, font, PCX and palette owner
 
-The [PCX coordinate correction](exact/PCX_COORDINATE_WRAP.md) restores explicit
-modulo32 destination increments in both literal/RLE paths. All18 complete
+The latest [glyph coordinate correction](exact/GLYPH_COORDINATE_WRAP.md) makes
+four consumed DWORD operations explicit in three expressions. Glyph stays332/258;
+11 resource exacts/17 code identities survive18 complete comparisons. PCX source
+is unchanged but its fully accounted compiler ripple changes979/850→979/851.
+Four finite actual-font cases and769 existing lookups/768 draws pass. The current
+native library includes the change; the verified game/ZIP remain older.
+
+At the [PCX coordinate checkpoint](exact/PCX_COORDINATE_WRAP.md), both literal/RLE
+paths gained explicit modulo32 destination increments. All18 complete
 resource identities remain unchanged, including11 exacts and PCX979/850.
 Four finite clipped counterexamples and99 unchanged existing PCX cases pass;
 the native library updates, while the last verified EXE/ZIP remains older.

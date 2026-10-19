@@ -290,10 +290,12 @@ DxBallInt dxball_draw_glyph(signed char code, DxBallInt x, DxBallInt baseline)
     sprite = dxball_find_glyph(code);
     if (sprite != 0) {
         destination.left = x;
-        destination.top = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
-                         - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
-        destination.right = dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + x;
-        destination.bottom = baseline - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
+        destination.top = (DxBallInt)((DxBallUInt)baseline
+                         - (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
+                         - (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline);
+        destination.right = (DxBallInt)((DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + (DxBallUInt)x);
+        destination.bottom = (DxBallInt)((DxBallUInt)baseline
+                            - (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline);
         ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
             dxball_sprite_banks[dxball_font_bank].sprites[sprite]->surface,
             &dxball_sprite_banks[dxball_font_bank].sprites[sprite]->source_rect, 0x1008000, NULL);

@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October19,2026, after the ranking coordinate-subtraction correction.
+Updated October19,2026, after the glyph destination-coordinate correction.
 Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
 There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,14 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [glyph coordinate correction](GLYPH_COORDINATE_WRAP.md) defines four original
+DWORD operations without changing the332/258 glyph code identity. All18 resource
+functions/262 bindings/six literals compare;11 exacts and17 code identities stay
+fixed. PCX source is unchanged but its complete227-instruction compiler ripple
+changes979/850→979/851; all affected operations are accounted. Four finite
+boundary inputs and769 existing lookups/768 draws pass. Current authored coverage
+is `.analysis/glyph-coordinate-wrap-20261019/authored-coverage.json`.
 
 The [complete raster instruction correspondence](RASTER_OPERATION_CORRESPONDENCE.md)
 explains all1408 instructions in triangle and both polygons through consistent
@@ -280,7 +288,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `release-sprite` | 262 | 269 | 245 |
 | `draw-glyph` | 328 | 332 | 258 |
 | `draw-high-scores` | 404 | 403 | 330 |
-| `load-pcx` | 862 | 979 | 850 |
+| `load-pcx` | 862 | 979 | 851 |
 | `last-brick` | 1057 | 1061 | 992 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |
 
