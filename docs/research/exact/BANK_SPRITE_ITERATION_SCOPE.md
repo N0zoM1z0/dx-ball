@@ -1,5 +1,11 @@
 # Sprite-bank iteration lifetime
 
+The later [conditional-output correction](AUTHORED_BOUNDARY_CONTRACTS.md) moves
+only width, height, code and baseline back outside the loop. Unchecked fread
+can leave them unchanged after later EOF; the original keeps their lifetimes
+across iterations. The claim below that all seven values are always produced
+within an iteration was too broad. Its byte counts and checks are historical.
+
 The later [allocation-only pointer scope](BANK_ALLOCATION_SCOPE.md) reduces the
 current loader to 66 differences. The measurements below retain their earlier scope.
 

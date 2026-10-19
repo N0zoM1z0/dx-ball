@@ -174,6 +174,8 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
 {
     DxBallInt saved_bank, i, count;
     DxBallInt row, column, cursor, pitch;
+    DxBallInt width, height, yoffset;
+    signed char letter;
     saved_bank = dxball_sprite_bank;
     dxball_select_sprite_bank(bank);
     for (i = 1; i < 254; i = i + 1)
@@ -183,8 +185,6 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
         exit(1);
     fread(&count, 4, 1, dxball_board_file);
     for (i = 1; i < (DxBallInt)((DxBallUInt)count + 1); i = i + 1) {
-        DxBallInt width, height, yoffset;
-        signed char letter;
         DxBallUInt nbytes;
         DxBallByte *bitmap;
         fread(&width, 4, 1, dxball_board_file);

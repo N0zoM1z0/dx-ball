@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 19, 2026, after the bank count-bound recovery.
+Updated October 19, 2026, after the authored boundary-contract corrections.
 Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
 There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,14 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [conditional-output/text-width corrections](AUTHORED_BOUNDARY_CONTRACTS.md)
+retain later-EOF scalar lifetimes and explicit modulo32 width sums. Byte
+comparisons worsen: bank1475/63→1475/68 and measurement279/3→282/26. All25
+affected complete functions/300 bindings/six literals compare, preserving17
+exacts and23 other code identities. Bounded counterexamples and10 existing
+bank/216 measurement cases pass. Counts remain248 authored exact/22 candidates;
+current receipts are `.analysis/authored-boundaries-20261019/authored-coverage.json`.
 
 The [live count-bound recovery](BANK_COUNT_BOUND.md) preserves the original
 modulo32 increment followed by a signed comparison, including every guard
@@ -232,13 +240,13 @@ One owner compile preserves five exact companions and six other body identities;
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
 | `elapsed` | 81 | 81 | 3 |
-| `measure-text` | 279 | 279 | 3 |
 | `animate-palette` | 234 | 234 | 3 |
 | `present-regions-now` | 984 | 984 | 6 |
 | `wait-frames` | 170 | 170 | 8 |
 | `draw-line` | 445 | 445 | 9 |
 | `reset-round` | 426 | 426 | 20 |
-| `load-sprite-bank` | 1475 | 1475 | 63 |
+| `measure-text` | 279 | 282 | 26 |
+| `load-sprite-bank` | 1475 | 1475 | 68 |
 | `draw-paddle` | 677 | 677 | 68 |
 | `find-glyph` | 145 | 146 | 86 |
 | `fill-triangle` | 1710 | 1710 | 88 |

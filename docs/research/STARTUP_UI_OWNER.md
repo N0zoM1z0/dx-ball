@@ -32,6 +32,13 @@ Earlier checkpoints below retain their own scopes, products and counts.
 
 ## Current text and line source recovery
 
+The [October19 boundary correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md) makes
+both measurement branches preserve original modulo32 addition, retaining signed
+half-width division. Its complete comparison becomes282/26, superseding279/3
+below; all six current exact UI companions retain their full code identities.
+Three bounded old-source overflow counterexamples and216 unchanged existing
+measurement cases pass after recovery. No exact promotion or game run follows.
+
 The subsequent [locked-cursor recovery](exact/LINE_LOCKED_CURSOR.md) restores
 the complete445-byte line footprint and all140 frame homes. Nine differences
 remain in three signed comparison groups; five exact UI companions stay exact.

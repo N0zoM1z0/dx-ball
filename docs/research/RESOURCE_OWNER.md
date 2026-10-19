@@ -1,10 +1,14 @@
 # Sprite, font, PCX and palette owner
 
 The current resource closure has18 complete entries:11 exacts/2,577 code bytes
-and seven candidates. The [count-bound recovery](exact/BANK_COUNT_BOUND.md)
+and seven candidates. The [conditional-output correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md)
+preserves four file-field lifetimes across later EOF. Bank becomes1475/68 from
+1475/63, while all17 companions and11 exacts stay fixed. A bounded later-EOF
+witness and ten unchanged existing bank cases pass. The verified EXE/ZIP still
+predate this source change. The preceding [count-bound recovery](exact/BANK_COUNT_BOUND.md)
 preserves the live low32 increment and signed loop guard, improving bank1475/64
 to1475/63 while retaining16 complete code identities and all11 exacts.
-The preceding [byte-count recovery](exact/BANK_BYTE_COUNT_ARITHMETIC.md)
+The earlier [byte-count recovery](exact/BANK_BYTE_COUNT_ARITHMETIC.md)
 defines the observed low32 product before malloc/fread;
 find-glyph146/86 and draw-glyph332/258 are explicit context-related demotions,
 with all operations retained. PCX is979/850. One complete owner comparison,

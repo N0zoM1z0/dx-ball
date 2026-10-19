@@ -1,5 +1,10 @@
 # Current VC4 build and play check
 
+This is the last verified game image. The subsequent
+[authored boundary corrections](exact/AUTHORED_BOUNDARY_CONTRACTS.md) change
+resources.cpp and ui.c; this EXE/ZIP and its play evidence do not cover them.
+The current matching objects/native library do include those corrections.
+
 October 19, 2026. Source checkpoint `717cc2f4cb0748c62e04cdfd785b3ff9d007f7f7`
 includes both sprite-bank byte-count and live count-bound recoveries. The current
 restored-CRT game is rebuilt from that source and passes the existing actual

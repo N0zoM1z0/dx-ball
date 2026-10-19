@@ -70,7 +70,10 @@ To build the optional restored-CRT entry profile, use
 It builds only the game in `build/vc40-restored-crt/`, with explicit source and
 remaining original-member dependencies. The [current VC4 build and play check](research/CURRENT_VC4_BUILD.md)
 covers both October19 resource recoveries and actual ball/paddle/pause/editor/
-save/reload/exit behavior. Full campaign and physical-driver acceptance remain
+save/reload/exit behavior at717cc2f. The subsequent
+[file-field/text-width corrections](research/exact/AUTHORED_BOUNDARY_CONTRACTS.md)
+are in current source/matching objects/native library, but not yet this EXE/ZIP.
+Full campaign and physical-driver acceptance remain
 open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.
 

@@ -8787,7 +8787,7 @@ relocations = [
   { offset = 13, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
   { offset = 25, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x00403E70 },
   { offset = 65, type = "REL32", symbol = "_dxball_release_sprite", addend = 0, target = 0x00404BE0 },
-  { offset = 78, type = "DIR32", symbol = "$SG28276", addend = 0, target = 0x00421094, data_hex = "726200" },
+  { offset = 78, type = "DIR32", symbol = "$SG28280", addend = 0, target = 0x00421094, data_hex = "726200" },
   { offset = 87, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 95, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 101, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },

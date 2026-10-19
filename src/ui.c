@@ -17,10 +17,12 @@ DxBallInt dxball_measure_text(DxBallInt count, const char *text)
         if (dxball_sprite_banks[dxball_font_bank].count == sprite)
             sprite = 0;
         if (sprite == 0)
-            width += dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2;
+            width = (DxBallInt)((DxBallUInt)width +
+                dxball_sprite_banks[dxball_font_bank].sprites[1]->width / 2);
         else
-            width += dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width
-                   + dxball_text_spacing;
+            width = (DxBallInt)((DxBallUInt)width +
+                ((DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width
+                 + dxball_text_spacing));
     }
     return width;
 }

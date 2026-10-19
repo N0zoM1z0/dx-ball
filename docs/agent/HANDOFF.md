@@ -51,7 +51,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/bank-count-bound-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/authored-boundaries-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -64,6 +64,21 @@ Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/` privat
 A source-only clone does not include the assets, tools, products or raw evidence.
 
 ## Current source and delivery
+
+Current source includes the [file-field/text-width corrections](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md):
+four fread output lifetimes span later EOF; both measurement branches retain
+original modulo32 addition and signed half-width division. Full25-body/300-binding/
+six-literal comparisons preserve17 exacts and23 other code identities. Bank
+worsens1475/63→1475/68; measurement279/3→282/26. Bounded counterexamples and
+10 existing bank/216 measurement cases pass. Counts stay248 authored exact/22
+candidates,393 overall exacts. Both current matching objects and native library
+include the source changes; the native library SHA is
+`8ed0f953adda504213452d801130961e1ad6ae0c6572d12e5ad077db33359bb5`.
+Private authority is `.analysis/authored-boundaries-20261019/`.
+
+The EXE/ZIP below remain the last verified delivery at717cc2f and **predate
+these two current source changes**. Do not transfer their play claims to the
+new source. Continue authored recovery before the next final build/game check.
 
 Current delivery: `build/vc40-restored-crt/dxball.exe`,166,400 bytes, SHA-256
 `f0f2fa2eefaa48aceb23b150dd894ee2daf6db13efe709f98c8cacacfcb8b5d4`.
@@ -136,6 +151,17 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 authored boundary-contract recovery adopts the two source corrections
+above despite worse byte comparison. Two owner compiles and one two-source
+native incremental build are sufficient; no full replay, relink or game run.
+Independent source/result reviews and focused current native receipts are in
+the new private authority. The earlier iteration-scope inference is explicitly
+corrected; historical semantic case scopes/counts remain unchanged.
+The61 closed inputs/products/helpers are member-hash verified in a1,217,038-byte
+archive before removal, releasing9,302,016 allocated bytes net before its small
+receipts. Current matching/native products, useful caches and previous tested
+EXE/ZIP remain. See `archive-manifest.json` and `cleanup.json` in the authority.
 
 October19 current-image round/game-over checks and the local delivery bundle
 close the missing current-version lifecycle evidence described above. Source,
@@ -228,7 +254,7 @@ is not a new source question. Keep inference separate from recovered fact.
 
 | Family | Reuse before another proposal | Boundary to preserve |
 | --- | --- | --- |
-| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), current frontend/backend traces | Bank1475/63 restores extent/yoffset and low32 byte/count arithmetic; names, filename qualification, cursor/row/column and transfer scopes are closed |
+| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/68 preserves extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; names, filename qualification, cursor/row/column and transfer scopes are closed |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md) | Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Unknown80-byte frame difference is not permission to add padding; integer-offset-before-base order is restored |
