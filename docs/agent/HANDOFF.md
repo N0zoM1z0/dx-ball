@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 19, 2026. The reconstruction is unfinished. Recover the English
+Updated October 20, 2026. The reconstruction is unfinished. Recover the English
 DX-Ball v1.07 functions as exactly as possible, as readable shared C/C++;
 then verify the original VC4 build and playability; resume ports after that.
 The user permits the **19 explicit original CRT members** in the restored-CRT
@@ -18,9 +18,12 @@ retains the preceding adoption and cleanup chronology. Owner notes and private
 receipts remain authoritative within their stated scopes. Historical totals
 are not current totals.
 
-The user resumed authored-source recovery, followed by the final game build and
-then actual game verification. Whole-EXE byte identity is not required. Use only
-necessary focused checks; no new campaign is pending.
+The user reiterated on October20: finish function/source recovery before
+complete game verification. The23 authored nonexact candidates remain active;
+do not infer readiness from a bounded audit finding no omitted operation.
+The current build/play checks ran prematurely. Record their actual results,
+then resume source work. Whole-EXE byte identity is not required. Use necessary
+focused checks; no broader game verification or campaign is pending.
 
 ## Current authorities
 
@@ -129,50 +132,31 @@ include those source changes. The preceding boundary-checkpoint native SHA was
 `8ed0f953adda504213452d801130961e1ad6ae0c6572d12e5ad077db33359bb5`.
 Private authority is `.analysis/authored-boundaries-20261019/`.
 
-The ZIP below remains the last verified delivery at717cc2f and predates these
-source changes. A later intermediate rebuild at12ccdb1 replaces
-`build/vc40-restored-crt/dxball.exe` with166,400-byte SHA-256
-`4d962eaaa2c6070047ffeb8e1edfb390f092a01b1f8e27eadda685242b217846`.
-All118 objects and19 approved CRT members,673 complete linked sections/5,904
-COFF bindings and all4,488 loader fields verify. Its play observation fails
-after pause/resume while returning to menu: mode0/end_requested1 persists to
-the existing20s readiness deadline. Cause remains unresolved; all three owned
-process identities are subsequently absent. Retain the complete failure under
-`.analysis/current-vc4-refresh-20261019/`; do not restart the same flow merely
-because observation expired. That EXE also predates the last-brick Y correction.
-Continue authored recovery before final build/game verification.
+Current local EXE and ZIP now come from source bff527e; both include the
+last-brick Y and six Blt corrections. The166,400-byte EXE SHA-256 is
+`76be8c25a07f972ff55465c47ea47a067434e84c669bf7f64c3cd96692b21db6`.
+A14.894s relink reuses118 verified source/integration objects and19 approved
+CRT members. All673 complete linked sections/144,681 bytes,5,904 COFF bindings,
+4,488 loader fields and1,099 unchanged named map addresses verify.
 
-Last verified delivery image, retained inside the ZIP below:166,400 bytes, SHA-256
-`f0f2fa2eefaa48aceb23b150dd894ee2daf6db13efe709f98c8cacacfcb8b5d4`.
-The [current VC4 build and play check](../research/CURRENT_VC4_BUILD.md) includes
-both October19 source recoveries at717cc2f. All118 current source/integration
-objects are verified and reused, then linked with the19 approved CRT members.
-Resources is the only changed source object relative to the preceding delivery.
-All1,099 named map addresses remain fixed. Complete linked sections,5,904 COFF
-bindings and all4,488 loader fields are checked; imports/resources stay fixed.
+The [current build/play record](../research/CURRENT_VC4_BUILD.md) records the
+premature existing basic/editor, real-round and natural-loss/ranking/fresh-reload
+checks. They pass on this image with541/130/1052 state observations and normal
+exits. They add no source/exact/semantic acceptance or recovery-readiness proof.
+All49 originals and protected inputs stay fixed; CPU0/35%,384MiB high/512MiB max
+limits have zero high/max/OOM events. Do not repeat or broaden these flows.
+Private authority is `.analysis/current-vc4-build-20261020/`.
 
-The existing actual play flow passes on this image: ball/paddle/pause/resume,
-editor CTRL painting, exact20,000-byte save/reload and normal exit0. There are
-589 state observations and2,444 valid SDK samples,zero malformed samples;
-all49 originals remain fixed. Subsequent current-image lifecycle checks pass:
-real single-brick clear earns10 points and loads all400 original board1 bytes/
-222 bricks with three lives; natural losses3→2→1→0,`reA`/222 ranking insertion,
-complete660-byte persistence and fresh-process reload both exit0. The round
-uses127 observations; accepted game-over uses1,198. An initial game-over
-single-sample observation times out with one live descending ball; retain that
-failure separately from the accepted persistent transport. All existing flow
-bodies/assertions and its90s life-loss limit remain unchanged. CPU/memory are
-35%/384MiB high/512MiB max, with no high/max/OOM events. This does not establish full50,focus/surface recovery,
-physical-driver fidelity or every exceptional path. Detailed evidence and limits
-are in the linked note and private `current-vc4-build-20261019/` and
-`current-vc4-play-20261019/` directories under `.analysis/`.
-The lifecycle authority is `.analysis/current-vc4-lifecycle-20261019/`, especially
-`round/verification.json`, `gameover-persistent/verification.json` and the failed
-`gameover` case/observer diagnosis. Do not repeat these unchanged passing flows
-as source progress. Resume the22 authored candidates from concrete source questions.
-The byte-verified local delivery is `build/delivery/dxball-v1.07-vc40-reconstructed.zip`
-(467,599 bytes); it includes current exe,48 unchanged supplied assets and run
-instructions. It remains private, together with its member manifest.
+The older12ccdb1 image's20s return-menu timeout remains unresolved; the current
+pass does not establish its cause or a fix. Preserve
+`.analysis/current-vc4-refresh-20261019/` and retained4d962e image history.
+The previous717cc2f passing delivery retains its own historical records.
+Current private bundle `build/delivery/dxball-v1.07-vc40-reconstructed.zip` is
+475,005 bytes, SHA-256
+`b9e81852cb1e6096e0014835103548682396fcec648ea8f319daac0e543017b0`.
+Its50 member-verified files contain the current rebuilt EXE,48 unchanged supplied
+assets and instructions. Test rankings are excluded. Current EXE/map/manifest,
+useful caches and unique evidence remain private.
 
 The [bank byte-count recovery](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
 defines the observed low32 allocation/fread product and explicitly demotes two
@@ -213,6 +197,17 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October20 current-source relink and existing play/lifecycle checks pass; the
+local bundle is refreshed as described above. These checks were premature under
+the user's source-first priority. Source and claim ledgers stay fixed at247
+authored exact/23 candidates,392 overall exacts. No complete game verification
+or campaign is authorized next; return to concrete source reconstruction.
+Nineteen closed copies/helpers are member-size/SHA verified in a1,731,770-byte
+archive before removal; net1,654,784 allocated bytes are released and183
+protected identities stay fixed. Forty-nine byte-verified isolated runtime
+copies release another1,724,416 bytes. Current products/caches and unique
+evidence stay. See the current authority's archive/cleanup receipts.
 
 October19 [Blt coordinate recovery](../research/exact/BLT_COORDINATE_WRAP.md)
 adopts one frozen six-operation family after complete comparison and independent
@@ -400,11 +395,11 @@ domains. The inventory review finds no concrete missing authored body/callee:
 all3,719 direct edges,191 switch words,249 code-address words and177 COM sites
 are accounted,with no unexplained non-CC text-gap bytes. Final denominator and
 original context remain proof limits. Reuse `.analysis/authored-readiness-20261019/`.
-The next authorized work is a current-source VC4 build,then a focused diagnosis
-of the retained menu-init timeout using extra read-only bank/music/palette stage
-observations. Rebind the deferred build plan to the new source checkpoint;
-the current image and prior passing ZIP predate this source. Do not start another
-inventory pass,cast variant or identical game flow without a new concrete gap.
+The October20 relink/play record does not close these source questions. The
+user explicitly returned priority to the23 authored nonexact functions. Resume
+one evidence-supported source/declaration inference; complete game verification
+stays deferred. Do not start another inventory pass, cast variant or identical
+game flow without a new concrete source question.
 
 For a new source question,use the current [23-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.

@@ -69,19 +69,14 @@ To build the optional restored-CRT entry profile, use
 `scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt`.
 It builds only the game in `build/vc40-restored-crt/`, with explicit source and
 remaining original-member dependencies. The [VC4 build and play record](research/CURRENT_VC4_BUILD.md)
-distinguishes the verified delivery at717cc2f from the later intermediate EXE
-at12ccdb1. The latter includes file-field/text-width,PCX,ranking and glyph
-corrections and passes complete linked checks, but its play observation times
-out returning to menu after pause/resume. Its cause remains unresolved.
-The ZIP retains the earlier verified image. The subsequent
-[last-brick Y correction](research/exact/LIGHTNING_Y_COORDINATE_WRAP.md) and
-[six Blt coordinate sums](research/exact/BLT_COORDINATE_WRAP.md) are in
-current source/matching objects/native library and has not been linked into a
-new game. The bounded candidate review's concrete Blt gap is now closed;
-next rebuild from current source before diagnosing the retained menu-init timeout.
-The23 remaining nonexact functions and inventory/context proof limits stay explicit.
-Full campaign and physical-driver acceptance remain
-open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
+identifies the current bff527e executable and local bundle. Existing basic/editor,
+round-transition and natural-loss/ranking/restart observations pass on that
+image. They ran before source recovery was finished; they do not establish
+source readiness. The23 authored nonexact functions remain the active task.
+Complete game verification follows source recovery; do not extend or repeat
+these flows as source progress. The preceding12ccdb1 menu-return timeout remains
+retained with its cause unresolved. Full campaign and physical-driver acceptance
+remain open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.
 
 The current private local bundle is
