@@ -12,6 +12,11 @@ improves its candidate to279/3. The tested bff527e products below predate that
 source change and retain their recorded identities. No further game rebuild or
 observation follows the source change.
 
+The later [text-advance recovery](exact/TEXT_ADVANCE_ACCUMULATOR.md) preserves
+all seven UI code identities and defines both consumed additions through its
+unsigned local. These recorded game products also predate that source change;
+no further game build or observation follows it.
+
 ## Current local products
 
 The current restored-CRT executable is built from source checkpoint

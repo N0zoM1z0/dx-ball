@@ -54,7 +54,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/text-width-accumulator-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/text-advance-accumulator-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -68,6 +68,22 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes the [unsigned text advance](../research/exact/TEXT_ADVANCE_ACCUMULATOR.md).
+One type change defines both original consumed DWORD additions at404F0E/404F64,
+retaining signed glyph half-width division and the signed coordinate ABI.
+All seven complete UI raw/resolved identities and38 bindings stay fixed;
+draw-text stays150exact and measurement stays279/3. Two actual initialized-font
+prefix/failing-Blt cases reject old instrumented additions and consume the
+original wrapped next-glyph coordinates after recovery; the negative-half
+control passes. The216 unchanged drawing cases and all three canonical boundary
+cases pass. Only native ui.c rebuilds;38 other objects stay fixed. Current native
+SHA is `a2f2ffa9a2bcfc624b52d747719ada2188a7b6074e0d928a95447626cae4396d`.
+All270 authored receipts verify across30 closures, without replay. Counts stay
+392 overall exacts,247 authored exact/23 candidates. Private authority is
+`.analysis/text-advance-accumulator-20261020/`, including independent reviews,
+retained harness correction and plan-annotation correction. No game rebuild/run
+follows; the tested bff527e game/ZIP below predate this change.
+
 Current source includes the [unsigned text-width accumulator](../research/exact/TEXT_WIDTH_ACCUMULATOR.md).
 The existing width uses unsigned32 storage and compound additions, preserving
 original modulo32 sums and signed glyph half-width division; conversion to the
@@ -75,7 +91,7 @@ unchanged signed32 ABI occurs at return. One complete seven-function/38-binding
 compile improves measurement282/26→279/3, preserving all six exact companion
 raw/resolved identities. The216 unchanged existing measurement cases and four
 retained finite boundary controls pass. Only native ui.c rebuilds;38 other
-native objects stay fixed. Current native SHA is
+native objects stay fixed. That checkpoint's native SHA is
 `a25f31c84a17af6c748e02781dc73bfa0241072a7a817bf82a40502e28681f80`.
 All270 authored receipts verify across30 closures. Counts remain392 exacts,
 247 authored exact/23 candidates. Private authority is
@@ -211,6 +227,19 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October20 [text-advance source recovery](../research/exact/TEXT_ADVANCE_ACCUMULATOR.md)
+adopts exactly one unsigned-local model after complete7-function/38-binding
+comparison and independent review. Both ADD results are observed at actual
+next-glyph consumers. Six exacts and all seven code identities remain fixed;
+two old UBSan rejections, the negative-half control,216 existing drawing calls
+and three current-library boundaries verify. All270 source/comparison closures
+are current; historical semantic scopes/case counts remain fixed. No game or
+full replay runs. The prior unconsumed unsigned-RHS trial remains rejected.
+Forty-seven closed files are member-size/SHA verified in a976,412-byte archive
+before removal, releasing7,020,544 allocated bytes net before small receipts.
+All623 protected identities stay fixed. Current products/caches, unique proofs
+and initial harness-failure logs remain; see the authority's cleanup receipt.
 
 October20 [unsigned text-width accumulation](../research/exact/TEXT_WIDTH_ACCUMULATOR.md)
 retains the wrapping contract through the unsigned accumulator type and improves
@@ -439,7 +468,7 @@ is not a new source question. Keep inference separate from recovered fact.
 | Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/68 preserves extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; names, filename qualification, cursor/row/column and transfer scopes are closed |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
-| Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Unknown80-byte frame difference is not permission to add padding; integer-offset-before-base order is restored |
+| Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Both frames are424 bytes; the lower80 original bytes are ten consumed conversion/spill slots, not an unused object. Named/temporary allocation context remains open; integer-offset-before-base order is restored |
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
 | Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Consumed destination-Y subtraction now wraps explicitly. Keep clock before RNG and existing callback-visible state; abs(INT_MIN) remains open |
 
@@ -488,9 +517,9 @@ driver behavior remain unknown; these sites do not identify missing authored
 functions. All74 retained instruction carriers are hash verified. See private
 `bank-count-bound-20261019/directx-call-classification.json` and `inventory-review.json`.
 These bounded reviews do not prove a final denominator or unrestricted semantic
-equivalence of the22 candidates. After concrete source gaps are fixed, proceed
-to the requested VC4 rebuild and actual game checks; do not block that work on
-unique historical source spelling.
+equivalence of the23 candidates. Continue source reconstruction under the user's
+October20 source-first instruction. A bounded review finding no missing operation
+is not a recovery-completion proof or authorization to advance game verification.
 
 Earlier [entry/exit evidence](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
 passes a bounded board0 episode on an earlier image. The historical

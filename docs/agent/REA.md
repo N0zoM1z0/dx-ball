@@ -72,9 +72,11 @@ provider-free lifecycle cases pass. One fresh import with the two optional
 analyzers below disabled retains57 observations and closes normally; the first
 query's retained wrapper timing is260,506ms. It fits the current CPU35%, memory384/512MiB limits with
 the256MiB heap: peak403,206,144 bytes,5200 soft-high reclaim events, no hard-max
-or OOM events. Actual C1 getter and low24 writer locations are now retained;
-runtime editor-symbol and emitted-record correspondence remains open. Reuse
-this closed evidence rather than repeating an import to rediscover those sites.
+or OOM events. Actual C1 getter and low24 writer locations are retained. The later
+[current editor observation](../research/exact/VC4_C_FRONTEND_SYMBOL_KEYS.md#current-editor-writergetter-observation-october18)
+joins the selected count/iterator writer/getter values219/1178. Original-game IDs,
+declarations and same-run emitted-byte/C2 consumption remain unobserved. Reuse
+these closed records; do not import again to rediscover the answered sites.
 
 An interactive inspection returning REA category `invalid_input` retains an
 indexed `.error.json` with its request, error and full response, then keeps the

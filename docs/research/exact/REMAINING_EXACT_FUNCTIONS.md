@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October20,2026, after the unsigned text-width accumulator.
+Updated October20,2026, after the unsigned text-advance recovery.
 Accepted totals are **392 functions / 83,837 code bytes / 244 metadata bytes**.
 There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,14 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [text-advance type recovery](TEXT_ADVANCE_ACCUMULATOR.md) defines two consumed
+DWORD additions while preserving all seven UI code identities and six exacts.
+Two finite initialized-font-prefix cases consume the wrapped next-glyph
+coordinates; old instrumented source rejects both and recovered source passes.
+The signed-half control and216 existing drawing cases pass. Counts are unchanged;
+current authored coverage is
+`.analysis/text-advance-accumulator-20261020/authored-coverage.json`.
 
 The [unsigned text-width accumulator](TEXT_WIDTH_ACCUMULATOR.md) preserves the
 original modulo32 contract through the accumulator type and signed32 return

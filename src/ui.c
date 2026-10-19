@@ -30,7 +30,8 @@ DxBallInt dxball_measure_text(DxBallInt count, const char *text)
 
 void dxball_draw_text(DxBallInt x, DxBallInt baseline, DxBallInt count, const char *text)
 {
-    DxBallInt i, advance = 0;
+    DxBallInt i;
+    DxBallUInt advance = 0;
     for (i = 0; i < count; ++i) {
         x += advance;
         advance = dxball_draw_glyph(text[i], x, baseline);

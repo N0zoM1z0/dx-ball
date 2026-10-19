@@ -83,6 +83,11 @@ The later [unsigned text-width accumulator](research/exact/TEXT_WIDTH_ACCUMULATO
 is in current source, matching objects and native library. The tested bff527e
 EXE/ZIP predate that change; no new game rebuild or observation follows it.
 
+The [unsigned text-advance recovery](research/exact/TEXT_ADVANCE_ACCUMULATOR.md)
+also preserves the complete exact text-drawing body while defining both consumed
+coordinate additions. Current matching/native products include it; the tested
+bff527e game products remain fixed, with further game checks deferred.
+
 The current private local bundle is
 `build/delivery/dxball-v1.07-vc40-reconstructed.zip`. It contains the rebuilt game,
 its verified supplied assets and extraction instructions; extract the whole
