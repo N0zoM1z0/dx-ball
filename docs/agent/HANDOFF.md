@@ -51,7 +51,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/authored-boundaries-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/pcx-coordinate-wrap-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -65,19 +65,27 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
-Current source includes the [file-field/text-width corrections](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md):
+Current source includes the [PCX coordinate correction](../research/exact/PCX_COORDINATE_WRAP.md):
+four literal/RLE destination increments preserve original DWORD wrap before
+signed clipping. All18 complete resource identities/262 bindings/six literals
+stay fixed, including11 exacts and PCX979/850. Four finite clipped counterexamples
+and99 unchanged existing PCX cases pass. Current native SHA is
+`78d8e0e6f9f63e8e19a277f3df7dc4e722243eff3fb2e605d30be5127dfb8c6c`.
+Private authority is `.analysis/pcx-coordinate-wrap-20261019/`.
+
+Source also retains the [file-field/text-width corrections](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md):
 four fread output lifetimes span later EOF; both measurement branches retain
 original modulo32 addition and signed half-width division. Full25-body/300-binding/
 six-literal comparisons preserve17 exacts and23 other code identities. Bank
 worsens1475/63→1475/68; measurement279/3→282/26. Bounded counterexamples and
 10 existing bank/216 measurement cases pass. Counts stay248 authored exact/22
 candidates,393 overall exacts. Both current matching objects and native library
-include the source changes; the native library SHA is
+include those source changes. The preceding boundary-checkpoint native SHA was
 `8ed0f953adda504213452d801130961e1ad6ae0c6572d12e5ad077db33359bb5`.
 Private authority is `.analysis/authored-boundaries-20261019/`.
 
 The EXE/ZIP below remain the last verified delivery at717cc2f and **predate
-these two current source changes**. Do not transfer their play claims to the
+these current source changes**. Do not transfer their play claims to the
 new source. Continue authored recovery before the next final build/game check.
 
 Current delivery: `build/vc40-restored-crt/dxball.exe`,166,400 bytes, SHA-256
@@ -151,6 +159,15 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 PCX destination-coordinate recovery adopts four explicit modulo32
+increments while preserving all18 complete resource code identities. One VC4
+owner compile and one resource-only native build suffice; four bounded cases
+and99 unchanged PCX cases pass. All270 current authored closure receipts verify.
+Independent source/result reviews, full receipts and37 verified archived
+inputs/products/helpers are retained; cleanup releases7,815,168 allocated bytes
+net before small receipts. Source recovery remains unfinished at22 candidates;
+no final game rebuild or game run follows this source checkpoint.
 
 October19 authored boundary-contract recovery adopts the two source corrections
 above despite worse byte comparison. Two owner compiles and one two-source
@@ -269,6 +286,14 @@ is not a new source question. Keep inference separate from recovered fact.
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Unknown80-byte frame difference is not permission to add padding; integer-offset-before-base order is restored |
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
 | Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep clock before RNG and existing callback-visible state |
+
+A distinct remaining arithmetic question is ranking's signed630−measure_text.
+The original chain at406C81/406C8E/406C96/406C99 uses the actual measurement,
+DWORD SUB and text draw. Its raw bytes/carrier verify in
+`.analysis/ranking-width-subtraction-20261019/question.json`. A prior finite-font
+measurement already establishes INT_MIN results, but the ranking caller/font
+scope and any fixed source model still need review. Do not substitute a whole
+game path claim or replay the closed equality/owner controls.
 
 Resource callback-table extraction and historical DirectDraw header controls
 can produce a private exact release-sprite while losing prior exact companions.

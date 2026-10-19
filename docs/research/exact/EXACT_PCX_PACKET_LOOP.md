@@ -1,5 +1,12 @@
 # Original PCX packet loop
 
+The later [destination-coordinate correction](PCX_COORDINATE_WRAP.md) makes the
+four original DWORD increments explicit in both pixel paths. All18 complete
+resource code identities remain unchanged, PCX stays979/850, and four finite
+clipped counterexamples plus99 unchanged existing PCX cases pass. Source hashes
+and the native library are current in that note; the checkpoints below retain
+their historical source/product identities and scopes.
+
 ## Successor-loader boundary, October18
 
 The actual Classic1.09 game member supplies a related complete loader at402490:

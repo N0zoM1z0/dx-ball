@@ -421,7 +421,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                 if (column > xmax) {
                     column = 0;
                     destination_x = x;
-                    destination_y = destination_y + 1;
+                    destination_y = (DxBallInt)((DxBallUInt)destination_y + 1);
                     row = row + 1;
                 }
                 if (destination_x < width && destination_y < height &&
@@ -429,7 +429,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                     pixel = description.pixels + destination_y * pitch + destination_x;
                     *pixel = value;
                 }
-                destination_x = destination_x + 1;
+                destination_x = (DxBallInt)((DxBallUInt)destination_x + 1);
                 column = column + 1;
                 run_index = run_index + 1;
             }
@@ -438,7 +438,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
             if (column > xmax) {
                 column = 0;
                 destination_x = x;
-                destination_y = destination_y + 1;
+                destination_y = (DxBallInt)((DxBallUInt)destination_y + 1);
                 row = row + 1;
             }
             if (destination_x < width && destination_y < height &&
@@ -446,7 +446,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                 pixel = description.pixels + destination_y * pitch + destination_x;
                 *pixel = value;
             }
-            destination_x = destination_x + 1;
+            destination_x = (DxBallInt)((DxBallUInt)destination_x + 1);
             column = column + 1;
         }
     }

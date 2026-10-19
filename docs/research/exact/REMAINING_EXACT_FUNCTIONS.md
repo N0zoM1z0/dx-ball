@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 19, 2026, after the authored boundary-contract corrections.
+Updated October19,2026, after the PCX destination-coordinate correction.
 Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
 There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
@@ -112,6 +112,13 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [PCX destination-coordinate correction](PCX_COORDINATE_WRAP.md) makes four
+observed DWORD increments explicit without changing any of the18 complete
+resource code identities. All11 exacts survive, PCX stays979/850, and four
+finite clipped counterexamples plus99 unchanged existing PCX cases pass.
+Current270 authored closure receipts are in
+`.analysis/pcx-coordinate-wrap-20261019/authored-coverage.json`; counts stay fixed.
 
 The [conditional-output/text-width corrections](AUTHORED_BOUNDARY_CONTRACTS.md)
 retain later-EOF scalar lifetimes and explicit modulo32 width sums. Byte

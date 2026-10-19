@@ -1,7 +1,8 @@
 # Current VC4 build and play check
 
 This is the last verified game image. The subsequent
-[authored boundary corrections](exact/AUTHORED_BOUNDARY_CONTRACTS.md) change
+[authored boundary corrections](exact/AUTHORED_BOUNDARY_CONTRACTS.md) and
+[PCX coordinate correction](exact/PCX_COORDINATE_WRAP.md) change
 resources.cpp and ui.c; this EXE/ZIP and its play evidence do not cover them.
 The current matching objects/native library do include those corrections.
 

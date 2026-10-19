@@ -1,5 +1,11 @@
 # Sprite, font, PCX and palette owner
 
+The [PCX coordinate correction](exact/PCX_COORDINATE_WRAP.md) restores explicit
+modulo32 destination increments in both literal/RLE paths. All18 complete
+resource identities remain unchanged, including11 exacts and PCX979/850.
+Four finite clipped counterexamples and99 unchanged existing PCX cases pass;
+the native library updates, while the last verified EXE/ZIP remains older.
+
 The current resource closure has18 complete entries:11 exacts/2,577 code bytes
 and seven candidates. The [conditional-output correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md)
 preserves four file-field lifetimes across later EOF. Bank becomes1475/68 from
