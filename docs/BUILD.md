@@ -74,6 +74,12 @@ save/reload/exit behavior. Full campaign and physical-driver acceptance remain
 open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.
 
+The current private local bundle is
+`build/delivery/dxball-v1.07-vc40-reconstructed.zip`. It contains the rebuilt game,
+its verified supplied assets and extraction instructions; extract the whole
+folder and run `dxball.exe` there. The adjacent manifest records every member.
+This artifact and the original assets are excluded from a source-only clone.
+
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
 The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the

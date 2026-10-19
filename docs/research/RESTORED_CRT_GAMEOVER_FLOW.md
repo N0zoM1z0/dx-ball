@@ -1,6 +1,11 @@
 # Natural game-over through the restored CRT
 
-The current 19-member `vc40-restored-crt` image completes natural life loss,
+The [October19 current-image check](CURRENT_VC4_BUILD.md#round-transition-and-game-over)
+passes natural life loss,name editing,complete660-byte ranking persistence and
+fresh-process reload. Its failed initial observation and accepted persistent
+transport retain separate records. The earlier image and evidence follow.
+
+The earlier 19-member `vc40-restored-crt` image completes natural life loss,
 name editing, ranking insertion, persistence and a fresh-process reload. This
 extends the current [editor persistence](RESTORED_CRT_EDITOR_FLOW.md) evidence
 to the game's actual score and character/string paths. The user permits the

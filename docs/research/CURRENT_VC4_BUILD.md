@@ -3,7 +3,8 @@
 October 19, 2026. Source checkpoint `717cc2f4cb0748c62e04cdfd785b3ff9d007f7f7`
 includes both sprite-bank byte-count and live count-bound recoveries. The current
 restored-CRT game is rebuilt from that source and passes the existing actual
-play/editor flow under Wine. The22 authored candidates remain nonexact.
+play/editor, round-transition and game-over flows under Wine. The22 authored
+candidates remain nonexact.
 
 ## Build and linked contents
 
@@ -72,7 +73,54 @@ releasing1,572,864 allocated bytes net before the receipt. The49 automated runti
 copies are removed only after matching retained originals, current game or the
 complete saved bank. Current products, useful caches and manual runtime files stay.
 
-This flow does not establish the full50-board campaign, focus/surface recovery,
+## Round transition and game-over
+
+Two existing lifecycle scenarios subsequently run on the same image. The round
+observer uses its unchanged body and retained single-sample reader. Real editor
+input creates one tile1 at column6/row18. Clearing it earns10 points, preserves
+three lives and loads all400 bytes of original board1, with222 destructible
+bricks. The saved20,000-byte bank retains the other49 boards. Normal exit0 and
+127 observations complete in86.124s, peak250,834,944 bytes.
+
+The first game-over observation reaches the unchanged90s life-loss deadline
+with one life left, score222 and the last ball still descending at255,368.
+Its last30 read intervals have a median around0.8s. Source/game identities are
+unchanged; the failed observation is retained. This supports changing the read
+transport, without independently proving the cause of every observed delay.
+
+The accepted observation keeps both maintained `observe` and `lose_game` bodies,
+all assertions and the90s life-loss deadline unchanged. It reuses the persistent
+SDK reader for scalar/first-ball samples and the original reader for exactly
+the same three complete660-byte table assertions. A fresh stream follows the
+actual fresh game process. No game, reader, fixture or maintained test is changed
+or compiled. Natural losses3→2→1→0 earn10/202/222. Typing `rex`, Backspace and
+Shift-A produces `reA`; insertion at rank0 preserves the complete expected table,
+including destination string tails. A second game process reloads the same660
+bytes. Both exits are0. There are1,198 observations; total169.202s, peak258,371,584
+bytes. The saved table SHA-256 is
+`fcc15ac92dc92e402d565da1a7fb5a23afd42d544e3308096a47aba8f65c62e8`.
+
+Both accepted scenarios average about34.08% of one CPU, under the same35%/
+384MiB high/512MiB max scope with no high/max/OOM events. All49 originals and
+current source/ledger/product identities stay fixed. Reviewed frames show the
+complete heart-shaped second board, name prompt and `reA`/222 ranking.
+Private `.analysis/current-vc4-lifecycle-20261019/` retains passing round and
+`gameover-persistent` receipts, the failed `gameover` case and diagnosis, complete
+files/captures, and the member-verified13-file evidence archive. Cleanup releases
+2,002,944 allocated bytes net from closed evidence and1,724,416 from49 verified
+automated runtime copies. Current products/caches and manual runtimes remain.
+
+## Local delivery
+
+`build/delivery/dxball-v1.07-vc40-reconstructed.zip` is the current private local
+bundle:467,599 bytes, SHA-256
+`d48e909a090207422edeaaf484d673d95dda9f148fda134c2c441c14910c8aed`.
+Its50 byte-verified members contain the rebuilt executable,48 unchanged supplied
+assets and extraction instructions. The original executable is excluded. Extract
+the complete folder and run `dxball.exe` there. The adjacent manifest identifies
+every member; original assets and this bundle remain outside Git.
+
+These flows do not establish the full50-board campaign, focus/surface recovery,
 physical graphics/audio fidelity or every exceptional path. It creates no new
 exact/semantic ledger acceptance. Authored coverage remains248 exact/22 complete
 candidates,393 overall exacts; final inventory and source optimality remain open.

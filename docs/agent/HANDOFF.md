@@ -77,11 +77,25 @@ bindings and all4,488 loader fields are checked; imports/resources stay fixed.
 The existing actual play flow passes on this image: ball/paddle/pause/resume,
 editor CTRL painting, exact20,000-byte save/reload and normal exit0. There are
 589 state observations and2,444 valid SDK samples,zero malformed samples;
-all49 originals remain fixed. CPU/memory are35%/384MiB high/512MiB max, with
-no high/max/OOM events. This does not establish full50,focus/surface recovery,
+all49 originals remain fixed. Subsequent current-image lifecycle checks pass:
+real single-brick clear earns10 points and loads all400 original board1 bytes/
+222 bricks with three lives; natural losses3→2→1→0,`reA`/222 ranking insertion,
+complete660-byte persistence and fresh-process reload both exit0. The round
+uses127 observations; accepted game-over uses1,198. An initial game-over
+single-sample observation times out with one live descending ball; retain that
+failure separately from the accepted persistent transport. All existing flow
+bodies/assertions and its90s life-loss limit remain unchanged. CPU/memory are
+35%/384MiB high/512MiB max, with no high/max/OOM events. This does not establish full50,focus/surface recovery,
 physical-driver fidelity or every exceptional path. Detailed evidence and limits
 are in the linked note and private `current-vc4-build-20261019/` and
 `current-vc4-play-20261019/` directories under `.analysis/`.
+The lifecycle authority is `.analysis/current-vc4-lifecycle-20261019/`, especially
+`round/verification.json`, `gameover-persistent/verification.json` and the failed
+`gameover` case/observer diagnosis. Do not repeat these unchanged passing flows
+as source progress. Resume the22 authored candidates from concrete source questions.
+The byte-verified local delivery is `build/delivery/dxball-v1.07-vc40-reconstructed.zip`
+(467,599 bytes); it includes current exe,48 unchanged supplied assets and run
+instructions. It remains private, together with its member manifest.
 
 The [bank byte-count recovery](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
 defines the observed low32 allocation/fread product and explicitly demotes two
@@ -122,6 +136,15 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 current-image round/game-over checks and the local delivery bundle
+close the missing current-version lifecycle evidence described above. Source,
+objects and all acceptance counts stay fixed; no compiler,relink,full replay or
+campaign runs. Thirteen closed input/state/resource/helper files are archived
+and member-hash verified before cleanup, releasing2,002,944 allocated bytes net.
+Forty-nine verified runtime copies release another1,724,416 bytes. Complete
+files/captures,current products/caches,the467,599-byte delivery and failed-run
+evidence remain. The preceding rebuild/basic-flow checkpoint follows.
 
 October19 [current VC4 rebuild and play](../research/CURRENT_VC4_BUILD.md) closes
 the previously missing current-source delivery check. The17.003s build and

@@ -1,5 +1,9 @@
 # Board transition through the restored CRT
 
+The [October19 current-image check](CURRENT_VC4_BUILD.md#round-transition-and-game-over)
+also passes the unchanged round scenario:10 points,three lives,complete original
+board1/222 bricks and normal exit0. The earlier image and evidence follow.
+
 The earlier 19-member `vc40-restored-crt` image identified below clears an editor-created
 single-brick board, loads the untouched original second board and exits zero.
 This adds the round transition to its existing [editor](RESTORED_CRT_EDITOR_FLOW.md)
