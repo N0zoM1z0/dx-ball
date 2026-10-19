@@ -51,7 +51,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/bank-byte-count-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/bank-count-bound-20261019/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -75,7 +75,7 @@ pass within that checkpoint's scope. The restored link reuses 118 objects and
 fixture, ledger, current object, or delivery identity before the October19 change.
 
 The [bank byte-count recovery](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
-is the latest source change. It defines the observed low32 product before the
+defines the observed low32 product before the
 unsigned allocation/fread boundary. One resource compile compares18 full bodies,
 262 bindings and six literals;15 identities survive. Bank remains1475/64,
 find-glyph becomes146/86, draw-glyph332/258 and PCX979/850. Both glyph exacts
@@ -85,7 +85,15 @@ and passes the restored source against the original. Ten existing bank cases
 pass after a one-source native rebuild. Current totals are248 authored exact/
 22 candidates,393 overall exacts. No final game rebuild or play run follows yet;
 the linked image above predates this source checkpoint.
-The focused native receipt is `.analysis/bank-byte-count-20261019/native-summary.json`.
+The later [count-bound recovery](../research/exact/BANK_COUNT_BOUND.md) defines
+the live modulo32 increment before the signed loop guard. Bank improves64 to63
+differing positions; all11 resource exacts and16 complete code identities
+survive18 full comparisons/262 bindings/six literals. An actual bounded
+INT_MAX witness rejects the old native path and passes the restored source;
+ten existing bank cases pass after rebuilding only resources. This is the
+latest source change. The linked image above predates both October19 changes.
+The current native receipts are `.analysis/bank-count-bound-20261019/native-build.json`
+and `selected-oracle.json`; the earlier byte-count receipt remains historical.
 The older `build/native/retained-build.json` predates MulDiv integration in four
 non-resource inputs; it remains historical and must not be used as a current
 whole-build input attestation. This checkpoint does not repair that older claim.
@@ -112,6 +120,17 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October19 [count-bound recovery](../research/exact/BANK_COUNT_BOUND.md) retains
+the original live count reload, DWORD increment and signed comparison without
+signed C++ overflow. Independent source/result review confirms the bounded
+counterexample and complete18-body comparison. Totals stay248 authored exacts/
+22 candidates,393 overall exacts; all270 current authored closure receipts pass
+without a replay. Private authority is `.analysis/bank-count-bound-20261019/`.
+Its26 closed input/product copies are member-hash verified in a1,025,437-byte
+archive, releasing7,774,208 allocated bytes net before the small receipt.
+Current products and incremental caches remain. The preceding byte-count work
+and its cleanup follow.
 
 October19 [byte-count arithmetic](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
 is adopted with its full18-body comparison, bounded overflow witness, ten existing
@@ -175,7 +194,7 @@ is not a new source question. Keep inference separate from recovered fact.
 
 | Family | Reuse before another proposal | Boundary to preserve |
 | --- | --- | --- |
-| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), current frontend/backend traces | Bank1475/64 already restores extent/yoffset; names, filename qualification, cursor/row/column and transfer scopes are closed |
+| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), current frontend/backend traces | Bank1475/63 restores extent/yoffset and low32 byte/count arithmetic; names, filename qualification, cursor/row/column and transfer scopes are closed |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md) | Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Unknown80-byte frame difference is not permission to add padding; integer-offset-before-base order is restored |
@@ -212,8 +231,17 @@ and [backend records](../research/exact/VC4_BACKEND_SYMBOL_RECORDS.md) explain t
 cover all78 no-source entries;19 original member dependencies are approved.
 Do not divert authored recovery into fake C implementations of x87/SEH/stack
 probe transports. Joined text/direct-flow audits retain their bounded scopes;
-177 register-relative call values remain unresolved and the final authored
-inventory is not established.
+the final authored inventory is not established. The October19 inventory review
+classifies all177 register-relative sites as DirectDraw/DirectSound COM calls
+using receiver provenance and actual slots:98 surface,19 draw,9 palette,2 clipper,
+13 sound-device and36 sound-buffer calls. Concrete runtime method addresses and
+driver behavior remain unknown; these sites do not identify missing authored
+functions. All74 retained instruction carriers are hash verified. See private
+`bank-count-bound-20261019/directx-call-classification.json` and `inventory-review.json`.
+These bounded reviews do not prove a final denominator or unrestricted semantic
+equivalence of the22 candidates. After concrete source gaps are fixed, proceed
+to the requested VC4 rebuild and actual game checks; do not block that work on
+unique historical source spelling.
 
 Earlier [entry/exit evidence](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
 passes a bounded board0 episode on an earlier image. The historical

@@ -1,6 +1,6 @@
 # Remaining exact functions
 
-Updated October 19, 2026, after the bank byte-count arithmetic recovery.
+Updated October 19, 2026, after the bank count-bound recovery.
 Accepted totals are **393 functions / 84,633 code bytes / 244 metadata bytes**.
 There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
@@ -113,6 +113,15 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
+The [live count-bound recovery](BANK_COUNT_BOUND.md) preserves the original
+modulo32 increment followed by a signed comparison, including every guard
+reload. The actual INT_MAX counterexample rejects the old native path and
+passes after recovery. All18 complete resource functions/262 bindings/six
+literals compare together; all11 exacts and16 code identities survive.
+Bank improves1475/64 to1475/63; the other candidate counts remain unchanged.
+Ten existing bank cases pass. Current authored receipts are in
+`.analysis/bank-count-bound-20261019/authored-coverage.json`.
+
 The [bank byte-count recovery](BANK_BYTE_COUNT_ARITHMETIC.md) explicitly defines
 the original modulo32 product before malloc/fread. One resource compile checks
 all18 functions/262 bindings/six full literals. Bank remains1475/64; two glyph
@@ -120,7 +129,7 @@ functions are honestly demoted to146/86 and332/258 after changed address
 producers. Their complete operations remain present. PCX becomes979/850.
 An actual overflow/CreateSurface-failure witness and ten existing bank cases
 pass. Current coverage is248 exact/22 candidates across30 compiler closures;
-`.analysis/bank-byte-count-20261019/authored-coverage.json` is authoritative.
+`.analysis/bank-byte-count-20261019/authored-coverage.json` records that checkpoint.
 The historical October18 chronology below retains its own totals.
 
 At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
@@ -229,7 +238,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `wait-frames` | 170 | 170 | 8 |
 | `draw-line` | 445 | 445 | 9 |
 | `reset-round` | 426 | 426 | 20 |
-| `load-sprite-bank` | 1475 | 1475 | 64 |
+| `load-sprite-bank` | 1475 | 1475 | 63 |
 | `draw-paddle` | 677 | 677 | 68 |
 | `find-glyph` | 145 | 146 | 86 |
 | `fill-triangle` | 1710 | 1710 | 88 |

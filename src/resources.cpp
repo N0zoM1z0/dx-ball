@@ -182,7 +182,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
     if (dxball_board_file == NULL)
         exit(1);
     fread(&count, 4, 1, dxball_board_file);
-    for (i = 1; i < count + 1; i = i + 1) {
+    for (i = 1; i < (DxBallInt)((DxBallUInt)count + 1); i = i + 1) {
         DxBallInt width, height, yoffset;
         signed char letter;
         DxBallUInt nbytes;

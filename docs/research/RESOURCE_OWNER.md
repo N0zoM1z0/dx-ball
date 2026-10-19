@@ -1,8 +1,11 @@
 # Sprite, font, PCX and palette owner
 
 The current resource closure has18 complete entries:11 exacts/2,577 code bytes
-and seven candidates. The [byte-count recovery](exact/BANK_BYTE_COUNT_ARITHMETIC.md)
-defines the observed low32 product before malloc/fread. Bank stays1475/64;
+and seven candidates. The [count-bound recovery](exact/BANK_COUNT_BOUND.md)
+preserves the live low32 increment and signed loop guard, improving bank1475/64
+to1475/63 while retaining16 complete code identities and all11 exacts.
+The preceding [byte-count recovery](exact/BANK_BYTE_COUNT_ARITHMETIC.md)
+defines the observed low32 product before malloc/fread;
 find-glyph146/86 and draw-glyph332/258 are explicit context-related demotions,
 with all operations retained. PCX is979/850. One complete owner comparison,
 ten existing bank cases and a bounded actual-loader overflow witness support
