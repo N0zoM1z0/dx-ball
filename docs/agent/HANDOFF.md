@@ -456,6 +456,20 @@ one evidence-supported source/declaration inference; complete game verification
 stays deferred. Do not start another inventory pass, cast variant or identical
 game flow without a new concrete source question.
 
+The October20 [actual dxbuffer constructor/member connection](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#actual-dxbuffer-initializer-and-buffer-members-october20)
+now covers eight complete Mac bodies/820 bytes/205 PPC words. Actual calls bind
+the initializer and three RECT wrappers to Buffer members. Their single1000-slot
+rectangle producer and post-store clamp differ from the Windows independent
+two-page dirty/presentation arrays and pre-store guards. Do not transplant that
+foreign owner or queue policy. The second4000-byte constructor region and two
+unnamed callees remain unproved; r2 stays unset. Three saved-project REA process
+captures preserve987 protected identities before docs, with no source compile,
+game or replay. Private `mac-dxbuffer-*-20261020` receipts retain the new evidence.
+The separate read-only resource-order review finds current definition/COFF order
+agreement and12 retained MAP-order observations, but not original TU/settings;
+it does not justify an18-function sorting compile. Its private receipt is
+`resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
+
 For a new source question,use the current [23-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Missing original declarations are reconstruction work, not an external blocker.
@@ -474,10 +488,11 @@ is not a new source question. Keep inference separate from recovered fact.
 
 Ranking's signed630−measure_text question is closed by the adopted explicit
 DWORD subtraction. Its eight complete identities stay fixed; do not replay
-the closed equality/owner controls. The connected unsigned text-advance trial
-is also closed without adoption: the finite witness consumes no wrapped final
-advance, while the proposal loses a complete exact. Retain that boundary and
-avoid treating UBSan completion alone as an original-source declaration proof.
+the closed equality/owner controls. The earlier expression-level text-advance
+trial remains rejected: its witness consumes no wrapped final advance and the
+proposal loses a complete exact. The later adopted accumulator-type recovery
+above has distinct consumed next-glyph witnesses and preserves the150-byte exact;
+do not confuse the two models or replay either closed control.
 
 Resource callback-table extraction and historical DirectDraw header controls
 can produce a private exact release-sprite while losing prior exact companions.

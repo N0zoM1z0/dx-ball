@@ -474,3 +474,90 @@ release is729,088 bytes including the archive/manifest/cleanup receipt.
 Current tested products, useful caches, static Mac evidence and saved project
 remain; source/delivery and250 authored exact/20 candidates are unchanged.
 The user then stops exploration and requests handoff preparation.
+
+## Actual dxbuffer initializer and Buffer members, October20
+
+The previously unread `.__sinit_dxbuffer_cpp` supplies an actual constructor
+edge. Its basename alone does not establish a Windows source owner. Three serial
+REA6.5.0 process captures reopen the saved pinned Ghidra12.1.4 PPC32 project
+with no reimport, global analysis or r2 assignment. Eight complete bodies cover
+820 bytes /205 decoded four-byte instructions. Every exported word and complete
+raw/loaded digest agrees with the retained original PEF; traceback metadata
+independently supplies each selected name and span.
+
+| Named body | Analysis entry | Complete bytes |
+| --- | --- | ---: |
+| `.__sinit_dxbuffer_cpp` | `1000FA40` | 56 |
+| `.unbufferRect__F7tagRECT` | `1000F7F0` | 88 |
+| `.updateBlit__F7tagRECT` | `1000F880` | 88 |
+| `.eraseBlit__F7tagRECT` | `1000F900` | 88 |
+| `.__ct__6BufferFv` | `10016C40` | 100 |
+| `.Init__6BufferFP5Image` | `10016D40` | 92 |
+| `.BlitRect__6BufferFiiii` | `10016DD0` | 192 |
+| `.UnbufferRect__6BufferFiiii` | `10016EC0` | 116 |
+
+The initializer loads its receiver through `[r2-0x7920]` and calls the named
+Buffer constructor at10016C40. A later call to1001D510 remains unnamed and
+uninspected; it is not identified as a particular registration routine. The
+constructor stores zero at receiver offsets0 and0x4E24, and calls10021F00 with
+`(this+4,0,16000)` and `(this+0x3E84,0,4000)`. Init stores its Image argument at
+offset0 and repeats those two calls and the count store. Their argument pattern
+suggests clearing, but the callee identity/effects remain unproved. The second
+4000-byte region's role is unknown.
+
+Both rectangle members access four consecutive words at
+`this+4+16*count`, with count at0x4E24. They store x/y and inclusive endpoints
+`x+width-1` / `y+height-1`, increment count, then use a signed1000 comparison
+to clamp it to999. Thus the observed producer covers1000 rectangle slots;
+the second constructor region is not evidence for another rectangle array.
+BlitRect first calls10019510, whose exact target has the positive metadata name
+`.cp_addDirtyRect__Fiiii`; its body was not queried.
+
+All three by-value RECT wrappers use the same `[r2-0x7920]` receiver load and
+convert endpoints to `right-left+1` / `bottom-top+1` extents. Actual call targets
+matter: unbufferRect calls Buffer::BlitRect; both updateBlit and eraseBlit call
+Buffer::UnbufferRect. Different wrapper names do not establish distinct queue
+operations. With r2 unset, the object's address and full TOC identity remain
+unknown; the recorded displacement and constructor/member relationship are
+the narrower observations.
+
+This is not the Windows display storage contract. The original Windows
+consumers establish1000 interleaved rectangle pairs at4305E8, separate counts at
+4305E0 and page at4382EC, plus2000 presentation rectangles at426990 and a separate
+count at4305D8. Windows queueing checks capacity before writing. The maintained
+arrays and guards preserve those consumers. The foreign single-array producer,
+post-store clamp and different member layout cannot justify enclosing the
+Windows globals in Buffer, changing capacities or importing its queue policy.
+No source declaration or comparison claim changes; totals remain392 exacts,
+247 authored exacts and23 authored candidates. Complete game verification stays
+deferred while those source questions remain open.
+
+Process Evidence is `ev_5a2caf3f220e2c54b7bd43a48d4815132556a3d9b0298eddb1dd524b46e67b2b`,
+`ev_96adc354cd3b83e1b6add4dd8a06f5bcd7b8b887120f3c4da704eaf89a50049c`
+and `ev_9d319462a0fa46d25d22bdce78ee38997863c61b20e93df9e6ce3bf1d469862d`.
+This route is process observation, not native-provider admission or a snapshot.
+The three private `mac-dxbuffer-*-20261020` directories retain selected exports,
+questions and resource receipts; the member-phase evidence verification records
+the complete byte/word/call mapping. All987 protected hashes, modes and nsmtimes
+verify before documentation edits. No compiler, game build/run or replay runs.
+Each capture uses CPU0/35%,384/512MiB, Java128MiB/Node192MiB. Peaks are
+403,169,280 /403,177,472 /403,169,280 bytes, with1726 /1606 /1545 soft-high events
+and zero max/OOM events. The saved project and current products remain reusable.
+
+The51-member archive under `.analysis/rea/mac-buffer-reference-20261020/` retains
+all full process responses and closed capture carriers:247,553 bytes, SHA-256
+`c491e46bc448186e965f84c26a8adcf0d025a7da63b5aac84c91289d561c8b3d`.
+Every member size/hash verifies before exact-list deletion of29 closed files,
+releasing1,175,552 allocated bytes net including archive/manifest/cleanup receipt.
+All985 protected identities outside the two intentional documentation edits
+remain fixed after cleanup. Selected exports, questions and resource receipts
+stay live; original forks, saved project, useful caches and products stay intact.
+
+An independent read-only review rechecks all820 original bytes/205 words, eight
+raw metadata records, ten direct-call displacements and the relevant member
+load/store/compare words. It independently verifies all51 archive members and
+985 unchanged non-documentation identities. Its receipt is
+`.analysis/mac-dxbuffer-independent-review-20261020/review.json`, SHA-256
+`2e51fd93d0f0b68ce2f95d6cb2f2784fb9d99415d74a501203069f80c10cc22f`.
+It supports the narrow constructor/member connection and rejects a Windows
+owner/capacity transplant. No additional provider, compiler or game runs follow.
