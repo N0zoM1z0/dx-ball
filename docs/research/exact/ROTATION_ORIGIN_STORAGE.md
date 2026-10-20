@@ -240,3 +240,33 @@ two whole objects. After member-size/SHA verification,26 explicit copied inputs,
 helper/bytecode files, utility and two objects are removed, releasing303,104
 allocated bytes net before the cleanup journal. All24 protected current
 identities survive; unique traces/reviews and the verified archive remain.
+
+## Fixed geometry ownership control, October20
+
+A bounded21-phase/34-source audit finds no earlier exact four-helper-only
+split. The four scalar bounds/projection queries form one genuine read-only
+cohort: sprite dimensions, trig and abs, with no descriptors, pixel writes or
+COM. One fixed private model moves precisely those four bodies and their sole
+stdlib dependency into a geometry owner. The renderer retains origin_divisor;
+all five executable bodies, types, names, scopes, seven shared headers and
+compiler flags remain unchanged. This tests inferred responsibility ownership,
+not an independently recovered original translation-unit boundary.
+
+Two serial compiles compare all five complete functions/115 actual bindings/
+25 full literal references. Every resolved code identity stays unchanged:
+three exact companions retain709 bytes, Y-offset stays193/159 and renderer
+1458/1466. No gain or loss; reject the entire model without adoption or variants.
+The whole original40-byte readonly carrier partitions into renderer32 and
+geometry8 bytes. Actual symbol offsets, every complete eight-byte cell, all
+declared literal bytes and the float's four alignment bytes are checked, not
+just a requested literal prefix. Complete same-function target identity and
+the comparator's exact local-target guard remain enforced.
+
+REA process Evidence:
+`ev_3858de6fd99342939ace1855bad220c0d0dcd1bc61c4d5c1f3b9136d7bf9f08a`.
+Independent plan/result reviews and whole-byte comparisons are retained in
+`.analysis/rotation-geometry-owner-20261020/`. The scope peaks at156,008,448 bytes,
+with zero memory-limit events. After member-size/SHA verification,25 copied
+inputs/helpers/logs/objects are removed, releasing151,552 allocated bytes net
+before the cleanup journal; all23 protected identities survive. No native/game
+build, relink, runtime case, full replay, maintained source or claim changes.

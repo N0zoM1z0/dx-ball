@@ -55,6 +55,18 @@ user confirms that only the existing EXE/resources are available and requests
 continuing from those artifacts. Closed pilot inputs/products
 are retained in member-hash-verified archives before duplicate removal.
 
+The fixed four-geometry-helper/renderer owner split is now closed: both owners
+compile once, all five complete code identities remain unchanged, no exact is
+gained/lost, and the model is rejected. The glyph downstream static session
+retains four new dossiers, reaching the40CFF2 expression dispatcher. Its next
+40D968 full dossier exceeds transport budget and fatal snapshot cleanup hits
+the Node heap; the full fifth result is not recovered. All owned processes exit
+and the prior112-record snapshot stays fixed. The session helper now permits
+bounded native pages after this interactive error and avoids oversized snapshot
+serialization; nine new provider-free cases plus six lifecycle cases pass.
+Next use the narrow40D968 expression facet, not a rank-only capture or full
+dossier repeat. Original game source/products and391/246/24 counts stay fixed.
+
 ## Current authorities
 
 | Inventory | Current value |

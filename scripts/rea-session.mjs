@@ -41,7 +41,7 @@ const allowed = new Set(['binary_overview', 'binary_session', 'analyze_function'
   'procedure_references',
   'search_strings', 'search_procedures', 'xrefs', 'get_call_graph',
   'inspect_native_instruction', 'inspect_native_data_type', 'resolve_native_call_targets',
-  'inspect_native_api', 'trace_native_values', 'address_to_file_offset']);
+  'inspect_native_api', 'trace_native_values', 'address_to_file_offset', 'inspect_analysis_view']);
 if (!Array.isArray(requests) || requests.some(r => !allowed.has(r.name))) {
   throw new Error('session request must select a supported native inspection tool');
 }
@@ -57,6 +57,7 @@ const transport = new StdioClientTransport({command: process.execPath,
   env: process.env, stderr: 'inherit', maxBufferSize: 32 * 1024 * 1024});
 let opened = false;
 let persistSnapshot = !compilerTarget;
+let snapshotSkipReason;
 let completed = 0;
 let failure;
 let input;
@@ -102,17 +103,26 @@ try {
     try {
       data = await call(request.name, request.arguments ?? {});
     } catch (error) {
-      // A missing procedure is a query result, not a reason to discard an
-      // expensive live import. Batch verification and all other failures
-      // retain fail-fast behavior; this never retries or reopens a provider.
-      if (!interactive || error.reaError?.category !== 'invalid_input') throw error;
+      // Preserve the live import for missing procedures and completed results
+      // requiring bounded retained-Evidence pages. Never repeat their producer.
+      // Batch errors and other resource/provider/connection failures stay fatal.
+      const transportBudget = error.reaError?.category === 'resource_constraint'
+        && error.reaError?.details?.resource === 'transport';
+      if (transportBudget) {
+        // Keep the prior snapshot intact. Serializing the oversized cumulative
+        // ledger at close can exceed the fixed Node heap. Selected pages and
+        // complete successful responses remain in this immutable run directory.
+        persistSnapshot = false;
+        snapshotSkipReason = 'transport-budget result requires retained pages; prior snapshot unchanged';
+      }
+      if (!interactive || (error.reaError?.category !== 'invalid_input' && !transportBudget)) throw error;
       const filename = `${String(index).padStart(2, '0')}-${request.name}.error.json`;
       const record = {index, request, error: error.reaError, response: error.reaResponse};
       save(filename, record);
       inspectionErrors.push(record);
       save('inspection-errors.json', inspectionErrors);
       completed += 1;
-      console.error(`${request.name}: invalid input retained -> ${runDirectory}/${filename}; session remains open`);
+      console.error(`${request.name}: ${error.reaError.category} retained -> ${runDirectory}/${filename}; session remains open`);
       return;
     }
     const filename = `${String(index).padStart(2, '0')}-${request.name}.json`;
@@ -152,7 +162,7 @@ try {
         const saved = JSON.parse(readFileSync(snapshot, 'utf8'));
         console.log(`REA snapshot saved: ${saved.evidence_bundle.records.length} Evidence records, ${closed.result.primitive_entries} primitive cache entries; session closed`);
       } else {
-        console.log('REA rejected target closed without saving a snapshot');
+        console.log(`REA session closed without saving a snapshot: ${snapshotSkipReason ?? 'target identity rejected'}`);
       }
     }
   } catch (error) {

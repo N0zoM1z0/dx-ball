@@ -176,3 +176,50 @@ Archive/member verification precedes removing21 temporary carriers, including
 one object and one executable, releasing958,464 allocated bytes net. The reused
 observer remains in its earlier verified carrier, without a duplicate binary
 in the new archive. Current tested products and useful caches remain.
+
+## Downstream glyph generation boundary, October20
+
+One pinned C2 session follows the retained phase5 call at43A425 rather than
+repeating rank-only observation. Four complete dossiers establish this bounded
+static chain:412F1B calls40CF4F for each input list item;40CF4F creates a new
+block context through40D8EC, visits item expression trees through40CFF2 and
+sets global48BA70. The original phase driver subsequently passes that actual
+global to4063C4 with EDX=1.40CFF2 dispatches tree operations and calls40D968
+on expression roots/children. This is not yet a final glyph address-selector
+or actual emitted-instruction observation. Ghidra signatures remain inferred;
+the optional415D66 gate is the actual WORD at ECX+20, not the misleading typed
+pseudocode offset.
+
+| Complete dossier | Total body bytes | Evidence |
+| --- | ---: | --- |
+| 412F1B | 294 | `ev_a4aa14631ad48a1824d84c0805b3a36a69d9a3ff9658413c6da4b1e43abdc7ba` |
+| 40CF4F | 177, noncontiguous | `ev_a97f5df64a4e586028563ea70820a5500b24e95af0d556db5bd5868f576d94aa` |
+| 4063C4 | 177 | `ev_42fc83cd3514d637c7905542fb16922ec164b4898d33405cf1a3cadb4c49c60b` |
+| 40CFF2 | 2273, noncontiguous | `ev_dea770c7b49f950a9fe0fc08b8e8ce1a410ddf6b8b4f997ec769f11fa2b8f8ea` |
+
+The first cold query takes456,095ms; followups reuse that import. A fifth full
+dossier at40D968 (6166 noncontiguous body bytes) completes server-side but
+exceeds the10MiB MCP response budget. Its reported Evidence ID is
+`ev_12b478e5e4884001532c18fbcd71ef2be41a1ff6bb048862b7d3231657c478b0`;
+the complete result is **not recovered** after fatal cleanup triggers a
+256MiB Node-heap error. Neither a fifth saved dossier nor a new cumulative
+snapshot is claimed. The four successful responses, exact transport error and
+close failure remain in immutable run
+`.analysis/rea/vc4-backend/runs/2026-10-20T05-59-25.754Z-interactive-1650967/`.
+All owned processes are verified absent; the previous112-record snapshot stays
+byte-identical. No import or successful producer is repeated.
+
+The [session helper recovery](../../agent/REA.md#transport-budget-recovery-october20)
+now permits retained native pages after interactive transport-budget errors and
+avoids serializing that oversized ledger on close. Nine new provider-free
+actual-module cases and six existing lifecycle cases pass. Real paging/heap
+recovery is not newly executed. The remaining narrow static question is the
+40D968 expression path, using bounded pseudocode/assembly facets rather than
+another large dossier. No compiler/source/model/claim change follows these
+static results.
+
+The failed provider's124 scratch/before-copy files are archived and member-hash
+verified before removal. Its identical catalog shares an already closed immutable
+carrier, preserving every path and byte. Cleanup releases11,038,720 allocated
+bytes net before the journal. Four unique dossiers and all failure records remain
+directly available. Private authority: `.analysis/glyph-selector-static-20261020/`.

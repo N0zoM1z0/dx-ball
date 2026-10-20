@@ -85,6 +85,35 @@ does not retry a request or reopen the provider. Batch errors and transport,
 provider, open, target-identity and close failures still terminate the session.
 Successful records keep their attempted-request indices, including any gaps.
 
+## Transport-budget recovery, October20
+
+A C2 full dossier exceeds the server's10MiB stdio response budget. The completed
+result advertises a retained native-view continuation; repeating the producer is
+not the remedy. The previous helper instead treats this as fatal, then its
+cumulative-snapshot close hits the256MiB Node heap. Four successful responses
+survive, but the oversized fifth result and new snapshot are not recovered.
+The old112-record snapshot remains intact. See the
+[bounded generation-chain record](../research/exact/VC4_EXPRESSION_ORDERING.md#downstream-glyph-generation-boundary-october20).
+
+Interactive sessions now retain an indexed error and stay open only for
+`invalid_input` or `resource_constraint` with `details.resource=transport`.
+`inspect_analysis_view` is admitted through the actual tool catalog. Use the
+server's exact retained reference and continuation, request small native facets,
+and follow its page coverage; do not repeat the full dossier. On any transport
+budget error, including a fatal batch error, close without a cumulative snapshot.
+The prior snapshot stays untouched; each complete successful response, selected
+page and error remains in the immutable run. Other resource/provider/connection
+errors and all batch inspection errors still fail. No memory ceiling is raised.
+
+`node --experimental-vm-modules tests/test_rea_session_transport.mjs` passes nine
+actual-module in-memory cases: success, invalid-input recovery, one/two transport
+page sequences, fatal memory/provider/connection paths, fatal batch invalid input
+and batch transport safe close. Six existing identity/snapshot lifecycle cases
+also pass. These start no provider or network process; real native page/heap
+recovery is not asserted. No second import is run merely to retest this failure.
+
+## Compiler import profiles and retained state
+
 The first compiler import exceeded the default 330-second provider startup
 budget. The completed focused session omitted `Apply Data Archives` using
 `REA_GHIDRA_DISABLED_ANALYZERS='Apply Data Archives'` and set
