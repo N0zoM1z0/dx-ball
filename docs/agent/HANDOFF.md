@@ -1,8 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 20, 2026. The reconstruction is unfinished. Recover the English
-DX-Ball v1.07 functions as exactly as possible, as readable shared C/C++;
-then verify the original VC4 build and playability; resume ports after that.
+Updated October 20, 2026. The requested authored-source reconstruction, VC4
+game build and bounded playability validation are complete for the identified
+English DX-Ball v1.07 inventory. The24 authored nonexact functions remain
+explicitly nonexact; historical source spelling and full-machine equivalence
+are not established. See the requirement-by-requirement completion audit in
+the [current build record](../research/CURRENT_VC4_BUILD.md#completion-audit).
 The user permits the **19 explicit original CRT members** in the restored-CRT
 delivery. Removing them is not a delivery gate. Prioritize authored functions.
 
@@ -18,12 +21,12 @@ retains the preceding adoption and cleanup chronology. Owner notes and private
 receipts remain authoritative within their stated scopes. Historical totals
 are not current totals.
 
-The user reiterated on October20: finish function/source recovery before
-complete game verification. The24 authored nonexact candidates remain active;
-do not infer readiness from a bounded audit finding no omitted operation.
-The current build/play checks ran prematurely. Record their actual results,
-then resume source work. Whole-EXE byte identity is not required. Use necessary
-focused checks; no broader game verification or campaign is pending.
+The user's sequence was source recovery, then game compilation, then actual
+play. The final arithmetic recoveries precede the e6d5b55 build and its two
+selected game flows. A subsequent build disables all source-object reuse to
+verify recompilation independently. Whole-EXE identity is not required. Resume
+recovery only if new evidence identifies a concrete missing authored operation;
+the remaining compiler-output differences are recorded in the24-function table.
 
 ## Current authorities
 
@@ -77,11 +80,16 @@ functions and compiler-generated `__chkstk`; no unidentified authored body or
 callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack
 transports must not be replaced with speculative project source.
 
-The final restored-CRT game is built from source checkpoint e6d5b55. Its
-166,400-byte EXE SHA-256 is
+The directly tested restored-CRT game is built from source checkpoint e6d5b55.
+The166,400-byte delivery EXE SHA-256 is
 `c77d6d31bc4447d9ac13e1fa68cf8326f8620139c968bae6af30bb2c94cada86`.
-The builder reuses118 verified current objects (115 source owners and three
-integration objects), compiles none, and retains19 approved original CRT members.
+The first relink reuses118 verified objects. The completion audit then disables
+all source-object reuse and compiles all118 objects from source, retaining19
+approved original CRT members. Current cold-build EXE SHA-256 is
+`6c2c0d1c7224bd6d99dec53d80e83da27f9980235ab0f6f538750ac3cce3c1d1`;
+only six typed PE/resource timestamp fields differ from the tested delivery.
+All other file bytes and the entry point are identical. The serial cold build
+takes238.593s, peaks at166,846,464 bytes and has zero memory-limit/OOM events.
 Current basic/editor and single-brick round-transition flows pass with152/133
 read-only state observations and exit0; all49 protected originals stay fixed.
 The member-verified475,010-byte private ZIP SHA-256 is
@@ -282,6 +290,16 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October20 completion audit verifies current source/recipe/object identities for
+all270 authored functions and all30 matching closures, then compiles all118 game
+source objects with reuse disabled. The new image differs from the directly
+tested delivery solely in one COFF and five parsed resource-directory timestamp
+fields. All other bytes are identical, preserving the actual gameplay evidence
+without repeating the successful flows. Current cold-build products/caches and
+the directly tested ZIP are retained. The handoff's stale unfinished-work text
+is reconciled with this outcome. Private authority is
+`.analysis/completion-audit-20261020/`.
 
 October20 final restored-game build and bounded validation follow completion of
 the authored-source inventory. The capped VC4 relink reuses all118 verified

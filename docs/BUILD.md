@@ -74,7 +74,10 @@ build after the final text, rotation and last-brick arithmetic recoveries. The
 bounded authored inventory has source and complete comparison receipts for all
 270 identified functions; the remaining24 authored nonexact bodies are maintained
 source, not missing code. The selected basic/editor and real round-transition
-flows pass on the current image. Full campaign and physical-driver acceptance
+flows pass on the delivered image. A subsequent build compiles all118 source
+objects with reuse disabled; its output differs from the directly tested EXE
+only in typed PE/resource timestamp fields. The current build record lists both
+identities and the completion audit. Full campaign and physical-driver acceptance
 remain open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.
 
