@@ -1743,3 +1743,100 @@ precede the first unlink. Net allocated release is360,448 bytes before journals.
 478 direct protections,96 recoverable aliases and12 separate earlier copied
 inputs retain their identities. Current tested products, useful caches,
 tools/originals and the141-record snapshot remain intact; no broad cleanup.
+
+## Field-value selection and local return invariants, October21
+
+A bounded reuse audit of the canonical141-record snapshot and296 JSON carriers
+in13 named archives finds no decoded/raw overlap at41A9B0..41B1AF among209
+deduplicated records. The actual41218F CALL is context, not a callee decode.
+One explicitly seeded2,048-byte raw input maps original file105,904 to41A9B0,
+SHA256 `5e7439dd4ad9cce279d72713cae9179bc98c0a4fe0b95cda1acebf9492e74c55`.
+This is a finite budget, not a recovered function extent or proved minimum.
+The separately retained41B33B seed beyond the cap does not establish an endpoint.
+
+Three complete primary objects match the31,741-byte snapshot by ID/full object:
+raw `ev_fda152a040e556ac24d1d4a6e1d03e800fac0e2aa282ff6faadf519199097533`,
+body `ev_6106c192744cc736c8a85f080110f283c89d7b4a1170e39f4f9b91d162191092`,
+entry `ev_5219c09067cb96867683eec587b9643af530ee6049f307cd33f4d2bc9237b594`.
+Programmatic checks establish101 instructions/330 contiguous bytes at
+41A9B0..41AAF9, five RET4 sites and zero selected CALLs. The selected digest is
+`a9ef8e4b7d091e1bf37ff95d85d0a7711eb29158f31b44d581992a595a30b9fa`.
+The complete2,048-byte read matches the PE/specimen;1,718 other raw bytes and
+external continuations are not selected code or complete-original-function proof.
+
+Let T be entryESP, L=entryEDX and R=DWORD[T+4], loaded intoEAX immediately.
+SUB ESP,Chex and four saved-register pushes give H=T-1Chex. Explicit stores
+are only locals atH+10hex/H+14hex/H+18hex, outside saved EBP/EDI/ESI/EBX slots.
+Input-addressed fields are read, not explicitly written; input/local aliasing is
+not globally excluded. The numeric local choices are:
+
+| Observed path | Selected local result |
+| --- | --- |
+| L nonzero, R zero | L |
+| DWORD[L+4] nonzero, DWORD[R+4] zero | L |
+| Both +4 DWORDs nonzero | R if byte[R]&80hex, otherwise L |
+| DWORD[L+4] zero, DWORD[R+4] nonzero | R |
+| Both +4 zero; cached word[L]&100hex clear; byte[R+1]&01 set | R |
+| Both observed +4 zero; neither100hex bit set;240hex guards pass; signed-byte ranks equal | L if cached word[L]&4000hex, otherwise R |
+| Both observed +4 zero; both cached100hex bits set; signed rankL>=rankR | L |
+
+L==0 and other encoded outcomes lead to external continuations, not additional
+proved local results. Rank loads are MOVSX BYTE[4B19A0+(observed WORD&0Fhex)].
+The0..15 index domain is proved; table contents and physical capacity are not.
+Unequal non100 ranks branch to458DC2; a signed-less100 comparison branches to
+458D6D. Mask100hex is not named as a language type; byte+1 mask01 means bit0,
+not bit1. The table describes sequential observed reads, not a pure function
+over immutable inputs: right headers are re-read between local stores, while
+the100 path caches DI. Absent a nonaliasing/state proof, do not collapse them.
+
+Incoming ECX bits are not consumed by selected local consumers before their
+definitions: MOV CX,SI replaces low16 before word uses; MOVSX ECX or XOR ECX
+replaces all32 before full-width uses. The local returned EAX value therefore
+does not depend on the original packed selector. Other returned registers may
+still carry incoming bits, and external continuations are not covered by this
+negative. No original full-DWORD4C argument or global unused-selector claim follows.
+
+Every selected local return copies L or R, not a manufactured third value.
+L-null exits externally and R-null selects nonzero L, so these returned copies
+are nonzero. All five epilogues restore EBP/EDI/ESI/EBX, addChex and RET4.
+For the known case call T=X-8, these paths restore ESP=X and call-entryEDI:
+412194 therefore writes one of LC/RC through the same case-entryEDI+4. The
+following zero-result branch cannot come from these local return values, but
+is not globally dead. Earlier4103F6 effects, unselected producer outcomes,
+411531/41A145 returns and historical166/24C/236 pointer/route identity stay open.
+
+Nine external branch destinations are encoded, not nine proved feasible paths.
+On unchanged cached values,240hex implies340hex and100hex implies340hex;
+the shown458D80/458D35/458D51 guards cannot branch under their preceding cached
+tests. Right-header rereads still need their own state/alias assumptions.
+Do not query every encoded destination merely because it appears in the body.
+
+Next audit retained same-run actual LC/RC pointee snapshots for WORD+0 and
+DWORD+4, not pointer/name labels. A decoded non-rank branch may already suffice.
+Only if established fields require ranks do their low nibbles select at most two
+exact signed-byte cells; their actual relation can justify a particular frontier.
+Without such state, a cold facet remains conditional static evidence, not the
+historical tuple. Current bank width/height are signed Int, nbytes unsigned UInt;
+the separate historical explicit-cast context is not this actual call tuple.
+No new source model or source/options/adoption/compiler/game trial follows.
+Counts remain249 authored exact/21 candidates,394 overall and30 closures;
+the full objective is active and frozen-negative calibration remains negative.
+
+The owned static utility exits0 in102.229s of Node wall time underCPU0/35%
+and384/512MiB. Peak403,128,320 bytes has1,345 soft-high events and zero max/OOM.
+One non-atomic owned-cgroup sample retains five raw cmdlines/argv values,
+JVM3179609's `-Xmx256M`, the41A9B0 mapping and exact workspace
+`/tmp/rea-ghidra-LlwFxS`. Its bound postterminal sidecar and independent checks
+show the five sampled PID paths, workspace and owned scope absent. These are
+sampled current observations, not exhaustive cleanup/history, atomic process
+identity, environment/network evidence or behavioral target execution.
+Private authority is `.analysis/rea/c1xx-field-value-20261021/result.json`.
+
+Independent dataflow/result reviews pass. All22 closed files are individually
+member-size/SHA verified in an82,307-byte archive before exact-file retirement,
+including full primary responses, snapshot, input, helpers, audit/preparation
+proofs and process sample. Complete original mode/nanosecond-mtime descriptors
+precede the first unlink. Net allocated release is368,640 bytes before journals.
+486 direct protections,100 recoverable aliases and12 separate earlier copied
+inputs retain their identities. Current tested products, useful caches,
+tools/originals and the141-record snapshot remain intact; no broad cleanup.

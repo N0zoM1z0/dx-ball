@@ -3,31 +3,42 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
-The newest [case-field producer and visible return](../research/exact/VC4_EXPRESSION_ORDERING.md#case-field-producer-and-visible-return-october21)
-explicitly seeds the known conditional raw4C target41217C, after a bounded
-141-record/12-archive coverage audit. Three snapshot-matched primary records
-read1,956 new bytes and select24 instructions/70 bytes at41217C..4121C1.
-The finite carrier ends before412920 dispatch data; it is not function extent.
-The case reads both operand+4 DWORDs and calls41A9B0 with EDX=[left+4],
-first stack DWORD=[right+4] and ECX=the packed selector/local-pointer DWORD.
-412194 writes returned EAX to current post-call EDI+4 BEFORE the zero test.
-Neither the stored value's semantic meaning nor EDI preservation is established.
-The nonzero path calls411531 then41A145; the visible epilogue passes the latter's
-EAX unchanged to RET4, not a direct EAX=EDI return. Helper stack balance and
-the historical166/24C/236 pointer/route identity remain conditional or unproved.
-Next audit retained coverage for41A9B0's selector/child-fields-to-EAX relation,
-the actual value source feeding412194. Do not substitute another generic builder,
-allocator freshness, raw36's unneeded case or calibration/name/ID/order/flag trials.
-Other helper/return gaps are separate, not automatic expansion authority.
+The newest [field-value selection and local returns](../research/exact/VC4_EXPRESSION_ORDERING.md#field-value-selection-and-local-return-invariants-october21)
+decodes the actual41A9B0 producer after a bounded141-record/13-archive reuse
+audit. Three snapshot-matched records read2,048 new bytes and select101
+instructions/330 bytes at41A9B0..41AAF9, not a complete original function.
+For L=entryEDX and R=first stack DWORD, all five selected local returns copy
+nonzero L or R; none manufactures a third value. Selected local consumers do
+not use incoming ECX bits for returned EAX; external continuations and other
+returned registers are not covered by that negative. Five RET4 epilogues restore
+EBP/EDI/ESI/EBX and prove the producer's local net4 cleanup. Thus412194 uses
+the same case-entryEDI on these paths, but4103F6 and historical pointer identity
+remain unresolved. Numeric +4/header masks and signed-byte rank comparisons
+are decoded; table values and semantic type/opcode names are not. Cached-mask
+implications make some encoded external edges infeasible on the shown path.
+Next audit retained SAME-RUN input pointee WORD+0/DWORD+4 at this call, not
+pointer/name labels. Non-rank paths may suffice; otherwise established low
+nibbles select at most two exact rank bytes before one relevant continuation.
+Do not blindly query all nine external destinations, another generic helper,
+unneeded cases or closed calibration/cast/type/name/ID/order/flag variants.
 No new natural game-source model, source/options/adoption, compiler/game-native
 work or exact gain; strict-negative calibration remains negative.
-Private authority is `.analysis/rea/c1xx-case-field-20261021/result.json`.
-Independent dataflow/result reviews pass. All23 closed files are member-verified
-in an82,014-byte archive before removal, releasing360,448 allocated bytes net
-before journals.478 direct protections,96 recoverable aliases and12 separate
+Private authority is `.analysis/rea/c1xx-field-value-20261021/result.json`.
+Independent dataflow/result reviews pass. All22 closed files are member-verified
+in an82,307-byte archive before removal, releasing368,640 allocated bytes net
+before journals.486 direct protections,100 recoverable aliases and12 separate
 earlier copies hold; complete mode/nsmtime recovery descriptors precede unlink.
 Current products/caches/tools/originals and the141-record snapshot remain intact.
 Existing EXE/resources suffice; original source/debug materials are not required.
+The preceding [case-field producer and visible return](../research/exact/VC4_EXPRESSION_ORDERING.md#case-field-producer-and-visible-return-october21)
+selects24 instructions/70 bytes at41217C..4121C1. It reads both operand+4 DWORDs,
+passes them to41A9B0 and stores its EAX through post-callEDI+4 before the zero
+test. The final visible epilogue instead passes41A145's EAX unchanged to RET4.
+The new producer proof above resolves its own local cleanup/EDI condition,
+not earlier4103F6, all cold paths or the final parent/historical identity.
+All23 prior-phase files were member-verified in an82,014-byte archive before
+removal, releasing360,448 allocated bytes net before journals. Its478 direct
+protections,96 recoverable aliases and12 separate copies continue in this chain.
 The preceding [retained operand-helper field copies](../research/exact/VC4_EXPRESSION_ORDERING.md#retained-operand-helper-field-copies-october21)
 reuse614 bytes and select36 instructions/111 bytes at41046F..4104DD. Explicit
 byte+0/+1 and DWORD+4/+10hex/+14hex stores establish only a low headerWORD and
