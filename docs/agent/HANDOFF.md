@@ -69,8 +69,8 @@ serialization; nine new provider-free cases plus six lifecycle cases pass.
 Seventeen subsequent narrow facets now recover40D968 and actual operand
 constructors without repeating the full dossier. The normal close preserves
 all112 old records in a129-record snapshot; physical-register/COFF linkage remains
-unobserved. Reuse the [lower-operand boundary](../research/exact/VC4_EXPRESSION_ORDERING.md#lower-operand-construction-october20),
-not another cold import or current rank-only capture.
+unobserved. Reuse the [lower-operand boundary](../research/exact/VC4_EXPRESSION_ORDERING.md#lower-operand-construction-october20)
+for those answered sites; do not repeat a current rank-only capture.
 
 The [complete plain-char text-byte cohort](../research/exact/GLYPH_SIGNED_CODE_DOMAIN.md#complete-plain-char-cohort-october20)
 is adopted. Signed-value normalization stays explicit at lookup/measurement
@@ -89,6 +89,24 @@ in `closed-inputs-products.tar.gz` before removal. The identical tool catalog
 shares an existing immutable carrier; cleanup releases9,699,328 allocated bytes
 net before its journal. Current30-owner products, native library/cache, original
 artifacts, complete direct receipts and the rollback archive remain intact.
+
+The next [address-IR/output boundary](../research/exact/VC4_EXPRESSION_ORDERING.md#address-ir-to-instruction-bytes-october20)
+is now statically established in25 narrow responses.402F39 rewrites address IR;
+the post-phase6 driver401730 reaches a47E964-dependent virtual-reference path
+and the41D6C8/41C920 instruction-buffer encoder.425DA1 writes actual ModRM/SIB
+and can modify address payloads. Exact call41D725 and buffer/length callback
+site41D732 are pinned, including RET8 and the caller's forward dispatch omitted
+by its short assembly facet. All129 preceding records survive in the154-record
+snapshot; normal close removes all owned processes/project. Current glyph
+selection, live register mapping and actual COFF/relocation linkage are still
+unobserved. Review a complete bounded unchanged-owner observer next; no source
+spelling/ID sweep or repeat of these static queries. The source audit rejects
+unsupported timer-carrier reuse and records that second-call EBX is the
+deadline, not the raw clock sample. No compiler/game-source/exact claim changes.
+Private authority is `.analysis/glyph-machine-legalizer-20261020/result.json`.
+Three closed helper scripts are archived with verified member hashes before
+removal; sharing the identical catalog releases8,777,728 allocated bytes net
+before the cleanup journal. Raw evidence and all current products are retained.
 
 ## Current authorities
 

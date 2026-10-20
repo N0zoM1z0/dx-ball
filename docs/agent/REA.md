@@ -121,6 +121,17 @@ before any further import; final glyph-to-physical-register/COFF linkage remains
 unobserved. The first narrow query takes609,103ms under the current35%/384/512MiB
 limits, with the256MiB heap unchanged; the session closes normally.
 
+The next actual402F39 consumer and post-phase6 driver now lead to concrete
+41D6C8/41C920 byte-buffer output and425DA1 ModRM/SIB construction. Twenty-five
+narrow results preserve all129 preceding records in the154-record snapshot.
+The first query takes459,430ms; the normal close and resource envelope are
+retained. A complete caller-byte read supplements the assembly facet's omitted
+forward dispatch. Reuse the
+[address-IR/output boundary](../research/exact/VC4_EXPRESSION_ORDERING.md#address-ir-to-instruction-bytes-october20)
+and its independently reviewed instruction/ABI pins. No live glyph-to-output
+or actual COFF correspondence is claimed; another static import to rediscover
+these sites is unnecessary.
+
 ## Compiler import profiles and retained state
 
 The first compiler import exceeded the default 330-second provider startup

@@ -261,3 +261,72 @@ raw responses remain in the immutable06-38-40 C2 run.
 No live glyph subtree is yet joined through these stages to physical registers,
 encoded address bytes or a COFF instruction offset. Static child order alone
 does not prove glyph-specific scheduling or authorize source-ID/name changes.
+
+## Address IR to instruction bytes, October20
+
+The next bounded session follows the retained412F1B→4063C4→402F39 call edge.
+402F39 consumes the same instruction header and two operands, then folds,
+inserts and deletes records. Its address-kind5 payload carries references at
+`+8/+C` and scale bits in the operand header. This is address-IR legalization,
+not final encoding. The complete pseudocode and independent review describe its
+Ghidra-reported13,585-byte noncontiguous body; textual callee counts are not
+runtime coverage.
+
+The actual post-phase6 call43A434 invokes401730 before413103 returns source
+list nodes to a freelist.401730 contains the subsequent function pipeline.
+On its47E964==0 path,46B7BC maps virtual references through46B949. Arity2 visits
+the second operand before the first; kind5 visits payload`+8` before`+C`,
+except for the1B no-base sentinel. These static orders differ from simply
+reading the earlier binary tree. The current glyph's actual47E964 value and
+reached path are not observed; `/Od` alone is not that observation.
+
+41D6C8 supplies a concrete record-to-byte boundary: class0 calls41C920 with
+an instruction record,20-byte stack buffer, current code position and mode1.
+The encoder writes opcode bytes and calls425DA1 for ModRM/SIB/address data.
+425DA1 can convert an ESP-based kind4 operand or exchange kind5 base/index
+when its index is4 and scale is0. A future observer must therefore retain
+pre/post operand payloads as well as the final buffer. The returned length
+advances both the caller's code position and its section record's cursor.
+
+| Actual site | Proven static contract |
+| --- | --- |
+| 41D725, `e8f6f1ffff` | Before CALL41C920: ECX=record, EDX=buffer, `[ESP]`=position, `[ESP+4]`=1. |
+| 41D72A, `8bd0` | EAX is the returned length. The common41CF89 footer subtracts buffer start from cursor and returns with RET8 at41CF99. |
+| 41D732, `ff1554a24800` | Before the output callback: ECX=buffer and EDX=returned length, established by the actual intervening instructions. |
+
+The assembly facet for41D6C8 stops at41D711 even though its entry branches to
+41D799. A complete528-byte REA read and separately labelled Capstone decoding
+join that dispatch through table41D868 to class0 at41D712 and the two calls.
+Every byte is checked against the pinned C2. This is not a whole-function CFG
+claim: two dispatch cases leave that byte carrier. A first secondary decoder
+attempt rejects a guessed end address splitting an instruction before writing
+its report; bounded instruction-count decoding repairs only that local helper.
+No provider query or compiler is repeated for it.
+
+Primary Evidence includes `ev_bbef49c48efc437125411d0d88e8a464d8915cf1b6aeedd6d2a3282acf07920e`
+(402F39), `ev_8bdc932287bb93aceb37fca8989ceb00832de32ee072ba269937301561760688`
+(401730), `ev_bd3175412d038cb8b731ac9579ec1ab347a0d4bdc03cd4d68779af3091903a26`
+(41C920), `ev_1f84bb940bff5e13d178efbfe457b750c0d34e92fb68419c70779c1771f24061`
+(425DA1) and `ev_e72d142fbf408ba6af6f626f406da986ed9726a844c09e84af6efb60ba2f6803`
+(complete caller bytes). All25 responses live in the immutable08-16-58 C2 run;
+the result, prior129-record sealed snapshot, secondary decode, source-model
+audit and independent static review are in
+`.analysis/glyph-machine-legalizer-20261020/`.
+Normal close preserves all129 previous records in the154-record snapshot.
+The first query takes459,430ms at the unchanged35%/384/512MiB/256MiB limits;
+the pre-close peak is403,267,584 bytes with5660 soft-high events and no hard-max
+or OOM event. All four owned processes and the temporary project are absent.
+Three closed helpers are member-size/hash verified in `closed-helpers.tar.gz`
+before removal. The identical8.4MiB catalog shares its prior immutable carrier,
+preserving both paths and all bytes. Net allocated release is8,777,728 bytes
+before the cleanup journal; current products, tools and unique evidence remain.
+
+No live glyph subtree, allocation path, output callback implementation or
+COFF instruction/relocation correspondence is captured here. The next useful
+experiment is one independently reviewed unchanged-owner observation joining
+those boundaries, not another current-rank-only capture or source spelling
+sweep. Repeated pointers do not establish cross-pass generations. The companion
+source audit also rejects unsupported timer-carrier reuse: during the second
+clock call EBX holds the deadline, not the raw sample; the original delta's
+stack home is first written only afterward. No source, compiler output or
+claim changes follow:392 overall exact,247 authored exact,23 authored candidates.
