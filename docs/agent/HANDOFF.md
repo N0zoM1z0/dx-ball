@@ -1,6 +1,6 @@
 # DX-Ball reconstruction handoff
 
-Updated October 20, 2026. The user's objective is to make the initial24
+Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
 The latest [whole rotation arithmetic contract](../research/exact/ROTATION_ARITHMETIC_CONTRACT.md)
@@ -38,6 +38,19 @@ Its33 closed files are member-verified in a46,793-byte archive before removal,
 releasing512,000 allocated bytes net before journals. Neither model changes
 source/options/products/claims or runs native/game builds. Do not repeat key
 expression/ID variants, Y/flag or name/include/helper controls.
+The latest [descriptor-to-expression prefix](../research/exact/VC4_EXPRESSION_ORDERING.md#primary-descriptor-to-expression-prefix-october21)
+now establishes41B33B record+10/stack-operand transport to41B663. Six primary
+records cover1,221 read bytes and126 selected instructions/458 bytes. The second
+body ends mid-path; onlyCL is saved, and no returned-node field writes are shown.
+Next follow41B706->4101AE's actual write schema before inferring opcode66 or
+selected-record conversion/product consumption. The first pre-provider nested-lock
+failure is retained; the reviewed same-query continuation closes normally without
+raising limits. All402 initial/416 continuation byte/stat seals pass; the original
+141-record snapshot and current products/caches remain unchanged. No source/count
+change, source compilation or native/game run follows. Its36 closed files are
+member-verified in a124,762-byte archive before removal, releasing872,448 allocated
+bytes net before journals;398 direct protections and18 archived phase aliases
+retain their byte/stat identities. Do not repeat the decoded prefix.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
 [completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).

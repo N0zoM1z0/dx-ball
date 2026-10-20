@@ -900,3 +900,75 @@ useful caches, originals/tools and the original141-record snapshot stay fixed.
 Current393 overall/248 authored exact/22 candidates remain incomplete. Follow
 actual typed conversion/product consumption or a separately evidence-backed
 source family; do not repeat these decoded windows or the closed watches.
+
+## Primary descriptor-to-expression prefix, October21
+
+The retained consumer event23 identifies a new caller edge42377B->41B33B.
+One hash-bound raw-x86 window now covers41B33B..41B7FF, file108347:1,221 bytes,
+SHA256 `f6223a06a23189cf45b85161b0439faef2e10bbc7fbfe9988b220f13085c222f`.
+It comes from the same attested C1XX, not another whole-image import. REA6.5/
+Ghidra12.1.4 reads every byte and retains six primary records in a separate
+46,748-byte snapshot; the original141-record snapshot remains unchanged.
+
+Wrapper instruction Evidence
+`ev_1fd10f2ae319915bcd80b54f9bcb013c61c59a867db182519ff5b4e78583a825`
+establishes13 instructions/45 bytes at41B33B..41B367.41B345 loads the stack
+operand;41B351 loads the input record's DWORD+10;41B35D/35E pass operand on
+stack and that descriptor inEDX to CALL41B360->41B663. Null inputs and selectorF1
+leave through external branches. These are register/ISA relations, not a recovered
+prototype or proof that event23 actually entered with the selected record.
+
+Constructor-prefix instruction Evidence
+`ev_241c2c6969805a8c687ef675aea85addb4177206153cc32f3f8e47aa6e485234`
+adds113 instructions/413 bytes at41B663..41B7FF.41B666 saves **CL only**;
+later DWORD ECX reloads from stack+13 do not establish zero-extended0x66.
+41B66B/674 pass the operand to unknown helper408B52;41B679 stores the returned
+working operand. ESI carries the descriptor,41B67D reads its+4, and later paths
+inspect descriptor/header words and working-operand+4. No returned-node field
+write appears in this prefix: the explicit writes are stack writes.
+
+The selected instruction bodies cover458 bytes; the intervening763 bytes were
+read but are outside these two instruction results. They are not classified as
+padding or data. The413-byte body ends mid-path at the raw-window boundary;
+forward41B911/91F/9FA branches,45xxxx cold paths and external callees prevent a
+complete original-function/ABI/type claim. The generic gcc raw profile does not
+repair those missing contexts.
+
+The smallest new static edge is41B706->4101AE on the unsigned EAX<0x400 path, carrying the
+descriptor, selector carrier and working operand. Another path calls43EBE5 at
+41B787. The selected actual path and returned-node write schema remain open.
+Historical event23's header0x166, descriptor958354 and child pointer3BC5014 remain
+observed post-state, not proof of the selected-record call entry, conversion
+semantics or product consumption. No new source variant follows yet; do not
+repeat this prefix, closed normalization/global/reset/rank watches or name/ID
+searches. Missing original materials are not an external prerequisite.
+
+The initial helper wrongly holds the same non-reentrant lock that `scripts/rea
+mcp` acquires in its child. MCP initialization times out60s before any catalog,
+open or provider query; the original source gate missed this dispatcher lock.
+Evidence `ev_3805b868d5286f897755b813a6d03f5dffc9ac12fabfbdf7f87ff8cdc50b5351`
+retains child exit1/capture CLI exit0, verified cleanup and untruncated output.
+A separate reviewed continuation removes only the redundant outer lock, preserves
+the first attempt and keeps every query/input/resource/time limit unchanged.
+It adds connection-stage logging and fail-closed inner-exit propagation; no
+completed analysis is repeated.
+
+The continuation closes normally. Process Evidence
+`ev_d1c9e66852be4e93f6625867a008fb487ebd7bd2c7e7ea4f356000d9eec9d9f4`
+records child/CLI exit0, verified cleanup and untruncated output; the exact owned
+provider workspace is absent afterward. All402 initial and416 continuation
+byte/stat seals pass. The one-CPU/35%,384/512MiB and256MiB JVM limits hold, with
+403,083,264-byte peak,1,470 soft-high events and zero max/OOM events. Its26 process
+observations are sampled, not exhaustive history. Independent integrity and
+dataflow reviews pass, including all six snapshot records by ID rather than
+assuming call order.
+
+Private authority is `.analysis/rea/c1xx-operator-constructor-20261021/result.json`.
+No source compilation, native/game build, source adoption or exact promotion occurs;
+current394 overall/249 authored exact/21 candidates remain incomplete.
+Both attempts'36 closed files, including every primary response/snapshot and
+failed helper, are member-size/SHA256 verified in a124,762-byte archive before
+removal, releasing872,448 allocated bytes net before journals. All398 remaining
+direct protections and18 archived phase aliases verify size/hash/mode/nsmtime.
+Current products, useful caches, originals/tools and the original141-record
+snapshot remain intact; every retired member is individually recoverable.
