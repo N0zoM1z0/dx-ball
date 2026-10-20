@@ -1134,3 +1134,96 @@ their byte/full-mode/nanosecond-mtime identities. Retired files are recoverable;
 current tested products, useful caches, tools/originals and the original141-record
 snapshot remain intact. Plans, results and independent result/dataflow reviews
 remain directly available.
+
+## Selected builder field stores and retained parent, October21
+
+The executed41329B entry now grounds one fixed1,024-byte raw-x86 window from
+the same pinned C1XX, file75,419, SHA256
+`db14ccd47fbdb0c0b80974c3cccef3c75d7accfbf91323f8910c157514333b34`.
+Three complete primary records and a23,118-byte snapshot retain the bytes,
+selected instructions and entry facet. No whole-image import, repeated entry
+observation, source variant/compile, native/game work or adoption follows.
+
+Instruction Evidence
+`ev_356e9f7370e742e53e19de51cddde85ad83a72e3f0c6243a078477f32c0c3ba5`
+establishes34 instructions/104 contiguous bytes at41329B..413302. The other920
+read bytes are not claimed as the selected body, padding or data. The entry
+facet independently decodes53/PUSH EBX. The common return path has these writes:
+
+| Instruction | Width | Destination | Value |
+| --- | --- | --- | --- |
+| 4132CE | byte | EAX+1 | 1 |
+| 4132D6 | byte | EAX | saved lowCL |
+| 4132D9 | DWORD | EAX+0x10 | incoming stack+4 operand |
+| 4132DC | DWORD | EAX+4 | saved entryEDX descriptor |
+
+The three saved registers account for the ESP+0x10 operand reload.4132E1
+restores the caller frame with RET4; these stores leave returnedEAX unchanged.
+For the already observed fullECX66/EDX958354/operand3BC601C entry, this accounts
+for lowWORD0166 and the captured descriptor/operand fields in returned3BC6034.
+Only the low16 header bits are explicitly constructed. No visible instruction
+clears bytes+2/+3, DWORD+8/+C or DWORD+0x14. Prior observed zeroes are not a
+general initialization guarantee; unknown helper/cold effects are outside this
+explicit-store statement.
+
+Storage selection first loads global4B1B30 after the captured runtime entry.
+Thus entryEAX1 does not establish its value or the executed branch. A nonzero,
+non-minus-one value indexes16-byte control records at4B1AB0. Their DWORD+8
+cursor and DWORD+C remaining size consume0x18 bytes before the common writes.
+An unsigned remaining-size failure calls402F91 with ECX4B1AA8/EDXcontrol record,
+then resumes cursor consumption without another local size test. Zero instead
+calls424A15 with ECX4B0F54/EDX0x18 and initializes its returnedEAX. Minus one
+branches to45508C outside the window. Both helpers and that cold branch remain
+unknown. These allocation-like operations establish neither a free-list,
+fresh allocation, continuous lifetime nor an observed storage branch. The
+visible body has no return-existing-operand alternative, but external behavior
+remains open. Generic raw/gcc context does not prove an original ABI/type or
+complete original cold-function extent.
+
+Process Evidence
+`ev_f137247ed209dee081241c38e7711fb8997677e7e462cd98c2fe95dc24c419db`
+retains child/CLI0 and all19 raw/rendered frames, untruncated. Owned-group cleanup,
+temporary-root removal and the exact provider-workspace absence verify.
+All433 direct full byte/stat seals,63 archive aliases and12 separately preserved
+copied-input aliases agree. The original141-record snapshot and current
+products/caches/tools/originals remain unchanged. One CPU/35%,384/512MiB and
+the observed256MiB Java heap hold. Peak is403,111,936 bytes, with1,241 soft-high
+events and zero max/OOM events. The67,818ms byte-read timing is client/tool-call
+wrapper elapsed, not isolated provider CPU.23 process observations remain
+sampled; standard image-binding/environment/network unknowns remain explicit.
+
+A separate bounded read of the existing historical consumer trace supplies the
+next association without another capture. Its SHA remains
+`0df75816d84d144ad41cd414038a6f5d86b5f1384a5e6a7a11488c0a0503ff7c`.
+In that older PID280/thread284/counter28288, consumer_access_watch event23's
+returned166-prefix R=3BC502C later appears at DWORD+0x10 of P=3BC5088.
+Events45@postPC42374A and48@postPC4235CB capture the same first24 parent bytes:
+`[0x24C,958354,0,0,R,3BC5070]`. Events12/32@postPC423A63 separately capture
+the13F-prefix operand-side records3BC5014/3BC5070 with descriptor958344.
+Event48 also observes P at DWORD+0x14 of a236-prefix record. These exact event
+kinds are not the unrelated same-numbered counter_write_watch rows.
+This is same-run numeric parent/descriptor association, not proof that4C means
+multiplication,13F denotes a named source operand, or either descriptor is a
+universal signed/unsigned enum. Do not equate old pointer addresses with objects
+in the separate latest observer process or infer continuous lifetime.
+
+Private authority is `.analysis/rea/c1xx-selected-builder-20261021/result.json`;
+the archived historical-parent-association receipt pins the additional old-trace
+read. Independent integrity and dataflow reviews pass.394 overall/249 authored
+exact/21 candidates remain unchanged; the all270-authored-exact goal is active.
+The field schema is now answered. Reuse the retained post42374A/4235CB
+operator/descriptor consumer before any new primary query or evidence-backed
+whole-source-family model. Do not follow424A15/402F91/45508C merely to prove
+freshness, repeat166 entry/builder/prefix/global/reset/rank observations or
+rerun rejected unsigned/name/ID/flag variants. Numeric headers alone do not
+justify semantic product/type claims.
+
+All21 closed files, including the three full primary responses/snapshot, raw
+window, helpers and historical-parent sidecar, are individually member-size/
+SHA256 verified in an81,697-byte archive before exact-file removal. The full
+mode/nanosecond-mtime manifest is persisted before the first retirement. Net
+allocated release is548,864 bytes before journals. All428 remaining direct
+protections and68 archive aliases preserve their identities, with12 earlier
+copied-input aliases kept separate. Current tested products, useful caches,
+originals/tools and the141-record snapshot remain intact and retired files are
+recoverable; plan/result and independent integrity/dataflow reviews remain direct.

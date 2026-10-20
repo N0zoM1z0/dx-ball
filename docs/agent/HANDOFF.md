@@ -38,7 +38,28 @@ Its33 closed files are member-verified in a46,793-byte archive before removal,
 releasing512,000 allocated bytes net before journals. Neither model changes
 source/options/products/claims or runs native/game builds. Do not repeat key
 expression/ID variants, Y/flag or name/include/helper controls.
-The latest [selected-record entry/return observation](../research/exact/VC4_EXPRESSION_ORDERING.md#executed-selected-record-constructor-path-october21)
+The latest [selected builder and retained parent](../research/exact/VC4_EXPRESSION_ORDERING.md#selected-builder-field-stores-and-retained-parent-october21)
+closes the returned-field gap with34 primary instructions/104 bytes.41329B
+explicitly writes only lowWORD0166, descriptor+4 and operand+0x10; upper header
+bits/other visible zeroes are not general initialization guarantees. Storage
+index/cursor/refill/zero-mode paths and external-minus-one cold edge remain
+conditional, not a selected-call fresh-allocation/free-list claim.433 direct,
+63 aliases and12 separate copied-input aliases hold; the141-record snapshot and
+current products/caches/originals/tools remain intact. One raw-window import,
+three complete primary records, no source compile/adoption or exact gain.
+A bounded read of the older same-run consumer trace already links returned166
+R to24C-prefix parentP+0x10, a second13F tuple toP+0x14, thenP to236-prefix+0x14.
+This is not multiplication, named-operand or unsigned-type proof. Next reuse
+the retained post42374A/4235CB operator/descriptor consumer; the field schema
+is answered. Do not chase allocator freshness, repeat166 entry/builder or
+global/reset/rank observations, or rerun rejected unsigned/name/ID/flag variants.
+Private authority is `.analysis/rea/c1xx-selected-builder-20261021/result.json`.
+Its21 closed files are member-verified in an81,697-byte archive before removal,
+releasing548,864 allocated bytes net before journals. Full mode/nsmtime metadata
+is persisted before retirement. All428 remaining direct protections/68 archive
+aliases and12 separate earlier copied-input aliases retain their identities;
+retired files remain recoverable and current tested products/caches stay intact.
+The preceding [selected-record entry/return observation](../research/exact/VC4_EXPRESSION_ORDERING.md#executed-selected-record-constructor-path-october21)
 uses the unchanged historical nine-input cohort. One utility build and one VC4
 compile capture the actual41B33B->41B663->4101AE->411DB0->41367C->41329B path.
 The first eligible wrapper actually receives the selected record in EDX;
@@ -52,9 +73,9 @@ Complete18/262/six-carrier and normalized whole-COFF comparisons pass; FILE path
 records remain separate, not raw-object identity. Current products/caches and
 the original141-record snapshot are unchanged. No source/options/object adoption,
 native/game work or exact gain occurs;249 authored exact/21 candidates remain.
-Next decode only the complete41329B builder and relevant field-store/reuse
-branches for this now-executed result; do not repeat entry/return, decoded
-prefixes, global/reset/rank watches or ID/flag sweeps. Existing EXE/resources
+Its then-next41329B field-store question is answered above. Do not repeat
+entry/return, decoded prefixes, global/reset/rank watches or ID/flag sweeps.
+Existing EXE/resources
 are sufficient to continue; no original source materials are required.
 Private authority is `.analysis/glyph-constructor-entry-20261021/result.json`.
 Its42 closed files are member-verified in a200,680-byte archive before removal,
@@ -72,11 +93,10 @@ CLI0 and aggregate rendered-frame truncation; no snapshot/facets or retry follow
 All411/430/449 direct byte/stat seals and18 prior aliases pass; current products,
 useful caches and the original141-record snapshot remain unchanged. Three process
 visibility warnings remain explicit, not exhaustive cleanup claims. No source/count
-change or compiler/native/game run follows. Next observe the actual selected-record
-call entry/taken path/return identity on the unchanged historical input, with new
-bounded execution breakpoints rather than another global/reset/rank watch or
-unbounded static expansion. Zero route hits are a valid negative result, not a
-retry trigger. No original materials are needed. Do not repeat the
+change or compiler/native/game run follows. Its then-next selected-record entry/
+path/return question is answered by the later observation above; do not rerun it.
+Zero route hits were a valid negative outcome, not a retry trigger.
+No original materials are needed. Do not repeat the
 decoded prefix or its closed41B706->4101AE/410220->411DB0/411E4C->41367C edges.
 Its56 closed files are member-verified in a225,062-byte archive before removal,
 releasing1,634,304 allocated bytes net before journals. All408 remaining direct
