@@ -19,7 +19,7 @@ receipts remain authoritative within their stated scopes. Historical totals
 are not current totals.
 
 The user reiterated on October20: finish function/source recovery before
-complete game verification. The23 authored nonexact candidates remain active;
+complete game verification. The24 authored nonexact candidates remain active;
 do not infer readiness from a bounded audit finding no omitted operation.
 The current build/play checks ran prematurely. Record their actual results,
 then resume source work. Whole-EXE byte identity is not required. Use necessary
@@ -32,15 +32,15 @@ focused checks; no broader game verification or campaign is pending.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 392 |
-| Exact code / attached metadata bytes | 83,837 / 244 |
-| Complete nonexact comparisons | 83: 23 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 391 |
+| Exact code / attached metadata bytes | 83,646 / 244 |
+| Complete nonexact comparisons | 84: 24 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-247 exact and 23 candidates across 30 compiler closures. The source-present
+246 exact and 24 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -51,10 +51,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 391 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 84 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/rotation-signed-row-step-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/rotation-destination-arithmetic-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -67,6 +67,21 @@ Keep `original/`, `.tools/`, `build/`, `.analysis/` and `ghidra-project/` privat
 A source-only clone does not include the assets, tools, products or raw evidence.
 
 ## Current source and delivery
+
+Current source includes the [rotation destination offsets](../research/exact/ROTATION_DESTINATION_ARITHMETIC.md).
+Both renderer addresses now preserve the original low32 row-pitch product and
+rounded-X addition before their signed Native64 displacement. Two guarded
+original/native fixtures pass. All five owner bodies,115 bindings and25 literal
+references compare together; renderer remains1458/1466 and three helper exacts
+survive. The unchanged Y-offset helper is explicitly demoted to its previously
+recorded193/191-byte,159-difference identity. Current totals are391 exacts,
+246 authored exact/24 candidates and83,646 code bytes. All270 authored receipts
+verify across30 closures. The directly affected rotation differential passes
+1,024 cases and151 complete guarded destination buffers. The native SHA is
+`83f3c356335ebcf284a46d2db6e6d256eafe0372befdad9640f49f39a34d7266`.
+Private authority is `.analysis/rotation-destination-arithmetic-20261020/`.
+No game rebuild or run follows; the retained EXE/ZIP below predate this and the
+other recent source corrections.
 
 Current source includes the [signed rotation row step](../research/exact/ROTATION_SIGNED_ROW_STEP.md).
 One final signed32 conversion preserves the original DWORD row delta when
@@ -245,6 +260,15 @@ Relevant accepted source contracts:
   C linkage, real Win32 heap/raster defaults, and stdio-before-onexit ordering.
 
 ## Last closed work
+
+October20 [rotation destination-offset recovery](../research/exact/ROTATION_DESTINATION_ARITHMETIC.md)
+defines both consumed low32 row-pitch/rounded-X sums and validates two bounded
+original/native allocations. One complete five-function comparison preserves
+renderer1458/1466 and three helper exacts. The unchanged Y-offset helper returns
+to its previously recorded193/191/159 identity and is explicitly demoted; totals
+become391 exacts,246 authored exact/24 candidates. Only native rotation rebuilds;
+no game, provider or full replay runs. Current270-entry coverage is retained in
+the private authority; cleanup of disposable helper/products follows below.
 
 October20 [text-advance source recovery](../research/exact/TEXT_ADVANCE_ACCUMULATOR.md)
 adopts exactly one unsigned-local model after complete7-function/38-binding
@@ -469,8 +493,10 @@ all3,719 direct edges,191 switch words,249 code-address words and177 COM sites
 are accounted,with no unexplained non-CC text-gap bytes. Final denominator and
 original context remain proof limits. Reuse `.analysis/authored-readiness-20261019/`.
 The October20 relink/play record does not close these source questions. The
-user explicitly returned priority to the23 authored nonexact functions. Resume
-one evidence-supported source/declaration inference; complete game verification
+user explicitly returned priority to authored nonexact functions. The
+destination-offset correction above explicitly demotes one unchanged helper,
+so there are now24. Resume one evidence-supported source/declaration inference;
+complete game verification
 stays deferred. Do not start another inventory pass, cast variant or identical
 game flow without a new concrete source question.
 
@@ -488,7 +514,7 @@ agreement and12 retained MAP-order observations, but not original TU/settings;
 it does not justify an18-function sorting compile. Its private receipt is
 `resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
 
-For a new source question,use the current [23-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+For a new source question,use the current [24-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Missing original declarations are reconstruction work, not an external blocker.
 Form one bounded inference from actual producers, consumers, ownership or layout;
@@ -550,7 +576,7 @@ driver behavior remain unknown; these sites do not identify missing authored
 functions. All74 retained instruction carriers are hash verified. See private
 `bank-count-bound-20261019/directx-call-classification.json` and `inventory-review.json`.
 These bounded reviews do not prove a final denominator or unrestricted semantic
-equivalence of the23 candidates. Continue source reconstruction under the user's
+equivalence of the24 candidates. Continue source reconstruction under the user's
 October20 source-first instruction. A bounded review finding no missing operation
 is not a recovery-completion proof or authorization to advance game verification.
 

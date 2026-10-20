@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October20,2026, after the signed rotation row-step recovery.
-Accepted totals are **392 functions / 83,837 code bytes / 244 metadata bytes**.
-There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
+Updated October20,2026, after the rotation destination-offset recovery.
+Accepted totals are **391 functions / 83,646 code bytes / 244 metadata bytes**.
+There are **84 complete nonexact comparisons: 24 authored and 60 runtime**. None is an accepted exact.
 
-These 83 are all currently source-present nonexact entries. The eight allocator
+These 84 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -112,6 +112,16 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [rotation destination-offset recovery](ROTATION_DESTINATION_ARITHMETIC.md)
+defines both consumed low32 row-pitch products and rounded-X additions before
+their signed Native64 pointer displacement. Two bounded original/native cases
+pass complete guarded buffers and ordered surface events. All five rotation
+bodies,115 bindings and25 literal references compare together: renderer remains
+1458/1466 and three helper exacts survive. The unchanged Y-offset helper honestly
+returns to its previously recorded193/191-byte,159-difference identity, so totals
+become391 exacts and246 authored exact/24 candidates. Current270-entry coverage
+is `.analysis/rotation-destination-arithmetic-20261020/authored-coverage.json`.
 
 The [signed rotation row step](ROTATION_SIGNED_ROW_STEP.md) preserves the original
 DWORD source offset as a signed Native64 pointer displacement. One32-byte
@@ -327,6 +337,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-sprite` | 105 | 107 | 94 |
 | `stretch-keyed-sprite` | 139 | 141 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
+| `rotated-sprite-y-offset` | 191 | 193 | 159 |
 | `fill-polygon` | 1543 | 1543 | 216 |
 | `fill-polygon-clipped` | 1592 | 1592 | 213 |
 | `release-sprite` | 262 | 269 | 245 |
