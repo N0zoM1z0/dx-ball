@@ -1744,6 +1744,83 @@ precede the first unlink. Net allocated release is360,448 bytes before journals.
 inputs retain their identities. Current tested products, useful caches,
 tools/originals and the141-record snapshot remain intact; no broad cleanup.
 
+## Same-run field tuple and unchanged owner, October21
+
+The bounded historical audit finds no41A9B0/41218F/412194 tuple in the old923/813-row
+traces. Other-time descriptor snapshots and separate processes cannot be joined
+into actual call inputs; that historical explicit-cast source also differs from
+the current owner. One new observation therefore uses the unchanged current
+`src/resources.cpp`, all nine exact recursive inputs and its current compiler
+recipe. Two hardware execution breakpoints select only entry stack returnPC
+412194, without source-name, ID or symbol-kind filtering or target-code patches.
+
+The full721,088-byte trace, SHA256
+`cd2a3ca5e2a5b8afb5f86f23f9719050725ab419fa6f11d3312c4b110a5e8232`,
+has732 rows:406 entries and158 matched entry/return pairs on PID284/thread288.
+All565 debugger-context readbacks preserve the declared registers/flags; no
+required/optional read failure, candidate-string limit, unmatched frame, changed
+EDI or returned pointer outside the original L/R is reported. Limits remain
+50,000 entries/512 pairs/16MiB/180s, not exhaustive compiler-path coverage.
+
+Unique retained raw width/height paths occur in pair71, lines338/339:
+
+| Field | Entry41A9B0 | Return412194 |
+| --- | --- | --- |
+| ESP | 31FC78 | 31FC80 |
+| EDI | 3BC5FE4 | 3BC5FE4 |
+| Input L/R; returned EAX | both958344 | 958344 |
+| Descriptor WORD+0 / DWORD+4 | 0063 / zero | 0063 / zero |
+| Parent WORD+0 / DWORD+4 | 024C / zero | 024C / zero, before store |
+
+Root EBX3BC5F88 and EAX3BC5FCC have raw header013F. Each +10hex pointer reaches
+a0402 node, then another+10hex reaches a raw object whose+8 bytes point to
+`width\0` or `height\0`. The fixed depth-two/14-node bound retains six nodes;
+no166 occurs on these particular paths. Independent reconstruction validates
+every raw edge and candidate-byte address, not a semantic symbol-kind decoder.
+The sole literal `width * height` in current resources.cpp at198 supports source
+context, not an instrumented source-function/line identity or historical cast A/B.
+
+The prior330-byte producer rules reconcile these actual inputs: both+4 fields
+are zero,0063 passes the numeric guards and both low nibbles select the same
+rank cell4B19A3. Actual stack locals are disjoint from descriptors/the cell.
+No table value or new cold facet is needed for the common returned pointer.
+EAX equality cannot independently distinguish L from R when L==R; no internal
+RET-site trace is claimed. The return snapshot precedes412194's MOV[EDI+4],EAX,
+so a post-store field write is not separately observed. Historical object
+lifetime, original-game declarations and external-continuation behavior remain
+outside this observation. The frozen-negative calibration stays negative.
+
+One utility build and one observed current-owner VC4 compile complete. All18
+full function comparisons,262 actual relocations and six entire literal carriers
+are unchanged:12 remain exact and six candidates. Normalized entire COFF agrees
+across26 sections and69 non-FILE symbols/raw auxiliaries; timestamp/transport
+offsets and separately retained FILE records are excluded. The canonical object
+is never overwritten. An offline preparation initially selected only the12
+accepted rows; its runner/gate are retained, and the disjoint12+6 merge was
+re-reviewed before any build or target execution. No target retry occurred.
+
+REA build `ev_17b7d68fd4a6bddf80567737be98a86bd39797deb156f669ca8ff140f8d6a6b2`
+and observation `ev_d5ef300421b7c5b24fe6530add2b68592c2be03c9b9ef1cc0942b9d7a3f6d976`
+retain complete exit0/quiesced/verified-owned-group/removed-temp outcomes without
+declared output/filesystem omissions. CPU0/35% and384/512MiB apply; utility and
+observed-compile peaks are107,520,000/153,354,240 bytes, with zero memory-limit
+events. The12 observation process samples are not exhaustive process history,
+atomic OS image binding, full environment, syscall or network evidence.
+
+Private authority is `.analysis/rea/c1xx-field-tuple-20261021/result.json`.
+Independent dataflow and artifact/result reviews pass. All45 closed files,
+including the utility, observed object, trace and nine copied inputs, are
+member-size/SHA/permission verified in a243,591-byte archive before retirement.
+Full original mode/nanosecond-mtime recovery descriptors precede first unlink;
+net allocated release is1,560,576 bytes before journals.494 direct protections,
+104 recoverable aliases and12 earlier copied-input aliases hold. Current tested
+products/caches/tools/originals and the141-record snapshot stay unchanged.
+No source/options/object adoption, native game run, provider import or exact
+gain:249 authored exact/21 candidates,394 overall and30 closures. The goal stays
+active. Reuse this answered field question; further compilation needs a distinct
+evidence-backed source/storage hypothesis, not another generic helper/rank/cold
+watch or closed cast/type/name/ID/order/flag control.
+
 ## Field-value selection and local return invariants, October21
 
 A bounded reuse audit of the canonical141-record snapshot and296 JSON carriers

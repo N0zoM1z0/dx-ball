@@ -3,7 +3,26 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
-The newest [field-value selection and local returns](../research/exact/VC4_EXPRESSION_ORDERING.md#field-value-selection-and-local-return-invariants-october21)
+The newest [same-run field tuple](../research/exact/VC4_EXPRESSION_ORDERING.md#same-run-field-tuple-and-unchanged-owner-october21)
+observes the missing actual41A9B0 inputs and412194 return on unchanged current
+resources.cpp.406 entries yield158 paired calls; the unique retained raw
+width/height paths are pair71, lines338/339. Both inputs and returned EAX are
+958344, with WORD0063/DWORD+4 zero; ESP advances31FC78 to31FC80 and EDI stays
+3BC5FE4. Parent024C/+4 zero is sampled BEFORE the store, not after it.
+Equal input pointers prevent distinguishing L/R by result alone. The local
+same-index rule needs no new table/cold query. Raw names are not a kind decoder,
+source-line instrumentation, original-game declaration or repaired calibration.
+One utility build/one current-owner compile preserves all18 full comparisons,
+262 relocations, six entire literals and normalized whole COFF. No source,
+options or object adoption, game run, provider import or exact gain.
+Private authority is `.analysis/rea/c1xx-field-tuple-20261021/result.json`.
+All45 closed files are member-verified in a243,591-byte archive before retirement,
+releasing1,560,576 allocated bytes net before journals.494 direct protections,
+104 recoverable aliases,12 earlier copied-input aliases and nine new archived
+input copies remain recoverable; current products/caches/tools/originals and
+the141-record snapshot are unchanged. Reuse this completed observation; another
+field watch or generic rank/cold drill is not the next source hypothesis.
+The preceding [field-value selection and local returns](../research/exact/VC4_EXPRESSION_ORDERING.md#field-value-selection-and-local-return-invariants-october21)
 decodes the actual41A9B0 producer after a bounded141-record/13-archive reuse
 audit. Three snapshot-matched records read2,048 new bytes and select101
 instructions/330 bytes at41A9B0..41AAF9, not a complete original function.
