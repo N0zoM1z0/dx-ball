@@ -3,16 +3,35 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
-The newest [binary descriptor consumer](../research/exact/VC4_EXPRESSION_ORDERING.md#binary-operand-descriptor-consumer-october21)
+The newest [parent selector mapping](../research/exact/VC4_EXPRESSION_ORDERING.md#parent-selector-mapping-and-bounded-construction-october21)
+reuses the existing583-byte tail at411E69..4120AF without adding bytes.
+Three primary records select67 instructions/236 bytes in two ranges, not a whole
+function; no RET or parent+4 store is selected. Raw selector low-byte caching is
+distinct from the4AA000 class lookup: comparisons36/63/76 concern mapped classes.
+By-reference operand helpers may change pointers; later DWORD selector loads
+overlap those pointers and establish only the low byte. Helper/cold/table effects
+and the historical166/24C/236 taken path remain unproved. First audit retained
+class/table coverage, then only missing exact cells and their evidenced case;
+do not automatically expand the carrier, invent enums or rerun calibration.
+No source/options/adoption/compiler/game-native work or exact gain. Independent
+integrity/dataflow reviews pass; heap256M is configured only, with no JVM sample.
+Private authority is `.analysis/rea/c1xx-parent-construction-20261021/result.json`.
+All19 closed files are member-verified in a64,843-byte archive before removal,
+releasing315,392 allocated bytes net before journals.452 direct protections,
+82 recoverable aliases and12 separate earlier copies hold; full mode/nsmtime
+metadata precedes first unlink. Current products/caches/tools/originals and the
+141-record snapshot remain intact. Existing EXE/resources suffice; original
+source/debug materials are not a prerequisite for reconstruction.
+The preceding [binary descriptor consumer](../research/exact/VC4_EXPRESSION_ORDERING.md#binary-operand-descriptor-consumer-october21)
 decodes95 instructions/289 bytes at4102D5..4103F5 from one fixed1,024-byte import.
 It explicitly reads the left carrier+4 on two conditional paths, including the
 BL36/descriptor-byte+1 mask0x02(bit1) test, but never locally stores parent+4.
 Generic parent construction is delegated at410342 to411E69; no actual old
 internal branch, full original extent, type enum or helper ABI is proved.
-The retained411DB0 raw carrier already covers411E69, but its prior decode ends
-411E68. Reuse those bytes for the next specific descriptor/operand-consumer
-question; do not repeat166builder/global/reset/rank or calibration/name/ID/flag
-variants. Oldtrace named nbytes/402-lvalue and before-parent36 slot associations
+The retained411DB0 raw carrier covers411E69, but that checkpoint's decode ended
+411E68. The parent-selector phase above now reuses this tail. Do not repeat
+166builder/global/reset/rank or calibration/name/ID/flag variants.
+Oldtrace named nbytes/402-lvalue and before-parent36 slot associations
 are recorded with explicit non-continuous-lifetime and zero-based chronology
 limits. No game source/options/adoption/compiler/game-native run or exact gain.
 Private authority is `.analysis/rea/c1xx-binary-descriptors-20261021/result.json`.

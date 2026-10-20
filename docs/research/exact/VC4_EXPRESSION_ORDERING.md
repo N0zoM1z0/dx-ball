@@ -1405,3 +1405,76 @@ descriptors are persisted before the first unlink. Net allocated release is327,6
 bytes before journals.444 direct protections/78 recoverable aliases and12 separate
 earlier copied-input aliases retain their identities; current tested products,
 useful caches, tools/originals and the141-record snapshot remain intact.
+
+## Parent selector mapping and bounded construction, October21
+
+The delegated411E69 entry is decoded from583 bytes already retained in the
+node-factory carrier: offset185 of its768-byte window, original PE file70,249,
+through4120AF. The derived window SHA256 is
+`23daba750ebbc6beed42a972a1b09e85528301dc7d92996d655e2e0febeee655`.
+Archive/member metadata, the earlier complete primary read and original PE
+mapping agree. This phase adds no bytes and executes no compiler or target.
+
+One raw-x86 import produces three primary records. Instruction Evidence
+`ev_39cb211f8335b235b5a3629b644b9d7b7dc45f7982ed5189c958548749616113`
+selects67 instructions/236 bytes in two inclusive ranges:411E69..411EF3 and
+411F16..411F76. Its270-byte span contains a34-byte gap; another313 bytes follow.
+All347 other read bytes remain unclassified here. No RET is selected; this is
+not full original-function coverage or completed returned-parent dataflow.
+Byte Evidence
+`ev_1be8b0ba6b0c683a0dba39bbb761170535dc6faa0967bf3f4d0198293dff4f38`
+returns the complete583 bytes. Entry Evidence
+`ev_ac63b79f1a1acf86184664c40baca42078bf0efbdd9b1eb69bfbd568e3dc3d35`
+decodes `83ec20` as SUB ESP,20hex. The24,078-byte snapshot contains exactly
+these three records. Generic raw gcc metadata is not original MSVC ABI evidence.
+
+Let `B=entryESP-30hex` after the allocation and four register pushes.
+
+| Slot | Visible source |
+| --- | --- |
+| B+13hex, one byte | Incoming CL only |
+| B+14hex, DWORD | Incoming EDX, the left operand cell |
+| B+18hex, DWORD | Explicitly zero-extended raw selector |
+| B+34hex, DWORD | Incoming stack+4, the right operand cell |
+
+411E93 separately loads the byte at4AA000+raw-selector into zeroed EBX.
+The subsequent36/63/76 comparisons concern this **mapped class**, not raw36.
+Except for those classes,408030 may replace the left cell. Explicit left+4 and
+right+4 zero tests branch to cold code outside the carrier. Class-minus34 then
+uses412950/412920; raw-selector-minus33 uses4129CC/4129B4. Those tables are also
+outside this specimen, so neither the raw36 nor4C route is established.
+
+If411F16 is reached,41A0A8 receives addresses of both operand cells and may change
+them.41046F subsequently receives the current operands and returns a value saved
+in EDI; no selected instruction proves it is this function's final return.
+4103F6 gates another raw-selector dispatch through412AE0/412A40. The two selector
+DWORD loads at411F2D/411F47 start atB+13hex after two pushes: only their low byte
+is the saved selector; the upper24 bits overlap the left-pointer cell. They are
+not full zero-extended selector/type IDs. These post-helper stack relations are
+conditional on normal balanced continuation; no helper RET/cleanup is decoded.
+No selected instruction stores parent+4. Helper and cold effects remain unknown.
+
+This does not select an actual historical166/24C/236 construction path or assign
+type/opcode/signedness enums, cast spelling, original expression or continuous
+object lifetime. First audit retained evidence for the exact class/table cells;
+query only missing cells and their evidenced case if necessary. Do not extend
+this carrier automatically or repeat calibration/name/ID/order/flag variants.
+The available EXE/resources suffice; original source/debug materials are not a
+prerequisite for continuing reconstruction.
+
+The static provider utility returns0 in131.787s. CPU0/35%,384/512MiB hold;
+peak403,111,936 bytes has1,114 soft-high events and zero max/OOM. Heap256M is
+launcher-configured only: no JVM sample was captured. The owned Node PID and
+scope are absent after close, not exhaustive process/workspace cleanup evidence.
+No REA behavioral capture wrapper or game/compiler execution occurs.
+Private authority is `.analysis/rea/c1xx-parent-construction-20261021/result.json`;
+independent integrity and dataflow reviews pass. No source/options/adoption or
+exact gain:249 authored exact/21 candidates,394 overall and30 closures remain.
+
+All19 closed files are member-size/SHA verified in a64,843-byte archive before
+exact-file retirement, including full responses/snapshot, raw window, preparation
+and query helpers. Full mode/nanosecond-mtime descriptors precede the first
+unlink. Net allocated release is315,392 bytes before journals.452 direct
+protections,82 recoverable aliases and12 separate earlier copied-input aliases
+retain their identities. Current tested products, useful caches, tools/originals
+and the141-record snapshot remain intact. No broad cleanup occurs.
