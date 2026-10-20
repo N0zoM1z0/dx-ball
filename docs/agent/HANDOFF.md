@@ -42,6 +42,19 @@ its private exact objects. The180 raw files/helpers are member-verified in a
 before its journal. Only current binary/resource evidence is required; do not
 ask for original source/debug materials or treat their absence as a blocker.
 
+The [actual storage-reset watch](../research/exact/VC4_EXPRESSION_ORDERING.md#actual-physical-storage-reset-october20)
+now answers the previously unknown physical clear: one fixed historical AFTER
+capture observes0→28287→0→28288 at the same DWORD, with the reset in pinned
+402FB8 F3AB/REP STOSD state. Its PC is a restart context; only the first28 record
+prefix bytes are zero, not the whole record. All18 complete functions/262
+bindings/six carriers and normalized COFF retain their own baseline; all887
+current protections survive. No source/count change or cold provider import.
+The37 expanded files/helpers are member-verified in a255,540-byte archive before
+removal, releasing1,257,472 allocated bytes net before its journal. Do not repeat
+the reset watch or missing-tail import. Next bind the kind0C ID request to its
+actual typed source/IR consumer; storage recycling alone is not a source local,
+type or continuous logical-object lifetime.
+
 The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 observes the actual elapsed guard's C2 swap and independently restores all17
 paddle frame homes in a private scalar-lifetime model. Fixed ownership controls

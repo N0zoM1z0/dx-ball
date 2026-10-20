@@ -643,3 +643,65 @@ two honest demotions. Current totals are393 overall/248 authored exact/22 author
 candidates. This does not resolve original frontend record/TU responsibility or
 retroactively pass the earlier failed no-loss gate. Reuse the current adoption
 and authored-coverage receipts rather than repeating completed observations.
+
+## Actual physical-storage reset, October20
+
+The failed static-tail import is not repeated. One reviewed hardware write
+watch instead answers the still-open physical-storage question using only the
+exact archived historical AFTER owner. It introduces no source, spelling,
+type/header, flag or counter variant. Current adopted source is protected
+separately from those historical inputs; this diagnostic object is not installed.
+
+The owned Dr1 watch observes the same DWORD at03BC4F80 continuously through
+`0 -> 28287 -> 0 -> 28288`. The first/third actual stores are416404, with
+416407 contexts. The previously unseen zeroing write traps at402FB8 with
+pinned bytes F3AB at the reported PC, EAX0, DF0, EDI03BC4F84, ECX77 and EDX424.
+The complete48-byte observed window matches the attested C1XX image. Its
+instruction/register geometry supports an in-progress REP STOSD zero-fill:
+EBX03BC4F08 plus8 is the fill start;106 minus77 DWORDs have completed, placing
+EDI exactly at the watched address plus4. This is an analyst interpretation of
+REA-observed bytes/state, not new provider-decoded helper or source evidence.
+
+Importantly, the captured32-byte record prefix is **not entirely zero**:
+the first28 bytes are zero while the final DWORD at+1C remains20hex. The
+observation establishes this watched word's reset and the retained prefix,
+not completion of the full424-byte clear. The frozen verifier's descriptive
+phrase "post-instruction only" is too narrow: hardware debug state follows a
+write, but REP can retain its current/restart PC. Preserve that original report
+and the explicit clarification rather than altering raw evidence or rerunning.
+
+All243 consecutive counter transitions,279 selected MOV steps and three Dr1
+events verify. One utility build and one37.435-second observed compile suffice;
+there is no target retry or provider import. Complete18-function/262-binding/
+six-literal-carrier comparisons and all26 ordered normalized COFF sections/
+69 non-FILE symbols equal the frozen AFTER baseline. FILE auxiliaries5 versus8,
+timestamps and transport-offset exclusions remain explicit. All887 current
+protections, including native/delivery products, are unchanged through cleanup.
+No source/semantic adoption, exact promotion, relink or game/native run follows;
+current393 overall/248 authored exact/22 candidates remain incomplete.
+
+Capture Evidence
+`ev_513541114e7e836a4daa8f3b40ab5b8f5117adb4629dc877f571c37a1af4a28a`
+exits0, is untruncated and verifies owned-group cleanup/temporary-root removal.
+One CPU/35%,384/512MiB limits hold, with153,919,488-byte peak and no high/max/OOM
+events. Process coverage remains sampled. The utility capture separately retains
+two inaccessible sampled /proc environments; a later exact-PID check finds
+neither remaining. Do not describe that earlier sample as fully verified.
+An initial prepare hash gate safely rejects a final-guard/read race before any
+staging or build. Its failure and initial review stay retained; main rereads the
+final guards and prepares successfully, without a source variant or target retry.
+
+Private authority is `.analysis/glyph-storage-watch-20261020/result.json`.
+All37 expanded inputs, utility/object, trace, complete reports, raw REA responses,
+receipts, failure and helpers are archived and member-size/SHA256 verified before
+removal. The255,540-byte archive releases1,257,472 allocated bytes net before its
+cleanup journal;883 remaining direct protections and current useful caches stay
+intact. Every removed file remains individually recoverable.
+
+The missing4163C5 tail is no longer needed to identify the reset writer. The
+useful next relation is which actual source/type/IR producer requests the rebuilt
+kind0C record and where it is consumed or serialized before the storage reset.
+Physical-address reuse does not establish a single logical object's lifetime,
+two allocations, semantic record kind or a missing source local. Bind that
+producer to an actual typed conversion/product consumer before changing source;
+do not repeat the cold import, zeroer/rank capture or declaration/name/flag sweeps.
