@@ -279,3 +279,54 @@ before removing its observer, helpers, object and26 copied inputs. Its verified
 archive releases327,680 allocated bytes net before the cleanup journal; all34
 protected current identities survive. The full immutable REA response has a
 hardlinked carrier under `.analysis/rea/observations/elapsed-counter-watch-20261020/`.
+
+## Current complete fixture-only closure, October20
+
+After the plain-char text cohort and resource-arithmetic adoption, one fixed
+consumer-grounded control moves only the two unused game-side fixture types,
+externs and initialized callback tables into a shared native host header and
+the existing host implementation. Live ClockOps/Counter, all authored bodies,
+game includes, names and compiler flags stay unchanged. The interposer changes
+one include; no loader or CMake change is needed. This is not a declaration,
+header-subset or compiler-setting sweep. Only the existing EXE/resources are
+required; missing original project materials are not a prerequisite.
+
+The current recursive closure is23 owners/183 full functions/73 inputs, not
+the earlier four-owner pilot. Two genuine inputs have changed since that pilot:
+resources.h in every owner and ui.c in its owner. Each owner compiles once.
+All4,163 code bindings,201 declared literal references, the complete12-byte CRT
+scope carrier and its two parent-relative bindings compare. An independent
+read-only recomputation checks every producer, binding and all380 symbol drifts;
+18 ambiguous literal references resolve through complete actual carrier identity.
+
+The full current result reproduces the earlier private outcome: elapsed,
+reset-round and animate-palette become exact, while restore-regions,
+sort-present-regions, draw-text and rotate-palette-right lose exactness.
+There are171 private exacts versus172 baseline, with168 prior exacts preserved;
+173 complete code identities stay unchanged. Paddle worsens68→210 differences
+and restore-regions0→746. Fixture separation alone therefore does not recover a
+complete original compiler context. Reject this fixed model without installing
+individual private exact objects. This is not an assertion that every future
+source recovery must preserve a monotonic exact count, or that current source
+is optimal. No new executable-source recovery justifies replacing this tested
+whole closure. Do not repeat this answered fixture-only control or spelling,
+order or subset variants.
+
+Canonical source,23 current objects, original target, tools, claims, native
+fixture and CMake stay hash-identical. Counts remain393 overall exact/248
+authored exact/22 authored candidates; the all270 objective remains incomplete.
+No native/game build, runtime cases, delivery relink or acceptance change follows.
+REA process Evidence
+`ev_2958677ed3c44d405ce6a4be2cc4dac100430c3a339a7153d69d7b69aa1afa13`
+exits0 and verifies owned cleanup. The one-CPU/35%,384/512MiB limits hold,
+with171,798,528-byte peak and no high/max/OOM events. Only the64-sample process
+cap is partial; terminal and before/after filesystem enumeration/hashing are
+complete. Do not claim a complete process-tree trace.
+
+Private authority is `.analysis/runtime-fixture-closure-20261020/result.json`.
+All180 phase files, including complete proposals, inputs, producer receipts,
+objects, mappings, comparisons, full process Evidence and helpers, are archived
+and member-size/SHA256 verified before exact-file removal. The443,599-byte
+archive retains them recoverably and releases4,526,080 allocated bytes net
+before the cleanup journal. All116 current canonical protections remain intact;
+current tested products, originals, toolchain and useful caches are retained.

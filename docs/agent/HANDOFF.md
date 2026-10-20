@@ -31,6 +31,17 @@ in the remaining-function table; the preceding restriction to missing authored o
 no longer describes the active task. Keep complete affected-owner comparisons,
 natural shared source and the existing serial resource limits.
 
+The [current complete fixture-only control](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#current-complete-fixture-only-closure-october20)
+is now closed against the post-char/post-resource source context:23 owners,
+183 complete functions,4,163 code and two CRT metadata bindings. It reproduces
+the earlier three private gains/four losses; no source or object is adopted.
+All116 current protections remain identical and counts stay248 authored
+exact/22 candidates. Do not repeat the answered fixture/header model or install
+its private exact objects. The180 raw files/helpers are member-verified in a
+443,599-byte archive before removal, releasing4,526,080 allocated bytes net
+before its journal. Only current binary/resource evidence is required; do not
+ask for original source/debug materials or treat their absence as a blocker.
+
 The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 observes the actual elapsed guard's C2 swap and independently restores all17
 paddle frame homes in a private scalar-lifetime model. Fixed ownership controls
