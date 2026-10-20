@@ -3,16 +3,38 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
-The newest [parent selector mapping](../research/exact/VC4_EXPRESSION_ORDERING.md#parent-selector-mapping-and-bounded-construction-october21)
+The newest [exact selector cells](../research/exact/VC4_EXPRESSION_ORDERING.md#exact-selector-cells-and-construction-joins-october21)
+resolve the missing dispatch through ten complete primary reads/22 exact bytes,
+after a bounded74-record/ten-archive reuse audit. Two serial imports retain2/8
+records. Raw36 maps to class36 and jumps to the known411F23 instructions, skipping
+408030 and41A0A8 on this normal path; raw4C maps to class4C and selects411ED9 then
+411F16. Only the unknown helper block's normal nonzero continuation reaches
+41217C, outside the old raw carrier. This is not the historical taken path or a
+type/opcode enum, parent+4 store or complete return proof. Raw36's later third
+table cell remains unqueried, not evidence of route absence. Next reuse the
+41046F operand helper whose EAX is saved inEDI: offset410 of the old1,024-byte
+binary-descriptor carrier gives614 bytes through4106D4, SHA256
+`589ea43483163a3a3e9720a4a9ef918af8be5e6bc098ca12aea8abbf710c24cc`.
+Audit existing facets before decoding this missing question; its construction
+or returned-field role is not yet established. No source/options/adoption or
+exact gain, compiler/game-native work, calibration or name/ID/order/flag variants.
+Private authority is `.analysis/rea/c1xx-selector-tables-20261021/result.json`.
+Independent integrity/dataflow reviews pass. All37 closed files are member-verified
+in a95,964-byte archive before removal, releasing520,192 allocated bytes net
+before journals.462 direct protections,88 recoverable aliases and12 separate
+earlier copies hold; full mode/nsmtime recovery descriptors precede first unlink.
+Current products/caches/tools/originals and the141-record snapshot remain intact.
+Existing EXE/resources suffice; original source/debug materials are not required.
+The preceding [parent selector mapping](../research/exact/VC4_EXPRESSION_ORDERING.md#parent-selector-mapping-and-bounded-construction-october21)
 reuses the existing583-byte tail at411E69..4120AF without adding bytes.
 Three primary records select67 instructions/236 bytes in two ranges, not a whole
 function; no RET or parent+4 store is selected. Raw selector low-byte caching is
 distinct from the4AA000 class lookup: comparisons36/63/76 concern mapped classes.
 By-reference operand helpers may change pointers; later DWORD selector loads
 overlap those pointers and establish only the low byte. Helper/cold/table effects
-and the historical166/24C/236 taken path remain unproved. First audit retained
-class/table coverage, then only missing exact cells and their evidenced case;
-do not automatically expand the carrier, invent enums or rerun calibration.
+and the historical166/24C/236 taken path remain unproved. The exact-cell phase
+above now resolves the bounded class/table question; it does not automatically
+expand the carrier, invent enums or rerun calibration.
 No source/options/adoption/compiler/game-native work or exact gain. Independent
 integrity/dataflow reviews pass; heap256M is configured only, with no JVM sample.
 Private authority is `.analysis/rea/c1xx-parent-construction-20261021/result.json`.

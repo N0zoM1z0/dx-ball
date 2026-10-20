@@ -1478,3 +1478,87 @@ unlink. Net allocated release is315,392 bytes before journals.452 direct
 protections,82 recoverable aliases and12 separate earlier copied-input aliases
 retain their identities. Current tested products, useful caches, tools/originals
 and the141-record snapshot remain intact. No broad cleanup occurs.
+
+## Exact selector cells and construction joins, October21
+
+The bounded reuse audit checks the pinned141-record C1XX snapshot and231 JSON
+carriers in ten named sealed archives. Its74 unique complete byte-read records
+do not overlap either requested class cell or the six dispatch-table domains.
+This is not all-workspace absence. Two correctly mapped carriers materialize570
+original bytes:23 at4AA036/file689,718, SHA256
+`65d362374d2924df43af375631f5cd2de59f07402f25e01dc4c6d9c258871ad7`,
+and547 at412920/file72,992, SHA256
+`60d8aa4ce5214cef85f42fe29fbcfa72415246d3fc64b9879d93690cb5934001`.
+Only ten exact cells/22 bytes are primary reads; the remaining548 carrier bytes
+are not primary-read or decoded-code coverage. No table capacities are recovered.
+
+Two serial raw imports retain separate2-record/10,204-byte and8-record/33,876-byte
+snapshots. Every primary response matches its exact original slice and snapshot
+record. The observed edges are conditional on reaching the selected normal code,
+not a historical execution trace:
+
+| Dependency | Raw36 | Raw4C |
+| --- | --- | --- |
+| Class byte | [4AA036]=36 | [4AA04C]=4C |
+| First byte index | [412952]=01 | [412968]=0A |
+| First DWORD target | [412924]=411F23 | [412948]=411ED9 |
+| Reached second byte/target | Not queried | [4129E5]=05; [4129C8]=411F16 |
+| Conditional final byte/target | Not queried | [412AF9]=13; [412A8C]=41217C |
+
+The class records are
+`ev_692e42d467a25c3bdbdc00363b91e363f1ab2b1f1f026dcfdec1ada65e3906e5`
+and `ev_fd74a07aec263da79e51f0b67a7c71b0301acd0bb6a59ccd0620d9aa2c1935af`.
+They prove identity for these two inputs only, not the other254 map entries.
+Raw36's first-target record is
+`ev_ba066f46cb1e41daa4f5b9319890753f7e86ee5e7dfa54425b42a65762b7b083`;
+raw4C's conditional last-target record is
+`ev_06128d57abe7f3b6a6d133290f38bf3add3d15b85089b88723a14a6eb98109a1`.
+All ten IDs, complete payloads and intermediate index/target records remain in
+the private result and archived primary responses.
+
+411F23 is already selected in the preceding67-instruction body, not a new case
+decode. Raw36 skips408030(left) and jumps past41A0A8. On this call-free normal
+entry path EBP remains locally zero; the known code pushes it and current right,
+loads left intoEDX and calls41046F, retaining EAX inEDI. Normal balanced helper
+continuation reaches4103F6 and the final switch. The literal query stops atF23,
+so raw36's later412AE3 byte is still unqueried, not evidence of route absence.
+
+Raw4C does not skip408030(left); its return may replace left. The two evidenced
+dispatches then reach411F16, where41A0A8 receives addresses of both operand cells.
+Its effects and the subsequent41046F/4103F6 results remain unknown. Only the
+normal nonzero continuation selects41217C. That target is beyond the previous
+carrier's4120AF end and is not decoded here. No new parent+4 store, RET, complete
+return relation, type/opcode enum, original expression or historical166/24C/236
+path is proved. The strict-negative product calibration is unchanged.
+
+First reuse the knownF23 instructions and audit the retained41046F operand
+helper, whose EAX is saved inEDI; its construction/field semantics are not yet
+proved. The earlier1,024-byte binary-descriptor carrier contains that
+address, but its selected body ends4103F5. Decode only the missing helper if no
+matching record already exists, before expanding into41217C/cold code. The
+unqueried412AE3 cell is also retained in this table carrier. No calibration,
+name/ID/order/flag trial or automatic carrier expansion follows.
+The exact retained tail is offset410 of that1,024-byte carrier:614 bytes at
+41046F..4106D4, SHA256
+`589ea43483163a3a3e9720a4a9ef918af8be5e6bc098ca12aea8abbf710c24cc`.
+Its parent primary read is `ev_db95d2328f9dc31ff83c9c186d1b0dca873ffc438075cd77d37cf67e60fbf039`;
+these are input/provenance facts, not decoded helper semantics.
+
+The owned utility exits0 in223.909s under CPU0/35%,384/512MiB; peak403,177,472
+bytes has1,966 soft-high events and zero max/OOM. One exact owned-cgroup sample
+records first-import JVM `-Xmx256M`. Its five sampled PID paths, exact temporary
+workspace and owned scope are absent after terminal. This does not sample the
+second JVM/workspace or prove exhaustive child cleanup, atomic process binding,
+environment/network state or behavioral target execution. No compiler/game runs.
+Private authority is `.analysis/rea/c1xx-selector-tables-20261021/result.json`.
+Independent dataflow/integrity reviews pass. No source/options/adoption or new
+exact:249 authored exact/21 candidates,394 overall and30 closures remain active.
+
+All37 closed files are individually member-size/SHA verified in a95,964-byte
+archive before exact-file retirement, including full primary responses, both
+snapshots, raw carriers, helpers, preparation/audit proofs and utility samples.
+Full original mode/nanosecond-mtime descriptors precede the first unlink.
+Net allocated release is520,192 bytes before journals.462 direct protections,
+88 recoverable aliases and12 separate earlier copied-input aliases retain their
+identities. Current tested products, useful caches, tools/originals and the
+141-record snapshot remain intact; no broad cleanup occurs.
