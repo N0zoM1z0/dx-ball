@@ -38,7 +38,31 @@ Its33 closed files are member-verified in a46,793-byte archive before removal,
 releasing512,000 allocated bytes net before journals. Neither model changes
 source/options/products/claims or runs native/game builds. Do not repeat key
 expression/ID variants, Y/flag or name/include/helper controls.
-The latest [numeric-selector dispatch](../research/exact/VC4_EXPRESSION_ORDERING.md#primary-numeric-selector-dispatch-october21)
+The latest [selected-record entry/return observation](../research/exact/VC4_EXPRESSION_ORDERING.md#executed-selected-record-constructor-path-october21)
+uses the unchanged historical nine-input cohort. One utility build and one VC4
+compile capture the actual41B33B->41B663->4101AE->411DB0->41367C->41329B path.
+The first eligible wrapper actually receives the selected record in EDX;
+all five raw descriptor/operand transport relations into41329B hold. Matched
+route/caller frames return the same3BC6034 prefix0x166/+4=958354/+0x10=3BC601C,
+with the latter numerically equal to the captured operand. All call snapshots
+remain in counter28288 and the next observed4163F5 boundary is28289. Eleven
+snapshots/31site hits do not trace all counter writers or prove fresh allocation,
+semantic type, unsigned-product consumption or continuous record lifetime.
+Complete18/262/six-carrier and normalized whole-COFF comparisons pass; FILE path
+records remain separate, not raw-object identity. Current products/caches and
+the original141-record snapshot are unchanged. No source/options/object adoption,
+native/game work or exact gain occurs;249 authored exact/21 candidates remain.
+Next decode only the complete41329B builder and relevant field-store/reuse
+branches for this now-executed result; do not repeat entry/return, decoded
+prefixes, global/reset/rank watches or ID/flag sweeps. Existing EXE/resources
+are sufficient to continue; no original source materials are required.
+Private authority is `.analysis/glyph-constructor-entry-20261021/result.json`.
+Its42 closed files are member-verified in a200,680-byte archive before removal,
+releasing729,088 allocated bytes net before journals. All420 remaining direct
+protections/63 archive aliases and12 separately recorded copied-input seals
+retain byte/full-mode/nanosecond-mtime identities and are recoverable. Current
+tested products, useful caches, tools/originals and snapshots remain intact.
+The preceding [numeric-selector dispatch](../research/exact/VC4_EXPRESSION_ORDERING.md#primary-numeric-selector-dispatch-october21)
 extends the prior descriptor prefix through4101AE,411DB0 and41367C. Eight complete
 primary records read1,920 bytes; three selected bodies cover198 instructions/494
 bytes.4101AE can reuse/retag an operand;411DB0 conditionally dispatches BL==0x66/0x1;

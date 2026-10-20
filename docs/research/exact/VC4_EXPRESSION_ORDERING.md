@@ -1049,3 +1049,88 @@ journals. All408 remaining direct protections and59 archive aliases retain their
 byte/stat identities, including mode and nanosecond mtime metadata. Current
 products, useful caches, tools/originals and the original141-record snapshot
 remain intact; every retired file is recoverable from the closed archive.
+
+## Executed selected-record constructor path, October21
+
+The next bounded experiment observes the missing entry/return relation, using
+exactly the nine frozen historical AFTER inputs from the closed record-consumer
+experiment. It does not introduce a source hypothesis or compile current game
+source. One independently reviewed utility build and one VC4 compilation run;
+there is no retry, flag/identifier variant, native/game build or source adoption.
+The utility retains seven reviewed warnings, not a warning-free build claim.
+
+Process Evidence
+`ev_4636a6e2a3ed0e185b0984234ae7d3d5eeb9a75f4e1dcfc00554028a35621bf5`
+retains terminal child/CLI0, the complete33,169-byte/21-row trace and an
+untruncated capture. CL, C1XX and C2 each enter and exit once with zero status.
+The observer uses execution-only hardware slots, not code patches, single-step,
+data watches or edits to ordinary registers, PC, arithmetic flags or source IDs.
+Its RF/debug-context writes have32 preservation readbacks for31 hardware hits;
+these are observer guard attestations, not31 separately retained raw contexts.
+There are11 bounded raw snapshots, including the first/start/stop boundaries.
+The one-CPU/35%,384/512MiB caps hold; peak capture memory is152,780,800 bytes,
+with no memory events. Owned-group cleanup and temporary-root removal verify.
+Process samples are not exhaustive; non-atomic image binding, inherited
+environment and unobserved network activity remain explicit limitations.
+The X connection shutdown diagnostic is retained with the zero-status capture.
+
+At4163F5 counter28288/EAX28287, actual EDI is3BC5F70. Its raw prefix starts0x0C,
+with DWORD+0x18 zero. The first eligible41B33B entry has return423780,
+ECX=0x66 and EDX=3BC5F70. Pointer equality is an observation, not a selection
+filter. Its stack operand is3BC601C, whose raw prefix starts0x13F and has
+DWORD+4=958344 and DWORD+0x10=3BC6004. The selected record's raw prefix has
+changed by this entry, including DWORD+0x10=958354 and DWORD+0x18=28287;
+these snapshots do not establish continuous object lifetime or a persistent
+record schema.
+
+The actually observed chain is
+41B33B ->41B663 ->4101AE ->411DB0 ->41367C ->41329B, with captured return
+addresses41B365,41B70B,410225,411E51 and413689 respectively after the wrapper.
+At4101AE the full ECX is0x166; at411DB0 it is0x66. This distinction is retained,
+not erased by treating every byte-only selector save as zero extension.
+41367C receives ECX=958354 and EDX=3BC601C. At41329B, all five independent
+raw transport relations hold: return413689, fullECX=0x66,
+EDX=the route-entry ECX, stack+4=the route-entry EDX and
+ESP=the route-entry ESP minus8.
+
+At413689 the matched route frame returns EAX=3BC6034; its64-byte raw prefix
+starts DWORD0x166, with DWORD+4=958354 and DWORD+0x10=3BC601C. The latter is
+the numeric operand captured at wrapper/route/builder entry. The matched423780
+caller frame returns the same EAX and the same64-byte prefix. EAX differs
+numerically from both the selected record and operand. This establishes the
+executed relation for this call; it does not yet identify41329B's field stores,
+prove fresh allocation, assign a semantic type or prove unsigned-product
+consumption. Prefix bytes remain raw observations, not initialized-field claims.
+
+Every selected call/path/return snapshot still has counter28288. The next
+observed4163F5 boundary is28289; the call has returned and all slots are cleared,
+with no missing-return cutoff. Counter coverage is limited to4163F5:31 total
+hardware hits do not mean all global counter increments or writers were traced.
+No expanded window or additional route search follows the positive result.
+
+Complete18-function/262-binding/six-entire-carrier comparisons pass against the
+frozen baseline. All ordered normalized COFF sections, payloads, flags, actual
+relocation targets and non-FILE symbols/raw auxiliary records also agree.
+Different FILE path/auxiliary records are retained separately; timestamp and
+transport offsets are excluded, so this is not raw-object identity. Current
+source/options/products/caches and the original141-record snapshot retain their
+sealed identities. Independent source, prepared-input, build, integrity and raw
+dataflow reviews retain the same bounds.394 overall/249 authored exact/21
+candidates remain unchanged and the exact-recovery objective remains active.
+
+Private authority is `.analysis/glyph-constructor-entry-20261021/result.json`.
+The next narrow question is the complete41329B builder body and the stores or
+reuse branches that account for this now-executed0x166/+4/+0x10 result. Use this
+captured descriptor/operand transport rather than another global/reset/rank
+watch, repeated constructor prefix, source-ID/flag sweep or original-source ask.
+No source model is justified solely by the numeric node prefix.
+
+All42 closed files, including the unique trace, full process responses,
+observer sources/EXE, historical inputs and objects, are member-size/SHA256
+verified in a200,680-byte archive before exact-file removal. Net allocated
+release is729,088 bytes before journals. All420 remaining direct protections,
+63 archived protections and12 separately recorded copied-input seals preserve
+their byte/full-mode/nanosecond-mtime identities. Retired files are recoverable;
+current tested products, useful caches, tools/originals and the original141-record
+snapshot remain intact. Plans, results and independent result/dataflow reviews
+remain directly available.
