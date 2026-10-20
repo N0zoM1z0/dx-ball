@@ -246,6 +246,12 @@ that single cast. Complete own-owner/raw-output checks retain145/0 versus146/86;
 the overflow-unsafe BEFORE input is diagnostic only. Current defined-wrap source,
 392 overall exact/247 authored exact/23 authored candidates remain unchanged.
 
+The [frontend counter follow-up](VC4_EXPRESSION_ORDERING.md#observed-frontend-counter-divergence-october20)
+locates the additional4163EF use before the named new_shape/sprite shifts. Both
+complete historical owner comparisons pass, without a source adoption. Raw kind0C
+is not a recovered local/type declaration. The next bounded source hypothesis is
+the full pure signed32 resource-arithmetic family, not another single-cast trial.
+
 At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
 closes after one resource compile: all18 complete raw/resolved bodies and13
 prior exacts remain unchanged; full COFF differences are timestamps only.

@@ -141,6 +141,22 @@ All32 closed inputs/products/helpers are archived and member-size/hash verified
 before removal, releasing1,114,112 allocated bytes net before the journal.
 All142 protected baseline/input/tool hashes and current392/247/23 totals stay fixed.
 
+The [paired frontend counter observation](../research/exact/VC4_EXPRESSION_ORDERING.md#observed-frontend-counter-divergence-october20)
+now records the additional4163EF counter use before new_shape28289→28290 and
+sprite28321→28322. Each input has243 guarded counter transitions and its own full
+18-function/262-binding/six-carrier/normalized-COFF closure. EDI`+18` assignment
+follows actual snapshots and retained straight-line code; raw kind0C semantics
+and the observed storage reset/reuse remain unknown. A reviewed offline adapter
+corrects an unsupported owner-name predicate without rerunning either compiler;
+names/owner kinds stay unknown. AFTER's single outer filesystem-digest omission
+is recorded and independently hash-checked, not called an untruncated capture.
+Private authority is `.analysis/glyph-frontend-counter-20261020/result.json`.
+All32 closed files, including expanded duplicate analysis, are member-verified
+before removal, releasing1,802,240 allocated bytes net before journals;153 current
+protected hashes stay fixed. Next assess the coherent16-operation/15-expression/
+six-function signed32 resource arithmetic contract, not the closed nbytes-only
+pilot or an ID/name/order sweep. No source/setting is adopted;392/247/23 remain.
+
 ## Current authorities
 
 | Inventory | Current value |

@@ -488,7 +488,92 @@ Totals stay392 overall exact/247 authored exact/23 authored candidates.
 All32 closed copied inputs, objects, utility executable, logs and helper files
 are archived and individually size/SHA-256 verified before exact-file removal.
 Cleanup releases1,114,112 allocated bytes net before its journal. All142
-protected baseline/input/tool hash stays fixed. Direct reports, full traces and
+protected baseline/input/tool hashes stay fixed. Direct reports, full traces and
 REA responses remain; the latter also have space-neutral REA observation links.
 Current products, native incremental caches, originals and tools are untouched;
 each removed file is recoverable from `closed-inputs-products.tar.gz`.
+
+## Observed frontend counter divergence, October20
+
+The same immutable historical pair now has a bounded C1XX counter observation.
+It reuses the already established40AA3F writer and401BD5 reader MOV guards plus
+an owned four-byte hardware watch at4B0F90. Each run arms at actual counter28087,
+before named font28107, and stops at28330 after exactly243 consecutive increments.
+Actual instruction effects, debug state, thread/process/job ownership, full tool
+paths and bounded raw snapshots are checked. No compiler record, counter, source
+or option is changed; no C2 rank/output instrumentation is repeated.
+
+Both runs observe unchanged nbytes28285 and bitmap28286. The subsequent window is:
+
+| Assigned counter | BEFORE actual writer/record | AFTER actual writer/record |
+| --- | --- | --- |
+| 28287 | 4163EF | 4163EF |
+| 28288 | 41639D, raw kind8 | 4163EF |
+| 28289 | Ordinary named new_shape | 41639D, raw kind8 |
+| 28290 | 4163EF | Ordinary named new_shape |
+
+Among common unique named writer/reader roles, new_shape28289→28290 is the first
+stable+1 shift; sprite later shifts28321→28322. Ambiguous names are retained but
+not aligned. The first same-counter site/name signature difference is28288, not
+a proof that repeated unnamed records have unique cross-run identities. The
+following raw kind8 has an actual later recordcode3/mode1 reader in each run;
+its label/temporary/other semantic role remains unknown.
+
+At AFTER's two consecutive4163EF events, actual EAX is28287/28288 and EDI has the
+same physical address62672744, with zero object`+18` at both snapshots. Complete
+captured instructions4163F5..416404 and retained C1XX record08 establish the
+straight-line store `(old & 0xff000000) | (EAX & 0xffffff)` to EDI`+18`; no
+branch/call/EDI/EAX change intervenes.416407 writes raw kind byte0C. This is an
+observed-entry/static-fallthrough proof, not an independently stepped store.
+The repeated address/zero word supports intervening reset/reinitialization/reuse,
+but neither its writer nor two distinct allocations or continuous object identity
+is established. No source-local, type-id or other semantic name is assigned to
+kind0C. The extra counter use is observed, not a newly recovered source declaration.
+
+An offline verifier initially rejects a missing owner-name string after complete
+owner/code-window/MOV checks pass. The observer's conservative decoding guard
+leaves those names blank and does not serialize owner kind. A separately reviewed
+offline adapter retains actual same-run owner pointers: unique nbytes anchors
+width/height's owner, while the unique sprite/name/key pair has a distinct owner.
+Fixed-source placement and every original counter/MOV/COFF check remain required.
+Names and owner kinds stay unknown; four exact verifier replacements, their hashes
+and the original failure are retained. No target is retried or frozen input edited.
+Only after corrected BEFORE passes does the hash-bound serial AFTER gate run.
+
+BEFORE has145 selected writes/135 reads; AFTER145/134, giving280/279 verified
+MOV pairs. Both entire18-function/262-binding/six-carrier comparisons and normalized
+COFF equal their own frozen baselines. Timestamp/transport offsets and separately
+retained FILE records remain explicit exclusions. All153 protected current hashes
+stay fixed. Runs take40.792/40.148s and peak at151,543,808/151,912,448 bytes under
+the existing one-CPU/35%/384–512MiB limits with no memory-limit/OOM events.
+
+REA process Evidence is
+`ev_5462ef5f2fd0d2ff6d1d7ae218abfc204c53bc210fbd3237d31a9929b5d5f216`
+and `ev_58329ac68ac3a0a4137e58dd628b9d04b72c9bb39d7d2d48041649b096029fb2`;
+utility Evidence is
+`ev_98732d1a1d294fe88aca32a0e8e0db37b50730ab2e627d0009d6ff20783fdba6`.
+All compiler/observer/outer exits are0 and owned cleanup is verified. AFTER's
+outer `truncated=true` is retained: its2MiB filesystem hash budget omits only the
+prior utility-response digest. That digest independently matches the build review
+and before snapshot. Target trace, terminal output and file enumeration are not
+truncated; outer process coverage remains sampled, not exhaustive.
+
+Private authority is `.analysis/glyph-frontend-counter-20261020/result.json`.
+Complete traces, direct closures/reviews/failure receipts and a focused summary
+remain available, with space-neutral REA observation links. All32 closed copied
+inputs/objects/EXE/helpers/logs and the1,516,218-byte expanded analysis are archived
+and member-size/SHA-256 verified before removal. Net release is1,802,240 allocated
+bytes before journals; every removed file is individually recoverable. Current
+products, originals/tools and native incremental caches remain untouched.
+
+The next source question is a coherent signed32 arithmetic family:16 observed
+DWORD additions/subtractions/multiplications in15 expressions across six resource
+functions, independently grounded in the bank/count/Blt/glyph/PCX boundary notes.
+One fixed native-only per-owner wrap contract could preserve their natural signed
+source with unchanged VC4 flags. The closed nbytes-only control does not test this
+whole family. Pointer bounds, division, shifts, unsigned byte-count`+3`, API widths
+and signed-byte normalization are separate and must stay intact. This is a source
+hypothesis requiring complete companion comparisons and unchanged boundary cases,
+not an adopted compiler setting or permission to add unit-one padding expressions.
+No source or acceptance claim changes:392 overall exact/247 authored exact/23
+authored candidates remain; the goal stays active.
