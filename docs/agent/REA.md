@@ -180,6 +180,18 @@ first query327,899ms and subsequent queries share one import. Full instructions
 and bytes dominate inferred signatures. The new74-record snapshot is current;
 the old115 observations retain their original immutable run/archive identities.
 
+The [October20 typed-record fragments](../research/exact/VC4_EXPRESSION_ORDERING.md#typed-record-completion-and-caller-windows-october20)
+use two separately hashed69-byte raw x86 inputs at41642F and423A96, not another
+full-C1XX cold import. Four successful byte/assembly records and two separate
+two-record snapshots are preserved in
+`.analysis/rea/c1xx-typed-record-windows-20261020/closed-evidence.tar.gz`;
+its direct result and member manifest retain the mappings and Evidence IDs.
+The original141-record snapshot stays fixed. Raw mapping/generic gcc language
+context supports ISA decoding, not original function boundaries, ABI or types.
+Both failed process/close outcomes remain explicit even though the final
+exact-PID/workspace checks are clear; do not replay an answered query to obtain
+a cleaner status. This phase adopts no source or object.
+
 For a missing native ABI, control-flow or instruction question, the narrower
 facets are also verified with 6.3:
 

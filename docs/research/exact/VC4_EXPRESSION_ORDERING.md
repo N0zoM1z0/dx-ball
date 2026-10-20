@@ -705,3 +705,75 @@ Physical-address reuse does not establish a single logical object's lifetime,
 two allocations, semantic record kind or a missing source local. Bind that
 producer to an actual typed conversion/product consumer before changing source;
 do not repeat the cold import, zeroer/rank capture or declaration/name/flag sweeps.
+
+## Typed-record completion and caller windows, October20
+
+Two previously absent69-byte ranges are extracted from attested C1XX
+SHA256 `3376b1dfaff0bdb1018b13fbb22cf407858044f327d4bbc3e4d9335640aea7f0`:
+41642F/file88111, hash `aadad09826386c2a6e17282eece307ab16c0d4ed16da8a0a335379fc5f23880c`;
+423A96/file142998, hash `1ac60926eac73892654096968eaaedfde48ae2725431e30ea821161636094780`.
+Separate REA6.5/Ghidra12.1.4 raw-x86 sessions each return all69 bytes and
+assembly, with exactly two records in each saved snapshot. The original
+141-record snapshot stays byte-identical. This avoids the failed whole-image
+import; no original-function/ABI or whole-PE context is claimed from raw inputs.
+
+The tail clears input byte bit7 at416438, copies its first DWORD into record+1C,
+and conditionally clears record+1F bit0 before calling407D5F,40A31C and406670.
+Their identities remain unknown. Its shown fallthrough returns EDI in EAX;
+the external conditional branch at416447 lies outside the fragment. The caller
+sets EDX to old EBP-18 and ECX to old EBP-30, calls4163C5 at423A9E, and stores
+returned EAX to4B4D40 at423AA9. Next address423AA3 agrees with the historical
+ESP+20 value under the previously stated normal-prologue/path inference; it is
+not a newly observed executed entry/return. EBP arithmetic is not evidence of
+an architectural frame or a recovered C++ prototype.
+
+Primary assembly Evidence is
+`ev_51c6771fe6bb218610d4440c33952708526ae3bd7bca24d6908e7a7a1fa8be09`
+and `ev_9abd1697744509d5be8a64d2b0b08008ad8a066152ea05b73ef891877481bdf1`.
+Raw-input mapping, generic gcc compiler specification and unmapped external
+code/data limit these observations to the shown ISA relations. Retained4B4D40
+references identify pointer/result slots, not a typed byte-count conversion,
+product, IR serializer or original source local. The historical input A0hex
+could become20hex on this tail path, but20hex alone does not mean unsigned32.
+
+A read-only review of the hash-bound historical trace finds no register-prefix
+sample starting at954190,958354,95CBD8,95CB6C or95CB78. Forty-eight discrete
+32-byte samples starting at958344 overlap958354: its available16 bytes are
+`63400000000000000000000000000000`. The selected pair201/202 merely holds
+the five pointers and does not dereference them. Those samples establish no
+continuous contents/lifetime or source/type identity, and no other requested
+pointer is covered. Do not infer a semantic type from these address values.
+
+Both failed workflows remain preserved. The first capture reaches its200s idle
+deadline because buffered output hides completed-tail progress; it returns
+cleanup_incomplete. Its caller import becomes an unattachable orphan. Exact
+PID/start-time/run-token/cgroup/executable/target checks bind three processes
+before pidfd-directed termination. All54 workspace members are size/hash verified
+in a recoverable archive before workspace removal. The first libc capability
+failure occurs before any signal and remains retained. This supplemental cleanup
+does not rewrite the original capture's status. Only after that terminal check
+does a reviewed caller-only continuation expose progress/heartbeats and avoid
+repeating the tail or changing the target.
+
+The continuation obtains both records and a snapshot, then close reports
+cleanup_incomplete/ownership-token mismatch for PID2426643 despite diagnostic
+JVM exit0. Outer capture
+`ev_9b1aba35642192f60353b00db7eca44afb1ba239226e5ef490e32e6aa1afecb8`
+exits1, untruncated, with owned-group cleanup verified and temporary root removed.
+Subsequent exact-PID/workspace checks confirm absence; this is usable static
+evidence, not a fully successful workflow. One CPU/35%,384/512MiB and256MiB JVM
+limits hold. First/continuation peaks are403,156,992/403,189,760 bytes, with
+2,917/2,105 soft memory.high events and zero max/OOM events. Process coverage
+remains sampled; a clean later check is not proof of exhaustive process history.
+
+Private authority is `.analysis/rea/c1xx-typed-record-windows-20261020/result.json`.
+All950 original and963 continuation protections verify before cleanup. All38
+closed helpers/raw responses/windows/snapshots, including the prior orphan
+archive, are member-size/SHA256 verified in a319,529-byte archive before removal.
+Net release is962,560 allocated bytes before journals;946 protections remain
+direct and17 phase protections are individually recoverable from archive. Current
+products, caches, tools, originals and game source remain unchanged. No compile,
+native/game replay, source adoption or exact promotion occurs;393 overall/248
+authored exact/22 candidates remain incomplete. Follow the actual returned
+record into its typed downstream consumer before proposing a source change;
+do not replay these fragments or turn a metadata bit into a type/name/order sweep.

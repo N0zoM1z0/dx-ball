@@ -55,6 +55,21 @@ the reset watch or missing-tail import. Next bind the kind0C ID request to its
 actual typed source/IR consumer; storage recycling alone is not a source local,
 type or continuous logical-object lifetime.
 
+The [derived typed-record windows](../research/exact/VC4_EXPRESSION_ORDERING.md#typed-record-completion-and-caller-windows-october20)
+now add two hash-bound69-byte x86 fragments without retrying the full C1XX
+import. The tail copies the input's flag-cleared DWORD into record+1C; the
+caller statically binds CALL4163C5 at423A9E, next423AA3 and EAX-to4B4D40 at423AA9.
+These are not complete original functions, original ABI or a recovered type.
+The original141-record snapshot and all950 protections remain unchanged before
+cleanup. Preserve both process failures: the initial idle-timeout orphan needs
+separate identity-bound cleanup; the caller yields both records but close reports
+an ownership-token mismatch despite JVM exit0. Its outer capture exits1 with
+verified cleanup; exact PID/workspace rechecks are clear. All38 closed files are
+member-verified in a319,529-byte archive before removal, releasing962,560 allocated
+bytes net before journals. Current393/248/22 counts remain. Next follow the
+returned record into a typed downstream consumer; do not repeat these windows
+or treat raw20hex/kind0C as unsigned32/source-local identity.
+
 The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 observes the actual elapsed guard's C2 swap and independently restores all17
 paddle frame homes in a private scalar-lifetime model. Fixed ownership controls
