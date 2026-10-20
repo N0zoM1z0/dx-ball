@@ -3,7 +3,25 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
-The newest [known product route](../research/exact/VC4_EXPRESSION_ORDERING.md#known-product-route-and-retained-raw-names-october21)
+The newest [binary descriptor consumer](../research/exact/VC4_EXPRESSION_ORDERING.md#binary-operand-descriptor-consumer-october21)
+decodes95 instructions/289 bytes at4102D5..4103F5 from one fixed1,024-byte import.
+It explicitly reads the left carrier+4 on two conditional paths, including the
+BL36/descriptor-byte+1 mask0x02(bit1) test, but never locally stores parent+4.
+Generic parent construction is delegated at410342 to411E69; no actual old
+internal branch, full original extent, type enum or helper ABI is proved.
+The retained411DB0 raw carrier already covers411E69, but its prior decode ends
+411E68. Reuse those bytes for the next specific descriptor/operand-consumer
+question; do not repeat166builder/global/reset/rank or calibration/name/ID/flag
+variants. Oldtrace named nbytes/402-lvalue and before-parent36 slot associations
+are recorded with explicit non-continuous-lifetime and zero-based chronology
+limits. No game source/options/adoption/compiler/game-native run or exact gain.
+Private authority is `.analysis/rea/c1xx-binary-descriptors-20261021/result.json`.
+All21 closed files are member-verified in a69,024-byte archive before removal,
+releasing327,680 allocated bytes net before journals.444 direct protections,
+78 recoverable aliases and12 separate earlier copies hold; full mode/nsmtime
+metadata precedes first unlink. Current products/caches/tools/originals and the
+141-record snapshot remain intact. Existing EXE/resources remain sufficient.
+The preceding [known product route](../research/exact/VC4_EXPRESSION_ORDERING.md#known-product-route-and-retained-raw-names-october21)
 uses one bare unsigned-int multiplication input, one utility build/VC4 compile
 and one23-byte output import. One matched423740->4102D5->423745 tuple observes
 ECX4C/returned24C with both operands. The entire420-byte COFF has one function;

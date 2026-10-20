@@ -1322,3 +1322,86 @@ manifest precedes the first unlink. Net allocated release is917,504 bytes before
 journals.436 direct protections/74 recoverable archive aliases and12 separate
 earlier copied-input aliases preserve their identities; current products,
 useful caches, tools/originals and the141-record snapshot remain intact.
+
+## Binary operand descriptor consumer, October21
+
+The next fixed1,024-byte C1XX window starts at the actually observed binary
+entry4102D5, file63,189, SHA256
+`f78703ab3d87bbb8e8df21516ff99a888742d5fd356e6ac3bfbb470a6e36c288`.
+The earlier node-factory carrier already read473 of these bytes;551 extend it.
+Its previous decoded body ended4102D4, so this is a new consumer decode, not a
+repeat of the166 builder, allocation/reset/rank watch or known-source calibration.
+One raw import yields three complete primary records and a26,460-byte snapshot.
+No compiler/target execution, game source/option change or object adoption occurs.
+
+Instruction Evidence
+`ev_1d627f8be7aa990e5d4fdd122624c955f29222b22b00ed58105a305599bdf1b7`
+covers95 instructions/289 bytes at4102D5..4103F5. The other735 read bytes are
+not classified as code, padding or data. Six cold destinations4538xx lie outside
+the import: provider-selected body coverage is not whole original-function
+coverage. The generic raw gcc context does not establish the original ABI.
+
+The visible entry saves24 bytes of local/register space, holds entryEDX inESI,
+and reads the original stack+4 operand intoEDI. BL saves entryCL; no instruction
+clears EBX's upper bits.408BBD(ESI) returns a value retained inEBP, while408030
+returns the newEDI. Their classification/transformation semantics remain unknown.
+
+| Visible site | Explicit relation |
+| --- | --- |
+| 41033D..410342 | Push EDI, forward ESI inEDX and EBX inECX, call411E69 |
+| 410364 | Alternate path delegates to41ED2D |
+| 410395..4103A5 | Conditional BL36/EBP test reads[ESI+4], tests descriptor byte+1 with mask0x02 (bit1), then may branch externally |
+| 4103BE..4103C1 | Another conditional read[ESI+4] feeds40F5B5 |
+| 4103CD..4103D1 | Its lowAX code feeds419A9C with selector/EDX2; result chooses generic dispatch or external branch |
+
+Selectors34/51 have a separate right-operand helper path;4C is not explicitly
+compared here. None of these95 instructions directly reads right+4 or stores
+returned-parent+4. This local absence does not cover helper/cold effects. Visible generic
+construction and descriptor selection are delegated, principally to411E69; the
+actual historical call's taken branch is not observed inside this fragment.
+
+Stack offsets are reconciled without inventing a helper signature. With
+`B=entryESP-24`, localA isB+10hex and localB isB+14hex. After the first PUSH,
+41035A's `[ESP+14hex]=0` clears localA, not localB. Three stack arguments enter
+41ED2D. Normal balanced continuation would require a net12-byte removal before
+410369 writes localB and4103AB reads localA. Its RET/actual cleanup is not decoded
+here, so this is a conditional stack relation, not a recovered RET12/ABI.
+
+Existing old trace rows also name kind9 records width3B7C00C/ID28281,
+height3B7C09C/28282 and nbytes3B7C24C/28285. The historical source declares signed
+width/height and unsigned nbytes; their numeric descriptor associations are
+958344/958354, not universal type enums. Consumer5/6's nonaligned64-byte prefix
+contains L3BC4F24 `[402,958354,0,0,nbytesSymbol,0]`. Later48's236-prefix parent
+has L at+10 and the24C-prefix product parent at+14. These are separate snapshots,
+not continuous lifetime or an assignment enum proof. The earlier counter190
+sample precedes these consumers; its different bytes are not a later reset/reuse
+writer. Zero-based row ordinals are explicit in both archived sidecars.
+
+Consumer47 already samples36 in candidate selector slot3B8BAF8 before48,
+but not at the actual call entry. Global36 transport at76/77/78 is later than48
+and63's clear and cannot be48's last definition. Repeated numeric slot addresses
+do not prove no intervening writes or a completed six-DWORD REP transfer.
+
+This static phase has no REA behavioral process capture. Its owned utility
+returns0 in108.913s; full responses/log/status remain retained. CPU0/35%,384/512MiB
+hold; peak403,247,104 bytes has940 soft-high events, zero max/OOM. One selected-field
+owned-cgroup sample observes actual JVM `-Xmx256M`; all five sampled PIDs and
+the exact temporary workspace are absent after close. This is not exhaustive
+process cleanup, atomic image binding, inherited-environment or network evidence.
+All448 direct seals,74 aliases and12 separate earlier copies hold before cleanup.
+
+Private authority is `.analysis/rea/c1xx-binary-descriptors-20261021/result.json`.
+Independent integrity/dataflow reviews pass within these limits. No source model
+or new exact follows:249 authored exact/21 candidates and394 overall remain.
+The next specific consumer is411E69, for which a retained raw carrier already
+exists but no primary decode does. Reuse it before a focused new query; do not
+automatically expand this phase into cold/error helpers, repeat old observations
+or resume ungrounded source/name/ID/order/flag trials. Existing EXE/resources suffice.
+
+All21 closed files, including full primary responses/snapshot, raw window,
+helpers and historical/process sidecars, are individually member-size/SHA verified
+in a69,024-byte archive before exact-file retirement. Full mode/nanosecond-mtime
+descriptors are persisted before the first unlink. Net allocated release is327,680
+bytes before journals.444 direct protections/78 recoverable aliases and12 separate
+earlier copied-input aliases retain their identities; current tested products,
+useful caches, tools/originals and the141-record snapshot remain intact.
