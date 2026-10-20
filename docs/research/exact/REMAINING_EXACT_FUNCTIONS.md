@@ -113,6 +113,14 @@ resource requirements and resume procedure.
 
 ## Authored candidates
 
+The [last-brick clipping absolute-value recovery](LIGHTNING_ABS_WRAP.md)
+defines both original low32 CRT magnitude operations through unsigned negation
+before signed32 storage. One actual `INT_MIN` fixture matches the complete
+original rectangle and79 ordered events; all197 existing countdown/crop cases
+pass. All20 display functions compare together with419 actual bindings:16 exact
+companions and19 code identities survive, while last-brick improves1061/992 to
+1047/976. No full replay or game run follows.
+
 The [rotation destination-offset recovery](ROTATION_DESTINATION_ARITHMETIC.md)
 defines both consumed low32 row-pitch products and rounded-X additions before
 their signed Native64 pointer displacement. Two bounded original/native cases
@@ -345,7 +353,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-high-scores` | 404 | 403 | 330 |
 | `capture-sprite` | 852 | 864 | 726 |
 | `load-pcx` | 862 | 979 | 851 |
-| `last-brick` | 1057 | 1061 | 992 |
+| `last-brick` | 1057 | 1047 | 976 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |
 
 ## Runtime candidates

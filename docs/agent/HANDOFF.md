@@ -68,6 +68,17 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+Current source includes the [last-brick clipping absolute value](../research/exact/LIGHTNING_ABS_WRAP.md).
+Both negative crop branches now define the original CRT low32 magnitude through
+unsigned negation before signed32 storage, including `INT_MIN`. One actual
+last-brick boundary fixture matches the complete original rectangle and79
+ordered effects; all197 existing countdown/crop cases pass. All20 display
+functions/419 bindings compare together;16 exact companions and19 code
+identities survive, while last-brick improves1061/992→1047/976. Current native
+SHA-256 is `63d4f3c64eadb51adc2f3200b971c77811635f80b99ab44c62f9ccce9a143c30`.
+No broader replay, game executable build or game run follows. Private authority
+is `.analysis/lightning-abs-wrap-20261020/`.
+
 Current source includes the [rotation destination offsets](../research/exact/ROTATION_DESTINATION_ARITHMETIC.md).
 Both renderer addresses now preserve the original low32 row-pitch product and
 rounded-X addition before their signed Native64 displacement. Two guarded
@@ -528,7 +539,7 @@ is not a new source question. Keep inference separate from recovered fact.
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Both frames are424 bytes; the lower80 original bytes are ten consumed conversion/spill slots, not an unused object. Named/temporary allocation context remains open; integer-offset-before-base order is restored |
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
-| Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Consumed destination-Y subtraction now wraps explicitly. Keep clock before RNG and existing callback-visible state; abs(INT_MIN) remains open |
+| Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md), [absolute value](../research/exact/LIGHTNING_ABS_WRAP.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Consumed destination-Y subtraction and both negative crop magnitudes now have explicit low32 contracts. Keep clock before RNG and existing callback-visible state |
 
 Ranking's signed630−measure_text question is closed by the adopted explicit
 DWORD subtraction. Its eight complete identities stay fixed; do not replay

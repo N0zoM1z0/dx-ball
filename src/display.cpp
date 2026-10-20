@@ -487,10 +487,10 @@ void dxball_last_brick(void)
         rect.top = 0;
         rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width;
         rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height;
-        if (x < 0) { rect.left = abs(x); x = 0; }
+        if (x < 0) { rect.left = (DxBallInt)(0u - (DxBallUInt)x); x = 0; }
         if (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x > 639)
             rect.right -= dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x - 639;
-        if (y < 0) { rect.top = abs(y); y = 0; }
+        if (y < 0) { rect.top = (DxBallInt)(0u - (DxBallUInt)y); y = 0; }
         if (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y > 479)
             rect.bottom -= dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y - 479;
         dxball_lightning_x = x;
