@@ -1655,3 +1655,91 @@ journals.470 direct protections,92 recoverable aliases and12 separate earlier
 copied-input aliases retain their identities. Current tested products, useful
 caches, tools/originals and the141-record snapshot remain intact; no broad
 cleanup occurs.
+
+## Case-field producer and visible return, October21
+
+The known conditional raw4C dispatch targets41217C. A bounded reuse audit of
+the canonical141-record snapshot and278 JSON carriers in12 named archives
+finds no decoded case or complete raw overlap among206 deduplicated records.
+The old583-byte caller carrier ends4120AF; its selected67 instructions stop
+at the indirect dispatch. Merely enlarging an import seeded at411E69 would
+not prove discovery of this case, so the new raw-x86 import explicitly seeds
+41217C. Its1,956-byte input ends41291F before known412920 dispatch data:
+file71,036, SHA256
+`4d3664c9c547ef2e4859472aa05c5e8632424678f95e631dff0199aaa8cd16b2`.
+This is a deliberate finite budget, not a recovered original function extent,
+minimal suffix or proof all input bytes are code. The reuse negative is bounded.
+
+Three complete primary records match a27,304-byte snapshot by full object/ID:
+raw read `ev_5ac4cbb8ec747a5e75097f7e81a69b649b553e0862d964c4170f239844033f88`,
+body `ev_93432d8321d26679cb92fbcebb3c3be144743b01eaab78ebba3c7035b3d6835e`,
+entry `ev_7685d5d7d15b7bf68c7aaad10fe46e7f68ca4adc1a803b1fcd2c5127bfdfdfa7`.
+The selected contiguous body is24 instructions/70 bytes at41217C..4121C1,
+SHA256 `fd4bfd130aad7dde376a5454445d8fc1832f8ff29b0cc5bb2b3e8809f40e5403`.
+The complete raw1,956 bytes match the original PE/specimen; the other1,886 bytes
+are not selected code. The first instruction is four bytes8B442434,
+`MOV EAX,[ESP+34hex]`. This seeded case is not an independently callable original
+function or the complete original caller.
+
+Let X be current case-entryESP, independently of the original caller-frame join.
+The exact local producer/consumer chain is:
+
+| Instructions | Observed value flow |
+| --- | --- |
+| 41217C..412187 | Read R0=[X+34hex], L0=[X+14hex], then RC=[R0+4], LC=[L0+4] |
+| 41218A..41218F | Push RC; call41A9B0 with EDX=LC and ECX=DWORD[X+13hex] |
+| 412194 | Write returned EAX to DWORD[current post-call EDI+4] |
+| 412197..412199 | Test EAX and branch to454507 if zero, after the store |
+| 41219F..4121AA | Reload stack cells, push one value and call411531 with ECX=current EDI |
+| 4121AF..4121B3 | Call41A145 with ECX=411531's EAX and EDX=post411531 ESI |
+| 4121B8..4121C1 | Pop EBP/EDI/ESI/EBX, ADD ESP,20hex, RET4; no EAX write |
+
+At41A9B0 entry, ESP=X-8, the returnaddress is412194 and first incoming stack
+DWORD is RC. The packed ECX load occurs after the push at[ESP+17hex], hence
+[X+13hex]; under the conditional X=B join it starts at the saved raw selector
+and overlaps left-cell bytes. Its upper24 bits are not proved irrelevant to the
+undecoded helper. The stored value is that helper's EAX, not a locally selected
+child+4, constant or known type enum. EDI is the post-helper register, not proved
+preserved from case entry or the earlier41046F result. Zero is stored before
+the cold branch;454507's continuation remains unknown.
+
+Later stack-relative reloads correspond to the old caller cells only if41A9B0
+performs the required net4 cleanup. Likewise411531's cleanup and ESI preservation
+are not selected. The final41A145 return passes its EAX unchanged through the
+visible epilogue; there is no explicit EAX=EDI return. For post41A145 ESP=Z,
+the epilogue reads returnPC at[Z+30hex] and leaves ESP=Z+38hex. Rejoining the
+original S/B frame requires Z=B and intact frame state, with the expected
+net4/net4/net0 helper cleanup.4103F6's earlier normal net8/nonzero continuation
+and EDI preservation also remain unproved. Generic raw gcc metadata supplies
+neither these ABIs nor actual historical166/24C/236 identity/lifetime.
+
+Next audit retained coverage for41A9B0's exact selector/left+4/right+4-to-EAX
+relation, the actual value source feeding412194. Do not substitute allocator
+freshness, another generic constructor, raw36's unneeded case, calibration or
+name/ID/order/flag variants. The other helper/return and historical-route gaps
+remain separate, not automatic expansion authority. No natural game-source
+model follows yet; no source/options/adoption or compiler/game-native work.
+Counts remain249 authored exact/21 candidates,394 overall and30 closures;
+the full authored-exact objective stays active and strict-negative calibration
+remains negative.
+
+The owned static utility exits0 in128.292s of Node wall time underCPU0/35%
+and384/512MiB. Peak403,161,088 bytes has1,123 soft-high events and zero max/OOM.
+One non-atomic owned-cgroup sample retains all five raw cmdlines/argv values,
+including JVM3144619's `-Xmx256M` and case mapping. Its unchanged
+`observed_workspaces: []` reflects no bare-root argv; complete project/import/log
+arguments independently derive `/tmp/rea-ghidra-GbQN9T`. A sample-hash-bound
+sidecar and independent checks show the exact five PID paths, that root and
+owned scope absent after terminal. These are sampled current observations,
+not exhaustive cleanup, atomic process identity, environment/network evidence
+or behavioral target execution. Private authority is
+`.analysis/rea/c1xx-case-field-20261021/result.json`.
+
+Independent dataflow/result reviews pass. All23 closed files are individually
+member-size/SHA verified in an82,014-byte archive before exact-file retirement,
+including full primary responses, snapshot, raw input, helpers, preparation/audit
+proofs and process sample. Complete original mode/nanosecond-mtime descriptors
+precede the first unlink. Net allocated release is360,448 bytes before journals.
+478 direct protections,96 recoverable aliases and12 separate earlier copied
+inputs retain their identities. Current tested products, useful caches,
+tools/originals and the141-record snapshot remain intact; no broad cleanup.
