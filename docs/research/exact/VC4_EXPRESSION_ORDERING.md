@@ -836,3 +836,67 @@ No game/native replay, source adoption or promotion occurs;393 overall/248
 authored exact/22 candidates remain incomplete. The next primary static question
 is406670's observed metadata normalization path and record+10 transformation,
 not another global/reset/prefix/rank observation or a source spelling/flag sweep.
+
+## Primary metadata normalization window, October20
+
+One derived raw-x86 window now covers406670..406B63, extracted from the same
+pinned C1XX at file23152:1,268 bytes, SHA256
+`4004675e12638118f1673edf7d2db299870adba7ca45bf8ab3754acad5dd129a`.
+REA6.5/Ghidra12.1.4 reads every byte and returns332 instructions in two inclusive
+body ranges406670..406AE3 and406AFE..406B63:1,242 analyzed bytes. The26-byte gap
+406AE4..406AFD is read but not claimed as code, padding or full-function coverage.
+External cold branches, callees, globals and table406E70 remain outside this
+fragment. Its generic gcc profile does not recover the original ABI or types.
+The four historical48-byte samples overlap this fragment only partially:
+32/46/47/31 bytes,93 unique bytes, not four complete contained samples.
+
+Primary instruction Evidence
+`ev_d5dfe4802cdf53062a47cc62c721d527f750bf4063ad2342e055e30cbf009120`
+and five separate instruction facets establish the local dataflow. Entry EDX
+supplies the record and ECX the context.406675 reads record+1C;40667E spills it
+to final ESP+18 before406694..4066A6 copies it into the working ESP+10/+14 pair.
+ESP+18 later becomes0/1 control scratch, not retained payload.406B42..406B4A
+reloads/writes the working value to record+1C. The zero-companion fallthrough
+at406B59 clears byte+1F bit0. These are metadata operations; the observed20→20
+does not decode a source-type enum.
+
+4066E8 loads context+28 into EDI;406718 can store that value to record+10.
+The later path reloads record+10 and406B56 can store EDI again. This fits the
+historical context+28=958354 and record+10 transition3BC4F98→958354, but neither
+candidate store was directly watched and the complete executed path is unknown.
+Static possible stores are not a newly observed execution.
+
+A separate read of the hash-bound historical trace adds a positive type-carrier
+association. In the same PID280/thread284, named nbytes writer hit17231 and
+reader hit17273 both have ID28285, symbol62374476 and record+10=958354. Its
+archived source declares `DxBallUInt nbytes`, with the unsigned-before-product
+assignment. The selected anonymous record acquires this same descriptor value.
+Named nbytes has record+1C=24hex, while the anonymous record has20hex: the latter
+is not itself a UInt enum. This establishes same-run descriptor equality to a
+known source declaration, not the anonymous record's source identity, continuous
+lifetime or actual typed conversion/product consumption. No source repair is
+justified by this historical mechanism alone. Original source/debug material is
+neither available nor required to continue the reconstruction.
+
+All seven complete records equal the saved65,394-byte snapshot. The query closes
+normally; outer Evidence
+`ev_4e5ac1eaf377ca388d91baef260afa50a2092ac06a0aaa384b5886fdd06633ce`
+exits0, untruncated, with owned process-group cleanup verified and temporary
+root removed. The exact provider workspace is independently absent afterward.
+The172.769s capture holds one CPU/35%,384/512MiB and256MiB JVM limits; peak is
+403,177,472 bytes with2,906 soft memory.high events and zero max/OOM events.
+Process sampling remains nonexhaustive. There is no whole-image import retry,
+compiler run, native/game replay, source adoption or exact promotion.
+
+Private authority is
+`.analysis/rea/c1xx-record-normalization-20261020/result.json`. Independent
+integrity and dataflow reviews pass. All901 direct protections and four prior
+archived aliases verify unchanged before closure. All22 closed helpers, reviews,
+responses, raw window and snapshot are member-size/SHA256 verified in a102,374-byte
+archive before removal, releasing724,992 allocated bytes net before journals.
+Afterward898 protections remain direct; three phase protections and the four
+prior aliases remain recoverable from their archives. Current tested products,
+useful caches, originals/tools and the original141-record snapshot stay fixed.
+Current393 overall/248 authored exact/22 candidates remain incomplete. Follow
+actual typed conversion/product consumption or a separately evidence-backed
+source family; do not repeat these decoded windows or the closed watches.

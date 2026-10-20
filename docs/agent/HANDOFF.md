@@ -85,6 +85,23 @@ member-verified in a266,331-byte archive before removal, releasing1,609,728
 allocated bytes net before journals. Next inspect406670's actual normalization
 path with primary evidence; do not repeat the global/reset/prefix/rank watch.
 
+The [primary normalization window](../research/exact/VC4_EXPRESSION_ORDERING.md#primary-metadata-normalization-window-october20)
+now decodes332 instructions in1,242 of1,268 read bytes, with a26-byte unclaimed
+gap. It binds the record+1C working-pair read/write and context+28 to possible
+record+10 stores406718/406B56, not a complete executed path. Same-run named
+nbytes writer/reader carries958354 and the archived source declares DxBallUInt;
+the anonymous record acquires that descriptor. This positive carrier association
+does not make20hex a UInt enum or establish typed conversion/product consumption.
+All seven records equal the new snapshot; normal close and outer exit0/verified
+cleanup/untruncated capture hold. Peak403,177,472 bytes includes2,906 soft high
+events, zero max/OOM. All901 direct/four archived protections verify;22 closed
+files are member-verified in a102,374-byte archive before removal, releasing
+724,992 allocated bytes net before journals. No source/count change or compiler/
+native/game run;393/248/22 remain. Next follow actual typed consumption or a
+separately grounded source family; do not repeat decoded windows or closed
+watches. Continue from existing EXE/resources, without requesting original
+source/debug material.
+
 The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 observes the actual elapsed guard's C2 swap and independently restores all17
 paddle frame homes in a private scalar-lifetime model. Fixed ownership controls
