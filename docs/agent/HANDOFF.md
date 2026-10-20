@@ -38,9 +38,14 @@ their shared-header contexts lose existing exact companions. No proposal is
 adopted: current totals remain391 exact /246 authored exact /24 authored
 candidates. Do not promote individual private objects or repeat header/type
 subset, declaration-position or spelling sweeps. Preserve the tested baseline.
-The remaining narrow questions are the C2 ranks for the paddle equality and
-dirty-right sum, and the actual producer of the elapsed intermediate ID29701;
-the original IDs and declarations remain unknown. Closed pilot inputs/products
+The six-ID observation identifies elapsed ID29701 as an anonymous kind8/code3
+reader record, not a write at the existing40AA3F hook. Its role and actual writer
+remain unknown; all16 current runtime bodies stay fixed. The fixed resource
+signed-wrap contract control preserves17/18 code identities and gains no exact;
+no source or modern compiler option is adopted. The remaining narrow questions
+are the C2 ranks for the paddle equality/dirty-right sum, the glyph address
+selector and the actual kind8 allocation path. Original IDs and declarations
+remain unknown. Closed pilot inputs/products
 are retained in member-hash-verified archives before duplicate removal.
 
 ## Current authorities
