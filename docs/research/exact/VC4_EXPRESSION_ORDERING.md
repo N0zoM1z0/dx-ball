@@ -223,3 +223,41 @@ verified before removal. Its identical catalog shares an already closed immutabl
 carrier, preserving every path and byte. Cleanup releases11,038,720 allocated
 bytes net before the journal. Four unique dossiers and all failure records remain
 directly available. Private authority: `.analysis/glyph-selector-static-20261020/`.
+
+## Lower operand construction, October20
+
+The missing40D968 facet is now recovered through one narrow pseudocode query,
+not a repeat of its oversized full dossier. Sixteen same-import followups supply
+the actual assembly and direct operand constructors. All17 responses survive a
+normal close; the129-record snapshot preserves every preceding112 record.
+The first query takes609,103ms at CPU35%, memory high384/max512MiB and the256MiB
+Ghidra heap. A pre-close sample peaks at403,173,376 bytes with6031 soft-high
+reclaim events and no hard-max/OOM event. All three owned processes and the
+temporary project are subsequently absent. This does not retest transport paging.
+
+The ordinary integer-binary path actually lowers node`+0C` at40D9DD before
+node`+10` at40D9F2, constructs their operands, then calls40D71C at40DA32.
+Opcode30 instead obtains an operand through41480D: a non26 indirect child is
+recursively lowered and its returned reference enters4198A5 with kind4.
+The8-byte operand points to a payload containing two32-bit fields and a16-bit
+base reference.40D71C copies complete operands into instruction-record`+10/+18`
+and writes the numeric instruction/width fields at`+8`. These are concrete
+lower-record boundaries, not yet a final machine-byte encoder.
+
+Two interpretation corrections matter.40E961 is a constructor wrapper through
+40D917/401C79, **not** a virtual-register table lookup.40E972 recognizes kind1
+with specific symbol flags, or kind18; that predicate alone does not establish
+stack-only storage or physical EBP. Virtual references return in AX, and the
+transient operand pool can be reused: any future observer must copy bounded
+records immediately and retain pointer generations, not equate repeated addresses.
+
+Primary Evidence is `ev_3d3be10651712daada5f86b5cc640d101dc83873d861f803ebb92a52e94cdcbd`
+(40D968 pseudocode), `ev_7a3092d14f0bddb113a796c17375de28aef0304e33098cbec53d980b359ea031`
+(its assembly), and `ev_27af67e5cf374235d8424f0ca696a46020b4126e48bb7fd8326b58b0a4cc74f7`
+(40D71C). The complete17-record identities, actual hook bytes, snapshot-preservation
+receipt and independent review are in `.analysis/glyph-operand-lowering-20261020/`;
+raw responses remain in the immutable06-38-40 C2 run.
+
+No live glyph subtree is yet joined through these stages to physical registers,
+encoded address bytes or a COFF instruction offset. Static child order alone
+does not prove glyph-specific scheduling or authorize source-ID/name changes.

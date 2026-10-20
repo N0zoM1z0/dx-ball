@@ -1,8 +1,8 @@
 # Remaining exact functions
 
-Updated October20,2026, after the rotation destination-offset recovery.
-Accepted totals are **391 functions / 83,646 code bytes / 244 metadata bytes**.
-There are **84 complete nonexact comparisons: 24 authored and 60 runtime**. None is an accepted exact.
+Updated October20,2026, after the complete plain-char glyph cohort recovery.
+Accepted totals are **392 functions / 83,974 code bytes / 244 metadata bytes**.
+There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
 
 These 84 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
@@ -112,6 +112,14 @@ Use the [handoff](../../agent/HANDOFF.md) for priorities, latest adopted work,
 resource requirements and resume procedure.
 
 ## Authored candidates
+
+The [plain-char text-byte cohort](GLYPH_SIGNED_CODE_DOMAIN.md#complete-plain-char-cohort-october20)
+restores complete328-byte glyph drawing. All272 affected functions/4,655 code
+bindings and two metadata bindings compare together;251 prior exacts survive,
+with270 code identities unchanged. One native build and3,135 existing resource/UI
+cases pass. Current270-entry coverage is
+`.analysis/glyph-char-cohort-20261020/authored-coverage.json`:247 exact/23 candidates.
+The following recovery chronology retains its historical totals.
 
 The [last-brick clipping absolute-value recovery](LIGHTNING_ABS_WRAP.md)
 defines both original low32 CRT magnitude operations through unsigned negation
@@ -349,7 +357,6 @@ One owner compile preserves five exact companions and six other body identities;
 | `fill-polygon` | 1543 | 1543 | 216 |
 | `fill-polygon-clipped` | 1592 | 1592 | 213 |
 | `release-sprite` | 262 | 269 | 245 |
-| `draw-glyph` | 328 | 332 | 258 |
 | `draw-high-scores` | 404 | 403 | 330 |
 | `capture-sprite` | 852 | 864 | 726 |
 | `load-pcx` | 862 | 979 | 851 |

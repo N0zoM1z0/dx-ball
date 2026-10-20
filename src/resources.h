@@ -179,7 +179,7 @@ typedef struct DxBallSprite {
     DxBallInt opaque;
     DxBallInt width, height, pitch;
     DxBallRect source_rect;
-    signed char code;
+    char code;
     DxBallInt baseline;
 } DxBallSprite;
 
@@ -213,8 +213,8 @@ void dxball_release_sprite(DxBallInt sprite);
 void dxball_capture_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
                            DxBallInt width, DxBallInt height);
 void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const char *path);
-DxBallInt dxball_find_glyph(signed char code);
-DxBallInt dxball_draw_glyph(signed char code, DxBallInt x, DxBallInt baseline);
+DxBallInt dxball_find_glyph(char code);
+DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline);
 void dxball_load_live_palette(const char *path);
 void dxball_load_saved_palette(const char *path);
 /* Read the live RGB tail, create a palette and attach it after successful creation. */

@@ -1,7 +1,8 @@
 # DX-Ball reconstruction handoff
 
-Updated October 20, 2026. The user has started a new objective: make all24
-remaining authored candidates byte-exact. That objective is active, not complete.
+Updated October 20, 2026. The user's objective is to make the initial24
+authored candidates byte-exact. Glyph drawing is now recovered;23 remain.
+That objective is active, not complete.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
 [completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).
@@ -26,7 +27,7 @@ play. The final arithmetic recoveries precede the e6d5b55 build and its two
 selected game flows. A subsequent build disables all source-object reuse to
 verify recompilation independently. Whole-EXE identity is not required. The new
 request authorizes focused recovery of the remaining compiler-output differences
-in the24-function table; the preceding restriction to missing authored operations
+in the remaining-function table; the preceding restriction to missing authored operations
 no longer describes the active task. Keep complete affected-owner comparisons,
 natural shared source and the existing serial resource limits.
 
@@ -34,8 +35,8 @@ The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OW
 observes the actual elapsed guard's C2 swap and independently restores all17
 paddle frame homes in a private scalar-lifetime model. Fixed ownership controls
 produce complete private exact elapsed81, reset426 and palette234 bodies, but
-their shared-header contexts lose existing exact companions. No proposal is
-adopted: current totals remain391 exact /246 authored exact /24 authored
+their shared-header contexts lose existing exact companions. Those controls
+adopt nothing; their checkpoint remains391 exact /246 authored exact /24 authored
 candidates. Do not promote individual private objects or repeat header/type
 subset, declaration-position or spelling sweeps. Preserve the tested baseline.
 The six-ID observation identifies elapsed ID29701 as an anonymous kind8/code3
@@ -45,9 +46,10 @@ branch-free object`+18` store at4163B2. Chain insertion is established, but its
 semantic role and original IDs remain unknown; all16 runtime bodies stay fixed.
 The fixed resource
 signed-wrap contract control preserves17/18 code identities and gains no exact;
-no source or modern compiler option is adopted. The remaining narrow questions
-are the C2 ranks for the paddle equality/dirty-right sum and glyph's downstream
-address selector. The renderer's later frame manager is now observed as skipped
+no source or modern compiler option is adopted. Current paddle equality/dirty-right
+ranks are already captured; do not repeat them. The open question is where the
+scalar-context order first diverges. Glyph's final register/output linkage remains
+open after the lower-operand static boundary below. The renderer's later frame manager is now observed as skipped
 in one unchanged complete current compilation; reobserving its initial48
 allocations or assuming an extent early return is not warranted. Original IDs and declarations
 remain reconstruction questions, not prerequisites for outside material: the
@@ -64,8 +66,29 @@ the Node heap; the full fifth result is not recovered. All owned processes exit
 and the prior112-record snapshot stays fixed. The session helper now permits
 bounded native pages after this interactive error and avoids oversized snapshot
 serialization; nine new provider-free cases plus six lifecycle cases pass.
-Next use the narrow40D968 expression facet, not a rank-only capture or full
-dossier repeat. Original game source/products and391/246/24 counts stay fixed.
+Seventeen subsequent narrow facets now recover40D968 and actual operand
+constructors without repeating the full dossier. The normal close preserves
+all112 old records in a129-record snapshot; physical-register/COFF linkage remains
+unobserved. Reuse the [lower-operand boundary](../research/exact/VC4_EXPRESSION_ORDERING.md#lower-operand-construction-october20),
+not another cold import or current rank-only capture.
+
+The [complete plain-char text-byte cohort](../research/exact/GLYPH_SIGNED_CODE_DOMAIN.md#complete-plain-char-cohort-october20)
+is adopted. Signed-value normalization stays explicit at lookup/measurement
+consumers while the field, bank byte and font APIs use char carriers. Complete
+glyph drawing becomes328-byte exact. All272 affected functions/4,655 code and
+two metadata bindings compare together;251 prior exacts survive and270 code
+identities stay unchanged. PCX changes digest but remains979/862/851 nonexact.
+One native build and3,135 resource/UI cases pass, including all font byte values,
+three banks and high-byte/NUL text. Totals are392 exact/247 authored exact/23
+authored candidates. No delivery relink or game run follows. All28 current objects
+and input/provenance records are installed together; the118-member pre-adoption
+archive is size/hash verified. Current authored authority is
+`.analysis/glyph-char-cohort-20261020/authored-coverage.json`.
+The149 private expanded inputs/products/helpers are now member-size/hash verified
+in `closed-inputs-products.tar.gz` before removal. The identical tool catalog
+shares an existing immutable carrier; cleanup releases9,699,328 allocated bytes
+net before its journal. Current30-owner products, native library/cache, original
+artifacts, complete direct receipts and the rollback archive remain intact.
 
 ## Current authorities
 
@@ -74,15 +97,15 @@ dossier repeat. Original game source/products and391/246/24 counts stay fixed.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 391 |
-| Exact code / attached metadata bytes | 83,646 / 244 |
-| Complete nonexact comparisons | 84: 24 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 392 |
+| Exact code / attached metadata bytes | 83,974 / 244 |
+| Complete nonexact comparisons | 83: 23 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-246 exact and 24 candidates across 30 compiler closures. The source-present
+247 exact and 23 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -93,10 +116,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 391 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 84 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/lightning-abs-wrap-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/glyph-char-cohort-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -112,8 +135,8 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 The bounded authored-source phase is complete for reconstruction: all270
 identified authored functions are source-present and have complete comparison
-receipts across30 compiler closures. Current totals are391 overall exacts and84
-complete candidates, split246 authored exact/24 authored candidates plus60
+receipts across30 compiler closures. Current totals are392 overall exacts and83
+complete candidates, split247 authored exact/23 authored candidates plus60
 runtime candidates. The78 no-source catalog entries are77 runtime-library
 functions and compiler-generated `__chkstk`; no unidentified authored body or
 callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack
@@ -153,10 +176,10 @@ rounded-X addition before their signed Native64 displacement. Two guarded
 original/native fixtures pass. All five owner bodies,115 bindings and25 literal
 references compare together; renderer remains1458/1466 and three helper exacts
 survive. The unchanged Y-offset helper is explicitly demoted to its previously
-recorded193/191-byte,159-difference identity. Current totals are391 exacts,
+recorded193/191-byte,159-difference identity. At that checkpoint totals are391 exacts,
 246 authored exact/24 candidates and83,646 code bytes. All270 authored receipts
 verify across30 closures. The directly affected rotation differential passes
-1,024 cases and151 complete guarded destination buffers. The native SHA is
+1,024 cases and151 complete guarded destination buffers. The native SHA at that checkpoint is
 `83f3c356335ebcf284a46d2db6e6d256eafe0372befdad9640f49f39a34d7266`.
 Private authority is `.analysis/rotation-destination-arithmetic-20261020/`.
 No game rebuild or run follows; the retained EXE/ZIP below predate this and the
@@ -580,7 +603,7 @@ The bounded candidate and inventory reviews find no concrete missing authored
 body/callee: all3,719 direct edges,191 switch words,249 code-address words and177
 COM sites are accounted, with no unexplained non-CC text-gap bytes. All270 known
 authored functions now have source and full comparison receipts. The remaining
-24 authored candidates differ at compiler storage/code-selection level but are
+23 authored candidates differ at compiler storage/code-selection level but are
 not missing source or an observed operation. Final denominator and unique
 historical declaration context remain proof limits, not blockers for the
 reconstructed game. Reuse `.analysis/authored-readiness-20261019/`.

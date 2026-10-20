@@ -112,6 +112,15 @@ and batch transport safe close. Six existing identity/snapshot lifecycle cases
 also pass. These start no provider or network process; real native page/heap
 recovery is not asserted. No second import is run merely to retest this failure.
 
+The subsequent missing40D968 pseudocode/assembly facet now completes normally
+with16 direct operand-constructor followups. It does not repeat the full dossier
+or exercise transport recovery. All17 new results and the preceding112 records
+are preserved in the current129-record C2 snapshot. See the
+[lower-operand boundary](../research/exact/VC4_EXPRESSION_ORDERING.md#lower-operand-construction-october20)
+before any further import; final glyph-to-physical-register/COFF linkage remains
+unobserved. The first narrow query takes609,103ms under the current35%/384/512MiB
+limits, with the256MiB heap unchanged; the session closes normally.
+
 ## Compiler import profiles and retained state
 
 The first compiler import exceeded the default 330-second provider startup

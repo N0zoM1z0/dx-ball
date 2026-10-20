@@ -179,7 +179,7 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
     DxBallInt saved_bank, i, count;
     DxBallInt row, column, cursor, pitch;
     DxBallInt width, height, yoffset;
-    signed char letter;
+    char letter;
     saved_bank = dxball_sprite_bank;
     dxball_select_sprite_bank(bank);
     for (i = 1; i < 254; i = i + 1)
@@ -274,24 +274,24 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
 
 /* FUNCTION: DXBALL 0x00404E40
    The count-th slot is intentionally excluded, and an empty bank returns 1. */
-DxBallInt dxball_find_glyph(signed char code)
+DxBallInt dxball_find_glyph(char code)
 {
     DxBallInt sprite = 0;
     do {
         sprite = sprite + 1;
     } while (dxball_sprite_banks[dxball_font_bank].count > sprite &&
-             dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != code);
+             (signed char)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->code != (signed char)code);
     if (dxball_sprite_banks[dxball_font_bank].count == sprite)
         sprite = 0;
     return sprite;
 }
 
 /* FUNCTION: DXBALL 0x00404CF0 */
-DxBallInt dxball_draw_glyph(signed char code, DxBallInt x, DxBallInt baseline)
+DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline)
 {
     DxBallInt sprite;
     DxBallRect destination;
-    sprite = dxball_find_glyph(code);
+    sprite = dxball_find_glyph((signed char)code);
     if (sprite != 0) {
         destination.left = x;
         destination.top = (DxBallInt)((DxBallUInt)baseline
