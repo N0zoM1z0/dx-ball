@@ -330,3 +330,85 @@ source audit also rejects unsupported timer-carrier reuse: during the second
 clock call EBX holds the deadline, not the raw sample; the original delta's
 stack home is first written only afterward. No source, compiler output or
 claim changes follow:392 overall exact,247 authored exact,23 authored candidates.
+
+## Observed glyph slot mapping and output, October20
+
+One independently reviewed observer now follows the unchanged current resources
+recipe through the actual statement DAG, recursive operand/IR calls, late virtual
+IR, reached mapper and instruction output. Its18 complete instruction pins and
+12 footer instructions are checked against the pinned C2 and compiled observer
+tables. Loaded CL/C1XX/C2 paths, job/thread ownership, real instruction effects,
+call IDs, stack cleanup, nonvolatiles and all52 mapping word stores are checked.
+This changes no compiler operand, counter, source input or compilation flag.
+
+REA process Evidence is
+`ev_d82cee55315ee876c76ed6eb995d41e15365ef4d2bdf0a9eed04864aab1cdf6b`;
+the separate utility-build Evidence is
+`ev_78616c09285d9880c366ae6bcdaf40c54db68bb5667ac3393298375cc13c726d`.
+All three compiler processes exit0. The actual47E964 value is0 and its virtual
+mapper is reached.622 selected events include23 statement roots,40 paired
+recursive lower calls,63 paired IR calls,52 mapper call/return/store triples and
+44 encoder call/return/output triples. Every returned buffer byte agrees with
+its actual raw COFF interval, covering the entire146-byte current lookup with
+no gaps/overlaps and with the observed section cursor/owner base checked.
+
+The complete object comparison preserves all ordered section payloads/flags,
+actual relocation targets and every non-FILE symbol/aux record; timestamp,
+transport offsets and separately retained FILE records are explicit exclusions.
+All18 complete resources functions/262 bindings and six entire literal carriers
+retain their current identities. The run takes83.49s at the existing one-CPU,
+35% quota,384/512MiB limits; peak memory is151,879,680 bytes with no memory-limit
+or OOM event. REA verifies owned-process cleanup; sampled process trees are not
+substituted for the debugger's actual compiler-exit checks.
+
+Statement107 uniquely contains the full typed slot load, code-field access and
+signed-byte comparison chain. The other22 roots select zero. Its complete
+23-node graph has address `((S<<2)+(F*1048))+B`, where S/F are the observed local
+sprite/global font loads and B is the bank address. The pointer load is followed
+by `L+36`, a signed8 load, signed16/signed32 conversions and comparison with the
+similarly widened actual code argument. The bank-count access cannot satisfy
+this selector. Opcode1F alone is not used to infer branch polarity.
+
+The first offline selector explicitly rejects opcode09 rather than discarding
+it. Retained source9→IR2A mapping, this exact recursive call and actual IR2A→SHL
+encoder observations establish a bounded constant-left-shift extension modulo
+2^32. It accepts only32-bit input/result and an established inline literal0..31;
+dynamic/oversized shifts and unknown casts remain unsupported. The first report
+and original selector are retained. No compiler or runtime capture is repeated.
+
+The eight actual output records541..562 also reproduce the previously retained
+29-byte current slot group against the original28-byte group. Independent
+low32 algebra gives `B+1048*F+4*S` for both. Original loads F into EAX first;
+current loads S into EAX and then F into ECX. The absolute global load therefore
+takes6 rather than5 bytes. Complete current/original body identities and all
+six actual DIR32 bindings are checked, not just those eight instructions.
+This establishes the observed current output, not original compiler IDs or a
+unique source declaration. Unobserved rewrites, allocation reuse, optional
+operand metadata and the output callback implementation remain separate limits.
+
+The actual late graph independently gives S→8026 and F→8028, then preserves F
+in8034 while deriving64F,65F,131F and1048F. Its slot address uses base8028 and
+index8026 at scale4. Mapper triples418/419/420 and421/422/423 commit those two
+references to codes1/0. Encoder560, return561 and output562 then retain the actual
+kind5 address and seven bytes `8b848100000000` at raw offset72, with the bank
+DIR32 at75. The physical-stage graph independently has the same polynomial;
+one earlier LEA is now SHL3. These are checked phase-local semantic relations,
+not a claim that an unobserved allocator generation survived every rewrite.
+
+Private receipts and the full528,274-byte trace are in
+`.analysis/glyph-generation-observation-20261020/`; trace SHA-256 is
+`e7817c52b748efbe5144769cb326c1817bdda7df49f2e28f2ffcb352b4cb9587`.
+The next reconstruction question is the supported source/compilation context
+that produces the original F-first address order. A current pointer or low16
+token is not an original compiler identity, and no name/declaration permutation
+or source change follows from this observation alone. Totals remain392 overall
+exact/247 authored exact/23 authored candidates; the user's objective stays active.
+
+The closed observer, proposal object and helpers are retained in the12-member
+`closed-inputs-products.tar.gz`, with every member size/SHA-256 checked before
+exact-file deletion. Cleanup releases278,528 allocated bytes net before its
+journal. Direct reports, both REA responses and the full trace remain available;
+the latter three also have space-neutral hard links under REA observations.
+All137 protected inputs/products/tools stay fixed. Current30-owner products,
+native library/cache, originals and tools are retained. `result.json`,
+`cleanup.json` and `verification.json` seal the closed experiment, not the goal.

@@ -48,8 +48,9 @@ The fixed resource
 signed-wrap contract control preserves17/18 code identities and gains no exact;
 no source or modern compiler option is adopted. Current paddle equality/dirty-right
 ranks are already captured; do not repeat them. The open question is where the
-scalar-context order first diverges. Glyph's final register/output linkage remains
-open after the lower-operand static boundary below. The renderer's later frame manager is now observed as skipped
+scalar-context order first diverges. Glyph's current slot graph, virtual mapping
+and full raw output are now observed below; original F-first source context remains
+unrecovered. The renderer's later frame manager is now observed as skipped
 in one unchanged complete current compilation; reobserving its initial48
 allocations or assuming an extent early return is not warranted. Original IDs and declarations
 remain reconstruction questions, not prerequisites for outside material: the
@@ -107,6 +108,23 @@ Private authority is `.analysis/glyph-machine-legalizer-20261020/result.json`.
 Three closed helper scripts are archived with verified member hashes before
 removal; sharing the identical catalog releases8,777,728 allocated bytes net
 before the cleanup journal. Raw evidence and all current products are retained.
+
+The [unchanged glyph observation](../research/exact/VC4_EXPRESSION_ORDERING.md#observed-glyph-slot-mapping-and-output-october20)
+now completes the current phase-local boundary: one resources compile exits0,
+all18 functions/262 bindings/six entire literal carriers stay fixed, and44 output
+buffers cover the full146-byte current lookup exactly against raw COFF. Actual
+47E964=0 reaches52 guarded mapper call/return/store triples. Of23 statement
+roots, one uniquely selects the pointer-slot/code+36/signed-argument chain;
+source opcode09 is a proven constant-left-shift, not an omitted unknown node.
+Current S-first output versus original F-first output explains the29/28-byte
+group, but original IDs/source context and uninterrupted rewrite/allocation
+history remain unknown. No source/flag variant or canonical replacement follows.
+Private authority is `.analysis/glyph-generation-observation-20261020/result.json`;
+reuse its full trace/receipts instead of repeating this current capture. The12
+closed input/product/helper files are archived and member-size/hash verified
+before removal, releasing278,528 allocated bytes net before the journal. All137
+protected baseline/tool files and current products remain fixed; removed files
+are individually recoverable from `closed-inputs-products.tar.gz`.
 
 ## Current authorities
 
