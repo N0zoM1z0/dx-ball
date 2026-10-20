@@ -249,8 +249,14 @@ the overflow-unsafe BEFORE input is diagnostic only. Current defined-wrap source
 The [frontend counter follow-up](VC4_EXPRESSION_ORDERING.md#observed-frontend-counter-divergence-october20)
 locates the additional4163EF use before the named new_shape/sprite shifts. Both
 complete historical owner comparisons pass, without a source adoption. Raw kind0C
-is not a recovered local/type declaration. The next bounded source hypothesis is
-the full pure signed32 resource-arithmetic family, not another single-cast trial.
+is not a recovered local/type declaration. The subsequent
+[complete resource-arithmetic family](RESOURCE_ARITHMETIC_FAMILY.md) closes that
+fixed source hypothesis: three private exact gains accompany two accepted losses
+after all18 functions/262 bindings/six literal carriers compare. Its fixed gate
+fails; no native stage, source/setting adoption or canonical promotion follows.
+The separate514-instruction review explains all five gains/losses through bank
+address selection and two commuted additions. Current392/247/23 remain; no subset,
+spelling/order sweep or repeated answered rank capture is justified.
 
 At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
 closes after one resource compile: all18 complete raw/resolved bodies and13

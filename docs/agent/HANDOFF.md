@@ -153,9 +153,28 @@ is recorded and independently hash-checked, not called an untruncated capture.
 Private authority is `.analysis/glyph-frontend-counter-20261020/result.json`.
 All32 closed files, including expanded duplicate analysis, are member-verified
 before removal, releasing1,802,240 allocated bytes net before journals;153 current
-protected hashes stay fixed. Next assess the coherent16-operation/15-expression/
-six-function signed32 resource arithmetic contract, not the closed nbytes-only
-pilot or an ID/name/order sweep. No source/setting is adopted;392/247/23 remain.
+protected hashes stay fixed. The coherent arithmetic family is now closed below;
+no source/setting was adopted by this observation.
+
+The [complete resource arithmetic-family control](../research/exact/RESOURCE_ARITHMETIC_FAMILY.md)
+compiles one fixed16-operation/15-expression/six-function model. All18 complete
+functions/262 bindings/six whole literal carriers compare;12 code identities
+remain unchanged. Stretch139, unchanged capture852 and unchanged lookup145 become
+private exacts, but plain Blt199/195/173 and glyph332/328/258 lose accepted exacts.
+Nine of11 prior exacts survive, so the fixed gate fails despite a net larger
+private exact subset. No native stage, source/CMake option, object/report/config
+replacement or claim promotion follows. Separate514-instruction/81-binding review
+explains32 changed bank/slot graphs and stretch's two commuted additions; the
+lost functions' consumed arithmetic instructions stay fixed. Original TU/type
+responsibility remains unknown; no new split/subset/name/order/rank retry is
+grounded. Reuse the full comparison and instruction review rather than repeating
+them. The actual kind0C reset/reuse writer in the earlier paired frontend trace
+remains a concrete unanswered boundary, not a requirement for original materials.
+Private authority is `.analysis/resource-arithmetic-family-20261020/result.json`.
+All18 closed copied inputs/products/helpers/expanded mappings are member-verified
+before removal, releasing262,144 allocated bytes net before journals. All155
+protected hashes and current products stay fixed;392/247/23 and the active goal
+remain unchanged.
 
 ## Current authorities
 

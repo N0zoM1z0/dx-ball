@@ -577,3 +577,34 @@ hypothesis requiring complete companion comparisons and unchanged boundary cases
 not an adopted compiler setting or permission to add unit-one padding expressions.
 No source or acceptance claim changes:392 overall exact/247 authored exact/23
 authored candidates remain; the goal stays active.
+
+## Complete resource arithmetic-family comparison, October20
+
+The [fixed whole-family control](RESOURCE_ARITHMETIC_FAMILY.md) now tests that
+source hypothesis once, without changing VC4 flags or current headers. All18
+complete functions/262 actual bindings/six distinct entire literal carriers
+compare. Stretch139, unchanged capture852 and unchanged lookup145 are privately
+exact, but plain Blt grows195→199 and glyph328→332, losing two accepted exacts.
+Twelve code identities remain unchanged; nine of11 accepted resource exacts
+survive. The fixed no-loss gate fails. No native compile/witnesses, modern option,
+source, object/config/report replacement or exact promotion follows.
+
+Independent514-instruction/81-binding review attributes the five outcomes to32
+equivalent bank/slot address graphs and stretch's two commuted ADD inputs. All
+consumed arithmetic instructions of the two lost functions remain unchanged.
+No original source/TU responsibility or new split/type model is established;
+current COMDAT order and prior text/glyph-owner controls do not supply one.
+Do not retry family subsets or an already answered current rank capture. The
+earlier kind0C physical-storage reset/reuse writer remains unobserved; the
+historical trace is not a complete allocation/lifetime history.
+
+REA process Evidence is
+`ev_da9c4f52778372a0d768e2f348da72d7e54a12a87a425463984c78a6f3e7af87`.
+The capture is untruncated, exits0 and verifies owned cleanup. Compilation takes
+2.185s, peaks160,960,512 bytes and has zero memory-limit events under existing
+limits; outer process coverage remains sampled. Private authority is
+`.analysis/resource-arithmetic-family-20261020/result.json`. All18 closed copied
+inputs/products/helpers/duplicate expanded mappings are archived and individually
+member-size/hash verified before removal, releasing262,144 allocated bytes net
+before journals. All155 protected hashes stay fixed. Current392/247/23 and the
+active all270-authored-exact goal remain unchanged.
