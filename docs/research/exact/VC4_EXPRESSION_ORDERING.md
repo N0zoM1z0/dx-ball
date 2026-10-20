@@ -1562,3 +1562,96 @@ Net allocated release is520,192 bytes before journals.462 direct protections,
 88 recoverable aliases and12 separate earlier copied-input aliases retain their
 identities. Current tested products, useful caches, tools/originals and the
 141-record snapshot remain intact; no broad cleanup occurs.
+
+## Retained operand-helper field copies, October21
+
+The preceding selector joins identify41046F, whose EAX is saved inEDI at411F36.
+A bounded reuse audit checks the canonical141-record snapshot and261 JSON
+carriers in11 named archives:203 deduplicated evidence objects contain no
+matching decoded entry/body range. Calls, references and raw overlaps are not
+decoded coverage; this is not all-workspace absence. Offset410 of the earlier
+1,024-byte binary-descriptor carrier supplies the complete614-byte retained tail
+at41046F..4106D4, SHA256
+`589ea43483163a3a3e9720a4a9ef918af8be5e6bc098ca12aea8abbf710c24cc`.
+The archived member, old complete primary payload and original PE slice agree;
+there are zero new original bytes.
+
+One raw-x86 import retains three complete primary records in a21,643-byte
+snapshot. The byte read is
+`ev_e3cf1fd3e7c1a5e3882f4042c7e509bc43e9f943de1693f303c0a03fa7919a78`;
+the selected body is
+`ev_4379abcb758a91e5c60af9e95a1c4371987e862933af5ae98e10b991dc6aae47`;
+the entry facet is
+`ev_b1a6fdc61c2acbed452a0a6a2674da7f256f178ca556da2641c53419b43ed88c`.
+All three structured records match their snapshot records. The contiguous
+36 instructions/111 bytes span41046F..4104DD, with SHA256
+`487cc8eca6c16cfcf4b1edd7cfcd2355653b41366ae8f78ec7c276824205d816`.
+The other503 raw bytes are not selected code. The external453920 cold branch
+and delegated callees prevent a complete-original-function claim.
+
+Let T be helper-entryESP. Three saved-register pushes give U=T-12;
+[U+10hex]=[T+4] is current right, and[U+14hex]=[T+8] is the additional
+stack DWORD. BL captures only entryCL, EDI captures entryEDX/current left,
+and entryEAX is immediately overwritten by a global read.
+
+| Explicit record store | Source | Instruction |
+| --- | --- | --- |
+| byte+0 | saved entryCL | 4104AE |
+| byte+1 | 2 | 4104AA |
+| DWORD+4 | second incoming stack DWORD | 4104B9 |
+| DWORD+10hex | saved current left | 4104B0 |
+| DWORD+14hex | first incoming stack DWORD/current right | 4104B5 |
+
+No selected instruction reads either operand's+4 field. These byte writes
+establish only lowWORD=`0200hex|savedCL`, not a complete DWORD236/24C. No local
+store initializes record bytes+2/+3 or DWORDs+8/+C. This is not proof of globally
+untouched/zero memory, nonaliasing, fresh allocation, reuse or continuous lifetime.
+
+The visible storage path reads[4B1B30]. Zero delegates to424A15 with
+ECX=4B0F54/EDX=18hex; -1 branches externally to453920. Other values select
+ESI=4B1AB0+(index<<4). An unsigned[ESI+C] comparison against18hex either calls
+402F91 before reloading the cursor, or takes the no-delegation space path.
+That path returns old[ESI+8], subtracts18hex from available[ESI+C] and advances
+cursor[ESI+8] by18hex. These indexed state writes are not record+8/+C stores.
+Delegated effects and saved-input preservation are not independently established;
+no allocator/freshness/lifetime model follows.
+
+The common visible sequence keeps EAX as its record base and explicitly RET8
+at4104BC. This resolves the local normal eight-byte cleanup condition: the known
+caller returns to411F36 with ESP=B and copies EAX toEDI. It does not prove other
+helper ABIs, all cold paths, EDI's eventual use or the final returned parent.
+Raw36's evidenced direct F23 route has no prior CALL after XOR EBP,EBP and
+pushes zero as the second stack DWORD. On the no-delegation helper path it
+explicitly stores record+4=0 and lowWORD236; delegated paths additionally require
+intact saved inputs/stack. This does not identify the historical236 object.
+Raw4C first traverses408030/41A0A8, whose effects on operands/EBP remain unknown;
+the helper copies the actual second argument, not a locally chosen descriptor.
+
+No new natural authored-game source model follows from these compiler-internal
+copies. No source/options/adoption, compiler/game-native work or exact gain:
+249 authored exact/21 candidates,394 overall and30 closures remain active.
+The strict-negative calibration and historical166/24C/236 route/lifetime limits
+are unchanged. Next audit retained coverage for the actual later conditional
+case/field store and saved-EDI linkage. Raw4C's known conditional41217C target
+is beyond the old4120AF carrier; raw36's412AE3 selector cell is retained but
+not primary-read. Select only the needed exact cell/facet after reuse audit,
+not another generic builder/allocator, calibration or name/ID/order/flag sweep.
+
+The owned static utility exits0 in117.449s of Node wall time underCPU0/35%
+and384/512MiB. Peak403,091,456 bytes has1,187 soft-high events and zero max/OOM.
+One exact owned-cgroup sample records all five raw cmdlines/argv values and
+JVM3102298's `-Xmx256M`; those five PID paths, the exact temporary workspace
+and owned scope are absent after terminal. This is sampled current absence,
+not exhaustive cleanup, atomic process identity, environment/network evidence
+or behavioral target execution. Private authority is
+`.analysis/rea/c1xx-operand-helper-20261021/result.json`.
+
+Independent dataflow/result reviews pass. All22 closed files are individually
+member-size/SHA verified in a76,355-byte archive before exact-file retirement,
+including full primary responses, snapshot, raw tail, helpers, preparation/audit
+proofs and process sample. Full original mode/nanosecond-mtime descriptors are
+persisted before first unlink. Net allocated release is339,968 bytes before
+journals.470 direct protections,92 recoverable aliases and12 separate earlier
+copied-input aliases retain their identities. Current tested products, useful
+caches, tools/originals and the141-record snapshot remain intact; no broad
+cleanup occurs.

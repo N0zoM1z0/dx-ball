@@ -3,28 +3,43 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
-The newest [exact selector cells](../research/exact/VC4_EXPRESSION_ORDERING.md#exact-selector-cells-and-construction-joins-october21)
-resolve the missing dispatch through ten complete primary reads/22 exact bytes,
-after a bounded74-record/ten-archive reuse audit. Two serial imports retain2/8
-records. Raw36 maps to class36 and jumps to the known411F23 instructions, skipping
-408030 and41A0A8 on this normal path; raw4C maps to class4C and selects411ED9 then
-411F16. Only the unknown helper block's normal nonzero continuation reaches
-41217C, outside the old raw carrier. This is not the historical taken path or a
-type/opcode enum, parent+4 store or complete return proof. Raw36's later third
-table cell remains unqueried, not evidence of route absence. Next reuse the
-41046F operand helper whose EAX is saved inEDI: offset410 of the old1,024-byte
-binary-descriptor carrier gives614 bytes through4106D4, SHA256
-`589ea43483163a3a3e9720a4a9ef918af8be5e6bc098ca12aea8abbf710c24cc`.
-Audit existing facets before decoding this missing question; its construction
-or returned-field role is not yet established. No source/options/adoption or
-exact gain, compiler/game-native work, calibration or name/ID/order/flag variants.
-Private authority is `.analysis/rea/c1xx-selector-tables-20261021/result.json`.
-Independent integrity/dataflow reviews pass. All37 closed files are member-verified
-in a95,964-byte archive before removal, releasing520,192 allocated bytes net
-before journals.462 direct protections,88 recoverable aliases and12 separate
+The newest [retained operand-helper field copies](../research/exact/VC4_EXPRESSION_ORDERING.md#retained-operand-helper-field-copies-october21)
+reuse614 existing bytes at41046F..4106D4 after a bounded141-record/11-archive
+decoded-coverage audit. Three snapshot-matched primary records select36
+instructions/111 bytes, not a whole original function. The helper explicitly
+writes byte+0=savedCL, byte+1=2, DWORD+10hex=left, DWORD+14hex=right and
+DWORD+4=the second incoming stack DWORD. It does not read a child's+4 or locally
+initialize header bytes+2/+3 or record+8/+C. The stores establish only a lowWORD,
+not a complete header or freshness/lifetime/type/source model. Visible RET8
+restores the known caller's normal ESP, and returned EAX is saved inEDI;
+the final parent identity remains unproved. Raw36's direct call-free caller
+path passes zero, giving the explicit+4 zero store on the no-delegation helper
+path; raw4C's preceding helper effects/EBP preservation remain unknown.
+No new natural game-source model or exact gain, source/options/adoption,
+compiler/game-native work, calibration or name/ID/order/flag variants.
+Next audit retained coverage for the actual later case/field store and EDI
+linkage, not another generic builder/allocator. Raw4C's conditional41217C target
+is beyond the old4120AF carrier. Raw36's later412AE3 cell is retained but
+not primary-read; select only the needed exact cell/facet after reuse audit.
+The historical166/24C/236 taken route remains unproved; the strict-negative
+calibration remains negative.
+Private authority is `.analysis/rea/c1xx-operand-helper-20261021/result.json`.
+Independent dataflow/result reviews pass. All22 closed files are member-verified
+in a76,355-byte archive before removal, releasing339,968 allocated bytes net
+before journals.470 direct protections,92 recoverable aliases and12 separate
 earlier copies hold; full mode/nsmtime recovery descriptors precede first unlink.
 Current products/caches/tools/originals and the141-record snapshot remain intact.
 Existing EXE/resources suffice; original source/debug materials are not required.
+The preceding [exact selector cells](../research/exact/VC4_EXPRESSION_ORDERING.md#exact-selector-cells-and-construction-joins-october21)
+retain ten complete primary reads/22 exact bytes in2/8-record snapshots.
+Raw36 maps to class36 and jumps to the known411F23 instructions, skipping
+408030/41A0A8; raw4C maps to class4C and selects411ED9 then411F16.
+Only its helper-conditioned normal nonzero continuation selects41217C.
+This is static conditional dispatch, not the historical path or a universal enum.
+All37 selector-phase files were member-verified in a95,964-byte archive before
+removal, releasing520,192 allocated bytes net before journals. That checkpoint's
+462 direct protections,88 recoverable aliases and12 separate earlier copies hold
+through the current phase's augmented protection chain.
 The preceding [parent selector mapping](../research/exact/VC4_EXPRESSION_ORDERING.md#parent-selector-mapping-and-bounded-construction-october21)
 reuses the existing583-byte tail at411E69..4120AF without adding bytes.
 Three primary records select67 instructions/236 bytes in two ranges, not a whole
