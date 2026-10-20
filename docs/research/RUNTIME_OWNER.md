@@ -1,5 +1,13 @@
 # Game lifecycle and mode dispatch
 
+The October20 [interface-ownership and elapsed-ordering investigation](exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
+is research-only. It observes the actual first elapsed C2 swap, restores all17
+paddle frame homes in a private scalar model and checks fixed callback-owner
+controls across complete affected functions. Private elapsed/reset/palette
+exacts cannot be adopted without losing existing companions. Current source,
+13 runtime exacts and all24 authored candidates remain unchanged; the older
+checkpoint totals below retain their historical scopes.
+
 The later [direct WinMM import](exact/EXACT_WINMM_CLOCK_IMPORT.md) restores the
 170-byte waiting function exactly and preserves all 26 prior affected exacts.
 Paddle drawing becomes677/677 with 104 differences; last-brick keeps its explicit

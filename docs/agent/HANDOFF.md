@@ -1,11 +1,11 @@
 # DX-Ball reconstruction handoff
 
-Updated October 20, 2026. The requested authored-source reconstruction, VC4
-game build and bounded playability validation are complete for the identified
-English DX-Ball v1.07 inventory. The24 authored nonexact functions remain
-explicitly nonexact; historical source spelling and full-machine equivalence
-are not established. See the requirement-by-requirement completion audit in
-the [current build record](../research/CURRENT_VC4_BUILD.md#completion-audit).
+Updated October 20, 2026. The user has started a new objective: make all24
+remaining authored candidates byte-exact. That objective is active, not complete.
+The preceding authored-source reconstruction, VC4 game build and bounded
+playability validation remain delivered within the scope of the
+[completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).
+Historical source spelling and full-machine equivalence are not established.
 The user permits the **19 explicit original CRT members** in the restored-CRT
 delivery. Removing them is not a delivery gate. Prioritize authored functions.
 
@@ -24,9 +24,24 @@ are not current totals.
 The user's sequence was source recovery, then game compilation, then actual
 play. The final arithmetic recoveries precede the e6d5b55 build and its two
 selected game flows. A subsequent build disables all source-object reuse to
-verify recompilation independently. Whole-EXE identity is not required. Resume
-recovery only if new evidence identifies a concrete missing authored operation;
-the remaining compiler-output differences are recorded in the24-function table.
+verify recompilation independently. Whole-EXE identity is not required. The new
+request authorizes focused recovery of the remaining compiler-output differences
+in the24-function table; the preceding restriction to missing authored operations
+no longer describes the active task. Keep complete affected-owner comparisons,
+natural shared source and the existing serial resource limits.
+
+The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
+observes the actual elapsed guard's C2 swap and independently restores all17
+paddle frame homes in a private scalar-lifetime model. Fixed ownership controls
+produce complete private exact elapsed81, reset426 and palette234 bodies, but
+their shared-header contexts lose existing exact companions. No proposal is
+adopted: current totals remain391 exact /246 authored exact /24 authored
+candidates. Do not promote individual private objects or repeat header/type
+subset, declaration-position or spelling sweeps. Preserve the tested baseline.
+The remaining narrow questions are the C2 ranks for the paddle equality and
+dirty-right sum, and the actual producer of the elapsed intermediate ID29701;
+the original IDs and declarations remain unknown. Closed pilot inputs/products
+are retained in member-hash-verified archives before duplicate removal.
 
 ## Current authorities
 
@@ -57,7 +72,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 391 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 84 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/rotation-destination-arithmetic-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/lightning-abs-wrap-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.

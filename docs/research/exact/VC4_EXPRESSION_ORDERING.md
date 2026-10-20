@@ -109,6 +109,14 @@ then compares all affected complete emitted functions. Original-game intermediat
 compiler/settings identity remain unknown. Do not turn the ranking mechanism
 into a name, declaration-count, order or compiler-flag sweep.
 
+The October20 [runtime-interface investigation](VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
+also observes an unchanged actual elapsed compilation: keys29699/29702 produce
+load ranks41/43 and the helper swaps the first comparison's children/opcode.
+All16 complete runtime code identities remain unchanged. Private ownership
+controls produce complete exact elapsed/reset/palette bodies but lose other
+accepted companions; none is promoted. This supplies a concrete current-game
+cause without establishing the original keys or authorizing declaration sweeps.
+
 ## C-source comparison observation, October18
 
 The earlier line and resource observations compile C++ sources through C1XX.
