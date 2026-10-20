@@ -1227,3 +1227,98 @@ protections and68 archive aliases preserve their identities, with12 earlier
 copied-input aliases kept separate. Current tested products, useful caches,
 originals/tools and the141-record snapshot remain intact and retired files are
 recoverable; plan/result and independent integrity/dataflow reviews remain direct.
+
+## Known product route and retained raw names, October21
+
+One fixed, include-free source function returns `left * right` for two
+`unsigned int` parameters, matching the primitive current `DxBallUInt` alias.
+One observation utility build and one VC4 compile use the unchanged nine flags,
+including `/Od` and `/ML`. No game source, options or installed object changes;
+no game/native build or play check occurs. There is no input variant or retry.
+
+The actual compiler run records one same-thread tuple:
+
+| Site | ESP | Observation |
+| --- | --- | --- |
+| 423740, before CALL | 31FCD4 | ECX4C, EDX3B501F0, stack operand3B50234 |
+| 4102D5, actual entry | 31FCD0 | return423745; both inputs/fullECX unchanged |
+| 423745, caller return | 31FCD8 | EAX3B5024C, prefix `[24C,958354,0,0,left,right]` |
+
+All three compiler processes exit0. Three hardware hits have four context
+preservation readbacks, no mandatory read failure or active frame at exit.
+Trace SHA256 is
+`8934a3ac55a9c0c51fb083494af6ae3f1ff4d1356def35ef8c66ce227861c700`.
+The strict predeclared calibration **does not pass**: graph queues drop
+117/117/118 candidates, and the kind9 parameter decoder rejects the actual
+low-kind10 records. Its `semantic_candidate=false` and null names are retained.
+Zero mandatory read failures would not cover optional graph reads; these
+bounded depth4/64-node snapshots are not a complete graph.
+
+A separate posthoc read of those same retained bytes, without another target
+execution or query, finds complete numeric paths:
+
+```text
+3B501F0 (13F) +10 -> 3B501D8 (402) +10 -> 3B7C168 +8 -> 954B90 "left\0"
+3B50234 (13F) +10 -> 3B5021C (402) +10 -> 3B7C1D8 +8 -> 954BA0 "right\0"
+```
+
+Offsets above are hexadecimal. Both intermediate raw records have header
+0400020A, low5=10. This is an observed pointer/string association, not a new
+general symbol-kind10 decoder, type proof or repair of the frozen negative.
+
+The entire420-byte COFF has two sections, four primary symbols/13 total slots
+including FILE auxiliaries, and exactly one defined external function. Its
+whole23-byte `.text` has no relocations or additional executable payload.
+Three complete primary records and a17,684-byte snapshot inspect every byte.
+Instruction Evidence
+`ev_12fa65c18da7077bf847afd0ce12455b8b0693846507c650097dd77ee59feef0`
+covers13 instructions, contiguous10000..10016: load the second stack parameter,
+IMUL by the first, jump to balanced register/frame restoration, RET. The low32
+product is equivalent to the unsigned-int source product modulo2^32 for all
+32-bit input patterns. This is static body equivalence, not arithmetic execution;
+the generic raw import's gcc context is not original-compiler ABI evidence.
+
+Together, the fixed source, actual tuple, retained name bytes and whole output
+corroborate a multiplication interpretation for this particular4C/24C route.
+That is a contextual inference, not a passed strict calibration or universal
+opcode enum. Combined with the earlier166R->24CP+10 association, it gives the
+old parent multiplication-context evidence, not a direct old-entry observation,
+166 conversion/type meaning, universal signedness descriptor, original-game
+source spelling, continuous lifetime or cross-process object identity.
+
+The older trace also already contains numeric4C transport. Of923 rows/108
+consumer events/101 global accesses, current-or-previous4C occurs exactly at
+consumer27,28,29,86,87,88,91,92. Early26 transfers R's first DWORD to3B8BB10,
+the later raw EDX input slot, not an established descriptor.27 transfers4C into
+global4B4D40;28 transfers that first DWORD to later selector slot3B8BB28.
+These are DF0/F3A5 restart observations, not a completed six-DWORD copy or
+static literal/table-row proof. Later86+ uses a different cell3B8BB40;92 changes
+the global, not necessarily that cell. The sidecar pins all exact boundaries.
+
+Process Evidence
+`ev_7c2477af367dca8d2b702a1859d1435c5c2ace87555fb983f5aa140ac44a5b89`
+retains the known-source compile, and
+`ev_6497c1767250eb1743c5282272dc1b4456c7b122816e3f746ddabb3cfaf8e4cf`
+retains the one output import. All three process captures have CLI/target0,
+untruncated1/1 raw/rendered frames, quiescence and verified owned-group cleanup/
+temporary-root removal.9/11/21 process observations are sampled. CPU0/35%,
+384/512MiB and observed JVM256MiB hold. Import peak403,128,320 bytes has1,292
+soft-high events, zero max/OOM; image-binding, environment and network unknowns
+remain explicit. All442 direct seals,68 aliases and12 separate earlier copies
+hold before cleanup, including current products/caches and the141-record snapshot.
+
+Private authority is `.analysis/rea/c1xx-product-calibration-20261021/result.json`.
+Independent integrity and dataflow reviews pass within those scopes.249 authored
+exact/21 candidates and394 overall remain unchanged; the all270 goal is active.
+Reuse the selected166->24C->236 operand/descriptor consumer with this contextual
+product evidence. Do not rerun calibration for name/kind/depth variants, repeat
+166 entry/builder/global/reset/rank watches or rejected sourceID/name/flag sweeps.
+Existing EXE/resources remain sufficient; no original source/debug material is needed.
+
+All50 closed files, including the observation EXE, full COFF, temporary input,
+helpers and unique raw responses, are individually member-size/SHA verified in
+a210,752-byte archive before exact-file retirement. The full mode/nanosecond-mtime
+manifest precedes the first unlink. Net allocated release is917,504 bytes before
+journals.436 direct protections/74 recoverable archive aliases and12 separate
+earlier copied-input aliases preserve their identities; current products,
+useful caches, tools/originals and the141-record snapshot remain intact.

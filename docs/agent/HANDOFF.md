@@ -3,6 +3,27 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
+The newest [known product route](../research/exact/VC4_EXPRESSION_ORDERING.md#known-product-route-and-retained-raw-names-october21)
+uses one bare unsigned-int multiplication input, one utility build/VC4 compile
+and one23-byte output import. One matched423740->4102D5->423745 tuple observes
+ECX4C/returned24C with both operands. The entire420-byte COFF has one function;
+three primary records cover all13 instructions and establish static low32
+parameter-product equivalence. The strict calibration remains negative:
+117/117/118 graph queue drops and actual low-kind10 instead of predeclared9.
+Posthoc retained bytes already contain both raw+10/+10/+8 paths to left/right;
+they corroborate this contextual product route without overriding that negative
+or proving a universal opcode/166conversion/type/source spelling/lifetime.
+No source/options/adoption/game-native work or exact gain. Reuse the retained
+166->24C->236 operand/descriptor consumer; do not rerun calibration for names,
+kinds or graph depth, old entry/builder/global/reset/rank watches or rejected
+sourceID/name/flag variants. Existing EXE/resources suffice; do not ask for
+original source/debug materials. Private authority is
+`.analysis/rea/c1xx-product-calibration-20261021/result.json`.
+All50 closed files are member-verified in a210,752-byte archive before removal,
+releasing917,504 allocated bytes net before journals.436 direct protections,
+74 recoverable aliases and12 separate earlier copied-input aliases preserve
+their identities, as do current products/caches/tools/originals and141-record
+snapshot. Fullmode/nsmtime descriptors precede first unlink; no broad cleanup.
 The latest [whole rotation arithmetic contract](../research/exact/ROTATION_ARITHMETIC_CONTRACT.md)
 restores191-byte y-offset exactly, preserving all four other rotation code
 identities. One complete5-function/115-binding/25-literal legacy comparison and
