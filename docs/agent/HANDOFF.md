@@ -1,7 +1,7 @@
 # DX-Ball reconstruction handoff
 
 Updated October 20, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Glyph drawing is now recovered;23 remain.
+authored candidates byte-exact. Current248 authored functions are exact;22 remain.
 That objective is active, not complete.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
@@ -76,14 +76,14 @@ for those answered sites; do not repeat a current rank-only capture.
 The [complete plain-char text-byte cohort](../research/exact/GLYPH_SIGNED_CODE_DOMAIN.md#complete-plain-char-cohort-october20)
 is adopted. Signed-value normalization stays explicit at lookup/measurement
 consumers while the field, bank byte and font APIs use char carriers. Complete
-glyph drawing becomes328-byte exact. All272 affected functions/4,655 code and
+glyph drawing became328-byte exact at that checkpoint. All272 affected functions/4,655 code and
 two metadata bindings compare together;251 prior exacts survive and270 code
 identities stay unchanged. PCX changes digest but remains979/862/851 nonexact.
 One native build and3,135 resource/UI cases pass, including all font byte values,
-three banks and high-byte/NUL text. Totals are392 exact/247 authored exact/23
+three banks and high-byte/NUL text. That checkpoint's totals are392 exact/247 authored exact/23
 authored candidates. No delivery relink or game run follows. All28 current objects
 and input/provenance records are installed together; the118-member pre-adoption
-archive is size/hash verified. Current authored authority is
+archive is size/hash verified. That checkpoint's authored authority is
 `.analysis/glyph-char-cohort-20261020/authored-coverage.json`.
 The149 private expanded inputs/products/helpers are now member-size/hash verified
 in `closed-inputs-products.tar.gz` before removal. The identical tool catalog
@@ -156,7 +156,7 @@ before removal, releasing1,802,240 allocated bytes net before journals;153 curre
 protected hashes stay fixed. The coherent arithmetic family is now closed below;
 no source/setting was adopted by this observation.
 
-The [complete resource arithmetic-family control](../research/exact/RESOURCE_ARITHMETIC_FAMILY.md)
+The initial [complete resource arithmetic-family control](../research/exact/RESOURCE_ARITHMETIC_FAMILY.md)
 compiles one fixed16-operation/15-expression/six-function model. All18 complete
 functions/262 bindings/six whole literal carriers compare;12 code identities
 remain unchanged. Stretch139, unchanged capture852 and unchanged lookup145 become
@@ -173,8 +173,48 @@ remains a concrete unanswered boundary, not a requirement for original materials
 Private authority is `.analysis/resource-arithmetic-family-20261020/result.json`.
 All18 closed copied inputs/products/helpers/expanded mappings are member-verified
 before removal, releasing262,144 allocated bytes net before journals. All155
-protected hashes and current products stay fixed;392/247/23 and the active goal
-remain unchanged.
+protected hashes and then-current products stayed fixed;392/247/23 and the active
+goal remained unchanged at that closed checkpoint.
+
+The subsequent [validated whole-owner integration](../research/exact/RESOURCE_ARITHMETIC_FAMILY.md#validated-whole-owner-integration)
+adopts the identical fixed source/CMake/legacy object after actual GNU8.4.0
+wrap-contract verification. All41 compile configurations and39 actual compiler
+lines are checked;38 companion objects retain their bytes despite normal rebuild
+timestamp changes. One resource-only fatal-overflow instrumented object and its
+private link support16 finite witnesses against each library. All32 invocations
+and1,766 unchanged maintained cases plus three font setups pass.
+
+The whole18-function/262-binding/six-carrier object is installed once: stretch139,
+capture852 and lookup145 become exact; plain Blt199/195/173 and glyph332/328/258
+are explicitly demoted. PCX is979/862/850. Net gain is one exact/+613 code bytes,
+not a selective object mix. Installed full comparisons/local guards and all270
+current authored source/header/object/flag/receipt identities across30 closures
+verify. All249 semantic dependency maps refresh without changing ordered row
+identities, scopes, cases or oracle seals; those249 historical case sets were
+not rerun. Source spelling/TU responsibility remains unknown, not an external
+materials prerequisite. No new legacy compile or game relink/run occurs.
+
+Private current authority is
+`.analysis/resource-arithmetic-integration-20261020/adoption.json`; native summary,
+independent reviews, installed comparisons and authored coverage accompany it.
+Preserved bookkeeping failures concern rebuild timestamps, two omitted link-input
+inventory entries, an optional cached producer field, and inventory list order.
+No successful build/compile/case repeats, and all seven material writes occur
+once. The original failed no-loss experiment remains immutable. The separate
+[storage query closure](../research/exact/VC4_EXPRESSION_ORDERING.md#storage-reset-boundary-and-closed-provider-failure-october20)
+returns no new provider evidence; its141-record snapshot stays fixed. Do not retry
+that cold import or treat raw kind0C as a recovered type/allocation identity.
+
+All198 closed integration input/product/helper members are size/SHA verified in
+a340,682-byte archive before removal. This includes190 generated/copied files
+and eight authored helpers; every removed file is individually recoverable.
+Conservative net release is1,183,744 allocated bytes before journals, excluding
+the additional helper-source removal. Current products, native incremental
+caches, originals/tools, rollback and unique direct result/REA receipts remain.
+Cleanup verifies12 closed private protections through archived members and224
+remaining current protections directly; it does not pretend removed witnesses
+are missing canonical inputs. The separate failed storage query releases another
+86,016 allocated bytes through verified draft archival/snapshot deduplication.
 
 ## Current authorities
 
@@ -183,15 +223,15 @@ remain unchanged.
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 392 |
-| Exact code / attached metadata bytes | 83,974 / 244 |
-| Complete nonexact comparisons | 83: 23 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 393 |
+| Exact code / attached metadata bytes | 84,587 / 244 |
+| Complete nonexact comparisons | 82: 22 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-247 exact and 23 candidates across 30 compiler closures. The source-present
+248 exact and 22 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -202,10 +242,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 392 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 83 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/glyph-char-cohort-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/resource-arithmetic-integration-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -221,8 +261,8 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 The bounded authored-source phase is complete for reconstruction: all270
 identified authored functions are source-present and have complete comparison
-receipts across30 compiler closures. Current totals are392 overall exacts and83
-complete candidates, split247 authored exact/23 authored candidates plus60
+receipts across30 compiler closures. Current totals are393 overall exacts and82
+complete candidates, split248 authored exact/22 authored candidates plus60
 runtime candidates. The78 no-source catalog entries are77 runtime-library
 functions and compiler-generated `__chkstk`; no unidentified authored body or
 callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack

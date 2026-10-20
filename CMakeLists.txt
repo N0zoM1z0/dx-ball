@@ -80,6 +80,11 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     set_source_files_properties(src/list_initializers.cpp PROPERTIES
         COMPILE_OPTIONS -fcheck-new)
 endif()
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    # Define the observed signed32 add/subtract/multiply wrap only.
+    set_source_files_properties(src/resources.cpp PROPERTIES
+        COMPILE_OPTIONS -fwrapv)
+endif()
 # Rebound compares the live x87 quotient once, then reads stored float contacts.
 # C++17 sequences the chained assignment; GNU must retain excess precision at
 # that first comparison. The later cv-qualified reads impose float storage.

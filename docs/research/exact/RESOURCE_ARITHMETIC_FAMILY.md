@@ -1,12 +1,15 @@
 # Complete resource arithmetic-family control
 
-October20,2026. One fixed shared-source arithmetic family produces three private
-complete exacts, but loses two accepted exacts. It fails its predeclared adoption
-gate. No source, CMake option, object, binding, report or acceptance ledger is
-replaced. Current totals remain392 overall exact/247 authored exact/23 authored
-candidates; the all270-authored-exact objective remains active.
+October20,2026. The validated whole resource owner is now adopted: three complete
+exact gains and two explicit demotions give393 overall exact/248 authored exact/
+22 authored candidates, adding613 exact code bytes. All270 authored receipts and
+30 compiler closures are current. The all270-authored-exact objective remains active.
 
-## Fixed model and complete comparison
+The initial fixed experiment genuinely failed its own no-loss admission gate.
+That closed result remains immutable; the subsequent integration below is a
+separate, explicitly reviewed decision, not a retroactive pass of that gate.
+
+## Historical fixed model and complete comparison
 
 The model removes integer conversion wrappers from16 signed32 operations in15
 expressions across six functions: six Blt rectangle sums, the live bank count
@@ -27,7 +30,7 @@ Generated names/row order do not establish identity; the maintained local-target
 guard stays enabled. Independent recomputation verifies every comparison and
 provenance row, all defined functions and all155 protected hashes.
 
-| Function | Current bytes / differences | Private bytes / differences | Original bytes |
+| Function | Pre-integration bytes / differences | Fixed-model bytes / differences | Original bytes |
 | --- | ---: | ---: | ---: |
 | stretch-keyed-sprite |141 /94 |139 /0 |139 |
 | capture-sprite |864 /726 |852 /0 |852 |
@@ -36,12 +39,82 @@ provenance row, all defined functions and all155 protected hashes.
 | draw-glyph |328 /0 |332 /258 |328 |
 | load-pcx |979 /851 |979 /850 |862 |
 
-The other12 resolved identities remain unchanged. Nine of11 accepted resource
+The other12 resolved identities remain unchanged. Nine of11 baseline resource
 exacts survive. The private exact subset is12 functions/2,722 bytes versus the
 current11/2,109, but the fixed gate requires no accepted losses as well as gains.
-Consequently neither native compilation nor boundary/maintained cases run for
-this proposal. No selective old/new objects or post-result subset retry follows.
-The proposed modern wrapping contract remains unvalidated and unadopted.
+Consequently neither native compilation nor boundary/maintained cases ran in
+that original experiment. No selective old/new objects or post-result subset
+retry followed. The modern contract was then unvalidated and unadopted.
+
+## Validated whole-owner integration
+
+The project requires complete affected comparisons and honest classifications;
+it does not impose the experiment-local no-loss rule. The later integration
+reuses the identical member-verified source, CMake model and VC4 object, with no
+new legacy compile, source/flag variant or selective old-object fallback. Its
+independent preparation checks all18 functions,262 actual bindings and six whole
+literal carriers again, and verifies13 rollback members before canonical writes.
+
+Actual GNU8.4.0 compilation confirms that only resources.cpp gains `-fwrapv` among
+all41 maintained compile-command rows. Normal CMake shared-flags regeneration
+recompiles39 core objects; all38 companions retain identical bytes/size/mode,
+although their timestamps change. All39 actual compiler lines and the actual
+link are checked against the maintained commands. This is a declared modern
+signed add/subtract/multiply contract, not a recovered original compiler option.
+
+One additional resource-only compile retains that actual command and adds the
+existing fatal signed-overflow sanitizer flags. Its private link substitutes
+only that object and the output, retaining38 companions and both real linker
+configuration files. All16 unchanged finite witnesses pass on both instrumented
+and maintained libraries: bank product/count, six Blt edges, four glyph edges
+and four PCX increments. Four unchanged selectors pass10 bank,108 Blt,12 capture,
+769 lookup,768 glyph-draw and99 PCX cases:1,766 total plus three actual font setups.
+Assertions, fixtures, API callbacks, original comparisons and sanitizer flags
+are unchanged. This validates the stated finite ordinary-contract domain, not
+arbitrary malformed inputs, pointers/division/shifts, Clang instrumentation,
+physical drivers or unrestricted machine equivalence.
+
+The same full legacy object is installed for all18 units. Stretch139, capture852
+and lookup145 are promoted; plain Blt199/195/173 and glyph332/328/258 are demoted.
+PCX remains979/862/850. The resource exact subset is12 functions/2,722 bytes.
+Global totals are393 exact functions/84,587 code bytes/244 metadata bytes and82
+complete candidates, including22 authored. Installed full comparisons retain the
+local-target guard. The current270-entry audit verifies actual source/header/
+object/flags/receipt identities across30 closures without a cold full replay.
+
+All249 ordered semantic rows retain their identities, scopes, case counts and
+oracle seals. Dependency hashes, including CMake in every row and16 primary
+resource-source hashes, are refreshed; this does not mean all249 historical
+case sets were rerun. No game EXE is relinked or played at this checkpoint.
+
+Four bookkeeping failures remain explicit: an overstrict unchanged-timestamp
+guard, two omitted linker-input protection entries, an optional cached producer
+`source` field, and inventory row ordering after TOML serialization. Their
+receipts/helpers/gates remain unchanged. Review resolves only those bookkeeping
+issues; no successful build, instrumentation compile or completed case repeats.
+All seven material claim/object writes occur once; the last postcheck compares
+the same270 rows by unique original address instead of list position.
+
+Private current authority is
+`.analysis/resource-arithmetic-integration-20261020/adoption.json`, with independent
+native/result/source reviews, installed comparisons and `authored-coverage.json`.
+Final REA process Evidence is
+`ev_92086a27e6e5c6feab1679f9bd777d15f1f97398b4bc46bcc4d97a21bf3e101e`:
+exit0, owned cleanup verified. Overall `truncated=true` records only the64-sample
+process cap; terminal and filesystem enumeration/digests have no omissions.
+All41 successful command outputs are complete, stderr is empty, aggregate command
+wall time is84.474s and maximum observed cgroup peak58,703,872 bytes, with zero
+memory-limit/OOM events under CPU0/35%/384–512MiB limits. Sampling is not an
+exhaustive descendant trace or observation of all inherited environment effects.
+
+The integration's198 closed members are size/SHA-256 verified in a340,682-byte
+archive before190 generated/copied files and eight authored helpers are removed.
+Every removed file is individually recoverable. Conservative net release is
+1,183,744 allocated bytes before journals, excluding extra helper-source removal.
+All224 remaining current protections verify directly;12 deliberately closed
+private input protections verify through their archive members. Current tested
+products, native incremental caches, originals/tools, the rollback archive and
+unique direct result/REA receipts remain intact.
 
 ## Instruction-level explanation and limits
 
@@ -84,4 +157,5 @@ objects, helpers and duplicate expanded mappings/provenance are archived and
 member-size/SHA-256 verified before exact-file removal. Net release is262,144
 allocated bytes before journals. Every removed file is individually recoverable;
 all155 protected files, current products, originals/tools and native incremental
-caches remain unchanged. No game relink/run or new exact/semantic claim follows.
+caches remained unchanged at that earlier closed checkpoint. The subsequent
+validated adoption is described separately above.

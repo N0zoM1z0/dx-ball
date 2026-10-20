@@ -55,10 +55,10 @@ void dxball_blt_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     DxBallRect destination;
     destination.left = x;
     destination.top = y;
-    destination.right = (DxBallInt)((DxBallUInt)x
-                        + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width);
-    destination.bottom = (DxBallInt)((DxBallUInt)y
-                         + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height);
+    destination.right = x
+                        + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width;
+    destination.bottom = y
+                         + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height;
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
@@ -71,10 +71,10 @@ void dxball_blt_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
     DxBallRect destination;
     destination.left = x;
     destination.top = y;
-    destination.right = (DxBallInt)((DxBallUInt)x
-                        + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width);
-    destination.bottom = (DxBallInt)((DxBallUInt)y
-                         + (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height);
+    destination.right = x
+                        + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width;
+    destination.bottom = y
+                         + dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height;
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1000000, NULL);
@@ -88,8 +88,8 @@ void dxball_stretch_keyed_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y,
     DxBallRect destination;
     destination.left = x;
     destination.top = y;
-    destination.right = (DxBallInt)((DxBallUInt)x + (DxBallUInt)width);
-    destination.bottom = (DxBallInt)((DxBallUInt)y + (DxBallUInt)height);
+    destination.right = x + width;
+    destination.bottom = y + height;
     ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
         dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
         &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
@@ -188,14 +188,14 @@ void dxball_load_sprite_bank(DxBallInt bank, DxBallInt allocation_mode, const ch
     if (dxball_board_file == NULL)
         exit(1);
     fread(&count, 4, 1, dxball_board_file);
-    for (i = 1; i < (DxBallInt)((DxBallUInt)count + 1); i = i + 1) {
+    for (i = 1; i < count + 1; i = i + 1) {
         DxBallUInt nbytes;
         DxBallByte *bitmap;
         fread(&width, 4, 1, dxball_board_file);
         fread(&height, 4, 1, dxball_board_file);
         fread(&letter, 1, 1, dxball_board_file);
         fread(&yoffset, 4, 1, dxball_board_file);
-        nbytes = (DxBallUInt)width * height;
+        nbytes = width * height;
         bitmap = (DxBallByte *)dxball_runtime_malloc(nbytes + 3);
         if (bitmap == NULL)
             exit(1);
@@ -294,12 +294,12 @@ DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline)
     sprite = dxball_find_glyph((signed char)code);
     if (sprite != 0) {
         destination.left = x;
-        destination.top = (DxBallInt)((DxBallUInt)baseline
-                         - (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
-                         - (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline);
-        destination.right = (DxBallInt)((DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + (DxBallUInt)x);
-        destination.bottom = (DxBallInt)((DxBallUInt)baseline
-                            - (DxBallUInt)dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline);
+        destination.top = baseline
+                         - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
+                         - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
+        destination.right = dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + x;
+        destination.bottom = baseline
+                            - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
         ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
             dxball_sprite_banks[dxball_font_bank].sprites[sprite]->surface,
             &dxball_sprite_banks[dxball_font_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
@@ -427,7 +427,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                 if (column > xmax) {
                     column = 0;
                     destination_x = x;
-                    destination_y = (DxBallInt)((DxBallUInt)destination_y + 1);
+                    destination_y = destination_y + 1;
                     row = row + 1;
                 }
                 if (destination_x < width && destination_y < height &&
@@ -435,7 +435,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                     pixel = description.pixels + destination_y * pitch + destination_x;
                     *pixel = value;
                 }
-                destination_x = (DxBallInt)((DxBallUInt)destination_x + 1);
+                destination_x = destination_x + 1;
                 column = column + 1;
                 run_index = run_index + 1;
             }
@@ -444,7 +444,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
             if (column > xmax) {
                 column = 0;
                 destination_x = x;
-                destination_y = (DxBallInt)((DxBallUInt)destination_y + 1);
+                destination_y = destination_y + 1;
                 row = row + 1;
             }
             if (destination_x < width && destination_y < height &&
@@ -452,7 +452,7 @@ void dxball_load_pcx(DxBallDDSurface *surface, const char *path,
                 pixel = description.pixels + destination_y * pitch + destination_x;
                 *pixel = value;
             }
-            destination_x = (DxBallInt)((DxBallUInt)destination_x + 1);
+            destination_x = destination_x + 1;
             column = column + 1;
         }
     }

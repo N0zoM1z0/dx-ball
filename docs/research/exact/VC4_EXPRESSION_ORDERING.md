@@ -608,3 +608,38 @@ inputs/products/helpers/duplicate expanded mappings are archived and individuall
 member-size/hash verified before removal, releasing262,144 allocated bytes net
 before journals. All155 protected hashes stay fixed. Current392/247/23 and the
 active all270-authored-exact goal remain unchanged.
+
+## Storage-reset boundary and closed provider failure, October20
+
+The paired trace's repeated physical address is not evidence for two allocations.
+Retained C1XX record08 shows4163C5 reserving eight stack bytes and saving three
+registers, then reading the preexisting record through `[EBX+4]`. It does not
+allocate or clear the observed word before4163EF. On that inferred normal
+prologue path, the return slot is ESP+20, containing423AA3 in both events;
+ESP+16's422BA7/422BD1 values are reserved local storage, not proved adjacent
+callers. Entry/path and continuous record lifetime are not independently observed.
+
+A new minimal tail query returns no bytes. The initial default-profile open is
+rejected without analysis; the corrected matching-profile import reaches its
+900,000ms provider deadline. Its late complete error response and normal close
+are retained. No query result or new static Evidence record is produced. All141
+old records and the1,168,540-byte snapshot remain byte-identical, as do155 current
+protected files. Owned processes and the temporary Ghidra directory are gone.
+Do not repeat this cold import or promote an offline decoder concordance into
+provider evidence. The actual reset/reuse writer remains unknown.
+
+Private authority is `.analysis/glyph-kind0c-storage-20261020/result.json`.
+The observer draft was never compiled or executed. Its two files are archived
+and member-verified before removal; a duplicate snapshot archive is deduplicated
+against an existing identical immutable payload. Net release is86,016 allocated
+bytes before journals. Sampled resource counters are not final disposal counters;
+this failed observation adds no source, native, exact or semantic claim.
+
+The subsequent [whole-owner integration](RESOURCE_ARITHMETIC_FAMILY.md#validated-whole-owner-integration)
+reuses the closed arithmetic-family object without another legacy compile.
+Actual GNU wrap-contract checks,32 finite invocations and1,766 unchanged existing
+cases pass; the entire18-function object is adopted with three promotions and
+two honest demotions. Current totals are393 overall/248 authored exact/22 authored
+candidates. This does not resolve original frontend record/TU responsibility or
+retroactively pass the earlier failed no-loss gate. Reuse the current adoption
+and authored-coverage receipts rather than repeating completed observations.

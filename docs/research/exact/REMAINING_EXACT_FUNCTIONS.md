@@ -1,10 +1,10 @@
 # Remaining exact functions
 
-Updated October20,2026, after the complete plain-char glyph cohort recovery.
-Accepted totals are **392 functions / 83,974 code bytes / 244 metadata bytes**.
-There are **83 complete nonexact comparisons: 23 authored and 60 runtime**. None is an accepted exact.
+Updated October20,2026, after validated whole-owner resource arithmetic recovery.
+Accepted totals are **393 functions / 84,587 code bytes / 244 metadata bytes**.
+There are **82 complete nonexact comparisons: 22 authored and 60 runtime**. None is an accepted exact.
 
-These 84 are all currently source-present nonexact entries. The eight allocator
+These 82 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
@@ -258,6 +258,15 @@ The separate514-instruction review explains all five gains/losses through bank
 address selection and two commuted additions. Current392/247/23 remain; no subset,
 spelling/order sweep or repeated answered rank capture is justified.
 
+The later [validated whole-owner integration](RESOURCE_ARITHMETIC_FAMILY.md#validated-whole-owner-integration)
+adopts that identical object after actual GNU wrap-contract validation,32 finite
+invocations and1,766 unchanged maintained cases. Three promotions and two explicit
+demotions produce current393 overall/248 authored exact/22 authored candidates.
+All270 current authored receipts across30 closures verify; authority is
+`.analysis/resource-arithmetic-integration-20261020/authored-coverage.json`.
+The earlier failed gate remains historical, not retroactively passed. No new
+legacy source/flag/subset trial, selective object mix or full game run follows.
+
 At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
 closes after one resource compile: all18 complete raw/resolved bodies and13
 prior exacts remain unchanged; full COFF differences are timestamps only.
@@ -366,18 +375,17 @@ One owner compile preserves five exact companions and six other body identities;
 | `reset-round` | 426 | 426 | 20 |
 | `load-sprite-bank` | 1475 | 1475 | 68 |
 | `draw-paddle` | 677 | 677 | 68 |
-| `find-glyph` | 145 | 146 | 86 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-sprite` | 105 | 107 | 94 |
-| `stretch-keyed-sprite` | 139 | 141 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
 | `rotated-sprite-y-offset` | 191 | 193 | 159 |
+| `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon` | 1543 | 1543 | 216 |
 | `fill-polygon-clipped` | 1592 | 1592 | 213 |
 | `release-sprite` | 262 | 269 | 245 |
+| `draw-glyph` | 328 | 332 | 258 |
 | `draw-high-scores` | 404 | 403 | 330 |
-| `capture-sprite` | 852 | 864 | 726 |
-| `load-pcx` | 862 | 979 | 851 |
+| `load-pcx` | 862 | 979 | 850 |
 | `last-brick` | 1057 | 1047 | 976 |
 | `render-rotated-sprite` | 1572 | 1458 | 1466 |
 
