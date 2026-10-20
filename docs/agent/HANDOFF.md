@@ -38,19 +38,25 @@ Its33 closed files are member-verified in a46,793-byte archive before removal,
 releasing512,000 allocated bytes net before journals. Neither model changes
 source/options/products/claims or runs native/game builds. Do not repeat key
 expression/ID variants, Y/flag or name/include/helper controls.
-The latest [descriptor-to-expression prefix](../research/exact/VC4_EXPRESSION_ORDERING.md#primary-descriptor-to-expression-prefix-october21)
-now establishes41B33B record+10/stack-operand transport to41B663. Six primary
-records cover1,221 read bytes and126 selected instructions/458 bytes. The second
-body ends mid-path; onlyCL is saved, and no returned-node field writes are shown.
-Next follow41B706->4101AE's actual write schema before inferring opcode66 or
-selected-record conversion/product consumption. The first pre-provider nested-lock
-failure is retained; the reviewed same-query continuation closes normally without
-raising limits. All402 initial/416 continuation byte/stat seals pass; the original
-141-record snapshot and current products/caches remain unchanged. No source/count
-change, source compilation or native/game run follows. Its36 closed files are
-member-verified in a124,762-byte archive before removal, releasing872,448 allocated
-bytes net before journals;398 direct protections and18 archived phase aliases
-retain their byte/stat identities. Do not repeat the decoded prefix.
+The latest [numeric-selector dispatch](../research/exact/VC4_EXPRESSION_ORDERING.md#primary-numeric-selector-dispatch-october21)
+extends the prior descriptor prefix through4101AE,411DB0 and41367C. Eight complete
+primary records read1,920 bytes; three selected bodies cover198 instructions/494
+bytes.4101AE can reuse/retag an operand;411DB0 conditionally dispatches BL==0x66/0x1;
+41367C explicitly sets fullECX=0x66 and calls41329B. None proves a fresh0x166/+4/+0x10
+node layout. The third session retains a partial41368A missing-procedure failure, child1/
+CLI0 and aggregate rendered-frame truncation; no snapshot/facets or retry follow.
+All411/430/449 direct byte/stat seals and18 prior aliases pass; current products,
+useful caches and the original141-record snapshot remain unchanged. Three process
+visibility warnings remain explicit, not exhaustive cleanup claims. No source/count
+change or compiler/native/game run follows. Next observe the actual selected-record
+call entry/taken path/return identity on the unchanged historical input, with new
+bounded execution breakpoints rather than another global/reset/rank watch or
+unbounded static expansion. Zero route hits are a valid negative result, not a
+retry trigger. No original materials are needed. Do not repeat the
+decoded prefix or its closed41B706->4101AE/410220->411DB0/411E4C->41367C edges.
+Its56 closed files are member-verified in a225,062-byte archive before removal,
+releasing1,634,304 allocated bytes net before journals. All408 remaining direct
+protections and59 archive aliases retain byte/stat identities and are recoverable.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
 [completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).

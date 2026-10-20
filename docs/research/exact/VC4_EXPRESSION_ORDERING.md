@@ -972,3 +972,80 @@ removal, releasing872,448 allocated bytes net before journals. All398 remaining
 direct protections and18 archived phase aliases verify size/hash/mode/nsmtime.
 Current products, useful caches, originals/tools and the original141-record
 snapshot remain intact; every retired member is individually recoverable.
+
+## Primary numeric-selector dispatch, October21
+
+The conditional41B706->4101AE edge is now decoded from the same pinned C1XX.
+Three distinct raw-x86 windows read1,920 bytes in total:4101AE..4104AD,
+411DB0..4120AF and41367C..4137FB. Eight individually complete primary records
+retain three selected instruction bodies:198 instructions/494 bytes. The other
+1,426 read bytes are not classified as padding/data or claimed as decoded bodies.
+Two successful sessions save separate three-record snapshots. The third session
+ends with a retained partial failure; its two successful records remain in their
+complete raw response files, not a fabricated snapshot.
+
+Evidence `ev_17558d10f7fa435b80407e6c58962832eb8c0777c388200743b54e38f56fd1f0`
+establishes112 instructions/295 bytes at4101AE..4102D4. This path can return an
+existing operand, clear its byte+1 bit7, or retag its DWORD+4 with the descriptor
+carrier.410287 modifies helper-returned descriptor word+2;410292 decrements
+global4B5C80. Other paths return40F4ED,411DB0 or41368A results. No header0x166 or
+child+0x10 store appears. BL receives CL only, so subsequent ECX<-EBX does not
+establish zero extension. Cold4537CC/4537D5/4537E1 paths remain outside the body.
+
+Evidence `ev_d4741fa016fe145de5770351fb3be6a9a6dd0fce880f660b6fb3afff645d26ee`
+adds81 instructions/185 bytes at411DB0..411E68, called conditionally at410220. It has
+no direct node/object store or identified allocation. After earlier helper,
+descriptor and operand-flag gates, BL==0x66 or BL==0x1 dispatches ECX=descriptor,
+EDX=operand to41367C at411E4C. Other selectors first call41ABE8. Other branches
+return411469,4100D0,419DE5 or43C135 results; cold4542FF/454308 paths remain open.
+This establishes numeric dispatch, not an executed event23 conversion path.
+
+Evidence `ev_5dff2f3da489ccad2c3f3c6e5e8dfe5187fd3530bc8ce41eb8c5e3165670c089`
+then establishes the five-instruction/14-byte wrapper41367C..413689:
+PUSH EDX; MOV EDX,ECX; MOV ECX,0x66; CALL41329B; RET. Here the complete ECX is
+explicitly overwritten with0x66, unlike the earlier byte-only saves. Descriptor
+and operand reach41329B in EDX and on stack. Its field writes are not observed.
+This wrapper also does not prove event23's0x166/+4/+0x10 returned-node schema.
+
+The third import seeds only41367C. The separately reached41368A has no procedure
+in that analysis; its instruction request returns invalid_request/invalid_input,
+with remote not_found diagnostics stating "No procedure exists". The helper stops,
+closes without a snapshot and never issues either planned entry facet. This is
+not evidence that41368A is not a function. No completed query is repeated and
+no whole-image/profile/source variant is attempted. Process Evidence
+`ev_73adf41e82bc86d5bb01a91df42a8707c520da713aec8bd9592b66230e02c8a7`
+retains child exit1/capture CLI0; the outer controller correctly propagates1.
+All26 raw frames/16,288 bytes are retained, but one rendered frame has unknown
+size, so the aggregate truncated flag remains true. No five-record success or
+untruncated-capture claim follows from the two complete primary responses.
+
+All411/430/449 direct byte/stat seals and18 prior archived aliases pass within
+their respective captures; the original141-record snapshot and current products
+remain unchanged. Owned-process cleanup and provider-workspace removal verify.
+The second capture also retains three EACCES process-visibility warnings: one
+PID is currently an unrelated root system service; the other two are absent.
+Those scoped observations do not establish exhaustive historical ownership.
+The one-CPU/35%,384/512MiB and256MiB JVM caps are unchanged. All three captures
+have soft-high events but no max/OOM events. Independent source, integrity,
+dataflow and partial-failure reviews preserve these distinctions.
+
+Private authority is `.analysis/rea/c1xx-node-factory-20261021/result.json`.
+No source/options/object adoption, source compilation, native/game run or exact
+promotion occurs;394 overall/249 authored exact/21 candidates remain incomplete.
+The next missing relation is the actual selected-record call entry, taken
+constructor/dispatch path and returned operand/node identity. Use a bounded
+call-entry/return observation of the unchanged historical input before further
+static callee expansion or any source variant. Zero selected-route hits are a
+meaningful negative result, not grounds to retry or broaden the observation.
+Do not repeat the decoded bodies,
+global/reset/rank watches or identifier/flag sweeps. Existing EXE/resources and
+retained toolchain artifacts remain the reconstruction inputs; missing original
+source materials are not an external prerequisite.
+
+All56 closed phase files, including the partial-failure helper, full responses
+and both snapshots, are individually member-size/SHA256 verified in a225,062-byte
+archive before exact-file removal. Net allocated release is1,634,304 bytes before
+journals. All408 remaining direct protections and59 archive aliases retain their
+byte/stat identities, including mode and nanosecond mtime metadata. Current
+products, useful caches, tools/originals and the original141-record snapshot
+remain intact; every retired file is recoverable from the closed archive.
