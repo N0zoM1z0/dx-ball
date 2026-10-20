@@ -44,8 +44,9 @@ The observation takes4.329s and peaks at160,038,912 bytes with zero memory-limit
 events. Private authority: `.analysis/elapsed-rank-observation-20261020/`.
 
 This establishes the current compiler cause, not original intermediate IDs,
-names, settings or source spelling. The subsequent six-ID observation below
-identifies ID29701's record kind, but not its role or allocation instruction.
+names, settings or source spelling. The subsequent six-ID and hardware-watch
+observations below identify ID29701's record kind and actual allocation path,
+but not its semantic role or original counterpart.
 The earlier C const-now control already emits the same81/3 identity; repeating
 it is not a new model.
 
@@ -78,10 +79,10 @@ C2 observation, not dereferencing unknown-kind name fields in this capture.
 ID29701 is an anonymous kind8/code3 record. The raw DWORD at record29703`+4`
 equals record29701's actual address; its meaning is unknown. No compiler-label,
 lexical-block or return-temporary interpretation is established. None of these
-three kind8 IDs is assigned at the selected writer. The existing retained
+three kind8 IDs is assigned at the selected writer. At this stage the retained
 counter survey has34 other object`+18` store sites, including402B1C/4163B2,
-but does not identify their actual kind8 destination. Repeating40AA3F would
-not close that gap.
+but does not identify their actual kind8 destination. The following hardware
+watch closes that concrete producer gap without selecting a presumed writer.
 
 REA process Evidence is
 `ev_b0c5d8a8029848a3a71e4044ba7a249922db227c7e208ac659a115756a2b39c1`.
@@ -99,6 +100,47 @@ FILE debug source paths and auxiliary counts are retained explicitly, not
 masked as code. All30 protected and26 frozen input hashes stay fixed.
 The compiler observation takes35.041s, peaks at157,720,576 bytes and has zero
 memory-limit events. Private authority: `.analysis/elapsed-id-window-20261020/`.
+
+### Actual anonymous-record producer
+
+One unchanged runtime compilation adds an owned four-byte hardware write watch
+on the actual ID counter at `0x4B0F90`. It starts when the counter is29700,
+after assigning parameter `start` ID29699, and closes after exactly four
+increments, before compiler exit.
+It changes no ID, source record or authored input. Existing MOV replay guards,
+thread ownership, kill-on-close job and bounded hit/deadline checks remain.
+
+| Assigned ID | Actual counter increment | Actual object later read | Record kind |
+| --- | --- | --- | ---: |
+| 29700 | 40AA2A | 03B7B22C | 10 |
+| 29701 | 41639D | 03B7B290 | 8 |
+| 29702 | 40AA2A | 03B7B3E4 | 9 |
+| 29703 | 41639D | 03B7B534 | 8 |
+
+Both anonymous-record traps observe ESI/EDI equal to the later reader object,
+ECX equal to the pre-increment ID, and the old object`+18` word equal to zero.
+The captured18-byte, branch-free fallthrough at4163A3..4163B4 preserves the
+upper byte and writes ECX's low24 bits to that same object's `+18`, through
+the actual store at4163B2. The computed words equal the later observed reads.
+This is counter-write/register/code/later-reader linkage, not a direct
+single-step observation of4163B2. The two alternate-path windows contain no
+owned software trap and agree with the pinned compiler bytes.
+
+Retained post-store instructions prepend the object through `+4` to the chain
+headed at4B18CC. The observed29703`+4` pointer to29701 agrees with this insertion
+mechanism. Its semantic role remains unknown: neither a source local, label,
+lexical block nor return temporary is established. ID29698 precedes the watched
+span and its writer is not covered. Original IDs are still unknown. Adding
+unused source locals to adjust this numbering is not justified.
+
+All16 complete functions,352 code bindings,33 full literal references,23 logical
+sections,389 named relocations and non-FILE symbols remain identical. All13
+exact companions and30 protected/26 frozen input identities survive. CL/C1XX/C2,
+observer and outer capture exit0. The serial capped scope takes37.430s, peaks
+at155,643,904 bytes and records zero memory-limit events. REA process Evidence:
+`ev_ca046f423551b2114e73e3da13f9672532f5b00dec93926b7e3003f0054d78f9`.
+Independent plan/result reviews and producer linkage remain in
+`.analysis/elapsed-counter-watch-20261020/`. No source or exact claim changes.
 
 ## Paddle scalar lifetime model
 
@@ -231,3 +273,9 @@ and products. They leave all maintained source/products fixed. The full
 ID-window process response has an immutable hardlinked carrier under
 `.analysis/rea/observations/elapsed-id-window-20261020/`; its outer failure and
 the postprocessing corrections remain explicit.
+
+The subsequent hardware-watch pilot member-verifies another34 explicit files
+before removing its observer, helpers, object and26 copied inputs. Its verified
+archive releases327,680 allocated bytes net before the cleanup journal; all34
+protected current identities survive. The full immutable REA response has a
+hardlinked carrier under `.analysis/rea/observations/elapsed-counter-watch-20261020/`.

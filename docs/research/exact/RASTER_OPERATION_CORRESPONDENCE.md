@@ -82,3 +82,22 @@ verification before removal. The 12593-byte archive retains the executed helper;
 complete inspection/review JSON stays directly available. Cleanup releases
 20480 allocated bytes net before small receipts and preserves all protected
 source/config/object/product identities.
+
+## Independent current triangle review, October20
+
+The complete current1710-byte/482-instruction object independently reproduces
+the same88 strict differences:82 one-byte frame displacements and six bytes
+across the two upper-loop converse groups at40ADD6/40AE8D. Of the frame bytes,
+34 belong to named root/scale roles and48 to temporary/clamp roles. Both bodies
+reserve0x68 stack bytes; all36 EH-byte stores, branch destinations and the
+complete160-byte/17-binding metadata agree. The first storage difference already
+appears at40ABAE: current long-step−20 versus original−24, before the identical
+constructor/state sequence.
+
+All12 owner comparisons reverify, preserving nine exacts/715 code bytes plus136
+accepted metadata bytes. Draw-line belongs to the separate drawing-primitives
+owner, not this compiler closure. Closed lifetime, aggregate, const receiver,
+colour and SDK controls provide no new supported source model. No compiler or
+provider is run; no exact claim changes. Private independent authority:
+`.analysis/triangle-source-question-20261020/review.json`, SHA256
+`e63c1257dec6ef6b18b6364ab87c151c6889e637b670f5dc5b93912bce55e938`.

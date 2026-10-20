@@ -39,13 +39,20 @@ adopted: current totals remain391 exact /246 authored exact /24 authored
 candidates. Do not promote individual private objects or repeat header/type
 subset, declaration-position or spelling sweeps. Preserve the tested baseline.
 The six-ID observation identifies elapsed ID29701 as an anonymous kind8/code3
-reader record, not a write at the existing40AA3F hook. Its role and actual writer
-remain unknown; all16 current runtime bodies stay fixed. The fixed resource
+reader record, not a write at the existing40AA3F hook. A four-increment hardware
+watch now links actual29701/29703 objects to counter writer41639D and its
+branch-free object`+18` store at4163B2. Chain insertion is established, but its
+semantic role and original IDs remain unknown; all16 runtime bodies stay fixed.
+The fixed resource
 signed-wrap contract control preserves17/18 code identities and gains no exact;
 no source or modern compiler option is adopted. The remaining narrow questions
-are the C2 ranks for the paddle equality/dirty-right sum, the glyph address
-selector and the actual kind8 allocation path. Original IDs and declarations
-remain unknown. Closed pilot inputs/products
+are the C2 ranks for the paddle equality/dirty-right sum and glyph's downstream
+address selector. The renderer's later frame manager is now observed as skipped
+in one unchanged complete current compilation; reobserving its initial48
+allocations or assuming an extent early return is not warranted. Original IDs and declarations
+remain reconstruction questions, not prerequisites for outside material: the
+user confirms that only the existing EXE/resources are available and requests
+continuing from those artifacts. Closed pilot inputs/products
 are retained in member-hash-verified archives before duplicate removal.
 
 ## Current authorities

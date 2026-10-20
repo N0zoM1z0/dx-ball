@@ -200,3 +200,43 @@ The model's ten copied inputs/products, including two objects, are likewise
 archived and member-hash verified before deletion, releasing44 KiB net.
 No provider, native build, game, semantic replay, relink or full replay runs.
 All394 exact claims and the tested restored-CRT delivery remain unchanged.
+
+## Current frame encoding and manager path, October20
+
+Independent current-object review covers all365 instructions and424 frame bytes.
+The entire original1572/current1458-byte extent gap follows48 displacement
+encodings:43 original-only long displacements minus five current-only long
+displacements, each costing three bytes. Among124 differing decoded physical
+instructions,109 differ in frame homes and15 in the six equivalent operand
+groups. All22 calls,26 branch destinations,115 bindings and25 full literal
+references verify; three current exact companions retain709 code bytes.
+Authority: `.analysis/rotation-frame-source-question-20261020/findings.json`.
+
+The earlier trace already observes both consumed first-term doubles as named
+kind1 records, allocated at401556 to−324/−336. All48 owner allocation requests
+and36 renderer slots are already paired. Repeating initial allocation is not a
+new discriminator. A narrowly reviewed observation instead installs the exact
+manager-entry-near MOV at41EE59 and extent-gate JLE at41EEA1, with original
+instruction replay, one-thread/job ownership, bounded hits and deadlines.
+
+One unchanged current rotation compilation records both installed hooks but no
+hit at either. All three compiler processes, observer and REA capture exit0.
+Thus this manager is not entered in the current complete closure; the earlier
+zero late-write result is not an observed nonpositive-extent early return.
+No original storage kind, lexical lifetime or general absence of reuse follows.
+This closes this current manager-path question, without another source variant.
+
+All five complete bodies,115 actual bindings,25 full literal references, seven
+complete COFF section payloads and non-FILE symbols/aux records remain fixed.
+All8 frozen/current inputs and12 protected files verify. The one-CPU35%,384/512MiB
+scope takes4.994s and peaks at158,334,976 bytes, with zero memory-limit events.
+REA process Evidence:
+`ev_bba3ee1c69a3566c7565f01f7b4d102fdf5a24702aaf20d029592f1159402434`.
+Private authority: `.analysis/rotation-frame-manager-20261020/`.
+No source, compiler flag, exact claim, canonical object or delivery changes.
+Independent plan/result reviews recheck the raw installation/exit records and
+all complete comparisons. Only three COFF timestamp bytes differ between the
+two whole objects. After member-size/SHA verification,26 explicit copied inputs,
+helper/bytecode files, utility and two objects are removed, releasing303,104
+allocated bytes net before the cleanup journal. All24 protected current
+identities survive; unique traces/reviews and the verified archive remain.
