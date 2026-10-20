@@ -16,6 +16,17 @@ All64 closed phase files are member-verified in a1,256,026-byte archive before
 removal, releasing1,785,856 allocated bytes net before journals;511 current
 protections survive. The REA phase index points to the same authority/archive
 without duplication. Preserve the current products, useful caches and originals.
+The subsequent [shared magnitude-call control](../research/exact/LIGHTNING_MAGNITUDE_BOUNDARY.md)
+restores two original call targets privately but gains no exact and loses four
+companions. One20-entry/421-binding compile and sealed10-byte callee comparison
+close this model without adoption or native/game work. Its preexisting57-byte
+portable bridge is checked separately; the initial postcheck failure and reviewed
+cached-only completion remain explicit. All385 current protections survive.
+All36 closed files are member-verified in a51,884-byte archive before removal,
+releasing507,904 allocated bytes net before journals. The note also records an
+independent, still-unexecuted count-two presenter key-wrap witness predicted to
+reach the signed sort consumer; preserve its safe geometry and separate magnitude
+scope. Do not repeat the rejected name/include/helper-body family.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
 [completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).
@@ -326,10 +337,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 393 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 82 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 394 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 81 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/resource-arithmetic-integration-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/rotation-arithmetic-contract-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -345,8 +356,8 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 The bounded authored-source phase is complete for reconstruction: all270
 identified authored functions are source-present and have complete comparison
-receipts across30 compiler closures. Current totals are393 overall exacts and82
-complete candidates, split248 authored exact/22 authored candidates plus60
+receipts across30 compiler closures. Current totals are394 overall exacts and81
+complete candidates, split249 authored exact/21 authored candidates plus60
 runtime candidates. The78 no-source catalog entries are77 runtime-library
 functions and compiler-generated `__chkstk`; no unidentified authored body or
 callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack
@@ -813,7 +824,7 @@ The bounded candidate and inventory reviews find no concrete missing authored
 body/callee: all3,719 direct edges,191 switch words,249 code-address words and177
 COM sites are accounted, with no unexplained non-CC text-gap bytes. All270 known
 authored functions now have source and full comparison receipts. The remaining
-23 authored candidates differ at compiler storage/code-selection level but are
+21 authored candidates differ at compiler storage/code-selection level but are
 not missing source or an observed operation. Final denominator and unique
 historical declaration context remain proof limits, not blockers for the
 reconstructed game. Reuse `.analysis/authored-readiness-20261019/`.
@@ -833,7 +844,7 @@ it does not justify an18-function sorting compile. Its private receipt is
 `resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
 
 If new evidence exposes a concrete source question, use the current
-[24-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+[21-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Form one bounded inference from actual producers, consumers, ownership or layout;
 unique historical spelling is not required. A small byte-difference count alone

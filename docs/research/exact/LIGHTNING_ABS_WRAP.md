@@ -1,5 +1,9 @@
 # Last-brick clipping absolute value
 
+The later [shared magnitude-call control](LIGHTNING_MAGNITUDE_BOUNDARY.md)
+restores both actual call targets in one private model but gains no complete
+exact and loses four companions. It is rejected; the source below stays current.
+
 October 20, 2026. Both negative last-brick crop branches now preserve the
 original 32-bit absolute-value operation without relying on undefined
 `abs(INT_MIN)` behavior:
