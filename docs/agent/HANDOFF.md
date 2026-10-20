@@ -68,6 +68,27 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 ## Current source and delivery
 
+The bounded authored-source phase is complete for reconstruction: all270
+identified authored functions are source-present and have complete comparison
+receipts across30 compiler closures. Current totals are391 overall exacts and84
+complete candidates, split246 authored exact/24 authored candidates plus60
+runtime candidates. The78 no-source catalog entries are77 runtime-library
+functions and compiler-generated `__chkstk`; no unidentified authored body or
+callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack
+transports must not be replaced with speculative project source.
+
+The final restored-CRT game is built from source checkpoint e6d5b55. Its
+166,400-byte EXE SHA-256 is
+`c77d6d31bc4447d9ac13e1fa68cf8326f8620139c968bae6af30bb2c94cada86`.
+The builder reuses118 verified current objects (115 source owners and three
+integration objects), compiles none, and retains19 approved original CRT members.
+Current basic/editor and single-brick round-transition flows pass with152/133
+read-only state observations and exit0; all49 protected originals stay fixed.
+The member-verified475,010-byte private ZIP SHA-256 is
+`dfd91617b6c121924e5dd7323fd80150a1463cabd100f06fb81627a1ba116e94`.
+See the [current build/play record](../research/CURRENT_VC4_BUILD.md) and private
+`.analysis/current-vc4-final-20261020/` authority. No full campaign was run.
+
 Current source includes the [last-brick clipping absolute value](../research/exact/LIGHTNING_ABS_WRAP.md).
 Both negative crop branches now define the original CRT low32 magnitude through
 unsigned negation before signed32 storage, including `INT_MIN`. One actual
@@ -206,31 +227,21 @@ include those source changes. The preceding boundary-checkpoint native SHA was
 `8ed0f953adda504213452d801130961e1ad6ae0c6572d12e5ad077db33359bb5`.
 Private authority is `.analysis/authored-boundaries-20261019/`.
 
-Current local EXE and ZIP now come from source bff527e; both include the
-last-brick Y and six Blt corrections. The166,400-byte EXE SHA-256 is
-`76be8c25a07f972ff55465c47ea47a067434e84c669bf7f64c3cd96692b21db6`.
-A14.894s relink reuses118 verified source/integration objects and19 approved
-CRT members. All673 complete linked sections/144,681 bytes,5,904 COFF bindings,
-4,488 loader fields and1,099 unchanged named map addresses verify.
-
-The [current build/play record](../research/CURRENT_VC4_BUILD.md) records the
-premature existing basic/editor, real-round and natural-loss/ranking/fresh-reload
-checks. They pass on this image with541/130/1052 state observations and normal
-exits. They add no source/exact/semantic acceptance or recovery-readiness proof.
-All49 originals and protected inputs stay fixed; CPU0/35%,384MiB high/512MiB max
-limits have zero high/max/OOM events. Do not repeat or broaden these flows.
-Private authority is `.analysis/current-vc4-build-20261020/`.
+The preceding bff527e EXE and ZIP include the last-brick Y and six Blt
+corrections but predate the final text, rotation and crop-magnitude source work.
+Their complete linked-section proof and three game-flow observations remain
+historical authority in `.analysis/current-vc4-build-20261020/`; do not apply
+their whole-image identities to the current e6d5b55 product above.
 
 The older12ccdb1 image's20s return-menu timeout remains unresolved; the current
 pass does not establish its cause or a fix. Preserve
 `.analysis/current-vc4-refresh-20261019/` and retained4d962e image history.
 The previous717cc2f passing delivery retains its own historical records.
-Current private bundle `build/delivery/dxball-v1.07-vc40-reconstructed.zip` is
-475,005 bytes, SHA-256
-`b9e81852cb1e6096e0014835103548682396fcec648ea8f319daac0e543017b0`.
-Its50 member-verified files contain the current rebuilt EXE,48 unchanged supplied
-assets and instructions. Test rankings are excluded. Current EXE/map/manifest,
-useful caches and unique evidence remain private.
+The current private bundle path remains
+`build/delivery/dxball-v1.07-vc40-reconstructed.zip`. Its50 member-verified files
+contain the current rebuilt EXE,48 unchanged supplied assets and instructions.
+Test rankings are excluded. Current EXE/map/manifest, useful caches and unique
+evidence remain private.
 
 The [bank byte-count recovery](../research/exact/BANK_BYTE_COUNT_ARITHMETIC.md)
 defines the observed low32 allocation/fread product and explicitly demotes two
@@ -272,6 +283,16 @@ Relevant accepted source contracts:
 
 ## Last closed work
 
+October20 final restored-game build and bounded validation follow completion of
+the authored-source inventory. The capped VC4 relink reuses all118 verified
+objects and produces the current c77d6d3 image. Basic/editor and single-brick
+round-transition flows pass against exactly that image; captured opening,
+pause, editor and next-board frames are coherent, both processes exit0, and all
+49 originals remain fixed. The refreshed50-member delivery is CRC/size/SHA
+verified. The isolated49-file runtime copy is byte-checked (including its
+expected edited board) and removed, releasing1,607,621 bytes. No game-over,
+three-profile replay or full campaign runs. Exact/semantic ledgers stay fixed.
+
 October20 [rotation destination-offset recovery](../research/exact/ROTATION_DESTINATION_ARITHMETIC.md)
 defines both consumed low32 row-pitch/rounded-X sums and validates two bounded
 original/native allocations. One complete five-function comparison preserves
@@ -306,11 +327,12 @@ Thirty-eight closed files are archived/member-size/SHA verified before removal:
 All623 protected SHA/size/mode/mtime identities survive; current products/caches
 and unique JSON proofs remain. See the authority's archive/cleanup receipts.
 
-October20 current-source relink and existing play/lifecycle checks pass; the
-local bundle is refreshed as described above. These checks were premature under
-the user's source-first priority. Source and claim ledgers stay fixed at247
-authored exact/23 candidates,392 overall exacts. No complete game verification
-or campaign is authorized next; return to concrete source reconstruction.
+October20 bff527e relink and existing play/lifecycle checks passed; that
+historical bundle was refreshed before the later source recoveries. Those checks
+were premature under the user's source-first priority. Source and claim ledgers
+at that checkpoint stayed fixed at247 authored exact/23 candidates,392 overall
+exacts. The final current-source build above supersedes the product, not the
+retained historical evidence.
 Nineteen closed copies/helpers are member-size/SHA verified in a1,731,770-byte
 archive before removal; net1,654,784 allocated bytes are released and183
 protected identities stay fixed. Forty-nine byte-verified isolated runtime
@@ -497,19 +519,14 @@ zero matches with shard limits; it does not prove source absence.
 
 ## Resuming authored recovery
 
-The bounded22-candidate review at608cca4 identifies the Blt gap now closed above;
-the other21 rows expose no new consumed-operation omission in their stated
-domains. The inventory review finds no concrete missing authored body/callee:
-all3,719 direct edges,191 switch words,249 code-address words and177 COM sites
-are accounted,with no unexplained non-CC text-gap bytes. Final denominator and
-original context remain proof limits. Reuse `.analysis/authored-readiness-20261019/`.
-The October20 relink/play record does not close these source questions. The
-user explicitly returned priority to authored nonexact functions. The
-destination-offset correction above explicitly demotes one unchanged helper,
-so there are now24. Resume one evidence-supported source/declaration inference;
-complete game verification
-stays deferred. Do not start another inventory pass, cast variant or identical
-game flow without a new concrete source question.
+The bounded candidate and inventory reviews find no concrete missing authored
+body/callee: all3,719 direct edges,191 switch words,249 code-address words and177
+COM sites are accounted, with no unexplained non-CC text-gap bytes. All270 known
+authored functions now have source and full comparison receipts. The remaining
+24 authored candidates differ at compiler storage/code-selection level but are
+not missing source or an observed operation. Final denominator and unique
+historical declaration context remain proof limits, not blockers for the
+reconstructed game. Reuse `.analysis/authored-readiness-20261019/`.
 
 The October20 [actual dxbuffer constructor/member connection](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#actual-dxbuffer-initializer-and-buffer-members-october20)
 now covers eight complete Mac bodies/820 bytes/205 PPC words. Actual calls bind
@@ -525,12 +542,13 @@ agreement and12 retained MAP-order observations, but not original TU/settings;
 it does not justify an18-function sorting compile. Its private receipt is
 `resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
 
-For a new source question,use the current [24-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+If new evidence exposes a concrete source question, use the current
+[24-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
-Missing original declarations are reconstruction work, not an external blocker.
 Form one bounded inference from actual producers, consumers, ownership or layout;
 unique historical spelling is not required. A small byte-difference count alone
-is not a new source question. Keep inference separate from recovered fact.
+is not a new source question. Keep inference separate from recovered fact; do
+not resume exactness tuning merely because a complete body remains nonexact.
 
 | Family | Reuse before another proposal | Boundary to preserve |
 | --- | --- | --- |

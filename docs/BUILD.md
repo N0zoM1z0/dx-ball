@@ -69,24 +69,14 @@ To build the optional restored-CRT entry profile, use
 `scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt`.
 It builds only the game in `build/vc40-restored-crt/`, with explicit source and
 remaining original-member dependencies. The [VC4 build and play record](research/CURRENT_VC4_BUILD.md)
-identifies the current bff527e executable and local bundle. Existing basic/editor,
-round-transition and natural-loss/ranking/restart observations pass on that
-image. They ran before source recovery was finished; they do not establish
-source readiness. The23 authored nonexact functions remain the active task.
-Complete game verification follows source recovery; do not extend or repeat
-these flows as source progress. The preceding12ccdb1 menu-return timeout remains
-retained with its cause unresolved. Full campaign and physical-driver acceptance
+identifies the current e6d5b55 executable and local bundle. It is the first game
+build after the final text, rotation and last-brick arithmetic recoveries. The
+bounded authored inventory has source and complete comparison receipts for all
+270 identified functions; the remaining24 authored nonexact bodies are maintained
+source, not missing code. The selected basic/editor and real round-transition
+flows pass on the current image. Full campaign and physical-driver acceptance
 remain open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
 retains its own image identity.
-
-The later [unsigned text-width accumulator](research/exact/TEXT_WIDTH_ACCUMULATOR.md)
-is in current source, matching objects and native library. The tested bff527e
-EXE/ZIP predate that change; no new game rebuild or observation follows it.
-
-The [unsigned text-advance recovery](research/exact/TEXT_ADVANCE_ACCUMULATOR.md)
-also preserves the complete exact text-drawing body while defining both consumed
-coordinate additions. Current matching/native products include it; the tested
-bff527e game products remain fixed, with further game checks deferred.
 
 The current private local bundle is
 `build/delivery/dxball-v1.07-vc40-reconstructed.zip`. It contains the rebuilt game,
