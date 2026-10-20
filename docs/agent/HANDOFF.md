@@ -1,8 +1,21 @@
 # DX-Ball reconstruction handoff
 
 Updated October 20, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Current248 authored functions are exact;22 remain.
+authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
+The latest [whole rotation arithmetic contract](../research/exact/ROTATION_ARITHMETIC_CONTRACT.md)
+restores191-byte y-offset exactly, preserving all four other rotation code
+identities. One complete5-function/115-binding/25-literal legacy comparison and
+actual GNU8.4 command checks, two wrap witnesses, negative stride and1024 existing
+cases/151 buffers pass. The whole object is installed, not a private subset.
+Current authored authority is
+`.analysis/rotation-arithmetic-contract-20261020/authored-coverage.json`:
+249 exact/21 candidates across30 current closures. Native library and useful
+caches are current; the historical game EXE/ZIP is not relinked or replayed.
+All64 closed phase files are member-verified in a1,256,026-byte archive before
+removal, releasing1,785,856 allocated bytes net before journals;511 current
+protections survive. The REA phase index points to the same authority/archive
+without duplication. Preserve the current products, useful caches and originals.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
 [completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).
@@ -294,15 +307,15 @@ are missing canonical inputs. The separate failed storage query releases another
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 393 |
-| Exact code / attached metadata bytes | 84,587 / 244 |
-| Complete nonexact comparisons | 82: 22 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 394 |
+| Exact code / attached metadata bytes | 84,778 / 244 |
+| Complete nonexact comparisons | 81: 21 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-248 exact and 22 candidates across 30 compiler closures. The source-present
+249 exact and 21 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.

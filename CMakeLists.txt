@@ -82,7 +82,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     # Define the observed signed32 add/subtract/multiply wrap only.
-    set_source_files_properties(src/resources.cpp PROPERTIES
+    set_source_files_properties(src/resources.cpp src/rotation.cpp PROPERTIES
         COMPILE_OPTIONS -fwrapv)
 endif()
 # Rebound compares the live x87 quotient once, then reads stored float contacts.

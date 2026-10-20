@@ -1,5 +1,11 @@
 # Software sprite rotation
 
+The latest [signed-offset contract](exact/ROTATION_ARITHMETIC_CONTRACT.md)
+restores191-byte y-offset exactly and preserves all four other rotation code
+identities. Actual native wrapping and1024 maintained cases pass. The following
+owner/traversal notes retain their historical checkpoints; the renderer remains
+1458/1572 bytes and nonexact.
+
 The current [C++ owner recovery](exact/ROTATION_CPP_OWNER.md) makes horizontal
 offset and width exact, retaining height/wrapper exactness and explicitly
 demoting vertical offset. Current renderer and delivery identities follow that

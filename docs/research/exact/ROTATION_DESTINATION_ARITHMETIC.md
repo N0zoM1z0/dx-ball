@@ -1,5 +1,11 @@
 # Rotation destination-offset arithmetic
 
+The later [signed-offset contract](ROTATION_ARITHMETIC_CONTRACT.md) preserves both
+low32 producer chains through the validated modern per-owner wrap convention,
+removing the two explicit conversion wrappers together. Y-offset191 becomes
+exact; all four other rotation identities stay fixed. The source/product and
+demotion statements below describe this earlier explicit-conversion checkpoint.
+
 October 20, 2026. Both destination pixel addresses in the rotated-sprite
 renderer now form their row/column offset with explicit modulo-32 arithmetic:
 
