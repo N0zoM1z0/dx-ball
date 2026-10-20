@@ -66,9 +66,24 @@ separate identity-bound cleanup; the caller yields both records but close report
 an ownership-token mismatch despite JVM exit0. Its outer capture exits1 with
 verified cleanup; exact PID/workspace rechecks are clear. All38 closed files are
 member-verified in a319,529-byte archive before removal, releasing962,560 allocated
-bytes net before journals. Current393/248/22 counts remain. Next follow the
-returned record into a typed downstream consumer; do not repeat these windows
+bytes net before journals. Current393/248/22 counts remain. The follow-up below
+closes the bounded global-slot relation; do not repeat these windows
 or treat raw20hex/kind0C as unsigned32/source-local identity.
+
+The [returned-record observation](../research/exact/VC4_EXPRESSION_ORDERING.md#returned-record-consumer-observation-october20)
+now captures108 physical accesses: seven record+1C and101 global4B4D40.
+Event7 publishes the actual record; two REP restart contexts support a numeric
+pointer-value round trip through3B8BB10, while other values overwrite the global.
+This is not101 uses of one object or proof of complete24-byte copies/lifetime.
+Six field accesses precede publication, then event63 observes its20hex→0 reset
+and all32 prefix bytes zero. In the406670 path, record+10 changes3BC4F98→958354
+while+1C stays20; this is the next actual metadata consumer, not a typed product
+identity. One39.896s fixed historical AFTER compile preserves all18 functions/
+262 bindings/six carriers/26 ordered COFF sections/69 non-FILE symbols and895
+current protections. No source adoption or exact gain. All37 closed files are
+member-verified in a266,331-byte archive before removal, releasing1,609,728
+allocated bytes net before journals. Next inspect406670's actual normalization
+path with primary evidence; do not repeat the global/reset/prefix/rank watch.
 
 The [runtime-interface investigation](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 observes the actual elapsed guard's C2 swap and independently restores all17

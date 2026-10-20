@@ -777,3 +777,62 @@ native/game replay, source adoption or exact promotion occurs;393 overall/248
 authored exact/22 candidates remain incomplete. Follow the actual returned
 record into its typed downstream consumer before proposing a source change;
 do not replay these fragments or turn a metadata bit into a type/name/order sweep.
+
+## Returned-record consumer observation, October20
+
+One unchanged historical AFTER resource compilation now observes the missing
+generation relation with owned Dr1 record+1C and Dr2 global4B4D40 read/write
+watches. Actual counter28288 arms them on EDI's kind0C record; counter28289
+disarms both before the next assignment. Existing Dr0 selection and transparent
+writer/reader MOV hooks remain. A source review first catches a legitimate
+simultaneous-Dr1/Dr2 case; both observer and verifier accept bits2/4/6 and retain
+independent previous/current values before any preparation or execution. That
+finding and corrected review remain preserved. Runtime exercises no combined
+event; source review is not execution coverage of that branch.
+
+All243 counter transitions,279 MOV pairs and108 accesses verify against pinned
+runtime code bytes/state and the owned thread. Seven accesses concern record+1C,
+101 the reused global. Event7's actual423AA9 store publishes EAX=3BC4F68 into
+4B4D40, with post-PC423AAE and ID28287. That instruction is also covered by the
+preceding primary caller Evidence. Event8 has REP restart PC421314, DF0,
+ECX5, ESI4B4D44 and EDI3B8BB14. Event22 has restart PC42137F, ESI3B8BB14 and
+EDI4B4D44, again ECX5/DF0, and restores the numeric pointer value into the global.
+The raw F3A5 contexts support a first-DWORD round trip through3B8BB10. The
+copied DWORD lies immediately before the captured pointer prefixes; intervening
+writes to that slot were not watched. A completed24-byte transfer, continuous
+object lifetime and the inferred semantic-stack interpretation are not proved.
+Events9/23 overwrite the global with other values; its101 accesses are not101
+uses of the selected record.
+
+The seven record-field post-access PCs are416443,416451,406678,406686,406B4D,
+406B5D and402FB8. The first six precede publication. During the406670 path,
+record+10 changes3BC4F98→958354 while+1C stays20hex; an input-context prefix
+already contains958354. The helper's meaning is still unknown. Event63 observes
++1C20hex→0 at the known F3AB/REP restart, with all32 captured record-prefix
+bytes zero. This extends the earlier28-byte prefix observation by one DWORD;
+it does not prove completion of the entire424-byte clear. Unchanged values
+are not proof of reads: event2 is the retained tail's byte AND. Other than the
+two tail accesses/publication, these code windows are raw runtime Evidence and
+analyst interpretation, not newly provider-decoded procedures or original types.
+
+The utility and target are each built once. The complete historical18-function/
+262-binding/six-entire-literal closure equals its own frozen baseline, as do all
+26 ordered normalized COFF sections and69 non-FILE symbols. FILE auxiliaries
+5→8 and timestamp/transport-offset exclusions stay explicit. All895 current
+protections and nine copied inputs remain fixed through cleanup, before this
+documentation update; the historical object is not installed. Capture Evidence
+`ev_0687d53f94c192ad27d07799586019ad10fd313bd95cdfb7a0f86195ba9d0dc0`
+exits0, untruncated, with owned cleanup verified and temporary root removed.
+The39.895586s observation peaks153,100,288 bytes under one CPU/35%,384/512MiB,
+with no high/max/OOM events. Outer process coverage remains sampled.
+
+Private authority is `.analysis/glyph-record-consumer-20261020/result.json`.
+All37 closed inputs, object/utility, raw trace/REA responses, complete reports,
+reviews and helpers are size/SHA256 verified in a266,331-byte archive before
+removal, releasing1,609,728 allocated bytes net before journals. There are891
+remaining direct protections and four archived phase protections; all current
+tested products, useful caches, tools/originals and the141-record snapshot remain.
+No game/native replay, source adoption or promotion occurs;393 overall/248
+authored exact/22 candidates remain incomplete. The next primary static question
+is406670's observed metadata normalization path and record+10 transformation,
+not another global/reset/prefix/rank observation or a source spelling/flag sweep.
