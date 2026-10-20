@@ -23,10 +23,21 @@ close this model without adoption or native/game work. Its preexisting57-byte
 portable bridge is checked separately; the initial postcheck failure and reviewed
 cached-only completion remain explicit. All385 current protections survive.
 All36 closed files are member-verified in a51,884-byte archive before removal,
-releasing507,904 allocated bytes net before journals. The note also records an
-independent, still-unexecuted count-two presenter key-wrap witness predicted to
-reach the signed sort consumer; preserve its safe geometry and separate magnitude
-scope. Do not repeat the rejected name/include/helper-body family.
+releasing507,904 allocated bytes net before journals.
+The subsequent original-only count-two presenter key-wrap witness now executes:
+the stored INT_MIN key reaches signed sorting, a full record/key swap and one
+bounded Blt. Geometry and all three absolute-value arguments remain representable.
+A complete signed-coordinate/Y-envelope model leaves all20 code identities
+unchanged; its modern flag proposal is not applied. All385 current protections
+survive;41 files are member-verified in a65,898-byte archive before removal,
+releasing630,784 allocated bytes net before journals. The independently grounded
+explicit unsigned key-producer model is also rejected: no gain, one private
+sorter296exact->296/3 loss,19 unchanged code identities. Its actual signed key
+consumer stays unchanged; the loss is a contextual end-index compare transpose.
+Its33 closed files are member-verified in a46,793-byte archive before removal,
+releasing512,000 allocated bytes net before journals. Neither model changes
+source/options/products/claims or runs native/game builds. Do not repeat key
+expression/ID variants, Y/flag or name/include/helper controls.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
 [completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).

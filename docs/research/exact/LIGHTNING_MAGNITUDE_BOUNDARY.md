@@ -78,36 +78,89 @@ releasing507,904 allocated bytes net before journals. Current products and usefu
 caches remain protected. The manifest restores every retired path by size/hash;
 the REA phase index points to the same archive without duplicate evidence.
 
-## Independent next arithmetic boundary, not yet executed
+## Executed signed-key consumer boundary
 
 The presenter's signed `top + left` key ADD at409139/store409142 precedes
 clipping. Retained original presenter Evidence
 `ev_ca79613a0bb131922a4f6c409b62ad80fbc94bc7bfc427358457a912a2e388e3`
 and sorter Evidence
 `ev_6fa464860fec11c6c9b89b25ac22ba8445585a8dba2390986ff40878fc054f10`
-bind it to actual signed CMP409531/JLE409538 consumers. A count-one case would
-only publish the key and skip that consumer; it is insufficient to observe sort
-consumption. A separately reviewed count-two case instead starts with
-`B=(100,1,101,2)` and empty `A=(2147483646,2,2147483646,2)`, clip1. Predicted keys
-are101/INT_MIN; actual sorting should swap the two complete rectangle records.
+bind it to actual signed CMP409531/JLE409538 consumers. One independently
+reviewed original-only execution now starts with `B=(100,1,101,2)` and empty
+`A=(2147483646,2,2147483646,2)`, clip1. It observes both ADDs and stores, including
+the second stored key0x80000000. The signed JLE first takes its no-swap path,
+then falls through to swap both complete16-byte records and their DWORD keys.
 
 The expanded-A merge coordinates are2147483646,2,2147483647,3. Its real overlap
 helper Evidence
 `ev_38098a89555f0662ce749fc26b6fe5b78bea2da42431812abbdbf888c320c2cd`
-has widths/heights1, cached dx2147483546 and dy1; all three predicted
-executed absolute-value arguments are representable. The geometry returns0,
-clipping rejects A and B submits one bounded1×1 COM call, before count clears.
-Thus no extra coordinate overflow or artificial magnitude input is needed.
-These are static path predictions, not execution or acceptance claims.
+has widths/heights1 and cached dx2147483546/dy1. The actual three absolute-value
+arguments are2147483546,1,2147483546: all representable. The executed geometry
+returns0, clipping rejects A and B submits one bounded1x1 COM call, before count
+clears. Complete32,000-byte rectangle and8,000-byte key arrays match the expected
+swap and untouched tails. Guards, other observed globals and normalized pointers
+survive. The inherited observation tuple is checked separately from the explicit
+global snapshot, permitting only present_count2->0; that expected-state correction
+was reviewed before the sole run, not after a failed execution.
 
-This independent question predates the rejected call model's result. A coherent
-whole-display signed-coordinate contract can preserve the two existing unsigned
-magnitude wrappers and all clocks while removing only Y's conversion envelope;
-the key/crop/sum operations already use signed32 types. Preserve the existing
-display warning option when adding a per-source contract: the later CMake
-`set_source_files_properties` would otherwise overwrite an earlier option.
-Neither this model nor its boundary witness has been compiled or run. Current
-CoreNative fixture verification also reports a real resources.h input mismatch;
-prepare it explicitly before a future owner lock instead of masking that seal
-or allowing hidden compilation during a witness. No missing outside materials
-are required.
+Witness Evidence
+`ev_e1c633f5a322dc0a72afd36b44a82cbec326ddde1a90a53a0b744700c2272b7e`
+exits0, untruncated, with owned cleanup verified. Its direct report SHA256 is
+`23a01d3db063a5986e930eb5e47ff9eca3d9651a0dec8191dc1e5c9616b0b375`.
+This is original x86 under controlled COM callbacks, not physical rasterization,
+native-source validation or a new exact claim. No Native fixture is constructed
+and no hidden compilation occurs. The real resources.h fixture-input mismatch
+is neither bypassed nor relabelled. Existing EXE/resources suffice for this work.
+
+## Closed whole-display signed-coordinate model
+
+One fixed private model removes only Y's unsigned subtraction envelope while
+preserving both guarded unsigned magnitudes and all unsigned clock operations.
+Its modern proposal appends per-display GNU/Clang `-fwrapv` after the existing
+warning property; it is prepared only, not applied. The legacy recipe retains
+all20 recursive inputs and nine flags. All20 complete functions/419 actual
+bindings and the separate57-byte portable bridge are unchanged:16 prior exacts
+survive, no exact is gained or lost. This answers the legacy model, not the
+unbuilt modern proposal. No source/CMake/object/native adoption follows.
+
+Compiler Evidence
+`ev_58b0c8d361b7026810a227453abd73514bc35c974bc1039ba06f71141b882e04`
+records compiler exit0 and5.702137s compiler-call elapsed time, with161,714,176-byte scoped
+peak and zero memory high/max/OOM events. Cleanup is verified and output
+untruncated. Independent complete COFF,
+original-PE, input/protection and receipt audits pass. Authority is
+`.analysis/display-signed-contract-20261020/`, including the direct executed
+witness above. All385 current seals survive. Member verification precedes
+removal of41 redundant files into a65,898-byte archive, releasing630,784 allocated
+bytes net before journals. Current products and useful caches remain.
+
+## Closed explicit consumed-key producer model
+
+The executed witness grounds exactly one further actual-operation model:
+convert top and left to unsigned32 before their addition, then store through
+DxBallInt while preserving the signed array/sorter. Y, magnitudes, headers,
+all other source and every native/legacy option stay unchanged. C++11 defines
+the unsigned addition modulo32; the final out-of-range signed conversion relies
+on the project's supported two's-complement implementation contract. It is not
+unrestricted compiler portability or evidence of original cast spelling.
+
+One complete20-function/419-binding comparison finds no gains and one private
+loss: sorter296exact->296/3. The other19 code identities, including presenter984/6,
+are unchanged. The lost bytes transpose the signed end-index load/CMP and JG/JL
+at409518..40951E with the same exit409549. The actual key CMP/JLE consumer at
+409531/409538 stays unchanged. The sorter body itself is untouched; this is a
+contextual equivalent comparison selection, not a recovered missing key operation.
+Reject the whole model without variants or selective old-object promotion.
+
+Compiler Evidence
+`ev_2c9fc5cd44b8e23ce59cba57eb18e936fc973f9b2129abe5d6a0a9ffff1ba379`
+records compiler exit0 and2.730867s compiler-call elapsed time with161,140,736-byte scoped
+peak and zero memory high/max/OOM events, verified cleanup and untruncated
+output. Independent complete COFF,
+binding, input/protection and receipt audits pass. Private authority is
+`.analysis/display-key-producer-20261020/`. All385 seals survive;33 closed files
+are member-verified in a46,793-byte archive before removal, releasing512,000
+allocated bytes net before journals. Current products and useful caches remain.
+There is no native/game build, repeated original witness, source/ledger change
+or exact promotion. Current249 authored exacts/21 candidates remain incomplete.
+Do not repeat key spelling/ID variants, Y/flag controls or the closed helper family.
