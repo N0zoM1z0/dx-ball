@@ -126,6 +126,21 @@ before removal, releasing278,528 allocated bytes net before the journal. All137
 protected baseline/tool files and current products remain fixed; removed files
 are individually recoverable from `closed-inputs-products.tar.gz`.
 
+The [fixed historical byte-count pair](../research/exact/VC4_EXPRESSION_ORDERING.md#fixed-byte-count-context-pair-october20)
+now observes the actual context sensitivity, using two archived inputs differing
+only by the unsigned-before-product cast. Actual sprite key28321→28322 changes
+F/S ranks85/75→85/92; guarded rank entry/footer/return records prove no-swap→swap.
+Each run independently selects the full typed slot consumer; later F-first versus
+S-first order accompanies the complete145-exact versus146/86 output. Both own
+18-function/262-binding/six-carrier comparisons and full raw output coverage pass.
+This is historical diagnostic evidence, not a source adoption or current-key
+history join. Keep defined-wrap byte-count source; the next upstream question is
+the actual frontend record producer/context, not another identifier/order sweep.
+Private authority is `.analysis/glyph-order-context-20261020/result.json`.
+All32 closed inputs/products/helpers are archived and member-size/hash verified
+before removal, releasing1,114,112 allocated bytes net before the journal.
+All142 protected baseline/input/tool hashes and current392/247/23 totals stay fixed.
+
 ## Current authorities
 
 | Inventory | Current value |

@@ -240,6 +240,12 @@ pass. Current coverage is248 exact/22 candidates across30 compiler closures;
 `.analysis/bank-byte-count-20261019/authored-coverage.json` records that checkpoint.
 The historical October18 chronology below retains its own totals.
 
+The later [fixed historical byte-count pair](VC4_EXPRESSION_ORDERING.md#fixed-byte-count-context-pair-october20)
+observes the actual sprite-key/rank change and comparator child exchange across
+that single cast. Complete own-owner/raw-output checks retain145/0 versus146/86;
+the overflow-unsafe BEFORE input is diagnostic only. Current defined-wrap source,
+392 overall exact/247 authored exact/23 authored candidates remain unchanged.
+
 At the October18 handoff, the [bank filename qualifier control](MAC_CANDIDATE_FLOW_CONNECTIONS.md#bank-filename-qualification-and-path-boundary)
 closes after one resource compile: all18 complete raw/resolved bodies and13
 prior exacts remain unchanged; full COFF differences are timestamps only.

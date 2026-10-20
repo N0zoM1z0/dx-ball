@@ -412,3 +412,83 @@ the latter three also have space-neutral hard links under REA observations.
 All137 protected inputs/products/tools stay fixed. Current30-owner products,
 native library/cache, originals and tools are retained. `result.json`,
 `cleanup.json` and `verification.json` seal the closed experiment, not the goal.
+
+## Fixed byte-count context pair, October20
+
+Two immutable historical resource inputs now isolate the unsigned-before-product
+change. The eight project headers and all compiler flags are identical; the sole
+source difference is `nbytes = width * height` versus
+`nbytes = (DxBallUInt)width * height`. Both inputs/objects come from the verified
+bank-byte-count archive, not a new source variant. The older October17 rank trace
+also produced an exact145-byte lookup, but its loader has seven different local
+identifiers. It cannot substitute for this pair's missing rank observation.
+
+One reviewed20-site observer extends the preceding18-site observer only at the
+actual413DED rank helper's entry and RET4 boundary. Complete instruction pins,
+real instruction stepping, stack/nonvolatile state and root writes are checked;
+the observer changes no source, symbol key, counter or operand. The utility is
+built once, then the two fixed inputs compile serially once each. AFTER is gated
+on BEFORE's successful complete comparison, including live trace/object hashes.
+Each sample uses its own retained relocation and literal mappings; applying
+BEFORE's offsets or literal names to AFTER would be invalid.
+
+| Actual observation | Before unsigned cast | After unsigned cast |
+| --- | ---: | ---: |
+| Sprite symbol key | 28321 | 28322 |
+| Sprite leaf / load / multiply-by4 rank | 31 / 34 / 75 | 16 / 35 / 92 |
+| Font key / multiply-by1048 rank | 28107 / 85 | 28107 / 85 |
+| Rank arguments, F then S | 85, 75 | 85, 92 |
+| Observed child exchange / returned rank | No / 75 | Yes / 85 |
+| Complete raw lookup bytes / original differences | 145 / 0 | 146 / 86 |
+
+Actual rank events43/44/45 independently select F*1048 and S*4 from typed captured
+symbol/load/literal records in each run. The footer exchanges exactly the two
+ADD child fields only in AFTER; RET4 advances ESP by8 and returns the observed
+unsigned minimum. Each run's later statement173 uniquely contains the complete
+`B+1048*F+4*S` pointer-slot load, `L+36` signed-byte field and widened code-argument
+comparison. The other22 statements select zero. At this snapshot multiplication
+by4 has become a shift; BEFORE is F-first and AFTER is S-first. These are
+independently selected phase-local semantic observations, not a pointer-lifetime
+join between phases or processes. AFTER's multiply rank92/key28322 must not be
+identified with the later current cohort's shift rank92/key28342.
+
+Both runs close22 rank,40 lower and63 IR triples,52 mapper call/return/store
+triples and44 encoder/output triples. Returned buffers cover every byte of the
+respective145/146-byte raw COFF body, with all six actual lookup relocations
+checked. All18 complete functions/262 bindings/six entire literal carriers equal
+their own frozen baselines. Full normalized COFF compares ordered section
+payloads/flags, actual relocation targets and non-FILE symbols/raw auxiliaries;
+timestamp/transport offsets and separately retained FILE records are exclusions.
+The loader remains the same complete1475-byte code with77 actual relocations.
+
+REA process Evidence is
+`ev_38904e08f8cb761ad7d3a6d95a51309e7f99a31496ecf899bf02feeb2894e565`
+and `ev_0b8cdfebdad15b89de7d630860c25973121e7ebd11f752e7f898f8454a78f5f6`;
+utility-build Evidence is
+`ev_6d6c4034418f393635809210bff7637f72d5c5e0efb6aa3d8793328bdda0c2cf`.
+All three compiler processes exit0 in each sample; REA verifies owned-process
+cleanup. Runs take73.22/72.83s, peak at149,139,456/149,856,256 bytes, and retain
+the existing one-CPU/35% quota/384–512MiB limits without memory-limit/OOM events.
+Both full traces, immutable gates and independently reviewed reports remain in
+`.analysis/glyph-order-context-20261020/`, sealed by `result.json`.
+
+This observes the real historical key/rank/order sensitivity without recovering
+the original frontend record allocation or unique source spelling. BEFORE's
+implicit conversion on unsigned assignment occurs after signed multiplication
+and does not define the overflow witness. It is diagnostic, not an adopted
+reversion. A staged unsigned accumulator is not a tested rejection, but the
+original instructions show only the post-product count write and supply no
+positive reason to introduce that staging. Moving the cast between operands
+would add no missing contract. Keep current defined-wrap source and all accepted
+companions; no spelling/order/flag sweep follows. The next upstream question is
+the actual frontend producer/context responsible for the additional symbol
+record, using existing artifacts rather than unavailable original sources.
+Totals stay392 overall exact/247 authored exact/23 authored candidates.
+
+All32 closed copied inputs, objects, utility executable, logs and helper files
+are archived and individually size/SHA-256 verified before exact-file removal.
+Cleanup releases1,114,112 allocated bytes net before its journal. All142
+protected baseline/input/tool hash stays fixed. Direct reports, full traces and
+REA responses remain; the latter also have space-neutral REA observation links.
+Current products, native incremental caches, originals and tools are untouched;
+each removed file is recoverable from `closed-inputs-products.tar.gz`.
