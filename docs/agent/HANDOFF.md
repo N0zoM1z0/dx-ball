@@ -10,20 +10,53 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |265 /270 (98.15%)|
-| Authored complete exact code bytes |79,090 /84,968 (93.08%)|
-| Authored nonexact candidates / original bytes |5 /5,878|
-| Overall exact functions, including runtime/compiler units |410|
-| Exact code / attached metadata bytes |93,474 /244|
-| Current authored compiler closures |51|
+| Authored byte-exact functions |266 /270 (98.52%)|
+| Authored complete exact code bytes |79,767 /84,968 (93.88%)|
+| Authored nonexact candidates / original bytes |4 /5,201|
+| Overall exact functions, including runtime/compiler units |411|
+| Exact code / attached metadata bytes |94,151 /244|
+| Current authored compiler closures |52|
 
 Private current artifact authority is
-`.analysis/ranking-scope-source-search-20261022/current-checkpoint.json`.
-Its x-index-before-text producer/comparison, complete110-symbol/auxiliary proof,
-installed comparison, native summary and adoption identify current high-score
-acceptance. Earlier presenter264, polygon263, glyph261, resource260,
-frame-wait257 and reset256 checkpoints remain recoverable historical evidence.
+`.analysis/paddle-scoped-owner-source-search-20261022/current-checkpoint.json`.
+Its minimal-c-headers-clock-state/remainder producers, complete200-symbol/
+336-binding proof, installed comparison, native332 and adoption identify current
+paddle acceptance. Earlier high-score265, presenter264, polygon263, glyph261,
+resource260, frame-wait257 and reset256 remain historical recoverable evidence.
 Do not repeat their one-shot adoption helpers.
+
+## Completed paddle adoption
+
+The complete677-byte renderer is exact in shared `src/paddle_render.cpp`.
+Actual consumed scalar scopes restore all68 frame bytes; the minimal real typed
+interface restores the last width-comparison producer. Includes precede display
+prototypes, clock prototypes/import and renderer-state declarations. Explicit C
+linkage and every real owner ABI are retained. The matching26-input runtime
+remainder removes only drawing; all globals/tables and other source bytes stay.
+
+All13 complete functions/299 code bindings,37 initializer bindings and32 full
+literal references compare, retaining all12 prior exacts and companion code
+identities. The19-section baseline maps across two objects with one extra
+identical directive;200 non-FILE identities/206 actual projections, all raw
+auxiliaries/parents, full noncode and three7/16/397-byte carriers are checked.
+The two float anchors remain0/8 in one16-byte carrier. See
+[the exact paddle owner](../research/exact/PADDLE_RENDERER_SOURCE_OWNER.md).
+
+Thirteen distinct successful compilers include the retained ABI-invalid C++
+entry diagnostic and one matching remainder. Three superseded inputs stay
+uncompiled. Old narrow views still consumed runtime.h through display.h;
+the selected renderer actually has13 inputs and nine unchanged flags. A passive
+helper count correction reuses both outputs without a compiler retry.
+
+Native rebuild changes only both sources/link, preserving59 companion objects
+and62 existing command configurations and adding one. Exactly332 unchanged
+existing paddle calls pass. Verified fixture cache stays unchanged with zero
+preparation. Native build/check peak43,364,352/59,207,680 bytes, CPU0/35%,
+memory384/512MiB and no memory events. Ledgers/owners/recipes and progress are
+synchronized. Historical249 scopes are not replayed; no game relink/play follows.
+Unique closed evidence is member-verified archived before obsolete retirement.
+Cleanup verifies383 members and retires345 obsolete files, releasing1,679,360
+allocated bytes net before small receipts. Current tested products/caches stay.
 
 ## Completed high-score adoption
 
@@ -161,13 +194,13 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Five authored candidates remain: triangle, last-brick, paddle drawing, PCX
-loading and rotated-sprite rendering. High-score, presenter and polygon
+Four authored candidates remain: triangle, last-brick, PCX loading and
+rotated-sprite rendering. Paddle, high-score, presenter and polygon
 families are closed and adopted. Reuse their retained outputs; do not repeat
 frozen producers. Earlier high-score arithmetic/qualifier/include controls and
 triangle register/initializer controls are historical negatives.
 
-The new private paddle scalar/clock-first model restores the complete677-byte
+The preceding private paddle scalar/clock-first model restores the complete677-byte
 extent and68-byte frame, leaving only four differences at274/275/280/281:
 the two global addresses in the overlay-width MOV/CMP comparison are reversed.
 All12 runtime companion identities,299 bindings,32 complete literal references,
@@ -177,12 +210,16 @@ source inequality reversal does not change output. Several alternatives lose
 refresh-score or restart-round and are rejected coherently. See
 [the paddle residual](../research/exact/PADDLE_SCALAR_CONTEXT_RESIDUAL.md).
 
-This remains unadopted: canonical paddle678/210, authored265/270 and all maintained
-artifact hashes stay fixed. No native/game/provider check follows. Reuse the
-selected private plan/producer/comparison and verified recovery archive under
-`.analysis/paddle-scope-context-source-search-20261022/`; do not repeat those
-producers. Next investigate a distinct natural source/interface hypothesis for
-the two global loads while retaining the recovered frame and full closure.
+Those17 whole-runtime probes stay unadopted historical evidence under
+`.analysis/paddle-scope-context-source-search-20261022/`; do not repeat them.
+The subsequent minimal-interface owner above closes the four-byte residual
+and is now adopted coherently at266/270.
+
+Two current post-polygon triangle controls compare ordered ordinary/const clamp
+initializers. Both give1710/232 with9 prior exacts and all296 metadata bytes
+preserved. Duplicate40-byte xdata sections require their actual associative
+parents; the offline repair reuses the successful object. Neither is adopted.
+Their evidence is retained with this paddle checkpoint; do not repeat them.
 
 Select a finite natural source family from the current complete residuals and
 retained owner/correspondence notes. Keep source scope/representation, actual
@@ -207,7 +244,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -218,7 +255,6 @@ Sizes below are original/current; differences are strict full-span counts.
 | --- | --- | ---: | ---: |
 | fill-triangle |raster.cpp|1710 /1710|60|
 | last-brick |display.cpp|1057 /1047|976|
-| draw-paddle |runtime.cpp|677 /678|210|
 | load-pcx |resources.cpp|862 /979|851|
 | render-rotated-sprite |rotation.cpp|1572 /1458|1466|
 

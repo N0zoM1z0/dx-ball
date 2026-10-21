@@ -111,6 +111,7 @@ def main():
         return
     build = builds["boards"]
     owner_flags = {
+        "src/paddle_render.cpp": builds["paddle_render"]["flags"],
         "src/raster.cpp": builds["raster"]["flags"],
         "src/fill_polygon.cpp": builds["fill_polygon"]["flags"],
         "src/fill_polygon_clipped.cpp": builds["fill_polygon_clipped"]["flags"],
@@ -170,7 +171,7 @@ def main():
         print(f'legacy object {action}: {source}', flush=True)
         return output
 
-    for source in ("src/allocator.c", "src/cpp_allocator.cpp", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/blt_keyed_sprite.cpp", "src/blt_sprite.cpp", "src/capture_sprite.cpp", "src/draw_keyed_sprite.cpp", "src/draw_rotated_sprite.cpp", "src/draw_sprite.cpp", "src/glyphs.cpp", "src/load_live_palette.cpp", "src/load_saved_palette.cpp", "src/load_sprite_bank.cpp", "src/load_surface_palette.cpp", "src/release_sprite.cpp", "src/release_sprite_bank.cpp", "src/select_font_bank.cpp", "src/select_sprite_bank.cpp", "src/stretch_keyed_sprite.cpp", "src/rotation.cpp", "src/raster.cpp", "src/fill_polygon.cpp", "src/fill_polygon_clipped.cpp", "src/raster_host.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.cpp", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/clock.cpp", "src/round_reset.cpp", "src/display.cpp", "src/frame_wait.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/drawing_primitives.cpp", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
+    for source in ("src/allocator.c", "src/cpp_allocator.cpp", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/blt_keyed_sprite.cpp", "src/blt_sprite.cpp", "src/capture_sprite.cpp", "src/draw_keyed_sprite.cpp", "src/draw_rotated_sprite.cpp", "src/draw_sprite.cpp", "src/glyphs.cpp", "src/load_live_palette.cpp", "src/load_saved_palette.cpp", "src/load_sprite_bank.cpp", "src/load_surface_palette.cpp", "src/release_sprite.cpp", "src/release_sprite_bank.cpp", "src/select_font_bank.cpp", "src/select_sprite_bank.cpp", "src/stretch_keyed_sprite.cpp", "src/rotation.cpp", "src/raster.cpp", "src/fill_polygon.cpp", "src/fill_polygon_clipped.cpp", "src/raster_host.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.cpp", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/paddle_render.cpp", "src/clock.cpp", "src/round_reset.cpp", "src/display.cpp", "src/frame_wait.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/drawing_primitives.cpp", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
         flags = owner_flags.get(source, build["flags"])
         output = compile_source(source, flags)
         objects.append(output)

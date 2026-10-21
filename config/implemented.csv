@@ -218,7 +218,7 @@ address,symbol,source,scope,semantic_unit
 0x00412BA0,dxball_spawn_brick_effect,src/effects.c,"See docs/research/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-spawn-brick-effect
 0x00412CB0,dxball_step_brick_effect,src/effects.c,"See docs/research/EFFECTS_OWNER.md; valid grid/list state, tested timers and controlled dependencies",effects-step-brick-effect
 0x00412DF0,dxball_update_paddle_position,src/paddle.c,See docs/research/POWERUPS_OWNER.md; bounded arithmetic and declared controlled dependencies,powerups-update-paddle-position
-0x00412EC0,dxball_draw_paddle,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-draw-paddle
+0x00412EC0,dxball_draw_paddle,src/paddle_render.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-draw-paddle
 0x00413170,dxball_update_projectiles,src/core.c,See docs/research/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-update-projectiles
 0x004132C0,dxball_fire_projectiles,src/core.c,See docs/research/CORE_OWNER.md; bounded valid state and explicit configured frame/platform dependencies,core-fire-projectiles
 0x00413410,dxball_append_projectile,src/list_initializers.cpp,"See docs/research/CORE_QUEUES.md; valid typed roots/backing, untouched payload and finite count decrement; allocation/release/exit bridges; malformed lists, arbitrary host padding, physical APIs and full campaigns unclaimed",core-queues-append-projectile

@@ -2398,31 +2398,31 @@ relocations = [
 ]
 
 [units.clear-all-entities]
+boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 7, "symbol" = "_dxball_projectiles", "target" = 4434072, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 12, "symbol" = "@dxball_clear_projectile_list@4", "target" = 4285904, "type" = "REL32" },
+  { "addend" = 0, "offset" = 17, "symbol" = "_dxball_balls", "target" = 4434104, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 22, "symbol" = "@dxball_clear_ball_list@4", "target" = 4280432, "type" = "REL32" },
+  { "addend" = 0, "offset" = 27, "symbol" = "_dxball_brick_effects", "target" = 4455064, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 32, "symbol" = "@dxball_clear_brick_effect_list@4", "target" = 4285856, "type" = "REL32" },
+  { "addend" = 0, "offset" = 37, "symbol" = "_dxball_explosions", "target" = 4454624, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 42, "symbol" = "@dxball_clear_explosion_list@4", "target" = 4281312, "type" = "REL32" },
+  { "addend" = 0, "offset" = 47, "symbol" = "_dxball_bonuses", "target" = 4455112, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 52, "symbol" = "@dxball_clear_bonus_list@4", "target" = 4285808, "type" = "REL32" },
+  { "addend" = 0, "offset" = 57, "symbol" = "_dxball_particles", "target" = 4434024, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 62, "symbol" = "@dxball_clear_particle_list@4", "target" = 4285760, "type" = "REL32" },
+  { "addend" = 0, "offset" = 67, "symbol" = "_dxball_duplicate_balls", "target" = 4434600, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 72, "symbol" = "@dxball_clear_ball_list@4", "target" = 4280432, "type" = "REL32" },
+  { "addend" = 0, "offset" = 77, "symbol" = "_dxball_explosive_sources", "target" = 4455080, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 82, "symbol" = "@dxball_clear_explosion_list@4", "target" = 4281312, "type" = "REL32" },
+  { "addend" = 0, "offset" = 87, "symbol" = "_dxball_fire_effects", "target" = 4434144, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 92, "symbol" = "@dxball_clear_fire_effect_list@4", "target" = 4285712, "type" = "REL32" },
+]
+size = 106
 symbol = "_dxball_clear_all_entities"
 target_address = 4285600
-size = 106
-boundary_evidence = "docs/research/exact/EXACT_LISTS.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4434072, "symbol" = "_dxball_projectiles", "offset" = 7 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285904, "symbol" = "@dxball_clear_projectile_list@4", "offset" = 12 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434104, "symbol" = "_dxball_balls", "offset" = 17 },
-  { "type" = "REL32", "addend" = 0, "target" = 4280432, "symbol" = "@dxball_clear_ball_list@4", "offset" = 22 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455064, "symbol" = "_dxball_brick_effects", "offset" = 27 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285856, "symbol" = "@dxball_clear_brick_effect_list@4", "offset" = 32 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4454624, "symbol" = "_dxball_explosions", "offset" = 37 },
-  { "type" = "REL32", "addend" = 0, "target" = 4281312, "symbol" = "@dxball_clear_explosion_list@4", "offset" = 42 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455112, "symbol" = "_dxball_bonuses", "offset" = 47 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285808, "symbol" = "@dxball_clear_bonus_list@4", "offset" = 52 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434024, "symbol" = "_dxball_particles", "offset" = 57 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285760, "symbol" = "@dxball_clear_particle_list@4", "offset" = 62 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434600, "symbol" = "_dxball_duplicate_balls", "offset" = 67 },
-  { "type" = "REL32", "addend" = 0, "target" = 4280432, "symbol" = "@dxball_clear_ball_list@4", "offset" = 72 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455080, "symbol" = "_dxball_explosive_sources", "offset" = 77 },
-  { "type" = "REL32", "addend" = 0, "target" = 4281312, "symbol" = "@dxball_clear_explosion_list@4", "offset" = 82 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434144, "symbol" = "_dxball_fire_effects", "offset" = 87 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285712, "symbol" = "@dxball_clear_fire_effect_list@4", "offset" = 92 },
-]
 
 [units.load-live-palette]
 boundary_evidence = "docs/research/exact/EXACT_PALETTES.md"
@@ -3143,20 +3143,20 @@ inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/core.h", "s
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]
 
 [units.refresh-score]
+boundary_evidence = "docs/research/exact/EXACT_CONTROL_FLOW.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 7, "symbol" = "_dxball_score", "target" = 4336920, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 13, "symbol" = "_dxball_displayed_score", "target" = 4434052, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 25, "symbol" = "_dxball_score", "target" = 4336920, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 41, "symbol" = "_dxball_score", "target" = 4336920, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 50, "symbol" = "_dxball_draw_score", "target" = 4282576, "type" = "REL32" },
+  { "addend" = 0, "offset" = 55, "symbol" = "_dxball_score", "target" = 4336920, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 60, "symbol" = "_dxball_displayed_score", "target" = 4434052, "type" = "DIR32" },
+]
+size = 74
 symbol = "_dxball_refresh_score"
 target_address = 4282496
-size = 74
-boundary_evidence = "docs/research/exact/EXACT_CONTROL_FLOW.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4336920, "symbol" = "_dxball_score", "offset" = 7 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434052, "symbol" = "_dxball_displayed_score", "offset" = 13 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336920, "symbol" = "_dxball_score", "offset" = 25 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336920, "symbol" = "_dxball_score", "offset" = 41 },
-  { "type" = "REL32", "addend" = 0, "target" = 4282576, "symbol" = "_dxball_draw_score", "offset" = 50 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336920, "symbol" = "_dxball_score", "offset" = 55 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434052, "symbol" = "_dxball_displayed_score", "offset" = 60 },
-]
 
 [units.elapsed]
 build = "clock"
@@ -4029,16 +4029,16 @@ relocations = [
 ]
 
 [units.finish-game]
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 9, "symbol" = "_dxball_wait_frames", "target" = 4232720, "type" = "REL32" },
+  { "addend" = 0, "offset" = 18, "symbol" = "_dxball_end_requested", "target" = 4348276, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 28, "symbol" = "_dxball_return_to_menu", "target" = 4348280, "type" = "DIR32" },
+]
+size = 46
 symbol = "_dxball_finish_game"
 target_address = 4283408
-size = 46
-boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
-relocations = [
-  { "type" = "REL32", "addend" = 0, "target" = 4232720, "symbol" = "_dxball_wait_frames", "offset" = 9 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348276, "symbol" = "_dxball_end_requested", "offset" = 18 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348280, "symbol" = "_dxball_return_to_menu", "offset" = 28 },
-]
 
 [units.reset-round]
 build = "round_reset"
@@ -4093,208 +4093,208 @@ relocations = [
 ]
 
 [units.restart-round]
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 11, "symbol" = "_dxball_restart_requested", "target" = 4434188, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 24, "symbol" = "_dxball_level_changed", "target" = 4336924, "type" = "DIR32" },
+  { "addend" = 2, "offset" = 71, "symbol" = "_dxball_saved_palette", "target" = 4424432, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 83, "symbol" = "_dxball_saved_palette", "target" = 4424432, "type" = "DIR32" },
+  { "addend" = 1, "offset" = 97, "symbol" = "_dxball_saved_palette", "target" = 4424432, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 124, "symbol" = "_dxball_saved_palette", "target" = 4424432, "type" = "DIR32" },
+  { "addend" = 1, "offset" = 137, "symbol" = "_dxball_saved_palette", "target" = 4424432, "type" = "DIR32" },
+  { "addend" = 2, "offset" = 150, "symbol" = "_dxball_saved_palette", "target" = 4424432, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 173, "symbol" = "_dxball_palette_transition", "target" = 4236096, "type" = "REL32" },
+  { "addend" = 0, "offset" = 194, "symbol" = "_dxball_palette_transition", "target" = 4236096, "type" = "REL32" },
+  { "addend" = 0, "offset" = 220, "symbol" = "_dxball_palette_transition", "target" = 4236096, "type" = "REL32" },
+  { "addend" = 0, "offset" = 230, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 236, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "offset" = 246, "symbol" = "_dxball_primary_surface", "target" = 4335796, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 252, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "offset" = 267, "symbol" = "_dxball_board_aux", "target" = 4434200, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 272, "symbol" = "_memset", "target" = 4291648, "type" = "REL32" },
+  { "addend" = 0, "offset" = 280, "symbol" = "_dxball_clear_all_entities", "target" = 4285600, "type" = "REL32" },
+  { "addend" = 0, "offset" = 285, "symbol" = "_dxball_reset_regions", "target" = 4227184, "type" = "REL32" },
+  { "addend" = 0, "offset" = 291, "symbol" = "_dxball_lives", "target" = 4434056, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 303, "symbol" = "_dxball_finish_game", "target" = 4283408, "type" = "REL32" },
+  { "addend" = 0, "offset" = 313, "symbol" = "_dxball_reset_round", "target" = 4283456, "type" = "REL32" },
+]
+size = 327
 symbol = "_dxball_restart_round"
 target_address = 4283888
-size = 327
-boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4434188, "symbol" = "_dxball_restart_requested", "offset" = 11 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336924, "symbol" = "_dxball_level_changed", "offset" = 24 },
-  { "type" = "DIR32", "addend" = 2, "target" = 4424432, "symbol" = "_dxball_saved_palette", "offset" = 71 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4424432, "symbol" = "_dxball_saved_palette", "offset" = 83 },
-  { "type" = "DIR32", "addend" = 1, "target" = 4424432, "symbol" = "_dxball_saved_palette", "offset" = 97 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4424432, "symbol" = "_dxball_saved_palette", "offset" = 124 },
-  { "type" = "DIR32", "addend" = 1, "target" = 4424432, "symbol" = "_dxball_saved_palette", "offset" = 137 },
-  { "type" = "DIR32", "addend" = 2, "target" = 4424432, "symbol" = "_dxball_saved_palette", "offset" = 150 },
-  { "type" = "REL32", "addend" = 0, "target" = 4236096, "symbol" = "_dxball_palette_transition", "offset" = 173 },
-  { "type" = "REL32", "addend" = 0, "target" = 4236096, "symbol" = "_dxball_palette_transition", "offset" = 194 },
-  { "type" = "REL32", "addend" = 0, "target" = 4236096, "symbol" = "_dxball_palette_transition", "offset" = 220 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 230 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 236 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335796, "symbol" = "_dxball_primary_surface", "offset" = 246 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 252 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434200, "symbol" = "_dxball_board_aux", "offset" = 267 },
-  { "type" = "REL32", "addend" = 0, "target" = 4291648, "symbol" = "_memset", "offset" = 272 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285600, "symbol" = "_dxball_clear_all_entities", "offset" = 280 },
-  { "type" = "REL32", "addend" = 0, "target" = 4227184, "symbol" = "_dxball_reset_regions", "offset" = 285 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434056, "symbol" = "_dxball_lives", "offset" = 291 },
-  { "type" = "REL32", "addend" = 0, "target" = 4283408, "symbol" = "_dxball_finish_game", "offset" = 303 },
-  { "type" = "REL32", "addend" = 0, "target" = 4283456, "symbol" = "_dxball_reset_round", "offset" = 313 },
-]
 
 [units.dispose-game]
+boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 18, "symbol" = "_dxball_restart_requested", "target" = 4434188, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 43, "symbol" = "_dxball_palette_transition", "target" = 4236096, "type" = "REL32" },
+  { "addend" = 0, "offset" = 53, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 59, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "offset" = 69, "symbol" = "_dxball_primary_surface", "target" = 4335796, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 75, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "offset" = 83, "symbol" = "_dxball_release_sounds", "target" = 4217008, "type" = "REL32" },
+  { "addend" = 0, "offset" = 88, "symbol" = "_dxball_release_sprite_banks", "target" = 4209840, "type" = "REL32" },
+  { "addend" = 0, "offset" = 93, "symbol" = "_dxball_close_music", "target" = 4201888, "type" = "REL32" },
+  { "addend" = 0, "offset" = 98, "symbol" = "_dxball_clear_all_entities", "target" = 4285600, "type" = "REL32" },
+]
+size = 112
 symbol = "_dxball_dispose_game"
 target_address = 4285488
-size = 112
-boundary_evidence = "docs/research/exact/EXACT_LIFECYCLE.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4434188, "symbol" = "_dxball_restart_requested", "offset" = 18 },
-  { "type" = "REL32", "addend" = 0, "target" = 4236096, "symbol" = "_dxball_palette_transition", "offset" = 43 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 53 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 59 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335796, "symbol" = "_dxball_primary_surface", "offset" = 69 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 75 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217008, "symbol" = "_dxball_release_sounds", "offset" = 83 },
-  { "type" = "REL32", "addend" = 0, "target" = 4209840, "symbol" = "_dxball_release_sprite_banks", "offset" = 88 },
-  { "type" = "REL32", "addend" = 0, "target" = 4201888, "symbol" = "_dxball_close_music", "offset" = 93 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285600, "symbol" = "_dxball_clear_all_entities", "offset" = 98 },
-]
 
 [units.initialize-game]
+boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 9, "symbol" = "_dxball_background_surface", "target" = 4329584, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 15, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "6d62626b67726e642e70637800", "offset" = 29, "symbol" = "$SG29757", "target" = 4336932, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 34, "symbol" = "_dxball_background_surface", "target" = 4329584, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 40, "symbol" = "_dxball_load_pcx", "target" = 4234160, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "6d62616c6c322e73626b00", "offset" = 48, "symbol" = "$SG29758", "target" = 4336948, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 57, "symbol" = "_dxball_load_sprite_bank", "target" = 4212240, "type" = "REL32" },
+  { "addend" = 0, "offset" = 67, "symbol" = "_dxball_select_sprite_bank", "target" = 4210288, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "746865666f6e742e73626b00", "offset" = 75, "symbol" = "$SG29759", "target" = 4336960, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 84, "symbol" = "_dxball_load_sprite_bank", "target" = 4212240, "type" = "REL32" },
+  { "addend" = 0, "offset" = 94, "symbol" = "_dxball_select_font_bank", "target" = 4210320, "type" = "REL32" },
+  { "addend" = 3116, "offset" = 103, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 3120, "offset" = 113, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 124, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 130, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "626967626f6c742e70637800", "offset" = 144, "symbol" = "$SG29762", "target" = 4336972, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 149, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 155, "symbol" = "_dxball_load_pcx", "target" = 4234160, "type" = "REL32" },
+  { "addend" = 0, "offset" = 165, "symbol" = "_dxball_select_sprite_bank", "target" = 4210288, "type" = "REL32" },
+  { "addend" = 0, "offset" = 189, "symbol" = "_dxball_capture_sprite", "target" = 4211376, "type" = "REL32" },
+  { "addend" = 0, "offset" = 199, "symbol" = "_dxball_select_sprite_bank", "target" = 4210288, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "626f696e672e77617600", "offset" = 207, "symbol" = "$SG29763", "target" = 4336984, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 214, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "6566666563742e77617600", "offset" = 222, "symbol" = "$SG29764", "target" = 4336996, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 229, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "62616e672e77617600", "offset" = 237, "symbol" = "$SG29765", "target" = 4337008, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 244, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "616f2d6c617365722e77617600", "offset" = 252, "symbol" = "$SG29766", "target" = 4337020, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 259, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "626173736472756d2e77617600", "offset" = 267, "symbol" = "$SG29767", "target" = 4337036, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 274, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "62796562616c6c2e77617600", "offset" = 282, "symbol" = "$SG29768", "target" = 4337052, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 289, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "776f7770756c73652e77617600", "offset" = 297, "symbol" = "$SG29769", "target" = 4337064, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 304, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "7361756365722e77617600", "offset" = 312, "symbol" = "$SG29770", "target" = 4337080, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 319, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "6f726368657374722e77617600", "offset" = 327, "symbol" = "$SG29771", "target" = 4337092, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 334, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "656666656374322e77617600", "offset" = 342, "symbol" = "$SG29772", "target" = 4337108, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 349, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "7377656570646f772e77617600", "offset" = 357, "symbol" = "$SG29773", "target" = 4337120, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 364, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "70656f77212e77617600", "offset" = 372, "symbol" = "$SG29774", "target" = 4337136, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 379, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "66616e666172652e77617600", "offset" = 387, "symbol" = "$SG29775", "target" = 4337148, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 394, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "7061646578706c6f2e77617600", "offset" = 402, "symbol" = "$SG29776", "target" = 4337160, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 409, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "7269636f636865742e77617600", "offset" = 417, "symbol" = "$SG29777", "target" = 4337176, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 424, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "73776f72647377692e77617600", "offset" = 432, "symbol" = "$SG29778", "target" = 4337192, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 439, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "67756e666972652e77617600", "offset" = 447, "symbol" = "$SG29779", "target" = 4337208, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 454, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "68756d6d2e77617600", "offset" = 462, "symbol" = "$SG29780", "target" = 4337220, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 469, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "676c6173732e77617600", "offset" = 477, "symbol" = "$SG29781", "target" = 4337232, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 484, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "6f726368626c61732e77617600", "offset" = 492, "symbol" = "$SG29782", "target" = 4337244, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 499, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "766f6c746167652e77617600", "offset" = 507, "symbol" = "$SG29783", "target" = 4337260, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 514, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "74687564636c61702e77617600", "offset" = 522, "symbol" = "$SG29784", "target" = 4337272, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 529, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "74616e6b2e77617600", "offset" = 537, "symbol" = "$SG29785", "target" = 4337288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 544, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "78706c6f736874312e77617600", "offset" = 552, "symbol" = "$SG29786", "target" = 4337300, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 559, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "78706c6f73686f722e77617600", "offset" = 567, "symbol" = "$SG29787", "target" = 4337316, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 574, "symbol" = "_dxball_load_sound", "target" = 4217232, "type" = "REL32" },
+  { "addend" = 0, "offset" = 583, "symbol" = "_dxball_paused", "target" = 4455140, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 593, "symbol" = "_dxball_displayed_score", "target" = 4434052, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 603, "symbol" = "_dxball_score", "target" = 4336920, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 613, "symbol" = "_dxball_lives", "target" = 4434056, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 623, "symbol" = "_dxball_paddle_frame", "target" = 4455128, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 633, "symbol" = "_dxball_paddle_tick", "target" = 4455132, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 643, "symbol" = "_dxball_board_index", "target" = 4434168, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 652, "symbol" = "_dxball_initialize_board", "target" = 4266288, "type" = "REL32" },
+  { "addend" = 0, "offset" = 657, "symbol" = "_dxball_reset_round", "target" = 4283456, "type" = "REL32" },
+  { "addend" = 0, "offset" = 662, "symbol" = "_dxball_reset_regions", "target" = 4227184, "type" = "REL32" },
+  { "addend" = 0, "offset" = 667, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 673, "symbol" = "_dxball_bind_board_surface", "target" = 4231168, "type" = "REL32" },
+  { "addend" = 0, "offset" = 682, "symbol" = "_dxball_draw_to_primary", "target" = 4335824, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 694, "symbol" = "_dxball_primary_surface", "target" = 4335796, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 700, "symbol" = "_dxball_bind_display_surface", "target" = 4231200, "type" = "REL32" },
+  { "addend" = 0, "offset" = 713, "symbol" = "_dxball_secondary_surface", "target" = 4335800, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 719, "symbol" = "_dxball_bind_display_surface", "target" = 4231200, "type" = "REL32" },
+]
+size = 736
 symbol = "_dxball_initialize_game"
 target_address = 4256960
-size = 736
-boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4329584, "symbol" = "_dxball_background_surface", "offset" = 9 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 15 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336932, "data_hex" = "6d62626b67726e642e70637800", "symbol" = "$SG29784", "offset" = 29 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329584, "symbol" = "_dxball_background_surface", "offset" = 34 },
-  { "type" = "REL32", "addend" = 0, "target" = 4234160, "symbol" = "_dxball_load_pcx", "offset" = 40 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336948, "data_hex" = "6d62616c6c322e73626b00", "symbol" = "$SG29785", "offset" = 48 },
-  { "type" = "REL32", "addend" = 0, "target" = 4212240, "symbol" = "_dxball_load_sprite_bank", "offset" = 57 },
-  { "type" = "REL32", "addend" = 0, "target" = 4210288, "symbol" = "_dxball_select_sprite_bank", "offset" = 67 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336960, "data_hex" = "746865666f6e742e73626b00", "symbol" = "$SG29786", "offset" = 75 },
-  { "type" = "REL32", "addend" = 0, "target" = 4212240, "symbol" = "_dxball_load_sprite_bank", "offset" = 84 },
-  { "type" = "REL32", "addend" = 0, "target" = 4210320, "symbol" = "_dxball_select_font_bank", "offset" = 94 },
-  { "type" = "DIR32", "addend" = 3116, "target" = 4348288, "symbol" = "_dxball_sprite_banks", "offset" = 103 },
-  { "type" = "DIR32", "addend" = 3120, "target" = 4348288, "symbol" = "_dxball_sprite_banks", "offset" = 113 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 124 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 130 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336972, "data_hex" = "626967626f6c742e70637800", "symbol" = "$SG29789", "offset" = 144 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 149 },
-  { "type" = "REL32", "addend" = 0, "target" = 4234160, "symbol" = "_dxball_load_pcx", "offset" = 155 },
-  { "type" = "REL32", "addend" = 0, "target" = 4210288, "symbol" = "_dxball_select_sprite_bank", "offset" = 165 },
-  { "type" = "REL32", "addend" = 0, "target" = 4211376, "symbol" = "_dxball_capture_sprite", "offset" = 189 },
-  { "type" = "REL32", "addend" = 0, "target" = 4210288, "symbol" = "_dxball_select_sprite_bank", "offset" = 199 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336984, "data_hex" = "626f696e672e77617600", "symbol" = "$SG29790", "offset" = 207 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 214 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336996, "data_hex" = "6566666563742e77617600", "symbol" = "$SG29791", "offset" = 222 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 229 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337008, "data_hex" = "62616e672e77617600", "symbol" = "$SG29792", "offset" = 237 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 244 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337020, "data_hex" = "616f2d6c617365722e77617600", "symbol" = "$SG29793", "offset" = 252 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 259 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337036, "data_hex" = "626173736472756d2e77617600", "symbol" = "$SG29794", "offset" = 267 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 274 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337052, "data_hex" = "62796562616c6c2e77617600", "symbol" = "$SG29795", "offset" = 282 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 289 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337064, "data_hex" = "776f7770756c73652e77617600", "symbol" = "$SG29796", "offset" = 297 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 304 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337080, "data_hex" = "7361756365722e77617600", "symbol" = "$SG29797", "offset" = 312 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 319 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337092, "data_hex" = "6f726368657374722e77617600", "symbol" = "$SG29798", "offset" = 327 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 334 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337108, "data_hex" = "656666656374322e77617600", "symbol" = "$SG29799", "offset" = 342 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 349 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337120, "data_hex" = "7377656570646f772e77617600", "symbol" = "$SG29800", "offset" = 357 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 364 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337136, "data_hex" = "70656f77212e77617600", "symbol" = "$SG29801", "offset" = 372 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 379 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337148, "data_hex" = "66616e666172652e77617600", "symbol" = "$SG29802", "offset" = 387 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 394 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337160, "data_hex" = "7061646578706c6f2e77617600", "symbol" = "$SG29803", "offset" = 402 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 409 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337176, "data_hex" = "7269636f636865742e77617600", "symbol" = "$SG29804", "offset" = 417 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 424 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337192, "data_hex" = "73776f72647377692e77617600", "symbol" = "$SG29805", "offset" = 432 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 439 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337208, "data_hex" = "67756e666972652e77617600", "symbol" = "$SG29806", "offset" = 447 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 454 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337220, "data_hex" = "68756d6d2e77617600", "symbol" = "$SG29807", "offset" = 462 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 469 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337232, "data_hex" = "676c6173732e77617600", "symbol" = "$SG29808", "offset" = 477 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 484 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337244, "data_hex" = "6f726368626c61732e77617600", "symbol" = "$SG29809", "offset" = 492 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 499 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337260, "data_hex" = "766f6c746167652e77617600", "symbol" = "$SG29810", "offset" = 507 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 514 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337272, "data_hex" = "74687564636c61702e77617600", "symbol" = "$SG29811", "offset" = 522 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 529 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337288, "data_hex" = "74616e6b2e77617600", "symbol" = "$SG29812", "offset" = 537 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 544 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337300, "data_hex" = "78706c6f736874312e77617600", "symbol" = "$SG29813", "offset" = 552 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 559 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337316, "data_hex" = "78706c6f73686f722e77617600", "symbol" = "$SG29814", "offset" = 567 },
-  { "type" = "REL32", "addend" = 0, "target" = 4217232, "symbol" = "_dxball_load_sound", "offset" = 574 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455140, "symbol" = "_dxball_paused", "offset" = 583 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434052, "symbol" = "_dxball_displayed_score", "offset" = 593 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4336920, "symbol" = "_dxball_score", "offset" = 603 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434056, "symbol" = "_dxball_lives", "offset" = 613 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455128, "symbol" = "_dxball_paddle_frame", "offset" = 623 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455132, "symbol" = "_dxball_paddle_tick", "offset" = 633 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434168, "symbol" = "_dxball_board_index", "offset" = 643 },
-  { "type" = "REL32", "addend" = 0, "target" = 4266288, "symbol" = "_dxball_initialize_board", "offset" = 652 },
-  { "type" = "REL32", "addend" = 0, "target" = 4283456, "symbol" = "_dxball_reset_round", "offset" = 657 },
-  { "type" = "REL32", "addend" = 0, "target" = 4227184, "symbol" = "_dxball_reset_regions", "offset" = 662 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 667 },
-  { "type" = "REL32", "addend" = 0, "target" = 4231168, "symbol" = "_dxball_bind_board_surface", "offset" = 673 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335824, "symbol" = "_dxball_draw_to_primary", "offset" = 682 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335796, "symbol" = "_dxball_primary_surface", "offset" = 694 },
-  { "type" = "REL32", "addend" = 0, "target" = 4231200, "symbol" = "_dxball_bind_display_surface", "offset" = 700 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335800, "symbol" = "_dxball_secondary_surface", "offset" = 713 },
-  { "type" = "REL32", "addend" = 0, "target" = 4231200, "symbol" = "_dxball_bind_display_surface", "offset" = 719 },
-]
 
 [units.redraw-game]
+boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 40, "symbol" = "_dxball_primary_surface", "target" = 4335796, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 46, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "offset" = 56, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 62, "symbol" = "_dxball_clear_surface", "target" = 4235024, "type" = "REL32" },
+  { "addend" = 0, "offset" = 81, "symbol" = "_dxball_background_surface", "target" = 4329584, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 91, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 97, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 107, "symbol" = "_dxball_draw_score", "target" = 4282576, "type" = "REL32" },
+  { "addend" = 0, "offset" = 114, "symbol" = "_dxball_draw_board", "target" = 4266352, "type" = "REL32" },
+  { "addend" = 0, "offset" = 123, "symbol" = "_dxball_paused", "target" = 4455140, "type" = "DIR32" },
+  { "addend" = 0, "data_hex" = "50415553454400", "offset" = 135, "symbol" = "$SG29747", "target" = 4337332, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 152, "symbol" = "_dxball_draw_centered_text", "target" = 4214656, "type" = "REL32" },
+  { "addend" = 0, "offset" = 171, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 181, "symbol" = "_dxball_primary_surface", "target" = 4335796, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 187, "symbol" = "_dxball_primary_surface", "target" = 4335796, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 198, "symbol" = "_dxball_display_buffer_count", "target" = 4335776, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 211, "symbol" = "_dxball_draw_to_primary", "target" = 4335824, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 234, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 244, "symbol" = "_dxball_secondary_surface", "target" = 4335800, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 250, "symbol" = "_dxball_secondary_surface", "target" = 4335800, "type" = "DIR32" },
+]
+size = 269
 symbol = "_dxball_redraw_game"
 target_address = 4257696
-size = 269
-boundary_evidence = "docs/research/exact/EXACT_RUNTIME_SETUP.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4335796, "symbol" = "_dxball_primary_surface", "offset" = 40 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 46 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 56 },
-  { "type" = "REL32", "addend" = 0, "target" = 4235024, "symbol" = "_dxball_clear_surface", "offset" = 62 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329584, "symbol" = "_dxball_background_surface", "offset" = 81 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 91 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 97 },
-  { "type" = "REL32", "addend" = 0, "target" = 4282576, "symbol" = "_dxball_draw_score", "offset" = 107 },
-  { "type" = "REL32", "addend" = 0, "target" = 4266352, "symbol" = "_dxball_draw_board", "offset" = 114 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455140, "symbol" = "_dxball_paused", "offset" = 123 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4337332, "data_hex" = "50415553454400", "symbol" = "$SG29774", "offset" = 135 },
-  { "type" = "REL32", "addend" = 0, "target" = 4214656, "symbol" = "_dxball_draw_centered_text", "offset" = 152 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 171 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335796, "symbol" = "_dxball_primary_surface", "offset" = 181 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335796, "symbol" = "_dxball_primary_surface", "offset" = 187 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335776, "symbol" = "_dxball_display_buffer_count", "offset" = 198 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335824, "symbol" = "_dxball_draw_to_primary", "offset" = 211 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 234 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335800, "symbol" = "_dxball_secondary_surface", "offset" = 244 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335800, "symbol" = "_dxball_secondary_surface", "offset" = 250 },
-]
 
 [units.draw-score]
+boundary_evidence = "docs/research/exact/SCORE_WORKSPACE_REGIONS.md"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 16, "symbol" = "_dxball_score", "target" = 4336920, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 22, "symbol" = "__ultoa", "target" = 4322672, "type" = "REL32" },
+  { "addend" = 0, "offset" = 34, "symbol" = "_strlen", "target" = 4292080, "type" = "REL32" },
+  { "addend" = 0, "offset" = 91, "symbol" = "_dxball_background_surface", "target" = 4329584, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 101, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 107, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 117, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 123, "symbol" = "_dxball_select_surface", "target" = 4210256, "type" = "REL32" },
+  { "addend" = 0, "offset" = 143, "symbol" = "_dxball_draw_text", "target" = 4214496, "type" = "REL32" },
+  { "addend" = 0, "offset" = 167, "symbol" = "_dxball_invalidate_region", "target" = 4230000, "type" = "REL32" },
+  { "addend" = 0, "offset" = 175, "symbol" = "_dxball_lives", "target" = 4434056, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 255, "symbol" = "_dxball_background_surface", "target" = 4329584, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 269, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 275, "symbol" = "_dxball_board_surface", "target" = 4335804, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 300, "symbol" = "_dxball_lives", "target" = 4434056, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 313, "symbol" = "_dxball_lives", "target" = 4434056, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 337, "symbol" = "_dxball_lives", "target" = 4434056, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 362, "symbol" = "_dxball_draw_keyed_sprite", "target" = 4210752, "type" = "REL32" },
+  { "addend" = 0, "offset" = 416, "symbol" = "_dxball_invalidate_region", "target" = 4230000, "type" = "REL32" },
+]
+size = 433
 symbol = "_dxball_draw_score"
 target_address = 4282576
-size = 433
-boundary_evidence = "docs/research/exact/SCORE_WORKSPACE_REGIONS.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4336920, "symbol" = "_dxball_score", "offset" = 16 },
-  { "type" = "REL32", "addend" = 0, "target" = 4322672, "symbol" = "__ultoa", "offset" = 22 },
-  { "type" = "REL32", "addend" = 0, "target" = 4292080, "symbol" = "_strlen", "offset" = 34 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329584, "symbol" = "_dxball_background_surface", "offset" = 91 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 101 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 107 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 117 },
-  { "type" = "REL32", "addend" = 0, "target" = 4210256, "symbol" = "_dxball_select_surface", "offset" = 123 },
-  { "type" = "REL32", "addend" = 0, "target" = 4214496, "symbol" = "_dxball_draw_text", "offset" = 143 },
-  { "type" = "REL32", "addend" = 0, "target" = 4230000, "symbol" = "_dxball_invalidate_region", "offset" = 167 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434056, "symbol" = "_dxball_lives", "offset" = 175 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329584, "symbol" = "_dxball_background_surface", "offset" = 255 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 269 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335804, "symbol" = "_dxball_board_surface", "offset" = 275 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434056, "symbol" = "_dxball_lives", "offset" = 300 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434056, "symbol" = "_dxball_lives", "offset" = 313 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434056, "symbol" = "_dxball_lives", "offset" = 337 },
-  { "type" = "REL32", "addend" = 0, "target" = 4210752, "symbol" = "_dxball_draw_keyed_sprite", "offset" = 362 },
-  { "type" = "REL32", "addend" = 0, "target" = 4230000, "symbol" = "_dxball_invalidate_region", "offset" = 416 },
-]
 
 [units.initialize-intro]
 build = "intro"
@@ -7226,100 +7226,100 @@ relocations = [
 ]
 
 [units.dispatch-frame]
+boundary_evidence = "docs/research/exact/MAIN_FRAME.md; complete 228-byte span ev_a0a1fa3c462d3100bf6c48ddb0cf18486b3364307d43807e508af764a772c1e0; 203 instruction bytes, 5-byte jump gap, 20-byte switch table; RET at0x403813"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 11, "symbol" = "_dxball_device_reset_requested", "target" = 4335784, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 23, "symbol" = "_dxball_initialize_device_state", "target" = 4209152, "type" = "REL32" },
+  { "addend" = 0, "offset" = 28, "symbol" = "_dxball_initialize_mode", "target" = 4208848, "type" = "REL32" },
+  { "addend" = 0, "offset" = 34, "symbol" = "_dxball_device_reset_requested", "target" = 4335784, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 44, "symbol" = "_dxball_surface_restore_requested", "target" = 4335788, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 53, "symbol" = "_dxball_synchronize_surface", "target" = 4208048, "type" = "REL32" },
+  { "addend" = 0, "offset" = 58, "symbol" = "_dxball_display_mode", "target" = 4329588, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 71, "symbol" = "_dxball_intro_frame", "target" = 4252464, "type" = "REL32" },
+  { "addend" = 0, "offset" = 81, "symbol" = "_dxball_game_frame", "target" = 4257968, "type" = "REL32" },
+  { "addend" = 0, "offset" = 91, "symbol" = "_dxball_editor_frame", "target" = 4244400, "type" = "REL32" },
+  { "addend" = 0, "offset" = 101, "symbol" = "_dxball_game_over_frame", "target" = 4220720, "type" = "REL32" },
+  { "addend" = 0, "offset" = 111, "symbol" = "_dxball_splash_frame", "target" = 4225424, "type" = "REL32" },
+  { "addend" = 0, "offset" = 141, "symbol" = "$L29865", "target" = 4208577, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 145, "symbol" = "$L29839", "target" = 4208502, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 149, "symbol" = "$L29840", "target" = 4208512, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 153, "symbol" = "$L29841", "target" = 4208522, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 157, "symbol" = "$L29842", "target" = 4208532, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 161, "symbol" = "$L29843", "target" = 4208542, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 167, "symbol" = "_dxball_end_requested", "target" = 4348276, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 181, "symbol" = "_dxball_cleanup_mode", "target" = 4208976, "type" = "REL32" },
+  { "addend" = 0, "offset" = 189, "symbol" = "_dxball_return_to_menu", "target" = 4348280, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 194, "symbol" = "_dxball_display_mode", "target" = 4329588, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 199, "symbol" = "_dxball_initialize_mode", "target" = 4208848, "type" = "REL32" },
+  { "addend" = 0, "offset" = 205, "symbol" = "_dxball_end_requested", "target" = 4348276, "type" = "DIR32" },
+]
+size = 228
 symbol = "_dxball_dispatch_frame"
 target_address = 4208432
-size = 228
-boundary_evidence = "docs/research/exact/MAIN_FRAME.md; complete 228-byte span ev_a0a1fa3c462d3100bf6c48ddb0cf18486b3364307d43807e508af764a772c1e0; 203 instruction bytes, 5-byte jump gap, 20-byte switch table; RET at0x403813"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4335784, "symbol" = "_dxball_device_reset_requested", "offset" = 11 },
-  { "type" = "REL32", "addend" = 0, "target" = 4209152, "symbol" = "_dxball_initialize_device_state", "offset" = 23 },
-  { "type" = "REL32", "addend" = 0, "target" = 4208848, "symbol" = "_dxball_initialize_mode", "offset" = 28 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335784, "symbol" = "_dxball_device_reset_requested", "offset" = 34 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4335788, "symbol" = "_dxball_surface_restore_requested", "offset" = 44 },
-  { "type" = "REL32", "addend" = 0, "target" = 4208048, "symbol" = "_dxball_synchronize_surface", "offset" = 53 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329588, "symbol" = "_dxball_display_mode", "offset" = 58 },
-  { "type" = "REL32", "addend" = 0, "target" = 4252464, "symbol" = "_dxball_intro_frame", "offset" = 71 },
-  { "type" = "REL32", "addend" = 0, "target" = 4257968, "symbol" = "_dxball_game_frame", "offset" = 81 },
-  { "type" = "REL32", "addend" = 0, "target" = 4244400, "symbol" = "_dxball_editor_frame", "offset" = 91 },
-  { "type" = "REL32", "addend" = 0, "target" = 4220720, "symbol" = "_dxball_game_over_frame", "offset" = 101 },
-  { "type" = "REL32", "addend" = 0, "target" = 4225424, "symbol" = "_dxball_splash_frame", "offset" = 111 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208577, "symbol" = "$L29898", "offset" = 141 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208502, "symbol" = "$L29866", "offset" = 145 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208512, "symbol" = "$L29867", "offset" = 149 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208522, "symbol" = "$L29868", "offset" = 153 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208532, "symbol" = "$L29869", "offset" = 157 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208542, "symbol" = "$L29870", "offset" = 161 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348276, "symbol" = "_dxball_end_requested", "offset" = 167 },
-  { "type" = "REL32", "addend" = 0, "target" = 4208976, "symbol" = "_dxball_cleanup_mode", "offset" = 181 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348280, "symbol" = "_dxball_return_to_menu", "offset" = 189 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329588, "symbol" = "_dxball_display_mode", "offset" = 194 },
-  { "type" = "REL32", "addend" = 0, "target" = 4208848, "symbol" = "_dxball_initialize_mode", "offset" = 199 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348276, "symbol" = "_dxball_end_requested", "offset" = 205 },
-]
 
 [units.redraw-mode]
+boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_8771ae59b5d8c734a29634ce18f163f6247a0da754feadafe4cd8c76c008538d; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 10, "symbol" = "_dxball_display_mode", "target" = 4329588, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 23, "symbol" = "_dxball_redraw_intro", "target" = 4251872, "type" = "REL32" },
+  { "addend" = 0, "offset" = 33, "symbol" = "_dxball_redraw_game", "target" = 4257696, "type" = "REL32" },
+  { "addend" = 0, "offset" = 43, "symbol" = "_dxball_redraw_editor", "target" = 4244144, "type" = "REL32" },
+  { "addend" = 0, "offset" = 53, "symbol" = "_dxball_redraw_game_over", "target" = 4220304, "type" = "REL32" },
+  { "addend" = 0, "offset" = 63, "symbol" = "_dxball_redraw_splash", "target" = 4224464, "type" = "REL32" },
+  { "addend" = 0, "offset" = 93, "symbol" = "$L29863", "target" = 4208401, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 97, "symbol" = "$L29816", "target" = 4208326, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 101, "symbol" = "$L29817", "target" = 4208336, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 105, "symbol" = "$L29818", "target" = 4208346, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 109, "symbol" = "$L29819", "target" = 4208356, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 113, "symbol" = "$L29820", "target" = 4208366, "type" = "DIR32" },
+]
+size = 127
 symbol = "_dxball_redraw_mode"
 target_address = 4208304
-size = 127
-boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_8771ae59b5d8c734a29634ce18f163f6247a0da754feadafe4cd8c76c008538d; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4329588, "symbol" = "_dxball_display_mode", "offset" = 10 },
-  { "type" = "REL32", "addend" = 0, "target" = 4251872, "symbol" = "_dxball_redraw_intro", "offset" = 23 },
-  { "type" = "REL32", "addend" = 0, "target" = 4257696, "symbol" = "_dxball_redraw_game", "offset" = 33 },
-  { "type" = "REL32", "addend" = 0, "target" = 4244144, "symbol" = "_dxball_redraw_editor", "offset" = 43 },
-  { "type" = "REL32", "addend" = 0, "target" = 4220304, "symbol" = "_dxball_redraw_game_over", "offset" = 53 },
-  { "type" = "REL32", "addend" = 0, "target" = 4224464, "symbol" = "_dxball_redraw_splash", "offset" = 63 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208401, "symbol" = "$L29896", "offset" = 93 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208326, "symbol" = "$L29843", "offset" = 97 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208336, "symbol" = "$L29844", "offset" = 101 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208346, "symbol" = "$L29845", "offset" = 105 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208356, "symbol" = "$L29846", "offset" = 109 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208366, "symbol" = "$L29847", "offset" = 113 },
-]
 
 [units.initialize-mode]
+boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_ddf811bf45fa69ec6ed95204fd1225d97a5588d2ee943b2763d9afbbb4106742; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 10, "symbol" = "_dxball_display_mode", "target" = 4329588, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 23, "symbol" = "_dxball_initialize_intro", "target" = 4251584, "type" = "REL32" },
+  { "addend" = 0, "offset" = 33, "symbol" = "_dxball_initialize_game", "target" = 4256960, "type" = "REL32" },
+  { "addend" = 0, "offset" = 43, "symbol" = "_dxball_initialize_editor", "target" = 4243872, "type" = "REL32" },
+  { "addend" = 0, "offset" = 53, "symbol" = "_dxball_initialize_game_over", "target" = 4219968, "type" = "REL32" },
+  { "addend" = 0, "offset" = 63, "symbol" = "_dxball_initialize_splash", "target" = 4224032, "type" = "REL32" },
+  { "addend" = 0, "offset" = 93, "symbol" = "$L29862", "target" = 4208945, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 97, "symbol" = "$L29805", "target" = 4208870, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 101, "symbol" = "$L29806", "target" = 4208880, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 105, "symbol" = "$L29807", "target" = 4208890, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 109, "symbol" = "$L29808", "target" = 4208900, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 113, "symbol" = "$L29809", "target" = 4208910, "type" = "DIR32" },
+]
+size = 127
 symbol = "_dxball_initialize_mode"
 target_address = 4208848
-size = 127
-boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_ddf811bf45fa69ec6ed95204fd1225d97a5588d2ee943b2763d9afbbb4106742; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4329588, "symbol" = "_dxball_display_mode", "offset" = 10 },
-  { "type" = "REL32", "addend" = 0, "target" = 4251584, "symbol" = "_dxball_initialize_intro", "offset" = 23 },
-  { "type" = "REL32", "addend" = 0, "target" = 4256960, "symbol" = "_dxball_initialize_game", "offset" = 33 },
-  { "type" = "REL32", "addend" = 0, "target" = 4243872, "symbol" = "_dxball_initialize_editor", "offset" = 43 },
-  { "type" = "REL32", "addend" = 0, "target" = 4219968, "symbol" = "_dxball_initialize_game_over", "offset" = 53 },
-  { "type" = "REL32", "addend" = 0, "target" = 4224032, "symbol" = "_dxball_initialize_splash", "offset" = 63 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208945, "symbol" = "$L29895", "offset" = 93 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208870, "symbol" = "$L29832", "offset" = 97 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208880, "symbol" = "$L29833", "offset" = 101 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208890, "symbol" = "$L29834", "offset" = 105 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208900, "symbol" = "$L29835", "offset" = 109 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208910, "symbol" = "$L29836", "offset" = 113 },
-]
 
 [units.cleanup-mode]
+boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_edf31fdc7ce974415c981438767f173e4b3666134e6650ef7e7b08a5e8c2cb91; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
 build = "runtime"
+relocations = [
+  { "addend" = 0, "offset" = 10, "symbol" = "_dxball_display_mode", "target" = 4329588, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 27, "symbol" = "_dxball_dispose_intro", "target" = 4255760, "type" = "REL32" },
+  { "addend" = 0, "offset" = 44, "symbol" = "_dxball_dispose_game", "target" = 4285488, "type" = "REL32" },
+  { "addend" = 0, "offset" = 61, "symbol" = "_dxball_dispose_editor", "target" = 4247328, "type" = "REL32" },
+  { "addend" = 0, "offset" = 78, "symbol" = "_dxball_dispose_game_over", "target" = 4223856, "type" = "REL32" },
+  { "addend" = 0, "offset" = 95, "symbol" = "_dxball_dispose_splash", "target" = 4225760, "type" = "REL32" },
+  { "addend" = 0, "offset" = 128, "symbol" = "$L29864", "target" = 4209108, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 132, "symbol" = "$L29827", "target" = 4208998, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 136, "symbol" = "$L29828", "target" = 4209015, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 140, "symbol" = "$L29829", "target" = 4209032, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 144, "symbol" = "$L29830", "target" = 4209049, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 148, "symbol" = "$L29831", "target" = 4209066, "type" = "DIR32" },
+]
+size = 162
 symbol = "_dxball_cleanup_mode"
 target_address = 4208976
-size = 162
-boundary_evidence = "docs/research/exact/MAIN_MODE_LIFECYCLE.md; ev_edf31fdc7ce974415c981438767f173e4b3666134e6650ef7e7b08a5e8c2cb91; whole span includes5-byte switch gap and20-byte table; full raw reads retained in .analysis/main-mode-byte-review"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4329588, "symbol" = "_dxball_display_mode", "offset" = 10 },
-  { "type" = "REL32", "addend" = 0, "target" = 4255760, "symbol" = "_dxball_dispose_intro", "offset" = 27 },
-  { "type" = "REL32", "addend" = 0, "target" = 4285488, "symbol" = "_dxball_dispose_game", "offset" = 44 },
-  { "type" = "REL32", "addend" = 0, "target" = 4247328, "symbol" = "_dxball_dispose_editor", "offset" = 61 },
-  { "type" = "REL32", "addend" = 0, "target" = 4223856, "symbol" = "_dxball_dispose_game_over", "offset" = 78 },
-  { "type" = "REL32", "addend" = 0, "target" = 4225760, "symbol" = "_dxball_dispose_splash", "offset" = 95 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4209108, "symbol" = "$L29897", "offset" = 128 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4208998, "symbol" = "$L29854", "offset" = 132 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4209015, "symbol" = "$L29855", "offset" = 136 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4209032, "symbol" = "$L29856", "offset" = 140 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4209049, "symbol" = "$L29857", "offset" = 144 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4209066, "symbol" = "$L29858", "offset" = 148 },
-]
 
 [units.initialize-device-state]
 build = "startup"
@@ -8403,66 +8403,66 @@ relocations = [
   { offset = 63, type = "DIR32", symbol = "_dxball_restart_requested", addend = 0, target = 0x0043A90C },
 ]
 
-[candidates.draw-paddle]
-build = "runtime"
+[units.draw-paddle]
+boundary_evidence = "docs/research/RUNTIME_OWNER.md"
+build = "paddle_render"
+relocations = [
+  { "addend" = 0, "offset" = 10, "symbol" = "_dxball_sprite_bank", "target" = 4329608, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 26, "symbol" = "_dxball_paddle_sprite", "target" = 4434048, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 36, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 47, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 73, "symbol" = "_dxball_paddle_frame", "target" = 4455128, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 83, "symbol" = "_dxball_paddle_tick", "target" = 4455132, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 89, "symbol" = "_dxball_elapsed", "target" = 4207856, "type" = "REL32" },
+  { "addend" = 0, "offset" = 106, "symbol" = "_dxball_paddle_frame", "target" = 4455128, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 112, "symbol" = "_dxball_paddle_frame", "target" = 4455128, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 125, "symbol" = "_dxball_paddle_frame", "target" = 4455128, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 134, "symbol" = "_dxball_current_time", "target" = 4207696, "type" = "REL32" },
+  { "addend" = 0, "offset" = 139, "symbol" = "_dxball_paddle_tick", "target" = 4455132, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 145, "symbol" = "_dxball_bonus_8_active", "target" = 4434016, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 174, "symbol" = "_dxball_attached_ball_cue", "target" = 4434172, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 190, "symbol" = "_dxball_sprite_bank", "target" = 4329608, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 213, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 244, "symbol" = "_dxball_attached_ball_cue", "target" = 4434172, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 257, "symbol" = "__imp__timeGetTime@0", "target" = 4461476, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 263, "symbol" = "_dxball_paddle_overlay_deadline", "target" = 4455100, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 274, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 280, "symbol" = "_dxball_paddle_overlay_width", "target" = 4434096, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 293, "symbol" = "_dxball_random_range", "target" = 4209520, "type" = "REL32" },
+  { "addend" = 0, "offset" = 310, "symbol" = "_dxball_paddle_overlay_sprite", "target" = 4434160, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 316, "symbol" = "__imp__timeGetTime@0", "target" = 4461476, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 324, "symbol" = "_dxball_paddle_overlay_deadline", "target" = 4455100, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 329, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 334, "symbol" = "_dxball_paddle_overlay_width", "target" = 4434096, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 340, "symbol" = "_dxball_bonus_8_active", "target" = 4434016, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 352, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "data_hex" = "333333333333b33f", "offset" = 364, "symbol" = "$T28604", "target" = 4325624, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 369, "symbol" = "__ftol", "target" = 4286348, "type" = "REL32" },
+  { "addend" = 0, "offset" = 382, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "data_hex" = "b81e85eb51b89e3f", "offset" = 394, "symbol" = "$T28606", "target" = 4325632, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 399, "symbol" = "__ftol", "target" = 4286348, "type" = "REL32" },
+  { "addend" = 0, "offset" = 408, "symbol" = "_dxball_paddle_x", "target" = 4434040, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 413, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 432, "symbol" = "_dxball_paddle_y", "target" = 4434044, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 456, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 467, "symbol" = "_dxball_sprite_bank", "target" = 4329608, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 483, "symbol" = "_dxball_paddle_overlay_sprite", "target" = 4434160, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 493, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 519, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 545, "symbol" = "_dxball_sprite_bank", "target" = 4329608, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 561, "symbol" = "_dxball_paddle_overlay_sprite", "target" = 4434160, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 571, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 587, "symbol" = "_dxball_effect_surface", "target" = 4384400, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 593, "symbol" = "_dxball_effect_surface", "target" = 4384400, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 619, "symbol" = "_dxball_queue_region", "target" = 4229520, "type" = "REL32" },
+  { "addend" = 0, "offset" = 627, "symbol" = "_dxball_paddle_y", "target" = 4434044, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 637, "symbol" = "_dxball_paddle_x", "target" = 4434040, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 642, "symbol" = "_dxball_paddle_width", "target" = 4455060, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 660, "symbol" = "_dxball_draw_effect_sprite", "target" = 4227824, "type" = "REL32" },
+]
+size = 677
 symbol = "_dxball_draw_paddle"
 target_address = 4271808
-size = 677
-boundary_evidence = "docs/research/RUNTIME_OWNER.md"
-relocations = [
-  { "type" = "DIR32", "addend" = 0, "target" = 4434048, "symbol" = "_dxball_paddle_sprite", "offset" = 10 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329608, "symbol" = "_dxball_sprite_bank", "offset" = 16 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348288, "symbol" = "_dxball_sprite_banks", "offset" = 36 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 47 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455128, "symbol" = "_dxball_paddle_frame", "offset" = 73 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455132, "symbol" = "_dxball_paddle_tick", "offset" = 83 },
-  { "type" = "REL32", "addend" = 0, "target" = 4207856, "symbol" = "_dxball_elapsed", "offset" = 89 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455128, "symbol" = "_dxball_paddle_frame", "offset" = 106 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455128, "symbol" = "_dxball_paddle_frame", "offset" = 112 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455128, "symbol" = "_dxball_paddle_frame", "offset" = 125 },
-  { "type" = "REL32", "addend" = 0, "target" = 4207696, "symbol" = "_dxball_current_time", "offset" = 134 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455132, "symbol" = "_dxball_paddle_tick", "offset" = 139 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434016, "symbol" = "_dxball_bonus_8_active", "offset" = 145 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434172, "symbol" = "_dxball_attached_ball_cue", "offset" = 174 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329608, "symbol" = "_dxball_sprite_bank", "offset" = 190 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348288, "symbol" = "_dxball_sprite_banks", "offset" = 213 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434172, "symbol" = "_dxball_attached_ball_cue", "offset" = 244 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4461476, "symbol" = "__imp__timeGetTime@0", "offset" = 257 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455100, "symbol" = "_dxball_paddle_overlay_deadline", "offset" = 263 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434096, "symbol" = "_dxball_paddle_overlay_width", "offset" = 274 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 280 },
-  { "type" = "REL32", "addend" = 0, "target" = 4209520, "symbol" = "_dxball_random_range", "offset" = 293 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434160, "symbol" = "_dxball_paddle_overlay_sprite", "offset" = 310 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4461476, "symbol" = "__imp__timeGetTime@0", "offset" = 316 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455100, "symbol" = "_dxball_paddle_overlay_deadline", "offset" = 324 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 329 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434096, "symbol" = "_dxball_paddle_overlay_width", "offset" = 334 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434016, "symbol" = "_dxball_bonus_8_active", "offset" = 340 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 352 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4325624, "data_hex" = "333333333333b33f", "symbol" = "$T29889", "offset" = 364 },
-  { "type" = "REL32", "addend" = 0, "target" = 4286348, "symbol" = "__ftol", "offset" = 369 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 382 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4325632, "data_hex" = "b81e85eb51b89e3f", "symbol" = "$T29891", "offset" = 394 },
-  { "type" = "REL32", "addend" = 0, "target" = 4286348, "symbol" = "__ftol", "offset" = 399 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434040, "symbol" = "_dxball_paddle_x", "offset" = 408 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 413 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434044, "symbol" = "_dxball_paddle_y", "offset" = 432 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 456 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329608, "symbol" = "_dxball_sprite_bank", "offset" = 467 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434160, "symbol" = "_dxball_paddle_overlay_sprite", "offset" = 483 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348288, "symbol" = "_dxball_sprite_banks", "offset" = 493 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 523 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4329608, "symbol" = "_dxball_sprite_bank", "offset" = 546 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434160, "symbol" = "_dxball_paddle_overlay_sprite", "offset" = 562 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4348288, "symbol" = "_dxball_sprite_banks", "offset" = 572 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4384400, "symbol" = "_dxball_effect_surface", "offset" = 588 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4384400, "symbol" = "_dxball_effect_surface", "offset" = 594 },
-  { "type" = "REL32", "addend" = 0, "target" = 4229520, "symbol" = "_dxball_queue_region", "offset" = 620 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434044, "symbol" = "_dxball_paddle_y", "offset" = 628 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4434040, "symbol" = "_dxball_paddle_x", "offset" = 638 },
-  { "type" = "DIR32", "addend" = 0, "target" = 4455060, "symbol" = "_dxball_paddle_width", "offset" = 643 },
-  { "type" = "REL32", "addend" = 0, "target" = 4227824, "symbol" = "_dxball_draw_effect_sprite", "offset" = 661 },
-]
 
 [units.current-time]
 build = "clock"
@@ -11112,3 +11112,9 @@ source = "src/fill_polygon_clipped.cpp"
 object = "build/exact/fill_polygon_clipped.obj"
 inputs = ["src/allocator.h", "src/fill_polygon_clipped.cpp", "src/raster.h", "src/raster_imports.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy", "/GX"]
+
+[builds.paddle_render]
+source = "src/paddle_render.cpp"
+object = "build/exact/paddle_render.obj"
+inputs = ["src/balls.h", "src/board_storage.h", "src/boards.h", "src/bonuses.h", "src/core.h", "src/effects.h", "src/explosion_types.h", "src/gameplay.h", "src/paddle.h", "src/paddle_render.cpp", "src/resources.h", "src/startup.h", "src/state_types.h"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/MT", "/Gy"]

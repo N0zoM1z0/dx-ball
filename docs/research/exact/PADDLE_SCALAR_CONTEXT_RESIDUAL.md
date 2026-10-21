@@ -1,5 +1,9 @@
 # Paddle scalar frame and four-byte residual
 
+The subsequent [independent renderer owner](PADDLE_RENDERER_SOURCE_OWNER.md)
+closes this residual and reaches266/270 authored exact functions. This note
+retains the preceding unadopted265-function input cohort and its closed controls.
+
 October22,2026. This is a closed **private, unadopted** source experiment.
 Maintained authored acceptance stays265/270 and79,090/84,968 complete exact
 bytes. The canonical paddle remains678 bytes/210 differences. The new best

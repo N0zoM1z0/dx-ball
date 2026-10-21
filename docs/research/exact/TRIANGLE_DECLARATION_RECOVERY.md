@@ -134,3 +134,22 @@ full compact input/flag digest is
 `5abb163ddcbd3abe6a23a58cb7e8517f4f7cb3d69409a5187f6a1ba3ee5cc5b7`.
 This closes only that one scope control, not future eligible natural-source
 families under the standing search authorization.
+
+## Ordered immutable clamp controls, October22
+
+After the coherent polygon split, two distinct current five-input/ten-flag
+controls use ordinary and const clamp declaration initializers. Both retain
+right-before-left evaluation and complete both declarations before the span
+call. The ordinary initializer form also has a retained pre-split control.
+
+Both new inputs compile once and give the same complete1710/232 identity.
+Nine exact companions and296 complete metadata bytes remain unchanged;
+const does not change output. An initial mapper stops on duplicate40-byte
+xdata payloads. Their actual raw associative parents12/14 distinguish them;
+the offline repair retains all61 non-FILE identities,94 code bindings and25
+metadata bindings without recompiling or weakening local-target comparisons.
+No source/native adoption or new provider query follows these controls.
+
+Private `.analysis/triangle-const-clamp-source-search-20261022/` retains both
+results and the mapping correction, with verified closed evidence archived
+alongside the adopted paddle-owner checkpoint. Reuse these current results.

@@ -109,6 +109,7 @@
     "balls",
     "core",
     "runtime",
+    "paddle_render",
     "clock",
     "round_reset",
     "display",
@@ -185,7 +186,7 @@
     "member:000ea00c",
     "member:000eb086"
   ],
-  "source_objects": 136,
+  "source_objects": 137,
   "integration_objects": 3,
   "sdk_libraries": [
     "kernel32.lib",
