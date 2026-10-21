@@ -10,20 +10,56 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |266 /270 (98.52%)|
-| Authored complete exact code bytes |79,767 /84,968 (93.88%)|
-| Authored nonexact candidates / original bytes |4 /5,201|
-| Overall exact functions, including runtime/compiler units |411|
-| Exact code / attached metadata bytes |94,151 /244|
+| Authored byte-exact functions |267 /270 (98.89%)|
+| Authored complete exact code bytes |81,477 /84,968 (95.89%)|
+| Authored nonexact candidates / original bytes |3 /3,491|
+| Overall exact functions, including runtime/compiler units |412|
+| Exact code / attached metadata bytes |95,861 /404|
 | Current authored compiler closures |52|
 
 Private current artifact authority is
-`.analysis/paddle-scoped-owner-source-search-20261022/current-checkpoint.json`.
-Its minimal-c-headers-clock-state/remainder producers, complete200-symbol/
-336-binding proof, installed comparison, native332 and adoption identify current
-paddle acceptance. Earlier high-score265, presenter264, polygon263, glyph261,
+`.analysis/triangle-conditional-storage-20261022/current-checkpoint.json`.
+Its selected triangle-before-comparison producer, complete61-symbol/119-binding
+proof, installed comparison, native144 and adoption identify current acceptance.
+Earlier paddle266, high-score265, presenter264, polygon263, glyph261,
 resource260, frame-wait257 and reset256 remain historical recoverable evidence.
 Do not repeat their one-shot adoption helpers.
+
+## Completed triangle adoption
+
+The complete1710-byte triangle and160-byte exception metadata are exact.
+Four named clamp pairs become equivalent literal-first primitive conditional
+arguments, with real compiler-owned result storage. Move the whole triangle
+definition after fixed divide, before FixedPoint comparison. Actual root objects,
+scalars, constructor/destructor order and all other source bytes remain unchanged.
+The same five-input/ten-flag recipe serves portable and legacy builds.
+
+All10 complete raster functions,94 code and25 metadata bindings, and296 whole
+metadata bytes compare. Nine prior exacts and resolved identities survive.
+All61 non-FILE symbols/raw auxiliaries and actual associative parents, complete
+noncode/global payloads/relocations and strict local targets are checked.
+Generated metadata symbols and compiler fragment labels update once by actual
+identity, including equal40-byte xdata sections with distinct real parents.
+See [the triangle recovery](../research/exact/TRIANGLE_CONDITIONAL_TEMPORARIES.md).
+
+Exactly12 distinct successful compiler runs cover bounded conditional storage,
+scalar order and whole-definition positions. One final frozen definition position
+is uncompiled after exactness. Historical objects and repaired mappings reuse
+successful outputs. Native rebuild changes only raster.cpp/link and preserves
+60 companion objects and63 command configurations. Exactly144 unchanged existing
+triangle cases pass, including ordinary/flat/degenerate geometry, left/right
+clipping and bottom edges, all point permutations and three pitch/color pairs.
+Full effects/guarded frames/padding/input/scratch/SEH compare; original code/IAT
+stay unchanged. Verified fixture cache stays unchanged with zero preparation.
+
+Compiler peak156,250,112 bytes; native build/check43,245,568/59,162,624 bytes.
+Work is serial on CPU0/35%, memory384/512MiB, without memory events. Historical249
+semantic scopes are not replayed. Source-owner recipes and delivery source lists
+remain unchanged; claim ledgers/progress refresh. No game relink/play follows.
+Closed useful evidence is member-verified archived before obsolete retirement;
+current accepted products and useful caches remain. Cleanup verifies160 members
+and retires105 obsolete files, releasing512,000 allocated bytes net before
+small receipts.
 
 ## Completed paddle adoption
 
@@ -132,7 +168,8 @@ the previous39-difference probes. Emitted equality, not predicted IDs, proves
 exactness. See [polygon local recovery](../research/exact/POLYGON_LOCAL_SOURCE_RECOVERY.md).
 
 The coherent10-function raster remainder preserves all nine prior exacts.
-Triangle1710/60 replaces historical1710/48 and remains explicitly nonexact;
+At that polygon checkpoint, triangle1710/60 replaced historical1710/48;
+the subsequent triangle adoption above closes the remaining differences;
 no incompatible old object is borrowed. All12 full functions compare with116
 code and25 metadata bindings,296 metadata bytes and a61-symbol remainder
 bijection. Tracking rejects then verifies a repaired metadata-carrier reference
@@ -194,8 +231,8 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Four authored candidates remain: triangle, last-brick, PCX loading and
-rotated-sprite rendering. Paddle, high-score, presenter and polygon
+Three authored candidates remain: last-brick, PCX loading and
+rotated-sprite rendering. Triangle, paddle, high-score, presenter and polygon
 families are closed and adopted. Reuse their retained outputs; do not repeat
 frozen producers. Earlier high-score arithmetic/qualifier/include controls and
 triangle register/initializer controls are historical negatives.
@@ -215,7 +252,7 @@ Those17 whole-runtime probes stay unadopted historical evidence under
 The subsequent minimal-interface owner above closes the four-byte residual
 and is now adopted coherently at266/270.
 
-Two current post-polygon triangle controls compare ordered ordinary/const clamp
+Two earlier post-polygon triangle controls compare ordered ordinary/const clamp
 initializers. Both give1710/232 with9 prior exacts and all296 metadata bytes
 preserved. Duplicate40-byte xdata sections require their actual associative
 parents; the offline repair reuses the successful object. Neither is adopted.
@@ -263,7 +300,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle/triangle source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -272,7 +309,6 @@ Sizes below are original/current; differences are strict full-span counts.
 
 | Unit | Owner | Bytes | Differences |
 | --- | --- | ---: | ---: |
-| fill-triangle |raster.cpp|1710 /1710|60|
 | last-brick |display.cpp|1057 /1047|976|
 | load-pcx |resources.cpp|862 /979|851|
 | render-rotated-sprite |rotation.cpp|1572 /1458|1466|

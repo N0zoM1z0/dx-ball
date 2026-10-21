@@ -1,5 +1,10 @@
 # Triangle named homes and comparison recovery
 
+October22 update: the subsequent
+[conditional-temporary recovery](TRIANGLE_CONDITIONAL_TEMPORARIES.md) makes the
+complete triangle1710/0 with160 exact metadata bytes and all nine raster
+companions preserved. The residuals below describe earlier checkpoints.
+
 October 21, 2026. A bounded natural-source reconstruction reduces the complete
 1710-byte triangle from88 to48 strict differences. The function remains a
 candidate: all48 residual bytes are temporary/clamp frame displacements.

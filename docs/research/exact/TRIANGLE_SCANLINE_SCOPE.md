@@ -1,5 +1,10 @@
 # Triangle scanline lifetime
 
+October22 update: the subsequent
+[conditional-temporary recovery](TRIANGLE_CONDITIONAL_TEMPORARIES.md) makes the
+complete triangle1710/0 with160 exact metadata bytes and all nine raster
+companions preserved. The residuals below describe earlier checkpoints.
+
 October21 update: the [selected root declaration model](TRIANGLE_DECLARATION_RECOVERY.md)
 keeps the old compound but moves the existing scanline declaration to the root
 after the four FixedPoint objects, using `scanline_index`. Together with two

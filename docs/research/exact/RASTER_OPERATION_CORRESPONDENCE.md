@@ -1,5 +1,10 @@
 # Complete raster candidate instruction correspondence
 
+October22 update: the subsequent
+[conditional-temporary recovery](TRIANGLE_CONDITIONAL_TEMPORARIES.md) makes the
+complete triangle1710/0 with160 exact metadata bytes and all nine raster
+companions preserved. The residuals below describe earlier checkpoints.
+
 October21 update: the [selected declaration recovery](TRIANGLE_DECLARATION_RECOVERY.md)
 reduces triangle1710/88→48 while preserving both polygons and every accepted
 companion. All482 triangle instruction boundaries/opcodes, named/EH homes and

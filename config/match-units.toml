@@ -2739,9 +2739,9 @@ target_address = 4240048
 
 [units.fixed-point-divide]
 build = "raster"
-data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1069", "target" = 4326256, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1066", "target" = 4240198, "type" = "DIR32" }, { "addend" = 0, "offset" = 44, "symbol" = "$L1062", "target" = 4240226, "type" = "DIR32" }, { "addend" = 0, "offset" = 52, "symbol" = "$L1063", "target" = 4240217, "type" = "DIR32" }], "size" = 56, "symbol" = "$T1068", "target_address" = 4326224 }]
+data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1012", "target" = 4326256, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1006", "target" = 4240198, "type" = "DIR32" }, { "addend" = 0, "offset" = 44, "symbol" = "$L1002", "target" = 4240226, "type" = "DIR32" }, { "addend" = 0, "offset" = 52, "symbol" = "$L1003", "target" = 4240217, "type" = "DIR32" }], "size" = 56, "symbol" = "$T1010", "target_address" = 4326224 }]
 relocations = [
-  { "addend" = 0, "offset" = 6, "symbol" = "$L1061", "target" = 4240235, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 6, "symbol" = "$L1001", "target" = 4240235, "type" = "DIR32" },
   { "addend" = 0, "offset" = 12, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 20, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 51, "symbol" = "??0DxBallFixedPoint@@QAE@XZ", "target" = 4239936, "type" = "REL32" },
@@ -2749,7 +2749,7 @@ relocations = [
   { "addend" = 0, "offset" = 132, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
   { "addend" = 0, "offset" = 141, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
   { "addend" = 0, "offset" = 150, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
-  { "addend" = 0, "offset" = 156, "symbol" = "$T1068", "target" = 4326224, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 156, "symbol" = "$T1010", "target" = 4326224, "type" = "DIR32" },
   { "addend" = 0, "offset" = 161, "symbol" = "___CxxFrameHandler", "target" = 4294000, "type" = "REL32" },
   { "addend" = 0, "offset" = 171, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
 ]
@@ -2768,13 +2768,13 @@ target_address = 4240272
 
 [units.fixed-point-less]
 build = "raster"
-data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1078", "target" = 4326312, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1073", "target" = 4240413, "type" = "DIR32" }], "size" = 40, "symbol" = "$T1077", "target_address" = 4326280 }]
+data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1070", "target" = 4326312, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1065", "target" = 4240413, "type" = "DIR32" }], "size" = 40, "symbol" = "$T1069", "target_address" = 4326280 }]
 relocations = [
-  { "addend" = 0, "offset" = 6, "symbol" = "$L1072", "target" = 4240422, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 6, "symbol" = "$L1064", "target" = 4240422, "type" = "DIR32" },
   { "addend" = 0, "offset" = 12, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 20, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 97, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
-  { "addend" = 0, "offset" = 103, "symbol" = "$T1077", "target" = 4326280, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 103, "symbol" = "$T1069", "target" = 4326280, "type" = "DIR32" },
   { "addend" = 0, "offset" = 108, "symbol" = "___CxxFrameHandler", "target" = 4294000, "type" = "REL32" },
   { "addend" = 0, "offset" = 118, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
 ]
@@ -2784,13 +2784,13 @@ target_address = 4240320
 
 [units.fixed-point-add]
 build = "raster"
-data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1085", "target" = 4326352, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1082", "target" = 4240538, "type" = "DIR32" }], "size" = 40, "symbol" = "$T1084", "target_address" = 4326320 }]
+data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1077", "target" = 4326352, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1074", "target" = 4240538, "type" = "DIR32" }], "size" = 40, "symbol" = "$T1076", "target_address" = 4326320 }]
 relocations = [
-  { "addend" = 0, "offset" = 6, "symbol" = "$L1081", "target" = 4240547, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 6, "symbol" = "$L1073", "target" = 4240547, "type" = "DIR32" },
   { "addend" = 0, "offset" = 12, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 20, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 78, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
-  { "addend" = 0, "offset" = 84, "symbol" = "$T1084", "target" = 4326320, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 84, "symbol" = "$T1076", "target" = 4326320, "type" = "DIR32" },
   { "addend" = 0, "offset" = 89, "symbol" = "___CxxFrameHandler", "target" = 4294000, "type" = "REL32" },
   { "addend" = 0, "offset" = 99, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
 ]
@@ -2798,11 +2798,11 @@ size = 110
 symbol = "??YDxBallFixedPoint@@QAEAAV0@V0@@Z"
 target_address = 4240464
 
-[candidates.fill-triangle]
+[units.fill-triangle]
 build = "raster"
-data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1059", "target" = 4326096, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1038", "target" = 4239901, "type" = "DIR32" }, { "addend" = 0, "offset" = 44, "symbol" = "$L1039", "target" = 4239892, "type" = "DIR32" }, { "addend" = 0, "offset" = 52, "symbol" = "$L1040", "target" = 4239883, "type" = "DIR32" }, { "addend" = 0, "offset" = 60, "symbol" = "$L1041", "target" = 4239874, "type" = "DIR32" }, { "addend" = 0, "offset" = 68, "symbol" = "$L1043", "target" = 4239856, "type" = "DIR32" }, { "addend" = 0, "offset" = 76, "symbol" = "$L1042", "target" = 4239865, "type" = "DIR32" }, { "addend" = 0, "offset" = 84, "symbol" = "$L1044", "target" = 4239847, "type" = "DIR32" }, { "addend" = 0, "offset" = 92, "symbol" = "$L1045", "target" = 4239838, "type" = "DIR32" }, { "addend" = 0, "offset" = 100, "symbol" = "$L1047", "target" = 4239820, "type" = "DIR32" }, { "addend" = 0, "offset" = 108, "symbol" = "$L1046", "target" = 4239829, "type" = "DIR32" }, { "addend" = 0, "offset" = 116, "symbol" = "$L1048", "target" = 4239811, "type" = "DIR32" }, { "addend" = 0, "offset" = 124, "symbol" = "$L1049", "target" = 4239802, "type" = "DIR32" }, { "addend" = 0, "offset" = 132, "symbol" = "$L1051", "target" = 4239784, "type" = "DIR32" }, { "addend" = 0, "offset" = 140, "symbol" = "$L1050", "target" = 4239793, "type" = "DIR32" }, { "addend" = 0, "offset" = 148, "symbol" = "$L1052", "target" = 4239775, "type" = "DIR32" }, { "addend" = 0, "offset" = 156, "symbol" = "$L1053", "target" = 4239766, "type" = "DIR32" }], "size" = 160, "symbol" = "$T1057", "target_address" = 4326064 }]
+data_comdats = [{ "relocations" = [{ "addend" = 0, "offset" = 8, "symbol" = "$T1061", "target" = 4326096, "type" = "DIR32" }, { "addend" = 0, "offset" = 36, "symbol" = "$L1027", "target" = 4239901, "type" = "DIR32" }, { "addend" = 0, "offset" = 44, "symbol" = "$L1028", "target" = 4239892, "type" = "DIR32" }, { "addend" = 0, "offset" = 52, "symbol" = "$L1029", "target" = 4239883, "type" = "DIR32" }, { "addend" = 0, "offset" = 60, "symbol" = "$L1030", "target" = 4239874, "type" = "DIR32" }, { "addend" = 0, "offset" = 68, "symbol" = "$L1032", "target" = 4239856, "type" = "DIR32" }, { "addend" = 0, "offset" = 76, "symbol" = "$L1031", "target" = 4239865, "type" = "DIR32" }, { "addend" = 0, "offset" = 84, "symbol" = "$L1033", "target" = 4239847, "type" = "DIR32" }, { "addend" = 0, "offset" = 92, "symbol" = "$L1034", "target" = 4239838, "type" = "DIR32" }, { "addend" = 0, "offset" = 100, "symbol" = "$L1036", "target" = 4239820, "type" = "DIR32" }, { "addend" = 0, "offset" = 108, "symbol" = "$L1035", "target" = 4239829, "type" = "DIR32" }, { "addend" = 0, "offset" = 116, "symbol" = "$L1037", "target" = 4239811, "type" = "DIR32" }, { "addend" = 0, "offset" = 124, "symbol" = "$L1038", "target" = 4239802, "type" = "DIR32" }, { "addend" = 0, "offset" = 132, "symbol" = "$L1048", "target" = 4239784, "type" = "DIR32" }, { "addend" = 0, "offset" = 140, "symbol" = "$L1047", "target" = 4239793, "type" = "DIR32" }, { "addend" = 0, "offset" = 148, "symbol" = "$L1049", "target" = 4239775, "type" = "DIR32" }, { "addend" = 0, "offset" = 156, "symbol" = "$L1050", "target" = 4239766, "type" = "DIR32" }], "size" = 160, "symbol" = "$T1060", "target_address" = 4326064 }]
 relocations = [
-  { "addend" = 0, "offset" = 6, "symbol" = "$L1037", "target" = 4239910, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 6, "symbol" = "$L1026", "target" = 4239910, "type" = "DIR32" },
   { "addend" = 0, "offset" = 12, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 20, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
   { "addend" = 0, "offset" = 34, "symbol" = "??0DxBallFixedPoint@@QAE@XZ", "target" = 4239936, "type" = "REL32" },
@@ -2867,7 +2867,7 @@ relocations = [
   { "addend" = 0, "offset" = 1663, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
   { "addend" = 0, "offset" = 1672, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
   { "addend" = 0, "offset" = 1681, "symbol" = "??1DxBallFixedPoint@@QAE@XZ", "target" = 4239968, "type" = "REL32" },
-  { "addend" = 0, "offset" = 1687, "symbol" = "$T1057", "target" = 4326064, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 1687, "symbol" = "$T1060", "target" = 4326064, "type" = "DIR32" },
   { "addend" = 0, "offset" = 1692, "symbol" = "___CxxFrameHandler", "target" = 4294000, "type" = "REL32" },
   { "addend" = 0, "offset" = 1701, "symbol" = "__except_list", "target" = 0, "type" = "DIR32" },
 ]
