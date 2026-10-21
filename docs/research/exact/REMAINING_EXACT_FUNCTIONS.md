@@ -6,7 +6,7 @@ Older "closed" labels and blanket name/order/scope-search bans below retain
 historical results, not a requirement for renewed permission or original source.
 This policy update does not change the comparison counts.
 
-Updated October21,2026, after the clock/line source recovery.
+Updated October21,2026, after the presenter index declaration recovery.
 Accepted totals are **398 functions / 87,211 code bytes / 244 metadata bytes**.
 There are **77 complete nonexact comparisons: 17 authored and 60 runtime**. None is an accepted exact.
 
@@ -17,7 +17,16 @@ source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
 
-The [clock/line recovery](CLOCK_LINE_SOURCE_RECOVERY.md) makes complete draw-line
+The [presenter index recovery](PRESENT_INDEX_DECLARATIONS.md) improves984/6→2
+with original8-byte homes,19 companion identities and17 display exacts preserved.
+All20 functions/419 bindings and the separate57-byte bridge compare together.
+Maintained native and267 existing selected calls pass,with41 configurations,
+38 companion objects and verified cache unchanged. All270 current receipts remain
+253 exact/17 candidates across30 closures;the manifest full seal is unchanged.
+Three waiting controls retain170/6;one combined top-minimum model retains the
+same two-difference presenter and is not selected. No exact is added.
+
+The preceding [clock/line recovery](CLOCK_LINE_SOURCE_RECOVERY.md) makes complete draw-line
 445/0 exact and improves wait170/8→6 without promoting it. Five bounded current
 source trials cover38 unique functions/771 bindings/33 full literal references
 and preserve31 prior exacts. The selected whole line/display owners have22 full
@@ -404,8 +413,8 @@ One owner compile preserves five exact companions and six other body identities;
 
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
+| `present-regions-now` | 984 | 984 | 2 |
 | `elapsed` | 81 | 81 | 3 |
-| `present-regions-now` | 984 | 984 | 6 |
 | `wait-frames` | 170 | 170 | 6 |
 | `reset-round` | 426 | 426 | 20 |
 | `draw-paddle` | 677 | 677 | 68 |

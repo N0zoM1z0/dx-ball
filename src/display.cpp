@@ -301,39 +301,38 @@ void dxball_present(void)
 
 void dxball_present_regions_now(void)
 {
-    DxBallInt i;
+    DxBallInt selected, i;
     for (i = 0; i <= dxball_present_count - 1; ++i) {
         dxball_present_keys[i] = dxball_present_regions[i].top + dxball_present_regions[i].left;
     }
     if (dxball_present_count > 0) {
-        DxBallInt current;
         dxball_sort_present_regions(0, dxball_present_count - 1);
-        current = 0;
+        selected = 0;
         for (i = 1; i <= dxball_present_count - 1; ++i) {
             if (dxball_rectangles_overlap(
-                    dxball_present_regions[current].left,
-                    dxball_present_regions[current].top,
-                    dxball_present_regions[current].right + 1,
-                    dxball_present_regions[current].bottom + 1,
+                    dxball_present_regions[selected].left,
+                    dxball_present_regions[selected].top,
+                    dxball_present_regions[selected].right + 1,
+                    dxball_present_regions[selected].bottom + 1,
                     dxball_present_regions[i].left,
                     dxball_present_regions[i].top,
                     dxball_present_regions[i].right,
                     dxball_present_regions[i].bottom)) {
-                dxball_present_regions[current].left =
-                    dxball_present_regions[current].left < dxball_present_regions[i].left ?
-                    dxball_present_regions[current].left : dxball_present_regions[i].left;
-                dxball_present_regions[current].top =
-                    dxball_present_regions[i].top < dxball_present_regions[current].top ?
-                    dxball_present_regions[i].top : dxball_present_regions[current].top;
-                dxball_present_regions[current].right =
-                    dxball_present_regions[current].right > dxball_present_regions[i].right ?
-                    dxball_present_regions[current].right : dxball_present_regions[i].right;
-                dxball_present_regions[current].bottom =
-                    dxball_present_regions[current].bottom > dxball_present_regions[i].bottom ?
-                    dxball_present_regions[current].bottom : dxball_present_regions[i].bottom;
+                dxball_present_regions[selected].left =
+                    dxball_present_regions[selected].left < dxball_present_regions[i].left ?
+                    dxball_present_regions[selected].left : dxball_present_regions[i].left;
+                dxball_present_regions[selected].top =
+                    dxball_present_regions[i].top < dxball_present_regions[selected].top ?
+                    dxball_present_regions[i].top : dxball_present_regions[selected].top;
+                dxball_present_regions[selected].right =
+                    dxball_present_regions[selected].right > dxball_present_regions[i].right ?
+                    dxball_present_regions[selected].right : dxball_present_regions[i].right;
+                dxball_present_regions[selected].bottom =
+                    dxball_present_regions[selected].bottom > dxball_present_regions[i].bottom ?
+                    dxball_present_regions[selected].bottom : dxball_present_regions[i].bottom;
                 dxball_present_regions[i].top = 9999;
             } else {
-                current = i;
+                selected = i;
             }
         }
     }

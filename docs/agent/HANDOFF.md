@@ -11,7 +11,26 @@ Do not request the same authorization again or require original source/debug
 materials; use the existing EXE/resources and retained compiler evidence.
 That authorization remains standing for subsequent eligible search families.
 
-The newest [clock/line source recovery](../research/exact/CLOCK_LINE_SOURCE_RECOVERY.md)
+The newest [presenter index recovery](../research/exact/PRESENT_INDEX_DECLARATIONS.md)
+improves the complete984-byte presenter6→2 through root selected,i declarations
+of its two consumed indices. Original8-byte homes,19 companion identities,
+all17 display exacts/419 bindings and the separate57-byte bridge survive.
+The first declaration order is unchanged; one separately frozen uniform-top
+follow-up emits the same2-difference owner and is not selected. Three empty-for
+waiting controls also retain the current170/6 output. Six distinct frozen
+compiles cover120 full body instances/2514 bindings with no losses. After a
+verified54-input rollback,the selected whole source/object and five ledgers/reports
+are adopted;the manifest full seal stays unchanged. All270 current authored
+receipts/30 closures verify at253 exact/17 candidates,398 overall exacts.
+Maintained native and267 existing sort/merge/presentation/reset calls pass;
+41 configurations,38 companion objects and the verified cache remain fixed,
+with no cache rebuild. The249 semantic scopes/cases/order are unchanged,not rerun.
+Current authority is `.analysis/present-index-source-search-20261021/`,including
+its explicit top-followup. The completed waiting controls are separately
+recoverable under `.analysis/wait-guard-source-search-20261021/`.
+No new exact,compiler-ID/provider observation,game relink/play or full replay.
+
+The preceding [clock/line source recovery](../research/exact/CLOCK_LINE_SOURCE_RECOVERY.md)
 makes the complete445-byte line exact with original140-byte homes/comparisons,
 combining the retained rank-successful declaration cohort with the consumed
 iterator alias index. Two same-role waiting scalar models both improve170/8→6;
@@ -611,7 +630,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 398 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 77 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/clock-line-source-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/present-index-source-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -1130,7 +1149,7 @@ mechanically ineffective candidates before compiling.
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Both frames are424 bytes; the lower80 original bytes are ten consumed conversion/spill slots, not an unused object. Named/temporary allocation context remains open; integer-offset-before-base order is restored |
-| Ranking/presentation | [Exact line recovery](../research/exact/CLOCK_LINE_SOURCE_RECOVERY.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Line445/0 is accepted exact; the meaningful index alias repairs the old rank model's homes. Ranking and presentation comparison/register producers remain candidates |
+| Ranking/presentation | [Exact line recovery](../research/exact/CLOCK_LINE_SOURCE_RECOVERY.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presenter index declarations](../research/exact/PRESENT_INDEX_DECLARATIONS.md) | Line445/0 is accepted exact. Presenter984/2 retains only the two top-index loads; selected,i restores the other bounds without losing homes. Ranking comparison/register producers remain candidates |
 | Clocks/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [exact palette/text declarations](../research/exact/DECLARATION_ORDER_RECOVERY.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md), [absolute value](../research/exact/LIGHTNING_ABS_WRAP.md) | Animate-palette234/0 and measure-text279/0 are accepted exact. Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep consumed low32 crop arithmetic, clock before RNG and callback-visible state |
 
 Ranking's signed630−measure_text question is closed by the adopted explicit

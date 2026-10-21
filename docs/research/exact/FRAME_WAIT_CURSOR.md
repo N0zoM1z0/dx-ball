@@ -9,6 +9,13 @@ comparison triples remain. All19 companion code identities/17 prior exacts and
 the separate57-byte bridge survive;18 existing waiting cases plus reset pass.
 The following cursor/source-context descriptions retain their historical scope.
 
+The later [presenter search](PRESENT_INDEX_DECLARATIONS.md) also closes three
+current-source waiting controls: first,second or both postincrement while guards
+become empty-init/increment for statements. Every complete20-function output
+remains unchanged,including waiting170/6,17 accepted companions and419 bindings.
+The canonical while form is retained;this negative family does not exhaust
+other natural source contexts or recover original temporary IDs.
+
 The [direct WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) historically made waiting
 exact across170 bytes. The pre-scalar declaration context emits170 bytes with eight
 differences: two signed postincrement-guard transposes and the unsigned17ms

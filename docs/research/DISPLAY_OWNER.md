@@ -1,5 +1,15 @@
 # Lightning and frame drawing
 
+The October21 [presenter index recovery](exact/PRESENT_INDEX_DECLARATIONS.md)
+moves the existing consumed merge index to root selected,i declarations and
+improves the complete984-byte presenter6→2. All20 functions/419 bindings,
+17 accepted companions,19 other code identities and the57-byte portable bridge
+verify. Presenter remains nonexact. The maintained target and267 existing
+sort/merge/presentation/reset calls pass;41 configurations,38 companion objects
+and the verified cache remain fixed with no cache rebuild or game/provider run.
+Three waiting loop controls and one combined top-minimum control are closed
+without further gain. Counts remain253 authored exact/17 candidates.
+
 The October21 [clock/line source recovery](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
 restores waiting's threshold comparison orientation through its two consumed
 root scalars, reducing170/8→6 while preserving the original16-byte frame. All20
