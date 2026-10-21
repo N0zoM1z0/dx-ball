@@ -15,6 +15,11 @@ with sections that help readers follow the workflow.
 Put operational detail in these instructions or `docs/agent/`.
 Keep the centered title PNG and progress SVG in the README, both at 900px.
 
+October21 handoff status: the user stopped and cleared the reconstruction goal
+and requested cleanup/handoff. Preserve the maintained256/270 checkpoint and
+the unadopted frame-wait proof separately. Do not auto-resume experiments or
+execute unfinished adoption helpers; wait for a new reconstruction request.
+
 Read [the current handoff](docs/agent/HANDOFF.md),
 [workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing
 source. Use `config/functions.csv` to locate entries; reconcile imported extents

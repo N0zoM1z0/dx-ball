@@ -12,3 +12,5 @@ to follow the game from its Windows loop into a frame.
 
 Contributor instructions live in [AGENTS.md](../AGENTS.md), with the
 [working procedure](agent/WORKFLOW.md) and [current handoff](agent/HANDOFF.md).
+The [handoff history](agent/HANDOFF_HISTORY_20261021.md) preserves older detailed
+checkpoints without making them the current work queue.

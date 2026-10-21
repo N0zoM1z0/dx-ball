@@ -1,5 +1,16 @@
 # Frame-wait cursor
 
+Handoff, October21: the maintained scalar body remains170/6 and authored coverage
+256/270. A separately compiled standalone waiting backend now has a complete
+170/0 proof; its matching display remainder preserves all19 identities and17
+prior exacts across419 code bindings, two initializer relocations and the57-byte
+bridge. The user stopped reconstruction before maintained adoption: no native
+build,18-case replay, source/object installation or ledger promotion followed.
+The member-verified private recovery is
+`.analysis/timing-cursor-source-search-20261021/`; see the
+[current handoff](../../agent/HANDOFF.md#unadopted-frame-wait-recovery-preserve-do-not-count).
+Do not count that pending proof as an adopted257th authored exact.
+
 October21 update: the [same-role scalar recovery](CLOCK_LINE_SOURCE_RECOVERY.md)
 replaces the inferred cursor with consumed root now/index scalars. Both finite
 declaration orders emit170/6; the first is adopted. The original16-byte frame
