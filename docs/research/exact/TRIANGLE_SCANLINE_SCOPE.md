@@ -1,11 +1,19 @@
 # Triangle scanline lifetime
 
+October21 update: the [selected root declaration model](TRIANGLE_DECLARATION_RECOVERY.md)
+keeps the old compound but moves the existing scanline declaration to the root
+after the four FixedPoint objects, using `scanline_index`. Together with two
+meaningful long-edge aliases it preserves EBP−36, restores the other named homes
+and all comparisons, and improves1710/88→48. The narrower lifetime and88-difference
+observations below are the historical October13 reconstruction, not the current
+declaration scope. No unique historical declaration is claimed.
+
 The later [complete instruction correspondence](RASTER_OPERATION_CORRESPONDENCE.md)
 accounts for all482 current/original instructions through a bijective frame-role
 mapping and two comparison groups with subsequent EAX/flag checks. The strict
 1710/88 result and original physical-home question below remain unchanged.
 
-The triangle routine at `0x0040AB90` now declares its scanline `y` in a block
+The October13 triangle reconstruction at `0x0040AB90` declares its scanline `y` in a block
 covering the upper and lower scan phases. The block starts after long-edge
 step and X initialization and includes the lower flat-edge return. Fixed-point
 objects and the observed vertical-scale calculation remain outside it.

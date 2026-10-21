@@ -11,7 +11,28 @@ Do not request the same authorization again or require original source/debug
 materials; use the existing EXE/resources and retained compiler evidence.
 That authorization remains standing for subsequent eligible search families.
 
-The newest [presenter index recovery](../research/exact/PRESENT_INDEX_DECLARATIONS.md)
+The newest [triangle declaration recovery](../research/exact/TRIANGLE_DECLARATION_RECOVERY.md)
+improves the complete1710-byte triangle88→48 through meaningful long-edge aliases
+and the existing scanline declaration at the root after the four FixedPoint
+objects. All482 instructions retain boundaries/opcodes; named/EH homes and all
+comparisons agree. The48 remaining bytes are only temporary/clamp displacements.
+Three frozen root models emit54/60/48. One separately frozen inline-clamp model
+emits188 after a complete33-symbol/141-binding mapping-only pass; its initial
+strict symbol guard remains retained and no compiler is rerun. Two wait
+initializer controls retain170/6; delayed presenter declaration regresses2→6.
+Seven distinct compiles cover108 full body instances/1821 actual bindings across
+32 functions with no accepted loss. The selected whole raster owner preserves
+all11 companions/nine exacts and296 metadata bytes. After verified54-member
+rollback, source/whole object/five data files are installed; manifest full seal
+stays fixed. All270 receipts/30 closures verify at253 exact/17 candidates,
+398 overall exacts. Maintained native and72 existing triangle calls pass;
+41 configurations,38 companion objects and the verified cache stay fixed,
+with no cache rebuild. The249 semantic scopes/cases/order are unchanged,not rerun.
+Current authority is `.analysis/triangle-root-source-search-20261021/`, with
+the separate display-lifetime and triangle-clamp phases retained for recovery.
+No new exact,frontend-ID/provider observation,game relink/play or full replay.
+
+The preceding [presenter index recovery](../research/exact/PRESENT_INDEX_DECLARATIONS.md)
 improves the complete984-byte presenter6→2 through root selected,i declarations
 of its two consumed indices. Original8-byte homes,19 companion identities,
 all17 display exacts/419 bindings and the separate57-byte bridge survive.
@@ -630,7 +651,7 @@ are separate claims, not interchangeable completion percentages.
 | `build/reports/exact-replay.json` | Current 398 accepted comparisons and producers |
 | `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 77 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/present-index-source-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/triangle-root-source-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -1147,7 +1168,7 @@ mechanically ineffective candidates before compiling.
 | --- | --- | --- |
 | Bank/resources | [Exact bank recovery](../research/exact/BANK_SOURCE_CANDIDATE_RECOVERY.md), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/0 is accepted exact. Preserve extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; compare it as a companion in any new resource-owner proposal |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
-| Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
+| Triangle/polygons | [Triangle declarations](../research/exact/TRIANGLE_DECLARATION_RECOVERY.md), [fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | Triangle1710/48 restores named/EH homes and comparisons; only the12-class/8-clamp displacement partition remains. Inline arguments regress to188; ordinary named temporaries change argument-push order and are pruned. Four root FixedPoint constructions/EH states remain;28-byte edge has one unknown word at+12. Preserve both sorts, three pools and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Both frames are424 bytes; the lower80 original bytes are ten consumed conversion/spill slots, not an unused object. Named/temporary allocation context remains open; integer-offset-before-base order is restored |
 | Ranking/presentation | [Exact line recovery](../research/exact/CLOCK_LINE_SOURCE_RECOVERY.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presenter index declarations](../research/exact/PRESENT_INDEX_DECLARATIONS.md) | Line445/0 is accepted exact. Presenter984/2 retains only the two top-index loads; selected,i restores the other bounds without losing homes. Ranking comparison/register producers remain candidates |
 | Clocks/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [exact palette/text declarations](../research/exact/DECLARATION_ORDER_RECOVERY.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md), [absolute value](../research/exact/LIGHTNING_ABS_WRAP.md) | Animate-palette234/0 and measure-text279/0 are accepted exact. Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep consumed low32 crop arithmetic, clock before RNG and callback-visible state |

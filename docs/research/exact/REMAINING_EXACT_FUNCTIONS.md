@@ -6,7 +6,7 @@ Older "closed" labels and blanket name/order/scope-search bans below retain
 historical results, not a requirement for renewed permission or original source.
 This policy update does not change the comparison counts.
 
-Updated October21,2026, after the presenter index declaration recovery.
+Updated October21,2026, after the triangle declaration recovery.
 Accepted totals are **398 functions / 87,211 code bytes / 244 metadata bytes**.
 There are **77 complete nonexact comparisons: 17 authored and 60 runtime**. None is an accepted exact.
 
@@ -17,7 +17,18 @@ source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
 
-The [presenter index recovery](PRESENT_INDEX_DECLARATIONS.md) improves984/6→2
+The [triangle declaration recovery](TRIANGLE_DECLARATION_RECOVERY.md) improves
+1710/88→48, restoring all named/EH homes and comparisons. All12 owner functions,
+141 actual code/metadata bindings,296 metadata bytes,nine prior exacts and11
+companion identities compare together. Maintained native and72 selected existing
+triangle calls pass,with41 configurations,38 companion objects and verified cache
+unchanged. All270 current receipts remain253 exact/17 candidates across30
+closures;the manifest full seal is unchanged. Three root models emit54/60/48;
+one inline-clamp follow-up emits188 after truthful complete generated-symbol
+mapping, with no compiler retry. Two wait initializer forms retain170/6 and a
+delayed presenter declaration regresses2→6. No new exact is added.
+
+The preceding [presenter index recovery](PRESENT_INDEX_DECLARATIONS.md) improves984/6→2
 with original8-byte homes,19 companion identities and17 display exacts preserved.
 All20 functions/419 bindings and the separate57-byte bridge compare together.
 Maintained native and267 existing selected calls pass,with41 configurations,
@@ -418,7 +429,7 @@ One owner compile preserves five exact companions and six other body identities;
 | `wait-frames` | 170 | 170 | 6 |
 | `reset-round` | 426 | 426 | 20 |
 | `draw-paddle` | 677 | 677 | 68 |
-| `fill-triangle` | 1710 | 1710 | 88 |
+| `fill-triangle` | 1710 | 1710 | 48 |
 | `draw-sprite` | 105 | 107 | 94 |
 | `find-hit-region` | 173 | 172 | 132 |
 | `blt-sprite` | 195 | 199 | 173 |
