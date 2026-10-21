@@ -1,5 +1,10 @@
 # Ranking text and row-position records
 
+October22 follow-up: [scalar/scope reconstruction](HIGH_SCORE_SCALAR_RECOVERY.md)
+makes the complete404-byte renderer exact and preserves all seven game-over
+companions. The403-byte candidate and record models below are historical
+inputs to that later accepted recovery.
+
 Ranking drawing at `0x00406B20` now groups its twenty-byte number buffer and
 consumed text length separately from the row's Y coordinate, index and X
 coordinate. The records restore every original home in the 36-byte frame:

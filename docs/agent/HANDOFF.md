@@ -10,19 +10,55 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |264 /270 (97.78%)|
-| Authored complete exact code bytes |78,686 /84,968 (92.61%)|
-| Authored nonexact candidates / original bytes |6 /6,282|
-| Overall exact functions, including runtime/compiler units |409|
-| Exact code / attached metadata bytes |93,070 /244|
+| Authored byte-exact functions |265 /270 (98.15%)|
+| Authored complete exact code bytes |79,090 /84,968 (93.08%)|
+| Authored nonexact candidates / original bytes |5 /5,878|
+| Overall exact functions, including runtime/compiler units |410|
+| Exact code / attached metadata bytes |93,474 /244|
 | Current authored compiler closures |51|
 
 Private current artifact authority is
-`.analysis/display-blt-position-source-search-20261022/current-checkpoint.json`.
-Its selected after-present producer/comparison, installed comparison, native
-summary and adoption identify the current presenter acceptance. Earlier
-polygon263, glyph261, resource260, frame-wait257 and reset256 checkpoints remain
-recoverable historical evidence. Do not repeat their one-shot adoption helpers.
+`.analysis/ranking-scope-source-search-20261022/current-checkpoint.json`.
+Its x-index-before-text producer/comparison, complete110-symbol/auxiliary proof,
+installed comparison, native summary and adoption identify current high-score
+acceptance. Earlier presenter264, polygon263, glyph261, resource260,
+frame-wait257 and reset256 checkpoints remain recoverable historical evidence.
+Do not repeat their one-shot adoption helpers.
+
+## Completed high-score adoption
+
+The complete404-byte high-score renderer is exact. Keep the consumed24-byte
+text buffer/count record, replace the row-position record with real scalars,
+put i/x before text at function root and retain y inside the old row block.
+The original direct equality, all assignments/reads/calls, unsigned coordinate
+arithmetic and every executable operation remain. All seven companion bodies,
+headers/globals and21-input/nine-flag recipe stay unchanged.
+
+All eight complete functions/234 bindings and13 entire literal references
+compare. The110 non-FILE symbol bijection checks all auxiliaries, with only the
+target section length403→404 changed. Full noncode/global definitions and local
+target guards stay strict. The initial generated-label mapping failure is
+repaired against its existing successful output. A nested-table formatter error
+also stops before its write marker; neither repair repeats a compiler/native
+producer or weakens checks.
+
+Exactly22 distinct successful compiles cover176 full functions/5148 bindings.
+The accepted third scope trial stops the family; three remaining frozen models
+are uncompiled. The rejected404/1 arithmetic candidate is SUB2B versus original
+CMP39 at offset51, not merely a CMP-direction issue. No arithmetic/volatile
+pilot is selected. See [high-score recovery](../research/exact/HIGH_SCORE_SCALAR_RECOVERY.md).
+
+Native rebuild changes only gameover.c/link and preserves59 companion objects
+and62 command configurations. Exactly17 unchanged existing selected-row cases
+pass with full setup/state/text/line effects. Fixture cache stays verified and
+unchanged with zero preparation. Native peak67,969,024 bytes; compiler scope
+peak156,073,984 bytes; CPU0/35%,384/512MiB and no memory events. Historical249
+scopes are not fully replayed. Closed unique evidence is member-verified archived
+before obsolete copies retire; current accepted products/caches remain.
+No game relink/play follows this adoption.
+Cleanup verifies676 members and retires651 obsolete files, releasing5,505,024
+allocated bytes net before small receipts. Recovery archive/index are beside
+the current checkpoint; accepted products and selected producer records stay.
 
 ## Completed presenter adoption
 
@@ -125,18 +161,17 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Six authored candidates remain: triangle, last-brick, high-score drawing,
-paddle drawing, PCX loading and rotated-sprite rendering. Presenter and polygon
-families are closed and adopted; reuse their retained outputs and do not repeat
-the frozen producers. The high-score C/C++/header probes and triangle
-register/initializer controls remain historical negatives.
+Five authored candidates remain: triangle, last-brick, paddle drawing, PCX
+loading and rotated-sprite rendering. High-score, presenter and polygon
+families are closed and adopted. Reuse their retained outputs; do not repeat
+frozen producers. Earlier high-score arithmetic/qualifier/include controls and
+triangle register/initializer controls are historical negatives.
 
-Choose the next finite natural source family from a remaining whole-function
-residual, starting with its retained owner/correspondence notes and current
-inputs. Root LOAD ranking, member/address ranking and actual record identity
-are separate questions; successful natural source organization does not prove
-unique historical spelling or IDs. Keep complete affected closures coherent
-and exact checks strict, with proportionate maintained verification.
+Select a finite natural source family from the current complete residuals and
+retained owner/correspondence notes. Keep source scope/representation, actual
+compiler-record identity and instruction selection separate; byte equality does
+not prove unique original declarations. Preserve the full270-function objective,
+strict complete affected closures and proportionate maintained verification.
 
 ## Completed frame-wait adoption
 
@@ -155,7 +190,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -166,7 +201,6 @@ Sizes below are original/current; differences are strict full-span counts.
 | --- | --- | ---: | ---: |
 | fill-triangle |raster.cpp|1710 /1710|60|
 | last-brick |display.cpp|1057 /1047|976|
-| draw-high-scores |gameover.c|404 /403|330|
 | draw-paddle |runtime.cpp|677 /678|210|
 | load-pcx |resources.cpp|862 /979|851|
 | render-rotated-sprite |rotation.cpp|1572 /1458|1466|
