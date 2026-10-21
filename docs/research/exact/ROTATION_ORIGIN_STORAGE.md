@@ -1,5 +1,10 @@
 # Rotation origin operands and initial storage
 
+October22 update: the later
+[combined full-frame recovery](ROTATION_COMPLETE_FRAME_RECOVERY.md) restores all
+424 frame-role bytes and yields a private1572/4 renderer. Height191/3 loses an
+exact, so the model is not adopted; the historical controls below remain valid.
+
 The later [closed follow-up](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up)
 tests nested origin conversions, axis records, a sampled source-plane record and
 floating consistency. None is adopted. The later

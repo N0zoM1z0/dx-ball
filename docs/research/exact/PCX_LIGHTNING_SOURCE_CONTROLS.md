@@ -1,5 +1,16 @@
 # Current PCX and lightning source controls
 
+Later October22 update: maintained acceptance is267/270 after triangle adoption.
+Four additional constant-association inputs group40000 with time or RNG on
+both sides of the addition. Time groups give1043/405; RNG groups1041/955, all
+with64-byte frames. Each still calls RNG before time and is rejected. All19
+original display functions compare, retaining18 exacts, full noncode/initializer
+mappings and the complete57-byte portable bridge. These four distinct successful
+producers peak at157,237,248 bytes with zero memory events under the same caps.
+Private plans/producers/full comparisons and actual call offsets are under
+`.analysis/lightning-constant-association-20261022/`. No canonical changes follow.
+The22-input batch and266 checkpoint below are earlier history.
+
 October22,2026. These22 distinct successful compiler inputs are closed and
 unadopted. Maintained acceptance remains266/270 authored exact functions and
 79,767/84,968 complete exact code bytes. No canonical source, object, build

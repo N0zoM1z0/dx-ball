@@ -237,6 +237,37 @@ families are closed and adopted. Reuse their retained outputs; do not repeat
 frozen producers. Earlier high-score arithmetic/qualifier/include controls and
 triangle register/initializer controls are historical negatives.
 
+The latest private rotation model recovers the complete1572-byte extent and
+all424 original frame-role bytes. It leaves only four strict bytes at
+1244/1251/1321/1328: two MOV/IMUL pairs load pitch before Y instead of the original
+Y-before-pitch. Three helpers remain exact, but height191/3 loses exactness;
+none is adopted and the remaining table below still describes canonical source.
+Finite aliases/root lifetime/nested-double expressions plus declaration ranks
+produce this result; no padding or fake local is used. Full5-function/115-binding/
+25-literal/40-byte-carrier and source-inverse proof are retained. The useful
+`ranked-root-1` source/object stays live under
+`.analysis/rotation-root-temporaries-source-search-20261022/`.
+See [the full-frame residual](../research/exact/ROTATION_COMPLETE_FRAME_RECOVERY.md).
+
+Eleven distinct successful compiles plus one invalid generated input close this
+family. Definition-position literal permutations require an offline mapping
+repair, reusing the successful object. Two fields accidentally renamed by the
+private generator are fixed in a new digest, with the failure preserved.
+Descriptor-base LOAD-rank approximations in both directions still leave the
+same4 bytes; a two-product source transpose also leaves the same output.
+The next concrete question is actual member-pitch load ordering and height's
+comparison context, rather than more permutations of that disproved approximation.
+Closure archives284 size/SHA/mode-verified members and retires212 obsolete files,
+releasing974,848 allocated bytes net before small receipts. Best private source/
+object and current helper stay live; canonical products/caches remain unchanged.
+The closed research checkpoint is
+`.analysis/rotation-frame-progress-20261022/current-checkpoint.json`.
+
+Four new whole-display constant-association controls also reject: time-plus-
+constant groups give1043/405 and RNG-plus-constant groups1041/955, all64-byte
+frames but RNG first. All18 prior exacts and the full57-byte portable bridge
+remain. Maintained267 source/objects/native/delivery and ledgers stay unchanged.
+
 The preceding private paddle scalar/clock-first model restores the complete677-byte
 extent and68-byte frame, leaving only four differences at274/275/280/281:
 the two global addresses in the overlay-width MOV/CMP comparison are reversed.
