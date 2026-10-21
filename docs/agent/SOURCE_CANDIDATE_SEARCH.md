@@ -70,6 +70,29 @@ without asking for permission again. A concise recorded plan is sufficient;
 another user-approved plan, new provider capture or elaborate new test harness
 is not a mandatory gate for routine candidates.
 
+### Proportionate execution, not accumulating gates
+
+Keep the routine record small: the hypothesis and finite limits, actual input/
+flag identities, producer status, complete affected-unit results and disposition.
+Existing scripts and receipts are the default. Do not require a new bespoke
+runner, independent reviewer, multi-stage approval or whole-workspace snapshot
+before every candidate or adoption. Reviewers and extra checks are optional
+tools for a concrete uncertainty, not prerequisites for continuing work.
+
+Verify inputs and previous acceptances relevant to the affected closure. An
+ever-growing union of historical file seals or recursive archive audits is not
+a new acceptance requirement. Preserve historical receipts without rewriting
+them; record current changed preconditions separately. Documentation-only edits
+do not require another compiler run or replay of unchanged old bodies. Keep
+complete-unit, relocation and local-target checks strict for any new exact claim.
+
+For adoption, retain a recoverable copy of files actually being overwritten and
+update the actual owners, recipes and claim ledgers. Use the smallest affected
+maintained build/check needed for the change; tests remain optional evidence.
+Do not turn an unchanged full-game queue, unrelated cache review or exhaustive
+historical revalidation into a delivery gate. If a helper fails, repair it and
+continue from the retained producer output rather than restarting the workflow.
+
 Freeze the baseline and each selected candidate's complete recursive inputs and
 flags. Compile each distinct input/flag digest once. Reuse archived results for
 identical digests, including failures; an unchanged closed control is not a new

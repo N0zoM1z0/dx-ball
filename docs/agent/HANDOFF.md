@@ -15,6 +15,11 @@ The user confirmed there is no original project: reconstruct from the existing
 materials without requesting original sources/debug/build records again. The
 agent may select finite batches, repair local tooling/mappings and proceed;
 only a genuinely new external decision or authority requirement needs a question.
+Routine work also follows the policy's proportionate-execution rule: no mandatory
+peer-review round, bespoke runner, whole-workspace seal union or recursive audit
+of unrelated historical archives. Verify the changed closure, keep recoverable
+overwrite targets and reuse retained compiler results. Documentation edits do
+not invalidate unchanged source/object comparisons or justify another compile.
 The policy-only update and subsequent runtime layout controls change no
 maintained source, recipe, products or exact claims. Current254/270 remains
 active, not complete.

@@ -30,6 +30,11 @@ uniquely proved historical declarations before trying a recorded hypothesis.
 Choose and execute eligible bounded families without renewed user approval.
 Repair local tooling and evidence mappings within scope instead of treating
 their failures as a new permission boundary. Keep exactness checks strict.
+Keep routine execution lightweight: a short hypothesis, frozen compiler inputs,
+the affected complete-unit comparison and a concise result are sufficient.
+Independent reviews, bespoke orchestration, whole-workspace seals and replaying
+unrelated historical evidence are not mandatory gates. Reuse verified receipts;
+documentation-only changes do not invalidate unchanged compiler results.
 
 - Run Python through `scripts/repo-python`.
 - Use `scripts/rea` and the installed REA skill for new binary analysis.

@@ -31,6 +31,12 @@ ask again for original materials or approval of each ordinary reconstruction
 step. Keep the pinned recipe as the baseline, with any experimental settings
 explicitly isolated and recorded rather than silently substituted.
 
+Apply the policy's proportionate-execution rule: do not add mandatory peer
+reviews, bespoke runners, whole-workspace seals or recursive historical audits
+to routine source work. A concise hypothesis and affected-input record suffice.
+Keep prior evidence reusable, validate the changed closure, and spend effort on
+reconstruction rather than repeatedly rebuilding the acceptance machinery.
+
 Use repository Python and the pinned REA wrapper. When beginning binary or
 compiler work, verify the inputs relevant to that work:
 
