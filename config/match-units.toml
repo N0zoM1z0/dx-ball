@@ -8775,17 +8775,17 @@ relocations = [
   { offset = 831, type = "DIR32", symbol = "_dxball_sprite_banks", addend = 0, target = 0x00425980 },
 ]
 
-[candidates.load-sprite-bank]
+[units.load-sprite-bank]
 build = "resources"
 symbol = "_dxball_load_sprite_bank"
 target_address = 0x00404610
 size = 1475
-boundary_evidence = "docs/research/RESOURCE_OWNER.md"
+boundary_evidence = "docs/research/RESOURCE_OWNER.md; docs/research/exact/BANK_SOURCE_CANDIDATE_RECOVERY.md complete1475-byte bank and whole18-function source-candidate recovery"
 relocations = [
   { offset = 13, type = "DIR32", symbol = "_dxball_sprite_bank", addend = 0, target = 0x00421088 },
   { offset = 25, type = "REL32", symbol = "_dxball_select_sprite_bank", addend = 0, target = 0x00403E70 },
   { offset = 65, type = "REL32", symbol = "_dxball_release_sprite", addend = 0, target = 0x00404BE0 },
-  { offset = 78, type = "DIR32", symbol = "$SG28280", addend = 0, target = 0x00421094, data_hex = "726200" },
+  { offset = 78, type = "DIR32", symbol = "$SG28283", addend = 0, target = 0x00421094, data_hex = "726200" },
   { offset = 87, type = "REL32", symbol = "_fopen", addend = 0, target = 0x00417C20 },
   { offset = 95, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },
   { offset = 101, type = "DIR32", symbol = "_dxball_board_file", addend = 0, target = 0x004265C8 },

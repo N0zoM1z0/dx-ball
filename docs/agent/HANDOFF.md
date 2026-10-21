@@ -1,7 +1,7 @@
 # DX-Ball reconstruction handoff
 
 Updated October 21, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Current249 authored functions are exact;21 remain.
+authored candidates byte-exact. Current250 authored functions are exact;20 remain.
 That objective is active, not complete.
 On October21 the user explicitly resumed the goal and authorized bounded,
 reproducible natural-source candidate searches. The
@@ -9,7 +9,30 @@ reproducible natural-source candidate searches. The
 declaration-order/grouping and scope-search bans in the historical notes below.
 Do not request the same authorization again or require original source/debug
 materials; use the existing EXE/resources and retained compiler evidence.
-This documentation change makes no source, product or exact-count claim.
+That authorization remains standing for subsequent eligible search families.
+
+The newest [bounded bank source recovery](../research/exact/BANK_SOURCE_CANDIDATE_RECOVERY.md)
+makes the complete1475-byte loader exact:68 differences become0. Meaningful
+local names/declaration order and hoisting three existing trivial declarations
+restore the original frame and both products without changing executable tokens.
+The first of12 frozen candidates succeeds;11 are never compiled. One separately
+declared formatting-only publication compile preserves all18 resolved identities.
+The entire resources owner is installed:18 functions/262 occurrence-bijective
+bindings/six whole literals,13 exacts and five candidates, with12 accepted exacts
+and17 companion identities preserved. All41 native compile configurations and
+38 companion objects stay unchanged; ten existing bank cases pass. Overall:
+395 exacts/86,253 code bytes/244 metadata bytes;250 authored exact/20 candidates
+across30 current closures.235 semantic dependency maps and16 primary source
+hashes refresh without changing scopes/cases/order or claiming historical reruns.
+Private authority is `.analysis/bank-source-search-20261021/`, including current
+authored coverage, installed comparison, adoption and verified rollback/archive.
+All77 closed files are size/hash/mode-verified in a1,280,296-byte archive before
+exact-list retirement, releasing1,900,544 allocated bytes net before journals.
+Current tested products/caches/tools/originals and the141-record snapshot remain.
+No new provider/debugger observation, game relink/run or full replay follows.
+The selected declarations are reconstructed, not unique original spellings.
+
+The preceding compiler observation remains reusable historical evidence:
 The newest [same-run field tuple](../research/exact/VC4_EXPRESSION_ORDERING.md#same-run-field-tuple-and-unchanged-owner-october21)
 observes the missing actual41A9B0 inputs and412194 return on unchanged current
 resources.cpp.406 entries yield158 paired calls; the unique retained raw
@@ -532,15 +555,15 @@ are missing canonical inputs. The separate failed storage query releases another
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 394 |
-| Exact code / attached metadata bytes | 84,778 / 244 |
-| Complete nonexact comparisons | 81: 21 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 395 |
+| Exact code / attached metadata bytes | 86,253 / 244 |
+| Complete nonexact comparisons | 80: 20 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-249 exact and 21 candidates across 30 compiler closures. The source-present
+250 exact and 20 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -551,10 +574,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 394 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 81 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 395 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 80 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/rotation-arithmetic-contract-20261020/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/bank-source-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -570,8 +593,8 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 The bounded authored-source phase is complete for reconstruction: all270
 identified authored functions are source-present and have complete comparison
-receipts across30 compiler closures. Current totals are394 overall exacts and81
-complete candidates, split249 authored exact/21 authored candidates plus60
+receipts across30 compiler closures. Current totals are395 overall exacts and80
+complete candidates, split250 authored exact/20 authored candidates plus60
 runtime candidates. The78 no-source catalog entries are77 runtime-library
 functions and compiler-generated `__chkstk`; no unidentified authored body or
 callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack

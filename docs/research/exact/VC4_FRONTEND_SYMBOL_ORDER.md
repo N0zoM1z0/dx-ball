@@ -5,6 +5,11 @@ Current search authority: the user's October21
 supersedes the historical blanket search restrictions below. Recorded mechanism
 observations, negative results and evidence limitations are unchanged.
 
+The subsequent [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md)
+uses this mechanism with meaningful names and LOAD-rank constraints to restore
+the complete1475-byte loader. The historical observations below are not a
+claim that its selected spellings or predicted changed-source IDs were observed.
+
 October 17, 2026. The pinned C1XX name interner, bucket insertion and traversal
 explain all16 current bank-loader objects in the previously observed C2 reader
 order. This recovers a compiler mechanism; it does not recover original variable

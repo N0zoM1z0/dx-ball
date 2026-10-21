@@ -5,6 +5,11 @@ Current search authority: the user's October21
 supersedes historical blanket name/order/scope-search bans in this note.
 The observations below do not themselves recover original declarations.
 
+The subsequent [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md)
+restores the complete1475-byte loader with all17 companion identities preserved.
+It is an exact reconstructed source model, not uniquely recovered source spelling
+or a new runtime observation of predicted compiler IDs.
+
 The October17 investigation locates actual record-reading code in the pinned
 VC4 backend. It does not yet explain the game's declaration-context scheduling
 changes or recover its original declarations. No compiler-flag, name, order or

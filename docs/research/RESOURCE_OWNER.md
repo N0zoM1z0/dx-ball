@@ -1,6 +1,16 @@
 # Sprite, font, PCX and palette owner
 
-The latest [Blt coordinate recovery](exact/BLT_COORDINATE_WRAP.md) makes six
+The latest [bounded bank source recovery](exact/BANK_SOURCE_CANDIDATE_RECOVERY.md)
+makes the complete1475-byte loader exact, removing68 differences. A meaningful
+14-local name/declaration model and three trivial declaration hoists preserve
+every executable operation, short-read lifetime and API workspace. The first
+candidate succeeds; publication formatting retains all18 resolved identities.
+All262 binding occurrences and six entire literals verify, with12 prior exacts
+and17 companion identities preserved. The owner now has13 exacts/4,197 code bytes
+and five candidates. The maintained native target and ten existing bank cases
+pass; the verified game EXE/ZIP still predates this source checkpoint.
+
+The earlier [Blt coordinate recovery](exact/BLT_COORDINATE_WRAP.md) makes six
 consumed DWORD sums explicit across plain,keyed and stretch adapters. Plain
 Blt195 becomes exact; stretch141/94 and unchanged capture864/726 are explicit
 demotions with complete instruction correspondence. All18 functions/262 bindings/
@@ -22,8 +32,8 @@ resource identities remain unchanged, including11 exacts and PCX979/850.
 Four finite clipped counterexamples and99 unchanged existing PCX cases pass;
 the native library updates, while the last verified EXE/ZIP remains older.
 
-The current resource closure has18 complete entries:ten exacts/1,781 code bytes
-and eight candidates. The earlier [conditional-output correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md)
+The current resource closure has18 complete entries:13 exacts/4,197 code bytes
+and five candidates. The earlier [conditional-output correction](exact/AUTHORED_BOUNDARY_CONTRACTS.md)
 preserves four file-field lifetimes across later EOF. Bank becomes1475/68 from
 1475/63, while all17 companions and11 exacts stay fixed. A bounded later-EOF
 witness and ten unchanged existing bank cases pass. The verified EXE/ZIP still

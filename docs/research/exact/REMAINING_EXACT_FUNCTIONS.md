@@ -6,23 +6,31 @@ Older "closed" labels and blanket name/order/scope-search bans below retain
 historical results, not a requirement for renewed permission or original source.
 This policy update does not change the comparison counts.
 
-Updated October20,2026, after validated whole-owner rotation arithmetic recovery.
-Accepted totals are **394 functions / 84,778 code bytes / 244 metadata bytes**.
-There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.
+Updated October21,2026, after the complete bank source-candidate recovery.
+Accepted totals are **395 functions / 86,253 code bytes / 244 metadata bytes**.
+There are **80 complete nonexact comparisons: 20 authored and 60 runtime**. None is an accepted exact.
 
-These 81 are all currently source-present nonexact entries. The eight allocator
+These 80 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
 
-The [whole rotation arithmetic contract](ROTATION_ARITHMETIC_CONTRACT.md) restores
+The [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md) restores
+the full1475-byte loader from68 differences to0. The first of12 generated
+candidates succeeds; a separate formatting-only compile preserves every code
+identity. All18 owner functions/262 bindings/six entire literals compare, with
+12 prior exacts and17 companion identities preserved. The maintained native
+target and ten existing bank cases pass. Current authored coverage is250 exact/
+20 candidates across30 verified closures, without a game relink/run or full replay.
+
+The preceding [whole rotation arithmetic contract](ROTATION_ARITHMETIC_CONTRACT.md) restores
 the complete191-byte y-offset without changing its own body or the four other
 rotation code identities. All5 functions/115 bindings/25 literal references,
 actual GNU8.4 wrapping commands, two offset-wrap cases, negative stride and1024
 maintained cases/151 guarded buffers pass. All270 authored receipts/30 closures
-are current:249 exact/21 candidates. No selective old object or game run follows.
+at that checkpoint are249 exact/21 candidates. No selective old object or game run follows.
 
 The [dependency inventory audit](CRT_DEPENDENCY_INVENTORY.md) adds eight omitted
 CRT entries and recovers five existing helper identities. Source/exact/candidate
@@ -386,7 +394,6 @@ One owner compile preserves five exact companions and six other body identities;
 | `wait-frames` | 170 | 170 | 8 |
 | `draw-line` | 445 | 445 | 9 |
 | `reset-round` | 426 | 426 | 20 |
-| `load-sprite-bank` | 1475 | 1475 | 68 |
 | `draw-paddle` | 677 | 677 | 68 |
 | `fill-triangle` | 1710 | 1710 | 88 |
 | `draw-sprite` | 105 | 107 | 94 |
