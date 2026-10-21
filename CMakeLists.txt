@@ -35,6 +35,7 @@ add_library(dxball_core SHARED
 
     # Frame dispatch and presentation
     src/runtime.cpp
+    src/clock.cpp
     src/display.cpp
     src/device.cpp
 

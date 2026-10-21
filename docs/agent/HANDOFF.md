@@ -1,7 +1,7 @@
 # DX-Ball reconstruction handoff
 
 Updated October 21, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Current254 authored functions are exact;16 remain.
+authored candidates byte-exact. Current255 authored functions are exact;15 remain.
 That objective is active, not complete.
 On October21 the user explicitly resumed the goal and authorized bounded,
 reproducible natural-source candidate searches. The
@@ -20,11 +20,36 @@ peer-review round, bespoke runner, whole-workspace seal union or recursive audit
 of unrelated historical archives. Verify the changed closure, keep recoverable
 overwrite targets and reuse retained compiler results. Documentation edits do
 not invalidate unchanged source/object comparisons or justify another compile.
-The policy-only update and subsequent runtime layout controls change no
-maintained source, recipe, products or exact claims. Current254/270 remains
-active, not complete.
+The policy-only changes do not alter compiler output. The subsequent clock
+utility split below is the latest maintained source/recipe change. Current255/270
+remains active, not complete.
 
-The latest [four runtime definition-layout controls](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
+The [clock utility TU recovery](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#clock-utility-tu-recovery-october21)
+moves the byte-identical current-time/elapsed pair to src/clock.cpp, leaving all
+globals/tables in runtime.cpp. Two distinct compiles exit0 once each. The complete
+16-function closure preserves all13 prior exacts and makes elapsed81/0; current-time
+stays148/0 and reset-round426/20. Already-nonexact paddle regresses677/68 to678/210;
+both whole objects are adopted together, never selectively mixed. All352 code
+bindings/389 raw relocations/33 literal references/four entire carriers compare.
+After a151-member verified overwrite backup, one maintained native build and468
+unchanged clock cases pass:216 current-time and252 elapsed. All41 old compile
+configurations and38 companion core objects remain fixed; one clock configuration
+is added. The52-input fixture cache is reused with zero preparations. Actual
+library SHA256 is `5c2f8ce210df0f5830818110581132267148a1f4697754ac0c85fba94b7ed02a`.
+Both game recipes include clock.cpp; restored-CRT now has116 source owners plus
+three integration objects, but no game relink/play is claimed. The manifest,
+actual bindings, source/semantic ownership and current receipts are synchronized.
+All270 authored receipts/31 closures verify at255 exact/15 candidates; overall400
+exacts/87,465 code/244 metadata bytes. The249 historical semantic scopes/cases/order
+remain unchanged, not rerun. Two prewrite helper errors are retained and repaired
+without restarting any producer. Tracking and generated progress pass. Private
+authority: `.analysis/runtime-clock-tu-source-search-20261021/`; its closed files
+are member-size/hash verified before exact-file retirement. Reuse this comparison
+and the four layouts below; no need to rebuild a union of unrelated historical
+seals. Remaining runtime targets are draw-paddle and reset-round; unknown original
+frontend IDs/ownership remain reconstruction questions, not approval blockers.
+
+The preceding [four runtime definition-layout controls](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
 each compile once and exit0. All retain elapsed81/3 and reset426/20. The first
 preserves all16 complete identities; the other three worsen only nonexact paddle
 677/68 to678/210. All13 prior exacts/352 code bindings/389 raw relocations/33
@@ -34,10 +59,12 @@ provider/debugger capture or semantic replay. A reviewed additive preparation
 refresh preserves the old receipt across the intervening documentation commit.
 Both trial directories are retained in the member-verified recovery carrier at
 `.analysis/runtime-order-closure-20261021/` before exact-file retirement.
-Next bounded candidate is a genuine clock utility TU: move the byte-identical
+The then-next bounded candidate was the genuine clock utility TU adopted above:
+move the byte-identical
 920-byte current-time/elapsed pair to a new clock.cpp using existing runtime.h
-and clock_api.h, keeping all globals/tables in runtime.cpp. This is uncompiled,
-not a historical-owner claim. Audit both objects together:2+14 functions and
+and clock_api.h, keeping all globals/tables in runtime.cpp. Its then-uncompiled
+plan was not a historical-owner claim. Audit both objects together:2+14 functions
+and
 10+342 code bindings, all13 priors,37 table bindings and all four carriers;
 replace fixed single-object topology assumptions with actual complete mappings.
 Five audited ownership controls, two initializer controls and these four layouts

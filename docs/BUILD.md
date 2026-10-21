@@ -72,9 +72,9 @@ remaining original-member dependencies. The [VC4 build and play record](research
 identifies the current e6d5b55 executable and local bundle. It is the first game
 build after the final text, rotation and last-brick arithmetic recoveries. The
 bounded authored inventory has source and complete comparison receipts for all
-270 identified functions; the remaining24 authored nonexact bodies are maintained
-source, not missing code. The selected basic/editor and real round-transition
-flows pass on the delivered image. A subsequent build compiles all118 source
+270 identified functions; at that delivery checkpoint, 24 authored bodies were
+nonexact maintained source, not missing code. The selected basic/editor and real
+round-transition flows pass on the delivered image. A subsequent build compiles all118 source
 objects with reuse disabled; its output differs from the directly tested EXE
 only in typed PE/resource timestamp fields. The current build record lists both
 identities and the completion audit. Full campaign and physical-driver acceptance
@@ -89,6 +89,10 @@ This artifact and the original assets are excluded from a source-only clone.
 
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
+The later clock utility split adds `clock.cpp` to both game builders and the
+portable library. The restored-CRT recipe now lists 116 source owners plus
+three integration objects. The delivered EXE/ZIP and the historical 118-object
+build above have not been relinked or play-tested for that later source change.
 The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the
 recovered heap. Its allocator flags and other owner overrides are recorded in
 `build.json`; focused entry/link checks are described in the

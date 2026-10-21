@@ -26,6 +26,9 @@ flowchart TD
 The mode table in `runtime.cpp` supplies initialization, redraw, frame, and
 cleanup functions. Device-reset handling runs before the selected frame;
 a requested mode change cleans up the old mode and initializes the next.
+The shared clock state stays in `runtime.cpp`; [clock.cpp](../src/clock.cpp)
+implements the current-time and elapsed-interval utilities without changing
+their public API.
 
 | Mode | Frame and screen code |
 | --- | --- |

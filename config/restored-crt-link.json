@@ -91,6 +91,7 @@
     "balls",
     "core",
     "runtime",
+    "clock",
     "display",
     "device",
     "platform",
@@ -164,7 +165,7 @@
     "member:000ea00c",
     "member:000eb086"
   ],
-  "source_objects": 115,
+  "source_objects": 116,
   "integration_objects": 3,
   "sdk_libraries": [
     "kernel32.lib",

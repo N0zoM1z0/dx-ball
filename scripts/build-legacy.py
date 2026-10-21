@@ -152,7 +152,7 @@ def main():
         print(f'legacy object {action}: {source}', flush=True)
         return output
 
-    for source in ("src/allocator.c", "src/cpp_allocator.cpp", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/rotation.cpp", "src/raster.cpp", "src/raster_host.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.cpp", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/display.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/drawing_primitives.cpp", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
+    for source in ("src/allocator.c", "src/cpp_allocator.cpp", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/rotation.cpp", "src/raster.cpp", "src/raster_host.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.cpp", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/clock.cpp", "src/display.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/drawing_primitives.cpp", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
         flags = owner_flags.get(source, build["flags"])
         output = compile_source(source, flags)
         objects.append(output)

@@ -6,6 +6,67 @@ supersedes blanket source-order/scope/owner/build-recipe bans in this historical
 log. Its measured failures still rule out those exact inputs, not all distinct
 bounded hypotheses. Original project/debug/build materials are not required.
 
+## Clock utility TU recovery, October21
+
+The complete81-byte elapsed function is now exact. Move the existing920-byte
+current-time/elapsed pair, unchanged, to `src/clock.cpp` with the existing runtime.h
+and clock_api.h includes. All globals/tables remain in runtime.cpp. This is a
+natural reconstructed utility owner, not uniquely established original ownership.
+No new operation, header, flag, fake declaration or padding is introduced.
+
+| Complete unit | Before bytes/differences | Adopted bytes/differences |
+| --- | ---: | ---: |
+| current-time | 148/0 | 148/0 |
+| elapsed | 81/3 | 81/0 |
+| draw-paddle | 677/68 | 678/210 |
+| reset-round | 426/20 | 426/20 |
+
+The two actual objects are adopted as one coherent closure. All13 previously
+exact functions survive and14 of16 resolved identities remain unchanged. The
+already-nonexact paddle regression is explicit; no winning old object is mixed
+back in. Elapsed's sole REL32 at offset10 maps to current-time0x403450 with zero
+addend; all81 resolved bytes equal the original at0x4034F0, SHA256
+`d7b06fd2ab4034dfc13c60ce551cdefefd0b6be78a63b648abac1cbcfcf8059e`.
+The comparison closes the three old differences19/22/24; it does not observe or
+uniquely recover original frontend IDs.
+
+Runtime's26 inputs and clock's11 inputs retain the same nine flags. Exactly two
+distinct compilers exit0, one per actual TU. The actual24 sections/237 primary
+symbols with auxiliaries are fully accounted for, including the duplicate-identical
+clock directive and four projected extern definitions. All389 raw relocation
+occurrences map bijectively:352 code and37 initialized-table bindings. All33
+literal references and four complete7/13/16/397-byte carriers compare with the
+unchanged strict local-target guard. An independent read-only review also checks
+the complete elapsed span. Runtime object SHA256 is
+`4d66f5484747e8b669a1a40907b867ed2279fbce508acb93d857293456bbb7f6`;
+clock object SHA256 is
+`09f045d9996dd9d4c76793e5a74e1c59dc688cf7c445aa122e9f09bf56742548`.
+
+A member-verified151-file overwrite backup precedes adoption. One maintained
+native build and the unchanged first two runtime Oracle loops pass:216 current-time
+and252 elapsed calls, retaining all existing state/event assertions. All41 old
+configurations and38 companion core objects stay fixed; clock adds one configuration.
+The verified52-input cache is reused, with zero preparation executions. Both game
+builders now include the utility; no delivered EXE/ZIP relink or play is claimed.
+Compiler peak is152,952,832 bytes; native peak is91,295,744 bytes, all memory events0
+under CPU0/35% and384/512MiB limits.
+
+The manifest promotes elapsed and assigns both clock functions to the new11-input
+recipe. Actual relocation names/offsets, both full objects, source/semantic owners
+and claim ledgers are synchronized. All270 authored receipts across31 closures
+verify:255 exact/15 candidates,400 overall exacts,87,465 code/244 metadata bytes.
+The249 historical semantic scopes/cases/order remain unchanged, not rerun. Two
+prewrite helper errors (optional owner inputs and a private module path) are
+retained and repaired locally; neither repeats a compiler or native check. A single
+strict proposed-manifest replay is reused after full installed-object SHA checks.
+Tracking and generated progress pass. The goal remains active/incomplete.
+
+Private authority is `.analysis/runtime-clock-tu-source-search-20261021/`.
+Retain its comparison, native/adoption summaries and recoverable overwrite backup;
+member-size/hash verify closed inputs/products before retiring their exact paths.
+The broader ownership controls below remain bounded historical results. Unknown
+original declarations/IDs are not a reason to request original materials again.
+
 ## Whole-definition layout controls, October21
 
 Four finite current-context source layouts leave complete elapsed81/3 unchanged.
@@ -43,7 +104,7 @@ remain unobserved. The results establish these four output identities, not
 source-layout optimality or uniquely recovered original declarations. A distinct
 next question is the clock functions' translation-unit/header context, rather
 than assuming a different layout must fix the comparison.
-A concrete uncompiled candidate moves the existing pair into a clock.cpp using
+A then-uncompiled candidate, now adopted in the section above, moves the pair into a clock.cpp using
 the current runtime.h/clock_api.h, leaving globals/tables with runtime.cpp.
 The five audited ownership controls still define both functions in runtime.cpp;
 the proposed split is distinct within those controls, not proved original.

@@ -9,7 +9,8 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [windows_entry.c](windows_entry.c), [windows_adapter.c](windows_adapter.c) | Windows entry and bindings to OS, graphics, and audio services |
 | [platform.c](platform.c), [platform_host.c](platform_host.c) | Instance lock, window creation, message loop, input, display setup, DirectDraw factory and process-exit transports |
 | [startup.c](startup.c) | Working resources, score files, RNG, and sprite-bank cleanup |
-| [runtime.cpp](runtime.cpp) | Five-mode dispatch, game lifecycle, clock, paddle drawing, and score |
+| [runtime.cpp](runtime.cpp) | Five-mode dispatch, game lifecycle, clock state, paddle drawing, and score |
+| [clock.cpp](clock.cpp) | Current-time and elapsed-interval functions using the shared runtime clock state |
 | [core.c](core.c) | Gameplay frame, ball/projectile movement, firing, and entity queues |
 | [intro.cpp](intro.cpp) | Menu and splash lifecycles, point animation, scroller, and credits |
 | [editor.c](editor.c) | Board editor, toolbar hit regions, painting, and persistence |
