@@ -69,12 +69,32 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Nine authored candidates remain. The next bounded module probe isolates the
-unchanged404-byte high-score drawing body with its inherited game-over prelude,
-then compares it under C and C++ contexts. Reject unhelpful proposals without
-remainder work. A useful result still requires all seven accepted game-over
-companions, actual literals/state and proportionate maintained checks before
-adoption. This is a candidate family, not an executed result.
+Nine authored candidates remain. The unchanged high-score C/C++ owner/header
+controls, triangle register/initializer controls and polygon singleton owners
+have executed and are rejected. See
+[the source context results](../research/exact/SOURCE_CONTEXT_CONTROLS_20261022.md).
+No maintained source or exact claim changes after the glyph adoption.
+
+A promising private polygon model replaces16 actually consumed workspace
+members with real scalar/pointer locals while preserving two separate endpoint
+points, all point-copy expressions and the28-byte heap edge layout. The original
+interleaved point/scalar homes motivated the model. One bounded meaningful-name
+solution,86 offline states and one compile per controller yield1543/39 and
+1592/39, versus maintained216/213 differences. All11 bindings per complete body
+are checked. A byte-template diagnostic classifies27 of each39 changed positions
+as nine reversed comparison windows;12 remain unclassified by that diagnostic.
+No unique historical spelling, complete instruction/liveness proof, coherent
+remainder or prior-exact preservation is claimed for these private probes.
+
+Keep `.analysis/polygon-flat-source-search-20261022/` live: both useful objects,
+frozen input trees, plans, complete comparisons, executable-token equivalence
+record and diagnostic are pending. The next bounded source question is actual
+declaration order/operand ranking while preserving the improved allocation and
+point copies. Constrain a finite family from observed comparisons; do not assume
+name buckets alone establish frontend IDs. A target success needs the matching
+raster remainder, nine prior exacts and proportionate maintained verification
+before adoption. Closed negative evidence is member-verified and archived at
+`.analysis/source-context-controls-20261022/`; obsolete copies are retired.
 
 ## Completed frame-wait adoption
 

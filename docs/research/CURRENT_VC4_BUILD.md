@@ -1,5 +1,14 @@
 # VC4 build and play records
 
+October22 status: this is the retained **October20 build/play checkpoint**.
+Maintained reconstruction has since reached261/270 authored exact functions
+and74,567/84,968 complete exact code bytes; see the
+[current handoff](../agent/HANDOFF.md). The later exact source changes have not
+yet been relinked or played as a new game image. Counts and build inputs below
+describe the historical tested products, not the current source checkpoint.
+The standing priority is to finish authored exact recovery, then refresh the
+VC4 game build and play verification.
+
 October 20, 2026. The bounded authored-source inventory is complete: all270
 identified authored functions have maintained source and complete comparison
 receipts across30 compiler closures. The current split is **246 authored exact
