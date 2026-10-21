@@ -261,7 +261,7 @@ address,symbol,source,scope,semantic_unit
 0x00415C10,dxball_finish_game,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-finish-game
 0x00415C40,dxball_reset_round,src/round_reset.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-reset-round
 0x00415DF0,dxball_restart_round,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-restart-round
-0x00415F40,dxball_last_brick,src/display.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-last-brick
+0x00415F40,dxball_last_brick,src/last_brick.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-last-brick
 0x00416370,dxball_draw_last_brick,src/display.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-draw-last-brick
 0x00416430,dxball_dispose_game,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-dispose-game
 0x004164A0,dxball_clear_all_entities,src/runtime.cpp,See docs/research/RUNTIME_OWNER.md; bounded valid state and explicit configured resource/backend/non-game-mode boundaries,runtime-clear-all-entities

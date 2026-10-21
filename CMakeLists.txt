@@ -10,6 +10,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(dxball_core SHARED
     # Storage, loading, and low-level drawing
     src/allocator.c
+    src/runtime_absolute.c
     src/random.c
     src/allocator_host.c
     src/cpp_allocator.cpp
@@ -57,6 +58,7 @@ add_library(dxball_core SHARED
     src/clock.cpp
     src/round_reset.cpp
     src/display.cpp
+    src/last_brick.cpp
     src/frame_wait.cpp
     src/device.cpp
 
@@ -98,6 +100,9 @@ target_include_directories(dxball_core PUBLIC src)
 set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(dxball_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    # Preserve the reconstructed CRT magnitude primitive at INT_MIN.
+    set_source_files_properties(src/runtime_absolute.c PROPERTIES
+        COMPILE_OPTIONS -fwrapv)
     # VC4 new can return NULL; retain the observed terminal allocation branch.
     set_source_files_properties(src/list_initializers.cpp PROPERTIES
         COMPILE_OPTIONS -fcheck-new)
@@ -138,7 +143,7 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     set_source_files_properties(src/boards.c PROPERTIES
         COMPILE_OPTIONS "-Wno-error=maybe-uninitialized;-fno-builtin-memmove")
     # The original lightning controller requires an eligible tile in its scan.
-    set_source_files_properties(src/display.cpp PROPERTIES
+    set_source_files_properties(src/last_brick.cpp PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
     # The WAV parser can return data before fmt; loading requires fmt first.
     set_source_files_properties(src/sound.c PROPERTIES

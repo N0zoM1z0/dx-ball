@@ -1,5 +1,10 @@
 # Build and play
 
+October22 source checkpoint:269/270 authored functions are exact. The retained
+October20 VC4 game image and play receipts below predate the later exact changes;
+the current source has not been relinked or played as a fresh game image. Finish
+PCX exact recovery before refreshing that delivery.
+
 Run these commands from the repository root. Linux builds use Python 3.11+,
 CMake, Ninja, and GCC or Clang. Windows cross-builds also need i686 MinGW;
 launching them on Linux needs Wine with 32-bit Windows support.

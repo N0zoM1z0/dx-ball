@@ -1,5 +1,9 @@
 # Last-brick clipping absolute value
 
+October22 supersession: the [complete exact controller](LAST_BRICK_EXACT_SOURCE_OWNER.md)
+is now adopted at269/270. Its coherent independent owner retains all18 current
+display exacts and both real absolute calls. The controls below are historical.
+
 The later [shared magnitude-call control](LIGHTNING_MAGNITUDE_BOUNDARY.md)
 restores both actual call targets in one private model but gains no complete
 exact and loses four companions. It is rejected; the source below stays current.

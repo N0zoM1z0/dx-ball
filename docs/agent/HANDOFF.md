@@ -10,21 +10,65 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |268 /270 (99.26%)|
-| Authored complete exact code bytes |83,049 /84,968 (97.74%)|
-| Authored nonexact candidates / original bytes |2 /1,919|
-| Overall exact functions, including runtime/compiler units |413|
-| Exact code / attached metadata bytes |97,433 /404|
-| Current authored compiler closures |52|
+| Authored byte-exact functions |269 /270 (99.63%)|
+| Authored complete exact code bytes |84,106 /84,968 (98.99%)|
+| Authored nonexact candidates / original bytes |1 /862|
+| Overall exact functions, including runtime/compiler units |414|
+| Exact code / attached metadata bytes |98,490 /404|
+| Current authored compiler closures |53|
 
 Private current artifact authority is
-`.analysis/rotation-member-context-source-search-20261022/current-checkpoint.json`.
-Its selected cursor-style-cursor-typedef producer, complete28-symbol/115-binding/
-25-literal/40-byte-carrier proof, installed comparison, native351 and adoption
-identify current rotation acceptance. Earlier triangle267, paddle266,
-high-score265, presenter264, polygon263, glyph261, resource260, frame-wait257
-and reset256 remain historical recoverable evidence. Do not repeat their one-shot
-adoption helpers.
+`.analysis/lightning-word-call-source-search-20261022/current-checkpoint.json`.
+It identifies the selected layout-absolute controller, matching display
+remainder, complete COFF/installed proof, existing198 native cases and adoption.
+The earlier rotation268 checkpoint remains recoverable; its acceptance is unchanged.
+
+## Completed last-brick adoption
+
+The complete1057-byte controller is exact in shared src/last_brick.cpp. Real
+primitive RNG/clock declarations precede data interfaces and restore the initial
+time→RNG sequence with ordinary unsigned addition and an independent second
+clock sample. Meaningful local aliases/declaration order restore all64 original
+frame bytes; every value and its existing real scope remain. Both genuine
+absolute calls use the unchanged exact10-byte CRT helper. Native adds that C
+owner with per-source -fwrapv; legacy default includes it, while restored-CRT
+already has its single producer. No fake storage, interface or alternate body.
+
+The matching display remainder removes only the controller definition. All19
+complete original entries/413 code bindings and2 initializers compare; all18
+prior exact identities and the full57-byte portable bridge survive. All83 old
+non-FILE identities,93 actual symbol projections/API records,23 section
+identities, raw auxiliaries, complete8-byte data and72,056-byte BSS extent are
+accounted for across the two objects. No literal/metadata exists in this closure.
+The selected object has the full original51 bindings; the exact helper is reused.
+See [the exact controller](../research/exact/LAST_BRICK_EXACT_SOURCE_OWNER.md).
+
+Nineteen distinct successful frozen compiles close word casts, SUB/NEG, three
+SDK gates, real primitive interface orders, local layout/magnitude and one
+matching remainder. One SUB model is observed through pinned REA6.5.0 using the
+verified existing observer. Evidence is
+ev_ea1fa86068e3aa64eee471a3adf86284cf00253f8a3adae58698389910bf1dda;
+full response is under `.analysis/rea/lightning-word-call-20261022/`. All1082
+rank entries include125 controller tags, with normal compiler exits. No Ghidra
+import or claim about unobserved selected-model numeric IDs follows.
+
+Native passes exactly197 unchanged deadline/crop cases plus the retained actual
+INT_MIN fixture: complete state, guarded buffers and ordered effects, including
+79 events in the boundary witness. Verified fixture cache stays unchanged with
+zero preparation. CMake's flags.make regeneration compiles all63 core objects
+serially;60 prior companion object bytes remain identical.62 of63 old command
+configurations stay identical; display loses the controller warning override,
+and the controller/absolute owner add two. No second build or full-owner replay.
+Compiler/observation peak344,068,096 bytes; native build/check43,417,600/
+59,703,296 bytes; CPU0/35%,384/512MiB and zero recorded memory events.
+
+Tracking/progress, source owners, both source/link lists and dependency hashes
+refresh; historical249 semantic scopes keep counts/order/oracles without replay.
+Passive installed19/19 and target-required tracking validation pass. There is no
+game relink/play. Closed useful evidence is member-verified archived before
+obsolete retirement; current accepted products and useful caches stay.
+Cleanup verifies540 archived members, retires454 obsolete files and releases
+3,100,672 allocated bytes net before small receipts. Canonical REA JSON stays.
 
 ## Completed rotation adoption
 
@@ -278,8 +322,9 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Two authored candidates remain: last-brick and PCX loading.
-Rotation, triangle, paddle, high-score, presenter and polygon
+Only PCX loading remains authored nonexact. Last-brick is now closed and adopted
+as documented above; its earlier negative controls below are historical.
+Last-brick, rotation, triangle, paddle, high-score, presenter and polygon
 families are closed and adopted. Reuse their retained outputs; do not repeat
 frozen producers. Earlier high-score arithmetic/qualifier/include controls and
 triangle register/initializer controls are historical negatives.
@@ -360,7 +405,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle/triangle/rotation source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle/triangle/rotation/last-brick source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -369,7 +414,6 @@ Sizes below are original/current; differences are strict full-span counts.
 
 | Unit | Owner | Bytes | Differences |
 | --- | --- | ---: | ---: |
-| last-brick |display.cpp|1057 /1047|976|
 | load-pcx |resources.cpp|862 /979|851|
 
 `config/match-units.toml`, the current exact report and candidate audit are the
