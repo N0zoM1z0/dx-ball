@@ -89,8 +89,8 @@ This artifact and the original assets are excluded from a source-only clone.
 
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
-The later clock utility split adds `clock.cpp` to both game builders and the
-portable library. The restored-CRT recipe now lists 116 source owners plus
+The later utility splits add `clock.cpp` and `round_reset.cpp` to both game
+builders and the portable library. The restored-CRT recipe now lists 117 source owners plus
 three integration objects. The delivered EXE/ZIP and the historical 118-object
 build above have not been relinked or play-tested for that later source change.
 The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the

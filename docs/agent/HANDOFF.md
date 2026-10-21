@@ -1,7 +1,7 @@
 # DX-Ball reconstruction handoff
 
 Updated October 21, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Current255 authored functions are exact;15 remain.
+authored candidates byte-exact. Current256 authored functions are exact;14 remain.
 That objective is active, not complete.
 On October21 the user explicitly resumed the goal and authorized bounded,
 reproducible natural-source candidate searches. The
@@ -21,10 +21,37 @@ of unrelated historical archives. Verify the changed closure, keep recoverable
 overwrite targets and reuse retained compiler results. Documentation edits do
 not invalidate unchanged source/object comparisons or justify another compile.
 The policy-only changes do not alter compiler output. The subsequent clock
-utility split below is the latest maintained source/recipe change. Current255/270
+utility split is followed by the reset TU recovery below. Current256/270
 remains active, not complete.
 
-The [clock utility TU recovery](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#clock-utility-tu-recovery-october21)
+The latest [direct-owner reset TU recovery](../research/exact/EXACT_LIFECYCLE.md#direct-owner-reset-tu-recovery-october-21)
+moves the byte-identical reset body to src/round_reset.cpp with its five actual
+API-owner includes (17 project inputs). The full-prelude single-body control
+retains426/20; the direct-owner probe emits426/0. A third compile closes the
+matching runtime remainder: all13 identities unchanged,12 prior exacts preserved,
+paddle still678/210. Complete14/342 code bindings/379 raw relocations/33 literal
+references/four full carriers compare. A retained offline mapping failure is
+repaired only for the associated13-byte literal's actual alignment8 to4; raw
+flags, full original payload, parent auxiliaries and local-target guards stay
+explicit. No compiler or successful comparison is repeated. After155 verified
+overwrite members, one maintained native build and300 unchanged reset cases pass
+(50boards/two widths/three mouse positions, all original assertions). All42 old
+configurations/39 companion core objects/cache52 stay fixed, zero cache preparations.
+Both source/build recipes and true ownership/dependency receipts are updated;
+all270 authored receipts/32closures verify at256 exact/14 candidates,401 overall
+exacts/87,891 code/244 metadata bytes. Historical249 semantic scopes/cases/order
+are unchanged,not rerun. No game relink/play. Private authority is
+`.analysis/reset-tu-source-search-20261021/`; current tested products/caches stay
+live and closed inputs/products are member-verified before retirement.
+One separate presenter iterator-lifetime model fails (984/49, sort296/3 lost);
+18 other full identities and the57-byte bridge survive. Reject without adoption
+or native build, retaining `.analysis/present-iterator-scope-search-20261021/`.
+Next eligible small source-organization question is the presenter/sort pair's
+natural TU/include context, distinct from that closed four-scope iterator model.
+Only draw-paddle remains nonexact in the runtime owner; original IDs/ownership
+remain reconstruction questions, not permission blockers.
+
+The preceding [clock utility TU recovery](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#clock-utility-tu-recovery-october21)
 moves the byte-identical current-time/elapsed pair to src/clock.cpp, leaving all
 globals/tables in runtime.cpp. Two distinct compiles exit0 once each. The complete
 16-function closure preserves all13 prior exacts and makes elapsed81/0; current-time

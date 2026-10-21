@@ -29,6 +29,8 @@ a requested mode change cleans up the old mode and initializes the next.
 The shared clock state stays in `runtime.cpp`; [clock.cpp](../src/clock.cpp)
 implements the current-time and elapsed-interval utilities without changing
 their public API.
+The board-round reset lives in [round_reset.cpp](../src/round_reset.cpp); lifecycle
+coordination and shared state remain in `runtime.cpp`.
 
 | Mode | Frame and screen code |
 | --- | --- |

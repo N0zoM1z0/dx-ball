@@ -6,6 +6,11 @@ supersedes blanket source-order/scope/owner/build-recipe bans in this historical
 log. Its measured failures still rule out those exact inputs, not all distinct
 bounded hypotheses. Original project/debug/build materials are not required.
 
+The subsequent [direct-owner reset TU recovery](EXACT_LIFECYCLE.md#direct-owner-reset-tu-recovery-october-21)
+makes reset-round426/0 with its unchanged body and five real API-owner includes.
+All 13 runtime remainder identities survive. Current authored count is
+256 exact / 14 candidates; the clock recovery below is the preceding checkpoint.
+
 ## Clock utility TU recovery, October21
 
 The complete81-byte elapsed function is now exact. Move the existing920-byte

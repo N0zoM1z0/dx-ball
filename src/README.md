@@ -11,6 +11,7 @@ to follow input, mode dispatch, and a gameplay frame. The
 | [startup.c](startup.c) | Working resources, score files, RNG, and sprite-bank cleanup |
 | [runtime.cpp](runtime.cpp) | Five-mode dispatch, game lifecycle, clock state, paddle drawing, and score |
 | [clock.cpp](clock.cpp) | Current-time and elapsed-interval functions using the shared runtime clock state |
+| [round_reset.cpp](round_reset.cpp) | Board-round reset, real state clears, paddle/ball initialization and palette/sound call order |
 | [core.c](core.c) | Gameplay frame, ball/projectile movement, firing, and entity queues |
 | [intro.cpp](intro.cpp) | Menu and splash lifecycles, point animation, scroller, and credits |
 | [editor.c](editor.c) | Board editor, toolbar hit regions, painting, and persistence |
