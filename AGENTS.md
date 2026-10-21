@@ -35,6 +35,9 @@ the affected complete-unit comparison and a concise result are sufficient.
 Independent reviews, bespoke orchestration, whole-workspace seals and replaying
 unrelated historical evidence are not mandatory gates. Reuse verified receipts;
 documentation-only changes do not invalidate unchanged compiler results.
+Private module-first probes are allowed; compare the matching complete closure
+before adoption, not as a prerequisite for rejecting an unpromising probe.
+Unknown historical source details are experiment inputs, not permission gates.
 
 - Run Python through `scripts/repo-python`.
 - Use `scripts/rea` and the installed REA skill for new binary analysis.

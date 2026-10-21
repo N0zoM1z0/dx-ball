@@ -57,6 +57,25 @@ flags, replace the toolchain or weaken the acceptance standard to gain a match.
 
 ## Execute a bounded family
 
+### Exploration and adoption are different checkpoints
+
+The user reaffirmed that the existing EXE/resources are the reconstruction
+inputs, not a reason to wait for an original project. Unknown original names,
+declarations, compiler choices and module boundaries may be inferred and tested.
+An earlier local process rule may be simplified under this authorization; do
+not turn an optional workflow convention into another permission requirement.
+This does not authorize changing the target, fabricating evidence or relaxing
+the definition of byte-exactness.
+
+A private probe may compile and compare only the proposed new module first.
+Record that limited scope explicitly: its result is exploratory, not a promotion
+or preservation claim for the remaining owner. If that probe is rejected,
+building its unchanged companion proposal is unnecessary. If it is promising,
+compile the matching remainder and compare the complete affected closure before
+adoption. All adopted objects must come from one coherent set of actual inputs;
+never substitute a winning probe while silently retaining incompatible old
+companions. Reuse successful producer outputs when extending the comparison.
+
 Before execution, record the target residual and relevant retained evidence,
 candidate dimensions/domains, finite candidate and compiler-attempt limits,
 resource/time limits, affected compiler-input closure and stopping criteria.

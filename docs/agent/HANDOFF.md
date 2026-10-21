@@ -20,6 +20,9 @@ peer-review round, bespoke runner, whole-workspace seal union or recursive audit
 of unrelated historical archives. Verify the changed closure, keep recoverable
 overwrite targets and reuse retained compiler results. Documentation edits do
 not invalidate unchanged source/object comparisons or justify another compile.
+The user's reaffirmed authorization also permits private module-first probes:
+reject an unpromising probe without compiling its proposed remainder; close the
+whole matching owner set before adoption. No original project is expected.
 The policy-only changes do not alter compiler output. The subsequent clock
 utility split is followed by the reset TU recovery below. Current256/270
 remains active, not complete.

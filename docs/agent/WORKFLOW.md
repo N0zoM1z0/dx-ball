@@ -36,6 +36,10 @@ reviews, bespoke runners, whole-workspace seals or recursive historical audits
 to routine source work. A concise hypothesis and affected-input record suffice.
 Keep prior evidence reusable, validate the changed closure, and spend effort on
 reconstruction rather than repeatedly rebuilding the acceptance machinery.
+Separate exploration from adoption: a private new-module probe can be rejected
+without building the proposed remainder. A promising split must close and verify
+all affected objects before changing maintained claims. Unknown historical
+source context does not require another request for original materials.
 
 Use repository Python and the pinned REA wrapper. When beginning binary or
 compiler work, verify the inputs relevant to that work:
