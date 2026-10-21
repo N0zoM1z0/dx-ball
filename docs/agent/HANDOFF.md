@@ -167,6 +167,23 @@ families are closed and adopted. Reuse their retained outputs; do not repeat
 frozen producers. Earlier high-score arithmetic/qualifier/include controls and
 triangle register/initializer controls are historical negatives.
 
+The new private paddle scalar/clock-first model restores the complete677-byte
+extent and68-byte frame, leaving only four differences at274/275/280/281:
+the two global addresses in the overlay-width MOV/CMP comparison are reversed.
+All12 runtime companion identities,299 bindings,32 complete literal references,
+full noncode/initialized callbacks and200-symbol/auxiliary proof compare.
+Seventeen distinct current-context compiles close the scoped/include families;
+source inequality reversal does not change output. Several alternatives lose
+refresh-score or restart-round and are rejected coherently. See
+[the paddle residual](../research/exact/PADDLE_SCALAR_CONTEXT_RESIDUAL.md).
+
+This remains unadopted: canonical paddle678/210, authored265/270 and all maintained
+artifact hashes stay fixed. No native/game/provider check follows. Reuse the
+selected private plan/producer/comparison and verified recovery archive under
+`.analysis/paddle-scope-context-source-search-20261022/`; do not repeat those
+producers. Next investigate a distinct natural source/interface hypothesis for
+the two global loads while retaining the recovered frame and full closure.
+
 Select a finite natural source family from the current complete residuals and
 retained owner/correspondence notes. Keep source scope/representation, actual
 compiler-record identity and instruction selection separate; byte equality does
