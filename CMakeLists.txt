@@ -15,6 +15,22 @@ add_library(dxball_core SHARED
     src/cpp_allocator.cpp
     src/boards.c
     src/resources.cpp
+    src/blt_keyed_sprite.cpp
+    src/blt_sprite.cpp
+    src/capture_sprite.cpp
+    src/draw_keyed_sprite.cpp
+    src/draw_rotated_sprite.cpp
+    src/draw_sprite.cpp
+    src/find_glyph.cpp
+    src/load_live_palette.cpp
+    src/load_saved_palette.cpp
+    src/load_sprite_bank.cpp
+    src/load_surface_palette.cpp
+    src/release_sprite.cpp
+    src/release_sprite_bank.cpp
+    src/select_font_bank.cpp
+    src/select_sprite_bank.cpp
+    src/stretch_keyed_sprite.cpp
     src/rotation.cpp
     src/raster.cpp
     src/raster_host.cpp
@@ -85,7 +101,24 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     # Define the observed signed32 add/subtract/multiply wrap only.
-    set_source_files_properties(src/resources.cpp src/rotation.cpp PROPERTIES
+    set_source_files_properties(src/resources.cpp src/rotation.cpp
+        src/blt_keyed_sprite.cpp
+        src/blt_sprite.cpp
+        src/capture_sprite.cpp
+        src/draw_keyed_sprite.cpp
+        src/draw_rotated_sprite.cpp
+        src/draw_sprite.cpp
+        src/find_glyph.cpp
+        src/load_live_palette.cpp
+        src/load_saved_palette.cpp
+        src/load_sprite_bank.cpp
+        src/load_surface_palette.cpp
+        src/release_sprite.cpp
+        src/release_sprite_bank.cpp
+        src/select_font_bank.cpp
+        src/select_sprite_bank.cpp
+        src/stretch_keyed_sprite.cpp
+        PROPERTIES
         COMPILE_OPTIONS -fwrapv)
 endif()
 # Rebound compares the live x87 quotient once, then reads stored float contacts.

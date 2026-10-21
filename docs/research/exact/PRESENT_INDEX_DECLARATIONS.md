@@ -131,3 +131,34 @@ Closed inputs/products are member-size/hash verified in a recovery archive
 before exact-path retirement. This rules out four frozen contexts, not every
 natural presentation owner or unknown original declaration. Current authored
 coverage remains256 exact/14 candidates; the objective is incomplete.
+
+## Complete-owner definition order, resumed October21
+
+After the frame-wait split, six new finite models move the unchanged complete
+presenter body to real positions in the remaining display translation unit.
+The inherited headers, globals, other function bodies, local declarations and
+nine flags remain unchanged. An exact removal/insertion inverse verifies each
+source transformation. This tests definition position rather than repeating the
+earlier two-function standalone modules or top-condition spellings.
+
+| Presenter position | Presenter bytes / differences | Sort bytes / differences |
+| --- | ---: | ---: |
+| Before the first function |984 /6|296 /0|
+| Before draw-effect-sprite |984 /6|296 /0|
+| Before restore-regions |984 /6|296 /0|
+| After sort, before palette animation |984 /4|296 /3|
+| Before last-brick |984 /6|296 /3|
+| At the end of the owner |984 /6|296 /3|
+
+Reject all six; none improves the maintained984/2. Each distinct20-input digest
+compiles once, exit0, then compares all19 complete original functions and411
+actual code bindings with the maintained full-span/local-target guard. Global
+noncode carriers, initialized pointers and the separate57-byte portable bridge
+remain identical. This covers114 complete body instances and2,466 code-binding
+occurrences. Three models preserve all17 prior exacts; three lose sort. No
+maintained source/object, ledger, native build or game image changes.
+
+Private authority is `.analysis/presenter-order-source-search-20261021/`.
+CPU0/35%,384/512MiB holds; scope peak251,772,928 bytes and zero memory events.
+This closes six real definition positions, not every historical source context.
+Maintained authored coverage stays257/270,73,677/84,968 complete exact bytes.
