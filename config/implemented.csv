@@ -125,7 +125,7 @@ address,symbol,source,scope,semantic_unit
 0x00409040,dxball_present,src/display.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-present
 0x00409100,dxball_present_regions_now,src/display.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-present-regions-now
 0x004094E0,dxball_sort_present_regions,src/display.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-sort-present-regions
-0x00409610,dxball_wait_frames,src/display.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-wait-frames
+0x00409610,dxball_wait_frames,src/frame_wait.cpp,See docs/research/DISPLAY_OWNER.md; bounded valid rectangle/count/clock state and explicit configured COM/audio/recovery/UI boundaries,display-wait-frames
 0x004096C0,dxball_initialize_palette,src/device.cpp,"See docs/research/DEVICE_OWNER.md; bounded terminating palette domain, valid bank/surface state and explicit configured COM/reload/glyph/audio/platform boundaries",device-initialize-palette
 0x00409790,dxball_load_live_palette,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-live-palette
 0x004098F0,dxball_load_saved_palette,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-saved-palette

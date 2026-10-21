@@ -1,15 +1,48 @@
 # Frame-wait cursor
 
-Handoff, October21: the maintained scalar body remains170/6 and authored coverage
-256/270. A separately compiled standalone waiting backend now has a complete
-170/0 proof; its matching display remainder preserves all19 identities and17
-prior exacts across419 code bindings, two initializer relocations and the57-byte
-bridge. The user stopped reconstruction before maintained adoption: no native
-build,18-case replay, source/object installation or ledger promotion followed.
-The member-verified private recovery is
-`.analysis/timing-cursor-source-search-20261021/`; see the
-[current handoff](../../agent/HANDOFF.md#unadopted-frame-wait-recovery-preserve-do-not-count).
-Do not count that pending proof as an adopted257th authored exact.
+## Adopted standalone waiting owner, October21
+
+The user resumed authored exact recovery after the cleanup/handoff. The retained
+standalone waiting proof is now adopted: **170/0**, authored257/270, overall402
+exact functions/88,061 code bytes/244 attached metadata bytes. Authored complete
+exact code covers73,677 of84,968 bytes;13 functions/11,291 bytes remain nonexact.
+
+`src/frame_wait.cpp` owns the unchanged typed waiting body with the inherited
+display include prelude. `src/display.cpp` retains the state definitions and
+other bodies. No dummy declaration, machine-code insertion, compiler flag change
+or alternate platform body is involved. This reconstructs a successful source
+organization, not a uniquely established historical translation unit.
+
+The recovered pair's complete20-function proof covers419 code bindings, two
+initializer relocations and the57-byte portable bridge. All19 other resolved
+identities and17 prior exacts survive. The complete waiting code digest is
+`e46f27233ba12818911cb59c00a0219250578b6db20bf7cfe611b998d67e1234`.
+Both compiler outputs and their20-input/nine-flag receipts are reused after
+archive member-size/SHA verification; no identical compiler digest is rerun.
+The clock source/object remain unchanged.
+
+The maintained native incremental build compiles display and the new waiting
+owner, preserving40 other objects and43 prior compile configurations. All18
+existing waiting cases pass against the original x86 implementation, including
+frame-count guards, vertical blank, clock rollback, threshold and wrap. The
+verified52-input interposer cache is unchanged and never rebuilt. A reviewed
+draft-helper correction accounts for display's existing lightning-only warning
+exception; all code-generating options remain checked, with the original helper
+and prepared baseline preserved. Native library SHA256 is
+`2dcc9d550443531e19da80e1e67d8c2eb50baf0f3070c2ae485de5935cbf3894`.
+Its CPU0/35% scope peaks at112,594,944 bytes under384/512MiB limits with no memory
+events. Historical249 semantic scopes/cases are not rerun; dependency seals are
+refreshed without expanding their acceptance. There is no game relink/play.
+
+Private authority is
+`.analysis/timing-cursor-source-search-20261021/frame-wait-followup/adoption.json`,
+with the current artifact hashes in its adjacent `current-checkpoint.json`.
+The earlier stopped proof and original trials remain in the member-verified
+parent recovery archive. After adoption,72 obsolete restored/native files are
+member-size/SHA verified against that archive or the new adoption evidence
+archive before retirement, releasing1,982,464 allocated bytes net before the
+small cleanup receipt. Current objects, native library, verified cache and
+delivery remain. The following descriptions retain their original dates.
 
 October21 update: the [same-role scalar recovery](CLOCK_LINE_SOURCE_RECOVERY.md)
 replaces the inferred cursor with consumed root now/index scalars. Both finite

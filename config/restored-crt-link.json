@@ -94,6 +94,7 @@
     "clock",
     "round_reset",
     "display",
+    "frame_wait",
     "device",
     "platform",
     "game:src/platform_host.c",
@@ -166,7 +167,7 @@
     "member:000ea00c",
     "member:000eb086"
   ],
-  "source_objects": 117,
+  "source_objects": 118,
   "integration_objects": 3,
   "sdk_libraries": [
     "kernel32.lib",

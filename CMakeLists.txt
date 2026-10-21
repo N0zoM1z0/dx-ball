@@ -38,6 +38,7 @@ add_library(dxball_core SHARED
     src/clock.cpp
     src/round_reset.cpp
     src/display.cpp
+    src/frame_wait.cpp
     src/device.cpp
 
     # Platform, screens, and audio

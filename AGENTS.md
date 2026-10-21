@@ -15,10 +15,10 @@ with sections that help readers follow the workflow.
 Put operational detail in these instructions or `docs/agent/`.
 Keep the centered title PNG and progress SVG in the README, both at 900px.
 
-October21 handoff status: the user stopped and cleared the reconstruction goal
-and requested cleanup/handoff. Preserve the maintained256/270 checkpoint and
-the unadopted frame-wait proof separately. Do not auto-resume experiments or
-execute unfinished adoption helpers; wait for a new reconstruction request.
+October21 resumed status: the user explicitly resumed all270 authored exact
+recoveries, with serial CPU/memory limits, frequent commits/pushes and periodic
+cleanup. The maintained checkpoint is257/270 after verified frame-wait adoption;
+see the current handoff. Earlier stopped/unadopted records are historical.
 
 Read [the current handoff](docs/agent/HANDOFF.md),
 [workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing

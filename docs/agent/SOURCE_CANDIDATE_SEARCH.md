@@ -8,8 +8,9 @@ the same permission boundary. This is standing authorization, not a request for
 another plan or a requirement to ask again for every search family.
 
 Authorization defines eligible work when reconstruction is requested; it does
-not reactivate a stopped or cleared goal. The current [handoff](HANDOFF.md)
-records the user's October21 cleanup/handoff request instead of active recovery.
+not reactivate a stopped or cleared goal. The user subsequently resumed all270
+authored exact recoveries on October21; the current [handoff](HANDOFF.md)
+records active recovery and supersedes the earlier stopped checkpoint.
 
 Use the existing EXE, resources, reconstructed source and retained evidence.
 The user confirmed these are the available materials, not an original project.
