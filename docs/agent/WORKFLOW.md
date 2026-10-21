@@ -13,14 +13,18 @@ Read [`AGENTS.md`](../../AGENTS.md), the current handoff, and the relevant owner
 notes. Inspect the worktree and consult `config/functions.csv`; imported
 function boundaries are provisional. Reuse the existing REA dossier before
 opening another analysis session. Record what behavior is missing and which
-caller, callee or data owner will answer it.
+caller, callee or data owner will answer it, or identify the precise remaining
+compiler storage/selection difference that a source-candidate family targets.
 
 Missing original source declarations are a reconstruction question, not by
-themselves an external blocker. Form bounded hypotheses from actual producers,
-consumers and independent layout observations, then test complete affected
-functions. Distinguish an inferred declaration from uniquely recovered source;
-exact compiler output can establish the former without proving the latter.
-Avoid blind permutations, unused padding and repeated unchanged trials.
+themselves an external blocker. The user has authorized the
+[bounded source-candidate search policy](SOURCE_CANDIDATE_SEARCH.md), including
+natural identifier, declaration-order/grouping and genuine scope alternatives.
+Existing binary comparisons and the observed compiler mechanism can seed a
+finite search; a newly discovered operation or independently recovered original
+declaration is not a prerequisite. Historical blanket search bans are superseded.
+Distinguish a byte-exact reconstructed declaration from uniquely recovered source.
+Reject unbounded blind enumeration, unused padding and repeated identical trials.
 
 Use repository Python and the pinned REA wrapper. When beginning binary or
 compiler work, verify the inputs relevant to that work:
@@ -62,7 +66,11 @@ the fixture preserve the real ABI? Resolve the answer before broadening work.
 
 ## Build and check the affected behavior
 
-Once the family is stable, compile the affected maintained target. Use the
+Freeze each distinct candidate in the bounded family, compile it once, and check
+the complete affected compiler-input closure. Deduplicate by source/header/flag
+identity and reuse prior results. The older phrase "once per stable family" does
+not limit a declared finite family to one candidate. Once a candidate is ready
+for adoption, build the affected maintained target. Use the
 build instructions in [`BUILD.md`](../BUILD.md); CMake builds run with
 `--parallel 1`. Prefer a small startup/play check or one affected existing
 Oracle when it resolves a concrete issue. Tests are optional evidence. Do not

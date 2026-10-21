@@ -1,5 +1,11 @@
 # Remaining exact functions
 
+October21 policy update: the user authorized
+[bounded natural-source candidate searches](../../agent/SOURCE_CANDIDATE_SEARCH.md).
+Older "closed" labels and blanket name/order/scope-search bans below retain
+historical results, not a requirement for renewed permission or original source.
+This policy update does not change the comparison counts.
+
 Updated October20,2026, after validated whole-owner rotation arithmetic recovery.
 Accepted totals are **394 functions / 84,778 code bytes / 244 metadata bytes**.
 There are **81 complete nonexact comparisons: 21 authored and 60 runtime**. None is an accepted exact.

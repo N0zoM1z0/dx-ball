@@ -20,6 +20,13 @@ Read [the current handoff](docs/agent/HANDOFF.md),
 source. Use `config/functions.csv` to locate entries; reconcile imported extents
 against instructions, exits and embedded data.
 
+The user explicitly authorized bounded, reproducible source-candidate searches
+on October 21, 2026. Follow [the standing search policy](docs/agent/SOURCE_CANDIDATE_SEARCH.md).
+It supersedes blanket name/order/scope-search bans in older handoffs and research
+notes. Existing EXE/resources are sufficient inputs; do not require original
+source, PDB/MAP files or uniquely proved historical identifiers before searching.
+This authorization does not need renewal for each eligible search family.
+
 - Run Python through `scripts/repo-python`.
 - Use `scripts/rea` and the installed REA skill for new binary analysis.
   The project pins REA 6.5.0/Ghidra 12.1.4 in `config/rea.lock.json`.
@@ -28,8 +35,9 @@ against instructions, exits and embedded data.
   ABI, widths, ownership and actual state writes. Do not force matches with
   copied machine code, assembly, padding, fake locals or alternate profile bodies.
 - New exact claims require complete units, compiler inputs and explicit
-  relocation mappings. Compile once per stable family and compare the affected
-  units, including accepted units sharing those inputs.
+  relocation mappings. Compile each distinct frozen candidate once and compare
+  all affected units, including accepted units sharing those inputs. Reuse
+  results for identical input/flag digests instead of recompiling them.
 - Run only the minimum useful existing Oracle/replay or play check. Tests are
   optional; do not run the full historical queue by default or repeat unchanged
   checks. Remove redundant scripts and their obsolete references when appropriate.

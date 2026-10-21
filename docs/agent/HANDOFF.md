@@ -3,6 +3,13 @@
 Updated October 21, 2026. The user's objective is to make the initial24
 authored candidates byte-exact. Current249 authored functions are exact;21 remain.
 That objective is active, not complete.
+On October21 the user explicitly resumed the goal and authorized bounded,
+reproducible natural-source candidate searches. The
+[standing search policy](SOURCE_CANDIDATE_SEARCH.md) supersedes blanket name,
+declaration-order/grouping and scope-search bans in the historical notes below.
+Do not request the same authorization again or require original source/debug
+materials; use the existing EXE/resources and retained compiler evidence.
+This documentation change makes no source, product or exact-count claim.
 The newest [same-run field tuple](../research/exact/VC4_EXPRESSION_ORDERING.md#same-run-field-tuple-and-unchanged-owner-october21)
 observes the missing actual41A9B0 inputs and412194 return on unchanged current
 resources.cpp.406 entries yield158 paired calls; the unique retained raw
@@ -1050,17 +1057,19 @@ agreement and12 retained MAP-order observations, but not original TU/settings;
 it does not justify an18-function sorting compile. Its private receipt is
 `resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
 
-If new evidence exposes a concrete source question, use the current
+For the next bounded source-candidate family, use the current
 [21-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
-Form one bounded inference from actual producers, consumers, ownership or layout;
-unique historical spelling is not required. A small byte-difference count alone
-is not a new source question. Keep inference separate from recovered fact; do
-not resume exactness tuning merely because a complete body remains nonexact.
+Follow the [authorized search policy](SOURCE_CANDIDATE_SEARCH.md): declare finite
+candidate domains, compiler-attempt limits, the target storage/selection residual
+and the complete affected closure. Existing comparisons and compiler mechanisms
+are sufficient to seed a search; a new operation or original declaration is not
+required. Keep inferred source separate from uniquely recovered fact and prune
+mechanically ineffective candidates before compiling.
 
 | Family | Reuse before another proposal | Boundary to preserve |
 | --- | --- | --- |
-| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/68 preserves extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; names, filename qualification, cursor/row/column and transfer scopes are closed |
+| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/68 preserves extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; reuse prior name/qualification/scope results when screening new bounded combinations |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Both frames are424 bytes; the lower80 original bytes are ten consumed conversion/spill slots, not an unused object. Named/temporary allocation context remains open; integer-offset-before-base order is restored |
@@ -1078,8 +1087,10 @@ do not confuse the two models or replay either closed control.
 Resource callback-table extraction and historical DirectDraw header controls
 can produce a private exact release-sprite while losing prior exact companions.
 Those models remain rejected. Full-owner C/C++ and broad declaration controls
-are also closed. Avoid name/order/count/flag sweeps, fake unused storage, assembly,
-per-profile bodies, selective old objects, and repeated unchanged controls.
+retain their recorded negative results. They do not prohibit a different bounded
+source search under the user's standing authorization. Reuse identical closed
+inputs without recompilation; do not introduce fake unused storage, assembly,
+per-profile bodies, compiler-flag sweeps, selective old objects or weaker checks.
 The [historical handoff](https://github.com/N0zoM1z0/dx-ball/blob/c99ab9e62fcc1625a0c0754a3ee0abb67dc10623/docs/agent/HANDOFF.md)
 and linked owner notes retain the detailed boundaries of older trials.
 
@@ -1146,8 +1157,9 @@ REA's general Java heap cap is256MiB; the saved Mac project queries use128MiB
 and Node192MiB. Do not overlap heavy trees. Automated audio uses
 `PULSE_SINK=dxball_reconstruction_silent`; never change the default sink.
 
-For a genuine new source model, verify the relevant target/toolchain, freeze
-previous products and all recursive inputs, compile once per stable family,
+For each distinct frozen candidate in an authorized bounded family, verify the
+relevant target/toolchain, retain previous products and all recursive inputs,
+compile once per unique input/flag digest and reuse identical retained results,
 and compare complete affected candidates and accepted companions. Include
 all actual relocations, local destinations, full literals and metadata.
 Restore canonical bytes, modes and nanosecond mtimes in `finally` under the lock;
