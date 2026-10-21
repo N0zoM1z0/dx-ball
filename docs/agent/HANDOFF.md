@@ -221,6 +221,25 @@ preserved. Duplicate40-byte xdata sections require their actual associative
 parents; the offline repair reuses the successful object. Neither is adopted.
 Their evidence is retained with this paddle checkpoint; do not repeat them.
 
+Twenty-two subsequent current controls leave the maintained266 checkpoint
+unchanged. Last-brick's register/const/comma sampled-time forms retain1047/976.
+Two zero-argument call views and four standalone C/C++ combined-expression
+contexts give1043/405 with64-byte frames but still call RNG first; all reject.
+An explicit-time /Og module gives655/1037, with call order unobserved by its
+limited direct-call diagnostic. Offline full comparison reuses its successful
+object without an order claim. All18 prior display exacts and seven complete
+portable bridge checks survive the whole-owner controls.
+
+PCX postincrement controls, independent C/C++ interfaces and /G3,/G4,/G5 target
+recipes keep979 bytes and308 frame bytes:851 differences, or850 in direct C++.
+The original four unobserved frame bytes remain unexplained; no padding/field
+is introduced. No source, ledger, native or game change follows. See
+[the current source controls](../research/exact/PCX_LIGHTNING_SOURCE_CONTROLS.md)
+and `.analysis/remaining-source-controls-20261022/` for the22 distinct successful
+producers, complete results and verified archive. Reuse these frozen outputs.
+Cleanup verifies453 members and retires377 obsolete files, releasing1,679,360
+allocated bytes net before index/receipts; current products/caches remain.
+
 Select a finite natural source family from the current complete residuals and
 retained owner/correspondence notes. Keep source scope/representation, actual
 compiler-record identity and instruction selection separate; byte equality does
