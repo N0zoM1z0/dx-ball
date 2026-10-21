@@ -5841,7 +5841,7 @@ relocations = [
   { "type" = "DIR32", "addend" = 0, "target" = 4392408, "symbol" = "_dxball_present_count", "offset" = 169 },
 ]
 
-[candidates.present-regions-now]
+[units.present-regions-now]
 build = "display"
 symbol = "_dxball_present_regions_now"
 target_address = 4231424

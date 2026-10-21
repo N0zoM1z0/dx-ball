@@ -10,19 +10,48 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |263 /270 (97.41%)|
-| Authored complete exact code bytes |77,702 /84,968 (91.45%)|
-| Authored nonexact candidates / original bytes |7 /7,266|
-| Overall exact functions, including runtime/compiler units |408|
-| Exact code / attached metadata bytes |92,086 /244|
+| Authored byte-exact functions |264 /270 (97.78%)|
+| Authored complete exact code bytes |78,686 /84,968 (92.61%)|
+| Authored nonexact candidates / original bytes |6 /6,282|
+| Overall exact functions, including runtime/compiler units |409|
+| Exact code / attached metadata bytes |93,070 /244|
 | Current authored compiler closures |51|
 
 Private current artifact authority is
-`.analysis/polygon-declaration-source-search-20261022/current-checkpoint.json`.
-Its complete proof, native summary, adoption and publication-correction records
-identify the current polygon/raster acceptance. Earlier glyph261, resource260,
-frame-wait257 and reset256 checkpoints remain recoverable historical evidence.
-Do not execute their one-shot adoption helpers again.
+`.analysis/display-blt-position-source-search-20261022/current-checkpoint.json`.
+Its selected after-present producer/comparison, installed comparison, native
+summary and adoption identify the current presenter acceptance. Earlier
+polygon263, glyph261, resource260, frame-wait257 and reset256 checkpoints remain
+recoverable historical evidence. Do not repeat their one-shot adoption helpers.
+
+## Completed presenter adoption
+
+The complete984-byte presenter is exact. The shared display source includes
+clock_api.h before display.h and moves the unchanged Blt-effect definition
+after present(), before the presenter. All function bodies, globals, headers,
+local declarations, types, expressions and actual writes remain unchanged.
+Clock-first alone loses restore; Blt after restore recovers it but loses Blt;
+the final position preserves all three and every prior exact coherently.
+
+All19 original functions/411 actual bindings, full noncode/global definitions
+and initialized callbacks, plus the57-byte nonoriginal portable bridge compare.
+All17 prior exacts and18 other resolved code identities survive. Last-brick
+remains1047/976 with its previous identity. Exactly23 distinct frozen compiles
+across finite source families yield437 complete body/9453 binding instances;
+no producer repeats. Two final frozen positions are never compiled.
+See [presenter source recovery](../research/exact/PRESENTER_INCLUDE_SOURCE_RECOVERY.md).
+
+Native rebuild changes only display.cpp/link, preserving59 companion objects
+and62 command configurations. The unchanged267-call selector passes sort60,
+merge146,presentation60 and reset1 with the real setup/RNG/state/event checks.
+Verified fixture cache stays unchanged with zero preparation. Native peak
+59,031,552 bytes; compiler scope peak156,643,328 bytes; CPU0/35%,384/512MiB and
+no memory events. Historical249 scopes are not fully replayed. Closed evidence
+is member-verified archived before obsolete source/object copies are retired;
+current products/caches stay. No game relink/play follows this adoption.
+Cleanup verifies652 members and retires628 obsolete files, releasing8,097,792
+allocated bytes net before small receipts. Recovery archive/index are beside
+the current checkpoint; the selected producer/plan/comparison stay live.
 
 ## Completed polygon adoption
 
@@ -96,18 +125,18 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Seven authored candidates remain. The polygon39/7/5/0 declaration family is
-closed and adopted; do not repeat its frozen producers. The high-score language/
-header controls, triangle register/initializer controls and polygon singleton
-controls are historical negatives in
-[the source context note](../research/exact/SOURCE_CONTEXT_CONTROLS_20261022.md).
+Six authored candidates remain: triangle, last-brick, high-score drawing,
+paddle drawing, PCX loading and rotated-sprite rendering. Presenter and polygon
+families are closed and adopted; reuse their retained outputs and do not repeat
+the frozen producers. The high-score C/C++/header probes and triangle
+register/initializer controls remain historical negatives.
 
-Select the next finite natural source family from `present-regions-now`'s two
-operand bytes or the current triangle1710/60 residual. Read the retained
-presentation/triangle notes and reuse existing outputs first. Keep root LOAD
-ranking distinct from point-member/address ranking, and do not assign parameter
-IDs from declaration offsets without evidence. Exact new owners require their
-coherent affected closure and proportionate maintained checks.
+Choose the next finite natural source family from a remaining whole-function
+residual, starting with its retained owner/correspondence notes and current
+inputs. Root LOAD ranking, member/address ranking and actual record identity
+are separate questions; successful natural source organization does not prove
+unique historical spelling or IDs. Keep complete affected closures coherent
+and exact checks strict, with proportionate maintained verification.
 
 ## Completed frame-wait adoption
 
@@ -126,7 +155,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph/polygon source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -136,7 +165,6 @@ Sizes below are original/current; differences are strict full-span counts.
 | Unit | Owner | Bytes | Differences |
 | --- | --- | ---: | ---: |
 | fill-triangle |raster.cpp|1710 /1710|60|
-| present-regions-now |display.cpp|984 /984|2|
 | last-brick |display.cpp|1057 /1047|976|
 | draw-high-scores |gameover.c|404 /403|330|
 | draw-paddle |runtime.cpp|677 /678|210|

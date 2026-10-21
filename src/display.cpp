@@ -1,6 +1,6 @@
 extern "C" {
-#include "display.h"
 #include "clock_api.h"
+#include "display.h"
 #include "device.h"
 #include "effects.h"
 #include "geometry.h"
@@ -46,28 +46,7 @@ void dxball_reset_regions(void)
     return;
 }
 
-/* FUNCTION: DXBALL 0x00408180 */
-void dxball_blt_effect_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
-{
-    DxBallRect rect;
-    rect.left = x;
-    rect.top = y;
-    rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width + x;
-    rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height + y;
-    ((DxBallDDSurface *)dxball_effect_surface)->blt(&rect,
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
-        &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect,
-        0x01008000, NULL);
-    if (dxball_dirty_counts[dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
-        dxball_dirty_regions[dxball_dirty_counts[dxball_dirty_page]][dxball_dirty_page] = rect;
-        ++dxball_dirty_counts[dxball_dirty_page];
-    }
-    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
-        dxball_present_regions[dxball_present_count] = rect;
-        ++dxball_present_count;
-    }
-    return;
-}
+
 
 /* FUNCTION: DXBALL 0x00408460 */
 void dxball_blt_reduced_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
@@ -273,6 +252,8 @@ void dxball_restore_regions(void)
     return;
 }
 
+
+
 void dxball_bind_board_surface(DxBallSurface surface) { dxball_restore_surface = surface; return; }
 
 void dxball_bind_display_surface(DxBallSurface surface) { dxball_effect_surface = surface; return; }
@@ -295,6 +276,29 @@ void dxball_present(void)
     } else {
         dxball_wait_frames(1);
         dxball_present_regions_now();
+    }
+    return;
+}
+
+/* FUNCTION: DXBALL 0x00408180 */
+void dxball_blt_effect_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
+{
+    DxBallRect rect;
+    rect.left = x;
+    rect.top = y;
+    rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width + x;
+    rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height + y;
+    ((DxBallDDSurface *)dxball_effect_surface)->blt(&rect,
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
+        &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect,
+        0x01008000, NULL);
+    if (dxball_dirty_counts[dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
+        dxball_dirty_regions[dxball_dirty_counts[dxball_dirty_page]][dxball_dirty_page] = rect;
+        ++dxball_dirty_counts[dxball_dirty_page];
+    }
+    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+        dxball_present_regions[dxball_present_count] = rect;
+        ++dxball_present_count;
     }
     return;
 }

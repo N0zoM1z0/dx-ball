@@ -1,5 +1,10 @@
 # Presenter index declaration recovery
 
+October22 follow-up: [include/definition organization](PRESENTER_INCLUDE_SOURCE_RECOVERY.md)
+closes the remaining two bytes and adopts the complete984/0 presenter with all17
+prior display exacts preserved. The two-difference descriptions below are
+historical evidence and inputs to that later recovery.
+
 October21,2026. Two finite declaration models reduce the current complete
 984-byte presenter from six strict differences to two. A separately frozen
 uniform-top minimum control emits the same two-difference output. Three waiting
