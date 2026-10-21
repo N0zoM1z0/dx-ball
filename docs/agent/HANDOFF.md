@@ -1,7 +1,7 @@
 # DX-Ball reconstruction handoff
 
 Updated October 21, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Current253 authored functions are exact;17 remain.
+authored candidates byte-exact. Current254 authored functions are exact;16 remain.
 That objective is active, not complete.
 On October21 the user explicitly resumed the goal and authorized bounded,
 reproducible natural-source candidate searches. The
@@ -11,7 +11,37 @@ Do not request the same authorization again or require original source/debug
 materials; use the existing EXE/resources and retained compiler evidence.
 That authorization remains standing for subsequent eligible search families.
 
-The newest [triangle declaration recovery](../research/exact/TRIANGLE_DECLARATION_RECOVERY.md)
+The newest [editor declaration recovery](../research/exact/EDITOR_DECLARATION_RECOVERY.md)
+makes the complete173-byte lookup exact through one consumed declaration-order
+swap. One frozen editor compilation preserves all13 prior exacts:14 whole
+functions/223 bindings/12 full literal references,20 local targets and265 switch
+bytes agree. The compiler exits0; the initial strict FILE-index failure remains
+retained. A separately reviewed112-record non-FILE bijection proves the sole
+FILE auxiliary7→5 index rebasing; no compiler retry or comparison weakening.
+After verified54-member rollback, maintained native and203 existing selected
+calls pass:7 initialization,100 setter,96 lookup, retaining all400 lookup setup
+iterations and original assertions. All41 configurations,38 companion objects
+and verified52-input cache stay fixed, with zero cache preparations. The whole
+editor source/object is adopted, lookup's manifest table promoted and six actual
+offsets refreshed. All270 receipts/30 closures verify at254 exact/16 candidates;
+overall399 exacts/87,384 code/244 metadata bytes.385 unrelated exact rows and76
+remaining candidate identities stay fixed.249 semantic scopes/cases/order remain
+unchanged,not rerun;235 dependency maps and ten primary source seals refresh.
+One separate triangle edge-setup compound model leaves all12 raster identities,
+296 metadata bytes and triangle1710/48 unchanged; reject without adoption/native.
+These two distinct compiles cover26 complete functions/364 bindings and preserve
+22 prior exacts. No provider/debugger/current-ID observation, game relink/play
+or full historical replay. Current authority is
+`.analysis/editor-declaration-source-search-20261021/`, with the separately
+recoverable `.analysis/triangle-edge-scope-source-search-20261021/` control.
+Retire obsolete inputs/products only after full member-verified archival;
+preserve current tested products/caches/originals/tools and the141-record snapshot.
+Next eligible read-only-inferred runtime family is the two natural adjacent
+definition orders elapsed/current_time/paddle and current_time/paddle/elapsed;
+no candidate in that family has yet been frozen or compiled. Unknown original
+IDs are not a permission blocker under the standing policy.
+
+The preceding [triangle declaration recovery](../research/exact/TRIANGLE_DECLARATION_RECOVERY.md)
 improves the complete1710-byte triangle88→48 through meaningful long-edge aliases
 and the existing scanline declaration at the root after the four FixedPoint
 objects. All482 instructions retain boundaries/opcodes; named/EH homes and all

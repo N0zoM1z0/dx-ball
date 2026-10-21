@@ -3,8 +3,10 @@
 October 21, 2026. A bounded natural-source reconstruction reduces the complete
 1710-byte triangle from88 to48 strict differences. The function remains a
 candidate: all48 residual bytes are temporary/clamp frame displacements.
-The objective is still all270 classified authored functions byte-exact;
-253 are exact and17 remain. No new exact is claimed here.
+The objective is still all270 classified authored functions byte-exact.
+At this triangle checkpoint253 were exact and17 remained. The later
+[editor recovery](EDITOR_DECLARATION_RECOVERY.md) raises current coverage to254/16;
+triangle itself is not promoted.
 
 ## Selected declarations
 
@@ -107,3 +109,28 @@ Private authorities are `.analysis/triangle-root-source-search-20261021/`,
 `.analysis/triangle-clamp-source-search-20261021/` and
 `.analysis/display-lifetime-source-search-20261021/`, including independent source/
 result reviews, complete mappings, native72 and the verified54-member rollback.
+
+## Edge-setup scope control, October21
+
+One additional bounded source model puts each existing long/upper-short/lower-
+short edge-setup pair inside its own compound. No declaration, expression or
+full-expression boundary moves; the original scanline compound remains. The
+hypothesis is deferred class-temporary scope grouping, not an observed ownership
+path or guarantee of a changed home partition.
+
+The five-input/ten-flag candidate compiles exactly once, exits0 and preserves
+all12 complete raster identities,141 bindings,296 metadata bytes and nine
+prior exacts. Triangle remains1710/48 and polygons1543/216 and1592/213. All17
+section payloads and68 non-FILE primary/raw-aux records agree; FILE9/9 provenance
+differs as retained. All28 checked local/parent-label destinations agree.
+The model is rejected without source/object adoption, native build or retry.
+Current triangle source/object stay0e541ea9/a56b60c8.
+
+Private `.analysis/triangle-edge-scope-source-search-20261021/` retains the plan,
+full comparison, independent source/result reviews and preservation guards.
+Its candidate source SHA256 is
+`a10effd617d3eafa6988981cda3c022bbd831429ef1ce5f5529a9f50245601c5`;
+full compact input/flag digest is
+`5abb163ddcbd3abe6a23a58cb7e8517f4f7cb3d69409a5187f6a1ba3ee5cc5b7`.
+This closes only that one scope control, not future eligible natural-source
+families under the standing search authorization.

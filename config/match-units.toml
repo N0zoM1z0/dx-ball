@@ -8313,19 +8313,19 @@ relocations = [
   { offset = 124, type = "DIR32", symbol = "_dxball_hit_regions", addend = 16, target = 0x004251A0 },
 ]
 
-[candidates.find-hit-region]
+[units.find-hit-region]
 build = "editor"
 symbol = "_dxball_find_hit_region"
 target_address = 0x00401F90
 size = 173
 boundary_evidence = "docs/research/EDITOR_OWNER.md"
 relocations = [
-  { offset = 24, type = "DIR32", symbol = "_dxball_hit_region_count", addend = 0, target = 0x00421064 },
-  { offset = 46, type = "DIR32", symbol = "_dxball_hit_regions", addend = 16, target = 0x004251A0 },
-  { offset = 69, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0, target = 0x004251A0 },
-  { offset = 91, type = "DIR32", symbol = "_dxball_hit_regions", addend = 8, target = 0x004251A0 },
-  { offset = 113, type = "DIR32", symbol = "_dxball_hit_regions", addend = 4, target = 0x004251A0 },
-  { offset = 135, type = "DIR32", symbol = "_dxball_hit_regions", addend = 12, target = 0x004251A0 },
+  { offset = 28, type = "DIR32", symbol = "_dxball_hit_region_count", addend = 0, target = 0x00421064 },
+  { offset = 47, type = "DIR32", symbol = "_dxball_hit_regions", addend = 16, target = 0x004251A0 },
+  { offset = 70, type = "DIR32", symbol = "_dxball_hit_regions", addend = 0, target = 0x004251A0 },
+  { offset = 92, type = "DIR32", symbol = "_dxball_hit_regions", addend = 8, target = 0x004251A0 },
+  { offset = 114, type = "DIR32", symbol = "_dxball_hit_regions", addend = 4, target = 0x004251A0 },
+  { offset = 136, type = "DIR32", symbol = "_dxball_hit_regions", addend = 12, target = 0x004251A0 },
 ]
 
 [units.draw-editor-choices]

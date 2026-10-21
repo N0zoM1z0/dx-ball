@@ -6,23 +6,34 @@ Older "closed" labels and blanket name/order/scope-search bans below retain
 historical results, not a requirement for renewed permission or original source.
 This policy update does not change the comparison counts.
 
-Updated October21,2026, after the triangle declaration recovery.
-Accepted totals are **398 functions / 87,211 code bytes / 244 metadata bytes**.
-There are **77 complete nonexact comparisons: 17 authored and 60 runtime**. None is an accepted exact.
+Updated October21,2026, after the editor declaration recovery.
+Accepted totals are **399 functions / 87,384 code bytes / 244 metadata bytes**.
+There are **76 complete nonexact comparisons: 16 authored and 60 runtime**. None is an accepted exact.
 
-These 77 are all currently source-present nonexact entries. The eight allocator
+These 76 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
 
-The [triangle declaration recovery](TRIANGLE_DECLARATION_RECOVERY.md) improves
+The [editor declaration recovery](EDITOR_DECLARATION_RECOVERY.md) makes lookup's
+complete173 bytes exact through one consumed declaration-order swap. All14 editor
+functions/223 bindings/12 literal references compare exactly, preserving13 prior
+exacts and all265 switch bytes. One actual compiler exits0; the retained initial
+FILE-index guard is followed by a complete separately reviewed non-FILE mapping,
+without recompilation or masks. Maintained native and203 existing selected
+calls pass;41 configurations,38 companions and verified cache stay fixed.
+All270 authored receipts verify across30 closures:254 exact/16 candidates.
+The whole owner and single manifest promotion are adopted. The separate triangle
+edge-setup scope control leaves1710/48 and all12 raster identities unchanged.
+
+The preceding [triangle declaration recovery](TRIANGLE_DECLARATION_RECOVERY.md) improves
 1710/88→48, restoring all named/EH homes and comparisons. All12 owner functions,
 141 actual code/metadata bindings,296 metadata bytes,nine prior exacts and11
 companion identities compare together. Maintained native and72 selected existing
 triangle calls pass,with41 configurations,38 companion objects and verified cache
-unchanged. All270 current receipts remain253 exact/17 candidates across30
+unchanged. At that checkpoint all270 receipts verify at253 exact/17 candidates across30
 closures;the manifest full seal is unchanged. Three root models emit54/60/48;
 one inline-clamp follow-up emits188 after truthful complete generated-symbol
 mapping, with no compiler retry. Two wait initializer forms retain170/6 and a
@@ -43,7 +54,7 @@ source trials cover38 unique functions/771 bindings/33 full literal references
 and preserve31 prior exacts. The selected whole line/display owners have22 full
 functions/419 bindings,18 priors and20 other code identities preserved. Maintained
 native and505 selected calls pass; verified cache stays unchanged with no rebuild.
-Current authored coverage is253 exact/17 candidates across270 entries/30 closures.
+That checkpoint's authored coverage is253 exact/17 candidates across270 entries/30 closures.
 Elapsed's two current C++ initializer controls retain81/3; runtime is unchanged.
 
 The preceding [declaration-order recovery](DECLARATION_ORDER_RECOVERY.md) makes complete
@@ -343,10 +354,10 @@ directory. These are bounded findings, not proof of source absence or optimality
 no further declaration or compiler-setting trial follows from them.
 
 The current receipt audit verifies source/object/flag identities for all270
-classified authored entries across30 matching recipes:253 exact and17 complete
+classified authored entries across30 matching recipes:254 exact and16 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/clock-line-source-search-20261021/authored-coverage.json`.
+Authority: `.analysis/editor-declaration-source-search-20261021/authored-coverage.json`.
 The [fixed palette declaration inference](AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-declaration-model)
 uses actual connected `r/g/b/mode` roles in both rotations. Right rotation is
 now complete 234/0 exact, while animate-palette improves from nine differences
@@ -431,7 +442,6 @@ One owner compile preserves five exact companions and six other body identities;
 | `draw-paddle` | 677 | 677 | 68 |
 | `fill-triangle` | 1710 | 1710 | 48 |
 | `draw-sprite` | 105 | 107 | 94 |
-| `find-hit-region` | 173 | 172 | 132 |
 | `blt-sprite` | 195 | 199 | 173 |
 | `fill-polygon` | 1543 | 1543 | 216 |
 | `fill-polygon-clipped` | 1592 | 1592 | 213 |
