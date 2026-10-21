@@ -1,5 +1,12 @@
 # Lightning and frame drawing
 
+The October21 [clock/line source recovery](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
+restores waiting's threshold comparison orientation through its two consumed
+root scalars, reducing170/8→6 while preserving the original16-byte frame. All20
+display functions/419 bindings,17 accepted companions and the separate57-byte
+portable bridge verify. Waiting remains a candidate;18 unchanged cases and reset
+pass on the maintained native target. No cache rebuild or game/provider run.
+
 The October21 [declaration-order recovery](exact/DECLARATION_ORDER_RECOVERY.md)
 makes the full234-byte animate-palette body exact. Hoisting its existing iterator
 before RGB declarations preserves all original blocks and operations. All20

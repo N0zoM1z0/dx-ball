@@ -1,5 +1,12 @@
 # Line drawing workspace and axis steps
 
+October21 update: [combined source recovery](CLOCK_LINE_SOURCE_RECOVERY.md)
+makes all445 bytes exact, preserving the140-byte frame and85-byte fill exact.
+The retained rank-successful inner cohort plus one meaningful consumed iterator
+alias index restores both comparison directions and all homes. Maintained native
+and486 unchanged line cases pass. The nine/22-byte residuals below are historical,
+not current candidates; no original numeric ID or unique source spelling is proved.
+
 The later [interface recovery](LINE_INTERFACE_BOUNDARY.md) gives the routine
 its genuine DirectDraw surface pointer. All five consuming recipes preserve
 their accepted bodies; line remains 445 bytes with nine differences.

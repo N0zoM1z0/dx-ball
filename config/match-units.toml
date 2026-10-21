@@ -8939,12 +8939,12 @@ relocations = [
   { offset = 254, type = "DIR32", symbol = "_dxball_text_spacing", addend = 0, target = 0x00421084 },
 ]
 
-[candidates.draw-line]
+[units.draw-line]
 build = "drawing_primitives"
 symbol = "_dxball_draw_line"
 target_address = 0x00403070
 size = 445
-boundary_evidence = "docs/research/STARTUP_UI_OWNER.md"
+boundary_evidence = "docs/research/STARTUP_UI_OWNER.md; docs/research/exact/CLOCK_LINE_SOURCE_RECOVERY.md whole-owner line and frame-wait source recovery"
 relocations = [
 ]
 

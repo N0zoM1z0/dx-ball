@@ -1,11 +1,20 @@
 # Frame-wait cursor
 
+October21 update: the [same-role scalar recovery](CLOCK_LINE_SOURCE_RECOVERY.md)
+replaces the inferred cursor with consumed root now/index scalars. Both finite
+declaration orders emit170/6; the first is adopted. The original16-byte frame
+and four homes remain, and the threshold comparison orientation is restored
+without changing its already-correct constant17. Only the two signed frame-count
+comparison triples remain. All19 companion code identities/17 prior exacts and
+the separate57-byte bridge survive;18 existing waiting cases plus reset pass.
+The following cursor/source-context descriptions retain their historical scope.
+
 The [direct WinMM import](EXACT_WINMM_CLOCK_IMPORT.md) historically made waiting
-exact across170 bytes. Current declaration context emits170 bytes with eight
+exact across170 bytes. The pre-scalar declaration context emits170 bytes with eight
 differences: two signed postincrement-guard transposes and the unsigned17ms
 threshold transpose. The retained October17 review's complete resolved digest
 `8440353b39b8b60a2d9904abc90778cf6fac772948a27691f9408c9e54521b41`
-still equals the current candidate report. No missing operation or new trial
+equals that earlier candidate report. No missing operation or new trial
 follows from the older six-difference description below. The import closure
 preserves the explicit last-brick time sample; historical diagnostics retain
 their original scopes.

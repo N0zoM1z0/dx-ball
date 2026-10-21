@@ -32,6 +32,13 @@ Earlier checkpoints below retain their own scopes, products and counts.
 
 ## Current text and line source recovery
 
+The October21 [clock/line source recovery](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
+makes complete draw-line445 exact by combining the tested declaration cohort
+with the actual iterator alias index. All140-byte frame homes and three signed
+comparison groups agree; the85-byte fill companion stays exact. Maintained native
+and486 unchanged line cases pass without game/provider execution. Older line
+candidate descriptions below are historical.
+
 The October21 [declaration-order recovery](exact/DECLARATION_ORDER_RECOVERY.md)
 makes measure-text completely279/0 exact. Only the order of its three existing
 root declarations changes, preserving the unsigned accumulator and original

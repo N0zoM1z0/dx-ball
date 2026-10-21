@@ -9,9 +9,8 @@ extern "C" {
 void dxball_draw_line(DxBallDDSurface *surface, DxBallInt x1, DxBallInt y1,
     DxBallInt x2, DxBallInt y2, DxBallByte color)
 {
-    DxBallInt i;
     {
-        DxBallInt dx, dy, error = 0;
+        DxBallInt dy, dx, index, error = 0;
         {
             DxBallSurfaceDesc desc;
             DxBallInt result;
@@ -42,13 +41,13 @@ void dxball_draw_line(DxBallDDSurface *surface, DxBallInt x1, DxBallInt y1,
                     dy = -dy;
                 }
                 if (dx > dy) {
-                    for (i = 0; i <= dx; ++i) {
+                    for (index = 0; index <= dx; ++index) {
                         *pixel = color; error += dy;
                         if (error > dx) { error -= dx; pixel += step[1]; }
                         pixel += step[0];
                     }
                 } else {
-                    for (i = 0; i <= dy; ++i) {
+                    for (index = 0; index <= dy; ++index) {
                         *pixel = color; error += dx;
                         if (error > 0) { error -= dy; pixel += step[0]; }
                         pixel += step[1];

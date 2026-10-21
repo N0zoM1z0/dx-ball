@@ -1,5 +1,13 @@
 # Game lifecycle and mode dispatch
 
+The October21 [clock/line source trials](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
+close exactly two current C++ elapsed initializer models, including const-now.
+All16 runtime identities/352 bindings/33 full literal references stay unchanged;
+elapsed remains81/3. Neither proposal is adopted; maintained runtime source/object
+stay unchanged.
+These differ from the retained old C const control; no identical digest is retried.
+No new compiler observation, native runtime suite or game run follows them.
+
 The October20 [interface-ownership and elapsed-ordering investigation](exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 is research-only. It observes the actual first elapsed C2 swap, restores all17
 paddle frame homes in a private scalar model and checks fixed callback-owner
