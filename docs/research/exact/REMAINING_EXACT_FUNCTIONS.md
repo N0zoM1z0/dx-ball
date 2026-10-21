@@ -6,23 +6,31 @@ Older "closed" labels and blanket name/order/scope-search bans below retain
 historical results, not a requirement for renewed permission or original source.
 This policy update does not change the comparison counts.
 
-Updated October21,2026, after the complete bank source-candidate recovery.
-Accepted totals are **395 functions / 86,253 code bytes / 244 metadata bytes**.
-There are **80 complete nonexact comparisons: 20 authored and 60 runtime**. None is an accepted exact.
+Updated October21,2026, after the palette/text declaration-order recovery.
+Accepted totals are **397 functions / 86,766 code bytes / 244 metadata bytes**.
+There are **78 complete nonexact comparisons: 18 authored and 60 runtime**. None is an accepted exact.
 
-These 80 are all currently source-present nonexact entries. The eight allocator
+These 78 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a
 source-present ledger row. The 24 overlapping compiler fragments are tracked
 separately in `config/compiler-fragments.csv`. The provisional inventory and
 origin review still need reconciliation; this is not a final authored denominator.
 
-The [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md) restores
+The [declaration-order recovery](DECLARATION_ORDER_RECOVERY.md) makes complete
+animate-palette234 and measure-text279 exact, removing both three-byte residuals.
+Three frozen source candidates compile; five stop uncompiled. All27 functions/
+457 bindings,22 prior exacts,25 companion identities and the separate57-byte
+portable bridge verify without losses. The maintained native target and298
+focused calls pass; all270 current authored receipts verify across30 closures:
+252 exact/18 candidates. No full replay, game relink or new provider follows.
+
+The preceding [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md) restores
 the full1475-byte loader from68 differences to0. The first of12 generated
 candidates succeeds; a separate formatting-only compile preserves every code
 identity. All18 owner functions/262 bindings/six entire literals compare, with
 12 prior exacts and17 companion identities preserved. The maintained native
-target and ten existing bank cases pass. Current authored coverage is250 exact/
+target and ten existing bank cases pass. That checkpoint's authored coverage is250 exact/
 20 candidates across30 verified closures, without a game relink/run or full replay.
 
 The preceding [whole rotation arithmetic contract](ROTATION_ARITHMETIC_CONTRACT.md) restores
@@ -306,10 +314,10 @@ directory. These are bounded findings, not proof of source absence or optimality
 no further declaration or compiler-setting trial follows from them.
 
 The current receipt audit verifies source/object/flag identities for all270
-classified authored entries across30 matching recipes:250 exact and20 complete
+classified authored entries across30 matching recipes:252 exact and18 complete
 candidates. It reuses existing comparisons without replaying; it does not prove
 source optimality, semantic equivalence or a final authored denominator.
-Authority: `.analysis/raster-muldiv-integration-20261018/authored-coverage.json`.
+Authority: `.analysis/declaration-order-search-20261021/authored-coverage.json`.
 The [fixed palette declaration inference](AUTHOR_SOURCE_CONTEXT.md#fixed-author-palette-declaration-model)
 uses actual connected `r/g/b/mode` roles in both rotations. Right rotation is
 now complete 234/0 exact, while animate-palette improves from nine differences
@@ -388,8 +396,6 @@ One owner compile preserves five exact companions and six other body identities;
 | Function | Original bytes | Current bytes | Differing positions |
 | --- | ---: | ---: | ---: |
 | `elapsed` | 81 | 81 | 3 |
-| `measure-text` | 279 | 279 | 3 |
-| `animate-palette` | 234 | 234 | 3 |
 | `present-regions-now` | 984 | 984 | 6 |
 | `wait-frames` | 170 | 170 | 8 |
 | `draw-line` | 445 | 445 | 9 |

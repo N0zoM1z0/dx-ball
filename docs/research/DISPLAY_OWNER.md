@@ -1,5 +1,14 @@
 # Lightning and frame drawing
 
+The October21 [declaration-order recovery](exact/DECLARATION_ORDER_RECOVERY.md)
+makes the full234-byte animate-palette body exact. Hoisting its existing iterator
+before RGB declarations preserves all original blocks and operations. All20
+display bodies/419 bindings and the separate57-byte portable bridge compare;
+16 prior display exacts and19 other code identities remain unchanged. The
+maintained native target,81 palette cases and reset pass alongside216 UI
+measurement cases. No game or provider run follows; older checkpoints retain
+their historical counts and scopes.
+
 The latest [expiry-local scope](exact/LIGHTNING_EXPIRY_SCOPE.md) restores six
 original last-brick frame homes and reduces its complete differences992→990.
 Twelve exact companions/3303 bytes and the other nineteen code identities remain;

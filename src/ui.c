@@ -7,8 +7,9 @@ DxBallInt dxball_text_spacing = 1;
 /* FUNCTION: DXBALL 0x00404FD0 */
 DxBallInt dxball_measure_text(DxBallInt count, const char *text)
 {
-    DxBallInt i, sprite;
+    DxBallInt sprite;
     DxBallUInt width = 0;
+    DxBallInt i;
     for (i = 0; count > i; ++i) {
         sprite = 0;
         do {

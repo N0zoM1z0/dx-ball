@@ -1,7 +1,7 @@
 # DX-Ball reconstruction handoff
 
 Updated October 21, 2026. The user's objective is to make the initial24
-authored candidates byte-exact. Current250 authored functions are exact;20 remain.
+authored candidates byte-exact. Current252 authored functions are exact;18 remain.
 That objective is active, not complete.
 On October21 the user explicitly resumed the goal and authorized bounded,
 reproducible natural-source candidate searches. The
@@ -11,7 +11,23 @@ Do not request the same authorization again or require original source/debug
 materials; use the existing EXE/resources and retained compiler evidence.
 That authorization remains standing for subsequent eligible search families.
 
-The newest [bounded bank source recovery](../research/exact/BANK_SOURCE_CANDIDATE_RECOVERY.md)
+The newest [declaration-order recovery](../research/exact/DECLARATION_ORDER_RECOVERY.md)
+makes animate-palette234 and measure-text279 completely exact. Three frozen
+source candidates compile once each; five stop uncompiled. Only existing local
+declarations move. Both complete owners compare:27 functions/457 actual bindings,
+22 prior accepted exacts and25 other code identities preserved, no losses, plus
+the unchanged separate57-byte portable bridge. Both whole objects and truthful
+ledgers are adopted after a56-member verified rollback. All270 authored receipts
+verify across30 closures:252 exact/18 candidates; overall397 exacts/86,766 code/
+244 metadata bytes. The maintained native target,216 measurement,81 palette and
+one display-reset case pass;41 compile configurations and37 companion objects
+stay fixed. One stale fixture cache is saved and refreshed once. The249 semantic
+row scopes/cases/order stay fixed, not rerun. Current authority is
+`.analysis/declaration-order-search-20261021/`. No new provider/debugger, game
+relink/run or full historical replay follows. Archive closed evidence before
+exact-list retirement; retain current products/caches/tools/originals/snapshot.
+
+The preceding [bounded bank source recovery](../research/exact/BANK_SOURCE_CANDIDATE_RECOVERY.md)
 makes the complete1475-byte loader exact:68 differences become0. Meaningful
 local names/declaration order and hoisting three existing trivial declarations
 restore the original frame and both products without changing executable tokens.
@@ -555,15 +571,15 @@ are missing canonical inputs. The separate failed storage query releases another
 | Provisional independent entries | 553 |
 | Retired parent-owned compiler-fragment rows, counted separately | 24 |
 | Source-present entries | 475 |
-| Accepted complete exact functions | 395 |
-| Exact code / attached metadata bytes | 86,253 / 244 |
-| Complete nonexact comparisons | 80: 20 authored / 60 runtime / 0 generated |
+| Accepted complete exact functions | 397 |
+| Exact code / attached metadata bytes | 86,766 / 244 |
+| Complete nonexact comparisons | 78: 18 authored / 60 runtime / 0 generated |
 | Scoped semantic ledger rows | 249 |
 | Entries without source | 78: 77 runtime / 1 generated |
 | Inventory origins | 270 authored / 261 runtime / 21 generated / 1 unknown |
 
 All 270 classified authored entries have source and complete current comparisons:
-250 exact and 20 candidates across 30 compiler closures. The source-present
+252 exact and 18 candidates across 30 compiler closures. The source-present
 16-byte no-op at `0x40CC20` remains origin/prototype-unknown. Neither the final
 authored denominator nor source optimality has been established. These inventories
 are separate claims, not interchangeable completion percentages.
@@ -574,10 +590,10 @@ are separate claims, not interchangeable completion percentages.
 | `config/compiler-fragments.csv` | Retired aliases owned by complete C++ parents; not every internal block |
 | `config/implemented.csv`, `matches.csv`, `semantic-acceptance.csv` | Source, exact and scoped semantic claims |
 | `config/source-owners.toml`, `match-units.toml` | Source ownership; full compiler recipes, extents and bindings |
-| `build/reports/exact-replay.json` | Current 395 accepted comparisons and producers |
-| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 80 complete candidates; directory date is historical |
+| `build/reports/exact-replay.json` | Current 397 accepted comparisons and producers |
+| `.analysis/exact-candidate-audit-20261012/comparison.json` | Current 78 complete candidates; directory date is historical |
 | [Remaining-functions table](../research/exact/REMAINING_EXACT_FUNCTIONS.md) | All candidate results and owner-note links |
-| `.analysis/bank-source-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
+| `.analysis/declaration-order-search-20261021/authored-coverage.json` | Current authored source/comparison/closure coverage |
 
 Original `original/DXBALL.EXE`: English v1.07, 158,208 bytes, SHA-256
 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
@@ -593,8 +609,8 @@ A source-only clone does not include the assets, tools, products or raw evidence
 
 The bounded authored-source phase is complete for reconstruction: all270
 identified authored functions are source-present and have complete comparison
-receipts across30 compiler closures. Current totals are395 overall exacts and80
-complete candidates, split250 authored exact/20 authored candidates plus60
+receipts across30 compiler closures. Current totals are397 overall exacts and78
+complete candidates, split252 authored exact/18 authored candidates plus60
 runtime candidates. The78 no-source catalog entries are77 runtime-library
 functions and compiler-generated `__chkstk`; no unidentified authored body or
 callee remains. Exact whole-EXE reproduction is not required, and x87/SEH/stack
@@ -1061,7 +1077,7 @@ The bounded candidate and inventory reviews find no concrete missing authored
 body/callee: all3,719 direct edges,191 switch words,249 code-address words and177
 COM sites are accounted, with no unexplained non-CC text-gap bytes. All270 known
 authored functions now have source and full comparison receipts. The remaining
-21 authored candidates differ at compiler storage/code-selection level but are
+18 authored candidates differ at compiler storage/code-selection level but are
 not missing source or an observed operation. Final denominator and unique
 historical declaration context remain proof limits, not blockers for the
 reconstructed game. Reuse `.analysis/authored-readiness-20261019/`.
@@ -1081,7 +1097,7 @@ it does not justify an18-function sorting compile. Its private receipt is
 `resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
 
 For the next bounded source-candidate family, use the current
-[21-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+[18-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Follow the [authorized search policy](SOURCE_CANDIDATE_SEARCH.md): declare finite
 candidate domains, compiler-attempt limits, the target storage/selection residual
@@ -1092,12 +1108,12 @@ mechanically ineffective candidates before compiling.
 
 | Family | Reuse before another proposal | Boundary to preserve |
 | --- | --- | --- |
-| Bank/resources | [Bank flow and closed controls](../research/exact/MAC_CANDIDATE_FLOW_CONNECTIONS.md#reused-bankshape-bodies-and-api-name-control), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/68 preserves extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; reuse prior name/qualification/scope results when screening new bounded combinations |
+| Bank/resources | [Exact bank recovery](../research/exact/BANK_SOURCE_CANDIDATE_RECOVERY.md), [conditional-output lifetime](../research/exact/AUTHORED_BOUNDARY_CONTRACTS.md) | Bank1475/0 is accepted exact. Preserve extent/yoffset, low32 byte/count arithmetic and four later-EOF fields; compare it as a companion in any new resource-owner proposal |
 | PCX | [Complete packet proof](../research/exact/EXACT_PCX_PACKET_LOOP.md), [storage diagnostics](../research/exact/CLOSED_STORAGE_DIAGNOSTICS.md) | Original862/current979; all227 instructions accounted. Current308-byte frame has305 typed bytes plus3 slot padding. Original unaddressed four bytes do not justify a132-byte header or fake local |
 | Triangle/polygons | [Fixed-point](../research/exact/EXACT_FIXED_POINT.md), [polygon workspace](../research/exact/POLYGON_SCAN_WORKSPACE.md), [complete instruction correspondence](../research/exact/RASTER_OPERATION_CORRESPONDENCE.md) | All1408 instructions map through frame roles/20 comparison groups; physical homes/source context stay open. Four root FixedPoint constructions/EH states;28-byte edge has one unknown word at+12. Preserve paired accesses, three pools, both Shellsorts and signed negative-error carry |
 | Rotation | [Pixel-address correspondence](../research/exact/ROTATION_PIXEL_ADDRESS.md) | All365 instructions/22 calls/26 branches accounted. Both frames are424 bytes; the lower80 original bytes are ten consumed conversion/spill slots, not an unused object. Named/temporary allocation context remains open; integer-offset-before-base order is restored |
 | Line/ranking/presentation | [Line](../research/exact/LINE_LOCKED_CURSOR.md), [ranking](../research/exact/RANKING_OWNER_FAMILY.md), [presentation](../research/exact/PRESENTATION_MERGE_SCOPE.md) | Known comparison/register producers remain. Fixed line rank model restores directions but loses correct homes; ranking has original homes and one shorter compare producer |
-| Clocks/palette/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md), [absolute value](../research/exact/LIGHTNING_ABS_WRAP.md) | Clock cache/sampling order accounted; shared unsigned-long context already tested. Consumed destination-Y subtraction and both negative crop magnitudes now have explicit low32 contracts. Keep clock before RNG and existing callback-visible state |
+| Clocks/last brick | [Author context](../research/exact/AUTHOR_SOURCE_CONTEXT.md), [exact palette/text declarations](../research/exact/DECLARATION_ORDER_RECOVERY.md), [lightning crop chain](../research/exact/EXACT_LIGHTNING_CROP_CHAIN.md), [destination Y](../research/exact/LIGHTNING_Y_COORDINATE_WRAP.md), [absolute value](../research/exact/LIGHTNING_ABS_WRAP.md) | Animate-palette234/0 and measure-text279/0 are accepted exact. Clock cache/sampling order accounted; shared unsigned-long context already tested. Keep consumed low32 crop arithmetic, clock before RNG and callback-visible state |
 
 Ranking's signed630−measure_text question is closed by the adopted explicit
 DWORD subtraction. Its eight complete identities stay fixed; do not replay
