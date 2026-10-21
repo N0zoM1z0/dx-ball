@@ -19,12 +19,17 @@ compiler storage/selection difference that a source-candidate family targets.
 Missing original source declarations are a reconstruction question, not by
 themselves an external blocker. The user has authorized the
 [bounded source-candidate search policy](SOURCE_CANDIDATE_SEARCH.md), including
-natural identifier, declaration-order/grouping and genuine scope alternatives.
+natural identifiers, declaration/definition order, genuine scope alternatives,
+translation-unit organization and residual-driven build-recipe hypotheses.
 Existing binary comparisons and the observed compiler mechanism can seed a
 finite search; a newly discovered operation or independently recovered original
 declaration is not a prerequisite. Historical blanket search bans are superseded.
 Distinguish a byte-exact reconstructed declaration from uniquely recovered source.
 Reject unbounded blind enumeration, unused padding and repeated identical trials.
+Choose the finite batch and proceed under that standing authorization; do not
+ask again for original materials or approval of each ordinary reconstruction
+step. Keep the pinned recipe as the baseline, with any experimental settings
+explicitly isolated and recorded rather than silently substituted.
 
 Use repository Python and the pinned REA wrapper. When beginning binary or
 compiler work, verify the inputs relevant to that work:

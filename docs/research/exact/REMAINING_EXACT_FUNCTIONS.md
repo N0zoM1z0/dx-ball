@@ -2,8 +2,10 @@
 
 October21 policy update: the user authorized
 [bounded natural-source candidate searches](../../agent/SOURCE_CANDIDATE_SEARCH.md).
-Older "closed" labels and blanket name/order/scope-search bans below retain
-historical results, not a requirement for renewed permission or original source.
+Older "closed" labels and blanket name/order/scope/translation-unit/build-recipe
+search bans below retain historical results, not a requirement for renewed
+permission or original source. Select distinct bounded hypotheses and proceed
+under the standing authorization; keep complete-unit acceptance checks strict.
 This policy update does not change the comparison counts.
 
 Updated October21,2026, after the editor declaration recovery.

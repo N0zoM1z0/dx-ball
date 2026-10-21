@@ -1,5 +1,11 @@
 # VC4 expression ordering observations
 
+October21 policy precedence: the user's
+[standing reconstruction authorization](../../agent/SOURCE_CANDIDATE_SEARCH.md)
+supersedes blanket name/order/scope/translation-unit/build-recipe search bans in
+this historical log. Reuse its actual observations and negative results; do not
+turn an unknown original identifier or a closed control into a permission gate.
+
 The October 17 investigation connects a numeric symbol-record lookup key to a
 real child-ordering decision in the pinned VC4 backend. It does **not** yet
 connect that decision to a specific original-game instruction difference.

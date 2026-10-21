@@ -6,10 +6,17 @@ That objective is active, not complete.
 On October21 the user explicitly resumed the goal and authorized bounded,
 reproducible natural-source candidate searches. The
 [standing search policy](SOURCE_CANDIDATE_SEARCH.md) supersedes blanket name,
-declaration-order/grouping and scope-search bans in the historical notes below.
+declaration/definition order, grouping, scope, translation-unit and build-recipe
+search bans in the historical notes below.
 Do not request the same authorization again or require original source/debug
 materials; use the existing EXE/resources and retained compiler evidence.
 That authorization remains standing for subsequent eligible search families.
+The user confirmed there is no original project: reconstruct from the existing
+materials without requesting original sources/debug/build records again. The
+agent may select finite batches, repair local tooling/mappings and proceed;
+only a genuinely new external decision or authority requirement needs a question.
+This policy-only update changes no source, maintained recipe, products or exact
+claims. Current254/270 remains active, not complete.
 
 The newest [editor declaration recovery](../research/exact/EDITOR_DECLARATION_RECOVERY.md)
 makes the complete173-byte lookup exact through one consumed declaration-order
@@ -37,9 +44,14 @@ recoverable `.analysis/triangle-edge-scope-source-search-20261021/` control.
 Retire obsolete inputs/products only after full member-verified archival;
 preserve current tested products/caches/originals/tools and the141-record snapshot.
 Next eligible read-only-inferred runtime family is the two natural adjacent
-definition orders elapsed/current_time/paddle and current_time/paddle/elapsed;
-no candidate in that family has yet been frozen or compiled. Unknown original
-IDs are not a permission blocker under the standing policy.
+definition orders elapsed/current_time/paddle and current_time/paddle/elapsed.
+Both are now frozen under `.analysis/runtime-definition-order-search-20261021/`;
+preparation verifies all16 baseline bodies/352 bindings/13 prior exacts, but no
+candidate compiler has launched. Preserve that preparation and its frozen
+sources. This documentation update changes some protected documentation seals;
+review refreshed preconditions before execution, without recompiling the
+unchanged baseline or treating preparation as a consumed compiler attempt.
+Unknown original IDs are not a permission blocker under the standing policy.
 
 The preceding [triangle declaration recovery](../research/exact/TRIANGLE_DECLARATION_RECOVERY.md)
 improves the complete1710-byte triangle88→48 through meaningful long-edge aliases
@@ -1165,7 +1177,7 @@ The bounded candidate and inventory reviews find no concrete missing authored
 body/callee: all3,719 direct edges,191 switch words,249 code-address words and177
 COM sites are accounted, with no unexplained non-CC text-gap bytes. All270 known
 authored functions now have source and full comparison receipts. The remaining
-17 authored candidates differ at compiler storage/code-selection level but are
+16 authored candidates differ at compiler storage/code-selection level but are
 not missing source or an observed operation. Final denominator and unique
 historical declaration context remain proof limits, not blockers for the
 reconstructed game. Reuse `.analysis/authored-readiness-20261019/`.
@@ -1185,7 +1197,7 @@ it does not justify an18-function sorting compile. Its private receipt is
 `resource-target-order-eligibility-20261020/review.json`. Counts remain unchanged.
 
 For the next bounded source-candidate family, use the current
-[17-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
+[16-function table](../research/exact/REMAINING_EXACT_FUNCTIONS.md#authored-candidates),
 `config/functions.csv`, the relevant owner note and retained complete evidence.
 Follow the [authorized search policy](SOURCE_CANDIDATE_SEARCH.md): declare finite
 candidate domains, compiler-attempt limits, the target storage/selection residual
@@ -1217,7 +1229,8 @@ Those models remain rejected. Full-owner C/C++ and broad declaration controls
 retain their recorded negative results. They do not prohibit a different bounded
 source search under the user's standing authorization. Reuse identical closed
 inputs without recompilation; do not introduce fake unused storage, assembly,
-per-profile bodies, compiler-flag sweeps, selective old objects or weaker checks.
+per-profile bodies, unbounded/random flag sweeps, selective old objects or weaker
+checks. Residual-driven finite build-recipe hypotheses follow the standing policy.
 The [historical handoff](https://github.com/N0zoM1z0/dx-ball/blob/c99ab9e62fcc1625a0c0754a3ee0abb67dc10623/docs/agent/HANDOFF.md)
 and linked owner notes retain the detailed boundaries of older trials.
 

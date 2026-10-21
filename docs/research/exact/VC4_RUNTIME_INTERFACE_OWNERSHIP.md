@@ -1,5 +1,11 @@
 # Runtime interface ownership and actual elapsed ordering
 
+October21 policy precedence: the user's
+[standing reconstruction authorization](../../agent/SOURCE_CANDIDATE_SEARCH.md)
+supersedes blanket source-order/scope/owner/build-recipe bans in this historical
+log. Its measured failures still rule out those exact inputs, not all distinct
+bounded hypotheses. Original project/debug/build materials are not required.
+
 October20,2026. The user has reopened byte-exact recovery for all24 remaining
 authored candidates. This investigation changes no maintained source, compiler
 recipe, claim ledger or delivery product. Counts stay391 overall exacts and

@@ -20,12 +20,16 @@ Read [the current handoff](docs/agent/HANDOFF.md),
 source. Use `config/functions.csv` to locate entries; reconcile imported extents
 against instructions, exits and embedded data.
 
-The user explicitly authorized bounded, reproducible source-candidate searches
-on October 21, 2026. Follow [the standing search policy](docs/agent/SOURCE_CANDIDATE_SEARCH.md).
-It supersedes blanket name/order/scope-search bans in older handoffs and research
-notes. Existing EXE/resources are sufficient inputs; do not require original
-source, PDB/MAP files or uniquely proved historical identifiers before searching.
-This authorization does not need renewal for each eligible search family.
+The user explicitly authorized relaxing reconstruction restrictions on
+October 21, 2026. Follow [the standing search policy](docs/agent/SOURCE_CANDIDATE_SEARCH.md).
+It supersedes older blanket bans on names, declaration/definition order, scope,
+translation-unit organization and bounded build-recipe hypotheses. The user has
+only the existing EXE/resources; reconstruct the missing context from them.
+Do not ask again for original projects, PDB/MAP files or build records, or require
+uniquely proved historical declarations before trying a recorded hypothesis.
+Choose and execute eligible bounded families without renewed user approval.
+Repair local tooling and evidence mappings within scope instead of treating
+their failures as a new permission boundary. Keep exactness checks strict.
 
 - Run Python through `scripts/repo-python`.
 - Use `scripts/rea` and the installed REA skill for new binary analysis.
