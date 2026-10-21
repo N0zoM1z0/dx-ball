@@ -10,20 +10,67 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |267 /270 (98.89%)|
-| Authored complete exact code bytes |81,477 /84,968 (95.89%)|
-| Authored nonexact candidates / original bytes |3 /3,491|
-| Overall exact functions, including runtime/compiler units |412|
-| Exact code / attached metadata bytes |95,861 /404|
+| Authored byte-exact functions |268 /270 (99.26%)|
+| Authored complete exact code bytes |83,049 /84,968 (97.74%)|
+| Authored nonexact candidates / original bytes |2 /1,919|
+| Overall exact functions, including runtime/compiler units |413|
+| Exact code / attached metadata bytes |97,433 /404|
 | Current authored compiler closures |52|
 
 Private current artifact authority is
-`.analysis/triangle-conditional-storage-20261022/current-checkpoint.json`.
-Its selected triangle-before-comparison producer, complete61-symbol/119-binding
-proof, installed comparison, native144 and adoption identify current acceptance.
-Earlier paddle266, high-score265, presenter264, polygon263, glyph261,
-resource260, frame-wait257 and reset256 remain historical recoverable evidence.
-Do not repeat their one-shot adoption helpers.
+`.analysis/rotation-member-context-source-search-20261022/current-checkpoint.json`.
+Its selected cursor-style-cursor-typedef producer, complete28-symbol/115-binding/
+25-literal/40-byte-carrier proof, installed comparison, native351 and adoption
+identify current rotation acceptance. Earlier triangle267, paddle266,
+high-score265, presenter264, polygon263, glyph261, resource260, frame-wait257
+and reset256 remain historical recoverable evidence. Do not repeat their one-shot
+adoption helpers.
+
+## Completed rotation adoption
+
+The complete1572-byte renderer and all four helpers are exact in the same
+shared rotation.cpp object. A real12-byte row width/Y-projection record and
+4-byte source-column value record retain every original stored/read value.
+The consumed cursor uses an anonymous-record typedef; no unused field, extra
+storage, padding or artificial operation is added. Genuine root declaration
+order, the retained double-rounded expressions and explicit low32 offsets
+recover all344 named/80 temporary frame bytes. All other source definitions,
+headers, public APIs and the eight-input/nine-flag recipe remain unchanged.
+
+All5 complete functions/115 actual bindings/25 full literal references and
+all40 readonly bytes compare, including four entire double cells and float
+padding. All28 non-FILE symbols and every auxiliary byte are checked; only
+actual renderer section length1458→1572 changes. All four prior exact helpers
+retain their full identities. See [the exact typed cursor](../research/exact/ROTATION_TYPED_CURSOR_RECOVERY.md).
+
+Sixteen distinct successful compiles close finite header, arithmetic, record,
+workspace and declaration/type families. The third final typedef model stays
+uncompiled after exactness. One fresh declaration position is observed through
+REA6.5.0:301 function-tagged C2 entries, zero mandatory read failures, normal
+CL/C1XX/C2 exits and verified reuse of the old observer. Actual zero-offset
+member layers and local-type IDs explain the earlier rank-model divergence.
+Process Evidence is ev_819130f6fc77b0fe1649d642e61683c199786eb0d1d46d2c3303f957c112b212;
+full JSON is under `.analysis/rea/rotation-member-context-20261022/`.
+No Ghidra import or unchanged compiler retry occurs. Source IDs remain predictions
+for the selected model, not unique original-source or live-ID claims.
+
+Native rebuild changes only rotation.cpp/link, preserving60 companion objects
+and63 command configurations. Exactly351 unchanged renderer cases pass:
+344 geometry/angle/bank/slot/padding/retry fixtures and seven callback changes.
+Full guarded buffers, ordered events, immutable source/bank/trig state and
+original code compare. The verified fixture cache stays unchanged, zero
+preparation. No wrapper/helper/full historical replay or new negative-pitch
+cases are claimed. Whole compiler/capture peak393,588,736 bytes; native
+build/check43,409,408/59,117,568 bytes. CPU0/35%,384/512MiB, zero memory events.
+
+Tracking/progress and dependency hashes refresh; historical249 scopes retain
+counts/order/oracles. No source-owner/CMake/delivery-list change or game
+relink/play follows. Closed useful evidence is member-verified archived before
+obsolete retirement; current accepted products and useful caches remain.
+Cleanup verifies268 new archive members and14 superseded members in the prior
+carrier, retires209 obsolete files and releases1,945,600 allocated bytes net
+before small index/checkpoint receipts. The old raw1572/4 model is superseded;
+its original member-verified archive and historical receipts remain recoverable.
 
 ## Completed triangle adoption
 
@@ -231,42 +278,24 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Three authored candidates remain: last-brick, PCX loading and
-rotated-sprite rendering. Triangle, paddle, high-score, presenter and polygon
+Two authored candidates remain: last-brick and PCX loading.
+Rotation, triangle, paddle, high-score, presenter and polygon
 families are closed and adopted. Reuse their retained outputs; do not repeat
 frozen producers. Earlier high-score arithmetic/qualifier/include controls and
 triangle register/initializer controls are historical negatives.
 
-The latest private rotation model recovers the complete1572-byte extent and
-all424 original frame-role bytes. It leaves only four strict bytes at
-1244/1251/1321/1328: two MOV/IMUL pairs load pitch before Y instead of the original
-Y-before-pitch. Three helpers remain exact, but height191/3 loses exactness;
-none is adopted and the remaining table below still describes canonical source.
-Finite aliases/root lifetime/nested-double expressions plus declaration ranks
-produce this result; no padding or fake local is used. Full5-function/115-binding/
-25-literal/40-byte-carrier and source-inverse proof are retained. The useful
-`ranked-root-1` source/object stays live under
-`.analysis/rotation-root-temporaries-source-search-20261022/`.
-See [the full-frame residual](../research/exact/ROTATION_COMPLETE_FRAME_RECOVERY.md).
+The preceding private full-frame family reached renderer1572/4 while losing
+height191/3. Its member/base-rank approximations and simple product transpose
+are closed historical controls. The complete typed-row/cursor adoption above
+closes those residuals coherently; do not repeat the older frozen inputs.
+The earlier284-member archive/212-file cleanup remains recoverable under
+`.analysis/rotation-frame-progress-20261022/`, with its selected raw source/object
+copies now superseded by the current accepted products.
 
-Eleven distinct successful compiles plus one invalid generated input close this
-family. Definition-position literal permutations require an offline mapping
-repair, reusing the successful object. Two fields accidentally renamed by the
-private generator are fixed in a new digest, with the failure preserved.
-Descriptor-base LOAD-rank approximations in both directions still leave the
-same4 bytes; a two-product source transpose also leaves the same output.
-The next concrete question is actual member-pitch load ordering and height's
-comparison context, rather than more permutations of that disproved approximation.
-Closure archives284 size/SHA/mode-verified members and retires212 obsolete files,
-releasing974,848 allocated bytes net before small receipts. Best private source/
-object and current helper stay live; canonical products/caches remain unchanged.
-The closed research checkpoint is
-`.analysis/rotation-frame-progress-20261022/current-checkpoint.json`.
-
-Four new whole-display constant-association controls also reject: time-plus-
+Four earlier whole-display constant-association controls also reject: time-plus-
 constant groups give1043/405 and RNG-plus-constant groups1041/955, all64-byte
 frames but RNG first. All18 prior exacts and the full57-byte portable bridge
-remain. Maintained267 source/objects/native/delivery and ledgers stay unchanged.
+remain. These controls left the then-current267 checkpoint unchanged.
 
 The preceding private paddle scalar/clock-first model restores the complete677-byte
 extent and68-byte frame, leaving only four differences at274/275/280/281:
@@ -331,7 +360,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle/triangle source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle/triangle/rotation source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -342,7 +371,6 @@ Sizes below are original/current; differences are strict full-span counts.
 | --- | --- | ---: | ---: |
 | last-brick |display.cpp|1057 /1047|976|
 | load-pcx |resources.cpp|862 /979|851|
-| render-rotated-sprite |rotation.cpp|1572 /1458|1466|
 
 `config/match-units.toml`, the current exact report and candidate audit are the
 comparison authority; `config/function-origins.csv` defines the270 authored set.

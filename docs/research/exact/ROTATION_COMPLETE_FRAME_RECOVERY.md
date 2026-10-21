@@ -1,5 +1,10 @@
 # Rotation complete frame and four-byte residual
 
+Later October22 update: [the typed-row/cursor recovery](ROTATION_TYPED_CURSOR_RECOVERY.md)
+makes the complete renderer1572/0 and preserves all four helpers in one object,
+now formally adopted at268/270 authored exacts. The residuals and private models
+below are earlier history.
+
 October 22, 2026. A private shared-source model restores the renderer's complete
 1572-byte extent and all original 424-byte frame-role homes. Only four strict
 code bytes differ, at offsets1244/1251/1321/1328. Maintained source remains
