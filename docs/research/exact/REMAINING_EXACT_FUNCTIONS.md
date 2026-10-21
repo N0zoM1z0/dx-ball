@@ -12,6 +12,13 @@ Updated October21,2026, after the editor declaration recovery.
 Accepted totals are **399 functions / 87,384 code bytes / 244 metadata bytes**.
 There are **76 complete nonexact comparisons: 16 authored and 60 runtime**. None is an accepted exact.
 
+The later [four runtime definition-layout controls](VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
+retain elapsed81/3 and reset426/20. One preserves all16 runtime identities; the
+other three worsen only nonexact paddle677/68 to678/210. All13 prior exacts
+remain exact across64 complete body instances/1,408 code bindings. No source,
+object, recipe or ledger is adopted; totals above stay current. The finite
+controls are reusable evidence, not a ban on distinct TU/header hypotheses.
+
 These 76 are all currently source-present nonexact entries. The eight allocator
 functions now have complete exact comparisons, closing the three previous
 report gaps. Another 78 of the 553 independent inventory entries lack a

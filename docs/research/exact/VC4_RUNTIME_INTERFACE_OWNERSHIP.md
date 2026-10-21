@@ -6,6 +6,64 @@ supersedes blanket source-order/scope/owner/build-recipe bans in this historical
 log. Its measured failures still rule out those exact inputs, not all distinct
 bounded hypotheses. Original project/debug/build materials are not required.
 
+## Whole-definition layout controls, October21
+
+Four finite current-context source layouts leave complete elapsed81/3 unchanged.
+All move existing byte-identical definitions, preserving globals, prototypes,
+headers, bodies, operations and the nine pinned flags. The first family moves
+elapsed across one adjacent definition; the second places the existing920-byte
+current-time/elapsed utility pair at two logical group boundaries.
+
+| Frozen layout | Elapsed bytes/differences | Paddle bytes/differences | Unchanged complete identities |
+| --- | ---: | ---: | ---: |
+| elapsed, current-time, paddle | 81/3 | 677/68 | 16 |
+| current-time, paddle, elapsed | 81/3 | 678/210 | 15 |
+| clock pair before mode dispatch group | 81/3 | 678/210 | 15 |
+| clock pair after final frame dispatcher | 81/3 | 678/210 | 15 |
+
+Reset-round remains426/20 throughout. Elapsed retains differences19/22/24 and
+resolved SHA256 `747ce1b9e7dee804a69fb80de0279f65711fd0cdbd0609aeda8349feffacb37a`.
+The three worsened paddle outputs share resolved SHA256
+`8f14a9f564ca58f94d09df441fb19c6a96e3cdf4714e3f9df70889bd82ebf3bb`.
+No proposal is adopted. Current authored254 exact/16 candidates and399 overall
+exacts remain unchanged; the all270 objective is active.
+
+Each distinct26-input recipe compiles once and exits0, with no retry or mapping
+failure. Full23-section/229-non-FILE-symbol bijections account for389 actual
+relocations:352 code and37 initialized-table bindings. All33 literal references
+and four entire7/13/16/397-byte carriers compare, with strict auxiliary,
+associative-parent and local-target checks. Across four trials this covers64
+complete body instances/1,408 code bindings/1,556 raw relocations and preserves52
+prior-exact instances. Independent source/mapping preflight and main actual-byte,
+completion and occurrence walks retain their precise scopes in the receipts.
+
+Historical IDs29699/29702 are not assumed current: the retained observation's
+26-input cohort differs from this one in resources.h. Current and candidate IDs
+remain unobserved. The results establish these four output identities, not
+source-layout optimality or uniquely recovered original declarations. A distinct
+next question is the clock functions' translation-unit/header context, rather
+than assuming a different layout must fix the comparison.
+A concrete uncompiled candidate moves the existing pair into a clock.cpp using
+the current runtime.h/clock_api.h, leaving globals/tables with runtime.cpp.
+The five audited ownership controls still define both functions in runtime.cpp;
+the proposed split is distinct within those controls, not proved original.
+Compare both actual objects as a16-function closure, without retaining the
+single-object23-section assumption.
+
+The intervening policy-only commit6151e78 changed seven documents, not compiler
+inputs. An additive reviewed preparation refresh changes exactly five protected
+documentation seals and preserves the original preparation; all other fields
+stay fixed. The second family reuses the sealed baseline without a new replay.
+CPU0/35%,384MiB high/512MiB maximum remain enforced; all four memory-event sets
+are zero, with peak157,831,168 bytes. No native/game build, provider/debugger
+observation, game episode or historical semantic replay is performed.
+
+Private trial authorities are `.analysis/runtime-definition-order-search-20261021/`
+and `.analysis/runtime-clock-pair-order-search-20261021/`; their complete closed
+files are member-size/hash verified before retirement into
+`.analysis/runtime-order-closure-20261021/`. Current products, caches, originals,
+tools and the141-record snapshot remain protected.
+
 October20,2026. The user has reopened byte-exact recovery for all24 remaining
 authored candidates. This investigation changes no maintained source, compiler
 recipe, claim ledger or delivery product. Counts stay391 overall exacts and

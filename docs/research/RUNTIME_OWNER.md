@@ -1,5 +1,13 @@
 # Game lifecycle and mode dispatch
 
+The October21 [whole-definition layout controls](exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
+test four finite current-context arrangements, each compiled once. All retain
+elapsed81/3 and reset426/20; the first preserves all16 runtime identities, while
+the other three worsen only nonexact paddle677/68 to678/210. All13 prior exacts,
+352 code bindings/389 raw relocations and four complete literal carriers survive
+every full-owner comparison. Nothing is adopted or rebuilt natively; these
+bounded negative results do not exhaust source/TU/header hypotheses.
+
 The October21 [clock/line source trials](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
 close exactly two current C++ elapsed initializer models, including const-now.
 All16 runtime identities/352 bindings/33 full literal references stay unchanged;

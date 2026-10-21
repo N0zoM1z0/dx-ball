@@ -15,8 +15,30 @@ The user confirmed there is no original project: reconstruct from the existing
 materials without requesting original sources/debug/build records again. The
 agent may select finite batches, repair local tooling/mappings and proceed;
 only a genuinely new external decision or authority requirement needs a question.
-This policy-only update changes no source, maintained recipe, products or exact
-claims. Current254/270 remains active, not complete.
+The policy-only update and subsequent runtime layout controls change no
+maintained source, recipe, products or exact claims. Current254/270 remains
+active, not complete.
+
+The latest [four runtime definition-layout controls](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
+each compile once and exit0. All retain elapsed81/3 and reset426/20. The first
+preserves all16 complete identities; the other three worsen only nonexact paddle
+677/68 to678/210. All13 prior exacts/352 code bindings/389 raw relocations/33
+literal references/four entire carriers compare each time:64 body instances and
+1,408 code bindings across four distinct digests. No adoption, native/game build,
+provider/debugger capture or semantic replay. A reviewed additive preparation
+refresh preserves the old receipt across the intervening documentation commit.
+Both trial directories are retained in the member-verified recovery carrier at
+`.analysis/runtime-order-closure-20261021/` before exact-file retirement.
+Next bounded candidate is a genuine clock utility TU: move the byte-identical
+920-byte current-time/elapsed pair to a new clock.cpp using existing runtime.h
+and clock_api.h, keeping all globals/tables in runtime.cpp. This is uncompiled,
+not a historical-owner claim. Audit both objects together:2+14 functions and
+10+342 code bindings, all13 priors,37 table bindings and all four carriers;
+replace fixed single-object topology assumptions with actual complete mappings.
+Five audited ownership controls, two initializer controls and these four layouts
+all kept the pair in runtime.cpp; that bounded novelty is not exhaustive history.
+Current/original IDs are unknown, not a permission blocker. Reuse the four
+layouts rather than recompiling them.
 
 The newest [editor declaration recovery](../research/exact/EDITOR_DECLARATION_RECOVERY.md)
 makes the complete173-byte lookup exact through one consumed declaration-order
@@ -43,15 +65,10 @@ or full historical replay. Current authority is
 recoverable `.analysis/triangle-edge-scope-source-search-20261021/` control.
 Retire obsolete inputs/products only after full member-verified archival;
 preserve current tested products/caches/originals/tools and the141-record snapshot.
-Next eligible read-only-inferred runtime family is the two natural adjacent
-definition orders elapsed/current_time/paddle and current_time/paddle/elapsed.
-Both are now frozen under `.analysis/runtime-definition-order-search-20261021/`;
-preparation verifies all16 baseline bodies/352 bindings/13 prior exacts, but no
-candidate compiler has launched. Preserve that preparation and its frozen
-sources. This documentation update changes some protected documentation seals;
-review refreshed preconditions before execution, without recompiling the
-unchanged baseline or treating preparation as a consumed compiler attempt.
-Unknown original IDs are not a permission blocker under the standing policy.
+The subsequent runtime definition and clock-pair placements are the four closed
+controls above. Their initial preparations, source inverses, actual statuses and
+complete mapping reports remain recoverable; do not mistake the historical
+preparation's documentation seals for current compiler-input differences.
 
 The preceding [triangle declaration recovery](../research/exact/TRIANGLE_DECLARATION_RECOVERY.md)
 improves the complete1710-byte triangle88→48 through meaningful long-edge aliases
