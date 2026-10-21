@@ -82,7 +82,7 @@
     "draw_keyed_sprite",
     "draw_rotated_sprite",
     "draw_sprite",
-    "find_glyph",
+    "glyphs",
     "load_live_palette",
     "load_saved_palette",
     "load_sprite_bank",

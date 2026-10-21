@@ -21,7 +21,7 @@ add_library(dxball_core SHARED
     src/draw_keyed_sprite.cpp
     src/draw_rotated_sprite.cpp
     src/draw_sprite.cpp
-    src/find_glyph.cpp
+    src/glyphs.cpp
     src/load_live_palette.cpp
     src/load_saved_palette.cpp
     src/load_sprite_bank.cpp
@@ -108,7 +108,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         src/draw_keyed_sprite.cpp
         src/draw_rotated_sprite.cpp
         src/draw_sprite.cpp
-        src/find_glyph.cpp
+        src/glyphs.cpp
         src/load_live_palette.cpp
         src/load_saved_palette.cpp
         src/load_sprite_bank.cpp

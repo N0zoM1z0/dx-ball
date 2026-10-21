@@ -8863,7 +8863,7 @@ target_address = 4212240
 
 [units.find-glyph]
 boundary_evidence = "docs/research/RESOURCE_OWNER.md; docs/research/exact/RESOURCE_ARITHMETIC_FAMILY.md complete-owner signed32 arithmetic integration with explicit gains and losses"
-build = "find_glyph"
+build = "glyphs"
 relocations = [
   { "addend" = 0, "offset" = 20, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
   { "addend" = 1020, "offset" = 40, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
@@ -8876,27 +8876,27 @@ size = 145
 symbol = "_dxball_find_glyph"
 target_address = 4214336
 
-[candidates.draw-glyph]
+[units.draw-glyph]
 boundary_evidence = "docs/research/RESOURCE_OWNER.md; docs/research/exact/GLYPH_SIGNED_CODE_DOMAIN.md plain-char cohort; complete328-byte exact and affected28-owner closure; docs/research/exact/RESOURCE_ARITHMETIC_FAMILY.md complete-owner signed32 arithmetic integration with explicit gains and losses"
-build = "resources"
+build = "glyphs"
 relocations = [
   { "addend" = 0, "offset" = 14, "symbol" = "_dxball_find_glyph", "target" = 4214336, "type" = "REL32" },
-  { "addend" = 0, "offset" = 48, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 45, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
   { "addend" = 0, "offset" = 68, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 80, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 77, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
   { "addend" = 0, "offset" = 100, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 115, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 135, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 156, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 176, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 198, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 218, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 231, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 251, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 263, "symbol" = "_dxball_active_surface", "target" = 4351436, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 269, "symbol" = "_dxball_active_surface", "target" = 4351436, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 283, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 303, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 111, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 134, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 152, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 175, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 193, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 216, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 225, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 248, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 260, "symbol" = "_dxball_active_surface", "target" = 4351436, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 266, "symbol" = "_dxball_active_surface", "target" = 4351436, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 276, "symbol" = "_dxball_font_bank", "target" = 4329612, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 299, "symbol" = "_dxball_sprite_banks", "target" = 4348288, "type" = "DIR32" },
 ]
 size = 328
 symbol = "_dxball_draw_glyph"
@@ -8906,7 +8906,7 @@ target_address = 4214000
 boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 build = "resources"
 relocations = [
-  { "addend" = 0, "data_hex" = "726200", "offset" = 105, "symbol" = "$SG28239", "target" = 4335508, "type" = "DIR32" },
+  { "addend" = 0, "data_hex" = "726200", "offset" = 105, "symbol" = "$SG28229", "target" = 4335508, "type" = "DIR32" },
   { "addend" = 0, "offset" = 114, "symbol" = "_fopen", "target" = 4291616, "type" = "REL32" },
   { "addend" = 0, "offset" = 217, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
   { "addend" = 0, "offset" = 396, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
@@ -11260,12 +11260,6 @@ object = "build/exact/draw_sprite.obj"
 inputs = ["src/allocator.h", "src/board_storage.h", "src/boards.h", "src/draw_sprite.cpp", "src/explosion_types.h", "src/resources.h", "src/resources_bank.h", "src/rotation.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/ML", "/Gy"]
 
-[builds.find_glyph]
-source = "src/find_glyph.cpp"
-object = "build/exact/find_glyph.obj"
-inputs = ["src/allocator.h", "src/board_storage.h", "src/boards.h", "src/explosion_types.h", "src/find_glyph.cpp", "src/resources.h", "src/resources_bank.h", "src/rotation.h", "src/state_types.h"]
-flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/ML", "/Gy"]
-
 [builds.load_live_palette]
 source = "src/load_live_palette.cpp"
 object = "build/exact/load_live_palette.obj"
@@ -11318,4 +11312,10 @@ flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/ML", "/Gy"]
 source = "src/stretch_keyed_sprite.cpp"
 object = "build/exact/stretch_keyed_sprite.obj"
 inputs = ["src/allocator.h", "src/board_storage.h", "src/boards.h", "src/explosion_types.h", "src/resources.h", "src/resources_bank.h", "src/rotation.h", "src/state_types.h", "src/stretch_keyed_sprite.cpp"]
+flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/ML", "/Gy"]
+
+[builds.glyphs]
+source = "src/glyphs.cpp"
+object = "build/exact/glyphs.obj"
+inputs = ["src/allocator.h", "src/board_storage.h", "src/boards.h", "src/explosion_types.h", "src/glyphs.cpp", "src/resources.h", "src/rotation.h", "src/state_types.h"]
 flags = ["/nologo", "/c", "/Od", "/Ob0", "/Oi-", "/Oy-", "/Gd", "/ML", "/Gy"]

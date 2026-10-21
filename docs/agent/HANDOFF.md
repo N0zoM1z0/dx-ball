@@ -10,19 +10,38 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |260 /270 (96.30%)|
-| Authored complete exact code bytes |74,239 /84,968 (87.37%)|
-| Authored nonexact candidates / original bytes |10 /10,729|
-| Overall exact functions, including runtime/compiler units |405|
-| Exact code / attached metadata bytes |88,623 /244|
+| Authored byte-exact functions |261 /270 (96.67%)|
+| Authored complete exact code bytes |74,567 /84,968 (87.76%)|
+| Authored nonexact candidates / original bytes |9 /10,401|
+| Overall exact functions, including runtime/compiler units |406|
+| Exact code / attached metadata bytes |88,951 /244|
 | Current authored compiler closures |49|
 
 Private current artifact authority is
-`.analysis/resource-owner-adoption-20261021/current-checkpoint.json`;
-its adjacent `adoption.json` and `complete-proof-formatted.json` record the current
-resource-source acceptance. The earlier256/270 reset and257/270 frame-wait
-checkpoints remain recoverable historical evidence. Do not execute their
-one-shot preparation/installation helpers again.
+`.analysis/glyph-pair-source-search-20261022/current-checkpoint.json`.
+Its `complete-proof.json`, `native-summary.json`, `adoption.json` and small
+ledger-percentage refresh record identify the current glyph/state acceptance.
+Earlier reset256, frame-wait257 and resource260 checkpoints remain recoverable
+historical evidence. Do not execute their one-shot adoption helpers again.
+
+## Completed glyph owner adoption
+
+Lookup145/0 and draw328/0 share `src/glyphs.cpp`, lookup first; the opposite
+order loses both matches and is rejected. The matching PCX/global-state
+remainder, three whole functions/31 bindings, full literal and noncode storage
+compare coherently. Lookup's prior exact survives; only glyph is promoted.
+PCX is979/851 rather than the preceding979/850 and remains explicitly nonexact.
+Native and legacy lists/flags/link ownership replace `find_glyph` with `glyphs`.
+
+The maintained native build preserves56 other objects and59 prior command
+configurations. Exactly1,646 unchanged existing glyph/PCX/palette cases pass
+with their actual three-font setup and temporary fixtures. Native scope peak
+43,442,176 bytes, CPU0/35%,384/512MiB and no memory events. No earlier unrelated
+resource loops, historical249 scopes or game campaign are rerun. See
+[the glyph source owner](../research/exact/GLYPH_SOURCE_OWNER.md).
+Cleanup verifies54 archive members and retires44 obsolete files, including the
+replaced lookup objects/dependency. Net allocation release270,336 bytes before
+the receipt; current products/caches stay and recovery paths are retained.
 
 ## Completed resource owner adoption
 
@@ -50,12 +69,11 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Glyph remains332/258, but the rejected three-function and six-function resource
-remainders each emitted its complete328/0 while losing prior companions. Those
-outputs are retained as mechanism evidence, not adopted slices. Next test a
-bounded coherent find-glyph/draw-glyph source owner in callee-first and
-caller-first order, using current bodies and inherited prelude. A useful pair
-requires its matching PCX/state remainder and full affected comparison before
+Nine authored candidates remain. The next bounded module probe isolates the
+unchanged404-byte high-score drawing body with its inherited game-over prelude,
+then compares it under C and C++ contexts. Reject unhelpful proposals without
+remainder work. A useful result still requires all seven accepted game-over
+companions, actual literals/state and proportionate maintained checks before
 adoption. This is a candidate family, not an executed result.
 
 ## Completed frame-wait adoption
@@ -75,7 +93,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -89,8 +107,7 @@ Sizes below are original/current; differences are strict full-span counts.
 | last-brick |display.cpp|1057 /1047|976|
 | draw-high-scores |gameover.c|404 /403|330|
 | draw-paddle |runtime.cpp|677 /678|210|
-| draw-glyph |resources.cpp|328 /332|258|
-| load-pcx |resources.cpp|862 /979|850|
+| load-pcx |resources.cpp|862 /979|851|
 | fill-polygon |raster.cpp|1543 /1543|216|
 | fill-polygon-clipped |raster.cpp|1592 /1592|213|
 | render-rotated-sprite |rotation.cpp|1572 /1458|1466|

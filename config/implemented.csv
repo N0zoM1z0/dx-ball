@@ -67,8 +67,8 @@ address,symbol,source,scope,semantic_unit
 0x004042B0,dxball_capture_sprite,src/capture_sprite.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-capture-sprite
 0x00404610,dxball_load_sprite_bank,src/load_sprite_bank.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-load-sprite-bank
 0x00404BE0,dxball_release_sprite,src/release_sprite.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-release-sprite
-0x00404CF0,dxball_draw_glyph,src/resources.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
-0x00404E40,dxball_find_glyph,src/find_glyph.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
+0x00404CF0,dxball_draw_glyph,src/glyphs.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-draw-glyph
+0x00404E40,dxball_find_glyph,src/glyphs.cpp,See docs/research/RESOURCE_OWNER.md: tested initialized state and API effects,resource-find-glyph
 0x00404EE0,dxball_draw_text,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-text
 0x00404F80,dxball_draw_centered_text,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-draw-centered-text
 0x00404FD0,dxball_measure_text,src/ui.c,"See docs/research/STARTUP_UI_OWNER.md; valid defined storage/arithmetic domains, selected COM outputs, explicit CRT RNG/file and driver/non-game boundaries",ui-measure-text

@@ -15,63 +15,6 @@ DxBallDDraw *dxball_direct_draw;
 DxBallDDPalette *dxball_direct_palette;
 DxBallPaletteEntry dxball_live_palette[256], dxball_saved_palette[256];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* FUNCTION: DXBALL 0x00404E40
-   The count-th slot is intentionally excluded, and an empty bank returns 1. */
-
-
-/* FUNCTION: DXBALL 0x00404CF0 */
-DxBallInt dxball_draw_glyph(char code, DxBallInt x, DxBallInt baseline)
-{
-    DxBallInt sprite;
-    DxBallRect destination;
-    sprite = dxball_find_glyph((signed char)code);
-    if (sprite != 0) {
-        destination.left = x;
-        destination.top = baseline
-                         - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->height
-                         - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
-        destination.right = dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width + x;
-        destination.bottom = baseline
-                            - dxball_sprite_banks[dxball_font_bank].sprites[sprite]->baseline;
-        ((DxBallDDSurface *)dxball_active_surface)->blt(&destination,
-            dxball_sprite_banks[dxball_font_bank].sprites[sprite]->surface,
-            &dxball_sprite_banks[dxball_font_bank].sprites[sprite]->source_rect, 0x1008000, NULL);
-        return dxball_sprite_banks[dxball_font_bank].sprites[sprite]->width;
-    } else {
-        return 0;
-    }
-}
-
-
-
-
-
-
-
 /* Only the two observed signed maxima are interpreted from the disk header. */
 typedef struct DxBallPcxHeader {
     DxBallByte prefix[8];
