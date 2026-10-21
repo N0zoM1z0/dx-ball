@@ -17,7 +17,7 @@ Keep the centered title PNG and progress SVG in the README, both at 900px.
 
 October21 resumed status: the user explicitly resumed all270 authored exact
 recoveries, with serial CPU/memory limits, frequent commits/pushes and periodic
-cleanup. The maintained checkpoint is261/270 after verified frame-wait/resource/glyph adoption;
+cleanup. The maintained checkpoint is263/270 after verified frame-wait/resource/glyph/polygon adoption;
 see the current handoff. Earlier stopped/unadopted records are historical.
 
 Read [the current handoff](docs/agent/HANDOFF.md),

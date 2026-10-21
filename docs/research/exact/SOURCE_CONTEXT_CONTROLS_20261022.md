@@ -1,5 +1,10 @@
 # Source context and raster local controls, October 22
 
+Later on October22, the [bounded declaration recovery](POLYGON_LOCAL_SOURCE_RECOVERY.md)
+makes both polygon bodies exact and adopts the coherent three-owner closure.
+This note retains the preceding261-exact /39-difference exploratory checkpoint;
+its then-pending objects are now member-verified archived evidence.
+
 The maintained checkpoint remains **261/270 authored exact functions and
 74,567/84,968 complete exact code bytes** after the
 [glyph owner adoption](GLYPH_SOURCE_OWNER.md). The experiments below do not

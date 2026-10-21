@@ -9,8 +9,8 @@ The current records cover gameplay, all five screen modes, resources, graphics a
 | Parent-owned compiler fragments, counted separately | 24 |
 | Source-present functions | 475 |
 | Functions with scoped semantic acceptance | 249 |
-| Byte-exact functions | 406 |
-| Complete exact code bytes | 88951 |
+| Byte-exact functions | 408 |
+| Complete exact code bytes | 92086 |
 | Entries identified as runtime dependencies | 261 |
 | Entries identified as compiler-generated code | 21 |
 | Origin still unclassified | 1 |

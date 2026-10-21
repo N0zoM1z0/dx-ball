@@ -10,19 +10,46 @@ member-verified cleanup. The goal is active and incomplete.
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |261 /270 (96.67%)|
-| Authored complete exact code bytes |74,567 /84,968 (87.76%)|
-| Authored nonexact candidates / original bytes |9 /10,401|
-| Overall exact functions, including runtime/compiler units |406|
-| Exact code / attached metadata bytes |88,951 /244|
-| Current authored compiler closures |49|
+| Authored byte-exact functions |263 /270 (97.41%)|
+| Authored complete exact code bytes |77,702 /84,968 (91.45%)|
+| Authored nonexact candidates / original bytes |7 /7,266|
+| Overall exact functions, including runtime/compiler units |408|
+| Exact code / attached metadata bytes |92,086 /244|
+| Current authored compiler closures |51|
 
 Private current artifact authority is
-`.analysis/glyph-pair-source-search-20261022/current-checkpoint.json`.
-Its `complete-proof.json`, `native-summary.json`, `adoption.json` and small
-ledger-percentage refresh record identify the current glyph/state acceptance.
-Earlier reset256, frame-wait257 and resource260 checkpoints remain recoverable
-historical evidence. Do not execute their one-shot adoption helpers again.
+`.analysis/polygon-declaration-source-search-20261022/current-checkpoint.json`.
+Its complete proof, native summary, adoption and publication-correction records
+identify the current polygon/raster acceptance. Earlier glyph261, resource260,
+frame-wait257 and reset256 checkpoints remain recoverable historical evidence.
+Do not execute their one-shot adoption helpers again.
+
+## Completed polygon adoption
+
+Ordinary1543/0 and clipped1592/0 join separate shared C++ owners. Sixteen consumed
+workspace fields become real locals, with two separate endpoint POD points and
+all executable operations/copies preserved. A finite name/order screen, a
+parameter-rank hypothesis correction and one final point-declaration swap close
+the previous39-difference probes. Emitted equality, not predicted IDs, proves
+exactness. See [polygon local recovery](../research/exact/POLYGON_LOCAL_SOURCE_RECOVERY.md).
+
+The coherent10-function raster remainder preserves all nine prior exacts.
+Triangle1710/60 replaces historical1710/48 and remains explicitly nonexact;
+no incompatible old object is borrowed. All12 full functions compare with116
+code and25 metadata bindings,296 metadata bytes and a61-symbol remainder
+bijection. Tracking rejects then verifies a repaired metadata-carrier reference
+column using the existing output; no compiler retry or weakened check follows.
+
+Native rebuild preserves57 companion objects and60 existing command
+configurations. Exactly936 selected existing polygon cases pass, including all
+seven clipping contours and allocation masks. Native peak43,470,848 bytes;
+CPU0/35%,384/512MiB and no memory events. Historical249 semantic scopes and full
+raster suites are not newly rerun. Closed proposal evidence is member-verified
+and archived before obsolete input/object copies are retired; current products
+and useful caches remain. No game relink/play follows this adoption.
+Cleanup verifies107 archive members and retires79 obsolete files, releasing
+917,504 allocated bytes net before small receipts. Recovery index/archive are
+beside the current checkpoint; current exact objects/native products stay live.
 
 ## Completed glyph owner adoption
 
@@ -69,32 +96,18 @@ Recovery archive/index are beside the current checkpoint.
 
 ## Next exact question
 
-Nine authored candidates remain. The unchanged high-score C/C++ owner/header
-controls, triangle register/initializer controls and polygon singleton owners
-have executed and are rejected. See
-[the source context results](../research/exact/SOURCE_CONTEXT_CONTROLS_20261022.md).
-No maintained source or exact claim changes after the glyph adoption.
+Seven authored candidates remain. The polygon39/7/5/0 declaration family is
+closed and adopted; do not repeat its frozen producers. The high-score language/
+header controls, triangle register/initializer controls and polygon singleton
+controls are historical negatives in
+[the source context note](../research/exact/SOURCE_CONTEXT_CONTROLS_20261022.md).
 
-A promising private polygon model replaces16 actually consumed workspace
-members with real scalar/pointer locals while preserving two separate endpoint
-points, all point-copy expressions and the28-byte heap edge layout. The original
-interleaved point/scalar homes motivated the model. One bounded meaningful-name
-solution,86 offline states and one compile per controller yield1543/39 and
-1592/39, versus maintained216/213 differences. All11 bindings per complete body
-are checked. A byte-template diagnostic classifies27 of each39 changed positions
-as nine reversed comparison windows;12 remain unclassified by that diagnostic.
-No unique historical spelling, complete instruction/liveness proof, coherent
-remainder or prior-exact preservation is claimed for these private probes.
-
-Keep `.analysis/polygon-flat-source-search-20261022/` live: both useful objects,
-frozen input trees, plans, complete comparisons, executable-token equivalence
-record and diagnostic are pending. The next bounded source question is actual
-declaration order/operand ranking while preserving the improved allocation and
-point copies. Constrain a finite family from observed comparisons; do not assume
-name buckets alone establish frontend IDs. A target success needs the matching
-raster remainder, nine prior exacts and proportionate maintained verification
-before adoption. Closed negative evidence is member-verified and archived at
-`.analysis/source-context-controls-20261022/`; obsolete copies are retired.
+Select the next finite natural source family from `present-regions-now`'s two
+operand bytes or the current triangle1710/60 residual. Read the retained
+presentation/triangle notes and reuse existing outputs first. Keep root LOAD
+ranking distinct from point-member/address ranking, and do not assign parameter
+IDs from declaration offsets without evidence. Exact new owners require their
+coherent affected closure and proportionate maintained checks.
 
 ## Completed frame-wait adoption
 
@@ -113,7 +126,7 @@ command checking was corrected for display's existing lightning-only warning
 exception, with the original baseline/helper retained. See
 [the waiting note](../research/exact/FRAME_WAIT_CURSOR.md).
 
-No game relink/play follows the clock/reset/wait/resource/glyph source changes. Retained delivery
+No game relink/play follows the clock/reset/wait/resource/glyph/polygon source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
 ## Remaining authored candidates
@@ -122,14 +135,12 @@ Sizes below are original/current; differences are strict full-span counts.
 
 | Unit | Owner | Bytes | Differences |
 | --- | --- | ---: | ---: |
-| fill-triangle |raster.cpp|1710 /1710|48|
+| fill-triangle |raster.cpp|1710 /1710|60|
 | present-regions-now |display.cpp|984 /984|2|
 | last-brick |display.cpp|1057 /1047|976|
 | draw-high-scores |gameover.c|404 /403|330|
 | draw-paddle |runtime.cpp|677 /678|210|
 | load-pcx |resources.cpp|862 /979|851|
-| fill-polygon |raster.cpp|1543 /1543|216|
-| fill-polygon-clipped |raster.cpp|1592 /1592|213|
 | render-rotated-sprite |rotation.cpp|1572 /1458|1466|
 
 `config/match-units.toml`, the current exact report and candidate audit are the

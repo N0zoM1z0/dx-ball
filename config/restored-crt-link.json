@@ -94,6 +94,8 @@
     "stretch_keyed_sprite",
     "rotation",
     "raster",
+    "fill_polygon",
+    "fill_polygon_clipped",
     "game:src/raster_host.cpp",
     "bitmap",
     "gameplay",
@@ -183,7 +185,7 @@
     "member:000ea00c",
     "member:000eb086"
   ],
-  "source_objects": 134,
+  "source_objects": 136,
   "integration_objects": 3,
   "sdk_libraries": [
     "kernel32.lib",

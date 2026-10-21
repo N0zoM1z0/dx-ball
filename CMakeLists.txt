@@ -33,6 +33,8 @@ add_library(dxball_core SHARED
     src/stretch_keyed_sprite.cpp
     src/rotation.cpp
     src/raster.cpp
+    src/fill_polygon.cpp
+    src/fill_polygon_clipped.cpp
     src/raster_host.cpp
     src/list_initializers.cpp
     src/bitmap.c

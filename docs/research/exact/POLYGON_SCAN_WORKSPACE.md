@@ -1,5 +1,10 @@
 # Polygon scan and sort workspace
 
+October22 follow-up: [real local declarations](POLYGON_LOCAL_SOURCE_RECOVERY.md)
+make both complete polygon controllers exact in separate shared C++ owners.
+The coherent raster remainder preserves nine prior exacts; triangle1710/60
+remains a candidate. Workspace models and results below are historical evidence.
+
 The later [complete instruction correspondence](RASTER_OPERATION_CORRESPONDENCE.md)
 accounts for all458/468 current/original instructions through the same bijective
 frame-role map and11/7 checked comparison groups. Current strict1543/216 and
