@@ -101,3 +101,33 @@ explicit `top-followup/`; the already closed waiting family is
 products,caches,tools,originals and the141-record frontend snapshot are preserved.
 Heavy work remains serial on CPU0/35%,384MiB high/512MiB maximum. No whole game,
 relink/play,full historical replay or completed270-function goal is claimed.
+
+## Rejected standalone presentation contexts, October21
+
+Four private probes move the byte-identical presenter/sort pair into a proposed
+presentation.cpp. Cross two natural include contexts (the full display prelude
+or only display.h/geometry.h, both with C linkage) with address order or
+callee-first order. Recursive input counts are20 and12; the nine production
+flags are unchanged. Each distinct frozen digest compiles once and exits0.
+
+| Include context / definition order | Presenter bytes / differences | Sort bytes / differences |
+| --- | ---: | ---: |
+| Full / address |984 /6|296 /3|
+| Full / callee first |984 /6|296 /3|
+| Direct / address |984 /6|296 /3|
+| Direct / callee first |984 /10|296 /3|
+
+Reject all four against the maintained984/2 and296/0. Eight complete body
+instances and272 actual bindings compare; full object records are retained.
+This is explicitly a module-only exploration, not preservation of the rest of
+display.cpp. No remainder compile, maintained source/object change, promotion,
+native build or game run is needed. A preparation-only anticipated span-digest
+mismatch is recorded and corrected against the already attested canonical
+source before any producer starts; no compiler retry occurs.
+
+Private authority: `.analysis/presentation-tu-source-search-20261021/`.
+The peak compiler scope is153,059,328 bytes with all memory events zero.
+Closed inputs/products are member-size/hash verified in a recovery archive
+before exact-path retirement. This rules out four frozen contexts, not every
+natural presentation owner or unknown original declaration. Current authored
+coverage remains256 exact/14 candidates; the objective is incomplete.

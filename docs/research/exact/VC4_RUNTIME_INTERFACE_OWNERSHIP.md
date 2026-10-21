@@ -11,6 +11,31 @@ makes reset-round426/0 with its unchanged body and five real API-owner includes.
 All 13 runtime remainder identities survive. Current authored count is
 256 exact / 14 candidates; the clock recovery below is the preceding checkpoint.
 
+## Rejected standalone paddle renderer contexts, October21
+
+Two private paddle_render.cpp probes retain the complete current2256-byte
+source body. One uses the full runtime prelude (26 recursive inputs); the other
+uses its seven genuine API-owner headers (16 inputs): runtime,bonuses,effects,
+paddle,display,startup and clock_api. Startup supplies random_range's real
+prototype; display owns both queue_region and draw_effect_sprite. The flags,
+types, scopes, expressions and all global/table definitions remain unchanged.
+
+Both distinct digests compile once and exit0. Both complete678-byte renderers
+retain all210 differences and the maintained resolved identity. All104 actual
+bindings compare, including both full eight-byte floating literals in each
+object. The literals occupy one ordinary16-byte rdata carrier, not two separate
+COMDATs. An initial mapper assumption stops; its additive offline repair checks
+the entire carrier, actual0/8 anchors, flags, section auxiliaries and both
+original payloads. Neither compiler repeats.
+
+Reject both module-only probes without compiling a proposed runtime remainder
+or making a companion-preservation claim. No maintained source/object/ledger
+change, native build, provider observation or game run follows. Peak compiler
+scope150,536,192 bytes; all memory events zero. Private authority is
+`.analysis/paddle-render-tu-source-search-20261021/`, with member-size/hash
+verified recovery before exact-file retirement. Current256/14 stays unchanged;
+only these two unchanged-body TU contexts are ruled out.
+
 ## Clock utility TU recovery, October21
 
 The complete81-byte elapsed function is now exact. Move the existing920-byte

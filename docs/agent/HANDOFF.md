@@ -49,8 +49,28 @@ live and closed inputs/products are member-verified before retirement.
 One separate presenter iterator-lifetime model fails (984/49, sort296/3 lost);
 18 other full identities and the57-byte bridge survive. Reject without adoption
 or native build, retaining `.analysis/present-iterator-scope-search-20261021/`.
-Next eligible small source-organization question is the presenter/sort pair's
-natural TU/include context, distinct from that closed four-scope iterator model.
+The subsequent presenter/sort TU/include family is now closed: four distinct
+full/direct-header and address/callee-order probes compile once each, all exit0.
+Presenter984/6,6,6,10 and sort296/3 reject against maintained984/2 and296/0.
+Only the proposed pair is compared (eight bodies/272 actual bindings); no
+remainder compile or companion-preservation claim. Two further unchanged-body
+paddle_render.cpp probes use full26-input or direct16-input contexts. Both
+compile once, exit0 and retain678/210 plus the current resolved identity;
+104 bindings and four full8-byte literal instances compare. An offline mapping
+repair accounts for their actual single16-byte rdata carrier, with no compiler
+retry. No adoption/native build/provider/game follows either family. See
+[presenter results](../research/exact/PRESENT_INDEX_DECLARATIONS.md#rejected-standalone-presentation-contexts-october21)
+and [renderer results](../research/exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#rejected-standalone-paddle-renderer-contexts-october21).
+Private roots are `.analysis/presentation-tu-source-search-20261021/` and
+`.analysis/paddle-render-tu-source-search-20261021/`; member-verified recovery
+archives retain closed inputs/products before exact-file retirement. The
+reset current-checkpoint above remains the maintained artifact authority.
+Cleanup retires145 temporary files after full member verification, releasing
+1,101,824 allocated bytes net of the recovery archives. All maintained artifact
+hashes in that checkpoint stay unchanged; tracking validates401 overall exacts.
+These six inputs are closed, not every source context or a permission boundary.
+Next hypotheses must target actual remaining operand/frame/producer differences
+and reuse these outputs rather than repeat the unchanged split controls.
 Only draw-paddle remains nonexact in the runtime owner; original IDs/ownership
 remain reconstruction questions, not permission blockers.
 
