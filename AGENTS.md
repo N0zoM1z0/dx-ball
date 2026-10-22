@@ -25,6 +25,11 @@ and bounded basic/editor/round-transition checks now pass; all53 authored recipe
 are identical to the audited objects in that game. Current delivery and evidence
 are documented in docs/research/CURRENT_VC4_BUILD.md. Full campaigns and platform
 ports are separate future work. Earlier stopped/unadopted records are history.
+Expanded playability now verifies natural game-over/ranking restart, 50 editor
+fixture clears through terminal storage/routing, a 900s original-bank episode
+and game-only stereo signal. Focus recovery remains unaccepted under Wine/Xvfb:
+retain both current/original failed controls and the persistent return-menu
+timeout. See docs/research/PLAYABILITY_20261022.md before repeating that scope.
 
 Read [the current handoff](docs/agent/HANDOFF.md),
 [workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing

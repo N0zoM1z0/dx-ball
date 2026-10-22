@@ -57,15 +57,20 @@ events; max/OOM events are zero. No full campaign, focus/surface recovery or
 physical-driver acceptance is claimed. See [the current record](../research/CURRENT_VC4_BUILD.md).
 The October20 image and its cold-build proof remain historical evidence.
 
-Expanded current-image validation is active under
+Expanded current-image validation is recorded under
 `.analysis/playability-exact270-20261022/`. Natural life loss, name editing and
 complete 660-byte ranking persistence through a fresh process pass with 1,219
 reads and two normal exits. Focus restoration is not accepted: current and
 original EXEs share the fixed-sample motion failure; persistent current sampling
 passes initial motion but later times out returning to menu. The unique cause
 is unresolved. The 50-editor-board terminal fixture now passes with 6,848 reads,
-all 50 real clears, terminal index50/score500/lives3, scoped terminal storage
-and normal exit. The unchanged-bank900-second episode is running separately.
+all 50 real clears, terminal index 50/score 500/lives 3, scoped terminal storage
+and normal exit. A separate unchanged-bank 900.046-second episode passes,
+naturally initializing original boards 0/1/2, final sampled score 2718/lives 3,
+27,596 valid SDK samples and zero malformed samples. One verified game stream
+also produces 5.991678 seconds of finite stereo PCM with nonzero samples in both
+channels. No source/recipe/EXE changes or new compilers occur. Full original 50,
+all-power-up coverage, focus restoration and physical-driver fidelity remain open.
 See [expanded playability](../research/PLAYABILITY_20261022.md).
 
 ## Completed PCX adoption and authored-exact audit
