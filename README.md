@@ -213,6 +213,18 @@ The diagram tracks recovered functions and exact compiler matches. See the
 [progress records](docs/PROGRESS.md) for current counts and the
 [research notes](docs/research/README.md) for the recovered game flows.
 
+| Stage | Current result |
+| --- | --- |
+| Authored function recovery | **270 / 270 complete functions byte-exact** |
+| Authored code bytes | **84,968 / 84,968 bytes exact**, with explicit address-reference mappings |
+| Original Visual C++ 4.0 build | **Builds successfully**; all 53 authored compiler recipes retain their audited object identities |
+| Basic playability | **Verified under Wine**: paddle/ball input, pause/resume, editor save/reload and a real brick-clear/next-board transition |
+| Extended playability | Next: broader campaign progression, game-over/ranking persistence and focus/surface recovery |
+
+The current executable and local delivery bundle are recorded in the
+[build and play checkpoint](docs/research/CURRENT_VC4_BUILD.md). Authored exact
+recovery is complete; broader playability checks are now the active stage.
+
 ## Build and explore
 
 - [Build and play](docs/BUILD.md) — supply the original files, compile, and launch.
