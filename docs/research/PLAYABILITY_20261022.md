@@ -48,14 +48,30 @@ The complete failed responses, transport failure and comparison remain under
 `.analysis/playability-exact270-20261022/` and
 `.analysis/rea/playability-exact270-20261022/`.
 
-## Remaining work in this run
+## Fifty real clears and terminal routing: pass
 
-The existing 50-editor-board terminal test is running: create a single brick
-in each board through the real editor, save all 20,000 bytes, then use real
-ball/brick clears through the final route and diagnostic storage check. This
-fixture is separate from the original 50-board campaign.
+The unchanged existing terminal test creates a single brick in each of 50
+boards through real editor input and saves the complete expected 20,000-byte
+bank. It then performs 50 real ball/brick clears. Every next-board index, score
+increment and life count matches: terminal index 50, score 500, lives 3 and
+menu mode 0. All 400 terminal tile bytes and the separate diagnostic bank-tail
+reads retain the original fixture's scoped storage pattern, including variable
+clock bytes. The game exits normally; saved-frame review confirms the menu
+and Last Score 500.
 
-A subsequent 900-second real-input episode will use the complete unchanged
+There are 6,848 state reads, 22,921 valid persistent samples, zero malformed
+samples and 11 complete diagnostic tail reads. The run takes 708.368 seconds.
+All 49 originals remain unchanged. This editor-created fixture establishes the
+50-transition/terminal path separately from the original 50-board campaign.
+
+REA process evidence:
+`ev_6a51b822fb76523793e513c7096ba652c256cff9bd31900f045371384848ac7f`.
+Private receipt:
+`.analysis/playability-exact270-20261022/terminal/verification.json`.
+
+## Original-bank episode: running
+
+A 900-second real-input episode uses the complete unchanged
 original bank, retaining actual initialized boards and sampled state. A bounded
 episode will not be described as full-campaign completion. A six-second read-only
 monitor of only the verified game's digital audio stream is also planned;

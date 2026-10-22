@@ -219,7 +219,8 @@ The diagram tracks recovered functions and exact compiler matches. See the
 | Authored code bytes | **84,968 / 84,968 bytes exact**, with explicit address-reference mappings |
 | Original Visual C++ 4.0 build | **Builds successfully**; all 53 authored compiler recipes retain their audited object identities |
 | Basic playability | **Verified under Wine**: paddle/ball input, pause/resume, editor save/reload and a real brick-clear/next-board transition |
-| Extended playability | Game-over and ranking persistence through restart pass; further campaign/terminal checks are running. Focus recovery remains unresolved under Wine. |
+| Extended playability | Game-over/ranking restart and 50 editor-created board clears through terminal routing pass. Original-bank continuous play is running. |
+| Focus recovery | Unresolved under Wine; original and rebuilt control failures are retained. |
 
 The current executable and local delivery bundle are recorded in the
 [build and play checkpoint](docs/research/CURRENT_VC4_BUILD.md). Authored exact

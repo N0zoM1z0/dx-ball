@@ -63,8 +63,10 @@ complete 660-byte ranking persistence through a fresh process pass with 1,219
 reads and two normal exits. Focus restoration is not accepted: current and
 original EXEs share the fixed-sample motion failure; persistent current sampling
 passes initial motion but later times out returning to menu. The unique cause
-is unresolved. The 50-editor-board terminal fixture and unchanged-bank episode
-are separate scopes. See [expanded playability](../research/PLAYABILITY_20261022.md).
+is unresolved. The 50-editor-board terminal fixture now passes with 6,848 reads,
+all 50 real clears, terminal index50/score500/lives3, scoped terminal storage
+and normal exit. The unchanged-bank900-second episode is running separately.
+See [expanded playability](../research/PLAYABILITY_20261022.md).
 
 ## Completed PCX adoption and authored-exact audit
 
