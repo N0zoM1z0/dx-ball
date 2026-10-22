@@ -1,8 +1,9 @@
 # Build and play
 
-October22 source checkpoint:270/270 authored functions are exact. The retained
-October20 VC4 game image and play receipts below predate the later exact changes;
-the current source has not been relinked or played as a fresh game image. The next stage is to refresh that delivery from the completed exact source.
+October 22 checkpoint: all 270 authored functions and 84,968 authored code bytes
+are exact. The current source builds with the original VC4 compiler and passes
+basic play, editor save/reload and a real round transition under Wine. The
+directly tested EXE is in the current local delivery bundle.
 
 Run these commands from the repository root. Linux builds use Python 3.11+,
 CMake, Ninja, and GCC or Clang. Windows cross-builds also need i686 MinGW;
@@ -73,17 +74,15 @@ To build the optional restored-CRT entry profile, use
 `scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt`.
 It builds only the game in `build/vc40-restored-crt/`, with explicit source and
 remaining original-member dependencies. The [VC4 build and play record](research/CURRENT_VC4_BUILD.md)
-identifies the current e6d5b55 executable and local bundle. It is the first game
-build after the final text, rotation and last-brick arithmetic recoveries. The
-bounded authored inventory has source and complete comparison receipts for all
-270 identified functions; at that delivery checkpoint, 24 authored bodies were
-nonexact maintained source, not missing code. The selected basic/editor and real
-round-transition flows pass on the delivered image. A subsequent build compiles all118 source
-objects with reuse disabled; its output differs from the directly tested EXE
-only in typed PE/resource timestamp fields. The current build record lists both
-identities and the completion audit. Full campaign and physical-driver acceptance
-remain open. The earlier [entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md)
-retains its own image identity.
+identifies the current ecfc475 source checkpoint, executable and local bundle.
+All 53 authored matching recipes retain their audited object identities in this
+game link. It uses 141 source/integration objects: four freshly compiled and
+137 reused after input/flag/object verification, plus 19 approved original CRT
+members. Basic/editor and real round-transition flows pass on the exact EXE in
+the bundle. The October20 cold-build proof belongs to its historical image.
+Full campaign and physical-driver acceptance remain open. The earlier
+[entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md) retains its own
+image identity.
 
 The current private local bundle is
 `build/delivery/dxball-v1.07-vc40-reconstructed.zip`. It contains the rebuilt game,
@@ -93,10 +92,9 @@ This artifact and the original assets are excluded from a source-only clone.
 
 These builds share the reconstructed game source. The compiler configuration
 and matching process are described in [Matching](MATCHING.md).
-The later utility splits add `clock.cpp` and `round_reset.cpp` to both game
-builders and the portable library. The restored-CRT recipe now lists 117 source owners plus
-three integration objects. The delivered EXE/ZIP and the historical 118-object
-build above have not been relinked or play-tested for that later source change.
+The restored-CRT recipe now lists 138 source owners plus three integration
+objects. The current game includes the exact owner splits, including
+`clock.cpp`, `round_reset.cpp` and `last_brick.cpp`.
 The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the
 recovered heap. Its allocator flags and other owner overrides are recorded in
 `build.json`; focused entry/link checks are described in the

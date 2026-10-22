@@ -2,9 +2,9 @@
 
 Updated October22,2026. All270 authored exact recoveries are now accepted and
 pass the complete current-object audit. Preserve serial CPU/memory limits,
-frequent commits/pushes and member-verified cleanup. The next project stage is
-a refreshed original-VC4 game build and bounded play check; the retained October20
-image remains the tested game product until that stage is completed.
+frequent commits/pushes and member-verified cleanup. The refreshed original-VC4
+game now builds and passes bounded basic/editor and round-transition checks.
+Its directly tested EXE is in the current local delivery ZIP.
 
 ## Maintained checkpoint
 
@@ -23,6 +23,39 @@ Private current artifact authority is
 It identifies the selected prefix-ranked-order producer, full COFF proof,
 native99,270-function closing audit and adoption. Last-brick269 and rotation268
 remain recoverable historical acceptances, unchanged.
+
+## Current VC4 game and local delivery
+
+The game is built from source checkpoint ecfc475715238c43241a5979b1745a163749b9dc.
+All 53 authored compiler recipes have the same flags and object hashes as the
+completed exact audit. The full link uses 138 source owners and three integration
+objects: 141 total, with four fresh compilations and 137 verified reuses, plus
+the 19 approved original CRT members. This stage changes no recovered source,
+matching recipe or exact/semantic ledger.
+
+The 166,400-byte EXE has SHA-256
+`bdd425241ba51d6fe671bb0184b4ad86062326fc9e1eb407d2536235b93df79c`.
+Basic/editor checks pass with 534 state reads, including real mouse movement,
+ball release, pause/resume and a complete 20,000-byte editor save/reload.
+The single-brick flow passes with 116 reads, score 10/lives 3 and all 400 bytes
+of original board index 1 loaded. Both games exit normally. All 49 original
+files and protected source/build inputs remain unchanged.
+
+The 474,899-byte private ZIP is
+`build/delivery/dxball-v1.07-vc40-reconstructed.zip`, SHA-256
+`00a6d9799327a71c11a2b9afa71ae38c1db34249c98259303c00e2f3b5e6ba4d`.
+All 50 members are checked by size/SHA/CRC, including this exact tested image,
+48 unchanged original assets and extraction instructions. Original scores are
+included; test saves remain evidence. Each owned 49-file probe runtime is
+member-verified archived before retirement; manual runtimes and current products stay.
+
+Private game authority is
+`.analysis/current-vc4-exact270-20261022/current-checkpoint.json`.
+Build/play/round peaks are 176,939,008 / 403,005,440 / 403,271,680 bytes under
+35% CPU, 384 MiB high and 512 MiB max. Play/round record 586/222 soft high
+events; max/OOM events are zero. No full campaign, focus/surface recovery or
+physical-driver acceptance is claimed. See [the current record](../research/CURRENT_VC4_BUILD.md).
+The October20 image and its cold-build proof remain historical evidence.
 
 ## Completed PCX adoption and authored-exact audit
 

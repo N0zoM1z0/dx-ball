@@ -1,8 +1,8 @@
 # DX-Ball reconstruction
 
-**Status:** All270 classified authored functions are byte-exact:84,968 bytes.
-The next stage is to refresh the game build and play checks with the original
-Visual C++4.0 compiler. Platform ports will resume after that.
+**Status:** All 270 classified authored functions are byte-exact: 84,968 bytes.
+The current source builds with Visual C++ 4.0 and passes real game, editor and
+round-transition checks under Wine. See the [build and play record](docs/research/CURRENT_VC4_BUILD.md).
 
 <p align="center">
   <img src="resources/dxball-title.png" alt="DX-Ball title screen" width="900">

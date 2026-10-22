@@ -20,8 +20,11 @@ byte-exact,84,968/84,968 complete authored bytes, after PCX file-prefix adoption
 The closing passive audit verifies all270 current complete objects,4759 actual
 bindings,252 full literal references and53 current recursive source recipes.
 The user requested serial CPU/memory limits, frequent commits/pushes and periodic
-cleanup. Preserve that exact checkpoint; next refresh the original-VC4 game
-build and bounded play verification. Earlier stopped/unadopted records are history.
+cleanup. Preserve that exact checkpoint. The current original-VC4 game build
+and bounded basic/editor/round-transition checks now pass; all53 authored recipes
+are identical to the audited objects in that game. Current delivery and evidence
+are documented in docs/research/CURRENT_VC4_BUILD.md. Full campaigns and platform
+ports are separate future work. Earlier stopped/unadopted records are history.
 
 Read [the current handoff](docs/agent/HANDOFF.md),
 [workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing
