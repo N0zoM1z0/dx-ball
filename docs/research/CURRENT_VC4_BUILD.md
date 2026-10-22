@@ -5,6 +5,8 @@ October 22, 2026. All **270/270 classified authored functions** and
 from that source and passes basic play, editor save/reload and a real round
 transition under Wine. The directly tested executable is in the local delivery
 ZIP. The [handoff](../agent/HANDOFF.md) records the completed source audit.
+Later checks on this same image, including game-over persistence and the failed
+focus controls, are tracked in [expanded playability](PLAYABILITY_20261022.md).
 
 ## Current products
 

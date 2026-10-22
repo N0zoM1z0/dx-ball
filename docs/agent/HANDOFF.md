@@ -57,6 +57,15 @@ events; max/OOM events are zero. No full campaign, focus/surface recovery or
 physical-driver acceptance is claimed. See [the current record](../research/CURRENT_VC4_BUILD.md).
 The October20 image and its cold-build proof remain historical evidence.
 
+Expanded current-image validation is active under
+`.analysis/playability-exact270-20261022/`. Natural life loss, name editing and
+complete 660-byte ranking persistence through a fresh process pass with 1,219
+reads and two normal exits. Focus restoration is not accepted: current and
+original EXEs share the fixed-sample motion failure; persistent current sampling
+passes initial motion but later times out returning to menu. The unique cause
+is unresolved. The 50-editor-board terminal fixture and unchanged-bank episode
+are separate scopes. See [expanded playability](../research/PLAYABILITY_20261022.md).
+
 ## Completed PCX adoption and authored-exact audit
 
 The complete862-byte PCX decoder is exact in shared src/resources.cpp. A real
