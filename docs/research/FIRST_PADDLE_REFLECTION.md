@@ -79,7 +79,7 @@ different angle bin. All 116 distinct complete vectors agree in order, including
 is x404/y441, previous403/439, angle135/speed5, dx-4/dy-3, bounce count1 and wall
 bounces0. Both reach x280/y348, previous284/351, with score10/lives3. Complete
 400-byte board effects remain equal. This exercises a different outcome of the
-recovered [paddle reflection routine](../../src/balls.c), without changing it.
+recovered [paddle reflection routine](../../src/balls.cpp), without changing it.
 
 The existing reader is reused. After the required rising state is received,
 the harness intentionally stops only its owned read-only observer group, then

@@ -1,43 +1,43 @@
 # Research notes
 
-These notes record the evidence and recovered behavior behind the source.
-Start with a subsystem you are following through [the game](../ARCHITECTURE.md).
+## Current results
 
-- [Runtime heap and allocation ownership](ALLOCATOR_OWNER.md)
-- [Bitmap loader and unwritten stack storage](BITMAP_INVESTIGATION.md)
-- [Compiler evidence and exact units](BUILD_MATCHING.md)
-- [Original-backed campaign input policy](CONTACT_POLICY.md)
-- [Main ball physics and gameplay frame](CORE_OWNER.md)
-- [Projectile and fire-effect queue entries](CORE_QUEUES.md)
-- [Runtime-library dependencies](CRT_PROVENANCE.md)
-- [Dependencies reached from maintained functions](DEPENDENCY_FRONTIER.md)
+- [Progress](../PROGRESS.md): authored exact coverage, build and remaining validation.
+- [Current VC4 build](CURRENT_VC4_BUILD.md): compiler inputs, executable and delivery identities.
+- [October 22 playability](PLAYABILITY_20261022.md): completed live checks and unresolved focus recovery.
+- [Exact reconstruction](exact/README.md): accepted source families and compiler evidence.
+
+The subsystem notes below retain original observations and dated reconstruction
+checkpoints. Their counts and product identities belong to those checkpoints.
+Use [the source map](../../src/README.md) to locate the current implementation.
+
+## Gameplay and modes
+
+- [Ball physics and gameplay frame](CORE_OWNER.md), [projectile queues](CORE_QUEUES.md)
+- [Board hits](GAMEPLAY_OWNER.md), [power-ups](POWERUPS_OWNER.md), [particles and bonus production](ENTITIES_OWNER.md)
+- [Brick animations](EFFECTS_OWNER.md), [lightning and frame drawing](DISPLAY_OWNER.md)
+- [Game lifecycle](RUNTIME_OWNER.md), [menu and splash](INTRO_OWNER.md), [startup UI](STARTUP_UI_OWNER.md)
+- [Editor](EDITOR_OWNER.md), [game-over and high scores](GAMEOVER_OWNER.md)
+
+## Graphics, resources and platform
+
+- [Sprites, fonts, PCX and palettes](RESOURCE_OWNER.md), [bitmap loading](BITMAP_INVESTIGATION.md)
+- [Software rasterization](RASTER_INVESTIGATION.md), [sprite rotation](ROTATION_INVESTIGATION.md)
 - [Palette transitions and surface recovery](DEVICE_OWNER.md)
-- [Lightning and frame drawing](DISPLAY_OWNER.md)
-- [Editor controller evidence](EDITOR_OWNER.md)
-- [Explosion requests and brick animations](EFFECTS_OWNER.md)
-- [Embedded Windows resources](EMBEDDED_RESOURCES.md)
-- [Particles and bonus production through REA](ENTITIES_OWNER.md)
-- [Game-over and high-score evidence](GAMEOVER_OWNER.md)
-- [Board-hit gameplay owner](GAMEPLAY_OWNER.md)
-- [Menu and splash evidence](INTRO_OWNER.md)
-- [Target observations and reconstruction evidence](KNOWLEDGE_BASE.md)
-- [MDS music owner](MIDI_OWNER.md)
-- [Oracle matrix](ORACLES.md)
-- [Original-board integration](ORIGINAL_CAMPAIGN.md)
-- [Bounded origin audit](ORIGIN_AUDIT.md)
-- [Reviewing runtime origins](ORIGIN_REVIEW.md)
-- [Windows startup and input routing](PLATFORM_OWNER.md)
-- [Bonus application, paddle and ball dependencies](POWERUPS_OWNER.md)
-- [Software raster controllers](RASTER_INVESTIGATION.md)
-- [Sprite, font, PCX and palette owner](RESOURCE_OWNER.md)
-- [Software sprite rotation](ROTATION_INVESTIGATION.md)
-- [Actual round transition and focus diagnostics](ROUND_FOCUS_RUNTIME.md)
-- [Game lifecycle and mode dispatch](RUNTIME_OWNER.md)
-- [Persistent sound parameters](SOUND_CONTROLS.md)
-- [DirectSound controller and WAV loading](SOUND_OWNER.md)
-- [Startup and UI evidence](STARTUP_UI_OWNER.md)
-- [Terminal round and adjacent storage](TERMINAL_RUNTIME.md)
-- [CRT termination owner](TERMINATION_OWNER.md)
-- [Windows adapter integration](WINDOWS_ADAPTER.md)
+- [Windows startup and input](PLATFORM_OWNER.md), [Windows adapter](WINDOWS_ADAPTER.md)
+- [DirectSound and WAV loading](SOUND_OWNER.md), [sound parameters](SOUND_CONTROLS.md), [MDS music](MIDI_OWNER.md)
+- [Embedded resources](EMBEDDED_RESOURCES.md)
 
-See [exact compiler comparisons](exact/README.md) for the restored function families.
+## Runtime and reconstruction method
+
+- [Compiler matching](BUILD_MATCHING.md), [runtime dependencies](CRT_PROVENANCE.md)
+- [Heap ownership](ALLOCATOR_OWNER.md), [CRT termination](TERMINATION_OWNER.md)
+- [Dependency frontier](DEPENDENCY_FRONTIER.md), [origin audit](ORIGIN_AUDIT.md), [origin review](ORIGIN_REVIEW.md)
+- [Target observations](KNOWLEDGE_BASE.md), [oracle matrix](ORACLES.md)
+
+## Earlier live checks
+
+- [Original-board campaign attempts](ORIGINAL_CAMPAIGN.md)
+- [Round transition and focus diagnostics](ROUND_FOCUS_RUNTIME.md)
+- [Terminal round and adjacent storage](TERMINAL_RUNTIME.md)
+- [Original-backed input policy](CONTACT_POLICY.md)

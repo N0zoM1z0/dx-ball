@@ -5,6 +5,12 @@ now lives in shared `src/last_brick.cpp` and is byte-exact. `display.cpp` retain
 all actual globals/initializers and18 other exact original entries; its57-byte
 portable bridge is unchanged. The public API remains `display.h`.
 
+The presenter and frame wait are also exact; see
+[presenter recovery](exact/PRESENTER_INCLUDE_SOURCE_RECOVERY.md) and
+[frame-wait recovery](exact/FRAME_WAIT_CURSOR.md).
+
+## Earlier reconstruction checkpoints
+
 The October21 [presenter index recovery](exact/PRESENT_INDEX_DECLARATIONS.md)
 moves the existing consumed merge index to root selected,i declarations and
 improves the complete984-byte presenter6→2. All20 functions/419 bindings,

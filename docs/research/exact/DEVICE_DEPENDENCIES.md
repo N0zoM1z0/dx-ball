@@ -9,7 +9,7 @@ checkpoint, not the current source.
 The restored device initializer clears the primary surface before creating its
 palette. Surface recovery later scans sprite banks and reloads those stored in
 video memory. This batch follows those two direct dependencies from the saved
-REA dossiers into [device.c](../../../src/device.c).
+REA dossiers into [device.c](../../../src/device.cpp).
 
 `clear_surface` at `0x409F10` now writes only DDBLTFX size 100 and the full color
 DWORD, then RECT top 0, bottom 480, left 0 and right 640. Blt receives the actual

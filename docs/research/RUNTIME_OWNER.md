@@ -1,5 +1,12 @@
 # Game lifecycle and mode dispatch
 
+The authored runtime controllers are exact. Paddle drawing now belongs to
+[its renderer owner](exact/PADDLE_RENDERER_SOURCE_OWNER.md); elapsed/reset recovery
+is recorded in [source context](exact/AUTHOR_SOURCE_CONTEXT.md).
+See [the source map](../../src/README.md) for the current split.
+
+## Earlier reconstruction checkpoints
+
 The October21 [whole-definition layout controls](exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
 test four finite current-context arrangements, each compiled once. All retain
 elapsed81/3 and reset426/20; the first preserves all16 runtime identities, while

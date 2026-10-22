@@ -1,67 +1,61 @@
 # Exact reconstruction notes
 
-The latest [window switch exits](EXACT_WINDOW_SWITCH_EXITS.md) add the complete
-1,171-byte WindowProc. Totals are 188 exact functions / 35,003 complete span
-bytes / 136 accepted metadata bytes, with 2,138 selected existing window cases.
+All 270 classified authored functions are exact: 84,968 code bytes across
+53 compiler closures. The [PCX closing audit](PCX_FILE_PREFIX_RECOVERY.md)
+checks all 270 complete spans, 4,759 code bindings and 252 full literal references.
+[Progress](../../PROGRESS.md) also covers the CRT inventory and live verification.
 
-The latest [game-key exit restoration](EXACT_GAME_KEY_SHARED_EXIT.md) adds one
-complete 831-byte exact controller. Totals are 187 exact functions / 33,832
-complete span bytes / 136 accepted metadata bytes. Its 655 instruction bytes
-and 176 inline bytes are wholly attested, with 420 selected existing key cases.
+## Final source recoveries
 
-Each note follows a related source family through its original instructions,
-recovered implementation and complete compiler comparison.
+| Family | Record |
+| --- | --- |
+| PCX decoder and final audit | [File prefix and decoder](PCX_FILE_PREFIX_RECOVERY.md) |
+| Last-brick lightning | [Source owner](LAST_BRICK_EXACT_SOURCE_OWNER.md) |
+| Rotated sprites | [Typed cursor recovery](ROTATION_TYPED_CURSOR_RECOVERY.md) |
+| Triangle controller | [Conditional temporaries](TRIANGLE_CONDITIONAL_TEMPORARIES.md) |
+| Paddle rendering | [Renderer source owner](PADDLE_RENDERER_SOURCE_OWNER.md) |
+| High-score drawing | [Scalar recovery](HIGH_SCORE_SCALAR_RECOVERY.md) |
+| Dirty-region presentation | [Include/source context](PRESENTER_INCLUDE_SOURCE_RECOVERY.md) |
+| Polygon filling | [Local source recovery](POLYGON_LOCAL_SOURCE_RECOVERY.md) |
+| Glyphs and text | [Glyph source owner](GLYPH_SOURCE_OWNER.md) |
+| Sprite operations | [Separate source owners](SPRITE_SOURCE_OWNERS.md) |
+| Line and rectangle drawing | [Drawing primitives](DRAWING_PRIMITIVES_OWNER.md) |
+| Frame pacing | [Waiting cursor](FRAME_WAIT_CURSOR.md) |
 
-- [MDS loading and event conversion](EXACT_MDS_PARSER.md)
-- [Bitmap records and shared local-memory imports](EXACT_BITMAP_LOADER.md)
-- [Window instance-lock lifetime](EXACT_WINDOW_INSTANCE.md)
-- [Complete window initialization and import ownership](EXACT_WINDOW_INITIALIZATION.md)
-- [Exact WinMain entry and message loop](EXACT_WIN_MAIN.md)
-- [Complete window messages, focus and shutdown](EXACT_WINDOW_PROC.md)
-- [Clock detection and direct key routing](EXACT_WINDOW_KEYS.md)
-- [Exact editor mouse-frame controller](EXACT_EDITOR_FRAME.md)
-- [Exact main frame dispatcher](MAIN_FRAME.md)
-- [Exact mode initialization, redraw and cleanup](MAIN_MODE_LIFECYCLE.md)
-- [Device initialization and exact surface recovery](DEVICE_FRAME.md)
-- [Exact surface fill and live sprite-bank recovery](DEVICE_DEPENDENCIES.md)
-- [MIDI imports and C++ music ownership](EXACT_MIDI_IMPORTS.md)
-- [MIDI stream and music controls](EXACT_MIDI_LIFECYCLE.md)
-- [Sound initialization and WAV loading](EXACT_SOUND_DEPENDENCIES.md)
-- [Sound upload and release](EXACT_SOUND_BUFFERS.md)
-- [Sound playback and buffer recovery](EXACT_SOUND_VOICES.md)
-- [Frame boundary and lightning control](EXACT_FRAME_BOUNDARY.md)
-- [Dirty-region presentation](EXACT_PRESENTATION.md)
-- [Region restoration and entity drawing](EXACT_RENDER_RESTORATION.md)
-- [Bank loops and palette state restoration](EXACT_BANK_LOOPS.md)
-- [Complete bonus generation and application](EXACT_BONUSES.md)
-- [Complete brick hit and board power restoration](EXACT_BRICK_POWERS.md)
-- [Connected brick-drop and fire-effect source restoration](EXACT_CONNECTED_EFFECTS.md)
-- [Exact score update and raster control flow](EXACT_CONTROL_FLOW.md)
-- [Core source emission restoration](EXACT_CORE.md)
-- [Ball and projectile controller restoration](EXACT_CORE_CONTROLLERS.md)
-- [Display-surface sprite drawing and rectangle queues](EXACT_DISPLAY.md)
-- [Early region, geometry, rotation and text helpers](EXACT_EARLY_HELPERS.md)
-- [Complete brick animation lifecycle](EXACT_EFFECTS.md)
-- [Complete exits, text centering and palette guard](EXACT_EXITS.md)
-- [Fixed-point class and triangle lifetime recovery](EXACT_FIXED_POINT.md)
-- [Exact integer trigonometry and hit-region stores](EXACT_INTEGER_TRIG.md)
-- [Complete intro initialization, redraw, points and disposal](EXACT_INTRO.md)
-- [Complete round lifecycle source restoration](EXACT_LIFECYCLE.md)
-- [Ball cloning and typed list cleanup](EXACT_LISTS.md)
-- [Exact typed list initialization](EXACT_LIST_INITIALIZERS.md)
-- [Complete menu and gameplay frames](EXACT_MODE_FRAMES.md)
-- [Palette tail loaders and surface binding](EXACT_PALETTES.md)
-- [Complete projectile and fire-effect list lifecycle](EXACT_PROJECTILE_LISTS.md)
-- [Exact projection and text traversal restoration](EXACT_PROJECTIONS_TEXT.md)
-- [Complete game setup, redraw and score controllers](EXACT_RUNTIME_SETUP.md)
-- [Complete splash source restoration](EXACT_SPLASH.md)
+## Function families
 
-[Shared file services](EXACT_FILE_SERVICES.md) connects sound loading and MDS
-to the same four original imports.
+These records follow the original instructions, recovered source and complete
+compiler comparisons. Counts inside them describe their dated checkpoints.
 
-- [Exact last-brick controller](LAST_BRICK_EXACT_SOURCE_OWNER.md): full1057-byte
-  source owner, original64-byte frame/two absolute calls and coherent display
-  remainder;269/270 authored exact.
+- Windows: [instance lock](EXACT_WINDOW_INSTANCE.md), [initialization](EXACT_WINDOW_INITIALIZATION.md),
+  [WinMain](EXACT_WIN_MAIN.md), [messages](EXACT_WINDOW_PROC.md),
+  [switch exits](EXACT_WINDOW_SWITCH_EXITS.md), [key routing](EXACT_WINDOW_KEYS.md),
+  [game-key exits](EXACT_GAME_KEY_SHARED_EXIT.md).
+- Modes: [main frame](MAIN_FRAME.md), [mode lifecycle](MAIN_MODE_LIFECYCLE.md),
+  [menu/gameplay frames](EXACT_MODE_FRAMES.md), [editor](EXACT_EDITOR_FRAME.md),
+  [intro](EXACT_INTRO.md), [splash](EXACT_SPLASH.md), [round lifecycle](EXACT_LIFECYCLE.md),
+  [runtime setup](EXACT_RUNTIME_SETUP.md).
+- Gameplay: [core](EXACT_CORE.md), [ball/projectile controllers](EXACT_CORE_CONTROLLERS.md),
+  [bonuses](EXACT_BONUSES.md), [brick powers](EXACT_BRICK_POWERS.md),
+  [connected effects](EXACT_CONNECTED_EFFECTS.md), [brick animation](EXACT_EFFECTS.md),
+  [typed lists](EXACT_LISTS.md), [list initialization](EXACT_LIST_INITIALIZERS.md),
+  [projectile lists](EXACT_PROJECTILE_LISTS.md).
+- Rendering: [frame boundary](EXACT_FRAME_BOUNDARY.md), [presentation](EXACT_PRESENTATION.md),
+  [restoration](EXACT_RENDER_RESTORATION.md), [display](EXACT_DISPLAY.md),
+  [control flow](EXACT_CONTROL_FLOW.md), [fixed-point triangles](EXACT_FIXED_POINT.md),
+  [integer trig](EXACT_INTEGER_TRIG.md), [projection/text](EXACT_PROJECTIONS_TEXT.md),
+  [early helpers](EXACT_EARLY_HELPERS.md), [exits](EXACT_EXITS.md).
+- Resources/device: [bitmap loader](EXACT_BITMAP_LOADER.md), [bank loops](EXACT_BANK_LOOPS.md),
+  [palettes](EXACT_PALETTES.md), [device frame](DEVICE_FRAME.md),
+  [device dependencies](DEVICE_DEPENDENCIES.md), [shared files](EXACT_FILE_SERVICES.md).
+- Audio: [MDS parser](EXACT_MDS_PARSER.md), [MIDI imports](EXACT_MIDI_IMPORTS.md),
+  [MIDI lifecycle](EXACT_MIDI_LIFECYCLE.md), [sound loading](EXACT_SOUND_DEPENDENCIES.md),
+  [sound buffers](EXACT_SOUND_BUFFERS.md), [sound voices](EXACT_SOUND_VOICES.md).
 
-- [Exact PCX file prefix](PCX_FILE_PREFIX_RECOVERY.md): consumed128-byte header
-  boundary, full312-byte frame/862-byte decoder and270/270 closing audit.
+## Compiler and runtime investigations
+
+- [Source context](AUTHOR_SOURCE_CONTEXT.md), [October 22 controls](SOURCE_CONTEXT_CONTROLS_20261022.md)
+- [Expression ordering](VC4_EXPRESSION_ORDERING.md), [frontend symbol order](VC4_FRONTEND_SYMBOL_ORDER.md)
+- [Storage diagnostics](CLOSED_STORAGE_DIAGNOSTICS.md), [fragment ownership](COMPILER_FRAGMENT_OWNERSHIP.md)
+- [CRT dependency inventory](CRT_DEPENDENCY_INVENTORY.md), [runtime interface ownership](VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
+- [Remaining runtime source/comparison work](REMAINING_EXACT_FUNCTIONS.md)

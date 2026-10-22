@@ -11,6 +11,7 @@
 | `function-origins.csv` | Game, runtime and compiler-generated origins |
 | `assets.csv`, `windows-resources.json` | Original resource inventory and Windows embedding |
 | `tools.lock.toml`, `rea.lock.json` | Pinned compiler and analysis tools |
+| `playability-status.json` | Current tested image, build composition, passed/failed play checks and remaining verification |
 | `rea-*.json` | Focused analysis requests |
 
 Read [matching](../docs/MATCHING.md) for the compiler comparison and

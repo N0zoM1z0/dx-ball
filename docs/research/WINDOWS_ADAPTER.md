@@ -1,5 +1,13 @@
 # Windows adapter integration
 
+The current restored-CRT game uses the Windows, DirectDraw, DirectSound and WinMM
+bindings described here. See [the current build](CURRENT_VC4_BUILD.md) and
+[October 22 playability](PLAYABILITY_20261022.md) for the tested product. Its entry
+path is `windows_crt_entry.c` → `runtime_entry.c` → `platform.c`; compiler-CRT
+profiles use `windows_entry.c`.
+
+## Earlier integration checks
+
 The [current intro-recovery play check](INTRO_REQUEST_PLAY.md) verifies source
 checkpoint b92e6ab and an original control through mouse/ball/pause/editor/save/
 reload/exit under the same Wine/Xvfb settings. It retains 77/79 read-only state

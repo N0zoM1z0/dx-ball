@@ -1,8 +1,11 @@
-# Original-board integration
+# Original-board campaign history
 
-## Current restored-CRT original-bank prefix, October 17
+For the tested October 22 image, see [current playability](PLAYABILITY_20261022.md).
+The attempts below use the source and executable identities recorded with each run.
 
-The current-image attempt has ended with **observer exit 1 / status `fail`**.
+## October 17 restored-CRT original-bank attempt
+
+The October 17 attempt has ended with **observer exit 1 / status `fail`**.
 Its 14,400-second observation deadline expired after 14,374.43 seconds of gameplay.
 It reused image `345a6887…` from source baseline `41fe125`; no game/compiler input
 changed during the run. All twenty initial readiness/layout checks for indices

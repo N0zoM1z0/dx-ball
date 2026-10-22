@@ -488,7 +488,7 @@ releasing1,634,304 allocated bytes net before journals. All408 remaining direct
 protections and59 archive aliases retain byte/stat identities and are recoverable.
 The preceding authored-source reconstruction, VC4 game build and bounded
 playability validation remain delivered within the scope of the
-[completion audit](../research/CURRENT_VC4_BUILD.md#completion-audit).
+[completion audit](../research/CURRENT_VC4_BUILD.md#retained-evidence).
 Historical source spelling and full-machine equivalence are not established.
 The user permits the **19 explicit original CRT members** in the restored-CRT
 delivery. Removing them is not a delivery gate. Prioritize authored functions.
@@ -1376,7 +1376,7 @@ is not a recovery-completion proof or authorization to advance game verification
 
 Earlier [entry/exit evidence](../research/RESTORED_CRT_ROUND_FLOW.md#current-image-bounded-entry-and-exit)
 passes a bounded board0 episode on an earlier image. The historical
-[original50 campaign](../research/ORIGINAL_CAMPAIGN.md#current-restored-crt-original-bank-prefix-october-17)
+[original50 campaign](../research/ORIGINAL_CAMPAIGN.md#october-17-restored-crt-original-bank-attempt)
 ended at its14,400s deadline after verifying initial boards0–19. It did not
 complete50 or establish a crash/normal application exit; never restart that
 producer. Custom single-brick boards and prior GUI episodes retain their own

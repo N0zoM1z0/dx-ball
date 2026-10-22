@@ -1,48 +1,24 @@
 # Contributor reconstruction workflow
 
-Recover all original functions as exactly as possible first. Then build the
-restored game with the original Visual C++ 4.0 compiler and verify playability;
-resume platform ports after that. Within reconstruction, choose coherent source
-families and complete game flows. Tests, documentation and tooling support that
-work; they are not the main task. An exact-function count is not the project's
-completion measure.
+Authored exact recovery is complete. Start with [the handoff](HANDOFF.md) and
+[progress](../PROGRESS.md); the current priority is live-game validation.
+[AGENTS.md](../../AGENTS.md) sets execution limits and publication rules.
 
-## Establish the next question
+## Establish the question
 
-Read [`AGENTS.md`](../../AGENTS.md), the current handoff, and the relevant owner
-notes. Inspect the worktree and consult `config/functions.csv`; imported
-function boundaries are provisional. Reuse the existing REA dossier before
-opening another analysis session. Record what behavior is missing and which
-caller, callee or data owner will answer it, or identify the precise remaining
-compiler storage/selection difference that a source-candidate family targets.
+Inspect the worktree and the relevant owner note. Use `config/functions.csv`
+for entry ownership and `config/function-origins.csv` for origin classification.
+Reuse saved REA evidence before opening another session. Identify the behavior,
+call boundary or compiler difference the next step will resolve.
 
-Missing original source declarations are a reconstruction question, not by
-themselves an external blocker. The user has authorized the
-[bounded source-candidate search policy](SOURCE_CANDIDATE_SEARCH.md), including
-natural identifiers, declaration/definition order, genuine scope alternatives,
-translation-unit organization and residual-driven build-recipe hypotheses.
-Existing binary comparisons and the observed compiler mechanism can seed a
-finite search; a newly discovered operation or independently recovered original
-declaration is not a prerequisite. Historical blanket search bans are superseded.
-Distinguish a byte-exact reconstructed declaration from uniquely recovered source.
-Reject unbounded blind enumeration, unused padding and repeated identical trials.
-Choose the finite batch and proceed under that standing authorization; do not
-ask again for original materials or approval of each ordinary reconstruction
-step. Keep the pinned recipe as the baseline, with any experimental settings
-explicitly isolated and recorded rather than silently substituted.
+For source recovery, follow the authorized [bounded source-candidate policy](SOURCE_CANDIDATE_SEARCH.md).
+Natural identifiers, declaration order, scope, translation-unit organization and
+build-context hypotheses may be tested as finite families. Keep each hypothesis
+and its affected inputs explicit. Missing historical project files do not prevent
+these trials; the policy describes how to distinguish a matching reconstruction
+from uniquely recovered source spelling.
 
-Apply the policy's proportionate-execution rule: do not add mandatory peer
-reviews, bespoke runners, whole-workspace seals or recursive historical audits
-to routine source work. A concise hypothesis and affected-input record suffice.
-Keep prior evidence reusable, validate the changed closure, and spend effort on
-reconstruction rather than repeatedly rebuilding the acceptance machinery.
-Separate exploration from adoption: a private new-module probe can be rejected
-without building the proposed remainder. A promising split must close and verify
-all affected objects before changing maintained claims. Unknown historical
-source context does not require another request for original materials.
-
-Use repository Python and the pinned REA wrapper. When beginning binary or
-compiler work, verify the inputs relevant to that work:
+Before new binary/compiler work, verify its inputs:
 
 ```bash
 scripts/repo-python scripts/verify-target.py
@@ -50,96 +26,53 @@ scripts/repo-python scripts/verify-toolchain.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 ```
 
-[`REA commands`](REA.md) shows the pinned 6.5.0 CLI and session protocol. New binary
-queries use its Ghidra provider. Ask focused questions about complete control
-flow, actual call targets, argument widths and data consumers. Retain full
-responses, Evidence IDs and limitations in `.analysis/rea/`, then close/save
-the session. Query a missing byte range or unresolved callee only when the
-saved evidence leaves that concrete gap.
+Use the pinned [REA commands](REA.md) and Ghidra provider. Retain full responses,
+Evidence IDs and unresolved gaps in `.analysis/rea/`, then save/close the session.
 
-## Recover one coherent source family
+## Change and verify one coherent scope
 
-Reconcile each entry through its exits, branches, switch data and any unowned
-bytes inside the enclosing span. Read the original instructions alongside
-pseudocode. Establish structures from both their producers and consumers;
-check the ABI against the actual callers and callees.
+Write typed C/C++ shared by portable and legacy builds. Follow each function
+through its exits and inline data, and establish structures from producers and
+consumers. Preserve ABI, integer widths, state writes and resource ownership.
+Use the real shared API when connecting owners or adapting an existing fixture.
 
-Write natural typed C/C++ in the existing owner. Portable and legacy builds share
-one implementation. Preserve meaningful state writes, resource ownership,
-integer widths and call order. Keep unknown source spelling or backend behavior
-in the notes. Do not introduce fake locals, padding, copied code bytes or
-profile-specific bodies to force compiler agreement.
+Freeze each distinct candidate, compile it once and compare the complete affected
+closure. Reuse results with identical source/header/flag identities. A proposed
+source split must verify every affected object before adoption.
 
-For a direct call, use the genuine shared API. If an existing native fixture
-needs isolation, adapt only its actual typed boundary and current callback
-table. Keep real defaults and standalone loading intact. A callback fixture
-checks effects at that boundary; it does not recover a missing driver.
+For an exact claim, record all compiler inputs, recursive project headers, flags,
+extent and relocation bindings in `config/match-units.toml`. Retain the previous
+object/report before replacing it. Replay all accepted units sharing changed
+inputs, literals or metadata. Compare complete spans and literal contents; the
+[local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md) also checks
+actual internal COFF destinations.
 
-Ask an independent reviewer a bounded question when useful: does this struct
-layout follow the consumers, does the whole body match the dossier, or does
-the fixture preserve the real ABI? Resolve the answer before broadening work.
+Build the affected target using [BUILD.md](../BUILD.md), with CMake `--parallel 1`.
+Choose focused checks for changed behavior. Documentation and status edits use
+retained receipts and ledger checks; they do not require another game build.
 
-## Build and check the affected behavior
+## Verify live behavior
 
-Freeze each distinct candidate in the bounded family, compile it once, and check
-the complete affected compiler-input closure. Deduplicate by source/header/flag
-identity and reuse prior results. The older phrase "once per stable family" does
-not limit a declared finite family to one candidate. Once a candidate is ready
-for adoption, build the affected maintained target. Use the
-build instructions in [`BUILD.md`](../BUILD.md); CMake builds run with
-`--parallel 1`. Prefer a small startup/play check or one affected existing
-Oracle when it resolves a concrete issue. Tests are optional evidence. Do not
-default to the complete owner suite or historical validation batches, and do
-not repeat successful checks with identical inputs. Redundant tests can be
-removed after retaining useful evidence and checking their remaining users.
+Use a separate runtime copy and record the tested executable hash, environment,
+input path and observed state. Keep normal application exit distinct from observer
+cleanup. For a failure, retain the failing trace and compare the original under
+the same conditions when that will narrow the cause. Follow the current focus
+investigation in [the playability record](../research/PLAYABILITY_20261022.md).
 
-For a new exact claim, add the whole unit to `config/match-units.toml` with
-complete compiler inputs, flags, extent and explicit relocation bindings.
-Include every recursively consumed project header. Retain the previous object
-and report before a shared-source compile overwrites them. Replay the affected
-accepted units together, including units whose literals or metadata may move.
-For example, both append bodies share the core recipe:
+Run one writable compiler/provider/Wine session at a time under the resource limits
+in AGENTS.md. Route automated audio to the dedicated silent capture sink.
 
-```bash
-scripts/repo-python scripts/replay-exact-units.py \
-  --unit append-projectile --unit append-fire-effect \
-  --report build/reports/projectile-appends.json
-```
+## Record and publish
 
-Extend that selection to the other accepted units affected by the change.
-Apply every actual COFF relocation and compare the complete span, full literal
-contents and declared metadata against the verified target. Zero differences
-can establish exactness; partial similarity remains a candidate. A source
-restoration can still be valuable when compiler storage choices differ.
+Update the owner note with the result, useful evidence and remaining question.
+Change only the ledgers affected by the work: `implemented.csv` for source,
+`semantic-acceptance.csv` for scoped behavior and `matches.csv` for exact units.
+Update `config/playability-status.json` when the tested image or live results
+change, then run `scripts/repo-python scripts/progress.py`.
 
-For a zero-difference section, the comparator also checks that same-section
-COFF definitions retain their actual internal destinations. A declared original
-target cannot hide a changed local label. See the
-[local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md) and its focused
-four-case check. Other-section and external mappings still need independent
-evidence.
+Validate tracking after ledger changes. Preserve input/product identities for
+new claims. Archive useful closed evidence and verify member size, SHA and mode
+before retiring duplicate probes; retain current products and incremental caches.
 
-Tracking validation checks known function relocation symbols against their
-declared catalog entries, including attached metadata and candidates. This
-catalog consistency check does not independently establish original identity or
-ABI. Unknown symbols still require explicit evidence; relocation addends are
-separate from the symbol's base target.
-
-Use one writable compiler/provider session at a time. Existing project entry
-points constrain CPU and provider heap use. Keep audio probes on the silent
-capture sink described in the owner notes.
-
-## Leave the next contributor a clear result
-
-Update the owner note with the recovered behavior, evidence links, useful
-validation and remaining gap. Update only the ledgers whose claims changed:
-`implemented.csv` for source, `semantic-acceptance.csv` for scoped behavior,
-and `matches.csv` for configured exact units. Check tracking and refresh
-progress when those ledgers change. Preserve input and product identities
-needed to reproduce a new acceptance claim.
-
-Commit and push a stable, verified checkpoint to `origin/main` with the required
-English subject prefix `gpt-6.1-sol: `. Explain the REA findings, source change and actual checks in
-the commit body. Keep originals, assets, toolchains and raw analysis private.
-Clean disposable probes after unique evidence and accepted products are
-retained; `scripts/repo-python scripts/clean-local.py` previews cleanup.
+Commit and push the verified checkpoint to `origin/main` with an English subject
+beginning `gpt-6.1-sol: `. Keep originals, toolchains and raw evidence private.

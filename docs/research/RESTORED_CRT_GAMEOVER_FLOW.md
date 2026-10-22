@@ -1,6 +1,6 @@
 # Natural game-over through the restored CRT
 
-The [October19 current-image check](CURRENT_VC4_BUILD.md#round-transition-and-game-over)
+The [October19 current-image check](PLAYABILITY_20261022.md#completed-checks)
 passes natural life loss,name editing,complete660-byte ranking persistence and
 fresh-process reload. Its failed initial observation and accepted persistent
 transport retain separate records. The earlier image and evidence follow.

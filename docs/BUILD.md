@@ -1,136 +1,84 @@
 # Build and play
 
-October 22 checkpoint: all 270 authored functions and 84,968 authored code bytes
-are exact. The current source builds with the original VC4 compiler and passes
-basic play, editor save/reload and a real round transition under Wine. The
-directly tested EXE is in the current local delivery bundle.
+The current verified game uses the original Visual C++ 4.0 compiler and the
+`vc40-restored-crt` profile. See [progress](PROGRESS.md) for completed checks and
+[the build record](research/CURRENT_VC4_BUILD.md) for product identities.
 
-Run these commands from the repository root. Linux builds use Python 3.11+,
-CMake, Ninja, and GCC or Clang. Windows cross-builds also need i686 MinGW;
-launching them on Linux needs Wine with 32-bit Windows support.
+Run commands from the repository root. Linux needs Python 3.11+, Wine with
+32-bit support and the original English DX-Ball v1.07 archive. The
+[workspace setup](SETUP.md) covers prerequisites and analysis tools.
 
-For a headless Wine display, use a 640-by-480 **24-bit Xvfb screen**:
-
-```bash
-xvfb-run -a -s '-screen 0 640x480x24' scripts/repo-python scripts/run-windows.py --profile vc40
-```
-
-The game still requests its original eight-bit DirectDraw mode. A 24-bit host
-screen presents its palette correctly in the tested Wine environment; an
-eight-bit Xvfb screen drops filled glyph and title pixels even in the unmodified
-original. Keep the 640-by-480 resolution. The optional Windows runtime, play,
-round, game-over and campaign checks now default to 24-bit Xvfb;
-`--display-depth 8` reproduces the historical
-configuration. See [the display-depth comparison](research/WINDOWS_DISPLAY_DEPTH.md).
-Round and game-over checks also accept `--profile original`, `--profile vc40`
-or `--profile windows-i686` to run only the affected control. The
-[current game-over controls](research/GAMEOVER_DISPLAY_DEPTH.md) retain actual
-life loss, name entry and complete ranking persistence through process restart.
-
-## Set up the original files
-
-The reconstruction targets English DX-Ball v1.07. Its identity is recorded in
-[`config/target.toml`](../config/target.toml). Import a matching archive:
+## Build the current Windows game
 
 ```bash
 scripts/bootstrap-python.sh
 scripts/repo-python scripts/import-target.py /path/to/DX_Ball_Win_Preinstalled_EN.zip
-```
-
-The importer puts the executable and game data under `original/`.
-
-## Compile the Windows game
-
-```bash
-scripts/repo-python scripts/build-windows.py
-scripts/repo-python scripts/run-windows.py --profile windows-i686
-```
-
-The build produces `build/windows-i686/dxball.exe` and `libdxball_core.dll`.
-Compiler runtime support, including the POSIX toolchain's pthread dependency,
-is linked into the core DLL; the isolated Wine launch needs no additional
-compiler runtime DLL in the tested build.
-The launcher prepares `build/runtime/windows-i686/` with that build and the
-original game data, then starts it through Wine. To prepare a directory for
-running on Windows, use `--prepare-only` and launch `dxball.exe` there.
-
-For the original-era Visual C++ build:
-
-```bash
 scripts/repo-python scripts/bootstrap-tools.py
-scripts/repo-python scripts/build-legacy.py
-scripts/repo-python scripts/run-windows.py --profile vc40
+scripts/repo-python scripts/build-legacy.py --restored-crt
+scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt
 ```
 
-For a game-only iteration, use `scripts/repo-python scripts/build-legacy.py --game-only`.
-The builder reuses objects only after checking compiler identity, flags, current
-source/header inputs and object hashes. Matching accepted owner objects take
-precedence over previous game objects. `build/vc40/build.json` records each
-reuse or compilation and its inputs; the default command still builds both
-diagnostic tools as well as the game.
+Import verifies the archive and places the EXE/assets in `original/`. The build
+writes `build/vc40-restored-crt/dxball.exe`, its map and `build.json`. It links
+138 source objects, three integration objects and 19 original CRT members.
+Reused objects are checked against compiler, flags, source/header inputs and
+object hashes. The link receipt records each reuse or compilation.
 
-To build the optional restored-CRT entry profile, use
-`scripts/repo-python scripts/build-legacy.py --restored-crt`, then
-`scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt`.
-It builds only the game in `build/vc40-restored-crt/`, with explicit source and
-remaining original-member dependencies. The [VC4 build and play record](research/CURRENT_VC4_BUILD.md)
-identifies the current ecfc475 source checkpoint, executable and local bundle.
-All 53 authored matching recipes retain their audited object identities in this
-game link. It uses 141 source/integration objects: four freshly compiled and
-137 reused after input/flag/object verification, plus 19 approved original CRT
-members. Basic/editor and real round-transition flows pass on the exact EXE in
-the bundle. The October20 cold-build proof belongs to its historical image.
-Full campaign and physical-driver acceptance remain open. The earlier
-[entry integration evidence](research/RESTORED_CRT_GAME_ENTRY.md) retains its own
-image identity.
-
-The current private local bundle is
-`build/delivery/dxball-v1.07-vc40-reconstructed.zip`. It contains the rebuilt game,
-its verified supplied assets and extraction instructions; extract the whole
-folder and run `dxball.exe` there. The adjacent manifest records every member.
-This artifact and the original assets are excluded from a source-only clone.
-
-These builds share the reconstructed game source. The compiler configuration
-and matching process are described in [Matching](MATCHING.md).
-The restored-CRT recipe now lists 138 source owners plus three integration
-objects. The current game includes the exact owner splits, including
-`clock.cpp`, `round_reset.cpp` and `last_brick.cpp`.
-The legacy build includes `cpp_allocator.cpp` so typed C++ `new/delete` use the
-recovered heap. Its allocator flags and other owner overrides are recorded in
-`build.json`; focused entry/link checks are described in the
-[allocator note](research/ALLOCATOR_OWNER.md).
-Allocator, list and resource files now use their maintained comparison recipes.
-The linker selects one `LIBCMT` runtime while preserving the resource owner's
-`/ML` compiler lowering. See [owner linkage and the focused game check](research/VC4_OWNER_LINKAGE.md).
-Windows allocation defaults use real private-heap APIs. Standalone clients must
-initialize the heap before allocating; the game wrapper and resource inspector
-do so when needed. An earlier heap survives game-entry binding. See
-[heap startup checks](research/WINDOWS_HEAP_STARTUP.md).
-
-Windows builds import `DirectDrawCreate` and `DirectSoundCreate` from the SDK
-libraries. MinGW supplies `ddraw` and `dsound`. The pinned legacy build uses
-`scripts/directx_imports.py` and its own librarian to generate the two small
-import libraries under `build/directx-imports/`, with decorated stdcall link
-symbols and the original undecorated DLL exports. Generation receipts record
-the librarian, definitions and library hashes; original game code is not copied.
-
-The MinGW build leaves the three Windows diagnostic tools out of the default
-build. Request one when needed, for example:
+The launcher copies the game and supplied data into
+`build/runtime/vc40-restored-crt/`. To prepare that folder for Windows without
+launching Wine:
 
 ```bash
-cmake --build build/windows-i686 --target dxball_state_reader --parallel 1
+scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt --prepare-only
 ```
 
-## Compile the portable library and tools
+Keep the data files beside `dxball.exe` when running the prepared folder.
+
+## Headless Wine
+
+Use a 640×480, 24-bit Xvfb host screen:
+
+```bash
+xvfb-run -a -s '-screen 0 640x480x24' \
+  scripts/repo-python scripts/run-windows.py --profile vc40-restored-crt
+```
+
+The game requests an eight-bit DirectDraw mode. A 24-bit host screen renders
+its palette correctly in the tested Wine environment; eight-bit Xvfb drops
+filled glyph/title pixels in both original and rebuilt programs. See
+[the display comparison](research/WINDOWS_DISPLAY_DEPTH.md).
+
+Automated checks use the silent audio sink and the serial resource limits in
+[AGENTS.md](../AGENTS.md). The [playability record](research/PLAYABILITY_20261022.md)
+contains the current input flows, results and remaining focus-recovery problem.
+
+## Local delivery
+
+`build/delivery/dxball-v1.07-vc40-reconstructed.zip` contains the tested EXE,
+48 supplied assets and extraction instructions. Extract the whole folder and
+run `dxball.exe`. Its adjacent manifest records all 50 members and validation.
+Original assets and local build products are supplied separately from Git.
+
+## Other builds
+
+| Profile | Build | Launch |
+| --- | --- | --- |
+| VC4 with compiler CRT | `scripts/repo-python scripts/build-legacy.py --game-only` | `scripts/repo-python scripts/run-windows.py --profile vc40` |
+| MinGW i686 | `scripts/repo-python scripts/build-windows.py` | `scripts/repo-python scripts/run-windows.py --profile windows-i686` |
+
+The default `build-legacy.py` command also builds the two VC4 asset inspectors.
+The MinGW game uses `dxball.exe` and `libdxball_core.dll`. Its compiler runtime
+and pthread support are linked into the core DLL. DirectDraw/DirectSound imports
+come from the platform SDK; the VC4 build generates its import libraries through
+`scripts/directx_imports.py`.
+
+To build the portable core and inspectors with CMake, Ninja and GCC or Clang:
 
 ```bash
 cmake -S . -B build/native -G Ninja -DCMAKE_BUILD_TYPE=Debug
 cmake --build build/native --parallel 1
 ```
 
-This produces `dxball_core` and the board/resource inspectors. The game frontend
-uses Windows graphics and audio services. A Windows compile without the original
-embedded resources is available through `build-windows.py --without-game-resources`.
-
-See [the script map](../scripts/README.md) for analysis and targeted comparison
-commands, and [the Windows notes](research/WINDOWS_ADAPTER.md) for recorded play runs.
+The native library and Windows game share recovered source. Compiler owners and
+per-source flags are described in [matching](MATCHING.md); the
+[source map](../src/README.md) identifies the code behind each subsystem.

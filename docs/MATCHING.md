@@ -16,8 +16,9 @@ can remove instructions. Evaluation order can change register use. We return
 to REA's instructions, callers and data consumers to resolve those questions,
 then revise the source and compare again.
 
-Some recovered routines still differ in compiler storage or scheduling. Their
-full comparison remains available while work continues on the game.
+All 270 authored functions now match across 84,968 code bytes and 53 compiler
+closures. The remaining 60 source-present nonexact entries are CRT routines.
+See [progress](PROGRESS.md) for the full inventory.
 
 ## Reproduce a comparison
 

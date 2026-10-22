@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate public progress from ledgers, without copying original game assets."""
+"""Generate progress counts, verification results and the inventory graphic."""
 import csv
 import importlib.util
 from pathlib import Path
@@ -20,41 +20,65 @@ def main():
         source = {row["address"] for row in csv.DictReader(stream)}
     svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">',
            '<title id="title">DX-Ball reconstruction progress</title>',
-           f'<desc id="desc">{status["source_present"]} source-present functions, {status["exact_functions"]} exact functions, out of {len(functions)} provisional candidates.</desc>',
+           f'<desc id="desc">{status["authored_exact_functions"]} of {status["authored_confirmed"]} authored functions exact; {status["exact_functions"]} exact entries in the full {len(functions)}-entry inventory.</desc>',
            '<rect width="900" height="460" rx="20" fill="#101722"/>',
            '<g font-family="sans-serif">',
            '<text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  RECONSTRUCTION</text>',
-           '<text x="34" y="75" fill="#9baec8" font-size="14">REA showcase · English v1.07 · Windows 95 · Ghidra + VC4.0</text>',
-           f'<text x="34" y="109" fill="#4ed8b7" font-size="16">{status["exact_functions"]} exact functions · {status["exact_bytes"]} bytes</text>',
-           f'<text x="470" y="109" fill="#f5bd57" font-size="16">{status["source_present"]} source-present · {status["semantic_validated_with_scope"]} scoped semantic</text>']
+           '<text x="34" y="75" fill="#9baec8" font-size="14">English v1.07 · REA / Ghidra · Visual C++ 4.0</text>',
+           f'<text x="34" y="109" fill="#4ed8b7" font-size="16">{status["authored_exact_functions"]}/{status["authored_confirmed"]} authored exact · {status["authored_exact_bytes"]:,} bytes</text>',
+           f'<text x="520" y="109" fill="#f5bd57" font-size="16">{status["exact_functions"]} exact total · {status["source_present"]} source-present</text>']
     for i, function in enumerate(functions):
         color = "#4ed8b7" if function["address"] in exact else "#f5bd57" if function["address"] in source else "#29384c"
         x, y = 34 + (i % 33) * 25, 132 + (i // 33) * 14
         svg.append(f'<rect x="{x}" y="{y}" width="22" height="10" rx="2" fill="{color}"/>')
-    svg += ['<text x="34" y="388" fill="#9baec8" font-size="13">Green: exact compiler match · Amber: reconstructed source · Dark: remaining candidates</text>',
-            '<text x="34" y="412" fill="#9baec8" font-size="13">Goal: recover the game source, rebuild it, and play.</text>',
+    svg += ['<text x="34" y="388" fill="#9baec8" font-size="13">Green: exact · Amber: source present · Dark: source missing</text>',
+            '<text x="34" y="412" fill="#9baec8" font-size="13">Inventory includes game routines, CRT dependencies and compiler-generated entries.</text>',
             '</g></svg>']
     (ROOT / "resources").mkdir(exist_ok=True)
     (ROOT / "resources/progress.svg").write_text("\n".join(svg) + "\n")
-    (ROOT / "docs/PROGRESS.md").write_text(
-        "# Reconstruction progress\n\nRecover the original game source into a rebuildable, playable game.\n"
-        "The current records cover gameplay, all five screen modes, resources, graphics and audio.\n\n"
-        "| Fact | Count |\n| --- | ---: |\n"
-        f"| Provisional function candidates | {status['function_candidates']} |\n"
-        f"| Parent-owned compiler fragments, counted separately | {status['parent_owned_compiler_fragments']} |\n"
-        f"| Source-present functions | {status['source_present']} |\n"
-        f"| Functions with scoped semantic acceptance | {status['semantic_validated_with_scope']} |\n"
-        f"| Byte-exact functions | {status['exact_functions']} |\n"
-        f"| Complete exact code bytes | {status['exact_bytes']} |\n"
-        f"| Entries identified as runtime dependencies | {status['runtime_identified']} |\n"
-        f"| Entries identified as compiler-generated code | {status['compiler_generated_identified']} |\n"
-        f"| Origin still unclassified | {status['origin_unknown']} |\n\n"
-        "The inventory includes game routines, runtime dependencies and compiler-generated code.\n"
-        "Earlier Windows builds have recorded original-board play under Wine.\n"
-        "See the [current VC4 build and play check](research/CURRENT_VC4_BUILD.md) for its image and limits.\n\n"
-        "See [the architecture](ARCHITECTURE.md), [compiler matching](MATCHING.md),\n"
-        "and [recorded play runs](research/ORIGINAL_CAMPAIGN.md).\n\n"
-        "Generated from the ledgers by `scripts/repo-python scripts/progress.py`.\n")
+
+    play = status["playability"]
+    build = play["build"]
+    lines = ["# Reconstruction progress", "", f"Updated {play['updated']}.", "", "## Source reconstruction", "",
+             "| Item | Result |", "| --- | ---: |",
+             f"| Authored functions with source | {status['authored_source_present']} / {status['authored_confirmed']} |",
+             f"| Authored exact functions | {status['authored_exact_functions']} / {status['authored_confirmed']} |",
+             f"| Authored exact code bytes | {status['authored_exact_bytes']:,} / {status['authored_code_bytes']:,} |",
+             f"| Authored compiler closures | {status['authored_compiler_closures']} |",
+             f"| Authored nonexact functions | {status['authored_nonexact']} |", "",
+             "## Build and playability", "",
+             f"The {play['profile']} game builds with Visual C++ 4.0. It links "
+             f"{build['source_objects']} source objects, {build['integration_objects']} integration objects "
+             f"and {build['original_crt_members']} original CRT members.", "",
+             f"Verification environment: {play['environment']}.", "",
+             "| Check | Status | Observed result |", "| --- | --- | --- |"]
+    labels = {"passed": "Passed", "failed": "Failed"}
+    for check in play["checks"]:
+        lines.append(f"| {check['name']} | {labels[check['status']]} | {check['result']} |")
+    lines += ["", "See [the build record](research/CURRENT_VC4_BUILD.md) and "
+              "[playability results](research/PLAYABILITY_20261022.md) for the tested image and evidence.",
+              "", "## Still to verify", ""]
+    lines += ["- " + item for item in play["remaining"]]
+    lines += ["", "## Full function inventory", "",
+              "The inventory also contains CRT routines and compiler-generated entries.", "",
+              "| Item | Count |", "| --- | ---: |",
+              f"| Provisional independent entries | {status['function_candidates']} |",
+              f"| Parent-owned compiler fragments | {status['parent_owned_compiler_fragments']} |",
+              f"| Source-present entries | {status['source_present']} |",
+              f"| Exact entries | {status['exact_functions']} |",
+              f"| Exact code bytes | {status['exact_bytes']:,} |",
+              f"| Scoped semantic acceptances | {status['semantic_validated_with_scope']} |",
+              f"| Source-present nonexact entries | {status['source_present_nonexact']} |",
+              f"| Entries without source | {status['source_missing']} |", "",
+              "| Origin | Source-present nonexact | Without source |",
+              "| --- | ---: | ---: |"]
+    origin_labels = {"authored": "Authored", "runtime": "Runtime", "compiler_generated": "Compiler-generated", "unknown": "Unknown"}
+    for origin in sorted(status["source_present_nonexact_origins"].keys() | status["source_missing_origins"].keys()):
+        lines.append(f"| {origin_labels[origin]} | {status['source_present_nonexact_origins'].get(origin, 0)} | {status['source_missing_origins'].get(origin, 0)} |")
+    lines += ["",
+              "Generated by `scripts/repo-python scripts/progress.py` from the function ledgers "
+              "and [verification record](../config/playability-status.json)."]
+    (ROOT / "docs/PROGRESS.md").write_text("\n".join(lines) + "\n")
     print("generated resources/progress.svg and docs/PROGRESS.md")
 
 
