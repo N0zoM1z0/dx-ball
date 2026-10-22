@@ -15,10 +15,13 @@ with sections that help readers follow the workflow.
 Put operational detail in these instructions or `docs/agent/`.
 Keep the centered title PNG and progress SVG in the README, both at 900px.
 
-October21 resumed status: the user explicitly resumed all270 authored exact
-recoveries, with serial CPU/memory limits, frequent commits/pushes and periodic
-cleanup. The maintained checkpoint is269/270 after verified frame-wait/resource/glyph/polygon/presenter/high-score/paddle/triangle/rotation/last-brick adoption;
-see the current handoff. Earlier stopped/unadopted records are historical.
+October22 checkpoint: all270 classified authored functions are now accepted
+byte-exact,84,968/84,968 complete authored bytes, after PCX file-prefix adoption.
+The closing passive audit verifies all270 current complete objects,4759 actual
+bindings,252 full literal references and53 current recursive source recipes.
+The user requested serial CPU/memory limits, frequent commits/pushes and periodic
+cleanup. Preserve that exact checkpoint; next refresh the original-VC4 game
+build and bounded play verification. Earlier stopped/unadopted records are history.
 
 Read [the current handoff](docs/agent/HANDOFF.md),
 [workflow](docs/agent/WORKFLOW.md), and the relevant research note before changing

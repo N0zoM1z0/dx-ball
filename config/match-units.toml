@@ -8686,18 +8686,18 @@ size = 328
 symbol = "_dxball_draw_glyph"
 target_address = 4214000
 
-[candidates.load-pcx]
+[units.load-pcx]
 boundary_evidence = "docs/research/RESOURCE_OWNER.md"
 build = "resources"
 relocations = [
-  { "addend" = 0, "data_hex" = "726200", "offset" = 105, "symbol" = "$SG28229", "target" = 4335508, "type" = "DIR32" },
-  { "addend" = 0, "offset" = 114, "symbol" = "_fopen", "target" = 4291616, "type" = "REL32" },
-  { "addend" = 0, "offset" = 217, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
-  { "addend" = 0, "offset" = 396, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
-  { "addend" = 0, "offset" = 525, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
-  { "addend" = 0, "offset" = 918, "symbol" = "_fclose", "target" = 4291120, "type" = "REL32" },
-  { "addend" = 0, "offset" = 940, "symbol" = "_dxball_load_live_palette", "target" = 4233104, "type" = "REL32" },
-  { "addend" = 0, "offset" = 962, "symbol" = "_dxball_load_saved_palette", "target" = 4233456, "type" = "REL32" },
+  { "addend" = 0, "data_hex" = "726200", "offset" = 108, "symbol" = "$SG28230", "target" = 4335508, "type" = "DIR32" },
+  { "addend" = 0, "offset" = 117, "symbol" = "_fopen", "target" = 4291616, "type" = "REL32" },
+  { "addend" = 0, "offset" = 214, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
+  { "addend" = 0, "offset" = 378, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
+  { "addend" = 0, "offset" = 498, "symbol" = "__filbuf", "target" = 4293152, "type" = "REL32" },
+  { "addend" = 0, "offset" = 801, "symbol" = "_fclose", "target" = 4291120, "type" = "REL32" },
+  { "addend" = 0, "offset" = 823, "symbol" = "_dxball_load_live_palette", "target" = 4233104, "type" = "REL32" },
+  { "addend" = 0, "offset" = 845, "symbol" = "_dxball_load_saved_palette", "target" = 4233456, "type" = "REL32" },
 ]
 size = 862
 symbol = "_dxball_load_pcx"

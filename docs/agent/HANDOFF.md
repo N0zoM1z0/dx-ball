@@ -1,27 +1,91 @@
 # DX-Ball reconstruction handoff
 
-Updated October 22, 2026. The user explicitly resumed all270 authored exact
-recoveries after the earlier cleanup/handoff. Keep progressing under the standing
-source-search policy, CPU/memory caps, frequent commits/pushes and periodic
-member-verified cleanup. The goal is active and incomplete.
+Updated October22,2026. All270 authored exact recoveries are now accepted and
+pass the complete current-object audit. Preserve serial CPU/memory limits,
+frequent commits/pushes and member-verified cleanup. The next project stage is
+a refreshed original-VC4 game build and bounded play check; the retained October20
+image remains the tested game product until that stage is completed.
 
 ## Maintained checkpoint
 
 | Verified fact | Current state |
 | --- | ---: |
 | Classified authored functions with source |270 /270|
-| Authored byte-exact functions |269 /270 (99.63%)|
-| Authored complete exact code bytes |84,106 /84,968 (98.99%)|
-| Authored nonexact candidates / original bytes |1 /862|
-| Overall exact functions, including runtime/compiler units |414|
-| Exact code / attached metadata bytes |98,490 /404|
+| Authored byte-exact functions |270 /270 (100%)|
+| Authored complete exact code bytes |84,968 /84,968 (100%)|
+| Authored nonexact candidates / original bytes |0 /0|
+| Overall exact functions, including runtime/compiler units |415|
+| Exact code / attached metadata bytes |99,352 /404|
 | Current authored compiler closures |53|
 
 Private current artifact authority is
-`.analysis/lightning-word-call-source-search-20261022/current-checkpoint.json`.
-It identifies the selected layout-absolute controller, matching display
-remainder, complete COFF/installed proof, existing198 native cases and adoption.
-The earlier rotation268 checkpoint remains recoverable; its acceptance is unchanged.
+`.analysis/pcx-file-prefix-source-search-20261022/current-checkpoint.json`.
+It identifies the selected prefix-ranked-order producer, full COFF proof,
+native99,270-function closing audit and adoption. Last-brick269 and rotation268
+remain recoverable historical acceptances, unchanged.
+
+## Completed PCX adoption and authored-exact audit
+
+The complete862-byte PCX decoder is exact in shared src/resources.cpp. A real
+historical PCX file-prefix schema has a128-byte encoded header followed by an
+unsigned first-data entry. Its actual offsetof(data) defines the header-read
+boundary and a static prefix assertion. Explicit signed16 maximum conversions
+retain the original game contract. The first-data value is not read or written;
+its offset has a real format-boundary consumer. This is an inferred natural
+source model, not uniquely recovered original declarations/source lineage.
+
+All20 real local objects,312 frame bytes, every branch/call and operand producer
+match. All4 sections,18 non-FILE symbols and raw auxiliaries/associative parents,
+8 code bindings, entire rb3-byte carrier and5216-byte global BSS layout compare.
+Only the decoder length979→862, generated literal spelling and FILE provenance
+change logically. All8 project headers and9-input/9-flag recipe stay unchanged.
+See [the exact PCX prefix](../research/exact/PCX_FILE_PREFIX_RECOVERY.md).
+
+Thirteen distinct successful compiles close two array forms, two C return
+contexts, two real-root layouts, two getter-result forms, three actual debug
+recipes and two file-prefix/declaration-order candidates. Root layout reaches
+862/43 then862/28, with every remaining byte a known frame operand. The consumed
+prefix restores frame312 and leaves8 rank differences; one feasible natural
+order closes them. An optimal-order solver timeout is retained without an
+optimality claim. An associative literal-parent check is repaired offline;
+no successful frozen compiler is repeated.
+
+Two pinned REA6.5.0 captures reuse the verified existing observer. Each records
+103 controller-tagged C2 entries, zero mandatory read failures and normal
+CL/C1XX/C2 exits. Evidence is
+ ev_9b9eae61b1bcf77ccb3d2fd0d9e42ca603109f6304f9cf581a6ce61f43c0689e
+and ev_ecfe119a747bf7ad09ffecd21d2b0893422b1f2b0f264789df8af890a497278b.
+Full responses stay under `.analysis/rea/pcx-root-layout-20261022/` and
+`.analysis/rea/pcx-file-prefix-20261022/`. No Ghidra import occurs. Nineteen
+actual current local keys seed each model; changed-source keys remain predictions.
+An old role-name transposition is corrected in new evidence only: decoded−4,
+ymax−20; its historical actual frame-byte map was already correct.
+
+Native rebuild compiles only resources.cpp/link. All62 companion object bytes
+and65 command configurations stay unchanged. Exactly99 unchanged existing PCX
+cases pass:15 supplied-image/palette-mode cases with retries and84 clipped,
+signed-maxima, zero-run and overshoot fixtures. Full pixels/palettes/ordered
+external events compare. No new case, unrelated owner or fixture preparation.
+Compiler/capture peak342,052,864 bytes; native build/check43,282,432/50,061,312
+bytes; CPU0/35%,384/512MiB and zero recorded compiler/native memory events.
+
+The closing passive audit imports compare(), with zero source compilations or
+historical behavior replays. All270 complete current authored functions and
+84,968 bytes pass strict byte/binding/literal/metadata/local-target checks:
+4759 actual bindings,252 full literal references and53 current recipes with
+recursive source/header/flag/object receipt identities. All270 addresses and
+catalog sizes remain; no authored candidate remains. Existing249 semantic
+scopes keep their case counts/order/oracle identities, with current dependencies.
+A numeric CSV100 versus100.00 formatting assumption stops the first audit before
+comparisons; Decimal interpretation repairs only that false formatting gate.
+
+Source owners, CMake and delivery source lists remain unchanged. Tracking and
+progress refresh. No fresh game link/play belongs to this source adoption.
+Closed useful evidence is member-verified before obsolete retirement; current
+accepted objects, tested native products and useful caches remain.
+Cleanup verifies243 archived members before retiring166 obsolete files, releasing
+1,159,168 allocated bytes net before small receipts. Both canonical REA responses
+and the full270-function audit remain available.
 
 ## Completed last-brick adoption
 
@@ -320,14 +384,16 @@ The closed resource/order phases retain592 member-verified archive records;
 the receipt. Current accepted objects, native library and useful caches stay.
 Recovery archive/index are beside the current checkpoint.
 
-## Next exact question
+## Next project stage
 
-Only PCX loading remains authored nonexact. Last-brick is now closed and adopted
-as documented above; its earlier negative controls below are historical.
-Last-brick, rotation, triangle, paddle, high-score, presenter and polygon
-families are closed and adopted. Reuse their retained outputs; do not repeat
-frozen producers. Earlier high-score arithmetic/qualifier/include controls and
-triangle register/initializer controls are historical negatives.
+All270 authored functions are exact. Refresh the original-VC4 game build and
+run the existing affected basic/editor and single-brick transition checks on
+that exact new image. Keep the19 approved original CRT members explicit. Do not
+restart closed exact search families or replay the full historical queue.
+
+The remaining source-search paragraphs below are historical rejected controls.
+PCX, last-brick, rotation, triangle, paddle, high-score, presenter and polygon
+families are now all closed and adopted.
 
 The preceding private full-frame family reached renderer1572/4 while losing
 height191/3. Its member/base-rank approximations and simple product transpose
@@ -408,19 +474,15 @@ exception, with the original baseline/helper retained. See
 No game relink/play follows the clock/reset/wait/resource/glyph/polygon/presenter/high-score/paddle/triangle/rotation/last-brick source changes. Retained delivery
 results apply to their recorded images; see [build status](../research/CURRENT_VC4_BUILD.md).
 
-## Remaining authored candidates
+## Current comparison authority
 
-Sizes below are original/current; differences are strict full-span counts.
-
-| Unit | Owner | Bytes | Differences |
-| --- | --- | ---: | ---: |
-| load-pcx |resources.cpp|862 /979|851|
+No classified authored candidate remains.
 
 `config/match-units.toml`, the current exact report and candidate audit are the
 comparison authority; `config/function-origins.csv` defines the270 authored set.
 Historical249 semantic scopes/cases/order are retained, not newly rerun.
 
-## Continue recovery
+## Continue build and play verification
 
 Read [AGENTS.md](../../AGENTS.md), [workflow](WORKFLOW.md),
 [source-search policy](SOURCE_CANDIDATE_SEARCH.md) and the relevant research note.
@@ -433,12 +495,13 @@ scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py
 ```
 
-`replay-exact-units.py` compiles; reuse verified unchanged outputs instead of
-running it as a status reader. Select the next finite natural source family
-from current residuals and retained results, compare complete affected units
-strictly and update source/owner/claim ledgers together for adoption. Unknown
-historical names or module organization remain experiment inputs. Do not request
-nonexistent original project/PDB/MAP/build records.
+`replay-exact-units.py` compiles; use the completed passive270-function audit and
+current verified receipts for status. Do not repeat successful exact producers.
+Build the restored-CRT profile from current accepted inputs, retain the19 approved
+original members and verify the actual new image with the existing bounded play
+flows. The October20 product remains historical until replaced by fresh evidence.
+Unknown original names or project/PDB/MAP files are not blockers or reasons to
+restart the now-complete authored source search.
 
 Keep one compiler/provider job on CPU0,35% CPU,384MiB high/512MiB max, CMake
 parallel1 and the silent audio sink. Preserve current products, useful caches,

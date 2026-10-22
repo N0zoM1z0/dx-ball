@@ -1,5 +1,10 @@
 # Original PCX packet loop
 
+October22 supersession: the [complete PCX file-prefix recovery](PCX_FILE_PREFIX_RECOVERY.md)
+is now adopted at270/270 authored exact functions. Its real data-field offset
+supplies the128-byte header boundary, signed maximum reads stay explicit, and
+all312 frame bytes/full862-byte code match. Earlier measurements below are history.
+
 The later [destination-coordinate correction](PCX_COORDINATE_WRAP.md) makes the
 four original DWORD increments explicit in both pixel paths. All18 complete
 resource code identities remain unchanged, PCX stays979/850, and four finite

@@ -62,3 +62,6 @@ to the same four original imports.
 - [Exact last-brick controller](LAST_BRICK_EXACT_SOURCE_OWNER.md): full1057-byte
   source owner, original64-byte frame/two absolute calls and coherent display
   remainder;269/270 authored exact.
+
+- [Exact PCX file prefix](PCX_FILE_PREFIX_RECOVERY.md): consumed128-byte header
+  boundary, full312-byte frame/862-byte decoder and270/270 closing audit.

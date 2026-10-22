@@ -1,5 +1,10 @@
 # Current PCX and lightning source controls
 
+October22 supersession: the [complete PCX file-prefix recovery](PCX_FILE_PREFIX_RECOVERY.md)
+is now adopted at270/270 authored exact functions. Its real data-field offset
+supplies the128-byte header boundary, signed maximum reads stay explicit, and
+all312 frame bytes/full862-byte code match. Earlier measurements below are history.
+
 Later October22 update: maintained acceptance is267/270 after triangle adoption.
 Four additional constant-association inputs group40000 with time or RNG on
 both sides of the addition. Time groups give1043/405; RNG groups1041/955, all

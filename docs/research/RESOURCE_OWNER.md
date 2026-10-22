@@ -1,5 +1,10 @@
 # Sprite, font, PCX and palette owner
 
+October22: the [complete PCX loader](exact/PCX_FILE_PREFIX_RECOVERY.md) is now
+byte-exact:862 bytes, all312 frame bytes,8 actual bindings and full rb literal.
+The shared resource owner retains its global definitions/public ABI and all
+headers. This closes270/270 authored exact functions and84,968 authored bytes.
+
 The latest [bounded bank source recovery](exact/BANK_SOURCE_CANDIDATE_RECOVERY.md)
 makes the complete1475-byte loader exact, removing68 differences. A meaningful
 14-local name/declaration model and three trivial declaration hoists preserve
