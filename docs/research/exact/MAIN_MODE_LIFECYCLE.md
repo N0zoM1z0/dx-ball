@@ -1,6 +1,6 @@
 # Exact mode initialization, redraw and cleanup
 
-The three mode controllers in [runtime.c](../../../src/runtime.c) now call
+The three mode controllers in [runtime.c](../../../src/runtime.cpp) now call
 the original owners directly. Their first stable VC4 compilation matches all
 416 bytes: redraw at `0x4036B0` (127), initialization at `0x4038D0` (127), and
 cleanup at `0x403950` (162).

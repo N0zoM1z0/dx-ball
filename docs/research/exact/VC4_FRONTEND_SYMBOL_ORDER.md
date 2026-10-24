@@ -1,5 +1,15 @@
 # VC4 C++ frontend symbol traversal
 
+Current search authority: the user's October21
+[bounded source-candidate policy](../../agent/SOURCE_CANDIDATE_SEARCH.md)
+supersedes the historical blanket search restrictions below. Recorded mechanism
+observations, negative results and evidence limitations are unchanged.
+
+The subsequent [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md)
+uses this mechanism with meaningful names and LOAD-rank constraints to restore
+the complete1475-byte loader. The historical observations below are not a
+claim that its selected spellings or predicted changed-source IDs were observed.
+
 October 17, 2026. The pinned C1XX name interner, bucket insertion and traversal
 explain all16 current bank-loader objects in the previously observed C2 reader
 order. This recovers a compiler mechanism; it does not recover original variable
@@ -86,10 +96,12 @@ not observed here. Original names/scopes/settings remain unknown.
 
 The mechanism explains why declaration order alone does not determine current
 stack homes. It supplies no original identifier spelling, aggregate ownership
-or new lifetime model. Do not rename variables, permute declarations or vary
-masks to manufacture a match. The root14/current API workspace control remains
-closed at1475/72. New source changes still require independent game producer/
-consumer evidence and complete affected comparisons.
+or new lifetime model. The root14/current API workspace result remains1475/72
+and should be reused rather than recompiled unchanged. The later authorized
+policy permits bounded natural name/order/scope candidates without uniquely
+recovered declarations; it does not permit fake objects, changed compiler masks
+or partial comparisons. Hash traversal and sequential-ID/rank effects must be
+screened separately before choosing an experiment.
 
 The wrappers add only the closed, pinned `vc4-cpp-frontend` selection alongside
 the existing backend. Nine Python dispatch/guard cases and six provider-free

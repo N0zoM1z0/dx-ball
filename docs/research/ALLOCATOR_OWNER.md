@@ -333,7 +333,7 @@ objects, case counts and observation digests remain identical. Failed link and
 stale-input controls remain separately sealed. Reusing saved static dossiers
 avoids another Ghidra import while preserving the target/provider identities.
 
-After installing the [private prerequisites](../../README.md#get-the-original-game)
+After installing the [private prerequisites](../SETUP.md#1-get-the-game-and-prepare-the-workspace)
 and building the native and Windows profiles, run:
 
 ```bash

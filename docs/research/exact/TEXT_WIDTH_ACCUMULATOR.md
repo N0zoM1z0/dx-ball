@@ -1,5 +1,10 @@
 # Unsigned text-width accumulator
 
+October21 update: the subsequent [declaration-order recovery](DECLARATION_ORDER_RECOVERY.md)
+preserves this unsigned arithmetic contract and restores all279 measurement
+bytes exactly. Its216 existing cases pass; all six UI companions stay exact.
+The three-byte residual below is historical, not the current comparison.
+
 October20,2026. The complete `measure-text` comparison improves from282 bytes/
 26 differences to279 bytes/3 differences. It remains nonexact. All six exact UI
 companions keep their complete raw and relocated code identities. Overall

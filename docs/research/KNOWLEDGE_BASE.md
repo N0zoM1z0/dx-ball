@@ -1,5 +1,9 @@
 # Target observations and reconstruction evidence
 
+This reference collects target observations and dated reconstruction findings.
+See [progress](../PROGRESS.md) for current coverage and
+[the build record](CURRENT_VC4_BUILD.md) for the verified VC4 toolchain.
+
 ## Target identity
 
 DX-Ball v1.07 is supported by the included README and EXE string at
@@ -7,7 +11,7 @@ DX-Ball v1.07 is supported by the included README and EXE string at
 `0x46000`, linker version 3.00, with relocations present and no Rich header.
 Imports include DirectDrawCreate, DirectSoundCreate, WinMM MIDI stream APIs,
 and ANSI Win32 window/input APIs. CRT startup calls WinMain at `0x0040D930`.
-Compiler identity is a candidate until backed by reproducible emission evidence.
+The reconstruction uses the verified Visual C++ 4.0 compiler and linker.
 
 ## Board owner
 

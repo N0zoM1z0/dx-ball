@@ -1,5 +1,9 @@
 # Closed shared magnitude-call boundary
 
+October22 supersession: the [complete exact controller](LAST_BRICK_EXACT_SOURCE_OWNER.md)
+is now adopted at269/270. Its coherent independent owner retains all18 current
+display exacts and both real absolute calls. The controls below are historical.
+
 October20,2026. One fixed whole-owner model restores both original last-brick
 magnitude calls through the existing reconstructed CRT API. It gains no complete
 exact function and loses four prior exacts privately, so it is not adopted.

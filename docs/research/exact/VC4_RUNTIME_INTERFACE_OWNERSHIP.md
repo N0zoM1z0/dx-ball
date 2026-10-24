@@ -1,5 +1,160 @@
 # Runtime interface ownership and actual elapsed ordering
 
+October21 policy precedence: the user's
+[standing reconstruction authorization](../../agent/SOURCE_CANDIDATE_SEARCH.md)
+supersedes blanket source-order/scope/owner/build-recipe bans in this historical
+log. Its measured failures still rule out those exact inputs, not all distinct
+bounded hypotheses. Original project/debug/build materials are not required.
+
+The subsequent [direct-owner reset TU recovery](EXACT_LIFECYCLE.md#direct-owner-reset-tu-recovery-october-21)
+makes reset-round426/0 with its unchanged body and five real API-owner includes.
+All 13 runtime remainder identities survive. Current authored count is
+256 exact / 14 candidates; the clock recovery below is the preceding checkpoint.
+
+## Rejected standalone paddle renderer contexts, October21
+
+Two private paddle_render.cpp probes retain the complete current2256-byte
+source body. One uses the full runtime prelude (26 recursive inputs); the other
+uses its seven genuine API-owner headers (16 inputs): runtime,bonuses,effects,
+paddle,display,startup and clock_api. Startup supplies random_range's real
+prototype; display owns both queue_region and draw_effect_sprite. The flags,
+types, scopes, expressions and all global/table definitions remain unchanged.
+
+Both distinct digests compile once and exit0. Both complete678-byte renderers
+retain all210 differences and the maintained resolved identity. All104 actual
+bindings compare, including both full eight-byte floating literals in each
+object. The literals occupy one ordinary16-byte rdata carrier, not two separate
+COMDATs. An initial mapper assumption stops; its additive offline repair checks
+the entire carrier, actual0/8 anchors, flags, section auxiliaries and both
+original payloads. Neither compiler repeats.
+
+Reject both module-only probes without compiling a proposed runtime remainder
+or making a companion-preservation claim. No maintained source/object/ledger
+change, native build, provider observation or game run follows. Peak compiler
+scope150,536,192 bytes; all memory events zero. Private authority is
+`.analysis/paddle-render-tu-source-search-20261021/`, with member-size/hash
+verified recovery before exact-file retirement. Current256/14 stays unchanged;
+only these two unchanged-body TU contexts are ruled out.
+
+## Clock utility TU recovery, October21
+
+The complete81-byte elapsed function is now exact. Move the existing920-byte
+current-time/elapsed pair, unchanged, to `src/clock.cpp` with the existing runtime.h
+and clock_api.h includes. All globals/tables remain in runtime.cpp. This is a
+natural reconstructed utility owner, not uniquely established original ownership.
+No new operation, header, flag, fake declaration or padding is introduced.
+
+| Complete unit | Before bytes/differences | Adopted bytes/differences |
+| --- | ---: | ---: |
+| current-time | 148/0 | 148/0 |
+| elapsed | 81/3 | 81/0 |
+| draw-paddle | 677/68 | 678/210 |
+| reset-round | 426/20 | 426/20 |
+
+The two actual objects are adopted as one coherent closure. All13 previously
+exact functions survive and14 of16 resolved identities remain unchanged. The
+already-nonexact paddle regression is explicit; no winning old object is mixed
+back in. Elapsed's sole REL32 at offset10 maps to current-time0x403450 with zero
+addend; all81 resolved bytes equal the original at0x4034F0, SHA256
+`d7b06fd2ab4034dfc13c60ce551cdefefd0b6be78a63b648abac1cbcfcf8059e`.
+The comparison closes the three old differences19/22/24; it does not observe or
+uniquely recover original frontend IDs.
+
+Runtime's26 inputs and clock's11 inputs retain the same nine flags. Exactly two
+distinct compilers exit0, one per actual TU. The actual24 sections/237 primary
+symbols with auxiliaries are fully accounted for, including the duplicate-identical
+clock directive and four projected extern definitions. All389 raw relocation
+occurrences map bijectively:352 code and37 initialized-table bindings. All33
+literal references and four complete7/13/16/397-byte carriers compare with the
+unchanged strict local-target guard. An independent read-only review also checks
+the complete elapsed span. Runtime object SHA256 is
+`4d66f5484747e8b669a1a40907b867ed2279fbce508acb93d857293456bbb7f6`;
+clock object SHA256 is
+`09f045d9996dd9d4c76793e5a74e1c59dc688cf7c445aa122e9f09bf56742548`.
+
+A member-verified151-file overwrite backup precedes adoption. One maintained
+native build and the unchanged first two runtime Oracle loops pass:216 current-time
+and252 elapsed calls, retaining all existing state/event assertions. All41 old
+configurations and38 companion core objects stay fixed; clock adds one configuration.
+The verified52-input cache is reused, with zero preparation executions. Both game
+builders now include the utility; no delivered EXE/ZIP relink or play is claimed.
+Compiler peak is152,952,832 bytes; native peak is91,295,744 bytes, all memory events0
+under CPU0/35% and384/512MiB limits.
+
+The manifest promotes elapsed and assigns both clock functions to the new11-input
+recipe. Actual relocation names/offsets, both full objects, source/semantic owners
+and claim ledgers are synchronized. All270 authored receipts across31 closures
+verify:255 exact/15 candidates,400 overall exacts,87,465 code/244 metadata bytes.
+The249 historical semantic scopes/cases/order remain unchanged, not rerun. Two
+prewrite helper errors (optional owner inputs and a private module path) are
+retained and repaired locally; neither repeats a compiler or native check. A single
+strict proposed-manifest replay is reused after full installed-object SHA checks.
+Tracking and generated progress pass. The goal remains active/incomplete.
+
+Private authority is `.analysis/runtime-clock-tu-source-search-20261021/`.
+Retain its comparison, native/adoption summaries and recoverable overwrite backup;
+member-size/hash verify closed inputs/products before retiring their exact paths.
+The broader ownership controls below remain bounded historical results. Unknown
+original declarations/IDs are not a reason to request original materials again.
+
+## Whole-definition layout controls, October21
+
+Four finite current-context source layouts leave complete elapsed81/3 unchanged.
+All move existing byte-identical definitions, preserving globals, prototypes,
+headers, bodies, operations and the nine pinned flags. The first family moves
+elapsed across one adjacent definition; the second places the existing920-byte
+current-time/elapsed utility pair at two logical group boundaries.
+
+| Frozen layout | Elapsed bytes/differences | Paddle bytes/differences | Unchanged complete identities |
+| --- | ---: | ---: | ---: |
+| elapsed, current-time, paddle | 81/3 | 677/68 | 16 |
+| current-time, paddle, elapsed | 81/3 | 678/210 | 15 |
+| clock pair before mode dispatch group | 81/3 | 678/210 | 15 |
+| clock pair after final frame dispatcher | 81/3 | 678/210 | 15 |
+
+Reset-round remains426/20 throughout. Elapsed retains differences19/22/24 and
+resolved SHA256 `747ce1b9e7dee804a69fb80de0279f65711fd0cdbd0609aeda8349feffacb37a`.
+The three worsened paddle outputs share resolved SHA256
+`8f14a9f564ca58f94d09df441fb19c6a96e3cdf4714e3f9df70889bd82ebf3bb`.
+No proposal is adopted. Current authored254 exact/16 candidates and399 overall
+exacts remain unchanged; the all270 objective is active.
+
+Each distinct26-input recipe compiles once and exits0, with no retry or mapping
+failure. Full23-section/229-non-FILE-symbol bijections account for389 actual
+relocations:352 code and37 initialized-table bindings. All33 literal references
+and four entire7/13/16/397-byte carriers compare, with strict auxiliary,
+associative-parent and local-target checks. Across four trials this covers64
+complete body instances/1,408 code bindings/1,556 raw relocations and preserves52
+prior-exact instances. Independent source/mapping preflight and main actual-byte,
+completion and occurrence walks retain their precise scopes in the receipts.
+
+Historical IDs29699/29702 are not assumed current: the retained observation's
+26-input cohort differs from this one in resources.h. Current and candidate IDs
+remain unobserved. The results establish these four output identities, not
+source-layout optimality or uniquely recovered original declarations. A distinct
+next question is the clock functions' translation-unit/header context, rather
+than assuming a different layout must fix the comparison.
+A then-uncompiled candidate, now adopted in the section above, moves the pair into a clock.cpp using
+the current runtime.h/clock_api.h, leaving globals/tables with runtime.cpp.
+The five audited ownership controls still define both functions in runtime.cpp;
+the proposed split is distinct within those controls, not proved original.
+Compare both actual objects as a16-function closure, without retaining the
+single-object23-section assumption.
+
+The intervening policy-only commit6151e78 changed seven documents, not compiler
+inputs. An additive reviewed preparation refresh changes exactly five protected
+documentation seals and preserves the original preparation; all other fields
+stay fixed. The second family reuses the sealed baseline without a new replay.
+CPU0/35%,384MiB high/512MiB maximum remain enforced; all four memory-event sets
+are zero, with peak157,831,168 bytes. No native/game build, provider/debugger
+observation, game episode or historical semantic replay is performed.
+
+Private trial authorities are `.analysis/runtime-definition-order-search-20261021/`
+and `.analysis/runtime-clock-pair-order-search-20261021/`; their complete closed
+files are member-size/hash verified before retirement into
+`.analysis/runtime-order-closure-20261021/`. Current products, caches, originals,
+tools and the141-record snapshot remain protected.
+
 October20,2026. The user has reopened byte-exact recovery for all24 remaining
 authored candidates. This investigation changes no maintained source, compiler
 recipe, claim ledger or delivery product. Counts stay391 overall exacts and

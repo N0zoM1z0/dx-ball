@@ -1,5 +1,23 @@
 # Editor controller evidence
 
+## Exact consumed lookup declarations, October21
+
+The [declaration recovery](exact/EDITOR_DECLARATION_RECOVERY.md) changes only
+`DxBallInt i, hit = 0` to `DxBallInt hit = 0, i`. The complete173-byte lookup
+is exact, with all13 prior editor exacts preserved:14 functions/3,440 code bytes,
+223 bindings,12 full literal references,20 checked local destinations and265
+embedded switch bytes. One compiler exit0 is retained; a separate proof maps
+the FILE-only auxiliary7→5 index rebasing after the initial strict guard stops.
+No compiler retry or historical-ID uniqueness is claimed.
+
+After54-member verified rollback, the whole owner is adopted and203 existing
+initialization/setter/lookup calls pass, retaining all400 original lookup setups
+and complete assertions.41 native configurations,38 companions and the verified
+fixture cache stay fixed, with no cache preparation. Current authored coverage
+is254 exact/16 candidates across270 entries/30 closures; overall399 exacts.
+Historical notes below retain their own epochs. The old closed owner search is
+not a ban on a new bounded family under the standing authorization.
+
 ## Closed hit-region implementation owner, October18
 
 The six consecutive entries401E10/401EB0/401F20/401F90/402040/4020E0

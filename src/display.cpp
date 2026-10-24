@@ -1,6 +1,6 @@
 extern "C" {
-#include "display.h"
 #include "clock_api.h"
+#include "display.h"
 #include "device.h"
 #include "effects.h"
 #include "geometry.h"
@@ -46,28 +46,7 @@ void dxball_reset_regions(void)
     return;
 }
 
-/* FUNCTION: DXBALL 0x00408180 */
-void dxball_blt_effect_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
-{
-    DxBallRect rect;
-    rect.left = x;
-    rect.top = y;
-    rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width + x;
-    rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height + y;
-    ((DxBallDDSurface *)dxball_effect_surface)->blt(&rect,
-        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
-        &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect,
-        0x01008000, NULL);
-    if (dxball_dirty_counts[dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
-        dxball_dirty_regions[dxball_dirty_counts[dxball_dirty_page]][dxball_dirty_page] = rect;
-        ++dxball_dirty_counts[dxball_dirty_page];
-    }
-    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
-        dxball_present_regions[dxball_present_count] = rect;
-        ++dxball_present_count;
-    }
-    return;
-}
+
 
 /* FUNCTION: DXBALL 0x00408460 */
 void dxball_blt_reduced_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
@@ -273,6 +252,8 @@ void dxball_restore_regions(void)
     return;
 }
 
+
+
 void dxball_bind_board_surface(DxBallSurface surface) { dxball_restore_surface = surface; return; }
 
 void dxball_bind_display_surface(DxBallSurface surface) { dxball_effect_surface = surface; return; }
@@ -299,41 +280,63 @@ void dxball_present(void)
     return;
 }
 
+/* FUNCTION: DXBALL 0x00408180 */
+void dxball_blt_effect_sprite(DxBallInt sprite, DxBallInt x, DxBallInt y)
+{
+    DxBallRect rect;
+    rect.left = x;
+    rect.top = y;
+    rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->width + x;
+    rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height + y;
+    ((DxBallDDSurface *)dxball_effect_surface)->blt(&rect,
+        dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->surface,
+        &dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->source_rect,
+        0x01008000, NULL);
+    if (dxball_dirty_counts[dxball_dirty_page] < DXBALL_DIRTY_CAPACITY) {
+        dxball_dirty_regions[dxball_dirty_counts[dxball_dirty_page]][dxball_dirty_page] = rect;
+        ++dxball_dirty_counts[dxball_dirty_page];
+    }
+    if (dxball_reduced_particles == 1 && dxball_present_count < DXBALL_PRESENT_CAPACITY) {
+        dxball_present_regions[dxball_present_count] = rect;
+        ++dxball_present_count;
+    }
+    return;
+}
+
 void dxball_present_regions_now(void)
 {
-    DxBallInt i;
+    DxBallInt selected, i;
     for (i = 0; i <= dxball_present_count - 1; ++i) {
         dxball_present_keys[i] = dxball_present_regions[i].top + dxball_present_regions[i].left;
     }
     if (dxball_present_count > 0) {
-        DxBallInt current;
         dxball_sort_present_regions(0, dxball_present_count - 1);
-        current = 0;
+        selected = 0;
         for (i = 1; i <= dxball_present_count - 1; ++i) {
             if (dxball_rectangles_overlap(
-                    dxball_present_regions[current].left,
-                    dxball_present_regions[current].top,
-                    dxball_present_regions[current].right + 1,
-                    dxball_present_regions[current].bottom + 1,
+                    dxball_present_regions[selected].left,
+                    dxball_present_regions[selected].top,
+                    dxball_present_regions[selected].right + 1,
+                    dxball_present_regions[selected].bottom + 1,
                     dxball_present_regions[i].left,
                     dxball_present_regions[i].top,
                     dxball_present_regions[i].right,
                     dxball_present_regions[i].bottom)) {
-                dxball_present_regions[current].left =
-                    dxball_present_regions[current].left < dxball_present_regions[i].left ?
-                    dxball_present_regions[current].left : dxball_present_regions[i].left;
-                dxball_present_regions[current].top =
-                    dxball_present_regions[i].top < dxball_present_regions[current].top ?
-                    dxball_present_regions[i].top : dxball_present_regions[current].top;
-                dxball_present_regions[current].right =
-                    dxball_present_regions[current].right > dxball_present_regions[i].right ?
-                    dxball_present_regions[current].right : dxball_present_regions[i].right;
-                dxball_present_regions[current].bottom =
-                    dxball_present_regions[current].bottom > dxball_present_regions[i].bottom ?
-                    dxball_present_regions[current].bottom : dxball_present_regions[i].bottom;
+                dxball_present_regions[selected].left =
+                    dxball_present_regions[selected].left < dxball_present_regions[i].left ?
+                    dxball_present_regions[selected].left : dxball_present_regions[i].left;
+                dxball_present_regions[selected].top =
+                    dxball_present_regions[i].top < dxball_present_regions[selected].top ?
+                    dxball_present_regions[i].top : dxball_present_regions[selected].top;
+                dxball_present_regions[selected].right =
+                    dxball_present_regions[selected].right > dxball_present_regions[i].right ?
+                    dxball_present_regions[selected].right : dxball_present_regions[i].right;
+                dxball_present_regions[selected].bottom =
+                    dxball_present_regions[selected].bottom > dxball_present_regions[i].bottom ?
+                    dxball_present_regions[selected].bottom : dxball_present_regions[i].bottom;
                 dxball_present_regions[i].top = 9999;
             } else {
-                current = i;
+                selected = i;
             }
         }
     }
@@ -391,29 +394,9 @@ void dxball_sort_present_regions(DxBallInt first, DxBallInt last)
     return;
 }
 
-/* FUNCTION: DXBALL 0x00409610 */
-void dxball_wait_frames(DxBallInt frames)
-{
-    struct { DxBallUInt now; DxBallInt index; } cursor;
-    cursor.index = 0;
-    if (dxball_wait_vertical_blank != 0) {
-        while (cursor.index++ < frames) {
-            dxball_direct_draw->vtable->wait_vertical_blank(dxball_direct_draw, 1, NULL);
-        }
-    } else {
-        while (cursor.index++ < frames) {
-            do {
-                cursor.now = dxball_current_time();
-                if (cursor.now < dxball_frame_wait_tick) break;
-            } while (cursor.now < dxball_frame_wait_tick + 17);
-            dxball_frame_wait_tick = dxball_current_time();
-        }
-    }
-    return;
-}
-
 void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt mode)
 {
+    DxBallInt i;
     DxBallByte r, g, b;
     if (dxball_cursor_warp_disabled == 1) return;
     if (mode == 1) {
@@ -424,7 +407,6 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt mode)
         r = 0; g = 0; b = 0;
     }
     {
-        DxBallInt i;
         for (i = first; i < last; ++i) dxball_live_palette[i] = dxball_live_palette[i + 1];
     }
     dxball_live_palette[last].red = r;
@@ -432,79 +414,6 @@ void dxball_animate_palette(DxBallInt first, DxBallInt last, DxBallInt mode)
     dxball_live_palette[last].blue = b;
     dxball_direct_palette->set_entries(0, first,
         last - first + 1, &dxball_live_palette[first]);
-    return;
-}
-
-/* FUNCTION: DXBALL 0x00415F40 */
-void dxball_last_brick(void)
-{
-    DxBallInt remaining;
-    if (dxball_last_brick_deadline == 0) {
-        DxBallUInt started = timeGetTime();
-        dxball_last_brick_deadline = (DxBallInt)(started +
-            dxball_random_range(20000) + 40000);
-    }
-    remaining = (DxBallInt)((DxBallUInt)dxball_last_brick_deadline - timeGetTime());
-    if (remaining < 1) {
-        DxBallInt tile_x, tile_y;
-        DxBallRect rect;
-        DxBallInt x, y, center_x, center_y, column, row, tile;
-        dxball_stop_sound(21);
-        dxball_play_sound(22, 0, 0, 0);
-        for (column = 0; column < DXBALL_BOARD_WIDTH; ++column) {
-            for (row = 0; row < DXBALL_BOARD_HEIGHT; ++row) {
-                tile = (signed char)dxball_board_tiles[column + row * DXBALL_BOARD_WIDTH];
-                if (tile != 0 && tile != 2) {
-                    tile_x = column;
-                    tile_y = row;
-                    center_x = tile_x * 30 + 35;
-                    center_y = tile_y * 15 + 57;
-                }
-            }
-        }
-        dxball_queue_explosion_at(tile_x, tile_y);
-        dxball_spawn_fire_effect(center_x, center_y);
-        if (dxball_reduced_particles != 0) {
-            DxBallInt i;
-            for (i = 0; i < 15; ++i) {
-                dxball_spawn_particle(center_x - 15 + dxball_random_range(30),
-                    center_y - 7 + dxball_random_range(15),
-                    6 - dxball_random_range(14), 4 - dxball_random_range(11), 16, 1);
-            }
-        } else {
-            DxBallInt i;
-            for (i = 0; i < 30; ++i) {
-                dxball_spawn_particle(center_x - 15 + dxball_random_range(30),
-                    center_y - 7 + dxball_random_range(15),
-                    6 - dxball_random_range(14), 4 - dxball_random_range(11), 16, 1);
-            }
-        }
-        dxball_select_sprite_bank(2);
-        x = center_x - dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width / 2;
-        y = (DxBallInt)((DxBallUInt)center_y
-                      - (DxBallUInt)dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height);
-        rect.left = 0;
-        rect.top = 0;
-        rect.right = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width;
-        rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height;
-        if (x < 0) { rect.left = (DxBallInt)(0u - (DxBallUInt)x); x = 0; }
-        if (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x > 639)
-            rect.right -= dxball_sprite_banks[dxball_sprite_bank].sprites[1]->width + x - 639;
-        if (y < 0) { rect.top = (DxBallInt)(0u - (DxBallUInt)y); y = 0; }
-        if (dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y > 479)
-            rect.bottom -= dxball_sprite_banks[dxball_sprite_bank].sprites[1]->height + y - 479;
-        dxball_lightning_x = x;
-        dxball_lightning_y = y;
-        dxball_lightning_rect.top = rect.top;
-        dxball_lightning_rect.bottom = rect.bottom;
-        dxball_lightning_rect.left = rect.left;
-        dxball_lightning_rect.right = rect.right;
-        dxball_lightning_frames = 4;
-        dxball_last_brick_deadline = 0;
-        dxball_select_sprite_bank(0);
-    } else {
-        dxball_update_sound(21, 0, 0, -((remaining / 2 > 3 ? remaining / 2 : 3) / 3));
-    }
     return;
 }
 

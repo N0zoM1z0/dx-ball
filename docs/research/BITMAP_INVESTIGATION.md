@@ -223,4 +223,5 @@ lossless gzip artifact, verified by expanded SHA. Post-retention cleanup removes
 only verified historical/cache copies and disposable probes; all 4,069 frozen
 paths and current acceptance inputs/products verify afterward. Unique REA
 records, originals and installed tools are retained. See the
-[current handoff](../agent/HANDOFF.md) for the cleanup journal and storage scope.
+[handoff history](../agent/HANDOFF_HISTORY_20261021.md) for that cleanup journal
+and storage scope.

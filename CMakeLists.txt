@@ -10,13 +10,32 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(dxball_core SHARED
     # Storage, loading, and low-level drawing
     src/allocator.c
+    src/runtime_absolute.c
     src/random.c
     src/allocator_host.c
     src/cpp_allocator.cpp
     src/boards.c
     src/resources.cpp
+    src/blt_keyed_sprite.cpp
+    src/blt_sprite.cpp
+    src/capture_sprite.cpp
+    src/draw_keyed_sprite.cpp
+    src/draw_rotated_sprite.cpp
+    src/draw_sprite.cpp
+    src/glyphs.cpp
+    src/load_live_palette.cpp
+    src/load_saved_palette.cpp
+    src/load_sprite_bank.cpp
+    src/load_surface_palette.cpp
+    src/release_sprite.cpp
+    src/release_sprite_bank.cpp
+    src/select_font_bank.cpp
+    src/select_sprite_bank.cpp
+    src/stretch_keyed_sprite.cpp
     src/rotation.cpp
     src/raster.cpp
+    src/fill_polygon.cpp
+    src/fill_polygon_clipped.cpp
     src/raster_host.cpp
     src/list_initializers.cpp
     src/bitmap.c
@@ -35,7 +54,12 @@ add_library(dxball_core SHARED
 
     # Frame dispatch and presentation
     src/runtime.cpp
+    src/paddle_render.cpp
+    src/clock.cpp
+    src/round_reset.cpp
     src/display.cpp
+    src/last_brick.cpp
+    src/frame_wait.cpp
     src/device.cpp
 
     # Platform, screens, and audio
@@ -76,13 +100,33 @@ target_include_directories(dxball_core PUBLIC src)
 set_target_properties(dxball_core PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(dxball_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    # Preserve the reconstructed CRT magnitude primitive at INT_MIN.
+    set_source_files_properties(src/runtime_absolute.c PROPERTIES
+        COMPILE_OPTIONS -fwrapv)
     # VC4 new can return NULL; retain the observed terminal allocation branch.
     set_source_files_properties(src/list_initializers.cpp PROPERTIES
         COMPILE_OPTIONS -fcheck-new)
 endif()
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     # Define the observed signed32 add/subtract/multiply wrap only.
-    set_source_files_properties(src/resources.cpp src/rotation.cpp PROPERTIES
+    set_source_files_properties(src/resources.cpp src/rotation.cpp
+        src/blt_keyed_sprite.cpp
+        src/blt_sprite.cpp
+        src/capture_sprite.cpp
+        src/draw_keyed_sprite.cpp
+        src/draw_rotated_sprite.cpp
+        src/draw_sprite.cpp
+        src/glyphs.cpp
+        src/load_live_palette.cpp
+        src/load_saved_palette.cpp
+        src/load_sprite_bank.cpp
+        src/load_surface_palette.cpp
+        src/release_sprite.cpp
+        src/release_sprite_bank.cpp
+        src/select_font_bank.cpp
+        src/select_sprite_bank.cpp
+        src/stretch_keyed_sprite.cpp
+        PROPERTIES
         COMPILE_OPTIONS -fwrapv)
 endif()
 # Rebound compares the live x87 quotient once, then reads stored float contacts.
@@ -99,7 +143,7 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     set_source_files_properties(src/boards.c PROPERTIES
         COMPILE_OPTIONS "-Wno-error=maybe-uninitialized;-fno-builtin-memmove")
     # The original lightning controller requires an eligible tile in its scan.
-    set_source_files_properties(src/display.cpp PROPERTIES
+    set_source_files_properties(src/last_brick.cpp PROPERTIES
         COMPILE_OPTIONS -Wno-error=maybe-uninitialized)
     # The WAV parser can return data before fmt; loading requires fmt first.
     set_source_files_properties(src/sound.c PROPERTIES

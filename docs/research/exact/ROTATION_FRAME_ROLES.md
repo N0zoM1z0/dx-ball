@@ -1,5 +1,14 @@
 # Rotation renderer frame roles
 
+Later October22 update: [the typed-row/cursor recovery](ROTATION_TYPED_CURSOR_RECOVERY.md)
+makes the complete renderer1572/0 and preserves all four helpers in one object,
+now formally adopted at268/270 authored exacts. The residuals and private models
+below are earlier history.
+
+October22 update: a later [full-frame source family](ROTATION_COMPLETE_FRAME_RECOVERY.md)
+recovers all original homes, leaving a private1572/4 renderer and height191/3.
+It is not adopted. The sizes and controls below describe earlier checkpoints.
+
 The [later complete current-context review](ROTATION_ORIGIN_STORAGE.md#complete-retained-model-tradeoff-october18)
 checks all365 instructions for both the maintained C++ renderer and the retained
 nested-origin model. They remain1458/1572 bytes and nonexact; the historical

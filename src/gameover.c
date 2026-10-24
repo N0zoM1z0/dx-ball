@@ -57,24 +57,25 @@ DxBallInt dxball_insert_high_score(const char *name, DxBallUInt score)
 
 void dxball_draw_high_scores(void)
 {
+    DxBallInt i, x;
     struct { char value[20]; DxBallInt count; } text;
     {
-        struct { DxBallInt y, index, x; } position;
-        position.x = 10;
-        position.y = 170;
-        for (position.index = 0; position.index <= 14; ++position.index) {
-            if (position.index == dxball_selected_score_index) {
-                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, position.y - 14, 635, position.y - 14, 200);
-                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, position.y + 5, 635, position.y + 5, 200);
-                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, position.y - 14, 5, position.y + 4, 200);
-                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 635, position.y - 14, 635, position.y + 4, 200);
+        DxBallInt y;
+        x = 10;
+        y = 170;
+        for (i = 0; i <= 14; ++i) {
+            if (i == dxball_selected_score_index) {
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, y - 14, 635, y - 14, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, y + 5, 635, y + 5, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 5, y - 14, 5, y + 4, 200);
+                dxball_draw_line((DxBallDDSurface *)dxball_active_surface, 635, y - 14, 635, y + 4, 200);
             }
-            text.count = (DxBallInt)strlen(dxball_scores[position.index].name);
-            dxball_draw_text(position.x, position.y, text.count, dxball_scores[position.index].name);
-            _ultoa((unsigned long)dxball_scores[position.index].score, text.value, 10);
+            text.count = (DxBallInt)strlen(dxball_scores[i].name);
+            dxball_draw_text(x, y, text.count, dxball_scores[i].name);
+            _ultoa((unsigned long)dxball_scores[i].score, text.value, 10);
             text.count = (DxBallInt)strlen(text.value);
-            dxball_draw_text((DxBallInt)((DxBallUInt)630 - (DxBallUInt)dxball_measure_text(text.count, text.value)), position.y, text.count, text.value);
-            position.y += 20;
+            dxball_draw_text((DxBallInt)((DxBallUInt)630 - (DxBallUInt)dxball_measure_text(text.count, text.value)), y, text.count, text.value);
+            y += 20;
         }
         return;
     }

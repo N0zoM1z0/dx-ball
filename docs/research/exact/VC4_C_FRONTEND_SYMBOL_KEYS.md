@@ -1,5 +1,13 @@
 # VC4 C frontend symbol keys
 
+October21 follow-up: the [bounded editor declaration recovery](EDITOR_DECLARATION_RECOVERY.md)
+makes the complete173-byte lookup exact, preserving all13 companion exacts.
+The historical1178/219 keys below motivate its one real order swap but are not
+observed current/candidate IDs: current22-input resources.h differs from that
+October18 cohort. Complete14-function output establishes the match. No new
+debugger/provider observation or uniquely recovered original declaration is
+claimed; the original capture and its limitations remain unchanged below.
+
 The pinned C frontend has its own observed low24 ID writers and serializer
 getter. The later unchanged editor observation below also links the actual
 current count/iterator objects from counter assignment to that getter.

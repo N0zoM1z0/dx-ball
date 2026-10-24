@@ -1,49 +1,71 @@
 # Source map
 
-Read [platform.c](platform.c) → [runtime.cpp](runtime.cpp) → [core.c](core.c)
-to follow input, mode dispatch, and a gameplay frame. The
-[architecture guide](../docs/ARCHITECTURE.md) explains how those calls fit together.
+Start with [platform.c](platform.c) → [runtime.cpp](runtime.cpp) → [core.c](core.c).
+The [architecture guide](../docs/ARCHITECTURE.md) follows that path through one
+frame. `config/functions.csv` maps original addresses to current source files;
+`/* FUNCTION: DXBALL 0x... */` comments mark recovered routines.
 
-| Start here | Responsibility |
+## Game control and entities
+
+| Files | Responsibility |
 | --- | --- |
-| [windows_entry.c](windows_entry.c), [windows_adapter.c](windows_adapter.c) | Windows entry and bindings to OS, graphics, and audio services |
-| [platform.c](platform.c), [platform_host.c](platform_host.c) | Instance lock, window creation, message loop, input, display setup, DirectDraw factory and process-exit transports |
-| [startup.c](startup.c) | Working resources, score files, RNG, and sprite-bank cleanup |
-| [runtime.cpp](runtime.cpp) | Five-mode dispatch, game lifecycle, clock, paddle drawing, and score |
-| [core.c](core.c) | Gameplay frame, ball/projectile movement, firing, and entity queues |
-| [intro.cpp](intro.cpp) | Menu and splash lifecycles, point animation, scroller, and credits |
-| [editor.c](editor.c) | Board editor, toolbar hit regions, painting, and persistence |
-| [gameover.c](gameover.c) | Name entry, rankings, and high-score persistence |
-| [boards.c](boards.c), [board_storage.h](board_storage.h) | Board bank, working tiles, shared storage, and tile drawing |
-| [gameplay.c](gameplay.c) | Brick-hit rules, board power-ups, explosion requests, and sound pan |
-| [balls.cpp](balls.cpp), [paddle.c](paddle.c), [round.c](round.c) | Ball lifecycle/rebounds, paddle movement, and lives/level progression |
-| [effects.c](effects.c) | Brick and explosion animation lifecycle |
-| [bonuses.c](bonuses.c), [particles.c](particles.c) | Bonus selection/collection and particle movement/drawing |
-| [resources.cpp](resources.cpp), [resources.h](resources.h) | Sprite banks, PCX loading, glyphs, palettes, and DirectDraw interfaces |
-| [display.cpp](display.cpp), [device.cpp](device.cpp) | Dirty regions, presentation, fades, synchronization, and surface recovery |
-| [ui.c](ui.c) | Text layout, lines, fill requests, and palette operations |
-| [rotation.cpp](rotation.cpp), [raster.cpp](raster.cpp), [bitmap.c](bitmap.c) | Software rotation, fixed-point rasterization, and bitmap reading |
-| [geometry.c](geometry.c), [trig.c](trig.c) | Overlap/distance helpers and quantized trigonometry |
-| [sound.c](sound.c), [midi.cpp](midi.cpp), [music.cpp](music.cpp) | DirectSound buffers, WinMM streams, and music object lifetime |
-| [file.c](file.c), [memory.c](memory.c) | Shared file and local-memory services for sound, MDS, and bitmap loading |
-| [allocator.c](allocator.c), [allocator_host.c](allocator_host.c) | Recovered allocation policy and portable heap callbacks |
-| [list_initializers.cpp](list_initializers.cpp) | Global list owners and their C++ constructors |
-| [runtime_text_host.c](runtime_text_host.c) | Unix implementation of the score caller's decimal conversion boundary |
-| [board_inspector.c](board_inspector.c), [resource_inspector.c](resource_inspector.c) | Command-line board and image/sprite-bank inspection |
-| [runtime_entry.c](runtime_entry.c) | Exact original WinMain CRT startup, version/command state and real SEH; standalone owner outside the CMake game library |
-| [runtime_cpp_catch.cpp](runtime_cpp_catch.cpp) | Exact catch invocation, current exception/context storage, rethrow and finally cleanup; standalone Win32 SEH CRT owner |
-| [runtime_cpp_unwind.cpp](runtime_cpp_unwind.cpp) | Exact state-map unwinding with real Win32 SEH and the original frame-setting transport; standalone CRT owner outside the CMake game library |
-| [runtime_cpp_object.cpp](runtime_cpp_object.cpp) | Catch-object construction and exception-object destruction with real member ABI and Win32 SEH; standalone CRT owner outside the CMake game library |
-| [runtime_cpp_terminal.cpp](runtime_cpp_terminal.cpp) | Original C++ terminal callbacks and Win32 SEH scopes; standalone CRT owner outside the CMake game library |
-| [termination.c](termination.c) | Separate CRT initializer/exit reconstruction; outside the CMake game library |
+| [platform.c](platform.c), [platform_host.c](platform_host.c) | Window setup, instance lock, message loop, input and OS transports |
+| [startup.c](startup.c) | Working resources, score files, RNG and initial bank cleanup |
+| [runtime.cpp](runtime.cpp) | Five-mode lifecycle/dispatch, shared clock state and score updates |
+| [core.c](core.c) | Gameplay frame, ball/projectile movement, firing and entity queues |
+| [intro.cpp](intro.cpp) | Menu, splash, point animation, credits and scroller |
+| [editor.c](editor.c) | Toolbar, painting, navigation and board-bank persistence |
+| [gameover.c](gameover.c) | Name entry, ranking insertion and score persistence |
+| [boards.c](boards.c), [board_storage.h](board_storage.h) | Board bank, working tiles, shared storage and tile drawing |
+| [round.c](round.c), [round_reset.cpp](round_reset.cpp) | Level/life progression and per-board reset |
+| [gameplay.c](gameplay.c) | Brick-hit rules, board power-ups, explosion requests and sound pan |
+| [balls.cpp](balls.cpp), [paddle.c](paddle.c) | Ball lifecycle/rebounds and paddle movement |
+| [paddle_render.cpp](paddle_render.cpp), [last_brick.cpp](last_brick.cpp) | Paddle drawing and last-brick lightning control |
+| [effects.c](effects.c), [bonuses.cpp](bonuses.cpp), [particles.c](particles.c) | Animation, bonus and particle lifecycles |
+| [list_initializers.cpp](list_initializers.cpp) | Global typed list owners and constructors |
+| [clock.cpp](clock.cpp), [frame_wait.cpp](frame_wait.cpp) | Current time, elapsed intervals and frame waiting |
 
-Each module's `.h` file describes its public state and call contracts.
-[state_types.h](state_types.h) defines the shared scalar widths and board sizes;
-the entity headers define payloads and links. Surface and OS handles grow with
-the host, while game integers stay 32-bit. C++ is used for the fixed-point
-class and global list construction; the game-facing interfaces retain C linkage.
+## Resources and rendering
 
-To trace a feature, follow its frame call into the owning module, then inspect
-that module's header and dependencies. Independent import cells and `*Ops`/`*Api` tables provide service
-bindings for the Windows adapter and host tools. Definitions such as
-`/* FUNCTION: DXBALL 0x... */` connect reconstructed routines to original addresses.
+Some routines use small compiler-owner files to retain their VC4 source context.
+They share the same headers and implementations across native and legacy builds.
+
+| Files | Responsibility |
+| --- | --- |
+| [resources.cpp](resources.cpp), [resources.h](resources.h) | Shared bank state, PCX decoding, sprite/font types and DirectDraw interfaces |
+| [load_sprite_bank.cpp](load_sprite_bank.cpp), [release_sprite_bank.cpp](release_sprite_bank.cpp), [resources_bank.h](resources_bank.h) | Whole-bank loading and retirement |
+| [select_sprite_bank.cpp](select_sprite_bank.cpp), [select_font_bank.cpp](select_font_bank.cpp) | Active sprite/font bank selection |
+| [capture_sprite.cpp](capture_sprite.cpp), [release_sprite.cpp](release_sprite.cpp) | Sprite storage and lifetime |
+| [draw_sprite.cpp](draw_sprite.cpp), [blt_sprite.cpp](blt_sprite.cpp), [draw_keyed_sprite.cpp](draw_keyed_sprite.cpp), [blt_keyed_sprite.cpp](blt_keyed_sprite.cpp) | Ordinary and keyed sprite drawing |
+| [stretch_keyed_sprite.cpp](stretch_keyed_sprite.cpp), [draw_rotated_sprite.cpp](draw_rotated_sprite.cpp) | Stretch/rotation draw entry points |
+| [load_live_palette.cpp](load_live_palette.cpp), [load_saved_palette.cpp](load_saved_palette.cpp), [load_surface_palette.cpp](load_surface_palette.cpp) | Palette loading paths |
+| [glyphs.cpp](glyphs.cpp), [ui.c](ui.c) | Glyph lookup/drawing, text layout and UI palette operations |
+| [display.cpp](display.cpp), [device.cpp](device.cpp) | Dirty regions, presentation, fades and surface recovery |
+| [drawing_primitives.cpp](drawing_primitives.cpp) | Line and rectangle drawing |
+| [rotation.cpp](rotation.cpp), [raster.cpp](raster.cpp), [fill_polygon.cpp](fill_polygon.cpp), [fill_polygon_clipped.cpp](fill_polygon_clipped.cpp) | Software rotation and fixed-point/polygon rasterization |
+| [bitmap.c](bitmap.c), [geometry.c](geometry.c), [trig.c](trig.c) | Bitmap loading, geometry and integer trigonometry |
+
+## Services, entry points and CRT
+
+| Files | Responsibility |
+| --- | --- |
+| [windows_crt_entry.c](windows_crt_entry.c), [runtime_entry.c](runtime_entry.c) | Current restored-CRT entry: Windows bindings, recovered heap/I/O/environment initialization, then game entry |
+| [windows_entry.c](windows_entry.c) | WinMain wrapper for compiler-CRT profiles |
+| [windows_adapter.c](windows_adapter.c), [directx_factory_host.c](directx_factory_host.c) | Win32, DirectDraw, DirectSound and WinMM bindings |
+| [sound.c](sound.c), [midi.cpp](midi.cpp), [music.cpp](music.cpp) | WAV buffers, MDS streaming and music lifetime |
+| [file.c](file.c), [memory.c](memory.c) | File/local-memory imports shared by sound, MDS and Bitmap |
+| [allocator.c](allocator.c), [allocator_host.c](allocator_host.c), [cpp_allocator.cpp](cpp_allocator.cpp) | Recovered heap policy, host callbacks and C++ allocation |
+| [runtime_text_host.c](runtime_text_host.c) | Unix score-text conversion boundary |
+| [runtime_initialization.c](runtime_initialization.c), [termination.c](termination.c) | Recovered CRT initialization and process exit |
+| [runtime_cpp_catch.cpp](runtime_cpp_catch.cpp), [runtime_cpp_unwind.cpp](runtime_cpp_unwind.cpp), [runtime_cpp_object.cpp](runtime_cpp_object.cpp) | Win32 C++ exception machinery |
+| [board_inspector.c](board_inspector.c), [resource_inspector.c](resource_inspector.c) | Command-line asset inspection |
+
+The remaining `runtime_*` files cover CRT strings, numeric conversion, streams,
+low-level I/O, locale, floating point and exception transports. The full legacy
+link is recorded in [restored-crt-link.json](../config/restored-crt-link.json).
+[The build guide](../docs/BUILD.md) distinguishes native, MinGW and VC4 profiles.
+
+Headers define public state and call contracts. [state_types.h](state_types.h)
+fixes game scalar widths; entity headers define payloads and links. OS handles
+and pointers follow the host ABI. Service pointers and `*Ops`/`*Api` tables bind
+Windows services or controlled native dependencies.

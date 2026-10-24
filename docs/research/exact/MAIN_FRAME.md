@@ -1,7 +1,7 @@
 # Exact main frame dispatcher
 
 The main frame at `0x403730` now uses the original ten direct calls in
-[runtime.c](../../../src/runtime.c). Its first stable VC4 compilation matches
+[runtime.c](../../../src/runtime.cpp). Its first stable VC4 compilation matches
 all 228 bytes, including the five-entry mode table and the compiler's trailing
 switch jump.
 

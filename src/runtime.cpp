@@ -43,92 +43,6 @@ DxBallInt dxball_surface_restore_requested;
 DxBallInt dxball_display_buffer_count = 1;
 DxBallDDSurface *dxball_primary_surface, *dxball_secondary_surface;
 
-DxBallUInt dxball_current_time(void)
-{
-    DxBallInt result;
-    DxBallCounter value;
-    if (dxball_high_resolution_clock != 0) {
-        if (dxball_clock_divisor == 0) {
-            result = dxball_query_performance_frequency(&value);
-            if (result == 0) {
-                return timeGetTime();
-                /* The original full span retains this unreachable store. */
-                dxball_clock_divisor = 0;
-            } else {
-                dxball_clock_divisor = value.low / 1000;
-            }
-        }
-        dxball_query_performance_counter(&value);
-        return value.low / dxball_clock_divisor;
-    } else {
-        return timeGetTime();
-    }
-}
-
-DxBallInt dxball_elapsed(DxBallUInt start, DxBallUInt interval)
-{
-    DxBallUInt now;
-    now = dxball_current_time();
-    if (start > now) return 1;
-    if (interval + start > now) {
-        return 0;
-    } else {
-        return 1;
-    }
-}
-
-void dxball_draw_paddle(void)
-{
-    DxBallInt factor, sprite, offset_y, margin, x, y;
-    DxBallRect rect, dirty;
-    {
-        DxBallInt base_width;
-        base_width = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_sprite]->width;
-        factor = dxball_paddle_width / base_width;
-    }
-    offset_y = 0;
-    sprite = factor * 4 + dxball_paddle_frame;
-    if (dxball_elapsed(dxball_paddle_tick, 64)) {
-        ++dxball_paddle_frame;
-        if (dxball_paddle_frame > 3) dxball_paddle_frame = 0;
-        dxball_paddle_tick = dxball_current_time();
-    }
-    if (dxball_bonus_8_active == 1) {
-        sprite += 104; offset_y = 15;
-    } else if (dxball_attached_ball_cue == 1) {
-        sprite += 84;
-        offset_y = dxball_sprite_banks[dxball_sprite_bank].sprites[sprite]->height - 14;
-    } else {
-        sprite += 64; offset_y = 0;
-    }
-    if (dxball_attached_ball_cue == 1) {
-        if (dxball_paddle_overlay_deadline < timeGetTime() ||
-            dxball_paddle_overlay_width != dxball_paddle_width) {
-            dxball_paddle_overlay_sprite = dxball_random_range(4) + factor * 4 + 124;
-            dxball_paddle_overlay_deadline = timeGetTime() + 33;
-            dxball_paddle_overlay_width = dxball_paddle_width;
-        }
-        if (dxball_bonus_8_active == 1)
-            margin = (DxBallInt)((long double)dxball_paddle_width * 0.075);
-        else
-            margin = (DxBallInt)((long double)dxball_paddle_width * 0.03);
-        x = dxball_paddle_x - dxball_paddle_width / 2 + margin;
-        y = dxball_paddle_y - 14;
-        rect.left = margin; rect.top = 0;
-        rect.right = dxball_paddle_width - margin;
-        rect.bottom = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite]->height;
-        dirty.left = x; dirty.top = rect.top + y;
-        dirty.right = dxball_paddle_width + x; dirty.bottom = rect.bottom + y;
-        ((DxBallDDSurface *)dxball_effect_surface)->blt_fast(x, y,
-            dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_overlay_sprite]->surface,
-            &rect, 0x11);
-        dxball_queue_region(dirty);
-    }
-    dxball_draw_effect_sprite(sprite, dxball_paddle_x - dxball_paddle_width / 2,
-        dxball_paddle_y - offset_y);
-    return;
-}
-
 void dxball_draw_score(void)
 {
     char text[20];
@@ -192,35 +106,6 @@ void dxball_finish_game(void)
     dxball_wait_frames(30);
     dxball_end_requested = 1;
     dxball_return_to_menu = 3;
-    return;
-}
-
-void dxball_reset_round(void)
-{
-    dxball_remaining_bricks = dxball_count_destructible_bricks();
-    dxball_redraw_mode();
-    dxball_load_saved_palette("mbbkgrnd.pcx");
-    dxball_palette_transition(1, 6, 0, 255, 1);
-    dxball_bonus_9_active = 0; dxball_bonus_8_active = 0;
-    dxball_bonus_3_active = 0; dxball_bonus_14_active = 0;
-    dxball_bonus_18_active = 0; dxball_bonus_12_active = 0;
-    dxball_destroy_hard_tiles = 0; dxball_bonus_7_active = 0;
-    dxball_bonus_3_ticks = 0; dxball_bonus_17_active = 0;
-    dxball_last_brick_deadline = 0;
-    dxball_stop_sound(21);
-    dxball_lightning_y = 2; dxball_lightning_frames = 0;
-    dxball_paddle_overlay_deadline = 0;
-    dxball_paddle_overlay_sprite = 0; dxball_paddle_overlay_width = 0;
-    dxball_paddle_x = dxball_mouse_x - dxball_paddle_width / 2;
-    dxball_paddle_y = 450;
-    dxball_paddle_previous_x = 0; dxball_paddle_previous_y = 0;
-    dxball_paddle_sprite = 68;
-    dxball_paddle_width = dxball_sprite_banks[dxball_sprite_bank].sprites[dxball_paddle_sprite]->width;
-    dxball_ball_count = 0; dxball_bonus_count = 0; dxball_palette_tick = 0;
-    dxball_launch_requested = 0; dxball_projectile_count = 0;
-    dxball_spawn_ball();
-    dxball_balls.current->attached = 1;
-    dxball_level_changed = 0; dxball_restart_requested = 0;
     return;
 }
 

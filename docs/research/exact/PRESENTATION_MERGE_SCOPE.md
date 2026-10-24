@@ -1,5 +1,14 @@
 # Presentation merge index lifetime
 
+October21 update: the [presenter index declaration recovery](PRESENT_INDEX_DECLARATIONS.md)
+uses the two consumed root scalars selected,i and restores left/right/bottom
+load order in the current context,984/6→2. Original8-byte homes remain;
+only top-load offsets315/327 differ. All20 functions/419 bindings,17 prior exacts
+and19 companion identities survive. Maintained native and267 existing selected
+calls pass with unchanged verified cache. A separate uniform-top control emits
+the same complete owner and is not selected. The following scoped-index and
+six-difference descriptions retain their historical inputs and limits.
+
 The complete dirty-region presenter at `0x409100` now scopes its current
 rectangle index to the positive-count sorting/merge branch. The shared loop
 index remains outside that branch because key generation and both presentation

@@ -1,0 +1,73 @@
+{
+  "updated": "2026-10-22",
+  "profile": "vc40-restored-crt",
+  "environment": "Wine with 640x480x24 Xvfb",
+  "source_checkpoint": "ecfc475715238c43241a5979b1745a163749b9dc",
+  "executable_sha256": "bdd425241ba51d6fe671bb0184b4ad86062326fc9e1eb407d2536235b93df79c",
+  "build": {
+    "status": "linked",
+    "source_objects": 138,
+    "integration_objects": 3,
+    "original_crt_members": 19
+  },
+  "summary": "VC4 game builds and passes basic/editor, game-over/restart, fifty-board terminal fixture, 900-second original-bank play and digital audio checks under Wine. Focus recovery is unresolved.",
+  "checks": [
+    {
+      "id": "basic_editor",
+      "name": "Basic play and editor",
+      "status": "passed",
+      "result": "Paddle movement, ball release, pause/resume, editor painting and full 20,000-byte save/reload; normal exit.",
+      "evidence_id": "ev_7177de8ca01a9230f41ad0c347acb50306bc9362b4b3728c0adcc80af32f5279"
+    },
+    {
+      "id": "round_transition",
+      "name": "Round transition",
+      "status": "passed",
+      "result": "Real single-brick clear followed by all 400 bytes of original board index 1; normal exit.",
+      "evidence_id": "ev_1ab24f160aab5333bd4b8e14871b622321de24605629cd348bfc32bceb042ac5"
+    },
+    {
+      "id": "gameover",
+      "name": "Game-over and rankings",
+      "status": "passed",
+      "result": "Three natural life losses, name editing, full 660-byte ranking save and fresh-process reload; two normal exits.",
+      "evidence_id": "ev_589ddef739ddbc7c56006332a31b0161a290ba8dda646596881a96152fbf6c7b"
+    },
+    {
+      "id": "terminal",
+      "name": "Fifty-board terminal fixture",
+      "status": "passed",
+      "result": "50 editor-created single-brick boards, 50 real clears, final index 50/score 500/lives 3, terminal storage and normal exit.",
+      "evidence_id": "ev_6a51b822fb76523793e513c7096ba652c256cff9bd31900f045371384848ac7f"
+    },
+    {
+      "id": "original_episode",
+      "name": "Original-bank continuous play",
+      "status": "passed",
+      "result": "900.046 seconds of real-input play, original boards 0/1/2 initialized, final sampled score 2,718 and lives 3.",
+      "evidence_id": "ev_9a1b9247d29c1cd1475fb554097d2cea2ded5c249f0aba19fcf68903c52ad9e3"
+    },
+    {
+      "id": "digital_audio",
+      "name": "Digital audio signal",
+      "status": "passed",
+      "result": "5.991678 seconds of finite stereo PCM with nonzero samples in both channels from the game stream.",
+      "evidence_id": "ev_9a1b9247d29c1cd1475fb554097d2cea2ded5c249f0aba19fcf68903c52ad9e3"
+    },
+    {
+      "id": "focus",
+      "name": "Focus recovery",
+      "status": "failed",
+      "result": "Original and rebuilt controls fail the motion check; persistent rebuilt observation later times out returning to menu. Cause unresolved.",
+      "evidence_id": "ev_f63711367427d4795f7df00563d922e33cd5d2b535f4e271b8d95fc0d8ad8d07"
+    }
+  ],
+  "remaining": [
+    "Complete the original 50-board campaign.",
+    "Exercise every power-up during actual game play.",
+    "Resolve focus/surface recovery under Wine/Xvfb.",
+    "Verify physical graphics/audio output and MIDI playback."
+  ],
+  "build_report": "docs/research/CURRENT_VC4_BUILD.md",
+  "playability_report": "docs/research/PLAYABILITY_20261022.md"
+}

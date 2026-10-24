@@ -71,7 +71,7 @@ The code observation is retained REA Evidence
 Private `.analysis/crt-suffix-ownership-20261017/` retains both gap maps,
 seven section authorities, every byte classification, before ledgers and the
 extent adoption. The earlier [dependency coverage](CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
-and [authored prefix review](../../agent/HANDOFF.md) retain their own boundaries.
+and [authored prefix review](../../agent/HANDOFF_HISTORY_20261021.md) retain their own boundaries.
 
 ## Joined declared text coverage
 

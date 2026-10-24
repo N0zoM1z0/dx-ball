@@ -1,5 +1,28 @@
 # Game lifecycle and mode dispatch
 
+The authored runtime controllers are exact. Paddle drawing now belongs to
+[its renderer owner](exact/PADDLE_RENDERER_SOURCE_OWNER.md); elapsed/reset recovery
+is recorded in [source context](exact/AUTHOR_SOURCE_CONTEXT.md).
+See [the source map](../../src/README.md) for the current split.
+
+## Earlier reconstruction checkpoints
+
+The October21 [whole-definition layout controls](exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md#whole-definition-layout-controls-october21)
+test four finite current-context arrangements, each compiled once. All retain
+elapsed81/3 and reset426/20; the first preserves all16 runtime identities, while
+the other three worsen only nonexact paddle677/68 to678/210. All13 prior exacts,
+352 code bindings/389 raw relocations and four complete literal carriers survive
+every full-owner comparison. Nothing is adopted or rebuilt natively; these
+bounded negative results do not exhaust source/TU/header hypotheses.
+
+The October21 [clock/line source trials](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
+close exactly two current C++ elapsed initializer models, including const-now.
+All16 runtime identities/352 bindings/33 full literal references stay unchanged;
+elapsed remains81/3. Neither proposal is adopted; maintained runtime source/object
+stay unchanged.
+These differ from the retained old C const control; no identical digest is retried.
+No new compiler observation, native runtime suite or game run follows them.
+
 The October20 [interface-ownership and elapsed-ordering investigation](exact/VC4_RUNTIME_INTERFACE_OWNERSHIP.md)
 is research-only. It observes the actual first elapsed C2 swap, restores all17
 paddle frame homes in a private scalar model and checks fixed callback-owner

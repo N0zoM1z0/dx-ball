@@ -1,5 +1,17 @@
 # Complete raster candidate instruction correspondence
 
+October22 update: the subsequent
+[conditional-temporary recovery](TRIANGLE_CONDITIONAL_TEMPORARIES.md) makes the
+complete triangle1710/0 with160 exact metadata bytes and all nine raster
+companions preserved. The residuals below describe earlier checkpoints.
+
+October21 update: the [selected declaration recovery](TRIANGLE_DECLARATION_RECOVERY.md)
+reduces triangle1710/88→48 while preserving both polygons and every accepted
+companion. All482 triangle instruction boundaries/opcodes, named/EH homes and
+comparison bytes now agree; only48 one-byte temporary/clamp displacements remain.
+The complete mappings and dated historical observations below retain their
+original input identities, rather than describing the newer physical homes.
+
 October 19, 2026. The three current raster candidates now have a complete
 instruction correspondence under explicit frame-role and comparison rules.
 This explains their existing emissions; it changes no source, compiler inputs,

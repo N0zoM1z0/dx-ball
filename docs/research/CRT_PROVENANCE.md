@@ -9,7 +9,7 @@ from maintained C, differential cases and the configured exact units.
 This batch resolved eight previously unknown entries. At its checkpoint, totals
 were **14 identified runtime dependencies / 292 unknown origins**, with
 maintained source at **222 functions / 105,036 direct cases / 36 exact units /
-3,518 bytes**. See the [current handoff](../agent/HANDOFF.md) for subsequent game-owner
+3,518 bytes**. See the [handoff history](../agent/HANDOFF_HISTORY_20261021.md) for subsequent game-owner
 acceptance. The three previously identified heap entries gain object-level
 corroboration without another origin promotion.
 

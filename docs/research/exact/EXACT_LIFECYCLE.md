@@ -1,5 +1,64 @@
 # Complete round lifecycle source restoration
 
+## Direct-owner reset TU recovery, October 21
+
+Reset-round is now exact across all 426 bytes. Its unchanged body moves to
+`src/round_reset.cpp`, including only its five actual API owners: runtime,
+bonuses, paddle, round and sound. Their recursive project closure has 17 inputs;
+all globals and callback tables stay in runtime.cpp. Portable and legacy builds
+share the same implementation. This reconstructs a natural owner, not unique
+historical source spelling or translation-unit identity.
+
+Two frozen one-body probes keep the body SHA256
+`d9fc67e25214d1290e0a0cec3643595f8c3afde8ba2c8d0fda5d2adbf9a07f78`:
+the full existing prelude emits 426/20; the five-owner prelude emits 426/0.
+The latter changes only the bank/slot address scheduling at 291..316. Complete
+resolved SHA256 is `b52ceb5b054cc77aa446890c56e64207f58919cf99b1068d01ddea22a50f025d`.
+The earlier three-controller/full-prelude split below is a close negative
+control, not this single-function/direct-dependency candidate.
+
+One conditional third compile builds the matching runtime remainder. All 13
+remaining complete identities stay unchanged, including 12 prior exacts and
+the still-nonexact 678/210 paddle. The coherent 14-function closure accounts for
+342 code bindings, 37 initialized-table bindings, all 379 raw relocations, 33
+literal references and four entire 7/13/16/397-byte carriers. Strict original
+byte and local-target checks remain unchanged. The first offline mapper rejects
+the actual 13-byte associated literal's alignment change; its input and failure
+are preserved. A bounded repair records only flags c0401040 to c0301040 (alignment
+8 to 4), retaining every payload byte, auxiliary/parent and relocation check.
+The original literal at 0x422F14 satisfies the actual four-byte alignment;
+original COFF flags are unknown. No compiler or successful comparison is rerun.
+
+After a 155-member verified overwrite backup, one maintained native build and
+the unchanged 300-case reset loop pass: 50 boards, two widths, three mouse X
+positions, retaining the attached-ball assertion and all state/event checks.
+All 42 old compile configurations and 39 companion core objects remain fixed;
+one reset configuration is added. The verified 52-input fixture cache is reused
+with zero preparations. Native library SHA256 is
+`9e995046fa6dc3bd59a5f08b56027ee2e2222733024baf48478ae4f62e73084e`.
+Compiler peak is 158,482,432 bytes; native peak is 77,164,544 bytes, all memory
+events zero under CPU0/35% and 384/512 MiB limits.
+
+Both whole objects, the real source owner, recipes, actual bindings and ledgers
+are synchronized. All 270 authored receipts across 32 closures verify at
+256 exact / 14 candidates; overall 401 exacts, 87,891 code / 244 metadata bytes.
+The 249 historical semantic scopes, cases and order stay fixed, not rerun.
+Both game recipes include round_reset.cpp and restored-CRT now lists 117 source
+owners plus three integration objects. No game relink or new play is claimed.
+The goal remains active/incomplete. Private authority is
+`.analysis/reset-tu-source-search-20261021/`; unique closed evidence is
+member-size/hash verified before exact-file retirement.
+
+One independent phase-local presenter iterator model is rejected: complete
+presenter 984/2 becomes 984/49 and sort-present-regions loses its exactness with
+three differences in 296 bytes. All 20 functions / 419 code and 421 raw bindings
+compare; 18 identities and the complete 57-byte portable bridge stay fixed.
+No candidate source/native product is adopted. Private recoverable authority:
+`.analysis/present-iterator-scope-search-20261021/`. Reuse that result rather than
+recompiling the same scoped-input digest.
+
+## Historical controller restoration
+
 This batch restores four complete observed controllers from retained full REA
 dossiers: finish-game (46) bytes, reset-round (426), restart-round (327) and dispose-game (112).
 The combined original extent is 911 bytes. All four saved bodies are contiguous

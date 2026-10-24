@@ -1,9 +1,19 @@
 # VC4 backend symbol-record observations
 
+Current search authority: the user's October21
+[bounded source-candidate policy](../../agent/SOURCE_CANDIDATE_SEARCH.md)
+supersedes historical blanket name/order/scope-search bans in this note.
+The observations below do not themselves recover original declarations.
+
+The subsequent [bounded bank source recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md)
+restores the complete1475-byte loader with all17 companion identities preserved.
+It is an exact reconstructed source model, not uniquely recovered source spelling
+or a new runtime observation of predicted compiler IDs.
+
 The October17 investigation locates actual record-reading code in the pinned
 VC4 backend. It does not yet explain the game's declaration-context scheduling
-changes or recover its original declarations. No compiler flag, name, order or
-declaration-count sweep follows from these observations.
+changes or recover its original declarations. No compiler-flag, name, order or
+declaration-count search was executed in that historical investigation.
 
 The target is `.tools/msvc400/bin/c2.exe`,567,296 bytes, SHA-256
 `820ed4e4930db97bcba646afb88fdb7d1f329631ca8e5b84096c0d6daa82e9a9`.
@@ -55,8 +65,10 @@ Reuse these records before another compiler import. The later
 [expression-ordering investigation](VC4_EXPRESSION_ORDERING.md) connects the
 numeric lookup field at record`+0x24` to an actual subtree-ranking and swap
 decision. Its64-record cumulative snapshot includes these14 observations.
-The specific original-game producer link remains missing; neither investigation
-authorizes arbitrary declaration experiments.
+The specific original-game producer link remains missing. The investigations
+did not themselves authorize declaration searches; the later standing user
+authorization now permits bounded natural-source candidates with complete
+affected comparisons, without claiming that this missing historical link is proved.
 
 ## Current bank-loader reader order
 

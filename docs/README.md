@@ -1,14 +1,17 @@
 # Reading guide
 
-Start with [REA in practice](REA.md): it follows a projectile-list routine
-from original instructions to reconstructed source and an exact compiler match.
-Then read [the architecture](ARCHITECTURE.md) and [source map](../src/README.md)
-to follow the game from its Windows loop into a frame.
+| Question | Read |
+| --- | --- |
+| What is complete, and what remains? | [Progress](PROGRESS.md) |
+| How do I build and run the game? | [Build and play](BUILD.md) |
+| How do I set up Codex and REA? | [Workspace setup](SETUP.md) |
+| How does the game fit together? | [Architecture](ARCHITECTURE.md) and [source map](../src/README.md) |
+| How is a function matched? | [Matching](MATCHING.md) and the [REA worked example](REA.md) |
+| Which executable was tested? | [Current VC4 build](research/CURRENT_VC4_BUILD.md) |
+| Which play checks passed or failed? | [Playability results](research/PLAYABILITY_20261022.md) |
+| Where are the subsystem investigations? | [Research index](research/README.md) |
 
-- [Build and play](BUILD.md) — set up the original files, compile, and launch.
-- [Matching](MATCHING.md) — how original-era compilation guides reconstruction.
-- [Progress](PROGRESS.md) — the current source and exact-match counts.
-- [Research notes](research/README.md) — subsystem investigations and recorded evidence.
-
-Contributor instructions live in [AGENTS.md](../AGENTS.md), with the
-[working procedure](agent/WORKFLOW.md) and [current handoff](agent/HANDOFF.md).
+Contributors start with [AGENTS.md](../AGENTS.md), the
+[current handoff](agent/HANDOFF.md) and [workflow](agent/WORKFLOW.md).
+Historical research records describe the source and products at their recorded
+checkpoints; the progress page gives the current totals.

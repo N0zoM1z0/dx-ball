@@ -111,12 +111,33 @@ def main():
         return
     build = builds["boards"]
     owner_flags = {
+        "src/last_brick.cpp": builds["last_brick"]["flags"],
+        "src/runtime_absolute.c": builds["runtime_absolute"]["flags"],
+        "src/paddle_render.cpp": builds["paddle_render"]["flags"],
         "src/raster.cpp": builds["raster"]["flags"],
+        "src/fill_polygon.cpp": builds["fill_polygon"]["flags"],
+        "src/fill_polygon_clipped.cpp": builds["fill_polygon_clipped"]["flags"],
         "src/random.c": builds["random"]["flags"],
         "src/cpp_allocator.cpp": builds["allocator"]["flags"],
         "src/allocator.c": builds["allocator"]["flags"],
         "src/list_initializers.cpp": builds["list_initializers"]["flags"],
         "src/resources.cpp": builds["resources"]["flags"],
+        "src/blt_keyed_sprite.cpp": builds["blt_keyed_sprite"]["flags"],
+        "src/blt_sprite.cpp": builds["blt_sprite"]["flags"],
+        "src/capture_sprite.cpp": builds["capture_sprite"]["flags"],
+        "src/draw_keyed_sprite.cpp": builds["draw_keyed_sprite"]["flags"],
+        "src/draw_rotated_sprite.cpp": builds["draw_rotated_sprite"]["flags"],
+        "src/draw_sprite.cpp": builds["draw_sprite"]["flags"],
+        "src/glyphs.cpp": builds["glyphs"]["flags"],
+        "src/load_live_palette.cpp": builds["load_live_palette"]["flags"],
+        "src/load_saved_palette.cpp": builds["load_saved_palette"]["flags"],
+        "src/load_sprite_bank.cpp": builds["load_sprite_bank"]["flags"],
+        "src/load_surface_palette.cpp": builds["load_surface_palette"]["flags"],
+        "src/release_sprite.cpp": builds["release_sprite"]["flags"],
+        "src/release_sprite_bank.cpp": builds["release_sprite_bank"]["flags"],
+        "src/select_font_bank.cpp": builds["select_font_bank"]["flags"],
+        "src/select_sprite_bank.cpp": builds["select_sprite_bank"]["flags"],
+        "src/stretch_keyed_sprite.cpp": builds["stretch_keyed_sprite"]["flags"],
     }
     directory = ROOT / "build/vc40"
     directory.mkdir(parents=True, exist_ok=True)
@@ -152,7 +173,7 @@ def main():
         print(f'legacy object {action}: {source}', flush=True)
         return output
 
-    for source in ("src/allocator.c", "src/cpp_allocator.cpp", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/rotation.cpp", "src/raster.cpp", "src/raster_host.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.cpp", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/display.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/drawing_primitives.cpp", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
+    for source in ("src/allocator.c", "src/runtime_absolute.c", "src/cpp_allocator.cpp", "src/random.c", "src/allocator_host.c", "src/boards.c", "src/resources.cpp", "src/blt_keyed_sprite.cpp", "src/blt_sprite.cpp", "src/capture_sprite.cpp", "src/draw_keyed_sprite.cpp", "src/draw_rotated_sprite.cpp", "src/draw_sprite.cpp", "src/glyphs.cpp", "src/load_live_palette.cpp", "src/load_saved_palette.cpp", "src/load_sprite_bank.cpp", "src/load_surface_palette.cpp", "src/release_sprite.cpp", "src/release_sprite_bank.cpp", "src/select_font_bank.cpp", "src/select_sprite_bank.cpp", "src/stretch_keyed_sprite.cpp", "src/rotation.cpp", "src/raster.cpp", "src/fill_polygon.cpp", "src/fill_polygon_clipped.cpp", "src/raster_host.cpp", "src/list_initializers.cpp", "src/bitmap.c", "src/gameplay.c", "src/effects.c", "src/particles.c", "src/bonuses.cpp", "src/geometry.c", "src/paddle.c", "src/round.c", "src/trig.c", "src/balls.cpp", "src/core.c", "src/runtime.cpp", "src/paddle_render.cpp", "src/clock.cpp", "src/round_reset.cpp", "src/display.cpp", "src/last_brick.cpp", "src/frame_wait.cpp", "src/device.cpp", "src/platform.c", "src/platform_host.c", "src/startup.c", "src/ui.c", "src/drawing_primitives.cpp", "src/intro.cpp", "src/gameover.c", "src/editor.c", "src/midi.cpp", "src/music.cpp", "src/file.c", "src/memory.c", "src/sound.c"):
         flags = owner_flags.get(source, build["flags"])
         output = compile_source(source, flags)
         objects.append(output)

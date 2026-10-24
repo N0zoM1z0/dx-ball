@@ -1,5 +1,9 @@
 # Last-brick expiry-local scope
 
+October22 supersession: the [complete exact controller](LAST_BRICK_EXACT_SOURCE_OWNER.md)
+is now adopted at269/270. Its coherent independent owner retains all18 current
+display exacts and both real absolute calls. The controls below are historical.
+
 A later passive recheck of both rejected expression objects confirms their
 first two calls remain RNG then time, violating the original time-then-RNG
 sequence. The second time sample already preserves the remaining value in EBX

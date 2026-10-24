@@ -46,7 +46,7 @@ void dxball_set_hit_region(DxBallInt index, DxBallInt left, DxBallInt top,
 
 DxBallInt dxball_find_hit_region(DxBallInt x, DxBallInt y)
 {
-    DxBallInt i, hit = 0;
+    DxBallInt hit = 0, i;
     i = 1;
     while (dxball_hit_region_count > i) {
         if (dxball_hit_regions[i].active != 0 &&

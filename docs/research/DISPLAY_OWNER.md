@@ -1,5 +1,42 @@
 # Lightning and frame drawing
 
+October22: the [complete last-brick controller](exact/LAST_BRICK_EXACT_SOURCE_OWNER.md)
+now lives in shared `src/last_brick.cpp` and is byte-exact. `display.cpp` retains
+all actual globals/initializers and18 other exact original entries; its57-byte
+portable bridge is unchanged. The public API remains `display.h`.
+
+The presenter and frame wait are also exact; see
+[presenter recovery](exact/PRESENTER_INCLUDE_SOURCE_RECOVERY.md) and
+[frame-wait recovery](exact/FRAME_WAIT_CURSOR.md).
+
+## Earlier reconstruction checkpoints
+
+The October21 [presenter index recovery](exact/PRESENT_INDEX_DECLARATIONS.md)
+moves the existing consumed merge index to root selected,i declarations and
+improves the complete984-byte presenter6→2. All20 functions/419 bindings,
+17 accepted companions,19 other code identities and the57-byte portable bridge
+verify. Presenter remains nonexact. The maintained target and267 existing
+sort/merge/presentation/reset calls pass;41 configurations,38 companion objects
+and the verified cache remain fixed with no cache rebuild or game/provider run.
+Three waiting loop controls and one combined top-minimum control are closed
+without further gain. Counts remain253 authored exact/17 candidates.
+
+The October21 [clock/line source recovery](exact/CLOCK_LINE_SOURCE_RECOVERY.md)
+restores waiting's threshold comparison orientation through its two consumed
+root scalars, reducing170/8→6 while preserving the original16-byte frame. All20
+display functions/419 bindings,17 accepted companions and the separate57-byte
+portable bridge verify. Waiting remains a candidate;18 unchanged cases and reset
+pass on the maintained native target. No cache rebuild or game/provider run.
+
+The October21 [declaration-order recovery](exact/DECLARATION_ORDER_RECOVERY.md)
+makes the full234-byte animate-palette body exact. Hoisting its existing iterator
+before RGB declarations preserves all original blocks and operations. All20
+display bodies/419 bindings and the separate57-byte portable bridge compare;
+16 prior display exacts and19 other code identities remain unchanged. The
+maintained native target,81 palette cases and reset pass alongside216 UI
+measurement cases. No game or provider run follows; older checkpoints retain
+their historical counts and scopes.
+
 The latest [expiry-local scope](exact/LIGHTNING_EXPIRY_SCOPE.md) restores six
 original last-brick frame homes and reduces its complete differences992→990.
 Twelve exact companions/3303 bytes and the other nineteen code identities remain;

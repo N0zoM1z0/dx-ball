@@ -1,6 +1,6 @@
 # Board transition through the restored CRT
 
-The [October19 current-image check](CURRENT_VC4_BUILD.md#round-transition-and-game-over)
+The [October19 current-image check](PLAYABILITY_20261022.md#completed-checks)
 also passes the unchanged round scenario:10 points,three lives,complete original
 board1/222 bricks and normal exit0. The earlier image and evidence follow.
 

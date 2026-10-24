@@ -1,5 +1,15 @@
 # Rotation origin operands and initial storage
 
+Later October22 update: [the typed-row/cursor recovery](ROTATION_TYPED_CURSOR_RECOVERY.md)
+makes the complete renderer1572/0 and preserves all four helpers in one object,
+now formally adopted at268/270 authored exacts. The residuals and private models
+below are earlier history.
+
+October22 update: the later
+[combined full-frame recovery](ROTATION_COMPLETE_FRAME_RECOVERY.md) restores all
+424 frame-role bytes and yields a private1572/4 renderer. Height191/3 loses an
+exact, so the model is not adopted; the historical controls below remain valid.
+
 The later [closed follow-up](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up)
 tests nested origin conversions, axis records, a sampled source-plane record and
 floating consistency. None is adopted. The later
