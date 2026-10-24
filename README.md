@@ -4,6 +4,8 @@
   <img src="resources/dxball-title.png" alt="DX-Ball title screen" width="900">
 </p>
 
+[![Featured on Made with REA](https://madewithrea.com/badges/featured.svg)](https://madewithrea.com/builds/dx-ball-1-07-reconstruction-with-rea-and-codex-checked-against-the-ori)
+
 This project reconstructs English DX-Ball v1.07 as readable C/C++ using the
 original executable and resources. Codex uses [REA](https://github.com/morluto/rea)
 to inspect the program through Ghidra, recover its functions, and compare code
