@@ -6,10 +6,6 @@
 
 [![Featured on Made with REA](https://madewithrea.com/badges/featured.svg)](https://madewithrea.com/builds/dx-ball-1-07-reconstruction-with-rea-and-codex-checked-against-the-ori)
 
-## Reconstruction with REA
-
-REA gives Codex access to Ghidra's pseudocode, instructions, calls, and data
-references. The reconstruction proceeds function by function:
 This project reconstructs English DX-Ball v1.07 as readable C/C++ using the
 original executable and resources. Codex uses [REA](https://github.com/morluto/rea)
 to inspect the program through Ghidra, recover its functions, and compare code
