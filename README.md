@@ -142,6 +142,30 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\reconstruction\Build-R
 `-Incremental` reuses objects only when their compiler/source/header/flag context
 and hashes match. See [native Windows build details](docs/BUILD.md#native-windows-source-build).
 
+## Contribute
+
+This reconstruction was built with AI coding agents. Testing, recovered
+semantics, readability and platform support can still improve. Feedback, bug
+reports and contributions are welcome.
+
+- **Testing and bug reports.** We have not tested every board, power-up or
+  system configuration. Help test the original 50-board campaign, windowed and
+  fullscreen behavior, audio/MIDI, frame pacing, and score/editor save flows.
+  [Report issues](https://github.com/N0zoM1z0/dx-ball/issues/new) with your commit
+  or build, OS, Wine/DirectDraw wrapper if used, reproduction steps, and expected
+  versus actual behavior. Screenshots, videos and logs help.
+- **Ports.** Help bring the shared C/C++ core to more platforms and
+  architectures, or develop rendering, audio and input backends. Keep platform
+  changes separate from the verified VC4 reconstruction.
+- **Semantics and readable code.** Review reconstructed behavior, improve names
+  and types, simplify control flow, and clarify comments or documentation.
+  Focused fixes with a reproducible example or relevant regression check are
+  welcome.
+
+Send pull requests to **`main`**. Changes to recovered game code should preserve
+the accepted VC4 matches and include the relevant verification; see the
+[contributor workflow](docs/agent/WORKFLOW.md).
+
 ## Read the code
 
 - [Architecture](docs/ARCHITECTURE.md): entry, modes, a gameplay frame and platform services.
