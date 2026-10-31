@@ -89,10 +89,58 @@ CRT members. Original assets are supplied separately. The
 [build guide](docs/BUILD.md) covers headless Wine, other build profiles and the
 local delivery bundle.
 
-A prepared Windows package also provides **Build Reconstruction.cmd**, with
-English progress output, and **Play Rebuilt DX-Ball.cmd**. It compiles every
-source unit using the bundled pinned compiler; Windows needs neither Python nor
-WSL. See [the native Windows build instructions](docs/BUILD.md#native-windows-source-build).
+### Native Windows source build
+
+The Windows build shown in the video uses an **exported source package** with
+`reconstruction/src/`, the pinned VC4 compiler/headers/libraries, support files
+and `reconstruction/build-plan.json`. Windows PowerShell 5.1 and x86 application
+support are sufficient; Python, WSL and Visual Studio are not needed on the
+Windows machine.
+
+**Prepare the package on Linux/WSL** after the restored-CRT build above. Choose
+a new package directory. Obtain `ddraw.dll` and `ddraw.ini` configured for the
+[tested cnc-ddraw windowed profile](docs/BUILD.md#windowed-windows-play), then run
+from the repository root:
+
+```bash
+scripts/repo-python scripts/run-windows.py \
+  --profile vc40-restored-crt --prepare-only
+mkdir -p build/windows-source-package/game
+cp -a build/runtime/vc40-restored-crt/. build/windows-source-package/game/
+cp /absolute/path/to/cnc-ddraw/ddraw.dll \
+  /absolute/path/to/cnc-ddraw/ddraw.ini build/windows-source-package/game/
+scripts/repo-python scripts/export-windows-build.py \
+  build/windows-source-package/reconstruction
+```
+
+The exporter requires the completed Linux build and pinned local toolchain;
+`reconstruction/` must not already exist. It generates the Windows launchers
+and build plan. The `.ps1` file alone is not a complete build package.
+
+**Build and play on Windows:**
+
+1. Copy the entire `build/windows-source-package/` folder to Windows. Keep its
+   `game/`, `reconstruction/` and generated `.cmd` files together.
+2. Open **Build Reconstruction.cmd** in the package root. It verifies the
+   supplied inputs, compiles all **141 C/C++ units** with English percentage
+   progress, extracts the **19 approved original CRT members**, and links the
+   EXE. The required linker compatibility setting is applied automatically.
+3. Wait for **BUILD COMPLETE**. The new executable is `build/game/dxball.exe`;
+   compiler output is in `build/logs/` and the receipt is `build/build-report.json`,
+   all relative to the package root.
+4. Open **Play Rebuilt DX-Ball.cmd** to play the newly compiled game. Building
+   does not launch it; the existing `game/` copy and rebuilt score saves are
+   preserved.
+
+The normal launcher compiles every source unit. An optional incremental build
+can be run from the package root in PowerShell:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\reconstruction\Build-Reconstruction.ps1 -Incremental
+```
+
+`-Incremental` reuses objects only when their compiler/source/header/flag context
+and hashes match. See [native Windows build details](docs/BUILD.md#native-windows-source-build).
 
 ## Read the code
 
