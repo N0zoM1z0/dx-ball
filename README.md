@@ -1,13 +1,29 @@
 # DX-Ball reconstruction
 
-<p align="center">
-  <img src="resources/dxball-title.png" alt="DX-Ball title screen" width="900">
-</p>
-
 This project reconstructs English DX-Ball v1.07 as readable C/C++ using the
 original executable and resources. Codex uses [REA](https://github.com/morluto/rea)
 to inspect the program through Ghidra, recover its functions, and compare code
 compiled with Visual C++ 4.0 against the original.
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=TzRGCIkp_c4"><strong>▶ Watch the Windows build &amp; gameplay demo</strong></a><br>
+  <sub>6:20 · Compilation at 4× speed · Gameplay at normal speed</sub>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=TzRGCIkp_c4">
+    <img src="https://i.ytimg.com/vi/TzRGCIkp_c4/maxresdefault.jpg" alt="Watch DX-Ball v1.07 reconstructed from its EXE: native Windows build and gameplay on YouTube" width="900">
+  </a>
+</p>
+
+<details>
+<summary>Original DX-Ball title screen</summary>
+
+<p align="center">
+  <img src="resources/dxball-title.png" alt="DX-Ball title screen" width="900">
+</p>
+
+</details>
 
 ## Progress
 
