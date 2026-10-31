@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-31",
   "profile": "vc40-restored-crt",
-  "environment": "Wine with 640x480x24 Xvfb",
+  "environment": "Wine with isolated 24-bit Xvfb; Windows 11 windowed manual play (user report)",
   "source_checkpoint": "ecfc475715238c43241a5979b1745a163749b9dc",
   "executable_sha256": "bdd425241ba51d6fe671bb0184b4ad86062326fc9e1eb407d2536235b93df79c",
   "build": {
@@ -10,64 +10,158 @@
     "integration_objects": 3,
     "original_crt_members": 19
   },
-  "summary": "VC4 game builds and passes basic/editor, game-over/restart, fifty-board terminal fixture, 900-second original-bank play and digital audio checks under Wine. Focus recovery is unresolved.",
+  "summary": "All 270 authored game functions are exact. The VC4 game builds on Linux/Wine and natively on Windows. Automated Wine play/editor/ranking checks pass; Windows windowed play is user-reported. Exclusive-mode focus recovery remains unresolved.",
   "checks": [
     {
       "id": "basic_editor",
       "name": "Basic play and editor",
       "status": "passed",
       "result": "Paddle movement, ball release, pause/resume, editor painting and full 20,000-byte save/reload; normal exit.",
-      "evidence_id": "ev_7177de8ca01a9230f41ad0c347acb50306bc9362b4b3728c0adcc80af32f5279"
+      "evidence_id": "ev_7177de8ca01a9230f41ad0c347acb50306bc9362b4b3728c0adcc80af32f5279",
+      "date": "2026-10-22"
     },
     {
       "id": "round_transition",
       "name": "Round transition",
       "status": "passed",
       "result": "Real single-brick clear followed by all 400 bytes of original board index 1; normal exit.",
-      "evidence_id": "ev_1ab24f160aab5333bd4b8e14871b622321de24605629cd348bfc32bceb042ac5"
+      "evidence_id": "ev_1ab24f160aab5333bd4b8e14871b622321de24605629cd348bfc32bceb042ac5",
+      "date": "2026-10-22"
     },
     {
       "id": "gameover",
       "name": "Game-over and rankings",
       "status": "passed",
       "result": "Three natural life losses, name editing, full 660-byte ranking save and fresh-process reload; two normal exits.",
-      "evidence_id": "ev_589ddef739ddbc7c56006332a31b0161a290ba8dda646596881a96152fbf6c7b"
+      "evidence_id": "ev_589ddef739ddbc7c56006332a31b0161a290ba8dda646596881a96152fbf6c7b",
+      "date": "2026-10-22"
     },
     {
       "id": "terminal",
       "name": "Fifty-board terminal fixture",
       "status": "passed",
       "result": "50 editor-created single-brick boards, 50 real clears, final index 50/score 500/lives 3, terminal storage and normal exit.",
-      "evidence_id": "ev_6a51b822fb76523793e513c7096ba652c256cff9bd31900f045371384848ac7f"
+      "evidence_id": "ev_6a51b822fb76523793e513c7096ba652c256cff9bd31900f045371384848ac7f",
+      "date": "2026-10-22"
     },
     {
       "id": "original_episode",
       "name": "Original-bank continuous play",
       "status": "passed",
       "result": "900.046 seconds of real-input play, original boards 0/1/2 initialized, final sampled score 2,718 and lives 3.",
-      "evidence_id": "ev_9a1b9247d29c1cd1475fb554097d2cea2ded5c249f0aba19fcf68903c52ad9e3"
+      "evidence_id": "ev_9a1b9247d29c1cd1475fb554097d2cea2ded5c249f0aba19fcf68903c52ad9e3",
+      "date": "2026-10-22"
     },
     {
       "id": "digital_audio",
       "name": "Digital audio signal",
       "status": "passed",
       "result": "5.991678 seconds of finite stereo PCM with nonzero samples in both channels from the game stream.",
-      "evidence_id": "ev_9a1b9247d29c1cd1475fb554097d2cea2ded5c249f0aba19fcf68903c52ad9e3"
+      "evidence_id": "ev_9a1b9247d29c1cd1475fb554097d2cea2ded5c249f0aba19fcf68903c52ad9e3",
+      "date": "2026-10-22"
     },
     {
       "id": "focus",
-      "name": "Focus recovery",
+      "name": "Exclusive focus recovery (Wine built-in DirectDraw)",
       "status": "failed",
       "result": "Original and rebuilt controls fail the motion check; persistent rebuilt observation later times out returning to menu. Cause unresolved.",
-      "evidence_id": "ev_f63711367427d4795f7df00563d922e33cd5d2b535f4e271b8d95fc0d8ad8d07"
+      "evidence_id": "ev_f63711367427d4795f7df00563d922e33cd5d2b535f4e271b8d95fc0d8ad8d07",
+      "date": "2026-10-22"
+    },
+    {
+      "id": "background_basic",
+      "name": "Background play and editor",
+      "date": "2026-10-31",
+      "status": "passed",
+      "result": "559 state reads; paddle, launch, pause/resume, full editor save/reload and normal exit on private Xvfb. Audio routed to a muted null sink.",
+      "evidence_id": "ev_0e809417a43ea8ce90935274507492f81ec95bc613dea50541ede8929356de90"
+    },
+    {
+      "id": "windowed_basic",
+      "name": "Windowed play and editor (Wine)",
+      "date": "2026-10-31",
+      "status": "passed",
+      "result": "cnc-ddraw 7.1 GDI at 640x480: ball/paddle, pause/resume, full editor persistence and normal exit; one initial click acquires cursor capture.",
+      "evidence_id": "ev_948f1a061e1c2a87ba5626f7e1170ebdcbeca70413b87c366c422c2b2397cf94"
+    },
+    {
+      "id": "windowed_rankings",
+      "name": "Windowed rankings and restart (Wine)",
+      "date": "2026-10-31",
+      "status": "passed",
+      "result": "960x720 client: three natural life losses, score 222, name editing, complete 660-byte ranking save/reload and two normal exits.",
+      "evidence_id": "ev_00c6a4adad4d193270f26e017a7cf78487f39d97410d16769b9dd4dac98b7b76"
+    },
+    {
+      "id": "native_windows_build",
+      "name": "Native Windows source build",
+      "date": "2026-10-31",
+      "status": "passed",
+      "result": "141 units compiled with VC4; all 270 authored functions match across 53 closures. Linked image differs from the tested game only in build timestamps.",
+      "executable_sha256": "526b890eed0e3fe53bd86add6a883770aceff45dbf54e9060aa976940d4c4afd",
+      "evidence_record": ".analysis/native-windows-build-20261101/authored-comparison.json"
+    },
+    {
+      "id": "windows_manual",
+      "name": "Windows 11 windowed manual play",
+      "date": "2026-10-31",
+      "status": "reported",
+      "result": "The user reports no major playability problem with the 960x720 cnc-ddraw profile. This is manual feedback, not full native driver/audio/campaign certification.",
+      "evidence_kind": "user_report"
     }
   ],
   "remaining": [
-    "Complete the original 50-board campaign.",
-    "Exercise every power-up during actual game play.",
-    "Resolve focus/surface recovery under Wine/Xvfb.",
-    "Verify physical graphics/audio output and MIDI playback."
+    "Complete the original 50-board campaign and exercise every power-up in live play.",
+    "Resolve exclusive-mode focus/surface recovery under Wine/Xvfb; the windowed wrapper does not exercise that contract.",
+    "Complete native graphics/audio/MIDI and frame-pacing characterization if requested."
   ],
   "build_report": "docs/research/CURRENT_VC4_BUILD.md",
-  "playability_report": "docs/research/PLAYABILITY_20261022.md"
+  "playability_report": "docs/research/PLAYABILITY_20261031.md",
+  "historical_playability_report": "docs/research/PLAYABILITY_20261022.md",
+  "windowed_profile": {
+    "wrapper": "cnc-ddraw v7.1.0.0",
+    "wrapper_sha256": "85e0f7d530dfda134793a57cb3e76b0287dcc96892ee57162dd68f47283b03a9",
+    "renderer": "gdi",
+    "client": "960x720",
+    "windowed": true,
+    "nonexclusive": true,
+    "maxfps": 60,
+    "maxgameticks": -1,
+    "round_transition_prefix": {
+      "status": "passed",
+      "board_index": 1,
+      "score": 10,
+      "lives": 3,
+      "board_bytes": 400,
+      "evidence_id": "ev_6317be4a475d3695da551456f38ba4dbdee875974c2d6f9bd6445633b37d837c"
+    },
+    "exclusive_focus_fixture": {
+      "status": "failed_contract_mismatch",
+      "reason": "The wrapper filters activation messages in windowed mode; the expected inactive/surface-restore state is not entered. This is not a surface-recovery pass.",
+      "evidence_id": "ev_6317be4a475d3695da551456f38ba4dbdee875974c2d6f9bd6445633b37d837c"
+    },
+    "audio": "Original 26 WAV and six MIDI files restored after the muted test setup; acoustic/MIDI playback is not newly certified."
+  },
+  "native_windows_build": {
+    "source_units": 141,
+    "authored_exact_functions": 270,
+    "authored_exact_bytes": 84968,
+    "compiler_closures": 53,
+    "original_crt_members": 19,
+    "linker_child_compatibility": "WIN7RTM",
+    "exe_sha256": "526b890eed0e3fe53bd86add6a883770aceff45dbf54e9060aa976940d4c4afd",
+    "bytes": 166400,
+    "only_build_timestamps_differ": true,
+    "game_launched_by_build": false
+  },
+  "native_timing_observation": {
+    "status": "limited_observation",
+    "gameplay_seconds": 20,
+    "samples": 7628,
+    "observed_timer_updates_per_second": 44.57,
+    "median_timer_delta_ms": 17,
+    "p95_timer_delta_ms": 54,
+    "scope": "Read-only Windows game-state sampling, not GPU presentation FPS. Ball speed values 4 and 5 were seen. No 5-to-4 transition was captured; no frame-pacing fix or original-vs-rebuilt timing comparison is claimed. Further sampling was stopped at user request."
+  },
+  "timezone": "Europe/Berlin (UTC+01:00)"
 }

@@ -11,15 +11,16 @@ compiled with Visual C++ 4.0 against the original.
 
 ## Progress
 
-As of October 22, 2026, all **270 authored functions** and **84,968 authored code
-bytes** are exact. The current source builds into a Windows game with the
-original VC4 compiler.
+All **270/270 authored game functions** and **84,968/84,968 authored code bytes**
+are exact. Source recovery completed on October 22, 2026; the October 31 update
+adds native Windows build verification and windowed play results. The game
+builds from the reconstructed C/C++ with the original VC4 compiler.
 
 <p align="center">
   <img src="resources/progress.svg" alt="DX-Ball source reconstruction progress" width="900">
 </p>
 
-The current executable has these results under Wine:
+The current game has these recorded results:
 
 | Check | Result |
 | --- | --- |
@@ -28,15 +29,18 @@ The current executable has these results under Wine:
 | Fifty-board terminal fixture | 50 editor-created single-brick boards, 50 real clears, final routing/storage and normal exit pass. |
 | Original-bank continuous play | A 15-minute episode reaches the third original board, with no crash. |
 | Digital audio | The game produces a verified stereo signal. |
+| Windowed Wine play | cnc-ddraw passes play/editor and 960×720 game-over, ranking save/reload and restart checks. |
+| Native Windows build | All 141 source units compile; all 270 authored functions still match. The linked image differs from the tested build only in build timestamps. |
+| Windows 11 manual play | The user reports no major playability problem with the windowed compatibility profile. |
 
 Remaining validation:
 
 - Complete the original 50-board campaign and exercise every power-up in live play.
-- Resolve focus/surface recovery under Wine/Xvfb. Both original and rebuilt controls have failed recovery checks.
-- Verify physical graphics/audio output and MIDI playback.
+- Resolve exclusive-mode focus/surface recovery under Wine/Xvfb. The windowed wrapper uses different activation behavior.
+- Complete native graphics/audio/MIDI and frame-pacing coverage. Manual feedback is scoped separately from automated checks.
 
 See [progress](docs/PROGRESS.md), the [build record](docs/research/CURRENT_VC4_BUILD.md)
-and [playability results](docs/research/PLAYABILITY_20261022.md) for counts and evidence.
+and [playability results](docs/research/PLAYABILITY_20261031.md) for counts and evidence.
 
 ## Reconstruction with REA
 
@@ -68,6 +72,11 @@ The build links 138 source objects, three integration objects and 19 original
 CRT members. Original assets are supplied separately. The
 [build guide](docs/BUILD.md) covers headless Wine, other build profiles and the
 local delivery bundle.
+
+A prepared Windows package also provides **Build Reconstruction.cmd**, with
+English progress output, and **Play Rebuilt DX-Ball.cmd**. It compiles every
+source unit using the bundled pinned compiler; Windows needs neither Python nor
+WSL. See [the native Windows build instructions](docs/BUILD.md#native-windows-source-build).
 
 ## Read the code
 

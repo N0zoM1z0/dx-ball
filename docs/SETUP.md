@@ -123,13 +123,14 @@ and publish verified changes to your fork:
 
 ```text
 /goal Reconstruct English DX-Ball v1.07 from original/DXBALL.EXE as readable,
-rebuildable C/C++. All 270 authored functions are currently byte-exact with
-Visual C++ 4.0. Preserve that checkpoint and complete live-game validation.
+rebuildable C/C++. All 270 authored functions are byte-exact with Visual C++ 4.0.
+Preserve that checkpoint and maintain the requested source/build/documentation work.
 
 Read AGENTS.md, docs/agent/HANDOFF.md, and docs/agent/WORKFLOW.md. Continue from
-the handoff: diagnose focus recovery, complete the original 50-board campaign,
-exercise every power-up and verify graphics/audio/MIDI output. Reuse saved
-evidence. Use REA when a behavior question needs binary analysis.
+the handoff and the user's current scope. Native Windows source builds and
+windowed manual play are now recorded. Reuse saved evidence. Long campaign
+tests and frame sampling were stopped; do not treat remaining coverage as an
+automatic test queue. Use REA when a behavior question needs binary analysis.
 
 Write typed source shared by the portable and legacy builds, preserving the
 original calling conventions, integer widths, ownership, and state changes.
@@ -160,5 +161,5 @@ Keeping it in one file makes it easy to review without interrupting recovery:
 Append useful REA feedback to /tmp/dxball-rea-feedback.md. Note slow calls,
 oversized responses, token and context costs, and usability improvements,
 with a concrete example when available. Keep this optional and brief;
-function reconstruction remains the priority. Reuse the same document.
+the user's current task remains the priority. Reuse the same document.
 ```

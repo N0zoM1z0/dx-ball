@@ -1,7 +1,8 @@
 # Contributor reconstruction workflow
 
 Authored exact recovery is complete. Start with [the handoff](HANDOFF.md) and
-[progress](../PROGRESS.md); the current priority is live-game validation.
+[progress](../PROGRESS.md). Follow the user's current documentation/build scope;
+long campaign and frame-rate sampling runs have been stopped.
 [AGENTS.md](../../AGENTS.md) sets execution limits and publication rules.
 
 ## Establish the question
@@ -56,8 +57,10 @@ retained receipts and ledger checks; they do not require another game build.
 Use a separate runtime copy and record the tested executable hash, environment,
 input path and observed state. Keep normal application exit distinct from observer
 cleanup. For a failure, retain the failing trace and compare the original under
-the same conditions when that will narrow the cause. Follow the current focus
-investigation in [the playability record](../research/PLAYABILITY_20261022.md).
+the same conditions when that will narrow the cause. Follow the environment and
+activation distinctions in [the playability record](../research/PLAYABILITY_20261031.md).
+Use [background execution](BACKGROUND_PLAY.md) when a host desktop must remain
+undisturbed. A Windows foreground harness is not an acceptable substitute.
 
 Run one writable compiler/provider/Wine session at a time under the resource limits
 in AGENTS.md. Route automated audio to the dedicated silent capture sink.

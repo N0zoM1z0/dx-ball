@@ -1,6 +1,6 @@
 # Reconstruction progress
 
-Updated 2026-10-22.
+Updated 2026-10-31.
 
 ## Source reconstruction
 
@@ -16,45 +16,31 @@ Updated 2026-10-22.
 
 The vc40-restored-crt game builds with Visual C++ 4.0. It links 138 source objects, 3 integration objects and 19 original CRT members.
 
-Verification environment: Wine with 640x480x24 Xvfb.
+Verification environment: Wine with isolated 24-bit Xvfb; Windows 11 windowed manual play (user report).
 
-| Check | Status | Observed result |
-| --- | --- | --- |
-| Basic play and editor | Passed | Paddle movement, ball release, pause/resume, editor painting and full 20,000-byte save/reload; normal exit. |
-| Round transition | Passed | Real single-brick clear followed by all 400 bytes of original board index 1; normal exit. |
-| Game-over and rankings | Passed | Three natural life losses, name editing, full 660-byte ranking save and fresh-process reload; two normal exits. |
-| Fifty-board terminal fixture | Passed | 50 editor-created single-brick boards, 50 real clears, final index 50/score 500/lives 3, terminal storage and normal exit. |
-| Original-bank continuous play | Passed | 900.046 seconds of real-input play, original boards 0/1/2 initialized, final sampled score 2,718 and lives 3. |
-| Digital audio signal | Passed | 5.991678 seconds of finite stereo PCM with nonzero samples in both channels from the game stream. |
-| Focus recovery | Failed | Original and rebuilt controls fail the motion check; persistent rebuilt observation later times out returning to menu. Cause unresolved. |
+Windows manual feedback is recorded separately from automated Wine checks.
 
-See [the build record](research/CURRENT_VC4_BUILD.md) and [playability results](research/PLAYABILITY_20261022.md) for the tested image and evidence.
+| Check | Date | Status | Observed result |
+| --- | --- | --- | --- |
+| Basic play and editor | 2026-10-22 | Passed | Paddle movement, ball release, pause/resume, editor painting and full 20,000-byte save/reload; normal exit. |
+| Round transition | 2026-10-22 | Passed | Real single-brick clear followed by all 400 bytes of original board index 1; normal exit. |
+| Game-over and rankings | 2026-10-22 | Passed | Three natural life losses, name editing, full 660-byte ranking save and fresh-process reload; two normal exits. |
+| Fifty-board terminal fixture | 2026-10-22 | Passed | 50 editor-created single-brick boards, 50 real clears, final index 50/score 500/lives 3, terminal storage and normal exit. |
+| Original-bank continuous play | 2026-10-22 | Passed | 900.046 seconds of real-input play, original boards 0/1/2 initialized, final sampled score 2,718 and lives 3. |
+| Digital audio signal | 2026-10-22 | Passed | 5.991678 seconds of finite stereo PCM with nonzero samples in both channels from the game stream. |
+| Exclusive focus recovery (Wine built-in DirectDraw) | 2026-10-22 | Failed | Original and rebuilt controls fail the motion check; persistent rebuilt observation later times out returning to menu. Cause unresolved. |
+| Background play and editor | 2026-10-31 | Passed | 559 state reads; paddle, launch, pause/resume, full editor save/reload and normal exit on private Xvfb. Audio routed to a muted null sink. |
+| Windowed play and editor (Wine) | 2026-10-31 | Passed | cnc-ddraw 7.1 GDI at 640x480: ball/paddle, pause/resume, full editor persistence and normal exit; one initial click acquires cursor capture. |
+| Windowed rankings and restart (Wine) | 2026-10-31 | Passed | 960x720 client: three natural life losses, score 222, name editing, complete 660-byte ranking save/reload and two normal exits. |
+| Native Windows source build | 2026-10-31 | Passed | 141 units compiled with VC4; all 270 authored functions match across 53 closures. Linked image differs from the tested game only in build timestamps. |
+| Windows 11 windowed manual play | 2026-10-31 | User-reported | The user reports no major playability problem with the 960x720 cnc-ddraw profile. This is manual feedback, not full native driver/audio/campaign certification. |
+
+See [the build record](research/CURRENT_VC4_BUILD.md) and [playability results](research/PLAYABILITY_20261031.md) for the tested image and evidence.
 
 ## Still to verify
 
-- Complete the original 50-board campaign.
-- Exercise every power-up during actual game play.
-- Resolve focus/surface recovery under Wine/Xvfb.
-- Verify physical graphics/audio output and MIDI playback.
-
-## Full function inventory
-
-The inventory also contains CRT routines and compiler-generated entries.
-
-| Item | Count |
-| --- | ---: |
-| Provisional independent entries | 553 |
-| Parent-owned compiler fragments | 24 |
-| Source-present entries | 475 |
-| Exact entries | 415 |
-| Exact code bytes | 99,352 |
-| Scoped semantic acceptances | 249 |
-| Source-present nonexact entries | 60 |
-| Entries without source | 78 |
-
-| Origin | Source-present nonexact | Without source |
-| --- | ---: | ---: |
-| Compiler-generated | 0 | 1 |
-| Runtime | 60 | 77 |
+- Complete the original 50-board campaign and exercise every power-up in live play.
+- Resolve exclusive-mode focus/surface recovery under Wine/Xvfb; the windowed wrapper does not exercise that contract.
+- Complete native graphics/audio/MIDI and frame-pacing characterization if requested.
 
 Generated by `scripts/repo-python scripts/progress.py` from the function ledgers and [verification record](../config/playability-status.json).

@@ -10,6 +10,8 @@ Run Python entry points through `scripts/repo-python` from the repository root.
 | MinGW Windows game | `build-windows.py` |
 | Current VC4 game | `bootstrap-tools.py`, `build-legacy.py --restored-crt` |
 | Prepare or launch the current game | `run-windows.py --profile vc40-restored-crt` |
+| Export a native Windows recording/build package | `export-windows-build.py /path/to/package/reconstruction` |
+| Compile the exported package on Windows | `Build Reconstruction.cmd` / `Build-Reconstruction.ps1` |
 | REA setup and binary analysis | `bootstrap-rea.py`, `rea` |
 | Compare selected complete functions | `replay-exact-units.py --unit UNIT` |
 | Check source and acceptance ledgers | `validate-tracking.py` |

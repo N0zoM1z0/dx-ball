@@ -49,6 +49,13 @@ and fire effects, draws moving objects, presents the back buffer and advances
 palette animation. It then handles explosion requests, collected bonuses,
 level/life transitions and launch/firing input.
 
+Ball movement uses fixed integer velocity per frame. New balls start with speed
+5; the slowing bonus sets speed 4, and the fast effect adds two up to 9. Rebounds
+recompute integer velocity from an angle. These original gameplay changes are
+separate from frame pacing: the software wait path targets at least 17 ms per
+update, and the simulation does not compensate for a slow frame with elapsed-time
+movement. See [the timing observation](research/PLAYABILITY_20261031.md#activation-and-timing-limits).
+
 [gameplay.c](../src/gameplay.c) owns brick-hit rules;
 [effects.c](../src/effects.c) advances animations;
 [bonuses.cpp](../src/bonuses.cpp) and [particles.c](../src/particles.c) own their

@@ -1,8 +1,8 @@
 # Current handoff
 
-Updated October 22, 2026. Read [progress](../PROGRESS.md) for the generated status,
+Updated October 31, 2026. Read [progress](../PROGRESS.md) for the generated status,
 [the build record](../research/CURRENT_VC4_BUILD.md) for products and
-[playability results](../research/PLAYABILITY_20261022.md) for the latest runs.
+[playability results](../research/PLAYABILITY_20261031.md) for the latest runs.
 
 ## Completed
 
@@ -18,19 +18,33 @@ Updated October 22, 2026. Read [progress](../PROGRESS.md) for the generated stat
 - A 900.046-second original-bank episode reaches board index 2, with final
   sampled score 2,718/lives 3 and 27,596 valid samples. The verified game stream
   produces 5.991678 seconds of finite stereo PCM with nonzero signal.
+- October 31 isolated Wine checks pass built-in basic/editor and cnc-ddraw
+  basic/editor plus 960×720 game-over/ranking/restart flows. The user reports
+  no major issue in Windows 11 windowed play. Keep that feedback scoped.
+- Native Windows compilation passes all 141 units. Its 270 authored functions
+  remain exact across 53 closures; the linked image differs from the tested
+  game only in PE/resource timestamps. The linker child uses `WIN7RTM`; source
+  compiler flags and game bodies are unchanged.
+- Original Windows WAV/MIDI assets are restored after the temporary muted copy.
+  The native source package has English recording/build launchers and progress.
 
-## Next work
+## Current work and remaining coverage
 
-1. Diagnose focus recovery under Wine/Xvfb. Original and rebuilt controls fail
-   the same fixed-interval motion check. Persistent rebuilt observation passes
-   initial resumed motion, then times out returning to menu. Record actual X11
-   keyboard focus/stacking and DirectDraw cooperative/surface state after the
-   SDK foreground request. Preserve the existing failed controls for comparison.
-2. Complete the original 50-board campaign and exercise every power-up in live
-   play. The 50-board terminal fixture and the original-bank episode have their
-   own recorded scopes.
-3. Verify physical graphics/audio output and MIDI playback. Resume platform
-   ports after current game validation.
+The user stopped full background testing and frame sampling, then requested
+documentation/folder cleanup, restored sound and a Windows recording build.
+Do not restart the historical test queue merely because coverage remains open.
+Keep the progress graphic focused on 270/270 authored functions; broader
+runtime inventories remain in the ledgers and status CLI.
+
+Unverified scope remains: the original 50-board campaign, every power-up in live
+play, exclusive focus/surface recovery and complete native audio/MIDI/frame
+pacing. The windowed wrapper filters activation messages, so its failure to
+enter the exclusive fixture's inactive state is a contract mismatch, not a
+surface-recovery pass. Retain the October 22 failures separately.
+
+Follow [background execution](BACKGROUND_PLAY.md) for future requested Wine
+checks. Never drive the user's Windows/WSLg input desktop. Native build checks
+do not launch a Windows game automatically.
 
 ## Artifacts and evidence
 
@@ -43,6 +57,10 @@ Updated October 22, 2026. Read [progress](../PROGRESS.md) for the generated stat
 | Current link/basic/editor/round checkpoint | `.analysis/current-vc4-exact270-20261022/current-checkpoint.json` |
 | Expanded validation and cleanup | `.analysis/playability-exact270-20261022/current-checkpoint.json` |
 | Expanded REA process responses | `.analysis/rea/playability-exact270-20261022/` |
+| October 31 Wine process responses | `.analysis/rea/wine-background-20261101/` |
+| Native Windows object/image comparisons | `.analysis/native-windows-build-20261101/` |
+| Native rebuilt EXE | `build/dxball-native-windows.exe` |
+| Native Windows package exporter | `scripts/export-windows-build.py` |
 | Public verification metadata | `config/playability-status.json` |
 
 The final PCX, last-brick, rotation and other source recoveries are indexed in

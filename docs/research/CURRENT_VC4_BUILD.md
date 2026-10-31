@@ -3,7 +3,9 @@
 October 22, 2026. The `vc40-restored-crt` game is built from source checkpoint
 `ecfc475715238c43241a5979b1745a163749b9dc`, which completes all 270 authored exact
 functions. [Build instructions](../BUILD.md) explain how to reproduce it;
-[playability results](PLAYABILITY_20261022.md) describe the tested behavior.
+[October 22 playability](PLAYABILITY_20261022.md) describes that image's original
+checks. The [October 31 update](PLAYABILITY_20261031.md) adds windowed play,
+Windows manual feedback and a native Windows source build without changing game source.
 
 ## Products
 
@@ -44,3 +46,30 @@ exact audit. The last link takes 22.362 seconds at 35% CPU, with peak memory
 
 Earlier images, cold builds and failed runs are described in the
 [preceding build record](https://github.com/N0zoM1z0/dx-ball/blob/9752a6954ec1bea5da2885ba236ca51a5c8976a0/docs/research/CURRENT_VC4_BUILD.md).
+
+## Native Windows rebuild, October 31
+
+`Build Reconstruction.cmd` compiles all 141 units with the same VC4 recipes and
+extracts the same 19 approved original CRT members. All 270 authored functions
+and 84,968 code bytes pass the complete comparisons across 53 compiler closures
+using the native objects; no source was changed to obtain this result.
+
+The Windows 11 linker child needs `WIN7RTM` compatibility. This setting applies
+only to `link.exe`, without elevation or registry edits. The source compiler
+context remains unchanged. A clean compilation was followed by hash-verified
+object reuse while resolving the linker issue; the normal recording launcher
+always compiles all units again. English progress, compiler logs and
+`build-report.json` accompany the native package.
+
+The native EXE is 166,400 bytes with SHA-256
+`526b890eed0e3fe53bd86add6a883770aceff45dbf54e9060aa976940d4c4afd`.
+Only 18 bytes in six PE/resource build timestamp fields differ from the tested
+October 22 image. Every code/data/import/relocation section otherwise agrees,
+with the same RVAs and sizes. The build does not launch the game.
+
+Retained proof is under `.analysis/native-windows-build-20261101/`, including
+`authored-comparison.json`, `image-comparison.json`, the compiler transcript and
+native build receipt. The repo-local copy is `build/dxball-native-windows.exe`;
+the Windows package writes `build/game/dxball.exe` and preserves its existing
+tested `game/dxball.exe`. [Build and play](../BUILD.md#native-windows-source-build)
+explains packaging and the recording launcher.

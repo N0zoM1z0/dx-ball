@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Generate progress counts, verification results and the inventory graphic."""
-import csv
+"""Generate authored completion, verification results and the progress graphic."""
 import importlib.util
 from pathlib import Path
 
@@ -12,28 +11,23 @@ spec.loader.exec_module(module)
 
 def main():
     status = module.status()
-    with (ROOT / "config/functions.csv").open() as stream:
-        functions = list(csv.DictReader(stream))
-    with (ROOT / "config/matches.csv").open() as stream:
-        exact = {row["address"] for row in csv.DictReader(stream)}
-    with (ROOT / "config/implemented.csv").open() as stream:
-        source = {row["address"] for row in csv.DictReader(stream)}
-    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">',
+    authored = status['authored_confirmed']
+    authored_exact = status['authored_exact_functions']
+    fraction = authored_exact / authored if authored else 0
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">',
            '<title id="title">DX-Ball reconstruction progress</title>',
-           f'<desc id="desc">{status["authored_exact_functions"]} of {status["authored_confirmed"]} authored functions exact; {status["exact_functions"]} exact entries in the full {len(functions)}-entry inventory.</desc>',
-           '<rect width="900" height="460" rx="20" fill="#101722"/>',
+           f'<desc id="desc">{authored_exact} of {authored} authored game functions and {status["authored_exact_bytes"]:,} authored code bytes exact.</desc>',
+           '<rect width="900" height="300" rx="20" fill="#101722"/>',
            '<g font-family="sans-serif">',
-           '<text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  RECONSTRUCTION</text>',
+           '<text x="34" y="46" fill="#eef4ff" font-size="25" font-weight="bold">DX-BALL  /  GAME SOURCE RECONSTRUCTION</text>',
            '<text x="34" y="75" fill="#9baec8" font-size="14">English v1.07 · REA / Ghidra · Visual C++ 4.0</text>',
-           f'<text x="34" y="109" fill="#4ed8b7" font-size="16">{status["authored_exact_functions"]}/{status["authored_confirmed"]} authored exact · {status["authored_exact_bytes"]:,} bytes</text>',
-           f'<text x="520" y="109" fill="#f5bd57" font-size="16">{status["exact_functions"]} exact total · {status["source_present"]} source-present</text>']
-    for i, function in enumerate(functions):
-        color = "#4ed8b7" if function["address"] in exact else "#f5bd57" if function["address"] in source else "#29384c"
-        x, y = 34 + (i % 33) * 25, 132 + (i // 33) * 14
-        svg.append(f'<rect x="{x}" y="{y}" width="22" height="10" rx="2" fill="{color}"/>')
-    svg += ['<text x="34" y="388" fill="#9baec8" font-size="13">Green: exact · Amber: source present · Dark: source missing</text>',
-            '<text x="34" y="412" fill="#9baec8" font-size="13">Inventory includes game routines, CRT dependencies and compiler-generated entries.</text>',
-            '</g></svg>']
+           f'<text x="34" y="128" fill="#4ed8b7" font-size="34" font-weight="bold">{authored_exact} / {authored} authored game functions exact</text>',
+           f'<text x="34" y="159" fill="#eef4ff" font-size="18">{status["authored_exact_bytes"]:,} / {status["authored_code_bytes"]:,} code bytes · {status["authored_compiler_closures"]} compiler closures</text>',
+           '<rect x="34" y="181" width="832" height="18" rx="9" fill="#29384c"/>',
+           f'<rect x="34" y="181" width="{832 * fraction:g}" height="18" rx="9" fill="#4ed8b7"/>',
+           f'<text x="34" y="226" fill="#4ed8b7" font-size="18">Authored source recovery: {100 * fraction:g}% · runnable VC4 game build</text>',
+           '<text x="34" y="272" fill="#9baec8" font-size="14">The restored-CRT build retains 19 original CRT members explicitly.</text>',
+           '</g></svg>']
     (ROOT / "resources").mkdir(exist_ok=True)
     (ROOT / "resources/progress.svg").write_text("\n".join(svg) + "\n")
 
@@ -51,30 +45,16 @@ def main():
              f"{build['source_objects']} source objects, {build['integration_objects']} integration objects "
              f"and {build['original_crt_members']} original CRT members.", "",
              f"Verification environment: {play['environment']}.", "",
-             "| Check | Status | Observed result |", "| --- | --- | --- |"]
-    labels = {"passed": "Passed", "failed": "Failed"}
+             "Windows manual feedback is recorded separately from automated Wine checks.", "",
+             "| Check | Date | Status | Observed result |", "| --- | --- | --- | --- |"]
+    labels = {"passed": "Passed", "failed": "Failed", "reported": "User-reported"}
     for check in play["checks"]:
-        lines.append(f"| {check['name']} | {labels[check['status']]} | {check['result']} |")
+        lines.append(f"| {check['name']} | {check['date']} | {labels[check['status']]} | {check['result']} |")
+    playability_report = Path(play['playability_report']).relative_to('docs').as_posix()
     lines += ["", "See [the build record](research/CURRENT_VC4_BUILD.md) and "
-              "[playability results](research/PLAYABILITY_20261022.md) for the tested image and evidence.",
+              f"[playability results]({playability_report}) for the tested image and evidence.",
               "", "## Still to verify", ""]
     lines += ["- " + item for item in play["remaining"]]
-    lines += ["", "## Full function inventory", "",
-              "The inventory also contains CRT routines and compiler-generated entries.", "",
-              "| Item | Count |", "| --- | ---: |",
-              f"| Provisional independent entries | {status['function_candidates']} |",
-              f"| Parent-owned compiler fragments | {status['parent_owned_compiler_fragments']} |",
-              f"| Source-present entries | {status['source_present']} |",
-              f"| Exact entries | {status['exact_functions']} |",
-              f"| Exact code bytes | {status['exact_bytes']:,} |",
-              f"| Scoped semantic acceptances | {status['semantic_validated_with_scope']} |",
-              f"| Source-present nonexact entries | {status['source_present_nonexact']} |",
-              f"| Entries without source | {status['source_missing']} |", "",
-              "| Origin | Source-present nonexact | Without source |",
-              "| --- | ---: | ---: |"]
-    origin_labels = {"authored": "Authored", "runtime": "Runtime", "compiler_generated": "Compiler-generated", "unknown": "Unknown"}
-    for origin in sorted(status["source_present_nonexact_origins"].keys() | status["source_missing_origins"].keys()):
-        lines.append(f"| {origin_labels[origin]} | {status['source_present_nonexact_origins'].get(origin, 0)} | {status['source_missing_origins'].get(origin, 0)} |")
     lines += ["",
               "Generated by `scripts/repo-python scripts/progress.py` from the function ledgers "
               "and [verification record](../config/playability-status.json)."]

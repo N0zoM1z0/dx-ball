@@ -8,7 +8,8 @@
 | How does the game fit together? | [Architecture](ARCHITECTURE.md) and [source map](../src/README.md) |
 | How is a function matched? | [Matching](MATCHING.md) and the [REA worked example](REA.md) |
 | Which executable was tested? | [Current VC4 build](research/CURRENT_VC4_BUILD.md) |
-| Which play checks passed or failed? | [Playability results](research/PLAYABILITY_20261022.md) |
+| Which play checks passed or failed? | [Current playability](research/PLAYABILITY_20261031.md), [October 22 evidence](research/PLAYABILITY_20261022.md) |
+| How do I build directly on Windows? | [Native Windows build](BUILD.md#native-windows-source-build) |
 | Where are the subsystem investigations? | [Research index](research/README.md) |
 
 Contributors start with [AGENTS.md](../AGENTS.md), the

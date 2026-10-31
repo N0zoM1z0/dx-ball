@@ -17,8 +17,9 @@ to REA's instructions, callers and data consumers to resolve those questions,
 then revise the source and compare again.
 
 All 270 authored functions now match across 84,968 code bytes and 53 compiler
-closures. The remaining 60 source-present nonexact entries are CRT routines.
-See [progress](PROGRESS.md) for the full inventory.
+closures. The native Windows compiler objects pass the same complete authored
+comparisons. See [progress](PROGRESS.md) for game recovery and validation results;
+the dependency link remains explicit in [restored-crt-link.json](../config/restored-crt-link.json).
 
 ## Reproduce a comparison
 
