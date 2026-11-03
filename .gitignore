@@ -12,3 +12,6 @@ __pycache__/
 *.log
 *.gpr
 *.rep/
+*.app/
+dxball
+.DS_Store

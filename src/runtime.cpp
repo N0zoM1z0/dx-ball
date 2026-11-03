@@ -42,6 +42,7 @@ DxBallInt dxball_device_reset_requested = 1;
 DxBallInt dxball_surface_restore_requested;
 DxBallInt dxball_display_buffer_count = 1;
 DxBallDDSurface *dxball_primary_surface, *dxball_secondary_surface;
+void (*dxball_present_screen_hook)(void) = NULL;
 
 void dxball_draw_score(void)
 {
@@ -326,6 +327,9 @@ DxBallInt dxball_dispatch_frame(void)
         dxball_display_mode = dxball_return_to_menu;
         dxball_initialize_mode();
         dxball_end_requested = 0;
+    }
+    if (dxball_present_screen_hook != NULL) {
+        dxball_present_screen_hook();
     }
     return 1;
 }

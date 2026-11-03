@@ -77,7 +77,7 @@ add_library(dxball_core SHARED
     src/memory.c
     src/sound.c
 )
-if(UNIX)
+if(UNIX AND NOT APPLE)
     target_sources(dxball_core PRIVATE src/runtime_text_host.c src/directx_factory_host.c)
     target_link_libraries(dxball_core PRIVATE m)
     # Keep recovered C++ allocation inside this image's existing heap boundary.
@@ -87,6 +87,14 @@ if(UNIX)
     set_property(TARGET dxball_core APPEND PROPERTY LINK_DEPENDS
         "${CMAKE_CURRENT_SOURCE_DIR}/config/native-symbols.map"
         "${CMAKE_CURRENT_SOURCE_DIR}/config/board-storage.ld")
+endif()
+if(APPLE)
+    target_sources(dxball_core PRIVATE src/runtime_text_host.c src/directx_factory_host.c)
+    target_link_libraries(dxball_core PRIVATE m)
+    find_package(SDL2 REQUIRED)
+    add_executable(dxball src/mac_entry.c src/mac_adapter.c)
+    target_link_libraries(dxball PRIVATE dxball_core SDL2::SDL2 "-framework AudioToolbox")
+    target_include_directories(dxball PRIVATE src)
 endif()
 if(WIN32)
     target_link_libraries(dxball_core PRIVATE dsound ddraw winmm)
