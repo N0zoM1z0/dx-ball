@@ -5,6 +5,7 @@
 - [Progress](../PROGRESS.md): authored exact coverage, build and remaining validation.
 - [Current VC4 build](CURRENT_VC4_BUILD.md): compiler inputs, executable and delivery identities.
 - [October 31 playability](PLAYABILITY_20261031.md): isolated Wine checks, Windows manual play, windowed profile and native build.
+- [Linux Proton](LINUX_PROTON_WINDOWED.md): windowed original-EXE launch and CPU quota observation.
 - [October 22 playability](PLAYABILITY_20261022.md): retained campaign/audio checks and exclusive focus controls.
 - [Exact reconstruction](exact/README.md): accepted source families and compiler evidence.
 
