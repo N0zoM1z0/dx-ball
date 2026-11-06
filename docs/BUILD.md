@@ -93,6 +93,13 @@ Original WAV and MIDI files have been restored after the temporary muted setup.
 Restart the game to reload any silent buffers. Windows master volume, other
 application volumes and the default device are not changed by the package.
 
+## Windowed Linux play with Steam Proton
+
+An [interactive Proton and Xephyr trial](research/LINUX_PROTON_WINDOWED.md)
+documents how the separately supplied original EXE was opened in a 640×480
+Linux window. It also records a CPU quota bottleneck observed during that trial.
+This does not establish playability of a locally rebuilt EXE under Proton.
+
 ## Headless Wine
 
 Use a 640×480, 24-bit Xvfb host screen:
