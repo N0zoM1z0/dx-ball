@@ -7,7 +7,8 @@ DX-Ball v1.07 executable. It does not verify a locally rebuilt executable.
 
 On 2026-11-06, the original executable opened in a 640×480 Linux window and
 rendered its title screen. The user could interact with it and reported slow
-play and delayed audio at first. The tested environment was Ubuntu 24.04.5 LTS
+play and delayed audio at first, then reported that the audio sounded perfect
+after the CPU quota increase. The tested environment was Ubuntu 24.04.5 LTS
 on X11, Steam Proton 10.0-4b, Xephyr at 640×480×24, and cnc-ddraw v7.1.0.0.
 The source checkout was at `36856cb`. The imported original executable had
 SHA-256 `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`;
@@ -96,9 +97,11 @@ should measure before choosing an interactive quota.
 At `CPUQuota=35%`, the Proton game scope was throttled in 2222 of 2240
 measured CPU periods. The user reported slow play and delayed audio. Raising
 the active scope to `CPUQuota=200%` produced zero newly throttled periods
-during an 86-period sample. The private local launcher now uses that quota on subsequent starts. The user's perception of audio timing after the change has
-not been verified, so the CPU limit is a measured bottleneck and a plausible
-contributor to the audio delay, not a confirmed complete audio fix.
+during an 86-period sample. The private local launcher now uses that quota
+on subsequent starts. After the change, the user reported that the audio
+sounded perfect. This is a
+subjective play report, not a measured latency or synchronization result
+across other hosts.
 
 Two other windowing routes were tried on the same host. Wine's virtual
 desktop opened a blank game surface. Running cnc-ddraw directly against the
