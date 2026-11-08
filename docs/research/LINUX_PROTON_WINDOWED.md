@@ -82,9 +82,12 @@ trap - EXIT
 
 The first launch creates the private Proton prefix and can take longer. The
 Xephyr window closes when the game process exits. Click inside the window to
-give it focus. Move the paddle with the mouse; the original readme says the
-left button releases a grabbed ball. cnc-ddraw's `Ctrl+Tab` releases the
-captured cursor.
+give it focus, then press `Ctrl+Shift` to grab the host mouse and keyboard
+inside Xephyr. Press `Ctrl+Shift` again to release them. A click alone does
+not enable Xephyr's host grab. Move the paddle with the mouse; the original
+readme says the left button releases a grabbed ball. cnc-ddraw's `Ctrl+Tab`
+releases its own cursor capture, but Xephyr keeps the host pointer confined
+until `Ctrl+Shift` is pressed again.
 
 The 200% CPU quota above records the interactive setting that removed the
 observed throttling on this host. It is an exception for this manual play
