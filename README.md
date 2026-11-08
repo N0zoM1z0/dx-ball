@@ -48,6 +48,7 @@ The current game has these recorded results:
 | Windowed Wine play | cnc-ddraw passes play/editor and 960×720 game-over, ranking save/reload and restart checks. |
 | Native Windows build | All 141 source units compile; all 270 authored functions still match. The linked image differs from the tested build only in build timestamps. |
 | Windows 11 manual play | The user reports no major playability problem with the windowed compatibility profile. |
+| Native Linux SDL2 play | Board 1, paddle movement, ball release, audio output and all six music files passed focused checks; the user reported good interactive play. |
 
 Remaining validation:
 
@@ -88,6 +89,26 @@ The build links 138 source objects, three integration objects and 19 original
 CRT members. Original assets are supplied separately. The
 [build guide](docs/BUILD.md) covers headless Wine, other build profiles and the
 local delivery bundle.
+
+### Native Linux game
+
+The SDL2 port runs the reconstructed game core as a Linux executable. Install
+a C/C++ compiler, CMake, Ninja, pkg-config and the SDL2 development package.
+After importing the separately supplied original game assets into `original/`,
+run from the repository root:
+
+```bash
+cmake -S . -B build/native -G Ninja -DDXBALL_BUILD_LINUX_GAME=ON
+cmake --build build/native --target dxball_linux --parallel 1
+./linux/run.sh
+```
+
+The game opens in a resizable 1280x960 window. F12 releases or captures the
+mouse; the pointer is hidden while captured. During play, Ctrl+1 through
+Ctrl+4 activate the game cheats, and Ctrl+5 enables the brick-piercing power.
+The original WAV effects play through SDL2; the MDS music uses an approximate
+software synthesizer. The [Linux port guide](docs/agent/LINUX_NATIVE_PORT.md)
+records implementation details, verification and remaining coverage.
 
 ### Native Windows source build
 
