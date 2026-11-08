@@ -23,15 +23,30 @@ static SDL_AudioDeviceID audio_device;
 static NativeSoundBuffer *buffers;
 static NativeSoundDevice sound_device;
 
+static void read_frame(const NativeSoundBuffer *buffer, int index, int bytes_per_frame,
+    float *left, float *right) {
+    const uint8_t *sample = buffer->samples + index * bytes_per_frame;
+    if (buffer->bits == 8) {
+        *left = ((int)sample[0] - 128) / 128.0f;
+        *right = buffer->channels > 1 ? ((int)sample[1] - 128) / 128.0f : *left;
+    } else {
+        int16_t l, r;
+        memcpy(&l, sample, 2);
+        if (buffer->channels > 1) memcpy(&r, sample + 2, 2);
+        else r = l;
+        *left = l / 32768.0f;
+        *right = r / 32768.0f;
+    }
+}
 static void audio_mix(void *userdata, Uint8 *stream, int length) {
     (void)userdata;
     float *output = (float *)stream;
     int frames = length / (int)(2 * sizeof(float));
     memset(stream, 0, (size_t)length);
     for (NativeSoundBuffer *buffer = buffers; buffer; buffer = buffer->next) {
-        if (!buffer->playing || !buffer->samples || !buffer->channels || !buffer->bits) continue;
+        if (!buffer->playing || !buffer->samples || !buffer->channels ||
+            (buffer->bits != 8 && buffer->bits != 16)) continue;
         int bytes_per_frame = buffer->channels * buffer->bits / 8;
-        if (!bytes_per_frame) continue;
         int total_frames = (int)(buffer->bytes / bytes_per_frame);
         if (!total_frames) continue;
         double gain = pow(10.0, buffer->volume / 2000.0);
@@ -40,26 +55,19 @@ static void audio_mix(void *userdata, Uint8 *stream, int length) {
         double step = (double)buffer->frequency / 44100.0;
         if (step <= 0.0) step = 1.0;
         for (int frame = 0; frame < frames; ++frame) {
-            int index = (int)buffer->frame_position;
-            if (index >= total_frames) {
+            if (buffer->frame_position >= total_frames) {
                 if (!buffer->looping) { buffer->playing = 0; break; }
-                buffer->frame_position = 0.0;
-                index = 0;
+                buffer->frame_position = fmod(buffer->frame_position, (double)total_frames);
             }
-            float left, right;
-            if (buffer->bits == 8) {
-                const uint8_t *sample = buffer->samples + index * bytes_per_frame;
-                left = ((int)sample[0] - 128) / 128.0f;
-                right = buffer->channels > 1 ? ((int)sample[1] - 128) / 128.0f : left;
-            } else if (buffer->bits == 16) {
-                const uint8_t *sample = buffer->samples + index * bytes_per_frame;
-                int16_t l, r;
-                memcpy(&l, sample, 2);
-                if (buffer->channels > 1) memcpy(&r, sample + 2, 2);
-                else r = l;
-                left = l / 32768.0f;
-                right = r / 32768.0f;
-            } else { buffer->playing = 0; break; }
+            int index = (int)buffer->frame_position;
+            int next = index + 1;
+            if (next >= total_frames) next = buffer->looping ? 0 : index;
+            float left, right, next_left, next_right;
+            read_frame(buffer, index, bytes_per_frame, &left, &right);
+            read_frame(buffer, next, bytes_per_frame, &next_left, &next_right);
+            float fraction = (float)(buffer->frame_position - index);
+            left += (next_left - left) * fraction;
+            right += (next_right - right) * fraction;
             output[frame * 2] += (float)(left * left_gain);
             output[frame * 2 + 1] += (float)(right * right_gain);
             buffer->frame_position += step;
@@ -113,9 +121,11 @@ static DxBallInt buffer_play(DxBallSoundBuffer *buffer, DxBallUInt reserved,
     (void)reserved; (void)priority;
     NativeSoundBuffer *item = as_buffer(buffer);
     audio_lock();
-    item->playing = item->bytes > 0;
     item->looping = (flags & 1) != 0;
-    item->frame_position = 0.0;
+    if (!item->playing) {
+        item->playing = item->bytes > 0;
+        item->frame_position = 0.0;
+    }
     audio_unlock();
     return 0;
 }

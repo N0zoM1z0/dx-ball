@@ -46,9 +46,12 @@ through an RGBA texture. DirectDraw's `DDBLTFAST_WAIT` flag (0x10) must still
 copy zero-valued pixels; only `DDBLTFAST_SRCCOLORKEY` (0x01) enables the sprite
 color key. The distinction prevents stale paddle images after a wide mouse move.
 
-`linux/sdl_audio.c` mixes the original PCM WAV effects. `linux/sdl_music.c`
-decodes all six MDS files and synthesizes their note events. The synthesizer
-uses approximate instrument sounds; its timbre is not a General MIDI soundfont.
+`linux/sdl_audio.c` mixes the original PCM WAV effects. Repeated Play calls
+on an active buffer retain its playback position; changed sample rates use
+linear interpolation and preserve the fractional position across loop wraps.
+`linux/sdl_music.c` decodes all six MDS files and synthesizes their note
+events. The synthesizer uses approximate instrument sounds; its timbre is not
+a General MIDI soundfont.
 
 ## Verification on 2026-11-08
 
@@ -61,6 +64,8 @@ uses approximate instrument sounds; its timbre is not a General MIDI soundfont.
 - Mouse moves from the center to both horizontal edges left exactly one paddle
   on screen after the DirectDraw flag correction.
 - SDL's disk audio driver captured nonzero stereo PCM from the running game.
+- `ctest --test-dir build/native -R dxball_linux_audio` passed checks for
+  repeated Play, fractional pitch interpolation and loop-wrap position.
 - Esc from gameplay, then Esc from the menu, exited with status 0.
 - Ctrl+F4 visibly doubled the paddle width in isolated play. Ctrl+F5 set
   the title to "Pierce ON". At 800x600, F12 let the pointer leave the window;
