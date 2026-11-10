@@ -93,6 +93,11 @@ Original WAV and MIDI files have been restored after the temporary muted setup.
 Restart the game to reload any silent buffers. Windows master volume, other
 application volumes and the default device are not changed by the package.
 
+## Native Linux game
+
+Build and run the SDL2 port using [the native Linux guide](agent/LINUX_NATIVE_PORT.md).
+It uses the reconstructed core and original assets without Proton.
+
 ## Headless Wine
 
 Use a 640×480, 24-bit Xvfb host screen:
