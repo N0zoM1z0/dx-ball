@@ -19,9 +19,8 @@ The same C and natural pointer layouts serve native, MinGW and pinned VC4.
 
 The clone dossier is reused from its closed session. Five bounded
 `analyze_function` operations in `config/rea-clear-lists.json` obtain the
-previously unreviewed cleanup entries with the pinned REA/Ghidra provider.
-Each body is one contiguous range ending in `ret`; none needs a gap excluded
-from comparison. Explicit close preserves the cumulative Evidence snapshot.
+previously unreviewed cleanup entries with the pinned REA/Ghidra provider. Each body is one contiguous range ending in `ret`; none needs a gap excluded
+from comparison.
 
 The 637-byte original clone function has no local variables or copy-helper
 calls. It writes thirteen payload fields twice, first from active balls to a

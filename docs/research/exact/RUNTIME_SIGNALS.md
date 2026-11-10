@@ -20,23 +20,17 @@ ties conditional context capture/restoration together without fake initial value
 resolving the i686 diagnostic. This improves393/323 to397/215; still nonexact and
 all53 original dispatch bytes remain covered. Count-only389/340 is rejected;
 shared-dispatch397/130 and const-input variant retain the i686 diagnostic. Four
-VC4/native sets and four i686 attempts (two pass); no runtime/provider/game work.
-Both lookup exacts, full140-byte state and filter351/9 are unchanged. Current seal:
-`.analysis/signal-raise-separated-traversal-20261014/verification.json`.
+VC4/native sets and four i686 attempts (two pass); no runtime/provider/game work. Both lookup exacts, full140-byte state and filter351/9 are unchanged.
 
 Filtering now captures the original native-width tagged handler word and calls
-its real one/two-argument signatures. FPE action slots use a whole-carrier byte
-cursor and one captured countdown, preserving the existing coherent-group guard.
-This restores the zero-local-byte frame and reduces376/355 to351/9. All351 bytes,
+its real one/two-argument signatures. This restores the zero-local-byte frame and reduces376/355 to351/9. All351 bytes,
 21 bindings and140 initialized state bytes are checked; only the entry comparison
-and loop ECX/EDI allocation remain. A corresponding raise trial369/358 is rejected.
-Its original393/323 and all53 dispatch bytes are preserved after actual same-value
+and loop ECX/EDI allocation remain. A corresponding raise trial369/358 is rejected. Its original393/323 and all53 dispatch bytes are preserved after actual same-value
 COFF definition checks resolve renamed private labels. Four VC4/native/i686 sets,
 no runtime/provider/game tests. All338 exacts/109 other candidates/249 semantic rows
-remain. Current seal: `.analysis/signal-filter-fpe-countdown-20261014/verification.json`.
+remain.
 
-Lookup reads use byte views of the complete carrier, preserving terminal
-metadata reads without forming an out-of-array C access. Dispatch requires
+Dispatch requires
 record-backed lookup results, coherent count/group bounds and correctly typed
 real handlers; default process exit must not return. Invalid signal numbers
 return−1 without a new errno write. Context clearing, FPE group reset, all seven
@@ -58,4 +52,4 @@ Four complete final comparisons and native/i686 C11 compilation run. All274
 preceding exacts/75 candidates reuse unchanged inputs/products/results. No
 runtime tests or game builds. Source362/exact276/65,817 code bytes;
 candidates77, metadata136 unchanged. Registration and physical OS/exception/game
-integration remain open. Private seal: `.analysis/runtime-signals-20261014/verification.json`.
+integration remain open.

@@ -81,5 +81,3 @@ omissions; it does not represent lost source recovery.
 Only the new independent compiler recipe/candidate is added. All 376 preceding
 exact and 88 candidate results, recipes, inputs and products are reused after
 identity checks. Their manifest identities refresh; no full replay runs.
-Private boundaries, control edges, compiler products and differential evidence:
-`.analysis/crt-omitted-entries-20261016/`.

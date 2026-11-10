@@ -1,8 +1,6 @@
 # Overlap and frame-effects records
 
 Overlap is now [complete329-byte exact source](EXACT_OVERLAP_SECONDARY_WIDTH.md).
-The records and remaining-difference statements below retain their historical
-compiler products; the selected secondary-width scope closes the final two bytes.
 
 Rectangle collision now uses a 24-byte workspace for its six consumed values.
 The primary rectangle's dimensions and cached center separations form one
@@ -42,9 +40,5 @@ VC4 link reuses 35 unchanged objects. No executable game campaign runs.
 Original collision evidence is
 `ev_38098a89555f0662ce749fc26b6fe5b78bea2da42431812abbdbf888c320c2cd`,
 with complete-byte evidence
-`ev_6d9765478c63299676c89c2efc5bea93b134606a61edd8d3f818a72efde2c404`.
-Frame evidence is
-`ev_5d1d8d47e797530fa172e492b60eebe40dcf8a855a6d9125eb644dccb2e15d43`.
-Saved dossiers are reused without new provider work. Current frame proof and
-cases are in `.analysis/game-frame-effects-record-20261012/`; combined products
-and all-exact verification are in `.analysis/rectangle-overlap-record-20261012/`.
+`ev_6d9765478c63299676c89c2efc5bea93b134606a61edd8d3f818a72efde2c404`. Frame evidence is
+`ev_5d1d8d47e797530fa172e492b60eebe40dcf8a855a6d9125eb644dccb2e15d43`. Saved dossiers are reused without new provider work.

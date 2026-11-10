@@ -88,9 +88,6 @@ their historical case counts and scopes survive actual input-identity refresh.
 
 REA Evidence: span `ev_e55d01a59c45980c265834061218ad417ec912723618f19099f1de192067f5cf`,
 polygon `ev_493013a754a8856f617731fcd1fddd0b00f6bd3d39f2de9d39f29742e542e205`,
-clipped polygon `ev_4ae581c6e8ad135b183d562df04de63db4419e39e3f9b46891bdec2634ee5358`.
-All three enclosing bodies are fully owned and contiguous. No new provider was
-opened. Receipts and complete selected native/COFF checks are retained under
-`.analysis/exact-raster-controllers/`; the sealed checkpoint is
-`.analysis/checkpoints/raster-controllers-283-171/sha256.json`. REA feedback entry
+clipped polygon `ev_4ae581c6e8ad135b183d562df04de63db4419e39e3f9b46891bdec2634ee5358`. All three enclosing bodies are fully owned and contiguous. No new provider was
+opened. REA feedback entry
 24 remains in the user's single `/tmp/dxball_rea_feedback_20261010.md` document.

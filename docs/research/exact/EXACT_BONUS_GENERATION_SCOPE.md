@@ -41,9 +41,4 @@ case counts remain unchanged, with 235 input closures refreshed. Complete game
 fidelity, other owners and original declaration spelling remain open.
 
 Original REA Evidence:
-`ev_ef8ebb1d4341bf24e0f31fba3bfb64c963503539c43bd3f13e61c367b4d84aed`.
-Its target identity and closed session reverify. Private
-`.analysis/bonus-generation-scope/` retains both stages, complete comparisons,
-table/gap proof, negative control, unchanged selected-case identities, production
-receipts and final review. Its immutable checkpoint preserves new products
-independently of current paths and references prior carriers without copies.
+`ev_ef8ebb1d4341bf24e0f31fba3bfb64c963503539c43bd3f13e61c367b4d84aed`. Its target identity and closed session reverify.

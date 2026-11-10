@@ -12,9 +12,7 @@ current loader to 66 differences. The measurements below retain their earlier sc
 The bank loader now declares each sprite's width, height, baseline, code,
 pixel count, file pixel buffer and allocated record inside the existing sprite
 iteration. All seven values are produced and consumed there; the pixel buffer
-is released before the next iteration, and the record is published to its slot.
-Types, names, relative declaration order, reads, writes and calls are unchanged.
-The surface API workspace and upload counters retain their existing scopes.
+is released before the next iteration, and the record is published to its slot. Types, names, relative declaration order, reads, writes and calls are unchanged. The surface API workspace and upload counters retain their existing scopes.
 
 The complete matching function stays 1,475 bytes, with 425 instructions and
 a 180-byte frame. Differing positions fall from 72 to 70, with no new ones.
@@ -34,12 +32,6 @@ objects. Ten unchanged bank cases and three live callback cases pass.
 No game run accompanies this change.
 
 Original REA Evidence is
-`ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`.
-Source and instruction proofs are in `.analysis/bank-sprite-iteration-scope-20261013/`;
-current integration receipts are in `.analysis/bank-iteration-integration-20261013/`.
-Totals remain 238 exact functions / 62,514 code bytes / 136 metadata bytes.
+`ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`. Totals remain 238 exact functions / 62,514 code bytes / 136 metadata bytes.
 
-Independent review seals all current inputs, products and ledgers. Verified
-gzip cleanup preserves 112 completed bank and rejected floating-point carriers,
-releasing 9,437,184 allocated bytes including its receipt. Current products,
-unique snapshots and numeric failure witnesses remain available.
+Independent review seals all current inputs, products and ledgers.

@@ -13,11 +13,9 @@ hooks.obj sections are115 bytes each: the imported114-byte boundaries omitted
 the final RET. All16 code relocations and both24-byte scope tables/six bindings
 match. Inner constant-one filters handle callback faults; outer finally scopes
 dispatch abort/terminate. These original proofs now ground the two complete
-[restored terminal sources and exact scope tables](RUNTIME_CPP_TERMINAL.md).
-The handler-search candidate below is unchanged. REA assembly IDs:
+[restored terminal sources and exact scope tables](RUNTIME_CPP_TERMINAL.md). The handler-search candidate below is unchanged. REA assembly IDs:
 `ev_06745feb23b4c1b0c656b39548712dadb099e59d4a043230cbe90f4f93a44d61`,
 `ev_f561022b68290f5ac8530cdf4642e42957fba725cea515587a46e868788f0a66`.
-Private complete proof: `.analysis/cpp-terminal-boundaries-20261014/original-proof.json`.
 
 The original's full659-byte frame.obj section and its twelve actual relocations
 prove FindHandler at0x0041B270. Two retained REA records cover complete pseudocode
@@ -25,15 +23,12 @@ and assembly. The maintained source emits658 bytes with326 full-span differences
 it is a source candidate, not exact. Earlier671/616 and663/605 producers are retained.
 
 The exception parameter now owns rethrow substitution instead of a separate
-cached detail pointer. This restores the original24-byte frame from28 bytes.
-Per-type throw-info capture, a common type-match failure path, the two range
+cached detail pointer. This restores the original24-byte frame from28 bytes. Per-type throw-info capture, a common type-match failure path, the two range
 output homes and the catchable-pointer read at transfer restore the remaining
 source lifetimes. Both original and current bodies have219 instructions; register
 allocation, comparisons and scheduling remain nonexact. Five VC4/native/i686
 sets retain each bounded step. The selected private product is reused through
-identical canonical inputs; all356 exacts and92 other candidate results remain.
-Retained REA/full CRT are reused; no runtime tests. Receipt:
-`.analysis/cpp-handler-per-type-metadata-20261015/verification.json`.
+identical canonical inputs; all356 exacts and92 other candidate results remain. Retained REA/full CRT are reused; no runtime tests.
 
 The implementation validates the captured registration state, recognizes a
 rethrow, substitutes the genuine current record/context and preserves the
@@ -57,8 +52,6 @@ above. The destruction dependency is supplied by the object owner. The real exis
 No preceding source or headers change. All309 old exacts and99 candidates are
 preserved by current input/object identity; the new total is418 source and100
 candidates (34 authored/66 runtime), with540 inventory and unchanged68,512 code/
-136 metadata bytes. Origins270/196/43/31 and249 semantic rows remain separate.
-Only focused VC4/native/i686 compilation and complete comparisons ran. No runtime
-tests/game builds. The provider is closed; proofs and both unique source/object
-trials remain in `.analysis/runtime-cpp-handler-20261014/`. Compiler register/
+136 metadata bytes. Origins270/196/43/31 and249 semantic rows remain separate. Only focused VC4/native/i686 compilation and complete comparisons ran. No runtime
+tests/game builds. Compiler register/
 branch differences, catch-object SEH and runtime integration remain open.

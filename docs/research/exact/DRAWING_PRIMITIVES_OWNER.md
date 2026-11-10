@@ -59,19 +59,13 @@ incoming fields, the fully checked loader table and six timestamp fields.
 Resource payloads and six OS DLL imports are unchanged; no MSVCRT dependency.
 
 Current image SHA-256:
-`068d2e8bc904e8433d0fa9260ebc374cd9e3349947752ab0266bacb582fd3123`.
-This linked-image proof is separate from historical GUI observations; no game,
+`068d2e8bc904e8433d0fa9260ebc374cd9e3349947752ab0266bacb582fd3123`. This linked-image proof is separate from historical GUI observations; no game,
 new provider query or full replay runs. Work remains serial on one CPU under
-CPU35%, memory high640MiB/max768MiB. Private
-`.analysis/drawing-primitives-owner-20261018/` retains the original/source
-correspondence, final producers, focused cases, independent reviews and linked
-proof. It also records a diff-label correction, a staging annotation assumption,
+CPU35%, memory high640MiB/max768MiB. It also records a diff-label correction, a staging annotation assumption,
 the pre-link owner-count guard correction and the incoming-reference walker's
 unrelated-relocation correction. None broadens acceptance or repeats cases.
 
-After final independent review,43 copied inputs and obsolete products are
-archived and every member hash verified before deletion. This includes six
-objects and four superseded history files. Net released allocation is7,647,232
-bytes after archive/journal costs. Current tested objects, executable and useful
+This includes six
+objects and four superseded history files. Current tested objects, executable and useful
 Native/MinGW caches remain. A final tracking check passes553 inventory entries,
 475 source-present and394 exact claims without replaying unaffected functions.

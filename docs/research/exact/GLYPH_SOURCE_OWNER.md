@@ -33,15 +33,7 @@ without changing their recorded scopes, order or oracle identities.
 
 Formal checkpoint:261/270 authored exacts,74,567/84,968 complete exact authored
 bytes, nine candidates/10,401 original bytes;406 overall exact functions/88,951
-code bytes/244 metadata bytes across49 authored compiler closures. Private
-authority is `.analysis/glyph-pair-source-search-20261022/`, particularly
-`complete-proof.json`, `native-summary.json` and `adoption.json`.
-The native scope peaks at43,442,176 bytes with no memory events. The PCX ledger
+code bytes/244 metadata bytes across49 authored compiler closures. The native scope peaks at43,442,176 bytes with no memory events. The PCX ledger
 percentage is refreshed to1.28 from the current862-byte/851-difference result;
-its acceptance status is unchanged.
-After54 archive members are size/SHA/mode verified,44 obsolete inputs, proposal
-objects/helpers and replaced lookup objects/dependencies are retired. Net
-allocated release is270,336 bytes before the cleanup receipt. Current products,
-tested native library and useful caches remain; `cleanup.json` records recovery.
-Work stays serial on CPU0/35%, memory high384MiB/max512MiB. There is no new
+its acceptance status is unchanged. Work stays serial on CPU0/35%, memory high384MiB/max512MiB. There is no new
 provider import, original-game execution campaign or linked game delivery.

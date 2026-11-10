@@ -41,26 +41,17 @@ events zero under CPU0/35% and 384/512 MiB limits.
 
 Both whole objects, the real source owner, recipes, actual bindings and ledgers
 are synchronized. All 270 authored receipts across 32 closures verify at
-256 exact / 14 candidates; overall 401 exacts, 87,891 code / 244 metadata bytes.
-The 249 historical semantic scopes, cases and order stay fixed, not rerun.
-Both game recipes include round_reset.cpp and restored-CRT now lists 117 source
-owners plus three integration objects. No game relink or new play is claimed.
-The goal remains active/incomplete. Private authority is
-`.analysis/reset-tu-source-search-20261021/`; unique closed evidence is
-member-size/hash verified before exact-file retirement.
+256 exact / 14 candidates; overall 401 exacts, 87,891 code / 244 metadata bytes. The 249 historical semantic scopes, cases and order stay fixed, not rerun. Both game recipes include round_reset.cpp and restored-CRT now lists 117 source
+owners plus three integration objects. No game relink or new play is claimed. The goal remains active/incomplete.
 
 One independent phase-local presenter iterator model is rejected: complete
 presenter 984/2 becomes 984/49 and sort-present-regions loses its exactness with
 three differences in 296 bytes. All 20 functions / 419 code and 421 raw bindings
-compare; 18 identities and the complete 57-byte portable bridge stay fixed.
-No candidate source/native product is adopted. Private recoverable authority:
-`.analysis/present-iterator-scope-search-20261021/`. Reuse that result rather than
+compare; 18 identities and the complete 57-byte portable bridge stay fixed. No candidate source/native product is adopted. Reuse that result rather than
 recompiling the same scoped-input digest.
 
 ## Historical controller restoration
 
-This batch restores four complete observed controllers from retained full REA
-dossiers: finish-game (46) bytes, reset-round (426), restart-round (327) and dispose-game (112).
 The combined original extent is 911 bytes. All four saved bodies are contiguous
 through their plain returns. No new original query was needed. Original source
 spelling and declaration order remain unproven.
@@ -126,10 +117,7 @@ with74 instructions and no local storage; its eight bank/slot producer
 instructions are still nonexact. Reject without further partition/header/type/
 name/order/flag variants.
 
-Sealed `.analysis/round-lifecycle-owner-20261018/` retains full producers,
-reversal and independent reviews. Thirty raw copied inputs/products, including
-three objects, are archived/member-hash verified before removal, releasing148 KiB
-net. Peak160,722,944 bytes with zero high/max/OOM events. Canonical source,
+Peak160,722,944 bytes with zero high/max/OOM events. Canonical source,
 delivery and counts stay unchanged; no provider, native, runtime, relink or
 full replay follows.
 

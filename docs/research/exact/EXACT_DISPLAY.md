@@ -19,8 +19,7 @@ bytes. Shared C and natural pointer layouts serve native, MinGW and pinned VC4.
 | `0x4085D0` | draw-reduced-sprite | 361 | `ev_cc1db01cb0efa2d9fd45a7a3e26b2ebdd4d865c6a37d2bc671fe348434314ef0` |
 
 The first five dossiers are bounded new `analyze_function` operations in
-`config/rea-pending-owners.json`. The two BltFast dossiers are reused from
-matching retained Evidence. Each function has one contiguous range ending
+`config/rea-pending-owners.json`. Each function has one contiguous range ending
 in plain ret. The same session also reviews the separate list constructor
 `0x40F200`; that observation is preparation for later ownership recovery and
 adds no source or exact claim here. The session closes with a reusable snapshot.

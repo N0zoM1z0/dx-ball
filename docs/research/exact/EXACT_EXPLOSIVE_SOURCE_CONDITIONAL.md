@@ -50,11 +50,6 @@ unchanged.235 historical semantic input inventories refresh; their247 scopes
 and case counts do not rerun or expand. Totals stay186 exact functions /33001
 code bytes /136 metadata bytes and283 source-present entries.
 
-Private full inputs, original Evidence reference, before products, all affected
-comparisons, complete instruction correspondence and selected-case receipts are
-in `.analysis/explosive-source-conditional/`. Current product identities are in
-its `product-verification.json`; immutable preservation is
-`.analysis/checkpoints/explosive-source-conditional-283-186/sha256.json`.
 The preceding Wine captures retain their `4c24034` executable identities; this
 source batch makes no new physical game, synchronized palette, campaign or
 hardware audio claim. Feedback entry45 stays in the one existing `/tmp` file.

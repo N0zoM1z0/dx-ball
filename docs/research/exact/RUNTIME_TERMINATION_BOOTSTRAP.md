@@ -73,19 +73,8 @@ cleanup and return-mode 256. Separate processes reach fatal24/exit88 and actual
 normal/quick ExitProcess statuses63/64. Stdio and fatal endpoints are controlled
 typed fixtures. This is not physical stdio-driver or fatal-dialog acceptance.
 
-Wine/X-server teardown output invalidated a first-line-only quick-log parser.
-The executable and selected objects were retained; only quick mode was rerun
-to retain its terminal exit64 receipt, then that receipt was parsed without
-restarting the producer. Earlier modes' status and trace gates had completed
+Wine/X-server teardown output invalidated a first-line-only quick-log parser. Earlier modes' status and trace gates had completed
 before the subsequent logs were written. The original diagnostic logs remain.
-
-Private receipts: `.analysis/crt-termination-bootstrap-20261016/`, including
-`original-proof.json`, `separate-tables/`, `tables-comparison.json`,
-`native-termination.json`, `coff-smoke.json`, `windows-probe.json` and
-`adoption.json`. Heavy work is serial under CPU35% / memory high640MiB,
-maximum768MiB, with one allowed CPU; Ghidra heap is256MiB.
-Sharing47 verified identical immutable evidence carriers reclaimed13.7MiB;
-unique trials and current canonical objects remain independent.
 
 The two additions bring inventory to542, source-present to467 and exacts to379
 covering77,292 code bytes plus244 attached metadata bytes. All377 prior exact

@@ -23,15 +23,13 @@ retained REA analysis of October 7, evidence
 An independent review checks the declaration-only change, eight compiler inputs,
 actual relocation bindings and all six complete owner comparisons.
 
-Receipts are retained under `.analysis/rotation-visible-pixel-phase-20261013/`.
 The existing 351 renderer and 344 wrapper cases pass, including seven callback
 and finite-retry scenarios. Native and MinGW builds pass; VC4 links the changed
 matching object with 36 unchanged objects. All 232 accepted complete closures
 pass, and the other 40 candidate code identities are unchanged. Historical
 input inventories refresh 235 rows. No game session runs.
 
-The completed rotation and rejected SDK stages retain 124 verified gzip copies,
-releasing 8,622,080 allocated bytes. Current build products and original evidence
+Current build products and original evidence
 remain available.
 
 The accepted total remains 232 functions / 59,486 code bytes / 136 metadata

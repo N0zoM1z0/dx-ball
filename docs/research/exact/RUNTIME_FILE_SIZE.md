@@ -12,13 +12,11 @@ stream retirement are exact.
 
 Original independent `closeall.obj` ownership closes all115 fcloseall bytes and
 seven actual relocations without changing its body. It now lives in
-`src/runtime_stream_retirement.c`; chsize359 and all350 old exacts remain.
-All98 other candidates and249 semantic rows are unchanged; current351 exacts,
+`src/runtime_stream_retirement.c`; chsize359 and all350 old exacts remain. All98 other candidates and249 semantic rows are unchanged; current351 exacts,
 72,922 code bytes. Two successful VC4/native/i686 sets; one malformed private
 extraction failed without an object and was corrected. Retained REA and complete
 pinned CRT section are reused; no runtime tests. Both original register hints
-produce identical full results and are reverted. Receipt
-`.analysis/stream-retirement-original-object-owner-20261015/verification.json`.
+produce identical full results and are reverted.
 
 The shipped `calloc.c` uses its consumed size parameter, an unbounded retry
 loop and an owned handler-failure return. Restoring these improves77/82/16
@@ -26,10 +24,9 @@ to82/82/11 and restores the unconditional heap reload after the handler at
 0x41F5D6. All bytes from0x41F5AF onward match, including the original extent;
 the remaining11 bytes select opposite multiplication inputs and swap the two
 initial import/heap loads. A shared heap/result phase instead reverts77/16 and
-is rejected. Msize21 exact, realloc106/111/15 and all345 old exacts remain.
-Two compiler sets, no runtime/provider work. Complete original section and
+is rejected. Msize21 exact, realloc106/111/15 and all345 old exacts remain. Two compiler sets, no runtime/provider work. Complete original section and
 REA `ev_4ea2a3daef2a5b9ff7dcaf86f2d74cc2e6035db22af65e1963e44d67371aa50c`
-are reused. Receipt `.analysis/zero-allocation-original-retry-20261014/verification.json`.
+are reused.
 
 All359 chsize bytes and18 actual bindings match, including the compiler's
 special-ABI stack probe. Its4100-byte frame contains the consumed original
@@ -67,9 +64,7 @@ The closed REA run `2026-10-13T15-04-02.420Z-interactive-1756028` retains nine
 info/pseudo/assembly records. Assembly Evidence IDs:
 `ev_b07adf899efe2a9d42478b47f49cdab7d86051a78c166328b5a9563e5dc42849`,
 `ev_4ea2a3daef2a5b9ff7dcaf86f2d74cc2e6035db22af65e1963e44d67371aa50c`,
-`ev_8108527114cb39b0e9bf0ebf350343179e195387e547cbe76d8214a2a388aef2`.
-All three whole pinned CRT sections independently match the original.
-Private proof and seal: `.analysis/runtime-file-size-20261013/verification.json`.
+`ev_8108527114cb39b0e9bf0ebf350343179e195387e547cbe76d8214a2a388aef2`. All three whole pinned CRT sections independently match the original.
 
 Source338/exact260/64,602 code bytes; metadata136 unchanged. Five affected
 complete comparisons preserve the old21-byte exact;258 other exacts and63

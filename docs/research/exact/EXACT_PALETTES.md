@@ -13,10 +13,8 @@ mapping preparation is diagnostic evidence; acceptance uses the cold outputs.
 | `0x409A30` | load-surface-palette | 376 | `ev_98c57eefa7609b36f191aa5039d7824322068c7f66ab662dc571d9bd57642930` |
 
 Two bounded `analyze_function` operations in `config/rea-palette-loaders.json`
-review the existing loaders with pinned REA/Ghidra. The surface constructor
-reuses its retained, closed dossier. Each original body is contiguous and ends
-in `ret`; all original bytes and complete emitted COMDAT extents are compared.
-No relocation, padding or instruction is excluded.
+review the existing loaders with pinned REA/Ghidra. Each original body is contiguous and ends
+in `ret`; all original bytes and complete emitted COMDAT extents are compared. No relocation, padding or instruction is excluded.
 
 Each loader opens its path in binary mode, seeks 768 bytes before EOF and reads
 256 RGB triples. The fourth palette byte is untouched. The live loader closes

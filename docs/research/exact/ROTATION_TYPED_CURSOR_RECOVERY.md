@@ -102,10 +102,6 @@ current dependency hashes. No game relink/play follows this adoption; the
 
 ## Retained products
 
-Private authority is
-`.analysis/rotation-member-context-source-search-20261022/current-checkpoint.json`,
-with frozen producer inputs, full comparisons, raw observation/REA Evidence,
-source/symbol/auxiliary proof, native351, installed comparison and adoption.
 Overwritten files remain recoverable; closed unique evidence is member-size,
 SHA256 and mode verified before obsolete inputs/objects are retired. Current
 accepted objects, the tested native library and useful caches remain.
@@ -117,8 +113,5 @@ Object SHA256:
 The complete resolved/original renderer SHA256 is
 `abccb5f9a755d8d297c2da1f806b286bada2d00c6d1bf36ae0ad914585735fc8`.
 
-Cleanup verifies268 new archive members and14 superseded members in the prior
-carrier before retiring209 obsolete files. Net released allocation is1,945,600
-bytes before small index/checkpoint receipts. Accepted products/caches and the
-canonical REA process Evidence remain; the earlier private1572/4 raw copies are
-superseded and remain recoverable from their original verified archive.
+Net released allocation is1,945,600
+bytes before small index/checkpoint receipts.

@@ -3,6 +3,11 @@ set -euo pipefail
 
 # Adapted from th10: choose and attest the interpreter before running repo tools.
 repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+stdlib_only=false
+if [[ "${1:-}" == --stdlib ]]; then
+    stdlib_only=true
+    shift
+fi
 candidates=()
 if [[ -n "${DXBALL_PYTHON:-}" ]]; then
     candidates+=("$DXBALL_PYTHON")
@@ -20,6 +25,12 @@ fi
 
 for repo_python in "${candidates[@]}"; do
     [[ -x "$repo_python" ]] || continue
+    if "$stdlib_only"; then
+        if "$repo_python" -c 'import sys; sys.exit(sys.version_info < (3, 11))'; then
+            exec "$repo_python" "$@"
+        fi
+        continue
+    fi
     for package_root in "$repo_root/.tools/python" ""; do
         python_environment=()
         if [[ -n "$package_root" ]]; then
@@ -32,6 +43,10 @@ for repo_python in "${candidates[@]}"; do
     done
 done
 
+if "$stdlib_only"; then
+    printf '%s\n' 'error: Python 3.11+ is required' >&2
+    exit 1
+fi
 printf '%s\n' \
     'error: no interpreter can load the hash-pinned analysis packages' \
     'Run scripts/bootstrap-python.sh or set DXBALL_PYTHON to a matching interpreter.' >&2

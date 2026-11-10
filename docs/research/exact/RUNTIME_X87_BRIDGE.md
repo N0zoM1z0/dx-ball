@@ -21,7 +21,5 @@ All switch bytes match; only the operand-copy scheduling remains nonexact.
 Current source420/exact310/code68,589/metadata136 and candidates101 (34 authored/
 67 runtime). All310 prior exact and100 candidate producers retain their input
 and object hashes;249 semantic rows are unchanged. Three focused VC4/native/
-i686 source trials and full comparisons ran, with no runtime/game tests.
-One closed three-record REA run and all unique trials remain private under
-`.analysis/runtime-x87-bridge-20261014/`. Physical x87 control, dispatch candidates
+i686 source trials and full comparisons ran, with no runtime/game tests. Physical x87 control, dispatch candidates
 and game integration remain open; this bridge is not claimed exact.

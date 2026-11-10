@@ -53,9 +53,6 @@ Current image SHA-256:
 `844247ba7095eedbf99cc7e3bfeaf3ec43a4d232c1cb6b7fcfc2e68de8ed42be`.
 Earlier GUI observations remain associated with their recorded image hashes.
 
-Private `.analysis/rotation-pixel-address-20261017/` retains frozen inputs,
-before/after objects, full comparisons, instruction/address proof, unchanged
-fixture selection, input-ledger reversal and complete image verification.
 Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. There is no full replay or port work. Heavy operations
 remain serial under CPU 35%, memory high 640 MiB / maximum 768 MiB.
@@ -109,9 +106,6 @@ retained. The completed proof compares the actual effective-address expressions
 directly and obtains all four UNSAT/four SAT results; it does not treat timeout
 as evidence of equivalence. No compiler or provider repeats for this correction.
 
-Private `.analysis/rotation-row-origin-order-20261017/` retains the complete
-instruction map, original dossier identity, address/guard/product queries,
-scratch-boundary walks, rejected source/object and six-function comparisons.
 This is analysis evidence, not a new exact or semantic acceptance.
 
 ## Height helper correspondence
@@ -133,7 +127,5 @@ unrestricted flags, trap state, aliasing and actual gameplay use are not claimed
 
 The complete candidate remains193/191 with158 differences. Source, objects,
 image and ledgers remain unchanged; no compiler, provider, solver or runtime
-runs. Private `.analysis/rotation-height-correspondence-20261017/verification.json`
-retains all63 pairs, two graph matches, eight boundary walks and original/current
-identities. Future height work needs evidence about the original address
+runs. Future height work needs evidence about the original address
 producer context; a different max/return/FP expression is not justified here.

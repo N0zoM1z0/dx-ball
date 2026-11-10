@@ -29,9 +29,6 @@ resolve whether this came from a source local or compiler storage. The source
 discards the result; its **279/282-byte candidate has 80 counted differences**.
 No unused local was added to reproduce that store.
 
-REA's three complete contiguous dossiers cover 577 bytes and 170 instructions,
-including the unchanged exact palette initializer:
-
 - Fill 89: `ev_017375bcddb7d6708aadc8ec0d071b77e9d37c7f877f9da584462f4e561360db`
 - Bank recovery 282: `ev_6086488847b0abeff3f7ed6af657fd76f1d18d085752c4ae7c38ff49c74b9d94`
 - Palette 206: `ev_1f7ee3646ca9d02b5f9f7b91f0c1cbfe3f3af3a8f021debadd09191a0c844cbd`
@@ -45,7 +42,5 @@ exact; the accepted total is **147 functions / 23,490 code bytes**, plus
 
 Only four existing Oracle loops ran: 18 fill, 64 bank and 63 recovery cases,
 plus eight connected lost-surface presentations. Native, VC4 and MinGW builds
-pass; VC4 reuses all 35 valid game objects. Complete source, target, compiler
-inputs and products are retained in `.analysis/exact-device-dependencies/`
-and its checkpoint. Other semantic rows retain historical scope after their
+pass; VC4 reuses all 35 valid game objects. Other semantic rows retain historical scope after their
 input hashes are refreshed.

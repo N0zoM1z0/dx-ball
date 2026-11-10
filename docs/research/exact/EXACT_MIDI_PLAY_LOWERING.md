@@ -15,14 +15,7 @@ live header traversal and newly-created versus paused-stream cleanup remain.
 
 ## Original evidence and diagnosis
 
-Play at `0x401780` has 493 owned bytes within its complete 513-byte span.
-Retained REA dossier: Evidence
-`ev_731ffd0b77a82869a867a736b02d245cc55b41b97dfc1974dee55fe3f83d27a4`,
-`02-analyze_function.json` in `2026-10-07T15-16-14.218Z-interactive-3602154`.
-Complete bytes: Evidence
-`ev_63cb8dd0c62cd2c2e8e121e730540f10d836f953facd739adb6d4c6573b1ba9a`,
-`00-read_bytes.json` in `2026-10-10T07-13-33.419Z-requests-4072877`.
-All 513 bytes agree with the pinned PE. No new provider query is needed;
+Play at `0x401780` has 493 owned bytes within its complete 513-byte span. All 513 bytes agree with the pinned PE. No new provider query is needed;
 the REA 6.3.0 snapshot remains at twenty records.
 
 Open, property, prepare/output and restart errors jump to four tail stubs at
@@ -90,12 +83,8 @@ DirectX factory names and have no parser warnings.
 - VC4 EXE SHA: `c5fbd73e57b35379df46ec98420bd633345b4fd10fdff0b13af153bf261a0ca4`.
 - MinGW game SHA: `242977e109f57f8378c89d772afbe456eff7bab35e87bc5eb2f87e77e2617ff2`.
 
-Private receipts/helpers: `.analysis/exact-midi-play/`; seal:
-`.analysis/checkpoints/midi-play-283-171/sha256.json`.
-Current products/inputs and all 171 retained exact receipts are verified without
-the historical owner replay. The 235 affected semantic input rows refresh with
+The 235 affected semantic input rows refresh with
 their earlier scopes/counts. Current build/owner paths use `midi.cpp`; older
-sealed checkpoints retain original `midi.c` paths and hashes.
-No new live-game, synchronized trajectory or hardware claim. Totals stay
+sealed checkpoints retain original `midi.c` paths and hashes. No new live-game, synchronized trajectory or hardware claim. Totals stay
 283 source-present, 171 exact /30,744 code bytes /136 metadata bytes and 247
 scoped semantic rows. Complete reconstruction remains unproven.

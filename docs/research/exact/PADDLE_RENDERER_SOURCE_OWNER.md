@@ -50,8 +50,7 @@ helper count-substitution error stops before publication and is repaired
 against the same objects, preserving every occurrence check.
 
 All32 literal references and three entire7/16/397-byte carriers compare against
-the original. Both eight-byte floating constants retain their actual0/8
-anchors in one ordinary16-byte carrier, now in the renderer. Full global BSS,
+the original. Full global BSS,
 data and37 initialized callback targets remain in runtime.cpp. The unchanged
 complete comparator and strict local-target guard apply without masks.
 
@@ -71,14 +70,8 @@ refresh. Overall acceptance is411 exact functions,94,151 code bytes and244
 attached metadata bytes across52 authored compiler closures. Tracking/progress
 and the installed13-function comparison pass.
 
-Private authority is
-`.analysis/paddle-scoped-owner-source-search-20261022/current-checkpoint.json`:
-selected producers, complete two-object/symbol/relocation proof, source inverse
-and prototype checks, native332, adoption and installed comparison. Closed
-proposals and two rejected current triangle controls are member-verified
-archived before exact-list cleanup. Current accepted objects, native products,
+Current accepted objects, native products,
 originals and useful incremental caches remain.
 
-Cleanup verifies383 archive members and retires345 obsolete files, releasing
-1,679,360 allocated bytes net before small receipts. Compiler scope peak is
+Compiler scope peak is
 154,718,208 bytes with zero memory events under the same CPU/memory limits.

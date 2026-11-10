@@ -102,14 +102,6 @@ are byte-identical. Totals remain 545 inventory and 475 source entries, with
 ran. CPU is capped at 35%, memory high 640 MiB/maximum 768 MiB, with serial work
 and one allowed CPU through the project wrapper.
 
-After adoption, 102 byte-identical immutable header snapshots share retained
-copies, releasing 440 KiB of allocated storage. Unique fixture variants, failed
-logs, compiler products, images and mutable canonical objects are preserved.
-
-Private receipts are `.analysis/crt-full-entry-20261016/`: `closure.json`,
-`application-product.json`, `filter-product.json`, `launcher-product.json`,
-`link.json`, `runtime.json`, `verification.json` and `adoption.json`.
 The retained entry evidence includes code
 `ev_04a70593d1fc3d7c3fe06b103084423cc9d4f7b7429fe2002ef260be1fce411f`
-and scope `ev_922d290e19de2d38525e82a3e2c401ec47e0f7827dbf2eb9d0c21721273b2807`.
-REA remains pinned to 6.5.0.
+and scope `ev_922d290e19de2d38525e82a3e2c401ec47e0f7827dbf2eb9d0c21721273b2807`. REA remains pinned to 6.5.0.

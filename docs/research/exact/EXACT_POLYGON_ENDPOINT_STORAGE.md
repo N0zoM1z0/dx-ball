@@ -58,10 +58,5 @@ object/input closures verify.235 historical semantic input closures refresh;
 their247 acceptance scopes and case counts remain historical. Source283,
 exact186/33001 code/136 metadata and origins270/83/42/133 remain unchanged.
 
-Private records are in `.analysis/polygon-endpoint-storage/`, including the
-actual compile, complete candidate comparisons, instruction listings,
-construction proof, profile payloads, game-link recipe and final identities.
-Immutable seal: `.analysis/checkpoints/polygon-endpoint-storage-283-186/sha256.json`.
-The two reused closed original carriers are2786590/2858306 retained file bytes;
-complete compact assembly projections are17025/17327 bytes. No fresh provider
+No fresh provider
 query, latency/token/RSS measurement or original-source spelling claim follows.

@@ -44,11 +44,8 @@ results do not establish every-ball survival across an entire round.
 The moving-bonus matrices retain life-loss outcomes, including harmful bonuses;
 they do not turn best-effort avoidance into a guarantee.
 
-Catch metrics require an observed positive-to-negative velocity transition.
-An initially rising ball is not counted as a new catch. The pre-correction
+Catch metrics require an observed positive-to-negative velocity transition. An initially rising ball is not counted as a new catch. The pre-correction
 metric report and its exact producer are retained as a private diagnostic.
-Reports are generated directly as deterministic gzip JSON to keep storage and
-serialization memory bounded.
 
 The earlier contact suite remains **320 fixtures / 2,560 compared calls**;
 its historical greatest-Y baseline stays explicit. The 216 rebound fixtures

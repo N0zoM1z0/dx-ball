@@ -35,24 +35,20 @@ selected typed snapshot is57/57/4. Only initial high/low word loading and saving
 order differs at that checkpoint. No field/operand permutation sweep is made. The99-byte special
 classifier remains exact. Two VC4/native/i686 sets and full comparisons run,
 retained REA assembly `ev_d4d7a619bff0091472889fd2dab1cad759538df445e025a04ff6c08e7e9b6e22`
-is reused; no provider/runtime/game tests.
-Current totals457/335/code69,718/candidates113 stay unchanged. Receipts:
-`.analysis/runtime-float-exponent-20261014/verification.json`.
+is reused; no provider/runtime/game tests. Current totals457/335/code69,718/candidates113 stay unchanged.
 
 The direct-assignment recovery preserves classification99 exact and all357
 previous exact results. All91 other candidate results remain unchanged. One
 VC4/native/i686 set is reused with identical maintained inputs; retained REA and
 the full pinned CRT section are reused, with no runtime tests. Current totals:
-358 exact functions/75,060 code bytes,91 candidates. Receipt:
-`.analysis/exponent-original-double-transport-20261015/verification.json`.
+358 exact functions/75,060 code bytes,91 candidates.
 
 All27 name records/216 initialized bytes,27 pointer relocations and134 complete
 literal bytes match. Native record pointers retain natural width. The control
 wrapper calls the genuine remaining `_control87` body; no simulated hardware
 backend or omitted x87 operation is claimed. Hardware state and integration remain
-open. Evidence/products: `.analysis/runtime-fp-control-20261014/`. The REA session
+open. The REA session
 closed after18 queries. Only scoped VC4/native/i686 compilation and full comparisons
-ran; all296 preceding exacts and89 candidates retain their inputs/products/results.
-Current totals:402 source bodies,302 exacts/67,800 code bytes/136 metadata bytes,
+ran; all296 preceding exacts and89 candidates retain their inputs/products/results. Current totals:402 source bodies,302 exacts/67,800 code bytes/136 metadata bytes,
 and91 candidates, including the unchanged34 authored candidates. No runtime tests
 or game builds were run.

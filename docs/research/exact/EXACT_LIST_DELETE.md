@@ -18,8 +18,6 @@ padding, source variants or declaration/layout trials are needed. The original
 source spelling, class method names and unique language provenance remain
 unproven; the matched expression corroborates this reconstruction.
 
-The retained instruction dossiers are:
-
 - Projectile: `ev_7e37d6b4a6b93d0007e1b0679c02cddce7d7956455acffda59a5c0f6617099ca`.
 - Fire: `ev_af528cd7404de0f2e8bb6408f7832e2abd28901fba6e04e8dfee1c295b69da8e`.
 
@@ -79,9 +77,5 @@ establish synchronized trajectories/pixels, physical audio, asynchronous MIDI
 or full-game fidelity. Other semantic scopes and cases remain historical after
 input refresh; no full historical replay was run.
 
-Private proof: `.analysis/list-delete-recovery/` and
-`.analysis/core-language-lifetime/`. Immutable seal:
-`.analysis/checkpoints/list-delete-283-175/sha256.json`.
-REA 6.3.0 reuses the four complete closed records without opening a provider.
-Performance and usability feedback stays in entry 34 of the user's one existing
+REA 6.3.0 reuses the four complete closed records without opening a provider. Performance and usability feedback stays in entry 34 of the user's one existing
 feedback document.

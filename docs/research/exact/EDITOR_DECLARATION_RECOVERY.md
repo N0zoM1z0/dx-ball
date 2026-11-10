@@ -68,9 +68,7 @@ bytes. No mask, compiler-output patch or partial-unit acceptance is introduced.
 
 ## Maintained adoption and proportionate checks
 
-After a54-member size/hash/mode-verified rollback, main installs the one source
-line and validates the maintained native library.203 existing calls pass:
-seven initialization,100 setter and96 lookup calls. The lookup selection uses
+The lookup selection uses
 four counts, four active values and six existing coordinate pairs, retaining
 all400 original setup iterations. Removing the filter and appended return
 reproduces the original test prefix AST exactly. Original default audits and
@@ -102,10 +100,3 @@ triangle comparison unchanged; it is rejected without adoption or native tests.
 Together the two distinct compiles compare26 complete functions/364 bindings,
 preserving22 prior exacts. No new provider/debugger/ID observation, game relink,
 play session or full historical replay occurs.
-
-Private authorities are `.analysis/editor-declaration-source-search-20261021/`
-and `.analysis/triangle-edge-scope-source-search-20261021/`, including the initial
-strict failure, separate mapping proof, independent reviews, native203,
-installed whole-owner comparison and54-member rollback. Archive and member-verify
-closed evidence before exact-list retirement; preserve originals, current tested
-products, useful caches and the141-record frontend snapshot.

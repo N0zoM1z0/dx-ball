@@ -5,16 +5,12 @@ is now adopted at270/270 authored exact functions. Its real data-field offset
 supplies the128-byte header boundary, signed maximum reads stay explicit, and
 all312 frame bytes/full862-byte code match. Earlier measurements below are history.
 
-Later October22 update: maintained acceptance is267/270 after triangle adoption.
-Four additional constant-association inputs group40000 with time or RNG on
+Later October22 update: maintained acceptance is267/270 after triangle adoption. Four additional constant-association inputs group40000 with time or RNG on
 both sides of the addition. Time groups give1043/405; RNG groups1041/955, all
 with64-byte frames. Each still calls RNG before time and is rejected. All19
 original display functions compare, retaining18 exacts, full noncode/initializer
 mappings and the complete57-byte portable bridge. These four distinct successful
-producers peak at157,237,248 bytes with zero memory events under the same caps.
-Private plans/producers/full comparisons and actual call offsets are under
-`.analysis/lightning-constant-association-20261022/`. No canonical changes follow.
-The22-input batch and266 checkpoint below are earlier history.
+producers peak at157,237,248 bytes with zero memory events under the same caps. No canonical changes follow. The22-input batch and266 checkpoint below are earlier history.
 
 October22,2026. These22 distinct successful compiler inputs are closed and
 unadopted. Maintained acceptance remains266/270 authored exact functions and
@@ -90,12 +86,9 @@ hashes are checked unchanged. There is no native/game build, runtime replay,
 provider query or exact promotion. Four authored candidates remain; the all270
 objective stays active.
 
-Private authority is `.analysis/remaining-source-controls-20261022/`: the
-closed summary, per-trial plans/producers/comparisons and member-verified recovery
-archive. Copied inputs, proposal objects and closed helpers retire only after
+Copied inputs, proposal objects and closed helpers retire only after
 size/SHA/mode verification. Reuse these results; they close these exact inputs,
 not a distinct supported declaration/lifetime/temporary-allocation hypothesis.
 
-Cleanup verifies453 archive members before retiring377 obsolete files,
-releasing1,679,360 allocated bytes net before the index/receipts. Current
+Current
 accepted objects, native products and useful incremental caches remain.

@@ -15,6 +15,4 @@ native/i686 compilation passes, with no runtime/game checks. All 316 old exacts
 and 105 candidates retain unchanged source/product hashes.
 
 The two REA queries completed. Close reported cleanup_incomplete; a subsequent
-process inventory confirms both owned wrapper/provider PIDs are gone. Retained
-evidence and temporary resources remain available, and successful snapshot
-cleanup is not claimed. Products are in `.analysis/runtime-memory-fill-20261014/`.
+process inventory confirms both owned wrapper/provider PIDs are gone.

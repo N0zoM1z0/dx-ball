@@ -7,11 +7,7 @@ increment followed by a signed comparison:
 for (i = 1; i < (DxBallInt)((DxBallUInt)count + 1); i = i + 1) {
 ```
 
-The complete retained original bank dossier
-`ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`
-and `.analysis/author-plasma-bank-linkage-20261018/routine-linkage-proof.json.gz`
-establish the producer: count fread at404698, count reload at4046AF, DWORD INC
-at4046B2 and signed CMP/JLE at4046B3/4046B6. The previous signed `count + 1`
+The previous signed `count + 1`
 had undefined overflow for INT_MAX. The new expression preserves the target
 bit pattern on supported VC4/GNU x86 conversions, without changing the count
 object, file operation or signed predicate. Historical cast spelling is unknown.
@@ -57,11 +53,8 @@ cases pass: seven supplied SBKs, small-stream, empty-bank and creation-failure
 cases. Historical semantic scope/counts are unchanged. The additional bounded
 count witness remains separate private evidence. No full replay is run.
 
-Private `.analysis/bank-count-bound-20261019/` retains the proposal, primary
-instruction references, complete comparisons, actual old/new witness outcomes,
-independent review, source/inventory audit and adoption receipts. Compiler and
-probe trees use one allowed CPU, CPU35%, memory high384MiB/max512MiB. Closed
-products and input copies are archived/member-hash verified before cleanup.
+Compiler and
+probe trees use one allowed CPU, CPU35%, memory high384MiB/max512MiB.
 
 The subsequent [current VC4 build and play check](../CURRENT_VC4_BUILD.md)
 links this complete current resource object into the delivery and passes the

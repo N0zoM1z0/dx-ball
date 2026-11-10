@@ -67,9 +67,7 @@ to actual C2 operand ranks. One existing sample assignment is merged into
 single-assignment object const. The complete26-input C++ recipes differ from
 the old25-input C const control; no identical frozen digest is repeated.
 
-Both outputs retain all16 complete resolved identities, including13 prior
-exacts,352 bindings,33 full literal references and four complete physical
-literal carriers. All23 logical sections,22 file-backed payloads, the68-byte
+All23 logical sections,22 file-backed payloads, the68-byte
 BSS extent and389 actual named relocations, including37 initialized-table
 bindings, are checked. Neither model is proposed
 for adoption; canonical runtime source/object stay unchanged. This closes just
@@ -112,11 +110,8 @@ clock sampling/rollback/wrap and full controlled state. No unrelated owner suite
 full game, physical driver or historical249-case-set replay is claimed.
 
 Current native library SHA256 is
-`db7636a441b7cd866da65c9ca9cc16c7b66f08693df17a4c5d04e8ce13b5e864`.
-The tested delivery EXE/ZIP still predate this source checkpoint and are not
-relinked or replayed. Closed trial/helper/product evidence is member-verified
-in a recovery archive before exact-list retirement. Current tested products,
-unchanged verified caches, tools, originals and the141-record snapshot remain.
+`db7636a441b7cd866da65c9ca9cc16c7b66f08693df17a4c5d04e8ce13b5e864`. The tested delivery EXE/ZIP still predate this source checkpoint and are not
+relinked or replayed.
 
 Independent review corrects a missing parser import and a too-early generated
 literal-name check before preparation/compilation. Full-carrier-proved generated
@@ -124,9 +119,6 @@ names may reconcile; logical targets and comparisons do not relax. The source
 runner also retains post-failure guard outcomes without masking the original
 error. These preflight corrections change no game source, flags or trial result.
 
-Private authority is `.analysis/clock-line-source-search-20261021/`, including
-the finite plan, source/result reviews, all five producers and complete owner
-comparisons. Source models are reconstructed, not unique historical spellings.
-No fake locals/types, padding, assembly, copied instructions, object patching,
+Source models are reconstructed, not unique historical spellings. No fake locals/types, padding, assembly, copied instructions, object patching,
 profile-specific bodies or selective old-object mixing is used. Heavy work
 stays serial on CPU0,35%,384MiB high/512MiB maximum.

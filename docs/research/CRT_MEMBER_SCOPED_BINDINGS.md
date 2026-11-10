@@ -1,5 +1,3 @@
-# CRT bindings within a verified archive member
-
 Four additional unknown entries are proved to be complete pinned VC4 CRT code
 sections. Resolving actual COFF symbol indices within their own archive members
 closes their dependencies without publishing object-local names globally.
@@ -20,8 +18,7 @@ denominator.
 
 ## Bind definitions by their actual identity
 
-`scripts/crt_scope.py` keys verified definitions by archive member offset and
-SHA-256, then by the actual COFF symbol-table index. Each stored definition
+Each stored definition
 retains section, storage, value, type, name and proved section address. A later
 relocation must agree with that same member's actual symbol definition.
 
@@ -70,8 +67,7 @@ The first maintained run with member-index binding preserves all previous
 65 complete code sections / 7,229 bytes and all existing binding values. A
 second unchanged run occurs because an overly strict review compares two
 equivalent hexadecimal address spellings and the command sequence continues
-after that guard fails. Both actual receipts are retained; neither is described
-as a new candidate verification or lost-process recovery.
+after that guard fails.
 
 The final maintained run accepts 69 complete code sections / 7,353 bytes and
 73 distinct origin rows, including three import forwarders. Three initialized
@@ -95,9 +91,6 @@ occurs. Baseline inputs whose mutable probes were deliberately removed resolve
 to their individually hash-verified immutable copies. Current game source,
 tests, 36 game objects and four products retain the preceding identities.
 
-Private `.analysis/crt-member-scope/` retains before-state, actual stage inputs,
-discovery rounds, full reports, controls and final review. Immutable seal:
-`.analysis/checkpoints/crt-member-scope-283-186/sha256.json`.
 REA performance, context and usability observations remain appended only to
 the existing single `/tmp` feedback document.
 

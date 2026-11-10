@@ -81,7 +81,3 @@ Function source 464, exact 376, exact code 76,908 bytes, attached metadata
 Every existing acceptance ledger and both original-target comparison reports
 are byte-identical. No provider or full replay runs. Compiler/link/Wine commands
 run serially on one allowed CPU under the 35% CPU/768 MiB scope.
-
-Private raw controls, rejected mixed-CRT link, successful game products/maps,
-52 body comparisons, both runtime observations and scene review are retained in
-`.analysis/legacy-owner-reuse-20261016/`.

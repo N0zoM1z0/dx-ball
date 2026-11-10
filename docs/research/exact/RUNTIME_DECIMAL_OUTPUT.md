@@ -1,11 +1,8 @@
 # Extended decimal output and multibyte classification
 
 Three complete CRT bodies now have shared standalone C source. The lead-byte
-entry at `0x0041BEF0` is exact across18 bytes and its actual call relocation.
-Its private classifier at `0x0041BF10` retains58 bytes/seven register differences.
-The full923-byte `$I10_OUTPUT` at `0x0041EF20` currently emits922 bytes with535
-differences. Neither candidate is counted exact. Previous276 exacts and77
-candidates preserve their source inputs, compiler products and results.
+entry at `0x0041BEF0` is exact across18 bytes and its actual call relocation. Its private classifier at `0x0041BF10` retains58 bytes/seven register differences. The full923-byte `$I10_OUTPUT` at `0x0041EF20` currently emits922 bytes with535
+differences. Neither candidate is counted exact.
 
 `runtime_decimal_output.c` restores the serialized80-bit by-value argument,
 26-byte output record, all four complete special-value strings, decimal exponent
@@ -23,9 +20,7 @@ claimed; native pointers and existing shared conversion dependencies are unchang
 
 Complete pinned `x10fout.obj` and `ismbbyte.obj` sections, all actual relocations,
 the retained full original REA byte observation and the retained decimal
-pseudocode/assembly ground these boundaries. No new REA session runs.
-Private evidence: `.analysis/runtime-decimal-output-20261014/verification.json`.
-Only affected native/i686 standalone compilation and whole VC4 comparisons run;
+pseudocode/assembly ground these boundaries. No new REA session runs. Only affected native/i686 standalone compilation and whole VC4 comparisons run;
 there are no runtime tests or game builds. The first nonintrinsic compiler product
 is retained, but its comparison stopped at an unmapped memcpy binding. Original
 inlined copies justify the final `/Oi` recipe. Guard/value lifetime recovery reduces

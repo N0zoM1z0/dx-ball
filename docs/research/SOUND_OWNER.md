@@ -71,8 +71,7 @@ all 49 originals unchanged. Earlier control profiles/campaigns stay historical;
 no full owner/historical queue was replayed. Physical/asynchronous audio and
 full-game fidelity remain unproven.
 
-Receipts: `.analysis/exact-sound-factory/` and
-`.analysis/windows-play-directx-factories/`. Existing sound and fullscreen REA
+Existing sound and fullscreen REA
 dossiers were reused; no provider was opened. Feedback stays only in
 `/tmp/dxball_rea_feedback_20261010.md`, now entry 23.
 
@@ -127,8 +126,7 @@ connected checks. The fifteen-entry table and counts below describe the initial
 checkpoint; physical audio delivery and complete sound byte-exact reconstruction remain open.
 
 The static dossier establishes instructions, references and inclusive body
-ranges; execution claims come separately from `tests/test_sound_differential.py`.
-Ghidra signatures and inferred local types are provisional. In particular, the
+ranges; execution claims come separately from `tests/test_sound_differential.py`. Ghidra signatures and inferred local types are provisional. In particular, the
 allocation wrapper was inferred void; its caller and callee instructions show
 that EAX returns the allocated pointer. The initializer has fourteen owned
 ranges: its 1,635 code bytes span 1,705 bytes. The excluded seventy bytes are
@@ -330,9 +328,7 @@ Before replay, independent source review fixes two evidence gaps: bind the
 actual gold-selection JSON before use, and check callback errors/guards before
 terminal exit serialization. The first successful run remains a superseded
 control, separate from this corrected capture. Source review certifies its
-reviewed scope rather than runtime execution. Full comparison observations
-stream 15,794,008 bytes into a digest; the final report remains retained, without
-storing duplicate PCM snapshots. Seed/free assertions have separate counts
+reviewed scope rather than runtime execution. Seed/free assertions have separate counts
 and are outside that streamed digest.
 
 This is private connection evidence for the maintained owner, not production

@@ -2,8 +2,6 @@
 
 Later on October22, the [bounded declaration recovery](POLYGON_LOCAL_SOURCE_RECOVERY.md)
 makes both polygon bodies exact and adopts the coherent three-owner closure.
-This note retains the preceding261-exact /39-difference exploratory checkpoint;
-its then-pending objects are now member-verified archived evidence.
 
 The maintained checkpoint remains **261/270 authored exact functions and
 74,567/84,968 complete exact code bytes** after the
@@ -41,18 +39,9 @@ preserving semantic symbols, targets, types and addends. Full noncode payloads
 and the maintained local-target guard still apply. No compiler retry or byte
 mask is used; the strict triangle result is220 differences.
 
-Private phase directories are
-`.analysis/high-score-owner-source-search-20261022/`,
-`.analysis/triangle-register-clamp-source-search-20261022/`,
-`.analysis/triangle-clamp-initializer-source-search-20261022/` and
-`.analysis/polygon-owner-source-search-20261022/`.
-Their plans, producers, complete comparisons, failure/repair records and copied
-inputs are recoverable through the member-size/SHA/mode verified archive and
-index in `.analysis/source-context-controls-20261022/`. Obsolete objects and
+Obsolete objects and
 copied inputs are removed only after verification. Current accepted products,
 useful caches and the pending polygon pair below remain live.
-Cleanup verifies163 archive members and retires134 obsolete files, releasing
-573,440 allocated bytes net of the archive before the small index/receipts.
 
 ## Promising polygon source model, not adopted
 
@@ -91,9 +80,7 @@ positions into nine reversed-operand comparison windows;12 positions remain
 unclassified by that diagnostic. This is source-candidate guidance, not an
 independent complete instruction/liveness proof or a weakened exact comparator.
 
-The two useful objects, frozen inputs, plans, comparisons, equivalence record
-and diagnostic remain live in
-`.analysis/polygon-flat-source-search-20261022/`. No matching raster remainder,
+No matching raster remainder,
 nine-companion preservation, native build, behavior check, maintained adoption
 or game relink has occurred. The current exact count stays261.
 

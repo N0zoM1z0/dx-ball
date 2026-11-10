@@ -113,25 +113,18 @@ final audit's preparation also preserves its prior script versions before
 dependency/schema refinements; it performs no builds or native execution.
 
 The first cold-validation launch reached a real 120-second timeout in the
-VC4 compiler version-banner probe before producing any configured cold object.
-The complete failed driver, validation receipt and logs are retained. After
+VC4 compiler version-banner probe before producing any configured cold object. After
 explicitly terminating only this project's Wine prefix, the unfinished
 validation stage was retried. All 22 already successful owner replays remain
 unchanged and were not repeated; one actual configured cold epoch follows.
 
-Native family/canonical SHA256 `0c0cb3728a00d50adb5a8d938419fe37f58ca21e637e79e353e945951c9ac92e`; shim `c5235de447ab3988a84194d68d514879d3ab5bb4b304d9bad59c2dd9173331da`.
-Source presence stays 283; scoped semantic rows 247; distinct cases 112,273.
-The 235 changed semantic closures refresh with
+Native family/canonical SHA256 `0c0cb3728a00d50adb5a8d938419fe37f58ca21e637e79e353e945951c9ac92e`; shim `c5235de447ab3988a84194d68d514879d3ab5bb4b304d9bad59c2dd9173331da`. Source presence stays 283; scoped semantic rows 247; distinct cases 112,273. The 235 changed semantic closures refresh with
 fixed addresses, scopes and cases. Origins stay 270 authored / 50 runtime /
-42 generated / 166 unknown. Checkpoint
-`.analysis/checkpoints/exact-projectile-lists-283-118` links to effects 116.
-The >=95% complete-source goal remains active and unachieved.
+42 generated / 166 unknown. The >=95% complete-source goal remains active and unachieved.
 
 The executed independent audit then found an omitted `src/allocator.h` in the
 core compiler dependency ledger. This genuine included header was already
-physically frozen in the 293 owner inputs and 69 diagnostic inputs. The entire
-failed audit, original manifest, full 22-object epoch and original receipts are
-retained. Only this dependency is added to the parsed manifest; source, flags,
+physically frozen in the 293 owner inputs and 69 diagnostic inputs. Only this dependency is added to the parsed manifest; source, flags,
 relocations, native, shim, fixture and oracle inputs stay fixed. One affected
 core object is recompiled, with every complete code and metadata identity
 preserved; all other 21 actual objects and all 22 successful owner replay

@@ -23,14 +23,10 @@ insertion retains its 446-byte body and three differences. Actual generated
 literal contents and internal-label definitions verify before rebinding their
 names. Seventeen unchanged ranking cases cover every selected row and two
 outside selections, comparing complete state and ordered drawing effects.
-The current product receipt is
-`.analysis/intro-grid-cursor-20261012/verification.json`.
 
 The complete saved dossier is
 `ev_a42b5c952ba3c544d58bf1b3c0c2456c9e13f6149d7090c32e2952888fd6ff3e`,
-operation 05 of run `2026-10-07T13-44-46.898Z-interactive-3331671`.
-No new provider query runs. Before inputs, complete compiler comparison and
-focused cases are retained in `.analysis/ranking-row-records-20261012/`.
+operation 05 of run `2026-10-07T13-44-46.898Z-interactive-3331671`. No new provider query runs.
 
 ## Complete comparison review, October 17
 
@@ -49,15 +45,11 @@ before use; both successor paths redefine arithmetic flags before further use
 or a call. This review assumes valid ordinary memory, stable observations and
 normal ABI calls without caller-code inspection.
 
-The equality SMT query is UNSAT; a signed-order replacement has a SAT witness.
-The structural checker rejects changed branch polarity, selected-global binding
+The equality SMT query is UNSAT; a signed-order replacement has a SAT witness. The structural checker rejects changed branch polarity, selected-global binding
 and line color. This is an instruction correspondence with explicit limits,
 not a new exact or all-input semantic acceptance. The current restored-CRT
 object contains the same complete function/bindings; its earlier executed-image
-linkage receipt remains valid. Private `.analysis/ranking-equality-20261017/`
-retains the proposal, compiler receipt, eight full comparisons, all instruction
-pairs, solver inputs, mutation controls and reused original REA dossier identity.
-No game, provider query or full replay runs.
+linkage receipt remains valid. No game, provider query or full replay runs.
 
 ## Earlier UI diagnostics
 
@@ -66,5 +58,4 @@ either a grouped or separate glyph index. They produce 281/279 bytes with
 186 differences and 280/279 with 58, respectively. Both preserve the five UI
 exacts but worsen the preceding 279-byte measurement candidate. Both are
 rejected; the verified source and canonical object are restored without another
-compilation. No UI case replay runs. Retained records are in
-`.analysis/text-measurement-record-20261012/`; do not repeat these models.
+compilation. No UI case replay runs.

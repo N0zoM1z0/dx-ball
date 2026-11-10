@@ -42,12 +42,8 @@ bytes**, with 41 authored candidates. Their code hashes are unchanged.
 
 Original REA evidence is
 `ev_380287bfea6a4f582b8e8ee477b5c7d470de69c6555f3ab997e0f5f7d4650b2d`,
-operation 19 in the closed `2026-10-07T11-58-17.972Z-interactive-3053414` run.
-Its complete assembly is reused. Source scope spelling is inferred from the
-consumers and verified emission. Full comparisons, actual compiler inputs,
-rejected stages, independent review and build receipts are retained in
-`.analysis/intro-point-pass-workspace-20261013/`.
+operation 19 in the closed `2026-10-07T11-58-17.972Z-interactive-3053414` run. Its complete assembly is reused. Source scope spelling is inferred from the
+consumers and verified emission.
 
-Twenty-nine completed source, object and tracking copies are preserved in
-verified gzip carriers, releasing 4,460,544 allocated bytes. Current compiler
+Current compiler
 objects and build products remain available.

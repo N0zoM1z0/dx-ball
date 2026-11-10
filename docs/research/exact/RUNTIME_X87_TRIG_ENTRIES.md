@@ -86,7 +86,5 @@ Retained REA Evidence
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`
 covers the entry instructions and constant consumers. The complete constant
 data is compared directly between the pinned PE, original CRT member and new
-source object; no new REA data observation is claimed. Private proofs, input
-closures, initial failure, final compiler products and adoption receipt are in
-`.analysis/trig-entries-dispatch-constants-20261016/`. No new provider, full
+source object; no new REA data observation is claimed. No new provider, full
 replay, runtime probe, final game build or play check runs at this checkpoint.

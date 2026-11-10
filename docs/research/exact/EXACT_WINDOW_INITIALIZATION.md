@@ -41,6 +41,4 @@ call to its existing controlled boundary. Sound's existing MessageBox fixture
 binds the shared cell. No other owner Oracle runs.
 
 Native, VC4 and MinGW builds pass. VC4 reuses 26 source objects and compiles
-nine, including the new shared transport, to link 35 objects. Full source
-inputs, prior/current products, responses and bounded reviews are retained at
-`.analysis/checkpoints/exact-window-initialization-283-135/`.
+nine, including the new shared transport, to link 35 objects.

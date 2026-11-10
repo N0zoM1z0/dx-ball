@@ -52,17 +52,14 @@ The original dossier is reused from operation05 of the closed
 `2026-10-07T13-44-46.898Z-interactive-3331671` run, Evidence
 `ev_a42b5c952ba3c544d58bf1b3c0c2456c9e13f6149d7090c32e2952888fd6ff3e`.
 There is no new provider query. The earlier
-[fixed-X/row-cursor control](CLOSED_STORAGE_DIAGNOSTICS.md#clock-and-cursor-follow-up)
+[fixed-X/row-cursor control](CLOSED_STORAGE_DIAGNOSTICS.md)
 and equality-spelling controls remain closed. Moving the text record into each
 row is declined before compiling: all physical homes already agree, and no
 evidence connects that lifetime to the remaining producer.
 
 No native build, relink, oracle, game or full replay follows unchanged complete
 emissions. Existing cases and acceptance scopes remain untouched. Commands use
-one allowed CPU, CPU quota 35%, memory high 640 MiB and maximum 768 MiB. Private
-`.analysis/ranking-owner-family-20261017/` retains frozen inputs, complete
-comparisons, bindings and the instruction proof. Disposable source/object
-carriers are archived and individually verified before deletion. Totals remain
+one allowed CPU, CPU quota 35%, memory high 640 MiB and maximum 768 MiB. Totals remain
 391 exact functions and 24 authored candidates; reconstruction is unfinished.
 
 ## Connected Mac score producers, October 18
@@ -71,13 +68,9 @@ The [complete producer/consumer follow-up](MAC_CANDIDATE_FLOW_CONNECTIONS.md#reu
 reuses both Mac score bodies and preserves their grouped-list/file-format
 boundary. Metadata qualifies one input-only unsigned-long inference; it does
 not establish the row field kind, which remains unchanged. One fixed alias
-proposal compares all 35 affected functions in three serial compilations.
-All 31 prior exacts survive and high-score drawing remains 403/330. Paddle
+proposal compares all 35 affected functions in three serial compilations. All 31 prior exacts survive and high-score drawing remains 403/330. Paddle
 regresses 677/68 to 678/210 from one width+X load/add pair, so reject the
 entire model without adoption or variants. The original ranking CMP producer
 and 36-byte frame correspondence above remain unchanged. All 754 protected
-identities restore; current totals are 250 authored exact/20 candidates.
-No native build, relink, game, provider or full replay runs. Thirty closed
-raw members are archived/member-verified before deletion, with current
-products and shared evidence retained. This is a later bounded control;
+identities restore; current totals are 250 authored exact/20 candidates. No native build, relink, game, provider or full replay runs. This is a later bounded control;
 the historical totals and resource settings above describe the earlier run.

@@ -10,7 +10,7 @@ October22 update: the later
 424 frame-role bytes and yields a private1572/4 renderer. Height191/3 loses an
 exact, so the model is not adopted; the historical controls below remain valid.
 
-The later [closed follow-up](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-and-value-copy-follow-up)
+The later [closed follow-up](CLOSED_STORAGE_DIAGNOSTICS.md)
 tests nested origin conversions, axis records, a sampled source-plane record and
 floating consistency. None is adopted. The later
 [visible-pixel scope](ROTATION_VISIBLE_PIXEL_PHASE.md) changes only four local
@@ -43,12 +43,8 @@ extended expression promoted the operand to double and emitted m64 calls.
 The fourth divisor and its m64 fallback stay intact. Every constant binding
 checks the full operand bytes against both the object and original image.
 
-The retained renderer dossier is
-`ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26`.
 The complete constant carrier is
-`ev_3981d4fe3871c6d5f4976aaec23007d066c24f80aedca23dd51270d63c19de71`.
-These closed REA records cover the original writes, division operands and calls.
-Remaining differences include stack homes, address-generation schedules and
+`ev_3981d4fe3871c6d5f4976aaec23007d066c24f80aedca23dd51270d63c19de71`. These closed REA records cover the original writes, division operands and calls. Remaining differences include stack homes, address-generation schedules and
 instruction widths; equal instruction totals do not establish a complete match.
 
 Linux and MinGW builds pass. VC4 links the same compiled owner with 36 verified
@@ -59,10 +55,8 @@ instruction evidence. All 207 accepted function extents and compiler closures
 verify. Historical semantic scopes retain their case counts while their input
 inventories refresh for the source change.
 
-Inputs, complete comparisons, instruction inventories, products and the focused
-Oracle are retained in `.analysis/rotation-origin-storage-20261012/`. No game
-campaign ran. Verified gzip carriers retain disposable diagnostic object bytes
-after cleanup.
+No game
+campaign ran.
 
 ## Current C++ nested-origin control, October18
 
@@ -88,21 +82,15 @@ fallback division paths retain their operands. This bounded check does not
 claim complete renderer equivalence. Recovering these two homes alone does not
 recover its source or offset's compiler context.
 
-Sealed `.analysis/rotation-current-cpp-origin-20261018/` retains complete inputs,
-comparisons and independent reviews. Ten raw copies/products, including two
-objects, are archived and member-hash verified before deletion, releasing44 KiB
-net after archive/journal costs. Peak159,252,480 bytes; no high/max/OOM events.
-Canonical source, products, delivery and counts stay unchanged. No provider,
+Peak159,252,480 bytes; no high/max/OOM events. Canonical source, products, delivery and counts stay unchanged. No provider,
 native build, runtime case, relink, game or full replay follows; no further
 cast, parenthesis, flags or selective-object variants are queued.
-
 
 ## Complete retained-model tradeoff, October18
 
 A later passive review fills the preceding78-instruction boundary using the
 same sealed current and nested objects. No source variant or compilation is
-introduced. All five complete comparisons,115 bindings and25 full literal
-references reverify; the prior seal/archive and current eight project inputs agree.
+introduced.
 
 The entire365-instruction renderer now has a nonoverlapping424-byte map across
 36 value roles. Current and nested models have identical operations and
@@ -150,13 +138,8 @@ named/temporary allocation, release and reuse order remain unknown. In
 particular, deriving a464-byte impossibility from a named slot at−400 would
 require unproved allocation-order and no-reuse assumptions.
 
-Private `.analysis/rotation-nested-origin-complete-20261018/` retains the full
-role/group/CFG proof and independent review. Its two tiny extracted object
-copies are rechecked against the already sealed, member-verified original
-archive before removal; no second archive of identical products is needed.
 The verified cleanup releases12 KiB net after its journal; all19 protected
-input/product identities remain intact.
-Current source, objects, delivery, caches and counts remain unchanged. There
+input/product identities remain intact. Current source, objects, delivery, caches and counts remain unchanged. There
 is no compiler, provider, solver, emulator, runtime case, relink, game or full
 replay invocation.
 
@@ -178,8 +161,7 @@ root table contains23 symbols/340 frame bytes; a later visible-pixel table
 contains five symbols/20 bytes. Their actual bucket traversal orders agree
 with the two maintained physical home sequences. Observed known parents
 precede children in these lists; list construction, general parent-first
-allocation and temporary release/reuse are not recovered. The other seven
-snapshots remain unassigned to original entry points.
+allocation and temporary release/reuse are not recovered.
 
 The five original pixel homes interleave pre-API height/zero roles within the
 upper344 bytes. Together with the new actual table observation, this supports
@@ -200,27 +182,17 @@ frame-role bytes fall32→24, and none of the five pixel homes match the origina
 Reject this fixed model and retain the canonical source. This closes one
 observed producer hypothesis, not all possible original scopes or declarations.
 
-Sealed `.analysis/rotation-scope-output-list-20261018/` retains the actual trace,
-guards and independent review. Its complete five-function output is unchanged;
-11 copied inputs/products are archived and member-hash verified before deletion,
-releasing192 KiB net. The fixed-model evidence and independent comparison are
-retained in `.analysis/rotation-visible-root-20261018/`. Observation/model peaks
-are288,722,944/164,306,944 bytes, with one CPU at35% and no memory-limit events.
-The model's ten copied inputs/products, including two objects, are likewise
-archived and member-hash verified before deletion, releasing44 KiB net.
-No provider, native build, game, semantic replay, relink or full replay runs.
-All394 exact claims and the tested restored-CRT delivery remain unchanged.
+Observation/model peaks
+are288,722,944/164,306,944 bytes, with one CPU at35% and no memory-limit events. No provider, native build, game, semantic replay, relink or full replay runs. All394 exact claims and the tested restored-CRT delivery remain unchanged.
 
 ## Current frame encoding and manager path, October20
 
-Independent current-object review covers all365 instructions and424 frame bytes.
-The entire original1572/current1458-byte extent gap follows48 displacement
+Independent current-object review covers all365 instructions and424 frame bytes. The entire original1572/current1458-byte extent gap follows48 displacement
 encodings:43 original-only long displacements minus five current-only long
 displacements, each costing three bytes. Among124 differing decoded physical
 instructions,109 differ in frame homes and15 in the six equivalent operand
 groups. All22 calls,26 branch destinations,115 bindings and25 full literal
 references verify; three current exact companions retain709 code bytes.
-Authority: `.analysis/rotation-frame-source-question-20261020/findings.json`.
 
 The earlier trace already observes both consumed first-term doubles as named
 kind1 records, allocated at401556 to−324/−336. All48 owner allocation requests
@@ -237,19 +209,11 @@ No original storage kind, lexical lifetime or general absence of reuse follows.
 This closes this current manager-path question, without another source variant.
 
 All five complete bodies,115 actual bindings,25 full literal references, seven
-complete COFF section payloads and non-FILE symbols/aux records remain fixed.
-All8 frozen/current inputs and12 protected files verify. The one-CPU35%,384/512MiB
-scope takes4.994s and peaks at158,334,976 bytes, with zero memory-limit events.
-REA process Evidence:
-`ev_bba3ee1c69a3566c7565f01f7b4d102fdf5a24702aaf20d029592f1159402434`.
-Private authority: `.analysis/rotation-frame-manager-20261020/`.
-No source, compiler flag, exact claim, canonical object or delivery changes.
-Independent plan/result reviews recheck the raw installation/exit records and
+complete COFF section payloads and non-FILE symbols/aux records remain fixed. All8 frozen/current inputs and12 protected files verify. The one-CPU35%,384/512MiB
+scope takes4.994s and peaks at158,334,976 bytes, with zero memory-limit events. REA process Evidence:
+`ev_bba3ee1c69a3566c7565f01f7b4d102fdf5a24702aaf20d029592f1159402434`. No source, compiler flag, exact claim, canonical object or delivery changes. Independent plan/result reviews recheck the raw installation/exit records and
 all complete comparisons. Only three COFF timestamp bytes differ between the
-two whole objects. After member-size/SHA verification,26 explicit copied inputs,
-helper/bytecode files, utility and two objects are removed, releasing303,104
-allocated bytes net before the cleanup journal. All24 protected current
-identities survive; unique traces/reviews and the verified archive remain.
+two whole objects.
 
 ## Fixed geometry ownership control, October20
 
@@ -273,10 +237,6 @@ just a requested literal prefix. Complete same-function target identity and
 the comparator's exact local-target guard remain enforced.
 
 REA process Evidence:
-`ev_3858de6fd99342939ace1855bad220c0d0dcd1bc61c4d5c1f3b9136d7bf9f08a`.
-Independent plan/result reviews and whole-byte comparisons are retained in
-`.analysis/rotation-geometry-owner-20261020/`. The scope peaks at156,008,448 bytes,
-with zero memory-limit events. After member-size/SHA verification,25 copied
-inputs/helpers/logs/objects are removed, releasing151,552 allocated bytes net
-before the cleanup journal; all23 protected identities survive. No native/game
+`ev_3858de6fd99342939ace1855bad220c0d0dcd1bc61c4d5c1f3b9136d7bf9f08a`. The scope peaks at156,008,448 bytes,
+with zero memory-limit events. No native/game
 build, relink, runtime case, full replay, maintained source or claim changes.

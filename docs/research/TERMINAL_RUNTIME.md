@@ -70,10 +70,8 @@ samples show its ball attached. The wait had missed an already completed clear.
 The terminal harness now accepts an increased score with either the zero-brick
 state or the advanced board index, then retains its separate stable reset/next
 board checks. All initial board bytes, per-board score/life requirements, the
-terminal routing/storage pattern, saved bank and shutdown assertions remain.
-This changes the observer only. Maintained game C and shared release logic are
-unchanged. The private failure archive excludes stale summaries from previous
-attempts and retains the complete current samples and original input identities.
+terminal routing/storage pattern, saved bank and shutdown assertions remain. This changes the observer only. Maintained game C and shared release logic are
+unchanged.
 
 REA process Evidence
 `ev_0eb0d9cda3740ea03750de89b9201a159e8cd198859a06481df42254f51ffe26`
@@ -100,11 +98,7 @@ shows an unchecked 400-byte copy from `0x43AAB8 + index * 400` to `0x43F8F8`,
 calling the original CRT at `0x417CA0`. The initialization dossier at
 `0x411930`, Evidence
 `ev_92be01dc5bd27943d2a7e4db4df66ded90a7e2b76219f3c62058ef728d7ba02c`,
-clears the auxiliary grid and invokes this loader. The retained advance-level
-dossier, Evidence
-`ev_10dedc1278e4815286d503ac118934dbfa5686b95b7ab47456756e5f5df0672a`,
-increments index49 to50, requests menu termination and still initializes/counts
-that index. An empty resulting buffer would also set lives to zero.
+clears the auxiliary grid and invokes this loader. An empty resulting buffer would also set lives to zero.
 
 The bank ends at `0x43F8D8`. Index50 therefore reads 32 adjacent bytes followed
 by the first 368 bytes of the old tile buffer; source and destination overlap.

@@ -10,9 +10,7 @@ sequence. The second time sample already preserves the remaining value in EBX
 in the canonical explicit-local body and both controls. An older private
 receipt's claim that this second producer was restored relative to that body
 was incorrect: it was already present and merely moved four bytes. The hard
-call-order rejection stands. Private
-`.analysis/lightning-clock-rejection-recheck-20261018/` retains complete-body,
-call and producer checks plus independent review. No new source hypothesis,
+call-order rejection stands. No new source hypothesis,
 compiler, provider or replay follows this correction.
 
 This note records the earlier adopted scope change. The later
@@ -86,11 +84,6 @@ Historical scope-checkpoint image SHA-256:
 `345a68875bad0693476c55fcd69f41c5a9b158fc96e1f3e4f3189358001d3f14`.
 Earlier GUI observations keep their recorded image hashes.
 
-Private `.analysis/lightning-expiry-scope-20261017/` retains frozen inputs,
-before/after objects, complete comparisons, source reversal, frame proof,
-selected existing cases, ledger reversal and whole-image verification.
-Verified archive/compression releases 1,425,408 allocated bytes of duplicate
-carriers; current products and unique evidence remain available.
 Totals remain **475 source / 380 exact / 95 complete candidates**, including
 34 authored candidates. No full replay or port work runs; heavy operations stay
 serial under CPU 35%, memory high 640 MiB / maximum 768 MiB.
@@ -108,14 +101,10 @@ No compiler, relink, provider query or full replay runs; exact acceptance stays3
 ## Closed scan-only scope
 
 One later private model limits column, row and tile to a block containing only
-the board scan. Selected tile/center results retain their expiry-branch scope.
-All operations, types, names and order stay unchanged. One compilation compares
+the board scan. Selected tile/center results retain their expiry-branch scope. All operations, types, names and order stay unchanged. One compilation compares
 all twenty functions: twelve exacts retain 3,303 bytes and the other nineteen
-code identities remain unchanged, but last-brick worsens990→991 differences.
-Reject this block and retain the maintained990 result. Source, cached objects,
-image and ledgers remain unchanged; no native check, relink or game follows.
-Frozen inputs, objects and complete comparisons are retained under
-`.analysis/lightning-scan-scope-20261017/`. Do not repeat this scope model.
+code identities remain unchanged, but last-brick worsens990→991 differences. Reject this block and retain the maintained990 result. Source, cached objects,
+image and ledgers remain unchanged; no native check, relink or game follows. Do not repeat this scope model.
 
 ## Initial native clock-expression rejection
 
@@ -135,9 +124,7 @@ spellings for register allocation.
 The failed ordered case initially stops this proposal before any VC4 compilation or
 complete-function comparison. One private native owner compiles and links with
 36 unchanged objects; no canonical source, object, library, report, ledger or game
-image changes. There is no new semantic acceptance, game, provider or full replay.
-Both traces, commands and consumed inputs are retained in
-`.analysis/lightning-clock-operand-order-20261017/`. Unique private products and
+image changes. There is no new semantic acceptance, game, provider or full replay. Unique private products and
 proposal inputs are compressed with byte equality before disposable copies are
 removed. This failure does not prove a source optimum or resolve original EBX use.
 
@@ -173,11 +160,7 @@ remain nonexact. The restored frame and smaller raw difference count cannot
 override the call-order failure. No additional expression, cast, parenthesis,
 register or flag variants follow; retain the explicit canonical time sample.
 
-Private `.analysis/lightning-rng-left-vc4-20261018/` and
-`.analysis/lightning-time-left-cpp-20261018/` retain sealed full comparisons,
-provenance and independent reviews. Each archives and member-hash verifies22
-raw inputs/products, including two objects, before deleting them, releasing
-120 KiB net per model. Scope peaks are155,910,144/156,430,336 bytes with zero
+Scope peaks are155,910,144/156,430,336 bytes with zero
 high/max/OOM events under the required caps. No new native build, runtime case,
 provider query, relink, game or full replay follows. Canonical source, products,
 semantic/exact ledgers and delivery stay unchanged at394 exacts/21 authored
@@ -199,10 +182,7 @@ The 68-byte frame and every other instruction byte remain unchanged. All 19 comp
 code/metadata identities, including 16 current exacts, remain unchanged. Historical
 companion counts above belong to their earlier declaration contexts.
 
-The current source, objects, reports, ledgers and delivery remain unchanged.
-No native build, relink, game, provider query or full replay follows rejected code.
-Private `.analysis/lightning-crop-lifetime-20261017/` retains the complete
-comparisons, frame proof and frozen proposal/input/object archive. Do not extend
+The current source, objects, reports, ledgers and delivery remain unchanged. No native build, relink, game, provider query or full replay follows rejected code. Do not extend
 this scope model without a new producer fact.
 
 ## Selected coordinate ownership review, October18
@@ -214,9 +194,7 @@ in reverse memory order for an ordinary `{x,y}` point; center homes x−36/y−5
 are noncontiguous. No shared address or whole-object copy supplies the missing
 ownership evidence. Decline these two ordinary point models before compiling;
 do not try reversed fields or padding. This bounded review does not close other
-aggregate possibilities or recover unique declarations. Private
-`.analysis/last-brick-point-ownership-20261018/review.json` preserves the actual
-producer/consumer sites, original dossier and current homes. No source, compiler,
+aggregate possibilities or recover unique declarations. No source, compiler,
 provider, runtime or comparison changes follow.
 
 ## Compiler-dependent particle argument order
@@ -230,10 +208,7 @@ objects. The calls share one C++ argument list, whose
 evaluation order is unspecified. This is a demonstrated future portability gap,
 not a failure of the current VC4 behavior or a new exact-source result.
 
-Retain the current VC4 source while authored exact recovery has priority.
-Portable sequencing must preserve the original RNG order when port work resumes;
+Retain the current VC4 source while authored exact recovery has priority. Portable sequencing must preserve the original RNG order when port work resumes;
 do not treat the GCC result as compiler-independent evidence. No source, accepted
 comparison, canonical object, game image or case scope changes. Two one-case
-checks run, without a full replay or game build. Private
-`.analysis/lightning-rng-order-20261017/` retains the commands, consumed inputs,
-both complete event traces and compressed alternate object/library carriers.
+checks run, without a full replay or game build.

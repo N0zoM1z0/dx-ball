@@ -15,5 +15,4 @@ An unsigned sign-mask model produces14 bytes/10 differences, and unsigned
 conditional negation produces11 bytes/seven differences. Restoring the signed
 operation produces the exact body. Three VC4/native/i686 compilation sets
 completed; no runtime or game checks ran. All315 preceding exacts and104
-candidate products retain their verified inputs. Receipts and unique objects
-are in `.analysis/runtime-absolute-20261014/`.
+candidate products retain their verified inputs.

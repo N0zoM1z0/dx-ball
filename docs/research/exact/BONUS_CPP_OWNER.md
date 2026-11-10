@@ -29,9 +29,7 @@ API, declaration-order, name or compiler-flag variants are tried.
 One VC4 compile compares all four complete functions. The updater's 209 actual
 relocations include the dispatch anchor and all 19 switch entries; same-section
 destinations are checked against actual COFF definitions. All three references
-to the full eight-byte `2.0` literal retain their actual addends `0, 4, 0`.
-The original complete spans and retained REA evidence are documented in
-[the bonus dossier](EXACT_BONUSES.md). No new provider query is needed.
+to the full eight-byte `2.0` literal retain their actual addends `0, 4, 0`. No new provider query is needed.
 
 ## Production placement and affected checks
 
@@ -74,16 +72,10 @@ denominator remain open.
 
 ## Evidence and cleanup
 
-Private phase `.analysis/bonus-cpp-owner-20261017/` retains the complete producer,
-before-images, comparisons, relocation provenance, affected-flow reports,
-incremental build receipts, linked verification and independent review.
 The initial linked verifier's missing-anchor failure is retained with its
 correction: the bitmap loader's entire public COMDAT was discarded, rather than
 being a private helper. Neither verifier correction requires rebuilding.
 
-The phase cleanup receipt records a member-hash-verified archive before removal
-of 56 temporary input/product files and eight obsolete or duplicate build
-products, releasing 8,990,720 allocated bytes net of the archive (about 8.57 MiB;
-receipt costs excluded). Allocation accounting respects inode link counts. Current C++ objects, tested products, canonical configuration
+Allocation accounting respects inode link counts. Current C++ objects, tested products, canonical configuration
 caches and unique evidence remain available. Current records supersede the
 historical C-owner comparison without invalidating its retained evidence.

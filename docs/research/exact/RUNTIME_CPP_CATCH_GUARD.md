@@ -43,8 +43,6 @@ REA 6.5.0 / Ghidra 12.1.4 evidence:
   reference at `0x004185CB`:
   `ev_fd908e8bbe01431944507ee02a49cb292813aeee5200752fdc0a57024d45218d`.
 
-Responses and the rejected `procedure_info` lookup are retained in
-`.analysis/rea/runs/2026-10-16T05-13-56.899Z-requests-129676/`.
 The lookup reports no procedure at the observed address. This is a provider
 inventory limitation, not absence of the callback. The three successful
 reads/decodes were retained before that rejection; the session then closed
@@ -53,8 +51,6 @@ and saved normally. No repeated query or function-creation annotation was needed
 The member was extracted again from pinned `libc.lib` at archive offset
 `0x0002DD2C`. Its SHA-256 is
 `206b02d6136285da3400a3bd57538a7ca3bee816d979cdd51753322d6ed350ce`.
-Complete proof and exact bindings:
-`.analysis/cpp-catch-guard-origin-20261016/complete-comparison.json`.
 
 Current totals are **544 inventory / 463 source-present / 372 exact**,
 76,452 exact code bytes and 232 attached metadata bytes. There are 81 inventory
@@ -89,13 +85,8 @@ contracts remain open source work; ordinary C forwarding would lose behavior.
 
 REA 6.5.0 / Ghidra 12.1.4 complete reads:
 `ev_5997988a35c92ec75e177c0d3602a3e76f3c0f2a8d9567d1d377dedba83d305a`
-and `ev_a6a2fe2f32fcd6d0e7516dd958192ef0ce2b4e7bb473ada8e3f814da782cda52`.
-The earlier complete frame dossier is reused under its original REA 4.1
+and `ev_a6a2fe2f32fcd6d0e7516dd958192ef0ce2b4e7bb473ada8e3f814da782cda52`. The earlier complete frame dossier is reused under its original REA 4.1
 identity, `ev_4508867ac2559a1476790eebf4ebcc66f06b1002418ecd68cef6f5580ad461a4`.
-New responses are retained in
-`.analysis/rea/runs/2026-10-16T05-46-21.766Z-requests-188128/`;
-the three complete section comparisons and explicit bindings are in
-`.analysis/cpp-translator-boundaries-20261016/complete-comparison.json`.
 
 Current origins are 270 authored, 217 runtime, 21 compiler-generated and 12
 unknown. The 520 independent entries, 24 parent fragments, 464 source-present

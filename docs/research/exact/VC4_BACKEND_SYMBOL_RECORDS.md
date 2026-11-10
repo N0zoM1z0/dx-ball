@@ -24,8 +24,6 @@ Static pointer-byte matches were candidate locations only; REA subsequently
 confirmed reference-source addresses and selected containing procedures. The
 direct xrefs list does not expose reference kinds.
 
-The completed REA6.5.0/Ghidra12.1.4 session retains14 Evidence records under
-`.analysis/rea/vc4-backend/runs/2026-10-17T11-03-42.058Z-interactive-3335159/`.
 Its snapshot is isolated from the original-game snapshot. The profile omits
 `Apply Data Archives`; the exact profile and limitations accompany every record.
 
@@ -59,13 +57,10 @@ were removed. Guard and mocked lifecycle checks cover rejected compiler targets,
 accepted compiler targets and the existing game snapshot behavior. There were
 no new original-game queries, compiler-setting changes or exact claims.
 
-Private static metadata, request identities, failures, lifecycle checks and
-cleanup receipts are in `.analysis/compiler-lowering-discovery-20261017/`.
 Reuse these records before another compiler import. The later
 [expression-ordering investigation](VC4_EXPRESSION_ORDERING.md) connects the
 numeric lookup field at record`+0x24` to an actual subtree-ranking and swap
-decision. Its64-record cumulative snapshot includes these14 observations.
-The specific original-game producer link remains missing. The investigations
+decision. Its64-record cumulative snapshot includes these14 observations. The specific original-game producer link remains missing. The investigations
 did not themselves authorize declaration searches; the later standing user
 authorization now permits bounded natural-source candidates with complete
 affected comparisons, without claiming that this missing historical link is proved.
@@ -128,13 +123,8 @@ A second correction separates the authority's `build` annotation from complete
 comparator equality. Neither repeats compilation. No source, claim, delivery,
 semantic case, replay or game observation changes.
 
-Private `.analysis/sprite-bank-current-producers-20261017/` retains the complete
-instruction correspondence, reader trace, verifier corrections and independent
-reviews. The observer EXE and duplicate observed COFF are archived, with every
-member hash checked before deletion. Another98 old copied runtime files are
-verified against49 retained carriers and removed after active-reference checks.
-Cleanup releases3.38 MiB of allocated storage after its archive and journal.
-Originals, historical image/map/captures/states, current tested products, useful
+The observer EXE and duplicate observed COFF are archived, with every
+member hash checked before deletion. Originals, historical image/map/captures/states, current tested products, useful
 CMake caches and direct traces remain. The job uses one CPU, CPU35%, memory
 high640 MiB/maximum768 MiB; no provider import or full replay runs.
 
@@ -181,8 +171,7 @@ independent normal callable entry. Ghidra gives`0x40aed4` a void signature,
 although its actual EAX is consumed as the negative frame position.
 
 Seventeen final controlled calls execute unmodified mapped C2 instructions:
-16 retained pre-records in observed order and one already-allocated guard.
-With explicit starting cursor0/alignment4, all16 homes, the180-byte frame,
+16 retained pre-records in observed order and one already-allocated guard. With explicit starting cursor0/alignment4, all16 homes, the180-byte frame,
 padded returns, allocated flags, saved registers and stack balance agree. Four
 is also the initialized PE alignment default; this does not independently observe
 the runtime global. Other storage cases and frontend emission are outside the
@@ -196,20 +185,11 @@ both complete product groups are included. Width already matches EBP−52;
 thirteen other scalar homes differ. This is a candidate explanation with no new
 exact or semantic acceptance.
 
-An offline archive proof closes root14 precisely: its body equals the retained
-C++ before-iteration model, including the116-byte API workspace and current
-operations. That complete comparison is1475/72. A later context alone supplies
+That complete comparison is1475/72. A later context alone supplies
 no new source-model basis. A target-ordered aggregate of all14 roles lacks an
 independent aggregate producer/consumer and is not compiled.
 
-Private `.analysis/bank-frame-writer-20261017/` retains both direct traces,
-hardware write, complete comparisons, corrections, archive proof and independent
-reviews. Four observer products are archived/member-verified before removal;
-the closed run's identical8.36 MiB catalog shares its immutable carrier while
-preserving all paths and bytes. Cleanup releases8.66 MiB after archive/journal.
-Current tested products, valid caches and unique evidence remain. Source,
-394 exact/21 authored candidates, delivery and semantic cases stay unchanged.
-No game or full replay runs. Heavy work is serial on one CPU under CPU35%,
+No game or full replay ran for this observation. Heavy work is serial on one CPU under CPU35%,
 memory high640 MiB/maximum768 MiB.
 
 The later [C1XX traversal investigation](VC4_FRONTEND_SYMBOL_ORDER.md) recovers
@@ -263,13 +243,10 @@ calls the ordinary cursor allocator and writes home`+4` at`42BE8C`. This is an
 internal record mechanism, without a recovered source declaration or a general
 classification of generated temporaries.
 
-Private `.analysis/backend-frame-cursor-20261018/` retains the closed snapshot,
-full records, byte checks, resource samples and independent review. The owned
-temporary database is gone. Verified immutable-catalog sharing releases
-8,683,520 allocated bytes net of the new archive/journal. Heavy work remains
+The owned
+temporary database is gone. Heavy work remains
 serial at CPU 35%, one CPU, memory high 640/max 768 MiB; the sampled peak is
-672,075,776 bytes, with soft-limit reclaim and zero hard-limit/OOM events.
-Current source, objects, delivery, 394 exact and 21 authored candidates remain
+672,075,776 bytes, with soft-limit reclaim and zero hard-limit/OOM events. Current source, objects, delivery, 394 exact and 21 authored candidates remain
 unchanged. The next bounded question is which cursor/home paths one unchanged
 rotation compilation actually executes.
 
@@ -313,12 +290,7 @@ The static group mechanism remains real but has no demonstrated role in this
 current frame layout. Original declarations and original allocation/reuse
 remain unresolved; no source model or exactness gain follows automatically.
 
-Private `.analysis/backend-frame-runtime-20261018/` retains the raw before/after
-states, exact input identities, full comparisons and independent reviews. The
+The
 single observed compile takes 3.825 seconds. Its scoped memory peak is
 269,717,504 bytes, with zero soft/hard/OOM events under the one-CPU/35% and
 640/768 MiB limits. No provider, game, native build or full replay is run.
-Eleven disposable raw files (eight copied inputs, two objects and the observer
-executable) are archived and member-hash verified before deletion. Removing
-those files and this phase's Python cache releases 208,896 allocated bytes net
-of the archive/journal. Current tested products and useful build caches remain.

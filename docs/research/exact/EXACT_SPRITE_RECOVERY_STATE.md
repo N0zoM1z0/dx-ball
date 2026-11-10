@@ -11,9 +11,6 @@ scanning all255 slots, it reloads each allocation-mode1 bank with its actual
 filename. All live reads, failure behavior and call order remain shared by
 portable and legacy builds.
 
-The saved REA carrier is
-`.analysis/rea/runs/2026-10-07T10-33-32.118Z-interactive-2912559/06-analyze_function.json`,
-Evidence `ev_6086488847b0abeff3f7ed6af657fd76f1d18d085752c4ae7c38ff49c74b9d94`.
 It covers the contiguous282-byte body and85 instructions. The original result
 write at `0x403E0B` supports the retained state; its authored spelling and whether
 it came from an explicit local remain unknown.
@@ -34,5 +31,4 @@ Linux and MinGW products build; VC4 links one changed object with36 verified
 unchanged objects. No game runs.
 
 The checkpoint verifies all225 exact closures across55,998 code bytes and136
-metadata bytes, leaving48 authored nonexact functions. Completed private receipts
-and rejected models are retained in `.analysis/sprite-recovery-cursor-20261012/`.
+metadata bytes, leaving48 authored nonexact functions.

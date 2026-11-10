@@ -8,7 +8,6 @@ below describe their earlier checkpoints; they retain their original hashes,
 coverage and limits. Full frame failure ownership and remaining CRT helpers
 are still open.
 
-
 A bounded review of saved REA `analyze_function` records identifies the next
 supporting contracts to inspect after the connected gameplay owners. It reuses
 closed, target-matching Ghidra records; no new binary query or provider import
@@ -63,9 +62,7 @@ classification. Compiler/library attribution needs its own corroboration;
 forwarding to a host service remains a bridge. Independent unused graphics
 leaves can follow the dependencies needed by the connected game.
 
-The private inventory `.analysis/maintained-call-frontier.json` binds the
-current function/origin ledgers, its producer and each retained Evidence file
-by SHA-256. It preserves the excluded-record list and per-target caller
+It preserves the excluded-record list and per-target caller
 references, so a later pass can expand the boundary without repeating the
 existing queries. At that inventory checkpoint, the accepted totals were **235 maintained / 109,805 direct
 cases / 36 exact units / 3,518 bytes**, with 279 unknown origins and 14 identified
@@ -74,8 +71,7 @@ runtime entries.
 ## Focused REA instruction review
 
 A subsequent sequential REA `analyze_function` batch inspects five selected
-entries with the pinned Ghidra provider. The complete dossiers and closed
-session are retained. This supplies instruction contracts, not semantic
+entries with the pinned Ghidra provider. This supplies instruction contracts, not semantic
 acceptance or a compiler/library attribution.
 
 | Entry | Observed contract | REA Evidence |

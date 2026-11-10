@@ -25,10 +25,6 @@ Linux and MinGW build; VC4 relinks the two changed owners with 35 verified
 unchanged objects and no extra legacy source compilation.
 
 All 223 accepted units and input closures verify: 55,481 code bytes and
-136 separate metadata bytes, with 50 authored functions remaining nonexact.
-No game campaign runs. Original evidence is
+136 separate metadata bytes, with 50 authored functions remaining nonexact. No game campaign runs. Original evidence is
 `ev_c00ff92fb8c6b7716952bed048968fc8ee66daaf782d6dd40d19389de053df98`,
-operation 04 of run `2026-10-09T16-15-21.487Z-interactive-1181426`.
-No new REA query is needed. Four geometry stages, before inputs, full comparisons,
-case receipts and verified compressed products remain in
-`.analysis/rectangle-overlap-record-20261012/`.
+operation 04 of run `2026-10-09T16-15-21.487Z-interactive-1181426`. No new REA query is needed.

@@ -55,12 +55,9 @@ their preceding 7,164 and 1,024 COFF vectors. No tracked test or fixture changes
 
 Acceptance stays at **283 source-present / 247 scoped semantic entries /
 112,273 distinct cases**, with **86 exact units**. Origins remain 270 authored,
-48 runtime, 42 compiler-generated and 168 unknown. Private checkpoint:
-`.analysis/checkpoints/exact-integer-trig-283-86`, parent
-`.analysis/checkpoints/exact-control-flow-283-81`. It retains full frozen
+48 runtime, 42 compiler-generated and 168 unknown. It retains full frozen
 inputs, actual products, saved original evidence, failed models, interrupted
-logs and independent reviews before verified cleanup. The 465-record REA
-snapshot is unchanged.
+logs and independent reviews before verified cleanup.
 
 Source presence, semantic scopes and distinct cases stay unchanged. The full
 authored denominator, types, whole-game fidelity and **>=95% complete-source

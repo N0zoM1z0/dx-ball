@@ -80,11 +80,9 @@ their owned cleanup/handler/continuations rather than stopping at old split rows
 
 Closed REA 4.1.0 / Ghidra 12.1.4 records provide the destructor, epilogues,
 cleanup calls, handler bindings and complete metadata. The request set is
-[rea-fixed-lifetime.json](../../../config/rea-fixed-lifetime.json). Reused class and
-triangle dossiers retain their original target identity. An undefined Listing
+[rea-fixed-lifetime.json](../../../config/rea-fixed-lifetime.json). An undefined Listing
 instruction at `0x0040B346` remains explicitly undecoded; the complete original
-byte read and compiler-owned cleanup metadata support the extent instead.
-Private diagnostics retain the class-only match, triangle expression/order
+byte read and compiler-owned cleanup metadata support the extent instead. Private diagnostics retain the class-only match, triangle expression/order
 trials and canonical source/object. The first class-only raw source was changed
 before it was copied; its compiler listing survives, while the accepted cold
 build has complete frozen source inputs. No frozen-source claim is made for that
@@ -108,10 +106,7 @@ cover C/C++ linkage and the Windows callback ABI. A Release attempt encountered
 an existing unrelated ignored-fread warning under `-Werror`; it is retained as
 a failed diagnostic, without a Release validation claim.
 
-The private checkpoint `.analysis/checkpoints/exact-fixed-265-63` retains source,
-frozen inputs, closed provider records, full code/metadata comparison, compiler
-products, reports and a losslessly compressed 387-evidence snapshot before
-cleanup. Historical display, palette, list, core and allocator native products
+Historical display, palette, list, core and allocator native products
 retain their identities. Originals and compiler binaries remain private.
 
 ## Read-only receiver control, October 17
@@ -136,9 +131,6 @@ divisions and two comparisons. Every original target, relocation type and
 addend is preserved; other decorated rebinding stays prohibited. Complete-span
 and local-target checks remain active. No byte projection or mask is accepted.
 
-Private `.analysis/fixedpoint-const-receivers-20261017/` retains the transformation,
-full comparisons, actual definition/binding checks and independent review.
-Raw inputs/products are archived and every member hash verified before deletion.
 Canonical source, cached objects, ledgers, image and totals remain unchanged:
 391 exacts and24 authored candidates. No provider query, runtime check, game run
 or full replay accompanies this rejected source model.
@@ -172,8 +164,7 @@ the new import header is removed. Source, delivery and 250 authored exact/20
 candidates remain unchanged. This does not reject the genuine API identity or
 establish original header placement, source names or optimality.
 
-Private `.analysis/raster-muldiv-api-20261018/` retains the prepared model,
-complete comparisons, instruction delta and independent reviews. The compile
+The compile
 takes 2.589 seconds; its complete pilot scope peaks at 192,634,880 bytes under
 CPU 0/35% and 384/512 MiB limits, with no memory-limit events. There is no
 provider query, native build, relink, runtime case, game or full replay.
@@ -223,9 +214,7 @@ payloads remain unchanged. This establishes those containers and bindings,
 not whole-PE byte identity or a new physical Windows observation.
 
 Current linked image: 166,400 bytes, SHA-256
-`40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`.
-Private `.analysis/raster-muldiv-integration-20261018/` retains the reuse proof,
-independent reviews, build/case results and initial verifier failures. The
+`40f92f0ff8b175c3ff4e38cba6760cce30081c25bc5b8300d1aaa2f2932d551f`. The
 highest recorded step peak is 170,659,840 bytes, with CPU 0/35%, 384/512 MiB
 and zero memory-limit events. No VC4 raster recompile, provider query, game launch
 or full replay runs. Current authored coverage remains 250 exact/20 candidates.
@@ -261,19 +250,12 @@ Keep the whole model private, without subsets or further variants. The eligible
 independent class model does not establish a historical fidelity gain sufficient
 to adopt those mixed polygon changes. Current source, products and250 authored
 exacts/20 candidates remain. Full input hashes, actual eight-definition bindings,
-metadata ownership and local-target guards pass independent review. All746
-protected hashes and five source modes/nsmtimes restore before documentation;
-the temporary header is removed. A stale-variable bug in the summary's candidate
+metadata ownership and local-target guards pass independent review. A stale-variable bug in the summary's candidate
 display is corrected in a separate journal from unchanged raw comparisons,
 without repeating the compiler or producer.
 
-Private `.analysis/fixed-muldiv-code-index-20261018/` retains the complete donor,
-index responses, frozen model, comparisons and independent reviews. Archive
-members are size/SHA verified before deleting proposal objects, source copies
-and closed helpers. Compilation takes2.613 seconds; its comparison scope peaks
-at178,302,976 bytes under CPU0/35% and384/512MiB, with zero memory-limit events.
-No native build, relink, provider query, runtime case, game or full replay runs.
-Two additional ratio-index queries establish no connected triangle: the first
+Compilation takes2.613 seconds; its comparison scope peaks
+at178,302,976 bytes under CPU0/35% and384/512MiB, with zero memory-limit events. No native build, relink, provider query, runtime case, game or full replay runs. Two additional ratio-index queries establish no connected triangle: the first
 matches comment openers; the corrected parenthesized-denominator query returns
 no match. These are bounded index findings, not proof of source absence.
 
@@ -322,28 +304,21 @@ private, with no subsets or source variations based on these results.
 
 All746 protected canonical hashes and five source modes/nsmtimes restore;
 the temporary header is removed. Current source, delivery and250 authored exacts/
-20 candidates remain. Private `.analysis/sdk-flip2d-source-20261018/` retains the
-source inventory, full responses, ABI correspondence, frozen model and independent
-reviews. Closed proposal objects and input copies are archived and every member's
-size/SHA checked before removal. Compilation takes3.171 seconds; the full scope
-peaks at196,087,808 bytes under CPU0/35% and384/512MiB, with zero memory-limit events.
-No native build, relink, provider query, runtime case, game or full replay runs.
-The bounded triangle-prototype index query misses even this retrieved source and
+20 candidates remain. Compilation takes3.171 seconds; the full scope
+peaks at196,087,808 bytes under CPU0/35% and384/512MiB, with zero memory-limit events. No native build, relink, provider query, runtime case, game or full replay runs. The bounded triangle-prototype index query misses even this retrieved source and
 reports a shard limit; index negatives cannot establish source absence. Seek an
 independently evidenced earlier controller revision or the game's modifications
 before another compiler model.
 
 ### Earlier Game SDK source
 
-The [archived Game SDK catalog](https://archive.org/details/gamesdk) identifies a
-DirectX1.0 package dated December9,1995. Its complete archive-view inventory
+Its complete archive-view inventory
 supplies1,245 member links, including `SDK/SAMPLES/FLIPCUBE/TRI.CPP` and `FIXED.H`,
 both stamped September29,1995. Individual member retrieval obtains the complete
 4,295-byte triangle source, SHA256
 `ad52912189f372c78bf11d9b6796e2bf232bfce9ff340409619f94ef2c65d3e4`,
 and1,742-byte header, SHA256
-`9e1cc435e25ba7468998273ef54685d897ad867eaa4629a18f02acf0ffffc1fe`.
-At that checkpoint the full13,331,158-byte RAR is neither downloaded nor independently hash-verified;
+`9e1cc435e25ba7468998273ef54685d897ad867eaa4629a18f02acf0ffffc1fe`. At that checkpoint the full13,331,158-byte RAR is neither downloaded nor independently hash-verified;
 catalog dates and member timestamps are observations, not independent historical
 authentication.
 
@@ -356,20 +331,15 @@ above already retained the game's XOR swaps, so this earlier source supplies no
 new compiler model. No compile or source variation follows. The game's clipping,
 unread division and declaration modifications remain unresolved.
 
-Private `.analysis/triangle-sdk-versions-20261018/` retains received response bytes,
-actual member inventory, source difference and independent review. Eleven response
-records verify; all746 canonical hashes remain unchanged before documentation.
-Three source members are retrieved, with only selected markers read in the larger
+Eleven response
+records verify; all746 canonical hashes remain unchanged before documentation. Three source members are retrieved, with only selected markers read in the larger
 `FLIPCUBE.CPP`. Neither the full archive nor every sample implementation is examined.
 
 ### Full SDK carrier and source-corpus check, October19
 
-Later acquisition verifies the complete [Game SDK RAR](https://archive.org/download/gamesdk/GAMESDK.rar)
-and [DirectX2 RAR](https://archive.org/download/directx2sdk/DIRECTX2.rar) against
-their actual archive.org metadata sizes, SHA1 and MD5. Their SHA256 identities
+Their SHA256 identities
 are respectively `b8acc28bd87b31bbc378cabf7b0629305a6a9cb26b4e04f9e3e9f081a51a82f3`
-and `94a2baa74e28f78a0897a3307fe061d8bffbc5bd57f698e601177cd4d4735834`.
-Received integrity does not independently authenticate historical release dates.
+and `94a2baa74e28f78a0897a3307fe061d8bffbc5bd57f698e601177cd4d4735834`. Received integrity does not independently authenticate historical release dates.
 
 The earlier Game SDK source above is reobtained, not newly discovered. The
 DirectX2 triangle has4300 bytes, SHA256
@@ -388,13 +358,9 @@ F0000 and memmove hits outside the known triangle family are only Win32 access-
 right constants and RtlMoveMemory macros. This is a literal/file-extension scope,
 not complete semantic inspection or proof that no related source exists.
 
-Private `.analysis/early-sdk-raster-20261019/` retains the complete source/text
-corpora in a1135114-byte archive, full acquisition/index receipts and the review.
-Eighteen closed helper/index/source copies are member-hash verified in a91911-byte
-archive. Both received RAR copies are removed only after all selected source/text
+Both received RAR copies are removed only after all selected source/text
 members are retained and verified; unselected binary/other-extension payloads
-remain outside the source claim. Cleanup releases41267200 allocated bytes after
-both archive costs and before small receipts. All90 protected source/config/
+remain outside the source claim. All90 protected source/config/
 object/product identities stay fixed. Commands use CPU0/35%,384/512MiB; the
 cleanup process peaks43286528 bytes with zero limit events. No game compilation,
 provider query, runtime case, relink, full replay or new source/exact claim follows.
@@ -411,11 +377,9 @@ do not import donor colour replication or bulk writes.
 
 The earlier SDK controller trial explicitly retained byte colour. A new
 triangle-only proposal is withdrawn before staging or compilation when the
-complete called-span declaration qualifies the coupled role. Its two members
-are archived and individually size/SHA verified before deletion. One definitive
+complete called-span declaration qualifies the coupled role. One definitive
 paired model changes only triangle/span definition and prototype input types,
-using a shared role alias: Win32 unsigned long, native fixed32 DxBallUInt.
-FixedPoint class, coordinates, locals, names, scopes, expressions, flags and
+using a shared role alias: Win32 unsigned long, native fixed32 DxBallUInt. FixedPoint class, coordinates, locals, names, scopes, expressions, flags and
 polygon byte inputs stay unchanged. No unsupported polygon prototype is inferred.
 
 One serial VC4 compile covers all 12 raster functions, 116 code bindings,
@@ -447,30 +411,19 @@ no fixture or public contract change is made here.
 The 5.682s figure covers the full compile/restore/compare pipeline. CPU 0/35%,
 384/512 MiB and peak 179,281,920 B hold with zero memory-limit events.
 
-Frozen eligibility, paired-scope and result reviews remain under
-`.analysis/triangle-color-kind-20261018/`; result SHA-256 is
-`bd7c858fa0e5c2c6f134fe265a52c43a144cfd676dd74dc10fdda442164f07e0`.
-All 25 listed closed raw members, including both objects, definitive proposals,
-private bytecode and the earlier uncompiled-proposal archive, are member-size/
-SHA verified before exact-list deletion. The emptied private bytecode directory
+The emptied private bytecode directory
 is removed. `closed-model.tar.gz` is 106,648 bytes, SHA-256
 `ede1fe5f3aee1d4bc0c52aa17a155118246cc222c8108f8f1219a19d95909069`.
-Cleanup releases 917,504 allocated file bytes net; current products and caches stay.
 
-A separate retained-source review identifies a bounded polygon-lineage gap.
-The old negative-carry/Shell-comment searches timed out; two other responses
+A separate retained-source review identifies a bounded polygon-lineage gap. The old negative-carry/Shell-comment searches timed out; two other responses
 hit result limits, and actual requests preserve doubled backslashes. One new
 backslash-free query combines the original signed negative-carry relation with
 memmove removal, without a filename assumption. The exact URL-decoded query
 matches the retained request. HTTP 200/terminal done returns zero matches but
 also reports shard-match-limit, so coverage remains incomplete: this is no
 source-absence, prototype or edge-field claim. No source file is admitted,
-colour-model alternative inferred, or producer/engine/compile run repeated.
-The requested server 5s modifier is not a proven elapsed cap; the response reports
-15,771ms and the measured client request takes 15.211s within its 20s bound.
-Private `.analysis/polygon-lineage-query-20261018/` retains findings and a fully
-member-verified six-file source-evidence archive. All six raw carriers are removed
-after verification, releasing 45,056 allocated file bytes net. Admit a future
+colour-model alternative inferred, or producer/engine/compile run repeated. The requested server 5s modifier is not a proven elapsed cap; the response reports
+15,771ms and the measured client request takes 15.211s within its 20s bound. Admit a future
 search hit as edge-declaration evidence only after connecting its complete
 three-pool/two-Shell-sort/integer-edge routine and actual 28-byte record. The untouched
 +12..+15 bytes have no known outside callee owner; a repeat callee query cannot

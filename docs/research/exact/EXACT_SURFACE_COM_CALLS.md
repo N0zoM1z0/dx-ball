@@ -61,13 +61,9 @@ consumer on both paths. Its complete 979/862 comparison stays at 851 differences
 Bank loading retains 1475 bytes and 72 differences.
 
 The larger experiment that also converted DirectDraw and palette to virtual
-interfaces loses additional accepted bodies and is rejected. Its separate
-evidence remains in `.analysis/ddraw-full-com-20261013/`.
+interfaces loses additional accepted bodies and is rejected.
 
 Original REA evidence is blit
 `ev_1b6c1b404e87fc6a492e8b2ed1d3eea8020a9f5446a6c5eaf8d76b4a0533df40`,
 capture `ev_d7dd48a6f210a1a2cffea6be8318655763959610c9d94f8f8ff5621dad169b76`
 and glyph `ev_21080b939b28e2885082bf86ee64b5815bdfeaea9276e5163a6318197d18b244`.
-Current compiler inputs, complete comparisons, ABI review, before products
-and verification are retained in
-`.analysis/surface-com-integration-20261013/`.

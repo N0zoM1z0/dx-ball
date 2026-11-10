@@ -85,14 +85,10 @@ canonical object, claim ledger or delivery change follows; no native build,
 game relink/play or new provider query runs. Canonical artifact hashes still
 match the maintained265-function checkpoint.
 
-Private authority is `.analysis/paddle-scope-context-source-search-20261022/`:
-the selected plan/producer/comparison, complete proof and closed summary retain
-the result. Member-size/SHA/mode verified archival precedes retirement of the
-copied inputs, proposal objects and closed helpers. Reuse these outputs rather
+Reuse these outputs rather
 than compiling the same frozen candidates. A distinct next hypothesis must
 address the two global loads while preserving the recovered complete frame
 and coherent runtime closure.
 
-Cleanup verifies540 archive members before removing531 obsolete files,
-releasing4,825,088 allocated bytes net before the small receipts. Current
+Current
 accepted products and useful incremental caches remain.

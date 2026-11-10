@@ -23,14 +23,10 @@ refresh 235 rows. No game session runs.
 
 Original REA evidence is
 `ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`,
-operation 01 in `2026-10-10T17-22-54.305Z-requests-825249`. Actual compiler inputs,
-relocation bindings, full comparisons and validation receipts remain in
-`.analysis/bank-color-key-phase-20261013/`.
+operation 01 in `2026-10-10T17-22-54.305Z-requests-825249`.
 
 Independent review verifies the declaration-only move, eight actual compiler
-inputs, all 77 bindings and the four original object homes. Nineteen completed
-copies are retained as verified gzip files, releasing 4,325,376 allocated bytes.
-Current build products remain available.
+inputs, all 77 bindings and the four original object homes. Current build products remain available.
 
 The accepted total remains 232 functions / 59,486 code bytes / 136 metadata
 bytes, with 41 authored candidates still nonexact.

@@ -19,9 +19,7 @@ The original-bank episode uses the unchanged 20,000-byte bank and ends through
 the observer's timed cleanup. Normal user exit is checked in the other flows.
 Its final screenshot is taken during cleanup, after the last state sample.
 
-Audio capture selects only the verified game's sink input. Stream and process
-identity match before/after; the gzip is decompressed, hashed and checked before
-recomputing sample statistics. Saved PNG review confirms the ranking, terminal
+Audio capture selects only the verified game's sink input. Saved PNG review confirms the ranking, terminal
 menu and third original board.
 
 ## Focus recovery: failed
@@ -59,15 +57,7 @@ original files and protected source/build inputs retain their hashes.
 These flows record zero hard-limit and OOM events. Their complete process
 Evidence IDs are in [the verification record](../../config/playability-status.json).
 
-Private receipts are under `.analysis/playability-exact270-20261022/`:
-`gameover/verification.json`, `terminal/verification.json`,
-`campaign/verification.json` and `campaign/audio-verification.json`. The focus
+The focus
 controls, failed reader configuration and comparison are retained alongside
 these results. Full REA responses are under
 `.analysis/rea/playability-exact270-20261022/`.
-
-Seven owned 49-file runtimes are carrier-checked, archived and member-size/SHA/
-mode verified before retiring 343 copied files. Another 40 closed helper/input/
-response copies are verified in `closed-evidence.tar.gz` before retirement.
-`current-checkpoint.json` links the final receipts and cleanup. Current products,
-originals, accepted objects and useful caches remain available.

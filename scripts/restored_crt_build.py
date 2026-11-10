@@ -14,15 +14,6 @@ def build_game(toolchain, builds, resource_object, resource_metadata,
         raise ValueError('Unsupported restored CRT entry recipe')
     directory = ROOT / 'build/vc40-restored-crt'
     directory.mkdir(parents=True, exist_ok=True)
-    def retain(path):
-        if not path.is_file():
-            return
-        destination = directory / 'history' / sha256(path) / path.name
-        if not destination.exists():
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(path, destination)
-    for name in ('build.json', 'build.log', 'dxball.exe', 'dxball.map'):
-        retain(directory / name)
     specs = dict(builds)
     for name in recipe['additional_producer_recipes']:
         data = json.loads((ROOT / name).read_text())
@@ -80,7 +71,6 @@ def build_game(toolchain, builds, resource_object, resource_metadata,
         output = directory / (Path(source).stem + '.obj')
         producer = reusable.get((source, tuple(spec['flags'])))
         if producer is None:
-            retain(output)
             logs.append(toolchain.compile(ROOT / source, output, spec['flags']).stdout)
             action = 'compiled'
         else:
@@ -88,8 +78,6 @@ def build_game(toolchain, builds, resource_object, resource_metadata,
                     any(sha256(ROOT / n) != h for n, h in producer['inputs'].items()) or
                     sha256(ROOT / producer['object']) != producer['object_sha256']):
                 raise ValueError('Producer changed after validation: ' + owner)
-            if output.is_file() and sha256(output) != producer['object_sha256']:
-                retain(output)
             temporary = output.with_suffix('.obj.reuse')
             shutil.copyfile(ROOT / producer['object'], temporary)
             temporary.replace(output)

@@ -66,20 +66,14 @@ Both exit0 with verified owned cleanup and no truncation. Serial CPU0/35%,
 high events and zero max/OOM events. Process samples are not exhaustive history.
 No new provider import, game relink/run or full historical replay occurs.
 
-Private authority is `.analysis/rotation-arithmetic-contract-20261020/`:
-complete comparison, independent source/result reviews, native checks, installed
-comparison and authored coverage. Pre-execution reviews catch the static-literal
+Pre-execution reviews catch the static-literal
 eligibility omission and missing supplemental-input guards; both are corrected
 before their respective executions. Admission installs the whole verified owner,
 refreshes249 semantic dependency maps without changing ordered identities,
-scopes or case counts, and verifies all270 authored receipts across30 closures.
-Totals become394 overall exact/84,778 code bytes/244 metadata bytes and249
+scopes or case counts, and verifies all270 authored receipts across30 closures. Totals become394 overall exact/84,778 code bytes/244 metadata bytes and249
 authored exact/21 candidates. The all270-authored-exact objective remains active.
 
-Cleanup member-verifies64 closed files in a1,256,026-byte archive before
-removal, releasing1,785,856 allocated bytes net before journals. All511 current
+All511 current
 protections survive, including the adopted legacy/native products and useful
-incremental caches. The manifest restores each removed path by size/hash;
-`.analysis/rea/rotation-arithmetic-contract-20261020` indexes the same authority
-and archive without duplicating data. No original/tool or141-record snapshot is
+incremental caches. No original/tool or141-record snapshot is
 removed.

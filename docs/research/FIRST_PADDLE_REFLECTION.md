@@ -49,10 +49,7 @@ function or origin count changes follow from this observation.
 ## Evidence and preservation
 
 Current VC4 SHA-256:
-`0302cf38a82c7d9843af135e2c054b26d2dd5c7f1d12d53199f1b1584c3a4b28`.
-All four current products and all original files retain their input identities.
-The helper and its actual recursive compiler-input closure are reused from
-`.analysis/first-ball-flight/reader-identity.json`.
+`0302cf38a82c7d9843af135e2c054b26d2dd5c7f1d12d53199f1b1584c3a4b28`. All four current products and all original files retain their input identities.
 
 REA 6.4 controlled-replay Evidence:
 `ev_bb68bea389757a7cf605b424b195a0f0651f3f0330aeefd9b97ad41edc46a0e3`.
@@ -63,11 +60,8 @@ sampling failures. This preserves the recorder's incomplete descendant-history
 and non-atomic executable-binding limits. Two retained terminal frames are
 child progress messages, separate from the SDK records.
 
-Private `.analysis/first-paddle-reflection/` retains the report, complete raw
-streams, byte indexes, actual scenario, Evidence, progress log and comparison.
 The unique raw carriers total 1,205,704 bytes and are referenced by the small
-seal without a second copy. Hash-verified temporary runtime copies are removed
-after both processes stop, releasing 3,424,256 allocated bytes. Feedback on REA
+seal without a second copy. Feedback on REA
 performance, response size and usability continues in the single existing
 `/tmp/dxball_rea_feedback_20261010.md`.
 
@@ -98,15 +92,10 @@ isolated performance benchmark. Host receipt intervals span about 9.42 to
 does not determine target simulation ticks.
 
 REA6.4 controlled-replay Evidence:
-`ev_4effb5e70464b80590d8d1b792e0b197c25de65b583ddcab7b6b078662c00836`.
-The 33.432-second capture ends with child exit zero and hashes the complete
+`ev_4effb5e70464b80590d8d1b792e0b197c25de65b583ddcab7b6b078662c00836`. The 33.432-second capture ends with child exit zero and hashes the complete
 10,680-byte report without filesystem omissions. Process sampling is explicitly
-partial at64 with zero failures; recorder binding limitations remain. Private
-`.analysis/paddle-offset-reflection/` retains complete interval streams, indexes,
-report, scenario, Evidence and offline derivation. Its seal references raw
-carriers and the earlier helper/compiler/product closures without copying them.
-Hash-verified runtime copies again release 3,424,256 allocated bytes after
-shutdown. Existing source/exact/origin counts and all four products remain
+partial at64 with zero failures; recorder binding limitations remain. Its seal references raw
+carriers and the earlier helper/compiler/product closures without copying them. Existing source/exact/origin counts and all four products remain
 unchanged. Other angles, speeds, later walls/boards, synchronized clocks and
 physical rendering/audio remain open.
 
@@ -148,9 +137,7 @@ failures and the recorder's executable-binding limits. Both games exit zero
 after independently observed menu/actual Escape input; observers are intentionally
 stopped with SIGTERM/-15 at the completed trajectory interval.
 
-Private `.analysis/post-reflection-wall/` retains the streams, exact byte indexes,
-scenario, report, Evidence and offline derivation. The small seal references raw
-carriers and prior helper/product closures without copying them. Hash-verified
-runtime copies release another3,424,256allocated bytes after shutdown. No game
+The small seal references raw
+carriers and prior helper/product closures without copying them. No game
 or helper compile, source edit or acceptance-count change. Later paddle
 interactions, speeds, boards/campaigns and physical audio remain unproved.

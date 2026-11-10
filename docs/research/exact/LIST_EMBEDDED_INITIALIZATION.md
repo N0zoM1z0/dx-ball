@@ -27,6 +27,4 @@ compile, runtime/game tests or hardware execution. All276 other exacts,110
 candidates and249 semantic rows preserve their inputs/products/results.
 
 Totals: source455/exact335/code69,718/metadata136, candidates111 including one
-compiler-generated candidate; authored270 and all origin counts are unchanged.
-The two source-emission entries are not new authored routines. Private receipts
-are retained in `.analysis/list-implicit-inline-20261014/verification.json`.
+compiler-generated candidate; authored270 and all origin counts are unchanged. The two source-emission entries are not new authored routines.

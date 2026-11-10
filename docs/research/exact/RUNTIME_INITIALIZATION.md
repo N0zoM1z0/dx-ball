@@ -36,8 +36,6 @@ linker-marked ranges. Those bounds must describe coherent same-array callback
 ranges; actual constructor storage, conversion initialization, processor FDIV
 testing, physical x87 boundaries and game integration remain open.
 
-Private `.analysis/runtime-initialization-20261014/verification.json` retains four
-whole CRT proofs and one closed11-record REA run. Affected whole comparisons and
-native/i686 standalone compilation run; no runtime tests or hardware execution.
-All282 preceding exacts,83 candidates and249 semantic rows retain their inputs,
+Affected whole comparisons and
+native/i686 standalone compilation run; no runtime tests or hardware execution. All282 preceding exacts,83 candidates and249 semantic rows retain their inputs,
 products and results. Source378/exact285/66,349, candidates84 are current.

@@ -12,27 +12,18 @@ The pinned C frontend has its own observed low24 ID writers and serializer
 getter. The later unchanged editor observation below also links the actual
 current count/iterator objects from counter assignment to that getter.
 This closes the producer-location gap left by the
-[actual C-source C2 comparison observation](VC4_EXPRESSION_ORDERING.md#c-source-comparison-observation-october18).
+[actual C-source C2 comparison observation](VC4_EXPRESSION_ORDERING.md).
 It does not capture emitted bytes and their C2 consumption in one execution.
 No source model or new exact claim follows from these current producer facts alone.
 
 ## Target and retained evidence
 
 `c1.exe` is 377,856 bytes with SHA-256
-`7a7c14aff9631b9460a5666a8c344a5a177fce125ba3c4e9c2a4d57c7f402bb2`.
-The new `scripts/rea compiler-session vc4-c-frontend --interactive` route
+`7a7c14aff9631b9460a5666a8c344a5a177fce125ba3c4e9c2a4d57c7f402bb2`. The new `scripts/rea compiler-session vc4-c-frontend --interactive` route
 selects that attested tool and isolates its snapshot from C1XX, C2 and the game.
-Twelve dispatcher and nine provider-free lifecycle cases pass, including
-rejected target identity, accepted/fresh snapshots and unchanged existing modes.
 
-One REA 6.5.0 / Ghidra 12.1.4 session retains 57 successful Evidence records
-under private `.analysis/rea/vc4-c-frontend/runs/2026-10-18T04-03-49.682Z-interactive-649588/`.
-The explicit profile disables `Apply Data Archives,Decompiler Parameter ID`.
-The cumulative C snapshot closes normally. All eight complete byte carriers
-match their own pinned PE mappings. Private
-`.analysis/c1-serializer-frontier-20261018/` retains target checks, complete
-responses, route tests, independent entry review, byte validation, resources
-and logs. Reuse these observations before considering another cold import.
+The explicit profile disables `Apply Data Archives,Decompiler Parameter ID`. The cumulative C snapshot closes normally. All eight complete byte carriers
+match their own pinned PE mappings. Reuse these observations before considering another cold import.
 
 ## Own-target chain
 
@@ -126,14 +117,6 @@ that one import. The whole
 events are retained explicitly; hard-max and OOM counters remain zero. The
 owned temporary project is removed after normal close.
 
-Independent passive review verifies all57 original records, eight PE byte
-carriers, selected chains and847 current baseline hashes. All88 archived
-members pass size/SHA-256 verification before ten disposable copied inputs,
-test helpers and logs are removed. Sharing the byte-identical closed catalog
-with its retained C++ carrier releases8,769,536 allocated bytes net after the
-archive and manifest cost. Full observations, the current snapshot, small
-receipts, tested game products and useful incremental caches remain.
-
 That static checkpoint left runtime mode and editor-symbol identity open.
 The following observation resolves the current writer/getter question for the
 selected count and iterator. Original-game IDs and declarations remain separate
@@ -199,8 +182,7 @@ local-target guards. Find remains173/172/132. All852 protected hashes and22
 source-input modes/nanosecond mtimes remain unchanged before documentation
 updates. This checkpoint changes this note and the handoff, leaving850 other
 baseline hashes unchanged. Source, delivery and250 authored exact/20 candidates
-remain unchanged. Private `.analysis/c1-editor-id-observation-20261018/` retains
-the complete trace, boundary checks, whole-owner comparisons and review.
+remain unchanged.
 
 One observer build precedes the single9.205-second game compilation. The capture
 scope keeps CPU0/35%, memory high384 MiB/max512 MiB, peaks at166,559,744 bytes
@@ -213,5 +195,4 @@ Independent passive review reconstructs all supported boundaries/joins and all
 14 full comparisons, including40 exact local-target guards. All54 archive
 members pass size/SHA-256 checks before35 obsolete copied inputs and products
 are removed, including the observer EXE and two objects. Net allocated space
-released is2,342,912 bytes. Complete raw evidence remains in the verified archive;
-current tested game products and useful incremental caches remain.
+released is2,342,912 bytes.

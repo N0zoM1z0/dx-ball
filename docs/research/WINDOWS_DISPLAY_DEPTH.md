@@ -97,9 +97,6 @@ refreshing their CMake input inventory for the MinGW-only link option.
 Physical display/audio, asynchronous MIDI, synchronized moving frames, full
 campaign fidelity and original source identity remain unproved.
 
-Private receipts/captures: `.analysis/windows-glyph-display-depth/`. Current
-product receipt: `product-verification.json`. Seal:
-`.analysis/checkpoints/windows-glyph-display-depth-285-206/sha256.json`.
 Cleanup removes only recorded resettable probe copies after retaining unique
 exit files, then deduplicates immutable copies against the immediately preceding
-random-runtime seal. Public/current files remain independent of archives.
+random-runtime seal.

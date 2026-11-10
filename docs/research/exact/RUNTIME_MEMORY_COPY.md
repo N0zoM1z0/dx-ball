@@ -70,15 +70,6 @@ is retained as historical evidence, superseded for the ordinary-memory contract.
 
 ## Evidence
 
-Current member mappings, source snapshots, compiler products and probes are in
-`.analysis/memory-copy-entries-20261016/`: `original-proof.json`,
-`original-equivalence.json`, `source/comparison.json`, `differential.json`,
-`large-differential.json` and `adoption.json`.
-
 Original bytes reuse retained REA evidence
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`
-under `.analysis/rea/runs/2026-10-09T17-33-35.918Z-rea-runtime-requests-1477421/00-read_bytes.json`.
-The prior direct 0x00417CA0 observation is
-`ev_40f1c8b828cd093aa3050b6d8172db05b91bf3ef0dba1e470a2dac112b3901e2`;
-the earlier partial checkpoint is `.analysis/runtime-memory-copy-20261014/`.
-No new provider session was needed.
+under `.analysis/rea/runs/2026-10-09T17-33-35.918Z-rea-runtime-requests-1477421/00-read_bytes.json`. No new provider session was needed.

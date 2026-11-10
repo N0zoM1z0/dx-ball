@@ -24,11 +24,8 @@ This is distinct from the earlier closed byte-count-only control.
 
 One private VC4 compile uses the current nine project inputs, substituting only
 the reviewed resource source. All18 complete functions and262 actual relocations
-compare against the original. Six distinct entire relocation-free literal
-carriers, totaling17 bytes, retain their independently established targets.
-Generated names/row order do not establish identity; the maintained local-target
-guard stays enabled. Independent recomputation verifies every comparison and
-provenance row, all defined functions and all155 protected hashes.
+compare against the original. Generated names/row order do not establish identity; the maintained local-target
+guard stays enabled.
 
 | Function | Pre-integration bytes / differences | Fixed-model bytes / differences | Original bytes |
 | --- | ---: | ---: | ---: |
@@ -51,9 +48,7 @@ retry followed. The modern contract was then unvalidated and unadopted.
 The project requires complete affected comparisons and honest classifications;
 it does not impose the experiment-local no-loss rule. The later integration
 reuses the identical member-verified source, CMake model and VC4 object, with no
-new legacy compile, source/flag variant or selective old-object fallback. Its
-independent preparation checks all18 functions,262 actual bindings and six whole
-literal carriers again, and verifies13 rollback members before canonical writes.
+new legacy compile, source/flag variant or selective old-object fallback.
 
 Actual GNU8.4.0 compilation confirms that only resources.cpp gains `-fwrapv` among
 all41 maintained compile-command rows. Normal CMake shared-flags regeneration
@@ -89,32 +84,20 @@ case sets were rerun. No game EXE is relinked or played at this checkpoint.
 
 Four bookkeeping failures remain explicit: an overstrict unchanged-timestamp
 guard, two omitted linker-input protection entries, an optional cached producer
-`source` field, and inventory row ordering after TOML serialization. Their
-receipts/helpers/gates remain unchanged. Review resolves only those bookkeeping
-issues; no successful build, instrumentation compile or completed case repeats.
-All seven material claim/object writes occur once; the last postcheck compares
+`source` field, and inventory row ordering after TOML serialization. Review resolves only those bookkeeping
+issues; no successful build, instrumentation compile or completed case repeats. All seven material claim/object writes occur once; the last postcheck compares
 the same270 rows by unique original address instead of list position.
 
-Private current authority is
-`.analysis/resource-arithmetic-integration-20261020/adoption.json`, with independent
-native/result/source reviews, installed comparisons and `authored-coverage.json`.
 Final REA process Evidence is
 `ev_92086a27e6e5c6feab1679f9bd777d15f1f97398b4bc46bcc4d97a21bf3e101e`:
 exit0, owned cleanup verified. Overall `truncated=true` records only the64-sample
-process cap; terminal and filesystem enumeration/digests have no omissions.
-All41 successful command outputs are complete, stderr is empty, aggregate command
+process cap; terminal and filesystem enumeration/digests have no omissions. All41 successful command outputs are complete, stderr is empty, aggregate command
 wall time is84.474s and maximum observed cgroup peak58,703,872 bytes, with zero
 memory-limit/OOM events under CPU0/35%/384–512MiB limits. Sampling is not an
 exhaustive descendant trace or observation of all inherited environment effects.
 
-The integration's198 closed members are size/SHA-256 verified in a340,682-byte
-archive before190 generated/copied files and eight authored helpers are removed.
 Every removed file is individually recoverable. Conservative net release is
 1,183,744 allocated bytes before journals, excluding extra helper-source removal.
-All224 remaining current protections verify directly;12 deliberately closed
-private input protections verify through their archive members. Current tested
-products, native incremental caches, originals/tools, the rollback archive and
-unique direct result/REA receipts remain intact.
 
 ## Instruction-level explanation and limits
 
@@ -150,11 +133,8 @@ and inherited environment/network effects are not fully observed. Compilation
 takes2.185s, peaks160,960,512 bytes and records zero memory-limit/OOM events under
 the existing CPU0/35%/384–512MiB limits.
 
-Private authority is `.analysis/resource-arithmetic-family-20261020/result.json`.
 Complete comparisons, source/result/instruction reviews, producer and full REA
-response remain directly available. All18 closed copied inputs, proposals,
-objects, helpers and duplicate expanded mappings/provenance are archived and
-member-size/SHA-256 verified before exact-file removal. Net release is262,144
+response remain directly available. Net release is262,144
 allocated bytes before journals. Every removed file is individually recoverable;
 all155 protected files, current products, originals/tools and native incremental
 caches remained unchanged at that earlier closed checkpoint. The subsequent

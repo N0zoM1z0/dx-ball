@@ -54,12 +54,8 @@ is described below. Fixed-phase
 results here prove neither physical input delivery nor campaign speedup. SDK
 snapshots may mix frames; unobserved modifiers are not reconstructed.
 
-Private `.analysis/campaign-tail-original-frames-20261017/` retains the executed
-probe, initial failure/diagnostic, source identities, complete traces and the
-joined static/original results. The two large JSON records are byte-verified
-in gzip carriers before removing disposable uncompressed copies. The run uses
-the existing native fixture with one CPU/35% quota and640/768 MiB memory limits.
-No compilation, provider query, game, relink or full replay runs; source/exact
+The run uses
+the existing native fixture with one CPU/35% quota and640/768 MiB memory limits. No compilation, provider query, game, relink or full replay runs; source/exact
 acceptance remains475/380, with34 authored candidates.
 
 ## Sparse-tail selector and delayed-input checks
@@ -103,8 +99,7 @@ historical suites do not. Both observed geometries also verify the integer
 wrapper's selected request. The Windows CLI help check passes; no new live game
 runs.
 
-Private `.analysis/campaign-tail-selector-20261017/` preserves before/tested
-source, actual execution inputs, complete controls and wrapper checks. A
+A
 preliminary local cost sample averages about0.29ms process CPU time per eligible
 decision; it is not runtime throughput. Heavy checks remain
 serial under the existing resource limits. Game source, objects, executable and
@@ -128,10 +123,7 @@ observer stops its process groups; this is not a normal application-exit check.
 All three saved PID/start-tick identities are absent afterward.
 
 Before that episode, the observer correctly rejects a stale build-input hash:
-the build record predates the two candidate-only brick-hit mapping corrections.
-The first public invocation stops before launching a game or reader. Its summary
-is new, while its profile/log files still belong to the older failed full50 run;
-those files are explicitly marked stale in the preserved provenance receipt.
+the build record predates the two candidate-only brick-hit mapping corrections. The first public invocation stops before launching a game or reader.
 
 The reporting repair moves Observer construction inside the existing error and
 cleanup scope. An actual constructor-rejection check replaces a stale sentinel
@@ -146,16 +138,9 @@ targets changed. All compiler recipes, ownership,116 object/input closures,
 is performed; the original strict constructor then accepts the refreshed record.
 
 The44-second supervisor resource window measures about34.1% of one CPU, with an
-observed334 MiB peak at its post-child capture and no memory-limit/OOM events.
-The scope retains one CPU,35% quota with a10ms period,640/768 MiB memory limits
+observed334 MiB peak at its post-child capture and no memory-limit/OOM events. The scope retains one CPU,35% quota with a10ms period,640/768 MiB memory limits
 and the dedicated silent sink. The host default sink and49 originals stay
-unchanged. Prior public reports are archived before replacement;49 verified
-runtime copies are removed after preserving any differing bytes.
+unchanged.
 
-The startup rejection is sealed separately under
-`.analysis/campaign-tail-real-input-20261017/`; its stale profile is not a new
-game observation. The metadata/reporting repair, actual constructor controls,
-frozen inputs, successful episode and cleanup receipts are under
-`.analysis/campaign-tail-live-final-20261017/`. Source/acceptance counts remain
-475/380 with34 authored candidates. No provider query or full replay runs.
-Do not repeat this initial-board episode merely to collect the same fields.
+Source/acceptance counts remain
+475/380 with34 authored candidates. No provider query or full replay runs. Do not repeat this initial-board episode merely to collect the same fields.

@@ -56,11 +56,6 @@ code comparisons. No compilation, REA/provider call, game, relink or full replay
 runs. Source, executable, manifests, existing reports and acceptance ledgers stay
 unchanged. Totals remain475 source /380 exact /95 complete candidates.
 
-Private `.analysis/exact-local-target-guard-20261017/` retains the before/after
-counterexample, failed-before/passing-after tests, current definition audit and
-input identities. The unique mutant object is retained in a byte-verified gzip
-carrier before removing its disposable uncompressed copy.
-
 ## Cross-function catalog consistency
 
 Tracking validation also checks every code and attached-metadata relocation
@@ -86,8 +81,6 @@ scripts/repo-python tests/test_function_target_consistency.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 ```
 
-Both pass. Private `.analysis/function-target-consistency-20261017/` retains the
-site audit, test logs, original validator and unchanged protected input hashes.
-No source, manifest, acceptance ledger, comparison report, image or map changes;
+Both pass. No source, manifest, acceptance ledger, comparison report, image or map changes;
 no compilation, provider call, game, relink or complete replay runs. The counts
 remain475 source /380 exact /95 complete candidates.

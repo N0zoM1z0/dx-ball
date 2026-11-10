@@ -43,8 +43,3 @@ of those unrelated scopes.
 
 Original paddle REA evidence is
 `ev_0b4d5d681d951be5b6a69ac1d9d09db3cc965811c767e0b2b4f7296609cc020a`.
-Complete current comparisons, relocation provenance, before products and
-independent review are retained in `.analysis/runtime-com-integration-20261013/`.
-The selected projection and rejected record combination are in
-`.analysis/runtime-surface-com-20261013/`; the game-over trial is in
-`.analysis/gameover-surface-com-20261013/`.

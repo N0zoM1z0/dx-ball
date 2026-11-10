@@ -57,8 +57,5 @@ complete storage/list comparisons are unchanged. Failed checks are retained.
 Native and MinGW builds compile the changed intro owner and relink. VC4 reuses
 the matching intro object plus 35 verified unchanged game objects, with no
 additional source compilation. The 235 affected historical semantic input
-inventories are refreshed without claiming their earlier suites reran. Private
-receipts, products and scoped preservation records are under
-`.analysis/intro-storage-dataflow/` and
-`.analysis/checkpoints/intro-point-storage-283-186/`. There is no new physical
+inventories are refreshed without claiming their earlier suites reran. There is no new physical
 gameplay, arbitrary driver/caller-stack observation or complete-fidelity claim.

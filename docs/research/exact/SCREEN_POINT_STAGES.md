@@ -13,7 +13,6 @@ stack homes differ; this remains a candidate, with no exact promotion.
 
 ## Source recovered from instructions
 
-The retained REA dossier begins by copying the input X and Y into local words.
 It checks the copied Y with inclusive limits 50 and 349, subtracts 20 from the
 X copy and 50 from the Y copy, then divides those already-written words by 30
 and 15 respectively. The earlier source combined subtraction and division
@@ -39,11 +38,10 @@ unproved. No names, capacities, padding or coextensive scope variants are tried.
 
 Two canonical VC4 MT source compilations occur. The coordinate-only stage is
 339 bytes with 189 differences and retains the two unsigned byte-read lowering
-sequences. Its source, object and receipts are preserved. The second compilation
+sequences. The second compilation
 adds the two instruction-grounded signed conversions and produces the final
 337-byte candidate. Both stages preserve all eight exact core companions across
-4,322 bytes; existing frame/drop-bricks candidate comparisons stay unchanged.
-The completed products are consumed without recompiling for consumer repairs.
+4,322 bytes; existing frame/drop-bricks candidate comparisons stay unchanged. The completed products are consumed without recompiling for consumer repairs.
 
 The existing core oracle's single coordinate loop runs once: 1,152 original/native
 comparisons cover coordinate clamps, Y boundaries, six tile values, fireballs
@@ -77,8 +75,7 @@ Selecting the observed instruction addresses repairs the receipt and repeats
 only its complete-byte check, with no compilation, case-loop or provider repeat.
 The strict candidate result and source do not change during either repair.
 
-Private evidence: `.analysis/screen-point-stages/`. Immutable checkpoint:
-`.analysis/checkpoints/screen-point-stages-283-206/sha256.json`. Preserve the
+Preserve the
 coordinate-only intermediate and before inputs. Deduplicate only hash-equal
 immutable copies against the immediately preceding play seal; keep current
 and public files on independent inodes. Optional REA feedback continues only

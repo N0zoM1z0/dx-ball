@@ -93,12 +93,5 @@ or exact count. No full replay or historical Oracle queue runs. Compiler,
 provider and Wine work remains serial under the 35% CPU, 640 MiB high and
 768 MiB maximum memory scope; Ghidra uses its 256 MiB heap.
 
-After adoption, six byte-identical immutable header snapshots share retained
-copies, releasing 24 KiB of allocated storage. Unique observations, failed
-diagnostics, fixture variants and current compiler products are preserved.
-
-Private receipts are under `.analysis/crt-game-entry-20261016/`:
-`original-state-members.json`, `runtime_io_state.product.json`, `io-link.json`,
-`io-runtime.json`, `io-verification.json`, `portable.json` and `adoption.json`.
 The three new observations are in retained REA run
 `2026-10-16T14-38-21.002Z-state-requests-956842`.

@@ -76,15 +76,12 @@ unchanged. The image remains
 ## Evidence and resource scope
 
 Complete original code reuses REA Evidence
-`ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
-The new constant read is
+`ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`. The new constant read is
 `ev_39f9d623b52c13381768fdcc0b885373516875e8d9cfef5caac51d2cecd672c3`;
 entry-boundary observations are
 `ev_ad749c1c19caa3fe0ffe31cf80da15b62e3d71ee2043a0e2c8dac9bb18b3b074`,
 `ev_6e7da0d8ebef218790ced1d5c9ba9ce7b2b198a623413505162713a7bc970b52`
 and `ev_287a579fce391382971643ff1409cb0c1d801876e817bdbeb3547ca305aaa008`.
-Private `.analysis/crt-ci-entry-origins-20261017/` retains complete proofs,
-authority records, coverage, before ledgers and publication verification.
 
 The cached provenance's 121 input identities verify; its full library scan is
 not repeated. One serial REA session performs one 48-byte read and three entry

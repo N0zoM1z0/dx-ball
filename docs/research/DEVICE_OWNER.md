@@ -35,11 +35,9 @@ pending.
 
 ## Original bodies and evidence
 
-All six bodies are contiguous. Their owned byte counts equal their spans.
-The retained REA 4.1.0 / Ghidra 12.1.4 interactive session is
+All six bodies are contiguous. Their owned byte counts equal their spans. The retained REA 4.1.0 / Ghidra 12.1.4 interactive session is
 `2026-10-07T10-33-32.118Z-interactive-2912559`; it saved 152 cumulative Evidence
-records on explicit close. Complete pseudocode, instructions, body ranges,
-callers and callees remain private under `.analysis/rea/runs/`.
+records on explicit close.
 
 | Entry | Maintained symbol | Bytes | Direct cases | REA Evidence |
 | --- | --- | ---: | ---: | --- |
@@ -149,6 +147,4 @@ MinGW and VC4 builds, Wine inspectors and saved REA evidence verification. No
 new byte-exact claim is made: the accepted total remains 40 functions / 4,079
 bytes. The two board I/O literal symbols are rebound from `$SG733` / `$SG737`
 to `$SG731` / `$SG735` after reviewing unchanged rb/wb bytes in object and target
-and the complete relocation offsets, types and addends. Private reports,
-input identities and binding review are archived at
-`.analysis/checkpoints/device-123-40/`.
+and the complete relocation offsets, types and addends.

@@ -10,15 +10,11 @@ nonnull sprite/surface branch and deliberately leaves it unchecked. A failure
 still proceeds through the remaining slots and bank reload. The existing bank
 and slot declarations stay unchanged.
 
-The retained original dossier is
-`ev_6086488847b0abeff3f7ed6af657fd76f1d18d085752c4ae7c38ff49c74b9d94`,
-in the closed 2026-10-07 10:33 interactive archive. It covers the complete
+It covers the complete
 contiguous `0x403D30..0x403E49` span: 282 bytes, 85 instructions, ten branches
 and two calls. `0x403E08` calls COM Restore at vtable offset `0x6C`;
-`0x403E0B` stores EAX at EBP-8, without a subsequent read or HRESULT condition.
-The observed store establishes the operation; whether the authored source used
-an explicit local or compiler-generated result storage remains unresolved.
-The recovered source does not establish original variable spelling or scope.
+`0x403E0B` stores EAX at EBP-8, without a subsequent read or HRESULT condition. The observed store establishes the operation; whether the authored source used
+an explicit local or compiler-generated result storage remains unresolved. The recovered source does not establish original variable spelling or scope.
 
 The maintained body now emits all **282 bytes**, improving the strict complete
 comparison from **279/282 bytes with 80 differences to 282/282 with 18**.
@@ -65,10 +61,3 @@ All 206 current exact input closures, 247 historical semantic scopes and
 their prior scopes and case counts are retained, not reexecuted. Totals remain
 206 exact / 44,406 code bytes / 136 metadata bytes; 283 source-present and
 270 authored inventory entries. The full source denominator remains unproved.
-
-Inputs, products, instruction correspondence, complete comparisons, unchanged
-case identities and all compiler stages are preserved under
-`.analysis/sprite-restore-result-only/`, `.analysis/sprite-bank-scan-scope/`
-and `.analysis/sprite-restore-result/`. Current products are identified by
-`.analysis/sprite-restore-result-only/product-verification.json`; the independent
-seal is `.analysis/checkpoints/sprite-restore-result-283-206/sha256.json`.

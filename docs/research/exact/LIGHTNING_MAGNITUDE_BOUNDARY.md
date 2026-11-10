@@ -72,15 +72,11 @@ retains the postcheck's child exit1, verified owned cleanup and no truncation;
 it is not retroactively called a successful capture. Cached-only comparison
 separately exits0. All385 current hash/size/mode/nsmtime protections survive.
 
-Private authority is `.analysis/display-absolute-boundary-20261020/`:
-complete comparison, producer, protected baseline and independent reviews.
 No source/CMake/object/ledger replacement, native/game build, game run or full
 historical replay follows. The all270-authored-exact objective remains active.
 
-Cleanup member-verifies36 closed files in a51,884-byte archive before removal,
-releasing507,904 allocated bytes net before journals. Current products and useful
-caches remain protected. The manifest restores every retired path by size/hash;
-the REA phase index points to the same archive without duplicate evidence.
+Current products and useful
+caches remain protected.
 
 ## Executed signed-key consumer boundary
 
@@ -132,11 +128,7 @@ Compiler Evidence
 records compiler exit0 and5.702137s compiler-call elapsed time, with161,714,176-byte scoped
 peak and zero memory high/max/OOM events. Cleanup is verified and output
 untruncated. Independent complete COFF,
-original-PE, input/protection and receipt audits pass. Authority is
-`.analysis/display-signed-contract-20261020/`, including the direct executed
-witness above. All385 current seals survive. Member verification precedes
-removal of41 redundant files into a65,898-byte archive, releasing630,784 allocated
-bytes net before journals. Current products and useful caches remain.
+original-PE, input/protection and receipt audits pass. All385 current seals survive. Current products and useful caches remain.
 
 ## Closed explicit consumed-key producer model
 
@@ -161,10 +153,5 @@ Compiler Evidence
 records compiler exit0 and2.730867s compiler-call elapsed time with161,140,736-byte scoped
 peak and zero memory high/max/OOM events, verified cleanup and untruncated
 output. Independent complete COFF,
-binding, input/protection and receipt audits pass. Private authority is
-`.analysis/display-key-producer-20261020/`. All385 seals survive;33 closed files
-are member-verified in a46,793-byte archive before removal, releasing512,000
-allocated bytes net before journals. Current products and useful caches remain.
-There is no native/game build, repeated original witness, source/ledger change
-or exact promotion. Current249 authored exacts/21 candidates remain incomplete.
-Do not repeat key spelling/ID variants, Y/flag controls or the closed helper family.
+binding, input/protection and receipt audits pass. Current products and useful caches remain. There is no native/game build, repeated original witness, source/ledger change
+or exact promotion. Current249 authored exacts/21 candidates remain incomplete. Do not repeat key spelling/ID variants, Y/flag controls or the closed helper family.

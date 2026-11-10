@@ -14,10 +14,7 @@ optimum. Width and height retain their signed declarations and later consumers.
 ## Original producer and observable boundary
 
 The complete original bank dossier is
-`ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`.
-The retained complete instruction carrier is
-`.analysis/author-plasma-bank-linkage-20261018/routine-linkage-proof.json.gz`.
-At 404714/404717 the original loads width and multiplies by height; 40471B
+`ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`. At 404714/404717 the original loads width and multiplies by height; 40471B
 stores only the low DWORD. At 404721/404725 it adds three in that same width
 and calls malloc. At 40478B/40478E/404795 the original passes the stored DWORD
 as the fread count. No overflow check or high-half consumer intervenes.
@@ -85,14 +82,7 @@ this source checkpoint. Final game reconstruction/build and actual play checks
 follow the remaining authored-source work. Neither that historical image nor
 its play evidence is relabelled as a build or execution of this source.
 
-Private `.analysis/bank-byte-count-20261019/` retains the fixed proposal,
-complete comparisons, literal mappings, instrumented counterexample, corrected
-observation, independent review and adoption/coverage receipts. Heavy commands
-use CPU35%, one allowed CPU and memory high384MiB/max512MiB. Unique closed inputs
-and proposal products are archived and member-size/SHA verified before removal;
-current matching objects, the native library and useful caches remain.
-The verified archive retains28 closed members in1,023,104 bytes. Removing the
-reviewed originals releases7,790,592 allocated bytes after archive cost, before
-the small cleanup receipt. The cleanup scope peaks at43,405,312 bytes with no
+Heavy commands
+use CPU35%, one allowed CPU and memory high384MiB/max512MiB. The cleanup scope peaks at43,405,312 bytes with no
 high/max/OOM events; that measurement does not describe the earlier compiler
 scope. No blanket peak-memory claim is made for steps without a retained peak.

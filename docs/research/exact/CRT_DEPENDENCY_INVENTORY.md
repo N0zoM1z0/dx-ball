@@ -97,12 +97,8 @@ with all 121 input identities intact, rather than repeating the library scan.
 Carrier association is weaker than a complete original comparison. The
 intrinsic-origin closure connected 73 complete receipts; a later reconciliation
 connects the five existing C++ handler/catch/translator proofs. All 78 current
-no-source entries now have complete function/section/group or import receipts.
-No region association alone promotes source presence, origin or exactness. The
-only unknown origin is the already source-present `0x40CC20` no-op. Current
-coverage is in `.analysis/crt-suffix-ownership-20261017/coverage.json`, including
-the [continuation extent correction](CRT_SUFFIX_OWNERSHIP.md).
-The earlier59/19 and73/5 artifacts remain unchanged as historical evidence.
+no-source entries now have complete function/section/group or import receipts. No region association alone promotes source presence, origin or exactness. The
+only unknown origin is the already source-present `0x40CC20` no-op. The earlier59/19 and73/5 artifacts remain unchanged as historical evidence.
 
 ## Complete receipt coverage
 
@@ -133,12 +129,8 @@ compiler-generated. All nineteen approved members remain unchanged, including
 the three with zero entries in this inventory. This is not a proof of a final
 function inventory, authored denominator, missing runtime source recovery or
 original campaign behavior. Source475 / exact380 / complete candidates95 and
-the current image remain unchanged. Private
-`.analysis/crt-handler-entry-coverage-20261017/verification.json` retains the
-reused receipt identities, five original spans and all current artifact hashes.
-The subsequent [suffix review](CRT_SUFFIX_OWNERSHIP.md) corrects the continuation
-entry from46 to53 bytes, including its existing fallback tail. The complete CRT
-section receipt already covered those bytes; source and acceptance remain fixed.
+the current image remain unchanged. The subsequent [suffix review](CRT_SUFFIX_OWNERSHIP.md) corrects the continuation
+entry from46 to53 bytes, including its existing fallback tail.
 
 ## Five recovered existing identities
 
@@ -172,15 +164,11 @@ preserve the nine accepted companions' 4,659 bytes; the game-frame's unbound
 new cell is reported separately. No alternate profile body, flag or identifier
 sweep follows. Canonical source/header/cache/image remain unchanged.
 
-Private `.analysis/arc-entry-inventory-20261017/` retains all eight entries,
-complete scalar comparisons, unresolved bindings, data/dispatcher receipts,
-78-entry coverage, ledger adoption and input identities. The pilot is retained
-in `.analysis/explosion-constant-view-20261017/`. No full replay, game run or
+No full replay, game run or
 new game build accompanies this audit. REA remains pinned to 6.5.0. This does
 not establish final inventory completeness, all origins or full game fidelity.
 
-Thirty-five frozen inputs/reports and both pilot objects are archived with
-complete byte checks, releasing 5,648,384 allocated bytes. Current objects and
+Current objects and
 the linked image remain available. All heavy work is serial under CPU 35%,
 memory high 640 MiB / maximum 768 MiB. Remaining runtime origin questions do
 not reverse the dependency approval or become a delivery gate; authored exact

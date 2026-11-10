@@ -46,6 +46,4 @@ add 160 code bytes. Current totals are 283 source-present functions and
 
 The existing Platform Oracle passes all 4,742 cases, including startup and
 destruction callers. Its cases and target boundary logic are unchanged;
-no other owner Oracle is rerun. Native, VC4 and MinGW builds pass. Full inputs,
-prior/current products, REA responses and two bounded reviews are retained
-in `.analysis/checkpoints/exact-window-instance-283-136/`.
+no other owner Oracle is rerun. Native, VC4 and MinGW builds pass.

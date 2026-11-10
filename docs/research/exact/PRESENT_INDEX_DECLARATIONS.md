@@ -99,11 +99,6 @@ The selected private producer identity is source
 full input/flag digest
 `2d5e82179781a6ae6f281f90f22ad42d76366586b512326d520b433f591d0ae0`.
 
-Private authority is `.analysis/present-index-source-search-20261021/` and its
-explicit `top-followup/`; the already closed waiting family is
-`.analysis/wait-guard-source-search-20261021/`. The waiting archive member-verifies
-102 files before retirement and retains complete recovery metadata. Current
-products,caches,tools,originals and the141-record frontend snapshot are preserved.
 Heavy work remains serial on CPU0/35%,384MiB high/512MiB maximum. No whole game,
 relink/play,full historical replay or completed270-function goal is claimed.
 
@@ -130,10 +125,7 @@ native build or game run is needed. A preparation-only anticipated span-digest
 mismatch is recorded and corrected against the already attested canonical
 source before any producer starts; no compiler retry occurs.
 
-Private authority: `.analysis/presentation-tu-source-search-20261021/`.
-The peak compiler scope is153,059,328 bytes with all memory events zero.
-Closed inputs/products are member-size/hash verified in a recovery archive
-before exact-path retirement. This rules out four frozen contexts, not every
+The peak compiler scope is153,059,328 bytes with all memory events zero. This rules out four frozen contexts, not every
 natural presentation owner or unknown original declaration. Current authored
 coverage remains256 exact/14 candidates; the objective is incomplete.
 
@@ -157,13 +149,8 @@ earlier two-function standalone modules or top-condition spellings.
 
 Reject all six; none improves the maintained984/2. Each distinct20-input digest
 compiles once, exit0, then compares all19 complete original functions and411
-actual code bindings with the maintained full-span/local-target guard. Global
-noncode carriers, initialized pointers and the separate57-byte portable bridge
-remain identical. This covers114 complete body instances and2,466 code-binding
+actual code bindings with the maintained full-span/local-target guard. This covers114 complete body instances and2,466 code-binding
 occurrences. Three models preserve all17 prior exacts; three lose sort. No
 maintained source/object, ledger, native build or game image changes.
 
-Private authority is `.analysis/presenter-order-source-search-20261021/`.
-CPU0/35%,384/512MiB holds; scope peak251,772,928 bytes and zero memory events.
-This closes six real definition positions, not every historical source context.
-Maintained authored coverage stays257/270,73,677/84,968 complete exact bytes.
+CPU0/35%,384/512MiB holds; scope peak251,772,928 bytes and zero memory events. This closes six real definition positions, not every historical source context. Maintained authored coverage stays257/270,73,677/84,968 complete exact bytes.

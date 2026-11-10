@@ -22,8 +22,4 @@ candidates113; exact335/code69,718/metadata136 and all origins are unchanged.
 Fresh full strcat assembly is
 `ev_a7262c8148561af5c01678d47a3fc568d30142196f15c533c94b10d6a6d203f4`,
 closed run `2026-10-14T02-38-17.740Z-interactive-2512982`. Retained strcpy-entry
-assembly and the complete pinned shared section establish its out-of-range jump.
-Receipts: `.analysis/runtime-string-concatenation-20261014/verification.json`.
-No runtime/game tests run. The prior aggregate-initialization trial fails VC4
-C2552; its source is restored by hash and unique failure evidence retained in
-`.analysis/list-aggregate-initialization-20261014/`. No initializer spelling sweep.
+assembly and the complete pinned shared section establish its out-of-range jump. No runtime/game tests run. No initializer spelling sweep.

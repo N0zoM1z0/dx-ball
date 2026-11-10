@@ -110,13 +110,6 @@ scope peak is156,073,984 bytes; focused native peak is67,969,024 bytes, with no
 memory events. No new provider/debugger session, game relink/play or physical
 driver claim follows. The tested game delivery remains its historical image.
 
-Private authority is
-`.analysis/ranking-scope-source-search-20261022/current-checkpoint.json`, with
-the selected x-index-before-text producer/comparison, complete auxiliary proof,
-installed comparison, native summary and adoption. Unique closed inputs,
-outputs, helpers, mapping/formatter failures and plans are member-size/SHA/mode
-verified in a recovery archive before obsolete copies are removed. Current
-accepted objects, native library, fixture cache and useful build caches stay.
-Cleanup verifies676 archive members and retires651 obsolete files, releasing
-5,505,024 allocated bytes net of the archive before small index/receipts. The
+Current
+accepted objects, native library, fixture cache and useful build caches stay. The
 overwritten checkpoint's rollback archive is recoverable inside that archive.

@@ -45,15 +45,9 @@ Native and MinGW products build. VC4 links the matching ball object with
 ball cases and four live audio controls. Its allocated object sections,
 relocations and symbol tables match the canonical native object, and the other
 36 linked objects are identical. This evidence is reused for the current
-product; both numeric contacts also pass against the canonical library.
-No game run accompanies this function recovery.
+product; both numeric contacts also pass against the canonical library. No game run accompanies this function recovery.
 
 Original REA Evidence is
 `ev_6055fe1d318fa3f71d76b5cdbbbe862a3944dd9890035a53264b8ccfa2d7a074`.
-Full source, compiler and precision proofs are retained in
-`.analysis/rebound-stored-contact-reads-20261013/`; current product and ledger
-receipts are in `.analysis/rebound-contact-integration-20261013/`.
 
-Independent review seals the current inputs, products and ledgers. Verified
-gzip cleanup of ten completed negative and archival carriers releases
-1,179,648 allocated bytes; accepted producers and current products remain.
+Independent review seals the current inputs, products and ledgers.

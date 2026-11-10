@@ -10,12 +10,9 @@ installation and handle invalidation. Closing and invalidation are complete exac
 
 An October 16 private control follows the shipped `read.c` scalar counts,
 independent error state and structured translation branches. It emits600/611
-bytes with533 differences, against the maintained609/611/473, and is rejected.
-A second control retains the maintained body and uses the shipped `ioinfo`
-char/char flag/lookahead declarations; its complete result is unchanged.
-Both pass native/i686 compilation. Canonical source, headers, products and
+bytes with533 differences, against the maintained609/611/473, and is rejected. A second control retains the maintained body and uses the shipped `ioinfo`
+char/char flag/lookahead declarations; its complete result is unchanged. Both pass native/i686 compilation. Canonical source, headers, products and
 claims remain unchanged; do not repeat these models without new evidence.
-Private receipts: `.analysis/read-original-state-20261016/`.
 
 | Entry | Original/current bytes | Differences |
 | --- | ---: | ---: |
@@ -28,22 +25,17 @@ The pinned archive assigns closing to `close.obj`, both handle updates to
 `osfinfo.obj`, and reading to `read.obj`. Restoring this source ownership in
 shared `runtime_close.c`/`runtime_osfinfo.c` preserves close199 exact and closes
 invalidation144 with all six actual relocations. Direct records and the positive
-live-handle gate follow shipped `osfinfo.c`; installation improves163/13 to163/2.
-Reading's entire source body is unchanged, but its separate context emits609/473
+live-handle gate follow shipped `osfinfo.c`; installation improves163/13 to163/2. Reading's entire source body is unchanged, but its separate context emits609/473
 instead of605/463. All345 preceding exacts remain; current346/code71,612 and103
 candidates. Three producer compilations, no runtime/provider work. Retained REA
 `ev_51ef29f63e0e3f6ff2927f17ba1073630f3e9e18ddccedba0cffeb95e1e9793d`
 and the full pinned member independently cover invalidation.
-Receipt `.analysis/lowio-original-source-owners-20261014/verification.json`.
 
 Direct record expressions and the owned validation-error return from shipped
 `close.c` improve199/14 to199/2. Capturing stdout before stderr reduces this
 to one commuted comparison byte; consuming both handle snapshots restores the
-original comparison and closes all199 bytes and eleven actual relocations.
-The complete pinned section and retained REA assembly independently agree.
-All344 old exacts and104 other candidates remain; the three owner companions
+original comparison and closes all199 bytes and eleven actual relocations. The complete pinned section and retained REA assembly independently agree. All344 old exacts and104 other candidates remain; the three owner companions
 have identical complete results. Three compiler sets, no runtime/provider work.
-Receipt `.analysis/descriptor-close-original-expression-20261014/verification.json`.
 
 The low-I/O record adds only its observed lookahead byte at Win32 offset5;
 natural stride remains8 and host handle width still grows. Reading retains
@@ -64,8 +56,7 @@ Application-mode, registry/error storage and game integration remain open.
 
 One closed REA run, `2026-10-13T13-45-50.862Z-interactive-1670817`, retains twelve
 info/pseudo/assembly records. Complete pinned CRT sections independently agree
-for all four entries. Private proof: `.analysis/runtime-lowio-read-close-20261013/`.
-All255 previous exact results and53 preceding candidates are unchanged after
+for all four entries. All255 previous exact results and53 preceding candidates are unchanged after
 the lookahead-header consumer compilations; the two affected exacts preserve
 169 bytes and the complete360-byte private error table. Source presence324;
 candidates57:34 authored and23 runtime. Native/i686 standalone compilation

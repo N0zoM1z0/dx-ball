@@ -67,11 +67,6 @@ refresh. They are not replayed for this adoption.
 
 ## Retained checkpoint
 
-Private evidence lives under
-`.analysis/triangle-conditional-storage-20261022/`: frozen input plans, successful
-producer receipts, full comparisons, complete symbol/metadata proof, native144,
-adoption and installed comparison. Closed evidence is archived and member size,
-SHA256 and mode verified before obsolete copied inputs/objects are retired.
 Cleanup verifies160 members and retires105 obsolete files, releasing512,000
 allocated bytes net before small receipts. Current accepted objects, the tested
 native library and useful caches remain.

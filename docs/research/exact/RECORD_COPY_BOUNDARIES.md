@@ -20,12 +20,8 @@ The coextensive cleanup lifetimes are kept intact.
 The later C++ copy check retains the same799/797 bytes and227 differences;
 changing language does not remove the address-based argument instruction.
 
-Original evidence is
-`ev_b10ee96258ecd655c8f9258fc4ae6cb2c52939077283dc0409f9f912688f79b3`,
-in `.analysis/rea/runs/2026-10-07T06-16-05.200Z-rea-effects-family-2065454/09-analyze_function.json`.
 The record is compared against those instructions; only the emitted COFF is
-decoded. Private source, comparison and rejection receipt are retained in
-`.analysis/explosion-cleanup-state-20261012/`.
+decoded.
 
 ## Sprite-bank transfer
 
@@ -42,28 +38,21 @@ glyph-search body to86 differing bytes. A separate file/surface record model
 worsens the bank emitter to1663 bytes and1584 differences, and also loses glyph
 search. Both are rejected.
 
-The latest complete saved evidence is
-`ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`,
-in `.analysis/rea/runs/2026-10-10T17-22-54.305Z-requests-825249/01-analyze_function.json`.
 Its actual assembly already agrees with the maintained row initializer and
 pre-Lock stride snapshot. The pseudocode's apparent extra result initialization
 and different first-row spelling are not present in the instructions; no source
 edits are made from those decompiler artifacts. Full generated string identities
 are refreshed only in the private comparison, with complete literal attestation.
-Private receipts are in `.analysis/sprite-bank-transfer-state-20261012/`.
 
 A later read-only check explains the workspace's eleven extra bytes. Original
 and workspace bodies both contain 425 instructions and 24 bank-selector
 loads. The original uses fourteen five-byte EAX absolute loads and ten six-byte
 loads into other registers (130 bytes); the workspace uses three and twenty-one
 respectively (141 bytes). All other instructions total 1,345 bytes in each
-body. The nine local-address LEAs already follow the original field homes.
-This is bank/index address scheduling, so another record-copy or lifetime
+body. The nine local-address LEAs already follow the original field homes. This is bank/index address scheduling, so another record-copy or lifetime
 trial would not address the observed length difference. The comparison uses
-saved original REA assembly and decodes only the reconstructed COFF. Its proof
-is `.analysis/measurement-loop-scope-20261013/bank-selector-encoding-review.json`.
+saved original REA assembly and decodes only the reconstructed COFF.
 
 These three rejected compilations do not replace accepted objects, change the
-manifest, run a game or establish new semantic acceptance. Completed object and
-tracking copies are retained in verified compressed carriers. Current builds,
+manifest, run a game or establish new semantic acceptance. Current builds,
 originals and unique REA evidence are preserved.

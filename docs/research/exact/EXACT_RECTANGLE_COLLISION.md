@@ -20,13 +20,8 @@ this recovery does not broaden the declared overflow domain.
 
 ## Complete binary evidence
 
-The retained REA dossier from closed run
-`2026-10-07T07-26-59.211Z-rea-bonus-dependencies-2331079`,
-`00-analyze_function.json`, is Evidence
-`ev_38098a89555f0662ce749fc26b6fe5b78bea2da42431812abbdbf888c320c2cd`.
 It contains 319 owned instruction bytes within the complete 329-byte span:
-`0x402100..0x4021B4`, `0x4021BA..0x402237` and `0x40223D..0x402248`.
-Its instructions identify four ordinary CRT `abs` calls to `0x416780` and
+`0x402100..0x4021B4`, `0x4021BA..0x402237` and `0x40223D..0x402248`. Its instructions identify four ordinary CRT `abs` calls to `0x416780` and
 the separate successful and failed return paths.
 
 One new REA 6.3.0 read covers all 329 bytes, Evidence
@@ -86,10 +81,6 @@ warnings.
 - MinGW game SHA-256:
   `8e9c8834fb954d3d569dd0efa72ade2c45773df9856fc08c8d07ea62d4781666`.
 
-Private helpers, compiler/source/input receipts, complete comparisons, emitted
-execution bindings and REA reuse/response metrics are in
-`.analysis/exact-rectangle-collision/`. Seal:
-`.analysis/checkpoints/rectangle-collision-283-171/sha256.json`.
 The 171 accepted exact receipts and all current object/input identities are
 verified without a full replay. Historical semantic input hashes refresh for
 235 affected rows while preserving their earlier cases and scopes.

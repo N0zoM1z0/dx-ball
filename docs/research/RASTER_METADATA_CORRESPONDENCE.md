@@ -69,12 +69,7 @@ call or storage discrepancy rather than trying identifiers or frame layout.
 The full authored denominator and near-complete original source remain unproved.
 
 Original triangle dossier: Evidence
-`ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a`.
-Full 168-byte continuation: Evidence
-`ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0`.
-All reused records bind original SHA-256
-`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-Private proof: `.analysis/raster-metadata-reconciliation/`; seal:
-`.analysis/checkpoints/raster-metadata-283-186/sha256.json`.
-REA 6.3.0 remains official npm latest; feedback 41 appends only to the existing
+`ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a`. Full 168-byte continuation: Evidence
+`ev_4af9d8adb831616c11cd7ebb0df5dd4803ee50949a47e165dce19938e3284bb0`. All reused records bind original SHA-256
+`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`. REA 6.3.0 remains official npm latest; feedback 41 appends only to the existing
 `/tmp/dxball_rea_feedback_20261010.md`.

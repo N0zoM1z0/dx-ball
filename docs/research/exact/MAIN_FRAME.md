@@ -46,7 +46,5 @@ Other semantic rows retain their historical case scope after input hashes are
 refreshed. Native, VC4 and MinGW builds pass; the VC4 link reuses 35 valid
 objects and compiles no additional sources.
 
-Full compiler inputs, original bytes, explicit bindings, comparisons and Oracle
-receipts are retained under `.analysis/exact-main-frame/` and
-`.analysis/main-frame-byte-review/`. The next connected recovery is mode
+The next connected recovery is mode
 initialization, redraw and cleanup, which still use authored callback routing.

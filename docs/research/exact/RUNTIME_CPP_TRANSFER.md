@@ -33,9 +33,7 @@ are reused only after verifying their actual input/object hashes.
 Current totals:540 inventory,417 source,309 exact,68,512 code bytes,136 metadata
 bytes and99 candidates (34 authored/65 runtime). All249 semantic rows are
 unchanged. Focused VC4/native/i686 compilation and whole comparisons ran; no
-runtime/game tests. The provider is closed, and unique failed/shared-header
-trials plus the final objects and proofs remain private under
-`.analysis/runtime-cpp-transfer-20261014/`. Full structured unwinding,
+runtime/game tests. Full structured unwinding,
 FindHandler, object construction, catch-block execution and integration remain
 open genuine dependencies.
 
@@ -52,5 +50,4 @@ Two VC4/native/i686 compilation sets and full owner comparisons; no runtime
 tests or provider session. All336 old exacts,112 other candidates and249
 semantic rows remain. Totals543 inventory/457 source/337 exact/69,994 code
 bytes/136 metadata/112 candidates. This does not close structured unwinding or
-game/runtime integration. Receipt:
-`.analysis/cpp-marker-argument-branches-20261014/verification.json`.
+game/runtime integration.

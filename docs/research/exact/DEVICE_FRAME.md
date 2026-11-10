@@ -37,8 +37,7 @@ its global pointer.
 
 Four saved REA dossiers cover 170 instructions, 15 direct calls and six COM
 sites across all 670 bytes. Their bodies are contiguous and end at their RET;
-there are no embedded tables or unowned gaps. The complete records remain in
-the closed October 7 sessions, reused with cumulative snapshot 495:
+there are no embedded tables or unowned gaps.
 
 - Initialization: `ev_8681cf5b5b27dd9358b476476e4b5b63d76ccbb091fc483c58c3cea670a6e1db`
 - Synchronization: `ev_7528b8fd339fe77e2bd500279969b4c0f36946e98a3556d3f30044c87289bb30`
@@ -71,8 +70,6 @@ slot, with its copied real body as the default. Case bodies are unchanged.
 Other semantic rows retain their historical scope after input-hash refresh.
 
 Native, VC4 and MinGW builds pass. VC4 reuses 26 verified objects and compiles
-nine remaining game sources. Full inputs, objects, comparisons, selected case
-bodies and receipts are retained under `.analysis/exact-device-frame/` and its
-checkpoint. The ledger now has 146 exact functions / 23,401 code bytes and
+nine remaining game sources. The ledger now has 146 exact functions / 23,401 code bytes and
 136 metadata bytes. The next work follows the palette and sprite dependencies
 that this recovery path actually calls.

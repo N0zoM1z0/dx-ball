@@ -78,6 +78,4 @@ Totals are **377 exact functions / 77,218 code bytes / 244 attached metadata
 bytes**, 465 source entries and 88 complete candidates. The inventory remains
 540 plus 24 parent-owned fragments. All 249 semantic scopes retain their existing
 evidence. Other locale/BSS storage, OS drivers, complete reconstructed CRT linking
-and the final game build/play check remain open. Private sources, complete data
-and function comparisons, reader certificates and native fixture receipts:
-`.analysis/ctype-state-source-20261016/`.
+and the final game build/play check remain open.

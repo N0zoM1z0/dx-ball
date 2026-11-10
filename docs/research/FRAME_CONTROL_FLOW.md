@@ -69,8 +69,7 @@ declaration, name or layout search is performed.
 
 Six preceding exact core functions pass complete byte, relocation and literal
 comparisons in both phases. The other three core candidates retain their
-preceding emissions and difference counts. All185 canonical exact receipts
-retain current object/input identity. Native and MinGW builds pass. The final
+preceding emissions and difference counts. Native and MinGW builds pass. The final
 VC4 game link uses one matching core object and35 verified unchanged objects,
 without additional source compilation. Actual DirectDraw/DirectSound imports
 and native allocator-operator visibility remain checked integration evidence.
@@ -80,8 +79,7 @@ The first runtime phase executes the unchanged maintained frame loops:
 timer/input handling, deferred powers, rendering mode, count/deadline gates,
 animation completion and actual connected physics/entity phases. After the
 paused return change, the final library passes the24 existing pause/timer/input
-cases. Those receipts retain their distinct actual source and library hashes;
-the708-case result is not relabeled as a final-library execution. Active source
+cases. Active source
 preservation and final instruction/branch correspondence justify avoiding a
 repeat of the unchanged active-frame cases. No fixture, vector or assertion is
 edited, and no full historical suite is run.
@@ -92,6 +90,4 @@ a new live-game result, complete campaigns or the full original authored
 denominator. Existing semantic cases and scopes are unchanged when input
 identities are refreshed.
 
-Private proof: `.analysis/frame-signed-consumers/`; immutable seal:
-`.analysis/checkpoints/frame-control-flow-283-185/sha256.json`.
 The complete source and whole-game fidelity goal remains open.

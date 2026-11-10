@@ -97,13 +97,11 @@ This is a control-flow/API recovery, not an exact or complete-storage claim.
 The closed 11-58 dossiers `03` and `19` were reused without a new provider call;
 their Evidence IDs are listed below. The final library passes 1,024 existing
 key/control cases, 36 existing point timing/wrap/retry cases and all 58 connected
-splash/menu/editor-request checks. Cases, assertions and fixtures are unchanged.
-Native/MinGW builds and the 35-object VC4 relink pass. All prior candidate bodies
+splash/menu/editor-request checks. Cases, assertions and fixtures are unchanged. Native/MinGW builds and the 35-object VC4 relink pass. All prior candidate bodies
 were compared together; an outdated pulse relocation offset was refreshed from
 the current emission, retaining its 368/370 bytes and 127 differences. Other
 owner loops remain historical after identity refresh. No full owner suite or
-historical replay was run. Products and receipts are retained privately in
-`.analysis/exact-intro-key-points/`.
+historical replay was run.
 
 The [pixel-storage follow-up](INTRO_POINT_STORAGE.md) restores the consumed
 pixel pointer and timer early return. Its complete 682/711-byte candidate has
@@ -119,9 +117,7 @@ The subsequent focused real-Wine check runs the unchanged VC4 ball/pause/editor/
 exit flow on the linked `732731b` source product. Menu entry and return, moving
 and paused balls, editor save/reload, the expected whole-bank hash and normal
 exit pass with 77 read-only observations. Original/MinGW controls remain
-historical; there is no synchronized image, audio or full-game fidelity claim.
-See [Windows runtime scope](WINDOWS_ADAPTER.md). Private receipts are in
-`.analysis/windows-play-menu-732731b/`.
+historical; there is no synchronized image, audio or full-game fidelity claim. See [Windows runtime scope](WINDOWS_ADAPTER.md).
 
 REA 4.1.0 with Ghidra 12.1.4 follows the actual mode-0 menu and mode-4
 splash controllers through initialization, redraw, frame, input and cleanup.
@@ -268,6 +264,4 @@ acceptance scope. This batch makes no new byte-exact claim.
 All earlier suites, forty cold exact units, eight oracle rejection checks,
 native/MinGW/VC4 products, Wine inspector comparison and saved REA verification
 pass at the grouped checkpoint. Existing pan literal bindings remain
-`$T637`/`$T638`; no relocation exception or source profile is added. Complete
-reports and input identities are private under
-`.analysis/checkpoints/intro-168-40/`.
+`$T637`/`$T638`; no relocation exception or source profile is added.

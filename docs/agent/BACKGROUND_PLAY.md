@@ -40,9 +40,9 @@ one allowed CPU, CPU quota 35%, memory high 384 MiB and max 512 MiB.
 
 Retain full REA process responses under `.analysis/rea/`, observer records and
 input/product hashes under `.analysis/`. Distinguish a normal game exit from
-controller cleanup. Archive useful closed inputs and verify every member's size,
-SHA-256 and mode before removing duplicate runtime copies.
+controller cleanup. Remove duplicate runtimes and obsolete probes when their
+results are recorded; no replacement archive or cleanup journal is needed.
 
 The user stopped broad campaign tests and frame sampling after the October 31
-checks. The current work is build packaging and documentation. Reuse the saved
+checks. Reuse the recorded
 results instead of restarting a full historical queue.

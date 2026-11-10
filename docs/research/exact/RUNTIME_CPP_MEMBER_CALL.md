@@ -45,11 +45,7 @@ It does not establish identity for callbacks inspecting their callers' stack.
 ## Whole original evidence
 
 All three complete relocation-free sections match pinned `trnsctrl.obj`,
-SHA-256 `206b02d6136285da3400a3bd57538a7ca3bee816d979cdd51753322d6ed350ce`.
-The retained proof is
-`.analysis/cpp-exception-object-source-20261016/member-call-provenance.json`;
-the current proof rechecks its member identity and all three target spans.
-Retained REA assembly Evidence IDs, in address order:
+SHA-256 `206b02d6136285da3400a3bd57538a7ca3bee816d979cdd51753322d6ed350ce`. Retained REA assembly Evidence IDs, in address order:
 
 - `ev_9554d6425abb2bf0af02f3f70295dd3ef28680df23c302182d2c2a101558a06d`.
 - `ev_7a6ecb0fd8d57961c646fb0702fc5f096898490de4d7b729f91ca8b8062a5167`.
@@ -94,10 +90,5 @@ entries, 380 exacts, 95 complete candidates and 70 inventory entries without
 source. Full tail transport, remaining low-level source and the final restored
 game build/play check remain open.
 
-Private receipts: `.analysis/cpp-member-call-source-20261016/`, including
-`callback-type.json`, `original-proof.json`, `source/{product,comparison,clang}.json`,
-`members-product.json`, `differential.json`, `link.json`, `linked-code.json`,
-`runtime.json` and `adoption.json`. Heavy work is serial with CPU 35%, memory
+Heavy work is serial with CPU 35%, memory
 high 640 MiB/maximum 768 MiB; preserved objects are reused after identity checks.
-Sharing three byte-identical immutable snapshots reclaimed about 2 MiB;
-unique evidence, source products and mutable build objects are retained.

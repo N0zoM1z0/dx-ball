@@ -29,17 +29,14 @@ The retained first pointer model's VC4 object matches all current source/header
 hashes and flags. It is reused without recompilation; complete comparisons cover
 all186 bytes, and both current-source native/i686 compilations pass. All359
 previous exact results and89 other candidate results remain. Current totals:
-360 exact functions/75,285 code bytes/89 candidates. Receipt:
-`.analysis/integer-original-pointer-reversal-20261015/verification.json`.
+360 exact functions/75,285 code bytes/89 candidates.
 
 Existing REA dossiers `ev_ae3a244793f13621a162cda74914dec8c6030edc2382ca7fa8cf1c7e5fc2decb`
 and `ev_16217354766a89a301447e87d1396fc7f6bd91da34cd7b14476c9618f48377f6`
 supply complete helper/unsigned-entry instructions. Only the missing signed
 entry needs the new closed three-record run
 `2026-10-13T15-51-45.061Z-interactive-1795134`; assembly:
-`ev_131f98a51e030a426a224fd143ab3e7c2d1664c0c60e00e9fe5a1c6620c70924`.
-All three complete pinned CRT sections independently match the original.
-Private proof and seal: `.analysis/runtime-integer-text-20261013/verification.json`.
+`ev_131f98a51e030a426a224fd143ab3e7c2d1664c0c60e00e9fe5a1c6620c70924`. All three complete pinned CRT sections independently match the original.
 
 The initial checkpoint had source343/exact265/64,747 code bytes; metadata136 unchanged. All263 prior
 exact results and68 candidates retain unchanged inputs/products/results.

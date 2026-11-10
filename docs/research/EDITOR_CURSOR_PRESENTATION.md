@@ -48,9 +48,7 @@ matching source compilation is explicitly rejected. Counts remain 206 exact
 functions /44,406 code /136 metadata bytes, 285 source-present /270 authored,
 249 scoped semantic acceptances and origins 117 runtime /42 generated /99 unknown.
 
-Private cursor receipts: `.analysis/editor-cursor-presentation/`, including
-`two-cell/`. Rejected comparison: `.analysis/paddle-cursor-load-order/`. Seal:
-`.analysis/checkpoints/editor-cursor-presentation-285-206/sha256.json`. Cleanup
+Cleanup
 preserves all unique observations and the rejected stage, removes only recorded
 resettable probe files, and deduplicates immutable copies against the immediately
 preceding display-depth seal. Full campaign, physical audio/display and original

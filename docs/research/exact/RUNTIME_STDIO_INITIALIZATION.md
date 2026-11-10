@@ -62,13 +62,8 @@ zero tail slots and every stream field. Buffer/request state remains untouched.
 Allocator/fatal and low-I/O handle boundaries are controlled typed fixtures;
 there is no physical OS stdio or full runtime/game acceptance.
 
-Private evidence: `.analysis/stdio-initialization-source-20261016/`, including
-`original-proof.json`, `data-proof.json`, `source/`, `native-differential.json`
-and `adoption.json`. The focused REA session closed and saved27 records.
-Compiler/provider work is serial with one allowed CPU, CPU35%, memory
+The focused REA session closed and saved27 records. Compiler/provider work is serial with one allowed CPU, CPU35%, memory
 high640MiB/maximum768MiB and Ghidra heap256MiB.
-Sharing19 verified identical immutable carriers reclaimed about8.4MiB while
-retaining unique evidence and independent canonical objects.
 
 Current totals are543 independent entries,468 source-present,380 exact functions
 covering77,485 code bytes and244 metadata bytes. All379 prior exact recipes,

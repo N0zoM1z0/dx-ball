@@ -68,9 +68,7 @@ Two focused `read_bytes` requests added the complete open/parse spans:
 
 Both responses match the verified executable. The 25/40 bytes excluded from
 the function address sets are internal five-byte cleanup jumps. Complete
-comparisons include those bytes. Responses are retained in
-`.analysis/rea/runs/2026-10-10T07-53-15.117Z-requests-4133453/`; closing the
-session saved all 483 cumulative records, including the previous 481.
+comparisons include those bytes.
 
 Twenty affected recipes were compiled together. One further MIDI-only compile
 expressed the event's high bit as a DWORD flag test, removing four promotion
@@ -83,7 +81,3 @@ One existing MIDI Oracle passes 2,109 direct cases and 134 connected checks,
 including all six songs. Its input descriptor backing now uses the complete
 header; logical fields and cases are unchanged. Native, VC4 and MinGW builds
 succeed. VC4 reuses 24 current objects and compiles eight remaining sources.
-
-Full inputs, prior emissions, raw evidence, independent reviews and game
-products are retained in `.analysis/checkpoints/exact-mds-parser-283-135/`.
-Working receipts live in `.analysis/exact-mds-parser/`.

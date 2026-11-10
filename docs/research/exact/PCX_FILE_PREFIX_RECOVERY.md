@@ -85,9 +85,7 @@ Two distinct bounded observations reuse the verified existing observer through
 pinned REA6.5.0. Root-layout Evidence is
 `ev_9b9eae61b1bcf77ccb3d2fd0d9e42ca603109f6304f9cf581a6ce61f43c0689e`;
 file-prefix Evidence is
-`ev_ecfe119a747bf7ad09ffecd21d2b0893422b1f2b0f264789df8af890a497278b`.
-Complete responses remain under `.analysis/rea/pcx-root-layout-20261022/`
-and `.analysis/rea/pcx-file-prefix-20261022/`. No new Ghidra import occurs.
+`ev_ecfe119a747bf7ad09ffecd21d2b0893422b1f2b0f264789df8af890a497278b`. No new Ghidra import occurs.
 
 The original complete assembly Evidence is
 `ev_93b5290136b33bfcc5cee2cc186d2f6440c5a8c1595647d46ec6172e7d5c8566`.
@@ -96,15 +94,10 @@ byte map stays correct. Original store ordinals65/81 establish ymax−20 and
 decoded−4; the new retained model records this correction without altering
 historical evidence.
 
-Private acceptance authority is
-`.analysis/pcx-file-prefix-source-search-20261022/current-checkpoint.json`.
-Frozen producers, complete object proof, native receipt, rollback and closed
-member-verified recovery evidence retain the actual limits. Current tested
+Current tested
 products and useful caches stay. Heavy work is serial on CPU0/35%, memory
 high384MiB/max512MiB. Compiler/capture peak is342,052,864 bytes; native
 build/check peak is43,282,432/50,061,312 bytes, with zero recorded events.
-Cleanup verifies243 archive members before retiring166 obsolete files, releasing
-1,159,168 allocated bytes net before small receipts.
 
 The closing passive audit verifies all270 current authored complete functions,
 84,968 bytes,4759 actual bindings and252 full literal references. All53 current

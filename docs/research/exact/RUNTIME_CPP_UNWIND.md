@@ -47,19 +47,15 @@ REA **6.5.0**, Ghidra 12.1.4, read the original without executing it:
 - All 12 scope bytes at `0x004201A0`:
   `ev_ed47bedc737a8a5920ca67614aafb5ed0740a92d2b545250a3611ee4118e560a`.
 
-Full responses are retained in
-`.analysis/rea/runs/2026-10-16T04-56-13.333Z-requests-104325/`.
 Procedure listings omit the filter and handler blocks, so their absence from
 pseudocode does not establish a missing scope. The complete read and pinned
 `frame.obj` section cover both blocks and the final return. The scope's filter
 and handler entries are `0x0041B70E` and `0x0041B71B`.
 
 The pinned original member SHA-256 is
-`ca4c0732d0860a9f0dbc519f91888999cccb47dc96c99b35572057193dfd462b`.
-Both its complete section and the maintained object match the verified target,
+`ca4c0732d0860a9f0dbc519f91888999cccb47dc96c99b35572057193dfd462b`. Both its complete section and the maintained object match the verified target,
 with explicit bindings to inconsistency, frame-setting transport, the existing
-filter, SEH support and the scope table. Private proof and compiler receipts:
-`.analysis/cpp-frame-unwind-source-20261016/{complete-comparison,compile,canonical-comparison,adoption}.json`.
+filter, SEH support and the scope table.
 
 ## Checkpoint and remaining work
 

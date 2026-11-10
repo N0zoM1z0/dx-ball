@@ -20,11 +20,6 @@ candidates. No game source, compiler recipe or delivery changes.
 
 `c1xx.exe` is775,680 bytes, SHA-256
 `3376b1dfaff0bdb1018b13fbb22cf407858044f327d4bbc3e4d9335640aea7f0`.
-REA6.5.0/Ghidra12.1.4 retains115 successful observations and five indexed
-invalid-input results in
-`.analysis/rea/vc4-cpp-frontend/runs/2026-10-17T15-22-12.705Z-interactive-3876461/`.
-It closes and saves a separate frontend snapshot; the backend's86 records and
-game snapshot remain separate.
 
 | Primary observation | Evidence ID |
 | --- | --- |
@@ -80,8 +75,7 @@ the current source identifiers without it.
 
 ## Controlled check and limits
 
-Private `.analysis/frontend-record-order-20261017/check-order-machine.py` maps
-the complete hash-pinned C1XX image. It runs the actual complete name interner16
+It runs the actual complete name interner16
 times, insertion16 times and traversal four times. All36 calls pass stack and
 saved-register checks. Every stored hash, bucket and traversal position agrees
 with the separately calculated recurrence and retained C2 trace.
@@ -110,11 +104,6 @@ One import is reused throughout. Its first query takes819,640ms; subsequent
 requests reuse it. A Decompiler Parameter ID timeout and imperfect ownership
 remain explicit limitations. No new compiler, replay, relink or game runs.
 
-The session closes normally, removes its temporary Ghidra project and preserves
-all115 records, five failures, final logs and a verified compressed snapshot.
-The closed identical8.36MiB tool catalog shares an immutable verified carrier,
-releasing8,658,944 allocated bytes after the frozen snapshot and cleanup journal.
-The standard build-cleanup preview finds no additional disposable products.
 Current tested objects, delivery and valid CMake caches remain. Six resource
 observations retain one CPU, CPU35%, memory high640MiB/max768MiB, with no max/OOM
 events; soft-high reclamation events are explicitly recorded.
@@ -166,26 +155,14 @@ remain unknown; no name/order/header/type/flag or source-scope trial follows.
 
 Primary assembly is `ev_7e18dcba42aaba6cc891b3a770d9234657d3568cd6b06559da2257b6229f9021`;
 the exact NameMap import observation is
-`ev_0845015b6bfd4027e49ca0b8a8397b39964b25355981e283198645b1f4f53675`.
-The closed run`2026-10-17T19-35-55.498Z-interactive-132738` retains71 direct
-records and74 Evidence records including composed-workflow substeps. Private
-`.analysis/frontend-key-producer-20261018/` retains full byte checks, field
-formulas, source/product identities and independent review.
+`ev_0845015b6bfd4027e49ca0b8a8397b39964b25355981e283198645b1f4f53675`. The closed run`2026-10-17T19-35-55.498Z-interactive-132738` retains71 direct
+records and74 Evidence records including composed-workflow substeps.
 
 This separately recorded profile disables `Apply Data Archives` and the earlier
-timed-out `Decompiler Parameter ID`, keeping REA6.5.0/Ghidra12.1.4 and256MiB heap.
-The old115-record snapshot remains in its already verified sealed gzip; the new
-74-record snapshot does not mix profiles. First query takes327,899ms, followed
+timed-out `Decompiler Parameter ID`, keeping REA6.5.0/Ghidra12.1.4 and256MiB heap. First query takes327,899ms, followed
 by fast same-import queries. Analysis succeeds and the owned temporary project
 is removed after normal close. One CPU/35% and640–768MiB whole-tree limits hold;
-peak671,612,928 bytes,2,868 soft-high reclamation events, zero hard-max/OOM events.
-Canonical source, objects, delivery and394 exact claims remain unchanged.
-No game compilation, replay, relink or runtime observation runs.
-The closed identical8.36MiB tool catalog shares its verified immutable carrier.
-Two prefix-only intermediate logs and the archive-covered old raw snapshot are
-removed; the new snapshot's gzip carrier is decompression-hash verified. Cleanup releases
-10,043,392 allocated bytes net of that archive and journal. Primary Evidence,
-the current useful snapshot and tested game products/caches remain.
+peak671,612,928 bytes,2,868 soft-high reclamation events, zero hard-max/OOM events. Canonical source, objects, delivery and394 exact claims remain unchanged. No game compilation, replay, relink or runtime observation runs.
 
 ## Actual transport modes, October18
 
@@ -202,10 +179,7 @@ verifier's underscore-local-name assumption is explicitly excluded.
 All18 complete affected functions,262 actual bindings and6 full literal
 references remain identical to the canonical object. One CPU/35% limits hold,
 peak292,057,088 bytes, with zero memory-limit events. No source variant, relink,
-runtime case, provider query or full replay runs. Private
-`.analysis/frontend-wire-reader-20261018/` retains the trace, negative verifier,
-independent review and sealed archive. Twelve archive/member-hash-verified input
-copies and products are removed, releasing225,280 allocated bytes net.
+runtime case, provider query or full replay runs.
 
 The retained assembly identifies a common entry at `401BD5`, the complete
 four-byte `MOV EAX,[ESP+18]`. It preserves the previous mode comparison's flags.
@@ -244,12 +218,7 @@ so these correspondences are not a byte-position consumption proof.
 All413 trap hits execute the complete original MOV and pass register, ESP,
 EIP, non-debug flags and actual C2-store checks. The28 entry/key/wire samples
 and20 C2 samples each have their own checked single step. All three compiler
-processes and the observer exit0, with no pending frame or read failures.
-All18 complete functions/262 actual bindings/6 full literals remain identical.
-Peak181,526,528 bytes, zero memory-limit events; one CPU/35% limits hold.
-No source variant, provider query, full replay, relink or runtime case runs.
-Private `.analysis/frontend-mode-wire-reader-20261018/` retains raw traces,
-comparisons, independently checked summaries and reviews.
+processes and the observer exit0, with no pending frame or read failures. All18 complete functions/262 actual bindings/6 full literals remain identical. Peak181,526,528 bytes, zero memory-limit events; one CPU/35% limits hold. No source variant, provider query, full replay, relink or runtime case runs.
 
 This actual recipe's key path is now `source+18 → selected ID → WORD bytes`,
 with independently corresponding current C2 records. The static NameMap/cache
@@ -298,16 +267,10 @@ constructor ABI. Bank execution at the store was still unobserved in this static
 Primary dispatch Evidence is
 `ev_21a678e29ebe2631645d6739af3882297c479eba66a7ec9c101c39694669582f`;
 writer-block Evidence is
-`ev_dd21b99aa6201f706e1be0bc002799fc10e5ac7052b06dccb1285cc2461bb61c`.
-The kind9-path assembly is
-`ev_508d038b7182abc504d93bfb56dc9a821c23fdae1bca9d1e8958d87c3ddf01dd`.
-Private `.analysis/frontend-local-id-producer-20261018/` retains all checks,
-independent review and sealed snapshots. The owned temporary database is removed.
-Sharing the closed byte-identical catalog and retaining a decompression-verified
-snapshot archive releases8,695,808 allocated bytes net. Resource samples retain
+`ev_dd21b99aa6201f706e1be0bc002799fc10e5ac7052b06dccb1285cc2461bb61c`. The kind9-path assembly is
+`ev_508d038b7182abc504d93bfb56dc9a821c23fdae1bca9d1e8958d87c3ddf01dd`. The owned temporary database is removed. Resource samples retain
 one CPU/35%,640–768MiB limits and nonzero soft-high reclamation, with no hard-max
-or OOM events in those samples; final counters were unavailable after scope exit.
-No game compilation, source variant, replay or relink occurs in this static phase.
+or OOM events in those samples; final counters were unavailable after scope exit. No game compilation, source variant, replay or relink occurs in this static phase.
 
 The subsequent unchanged-resource observation confirms that specific writer in
 actual bank processing. It traps only C1's original `40AA3F` store and the
@@ -341,16 +304,13 @@ and complete object lifetimes are outside this two-site capture.
 CL/C1XX/C2 and the observer all exit0. Full18-function/262-binding/6-literal
 comparisons remain identical; no full replay, game run, relink or source variant
 is used. One CPU/35% and640–768MiB limits hold; capture peak215,941,120 bytes
-and zero memory-limit events. Private
-`.analysis/frontend-local-id-write-observation-20261018/` retains the trace,
-input identities, complete comparisons and independent reviews. The current-ID
+and zero memory-limit events. The current-ID
 producer question is answered for these samples. Remaining original frame homes
 and expression order still require game/source evidence or the specific C2
 allocation/reset/reuse mechanism; further namespace surveying alone is not a
 source-reconstruction hypothesis.
 
-The observation's12 archive/member-hash-verified copied inputs and products are
-removed, releasing229,376 allocated bytes net. The current tested game products
+The current tested game products
 and useful caches remain. The next bounded mechanism question is C2 cursor
 `47EA40`: when does it save/restore/reset between named-record allocation and
 body temporaries, and do those temporaries call`40AED4`? The retained helper

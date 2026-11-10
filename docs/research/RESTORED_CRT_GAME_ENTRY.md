@@ -66,9 +66,7 @@ The initial three integration files compile once. All 113 preceding objects
 retain complete current inputs, flags and product identities. The public
 builder then reuses all 116 objects and compiles none. Its receipt records each
 producer, original member, resource and import library. Cold builds use the
-public recipes and pinned library; private analysis files are not required.
-Changed products and preceding build receipts are retained in the profile's
-history directory. Resource conversion stays inside that profile's directory.
+public recipes and pinned library; private analysis files are not required. Resource conversion stays inside that profile's directory.
 
 ## Actual first-board evidence
 
@@ -124,8 +122,7 @@ No full replay or new provider query runs. CPU remains capped at
 35%, memory high 640 MiB/maximum 768 MiB, with serial heavy work on one CPU.
 REA remains pinned to 6.5.0.
 
-After adoption, 603 unused member-cache copies are removed only after full
-byte equality with the pinned archive is checked. All previously selected
+All previously selected
 diagnostic members remain. Sharing 51 identical immutable header snapshots
 brings the allocated-storage reduction to about 2.8 MiB. Unique observations,
 failures, history, current build products and runtime data are preserved.
@@ -134,8 +131,3 @@ This is a first-board integration checkpoint. Remaining function recovery,
 C++ frame/translator integration, x87/SEH transport source, exceptional
 game paths and complete playability remain open. Ports still follow that work.
 The MinGW CRT errno macro issue is unchanged; this optional profile uses VC4.
-
-Private evidence is `.analysis/crt-game-members-20261016/`: `archive-catalog.json`,
-`source-closure.json`, `link.json`, `state-startup.json`, `state-startup/states.json`,
-`verification.json` and `adoption.json`. Complete library members, failed
-diagnostics, source snapshots and reviewed images remain private.

@@ -7,7 +7,7 @@ new Windows source model, so no compiler, relink, replay or game runs follow.
 Current totals remain250 authored exact/20 candidates; the19 permitted original
 CRT dependencies and current delivery remain unchanged.
 
-This follows the [carrier and font work](AUTHOR_SOURCE_CONTEXT.md#focused-pef-bodies-and-qualifier-control-october18).
+This follows the [carrier and font work](AUTHOR_SOURCE_CONTEXT.md).
 The private Mac carrier SHA-256 is
 `f1004702aed6416ed5eca4a02ae6c276c8f66be0a3e5f7155a95cb537c37b69b`.
 These are `rea-process` observations of the analysis engine, not successful
@@ -106,27 +106,21 @@ descriptor contains PC1001DA90/TOC10064D70. Conditional evaluation using that TO
 finds `%d` at the score format displacement. No selected-body runtime r2 value,
 absolute global identity or original source declaration is established or applied.
 
-All747 protected hashes, modes and nanosecond mtimes verify before documentation
-edits. Both process captures exit0. CPU0/35%, memory high384MiB/max512MiB,
+Both process captures exit0. CPU0/35%, memory high384MiB/max512MiB,
 Node heap192MiB and Java heap128MiB constrain each serial heavy tree. Peaks are
-403,161,088 and403,128,320 bytes; high events788/629, with zero max/OOM events.
-Private `mac-candidate-bodies-20261018` and `mac-lightning-bodies-20261018` retain
+403,161,088 and403,128,320 bytes; high events788/629, with zero max/OOM events. Private `mac-candidate-bodies-20261018` and `mac-lightning-bodies-20261018` retain
 the exports, static image, analyses and independent reviews. Reuse this evidence
 and the useful saved project before another query.
 
 All26 closed capture/projection members pass size/SHA-256 verification before
-their listed raw copies are deleted. The archive, including both full process
-responses, remains under `.analysis/rea/mac-reference-20261018/`; net allocated
-storage released after archive/journals is655,360 bytes. Useful static data,
+their listed raw copies are deleted. Useful static data,
 current products and incremental caches remain available.
 
 ## Reused bank/shape bodies and API-name control
 
 The next question reuses five bodies from the earlier corrected export, with
 no new engine query or import. Independent review checks all 1,996 bytes,
-499 instructions, 33 calls and 19 branches. All words are decoded. The complete
-Windows capture/load/release dossiers cover 2,589 bytes, 753 instructions,
-32 calls and 31 branches; drawing checks retain their separate scope.
+499 instructions, 33 calls and 19 branches. All words are decoded.
 
 | Actual Mac name | Windows counterpart | Connected operation and limit |
 | --- | --- | --- |
@@ -186,10 +180,6 @@ comparison; this is not compiler-only timing. CPU0/35%,384/512MiB; peak174,260,2
 and zero memory-limit events. No provider, native build, relink, game or full
 replay runs. Private `mac-shape-flow-20261018` and
 `mac-shape-api-identifiers-20261018` retain the bound reviews and closed result.
-All25 closed raw members, including both temporary objects and the header
-proposal, are archived and member-size/SHA-256 verified before deletion.
-Listed net allocated release is520,192 bytes after archive/cleanup journals;
-current products, caches and the useful shared foreign export/data remain.
 
 ## Reused paddle bodies and input precision control
 
@@ -250,18 +240,12 @@ records shrink8→5, raw symbol records261→258 and relocation indices shift by
 three; debug path, timestamp and string-table differences are retained.
 Reject the whole precision model without cast, scope, name or flag variants.
 
-All750 protected hashes/modes/nsmtimes verify before documentation edits,
-including the current runtime object. The compiler lock, before/after toolchain
-verification and `finally` restoration include the failed comparison outcome.
-CPU0/35%, memory high384MiB/max512MiB constrain the compile/restoration scope;
+The compiler lock, before/after toolchain
+verification and `finally` restoration include the failed comparison outcome. CPU0/35%, memory high384MiB/max512MiB constrain the compile/restoration scope;
 its peak is171,892,736 bytes, with zero memory-limit events. Later passive review
-uses a separate CPU0/10%,128/256MiB scope, without a measured peak claim.
-No native build, game, relink or full replay runs; source, delivery and250 authored
+uses a separate CPU0/10%,128/256MiB scope, without a measured peak claim. No native build, game, relink or full replay runs; source, delivery and250 authored
 exacts/20 candidates remain. Private `mac-paddle-flow-20261018` and
-`mac-paddle-input-precision-20261018` retain the bound reviews and result.
-All18 closed raw members, including both objects and the source proposal, are
-archived and member-size/SHA-256 verified before deletion. Listed net allocated
-release is323,584 bytes after archive/cleanup journals. Current products, caches,
+`mac-paddle-input-precision-20261018` retain the bound reviews and result. Current products, caches,
 the corrected foreign export and static data remain available.
 
 ## Reused line body and public-name control
@@ -314,17 +298,12 @@ change1020→1002B: one defined function name becomes `_line`, its old18-byte
 string-table entry disappears, and timestamp bytes change. The `.file` path and
 auxiliary bytes are identical; no wrapper or other difference appears.
 
-All751 protected hashes/modes/nsmtimes restore before documentation edits,
-explicitly including the current drawing object. Serial compiler lock,
-before/after toolchain verification and owned-process cleanup remain enforced.
-The5.489s pilot includes compilation, restoration and comparison; it is not
+Serial compiler lock,
+before/after toolchain verification and owned-process cleanup remain enforced. The5.489s pilot includes compilation, restoration and comparison; it is not
 compiler-only timing. CPU0/35%,384/512MiB; peak170,553,344B and zero memory-limit
 events. No provider, native build, relink, game or full replay runs. Source,
 delivery and250 authored exacts/20 candidates remain. Private `mac-line-flow-20261018`
-and `mac-line-api-identifier-20261018` retain the complete reviews and result.
-All16 listed closed raw members, including both objects and the header proposal,
-are archived and member-size/SHA-256 verified before deletion, releasing143,360
-allocated bytes net of archive/cleanup journals. Current products, caches and
+and `mac-line-api-identifier-20261018` retain the complete reviews and result. Current products, caches and
 the useful shared foreign export/data remain.
 
 ## Reused score producers and parameter-kind control
@@ -389,18 +368,8 @@ CPU 0/35%, 384/512 MiB and peak 179,445,760 B hold with zero memory-limit events
 No new provider, native build, oracle, game, relink or full replay runs.
 Source, delivery and 250 authored exact/20 candidates remain unchanged.
 
-The frozen family review is retained at
-`.analysis/mac-score-producers-20261018/independent-family-review.json`, SHA-256
-`7dfc6215e1703de0716d5797832207a7f829c8607041fa9274e1463af47026f3`.
-Private plan/result reviews, binding freeze, summary and restoration receipts
-remain under `.analysis/mac-score-parameter-kind-20261018/`; result review SHA-256
-`063c08f328a5a8d5ac073269c133263494e19feb5226e36fd2dd2c6f5540fc63`.
-All 30 listed closed raw members, including six objects and both proposals,
-are archived and individually size/SHA verified before exact-list deletion.
 `closed-model.tar.gz` is 216,035 bytes, SHA-256
-`e2c1f37707a7245019154194a344f2288dd5c2d6ff204bc9a45361ef3725121b`.
-The net allocated file space released, including all cleanup journals, is
-2,310,144 bytes. Current products, useful caches and shared Mac evidence stay.
+`e2c1f37707a7245019154194a344f2288dd5c2d6ff204bc9a45361ef3725121b`. Current products, useful caches and shared Mac evidence stay.
 
 A separate bounded review finds no qualified new missing-operation query in
 this retained Mac set. Both clock helpers are already in the corrected export.
@@ -452,28 +421,17 @@ Reject the entire model without qualification variants or adoption. The other
 27 owners/254 functions and native/fixture consumers stay uncompiled/unknown.
 Canonical source keeps the const filename API.
 
-All754 protected hashes/modes/nsmtimes restore under the serial lock, with
-Toolchain verification before/after including failure cleanup. The one compile/
+The one compile/
 restore/comparison pipeline takes4.795s and peaks193,404,928 bytes with zero
 memory-limit events. The saved-project capture peaks403,165,184 bytes with767
 soft-high events and zero max/OOM events. Both use CPU0/35%,384/512MiB; the
 capture uses Java128MiB and Node192MiB. There is no further provider query,
 native build, relink, game or full replay after rejection.
 
-Private `mac-path-contract-20261018` retains the complete selected export,
-question, resource receipts and independent contract review. Process Evidence
-`ev_acd98536850530d1f826c778dcdfaea0a33588ea746708b4111168ceaf0ce64c`
-is retained in the verified archive; it is not native-provider admission or a
-snapshot. `bank-filename-qualifier-20261018` retains eligibility/plan/result
-reviews, summary, restoration and cleanup receipts. Its33-member archive is
+Its33-member archive is
 114,955 bytes, SHA-256
-`6f7aae5e8e1dc37d9f9e9f99f6615b05ae3876f7099e26977a99e8b1a6590d42`.
-Every member size/hash verifies before exact-list deletion of both temporary
-objects, seven proposals and closed capture/runner carriers. Net allocated
-release is729,088 bytes including the archive/manifest/cleanup receipt.
-Current tested products, useful caches, static Mac evidence and saved project
-remain; source/delivery and250 authored exact/20 candidates are unchanged.
-The user then stops exploration and requests handoff preparation.
+`6f7aae5e8e1dc37d9f9e9f99f6615b05ae3876f7099e26977a99e8b1a6590d42`. Current tested products, useful caches, static Mac evidence and saved project
+remain; source/delivery and250 authored exact/20 candidates are unchanged. The user then stops exploration and requests handoff preparation.
 
 ## Actual dxbuffer initializer and Buffer members, October20
 
@@ -534,30 +492,15 @@ deferred while those source questions remain open.
 
 Process Evidence is `ev_5a2caf3f220e2c54b7bd43a48d4815132556a3d9b0298eddb1dd524b46e67b2b`,
 `ev_96adc354cd3b83e1b6add4dd8a06f5bcd7b8b887120f3c4da704eaf89a50049c`
-and `ev_9d319462a0fa46d25d22bdce78ee38997863c61b20e93df9e6ce3bf1d469862d`.
-This route is process observation, not native-provider admission or a snapshot.
-The three private `mac-dxbuffer-*-20261020` directories retain selected exports,
-questions and resource receipts; the member-phase evidence verification records
-the complete byte/word/call mapping. All987 protected hashes, modes and nsmtimes
-verify before documentation edits. No compiler, game build/run or replay runs.
-Each capture uses CPU0/35%,384/512MiB, Java128MiB/Node192MiB. Peaks are
+and `ev_9d319462a0fa46d25d22bdce78ee38997863c61b20e93df9e6ce3bf1d469862d`. This route is process observation, not native-provider admission or a snapshot. No compiler, game build/run or replay runs. Each capture uses CPU0/35%,384/512MiB, Java128MiB/Node192MiB. Peaks are
 403,169,280 /403,177,472 /403,169,280 bytes, with1726 /1606 /1545 soft-high events
 and zero max/OOM events. The saved project and current products remain reusable.
 
-The51-member archive under `.analysis/rea/mac-buffer-reference-20261020/` retains
-all full process responses and closed capture carriers:247,553 bytes, SHA-256
-`c491e46bc448186e965f84c26a8adcf0d025a7da63b5aac84c91289d561c8b3d`.
-Every member size/hash verifies before exact-list deletion of29 closed files,
-releasing1,175,552 allocated bytes net including archive/manifest/cleanup receipt.
 All985 protected identities outside the two intentional documentation edits
 remain fixed after cleanup. Selected exports, questions and resource receipts
 stay live; original forks, saved project, useful caches and products stay intact.
 
 An independent read-only review rechecks all820 original bytes/205 words, eight
 raw metadata records, ten direct-call displacements and the relevant member
-load/store/compare words. It independently verifies all51 archive members and
-985 unchanged non-documentation identities. Its receipt is
-`.analysis/mac-dxbuffer-independent-review-20261020/review.json`, SHA-256
-`2e51fd93d0f0b68ce2f95d6cb2f2784fb9d99415d74a501203069f80c10cc22f`.
-It supports the narrow constructor/member connection and rejects a Windows
+load/store/compare words. It supports the narrow constructor/member connection and rejects a Windows
 owner/capacity transplant. No additional provider, compiler or game runs follow.

@@ -88,11 +88,7 @@ preserving unsigned clock and signed elapsed returns. The shim checks 35 genuine
 symbols and 36 production-default slots and retains 47 actual compiler
 dependencies. Host forwarding does not establish physical graphics/audio.
 
-Native family/canonical SHA256 `59923c0f3fa9159d4595dd744fe7c4f0c4d919e996879a769b6a0925df34b518`; shim `8f971067c1eb00a3632a011992e0203ea0b49d7668c0d269396aabe66b372769`.
-Source present stays 283, scoped semantic rows 247, unit-distinct cases 112,273;
-235 semantic input closures refresh with no new cases.
-Origins stay 270 authored / 50 runtime / 42 generated / 166 unknown. The three
+Native family/canonical SHA256 `59923c0f3fa9159d4595dd744fe7c4f0c4d919e996879a769b6a0925df34b518`; shim `8f971067c1eb00a3632a011992e0203ea0b49d7668c0d269396aabe66b372769`. Source present stays 283, scoped semantic rows 247, unit-distinct cases 112,273;
+235 semantic input closures refresh with no new cases. Origins stay 270 authored / 50 runtime / 42 generated / 166 unknown. The three
 focused gap queries extend the complete REA snapshot from 468 to 471 records,
-with zero primitive cache entries, after an explicit successful close/save.
-Checkpoint `.analysis/checkpoints/exact-mode-frames-283-111` links to splash 110.
-The >=95% complete English-source goal remains active and unachieved.
+with zero primitive cache entries, after an explicit successful close/save. The >=95% complete English-source goal remains active and unachieved.

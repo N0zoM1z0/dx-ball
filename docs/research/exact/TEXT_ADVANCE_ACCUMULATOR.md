@@ -91,13 +91,5 @@ An explicit correction receipt identifies404F0E/404F64 without rewriting that
 plan or its started hash; model, executed hooks and actual mappings already
 identify the correct text operations. Recipe, inputs and comparisons are fixed.
 
-Private authority: `.analysis/text-advance-accumulator-20261020/`, including
-independent source/result review, full comparisons/producers, original-write
-observations, corrected and failed helpers, and integration/cleanup receipts.
-Historical semantic scopes and case counts do not expand through input refresh.
-Forty-seven closed inputs/products/helpers are archived and member-size/SHA
-verified before exact-list removal. The976,412-byte archive releases7,020,544
-allocated bytes net before small receipts. All623 protected SHA/size/mode/mtime
-identities stay fixed; current products/caches, unique proofs and failure logs stay.
-The tested bff527e game and local ZIP predate this source change and remain fixed.
-Continue authored source recovery before complete game verification.
+Historical semantic scopes and case counts do not expand through input refresh. All623 protected SHA/size/mode/mtime
+identities stay fixed; current products/caches, unique proofs and failure logs stay. The tested bff527e game and local ZIP predate this source change and remain fixed. Continue authored source recovery before complete game verification.

@@ -25,31 +25,20 @@ difference rather than a different list owner or layout. Repeating equivalent
 conditions, these two language models, these sound scopes or the offset
 projection will not advance the current frontier without new evidence.
 
-Private inputs, compiler outputs and complete comparisons are retained in
-`.analysis/presentation-top-order-20261012/`, `.analysis/ui-cpp-model-20261012/`,
-`.analysis/sound-upload-scopes-20261012/` and
-`.analysis/explosion-storage-address-20261012/`. Their verification and bounded
-cleanup receipt are in `.analysis/exact-frontier-20261012/`. Only a hash-equal
+Only a hash-equal
 duplicate diagnostic object was removed. No game run or portable rebuild was
 needed for the rejected changes.
 
 A later `/Z7` diagnostic on the geometry and core owners preserves all their
-existing complete comparisons, including every remaining candidate difference.
-Debug information does not resolve their stack-home allocation. The two objects
-and full literal-alias checks are retained in
-`.analysis/debug-compiler-model-20261012/`; canonical recipes are unchanged.
+existing complete comparisons, including every remaining candidate difference. Debug information does not resolve their stack-home allocation.
 
 Removing names from the public unkeyed-blit prototype makes its complete195-byte
-candidate exact, but loses the existing draw-sprite and glyph-search matches.
-Applying the same declaration style to both keyed/unkeyed prototypes also loses
+candidate exact, but loses the existing draw-sprite and glyph-search matches. Applying the same declaration style to both keyed/unkeyed prototypes also loses
 stretch-keyed-sprite. Both proposals are rejected; the public header and canonical
-resource object are unchanged. Full owner comparisons are retained in
-`.analysis/unkeyed-prototype-20261012/`. Do not repeat these declaration variants.
+resource object are unchanged. Do not repeat these declaration variants.
 
 Appending `/Os` to the canonical UI and resource recipes invokes materially
 different code generation and loses established exacts. Those two code-size
 models are rejected. Compiling the unchanged Bitmap source as C++ retains its
 same928-byte body and614 differences rather than restoring the original976-byte
 extent. Canonical flags, header declarations and products remain unchanged.
-Receipts are in `.analysis/codegen-options-20261012/` and
-`.analysis/bitmap-cpp-model-20261012/`; do not repeat these closed models.

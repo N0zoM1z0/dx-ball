@@ -54,17 +54,9 @@ restart return on failure before changing the playing flag.
 
 ## Evidence and comparison
 
-The ten full REA dossiers are `01`–`10-analyze_function.json` in the private
-run `.analysis/rea/runs/2026-10-07T15-16-14.218Z-interactive-3602154/`.
-Their Evidence IDs and extents are indexed in `.analysis/midi-evidence.json`.
-
 Play has 493 Ghidra-owned bytes inside its 513-byte span. A new complete
 `read_bytes` response attests all 513 bytes, including four excluded five-byte
-jumps to cleanup. It is retained at
-`.analysis/rea/runs/2026-10-10T07-13-33.419Z-requests-4072877/00-read_bytes.json`,
-Evidence `ev_63cb8dd0c62cd2c2e8e121e730540f10d836f953facd739adb6d4c6573b1ba9a`.
-The response agrees with the verified executable. The cumulative snapshot
-contains 481 records and preserves all 480 parent records.
+jumps to cleanup. The response agrees with the verified executable.
 
 One MIDI recipe consumes eight recursively included project files. Its flags
 are the established `/Od /Ob0 /Oi- /Oy- /Gd /MT /Gy` configuration. Two compiler
@@ -85,8 +77,3 @@ One unchanged MIDI Oracle passes 2,109 direct cases and 134 connected checks,
 including all six original songs. No cases were added. Native, VC4 and MinGW
 builds succeed. The VC4 game reuses the fresh MIDI object and 30 unchanged
 objects; no other source was recompiled for that link.
-
-Full compiler inputs, both emissions, comparisons, Oracle results, independent
-reviews and game products are retained under
-`.analysis/checkpoints/exact-midi-lifecycle-283-131/`.
-Working receipts are in `.analysis/exact-midi-lifecycle/`.

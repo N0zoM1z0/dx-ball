@@ -14,12 +14,9 @@ the mapper also enforces all360 initialized table bytes in its match recipe.
 
 The shipped `lseek.c` establishes direct record expressions, assignment
 conditions for handle/position acquisition and an owned invalid-descriptor
-return. Restoring these closes188 bytes and all nine actual relocations.
-REA `ev_b168811a2cb1c68a1af06a7efadaf93b8d3b14073ce429293e7225330d28088a`
-and the complete pinned CRT section independently cover the original body.
-All343 previous exacts,105 other candidates and the complete360-byte error
+return. Restoring these closes188 bytes and all nine actual relocations. REA `ev_b168811a2cb1c68a1af06a7efadaf93b8d3b14073ce429293e7225330d28088a`
+and the complete pinned CRT section independently cover the original body. All343 previous exacts,105 other candidates and the complete360-byte error
 table remain. One compiler set, no runtime/provider work.
-Receipt `.analysis/descriptor-seek-source-expression-20261014/verification.json`.
 
 The shipped `commit.c` establishes a register descriptor/status and shared
 error/completion labels, with DOS error published before errno9. Restoring that
@@ -31,7 +28,6 @@ exacts and the complete360-byte table remain. Two compiler sets, no runtime
 tests; retained objects are re-consumed with the table attestation restored
 after its comparison metadata was omitted, without recompilation. All343 old
 exacts/103 outside-owner candidates/249 semantic rows remain unchanged.
-Receipt `.analysis/descriptor-commit-register-owner-20261014/verification.json`.
 
 The shared low-I/O record now exposes only its proven handle and flag byte.
 Natural Win32 layout retains the eight-byte stride; host handles grow with
@@ -56,19 +52,13 @@ errno9. Error mapping retains all45 records, duplicate error6 and both ranges.
 Whole pinned CRT sections independently agree for all five entries. REA run
 `2026-10-13T12-45-07.899Z-interactive-1599344` retains fifteen info/pseudo/assembly
 records in one closed session. Table bytes reuse
-`ev_e5aea1b1fa43f15168514e949432e327c43794b19fce1f23c2a86fd6067c9f5c`.
-Private producers/proof: `.analysis/runtime-lowio-write-20261013/`.
-All253 previous exact results and50 preceding candidate results are unchanged.
-Totals are320 source-present functions and255 exacts/64,031 code bytes.
-Native/i686 standalone compilation covers both changed owners. No runtime tests
+`ev_e5aea1b1fa43f15168514e949432e327c43794b19fce1f23c2a86fd6067c9f5c`. All253 previous exact results and50 preceding candidate results are unchanged. Totals are320 source-present functions and255 exacts/64,031 code bytes. Native/i686 standalone compilation covers both changed owners. No runtime tests
 or game builds run. Low-I/O registry/error storage and game integration stay open.
 
 The follow-up separates the two-field OS outcome from the three-field
 cache/progress owner. This preserves555 bytes and restores all five scalar
 homes relative to the post-save ESP: error16, written20, block24, offset28 and
 total32. The translation buffer remains at36. Eighteen differing displacement
-positions disappear; the remaining19 rotate input/output/inserted-count registers.
-Text input, per-chunk output and per-byte values now have their consuming
+positions disappear; the remaining19 rotate input/output/inserted-count registers. Text input, per-chunk output and per-byte values now have their consuming
 lifetimes, but that second trial changes no code. Two complete owner exacts
 preserve169 bytes and the full360-byte table. No new exact function is claimed.
-Current proof: `.analysis/runtime-write-lifetimes-20261013/verification.json`.

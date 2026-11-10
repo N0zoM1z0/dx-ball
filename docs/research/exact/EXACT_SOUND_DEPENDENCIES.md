@@ -66,6 +66,3 @@ file loader `ev_a52bb0030eab7563b8a83f854ffdd76af7e5b0382cd75bda896a04c3efed70a0
 Complete byte spans:
 `ev_ea17c0f8232c3bed494b5f8e97ff67790e1d38eb410d071395c0337072d22447`
 and `ev_94e9828bd14fb37d829065569ecc12507b58c3fd897901734ec17b6a076da576`.
-Full responses are retained in the REA runs from October 7 and October 10;
-comparison inputs, both emission epochs and reviews are retained under
-`.analysis/exact-sound-dependencies/` and its checkpoint.

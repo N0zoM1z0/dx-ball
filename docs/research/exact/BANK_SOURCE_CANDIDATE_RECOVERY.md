@@ -99,14 +99,7 @@ including retry, publication, pixels, cleanup and bank restoration checks.
 Only dependency/source hashes refresh in the 249 ordered semantic receipts;
 historical case sets, scopes and oracle seals are not represented as rerun.
 
-Private authority is `.analysis/bank-source-search-20261021/`, including the
-installed comparison, authored coverage, adoption and member-verified archive.
-Old source/products/ledgers remain recoverable from the rollback evidence;
-unused candidates, proposal objects and copied inputs are retired only after
-member size/hash/mode verification. Current products, useful caches, tools,
-originals and the 141-record compiler snapshot are preserved.
-The closed phase archives 77 files in 1,280,296 bytes, releasing 1,900,544
-allocated bytes net before journals. Full modes and nanosecond timestamps remain
+Full modes and nanosecond timestamps remain
 in the recovery descriptors; no current accepted product is deleted.
 
 Serial heavy runs use CPU0/35%, 384 MiB high / 512 MiB maximum, with zero recorded

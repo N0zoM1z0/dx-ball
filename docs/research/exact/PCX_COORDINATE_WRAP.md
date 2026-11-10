@@ -83,10 +83,4 @@ startup and peaks62,566,400 bytes. All recorded high/max/OOM counters are zero.
 No game build/run or physical-driver claim follows; the last verified EXE/ZIP
 still represents717cc2f and predates this and the preceding boundary corrections.
 
-Private `.analysis/pcx-coordinate-wrap-20261019/` retains complete comparisons,
-producer, independent result review, counterexamples,99-case selection, adoption
-and current coverage. The independent original-site review is
-`.analysis/pcx-destination-wrap-review-20261019/review.json`. All37 closed inputs,
-products and executed helpers are member-hash verified in a1,074,769-byte archive
-before removal, releasing7,815,168 allocated bytes net after archive cost and
-before the small manifest/cleanup receipt. Current tested products/caches stay.
+Current tested products/caches stay.

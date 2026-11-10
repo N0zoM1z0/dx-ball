@@ -1,9 +1,7 @@
 # Sprite source-owner recovery
 
 October21–22,2026. Complete ordinary draw105, blit195 and release262 are recovered
-as separate typed C++ source owners. The coherent18-function resource comparison
-preserves all13 prior exacts, all262 actual bindings, six whole literal carriers
-and the complete5,216-byte global BSS layout. No machine code, dummy object,
+as separate typed C++ source owners. No machine code, dummy object,
 padding, alternate platform body, compiler flag change or relaxed comparison is
 used. Source organization and local spelling are reconstructed hypotheses, not
 uniquely established historical source.
@@ -55,10 +53,7 @@ in [the earlier bank recovery](BANK_SOURCE_CANDIDATE_RECOVERY.md).
 The complete proof covers all18 functions across17 actual source/compiler
 owners. Every actual relocation is mapped with its original identity, addend
 and full literal contents; exact sections retain the maintained internal-target
-guard. All six physical string carriers and all global BSS definitions/offsets
-are checked, alongside the compiler's unchanged directives and empty sections.
-Header inputs and nine VC4 flags remain coherent across every selected object.
-Successful producer digests are reused, not recompiled during adoption.
+guard. Header inputs and nine VC4 flags remain coherent across every selected object. Successful producer digests are reused, not recompiled during adoption.
 
 All sixteen new files join CMake, the legacy compiler source/flag map and the
 restored-CRT link recipe. Native source owners inherit the existing signed32
@@ -72,19 +67,9 @@ hashes refresh; they are not represented as249 newly rerun case sets.
 
 Formal totals after acceptance are260/270 authored exacts,74,239/84,968 complete
 exact authored bytes, ten candidates/10,729 original bytes,49 authored compiler
-closures,405 overall exact functions/88,623 code bytes/244 metadata bytes.
-Private authority is `.analysis/resource-owner-adoption-20261021/`, especially
-`complete-proof.json`, `native-summary.json` and `adoption.json`.
-The native scope peaks at73,515,008 bytes with zero memory events. An EOF-only
-publication source compiles once, preserving all18 resolved identities and
-whole noncode carriers; the incremental native library remains byte-identical,
-so the same1,869-case receipt is reused. The initial ledger serializer is also
+closures,405 overall exact functions/88,623 code bytes/244 metadata bytes. The native scope peaks at73,515,008 bytes with zero memory events. The initial ledger serializer is also
 corrected before writes to preserve existing nested TOML oracle tables. Neither
-bookkeeping correction repeats a successful compiler digest.
-After acceptance,592 archive members are fully size/SHA/mode verified before
-551 obsolete private inputs, proposal objects and helpers are retired. Net
-allocated release is4,182,016 bytes before the small receipt. Current source,
+bookkeeping correction repeats a successful compiler digest. Current source,
 all accepted objects, tested native library, useful caches, tools/originals and
-the earlier delivery remain. The adjacent `cleanup.json` maps all recovery paths.
-All work remains serial on CPU0/35%,384MiB high/512MiB max. The tested game
+the earlier delivery remain. All work remains serial on CPU0/35%,384MiB high/512MiB max. The tested game
 delivery predates this source organization and is not relinked or replayed.

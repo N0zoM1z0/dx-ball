@@ -13,11 +13,7 @@ data with all five ordered message destinations. Original code has three
 unreachable five-byte switch-tail jumps; the current object has two. These
 tails explain the1,171/1,166-byte extent difference. Whole-span comparison stays
 nonexact: the correspondence does not mask dead bytes, establish unique switch
-syntax, observe execution or prove physical Windows behavior. The current
-object, original full-span Evidence and typed owner inputs are retained in
-`.analysis/window-message-topology/live-instruction-correspondence.json`.
-No source/fixture edit, provider request or compilation is needed for this audit.
-The origin frontier from this audit is documented in
+syntax, observe execution or prove physical Windows behavior. No source/fixture edit, provider request or compilation is needed for this audit. The origin frontier from this audit is documented in
 [runtime bindings](../RUNTIME_BINDING_FRONTIER.md).
 
 The window procedure at `0x40DA70` connects input, audio focus and resource
@@ -67,7 +63,4 @@ emissions are identical across all three retained versions.
 
 Only the existing 2,138 WindowProc cases were replayed. Five typed native
 forwarders and their default-owner bindings connect the existing callback
-slots; the case bodies are unchanged. Native, VC4 and MinGW builds pass.
-The VC4 game reuses 35 valid objects, including the current platform object.
-Full evidence and compiler inputs are retained under
-`.analysis/checkpoints/exact-window-proc-283-136/`.
+slots; the case bodies are unchanged. Native, VC4 and MinGW builds pass. The VC4 game reuses 35 valid objects, including the current platform object.

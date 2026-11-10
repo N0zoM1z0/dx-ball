@@ -92,14 +92,8 @@ historical semantic rows are byte-identical. Totals remain 545 inventory,
 475 source entries, 380 exacts/77,485 code bytes/244 metadata bytes and 95
 complete candidates. No full replay, provider query or game campaign ran.
 
-Private receipts are `.analysis/crt-fp-startup-20261016/`: `closure.json`,
-`source/runtime_float_format_state/{product,portable}.json`, `callback-data.json`,
-`link.json`, `runtime-before-stage-assertion-fix.json`, `runtime.json`,
-`verification.json` and `adoption.json`. The complete initialization-table read
+The complete initialization-table read
 is reused from REA Evidence
-`ev_73a146a038dc9800cd869abb7261b6989c3713c813683a1453cd464602ea0586`.
-Earlier full member/state proofs remain in the initialization and float-format
+`ev_73a146a038dc9800cd869abb7261b6989c3713c813683a1453cd464602ea0586`. Earlier full member/state proofs remain in the initialization and float-format
 owner notes. Heavy work is serial, one allowed CPU, CPU 35%, memory high
 640 MiB/maximum 768 MiB. REA remains pinned to 6.5.0.
-Sharing 20 identical immutable member/header snapshots reclaimed 80 KiB;
-unique evidence and mutable build products are retained.

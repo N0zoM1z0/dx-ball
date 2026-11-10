@@ -31,8 +31,7 @@ denormals and exponent2047 as separate cases; both signed zeros become zero.
 All six initialized renderer state bytes and46 zero-initialized output/pointer
 bytes agree. Original alignment gaps are not source fields; native pointers grow
 naturally. One failed REA request-name setup was closed and recovered; the next
-session completed13 queries and closed. Products and full evidence are retained
-in `.analysis/runtime-float-render-20261014/`. Only scoped compilation and whole
+session completed13 queries and closed. Only scoped compilation and whole
 comparisons ran, with no game/runtime tests. That initial checkpoint preserved
 all 290 preceding exacts and 87 candidates, reaching 394 source bodies, 296 exacts/
 67,283 code bytes/136 metadata bytes and 89 candidates. See the handoff for current
@@ -43,9 +42,6 @@ totals. Physical integration remains open.
 The October 15 private control reunites all eleven original `cvt.c` definitions
 in member order and restores the three original static helpers. It excludes the
 unrelated `_fptostr.c` and trap functions from the current formatting owner.
-One VC4 compilation and native/i686 compilation completed; full inputs, objects
-and comparisons are retained under
-`.analysis/cvt-original-complete-owner-20261015/original-cvt-c-owner/`.
 
 Exponent formatting becomes exact across 310 bytes and the full suffix literal.
 However, fixed formatting loses its exact result to one differing byte and

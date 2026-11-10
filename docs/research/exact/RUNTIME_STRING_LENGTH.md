@@ -8,15 +8,10 @@ actual instructions return a length and read prefix bytes individually.
 
 Shared C retains the byte alignment prefix and unsigned 32-bit zero-byte test
 `((word + 0x7EFEFEFF) ^ ~word) & 0x81010100`. A candidate is read again and its
-four bytes tested in order, including false candidates without a terminator.
-Volatile word views preserve those actual reads; GNU may_alias supplies the
+four bytes tested in order, including false candidates without a terminator. Volatile word views preserve those actual reads; GNU may_alias supplies the
 byte-storage view. The original aligned-word footprint can read beyond NUL
 within its word. Those bytes must be readable; no larger buffer is allocated
 or caller capacity invented by the source.
 
 One VC4 compilation emits 102/119 bytes with 112 differences; the complete
-function remains a candidate. Native and i686 strict compilation succeeded.
-No source-name/layout/operand permutations or runtime/game tests were run.
-All 334 old exacts, 107 candidates and 249 semantic rows preserve their inputs.
-Frozen source/products and a closed two-record REA session are retained under
-`.analysis/runtime-string-length-20261014/`.
+function remains a candidate. Native and i686 strict compilation succeeded. No source-name/layout/operand permutations or runtime/game tests were run. All 334 old exacts, 107 candidates and 249 semantic rows preserve their inputs.

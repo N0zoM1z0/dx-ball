@@ -12,8 +12,7 @@ The later [foreground phase checkpoint](EXACT_SPLASH_FOREGROUND_SCOPE.md)
 makes the complete 949-byte redraw exact. The historical comparisons below
 remain tied to their original epoch; other current candidates stay explicit.
 
-This connected family restores eight complete bodies from retained REA 4.1.0 /
-Ghidra 12.1.4 instruction dossiers, totaling 3,029 original bytes. Static evidence
+Static evidence
 does not establish execution or exactness; the following grouped compiler and
 original-execution results establish their separate acceptance scopes.
 
@@ -82,8 +81,4 @@ without changing case totals or source-present counts.
 The shim checks 24 genuine symbol identities and 25 production-default slots,
 including the existing music adapter check, and retains 46 actual compiler
 dependencies. Current native SHA256 `b53eed692c71cb40fb62a8e98a0d611a40356d9e0b2b61cc3ea06f45ea76449e`;
-shim `2004740f65c9e3938f43c9c7c20c5a749eb91f7bb9fe272fa6bef2dafdd1ba97`.
-Snapshot 468 records remains unchanged; no new REA request,
-runtime-origin promotion, source-presence entry, case or campaign is introduced.
-Private evidence lives at `.analysis/checkpoints/exact-splash-283-110`, linked
-to the preceding intro 106 checkpoint. The >=95% complete-source goal stays open.
+shim `2004740f65c9e3938f43c9c7c20c5a749eb91f7bb9fe272fa6bef2dafdd1ba97`. The >=95% complete-source goal stays open.

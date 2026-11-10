@@ -24,11 +24,8 @@ icon-row traversal. Existing live global life reads, caps, callbacks and the
 
 REA Evidence
 `ev_5bd8ce0bb9a8d5a889e6d06e213d148ea1bd2ad54e5d755b82c7705c50cfff4c`
-supplies the full contiguous body, including return. The private carrier is
-`24-analyze_function.json` in closed run
-`2026-10-07T08-21-37.400Z-interactive-2545594`. Its target SHA-256 is
-`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-No new provider session is needed.
+supplies the full contiguous body, including return. Its target SHA-256 is
+`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`. No new provider session is needed.
 
 One canonical MT compiler emission has every one of the same 135 original
 instruction addresses and widths. The proof parses retained REA assembly for
@@ -80,9 +77,5 @@ unchanged objects, without another source compile. All 203 exact input closures,
 36 production objects and 247 unchanged historical semantic scopes verify.
 The 235 changed historical input inventories refresh without unrelated replays.
 
-Working proof, both source/product identities, offset reconciliation, complete
-original instruction correspondence and selected Oracle are in
-`.analysis/score-strip-source/`. Independent preservation is
-`.analysis/checkpoints/score-strip-source-283-203/sha256.json`, with explicit
-before-product and closed REA dependencies. The full reconstruction goal remains
+The full reconstruction goal remains
 active; this checkpoint closes source operations and records the storage gap.

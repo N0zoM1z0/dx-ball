@@ -11,7 +11,6 @@ offset and width exact, retaining height/wrapper exactness and explicitly
 demoting vertical offset. Current renderer and delivery identities follow that
 note; earlier investigation epochs below retain their own source and scope.
 
-
 The latest [origin-storage restoration](exact/ROTATION_ORIGIN_STORAGE.md)
 recovers the two omitted zero writes and three float division operands/fallbacks.
 The current renderer is1,451/1,572bytes with1,475 strict differences and a424-byte
@@ -25,13 +24,9 @@ pass351 renderer plus344 wrapper cases once. Current renderer1447/1572bytes with
 strict differences remains a candidate; original two unused zero stores and m32
 operand lowering stay open. Y-offset191 is exact; unchanged height193/191 with158
 differences becomes a candidate. Wrapper/horizontal offset/width remain exact;
-aggregate206/44406/136 is unchanged. Current product receipt and seal are in
-`.analysis/rotation-pixel-traversal/`. The following compiler and case claims
+aggregate206/44406/136 is unchanged. The following compiler and case claims
 retain their historical checkpoint scopes.
 
-
-Historical compiler-product checks below are archived in checkpoint
-`exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
 
 The [core exact source batch](exact/EXACT_CORE.md) restores the offset helper's

@@ -85,16 +85,12 @@ REA 6.5.0 / Ghidra 12.1.4 evidence:
 - All 16 version-state bytes:
   `ev_0d31750c234dd6617d05474dd5e54d9814286b6ea945b8b8c94e6462a76268aa`.
 
-Full responses are in `.analysis/rea/runs/2026-10-16T05-18-45.609Z-requests-134800/`.
 Both the complete original `wincrt0.obj` section and maintained code/scope match
 the verified target. Each actual binding is explicit, including the byte read
 with addend 1 from `_osver`. `crt0.c` shipped with VC4 corroborates the original
-producer language, call order, DBCS scan and GUI application-type initializer.
-`wincrt0.obj` and `crt0dat.obj` were extracted from the pinned library. Their
+producer language, call order, DBCS scan and GUI application-type initializer. `wincrt0.obj` and `crt0dat.obj` were extracted from the pinned library. Their
 SHA-256 values are `65e6ef43c43aa3bc17295bbd3b004a76c4ef507ab226834add259d3d60df578a` and
 `39f0367c946b5ee25bc877c0115457d8ac0b91d0b509873bff1f3d1beb09294b`, respectively.
-Their identities and full comparisons are in
-`.analysis/crt-entry-source-20261016/complete-comparison.json`.
 
 The stable entry and changed fatal owner each have one canonical VC4
 compilation. The other 370 exact and 87 candidate producers are reused only
@@ -108,8 +104,6 @@ layout assertion are unchanged by that compatibility option.
 No runtime, game build or campaign was run for this adoption. Compiler/provider
 commands ran serially under CPUQuota 35%, MemoryHigh 640 MiB and MemoryMax
 768 MiB; Ghidra used a 256 MiB heap and the provider closed normally.
-Compiler receipts, complete comparisons and adoption proof remain in
-`.analysis/crt-entry-source-20261016/`.
 
 Current totals are **544 inventory / 464 source-present / 373 exact**,
 **76,842 exact code bytes / 244 attached metadata bytes**. There are 88 complete

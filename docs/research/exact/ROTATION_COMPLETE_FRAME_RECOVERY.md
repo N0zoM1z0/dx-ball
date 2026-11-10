@@ -29,8 +29,7 @@ recover all26 root homes. The known C1XX hash/bucket insertion mechanism screens
 the layout offline. Its first nine-name vocabulary is infeasible and receives
 no compiler run; conventional lowerCamelCase spellings of the same vocabulary
 make the finite domain feasible. A private generator initially renames two real
-`height` fields accidentally. That invalid input's failed compiler receipt is
-retained; the corrected distinct digest compiles once. A prediction checker also
+`height` fields accidentally. A prediction checker also
 needs its same-bucket prepend direction corrected before compilation.
 
 All five functions retain their actual ABI and eight-input/nine-flag recipe.
@@ -98,10 +97,7 @@ approximation are not evidence of progress.
 
 ## Retained evidence and limits
 
-Private authority is
-`.analysis/rotation-root-temporaries-source-search-20261022/`:
-`complete-residual-proof.json`, frozen plans/domains, producer/comparison records
-and the retained `ranked-root-1` source/object. The resolved renderer SHA256 is
+The resolved renderer SHA256 is
 `e6655600101a3dedf1b69d0a76dbed2bf3bed53b9f2a664f7b3539eda57c93b4`;
 the original is
 `abccb5f9a755d8d297c2da1f806b286bada2d00c6d1bf36ae0ad914585735fc8`.
@@ -112,11 +108,8 @@ peak155,963,392 bytes, with zero recorded memory events. The offline solver uses
 the same caps and a15-second timeout. Original instruction correspondence and
 known byte templates are reused; no new provider import or debugger observation
 is claimed. No native/game build, runtime case, ledger mutation or exact
-promotion follows these rejected/private results. Unique closed evidence is
-member-size/SHA/mode verified before obsolete inputs/objects retire; the useful
-best private source/object and current accepted products/caches remain.
+promotion follows these rejected/private results.
 
-Cleanup verifies284 archive members before retiring212 obsolete files. Net
-released allocation is974,848 bytes before small index/checkpoint receipts.
-The best private source/object and current comparison helper remain available;
+Net
+released allocation is974,848 bytes before small index/checkpoint receipts. The best private source/object and current comparison helper remain available;
 accepted source/products and useful native caches stay unchanged.

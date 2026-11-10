@@ -64,24 +64,18 @@ The unchanged maintained verifier passes once with the new candidate recipe:
 83 complete code sections / 10,250 bytes / 95 distinct origin entries, 12 data
 sections / 2,531 bytes and 272 actual member-scoped definitions. Two bounded
 controls reject a shifted newly placed section and a partial data extent before
-producing any acceptance report. The actual candidate-path receipt is retained
-unchanged; the published recipe has identical bytes/hash, with that alias
-recorded explicitly. No verification run is rebased onto unobserved inputs.
+producing any acceptance report. No verification run is rebased onto unobserved inputs.
 
 The complete original code observation is reused:
-`ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
-New data reads use one closed REA 6.3/Ghidra 12.1.4 session,
+`ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`. New data reads use one closed REA 6.3/Ghidra 12.1.4 session,
 `2026-10-11T04-22-27.565Z-requests-1705272`; records `00` through `08` correspond
-to the data table's order. The nine Evidence IDs are retained in
-`rea-observations.json`, the published recipe and complete immutable payloads.
-They include `ev_e5aea1b1fa43f15168514e949432e327c43794b19fce1f23c2a86fd6067c9f5c`
+to the data table's order. They include `ev_e5aea1b1fa43f15168514e949432e327c43794b19fce1f23c2a86fd6067c9f5c`
 for the error table and
 `ev_a01dd8e3af7a0724988d78b5474a52f88d81a656c93042dd541e84a26c621f19`
 for the IEEE constants.
 
 First read takes 59,037.66 ms; the other eight take 1.57–18.82 ms in that same
-session. Total retained data carriers contain 33,105 bytes for 1,401 original
-bytes. These are provider log timings and serialized file sizes, not model
+session. These are provider log timings and serialized file sizes, not model
 token costs or measured token savings. The 512 MiB heap limit is configured;
 a 498,752 KiB Java RSS sample is an observation, not a peak measurement. New
 function dossiers or full historical snapshot replay are unnecessary.
@@ -94,8 +88,6 @@ synchronized rendering/audio fidelity. Remaining origin work needs new
 independent BSS, pointer-storage or code authority instead of repeating the
 unchanged final discovery round.
 
-Private proof: `.analysis/crt-initialized-storage-next/`. Immutable seal:
-`.analysis/checkpoints/crt-initialized-storage-283-188/sha256.json`.
 All REA performance and usability feedback continues in the user's one existing
 `/tmp` document. Only completed duplicate payloads may be cleaned after full
 identity verification; unique evidence and current products remain.

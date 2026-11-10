@@ -52,10 +52,7 @@ physical Windows/COM/audio behavior and complete-game fidelity remain unproved.
 Reuse the closed complete read
 `ev_454b9b00147a98b6a0f82cf928c9a3af94a4d1f90f0311809c080c7e4d2664bc`
 from `2026-10-10T10-38-17.818Z-requests-241415`, independently verified against
-the target. No fresh provider/setup. Private before state, matching recipe,
-complete comparisons, topology, selected cases and products:
-`.analysis/window-switch-exits/`. Immutable seal:
-`.analysis/checkpoints/window-switch-exits-283-188/sha256.json`.
+the target. No fresh provider/setup.
 
 The WindowProc source/CFG hypothesis is closed. Further reconstruction needs
 actual missing whole-owner producers or an independently distinguished origin

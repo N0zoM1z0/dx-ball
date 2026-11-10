@@ -11,16 +11,13 @@ and returns directly, and the vertical-blank calibration counter belongs to
 its own block. Descriptor initialization, successful call order, all32 blank
 waits, unsigned timing subtraction and mode/particle state changes stay intact.
 
-The retained complete original dossier contains80 instructions and one
-contiguous359-byte body through the final return. The failure branch at
+The failure branch at
 `0x403A5E` jumps directly to the common epilogue at`0x403B62`. The previous
-outer `else` instead targeted the later success-return jump at`0x403B5D`.
-Removing that wrapper and adding the direct failure return reproduces the
+outer `else` instead targeted the later success-return jump at`0x403B5D`. Removing that wrapper and adding the direct failure return reproduces the
 complete original branch topology, including the success-return jump.
 
 The original120-byte frame contains two outer four-byte scalars, the108-byte
-surface descriptor, and a four-byte calibration counter below that descriptor.
-The previous outer counter was allocated before the descriptor and shifted
+surface descriptor, and a four-byte calibration counter below that descriptor. The previous outer counter was allocated before the descriptor and shifted
 its actual fields. A nested counter scope reproduces the observed allocation
 with meaningful typed storage. No name search, padding, extra operation,
 machine-code patch or operand-spelling trial is used. Original identifier
@@ -56,11 +53,6 @@ remain open.
 ## Retained evidence
 
 Saved original REA Evidence:
-`ev_8681cf5b5b27dd9358b476476e4b5b63d76ccbb091fc483c58c3cea670a6e1db`.
-Its complete dossier and target digest are reverified, with a retained terminal
-session receipt; no new provider request is required. Private
-`.analysis/startup-calibration-scope/` retains before identities, the single
-compile receipt, complete comparisons, unmodified test result, actual link
-inputs, product identities and final review. The new checkpoint owns current
+`ev_8681cf5b5b27dd9358b476476e4b5b63d76ccbb091fc483c58c3cea670a6e1db`. The new checkpoint owns current
 products independently of public paths and references large prior carriers
 without copying them.

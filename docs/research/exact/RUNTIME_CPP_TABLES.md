@@ -32,12 +32,8 @@ remain genuine external boundaries, not fixture callbacks or stubs.
 
 Current totals are539 inventory,414 source,307 exact and68,280 code bytes;
 metadata136 and all249 historical semantic rows remain unchanged. All304 old
-exact and97 candidate producers are reused with unchanged input/object hashes.
-Current candidates98 (34 authored/64 runtime); origins270/192/43/34.
-Only focused VC4/native/i686 compilation and complete comparisons ran, without
-runtime tests or game builds. Two closed REA runs retain seven records under
-`.analysis/rea/`; proofs and unique compiler products are retained under
-`.analysis/runtime-cpp-tables-20261014/`. OS exception transfer and game
+exact and97 candidate producers are reused with unchanged input/object hashes. Current candidates98 (34 authored/64 runtime); origins270/192/43/34. Only focused VC4/native/i686 compilation and complete comparisons ran, without
+runtime tests or game builds. OS exception transfer and game
 integration remain open.
 
 The later [terminal source recovery](RUNTIME_CPP_TERMINAL.md) supplies the
@@ -70,8 +66,6 @@ are refreshed; the other 370 accepted rows and all outside candidate/producer
 rows are retained unchanged. Totals remain 464 source-present / 373 exact,
 76,842 exact code bytes and 244 metadata bytes.
 
-Products, the initial stale-relocation comparison rejection, the corrected
-four-unit comparison, diagnostic instruction correspondence and adoption
-receipt remain in `.analysis/cpp-foreign-handler-tail-20261016/`. The actual
+The actual
 CatchIt relocation moves from object offset 181 to 180; its target remains
 `0x0041B780`. Complete byte comparisons retain that genuine binding.

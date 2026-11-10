@@ -41,7 +41,6 @@ affected control. Both it and `tests/test_windows_round.py` accept
 `--display-depth {8,24}` and default to 24, forwarding arguments to their child
 process and recording the chosen depth. The round harness's CLI/syntax were
 checked; its board-transition/focus flows were not rerun in this checkpoint.
-Existing historical round receipts retain their own products/display scope.
 
 The focused driver reuses the fully attested SDK reader without recompilation.
 No game source/object, exact manifest, acceptance scope or product changes:
@@ -49,10 +48,6 @@ No game source/object, exact manifest, acceptance scope or product changes:
 remain. No owner-oracle replay, game build/link or new REA request is needed.
 The existing closed REA-backed state/layout contracts are reused.
 
-Private `.analysis/gameover-display-depth/` retains the driver, each completed
-profile receipt, complete state histories, all 12 frames, score files, input
-identities, frame comparisons, product verification and cleanup. The immutable
-seal is `.analysis/checkpoints/gameover-display-depth-285-206/sha256.json`.
 Cleanup preserves unique runtime exits before removing resettable probe copies
 and deduplicates only hash-equal before/new-seal files against the immediately
-preceding editor-cursor seal. Current/public files remain independent of archives.
+preceding editor-cursor seal.

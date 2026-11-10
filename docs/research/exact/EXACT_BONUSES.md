@@ -101,10 +101,6 @@ The shim checks 36 genuine symbols / 37 production-default slots and retains
 48 actual MD dependencies. Existing sound/RNG wrappers are unchanged.
 Host forwarding does not establish physical graphics/audio behavior.
 
-Native family/canonical SHA256 `ca31cfb6e2b2fde82f6f7aee20031a8033b07e4ee430a789f618876ce02af755`; shim `09d8f5c7690c410da79cc98b066cdaa94c05f72e4b7ad20c3886a63d0ccd4ba0`.
-Source presence stays 283, scoped semantic rows 247, unit-distinct cases 112,273;
+Native family/canonical SHA256 `ca31cfb6e2b2fde82f6f7aee20031a8033b07e4ee430a789f618876ce02af755`; shim `09d8f5c7690c410da79cc98b066cdaa94c05f72e4b7ad20c3886a63d0ccd4ba0`. Source presence stays 283, scoped semantic rows 247, unit-distinct cases 112,273;
 235 actual semantic input closures refresh without new
-cases. Origins stay 270 authored / 50 runtime / 42 generated / 166 unknown.
-The complete 473-record / 0-primitive REA snapshot is retained after explicit
-successful close/save. Checkpoint `.analysis/checkpoints/exact-bonus-phase-283-113`
-links to mode-frames 111. The >=95% source-restoration goal remains unachieved.
+cases. Origins stay 270 authored / 50 runtime / 42 generated / 166 unknown. The >=95% source-restoration goal remains unachieved.

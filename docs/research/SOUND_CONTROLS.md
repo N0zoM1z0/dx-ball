@@ -12,10 +12,8 @@ including its actual lost-buffer restoration and file reload path.
 | `0x004060E0` | `dxball_set_sound_volume` | 159 / 159 | `ev_77abf2fa6a9958ea9290a3640b3553f7a54f25fb6a2f31192452faf3b6875916` |
 
 The three complete, contiguous instruction bodies agree with the imported
-extents. Their closed, target-matching REA session retains the requests, full
-dossiers, provider metadata and timings. Matching saved evidence is reused for
-the restoration dependency; its binary implementation is not queried again.
-Static inspection supplies these contracts, while original-x86 execution
+extents. Matching saved evidence is reused for
+the restoration dependency; its binary implementation is not queried again. Static inspection supplies these contracts, while original-x86 execution
 against native C supplies the separately scoped behavior comparisons.
 
 Each entry first checks for a sound device and a non-null record. It calls

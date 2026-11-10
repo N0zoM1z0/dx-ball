@@ -41,11 +41,8 @@ Closed REA run `2026-10-13T10-31-33.913Z-requests-1407849` provides information,
 pseudocode and assembly for all three new bodies. Assembly Evidence IDs are
 `ev_623c6589217ebc640b8f63d53fc8c92a5af21577400fa094d004d4fe8d4ee0a9`,
 `ev_f1493a27dd977038ff4d9d55a829c251d66cedbbee73380a0cce548448f58259`
-and `ev_6e767a83a03a591ebb03a1450da8a14030f6f37d10e3abd5d8a772ad9adeaa52`.
-Their contiguous bodies cover 102, 62 and 54 bytes. The zero predicate reuses
-the complete original evidence in [the preceding note](RUNTIME_MANTISSA_HELPERS.md).
-Actual source stages, producers and all seventeen comparisons are retained in
-`.analysis/runtime-mantissa-lifetimes-20261013/`. Both owners compile on VC4,
+and `ev_6e767a83a03a591ebb03a1450da8a14030f6f37d10e3abd5d8a772ad9adeaa52`. Their contiguous bodies cover 102, 62 and 54 bytes. The zero predicate reuses
+the complete original evidence in [the preceding note](RUNTIME_MANTISSA_HELPERS.md). Both owners compile on VC4,
 native and i686. No runtime test or game build runs. Parser recovery,
 remaining exact gaps and game integration stay open.
 
@@ -71,10 +68,5 @@ or a new exact function. Existing mask/register differences are closed controls
 without new evidence; no type, spelling or register sweep follows this result.
 
 Original control flow and transfers reuse the retained complete REA/CRT evidence
-linked above and the [decimal conversion note](RUNTIME_DECIMAL_CONVERSION.md).
-No new provider, runtime check or full replay runs. Both function comparison
-result maps remain identical; only the affected owner producer/receipt and its
-one exact source/object identity are refreshed. The remaining 375 exact results,
+linked above and the [decimal conversion note](RUNTIME_DECIMAL_CONVERSION.md). No new provider, runtime check or full replay runs. The remaining 375 exact results,
 84 outside candidate results and 249 semantic scopes retain their records.
-Source, object, compiler logs, complete comparisons and adoption receipt remain
-in `.analysis/mantissa96-integer-snapshot-20261016/`.

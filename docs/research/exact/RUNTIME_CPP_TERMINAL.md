@@ -41,10 +41,7 @@ unwinding. The fixture uses stock host CRT/SEH support; the abort endpoint is
 controlled. No gameplay replay or new provider query runs for this change.
 
 The initial bounded `/ALTERNATENAME` trial is closed: VC4 LINK reports LNK4044
-and unresolved translator references. The adopted source needs no alias flag.
-Private inputs, old objects, original evidence, complete comparisons, link maps
-and process outputs are retained in `.analysis/crt-cpp-hooks-20261016/`;
-`verification.json` records the adopted scope. Original C++ frame/translator,
+and unresolved translator references. The adopted source needs no alias flag. Original C++ frame/translator,
 x87 and low-level SEH/stack transports remain explicit dependencies.
 
 ## Original terminal-source acceptance
@@ -113,18 +110,10 @@ native Windows behavior or arbitrary unwinding. The first output guard rejected
 an Xvfb shutdown message; its raw result is retained and the repaired reader
 selects exactly one fixture event record without discarding the raw output.
 
-The retained original authority is
-`.analysis/cpp-terminal-boundaries-20261014/original-proof.json`, with REA IDs
-`ev_06745feb23b4c1b0c656b39548712dadb099e59d4a043230cbe90f4f93a44d61`
-and `ev_f561022b68290f5ac8530cdf4642e42957fba725cea515587a46e868788f0a66`.
 No new provider session was opened. Both complete pinned sections include the
 final RET omitted by the older provisional 114-byte extents.
 
-The new private carrier `.analysis/cpp-terminal-source-20261016/` retains source
-controls, compiler receipts, complete comparisons, initialized-storage proof,
-Clang products and the bounded Wine fixture/results. `verification.json` records
-**543 inventory / 459 source / 369 exact**, with **75,861 code bytes / 184 scope
-and other attached metadata bytes**. The previous 367 exacts are reused after
+The previous 367 exacts are reused after
 verifying unchanged recipes, actual inputs, flags and product hashes; they were
 not recompiled. Historical semantic rows remain 249. No game or platform-port
 campaign ran.

@@ -52,9 +52,6 @@ original PCX frame bytes remain unresolved.
 Original evidence is
 `ev_d7dd48a6f210a1a2cffea6be8318655763959610c9d94f8f8ff5621dad169b76`,
 operation 00 of the closed `2026-10-10T17-22-54.305Z-requests-825249` run.
-Full source/ABI review, eight compiler inputs, complete comparisons, case and
-build receipts are in `.analysis/capture-phase-scopes-20261013/`.
 
-Twenty-five completed source/object/tracking copies are retained in verified
-gzip carriers, releasing 4,370,432 allocated bytes. Current products and unique
+Current products and unique
 original REA evidence are preserved.

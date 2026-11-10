@@ -231,7 +231,6 @@ every key byte and all 400 paint/erase cells are checked. Every earlier suite,
 forty cold exact units, eight rejection checks, three builds, Wine inspectors
 and saved REA verification run together. See [editor evidence](EDITOR_OWNER.md).
 
-
 The MDS/music checkpoint adds thirteen entries and 2,109 direct cases; current
 acceptance is 199 maintained entries and 94,270 distinct direct suite cases.
 Another 134 lifecycle checks are counted separately. Only Kernel32/WinMM imports

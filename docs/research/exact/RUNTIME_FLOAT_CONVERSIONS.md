@@ -35,8 +35,7 @@ All records bind the configured original SHA-256.
 
 The first shared C emission matches all 109 bytes. A subsequent prototype-only
 correction gives the four unresolved parser options neutral names; its single
-new compilation reproduces those matches. Both products and inputs remain in
-`.analysis/runtime-conversion-functions-20261013/`. All three complete units,
+new compilation reproduces those matches. All three complete units,
 four relocations and their original instruction boundaries are checked.
 
 This is a standalone recovered CRT module, like the existing termination owner.
@@ -45,7 +44,3 @@ game still links its existing runtime. Parser/converter source recovery, portabl
 backend integration and full exception dispatch remain open; no substitute
 parser or execution acceptance is added. Existing game source/products and the
 239 earlier accepted compiler inputs are reused unchanged.
-
-Eleven retired comparison/object copies are preserved in verified gzip carriers,
-releasing 1,294,336 allocated bytes net of the cleanup receipt. Current products
-remain available; the archived raw copies can be recovered from their carriers.

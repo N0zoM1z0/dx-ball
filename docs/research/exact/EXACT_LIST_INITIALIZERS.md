@@ -96,9 +96,7 @@ the bounded REA query. That does not exclude register-relative access or raw
 storage transport. Reused append/removal consumer dossiers observe the three
 pointer fields; no semantic meaning is assigned to the fourth word.
 
-The private failed `={}` aggregate-initializer proposal, final plain global
-definitions, frozen inputs, compiler logs, complete comparison and behavioral
-probe are retained separately. The final source uses normal default
+The final source uses normal default
 initialization, compatible with VC4. The authored-function denominator and the
 95% complete-source objective remain unresolved.
 

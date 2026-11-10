@@ -86,8 +86,7 @@ spelling and register/local scheduling remain unproven. No layout, name or
 declaration trials were used. Other existing rendering bodies were inspected
 and retain their candidate gaps. The unchanged effect-sprite Blt now matches
 its full 362-byte span and 23 bindings with the current recipe; all eight prior
-display exacts stay exact. Its earlier nonexact receipts remain historical;
-this adds no separate direct cases or active-use claim. Global totals are
+display exacts stay exact. Global totals are
 170 exact functions /30,600 complete code bytes /136 metadata bytes.
 
 Two matching `/MT` compilations include the ordering correction. Each matching
@@ -95,8 +94,7 @@ object was reused for its game link with 34 independently verified unchanged
 objects and no additional production source compile. The recursive display
 closure contains twenty project files, including the clock interface. Native
 and MinGW builds pass. No new Wine play run or full historical replay was made;
-the preceding real-game controls retain their earlier product identities.
-Receipts are `.analysis/exact-lightning-clock/`. Six original display dossiers
+the preceding real-game controls retain their earlier product identities. Six original display dossiers
 and the effect-sprite dossier were reused without opening a provider. REA
 feedback remains in `/tmp/dxball_rea_feedback_20261010.md`, entry 22.
 
@@ -132,12 +130,9 @@ still need implementation before a playable reconstruction is established.
 
 ## Entry evidence
 
-Sixteen complete dossiers were collected in one pinned REA MCP/Ghidra session.
-The first lazy query took about 56 seconds; subsequent queries reused the same
+Sixteen complete dossiers were collected in one pinned REA MCP/Ghidra session. The first lazy query took about 56 seconds; subsequent queries reused the same
 imported program. Explicit close saved 137 Evidence records /zero primitive
-cache entries. All raw instructions, pseudocode and body-range Evidence remain
-private under `.analysis/rea/runs/2026-10-07T09-29-28.570Z-interactive-2776129/`.
-The table retains owned versus enclosing spans, even where they agree.
+cache entries. The table retains owned versus enclosing spans, even where they agree.
 
 | Entry | Maintained function | Owned / span bytes | Direct cases | REA Evidence ID |
 | --- | --- | ---: | ---: | --- |
@@ -285,8 +280,7 @@ object and original target bytes were checked as rb\0 /wb\0 before updating
 explicit relocation bindings. No offsets, addends, bytes or comparison rules
 were relaxed. No new exact unit is claimed. Complete semantic inputs now bind
 all maintained sources and headers; exact inputs include the full shared-header
-closure. Private checkpoint reports are retained under
-`.analysis/checkpoints/display-117-40/`.
+closure.
 
 ## Next work
 

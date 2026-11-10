@@ -44,8 +44,7 @@ One unchanged fixture selection passes 1,186 calls: 216 current-clock, 252 elaps
 332 paddle, 18 waiting, 197 countdown/crop, 162 paired overlays, one reset prelude
 and eight clock-seeded original CRT-state checks. Full state, buffers, queues and
 ordered calls compare. All 229 accepted code/literal/metadata closures verify;
-249 historical input inventories refresh without unrelated fixture replays.
-No game runs. Private receipts are in `.analysis/direct-winmm-import-20261012/`.
+249 historical input inventories refresh without unrelated fixture replays. No game runs.
 
 The complete saved waiting dossier is Evidence
 `ev_86e83ae4d777813cd233a8b5c9d0f3ccf67349f7605b270938902c442f023087`,
@@ -73,10 +72,7 @@ instructions and frame homes agree. Reject the complete model without variants.
 Independent review checks full relocated bodies, unchanged residual owners and
 the moved external-C BSS objects' widths/zero initialization. Canonical source,
 products, ledgers and delivery remain unchanged at394 exacts/21 authored
-candidates. Private `.analysis/clock-family-owner-20261018/` retains sealed
-comparisons and reviews. Archive/member-hash verification precedes removal of
-36 raw inputs/products, including five objects, releasing212 KiB net of archive
-and journal. Scope peak257,736,704 bytes; the one-CPU/35%/640–768 MiB limits hold
+candidates. Scope peak257,736,704 bytes; the one-CPU/35%/640–768 MiB limits hold
 with zero high/max/OOM events. No native build, relink, provider query, runtime
 case, game or full replay follows.
 
@@ -98,9 +94,6 @@ Nine distinct low-word timer source queries also find no qualifying connected
 C/C++ elapsed/wait source in returned excerpts. A superficially similar VB
 example does not establish target source, types, names or ownership. No source
 page is opened or downloaded. This bounded search is not proof of source
-absence. Full responses are retained as three roundtrip-verified gzip carriers
-under`.analysis/clock-low-word-source-20261018/`; reuse them instead of repeating
-the queries. Eligibility and current-authority receipts are under
-`.analysis/clock-kind-current-context-20261018/`. Current394 exacts/21 authored
+absence. Current394 exacts/21 authored
 candidates, source and products remain unchanged; no compiler, provider,
 runtime, game, relink or comparison replay runs.

@@ -57,5 +57,4 @@ reports retain those differences.
 
 The native build and one unchanged display Oracle pass: 2,409 direct cases
 and 192 connected frames. The Windows VC4 game links using the new display
-object and 30 validated existing objects. Full inputs, evidence, comparisons
-and products are retained in `.analysis/checkpoints/exact-frame-boundary-283-124/`.
+object and 30 validated existing objects.

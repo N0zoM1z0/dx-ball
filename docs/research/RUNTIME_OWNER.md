@@ -85,8 +85,7 @@ existing clock/elapsed/paddle and initialization/death/reset/dispatch calls pass
 including 36 connected frames; the matrix and fixture are unchanged. The new
 VC4 product also passes the existing real-Wine ball/pause/editor/exit flow with
 81 read-only state observations, the expected saved-bank hash, normal exit and
-all 49 originals unchanged. Private receipts are in `.analysis/exact-clock-api/`
-and `.analysis/windows-play-clock-api/`. Previous mutation probes, original/MinGW
+all 49 originals unchanged. Previous mutation probes, original/MinGW
 play controls and other owner suites were not rerun. These checks do not
 establish synchronized pixels, physical audio/MIDI or full-game fidelity.
 
@@ -125,9 +124,7 @@ selected existing clock/elapsed/paddle and initializer/death/reset/dispatch
 calls, including 36 connected frames. The six private mutation probes are
 separate evidence, not additions to the maintained matrix. The runtime fixture
 now retains complete COM events on both sides instead of applying its obsolete
-board-callback normalization; cases and assertions are unchanged. All failed
-private attempts and original response identities remain retained in
-`.analysis/exact-paddle-rendering/`. Other owner loops remain historical after
+board-callback normalization; cases and assertions are unchanged. Other owner loops remain historical after
 input identity refresh; no full owner or historical replay was run. Physical
 hardware, synchronized Windows rendering and complete game fidelity remain
 outside these checks.
@@ -136,8 +133,7 @@ The linked `a53c18a` VC4 EXE subsequently passes the unchanged real-Wine
 ball/pause/editor/exit flow with 83 read-only state observations. Paddle motion,
 ball release/movement, pause freeze and resume, editor painting/save/reload,
 the established whole-bank hash and zero-code exit pass; all 49 original assets
-remain unchanged. Artifacts are in `.analysis/windows-play-paddle-a53c18a/`.
-The earlier original/MinGW controls were not rerun, and these observations do
+remain unchanged. The earlier original/MinGW controls were not rerun, and these observations do
 not compare synchronized pixels, physical audio/MIDI or complete-game fidelity.
 
 The [mode lifecycle controllers](exact/MAIN_MODE_LIFECYCLE.md) now use fifteen
@@ -189,9 +185,7 @@ analysis libraries and inspectors; platform integration is still required.
 
 The pinned REA MCP/Ghidra session supplies complete function dossiers, including
 instructions, incoming calls, switch targets and owned body ranges. Existing
-paddle/clock/reset dossiers were reused. The successful session saved 124
-Evidence records; raw inline results and snapshots remain private under
-`.analysis/rea/runs/`. Clock and mode entry spans contain unowned gaps or tables;
+paddle/clock/reset dossiers were reused. Clock and mode entry spans contain unowned gaps or tables;
 owned instruction counts below are not replaced with their enclosing spans.
 
 | Entry | Maintained function | Owned / span bytes | Direct cases | REA Evidence ID |
@@ -317,8 +311,7 @@ The grouped checkpoint reruns the changed core oracle (4,580 cases), adds this
 runtime oracle, builds native/MinGW/VC4 source and compares both Windows inspectors
 under Wine. Complete inputs for the earlier 76 semantic functions and all 40
 exact units are verified unchanged, so their completed reports are reused from
-`core-85-40`. No per-function cold replay is performed. Private reports and
-identity records are retained under `.analysis/checkpoints/runtime-101-40/`.
+`core-85-40`. No per-function cold replay is performed.
 
 ## Next connected work
 

@@ -64,13 +64,9 @@ in the 2026-10-10 14-42 more-literals run. Existing accepted callers establish
 member corroboration. No runtime-origin row is promoted by this recovery.
 
 The existing game-over fixture now binds only its copied image's five stdio
-import slots to its existing typed callbacks, using `tests/native_imports.py`.
-Cases and assertions remain unchanged. Canonical native libc checks additionally
+import slots to its existing typed callbacks, using `tests/native_imports.py`. Cases and assertions remain unchanged. Canonical native libc checks additionally
 cover a 660-byte creation, accepted/rejected insertion, persisted output and a
-43-byte partial read preserving 617 poisoned bytes. Receipts and complete
-comparisons are private in `.analysis/exact-score-reading/`.
-
-## Entries and retained observations
+43-byte partial read preserving 617 poisoned bytes.
 
 ### Exact initialization, drawing, frame and resource cleanup
 
@@ -95,21 +91,16 @@ It restores separate surface-selection branches, both original name-length
 calls, cursor-width arithmetic, direct palette/PCX calls and click branch order.
 The meaningful rectangle remains; the factored length local is removed.
 
-The complete original dossiers and referenced strings were reused from
-`00` through `03-analyze_function.json` in the closed 13-44 run, with the
-Evidence IDs in the table below. No new provider request was needed. Three
+No new provider request was needed. Three
 VC4 compilations were used: initial lifetime recovery, complete typed music/sound
-declarations with the 21-file project input closure, then drawing/frame recovery.
-Name editing remains exact; the ranking-drawing/insertion gaps are unchanged.
+declarations with the 21-file project input closure, then drawing/frame recovery. Name editing remains exact; the ranking-drawing/insertion gaps are unchanged.
 
-Native and MinGW builds pass, and VC4 links all 35 verified current objects.
-The final library passes 285 existing initialization, ranking, redraw, frame
+Native and MinGW builds pass, and VC4 links all 35 verified current objects. The final library passes 285 existing initialization, ranking, redraw, frame
 and cleanup cases plus all 76 connected checks. The private selector executes those
 unmodified loops from the maintained oracle; it adds no cases and does not
 rerun its complete eight-entry suite. The previous complete 6,531-case report
 retains its own earlier library hash. Resource/driver effects still use the
-existing typed boundaries. Inputs, products, comparisons and this focused
-receipt are in `.analysis/exact-gameover-lifecycle/`. The earlier focused
+existing typed boundaries. The earlier focused
 40-case lifetime run remains an intermediate-source receipt, not an additional
 case inventory or final-library full-suite claim.
 
@@ -123,11 +114,8 @@ loading bodies directly. Shift must equal one for uppercase conversion; both
 case conversions use their genuine CRT APIs. The explicit trailing return
 matches the observed exit. This does not promote the CRT origin ledger.
 
-The reused dossier is `07-analyze_function.json` in the closed 2026-10-07 13-44
-run, Evidence `ev_8211b56370f2de5643ba3e9d8f5a733fac0c5018dfcbf8bfbf8b84fae4daefb9`.
 Its referenced string identifies `highscor.pcx` at `0x421708`; the manifest
-checks all thirteen bytes including NUL against the pinned original image.
-No additional function or literal query was needed for this family.
+checks all thirteen bytes including NUL against the pinned original image. No additional function or literal query was needed for this family.
 
 Ranking drawing restores the observed `_ultoa(..., 10)` call, stored name
 length, meaningful X coordinate, row advancement and exit. Its full candidate
@@ -143,8 +131,6 @@ This family used two VC4 compilations: the second includes the standard
 operand order. Both name-editor bodies match; the final drawing comparison
 retains the storage/emission gap. Score insertion remains 446 bytes with the
 same three differences after refreshing its generated literal symbol names.
-Private inputs, objects, comparisons and validation are retained under
-`.analysis/exact-ranking-interface/`.
 
 ### Exact complete key dispatch span
 
@@ -168,8 +154,7 @@ byte claim or a separate attached-COMDAT claim.
 All six accepted game-over bodies remain exact together. Native and MinGW
 builds pass; VC4 reuses 35 verified objects to link. The final library passes
 1,024 existing key-routing cases plus all 76 connected checks. No other direct
-owner loops or full historical replay were run. Complete receipts are private
-in `.analysis/exact-gameover-keys/`; no new provider query was necessary.
+owner loops or full historical replay were run.
 
 | Address | Maintained entry | Owned/span bytes | Direct cases | REA Evidence ID |
 | --- | --- | ---: | ---: | --- |
@@ -190,11 +175,8 @@ entries are contiguous. Imported candidate spans were reconciled with REA body
 ranges. Evidence IDs are static observations, not execution proof; unresolved
 indirect flows and prototype inference retain their limitations.
 
-One interactive session retains thirteen new results: eight authored dossiers,
-three read-bytes results and two CRT conversion dossiers. Open took 17.9 seconds;
-lazy first-query analysis took 44.0 seconds, with later dossiers below 0.51 seconds.
-Explicit close saved 211 cumulative Evidence records in the reusable snapshot.
-Complete results are in the closed 13-44 private archive.
+Open took 17.9 seconds;
+lazy first-query analysis took 44.0 seconds, with later dossiers below 0.51 seconds. Explicit close saved 211 cumulative Evidence records in the reusable snapshot. Complete results are in the closed 13-44 private archive.
 
 ## State, initialization and display
 
@@ -310,8 +292,6 @@ native/MinGW/VC4 products, Wine inspector comparisons and saved REA verification
 pass as one checkpoint. Complete earlier acceptance inputs are refreshed only
 after those checks. The passing new-family report is reused with identical
 complete inputs and native-library identity, avoiding a redundant replay.
-Private reports, input identities and logs are retained under
-`.analysis/checkpoints/gameover-176-40/`.
 
 ## Later real Windows control runs
 

@@ -50,13 +50,9 @@ semantic input identities are refreshed; the other245 rows remain unchanged.
 There is no COFF queue, full historical replay or game build.
 
 The 84-byte REA6.5.0 Evidence is reused:
-`ev_73a146a038dc9800cd869abb7261b6989c3713c813683a1453cd464602ea0586`.
-No new provider session runs. Recipes are in
+`ev_73a146a038dc9800cd869abb7261b6989c3713c813683a1453cd464602ea0586`. No new provider session runs. Recipes are in
 `config/runtime-initializer-sections.json` and
-`config/runtime-termination-tables.json`. Private receipts:
-`.analysis/crt-exit-sections-20261016/`, including `source/`, `verification.json`,
-`windows-probe.json`, `native-termination.json`, `link.json` and `adoption.json`.
-The linked-byte reader was corrected to omit a wrapper discarded by the linker;
+`config/runtime-termination-tables.json`. The linked-byte reader was corrected to omit a wrapper discarded by the linker;
 the same objects/executable were retained.
 
 Counts remain 543 inventory, 468 source, 380 exact, 88 candidates and249 semantic
@@ -65,5 +61,4 @@ allowed CPU with CPU35%, memory high640MiB/maximum768MiB. Remaining function
 recovery, FP/CRT dependencies and the final original-compiler game/play check
 remain open; ports follow that work.
 
-Sharing12 identical immutable carriers reclaimed about3.6MiB. Unique process
-receipts, current native library and compiler products remain archived.
+Sharing12 identical immutable carriers reclaimed about3.6MiB.

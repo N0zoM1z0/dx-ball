@@ -78,7 +78,4 @@ campaigns remain outside scope. No new live-game run or broad historical replay
 is claimed. Raw receipts have a separate supplemental product-input inventory
 for actual C++ and build dependencies.
 
-Private proof: `.analysis/projectile-retirement-contract/`, with reused complete
-REA archives and no new provider request. Immutable seal:
-`.analysis/checkpoints/projectile-retirement-283-185/sha256.json`.
 The overall source-restoration and whole-game fidelity goal remains open.

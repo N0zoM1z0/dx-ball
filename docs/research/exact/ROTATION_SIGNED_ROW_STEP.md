@@ -59,12 +59,8 @@ The VC4 compile takes10.732s, peaks at167,174,144 bytes; the canonical native
 build/check scope peaks at50,282,496 bytes. Both use CPU0/35%,384/512MiB with zero
 high/max/OOM events. There is no provider query, game rebuild/run or full replay.
 
-Private authority is `.analysis/rotation-signed-row-step-20261020/`, including
-the source review, frozen single-cast proposal, complete objects/comparisons,
-literal/provenance correction, retained old failure library and focused results.
 Independent complete-result review SHA-256 is
-`f24af3455d8f5ab9905917984c39faf52126ee1402421268065ee96dac669a3d`.
-Overall counts remain392 exacts,247 authored exacts/23 candidates. Complete game
+`f24af3455d8f5ab9905917984c39faf52126ee1402421268065ee96dac669a3d`. Overall counts remain392 exacts,247 authored exacts/23 candidates. Complete game
 verification stays deferred while authored source recovery continues.
 
 All270 authored receipts verify across30 current compiler closures. All249
@@ -77,11 +73,7 @@ compile or replay. The independent final review records the actual native
 results, producer identities and full ordered ledger comparison, SHA-256
 `c73d7e58355d9d5fb5db89986448b19e77487dc7eb4d43a762d8ff64c57617b5`.
 
-The36 closed copied inputs/products/helpers are archived and every member's
-size/SHA verified before exact-list removal. The789,312-byte archive SHA-256 is
-`7833acf909e702e198bfd46a9e79bba647a5043119ebe56d30f0c2acf1bb5938`.
-Cleanup releases7,090,176 allocated bytes net including archive, manifest,
-protected snapshot and receipt; all908 current protected identities verify.
-Unique failures, current matching/native products, useful caches and the
+The789,312-byte archive SHA-256 is
+`7833acf909e702e198bfd46a9e79bba647a5043119ebe56d30f0c2acf1bb5938`. Unique failures, current matching/native products, useful caches and the
 historical tested game/ZIP remain intact. The latter products predate this
 source change and both UI changes; no game acceptance is refreshed.

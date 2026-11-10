@@ -36,8 +36,7 @@ effects 124, ignite balls 64 and retire projectile 32.
 
 ## Complete artifact evidence
 
-The retained REA dossiers identify a single contiguous body for each
-function, ending at 0x411406 and 0x4132B7 respectively. Moving balls has 864
+Moving balls has 864
 instructions, 59 branch instructions and 64 calls. Projectiles has 89
 instructions, 10 branches and 6 calls. Every current COFF instruction address
 and length covers the independently retained original listing, and the
@@ -46,16 +45,8 @@ bytes, tails or mismatches are masked.
 
 Original REA Evidence:
 
-- `ev_c7fd5e1c178073afb10924d1dbfa6df93f8ba8566533fd41f8dcb8f48b3a92a1`,
-  `.analysis/rea/runs/2026-10-07T07-42-20.694Z-interactive-2387716/05-analyze_function.json`.
-- `ev_412b7a2d61e8a498417dca7a456838ed290b17317e4af4585d8b936b69b07495`,
-  `.analysis/rea/runs/2026-10-07T08-21-37.400Z-interactive-2545594/19-analyze_function.json`.
-
 Both target identities and terminal session records verify. No new provider
-session, analysis request or gameplay capture was needed. The private proof
-folder is `.analysis/moving-ball-scope/`, including `body-proof.json`,
-`comparison.json`, `before-scope-control.json`, the matching compilation
-receipt and immutable intermediate `balls-only/`.
+session, analysis request or gameplay capture was needed.
 
 ## Validation and rebuilt products
 
@@ -67,9 +58,7 @@ death/bounds, multiple wall contacts, sticky offsets, speed caps, brick drop,
 reduced/full particles, attachment/release, 1400 board/RNG cases, queue removal
 and successor skipping, sprite banks, x87 sample boundaries and projectile
 tile/score interactions. State, complete queues, allocation ownership,
-ordered events and RNG consumption are compared with original execution.
-The selected AST, maintained test, driver and current library hashes are saved
-in `core-oracle.json`. An initial private aggregate expectation counted the
+ordered events and RNG consumption are compared with original execution. An initial private aggregate expectation counted the
 sticky grid as 960 instead of 480; all comparisons passed before that guard
 failed. The corrected driver produced the final receipt. Tests are unchanged.
 
@@ -78,9 +67,7 @@ the final matching core object with 35 identity-verified unchanged objects;
 no additional legacy source compiles. All 192 exact input/object closures,
 247 unchanged historical semantic scopes and 36 production object closures
 verify. Historical semantic input hashes refresh without claiming reruns of
-unrelated suites. Current product hashes are in
-`.analysis/moving-ball-scope/product-verification.json`; the independent seal
-is `.analysis/checkpoints/moving-ball-scope-283-192/sha256.json`.
+unrelated suites.
 
 These complete function matches strengthen reconstruction of physics and
 projectile control. They do not establish original declaration spelling,

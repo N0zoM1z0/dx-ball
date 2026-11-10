@@ -29,15 +29,12 @@ index50 copy. Relevant original REA Evidence is:
 - Terminal advance: `ev_10dedc1278e4815286d503ac118934dbfa5686b95b7ab47456756e5f5df0672a`.
 - Backward CRT copy: `ev_7c4ccda4f0b66e6e162c21ff7248a6806209fa96607f7d9e75dd5b00befe53a9`.
 
-The two generated initializer dossiers are retained in
-[the earlier embedded-initializer note](LIST_EMBEDDED_INITIALIZATION.md).
 No new original-provider query or game run was needed for this investigation.
 
 Ordered linker sections express the actual adjacency contract. VC4 accepts
 `data_seg` and an allocated section for the class object; GCC/MinGW use section
 attributes. ELF additionally needs a sorted, nonloaded output section. Each
-object keeps its natural alignment and the host's genuine pointer width.
-Cross-object bank traversal is explicitly a supported compiler/linker ABI
+object keeps its natural alignment and the host's genuine pointer width. Cross-object bank traversal is explicitly a supported compiler/linker ABI
 contract; it is not a claim of ISO C/C++ array-bounds portability.
 
 ## Diagnostic placement and overlap
@@ -217,19 +214,11 @@ input-equivalence receipts. Their old CMake caches are removed; later builds
 must configure from current source. Native debug paths retain the private source
 root. There is no new game run or full replay.
 
-Current production/adoption authority:
-`.analysis/independent-board-production-20261017/`, particularly
-`placement-current.json`, `native-startup.json`, `windows-storage.json`,
-`native-storage.json`, the five `*-flows.json` receipts, `adopted.json`,
-`canonical-link.json` and `authored-coverage.json`. A tracking-format helper
+A tracking-format helper
 initially stops before manifest writing because nested TOML array tables remain
-after replacement; the corrected continuation repeats no producer or comparison.
-Other driver/parser failures remain separate from actual successful producers.
+after replacement; the corrected continuation repeats no producer or comparison. Other driver/parser failures remain separate from actual successful producers.
 
-Closed products are compressed, extracted member hashes verified, then deleted.
-The latest cleanup removes669 closed files and releases13,246,464 allocated
-bytes net of the archive and installed replacement products; small JSON receipt
-allocation is excluded. Current matching products and canonical delivery caches
+Closed products are compressed, extracted member hashes verified, then deleted. Current matching products and canonical delivery caches
 remain reusable. The fixture-generated default board is also removed.
 
 ## Consumer producer follow-up
@@ -284,14 +273,8 @@ Zero-argument ECX callers alone cannot distinguish thiscall members from the
 existing sole-pointer fastcall functions. That older result does not justify
 another class-family rewrite or an unobserved destructor.
 
-Authorities are `.analysis/board-consumer-producers-20261017/`,
-`.analysis/win32-shared-dd-kinds-20261017/`,
-`.analysis/engine-state-declarations-20261017/` and
-`.analysis/canonical-resource-path-20261017/`. Successful producers are not
-repeated. Closed input/object products are archived, member/decompressed hashes
-verified, then49 raw files deleted; net245,760 allocated bytes are released
-after carrier and retained proposal-copy costs, excluding small JSON receipts.
-Totals remain391 exacts and24 authored candidates; the reconstruction is unfinished.
+Successful producers are not
+repeated. Totals remain391 exacts and24 authored candidates; the reconstruction is unfinished.
 
 ### Fixture callback-table owner control
 
@@ -321,10 +304,7 @@ prepared bridge preserves the callback ABI/default addresses but is uncompiled
 and unvalidated; it is not a delivered implementation. The private zero cannot
 be combined with canonical objects that consume different headers. Source,
 ledgers, current caches and delivery remain unchanged. There is no full replay,
-runtime check or new game query. Raw trial inputs/products are hash-verified in
-an archive before cleanup. Authorities are
-`.analysis/render-fixture-owner-20261017/{summary,comparison-resources,units-resources}.json`.
-The separate [compiler-record observations](VC4_BACKEND_SYMBOL_RECORDS.md) do not
+runtime check or new game query. The separate [compiler-record observations](VC4_BACKEND_SYMBOL_RECORDS.md) do not
 yet establish the cause of these declaration-context emission changes.
 
 ## Closed proposal phase
@@ -343,13 +323,8 @@ exact count is an acceptance policy, not proof of original declaration fidelity.
 Never reuse old accepted objects as receipts for changed source inputs. Do not
 repeat the closed member-call, declaration-interface or layout-split controls.
 
-Private root: `.analysis/independent-board-storage-20261017/`.
 The main authorities are `allocated-class/summary.json`,
 `shared-linkage/summary.json`, `complete-interface/summary.json`,
 `complete-wide/reconciled/{comparison,selected-units,proofs,summary}.json` and
 `candidate/candidate.json`. The current frozen29-owner tree and products are
-retained for reuse. Closed diagnostic products and superseded input/product
-trees are archived with member hashes verified before deletion; the two cleanup
-receipts distinguish raw allocation removed from net storage released.
-Together they remove239 superseded files and release4,927,488 allocated bytes
-net of the verified compressed carriers. Current reusable products remain.
+retained for reuse. Current reusable products remain.

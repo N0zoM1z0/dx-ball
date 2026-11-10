@@ -32,13 +32,8 @@ closures verify; 235 historical input inventories refresh. No game runs.
 
 Original REA evidence is
 `ev_8d3b245893789331b1a53500a14aae87ed382cd5465098be8604a64b721a1440`,
-operation 01 of `2026-10-07T11-58-17.972Z-interactive-3053414`.
-Independent source, frame and complete-candidate review passes, including all
-22 recursively consumed project inputs. Source, full comparisons, input
-identities and validation receipts are retained
-in `.analysis/intro-score-phase-20261013/`.
-Totals remain 232 exact functions / 59,486 code bytes / 136 metadata bytes,
+operation 01 of `2026-10-07T11-58-17.972Z-interactive-3053414`. Independent source, frame and complete-candidate review passes, including all
+22 recursively consumed project inputs. Totals remain 232 exact functions / 59,486 code bytes / 136 metadata bytes,
 with 41 authored functions still nonexact.
 
-17 completed copies are retained in verified gzip carriers, releasing
-4,329,472 allocated bytes. Current products and original evidence are preserved.
+Current products and original evidence are preserved.

@@ -27,11 +27,6 @@ ball values independently agree with the existing one-shot reader in both
 processes. One strict C90 helper compilation records all 108 actually consumed
 recursive include dependencies. The game needs no rebuild.
 
-Complete raw JSONL streams and exact byte-offset/receipt-time indexes are retained:
-669 original records and 659 current VC4 records, zero malformed records, both
-reader and game exit codes zero. Windows CRLF bytes remain part of the raw
-carriers; the offline comparison validates every indexed byte extent.
-
 ## Compared states and effects
 
 Each first-flight interval contains 90 distinct sampled ball vectors. Eighty-nine
@@ -77,8 +72,5 @@ complete runtime report. Process sampling reaches its 64-sample cap and remains
 explicitly partial, with the recorder's non-atomic executable-binding limit.
 Those process limits are separate from the complete retained SDK stream bytes.
 
-Private proof: `.analysis/first-ball-flight/report.json`, `comparison.json`,
-`evidence.json`, `reader-identity.json` and both profile directories.
-The raw streams total 1,479,558 bytes, preserved without a second archive copy.
 Performance and usability feedback continues only in
 `/tmp/dxball_rea_feedback_20261010.md`.

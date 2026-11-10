@@ -24,9 +24,6 @@ existing [whole-body correspondence](RANKING_OWNER_FAMILY.md) still explains
 the one-byte shortening through the selected-row comparison producer; all
 36-byte frame homes agree. This change does not resolve that compiler context.
 
-The retained original carrier is operation05 of
-`2026-10-07T13-44-46.898Z-interactive-3331671`, Evidence
-`ev_a42b5c952ba3c544d58bf1b3c0c2456c9e13f6149d7090c32e2952888fd6ff3e`.
 The complete carrier, actual instruction bytes and pinned target were checked
 without a new provider query.
 
@@ -80,18 +77,12 @@ keep canonical ui.c and its150-byte exact body. This does not establish that
 every possible text input avoids signed overflow. The prepared216-case selector
 is not run; no canonical UI/native build or claim change follows this trial.
 
-Private authorities are `.analysis/ranking-coordinate-wrap-20261019/` and
-`.analysis/ui-advance-wrap-20261019/`: full comparisons, producer identities,
-reviews, finite cases, selected17-case receipt and the UI rejection decision.
 Compiler/native work is serial on CPU0 at35% CPU,384MiB high/512MiB max. Ranking
 VC4 compilation takes14.106s, peaks167391232 bytes and has zero limit events;
-the17-case process takes10.596s including startup, peaking53428224 bytes.
-No relink, game run, full replay or new exact claim follows. The verified
+the17-case process takes10.596s including startup, peaking53428224 bytes. No relink, game run, full replay or new exact claim follows. The verified
 EXE/ZIP still represents717cc2f and predates these source corrections.
 
 The two closed trials archive49/31 copied inputs, temporary products and helpers
-in1080999/680666-byte archives. Every member's size/SHA256 verifies before exact-
-list removal, releasing10285056 allocated bytes net before the small receipts.
-The unexecuted UI selector is labeled separately. Current objects/native library,
+in1080999/680666-byte archives. The unexecuted UI selector is labeled separately. Current objects/native library,
 tested game/ZIP, original evidence, comparisons, reviews and useful caches stay;
 protected SHA/size/mode/mtime identities remain fixed across cleanup.

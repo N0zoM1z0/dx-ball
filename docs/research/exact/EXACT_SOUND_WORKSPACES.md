@@ -44,11 +44,7 @@ functions remaining nonexact. No game campaign runs.
 
 The saved initialization/parser dossiers are
 `ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f`
-and `ev_8c97f00d8301c9fad99e761f8bbe2ea90f8dc14d6e8db6709a75e15c49c6c1a3`.
-Complete byte evidence is
+and `ev_8c97f00d8301c9fad99e761f8bbe2ea90f8dc14d6e8db6709a75e15c49c6c1a3`. Complete byte evidence is
 `ev_ea17c0f8232c3bed494b5f8e97ff67790e1d38eb410d071395c0337072d22447`
-and `ev_94e9828bd14fb37d829065569ecc12507b58c3fd897901734ec17b6a076da576`.
-All four record hashes and raw spans verify against the original executable;
-no new REA query is needed. Compiler stages, before inputs, complete comparisons,
-case receipts and verified compressed product copies remain private under
-`.analysis/wave-chunk-records-20261012/`.
+and `ev_94e9828bd14fb37d829065569ecc12507b58c3fd897901734ec17b6a076da576`. All four record hashes and raw spans verify against the original executable;
+no new REA query is needed.

@@ -46,12 +46,7 @@ row-order stages each use one matching and one production compilation. No game r
 
 Original REA evidence is
 `ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`,
-operation 01 in `2026-10-10T17-22-54.305Z-requests-825249`.
-Compiler inputs, complete comparisons and validation receipts are retained in
-`.analysis/bank-api-phase-20261013/`.
-The accepted total remains 232 functions / 59,486 code bytes / 136 metadata bytes,
+operation 01 in `2026-10-10T17-22-54.305Z-requests-825249`. The accepted total remains 232 functions / 59,486 code bytes / 136 metadata bytes,
 with 41 authored functions still nonexact.
 
-Independent source, frame and complete-candidate review passes. 25 completed
-copies are retained in verified gzip carriers, releasing 4,395,008 allocated
-bytes. Current build products and unique original evidence are preserved.
+Current build products and unique original evidence are preserved.

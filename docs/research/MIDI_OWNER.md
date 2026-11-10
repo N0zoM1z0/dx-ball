@@ -77,13 +77,8 @@ two explicitly bounded F5 intervals. No stream-out/restart call occurs within
 those intervals. The selected random filenames and all-six-song coverage are
 not established by these traces.
 
-Private `.analysis/midi-device-fallback/verification.json` binds the existing
-reader,105 input identities, unchanged products, original assets, actual F5 log
-intervals and complete state records. The original's log has a byte-exact
-verified65-byte X teardown tail appended after its observation receipt; both
-the original receipt and final log digest are retained. No game/reader compile,
+No game/reader compile,
 new provider request, direct-case count or semantic/exact promotion is needed.
-The retained MIDI dossiers below still supply the static source contracts.
 
 The first probe prematurely set focus before initialization completed and
 timed out with no music action or WinMM call. That negative attempt is preserved.
@@ -98,11 +93,8 @@ waveforms and complete allocation-leak freedom remain unproved.
 The two loader/parser dossiers were reused from the completed interactive run
 `2026-10-07T10-33-32.118Z-interactive-2912559`. A single constrained session,
 `2026-10-07T15-16-14.218Z-interactive-3602154`, obtained the remaining eleven
-function dossiers and a read of the zero-initialized music pointer at `0x421060`.
-Open took 17.6 seconds; lazy first analysis took 48.1 seconds; later dossiers
+function dossiers and a read of the zero-initialized music pointer at `0x421060`. Open took 17.6 seconds; lazy first analysis took 48.1 seconds; later dossiers
 took 0.02–0.32 seconds. Explicit close saved 236 cumulative Evidence records.
-Complete private requests/results and one cumulative snapshot remain in
-`.analysis/rea/`; checkpoints record identities rather than duplicating it.
 
 | Entry | Owner function | Owned/span bytes | Evidence ID |
 | --- | --- | --- | --- |
@@ -145,8 +137,7 @@ callee registers. VC4 and MinGW object symbols independently confirm
 ## Storage and imports
 
 The original context contains magic, time division, per-buffer capacity, format
-flags, buffer pointer, stream handle, state bits, buffer count and pending count.
-It occupies 36 bytes on i686 and grows naturally to 48 bytes on this native
+flags, buffer pointer, stream handle, state bits, buffer count and pending count. It occupies 36 bytes on i686 and grows naturally to 48 bytes on this native
 host. MIDIHDR occupies 64 bytes on i686 and 120 bytes on the host; context and
 header fields use typed pointers rather than copied x86 offsets. Each allocated
 buffer is a header followed by its payload. The stride is `sizeof(header)` plus
@@ -238,9 +229,7 @@ implementations and hardware sound are not established by these tests.
 
 The family checkpoint groups every differential suite, forty cold exact units,
 eight rejection checks, native/MinGW/VC4 builds, Wine inspectors and saved REA
-verification. Reports/configuration and complete input identities are retained
-under `.analysis/checkpoints/midi-199-40/`. Journaled cleanup retains immutable
-evidence and removes only verified duplicates and obsolete compiler probes.
+verification.
 
 ## Connected allocator ownership draft
 
@@ -253,13 +242,9 @@ and 248 handler invocations. These counts are separate from maintained direct
 cases.
 
 The matrix covers immediate success, one or three failures before successful
-retry, a negative handler result and heap replacement, with malloc mode zero.
-It includes opening/playing failures, malformed data, wrapper replacement and
-all six original songs through callback, pause, resume, restart and close.
-Wrapper requests independently check the original eight-byte and native typed
-16-byte sizes. LocalAlloc contexts and GlobalAlloc banks keep their own APIs;
-wrapper deletion snapshots semantic fields before poisoning retained storage,
-and later checks detect writes to that freed mock block. Lock-failure leaks and
+retry, a negative handler result and heap replacement, with malloc mode zero. It includes opening/playing failures, malformed data, wrapper replacement and
+all six original songs through callback, pause, resume, restart and close. Wrapper requests independently check the original eight-byte and native typed
+16-byte sizes. Lock-failure leaks and
 release after reset failure remain visible rather than receiving invented
 cleanup.
 
@@ -283,6 +268,4 @@ its existing semantic/exact ledgers remain unchanged.
 The corrected 60-file checkpoint retains sources, report, products, source review
 and REA capture, with 319 external references. Subsequent retention removes
 13 superseded working files after matching their sealed copies, shares 43
-immutable duplicates and recovers another 592 KiB of measured disk usage.
-All 6,881 immutable paths, 2,004 references and 49 originals verify; the next
-cleanup preview is empty. The current successful inputs/products stay retained.
+immutable duplicates and recovers another 592 KiB of measured disk usage. The current successful inputs/products stay retained.

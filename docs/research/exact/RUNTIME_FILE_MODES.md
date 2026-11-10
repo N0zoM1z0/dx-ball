@@ -15,8 +15,7 @@ actual relocations, including the unconditional heap reload at0x41FDD2 before
 the backward branch. The full pinned section and retained REA
 `ev_a7c91aa32057e35dc478b2453e1f69719213eb4b36a84df67971d205b09236cd`
 independently cover the original. Msize21 exact, calloc82/11 and all346 old exacts
-remain. One compiler set, no runtime/provider work. Current347/code71,723;
-receipt `.analysis/heap-resize-original-retry-20261014/verification.json`.
+remain. One compiler set, no runtime/provider work.
 
 `runtime_file_modes.c` validates the unsigned descriptor limit and open bit,
 indexes 32-record low-I/O blocks with an eight-byte stride, and changes only
@@ -50,7 +49,6 @@ pseudocode and assembly. Their assembly Evidence IDs are recorded in the
 function ledger. The latter run also confirms that `0x4177F0` is an interior
 string-copy entry, not an allocator mode getter.
 
-Private proof and producer receipts: `.analysis/runtime-digit-core-20261013/`.
 The complete digit-conversion candidate also improves from 21 to 20 differences
 by restoring the coarse shift's middle-limb carry accumulator. Its exact
 102-byte addition companion is unchanged. All 249 preceding exact results

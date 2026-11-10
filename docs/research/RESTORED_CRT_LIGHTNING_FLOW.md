@@ -50,9 +50,4 @@ Work runs serially on one CPU with CPU quota 35%, memory high 640 MiB and maximu
 records about 338.3 MiB memory.peak at that point; it is not a final lifetime-peak
 measurement. No compiler, relink, provider query, full replay or campaign runs.
 
-Private `.analysis/restored-crt-lightning-expiry-20261017/` retains frozen inputs,
-the executed controller, compressed complete observations, captures, resource
-sample and verification. After backup equality checks, 49 disposable runtime
-copies are removed and the state trace is compressed, releasing 2,105,344 allocated
-bytes. Current game products and unique evidence remain available.
-Source 475 / exact 380 / complete candidates 95 and semantic 249 are unchanged.
+Current game products and unique evidence remain available. Source 475 / exact 380 / complete candidates 95 and semantic 249 are unchanged.

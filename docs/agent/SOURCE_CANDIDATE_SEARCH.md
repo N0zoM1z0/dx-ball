@@ -105,8 +105,8 @@ tools for a concrete uncertainty, not prerequisites for continuing work.
 
 Verify inputs and previous acceptances relevant to the affected closure. An
 ever-growing union of historical file seals or recursive archive audits is not
-a new acceptance requirement. Preserve historical receipts without rewriting
-them; record current changed preconditions separately. Documentation-only edits
+a new acceptance requirement. Leave retained historical results unchanged;
+record current changed preconditions separately. Documentation-only edits
 do not require another compiler run or replay of unchanged old bodies. Keep
 complete-unit, relocation and local-target checks strict for any new exact claim.
 
@@ -135,9 +135,10 @@ and updated, truthful claim ledgers plus proportionate affected-behavior checks.
 
 Use the existing one-session, one-CPU, CPU35%, memory384/512MiB limits and REA
 heap policy. Restore canonical inputs/products safely after rejected trials.
-Archive unique closed evidence, verify every member's size/hash and retain
-recovery metadata before deleting the exact obsolete product/input list.
-Preserve current tested products, useful caches, originals and tools.
+Delete obsolete experiments and duplicate evidence without creating another
+archive or cleanup report. Keep concise conclusions, current products and useful
+caches. Retain a unique compiler context only when current unresolved work needs
+it. Preserve necessary originals, tool components and independent writable state.
 
 ## Recover tooling without restarting successful producers
 

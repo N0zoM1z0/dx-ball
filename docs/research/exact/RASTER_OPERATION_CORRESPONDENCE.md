@@ -77,23 +77,14 @@ untouched bytes 12..15 remain unclassified. Source spelling, original ownership
 and the compiler context producing the physical homes remain unresolved.
 
 Original primary Evidence is retained in the [triangle lifetime](TRIANGLE_SCANLINE_SCOPE.md)
-and [polygon workspace](POLYGON_SCAN_WORKSPACE.md) notes. Private authority is
-`.analysis/raster-operation-correspondence-20261019/inspection.json`, with input
-seals, full mappings, every comparison group and CFG closure records. Its SHA256
-is `cbe7dccbeb112c4010433e8d07377319bc4e36177f34650f885d642f2d1978df`.
-The parent review is explicit about its scope and is not an independent review.
+and [polygon workspace](POLYGON_SCAN_WORKSPACE.md) notes. Its SHA256
+is `cbe7dccbeb112c4010433e8d07377319bc4e36177f34650f885d642f2d1978df`. The parent review is explicit about its scope and is not an independent review.
 
 No compiler, provider query, target execution, native build, relink, runtime test
 or full replay runs. Parsing uses one CPU at 35%, memory high 384 MiB/max 512 MiB.
 All 90 protected current identities remain fixed. Totals stay 393 exacts overall,
 248 authored exacts and 22 authored candidates; this is not source optimality or
 a final authored-inventory claim.
-
-Three closed helper/bytecode files are archived with per-member size/SHA256
-verification before removal. The 12593-byte archive retains the executed helper;
-complete inspection/review JSON stays directly available. Cleanup releases
-20480 allocated bytes net before small receipts and preserves all protected
-source/config/object/product identities.
 
 ## Independent current triangle review, October20
 
@@ -110,6 +101,4 @@ All12 owner comparisons reverify, preserving nine exacts/715 code bytes plus136
 accepted metadata bytes. Draw-line belongs to the separate drawing-primitives
 owner, not this compiler closure. Closed lifetime, aggregate, const receiver,
 colour and SDK controls provide no new supported source model. No compiler or
-provider is run; no exact claim changes. Private independent authority:
-`.analysis/triangle-source-question-20261020/review.json`, SHA256
-`e63c1257dec6ef6b18b6364ab87c151c6889e637b670f5dc5b93912bce55e938`.
+provider is run; no exact claim changes.

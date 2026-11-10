@@ -5,13 +5,9 @@ The attempts below use the source and executable identities recorded with each r
 
 ## October 17 restored-CRT original-bank attempt
 
-The October 17 attempt has ended with **observer exit 1 / status `fail`**.
-Its 14,400-second observation deadline expired after 14,374.43 seconds of gameplay.
-It reused image `345a6887…` from source baseline `41fe125`; no game/compiler input
+The October 17 attempt has ended with **observer exit 1 / status `fail`**. Its 14,400-second observation deadline expired after 14,374.43 seconds of gameplay. It reused image `345a6887…` from source baseline `41fe125`; no game/compiler input
 changed during the run. All twenty initial readiness/layout checks for indices
-0 through 19 passed. The final retained events contain all twenty complete
-400-byte initial layouts (8,000 bytes); earlier prefix snapshots remain historical.
-The last sampled state is board index 19 (the twentieth board), 15 bricks,
+0 through 19 passed. The last sampled state is board index 19 (the twentieth board), 15 bricks,
 score 52,538, three lives, application active and unpaused. This is not evidence
 of a game crash or a full campaign pass. The observer stops its process groups
 in cleanup, so this is not a normal application-exit check.
@@ -48,16 +44,14 @@ the game, 1.5% for the reader itself and 5.4% for the shared Wine server, all as
 fractions of one CPU. These measure CPU time, not game frame rate or causal
 reader overhead. No observer or game-code change follows these measurements.
 
-Private `.analysis/restored-crt-original50-20261017/verification.json` seals the
-actual deadline failure. It checks all 237 frozen inputs, 12 artifacts, 116 source
+It checks all 237 frozen inputs, 12 artifacts, 116 source
 objects, 19 CRT members and 49 immutable originals, plus every frozen archive
 member, before subsequent ledger edits. The final private profile report is
 compressed with byte equality; 49 disposable runtime copies are removed after
 preserving differing files. Public failure reports stay intact. Saved 3/5/10/15/20
 prefix checkpoints remain immutable records of their respective running captures;
 they do not turn the terminal failure into a pass. The last observed memory peak
-is 252 MiB; the final cgroup is gone, so final lifetime peak accounting is unavailable.
-No unchanged full campaign is restarted. Full original50 completion for this
+is 252 MiB; the final cgroup is gone, so final lifetime peak accounting is unavailable. No unchanged full campaign is restarted. Full original50 completion for this
 image remains unproved; authored source exactness is the next priority.
 
 ### Live board-softening consistency
@@ -75,13 +69,10 @@ nonempty, non-type-2 cell counts. Kind-2 collection calls
 `dxball_soften_special_bricks`, whose complete 397-byte exact comparison and
 current source/object identities remain unchanged.
 
-This is current-image integration evidence from the same attempt before its deadline.
-Sequential SDK snapshots leave frame-level invocation and causal timing
+This is current-image integration evidence from the same attempt before its deadline. Sequential SDK snapshots leave frame-level invocation and causal timing
 unobserved; the helper also has a wall-bounce trigger. Exact/semantic acceptance
 and full-campaign status remain unchanged. No additional game, compiler,
-provider or function replay runs. Private
-`.analysis/live-softening-consistency-20261017/verification.json` preserves both
-complete states, the byte projection, count arithmetic and current input hashes.
+provider or function replay runs.
 
 ## Restored-CRT entry and gameplay episode clock, October 17
 
@@ -123,11 +114,7 @@ systemd-run --user --scope --quiet \
 ```
 
 The public entry compiles the SDK reader. Total `--seconds` still bounds startup
-and gameplay together. Private `.analysis/restored-crt-campaign-entry-20261017/`
-retains both executed source versions, reports, reader products, final frozen
-inputs, resource sample and verification. Forty-nine disposable runtime copies
-are removed after equality checks, releasing 1,703,936 allocated copy bytes.
-Game source, products, 380 exacts and all other acceptance remain unchanged.
+and gameplay together. Game source, products, 380 exacts and all other acceptance remain unchanged.
 
 ## SIGINT reporting during observation, October 17
 
@@ -146,12 +133,7 @@ reader and game kernel identities are subsequently absent. The profile retains
 check, not a game or campaign pass. It reuses the current image and existing SDK
 reader with the explicit silent sink; no compilation, relink or replay runs.
 
-Private `.analysis/campaign-interruption-20261017/` retains the actual signal,
-process identities, executed-source/input hashes, reports and normal-path AST
-comparison. Forty-nine runtime copies are removed after equality checks,
-releasing 1,703,936 allocated copy bytes. Historical interrupted reports below
-retain their original `running` values and external terminal receipts; none are
-rewritten. SIGTERM, hard kills, transport loss and interruption during cleanup
+SIGTERM, hard kills, transport loss and interruption during cleanup
 are outside this check.
 
 ## Display and retained campaigns
@@ -165,34 +147,21 @@ host screen, not the game's original eight-bit DirectDraw request.
 The independent current VC4 attempt was deliberately stopped when the user
 reaffirmed exact function restoration as the first priority. SIGINT to the
 verified controller produces child exit130; all five saved process identities
-are inactive. Complete initial slots0–14, partial observer/SDK logs,108 frozen
-inputs, unchanged four products and originals are verified in
-`.analysis/current-vc40-campaign-independent/stopped-for-exact/verification.json`.
-The harness's KeyboardInterrupt cleanup retains status running in its partial
-observation; the terminal child receipt establishes that execution has ended.
-The full50-board predicate remains unproved for this product.49 disposable
+are inactive. The full50-board predicate remains unproved for this product.49 disposable
 runtime copies are removed after backup equality checks. Further long campaigns
 are deferred while exact function recovery proceeds.
 
 A fresh current-product VC4 full-bank run was interrupted. Its unchanged game
-SHA-256 is `7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551`.
-The retained SDK events verify complete initial slots0–12 in the
+SHA-256 is `7c44dc20c84a7b3c96670200c6a772b1a9263b85c44e58cd057dd0864292a551`. The retained SDK events verify complete initial slots0–12 in the
 unaltered20,000-byte original bank. The goal remains all50 initial slots followed
 by terminal index50, mode0 and cleared end/reset/menu flags. The outer executor
 returned143; all recorded process identities are inactive. The last periodic
 event at3,626.414seconds records index12,157remaining bricks, score29,708 and
 three lives. The cause is unknown. No full pass, game-source failure or normal
 game exit is established. The existing persistent reader
-and ordinary XTest controller are reused; no game compilation or target write.
-Private `.analysis/current-vc40-campaign/` retains108 frozen inputs, the actual
-SDK compile receipt, products, scenario and recorded kernel process identities.
-`interruption-verification.json` verifies the prefix, unchanged inputs/products
-and originals; `interruption-sha256.json` seals182 private files. Final child,
+and ordinary XTest controller are reused; no game compilation or target write. Final child,
 recorder and capture-summary receipts are absent, the final REA carrier is empty,
-and the harness did not write its final summary. These missing terminal outputs
-remain missing; no receipt is synthesized and the producer is not rerun.
-Complete partial observations/logs are preserved as byte-exact verified gzip
-carriers. After identity checks,49 disposable probe files are removed, releasing
+and the harness did not write its final summary. After identity checks,49 disposable probe files are removed, releasing
 1,590,725bytes; the completed5,069,846-byte raw REA progress log is compressed.
 
 A completed passive visual supplement retains three unaltered640x480 frames
@@ -204,10 +173,7 @@ ownership check identifies the same recorded game PID/start ticks. Periodic
 observer rows are not synchronized to frames: no exact frame-to-board assignment,
 original/source pixel equality or all-state rendering claim follows.
 
-Private `play-spotcheck/verification.json` within the campaign folder verifies
-all108 frozen inputs and four unchanged products, the capture driver and three
-image digests/dimensions, and retains complete initial-board event witnesses for
-slots0–11. Its small supplementary manifest refers to the preceding completed
+Its small supplementary manifest refers to the preceding completed
 digital-audio seal. This is a verified campaign prefix and visual observation;
 the interrupted attempt supplies neither the full50-board predicate nor final
 REA process Evidence.
@@ -245,9 +211,7 @@ The read-only SDK observer consumes 428,040 valid samples with no malformed
 samples. Its pipe-byte digest and bounded transition observations are retained;
 the full streamed data is not stored. Game audio is routed to the dedicated
 null sink while the host default stays unchanged. All original files and the
-bank remain identical. Both game/reader identities are inactive before the
-98-file `original-campaign-contact-control-01` archive is sealed and verified.
-The final report SHA-256 is
+bank remain identical. The final report SHA-256 is
 `8815d628797edf34ce45d70ed0300d35bec47090d0beee9461c73583f61dfc6f`.
 
 This establishes the original control under the recorded Wine/Xvfb environment.
@@ -412,24 +376,15 @@ harness seconds; it is not an observation of the termination instant.
 
 This is an incomplete original control, not a reconstructed-game failure or
 full-campaign acceptance. All recorded game/reader process identities are
-confirmed inactive before archival. The private
-`original-campaign-control-01` archive seals 91 files: the unchanged frozen
-inputs and actual SDK reader, the complete REA capture, the unchanged partial
-observation and stderr logs. Its separate checkpoint records `interrupted`,
-missing final summary and `full_campaign_accepted: false`; initial `attempt.json`
-and the partial observation keep their historical statuses.
+confirmed inactive before archival.
 
 A local audit verifies all 80 current/frozen inputs, the actual SDK product,
 49 original files and their runtime copies. These file identities do not turn
-the partial record into a terminal runtime observation. After verifying the
-archive, journaled cleanup removes the 49 disposable runtime copies and
-recovers 1,599,429 bytes (1.53 MiB). A subsequent preview has no pending actions.
+the partial record into a terminal runtime observation. A subsequent preview has no pending actions.
 
 ## Diverse contact offsets
 
-A review of the sealed original control finds a sampled plateau on board 36:
-168 final gameplay snapshots retain the same grid, score 86,734, six remaining
-bricks and six lives over 1,671.159 seconds. The application remains active and
+The application remains active and
 unpaused at those samples, with velocities `(±5, ±7)`. This establishes stalled
 progress under that controller; it does not establish a frozen process, closed
 orbit or reconstruction defect. The final `running` save remains historical
@@ -470,9 +425,7 @@ is now named `discarded_malformed_samples` to describe its actual scope.
 Campaign captures allow a 4 MiB whole-file hash budget, replacing the earlier
 128,000-byte limit that omitted the long interrupted report digest. A report
 larger than that budget can still have a null REA digest; the sealer separately
-retains its complete bytes without inventing a REA observation. Initial input
-snapshots use a distinct `input-snapshot.sha256.json`; only the final sealer
-creates `sha256.json`, preserving its existing overwrite rejection.
+retains its complete bytes without inventing a REA observation.
 
 ### Diverse-controller full-control timeout
 
@@ -495,11 +448,8 @@ There is no full-report digest for REA to bind. This remains an incomplete
 original control; reconstructed campaign acceptance is separate.
 
 The sequential queue then stopped because its local driver expected the
-normal sealer's `pass` status; interrupted sealing correctly returned `sealed`.
-The archive had already succeeded. The failed producer and phase log are
+normal sealer's `pass` status; interrupted sealing correctly returned `sealed`. The archive had already succeeded. The failed producer and phase log are
 preserved before correcting that assumption; this attempt is never resealed.
-The independent contact fixtures below execute after verifying the archive,
-inactive processes and unchanged accepted native product.
 
 ### Controlled contact timing
 
@@ -592,25 +542,18 @@ unbounded frame stream. A stream hash is an identity of consumed bytes; it
 cannot reconstruct discarded samples. Reports bind the reader, SDK/compiler,
 input libraries, original files, source inputs and actual game products.
 
-For an original-only attempt with frozen inputs and a retained SDK product,
-`scripts/seal-original-campaign.py` validates the finished report against that
-snapshot and the REA scenario/child result, then retains complete reports and
-small stderr logs under the attempt directory. It checks actual Linux process
+It checks actual Linux process
 identities (PID, kernel start ticks and boot ID), so a still-live game/reader
-blocks sealing. An active writer lock also causes an immediate refusal. An
-existing sealed archive is preserved.
+blocks sealing. An active writer lock also causes an immediate refusal.
 
-The input snapshot consists of `attempt.json`, repository-relative input
-copies and `campaign-reader.exe`. The manifest binds input SHA-256 values,
+The manifest binds input SHA-256 values,
 the retained reader hash, profiles, board/time scope and the two observed
 kernel process identities. Keep this snapshot while the actual processes are
-live; later validation requires the report's complete input set to agree.
-Normal sealing retains failures as failures and excludes stale directories for
+live; later validation requires the report's complete input set to agree. Normal sealing retains failures as failures and excludes stale directories for
 other products. Explicit `--interrupted` sealing accepts only a REA timeout
 with a signal, no final summary and an unchanged original-only `running`
 observation saved during that capture. It audits current/frozen inputs and
-original/runtime files before retaining the partial bytes without editing them.
-This path has no campaign-pass outcome. It does not promote owner functions or exact units.
+original/runtime files before retaining the partial bytes without editing them. This path has no campaign-pass outcome. It does not promote owner functions or exact units.
 
 REA 4.1.0's `file_bytes` budget bounds whole-file SHA-256 work. A larger file
 is recorded with size and a null digest, and the filesystem snapshot is marked
@@ -622,19 +565,8 @@ archive; a local hash does not retroactively become a REA observation. Future
 long captures need a larger configured hash budget. This requires no original
 game or provider patch.
 
-After the attempt terminates, seal it before journaled cleanup. Supply its
+Supply its
 existing snapshot and corresponding timestamped capture directory:
-
-```bash
-scripts/repo-python scripts/seal-original-campaign.py \
-  --attempt .analysis/checkpoints/ATTEMPT \
-  --capture build/reports/rea-process/CAPTURE
-# Only when REA timed out and no final diagnostic summary exists:
-scripts/repo-python scripts/seal-original-campaign.py \
-  --attempt .analysis/checkpoints/ATTEMPT \
-  --capture build/reports/rea-process/CAPTURE --interrupted
-scripts/repo-python scripts/clean-local.py --apply
-```
 
 `tests/test_campaign_retention.py` checks these identity and rejection gates
 using synthetic files and actual Linux process identity. Its 41 checks include

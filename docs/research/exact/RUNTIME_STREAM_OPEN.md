@@ -18,17 +18,13 @@ mode parser are whole exacts across584 bytes and all19 actual bindings.
 | `_sopen`, `0x41DB80` | 1053/1053 | 2 |
 
 Shipped `_open.c` establishes register mode/flags/stream lifetimes, a single
-initial commit flag, preincrement scanning and the original flag-update order.
-After successful opening, increment the shared counter before capturing the
-stream argument, then perform the original chained pointer clears. Restoring
-this closes526 bytes and all16 relocations, including411 instruction bytes,
-one alignment byte and the full114-byte switch carrier. No table or padding
+initial commit flag, preincrement scanning and the original flag-update order. After successful opening, increment the shared counter before capturing the
+stream argument, then perform the original chained pointer clears. No table or padding
 inside the carrier is excluded. All348 old exacts and100 other candidate byte
-results remain; allocation184/4 and sopen1053/2 retain their complete byte hashes.
-One compiler set, no runtime/provider work. Retained object consumers refresh
+results remain; allocation184/4 and sopen1053/2 retain their complete byte hashes. One compiler set, no runtime/provider work. Retained object consumers refresh
 actual local-symbol bindings without recompilation. Full pinned section and
 REA `ev_a445b56fc2e2b4edb1f2820dd32de51b1b6cf10ab9ad4ce4167f3c808b7e101b`
-are reused. Receipt `.analysis/stream-open-original-register-lifetimes-20261015/verification.json`.
+are reused.
 
 Shipped `osfinfo.c` uses a block index and record cursor, not redundant base,
 slot and cached-end owners. Restoring these and table-before-capacity publication
@@ -36,11 +32,10 @@ improves allocation184/37 to184/4. All instruction addresses and widths, plus180
 other bytes, agree. Only CMP/JAE versus CMP/JBE at0x41D7EE/0x41D7F0 and CMP/JB
 versus CMP/JA at0x41D7FF/0x41D801 differ; no exact is claimed. Both owner exacts
 and all348 preceding exacts remain. Openfile526/49 and sopen1053/2 retain identical
-complete byte hashes; their actual local-symbol bindings are refreshed.
-One compiler set, no runtime/provider work. Re-consume the retained object after
+complete byte hashes; their actual local-symbol bindings are refreshed. One compiler set, no runtime/provider work. Re-consume the retained object after
 local-symbol names change, without recompiling. Full pinned184-byte section and
 REA `ev_fd61eddd9f92bb9a855286cceef9a6c9bb8ccc2298a8c07f192cdafe5a0a80b5`
-are reused. Receipt `.analysis/descriptor-allocation-original-index-20261015/verification.json`.
+are reused.
 
 The complete original openfile carrier includes411 instruction bytes, one
 alignment byte and114 switch bytes; sopen includes981 instruction bytes,
@@ -85,8 +80,6 @@ info/pseudo/assembly records. Assembly Evidence IDs:
 `ev_a445b56fc2e2b4edb1f2820dd32de51b1b6cf10ab9ad4ce4167f3c808b7e101b`,
 `ev_fd61eddd9f92bb9a855286cceef9a6c9bb8ccc2298a8c07f192cdafe5a0a80b5`,
 `ev_9863090a3e77dfd842bf0f97e0bd074e187e6f084f718ad0dfeeb7ad81bb85a3`.
-Private whole-section proof and producer seal:
-`.analysis/runtime-stream-open-20261013/verification.json`.
 
 Source335/exact259/64,243 code bytes; attached metadata136 unchanged.
 All257 preceding exacts and61 candidates retain unchanged inputs/products/results.

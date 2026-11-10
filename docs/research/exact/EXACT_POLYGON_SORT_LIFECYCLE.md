@@ -79,7 +79,4 @@ comparison spelling to manipulate compiler allocation.
 
 Evidence reuses the same closed dossiers as
 [endpoint/indexed storage](EXACT_POLYGON_ENDPOINT_STORAGE.md). No fresh REA
-query or provider latency/token/RSS measurement. Private proofs, actual recipes,
-profile payloads and rejected-stage identities are in
-`.analysis/polygon-sort-lifecycle/`; seal:
-`.analysis/checkpoints/polygon-sort-lifecycle-283-186/sha256.json`.
+query or provider latency/token/RSS measurement.

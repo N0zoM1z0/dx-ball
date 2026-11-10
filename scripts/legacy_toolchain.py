@@ -42,10 +42,8 @@ class Toolchain:
                         LIB=windows_path(self.path / "lib"))
 
     def verify(self, execute=False):
-        head = subprocess.check_output(["git", "-C", str(self.path), "rev-parse", "HEAD"],
-                                       text=True).strip()
-        if head != self.lock["commit"]:
-            raise ValueError("compiler checkout commit mismatch")
+        # The lock records the upstream commit; installed tools may be trimmed
+        # to bin/include/lib. Verify their bytes without retaining Git history.
         for name, key in (("cl.exe", "compiler"), ("c1.exe", "c_frontend"),
                           ("c1xx.exe", "cpp_frontend"), ("c2.exe", "optimizer"),
                           ("link.exe", "linker"), ("mspdb40.dll", "pdb_backend")):

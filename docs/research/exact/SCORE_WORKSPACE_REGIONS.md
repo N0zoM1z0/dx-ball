@@ -74,11 +74,6 @@ generated**. All 270 classified authored entries remain source-present with
 complete comparisons: 238 exact and 32 candidates. These counts do not prove
 the final authored denominator or whole-game completion.
 
-Private compiler inputs, before products, original correspondence dependencies,
-instruction-based relocation reconciliation, complete comparisons, native
-checks and adoption receipts are retained in
-`.analysis/score-workspace-regions-20261017/`. Compiler and build commands use
-one allowed CPU, CPU quota35%, memory high640 MiB/max768 MiB. No full replay.
-Verified archives replace28 compiler-input copies and four raw objects,
-releasing188 KiB of allocated storage after carrier cost. Current objects,
+Compiler and build commands use
+one allowed CPU, CPU quota35%, memory high640 MiB/max768 MiB. No full replay. Current objects,
 delivery and unique before evidence remain preserved.

@@ -47,11 +47,7 @@ closures verify, and 235 historical input inventories refresh without changing
 their case scopes. No game runs.
 
 The global total stays **231 exact functions / 58,775 code bytes / 136 metadata
-bytes**, with 42 authored functions still nonexact. Full source and compiler
-receipts, complete comparisons, independent review and focused case payloads
-are retained in `.analysis/triangle-scanline-scope-20261013/`. Seventeen completed
-source/object/tracking copies are preserved in verified gzip carriers, releasing
-4,317,184 allocated bytes. Current build products remain available.
+bytes**, with 42 authored functions still nonexact. Current build products remain available.
 
 Original triangle evidence is
 `ev_ad1b11b19724c19c9001ac422c47b0b3b83c6b2965625e31729f969414a6467a`.
@@ -63,29 +59,20 @@ comparisons cover those bytes as well as the provider-owned body.
 ## Edge-record ownership review, October18
 
 The original root constructors run long step (EBP−24), short step (−20), long
-position (−32), then short position (−16), before sorting and both early exits.
-The four root cleanup funclets reverse that order. Two ordinary slope/position
+position (−32), then short position (−16), before sorting and both early exits. The four root cleanup funclets reverse that order. Two ordinary slope/position
 edge records would group construction by edge, contrary to these instructions;
-the long pair is also separated by the retained vertical-scale home at−28.
-The actual increment operators couple values logically but do not establish
-aggregate ownership. No edge-record or narrower-root lifetime trial follows.
-Private `.analysis/triangle-edge-ownership-20261018/review.json` retains exact
-constructor/cleanup addresses and the original dossier, continuation and metadata
-Evidence IDs. This does not establish unique original names or declarations.
+the long pair is also separated by the retained vertical-scale home at−28. The actual increment operators couple values logically but do not establish
+aggregate ownership. No edge-record or narrower-root lifetime trial follows. This does not establish unique original names or declarations.
 
 A separate slope-only pair has contiguous, order-compatible homes−24/−20;
-the preceding edge-pair layout objection does not reject that different model.
-However, the original parent advances four separate construction states and
+the preceding edge-pair layout objection does not reject that different model. However, the original parent advances four separate construction states and
 owns four direct FixedPoint cleanup actions. An aggregate would need its
 implicit construction/destruction flattened into that machinery. A retained
 VC4 `/Od /Ob0` object instead emits a39-byte implicit board-storage constructor;
 only its `/Ob1` control expands it. That global example has no nontrivial
-aggregate destructor, so it does not universally exclude local `/GX` aggregates.
-No consumer owns or takes a slope-pair object, and no retained example supplies
+aggregate destructor, so it does not universally exclude local `/GX` aggregates. No consumer owns or takes a slope-pair object, and no retained example supplies
 the required flattening. The bounded review therefore declines a source trial
-without claiming impossibility. Private
-`.analysis/triangle-slope-ownership-20261018/review.json` retains the separate
-EH states, four unwind actions, counterexample and limitations. No compilation
+without claiming impossibility. No compilation
 or provider query follows.
 
 ## Local aggregate compiler control, October18
@@ -108,9 +95,6 @@ slope-pair compilation follows. This is not a universal compiler exclusion or
 proof of original declarations.
 
 Independent review covers the complete3,459-byte object,11 sections and61
-actual relocations, including all EH tables and cleanup funclets. Sealed
-`.analysis/fixedpoint-local-aggregate-20261018/` retains the complete object,
-source and COFF record in a member-hash verified archive. Five raw carriers,
-including the sole object, are removed, releasing92 KiB net. Peak148,901,888
+actual relocations, including all EH tables and cleanup funclets. Peak148,901,888
 bytes with zero high/max/OOM events. Canonical game inputs, products, counts
 and delivery stay unchanged; no provider, relink, runtime or full replay runs.

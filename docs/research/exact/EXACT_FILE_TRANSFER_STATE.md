@@ -31,7 +31,4 @@ remaining nonexact. No game campaign runs.
 
 Original evidence is
 `ev_a52bb0030eab7563b8a83f854ffdd76af7e5b0382cd75bda896a04c3efed70a0`,
-operation 16 of run `2026-10-07T16-15-32.551Z-interactive-3807439`.
-The complete contiguous dossier is reused without a new provider query.
-Before inputs, compiler output, full comparison, case receipt and verified
-compressed product copies remain in `.analysis/file-transfer-state-20261012/`.
+operation 16 of run `2026-10-07T16-15-32.551Z-interactive-3807439`. The complete contiguous dossier is reused without a new provider query.

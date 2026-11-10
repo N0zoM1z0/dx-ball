@@ -7,8 +7,7 @@ semantic acceptance 247, and origin classifications are unchanged.
 
 ## Instructions and complete boundaries
 
-Each retained dossier exposes 215 owned instruction bytes across a 220-byte
-span. The original code saves the current node, reconnects its neighbors,
+The original code saves the current node, reconnects its neighbors,
 updates current/first/last pointers, then makes two additional pointer copies
 before calling operator delete at `0x416760`.
 
@@ -78,8 +77,6 @@ fidelity. Twenty-two moved semantic entries retain their original oracle
 bindings; 235 historical semantic input rows refresh identities while keeping
 all cases and scopes unchanged.
 
-Private receipts: `.analysis/entity-list-delete/`. Immutable seal:
-`.analysis/checkpoints/entity-list-delete-283-180/sha256.json`.
 REA remains 6.3.0, verified against the installed package and official npm
 latest. One focused provider session closes successfully; complete carriers
 stay outside context. Performance and usability feedback remains only in

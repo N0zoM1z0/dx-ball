@@ -40,9 +40,16 @@ Use CMake `--parallel 1`, the REA wrapper's 256 MiB Ghidra heap and
 
 Keep originals in `original/`, tools in `.tools/`, products in `build/`, evidence
 in `.analysis/` and databases in `ghidra-project/`. These directories are private.
-Archive useful closed evidence and verify member size/SHA/mode before retiring
-obsolete copies. Retain the current tested game, delivery bundle, accepted
-objects and useful incremental caches.
+Retain necessary inputs, the current tested game, delivery bundle, accepted
+objects and useful incremental caches. Delete obsolete probes, duplicate evidence,
+historical archives and cleanup reports. Keep concise conclusions and only the
+hard-to-rebuild contexts needed by current unresolved questions; old citations
+are not retention requirements. Do not create new cleanup reports or archives.
+
+Reuse matching immutable Factory tools; isolate each game's Wine prefix, Ghidra
+project and writable state. Test uncertain components while temporarily removed,
+restore them on failure and delete the temporary copy after success. Select checks
+for affected paths and leave canonical objects/receipts intact during trials.
 
 ## Documentation and publication
 
@@ -55,6 +62,10 @@ Update affected ledgers when claims change. `config/playability-status.json`
 records the tested image and live-check outcomes; `scripts/progress.py` generates
 the progress page and graphic. Keep historical observations attached to their
 recorded images and dates.
+
+Default CI must work in a clean checkout without originals or private tools. Keep
+it to full-checkout syntax, ledger, build-configuration and private-artifact checks.
+Portable builds, comparator tests and behavior checks follow the changed scope.
 
 Commit and push verified checkpoints to `origin/main`. Use English subjects
 beginning `gpt-6.1-sol: `. Publish source, useful notes and ledgers; keep original

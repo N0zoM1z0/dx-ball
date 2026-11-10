@@ -35,14 +35,10 @@ differences. Historical input inventories refresh 235 rows. No game session runs
 
 Original REA evidence is
 `ev_b55c6def4c1b4af6c165acfb1623311bffa077753d93fab01531787dca6b6d70`,
-operation 01 in `2026-10-10T17-22-54.305Z-requests-825249`. Complete comparisons,
-compiler inputs and validation receipts are retained in
-`.analysis/bank-transfer-workspace-20261013/`.
+operation 01 in `2026-10-10T17-22-54.305Z-requests-825249`.
 
 Independent review verifies the declaration-only transfer, all eight source
-inputs, all 77 bindings, the three restored homes and the PCX operand change.
-Twenty-one completed copies are retained as verified gzip files, releasing
-4,341,760 allocated bytes. Current build products remain available.
+inputs, all 77 bindings, the three restored homes and the PCX operand change. Current build products remain available.
 
 The accepted total remains 232 functions / 59,486 code bytes / 136 metadata
 bytes, with 41 authored candidates still nonexact.

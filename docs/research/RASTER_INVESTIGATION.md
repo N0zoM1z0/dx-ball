@@ -25,8 +25,6 @@ exact across all 144 bytes; the eight fixed-point exact code/metadata units stay
 exact. Selected native and actual VC4 checks pass. The initial factored-source
 implementation and full historical campaigns below retain their own scope.
 
-Historical compiler-product checks below are archived in checkpoint
-`exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
 
 REA identifies three remaining large graphics routines as triangle and polygon
@@ -178,8 +176,7 @@ The legacy compiler's `__int64` and the native compiler's `long long` are
 alternative spellings of the same checked 64-bit arithmetic type, with one
 function body and unchanged 32-bit owner scalar declarations.
 
-The report stores 514 complete pixel buffers as lossless gzip/base64 values,
-interned after full-byte comparison and collision checks. This keeps the report
+This keeps the report
 about 6.19 MiB rather than hundreds of MiB of raw pixel hex. Each fixture links
 to its complete buffer identity. Source, driver, dependencies and the actual
 native library are bound before and after execution.
@@ -227,10 +224,7 @@ replayed along with their VC4 comparisons. The unchanged exact replay's inputs
 and products verify before reuse. Zero-edge polygons, arithmetic overflow,
 missing backing and physical/runtime game use remain outside these tests.
 
-The accepted source/product closure is sealed privately under
-`.analysis/checkpoints/raster-221-36/`: 376 files and 41 external REA references.
-The complete native report is retained as gzip with both compressed and expanded
-hashes verified. Cleanup removes only verified duplicates and disposable test
+Cleanup removes only verified duplicates and disposable test
 fixtures; all 3,567 captured immutable paths and current acceptance inputs and
 products verify afterward.
 

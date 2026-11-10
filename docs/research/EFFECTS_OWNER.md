@@ -129,8 +129,7 @@ contents in object and target.
 ## REA evidence
 
 Evidence is observed static analysis, corroborated separately by unmodified
-x86 execution. Full results and snapshots remain under ignored `.analysis/rea/`.
-The per-function dossiers expose instructions, inclusive ranges and callers;
+x86 execution. The per-function dossiers expose instructions, inclusive ranges and callers;
 recovered C names and typed fields are reconstruction decisions.
 
 | Entry | Evidence ID | Owned / span bytes |

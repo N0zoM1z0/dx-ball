@@ -52,11 +52,6 @@ Reuse the closed original REA dossiers from
 `2026-10-07T11-04-09.689Z-interactive-2967798`, whose contiguous extents and all
 assembly instruction addresses match the verified PE:
 
-- Fullscreen: `02-analyze_function.json`, Evidence
-  `ev_2cc92baf4edd1bfc64e4ea142dd7d186ca9124af4dda1bda4b72cb0945cc88d8`.
-- Compatible: `03-analyze_function.json`, Evidence
-  `ev_11e3dc434ea2130b97aafcbdeb5927e235c6ea83b327a1346881a3898124fa3b`.
-
 These historical serialized carriers are 5,297,120 and 4,313,515 bytes.
 Their compact complete assembly projections are 9,722 and 8,380 bytes.
 They are retained file sizes, not fresh transport, latency, RSS or model token
@@ -66,17 +61,11 @@ doctor, provider restart or historical snapshot replay.
 
 User-requested storage cleanup removes 1,616 optional Ghidra offline API
 documentation and editor completion files: 101,491,889 logical bytes and
-104,804,352 previously single-link allocated bytes. Complete per-file hashes,
-the pinned restore archive URL/hash and deletion checks are retained. All 206
+104,804,352 previously single-link allocated bytes. All 206
 pinned required runtime files and four current products verify before and
 after; unique historical evidence, including the 72,771,098-byte legacy
 snapshot, remains. This is allocation accounting, not a measured device
 free-space delta. No provider restart is needed to verify optional docs removal.
-
-Private proof, both full streams, frame maps, actual symbol definitions,
-closed-Evidence and current-product identities:
-`.analysis/display-initialization-frame/`. Immutable seal:
-`.analysis/checkpoints/display-frame-flow-283-188/sha256.json`.
 
 Retire both display initialization candidates as missing-source hypotheses
 within this complete typed scope. Do not trial names, declarations or storage

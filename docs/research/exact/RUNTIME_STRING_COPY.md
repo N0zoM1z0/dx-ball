@@ -13,8 +13,5 @@ Source and destination have the original nonoverlap contract. A zero count
 never reads source; append still scans and terminates destination.
 
 One VC4 compilation produces58/36 bytes with56 differences for copy and
-69/49 bytes with68 differences for append. Both remain candidates, not exact.
-Native and i686 strict compilation succeeded; no runtime or game checks ran.
-All315 preceding exact and102 candidate producers and input hashes were reused
-unchanged. Full comparisons and products are retained under
-`.analysis/runtime-string-copy-20261014/`; the verification receipt records hashes.
+69/49 bytes with68 differences for append. Both remain candidates, not exact. Native and i686 strict compilation succeeded; no runtime or game checks ran. All315 preceding exact and102 candidate producers and input hashes were reused
+unchanged.

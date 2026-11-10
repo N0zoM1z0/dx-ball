@@ -10,6 +10,8 @@
 
 The subsystem notes below retain original observations and dated reconstruction
 checkpoints. Their counts and product identities belong to those checkpoints.
+Historical probes and raw archives are disposable; the notes preserve useful
+findings, while current ledgers and complete comparisons govern exactness.
 Use [the source map](../../src/README.md) to locate the current implementation.
 
 ## Gameplay and modes

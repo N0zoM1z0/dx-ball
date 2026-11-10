@@ -31,5 +31,4 @@ comparisons and 1,261 relocations. Current totals are 136 exact functions and
 
 Only the existing 56 WinMain cases were replayed: message/idle paths,
 initialization failures and two fork-isolated exits. Native, VC4 and MinGW
-builds pass. Full input, object, comparison and review evidence is retained
-under `.analysis/checkpoints/exact-win-main-283-136/`.
+builds pass.

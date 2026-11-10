@@ -17,9 +17,7 @@ scalar homes are X 4/8, Y 8/16 and angle 16/4. Every strict difference belongs t
 one of those actual displacement operands. They remain explicit candidate
 differences: this does not establish the original declaration spelling.
 
-The complete retained REA dossier is
-`ev_001f48ac971f132ed4b29b98cf1549ec4136da2eab0a9448b6ed27d7f5e41fb8`,
-from the closed October 7 11:58 run, response 04. All 368 original instruction
+All 368 original instruction
 boundaries and widths, nine branches, two calls and ten ordered relocation
 bindings agree. Substituting only the three observed scalar home mappings
 makes every byte of the complete body identical, including the initialized
@@ -42,8 +40,6 @@ Native and MinGW products are rebuilt. The final matching MT intro object
 links with 35 verified unchanged VC4 objects and no extra legacy source
 compilation. Existing totals remain 206 exact functions, 44,406 code bytes and
 136 metadata bytes; 247 historical semantic scopes retain their case counts.
-Private receipts and complete dependencies are sealed under
-`.analysis/checkpoints/intro-mask-lifetime-283-206/`.
 
 An earlier single runtime-owner compilation in this turn tested the real
 attached-ball overlay/coordinate phase lifetime. It emitted 679/677 bytes with

@@ -23,7 +23,7 @@ nonexact, with a new complete digest despite its unchanged raw difference count.
 
 ## Why this question was new
 
-The earlier [surface-member control](CLOSED_STORAGE_DIAGNOSTICS.md#rotation-surface-member-calls)
+The earlier [surface-member control](CLOSED_STORAGE_DIAGNOSTICS.md)
 used the old aggregate board declaration context. Its actual C++ object retains
 all four original bank-first groups in offset and width; width was completely
 exact, while offset had only a final comparison transpose. The later independent
@@ -39,15 +39,11 @@ spellings, types, source order, flags or selective headers.
 ## Shared source and complete comparison
 
 [`src/rotation.cpp`](../../../src/rotation.cpp) wraps the unchanged project
-includes in C linkage and uses six actual DirectDraw virtual member calls.
-They cover GetSurfaceDesc, Lock and Unlock at their original vtable byte offsets
+includes in C linkage and uses six actual DirectDraw virtual member calls. They cover GetSurfaceDesc, Lock and Unlock at their original vtable byte offsets
 88, 100 and 128. Receivers, live rereads across callbacks, arguments, retries,
 result stores, locals and scopes remain intact. All four mathematical helper
 bodies are byte-for-byte unchanged source. Reversing the six call projections
-recovers the preceding implementation exactly, apart from the include enclosure.
-The [retained projection dossiers](EXACT_PROJECTIONS_TEXT.md#reused-original-evidence-and-literal-correction)
-and renderer Evidence `ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26`
-supply the original functions and surface-call context. No new provider query
+recovers the preceding implementation exactly, apart from the include enclosure. No new provider query
 is needed. The frontend and full C++ header view are tested together; the original language
 and translation-unit boundary remain inferred, not uniquely established.
 
@@ -92,19 +88,14 @@ OS DLL import is unchanged. The new executable SHA-256 is
 This image check does not observe a new game run or execute discarded functions;
 the complete recovered COFF functions and focused checks provide that evidence.
 
-Private `.analysis/rotation-current-cpp-owner-20261017/` retains frozen inputs,
-before-products, complete units/comparisons, independent review, affected checks,
-production receipts and cleanup/seal identities. The first private width driver
+The first private width driver
 stops before cases because its extracted loop needs the imported module in its
 namespace. A second driver stop occurs after329 width assertions when selecting
 the retained helper loop: its AST contains an earlier nested tuple. The corrected
 selector restricts flat name targets and persists the width receipt before helper
 parsing. One width repeat retains the missing full results; the successful1,024
-rotation checks are not repeated. Neither correction changes source or fixture.
-No full historical replay or new game observation follows this adoption.
+rotation checks are not repeated. Neither correction changes source or fixture. No full historical replay or new game observation follows this adoption.
 
-Cleanup archives and member-hash verifies45 closed input, product and redundant
-receipt carriers, then removes them plus eight obsolete/duplicate build products.
 Net released allocation is9,805,824 bytes (about9.35 MiB), respecting inode link
 counts and excluding receipt costs. Current tested products, exact/delivery
 objects and valid incremental CMake configurations remain available.

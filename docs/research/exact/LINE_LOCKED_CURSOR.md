@@ -41,10 +41,7 @@ provider query is needed. The complete function has no COFF relocations.
 
 Five exact UI companions retain 559 bytes. Linux and MinGW builds and the VC4
 relink pass. One unchanged 486-case line loop compares all octants, both endpoint
-directions, equality, zero length, retries, complete padded pixels and COM calls.
-No text/palette suite or game campaign runs. Private evidence and products are
-retained in `.analysis/line-locked-cursor-20261012/`.
-
+directions, equality, zero length, retries, complete padded pixels and COM calls. No text/palette suite or game campaign runs.
 
 ## Actual backend comparison decisions, October18
 
@@ -100,19 +97,15 @@ compiler settings remain unknown. Thus the result does not uniquely reconstruct
 original source or justify a name, scope, order, header, guard or flag sweep.
 Future line source changes still require an independent producer/consumer fact.
 
-Private `.analysis/line-backend-comparisons-20261018/` retains the complete trace,
-full two-function comparison, role proof, source/tool identities and independent
-reviews. The observer uses an owned kill-on-close Job, rejects extra C2 threads,
+The observer uses an owned kill-on-close Job, rejects extra C2 threads,
 restores its entry breakpoint after the saved return address and bounds every
 helper call. Timeout cleanup is limited to the owned tree; finally checks all
 canonical inputs and products. Only observed compiler process memory is patched;
 no tool file or emitted game code is modified. One CPU/35%, memory high640MiB/
-max768MiB hold; peak210,264,064 bytes and zero high/max/OOM events are recorded.
-No native/MinGW game build, runtime case, relink, game or full replay follows.
+max768MiB hold; peak210,264,064 bytes and zero high/max/OOM events are recorded. No native/MinGW game build, runtime case, relink, game or full replay follows.
 
 Archive/member-hash verification precedes removal of16 closed raw files:13
-copied project inputs, two objects and the observer executable. Net allocated
-storage released is208,896 bytes after archive/journal costs. Primary trace,
+copied project inputs, two objects and the observer executable. Primary trace,
 proofs and current tested products remain; no unused observer binary is kept.
 
 ## Fixed role-rank declaration inference, October 18
@@ -135,16 +128,9 @@ explains the result but does not establish exactness. Reject the whole model
 and retain the canonical source and objects. No follow-up declaration variant
 is queued; this failure does not prove source optimality or impossibility.
 
-Private `.analysis/line-rank-constraints-20261018/` and
-`.analysis/line-rank-declarations-20261018/` retain the complete mathematical
-review, actual full-body output, independent result review and identities.
-All 13 compiler inputs and six protected authorities/products are restored.
-The single compile takes 6.103 seconds, peaks at 273,899,520 bytes under the
+All 13 compiler inputs and six protected authorities/products are restored. The single compile takes 6.103 seconds, peaks at 273,899,520 bytes under the
 one-CPU/35% and 640–768 MiB caps, and records zero high/max/OOM events. There
 is no provider query, native/MinGW build, game run, relink or full replay.
-Archive/member verification precedes deletion of 16 obsolete files: 13 copied
-inputs, two objects and the proposal. Net release after archive/journal is
-61,440 allocated bytes; tested delivery and useful caches remain unchanged.
 
 ## Complete Mac line and fixed public-name control, October18
 
@@ -157,9 +143,6 @@ The three known comparison groups still contain all nine Windows differences.
 
 One distinct inferred public name is tested by a single uniform UI-header macro,
 preserving all other tokens and the actual Windows signature. One compile
-compares the complete line/fill pair with zero bindings, literals or metadata.
-Both code identities stay unchanged:445/9 and85/0. Reject the whole model without
-name variants; other five header owners/65 functions remain uncompiled/unknown.
-No source, public-symbol, product or claim adoption follows. All751 protected
-hashes/modes/nsmtimes restore. All16 listed closed raw members are archived and
-member-hash verified before deletion, releasing143,360 allocated bytes net.
+compares the complete line/fill pair with zero bindings, literals or metadata. Both code identities stay unchanged:445/9 and85/0. Reject the whole model without
+name variants; other five header owners/65 functions remain uncompiled/unknown. No source, public-symbol, product or claim adoption follows. All751 protected
+hashes/modes/nsmtimes restore.

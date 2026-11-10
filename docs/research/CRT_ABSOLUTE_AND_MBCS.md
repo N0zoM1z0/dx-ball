@@ -13,16 +13,12 @@ source frontier. It does not add reconstructed source or game exact acceptances.
 The maintained verifier compares every byte and applies every actual COFF
 relocation using independently established bindings. All three whole sections
 match with zero differences. Each imported entry covers its complete section;
-an imported boundary alone was not used as proof. The symbols have COFF storage
-class 3: they remain local to their archive members and are not exported into
-the shared name-to-address map.
+an imported boundary alone was not used as proof.
 
 ## Absolute values are not target storage
 
 The archive independently defines external COFF ABS symbols `__except_list=0`
-and `__tls_array=44`. The verifier checks the exact member name, archive offset,
-SHA-256, unique symbol definition, section -1 and external storage class 2.
-Wrong values, duplicate declarations and initialized definitions presented as
+and `__tls_array=44`. Wrong values, duplicate declarations and initialized definitions presented as
 ABS are rejected. Established conflicting bindings cannot be overwritten.
 
 These are link-time constants. They do not place target data, identify another
@@ -59,17 +55,7 @@ symbol.
 
 ## Evidence and validation scope
 
-- New complete data Evidence:
-  `ev_104ef247786de4c59b88d8fe5100bd85eda25345a62adc1dd1d224263a7e1ada`.
-- Reused complete original code Evidence:
-  `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
-- `config/runtime-origin-sections.json` pins actual members and placement bases;
-  `scripts/verify-runtime-origin-sections.py` implements the maintained checks.
-- Private `.analysis/crt-absolute-frontier/` retains discovery, before-state,
-  stage-specific hashed inputs, provider timing and seven rejection controls.
-- Final `build/reports/runtime-origin-sections.json`: 65 complete code sections,
-  7,229 bytes, 69 distinct origin rows including three import forwarders; three
-  complete initialized sections / 1,130 bytes. ABS constants are reported
+ABS constants are reported
   separately. All earlier complete sections remain accepted.
 
 Seven actual-verifier controls reject wrong ABS value, non-ABS definition,
@@ -90,7 +76,5 @@ latency is observed, but its cause is not isolated. Performance and usability
 feedback is appended only to the existing shared `/tmp` feedback document.
 
 These runtime proofs do not establish the complete authored denominator or
-complete game fidelity. A future static-callee closure must bind verified
-definitions within the same hash-identified archive member, rather than flatten
-object-local names into a global map. Full campaign, synchronized rendering and
+complete game fidelity. Full campaign, synchronized rendering and
 hardware audio remain separate outstanding scopes.

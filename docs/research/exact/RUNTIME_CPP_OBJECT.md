@@ -60,20 +60,14 @@ type or register-spelling sweep was used to eliminate these equivalent choices.
 Two bounded October 17 controls express the destination through the typed
 one-past registration pointer, with either base or displacement first. Both
 retain exactly those four differences and exact destruction, including both
-scope tables. Neither is adopted. Source, flags, complete results and consumed
-header snapshots are retained in `.analysis/cpp-registration-tail-20261017/`.
-Typed record stepping and operand order are closed controls without improvement;
+scope tables. Neither is adopted. Typed record stepping and operand order are closed controls without improvement;
 do not repeat them as a register-spelling search.
 
 ## Original producer and evidence
 
 Complete `frame.obj` from the pinned VC4 `libc.lib` matches both original code
-sections and scope tables after all **32 code and four scope relocations**.
-The original member SHA-256 is
-`ca4c0732d0860a9f0dbc519f91888999cccb47dc96c99b35572057193dfd462b`.
-The private complete proof is
-`.analysis/cpp-exception-object-source-20261016/complete-comparison.json`.
-`config/match-units.toml` records every maintained relocation and both complete
+sections and scope tables after all **32 code and four scope relocations**. The original member SHA-256 is
+`ca4c0732d0860a9f0dbc519f91888999cccb47dc96c99b35572057193dfd462b`. `config/match-units.toml` records every maintained relocation and both complete
 scope tables at `0x004201C8` and `0x004201D8`. The memmove binding is the actual
 `0x00416610` entry, not the separate memory-copy owner.
 
@@ -88,11 +82,9 @@ Retained REA 6.4 evidence remains identified as 6.4:
 - Complete 625-byte enclosing read:
   `ev_4235cebca7f829f90678f802a5d958549ec066d16553f98319882d7dc8b93341`.
 
-These are in `.analysis/rea/runs/2026-10-16T04-18-41.755Z-requests-60444/`.
 The fresh REA **6.5.0** read independently confirms both scope tables and the
 four intervening padding bytes:
-`ev_ad8b7d65b442e9a523841c43f495ec948be8f44624cf7d644cfa9c818756eb1c`.
-See [REA configuration and upgrade proof](../../agent/REA.md).
+`ev_ad8b7d65b442e9a523841c43f495ec948be8f44624cf7d644cfa9c818756eb1c`. See [REA configuration and upgrade proof](../../agent/REA.md).
 
 ## Actual member-call transport
 
@@ -106,8 +98,7 @@ those declarations with opaque code addresses. The later member-call owner
 uses actual compiler member-pointer types to implement those direct calls;
 the original tail transport remains a nonexact boundary.
 
-The complete member comparison is `member-call-provenance.json` in the private
-phase directory. REA assembly IDs, in address order:
+REA assembly IDs, in address order:
 `ev_9554d6425abb2bf0af02f3f70295dd3ef28680df23c302182d2c2a101558a06d`,
 `ev_7a6ecb0fd8d57961c646fb0702fc5f096898490de4d7b729f91ca8b8062a5167`,
 `ev_1c0ff3b374b6ce4bf4babc9db7281ffbed34f8f99d3bf1428bd49fd683ecd008`.
@@ -131,10 +122,7 @@ from the existing exact helper; the full table owner is not linked. A failed
 attempt to call its private original CRT symbol and an unrelated full-owner
 link failure are retained, rather than adding fake dependencies.
 
-`canonical-comparison.json` retains the original compiler receipt, before
-construction was moved into the candidate category. `current-comparison.json`
-records the final manifest reader result. `runtime.json`, `adoption.json` and
-compiler/link logs retain the actual products and inputs. Clang's initial
+Clang's initial
 missing target-header failure is retained separately. Heavy commands ran
 serially with CPUQuota 35%, MemoryHigh 640 MiB and MemoryMax 768 MiB.
 

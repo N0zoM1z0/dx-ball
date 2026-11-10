@@ -33,16 +33,8 @@ a132-byte declaration, a field or an original1.07 storage contract. No source
 trial follows. Original862-byte/current979-byte comparisons and all counts stay
 unchanged; all15 protected inputs/products retain their hashes.
 
-Private`.analysis/pcx-successor-linkage-20261018/` retains full responses,
-snapshot, complete frame/access proof and independent review. Main Evidence is
-`ev_4960587e3403299c5e22246f2e89028c81e6868f1c8b2e028ffc3f9d98395053`.
-The one-CPU35% scope peaks at671,608,832 bytes; soft-high events3374, max/OOM0.
-No compiler, member execution, game, relink or replay runs. Raw carriers and the
-temporary game member are removed only after archive/member-hash verification.
-All17 closed carriers are verified and removed, releasing13,570,048 allocated
-bytes net of the archive and cleanup receipts. The full1,019,890-byte archive is
-under`.analysis/rea/pcx-successor-linkage-20261018/`; the cleanup receipt supplies
-its restore command. Current build products and useful caches remain intact.
+Main Evidence is
+`ev_4960587e3403299c5e22246f2e89028c81e6868f1c8b2e028ffc3f9d98395053`. The one-CPU35% scope peaks at671,608,832 bytes; soft-high events3374, max/OOM0. No compiler, member execution, game, relink or replay runs. Current build products and useful caches remain intact.
 
 ## Current-object correspondence refresh, October18
 
@@ -62,10 +54,7 @@ assumes undefined flags agree. Current308 frame bytes map to the same305 typed
 and3 compiler-slot bytes. Original distances61..64 remain unobserved; they do
 not establish a132-byte header or another source declaration.
 
-Private`.analysis/pcx-current-correspondence-20261018/` retains the full proof,
-original REA carrier bindings, current listing, liveness paths and independent
-review. This refresh changes no source, product, exact count or semantic claim.
-It executes no compiler, provider, runtime case or replay. The historical
+This refresh changes no source, product, exact count or semantic claim. It executes no compiler, provider, runtime case or replay. The historical
 sections below retain their original checkpoint scope.
 
 The decoder at `0x409BB0` now puts the RLE index increment at the body tail
@@ -103,8 +92,7 @@ description dimensions before Lock, retries, inclusive decoded bound,
 zero-length packets, overshoot, both pixel paths, Unlock/close and independent
 palette selections remain present.
 
-The complete proof in `.analysis/pcx-packet-loop/body-proof.json` pairs every
-instruction. After frame translation, branch destination ordinals and the
+After frame translation, branch destination ordinals and the
 observed allocation sizes, 205 instructions normalize equally. The other 22
 form six three-instruction signed comparison groups and two two-instruction
 low-32-bit products. Exchanging comparison operands and reversing JGE/JLE
@@ -145,23 +133,13 @@ bytes and external event traces agree. No unrelated owner, full historical
 replay, new Wine run or physical Windows/audio verification is claimed.
 235 historical input closures refresh with their 247 acceptance scopes unchanged.
 
-Current four product hashes are in
-`.analysis/pcx-packet-loop/product-verification.json`; the previous window-switch
-products and prior PCX Wine evidence retain their historical identities.
-The new checkpoint is
-`.analysis/checkpoints/pcx-packet-loop-283-188/sha256.json`.
-Feedback continues only in `/tmp/dxball_rea_feedback_20261010.md`.
-This closes the remaining packet-control hypothesis within the defined scope;
-do not retry declaration, local-layout or equivalent operand spelling.
-The full original-source denominator and synchronized game/audio fidelity
+Feedback continues only in `/tmp/dxball_rea_feedback_20261010.md`. This closes the remaining packet-control hypothesis within the defined scope;
+do not retry declaration, local-layout or equivalent operand spelling. The full original-source denominator and synchronized game/audio fidelity
 remain open.
 
-Checkpoint preservation: 116 owned files and 133 explicit immutable dependencies
-verify after 26 scoped hash-verified archive links replace 4,800,512 previously
-single-link allocated bytes. This accounts for about 4.6 MiB of duplicate storage,
+This accounts for about 4.6 MiB of duplicate storage,
 not a measured device-free-space delta. Current/public files retain independent
-inodes; unique Evidence, current products and complete before inputs remain.
-Cleanup is confined to this new seal. No broad archive scan or additional
+inodes; unique Evidence, current products and complete before inputs remain. Cleanup is confined to this new seal. No broad archive scan or additional
 provider, compiler or case replay is performed.
 
 ## Complete external header control, October18
@@ -184,10 +162,7 @@ fixed layout, complete source reversal, actual bindings and literal contents.
 Close this model without adoption or variants. A fuller external-format
 declaration alone neither establishes original source nor resolves the frame gap.
 
-Private `.analysis/pcx-full-header-contract-20261018/` retains compressed primary
-document carriers and sealed comparison/review receipts. Eleven raw inputs and
-products, including two objects, are archived/member-hash verified before
-removal, releasing72 KiB net. Scope peak173,301,760 bytes with zero high/max/OOM
+Scope peak173,301,760 bytes with zero high/max/OOM
 events under the required caps. No native build, runtime case, relink, provider,
 game or full replay follows this rejected model.
 
@@ -213,8 +188,7 @@ lineage or VC4 layout; no matching source carrier was downloaded. This bounded
 negative is not proof that no historical declaration exists. Do not synthesize
 an extra four-byte field from the gap.
 
-Sealed `.analysis/pcx-header-tail-search-20261018/` records the four queries,
-URLs, original Evidence ID/carrier hashes, geometry and limits. Its comparison
+Its comparison
 mapping belongs to the retained packet-loop epoch, not a new current-object
 attestation. No new compile, provider, runtime check or raw temporary product
 follows.
@@ -231,9 +205,7 @@ Returned excerpts establish no connected primary-source routine. Generic PCX
 references, later codecs, Pascal and unrelated maxima matches supply no new
 declaration; the reconstruction's own mirror is excluded. No source page is
 opened or downloaded and no source trial follows. This is a bounded negative,
-not global source absence. Private `.analysis/pcx-flow-fingerprint-search-20261018/`
-retains the complete response as a roundtrip/SHA-verified gzip and independent
-review; the redundant raw response is removed.
+not global source absence.
 
 ## Historical header-plus-payload record, October 18
 
@@ -257,11 +229,7 @@ is supported by this check; it does not establish source lineage. Its `QUAKE2`
 conditional and copyright also do not establish availability before 1.07.
 
 The one complete 21,013-byte source file is fetched at the pinned commit and
-SHA256 `224631788933f8ba5a47fcf19793557460e440dd5c535a109ba68e2ee15c8401`.
-Private `.analysis/pcx-historical-payload-record-20261018/` retains exact source,
-all five web-response carriers, layout/loader proof and independent review.
-Seven raw carriers are archive/member-hash verified and removed, releasing
-86,016 allocated bytes net of archive/cleanup receipts. All 49 protected hashes
+SHA256 `224631788933f8ba5a47fcf19793557460e440dd5c535a109ba68e2ee15c8401`. All 49 protected hashes
 remain unchanged; no compiler, provider, relink, runtime or replay follows.
 
 ## Closed RLE run-index lifetime, October18
@@ -279,8 +247,5 @@ flow remain. One resource compile compares18 functions/262 bindings/six literals
 rather than original−48; no selected typed role home is restored. Reject without
 further scope or declaration variants.
 
-Sealed `.analysis/pcx-run-index-scope-20261018/` retains provenance, complete
-comparisons and independent review. Eleven raw inputs/products, including two
-objects, are archived/member-verified then removed, releasing72 KiB net.
 Peak159,277,056 bytes with zero high/max/OOM events. Canonical source, products
 and claims remain unchanged; no native, provider, relink, runtime or full replay.

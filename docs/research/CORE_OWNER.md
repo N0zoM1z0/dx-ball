@@ -5,10 +5,7 @@ original X/Y copies, inclusive row guards, separate subtraction/division writes
 and two signed-byte tile reads. Its complete337-byte/90-instruction candidate
 has26 scalar-home differences, versus325/337 bytes with302 before. All13branches,
 2calls and10bindings agree. Eight exact core companions4322bytes remain unchanged;
-1152 unchanged original/native coordinate/fire/hard-tile cases pass once.
-Current products and evidence are in `.analysis/screen-point-stages/`.
-This is source recovery, not a new exact or whole-game fidelity claim.
-
+1152 unchanged original/native coordinate/fire/hard-tile cases pass once. This is source recovery, not a new exact or whole-game fidelity claim.
 
 The [frame control-flow checkpoint](FRAME_CONTROL_FLOW.md) restores the direct
 paused return, signed auxiliary-byte load and zero completion comparison.
@@ -77,9 +74,7 @@ observations retain their own product identities in the current handoff.
 ## Entry evidence
 
 All dossiers were collected with the pinned REA MCP/Ghidra session, including
-instruction and referenced-data evidence. Complete inline records and logs are
-retained privately under `.analysis/rea/runs/`; the completed interactive session
-saved a snapshot with 113 Evidence records. Owned instruction bytes and complete
+instruction and referenced-data evidence. Owned instruction bytes and complete
 enclosing spans are distinct. In particular, the frame has 1,683 owned bytes
 inside a 1,688-byte span; no unowned bytes are silently counted as exact.
 
@@ -246,12 +241,10 @@ Controlled nonzero fixtures establish the consumer's behavior separately.
 
 ## Continue from here
 
-The runtime spine is now maintained; see [runtime evidence](RUNTIME_OWNER.md).
-All frame phases are now maintained. Surface recovery and palette fades are
+The runtime spine is now maintained; see [runtime evidence](RUNTIME_OWNER.md). All frame phases are now maintained. Surface recovery and palette fades are
 connected in [device evidence](DEVICE_OWNER.md); continue with platform startup,
 device creation and non-game modes. REA identifies gameplay initialization at 0x40F4C0;
-0x40E570 is a mode-0 intro point-table initializer. Reuse retained dossiers and
-keep recording REA feedback in `/tmp/dxball_rea_feedback.md`.
+0x40E570 is a mode-0 intro point-table initializer.
 
 ```bash
 scripts/repo-python tests/test_core_differential.py

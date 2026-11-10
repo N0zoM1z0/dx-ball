@@ -29,12 +29,8 @@ and is rejected. The selected indexed-address form retains the actual shared
 20,432-byte storage owner, including its terminal board transport. No source
 or linkage alias is added.
 
-Original evidence is
-`ev_8602dd7fec1b8aff85a2c581b96d7a85bcf62a791d3741ecaecd0c5a411812fc`,
-in `.analysis/rea/runs/2026-10-07T08-21-37.400Z-interactive-2545594/02-analyze_function.json`.
 The proof parses these original instructions and decodes only reconstructed
-COFF. Its complete raw result and separate source correspondence are retained
-in `.analysis/brick-drop-cursor-20261012/`.
+COFF.
 
 Nine accepted core bodies retain 4,659 exact bytes. Fifty shipped-board cases
 and six filled/empty/special-board cases compare full board/aux storage, queues,
@@ -56,8 +52,5 @@ are reverted by source/object hashes and receive no extra Oracle or game run.
 
 The triangle replacement initially qualified a record field declaration and
 failed compilation. That source is retained separately; one corrected complete
-compile supplies the comparison. Private receipts are in
-`.analysis/glyph-rectangle-scope-20261012/`,
-`.analysis/triangle-span-records-20261012/` and
-`.analysis/height-projection-record-20261012/`. Do not repeat these scope/record
+compile supplies the comparison. Do not repeat these scope/record
 models without new evidence.

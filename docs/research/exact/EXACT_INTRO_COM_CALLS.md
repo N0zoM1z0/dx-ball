@@ -34,12 +34,7 @@ rows while preserving their scopes and case counts.
 
 Original scroller evidence is
 `ev_60ffa0dd2052ca4d66e244d13dff9c0927c40df0a2c284e69e239173f8e96e25`.
-The complete source projection and independent guard review are retained in
-`.analysis/intro-surface-com-20261013/`. Current compiler inputs, all comparisons,
-before products, focused receipt and independent acceptance review are in
-`.analysis/intro-com-integration-20261013/`.
 
 A separate core surface-call projection preserves all eleven complete code
 hashes, including nine exacts totaling 4,659 bytes. Drop-bricks and game-frame
-remain candidates, so that projection is rejected. Its single compilation and
-frozen inputs are retained in `.analysis/core-surface-com-20261013/`.
+remain candidates, so that projection is rejected.

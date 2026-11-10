@@ -49,6 +49,5 @@ entries, 377 exact functions and 88 complete candidates. The new standalone
 owner remains outside the current game build; other locale storage, absolute
 placement and complete restored CRT integration remain open.
 
-Private member/source snapshots, compiler products, boundary fixtures and
-receipts: `.analysis/locale-handles-source-20261016/`. Compiler work runs serially
+Compiler work runs serially
 under the 35% CPU, 640 MiB high and 768 MiB maximum memory scope.

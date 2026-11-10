@@ -25,7 +25,7 @@ Nine accepted display companions retain all 1,843 exact bytes. Presentation
 remains a 984-byte candidate with two differences. The unchanged palette and
 frame-wait candidates acquire three and six additional comparison bytes in
 this compiler context; their operations and maintained source bodies are
-unchanged. Complete current comparisons remain in the private receipt.
+unchanged.
 
 Linux and MinGW builds and a VC4 relink using 36 verified unchanged objects
 succeed. Existing original/native loops pass 60 sorting, 146 merging and 60
@@ -36,8 +36,5 @@ and 58 authored functions remaining nonexact. No game campaign runs.
 
 The original contiguous body through RET reuses REA evidence
 `ev_6fa464860fec11c6c9b89b25ac22ba8445585a8dba2390986ff40878fc054f10`,
-operation 13 of run `2026-10-07T09-29-28.570Z-interactive-2776129`.
-No new provider query is needed. Full compiler stages, before inputs, complete
-comparisons, build logs and focused-case receipts are retained under
-`.analysis/presentation-sort-records-20261012/`. Completed product copies are
+operation 13 of run `2026-10-07T09-29-28.570Z-interactive-2776129`. No new provider query is needed. Completed product copies are
 compressed with full-byte verification.

@@ -31,9 +31,7 @@ original payloads. Neither compiler repeats.
 Reject both module-only probes without compiling a proposed runtime remainder
 or making a companion-preservation claim. No maintained source/object/ledger
 change, native build, provider observation or game run follows. Peak compiler
-scope150,536,192 bytes; all memory events zero. Private authority is
-`.analysis/paddle-render-tu-source-search-20261021/`, with member-size/hash
-verified recovery before exact-file retirement. Current256/14 stays unchanged;
+scope150,536,192 bytes; all memory events zero. Current256/14 stays unchanged;
 only these two unchanged-body TU contexts are ruled out.
 
 ## Clock utility TU recovery, October21
@@ -64,9 +62,7 @@ Runtime's26 inputs and clock's11 inputs retain the same nine flags. Exactly two
 distinct compilers exit0, one per actual TU. The actual24 sections/237 primary
 symbols with auxiliaries are fully accounted for, including the duplicate-identical
 clock directive and four projected extern definitions. All389 raw relocation
-occurrences map bijectively:352 code and37 initialized-table bindings. All33
-literal references and four complete7/13/16/397-byte carriers compare with the
-unchanged strict local-target guard. An independent read-only review also checks
+occurrences map bijectively:352 code and37 initialized-table bindings. An independent read-only review also checks
 the complete elapsed span. Runtime object SHA256 is
 `4d66f5484747e8b669a1a40907b867ed2279fbce508acb93d857293456bbb7f6`;
 clock object SHA256 is
@@ -91,9 +87,6 @@ retained and repaired locally; neither repeats a compiler or native check. A sin
 strict proposed-manifest replay is reused after full installed-object SHA checks.
 Tracking and generated progress pass. The goal remains active/incomplete.
 
-Private authority is `.analysis/runtime-clock-tu-source-search-20261021/`.
-Retain its comparison, native/adoption summaries and recoverable overwrite backup;
-member-size/hash verify closed inputs/products before retiring their exact paths.
 The broader ownership controls below remain bounded historical results. Unknown
 original declarations/IDs are not a reason to request original materials again.
 
@@ -125,8 +118,7 @@ relocations:352 code and37 initialized-table bindings. All33 literal references
 and four entire7/13/16/397-byte carriers compare, with strict auxiliary,
 associative-parent and local-target checks. Across four trials this covers64
 complete body instances/1,408 code bindings/1,556 raw relocations and preserves52
-prior-exact instances. Independent source/mapping preflight and main actual-byte,
-completion and occurrence walks retain their precise scopes in the receipts.
+prior-exact instances.
 
 Historical IDs29699/29702 are not assumed current: the retained observation's
 26-input cohort differs from this one in resources.h. Current and candidate IDs
@@ -148,12 +140,6 @@ stay fixed. The second family reuses the sealed baseline without a new replay.
 CPU0/35%,384MiB high/512MiB maximum remain enforced; all four memory-event sets
 are zero, with peak157,831,168 bytes. No native/game build, provider/debugger
 observation, game episode or historical semantic replay is performed.
-
-Private trial authorities are `.analysis/runtime-definition-order-search-20261021/`
-and `.analysis/runtime-clock-pair-order-search-20261021/`; their complete closed
-files are member-size/hash verified before retirement into
-`.analysis/runtime-order-closure-20261021/`. Current products, caches, originals,
-tools and the141-record snapshot remain protected.
 
 October20,2026. The user has reopened byte-exact recovery for all24 remaining
 authored candidates. This investigation changes no maintained source, compiler
@@ -190,13 +176,10 @@ checks all23 COFF section payloads and389 named section relocations, including
 the37 initialized-table bindings. The canonical object is not overwritten.
 
 REA process Evidence is
-`ev_1fd598007bd1fa4609bf1721d8727a3ec2d4d0e80184dfc054407c1bab8c85a6`.
-An earlier launch fails before starting the compiler because the process
+`ev_1fd598007bd1fa4609bf1721d8727a3ec2d4d0e80184dfc054407c1bab8c85a6`. An earlier launch fails before starting the compiler because the process
 capture environment lacks the user bus; its full failure Evidence is retained
-as `ev_c0320d00e6c9ef7e391f3ce3b5ef8e80107c4533ed37fb238d6e55a2bf71b5b6`.
-The successful launch explicitly supplies the existing user-bus environment.
-The observation takes4.329s and peaks at160,038,912 bytes with zero memory-limit
-events. Private authority: `.analysis/elapsed-rank-observation-20261020/`.
+as `ev_c0320d00e6c9ef7e391f3ce3b5ef8e80107c4533ed37fb238d6e55a2bf71b5b6`. The successful launch explicitly supplies the existing user-bus environment. The observation takes4.329s and peaks at160,038,912 bytes with zero memory-limit
+events.
 
 This establishes the current compiler cause, not original intermediate IDs,
 names, settings or source spelling. The subsequent six-ID and hardware-watch
@@ -252,9 +235,8 @@ The corrected complete comparison and independent review retain all16 runtime
 bodies/352 code bindings/33 full literal references,22 file-backed section
 payloads/389 named relocations and68 BSS bytes. Non-FILE symbols are identical;
 FILE debug source paths and auxiliary counts are retained explicitly, not
-masked as code. All30 protected and26 frozen input hashes stay fixed.
-The compiler observation takes35.041s, peaks at157,720,576 bytes and has zero
-memory-limit events. Private authority: `.analysis/elapsed-id-window-20261020/`.
+masked as code. All30 protected and26 frozen input hashes stay fixed. The compiler observation takes35.041s, peaks at157,720,576 bytes and has zero
+memory-limit events.
 
 ### Actual anonymous-record producer
 
@@ -293,9 +275,7 @@ sections,389 named relocations and non-FILE symbols remain identical. All13
 exact companions and30 protected/26 frozen input identities survive. CL/C1XX/C2,
 observer and outer capture exit0. The serial capped scope takes37.430s, peaks
 at155,643,904 bytes and records zero memory-limit events. REA process Evidence:
-`ev_ca046f423551b2114e73e3da13f9672532f5b00dec93926b7e3003f0054d78f9`.
-Independent plan/result reviews and producer linkage remain in
-`.analysis/elapsed-counter-watch-20261020/`. No source or exact claim changes.
+`ev_ca046f423551b2114e73e3da13f9672532f5b00dec93926b7e3003f0054d78f9`. No source or exact claim changes.
 
 ## Paddle scalar lifetime model
 
@@ -313,8 +293,7 @@ overlay-width equality and `dirty.right` addition order. The last group uses
 nine instead of eight bytes, explaining the678/677-byte extent. Its strict
 180-position difference is not masked or adopted.
 
-Authority: `.analysis/paddle-scalar-lifetimes-20261020/`, including the independent
-review and member-verified source/object archive. The model is useful frame
+The model is useful frame
 evidence, not a new exact claim.
 
 ## Fixed ownership controls and complete costs
@@ -365,14 +344,12 @@ objects, ledgers, game EXE and ZIP remain unchanged.
 
 ## Glyph address group and fixed integer-contract control
 
-The current145/146-byte find-glyph source has44 instructions on both sides.
-Only ordinals16..23 differ: bank-first versus local-slot-first evaluation of
+The current145/146-byte find-glyph source has44 instructions on both sides. Only ordinals16..23 differ: bank-first versus local-slot-first evaluation of
 the same `base+1048*bank+4*sprite` address. Original global MOV5/local MOV3
 versus current local MOV3/global MOV6 explains the one-byte growth. All other
 36 operations/operands, four branch successors, signed code loads and seven
 references to the sole EBP-4 counter home correspond. The historical retained
 145-byte object is fully exact, although the lookup body itself is unchanged.
-Authority: `.analysis/glyph-source-question-20261020/findings.json`.
 
 The historical unsigned bank byte-count conversion preceded the two glyph
 demotions. One fixed control therefore restores the earlier signed dimension
@@ -392,48 +369,25 @@ effects, separately documented in its [version20 notes](https://releases.llvm.or
 One unchanged-recipe resources compile compares all18 complete functions,
 262 actual bindings and full literals. Seventeen resolved code identities
 remain unchanged, including the two nonexact glyph bodies and all10 exact
-companions. PCX has a new identity but retains979 bytes/851 differences.
-Thus reversing this cast alone no longer restores the historical exacts in
+companions. PCX has a new identity but retains979 bytes/851 differences. Thus reversing this cast alone no longer restores the historical exacts in
 the current owner context. The control has no exact gain and is not adopted;
 its conditional native build/witness stage is not run. Current unsigned source,
 CMake contracts and all other explicit arithmetic corrections stay unchanged.
-Authority: `.analysis/resource-signed-wrap-contract-20261020/`.
 
-Private authorities are `.analysis/runtime-callback-data-owner-20261020/`,
-`.analysis/runtime-callback-interface-owner-20261020/`,
-`.analysis/runtime-host-split-closure-20261020/`,
-`.analysis/clock-type-owner-20261020/` and
-`.analysis/runtime-fixture-interface-owner-20261020/`.
-Complete comparisons, independent reviews, failures, input identities and
-member-verified archives remain recoverable. No oracle, native/game build,
+No oracle, native/game build,
 game episode or full historical replay is run. All compiler processes use one
 allowed CPU,35% quota,384MiB memory-high and512MiB hard limit, serially.
 
 ## Retention and cleanup
 
-Seven closed pilots archive and member-size/SHA-256 verify627 explicit files
-before removing copied inputs, temporary observers and obsolete objects.
-After archives and cleanup journals,3,231,744 allocated bytes are released net.
 The final pass rechecks377 current source/product identities, including the
-tested EXE/ZIP and exact objects. Unique comparisons, traces and independent
-reviews stay available; full immutable process Evidence also has hardlinked
-carriers under `.analysis/rea/observations/elapsed-rank-20261020/` without
-duplicating its storage. All removed files remain recoverable from the verified
-archives. Tracking validation remains553 catalog entries/475 source-present/
+tested EXE/ZIP and exact objects. Tracking validation remains553 catalog entries/475 source-present/
 391 exact, and `git diff --check` passes.
 
-The two subsequent ID-window/resource-contract controls also retain independent
-reviews and member-verified archives before removing47 copied inputs, helpers
-and products. They leave all maintained source/products fixed. The full
-ID-window process response has an immutable hardlinked carrier under
-`.analysis/rea/observations/elapsed-id-window-20261020/`; its outer failure and
-the postprocessing corrections remain explicit.
+They leave all maintained source/products fixed.
 
 The subsequent hardware-watch pilot member-verifies another34 explicit files
-before removing its observer, helpers, object and26 copied inputs. Its verified
-archive releases327,680 allocated bytes net before the cleanup journal; all34
-protected current identities survive. The full immutable REA response has a
-hardlinked carrier under `.analysis/rea/observations/elapsed-counter-watch-20261020/`.
+before removing its observer, helpers, object and26 copied inputs.
 
 ## Current complete fixture-only closure, October20
 
@@ -478,10 +432,5 @@ with171,798,528-byte peak and no high/max/OOM events. Only the64-sample process
 cap is partial; terminal and before/after filesystem enumeration/hashing are
 complete. Do not claim a complete process-tree trace.
 
-Private authority is `.analysis/runtime-fixture-closure-20261020/result.json`.
-All180 phase files, including complete proposals, inputs, producer receipts,
-objects, mappings, comparisons, full process Evidence and helpers, are archived
-and member-size/SHA256 verified before exact-file removal. The443,599-byte
-archive retains them recoverably and releases4,526,080 allocated bytes net
-before the cleanup journal. All116 current canonical protections remain intact;
+All116 current canonical protections remain intact;
 current tested products, originals, toolchain and useful caches are retained.

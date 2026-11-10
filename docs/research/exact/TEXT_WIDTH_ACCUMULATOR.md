@@ -45,23 +45,14 @@ The three remaining strict positions33,36,38 are the previously documented
 outer signed-loop comparison transpose. They are not masked or accepted exact.
 
 Compile time is10.041s, peak166,772,736 bytes, with zero high/max/OOM events.
-The frozen proposal, producer, complete comparisons, actual mappings, restoration
-and resource receipts are under private `.analysis/text-width-accumulator-20261020/`.
 
 ## Focused verification and integration
 
-Only ui.c recompiles in the native build; all38 other native objects stay fixed.
-Build/relink takes1.220s. Current library SHA-256 is
-`a25f31c84a17af6c748e02781dc73bfa0241072a7a817bf82a40502e28681f80`.
-The216 unchanged existing measurement cases pass, retaining three banks,
-spacing−2/0/1/3, signed high bytes, NUL, duplicate/excluded glyphs and signed counts.
-The three retained finite font overflow cases and negative-half control also
-match original x86: −2147483648,−2147483648,−1073741827 and−1073741824.
-They use actual17-byte bank files and failed CreateSurface before measurement;
-there is no surface draw or giant allocation. Prior instrumented failure
-receipts remain historical; no new instrumented compilation repeats them.
-Focused verification peaks66,961,408 bytes with zero high/max/OOM events.
-Heavy operations remain serial on CPU0,35% CPU,384MiB high/512MiB max.
+Only ui.c recompiles in the native build; all38 other native objects stay fixed. Build/relink takes1.220s. Current library SHA-256 is
+`a25f31c84a17af6c748e02781dc73bfa0241072a7a817bf82a40502e28681f80`. The216 unchanged existing measurement cases pass, retaining three banks,
+spacing−2/0/1/3, signed high bytes, NUL, duplicate/excluded glyphs and signed counts. The three retained finite font overflow cases and negative-half control also
+match original x86: −2147483648,−2147483648,−1073741827 and−1073741824. They use actual17-byte bank files and failed CreateSurface before measurement;
+there is no surface draw or giant allocation. Focused verification peaks66,961,408 bytes with zero high/max/OOM events. Heavy operations remain serial on CPU0,35% CPU,384MiB high/512MiB max.
 
 All270 authored source/object/flags/comparison receipts verify across30 closures,
 without replay. Six exact-ledger source/object identities refresh. The235
@@ -69,9 +60,7 @@ historical semantic input rows and six owner-source hashes refresh with scopes,
 case counts and all249 ordered row identities preserved, including duplicate
 unit names. No new semantic acceptance is added.
 
-Thirty-eight closed input/product/helper files are archived and member-size/SHA
-verified before exact-list removal. The449,321-byte archive releases6,111,232
-allocated bytes net before small receipts. All623 protected SHA/size/mode/mtime
+All623 protected SHA/size/mode/mtime
 identities remain fixed. Current products/caches and unique JSON proofs stay.
 
 The tested bff527e EXE and ZIP retain their earlier identities and predate this

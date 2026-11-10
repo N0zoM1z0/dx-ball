@@ -14,11 +14,7 @@ stay 203 exact functions / 42,656 code bytes / 136 metadata bytes.
 
 REA Evidence
 `ev_b10ee96258ecd655c8f9258fc4ae6cb2c52939077283dc0409f9f912688f79b3`
-retains the complete contiguous 797-byte body, including the return. Its private
-carrier is `09-analyze_function.json` in closed run
-`2026-10-07T06-16-05.200Z-rea-effects-family-2065454`; target SHA-256 is
-`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-No new provider session or capture is needed.
+retains the complete contiguous 797-byte body, including the return. No new provider session or capture is needed.
 
 The original only computes and consumes its first board x/y while five frames
 remain. Neither value crosses into expiration or the ordinary draw branch.
@@ -76,9 +72,6 @@ All 203 exact input closures, 36 production objects and 247 unchanged historical
 semantic scopes verify. The 235 changed historical input inventories refresh
 without asserting new execution for those scopes.
 
-Working proof, before products, compiler receipt and selected Oracle are in
-`.analysis/explosion-phase-scopes/`. Independent preservation is
-`.analysis/checkpoints/explosion-phase-scopes-283-203/sha256.json`, with explicit
-before-product and closed REA dependencies. The full reconstruction goal stays
+The full reconstruction goal stays
 active: authored denominator, original source spelling, full campaign and
 physical render/audio fidelity remain unproved.

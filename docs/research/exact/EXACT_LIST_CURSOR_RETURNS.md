@@ -52,9 +52,6 @@ physical allocator/audio or full-game fidelity result is claimed. Historical
 semantic cases, scopes and oracle bindings stay unchanged after 235 input rows
 refresh identities.
 
-Private receipts: `.analysis/list-cursor-returns/`. Immutable seal:
-`.analysis/checkpoints/list-cursor-returns-283-184/sha256.json`. REA 6.3.0 reuses
-four retained dossiers without a new provider request; the snapshot remains
-23 Evidence records/seven primitives. Archives total 519,160 bytes and local
+Archives total 519,160 bytes and local
 projections 6,722 bytes; these are file sizes, without measured MCP/token
 savings. Feedback stays in entry 36 of the user's existing `/tmp` document.

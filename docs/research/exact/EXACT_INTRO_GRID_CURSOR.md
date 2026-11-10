@@ -29,7 +29,4 @@ remaining nonexact. No game campaign runs.
 
 Original evidence is
 `ev_001f48ac971f132ed4b29b98cf1549ec4136da2eab0a9448b6ed27d7f5e41fb8`,
-operation 04 of run `2026-10-07T11-58-17.972Z-interactive-3053414`.
-No new REA query is needed. Full comparisons, compiler inputs, builds,
-case receipts and verified compressed products remain under
-`.analysis/intro-grid-cursor-20261012/`.
+operation 04 of run `2026-10-07T11-58-17.972Z-interactive-3053414`. No new REA query is needed.

@@ -61,6 +61,3 @@ connected checks covering focus, buffer recovery and callback rebinding through
 controlled DirectSound, import and heap boundaries. VC4 links the game using
 the new sound object and 30 validated existing objects. MinGW Release also
 builds and links. Physical audio behavior retains the earlier play-run evidence.
-
-Full inputs, dossiers, comparisons and products are retained in
-`.analysis/checkpoints/exact-sound-voices-283-126/`.

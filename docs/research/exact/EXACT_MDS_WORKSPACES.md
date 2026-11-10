@@ -50,7 +50,3 @@ objects, without another source compilation. All 213 accepted byte extents and
 compiler-input/object identities verify. No loader/controller/callback suite or
 game campaign runs. Historical semantic scopes retain their case counts while
 their input inventories refresh for this source change.
-
-Before inputs, both compiler stages, full comparisons, selected Oracle and
-products are retained in `.analysis/mds-workspaces-20261012/`. Completed staging
-and before-product files use verified gzip carriers after cleanup.

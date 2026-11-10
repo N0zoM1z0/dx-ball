@@ -22,10 +22,8 @@ Native and MinGW builds pass. VC4 links five fresh matching objects and 32
 verified unchanged objects. All 229 complete code, literal and metadata closures
 verify. No game runs.
 
-The initial public prototype used the resource typedef before its declaration.
-Using the existing `struct DxBallDDSurface` forward declaration fixes that
-dependency; the final five-owner family compiles once. Private receipts are in
-`.analysis/line-interface-20261012/`.
+The initial public prototype used the resource typedef before its declaration. Using the existing `struct DxBallDDSurface` forward declaration fixes that
+dependency; the final five-owner family compiles once.
 
 The later [drawing-primitive owner](DRAWING_PRIMITIVES_OWNER.md) moves line and
 fill into one C++ implementation while retaining the public C API. Their full

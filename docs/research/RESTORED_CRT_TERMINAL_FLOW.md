@@ -61,8 +61,7 @@ current `memmove` adapter/recovered copy body are observed executing.
 
 Eight complete source bodies agree with the executed image after all
 **23 bindings / 729 bytes**: load/store/initialize, level advance, memory copy,
-memory fill and the two CRT adapters. The earlier round and editor linkage
-receipts also remain valid for this identical executable. No MSVCRT DLL is
+memory fill and the two CRT adapters. No MSVCRT DLL is
 imported. The image SHA-256 remains
 `cbe767d19d7adc1363facdc862652d2c42342ba50bb01ec4d8eca57383183cfe`.
 
@@ -73,16 +72,11 @@ REA remains pinned to 6.5.0. No new provider query or full replay runs.
 
 ## Evidence and remaining scope
 
-Private `.analysis/restored-crt-terminal-20261017/` retains the CLI run, states,
-50 transition rows, full bank, tile/source samples, captures, executed inputs,
-selected objects and original/current emulator results. A private verifier's
+A private verifier's
 initial 432-byte sample assumption is retained with its correction to the
-existing 400-byte reader contract; the passing game is not rerun. Executable,
-map and reader carriers are reused only after full-byte verification.
+existing 400-byte reader contract; the passing game is not rerun.
 
-After preserving evidence, 49 verified automated runtime files are removed and
-235 frozen inputs are archived with complete byte checks, releasing 2,899,968
-allocated bytes across those operations. Heavy work is serial under CPU 35%,
+Heavy work is serial under CPU 35%,
 memory high 640 MiB / maximum 768 MiB. A retained live sample confirms the cap
 and about 238 MiB peak memory at that point; it is not a final peak measurement.
 

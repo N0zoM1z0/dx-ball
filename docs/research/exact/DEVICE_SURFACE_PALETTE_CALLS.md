@@ -16,15 +16,11 @@ remains a candidate.
 
 All five exact device companions preserve their complete 808 bytes:
 palette initialization, surface clearing, sprite-bank restoration, surface
-recovery and synchronization. The original transition dossier is REA Evidence
-`ev_eaf357e839ddf4487c962040bded218134cadfcccd5854a83a07cee7f285a71a`,
-operation 10 of retained run `2026-10-07T10-33-32.118Z-interactive-2912559`.
+recovery and synchronization.
 
 One matching compilation compares all six complete functions with actual
 COFF relocations. Canonical source, thirteen recursive inputs and flags agree
 byte for byte with that retained producer, allowing its object to be reused.
-Source and instruction reviews are in `.analysis/device-all-com-20261013/`;
-integration receipts are in `.analysis/device-com-integration-20261013/`.
 
 All 238 exact closures pass; the other 34 candidate code identities are
 unchanged. Native and MinGW build, and VC4 links the matching device object
@@ -34,7 +30,4 @@ fills. Historical inventories refresh all 249 semantic rows while retaining
 their recorded case counts. The exact total remains 238 functions / 62,514
 code bytes / 136 metadata bytes. No game run accompanies this change.
 
-Independent review seals the current inputs, products and ledgers. Thirty-four
-completed trial, snapshot, log and obsolete C object carriers are gzip verified
-before their raw copies are removed, releasing 4,243,456 allocated bytes
-including the cleanup receipt. Current products and unique evidence remain.
+Independent review seals the current inputs, products and ledgers. Current products and unique evidence remain.

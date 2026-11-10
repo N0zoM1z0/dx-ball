@@ -44,12 +44,8 @@ All records retain the configured original digest and complete contiguous extent
 Native and i686 standalone objects compile the same C source with the legacy
 integer/float alias model (`-fno-strict-aliasing`). Source uses the two recovered
 format records and backed, aligned destinations. Runtime execution, the decimal
-parser, remaining mantissa helper source and game integration remain open.
-No test or game campaign runs. The other 239 exact producers and all 34 authored
-candidates are reused unchanged. Current receipts and source stages are in
-`.analysis/runtime-binary-conversion-20261013/`.
+parser, remaining mantissa helper source and game integration remain open. No test or game campaign runs. The other 239 exact producers and all 34 authored
+candidates are reused unchanged.
 
-Eight retired object/report carriers are gzip and decompression-SHA256 verified
-before raw removal, releasing 1,265,664 allocated bytes including the receipt.
 Canonical and portable products remain available. The receipt grew to a second
 filesystem block; its net-saving calculation is corrected without recompression.

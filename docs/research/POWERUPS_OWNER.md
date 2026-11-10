@@ -51,9 +51,7 @@ and a private selection-script syntax error, both before oracle cases ran.
 
 Native and MinGW builds pass, and VC4 relinks all 35 verified objects without
 further source compilation. Both complete old REA dossiers are reused from the
-closed 07-26 bonus-dependency run without new provider calls. Products, full
-comparisons, closure identities and selected reports are retained in
-`.analysis/exact-round-transitions/`. Other owner loops remain historical after
+closed 07-26 bonus-dependency run without new provider calls. Other owner loops remain historical after
 input identity refresh; no full owner or historical queue was replayed. Terminal
 board initialization stays a controlled oracle boundary. These results do not
 establish physical sound, synchronized Windows trajectories or complete-game
@@ -65,8 +63,7 @@ naturally clears it, awards ten points and loads original board1 with 222
 destructible bricks, three lives and a newly attached ball. All 400 loaded bytes
 match that original board. The complete edited bank preserves the other 49
 boards; normal exit and all 49 immutable asset identities pass. There are 71
-read-only observations. Receipts, bank/board bytes, captures and Wine output are
-retained in `.analysis/windows-round-9ec72c3/`. Original/MinGW prior controls
+read-only observations. Original/MinGW prior controls
 were not rerun. Focus recovery, terminal board50 and physical audio/MIDI remain
 outside this selection; a single edited-board transition is not full-game
 fidelity evidence.
@@ -90,17 +87,13 @@ constructor emissions; [cloning and cleanup](exact/EXACT_LISTS.md) restores the
 637-byte clone. The entry table and counts below describe this owner's
 historical acceptance checkpoint.
 
-REA's retained bonus-updater dossier led this batch through collision geometry,
-paddle position, board powers, life/level transitions, ball ownership and the
-quantized trigonometry used for paddle rebounds. The connected original-x86
-oracle validates 21 additional maintained functions with 15,934 direct cases.
-Seven complete functions cold-replay exactly, adding 675 bytes. The repository
+The connected original-x86
+oracle validates 21 additional maintained functions with 15,934 direct cases. Seven complete functions cold-replay exactly, adding 675 bytes. The repository
 checkpoint has 76 maintained functions and 40 exact functions / 4,079 bytes.
 
 ## Entry evidence and acceptance
 
-Full inline Evidence and request logs are retained privately under
-`.analysis/rea/runs/`. This table reports Ghidra's owned instruction bytes and
+This table reports Ghidra's owned instruction bytes and
 complete enclosing span separately; a semantic claim does not upgrade its span
 to a byte-exact claim. Exact units compare complete dedicated COFF sections.
 

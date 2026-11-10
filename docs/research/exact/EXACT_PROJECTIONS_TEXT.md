@@ -6,7 +6,6 @@ Y-offset at0x402DE0 is complete191-byte exact again; height at0x402FB0 is a
 Prior exact/candidate and compiler-result statements below retain their
 historical scopes; aggregate current206 exact functions is unchanged.
 
-
 Four existing source bodies now emit complete original functions under the
 pinned VC4 recipe. Both projection results are stored in a real two-element
 array, and text traversal groups its existing pointer, offset and space count
@@ -76,9 +75,7 @@ proposal did not change its emission; the saved listings already used
 FILD/FISUB. The old private review's contrary explanation is superseded.
 
 There is no profile-specific source/layout, unused local, padding, assembly,
-volatile barrier, copied instruction or identifier search. Private diagnostics
-preserve frozen inputs, generated listings, failed hypotheses, full comparisons
-and independent review. Their zero-difference trial results were provisional
+volatile barrier, copied instruction or identifier search. Their zero-difference trial results were provisional
 until the fresh grouped replay of the stable source.
 
 The 22 existing owner scripts pass once against the new native Debug library.
@@ -92,11 +89,8 @@ fixture matrices, direct acceptance rows or distinct cases are added.
 
 Source presence remains 283 entries: 270 authored, one unknown-origin no-effect
 body and 12 runtime bodies. Origins remain 270 authored / 48 runtime /
-42 compiler-generated / 168 unknown. The 459-record snapshot is unchanged.
-The complete authored denominator, synchronized whole-game fidelity and
+42 compiler-generated / 168 unknown. The complete authored denominator, synchronized whole-game fidelity and
 >=95% complete-source objective remain unresolved.
 
-The private `.analysis/checkpoints/exact-projections-283-80` checkpoint retains
-this batch before verified cleanup and links to the previous origin checkpoint.
 The native alias comes from `build/native-exact-projections`; its identity is
 recorded in the current handoff. All historical native products remain separate.

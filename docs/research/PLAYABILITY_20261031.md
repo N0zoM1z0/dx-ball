@@ -107,13 +107,9 @@ no frame-pacing fix is claimed.
 | Windowed game-over/restart | `ev_00c6a4adad4d193270f26e017a7cf78487f39d97410d16769b9dd4dac98b7b76` |
 | Round prefix and failed exclusive activation predicate | `ev_6317be4a475d3695da551456f38ba4dbdee875974c2d6f9bd6445633b37d837c` |
 
-Complete responses are under `.analysis/rea/wine-background-20261101/`.
-Run inputs, controller snapshots, failures and receipts are under
-`.analysis/wine-background-20261101/`; native build/comparison records are under
-`.analysis/native-windows-build-20261101/`. Earlier failed fixture adaptations
+Complete responses are under `.analysis/rea/wine-background-20261101/`. Earlier failed fixture adaptations
 (cursor acquisition, screenshot dimensions and board-reader shape) are retained
-and are not promoted as game failures or successful checks.
-Directory suffixes retain their original run labels; this report's date follows
+and are not promoted as game failures or successful checks. Directory suffixes retain their original run labels; this report's date follows
 the local Europe/Berlin timezone.
 
 The full original fifty-board campaign, every power-up in live play, exclusive

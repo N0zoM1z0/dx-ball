@@ -47,9 +47,8 @@ new 313-byte step and complete 797-byte explosion candidate.
 VC4 uses the existing pinned recipe and its 18 recursively consumed project
 inputs. Every relocation is retained. Only the effects object is substituted
 into the production link; the other 35 game objects and their inputs verify
-unchanged. No additional legacy game-source compilation occurs.
-Native and MinGW each compile the effects source and relink their affected
-products. Current products and all exact receipts retain actual hashes.
+unchanged. No additional legacy game-source compilation occurs. Native and MinGW each compile the effects source and relink their affected
+products.
 
 ## Bounded existing behavior checks
 
@@ -65,7 +64,5 @@ that consume this source are refreshed without changing case counts, scopes
 or claiming fresh execution of their broader suites. Controlled COM/render
 boundaries do not establish live gameplay or hardware fidelity.
 
-Private proof: `.analysis/predicate-operands/`; seal:
-`.analysis/checkpoints/effect-zero-predicates-283-186/sha256.json`.
 REA performance and usability feedback continues only in the existing
 `/tmp/dxball_rea_feedback_20261010.md`, entry 40.

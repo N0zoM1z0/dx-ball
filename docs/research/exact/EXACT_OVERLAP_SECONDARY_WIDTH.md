@@ -40,5 +40,3 @@ Independent review verifies all six recursive compiler inputs, the 24-byte
 frame, every original saved instruction address and both gap jumps. The original
 full-byte Evidence `ev_6d9765478c63299676c89c2efc5bea93b134606a61edd8d3f818a72efde2c404`
 corroborates `ev_38098a89555f0662ce749fc26b6fe5b78bea2da42431812abbdbf888c320c2cd`.
-Private compiler, native selection, full-closure and build receipts are in
-`.analysis/overlap-secondary-scopes-20261013/`.

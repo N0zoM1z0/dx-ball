@@ -55,5 +55,3 @@ with complete 522-byte span
 `ev_a7b7f4ce05473f020601101338f2392f0e732597eaed9078a2bd13128a77a584`.
 
 Existing October 7/10 REA archives are reused; no provider session is needed.
-Full source inputs, objects, comparisons and reviews are retained under
-`.analysis/checkpoints/exact-file-services-283-134/`.

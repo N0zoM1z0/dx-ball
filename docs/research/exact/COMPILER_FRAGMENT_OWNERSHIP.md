@@ -59,15 +59,10 @@ Retained REA 4.1 / Ghidra 12.1.4 byte records cover every retired range:
 - Addition tail, 36 bytes:
   `ev_795fdc5edce200712d9b7ac9b38a3f49df961ce65494e746c8e0b352966e3859`.
 
-These records remain under
-`.analysis/rea/runs/2026-10-09T14-02-09.992Z-interactive-868197/`.
 Their complete bytes still match the verified target. They are reused records,
 not new REA 6.5 queries. The source/lifetime reconstruction is described in
 [fixed-point recovery](EXACT_FIXED_POINT.md).
 
-The reconciliation proof retains all old rows, the current producer/input
-identity, fragment mappings and fresh complete parent comparisons at
-`.analysis/compiler-fragment-ownership-20261016/verification.json`.
 `validate-tracking.py` now checks parent containment, source/build identity,
 actual configured unwind bindings or final-epilogue extent, and exclusion from
 independent source/exact/semantic ledgers. This preserves the callback addresses

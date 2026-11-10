@@ -51,18 +51,12 @@ identities stay unchanged, including blt sprite and the rotation renderer.
 The net loss is seven exacts. Small differing-position improvements do not
 recover original declarations or justify adopting a partial header view.
 
-Private `.analysis/surface-descriptor-contract-20261018/` retains the full
-transformation, recursive inputs, original/proposal identities, complete
-comparisons and independent reviews. No wider consumer compile, native build,
-relink, provider query, game or full replay follows the rejected model.
-The three compiles run serially on one CPU under CPU35%, memory high640MiB/
+No wider consumer compile, native build,
+relink, provider query, game or full replay follows the rejected model. The three compiles run serially on one CPU under CPU35%, memory high640MiB/
 max768MiB. Observed scope peak is 241,090,560 bytes, with zero high/max/OOM
-events. Disposable copied inputs and all six before/proposal objects are
-archived and every member hash verified before removal; current tested
-products and valid CMake caches remain.
+events.
 
-Cleanup removes26 copied inputs/products and releases139,264 allocated bytes
-net of archive/journal costs. Finalization initially compared generated literal
+Finalization initially compared generated literal
 names and a report-only build annotation as identities, then looked for literal
 data in comparison rows rather than mapped units. The corrected final check
 verifies every other result/binding field and the attested literal mapping;

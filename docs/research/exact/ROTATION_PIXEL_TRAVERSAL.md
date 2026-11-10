@@ -62,11 +62,8 @@ outside the current pixel acceptance scope.
 
 Two actual MT compiler stages are preserved. The accepted traversal stage is
 1,447 bytes. A subsequent typed four-byte stored divisor recovers m32 calls
-and emits 1,437 bytes, but loses the three preceding exact projection emissions.
-That stage is rejected; its source/object/receipts remain private. The accepted
-source and completed object are restored by hashes without compilation.
-No further name, declaration, storage, capacity or padding variant is tried.
-The two unclassified zero stores remain unimplemented; no fake local is added.
+and emits 1,437 bytes, but loses the three preceding exact projection emissions. The accepted
+source and completed object are restored by hashes without compilation. No further name, declaration, storage, capacity or padding variant is tried. The two unclassified zero stores remain unimplemented; no fake local is added.
 
 ## Exact projection membership
 
@@ -112,11 +109,8 @@ compared structurally with its retained predecessor: every build declaration
 and unrelated unit/candidate stays identical. Only bounded consumers repeat;
 no completed compiler, fixture or provider invocation is restarted.
 
-Private `.analysis/rotation-pixel-traversal/`; seal
-`.analysis/checkpoints/rotation-pixel-traversal-283-206/sha256.json`.
 Source-present 283, authored 270 and origins 115 runtime / 42 generated / 101
 unknown stay unchanged. Original spelling, the complete authored denominator,
 physical graphics/audio and complete campaign fidelity remain open. Optional
-REA feedback stays in the one existing `/tmp/dxball_rea_feedback_20261010.md`.
-Preserve both stages and unique evidence; deduplicate only hash-equal immutable
+REA feedback stays in the one existing `/tmp/dxball_rea_feedback_20261010.md`. Preserve both stages and unique evidence; deduplicate only hash-equal immutable
 copies against the immediately preceding screen-point seal.

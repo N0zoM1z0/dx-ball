@@ -68,14 +68,8 @@ observations without rerunning their queues. Only source input identities
 refresh in 235 semantic rows, including four primary raster source identities;
 all 249 scopes, counts, oracle identities and observations are retained. The
 other fourteen rows are byte-identical. No full replay, new provider query or
-game campaign runs. Tracking validates the maintained reports and ledgers.
-Heavy work is serial with CPU35%, memory high640MiB/maximum768MiB.
-Verified gzip roundtrips for both native preprocessing carriers and sharing
-four identical immutable headers release 112KiB of allocated storage. Unique
+game campaign runs. Tracking validates the maintained reports and ledgers. Heavy work is serial with CPU35%, memory high640MiB/maximum768MiB. Unique
 sources, objects, maps and observations remain retained.
 
-Private evidence is `.analysis/raster-win32-default-20261017/`: complete source
-and before snapshots, `compile.json`, `comparison-equivalence.json`,
-`native-equivalence.json`, `adoption.json`, `runtime.json` and `verification.json`.
 The prior 21-member first-board evidence remains historical; this change checks
 the affected boundary and current link. See [restored game entry](RESTORED_CRT_GAME_ENTRY.md).

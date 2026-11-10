@@ -18,9 +18,7 @@ and clears the primary buffer and device. Release returns for an empty slot,
 conditionally releases its buffer, calls the original heap-release API on the
 current record, and clears the slot.
 
-Loading initializes its file pointer before releasing the previous record.
-It calls the recovered malloc API for the record and publishes it in the slot.
-The loader reads that live slot for creation, lock/unlock, parameter queries,
+Loading initializes its file pointer before releasing the previous record. It calls the recovered malloc API for the record and publishes it in the slot. The loader reads that live slot for creation, lock/unlock, parameter queries,
 cleanup and the final filename write. The allocated-record local is used only
 for checking and publishing the allocation.
 
@@ -55,5 +53,4 @@ responses. A child-process `on_exit` callback records the loader's direct
 termination. The same cases still execute the actual controllers.
 
 Native and MinGW Release builds pass. VC4 links the new sound object with
-30 validated prior objects. Full inputs, evidence and products are retained
-in `.analysis/checkpoints/exact-sound-buffers-283-128/`.
+30 validated prior objects.

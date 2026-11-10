@@ -13,8 +13,7 @@ destination.bottom = (DxBallInt)((DxBallUInt)y + (DxBallUInt)height);
 
 ## Original consumed operations
 
-Three retained REA carriers establish the complete adapters and their consumed
-DWORD results. Each ADD/store reaches the actual Blt call without an overflow
+Each ADD/store reaches the actual Blt call without an overflow
 guard; nine plain-Blt and fourteen keyed/stretch instruction encodings are
 independently checked against the pinned original PE.
 
@@ -111,14 +110,8 @@ is a current-source VC4 build, then a focused diagnosis of the retained menu
 initialization timeout with additional read-only stage observations. A prepared
 relink was deferred before execution when this source gap was identified.
 
-Private `.analysis/blt-coordinate-wrap-20261019/` retains the fixed proposal,
-three primary seals,full comparisons,independent source/result reviews,all
-counterexamples,current checks and receipts. The candidate/inventory reviews
-are under `.analysis/authored-readiness-20261019/`. Root reviews cover stretch
+Root reviews cover stretch
 and PCX; the independent reviewer rechecks them and owns the full capture proof.
-Closed copies,temporary products and executed helpers are member-size/SHA
-verified in an archive before exact-list cleanup; current products/caches stay.
 
-Cleanup verifies all66 members of a1,356,538-byte archive before removal,
-releasing8,372,224 allocated bytes net before small receipts. All926 protected
+All926 protected
 file identities survive; the separate failed-play evidence remains untouched.

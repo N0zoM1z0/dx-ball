@@ -84,8 +84,7 @@ remain1543/216 and1592/213. Installation uses one complete selected owner,
 never selected old companion objects.
 
 After a verified54-member rollback, the whole source/object and five data files
-are reconciled. All270 current authored receipts verify across30 closures;
-the manifest retains its complete bytes/mode/nanosecond-mtime seal. The249
+are reconciled. The249
 semantic scopes, cases and row order stay fixed: only235 dependency maps and
 four primary raster source hashes refresh. Those historical case sets are not
 represented as rerun.
@@ -105,15 +104,8 @@ Those models are rejected, not silently adopted or repeated.
 
 Seven distinct frozen compiles cover108 full body instances/1821 actual binding
 instances across32 functions. No provider, debugger, new compiler-ID observation,
-game relink/play, full historical replay or exceptional-unwind execution follows.
-The original141-record frontend snapshot, originals, current products and useful
-caches remain protected. Closed intermediates require member-verified archival
+game relink/play, full historical replay or exceptional-unwind execution follows. Closed intermediates require member-verified archival
 before exact-list retirement.
-
-Private authorities are `.analysis/triangle-root-source-search-20261021/`,
-`.analysis/triangle-clamp-source-search-20261021/` and
-`.analysis/display-lifetime-source-search-20261021/`, including independent source/
-result reviews, complete mappings, native72 and the verified54-member rollback.
 
 ## Edge-setup scope control, October21
 
@@ -131,13 +123,10 @@ differs as retained. All28 checked local/parent-label destinations agree.
 The model is rejected without source/object adoption, native build or retry.
 Current triangle source/object stay0e541ea9/a56b60c8.
 
-Private `.analysis/triangle-edge-scope-source-search-20261021/` retains the plan,
-full comparison, independent source/result reviews and preservation guards.
 Its candidate source SHA256 is
 `a10effd617d3eafa6988981cda3c022bbd831429ef1ce5f5529a9f50245601c5`;
 full compact input/flag digest is
-`5abb163ddcbd3abe6a23a58cb7e8517f4f7cb3d69409a5187f6a1ba3ee5cc5b7`.
-This closes only that one scope control, not future eligible natural-source
+`5abb163ddcbd3abe6a23a58cb7e8517f4f7cb3d69409a5187f6a1ba3ee5cc5b7`. This closes only that one scope control, not future eligible natural-source
 families under the standing search authorization.
 
 ## Ordered immutable clamp controls, October22
@@ -155,6 +144,4 @@ the offline repair retains all61 non-FILE identities,94 code bindings and25
 metadata bindings without recompiling or weakening local-target comparisons.
 No source/native adoption or new provider query follows these controls.
 
-Private `.analysis/triangle-const-clamp-source-search-20261022/` retains both
-results and the mapping correction, with verified closed evidence archived
-alongside the adopted paddle-owner checkpoint. Reuse these current results.
+Reuse these current results.

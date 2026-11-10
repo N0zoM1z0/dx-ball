@@ -37,15 +37,8 @@ exact audit. The last link takes 22.362 seconds at 35% CPU, with peak memory
 | `build/vc40-restored-crt/build.json` | `1551821330f892615e78cb0fa0d3a16d525a4074b5503fd93627c14695bf2891` |
 | `build/vc40-restored-crt/dxball.map` | `524f10a78f63422fc8ca79bf665180efb79ff098bfb79be6c86a4d4c686390f2` |
 
-## Retained evidence
-
-- Authored audit: `.analysis/pcx-file-prefix-source-search-20261022/completion-audit.json`.
-- Link/basic/editor/round checkpoint: `.analysis/current-vc4-exact270-20261022/current-checkpoint.json`.
-- Expanded playability and cleanup: `.analysis/playability-exact270-20261022/current-checkpoint.json`.
-- Public verification metadata: [playability-status.json](../../config/playability-status.json).
-
-Earlier images, cold builds and failed runs are described in the
-[preceding build record](https://github.com/N0zoM1z0/dx-ball/blob/9752a6954ec1bea5da2885ba236ca51a5c8976a0/docs/research/CURRENT_VC4_BUILD.md).
+The current exact ledger and recipes are `config/matches.csv` and
+`config/match-units.toml`. Historical experiments are not build prerequisites.
 
 ## Native Windows rebuild, October 31
 
@@ -68,7 +61,7 @@ October 22 image. Every code/data/import/relocation section otherwise agrees,
 with the same RVAs and sizes. The build does not launch the game.
 
 Retained proof is under `.analysis/native-windows-build-20261101/`, including
-`authored-comparison.json`, `image-comparison.json`, the compiler transcript and
+`authored-comparison.json`, `image-comparison.json` and the
 native build receipt. The repo-local copy is `build/dxball-native-windows.exe`;
 the Windows package writes `build/game/dxball.exe` and preserves its existing
 tested `game/dxball.exe`. [Build and play](../BUILD.md#native-windows-source-build)

@@ -82,10 +82,5 @@ including 34 authored candidates. No full replay or provider query runs.
 Remaining function recovery, exceptional paths, complete gameplay and physical
 Windows graphics/audio remain open. Ports remain deferred.
 
-Private `.analysis/restored-crt-gameover-20261017/` retains the actual CLI run,
-reports, 297 states, four frames, before/after scores, frozen helper/source
-inputs, selected objects and verification. The executed image/map/reader reuse
-byte-verified carriers from the editor checkpoint. After retaining evidence,
-49 verified automated working copies are removed, releasing 1,703,936 allocated
-bytes. Manual runtimes and other profiles remain untouched. Heavy work is serial
+Manual runtimes and other profiles remain untouched. Heavy work is serial
 under CPU 35%, memory high 640 MiB / maximum 768 MiB.

@@ -28,12 +28,6 @@ the fallback pending-buffer decrement and final function return.
 
 Two saved, target-bound REA dossiers supply every original instruction:
 
-- Stop: `ev_c16f07a25664c6b672390f14698cb3e71c3df902266c28f23d2e1b122f50b1ab`,
-  `04-analyze_function.json` in private run
-  `2026-10-07T15-16-14.218Z-interactive-3602154`.
-- Callback: `ev_b6d7ad536b3a34effbc5d45b98de2b6431f5e966064bdca80b546b357a3fe9ba`,
-  `05-analyze_function.json` in that run.
-
 Both bodies are contiguous and include their complete returns. Original
 instruction addresses match every emitted instruction boundary. The existing
 typed import bindings cover reset, unprepare, close and stream-out; comparison
@@ -73,9 +67,3 @@ Native and MinGW products rebuild. VC4 links the final matching MIDI object
 with 35 hash-verified unchanged objects; no further legacy source compile is
 needed. All 201 current exact input closures and 247 unchanged historical
 semantic scopes verify. Unrelated historical tests are not rerun.
-
-Working proof, both compiles, original-dossier identities, focused Oracle,
-negative controls and product hashes are retained under
-`.analysis/midi-operation-scopes/`. The independent checkpoint is
-`.analysis/checkpoints/midi-operation-scopes-283-201/sha256.json`, with explicit
-dependencies on the preserved before/stage objects and original REA carriers.

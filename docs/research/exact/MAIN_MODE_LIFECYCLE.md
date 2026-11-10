@@ -28,11 +28,9 @@ One REA session read the three complete spans, filling fifteen missing jump
 bytes and sixty table bytes. The resulting full reads are
 `ev_559991ddd64e8b3235054ed44166837b75c9fd1bd9f00972195fc11adbce09d1`,
 `ev_14b5b9eaba948c539a750307bf454a8e44ad09c4b35b87b240bf6ce66838b3bc`
-and `ev_c4d6ac54ad2f975adcbcfe6266a6653708d89e878d9bd6791c45adbc51733657`.
-All bytes equal the pinned PE. Each gap is a five-byte jump to the corresponding
+and `ev_c4d6ac54ad2f975adcbcfe6266a6653708d89e878d9bd6791c45adbc51733657`. All bytes equal the pinned PE. Each gap is a five-byte jump to the corresponding
 post-table exit, following an unconditional transfer. Original source spelling
-remains inferred. The provider closed with snapshot495; complete responses and
-before/after snapshots are under `.analysis/main-mode-byte-review/`.
+remains inferred.
 
 Nine whole comparisons apply 203 actual relocations. The three new units have
 36; six previous exact runtime units have 167 and remain exact. This includes
@@ -47,7 +45,6 @@ refreshed. Native, VC4 and MinGW builds pass; the VC4 link reuses 35 valid
 objects and compiles no additional sources. Totals are 143 exact functions,
 23,090 code bytes and 136 metadata bytes.
 
-Full inputs, objects, explicit bindings and receipts are retained under
-`.analysis/exact-main-mode/`. This connects the exact main dispatcher to
+This connects the exact main dispatcher to
 original lifecycle calls across all five modes. Device reset and surface
 synchronization remain the next related source boundary to inspect.

@@ -29,7 +29,4 @@ functions remaining nonexact.
 
 The original body and boundaries reuse REA evidence
 `ev_a3dbe09d41da07ce2638ea83d054f31af646f507b1cedf2495bd03630db46f7b`,
-operation 00 of run `2026-10-07T08-21-37.400Z-interactive-2545594`.
-No new provider request is needed. Private comparisons, compiler inputs,
-build logs, oracle receipt and verified compressed product copies are retained
-in `.analysis/screen-position-record-20261012/`.
+operation 00 of run `2026-10-07T08-21-37.400Z-interactive-2545594`. No new provider request is needed.

@@ -32,8 +32,5 @@ to be absent; the completed-case counter shows all 102 comparisons passed.
 The report consumer is corrected and the receipt recovered without replaying them.
 
 Linux and MinGW builds pass. VC4 links this one matching object with 36
-hash-verified unchanged objects, with no additional legacy source compilation.
-All 228 accepted compiler closures and full extents pass. Historical semantic
+hash-verified unchanged objects, with no additional legacy source compilation. All 228 accepted compiler closures and full extents pass. Historical semantic
 input inventories refresh without rerunning unrelated fixtures. No game runs.
-Private receipts and completed products are retained in
-`.analysis/ranking-insertion-cursor-20261012/`.

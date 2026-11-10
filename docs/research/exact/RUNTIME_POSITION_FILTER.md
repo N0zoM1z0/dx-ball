@@ -8,11 +8,8 @@ The shipped `ftell.c` uses ordinary differences between pointers into the same
 buffer, not differences between converted integer addresses. Restoring both
 expressions and its seek-result assignment condition closes432 bytes and all
 six actual relocations. Coherent backed spans and representable pointer
-differences are required; explicit32-bit offset wrapping remains unchanged.
-All347 previous exacts and101 other candidates retain their results. One
-compiler set, no runtime/provider work. The complete pinned archive member and
-retained REA assembly independently cover the original. Receipt:
-`.analysis/stream-position-original-pointer-differences-20261015/verification.json`.
+differences are required; explicit32-bit offset wrapping remains unchanged. All347 previous exacts and101 other candidates retain their results. One
+compiler set, no runtime/provider work.
 
 Position calculation preserves negative-count clamping, the buffered/unbuffered
 split, newline expansion, read-count-zero behavior, EOF seeking/restoration,
@@ -25,12 +22,10 @@ avoiding the observed MinGW errno declaration/import conflict.
 The shipped CRT `ftell.c` establishes register stream/cursor locals, a single
 adjusted offset, path-local scans and the shared read-count-zero return. Direct
 low-I/O expressions retain the record reload after seeking; EOF scanning captures
-its endpoint before changing the read total. This improves413/432/360 to431/432/324.
-The local-lifetime-only400/381 trial is not selected. Three compiler sets preserve
-all341 exacts and107 other candidates; no runtime tests or provider work.
-Full432-byte pinned member and retained REA assembly
+its endpoint before changing the read total. This improves413/432/360 to431/432/324. The local-lifetime-only400/381 trial is not selected. Three compiler sets preserve
+all341 exacts and107 other candidates; no runtime tests or provider work. Full432-byte pinned member and retained REA assembly
 `ev_b1b7a9b8fc8b250f41653267342b884951a9eb17e9dadbd03d965a4115bf63b4`
-remain authoritative. Receipt `.analysis/stream-position-register-owner-20261014/verification.json`.
+remain authoritative.
 
 Filtering terminates recognized three-parameter C++ exceptions, otherwise checks
 the saved callback with the genuine C++ ValidateExecute API before invoking its
@@ -40,12 +35,9 @@ is original4-byte COFF BSS; its PE address lies in the zero-filled virtual tail,
 not file-backed bytes. Native storage grows with pointer width. No initializer
 or OS installation execution is claimed.
 
-All310 old exact and101 candidate producers retain their input/object hashes.
-Current inventory541/source423/exact312/code68,690/metadata136/candidates102
+All310 old exact and101 candidate producers retain their input/object hashes. Current inventory541/source423/exact312/code68,690/metadata136/candidates102
 (34 authored/68 runtime);249 semantic rows remain unchanged. Focused VC4/native/
 i686 compilation and complete comparisons ran. The failed state consumer is
-corrected from actual PE section bounds without recompiling the unchanged filter.
-One closed five-record REA run; no runtime/game tests. Private evidence and unique
-trials remain in `.analysis/runtime-position-filter-20261014/`. The initial signal
+corrected from actual PE section bounds without recompiling the unchanged filter. One closed five-record REA run; no runtime/game tests. The initial signal
 name hypothesis is rejected; signal registration and filter installation remain
 open, together with ftell byte matching and game integration.

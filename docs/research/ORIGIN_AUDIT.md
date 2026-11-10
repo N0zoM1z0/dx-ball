@@ -27,8 +27,7 @@ The current verifier checks 54 code sections /6,026 bytes /55 code-origin rows,
 two data sections /594 bytes, and three import jumps /18 bytes: 58 distinct
 origin rows. Five actual-verifier negative controls pass. Game source, function
 exactness, semantic scopes and production products are unchanged. Both new
-provider sessions closed. Private proof `.analysis/crt-data-frontier/`; seal
-`.analysis/checkpoints/crt-data-definitions-283-171/sha256.json`.
+provider sessions closed.
 
 ## Named imports and complete forwarding code
 
@@ -79,8 +78,6 @@ Only eight origin rows change; game source, 171 function exact acceptances,
 247 semantic scopes and current products are unchanged. No compiler, provider,
 SDK runtime or gameplay process was started. DLL implementation, asynchronous
 fault/unwind behavior and unique original source/link selection are unproven.
-Private proof `.analysis/import-origin-closure/`; immutable seal
-`.analysis/checkpoints/import-origin-closure-283-171/sha256.json`.
 
 ## Verified cross-section CRT definitions
 
@@ -109,18 +106,11 @@ The observation also agrees with the verified original PE. Their complete
 
 The preceding manifest verified 34 complete sections /4,279 bytes /35 imported
 entry rows. The eight new rows move from unknown origin to runtime dependency;
-this does not recover additional game source or create function exactness.
-Independent negative controls reject a consumer placed before its unverified
+this does not recover additional game source or create function exactness. Independent negative controls reject a consumer placed before its unverified
 export, a section shifted one byte and a forged conflicting export address.
-No compiler, provider or gameplay process was started; production products,
-semantic scopes and function acceptance receipts are unchanged.
 
-Private receipts, controls and the dependency projection are retained in
-`.analysis/origin-closure/`; the immutable seal is
-`.analysis/checkpoints/origin-closure-283-171/sha256.json`.
 Repeat the bounded origin check with
-`scripts/repo-python scripts/verify-runtime-origin-sections.py`.
-Candidate discovery remains diagnostic; aliases with conflicting placements
+`scripts/repo-python scripts/verify-runtime-origin-sections.py`. Candidate discovery remains diagnostic; aliases with conflicting placements
 are not added to the binding map. Original library selection, source spelling,
 unknown-entry ownership and whole-game fidelity remain unresolved.
 

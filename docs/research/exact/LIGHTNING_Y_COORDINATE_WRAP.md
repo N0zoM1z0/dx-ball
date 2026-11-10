@@ -64,13 +64,8 @@ peak57,544,704 bytes; canonical checks take15.520s, peak50,987,008 bytes.
 All report zero high/max/OOM events. There is no full replay, game rebuild or
 game run at this source checkpoint.
 
-Private authority: `.analysis/lightning-y-wrap-20261019/`, including the question,
-original-byte checks, complete comparison, root review, instrumented failure and
-success, canonical check, adoption and authored-coverage receipts. The review
-is by the root agent, not independent. Closed copies, temporary products and
-executed helpers are archived and member-size/SHA verified before removal;
-current products, valid caches and unique evidence remain.
+The review
+is by the root agent, not independent.
 
-Cleanup member-verifies57 files in a1,303,455-byte archive before exact-list
-removal, releasing7,733,248 allocated bytes net before small receipts. All925
+All925
 protected file identities survive; the failed-play evidence remains untouched.

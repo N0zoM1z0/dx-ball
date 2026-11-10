@@ -1,81 +1,64 @@
 # Contributor reconstruction workflow
 
-Authored exact recovery is complete. Start with [the handoff](HANDOFF.md) and
-[progress](../PROGRESS.md). Follow the user's current documentation/build scope;
-long campaign and frame-rate sampling runs have been stopped.
-[AGENTS.md](../../AGENTS.md) sets execution limits and publication rules.
+Authored recovery is complete. Start with [the handoff](HANDOFF.md) and
+[progress](../PROGRESS.md), then follow the user's current scope. Long campaign
+and frame-rate sampling runs were stopped. [AGENTS.md](../../AGENTS.md) sets
+execution limits and publication rules.
 
-## Establish the question
+## Source work
 
-Inspect the worktree and the relevant owner note. Use `config/functions.csv`
-for entry ownership and `config/function-origins.csv` for origin classification.
-Reuse saved REA evidence before opening another session. Identify the behavior,
-call boundary or compiler difference the next step will resolve.
+Read the relevant owner note. `config/functions.csv` maps original entries;
+`config/function-origins.csv` classifies authored, runtime and generated code.
+Use the [bounded source-candidate policy](SOURCE_CANDIDATE_SEARCH.md) for new
+hypotheses. Original project files, PDBs and uniquely known identifiers are not
+prerequisites.
 
-For source recovery, follow the authorized [bounded source-candidate policy](SOURCE_CANDIDATE_SEARCH.md).
-Natural identifiers, declaration order, scope, translation-unit organization and
-build-context hypotheses may be tested as finite families. Keep each hypothesis
-and its affected inputs explicit. Missing historical project files do not prevent
-these trials; the policy describes how to distinguish a matching reconstruction
-from uniquely recovered source spelling.
+Before compiler/binary work, verify the target, toolchain and tracking. Write
+typed C/C++ shared by portable and legacy builds. Preserve ABI, widths,
+ownership, state writes and call order. Freeze each distinct candidate and
+compile it once. Compare the complete affected closure, including accepted
+companions, relocations, local targets, literals and attached metadata. Reuse
+unchanged outputs and receipts. Do not combine winners from incompatible inputs.
 
-Before new binary/compiler work, verify its inputs:
+Use temporary outputs for experiments; leave canonical objects, receipts and
+recorded historical results intact during validation. A failed helper does not
+require rerunning a successful compiler. Repair the helper and reuse its output.
+Adoption updates the actual source owners, recipes and affected ledgers.
 
-```bash
-scripts/repo-python scripts/verify-target.py
-scripts/repo-python scripts/verify-toolchain.py
-scripts/repo-python scripts/validate-tracking.py --require-target
-```
+## Checks
 
-Use the pinned [REA commands](REA.md) and Ghidra provider. Retain full responses,
-Evidence IDs and unresolved gaps in `.analysis/rea/`, then save/close the session.
+Default CI is `scripts/repo-python --stdlib scripts/ci.py`: full-checkout syntax,
+ledger consistency, CMake configuration and private-artifact checks. It works
+without original assets or private tools. Add `--build` for portable compilation.
+Run comparator and behavior tests when their code or inputs change. Documentation
+work uses current ledgers and existing conclusions, without a new game build.
 
-## Change and verify one coherent scope
+Build serially with CMake `--parallel 1`. Compiler/provider/Wine jobs use one
+allowed CPU in the 35% CPU, 384/512 MiB user systemd scope. Use the REA wrapper's
+256 MiB heap and a silent audio sink. See [REA operations](REA.md).
 
-Write typed C/C++ shared by portable and legacy builds. Follow each function
-through its exits and inline data, and establish structures from producers and
-consumers. Preserve ABI, integer widths, state writes and resource ownership.
-Use the real shared API when connecting owners or adapting an existing fixture.
+For requested live checks, use a separate runtime copy and record the tested EXE
+hash, environment and observed state. Distinguish normal application exit from
+observer cleanup. Compare the original under the same conditions when a failure
+needs a control. Follow [background execution](BACKGROUND_PLAY.md).
 
-Freeze each distinct candidate, compile it once and compare the complete affected
-closure. Reuse results with identical source/header/flag identities. A proposed
-source split must verify every affected object before adoption.
+## Retention and publication
 
-For an exact claim, record all compiler inputs, recursive project headers, flags,
-extent and relocation bindings in `config/match-units.toml`. Retain the previous
-object/report before replacing it. Replay all accepted units sharing changed
-inputs, literals or metadata. Compare complete spans and literal contents; the
-[local-target guard](../research/exact/EXACT_LOCAL_TARGET_GUARD.md) also checks
-actual internal COFF destinations.
+Keep necessary original inputs, the locked tools actually used, Ghidra projects,
+current source/ledgers, complete comparison scripts and current useful products.
+Keep knowledge as concise conclusions, remaining questions and failed approaches
+worth avoiding. A file's age, old citation or former passing result is not by
+itself a reason to keep it. Delete obsolete probes, duplicate evidence, archives
+and cleanup reports without creating replacement archives or an audit framework.
 
-Build the affected target using [BUILD.md](../BUILD.md), with CMake `--parallel 1`.
-Choose focused checks for changed behavior. Documentation and status edits use
-retained receipts and ledger checks; they do not require another game build.
+Reuse identical Factory tools when available. Share immutable programs; keep each
+game's Wine prefix, Ghidra project and writable state separate. Test uncertain
+components while temporarily unavailable; restore on failure, remove the temporary
+copy after success. Choose affected compile/link/resource/runtime checks, without
+a default full-graph replay. Check the original environment before blaming a
+trim for a failed test.
 
-## Verify live behavior
-
-Use a separate runtime copy and record the tested executable hash, environment,
-input path and observed state. Keep normal application exit distinct from observer
-cleanup. For a failure, retain the failing trace and compare the original under
-the same conditions when that will narrow the cause. Follow the environment and
-activation distinctions in [the playability record](../research/PLAYABILITY_20261031.md).
-Use [background execution](BACKGROUND_PLAY.md) when a host desktop must remain
-undisturbed. A Windows foreground harness is not an acceptable substitute.
-
-Run one writable compiler/provider/Wine session at a time under the resource limits
-in AGENTS.md. Route automated audio to the dedicated silent capture sink.
-
-## Record and publish
-
-Update the owner note with the result, useful evidence and remaining question.
-Change only the ledgers affected by the work: `implemented.csv` for source,
-`semantic-acceptance.csv` for scoped behavior and `matches.csv` for exact units.
-Update `config/playability-status.json` when the tested image or live results
-change, then run `scripts/repo-python scripts/progress.py`.
-
-Validate tracking after ledger changes. Preserve input/product identities for
-new claims. Archive useful closed evidence and verify member size, SHA and mode
-before retiring duplicate probes; retain current products and incremental caches.
-
-Commit and push the verified checkpoint to `origin/main` with an English subject
-beginning `gpt-6.1-sol: `. Keep originals, toolchains and raw evidence private.
+Update only affected ledgers. `config/playability-status.json` keeps dated checks
+bound to their tested image; regenerate progress when those claims change.
+Commit and push verified checkpoints to `origin/main` with English subjects
+beginning `gpt-6.1-sol: `. Keep originals, tools and raw evidence untracked.

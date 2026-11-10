@@ -91,13 +91,7 @@ fixture does not establish the original campaign, terminal index50, successful
 focus recovery or physical graphics/audio fidelity. Authored exact work stays
 first; ports remain deferred.
 
-Private `.analysis/restored-crt-round-20261017/` retains the passing CLI run,
-initial failure, frozen inputs/objects, 135 passing states, complete files,
-captures, sampling control and linkage verification. Executed image/map/reader
-carriers are reused only after full-byte verification.
-After retaining evidence, 49 verified automated runtime copies are removed and
-236 frozen inputs are archived, releasing 2,920,448 allocated bytes across
-those cleanup operations. Other profile and manual runtime directories remain
+Other profile and manual runtime directories remain
 untouched. Heavy work stays serial under CPU 35%, memory high 640 MiB / maximum
 768 MiB.
 
@@ -129,10 +123,7 @@ observation method, not proof that reader startup caused the first failure.
 Neither attempt has a new HRESULT trace establishing the known focus mechanism.
 Keep both outcomes; do not restart either producer or patch game code for them.
 
-Private `.analysis/current-restored-crt-entry-20261017/` retains the failed
-attempt; `.analysis/current-restored-crt-persistent-entry-20261017/` retains the
-passing run, complete frozen compiler inputs including C++, AST proof, bounded
-states, capture, real exit and verification. All three recorded owned process
+All three recorded owned process
 identities are absent. Measured average CPU is32.1% of one CPU, peak301.668 MiB,
 with no memory-limit events under the35% /640 /768 MiB scope. Audio remains on
 the silent sink and the default sink stays unchanged. After byte verification,

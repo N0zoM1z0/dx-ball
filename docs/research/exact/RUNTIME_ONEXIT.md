@@ -47,11 +47,9 @@ The new closed REA run `2026-10-13T15-31-15.686Z-interactive-1778538` retains si
 info/pseudo/assembly records. Registration assembly:
 `ev_cd653b68a2a67d545be2b4256f898e06775c644f44f51332dfd8105ef3aae8a0`;
 atexit assembly:
-`ev_8e8d8d02968523f24d04529077d84082b5b35f2ce9e4e8cee92bf62cec4b3829`.
-Existing [termination evidence](../TERMINATION_OWNER.md) supplies all three
+`ev_8e8d8d02968523f24d04529077d84082b5b35f2ce9e4e8cee92bf62cec4b3829`. Existing [termination evidence](../TERMINATION_OWNER.md) supplies all three
 controls, including complete32-byte walker instructions. All five whole pinned
 CRT sections independently match after every actual relocation.
-Private proof: `.analysis/runtime-onexit-20261013/verification.json`.
 
 Source340/exact263/64,657 code bytes; metadata136 and historical semantic249
 unchanged. All260 preceding exacts and66 candidates retain unchanged producers

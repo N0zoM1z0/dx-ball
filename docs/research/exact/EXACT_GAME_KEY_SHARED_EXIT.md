@@ -65,10 +65,7 @@ Closed full-read evidence is reused from
 [earlier key recovery](EXACT_WINDOW_KEYS.md):
 `ev_1df32140229eb7c88b6fe57d48814e8f138354ceeba1fd2a604233504998357a`,
 plus its complete literal/double reads. All retained bytes independently match
-the verified original. No provider/setup query. Private recipes, three stages,
-complete comparisons, code/table partition, selected cases and product hashes:
-`.analysis/game-key-shared-exit/`. Immutable seal:
-`.analysis/checkpoints/game-key-shared-exit-283-187/sha256.json`.
+the verified original. No provider/setup query.
 
 Game-key's source/CFG hypothesis is closed. Further recovery must inspect actual
 remaining whole-controller evidence; do not retry its empty cases or switch
@@ -78,11 +75,7 @@ proof does not authorize adding an invented operation or padding. Nearly
 complete original source, authored denominator and synchronized game/audio
 fidelity remain unproved.
 
-Cleanup verifies 207 owned files / 145 immutable dependencies and four products.
-97 scoped hardlinks replace 4,501,504 single-link allocated bytes; 62 completely
-archived stage copies are removed, accounting 1,487,650 logical file bytes.
 These are separate counts, not a measured device-free-space delta. Unique
 before/current state, successful complete comparisons, both earlier stages and
 selected cases remain in the seal. The final reviewer resolves every removed
-stage payload through the immutable path. Supplemental post-cleanup identities
-bind the cleanup receipt and current documentation.
+stage payload through the immutable path.

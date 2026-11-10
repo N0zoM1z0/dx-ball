@@ -77,22 +77,12 @@ native checks pass. No unchanged producer is repeated to repair a report.
 
 One compiler observation reuses the verified observer through pinned REA6.5.0;
 its complete process Evidence is
-`ev_ea1fa86068e3aa64eee471a3adf86284cf00253f8a3adae58698389910bf1dda`.
-The SUB control retains a distinct SUB tree rather than restoring ADD. Primitive
+`ev_ea1fa86068e3aa64eee471a3adf86284cf00253f8a3adae58698389910bf1dda`. The SUB control retains a distinct SUB tree rather than restoring ADD. Primitive
 interface context supplies the eligible next hypothesis. No Ghidra import or
 claim about the selected model's unobserved numeric frontend IDs follows.
-Full process JSON is under `.analysis/rea/lightning-word-call-20261022/`.
 
 Original complete function/frame Evidence is
 `ev_f8610be2baa2323aec8fcd14317794aebe74eefa78b4d66c9cf874ca117eb5bc`;
 the absolute helper is
-`ev_d9b6b3ea9ea591f8c9bec57a2a57ea2f3846ea61b2d0ba246d3b7248d8b05b94`.
-Private authority is `.analysis/lightning-word-call-source-search-20261022/`:
-frozen plans/producers, full coherent proof, native receipts, recoverable
-rollback and member-verified closed evidence. Current accepted products and
-useful caches stay; obsolete copies retire only after archive verification. Cleanup verifies540
-archive members, retires454 obsolete files and releases3,100,672 allocated bytes
-net before small receipts.
-All heavy work is serial on CPU0/35%, memory high384MiB/max512MiB.
-Compiler/observation peak is344,068,096 bytes; native build/check peak is
+`ev_d9b6b3ea9ea591f8c9bec57a2a57ea2f3846ea61b2d0ba246d3b7248d8b05b94`. All heavy work is serial on CPU0/35%, memory high384MiB/max512MiB. Compiler/observation peak is344,068,096 bytes; native build/check peak is
 43,417,600/59,703,296 bytes, with zero recorded memory events.

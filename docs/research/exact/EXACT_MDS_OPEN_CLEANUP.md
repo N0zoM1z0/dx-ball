@@ -24,9 +24,7 @@ Both remain candidates. All actual relocations are applied across their full
 spans. The larger raw loader difference count reflects shifted instructions
 and frame storage; it is not an exactness improvement. Release (149 bytes) and
 pause (133 bytes) remain fully exact. All 186 current exact identities preserve
-33,001 code bytes and 136 accepted metadata bytes. The unchanged converter
-source remains 343/343 bytes, now with 41 differences after canonical local-home
-reassignment; its preceding 38-difference receipt remains historical.
+33,001 code bytes and 136 accepted metadata bytes.
 
 The complete loader has 135 original and 140 current instructions. Ordinary
 operands and all thirty direct branch targets correspond through nine frame
@@ -70,12 +68,8 @@ The final library passes 253 existing parser cases, 284 loader cases, eighty
 direct wrapper cases and 134 separate connected checks, including replacement,
 restart, cleanup failures and all six original songs. Their constructors,
 matrices, ordered effects, payload/context comparisons and callback ABI checks
-remain intact. The loader-only stage has its own retained product and receipt;
-it is not relabeled as a final-parser result. Native and MinGW rebuild only
+remain intact. Native and MinGW rebuild only
 the MIDI owner in each valid stage. Final VC4 links one matching MIDI object
-and 35 verified unchanged game objects, without additional compilation.
-The 235 affected historical semantic input inventories are refreshed, not
-rerun. Private receipts and the immutable checkpoint are
-`.analysis/source-dataflow-frontier/` and
-`.analysis/checkpoints/mds-cleanup-flow-283-186/`. Hardware audio delivery,
+and 35 verified unchanged game objects, without additional compilation. The 235 affected historical semantic input inventories are refreshed, not
+rerun. Hardware audio delivery,
 exceptional execution and complete original-source fidelity remain unproved.

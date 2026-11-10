@@ -35,9 +35,7 @@ entries. The 24 parent-owned fragments remain separate.
 The original bytes are checked against retained REA Evidence
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`,
 under its original provider identity. No new analysis session, compiler or
-runtime probe is needed for these two origin comparisons. Private extraction,
-placement, every decoded control edge and full comparisons are retained in
-`.analysis/crt-dispatch-tail-origins-20261016/`.
+runtime probe is needed for these two origin comparisons.
 
 All 464 source entries, 376 accepted exacts, 88 complete candidates and 249
 semantic rows retain byte-identical ledgers and comparison reports. The subsequent

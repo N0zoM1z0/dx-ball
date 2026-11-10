@@ -37,9 +37,7 @@ aggregate's unresolved intermediate helper.
 
 The full read is retained for remaining XP/XT work. REA close reported
 `cleanup_incomplete` after a process-ownership token mismatch. Both reported
-PIDs and its private directory were confirmed absent afterward. Complete
-per-read Evidence and the error remain; no cumulative snapshot was saved and
-the provider was not restarted to repeat the successful read.
+PIDs and its private directory were confirmed absent afterward.
 
 ## Actual isolated VC4 execution
 
@@ -70,13 +68,8 @@ bytes also match after actual image relocations. All380 exact byte results,
 ledger are byte-identical. Source/inventory counts remain468/543. No full
 replay, game build or campaign ran.
 
-Recipe: `config/runtime-initializer-sections.json`. Private evidence:
-`.analysis/crt-c-initializer-sections-20261016/`, including `source/`,
-`verification.json`, `link.json`, `probe-terminal.json`, `xi-only/`,
-`provider-cleanup.json` and `adoption.json`. Heavy work is serial, one allowed
+Recipe: `config/runtime-initializer-sections.json`. Heavy work is serial, one allowed
 CPU, CPU35%, memory high640MiB/maximum768MiB, Ghidra heap256MiB.
-Sharing33 identical immutable carriers reclaimed about10.5MiB; unique trial
-sources, errors, evidence and probe products remain.
 
 XP/XT still use ordinary default arrays. Their linker sections, remaining
 FP/CRT state and low-level functions, final original-compiler game build/play

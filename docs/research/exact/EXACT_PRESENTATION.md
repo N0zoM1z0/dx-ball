@@ -60,4 +60,3 @@ instructions and branch destinations agree.
 
 The native build and the existing display/entity Oracles pass with unchanged
 cases. Windows VC4 game rebuilding reuses the matching compiled objects.
-Full evidence and products are retained in `.analysis/exact-presentation/`.

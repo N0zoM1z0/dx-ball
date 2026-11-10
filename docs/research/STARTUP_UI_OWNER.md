@@ -94,9 +94,7 @@ UI cases: 216 each measurement/drawing/centering and 486 line cases. Actual
 glyph bodies, signed bytes, NUL, duplicate/excluded codes, endpoint order,
 octants, retries and whole padded buffers are compared. The fresh VC4 real-Wine
 ball/pause/editor/save/reload/exit flow passes with 77 read-only states, five
-captures, expected saved-bank hash, exit zero and all 49 originals unchanged.
-Receipts are in `.analysis/exact-ui-text-line/` and
-`.analysis/windows-play-ui-text-line/`. Other semantic scopes and prior play
+captures, expected saved-bank hash, exit zero and all 49 originals unchanged. Other semantic scopes and prior play
 controls remain historical after input refresh; no full owner or historical
 validation queue was replayed. Driver rasterization, synchronized pixels,
 physical audio/MIDI and nearly complete source fidelity remain unproven.
@@ -121,15 +119,11 @@ producer. PCX exchanges two multiplicand loads while retaining979/851;
 Equal size/difference counts are not code-identity evidence.
 
 Reject the whole fixed model without selective adoption or header/order/name/
-flag variants. Private `.analysis/text-glyph-owner-20261018/` retains complete
-inputs, transformation, comparisons, independent reviews and final verification.
-The review corrects an informal26-unchanged inference to the actual25 before
+flag variants. The review corrects an informal26-unchanged inference to the actual25 before
 documentation/adoption. No source, claim, canonical object or delivery changes;
 no native build, relink, provider, game or full replay follows. One CPU35%,
 memory high640MiB/max768MiB limits hold; observed peak is167,350,272 bytes with
-zero high/max/OOM events. All24 disposable copied inputs/products, including
-five objects, are archived/member-hash verified before removal, releasing
-118,784 allocated bytes after archive/journal costs. Tested products and useful
+zero high/max/OOM events. Tested products and useful
 incremental caches remain.
 
 ## Exact score initialization and reading
@@ -138,11 +132,9 @@ The initializer at `0x406EE0` now restores all fifteen explicit name-clear,
 `strcat`, and score-store phases, followed by direct CRT file calls. Its first
 stable VC4 compilation matches the complete 723-byte body, with all 87 actual
 relocations resolved and all eighteen consumed string operands attested,
-including their terminating NULs and three independent separator literals.
-The existing 125-byte bank-release unit remains exact; device initialization
+including their terminating NULs and three independent separator literals. The existing 125-byte bank-release unit remains exact; device initialization
 remains a 359-byte candidate with ten differing bytes. No source spelling or
-storage experiments were needed. Receipts are in
-`.analysis/exact-score-initialization/`.
+storage experiments were needed.
 
 Accepted board-bank callers establish `fopen` at `0x417C20`, `fwrite` at
 `0x417E70`, and `fclose` at `0x417A30`. Reuse these caller/API bindings while the
@@ -151,10 +143,6 @@ runtime origins are investigated. New REA 6.3.0 evidence establishes the
 fixed CRT `access.obj` member and its five relocations. This establishes the
 API binding; its runtime origin row and unique original alias spelling remain
 separate questions. Literal bytes are supported by one complete 592-byte read.
-
-- Access dossier: `ev_3c45a24fc90e2bb90489bc9c3533d438174388a59cbd469eb9c5b5f992897241`.
-- Literal read: `ev_8e62c86b8565325f7f6450aed6e6a8b3c37df251bb87cee577dfaf1a8d0776cb`.
-- Archived run: `.analysis/rea/runs/2026-10-10T14-29-24.089Z-score-boundaries-590652/`.
 
 The existing startup fixture uses `tests/native_imports.py` to bind only the
 copied image's resolved ELF import slots to its existing typed stdio callbacks.
@@ -174,9 +162,7 @@ matches. The original `rb` and `score.dat` storage at `0x42148C` and `0x421490`
 is attested by REA Evidence
 `ev_50dc90850c2746cf0f049db856c7e3f770b112e29d726f2aabb23149ebf2b3e7`,
 archived in the 2026-10-10 14-38 literal-request run. The copied-image fixture
-now binds its existing typed `fread` callback too. Fresh checks are recorded
-in `.analysis/exact-score-reading/`, with the complete score-insertion recovery
-described in [game-over evidence](GAMEOVER_OWNER.md).
+now binds its existing typed `fread` callback too.
 
 ## Entries and retained observations
 
@@ -201,13 +187,9 @@ Evidence IDs identify static observations, not execution proof.
 | `0x0040AA60` | `rotate_rgb_colors` | 188 | `ev_d69a03478a3300403b907eadb1d092d72ea91325ee9a2d51042a1105207b5bb3` |
 | `0x0040AB20` | `set_palette_rgb` | 108 | `ev_677c089ab1d99c09f648bf51f8d486dc81df271573b32af3ba3f53fdb5c50e68` |
 
-The earlier working-resource dossier is retained in the 11-04 interactive
-archive; it was reused rather than queried again. The remaining dossiers are
-in the closed 11-58 archive, which retains 198 cumulative Evidence records,
-including mode-0 and mode-4 callers for the next batch. That subsequent
+That subsequent
 [menu/splash checkpoint](INTRO_OWNER.md) now maintains those callers; their
-source and semantic claims are separate from this startup/UI acceptance.
-Unresolved indirect flows and provider-derived prototypes remain limitations;
+source and semantic claims are separate from this startup/UI acceptance. Unresolved indirect flows and provider-derived prototypes remain limitations;
 source ownership, widths and call sites were reviewed independently.
 
 ## Startup behavior
@@ -308,5 +290,4 @@ and saved REA verification. It made no new exact claim. Adding natural headers
 changes screen-pan's compiler literal names from `$T617`/`$T618` to
 `$T637`/`$T638`; both 8-byte constants and the complete offset/type/addend set
 were checked against object and target before rebinding. Full comparisons
-remain strict. Reports and identities are private in
-`.analysis/checkpoints/startup-ui-148-40/`.
+remain strict.

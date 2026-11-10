@@ -45,8 +45,7 @@ All335 prior exacts/113 candidates remain; only four existing semantic rows are
 refreshed after this replay. Source457/exact336/code69,846/metadata136;
 semantic249 and all origins unchanged. Complete pinned `_doexit`128 and retained
 REA assembly `ev_708cef33a373375bddd52f451b3dcb5c0c69e2fefd4e9cb94a8f8876f53e098b`
-are reused. Receipts: `.analysis/termination-process-api-20261014/verification.json`.
-The following sections retain the earlier portable-bridge checkpoint; startup
+are reused. The following sections retain the earlier portable-bridge checkpoint; startup
 tables, callback allocation and wider game integration remain open.
 
 The allocation-failure path reaches C `exit` at `0x417910`. This batch follows

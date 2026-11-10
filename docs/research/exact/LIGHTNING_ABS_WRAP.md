@@ -68,7 +68,3 @@ touched and restored that file. No other source object recompiles. The new
 INT_MIN fixture and all 197 existing last-brick countdown/crop cases pass; the
 unchanged overlay entry is not run. No broader replay, game executable build or
 game run follows.
-
-Private authority is `.analysis/lightning-abs-wrap-20261020/`. It retains the
-before/after witness receipts, full display comparison, actual mapped bindings,
-existing-case receipt, adoption record and current authored-coverage audit.

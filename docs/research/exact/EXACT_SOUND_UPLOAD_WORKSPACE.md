@@ -35,8 +35,5 @@ bytes and 136 separate metadata bytes. Fifty-five authored candidates remain.
 
 Original evidence is
 `ev_e5e44144f4d74b3812d2c83fe7b7b649dde02f9a2107482ff677eb58455dd745`,
-operation 06 of run `2026-10-07T16-15-32.551Z-interactive-3807439`.
-Its contiguous body includes the final RET. No new provider query or game
-campaign runs. Compiler inputs, complete comparisons, case receipts and
-verified compressed before/staging products remain under
-`.analysis/sound-upload-workspace-20261012/`.
+operation 06 of run `2026-10-07T16-15-32.551Z-interactive-3807439`. Its contiguous body includes the final RET. No new provider query or game
+campaign runs.

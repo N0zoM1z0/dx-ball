@@ -46,22 +46,10 @@ typed source model rather than claiming a literal original source file.
 
 ## Original evidence
 
-Six saved REA dossiers have complete contiguous bodies through their returns.
-The stop, restoration and create dossiers come from
-`.analysis/rea/runs/2026-10-07T16-15-32.551Z-interactive-3807439/`
-at request12,13 and15. The three setters come from
-`.analysis/rea/runs/2026-10-08T09-44-19.254Z-rea-sound-controls-1652685/`
-at request0,1 and2. All original target digests and terminal session records
-verify. Their Evidence IDs and complete record hashes are in
-`.analysis/sound-operation-scopes/rea-reuse.json` and the existing
-[sound owner](../SOUND_OWNER.md) / [controls note](../SOUND_CONTROLS.md).
+Six original dossiers were checked for complete contiguous bodies through their returns.
 
-The private `body-proof.json` records every original stack access and every
-current COFF stack operand, complete body sizes, instruction counts, calls
-and branches. Current instructions cover every independently retained
-original listing address, and the full relocated bytes match the pinned PE.
-No extent, gap, tail or mismatch is masked. `before-scope-control.json`
-retains the six failing prior-source comparisons. No new provider or runtime
+Current instructions cover every independently retained
+original listing address, and the full relocated bytes match the pinned PE. No extent, gap, tail or mismatch is masked. No new provider or runtime
 capture was needed.
 
 ## Targeted validation and products
@@ -73,20 +61,14 @@ comparisons. It passes **4317 direct calls and 48 connected checks**:
 1393 each for frequency/pan/volume and48 connected focus/reload/recovery
 calls. Cases retain absent-owner guards, zero and 32-bit values, defined
 status outputs on error, rejected restoration, ignored setter errors,
-synchronous slot replacement and split uploads after reinitialization.
-Complete fifty-slot records, buffer payloads, heap ownership and ordered COM
-effects agree with execution of the original code. The maintained test,
-selected AST, driver and current library hashes are in `sound-oracle.json`.
-Unrelated RIFF, file and initialization grids are omitted; tests are unchanged.
+synchronous slot replacement and split uploads after reinitialization. Complete fifty-slot records, buffer payloads, heap ownership and ordered COM
+effects agree with execution of the original code. Unrelated RIFF, file and initialization grids are omitted; tests are unchanged.
 
 Native and MinGW affected products rebuild. The VC4 game links this final
 matching sound object with 35 verified unchanged objects, without another
 legacy source compile. All 198 exact input/object closures, 247 unchanged
 historical semantic scopes and 36 production object closures verify. Historical
 semantic input hashes refresh without implying unrelated test reruns.
-Current four product hashes are in
-`.analysis/sound-operation-scopes/product-verification.json`; the independent
-seal is `.analysis/checkpoints/sound-operation-scopes-283-198/sha256.json`.
 
 Initialization, WAV parsing and uploading remain nonexact. These function
 matches and controlled comparisons do not prove physical DirectSound

@@ -33,21 +33,12 @@ frequency, latency, every-voice or physical-speaker fidelity claim follows.
 The recorder exits0 after the observation interval; the campaign game continues.
 
 The original2,098,616 PCM bytes have SHA-256
-`999f94181be9ada3ce66a23fba20573e13666cbc802a7174c21caedaa03059e0`.
-Byte-exact gzip decompression is verified before removing the raw copy;
-the retained compressed file is199,929bytes. No extra gameplay run or other
+`999f94181be9ada3ce66a23fba20573e13666cbc802a7174c21caedaa03059e0`. No extra gameplay run or other
 application's audio is recorded.
 
-Private `.analysis/current-vc40-campaign/audio-monitor*` retains the driver,
-before/after routing identities, PCM gzip, complete statistics and logs.
 One local Pulse schema preflight failed before launching a recorder; its source
 and traceback are preserved separately. The corrected driver performs the
-single completed recording. `audio-compression.json` preserves both content
-digests. `audio-verification.json` verifies the PCM, tool/driver identity,
-unchanged products and input closures. The independent completed seal is
-`.analysis/checkpoints/current-digital-audio-285-206/sha256.json`.
+single completed recording.
 
 The full50-board campaign is a separate live task. Its runtime files and REA
-capture must remain until that producer terminates. Only immutable audio seal/
-before duplicates are shared with the immediately preceding game-over seal;
-current/public files remain independent of archives.
+capture must remain until that producer terminates.

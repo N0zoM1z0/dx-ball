@@ -25,6 +25,5 @@ origin; origins270/200/45/28. All312 old exact and102 candidate producers reuse
 unchanged inputs/objects;249 semantic rows are unchanged. One focused VC4/native/
 i686 compile and full code/record comparisons ran. One closed three-record REA
 byte-reading session supplements complete local CRT decoding. No runtime tests
-or game builds. Proofs/products remain private in
-`.analysis/runtime-filter-lifetime-20261014/`. Linker integration and the broader
+or game builds. Linker integration and the broader
 unfinished restoration remain open.

@@ -66,7 +66,6 @@ compiled libraries for the corrected checks. No extra source compile follows.
 
 Measurement Evidence:
 `ev_6a25f94931f763de87b46ce0de325939c392113a9c31de1568162431ea46a545`.
-The two independent reviews retain full carrier hashes and loader/caller proofs.
 
 ## Complete comparison and integration
 
@@ -90,12 +89,6 @@ these checks do not freshly accept every historical row. Heavy operations are
 serial on CPU0 with35% CPU,384MiB high/512MiB max; the two VC4 builds peak below
 175MB, with zero high/max/OOM events. There is no full replay or game run.
 
-Private authority: `.analysis/authored-boundaries-20261019/`, including both
-source/result reviews, proposals, complete comparisons/producers, bounded
-witnesses, selected existing cases, native build, adoption and authored coverage.
-The61 closed copied inputs/products/helpers are archived and member-hash
-verified in a1,217,038-byte archive before removal, releasing9,302,016 allocated
-bytes net after archive cost and before the small manifest/cleanup receipt.
 Current matching objects, native library/cache and previous tested EXE/ZIP stay.
 
 The previously verified EXE and delivery ZIP still represent717cc2f and do not

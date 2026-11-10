@@ -47,7 +47,3 @@ the same object with 36 verified unchanged objects. All 211 accepted extents and
 compiler-input/object identities verify. No key/message suite or game campaign
 runs. Historical semantic scopes retain their case counts while input hashes
 refresh for the source change.
-
-Before inputs, all four compiler stages, complete comparisons, the selected
-Oracle and products are retained in `.analysis/window-workspaces-20261012/`.
-Completed diagnostics and before-product copies use verified gzip carriers.

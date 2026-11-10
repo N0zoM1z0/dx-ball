@@ -29,19 +29,13 @@ REA 6.5.0 / Ghidra 12.1.4 queried only assembly and pseudocode for this entry:
 - Assembly: `ev_5802dd9ae322e87820f82a7b79f48a4d2195266b98ccca4e016ca3bb103f6c4c`.
 - Pseudocode: `ev_222956f1a92e6b84c71a94a393f56eb6c69ce21e4bcc41daedb88717ddb0fe93`.
 
-The session closed and saved normally. Complete responses are in
-`.analysis/rea/runs/2026-10-16T12-46-07.263Z-requests-865796/`.
-Retained whole-CRT bytes from
+The session closed and saved normally. Retained whole-CRT bytes from
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`
 cover the full function. The pinned `ieee87.obj` section agrees after its two
 actual converter relocations. Both converters, 161 and 141 bytes, and the
 relocation-free 52-byte `fpctrl.obj` hardware entry independently agree with
 their previously grounded complete original sections. The existing accepted C
 converter objects have identical bytes and unchanged complete inputs.
-
-The hardware backend's prior assembly is retained as
-`ev_07b9d75df739075b7b823b8a69d32f9b8289cf3c9c9c2619cd86515b2d1fca64`
-under `.analysis/rea/runs/2026-10-13T20-53-53.317Z-interactive-2116938/13-procedure_assembly.json`.
 
 ## Focused checks
 
@@ -74,15 +68,10 @@ that already linked image. No production object was recompiled or relinked for
 the receipt repair. These are bounded control-word checks, without pending
 unmasked exception delivery, full reconstructed FP startup or final game claims.
 
-Private evidence is `.analysis/runtime-control87-source-20261016/`, including
-`original-proof.json`, `source/{product,comparison,portable}.json`,
-`differential.json`, `windows-link.json`, `windows-probe.json` and `adoption.json`.
 Heavy commands run serially with CPU 35%, memory high 640 MiB/maximum 768 MiB
 and Ghidra heap 256 MiB. No full replay ran. The 249 historical semantic rows
 are byte-identical. Current totals: 472 source entries, 380 exacts, 92 complete
 candidates and 73 inventory entries without source.
-Sharing six byte-identical immutable snapshots/member carriers reclaimed about
-2.1 MiB; all unique evidence, source products and mutable build objects remain.
 
 ## Bounded inventory follow-up
 
@@ -92,5 +81,4 @@ fixed-byte/repeated-binding matches expose no absent type-32 entries. Another
 49 single-function sections of 5 through 15 bytes, with at least two fixed
 anchor bytes, produce no wholly unowned match. Both retain the same three
 ASCII-name parser skips. These are discovery bounds, not exhaustive inventory
-or independent relocation-binding proofs. Receipts remain under
-`.analysis/crt-multi-entry-scan-20261016/`; neither scan ran a provider or compiler.
+or independent relocation-binding proofs.

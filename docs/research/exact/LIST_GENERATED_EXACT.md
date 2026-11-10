@@ -23,8 +23,6 @@ The embedded board-storage pair was excluded because its source-only aggregate
 constructor lacked an attested original address. The later [inline expansion](LIST_EMBEDDED_INITIALIZATION.md)
 removes that boundary: its outer stage becomes exact, while the inner stage
 remains a complete candidate with direct real constructor bindings. No whole
-startup graph, CRT-table placement or execution claim follows from these units.
-Complete original procedure Evidence is reused from the list-layout run of
-October 9. Current comparisons and frozen inputs/products are retained under
-`.analysis/list-generated-exact-20261014/`. No compilation, provider, runtime or
+startup graph, CRT-table placement or execution claim follows from these units. Complete original procedure Evidence is reused from the list-layout run of
+October 9. No compilation, provider, runtime or
 game test was repeated.

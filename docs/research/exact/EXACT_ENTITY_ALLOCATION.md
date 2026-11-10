@@ -9,9 +9,6 @@ production and sound APIs, agreeing with the already recovered full game frame.
 
 ## Original evidence
 
-Seven complete retained REA dossiers provide six list routines and the original
-frame at `0x40F8B0`; its Evidence is
-`ev_5d1d8d47e797530fa172e492b60eebe40dcf8a855a6d9125eb644dccb2e15d43`.
 Original append calls target operator-new `0x416770` and fatal
 exit `0x417910`; removal calls operator-delete `0x416760`. Complete 220-byte
 removal spans include the five-byte internal jump outside the 215 Ghidra-owned
@@ -86,9 +83,6 @@ retain their own product hashes; no new game campaign, full-owner queue,
 physical driver or asynchronous audio fidelity is claimed. Historical semantic
 counts/scopes retain their identity after current input-hash refresh.
 
-Private receipts: `.analysis/exact-entity-allocation/`.
-Immutable seal: `.analysis/checkpoints/entity-allocation-283-171/sha256.json`.
-REA was not reopened. Retained dossiers total 11,479,750 bytes; selected local
-procedure/pseudocode/assembly projections total 41,676 bytes. Feedback entry 26
+REA was not reopened. Feedback entry 26
 is appended only to the existing `/tmp/dxball_rea_feedback_20261010.md`; these
 sizes do not measure current MCP transport, provider latency or model tokens.

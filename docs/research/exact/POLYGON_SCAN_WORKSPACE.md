@@ -52,7 +52,6 @@ MinGW builds pass; VC4 links the single fresh matching raster object with
 Original evidence remains
 `ev_493013a754a8856f617731fcd1fddd0b00f6bd3d39f2de9d39f29742e542e205`
 and `ev_4ae581c6e8ad135b183d562df04de63db4419e39e3f9b46891bdec2634ee5358`.
-Complete receipts are in `.analysis/polygon-scan-workspace-20261012/`.
 
 ## C-compatible polygon owner control, October 17
 
@@ -87,12 +86,8 @@ alternate body or flag sweep is introduced to repair that lowering.
 The C-owner pilot is rejected without integration. One serial, resource-capped
 compile supplies two complete comparisons; there is no companion compile,
 fixture, game, provider query or full replay. Current source, cached objects,
-delivery and totals remain unchanged:391 exacts and24 authored candidates.
-This closes the tested full80/C model, not all possible source declarations or
-all frontend behavior. Private `.analysis/polygon-c-owner-20261017/` retains the
-inputs, complete comparisons, independent reviews and copy-producer proof.
-Verified archival replaces seven disposable input/object files, releasing48 KiB
-of allocated storage after archive cost, excluding small JSON receipts.
+delivery and totals remain unchanged:391 exacts and24 authored candidates. This closes the tested full80/C model, not all possible source declarations or
+all frontend behavior.
 
 ## Current workspace in an independent C owner, October 17
 
@@ -118,14 +113,10 @@ homes and every other byte stay unchanged. Thus two fewer raw differences
 include both recovered and lost producers; neither function becomes exact.
 The frontend and independent owner/header view were tested together.
 
-Close this fixed model without adoption or further layout/header/flag variants.
-There is no untouched C++ companion compile, Native/MinGW build, runtime test,
+Close this fixed model without adoption or further layout/header/flag variants. There is no untouched C++ companion compile, Native/MinGW build, runtime test,
 new provider query, relink, game or full replay. Current source, cached products
 and ledgers remain at 392 exacts and 23 authored candidates. Independent review
-confirms the source, ABI, binding and instruction deltas. Private evidence is
-in `.analysis/polygon-current-c-owner-20261017/`. All seven raw input/object
-copies are archived, every member hash verified, then removed, releasing
-48 KiB net of the archive, excluding receipt costs. Useful current caches remain.
+confirms the source, ABI, binding and instruction deltas. Useful current caches remain.
 
 ## Bounded source-identity search, October18
 
@@ -148,10 +139,6 @@ Generic active-edge similarity supplies no missing declaration. No qualifying
 original WinG/PCGPE candidate is found within these four queries; earlier revisions,
 heavy adaptation and a common algorithm remain outside this bounded result.
 
-Private `.analysis/polygon-source-archaeology-20261018/` retains the exact queries,
-URLs and a2,116-byte gzip carrier whose decompressed5,185-byte source hash is
-verified. Its sealed review retains the supplied error; a separate
-`.analysis/polygon-source-archaeology-20261018-erratum/` records the correction.
 The redundant raw download is deleted. No compiler, provider, runtime,
 source or comparison change follows; do not turn this negative search into an
 attribution or a declaration variant.
@@ -160,17 +147,12 @@ A later passive review checks all30 edge-field instructions in each complete
 controller against the original bytes. Only DWORD offsets0/4/8/16/20/24 are used;
 12–15 remain untouched. No domain callee receives an edge record: span receives
 pixels and scalar endpoints, memmove receives pointer-array entries, and free
-receives pool bases. Thus no outside field producer is exposed by this pair.
-An unused historical field is possible, but its type/name remain unknown. Sealed
-`.analysis/polygon-edge-field-access-20261018/` retains sites, primary Evidence
-IDs, carrier hashes and independent verification without new provider work.
+receives pool bases. Thus no outside field producer is exposed by this pair. An unused historical field is possible, but its type/name remain unknown.
 
 Four distinct follow-up queries use the left/right endpoint bias and signed
 integer-error stepping, with the corrected28-byte geometry. No qualifying
 published source appears in the returned excerpts; no source page is opened
-or downloaded. This does not establish the unknown slot or original declaration.
-Sealed `.analysis/polygon-endpoint-bias-search-20261018/` retains both complete
-query-response gzip carriers. A separate `-erratum/` corrects its step wording:
+or downloaded. This does not establish the unknown slot or original declaration. A separate `-erratum/` corrects its step wording:
 the second branch includes zero (`dx >= 0`), verified by original CMP/JGE bytes
 at40BAB3/40BAB7 and40C0F4/40C0F8. Queries and their bounded negative remain
 unchanged. No source model, compilation or provider query follows.

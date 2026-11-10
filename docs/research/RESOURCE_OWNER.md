@@ -73,23 +73,14 @@ moves these three unchanged bodies in original entry order, retaining full
 allocator/resources headers and inherited `/ML` flags. Shared bank state stays
 in resources; unrelated bank-release is not added to this family.
 
-Two serial compiles compare all18 complete functions/262 bindings/six literals.
-Release's full identity stays unchanged. Bank1475/66→1475/65 restores one raw
-position, but capture loses exactness852/0→864/726; PCX979/851 changes digest.
-Fifteen complete identities and12 exacts/2,198 bytes survive. Reject the whole
-model without selective old capture objects or retention of the bank change.
-No further header, type, name, order or flag variants follow. Canonical source,
-claims and delivery remain fixed. Private
-`.analysis/sprite-lifecycle-owner-20261018/` retains full producers/comparisons
-and independent review; no native build, relink, provider, runtime or full replay
-is needed for the rejected model.
+Two serial compiles compare all18 complete functions/262 bindings/six literals. Release's full identity stays unchanged. Bank1475/66→1475/65 restores one raw
+position, but capture loses exactness852/0→864/726; PCX979/851 changes digest. Fifteen complete identities and12 exacts/2,198 bytes survive. Reject the whole
+model without selective old capture objects or retention of the bank change. No further header, type, name, order or flag variants follow. Canonical source,
+claims and delivery remain fixed.
 
 Independent instruction review accounts for capture's growth:12 of18 bank/slot
-address groups each add one byte, while both bodies retain248 instructions.
-Bank changes only its width/height product order; PCX changes that product and
-one run-loop comparison producer. No missing lifecycle operation is recovered.
-Thirteen raw inputs/products, including three objects, are archived and
-member-hash verified before deletion, releasing72 KiB net. Peak157,995,008 bytes
+address groups each add one byte, while both bodies retain248 instructions. Bank changes only its width/height product order; PCX changes that product and
+one run-loop comparison producer. No missing lifecycle operation is recovered. Peak157,995,008 bytes
 with zero high/max/OOM events; current tested products and caches remain.
 
 The earlier [allocation-only pointer scope](exact/BANK_ALLOCATION_SCOPE.md)
@@ -127,8 +118,7 @@ original unaddressed bytes remain unexplained.30 successors/10 calls agree.
 production compile yields847 bytes withthree getc calls instead ofinline FILE/
 _filbuf;production andmatching machine bodies are explicitly distinct. VC4
 reuses35 other objects;Native/MinGW selected builds pass. No fresh REA orWine
-run/full replay/new exact acceptance. Current188 exact/35003 code/136 metadata;
-current products `.analysis/pcx-packet-loop/product-verification.json`.
+run/full replay/new exact acceptance.
 
 ## Historical PCX recovery and play verification
 
@@ -157,17 +147,12 @@ REA information, pseudocode and assembly are retained in closed run
 `2026-10-10T17-54-16.976Z-requests-866362`, with Evidence identities
 `ev_c50e6d43ad08314dafcb3121bfd836d0e3a93d04d480533b5ab9b77043f8b6a2`,
 `ev_13ac465a95860ab7b511475a2174d532caacd558004ca45bb872179fb03aa192`
-and `ev_93b5290136b33bfcc5cee2cc186d2f6440c5a8c1595647d46ec6172e7d5c8566`.
-Two matching compilations retain the intermediate and final objects/inputs.
-The final native library passes 99 unchanged selected PCX cases: all five
+and `ev_93b5290136b33bfcc5cee2cc186d2f6440c5a8c1595647d46ec6172e7d5c8566`. Two matching compilations retain the intermediate and final objects/inputs. The final native library passes 99 unchanged selected PCX cases: all five
 supplied images, all palette modes, retry, clipping, signed maxima, zero runs
 and overshoot. Native/MinGW builds pass. One established `/MT` production
 compile and 34 verified object reuses relink the VC4 game. Real-Wine ball/pause/
 editor/save/reload/exit passes with 84 read-only states, five captures, the
-expected saved-bank hash, exit zero and all 49 originals unchanged. The play
-selection and its limitations are recorded in
-`.analysis/windows-play-pcx-decoding/`; compiler and selected-oracle receipts
-are in `.analysis/exact-pcx-decoding/`. Other semantic scopes and prior controls
+expected saved-bank hash, exit zero and all 49 originals unchanged. Other semantic scopes and prior controls
 remain historical after input-identity refresh; no full owner or historical
 validation queue was replayed.
 
@@ -194,8 +179,7 @@ This batch also corrects an error in the preceding private comparison helper:
 release, capture and SBK load were registered under the runtime recipe although
 their actual comparisons used the resources object. Their byte comparisons
 remain independently reproducible; the release match row now records the
-correct resources source, object, flags and eight consumed inputs. The original
-bad manifest and receipts remain preserved. Tracking now checks every exact
+correct resources source, object, flags and eight consumed inputs. Tracking now checks every exact
 and candidate recipe against the implementation's source owner and rejects
 the archived wrong manifest. All twelve resource exacts and four candidates
 were compared together on one `/ML` compilation; none of the existing exacts
@@ -207,9 +191,7 @@ selected font cases: 769 lookups and 768 drawings across all byte codes in
 the three supplied fonts, including the empty-bank lookup. One separate `/MT`
 production compile and 34 verified object reuses relink the VC4 game. Its real
 ball/pause/editor/save/reload/exit flow passes with 78 read-only states, five
-captures, the expected saved-bank hash, exit zero and all 49 originals unchanged.
-Receipts are in `.analysis/exact-font-rendering/` and
-`.analysis/windows-play-font-rendering/`. Other semantic scopes and prior play
+captures, the expected saved-bank hash, exit zero and all 49 originals unchanged. Other semantic scopes and prior play
 controls remain historical after input-identity refresh; no full owner or
 historical queue was replayed. Full-game, synchronized pixels and physical
 audio/MIDI fidelity remain unproven.
@@ -260,11 +242,8 @@ the maintained matrix or claiming physical driver behavior.
 
 The new VC4 product also passes the existing real-Wine ball/pause/editor/exit
 flow with 83 read-only states, five captures, the expected saved-bank hash,
-normal exit and all 49 originals unchanged. Receipts are in
-`.analysis/exact-sprite-lifetime/` and `.analysis/windows-play-sprite-lifetime/`.
-Other owner suites and prior original/MinGW play controls were not rerun;
-their input identities are refreshed with their historical scopes preserved.
-Synchronized pixels, physical audio/MIDI and full-game fidelity remain unproven.
+normal exit and all 49 originals unchanged. Other owner suites and prior original/MinGW play controls were not rerun;
+their input identities are refreshed with their historical scopes preserved. Synchronized pixels, physical audio/MIDI and full-game fidelity remain unproven.
 
 Current [connected-effects cold replay](exact/EXACT_CONNECTED_EFFECTS.md) naturally
 recovers the full keyed-stretch body while ordinary blt_sprite loses historical
@@ -345,10 +324,7 @@ surface caps `0x40`, other modes `0x840`; source color key is zero, flags 8.
 Descriptor and Lock failures are retried until success.
 
 CreateSurface failure returns with the new bank selected, an open file and
-allocated partial record/pixel buffer. These observed effects are preserved.
-Input filenames must fit the original 20-byte field; supplied basenames do.
-Malformed/unbounded counts, dimensions and filenames are outside acceptance.
-Allocation failure and open failure invoke exit(1); process-exit behavior has
+allocated partial record/pixel buffer. These observed effects are preserved. Input filenames must fit the original 20-byte field; supplied basenames do. Malformed/unbounded counts, dimensions and filenames are outside acceptance. Allocation failure and open failure invoke exit(1); process-exit behavior has
 not yet been compared. Release handles NULL records and NULL surfaces.
 
 Capture releases an old slot, creates an offscreen surface and copies a RECT
@@ -397,9 +373,7 @@ CRT boundaries supply file buffers; target inline getc accesses those buffers
 directly. The native implementation uses host libc on identical files.
 
 Comparisons cover initialized bank/sprite state, all resulting allocated pixel
-bytes, palette RGB/flags, return values, and ordered DirectDraw call arguments.
-Target file traces and allocation/free ownership receive explicit checks.
-DirectDraw operations are controlled boundary callbacks; COM driver behavior,
+bytes, palette RGB/flags, return values, and ordered DirectDraw call arguments. Target file traces and allocation/free ownership receive explicit checks. DirectDraw operations are controlled boundary callbacks; COM driver behavior,
 real Blt pixels, actual display, and backend error codes beyond modeled retries
 are not proven by this test. Shared-source changes require fresh replay.
 
@@ -465,7 +439,6 @@ working files after matching their sealed controls, shares 47 immutable
 duplicates and recovers 828 KiB of measured disk usage. All 6,981 immutable
 paths, 2,015 references and 49 original files verify; the next preview is empty.
 Current successful products, original assets and pinned tools stay retained.
-
 
 ## Subsequent exact palette restoration
 

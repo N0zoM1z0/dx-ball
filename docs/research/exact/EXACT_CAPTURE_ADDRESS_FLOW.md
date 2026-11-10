@@ -14,13 +14,8 @@ No game source or compiler input changes in this batch.
 
 Each group rereads the live bank selector at `0x421088` and the caller's sprite
 argument. Original code uses a scaled final address after shifting sprite;
-current code shifts the bank product before the final scaled sprite address.
-Symbolic execution of each actual eight-instruction group proves the same
-32-bit address for every input: `0x425980 + 1048 * bank + 4 * sprite`.
-The stride is the255-pointer bank plus two integers and20 filename bytes.
-One group publishes the allocated pointer;17 load the then-current slot.
-These are18 static read sites, refreshed whenever reached, including retries.
-No intervening call or external write occurs inside a group. They are not a
+current code shifts the bank product before the final scaled sprite address. Symbolic execution of each actual eight-instruction group proves the same
+32-bit address for every input: `0x425980 + 1048 * bank + 4 * sprite`. The stride is the255-pointer bank plus two integers and20 filename bytes. One group publishes the allocated pointer;17 load the then-current slot. These are18 static read sites, refreshed whenever reached, including retries. No intervening call or external write occurs inside a group. They are not a
 cached selector/record across COM calls. Ordered source producers include width,
 height, code, baseline, source RECT, surface output address, color key, descriptor
 retry, saved pitch and final Blt arguments.
@@ -58,14 +53,10 @@ There is no new runtime acceptance or exact-function claim.
 
 The closed REA6.3 dossier is
 `2026-10-10T17-22-54.305Z-requests-825249/00-analyze_function.json`, Evidence
-`ev_d7dd48a6f210a1a2cffea6be8318655763959610c9d94f8f8ff5621dad169b76`.
-Its contiguous body addresses match every original instruction in this proof.
-The historical carrier has944994 bytes; its compact assembly projection has
+`ev_d7dd48a6f210a1a2cffea6be8318655763959610c9d94f8f8ff5621dad169b76`. Its contiguous body addresses match every original instruction in this proof. The historical carrier has944994 bytes; its compact assembly projection has
 8558 bytes. These are retained serialization sizes, not fresh provider latency,
 transport, model tokens or RSS. No provider, compiler, build or runtime replay
-runs. Private complete disassemblies, symbolic groups, frame map and product
-identities: `.analysis/capture-producer-flow/`. Immutable seal:
-`.analysis/checkpoints/capture-address-flow-283-186/sha256.json`.
+runs.
 
 Retire capture-sprite's abstract change groups as a source-gap hypothesis.
 Do not trial bank expressions, local declarations/names or layout merely to

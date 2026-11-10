@@ -8,8 +8,7 @@ Their source is unchanged. The current ledger reaches209 exact functions and
 The real native default previously used host `rand/srand`. With seed 1, the
 unmodified original game returns `41, 18467, 6334, 26500, 19169`, while the old
 native library returns `17767, 9158, 6249, 18547, 23633` through the actual
-`dxball_random_range(32768)` wrapper. The retained before receipt binds both
-executable/library hashes; no fixture interposition supplies these results.
+`dxball_random_range(32768)` wrapper.
 
 `src/random.c` now implements the original global 32-bit state, initially 1,
 and its recurrence `state = state * 214013U + 2531011U`, returning
@@ -33,9 +32,7 @@ The original LEA/ADD/SHL/SUB sequence independently derives multiplier 214013;
 its increment is `0x269EC3`. The pinned VC4 `libc.lib` member at archive header
 offset 677870 contains both complete bodies. All three actual DIR32 fields
 refer to the same COFF symbol index 4, static `_holdrand$S178`. Relocating that
-member to the independently observed cell reproduces all 52 original code bytes.
-The whole four-byte member initializer is 1, with no relocations. The private
-proof retains archive/member/vendor-source hashes and every relocation.
+member to the independently observed cell reproduces all 52 original code bytes. The whole four-byte member initializer is 1, with no relocations.
 
 These two entries are now classified as runtime dependencies, with shared
 recovered source and scoped semantic acceptance. This proves complete code
@@ -48,15 +45,10 @@ the maintained 89-code/20-data section and seven initialized-object authority.
 
 One matching VC4 compilation each of startup and random uses the ordinary
 canonical `/Od /Ob0 /Oi- /Oy- /Gd /MT /Gy` flags. All six startup exact units
-remain complete matches: 125, 359, 723, 94, 31 and 49 bytes, totaling 1,381.
-Twenty-two binding updates record actual emitted literal/API aliases after
-complete literal and original-call-target checks; the compiler is not repeated.
-All unrelated build recipes, units and candidates remain unchanged.
-Final receipt review caught 13 literal labels cascaded by sequential text
+remain complete matches: 125, 359, 723, 94, 31 and 49 bytes, totaling 1,381. Twenty-two binding updates record actual emitted literal/API aliases after
+complete literal and original-call-target checks; the compiler is not repeated. All unrelated build recipes, units and candidates remain unchanged. Final receipt review caught 13 literal labels cascaded by sequential text
 replacement. A bounded consumer repairs each actual unit/offset once and
-rechecks all complete comparisons against the emitted object. The failed
-manifest and repair receipt are retained; no compiler, oracle or provider is
-repeated to resolve this recording error.
+rechecks all complete comparisons against the emitted object.
 
 The recovered runtime functions remain nonexact candidates: seed 19/current
 versus 10/original bytes with 19 differences; next 65/current versus 42/original
@@ -82,10 +74,7 @@ scopes are reconciled without replaying historical cases. The new reports bind
 the current native library. No fresh physical game, audio or full campaign run
 is claimed; complete trajectories and original source identities remain open.
 
-Private receipts: `.analysis/crt-random-origin/`. Current product hashes:
-`product-verification.json`. Immutable seal:
-`.analysis/checkpoints/crt-random-origin-285-206/sha256.json`. The new REA session
-uses pinned 6.4.0/Ghidra 12.1.4 and is closed; full carriers stay on disk.
-Optional feedback is appended only to the existing `/tmp` document. Cleanup
+The new REA session
+uses pinned 6.4.0/Ghidra 12.1.4 and is closed; full carriers stay on disk. Optional feedback is appended only to the existing `/tmp` document. Cleanup
 deduplicates immutable hash-equal before/seal copies against the immediately
 preceding rotation-pixel seal, preserving current/public inode independence.

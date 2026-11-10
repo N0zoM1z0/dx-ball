@@ -91,10 +91,6 @@ case and target-oracle body. This establishes
 host boundary forwarding, separately from rendering or hardware behavior.
 The shim's actual compiler dependency closure contains 49 files.
 
-Native family/canonical SHA256 `fb2708ddb099dccdaf282a9958492dbc9574cbd0861253602cb9e6c445d2a495`; shim `daed844174dcaf013fc324652ec63435a093baf03a8e10b2e8ede6ba080ede64`.
-Source presence stays 283; scoped semantic rows 247; unit-distinct cases 112,273.
-The 235 changed semantic closures refresh with fixed
+Native family/canonical SHA256 `fb2708ddb099dccdaf282a9958492dbc9574cbd0861253602cb9e6c445d2a495`; shim `daed844174dcaf013fc324652ec63435a093baf03a8e10b2e8ede6ba080ede64`. Source presence stays 283; scoped semantic rows 247; unit-distinct cases 112,273. The 235 changed semantic closures refresh with fixed
 case counts, addresses and scopes. Origins stay 270 authored / 50 runtime /
-42 generated / 166 unknown. Checkpoint
-`.analysis/checkpoints/exact-effects-phase-283-116` links to brick-powers 115.
-The >=95% complete-source goal remains active and unachieved.
+42 generated / 166 unknown. The >=95% complete-source goal remains active and unachieved.

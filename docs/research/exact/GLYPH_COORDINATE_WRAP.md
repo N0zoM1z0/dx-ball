@@ -74,11 +74,8 @@ byte values in the three original fonts, plus their actual load setups and
 empty-bank lookup. Other resource loops are not repeated. Semantic scopes and
 case counts remain unchanged when current input hashes refresh.
 
-All270 authored closure receipts verify:248 exact/22 candidates across30 owners;
-overall393 exacts/84633 code bytes/244 metadata bytes remain. Source optimality
-and the final authored denominator are still open. Private authority is
-`.analysis/glyph-coordinate-wrap-20261019/`, including the parent result review,
-full comparison, finite cases, PCX ripple and current coverage. No independent
+Source optimality
+and the final authored denominator are still open. No independent
 review is claimed for this parent review.
 
 Heavy work is serial under35% CPU,384MiB high/512MiB max. The VC4 scope takes
@@ -86,8 +83,5 @@ Heavy work is serial under35% CPU,384MiB high/512MiB max. The VC4 scope takes
 game run or full replay follows. The verified EXE/ZIP remain the717cc2f delivery
 and predate these source corrections.
 
-All47 closed copied inputs, temporary objects/libraries and executed helpers/logs
-are archived and member-size/SHA256 verified before exact-list removal. The
-1080917-byte archive releases7847936 allocated bytes net before small receipts.
 All91 protected current source/config/object/product/cache identities remain
 fixed across cleanup; complete reports, primary evidence and current products stay.

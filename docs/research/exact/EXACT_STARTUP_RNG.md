@@ -12,9 +12,6 @@ selection at `0x403B70` is 31 bytes, and seeding at `0x403B90` is 49 bytes.
 Exact acceptance rises to 173 functions /30,824 code bytes plus 136 separate
 metadata bytes. Source presence remains 283 and scoped semantic acceptance 247.
 
-The retained contiguous REA dossiers establish genuine direct CRT calls and
-an independent clock import:
-
 | Entry | Evidence | Observed contract |
 | --- | --- | --- |
 | Range | `ev_dcaab4c60684caf5c24767829432c46b7d7fc94f93fbcd7d15813b604710e8f1` | Call `rand` at `0x417A00`, signed remainder by the incoming limit, store back to its argument home and return |
@@ -60,12 +57,6 @@ wrap values; the 32 range cases include negative nonzero limits.
 
 Native and MinGW compile only the affected source. VC4 links the same matching
 object with 34 verified unchanged source objects, resources and import libraries;
-there is no additional production source compile. All 173 current exact receipts
-retain valid object/input identities. Other semantic cases and scopes remain
+there is no additional production source compile. Other semantic cases and scopes remain
 historical after input refresh; no full historical replay or new live game run
 is attributed to these products.
-
-Private receipts: `.analysis/startup-rng-recovery/`. Immutable seal:
-`.analysis/checkpoints/startup-rng-283-173/sha256.json`. Retained REA dossiers are
-reused without opening a provider; feedback entry 33 stays in the user's one
-existing `/tmp` document.

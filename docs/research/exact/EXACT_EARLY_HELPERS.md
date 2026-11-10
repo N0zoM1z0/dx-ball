@@ -9,7 +9,6 @@ Y-offset at0x402DE0 is complete191-byte exact again; height at0x402FB0 is a
 Prior exact/candidate and compiler-result statements below retain their
 historical scopes; aggregate current206 exact functions is unchanged.
 
-
 This document records the historical 76-unit checkpoint. The subsequent
 [projection and text batch](EXACT_PROJECTIONS_TEXT.md) accepts four of its
 candidates, corrects the horizontal literal binding, and advances to 80 units.
@@ -199,9 +198,5 @@ fidelity. Actual original CRT finite math executes in the target-machine probe.
 Source presence is 283 entries: 270 authored bodies, one unknown-origin no-effect
 body and 12 runtime bodies. Origins are 270 authored, 21 runtime, 18 generated
 and 219 unknown. The current native alias comes from `build/native-early-helpers`,
-SHA-256 `bacf8063f6dc64e062063cdb52623318a1283869cab83c15efbcf5a0b3565479`.
-The private `.analysis/checkpoints/exact-early-283-76` checkpoint seals frozen
-inputs, closed evidence, complete failed/final proposals, accepted compiler
-products, reports, probe and compressed snapshot before verified cleanup.
-The prior list-initialization native product and all earlier identities remain
+SHA-256 `bacf8063f6dc64e062063cdb52623318a1283869cab83c15efbcf5a0b3565479`. The prior list-initialization native product and all earlier identities remain
 separate. The complete authored denominator and >=95% objective remain open.

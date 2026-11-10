@@ -16,16 +16,11 @@ original instruction boundaries and widths agree, including 99 branches and
 34 calls. The 27 remaining differences are actual EBP displacement bytes;
 **initialization remains a candidate, with no exact promotion**.
 
-The retained original function dossier is
-`ev_0c19fd7b02df4709514364206dec7df270a537b02ffbdda25a57516fcd78ce1f`,
-from the closed 2026-10-07 16:15 interactive archive. Ghidra owns 1,635 bytes
+Ghidra owns 1,635 bytes
 in fourteen ranges. Complete read Evidence
 `ev_ea17c0f8232c3bed494b5f8e97ff67790e1d38eb410d071395c0337072d22447`,
-from the closed 2026-10-10 06:36 request run, attests the entire 1,705-byte span.
-All seventy excluded bytes are fourteen five-byte JMP rel32 instructions.
-Their saved opcode/displacement bytes and computed targets are verified and
-merged with the provider assembly; none is omitted from the correspondence.
-No original general-purpose decoder or new provider session is used.
+from the closed 2026-10-10 06:36 request run, attests the entire 1,705-byte span. All seventy excluded bytes are fourteen five-byte JMP rel32 instructions. Their saved opcode/displacement bytes and computed targets are verified and
+merged with the provider assembly; none is omitted from the correspondence. No original general-purpose decoder or new provider session is used.
 
 Both stack frames allocate 324 bytes. Scoping the filename restores its base
 at EBP-292 and the reused dialog response at EBP-36. The latter formerly lived
@@ -75,9 +70,3 @@ and 36 game objects verify. Historical input inventories refresh without
 claiming reexecution of their prior cases. Totals remain 206 exact / 44,406 code
 bytes / 136 metadata bytes; 283 source-present and 270 authored inventory entries.
 Original source spelling and the full authored denominator remain unproved.
-
-Inputs, compiler output, full instructions, complete strict comparison,
-relocation/literal repairs and focused execution are retained under
-`.analysis/sound-init-filename-scope/`. Current products are identified by
-`product-verification.json`; the independent seal is
-`.analysis/checkpoints/sound-init-filename-scope-283-206/sha256.json`.

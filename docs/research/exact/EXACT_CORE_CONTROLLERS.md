@@ -75,10 +75,6 @@ one actual cold compiler epoch, using the amended content-attested manifest.
 Acceptance remains **283 source-present / 247 scoped semantic rows / 112,273
 unit-distinct cases**, with 270 authored bodies, one unknown no-effect body and
 12 runtime bodies. Origins remain 270 authored / 48 runtime / 42 generated /
-168 unknown. Checkpoint `.analysis/checkpoints/exact-core-controllers-283-101`,
-parent `.analysis/checkpoints/exact-bank-loops-283-100`, retains full dossiers,
-source epochs, native/shim identities, compiler products and independent review
-before hash-verified cleanup. The reused 465-record REA snapshot is unchanged.
-No cases, oracle bodies or campaign observations are added. Source presence,
+168 unknown. No cases, oracle bodies or campaign observations are added. Source presence,
 semantic scopes and exact matching remain separate; the >=95% complete-source
 objective remains open.

@@ -59,12 +59,10 @@ tile-7 mode handling. The span includes 1,257 instruction bytes and 92 inline
 switch bytes: the function-owned view excludes the five-byte JMP at `0x411E94`.
 All 23 table targets and other relocations are explicit; no bytes are masked.
 
-New REA 6.3/Ghidra dossiers are retained in the closed private run
-`2026-10-10T16-04-08.246Z-requests-701391`. Evidence IDs:
+Evidence IDs:
 mapper `ev_d7a2961bada2ef2ea2d66ea668a92a1a7994a8ca73733679b79e1eaaa0cc0f90`,
 traversal `ev_f53253c73641216725dd6f0dcf08cb633735d7914a5d277b4ad3ee1514825025`,
-cell drawing `ev_3fee51ff34d257d7415734913e2adb8aa8f630f30a940c11839cc0a40e042e29`.
-The mapper's unsupported-input read remains undefined in the original and
+cell drawing `ev_3fee51ff34d257d7415734913e2adb8aa8f630f30a940c11839cc0a40e042e29`. The mapper's unsupported-input read remains undefined in the original and
 the recovered source; semantic acceptance continues to cover tiles 0..22.
 
 This family used two VC4 compilations: the second corrects the tile local's
@@ -80,11 +78,9 @@ mode/defer/edge and fifty-board ordered drawing cases plus those 32 connected
 editor scenarios. Other direct loops retain their intermediate product hash;
 no full historical queue was replayed. The board fixture copies its ELF image,
 binds only the two genuine sprite/invalidation API import slots to the current
-existing callback table, and backs the destination with a typed COM vtable.
-Handle normalization preserves original identities; cases and assertions are
+existing callback table, and backs the destination with a typed COM vtable. Handle normalization preserves original identities; cases and assertions are
 unchanged. Core fixtures keep their existing isolated API transport. Actual
-hardware pixels and a playable whole EXE remain separate claims. Receipts and
-full comparisons are private in `.analysis/exact-board-rendering/`.
+hardware pixels and a playable whole EXE remain separate claims.
 
 ## Evidence limits
 
@@ -209,7 +205,6 @@ remain candidates; compiler scheduling/local allocation and general native
 floating-point fidelity remain limited. Origins total 270 authored, 21 runtime,
 18 generated and 219 unknown; the >=95% authored denominator remains unproven.
 
-
 ## Bounded CRT and generated-raster origin audit
 
 Twenty-seven unknown entries agree with 26 complete pinned CRT code sections
@@ -222,7 +217,6 @@ and original unwind metadata, rather than additional authored bodies. See
 [the audit](ORIGIN_AUDIT.md). Origins are 270 authored, 48 runtime, 42 generated
 and 168 unknown. No source, semantic or exact acceptance is added; 95% complete
 source recovery and whole-game fidelity remain unproven.
-
 
 ## Exact tile mapper checkpoint (2026-10-12)
 
@@ -244,11 +238,8 @@ No game campaign or unrelated semantic case suite was run.
 
 All 207 current exact extents, object hashes and compiler-input closures
 verify. The project now records 44,832 exact code bytes and 136 separate
-metadata bytes; source presence remains 285 and semantic acceptance 249.
-Other semantic input inventories were refreshed for the source/build-policy
-change while keeping their historical scopes and case counts. Private inputs,
-original REA record hashes, compiler products, full comparisons and the
-23-case receipt are retained in `.analysis/exact-board-mapper-20261012/`.
+metadata bytes; source presence remains 285 and semantic acceptance 249. Other semantic input inventories were refreshed for the source/build-policy
+change while keeping their historical scopes and case counts.
 
 ## Rotation origin storage (2026-10-12)
 
@@ -257,9 +248,7 @@ zero writes and the first three divisions' float operands and m32 FDIV fallback
 calls. The current frame is424bytes and body365instructions; its complete
 1451/1572-byte comparison retains1475 differences. All four rotation exacts
 remain accepted. Existing695 pixel comparisons and Linux/MinGW/VC4 builds pass;
-the accepted total stays207 functions/44832code bytes. Evidence and cleanup
-receipts are in `.analysis/rotation-origin-storage-20261012/`.
-
+the accepted total stays207 functions/44832code bytes.
 
 ## Exact window workspaces (2026-10-12)
 
@@ -268,17 +257,14 @@ Both [window initialization paths](exact/EXACT_WINDOW_WORKSPACES.md) now match
 capabilities and registration workspaces reproduce all472/468 original frame
 bytes. Nine exact companions stay exact;248 existing initialization cases and
 Linux/MinGW/VC4 builds pass. The ledger reaches211 exact functions/47374 code bytes,
-with62 remaining authored candidates. Receipts: `.analysis/window-workspaces-20261012/`.
-
+with62 remaining authored candidates.
 
 ## Exact MDS workspaces (2026-10-12)
 
 The [parser and event converter](exact/EXACT_MDS_WORKSPACES.md) now match all
-868/343 original bytes, including forty provider-unowned parser jump bytes.
-Progress/cursor records preserve the existing calls, partial writes and cleanup.
-Four exact companions stay exact;841 existing parser/converter cases and
+868/343 original bytes, including forty provider-unowned parser jump bytes. Progress/cursor records preserve the existing calls, partial writes and cleanup. Four exact companions stay exact;841 existing parser/converter cases and
 Linux/MinGW/VC4 builds pass. The ledger reaches213 exact functions/48585 code bytes,
-with60 authored candidates remaining. Receipts: `.analysis/mds-workspaces-20261012/`.
+with60 authored candidates remaining.
 
 ## Exact screen-point position (2026-10-12)
 

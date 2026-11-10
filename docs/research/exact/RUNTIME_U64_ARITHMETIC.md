@@ -58,10 +58,7 @@ exception-context equality is claimed. The reader adds actual DIR32NB handling
 for VC4 debug-frame records; the same compiled products are reused.
 
 These are990 logical successful cases and12 fault cases, counted once across
-profiles. They do not add historical semantic rows. Private receipts:
-`.analysis/crt-uninventoried-sections-20261016/`, including `scan.json`,
-`original-proof.json`, `source/`, `differential.json` and `adoption.json`.
-Heavy work is serial on one allowed CPU, CPU35%, memory high640MiB/maximum768MiB.
+profiles. They do not add historical semantic rows. Heavy work is serial on one allowed CPU, CPU35%, memory high640MiB/maximum768MiB.
 
 Inventory/source become545/470; exacts remain380 covering77,485 code bytes and
 244 metadata bytes. Candidates become90:34 authored,55 runtime and one compiler

@@ -37,8 +37,4 @@ No game runs.
 
 An independent review verifies every original instruction address, the eight
 homes, all 18 recursive compiler inputs, object identity, five complete owner
-comparisons and source scope-only change. Existing REA dossier:
-`ev_b10ee96258ecd655c8f9258fc4ae6cb2c52939077283dc0409f9f912688f79b3`,
-`.analysis/rea/runs/2026-10-07T06-16-05.200Z-rea-effects-family-2065454/09-analyze_function.json`.
-Private compiler, focused-case, full closure and build receipts are in
-`.analysis/explosion-cleanup-homes-20261012/`.
+comparisons and source scope-only change.

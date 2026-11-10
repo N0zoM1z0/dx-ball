@@ -82,10 +82,5 @@ rotation differential also passes all 1,024 renderer, wrapper and offset cases
 and 151 complete guarded destination buffers. No broader replay, game executable
 rebuild or game run follows this source checkpoint.
 
-Private authority is `.analysis/rotation-destination-arithmetic-20261020/`.
-Together with the preceding
-`.analysis/rotation-destination-arithmetic-review-20261020/`, it retains the
-source review, focused comparison, original/native receipts, targeted rotation
-differential and current 270-entry authored coverage reconciliation.
 Compiler/provider/game work was serialized under the project CPU and memory
 limits; no provider query was needed.

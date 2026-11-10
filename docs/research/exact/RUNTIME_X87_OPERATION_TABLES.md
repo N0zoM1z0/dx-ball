@@ -96,17 +96,6 @@ guesses for the BSS addresses or claiming the full dispatcher.
 
 ## Evidence and validation
 
-- Reused complete code:
-  `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
-- New REA 6.5.0 / Ghidra 12.1.4 complete 176-byte read:
-  `ev_d7b5e3077aa89e06757c2366971896bffbded18b2eeb3e07f63c6486a8a3fafa`.
-- Closed new run:
-  `.analysis/rea/runs/2026-10-16T06-24-20.876Z-requests-258624/`.
-- Complete public source/data recipe and actual entry bindings:
-  `config/runtime-x87-operation-tables.json`.
-- Original group proof, source comparison, compiler receipts and all scoped
-  input identities: `.analysis/crt-dispatch-boundaries-20261016/`.
-
 At the initial inverse-trigonometric checkpoint, one serial provider read and
 one VC4 data-owner compilation ran under the 35%
 CPU / 640 MiB high / 768 MiB maximum scope. An initial batch containing an
@@ -134,11 +123,7 @@ and `ev_86e6cb7d19a108f9784a3a93e2ab193547dfcfc6258578eb1c0e07e753b3a3ce`.
 See [the code/data group policy](../CRT_CODE_DATA_GROUPS.md). This follow-up
 opens no provider and runs no runtime test or full replay.
 
-The current family recipe is `config/runtime-x87-operation-tables.json`.
-Compiler receipts, complete per-owner comparisons, portable products, alignment
-results and verification are in `.analysis/x87-unary-operation-tables-20261016/`.
-The earlier 176-byte result remains independently retained in its original phase.
-The new 272 record bytes change no function source, exact or semantic acceptance
+The current family recipe is `config/runtime-x87-operation-tables.json`. The earlier 176-byte result remains independently retained in its original phase. The new 272 record bytes change no function source, exact or semantic acceptance
 claim; both function comparison reports and all existing acceptance ledgers stay
 byte-identical. The opaque machine entries and the remaining constants still
 need their original implementations/storage before a final game link.
@@ -156,11 +141,7 @@ zero and infinity addresses. The fourth target is the verified unary NaN helper.
 The complete original code and data both match the pinned PE and CRT member.
 
 Existing REA 4.1 observations are reused with their actual coverage. The full
-code read covers all 27 kernel bytes. The saved table observation covers only
-the **16-byte header**:
-`ev_f6a414600d6f4d61172f65edeb5491e6d910bbcfc248fad3ddebaba403ab32cc`,
-run `.analysis/rea/runs/2026-10-09T16-35-10.894Z-math-table-requests-1298340/`.
-This is not described as a new whole-table REA observation. All 32 file-backed
+code read covers all 27 kernel bytes. This is not described as a new whole-table REA observation. All 32 file-backed
 data bytes are compared directly with the pinned PE after applying each
 original and source-object relocation. No pointer value is used to guess the
 kernel's code position.
@@ -172,10 +153,7 @@ data comparisons. No matching headers are found for fmod, sinh, cosh or tanh;
 those four are not added as target records. This is the pinned descriptor family,
 not proof of a complete function/source denominator or unique original link.
 
-Only one new VC4 data owner is compiled, followed by native/i686 C90 compilation.
-The earlier three products, their 448 bytes and 68 bindings are retained with
+Only one new VC4 data owner is compiled, followed by native/i686 C90 compilation. The earlier three products, their 448 bytes and 68 bindings are retained with
 unchanged source/header/object identities. No provider, runtime test, game build
-or full replay runs. Proof, compiler receipt, descriptor inventory and final
-verification are in `.analysis/x87-remaining-operation-records-20261016/`.
-Function source464/exact376 and every acceptance ledger/comparison report remain
+or full replay runs. Function source464/exact376 and every acceptance ledger/comparison report remain
 unchanged. The special machine helper bodies still need implementation.

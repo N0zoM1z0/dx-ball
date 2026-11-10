@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Compare complete pinned CRT sections with retained REA observations."""
+"""Compare complete pinned CRT sections directly with the original executable."""
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import tomllib
+
+import pefile
 
 from crt_library import extract, function_section, relocate
 from legacy_toolchain import ROOT, Toolchain, session_lock
@@ -54,12 +56,8 @@ def observations(root, target, provider):
 def main():
     limit_cpu()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--evidence-root', type=Path, default=ROOT / '.analysis/rea/runs',
-                        help='repository-contained closed REA runs')
     parser.add_argument('--output', type=Path, default=ROOT / 'build/reports/crt-provenance.json')
     args = parser.parse_args()
-    args.evidence_root = args.evidence_root.resolve()
-    args.evidence_root.relative_to(ROOT)
     with session_lock():
         Toolchain().verify()
         manifest_path = ROOT / 'config/crt-provenance.json'
@@ -69,7 +67,7 @@ def main():
         configured_target = tomllib.loads((ROOT / 'config/target.toml').read_text())['target']['sha256']
         if digest(target_path) != manifest['target_sha256'] or manifest['target_sha256'] != configured_target:
             raise ValueError('CRT investigation target mismatch')
-        bodies, byte_records, close_hashes = observations(args.evidence_root, manifest['target_sha256'], manifest['provider'])
+        image = pefile.PE(str(target_path))
         inputs = {str(path.relative_to(ROOT)): digest(path) for path in (
             manifest_path, ROOT / 'scripts/verify-crt-provenance.py', ROOT / 'scripts/crt_library.py',
             ROOT / 'scripts/coff.py', ROOT / 'scripts/legacy_toolchain.py', ROOT / 'scripts/resource_limits.py',
@@ -80,18 +78,14 @@ def main():
         results = []
         for entry in manifest['entries']:
             address, size = int(entry['address'], 0), entry['size']
-            body_path, dossier, body_sha256 = bodies[address]
-            body = dossier['result']['procedure']['body']
-            if (body['total_bytes'] != size or body['span_bytes'] != size
-                    or body['non_contiguous'] or not body['contains_entry']
-                    or body['ranges'] != [dict(start=hex(address), end=hex(address + size - 1))]):
-                raise ValueError('unreconciled target extent: ' + entry['address'])
-            bytes_path, observed, bytes_sha256 = byte_records[address, size]
-            target_code = bytes.fromhex(observed['result']['bytes_hex'])
-            inputs[str(body_path.relative_to(ROOT))] = body_sha256
-            inputs[str(bytes_path.relative_to(ROOT))] = bytes_sha256
-            for path in (body_path.parent / 'close.json', bytes_path.parent / 'close.json'):
-                inputs[str(path.relative_to(ROOT))] = close_hashes[path]
+            rva = address - image.OPTIONAL_HEADER.ImageBase
+            section = image.get_section_by_rva(rva)
+            if (size <= 0 or section is None or not section.Characteristics & 0x20000000 or
+                    rva + size > section.VirtualAddress + min(section.Misc_VirtualSize, section.SizeOfRawData)):
+                raise ValueError('target extent is not complete file-backed code: ' + entry['address'])
+            target_code = image.get_data(rva, size)
+            if len(target_code) != size:
+                raise ValueError('truncated original code: ' + entry['address'])
             comparisons = []
             for name in manifest['libraries']:
                 library = ROOT / '.tools/msvc400/lib' / name
@@ -112,8 +106,7 @@ def main():
                 comparisons.append(row)
             if comparisons[0]['library'] != 'libc.lib' or comparisons[0]['status'] != 'same':
                 raise ValueError('expected whole libc section agreement: ' + entry['address'])
-            results.append(dict(**entry, body_evidence_id=dossier['evidence_id'],
-                                byte_evidence_id=observed['evidence_id'], target_bytes_sha256=hashlib.sha256(target_code).hexdigest(),
+            results.append(dict(**entry, target_bytes_sha256=hashlib.sha256(target_code).hexdigest(),
                                 comparisons=comparisons))
         for name, hashed in inputs.items():
             if digest(ROOT / name) != hashed:

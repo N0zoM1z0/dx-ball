@@ -2,9 +2,7 @@
 
 The current sprite field, bank-loader byte and glyph APIs use plain `char` as
 their byte carrier. Lookup explicitly converts both operands to `signed char`;
-measurement likewise normalizes its field and text reads. The original signed
-value contract is preserved without requiring the carrier type itself to be
-signed on every supported host. The one-byte field and VC4 argument ABI remain.
+measurement likewise normalizes its field and text reads. The one-byte field and VC4 argument ABI remain.
 
 ## Complete plain-char cohort, October20
 
@@ -39,10 +37,7 @@ No full replay, VC4 delivery relink or game run follows. The native library is
 `3c9713bc4dccfc12aaf354d19272e99722ee952e46adbeabcaa9b91d450b579c`.
 
 Accepted totals become392 exact functions/83,974 code bytes/244 metadata bytes;
-all270 authored entries remain source-present:247 exact and23 candidates.
-Private complete inputs, objects, independent reviews, rollback archive,
-comparison/native receipts and current authored coverage are retained under
-`.analysis/glyph-char-cohort-20261020/`. Process Evidence is
+all270 authored entries remain source-present:247 exact and23 candidates. Process Evidence is
 `ev_aa3e0c46b9db6a71d571d3acfe138070db36fac9c065fab0225b73167539fa80`
 (resource gate), `ev_bd8b4935cfd77631d94a3da1a8db14fa528d79791981740f716b101f68bdf6fe`
 (complete closure), and `ev_cca13c7e700f19d72338bcd656881d8ad9b9ca826a4634415c39eb3af7bfd53e`
@@ -50,11 +45,8 @@ comparison/native receipts and current authored coverage are retained under
 32-sample process limit; compiler/command return codes are explicitly recorded,
 not inferred from complete child-process sampling.
 
-Cleanup archives and member-size/hash verifies149 private expanded inputs,
-objects, logs and helpers before deleting those copies. The identical8.4MiB tool
-catalog shares an existing immutable carrier. Net allocated release is9,699,328
-bytes before the journal; all current compiler/native products and useful caches,
-unique evidence and the verified118-member rollback archive remain available.
+The identical8.4MiB tool
+catalog shares an existing immutable carrier.
 
 ## Earlier explicit-signed restoration
 
@@ -93,6 +85,3 @@ Retained REA evidence:
   `2026-10-10T17-22-54.305Z-requests-825249/01-analyze_function.json`.
 - Lookup: `ev_9eb642c30e5cca30a9729baaf268061b881e8ea769519a14219e1f7a6e130834`,
   `2026-10-10T17-38-24.772Z-requests-846003/02-procedure_assembly.json`.
-
-Private complete comparisons, rejected source stages, unchanged fixture
-selections and build receipts are in `.analysis/glyph-code-domain-20261012/`.

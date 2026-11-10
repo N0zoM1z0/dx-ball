@@ -23,8 +23,7 @@ to the function root, before the existing RGB declarations, while retaining its
 old enclosing compound block. The fixed identifier-bucket model predicts those
 four homes. Three placements are frozen; the first restores the homes and the
 original signed comparison, making234/3 become234/0. The old root-after-RGB
-control is reused, not recompiled. Retained original dossier Evidence is
-`ev_a5263d59f79fee20c3d1c580888f256c258a6bb80332e83da49071d7e3048e9a`.
+control is reused, not recompiled.
 
 For measurement, keep the [unsigned accumulator](TEXT_WIDTH_ACCUMULATOR.md),
 its zero initializer, signed half-width division, glyph handling and all loops.
@@ -39,8 +38,7 @@ original Evidence is
 Exactly three distinct frozen input/flag digests are compiled once each. Both
 owners stop at their first complete target exact; the remaining five candidates
 are not compiled. A controller queued UI003 before reading UI002's success,
-but the stop guard rejects it before creating an attempt or launching a compiler.
-Its receipt remains retained; it is not a fourth compile. An earlier metadata
+but the stop guard rejects it before creating an attempt or launching a compiler. An earlier metadata
 preflight inventory omission of the known portable bridge is corrected before
 any compiler launch, with the failed preflight preserved.
 
@@ -55,8 +53,7 @@ identities are unchanged, and no exact is demoted. The separate existing57-byte
 portable board-restore bridge also remains identical; it is not an original-game
 entry or an extra exact acceptance.
 
-After a verified56-member rollback archive, both selected sources and whole
-objects are installed coherently. The manifest, full exact/candidate reports,
+The manifest, full exact/candidate reports,
 function and match ledgers are reconciled. All270 authored source/header/object/
 flag/comparison receipts verify across30 closures. The249 ordered semantic rows
 retain their scopes, cases and oracle seals:235 dependency maps and16 display/
@@ -76,11 +73,5 @@ no other owner suite, full game, legacy game relink or historical campaign runs.
 Heavy work stays serial on CPU0 at35%,384MiB high/512MiB maximum.
 
 Current native library SHA256 is
-`dbed55840e9980b60a353a93d90e94c481186282a9f098dc66387bdeed71efb3`.
-The tested delivery EXE/ZIP still predate this source checkpoint. No new provider
-or debugger observation is needed. Private authority is
-`.analysis/declaration-order-search-20261021/`: the frozen plan, independent
-source/result reviews, native summary, whole-owner adoption, installed comparison
-and current authored coverage. Closed intermediate evidence is archived with
-member size/hash/mode checks before exact-list retirement; current products,
-verified caches, originals, tools and the original141-record snapshot are kept.
+`dbed55840e9980b60a353a93d90e94c481186282a9f098dc66387bdeed71efb3`. The tested delivery EXE/ZIP still predate this source checkpoint. No new provider
+or debugger observation is needed.

@@ -37,7 +37,4 @@ remaining nonexact. No game campaign runs.
 
 Original evidence is
 `ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad`,
-operation 07 of run `2026-10-07T10-33-32.118Z-interactive-2912559`.
-The complete contiguous dossier is reused without another REA query.
-Compiler inputs, complete comparison, full case payloads and verified compressed
-before/staging products remain in `.analysis/bitmap-load-workspace-20261012/`.
+operation 07 of run `2026-10-07T10-33-32.118Z-interactive-2912559`. The complete contiguous dossier is reused without another REA query.

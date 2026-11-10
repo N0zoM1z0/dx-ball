@@ -75,7 +75,5 @@ Origin updates use atomic replacement. Game source, fixtures, semantic/exact
 acceptance ledgers and production products remain unchanged; all 185 current
 exact identities and product hashes are checked independently.
 
-Private proof: `.analysis/window-message-topology/`; immutable seal:
-`.analysis/checkpoints/window-runtime-origins-283-185/sha256.json`.
 Repeat acceptance with
 `scripts/repo-python scripts/verify-runtime-origin-sections.py`.

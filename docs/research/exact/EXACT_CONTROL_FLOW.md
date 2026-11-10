@@ -83,14 +83,8 @@ code and accepted metadata are compared in full. No new tracked tests,
 fixtures, semantic rows or distinct cases are added. The 235 affected
 application semantic input closures are refreshed with unchanged scopes.
 
-Source presence stays 283; scoped acceptance stays 247 entries / 112,273 cases.
-Origins stay 270 authored / 48 runtime / 42 compiler-generated / 168 unknown.
-Two closed REA runs add six records; the cumulative snapshot contains 465.
-The private `.analysis/checkpoints/exact-control-flow-283-81` checkpoint retains
-frozen sources, failed/final models, compiler products, closed REA records and
-reviews before verified cleanup. Resource limits keep one compiler/provider
+Source presence stays 283; scoped acceptance stays 247 entries / 112,273 cases. Origins stay 270 authored / 48 runtime / 42 compiler-generated / 168 unknown. Two closed REA runs add six records; the cumulative snapshot contains 465. Resource limits keep one compiler/provider
 session, one build CPU and a 512 MiB provider heap. Native products remain
-separate, with the current library in `build/native-exact-control-flow`.
-The complete authored denominator and >=95% complete-source objective remain
+separate, with the current library in `build/native-exact-control-flow`. The complete authored denominator and >=95% complete-source objective remain
 open. No padding, fake local, copied code, assembly, profile-specific source,
 volatile barrier or identifier enumeration is introduced.

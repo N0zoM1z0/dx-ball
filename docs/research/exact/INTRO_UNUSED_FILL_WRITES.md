@@ -60,5 +60,4 @@ legacy source compilation. Physical graphics/audio and the full campaign
 remain unproved.
 
 Counts stay 283 source-present, 270 classified authored, 247 historical scoped
-semantic entries and 206 exact / 44,406 code / 136 metadata bytes. The immutable
-checkpoint is `.analysis/checkpoints/intro-unused-fill-writes-283-206/`.
+semantic entries and 206 exact / 44,406 code / 136 metadata bytes.

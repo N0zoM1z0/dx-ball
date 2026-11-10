@@ -83,13 +83,5 @@ scope peak is156,643,328 bytes; the focused native scope peaks at59,031,552
 bytes, with no memory events. No game relink/play, full campaign or physical
 driver claim follows. The previously tested game delivery remains historical.
 
-Private authority is
-`.analysis/display-blt-position-source-search-20261022/current-checkpoint.json`,
-with the selected `after-present` producer/comparison, installed comparison,
-native summary and adoption. All seven closed family directories retain their
-unique frozen inputs, outputs, plans and observations through a member-size/
-SHA/mode verified archive before obsolete copies are removed. Current tested
-products and useful caches stay live.
-Cleanup verifies652 archive members and retires628 obsolete files, releasing
-8,097,792 allocated bytes net of the archive before the small index/receipts.
-The overwritten checkpoint's rollback archive is recoverable inside it.
+Current tested
+products and useful caches stay live. The overwritten checkpoint's rollback archive is recoverable inside it.

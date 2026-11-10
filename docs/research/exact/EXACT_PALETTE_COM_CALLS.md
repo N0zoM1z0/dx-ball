@@ -24,12 +24,9 @@ to **238 exact functions / 62,514 code bytes / 136 metadata bytes**.
 
 Paddle drawing also improves from 68 to 48 differing byte positions in its
 complete 677-byte body. The first bank/sprite address calculation now agrees;
-44 frame displacement bytes and four equality-comparison bytes remain.
-Paddle stays a candidate. A separate consumed drawing-record trial in this
+44 frame displacement bytes and four equality-comparison bytes remain. Paddle stays a candidate. A separate consumed drawing-record trial in this
 palette context matches the original 68-byte frame homes but emits 679 bytes
-with 467 differences. All eleven runtime exacts remain; the trial is rejected.
-Its complete proof is in `.analysis/paddle-consumed-palette-20261013/`.
-The other 34 retained candidate code identities are
+with 467 differences. All eleven runtime exacts remain; the trial is rejected. The other 34 retained candidate code identities are
 unchanged; 35 authored candidates remain.
 
 ## Verification
@@ -41,8 +38,7 @@ preprocessing produce identical palette views before and after the change.
 
 Integration reuses those matching objects after verifying that every consumed
 source and recursive project header is byte-identical to its canonical file,
-and that the compiler and flags agree. The actual frozen producer receipts and
-path-equivalence proof remain explicit. No redundant matching compilation is
+and that the compiler and flags agree. No redundant matching compilation is
 needed. All 238 current repository closures pass afterward.
 
 Native and MinGW build. VC4 links 25 verified matching objects, five fresh
@@ -54,9 +50,4 @@ runner's setup/count checks are corrected. No connected gameplay or game run
 accompanies the checkpoint. Historical input inventories refresh 235 rows;
 all 249 recorded semantic scopes and case counts are preserved.
 
-SDK slot/signature authority is the installed `ddraw.h`, lines 1294–1304.
-Original function evidence remains linked from the configured match units.
-The frozen model and C-view/source proofs are in
-`.analysis/palette-only-com-20261013/`. Current complete comparisons, actual
-producer/input-equivalence receipts, before products, focused cases and
-independent review are in `.analysis/palette-com-integration-20261013/`.
+SDK slot/signature authority is the installed `ddraw.h`, lines 1294–1304. Original function evidence remains linked from the configured match units.

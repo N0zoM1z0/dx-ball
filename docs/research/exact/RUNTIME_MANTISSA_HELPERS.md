@@ -35,22 +35,17 @@ precision values; no execution acceptance is added.
 | Addition/carry | 35/35 | 7 |
 | Binary conversion | 459/459 | 95 |
 
-The verified CRT archive places addition in `mantold.obj` and the other helpers
-in `intrncvt.obj`. Its source therefore lives in the separate
+Its source therefore lives in the separate
 `runtime_mantissa_arithmetic.c` owner, with the same shared ABI header. A private
 combined-owner addition match does not become an accepted claim; the actual
 separate owner retains seven differences.
 
 REA run `2026-10-13T09-38-37.467Z-requests-1320496` supplies complete information,
 pseudocode and assembly for all seven helpers. Run
-`2026-10-13T09-43-20.682Z-addition-requests-1329677` supplies the 35-byte addition.
-Both close normally and retain the original target digest. Primary accepted
+`2026-10-13T09-43-20.682Z-addition-requests-1329677` supplies the 35-byte addition. Both close normally and retain the original target digest. Primary accepted
 assembly Evidence is `ev_e15c56a167de461f2f45e15a08e653e59d712bcaea9041bc16ba141e234ca02c`,
 `ev_ca3848879ba23d873620e513395b2831b6a91520437662c01d975059815a4318`
-and `ev_7ef91e7f67bacca4897bb206ae7d880c26686b04c6752f607e9cb1aad1662acf`.
-Addition is `ev_7fb248d274c74fd95132e6b08b03197d97bc9e293ce37341c6465e26f99c258c`.
-All source stages, full comparisons and actual producers are in
-`.analysis/runtime-mantissa-helpers-20261013/`.
+and `ev_7ef91e7f67bacca4897bb206ae7d880c26686b04c6752f607e9cb1aad1662acf`. Addition is `ev_7fb248d274c74fd95132e6b08b03197d97bc9e293ce37341c6465e26f99c258c`.
 
 Both source owners compile on native, i686 and VC4 targets. Complete comparisons
 cover all fourteen functions and actual relocations; the 239 other accepted
@@ -60,6 +55,4 @@ exact gaps stay open. No fixture, runtime test or game build runs.
 
 Final canonical compilation follows an EOF whitespace correction; its complete
 comparisons equal the selected emission. Arithmetic and its portable products
-are reused with unchanged inputs. Ten retired carriers are preserved as
-decompression-SHA256-verified gzip files, releasing 1,298,432 allocated bytes
-net of the cleanup receipt. Current products and all source stages remain.
+are reused with unchanged inputs. Current products and all source stages remain.

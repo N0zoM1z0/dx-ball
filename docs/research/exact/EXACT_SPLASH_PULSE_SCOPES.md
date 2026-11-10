@@ -9,11 +9,7 @@ authored entries; the full reconstruction goal remains active.
 
 REA Evidence
 `ev_2c669d6d7ae4ed75294367bdef23972e96d8cd5430ddbee9bcd729c55f1398c3`
-retains the entire contiguous body and return. Its private carrier is
-`29-analyze_function.json` in closed run
-`2026-10-07T11-58-17.972Z-interactive-3053414`, for target SHA-256
-`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-No new provider session or capture occurs. Original source identifiers and
+retains the entire contiguous body and return. No new provider session or capture occurs. Original source identifiers and
 unique declaration spelling remain unproved.
 
 The fade counter only addresses the initial red/blue reduction loop. It does
@@ -65,9 +61,5 @@ input closures, 36 production objects and 247 unchanged historical semantic
 scopes verify. The 235 changed input inventories refresh without claiming new
 execution for those historical scopes.
 
-Working source/product controls, completed compiler receipt, offset recovery,
-full instruction correspondence and focused Oracle are in
-`.analysis/pulse-color-phase/`. Independent preservation is
-`.analysis/checkpoints/pulse-color-phase-283-205/sha256.json`, with explicit
-before-product and closed REA dependencies. Source spelling, complete authored
+Source spelling, complete authored
 denominator, physical render/audio and the full campaign remain unproved.

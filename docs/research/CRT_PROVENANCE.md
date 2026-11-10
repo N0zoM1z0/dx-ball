@@ -1,5 +1,10 @@
 # Runtime-library dependencies
 
+`scripts/verify-crt-provenance.py` compares the thirteen configured whole
+functions directly with the hash-pinned original EXE. It applies every COFF
+relocation and checks complete file-backed code extents across four locked
+library variants. Historical REA dossiers are not required for this replay.
+
 Thirteen complete original function bodies agree with corresponding objects in
 the hash-pinned VC4 **`libc.lib`** after applying every relocation. The comparison
 covers **546 bytes** and checks four library variants independently: **52
@@ -9,7 +14,7 @@ from maintained C, differential cases and the configured exact units.
 This batch resolved eight previously unknown entries. At its checkpoint, totals
 were **14 identified runtime dependencies / 292 unknown origins**, with
 maintained source at **222 functions / 105,036 direct cases / 36 exact units /
-3,518 bytes**. See the [handoff history](../agent/HANDOFF_HISTORY_20261021.md) for subsequent game-owner
+3,518 bytes**. See the [current handoff](../agent/HANDOFF.md) for subsequent game-owner
 acceptance. The three previously identified heap entries gain object-level
 corroboration without another origin promotion.
 
@@ -102,11 +107,8 @@ compatibility with these pinned single-threaded release CRT objects for this
 batch. They do not uniquely identify a historical compiler release, every
 library in the executable or the complete original build configuration.
 
-The private report binds selected archive/member hashes, all applied relocations,
-target-byte hashes, complete REA records/close markers and the verifier inputs.
 Evidence hashes are computed from the same bytes parsed, so replacing a record
-cannot associate cached observations with a replacement file's identity.
-The public rejection controls cover section tails, extra functions, internal
+cannot associate cached observations with a replacement file's identity. The public rejection controls cover section tails, extra functions, internal
 symbol starts, invalid relocations, wrong/missing mappings, truncated archives,
 unrelated high-byte symbols and record replacement.
 

@@ -33,9 +33,4 @@ links with 36 verified unchanged objects. All 232 exact closures verify, and
 
 Original REA evidence is
 `ev_d7dd48a6f210a1a2cffea6be8318655763959610c9d94f8f8ff5621dad169b76`,
-operation 00 of the closed `2026-10-10T17-22-54.305Z-requests-825249` run.
-Full source/frame/input review, eight actual compiler inputs, comparisons and
-build/case receipts are retained in `.analysis/capture-api-workspace-20261013/`.
-Totals remain 232 exact functions / 59,486 code bytes / 136 metadata bytes.
-Nineteen completed source/object/tracking copies are retained in verified gzip
-carriers, releasing 4,321,280 allocated bytes. Current products are preserved.
+operation 00 of the closed `2026-10-10T17-22-54.305Z-requests-825249` run. Totals remain 232 exact functions / 59,486 code bytes / 136 metadata bytes. Current products are preserved.

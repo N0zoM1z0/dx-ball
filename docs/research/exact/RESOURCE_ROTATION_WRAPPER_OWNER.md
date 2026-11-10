@@ -93,20 +93,15 @@ and target-oracle overrides preserve the actual rotation test files after the
 physical source owner changes. Owner-header and complete input identities are
 updated explicitly; no semantic case count or scope is broadened.
 
-Private evidence lives under `.analysis/rotation-backend-ranks-20261017/`, with
-complete two-owner comparisons and traces in `resource-wrapper-owner/`.
 The initial summary driver completed both compiles and all comparisons before
 using a nonexistent `compiled_size` report field. The summary was recovered
 from those retained records using `object_size`; no compile or comparison was
 repeated. The existing1,869 resource calls and24 retained original/native/full-relocated
 VC4 helper observations also pass:2,917 selected calls in all. The VC4 relink
-reuses116 objects and the same19 approved CRT members, with no new compiles.
-All1,097 distinct MAP names/1,099 owner-qualified records retain their addresses.
-Twelve retained functions per image pass complete linked-code/binding/constant
+reuses116 objects and the same19 approved CRT members, with no new compiles. All1,097 distinct MAP names/1,099 owner-qualified records retain their addresses. Twelve retained functions per image pass complete linked-code/binding/constant
 checks; eleven selected functions per image are discarded by OPT:REF. The
 complete166,400-byte PE differs at1,205 bytes, confined to changed mapped resource
-functions/their verified CC padding, six parsed timestamps and the loader table.
-Its4,488 loader entries are checked against actual COFF fields:49 RVAs leave and
+functions/their verified CC padding, six parsed timestamps and the loader table. Its4,488 loader entries are checked against actual COFF fields:49 RVAs leave and
 49 enter, with all other relocation semantics preserved. The first image bound
 stopped because it omitted those table changes; the corrected check establishes
 the complete typed table semantics before accepting its encoded bytes. No build,
@@ -120,9 +115,5 @@ No full replay or game campaign is used for this model.
 
 Cleanup archives and member-hash verifies44 closed input/product/result carriers,
 then removes their raw copies, including unused private observer executables and
-three duplicate delivery-history members. Unique bytes remain in
-`closed-inputs-products.tar.gz`, indexed by `cleanup.json`; extraction restores
-their original repository-relative paths. Net released allocation is8,146,944
-bytes (about7.77 MiB), after archive/receipt costs and inode-link accounting.
-Current matching/delivery objects, tested products, direct runtime traces and
+three duplicate delivery-history members. Current matching/delivery objects, tested products, direct runtime traces and
 valid Native/MinGW CMake configurations remain retained.

@@ -76,12 +76,9 @@ REA 6.5.0 / Ghidra 12.1.4 evidence:
 - Both current-state pointers:
   `ev_9d879b14fecfa7cbdaa0816924e18f643c971eaedf31841550859b8925004dba`.
 
-Responses are in `.analysis/rea/runs/2026-10-16T05-05-58.940Z-requests-117843/`.
 The complete pinned `frame.obj`, SHA-256
 `ca4c0732d0860a9f0dbc519f91888999cccb47dc96c99b35572057193dfd462b`,
 independently matches all code/scope bytes with explicit relocation bindings.
-Private proof and compiler receipts:
-`.analysis/cpp-catch-block-source-20261016/{complete-comparison,compile,canonical-comparison,adoption}.json`.
 
 ## Checkpoint and limits
 

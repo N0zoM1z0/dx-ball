@@ -10,11 +10,7 @@ The full reconstruction goal remains active.
 
 REA Evidence
 `ev_9dbf933b2d5fd904d65e26784bd95865202411ab4c95711d72b9ec72adf0bdfe`
-retains the complete contiguous body and return. Its private carrier is
-`06-analyze_function.json` in closed run
-`2026-10-07T14-34-29.713Z-interactive-3470017`, targeting SHA-256
-`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-No new provider session or capture is needed. Exact identifier and declaration
+retains the complete contiguous body and return. No new provider session or capture is needed. Exact identifier and declaration
 spelling remain unproved.
 
 The preview rectangle is only initialized and passed to BltFast when the
@@ -46,12 +42,8 @@ Before this editor work, one bounded game-over MT compile moves the shift-only
 counter into its nonfinal-rank branch. The complete 446-byte insertion remains
 at three differences (172/175/177). All six exact game-over companions across
 2329 bytes and the drawing candidate's full comparison are unchanged. This
-does not recover the original comparison operand schedule. Its source/object,
-compiler receipt and before/after comparisons remain in
-`.analysis/score-shift-scope/`; verified before source/object are restored
-without another compile. No native build, game link or Oracle uses this rejected
-variant. Do not repeat it or the previously checked relational expressions.
-There are two actual legacy source compiles in this work: one rejected score
+does not recover the original comparison operand schedule. No native build, game link or Oracle uses this rejected
+variant. Do not repeat it or the previously checked relational expressions. There are two actual legacy source compiles in this work: one rejected score
 control and one accepted editor compile. There is no name or layout trial.
 
 ## Checks and preserved products
@@ -71,9 +63,6 @@ All 206 exact input closures, 36 production objects and 247 unchanged historical
 semantic scopes verify. The 235 changed historical input inventories refresh
 without claiming new execution for those scopes.
 
-Working proof and focused Oracle are in `.analysis/editor-status-phases/`.
-Independent preservation is
-`.analysis/checkpoints/editor-status-phases-283-206/sha256.json`, with explicit
-before/rejected-control products and closed REA dependencies. Full authored
+Full authored
 denominator, original source spelling, physical render/audio and the campaign
 remain unproved.

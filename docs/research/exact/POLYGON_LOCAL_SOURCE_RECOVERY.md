@@ -106,12 +106,5 @@ bytes, with no memory events. No new provider import, game relink, game campaign
 or physical-driver claim follows. The tested game delivery still predates these
 source changes.
 
-Private authority is
-`.analysis/polygon-declaration-source-search-20261022/current-checkpoint.json`:
-complete proof, native summary, adoption and corrected-publication records.
-The earlier39-difference phase and closed declaration proposals are archived
-with every member size/SHA/mode verified before obsolete copied inputs/objects
-are retired. Current canonical objects, native library and useful caches stay.
-Cleanup verifies107 archive members and retires79 obsolete files, releasing
-917,504 allocated bytes net of the archive before small index/receipts. The
+Current canonical objects, native library and useful caches stay. The
 overwritten checkpoint's rollback archive is recoverable inside that archive.

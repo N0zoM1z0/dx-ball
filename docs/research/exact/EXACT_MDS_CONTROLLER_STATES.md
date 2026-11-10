@@ -48,8 +48,7 @@ Earlier narrowing-after-mask hypotheses remain closed and are not repeated.
 The full comparisons include 25 loader and 20 player bytes excluded from imported
 Ghidra ownership. Their original continuation jumps and cleanup stubs are emitted
 by the shared C++ error gotos. All declared bindings are applied; no bytes are
-masked. The full carriers and their hashes are listed in the private
-`.analysis/mds-open-state-20261012/rea-reuse.json`. No new REA request occurs.
+masked. No new REA request occurs.
 
 ## Verification and products
 
@@ -71,6 +70,4 @@ Linux and MinGW products build. VC4 links seven matching recipe objects, one
 rebuilt adapter and 29 verified unchanged objects. The initial link preflight
 caught that adapter dependency before executing the linker. All 227 whole exact
 closures and current compiler inputs verify. Completed private products and
-tracking copies are compressed; originals and unique evidence remain intact.
-No game campaign runs. Final receipts are in
-`.analysis/mds-open-state-20261012/verification.json`.
+tracking copies are compressed; originals and unique evidence remain intact. No game campaign runs.

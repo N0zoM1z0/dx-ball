@@ -21,37 +21,29 @@ give identical complete results and are reverted. The original update order,
 unsigned read result and buffered/direct/refill state now live in
 `src/runtime_stream_read.c`. Removing fread and its unused string header closes
 the unchanged getstream126 body and all seven actual relocations. All349 old
-exacts and98 other candidates remain; current350/code72,807, candidates99.
-Four compiler sets; selected isolated product reused through byte-identical
+exacts and98 other candidates remain; current350/code72,807, candidates99. Four compiler sets; selected isolated product reused through byte-identical
 canonical inputs. Publication re-consumes retained products after a reader error,
-without recompilation. No runtime/provider work. Receipt
-`.analysis/bulk-read-original-object-owner-20261015/verification.json`.
+without recompilation. No runtime/provider work.
 
 Output refill improves328/67 through328/50 to328/1. Shipped `internal.h`
 establishes conditional safe-record selection; the original independent
-`_flsbuf.obj` boundary closes register rotation and error-epilogue scheduling.
-All122 instruction addresses/widths and327 bytes match after nine actual
+`_flsbuf.obj` boundary closes register rotation and error-epilogue scheduling. All122 instruction addresses/widths and327 bytes match after nine actual
 relocations. Only CMP operand commutation at0x41A738 remains; reversed source
 comparison emits the identical result and is reverted. The body moves unchanged
 to `src/runtime_stream_output.c`. Three owner exacts and getstream126/2 remain;
-unchanged fread emits328/326/232 instead of324/326/218 after separation.
-Three compiler sets, with the selected isolated product reused through
+unchanged fread emits328/326/232 instead of324/326/218 after separation. Three compiler sets, with the selected isolated product reused through
 byte-identical source/header inputs; no runtime/provider work. All349 exacts,
-72,681 code bytes and249 semantic rows remain. Receipt
-`.analysis/output-refill-original-object-owner-20261015/verification.json`.
-The separate original fread assignment/update-order trial gives324/223 and is
+72,681 code bytes and249 semantic rows remain. The separate original fread assignment/update-order trial gives324/223 and is
 rejected, with its source restored before these output-refill compilations.
 
 Input refill now matches all240 bytes and four actual relocations. The shipped
 CRT `_filbuf.c` establishes its local register stream and zero/-1 error exit;
-`internal.h` establishes conditional safe-record selection before reading flags.
-The local declaration alone gives240/8; conditional selection closes the last
+`internal.h` establishes conditional safe-record selection before reading flags. The local declaration alone gives240/8; conditional selection closes the last
 load-order difference. Its first retained object is re-consumed after actual
 fread call-offset changes, without recompiling. A separate scalar fread trial
 gives324/223 and is rejected; selected fread324/218, both owner exacts and two
 other candidates remain byte-identical. Three compiler sets, no runtime tests;
 totals341 exact/70,555 code bytes, candidates108, all340 prior exacts preserved.
-Receipt `.analysis/input-buffer-register-owner-20261014/verification.json`.
 
 Closure preserves flush/free/descriptor-close order, clears stream flags even
 on failure, and releases the temporary name only after successful close.
@@ -66,23 +58,18 @@ Declaring the lower-I/O boundary before the stream's CRT includes avoids the
 MinGW errno macro collision; in this final shared context all42 terminal bytes
 and both data bindings match. No existing consumer header changes.
 
-Output write-count initialization now starts only on the active write path.
-Initial invalid-stream and read-without-EOF failures own their flag writes and
+Output write-count initialization now starts only on the active write path. Initial invalid-stream and read-without-EOF failures own their flag writes and
 returns; the final write-mismatch exit stays separate. This improves288/311 to
 320/277; not exact. Deferred-count-only292/281 and write-mode-entry316/279 are
 retained; the latter is rejected. Both owner exacts and three other candidates
 remain unchanged. Three VC4/native/i686 sets, retained REA, no runtime/game tests.
-That checkpoint is retained under `.analysis/stream-output-write-lifetime-20261014/`.
 
 The shipped CRT `_flsbuf.c` establishes the genuine register stream, expected
 count and written count, plus their chained active-path initialization. EOF
-success and final write mismatch own their respective transitions/returns.
-Restoring those declarations and branches improves320/328/277 to328/328/67.
-Both bodies contain122 instructions; stream/descriptor register allocation,
+success and final write mismatch own their respective transitions/returns. Restoring those declarations and branches improves320/328/277 to328/328/67. Both bodies contain122 instructions; stream/descriptor register allocation,
 record-address scheduling and error epilogues remain different. Two compiler
 sets preserve both owner exacts and all three other candidates, with all340
-old exacts/249 semantic rows unchanged. No runtime tests or provider work;
-receipt `.analysis/output-buffer-register-owner-20261014/verification.json`.
+old exacts/249 semantic rows unchanged.
 
 Input distinguishes zero/-1 from other counts, detects text Ctrl-Z state and
 expands the owned512-byte buffer to4096. Output retains read-to-write EOF
@@ -102,10 +89,8 @@ info/pseudo/assembly records. Assembly Evidence IDs respectively:
 `ev_a7491a8c4445f083b3f7afa2cf201a5108e0ad674c288ea8ad9802083fe3db79`,
 `ev_91a9310cf92dca9150512376bee0f195b30c53103dc2cd532fc2d0a44a101e26`,
 `ev_fa18ebc65c1908d327efbd23b5f10599c53122af843b8caa2a4939037a46e4b4`,
-`ev_7c4c07745b7758561f7c8cbda368ee20bbbc5a606518bafceb7516e3cbab8721`.
-All six complete pinned CRT sections independently agree with the original
-after every relocation. Private proof and producer receipts are under
-`.analysis/runtime-stream-transfer-20261013/`.
+`ev_7c4c07745b7758561f7c8cbda368ee20bbbc5a606518bafceb7516e3cbab8721`. All six complete pinned CRT sections independently agree with the original
+after every relocation.
 
 Source presence330; exact257/64,185 code bytes; metadata136 unchanged.
 All255 preceding exacts and57 candidates retain their inputs/products/results.

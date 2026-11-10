@@ -70,11 +70,7 @@ preceding 7,164/1,024 COFF vectors. No tracked tests or fixtures change.
 
 Acceptance remains **283 source-present / 247 scoped semantic entries /
 112,273 distinct cases**. Origins remain 270 authored, 48 runtime,
-42 compiler-generated and 168 unknown. Private checkpoint:
-`.analysis/checkpoints/exact-bank-loops-283-100`, parent
-`.analysis/checkpoints/exact-exits-283-97`. Frozen inputs, actual compiler
-products, full saved REA dossiers and independent reviews are retained before
-verified cleanup. The 465-record snapshot is unchanged.
+42 compiler-generated and 168 unknown.
 
 Source presence, semantic scopes and distinct cases remain separate from exact
 matching. Complete authored denominator, original types, driver/whole-game

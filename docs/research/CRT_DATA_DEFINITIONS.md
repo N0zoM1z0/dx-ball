@@ -36,9 +36,7 @@ unbound; this initialized-section route does not establish their placement.
 
 ## Code definitions before consumers
 
-All thirteen prior CRT definitions are re-extracted from the pinned archive
-and checked over their full 546 bytes with every relocation against the retained
-39,136-byte original observation and PE. Eleven actual external COFF definitions
+Eleven actual external COFF definitions
 can supply bindings. `_doexit` and `__initterm` have static storage class and
 remain object-local. The historical cached eleven-function report is not used
 as a thirteen-function proof. The first helper rejected static definitions
@@ -70,7 +68,5 @@ Both new REA sessions closed successfully. Cold read latency is recorded in
 the user's one existing feedback document, without claiming warm-cache timing,
 exact model-token cost or measured peak memory.
 
-Private proof: `.analysis/crt-data-frontier/`. Immutable seal:
-`.analysis/checkpoints/crt-data-definitions-283-171/sha256.json`.
 Repeat the bounded verifier with
 `scripts/repo-python scripts/verify-runtime-origin-sections.py`.

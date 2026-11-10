@@ -59,8 +59,6 @@ not proof that an unseen entry or special trap routine cannot exist.
 This is byte ownership, not a final function inventory, authored denominator,
 whole-program semantic proof or new execution evidence.
 
-Current no-source receipt coverage remains 78/78, with the continuation entry's
-size updated to 53 in `.analysis/crt-suffix-ownership-20261017/coverage.json`.
 Inventory 553 / parent fragments 24 / source 475 / exact 380 / complete candidates 95
 remain unchanged. All source, ABI, implementation, match and semantic records,
 objects, approved members and the current image remain unchanged except for the
@@ -68,10 +66,6 @@ single inventory extent/notes correction. No build, runtime or replay follows.
 
 The code observation is retained REA Evidence
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
-Private `.analysis/crt-suffix-ownership-20261017/` retains both gap maps,
-seven section authorities, every byte classification, before ledgers and the
-extent adoption. The earlier [dependency coverage](CRT_DEPENDENCY_INVENTORY.md#complete-receipt-coverage)
-and [authored prefix review](../../agent/HANDOFF_HISTORY_20261021.md) retain their own boundaries.
 
 ## Joined declared text coverage
 
@@ -103,15 +97,11 @@ outside the claim. Source-present no-op `0x40CC20` still has unknown authorship;
 all 34 authored candidates remain nonexact. Source optimality and complete game
 behavior are not established by this byte audit.
 
-Private `.analysis/declared-text-coverage-20261017/proof.json` retains all 475
-target span hashes, segment arithmetic, bridge authorities and input identities.
 The current game image remains unchanged. The original50 producer described by
 that historical audit is now terminal; see the current handoff.
 
 ## Incoming references to declared game bodies
 
-A subsequent review covers all270 classified authored functions:259 retained
-REA dossiers plus eleven missing incoming-reference facets queried with6.5.
 There are1,149 observed incoming sites after excluding51 self-body sites from
 the new facets. Every observed non-entry destination is one of190 DATA sites
 whose source lies inside the same owner's enclosing span. No observed external
@@ -122,8 +112,7 @@ Body-excluded or undeclared entries, unresolved computed flows and runtime-only
 destinations remain open. It establishes neither the final authored denominator
 nor original declarations, source optimality or new exact acceptance.
 
-Private `.analysis/game-entry-reference-review-20261017/complete.json.gz` retains
-every selected Evidence ID, input digest, body range and edge. The eleven new
+The eleven new
 records are archived in REA run `2026-10-17T04-26-55.759Z-requests-2339124`;
 the session closes normally with exit0. Its whole-tree cap is35% of one CPU,
 memory high640 / max768 MiB. Sampled peak is about641 MiB with high-water reclaim
@@ -172,11 +161,8 @@ its scope. Source optimality and all34 authored nonexact functions stay open.
 No compilation, complete-function comparison, game, relink or full replay runs;
 current source, ledgers, reports and the50e40609… image remain unchanged.
 
-Private `.analysis/pe-game-entry-relocations-20261017/` retains the site inventory,
-original raw Evidence references, handler/table proof and protected identities.
 Header Evidence is `ev_bf17f7be59c5dfb453a8ba6c17f10a47eae91d94a1d7863d6c565b8fe1048544`;
-relocation Evidence is `ev_c53664744e198041fb44d9e5b75e547c264526576edaf212311da5dd2b276968`.
-Both are archived in run `2026-10-17T04-51-12.726Z-requests-2428519`; the session
+relocation Evidence is `ev_c53664744e198041fb44d9e5b75e547c264526576edaf212311da5dd2b276968`. Both are archived in run `2026-10-17T04-51-12.726Z-requests-2428519`; the session
 closes normally. Reuse this result for the unchanged original directory.
 
 ## Direct transfers in the declared game prefix
@@ -213,12 +199,9 @@ alternate/overlapping code and runtime-only entries remain outside the claim.
 The final authored denominator, source optimality and the34 nonexact authored
 functions stay open. Do not repeat this walk for the unchanged original prefix.
 
-Private `.analysis/game-prefix-direct-flow-20261017/` retains compressed
-projections, all selected Evidence identities, original bytes, protected input
-digests and verification. New records are in REA run
+New records are in REA run
 `2026-10-17T05-31-39.105Z-requests-2553246`; for example, the0x403E50 assembly
-is Evidence `ev_f9ac2b28893c4acc5a9e0bfdcbbacfff1aea2f05b5d1723c34053ca633f5d6fa`.
-The session closes with exit0 and58 cumulative Evidence records. Sampled peak
+is Evidence `ev_f9ac2b28893c4acc5a9e0bfdcbbacfff1aea2f05b5d1723c34053ca633f5d6fa`. The session closes with exit0 and58 cumulative Evidence records. Sampled peak
 is640.5 MiB under the35% CPU /640 MiB high /768 MiB maximum scope, with
 high-water reclaim and no sampled hard-limit/OOM event. Verified compression,
 immutable sharing and redundant-alias removal release about19.09 MiB. All116

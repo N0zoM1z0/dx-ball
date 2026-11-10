@@ -133,8 +133,6 @@ dependencies, with hardware DirectDraw and whole-game equivalence unclaimed.
 
 ## REA dossier ledger and exact boundaries
 
-Full Evidence, including facets and limitations, is retained under ignored
-`.analysis/rea/runs/`; the saved snapshot contains the successful records.
 The table names the entry, complete span and returned Evidence ID.
 
 | Entry | Function | Span bytes | REA Evidence |
@@ -168,9 +166,7 @@ The allocation/deletion bridges do not claim the original CRT implementations.
 Deletion, compact bonus selection and dependency-based drawing have semantic
 acceptance only; source is shared across native, MinGW and VC4.0 builds.
 
-The bonus updater dossier retained from this investigation is
-`ev_927b00b89e0931308e5cd78eb83b9e33a11d5e7c63e32d7d9da49f53ca6f81cf`:
-2,087 owned bytes in a 2,168-byte span. The subsequent
+The subsequent
 [power-up batch](POWERUPS_OWNER.md) reuses it to recover movement, collision and
 application through paddle, board, ball and round dependencies. Those claims
 have a separate connected original-x86 oracle; the production cases above keep

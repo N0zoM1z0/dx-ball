@@ -1,7 +1,5 @@
 # Runtime heap and allocation ownership
 
-Historical compiler-product checks below are archived in checkpoint
-`exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
 
 The shared source now implements eight runtime entries reached by gameplay,
@@ -32,11 +30,8 @@ at `0x416760` (14 bytes), including their two dependency relocations. These
 corroborate the same two entries already accepted through their C ABI helpers;
 the project total remains 376 exact functions.
 
-The legacy build previously omitted this C++ object, although CMake included it.
-A VC4 typed-list probe reproduced the consequence: append used the compiler CRT
-and reached none of the bound heap callbacks. The legacy builder now includes
-the object, selects its allocator flags and records owner flag overrides in
-`build.json`. With that object linked, the same typed append/remove reaches the
+The legacy build previously omitted this C++ object, although CMake included it. A VC4 typed-list probe reproduced the consequence: append used the compiler CRT
+and reached none of the bound heap callbacks. With that object linked, the same typed append/remove reaches the
 shared heap and verifies immediate success, one and three handler retries,
 balanced release and real exit status 1 on terminal failure. The exit observer
 also verifies that failed append leaves the list empty. Current native and
@@ -58,10 +53,8 @@ both existing Core allocation-failure selectors exit 1. Other semantic rows
 retain their historical counts and scopes through explicit dependency
 substitution, based on unchanged caller bodies, equivalent C/C++ core calls,
 the complete 16/14-byte comparisons and these focused checks. Their input
-hashes are refreshed without claiming that every historical owner ran again.
-The 376 exact result rows and 88 candidate rows are reused unchanged; this
-change touches none of their compiler input closures. Private receipts are in
-`.analysis/cpp-allocation-entry-binding-20261016/`.
+hashes are refreshed without claiming that every historical owner ran again. The 376 exact result rows and 88 candidate rows are reused unchanged; this
+change touches none of their compiler input closures.
 
 ## Independent imports with the public binding record (October 16, 2026)
 
@@ -103,10 +96,8 @@ bodies, focused current native checks, and the real typed setter contract.
 Their input closures are refreshed explicitly; this is not a new execution
 claim for every historical owner. The prior ledger and inputs remain retained.
 
-Proofs, original/new recipes, compiler products, focused checks and adoption
-receipt: `.analysis/allocator-independent-imports-20261016/`. No new REA session
-was needed; complete allocator dossiers and named PE imports were reused.
-Handler registration, heap teardown, broader CRT linking and final game fidelity
+No new REA session
+was needed; complete allocator dossiers and named PE imports were reused. Handler registration, heap teardown, broader CRT linking and final game fidelity
 remain open.
 
 ## Earlier five-function checkpoint and rejected controls
@@ -124,14 +115,10 @@ object reproduces these complete functions after resolving every relocation:
 | `allocator-allocate-with-handler` | `0x417790` | 64 | 0 |
 | `allocator-call-new-handler` | `0x419ea0` | 33 | 0 |
 
-These five acceptances add 147 code bytes. The original heap, handler and mode
-bindings and the complete RET-inclusive extents follow the retained REA dossiers
-listed below. The handler's Boolean normalization and the retry loop, including
-zero normalization and oversized-request rejection, need no source adjustment.
-The project total is **367 exact functions / 75,631 code bytes / 136 attached
+These five acceptances add 147 code bytes. The handler's Boolean normalization and the retry loop, including
+zero normalization and oversized-request rejection, need no source adjustment. The project total is **367 exact functions / 75,631 code bytes / 136 attached
 metadata bytes**. All previous 362 units were compared again from their retained
-objects after verifying their actual input closures, flags and object hashes.
-This was a retained-object replay, not a fresh 367-unit compilation or game run.
+objects after verifying their actual input closures, flags and object hashes. This was a retained-object replay, not a fresh 367-unit compilation or game run.
 
 The other three bodies emit the original instruction sequences and lengths
 (HeapFree 24, HeapAlloc 21 and HeapCreate 21 bytes), but their current table has
@@ -152,11 +139,7 @@ comparison: 1,433 fixtures / 1,437 calls and seven host-width controls. That che
 belongs to the rejected source snapshot, not the restored maintained source.
 Historical semantic observations and their original identities remain unchanged.
 
-Private carrier: `.analysis/allocator-complete-owner-20261016/`. It retains the
-baseline inputs/object/receipt, both rejected source and object controls,
-complete comparison reports, the native result, and `verification.json`.
-The adopted `adopted-comparison.json` and current exact report bind the same
-verified baseline object. All prior shared inputs and accepted objects were
+All prior shared inputs and accepted objects were
 restored before the final replay. That earlier checkpoint left physical import ownership open; the independent
 imports follow-up above closes those three comparisons. Handler registration,
 startup/teardown integration and whole-game fidelity remain open.
@@ -310,8 +293,6 @@ source/direct/exact counters are unchanged.
 
 ## REA evidence and reproduction
 
-The retained static dossier IDs are:
-
 - delete: `ev_dd4c8eb171fe4da4755816c3387814ad47a13e806c38958c44aa8cbc190e44ac`
 - new: `ev_2f47da62f234bfb025db282149258ce5cb1b53a74591f045695579a7d8887f91`
 - release: `ev_71abe55c26ab63d390b070c27874d920fa335c74cc9b406dcdab748a7f3bdd33`
@@ -354,13 +335,3 @@ its declared input closure and normalized observations; raw allocation pointers
 and final report hashes can differ.
 
 The tests retain bounded observation digests instead of expanded retry logs.
-SHA-sealed pre-integration snapshots preserve the old source/library/reports;
-cleanup can deduplicate immutable copies without linking them to mutable build
-paths. Use `scripts/repo-python scripts/clean-local.py --evidence-only --apply`
-while current probe products are still inputs to accepted reports.
-
-The maintained source commit `f894f72` passes public CI **37822675045**.
-Post-seal retention verifies 8,520 sealed paths, 7,704 external references and
-all 49 originals, then shares 64 completed capture files with their archived
-copies. Actual disk use falls by another 10,543,104 bytes; logical duplicate
-sharing is reported separately. Current acceptance identities remain unchanged.

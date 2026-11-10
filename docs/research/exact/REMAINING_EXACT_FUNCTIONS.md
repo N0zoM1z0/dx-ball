@@ -37,7 +37,5 @@ are described in [allocator ownership](../ALLOCATOR_OWNER.md).
 
 ## Evidence and closed controls
 
-The [October21 backlog and experiment log](https://github.com/N0zoM1z0/dx-ball/blob/9752a6954ec1bea5da2885ba236ca51a5c8976a0/docs/research/exact/REMAINING_EXACT_FUNCTIONS.md)
-retains the earlier candidate counts, failed hypotheses and full receipts.
 Current comparisons are recorded in `config/matches.csv` and
 `config/match-units.toml`.

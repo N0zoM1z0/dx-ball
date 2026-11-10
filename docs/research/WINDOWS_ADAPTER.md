@@ -160,11 +160,7 @@ The Wine logs also report an unavailable ALSA sequencer. Physical audio and
 asynchronous MIDI buffer delivery are therefore still unverified. Focus/lost-
 surface recovery, extended gameplay and all-board behavior need further checks.
 
-`scripts/clean-local.py` journals removal of resettable `probe-*` working
-copies after their reports are retained. Manual run directories and their
-scores/editor saves are preserved. Owner sources, declared semantic/exact
-inputs and the native analysis-library hash did not change in this adapter
-batch; the complete accepted sound checkpoint's oracles remain reusable.
+the complete accepted sound checkpoint's oracles remain reusable.
 
 ## State-observed ball and editor controls
 
@@ -190,17 +186,13 @@ Both editor return to menu and the subsequent zero-code process exit are
 observed, with the visible game window gone. All 49 originals are reverified.
 
 After the score, game-over, editor, board and menu recovery through `732731b`,
-the unchanged `observe('vc40', ...)` flow passes again on the current VC4 EXE.
-It records 77 read-only state observations, all five existing captures, the
-same saved-bank hash and exit code zero; all 49 original assets remain unchanged.
-The first attempt stopped before observation because the full-build receipt
+the unchanged `observe('vc40', ...)` flow passes again on the current VC4 EXE. It records 77 read-only state observations, all five existing captures, the
+same saved-bank hash and exit code zero; all 49 original assets remain unchanged. The first attempt stopped before observation because the full-build receipt
 still described an older map. The reader now accepts the focused link receipt
 only after verifying the actual EXE/map, all 35 objects and their consumed
 inputs, and the resource object/inputs. Five simulated stale source, object,
-resource, map and EXE identities are rejected without changing those inputs.
-The previous full-build identity checks remain supported. No gameplay input or
-assertion was changed. Receipts, states, captures and the failed attempt are
-retained in `.analysis/windows-play-menu-732731b/`.
+resource, map and EXE identities are rejected without changing those inputs. The previous full-build identity checks remain supported. No gameplay input or
+assertion was changed.
 
 This selection does not rerun the previous original or MinGW controls, compare
 synchronized frames/trajectories, or establish audio/MIDI or all-board fidelity.
@@ -248,13 +240,9 @@ exact functions, separate from these three actual Windows runs.
 
 After source checkpoint `4c24034`, the unchanged existing
 `observe('original', ...)` and `observe('vc40', ...)` flows pass on the original
-and current VC4 EXEs. The current VC4 SHA-256 is
-`637790d2a5d8badb386363d87dc839b1c111a058a886588730d700366819583e`;
-full receipts, 87 read-only observations per process, ten captures, saved banks
-and logs are retained in `.analysis/windows-play-current-render/`. The actual
+and current VC4 EXEs. The actual
 workflow durations are 20.39 seconds original and 19.79 seconds VC4. These are
-runtime workflow measurements, not REA latency, CPU usage or token benchmarks.
-Only the read-only observer is compiled once; no game source or provider runs.
+runtime workflow measurements, not REA latency, CPU usage or token benchmarks. Only the read-only observer is compiled once; no game source or provider runs.
 
 Both runs exercise mouse movement, ball release/motion, pause stability and
 resume, editor clearing/tile selection/Control painting, full-bank save,
@@ -306,12 +294,8 @@ does not establish pause, physical Windows display, audio/MIDI or whole-game
 fidelity. Both controls use Wine and the same Xvfb 8-bit environment.
 
 The current VC4 executable identity is
-`0302cf38a82c7d9843af135e2c054b26d2dd5c7f1d12d53199f1b1584c3a4b28`.
-Both games exit normally with code zero. All 49 originals and the four current
-products remain unchanged. No compiler or game build is needed. Private
-complete frames, state observations, input identities and paired comparisons
-are retained in `.analysis/menu-palette-phase/report.json`; the two temporary
-working copies are removed only after hash verification. This is direct
+`0302cf38a82c7d9843af135e2c054b26d2dd5c7f1d12d53199f1b1584c3a4b28`. Both games exit normally with code zero. All 49 originals and the four current
+products remain unchanged. No compiler or game build is needed. This is direct
 runtime observation, without a new REA Evidence claim or function acceptance.
 
 ## Current attached-ball pause frames
@@ -341,8 +325,7 @@ history. Terminal frames are not screenshot frames. Executable identity is
 a prelaunch path sample, with the recorder's atomic-binding limitation;
 the child report separately binds the original/current game file hashes.
 
-Complete unique PNGs, state/scene report, scenario, recorder Evidence and
-progress are in `.analysis/pause-palette-phase/`. No compiler, game build or
+No compiler, game build or
 full historical replay is needed. Existing exact/source/origin counts remain
 unchanged; no new function acceptance follows from these sampled frames.
 
@@ -361,19 +344,14 @@ Evidence. No game rebuild or function-count promotion is needed.
 The next actual-input case moves the paddle to x415 and catches the returning
 ball. All 108 complete sampled vectors agree in order, including 24 reflected
 vectors at angle105/speed5, dx-1/dy-4. Score10/lives3 and complete board effects
-agree. Both games and reused readers exit zero; no compilation is needed.
-See [first paddle reflection](FIRST_PADDLE_REFLECTION.md) for retained streams,
-reflection parameters, sampling limits and controlled-replay Evidence.
-A different paddle435 case matches all116 complete vectors, including32
+agree. Both games and reused readers exit zero; no compilation is needed. See [first paddle reflection](FIRST_PADDLE_REFLECTION.md) for retained streams,
+reflection parameters, sampling limits and controlled-replay Evidence. A different paddle435 case matches all116 complete vectors, including32
 reflected states at angle135/speed5, dx-4/dy-3. The observer stops at its declared
-completed interval; independent actual-input game shutdown still exits zero.
-This reduces retained raw records without claiming synchronized clocks or
-natural observer exit. Both cases reuse the same verified reader and products.
-Continuing paddle435 through the next brick and left wall gives181 complete
+completed interval; independent actual-input game shutdown still exits zero. This reduces retained raw records without claiming synchronized clocks or
+natural observer exit. Both cases reuse the same verified reader and products. Continuing paddle435 through the next brick and left wall gives181 complete
 ordered matches and one explicit VC4-only sample. Both clear tile285, gain
 another ten points, clamp/reverse at x20 and retain score20/lives3 with equal
-complete boards. The linked reflection dossier preserves the exact clamp states,
-asynchronous sampling difference and new controlled-replay Evidence.
+complete boards.
 
 ## Natural life loss and persisted rankings
 
@@ -415,16 +393,13 @@ Focus/surface recovery, complete level progression, live class/shell icons and
 physical audio/asynchronous MIDI remain open. No original-function acceptance
 or exact-match count changes arise from this runtime observation work.
 
-
 ## Real round advance and retained focus failures
 
 After the exact round-transition recovery in `9ec72c3`, the unchanged
-`observe('vc40', ...)` selection passes again with 71 read-only state reads.
-The editor-created single brick clears naturally, score becomes ten, and
+`observe('vc40', ...)` selection passes again with 71 read-only state reads. The editor-created single brick clears naturally, score becomes ten, and
 original board1 loads with all 400 expected bytes, 222 destructible bricks,
 three lives and an attached ball. The complete edited bank and zero-code
-shutdown pass; all 49 originals remain unchanged. Private artifacts are in
-`.analysis/windows-round-9ec72c3/`. The previous original/MinGW controls were
+shutdown pass; all 49 originals remain unchanged. The previous original/MinGW controls were
 not rerun, and focus recovery was not requested. Sequential reads, terminal
 board50, audio/MIDI and full-game/image fidelity retain their existing limits.
 
@@ -444,7 +419,6 @@ focus recovery stays open; these negative controls are excluded from passing
 private CI. A successful REA recorder can describe a failed child, and the
 capture helper propagates that child exit.
 
-
 The [independent DirectDraw SDK follow-up](ROUND_FOCUS_RUNTIME.md#independent-directdraw-status-check)
 now distinguishes lost-status reporting from actual restoration capability.
 Both default/GDI runs report loss through IsLost/Lock while GetBltStatus returns
@@ -454,24 +428,18 @@ inference; no target API return was intercepted and no game body was changed.
 Private CI includes the standalone observation and public CI compiles its C90
 SDK target. The same stable batch reruns all five real Windows game harnesses.
 
-
 The clock API follow-up passes the unchanged existing VC4 ball/pause/editor/
 exit observation with 81 read-only states and five captures. The new product
 uses independent WinMM/kernel clock bindings; ball release/movement, paddle
 input, pause/resume, editor painting/save/reload, the established whole-bank
-hash and normal exit pass. All 49 originals remain unchanged. Receipts are
-in `.analysis/windows-play-clock-api/`; source/input identities identify the
-working-tree product based on `8a2f125`. Original/MinGW prior play controls
+hash and normal exit pass. All 49 originals remain unchanged. Original/MinGW prior play controls
 were not rerun. This is a sequential read-only Wine/Xvfb observation, with no
 synchronized frame, physical audio/MIDI or full-game fidelity claim.
-
 
 The sprite-lifetime follow-up passes the unchanged VC4 ball/pause/editor/exit
 observation with 83 read-only states and five captures. The new product uses
 live sprite records at COM boundaries and preserves the pre-Lock upload stride;
 startup, ball and paddle input, pause/resume, editor save/reload, the established
-whole-bank hash and zero-code exit pass. All 49 originals remain unchanged.
-Receipts are in `.analysis/windows-play-sprite-lifetime/`; source/input identities
-identify the working-tree product based on `6f058b2`. Prior original/MinGW play
+whole-bank hash and zero-code exit pass. All 49 originals remain unchanged. Prior original/MinGW play
 controls were not rerun. Sequential Wine/Xvfb reads do not establish synchronized
 pixels, physical audio/MIDI or full-game fidelity.

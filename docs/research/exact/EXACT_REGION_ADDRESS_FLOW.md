@@ -83,15 +83,8 @@ No compiler or provider runs in either stage.
 
 Closed REA assembly Evidence
 `ev_2d9050e4b74d2fcb39692d85337c3a372235cd44f4cf5d22ee74c047bb4c3f76`
-covers the original complete span. Its retained carrier is 1,896,724 bytes;
-the complete 198-line assembly facet compactly serializes to 6,682 bytes.
-Those are historical retained-file measurements, not current REA transport,
+covers the original complete span. Those are historical retained-file measurements, not current REA transport,
 model tokens or provider latency.
-
-Private `.analysis/region-address-flow/` retains the complete proof, every
-relocation, branch and producer consumer, unchanged test selection, initial
-wrapper failure, final 36-case receipts and current input identities. Immutable
-seal: `.analysis/checkpoints/region-address-flow-283-186/sha256.json`.
 
 Source-present 283, scoped semantic 247, game exact 186 / 33,001 code bytes /
 136 metadata bytes and origins 270/79/42/137 remain unchanged. No new acceptance

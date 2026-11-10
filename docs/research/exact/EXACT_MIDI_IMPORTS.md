@@ -55,8 +55,7 @@ operator is replaced.
 
 The saved REA dossiers and complete play span are indexed in
 [the lifecycle recovery](EXACT_MIDI_LIFECYCLE.md). This batch reuses them and
-makes no new provider queries. Full instruction and import-binding receipts
-are retained in `.analysis/exact-midi-imports/`.
+makes no new provider queries.
 
 The shared header affects 20 compiler recipes. Each was compiled once, followed
 by 102 complete unit comparisons with 1,061 actual relocations. All 95 previously
@@ -71,7 +70,3 @@ differences are retained without masking offsets or trying variable spellings.
 One existing MIDI Oracle passes 2,109 direct cases and 134 connected checks,
 including all six songs. Native, VC4 and MinGW builds succeed. The VC4 game
 reuses 24 current objects and compiles eight remaining inputs.
-
-The full source/compiler inputs, prior objects, comparison, Oracle, independent
-reviews and game products are sealed in
-`.analysis/checkpoints/exact-midi-imports-283-135/`.

@@ -16,10 +16,7 @@ organization, not a uniquely established historical translation unit.
 The recovered pair's complete20-function proof covers419 code bindings, two
 initializer relocations and the57-byte portable bridge. All19 other resolved
 identities and17 prior exacts survive. The complete waiting code digest is
-`e46f27233ba12818911cb59c00a0219250578b6db20bf7cfe611b998d67e1234`.
-Both compiler outputs and their20-input/nine-flag receipts are reused after
-archive member-size/SHA verification; no identical compiler digest is rerun.
-The clock source/object remain unchanged.
+`e46f27233ba12818911cb59c00a0219250578b6db20bf7cfe611b998d67e1234`. The clock source/object remain unchanged.
 
 The maintained native incremental build compiles display and the new waiting
 owner, preserving40 other objects and43 prior compile configurations. All18
@@ -34,14 +31,7 @@ Its CPU0/35% scope peaks at112,594,944 bytes under384/512MiB limits with no memo
 events. Historical249 semantic scopes/cases are not rerun; dependency seals are
 refreshed without expanding their acceptance. There is no game relink/play.
 
-Private authority is
-`.analysis/timing-cursor-source-search-20261021/frame-wait-followup/adoption.json`,
-with the current artifact hashes in its adjacent `current-checkpoint.json`.
-The earlier stopped proof and original trials remain in the member-verified
-parent recovery archive. After adoption,72 obsolete restored/native files are
-member-size/SHA verified against that archive or the new adoption evidence
-archive before retirement, releasing1,982,464 allocated bytes net before the
-small cleanup receipt. Current objects, native library, verified cache and
+Current objects, native library, verified cache and
 delivery remain. The following descriptions retain their original dates.
 
 October21 update: the [same-role scalar recovery](CLOCK_LINE_SOURCE_RECOVERY.md)
@@ -86,9 +76,6 @@ VC4 loads the saved index and compares the requested count, with the correspondi
 opposite branch. Reversing the source comparison emits identical bytes. That
 check is closed; the natural `cursor.index++ < frames` spelling is retained.
 
-The saved REA carrier is
-`.analysis/rea/runs/2026-10-07T09-29-28.570Z-interactive-2776129/10-analyze_function.json`,
-Evidence `ev_86e83ae4d777813cd233a8b5c9d0f3ccf67349f7605b270938902c442f023087`.
 Its complete contiguous span establishes both guards, all four stack homes
 and the eight external bindings. The cursor's source spelling remains inferred.
 
@@ -100,4 +87,4 @@ links one changed object with 36 verified unchanged objects. No live game runs.
 
 All 223 accepted exact closures remain valid across 55,481 code bytes and
 136 metadata bytes. Waiting remains a candidate, leaving 50 authored nonexact
-functions. Private receipts are in `.analysis/frame-wait-cursor-20261012/`.
+functions.

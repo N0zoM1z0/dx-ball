@@ -1,7 +1,5 @@
 # Compiler evidence and exact units
 
-Historical compiler-product checks below are archived in checkpoint
-`exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
 
 The current shared-source checkpoint accepts **118 exact functions / 18,229
@@ -95,8 +93,7 @@ cases or campaigns. The native interposer adds one correctly typed update_sound
 boundary through the actual copied DisplayOps table. Removal of unused scene
 helpers shifts generated literal names in unchanged prior intro bodies; their
 complete data and relocation identities are refreshed under an explicit
-post-native-replay manifest amendment. Original frozen inputs/results remain
-unchanged; no source, header, harness or build recipe changes after native replay.
+post-native-replay manifest amendment.
 
 The preceding shared-source checkpoint retained **106 exact functions / 13,416
 code bytes**, plus 136 separate exception metadata bytes. The
@@ -357,9 +354,7 @@ while the remaining runtime spine is reconstructed.
 
 The executed independent audit then found an omitted `src/allocator.h` in the
 core compiler dependency ledger. This genuine included header was already
-physically frozen in the 293 owner inputs and 69 diagnostic inputs. The entire
-failed audit, original manifest, full 22-object epoch and original receipts are
-retained. Only this dependency is added to the parsed manifest; source, flags,
+physically frozen in the 293 owner inputs and 69 diagnostic inputs. Only this dependency is added to the parsed manifest; source, flags,
 relocations, native, shim, fixture and oracle inputs stay fixed. One affected
 core object is recompiled, with every complete code and metadata identity
 preserved; all other 21 actual objects and all 22 successful owner replay

@@ -62,5 +62,4 @@ unused zero counters on the first invocation; after correcting that assertion,
 the second invocation passed. Both runs and drivers are retained.
 
 Native, VC4 and MinGW builds pass. The VC4 game reuses 26 valid objects and
-compiles nine remaining sources. Full inputs, objects and receipts are retained
-under `.analysis/checkpoints/exact-window-key-283-138/`.
+compiles nine remaining sources.

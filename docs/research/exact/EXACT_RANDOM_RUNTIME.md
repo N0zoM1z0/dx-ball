@@ -32,8 +32,3 @@ The RNG source and portable products are unchanged by this compiler-recipe
 update; their prior semantic vectors retain their historical scope. No RNG
 case suite or game campaign is repeated. The same checkpoint passes the line
 owner's 486 existing original/native comparisons and Linux/MinGW builds.
-
-Both compiler stages, original Evidence identities, complete comparisons,
-initializer attestations and current products are retained in
-`.analysis/random-optimized-model-20261012/`. Verified gzip carriers preserve
-completed diagnostic and previous product bytes during cleanup.

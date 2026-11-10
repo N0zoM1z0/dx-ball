@@ -162,9 +162,7 @@ GetMessage -1, and two non-returning singleton paths.
 Shared inputs receive one grouped checkpoint replay: forty accepted exact
 units remain **4,079 bytes**, with zero differences, alongside rejection tests,
 every earlier differential suite, native/MinGW/VC4 builds, Wine inspectors and
-saved REA verification. No platform byte-exact claim is made. Private identities,
-reports, logs and literal binding review are retained under
-`.analysis/checkpoints/platform-134-40/`.
+saved REA verification. No platform byte-exact claim is made.
 
 ## Complete initialization recovery
 

@@ -16,6 +16,5 @@ and full relocated comparisons ran, without runtime tests or game builds.
 
 One closed six-record REA run includes this function's pseudocode/assembly and
 four exploratory records for the remaining assembly string functions. Their
-source recovery is not claimed here. Full original proof and the single compiler
-producer remain private in `.analysis/runtime-access-20261014/`. OS/game
+source recovery is not claimed here. OS/game
 integration and the remaining string bodies are still open.

@@ -78,13 +78,9 @@ open.
 
 ## Verification and REA
 
-One maintained positive and six negative controls pass. Controls reject missing
-objects, a partial boundary, inclusion of an unverified pointer, a wrong actual
-index, shifted placement and a changed retained carrier. Original library,
+One maintained positive and six negative controls pass. Original library,
 executable and Evidence stay fixed; the altered bytes are a separate negative
-fixture. Failed cases publish no report and preserve the positive receipt.
-The actual candidate-path receipt is retained; the published recipe is a
-byte/hash-identical alias rather than an invented later validation run.
+fixture.
 
 Code reuses complete original Evidence
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
@@ -97,24 +93,16 @@ Two new closed REA 6.3 / Ghidra 12.1.4 sessions observe only missing storage:
 - 244 bytes: `ev_86e6cb7d19a108f9784a3a93e2ab193547dfcfc6258578eb1c0e07e753b3a3ce`,
   run `2026-10-11T05-42-20.681Z-coupled-requests-1791122`, 47,805.31 ms.
 
-New retained carriers total 7,137 bytes for 256 original bytes. The configured
+The configured
 heap is 512 MiB; no measured peak RSS or model-token claim. Both native sessions
 close, with snapshot counts 42 and 43 Evidence records. The second extent was
-identified after the first session closed; no successful request was repeated.
-No game source, compiler, product build or gameplay replay is needed. Current
+identified after the first session closed; no successful request was repeated. No game source, compiler, product build or gameplay replay is needed. Current
 four products remain those of the PCX packet-loop checkpoint.
 
-Private proof: `.analysis/crt-locale-frontier/`; immutable checkpoint:
-`.analysis/checkpoints/crt-initialized-objects-283-188/sha256.json`.
-Feedback continues only in `/tmp/dxball_rea_feedback_20261010.md`.
-Physical x87 behavior, unique original link selection/source spelling and
+Feedback continues only in `/tmp/dxball_rea_feedback_20261010.md`. Physical x87 behavior, unique original link selection/source spelling and
 synchronized rendering/audio fidelity remain unproved.
 
-Checkpoint preservation: 79 owned files and 291 explicit immutable dependencies
-verify after fifteen scoped archive links replace 1,486,848 previously single-link
-allocated bytes, about 1.4 MiB. No device-free-space delta is claimed. Current and
-public paths retain independent archive inodes; unique Evidence, before inputs,
-current products and probe objects remain. Cleanup is confined to this new seal.
+No device-free-space delta is claimed. Cleanup is confined to this new seal.
 
 ## FPinit callback placement remains open
 
@@ -135,12 +123,7 @@ These runs do not meet the maintained sixteen-byte independent code-anchor
 requirement. A one-byte return cannot gain unique function identity from an
 observed callback pointer. The full flag setter has two absolute relocations
 that can be grounded from the independently verified `___fastflag` object.
-Its complete relocated pattern has no match in the retained CRT carrier;
-this does not rule out another binary interval or library variant.
 
-No new origin, callback-object or enclosing-section authority is published.
-Source and product counts remain unchanged. Private actual-index dependency
-inventory and bounded comparison: `.analysis/crt-fpinit-callbacks/preflight.json`.
-No new REA session, raw range, compiler trial, build or gameplay check was
+No new origin, callback-object or enclosing-section authority is published. Source and product counts remain unchanged. No new REA session, raw range, compiler trial, build or gameplay check was
 needed. Further work requires independent conversion-table/code placement
 evidence rather than a pointer-derived binding.

@@ -65,10 +65,7 @@ No full replay or new provider query runs. Remaining function recovery,
 exceptional paths, complete gameplay and native Windows/driver fidelity remain
 open. Ports remain deferred.
 
-Private evidence is `.analysis/restored-crt-editor-20261017/`: `report.json`,
-`verification.json`, `coverage.json`, state observations, saved bank, captures
-and logs. Full executed-image/map/reader gzip carriers roundtrip byte-for-byte;
-the observation helpers are frozen. After retaining unique evidence, 49 verified
+After retaining unique evidence, 49 verified
 automated working copies are removed, releasing about 1.4 MiB net. Other profile
 and manual runtime directories are untouched. Heavy work stays serial under
 CPU 35%, memory high 640 MiB/maximum 768 MiB.

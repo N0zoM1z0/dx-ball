@@ -36,10 +36,4 @@ scratch payloads agree between profiles. Linux/MinGW rebuild and the combined
 VC4 relink use the two changed owners and 35 verified unchanged objects.
 No triangle/span case replay or game campaign runs.
 
-The complete original dossiers remain
-`ev_493013a754a8856f617731fcd1fddd0b00f6bd3d39f2de9d39f29742e542e205`
-and `ev_4ae581c6e8ad135b183d562df04de63db4419e39e3f9b46891bdec2634ee5358`.
-No new REA query is needed. Complete comparisons, twenty-home correspondence,
-compiler stages and both profile payloads are retained in
-`.analysis/polygon-sort-temporaries-20261012/`. The current combined product
-receipt is `.analysis/sound-upload-workspace-20261012/verification.json`.
+No new REA query is needed.

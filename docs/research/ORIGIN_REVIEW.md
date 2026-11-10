@@ -59,8 +59,7 @@ from 314 to 308. `runtime` / `dependency` in `config/function-origins.csv` recor
 library ownership and the current integration boundary; it supplies no new
 implementation or acceptance claim.
 
-REA's retained, closed Ghidra 12.1.4 runs provide complete instruction dossiers
-bound to the original executable hash. Source from the existing pinned VC4
+Source from the existing pinned VC4
 checkout corroborates the runtime structures below. This is an origin inference
 from instructions, call relationships and source structure. It does not prove
 which compiler options built the original or select among ambiguous library
@@ -112,7 +111,5 @@ These source files and complete REA records stay private. No vendor source or
 original payload is copied into maintained game source.
 
 The remaining 308 unknown origins require individual evidence. Address ranges,
-empty direct-call lists and Ghidra library matches alone do not settle them.
-At batch entry, 22 unknown entries had complete dossiers in closed retained
-runs; sixteen remain unknown after this review. That search covers only those
+empty direct-call lists and Ghidra library matches alone do not settle them. That search covers only those
 saved `analyze_function` records, not every snapshot facet or target function.

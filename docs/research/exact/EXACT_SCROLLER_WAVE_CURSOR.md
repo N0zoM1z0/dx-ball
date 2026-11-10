@@ -12,9 +12,6 @@ sine input, multiplication by20, integer conversion and y offset420.
 The whole comparison includes all13 bindings and the complete eight-byte
 floating-point multiplier at `0x420078`.
 
-The saved REA carrier is
-`.analysis/rea/runs/2026-10-07T11-58-17.972Z-interactive-3053414/26-analyze_function.json`,
-Evidence `ev_ecc8bc98f207e2dcf6101e2f1fbf61126d0081fced68e29388f49128c78d7f89`.
 Its contiguous body supplies the original frame, both rendering branches,
 loop and terminal return. The source cursor spelling remains inferred.
 
@@ -35,5 +32,4 @@ and MinGW products build, and the VC4 executable links the changed intro object
 with36 verified unchanged objects. No game campaign runs.
 
 All224 accepted exact closures verify across55,716 code bytes and136 metadata
-bytes. There are49 authored nonexact functions left. Full private receipts
-are in `.analysis/scroller-wave-cursor-20261012/`.
+bytes. There are49 authored nonexact functions left.

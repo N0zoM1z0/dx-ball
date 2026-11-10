@@ -44,20 +44,15 @@ and 1,095 in all 3,467 FDIV bytes. The eight reclassified rows are:
 `0x416ECC`, `0x416F18`.
 
 The new maintained helper is `scripts/crt_coupled.py`, invoked by the existing
-runtime-section verifier after its independently verified preceding sections.
-One positive run preserves every previous 83-code-section/12-data-section
+runtime-section verifier after its independently verified preceding sections. One positive run preserves every previous 83-code-section/12-data-section
 result row exactly. Three bounded helper controls reject a shifted data base,
 a partial code extent and an altered dispatch pointer at offset 94. All three
-leave the caller's member-scoped authority unchanged. Original target/library
-payloads stay fixed; the corrupt carrier is a separate retained fixture.
+leave the caller's member-scoped authority unchanged.
 
 Current maintained scope is 85 complete code sections / 13,760 bytes / 103
 declared origin entries, 14 data sections / 2,997 bytes and 380 actual scoped
 definitions, including 212 static definitions. Original code spans are disjoint
-in this scope: the new 3,510 bytes also increase distinct coverage by 3,510.
-Code provenance bytes remain separate from game exact-code totals. The actual
-candidate-path verification receipt is retained unchanged; the published
-recipe is a byte/hash-identical alias, recorded explicitly.
+in this scope: the new 3,510 bytes also increase distinct coverage by 3,510. Code provenance bytes remain separate from game exact-code totals.
 
 Original complete code Evidence is reused:
 `ev_c709f0f7ebf372bf89a419cba70fa6a08db03b6de34d5c13b625afa16360ab12`.
@@ -79,9 +74,5 @@ checkpoint. Complete library provenance does not prove the unique original
 link selection, full authored denominator, source spelling, physical x87
 hardware behavior or synchronized rendering/audio fidelity.
 
-Private proof: `.analysis/crt-pointer-storage/`. Immutable seal:
-`.analysis/checkpoints/crt-pointer-storage-283-188/sha256.json`.
-The earlier assert/transcendental partial data and unresolved BSS remain open.
-The next step requires an independent placement or full code/data authority;
-do not repeat an unchanged seeded scan or infer globals from observed fields.
-All REA feedback remains in the user's one existing `/tmp` document.
+The earlier assert/transcendental partial data and unresolved BSS remain open. The next step requires an independent placement or full code/data authority;
+do not repeat an unchanged seeded scan or infer globals from observed fields. All REA feedback remains in the user's one existing `/tmp` document.

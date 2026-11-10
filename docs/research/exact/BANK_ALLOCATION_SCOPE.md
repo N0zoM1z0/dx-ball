@@ -40,21 +40,13 @@ resource payloads and remaining image bytes agree. New executable SHA256:
 No game, new provider or full replay runs.
 
 The matching compile takes 4.609 seconds on one CPU/35%, peaks at 210,378,752
-bytes and records zero memory-limit events. Private
-`.analysis/author-bank-debug-names-20261018/` retains source/role proofs, complete
-comparisons, selected cases and integration evidence. The source changes 235
+bytes and records zero memory-limit events. The source changes 235
 current semantic input inventories. A separately documented pre-existing hash
 gap refreshes 179 helper fields after the earlier streamed-hash change; their
 173-row intersection gives 241 changed input inventories, including six
-helper-only rows. Historical case counts and execution scopes are unchanged.
-Current totals remain 249 authored exact / 21 candidates and 394 total exacts.
-After independent integration review, 59 obsolete objects, before snapshots,
-proof copies and production-history files are archived and every member hash
-verified before removal. Net allocated release is 7,876,608 bytes after archive,
-cleanup script, receipts and seal. Current tested products, directly referenced
-producer receipts and useful build caches remain.
+helper-only rows. Historical case counts and execution scopes are unchanged. Current totals remain 249 authored exact / 21 candidates and 394 total exacts.
 
-The later [shared image-record declaration model](AUTHOR_SOURCE_CONTEXT.md#fixed-author-image-record-declaration-model)
+The later [shared image-record declaration model](AUTHOR_SOURCE_CONTEXT.md)
 privately reduces the bank to 1475/63 and makes release-sprite exact, but loses
 four accepted resource exacts. The entire model is rejected after one complete
 resource-owner comparison; its other 27 owners remain uncompiled. No gain subset
@@ -141,11 +133,8 @@ The private driver's later first-board postcondition initially exits with code 1
 the first `game-ready`-labelled poll, which still shows the menu. The wait records
 every attempt. Existing gameplay and shutdown assertions had already completed
 before that postcondition. A separate verifier checks the final successful wait
-sample and the retained files; no second game runs. The executed driver,
-traceback, corrected future driver, all samples and captures remain in private
-`.analysis/bank-startup-20261017/`. The result is explicitly a verification of
-retained observations, rather than a claim that the initial driver exited zero.
-Pause, editor, clear, ranking, terminal and focus controls are not repeated.
+sample and the retained files; no second game runs. The result is explicitly a verification of
+retained observations, rather than a claim that the initial driver exited zero. Pause, editor, clear, ranking, terminal and focus controls are not repeated.
 
 ## Closed file-metadata scope
 
@@ -154,26 +143,18 @@ file-read/allocation/record-initialization phase. Width, height and file pixels
 keep their iteration lifetime. All operations and the existing allocation/API
 blocks remain unchanged. One compilation compares all 17 complete resource
 functions: fifteen exact companions preserve 3,572 bytes and the other sixteen
-code identities stay unchanged, but the bank worsens from 66 to 69 differences.
-Reject this scope; canonical source, cached objects, ledgers and the linked
-image stay unchanged. Do not repeat this model. Frozen source reversal,
-comparisons and rejection are retained under
-`.analysis/bank-file-metadata-scope-20261017/`; no runtime check uses that proposal.
+code identities stay unchanged, but the bank worsens from 66 to 69 differences. Reject this scope; canonical source, cached objects, ledgers and the linked
+image stay unchanged. Do not repeat this model.
 
 ## Retained evidence and scope
 
-Private `.analysis/bank-allocation-scope-20261017/` retains source reversal,
-before/after products and reports, complete comparisons, instruction changes,
-existing case drivers/results and the whole-image delta. Preparation first
+Preparation first
 found a repeated allocation block in capture; it stopped before compilation
 and was restricted to the selected loader. The first image verifier's narrower
 timestamp assumption is retained with the parsed resource-field correction;
 neither correction repeats a compiler or game run.
 
-Nineteen frozen input/report files are archived and both matching objects are
-compressed after complete byte checks, releasing 5,382,144 allocated bytes.
-Current cache objects and the linked/native products remain available.
-The subsequent metadata/startup batch archives eight proposal inputs and 233
+Current cache objects and the linked/native products remain available. The subsequent metadata/startup batch archives eight proposal inputs and 233
 observer inputs, then removes 49 verified automated runtime copies, releasing
 another 2,936,832 allocated bytes. Manual runtimes and other profiles remain.
 

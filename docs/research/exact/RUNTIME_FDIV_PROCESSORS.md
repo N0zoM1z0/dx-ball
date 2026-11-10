@@ -17,11 +17,9 @@ retained. Physical x87 testing remains the real unresolved helper, not a callbac
 fixture or emulation result. This supplies the existing math-initialization
 dependency without changing that owner.
 
-All314 old exact and102 candidate producers retain unchanged input/object hashes.
-Current inventory543/source426/exact315/code69,003/metadata136;249 semantic rows
+All314 old exact and102 candidate producers retain unchanged input/object hashes. Current inventory543/source426/exact315/code69,003/metadata136;249 semantic rows
 are unchanged. Two focused VC4/native/i686 source trials and whole code/literal
 comparisons ran. One initial empty provider session was closed; the actual
 two-record REA session is also closed. Earlier whole CRT/string placement evidence
-is reused. No runtime tests, CPU-affinity execution or game builds. Private proof:
-`.analysis/runtime-fdiv-processors-20261014/`. Physical hardware and game integration
+is reused. No runtime tests, CPU-affinity execution or game builds. Physical hardware and game integration
 remain open.

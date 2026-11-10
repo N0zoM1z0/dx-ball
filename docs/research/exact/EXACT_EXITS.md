@@ -52,11 +52,7 @@ recipe and actual test-log identities are verified. No tracked test changes.
 
 Acceptance stays at **283 source-present / 247 scoped semantic entries /
 112,273 distinct cases**. Origins remain 270 authored, 48 runtime,
-42 compiler-generated and 168 unknown. Private checkpoint:
-`.analysis/checkpoints/exact-exits-283-97`, parent
-`.analysis/checkpoints/exact-integer-trig-283-86`. It retains frozen inputs,
-actual products, saved evidence and independent reviews before verified cleanup.
-The 465-record REA snapshot is unchanged.
+42 compiler-generated and 168 unknown.
 
 Source presence and origin counts stay unchanged. The complete authored
 denominator, original types, whole-game fidelity and **>=95% complete-source

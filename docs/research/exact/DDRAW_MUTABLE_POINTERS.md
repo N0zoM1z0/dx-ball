@@ -28,12 +28,8 @@ game transports and resource inspectors build. VC4 links 27 fresh matching
 objects, five separately compiled production objects and five verified
 unchanged objects. Historical input inventories refresh 235 rows. No game runs.
 
-Local SDK hashes, exact declaration lines, source comparison and full build
-receipts are retained in `.analysis/ddraw-mutable-pointers-20261013/`.
 The independent review confirms only the twelve pointer-qualifier removals
-across five files and unchanged forwarding bodies.
-Totals remain 232 exact functions / 59,486 code bytes / 136 metadata bytes,
+across five files and unchanged forwarding bodies. Totals remain 232 exact functions / 59,486 code bytes / 136 metadata bytes,
 with 41 authored functions still nonexact.
 
-147 completed copies are retained in verified gzip carriers, releasing
-4,632,576 allocated bytes. Current products and original evidence are preserved.
+Current products and original evidence are preserved.

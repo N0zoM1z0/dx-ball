@@ -38,5 +38,4 @@ reset-hit-region-count, set-hit-region and the separately classified no-op at
 
 Only the three existing editor-frame loops ran: 1,272 paint/erase, input-gate
 and toolbar-edge cases. The native, VC4 and MinGW builds pass; the VC4 game
-reuses all 35 valid objects. Full source/compiler inputs, objects and receipts
-are retained in `.analysis/checkpoints/exact-editor-frame-283-139/`.
+reuses all 35 valid objects.

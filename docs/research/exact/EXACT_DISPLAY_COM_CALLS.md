@@ -66,8 +66,3 @@ Original REA evidence for the first three promotions is
 and `ev_cc1db01cb0efa2d9fd45a7a3e26b2ebdd4d865c6a37d2bc671fe348434314ef0`.
 Restoration evidence is
 `ev_2d9050e4b74d2fcb39692d85337c3a372235cd44f4cf5d22ee74c047bb4c3f76`.
-
-Complete current inputs, comparisons, before products, callback receipts and
-independent review are retained in `.analysis/display-com-integration-20261013/`.
-The initial one-compile projection is in `.analysis/display-surface-com-20261013/`;
-the two rejected UI compiles are in `.analysis/ui-surface-com-20261013/`.

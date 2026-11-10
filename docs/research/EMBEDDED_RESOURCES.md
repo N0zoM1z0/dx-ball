@@ -53,9 +53,7 @@ this is asset serialization, independent of function exact matching.
 
 The VC4 build uses hash-pinned `cvtres.exe` with `/MACHINE:IX86`. MinGW uses
 `i686-w64-mingw32-windres -J res -O coff --target=pe-i386`. Both link the
-resulting object into the game EXE only. Each `game-resources.json` binds the
-original, extraction inputs, converter identity, flags and generated hashes.
-No original pixels, resource object or resource file are published.
+resulting object into the game EXE only. No original pixels, resource object or resource file are published.
 
 ```bash
 scripts/repo-python scripts/build-legacy.py

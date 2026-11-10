@@ -25,15 +25,9 @@ All 222 accepted exact units and input closures verify. Current totals are
 55,351 code bytes and 136 metadata bytes, with 51 authored functions remaining
 nonexact. No game campaign runs. Original evidence is
 `ev_d69a03478a3300403b907eadb1d092d72ea91325ee9a2d51042a1105207b5bb3`,
-operation 30 of run `2026-10-07T11-58-17.972Z-interactive-3053414`.
-No new REA query is needed. Complete private receipts remain in
-`.analysis/rgb-rotation-record-20261012/`.
+operation 30 of run `2026-10-07T11-58-17.972Z-interactive-3053414`. No new REA query is needed.
 
-The same turn checks a consumed capture workspace in the resources owner.
-Its candidate improves to 864/852 bytes with 726 differences, but glyph search
+The same turn checks a consumed capture workspace in the resources owner. Its candidate improves to 864/852 bytes with 726 differences, but glyph search
 loses its accepted match: 146 bytes and 86 differences. That stage is rejected;
-source and canonical object identities are restored without recompilation.
-No resource case replay runs. Retained stage and rejection receipt are in
-`.analysis/sprite-capture-workspace-20261012/`; do not repeat this workspace model.
-The PCX frame's unobserved four-byte region remains unresolved in its existing
+source and canonical object identities are restored without recompilation. No resource case replay runs. The PCX frame's unobserved four-byte region remains unresolved in its existing
 [complete packet proof](EXACT_PCX_PACKET_LOOP.md).

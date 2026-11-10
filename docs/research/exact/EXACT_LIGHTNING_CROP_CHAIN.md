@@ -109,15 +109,5 @@ Original closed REA Evidence:
 Its contiguous297-instruction body ends at RET0x00416360. Original target SHA-256
 is `756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
 
-The old `.analysis/lightning-crop-subtraction/` and
-`.analysis/checkpoints/lightning-crop-chain-283-186/sha256.json` remain sealed.
-Current `.analysis/lightning-excess-producer-20261018/` retains the passive old
-proof review, fixed source transformation, full compiler inputs, all20 complete
-comparisons, independent reviews,197-case receipt, production identities and
-full linked proof. Archive/member-hash verification precedes removal of closed
-copied inputs, superseded objects and products; current tested products and
-valid incremental caches remain available.
-
 The verified cleanup removes51 raw copies, including six objects and12 obsolete
-VC4 history files. Net allocated storage released is8,658,944 bytes after the
-archive/journal; the standard cleanup preview has zero remaining actions.
+VC4 history files.

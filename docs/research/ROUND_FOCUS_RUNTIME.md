@@ -49,9 +49,7 @@ originals are reverified. No target memory writes, hooks or injected calls are u
 Original addresses and the ball layout reuse reviewed REA/oracle contracts;
 VC4 globals come from its attested linker map and MinGW globals from its actual
 remote DLL exports. The SDK reader adds a bounded400-byte board snapshot. Reads
-are sequential, not atomic frame snapshots. A passing `round-prefix.json` covers
-only the transition before subsequent checks; the aggregate report requires
-normal shutdown too. This control does not prove completion of all 50 original
+are sequential, not atomic frame snapshots. This control does not prove completion of all 50 original
 boards, terminal board50 behavior, synchronized frames or physical audio.
 
 The separate [terminal diagnostic](TERMINAL_RUNTIME.md) now exercises 50
@@ -101,9 +99,7 @@ unverified. Accepted game bodies were not changed to make this control pass.
 
 A focused REA xref query for compatibility state `0x422898`, Evidence
 `ev_87c213a753df45ee0ad7d13d56878ad28429a5776c4261e87e169621f9919faf`,
-finds nine exact references. Their retained instruction dossiers all show CMP
-reads, including WinMain's mode selection and the recovery/palette/paddle
-consumers. No direct writer appears in that exact-reference set. This bounded
+finds nine exact references. No direct writer appears in that exact-reference set. This bounded
 result does not rule out indirect writes or establish a supported command-line
 switch; no compatible-mode input or target-state override was invented.
 
@@ -125,7 +121,6 @@ process trees are sampled and may miss short-lived descendants, filesystem
 snapshots are not syscall traces, and inherited environment is not recorded.
 The child harness's explicit original/product/input hashes remain necessary.
 Owner semantic and exact acceptance counts remain 214 /95,873 /40 /4,079 bytes.
-
 
 VC4 and MinGW diagnostic runs also fail the sustained-motion check: both
 resume after activation, then retain the same ball fields at x227 across the
@@ -171,11 +166,7 @@ returns success for the two valid flags without checking surface loss. Microsoft
 includes SURFACELOST among possible failures. The actual DirectDraw1 SDK result
 corroborates the source observation; physical Windows behavior was not measured.
 
-REA's retained synchronization dossier
-`ev_7528b8fd339fe77e2bd500279969b4c0f36946e98a3556d3f30044c87289bb30`
-establishes the original gate: when compatibility state is zero, only a
-GetBltStatus SURFACELOST result calls recovery; a pending request is cleared
-regardless. This provides a specific explanation for the original and source
+This provides a specific explanation for the original and source
 controls clearing the flag then locking a lost surface. That connection remains
 an inference from the original's static body, live SDK results and its Lock
 warnings; the original GetBltStatus HRESULT was not intercepted or injected.

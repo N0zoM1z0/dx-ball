@@ -68,6 +68,3 @@ once. The native build and the existing display/entity Oracles pass; the other
 owner suites are reused. Source presence and existing case counts stay fixed.
 The native fixture forwards the genuine aggregate API and queue call through
 their actual owned defaults or current callbacks.
-
-Full dossiers, before/after inputs, objects, comparisons and bounded review
-receipts are retained privately under `.analysis/exact-render-restoration/`.

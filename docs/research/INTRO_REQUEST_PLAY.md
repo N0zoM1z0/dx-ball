@@ -43,22 +43,16 @@ between original and rebuilt runs, with zero differing pixels in each complete
 these animation frames are not synchronized, so those differences do not
 establish a source defect or whole-renderer equivalence.
 
-Five PNGs and complete state records are retained per profile in
-`.analysis/windows-play-intro-request-writes/`, together with both reports,
-input/product hashes, the saved banks and the screenshot comparison. No image
+No image
 is repaired or replaced. Physical display, audio/MIDI, synchronized moving
 frames and a complete campaign remain unproved.
 
-The existing reader is reused from its actual later compilation receipt in
-`.analysis/windows-play-current-render/reader-compile.json`. Its binary, source,
-flags, compiler and six recorded SDK headers agree. The first reuse check
-selected an older reader receipt and rejected it before game launch; that
-validation failure is retained. No new reader, game or legacy source compile
+Its binary, source,
+flags, compiler and six recorded SDK headers agree. No new reader, game or legacy source compile
 occurs. Only the VC4 source profile and original control are run; prior MinGW
 and owner-oracle observations retain their historical identities.
 
-The immutable play checkpoint is
-`.analysis/checkpoints/intro-request-play-283-206/`. The prior source checkpoint
+The prior source checkpoint
 and all 206 exact / 44,406 code / 136 metadata claims remain unchanged. Temporary
 probe runtime copies are cleaned only after their exit state and unique files
 are retained. REA feedback remains optional in the single existing `/tmp` file.

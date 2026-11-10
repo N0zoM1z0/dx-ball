@@ -9,16 +9,10 @@ table with shared file and local-memory imports and restores typed input records
 Its complete VC4 candidate is 928/976 bytes; the existing native Oracle passes
 975 cases. Earlier compiler products and batch results below are historical.
 
-Historical compiler-product checks below are archived in checkpoint
-`exact-projectile-lists-283-118`; their duplicate test drivers were removed.
 Current iteration uses only the affected Oracle when needed.
 
-The saved REA function dossier for `0x00409F70` retains a contiguous 976-byte
-body through `0x0040A33F`, under Evidence ID
-`ev_e408e41080570698d5068c6aa811cbae0a93e65442822fc191ea85ea46c93cad`.
 Its complete private record is in the closed 10-33 interactive run, SHA-256
-`a638c4ad17795b11803e0b0337f1d0221e88c417d8ef662a9190f8ec7da9d803`.
-This investigation reuses that record without another Ghidra import. Shared C
+`a638c4ad17795b11803e0b0337f1d0221e88c417d8ef662a9190f8ec7da9d803`. This investigation reuses that record without another Ghidra import. Shared C
 now passes full native and actual VC4 comparisons and is accepted after the
 21-owner batch and 36-unit cold replay. No bitmap exactness is claimed.
 
@@ -178,8 +172,7 @@ The full original code and these import slots verify before/after execution.
 **975 original/native cases** include all 455 earlier fixtures plus 520
 geometry/pitch cases: widths `0,1,2,3,4,7,13`, heights `0,1,2,3,5`, zero/narrow/
 equal/wide pitches and four stack seeds. Zero-size allocation success is an
-explicit controlled API result; actual OS zero-size behavior is unverified.
-All destination/guard bytes, every palette byte including flags, successful
+explicit controlled API result; actual OS zero-size behavior is unverified. All destination/guard bytes, every palette byte including flags, successful
 read buffers and their untouched suffixes, allocated pixels and ordered calls
 compare directly. The report interns 376 complete buffers after full equality
 and collision checks. Descriptor pointer growth and its size field follow the
@@ -216,12 +209,3 @@ frames and five advances separately from direct-case counts. A read-only audit
 finds no concrete ABI, stack-alignment or fixture-lifetime defect. Four uniform
 seeds establish selected storage fixtures for the frozen compiler build; they
 do not establish arbitrary uninitialized storage or every compiler layout.
-
-The accepted source checkpoint seals 436 files and 67 external references.
-Its complete 2,231,951-byte primary report retains every buffer in a 73,970-byte
-lossless gzip artifact, verified by expanded SHA. Post-retention cleanup removes
-only verified historical/cache copies and disposable probes; all 4,069 frozen
-paths and current acceptance inputs/products verify afterward. Unique REA
-records, originals and installed tools are retained. See the
-[handoff history](../agent/HANDOFF_HISTORY_20261021.md) for that cleanup journal
-and storage scope.

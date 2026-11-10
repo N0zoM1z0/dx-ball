@@ -15,8 +15,7 @@ The initial ladder produces 229/229 bytes with 130 differences. Explicit categor
 dispatch reduces this to 18; a real eight-byte binary64 result union, instead
 of alias-writing a floating scalar, gives 229/0. Three VC4/native/i686 compile
 sets completed; no runtime/game checks. All 333 preceding exacts and 107
-candidates retain unchanged inputs/products. Frozen stages and whole comparisons
-are under `.analysis/runtime-absolute-double-20261014/`.
+candidates retain unchanged inputs/products.
 
 The preliminary exponent formatter review confirms its two differences are
 commuted suffix additions, with no newly missing operation. No spelling or

@@ -34,13 +34,8 @@ the original. Independent review also checks20 actual local targets and all
 owner as a recovery improvement; no class, header, type, name, order or flag
 variants follow. Historical notes below retain their own comparison epochs.
 
-Private `.analysis/hit-regions-owner-20261018/` retains full comparisons, source
-reversal and independent reviews. No canonical source, claim or delivery changes;
-no native build, relink, provider, runtime case, game or full replay is needed.
-The two-owner scope peaks at208,924,672 bytes with zero high/max/OOM events.
-All26 raw copied inputs/products, including three objects, are archived and
-member-hash verified before removal, releasing116 KiB net after archive/journal
-costs. Current tested products and useful incremental caches remain.
+No canonical source, claim or delivery changes;
+no native build, relink, provider, runtime case, game or full replay is needed. The two-owner scope peaks at208,924,672 bytes with zero high/max/OOM events. Current tested products and useful incremental caches remain.
 
 The [complete key correspondence](exact/EDITOR_KEY_ADDRESS_CORRESPONDENCE.md)
 accounts for its 638/632-byte, 260-difference candidate through one six-byte
@@ -84,8 +79,7 @@ excluded from owned instructions. Imported candidate spans match the reviewed
 REA spans. Static observations retain prototype and indirect-flow limitations;
 independent original execution establishes the accepted behavior.
 
-One constrained interactive session retained ten dossiers and three data
-reads. Open took 16.9 seconds; lazy first analysis took 40.6 seconds; subsequent
+Open took 16.9 seconds; lazy first analysis took 40.6 seconds; subsequent
 dossiers took 0.02..0.32 seconds. Explicit close saved 224 cumulative Evidence
 records. Complete results survive in the closed 14-34 private archive.
 
@@ -126,24 +120,20 @@ three actual typed COM blits with fresh global surface loads. The original
 meaningful rectangle and exits are preserved. All four filename operands include
 complete NUL-terminated storage comparisons against the pinned original.
 
-The original `00`, `01` and `04-analyze_function.json` dossiers in the closed
-2026-10-07 14-34 run were reused; their Evidence IDs are listed above. No new
+No new
 provider request or source-layout trial was needed. All nine configured editor
-exact units, including the existing 908-byte frame, remain exact together.
-The recipe retains its full 34-file declared input set, containing the complete
+exact units, including the existing 908-byte frame, remain exact together. The recipe retains its full 34-file declared input set, containing the complete
 21-file recursively consumed project closure. Native and MinGW builds pass;
 VC4 relinks 35 verified objects without another source compilation.
 
 The final native library passes 54 existing initialization/redraw/cleanup cases
 and all 32 connected editor checks. Fifteen existing board-file failure/partial-
-read cases and one existing score-insertion case verify fixture ownership.
-The inherited score-import binding initially intercepted `default.bds` in the
+read cases and one existing score-insertion case verify fixture ownership. The inherited score-import binding initially intercepted `default.bds` in the
 connected save step; the editor fixture now explicitly skips that binding and
 retains its original independent real-host stdio behavior. Game-over fixtures
 still install the same score callbacks by default. Cases and assertions are
 unchanged. No full owner suite or historical replay was run; prior full-suite
-and frame receipts keep their own product hashes. Focused inputs, reports and
-the retained failed probe are private in `.analysis/exact-editor-lifecycle/`.
+and frame receipts keep their own product hashes.
 
 The following command/region batch recovers choices (`0x40C9C0`, 163 bytes),
 region initialization (`0x401E10`, 147 bytes) and lookup (`0x401F90`, 173 bytes)
@@ -176,18 +166,11 @@ checks. The final library passes the selected 1,439 lookup/key/file-outcome case
 and all 32 connected checks after the last expression recovery; the previous
 full suite retains its intermediate hash. A private wrapper's count assertion
 initially omitted the owner's zero-valued counters; correcting that assertion
-required one selection rerun. Maintained cases and assertions were unchanged.
-Native/MinGW builds and the 35-object VC4 relink pass. Receipts, original complete
-dossiers, products and full candidate comparisons are retained privately in
-`.analysis/exact-editor-commands/`; no new REA session or historical replay was
-needed. Other semantic scopes retain historical cases after identity refresh.
+required one selection rerun. Maintained cases and assertions were unchanged. Native/MinGW builds and the 35-object VC4 relink pass. Other semantic scopes retain historical cases after identity refresh.
 
 The complete [editor-frame restoration](exact/EXACT_EDITOR_FRAME.md) now
 reproduces all 908 bytes, including the two cursor draw calls and both inline
 paint/erase value phases. The five existing exact editor units are preserved.
-This batch runs only the 1,272 existing frame cases; broader receipts below
-retain their original scope.
-
 
 Initialization resets regions, clears and loads `mbbkgrnd.pcx`, then loads
 `mball2.sbk`, `sfont.sbk`, and `mainmenu.sbk` into banks 0/1/2. It selects
@@ -261,10 +244,8 @@ Valid finite scripts, initialized surfaces, bounded storage/arithmetic, mapped
 tiles 0..22 and board indices 0..49 are required. Resource lifecycle reload/
 release, audio/MIDI and actual Windows/DirectDraw delivery remain controlled
 boundaries. The initial editor checkpoint replayed forty configured exact units and the
-broader checks described here. Those historical reports, compiler products and
-input identities remain in `.analysis/checkpoints/editor-186-40/`. The current
+broader checks described here. The current
 frame restoration uses the focused batch described above.
-
 
 ## Compiler portability follow-up
 
@@ -273,11 +254,8 @@ Public CI with GCC 13.3 rejects an eight-byte decimal scratch buffer under
 index domain from the external global. The shared owner now reserves 12 bytes
 for a signed 32-bit decimal value, sign and NUL. It retains the original
 index-plus-one formatting and draw calls; no clamp or profile-selected body
-is introduced. This affects a temporary buffer, with no new exactness claim.
-Existing original-x86 status/editor and complete regression suites are replayed
+is introduced. This affects a temporary buffer, with no new exactness claim. Existing original-x86 status/editor and complete regression suites are replayed
 against the GCC 13 native library, plus MinGW/VC4 products and forty exact units.
-The failed remote run and final input identities are retained under
-`.analysis/checkpoints/editor-format-199-40/`.
 
 ## Real Windows follow-up
 

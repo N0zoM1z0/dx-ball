@@ -26,8 +26,7 @@ rendering, audio and full-game fidelity retain their separate validation gaps.
 ## REA evidence
 
 All observations below come from the original hash-pinned executable through
-REA 4.1.0 / Ghidra 12.1.4. Complete Evidence and snapshots remain private under
-`.analysis/rea/`; public documentation records findings and identifiers.
+REA 4.1.0 / Ghidra 12.1.4.
 
 | Operation | Evidence ID | Finding |
 | --- | --- | --- |

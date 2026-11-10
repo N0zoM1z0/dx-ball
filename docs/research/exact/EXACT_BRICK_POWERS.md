@@ -81,20 +81,15 @@ callbacks. The shim verifies 37 real symbols / 38 production default slots and
 48 actual compiler dependencies. Effects owner adds only its four consumed
 loader/shim/resource-control inputs. This is host forwarding evidence.
 
-Native family/canonical SHA256 `7edcc33d4c2a090731ba17a5654e1b22c6b26b9e13d7badd27acfe96faff380f`; shim `0b1a5d56662168602b5d154a06b1b5002fcf9d9ce5f8030e97d7a1fe3f5211dc`.
-Source presence stays 283, scoped semantic rows 247, unit-distinct cases 112,273;
+Native family/canonical SHA256 `7edcc33d4c2a090731ba17a5654e1b22c6b26b9e13d7badd27acfe96faff380f`; shim `0b1a5d56662168602b5d154a06b1b5002fcf9d9ce5f8030e97d7a1fe3f5211dc`. Source presence stays 283, scoped semantic rows 247, unit-distinct cases 112,273;
 235 actual semantic closures refresh with fixed cases,
 addresses and scopes. Origins stay 270 authored / 50 runtime / 42 generated / 166
-unknown. Checkpoint `.analysis/checkpoints/exact-brick-powers-283-115` links to
-bonus-phase 113. The >=95% complete-source goal remains active and unachieved.
+unknown. The >=95% complete-source goal remains active and unachieved.
 
 ## Complete hit correspondence and internal binding repair, October 17
 
 The pre-adoption complete hit comparison has **1,316 current / 1,315 original
-bytes, 418 differing positions**, with no new exact or semantic acceptance.
-A read-only review of the retained REA dossier and current COFF object accounts
-for all 362 instructions, 1,244 original / 1,245 current code bytes, 26 direct
-branches, 32 calls and the complete 71-byte switch data. The sixteen-byte frame
+bytes, 418 differing positions**, with no new exact or semantic acceptance. The sixteen-byte frame
 is unchanged. Three consumed DWORD values have different homes:
 
 | Value | Original EBP displacement | Current EBP displacement |
@@ -144,13 +139,10 @@ executable or submitted as exact acceptance. It does not establish original
 declarations/scopes, arbitrary callee stack inspection or whole CPU equivalence.
 
 Evidence `ev_d09866ff22dc07f3ac28ef1d992c5876c1e58e1796dbe0f0c5c2814544aa27eb`
-is reused; no provider, compiler, runtime, relink or full replay runs. Private
-`.analysis/brick-hit-correspondence-20261017/correspondence.json` retains the
-complete instruction/site/route proof and pre-repair identities. Initial private
+is reused; no provider, compiler, runtime, relink or full replay runs. Initial private
 assertion failures are preserved: one guessed relocation count, followed by the
 raw-table equality check that exposed the wrong targets. A transient script
-syntax error is retained separately. The applied repair and current authored
-coverage audit are in `.analysis/brick-hit-binding-repair-20261017/`.
+syntax error is retained separately.
 
 ## Particle iterator scope adoption
 
@@ -186,13 +178,8 @@ The native build compiles one owner and links. The restored-CRT link reuses all
 116 source objects and the same19 approved members. All1,091 map addresses stay
 fixed; the complete image differs only at the nine proved displacements and
 twelve bytes in parsed timestamp fields. The new image is
-`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`.
-No game or full replay runs; preceding live observations retain their recorded
-image identities. Private `.analysis/brick-hit-scope-adoption-20261017/` retains
-source reversal, retained-producer equivalence, comparisons, failures, final
-cases and image verification. Totals remain475 source /380 exact /95 candidates.
-The native product is retained in a byte-verified gzip carrier before removing
-three fresh identical disposable fixture copies; crash diagnostics remain intact.
+`50e406099293b5de1d5088b3d022e585aa493c8a53f152342e526ed15943958c`. No game or full replay runs; preceding live observations retain their recorded
+image identities. Totals remain475 source /380 exact /95 candidates.
 
 ## Closed pan consumer scope
 
@@ -216,10 +203,7 @@ The following joint-scope recovery supersedes this standalone trial's source
 decision. It tests a different, previously uncompiled model rather than repeating
 the unchanged consumer block with a case-local counter.
 
-Private `.analysis/brick-hit-pan-scope-20261017/` retains the source reversal,
-complete comparisons, byte/home proof and real compile receipt. Inputs are
-archived and both raw objects compressed after byte verification before removing
-the disposable copies. Canonical source, cache, ledgers, reports and image remain
+Canonical source, cache, ledgers, reports and image remain
 unchanged. No provider, runtime, relink or full replay runs; no exact or semantic
 acceptance is added.
 
@@ -271,15 +255,10 @@ and12 parsed timestamp bytes. Image SHA-256 is
 No game, provider query or full replay runs. Earlier live observations retain
 their earlier image identities.
 
-Private `.analysis/brick-hit-shared-counter-pan-20261017/` retains the single
-producer, source reversal, full inputs/bindings/comparisons, frame-site proof,
-independent reviews, focused cases and complete image-delta verification.
 All382 exact result records and92 other candidate records remain identical;
 five exact input closures and235 historical input inventories refresh without
 rerunning their case suites. Totals stay475 source /382 exact /93 candidates,
 including32 authored candidates. Original scopes and source optimality remain
-unproved.
-Verified archives replace19 compiler-input copies and two raw objects, releasing
-96 KiB of allocated storage after carrier cost. Current products and unique
+unproved. Current products and unique
 before evidence remain intact. Heavy commands stay serial under CPU35%, memory
 high640 MiB/max768 MiB, with one allowed CPU.

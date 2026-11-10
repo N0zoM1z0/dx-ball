@@ -60,27 +60,20 @@ owner checks retain responsibility for those assertions.
 
 ## Retained proof and limits
 
-Private records live in `.analysis/windows-entity-use-current/`: the original
-`observe.py`, compiled `campaign-reader.exe`, `reader-identity.json`,
-`vc40/observation.json`, `report.json`, logs and `sampled-entity-states.json`.
 The latter retains all 3,940 processed rows in 623,801 bytes, SHA-256
-`ff4533a761b3ff6e5f2cc2c89ff325b53702fb369e2a6897db90ff35436c26ea`.
-The pipe consumer reports 6,052,620 bytes and a digest; the complete raw stream
+`ff4533a761b3ff6e5f2cc2c89ff325b53702fb369e2a6897db90ff35436c26ea`. The pipe consumer reports 6,052,620 bytes and a digest; the complete raw stream
 was not retained. Its digest identifies consumed bytes, not a replayable stream.
 
-The offline `verify-and-derive.py` preserves the original report and produces
-`verified-state-summary.json`. The original `occupied_samples`/`empty_samples`
+The original `occupied_samples`/`empty_samples`
 labels mean only `bool(value)`; the derived summary explicitly labels nonzero
 current pointers versus nonempty lists. It checks recorded source/observer
 inputs, all 35 current game objects and their recorded project closures,
 resources, SDK import libraries, executable/map, reader/compiler, the six
 recorded SDK headers, X input libraries, all 49 original assets, the copied
 campaign bank, retained sample hashes and rebuilt address mappings. The six
-SDK header hashes are a selected subset, not a complete recursive SDK closure.
-Verification requires no additional game run or production compilation.
+SDK header hashes are a selected subset, not a complete recursive SDK closure. Verification requires no additional game run or production compilation.
 
-The checkpoint seal is
-`.analysis/checkpoints/entity-play-283-171/sha256.json`. It retains this proof
+It retains this proof
 and the current source/product inputs before disposable runtime copies are
 cleaned. Previous full-campaign and screenshot observations keep their own
 historical executable identities; they are not attributed to this product.

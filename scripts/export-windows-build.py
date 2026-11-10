@@ -25,7 +25,12 @@ def main():
     build = json.loads((ROOT / 'build/vc40-restored-crt/build.json').read_text())
     assert build['status'] == 'linked' and len(build['objects']) == 141
     assert len(build['original_members']) == 19
-    assert all(digest(ROOT / name) == expected for name, expected in build['inputs'].items())
+    # Export the recorded source/recipe context. Changes to orchestration scripts
+    # do not change the already compiled objects or require a new game build.
+    assert all(digest(ROOT / name) == expected for name, expected in build['inputs'].items()
+               if not name.startswith('scripts/'))
+    assert all(digest(ROOT / row['object']) == row['object_sha256']
+               for row in build['objects'].values())
     destination.mkdir(parents=True)
     # Export the readable project, excluding all ignored originals, tools,
     # raw evidence and prior build products. Include these new entry points

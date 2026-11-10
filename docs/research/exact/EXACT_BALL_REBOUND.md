@@ -76,8 +76,5 @@ verified unchanged objects, with zero additional production source compiles.
 Resource and SDK import products are verified and reused. Prior Wine play
 records retain their historical executable identities.
 
-Private reproducible receipts and helpers: `.analysis/exact-ball-rebound/`.
-Immutable seal: `.analysis/checkpoints/ball-rebound-283-171/sha256.json`.
-REA was not reopened; three retained archives total 2,067,168 bytes and selected
-local projections 16,492 bytes. Feedback entry 25 is appended to the same existing
+Feedback entry 25 is appended to the same existing
 `/tmp/dxball_rea_feedback_20261010.md`, without a measured token/latency claim.

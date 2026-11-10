@@ -27,9 +27,7 @@ of both automatic frames. There is no unexplained frame hole to fill. It does
 not establish an original record, packing directive, declaration order or
 whole-body instruction equivalence.
 
-The retained REA dossier is
-`ev_1dfa14e3428cac399a6bc2876da74d5bbc4a5edc8a8e03a6af79783e189daf26`,
-operation 03 of `2026-10-07T10-33-32.118Z-interactive-2912559`. The review reuses
+The review reuses
 that complete 365-instruction listing and decodes the current COFF. Each has
 150 instructions referencing the frame. Every negative displacement belongs
 to exactly one observed role, including interior descriptor fields; positive
@@ -97,7 +95,3 @@ The unchanged canonical object separately retains four exact functions and
 749 code bytes across six complete comparisons. No native fixture, game,
 full replay or provider query runs. Totals remain 380 exact functions and 95
 complete candidates, including 34 authored candidates.
-
-The complete role/access receipt, original dossier identity, current inputs,
-canonical object, rejected source/object and six-function comparisons are
-retained under `.analysis/rotation-frame-roles-20261017/`.

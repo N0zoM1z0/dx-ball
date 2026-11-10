@@ -63,10 +63,7 @@ refresh while their247 scopes remain historical. Source283/exact186/33001 code/
 
 Evidence reuses closed REA dossiers from
 [endpoint/indexed storage](EXACT_POLYGON_ENDPOINT_STORAGE.md), with no new
-provider query or transport/token/latency/RSS measurement. Actual recipes,
-complete disassemblies, producer/CFG proofs, Native emission identity, selected
-profile payloads and product hashes are in `.analysis/polygon-scan-span/`.
-Immutable seal: `.analysis/checkpoints/polygon-scan-span-283-186/sha256.json`.
+provider query or transport/token/latency/RSS measurement.
 
 This completes the concrete scan-source gaps identified by the
 [sort lifecycle review](EXACT_POLYGON_SORT_LIFECYCLE.md). Complete body strict
@@ -81,5 +78,4 @@ scoped hardlinks replace4,227,072 single-link allocated bytes. Three downloaded
 wheel caches remove17,997,824 allocated bytes after their installed package
 versions/module locations are verified. Installed tools and current products
 remain unchanged. These are inode-allocation counts, not a measured device
-free-space delta. Supplemental post-cleanup identities retain the cleanup
-receipts and current documentation without modifying the immutable seal.
+free-space delta.

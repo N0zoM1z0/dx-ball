@@ -67,16 +67,12 @@ variants or historical semantic-case counts.
 
 ## Original evidence and current linkage
 
-Original instruction boundaries agree with these retained REA dossiers:
-
 | Entry | REA Evidence |
 | --- | --- |
 | Blt | `ev_82e6d49881f8641a426f66235acef4c51d18f0d3420d746c0d1f13c535afb861` |
 | Stretch | `ev_2d69c6041416a67a1548d91dc71a945b13a33e065d32e96528ffacd6f80ce455` |
 | Draw | `ev_ddac92d3e1a7e508d55181c07f05bbbbabb7870694d36de94fa3eeb7ada0155f` |
 
-The first two are operations 01/03 of the closed October 9 13:18 pending-owner
-run; Draw reuses the full dossier retained by the original display checkpoint.
 The verified PE, complete code extents, actual relocations and current producer
 receipt bind the comparison. No new provider or compiler runs.
 
@@ -100,9 +96,6 @@ Source, game objects, all function ledgers and complete comparison reports stay
 unchanged: **380 exact functions / 95 candidates, including 34 authored**.
 No native fixture, game, full replay or new semantic acceptance runs.
 
-Private `.analysis/effect-sprite-paths-20261017/` retains the checker, all adopted
-SMT queries, negative controls, complete comparisons, producer/object identity,
-REA dependencies and linkage review. Frozen inputs are archived only after
-full-byte verification, releasing 839,680 allocated bytes. Superseded analysis
+Superseded analysis
 queries remain separate from the adopted report. CPU/memory limits remain in
 force; no assembly, padding, fake storage or source permutation is adopted.

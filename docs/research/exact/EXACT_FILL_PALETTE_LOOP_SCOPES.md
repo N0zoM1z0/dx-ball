@@ -17,10 +17,8 @@ source-file claim. Reconstruction remains incomplete.
 ## Rotation-loop recovery and remaining gap
 
 In RGB-pool rotation and right/left palette shifts, the loop counter now belongs
-only to its shift loop. Names, types, bounds, color snapshots, flags, callbacks
-and write order are unchanged. All three sixteen-byte frames now place the
-counter at EBP-16, as independently observed in the original complete listings.
-This removes seven differing operand bytes across the three bodies.
+only to its shift loop. All three sixteen-byte frames now place the
+counter at EBP-16, as independently observed in the original complete listings. This removes seven differing operand bytes across the three bodies.
 
 | Function | Address | Complete bytes | Before differences | Current differences |
 | --- | --- | ---: | ---: | ---: |
@@ -52,11 +50,8 @@ accepted functions preserve 4,050 bytes. This rules out that source-order
 explanation in the current compiler context. It establishes neither original
 variable names nor a particular compiler allocation algorithm.
 
-Independent source/input/comparison review is retained in
-`.analysis/palette-declaration-order-20261013/`. Canonical declarations and
+Canonical declarations and
 products remain unchanged. No other ordering or naming variants are tried.
-Twenty-eight gzip-verified carriers release 45,056 allocated bytes including
-the cleanup receipt.
 
 ## Rejected fade comparison hypothesis
 
@@ -68,9 +63,7 @@ same 18 differences. The consumer expected 12 changed bindings and stopped at
 that guard after all three owner compilations had completed. The existing
 objects and receipts were recovered; no producer was restarted.
 
-The hypothesis, sources, objects and all affected comparisons are retained in
-`.analysis/palette-operation-scopes/orientation-and-loop-stage/`.
-`orientation-negative.json` records the rejection. The original device source
+The original device source
 and its verified prior object were restored without recompilation; its current
 input/object closure matches the preceding accepted checkpoint. No comparison
 binding was changed and no fade exact claim is made. Do not repeat equivalent
@@ -78,13 +71,7 @@ orientation/spelling trials without new source or compiler evidence.
 
 ## Original evidence and bounded validation
 
-Five archived REA dossiers identify contiguous complete bodies through their
-returns. Their target hashes and terminal records verify. Record paths and
-Evidence IDs are in `.analysis/palette-operation-scopes/rea-reuse.json`:
-the retained 11:58 archive supplies RGB/right rotation and rectangle fill,
-the 09:29 archive supplies left rotation, and the 10:33 archive supplies fade.
-`body-proof.json` records complete original/current frame operands, instruction
-coverage, branches, calls and actual relocations. The complete relocated fill
+Their target hashes and terminal records verify. The complete relocated fill
 bytes match the pinned original PE, without masked gaps or tails. Before-source
 controls retain all five initial comparisons.
 
@@ -92,9 +79,7 @@ Four unchanged maintained test loops pass **178 calls**: 12 fills, 20 RGB pool
 rotations, 64 right shifts and 81 left shifts, plus the unchanged display-reset
 setup call. They compare complete palettes and flag bytes, RGB pools/canaries,
 defined fill fields/rectangle coordinates, ordered COM effects and padded
-buffers with execution of the original code. The tests remain unchanged;
-selected AST, driver, test and current library hashes are in
-`palette-oracle.json`. The unchanged fade is not replayed.
+buffers with execution of the original code. The unchanged fade is not replayed.
 
 Four legacy source compilations were performed: one each device/display and
 two UI. One device hypothesis was rejected and its original object restored.
@@ -106,9 +91,6 @@ All 199 exact input/object closures, 247 unchanged historical semantic scopes
 and 36 production object closures verify; historical input hashes refresh without
 claiming unrelated Oracle reruns.
 
-Current products are in `.analysis/palette-operation-scopes/product-verification.json`;
-the independent seal is
-`.analysis/checkpoints/palette-operation-scopes-283-199/sha256.json`.
 Controlled COM calls do not establish physical driver rasterization, synchronized
 display/audio or the full campaign. The user resumed publishing: verified
 checkpoints are committed and pushed to `origin/main`, while originals, tools,

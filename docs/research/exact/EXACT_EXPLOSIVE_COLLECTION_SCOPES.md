@@ -27,13 +27,8 @@ the original 20-byte frame with these homes:
 | Consumed signed tile | -16 |
 | Per-column scan row | -20 |
 
-The original complete, contiguous REA dossier is Evidence
-`ev_3d377be2b21a0bacfa9d8a165f08def8fa9f77830b0d0fe671d3aaedbf5ac7cf`,
-private `06-analyze_function.json` in run
-`2026-10-07T07-26-59.211Z-rea-bonus-dependencies-2331079`.
 It is bound to target SHA-256
-`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`.
-Every one of its 208 instruction addresses agrees with the emitted boundary;
+`756da1ba09edce716d5bf8770320ca0d5ed4e525672b6bb605b9bdb4b88972ba`. Every one of its 208 instruction addresses agrees with the emitted boundary;
 all 26 branches, nine calls and the full return are covered. The existing
 relocation declarations retain their symbols, types, addends and independently
 established targets. No bytes are masked, and no provider session is needed.
@@ -65,9 +60,3 @@ matching gameplay object with 35 hash-verified unchanged objects, without
 another source compile. All 202 current exact input closures, 36 production
 objects and 247 unchanged historical semantic scopes verify. Their 235 changed
 input inventories refresh without claiming execution of unrelated suites.
-
-Private inputs, before products, complete comparison, instruction proof,
-focused Oracle and product hashes are in `.analysis/explosive-collection-scopes/`.
-The independent seal is
-`.analysis/checkpoints/explosive-collection-scopes-283-202/sha256.json`, with
-explicit dependencies on before products and the original closed REA carriers.
